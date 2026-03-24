@@ -1,0 +1,23 @@
+# Project information
+site_name: 'MultiAffinity Documentation'
+site_url: 'https://github.com/marbatlle/multiAffinity'
+site_author: 'Mar Batlle'
+
+# Repository
+repo_url: 'https://github.com/marbatlle/multiAffinity'
+
+# Copyright
+copyright: 'Copyright &copy; 2022 Mar Batlle'
+
+# Configuration
+theme:
+  name: 'readthedocs'
+  language: 'en'
+  logo: 'docs/img/multiAffinty-logo.png'
+
+# Pages
+nav:
+- Introduction: index.md
+- Quick Start: quickstart.md
+- User Guide: usage.md
+- 'Back to the repo': 'https://github.com/marbatlle/multiAffinity'

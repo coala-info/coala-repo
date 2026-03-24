@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Partial de novo workflow: ustacks only</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-Partial_de_novo_workflow_ustacks_only.ga"
+      },
+      "datePublished": "2022-05-31 08:47:59 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-9906-0673"
+        }
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://workflowhub.eu/workflows/349?version=1",
+      "url": "https://workflowhub.eu/workflows/349/ro_crate?version=1",
+      "name": "Research Object Crate for Partial de novo workflow: ustacks only",
+      "description": "# workflow-partial-ustacks-only\n\n\nThese workflows are part of a set designed to work for RAD-seq data on the Galaxy platform, using the tools from the Stacks program. \n\nGalaxy Australia: https://usegalaxy.org.au/\n\nStacks: http://catchenlab.life.illinois.edu/stacks/\n\n\nFor the full de novo workflow see https://workflowhub.eu/workflows/348\n\nYou may want to run ustacks with different batches of samples. \n* To be able to combine these later, there are some necessary steps - we need to keep track of how many samples have already run in ustacks, so that new samples can be labelled with different identifying numbers.  \n* In ustacks, under \"Processing options\" there is an option called \"Start identifier at\". \n* The default for this is 1, which can be used for the first batch of samples. These will then be labelled as sample 1, sample 2 and so on. \n* For any new batches of samples to process in ustacks, we will want to start numbering these at the next available number. e.g. if there were 10 samples in batch 1, this should then be set to start at 11. \n\nTo combine multiple outputs from ustacks, providing these have been given appropriate starting identifiers:\n* Find the ustacks output in the Galaxy history. This will be a list of samples. \n* Click on the cross button next to the filename to delete, but select \"Collection only\". This releases the items from the list, but they will now be hidden in the Galaxy history.\n* In the history panel, click on \"hidden\" to reveal any hidden files. Unhide the samples. \n* Do this for all the batches of ustacks outputs that are needed. \n* Click on the tick button, tick all the samples needed, then \"For all selected\" choose \"Build dataset list\"\n* This is now a combined set of samples for input into cstacks. \n",
+      "isBasedOn": "https://github.com/AnnaSyme/workflow-partial-ustacks-only.git",
+      "sdDatePublished": "2026-03-24 18:04:30 +0000",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-Partial_de_novo_workflow_ustacks_only.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-Partial_de_novo_workflow_ustacks_only.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 3854,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "# workflow-partial-ustacks-only\n\n\nThese workflows are part of a set designed to work for RAD-seq data on the Galaxy platform, using the tools from the Stacks program. \n\nGalaxy Australia: https://usegalaxy.org.au/\n\nStacks: http://catchenlab.life.illinois.edu/stacks/\n\n\nFor the full de novo workflow see https://workflowhub.eu/workflows/348\n\nYou may want to run ustacks with different batches of samples. \n* To be able to combine these later, there are some necessary steps - we need to keep track of how many samples have already run in ustacks, so that new samples can be labelled with different identifying numbers.  \n* In ustacks, under \"Processing options\" there is an option called \"Start identifier at\". \n* The default for this is 1, which can be used for the first batch of samples. These will then be labelled as sample 1, sample 2 and so on. \n* For any new batches of samples to process in ustacks, we will want to start numbering these at the next available number. e.g. if there were 10 samples in batch 1, this should then be set to start at 11. \n\nTo combine multiple outputs from ustacks, providing these have been given appropriate starting identifiers:\n* Find the ustacks output in the Galaxy history. This will be a list of samples. \n* Click on the cross button next to the filename to delete, but select \"Collection only\". This releases the items from the list, but they will now be hidden in the Galaxy history.\n* In the history panel, click on \"hidden\" to reveal any hidden files. Unhide the samples. \n* Do this for all the batches of ustacks outputs that are needed. \n* Click on the tick button, tick all the samples needed, then \"For all selected\" choose \"Build dataset list\"\n* This is now a combined set of samples for input into cstacks. \n",
+      "name": "Partial de novo workflow: ustacks only",
+      "url": "https://workflowhub.eu/workflows/349?version=1",
+      "keywords": "",
+      "version": 1,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "creator": {
+        "@id": "https://workflowhub.eu/people/200"
+      },
+      "producer": [
+        {
+          "@id": "https://workflowhub.eu/projects/54"
+        },
+        {
+          "@id": "https://workflowhub.eu/projects/30"
+        }
+      ],
+      "dateCreated": "2022-05-31T07:50:13Z",
+      "dateModified": "2023-01-30T18:21:31Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/6"
+      },
+      "input": [
+
+      ],
+      "output": [
+
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-9906-0673",
+      "@type": "Person",
+      "name": "Anna Syme",
+      "identifier": "https://orcid.org/0000-0002-9906-0673"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/200",
+      "@type": "Person",
+      "name": "Anna Syme"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/54",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Galaxy Australia"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/30",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Australian BioCommons"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/6",
+      "@type": "Collection",
+      "name": "BioCommons ‘Bring Your Own Data’ Expansion Project"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Partial de novo workflow: ustacks only</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/349/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/349/ro_crate?version=1</a>
+
+
+<p>
+  # workflow-partial-ustacks-only
+
+
+These workflows are part of a set designed to work for RAD-seq data on the Galaxy platform, using the tools from the Stacks program. 
+
+Galaxy Australia: https://usegalaxy.org.au/
+
+Stacks: http://catchenlab.life.illinois.edu/stacks/
+
+
+For the full de novo workflow see https://workflowhub.eu/workflows/348
+
+You may want to run ustacks with different batches of samples. 
+* To be able to combine these later, there are some necessary steps - we need to keep track of how many samples have already run in ustacks, so that new samples can be labelled with different identifying numbers.  
+* In ustacks, under "Processing options" there is an option called "Start identifier at". 
+* The default for this is 1, which can be used for the first batch of samples. These will then be labelled as sample 1, sample 2 and so on. 
+* For any new batches of samples to process in ustacks, we will want to start numbering these at the next available number. e.g. if there were 10 samples in batch 1, this should then be set to start at 11. 
+
+To combine multiple outputs from ustacks, providing these have been given appropriate starting identifiers:
+* Find the ustacks output in the Galaxy history. This will be a list of samples. 
+* Click on the cross button next to the filename to delete, but select "Collection only". This releases the items from the list, but they will now be hidden in the Galaxy history.
+* In the history panel, click on "hidden" to reveal any hidden files. Unhide the samples. 
+* Do this for all the batches of ustacks outputs that are needed. 
+* Click on the tick button, tick all the samples needed, then "For all selected" choose "Build dataset list"
+* This is now a combined set of samples for input into cstacks. 
+
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://orcid.org/0000-0002-9906-0673" target="_blank">Anna Syme</a></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>Apache-2.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-Partial_de_novo_workflow_ustacks_only.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-Partial_de_novo_workflow_ustacks_only.ga">Partial de novo workflow: ustacks only</a>
+      
+        <br/>Size: 3854 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

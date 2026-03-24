@@ -1,0 +1,371 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-De_novo.ga"
+      },
+      "datePublished": "2025-12-16 09:25:40 +0000",
+      "author": [
+        {
+          "@id": "#creator-1"
+        },
+        {
+          "@id": "#creator-2"
+        }
+      ],
+      "license": "MIT",
+      "identifier": "https://workflowhub.eu/workflows/2038?version=1",
+      "url": "https://workflowhub.eu/workflows/2038/ro_crate?version=1",
+      "name": "Research Object Crate for De novo",
+      "description": "Workflow for processing amplicon pool sequencing data without reference sequence.\n\nThis workflow allows you to reconstruct a sequence from an amplicon pool without a reference sequence. To run this workflow, you need the reads from the pool library you want to analyse in FASTQ format, separated into two files: forward and reverse. You will also need the primers used during sequencing. This workflow creates one or two contigs (depending on whether your primers were used once or twice) and a metadata file containing the length of the contigs, the number of reads mapped to them, and the average, minimum, and maximum coverage depth.",
+      "sdDatePublished": "2026-03-24 16:27:19 +0000",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-De_novo.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-De_novo.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 198178,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Workflow for processing amplicon pool sequencing data without reference sequence.\n\nThis workflow allows you to reconstruct a sequence from an amplicon pool without a reference sequence. To run this workflow, you need the reads from the pool library you want to analyse in FASTQ format, separated into two files: forward and reverse. You will also need the primers used during sequencing. This workflow creates one or two contigs (depending on whether your primers were used once or twice) and a metadata file containing the length of the contigs, the number of reads mapped to them, and the average, minimum, and maximum coverage depth.",
+      "name": "De novo",
+      "url": "https://workflowhub.eu/workflows/2038?version=1",
+      "keywords": "DE_NOVO, pool_amplicon, illumina",
+      "version": 1,
+      "license": "https://spdx.org/licenses/MIT",
+      "creator": [
+        {
+          "@id": "#Mol%C3%A8ne%20Mah%C3%A9"
+        },
+        {
+          "@id": "#Station%20marine%20de%20Concarneau"
+        },
+        {
+          "@id": "#MNHN"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/12"
+      },
+      "dateCreated": "2025-12-16T09:38:56Z",
+      "dateModified": "2025-12-16T09:38:56Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#de_novo-inputs-FASTQ%20-%20Forward"
+        },
+        {
+          "@id": "#de_novo-inputs-FASTQ%20-%20Reverse"
+        },
+        {
+          "@id": "#de_novo-inputs-Filter%20FASTQ%20-%20Maximum%20size"
+        },
+        {
+          "@id": "#de_novo-inputs-Filter%20FASTQ%20-%20Minimum%20size"
+        },
+        {
+          "@id": "#de_novo-inputs-Forward%20primer"
+        },
+        {
+          "@id": "#de_novo-inputs-Is%20your%20primer%20used%20more%20than%20once?"
+        },
+        {
+          "@id": "#de_novo-inputs-Reverse%20primer"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#de_novo-outputs-forward_qc"
+        },
+        {
+          "@id": "#de_novo-outputs-reverse_qc"
+        },
+        {
+          "@id": "#de_novo-outputs-paired_qc"
+        },
+        {
+          "@id": "#de_novo-outputs-contig1"
+        },
+        {
+          "@id": "#de_novo-outputs-contig2"
+        },
+        {
+          "@id": "#de_novo-outputs-blastn1"
+        },
+        {
+          "@id": "#de_novo-outputs-blastn2"
+        },
+        {
+          "@id": "#de_novo-outputs-consensus_contig1"
+        },
+        {
+          "@id": "#de_novo-outputs-browser1"
+        },
+        {
+          "@id": "#de_novo-outputs-consensus_contig2"
+        },
+        {
+          "@id": "#de_novo-outputs-browser2"
+        },
+        {
+          "@id": "#de_novo-outputs-metadata1"
+        },
+        {
+          "@id": "#de_novo-outputs-metadata2"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "#creator-1",
+      "@type": "Person",
+      "name": "Station marine de Concarneau"
+    },
+    {
+      "@id": "#creator-2",
+      "@type": "Person",
+      "name": "MNHN"
+    },
+    {
+      "@id": "#Molène Mahé",
+      "@type": "Person",
+      "name": "Molène Mahé"
+    },
+    {
+      "@id": "#Station marine de Concarneau",
+      "@type": "Person",
+      "name": "Station marine de Concarneau"
+    },
+    {
+      "@id": "#MNHN",
+      "@type": "Person",
+      "name": "MNHN"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/12",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Galaxy Training Network"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#de_novo-inputs-FASTQ - Forward",
+      "@type": "FormalParameter",
+      "name": "FASTQ - Forward",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#de_novo-inputs-FASTQ - Reverse",
+      "@type": "FormalParameter",
+      "name": "FASTQ - Reverse",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#de_novo-inputs-Filter FASTQ - Maximum size",
+      "@type": "FormalParameter",
+      "name": "Filter FASTQ - Maximum size",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#de_novo-inputs-Filter FASTQ - Minimum size",
+      "@type": "FormalParameter",
+      "name": "Filter FASTQ - Minimum size",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#de_novo-inputs-Forward primer",
+      "@type": "FormalParameter",
+      "name": "Forward primer",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#de_novo-inputs-Is your primer used more than once?",
+      "@type": "FormalParameter",
+      "name": "Is your primer used more than once?",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#de_novo-inputs-Reverse primer",
+      "@type": "FormalParameter",
+      "name": "Reverse primer",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#de_novo-outputs-forward_qc",
+      "@type": "FormalParameter",
+      "name": "forward_qc",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#de_novo-outputs-reverse_qc",
+      "@type": "FormalParameter",
+      "name": "reverse_qc",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#de_novo-outputs-paired_qc",
+      "@type": "FormalParameter",
+      "name": "paired_qc",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#de_novo-outputs-contig1",
+      "@type": "FormalParameter",
+      "name": "contig1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#de_novo-outputs-contig2",
+      "@type": "FormalParameter",
+      "name": "contig2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#de_novo-outputs-blastn1",
+      "@type": "FormalParameter",
+      "name": "blastn1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#de_novo-outputs-blastn2",
+      "@type": "FormalParameter",
+      "name": "blastn2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#de_novo-outputs-consensus_contig1",
+      "@type": "FormalParameter",
+      "name": "consensus_contig1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#de_novo-outputs-browser1",
+      "@type": "FormalParameter",
+      "name": "browser1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#de_novo-outputs-consensus_contig2",
+      "@type": "FormalParameter",
+      "name": "consensus_contig2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#de_novo-outputs-browser2",
+      "@type": "FormalParameter",
+      "name": "browser2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#de_novo-outputs-metadata1",
+      "@type": "FormalParameter",
+      "name": "metadata1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#de_novo-outputs-metadata2",
+      "@type": "FormalParameter",
+      "name": "metadata2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

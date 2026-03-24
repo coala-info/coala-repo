@@ -1,0 +1,829 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "workflows/amplicon-wf--v.5-cond.cwl"
+      },
+      "datePublished": "2022-02-25 15:06:24 +0000",
+      "author": [
+        {
+          "@id": "#creator-1"
+        },
+        {
+          "@id": "#creator-2"
+        },
+        {
+          "@id": "#creator-3"
+        },
+        {
+          "@id": "#creator-4"
+        },
+        {
+          "@id": "#creator-5"
+        },
+        {
+          "@id": "#creator-6"
+        },
+        {
+          "@id": "#creator-7"
+        },
+        {
+          "@id": "#creator-8"
+        },
+        {
+          "@id": "#creator-9"
+        },
+        {
+          "@id": "#creator-10"
+        },
+        {
+          "@id": "#creator-11"
+        },
+        {
+          "@id": "#creator-12"
+        },
+        {
+          "@id": "#creator-13"
+        },
+        {
+          "@id": "#creator-14"
+        },
+        {
+          "@id": "#creator-15"
+        },
+        {
+          "@id": "#creator-16"
+        },
+        {
+          "@id": "#creator-17"
+        }
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://workflowhub.eu/workflows/361?version=1",
+      "url": "https://workflowhub.eu/workflows/361/ro_crate?version=1",
+      "name": "Research Object Crate for MGnify - amplicon analysis pipeline",
+      "description": "MGnify (http://www.ebi.ac.uk/metagenomics) provides a free to use platform for the assembly, analysis and archiving of microbiome data derived from sequencing microbial populations that are present in particular environments. Over the past 2 years, MGnify (formerly EBI Metagenomics) has more than doubled the number of publicly available analysed datasets held within the resource. Recently, an updated approach to data analysis has been unveiled (version 5.0), replacing the previous single pipeline with multiple analysis pipelines that are tailored according to the input data, and that are formally described using the Common Workflow Language, enabling greater provenance, reusability, and reproducibility. MGnify's new analysis pipelines offer additional approaches for taxonomic assertions based on ribosomal internal transcribed spacer regions (ITS1/2) and expanded protein functional annotations. Biochemical pathways and systems predictions have also been added for assembled contigs. MGnify's growing focus on the assembly of metagenomic data has also seen the number of datasets it has assembled and analysed increase six-fold. The non-redundant protein database constructed from the proteins encoded by these assemblies now exceeds 1 billion sequences. Meanwhile, a newly developed contig viewer provides fine-grained visualisation of the assembled contigs and their enriched annotations.\n\nDocumentation: https://docs.mgnify.org/en/latest/analysis.html#amplicon-analysis-pipeline\n",
+      "isBasedOn": "https://github.com/EBI-Metagenomics/pipeline-v5.git",
+      "sdDatePublished": "2026-03-24 01:13:17 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "workflows/amplicon-wf--v.5-cond.cwl"
+        },
+        {
+          "@id": "workflow-361-981aafc0df341a2536ed5059695bb7c33af4d3ee-diagram.svg"
+        }
+      ]
+    },
+    {
+      "@id": "workflows/amplicon-wf--v.5-cond.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 4228,
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "image": {
+        "@id": "workflow-361-981aafc0df341a2536ed5059695bb7c33af4d3ee-diagram.svg"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "MGnify (http://www.ebi.ac.uk/metagenomics) provides a free to use platform for the assembly, analysis and archiving of microbiome data derived from sequencing microbial populations that are present in particular environments. Over the past 2 years, MGnify (formerly EBI Metagenomics) has more than doubled the number of publicly available analysed datasets held within the resource. Recently, an updated approach to data analysis has been unveiled (version 5.0), replacing the previous single pipeline with multiple analysis pipelines that are tailored according to the input data, and that are formally described using the Common Workflow Language, enabling greater provenance, reusability, and reproducibility. MGnify's new analysis pipelines offer additional approaches for taxonomic assertions based on ribosomal internal transcribed spacer regions (ITS1/2) and expanded protein functional annotations. Biochemical pathways and systems predictions have also been added for assembled contigs. MGnify's growing focus on the assembly of metagenomic data has also seen the number of datasets it has assembled and analysed increase six-fold. The non-redundant protein database constructed from the proteins encoded by these assemblies now exceeds 1 billion sequences. Meanwhile, a newly developed contig viewer provides fine-grained visualisation of the assembled contigs and their enriched annotations.\n\nDocumentation: https://docs.mgnify.org/en/latest/analysis.html#amplicon-analysis-pipeline\n",
+      "name": "MGnify - amplicon analysis pipeline",
+      "url": "https://workflowhub.eu/workflows/361?version=1",
+      "keywords": "CWL, Metagenomics, rna, workflow",
+      "version": 1,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "creator": [
+        {
+          "@id": "#Alex%20L%20Mitchell"
+        },
+        {
+          "@id": "#Alexandre%20Almeida"
+        },
+        {
+          "@id": "#Martin%20Beracochea"
+        },
+        {
+          "@id": "#Miguel%20Boland"
+        },
+        {
+          "@id": "#Josephine%20Burgin"
+        },
+        {
+          "@id": "#Guy%20Cochrane"
+        },
+        {
+          "@id": "#Michael%20R%20Crusoe"
+        },
+        {
+          "@id": "#Varsha%20Kale"
+        },
+        {
+          "@id": "#Simon%20C%20Potter"
+        },
+        {
+          "@id": "#Lorna%20J%20Richardson"
+        },
+        {
+          "@id": "#Ekaterina%20Sakharova"
+        },
+        {
+          "@id": "#Maxim%20Scheremetjew"
+        },
+        {
+          "@id": "#Anton%20Korobeynikov"
+        },
+        {
+          "@id": "#Alex%20Shlemov"
+        },
+        {
+          "@id": "#Olga%20Kunyavskaya"
+        },
+        {
+          "@id": "#Alla%20Lapidus"
+        },
+        {
+          "@id": "#Robert%20D%20Finn"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/9"
+      },
+      "dateCreated": "2022-06-07T08:28:11Z",
+      "dateModified": "2023-01-16T14:01:07Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#mgnify___amplicon_analysis_pipeline-inputs-single_reads"
+        },
+        {
+          "@id": "#mgnify___amplicon_analysis_pipeline-inputs-forward_reads"
+        },
+        {
+          "@id": "#mgnify___amplicon_analysis_pipeline-inputs-reverse_reads"
+        },
+        {
+          "@id": "#mgnify___amplicon_analysis_pipeline-inputs-qc_min_length"
+        },
+        {
+          "@id": "#mgnify___amplicon_analysis_pipeline-inputs-stats_file_name"
+        },
+        {
+          "@id": "#mgnify___amplicon_analysis_pipeline-inputs-ssu_db"
+        },
+        {
+          "@id": "#mgnify___amplicon_analysis_pipeline-inputs-lsu_db"
+        },
+        {
+          "@id": "#mgnify___amplicon_analysis_pipeline-inputs-ssu_tax"
+        },
+        {
+          "@id": "#mgnify___amplicon_analysis_pipeline-inputs-lsu_tax"
+        },
+        {
+          "@id": "#mgnify___amplicon_analysis_pipeline-inputs-ssu_otus"
+        },
+        {
+          "@id": "#mgnify___amplicon_analysis_pipeline-inputs-lsu_otus"
+        },
+        {
+          "@id": "#mgnify___amplicon_analysis_pipeline-inputs-rfam_models"
+        },
+        {
+          "@id": "#mgnify___amplicon_analysis_pipeline-inputs-rfam_model_clans"
+        },
+        {
+          "@id": "#mgnify___amplicon_analysis_pipeline-inputs-ssu_label"
+        },
+        {
+          "@id": "#mgnify___amplicon_analysis_pipeline-inputs-lsu_label"
+        },
+        {
+          "@id": "#mgnify___amplicon_analysis_pipeline-inputs-5s_pattern"
+        },
+        {
+          "@id": "#mgnify___amplicon_analysis_pipeline-inputs-5.8s_pattern"
+        },
+        {
+          "@id": "#mgnify___amplicon_analysis_pipeline-inputs-unite_db"
+        },
+        {
+          "@id": "#mgnify___amplicon_analysis_pipeline-inputs-unite_tax"
+        },
+        {
+          "@id": "#mgnify___amplicon_analysis_pipeline-inputs-unite_otu_file"
+        },
+        {
+          "@id": "#mgnify___amplicon_analysis_pipeline-inputs-unite_label"
+        },
+        {
+          "@id": "#mgnify___amplicon_analysis_pipeline-inputs-itsonedb"
+        },
+        {
+          "@id": "#mgnify___amplicon_analysis_pipeline-inputs-itsonedb_tax"
+        },
+        {
+          "@id": "#mgnify___amplicon_analysis_pipeline-inputs-itsonedb_otu_file"
+        },
+        {
+          "@id": "#mgnify___amplicon_analysis_pipeline-inputs-itsonedb_label"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#mgnify___amplicon_analysis_pipeline-outputs-qc-statistics"
+        },
+        {
+          "@id": "#mgnify___amplicon_analysis_pipeline-outputs-qc_summary"
+        },
+        {
+          "@id": "#mgnify___amplicon_analysis_pipeline-outputs-qc-status"
+        },
+        {
+          "@id": "#mgnify___amplicon_analysis_pipeline-outputs-hashsum_paired"
+        },
+        {
+          "@id": "#mgnify___amplicon_analysis_pipeline-outputs-hashsum_single"
+        },
+        {
+          "@id": "#mgnify___amplicon_analysis_pipeline-outputs-fastp_filtering_json_report"
+        },
+        {
+          "@id": "#mgnify___amplicon_analysis_pipeline-outputs-gz_files"
+        },
+        {
+          "@id": "#mgnify___amplicon_analysis_pipeline-outputs-sequence-categorisation_folder"
+        },
+        {
+          "@id": "#mgnify___amplicon_analysis_pipeline-outputs-taxonomy-summary_folder"
+        },
+        {
+          "@id": "#mgnify___amplicon_analysis_pipeline-outputs-rna-count"
+        },
+        {
+          "@id": "#mgnify___amplicon_analysis_pipeline-outputs-ITS-length"
+        },
+        {
+          "@id": "#mgnify___amplicon_analysis_pipeline-outputs-suppressed_upload"
+        },
+        {
+          "@id": "#mgnify___amplicon_analysis_pipeline-outputs-completed_flag_file"
+        },
+        {
+          "@id": "#mgnify___amplicon_analysis_pipeline-outputs-no_tax_flag_file"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "workflow-361-981aafc0df341a2536ed5059695bb7c33af4d3ee-diagram.svg",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 37548
+    },
+    {
+      "@id": "#creator-1",
+      "@type": "Person",
+      "name": "Alex L Mitchell"
+    },
+    {
+      "@id": "#creator-2",
+      "@type": "Person",
+      "name": "Alexandre Almeida"
+    },
+    {
+      "@id": "#creator-3",
+      "@type": "Person",
+      "name": "Martin Beracochea"
+    },
+    {
+      "@id": "#creator-4",
+      "@type": "Person",
+      "name": "Miguel Boland"
+    },
+    {
+      "@id": "#creator-5",
+      "@type": "Person",
+      "name": "Josephine Burgin"
+    },
+    {
+      "@id": "#creator-6",
+      "@type": "Person",
+      "name": "Guy Cochrane"
+    },
+    {
+      "@id": "#creator-7",
+      "@type": "Person",
+      "name": "Michael R Crusoe"
+    },
+    {
+      "@id": "#creator-8",
+      "@type": "Person",
+      "name": "Varsha Kale"
+    },
+    {
+      "@id": "#creator-9",
+      "@type": "Person",
+      "name": "Simon C Potter"
+    },
+    {
+      "@id": "#creator-10",
+      "@type": "Person",
+      "name": "Lorna J Richardson"
+    },
+    {
+      "@id": "#creator-11",
+      "@type": "Person",
+      "name": "Ekaterina Sakharova"
+    },
+    {
+      "@id": "#creator-12",
+      "@type": "Person",
+      "name": "Maxim Scheremetjew"
+    },
+    {
+      "@id": "#creator-13",
+      "@type": "Person",
+      "name": "Anton Korobeynikov"
+    },
+    {
+      "@id": "#creator-14",
+      "@type": "Person",
+      "name": "Alex Shlemov"
+    },
+    {
+      "@id": "#creator-15",
+      "@type": "Person",
+      "name": "Olga Kunyavskaya"
+    },
+    {
+      "@id": "#creator-16",
+      "@type": "Person",
+      "name": "Alla Lapidus"
+    },
+    {
+      "@id": "#creator-17",
+      "@type": "Person",
+      "name": "Robert D Finn"
+    },
+    {
+      "@id": "#Alex L Mitchell",
+      "@type": "Person",
+      "name": "Alex L Mitchell"
+    },
+    {
+      "@id": "#Alexandre Almeida",
+      "@type": "Person",
+      "name": "Alexandre Almeida"
+    },
+    {
+      "@id": "#Martin Beracochea",
+      "@type": "Person",
+      "name": "Martin Beracochea"
+    },
+    {
+      "@id": "#Miguel Boland",
+      "@type": "Person",
+      "name": "Miguel Boland"
+    },
+    {
+      "@id": "#Josephine Burgin",
+      "@type": "Person",
+      "name": "Josephine Burgin"
+    },
+    {
+      "@id": "#Guy Cochrane",
+      "@type": "Person",
+      "name": "Guy Cochrane"
+    },
+    {
+      "@id": "#Michael R Crusoe",
+      "@type": "Person",
+      "name": "Michael R Crusoe"
+    },
+    {
+      "@id": "#Varsha Kale",
+      "@type": "Person",
+      "name": "Varsha Kale"
+    },
+    {
+      "@id": "#Simon C Potter",
+      "@type": "Person",
+      "name": "Simon C Potter"
+    },
+    {
+      "@id": "#Lorna J Richardson",
+      "@type": "Person",
+      "name": "Lorna J Richardson"
+    },
+    {
+      "@id": "#Ekaterina Sakharova",
+      "@type": "Person",
+      "name": "Ekaterina Sakharova"
+    },
+    {
+      "@id": "#Maxim Scheremetjew",
+      "@type": "Person",
+      "name": "Maxim Scheremetjew"
+    },
+    {
+      "@id": "#Anton Korobeynikov",
+      "@type": "Person",
+      "name": "Anton Korobeynikov"
+    },
+    {
+      "@id": "#Alex Shlemov",
+      "@type": "Person",
+      "name": "Alex Shlemov"
+    },
+    {
+      "@id": "#Olga Kunyavskaya",
+      "@type": "Person",
+      "name": "Olga Kunyavskaya"
+    },
+    {
+      "@id": "#Alla Lapidus",
+      "@type": "Person",
+      "name": "Alla Lapidus"
+    },
+    {
+      "@id": "#Robert D Finn",
+      "@type": "Person",
+      "name": "Robert D Finn"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/9",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "MGnify"
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#mgnify___amplicon_analysis_pipeline-inputs-single_reads",
+      "@type": "FormalParameter",
+      "name": "single_reads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___amplicon_analysis_pipeline-inputs-forward_reads",
+      "@type": "FormalParameter",
+      "name": "forward_reads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___amplicon_analysis_pipeline-inputs-reverse_reads",
+      "@type": "FormalParameter",
+      "name": "reverse_reads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___amplicon_analysis_pipeline-inputs-qc_min_length",
+      "@type": "FormalParameter",
+      "name": "qc_min_length",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___amplicon_analysis_pipeline-inputs-stats_file_name",
+      "@type": "FormalParameter",
+      "name": "stats_file_name",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___amplicon_analysis_pipeline-inputs-ssu_db",
+      "@type": "FormalParameter",
+      "name": "ssu_db",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___amplicon_analysis_pipeline-inputs-lsu_db",
+      "@type": "FormalParameter",
+      "name": "lsu_db",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___amplicon_analysis_pipeline-inputs-ssu_tax",
+      "@type": "FormalParameter",
+      "name": "ssu_tax",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___amplicon_analysis_pipeline-inputs-lsu_tax",
+      "@type": "FormalParameter",
+      "name": "lsu_tax",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___amplicon_analysis_pipeline-inputs-ssu_otus",
+      "@type": "FormalParameter",
+      "name": "ssu_otus",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___amplicon_analysis_pipeline-inputs-lsu_otus",
+      "@type": "FormalParameter",
+      "name": "lsu_otus",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___amplicon_analysis_pipeline-inputs-rfam_models",
+      "@type": "FormalParameter",
+      "name": "rfam_models",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___amplicon_analysis_pipeline-inputs-rfam_model_clans",
+      "@type": "FormalParameter",
+      "name": "rfam_model_clans",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___amplicon_analysis_pipeline-inputs-ssu_label",
+      "@type": "FormalParameter",
+      "name": "ssu_label",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___amplicon_analysis_pipeline-inputs-lsu_label",
+      "@type": "FormalParameter",
+      "name": "lsu_label",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___amplicon_analysis_pipeline-inputs-5s_pattern",
+      "@type": "FormalParameter",
+      "name": "5s_pattern",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___amplicon_analysis_pipeline-inputs-5.8s_pattern",
+      "@type": "FormalParameter",
+      "name": "5.8s_pattern",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___amplicon_analysis_pipeline-inputs-unite_db",
+      "@type": "FormalParameter",
+      "name": "unite_db",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___amplicon_analysis_pipeline-inputs-unite_tax",
+      "@type": "FormalParameter",
+      "name": "unite_tax",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___amplicon_analysis_pipeline-inputs-unite_otu_file",
+      "@type": "FormalParameter",
+      "name": "unite_otu_file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___amplicon_analysis_pipeline-inputs-unite_label",
+      "@type": "FormalParameter",
+      "name": "unite_label",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___amplicon_analysis_pipeline-inputs-itsonedb",
+      "@type": "FormalParameter",
+      "name": "itsonedb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___amplicon_analysis_pipeline-inputs-itsonedb_tax",
+      "@type": "FormalParameter",
+      "name": "itsonedb_tax",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___amplicon_analysis_pipeline-inputs-itsonedb_otu_file",
+      "@type": "FormalParameter",
+      "name": "itsonedb_otu_file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___amplicon_analysis_pipeline-inputs-itsonedb_label",
+      "@type": "FormalParameter",
+      "name": "itsonedb_label",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___amplicon_analysis_pipeline-outputs-qc-statistics",
+      "@type": "FormalParameter",
+      "name": "qc-statistics",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___amplicon_analysis_pipeline-outputs-qc_summary",
+      "@type": "FormalParameter",
+      "name": "qc_summary",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___amplicon_analysis_pipeline-outputs-qc-status",
+      "@type": "FormalParameter",
+      "name": "qc-status",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___amplicon_analysis_pipeline-outputs-hashsum_paired",
+      "@type": "FormalParameter",
+      "name": "hashsum_paired",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___amplicon_analysis_pipeline-outputs-hashsum_single",
+      "@type": "FormalParameter",
+      "name": "hashsum_single",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___amplicon_analysis_pipeline-outputs-fastp_filtering_json_report",
+      "@type": "FormalParameter",
+      "name": "fastp_filtering_json_report",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___amplicon_analysis_pipeline-outputs-gz_files",
+      "@type": "FormalParameter",
+      "name": "gz_files",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___amplicon_analysis_pipeline-outputs-sequence-categorisation_folder",
+      "@type": "FormalParameter",
+      "name": "sequence-categorisation_folder",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___amplicon_analysis_pipeline-outputs-taxonomy-summary_folder",
+      "@type": "FormalParameter",
+      "name": "taxonomy-summary_folder",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___amplicon_analysis_pipeline-outputs-rna-count",
+      "@type": "FormalParameter",
+      "name": "rna-count",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___amplicon_analysis_pipeline-outputs-ITS-length",
+      "@type": "FormalParameter",
+      "name": "ITS-length",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___amplicon_analysis_pipeline-outputs-suppressed_upload",
+      "@type": "FormalParameter",
+      "name": "suppressed_upload",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___amplicon_analysis_pipeline-outputs-completed_flag_file",
+      "@type": "FormalParameter",
+      "name": "completed_flag_file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___amplicon_analysis_pipeline-outputs-no_tax_flag_file",
+      "@type": "FormalParameter",
+      "name": "no_tax_flag_file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

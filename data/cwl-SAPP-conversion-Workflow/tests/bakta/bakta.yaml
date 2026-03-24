@@ -1,0 +1,21 @@
+cwl:tool: ../../tools/bakta/bakta.cwl
+fasta_file:
+  class: File
+  location: http://download.systemsbiology.nl/unlock/cwl/test_data/sapp/GCA_001095185.1.fasta
+db:
+  class: Directory
+  location: /Volumes/Git/m-unlock/cwl/tests/bakta/db-light
+skip_trna: false
+skip_tmrna: false
+skip_rrna: false
+skip_ncrna: false
+skip_ncrna-region: false
+skip_crispr: false
+skip_cds: false
+skip_pseudo: true 
+skip_sorf: true
+skip_gap: true
+skip_ori: true
+skip_plot: true
+verbose: true
+debug: true

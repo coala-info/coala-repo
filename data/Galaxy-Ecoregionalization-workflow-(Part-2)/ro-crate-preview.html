@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Ecoregionalization workflow (Part 2)</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Ecoregionalization_workflow_Part_2.ga"
+      },
+      "datePublished": "2024-11-18 14:19:23 +0000",
+      "author": [
+        {
+          "@id": "https://orcid.org/0009-0009-5969-8478"
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.1209.1",
+      "url": "https://workflowhub.eu/workflows/1209/ro_crate?version=1",
+      "name": "Research Object Crate for Ecoregionalization workflow (Part 2)",
+      "description": "Second part of the ecoregionalization\n\nThis workflow allows you to create an ecoregionalization map from occurrences and environmental data using a boosted regression trees model for predictions.\n\nThe workflow is intended for processing occurrence data, which should include latitude, longitude and species presence or absence. You can use example test data available with the workflow, highlighting a use case centered on the Dumont d'Urville sea region and benthic invertebrates. The primary goal of this workflow is to generate species distribution maps and identify ecoregions within the study area. The project's objective is to offer accessible, reproducible, and transparent IT solutions for processing and analyzing species occurrence data.\n\nThis workflow is linked to the Galaxy training ecoregionalization tutorial. (https://ecology.usegalaxy.eu/training-material/topics/ecology/tutorials/Ecoregionalization_tutorial/tutorial.html)\n\nFor practical use the ecoregionalization workflow is split in two worklows and this is the second part. You can find the first part here : https://workflowhub.eu/workflows/1208?version=1",
+      "sdDatePublished": "2026-03-24 17:39:41 +0000",
+      "hasPart": [
+        {
+          "@id": "Ecoregionalization_workflow_Part_2.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Ecoregionalization_workflow_Part_2.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 7529,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Second part of the ecoregionalization\n\nThis workflow allows you to create an ecoregionalization map from occurrences and environmental data using a boosted regression trees model for predictions.\n\nThe workflow is intended for processing occurrence data, which should include latitude, longitude and species presence or absence. You can use example test data available with the workflow, highlighting a use case centered on the Dumont d'Urville sea region and benthic invertebrates. The primary goal of this workflow is to generate species distribution maps and identify ecoregions within the study area. The project's objective is to offer accessible, reproducible, and transparent IT solutions for processing and analyzing species occurrence data.\n\nThis workflow is linked to the Galaxy training ecoregionalization tutorial. (https://ecology.usegalaxy.eu/training-material/topics/ecology/tutorials/Ecoregionalization_tutorial/tutorial.html)\n\nFor practical use the ecoregionalization workflow is split in two worklows and this is the second part. You can find the first part here : https://workflowhub.eu/workflows/1208?version=1",
+      "name": "Ecoregionalization workflow (Part 2)",
+      "url": "https://workflowhub.eu/workflows/1209?version=1",
+      "keywords": "Ecology, Ecoregionalization, FAIR workflows",
+      "version": 1,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "creator": {
+        "@id": "https://workflowhub.eu/people/860"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/12"
+      },
+      "dateCreated": "2024-11-18T14:23:38Z",
+      "dateModified": "2024-12-09T09:04:56Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.1209.1",
+      "input": [
+        {
+          "@id": "#ecoregionalization_workflow__part_2_-inputs-%23main/Data.bio_table.tabular"
+        },
+        {
+          "@id": "#ecoregionalization_workflow__part_2_-inputs-%23main/Data_to_cluster.tabular"
+        },
+        {
+          "@id": "#ecoregionalization_workflow__part_2_-inputs-%23main/ceamarc_env.tabular"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#ecoregionalization_workflow__part_2_-outputs-%23main/SIH_plot"
+        },
+        {
+          "@id": "#ecoregionalization_workflow__part_2_-outputs-%23main/cluster_info"
+        },
+        {
+          "@id": "#ecoregionalization_workflow__part_2_-outputs-%23main/cluster_points"
+        },
+        {
+          "@id": "#ecoregionalization_workflow__part_2_-outputs-%23main/eco_map"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0009-0009-5969-8478",
+      "@type": "Person",
+      "name": "Pauline Seguineau",
+      "identifier": "https://orcid.org/0009-0009-5969-8478"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/860",
+      "@type": "Person",
+      "name": "Pauline Seguineau"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/12",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Galaxy Training Network"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#ecoregionalization_workflow__part_2_-inputs-#main/Data.bio_table.tabular",
+      "@type": "FormalParameter",
+      "name": "#main/Data.bio_table.tabular",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ecoregionalization_workflow__part_2_-inputs-#main/Data_to_cluster.tabular",
+      "@type": "FormalParameter",
+      "name": "#main/Data_to_cluster.tabular",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ecoregionalization_workflow__part_2_-inputs-#main/ceamarc_env.tabular",
+      "@type": "FormalParameter",
+      "name": "#main/ceamarc_env.tabular",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ecoregionalization_workflow__part_2_-outputs-#main/SIH_plot",
+      "@type": "FormalParameter",
+      "name": "#main/SIH_plot",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ecoregionalization_workflow__part_2_-outputs-#main/cluster_info",
+      "@type": "FormalParameter",
+      "name": "#main/cluster_info",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ecoregionalization_workflow__part_2_-outputs-#main/cluster_points",
+      "@type": "FormalParameter",
+      "name": "#main/cluster_points",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ecoregionalization_workflow__part_2_-outputs-#main/eco_map",
+      "@type": "FormalParameter",
+      "name": "#main/eco_map",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Ecoregionalization workflow (Part 2)</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/1209/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/1209/ro_crate?version=1</a>
+
+
+<p>
+  Second part of the ecoregionalization
+
+This workflow allows you to create an ecoregionalization map from occurrences and environmental data using a boosted regression trees model for predictions.
+
+The workflow is intended for processing occurrence data, which should include latitude, longitude and species presence or absence. You can use example test data available with the workflow, highlighting a use case centered on the Dumont d'Urville sea region and benthic invertebrates. The primary goal of this workflow is to generate species distribution maps and identify ecoregions within the study area. The project's objective is to offer accessible, reproducible, and transparent IT solutions for processing and analyzing species occurrence data.
+
+This workflow is linked to the Galaxy training ecoregionalization tutorial. (https://ecology.usegalaxy.eu/training-material/topics/ecology/tutorials/Ecoregionalization_tutorial/tutorial.html)
+
+For practical use the ecoregionalization workflow is split in two worklows and this is the second part. You can find the first part here : https://workflowhub.eu/workflows/1208?version=1
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://orcid.org/0009-0009-5969-8478" target="_blank">Pauline Seguineau</a></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>CC-BY-4.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Ecoregionalization_workflow_Part_2.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Ecoregionalization_workflow_Part_2.ga">Ecoregionalization workflow (Part 2)</a>
+      
+        <br/>Size: 7529 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

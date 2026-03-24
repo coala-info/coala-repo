@@ -1,0 +1,22 @@
+cwl:tool: ../../workflows/workflow_ngtax.cwl
+for_read_len: 100
+forward_primer: '[AG]GGATTAGATACCC'
+forward_reads: 
+   class: File
+   location: http://download.systemsbiology.nl/unlock/cwl/test_data/amplicon/forward_1000.fastq.gz
+memory: 6000
+minimum_threshold: 0.1
+reference_db: 
+   class: File
+   location: http://download.systemsbiology.nl/unlock/cwl/test_data/amplicon/SILVA_138_SSURef_tax_silva.subset.fasta.gz
+# reference_db_lookup:
+   # class: File
+   # location: /unlock/references/databases/Silva/SILVA_138.1_SSURef_tax_silva.fasta.gz_[AG]GGATTAGATACCC_CGAC[AG][AG]CCATGCA[ACGT]CACCT_100_100_nomismatch_false_v1.3_full.gz
+rev_read_len: 100
+fragment: V3
+reverse_primer: CGAC[AG][AG]CCATGCA[ACGT]CACCT
+reverse_reads: 
+   class: File
+   location: http://download.systemsbiology.nl/unlock/cwl/test_data/amplicon/reverse_1000.fastq.gz
+sample: UNLOCK_NGTAX_TEST
+primersRemoved: true

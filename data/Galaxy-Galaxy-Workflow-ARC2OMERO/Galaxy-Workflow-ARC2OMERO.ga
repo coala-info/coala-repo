@@ -1,0 +1,837 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "This Galaxy workflow allows transferring ARC imaging data stored as .ZIP file to a target OMERO instance by 1) keeping the ARC structure and 2) automatize the metadata annotation of the assay",
+    "comments": [
+        {
+            "color": "lime",
+            "data": {
+                "title": "Data wrangling - Extract correct path from the ZIP ARC file"
+            },
+            "id": 1,
+            "position": [
+                370,
+                210
+            ],
+            "size": [
+                1240,
+                213
+            ],
+            "type": "frame"
+        },
+        {
+            "color": "yellow",
+            "data": {
+                "title": "Metadata Import"
+            },
+            "id": 4,
+            "position": [
+                3190,
+                90
+            ],
+            "size": [
+                740,
+                362
+            ],
+            "type": "frame"
+        },
+        {
+            "color": "red",
+            "data": {
+                "title": "Input User to Target OMERO"
+            },
+            "id": 0,
+            "position": [
+                0,
+                0
+            ],
+            "size": [
+                246,
+                568
+            ],
+            "type": "frame"
+        },
+        {
+            "color": "orange",
+            "data": {
+                "title": "Extract Dataset name from the Assay folder"
+            },
+            "id": 2,
+            "position": [
+                1720,
+                250
+            ],
+            "size": [
+                510,
+                231
+            ],
+            "type": "frame"
+        },
+        {
+            "color": "pink",
+            "data": {
+                "title": "Image Import"
+            },
+            "id": 3,
+            "position": [
+                2340,
+                90
+            ],
+            "size": [
+                740,
+                290
+            ],
+            "type": "frame"
+        }
+    ],
+    "format-version": "0.1",
+    "license": "CC-BY-4.0",
+    "name": "ARC2OMERO",
+    "readme": "# Workflow Overview\nThis Galaxy workflow allows transferring ARC imaging data stored as .ZIP file to a target OMERO instance by 1) keeping the ARC structure and 2) automatize the metadata annotation of the assay.\n\n## How does it works\nThe workflow extract all the **./assays/experiment/dataset/** file path and create an OMERO dataset containing the images. The **\"isa.assay.xlsx\"** file is used to add key-value pairs to the dataset.\n\n## Workflow Inputs\nThe workflow as three different data inputs:\n1) ARC .ZIP file: A zip file with the whole ARC. Can be downloaded from the DataPLANT ARC repo\n2) Image File Extension: Image formats (e.g. TIFF, PNG, JPEG) to upload into OMERO\n2) Target OMERO instance: OMERO instance where to upload the data\n3) Depth of the ARC dataset folder: How depth after **./assays/experiment/dataset/** images are stored. As example if images are **assays/CLSM-stacks_oryzalin/dataset/treated** the depth need to be set to 1. If **assays/CLSM-stacks_oryzalin/dataset** the depth need to be set to 0\n\n## Test Dataset\nhttps://git.nfdi4plants.org/natural-variation-and-evolution/microscopy_collection/map-by-seq_clsm-stacks/-/tree/main?ref_type=heads\n\n",
+    "report": {
+        "markdown": "\n# Workflow Execution Report\n\n## Workflow Inputs\n```galaxy\ninvocation_inputs()\n```\n\n## Workflow Outputs\n```galaxy\ninvocation_outputs()\n```\n\n## Workflow\n```galaxy\nworkflow_display()\n```\n"
+    },
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "OMERO server URL"
+                }
+            ],
+            "label": "OMERO server URL",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 20,
+                "top": 40
+            },
+            "tool_id": null,
+            "tool_state": "{\"multiple\": false, \"validators\": [], \"parameter_type\": \"text\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "07069d33-dadd-496d-bdc3-eefb823ec092",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "Image format of the image to import into OMERO",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "Image format of the image to import into OMERO",
+                    "name": "Image File Extension"
+                }
+            ],
+            "label": "Image File Extension",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 20,
+                "top": 150
+            },
+            "tool_id": null,
+            "tool_state": "{\"multiple\": false, \"validators\": [], \"restrictions\": [\".tiff\", \".tif\", \".ome.tiff\", \".jpg\", \".png\", \".lif\"], \"parameter_type\": \"text\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "54741af2-8ff0-4f44-96f8-179510ca1986",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "Input here the .zip file from the ARC repository.",
+            "content_id": null,
+            "errors": null,
+            "id": 2,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "Input here the .zip file from the ARC repository.",
+                    "name": "Input ARC .zip file"
+                }
+            ],
+            "label": "Input ARC .zip file",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 20,
+                "top": 260
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "2b52f968-6430-4fce-b9d1-fe223994d0d2",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 3,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Deepth of the folder under \"dataset\" where the image are stored"
+                }
+            ],
+            "label": "Deepth of the folder under \"dataset\" where the image are stored",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 21.942980943846024,
+                "top": 426.18922533718535
+            },
+            "tool_id": null,
+            "tool_state": "{\"default\": \"0\", \"multiple\": false, \"validators\": [{\"message\": \"Please, insert just numbers and not text\", \"expression\": \"^\\\\d+$\", \"negate\": false, \"type\": \"regex\"}], \"parameter_type\": \"text\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "d723dca1-58ea-4964-b168-cd5f7536233d",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/imgteam/unzip/unzip/6.0+galaxy2",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "input_file": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Unzip",
+            "outputs": [
+                {
+                    "name": "unzipped",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 390,
+                "top": 260
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionunzipped": {
+                    "action_arguments": {
+                        "newtype": "xlsx"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "unzipped"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/imgteam/unzip/unzip/6.0+galaxy2",
+            "tool_shed_repository": {
+                "changeset_revision": "06eac2d1a8a9",
+                "name": "unzip",
+                "owner": "imgteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"extract_options\": {\"target\": \"all_regex\", \"__current_case__\": 2, \"keep_regex\": \".*/assays/.*/isa.assay.xlsx\"}, \"input_file\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "6.0+galaxy2",
+            "type": "tool",
+            "uuid": "c607b946-7e6b-4416-9d5c-61437be64574",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "5": {
+            "annotation": "Extract the metadata from the assay",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ufz/xlsx2tsv/xlsx2tsv/0.1.0+galaxy0",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "input_file": {
+                    "id": 4,
+                    "output_name": "unzipped"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Excel to Tabular",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 640,
+                "top": 260
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ufz/xlsx2tsv/xlsx2tsv/0.1.0+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "a21347be425d",
+                "name": "xlsx2tsv",
+                "owner": "ufz",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"input_file\": {\"__class__\": \"ConnectedValue\"}, \"sheet_names\": \"Assay\", \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "0.1.0+galaxy0",
+            "type": "tool",
+            "uuid": "2be5fd84-6269-41ba-8142-998e66ff83e5",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "6": {
+            "annotation": "",
+            "content_id": "Grep1",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "input": {
+                    "id": 5,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Select",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 890,
+                "top": 260
+            },
+            "post_job_actions": {},
+            "tool_id": "Grep1",
+            "tool_state": "{\"input\": {\"__class__\": \"ConnectedValue\"}, \"invert\": \"\", \"keep_header\": false, \"pattern\": \"File Name\", \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "1.0.4",
+            "type": "tool",
+            "uuid": "9899cb48-ca01-4d7f-9cea-93405ade6c07",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "7": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/filter_tabular/filter_tabular/3.3.1",
+            "errors": null,
+            "id": 7,
+            "input_connections": {
+                "input": {
+                    "id": 5,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Filter Tabular",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 3210,
+                "top": 330
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/filter_tabular/filter_tabular/3.3.1",
+            "tool_shed_repository": {
+                "changeset_revision": "90f657745fea",
+                "name": "filter_tabular",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"comment_char\": true, \"input\": {\"__class__\": \"ConnectedValue\"}, \"linefilters\": [{\"__index__\": 0, \"filter\": {\"filter_type\": \"regex\", \"__current_case__\": 8, \"regex_pattern\": \"ASSAY\", \"regex_action\": \"exclude_find\"}}], \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "3.3.1",
+            "type": "tool",
+            "uuid": "8a74b8b6-8995-4f91-9853-27bd4a658ff7",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "8": {
+            "annotation": "",
+            "content_id": "Cut1",
+            "errors": null,
+            "id": 8,
+            "input_connections": {
+                "input": {
+                    "id": 6,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Cut",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 1140,
+                "top": 260
+            },
+            "post_job_actions": {},
+            "tool_id": "Cut1",
+            "tool_state": "{\"columnList\": \"c2\", \"delimiter\": \"T\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "1.0.2",
+            "type": "tool",
+            "uuid": "a41e7c59-8449-45e9-8f6e-3dd9c12b171d",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "9": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/datamash_transpose/datamash_transpose/1.9+galaxy0",
+            "errors": null,
+            "id": 9,
+            "input_connections": {
+                "in_file": {
+                    "id": 7,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Transpose",
+            "outputs": [
+                {
+                    "name": "out_file",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 3460,
+                "top": 330
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/datamash_transpose/datamash_transpose/1.9+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "a2667f8d23de",
+                "name": "datamash_transpose",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"in_file\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "1.9+galaxy0",
+            "type": "tool",
+            "uuid": "7e3fbb49-ef9c-4e40-93db-c1794a055b30",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "10": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/9.5+galaxy3",
+            "errors": null,
+            "id": 10,
+            "input_connections": {
+                "infile": {
+                    "id": 8,
+                    "output_name": "out_file1"
+                },
+                "variables_0|value": {
+                    "id": 1,
+                    "output_name": "output"
+                },
+                "variables_1|value": {
+                    "id": 3,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Text reformatting",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 1390,
+                "top": 260
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/9.5+galaxy3",
+            "tool_shed_repository": {
+                "changeset_revision": "ab83aa685821",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"code\": \"awk 'XNR==1 {print; next} {split($0, parts, \\\"/\\\"); assay_name = parts[1]; path = \\\"./.*/assays/\\\" assay_name \\\"/dataset/\\\"; for (i = 0; i < VAR2; i++) {path = path \\\".*/\\\"} path = path \\\"*\\\" VAR1; print path}' \", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"variables\": [{\"__index__\": 0, \"value\": {\"__class__\": \"ConnectedValue\"}}, {\"__index__\": 1, \"value\": {\"__class__\": \"ConnectedValue\"}}], \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "9.5+galaxy3",
+            "type": "tool",
+            "uuid": "ac0a91c9-5c25-40f4-979e-d128ed3ab04a",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "11": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regexColumn1/1.0.3",
+            "errors": null,
+            "id": 11,
+            "input_connections": {
+                "input": {
+                    "id": 8,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Column Regex Find And Replace",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 1740,
+                "top": 290
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regexColumn1/1.0.3",
+            "tool_shed_repository": {
+                "changeset_revision": "503bcd6ebe4b",
+                "name": "regex_find_replace",
+                "owner": "galaxyp",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"checks\": [{\"__index__\": 0, \"pattern\": \"/isa.assay.xlsx\", \"replacement\": \"\"}], \"field\": \"1\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "1.0.3",
+            "type": "tool",
+            "uuid": "c83ed8ec-a6fc-454c-9d16-aed09a2e17d6",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "12": {
+            "annotation": "",
+            "content_id": "param_value_from_file",
+            "errors": null,
+            "id": 12,
+            "input_connections": {
+                "input1": {
+                    "id": 10,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Parse parameter value",
+            "outputs": [
+                {
+                    "name": "text_param",
+                    "type": "expression.json"
+                }
+            ],
+            "position": {
+                "left": 2360,
+                "top": 170
+            },
+            "post_job_actions": {},
+            "tool_id": "param_value_from_file",
+            "tool_state": "{\"input1\": {\"__class__\": \"ConnectedValue\"}, \"param_type\": \"text\", \"remove_newlines\": true, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "0.1.0",
+            "type": "tool",
+            "uuid": "9de38b39-ddca-4072-af52-b70dd4778cf2",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "13": {
+            "annotation": "",
+            "content_id": "param_value_from_file",
+            "errors": null,
+            "id": 13,
+            "input_connections": {
+                "input1": {
+                    "id": 11,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Parse parameter value",
+            "outputs": [
+                {
+                    "name": "text_param",
+                    "type": "expression.json"
+                }
+            ],
+            "position": {
+                "left": 1990,
+                "top": 290
+            },
+            "post_job_actions": {},
+            "tool_id": "param_value_from_file",
+            "tool_state": "{\"input1\": {\"__class__\": \"ConnectedValue\"}, \"param_type\": \"text\", \"remove_newlines\": true, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "0.1.0",
+            "type": "tool",
+            "uuid": "ab2107e1-c56e-4782-aaf7-907debb75bdc",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "14": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/imgteam/unzip/unzip/6.0+galaxy2",
+            "errors": null,
+            "id": 14,
+            "input_connections": {
+                "extract_options|keep_regex": {
+                    "id": 12,
+                    "output_name": "text_param"
+                },
+                "input_file": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Unzip",
+                    "name": "extract_options"
+                }
+            ],
+            "label": null,
+            "name": "Unzip",
+            "outputs": [
+                {
+                    "name": "unzipped",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 2610,
+                "top": 150
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/imgteam/unzip/unzip/6.0+galaxy2",
+            "tool_shed_repository": {
+                "changeset_revision": "06eac2d1a8a9",
+                "name": "unzip",
+                "owner": "imgteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"extract_options\": {\"target\": \"all_regex\", \"__current_case__\": 2, \"keep_regex\": {\"__class__\": \"ConnectedValue\"}}, \"input_file\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "6.0+galaxy2",
+            "type": "tool",
+            "uuid": "2c977672-f12a-4162-a82c-65a5ceb6db5b",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "15": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ufz/omero_import/omero_import/5.18.0+galaxy6",
+            "errors": null,
+            "id": 15,
+            "input_connections": {
+                "dataset_name": {
+                    "id": 13,
+                    "output_name": "text_param"
+                },
+                "folder": {
+                    "id": 14,
+                    "output_name": "unzipped"
+                },
+                "omero_host": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "OMERO Image Import",
+            "outputs": [
+                {
+                    "name": "log",
+                    "type": "txt"
+                },
+                {
+                    "name": "log2",
+                    "type": "json"
+                }
+            ],
+            "position": {
+                "left": 2860,
+                "top": 130
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ufz/omero_import/omero_import/5.18.0+galaxy6",
+            "tool_shed_repository": {
+                "changeset_revision": "a62f0b725508",
+                "name": "omero_import",
+                "owner": "ufz",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"dataset_name\": {\"__class__\": \"ConnectedValue\"}, \"folder\": {\"__class__\": \"ConnectedValue\"}, \"omero_host\": {\"__class__\": \"ConnectedValue\"}, \"omero_port\": \"4064\", \"session_id\": {\"session_id_input\": \"no\", \"__current_case__\": 1}, \"test_password\": \"\", \"test_username\": \"\", \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "5.18.0+galaxy6",
+            "type": "tool",
+            "uuid": "b841a7b8-ca4b-4009-9312-ae9bbbfa831a",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "16": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/jq/jq/1.0",
+            "errors": null,
+            "id": 16,
+            "input_connections": {
+                "input": {
+                    "id": 15,
+                    "output_name": "log2"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "JQ",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "json"
+                }
+            ],
+            "position": {
+                "left": 3210,
+                "top": 150
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/jq/jq/1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "5ff75eb1a893",
+                "name": "jq",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"filter\": \".[0].Id\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"tsv\": false, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "1.0",
+            "type": "tool",
+            "uuid": "4cc30aa1-71fc-4870-802e-d8e17298770a",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "17": {
+            "annotation": "",
+            "content_id": "param_value_from_file",
+            "errors": null,
+            "id": 17,
+            "input_connections": {
+                "input1": {
+                    "id": 16,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Parse parameter value",
+            "outputs": [
+                {
+                    "name": "integer_param",
+                    "type": "expression.json"
+                }
+            ],
+            "position": {
+                "left": 3460,
+                "top": 150
+            },
+            "post_job_actions": {},
+            "tool_id": "param_value_from_file",
+            "tool_state": "{\"input1\": {\"__class__\": \"ConnectedValue\"}, \"param_type\": \"integer\", \"remove_newlines\": true, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "0.1.0",
+            "type": "tool",
+            "uuid": "206f92a2-11dc-45ae-97b3-7a56ca2dc654",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "18": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ufz/omero_metadata_import/omero_metadata_import/5.18.0+galaxy7",
+            "errors": null,
+            "id": 18,
+            "input_connections": {
+                "ann_file": {
+                    "id": 9,
+                    "output_name": "out_file"
+                },
+                "object_id|did": {
+                    "id": 17,
+                    "output_name": "integer_param"
+                },
+                "omero_host": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool OMERO Metadata Import",
+                    "name": "object_id"
+                }
+            ],
+            "label": null,
+            "name": "OMERO Metadata Import",
+            "outputs": [
+                {
+                    "name": "log",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "left": 3710,
+                "top": 130
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ufz/omero_metadata_import/omero_metadata_import/5.18.0+galaxy7",
+            "tool_shed_repository": {
+                "changeset_revision": "eb967ee0ae4f",
+                "name": "omero_metadata_import",
+                "owner": "ufz",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"an_name\": \"ARC-ASSAY\", \"ann_file\": {\"__class__\": \"ConnectedValue\"}, \"ann_type\": \"KV\", \"obj_type\": \"dataset\", \"object_id\": {\"object_id_selection\": \"existing_object\", \"__current_case__\": 1, \"did\": {\"__class__\": \"ConnectedValue\"}}, \"omero_host\": {\"__class__\": \"ConnectedValue\"}, \"omero_port\": \"4064\", \"session_id\": {\"session_id_input\": \"no\", \"__current_case__\": 1}, \"test_password\": \"\", \"test_username\": \"\", \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_uuid": null,
+            "tool_version": "5.18.0+galaxy7",
+            "type": "tool",
+            "uuid": "44aeed20-8ef2-4925-8ee2-600ab7043bd6",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "log",
+                    "output_name": "log",
+                    "uuid": "adbe26f3-38f9-45eb-8535-bb77e8d7d49b"
+                }
+            ]
+        }
+    },
+    "tags": [
+        "NFDI4Bioimage",
+        "OMERO",
+        "RDM",
+        "ARC"
+    ],
+    "uuid": "e360bca6-bd88-480e-be85-67a708afc2c3",
+    "version": 19
+}

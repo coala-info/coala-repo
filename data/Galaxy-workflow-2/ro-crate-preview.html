@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for workflow-2</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-workflow-2.ga"
+      },
+      "datePublished": "2025-07-01 09:20:53 +0100",
+      "author": [
+
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://workflowhub.eu/workflows/1784?version=1",
+      "url": "https://workflowhub.eu/workflows/1784/ro_crate?version=1",
+      "name": "Research Object Crate for workflow-2",
+      "description": "# Domestication of new parts before cloning simulation\nAdd new parts to your sequences before the cloning simulation and interact with the database.\n## steps:\n_input: csv file (without header)_ : The CSV file should contain the constraints line by line in the first column, along with their associated fragments on each line. This data will be passed to the seq_from_DB tool.\n&gt; seq_from_DB\n1. Extract the fragments associated with each constraint from the CSV file.\n2. Check if all fragments are present in the database. If any fragment is missing, an error will be raised --&gt; [workflow-0](https://workflowhub.eu/workflows/1768))\n3. If all fragments are present in the database, GenBank files for each fragment will be generated and passed to the _sculpt_sequences_ tool.\n&gt; sculpt_sequences\n1. Set the constraints for the sculpt.\n2. Generate sculpted and unsculpted sequences and pass all GenBank files to _domestication_of_new_parts_ tool.\n&gt; domestication_of_new_parts\n1. Import new parts from a CSV file.\n2. Perform domestication of the new parts in the sequences, generate reports, and create domesticated GenBank files and pass them to _seq_to_db_ tool.\n&gt; seq_to_db\n1. Domesticated GenBank files can be saved to the database, depending on the user's choice.",
+      "sdDatePublished": "2026-03-24 16:45:46 +0000",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-workflow-2.ga"
+        },
+        {
+          "@id": "Capture%20d%E2%80%99%C3%A9cran%20du%202025-07-01%2010-20-11.png"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-workflow-2.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 22062,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "Capture%20d%E2%80%99%C3%A9cran%20du%202025-07-01%2010-20-11.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "# Domestication of new parts before cloning simulation\nAdd new parts to your sequences before the cloning simulation and interact with the database.\n## steps:\n_input: csv file (without header)_ : The CSV file should contain the constraints line by line in the first column, along with their associated fragments on each line. This data will be passed to the seq_from_DB tool.\n&gt; seq_from_DB\n1. Extract the fragments associated with each constraint from the CSV file.\n2. Check if all fragments are present in the database. If any fragment is missing, an error will be raised --&gt; [workflow-0](https://workflowhub.eu/workflows/1768))\n3. If all fragments are present in the database, GenBank files for each fragment will be generated and passed to the _sculpt_sequences_ tool.\n&gt; sculpt_sequences\n1. Set the constraints for the sculpt.\n2. Generate sculpted and unsculpted sequences and pass all GenBank files to _domestication_of_new_parts_ tool.\n&gt; domestication_of_new_parts\n1. Import new parts from a CSV file.\n2. Perform domestication of the new parts in the sequences, generate reports, and create domesticated GenBank files and pass them to _seq_to_db_ tool.\n&gt; seq_to_db\n1. Domesticated GenBank files can be saved to the database, depending on the user's choice.",
+      "name": "workflow-2",
+      "url": "https://workflowhub.eu/workflows/1784?version=1",
+      "keywords": "",
+      "version": 1,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/355"
+      },
+      "dateCreated": "2025-07-01T08:22:33Z",
+      "dateModified": "2025-07-01T12:09:55Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#workflow_2-inputs-%23main/Assembly%20dataset%20(constructs+fragments)"
+        },
+        {
+          "@id": "#workflow_2-inputs-%23main/DB%20Column%20Contains%20Annotation%20For%20gb%20Files"
+        },
+        {
+          "@id": "#workflow_2-inputs-%23main/DB%20Column%20Contains%20Sequence%20For%20gb%20Files"
+        },
+        {
+          "@id": "#workflow_2-inputs-%23main/DB%20IDs%20Column%20Name"
+        },
+        {
+          "@id": "#workflow_2-inputs-%23main/DB%20Table%20Name"
+        },
+        {
+          "@id": "#workflow_2-inputs-%23main/DB%20URI"
+        },
+        {
+          "@id": "#workflow_2-inputs-%23main/Enable%20Save%20to%20DB"
+        },
+        {
+          "@id": "#workflow_2-inputs-%23main/new%20sequences%20to%20domestication"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#workflow_2-outputs-%23main/GenBank%20Files%20collection"
+        },
+        {
+          "@id": "#workflow_2-outputs-%23main/_anonymous_output_1"
+        },
+        {
+          "@id": "#workflow_2-outputs-%23main/domestication%20results"
+        },
+        {
+          "@id": "#workflow_2-outputs-%23main/saving%20report"
+        },
+        {
+          "@id": "#workflow_2-outputs-%23main/scul%20group"
+        },
+        {
+          "@id": "#workflow_2-outputs-%23main/simulation%20results%20(gb)"
+        },
+        {
+          "@id": "#workflow_2-outputs-%23main/simulation%20results%20(zip)"
+        },
+        {
+          "@id": "#workflow_2-outputs-%23main/unscul+scul%20gb"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "Capture%20d%E2%80%99%C3%A9cran%20du%202025-07-01%2010-20-11.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 176093
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/355",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "DNA Foundry"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#workflow_2-inputs-#main/Assembly dataset (constructs fragments)",
+      "@type": "FormalParameter",
+      "name": "#main/Assembly dataset (constructs+fragments)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_2-inputs-#main/DB Column Contains Annotation For gb Files",
+      "@type": "FormalParameter",
+      "name": "#main/DB Column Contains Annotation For gb Files",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_2-inputs-#main/DB Column Contains Sequence For gb Files",
+      "@type": "FormalParameter",
+      "name": "#main/DB Column Contains Sequence For gb Files",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_2-inputs-#main/DB IDs Column Name",
+      "@type": "FormalParameter",
+      "name": "#main/DB IDs Column Name",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_2-inputs-#main/DB Table Name",
+      "@type": "FormalParameter",
+      "name": "#main/DB Table Name",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_2-inputs-#main/DB URI",
+      "@type": "FormalParameter",
+      "name": "#main/DB URI",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_2-inputs-#main/Enable Save to DB",
+      "@type": "FormalParameter",
+      "name": "#main/Enable Save to DB",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_2-inputs-#main/new sequences to domestication",
+      "@type": "FormalParameter",
+      "name": "#main/new sequences to domestication",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_2-outputs-#main/GenBank Files collection",
+      "@type": "FormalParameter",
+      "name": "#main/GenBank Files collection",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_2-outputs-#main/_anonymous_output_1",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_2-outputs-#main/domestication results",
+      "@type": "FormalParameter",
+      "name": "#main/domestication results",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_2-outputs-#main/saving report",
+      "@type": "FormalParameter",
+      "name": "#main/saving report",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_2-outputs-#main/scul group",
+      "@type": "FormalParameter",
+      "name": "#main/scul group",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_2-outputs-#main/simulation results (gb)",
+      "@type": "FormalParameter",
+      "name": "#main/simulation results (gb)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_2-outputs-#main/simulation results (zip)",
+      "@type": "FormalParameter",
+      "name": "#main/simulation results (zip)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_2-outputs-#main/unscul scul gb",
+      "@type": "FormalParameter",
+      "name": "#main/unscul+scul gb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for workflow-2</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/1784/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/1784/ro_crate?version=1</a>
+
+
+  <img src="Capture d’écran du 2025-07-01 10-20-11.png" style="width: 100%;"/>
+
+<p>
+  # Domestication of new parts before cloning simulation
+Add new parts to your sequences before the cloning simulation and interact with the database.
+## steps:
+_input: csv file (without header)_ : The CSV file should contain the constraints line by line in the first column, along with their associated fragments on each line. This data will be passed to the seq_from_DB tool.
+&gt; seq_from_DB
+1. Extract the fragments associated with each constraint from the CSV file.
+2. Check if all fragments are present in the database. If any fragment is missing, an error will be raised --&gt; [workflow-0](https://workflowhub.eu/workflows/1768))
+3. If all fragments are present in the database, GenBank files for each fragment will be generated and passed to the _sculpt_sequences_ tool.
+&gt; sculpt_sequences
+1. Set the constraints for the sculpt.
+2. Generate sculpted and unsculpted sequences and pass all GenBank files to _domestication_of_new_parts_ tool.
+&gt; domestication_of_new_parts
+1. Import new parts from a CSV file.
+2. Perform domestication of the new parts in the sequences, generate reports, and create domesticated GenBank files and pass them to _seq_to_db_ tool.
+&gt; seq_to_db
+1. Domesticated GenBank files can be saved to the database, depending on the user's choice.
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>CC-BY-4.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-workflow-2.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-workflow-2.ga">workflow-2</a>
+      
+        <br/>Size: 22062 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_Capture%20d%E2%80%99%C3%A9cran%20du%202025-07-01%2010-20-11.png">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="Capture d’écran du 2025-07-01 10-20-11.png">Capture%20d%E2%80%99%C3%A9cran%20du%202025-07-01%2010-20-11.png</a>
+      
+        <br/>Size: 176093 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

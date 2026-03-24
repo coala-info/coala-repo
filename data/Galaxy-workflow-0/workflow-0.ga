@@ -1,0 +1,382 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "Generate annotated gb for fragments and add them to DB",
+    "format-version": "0.1",
+    "name": "workflow-0",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Fragments GenBank"
+                }
+            ],
+            "label": "Fragments GenBank",
+            "name": "Input dataset collection",
+            "outputs": [],
+            "position": {
+                "bottom": 185.1999969482422,
+                "height": 82.19999694824219,
+                "left": 485,
+                "right": 685,
+                "top": 103,
+                "width": 200,
+                "x": 485,
+                "y": 103
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"format\": [\"genbank\"], \"collection_type\": \"list\"}",
+            "tool_version": null,
+            "type": "data_collection_input",
+            "uuid": "b26e58d6-5efe-43bf-aaa7-7a1a95e2d1e0",
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "DB Table Name"
+                }
+            ],
+            "label": "DB Table Name",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "bottom": 560.8000030517578,
+                "height": 61.80000305175781,
+                "left": 758,
+                "right": 958,
+                "top": 499,
+                "width": 200,
+                "x": 758,
+                "y": 499
+            },
+            "tool_id": null,
+            "tool_state": "{\"parameter_type\": \"text\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "709b3dc6-71de-4756-9022-0cb892a47aeb",
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 2,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "DB Column Contains Sequence For gb Files"
+                }
+            ],
+            "label": "DB Column Contains Sequence For gb Files",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "bottom": 672.6000061035156,
+                "height": 102.60000610351562,
+                "left": 758,
+                "right": 958,
+                "top": 570,
+                "width": 200,
+                "x": 758,
+                "y": 570
+            },
+            "tool_id": null,
+            "tool_state": "{\"parameter_type\": \"text\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "47356449-5a3a-45a8-b901-528c577c84db",
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 3,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "DB Column Contains Annotation For gb Files"
+                }
+            ],
+            "label": "DB Column Contains Annotation For gb Files",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "bottom": 780.6000061035156,
+                "height": 102.60000610351562,
+                "left": 760,
+                "right": 960,
+                "top": 678,
+                "width": 200,
+                "x": 760,
+                "y": 678
+            },
+            "tool_id": null,
+            "tool_state": "{\"parameter_type\": \"text\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "3c5ede91-e481-4992-97d8-86752132d1fd",
+            "workflow_outputs": []
+        },
+        "4": {
+            "annotation": "column contains fragments names",
+            "content_id": null,
+            "errors": null,
+            "id": 4,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "column contains fragments names",
+                    "name": "DB IDs Column Name"
+                }
+            ],
+            "label": "DB IDs Column Name",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "bottom": 868.1999969482422,
+                "height": 82.19999694824219,
+                "left": 760,
+                "right": 960,
+                "top": 786,
+                "width": 200,
+                "x": 760,
+                "y": 786
+            },
+            "tool_id": null,
+            "tool_state": "{\"parameter_type\": \"text\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "51a88152-83ee-4767-9b57-5bf187013f76",
+            "workflow_outputs": []
+        },
+        "5": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 5,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "DB URI"
+                }
+            ],
+            "label": "DB URI",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "bottom": 935.8000030517578,
+                "height": 61.80000305175781,
+                "left": 761,
+                "right": 961,
+                "top": 874,
+                "width": 200,
+                "x": 761,
+                "y": 874
+            },
+            "tool_id": null,
+            "tool_state": "{\"parameter_type\": \"text\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "1420e0d2-d335-4f25-b44b-3244b62690a6",
+            "workflow_outputs": []
+        },
+        "6": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 6,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Enable save to DB"
+                }
+            ],
+            "label": "Enable save to DB",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "bottom": 1025.1999969482422,
+                "height": 82.19999694824219,
+                "left": 760,
+                "right": 960,
+                "top": 943,
+                "width": 200,
+                "x": 760,
+                "y": 943
+            },
+            "tool_id": null,
+            "tool_state": "{\"parameter_type\": \"boolean\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "53c27788-3391-4795-9567-37e52844dfe7",
+            "workflow_outputs": []
+        },
+        "7": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/tduigou/evaluate_manufacturability/evaluate_manufacturability/0.1.0+galaxy0",
+            "errors": null,
+            "id": 7,
+            "input_connections": {
+                "genbank_files": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Evaluate Manufacturability",
+            "outputs": [
+                {
+                    "name": "annotated_gb",
+                    "type": "input"
+                },
+                {
+                    "name": "report_pdf",
+                    "type": "pdf"
+                },
+                {
+                    "name": "report_tsv",
+                    "type": "tsv"
+                }
+            ],
+            "position": {
+                "bottom": 467,
+                "height": 256,
+                "left": 752,
+                "right": 952,
+                "top": 211,
+                "width": 200,
+                "x": 752,
+                "y": 211
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/tduigou/evaluate_manufacturability/evaluate_manufacturability/0.1.0+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "4a2c624e19da",
+                "name": "evaluate_manufacturability",
+                "owner": "tduigou",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adv\": {\"rep_avoid_hairpins\": [], \"rep_gc_constraints\": [], \"kmer_size\": \"15\", \"use_file_names_as_ids\": \"true\"}, \"genbank_files\": {\"__class__\": \"ConnectedValue\"}, \"rep_avoid_pattern\": [], \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1.0+galaxy0",
+            "type": "tool",
+            "uuid": "c5d14c26-af2e-4717-a11c-5a21b69c965b",
+            "workflow_outputs": [
+                {
+                    "label": "Evaluate Manufacturability (gb)",
+                    "output_name": "annotated_gb",
+                    "uuid": "57b35242-d83f-458f-9911-5cecd3d3e104"
+                },
+                {
+                    "label": "Manufacturability Report (tsv)",
+                    "output_name": "report_tsv",
+                    "uuid": "cfdb25ad-29ce-4f13-9613-aba368b91a05"
+                },
+                {
+                    "label": "Manufacturability Report (PDF)",
+                    "output_name": "report_pdf",
+                    "uuid": "28009168-ad67-4726-800c-673d75b12539"
+                }
+            ]
+        },
+        "8": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/tduigou/seq_to_db/seq_to_db/0.2.0+galaxy1",
+            "errors": null,
+            "id": 8,
+            "input_connections": {
+                "adv|execution_enable": {
+                    "id": 6,
+                    "output_name": "output"
+                },
+                "annotation_column": {
+                    "id": 3,
+                    "output_name": "output"
+                },
+                "db_uri": {
+                    "id": 5,
+                    "output_name": "output"
+                },
+                "fragment_column": {
+                    "id": 4,
+                    "output_name": "output"
+                },
+                "genbank_files": {
+                    "id": 7,
+                    "output_name": "annotated_gb"
+                },
+                "sequence_column": {
+                    "id": 2,
+                    "output_name": "output"
+                },
+                "table": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Save Sequence Data In DB",
+                    "name": "adv"
+                }
+            ],
+            "label": null,
+            "name": "Save Sequence Data In DB",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 520.6000061035156,
+                "height": 387.6000061035156,
+                "left": 1104,
+                "right": 1304,
+                "top": 133,
+                "width": 200,
+                "x": 1104,
+                "y": 133
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/tduigou/seq_to_db/seq_to_db/0.2.0+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "3daf04425ea1",
+                "name": "seq_to_db",
+                "owner": "tduigou",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adv\": {\"execution_enable\": {\"__class__\": \"ConnectedValue\"}, \"json_conf\": {\"__class__\": \"RuntimeValue\"}}, \"annotation_column\": {\"__class__\": \"ConnectedValue\"}, \"db_uri\": {\"__class__\": \"ConnectedValue\"}, \"fragment_column\": {\"__class__\": \"ConnectedValue\"}, \"genbank_files\": {\"__class__\": \"ConnectedValue\"}, \"sequence_column\": {\"__class__\": \"ConnectedValue\"}, \"table\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.2.0+galaxy1",
+            "type": "tool",
+            "uuid": "05eecf3c-4fe0-4ff6-a2a9-dc9b05caea79",
+            "workflow_outputs": [
+                {
+                    "label": "saving report",
+                    "output_name": "output",
+                    "uuid": "fb190b3d-b94b-40fc-8659-71cea6f816b9"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "e21e6701-b443-4988-bb1a-db79a215b988",
+    "version": 2
+}

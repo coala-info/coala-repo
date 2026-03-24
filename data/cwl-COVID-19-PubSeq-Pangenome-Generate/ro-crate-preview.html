@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for COVID-19 PubSeq Pangenome Generate</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "pangenome-generate.cwl"
+      },
+      "datePublished": "2020-10-07 10:36:13 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0003-3777-5945"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-2961-9670"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-9842-9718"
+        }
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.63.1",
+      "url": "https://workflowhub.eu/workflows/63/ro_crate?version=1",
+      "name": "Research Object Crate for COVID-19 PubSeq Pangenome Generate",
+      "description": "",
+      "isBasedOn": "https://github.com/arvados/bh20-seq-resource",
+      "sdDatePublished": "2026-03-24 01:11:40 +0000",
+      "creativeWorkStatus": "Work-in-progress",
+      "hasPart": [
+        {
+          "@id": "pangenome-generate.cwl"
+        },
+        {
+          "@id": "workflow-63-c89b1838e4c9d86689ce03be964a8503406153e0-diagram.svg"
+        }
+      ]
+    },
+    {
+      "@id": "pangenome-generate.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 3464,
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "image": {
+        "@id": "workflow-63-c89b1838e4c9d86689ce03be964a8503406153e0-diagram.svg"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "",
+      "name": "COVID-19 PubSeq Pangenome Generate",
+      "url": "https://workflowhub.eu/workflows/63?version=1",
+      "keywords": "covid-19, CWL, pangenome",
+      "version": 1,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "creator": [
+        {
+          "@id": "https://orcid.org/0000-0002-8021-9162"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-9744-131X"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-3566-7705"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-3257-9937"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-5828-047X"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-5049-8658"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/263"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-9052-6000"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/70"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/2"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/21"
+      },
+      "dateCreated": "2020-10-07T09:36:13Z",
+      "dateModified": "2023-01-16T13:44:54Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.63.1",
+      "input": [
+        {
+          "@id": "#covid_19_pubseq_pangenome_generate-inputs-inputReads"
+        },
+        {
+          "@id": "#covid_19_pubseq_pangenome_generate-inputs-metadata"
+        },
+        {
+          "@id": "#covid_19_pubseq_pangenome_generate-inputs-metadataSchema"
+        },
+        {
+          "@id": "#covid_19_pubseq_pangenome_generate-inputs-subjects"
+        },
+        {
+          "@id": "#covid_19_pubseq_pangenome_generate-inputs-exclude"
+        },
+        {
+          "@id": "#covid_19_pubseq_pangenome_generate-inputs-bin_widths"
+        },
+        {
+          "@id": "#covid_19_pubseq_pangenome_generate-inputs-cells_per_file"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#covid_19_pubseq_pangenome_generate-outputs-odgiGraph"
+        },
+        {
+          "@id": "#covid_19_pubseq_pangenome_generate-outputs-odgiPNG"
+        },
+        {
+          "@id": "#covid_19_pubseq_pangenome_generate-outputs-seqwishGFA"
+        },
+        {
+          "@id": "#covid_19_pubseq_pangenome_generate-outputs-odgiRDF"
+        },
+        {
+          "@id": "#covid_19_pubseq_pangenome_generate-outputs-readsMergeDedup"
+        },
+        {
+          "@id": "#covid_19_pubseq_pangenome_generate-outputs-mergedMetadata"
+        },
+        {
+          "@id": "#covid_19_pubseq_pangenome_generate-outputs-indexed_paths"
+        },
+        {
+          "@id": "#covid_19_pubseq_pangenome_generate-outputs-colinear_components"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "workflow-63-c89b1838e4c9d86689ce03be964a8503406153e0-diagram.svg",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 30852
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-3777-5945",
+      "@type": "Person",
+      "name": "Tazro Inutano",
+      "identifier": "https://orcid.org/0000-0003-3777-5945"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-2961-9670",
+      "@type": "Person",
+      "name": "Michael R. Crusoe",
+      "identifier": "https://orcid.org/0000-0002-2961-9670"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-9842-9718",
+      "@type": "Person",
+      "name": "Stian Soiland-Reyes",
+      "identifier": "https://orcid.org/0000-0001-9842-9718"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-8021-9162",
+      "@type": "Person",
+      "name": "Pjotr Prins"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-9744-131X",
+      "@type": "Person",
+      "name": "Andrea Guarracino"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-3566-7705",
+      "@type": "Person",
+      "name": "Peter Amstutz"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-3257-9937",
+      "@type": "Person",
+      "name": "Thomas Liener"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-5828-047X",
+      "@type": "Person",
+      "name": "Adam M. Novak"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-5049-8658",
+      "@type": "Person",
+      "name": "Bonface Munyoki"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/263",
+      "@type": "Person",
+      "name": "Tazro Inutano"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-9052-6000",
+      "@type": "Person",
+      "name": "Michael Heuer"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/70",
+      "@type": "Person",
+      "name": "Michael R. Crusoe"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/2",
+      "@type": "Person",
+      "name": "Stian Soiland-Reyes"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/21",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "COVID-19 PubSeq: Public SARS-CoV-2 Sequence Resource"
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#covid_19_pubseq_pangenome_generate-inputs-inputReads",
+      "@type": "FormalParameter",
+      "name": "inputReads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19_pubseq_pangenome_generate-inputs-metadata",
+      "@type": "FormalParameter",
+      "name": "metadata",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19_pubseq_pangenome_generate-inputs-metadataSchema",
+      "@type": "FormalParameter",
+      "name": "metadataSchema",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19_pubseq_pangenome_generate-inputs-subjects",
+      "@type": "FormalParameter",
+      "name": "subjects",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19_pubseq_pangenome_generate-inputs-exclude",
+      "@type": "FormalParameter",
+      "name": "exclude",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19_pubseq_pangenome_generate-inputs-bin_widths",
+      "@type": "FormalParameter",
+      "name": "bin_widths",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19_pubseq_pangenome_generate-inputs-cells_per_file",
+      "@type": "FormalParameter",
+      "name": "cells_per_file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19_pubseq_pangenome_generate-outputs-odgiGraph",
+      "@type": "FormalParameter",
+      "name": "odgiGraph",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19_pubseq_pangenome_generate-outputs-odgiPNG",
+      "@type": "FormalParameter",
+      "name": "odgiPNG",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19_pubseq_pangenome_generate-outputs-seqwishGFA",
+      "@type": "FormalParameter",
+      "name": "seqwishGFA",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19_pubseq_pangenome_generate-outputs-odgiRDF",
+      "@type": "FormalParameter",
+      "name": "odgiRDF",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19_pubseq_pangenome_generate-outputs-readsMergeDedup",
+      "@type": "FormalParameter",
+      "name": "readsMergeDedup",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19_pubseq_pangenome_generate-outputs-mergedMetadata",
+      "@type": "FormalParameter",
+      "name": "mergedMetadata",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19_pubseq_pangenome_generate-outputs-indexed_paths",
+      "@type": "FormalParameter",
+      "name": "indexed_paths",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19_pubseq_pangenome_generate-outputs-colinear_components",
+      "@type": "FormalParameter",
+      "name": "colinear_components",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for COVID-19 PubSeq Pangenome Generate</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/63/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/63/ro_crate?version=1</a>
+
+
+  <img src="workflow-63-c89b1838e4c9d86689ce03be964a8503406153e0-diagram.svg" style="width: 100%;"/>
+
+<p>
+  
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://orcid.org/0000-0003-3777-5945" target="_blank">Tazro Inutano</a>, <a href="https://orcid.org/0000-0002-2961-9670" target="_blank">Michael R. Crusoe</a>, <a href="https://orcid.org/0000-0001-9842-9718" target="_blank">Stian Soiland-Reyes</a></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>Apache-2.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_pangenome-generate.cwl">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="pangenome-generate.cwl">COVID-19 PubSeq Pangenome Generate</a>
+      
+        <br/>Size: 3464 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_workflow-63-c89b1838e4c9d86689ce03be964a8503406153e0-diagram.svg">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="workflow-63-c89b1838e4c9d86689ce03be964a8503406153e0-diagram.svg">workflow-63-c89b1838e4c9d86689ce03be964a8503406153e0-diagram.svg</a>
+      
+        <br/>Size: 30852 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

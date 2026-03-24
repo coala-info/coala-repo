@@ -1,0 +1,1513 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "Test workflow from the HPC workflows",
+    "format-version": "0.1",
+    "name": "biobb-wf-md-setup-protein",
+    "steps": {
+        "0": {
+            "annotation": "Download a protein structure from the PDB database",
+            "content_id": "biobb_io_pdb_ext",
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [],
+            "label": "step1_pdb",
+            "name": "Pdb",
+            "outputs": [
+                {
+                    "name": "output_pdb_path",
+                    "type": "pdb"
+                }
+            ],
+            "position": {
+                "bottom": -163.1999969482422,
+                "height": 61.80000305175781,
+                "left": -3443,
+                "right": -3243,
+                "top": -225,
+                "width": 200,
+                "x": -3443,
+                "y": -225
+            },
+            "post_job_actions": {},
+            "tool_id": "biobb_io_pdb_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option2\", \"__current_case__\": 1, \"jsonstr\": \"{\\\"pdb_code\\\" : \\\"1aki\\\"}\"}, \"outname_output_pdb_path\": \"tutorial.pdb\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.0.0",
+            "type": "tool",
+            "uuid": "c1afac13-9176-4368-bc3e-1ab00b765272",
+            "workflow_outputs": [
+                {
+                    "label": "mypdb.pdb",
+                    "output_name": "output_pdb_path",
+                    "uuid": "af62a8bf-40aa-491f-98a1-6901e21903c8"
+                }
+            ]
+        },
+        "1": {
+            "annotation": "Fix the side chains, adding any side chain atoms missing in the original structure",
+            "content_id": "biobb_model_fix_side_chain_ext",
+            "errors": null,
+            "id": 1,
+            "input_connections": {
+                "input_pdb_path": {
+                    "id": 0,
+                    "output_name": "output_pdb_path"
+                }
+            },
+            "inputs": [],
+            "label": "step2_fixsidechain",
+            "name": "FixSideChain",
+            "outputs": [
+                {
+                    "name": "output_pdb_path",
+                    "type": "pdb"
+                }
+            ],
+            "position": {
+                "bottom": -96,
+                "height": 134,
+                "left": -3165,
+                "right": -2965,
+                "top": -230,
+                "width": 200,
+                "x": -3165,
+                "y": -230
+            },
+            "post_job_actions": {},
+            "tool_id": "biobb_model_fix_side_chain_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option2\", \"__current_case__\": 1, \"jsonstr\": \"{}\"}, \"input_pdb_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_pdb_path\": \"myfix_side_chain.pdb\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.0.1",
+            "type": "tool",
+            "uuid": "c14aaeeb-d428-4174-9b8b-4137e0342191",
+            "workflow_outputs": [
+                {
+                    "label": "myfix_side_chain.pdb",
+                    "output_name": "output_pdb_path",
+                    "uuid": "5e4284bb-a807-4388-b9fa-c003243a3584"
+                }
+            ]
+        },
+        "2": {
+            "annotation": "Create Protein System Topology",
+            "content_id": "biobb_md_pdb2gmx_ext",
+            "errors": null,
+            "id": 2,
+            "input_connections": {
+                "input_pdb_path": {
+                    "id": 1,
+                    "output_name": "output_pdb_path"
+                }
+            },
+            "inputs": [],
+            "label": "step3_pdb2gmx",
+            "name": "Pdb2gmx",
+            "outputs": [
+                {
+                    "name": "output_gro_path",
+                    "type": "gro"
+                },
+                {
+                    "name": "output_top_zip_path",
+                    "type": "zip"
+                }
+            ],
+            "position": {
+                "bottom": -72.39999389648438,
+                "height": 123.60000610351562,
+                "left": -2887,
+                "right": -2687,
+                "top": -196,
+                "width": 200,
+                "x": -2887,
+                "y": -196
+            },
+            "post_job_actions": {},
+            "tool_id": "biobb_md_pdb2gmx_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option2\", \"__current_case__\": 1, \"jsonstr\": \"{}\"}, \"input_pdb_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_gro_path\": \"mypdb2gmx.gro\", \"outname_output_top_zip_path\": \"mypdb2gmx.zip\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.0.0",
+            "type": "tool",
+            "uuid": "43023df2-1cc6-452a-841b-1b23a9d433b4",
+            "workflow_outputs": [
+                {
+                    "label": "mypdb2gmx.gro",
+                    "output_name": "output_gro_path",
+                    "uuid": "4010ce98-9f64-496e-8f05-d4f5aa7f0924"
+                },
+                {
+                    "label": "mypdb2gmx.zip",
+                    "output_name": "output_top_zip_path",
+                    "uuid": "5a872ed4-27d8-402d-84ec-a8029db2560f"
+                }
+            ]
+        },
+        "3": {
+            "annotation": "Create Solvent Box",
+            "content_id": "biobb_md_editconf_ext",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "input_gro_path": {
+                    "id": 2,
+                    "output_name": "output_gro_path"
+                }
+            },
+            "inputs": [],
+            "label": "step4_editconf",
+            "name": "Editconf",
+            "outputs": [
+                {
+                    "name": "output_gro_path",
+                    "type": "gro"
+                }
+            ],
+            "position": {
+                "bottom": -139.8000030517578,
+                "height": 93.19999694824219,
+                "left": -2609,
+                "right": -2409,
+                "top": -233,
+                "width": 200,
+                "x": -2609,
+                "y": -233
+            },
+            "post_job_actions": {},
+            "tool_id": "biobb_md_editconf_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option2\", \"__current_case__\": 1, \"jsonstr\": \"{\\\"box_type\\\": \\\"cubic\\\",\\\"distance_to_molecule\\\": 1.0}\"}, \"input_gro_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_gro_path\": \"myeditconf.gro\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.0.0",
+            "type": "tool",
+            "uuid": "fd2731a9-a310-48b0-bad5-2f9b27772ba4",
+            "workflow_outputs": [
+                {
+                    "label": "myeditconf.gro",
+                    "output_name": "output_gro_path",
+                    "uuid": "a7198129-3d75-423d-815f-6d7025db6d49"
+                }
+            ]
+        },
+        "4": {
+            "annotation": "Fill the box with water molecules",
+            "content_id": "biobb_md_solvate_ext",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "input_solute_gro_path": {
+                    "id": 3,
+                    "output_name": "output_gro_path"
+                },
+                "input_top_zip_path": {
+                    "id": 2,
+                    "output_name": "output_top_zip_path"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Solvate",
+                    "name": "input_solvent_gro_path"
+                }
+            ],
+            "label": "step5_solvate",
+            "name": "Solvate",
+            "outputs": [
+                {
+                    "name": "output_gro_path",
+                    "type": "gro"
+                },
+                {
+                    "name": "output_top_zip_path",
+                    "type": "zip"
+                }
+            ],
+            "position": {
+                "bottom": 10.399993896484375,
+                "height": 184.39999389648438,
+                "left": -2331.066650390625,
+                "right": -2131.066650390625,
+                "top": -174,
+                "width": 200,
+                "x": -2331.066650390625,
+                "y": -174
+            },
+            "post_job_actions": {},
+            "tool_id": "biobb_md_solvate_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option2\", \"__current_case__\": 1, \"jsonstr\": \"{}\"}, \"input_solute_gro_path\": {\"__class__\": \"ConnectedValue\"}, \"input_solvent_gro_path\": {\"__class__\": \"RuntimeValue\"}, \"input_top_zip_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_gro_path\": \"mysolvate.gro\", \"outname_output_top_zip_path\": \"mysolvate.zip\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.0.0",
+            "type": "tool",
+            "uuid": "612421f0-9c6c-4616-8aca-80cb21749ace",
+            "workflow_outputs": [
+                {
+                    "label": "mysolvate.zip",
+                    "output_name": "output_top_zip_path",
+                    "uuid": "a87f8eec-c3e6-4a58-9dbc-8668fc5de8c6"
+                },
+                {
+                    "label": "mysolvate.gro",
+                    "output_name": "output_gro_path",
+                    "uuid": "12800136-5db2-46e4-ab83-27460b22ccff"
+                }
+            ]
+        },
+        "5": {
+            "annotation": "Add Ions - part 1",
+            "content_id": "biobb_md_grompp_ext",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "input_gro_path": {
+                    "id": 4,
+                    "output_name": "output_gro_path"
+                },
+                "input_top_zip_path": {
+                    "id": 4,
+                    "output_name": "output_top_zip_path"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Grompp",
+                    "name": "input_cpt_path"
+                },
+                {
+                    "description": "runtime parameter for tool Grompp",
+                    "name": "input_mdp_path"
+                },
+                {
+                    "description": "runtime parameter for tool Grompp",
+                    "name": "input_ndx_path"
+                }
+            ],
+            "label": "step6_grompp_genion",
+            "name": "Grompp",
+            "outputs": [
+                {
+                    "name": "output_tpr_path",
+                    "type": "tpr"
+                }
+            ],
+            "position": {
+                "bottom": 98.19999694824219,
+                "height": 235.1999969482422,
+                "left": -2053.066650390625,
+                "right": -1853.066650390625,
+                "top": -137,
+                "width": 200,
+                "x": -2053.066650390625,
+                "y": -137
+            },
+            "post_job_actions": {},
+            "tool_id": "biobb_md_grompp_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option2\", \"__current_case__\": 1, \"jsonstr\": \"{\\\"simulation_type\\\":\\\"minimization\\\"}\"}, \"input_cpt_path\": {\"__class__\": \"RuntimeValue\"}, \"input_gro_path\": {\"__class__\": \"ConnectedValue\"}, \"input_mdp_path\": {\"__class__\": \"RuntimeValue\"}, \"input_ndx_path\": {\"__class__\": \"RuntimeValue\"}, \"input_top_zip_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_tpr_path\": \"mygrompp.tpr\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.0.0",
+            "type": "tool",
+            "uuid": "91edeb77-b0fe-4082-b716-c92f387f6ab0",
+            "workflow_outputs": [
+                {
+                    "label": "mygrompp.tpr",
+                    "output_name": "output_tpr_path",
+                    "uuid": "fdea0d29-35b4-46c8-a251-b244cb42c2a7"
+                }
+            ]
+        },
+        "6": {
+            "annotation": "Add Ions - part 2",
+            "content_id": "biobb_md_genion_ext",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "input_top_zip_path": {
+                    "id": 4,
+                    "output_name": "output_top_zip_path"
+                },
+                "input_tpr_path": {
+                    "id": 5,
+                    "output_name": "output_tpr_path"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Genion",
+                    "name": "input_ndx_path"
+                }
+            ],
+            "label": "step7_genion",
+            "name": "Genion",
+            "outputs": [
+                {
+                    "name": "output_gro_path",
+                    "type": "gro"
+                },
+                {
+                    "name": "output_top_zip_path",
+                    "type": "zip"
+                }
+            ],
+            "position": {
+                "bottom": 248.39999389648438,
+                "height": 184.39999389648438,
+                "left": -1775,
+                "right": -1575,
+                "top": 64,
+                "width": 200,
+                "x": -1775,
+                "y": 64
+            },
+            "post_job_actions": {},
+            "tool_id": "biobb_md_genion_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option2\", \"__current_case__\": 1, \"jsonstr\": \"{\\\"neutral\\\": \\\"True\\\"}\"}, \"input_ndx_path\": {\"__class__\": \"RuntimeValue\"}, \"input_top_zip_path\": {\"__class__\": \"ConnectedValue\"}, \"input_tpr_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_gro_path\": \"mygenion.gro\", \"outname_output_top_zip_path\": \"mygenion.zip\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.0.0",
+            "type": "tool",
+            "uuid": "94998951-8196-4819-bfba-eef0fe409732",
+            "workflow_outputs": [
+                {
+                    "label": "mygenion.gro",
+                    "output_name": "output_gro_path",
+                    "uuid": "20eb03b3-291a-4527-8ed8-0c97bae95731"
+                },
+                {
+                    "label": "mygenion.zip",
+                    "output_name": "output_top_zip_path",
+                    "uuid": "41ede030-edf5-4981-84dd-e9b942947464"
+                }
+            ]
+        },
+        "7": {
+            "annotation": "Energetically minimize the system - part 1",
+            "content_id": "biobb_md_grompp_ext",
+            "errors": null,
+            "id": 7,
+            "input_connections": {
+                "input_gro_path": {
+                    "id": 6,
+                    "output_name": "output_gro_path"
+                },
+                "input_top_zip_path": {
+                    "id": 6,
+                    "output_name": "output_top_zip_path"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Grompp",
+                    "name": "input_cpt_path"
+                },
+                {
+                    "description": "runtime parameter for tool Grompp",
+                    "name": "input_gro_path"
+                },
+                {
+                    "description": "runtime parameter for tool Grompp",
+                    "name": "input_mdp_path"
+                },
+                {
+                    "description": "runtime parameter for tool Grompp",
+                    "name": "input_ndx_path"
+                },
+                {
+                    "description": "runtime parameter for tool Grompp",
+                    "name": "input_top_zip_path"
+                }
+            ],
+            "label": "step8_grompp_min",
+            "name": "Grompp",
+            "outputs": [
+                {
+                    "name": "output_tpr_path",
+                    "type": "tpr"
+                }
+            ],
+            "position": {
+                "bottom": 725.4499969482422,
+                "height": 235.1999969482422,
+                "left": -1495.816650390625,
+                "right": -1295.816650390625,
+                "top": 490.25,
+                "width": 200,
+                "x": -1495.816650390625,
+                "y": 490.25
+            },
+            "post_job_actions": {},
+            "tool_id": "biobb_md_grompp_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option2\", \"__current_case__\": 1, \"jsonstr\": \"{\\\"simulation_type\\\":\\\"minimization\\\",\\\"mdp\\\": {\\\"nsteps\\\":\\\"5000\\\", \\\"emtol\\\":\\\"500\\\"}}\"}, \"input_cpt_path\": {\"__class__\": \"RuntimeValue\"}, \"input_gro_path\": {\"__class__\": \"RuntimeValue\"}, \"input_mdp_path\": {\"__class__\": \"RuntimeValue\"}, \"input_ndx_path\": {\"__class__\": \"RuntimeValue\"}, \"input_top_zip_path\": {\"__class__\": \"RuntimeValue\"}, \"outname_output_tpr_path\": \"mygrompp.tpr\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.0.0",
+            "type": "tool",
+            "uuid": "4ad7c708-9f8a-4de2-b63f-54f6d03ab9cf",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output_tpr_path",
+                    "uuid": "c57e526e-91fb-4174-af74-13db47dbaede"
+                }
+            ]
+        },
+        "8": {
+            "annotation": "Energetically minimize the system - part 2",
+            "content_id": "biobb_md_mdrun_ext",
+            "errors": null,
+            "id": 8,
+            "input_connections": {
+                "input_tpr_path": {
+                    "id": 7,
+                    "output_name": "output_tpr_path"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Mdrun",
+                    "name": "input_cpt_path"
+                }
+            ],
+            "label": "step9_mdrun_min",
+            "name": "Mdrun",
+            "outputs": [
+                {
+                    "name": "output_trr_path",
+                    "type": "trr"
+                },
+                {
+                    "name": "output_gro_path",
+                    "type": "gro"
+                },
+                {
+                    "name": "output_edr_path",
+                    "type": "edr"
+                },
+                {
+                    "name": "output_log_path",
+                    "type": "log"
+                },
+                {
+                    "name": "output_xtc_path",
+                    "type": "xtc"
+                },
+                {
+                    "name": "output_cpt_path",
+                    "type": "cpt"
+                },
+                {
+                    "name": "output_dhdl_path",
+                    "type": "xvg"
+                }
+            ],
+            "position": {
+                "bottom": 479.3999938964844,
+                "height": 326.3999938964844,
+                "left": -1209,
+                "right": -1009,
+                "top": 153,
+                "width": 200,
+                "x": -1209,
+                "y": 153
+            },
+            "post_job_actions": {},
+            "tool_id": "biobb_md_mdrun_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option2\", \"__current_case__\": 1, \"jsonstr\": \"{}\"}, \"input_cpt_path\": {\"__class__\": \"RuntimeValue\"}, \"input_tpr_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_cpt_path\": \"mymdrun.cpt\", \"outname_output_dhdl_path\": \"mymdrun.xvg\", \"outname_output_edr_path\": \"mymdrun.edr\", \"outname_output_gro_path\": \"mymdrun.gro\", \"outname_output_log_path\": \"mymdrun.log\", \"outname_output_trr_path\": \"mymdrun.trr\", \"outname_output_xtc_path\": \"mymdrun.xtc\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.0.0",
+            "type": "tool",
+            "uuid": "d616e6c6-9bb8-494a-9a8a-ee85f1785e11",
+            "workflow_outputs": [
+                {
+                    "label": "mymdrun.edr",
+                    "output_name": "output_edr_path",
+                    "uuid": "99969bc9-126b-4d0a-adca-d9ab86e54ddc"
+                },
+                {
+                    "label": "mymdrun.log",
+                    "output_name": "output_log_path",
+                    "uuid": "3bd5c1cf-6cd3-430e-917a-0b6551237eb6"
+                },
+                {
+                    "label": "mymdrun.xtc",
+                    "output_name": "output_xtc_path",
+                    "uuid": "db48bbbb-56fa-41e3-bc8d-0685aee955d4"
+                },
+                {
+                    "label": "mymdrun.cpt",
+                    "output_name": "output_cpt_path",
+                    "uuid": "67096f06-175f-4b0b-a58c-cb0c3cbfb454"
+                },
+                {
+                    "label": "mymdrun.xvg",
+                    "output_name": "output_dhdl_path",
+                    "uuid": "12e503dd-efe1-4268-b1fb-47ee71439f22"
+                },
+                {
+                    "label": "mymdrun.trr",
+                    "output_name": "output_trr_path",
+                    "uuid": "f9aa8a56-d5f7-4574-a9ac-27c334dffff7"
+                },
+                {
+                    "label": "mymdrun.gro",
+                    "output_name": "output_gro_path",
+                    "uuid": "ae1d2ecc-d69c-4981-9b82-611892aca399"
+                }
+            ]
+        },
+        "9": {
+            "annotation": "Equilibriate the system (NVT) - part 1",
+            "content_id": "biobb_md_grompp_ext",
+            "errors": null,
+            "id": 9,
+            "input_connections": {
+                "input_cpt_path": {
+                    "id": 8,
+                    "output_name": "output_cpt_path"
+                },
+                "input_gro_path": {
+                    "id": 8,
+                    "output_name": "output_gro_path"
+                },
+                "input_top_zip_path": {
+                    "id": 6,
+                    "output_name": "output_top_zip_path"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Grompp",
+                    "name": "input_cpt_path"
+                },
+                {
+                    "description": "runtime parameter for tool Grompp",
+                    "name": "input_gro_path"
+                },
+                {
+                    "description": "runtime parameter for tool Grompp",
+                    "name": "input_mdp_path"
+                },
+                {
+                    "description": "runtime parameter for tool Grompp",
+                    "name": "input_ndx_path"
+                },
+                {
+                    "description": "runtime parameter for tool Grompp",
+                    "name": "input_top_zip_path"
+                }
+            ],
+            "label": "step11_grompp_nvt",
+            "name": "Grompp",
+            "outputs": [
+                {
+                    "name": "output_tpr_path",
+                    "type": "tpr"
+                }
+            ],
+            "position": {
+                "bottom": 388.1999969482422,
+                "height": 235.1999969482422,
+                "left": -931,
+                "right": -731,
+                "top": 153,
+                "width": 200,
+                "x": -931,
+                "y": 153
+            },
+            "post_job_actions": {},
+            "tool_id": "biobb_md_grompp_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option2\", \"__current_case__\": 1, \"jsonstr\": \"{\\\"simulation_type\\\":\\\"nvt\\\",\\\"mdp\\\": {\\\"nsteps\\\":\\\"5000\\\", \\\"dt\\\":0.002, \\\"define\\\":\\\"-DPOSRES\\\"}}\"}, \"input_cpt_path\": {\"__class__\": \"RuntimeValue\"}, \"input_gro_path\": {\"__class__\": \"RuntimeValue\"}, \"input_mdp_path\": {\"__class__\": \"RuntimeValue\"}, \"input_ndx_path\": {\"__class__\": \"RuntimeValue\"}, \"input_top_zip_path\": {\"__class__\": \"RuntimeValue\"}, \"outname_output_tpr_path\": \"mygrompp.tpr\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.0.0",
+            "type": "tool",
+            "uuid": "6e8d7d01-e54d-406c-9b91-3cb7341ad22a",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output_tpr_path",
+                    "uuid": "ac5d391c-02e6-4cd7-8b2a-2c6f179db92e"
+                }
+            ]
+        },
+        "10": {
+            "annotation": "Energetically minimize the system - part 3",
+            "content_id": "biobb_analysis_gmx_energy_ext",
+            "errors": null,
+            "id": 10,
+            "input_connections": {
+                "input_energy_path": {
+                    "id": 8,
+                    "output_name": "output_edr_path"
+                }
+            },
+            "inputs": [],
+            "label": "step10_energy_min",
+            "name": "GmxEnergy",
+            "outputs": [
+                {
+                    "name": "output_xvg_path",
+                    "type": "xvg"
+                }
+            ],
+            "position": {
+                "bottom": 570.6000061035156,
+                "height": 113.60000610351562,
+                "left": -931,
+                "right": -731,
+                "top": 457,
+                "width": 200,
+                "x": -931,
+                "y": 457
+            },
+            "post_job_actions": {
+                "RenameDatasetActionoutput_xvg_path": {
+                    "action_arguments": {
+                        "newname": "energy_min.xvg"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "output_xvg_path"
+                }
+            },
+            "tool_id": "biobb_analysis_gmx_energy_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option2\", \"__current_case__\": 1, \"jsonstr\": \"{\\\"terms\\\":  [\\\"Potential\\\"]}\"}, \"input_energy_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_xvg_path\": \"mygmx_energy.xvg\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.0.0",
+            "type": "tool",
+            "uuid": "1019d3c4-6267-4544-a751-00c6fafa798d",
+            "workflow_outputs": [
+                {
+                    "label": "energy_min.xvg",
+                    "output_name": "output_xvg_path",
+                    "uuid": "e5552e88-7d40-45ad-a65f-13e3e9cde933"
+                }
+            ]
+        },
+        "11": {
+            "annotation": "Equilibrate the system (NVT) - part 2",
+            "content_id": "biobb_md_mdrun_ext",
+            "errors": null,
+            "id": 11,
+            "input_connections": {
+                "input_tpr_path": {
+                    "id": 9,
+                    "output_name": "output_tpr_path"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Mdrun",
+                    "name": "input_cpt_path"
+                }
+            ],
+            "label": "step12_mdrun_nvt",
+            "name": "Mdrun",
+            "outputs": [
+                {
+                    "name": "output_trr_path",
+                    "type": "trr"
+                },
+                {
+                    "name": "output_gro_path",
+                    "type": "gro"
+                },
+                {
+                    "name": "output_edr_path",
+                    "type": "edr"
+                },
+                {
+                    "name": "output_log_path",
+                    "type": "log"
+                },
+                {
+                    "name": "output_xtc_path",
+                    "type": "xtc"
+                },
+                {
+                    "name": "output_cpt_path",
+                    "type": "cpt"
+                },
+                {
+                    "name": "output_dhdl_path",
+                    "type": "xvg"
+                }
+            ],
+            "position": {
+                "bottom": 543.3999938964844,
+                "height": 326.3999938964844,
+                "left": -653,
+                "right": -453,
+                "top": 217,
+                "width": 200,
+                "x": -653,
+                "y": 217
+            },
+            "post_job_actions": {},
+            "tool_id": "biobb_md_mdrun_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option2\", \"__current_case__\": 1, \"jsonstr\": \"{}\"}, \"input_cpt_path\": {\"__class__\": \"RuntimeValue\"}, \"input_tpr_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_cpt_path\": \"mymdrun.cpt\", \"outname_output_dhdl_path\": \"mymdrun.xvg\", \"outname_output_edr_path\": \"mymdrun.edr\", \"outname_output_gro_path\": \"mymdrun.gro\", \"outname_output_log_path\": \"mymdrun.log\", \"outname_output_trr_path\": \"mymdrun.trr\", \"outname_output_xtc_path\": \"mymdrun.xtc\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.0.0",
+            "type": "tool",
+            "uuid": "a811a707-5525-4699-9fe5-1bb5096d3168",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output_trr_path",
+                    "uuid": "4fba5566-ea31-48d5-9413-932821c95dfa"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_gro_path",
+                    "uuid": "3c4d353f-c207-4c2f-abc5-43caf278074a"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_cpt_path",
+                    "uuid": "6304022e-f107-4dfa-a9c5-8557b1726112"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_xtc_path",
+                    "uuid": "3602f235-a79f-43e7-9ac0-4c82557cc419"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_log_path",
+                    "uuid": "df3449fa-33e6-43f5-b0ec-258eace670c1"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_edr_path",
+                    "uuid": "9cc274b2-ccd1-437a-aaa8-2b2d06978498"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_dhdl_path",
+                    "uuid": "2ed1be6c-f607-4b19-ac8b-ce9bc6801fdb"
+                }
+            ]
+        },
+        "12": {
+            "annotation": "Equilibrate the system (NPT) - part 1",
+            "content_id": "biobb_md_grompp_ext",
+            "errors": null,
+            "id": 12,
+            "input_connections": {
+                "input_cpt_path": {
+                    "id": 11,
+                    "output_name": "output_cpt_path"
+                },
+                "input_gro_path": {
+                    "id": 11,
+                    "output_name": "output_gro_path"
+                },
+                "input_top_zip_path": {
+                    "id": 6,
+                    "output_name": "output_top_zip_path"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Grompp",
+                    "name": "input_cpt_path"
+                },
+                {
+                    "description": "runtime parameter for tool Grompp",
+                    "name": "input_gro_path"
+                },
+                {
+                    "description": "runtime parameter for tool Grompp",
+                    "name": "input_mdp_path"
+                },
+                {
+                    "description": "runtime parameter for tool Grompp",
+                    "name": "input_ndx_path"
+                },
+                {
+                    "description": "runtime parameter for tool Grompp",
+                    "name": "input_top_zip_path"
+                }
+            ],
+            "label": "step14_grompp_npt",
+            "name": "Grompp",
+            "outputs": [
+                {
+                    "name": "output_tpr_path",
+                    "type": "tpr"
+                }
+            ],
+            "position": {
+                "bottom": 388.1999969482422,
+                "height": 235.1999969482422,
+                "left": -365,
+                "right": -165,
+                "top": 153,
+                "width": 200,
+                "x": -365,
+                "y": 153
+            },
+            "post_job_actions": {},
+            "tool_id": "biobb_md_grompp_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option2\", \"__current_case__\": 1, \"jsonstr\": \"{\\\"simulation_type\\\":\\\"npt\\\",\\\"mdp\\\": { \\\"nsteps\\\":\\\"5000\\\"}}\"}, \"input_cpt_path\": {\"__class__\": \"RuntimeValue\"}, \"input_gro_path\": {\"__class__\": \"RuntimeValue\"}, \"input_mdp_path\": {\"__class__\": \"RuntimeValue\"}, \"input_ndx_path\": {\"__class__\": \"RuntimeValue\"}, \"input_top_zip_path\": {\"__class__\": \"RuntimeValue\"}, \"outname_output_tpr_path\": \"mygrompp.tpr\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.0.0",
+            "type": "tool",
+            "uuid": "cc0f8175-eebb-4fad-a97b-0824eb8ab58b",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output_tpr_path",
+                    "uuid": "94058843-4725-4f25-b8a4-1505971a064f"
+                }
+            ]
+        },
+        "13": {
+            "annotation": "Equilibrate the system (NVT) - part 3",
+            "content_id": "biobb_analysis_gmx_energy_ext",
+            "errors": null,
+            "id": 13,
+            "input_connections": {
+                "input_energy_path": {
+                    "id": 11,
+                    "output_name": "output_edr_path"
+                }
+            },
+            "inputs": [],
+            "label": "step13_energy_nvt",
+            "name": "GmxEnergy",
+            "outputs": [
+                {
+                    "name": "output_xvg_path",
+                    "type": "xvg"
+                }
+            ],
+            "position": {
+                "bottom": 570.6000061035156,
+                "height": 113.60000610351562,
+                "left": -365,
+                "right": -165,
+                "top": 457,
+                "width": 200,
+                "x": -365,
+                "y": 457
+            },
+            "post_job_actions": {
+                "RenameDatasetActionoutput_xvg_path": {
+                    "action_arguments": {
+                        "newname": "energy_nvt.xvg"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "output_xvg_path"
+                }
+            },
+            "tool_id": "biobb_analysis_gmx_energy_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option2\", \"__current_case__\": 1, \"jsonstr\": \"{\\\"terms\\\":  [\\\"Temperature\\\"]}\"}, \"input_energy_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_xvg_path\": \"mygmx_energy.xvg\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.0.0",
+            "type": "tool",
+            "uuid": "5dd3f248-7dfd-4650-b125-3d7de1c12369",
+            "workflow_outputs": [
+                {
+                    "label": "energy_nvt.xvg",
+                    "output_name": "output_xvg_path",
+                    "uuid": "f9ab3ece-2b99-418e-8828-2fbba9d9ba3a"
+                }
+            ]
+        },
+        "14": {
+            "annotation": "Equilibrate the system (NPT) - part 2",
+            "content_id": "biobb_md_mdrun_ext",
+            "errors": null,
+            "id": 14,
+            "input_connections": {
+                "input_tpr_path": {
+                    "id": 12,
+                    "output_name": "output_tpr_path"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Mdrun",
+                    "name": "input_cpt_path"
+                }
+            ],
+            "label": "step15_mdrun_npt",
+            "name": "Mdrun",
+            "outputs": [
+                {
+                    "name": "output_trr_path",
+                    "type": "trr"
+                },
+                {
+                    "name": "output_gro_path",
+                    "type": "gro"
+                },
+                {
+                    "name": "output_edr_path",
+                    "type": "edr"
+                },
+                {
+                    "name": "output_log_path",
+                    "type": "log"
+                },
+                {
+                    "name": "output_xtc_path",
+                    "type": "xtc"
+                },
+                {
+                    "name": "output_cpt_path",
+                    "type": "cpt"
+                },
+                {
+                    "name": "output_dhdl_path",
+                    "type": "xvg"
+                }
+            ],
+            "position": {
+                "bottom": 491.3999938964844,
+                "height": 326.3999938964844,
+                "left": -87,
+                "right": 113,
+                "top": 165,
+                "width": 200,
+                "x": -87,
+                "y": 165
+            },
+            "post_job_actions": {},
+            "tool_id": "biobb_md_mdrun_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option2\", \"__current_case__\": 1, \"jsonstr\": \"{}\"}, \"input_cpt_path\": {\"__class__\": \"RuntimeValue\"}, \"input_tpr_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_cpt_path\": \"mymdrun.cpt\", \"outname_output_dhdl_path\": \"mymdrun.xvg\", \"outname_output_edr_path\": \"mymdrun.edr\", \"outname_output_gro_path\": \"mymdrun.gro\", \"outname_output_log_path\": \"mymdrun.log\", \"outname_output_trr_path\": \"mymdrun.trr\", \"outname_output_xtc_path\": \"mymdrun.xtc\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.0.0",
+            "type": "tool",
+            "uuid": "6a74d735-a98c-49dd-8e2f-5fec6617e471",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output_log_path",
+                    "uuid": "6c8142d5-f16d-4ad7-bac4-e58e9088e111"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_xtc_path",
+                    "uuid": "824344ce-1491-48ed-b4fa-73568f18e8c5"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_edr_path",
+                    "uuid": "a603e041-6c49-49dd-988d-8087d42ade15"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_trr_path",
+                    "uuid": "4936cdc0-c306-42f5-b26d-b784cecadfd6"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_gro_path",
+                    "uuid": "68201f82-e9c9-41fb-836b-dbe76d61e498"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_cpt_path",
+                    "uuid": "5975a979-9a00-43ad-81b0-1f92a3079a66"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_dhdl_path",
+                    "uuid": "83d87e21-47a2-433d-9126-1fed171bf48f"
+                }
+            ]
+        },
+        "15": {
+            "annotation": "Free molecular dynamics simulation - part 1",
+            "content_id": "biobb_md_grompp_ext",
+            "errors": null,
+            "id": 15,
+            "input_connections": {
+                "input_cpt_path": {
+                    "id": 14,
+                    "output_name": "output_cpt_path"
+                },
+                "input_gro_path": {
+                    "id": 14,
+                    "output_name": "output_gro_path"
+                },
+                "input_top_zip_path": {
+                    "id": 6,
+                    "output_name": "output_top_zip_path"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Grompp",
+                    "name": "input_cpt_path"
+                },
+                {
+                    "description": "runtime parameter for tool Grompp",
+                    "name": "input_gro_path"
+                },
+                {
+                    "description": "runtime parameter for tool Grompp",
+                    "name": "input_mdp_path"
+                },
+                {
+                    "description": "runtime parameter for tool Grompp",
+                    "name": "input_ndx_path"
+                },
+                {
+                    "description": "runtime parameter for tool Grompp",
+                    "name": "input_top_zip_path"
+                }
+            ],
+            "label": "step17_grompp_md",
+            "name": "Grompp",
+            "outputs": [
+                {
+                    "name": "output_tpr_path",
+                    "type": "tpr"
+                }
+            ],
+            "position": {
+                "bottom": 336.1999969482422,
+                "height": 235.1999969482422,
+                "left": 201,
+                "right": 401,
+                "top": 101,
+                "width": 200,
+                "x": 201,
+                "y": 101
+            },
+            "post_job_actions": {},
+            "tool_id": "biobb_md_grompp_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option2\", \"__current_case__\": 1, \"jsonstr\": \"{\\\"simulation_type\\\":\\\"free\\\",\\\"mdp\\\": {\\\"nsteps\\\":\\\"50000\\\"}}\"}, \"input_cpt_path\": {\"__class__\": \"RuntimeValue\"}, \"input_gro_path\": {\"__class__\": \"RuntimeValue\"}, \"input_mdp_path\": {\"__class__\": \"RuntimeValue\"}, \"input_ndx_path\": {\"__class__\": \"RuntimeValue\"}, \"input_top_zip_path\": {\"__class__\": \"RuntimeValue\"}, \"outname_output_tpr_path\": \"mygrompp.tpr\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.0.0",
+            "type": "tool",
+            "uuid": "ecc6c605-ce22-4df8-bf8d-77da1b9ba66c",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output_tpr_path",
+                    "uuid": "341d1d9e-ed9f-43ba-b36a-eadf18a07a7e"
+                }
+            ]
+        },
+        "16": {
+            "annotation": "Equilibrate the system (NPT) - part 3",
+            "content_id": "biobb_analysis_gmx_energy_ext",
+            "errors": null,
+            "id": 16,
+            "input_connections": {
+                "input_energy_path": {
+                    "id": 14,
+                    "output_name": "output_edr_path"
+                }
+            },
+            "inputs": [],
+            "label": "step16_energy_npt",
+            "name": "GmxEnergy",
+            "outputs": [
+                {
+                    "name": "output_xvg_path",
+                    "type": "xvg"
+                }
+            ],
+            "position": {
+                "bottom": 518.6000061035156,
+                "height": 113.60000610351562,
+                "left": 201,
+                "right": 401,
+                "top": 405,
+                "width": 200,
+                "x": 201,
+                "y": 405
+            },
+            "post_job_actions": {
+                "RenameDatasetActionoutput_xvg_path": {
+                    "action_arguments": {
+                        "newname": "energy_npt.xvg"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "output_xvg_path"
+                }
+            },
+            "tool_id": "biobb_analysis_gmx_energy_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option2\", \"__current_case__\": 1, \"jsonstr\": \"{\\\"terms\\\":  [\\\"Pressure\\\",\\\"Density\\\"]}\"}, \"input_energy_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_xvg_path\": \"mygmx_energy.xvg\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.0.0",
+            "type": "tool",
+            "uuid": "d32f242d-ddba-4473-9f76-30548590ecf9",
+            "workflow_outputs": [
+                {
+                    "label": "energy_npt.xvg",
+                    "output_name": "output_xvg_path",
+                    "uuid": "7e9cf0d1-e8aa-44a3-a037-bb55e151e18c"
+                }
+            ]
+        },
+        "17": {
+            "annotation": "Free molecular dynamics simulation - part 2",
+            "content_id": "biobb_md_mdrun_ext",
+            "errors": null,
+            "id": 17,
+            "input_connections": {
+                "input_tpr_path": {
+                    "id": 15,
+                    "output_name": "output_tpr_path"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Mdrun",
+                    "name": "input_cpt_path"
+                }
+            ],
+            "label": "step18_mdrun_md",
+            "name": "Mdrun",
+            "outputs": [
+                {
+                    "name": "output_trr_path",
+                    "type": "trr"
+                },
+                {
+                    "name": "output_gro_path",
+                    "type": "gro"
+                },
+                {
+                    "name": "output_edr_path",
+                    "type": "edr"
+                },
+                {
+                    "name": "output_log_path",
+                    "type": "log"
+                },
+                {
+                    "name": "output_xtc_path",
+                    "type": "xtc"
+                },
+                {
+                    "name": "output_cpt_path",
+                    "type": "cpt"
+                },
+                {
+                    "name": "output_dhdl_path",
+                    "type": "xvg"
+                }
+            ],
+            "position": {
+                "bottom": 579.3999938964844,
+                "height": 326.3999938964844,
+                "left": 479,
+                "right": 679,
+                "top": 253,
+                "width": 200,
+                "x": 479,
+                "y": 253
+            },
+            "post_job_actions": {},
+            "tool_id": "biobb_md_mdrun_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option2\", \"__current_case__\": 1, \"jsonstr\": \"{}\"}, \"input_cpt_path\": {\"__class__\": \"RuntimeValue\"}, \"input_tpr_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_cpt_path\": \"mymdrun.cpt\", \"outname_output_dhdl_path\": \"mymdrun.xvg\", \"outname_output_edr_path\": \"mymdrun.edr\", \"outname_output_gro_path\": \"mymdrun.gro\", \"outname_output_log_path\": \"mymdrun.log\", \"outname_output_trr_path\": \"mymdrun.trr\", \"outname_output_xtc_path\": \"mymdrun.xtc\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.0.0",
+            "type": "tool",
+            "uuid": "361f9c3f-e267-42bc-914b-d067af175d28",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output_trr_path",
+                    "uuid": "146e6c7f-d41e-4c2d-b891-8f36a57b28a3"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_dhdl_path",
+                    "uuid": "b5b3c726-43d1-4037-bd7d-b19e80efd144"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_edr_path",
+                    "uuid": "4731aa29-beda-4b84-b572-6d04f30d9f0f"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_gro_path",
+                    "uuid": "874da629-0cc7-48e3-b833-382dd1c73a7a"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_xtc_path",
+                    "uuid": "f04cc690-3a38-493c-8d7b-e0659353742d"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_log_path",
+                    "uuid": "1e2633bf-ec92-4d4e-b007-f4ddbef5452d"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_cpt_path",
+                    "uuid": "3c7edb0a-6a85-4ec2-a1c8-dc2012f460a4"
+                }
+            ]
+        },
+        "18": {
+            "annotation": "Post-processing resulting 3D trajectory - part 1",
+            "content_id": "biobb_analysis_gmx_rms_ext",
+            "errors": null,
+            "id": 18,
+            "input_connections": {
+                "input_structure_path": {
+                    "id": 15,
+                    "output_name": "output_tpr_path"
+                },
+                "input_traj_path": {
+                    "id": 17,
+                    "output_name": "output_trr_path"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool GmxRms",
+                    "name": "input_index_path"
+                }
+            ],
+            "label": "step19_rmsfirst",
+            "name": "GmxRms",
+            "outputs": [
+                {
+                    "name": "output_xvg_path",
+                    "type": "xvg"
+                }
+            ],
+            "position": {
+                "bottom": 327.6000061035156,
+                "height": 235.60000610351562,
+                "left": 777,
+                "right": 977,
+                "top": 92,
+                "width": 200,
+                "x": 777,
+                "y": 92
+            },
+            "post_job_actions": {
+                "RenameDatasetActionoutput_xvg_path": {
+                    "action_arguments": {
+                        "newname": "rmsd_first.xvg"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "output_xvg_path"
+                }
+            },
+            "tool_id": "biobb_analysis_gmx_rms_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option2\", \"__current_case__\": 1, \"jsonstr\": \"{\\\"selection\\\": \\\"Backbone\\\"}\"}, \"input_index_path\": {\"__class__\": \"RuntimeValue\"}, \"input_structure_path\": {\"__class__\": \"ConnectedValue\"}, \"input_traj_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_xvg_path\": \"mygmx_rms.xvg\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.0.0",
+            "type": "tool",
+            "uuid": "a13f0559-971c-4c03-b1fe-4dc9843da219",
+            "workflow_outputs": [
+                {
+                    "label": "rmsd_first.xvg",
+                    "output_name": "output_xvg_path",
+                    "uuid": "1b1df186-9fa6-4e84-8f30-32ebaa37d67a"
+                }
+            ]
+        },
+        "19": {
+            "annotation": "Post-processing resulting 3D trajectory - part 4",
+            "content_id": "biobb_analysis_gmx_image_ext",
+            "errors": null,
+            "id": 19,
+            "input_connections": {
+                "input_top_path": {
+                    "id": 15,
+                    "output_name": "output_tpr_path"
+                },
+                "input_traj_path": {
+                    "id": 17,
+                    "output_name": "output_trr_path"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool GmxImage",
+                    "name": "input_index_path"
+                }
+            ],
+            "label": "step22_image",
+            "name": "GmxImage",
+            "outputs": [
+                {
+                    "name": "output_traj_path",
+                    "type": "text"
+                }
+            ],
+            "position": {
+                "bottom": 23.399993896484375,
+                "height": 276.3999938964844,
+                "left": 777,
+                "right": 977,
+                "top": -253,
+                "width": 200,
+                "x": 777,
+                "y": -253
+            },
+            "post_job_actions": {},
+            "tool_id": "biobb_analysis_gmx_image_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option2\", \"__current_case__\": 1, \"jsonstr\": \"{\\\"center_selection\\\":\\\"Protein\\\",\\\"output_selection\\\":\\\"Protein\\\",\\\"pbc\\\":\\\"mol\\\",'center':True}\"}, \"input_index_path\": {\"__class__\": \"RuntimeValue\"}, \"input_top_path\": {\"__class__\": \"ConnectedValue\"}, \"input_traj_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_traj_path\": \"mygmx_image.xtc\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.0.0",
+            "type": "tool",
+            "uuid": "6047d257-76cb-4c9d-a976-4f55fd4986fd",
+            "workflow_outputs": [
+                {
+                    "label": "mygmx_image.xtc",
+                    "output_name": "output_traj_path",
+                    "uuid": "4b48320e-6ed1-4272-8e0a-f8ea8b0fe73a"
+                }
+            ]
+        },
+        "20": {
+            "annotation": "Post-processing resulting 3D trajectory - part 5",
+            "content_id": "biobb_analysis_gmx_trjconv_str_ext",
+            "errors": null,
+            "id": 20,
+            "input_connections": {
+                "input_structure_path": {
+                    "id": 17,
+                    "output_name": "output_gro_path"
+                },
+                "input_top_path": {
+                    "id": 15,
+                    "output_name": "output_tpr_path"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool GmxTrjconvStr",
+                    "name": "input_index_path"
+                }
+            ],
+            "label": "step23_dry",
+            "name": "GmxTrjconvStr",
+            "outputs": [
+                {
+                    "name": "output_str_path",
+                    "type": "text"
+                }
+            ],
+            "position": {
+                "bottom": 672.3999938964844,
+                "height": 276.3999938964844,
+                "left": 777,
+                "right": 977,
+                "top": 396,
+                "width": 200,
+                "x": 777,
+                "y": 396
+            },
+            "post_job_actions": {},
+            "tool_id": "biobb_analysis_gmx_trjconv_str_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option2\", \"__current_case__\": 1, \"jsonstr\": \"{\\\"selection\\\": \\\"Protein\\\"}\"}, \"input_index_path\": {\"__class__\": \"RuntimeValue\"}, \"input_structure_path\": {\"__class__\": \"ConnectedValue\"}, \"input_top_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_str_path\": \"mygmx_trjconv_str.xtc\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.0.0",
+            "type": "tool",
+            "uuid": "4fcb4d26-a0f6-4bf6-b731-078fccc7d924",
+            "workflow_outputs": [
+                {
+                    "label": "mygmx_trjconv_str.xtc",
+                    "output_name": "output_str_path",
+                    "uuid": "53fbd348-422d-469f-9faf-1758847efb2c"
+                }
+            ]
+        },
+        "21": {
+            "annotation": "Post-processing resulting 3D trajectory - part 2",
+            "content_id": "biobb_analysis_gmx_rms_ext",
+            "errors": null,
+            "id": 21,
+            "input_connections": {
+                "input_structure_path": {
+                    "id": 7,
+                    "output_name": "output_tpr_path"
+                },
+                "input_traj_path": {
+                    "id": 17,
+                    "output_name": "output_trr_path"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool GmxRms",
+                    "name": "input_index_path"
+                }
+            ],
+            "label": "step20_rmsexp",
+            "name": "GmxRms",
+            "outputs": [
+                {
+                    "name": "output_xvg_path",
+                    "type": "xvg"
+                }
+            ],
+            "position": {
+                "bottom": 976.6000061035156,
+                "height": 235.60000610351562,
+                "left": 777,
+                "right": 977,
+                "top": 741,
+                "width": 200,
+                "x": 777,
+                "y": 741
+            },
+            "post_job_actions": {
+                "RenameDatasetActionoutput_xvg_path": {
+                    "action_arguments": {
+                        "newname": "rmsd_exp.xvg"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "output_xvg_path"
+                }
+            },
+            "tool_id": "biobb_analysis_gmx_rms_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option2\", \"__current_case__\": 1, \"jsonstr\": \"{\\\"selection\\\": \\\"Backbone\\\"}\"}, \"input_index_path\": {\"__class__\": \"RuntimeValue\"}, \"input_structure_path\": {\"__class__\": \"ConnectedValue\"}, \"input_traj_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_xvg_path\": \"mygmx_rms.xvg\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.0.0",
+            "type": "tool",
+            "uuid": "01184f4d-b882-499b-a5ad-92d00e356313",
+            "workflow_outputs": [
+                {
+                    "label": "rmsd_exp.xvg",
+                    "output_name": "output_xvg_path",
+                    "uuid": "3e06e973-a419-461a-81ff-30cd842c6534"
+                }
+            ]
+        },
+        "22": {
+            "annotation": "Post-processing resulting 3D trajectory - part 3",
+            "content_id": "biobb_analysis_gmx_rgyr_ext",
+            "errors": null,
+            "id": 22,
+            "input_connections": {
+                "input_structure_path": {
+                    "id": 7,
+                    "output_name": "output_tpr_path"
+                },
+                "input_traj_path": {
+                    "id": 17,
+                    "output_name": "output_trr_path"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool GmxRgyr",
+                    "name": "input_index_path"
+                }
+            ],
+            "label": "step21_rgyr",
+            "name": "GmxRgyr",
+            "outputs": [
+                {
+                    "name": "output_xvg_path",
+                    "type": "xvg"
+                }
+            ],
+            "position": {
+                "bottom": 1280.6000061035156,
+                "height": 235.60000610351562,
+                "left": 777,
+                "right": 977,
+                "top": 1045,
+                "width": 200,
+                "x": 777,
+                "y": 1045
+            },
+            "post_job_actions": {},
+            "tool_id": "biobb_analysis_gmx_rgyr_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option2\", \"__current_case__\": 1, \"jsonstr\": \"{\\\"selection\\\": \\\"Backbone\\\"}\"}, \"input_index_path\": {\"__class__\": \"RuntimeValue\"}, \"input_structure_path\": {\"__class__\": \"ConnectedValue\"}, \"input_traj_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_xvg_path\": \"mygmx_rgyr.xvg\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.0.0",
+            "type": "tool",
+            "uuid": "3a982a70-a370-4649-adaf-4a6049e0abf2",
+            "workflow_outputs": [
+                {
+                    "label": "mygmx_rgyr.xvg",
+                    "output_name": "output_xvg_path",
+                    "uuid": "db2a1994-775f-48c7-a556-b827b4f37e75"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "306a2728-024d-4843-8019-fd5a7e969128",
+    "version": 12
+}

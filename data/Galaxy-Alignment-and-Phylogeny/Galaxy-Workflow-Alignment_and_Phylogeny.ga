@@ -1,0 +1,304 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "A workflow for performing alignment and phylogeny using protein sequences when studying genes/gene families.",
+    "comments": [],
+    "format-version": "0.1",
+    "license": "MIT",
+    "name": "Alignment and Phylogeny",
+    "report": {
+        "markdown": "\n# Workflow Execution Report\n\n## Workflow Inputs\n```galaxy\ninvocation_inputs()\n```\n\n## Workflow Outputs\n```galaxy\ninvocation_outputs()\n```\n\n## Workflow\n```galaxy\nworkflow_display()\n```\n"
+    },
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Outgroup sequences (AA)"
+                }
+            ],
+            "label": "Outgroup sequences (AA)",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 1.6226692914895613,
+                "top": 0
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"format\": [\"fasta\"], \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "69cf30ae-255e-48a3-bdc0-0bb7dd696e0c",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Selected sequences (AA)"
+                }
+            ],
+            "label": "Selected sequences (AA)",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 0.25726172810164316,
+                "top": 106.64087433064046
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"format\": [\"fasta\"], \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "ffebf523-674e-4abb-85f1-828d3cf08a9f",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 2,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Reference/Query sequences (AA)"
+                }
+            ],
+            "label": "Reference/Query sequences (AA)",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 0,
+                "top": 213.0047212609709
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"format\": [\"fasta\"], \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "4554bad3-8055-4f72-8bfc-67e197fd44d3",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/fasta_merge_files_and_filter_unique_sequences/fasta_merge_files_and_filter_unique_sequences/1.2.0",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "batchmode|input_fastas": [
+                    {
+                        "id": 0,
+                        "output_name": "output"
+                    },
+                    {
+                        "id": 1,
+                        "output_name": "output"
+                    },
+                    {
+                        "id": 2,
+                        "output_name": "output"
+                    }
+                ]
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool FASTA Merge Files and Filter Unique Sequences",
+                    "name": "batchmode"
+                }
+            ],
+            "label": null,
+            "name": "FASTA Merge Files and Filter Unique Sequences",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "fasta"
+                }
+            ],
+            "position": {
+                "left": 311.43712583288976,
+                "top": 1.9664786970580685
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/fasta_merge_files_and_filter_unique_sequences/fasta_merge_files_and_filter_unique_sequences/1.2.0",
+            "tool_shed_repository": {
+                "changeset_revision": "f546e7278f04",
+                "name": "fasta_merge_files_and_filter_unique_sequences",
+                "owner": "galaxyp",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"accession_parser\": \"^>([^ ]+).*$\", \"batchmode\": {\"processmode\": \"merge\", \"__current_case__\": 1, \"input_fastas\": {\"__class__\": \"ConnectedValue\"}}, \"uniqueness_criterion\": \"sequence\", \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.2.0",
+            "type": "tool",
+            "uuid": "aa8d1068-a603-46b0-924f-bcdc9dc50f20",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/rnateam/mafft/rbc_mafft/7.526+galaxy1",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "input|batches_0|inputs": {
+                    "id": 3,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "MAFFT",
+            "outputs": [
+                {
+                    "name": "outputAlignment",
+                    "type": "fasta"
+                }
+            ],
+            "position": {
+                "left": 611.4371258328897,
+                "top": 1.9664786970580685
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/rnateam/mafft/rbc_mafft/7.526+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "1233363389c1",
+                "name": "mafft",
+                "owner": "rnateam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"anysymbol\": false, \"datatype_selection\": {\"datatype\": \"\", \"__current_case__\": 0}, \"flavour\": {\"type\": \"mafft --auto\", \"__current_case__\": 0}, \"input\": {\"mapping\": \"merge\", \"__current_case__\": 1, \"batches\": [{\"__index__\": 0, \"inputs\": {\"__class__\": \"ConnectedValue\"}}]}, \"outputFormat\": \"\", \"reorder\": false, \"treeout\": false, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "7.526+galaxy1",
+            "type": "tool",
+            "uuid": "7d113552-a645-448d-a691-16811447a7ef",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "5": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/padge/clipkit/clipkit/0.1.0",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "input1": {
+                    "id": 4,
+                    "output_name": "outputAlignment"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "ClipKIT. Alignment trimming software for phylogenetics.",
+            "outputs": [
+                {
+                    "name": "trimmed_output",
+                    "type": "fasta"
+                },
+                {
+                    "name": "log_output",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "left": 911.4371258328897,
+                "top": 1.9664786970580685
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/padge/clipkit/clipkit/0.1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "770695339600",
+                "name": "clipkit",
+                "owner": "padge",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"complement\": false, \"gaps\": \"0.9\", \"input1\": {\"__class__\": \"ConnectedValue\"}, \"mode_selector\": \"smart-gap\", \"out_format_selector\": \"fasta\", \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1.0",
+            "type": "tool",
+            "uuid": "e918d94d-058e-4c5f-a4ee-5b7a729a8487",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "6": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/iqtree/iqtree/2.4.0+galaxy1",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "general_options|s": {
+                    "id": 5,
+                    "output_name": "trimmed_output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool IQ-TREE",
+                    "name": "general_options"
+                },
+                {
+                    "description": "runtime parameter for tool IQ-TREE",
+                    "name": "general_options"
+                },
+                {
+                    "description": "runtime parameter for tool IQ-TREE",
+                    "name": "likelihood_mapping"
+                }
+            ],
+            "label": null,
+            "name": "IQ-TREE",
+            "outputs": [
+                {
+                    "name": "bionj",
+                    "type": "nhx"
+                },
+                {
+                    "name": "treefile",
+                    "type": "nhx"
+                },
+                {
+                    "name": "mldist",
+                    "type": "mldist"
+                },
+                {
+                    "name": "splits",
+                    "type": "nex"
+                },
+                {
+                    "name": "iqtree",
+                    "type": "iqtree"
+                }
+            ],
+            "position": {
+                "left": 1211.4371258328897,
+                "top": 1.9664786970580685
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/iqtree/iqtree/2.4.0+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "18a61a9c1601",
+                "name": "iqtree",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"bootstrap_parameters\": {\"ultrafast_bootstrap\": {\"ufboot\": \"1000\", \"ufjack\": null, \"jack_prop\": null, \"boot_trees\": false, \"wbtl\": false, \"nmax\": \"1000\", \"bcor\": \"0.99\", \"nstep\": \"100\", \"beps\": \"0.5\", \"sampling\": null, \"bnni\": true}, \"nonparametric_bootstrap\": {\"boot\": null, \"jack\": null, \"jack_prop\": null, \"bcon\": null, \"bonly\": null, \"tbe\": false}}, \"general_options\": {\"s\": {\"__class__\": \"ConnectedValue\"}, \"o\": null, \"short_alignments\": false, \"seqtype\": \"AA\", \"t\": {\"__class__\": \"RuntimeValue\"}, \"seed\": null, \"keep_ident\": false, \"epsilon\": null, \"safe\": false}, \"likelihood_mapping\": {\"lmap\": null, \"lmclust\": {\"__class__\": \"RuntimeValue\"}, \"quartetlh\": false}, \"miscellaneous_options\": {\"fconst\": null, \"blmin\": null, \"blmax\": null}, \"modelling_parameters\": {\"automatic_model\": {\"cond_model\": {\"opt_custommodel\": \"true\", \"__current_case__\": 0, \"m\": \"TESTNEW\"}, \"merge_strategy\": {\"merge\": \"none\", \"__current_case__\": 0}, \"mset\": null, \"msub\": \"nuclear\", \"mfreq\": null, \"mrate\": null, \"cmin\": \"2\", \"cmax\": \"10\", \"merit\": \"AIC\", \"mtree\": false, \"madd\": null, \"mdef\": {\"__class__\": \"RuntimeValue\"}, \"modelomatic\": false}, \"specifying_substitution\": {\"mix_opt\": false}, \"rate_heterogeneity\": {\"alpha_min\": null, \"gamma_median\": false, \"i\": null, \"opt_gamma_inv\": false, \"rate\": false, \"mlrate\": false}, \"partition_model\": {\"model_selection\": {\"model\": \"none\", \"__current_case__\": 0}}, \"site_specific_frequency\": {\"tree_freq\": {\"__class__\": \"RuntimeValue\"}, \"site_freq\": null, \"freq_max\": false}}, \"time_tree\": {\"date_source\": {\"select_source\": \"none\", \"__current_case__\": 0}, \"date_tip\": null, \"date_root\": null, \"date_ci\": null, \"clock_sd\": null, \"date_no_outgroup\": false, \"date_outlier\": null, \"date_options\": null}, \"tree_parameters\": {\"tree_search\": {\"n\": null, \"ninit\": \"100\", \"ntop\": \"20\", \"nbest\": \"5\", \"nstop\": \"100\", \"radius\": \"6\", \"perturb\": \"0.5\", \"allnni\": false, \"tree_fix\": false, \"g\": {\"__class__\": \"RuntimeValue\"}, \"fast\": false, \"polytomy\": false, \"treels\": false, \"show_lh\": false, \"terrace\": false}, \"single_branch\": {\"alrt\": null, \"abayes\": true, \"lbp\": null}, \"tree_topology\": {\"trees\": {\"__class__\": \"RuntimeValue\"}, \"test\": null, \"test_weight\": false, \"test_au\": false}, \"constructing_consensus\": {\"contree\": false, \"connet\": false, \"sup_min\": \"0.0\", \"burnin\": null, \"support\": {\"__class__\": \"RuntimeValue\"}, \"suptag\": null}, \"computing_robinson_foulds\": {\"tree_dist_all\": false, \"tree_dist\": {\"__class__\": \"RuntimeValue\"}, \"tree_dist2\": {\"__class__\": \"RuntimeValue\"}}, \"generating_random\": {\"r\": null, \"rand\": null, \"branch_min\": null, \"branch_mean\": null, \"branch_max\": null}, \"ancestral_state\": {\"ancestral\": false, \"asr_min\": null}, \"symmetry_test\": {\"symtest\": false, \"symtest_remove_bad\": false, \"symtest_remove_good\": false, \"symtest_type\": null, \"symtest_pval\": null, \"symtest_keep_zero\": false}, \"concordance_factor\": {\"gcf\": {\"__class__\": \"RuntimeValue\"}, \"df_tree\": false, \"scf\": null, \"cf_verbose\": false, \"cf_quartet\": false}}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.4.0+galaxy1",
+            "type": "tool",
+            "uuid": "39f5f4f6-42bd-4a8b-98e8-734dc1cd737f",
+            "when": null,
+            "workflow_outputs": []
+        }
+    },
+    "tags": [
+        "transcriptomics",
+        "phylogeny"
+    ],
+    "uuid": "d105bc70-e6db-43e6-b607-c170d4ae4957",
+    "version": 19
+}

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for COVID-19: read pre-processing</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "COVID-19_read_pre-processing.ga"
+      },
+      "datePublished": "2021-02-02 19:06:59 +0000",
+      "author": [
+
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://workflowhub.eu/workflows/99?version=1",
+      "url": "https://workflowhub.eu/workflows/99/ro_crate?version=1",
+      "name": "Research Object Crate for COVID-19: read pre-processing",
+      "description": "Galaxy version of pre-processing of reads from COVID-19 samples. \nQC + human read cleaning\nBased on https://github.com/Finn-Lab/Metagen-FastQC/blob/master/metagen-fastqc.sh",
+      "sdDatePublished": "2026-03-24 18:10:37 +0000",
+      "hasPart": [
+        {
+          "@id": "COVID-19_read_pre-processing.ga"
+        }
+      ]
+    },
+    {
+      "@id": "COVID-19_read_pre-processing.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 13217,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Galaxy version of pre-processing of reads from COVID-19 samples. \nQC + human read cleaning\nBased on https://github.com/Finn-Lab/Metagen-FastQC/blob/master/metagen-fastqc.sh",
+      "name": "COVID-19: read pre-processing",
+      "url": "https://workflowhub.eu/workflows/99?version=1",
+      "keywords": "",
+      "version": 1,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/1"
+      },
+      "dateCreated": "2021-02-02T19:06:59Z",
+      "dateModified": "2023-02-13T14:06:45Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#covid_19__read_pre_processing-inputs-Forwards%20reads"
+        },
+        {
+          "@id": "#covid_19__read_pre_processing-inputs-Reverse%20reads"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#covid_19__read_pre_processing-outputs-_anonymous_output_3"
+        },
+        {
+          "@id": "#covid_19__read_pre_processing-outputs-_anonymous_output_4"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/1",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "IBISBA Workflows"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#covid_19__read_pre_processing-inputs-Forwards reads",
+      "@type": "FormalParameter",
+      "name": "Forwards reads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19__read_pre_processing-inputs-Reverse reads",
+      "@type": "FormalParameter",
+      "name": "Reverse reads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19__read_pre_processing-outputs-_anonymous_output_3",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_3",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19__read_pre_processing-outputs-_anonymous_output_4",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_4",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for COVID-19: read pre-processing</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/99/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/99/ro_crate?version=1</a>
+
+
+<p>
+  Galaxy version of pre-processing of reads from COVID-19 samples. 
+QC + human read cleaning
+Based on https://github.com/Finn-Lab/Metagen-FastQC/blob/master/metagen-fastqc.sh
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>Apache-2.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_COVID-19_read_pre-processing.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="COVID-19_read_pre-processing.ga">COVID-19: read pre-processing</a>
+      
+        <br/>Size: 13217 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

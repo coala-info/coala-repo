@@ -1,0 +1,109 @@
+---
+name: segmentation-of-anatomical-structures-in-medical-images
+description: "This medical imaging workflow processes DICOM series to segment anatomical structures like bones and the aortic bifurcation using thresholding, ridge filtering, and feature-based label filtering. Use this skill when you need to automatically identify and isolate skeletal structures or vascular landmarks from radiological scans for clinical analysis or morphometric studies."
+homepage: https://workflowhub.eu/workflows/2107
+---
+
+# Segmentation of Anatomical Structures in Medical Images
+
+## Overview
+
+This Galaxy workflow automates the segmentation of anatomical structures, specifically bones and the aortic bifurcation, from 3D medical imaging data. It begins by ingesting a DICOM series and converting the slices into TIFF format for processing. The pipeline utilizes a series of image processing steps, including intensity clipping, scaling, and ridge filtering, to enhance relevant features before applying automated thresholding to isolate specific anatomical regions.
+
+The workflow employs a sophisticated filtering strategy to refine the initial segmentations. By extracting 2D image features and applying tabular queries, it generates dynamic rules to filter label maps. This process ensures that only the structures meeting specific geometric and intensity criteria—defined by input parameters like Hounsfield unit thresholds and positional tolerances—are retained.
+
+The final outputs are refined segmentation masks for the bones and the aortic bifurcation. This workflow is particularly useful for researchers in the [Imaging](https://galaxyproject.org/use/imaging/) community and is associated with [GTN](https://training.galaxyproject.org/) training materials. The project is released under an [MIT license](https://opensource.org/licenses/MIT).
+
+## Inputs and data preparation
+
+| Step | Label | Type | Notes |
+| --- | --- | --- | --- |
+| 0 | bones_threshold_huv | parameter_input | Bones Threshold Value (HU) |
+| 1 | y_tol_bones_px | parameter_input | Y-Tolerance for Bones Segmentation (pixel) |
+| 2 | dicom_series | data_collection_input | DICOM Series |
+
+
+Ensure your input DICOM series is uploaded as a data collection to maintain the spatial relationship of the 3D anatomical slices during the conversion to TIFF. You should verify that the Hounsfield Unit (HU) threshold and pixel tolerance parameters are calibrated to your specific imaging modality for accurate bone and vessel segmentation. For automated execution, you can use `planemo workflow_job_init` to generate a `job.yml` file containing these parameters and collection identifiers. Refer to the README.md for comprehensive details on configuring the ridge filter and label map rules. All image processing steps expect standard medical imaging formats, so ensure metadata is preserved during the initial upload.
+
+## Steps (tools)
+
+| Step | Name | Tool ID | Notes |
+| --- | --- | --- | --- |
+| 3 | Create text file | toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_text_file_with_recurring_lines/9.5+galaxy2 |  |
+| 4 | Compose text parameter value | toolshed.g2.bx.psu.edu/repos/iuc/compose_text_param/compose_text_param/0.1.1 |  |
+| 5 | Convert DICOM to TIFF | toolshed.g2.bx.psu.edu/repos/imgteam/highdicom_dicom2tiff/highdicom_dicom2tiff/0.27.0+galaxy0 |  |
+| 6 | Add line to file | toolshed.g2.bx.psu.edu/repos/bgruening/add_line_to_file/add_line_to_file/0.1.0 | Add row |
+| 7 | Add line to file | toolshed.g2.bx.psu.edu/repos/bgruening/add_line_to_file/add_line_to_file/0.1.0 |  |
+| 8 | Concatenate images or channels | toolshed.g2.bx.psu.edu/repos/imgteam/concat_channels/ip_concat_channels/0.5 |  |
+| 9 | Convert | Convert characters1 |  |
+| 10 | Convert | Convert characters1 |  |
+| 11 | Scale image | toolshed.g2.bx.psu.edu/repos/imgteam/scale_image/ip_scale_image/0.25.2+galaxy0 |  |
+| 12 | Clip image intensities | toolshed.g2.bx.psu.edu/repos/imgteam/clip_image/clip_image/0.7.3+galaxy0 |  |
+| 13 | Threshold image | toolshed.g2.bx.psu.edu/repos/imgteam/2d_auto_threshold/ip_threshold/0.25.2+galaxy0 |  |
+| 14 | Apply ridge filter | toolshed.g2.bx.psu.edu/repos/imgteam/ridge_filter/ridge_filter_skimage/0.22.0+galaxy2 |  |
+| 15 | Convert binary image to label map | toolshed.g2.bx.psu.edu/repos/imgteam/binary2labelimage/ip_binary_to_labelimage/0.7.3+galaxy0 |  |
+| 16 | Threshold image | toolshed.g2.bx.psu.edu/repos/imgteam/2d_auto_threshold/ip_threshold/0.25.2+galaxy0 |  |
+| 17 | Extract image features | toolshed.g2.bx.psu.edu/repos/imgteam/2d_feature_extraction/ip_2d_feature_extraction/0.25.2+galaxy1 |  |
+| 18 | Convert binary image to label map | toolshed.g2.bx.psu.edu/repos/imgteam/binary2labelimage/ip_binary_to_labelimage/0.7.3+galaxy0 |  |
+| 19 | Query Tabular | toolshed.g2.bx.psu.edu/repos/iuc/query_tabular/query_tabular/3.3.2 |  |
+| 20 | Extract image features | toolshed.g2.bx.psu.edu/repos/imgteam/2d_feature_extraction/ip_2d_feature_extraction/0.25.2+galaxy1 |  |
+| 21 | Compute | toolshed.g2.bx.psu.edu/repos/devteam/column_maker/Add_a_column1/2.1 |  |
+| 22 | Query Tabular | toolshed.g2.bx.psu.edu/repos/iuc/query_tabular/query_tabular/3.3.2 |  |
+| 23 | Parse parameter value | param_value_from_file |  |
+| 24 | Parse parameter value | param_value_from_file |  |
+| 25 | Replace Text | toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_replace_in_line/9.5+galaxy2 |  |
+| 26 | Replace Text | toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_replace_in_line/9.5+galaxy2 |  |
+| 27 | Filter label map by rules | toolshed.g2.bx.psu.edu/repos/imgteam/2d_filter_segmentation_by_features/ip_2d_filter_segmentation_by_features/0.7.3+galaxy1 |  |
+| 28 | Filter label map by rules | toolshed.g2.bx.psu.edu/repos/imgteam/2d_filter_segmentation_by_features/ip_2d_filter_segmentation_by_features/0.7.3+galaxy1 |  |
+
+
+## Workflow outputs (marked in Galaxy)
+
+| Step | Label | Output name |
+| --- | --- | --- |
+| 27 | segm_bones | output |
+| 28 | segm_aorticbif | output |
+
+
+## How to run (Planemo)
+
+### Local Galaxy (default engine)
+
+```bash
+planemo run dicom-anatomical-3d.ga job.yml --download_outputs --output_directory . --output_json output.json
+```
+
+Optional: `--galaxy_root /path/to/galaxy` speeds up spinning up a local Galaxy.
+
+### Docker Galaxy
+
+Append e.g. `--engine docker_galaxy --ignore_dependency_problems` (requires Docker).
+
+### External Galaxy (usegalaxy.org / EU / …)
+
+```bash
+planemo run dicom-anatomical-3d.ga job.yml --engine external_galaxy --galaxy_url SERVER_URL --galaxy_user_key YOUR_API_KEY
+```
+
+Create a reusable profile: `planemo profile_create myprofile --galaxy_url ... --galaxy_user_key ... --engine external_galaxy` then `planemo run dicom-anatomical-3d.ga job.yml --profile myprofile`.
+
+### Job file
+
+- Generate a template: `planemo workflow_job_init dicom-anatomical-3d.ga -o job.yml`
+- Lint: `planemo workflow_lint dicom-anatomical-3d.ga`
+
+See **[Running Galaxy workflows](https://planemo.readthedocs.io/en/master/running.html)** in the Planemo documentation.
+
+## Invocation outputs
+
+After a successful run with `--download_outputs`, files appear under your chosen `--output_directory`. `--output_json` records CWL-style metadata for outputs (paths, checksums).
+
+On an external Galaxy, use `planemo invocation_download INVOCATION_ID --profile ...` to fetch outputs, or track progress with `planemo workflow_track INVOCATION_ID`.
+
+Workflow steps marked as **workflow outputs** in the editor are listed under **Workflow outputs**; exact filenames depend on tools and Galaxy configuration.
+
+## Files
+
+- `dicom-anatomical-3d.ga` — Galaxy workflow export (JSON)
+- `job.yml` — inputs/parameters for `planemo run` (create with `planemo workflow_job_init`)
+- [Planemo: Running Galaxy workflows](https://planemo.readthedocs.io/en/master/running.html)

@@ -1,0 +1,81 @@
+---
+name: ont-metagenomics-kraken2-krona
+description: "This metagenomics workflow processes raw Oxford Nanopore fast5 signal data to perform taxonomic classification using Kraken2 and generates interactive visualizations with Krona pie charts. Use this skill when you need to characterize the taxonomic composition of a complex microbial community and visualize the relative abundance of species from raw nanopore sequencing reads."
+homepage: https://workflowhub.eu/workflows/53
+---
+
+# ONT -- Metagenomics-Kraken2-Krona
+
+## Overview
+
+This Galaxy workflow provides an automated pipeline for the taxonomic classification and visualization of Oxford Nanopore Technologies (ONT) data. It is designed to process raw signal files, specifically accepting `fast5-Signals-Raw.tar.gz` as the primary input to identify the microbial composition of a metagenomic sample.
+
+The core analysis is performed by [Kraken2](https://toolshed.g2.bx.psu.edu/repos/iuc/kraken2/kraken2/2.0.8_beta+galaxy0), which assigns taxonomic labels to sequences by matching k-mers against a genomic database. To prepare the classification results for visualization, the workflow employs text manipulation steps using [Reverse](https://toolshed.g2.bx.psu.edu/repos/iuc/datamash_reverse/datamash_reverse/1.1.0) and [Replace Text](https://toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_replace_in_line/1.1.2) to reformat the taxonomic strings.
+
+The final output is an interactive [Krona pie chart](https://toolshed.g2.bx.psu.edu/repos/crs4/taxonomy_krona_chart/taxonomy_krona_chart/2.6.1.1), which provides a hierarchical view of the metagenomic population. This allows researchers to intuitively explore the relative abundance of different taxa identified within their ONT datasets.
+
+## Inputs and data preparation
+
+| Step | Label | Type | Notes |
+| --- | --- | --- | --- |
+| 0 | fast5-Signals-Raw.tar.gz | data_input |  |
+
+
+Ensure your primary input is a compressed archive in `.tar.gz` format containing raw FAST5 signal files to maintain data integrity during the metagenomic classification process. While this workflow accepts individual datasets, utilizing data collections is recommended for managing multiple samples or large-scale ONT runs efficiently. Please consult the `README.md` for comprehensive details on Kraken2 database selection and specific tool parameterizations. You can streamline the configuration of these inputs by using `planemo workflow_job_init` to create a template `job.yml` file.
+
+## Steps (tools)
+
+| Step | Name | Tool ID | Notes |
+| --- | --- | --- | --- |
+| 1 | Kraken2 | toolshed.g2.bx.psu.edu/repos/iuc/kraken2/kraken2/2.0.8_beta+galaxy0 |  |
+| 2 | Reverse | toolshed.g2.bx.psu.edu/repos/iuc/datamash_reverse/datamash_reverse/1.1.0 |  |
+| 3 | Replace Text | toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_replace_in_line/1.1.2 |  |
+| 4 | Krona pie chart | toolshed.g2.bx.psu.edu/repos/crs4/taxonomy_krona_chart/taxonomy_krona_chart/2.6.1.1 |  |
+
+
+## Workflow outputs (marked in Galaxy)
+
+_No explicit workflow outputs in this export; add outputs in the Galaxy editor or inspect tool steps._
+
+## How to run (Planemo)
+
+### Local Galaxy (default engine)
+
+```bash
+planemo run Galaxy-Workflow-ONT_--_Metagenomics-Kraken2-Krona.ga job.yml --download_outputs --output_directory . --output_json output.json
+```
+
+Optional: `--galaxy_root /path/to/galaxy` speeds up spinning up a local Galaxy.
+
+### Docker Galaxy
+
+Append e.g. `--engine docker_galaxy --ignore_dependency_problems` (requires Docker).
+
+### External Galaxy (usegalaxy.org / EU / …)
+
+```bash
+planemo run Galaxy-Workflow-ONT_--_Metagenomics-Kraken2-Krona.ga job.yml --engine external_galaxy --galaxy_url SERVER_URL --galaxy_user_key YOUR_API_KEY
+```
+
+Create a reusable profile: `planemo profile_create myprofile --galaxy_url ... --galaxy_user_key ... --engine external_galaxy` then `planemo run Galaxy-Workflow-ONT_--_Metagenomics-Kraken2-Krona.ga job.yml --profile myprofile`.
+
+### Job file
+
+- Generate a template: `planemo workflow_job_init Galaxy-Workflow-ONT_--_Metagenomics-Kraken2-Krona.ga -o job.yml`
+- Lint: `planemo workflow_lint Galaxy-Workflow-ONT_--_Metagenomics-Kraken2-Krona.ga`
+
+See **[Running Galaxy workflows](https://planemo.readthedocs.io/en/master/running.html)** in the Planemo documentation.
+
+## Invocation outputs
+
+After a successful run with `--download_outputs`, files appear under your chosen `--output_directory`. `--output_json` records CWL-style metadata for outputs (paths, checksums).
+
+On an external Galaxy, use `planemo invocation_download INVOCATION_ID --profile ...` to fetch outputs, or track progress with `planemo workflow_track INVOCATION_ID`.
+
+Workflow steps marked as **workflow outputs** in the editor are listed under **Workflow outputs**; exact filenames depend on tools and Galaxy configuration.
+
+## Files
+
+- `Galaxy-Workflow-ONT_--_Metagenomics-Kraken2-Krona.ga` — Galaxy workflow export (JSON)
+- `job.yml` — inputs/parameters for `planemo run` (create with `planemo workflow_job_init`)
+- [Planemo: Running Galaxy workflows](https://planemo.readthedocs.io/en/master/running.html)

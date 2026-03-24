@@ -1,0 +1,149 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "cnvkit-pipeline"
+      },
+      "datePublished": "2025-03-25 10:33:04 +0000",
+      "author": [
+        {
+          "@id": "#person-489"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-6173-5674"
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.1314.1",
+      "url": "https://workflowhub.eu/workflows/1314/ro_crate?version=1",
+      "name": "Research Object Crate for Galaxy Workflow for CNV Detection with CNVkit and Conversion to Beacon JSON Using cnv-vcf2json",
+      "description": "This Galaxy workflow streamlines comprehensive copy number variation (CNV) analysis by integrating CNVkit’s robust detection capabilities with an efficient conversion step using cnv-vcf2json to format results into Beacon JSON. Designed for computational biologists and bioinformaticians, the workflow standardizes CNV identification and output formatting to enhance interoperability with Beacon networks. It is specifically optimized for use with mapped BAM files from the EGAD00001008392 synthetic dataset, leveraging spiked-in variant data from RD-Connect GPAP synthetic data (available at [Zenodo](https://zenodo.org/records/7273767)).",
+      "sdDatePublished": "2026-03-24 19:27:47 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "cnvkit-pipeline"
+        }
+      ]
+    },
+    {
+      "@id": "cnvkit-pipeline",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "url": "https://usegalaxy.eu/u/khaled196/w/cnvkit-pipeline",
+      "contentSize": 0,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "This Galaxy workflow streamlines comprehensive copy number variation (CNV) analysis by integrating CNVkit’s robust detection capabilities with an efficient conversion step using cnv-vcf2json to format results into Beacon JSON. Designed for computational biologists and bioinformaticians, the workflow standardizes CNV identification and output formatting to enhance interoperability with Beacon networks. It is specifically optimized for use with mapped BAM files from the EGAD00001008392 synthetic dataset, leveraging spiked-in variant data from RD-Connect GPAP synthetic data (available at [Zenodo](https://zenodo.org/records/7273767)).",
+      "name": "Galaxy Workflow for CNV Detection with CNVkit and Conversion to Beacon JSON Using cnv-vcf2json",
+      "keywords": "Galaxy, workflow, hCNV, CNVkit, Beacon, synthetic data",
+      "version": 1,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/489"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/30"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/12"
+      },
+      "dateCreated": "2025-03-03T09:03:53Z",
+      "dateModified": "2025-11-13T13:38:08Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.1314.1",
+      "input": [
+
+      ],
+      "output": [
+
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "#person-489",
+      "@type": "Person",
+      "name": "Khaled Jum'ah",
+      "identifier": "https://workflowhub.eu/people/489"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-6173-5674",
+      "@type": "Person",
+      "name": "Krzysztof Poterlowicz",
+      "identifier": "https://orcid.org/0000-0001-6173-5674"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/489",
+      "@type": "Person",
+      "name": "Khaled Jum'ah"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/30",
+      "@type": "Person",
+      "name": "Krzysztof Poterlowicz"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/12",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Galaxy Training Network"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

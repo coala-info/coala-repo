@@ -1,0 +1,563 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "biobb_wf_flexserv.ga"
+      },
+      "datePublished": "2023-08-11 09:32:57 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-8291-8071"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-0513-0288"
+        }
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.557.1",
+      "url": "https://workflowhub.eu/workflows/557/ro_crate?version=1",
+      "name": "Research Object Crate for Galaxy Macromolecular Coarse-Grained Flexibility tutorial",
+      "description": "# Macromolecular Coarse-Grained Flexibility (FlexServ) tutorial using BioExcel Building Blocks (biobb)\n\nThis tutorial aims to illustrate the process of generating protein conformational ensembles from 3D structures and analysing its molecular flexibility, step by step, using the BioExcel Building Blocks library (biobb).\n\n***\n\n## Copyright &amp; Licensing\nThis software has been developed in the [MMB group](http://mmb.irbbarcelona.org) at the [BSC](http://www.bsc.es/) &amp; [IRB](https://www.irbbarcelona.org/) for the [European BioExcel](http://bioexcel.eu/), funded by the European Commission (EU H2020 [823830](http://cordis.europa.eu/projects/823830), EU H2020 [675728](http://cordis.europa.eu/projects/675728)).\n\n* (c) 2015-2023 [Barcelona Supercomputing Center](https://www.bsc.es/)\n* (c) 2015-2023 [Institute for Research in Biomedicine](https://www.irbbarcelona.org/)\n\nLicensed under the\n[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0), see the file LICENSE for details.\n\n![](https://bioexcel.eu/wp-content/uploads/2019/04/Bioexcell_logo_1080px_transp.png \"Bioexcel\")",
+      "isBasedOn": "https://github.com/bioexcel/biobb_workflows/tree/master/biobb_wf_flexserv/galaxy",
+      "sdDatePublished": "2026-03-24 17:57:16 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "biobb_wf_flexserv.ga"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexserv/galaxy/README.md"
+        }
+      ]
+    },
+    {
+      "@id": "biobb_wf_flexserv.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "url": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexserv/galaxy/biobb_wf_flexserv.ga",
+      "contentSize": 56921,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "# Macromolecular Coarse-Grained Flexibility (FlexServ) tutorial using BioExcel Building Blocks (biobb)\n\nThis tutorial aims to illustrate the process of generating protein conformational ensembles from 3D structures and analysing its molecular flexibility, step by step, using the BioExcel Building Blocks library (biobb).\n\n***\n\n## Copyright &amp; Licensing\nThis software has been developed in the [MMB group](http://mmb.irbbarcelona.org) at the [BSC](http://www.bsc.es/) &amp; [IRB](https://www.irbbarcelona.org/) for the [European BioExcel](http://bioexcel.eu/), funded by the European Commission (EU H2020 [823830](http://cordis.europa.eu/projects/823830), EU H2020 [675728](http://cordis.europa.eu/projects/675728)).\n\n* (c) 2015-2023 [Barcelona Supercomputing Center](https://www.bsc.es/)\n* (c) 2015-2023 [Institute for Research in Biomedicine](https://www.irbbarcelona.org/)\n\nLicensed under the\n[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0), see the file LICENSE for details.\n\n![](https://bioexcel.eu/wp-content/uploads/2019/04/Bioexcell_logo_1080px_transp.png \"Bioexcel\")",
+      "name": "Galaxy Macromolecular Coarse-Grained Flexibility tutorial",
+      "keywords": "",
+      "version": 1,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/57"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/47"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/11"
+      },
+      "dateCreated": "2023-08-11T08:32:23Z",
+      "dateModified": "2023-08-11T08:34:07Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.557.1",
+      "input": [
+
+      ],
+      "output": [
+        {
+          "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-%23main/_anonymous_output_1"
+        },
+        {
+          "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-%23main/_anonymous_output_10"
+        },
+        {
+          "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-%23main/_anonymous_output_11"
+        },
+        {
+          "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-%23main/_anonymous_output_12"
+        },
+        {
+          "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-%23main/_anonymous_output_13"
+        },
+        {
+          "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-%23main/_anonymous_output_14"
+        },
+        {
+          "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-%23main/_anonymous_output_15"
+        },
+        {
+          "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-%23main/_anonymous_output_16"
+        },
+        {
+          "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-%23main/_anonymous_output_2"
+        },
+        {
+          "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-%23main/_anonymous_output_3"
+        },
+        {
+          "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-%23main/_anonymous_output_4"
+        },
+        {
+          "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-%23main/_anonymous_output_5"
+        },
+        {
+          "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-%23main/_anonymous_output_6"
+        },
+        {
+          "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-%23main/_anonymous_output_7"
+        },
+        {
+          "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-%23main/_anonymous_output_8"
+        },
+        {
+          "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-%23main/_anonymous_output_9"
+        },
+        {
+          "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-%23main/bd_ensemble.log"
+        },
+        {
+          "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-%23main/bd_ensemble.mdcrd"
+        },
+        {
+          "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-%23main/bd_ensemble.pcz"
+        },
+        {
+          "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-%23main/bd_ensemble_rmsd.dat"
+        },
+        {
+          "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-%23main/bd_ensemble_rmsd.dcd"
+        },
+        {
+          "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-%23main/bd_ensemble_uncompressed.crd"
+        },
+        {
+          "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-%23main/bfactor_all.dat"
+        },
+        {
+          "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-%23main/bfactor_all.pdb"
+        },
+        {
+          "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-%23main/dmd_ensemble.log"
+        },
+        {
+          "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-%23main/dmd_ensemble.mdcrd"
+        },
+        {
+          "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-%23main/hinges_bfactor_report.json"
+        },
+        {
+          "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-%23main/mypdb.pdb"
+        },
+        {
+          "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-%23main/nma_ensemble.log"
+        },
+        {
+          "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-%23main/nma_ensemble.mdcrd"
+        },
+        {
+          "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-%23main/pcz_collectivity.json"
+        },
+        {
+          "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-%23main/pcz_evecs.json"
+        },
+        {
+          "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-%23main/pcz_proj1.crd"
+        },
+        {
+          "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-%23main/pcz_proj1.dcd"
+        },
+        {
+          "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-%23main/pcz_report.json"
+        },
+        {
+          "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-%23main/pcz_stiffness.json"
+        },
+        {
+          "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-%23main/structure_ca.pdb"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexserv/galaxy/README.md",
+      "@type": "File"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-8291-8071",
+      "@type": "Person",
+      "name": "Adam Hospital",
+      "identifier": "https://orcid.org/0000-0002-8291-8071"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-0513-0288",
+      "@type": "Person",
+      "name": "Genís Bayarri",
+      "identifier": "https://orcid.org/0000-0003-0513-0288"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/57",
+      "@type": "Person",
+      "name": "Adam Hospital"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/47",
+      "@type": "Person",
+      "name": "Genís Bayarri"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/11",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "BioBB Building Blocks"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-#main/_anonymous_output_1",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-#main/_anonymous_output_10",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_10",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-#main/_anonymous_output_11",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_11",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-#main/_anonymous_output_12",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_12",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-#main/_anonymous_output_13",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_13",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-#main/_anonymous_output_14",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_14",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-#main/_anonymous_output_15",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_15",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-#main/_anonymous_output_16",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_16",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-#main/_anonymous_output_2",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-#main/_anonymous_output_3",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_3",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-#main/_anonymous_output_4",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_4",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-#main/_anonymous_output_5",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_5",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-#main/_anonymous_output_6",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_6",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-#main/_anonymous_output_7",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_7",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-#main/_anonymous_output_8",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_8",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-#main/_anonymous_output_9",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_9",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-#main/bd_ensemble.log",
+      "@type": "FormalParameter",
+      "name": "#main/bd_ensemble.log",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-#main/bd_ensemble.mdcrd",
+      "@type": "FormalParameter",
+      "name": "#main/bd_ensemble.mdcrd",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-#main/bd_ensemble.pcz",
+      "@type": "FormalParameter",
+      "name": "#main/bd_ensemble.pcz",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-#main/bd_ensemble_rmsd.dat",
+      "@type": "FormalParameter",
+      "name": "#main/bd_ensemble_rmsd.dat",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-#main/bd_ensemble_rmsd.dcd",
+      "@type": "FormalParameter",
+      "name": "#main/bd_ensemble_rmsd.dcd",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-#main/bd_ensemble_uncompressed.crd",
+      "@type": "FormalParameter",
+      "name": "#main/bd_ensemble_uncompressed.crd",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-#main/bfactor_all.dat",
+      "@type": "FormalParameter",
+      "name": "#main/bfactor_all.dat",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-#main/bfactor_all.pdb",
+      "@type": "FormalParameter",
+      "name": "#main/bfactor_all.pdb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-#main/dmd_ensemble.log",
+      "@type": "FormalParameter",
+      "name": "#main/dmd_ensemble.log",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-#main/dmd_ensemble.mdcrd",
+      "@type": "FormalParameter",
+      "name": "#main/dmd_ensemble.mdcrd",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-#main/hinges_bfactor_report.json",
+      "@type": "FormalParameter",
+      "name": "#main/hinges_bfactor_report.json",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-#main/mypdb.pdb",
+      "@type": "FormalParameter",
+      "name": "#main/mypdb.pdb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-#main/nma_ensemble.log",
+      "@type": "FormalParameter",
+      "name": "#main/nma_ensemble.log",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-#main/nma_ensemble.mdcrd",
+      "@type": "FormalParameter",
+      "name": "#main/nma_ensemble.mdcrd",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-#main/pcz_collectivity.json",
+      "@type": "FormalParameter",
+      "name": "#main/pcz_collectivity.json",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-#main/pcz_evecs.json",
+      "@type": "FormalParameter",
+      "name": "#main/pcz_evecs.json",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-#main/pcz_proj1.crd",
+      "@type": "FormalParameter",
+      "name": "#main/pcz_proj1.crd",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-#main/pcz_proj1.dcd",
+      "@type": "FormalParameter",
+      "name": "#main/pcz_proj1.dcd",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-#main/pcz_report.json",
+      "@type": "FormalParameter",
+      "name": "#main/pcz_report.json",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-#main/pcz_stiffness.json",
+      "@type": "FormalParameter",
+      "name": "#main/pcz_stiffness.json",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_macromolecular_coarse_grained_flexibility_tutorial-outputs-#main/structure_ca.pdb",
+      "@type": "FormalParameter",
+      "name": "#main/structure_ca.pdb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

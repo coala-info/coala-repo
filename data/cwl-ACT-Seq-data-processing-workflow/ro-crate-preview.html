@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for ACT-Seq data processing workflow</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "CWL/workflows/ACTseq.cwl"
+      },
+      "datePublished": "2025-06-30 09:53:17 +0100",
+      "author": [
+
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://workflowhub.eu/workflows/1766?version=1",
+      "url": "https://workflowhub.eu/workflows/1766/ro_crate?version=1",
+      "name": "Research Object Crate for ACT-Seq data processing workflow",
+      "description": "This workflow supports processing of bulk ACT-Seq data from raw reads to genome-wide accessiblity tracks (bigWig) and ACT-Seq peaks. The main steps include read trimming using trimGalore, alignment with bowtie2, coverage generation using samtools and peak calling with MACS2.\n",
+      "isBasedOn": "https://github.com/CompEpigen/ChIPseq_workflows/",
+      "sdDatePublished": "2026-03-24 01:01:54 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "CWL/workflows/ACTseq.cwl"
+        },
+        {
+          "@id": "CWL/workflows/graph_images/ACT-Seq_cwlviewer.png"
+        }
+      ]
+    },
+    {
+      "@id": "CWL/workflows/ACTseq.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 9740,
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "image": {
+        "@id": "CWL/workflows/graph_images/ACT-Seq_cwlviewer.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "This workflow supports processing of bulk ACT-Seq data from raw reads to genome-wide accessiblity tracks (bigWig) and ACT-Seq peaks. The main steps include read trimming using trimGalore, alignment with bowtie2, coverage generation using samtools and peak calling with MACS2.\n",
+      "name": "ACT-Seq data processing workflow",
+      "url": "https://workflowhub.eu/workflows/1766?version=1",
+      "keywords": "",
+      "version": 1,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "creator": {
+        "@id": "https://orcid.org/0000-0003-3716-7739"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/334"
+      },
+      "dateCreated": "2025-06-30T09:05:05Z",
+      "dateModified": "2025-06-30T09:05:05Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/32"
+      },
+      "input": [
+        {
+          "@id": "#act_seq_data_processing_workflow-inputs-sample_id"
+        },
+        {
+          "@id": "#act_seq_data_processing_workflow-inputs-fastq1"
+        },
+        {
+          "@id": "#act_seq_data_processing_workflow-inputs-fastq2"
+        },
+        {
+          "@id": "#act_seq_data_processing_workflow-inputs-is_paired_end"
+        },
+        {
+          "@id": "#act_seq_data_processing_workflow-inputs-adapter1"
+        },
+        {
+          "@id": "#act_seq_data_processing_workflow-inputs-adapter2"
+        },
+        {
+          "@id": "#act_seq_data_processing_workflow-inputs-genome"
+        },
+        {
+          "@id": "#act_seq_data_processing_workflow-inputs-fragment_size"
+        },
+        {
+          "@id": "#act_seq_data_processing_workflow-inputs-effective_genome_size"
+        },
+        {
+          "@id": "#act_seq_data_processing_workflow-inputs-bin_size"
+        },
+        {
+          "@id": "#act_seq_data_processing_workflow-inputs-ignoreForNormalization"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#act_seq_data_processing_workflow-outputs-raw_fastqc_zip"
+        },
+        {
+          "@id": "#act_seq_data_processing_workflow-outputs-raw_fastqc_html"
+        },
+        {
+          "@id": "#act_seq_data_processing_workflow-outputs-trim_galore_log"
+        },
+        {
+          "@id": "#act_seq_data_processing_workflow-outputs-trimmed_fastqc_html"
+        },
+        {
+          "@id": "#act_seq_data_processing_workflow-outputs-trimmed_fastqc_zip"
+        },
+        {
+          "@id": "#act_seq_data_processing_workflow-outputs-bowtie2_log"
+        },
+        {
+          "@id": "#act_seq_data_processing_workflow-outputs-fastqc_zip"
+        },
+        {
+          "@id": "#act_seq_data_processing_workflow-outputs-fastqc_html"
+        },
+        {
+          "@id": "#act_seq_data_processing_workflow-outputs-bam"
+        },
+        {
+          "@id": "#act_seq_data_processing_workflow-outputs-bam_tn5_corrected"
+        },
+        {
+          "@id": "#act_seq_data_processing_workflow-outputs-bigwig"
+        },
+        {
+          "@id": "#act_seq_data_processing_workflow-outputs-qc_plot_coverage_plot"
+        },
+        {
+          "@id": "#act_seq_data_processing_workflow-outputs-qc_plot_coverage_tsv"
+        },
+        {
+          "@id": "#act_seq_data_processing_workflow-outputs-qc_plot_fingerprint_plot"
+        },
+        {
+          "@id": "#act_seq_data_processing_workflow-outputs-qc_plot_fingerprint_tsv"
+        },
+        {
+          "@id": "#act_seq_data_processing_workflow-outputs-qc_plot_fingerprint_stderr"
+        },
+        {
+          "@id": "#act_seq_data_processing_workflow-outputs-qc_crosscorr_summary"
+        },
+        {
+          "@id": "#act_seq_data_processing_workflow-outputs-qc_crosscorr_plot"
+        },
+        {
+          "@id": "#act_seq_data_processing_workflow-outputs-qc_phantompeakqualtools_stderr"
+        },
+        {
+          "@id": "#act_seq_data_processing_workflow-outputs-multiqc_zip"
+        },
+        {
+          "@id": "#act_seq_data_processing_workflow-outputs-multiqc_html"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "CWL/workflows/graph_images/ACT-Seq_cwlviewer.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 244189
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-3716-7739",
+      "@type": "Person",
+      "name": "Kersten Breuer"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/334",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "EOSC4Cancer"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/32",
+      "@type": "Collection",
+      "name": "Epigenomic workflows"
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#act_seq_data_processing_workflow-inputs-sample_id",
+      "@type": "FormalParameter",
+      "name": "sample_id",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#act_seq_data_processing_workflow-inputs-fastq1",
+      "@type": "FormalParameter",
+      "name": "fastq1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#act_seq_data_processing_workflow-inputs-fastq2",
+      "@type": "FormalParameter",
+      "name": "fastq2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#act_seq_data_processing_workflow-inputs-is_paired_end",
+      "@type": "FormalParameter",
+      "name": "is_paired_end",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#act_seq_data_processing_workflow-inputs-adapter1",
+      "@type": "FormalParameter",
+      "name": "adapter1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#act_seq_data_processing_workflow-inputs-adapter2",
+      "@type": "FormalParameter",
+      "name": "adapter2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#act_seq_data_processing_workflow-inputs-genome",
+      "@type": "FormalParameter",
+      "name": "genome",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#act_seq_data_processing_workflow-inputs-fragment_size",
+      "@type": "FormalParameter",
+      "name": "fragment_size",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#act_seq_data_processing_workflow-inputs-effective_genome_size",
+      "@type": "FormalParameter",
+      "name": "effective_genome_size",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#act_seq_data_processing_workflow-inputs-bin_size",
+      "@type": "FormalParameter",
+      "name": "bin_size",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#act_seq_data_processing_workflow-inputs-ignoreForNormalization",
+      "@type": "FormalParameter",
+      "name": "ignoreForNormalization",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#act_seq_data_processing_workflow-outputs-raw_fastqc_zip",
+      "@type": "FormalParameter",
+      "name": "raw_fastqc_zip",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#act_seq_data_processing_workflow-outputs-raw_fastqc_html",
+      "@type": "FormalParameter",
+      "name": "raw_fastqc_html",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#act_seq_data_processing_workflow-outputs-trim_galore_log",
+      "@type": "FormalParameter",
+      "name": "trim_galore_log",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#act_seq_data_processing_workflow-outputs-trimmed_fastqc_html",
+      "@type": "FormalParameter",
+      "name": "trimmed_fastqc_html",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#act_seq_data_processing_workflow-outputs-trimmed_fastqc_zip",
+      "@type": "FormalParameter",
+      "name": "trimmed_fastqc_zip",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#act_seq_data_processing_workflow-outputs-bowtie2_log",
+      "@type": "FormalParameter",
+      "name": "bowtie2_log",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#act_seq_data_processing_workflow-outputs-fastqc_zip",
+      "@type": "FormalParameter",
+      "name": "fastqc_zip",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#act_seq_data_processing_workflow-outputs-fastqc_html",
+      "@type": "FormalParameter",
+      "name": "fastqc_html",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#act_seq_data_processing_workflow-outputs-bam",
+      "@type": "FormalParameter",
+      "name": "bam",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#act_seq_data_processing_workflow-outputs-bam_tn5_corrected",
+      "@type": "FormalParameter",
+      "name": "bam_tn5_corrected",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#act_seq_data_processing_workflow-outputs-bigwig",
+      "@type": "FormalParameter",
+      "name": "bigwig",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#act_seq_data_processing_workflow-outputs-qc_plot_coverage_plot",
+      "@type": "FormalParameter",
+      "name": "qc_plot_coverage_plot",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#act_seq_data_processing_workflow-outputs-qc_plot_coverage_tsv",
+      "@type": "FormalParameter",
+      "name": "qc_plot_coverage_tsv",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#act_seq_data_processing_workflow-outputs-qc_plot_fingerprint_plot",
+      "@type": "FormalParameter",
+      "name": "qc_plot_fingerprint_plot",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#act_seq_data_processing_workflow-outputs-qc_plot_fingerprint_tsv",
+      "@type": "FormalParameter",
+      "name": "qc_plot_fingerprint_tsv",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#act_seq_data_processing_workflow-outputs-qc_plot_fingerprint_stderr",
+      "@type": "FormalParameter",
+      "name": "qc_plot_fingerprint_stderr",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#act_seq_data_processing_workflow-outputs-qc_crosscorr_summary",
+      "@type": "FormalParameter",
+      "name": "qc_crosscorr_summary",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#act_seq_data_processing_workflow-outputs-qc_crosscorr_plot",
+      "@type": "FormalParameter",
+      "name": "qc_crosscorr_plot",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#act_seq_data_processing_workflow-outputs-qc_phantompeakqualtools_stderr",
+      "@type": "FormalParameter",
+      "name": "qc_phantompeakqualtools_stderr",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#act_seq_data_processing_workflow-outputs-multiqc_zip",
+      "@type": "FormalParameter",
+      "name": "multiqc_zip",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#act_seq_data_processing_workflow-outputs-multiqc_html",
+      "@type": "FormalParameter",
+      "name": "multiqc_html",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for ACT-Seq data processing workflow</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/1766/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/1766/ro_crate?version=1</a>
+
+
+  <img src="CWL/workflows/graph_images/ACT-Seq_cwlviewer.png" style="width: 100%;"/>
+
+<p>
+  This workflow supports processing of bulk ACT-Seq data from raw reads to genome-wide accessiblity tracks (bigWig) and ACT-Seq peaks. The main steps include read trimming using trimGalore, alignment with bowtie2, coverage generation using samtools and peak calling with MACS2.
+
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>Apache-2.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_CWL/workflows/ACTseq.cwl">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="CWL/workflows/ACTseq.cwl">ACT-Seq data processing workflow</a>
+      
+        <br/>Size: 9740 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_CWL/workflows/graph_images/ACT-Seq_cwlviewer.png">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="CWL/workflows/graph_images/ACT-Seq_cwlviewer.png">CWL/workflows/graph_images/ACT-Seq_cwlviewer.png</a>
+      
+        <br/>Size: 244189 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

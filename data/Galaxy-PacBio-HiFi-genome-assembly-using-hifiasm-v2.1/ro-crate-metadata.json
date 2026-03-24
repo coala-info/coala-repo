@@ -1,0 +1,274 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-PacBio_HiFi_genome_assembly_using_hifiasm_v2.1.ga"
+      },
+      "datePublished": "2022-10-21 06:08:02 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0003-2439-8650"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-9009-7453"
+        }
+      ],
+      "license": "GPL-3.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.221.3",
+      "url": "https://workflowhub.eu/workflows/221/ro_crate?version=3",
+      "name": "Research Object Crate for PacBio HiFi genome assembly using hifiasm v2.1",
+      "description": "# PacBio HiFi genome assembly using hifiasm v2.1\n\n## General usage recommendations\nPlease see the [Genome assembly with hifiasm on Galaxy Australia](https://australianbiocommons.github.io/how-to-guides/genome_assembly/hifi_assembly) guide.\n\n## See [change log](./change_log.md)\n\n## Acknowledgements\n\nThe workflow &amp; the [doc_guidelines template used](https://github.com/AustralianBioCommons/doc_guidelines) are \nsupported by the Australian BioCommons via Bioplatforms Australia funding, the Australian Research Data Commons \n(https://doi.org/10.47486/PL105) and the Queensland Government RICF programme. Bioplatforms Australia and the \nAustralian Research Data Commons are enabled by the National Collaborative Research Infrastructure Strategy (NCRIS).\n\n\n\n",
+      "isBasedOn": "https://github.com/AustralianBioCommons/PacBio-HiFi-genome-assembly-using-hifiasm",
+      "sdDatePublished": "2026-03-24 18:01:36 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-PacBio_HiFi_genome_assembly_using_hifiasm_v2.1.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-PacBio_HiFi_genome_assembly_using_hifiasm_v2.1.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 27208,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "# PacBio HiFi genome assembly using hifiasm v2.1\n\n## General usage recommendations\nPlease see the [Genome assembly with hifiasm on Galaxy Australia](https://australianbiocommons.github.io/how-to-guides/genome_assembly/hifi_assembly) guide.\n\n## See [change log](./change_log.md)\n\n## Acknowledgements\n\nThe workflow &amp; the [doc_guidelines template used](https://github.com/AustralianBioCommons/doc_guidelines) are \nsupported by the Australian BioCommons via Bioplatforms Australia funding, the Australian Research Data Commons \n(https://doi.org/10.47486/PL105) and the Queensland Government RICF programme. Bioplatforms Australia and the \nAustralian Research Data Commons are enabled by the National Collaborative Research Infrastructure Strategy (NCRIS).\n\n\n\n",
+      "name": "PacBio HiFi genome assembly using hifiasm v2.1",
+      "url": "https://workflowhub.eu/workflows/221?version=3",
+      "keywords": "FASTQ, hifiasm, HiFi, genome_assembly",
+      "version": 3,
+      "license": "https://spdx.org/licenses/GPL-3.0",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/139"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/358"
+        }
+      ],
+      "producer": [
+        {
+          "@id": "https://workflowhub.eu/projects/54"
+        },
+        {
+          "@id": "https://workflowhub.eu/projects/30"
+        }
+      ],
+      "dateCreated": "2022-10-21T05:13:12Z",
+      "dateModified": "2023-01-30T18:21:31Z",
+      "isPartOf": [
+        {
+          "@id": "https://workflowhub.eu/collections/5"
+        },
+        {
+          "@id": "https://workflowhub.eu/collections/6"
+        }
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.221.3",
+      "isBasedOn": "https://workflowhub.eu/workflows/221?version=2",
+      "input": {
+        "@id": "#pacbio_hifi_genome_assembly_using_hifiasm_v2_1-inputs-FASTQ%20input"
+      },
+      "output": [
+        {
+          "@id": "#pacbio_hifi_genome_assembly_using_hifiasm_v2_1-outputs-HiFi%20Adapter%20Filter%20on%20input%20dataset(s):%20clean%20reads"
+        },
+        {
+          "@id": "#pacbio_hifi_genome_assembly_using_hifiasm_v2_1-outputs-HiFi%20Adapter%20Filter%20on%20input%20dataset(s):%20contaminant%20statistic"
+        },
+        {
+          "@id": "#pacbio_hifi_genome_assembly_using_hifiasm_v2_1-outputs-HiFi%20Adapter%20Filter%20on%20input%20dataset(s):%20contaminant%20blastout"
+        },
+        {
+          "@id": "#pacbio_hifi_genome_assembly_using_hifiasm_v2_1-outputs-HiFi%20Adapter%20Filter%20on%20input%20dataset(s):%20blocklist"
+        },
+        {
+          "@id": "#pacbio_hifi_genome_assembly_using_hifiasm_v2_1-outputs-primary%20bandage%20info"
+        },
+        {
+          "@id": "#pacbio_hifi_genome_assembly_using_hifiasm_v2_1-outputs-converted%20FASTA"
+        },
+        {
+          "@id": "#pacbio_hifi_genome_assembly_using_hifiasm_v2_1-outputs-primary%20bandage%20image"
+        },
+        {
+          "@id": "#pacbio_hifi_genome_assembly_using_hifiasm_v2_1-outputs-metrics"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-2439-8650",
+      "@type": "Person",
+      "name": "Gareth Price",
+      "identifier": "https://orcid.org/0000-0003-2439-8650"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-9009-7453",
+      "@type": "Person",
+      "name": "Katherine Farquharson",
+      "identifier": "https://orcid.org/0000-0002-9009-7453"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/139",
+      "@type": "Person",
+      "name": "Gareth Price"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/358",
+      "@type": "Person",
+      "name": "Katherine Farquharson"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/54",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Galaxy Australia"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/30",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Australian BioCommons"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/5",
+      "@type": "Collection",
+      "name": "HiFi genome assembly on Galaxy"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/6",
+      "@type": "Collection",
+      "name": "BioCommons ‘Bring Your Own Data’ Expansion Project"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#pacbio_hifi_genome_assembly_using_hifiasm_v2_1-inputs-FASTQ input",
+      "@type": "FormalParameter",
+      "name": "FASTQ input",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pacbio_hifi_genome_assembly_using_hifiasm_v2_1-outputs-HiFi Adapter Filter on input dataset(s): clean reads",
+      "@type": "FormalParameter",
+      "name": "HiFi Adapter Filter on input dataset(s): clean reads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pacbio_hifi_genome_assembly_using_hifiasm_v2_1-outputs-HiFi Adapter Filter on input dataset(s): contaminant statistic",
+      "@type": "FormalParameter",
+      "name": "HiFi Adapter Filter on input dataset(s): contaminant statistic",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pacbio_hifi_genome_assembly_using_hifiasm_v2_1-outputs-HiFi Adapter Filter on input dataset(s): contaminant blastout",
+      "@type": "FormalParameter",
+      "name": "HiFi Adapter Filter on input dataset(s): contaminant blastout",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pacbio_hifi_genome_assembly_using_hifiasm_v2_1-outputs-HiFi Adapter Filter on input dataset(s): blocklist",
+      "@type": "FormalParameter",
+      "name": "HiFi Adapter Filter on input dataset(s): blocklist",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pacbio_hifi_genome_assembly_using_hifiasm_v2_1-outputs-primary bandage info",
+      "@type": "FormalParameter",
+      "name": "primary bandage info",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pacbio_hifi_genome_assembly_using_hifiasm_v2_1-outputs-converted FASTA",
+      "@type": "FormalParameter",
+      "name": "converted FASTA",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pacbio_hifi_genome_assembly_using_hifiasm_v2_1-outputs-primary bandage image",
+      "@type": "FormalParameter",
+      "name": "primary bandage image",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pacbio_hifi_genome_assembly_using_hifiasm_v2_1-outputs-metrics",
+      "@type": "FormalParameter",
+      "name": "metrics",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

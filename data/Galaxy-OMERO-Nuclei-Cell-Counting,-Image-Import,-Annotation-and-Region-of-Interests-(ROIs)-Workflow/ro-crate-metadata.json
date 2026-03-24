@@ -1,0 +1,216 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-2024_Nuclei_counting_w_OMERO_upload.ga"
+      },
+      "datePublished": "2025-01-28 13:28:09 +0000",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0003-2104-9519"
+        },
+        {
+          "@id": "#creator-1"
+        }
+      ],
+      "license": "MIT",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.1259.1",
+      "url": "https://workflowhub.eu/workflows/1259/ro_crate?version=1",
+      "name": "Research Object Crate for OMERO Nuclei Cell Counting, Image Import, Annotation and Region of Interests (ROIs) Workflow",
+      "description": "Workflow to perform nuclei cell counting on High Content Screening (HCS) Data and upload result into OMERO\n\nIn this workflow, cell images are first uploaded to both Galaxy and OMERO using the  “OMERO Image Import” tool. \nConcurrently, image processing is performed. After thresholding and binarization, key features of nuclei, such as area, label number, and perimeter, are computed from the processed images and saved as a CSV file. \nThe result file is then attached to each image stored in OMERO using the “OMERO Metadata Import” tool. \nThe “Label Extraction” tool generates ROI coordinates from the binary image, which are subsequently uploaded into OMERO using the “OMERO ROI Import” tool. \n\nA dataset for testing can be found at: https://zenodo.org/records/14205500\n\n**Important Security Note:** It is crucial to be aware that storing credentials as variables can pose security risks, particularly if accessed by administrators. Therefore, it is essential to handle user credentials securely and in accordance with best practices.",
+      "isBasedOn": "https://github.com/Helmholtz-UFZ/galaxy-tools",
+      "sdDatePublished": "2026-03-24 17:38:10 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-2024_Nuclei_counting_w_OMERO_upload.ga"
+        },
+        {
+          "@id": "Screenshot%20from%202025-01-28%2014-27-51.png"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-2024_Nuclei_counting_w_OMERO_upload.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 40934,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "Screenshot%20from%202025-01-28%2014-27-51.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Workflow to perform nuclei cell counting on High Content Screening (HCS) Data and upload result into OMERO\n\nIn this workflow, cell images are first uploaded to both Galaxy and OMERO using the  “OMERO Image Import” tool. \nConcurrently, image processing is performed. After thresholding and binarization, key features of nuclei, such as area, label number, and perimeter, are computed from the processed images and saved as a CSV file. \nThe result file is then attached to each image stored in OMERO using the “OMERO Metadata Import” tool. \nThe “Label Extraction” tool generates ROI coordinates from the binary image, which are subsequently uploaded into OMERO using the “OMERO ROI Import” tool. \n\nA dataset for testing can be found at: https://zenodo.org/records/14205500\n\n**Important Security Note:** It is crucial to be aware that storing credentials as variables can pose security risks, particularly if accessed by administrators. Therefore, it is essential to handle user credentials securely and in accordance with best practices.",
+      "name": "OMERO Nuclei Cell Counting, Image Import, Annotation and Region of Interests (ROIs) Workflow",
+      "url": "https://workflowhub.eu/workflows/1259?version=1",
+      "keywords": "OMERO, RDM, Workflows, bioimaging, FAIR, FAIR workflows, imaging",
+      "version": 1,
+      "license": "https://spdx.org/licenses/MIT",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/916"
+        },
+        {
+          "@id": "#Riccardo%20Massei"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/293"
+      },
+      "dateCreated": "2025-01-28T13:33:51Z",
+      "dateModified": "2025-03-03T20:24:21Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.1259.1",
+      "input": [
+        {
+          "@id": "#omero_nuclei_cell_counting__image_import__annotation_and_region_of_interests__rois__workflow-inputs-Image%20to%20Upload%20in%20OMERO"
+        },
+        {
+          "@id": "#omero_nuclei_cell_counting__image_import__annotation_and_region_of_interests__rois__workflow-inputs-OMERO%20server%20address"
+        },
+        {
+          "@id": "#omero_nuclei_cell_counting__image_import__annotation_and_region_of_interests__rois__workflow-inputs-Target%20Dataset"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#omero_nuclei_cell_counting__image_import__annotation_and_region_of_interests__rois__workflow-outputs-image_upload_log"
+        },
+        {
+          "@id": "#omero_nuclei_cell_counting__image_import__annotation_and_region_of_interests__rois__workflow-outputs-metadata_import_log"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "Screenshot%20from%202025-01-28%2014-27-51.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 168517
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-2104-9519",
+      "@type": "Person",
+      "name": "Riccardo Massei",
+      "identifier": "https://orcid.org/0000-0003-2104-9519"
+    },
+    {
+      "@id": "#creator-1",
+      "@type": "Person",
+      "name": "Riccardo Massei"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/916",
+      "@type": "Person",
+      "name": "Riccardo Massei"
+    },
+    {
+      "@id": "#Riccardo Massei",
+      "@type": "Person",
+      "name": "Riccardo Massei"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/293",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "UFZ - Image Data Management and Processing Workflows"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#omero_nuclei_cell_counting__image_import__annotation_and_region_of_interests__rois__workflow-inputs-Image to Upload in OMERO",
+      "@type": "FormalParameter",
+      "name": "Image to Upload in OMERO",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#omero_nuclei_cell_counting__image_import__annotation_and_region_of_interests__rois__workflow-inputs-OMERO server address",
+      "@type": "FormalParameter",
+      "name": "OMERO server address",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#omero_nuclei_cell_counting__image_import__annotation_and_region_of_interests__rois__workflow-inputs-Target Dataset",
+      "@type": "FormalParameter",
+      "name": "Target Dataset",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#omero_nuclei_cell_counting__image_import__annotation_and_region_of_interests__rois__workflow-outputs-image_upload_log",
+      "@type": "FormalParameter",
+      "name": "image_upload_log",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#omero_nuclei_cell_counting__image_import__annotation_and_region_of_interests__rois__workflow-outputs-metadata_import_log",
+      "@type": "FormalParameter",
+      "name": "metadata_import_log",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

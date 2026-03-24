@@ -1,0 +1,93 @@
+---
+name: kmer-counting-meryl-upgraded
+description: "This genomics workflow processes Illumina sequencing reads using Meryl for k-mer counting and GenomeScope for statistical analysis of the resulting k-mer distribution. Use this skill when you need to estimate genome size, heterozygosity, and repetitiveness from raw sequencing data to assess the complexity of a genome before assembly."
+homepage: https://workflowhub.eu/workflows/1608
+---
+
+# kmer counting - meryl - upgraded
+
+## Overview
+
+This workflow performs k-mer counting and genomic profiling using Illumina sequencing data. It is designed to estimate fundamental genome characteristics—such as genome size, heterozygosity, and repeat content—starting from raw Illumina R1 reads.
+
+The process begins by utilizing [Meryl](https://toolshed.g2.bx.psu.edu/repos/iuc/meryl/meryl/1.3+galaxy6) to construct a k-mer database from the input datasets. Once the database is established, the tool generates a k-mer frequency histogram, which serves as the primary input for downstream statistical analysis.
+
+The resulting histogram is then processed by [GenomeScope](https://toolshed.g2.bx.psu.edu/repos/iuc/genomescope/genomescope/2.0+galaxy2) to model the genomic landscape. This step produces a comprehensive suite of outputs, including linear and log-scale plots, a summary of estimated genomic parameters, and a detailed model fit.
+
+This workflow is licensed under GPL-3.0-or-later and is associated with the [Galaxy Training Network (GTN)](https://training.galaxyproject.org/), making it a standardized choice for researchers performing initial genome assembly assessments.
+
+## Inputs and data preparation
+
+| Step | Label | Type | Notes |
+| --- | --- | --- | --- |
+| 0 | Illumina reads R1 | data_input |  |
+
+
+Ensure your Illumina R1 reads are provided in FASTQ format, as Meryl requires high-quality sequencing data to build accurate k-mer databases. While the workflow is configured for a single input, you can utilize dataset collections to process multiple libraries simultaneously. Consult the README.md for exhaustive documentation on parameter settings and expected output interpretations. For automated execution, consider using `planemo workflow_job_init` to create a `job.yml` file.
+
+## Steps (tools)
+
+| Step | Name | Tool ID | Notes |
+| --- | --- | --- | --- |
+| 1 | Meryl | toolshed.g2.bx.psu.edu/repos/iuc/meryl/meryl/1.3+galaxy6 |  |
+| 2 | Meryl | toolshed.g2.bx.psu.edu/repos/iuc/meryl/meryl/1.3+galaxy6 |  |
+| 3 | GenomeScope | toolshed.g2.bx.psu.edu/repos/iuc/genomescope/genomescope/2.0+galaxy2 |  |
+
+
+## Workflow outputs (marked in Galaxy)
+
+| Step | Label | Output name |
+| --- | --- | --- |
+| 1 | Meryl on input dataset(s): read-db.meryldb | read_db |
+| 2 | read_db_hist | read_db_hist |
+| 3 | progress | progress |
+| 3 | GenomeScope on input dataset(s) Transformed log plot | transformed_log_plot |
+| 3 | summary | summary |
+| 3 | model | model |
+| 3 | GenomeScope on input dataset(s) Transformed linear plot | transformed_linear_plot |
+| 3 | GenomeScope on input dataset(s) Log plot | log_plot |
+| 3 | GenomeScope on input dataset(s) Linear plot | linear_plot |
+
+
+## How to run (Planemo)
+
+### Local Galaxy (default engine)
+
+```bash
+planemo run galaxy-workflow-kmer-counting.ga job.yml --download_outputs --output_directory . --output_json output.json
+```
+
+Optional: `--galaxy_root /path/to/galaxy` speeds up spinning up a local Galaxy.
+
+### Docker Galaxy
+
+Append e.g. `--engine docker_galaxy --ignore_dependency_problems` (requires Docker).
+
+### External Galaxy (usegalaxy.org / EU / …)
+
+```bash
+planemo run galaxy-workflow-kmer-counting.ga job.yml --engine external_galaxy --galaxy_url SERVER_URL --galaxy_user_key YOUR_API_KEY
+```
+
+Create a reusable profile: `planemo profile_create myprofile --galaxy_url ... --galaxy_user_key ... --engine external_galaxy` then `planemo run galaxy-workflow-kmer-counting.ga job.yml --profile myprofile`.
+
+### Job file
+
+- Generate a template: `planemo workflow_job_init galaxy-workflow-kmer-counting.ga -o job.yml`
+- Lint: `planemo workflow_lint galaxy-workflow-kmer-counting.ga`
+
+See **[Running Galaxy workflows](https://planemo.readthedocs.io/en/master/running.html)** in the Planemo documentation.
+
+## Invocation outputs
+
+After a successful run with `--download_outputs`, files appear under your chosen `--output_directory`. `--output_json` records CWL-style metadata for outputs (paths, checksums).
+
+On an external Galaxy, use `planemo invocation_download INVOCATION_ID --profile ...` to fetch outputs, or track progress with `planemo workflow_track INVOCATION_ID`.
+
+Workflow steps marked as **workflow outputs** in the editor are listed under **Workflow outputs**; exact filenames depend on tools and Galaxy configuration.
+
+## Files
+
+- `galaxy-workflow-kmer-counting.ga` — Galaxy workflow export (JSON)
+- `job.yml` — inputs/parameters for `planemo run` (create with `planemo workflow_job_init`)
+- [Planemo: Running Galaxy workflows](https://planemo.readthedocs.io/en/master/running.html)

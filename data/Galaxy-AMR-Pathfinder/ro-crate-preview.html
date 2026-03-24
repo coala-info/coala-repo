@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for AMR-Pathfinder</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-AMR-Pathfinder_v4.7.ga"
+      },
+      "datePublished": "2024-12-24 11:42:20 +0000",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0001-9760-8992"
+        },
+        {
+          "@id": "#person-359"
+        },
+        {
+          "@id": "#person-875"
+        }
+      ],
+      "license": "MIT",
+      "identifier": "https://workflowhub.eu/workflows/1189?version=2",
+      "url": "https://workflowhub.eu/workflows/1189/ro_crate?version=2",
+      "name": "Research Object Crate for AMR-Pathfinder",
+      "description": "This is an aggregation of the work done in [Seq4AMR](https://workflowhub.eu/projects/110) consisting of the following workflows:\n\n- [WF1: AbritAMR / AMRFinderPlus](https://workflowhub.eu/workflows/634)\n- [WF2: Sciensano](https://workflowhub.eu/workflows/644) (**not currently included**)\n- [WF3: SRST2](https://workflowhub.eu/workflows/407) \n- [WF4: StarAMR](https://workflowhub.eu/workflows/470)\n\n## Installation\n\n- You will need to:\n    - run the [RGI Database Builder](https://my.galaxy.training/?path=?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fcard%2Frgi%2Frgi_database_builder%2F1.2.0) as a Galaxy admin (if this hasn't been done already)\n    - [Have the en_US.UTF-8 locale installed](https://github.com/galaxyproject/tools-iuc/issues/6467) on the compute nodes executing cast/melt jobs.\n    - Install the requisite tools with e.g. [`shed-tools`](https://ephemeris.readthedocs.io/en/latest/commands/shed-tools.html) command from the [`ephemeris`](https://ephemeris.readthedocs.io/en/latest/) suite: `shed-tools install -g https://galaxy.example.com -a API_KEY -t tools.yaml` (tools.yaml is provided in this repository.)\n- Then you can import this workflow\n    - Navigate to `/workflows/import` of your Galaxy server\n    - Select \"GA4GH servers\"\n    - Enter `name:\"AMR-Pathfinder\"`\n- And run it\n    - You must provide a Sequencing collection (list:paired of fastq files)\n    - And a Genomes collection (list of fasta files) \n    - Both of these should use **identical** collection element identifiers\n\n## Outputs\n\nThis will produce two important tables: \"Binary Comparison\" and a \"% Identity Scored Outputs\". \n\n### Binary comparison\n\nThis file reports the discovery or absence of specific AMR genes across all tested AMR Analysis tools. You will mostly see 1s (presence) or 0s (absence) but you may occasionally see higher numbers when an AMR tool reports multiple hits for a specific gene.\n\n### % Identity Scored Outputs\n\nThis is similar to binary comparison, but using the % identity reported by each AMR tool. For cases where multiple hits were detected, we take the highest.\n\n## Known Issues\n\nThe names for identified AMR genes is highly inconsistent across AMR analysis tools. We urge the AMR community to rectify this by standardising gene names used in their tooling.",
+      "sdDatePublished": "2026-03-24 19:28:02 +0000",
+      "creativeWorkStatus": "Work-in-progress",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-AMR-Pathfinder_v4.7.ga"
+        },
+        {
+          "@id": "graph.png"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-AMR-Pathfinder_v4.7.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 137972,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "graph.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "This is an aggregation of the work done in [Seq4AMR](https://workflowhub.eu/projects/110) consisting of the following workflows:\n\n- [WF1: AbritAMR / AMRFinderPlus](https://workflowhub.eu/workflows/634)\n- [WF2: Sciensano](https://workflowhub.eu/workflows/644) (**not currently included**)\n- [WF3: SRST2](https://workflowhub.eu/workflows/407) \n- [WF4: StarAMR](https://workflowhub.eu/workflows/470)\n\n## Installation\n\n- You will need to:\n    - run the [RGI Database Builder](https://my.galaxy.training/?path=?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fcard%2Frgi%2Frgi_database_builder%2F1.2.0) as a Galaxy admin (if this hasn't been done already)\n    - [Have the en_US.UTF-8 locale installed](https://github.com/galaxyproject/tools-iuc/issues/6467) on the compute nodes executing cast/melt jobs.\n    - Install the requisite tools with e.g. [`shed-tools`](https://ephemeris.readthedocs.io/en/latest/commands/shed-tools.html) command from the [`ephemeris`](https://ephemeris.readthedocs.io/en/latest/) suite: `shed-tools install -g https://galaxy.example.com -a API_KEY -t tools.yaml` (tools.yaml is provided in this repository.)\n- Then you can import this workflow\n    - Navigate to `/workflows/import` of your Galaxy server\n    - Select \"GA4GH servers\"\n    - Enter `name:\"AMR-Pathfinder\"`\n- And run it\n    - You must provide a Sequencing collection (list:paired of fastq files)\n    - And a Genomes collection (list of fasta files) \n    - Both of these should use **identical** collection element identifiers\n\n## Outputs\n\nThis will produce two important tables: \"Binary Comparison\" and a \"% Identity Scored Outputs\". \n\n### Binary comparison\n\nThis file reports the discovery or absence of specific AMR genes across all tested AMR Analysis tools. You will mostly see 1s (presence) or 0s (absence) but you may occasionally see higher numbers when an AMR tool reports multiple hits for a specific gene.\n\n### % Identity Scored Outputs\n\nThis is similar to binary comparison, but using the % identity reported by each AMR tool. For cases where multiple hits were detected, we take the highest.\n\n## Known Issues\n\nThe names for identified AMR genes is highly inconsistent across AMR analysis tools. We urge the AMR community to rectify this by standardising gene names used in their tooling.",
+      "name": "AMR-Pathfinder",
+      "url": "https://workflowhub.eu/workflows/1189?version=2",
+      "keywords": "benchamrking, AMR, AMR-detection",
+      "version": 2,
+      "license": "https://spdx.org/licenses/MIT",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/118"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/359"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/875"
+        }
+      ],
+      "producer": [
+        {
+          "@id": "https://workflowhub.eu/projects/110"
+        },
+        {
+          "@id": "https://workflowhub.eu/projects/277"
+        }
+      ],
+      "dateCreated": "2024-11-14T14:57:14Z",
+      "dateModified": "2024-12-24T11:42:20Z",
+      "isPartOf": [
+
+      ],
+      "isBasedOn": "https://workflowhub.eu/workflows/1189?version=1",
+      "input": [
+
+      ],
+      "output": [
+
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "graph.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 406492
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-9760-8992",
+      "@type": "Person",
+      "name": "Helena Rasche",
+      "identifier": "https://orcid.org/0000-0001-9760-8992"
+    },
+    {
+      "@id": "#person-359",
+      "@type": "Person",
+      "name": "Dennis Dollée",
+      "identifier": "https://workflowhub.eu/people/359"
+    },
+    {
+      "@id": "#person-875",
+      "@type": "Person",
+      "name": "Birgit Rijvers",
+      "identifier": "https://workflowhub.eu/people/875"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/118",
+      "@type": "Person",
+      "name": "Helena Rasche"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/359",
+      "@type": "Person",
+      "name": "Dennis Dollée"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/875",
+      "@type": "Person",
+      "name": "Birgit Rijvers"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/110",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Seq4AMR"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/277",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "ErasmusMC Clinical Bioinformatics"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for AMR-Pathfinder</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/1189/ro_crate?version=2" target="_blank">https://workflowhub.eu/workflows/1189/ro_crate?version=2</a>
+
+
+  <img src="graph.png" style="width: 100%;"/>
+
+<p>
+  This is an aggregation of the work done in [Seq4AMR](https://workflowhub.eu/projects/110) consisting of the following workflows:
+
+- [WF1: AbritAMR / AMRFinderPlus](https://workflowhub.eu/workflows/634)
+- [WF2: Sciensano](https://workflowhub.eu/workflows/644) (**not currently included**)
+- [WF3: SRST2](https://workflowhub.eu/workflows/407) 
+- [WF4: StarAMR](https://workflowhub.eu/workflows/470)
+
+## Installation
+
+- You will need to:
+    - run the [RGI Database Builder](https://my.galaxy.training/?path=?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fcard%2Frgi%2Frgi_database_builder%2F1.2.0) as a Galaxy admin (if this hasn't been done already)
+    - [Have the en_US.UTF-8 locale installed](https://github.com/galaxyproject/tools-iuc/issues/6467) on the compute nodes executing cast/melt jobs.
+    - Install the requisite tools with e.g. [`shed-tools`](https://ephemeris.readthedocs.io/en/latest/commands/shed-tools.html) command from the [`ephemeris`](https://ephemeris.readthedocs.io/en/latest/) suite: `shed-tools install -g https://galaxy.example.com -a API_KEY -t tools.yaml` (tools.yaml is provided in this repository.)
+- Then you can import this workflow
+    - Navigate to `/workflows/import` of your Galaxy server
+    - Select "GA4GH servers"
+    - Enter `name:"AMR-Pathfinder"`
+- And run it
+    - You must provide a Sequencing collection (list:paired of fastq files)
+    - And a Genomes collection (list of fasta files) 
+    - Both of these should use **identical** collection element identifiers
+
+## Outputs
+
+This will produce two important tables: "Binary Comparison" and a "% Identity Scored Outputs". 
+
+### Binary comparison
+
+This file reports the discovery or absence of specific AMR genes across all tested AMR Analysis tools. You will mostly see 1s (presence) or 0s (absence) but you may occasionally see higher numbers when an AMR tool reports multiple hits for a specific gene.
+
+### % Identity Scored Outputs
+
+This is similar to binary comparison, but using the % identity reported by each AMR tool. For cases where multiple hits were detected, we take the highest.
+
+## Known Issues
+
+The names for identified AMR genes is highly inconsistent across AMR analysis tools. We urge the AMR community to rectify this by standardising gene names used in their tooling.
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://orcid.org/0000-0001-9760-8992" target="_blank">Helena Rasche</a>, <a href="https://workflowhub.eu/people/359" target="_blank">Dennis Dollée</a>, <a href="https://workflowhub.eu/people/875" target="_blank">Birgit Rijvers</a></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>MIT</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-AMR-Pathfinder_v4.7.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-AMR-Pathfinder_v4.7.ga">AMR-Pathfinder</a>
+      
+        <br/>Size: 137972 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_graph.png">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="graph.png">graph.png</a>
+      
+        <br/>Size: 406492 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

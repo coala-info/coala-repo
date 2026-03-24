@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Repeat masking - TSI</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-Repeat_masking_-_TSI-updated.ga"
+      },
+      "datePublished": "2024-06-21 00:46:35 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-9906-0673"
+        }
+      ],
+      "license": "GPL-3.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.875.3",
+      "url": "https://workflowhub.eu/workflows/875/ro_crate?version=3",
+      "name": "Research Object Crate for Repeat masking - TSI",
+      "description": "This is part of a series of workflows to annotate a genome, tagged with `TSI-annotation`. \nThese workflows are based on command-line code by Luke Silver, converted into Galaxy Australia workflows. \n\nThe workflows can be run in this order: \n* Repeat masking\n* RNAseq QC and read trimming\n* Find transcripts\n* Combine transcripts\n* Extract transcripts\n* Convert formats\n* Fgenesh annotation\n\n****\n\nWorkflow information:\n* Input = genome.fasta.\n* Outputs = soft_masked_genome.fasta, hard_masked_genome.fasta, and table of repeats found. \n* Runs RepeatModeler with default settings, uses the output of this (repeat library) as input into RepeatMasker. \n* Runs RepeatMasker with default settings except for: Skip masking of simple tandem repeats and low complexity regions. (-nolow) : default set to yes.  Perform softmasking instead of hardmasking - set to yes. \n* Converts the soft-masked genome to hard-masked for for use in other tools if required. \n* Workflow report displays an edited table of repeats found. Note: a known bug is that sometimes the workflow report text resets to default text. To restore, look for an earlier workflow version with correct workflow report text, and copy and paste report text into current version.\n",
+      "sdDatePublished": "2026-03-24 17:45:34 +0000",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-Repeat_masking_-_TSI-updated.ga"
+        },
+        {
+          "@id": "Repeat-masking-updated.png"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-Repeat_masking_-_TSI-updated.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 10929,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "Repeat-masking-updated.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "This is part of a series of workflows to annotate a genome, tagged with `TSI-annotation`. \nThese workflows are based on command-line code by Luke Silver, converted into Galaxy Australia workflows. \n\nThe workflows can be run in this order: \n* Repeat masking\n* RNAseq QC and read trimming\n* Find transcripts\n* Combine transcripts\n* Extract transcripts\n* Convert formats\n* Fgenesh annotation\n\n****\n\nWorkflow information:\n* Input = genome.fasta.\n* Outputs = soft_masked_genome.fasta, hard_masked_genome.fasta, and table of repeats found. \n* Runs RepeatModeler with default settings, uses the output of this (repeat library) as input into RepeatMasker. \n* Runs RepeatMasker with default settings except for: Skip masking of simple tandem repeats and low complexity regions. (-nolow) : default set to yes.  Perform softmasking instead of hardmasking - set to yes. \n* Converts the soft-masked genome to hard-masked for for use in other tools if required. \n* Workflow report displays an edited table of repeats found. Note: a known bug is that sometimes the workflow report text resets to default text. To restore, look for an earlier workflow version with correct workflow report text, and copy and paste report text into current version.\n",
+      "name": "Repeat masking - TSI",
+      "url": "https://workflowhub.eu/workflows/875?version=3",
+      "keywords": "TSI-annotation",
+      "version": 3,
+      "license": "https://spdx.org/licenses/GPL-3.0",
+      "creator": [
+        {
+          "@id": "#Luke%20Silver"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/200"
+        }
+      ],
+      "producer": [
+        {
+          "@id": "https://workflowhub.eu/projects/30"
+        },
+        {
+          "@id": "https://workflowhub.eu/projects/54"
+        }
+      ],
+      "dateCreated": "2024-06-20T23:41:31Z",
+      "dateModified": "2024-06-20T23:48:44Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/23"
+      },
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.875.3",
+      "isBasedOn": "https://workflowhub.eu/workflows/875?version=2",
+      "input": {
+        "@id": "#repeat_masking___tsi-inputs-%23main/genome.fasta"
+      },
+      "output": [
+        {
+          "@id": "#repeat_masking___tsi-outputs-%23main/Repeats_output_table"
+        },
+        {
+          "@id": "#repeat_masking___tsi-outputs-%23main/output_log"
+        },
+        {
+          "@id": "#repeat_masking___tsi-outputs-%23main/output_masked_genome"
+        },
+        {
+          "@id": "#repeat_masking___tsi-outputs-%23main/output_repeat_catalog"
+        },
+        {
+          "@id": "#repeat_masking___tsi-outputs-%23main/seeds"
+        },
+        {
+          "@id": "#repeat_masking___tsi-outputs-%23main/sequences"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "Repeat-masking-updated.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 651806
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-9906-0673",
+      "@type": "Person",
+      "name": "Anna Syme",
+      "identifier": "https://orcid.org/0000-0002-9906-0673"
+    },
+    {
+      "@id": "#Luke Silver",
+      "@type": "Person",
+      "name": "Luke Silver"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/200",
+      "@type": "Person",
+      "name": "Anna Syme"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/30",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Australian BioCommons"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/54",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Galaxy Australia"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/23",
+      "@type": "Collection",
+      "name": "TSI annotation workflows"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#repeat_masking___tsi-inputs-#main/genome.fasta",
+      "@type": "FormalParameter",
+      "name": "#main/genome.fasta",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#repeat_masking___tsi-outputs-#main/Repeats_output_table",
+      "@type": "FormalParameter",
+      "name": "#main/Repeats_output_table",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#repeat_masking___tsi-outputs-#main/output_log",
+      "@type": "FormalParameter",
+      "name": "#main/output_log",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#repeat_masking___tsi-outputs-#main/output_masked_genome",
+      "@type": "FormalParameter",
+      "name": "#main/output_masked_genome",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#repeat_masking___tsi-outputs-#main/output_repeat_catalog",
+      "@type": "FormalParameter",
+      "name": "#main/output_repeat_catalog",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#repeat_masking___tsi-outputs-#main/seeds",
+      "@type": "FormalParameter",
+      "name": "#main/seeds",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#repeat_masking___tsi-outputs-#main/sequences",
+      "@type": "FormalParameter",
+      "name": "#main/sequences",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Repeat masking - TSI</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/875/ro_crate?version=3" target="_blank">https://workflowhub.eu/workflows/875/ro_crate?version=3</a>
+
+
+  <img src="Repeat-masking-updated.png" style="width: 100%;"/>
+
+<p>
+  This is part of a series of workflows to annotate a genome, tagged with `TSI-annotation`. 
+These workflows are based on command-line code by Luke Silver, converted into Galaxy Australia workflows. 
+
+The workflows can be run in this order: 
+* Repeat masking
+* RNAseq QC and read trimming
+* Find transcripts
+* Combine transcripts
+* Extract transcripts
+* Convert formats
+* Fgenesh annotation
+
+****
+
+Workflow information:
+* Input = genome.fasta.
+* Outputs = soft_masked_genome.fasta, hard_masked_genome.fasta, and table of repeats found. 
+* Runs RepeatModeler with default settings, uses the output of this (repeat library) as input into RepeatMasker. 
+* Runs RepeatMasker with default settings except for: Skip masking of simple tandem repeats and low complexity regions. (-nolow) : default set to yes.  Perform softmasking instead of hardmasking - set to yes. 
+* Converts the soft-masked genome to hard-masked for for use in other tools if required. 
+* Workflow report displays an edited table of repeats found. Note: a known bug is that sometimes the workflow report text resets to default text. To restore, look for an earlier workflow version with correct workflow report text, and copy and paste report text into current version.
+
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://orcid.org/0000-0002-9906-0673" target="_blank">Anna Syme</a></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>GPL-3.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-Repeat_masking_-_TSI-updated.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-Repeat_masking_-_TSI-updated.ga">Repeat masking - TSI</a>
+      
+        <br/>Size: 10929 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_Repeat-masking-updated.png">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="Repeat-masking-updated.png">Repeat-masking-updated.png</a>
+      
+        <br/>Size: 651806 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

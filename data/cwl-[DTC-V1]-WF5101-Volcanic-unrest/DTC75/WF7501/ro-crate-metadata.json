@@ -1,0 +1,178 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": [
+        { "@id": "https://w3id.org/ro/crate/1.1" },
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" }
+      ],
+      "about": { "@id": "./" }
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/process/0.4",
+      "@type": "CreativeWork",
+      "name": "Process Run Crate",
+      "version": "0.4"
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/workflow/0.4",
+      "@type": "CreativeWork",
+      "name": "Workflow Run Crate",
+      "version": "0.4"
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl",
+      "@type": "ComputerLanguage",
+      "identifier": "https://www.commonwl.org/",
+      "name": "Common Workflow Language",
+      "url": "https://www.commonwl.org/"
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "Earth-DT Workflow (WF7501)",
+      "datePublished": "2025-03-17",
+      "description": "A CWL-based workflow for Earth-DT (Digital Twin Component for Earthquake 5 - DTC-E5). This workflow integrates data collection, inversion setup, model extraction, iterative inversion, model updating, and user validation into a single computational pipeline.",
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "author": { "@id": "https://orcid.org/0000-0002-8207-1464" },
+      "publisher": { "@id": "https://ror.org/05a28rw58" }, 
+      "conformsTo": [
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" }
+      ],
+      "hasPart": [
+        { "@id": "WF7501.cwl" },
+        { "@id": "DT7501/" },
+        { "@id": "SS7501" }
+      ],
+      "mainEntity": { "@id": "WF7501.cwl" }
+    },
+    {
+      "@id": "WF7501.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "name": "Earth-DT Workflow",
+      "description": "A CWL-based computational workflow integrating multiple steps for earthquake simulation and model validation.",
+      "author": [
+        { "@id": "https://ror.org/05a28rw58" },
+        { "@id": "Mondaic" }
+      ],
+      "programmingLanguage": [
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl" }
+      ],
+      "input": [
+        { "@id": "#DT7501->WF7501.cwl" }
+      ],
+      "output": [
+        { "@id": "#WF7501.cwl->DT7501" }
+      ],
+      "conformsTo": [
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" }
+      ]
+    },
+    {
+      "@id": "DT7501/",
+      "@type": "Dataset",
+      "name": "CSEMv3",
+      "description": "CSEM or REVEAL model.",
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "url": "https://ds.iris.edu/ds/products/emc-csem2_globe/",
+      "isPartOf": { "@id": "./" },
+      "creator": [
+      { "@id": "https://orcid.org/0000-0003-0499-4893" },
+      { "@id": "https://orcid.org/0000-0002-2622-1843" },
+      { "@id": "https://orcid.org/0000-0002-8207-1464" }
+      ]
+    },
+    {
+      "@id": "SS7501",
+      "@type": "SoftwareSourceCode",
+      "name": "Salvus",
+      "description": "High-performance software and services for the simulation, analysis, and inversion of mechanical and sound waves across all scales.",
+      "license": "https://mondaic.com/ala.pdf",
+      "programmingLanguage": [
+        "Python >= 3.9",
+        "C++ 14",
+        "CUDA"
+      ],
+      "url": "https://mondaic.com/docs",
+      "organization": [{ "@id": "Mondaic" }],
+      "person": [
+        { "@id": "https://orcid.org/0000-0001-5867-6634" },
+        { "@id": "https://orcid.org/0000-0003-1325-6884" },
+        { "@id": "https://orcid.org/0000-0002-5050-7454" }
+      ]
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-0499-4893",
+      "@type": "Person",
+      "name": "Andreas Fichtner",
+      "email": "andreas.fichtner@eaps.ethz.ch",
+      "affiliation": {
+         "@id": "https://ror.org/05a28rw58"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-8207-1464",
+      "@type": "Person",
+      "name": "Johannes Kemper",
+      "email": "johannes.kemper@eaps.ethz.ch",
+      "affiliation": {
+         "@id": "https://ror.org/05a28rw58"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-2622-1843",
+      "@type": "Person",
+      "name": "Sebastian Noe",
+      "email": "sebastian.noe@eaps.ethz.ch",
+      "affiliation": {
+         "@id": "https://ror.org/05a28rw58"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-8207-1464",
+      "@type": "Person",
+      "name": "Marta Pienkowska",
+      "email": "marta.pienkowska@eaps.ethz.ch",
+      "affiliation": {
+         "@id": "https://ror.org/05a28rw58"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-5867-6634",
+      "@type": "Person",
+      "name": "Lion Krischer",
+      "email": "lion.krischer@mondaic.com",
+      "affiliation": { "@id": "Mondaic" }
+    },
+    {
+      "@id": "0000-0003-1325-6884",
+      "@type": "Person",
+      "name": "Christian Boehm",
+      "email": "christian.boehm@mondaic.com",
+      "affiliation": { "@id": "Mondaic" }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-5050-7454",
+      "@type": "Person",
+      "name": "Michael Afanasiev",
+      "email": "michael.afanasiev@mondaic.com",
+      "affiliation": { "@id": "Mondaic" }
+    },
+    {
+      "@id": "https://ror.org/05a28rw58",
+      "@type": "Organization",
+      "name": "Eidgenössische Technische Hochschule Zürich (ETH)"
+    },
+    {
+      "@id": "Mondaic",
+      "@type": "Organization",
+      "name": "Mondaic AG"
+    }
+  ]
+}

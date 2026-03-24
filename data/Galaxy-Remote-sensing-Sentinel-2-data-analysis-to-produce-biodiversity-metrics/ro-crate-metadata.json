@@ -1,0 +1,375 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-Remote_sensing_Sentinel_2_data_analysis_to_produce_biodiversity_metrics.ga"
+      },
+      "datePublished": "2023-11-09 12:49:52 +0000",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-8504-068X"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-4308-5617"
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://workflowhub.eu/workflows/657?version=1",
+      "url": "https://workflowhub.eu/workflows/657/ro_crate?version=1",
+      "name": "Research Object Crate for Remote sensing Sentinel 2 data analysis to produce biodiversity metrics",
+      "description": "Galaxy Workflow created on Galaxy-E european instance, ecology.usegalaxy.eu, related to the Galaxy training tutorial \"[Sentinel 2 biodiversity](https://training.galaxyproject.org/training-material/topics/ecology/tutorials/species-distribution-modeling/tutorial.html)\" .\n\nThis workflow allows to analyze remote sensing sentinel 2 satellites data to compute spectral indices such as the NDVI and visualizing biodiversity indicators\n",
+      "isBasedOn": "https://ecology.usegalaxy.eu/u/ylebras/w/remote-sensing-sentinel-2-data-analysis-to-produce-biodiversity-metrics",
+      "sdDatePublished": "2026-03-24 17:54:19 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-Remote_sensing_Sentinel_2_data_analysis_to_produce_biodiversity_metrics.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-Remote_sensing_Sentinel_2_data_analysis_to_produce_biodiversity_metrics.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 20815,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Galaxy Workflow created on Galaxy-E european instance, ecology.usegalaxy.eu, related to the Galaxy training tutorial \"[Sentinel 2 biodiversity](https://training.galaxyproject.org/training-material/topics/ecology/tutorials/species-distribution-modeling/tutorial.html)\" .\n\nThis workflow allows to analyze remote sensing sentinel 2 satellites data to compute spectral indices such as the NDVI and visualizing biodiversity indicators\n",
+      "name": "Remote sensing Sentinel 2 data analysis to produce biodiversity metrics",
+      "url": "https://workflowhub.eu/workflows/657?version=1",
+      "keywords": "Biodiversity, Ecology",
+      "version": 1,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/51"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/52"
+        },
+        {
+          "@id": "#Marie%20Joss%C3%A9"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/19"
+      },
+      "dateCreated": "2023-11-09T12:52:32Z",
+      "dateModified": "2024-12-09T08:42:48Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#remote_sensing_sentinel_2_data_analysis_to_produce_biodiversity_metrics-inputs-%23main/SENTINEL2A_20230210-111817-461_L2A_T30TWS_D.zip"
+        },
+        {
+          "@id": "#remote_sensing_sentinel_2_data_analysis_to_produce_biodiversity_metrics-inputs-%23main/SENTINEL2A_20230214-105638-781_L2A_T31UET_D.zip"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#remote_sensing_sentinel_2_data_analysis_to_produce_biodiversity_metrics-outputs-%23main/_anonymous_output_10"
+        },
+        {
+          "@id": "#remote_sensing_sentinel_2_data_analysis_to_produce_biodiversity_metrics-outputs-%23main/_anonymous_output_11"
+        },
+        {
+          "@id": "#remote_sensing_sentinel_2_data_analysis_to_produce_biodiversity_metrics-outputs-%23main/_anonymous_output_12"
+        },
+        {
+          "@id": "#remote_sensing_sentinel_2_data_analysis_to_produce_biodiversity_metrics-outputs-%23main/_anonymous_output_13"
+        },
+        {
+          "@id": "#remote_sensing_sentinel_2_data_analysis_to_produce_biodiversity_metrics-outputs-%23main/_anonymous_output_14"
+        },
+        {
+          "@id": "#remote_sensing_sentinel_2_data_analysis_to_produce_biodiversity_metrics-outputs-%23main/_anonymous_output_15"
+        },
+        {
+          "@id": "#remote_sensing_sentinel_2_data_analysis_to_produce_biodiversity_metrics-outputs-%23main/_anonymous_output_16"
+        },
+        {
+          "@id": "#remote_sensing_sentinel_2_data_analysis_to_produce_biodiversity_metrics-outputs-%23main/_anonymous_output_17"
+        },
+        {
+          "@id": "#remote_sensing_sentinel_2_data_analysis_to_produce_biodiversity_metrics-outputs-%23main/_anonymous_output_18"
+        },
+        {
+          "@id": "#remote_sensing_sentinel_2_data_analysis_to_produce_biodiversity_metrics-outputs-%23main/_anonymous_output_19"
+        },
+        {
+          "@id": "#remote_sensing_sentinel_2_data_analysis_to_produce_biodiversity_metrics-outputs-%23main/_anonymous_output_20"
+        },
+        {
+          "@id": "#remote_sensing_sentinel_2_data_analysis_to_produce_biodiversity_metrics-outputs-%23main/_anonymous_output_3"
+        },
+        {
+          "@id": "#remote_sensing_sentinel_2_data_analysis_to_produce_biodiversity_metrics-outputs-%23main/_anonymous_output_4"
+        },
+        {
+          "@id": "#remote_sensing_sentinel_2_data_analysis_to_produce_biodiversity_metrics-outputs-%23main/_anonymous_output_5"
+        },
+        {
+          "@id": "#remote_sensing_sentinel_2_data_analysis_to_produce_biodiversity_metrics-outputs-%23main/_anonymous_output_6"
+        },
+        {
+          "@id": "#remote_sensing_sentinel_2_data_analysis_to_produce_biodiversity_metrics-outputs-%23main/_anonymous_output_7"
+        },
+        {
+          "@id": "#remote_sensing_sentinel_2_data_analysis_to_produce_biodiversity_metrics-outputs-%23main/_anonymous_output_8"
+        },
+        {
+          "@id": "#remote_sensing_sentinel_2_data_analysis_to_produce_biodiversity_metrics-outputs-%23main/_anonymous_output_9"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-8504-068X",
+      "@type": "Person",
+      "name": "Yvan Le Bras",
+      "identifier": "https://orcid.org/0000-0002-8504-068X"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-4308-5617",
+      "@type": "Person",
+      "name": "Coline Royaux",
+      "identifier": "https://orcid.org/0000-0003-4308-5617"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/51",
+      "@type": "Person",
+      "name": "Yvan Le Bras"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/52",
+      "@type": "Person",
+      "name": "Coline Royaux"
+    },
+    {
+      "@id": "#Marie Jossé",
+      "@type": "Person",
+      "name": "Marie Jossé"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/19",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "PNDB"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#remote_sensing_sentinel_2_data_analysis_to_produce_biodiversity_metrics-inputs-#main/SENTINEL2A_20230210-111817-461_L2A_T30TWS_D.zip",
+      "@type": "FormalParameter",
+      "name": "#main/SENTINEL2A_20230210-111817-461_L2A_T30TWS_D.zip",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#remote_sensing_sentinel_2_data_analysis_to_produce_biodiversity_metrics-inputs-#main/SENTINEL2A_20230214-105638-781_L2A_T31UET_D.zip",
+      "@type": "FormalParameter",
+      "name": "#main/SENTINEL2A_20230214-105638-781_L2A_T31UET_D.zip",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#remote_sensing_sentinel_2_data_analysis_to_produce_biodiversity_metrics-outputs-#main/_anonymous_output_10",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_10",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#remote_sensing_sentinel_2_data_analysis_to_produce_biodiversity_metrics-outputs-#main/_anonymous_output_11",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_11",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#remote_sensing_sentinel_2_data_analysis_to_produce_biodiversity_metrics-outputs-#main/_anonymous_output_12",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_12",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#remote_sensing_sentinel_2_data_analysis_to_produce_biodiversity_metrics-outputs-#main/_anonymous_output_13",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_13",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#remote_sensing_sentinel_2_data_analysis_to_produce_biodiversity_metrics-outputs-#main/_anonymous_output_14",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_14",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#remote_sensing_sentinel_2_data_analysis_to_produce_biodiversity_metrics-outputs-#main/_anonymous_output_15",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_15",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#remote_sensing_sentinel_2_data_analysis_to_produce_biodiversity_metrics-outputs-#main/_anonymous_output_16",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_16",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#remote_sensing_sentinel_2_data_analysis_to_produce_biodiversity_metrics-outputs-#main/_anonymous_output_17",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_17",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#remote_sensing_sentinel_2_data_analysis_to_produce_biodiversity_metrics-outputs-#main/_anonymous_output_18",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_18",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#remote_sensing_sentinel_2_data_analysis_to_produce_biodiversity_metrics-outputs-#main/_anonymous_output_19",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_19",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#remote_sensing_sentinel_2_data_analysis_to_produce_biodiversity_metrics-outputs-#main/_anonymous_output_20",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_20",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#remote_sensing_sentinel_2_data_analysis_to_produce_biodiversity_metrics-outputs-#main/_anonymous_output_3",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_3",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#remote_sensing_sentinel_2_data_analysis_to_produce_biodiversity_metrics-outputs-#main/_anonymous_output_4",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_4",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#remote_sensing_sentinel_2_data_analysis_to_produce_biodiversity_metrics-outputs-#main/_anonymous_output_5",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_5",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#remote_sensing_sentinel_2_data_analysis_to_produce_biodiversity_metrics-outputs-#main/_anonymous_output_6",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_6",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#remote_sensing_sentinel_2_data_analysis_to_produce_biodiversity_metrics-outputs-#main/_anonymous_output_7",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_7",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#remote_sensing_sentinel_2_data_analysis_to_produce_biodiversity_metrics-outputs-#main/_anonymous_output_8",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_8",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#remote_sensing_sentinel_2_data_analysis_to_produce_biodiversity_metrics-outputs-#main/_anonymous_output_9",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_9",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

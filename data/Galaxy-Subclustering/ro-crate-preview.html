@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Subclustering</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-Subclustering.ga"
+      },
+      "datePublished": "2025-05-13 11:18:22 +0100",
+      "author": [
+        {
+          "@id": "#creator-1"
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://workflowhub.eu/workflows/1362?version=1",
+      "url": "https://workflowhub.eu/workflows/1362/ro_crate?version=1",
+      "name": "Research Object Crate for Subclustering",
+      "description": "This workflow was built for the 2024 Bioinformatics Bootcamp at The Open University. It is meant to occur after the (universal) Filter, plot and explore tutorial to allow analysis of a single cluster.",
+      "isBasedOn": "https://usegalaxy.eu/published/workflow?id=9d15b328d8408715",
+      "sdDatePublished": "2026-03-24 17:34:57 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-Subclustering.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-Subclustering.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "url": "https://usegalaxy.eu/published/workflow?id=9d15b328d8408715",
+      "contentSize": 58734,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "This workflow was built for the 2024 Bioinformatics Bootcamp at The Open University. It is meant to occur after the (universal) Filter, plot and explore tutorial to allow analysis of a single cluster.",
+      "name": "Subclustering",
+      "keywords": "name:single-cell, name:training, name:public-data",
+      "version": 1,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "creator": [
+        {
+          "@id": "#Wendi%20Bacon"
+        },
+        {
+          "@id": "#The%20Open%20University"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/24"
+      },
+      "dateCreated": "2025-05-13T10:21:13Z",
+      "dateModified": "2025-05-13T10:21:13Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#subclustering-inputs-Filtered%20but%20unprocessed%20AnnData%20Object"
+        },
+        {
+          "@id": "#subclustering-inputs-Final%20object%20-%20including%20louvain%20annotation"
+        },
+        {
+          "@id": "#subclustering-inputs-Number%20of%20louvain%20cluster%20to%20investigate"
+        },
+        {
+          "@id": "#subclustering-inputs-Observation%20of%20interest-1"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#subclustering-outputs-out_png"
+        },
+        {
+          "@id": "#subclustering-outputs-output_h5ad"
+        },
+        {
+          "@id": "#subclustering-outputs-UMAP%20Plot%20by%20Obs-1"
+        },
+        {
+          "@id": "#subclustering-outputs-PCA%20Plot%20by%20Obs-1"
+        },
+        {
+          "@id": "#subclustering-outputs-tSNE%20Plot%20by%20Obs-1"
+        },
+        {
+          "@id": "#subclustering-outputs-PCA%20Plot"
+        },
+        {
+          "@id": "#subclustering-outputs-tSNE%20Plot"
+        },
+        {
+          "@id": "#subclustering-outputs-UMAP%20Plot"
+        },
+        {
+          "@id": "#subclustering-outputs-Obs-1%20Marker%20Gene%20List"
+        },
+        {
+          "@id": "#subclustering-outputs-Cluster%20Marker%20Gene%20List"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "#creator-1",
+      "@type": "Person",
+      "name": "The Open University"
+    },
+    {
+      "@id": "#Wendi Bacon",
+      "@type": "Person",
+      "name": "Wendi Bacon"
+    },
+    {
+      "@id": "#The Open University",
+      "@type": "Person",
+      "name": "The Open University"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/24",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "usegalaxy-eu"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#subclustering-inputs-Filtered but unprocessed AnnData Object",
+      "@type": "FormalParameter",
+      "name": "Filtered but unprocessed AnnData Object",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#subclustering-inputs-Final object - including louvain annotation",
+      "@type": "FormalParameter",
+      "name": "Final object - including louvain annotation",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#subclustering-inputs-Number of louvain cluster to investigate",
+      "@type": "FormalParameter",
+      "name": "Number of louvain cluster to investigate",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#subclustering-inputs-Observation of interest-1",
+      "@type": "FormalParameter",
+      "name": "Observation of interest-1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#subclustering-outputs-out_png",
+      "@type": "FormalParameter",
+      "name": "out_png",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#subclustering-outputs-output_h5ad",
+      "@type": "FormalParameter",
+      "name": "output_h5ad",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#subclustering-outputs-UMAP Plot by Obs-1",
+      "@type": "FormalParameter",
+      "name": "UMAP Plot by Obs-1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#subclustering-outputs-PCA Plot by Obs-1",
+      "@type": "FormalParameter",
+      "name": "PCA Plot by Obs-1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#subclustering-outputs-tSNE Plot by Obs-1",
+      "@type": "FormalParameter",
+      "name": "tSNE Plot by Obs-1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#subclustering-outputs-PCA Plot",
+      "@type": "FormalParameter",
+      "name": "PCA Plot",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#subclustering-outputs-tSNE Plot",
+      "@type": "FormalParameter",
+      "name": "tSNE Plot",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#subclustering-outputs-UMAP Plot",
+      "@type": "FormalParameter",
+      "name": "UMAP Plot",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#subclustering-outputs-Obs-1 Marker Gene List",
+      "@type": "FormalParameter",
+      "name": "Obs-1 Marker Gene List",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#subclustering-outputs-Cluster Marker Gene List",
+      "@type": "FormalParameter",
+      "name": "Cluster Marker Gene List",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Subclustering</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/1362/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/1362/ro_crate?version=1</a>
+
+
+<p>
+  This workflow was built for the 2024 Bioinformatics Bootcamp at The Open University. It is meant to occur after the (universal) Filter, plot and explore tutorial to allow analysis of a single cluster.
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd>The Open University</dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>CC-BY-4.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-Subclustering.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-Subclustering.ga">Subclustering</a>
+      
+        <br/>Size: 58734 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

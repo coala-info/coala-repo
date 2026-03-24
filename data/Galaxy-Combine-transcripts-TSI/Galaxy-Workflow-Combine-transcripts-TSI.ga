@@ -1,0 +1,566 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "Inputs: multiple transcriptome.gtfs from different tissues, genome.fasta, coding_seqs.fasta, non_coding_seqs.fasta\n\nRuns StringTie merge to combine transcriptomes, with default settings except for -m = 30 and -F = 0.1, to produce a merged_transcriptomes.gtf. \n\nRuns Convert GTF to BED12 with default settings, to produce a merged_transcriptomes.bed. \n\nRuns bedtools getfasta with default settings except for -name = yes, -s = yes, -split - yes, to produce a merged_transcriptomes.fasta\n\nRuns CPAT to generate seqs with high coding probability. \n\nFilters out non-coding seqs from the merged_transcriptomes.fasta\n\nOutput: filtered_merged_transcriptomes.fasta",
+    "comments": [],
+    "format-version": "0.1",
+    "name": "Combine transcripts - TSI",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Collection of transcriptome.gtf files"
+                }
+            ],
+            "label": "Collection of transcriptome.gtf files",
+            "name": "Input dataset collection",
+            "outputs": [],
+            "position": {
+                "left": 0,
+                "top": 0
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null, \"collection_type\": \"list\"}",
+            "tool_version": null,
+            "type": "data_collection_input",
+            "uuid": "6b392ece-4d56-4ec6-8951-347a8e4c0a40",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "genome.fasta"
+                }
+            ],
+            "label": "genome.fasta",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 387.5999755859375,
+                "top": 271.70989990234375
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "1e246826-c13b-4092-910e-2d7bbe5ba43b",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 2,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "coding_seqs.fasta"
+                }
+            ],
+            "label": "coding_seqs.fasta",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 384.17889404296875,
+                "top": 368.02447509765625
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "a8a6c055-ee0f-46e6-b1d6-d67791560224",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 3,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "non_coding_seqs.fasta"
+                }
+            ],
+            "label": "non_coding_seqs.fasta",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 396.8714599609375,
+                "top": 466.370849609375
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "ffce158a-f976-4c9c-8c21-81419118ec49",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/stringtie/stringtie_merge/2.2.1+galaxy1",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "input_gtf": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool StringTie merge",
+                    "name": "guide_gff"
+                }
+            ],
+            "label": null,
+            "name": "StringTie merge",
+            "outputs": [
+                {
+                    "name": "out_gtf",
+                    "type": "gtf"
+                }
+            ],
+            "position": {
+                "left": 246.05866534443692,
+                "top": 37.77417749162721
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/stringtie/stringtie_merge/2.2.1+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "ae618321f34a",
+                "name": "stringtie",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"gap_len\": \"250\", \"guide_gff\": {\"__class__\": \"RuntimeValue\"}, \"input_gtf\": {\"__class__\": \"ConnectedValue\"}, \"keep_introns\": false, \"min_cov\": \"0\", \"min_fpkm\": \"0.1\", \"min_iso\": \"0.01\", \"min_len\": \"30\", \"min_tpm\": \"1.0\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.2.1+galaxy1",
+            "type": "tool",
+            "uuid": "59a48cff-ba0d-4dd1-bd44-a1e8c1041a3a",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "out_gtf",
+                    "output_name": "out_gtf",
+                    "uuid": "0b2699e0-443b-4528-814e-ad6caabd1ca3"
+                }
+            ]
+        },
+        "5": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/gtftobed12/gtftobed12/357",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "gtf_file": {
+                    "id": 4,
+                    "output_name": "out_gtf"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Convert GTF to BED12",
+            "outputs": [
+                {
+                    "name": "bed_file",
+                    "type": "bed12"
+                }
+            ],
+            "position": {
+                "left": 493.3668708214393,
+                "top": 30.28616403421057
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/gtftobed12/gtftobed12/357",
+            "tool_shed_repository": {
+                "changeset_revision": "b026dae67fba",
+                "name": "gtftobed12",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"advanced_options\": {\"advanced_options_selector\": \"default\", \"__current_case__\": 0}, \"gtf_file\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "357",
+            "type": "tool",
+            "uuid": "d41a074d-9247-4fa6-aafc-afe272fead83",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "bed_file",
+                    "output_name": "bed_file",
+                    "uuid": "ceca31a5-8f77-4721-b84c-91b375dc9fbc"
+                }
+            ]
+        },
+        "6": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_getfastabed/2.30.0+galaxy1",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "input": {
+                    "id": 5,
+                    "output_name": "bed_file"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool bedtools getfasta",
+                    "name": "fasta_source"
+                }
+            ],
+            "label": null,
+            "name": "bedtools getfasta",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "fasta"
+                }
+            ],
+            "position": {
+                "left": 770.606689453125,
+                "top": 11.329952149833915
+            },
+            "post_job_actions": {
+                "TagDatasetActionoutput": {
+                    "action_arguments": {
+                        "tags": "#merged_transcriptomes.fasta"
+                    },
+                    "action_type": "TagDatasetAction",
+                    "output_name": "output"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/bedtools/bedtools_getfastabed/2.30.0+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "a1a923cd89e8",
+                "name": "bedtools",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"fasta_source\": {\"fasta_source_selector\": \"history\", \"__current_case__\": 0, \"fasta\": {\"__class__\": \"RuntimeValue\"}}, \"input\": {\"__class__\": \"ConnectedValue\"}, \"name\": true, \"nameOnly\": false, \"split\": true, \"strand\": true, \"tab\": false, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.30.0+galaxy1",
+            "type": "tool",
+            "uuid": "d7b6003b-3dd1-4c2b-a4ad-c5ab5a79a1bd",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "output",
+                    "output_name": "output",
+                    "uuid": "ce8e51be-448f-40fc-a335-ef533b36997e"
+                }
+            ]
+        },
+        "7": {
+            "annotation": "The table of best probabilities is called orf_seqs_prob_best; converted this to tabular",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/cpat/cpat/3.0.5+galaxy0",
+            "errors": null,
+            "id": 7,
+            "input_connections": {
+                "c": {
+                    "id": 2,
+                    "output_name": "output"
+                },
+                "gene": {
+                    "id": 6,
+                    "output_name": "output"
+                },
+                "n": {
+                    "id": 3,
+                    "output_name": "output"
+                },
+                "r": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": "CPAT (check settings)",
+            "name": "CPAT",
+            "outputs": [
+                {
+                    "name": "orf_seqs",
+                    "type": "fasta"
+                },
+                {
+                    "name": "orf_seqs_prob",
+                    "type": "tsv"
+                },
+                {
+                    "name": "orf_seqs_prob_best",
+                    "type": "tsv"
+                },
+                {
+                    "name": "no_orf_seqs",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "left": 821.5,
+                "top": 279.998779296875
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionorf_seqs_prob": {
+                    "action_arguments": {
+                        "newtype": "tabular"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "orf_seqs_prob"
+                },
+                "ChangeDatatypeActionorf_seqs_prob_best": {
+                    "action_arguments": {
+                        "newtype": "tabular"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "orf_seqs_prob_best"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/cpat/cpat/3.0.5+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "1ac12c0cc7a0",
+                "name": "cpat",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"antisense\": false, \"best_orf\": \"p\", \"c\": {\"__class__\": \"ConnectedValue\"}, \"gene\": {\"__class__\": \"ConnectedValue\"}, \"min_orf_cpat\": \"75\", \"min_orf_model\": \"30\", \"n\": {\"__class__\": \"ConnectedValue\"}, \"r\": {\"__class__\": \"ConnectedValue\"}, \"start\": \"ATG\", \"stop\": \"TAG,TAA,TGA\", \"top_orf\": \"5\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.0.5+galaxy0",
+            "type": "tool",
+            "uuid": "4acd49aa-3072-4cfd-b5dc-2d1d6c373ff1",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "orf_seqs_prob_best",
+                    "output_name": "orf_seqs_prob_best",
+                    "uuid": "88a48076-6b25-48e7-9e05-94d58c63f235"
+                },
+                {
+                    "label": "orf_seqs",
+                    "output_name": "orf_seqs",
+                    "uuid": "ca2cfbd1-01ff-4bc5-8859-36a5ef9bd4bd"
+                },
+                {
+                    "label": "no_orf_seqs",
+                    "output_name": "no_orf_seqs",
+                    "uuid": "25e4e406-a489-4d4d-8a64-a2daf7b2e006"
+                },
+                {
+                    "label": "orf_seqs_prob",
+                    "output_name": "orf_seqs_prob",
+                    "uuid": "728999e4-49dd-4f84-9031-70cc6c4ef00a"
+                }
+            ]
+        },
+        "8": {
+            "annotation": "skipping 1 header line",
+            "content_id": "Filter1",
+            "errors": null,
+            "id": 8,
+            "input_connections": {
+                "input": {
+                    "id": 7,
+                    "output_name": "orf_seqs_prob_best"
+                }
+            },
+            "inputs": [],
+            "label": "Filter and keep only seqs with >0.5 coding prob",
+            "name": "Filter",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 1065.48848974404,
+                "top": 378.66003490563054
+            },
+            "post_job_actions": {
+                "TagDatasetActionout_file1": {
+                    "action_arguments": {
+                        "tags": "#seqs-with-high-coding-prob"
+                    },
+                    "action_type": "TagDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
+            "tool_id": "Filter1",
+            "tool_state": "{\"cond\": \"c11>=0.5\", \"header_lines\": \"1\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.1",
+            "type": "tool",
+            "uuid": "c7f231d8-fef6-4e4f-a82f-df8226cda33b",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "out_file1",
+                    "output_name": "out_file1",
+                    "uuid": "40ca004c-e839-48c6-9696-889105f512d3"
+                }
+            ]
+        },
+        "9": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cut_tool/9.3+galaxy0",
+            "errors": null,
+            "id": 9,
+            "input_connections": {
+                "input": {
+                    "id": 8,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
+            "label": "Keep only column 1 - read headers",
+            "name": "Advanced Cut",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 1299.410568677831,
+                "top": 377.2681247968727
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cut_tool/9.3+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "12615d397df7",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"complement\": \"\", \"cut_type_options\": {\"cut_element\": \"-f\", \"__current_case__\": 0, \"delimiter\": \"\", \"colnames_option\": {\"header\": \"N\", \"__current_case__\": 1, \"list\": null}}, \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "9.3+galaxy0",
+            "type": "tool",
+            "uuid": "1ce9e61d-ea71-4eb3-b6a1-c7caae772540",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "10": {
+            "annotation": "part of the headers have become capitalized, this reverts everything after the :: to lowercase. May need to be changed if headers don't have the same format with a :: in them. ",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_sed_tool/9.3+galaxy0",
+            "errors": null,
+            "id": 10,
+            "input_connections": {
+                "infile": {
+                    "id": 9,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": "Fix headers to overwrite some uppercase",
+            "name": "Text transformation",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 1533.1875,
+                "top": 410.171875
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_sed_tool/9.3+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "12615d397df7",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adv_opts\": {\"adv_opts_selector\": \"basic\", \"__current_case__\": 0}, \"code\": \"s/[A-Z]*/\\\\L&/g\\ns/mstrg/MSTRG/g\", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "9.3+galaxy0",
+            "type": "tool",
+            "uuid": "3310363a-8a03-4fe9-8474-d0e3cc8555b4",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "11": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/peterjc/seq_filter_by_id/seq_filter_by_id/0.2.9",
+            "errors": null,
+            "id": 11,
+            "input_connections": {
+                "id_opts|input_tabular": {
+                    "id": 10,
+                    "output_name": "output"
+                },
+                "input_file": {
+                    "id": 6,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Filter sequences by ID",
+                    "name": "id_opts"
+                }
+            ],
+            "label": "Filter out non-coding seqs (check output)",
+            "name": "Filter sequences by ID",
+            "outputs": [
+                {
+                    "name": "output_pos",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 1710.6957397460938,
+                "top": 149.98764038085938
+            },
+            "post_job_actions": {
+                "TagDatasetActionoutput_neg": {
+                    "action_arguments": {
+                        "tags": "#filtered_merged_transcriptomes.fasta"
+                    },
+                    "action_type": "TagDatasetAction",
+                    "output_name": "output_neg"
+                },
+                "TagDatasetActionoutput_pos": {
+                    "action_arguments": {
+                        "tags": "#filtered-fasta-for-coding-seqs"
+                    },
+                    "action_type": "TagDatasetAction",
+                    "output_name": "output_pos"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/peterjc/seq_filter_by_id/seq_filter_by_id/0.2.9",
+            "tool_shed_repository": {
+                "changeset_revision": "85ef5f5a0562",
+                "name": "seq_filter_by_id",
+                "owner": "peterjc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adv_opts\": {\"adv_opts_selector\": \"basic\", \"__current_case__\": 0}, \"id_opts\": {\"id_opts_selector\": \"tabular\", \"__current_case__\": 0, \"input_tabular\": {\"__class__\": \"ConnectedValue\"}, \"columns\": [\"1\"]}, \"input_file\": {\"__class__\": \"ConnectedValue\"}, \"output_choice_cond\": {\"output_choice\": \"pos\", \"__current_case__\": 1}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.2.9",
+            "type": "tool",
+            "uuid": "1d09e32b-e3f6-4abe-ade5-e9504c244f5a",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "output_pos",
+                    "output_name": "output_pos",
+                    "uuid": "48456449-bd22-43e5-97d9-a0081757dc73"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "67bec726-d9c3-4433-b121-eae3b8a8a8c1",
+    "version": 1
+}

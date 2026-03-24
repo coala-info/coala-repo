@@ -1,0 +1,68 @@
+nc Variable	Variable	Units	Description
+
+cruise_id	Cruise		
+station_id	Station		
+station_type	Type		
+longitude	Longitude	degrees_east	
+latitude	Latitude	degrees_north	
+LOCAL_CDI_ID	LOCAL_CDI_ID		
+EDMO_code	EDMO_code		
+Bot_Depth	Bot. Depth	m	
+Instrument_Info	Instrument Info		
+Codes_in_Originator_File	Codes in Originator File		
+P35_Contributor_Codes	P35 Contributor Codes		
+References	References		
+Comments	Comments		
+Data_set_name	Data set name		
+Discipline	Discipline		
+Category	Category		
+Variables_measured	Variables measured		
+Data_format	Data format		
+Data_format_version	Data format version		
+Data_size	Data size		
+Data_set_creation_date	Data set creation date		
+Datum	Datum		
+Measuring_area_type	Measuring area type		
+Water_depth	Water depth	m	
+Depth_reference	Depth reference		
+Minimum_instrument_depth	Minimum instrument depth	m	
+Maximum_instrument_depth	Maximum instrument depth	m	
+Start_date	Start date		
+Start_time	Start time		
+End_date	End date		
+End_time	End time		
+Vertical_resolution	Vertical resolution		
+Vertical_resolution_unit	Vertical resolution unit		
+Instrument_gear_type	Instrument / gear type		
+Track_resolution	Track resolution		
+Track_resolution_unit	Track resolution unit		
+Frequency	Frequency		
+Frequency_unit	Frequency unit		
+Platform_type	Platform type		
+Cruise_name	Cruise name		
+Alternative_cruise_name	Alternative cruise name		
+Cruise_start_date	Cruise start date		
+Station_name	Station name		
+Alternative_station_name	Alternative station name		
+Station_start_date	Station start date		
+Originator	Originator		
+Data_Holding_centre	Data Holding centre		
+Project_name	Project name		
+Project_type	Project type		
+EDMED_references	EDMED references		
+CSR_references	CSR references		
+CSR_platform_name	CSR platform name		
+CSR_platform_code	CSR platform code		
+Publication_references	Publication references		
+Data_Distributor	Data Distributor		
+Database_reference	Database reference		
+Access_ordering_of_data	Access/ordering of data		
+Access_restriction	Access restriction		
+CDI_record_id	CDI-record id		
+CDI_record_creation_date	CDI-record creation date		
+CDI_partner	CDI-partner		
+date_time	Decimal Gregorian Days of the station	days since 1930-01-01 00:00:00 UTC	Relative Gregorian Days with decimal part
+			
+Depth	Depth	m	Codes: SDN:P01::ADEPZZ01 SDN:P06::ULAA | SDN:P01::DEPHPR01 SDN:P06::ULAA | SDN:P01::DEPHWO01 SDN:P06::ULAA
+ITS_90_water_temperature	ITS-90 water temperature	degrees C	Codes: SDN:P35::WATERTEMP SDN:P06::UPAA
+Water_body_phosphate	Water body phosphate	umol/l	Codes: SDN:P35::EPC00007 SDN:P06::UPOX

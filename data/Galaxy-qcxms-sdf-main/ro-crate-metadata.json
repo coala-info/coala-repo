@@ -1,0 +1,167 @@
+{
+  "@context": [
+    "https://w3id.org/ro/crate/1.1/context",
+    {
+      "GithubService": "https://w3id.org/ro/terms/test#GithubService",
+      "JenkinsService": "https://w3id.org/ro/terms/test#JenkinsService",
+      "PlanemoEngine": "https://w3id.org/ro/terms/test#PlanemoEngine",
+      "TestDefinition": "https://w3id.org/ro/terms/test#TestDefinition",
+      "TestInstance": "https://w3id.org/ro/terms/test#TestInstance",
+      "TestService": "https://w3id.org/ro/terms/test#TestService",
+      "TestSuite": "https://w3id.org/ro/terms/test#TestSuite",
+      "TravisService": "https://w3id.org/ro/terms/test#TravisService",
+      "definition": "https://w3id.org/ro/terms/test#definition",
+      "engineVersion": "https://w3id.org/ro/terms/test#engineVersion",
+      "instance": "https://w3id.org/ro/terms/test#instance",
+      "resource": "https://w3id.org/ro/terms/test#resource",
+      "runsOn": "https://w3id.org/ro/terms/test#runsOn"
+    }
+  ],
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.1"
+      }
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "datePublished": "2026-03-03T19:08:25.850717",
+      "hasPart": [
+        {
+          "@id": "QCxMS-Spectra-Prediction-from-SDF.ga"
+        },
+        {
+          "@id": "README.md"
+        },
+        {
+          "@id": "QCxMS-Spectra-Prediction-from-SDF-tests.yml"
+        }
+      ],
+      "isBasedOn": "https://github.com/iwc-workflows/qcxms-sdf",
+      "license": "MIT",
+      "mainEntity": {
+        "@id": "QCxMS-Spectra-Prediction-from-SDF.ga"
+      },
+      "mentions": [
+        {
+          "@id": "#test_main_1"
+        }
+      ],
+      "name": "qcxms-sdf/main"
+    },
+    {
+      "@id": "QCxMS-Spectra-Prediction-from-SDF.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "creator": [
+        {
+          "@id": "#284d4cc1-1a6d-44b9-afe3-c2a49d28a341"
+        },
+        {
+          "@id": "#0000-0001-6744-996X"
+        }
+      ],
+      "name": "qcxms-sdf/main",
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "url": "https://github.com/iwc-workflows/qcxms-sdf",
+      "version": "0.3"
+    },
+    {
+      "@id": "README.md",
+      "@type": "File"
+    },
+    {
+      "@id": "QCxMS-Spectra-Prediction-from-SDF-tests.yml",
+      "@type": [
+        "File",
+        "TestDefinition"
+      ],
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/terms/test#PlanemoEngine"
+      },
+      "engineVersion": ">=0.75.39"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "name": "Galaxy",
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "version": "v19_09"
+    },
+    {
+      "@id": "#284d4cc1-1a6d-44b9-afe3-c2a49d28a341",
+      "@type": "Organization",
+      "name": "RECETOX"
+    },
+    {
+      "@id": "#0000-0001-6744-996X",
+      "@type": "Person",
+      "name": "Helge Hecht"
+    },
+    {
+      "@id": "#test_main_1",
+      "@type": "TestSuite",
+      "definition": {
+        "@id": "QCxMS-Spectra-Prediction-from-SDF-tests.yml"
+      },
+      "instance": [
+        {
+          "@id": "#test_main_1_1"
+        }
+      ],
+      "mainEntity": {
+        "@id": "QCxMS-Spectra-Prediction-from-SDF.ga"
+      },
+      "name": "test_main_1"
+    },
+    {
+      "@id": "#test_main_1_1",
+      "@type": "TestInstance",
+      "name": "test_main_1_1",
+      "resource": "repos/iwc-workflows/qcxms-sdf/actions/workflows/wftest.yml",
+      "runsOn": {
+        "@id": "https://w3id.org/ro/terms/test#GithubService"
+      },
+      "url": "https://api.github.com"
+    },
+    {
+      "@id": "https://w3id.org/ro/terms/test#GithubService",
+      "@type": "TestService",
+      "name": "Github Actions",
+      "url": {
+        "@id": "https://github.com"
+      }
+    },
+    {
+      "@id": "https://w3id.org/ro/terms/test#PlanemoEngine",
+      "@type": "SoftwareApplication",
+      "name": "Planemo",
+      "url": {
+        "@id": "https://github.com/galaxyproject/planemo"
+      }
+    }
+  ]
+}

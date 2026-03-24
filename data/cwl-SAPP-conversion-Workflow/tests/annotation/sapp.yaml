@@ -1,0 +1,17 @@
+cwl:tool: ../../workflows/workflow_sapp_microbes.cwl
+destination: ./output
+# embl:
+#    class: File
+#    format: http://edamontology.org/format_1927 # EMBL
+#    location: http://download.systemsbiology.nl/unlock/cwl/test_data/sapp/GCA_000151105.2.embl.gz
+fasta:
+   class: File
+   location: https://www.ebi.ac.uk/ena/browser/api/fasta/GCA_000007565.2?download=true&gzip=false
+interpro:
+   class: Directory
+   location: /unlock/infrastructure/binaries/interproscan/interproscan-5.66-98.0/
+
+identifier: GCA_000151105.2
+codon_table: 11
+memory: 5000
+threads: 2

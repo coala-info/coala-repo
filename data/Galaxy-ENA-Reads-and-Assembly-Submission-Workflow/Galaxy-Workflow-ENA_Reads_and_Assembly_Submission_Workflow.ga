@@ -1,0 +1,485 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "A two-step Galaxy workflow for ENA that interactively submits raw reads and consensus sequences, retaining ENA validations while leveraging user-scoped credentials and seamless Galaxy-based data management.",
+    "comments": [],
+    "creator": [
+        {
+            "class": "Person",
+            "identifier": "0000-0003-0522-5674",
+            "name": "Bert Droesbeke"
+        }
+    ],
+    "format-version": "0.1",
+    "license": "MIT",
+    "name": "ENA Reads and Assembly Submission Workflow",
+    "readme": "# ENA Reads & Assembly Submission Workflow\n\nOriginally developed within the EVORA project, this two-step Galaxy workflow streamlines submissions to the European Nucleotide Archive (ENA). The workflow first submits raw sequencing reads via the **Galaxy ENA upload tool**, then submits assembled sequences using the **Galaxy ENA Webin CLI tool. The process is fully interactive and GUI-driven while retaining ENA\u2019s required validations leveraging the user-scoped credential management system and the data upload/management from Galaxy.\n\n\n## Step 1 \u2014 Raw reads: Galaxy ENA upload tool\n\nA Galaxy wrapper around the [ENA-upload-cli](https://github.com/usegalaxy-eu/ena-upload-cli) that brings a graphical interface and interactive checks to standard ENA read submissions.\n\n**Key features**\n\n- Raw read submission with  ENA-upload-cli at its core\n- Use tabular files or an excel sheet to easily capture the metadata\n- Client side validation using ENA checklists\n- Create, add, and modify ENA objects (e.g., studies, experiments, samples, runs)\n\n## Step 2 \u2014 Consensus sequences: Galaxy ENA Webin CLI\n\nA Galaxy wrapper around ENA\u2019s [Webin-CLI](https://github.com/enasequence/webin-cli) for interactive submission of consensus sequences, with full checklist coverage.\n\n**Key features**\n\n- Seamless integration with the Galaxy ENA upload tool to fetch and reuse metadata\n- Interactive metadata submission and validation\n- Support for all assembly levels (contig, scaffold and chromosome)",
+    "report": {
+        "markdown": "\n# Workflow Execution Report\n\n## Workflow Inputs\n```galaxy\ninvocation_inputs()\n```\n\n## Workflow Outputs\n```galaxy\ninvocation_outputs()\n```\n\n## Workflow\n```galaxy\nworkflow_display()\n```\n"
+    },
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "ENA sample checklist"
+                }
+            ],
+            "label": "ENA sample checklist",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 21.860954662245813,
+                "top": 0
+            },
+            "tool_id": null,
+            "tool_state": "{\"default\": \"ERC000011\", \"multiple\": false, \"validators\": [], \"restrictions\": [\"ERC000011\", \"ERC000012\", \"ERC000013\", \"ERC000014\", \"ERC000015\", \"ERC000016\", \"ERC000017\", \"ERC000018\", \"ERC000019\", \"ERC000020\", \"ERC000021\", \"ERC000022\", \"ERC000023\", \"ERC000024\", \"ERC000025\", \"ERC000026\", \"ERC000027\", \"ERC000028\", \"ERC000029\", \"ERC000030\", \"ERC000031\", \"ERC000032\", \"ERC000033\", \"ERC000034\", \"ERC000035\", \"ERC000036\", \"ERC000037\", \"ERC000038\", \"ERC000039\", \"ERC000040\", \"ERC000041\", \"ERC000043\", \"ERC000044\", \"ERC000045\", \"ERC000046\", \"ERC000047\", \"ERC000048\", \"ERC000049\", \"ERC000050\", \"ERC000051\", \"ERC000052\", \"ERC000053\", \"ERC000055\", \"ERC000056\", \"ERC000057\", \"ERC000058\"], \"parameter_type\": \"text\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "a9f7af6b-6760-45d5-b8e0-7362517a8246",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Excel file from template"
+                }
+            ],
+            "label": "Excel file from template",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 21.71987363244392,
+                "top": 102.502690398947
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "f5fabcf3-6e5e-42d0-967f-993a0718d0ca",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 2,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Raw reads as dataset lists"
+                }
+            ],
+            "label": "Raw reads as dataset lists",
+            "name": "Input dataset collection",
+            "outputs": [],
+            "position": {
+                "left": 19.55080497090293,
+                "top": 198.05228409598578
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null, \"collection_type\": \"list\", \"fields\": null}",
+            "tool_version": null,
+            "type": "data_collection_input",
+            "uuid": "e485c30f-a1ef-4cb3-a80f-8fad5036894a",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 3,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Affiliation center"
+                }
+            ],
+            "label": "Affiliation center",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 19.10001370100538,
+                "top": 298.5147375527418
+            },
+            "tool_id": null,
+            "tool_state": "{\"multiple\": false, \"validators\": [], \"parameter_type\": \"text\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "ce95a375-b650-4a8a-ac32-384c80433309",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "4": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 4,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Assembly type"
+                }
+            ],
+            "label": "Assembly type",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 21.532124897729048,
+                "top": 415.3504351292897
+            },
+            "tool_id": null,
+            "tool_state": "{\"multiple\": false, \"validators\": [], \"restrictions\": [\"isolate\", \"clone\"], \"parameter_type\": \"text\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "48f1b303-d858-443d-a68e-9901162469cf",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "5": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 5,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Assembly program"
+                }
+            ],
+            "label": "Assembly program",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 21.804154112322394,
+                "top": 515.7021338343899
+            },
+            "tool_id": null,
+            "tool_state": "{\"multiple\": false, \"validators\": [], \"parameter_type\": \"text\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "fd08325c-1263-4264-b73e-f70710b4a66a",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "6": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 6,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Molecule type"
+                }
+            ],
+            "label": "Molecule type",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 18.61752616994316,
+                "top": 623.6260814758914
+            },
+            "tool_id": null,
+            "tool_state": "{\"multiple\": false, \"validators\": [], \"restrictions\": [\"viral cRNA\", \"genomic RNA\", \"genomic DNA\"], \"parameter_type\": \"text\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "d9585e29-333a-4158-87d0-9a170235be45",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "7": {
+            "annotation": "The estimated depth of sequencing coverage",
+            "content_id": null,
+            "errors": null,
+            "id": 7,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "The estimated depth of sequencing coverage",
+                    "name": "Coverage"
+                }
+            ],
+            "label": "Coverage",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 7.666407216742336,
+                "top": 708.6975105841195
+            },
+            "tool_id": null,
+            "tool_state": "{\"validators\": [{\"min\": null, \"max\": null, \"negate\": false, \"type\": \"in_range\"}], \"parameter_type\": \"float\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "174c044e-a97f-448e-a2e7-ff31a4ae6986",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "8": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 8,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Consensus sequences"
+                }
+            ],
+            "label": "Consensus sequences",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 9.718788084450935,
+                "top": 906.6252254429927
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "73556a7b-c268-40da-b650-474f9e18d2ee",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "9": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 9,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Chromosome List file"
+                }
+            ],
+            "label": "Chromosome List file",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 0,
+                "top": 1105.5108049657874
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "54ba1153-ae49-474d-a85e-fee0143a6fa1",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "10": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 10,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Submit to ENA test server"
+                }
+            ],
+            "label": "Submit to ENA test server",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 10.98669398407958,
+                "top": 1247.9813980663985
+            },
+            "tool_id": null,
+            "tool_state": "{\"default\": true, \"validators\": [], \"parameter_type\": \"boolean\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "09b7d728-181b-42ff-ad4b-88584cf8a7ca",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "11": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/ena_upload/ena_upload/0.9.0+galaxy0",
+            "errors": null,
+            "id": 11,
+            "input_connections": {
+                "action_options|input_format_conditional|checklist_id": {
+                    "id": 0,
+                    "output_name": "output"
+                },
+                "action_options|input_format_conditional|run_input_format_conditional|data": {
+                    "id": 2,
+                    "output_name": "output"
+                },
+                "action_options|input_format_conditional|xlsx_file": {
+                    "id": 1,
+                    "output_name": "output"
+                },
+                "action_options|test_submit_parameters|center": {
+                    "id": 3,
+                    "output_name": "output"
+                },
+                "action_options|test_submit_parameters|submit_dev": {
+                    "id": 10,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "ENA Upload tool",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "txt"
+                },
+                {
+                    "name": "studies_table_out",
+                    "type": "tabular"
+                },
+                {
+                    "name": "samples_table_out",
+                    "type": "tabular"
+                },
+                {
+                    "name": "experiments_table_out",
+                    "type": "tabular"
+                },
+                {
+                    "name": "runs_table_out",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 450.9851822726507,
+                "top": 604.1527117778957
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/ena_upload/ena_upload/0.9.0+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "7ca4ed416391",
+                "name": "ena_upload",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"action_options\": {\"action\": \"add\", \"__current_case__\": 0, \"test_submit\": \"False\", \"input_format_conditional\": {\"input_format\": \"excel_tables\", \"__current_case__\": 0, \"checklist_id\": {\"__class__\": \"ConnectedValue\"}, \"xlsx_file\": {\"__class__\": \"ConnectedValue\"}, \"run_input_format_conditional\": {\"run_input_format\": \"multiple_selection_list\", \"__current_case__\": 0, \"add_extension\": false, \"data\": {\"__class__\": \"ConnectedValue\"}}}, \"test_submit_parameters\": {\"center\": {\"__class__\": \"ConnectedValue\"}, \"submit_dev\": {\"__class__\": \"ConnectedValue\"}, \"dry_run\": false}}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.9.0+galaxy0",
+            "type": "tool",
+            "uuid": "7bac4a7e-77ea-4cf8-9804-88449f3ed4ae",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "12": {
+            "annotation": "",
+            "content_id": "ena_webin_cli",
+            "errors": null,
+            "id": 12,
+            "input_connections": {
+                "assembly_program": {
+                    "id": 5,
+                    "output_name": "output"
+                },
+                "assembly_type": {
+                    "id": 4,
+                    "output_name": "output"
+                },
+                "coverage": {
+                    "id": 7,
+                    "output_name": "output"
+                },
+                "metadata_file_or_form|chr_list_file": {
+                    "id": 9,
+                    "output_name": "output"
+                },
+                "metadata_file_or_form|ena_receipt": {
+                    "id": 11,
+                    "output_name": "output"
+                },
+                "metadata_file_or_form|genome_fasta": {
+                    "id": 8,
+                    "output_name": "output"
+                },
+                "molecule_type": {
+                    "id": 6,
+                    "output_name": "output"
+                },
+                "submit_test": {
+                    "id": 10,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool ENA Webin CLI",
+                    "name": "metadata_file_or_form"
+                },
+                {
+                    "description": "runtime parameter for tool ENA Webin CLI",
+                    "name": "metadata_file_or_form"
+                },
+                {
+                    "description": "runtime parameter for tool ENA Webin CLI",
+                    "name": "metadata_file_or_form"
+                },
+                {
+                    "description": "runtime parameter for tool ENA Webin CLI",
+                    "name": "metadata_file_or_form"
+                }
+            ],
+            "label": null,
+            "name": "ENA Webin CLI",
+            "outputs": [
+                {
+                    "name": "generated_manifests",
+                    "type": "input"
+                },
+                {
+                    "name": "webin_cli_log",
+                    "type": "txt"
+                },
+                {
+                    "name": "webin_cli_outputs",
+                    "type": "tar"
+                }
+            ],
+            "position": {
+                "left": 866.9526013330791,
+                "top": 461.80469693556876
+            },
+            "post_job_actions": {},
+            "tool_id": "ena_webin_cli",
+            "tool_state": "{\"assembly_program\": {\"__class__\": \"ConnectedValue\"}, \"assembly_type\": {\"__class__\": \"ConnectedValue\"}, \"coverage\": {\"__class__\": \"ConnectedValue\"}, \"dry_run\": false, \"metadata_file_or_form\": {\"metadata_format\": \"file\", \"__current_case__\": 0, \"ena_receipt\": {\"__class__\": \"ConnectedValue\"}, \"genome_fasta\": {\"__class__\": \"ConnectedValue\"}, \"agp_file\": {\"__class__\": \"RuntimeValue\"}, \"chr_list_file\": {\"__class__\": \"ConnectedValue\"}}, \"min_gap_length\": null, \"molecule_type\": {\"__class__\": \"ConnectedValue\"}, \"submit_test\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "9.0.1+galaxy1",
+            "type": "tool",
+            "uuid": "15759ed5-f205-4a07-bf68-a6c0b1654fdf",
+            "when": null,
+            "workflow_outputs": []
+        }
+    },
+    "tags": [
+        "EVORA",
+        "ENA",
+        "submission",
+        "FAIR",
+        "publication",
+        "brokering"
+    ],
+    "uuid": "5a4cb116-03d3-4f00-a801-2a9b14a14bb3",
+    "version": 5
+}

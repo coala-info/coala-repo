@@ -1,0 +1,60 @@
+strict digraph {
+
+
+	"DT5103" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ST510109" [ color="2", colorscheme="ylorbr3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ST510109" -> "DT5111" [ label="is output from", labeltooltip="DT5111 - is output from - ST510109",  weight=0 ];
+
+	"ST510111" [ color="2", colorscheme="ylorbr3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ST510101" [ color="2", colorscheme="ylorbr3", fillcolor="1", style="filled",  weight=0 ];
+
+	"DT5110" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ST510103" [ color="2", colorscheme="ylorbr3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ST510103" -> "DT5101" [ label="is output from", labeltooltip="DT5101 - is output from - ST510103",  weight=0 ];
+
+	"DT5111" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"DT5111" -> "ST510111" [ label="is input to", labeltooltip="DT5111 - is input to - ST510111",  weight=0 ];
+
+	"DT5111" -> "ST510112" [ label="is input to", labeltooltip="DT5111 - is input to - ST510112",  weight=0 ];
+
+	"ST510110" [ color="2", colorscheme="ylorbr3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ST510110" -> "DT5110" [ label="is output from", labeltooltip="DT5110 - is output from - ST510110",  weight=0 ];
+
+	"DT5105" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"DT5105" -> "ST510109" [ label="is input to", labeltooltip="DT5105 - is input to - ST510109",  weight=0 ];
+
+	"ST510107" [ color="2", colorscheme="ylorbr3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ST510107" -> "DT5103" [ label="is output from", labeltooltip="DT5103 - is output from - ST510107",  weight=0 ];
+
+	"ST510112" [ color="2", colorscheme="ylorbr3", fillcolor="1", style="filled",  weight=0 ];
+
+	"DT5102" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"DT5102" -> "ST510107" [ label="is input to", labeltooltip="DT5102 - is input to - ST510107",  weight=0 ];
+
+	"DT5104" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"DT5104" -> "ST510101" [ label="is input to", labeltooltip="DT5104 - is input to - ST510101",  weight=0 ];
+
+	"DT5109" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"DT5109" -> "ST510110" [ label="is input to", labeltooltip="DT5109 - is input to - ST510110",  weight=0 ];
+
+	"ST510102" [ color="2", colorscheme="ylorbr3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ST510102" -> "DT5105" [ label="is output from", labeltooltip="DT5105 - is output from - ST510102",  weight=0 ];
+
+	"DT5101" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"DT5101" -> "ST510107" [ label="is input to", labeltooltip="DT5101 - is input to - ST510107",  weight=0 ];
+
+}

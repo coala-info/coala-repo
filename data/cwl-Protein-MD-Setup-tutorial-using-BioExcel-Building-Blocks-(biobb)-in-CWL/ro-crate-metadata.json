@@ -1,0 +1,545 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "protein_md.cwl"
+      },
+      "datePublished": "2021-05-10 10:00:56 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0003-0513-0288"
+        }
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.29.3",
+      "url": "https://workflowhub.eu/workflows/29/ro_crate?version=3",
+      "name": "Research Object Crate for Protein MD Setup tutorial using BioExcel Building Blocks (biobb) in CWL",
+      "description": "Common Workflow Language example that illustrate the process of setting up a simulation system containing a protein, step by step, using the [BioExcel Building Blocks](/projects/11) library (biobb). The particular example used is the Lysozyme protein (PDB code 1AKI). This workflow returns a resulting protein structure and simulated 3D trajectories.",
+      "isBasedOn": "https://github.com/bioexcel/biobb-wf-md-setup-protein-cwl",
+      "sdDatePublished": "2026-03-24 01:17:49 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "protein_md.cwl"
+        },
+        {
+          "@id": "workflow-29-7bb04e4d58d45c7f09116da046f9d07baec7ce3e-diagram.svg"
+        }
+      ]
+    },
+    {
+      "@id": "protein_md.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 11271,
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "image": {
+        "@id": "workflow-29-7bb04e4d58d45c7f09116da046f9d07baec7ce3e-diagram.svg"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Common Workflow Language example that illustrate the process of setting up a simulation system containing a protein, step by step, using the [BioExcel Building Blocks](/projects/11) library (biobb). The particular example used is the Lysozyme protein (PDB code 1AKI). This workflow returns a resulting protein structure and simulated 3D trajectories.",
+      "name": "Protein MD Setup tutorial using BioExcel Building Blocks (biobb) in CWL",
+      "url": "https://workflowhub.eu/workflows/29?version=3",
+      "keywords": "molecular dynamics, trajectories, protein",
+      "version": 3,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "creator": {
+        "@id": "https://workflowhub.eu/people/47"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/11"
+      },
+      "dateCreated": "2021-05-10T09:00:56Z",
+      "dateModified": "2023-01-16T13:42:00Z",
+      "isPartOf": [
+        {
+          "@id": "https://workflowhub.eu/collections/1"
+        },
+        {
+          "@id": "https://workflowhub.eu/collections/3"
+        }
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.29.3",
+      "isBasedOn": "https://workflowhub.eu/workflows/29?version=2",
+      "input": [
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step1_pdb_name"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step1_pdb_config"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step4_editconf_config"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step6_gppion_config"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step7_genion_config"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step8_gppmin_config"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step10_energy_min_config"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step10_energy_min_name"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step11_gppnvt_config"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step13_energy_nvt_config"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step13_energy_nvt_name"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step14_gppnpt_config"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step16_energy_npt_config"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step16_energy_npt_name"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step17_gppmd_config"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step19_rmsfirst_config"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step19_rmsfirst_name"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step20_rmsexp_config"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step20_rmsexp_name"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step21_rgyr_config"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step22_image_config"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step23_dry_config"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-outputs-trr"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-outputs-trr_imaged_dry"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-outputs-gro_dry"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-outputs-gro"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-outputs-cpt"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-outputs-tpr"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-outputs-top"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-outputs-xvg_min"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-outputs-xvg_nvt"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-outputs-xvg_npt"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-outputs-xvg_rmsfirst"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-outputs-xvg_rmsexp"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-outputs-xvg_rgyr"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "workflow-29-7bb04e4d58d45c7f09116da046f9d07baec7ce3e-diagram.svg",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 60267
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-0513-0288",
+      "@type": "Person",
+      "name": "Genís Bayarri",
+      "identifier": "https://orcid.org/0000-0003-0513-0288"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/47",
+      "@type": "Person",
+      "name": "Genís Bayarri"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/11",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "BioBB Building Blocks"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/1",
+      "@type": "Collection",
+      "name": "Tutorials for BioExcel Building Blocks (BioBB)"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/3",
+      "@type": "Collection",
+      "name": "BioExcel Building Blocks (BioBB) Protein MD Setup Tutorials"
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step1_pdb_name",
+      "@type": "FormalParameter",
+      "name": "step1_pdb_name",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step1_pdb_config",
+      "@type": "FormalParameter",
+      "name": "step1_pdb_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step4_editconf_config",
+      "@type": "FormalParameter",
+      "name": "step4_editconf_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step6_gppion_config",
+      "@type": "FormalParameter",
+      "name": "step6_gppion_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step7_genion_config",
+      "@type": "FormalParameter",
+      "name": "step7_genion_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step8_gppmin_config",
+      "@type": "FormalParameter",
+      "name": "step8_gppmin_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step10_energy_min_config",
+      "@type": "FormalParameter",
+      "name": "step10_energy_min_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step10_energy_min_name",
+      "@type": "FormalParameter",
+      "name": "step10_energy_min_name",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step11_gppnvt_config",
+      "@type": "FormalParameter",
+      "name": "step11_gppnvt_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step13_energy_nvt_config",
+      "@type": "FormalParameter",
+      "name": "step13_energy_nvt_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step13_energy_nvt_name",
+      "@type": "FormalParameter",
+      "name": "step13_energy_nvt_name",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step14_gppnpt_config",
+      "@type": "FormalParameter",
+      "name": "step14_gppnpt_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step16_energy_npt_config",
+      "@type": "FormalParameter",
+      "name": "step16_energy_npt_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step16_energy_npt_name",
+      "@type": "FormalParameter",
+      "name": "step16_energy_npt_name",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step17_gppmd_config",
+      "@type": "FormalParameter",
+      "name": "step17_gppmd_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step19_rmsfirst_config",
+      "@type": "FormalParameter",
+      "name": "step19_rmsfirst_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step19_rmsfirst_name",
+      "@type": "FormalParameter",
+      "name": "step19_rmsfirst_name",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step20_rmsexp_config",
+      "@type": "FormalParameter",
+      "name": "step20_rmsexp_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step20_rmsexp_name",
+      "@type": "FormalParameter",
+      "name": "step20_rmsexp_name",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step21_rgyr_config",
+      "@type": "FormalParameter",
+      "name": "step21_rgyr_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step22_image_config",
+      "@type": "FormalParameter",
+      "name": "step22_image_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-inputs-step23_dry_config",
+      "@type": "FormalParameter",
+      "name": "step23_dry_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-outputs-trr",
+      "@type": "FormalParameter",
+      "name": "Trajectories - Raw trajectory",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-outputs-trr_imaged_dry",
+      "@type": "FormalParameter",
+      "name": "Trajectories - Post-processed trajectory",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-outputs-gro_dry",
+      "@type": "FormalParameter",
+      "name": "Resulting protein structure",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-outputs-gro",
+      "@type": "FormalParameter",
+      "name": "Structures - Raw structure",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-outputs-cpt",
+      "@type": "FormalParameter",
+      "name": "Checkpoint file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-outputs-tpr",
+      "@type": "FormalParameter",
+      "name": "Topologies GROMACS portable binary run",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-outputs-top",
+      "@type": "FormalParameter",
+      "name": "GROMACS topology file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-outputs-xvg_min",
+      "@type": "FormalParameter",
+      "name": "System Setup Observables - Potential Energy",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-outputs-xvg_nvt",
+      "@type": "FormalParameter",
+      "name": "System Setup Observables - Temperature",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-outputs-xvg_npt",
+      "@type": "FormalParameter",
+      "name": "System Setup Observables - Pressure and density",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-outputs-xvg_rmsfirst",
+      "@type": "FormalParameter",
+      "name": "Simulation Analysis",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-outputs-xvg_rmsexp",
+      "@type": "FormalParameter",
+      "name": "Simulation Analysis",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_cwl-outputs-xvg_rgyr",
+      "@type": "FormalParameter",
+      "name": "Simulation Analysis",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

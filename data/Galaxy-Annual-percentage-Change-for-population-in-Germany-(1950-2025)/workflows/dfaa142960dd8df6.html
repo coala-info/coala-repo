@@ -1,0 +1,129 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <title>Galaxy Workflow</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.9.4/cytoscape.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1.14.7/dist/umd/popper.js"></script>
+    <script src="https://unpkg.com/tippy.js@4.0.1/umd/index.all.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@4.0.1/index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/cytoscape-popper@1.0.4/cytoscape-popper.min.js"></script>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    var cy = cytoscape({
+        container: document.getElementById('cy'),
+        elements: [{"group": "nodes", "data": {"id": "files.tabular", "label": "files.tabular", "doc": "An input file with a header line and at least one column used to create the stripes.", "tool_id": null, "step_type": "data", "repo_link": null}, "classes": ["type_data", "input"], "position": {"x": 41, "y": 0}}, {"group": "nodes", "data": {"id": "Column name to use for plotting", "label": "Column name to use for plotting", "doc": null, "tool_id": null, "step_type": "string", "repo_link": null}, "classes": ["type_string", "input"], "position": {"x": 43, "y": 112}}, {"group": "nodes", "data": {"id": "Plot Title", "label": "Plot Title", "doc": null, "tool_id": null, "step_type": "string", "repo_link": null}, "classes": ["type_string", "input"], "position": {"x": 44, "y": 232}}, {"group": "nodes", "data": {"id": "nxsplit", "label": "nxsplit", "doc": "Number of values per intervals", "tool_id": null, "step_type": "int", "repo_link": null}, "classes": ["type_int", "input"], "position": {"x": 32, "y": 325}}, {"group": "nodes", "data": {"id": "xname (column name for the x-axis)", "label": "xname (column name for the x-axis)", "doc": "The column name to use for the x-axis.", "tool_id": null, "step_type": "string", "repo_link": null}, "classes": ["type_string", "input"], "position": {"x": 0, "y": 437}}, {"group": "nodes", "data": {"id": "Date/time format for the x-axis column", "label": "Date/time format for the x-axis column", "doc": "Date/time format to use when reading the column to be used for the x-axis.", "tool_id": null, "step_type": "string", "repo_link": null}, "classes": ["type_string", "input"], "position": {"x": 15, "y": 576}}, {"group": "nodes", "data": {"id": "dates format for xlabels", "label": "dates format for xlabels", "doc": "Format for plotting dates on the x-axis", "tool_id": null, "step_type": "string", "repo_link": null}, "classes": ["type_string", "input"], "position": {"x": 31, "y": 720}}, {"group": "nodes", "data": {"id": "Matplotlib colormap", "label": "Matplotlib colormap", "doc": "Parameter 'colormap': valid options: winter,PRGn,hsv,gist_ncar,RdYlGn,summer,BrBG,Pastel1,autumn,PuBuGn,seismic,YlOrRd,Purples,Wistia,YlOrBr,tab10,tab20c,gist_heat,bone,gist_yarg,ocean,flag,RdGy,gist_earth,coolwarm,spring,PuBu,cool,gist_stern,gray,Reds,Greens,Accent,BuGn,RdGy_r,Set3,Pastel2,pink,OrRd,gist_rainbow,Blues,binary,gist_gray,PuOr,Set2,rainbow,copper,RdBu_r,Oranges,Set1,afmhot,BuPu,gnuplot2,brg,terrain,YlGnBu,tab20,Greys,bwr,RdPu,PuRd,tab20b,PiYG,hot,gnuplot,YlGn,Dark2,prism,Spectral,Paired,RdPu_r,RdBu,RdYlBu,GnBu,cubehelix,CMRmap,jet,nipy_spectral) Using default: 'RdBu_r'.", "tool_id": null, "step_type": "string", "repo_link": null}, "classes": ["type_string", "input"], "position": {"x": 13, "y": 850}}, {"group": "nodes", "data": {"id": "Generate stripes", "label": "Generate stripes", "doc": "Generate stripe from tabular file with at least one column. User needs to specify the column name in the tool. ", "tool_id": "toolshed.g2.bx.psu.edu/repos/climate/climate_stripes/climate_stripes/1.0.2", "step_type": "tool", "repo_link": null}, "classes": ["type_tool", "runnable"], "position": {"x": 584, "y": 125}}, {"group": "edges", "data": {"id": "Generate stripes__to__Matplotlib colormap", "source": "Matplotlib colormap", "target": "Generate stripes", "input": "adv|colormap", "output": null}}, {"group": "edges", "data": {"id": "Generate stripes__to__dates format for xlabels", "source": "dates format for xlabels", "target": "Generate stripes", "input": "adv|format_plot", "output": null}}, {"group": "edges", "data": {"id": "Generate stripes__to__Date", "source": "Date", "target": "Generate stripes", "input": "adv|format_date", "output": "time format for the x-axis column"}}, {"group": "edges", "data": {"id": "Generate stripes__to__xname (column name for the x-axis)", "source": "xname (column name for the x-axis)", "target": "Generate stripes", "input": "adv|xname", "output": null}}, {"group": "edges", "data": {"id": "Generate stripes__to__Column name to use for plotting", "source": "Column name to use for plotting", "target": "Generate stripes", "input": "variable", "output": null}}, {"group": "edges", "data": {"id": "Generate stripes__to__files.tabular", "source": "files.tabular", "target": "Generate stripes", "input": "ifilename", "output": null}}, {"group": "edges", "data": {"id": "Generate stripes__to__nxsplit", "source": "nxsplit", "target": "Generate stripes", "input": "adv|nxsplit", "output": null}}, {"group": "edges", "data": {"id": "Generate stripes__to__Plot Title", "source": "Plot Title", "target": "Generate stripes", "input": "title", "output": null}}],
+        layout: {
+            name: 'preset'
+        },
+        // so we can see the ids
+        style: [
+            {
+                selector: 'node',
+                style: {
+                    'label': 'data(label)'
+                }
+            },
+            {
+                selector: 'edge',
+                style: {
+                    'curve-style': 'bezier',
+                    'target-arrow-shape': 'vee',
+                    'arrow-scale': 2
+                }
+            },
+            {
+                selector: ".input",
+                style: {
+                    shape: 'diamond',
+                    'background-color': '#d0bb46'
+                }
+            },
+            {
+                selector: ".runnable",
+                style: {
+                    shape: 'round-rectangle',
+                    'background-color': '#2c3143'
+                }
+            }
+        ]
+      });
+
+  function makePopper(ele) {
+    let ref = ele.popperRef(); // used only for positioning
+
+    ele.tippy = new tippy(ref, { // tippy options:
+      content: function() {
+        let content = document.createElement('div');
+
+        let innerHTML = '';
+        if(ele.isNode()) {
+            let stepType = ele.data("step_type");
+            innerHTML +=  "<p><i>Step Type:</i> " + stepType + "</p>";
+            let toolId = ele.data("tool_id");
+            if (toolId) {
+                innerHTML +=  "<p><i>ToolID:</i> " + toolId + "</p>";
+            }
+            let repoLink = ele.data("repo_link");
+            if (repoLink) {
+                innerHTML += "<a href=" + repoLink + '">Visit Tool Shed Repository</a>';
+            }
+            let doc = ele.data('doc');
+            if (doc) {
+                innerHTML += "<p>" + doc + "</p>";
+            }
+        } else {
+            let output = ele.data("output");
+            let input = ele.data("input");
+            if(output) {
+                innerHTML += "Output named " + output + " connects to " + input;
+            } else {
+                innerHTML += "Connected to input " + input;
+            }
+        }
+        content.innerHTML = innerHTML;
+
+        return content;
+      },
+      delay: [0,1000],
+      interactive: true,
+      placement: 'bottom',
+      trigger: 'manual' // probably want manual mode
+    });
+  }
+
+ cy.ready(function() {
+    cy.elements().forEach(function(ele) {
+      makePopper(ele);
+    });
+  });
+
+  cy.elements().unbind('mouseover');
+  cy.elements().bind('mouseover', function(event) { event.target.tippy.show(); });
+
+  cy.elements().unbind('mouseout');
+  cy.elements().bind('mouseout', function(event) { event.target.tippy.hide(); });
+  // document.querySelector('#cypng').setAttribute('src', cy.png());
+});
+
+    </script>
+</head>
+
+<style>
+    #cy {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+    a { 
+        color: #d0bb46
+    }
+</style>
+
+<body>
+    <div id="cy"></div>
+</body>
+</html>

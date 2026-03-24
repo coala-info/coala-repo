@@ -1,0 +1,2829 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "This workflow extracts 5 different time periods e.g. January- June 2019, 2020 and 2021, July-December 2019 and 2020 over a single selected location. Then statistics (mean, minimum, maximum) are computed. The final products are maximum, minimum and mean.",
+    "creator": [
+        {
+            "class": "Organization",
+            "name": "Anne Fouilloux",
+            "url": "https://github.com/annefou"
+        }
+    ],
+    "format-version": "0.1",
+    "license": "GPL-3.0-or-later",
+    "name": "Investigation of lockdown effect on air quality between January 2019 to May 2021: RELIANCE DS1-GC0-SC3'",
+    "steps": {
+        "0": {
+            "annotation": "Input data corresponding to 1st January 2019 to 30th June 2019.",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ecology/xarray_metadata_info/xarray_metadata_info/0.18.2+galaxy0",
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [],
+            "label": "metadata for January 2019 to 30th June 2019",
+            "name": "NetCDF xarray Metadata Info",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "tabular"
+                },
+                {
+                    "name": "info",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 755.0186681035739,
+                "height": 110.11032104492188,
+                "left": 461.8038803783815,
+                "right": 595.8038803783816,
+                "top": 644.908347058652,
+                "width": 134,
+                "x": 461.8038803783815,
+                "y": 644.908347058652
+            },
+            "post_job_actions": {
+                "HideDatasetActioninfo": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "info"
+                },
+                "HideDatasetActionoutput": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ecology/xarray_metadata_info/xarray_metadata_info/0.18.2+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "663268794710",
+                "name": "xarray_metadata_info",
+                "owner": "ecology",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"netcdf\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"input\": null, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.18.2+galaxy0",
+            "type": "tool",
+            "uuid": "37f50e81-6759-43c7-9122-c8a419e37b7b",
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ecology/xarray_metadata_info/xarray_metadata_info/0.18.2+galaxy0",
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [],
+            "label": "metadata for 1st July 2019 to 31st December 2019",
+            "name": "NetCDF xarray Metadata Info",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "tabular"
+                },
+                {
+                    "name": "info",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 943.9874140041977,
+                "height": 110.1103515625,
+                "left": 450.8663803783815,
+                "right": 584.8663803783816,
+                "top": 833.8770624416977,
+                "width": 134,
+                "x": 450.8663803783815,
+                "y": 833.8770624416977
+            },
+            "post_job_actions": {
+                "HideDatasetActioninfo": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "info"
+                },
+                "HideDatasetActionoutput": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ecology/xarray_metadata_info/xarray_metadata_info/0.18.2+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "663268794710",
+                "name": "xarray_metadata_info",
+                "owner": "ecology",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"netcdf\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"input\": null, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.18.2+galaxy0",
+            "type": "tool",
+            "uuid": "8d96e778-c32b-4b1d-b50d-3e0c7aac47ee",
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ecology/xarray_metadata_info/xarray_metadata_info/0.18.2+galaxy0",
+            "errors": null,
+            "id": 2,
+            "input_connections": {},
+            "inputs": [],
+            "label": "metadata for January 2020 to 30th June 2020",
+            "name": "NetCDF xarray Metadata Info",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "tabular"
+                },
+                {
+                    "name": "info",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 1109.0030034762708,
+                "height": 110.11029052734375,
+                "left": 452.88199809060166,
+                "right": 586.8819980906017,
+                "top": 998.8927129489272,
+                "width": 134,
+                "x": 452.88199809060166,
+                "y": 998.8927129489272
+            },
+            "post_job_actions": {
+                "HideDatasetActioninfo": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "info"
+                },
+                "HideDatasetActionoutput": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ecology/xarray_metadata_info/xarray_metadata_info/0.18.2+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "663268794710",
+                "name": "xarray_metadata_info",
+                "owner": "ecology",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"netcdf\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"input\": null, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.18.2+galaxy0",
+            "type": "tool",
+            "uuid": "3fca5c5f-285b-4d2f-b727-7251ffa5bdca",
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ecology/xarray_metadata_info/xarray_metadata_info/0.18.2+galaxy0",
+            "errors": null,
+            "id": 3,
+            "input_connections": {},
+            "inputs": [],
+            "label": "metadata for 1st July 2020 to 31st December 2020",
+            "name": "NetCDF xarray Metadata Info",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "tabular"
+                },
+                {
+                    "name": "info",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 1273.9874076273902,
+                "height": 110.11029052734375,
+                "left": 453.75698715893185,
+                "right": 587.7569871589319,
+                "top": 1163.8771171000465,
+                "width": 134,
+                "x": 453.75698715893185,
+                "y": 1163.8771171000465
+            },
+            "post_job_actions": {
+                "HideDatasetActioninfo": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "info"
+                },
+                "HideDatasetActionoutput": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ecology/xarray_metadata_info/xarray_metadata_info/0.18.2+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "663268794710",
+                "name": "xarray_metadata_info",
+                "owner": "ecology",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"netcdf\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"input\": null, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.18.2+galaxy0",
+            "type": "tool",
+            "uuid": "936ee73b-dbb2-4a7e-abb9-15448b9a0ad0",
+            "workflow_outputs": []
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ecology/xarray_metadata_info/xarray_metadata_info/0.18.2+galaxy0",
+            "errors": null,
+            "id": 4,
+            "input_connections": {},
+            "inputs": [],
+            "label": "metadata for January 2021 to 30th June 2021",
+            "name": "NetCDF xarray Metadata Info",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "tabular"
+                },
+                {
+                    "name": "info",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 1439.9405399151701,
+                "height": 110.11029052734375,
+                "left": 455.71011215893185,
+                "right": 589.7101121589319,
+                "top": 1329.8302493878264,
+                "width": 134,
+                "x": 455.71011215893185,
+                "y": 1329.8302493878264
+            },
+            "post_job_actions": {
+                "HideDatasetActioninfo": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "info"
+                },
+                "HideDatasetActionoutput": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ecology/xarray_metadata_info/xarray_metadata_info/0.18.2+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "663268794710",
+                "name": "xarray_metadata_info",
+                "owner": "ecology",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"netcdf\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"input\": null, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.18.2+galaxy0",
+            "type": "tool",
+            "uuid": "3c4b5119-fe02-433b-9577-05c23732b7e1",
+            "workflow_outputs": []
+        },
+        "5": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ecology/xarray_select/xarray_select/0.18.2+galaxy0",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "var_tab": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool NetCDF xarray Selection",
+                    "name": "input"
+                }
+            ],
+            "label": "Selection  for January 2019 to 30th June 2019",
+            "name": "NetCDF xarray Selection",
+            "outputs": [
+                {
+                    "name": "simpleoutput",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 741.0342534762709,
+                "height": 110.11029052734375,
+                "left": 848.9601249125466,
+                "right": 982.9601249125466,
+                "top": 630.9239629489272,
+                "width": 134,
+                "x": 848.9601249125466,
+                "y": 630.9239629489272
+            },
+            "post_job_actions": {
+                "HideDatasetActionsimpleoutput": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "simpleoutput"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ecology/xarray_select/xarray_select/0.18.2+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "123a9a629bef",
+                "name": "xarray_select",
+                "owner": "ecology",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"condi_source_coord\": {\"coord_source\": \"coord_from_stdin\", \"__current_case__\": 1, \"condi_coord\": {\"coord\": \"single\", \"__current_case__\": 0, \"lat_dim\": \"latitude\", \"lat_val\": \"43.35462\", \"lon_dim\": \"longitude\", \"lon_val\": \"5.32682\", \"no_missing\": \"true\", \"tolerance\": null}}, \"input\": {\"__class__\": \"RuntimeValue\"}, \"time\": {\"condi_datetime\": {\"datetime\": \"no\", \"__current_case__\": 0}}, \"user_choice\": [], \"var\": \"no2_conc\", \"var_tab\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.18.2+galaxy0",
+            "type": "tool",
+            "uuid": "9e191223-ee24-4742-a280-118e9534fb91",
+            "workflow_outputs": []
+        },
+        "6": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ecology/xarray_select/xarray_select/0.18.2+galaxy0",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "var_tab": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": "Selection  for 1st July 2019 to 31st December 2019",
+            "name": "NetCDF xarray Selection",
+            "outputs": [
+                {
+                    "name": "simpleoutput",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 921.0343081346198,
+                "height": 110.11029052734375,
+                "left": 845.8351249125466,
+                "right": 979.8351249125466,
+                "top": 810.924017607276,
+                "width": 134,
+                "x": 845.8351249125466,
+                "y": 810.924017607276
+            },
+            "post_job_actions": {
+                "HideDatasetActionsimpleoutput": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "simpleoutput"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ecology/xarray_select/xarray_select/0.18.2+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "123a9a629bef",
+                "name": "xarray_select",
+                "owner": "ecology",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"netcdf\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"condi_source_coord\": {\"coord_source\": \"coord_from_stdin\", \"__current_case__\": 1, \"condi_coord\": {\"coord\": \"single\", \"__current_case__\": 0, \"lat_dim\": \"latitude\", \"lat_val\": \"43.35462\", \"lon_dim\": \"longitude\", \"lon_val\": \"5.32682\", \"no_missing\": \"true\", \"tolerance\": null}}, \"input\": null, \"time\": {\"condi_datetime\": {\"datetime\": \"no\", \"__current_case__\": 0}}, \"user_choice\": [], \"var\": \"no2_conc\", \"var_tab\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.18.2+galaxy0",
+            "type": "tool",
+            "uuid": "40e22372-1bc9-4623-a7cd-5268de0d00bd",
+            "workflow_outputs": []
+        },
+        "7": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ecology/xarray_select/xarray_select/0.18.2+galaxy0",
+            "errors": null,
+            "id": 7,
+            "input_connections": {
+                "var_tab": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": "Selection for January 2020 to 30th June 2020",
+            "name": "NetCDF xarray Selection",
+            "outputs": [
+                {
+                    "name": "simpleoutput",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 1093.9717753396105,
+                "height": 110.11029052734375,
+                "left": 844.835150419776,
+                "right": 978.835150419776,
+                "top": 983.8614848122668,
+                "width": 134,
+                "x": 844.835150419776,
+                "y": 983.8614848122668
+            },
+            "post_job_actions": {
+                "HideDatasetActionsimpleoutput": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "simpleoutput"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ecology/xarray_select/xarray_select/0.18.2+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "123a9a629bef",
+                "name": "xarray_select",
+                "owner": "ecology",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"netcdf\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"condi_source_coord\": {\"coord_source\": \"coord_from_stdin\", \"__current_case__\": 1, \"condi_coord\": {\"coord\": \"single\", \"__current_case__\": 0, \"lat_dim\": \"latitude\", \"lat_val\": \"43.35462\", \"lon_dim\": \"longitude\", \"lon_val\": \"5.32682\", \"no_missing\": \"true\", \"tolerance\": null}}, \"input\": null, \"time\": {\"condi_datetime\": {\"datetime\": \"no\", \"__current_case__\": 0}}, \"user_choice\": [], \"var\": \"no2_conc\", \"var_tab\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.18.2+galaxy0",
+            "type": "tool",
+            "uuid": "ab89e0cc-2dd2-4290-b3d9-97bf246ce939",
+            "workflow_outputs": []
+        },
+        "8": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ecology/xarray_select/xarray_select/0.18.2+galaxy0",
+            "errors": null,
+            "id": 8,
+            "input_connections": {
+                "var_tab": {
+                    "id": 3,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": "Selection  for 1st July 2020 to 31st December 2020",
+            "name": "NetCDF xarray Selection",
+            "outputs": [
+                {
+                    "name": "simpleoutput",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 1263.9405353603079,
+                "height": 110.1103515625,
+                "left": 842.882025419776,
+                "right": 976.882025419776,
+                "top": 1153.8301837978079,
+                "width": 134,
+                "x": 842.882025419776,
+                "y": 1153.8301837978079
+            },
+            "post_job_actions": {
+                "HideDatasetActionsimpleoutput": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "simpleoutput"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ecology/xarray_select/xarray_select/0.18.2+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "123a9a629bef",
+                "name": "xarray_select",
+                "owner": "ecology",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"netcdf\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"condi_source_coord\": {\"coord_source\": \"coord_from_stdin\", \"__current_case__\": 1, \"condi_coord\": {\"coord\": \"single\", \"__current_case__\": 0, \"lat_dim\": \"latitude\", \"lat_val\": \"43.35462\", \"lon_dim\": \"longitude\", \"lon_val\": \"5.32682\", \"no_missing\": \"true\", \"tolerance\": null}}, \"input\": null, \"time\": {\"condi_datetime\": {\"datetime\": \"no\", \"__current_case__\": 0}}, \"user_choice\": [], \"var\": \"no2_conc\", \"var_tab\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.18.2+galaxy0",
+            "type": "tool",
+            "uuid": "8a8356c1-3646-4ff6-9a47-f08966baf451",
+            "workflow_outputs": []
+        },
+        "9": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ecology/xarray_select/xarray_select/0.18.2+galaxy0",
+            "errors": null,
+            "id": 9,
+            "input_connections": {
+                "var_tab": {
+                    "id": 4,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": "Selection for January 2021 to 30th June 2021",
+            "name": "NetCDF xarray Selection",
+            "outputs": [
+                {
+                    "name": "simpleoutput",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 1431.9873857640507,
+                "height": 110.11029052734375,
+                "left": 844.835150419776,
+                "right": 978.835150419776,
+                "top": 1321.877095236707,
+                "width": 134,
+                "x": 844.835150419776,
+                "y": 1321.877095236707
+            },
+            "post_job_actions": {
+                "HideDatasetActionsimpleoutput": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "simpleoutput"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ecology/xarray_select/xarray_select/0.18.2+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "123a9a629bef",
+                "name": "xarray_select",
+                "owner": "ecology",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"netcdf\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"condi_source_coord\": {\"coord_source\": \"coord_from_stdin\", \"__current_case__\": 1, \"condi_coord\": {\"coord\": \"single\", \"__current_case__\": 0, \"lat_dim\": \"latitude\", \"lat_val\": \"43.35462\", \"lon_dim\": \"longitude\", \"lon_val\": \"5.32682\", \"no_missing\": \"true\", \"tolerance\": null}}, \"input\": null, \"time\": {\"condi_datetime\": {\"datetime\": \"no\", \"__current_case__\": 0}}, \"user_choice\": [], \"var\": \"no2_conc\", \"var_tab\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.18.2+galaxy0",
+            "type": "tool",
+            "uuid": "a4fb2b29-d03e-46a1-b501-27fe1ad1d1ef",
+            "workflow_outputs": []
+        },
+        "10": {
+            "annotation": "",
+            "content_id": "Remove beginning1",
+            "errors": null,
+            "id": 10,
+            "input_connections": {
+                "input": {
+                    "id": 5,
+                    "output_name": "simpleoutput"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Remove beginning",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 783.9952483675372,
+                "height": 76.0869140625,
+                "left": 1083.1632244053171,
+                "right": 1217.1632244053171,
+                "top": 707.9083343050372,
+                "width": 134,
+                "x": 1083.1632244053171,
+                "y": 707.9083343050372
+            },
+            "post_job_actions": {
+                "HideDatasetActionout_file1": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
+            "tool_id": "Remove beginning1",
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"num_lines\": \"1\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "2fcca3a7-9601-4fb9-b4c0-bdf6d273bba4",
+            "workflow_outputs": []
+        },
+        "11": {
+            "annotation": "",
+            "content_id": "Remove beginning1",
+            "errors": null,
+            "id": 11,
+            "input_connections": {
+                "input": {
+                    "id": 6,
+                    "output_name": "simpleoutput"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Remove beginning",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 914.9796087919775,
+                "height": 76.0869140625,
+                "left": 1081.9913494053171,
+                "right": 1215.9913494053171,
+                "top": 838.8926947294775,
+                "width": 134,
+                "x": 1081.9913494053171,
+                "y": 838.8926947294775
+            },
+            "post_job_actions": {
+                "HideDatasetActionout_file1": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
+            "tool_id": "Remove beginning1",
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"num_lines\": \"1\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "cbe7fa0b-103e-4fc6-8cdb-2d70db5cc470",
+            "workflow_outputs": []
+        },
+        "12": {
+            "annotation": "",
+            "content_id": "Remove beginning1",
+            "errors": null,
+            "id": 12,
+            "input_connections": {
+                "input": {
+                    "id": 7,
+                    "output_name": "simpleoutput"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Remove beginning",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 1049.9795659762708,
+                "height": 76.08685302734375,
+                "left": 1084.1163749125467,
+                "right": 1218.1163749125467,
+                "top": 973.8927129489272,
+                "width": 134,
+                "x": 1084.1163749125467,
+                "y": 973.8927129489272
+            },
+            "post_job_actions": {
+                "HideDatasetActionout_file1": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
+            "tool_id": "Remove beginning1",
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"num_lines\": \"1\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "6b91d1cc-c675-42bd-9147-2a762d99f5c6",
+            "workflow_outputs": []
+        },
+        "13": {
+            "annotation": "",
+            "content_id": "Remove beginning1",
+            "errors": null,
+            "id": 13,
+            "input_connections": {
+                "input": {
+                    "id": 8,
+                    "output_name": "simpleoutput"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Remove beginning",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 1184.8858451273904,
+                "height": 76.08685302734375,
+                "left": 1087.038228049207,
+                "right": 1221.038228049207,
+                "top": 1108.7989921000467,
+                "width": 134,
+                "x": 1087.038228049207,
+                "y": 1108.7989921000467
+            },
+            "post_job_actions": {
+                "HideDatasetActionout_file1": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
+            "tool_id": "Remove beginning1",
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"num_lines\": \"1\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "3556a4d3-666b-4f81-aa94-b04b77106e14",
+            "workflow_outputs": []
+        },
+        "14": {
+            "annotation": "",
+            "content_id": "Remove beginning1",
+            "errors": null,
+            "id": 14,
+            "input_connections": {
+                "input": {
+                    "id": 9,
+                    "output_name": "simpleoutput"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Remove beginning",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 1338.9170805518306,
+                "height": 76.08685302734375,
+                "left": 1088.194525419776,
+                "right": 1222.194525419776,
+                "top": 1262.8302275244869,
+                "width": 134,
+                "x": 1088.194525419776,
+                "y": 1262.8302275244869
+            },
+            "post_job_actions": {
+                "HideDatasetActionout_file1": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
+            "tool_id": "Remove beginning1",
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"num_lines\": \"1\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "e5fbb9b0-8530-4be8-b199-7d8865f8324a",
+            "workflow_outputs": []
+        },
+        "15": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/1.1.2",
+            "errors": null,
+            "id": 15,
+            "input_connections": {
+                "infile": {
+                    "id": 10,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Text reformatting",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 787.0108556035739,
+                "height": 76.08688354492188,
+                "left": 1318.1789113514458,
+                "right": 1452.1789113514458,
+                "top": 710.923972058652,
+                "width": 134,
+                "x": 1318.1789113514458,
+                "y": 710.923972058652
+            },
+            "post_job_actions": {
+                "HideDatasetActionoutfile": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "outfile"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/1.1.2",
+            "tool_shed_repository": {
+                "changeset_revision": "ddf54b12c295",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"code\": \"gsub(/ /,\\\"\\\\t\\\",$2){$2=$2} {print}\", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.2",
+            "type": "tool",
+            "uuid": "f1b8c3ea-52f6-485f-a733-6a1007fd6b33",
+            "workflow_outputs": []
+        },
+        "16": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/1.1.2",
+            "errors": null,
+            "id": 16,
+            "input_connections": {
+                "infile": {
+                    "id": 11,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Text reformatting",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 916.9327337919775,
+                "height": 76.0869140625,
+                "left": 1319.1163931319961,
+                "right": 1453.1163931319961,
+                "top": 840.8458197294775,
+                "width": 134,
+                "x": 1319.1163931319961,
+                "y": 840.8458197294775
+            },
+            "post_job_actions": {
+                "HideDatasetActionoutfile": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "outfile"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/1.1.2",
+            "tool_shed_repository": {
+                "changeset_revision": "ddf54b12c295",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"code\": \"gsub(/ /,\\\"\\\\t\\\",$2){$2=$2} {print}\", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.2",
+            "type": "tool",
+            "uuid": "ece18e6a-2174-4032-a473-953e2da61e53",
+            "workflow_outputs": []
+        },
+        "17": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/1.1.2",
+            "errors": null,
+            "id": 17,
+            "input_connections": {
+                "infile": {
+                    "id": 12,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Text reformatting",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 1043.0264774151701,
+                "height": 76.08685302734375,
+                "left": 1320.1320363514458,
+                "right": 1454.1320363514458,
+                "top": 966.9396243878265,
+                "width": 134,
+                "x": 1320.1320363514458,
+                "y": 966.9396243878265
+            },
+            "post_job_actions": {
+                "HideDatasetActionoutfile": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "outfile"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/1.1.2",
+            "tool_shed_repository": {
+                "changeset_revision": "ddf54b12c295",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"code\": \"gsub(/ /,\\\"\\\\t\\\",$2){$2=$2} {print}\", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.2",
+            "type": "tool",
+            "uuid": "7bfe7b58-ec50-4f76-9616-8c5cb2bbc5b0",
+            "workflow_outputs": []
+        },
+        "18": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/1.1.2",
+            "errors": null,
+            "id": 18,
+            "input_connections": {
+                "infile": {
+                    "id": 13,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Text reformatting",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 1176.932690976271,
+                "height": 76.08685302734375,
+                "left": 1319.1163931319961,
+                "right": 1453.1163931319961,
+                "top": 1100.8458379489273,
+                "width": 134,
+                "x": 1319.1163931319961,
+                "y": 1100.8458379489273
+            },
+            "post_job_actions": {
+                "HideDatasetActionoutfile": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "outfile"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/1.1.2",
+            "tool_shed_repository": {
+                "changeset_revision": "ddf54b12c295",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"code\": \"gsub(/ /,\\\"\\\\t\\\",$2){$2=$2} {print}\", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.2",
+            "type": "tool",
+            "uuid": "8df6969a-1745-4ea9-b571-b00171d4f87c",
+            "workflow_outputs": []
+        },
+        "19": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/1.1.2",
+            "errors": null,
+            "id": 19,
+            "input_connections": {
+                "infile": {
+                    "id": 14,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Text reformatting",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 1335.9639810590602,
+                "height": 76.08685302734375,
+                "left": 1319.1163931319961,
+                "right": 1453.1163931319961,
+                "top": 1259.8771280317164,
+                "width": 134,
+                "x": 1319.1163931319961,
+                "y": 1259.8771280317164
+            },
+            "post_job_actions": {
+                "HideDatasetActionoutfile": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "outfile"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/1.1.2",
+            "tool_shed_repository": {
+                "changeset_revision": "ddf54b12c295",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"code\": \"gsub(/ /,\\\"\\\\t\\\",$2){$2=$2} {print}\", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.2",
+            "type": "tool",
+            "uuid": "9aace33a-7dd7-4394-afa1-ffda476fbcc9",
+            "workflow_outputs": []
+        },
+        "20": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.1.0",
+            "errors": null,
+            "id": 20,
+            "input_connections": {
+                "in_file": {
+                    "id": 15,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [],
+            "label": "Mean for January 2019 to 30th June 2019",
+            "name": "Datamash",
+            "outputs": [
+                {
+                    "name": "out_file",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 135.27178772883627,
+                "height": 103.41030883789062,
+                "left": 1624.1006879664178,
+                "right": 1758.1006879664178,
+                "top": 31.861478890945662,
+                "width": 134,
+                "x": 1624.1006879664178,
+                "y": 31.861478890945662
+            },
+            "post_job_actions": {
+                "HideDatasetActionout_file": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "562f3c677828",
+                "name": "datamash_ops",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"grouping\": \"2\", \"header_in\": \"false\", \"header_out\": \"false\", \"ignore_case\": \"false\", \"in_file\": {\"__class__\": \"ConnectedValue\"}, \"need_sort\": \"false\", \"operations\": [{\"__index__\": 0, \"op_name\": \"mean\", \"op_column\": \"8\"}], \"print_full_line\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.0",
+            "type": "tool",
+            "uuid": "8e3308bf-5d98-468a-bb41-781911603fbf",
+            "workflow_outputs": []
+        },
+        "21": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.1.0",
+            "errors": null,
+            "id": 21,
+            "input_connections": {
+                "in_file": {
+                    "id": 15,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [],
+            "label": "Minimum for January 2019 to 30th June 2019",
+            "name": "Datamash",
+            "outputs": [
+                {
+                    "name": "out_file",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": -21.790712385035263,
+                "height": 103.41031646728516,
+                "left": 1624.0383774486938,
+                "right": 1758.0383774486938,
+                "top": -125.20102885232042,
+                "width": 134,
+                "x": 1624.0383774486938,
+                "y": -125.20102885232042
+            },
+            "post_job_actions": {
+                "HideDatasetActionout_file": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "562f3c677828",
+                "name": "datamash_ops",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"grouping\": \"2\", \"header_in\": \"false\", \"header_out\": \"false\", \"ignore_case\": \"false\", \"in_file\": {\"__class__\": \"ConnectedValue\"}, \"need_sort\": \"false\", \"operations\": [{\"__index__\": 0, \"op_name\": \"min\", \"op_column\": \"8\"}], \"print_full_line\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.0",
+            "type": "tool",
+            "uuid": "21cf44e4-83ef-4f99-9afc-70ad252d06a5",
+            "workflow_outputs": []
+        },
+        "22": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.1.0",
+            "errors": null,
+            "id": 22,
+            "input_connections": {
+                "in_file": {
+                    "id": 15,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [],
+            "label": "Maximum for January 2019 to 30th June 2019",
+            "name": "Datamash",
+            "outputs": [
+                {
+                    "name": "out_file",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": -177.94695817178751,
+                "height": 103.41030883789062,
+                "left": 1624.1006879664178,
+                "right": 1758.1006879664178,
+                "top": -281.35726700967814,
+                "width": 134,
+                "x": 1624.1006879664178,
+                "y": -281.35726700967814
+            },
+            "post_job_actions": {
+                "HideDatasetActionout_file": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "562f3c677828",
+                "name": "datamash_ops",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"grouping\": \"2\", \"header_in\": \"false\", \"header_out\": \"false\", \"ignore_case\": \"false\", \"in_file\": {\"__class__\": \"ConnectedValue\"}, \"need_sort\": \"false\", \"operations\": [{\"__index__\": 0, \"op_name\": \"max\", \"op_column\": \"8\"}], \"print_full_line\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.0",
+            "type": "tool",
+            "uuid": "3a4582a3-5dfd-4832-a871-4b76da3c157e",
+            "workflow_outputs": []
+        },
+        "23": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.1.0",
+            "errors": null,
+            "id": 23,
+            "input_connections": {
+                "in_file": {
+                    "id": 16,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [],
+            "label": "Maximum  for 1st July 2019 to 31 December 2019",
+            "name": "Datamash",
+            "outputs": [
+                {
+                    "name": "out_file",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 316.50616842241425,
+                "height": 103.41032409667969,
+                "left": 1627.6163129664178,
+                "right": 1761.6163129664178,
+                "top": 213.0958443257346,
+                "width": 134,
+                "x": 1627.6163129664178,
+                "y": 213.0958443257346
+            },
+            "post_job_actions": {
+                "HideDatasetActionout_file": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "562f3c677828",
+                "name": "datamash_ops",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"grouping\": \"2\", \"header_in\": \"false\", \"header_out\": \"false\", \"ignore_case\": \"false\", \"in_file\": {\"__class__\": \"ConnectedValue\"}, \"need_sort\": \"false\", \"operations\": [{\"__index__\": 0, \"op_name\": \"max\", \"op_column\": \"8\"}], \"print_full_line\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.0",
+            "type": "tool",
+            "uuid": "43a2cdaf-0d08-4dab-967e-d3c6dcf3de1c",
+            "workflow_outputs": []
+        },
+        "24": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.1.0",
+            "errors": null,
+            "id": 24,
+            "input_connections": {
+                "in_file": {
+                    "id": 16,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [],
+            "label": "Minimum  for 1st July 2019 to 31 December 2019",
+            "name": "Datamash",
+            "outputs": [
+                {
+                    "name": "out_file",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 472.8186686501574,
+                "height": 103.41030883789062,
+                "left": 1627.6163129664178,
+                "right": 1761.6163129664178,
+                "top": 369.4083598122668,
+                "width": 134,
+                "x": 1627.6163129664178,
+                "y": 369.4083598122668
+            },
+            "post_job_actions": {
+                "HideDatasetActionout_file": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "562f3c677828",
+                "name": "datamash_ops",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"grouping\": \"2\", \"header_in\": \"false\", \"header_out\": \"false\", \"ignore_case\": \"false\", \"in_file\": {\"__class__\": \"ConnectedValue\"}, \"need_sort\": \"false\", \"operations\": [{\"__index__\": 0, \"op_name\": \"min\", \"op_column\": \"8\"}], \"print_full_line\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.0",
+            "type": "tool",
+            "uuid": "2da3149c-db15-446e-9943-567790831c7e",
+            "workflow_outputs": []
+        },
+        "25": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.1.0",
+            "errors": null,
+            "id": 25,
+            "input_connections": {
+                "in_file": {
+                    "id": 16,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [],
+            "label": "Mean for 1st July 2019 to 31 December 2019",
+            "name": "Datamash",
+            "outputs": [
+                {
+                    "name": "out_file",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 628.2561722940474,
+                "height": 103.41030883789062,
+                "left": 1630.1007171175372,
+                "right": 1764.1007171175372,
+                "top": 524.8458634561567,
+                "width": 134,
+                "x": 1630.1007171175372,
+                "y": 524.8458634561567
+            },
+            "post_job_actions": {
+                "HideDatasetActionout_file": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "562f3c677828",
+                "name": "datamash_ops",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"grouping\": \"2\", \"header_in\": \"false\", \"header_out\": \"false\", \"ignore_case\": \"false\", \"in_file\": {\"__class__\": \"ConnectedValue\"}, \"need_sort\": \"false\", \"operations\": [{\"__index__\": 0, \"op_name\": \"mean\", \"op_column\": \"8\"}], \"print_full_line\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.0",
+            "type": "tool",
+            "uuid": "a7419028-bf95-4588-98df-d1246920e201",
+            "workflow_outputs": []
+        },
+        "26": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.1.0",
+            "errors": null,
+            "id": 26,
+            "input_connections": {
+                "in_file": {
+                    "id": 17,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [],
+            "label": "Maximum  for January 2020 to 30th June 2020",
+            "name": "Datamash",
+            "outputs": [
+                {
+                    "name": "out_file",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 862.2874168282124,
+                "height": 103.41030883789062,
+                "left": 1631.1319379664178,
+                "right": 1765.1319379664178,
+                "top": 758.8771079903217,
+                "width": 134,
+                "x": 1631.1319379664178,
+                "y": 758.8771079903217
+            },
+            "post_job_actions": {
+                "HideDatasetActionout_file": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "562f3c677828",
+                "name": "datamash_ops",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"grouping\": \"2\", \"header_in\": \"false\", \"header_out\": \"false\", \"ignore_case\": \"false\", \"in_file\": {\"__class__\": \"ConnectedValue\"}, \"need_sort\": \"false\", \"operations\": [{\"__index__\": 0, \"op_name\": \"max\", \"op_column\": \"8\"}], \"print_full_line\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.0",
+            "type": "tool",
+            "uuid": "6bfda872-5907-410f-8e5d-d5045896646b",
+            "workflow_outputs": []
+        },
+        "27": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.1.0",
+            "errors": null,
+            "id": 27,
+            "input_connections": {
+                "in_file": {
+                    "id": 17,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [],
+            "label": "Minimum  for January 2020 to 30th June 2020",
+            "name": "Datamash",
+            "outputs": [
+                {
+                    "name": "out_file",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 1018.3186773043959,
+                "height": 103.41033935546875,
+                "left": 1630.1007171175372,
+                "right": 1764.1007171175372,
+                "top": 914.9083379489272,
+                "width": 134,
+                "x": 1630.1007171175372,
+                "y": 914.9083379489272
+            },
+            "post_job_actions": {
+                "HideDatasetActionout_file": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "562f3c677828",
+                "name": "datamash_ops",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"grouping\": \"2\", \"header_in\": \"false\", \"header_out\": \"false\", \"ignore_case\": \"false\", \"in_file\": {\"__class__\": \"ConnectedValue\"}, \"need_sort\": \"false\", \"operations\": [{\"__index__\": 0, \"op_name\": \"min\", \"op_column\": \"8\"}], \"print_full_line\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.0",
+            "type": "tool",
+            "uuid": "436d5087-99bd-4eff-94ce-b52e13647db3",
+            "workflow_outputs": []
+        },
+        "28": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.1.0",
+            "errors": null,
+            "id": 28,
+            "input_connections": {
+                "in_file": {
+                    "id": 17,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [],
+            "label": "Mean  for January 2020 to 30th June 2020",
+            "name": "Datamash",
+            "outputs": [
+                {
+                    "name": "out_file",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 1174.3030377288362,
+                "height": 103.41033935546875,
+                "left": 1630.1007171175372,
+                "right": 1764.1007171175372,
+                "top": 1070.8926983733675,
+                "width": 134,
+                "x": 1630.1007171175372,
+                "y": 1070.8926983733675
+            },
+            "post_job_actions": {
+                "HideDatasetActionout_file": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "562f3c677828",
+                "name": "datamash_ops",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"grouping\": \"2\", \"header_in\": \"false\", \"header_out\": \"false\", \"ignore_case\": \"false\", \"in_file\": {\"__class__\": \"ConnectedValue\"}, \"need_sort\": \"false\", \"operations\": [{\"__index__\": 0, \"op_name\": \"mean\", \"op_column\": \"8\"}], \"print_full_line\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.0",
+            "type": "tool",
+            "uuid": "9d4e7b8a-11d4-4d5d-8ef0-cb87f9de8647",
+            "workflow_outputs": []
+        },
+        "29": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.1.0",
+            "errors": null,
+            "id": 29,
+            "input_connections": {
+                "in_file": {
+                    "id": 18,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [],
+            "label": "Maximum for 1st July 2020 to 31st December 2020",
+            "name": "Datamash",
+            "outputs": [
+                {
+                    "name": "out_file",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 1372.271781352029,
+                "height": 103.4102783203125,
+                "left": 1625.0225921175372,
+                "right": 1759.0225921175372,
+                "top": 1268.8615030317164,
+                "width": 134,
+                "x": 1625.0225921175372,
+                "y": 1268.8615030317164
+            },
+            "post_job_actions": {
+                "HideDatasetActionout_file": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "562f3c677828",
+                "name": "datamash_ops",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"grouping\": \"2\", \"header_in\": \"false\", \"header_out\": \"false\", \"ignore_case\": \"false\", \"in_file\": {\"__class__\": \"ConnectedValue\"}, \"need_sort\": \"false\", \"operations\": [{\"__index__\": 0, \"op_name\": \"max\", \"op_column\": \"8\"}], \"print_full_line\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.0",
+            "type": "tool",
+            "uuid": "ce104c9b-152e-478b-b436-95bc8e4dff14",
+            "workflow_outputs": []
+        },
+        "30": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.1.0",
+            "errors": null,
+            "id": 30,
+            "input_connections": {
+                "in_file": {
+                    "id": 18,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [],
+            "label": "Minimum for 1st July 2020 to 31st December 2020",
+            "name": "Datamash",
+            "outputs": [
+                {
+                    "name": "out_file",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 1528.3029657620102,
+                "height": 103.4102783203125,
+                "left": 1624.1006879664178,
+                "right": 1758.1006879664178,
+                "top": 1424.8926874416977,
+                "width": 134,
+                "x": 1624.1006879664178,
+                "y": 1424.8926874416977
+            },
+            "post_job_actions": {
+                "HideDatasetActionout_file": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "562f3c677828",
+                "name": "datamash_ops",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"grouping\": \"2\", \"header_in\": \"false\", \"header_out\": \"false\", \"ignore_case\": \"false\", \"in_file\": {\"__class__\": \"ConnectedValue\"}, \"need_sort\": \"false\", \"operations\": [{\"__index__\": 0, \"op_name\": \"min\", \"op_column\": \"8\"}], \"print_full_line\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.0",
+            "type": "tool",
+            "uuid": "ddb0c960-90b7-412b-9ff0-776eaec55230",
+            "workflow_outputs": []
+        },
+        "31": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.1.0",
+            "errors": null,
+            "id": 31,
+            "input_connections": {
+                "in_file": {
+                    "id": 18,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [],
+            "label": "Mean for 1st July 2020 to 31st December 2020",
+            "name": "Datamash",
+            "outputs": [
+                {
+                    "name": "out_file",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 1685.568700078708,
+                "height": 103.4102783203125,
+                "left": 1621.5069671175372,
+                "right": 1755.5069671175372,
+                "top": 1582.1584217583954,
+                "width": 134,
+                "x": 1621.5069671175372,
+                "y": 1582.1584217583954
+            },
+            "post_job_actions": {
+                "HideDatasetActionout_file": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "562f3c677828",
+                "name": "datamash_ops",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"grouping\": \"2\", \"header_in\": \"false\", \"header_out\": \"false\", \"ignore_case\": \"false\", \"in_file\": {\"__class__\": \"ConnectedValue\"}, \"need_sort\": \"false\", \"operations\": [{\"__index__\": 0, \"op_name\": \"mean\", \"op_column\": \"8\"}], \"print_full_line\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.0",
+            "type": "tool",
+            "uuid": "e5b83756-abff-4322-ba0e-16c57e728515",
+            "workflow_outputs": []
+        },
+        "32": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.1.0",
+            "errors": null,
+            "id": 32,
+            "input_connections": {
+                "in_file": {
+                    "id": 19,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [],
+            "label": "Maximum  for January 2021 to 30th June 2021",
+            "name": "Datamash",
+            "outputs": [
+                {
+                    "name": "out_file",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 1922.3030586812033,
+                "height": 103.410400390625,
+                "left": 1611.0850775419776,
+                "right": 1745.0850775419776,
+                "top": 1818.8926582905783,
+                "width": 134,
+                "x": 1611.0850775419776,
+                "y": 1818.8926582905783
+            },
+            "post_job_actions": {
+                "HideDatasetActionout_file": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "562f3c677828",
+                "name": "datamash_ops",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"grouping\": \"2\", \"header_in\": \"false\", \"header_out\": \"false\", \"ignore_case\": \"false\", \"in_file\": {\"__class__\": \"ConnectedValue\"}, \"need_sort\": \"false\", \"operations\": [{\"__index__\": 0, \"op_name\": \"max\", \"op_column\": \"8\"}], \"print_full_line\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.0",
+            "type": "tool",
+            "uuid": "a795ed45-84f0-4119-b83e-f655131e7c9d",
+            "workflow_outputs": []
+        },
+        "33": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.1.0",
+            "errors": null,
+            "id": 33,
+            "input_connections": {
+                "in_file": {
+                    "id": 19,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [],
+            "label": "Minimum  for January 2021 to 30th June 2021",
+            "name": "Datamash",
+            "outputs": [
+                {
+                    "name": "out_file",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 2080.381198256763,
+                "height": 103.410400390625,
+                "left": 1613.1631879664178,
+                "right": 1747.1631879664178,
+                "top": 1976.970797866138,
+                "width": 134,
+                "x": 1613.1631879664178,
+                "y": 1976.970797866138
+            },
+            "post_job_actions": {
+                "HideDatasetActionout_file": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "562f3c677828",
+                "name": "datamash_ops",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"grouping\": \"2\", \"header_in\": \"false\", \"header_out\": \"false\", \"ignore_case\": \"false\", \"in_file\": {\"__class__\": \"ConnectedValue\"}, \"need_sort\": \"false\", \"operations\": [{\"__index__\": 0, \"op_name\": \"min\", \"op_column\": \"8\"}], \"print_full_line\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.0",
+            "type": "tool",
+            "uuid": "531ea78d-e93a-4d95-aa34-c23678dc2bc6",
+            "workflow_outputs": []
+        },
+        "34": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.1.0",
+            "errors": null,
+            "id": 34,
+            "input_connections": {
+                "in_file": {
+                    "id": 19,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [],
+            "label": "Mean  for January 2021 to 30th June 2021",
+            "name": "Datamash",
+            "outputs": [
+                {
+                    "name": "out_file",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 2237.0062146542678,
+                "height": 103.4102783203125,
+                "left": 1612.1319671175372,
+                "right": 1746.1319671175372,
+                "top": 2133.5959363339553,
+                "width": 134,
+                "x": 1612.1319671175372,
+                "y": 2133.5959363339553
+            },
+            "post_job_actions": {
+                "HideDatasetActionout_file": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "562f3c677828",
+                "name": "datamash_ops",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"grouping\": \"2\", \"header_in\": \"false\", \"header_out\": \"false\", \"ignore_case\": \"false\", \"in_file\": {\"__class__\": \"ConnectedValue\"}, \"need_sort\": \"false\", \"operations\": [{\"__index__\": 0, \"op_name\": \"mean\", \"op_column\": \"8\"}], \"print_full_line\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.0",
+            "type": "tool",
+            "uuid": "b7dc6c17-57df-40da-b6d4-ffa5f03f052f",
+            "workflow_outputs": []
+        },
+        "35": {
+            "annotation": "",
+            "content_id": "cat1",
+            "errors": null,
+            "id": 35,
+            "input_connections": {
+                "input1": {
+                    "id": 22,
+                    "output_name": "out_file"
+                },
+                "queries_0|input2": {
+                    "id": 23,
+                    "output_name": "out_file"
+                }
+            },
+            "inputs": [],
+            "label": "Maximum 2019",
+            "name": "Concatenate datasets",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": -84.90867387002973,
+                "height": 96.44859313964844,
+                "left": 2164.022599405317,
+                "right": 2298.022599405317,
+                "top": -181.35726700967817,
+                "width": 134,
+                "x": 2164.022599405317,
+                "y": -181.35726700967817
+            },
+            "post_job_actions": {
+                "HideDatasetActionout_file1": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
+            "tool_id": "cat1",
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"input1\": {\"__class__\": \"ConnectedValue\"}, \"queries\": [{\"__index__\": 0, \"input2\": {\"__class__\": \"ConnectedValue\"}}], \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "bb395f51-cb92-473d-a455-d5f711e4b0cd",
+            "workflow_outputs": []
+        },
+        "36": {
+            "annotation": "",
+            "content_id": "cat1",
+            "errors": null,
+            "id": 36,
+            "input_connections": {
+                "input1": {
+                    "id": 21,
+                    "output_name": "out_file"
+                },
+                "queries_0|input2": {
+                    "id": 24,
+                    "output_name": "out_file"
+                }
+            },
+            "inputs": [],
+            "label": "Minimum 2019",
+            "name": "Concatenate datasets",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 69.60694839705282,
+                "height": 96.44859313964844,
+                "left": 2165.7725775419776,
+                "right": 2299.7725775419776,
+                "top": -26.841644742595616,
+                "width": 134,
+                "x": 2165.7725775419776,
+                "y": -26.841644742595616
+            },
+            "post_job_actions": {
+                "HideDatasetActionout_file1": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
+            "tool_id": "cat1",
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"input1\": {\"__class__\": \"ConnectedValue\"}, \"queries\": [{\"__index__\": 0, \"input2\": {\"__class__\": \"ConnectedValue\"}}], \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "963a9c49-c2cf-4e7c-a256-e7e9fa89e66a",
+            "workflow_outputs": []
+        },
+        "37": {
+            "annotation": "",
+            "content_id": "cat1",
+            "errors": null,
+            "id": 37,
+            "input_connections": {
+                "input1": {
+                    "id": 20,
+                    "output_name": "out_file"
+                },
+                "queries_0|input2": {
+                    "id": 25,
+                    "output_name": "out_file"
+                }
+            },
+            "inputs": [],
+            "label": "Mean 2019",
+            "name": "Concatenate datasets",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 209.33585255181612,
+                "height": 82.78688049316406,
+                "left": 2159.757061858675,
+                "right": 2293.757061858675,
+                "top": 126.54897205865204,
+                "width": 134,
+                "x": 2159.757061858675,
+                "y": 126.54897205865204
+            },
+            "post_job_actions": {
+                "HideDatasetActionout_file1": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
+            "tool_id": "cat1",
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"input1\": {\"__class__\": \"ConnectedValue\"}, \"queries\": [{\"__index__\": 0, \"input2\": {\"__class__\": \"ConnectedValue\"}}], \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "9b20498f-86ed-41d2-a46a-3d11c6bc55ea",
+            "workflow_outputs": []
+        },
+        "38": {
+            "annotation": "",
+            "content_id": "cat1",
+            "errors": null,
+            "id": 38,
+            "input_connections": {
+                "input1": {
+                    "id": 26,
+                    "output_name": "out_file"
+                },
+                "queries_0|input2": {
+                    "id": 29,
+                    "output_name": "out_file"
+                }
+            },
+            "inputs": [],
+            "label": "Maximum 2020",
+            "name": "Concatenate datasets",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 1165.5131671962454,
+                "height": 96.4486083984375,
+                "left": 2157.1788275419776,
+                "right": 2291.1788275419776,
+                "top": 1069.0645587978079,
+                "width": 134,
+                "x": 2157.1788275419776,
+                "y": 1069.0645587978079
+            },
+            "post_job_actions": {
+                "HideDatasetActionout_file1": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
+            "tool_id": "cat1",
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"input1\": {\"__class__\": \"ConnectedValue\"}, \"queries\": [{\"__index__\": 0, \"input2\": {\"__class__\": \"ConnectedValue\"}}], \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "cf2186d0-bf9c-4b40-8f60-842028d853f3",
+            "workflow_outputs": []
+        },
+        "39": {
+            "annotation": "",
+            "content_id": "cat1",
+            "errors": null,
+            "id": 39,
+            "input_connections": {
+                "input1": {
+                    "id": 27,
+                    "output_name": "out_file"
+                },
+                "queries_0|input2": {
+                    "id": 30,
+                    "output_name": "out_file"
+                }
+            },
+            "inputs": [],
+            "label": "Minimum 2020",
+            "name": "Concatenate datasets",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 1321.231979142374,
+                "height": 96.4486083984375,
+                "left": 2152.4601722831158,
+                "right": 2286.4601722831158,
+                "top": 1224.7833707439365,
+                "width": 134,
+                "x": 2152.4601722831158,
+                "y": 1224.7833707439365
+            },
+            "post_job_actions": {
+                "HideDatasetActionout_file1": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
+            "tool_id": "cat1",
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"input1\": {\"__class__\": \"ConnectedValue\"}, \"queries\": [{\"__index__\": 0, \"input2\": {\"__class__\": \"ConnectedValue\"}}], \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "c4b8d863-41d0-4172-8f93-f17a3959ede2",
+            "workflow_outputs": []
+        },
+        "40": {
+            "annotation": "",
+            "content_id": "cat1",
+            "errors": null,
+            "id": 40,
+            "input_connections": {
+                "input1": {
+                    "id": 28,
+                    "output_name": "out_file"
+                },
+                "queries_0|input2": {
+                    "id": 31,
+                    "output_name": "out_file"
+                }
+            },
+            "inputs": [],
+            "label": "Mean 2020",
+            "name": "Concatenate datasets",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 1467.0077286905316,
+                "height": 82.786865234375,
+                "left": 2153.147592117537,
+                "right": 2287.147592117537,
+                "top": 1384.2208634561566,
+                "width": 134,
+                "x": 2153.147592117537,
+                "y": 1384.2208634561566
+            },
+            "post_job_actions": {
+                "HideDatasetActionout_file1": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
+            "tool_id": "cat1",
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"input1\": {\"__class__\": \"ConnectedValue\"}, \"queries\": [{\"__index__\": 0, \"input2\": {\"__class__\": \"ConnectedValue\"}}], \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "1fe6b747-046b-4361-b6f9-d3a631e28173",
+            "workflow_outputs": []
+        },
+        "41": {
+            "annotation": "",
+            "content_id": "cat1",
+            "errors": null,
+            "id": 41,
+            "input_connections": {
+                "input1": {
+                    "id": 22,
+                    "output_name": "out_file"
+                },
+                "queries_0|input2": {
+                    "id": 23,
+                    "output_name": "out_file"
+                },
+                "queries_1|input2": {
+                    "id": 26,
+                    "output_name": "out_file"
+                },
+                "queries_2|input2": {
+                    "id": 29,
+                    "output_name": "out_file"
+                },
+                "queries_3|input2": {
+                    "id": 32,
+                    "output_name": "out_file"
+                }
+            },
+            "inputs": [],
+            "label": "Maximum consecutive years 2019, 2020, 2021",
+            "name": "Concatenate datasets",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 456.14599996538306,
+                "height": 198.51890563964844,
+                "left": 2158.3507025419776,
+                "right": 2292.3507025419776,
+                "top": 257.6270943257346,
+                "width": 134,
+                "x": 2158.3507025419776,
+                "y": 257.6270943257346
+            },
+            "post_job_actions": {
+                "RenameDatasetActionout_file1": {
+                    "action_arguments": {
+                        "newname": "Maximum consecutive years 2019, 2020, 2021"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "out_file1"
+                },
+                "TagDatasetActionout_file1": {
+                    "action_arguments": {
+                        "tags": "#maximum"
+                    },
+                    "action_type": "TagDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
+            "tool_id": "cat1",
+            "tool_state": "{\"input1\": {\"__class__\": \"ConnectedValue\"}, \"queries\": [{\"__index__\": 0, \"input2\": {\"__class__\": \"ConnectedValue\"}}, {\"__index__\": 1, \"input2\": {\"__class__\": \"ConnectedValue\"}}, {\"__index__\": 2, \"input2\": {\"__class__\": \"ConnectedValue\"}}, {\"__index__\": 3, \"input2\": {\"__class__\": \"ConnectedValue\"}}], \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "94ef732e-ec36-4055-a54c-b87e9b4e4893",
+            "workflow_outputs": [
+                {
+                    "label": "Maximum consecutive years 2019, 2020, 2021",
+                    "output_name": "out_file1",
+                    "uuid": "10eca58d-122a-425a-8998-d811fafe6eb0"
+                }
+            ]
+        },
+        "42": {
+            "annotation": "",
+            "content_id": "cat1",
+            "errors": null,
+            "id": 42,
+            "input_connections": {
+                "input1": {
+                    "id": 21,
+                    "output_name": "out_file"
+                },
+                "queries_0|input2": {
+                    "id": 24,
+                    "output_name": "out_file"
+                },
+                "queries_1|input2": {
+                    "id": 27,
+                    "output_name": "out_file"
+                },
+                "queries_2|input2": {
+                    "id": 30,
+                    "output_name": "out_file"
+                },
+                "queries_3|input2": {
+                    "id": 33,
+                    "output_name": "out_file"
+                }
+            },
+            "inputs": [],
+            "label": "Minimum  consecutive years 2019, 2020, 2021",
+            "name": "Concatenate datasets",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 728.6616338473647,
+                "height": 198.5189208984375,
+                "left": 2161.5227087220146,
+                "right": 2295.5227087220146,
+                "top": 530.1427129489272,
+                "width": 134,
+                "x": 2161.5227087220146,
+                "y": 530.1427129489272
+            },
+            "post_job_actions": {
+                "RenameDatasetActionout_file1": {
+                    "action_arguments": {
+                        "newname": "Minimum  consecutive years 2019, 2020, 2021"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "out_file1"
+                },
+                "TagDatasetActionout_file1": {
+                    "action_arguments": {
+                        "tags": "#minimum"
+                    },
+                    "action_type": "TagDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
+            "tool_id": "cat1",
+            "tool_state": "{\"input1\": {\"__class__\": \"ConnectedValue\"}, \"queries\": [{\"__index__\": 0, \"input2\": {\"__class__\": \"ConnectedValue\"}}, {\"__index__\": 1, \"input2\": {\"__class__\": \"ConnectedValue\"}}, {\"__index__\": 2, \"input2\": {\"__class__\": \"ConnectedValue\"}}, {\"__index__\": 3, \"input2\": {\"__class__\": \"ConnectedValue\"}}], \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "2a3f8a65-68c0-47b3-9811-f10d44c26038",
+            "workflow_outputs": [
+                {
+                    "label": "Minimum  consecutive years 2019, 2020, 2021",
+                    "output_name": "out_file1",
+                    "uuid": "9f9a75dd-1e72-43ae-80ce-c4ffc74ed1c7"
+                }
+            ]
+        },
+        "43": {
+            "annotation": "",
+            "content_id": "cat1",
+            "errors": null,
+            "id": 43,
+            "input_connections": {
+                "input1": {
+                    "id": 20,
+                    "output_name": "out_file"
+                },
+                "queries_0|input2": {
+                    "id": 25,
+                    "output_name": "out_file"
+                },
+                "queries_1|input2": {
+                    "id": 28,
+                    "output_name": "out_file"
+                },
+                "queries_2|input2": {
+                    "id": 31,
+                    "output_name": "out_file"
+                },
+                "queries_3|input2": {
+                    "id": 34,
+                    "output_name": "out_file"
+                }
+            },
+            "inputs": [],
+            "label": "Mean  consecutive years 2019, 2020, 2021",
+            "name": "Concatenate datasets",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 974.7967620394122,
+                "height": 184.857177734375,
+                "left": 2160.6008045708954,
+                "right": 2294.6008045708954,
+                "top": 789.9395843050372,
+                "width": 134,
+                "x": 2160.6008045708954,
+                "y": 789.9395843050372
+            },
+            "post_job_actions": {
+                "RenameDatasetActionout_file1": {
+                    "action_arguments": {
+                        "newname": "Mean  consecutive years 2019, 2020, 2021"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "out_file1"
+                },
+                "TagDatasetActionout_file1": {
+                    "action_arguments": {
+                        "tags": "#mean"
+                    },
+                    "action_type": "TagDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
+            "tool_id": "cat1",
+            "tool_state": "{\"input1\": {\"__class__\": \"ConnectedValue\"}, \"queries\": [{\"__index__\": 0, \"input2\": {\"__class__\": \"ConnectedValue\"}}, {\"__index__\": 1, \"input2\": {\"__class__\": \"ConnectedValue\"}}, {\"__index__\": 2, \"input2\": {\"__class__\": \"ConnectedValue\"}}, {\"__index__\": 3, \"input2\": {\"__class__\": \"ConnectedValue\"}}], \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "e8dfef50-5212-4b3c-8a1b-0ffd51b736b1",
+            "workflow_outputs": [
+                {
+                    "label": "Mean  consecutive years 2019, 2020, 2021",
+                    "output_name": "out_file1",
+                    "uuid": "4d5a3162-3ce1-4033-a98e-41db78584b79"
+                }
+            ]
+        },
+        "44": {
+            "annotation": "",
+            "content_id": "Paste1",
+            "errors": null,
+            "id": 44,
+            "input_connections": {
+                "input1": {
+                    "id": 35,
+                    "output_name": "out_file1"
+                },
+                "input2": {
+                    "id": 38,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
+            "label": "Maximum 2019-2020",
+            "name": "Paste",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 264.7944401983005,
+                "height": 96.44859313964844,
+                "left": 2667.6632098297573,
+                "right": 2801.6632098297573,
+                "top": 168.34584705865205,
+                "width": 134,
+                "x": 2667.6632098297573,
+                "y": 168.34584705865205
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionout_file1": {
+                    "action_arguments": {
+                        "newtype": "tabular"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "out_file1"
+                },
+                "HideDatasetActionout_file1": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
+            "tool_id": "Paste1",
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"delimiter\": \"T\", \"input1\": {\"__class__\": \"ConnectedValue\"}, \"input2\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "837549c8-d1c3-4304-9498-0a48e0c98929",
+            "workflow_outputs": []
+        },
+        "45": {
+            "annotation": "",
+            "content_id": "Paste1",
+            "errors": null,
+            "id": 45,
+            "input_connections": {
+                "input1": {
+                    "id": 36,
+                    "output_name": "out_file1"
+                },
+                "input2": {
+                    "id": 39,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
+            "label": "Minimum 2019-2020",
+            "name": "Paste",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 470.5444682107043,
+                "height": 96.4486083984375,
+                "left": 2665.225811858675,
+                "right": 2799.225811858675,
+                "top": 374.0958598122668,
+                "width": 134,
+                "x": 2665.225811858675,
+                "y": 374.0958598122668
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionout_file1": {
+                    "action_arguments": {
+                        "newtype": "tabular"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "out_file1"
+                },
+                "HideDatasetActionout_file1": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
+            "tool_id": "Paste1",
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"delimiter\": \"T\", \"input1\": {\"__class__\": \"ConnectedValue\"}, \"input2\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "410a44e1-110d-4659-b3d8-5fa92fb49b0e",
+            "workflow_outputs": []
+        },
+        "46": {
+            "annotation": "",
+            "content_id": "Paste1",
+            "errors": null,
+            "id": 46,
+            "input_connections": {
+                "input1": {
+                    "id": 37,
+                    "output_name": "out_file1"
+                },
+                "input2": {
+                    "id": 40,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
+            "label": "Mean 2019 2020",
+            "name": "Paste",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 674.0756858711811,
+                "height": 96.44857788085938,
+                "left": 2664.2414149953356,
+                "right": 2798.2414149953356,
+                "top": 577.6271079903217,
+                "width": 134,
+                "x": 2664.2414149953356,
+                "y": 577.6271079903217
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionout_file1": {
+                    "action_arguments": {
+                        "newtype": "tabular"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "out_file1"
+                },
+                "HideDatasetActionout_file1": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
+            "tool_id": "Paste1",
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"delimiter\": \"T\", \"input1\": {\"__class__\": \"ConnectedValue\"}, \"input2\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "7cfdaf5c-5e8c-4bf4-bbc8-e67b3d1ec633",
+            "workflow_outputs": []
+        },
+        "47": {
+            "annotation": "",
+            "content_id": "Paste1",
+            "errors": null,
+            "id": 47,
+            "input_connections": {
+                "input1": {
+                    "id": 44,
+                    "output_name": "out_file1"
+                },
+                "input2": {
+                    "id": 32,
+                    "output_name": "out_file"
+                }
+            },
+            "inputs": [],
+            "label": "Maximum 2019-2020-2021",
+            "name": "Paste",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 266.9405269338124,
+                "height": 110.11030578613281,
+                "left": 3008.975811858675,
+                "right": 3142.9756897883626,
+                "top": 156.83022114767957,
+                "width": 133.9998779296875,
+                "x": 3008.975811858675,
+                "y": 156.83022114767957
+            },
+            "post_job_actions": {
+                "RenameDatasetActionout_file1": {
+                    "action_arguments": {
+                        "newname": "Maximum 2019-2020-2021"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "out_file1"
+                },
+                "TagDatasetActionout_file1": {
+                    "action_arguments": {
+                        "tags": "#maximum"
+                    },
+                    "action_type": "TagDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
+            "tool_id": "Paste1",
+            "tool_state": "{\"delimiter\": \"T\", \"input1\": {\"__class__\": \"ConnectedValue\"}, \"input2\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "779e6c63-55b5-4a83-981b-bc4eb9f5e2e9",
+            "workflow_outputs": [
+                {
+                    "label": "Maximum 2019-2020-2021",
+                    "output_name": "out_file1",
+                    "uuid": "d5988705-47ed-448d-bb28-229b578e2f0d"
+                }
+            ]
+        },
+        "48": {
+            "annotation": "",
+            "content_id": "Paste1",
+            "errors": null,
+            "id": 48,
+            "input_connections": {
+                "input1": {
+                    "id": 45,
+                    "output_name": "out_file1"
+                },
+                "input2": {
+                    "id": 33,
+                    "output_name": "out_file"
+                }
+            },
+            "inputs": [],
+            "label": "Minimum 2019-2020-2021",
+            "name": "Paste",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 486.2530144079407,
+                "height": 110.11029052734375,
+                "left": 3007.053842117537,
+                "right": 3141.053842117537,
+                "top": 376.142723880597,
+                "width": 134,
+                "x": 3007.053842117537,
+                "y": 376.142723880597
+            },
+            "post_job_actions": {
+                "RenameDatasetActionout_file1": {
+                    "action_arguments": {
+                        "newname": "Minimum 2019-2020-2021"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "out_file1"
+                },
+                "TagDatasetActionout_file1": {
+                    "action_arguments": {
+                        "tags": "#minimum"
+                    },
+                    "action_type": "TagDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
+            "tool_id": "Paste1",
+            "tool_state": "{\"delimiter\": \"T\", \"input1\": {\"__class__\": \"ConnectedValue\"}, \"input2\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "75799b6c-8830-4496-a34c-bfe5617cc6c2",
+            "workflow_outputs": [
+                {
+                    "label": "Minimum 2019-2020-2021",
+                    "output_name": "out_file1",
+                    "uuid": "a7867019-8899-4862-947b-c457c994fc32"
+                }
+            ]
+        },
+        "49": {
+            "annotation": "",
+            "content_id": "Paste1",
+            "errors": null,
+            "id": 49,
+            "input_connections": {
+                "input1": {
+                    "id": 46,
+                    "output_name": "out_file1"
+                },
+                "input2": {
+                    "id": 34,
+                    "output_name": "out_file"
+                }
+            },
+            "inputs": [],
+            "label": "Mean 2019-2020-2021",
+            "name": "Paste",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 714.0499431553171,
+                "height": 110.1103515625,
+                "left": 3010.2726722831153,
+                "right": 3144.272794353428,
+                "top": 603.9395915928171,
+                "width": 134.0001220703125,
+                "x": 3010.2726722831153,
+                "y": 603.9395915928171
+            },
+            "post_job_actions": {
+                "RenameDatasetActionout_file1": {
+                    "action_arguments": {
+                        "newname": "Mean 2019-2020-2021"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "out_file1"
+                },
+                "TagDatasetActionout_file1": {
+                    "action_arguments": {
+                        "tags": "#mean"
+                    },
+                    "action_type": "TagDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
+            "tool_id": "Paste1",
+            "tool_state": "{\"delimiter\": \"T\", \"input1\": {\"__class__\": \"ConnectedValue\"}, \"input2\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "c6988a54-bc6c-4cf9-9d94-48bfd45614de",
+            "workflow_outputs": [
+                {
+                    "label": "Mean 2019-2020-2021",
+                    "output_name": "out_file1",
+                    "uuid": "7b2ffeaf-c241-40b6-ae2d-e20ef165f6b8"
+                }
+            ]
+        },
+        "50": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/1.1.2",
+            "errors": null,
+            "id": 50,
+            "input_connections": {
+                "infile": {
+                    "id": 47,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
+            "label": "Maximum 2019-2020-2021 over lockdown",
+            "name": "Text reformatting",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 274.70929342241425,
+                "height": 103.41032409667969,
+                "left": 3352.8819525419776,
+                "right": 3486.8819525419776,
+                "top": 171.2989693257346,
+                "width": 134,
+                "x": 3352.8819525419776,
+                "y": 171.2989693257346
+            },
+            "post_job_actions": {
+                "RenameDatasetActionoutfile": {
+                    "action_arguments": {
+                        "newname": "Maximum 2019-2020-2021 over lockdown"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "outfile"
+                },
+                "TagDatasetActionoutfile": {
+                    "action_arguments": {
+                        "tags": "#maximum"
+                    },
+                    "action_type": "TagDatasetAction",
+                    "output_name": "outfile"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/1.1.2",
+            "tool_shed_repository": {
+                "changeset_revision": "ddf54b12c295",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"code\": \"NR >= 78 && NR <= 133\", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.2",
+            "type": "tool",
+            "uuid": "2681171f-95f0-43e9-8aef-7fcc4036eeb6",
+            "workflow_outputs": [
+                {
+                    "label": "Maximum 2019-2020-2021 over lockdown",
+                    "output_name": "outfile",
+                    "uuid": "841a8ac8-1772-459a-9c39-7537c7c37bde"
+                }
+            ]
+        },
+        "51": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/1.1.2",
+            "errors": null,
+            "id": 51,
+            "input_connections": {
+                "infile": {
+                    "id": 48,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
+            "label": "Minimum 2019-2020-2021 over lockdown",
+            "name": "Text reformatting",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 514.7718059482859,
+                "height": 103.41033935546875,
+                "left": 3355.1633920242534,
+                "right": 3489.1633920242534,
+                "top": 411.3614665928171,
+                "width": 134,
+                "x": 3355.1633920242534,
+                "y": 411.3614665928171
+            },
+            "post_job_actions": {
+                "RenameDatasetActionoutfile": {
+                    "action_arguments": {
+                        "newname": "Minimum 2019-2020-2021 over lockdown"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "outfile"
+                },
+                "TagDatasetActionoutfile": {
+                    "action_arguments": {
+                        "tags": "#minimum"
+                    },
+                    "action_type": "TagDatasetAction",
+                    "output_name": "outfile"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/1.1.2",
+            "tool_shed_repository": {
+                "changeset_revision": "ddf54b12c295",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"code\": \"NR >= 78 && NR <= 133\", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.2",
+            "type": "tool",
+            "uuid": "dedd4216-26b7-431c-bcab-22df953d4364",
+            "workflow_outputs": [
+                {
+                    "label": "Minimum 2019-2020-2021 over lockdown",
+                    "output_name": "outfile",
+                    "uuid": "be2d3add-24e4-49c6-9590-264245be1927"
+                }
+            ]
+        },
+        "52": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/1.1.2",
+            "errors": null,
+            "id": 52,
+            "input_connections": {
+                "infile": {
+                    "id": 49,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
+            "label": "Mean 2019-2020-2021 over lockdown",
+            "name": "Text reformatting",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 724.9381877842234,
+                "height": 89.74859619140625,
+                "left": 3349.7569525419776,
+                "right": 3483.7569525419776,
+                "top": 635.1895915928171,
+                "width": 134,
+                "x": 3349.7569525419776,
+                "y": 635.1895915928171
+            },
+            "post_job_actions": {
+                "RenameDatasetActionoutfile": {
+                    "action_arguments": {
+                        "newname": "Mean 2019-2020-2021 over lockdown"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "outfile"
+                },
+                "TagDatasetActionoutfile": {
+                    "action_arguments": {
+                        "tags": "#mean"
+                    },
+                    "action_type": "TagDatasetAction",
+                    "output_name": "outfile"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/1.1.2",
+            "tool_shed_repository": {
+                "changeset_revision": "ddf54b12c295",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"code\": \"NR >= 78 && NR <= 133\", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.2",
+            "type": "tool",
+            "uuid": "406687e9-e018-4445-ae6e-5db52f6fb03d",
+            "workflow_outputs": [
+                {
+                    "label": "Mean 2019-2020-2021 over lockdown",
+                    "output_name": "outfile",
+                    "uuid": "914d2945-267d-45be-972a-5d325d63263b"
+                }
+            ]
+        }
+    },
+    "tags": [
+        "climate",
+        "reliance"
+    ],
+    "uuid": "ecde3f3c-a533-4cfa-a339-24bddb77b2b1",
+    "version": 34
+}

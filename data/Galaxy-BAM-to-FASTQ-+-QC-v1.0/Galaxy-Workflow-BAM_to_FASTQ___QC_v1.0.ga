@@ -1,0 +1,284 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "creator": [
+        {
+            "class": "Organization",
+            "name": "Gareth Price"
+        }
+    ],
+    "format-version": "0.1",
+    "license": "GPL-3.0-or-later",
+    "name": "BAM to FASTQ + QC v1.0",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Input BAM"
+                }
+            ],
+            "label": "Input BAM",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 561.8000030517578,
+                "height": 61.80000305175781,
+                "left": 309,
+                "right": 509,
+                "top": 500,
+                "width": 200,
+                "x": 309,
+                "y": 500
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "219cda56-9b80-48bc-bb19-06a3f07e8832",
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_SamToFastq/2.18.2.2",
+            "errors": null,
+            "id": 1,
+            "input_connections": {
+                "inputFile": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool SamToFastq",
+                    "name": "inputFile"
+                }
+            ],
+            "label": null,
+            "name": "SamToFastq",
+            "outputs": [
+                {
+                    "name": "fq_single",
+                    "type": "fastqsanger"
+                },
+                {
+                    "name": "interleaved_fastq",
+                    "type": "fastqsanger"
+                },
+                {
+                    "name": "fq1",
+                    "type": "fastqsanger"
+                },
+                {
+                    "name": "fq2",
+                    "type": "fastqsanger"
+                },
+                {
+                    "name": "fq_u",
+                    "type": "fastqsanger"
+                }
+            ],
+            "position": {
+                "bottom": 600.8833312988281,
+                "height": 480,
+                "left": 816.9500122070312,
+                "right": 1016.9500122070312,
+                "top": 120.88333129882812,
+                "width": 200,
+                "x": 816.9500122070312,
+                "y": 120.88333129882812
+            },
+            "post_job_actions": {
+                "HideDatasetActionfq1": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "fq1"
+                },
+                "HideDatasetActionfq2": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "fq2"
+                },
+                "HideDatasetActionfq_u": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "fq_u"
+                },
+                "HideDatasetActioninterleaved_fastq": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "interleaved_fastq"
+                },
+                "RenameDatasetActionfq_single": {
+                    "action_arguments": {
+                        "newname": "#{inputFile, basename}"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "fq_single"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_SamToFastq/2.18.2.2",
+            "tool_shed_repository": {
+                "changeset_revision": "1aac2a13842a",
+                "name": "picard",
+                "owner": "devteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"clipping_action\": \"\", \"clipping_attribute\": \"\", \"include_non_pf_reads\": \"false\", \"include_non_primary_alignments\": \"false\", \"inputFile\": {\"__class__\": \"RuntimeValue\"}, \"re_reverse\": \"false\", \"read1_max_bases_to_write\": \"-1\", \"read1_trim\": \"0\", \"read2_max_bases_to_write\": \"-1\", \"read2_trim\": \"0\", \"single_or_paired\": \"se\", \"validation_stringency\": \"SILENT\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": null,
+            "type": "tool",
+            "uuid": "fa253a51-2ae6-4f3d-ad38-8b6863a45cc2",
+            "workflow_outputs": [
+                {
+                    "label": "Converted FastQ reads",
+                    "output_name": "fq_single",
+                    "uuid": "b5e66d4a-ae20-4fd3-9990-d8ad701859d6"
+                }
+            ]
+        },
+        "2": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/devteam/samtools_flagstat/samtools_flagstat/2.0.3",
+            "errors": null,
+            "id": 2,
+            "input_connections": {
+                "input1": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Samtools flagstat",
+            "outputs": [
+                {
+                    "name": "output1",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 886.2333374023438,
+                "height": 134,
+                "left": 1081.949951171875,
+                "right": 1281.949951171875,
+                "top": 752.2333374023438,
+                "width": 200,
+                "x": 1081.949951171875,
+                "y": 752.2333374023438
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/samtools_flagstat/samtools_flagstat/2.0.3",
+            "tool_shed_repository": {
+                "changeset_revision": "22970df7a40e",
+                "name": "samtools_flagstat",
+                "owner": "devteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"input1\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": null,
+            "type": "tool",
+            "uuid": "6927f586-18dc-4210-88a3-4da5b3547322",
+            "workflow_outputs": [
+                {
+                    "label": "BAM file information",
+                    "output_name": "output1",
+                    "uuid": "275ffe04-82ca-4c5e-8225-50a8fddc1941"
+                }
+            ]
+        },
+        "3": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.72+galaxy1",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "input_file": {
+                    "id": 1,
+                    "output_name": "fq_single"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool FastQC",
+                    "name": "adapters"
+                },
+                {
+                    "description": "runtime parameter for tool FastQC",
+                    "name": "contaminants"
+                },
+                {
+                    "description": "runtime parameter for tool FastQC",
+                    "name": "limits"
+                }
+            ],
+            "label": null,
+            "name": "FastQC",
+            "outputs": [
+                {
+                    "name": "html_file",
+                    "type": "html"
+                },
+                {
+                    "name": "text_file",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 539.8333282470703,
+                "height": 255.59999084472656,
+                "left": 1183.300048828125,
+                "right": 1383.300048828125,
+                "top": 284.23333740234375,
+                "width": 200,
+                "x": 1183.300048828125,
+                "y": 284.23333740234375
+            },
+            "post_job_actions": {
+                "RenameDatasetActionhtml_file": {
+                    "action_arguments": {
+                        "newname": "#{input_file,basename}_QC"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "html_file"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.72+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "e7b2202befea",
+                "name": "fastqc",
+                "owner": "devteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adapters\": {\"__class__\": \"RuntimeValue\"}, \"contaminants\": {\"__class__\": \"RuntimeValue\"}, \"input_file\": {\"__class__\": \"ConnectedValue\"}, \"kmers\": \"7\", \"limits\": {\"__class__\": \"RuntimeValue\"}, \"min_length\": null, \"nogroup\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": null,
+            "type": "tool",
+            "uuid": "378810b3-4b4e-4dba-8d06-692bae14c648",
+            "workflow_outputs": [
+                {
+                    "label": "FastQC HTML",
+                    "output_name": "html_file",
+                    "uuid": "a8e654cc-86d9-4fab-ae3c-e9656ccaef55"
+                },
+                {
+                    "label": "FastQC text file",
+                    "output_name": "text_file",
+                    "uuid": "9e458b1e-70d9-4e83-ba2d-706794891a60"
+                }
+            ]
+        }
+    },
+    "tags": [
+        "BAM",
+        "FastQ",
+        "Conversion",
+        "QC"
+    ],
+    "uuid": "7ae199dd-3d72-48c8-9e90-61ac7e96670f",
+    "version": 8
+}

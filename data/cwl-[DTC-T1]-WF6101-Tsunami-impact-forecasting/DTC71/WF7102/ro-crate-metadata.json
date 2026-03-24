@@ -1,0 +1,139 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": [
+        { "@id": "https://w3id.org/ro/crate/1.1" },
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" }
+      ],
+      "about": { "@id": "./" }
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/process/0.4",
+      "@type": "CreativeWork",
+      "name": "Process Run Crate",
+      "version": "0.4"
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/workflow/0.4",
+      "@type": "CreativeWork",
+      "name": "Workflow Run Crate",
+      "version": "0.4"
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl",
+      "@type": "ComputerLanguage",
+      "identifier": "https://www.commonwl.org/",
+      "name": "Common Workflow Language",
+      "url": "https://www.commonwl.org/"
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "Workflow to update the seismogenic source model.",
+      "datePublished": "2025-05-14",
+      "description": "Updates the Seismogenic Source Model using input datasets and computational steps.",
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "author": [
+        { "@id": "https://orcid.org/0009-0009-4291-2503" },
+        { "@id": "https://orcid.org/0000-0003-4086-8755" }
+      ],
+      "conformsTo": [
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" }
+      ],
+      "hasPart": [
+        { "@id": "WF7102.cwl" },
+        { "@id": "DT7104/" },
+        { "@id": "DT7108/" }
+      ],
+      "mainEntity": { "@id": "WF7102.cwl" }
+    },
+    {
+      "@id": "WF7102.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "name": "Seismogenic Source Model Update Workflow",
+      "description": "Updates the Seismogenic Source Model using input datasets and computational steps.",
+      "author": [
+        { "@id": "https://orcid.org/0000-0002-8207-1464" },
+        { "@id": "https://orcid.org/0009-0009-4291-2503" },
+        { "@id": "https://orcid.org/0000-0003-4086-8755" }
+      ],
+      "programmingLanguage": [
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl" }
+      ],
+      "input": [
+        { "@id": "#DT7104->WF7102.cwl" },
+        { "@id": "#CRUSTAL_FAULT_MODEL->WF7102.cwl" },
+        { "@id": "#SUBDUCTION_ZONES->WF7102.cwl" },
+        { "@id": "#ACTIVE_FAULT_DATASET->WF7102.cwl" }
+      ],
+      "output": [
+        { "@id": "#WF7102.cwl->DT7108" }
+      ],
+      "conformsTo": [
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" }
+      ]
+    },
+    {
+      "@id": "DT7104/",
+      "@type": "Dataset",
+      "name": "Seismogenic Source Model of the 2020 European Seismic Hazard Model (ESHM20)",
+      "description": "Input dataset for the Seismogenic Source Model Update Workflow.",
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "isPartOf": { "@id": "./" }
+    },
+    {
+      "@id": "DT7108/",
+      "@type": "Dataset",
+      "name": "Updated Seismogenic Source Model",
+      "description": "Output dataset of the Seismogenic Source Model Update Workflow.",
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "isPartOf": { "@id": "./" }
+    },
+    {
+      "@id": "SS7101",
+      "@type": "SoftwareSourceCode",
+      "name": "ESHM20 Seimogenic Source Toolkit",
+      "description": "The EHSM20 Toolkit allows the user to develop seismic hazard models from a catalog, and series of defined geospatial areas.",
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "programmingLanguage": "Python",
+      "url": "https://gitlab.seismo.ethz.ch/reyesc/eshm20_python_toolkit",
+      "organization": [{ "@id": "https://ror.org/05a28rw58" }],
+      "person": [
+      { "@id": "https://orcid.org/0000-0003-4086-8755" }
+      ]
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-8207-1464",
+      "@type": "Person",
+      "name": "Johannes Kemper",
+      "email": "johannes.kemper@eaps.ethz.ch",
+      "affiliation": { "@id": "https://ror.org/05a28rw58" }
+    },
+    {
+      "@id": "https://orcid.org/0009-0009-4291-2503",
+      "@type": "Person",
+      "name": "Nicolas Schmid",
+      "email": "nicolas.schmid@sed.ethz.ch",
+      "affiliation": { "@id": "https://ror.org/05a28rw58" }
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-4086-8755",
+      "@type": "Person",
+      "name": "Laurentiu Danciu",
+      "email": "laurentiu.danciu@sed.ethz.ch",
+      "affiliation": { "@id": "https://ror.org/05a28rw58" }
+    },
+    {
+      "@id": "https://ror.org/05a28rw58",
+      "@type": "Organization",
+      "name": "Eidgenössische Technische Hochschule Zürich (ETH Zürich)"
+    }
+  ]
+}

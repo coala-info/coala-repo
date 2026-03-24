@@ -1,0 +1,172 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "galaxy-example.ga"
+      },
+      "datePublished": "2025-11-06 18:17:49 +0000",
+      "author": [
+
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://workflowhub.eu/workflows/2014?version=1",
+      "url": "https://workflowhub.eu/workflows/2014/ro_crate?version=1",
+      "name": "Research Object Crate for OCR Test DaSch",
+      "description": "A workflow to show how material from DaSch can be processed in Galaxy.\nThe example used is a optical character recognition of a German newspaper from DaSch which will be made machine-readable, cleaned, stripped of punctuation and visualised in a Wordcloud.",
+      "sdDatePublished": "2026-03-24 16:29:18 +0000",
+      "hasPart": [
+        {
+          "@id": "galaxy-example.ga"
+        }
+      ]
+    },
+    {
+      "@id": "galaxy-example.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "url": "https://demo.onedata.org/ozw/onezone/custom/galaxy-example.ga",
+      "contentSize": 10996,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "A workflow to show how material from DaSch can be processed in Galaxy.\nThe example used is a optical character recognition of a German newspaper from DaSch which will be made machine-readable, cleaned, stripped of punctuation and visualised in a Wordcloud.",
+      "name": "OCR Test DaSch",
+      "keywords": "DaSch, ocr",
+      "version": 1,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "creator": [
+        {
+          "@id": "#Johannes%20Nussbaum"
+        },
+        {
+          "@id": "#Daniela%20Schneider"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/166"
+      },
+      "dateCreated": "2025-11-06T18:18:35Z",
+      "dateModified": "2025-11-06T18:18:35Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#ocr_test_dasch-inputs-Input%20Image"
+        },
+        {
+          "@id": "#ocr_test_dasch-inputs-Upload%20Stopwords"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#ocr_test_dasch-outputs-out_file1"
+        },
+        {
+          "@id": "#ocr_test_dasch-outputs-output"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "#Johannes Nussbaum",
+      "@type": "Person",
+      "name": "Johannes Nussbaum"
+    },
+    {
+      "@id": "#Daniela Schneider",
+      "@type": "Person",
+      "name": "Daniela Schneider"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/166",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "EuroScienceGateway"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#ocr_test_dasch-inputs-Input Image",
+      "@type": "FormalParameter",
+      "name": "Input Image",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ocr_test_dasch-inputs-Upload Stopwords",
+      "@type": "FormalParameter",
+      "name": "Upload Stopwords",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ocr_test_dasch-outputs-out_file1",
+      "@type": "FormalParameter",
+      "name": "out_file1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ocr_test_dasch-outputs-output",
+      "@type": "FormalParameter",
+      "name": "output",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

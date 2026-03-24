@@ -1,0 +1,216 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-ERGA_DataQC_HiFi_v2601_(WF0).ga"
+      },
+      "datePublished": "2026-01-20 17:18:07 +0000",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-3679-9585"
+        },
+        {
+          "@id": "#creator-1"
+        }
+      ],
+      "license": "MIT",
+      "identifier": "https://workflowhub.eu/workflows/602?version=2",
+      "url": "https://workflowhub.eu/workflows/602/ro_crate?version=2",
+      "name": "Research Object Crate for ERGA DataQC HiFi v2601 (WF0)",
+      "description": "The workflow takes a HiFi reads collection, runs FastQC and SeqKit, filters with Cutadapt, and creates a MultiQC report. The main outputs are a collection of filtred reads, a report with raw and filtered reads stats, and a table with raw reads stats.",
+      "isBasedOn": "https://github.com/ERGA-consortium/pipelines",
+      "sdDatePublished": "2026-03-24 16:24:04 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-ERGA_DataQC_HiFi_v2601_(WF0).ga"
+        },
+        {
+          "@id": "QC_hifi_2505.png"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-ERGA_DataQC_HiFi_v2601_(WF0).ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "url": "https://github.com/ERGA-consortium/pipelines/blob/main/assembly/galaxy/0.Data_QC/Galaxy-Workflow-ERGA_DataQC_HiFi_v2601_(WF0).ga",
+      "contentSize": 16603,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "QC_hifi_2505.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "The workflow takes a HiFi reads collection, runs FastQC and SeqKit, filters with Cutadapt, and creates a MultiQC report. The main outputs are a collection of filtred reads, a report with raw and filtered reads stats, and a table with raw reads stats.",
+      "name": "ERGA DataQC HiFi v2601 (WF0)",
+      "keywords": "ERGA, DataQC, HiFi",
+      "version": 2,
+      "license": "https://spdx.org/licenses/MIT",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/445"
+        },
+        {
+          "@id": "#ERGA"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/163"
+      },
+      "dateCreated": "2024-09-18T13:14:42Z",
+      "dateModified": "2026-01-20T17:18:37Z",
+      "isPartOf": [
+        {
+          "@id": "https://workflowhub.eu/collections/10"
+        },
+        {
+          "@id": "https://workflowhub.eu/collections/27"
+        },
+        {
+          "@id": "https://workflowhub.eu/collections/33"
+        }
+      ],
+      "isBasedOn": "https://workflowhub.eu/workflows/602?version=1",
+      "input": {
+        "@id": "#erga_dataqc_hifi_v2601__wf0_-inputs-%23main/HiFi%20raw%20reads%20collection"
+      },
+      "output": [
+        {
+          "@id": "#erga_dataqc_hifi_v2601__wf0_-outputs-%23main/HiFi%20trimmed%20collection"
+        },
+        {
+          "@id": "#erga_dataqc_hifi_v2601__wf0_-outputs-%23main/SeqKit%20HiFi%20raw%20table"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "QC_hifi_2505.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "url": "https://github.com/ERGA-consortium/pipelines/blob/main/assembly/galaxy/0.Data_QC/pics/QC_hifi_2505.png",
+      "contentSize": 1325379
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-3679-9585",
+      "@type": "Person",
+      "name": "Diego De Panis",
+      "identifier": "https://orcid.org/0000-0002-3679-9585"
+    },
+    {
+      "@id": "#creator-1",
+      "@type": "Person",
+      "name": "ERGA"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/445",
+      "@type": "Person",
+      "name": "Diego De Panis"
+    },
+    {
+      "@id": "#ERGA",
+      "@type": "Person",
+      "name": "ERGA"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/163",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "ERGA Assembly"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/10",
+      "@type": "Collection",
+      "name": "ERGA Assembly Galaxy Long Reads &amp; Hi-C Pipelines (Hifiasm-HiC + Purge_Dups + YaHS)"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/27",
+      "@type": "Collection",
+      "name": "ERGA Assembly Galaxy Long Reads &amp; Hi-C Pipelines (Hifiasm-solo + Purge_Dups + YaHS)"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/33",
+      "@type": "Collection",
+      "name": "Biodiversity &amp; ecology workflows"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#erga_dataqc_hifi_v2601__wf0_-inputs-#main/HiFi raw reads collection",
+      "@type": "FormalParameter",
+      "name": "#main/HiFi raw reads collection",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_dataqc_hifi_v2601__wf0_-outputs-#main/HiFi trimmed collection",
+      "@type": "FormalParameter",
+      "name": "#main/HiFi trimmed collection",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_dataqc_hifi_v2601__wf0_-outputs-#main/SeqKit HiFi raw table",
+      "@type": "FormalParameter",
+      "name": "#main/SeqKit HiFi raw table",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

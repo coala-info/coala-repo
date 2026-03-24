@@ -1,0 +1,7 @@
+2025-03-04 12:52:28.2408 JoinQuantPepIonsWithProteins TRACE CLIArguments: [QuantifiedPeptides
+   ["C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantalignresultstats"];
+ InferredProteins
+   ["C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\protdeduced"];
+ OutputDirectory
+   "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantandprot";
+ MatchFiles; Parallelism_Level 18] 

@@ -1,0 +1,101 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "format-version": "0.1",
+    "name": "Workflow of BioTranslator Comparative Analysis",
+    "steps": {
+        "0": {
+            "annotation": "Input file format: Tab or csv delimited file with a specific gene set in each column. The header is used for gene set labels.",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "Input file format: Tab or csv delimited file with a specific gene set in each column. The header is used for gene set labels.",
+                    "name": "Input sets of genes"
+                }
+            ],
+            "label": "Input sets of genes",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 525.1999969482422,
+                "height": 82.19999694824219,
+                "left": 614,
+                "right": 814,
+                "top": 443,
+                "width": 200,
+                "x": 614,
+                "y": 443
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "4567a8fc-613e-47d9-ab54-a26b88695717",
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "The algorithm consists of two sequential tasks: \n\n1. Pathway Analysis of the input gene sets, using the selected ontology \n2. Comparison of the derived semantic sets, using the topology of ontological graph\n\nOutputs: \n1. The distance matrix in tsv format\n2. A heatmap (png format) which illustrates the agglomerative clustering of input sets, based on the respective semantic distances",
+            "content_id": "comparative_analysis",
+            "errors": null,
+            "id": 1,
+            "input_connections": {
+                "input": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Comparative Analysis",
+                    "name": "input"
+                }
+            ],
+            "label": "BioTranslator Comparative Analysis",
+            "name": "Comparative Analysis",
+            "outputs": [
+                {
+                    "name": "ds",
+                    "type": "tsv"
+                },
+                {
+                    "name": "hm",
+                    "type": "png"
+                }
+            ],
+            "position": {
+                "bottom": 588,
+                "height": 144,
+                "left": 977,
+                "right": 1177,
+                "top": 444,
+                "width": 200,
+                "x": 977,
+                "y": 444
+            },
+            "post_job_actions": {},
+            "tool_id": "comparative_analysis",
+            "tool_state": "{\"input\": {\"__class__\": \"RuntimeValue\"}, \"organism_condition\": {\"organism\": \"hsapiens\", \"__current_case__\": 0, \"id_type\": \"gene_symbol\", \"ontology\": \"GO\", \"hyper_pvalue\": \"0.05\", \"corrected_pvalue\": \"0.05\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1.0",
+            "type": "tool",
+            "uuid": "ed375bad-f469-4170-b3ec-d4cad5d72f42",
+            "workflow_outputs": [
+                {
+                    "label": "Distances Matrix",
+                    "output_name": "ds",
+                    "uuid": "1878a044-19bb-43b9-b030-7b8cfdb09ba4"
+                },
+                {
+                    "label": "Heatmap",
+                    "output_name": "hm",
+                    "uuid": "477e1db1-1a21-4e1a-9c55-3388a5b3f242"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "5fd96b1c-4db8-44cc-b517-739958bc9f31",
+    "version": 4
+}

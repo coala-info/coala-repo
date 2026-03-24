@@ -1,0 +1,751 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "format-version": "0.1",
+    "name": "EMEP WPS WRF",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Grib ATM"
+                }
+            ],
+            "label": "Grib ATM",
+            "name": "Input dataset collection",
+            "outputs": [],
+            "position": {
+                "left": 7.046875,
+                "top": 65.65625
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\", \"collection_type\": \"list\"}",
+            "tool_version": null,
+            "type": "data_collection_input",
+            "uuid": "8466492e-3221-47e2-8f61-7044bf5d615f",
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Grib ATM Namelist"
+                }
+            ],
+            "label": "Grib ATM Namelist",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 4.40625,
+                "top": 149.25
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "c5dd109b-a3c3-483f-8ae5-ca0e31ae3bf5",
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 2,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "VTable ATM"
+                }
+            ],
+            "label": "VTable ATM",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 5.421875,
+                "top": 247.953125
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "fc38b0cc-f30b-4fe9-818b-3a3cd6294166",
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 3,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Grib SFC"
+                }
+            ],
+            "label": "Grib SFC",
+            "name": "Input dataset collection",
+            "outputs": [],
+            "position": {
+                "left": 1.6875,
+                "top": 383.578125
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\", \"collection_type\": \"list\"}",
+            "tool_version": null,
+            "type": "data_collection_input",
+            "uuid": "5868a93d-e8a8-4cf0-994c-3d05e05ca8c9",
+            "workflow_outputs": []
+        },
+        "4": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 4,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Grib SFC Namelist "
+                }
+            ],
+            "label": "Grib SFC Namelist ",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 0,
+                "top": 461.625
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "6b76ab17-b83f-437d-9ecf-0f4799bdfc8d",
+            "workflow_outputs": []
+        },
+        "5": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 5,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "VTable SFC"
+                }
+            ],
+            "label": "VTable SFC",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 3.375,
+                "top": 561
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "4178cbc7-40ea-4775-8e92-1b80c29cfd71",
+            "workflow_outputs": []
+        },
+        "6": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 6,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Geofile"
+                }
+            ],
+            "label": "Geofile",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 715.078125,
+                "top": 0
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "a8311780-84fb-405c-abdf-ac523b257a17",
+            "workflow_outputs": []
+        },
+        "7": {
+            "annotation": "",
+            "content_id": "create_metgrid_dir.cwl",
+            "errors": null,
+            "id": 7,
+            "input_connections": {},
+            "inputs": [],
+            "label": "Metgrid Directory",
+            "name": "create_metgrid_dir.cwl",
+            "outputs": [
+                {
+                    "name": "metdir",
+                    "type": "directory"
+                }
+            ],
+            "position": {
+                "left": 715.046875,
+                "top": 74.5625
+            },
+            "post_job_actions": {},
+            "tool_id": "create_metgrid_dir.cwl",
+            "tool_state": "{\"generate_metdir\": \"false\", \"script\": null, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.0.1",
+            "type": "tool",
+            "uuid": "5ab44e30-248d-4314-b6dd-caa0f2936d13",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "metdir",
+                    "uuid": "5108b913-60ea-47c0-be41-ce61c1dd7d6e"
+                }
+            ]
+        },
+        "8": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 8,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Metgrid Namelist"
+                }
+            ],
+            "label": "Metgrid Namelist",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 713.859375,
+                "top": 179.4375
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "3abd9b96-4ee6-43bd-8be2-7b1622065fed",
+            "workflow_outputs": []
+        },
+        "9": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 9,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Real Namelist"
+                }
+            ],
+            "label": "Real Namelist",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 978.703125,
+                "top": 534.625
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "a9a01cc2-dbfa-4466-bda8-80bb94d30666",
+            "workflow_outputs": []
+        },
+        "10": {
+            "annotation": "",
+            "content_id": "create_run_dir.cwl",
+            "errors": null,
+            "id": 10,
+            "input_connections": {},
+            "inputs": [],
+            "label": "Run Directory",
+            "name": "create_run_dir.cwl",
+            "outputs": [
+                {
+                    "name": "rundir",
+                    "type": "directory"
+                }
+            ],
+            "position": {
+                "left": 978.765625,
+                "top": 635.171875
+            },
+            "post_job_actions": {},
+            "tool_id": "create_run_dir.cwl",
+            "tool_state": "{\"generate_rundir\": \"false\", \"script\": \"{\\\"src\\\": \\\"json\\\", \\\"value\\\": null, \\\"representation\\\": \\\"null\\\"}\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.0.1",
+            "type": "tool",
+            "uuid": "be845d11-d737-4475-8036-cb97e260786d",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "rundir",
+                    "uuid": "1cf4a48e-c063-4c70-8ca7-07cc9eb9439d"
+                }
+            ]
+        },
+        "11": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 11,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "WRF namelist"
+                }
+            ],
+            "label": "WRF namelist",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 1433,
+                "top": 307
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "d2855b20-3ee9-4784-8577-67682cd2355d",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "7359b464-7e74-4d32-b0ab-623d64c104f7"
+                }
+            ]
+        },
+        "12": {
+            "annotation": "",
+            "content_id": "link_grib_tool.cwl",
+            "errors": null,
+            "id": 12,
+            "input_connections": {
+                "grib_files": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": "Link Grib ATM",
+            "name": "link_grib_tool.cwl",
+            "outputs": [
+                {
+                    "name": "grib_dir",
+                    "type": "directory"
+                }
+            ],
+            "position": {
+                "left": 237.46875,
+                "top": 65.734375
+            },
+            "post_job_actions": {},
+            "tool_id": "link_grib_tool.cwl",
+            "tool_state": "{\"grib_files\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.0.1",
+            "type": "tool",
+            "uuid": "7afee565-7793-4770-bc0e-d83994203705",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "grib_dir",
+                    "uuid": "f91e5cec-5fe0-451d-a2aa-8e8810fb6f53"
+                }
+            ]
+        },
+        "13": {
+            "annotation": "",
+            "content_id": "link_grib_tool.cwl",
+            "errors": null,
+            "id": 13,
+            "input_connections": {
+                "grib_files": {
+                    "id": 3,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": "Link Grib SFC",
+            "name": "link_grib_tool.cwl",
+            "outputs": [
+                {
+                    "name": "grib_dir",
+                    "type": "directory"
+                }
+            ],
+            "position": {
+                "left": 234.65625,
+                "top": 363.796875
+            },
+            "post_job_actions": {},
+            "tool_id": "link_grib_tool.cwl",
+            "tool_state": "{\"grib_files\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.0.1",
+            "type": "tool",
+            "uuid": "7c50ae24-4ba5-44be-957c-0cc19a7e4ac9",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "grib_dir",
+                    "uuid": "43f40333-7b69-4c80-9ab6-fd6ccec0c3ca"
+                }
+            ]
+        },
+        "14": {
+            "annotation": "",
+            "content_id": "ungrib.cwl",
+            "errors": null,
+            "id": 14,
+            "input_connections": {
+                "grib_dir": {
+                    "id": 12,
+                    "output_name": "grib_dir"
+                },
+                "namelist": {
+                    "id": 1,
+                    "output_name": "output"
+                },
+                "vtable": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": "Ungrib ATM",
+            "name": "ungrib.cwl",
+            "outputs": [
+                {
+                    "name": "logfile",
+                    "type": "data"
+                },
+                {
+                    "name": "procfiles",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 463.265625,
+                "top": 149.640625
+            },
+            "post_job_actions": {},
+            "tool_id": "ungrib.cwl",
+            "tool_state": "{\"grib_dir\": {\"__class__\": \"ConnectedValue\"}, \"namelist\": {\"__class__\": \"ConnectedValue\"}, \"outname\": \"ATMFILE\", \"vtable\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.0.1",
+            "type": "tool",
+            "uuid": "74913196-bf3e-4449-aabf-fad7010d60ff",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "logfile",
+                    "uuid": "45123228-de08-42ba-ba0f-d446b881c74f"
+                },
+                {
+                    "label": null,
+                    "output_name": "procfiles",
+                    "uuid": "d154d742-2744-45c3-8d27-ed7ee7339a3b"
+                }
+            ]
+        },
+        "15": {
+            "annotation": "",
+            "content_id": "ungrib.cwl",
+            "errors": null,
+            "id": 15,
+            "input_connections": {
+                "grib_dir": {
+                    "id": 13,
+                    "output_name": "grib_dir"
+                },
+                "namelist": {
+                    "id": 4,
+                    "output_name": "output"
+                },
+                "vtable": {
+                    "id": 5,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": "Ungrib SFC",
+            "name": "ungrib.cwl",
+            "outputs": [
+                {
+                    "name": "logfile",
+                    "type": "data"
+                },
+                {
+                    "name": "procfiles",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 464.96875,
+                "top": 413.734375
+            },
+            "post_job_actions": {},
+            "tool_id": "ungrib.cwl",
+            "tool_state": "{\"grib_dir\": {\"__class__\": \"ConnectedValue\"}, \"namelist\": {\"__class__\": \"ConnectedValue\"}, \"outname\": \"SFCFILE\", \"vtable\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.0.1",
+            "type": "tool",
+            "uuid": "b96f0778-d8cd-4e26-b83e-6469cc99b2ad",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "procfiles",
+                    "uuid": "3b8e1716-fe37-4ec6-883e-3cd43f583672"
+                },
+                {
+                    "label": null,
+                    "output_name": "logfile",
+                    "uuid": "7284fa4c-070d-405e-aee7-de3336240d34"
+                }
+            ]
+        },
+        "16": {
+            "annotation": "",
+            "content_id": "metgrid.cwl",
+            "errors": null,
+            "id": 16,
+            "input_connections": {
+                "geofile": {
+                    "id": 6,
+                    "output_name": "output"
+                },
+                "metdir": {
+                    "id": 7,
+                    "output_name": "metdir"
+                },
+                "namelist": {
+                    "id": 8,
+                    "output_name": "output"
+                },
+                "ungribbed_files_a": {
+                    "id": 14,
+                    "output_name": "procfiles"
+                },
+                "ungribbed_files_b": {
+                    "id": 15,
+                    "output_name": "procfiles"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "metgrid.cwl",
+            "outputs": [
+                {
+                    "name": "example_out",
+                    "type": "data"
+                },
+                {
+                    "name": "logfile",
+                    "type": "input"
+                },
+                {
+                    "name": "metfiles",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 975.9375,
+                "top": 239.359375
+            },
+            "post_job_actions": {
+                "HideDatasetActionexample_out": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "example_out"
+                }
+            },
+            "tool_id": "metgrid.cwl",
+            "tool_state": "{\"geofile\": {\"__class__\": \"ConnectedValue\"}, \"metdir\": {\"__class__\": \"ConnectedValue\"}, \"namelist\": {\"__class__\": \"ConnectedValue\"}, \"nproc\": {\"representation\": \"null\", \"src\": \"json\", \"value\": null}, \"ungribbed_files_a\": {\"__class__\": \"ConnectedValue\"}, \"ungribbed_files_b\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.0.1",
+            "type": "tool",
+            "uuid": "2bab5cee-9989-4a54-b112-bd7bf25ace69",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "logfile",
+                    "uuid": "a5337732-553a-4098-bd31-4c60c2ddaf73"
+                },
+                {
+                    "label": null,
+                    "output_name": "metfiles",
+                    "uuid": "c69df501-530b-4c35-ab7d-e4450297975d"
+                }
+            ]
+        },
+        "17": {
+            "annotation": "",
+            "content_id": "real.cwl",
+            "errors": null,
+            "id": 17,
+            "input_connections": {
+                "metdir": {
+                    "id": 16,
+                    "output_name": "metfiles"
+                },
+                "namelist": {
+                    "id": 9,
+                    "output_name": "output"
+                },
+                "rundir": {
+                    "id": 10,
+                    "output_name": "rundir"
+                }
+            },
+            "inputs": [],
+            "label": "Real",
+            "name": "real.cwl",
+            "outputs": [
+                {
+                    "name": "output_logs",
+                    "type": "input"
+                },
+                {
+                    "name": "output_wrfbdy",
+                    "type": "input"
+                },
+                {
+                    "name": "output_wrfinput",
+                    "type": "input"
+                },
+                {
+                    "name": "output_wrflowinput",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 1308,
+                "top": 420.109375
+            },
+            "post_job_actions": {
+                "HideDatasetActionoutput_logs": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output_logs"
+                },
+                "HideDatasetActionoutput_wrfbdy": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output_wrfbdy"
+                },
+                "HideDatasetActionoutput_wrfinput": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output_wrfinput"
+                },
+                "HideDatasetActionoutput_wrflowinput": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output_wrflowinput"
+                }
+            },
+            "tool_id": "real.cwl",
+            "tool_state": "{\"metdir\": {\"__class__\": \"ConnectedValue\"}, \"namelist\": {\"__class__\": \"ConnectedValue\"}, \"rundir\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.0.1",
+            "type": "tool",
+            "uuid": "4d4680a4-d836-4776-93de-c5e2ae6802cc",
+            "workflow_outputs": []
+        },
+        "18": {
+            "annotation": "",
+            "content_id": "wrf.cwl",
+            "errors": null,
+            "id": 18,
+            "input_connections": {
+                "namelist": {
+                    "id": 11,
+                    "output_name": "output"
+                },
+                "rundir": {
+                    "id": 10,
+                    "output_name": "rundir"
+                },
+                "wrfbdys": {
+                    "id": 17,
+                    "output_name": "output_wrfbdy"
+                },
+                "wrfinputs": {
+                    "id": 17,
+                    "output_name": "output_wrflowinput"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool wrf.cwl",
+                    "name": "namelist"
+                },
+                {
+                    "description": "runtime parameter for tool wrf.cwl",
+                    "name": "rundir"
+                },
+                {
+                    "description": "runtime parameter for tool wrf.cwl",
+                    "name": "wrfbdys"
+                },
+                {
+                    "description": "runtime parameter for tool wrf.cwl",
+                    "name": "wrfinputs"
+                }
+            ],
+            "label": "WRF",
+            "name": "wrf.cwl",
+            "outputs": [
+                {
+                    "name": "output_logs",
+                    "type": "input"
+                },
+                {
+                    "name": "output_wrfout",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 1672.015625,
+                "top": 418.59375
+            },
+            "post_job_actions": {},
+            "tool_id": "wrf.cwl",
+            "tool_state": "{\"cores\": \"{\\\"src\\\": \\\"json\\\", \\\"value\\\": null, \\\"representation\\\": \\\"null\\\"}\", \"namelist\": {\"__class__\": \"RuntimeValue\"}, \"rundir\": {\"__class__\": \"RuntimeValue\"}, \"wrfbdys\": {\"__class__\": \"RuntimeValue\"}, \"wrfinputs\": {\"__class__\": \"RuntimeValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.0.1",
+            "type": "tool",
+            "uuid": "55766ba6-3ccf-4749-aded-8b91900f9301",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output_wrfout",
+                    "uuid": "5ab868a2-2918-41a3-b8c8-9a8a3b3ba5f9"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_logs",
+                    "uuid": "6b46af8b-3135-4c8b-b3d8-a16f77792095"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "efd24053-d6d6-45d4-9562-a95f854f19b4",
+    "version": 12
+}

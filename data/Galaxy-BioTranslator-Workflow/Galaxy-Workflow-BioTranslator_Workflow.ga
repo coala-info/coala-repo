@@ -1,0 +1,105 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "format-version": "0.1",
+    "name": "BioTranslator Workflow",
+    "steps": {
+        "0": {
+            "annotation": "The input gene set (gene symbols or ensembl gene ids) in 'txt' format.",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "The input gene set (gene symbols or ensembl gene ids) in 'txt' format.",
+                    "name": "Input Gene List"
+                }
+            ],
+            "label": "Input Gene List",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 531.8000030517578,
+                "height": 61.80000305175781,
+                "left": 687,
+                "right": 887,
+                "top": 470,
+                "width": 200,
+                "x": 687,
+                "y": 470
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"format\": [\"txt\"]}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "7607f95f-f7ac-44cc-ac70-f577fd8b96ea",
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "The algorithm consists of two sequential tasks:\n1. Pathway Analysis, using the selected ontology\n2. Gene Prioritization on the derived network of the enriched terms\n\nOutputs:\n1. The enriched terms\n2. The highly prioritized input genes\n3. A heatmap which illustrates the association between prioritized genes and semantic clusters",
+            "content_id": "biotranslator_lite",
+            "errors": null,
+            "id": 1,
+            "input_connections": {
+                "input": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": "Execution of BioTranslator",
+            "name": "BioTranslator",
+            "outputs": [
+                {
+                    "name": "tp",
+                    "type": "tsv"
+                },
+                {
+                    "name": "gp",
+                    "type": "tsv"
+                },
+                {
+                    "name": "hm",
+                    "type": "png"
+                }
+            ],
+            "position": {
+                "bottom": 646.8000030517578,
+                "height": 194.8000030517578,
+                "left": 1067,
+                "right": 1267,
+                "top": 452,
+                "width": 200,
+                "x": 1067,
+                "y": 452
+            },
+            "post_job_actions": {},
+            "tool_id": "biotranslator_lite",
+            "tool_state": "{\"input\": {\"__class__\": \"ConnectedValue\"}, \"organism_condition\": {\"organism\": \"hsapiens\", \"__current_case__\": 0, \"id_type\": \"gene_symbol\", \"ontology\": \"GO\", \"hyper_pvalue\": \"0.05\", \"corrected_pvalue\": \"0.05\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1.0",
+            "type": "tool",
+            "uuid": "a6529261-ce13-4ad5-a42d-de701bf9fa31",
+            "workflow_outputs": [
+                {
+                    "label": "GO Enriched Terms",
+                    "output_name": "tp",
+                    "uuid": "57958091-607c-499f-90a1-14ca17f08961"
+                },
+                {
+                    "label": "GO Gene Prioritization",
+                    "output_name": "gp",
+                    "uuid": "4da0c711-e50c-487b-bf01-e0781284f4e9"
+                },
+                {
+                    "label": "GO Heatmap",
+                    "output_name": "hm",
+                    "uuid": "b223387a-28fb-4f3b-b839-70f2581fac7d"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "8b6fe463-00a6-4843-baa2-e511741bec90",
+    "version": 4
+}

@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Galaxy Protein conformational ensembles generation</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "biobb_wf_flexdyn.ga"
+      },
+      "datePublished": "2023-06-01 10:51:15 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-8291-8071"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-0513-0288"
+        }
+      ],
+      "license": "other-open",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.490.1",
+      "url": "https://workflowhub.eu/workflows/490/ro_crate?version=1",
+      "name": "Research Object Crate for Galaxy Protein conformational ensembles generation",
+      "description": "# Protein Conformational ensembles generation\n\n## Workflow included in the [ELIXIR 3D-Bioinfo](https://elixir-europe.org/communities/3d-bioinfo) Implementation Study:\n\n### Building on PDBe-KB to chart and characterize the conformation landscape of native proteins\n\nThis tutorial aims to illustrate the process of generating **protein conformational ensembles** from** 3D structures **and analysing its **molecular flexibility**, step by step, using the **BioExcel Building Blocks library (biobb)**.\n\n## Conformational landscape of native proteins\n**Proteins** are **dynamic** systems that adopt multiple **conformational states**, a property essential for many **biological processes** (e.g. binding other proteins, nucleic acids, small molecule ligands, or switching between functionaly active and inactive states). Characterizing the different **conformational states** of proteins and the transitions between them is therefore critical for gaining insight into their **biological function** and can help explain the effects of genetic variants in **health** and **disease** and the action of drugs.\n\n**Structural biology** has become increasingly efficient in sampling the different **conformational states** of proteins. The **PDB** has currently archived more than **170,000 individual structures**, but over two thirds of these structures represent **multiple conformations** of the same or related protein, observed in different crystal forms, when interacting with other proteins or other macromolecules, or upon binding small molecule ligands. Charting this conformational diversity across the PDB can therefore be employed to build a useful approximation of the **conformational landscape** of native proteins.\n\nA number of resources and **tools** describing and characterizing various often complementary aspects of protein **conformational diversity** in known structures have been developed, notably by groups in Europe. These tools include algorithms with varying degree of sophistication, for aligning the 3D structures of individual protein chains or domains, of protein assemblies, and evaluating their degree of **structural similarity**. Using such tools one can **align structures pairwise**, compute the corresponding **similarity matrix**, and identify ensembles of **structures/conformations** with a defined **similarity level** that tend to recur in different PDB entries, an operation typically performed using **clustering** methods. Such workflows are at the basis of resources such as **CATH, Contemplate, or PDBflex** that offer access to **conformational ensembles** comprised of similar **conformations** clustered according to various criteria. Other types of tools focus on differences between **protein conformations**, identifying regions of proteins that undergo large **collective displacements** in different PDB entries, those that act as **hinges or linkers**, or regions that are inherently **flexible**.\n\nTo build a meaningful approximation of the **conformational landscape** of native proteins, the **conformational ensembles** (and the differences between them), identified on the basis of **structural similarity/dissimilarity** measures alone, need to be **biophysically characterized**. This may be approached at **two different levels**. \n- At the **biological level**, it is important to link observed **conformational ensembles**, to their **functional roles** by evaluating the correspondence with **protein family classifications** based on sequence information and **functional annotations** in public databases e.g. Uniprot, PDKe-Knowledge Base (KB). These links should provide valuable mechanistic insights into how the **conformational and dynamic properties** of proteins are exploited by evolution to regulate their **biological function**. <br><br>\n\n- At the **physical level** one needs to introduce **energetic consideration** to evaluate the likelihood that the identified **conformational ensembles** represent **conformational states** that the protein (or domain under study) samples in isolation. Such evaluation is notoriously **challenging** and can only be roughly approximated by using **computational methods** to evaluate the extent to which the observed **conformational ensembles** can be reproduced by algorithms that simulate the **dynamic behavior** of protein systems. These algorithms include the computationally expensive **classical molecular dynamics (MD) simulations** to sample local thermal fluctuations but also faster more approximate methods such as **Elastic Network Models** and **Normal Node Analysis** (NMA) to model low energy **collective motions**. Alternatively, **enhanced sampling molecular dynamics** can be used to model complex types of **conformational changes** but at a very high computational cost. \n\nThe **ELIXIR 3D-Bioinfo Implementation Study** *Building on PDBe-KB to chart and characterize the conformation landscape of native proteins* focuses on:\n\n1. Mapping the **conformational diversity** of proteins and their homologs across the PDB. \n2. Characterize the different **flexibility properties** of protein regions, and link this information to sequence and functional annotation.\n3. Benchmark **computational methods** that can predict a biophysical description of protein motions.\n\nThis notebook is part of the third objective, where a list of **computational resources** that are able to predict **protein flexibility** and **conformational ensembles** have been collected, evaluated, and integrated in reproducible and interoperable workflows using the **BioExcel Building Blocks library**. Note that the list is not meant to be exhaustive, it is built following the expertise of the implementation study partners.\n\n***\n\n## Copyright &amp; Licensing\nThis software has been developed in the [MMB group](http://mmb.irbbarcelona.org) at the [BSC](http://www.bsc.es/) &amp; [IRB](https://www.irbbarcelona.org/) for the [European BioExcel](http://bioexcel.eu/), funded by the European Commission (EU H2020 [823830](http://cordis.europa.eu/projects/823830), EU H2020 [675728](http://cordis.europa.eu/projects/675728)).\n\n* (c) 2015-2023 [Barcelona Supercomputing Center](https://www.bsc.es/)\n* (c) 2015-2023 [Institute for Research in Biomedicine](https://www.irbbarcelona.org/)\n\nLicensed under the\n[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0), see the file LICENSE for details.\n\n![](https://bioexcel.eu/wp-content/uploads/2019/04/Bioexcell_logo_1080px_transp.png \"Bioexcel\")",
+      "isBasedOn": "https://github.com/bioexcel/biobb_workflows/tree/master/biobb_wf_flexdyn/galaxy",
+      "sdDatePublished": "2026-03-24 17:58:08 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "biobb_wf_flexdyn.ga"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/galaxy/README.md"
+        }
+      ]
+    },
+    {
+      "@id": "biobb_wf_flexdyn.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "url": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/galaxy/biobb_wf_flexdyn.ga",
+      "contentSize": 92310,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "# Protein Conformational ensembles generation\n\n## Workflow included in the [ELIXIR 3D-Bioinfo](https://elixir-europe.org/communities/3d-bioinfo) Implementation Study:\n\n### Building on PDBe-KB to chart and characterize the conformation landscape of native proteins\n\nThis tutorial aims to illustrate the process of generating **protein conformational ensembles** from** 3D structures **and analysing its **molecular flexibility**, step by step, using the **BioExcel Building Blocks library (biobb)**.\n\n## Conformational landscape of native proteins\n**Proteins** are **dynamic** systems that adopt multiple **conformational states**, a property essential for many **biological processes** (e.g. binding other proteins, nucleic acids, small molecule ligands, or switching between functionaly active and inactive states). Characterizing the different **conformational states** of proteins and the transitions between them is therefore critical for gaining insight into their **biological function** and can help explain the effects of genetic variants in **health** and **disease** and the action of drugs.\n\n**Structural biology** has become increasingly efficient in sampling the different **conformational states** of proteins. The **PDB** has currently archived more than **170,000 individual structures**, but over two thirds of these structures represent **multiple conformations** of the same or related protein, observed in different crystal forms, when interacting with other proteins or other macromolecules, or upon binding small molecule ligands. Charting this conformational diversity across the PDB can therefore be employed to build a useful approximation of the **conformational landscape** of native proteins.\n\nA number of resources and **tools** describing and characterizing various often complementary aspects of protein **conformational diversity** in known structures have been developed, notably by groups in Europe. These tools include algorithms with varying degree of sophistication, for aligning the 3D structures of individual protein chains or domains, of protein assemblies, and evaluating their degree of **structural similarity**. Using such tools one can **align structures pairwise**, compute the corresponding **similarity matrix**, and identify ensembles of **structures/conformations** with a defined **similarity level** that tend to recur in different PDB entries, an operation typically performed using **clustering** methods. Such workflows are at the basis of resources such as **CATH, Contemplate, or PDBflex** that offer access to **conformational ensembles** comprised of similar **conformations** clustered according to various criteria. Other types of tools focus on differences between **protein conformations**, identifying regions of proteins that undergo large **collective displacements** in different PDB entries, those that act as **hinges or linkers**, or regions that are inherently **flexible**.\n\nTo build a meaningful approximation of the **conformational landscape** of native proteins, the **conformational ensembles** (and the differences between them), identified on the basis of **structural similarity/dissimilarity** measures alone, need to be **biophysically characterized**. This may be approached at **two different levels**. \n- At the **biological level**, it is important to link observed **conformational ensembles**, to their **functional roles** by evaluating the correspondence with **protein family classifications** based on sequence information and **functional annotations** in public databases e.g. Uniprot, PDKe-Knowledge Base (KB). These links should provide valuable mechanistic insights into how the **conformational and dynamic properties** of proteins are exploited by evolution to regulate their **biological function**. <br><br>\n\n- At the **physical level** one needs to introduce **energetic consideration** to evaluate the likelihood that the identified **conformational ensembles** represent **conformational states** that the protein (or domain under study) samples in isolation. Such evaluation is notoriously **challenging** and can only be roughly approximated by using **computational methods** to evaluate the extent to which the observed **conformational ensembles** can be reproduced by algorithms that simulate the **dynamic behavior** of protein systems. These algorithms include the computationally expensive **classical molecular dynamics (MD) simulations** to sample local thermal fluctuations but also faster more approximate methods such as **Elastic Network Models** and **Normal Node Analysis** (NMA) to model low energy **collective motions**. Alternatively, **enhanced sampling molecular dynamics** can be used to model complex types of **conformational changes** but at a very high computational cost. \n\nThe **ELIXIR 3D-Bioinfo Implementation Study** *Building on PDBe-KB to chart and characterize the conformation landscape of native proteins* focuses on:\n\n1. Mapping the **conformational diversity** of proteins and their homologs across the PDB. \n2. Characterize the different **flexibility properties** of protein regions, and link this information to sequence and functional annotation.\n3. Benchmark **computational methods** that can predict a biophysical description of protein motions.\n\nThis notebook is part of the third objective, where a list of **computational resources** that are able to predict **protein flexibility** and **conformational ensembles** have been collected, evaluated, and integrated in reproducible and interoperable workflows using the **BioExcel Building Blocks library**. Note that the list is not meant to be exhaustive, it is built following the expertise of the implementation study partners.\n\n***\n\n## Copyright &amp; Licensing\nThis software has been developed in the [MMB group](http://mmb.irbbarcelona.org) at the [BSC](http://www.bsc.es/) &amp; [IRB](https://www.irbbarcelona.org/) for the [European BioExcel](http://bioexcel.eu/), funded by the European Commission (EU H2020 [823830](http://cordis.europa.eu/projects/823830), EU H2020 [675728](http://cordis.europa.eu/projects/675728)).\n\n* (c) 2015-2023 [Barcelona Supercomputing Center](https://www.bsc.es/)\n* (c) 2015-2023 [Institute for Research in Biomedicine](https://www.irbbarcelona.org/)\n\nLicensed under the\n[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0), see the file LICENSE for details.\n\n![](https://bioexcel.eu/wp-content/uploads/2019/04/Bioexcell_logo_1080px_transp.png \"Bioexcel\")",
+      "name": "Galaxy Protein conformational ensembles generation",
+      "keywords": "",
+      "version": 1,
+      "license": "",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/57"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/47"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/11"
+      },
+      "dateCreated": "2023-06-01T09:50:55Z",
+      "dateModified": "2023-06-01T09:53:56Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.490.1",
+      "input": [
+
+      ],
+      "output": [
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mypdb.pdb"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-myextract_model.pdb"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-myextract_monomer.pdb"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mycpptraj_mask_backbone"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-myconcoord_dist.dat"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-myconcoord_dist.gro"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-myconcoord_dist.pdb"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-myprody_anm_traj.pdb"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-myimod_imode_evecs.dat"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mycpptraj_mask_ca.pdb"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-myconcoord_disco_rmsd.dat"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-myconcoord_disco_bfactor.pdb"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-myconcoord_disco_traj.pdb"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mycpptraj_prody_rms.dat"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mycpptraj_prody_anm_traj.trr"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-myimod_imc.pdb"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mybd_flexserv_bd_ensemble.mdcrd"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mybd_flexserv_bd_ensemble.log"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mydmd_flexserv_dmd_ensemble.mdcrd"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mydmd_flexserv_dmd_ensemble.log"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mynolb_ensemble.pdb"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mymake_gmx_ndx.ndx"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mynma_flexserv_nma_ensemble.log"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mynma_flexserv_nma_ensemble.mdcrd"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-_anonymous_output_1"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mycpptraj_disco_traj.trr"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-_anonymous_output_2"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mycpptraj_imods_ensemble.trr"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mycpptraj_flexserv_bd_rmsd.dat"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mycpptraj_flexserv_bd_traj_fitted.trr"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mycpptraj_flexserv_dmd_traj_fitted.trr"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mycpptraj_flexserv_dmd_rmsd.dat"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mycpptraj_nolb_rmsd.dat"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mycpptraj_nolb_ensemble.trr"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mycpptraj_flexserv_nma_rmsd.dat"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mycpptraj_flexserv_nma_ensemble.trr"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-concat_traj.zip"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mytrjcat_concat_traj.trr"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mygmx_cluster.xvg"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mygmx_cluster.log"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mygmx_concat.cluster.pdb"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mygmx_cluster.xpm"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mycpptraj_meta_traj_rmsd.dat"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mycpptraj_meta_traj_fitted.crd"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-_anonymous_output_3"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-_anonymous_output_4"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mypcz_report.json"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mypcz_evecs.json"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mypcz_proj1.crd"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mypcz_bfactor_all.dat"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mypcz_bfactor_all.pdb"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mypcz_stiffness.json"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mypcz_collectivity.json"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mypcz_hinges_bfactor_report.json"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-_anonymous_output_5"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mypcz_hinges_fcte_report.json"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mycpptraj_pcz_proj1.dcd"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/galaxy/README.md",
+      "@type": "File"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-8291-8071",
+      "@type": "Person",
+      "name": "Adam Hospital",
+      "identifier": "https://orcid.org/0000-0002-8291-8071"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-0513-0288",
+      "@type": "Person",
+      "name": "Genís Bayarri",
+      "identifier": "https://orcid.org/0000-0003-0513-0288"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/57",
+      "@type": "Person",
+      "name": "Adam Hospital"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/47",
+      "@type": "Person",
+      "name": "Genís Bayarri"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/11",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "BioBB Building Blocks"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mypdb.pdb",
+      "@type": "FormalParameter",
+      "name": "mypdb.pdb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-myextract_model.pdb",
+      "@type": "FormalParameter",
+      "name": "myextract_model.pdb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-myextract_monomer.pdb",
+      "@type": "FormalParameter",
+      "name": "myextract_monomer.pdb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mycpptraj_mask_backbone",
+      "@type": "FormalParameter",
+      "name": "mycpptraj_mask_backbone",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-myconcoord_dist.dat",
+      "@type": "FormalParameter",
+      "name": "myconcoord_dist.dat",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-myconcoord_dist.gro",
+      "@type": "FormalParameter",
+      "name": "myconcoord_dist.gro",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-myconcoord_dist.pdb",
+      "@type": "FormalParameter",
+      "name": "myconcoord_dist.pdb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-myprody_anm_traj.pdb",
+      "@type": "FormalParameter",
+      "name": "myprody_anm_traj.pdb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-myimod_imode_evecs.dat",
+      "@type": "FormalParameter",
+      "name": "myimod_imode_evecs.dat",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mycpptraj_mask_ca.pdb",
+      "@type": "FormalParameter",
+      "name": "mycpptraj_mask_ca.pdb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-myconcoord_disco_rmsd.dat",
+      "@type": "FormalParameter",
+      "name": "myconcoord_disco_rmsd.dat",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-myconcoord_disco_bfactor.pdb",
+      "@type": "FormalParameter",
+      "name": "myconcoord_disco_bfactor.pdb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-myconcoord_disco_traj.pdb",
+      "@type": "FormalParameter",
+      "name": "myconcoord_disco_traj.pdb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mycpptraj_prody_rms.dat",
+      "@type": "FormalParameter",
+      "name": "mycpptraj_prody_rms.dat",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mycpptraj_prody_anm_traj.trr",
+      "@type": "FormalParameter",
+      "name": "mycpptraj_prody_anm_traj.trr",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-myimod_imc.pdb",
+      "@type": "FormalParameter",
+      "name": "myimod_imc.pdb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mybd_flexserv_bd_ensemble.mdcrd",
+      "@type": "FormalParameter",
+      "name": "mybd_flexserv_bd_ensemble.mdcrd",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mybd_flexserv_bd_ensemble.log",
+      "@type": "FormalParameter",
+      "name": "mybd_flexserv_bd_ensemble.log",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mydmd_flexserv_dmd_ensemble.mdcrd",
+      "@type": "FormalParameter",
+      "name": "mydmd_flexserv_dmd_ensemble.mdcrd",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mydmd_flexserv_dmd_ensemble.log",
+      "@type": "FormalParameter",
+      "name": "mydmd_flexserv_dmd_ensemble.log",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mynolb_ensemble.pdb",
+      "@type": "FormalParameter",
+      "name": "mynolb_ensemble.pdb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mymake_gmx_ndx.ndx",
+      "@type": "FormalParameter",
+      "name": "mymake_gmx_ndx.ndx",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mynma_flexserv_nma_ensemble.log",
+      "@type": "FormalParameter",
+      "name": "mynma_flexserv_nma_ensemble.log",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mynma_flexserv_nma_ensemble.mdcrd",
+      "@type": "FormalParameter",
+      "name": "mynma_flexserv_nma_ensemble.mdcrd",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-_anonymous_output_1",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mycpptraj_disco_traj.trr",
+      "@type": "FormalParameter",
+      "name": "mycpptraj_disco_traj.trr",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-_anonymous_output_2",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mycpptraj_imods_ensemble.trr",
+      "@type": "FormalParameter",
+      "name": "mycpptraj_imods_ensemble.trr",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mycpptraj_flexserv_bd_rmsd.dat",
+      "@type": "FormalParameter",
+      "name": "mycpptraj_flexserv_bd_rmsd.dat",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mycpptraj_flexserv_bd_traj_fitted.trr",
+      "@type": "FormalParameter",
+      "name": "mycpptraj_flexserv_bd_traj_fitted.trr",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mycpptraj_flexserv_dmd_traj_fitted.trr",
+      "@type": "FormalParameter",
+      "name": "mycpptraj_flexserv_dmd_traj_fitted.trr",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mycpptraj_flexserv_dmd_rmsd.dat",
+      "@type": "FormalParameter",
+      "name": "mycpptraj_flexserv_dmd_rmsd.dat",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mycpptraj_nolb_rmsd.dat",
+      "@type": "FormalParameter",
+      "name": "mycpptraj_nolb_rmsd.dat",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mycpptraj_nolb_ensemble.trr",
+      "@type": "FormalParameter",
+      "name": "mycpptraj_nolb_ensemble.trr",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mycpptraj_flexserv_nma_rmsd.dat",
+      "@type": "FormalParameter",
+      "name": "mycpptraj_flexserv_nma_rmsd.dat",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mycpptraj_flexserv_nma_ensemble.trr",
+      "@type": "FormalParameter",
+      "name": "mycpptraj_flexserv_nma_ensemble.trr",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-concat_traj.zip",
+      "@type": "FormalParameter",
+      "name": "concat_traj.zip",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mytrjcat_concat_traj.trr",
+      "@type": "FormalParameter",
+      "name": "mytrjcat_concat_traj.trr",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mygmx_cluster.xvg",
+      "@type": "FormalParameter",
+      "name": "mygmx_cluster.xvg",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mygmx_cluster.log",
+      "@type": "FormalParameter",
+      "name": "mygmx_cluster.log",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mygmx_concat.cluster.pdb",
+      "@type": "FormalParameter",
+      "name": "mygmx_concat.cluster.pdb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mygmx_cluster.xpm",
+      "@type": "FormalParameter",
+      "name": "mygmx_cluster.xpm",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mycpptraj_meta_traj_rmsd.dat",
+      "@type": "FormalParameter",
+      "name": "mycpptraj_meta_traj_rmsd.dat",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mycpptraj_meta_traj_fitted.crd",
+      "@type": "FormalParameter",
+      "name": "mycpptraj_meta_traj_fitted.crd",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-_anonymous_output_3",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_3",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-_anonymous_output_4",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_4",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mypcz_report.json",
+      "@type": "FormalParameter",
+      "name": "mypcz_report.json",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mypcz_evecs.json",
+      "@type": "FormalParameter",
+      "name": "mypcz_evecs.json",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mypcz_proj1.crd",
+      "@type": "FormalParameter",
+      "name": "mypcz_proj1.crd",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mypcz_bfactor_all.dat",
+      "@type": "FormalParameter",
+      "name": "mypcz_bfactor_all.dat",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mypcz_bfactor_all.pdb",
+      "@type": "FormalParameter",
+      "name": "mypcz_bfactor_all.pdb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mypcz_stiffness.json",
+      "@type": "FormalParameter",
+      "name": "mypcz_stiffness.json",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mypcz_collectivity.json",
+      "@type": "FormalParameter",
+      "name": "mypcz_collectivity.json",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mypcz_hinges_bfactor_report.json",
+      "@type": "FormalParameter",
+      "name": "mypcz_hinges_bfactor_report.json",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-_anonymous_output_5",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_5",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mypcz_hinges_fcte_report.json",
+      "@type": "FormalParameter",
+      "name": "mypcz_hinges_fcte_report.json",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_ensembles_generation-outputs-mycpptraj_pcz_proj1.dcd",
+      "@type": "FormalParameter",
+      "name": "mycpptraj_pcz_proj1.dcd",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Galaxy Protein conformational ensembles generation</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/490/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/490/ro_crate?version=1</a>
+
+
+<p>
+  # Protein Conformational ensembles generation
+
+## Workflow included in the [ELIXIR 3D-Bioinfo](https://elixir-europe.org/communities/3d-bioinfo) Implementation Study:
+
+### Building on PDBe-KB to chart and characterize the conformation landscape of native proteins
+
+This tutorial aims to illustrate the process of generating **protein conformational ensembles** from** 3D structures **and analysing its **molecular flexibility**, step by step, using the **BioExcel Building Blocks library (biobb)**.
+
+## Conformational landscape of native proteins
+**Proteins** are **dynamic** systems that adopt multiple **conformational states**, a property essential for many **biological processes** (e.g. binding other proteins, nucleic acids, small molecule ligands, or switching between functionaly active and inactive states). Characterizing the different **conformational states** of proteins and the transitions between them is therefore critical for gaining insight into their **biological function** and can help explain the effects of genetic variants in **health** and **disease** and the action of drugs.
+
+**Structural biology** has become increasingly efficient in sampling the different **conformational states** of proteins. The **PDB** has currently archived more than **170,000 individual structures**, but over two thirds of these structures represent **multiple conformations** of the same or related protein, observed in different crystal forms, when interacting with other proteins or other macromolecules, or upon binding small molecule ligands. Charting this conformational diversity across the PDB can therefore be employed to build a useful approximation of the **conformational landscape** of native proteins.
+
+A number of resources and **tools** describing and characterizing various often complementary aspects of protein **conformational diversity** in known structures have been developed, notably by groups in Europe. These tools include algorithms with varying degree of sophistication, for aligning the 3D structures of individual protein chains or domains, of protein assemblies, and evaluating their degree of **structural similarity**. Using such tools one can **align structures pairwise**, compute the corresponding **similarity matrix**, and identify ensembles of **structures/conformations** with a defined **similarity level** that tend to recur in different PDB entries, an operation typically performed using **clustering** methods. Such workflows are at the basis of resources such as **CATH, Contemplate, or PDBflex** that offer access to **conformational ensembles** comprised of similar **conformations** clustered according to various criteria. Other types of tools focus on differences between **protein conformations**, identifying regions of proteins that undergo large **collective displacements** in different PDB entries, those that act as **hinges or linkers**, or regions that are inherently **flexible**.
+
+To build a meaningful approximation of the **conformational landscape** of native proteins, the **conformational ensembles** (and the differences between them), identified on the basis of **structural similarity/dissimilarity** measures alone, need to be **biophysically characterized**. This may be approached at **two different levels**. 
+- At the **biological level**, it is important to link observed **conformational ensembles**, to their **functional roles** by evaluating the correspondence with **protein family classifications** based on sequence information and **functional annotations** in public databases e.g. Uniprot, PDKe-Knowledge Base (KB). These links should provide valuable mechanistic insights into how the **conformational and dynamic properties** of proteins are exploited by evolution to regulate their **biological function**. <br><br>
+
+- At the **physical level** one needs to introduce **energetic consideration** to evaluate the likelihood that the identified **conformational ensembles** represent **conformational states** that the protein (or domain under study) samples in isolation. Such evaluation is notoriously **challenging** and can only be roughly approximated by using **computational methods** to evaluate the extent to which the observed **conformational ensembles** can be reproduced by algorithms that simulate the **dynamic behavior** of protein systems. These algorithms include the computationally expensive **classical molecular dynamics (MD) simulations** to sample local thermal fluctuations but also faster more approximate methods such as **Elastic Network Models** and **Normal Node Analysis** (NMA) to model low energy **collective motions**. Alternatively, **enhanced sampling molecular dynamics** can be used to model complex types of **conformational changes** but at a very high computational cost. 
+
+The **ELIXIR 3D-Bioinfo Implementation Study** *Building on PDBe-KB to chart and characterize the conformation landscape of native proteins* focuses on:
+
+1. Mapping the **conformational diversity** of proteins and their homologs across the PDB. 
+2. Characterize the different **flexibility properties** of protein regions, and link this information to sequence and functional annotation.
+3. Benchmark **computational methods** that can predict a biophysical description of protein motions.
+
+This notebook is part of the third objective, where a list of **computational resources** that are able to predict **protein flexibility** and **conformational ensembles** have been collected, evaluated, and integrated in reproducible and interoperable workflows using the **BioExcel Building Blocks library**. Note that the list is not meant to be exhaustive, it is built following the expertise of the implementation study partners.
+
+***
+
+## Copyright &amp; Licensing
+This software has been developed in the [MMB group](http://mmb.irbbarcelona.org) at the [BSC](http://www.bsc.es/) &amp; [IRB](https://www.irbbarcelona.org/) for the [European BioExcel](http://bioexcel.eu/), funded by the European Commission (EU H2020 [823830](http://cordis.europa.eu/projects/823830), EU H2020 [675728](http://cordis.europa.eu/projects/675728)).
+
+* (c) 2015-2023 [Barcelona Supercomputing Center](https://www.bsc.es/)
+* (c) 2015-2023 [Institute for Research in Biomedicine](https://www.irbbarcelona.org/)
+
+Licensed under the
+[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0), see the file LICENSE for details.
+
+![](https://bioexcel.eu/wp-content/uploads/2019/04/Bioexcell_logo_1080px_transp.png "Bioexcel")
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://orcid.org/0000-0002-8291-8071" target="_blank">Adam Hospital</a>, <a href="https://orcid.org/0000-0003-0513-0288" target="_blank">Genís Bayarri</a></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>other-open</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_biobb_wf_flexdyn.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="biobb_wf_flexdyn.ga">Galaxy Protein conformational ensembles generation</a>
+      
+        <br/>Size: 92310 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/galaxy/README.md">
+      
+      
+      
+      <a class="data-entity-link" href="https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/galaxy/README.md">https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/galaxy/README.md</a>
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+cwl:tool: ../../workflows/workflow_metagenomics_assembly.cwl
+identifier: hybrid_TEST
+threads: 8
+memory: 4000
+run_spades: true
+run_flye: true
+binning: false
+metagenome: true
+keep_filtered_reads: true
+ont_basecall_model: r941_min_hac_g507
+nanopore_reads:
+   - class: File
+     path: http://download.systemsbiology.nl/unlock/cwl/test_data/long_reads_high_depth.fastq.gz
+illumina_forward_reads:
+   - class: File
+     path: http://download.systemsbiology.nl/unlock/cwl/test_data/short_reads_1.fastq.gz
+illumina_reverse_reads:
+   - class: File
+     path: http://download.systemsbiology.nl/unlock/cwl/test_data/short_reads_2.fastq.gz
+
+filter_references:
+   - class: File
+     path: http://download.systemsbiology.nl/unlock/cwl/test_data/human_small.fa.gz
+#kraken2_database:
+#   - class: Directory
+#     path: /unlock/references/databases/Kraken2/k2_standard_08gb_20230314

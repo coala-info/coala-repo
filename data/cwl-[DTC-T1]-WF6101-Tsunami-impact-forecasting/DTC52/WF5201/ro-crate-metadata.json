@@ -1,0 +1,732 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ],
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/process/0.4",
+      "@type": "CreativeWork",
+      "name": "Process Run Crate",
+      "version": "0.4"
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/workflow/0.4",
+      "@type": "CreativeWork",
+      "name": "Workflow Run Crate",
+      "version": "0.4"
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
+      "@type": "CreativeWork",
+      "name": "Workflow RO-Crate",
+      "version": "1.0"
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl",
+      "@type": "ComputerLanguage",
+      "identifier": "https://www.commonwl.org/",
+      "name": "Common Workflow Language",
+      "url": "https://www.commonwl.org/"
+    },
+    {
+      "@id": "https://ror.org/01nsd7y51",
+      "@type": "Organization",
+      "name": "Geosciences Barcelona"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-0677-6366",
+      "@type": "Person",
+      "name": "Arnau Folch",
+      "affiliation": {
+        "@id": "https://ror.org/01nsd7y51"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "Volcanic ash dispersal and deposition",
+      "datePublished": "2025-01-01",
+      "description": "N/A",
+      "license": "https://spdx.org/licenses/GPL-3.0-or-later.html",
+      "publisher": {
+        "@id": "https://ror.org/01nsd7y51"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/wfrun/process/0.4"
+        },
+        {
+          "@id": "https://w3id.org/ro/wfrun/workflow/0.4"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ],
+      "hasPart": [
+        {
+          "@id": "WF5201.cwl"
+        },
+        {
+          "@id": "DT5210/"
+        },
+        {
+          "@id": "DT5202/"
+        },
+        {
+          "@id": "DT5207/"
+        },
+        {
+          "@id": "DT5208/"
+        },
+        {
+          "@id": "DT5203/"
+        },
+        {
+          "@id": "DT5204/"
+        },
+        {
+          "@id": "DT5209/"
+        },
+        {
+          "@id": "DT5201/"
+        },
+        {
+          "@id": "DT5205/"
+        },
+        {
+          "@id": "DT5206/"
+        },
+        {
+          "@id": "ST520101.cwl"
+        },
+        {
+          "@id": "SS5203"
+        },
+        {
+          "@id": "SS5204"
+        },
+        {
+          "@id": "SS5213"
+        },
+        {
+          "@id": "SS5202"
+        },
+        {
+          "@id": "SS5208"
+        },
+        {
+          "@id": "SS5210"
+        },
+        {
+          "@id": "SS5206"
+        },
+        {
+          "@id": "SS5209"
+        },
+        {
+          "@id": "SS5205"
+        },
+        {
+          "@id": "SS5207"
+        },
+        {
+          "@id": "SS5211"
+        },
+        {
+          "@id": "SS5212"
+        },
+        {
+          "@id": "SS5214"
+        },
+        {
+          "@id": "SS5215"
+        }
+      ],
+      "mainEntity": {
+        "@id": "WF5201.cwl"
+      }
+    },
+    {
+      "@id": "WF5201.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "name": "Volcanic ash dispersal and deposition",
+      "publisher": {
+        "@id": "https://ror.org/01nsd7y51"
+      },
+      "programmingLanguage": {
+        "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl"
+      },
+      "input": [
+        {
+          "@id": "#DT5210->WF5201"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#WF5201->DT5201"
+        },
+        {
+          "@id": "#WF5201->DT5202"
+        },
+        {
+          "@id": "#WF5201->DT5207"
+        },
+        {
+          "@id": "#WF5201->DT5208"
+        },
+        {
+          "@id": "#WF5201->DT5203"
+        },
+        {
+          "@id": "#WF5201->DT5204"
+        },
+        {
+          "@id": "#WF5201->DT5205"
+        },
+        {
+          "@id": "#WF5201->DT5206"
+        },
+        {
+          "@id": "#WF5201->DT5209"
+        }
+      ]
+    },
+    {
+      "@id": "#DT5210->WF5201",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "workExample": {
+        "@id": "DT5210/"
+      },
+      "name": "DT5210",
+      "valueRequired": true
+    },
+    {
+      "@id": "#WF5201->DT5203",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "workExample": {
+        "@id": "DT5203/"
+      },
+      "name": "DT5203",
+      "valueRequired": true
+    },
+    {
+      "@id": "#WF5201->DT5204",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "workExample": {
+        "@id": "DT5204/"
+      },
+      "name": "DT5204",
+      "valueRequired": true
+    },
+    {
+      "@id": "#WF5201->DT5201",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "workExample": {
+        "@id": "DT5201/"
+      },
+      "name": "DT5201",
+      "valueRequired": true
+    },
+    {
+      "@id": "#WF5201->DT5202",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "workExample": {
+        "@id": "DT5202/"
+      },
+      "name": "DT5202",
+      "valueRequired": true
+    },
+    {
+      "@id": "#WF5201->DT5207",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "workExample": {
+        "@id": "DT5207/"
+      },
+      "name": "DT5207",
+      "valueRequired": true
+    },
+    {
+      "@id": "#WF5201->DT5208",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "workExample": {
+        "@id": "DT5208/"
+      },
+      "name": "DT5208",
+      "valueRequired": true
+    },
+    {
+      "@id": "#WF5201->DT5205",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "workExample": {
+        "@id": "DT5205/"
+      },
+      "name": "DT5205",
+      "valueRequired": true
+    },
+    {
+      "@id": "#WF5201->DT5206",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "workExample": {
+        "@id": "DT5206/"
+      },
+      "name": "DT5206",
+      "valueRequired": true
+    },
+    {
+      "@id": "#WF5201->DT5209",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "workExample": {
+        "@id": "DT5209/"
+      },
+      "name": "DT5209",
+      "valueRequired": true
+    },
+    {
+      "@id": "SS5214",
+      "@type": "SoftwareSourceCode",
+      "name": "Postp",
+      "description": "Calls different microservices to postprocess the FALL3D results",
+      "author": {
+        "@id": "0000-0002-0677-6366"
+      },
+      "license": "GPL-3.0-or-later",
+      "programmingLanguage": "Python",
+      "url": "TODO: add the url to the software definition from the EPOS APIs"
+    },
+    {
+      "@id": "SS5215",
+      "@type": "SoftwareSourceCode",
+      "name": "Postp-Maps",
+      "description": "Generates pre-defined maps from the FALL3D results",
+      "author": {
+        "@id": "0000-0002-0677-6366"
+      },
+      "license": "GPL-3.0-or-later",
+      "programmingLanguage": "Python",
+      "url": "TODO: add the url to the software definition from the EPOS APIs"
+    },
+    {
+      "@id": "SS5205",
+      "@type": "SoftwareSourceCode",
+      "name": "MET-get-IFS",
+      "description": "Get domain crop and time stamp from MET-listener Download IFS data (forecast) from data provider agency",
+      "author": {
+        "@id": "0000-0002-0677-6366"
+      },
+      "license": "GPL-3.0-or-later",
+      "programmingLanguage": "Python",
+      "url": "TODO: add the url to the software definition from the EPOS APIs"
+    },
+    {
+      "@id": "SS5207",
+      "@type": "SoftwareSourceCode",
+      "name": "ESP-Listener",
+      "description": "Permanently running in the background. This component continuously queries different data sources to check the start (or evolution) of an eruption and to get some mandatory Eruption source Parameters (ESP) In case of new info, invoke DAL to archive ESP data locally and update status Invoke the Trigger workflow component",
+      "author": {
+        "@id": "0000-0002-0677-6366"
+      },
+      "license": "GPL-3.0-or-later",
+      "programmingLanguage": "Python",
+      "url": "TODO: add the url to the software definition from the EPOS APIs"
+    },
+    {
+      "@id": "SS5211",
+      "@type": "SoftwareSourceCode",
+      "name": "ESP-SACS",
+      "description": "Example of satellite-based data stream from subscription to the SACS operational service.",
+      "author": {
+        "@id": "0000-0002-0677-6366"
+      },
+      "license": "GPL-3.0-or-later",
+      "programmingLanguage": "Python",
+      "url": "TODO: add the url to the software definition from the EPOS APIs"
+    },
+    {
+      "@id": "SS5212",
+      "@type": "SoftwareSourceCode",
+      "name": "Trigger",
+      "description": "Activated when new information from ESP-Listener exists (for the volcano at stack). Contains all the logics to decide if a new forecast has to be launched (first time), re-launched (new relevant data available), re-started (e.g. long-lasting events), etc. Ranks the different types of ESP available, and configures the FALL3D.inp file accordingly Invoke DAL to upload the FALL3D input file to the HPC system(s) and run FALL3D",
+      "author": {
+        "@id": "0000-0002-0677-6366"
+      },
+      "license": "GPL-3.0-or-later",
+      "programmingLanguage": "Python",
+      "url": "TODO: add the url to the software definition from the EPOS APIs"
+    },
+    {
+      "@id": "ST520101.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "name": "Data Access Layer (DAL)",
+      "author": {
+        "@id": "0000-0002-0677-6366"
+      },
+      "programmingLanguage": "https://about.workflowhub.eu/Workflow-RO-Crate/#cwl",
+      "input": [
+        {
+          "@id": "#DT5210->ST520101.cwl"
+        },
+        {
+          "@id": "#DT5202->ST520101.cwl"
+        },
+        {
+          "@id": "#DT5203->ST520101.cwl"
+        },
+        {
+          "@id": "#DT5204->ST520101.cwl"
+        },
+        {
+          "@id": "#DT5205->ST520101.cwl"
+        },
+        {
+          "@id": "#DT5206->ST520101.cwl"
+        },
+        {
+          "@id": "#DT5207->ST520101.cwl"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#ST520101.cwl->DT5201"
+        }
+      ]
+    },
+    {
+      "@id": "#DT5210->ST520101.cwl",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "workExample": {
+        "@id": "DT5210/"
+      },
+      "name": "DT5210",
+      "valueRequired": true
+    },
+    {
+      "@id": "#DT5202->ST520101.cwl",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "workExample": {
+        "@id": "DT5202/"
+      },
+      "name": "DT5202",
+      "valueRequired": true
+    },
+    {
+      "@id": "#DT5203->ST520101.cwl",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "workExample": {
+        "@id": "DT5203/"
+      },
+      "name": "DT5203",
+      "valueRequired": true
+    },
+    {
+      "@id": "#DT5204->ST520101.cwl",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "workExample": {
+        "@id": "DT5204/"
+      },
+      "name": "DT5204",
+      "valueRequired": true
+    },
+    {
+      "@id": "#DT5205->ST520101.cwl",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "workExample": {
+        "@id": "DT5205/"
+      },
+      "name": "DT5205",
+      "valueRequired": true
+    },
+    {
+      "@id": "#DT5206->ST520101.cwl",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "workExample": {
+        "@id": "DT5206/"
+      },
+      "name": "DT5206",
+      "valueRequired": true
+    },
+    {
+      "@id": "#DT5207->ST520101.cwl",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "workExample": {
+        "@id": "DT5207/"
+      },
+      "name": "DT5207",
+      "valueRequired": true
+    },
+    {
+      "@id": "#ST520101.cwl->DT5201",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "workExample": {
+        "@id": "DT5201/"
+      },
+      "name": "DT5201",
+      "valueRequired": true
+    },
+    {
+      "@id": "SS5201",
+      "@type": "SoftwareSourceCode",
+      "name": "Data Access Layer (DAL)",
+      "description": "Interact with intermediate information like status of the workflow components, setup of the components, execution metadata, data location, etc (status information stored in a database or in a json log file) Manage data transfer and authentication Manage local storage processes (archive) Interact with the Frontend component (dashboard) for real-time update Interact with EPOS",
+      "author": {
+        "@id": "0000-0002-0677-6366"
+      },
+      "license": "GPL-3.0-or-later",
+      "programmingLanguage": "Python",
+      "url": "TODO: add the url to the software definition from the EPOS APIs"
+    },
+    {
+      "@id": "SS5202",
+      "@type": "SoftwareSourceCode",
+      "name": "MET-listener",
+      "description": "Activated at specific times (e.g. daily at 06:00 am). This component runs independent of the triggering if the rest of the workflow Read domain configuration data and time span (json config file) Call a given MET-get micro service among different options Merge single data files into 1 netCDF (met.nc) Check download status/termination and inform DAL for workflow log file update Invoke DAL to upload the met file data to the HPC system(s) and, eventually, archive met data locally",
+      "author": {
+        "@id": "0000-0002-0677-6366"
+      },
+      "license": "GPL-3.0-or-later",
+      "programmingLanguage": [
+        "Python",
+        "bash"
+      ],
+      "url": "TODO: add the url to the software definition from the EPOS APIs"
+    },
+    {
+      "@id": "SS5209",
+      "@type": "SoftwareSourceCode",
+      "name": "ESP-VONA",
+      "description": "At present, VONA is send by email and posted in web sites. The AFS (Aeronautic Fixed Service) is still under implementation. The script must be able to check if a new VONA has been posted in the web",
+      "author": {
+        "@id": "0000-0002-0677-6366"
+      },
+      "license": "GPL-3.0-or-later",
+      "programmingLanguage": "Python",
+      "url": "TODO: add the url to the software definition from the EPOS APIs"
+    },
+    {
+      "@id": "SS5210",
+      "@type": "SoftwareSourceCode",
+      "name": "ESP-SVO",
+      "author": {
+        "@id": "0000-0002-0677-6366"
+      },
+      "license": "GPL-3.0-or-later",
+      "programmingLanguage": "Python",
+      "url": "TODO: add the url to the software definition from the EPOS APIs"
+    },
+    {
+      "@id": "SS5203",
+      "@type": "SoftwareSourceCode",
+      "name": "MET-Forecaster_mode",
+      "description": "This option allows a user (forecaster) to configure meteo data download manually, including domain crop and time stamp or add a meteo file manually (e.g. WRF) Not only for the future events, but also the past meteo data (reanalysis)",
+      "author": {
+        "@id": "0000-0002-0677-6366"
+      },
+      "license": "GPL-3.0-or-later",
+      "programmingLanguage": "Python",
+      "url": "TODO: add the url to the software definition from the EPOS APIs"
+    },
+    {
+      "@id": "SS5204",
+      "@type": "SoftwareSourceCode",
+      "name": "MET-get-GFS",
+      "description": "Get domain crop and time stamp from MET-listener Download GFS data (forecast) from data provider agency",
+      "author": {
+        "@id": "0000-0002-0677-6366"
+      },
+      "license": "GPL-3.0-or-later",
+      "programmingLanguage": [
+        "Python",
+        "bash"
+      ],
+      "url": "TODO: add the url to the software definition from the EPOS APIs"
+    },
+    {
+      "@id": "SS5206",
+      "@type": "SoftwareSourceCode",
+      "name": "MET-get-ERA5",
+      "description": "Get domain crop and time stamp from MET-listener Download ERA data (reanalysis) from data provider agency",
+      "author": {
+        "@id": "0000-0002-0677-6366"
+      },
+      "license": "GPL-3.0-or-later",
+      "programmingLanguage": "Python",
+      "url": "TODO: add the url to the software definition from the EPOS APIs"
+    },
+    {
+      "@id": "SS5208",
+      "@type": "SoftwareSourceCode",
+      "name": "ESP-Forecaster_mode",
+      "description": "Allows a user to configure the FALL3D input file manually and trigger the workflow. Higher-priority trigger in case no data is available or for what if scenarios not driven by data streams",
+      "author": {
+        "@id": "0000-0002-0677-6366"
+      },
+      "license": "GPL-3.0-or-later",
+      "programmingLanguage": "Python",
+      "url": "TODO: add the url to the software definition from the EPOS APIs"
+    },
+    {
+      "@id": "SS5213",
+      "@type": "SoftwareSourceCode",
+      "name": "FALL3D code",
+      "description": "FALL3D is a 3D model for atmospheric passive transport and deposition of particles, aerosols, and radionuclides. The outputs correspond to an automatically triggered ongoing eruption or a simulation done by  user",
+      "author": {
+        "@id": "0000-0002-0677-6366"
+      },
+      "license": "GPL-3.0-or-later",
+      "programmingLanguage": "Fortran-90",
+      "url": "TODO: add the url to the software definition from the EPOS APIs"
+    },
+    {
+      "@id": "DT5202/",
+      "@type": "Dataset",
+      "name": "Global Forecast System (GFS) ",
+      "url": "https://ics-c.epos-ip.org/development/k8s-epos-deploy/dt-geo/api/v1/resources/details/90ac6544-573c-4611-9ea5-0deb7f8b524a"
+    },
+    {
+      "@id": "DT5203/",
+      "@type": "Dataset",
+      "name": "IFS Forecast",
+      "url": "https://ics-c.epos-ip.org/development/k8s-epos-deploy/dt-geo/api/v1/resources/details/38218c3b-99ea-4dca-a792-a33195ae0740"
+    },
+    {
+      "@id": "DT5204/",
+      "@type": "Dataset",
+      "name": "ERA-5 re-analysis",
+      "url": "https://ics-c.epos-ip.org/development/k8s-epos-deploy/dt-geo/api/v1/resources/details/c1740c80-4c09-4fc7-a0e4-4e863fc700f7"
+    },
+    {
+      "@id": "DT5205/",
+      "@type": "Dataset",
+      "name": "Volcano Observatory Notice for Aviation (VONA)",
+      "url": "https://ics-c.epos-ip.org/development/k8s-epos-deploy/dt-geo/api/v1/resources/details/0e8c2227-3807-4d69-82c0-31ffebf6dbf1?extended=true"
+    },
+    {
+      "@id": "DT5206/",
+      "@type": "Dataset",
+      "name": "SVO time series",
+      "url": "https://ics-c.epos-ip.org/development/k8s-epos-deploy/dt-geo/api/v1/resources/details/6e9ddd8a-0d9d-4479-a04c-af45c8c4aefa"
+    },
+    {
+      "@id": "DT5201/",
+      "@type": "Dataset",
+      "name": "Workflow log file",
+      "url": "https://ics-c.epos-ip.org/development/k8s-epos-deploy/dt-geo/api/v1/resources/details/bf1c6182-3cbd-4ca4-aeb5-daf23b72d145"
+    },
+    {
+      "@id": "DT5207/",
+      "@type": "Dataset",
+      "name": "Support to Aviation Control Service (SACS)",
+      "url": "https://ics-c.epos-ip.org/development/k8s-epos-deploy/dt-geo/api/v1/resources/details/ea45cb50-a4a7-4894-8157-b89b272fec66"
+    },
+    {
+      "@id": "DT5210/",
+      "@type": "Dataset",
+      "name": "project .inp files",
+      "url": "https://ics-c.epos-ip.org/development/k8s-epos-deploy/dt-geo/api/v1/resources/details/2eeaa1a5-195b-4ab6-9ca7-c2a2f1609ec7"
+    },
+    {
+      "@id": "DT5208/",
+      "@type": "Dataset",
+      "name": "FALL3D resultsfile",
+      "url": "https://ics-c.epos-ip.org/development/k8s-epos-deploy/dt-geo/api/v1/resources/details/5cace1fd-c9fc-4708-81ec-c1018424be42"
+    },
+    {
+      "@id": "DT5209/",
+      "@type": "Dataset",
+      "name": "FALL3D map file",
+      "url": "https://ics-c.epos-ip.org/development/k8s-epos-deploy/dt-geo/api/v1/resources/details/a5a38da3-1d9b-43da-afff-1567af8eb6b7"
+    }
+  ]
+}

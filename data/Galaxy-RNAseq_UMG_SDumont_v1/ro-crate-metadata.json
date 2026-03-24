@@ -1,0 +1,314 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-RNAseq_UMG_SDumont_v1.ga"
+      },
+      "datePublished": "2022-12-06 19:20:16 +0000",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-2151-7418"
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.412.1",
+      "url": "https://workflowhub.eu/workflows/412/ro_crate?version=1",
+      "name": "Research Object Crate for RNAseq_UMG_SDumont_v1",
+      "description": "RNAseq workflow UMG: Here we introduce a scientific workflow implementing several open-source software executed by Galaxy parallel scripting language in an high-performance computing environment. We have applied the workflow to a single-cardiomyocyte RNA-seq data retrieved from Gene Expression Omnibus database. The workflow allows for the analysis (alignment, QC, sort and count reads, statistics generation) of raw RNA-seq data and seamless integration of differential expression results into a configurable script code.\n",
+      "sdDatePublished": "2026-03-24 18:01:07 +0000",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-RNAseq_UMG_SDumont_v1.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-RNAseq_UMG_SDumont_v1.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 19967,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "RNAseq workflow UMG: Here we introduce a scientific workflow implementing several open-source software executed by Galaxy parallel scripting language in an high-performance computing environment. We have applied the workflow to a single-cardiomyocyte RNA-seq data retrieved from Gene Expression Omnibus database. The workflow allows for the analysis (alignment, QC, sort and count reads, statistics generation) of raw RNA-seq data and seamless integration of differential expression results into a configurable script code.\n",
+      "name": "RNAseq_UMG_SDumont_v1",
+      "url": "https://workflowhub.eu/workflows/412?version=1",
+      "keywords": "",
+      "version": 1,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "creator": {
+        "@id": "https://workflowhub.eu/people/296"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/115"
+      },
+      "dateCreated": "2022-12-06T19:22:16Z",
+      "dateModified": "2023-02-13T14:05:45Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.412.1",
+      "input": [
+        {
+          "@id": "#rnaseq_umg_sdumont_v1-inputs-GTF%20File"
+        },
+        {
+          "@id": "#rnaseq_umg_sdumont_v1-inputs-KO%20Fastq%20Files"
+        },
+        {
+          "@id": "#rnaseq_umg_sdumont_v1-inputs-WT%20Fastq%20Files"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#rnaseq_umg_sdumont_v1-outputs-_anonymous_output_4"
+        },
+        {
+          "@id": "#rnaseq_umg_sdumont_v1-outputs-_anonymous_output_5"
+        },
+        {
+          "@id": "#rnaseq_umg_sdumont_v1-outputs-_anonymous_output_6"
+        },
+        {
+          "@id": "#rnaseq_umg_sdumont_v1-outputs-_anonymous_output_7"
+        },
+        {
+          "@id": "#rnaseq_umg_sdumont_v1-outputs-_anonymous_output_8"
+        },
+        {
+          "@id": "#rnaseq_umg_sdumont_v1-outputs-_anonymous_output_9"
+        },
+        {
+          "@id": "#rnaseq_umg_sdumont_v1-outputs-_anonymous_output_10"
+        },
+        {
+          "@id": "#rnaseq_umg_sdumont_v1-outputs-_anonymous_output_11"
+        },
+        {
+          "@id": "#rnaseq_umg_sdumont_v1-outputs-_anonymous_output_12"
+        },
+        {
+          "@id": "#rnaseq_umg_sdumont_v1-outputs-_anonymous_output_13"
+        },
+        {
+          "@id": "#rnaseq_umg_sdumont_v1-outputs-_anonymous_output_14"
+        },
+        {
+          "@id": "#rnaseq_umg_sdumont_v1-outputs-_anonymous_output_15"
+        },
+        {
+          "@id": "#rnaseq_umg_sdumont_v1-outputs-_anonymous_output_16"
+        },
+        {
+          "@id": "#rnaseq_umg_sdumont_v1-outputs-_anonymous_output_17"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-2151-7418",
+      "@type": "Person",
+      "name": "Kary Ocaña",
+      "identifier": "https://orcid.org/0000-0002-2151-7418"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/296",
+      "@type": "Person",
+      "name": "Kary Ocaña"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/115",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "ParslRNA-Seq: an efficient and scalable RNAseq analysis workflow for studies of differentiated gene expression"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#rnaseq_umg_sdumont_v1-inputs-GTF File",
+      "@type": "FormalParameter",
+      "name": "GTF File",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#rnaseq_umg_sdumont_v1-inputs-KO Fastq Files",
+      "@type": "FormalParameter",
+      "name": "KO Fastq Files",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#rnaseq_umg_sdumont_v1-inputs-WT Fastq Files",
+      "@type": "FormalParameter",
+      "name": "WT Fastq Files",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#rnaseq_umg_sdumont_v1-outputs-_anonymous_output_4",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_4",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#rnaseq_umg_sdumont_v1-outputs-_anonymous_output_5",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_5",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#rnaseq_umg_sdumont_v1-outputs-_anonymous_output_6",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_6",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#rnaseq_umg_sdumont_v1-outputs-_anonymous_output_7",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_7",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#rnaseq_umg_sdumont_v1-outputs-_anonymous_output_8",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_8",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#rnaseq_umg_sdumont_v1-outputs-_anonymous_output_9",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_9",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#rnaseq_umg_sdumont_v1-outputs-_anonymous_output_10",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_10",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#rnaseq_umg_sdumont_v1-outputs-_anonymous_output_11",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_11",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#rnaseq_umg_sdumont_v1-outputs-_anonymous_output_12",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_12",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#rnaseq_umg_sdumont_v1-outputs-_anonymous_output_13",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_13",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#rnaseq_umg_sdumont_v1-outputs-_anonymous_output_14",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_14",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#rnaseq_umg_sdumont_v1-outputs-_anonymous_output_15",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_15",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#rnaseq_umg_sdumont_v1-outputs-_anonymous_output_16",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_16",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#rnaseq_umg_sdumont_v1-outputs-_anonymous_output_17",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_17",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

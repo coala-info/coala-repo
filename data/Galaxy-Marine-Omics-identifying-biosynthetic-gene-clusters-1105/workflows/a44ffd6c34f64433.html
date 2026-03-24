@@ -1,0 +1,129 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <title>Galaxy Workflow</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.9.4/cytoscape.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1.14.7/dist/umd/popper.js"></script>
+    <script src="https://unpkg.com/tippy.js@4.0.1/umd/index.all.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@4.0.1/index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/cytoscape-popper@1.0.4/cytoscape-popper.min.js"></script>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    var cy = cytoscape({
+        container: document.getElementById('cy'),
+        elements: [{"group": "nodes", "data": {"id": "Fasta nucelotide file", "label": "Fasta nucelotide file", "doc": "BGC0001472.fna", "tool_id": null, "step_type": "data", "repo_link": null}, "classes": ["type_data", "input"], "position": {"x": 0, "y": 237}}, {"group": "nodes", "data": {"id": "Prodigal Gene Predictor ", "label": "Prodigal Gene Predictor ", "doc": "Create the protein fasta file", "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/prodigal/prodigal/2.6.3+galaxy0", "step_type": "tool", "repo_link": null}, "classes": ["type_tool", "runnable"], "position": {"x": 250, "y": 441}}, {"group": "edges", "data": {"id": "Prodigal Gene Predictor __to__Fasta nucelotide file", "source": "Fasta nucelotide file", "target": "Prodigal Gene Predictor ", "input": "input_fa", "output": null}}, {"group": "nodes", "data": {"id": "Sanntis: Build Genbank ", "label": "Sanntis: Build Genbank ", "doc": "Use of Sanntis", "tool_id": "toolshed.g2.bx.psu.edu/repos/ecology/sanntis_marine/sanntis_marine/0.9.3.5+galaxy1", "step_type": "tool", "repo_link": null}, "classes": ["type_tool", "runnable"], "position": {"x": 715, "y": 236}}, {"group": "edges", "data": {"id": "Sanntis: Build Genbank __to__Fasta nucelotide file", "source": "Fasta nucelotide file", "target": "Sanntis: Build Genbank ", "input": "selection|input_nuc", "output": null}}, {"group": "edges", "data": {"id": "Sanntis: Build Genbank __to__Prodigal Gene Predictor ", "source": "Prodigal Gene Predictor ", "target": "Sanntis: Build Genbank ", "input": "selection|input_prot", "output": "output_faa"}}, {"group": "nodes", "data": {"id": "Regex Find And Replace", "label": "Regex Find And Replace", "doc": "Remove useless * in the protein fasta file", "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regex1/1.0.3", "step_type": "tool", "repo_link": null}, "classes": ["type_tool", "runnable"], "position": {"x": 590, "y": 608}}, {"group": "edges", "data": {"id": "Regex Find And Replace__to__Prodigal Gene Predictor ", "source": "Prodigal Gene Predictor ", "target": "Regex Find And Replace", "input": "input", "output": "output_faa"}}, {"group": "nodes", "data": {"id": " InterProScan", "label": " InterProScan", "doc": "Create TSV file for Sanntis", "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/interproscan/interproscan/5.59-91.0+galaxy3", "step_type": "tool", "repo_link": null}, "classes": ["type_tool", "runnable"], "position": {"x": 888, "y": 606}}, {"group": "edges", "data": {"id": " InterProScan__to__Regex Find And Replace", "source": "Regex Find And Replace", "target": " InterProScan", "input": "input", "output": "out_file1"}}, {"group": "nodes", "data": {"id": "Sanntis: identify biosynthetic gene clusters", "label": "Sanntis: identify biosynthetic gene clusters", "doc": null, "tool_id": "toolshed.g2.bx.psu.edu/repos/ecology/sanntis_marine/sanntis_marine/0.9.3.5+galaxy1", "step_type": "tool", "repo_link": null}, "classes": ["type_tool", "runnable"], "position": {"x": 1151, "y": 319}}, {"group": "edges", "data": {"id": "Sanntis: identify biosynthetic gene clusters__to__Sanntis: Build Genbank ", "source": "Sanntis: Build Genbank ", "target": "Sanntis: identify biosynthetic gene clusters", "input": "selection|input_genbank", "output": "output_sanntis_gb"}}, {"group": "edges", "data": {"id": "Sanntis: identify biosynthetic gene clusters__to__ InterProScan", "source": " InterProScan", "target": "Sanntis: identify biosynthetic gene clusters", "input": "selection|input_interpro", "output": "outfile_tsv"}}],
+        layout: {
+            name: 'preset'
+        },
+        // so we can see the ids
+        style: [
+            {
+                selector: 'node',
+                style: {
+                    'label': 'data(label)'
+                }
+            },
+            {
+                selector: 'edge',
+                style: {
+                    'curve-style': 'bezier',
+                    'target-arrow-shape': 'vee',
+                    'arrow-scale': 2
+                }
+            },
+            {
+                selector: ".input",
+                style: {
+                    shape: 'diamond',
+                    'background-color': '#d0bb46'
+                }
+            },
+            {
+                selector: ".runnable",
+                style: {
+                    shape: 'round-rectangle',
+                    'background-color': '#2c3143'
+                }
+            }
+        ]
+      });
+
+  function makePopper(ele) {
+    let ref = ele.popperRef(); // used only for positioning
+
+    ele.tippy = new tippy(ref, { // tippy options:
+      content: function() {
+        let content = document.createElement('div');
+
+        let innerHTML = '';
+        if(ele.isNode()) {
+            let stepType = ele.data("step_type");
+            innerHTML +=  "<p><i>Step Type:</i> " + stepType + "</p>";
+            let toolId = ele.data("tool_id");
+            if (toolId) {
+                innerHTML +=  "<p><i>ToolID:</i> " + toolId + "</p>";
+            }
+            let repoLink = ele.data("repo_link");
+            if (repoLink) {
+                innerHTML += "<a href=" + repoLink + '">Visit Tool Shed Repository</a>';
+            }
+            let doc = ele.data('doc');
+            if (doc) {
+                innerHTML += "<p>" + doc + "</p>";
+            }
+        } else {
+            let output = ele.data("output");
+            let input = ele.data("input");
+            if(output) {
+                innerHTML += "Output named " + output + " connects to " + input;
+            } else {
+                innerHTML += "Connected to input " + input;
+            }
+        }
+        content.innerHTML = innerHTML;
+
+        return content;
+      },
+      delay: [0,1000],
+      interactive: true,
+      placement: 'bottom',
+      trigger: 'manual' // probably want manual mode
+    });
+  }
+
+ cy.ready(function() {
+    cy.elements().forEach(function(ele) {
+      makePopper(ele);
+    });
+  });
+
+  cy.elements().unbind('mouseover');
+  cy.elements().bind('mouseover', function(event) { event.target.tippy.show(); });
+
+  cy.elements().unbind('mouseout');
+  cy.elements().bind('mouseout', function(event) { event.target.tippy.hide(); });
+  // document.querySelector('#cypng').setAttribute('src', cy.png());
+});
+
+    </script>
+</head>
+
+<style>
+    #cy {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+    a { 
+        color: #d0bb46
+    }
+</style>
+
+<body>
+    <div id="cy"></div>
+</body>
+</html>

@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>generic-non-segmented-viral-variant-calling/main</title>
+  <script type="application/ld+json">{
+  "@context": [
+    "https://w3id.org/ro/crate/1.1/context",
+    {
+      "GithubService": "https://w3id.org/ro/terms/test#GithubService",
+      "JenkinsService": "https://w3id.org/ro/terms/test#JenkinsService",
+      "PlanemoEngine": "https://w3id.org/ro/terms/test#PlanemoEngine",
+      "TestDefinition": "https://w3id.org/ro/terms/test#TestDefinition",
+      "TestInstance": "https://w3id.org/ro/terms/test#TestInstance",
+      "TestService": "https://w3id.org/ro/terms/test#TestService",
+      "TestSuite": "https://w3id.org/ro/terms/test#TestSuite",
+      "TravisService": "https://w3id.org/ro/terms/test#TravisService",
+      "definition": "https://w3id.org/ro/terms/test#definition",
+      "engineVersion": "https://w3id.org/ro/terms/test#engineVersion",
+      "instance": "https://w3id.org/ro/terms/test#instance",
+      "resource": "https://w3id.org/ro/terms/test#resource",
+      "runsOn": "https://w3id.org/ro/terms/test#runsOn"
+    }
+  ],
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.1"
+      }
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "datePublished": "2025-12-04T13:32:43.986470",
+      "hasPart": [
+        {
+          "@id": "pe-illumina-simple-virus-calling-and-consensus.ga"
+        },
+        {
+          "@id": "README.md"
+        },
+        {
+          "@id": "pe-illumina-simple-virus-calling-and-consensus-test.yml"
+        }
+      ],
+      "isBasedOn": "https://github.com/iwc-workflows/generic-non-segmented-viral-variant-calling",
+      "license": "AGPL-3.0-or-later",
+      "mainEntity": {
+        "@id": "pe-illumina-simple-virus-calling-and-consensus.ga"
+      },
+      "mentions": [
+        {
+          "@id": "#test_main_1"
+        }
+      ],
+      "name": "generic-non-segmented-viral-variant-calling/main"
+    },
+    {
+      "@id": "pe-illumina-simple-virus-calling-and-consensus.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "creator": [
+        {
+          "@id": "https://orcid.org/0000-0001-6553-5274"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-9464-6640"
+        }
+      ],
+      "name": "generic-non-segmented-viral-variant-calling/main",
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "url": "https://github.com/iwc-workflows/generic-non-segmented-viral-variant-calling",
+      "version": "0.2"
+    },
+    {
+      "@id": "README.md",
+      "@type": "File"
+    },
+    {
+      "@id": "pe-illumina-simple-virus-calling-and-consensus-test.yml",
+      "@type": [
+        "File",
+        "TestDefinition"
+      ],
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/terms/test#PlanemoEngine"
+      },
+      "engineVersion": ">=0.75.33"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "name": "Galaxy",
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "version": "v19_09"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-6553-5274",
+      "@type": "Person",
+      "name": "Peter van Heusden"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-9464-6640",
+      "@type": "Person",
+      "name": "Wolfgang Maier"
+    },
+    {
+      "@id": "#test_main_1",
+      "@type": "TestSuite",
+      "definition": {
+        "@id": "pe-illumina-simple-virus-calling-and-consensus-test.yml"
+      },
+      "instance": [
+        {
+          "@id": "#test_main_1_1"
+        }
+      ],
+      "mainEntity": {
+        "@id": "pe-illumina-simple-virus-calling-and-consensus.ga"
+      },
+      "name": "test_main_1"
+    },
+    {
+      "@id": "#test_main_1_1",
+      "@type": "TestInstance",
+      "name": "test_main_1_1",
+      "resource": "repos/iwc-workflows/generic-non-segmented-viral-variant-calling/actions/workflows/wftest.yml",
+      "runsOn": {
+        "@id": "https://w3id.org/ro/terms/test#GithubService"
+      },
+      "url": "https://api.github.com"
+    },
+    {
+      "@id": "https://w3id.org/ro/terms/test#GithubService",
+      "@type": "TestService",
+      "name": "Github Actions",
+      "url": {
+        "@id": "https://github.com"
+      }
+    },
+    {
+      "@id": "https://w3id.org/ro/terms/test#PlanemoEngine",
+      "@type": "SoftwareApplication",
+      "name": "Planemo",
+      "url": {
+        "@id": "https://github.com/galaxyproject/planemo"
+      }
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/ResearchObject/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <meta charset="utf-8">
+</head>
+<body>
+  <h1>generic-non-segmented-viral-variant-calling/main</h1>
+  
+  <p>
+    
+  </p>
+  <dl>
+    
+    
+    
+    
+      <dt>License</dt>
+      <dd>AGPL-3.0-or-later</dd>
+    
+  </dl>
+
+  <h2>Contents</h2>
+  <ul>
+    
+      <li>
+        <strong>generic-non-segmented-viral-variant-calling/main</strong>
+        
+        
+      </li>
+    
+      <li>
+        <strong>README.md</strong>
+        
+        
+      </li>
+    
+      <li>
+        <strong>pe-illumina-simple-virus-calling-and-consensus-test.yml</strong>
+        
+        
+      </li>
+    
+  </ul>
+</body>
+</html>

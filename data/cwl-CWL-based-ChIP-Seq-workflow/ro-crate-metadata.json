@@ -1,0 +1,1988 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "ChIP-Seq_workflow.cwl"
+      },
+      "datePublished": "2023-07-05 10:19:41 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0001-8035-341X"
+        }
+      ],
+      "license": "MIT",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.525.1",
+      "url": "https://workflowhub.eu/workflows/525/ro_crate?version=1",
+      "name": "Research Object Crate for CWL-based ChIP-Seq workflow",
+      "description": "A CWL-based pipeline for processing ChIP-Seq data (FASTQ format) and performing: \n\n- Peak calling\n- Consensus peak count table generation\n- Detection of super-enhancer regions\n- Differential binding analysis\n\nOn the respective GitHub folder are available:\n\n- The CWL wrappers for the workflow\n- A pre-configured YAML template, based on validation analysis of publicly available HTS data\n- Tables of metadata (``EZH2_metadata_CLL.csv`` and ``H3K27me3_metadata_CLL.csv``), based on the same validation analysis, to serve as input examples for the design of comparisons during differential binding analysis\n- A list of ChIP-Seq blacklisted regions (human genome version 38; hg38) from the ENCODE project, which is can be used as input for the workflow, is provided in BED format (``hg38-blacklist.v2.bed``)\n\nBriefly, the workflow performs the following steps:\n\n1. Quality control of short reads (FastQC)\n2. Trimming of the reads (e.g., removal of adapter and/or low quality sequences) (Trimmomatic)\n3. Mapping to reference genome (HISAT2)\n5. Convertion of mapped reads from SAM (Sequence Alignment Map) to BAM (Binary Alignment Map) format (samtools)\n6. Sorting mapped reads based on chromosomal coordinates (samtools)\n7. Adding information regarding paired end reads (e.g., CIGAR field information) (samtools)\n8. Re-sorting based on chromosomal coordinates (samtools)\n9. Removal of duplicate reads (samtools)\n10. Index creation for coordinate-sorted BAM files to enable fast random access (samtools)\n11. Production of quality metrics and files for the inspection of the mapped ChIP-Seq reads, taking into consideration the experimental design (deeptools2):\n - Read coverages for genomic regions of two or more BAM files are computed (multiBamSummary). The results are produced in compressed numpy array (NPZ) format and are used to calculate and visualize pairwise correlation values between the read coverages (plotCorrelation). \n - Estimation of sequencing depth, through genomic position (base pair) sampling, and visualization is performed for multiple BAM files (plotCoverage).\n - Cumulative read coverages for each indexed BAM file are plotted by counting and sorting all reads overlapping a “window” of specified length (plotFingerprint).\n - Production of coverage track files (bigWig), with the coverage calculated as the number of reads per consecutive windows of predefined size (bamCoverage), and normalized through various available methods (e.g., Reads Per Kilobase per Million mapped reads; RPKM). The coverage track files are used to calculate scores per selected genomic regions (computeMatrix), typically genes, and a heatmap, based on the scores associated with these genomic regions, is produced (plotHeatmap).\n12. Calling potential binding positions (peaks) to the genome (peak calling) (MACS2)\n13. Generation of consensus peak count table for the application of custom analyses on MACS2 peak calling results (bedtools)\n14. Detection of super-enhancer regions (Rank Ordering of Super-Enhancers; ROSE)\n15. Differential binding analyses (DiffBind) for:\n - MACS2 peak calling results\n - ROSE-detected super-enhancer regions \n ",
+      "isBasedOn": "https://github.com/BiodataAnalysisGroup/CWL_HTS_pipelines/tree/main/ChIP_Seq",
+      "sdDatePublished": "2026-03-24 01:06:26 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "ChIP-Seq_workflow.cwl"
+        },
+        {
+          "@id": "workflow-525-c05e17555013f6fcf302c55d83caca378e391b11-diagram.svg"
+        }
+      ]
+    },
+    {
+      "@id": "ChIP-Seq_workflow.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 42324,
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "image": {
+        "@id": "workflow-525-c05e17555013f6fcf302c55d83caca378e391b11-diagram.svg"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "A CWL-based pipeline for processing ChIP-Seq data (FASTQ format) and performing: \n\n- Peak calling\n- Consensus peak count table generation\n- Detection of super-enhancer regions\n- Differential binding analysis\n\nOn the respective GitHub folder are available:\n\n- The CWL wrappers for the workflow\n- A pre-configured YAML template, based on validation analysis of publicly available HTS data\n- Tables of metadata (``EZH2_metadata_CLL.csv`` and ``H3K27me3_metadata_CLL.csv``), based on the same validation analysis, to serve as input examples for the design of comparisons during differential binding analysis\n- A list of ChIP-Seq blacklisted regions (human genome version 38; hg38) from the ENCODE project, which is can be used as input for the workflow, is provided in BED format (``hg38-blacklist.v2.bed``)\n\nBriefly, the workflow performs the following steps:\n\n1. Quality control of short reads (FastQC)\n2. Trimming of the reads (e.g., removal of adapter and/or low quality sequences) (Trimmomatic)\n3. Mapping to reference genome (HISAT2)\n5. Convertion of mapped reads from SAM (Sequence Alignment Map) to BAM (Binary Alignment Map) format (samtools)\n6. Sorting mapped reads based on chromosomal coordinates (samtools)\n7. Adding information regarding paired end reads (e.g., CIGAR field information) (samtools)\n8. Re-sorting based on chromosomal coordinates (samtools)\n9. Removal of duplicate reads (samtools)\n10. Index creation for coordinate-sorted BAM files to enable fast random access (samtools)\n11. Production of quality metrics and files for the inspection of the mapped ChIP-Seq reads, taking into consideration the experimental design (deeptools2):\n - Read coverages for genomic regions of two or more BAM files are computed (multiBamSummary). The results are produced in compressed numpy array (NPZ) format and are used to calculate and visualize pairwise correlation values between the read coverages (plotCorrelation). \n - Estimation of sequencing depth, through genomic position (base pair) sampling, and visualization is performed for multiple BAM files (plotCoverage).\n - Cumulative read coverages for each indexed BAM file are plotted by counting and sorting all reads overlapping a “window” of specified length (plotFingerprint).\n - Production of coverage track files (bigWig), with the coverage calculated as the number of reads per consecutive windows of predefined size (bamCoverage), and normalized through various available methods (e.g., Reads Per Kilobase per Million mapped reads; RPKM). The coverage track files are used to calculate scores per selected genomic regions (computeMatrix), typically genes, and a heatmap, based on the scores associated with these genomic regions, is produced (plotHeatmap).\n12. Calling potential binding positions (peaks) to the genome (peak calling) (MACS2)\n13. Generation of consensus peak count table for the application of custom analyses on MACS2 peak calling results (bedtools)\n14. Detection of super-enhancer regions (Rank Ordering of Super-Enhancers; ROSE)\n15. Differential binding analyses (DiffBind) for:\n - MACS2 peak calling results\n - ROSE-detected super-enhancer regions \n ",
+      "name": "CWL-based ChIP-Seq workflow",
+      "url": "https://workflowhub.eu/workflows/525?version=1",
+      "keywords": "CWL, workflow, ChIP-seq, Epigenomics",
+      "version": 1,
+      "license": "https://spdx.org/licenses/MIT",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/515"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-2502-612X"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-0222-4273"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/173"
+      },
+      "dateCreated": "2023-07-05T09:39:05Z",
+      "dateModified": "2023-07-05T09:39:32Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.525.1",
+      "input": [
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-raw_files_directory"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-input_file_split"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-input_file_split_fwd_single"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-input_file_split_rev"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-input_qc_check"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-input_trimming_check"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-input_treatment_samples"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-input_control_samples"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-trimmomatic_se_threads"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-trimmomatic_se_illuminaClip"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-trimmomatic_se_slidingWindow"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-trimmomatic_se_leading"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-trimmomatic_se_trailing"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-trimmomatic_se_minlen"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-trimmomatic_pe_threads"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-trimmomatic_pe_illuminaClip"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-trimmomatic_pe_slidingWindow"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-trimmomatic_pe_leading"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-trimmomatic_pe_trailing"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-trimmomatic_pe_minlen"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-hisat2_num_of_threads"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-hisat2_idx_directory"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-hisat2_idx_basename"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-samtools_readswithoutbits"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-samtools_view_threads"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-samtools_fixmate_threads"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-samtools_fixmate_output_format"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-samtools_sort_compression_level"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-samtools_sort_threads"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-samtools_sort_memory"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-samtools_markdup_threads"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-blackListFile"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-multiBamSummary_threads"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-plotCorrelation_numbers"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-plotCorrelation_method"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-plotCorrelation_color"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-plotCorrelation_title"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-plotCorrelation_plotType"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-plotCorrelation_outFileName"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-plotCoverage_threads"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-plotCoverage_plotFileFormat"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-plotCoverage_outFileName"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-plotFingerprint_plotFileFormat"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-plotFingerprint_threads"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-plotFingerprint_outFileName"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-bamCoverage_normalizeUsing"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-bamCoverage_effective_genome_size"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-bamCoverage_extendReads"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-bamCoverage_threads"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-computeMatrix_regions"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-computeMatrix_threads"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-computeMatrix_upstream"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-computeMatrix_downstream"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-computeMatrix_outputFile"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-computeMatrix_outFileSortedRegions"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-plotHeatmap_plotFileFormat"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-plotHeatmap_outputFile"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-macs2_callpeak_bdg"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-macs2_callpeak_gsize"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-macs2_callpeak_format"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-macs2_callpeak_broad"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-macs2_callpeak_nomodel"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-macs2_shift"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-macs2_extsize"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-macs2_pvalue"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-macs2_qvalue"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-metadata_table"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-ChIPQC_blacklist"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-ChIPQC_annotation"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-ChIPQC_consensus"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-ChIPQC_bCount"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-ChIPQC_facetBy"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-DiffBind_consensus"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-DiffBind_minOverlap"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-DiffBind_blacklist"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-DiffBind_greylist"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-DiffBind_cores"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-DiffBind_bParallel"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-DiffBind_normalization"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-DiffBind_library"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-DiffBind_background"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-DiffBind_design"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-DiffBind_reorderMeta_factor"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-DiffBind_reorderMeta_value"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-DiffBind_retrieve_consensus"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-DiffBind_low_read_count_filter"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-DiffBind_filterFun"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-rose_genome_build"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-rose_stitch_distance"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-inputs-rose_tss_distance"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_trimmomatic_single_end_stderr"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_trimmomatic_single_end_fastq"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_trimmomatic_paired_end_stderr"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_trimmomatic_paired_end_fwd_paired"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_trimmomatic_paired_end_fwd_unpaired"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_trimmomatic_paired_end_rev_paired"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_trimmomatic_paired_end_rev_unpaired"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_fastqc_raw_html"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_fastqc_single_html"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_fastqc_paired_html_fwd"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_fastqc_paired_html_rev"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_fastqc_raw_zip"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_fastqc_single_zip"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_fastqc_paired_zip"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_hisat2_for_single_reads_sam"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_hisat2_for_single_reads_stderr"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_hisat2_for_paired_reads_sam"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_hisat2_for_paired_reads_stderr"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_samtools_sort_by_name"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_samtools_fixmate"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_samtools_sort"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_samtools_markdup"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_samtools_index"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_multiBamSummary_file"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_plotCorrelation_file"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_plotCoverage_file"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_plotFingerprint_file"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_bamCoverage_norm"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_computeMatrix_matrix"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_computeMatrix_regions"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_plotHeatmap"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_macs2_call_peaks_narrowPeak"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_macs2_call_peaks_xls"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_macs2_call_peaks_bed"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_macs2_call_peaks_lambda"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_macs2_call_peaks_pileup"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_macs2_call_peaks_broadPeak"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_macs2_call_peaks_gappedPeak"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_macs2_call_peaks_model_r"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_macs2_call_peaks_cutoff"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_total_peaks_table"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_sort_peaks_table"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_bedtools_merge"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_bedtools_intersect"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_exclude_black_list_regions"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_bedtools_coverage"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_printf_header_samples"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_paste_content_1"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_paste_content_2"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_append_files"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_ChIPQC_macs_ChIPQCexperiment"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_ChIPQC_macs_outdir"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_ChIPQC_macs_ChIPQCreport"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_DiffBind_macs_diffbind_results"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_DiffBind_macs_correlation_heatmap"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_DiffBind_macs_diffbind_consensus"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_DiffBind_macs_diffbind_normalized_counts"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_DiffBind_macs_diffbind_dba_object"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_exclude_black_list_regions_narrowPeak"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_bed_to_rose_gff_conversion"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_rose_main_gff_dir_outputs"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_rose_main_mappedGFF_dir_outputs"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_rose_main_STITCHED_ENHANCER_REGION_MAP"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_rose_main_AllEnhancers_table"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_rose_main_SuperEnhancers_table"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_rose_main_Plot_points"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_rose_main_Enhancers_withSuper"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_enhancer_bed_processing"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_ChIPQC_rose_ChIPQCexperiment"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_ChIPQC_rose_outdir"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_ChIPQC_rose_ChIPQCreport"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_DiffBind_rose_diffbind_results"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_DiffBind_rose_correlation_heatmap"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_DiffBind_rose_diffbind_consensus"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_DiffBind_rose_diffbind_normalized_counts"
+        },
+        {
+          "@id": "#cwl_based_chip_seq_workflow-outputs-o_DiffBind_rose_diffbind_dba_object"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "workflow-525-c05e17555013f6fcf302c55d83caca378e391b11-diagram.svg",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 271851
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-8035-341X",
+      "@type": "Person",
+      "name": "Konstantinos Kyritsis",
+      "identifier": "https://orcid.org/0000-0001-8035-341X"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/515",
+      "@type": "Person",
+      "name": "Konstantinos Kyritsis"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-2502-612X",
+      "@type": "Person",
+      "name": "Nikolaos Pechlivanis"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-0222-4273",
+      "@type": "Person",
+      "name": "Fotis Psomopoulos"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/173",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Biodata Analysis Group"
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-raw_files_directory",
+      "@type": "FormalParameter",
+      "name": "raw_files_directory",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-input_file_split",
+      "@type": "FormalParameter",
+      "name": "input_file_split",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-input_file_split_fwd_single",
+      "@type": "FormalParameter",
+      "name": "input_file_split_fwd_single",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-input_file_split_rev",
+      "@type": "FormalParameter",
+      "name": "input_file_split_rev",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-input_qc_check",
+      "@type": "FormalParameter",
+      "name": "input_qc_check",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-input_trimming_check",
+      "@type": "FormalParameter",
+      "name": "input_trimming_check",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-input_treatment_samples",
+      "@type": "FormalParameter",
+      "name": "input_treatment_samples",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-input_control_samples",
+      "@type": "FormalParameter",
+      "name": "input_control_samples",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-trimmomatic_se_threads",
+      "@type": "FormalParameter",
+      "name": "trimmomatic_se_threads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-trimmomatic_se_illuminaClip",
+      "@type": "FormalParameter",
+      "name": "trimmomatic_se_illuminaClip",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-trimmomatic_se_slidingWindow",
+      "@type": "FormalParameter",
+      "name": "trimmomatic_se_slidingWindow",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-trimmomatic_se_leading",
+      "@type": "FormalParameter",
+      "name": "trimmomatic_se_leading",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-trimmomatic_se_trailing",
+      "@type": "FormalParameter",
+      "name": "trimmomatic_se_trailing",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-trimmomatic_se_minlen",
+      "@type": "FormalParameter",
+      "name": "trimmomatic_se_minlen",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-trimmomatic_pe_threads",
+      "@type": "FormalParameter",
+      "name": "trimmomatic_pe_threads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-trimmomatic_pe_illuminaClip",
+      "@type": "FormalParameter",
+      "name": "trimmomatic_pe_illuminaClip",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-trimmomatic_pe_slidingWindow",
+      "@type": "FormalParameter",
+      "name": "trimmomatic_pe_slidingWindow",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-trimmomatic_pe_leading",
+      "@type": "FormalParameter",
+      "name": "trimmomatic_pe_leading",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-trimmomatic_pe_trailing",
+      "@type": "FormalParameter",
+      "name": "trimmomatic_pe_trailing",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-trimmomatic_pe_minlen",
+      "@type": "FormalParameter",
+      "name": "trimmomatic_pe_minlen",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-hisat2_num_of_threads",
+      "@type": "FormalParameter",
+      "name": "hisat2_num_of_threads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-hisat2_idx_directory",
+      "@type": "FormalParameter",
+      "name": "hisat2_idx_directory",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-hisat2_idx_basename",
+      "@type": "FormalParameter",
+      "name": "hisat2_idx_basename",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-samtools_readswithoutbits",
+      "@type": "FormalParameter",
+      "name": "samtools_readswithoutbits",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-samtools_view_threads",
+      "@type": "FormalParameter",
+      "name": "samtools_view_threads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-samtools_fixmate_threads",
+      "@type": "FormalParameter",
+      "name": "samtools_fixmate_threads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-samtools_fixmate_output_format",
+      "@type": "FormalParameter",
+      "name": "samtools_fixmate_output_format",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-samtools_sort_compression_level",
+      "@type": "FormalParameter",
+      "name": "samtools_sort_compression_level",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-samtools_sort_threads",
+      "@type": "FormalParameter",
+      "name": "samtools_sort_threads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-samtools_sort_memory",
+      "@type": "FormalParameter",
+      "name": "samtools_sort_memory",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-samtools_markdup_threads",
+      "@type": "FormalParameter",
+      "name": "samtools_markdup_threads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-blackListFile",
+      "@type": "FormalParameter",
+      "name": "blackListFile",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-multiBamSummary_threads",
+      "@type": "FormalParameter",
+      "name": "multiBamSummary_threads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-plotCorrelation_numbers",
+      "@type": "FormalParameter",
+      "name": "plotCorrelation_numbers",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-plotCorrelation_method",
+      "@type": "FormalParameter",
+      "name": "plotCorrelation_method",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-plotCorrelation_color",
+      "@type": "FormalParameter",
+      "name": "plotCorrelation_color",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-plotCorrelation_title",
+      "@type": "FormalParameter",
+      "name": "plotCorrelation_title",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-plotCorrelation_plotType",
+      "@type": "FormalParameter",
+      "name": "plotCorrelation_plotType",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-plotCorrelation_outFileName",
+      "@type": "FormalParameter",
+      "name": "plotCorrelation_outFileName",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-plotCoverage_threads",
+      "@type": "FormalParameter",
+      "name": "plotCoverage_threads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-plotCoverage_plotFileFormat",
+      "@type": "FormalParameter",
+      "name": "plotCoverage_plotFileFormat",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-plotCoverage_outFileName",
+      "@type": "FormalParameter",
+      "name": "plotCoverage_outFileName",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-plotFingerprint_plotFileFormat",
+      "@type": "FormalParameter",
+      "name": "plotFingerprint_plotFileFormat",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-plotFingerprint_threads",
+      "@type": "FormalParameter",
+      "name": "plotFingerprint_threads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-plotFingerprint_outFileName",
+      "@type": "FormalParameter",
+      "name": "plotFingerprint_outFileName",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-bamCoverage_normalizeUsing",
+      "@type": "FormalParameter",
+      "name": "bamCoverage_normalizeUsing",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-bamCoverage_effective_genome_size",
+      "@type": "FormalParameter",
+      "name": "bamCoverage_effective_genome_size",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-bamCoverage_extendReads",
+      "@type": "FormalParameter",
+      "name": "bamCoverage_extendReads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-bamCoverage_threads",
+      "@type": "FormalParameter",
+      "name": "bamCoverage_threads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-computeMatrix_regions",
+      "@type": "FormalParameter",
+      "name": "computeMatrix_regions",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-computeMatrix_threads",
+      "@type": "FormalParameter",
+      "name": "computeMatrix_threads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-computeMatrix_upstream",
+      "@type": "FormalParameter",
+      "name": "computeMatrix_upstream",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-computeMatrix_downstream",
+      "@type": "FormalParameter",
+      "name": "computeMatrix_downstream",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-computeMatrix_outputFile",
+      "@type": "FormalParameter",
+      "name": "computeMatrix_outputFile",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-computeMatrix_outFileSortedRegions",
+      "@type": "FormalParameter",
+      "name": "computeMatrix_outFileSortedRegions",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-plotHeatmap_plotFileFormat",
+      "@type": "FormalParameter",
+      "name": "plotHeatmap_plotFileFormat",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-plotHeatmap_outputFile",
+      "@type": "FormalParameter",
+      "name": "plotHeatmap_outputFile",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-macs2_callpeak_bdg",
+      "@type": "FormalParameter",
+      "name": "macs2_callpeak_bdg",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-macs2_callpeak_gsize",
+      "@type": "FormalParameter",
+      "name": "macs2_callpeak_gsize",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-macs2_callpeak_format",
+      "@type": "FormalParameter",
+      "name": "macs2_callpeak_format",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-macs2_callpeak_broad",
+      "@type": "FormalParameter",
+      "name": "macs2_callpeak_broad",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-macs2_callpeak_nomodel",
+      "@type": "FormalParameter",
+      "name": "macs2_callpeak_nomodel",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-macs2_shift",
+      "@type": "FormalParameter",
+      "name": "macs2_shift",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-macs2_extsize",
+      "@type": "FormalParameter",
+      "name": "macs2_extsize",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-macs2_pvalue",
+      "@type": "FormalParameter",
+      "name": "macs2_pvalue",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-macs2_qvalue",
+      "@type": "FormalParameter",
+      "name": "macs2_qvalue",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-metadata_table",
+      "@type": "FormalParameter",
+      "name": "metadata_table",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-ChIPQC_blacklist",
+      "@type": "FormalParameter",
+      "name": "ChIPQC_blacklist",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-ChIPQC_annotation",
+      "@type": "FormalParameter",
+      "name": "ChIPQC_annotation",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-ChIPQC_consensus",
+      "@type": "FormalParameter",
+      "name": "ChIPQC_consensus",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-ChIPQC_bCount",
+      "@type": "FormalParameter",
+      "name": "ChIPQC_bCount",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-ChIPQC_facetBy",
+      "@type": "FormalParameter",
+      "name": "ChIPQC_facetBy",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-DiffBind_consensus",
+      "@type": "FormalParameter",
+      "name": "DiffBind_consensus",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-DiffBind_minOverlap",
+      "@type": "FormalParameter",
+      "name": "DiffBind_minOverlap",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-DiffBind_blacklist",
+      "@type": "FormalParameter",
+      "name": "DiffBind_blacklist",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-DiffBind_greylist",
+      "@type": "FormalParameter",
+      "name": "DiffBind_greylist",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-DiffBind_cores",
+      "@type": "FormalParameter",
+      "name": "DiffBind_cores",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-DiffBind_bParallel",
+      "@type": "FormalParameter",
+      "name": "DiffBind_bParallel",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-DiffBind_normalization",
+      "@type": "FormalParameter",
+      "name": "DiffBind_normalization",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-DiffBind_library",
+      "@type": "FormalParameter",
+      "name": "DiffBind_library",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-DiffBind_background",
+      "@type": "FormalParameter",
+      "name": "DiffBind_background",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-DiffBind_design",
+      "@type": "FormalParameter",
+      "name": "DiffBind_design",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-DiffBind_reorderMeta_factor",
+      "@type": "FormalParameter",
+      "name": "DiffBind_reorderMeta_factor",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-DiffBind_reorderMeta_value",
+      "@type": "FormalParameter",
+      "name": "DiffBind_reorderMeta_value",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-DiffBind_retrieve_consensus",
+      "@type": "FormalParameter",
+      "name": "DiffBind_retrieve_consensus",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-DiffBind_low_read_count_filter",
+      "@type": "FormalParameter",
+      "name": "DiffBind_low_read_count_filter",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-DiffBind_filterFun",
+      "@type": "FormalParameter",
+      "name": "DiffBind_filterFun",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-rose_genome_build",
+      "@type": "FormalParameter",
+      "name": "rose_genome_build",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-rose_stitch_distance",
+      "@type": "FormalParameter",
+      "name": "rose_stitch_distance",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-inputs-rose_tss_distance",
+      "@type": "FormalParameter",
+      "name": "rose_tss_distance",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_trimmomatic_single_end_stderr",
+      "@type": "FormalParameter",
+      "name": "o_trimmomatic_single_end_stderr",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_trimmomatic_single_end_fastq",
+      "@type": "FormalParameter",
+      "name": "o_trimmomatic_single_end_fastq",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_trimmomatic_paired_end_stderr",
+      "@type": "FormalParameter",
+      "name": "o_trimmomatic_paired_end_stderr",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_trimmomatic_paired_end_fwd_paired",
+      "@type": "FormalParameter",
+      "name": "o_trimmomatic_paired_end_fwd_paired",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_trimmomatic_paired_end_fwd_unpaired",
+      "@type": "FormalParameter",
+      "name": "o_trimmomatic_paired_end_fwd_unpaired",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_trimmomatic_paired_end_rev_paired",
+      "@type": "FormalParameter",
+      "name": "o_trimmomatic_paired_end_rev_paired",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_trimmomatic_paired_end_rev_unpaired",
+      "@type": "FormalParameter",
+      "name": "o_trimmomatic_paired_end_rev_unpaired",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_fastqc_raw_html",
+      "@type": "FormalParameter",
+      "name": "o_fastqc_raw_html",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_fastqc_single_html",
+      "@type": "FormalParameter",
+      "name": "o_fastqc_single_html",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_fastqc_paired_html_fwd",
+      "@type": "FormalParameter",
+      "name": "o_fastqc_paired_html_fwd",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_fastqc_paired_html_rev",
+      "@type": "FormalParameter",
+      "name": "o_fastqc_paired_html_rev",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_fastqc_raw_zip",
+      "@type": "FormalParameter",
+      "name": "o_fastqc_raw_zip",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_fastqc_single_zip",
+      "@type": "FormalParameter",
+      "name": "o_fastqc_single_zip",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_fastqc_paired_zip",
+      "@type": "FormalParameter",
+      "name": "o_fastqc_paired_zip",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_hisat2_for_single_reads_sam",
+      "@type": "FormalParameter",
+      "name": "o_hisat2_for_single_reads_sam",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_hisat2_for_single_reads_stderr",
+      "@type": "FormalParameter",
+      "name": "o_hisat2_for_single_reads_stderr",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_hisat2_for_paired_reads_sam",
+      "@type": "FormalParameter",
+      "name": "o_hisat2_for_paired_reads_sam",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_hisat2_for_paired_reads_stderr",
+      "@type": "FormalParameter",
+      "name": "o_hisat2_for_paired_reads_stderr",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_samtools_sort_by_name",
+      "@type": "FormalParameter",
+      "name": "o_samtools_sort_by_name",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_samtools_fixmate",
+      "@type": "FormalParameter",
+      "name": "o_samtools_fixmate",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_samtools_sort",
+      "@type": "FormalParameter",
+      "name": "o_samtools_sort",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_samtools_markdup",
+      "@type": "FormalParameter",
+      "name": "o_samtools_markdup",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_samtools_index",
+      "@type": "FormalParameter",
+      "name": "o_samtools_index",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_multiBamSummary_file",
+      "@type": "FormalParameter",
+      "name": "o_multiBamSummary_file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_plotCorrelation_file",
+      "@type": "FormalParameter",
+      "name": "o_plotCorrelation_file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_plotCoverage_file",
+      "@type": "FormalParameter",
+      "name": "o_plotCoverage_file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_plotFingerprint_file",
+      "@type": "FormalParameter",
+      "name": "o_plotFingerprint_file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_bamCoverage_norm",
+      "@type": "FormalParameter",
+      "name": "o_bamCoverage_norm",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_computeMatrix_matrix",
+      "@type": "FormalParameter",
+      "name": "o_computeMatrix_matrix",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_computeMatrix_regions",
+      "@type": "FormalParameter",
+      "name": "o_computeMatrix_regions",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_plotHeatmap",
+      "@type": "FormalParameter",
+      "name": "o_plotHeatmap",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_macs2_call_peaks_narrowPeak",
+      "@type": "FormalParameter",
+      "name": "o_macs2_call_peaks_narrowPeak",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_macs2_call_peaks_xls",
+      "@type": "FormalParameter",
+      "name": "o_macs2_call_peaks_xls",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_macs2_call_peaks_bed",
+      "@type": "FormalParameter",
+      "name": "o_macs2_call_peaks_bed",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_macs2_call_peaks_lambda",
+      "@type": "FormalParameter",
+      "name": "o_macs2_call_peaks_lambda",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_macs2_call_peaks_pileup",
+      "@type": "FormalParameter",
+      "name": "o_macs2_call_peaks_pileup",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_macs2_call_peaks_broadPeak",
+      "@type": "FormalParameter",
+      "name": "o_macs2_call_peaks_broadPeak",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_macs2_call_peaks_gappedPeak",
+      "@type": "FormalParameter",
+      "name": "o_macs2_call_peaks_gappedPeak",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_macs2_call_peaks_model_r",
+      "@type": "FormalParameter",
+      "name": "o_macs2_call_peaks_model_r",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_macs2_call_peaks_cutoff",
+      "@type": "FormalParameter",
+      "name": "o_macs2_call_peaks_cutoff",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_total_peaks_table",
+      "@type": "FormalParameter",
+      "name": "o_total_peaks_table",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_sort_peaks_table",
+      "@type": "FormalParameter",
+      "name": "o_sort_peaks_table",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_bedtools_merge",
+      "@type": "FormalParameter",
+      "name": "o_bedtools_merge",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_bedtools_intersect",
+      "@type": "FormalParameter",
+      "name": "o_bedtools_intersect",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_exclude_black_list_regions",
+      "@type": "FormalParameter",
+      "name": "o_exclude_black_list_regions",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_bedtools_coverage",
+      "@type": "FormalParameter",
+      "name": "o_bedtools_coverage",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_printf_header_samples",
+      "@type": "FormalParameter",
+      "name": "o_printf_header_samples",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_paste_content_1",
+      "@type": "FormalParameter",
+      "name": "o_paste_content_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_paste_content_2",
+      "@type": "FormalParameter",
+      "name": "o_paste_content_2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_append_files",
+      "@type": "FormalParameter",
+      "name": "o_append_files",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_ChIPQC_macs_ChIPQCexperiment",
+      "@type": "FormalParameter",
+      "name": "o_ChIPQC_macs_ChIPQCexperiment",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_ChIPQC_macs_outdir",
+      "@type": "FormalParameter",
+      "name": "o_ChIPQC_macs_outdir",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_ChIPQC_macs_ChIPQCreport",
+      "@type": "FormalParameter",
+      "name": "o_ChIPQC_macs_ChIPQCreport",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_DiffBind_macs_diffbind_results",
+      "@type": "FormalParameter",
+      "name": "o_DiffBind_macs_diffbind_results",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_DiffBind_macs_correlation_heatmap",
+      "@type": "FormalParameter",
+      "name": "o_DiffBind_macs_correlation_heatmap",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_DiffBind_macs_diffbind_consensus",
+      "@type": "FormalParameter",
+      "name": "o_DiffBind_macs_diffbind_consensus",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_DiffBind_macs_diffbind_normalized_counts",
+      "@type": "FormalParameter",
+      "name": "o_DiffBind_macs_diffbind_normalized_counts",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_DiffBind_macs_diffbind_dba_object",
+      "@type": "FormalParameter",
+      "name": "o_DiffBind_macs_diffbind_dba_object",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_exclude_black_list_regions_narrowPeak",
+      "@type": "FormalParameter",
+      "name": "o_exclude_black_list_regions_narrowPeak",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_bed_to_rose_gff_conversion",
+      "@type": "FormalParameter",
+      "name": "o_bed_to_rose_gff_conversion",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_rose_main_gff_dir_outputs",
+      "@type": "FormalParameter",
+      "name": "o_rose_main_gff_dir_outputs",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_rose_main_mappedGFF_dir_outputs",
+      "@type": "FormalParameter",
+      "name": "o_rose_main_mappedGFF_dir_outputs",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_rose_main_STITCHED_ENHANCER_REGION_MAP",
+      "@type": "FormalParameter",
+      "name": "o_rose_main_STITCHED_ENHANCER_REGION_MAP",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_rose_main_AllEnhancers_table",
+      "@type": "FormalParameter",
+      "name": "o_rose_main_AllEnhancers_table",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_rose_main_SuperEnhancers_table",
+      "@type": "FormalParameter",
+      "name": "o_rose_main_SuperEnhancers_table",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_rose_main_Plot_points",
+      "@type": "FormalParameter",
+      "name": "o_rose_main_Plot_points",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_rose_main_Enhancers_withSuper",
+      "@type": "FormalParameter",
+      "name": "o_rose_main_Enhancers_withSuper",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_enhancer_bed_processing",
+      "@type": "FormalParameter",
+      "name": "o_enhancer_bed_processing",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_ChIPQC_rose_ChIPQCexperiment",
+      "@type": "FormalParameter",
+      "name": "o_ChIPQC_rose_ChIPQCexperiment",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_ChIPQC_rose_outdir",
+      "@type": "FormalParameter",
+      "name": "o_ChIPQC_rose_outdir",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_ChIPQC_rose_ChIPQCreport",
+      "@type": "FormalParameter",
+      "name": "o_ChIPQC_rose_ChIPQCreport",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_DiffBind_rose_diffbind_results",
+      "@type": "FormalParameter",
+      "name": "o_DiffBind_rose_diffbind_results",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_DiffBind_rose_correlation_heatmap",
+      "@type": "FormalParameter",
+      "name": "o_DiffBind_rose_correlation_heatmap",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_DiffBind_rose_diffbind_consensus",
+      "@type": "FormalParameter",
+      "name": "o_DiffBind_rose_diffbind_consensus",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_DiffBind_rose_diffbind_normalized_counts",
+      "@type": "FormalParameter",
+      "name": "o_DiffBind_rose_diffbind_normalized_counts",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_chip_seq_workflow-outputs-o_DiffBind_rose_diffbind_dba_object",
+      "@type": "FormalParameter",
+      "name": "o_DiffBind_rose_diffbind_dba_object",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

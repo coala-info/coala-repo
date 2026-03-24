@@ -1,0 +1,29 @@
+2025-03-03 17:46:03.1550 ProteinInference_inferProteins TRACE InputFilePath = [|"C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psmstats\20170519 TM FScon3501.qpsm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psmstats\20170519 TM FScon3503.qpsm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psmstats\20170519 TM FScon3505.qpsm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psmstats\20170519 TM FScon3507.qpsm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psmstats\20170519 TM FScon3509.qpsm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psmstats\20170519 TM FScon3511.qpsm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psmstats\20170519 TM FScon3513.qpsm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psmstats\20170519 TM FScon3515.qpsm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psmstats\20170519 TM FScon3517.qpsm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psmstats\20170519 TM FScon3601.qpsm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psmstats\20170519 TM FScon3603.qpsm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psmstats\20170519 TM FScon3605.qpsm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psmstats\20170519 TM FScon3607.qpsm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psmstats\20170519 TM FScon3609.qpsm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psmstats\20170519 TM FScon3611.qpsm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psmstats\20170519 TM FScon3613.qpsm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psmstats\20170519 TM FScon3615.qpsm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psmstats\20170519 TM FScon3617.qpsm"|] 
+2025-03-03 17:46:03.1550 ProteinInference_inferProteins TRACE InputGFF3Path = None 
+2025-03-03 17:46:03.1550 ProteinInference_inferProteins TRACE OutputFilePath = C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\prot 
+2025-03-03 17:46:03.1550 ProteinInference_inferProteins TRACE Protein inference parameters = { TryGetProteinIdentifier = <fun:tryParseProteinIdUsing@189-1>
+  Protein = Maximal
+  Peptide = Minimal
+  GroupFiles = true
+  GetQValue = Storey } 
+2025-03-03 17:46:03.1550 ProteinInference_inferProteins TRACE Copy peptide DB into Memory. 
+2025-03-03 17:46:04.1918 ProteinInference_inferProteins TRACE Copy peptide DB into Memory: finished. 
+2025-03-03 17:46:04.1918 ProteinInference_inferProteins TRACE Start building ClassItemCollection 
+2025-03-03 17:46:06.4376 ProteinInference_inferProteins TRACE Classify and Infer Proteins 

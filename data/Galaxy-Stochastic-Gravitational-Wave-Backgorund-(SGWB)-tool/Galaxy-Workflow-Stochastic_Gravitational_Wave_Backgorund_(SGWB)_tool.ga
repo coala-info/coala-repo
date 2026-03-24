@@ -1,0 +1,96 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "comments": [],
+    "format-version": "0.1",
+    "name": "Stochastic Gravitational Wave Backgorund (SGWB) tool",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/astroteam/sgwb_astro_tool/sgwb_astro_tool/0.0.1+galaxy0",
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [],
+            "label": null,
+            "name": "SGWB",
+            "outputs": [
+                {
+                    "name": "out_Model_spectrum_png",
+                    "type": "auto"
+                },
+                {
+                    "name": "out_Model_spectrum_astropy_table",
+                    "type": "auto"
+                }
+            ],
+            "position": {
+                "left": 10,
+                "top": 10
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/astroteam/sgwb_astro_tool/sgwb_astro_tool/0.0.1+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "c9fc89ee996e",
+                "name": "sgwb_astro_tool",
+                "owner": "astroteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"_data_product\": {\"_selector\": \"Model_spectrum\", \"__current_case__\": 0, \"T_star\": \"0.178\", \"g_star\": \"20\", \"alpha\": \"1.0\", \"beta_H\": \"3.3\", \"epsilon_turb\": \"1\", \"v_w\": \"0.999\", \"h\": \"0.7\"}, \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.0.1+galaxy0",
+            "type": "tool",
+            "uuid": "58b1927b-3646-400c-b165-4477d611d207",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/astroteam/sgwb_astro_tool/sgwb_astro_tool/0.0.1+galaxy0",
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [],
+            "label": null,
+            "name": "SGWB",
+            "outputs": [
+                {
+                    "name": "out_Phase_transition_parameters_B_lambdaB_png",
+                    "type": "auto"
+                },
+                {
+                    "name": "out_Phase_transition_parameters_T_Beta_png",
+                    "type": "auto"
+                },
+                {
+                    "name": "out_Phase_transition_parameters_Alpha_Beta_png",
+                    "type": "auto"
+                },
+                {
+                    "name": "out_Phase_transition_parameters_Alpha_T_png",
+                    "type": "auto"
+                }
+            ],
+            "position": {
+                "left": 10,
+                "top": 130
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/astroteam/sgwb_astro_tool/sgwb_astro_tool/0.0.1+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "c9fc89ee996e",
+                "name": "sgwb_astro_tool",
+                "owner": "astroteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"_data_product\": {\"_selector\": \"Phase_transition_parameters\", \"__current_case__\": 1, \"epsilon_turb\": \"1.0\"}, \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.0.1+galaxy0",
+            "type": "tool",
+            "uuid": "73ef6e78-91e1-4a0d-96f9-b80750cd516e",
+            "when": null,
+            "workflow_outputs": []
+        }
+    },
+    "tags": [],
+    "uuid": "07f457ae-6117-42eb-85b4-4415e02ec7b2",
+    "version": 1
+}

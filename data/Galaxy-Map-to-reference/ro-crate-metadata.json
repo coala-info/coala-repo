@@ -1,0 +1,250 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-Map-to-reference.ga"
+      },
+      "datePublished": "2025-12-15 14:36:53 +0000",
+      "author": [
+
+      ],
+      "license": "MIT",
+      "identifier": "https://workflowhub.eu/workflows/2036?version=1",
+      "url": "https://workflowhub.eu/workflows/2036/ro_crate?version=1",
+      "name": "Research Object Crate for Map-to-reference",
+      "description": "Workflow for processing amplicon pool sequencing data with reference.\n\nThis workflow allows you to reconstruct a sequence from an amplicon pool using a reference sequence. To run this workflow, you need the reads from the pool library you want to analyse in FASTQ format, separated into two files: forward and reverse. You will also need your reference sequence in FASTA format. This workflow creates a consensus sequence and a metadata file containing the length of the consensus sequence, the number of reads mapped to it, and the average, minimum, and maximum coverage depth. You can also retrieve a file containing unmapped reads. ",
+      "sdDatePublished": "2026-03-24 16:27:30 +0000",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-Map-to-reference.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-Map-to-reference.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 76290,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Workflow for processing amplicon pool sequencing data with reference.\n\nThis workflow allows you to reconstruct a sequence from an amplicon pool using a reference sequence. To run this workflow, you need the reads from the pool library you want to analyse in FASTQ format, separated into two files: forward and reverse. You will also need your reference sequence in FASTA format. This workflow creates a consensus sequence and a metadata file containing the length of the consensus sequence, the number of reads mapped to it, and the average, minimum, and maximum coverage depth. You can also retrieve a file containing unmapped reads. ",
+      "name": "Map-to-reference",
+      "url": "https://workflowhub.eu/workflows/2036?version=1",
+      "keywords": "map_to_reference, pool_amplicon, illumina",
+      "version": 1,
+      "license": "https://spdx.org/licenses/MIT",
+      "creator": {
+        "@id": "#Mol%C3%A8ne%20Mah%C3%A9"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/12"
+      },
+      "dateCreated": "2025-12-15T14:38:06Z",
+      "dateModified": "2025-12-15T14:38:06Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#map_to_reference-inputs-FASTQ%20-%20Forward"
+        },
+        {
+          "@id": "#map_to_reference-inputs-FASTQ%20-%20Reverse"
+        },
+        {
+          "@id": "#map_to_reference-inputs-Filter%20FASTQ%20-%20Maximum%20size"
+        },
+        {
+          "@id": "#map_to_reference-inputs-Filter%20FASTQ%20-%20Minimum%20size"
+        },
+        {
+          "@id": "#map_to_reference-inputs-Forward%20primer"
+        },
+        {
+          "@id": "#map_to_reference-inputs-Reference%20sequence"
+        },
+        {
+          "@id": "#map_to_reference-inputs-Reverse%20primer"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#map_to_reference-outputs-fastqc_forward"
+        },
+        {
+          "@id": "#map_to_reference-outputs-fastqc_reverse"
+        },
+        {
+          "@id": "#map_to_reference-outputs-fastqc_paired"
+        },
+        {
+          "@id": "#map_to_reference-outputs-visualize_consensus"
+        },
+        {
+          "@id": "#map_to_reference-outputs-metadata"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "#Molène Mahé",
+      "@type": "Person",
+      "name": "Molène Mahé"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/12",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Galaxy Training Network"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#map_to_reference-inputs-FASTQ - Forward",
+      "@type": "FormalParameter",
+      "name": "FASTQ - Forward",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#map_to_reference-inputs-FASTQ - Reverse",
+      "@type": "FormalParameter",
+      "name": "FASTQ - Reverse",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#map_to_reference-inputs-Filter FASTQ - Maximum size",
+      "@type": "FormalParameter",
+      "name": "Filter FASTQ - Maximum size",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#map_to_reference-inputs-Filter FASTQ - Minimum size",
+      "@type": "FormalParameter",
+      "name": "Filter FASTQ - Minimum size",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#map_to_reference-inputs-Forward primer",
+      "@type": "FormalParameter",
+      "name": "Forward primer",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#map_to_reference-inputs-Reference sequence",
+      "@type": "FormalParameter",
+      "name": "Reference sequence",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#map_to_reference-inputs-Reverse primer",
+      "@type": "FormalParameter",
+      "name": "Reverse primer",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#map_to_reference-outputs-fastqc_forward",
+      "@type": "FormalParameter",
+      "name": "fastqc_forward",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#map_to_reference-outputs-fastqc_reverse",
+      "@type": "FormalParameter",
+      "name": "fastqc_reverse",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#map_to_reference-outputs-fastqc_paired",
+      "@type": "FormalParameter",
+      "name": "fastqc_paired",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#map_to_reference-outputs-visualize_consensus",
+      "@type": "FormalParameter",
+      "name": "visualize_consensus",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#map_to_reference-outputs-metadata",
+      "@type": "FormalParameter",
+      "name": "metadata",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

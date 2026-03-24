@@ -1,0 +1,702 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "comments": [
+        {
+            "color": "none",
+            "data": {
+                "size": 2,
+                "text": "Input <br>Micro-Publication<br>Text<br>"
+            },
+            "id": 0,
+            "position": [
+                0,
+                8.599999999999994
+            ],
+            "size": [
+                370,
+                128
+            ],
+            "type": "text"
+        },
+        {
+            "color": "none",
+            "data": {
+                "size": 2,
+                "text": "Compute Photo-Z<br>"
+            },
+            "id": 4,
+            "position": [
+                2298.1,
+                5.3
+            ],
+            "size": [
+                382,
+                122
+            ],
+            "type": "text"
+        },
+        {
+            "color": "none",
+            "data": {
+                "italic": true,
+                "size": 2,
+                "text": "Obtain photometric data from Legacy Survey<br>"
+            },
+            "id": 3,
+            "position": [
+                1741.4,
+                0
+            ],
+            "size": [
+                318,
+                134
+            ],
+            "type": "text"
+        },
+        {
+            "color": "none",
+            "data": {
+                "size": 2,
+                "text": "Parse"
+            },
+            "id": 2,
+            "position": [
+                1086.6,
+                7.7
+            ],
+            "size": [
+                194.4,
+                41.2
+            ],
+            "type": "text"
+        },
+        {
+            "color": "none",
+            "data": {
+                "size": 2,
+                "text": "Extract Semantic information<br>"
+            },
+            "id": 1,
+            "position": [
+                373.5,
+                6.499999999999999
+            ],
+            "size": [
+                329,
+                76
+            ],
+            "type": "text"
+        }
+    ],
+    "format-version": "0.1",
+    "name": "ATel Follow-up Photometric data Legacy Survey Photo-z",
+    "report": {
+        "markdown": "\n# Workflow Execution Report\n\n## Workflow Inputs\n```galaxy\ninvocation_inputs()\n```\n\n## Workflow Outputs\n```galaxy\ninvocation_outputs()\n```\n\n## Workflow\n```galaxy\nworkflow_display()\n```\n"
+    },
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Text ID"
+                }
+            ],
+            "label": "Text ID",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 21.58331298828125,
+                "top": 139.36666870117188
+            },
+            "tool_id": null,
+            "tool_state": "{\"validators\": [{\"min\": null, \"max\": null, \"negate\": false, \"type\": \"in_range\"}], \"parameter_type\": \"integer\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "e9bd7cb5-d8ef-417f-8b76-5e95f221bc32",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "55534ffe-7cd0-40ac-b2e9-0adb71d5d246"
+                }
+            ]
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Text"
+                }
+            ],
+            "label": "Text",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 26,
+                "top": 229.0333251953125
+            },
+            "tool_id": null,
+            "tool_state": "{\"validators\": [], \"parameter_type\": \"text\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "5b9f9cb7-2244-40b2-99dd-81a01a113daf",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "2655f1d7-4783-47e7-a46c-6ea004d7a269"
+                }
+            ]
+        },
+        "2": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/astroteam/analyse_short_astro_text_astro_tool/analyse_short_astro_text_astro_tool/0.0.1+galaxy0",
+            "errors": null,
+            "id": 2,
+            "input_connections": {
+                "number": {
+                    "id": 0,
+                    "output_name": "output"
+                },
+                "text": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "analyse-short-astro-text",
+            "outputs": [
+                {
+                    "name": "out_extract_data_predict_workflow_table_telescopes",
+                    "type": "auto"
+                },
+                {
+                    "name": "out_extract_data_predict_workflow_table_sources",
+                    "type": "auto"
+                },
+                {
+                    "name": "out_extract_data_predict_workflow_table_source_positions",
+                    "type": "auto"
+                },
+                {
+                    "name": "out_extract_data_predict_workflow_table_unknown_sources",
+                    "type": "auto"
+                },
+                {
+                    "name": "out_extract_data_predict_workflow_table_source_classes",
+                    "type": "auto"
+                },
+                {
+                    "name": "out_extract_data_predict_workflow_table_astrobert_results",
+                    "type": "auto"
+                },
+                {
+                    "name": "out_extract_data_predict_workflow_table_vectorized_text",
+                    "type": "auto"
+                },
+                {
+                    "name": "out_extract_data_predict_workflow_table_vectorized_url",
+                    "type": "auto"
+                },
+                {
+                    "name": "out_extract_data_predict_workflow_table_vectorized_url_scores",
+                    "type": "auto"
+                }
+            ],
+            "position": {
+                "left": 374.5,
+                "top": 130.5
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionout_extract_data_predict_workflow_table_source_positions": {
+                    "action_arguments": {
+                        "newtype": "fits"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "out_extract_data_predict_workflow_table_source_positions"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/astroteam/analyse_short_astro_text_astro_tool/analyse_short_astro_text_astro_tool/0.0.1+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "a35056104c2c",
+                "name": "analyse_short_astro_text_astro_tool",
+                "owner": "astroteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"number\": {\"__class__\": \"ConnectedValue\"}, \"origin_type\": \"ATel\", \"text\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.0.1+galaxy0",
+            "type": "tool",
+            "uuid": "a377682e-da26-40dd-99e7-248949baf480",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/astroteam/astropy_fits2csv/astropy_fits2csv/0.1.0+galaxy0",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "input_fits": {
+                    "id": 2,
+                    "output_name": "out_extract_data_predict_workflow_table_source_positions"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "astropy fits2csv",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 727.183349609375,
+                "top": 130.58334045410157
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/astroteam/astropy_fits2csv/astropy_fits2csv/0.1.0+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "01fbfdf7d10f",
+                "name": "astropy_fits2csv",
+                "owner": "astroteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"hdu\": \"1\", \"input_fits\": {\"__class__\": \"ConnectedValue\"}, \"output_format\": \"tabular\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1.0+galaxy0",
+            "type": "tool",
+            "uuid": "716a21e9-d3fc-4740-bcca-e91ada49ac45",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/split_file_to_collection/split_file_to_collection/0.5.2",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "split_parms|input": {
+                    "id": 3,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Split file",
+                    "name": "split_parms"
+                }
+            ],
+            "label": null,
+            "name": "Split file",
+            "outputs": [
+                {
+                    "name": "list_output_tab",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 723.5936259888415,
+                "top": 487.31142543552096
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/split_file_to_collection/split_file_to_collection/0.5.2",
+            "tool_shed_repository": {
+                "changeset_revision": "2dae863c8f42",
+                "name": "split_file_to_collection",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"split_parms\": {\"select_ftype\": \"tabular\", \"__current_case__\": 0, \"input\": {\"__class__\": \"ConnectedValue\"}, \"top\": \"1\", \"split_by\": {\"select_split_by\": \"row\", \"__current_case__\": 1, \"select_mode\": {\"mode\": \"chunk\", \"__current_case__\": 0, \"chunksize\": \"1\"}, \"newfilenames\": \"split_file\", \"select_allocate\": {\"allocate\": \"byrow\", \"__current_case__\": 2}}}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.5.2",
+            "type": "tool",
+            "uuid": "13b40d91-6a40-4ea3-baf5-e4e8f400e513",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "5": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_tail_tool/9.3+galaxy1",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "infile": {
+                    "id": 4,
+                    "output_name": "list_output_tab"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Select last",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 736.0075862831155,
+                "top": 842.3574199161305
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_tail_tool/9.3+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "86755160afbf",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"complement\": \"\", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"num_lines\": \"1\", \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "9.3+galaxy1",
+            "type": "tool",
+            "uuid": "11b5d0f9-8b6f-4251-a727-829e31ad524e",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "6": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cut_tool/9.3+galaxy2",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "input": {
+                    "id": 5,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [],
+            "label": "Extract Source Name",
+            "name": "Advanced Cut",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 1126.8350153927927,
+                "top": 199.2340284548402
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cut_tool/9.3+galaxy2",
+            "tool_shed_repository": {
+                "changeset_revision": "86755160afbf",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"complement\": \"\", \"cut_type_options\": {\"cut_element\": \"-f\", \"__current_case__\": 0, \"delimiter\": \"\", \"colnames_option\": {\"header\": \"Y\", \"__current_case__\": 0, \"list\": [\"4\"]}}, \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "9.3+galaxy2",
+            "type": "tool",
+            "uuid": "4d8479c6-9e77-47ba-9a59-ead2e928b06c",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "7": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cut_tool/9.3+galaxy2",
+            "errors": null,
+            "id": 7,
+            "input_connections": {
+                "input": {
+                    "id": 5,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [],
+            "label": "Extract RA",
+            "name": "Advanced Cut",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 1133.4984476707382,
+                "top": 463.3658786841196
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cut_tool/9.3+galaxy2",
+            "tool_shed_repository": {
+                "changeset_revision": "86755160afbf",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"complement\": \"\", \"cut_type_options\": {\"cut_element\": \"-f\", \"__current_case__\": 0, \"delimiter\": \"\", \"colnames_option\": {\"header\": \"Y\", \"__current_case__\": 0, \"list\": [\"2\"]}}, \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "9.3+galaxy2",
+            "type": "tool",
+            "uuid": "633c7e75-e1a3-4e36-b420-dd498935f2cd",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "8": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cut_tool/9.3+galaxy2",
+            "errors": null,
+            "id": 8,
+            "input_connections": {
+                "input": {
+                    "id": 5,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [],
+            "label": "Extract Dec",
+            "name": "Advanced Cut",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 1133.3159336733588,
+                "top": 761.7882982891488
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cut_tool/9.3+galaxy2",
+            "tool_shed_repository": {
+                "changeset_revision": "86755160afbf",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"complement\": \"\", \"cut_type_options\": {\"cut_element\": \"-f\", \"__current_case__\": 0, \"delimiter\": \"\", \"colnames_option\": {\"header\": \"Y\", \"__current_case__\": 0, \"list\": [\"3\"]}}, \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "9.3+galaxy2",
+            "type": "tool",
+            "uuid": "1255cff6-4ba3-450d-a47f-36fe4cb3b238",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "9": {
+            "annotation": "",
+            "content_id": "param_value_from_file",
+            "errors": null,
+            "id": 9,
+            "input_connections": {
+                "input1": {
+                    "id": 6,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Parse parameter value",
+            "outputs": [
+                {
+                    "name": "text_param",
+                    "type": "expression.json"
+                }
+            ],
+            "position": {
+                "left": 1458.7571103849282,
+                "top": 198.4733863283997
+            },
+            "post_job_actions": {},
+            "tool_id": "param_value_from_file",
+            "tool_state": "{\"input1\": {\"__class__\": \"ConnectedValue\"}, \"param_type\": \"text\", \"remove_newlines\": true, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1.0",
+            "type": "tool",
+            "uuid": "e97af04f-618e-4fb6-b21f-efb4e4cf4fc1",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "10": {
+            "annotation": "",
+            "content_id": "param_value_from_file",
+            "errors": null,
+            "id": 10,
+            "input_connections": {
+                "input1": {
+                    "id": 7,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Parse parameter value",
+            "outputs": [
+                {
+                    "name": "float_param",
+                    "type": "expression.json"
+                }
+            ],
+            "position": {
+                "left": 1465.45085023753,
+                "top": 476.2058163971854
+            },
+            "post_job_actions": {},
+            "tool_id": "param_value_from_file",
+            "tool_state": "{\"input1\": {\"__class__\": \"ConnectedValue\"}, \"param_type\": \"float\", \"remove_newlines\": true, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1.0",
+            "type": "tool",
+            "uuid": "cce1b9ee-cf1f-494a-9307-c85958c7c0d2",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "11": {
+            "annotation": "",
+            "content_id": "param_value_from_file",
+            "errors": null,
+            "id": 11,
+            "input_connections": {
+                "input1": {
+                    "id": 8,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Parse parameter value",
+            "outputs": [
+                {
+                    "name": "float_param",
+                    "type": "expression.json"
+                }
+            ],
+            "position": {
+                "left": 1465.876716231415,
+                "top": 758.3500599392514
+            },
+            "post_job_actions": {},
+            "tool_id": "param_value_from_file",
+            "tool_state": "{\"input1\": {\"__class__\": \"ConnectedValue\"}, \"param_type\": \"float\", \"remove_newlines\": true, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1.0",
+            "type": "tool",
+            "uuid": "4b65af5d-fce8-4fce-ba4c-bfe5c0197159",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "12": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/astroteam/desi_legacy_survey_astro_tool/desi_legacy_survey_astro_tool/0.0.1+galaxy0",
+            "errors": null,
+            "id": 12,
+            "input_connections": {
+                "C_data_product_|DEC": {
+                    "id": 11,
+                    "output_name": "float_param"
+                },
+                "C_data_product_|RA": {
+                    "id": 10,
+                    "output_name": "float_param"
+                },
+                "C_data_product_|src_name": {
+                    "id": 9,
+                    "output_name": "text_param"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool DESI Legacy Survey",
+                    "name": "C_data_product_"
+                },
+                {
+                    "description": "runtime parameter for tool DESI Legacy Survey",
+                    "name": "C_data_product_"
+                },
+                {
+                    "description": "runtime parameter for tool DESI Legacy Survey",
+                    "name": "C_data_product_"
+                }
+            ],
+            "label": null,
+            "name": "DESI Legacy Survey",
+            "outputs": [
+                {
+                    "name": "out_Catalog_catalog_table",
+                    "type": "auto"
+                },
+                {
+                    "name": "out_Catalog_dictionary_filters",
+                    "type": "auto"
+                }
+            ],
+            "position": {
+                "left": 1854.5,
+                "top": 396.5
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionout_Catalog_catalog_table": {
+                    "action_arguments": {
+                        "newtype": "fits"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "out_Catalog_catalog_table"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/astroteam/desi_legacy_survey_astro_tool/desi_legacy_survey_astro_tool/0.0.1+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "ea39f416af9d",
+                "name": "desi_legacy_survey_astro_tool",
+                "owner": "astroteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"C_data_product_\": {\"DPselector_\": \"Catalog\", \"__current_case__\": 0, \"src_name\": {\"__class__\": \"ConnectedValue\"}, \"RA\": {\"__class__\": \"ConnectedValue\"}, \"DEC\": {\"__class__\": \"ConnectedValue\"}, \"Radius\": \"1.0\", \"data_release\": \"10\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.0.1+galaxy0",
+            "type": "tool",
+            "uuid": "81fc35f9-7e24-4092-b054-5f32f20ba4d4",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "13": {
+            "annotation": "",
+            "content_id": "photoz_euclid_astro_tool_pr157",
+            "errors": null,
+            "id": 13,
+            "input_connections": {
+                "catalog_URL": {
+                    "id": 12,
+                    "output_name": "out_Catalog_catalog_table"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "PhotoZ_Euclid (PR 157)",
+            "outputs": [
+                {
+                    "name": "out_Run_Phosphoros_on_Catalog_output_catalog",
+                    "type": "auto"
+                },
+                {
+                    "name": "out_Run_Phosphoros_on_Catalog_z_hist",
+                    "type": "auto"
+                },
+                {
+                    "name": "out_Run_Phosphoros_on_Catalog_output_zpc",
+                    "type": "auto"
+                }
+            ],
+            "position": {
+                "left": 2304.6620151605484,
+                "top": 355.7873854213331
+            },
+            "post_job_actions": {},
+            "tool_id": "photoz_euclid_astro_tool_pr157",
+            "tool_state": "{\"PDZ_output\": \"False\", \"ZP_correction\": \"False\", \"ab_magnitude\": \"Flux\", \"catalog_URL\": {\"__class__\": \"ConnectedValue\"}, \"column_name_DEC\": \"DEC[deg]\", \"column_name_MW_EBV\": \"ebv\", \"column_name_Nz_prior_I\": \"\", \"column_name_RA\": \"RA[deg]\", \"column_name_Ztrue\": \"\", \"filters_table\": {\"__class__\": \"ConnectedValue\"}, \"object_type\": \"Galaxy\", \"priors\": \"None\", \"proc_sources\": \"0\", \"skip_sources\": \"0\", \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.0.1+galaxy0",
+            "type": "tool",
+            "uuid": "ab416838-bc48-4d14-a11e-6072716b7a0b",
+            "when": null,
+            "workflow_outputs": []
+        }
+    },
+    "tags": [],
+    "uuid": "7fcd9011-13ee-47a3-9257-bfb4d11a63d9",
+    "version": 39
+}

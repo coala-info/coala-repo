@@ -1,0 +1,169 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-BioTranslator_Workflow.ga"
+      },
+      "datePublished": "2021-09-24 16:16:59 +0100",
+      "author": [
+
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://workflowhub.eu/workflows/189?version=3",
+      "url": "https://workflowhub.eu/workflows/189/ro_crate?version=3",
+      "name": "Research Object Crate for BioTranslator Workflow",
+      "description": "BioTranslator performs sequentially pathway analysis and gene prioritization: A specific operator is executed for each task to translate the input gene set into semantic terms and pinpoint the pivotal-role genes on the derived semantic network. The output consists of the set of statistically significant semantic terms and the associated hub genes (the gene signature), prioritized according to their involvement in the underlying semantic topology.",
+      "isBasedOn": "http://www.biotranslator.gr:8080/u/thodk/w/biotranslator-workflow",
+      "sdDatePublished": "2026-03-24 18:09:22 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-BioTranslator_Workflow.ga"
+        },
+        {
+          "@id": "workflow-diagram-189-1.png"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-BioTranslator_Workflow.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 3960,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "workflow-diagram-189-1.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "BioTranslator performs sequentially pathway analysis and gene prioritization: A specific operator is executed for each task to translate the input gene set into semantic terms and pinpoint the pivotal-role genes on the derived semantic network. The output consists of the set of statistically significant semantic terms and the associated hub genes (the gene signature), prioritized according to their involvement in the underlying semantic topology.",
+      "name": "BioTranslator Workflow",
+      "url": "https://workflowhub.eu/workflows/189?version=3",
+      "keywords": "Semantic Network Analysis, Gene Prioritization, Pathway Analysis, Biomedical Ontologies, Semantic Interpretation",
+      "version": 3,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/58"
+      },
+      "dateCreated": "2021-09-24T15:16:59Z",
+      "dateModified": "2023-01-16T13:52:49Z",
+      "isPartOf": [
+
+      ],
+      "isBasedOn": "https://workflowhub.eu/workflows/189?version=2",
+      "input": {
+        "@id": "#biotranslator_workflow-inputs-Input%20Gene%20List"
+      },
+      "output": [
+        {
+          "@id": "#biotranslator_workflow-outputs-GO%20Enriched%20Terms"
+        },
+        {
+          "@id": "#biotranslator_workflow-outputs-GO%20Gene%20Prioritization"
+        },
+        {
+          "@id": "#biotranslator_workflow-outputs-GO%20Heatmap"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "workflow-diagram-189-1.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 44291
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/58",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "CO2MICS Lab"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#biotranslator_workflow-inputs-Input Gene List",
+      "@type": "FormalParameter",
+      "name": "Input Gene List",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#biotranslator_workflow-outputs-GO Enriched Terms",
+      "@type": "FormalParameter",
+      "name": "GO Enriched Terms",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#biotranslator_workflow-outputs-GO Gene Prioritization",
+      "@type": "FormalParameter",
+      "name": "GO Gene Prioritization",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#biotranslator_workflow-outputs-GO Heatmap",
+      "@type": "FormalParameter",
+      "name": "GO Heatmap",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

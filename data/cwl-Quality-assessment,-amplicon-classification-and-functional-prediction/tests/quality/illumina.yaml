@@ -1,0 +1,8 @@
+cwl:tool: ../../workflows/workflow_illumina_quality.cwl
+forward_reads: 
+   - class: File
+     location: http://download.systemsbiology.nl/unlock/cwl/test_data/amplicon/forward.fastq.gz
+reverse_reads: 
+   - class: File
+     location: http://download.systemsbiology.nl/unlock/cwl/test_data/amplicon/reverse.fastq.gz
+identifier: illumina_quality_test

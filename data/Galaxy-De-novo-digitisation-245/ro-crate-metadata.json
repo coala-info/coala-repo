@@ -1,0 +1,277 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-De_novo_digitisation.ga"
+      },
+      "datePublished": "2021-11-26 14:46:05 +0000",
+      "author": [
+
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://workflowhub.eu/workflows/245?version=1",
+      "url": "https://workflowhub.eu/workflows/245/ro_crate?version=1",
+      "name": "Research Object Crate for De novo digitisation",
+      "description": "",
+      "isBasedOn": "https://sdr.nhm.ac.uk/",
+      "sdDatePublished": "2026-03-24 18:07:10 +0000",
+      "creativeWorkStatus": "Work-in-progress",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-De_novo_digitisation.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-De_novo_digitisation.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 18313,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "",
+      "name": "De novo digitisation",
+      "url": "https://workflowhub.eu/workflows/245?version=1",
+      "keywords": "Segmentation",
+      "version": 1,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/72"
+      },
+      "dateCreated": "2021-11-26T14:46:05Z",
+      "dateModified": "2023-01-16T13:55:15Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#de_novo_digitisation-inputs-Catalog%20number"
+        },
+        {
+          "@id": "#de_novo_digitisation-inputs-Higher%20classification"
+        },
+        {
+          "@id": "#de_novo_digitisation-inputs-Image%20URI"
+        },
+        {
+          "@id": "#de_novo_digitisation-inputs-Image%20license"
+        },
+        {
+          "@id": "#de_novo_digitisation-inputs-Institution%20URL"
+        },
+        {
+          "@id": "#de_novo_digitisation-inputs-Object%20type"
+        },
+        {
+          "@id": "#de_novo_digitisation-inputs-Person%20identifier"
+        },
+        {
+          "@id": "#de_novo_digitisation-inputs-Person%20name"
+        },
+        {
+          "@id": "#de_novo_digitisation-inputs-Rights%20holder"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#de_novo_digitisation-outputs-_anonymous_output_1"
+        },
+        {
+          "@id": "#de_novo_digitisation-outputs-_anonymous_output_2"
+        },
+        {
+          "@id": "#de_novo_digitisation-outputs-_anonymous_output_3"
+        },
+        {
+          "@id": "#de_novo_digitisation-outputs-_anonymous_output_4"
+        },
+        {
+          "@id": "#de_novo_digitisation-outputs-_anonymous_output_5"
+        },
+        {
+          "@id": "#de_novo_digitisation-outputs-_anonymous_output_6"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/72",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Specimen Data Refinery"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#de_novo_digitisation-inputs-Catalog number",
+      "@type": "FormalParameter",
+      "name": "Catalog number",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#de_novo_digitisation-inputs-Higher classification",
+      "@type": "FormalParameter",
+      "name": "Higher classification",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#de_novo_digitisation-inputs-Image URI",
+      "@type": "FormalParameter",
+      "name": "Image URI",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#de_novo_digitisation-inputs-Image license",
+      "@type": "FormalParameter",
+      "name": "Image license",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#de_novo_digitisation-inputs-Institution URL",
+      "@type": "FormalParameter",
+      "name": "Institution URL",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#de_novo_digitisation-inputs-Object type",
+      "@type": "FormalParameter",
+      "name": "Object type",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#de_novo_digitisation-inputs-Person identifier",
+      "@type": "FormalParameter",
+      "name": "Person identifier",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#de_novo_digitisation-inputs-Person name",
+      "@type": "FormalParameter",
+      "name": "Person name",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#de_novo_digitisation-inputs-Rights holder",
+      "@type": "FormalParameter",
+      "name": "Rights holder",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#de_novo_digitisation-outputs-_anonymous_output_1",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#de_novo_digitisation-outputs-_anonymous_output_2",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#de_novo_digitisation-outputs-_anonymous_output_3",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_3",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#de_novo_digitisation-outputs-_anonymous_output_4",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_4",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#de_novo_digitisation-outputs-_anonymous_output_5",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_5",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#de_novo_digitisation-outputs-_anonymous_output_6",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_6",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

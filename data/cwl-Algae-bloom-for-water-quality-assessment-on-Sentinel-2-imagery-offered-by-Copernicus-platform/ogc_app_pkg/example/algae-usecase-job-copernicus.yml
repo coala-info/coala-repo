@@ -1,0 +1,13 @@
+date: "2019-06-29"
+delta: 4  # days
+collection: "SENTINEL-2"
+aoi:
+  class: File
+  path: algae-usecase-region.geojson
+  format: "iana:application/geo+json"
+
+cloud_cover: 0.1
+
+# Copernicus credentials
+s3_access_key: "<FILL_ME>"
+s3_secret_key: "<FILL_ME>"

@@ -1,0 +1,112 @@
+---
+name: cromast-a-workflow-for-assessing-protein-domain-classificati
+description: "This CWL workflow integrates Pfam and CATH database identifiers with structural alignment tools to cross-map and categorize protein domain structural instances. Use this skill when you need to refine protein domain classifications, resolve discrepancies between structural databases, or characterize the structural consistency of specific domain families."
+homepage: https://workflowhub.eu/workflows/390
+---
+# CroMaSt: A workflow for assessing protein domain classification by cross-mapping of structural instances between domain databases and structural alignment
+
+## Overview
+
+CroMaSt (Cross-Mapper of domain Structural instances) is an automated Common Workflow Language (CWL) workflow designed to refine protein domain classifications. By integrating data from the [Pfam](http://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam35.0/) and [CATH](ftp://orengoftp.biochem.ucl.ac.uk/cath/releases/latest-release/cath-classification-data/) databases, the workflow identifies and cross-maps structural instances (StIs) to clarify the assignment of protein domains based on their 3D structures.
+
+The workflow operates through an iterative process of structural alignment and ID mapping. It extracts residue-mapped domain instances from both databases, performs cross-mapping to identify unique or shared instances, and utilizes the [Kpax](http://kpax.loria.fr/) tool for structural comparison. This analysis allows the workflow to categorize structural instances into four distinct groups: **Core**, **True**, **Domain-like**, and **Failed**.
+
+Users can initialize the process with specific Pfam or CATH family identifiers. If the workflow identifies new related family identifiers during an iteration, it generates a new parameter file to facilitate subsequent runs until the domain space is fully explored. The source code and implementation details are available in the [CroMaSt repository](https://gitlab.inria.fr/capsid.public_codes/CroMaSt.git).
+
+## Inputs
+
+| ID | Name | Type | Description |
+| --- | --- | --- | --- |
+| pfam | Pfam family ids | string[]? |  |
+| cath | CATH family ids | string[]? |  |
+| iteration | Iteration number starting from 0 | int |  |
+| filename | Filename to store family ids per iteration | File, string |  |
+| true_domain_file | To store all the true domain StIs | File, string |  |
+| siftsDir | Directory for storing all SIFTS files | Directory |  |
+| paramfile | Parameter file for current iteration | File |  |
+| db_for_core | Database to select to compute core average structure | string |  |
+| core_domain_struct | Core domain structure (.pdb) | File, string |  |
+| prev_crossMapped_pfam | Pfam cross-mapped domain StIs from previous iteration | File |  |
+| prev_crossMapped_cath | CATH cross-mapped domain StIs from previous iteration | File |  |
+| unmapped_analysis_file | Filename with alignment scores for unmapped instances | string |  |
+| pdbDir | The directory for storing all PDB files | Directory |  |
+| cath_resmap | Filename for residue-mapped CATH domain StIs | string |  |
+| cath_lost | Obsolete and inconsistent CATH domain StIs | string |  |
+| pfam_resmap | Filename for residue-mapped Pfam domain StIs | string |  |
+| pfam_lost | Obsolete and inconsistent Pfam domain StIs | string |  |
+| domain_like | To store all the domain-like StIs | File, string |  |
+| failed_domain | To store all failed domain StIs | File, string |  |
+| min_domain_length | Threshold for minimum domain length | int |  |
+| alignment_score | Alignment score from Kpax to analyse structures | string |  |
+| score_threshold | Score threshold for given alignment score from Kpax | float |  |
+| unmap_pfam_pass | Filename to store unmapped but structurally well aligned instances from Pfam | string |  |
+| unmap_pfam_fail | Filename to store unmapped and not properly aligned instances from Pfam | string |  |
+| unmap_cath_pass | Filename to store unmapped but structurally well aligned instances from CATH | string |  |
+| unmap_cath_fail | Filename to store unmapped and not properly aligned instances from CATH | string |  |
+
+
+## Steps
+
+| Step ID | Name | Description |
+| --- | --- | --- |
+| get_family_ids | Get domain family ids | Get domain family ids from CATH and Pfam databases from parameter file provided by user  |
+| pfam_domain_instances | Produce a list of residue-mapped domain StIs from Pfam ids | Retrieve and process the PDB structures corresponding to the Pfam family ids resulting in a list of residue-mapped structural domain instances along with lost structural instances (requires Data/pdbmap downloaded from Pfam and uses SIFTS resource for UniProt to PDB residue Mapping)   |
+| cath_domain_instances | Produce a list of residue-mapped domain StIs from CATH ids | Retrieve and process the PDB structures corresponding to the CATH superfamily ids resulting in a list of residue-mapped structural domain instances along with lost structural instances (requires Data/cath_domain_description_file.txt downloaded from CATH and uses SIFTS resource for PDB to UniProt residue Mapping)   |
+| add_crossmapped_to_resmapped | Add cross-mapped to residue-mapped domain StIs | Add crossmapped domain instances from last iteration to current list of residue mapped domain instances.  |
+| compare_instances_CATH_Pfam | Compare residue-mapped domain StIs | Find the intersection between residue-mapped domain StIs of Pfam and CATH lists.  Allows variable domain boundaries in a certain range +/- 30aa. Produces three files: common domain instances,  and unique domain instances to each Pfam and CATH.  |
+| crossmapping_Pfam2CATH | Map unique Pfam domain StIs to CATH db | Maps the unique domain StIs from Pfam to the whole CATH database  (using residue numbering from PDB allowing variable domain boundaries +/-30aa)  |
+| crossmapping_CATH2Pfam | Map unique CATH domain StIs to Pfam db | Maps the unique domain StIs from CATH to the whole Pfam database  (using residue numbering from UniProt allowing variable domain boundaries +/-30aa)  |
+| format_core_list | Format core domain StIs list | Fornat core domain instances list from the common instances list identified at first iteration;  Preparing input for average structure computation  |
+| chop_and_avg_for_core | Compute average of average for core domain instances | Compute average structure for all averaged structures corresponding to core UniProt domain instances. First computes average per UniProt domain instance and then average all averaged structures.  |
+| chop_and_avg_for_CATH2Pfam | Compute average of average per cross-mapped Pfam | Compute average structure for all averaged structures corresponding to UniProt domain instances cross-mapped  from CATH to a Pfam family. First computes average per UniProt domain instance and then average all averaged structures per Pfam family.   |
+| chop_and_avg_for_Pfam2CATH | Compute average of average per cross-mapped CATH | Compute average structure for all averaged structures corresponding to UniProt domain instances cross-mapped  from Pfam to a CATH superfamily. First computes average per UniProt domain instance and then average all averaged structures per CATH superfamily.   |
+| align_avg_structs_pairwise | Pairwise alignemnt with core average structure | Align crossmapped averaged structures against core average domain structure pairwise using Kpax Outputs a csv file with all the scores from pairwise alignments  |
+| check_alignment_scores | Checks the alignment score for given threshold | Checks the alignment score for each aligned structure based on the given threshold Outputs the structural instances passing and failing the threshold in separate files   |
+| unmapped_from_pfam | Averages and aligns the unampped instances from Pfam | First computes average per UniProt domain instance and then aligns all the average structures against core average structure. Outputs the alignment results along with the structures passing and failing the threshold for given Kpax score.        |
+| unmapped_from_cath | Averages and aligns the unampped instances from CATH | First computes average per UniProt domain instance and then aligns all the average structures against core average structure. Outputs the alignment results along with the structures passing and failing the threshold for given Kpax score.        |
+| gather_domain_like | Collects all domain-like structural instances | Collects all domain-like structural instances from Pfam and CATH Outputs the list with all domain-like structural instances together.  |
+| gather_failed_domains | Collects all failed domain instances | Collects all domain instances failed to pass the criteria from both Pfam and CATH Outputs the list with all failed domain instances together.  |
+| create_new_parameters | Create parameter file for next iteration | Create parameter file for next iteration from previous parameter file Filter the pairwise alignments to retrieve family ids passing the threshold for a given Kpax score type         |
+
+## Outputs
+
+| ID | Name | Type | Description |
+| --- | --- | --- | --- |
+| family_ids_x | Family ids per iteration | File |  |
+| resmapped_pfam | All Pfam residue-mapped domain StIs with domain labels | File |  |
+| reslost_pfam | Obsolete and inconsistent domain StIs from Pfam | File |  |
+| resmapped_cath | All CATH residue-mapped domain StIs with domain labels | File |  |
+| reslost_cath | Obsolete and inconsistent domain StIs from CATH | File |  |
+| true_domains | True domain StIs per iteration | File |  |
+| core_domains_list | Core domain StIs | File, null |  |
+| core_structure | Core domain structure (.pdb) | File, null |  |
+| all_domain_like | Domain-like StIs | File |  |
+| all_failed_domains | Failed domain StIs | File |  |
+| crossmapped_pfam_passed | Cross-mapped families with Pfam domain StIs passing the threshold | File |  |
+| crossmapped_cath_passed | Cross-mapped families with CATH domain StIs passing the threshold | File |  |
+| crossres_mappedpfam | Merged cross-mapped and residue-mapped domain StIs from Pfam | File |  |
+| crossres_mappedcath | Merged cross-mapped and residue-mapped domain StIs from CATH | File |  |
+| unmap_pfam | All Pfam un-mapped domin StIs | File |  |
+| allmap_pfam | All Pfam domain StIs cross-mapped to CATH family-wise | File |  |
+| unmap_cath | All un-mapped domin StIs from CATH | File |  |
+| allmap_cath | All CATH cross-mapped domin StIs family-wise together | File |  |
+| pfam_crossmap_cath_avg | Average structures per cross-mapped CATH family for Pfam StIs at family level | array |  |
+| cath_crossmap_pfam_avg | Average structures per cross-mapped Pfam family for CATH StIs at family level | array |  |
+| avg_alignment_result | Alignment results from Kpax for all cross-mapped families | File |  |
+| next_parmfile | Parameter file for next iteration of the workflow | File |  |
+| align_unmap_pfam | Alignment results for Pfam unmapped instances | File |  |
+| unmap_pfam_passed | Domain-like StIs from Pfam | File |  |
+| unmap_pfam_failed | Failed domain StIs from Pfam | File |  |
+| align_unmap_cath | Alignment results for CATH unmapped instances | File |  |
+| unmap_cath_passed | Domain-like StIs from CATH | File |  |
+| unmap_cath_failed | Failed domain StIs from CATH | File |  |
+| crossmap_pfam | Pfam domin StIs cross-mapped to CATH family-wise | File[] |  |
+| crossmap_cath | CATH domain StIs cross-mapped to Pfam family-wise | File[] |  |
+
+
+## Files
+
+- WorkflowHub: https://workflowhub.eu/workflows/390
+- `CroMaSt.cwl` — workflow definition (CWL)
+- `report.md` — download metadata (`cwlagent download-workflow`)
+- `ro-crate-metadata.json` — RO-Crate metadata

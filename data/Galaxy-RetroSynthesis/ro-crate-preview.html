@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for RetroSynthesis</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-RetroSynthesis.ga"
+      },
+      "datePublished": "2025-10-24 12:33:47 +0100",
+      "author": [
+        {
+          "@id": "#creator-1"
+        }
+      ],
+      "license": "MIT",
+      "identifier": "https://workflowhub.eu/workflows/2004?version=1",
+      "url": "https://workflowhub.eu/workflows/2004/ro_crate?version=1",
+      "name": "Research Object Crate for RetroSynthesis",
+      "description": "Generating theoretical possible pathways for the production of Lycopene in E.Coli using Retrosynthesis tools",
+      "sdDatePublished": "2026-03-24 16:30:03 +0000",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-RetroSynthesis.ga"
+        },
+        {
+          "@id": "Capture%20d%E2%80%99%C3%A9cran%20du%202025-10-24%2013-33-15.png"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-RetroSynthesis.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 15170,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "Capture%20d%E2%80%99%C3%A9cran%20du%202025-10-24%2013-33-15.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Generating theoretical possible pathways for the production of Lycopene in E.Coli using Retrosynthesis tools",
+      "name": "RetroSynthesis",
+      "url": "https://workflowhub.eu/workflows/2004?version=1",
+      "keywords": "brs, Retrosynthesis",
+      "version": 1,
+      "license": "https://spdx.org/licenses/MIT",
+      "creator": {
+        "@id": "#BioRetroSynth"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/380"
+      },
+      "dateCreated": "2025-10-24T11:37:18Z",
+      "dateModified": "2025-10-30T13:04:49Z",
+      "isPartOf": [
+
+      ],
+      "input": {
+        "@id": "#retrosynthesis-inputs-%23main/Target%20to%20produce"
+      },
+      "output": [
+        {
+          "@id": "#retrosynthesis-outputs-%23main/Complete%20Reactions"
+        },
+        {
+          "@id": "#retrosynthesis-outputs-%23main/RP2paths%20(compounds)"
+        },
+        {
+          "@id": "#retrosynthesis-outputs-%23main/RP2paths%20(pathways)"
+        },
+        {
+          "@id": "#retrosynthesis-outputs-%23main/RRules%20Parser(retro,%20d=%5B'2',%20'4',%20'6',%20'8',%20'10',%20'12',%20'14',%20'16'%5D)"
+        },
+        {
+          "@id": "#retrosynthesis-outputs-%23main/Retropath2.0"
+        },
+        {
+          "@id": "#retrosynthesis-outputs-%23main/_anonymous_output_2"
+        },
+        {
+          "@id": "#retrosynthesis-outputs-%23main/iML1515"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "Capture%20d%E2%80%99%C3%A9cran%20du%202025-10-24%2013-33-15.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 780558
+    },
+    {
+      "@id": "#creator-1",
+      "@type": "Person",
+      "name": "BioRetroSynth"
+    },
+    {
+      "@id": "#BioRetroSynth",
+      "@type": "Person",
+      "name": "BioRetroSynth"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/380",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "galaxy-SynBioCAD"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#retrosynthesis-inputs-#main/Target to produce",
+      "@type": "FormalParameter",
+      "name": "#main/Target to produce",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#retrosynthesis-outputs-#main/Complete Reactions",
+      "@type": "FormalParameter",
+      "name": "#main/Complete Reactions",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#retrosynthesis-outputs-#main/RP2paths (compounds)",
+      "@type": "FormalParameter",
+      "name": "#main/RP2paths (compounds)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#retrosynthesis-outputs-#main/RP2paths (pathways)",
+      "@type": "FormalParameter",
+      "name": "#main/RP2paths (pathways)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#retrosynthesis-outputs-#main/RRules Parser(retro, d=['2', '4', '6', '8', '10', '12', '14', '16'])",
+      "@type": "FormalParameter",
+      "name": "#main/RRules Parser(retro, d=['2', '4', '6', '8', '10', '12', '14', '16'])",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#retrosynthesis-outputs-#main/Retropath2.0",
+      "@type": "FormalParameter",
+      "name": "#main/Retropath2.0",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#retrosynthesis-outputs-#main/_anonymous_output_2",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#retrosynthesis-outputs-#main/iML1515",
+      "@type": "FormalParameter",
+      "name": "#main/iML1515",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for RetroSynthesis</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/2004/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/2004/ro_crate?version=1</a>
+
+
+  <img src="Capture d’écran du 2025-10-24 13-33-15.png" style="width: 100%;"/>
+
+<p>
+  Generating theoretical possible pathways for the production of Lycopene in E.Coli using Retrosynthesis tools
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd>BioRetroSynth</dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>MIT</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-RetroSynthesis.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-RetroSynthesis.ga">RetroSynthesis</a>
+      
+        <br/>Size: 15170 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_Capture%20d%E2%80%99%C3%A9cran%20du%202025-10-24%2013-33-15.png">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="Capture d’écran du 2025-10-24 13-33-15.png">Capture%20d%E2%80%99%C3%A9cran%20du%202025-10-24%2013-33-15.png</a>
+      
+        <br/>Size: 780558 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

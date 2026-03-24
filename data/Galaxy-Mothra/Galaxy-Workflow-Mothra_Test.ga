@@ -1,0 +1,117 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "format-version": "0.1",
+    "name": "Mothra Test",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [],
+            "label": null,
+            "name": "Input dataset collection",
+            "outputs": [],
+            "position": {
+                "left": 0,
+                "top": 0
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\", \"collection_type\": \"list\"}",
+            "tool_version": null,
+            "type": "data_collection_input",
+            "uuid": "9dd332c2-cd29-4033-8af6-936e47df6e3a",
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": "sdr_mothra",
+            "errors": null,
+            "id": 1,
+            "input_connections": {
+                "input1": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "mothra",
+            "outputs": [
+                {
+                    "name": "Mothra image",
+                    "type": "jpg"
+                },
+                {
+                    "name": "Mothra report",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 327,
+                "top": 18
+            },
+            "post_job_actions": {},
+            "tool_id": "sdr_mothra",
+            "tool_state": "{\"input1\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1.0+galaxy0",
+            "type": "tool",
+            "uuid": "fab5c8ff-8307-47a5-bb6e-dbffe44162ed",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "Mothra image",
+                    "uuid": "03920b0b-1531-4907-bcd0-44af10739071"
+                },
+                {
+                    "label": null,
+                    "output_name": "Mothra report",
+                    "uuid": "4a080a74-dd55-4bfd-bb4d-2e1f965065f7"
+                }
+            ]
+        },
+        "2": {
+            "annotation": "",
+            "content_id": "save_output_rocrate",
+            "errors": null,
+            "id": 2,
+            "input_connections": {
+                "singles_or_list|input": {
+                    "id": 1,
+                    "output_name": "Mothra image"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Save as RO Crate",
+            "outputs": [
+                {
+                    "name": "ROCrate",
+                    "type": "zip"
+                }
+            ],
+            "position": {
+                "left": 620,
+                "top": 80
+            },
+            "post_job_actions": {},
+            "tool_id": "save_output_rocrate",
+            "tool_state": "{\"singles_or_list\": {\"type\": \"list\", \"__current_case__\": 1, \"input\": {\"__class__\": \"ConnectedValue\"}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1.0",
+            "type": "tool",
+            "uuid": "3d3c4320-edcc-45cb-a7d5-9bb4e0c805ba",
+            "workflow_outputs": [
+                {
+                    "label": "ROCrate output",
+                    "output_name": "ROCrate",
+                    "uuid": "0c3e89c4-2a9f-4ffd-bce1-f783e259bc6c"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "88584d57-e4f9-4e0b-bdea-e4452990f66d",
+    "version": 5
+}

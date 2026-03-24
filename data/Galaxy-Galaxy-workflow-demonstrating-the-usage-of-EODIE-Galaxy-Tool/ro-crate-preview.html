@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Galaxy workflow demonstrating the usage of EODIE Galaxy Tool</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-Workflow_constructed_from_history__EODIE_Sentinel.ga"
+      },
+      "datePublished": "2022-03-11 12:27:49 +0000",
+      "author": [
+        {
+          "@id": "#person-49"
+        }
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.274.1",
+      "url": "https://workflowhub.eu/workflows/274/ro_crate?version=1",
+      "name": "Research Object Crate for Galaxy workflow demonstrating the usage of EODIE Galaxy Tool",
+      "description": "This workflow demonstrates the usage of EODIE, a toolkit to extract object based timeseries information from Earth Observation data.\n\nEODIE is a toolkit to extract object based timeseries information from Earth Observation data.\n\nThe EODIE code can be found on [Gitlab](https://gitlab.com/fgi_nls/public/EODIE) .\n\nThe goal of EODIE is to ease the extraction of time series information at object level. Today, vast amounts of Earth Observation data are available to the users via for example earth explorer or scihub. Often, not the whole images are needed for exploitation, but only the timeseries of a certain feature on object level. Objects may be polygons depicting agricultural field parcels, forest plots, or areas of a certain land cover type.\n\nEODIE takes the objects in as polygons in a shapefile as well as the timeframe of interest and the features (eg vegetation indices) to be extracted. The output is a per polygon timeseries of the selected features over the timeframe of interest.\n\n**Online documentation**\nEODIE documentation can be found [here](https://eodie.readthedocs.io/en/latest/).\n\n**Abstract CWL**\nAutomatically generated from the Galaxy workflow file: Workflow constructed from history 'EODIE Sentinel'",
+      "sdDatePublished": "2026-03-24 18:06:22 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-Workflow_constructed_from_history__EODIE_Sentinel.ga"
+        },
+        {
+          "@id": "workflow-274-c71fe30f3b248a2246f4fbfbb086244666c29263-diagram.svg"
+        },
+        {
+          "@id": "Galaxy-Workflow-Workflow_constructed_from_history__EODIE_Sentinel.cwl"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-Workflow_constructed_from_history__EODIE_Sentinel.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 8775,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "workflow-274-c71fe30f3b248a2246f4fbfbb086244666c29263-diagram.svg"
+      },
+      "subjectOf": {
+        "@id": "Galaxy-Workflow-Workflow_constructed_from_history__EODIE_Sentinel.cwl"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "This workflow demonstrates the usage of EODIE, a toolkit to extract object based timeseries information from Earth Observation data.\n\nEODIE is a toolkit to extract object based timeseries information from Earth Observation data.\n\nThe EODIE code can be found on [Gitlab](https://gitlab.com/fgi_nls/public/EODIE) .\n\nThe goal of EODIE is to ease the extraction of time series information at object level. Today, vast amounts of Earth Observation data are available to the users via for example earth explorer or scihub. Often, not the whole images are needed for exploitation, but only the timeseries of a certain feature on object level. Objects may be polygons depicting agricultural field parcels, forest plots, or areas of a certain land cover type.\n\nEODIE takes the objects in as polygons in a shapefile as well as the timeframe of interest and the features (eg vegetation indices) to be extracted. The output is a per polygon timeseries of the selected features over the timeframe of interest.\n\n**Online documentation**\nEODIE documentation can be found [here](https://eodie.readthedocs.io/en/latest/).\n\n**Abstract CWL**\nAutomatically generated from the Galaxy workflow file: Workflow constructed from history 'EODIE Sentinel'",
+      "name": "Galaxy workflow demonstrating the usage of EODIE Galaxy Tool",
+      "url": "https://workflowhub.eu/workflows/274?version=1",
+      "keywords": "earth observation, copernicus, ndvi, sentinel-2 data",
+      "version": 1,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "creator": {
+        "@id": "https://workflowhub.eu/people/49"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/18"
+      },
+      "dateCreated": "2022-03-11T12:32:55Z",
+      "dateModified": "2023-01-16T13:57:33Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.274.1",
+      "input": [
+        {
+          "@id": "#galaxy_workflow_demonstrating_the_usage_of_eodie_galaxy_tool-inputs-S2B_MSIL2A_20200626T095029_N0214_R079_T34VFN_20200626T123234_tar"
+        },
+        {
+          "@id": "#galaxy_workflow_demonstrating_the_usage_of_eodie_galaxy_tool-inputs-sentinel2_tiles_world"
+        },
+        {
+          "@id": "#galaxy_workflow_demonstrating_the_usage_of_eodie_galaxy_tool-inputs-test_parcels_32635"
+        }
+      ],
+      "output": [
+
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "workflow-274-c71fe30f3b248a2246f4fbfbb086244666c29263-diagram.svg",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 4128
+    },
+    {
+      "@id": "Galaxy-Workflow-Workflow_constructed_from_history__EODIE_Sentinel.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "HowTo"
+      ],
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "contentSize": 1581
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#person-49",
+      "@type": "Person",
+      "name": "Anne Fouilloux",
+      "identifier": "https://workflowhub.eu/people/49"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/49",
+      "@type": "Person",
+      "name": "Anne Fouilloux"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/18",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Galaxy Climate"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#galaxy_workflow_demonstrating_the_usage_of_eodie_galaxy_tool-inputs-S2B_MSIL2A_20200626T095029_N0214_R079_T34VFN_20200626T123234_tar",
+      "@type": "FormalParameter",
+      "name": "S2B_MSIL2A_20200626T095029_N0214_R079_T34VFN_20200626T123234_tar",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_workflow_demonstrating_the_usage_of_eodie_galaxy_tool-inputs-sentinel2_tiles_world",
+      "@type": "FormalParameter",
+      "name": "sentinel2_tiles_world",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_workflow_demonstrating_the_usage_of_eodie_galaxy_tool-inputs-test_parcels_32635",
+      "@type": "FormalParameter",
+      "name": "test_parcels_32635",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Galaxy workflow demonstrating the usage of EODIE Galaxy Tool</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/274/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/274/ro_crate?version=1</a>
+
+
+  <img src="workflow-274-c71fe30f3b248a2246f4fbfbb086244666c29263-diagram.svg" style="width: 100%;"/>
+
+<p>
+  This workflow demonstrates the usage of EODIE, a toolkit to extract object based timeseries information from Earth Observation data.
+
+EODIE is a toolkit to extract object based timeseries information from Earth Observation data.
+
+The EODIE code can be found on [Gitlab](https://gitlab.com/fgi_nls/public/EODIE) .
+
+The goal of EODIE is to ease the extraction of time series information at object level. Today, vast amounts of Earth Observation data are available to the users via for example earth explorer or scihub. Often, not the whole images are needed for exploitation, but only the timeseries of a certain feature on object level. Objects may be polygons depicting agricultural field parcels, forest plots, or areas of a certain land cover type.
+
+EODIE takes the objects in as polygons in a shapefile as well as the timeframe of interest and the features (eg vegetation indices) to be extracted. The output is a per polygon timeseries of the selected features over the timeframe of interest.
+
+**Online documentation**
+EODIE documentation can be found [here](https://eodie.readthedocs.io/en/latest/).
+
+**Abstract CWL**
+Automatically generated from the Galaxy workflow file: Workflow constructed from history 'EODIE Sentinel'
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://workflowhub.eu/people/49" target="_blank">Anne Fouilloux</a></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>Apache-2.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-Workflow_constructed_from_history__EODIE_Sentinel.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-Workflow_constructed_from_history__EODIE_Sentinel.ga">Galaxy workflow demonstrating the usage of EODIE Galaxy Tool</a>
+      
+        <br/>Size: 8775 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_workflow-274-c71fe30f3b248a2246f4fbfbb086244666c29263-diagram.svg">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="workflow-274-c71fe30f3b248a2246f4fbfbb086244666c29263-diagram.svg">workflow-274-c71fe30f3b248a2246f4fbfbb086244666c29263-diagram.svg</a>
+      
+        <br/>Size: 4128 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_Galaxy-Workflow-Workflow_constructed_from_history__EODIE_Sentinel.cwl">
+      
+      
+      
+        <strong>Main Workflow Description: </strong>
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-Workflow_constructed_from_history__EODIE_Sentinel.cwl">Galaxy-Workflow-Workflow_constructed_from_history__EODIE_Sentinel.cwl</a>
+      
+        <br/>Size: 1581 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

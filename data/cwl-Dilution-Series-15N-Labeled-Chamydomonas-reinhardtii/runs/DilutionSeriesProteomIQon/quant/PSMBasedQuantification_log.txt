@@ -1,0 +1,51 @@
+2025-03-03 17:27:24.3301 PSMBasedQuantification TRACE CLIArguments: [InstrumentOutput
+   ["C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\mzlite"];
+ ScoredPSMs
+   ["C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psmstats"];
+ PeptideDataBase
+   "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeries\db\Chlamy.db";
+ OutputDirectory
+   "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant";
+ ParamFile
+   "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeries\quant\QuantificationParams.json";
+ Parallelism_Level 18; MatchFiles] 
+2025-03-03 17:27:24.3991 PSMBasedQuantification TRACE Database found at given location (C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeries\db\Chlamy.db) 
+2025-03-03 17:27:24.4309 PSMBasedQuantification TRACE Set Index on data base if not present. 
+2025-03-03 17:27:24.4309 PSMBasedQuantification TRACE Set Index on data base if not present: finished 
+2025-03-03 17:27:24.4378 PSMBasedQuantification TRACE mz files : [|"C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\mzlite\20170519 TM FScon3501.mzlite";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\mzlite\20170519 TM FScon3503.mzlite";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\mzlite\20170519 TM FScon3505.mzlite";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\mzlite\20170519 TM FScon3507.mzlite";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\mzlite\20170519 TM FScon3509.mzlite";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\mzlite\20170519 TM FScon3511.mzlite";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\mzlite\20170519 TM FScon3513.mzlite";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\mzlite\20170519 TM FScon3515.mzlite";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\mzlite\20170519 TM FScon3517.mzlite";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\mzlite\20170519 TM FScon3601.mzlite";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\mzlite\20170519 TM FScon3603.mzlite";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\mzlite\20170519 TM FScon3605.mzlite";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\mzlite\20170519 TM FScon3607.mzlite";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\mzlite\20170519 TM FScon3609.mzlite";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\mzlite\20170519 TM FScon3611.mzlite";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\mzlite\20170519 TM FScon3613.mzlite";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\mzlite\20170519 TM FScon3615.mzlite";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\mzlite\20170519 TM FScon3617.mzlite"|] 
+2025-03-03 17:27:24.4378 PSMBasedQuantification TRACE PEP files : [|"C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psmstats\20170519 TM FScon3501.qpsm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psmstats\20170519 TM FScon3503.qpsm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psmstats\20170519 TM FScon3505.qpsm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psmstats\20170519 TM FScon3507.qpsm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psmstats\20170519 TM FScon3509.qpsm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psmstats\20170519 TM FScon3511.qpsm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psmstats\20170519 TM FScon3513.qpsm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psmstats\20170519 TM FScon3515.qpsm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psmstats\20170519 TM FScon3517.qpsm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psmstats\20170519 TM FScon3601.qpsm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psmstats\20170519 TM FScon3603.qpsm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psmstats\20170519 TM FScon3605.qpsm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psmstats\20170519 TM FScon3607.qpsm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psmstats\20170519 TM FScon3609.qpsm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psmstats\20170519 TM FScon3611.qpsm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psmstats\20170519 TM FScon3613.qpsm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psmstats\20170519 TM FScon3615.qpsm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psmstats\20170519 TM FScon3617.qpsm"|] 
+2025-03-03 17:27:24.4378 PSMBasedQuantification TRACE Program is running on 18 cores 

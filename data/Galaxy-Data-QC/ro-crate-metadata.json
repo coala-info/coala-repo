@@ -1,0 +1,214 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-Data_QC.ga"
+      },
+      "datePublished": "2021-11-08 04:34:47 +0000",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-9906-0673"
+        }
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.222.1",
+      "url": "https://workflowhub.eu/workflows/222/ro_crate?version=1",
+      "name": "Research Object Crate for Data QC",
+      "description": "Data QC step, can run alone or as part of a combined workflow for large genome assembly. \n\n* What it does: Reports statistics from sequencing reads.\n* Inputs: long reads (fastq.gz format), short reads (R1 and R2) (fastq.gz format).\n* Outputs: For long reads: a nanoplot report (the HTML report summarizes all the information). For short reads: a MultiQC report.\n* Tools used: Nanoplot, FastQC, MultiQC.\n* Input parameters: None required.\n* Workflow steps: Long reads are analysed by Nanoplot; Short reads (R1 and R2) are analysed by FastQC; the resulting reports are processed by MultiQC.\n* Options: see the tool settings options at runtime and change as required. Alternative tool option: fastp\n\nInfrastructure_deployment_metadata: Galaxy Australia (Galaxy)\n",
+      "sdDatePublished": "2026-03-24 18:08:36 +0000",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-Data_QC.ga"
+        },
+        {
+          "@id": "DataQC.png"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-Data_QC.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 15475,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "DataQC.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Data QC step, can run alone or as part of a combined workflow for large genome assembly. \n\n* What it does: Reports statistics from sequencing reads.\n* Inputs: long reads (fastq.gz format), short reads (R1 and R2) (fastq.gz format).\n* Outputs: For long reads: a nanoplot report (the HTML report summarizes all the information). For short reads: a MultiQC report.\n* Tools used: Nanoplot, FastQC, MultiQC.\n* Input parameters: None required.\n* Workflow steps: Long reads are analysed by Nanoplot; Short reads (R1 and R2) are analysed by FastQC; the resulting reports are processed by MultiQC.\n* Options: see the tool settings options at runtime and change as required. Alternative tool option: fastp\n\nInfrastructure_deployment_metadata: Galaxy Australia (Galaxy)\n",
+      "name": "Data QC",
+      "url": "https://workflowhub.eu/workflows/222?version=1",
+      "keywords": "Large-genome-assembly",
+      "version": 1,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "creator": {
+        "@id": "https://workflowhub.eu/people/200"
+      },
+      "producer": [
+        {
+          "@id": "https://workflowhub.eu/projects/54"
+        },
+        {
+          "@id": "https://workflowhub.eu/projects/30"
+        }
+      ],
+      "dateCreated": "2021-11-08T04:34:47Z",
+      "dateModified": "2023-01-30T18:21:31Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/6"
+      },
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.222.1",
+      "input": [
+        {
+          "@id": "#data_qc-inputs-Input%20file:%20Illumina%20reads%20R1"
+        },
+        {
+          "@id": "#data_qc-inputs-Input%20file:%20Illumina%20reads%20R2"
+        },
+        {
+          "@id": "#data_qc-inputs-Input%20file:%20long%20reads"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#data_qc-outputs-NanoPlot%20on%20input%20dataset(s):%20HTML%20report"
+        },
+        {
+          "@id": "#data_qc-outputs-MultiQC%20on%20input%20dataset(s):%20Webpage"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "DataQC.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 417031
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-9906-0673",
+      "@type": "Person",
+      "name": "Anna Syme",
+      "identifier": "https://orcid.org/0000-0002-9906-0673"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/200",
+      "@type": "Person",
+      "name": "Anna Syme"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/54",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Galaxy Australia"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/30",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Australian BioCommons"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/6",
+      "@type": "Collection",
+      "name": "BioCommons ‘Bring Your Own Data’ Expansion Project"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#data_qc-inputs-Input file: Illumina reads R1",
+      "@type": "FormalParameter",
+      "name": "Input file: Illumina reads R1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#data_qc-inputs-Input file: Illumina reads R2",
+      "@type": "FormalParameter",
+      "name": "Input file: Illumina reads R2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#data_qc-inputs-Input file: long reads",
+      "@type": "FormalParameter",
+      "name": "Input file: long reads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#data_qc-outputs-NanoPlot on input dataset(s): HTML report",
+      "@type": "FormalParameter",
+      "name": "NanoPlot on input dataset(s): HTML report",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#data_qc-outputs-MultiQC on input dataset(s): Webpage",
+      "@type": "FormalParameter",
+      "name": "MultiQC on input dataset(s): Webpage",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

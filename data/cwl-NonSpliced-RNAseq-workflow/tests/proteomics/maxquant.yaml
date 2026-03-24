@@ -1,0 +1,22 @@
+cwl:tool: ../../tools/maxquant/maxquant.cwl
+fasta:
+    class: Directory
+    location: fasta
+raw_data_dir:
+    class: Directory
+    location: raw
+mqpar:
+    class: File
+    location: mqpar.xml
+
+
+# cwl:tool: https://gitlab.com/m-unlock/cwl/-/raw/dev/tools/maxquant/maxquant.cwl
+# fasta:
+#     class: Directory
+#     path: http://download.systemsbiology.nl/unlock/cwl/test_data/proteomics/fasta/
+# raw_data_dir:
+#     class: Directory
+#     path: http://download.systemsbiology.nl/unlock/cwl/test_data/proteomics/raw/
+# mqpar:
+#     class: File
+#     location: http://download.systemsbiology.nl/unlock/cwl/test_data/proteomics/mqpar.xml

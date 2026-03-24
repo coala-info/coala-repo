@@ -1,0 +1,330 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-Genome_assembly_workflow_for_nanopore_reads_for_TSI.ga"
+      },
+      "datePublished": "2024-09-03 02:02:39 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-9906-0673"
+        }
+      ],
+      "license": "GPL-3.0-or-later",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.1114.1",
+      "url": "https://workflowhub.eu/workflows/1114/ro_crate?version=1",
+      "name": "Research Object Crate for Genome assembly workflow for nanopore reads, for TSI",
+      "description": "**Genome assembly workflow for nanopore reads, for TSI**\n\nInput: \n* Nanopore reads (can be in format: fastq, fastq.gz, fastqsanger, or fastqsanger.gz) \n\nOptional settings to specify when the workflow is run:\n* [1] how many input files to split the original input into (to speed up the workflow). default = 0. example: set to 2000 to split a 60 GB read file into 2000 files of ~ 30 MB. \n* [2] filtering: min average read quality score. default = 10\n* [3] filtering: min read length. default = 200\n* [4] trimming: trim this many nucleotides from start of read. default = 50\n* [5] note: these are suggestions and will depend on the characteristics of your raw reads and downstream aims. If filtering and trimming settings are too stringent, there may be no reads remaining and workflow will fail. \n\nWorkflow steps:\n* [1] runs FastQC on raw reads\n* [2] splits input reads file into separate files to speed up the next step of Porechop\n* [3] trims nanopore adapters using Porechop\n* [4] trims and filters nanopore reads by quality and length using Nanofilt\n* [5] collapses back into a single read file, fastqsanger format\n* [6] runs FastqQC on trimmed/filtered reads\n* [7] assembles genome with Flye\n* [8] calculates statistics on genome assembly contigs with Fasta Statistics\n* [9] draws genome assembly graph with Bandage \n\nMain outputs:\n* [1] FastQC report on raw reads, html\n* [2] Adpater-chopped, trimmed, filtered reads in fastqsanger format\n* [3] FastQC report on filtered reads, html\n* [4] genome assembly contigs in fasta format (primary assembly)\n* [5] genome assembly statistics\n* [6] genome assembly graph in Bandage format \n\nNote: You may wish to plot raw reads first (e.g. using the tool NanoPlot), to get a better of idea of read lengths and quality, to decide on filtering/trimming settings.",
+      "sdDatePublished": "2026-03-24 17:43:35 +0000",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-Genome_assembly_workflow_for_nanopore_reads_for_TSI.ga"
+        },
+        {
+          "@id": "TSI-nanopore-workflow-diagram.png"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-Genome_assembly_workflow_for_nanopore_reads_for_TSI.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 36972,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "TSI-nanopore-workflow-diagram.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "**Genome assembly workflow for nanopore reads, for TSI**\n\nInput: \n* Nanopore reads (can be in format: fastq, fastq.gz, fastqsanger, or fastqsanger.gz) \n\nOptional settings to specify when the workflow is run:\n* [1] how many input files to split the original input into (to speed up the workflow). default = 0. example: set to 2000 to split a 60 GB read file into 2000 files of ~ 30 MB. \n* [2] filtering: min average read quality score. default = 10\n* [3] filtering: min read length. default = 200\n* [4] trimming: trim this many nucleotides from start of read. default = 50\n* [5] note: these are suggestions and will depend on the characteristics of your raw reads and downstream aims. If filtering and trimming settings are too stringent, there may be no reads remaining and workflow will fail. \n\nWorkflow steps:\n* [1] runs FastQC on raw reads\n* [2] splits input reads file into separate files to speed up the next step of Porechop\n* [3] trims nanopore adapters using Porechop\n* [4] trims and filters nanopore reads by quality and length using Nanofilt\n* [5] collapses back into a single read file, fastqsanger format\n* [6] runs FastqQC on trimmed/filtered reads\n* [7] assembles genome with Flye\n* [8] calculates statistics on genome assembly contigs with Fasta Statistics\n* [9] draws genome assembly graph with Bandage \n\nMain outputs:\n* [1] FastQC report on raw reads, html\n* [2] Adpater-chopped, trimmed, filtered reads in fastqsanger format\n* [3] FastQC report on filtered reads, html\n* [4] genome assembly contigs in fasta format (primary assembly)\n* [5] genome assembly statistics\n* [6] genome assembly graph in Bandage format \n\nNote: You may wish to plot raw reads first (e.g. using the tool NanoPlot), to get a better of idea of read lengths and quality, to decide on filtering/trimming settings.",
+      "name": "Genome assembly workflow for nanopore reads, for TSI",
+      "url": "https://workflowhub.eu/workflows/1114?version=1",
+      "keywords": "genome_assembly, nanopore, TSI",
+      "version": 1,
+      "license": "https://spdx.org/licenses/GPL-3.0-or-later",
+      "creator": {
+        "@id": "https://workflowhub.eu/people/200"
+      },
+      "producer": [
+        {
+          "@id": "https://workflowhub.eu/projects/30"
+        },
+        {
+          "@id": "https://workflowhub.eu/projects/54"
+        }
+      ],
+      "dateCreated": "2024-09-03T01:07:03Z",
+      "dateModified": "2024-09-03T01:15:13Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.1114.1",
+      "input": [
+        {
+          "@id": "#genome_assembly_workflow_for_nanopore_reads__for_tsi-inputs-How%20many%20new%20files%20to%20split%20into%20during%20read%20filtering%20stage?"
+        },
+        {
+          "@id": "#genome_assembly_workflow_for_nanopore_reads__for_tsi-inputs-Minimum%20average%20read%20quality%20score%20to%20filter%20on"
+        },
+        {
+          "@id": "#genome_assembly_workflow_for_nanopore_reads__for_tsi-inputs-Minimum%20read%20length%20to%20filter%20on"
+        },
+        {
+          "@id": "#genome_assembly_workflow_for_nanopore_reads__for_tsi-inputs-Sequencing%20reads%20(in%20any%20of%20these%20formats:%20fastq,%20fastq.gz,%20fastqsanger,%20fastqsanger.gz)"
+        },
+        {
+          "@id": "#genome_assembly_workflow_for_nanopore_reads__for_tsi-inputs-Trim%20this%20many%20nucleotides%20from%20start%20of%20read"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#genome_assembly_workflow_for_nanopore_reads__for_tsi-outputs-text_file"
+        },
+        {
+          "@id": "#genome_assembly_workflow_for_nanopore_reads__for_tsi-outputs-html_file"
+        },
+        {
+          "@id": "#genome_assembly_workflow_for_nanopore_reads__for_tsi-outputs-output"
+        },
+        {
+          "@id": "#genome_assembly_workflow_for_nanopore_reads__for_tsi-outputs-assembly_graph"
+        },
+        {
+          "@id": "#genome_assembly_workflow_for_nanopore_reads__for_tsi-outputs-assembly_gfa"
+        },
+        {
+          "@id": "#genome_assembly_workflow_for_nanopore_reads__for_tsi-outputs-assembly_info"
+        },
+        {
+          "@id": "#genome_assembly_workflow_for_nanopore_reads__for_tsi-outputs-flye_log"
+        },
+        {
+          "@id": "#genome_assembly_workflow_for_nanopore_reads__for_tsi-outputs-consensus"
+        },
+        {
+          "@id": "#genome_assembly_workflow_for_nanopore_reads__for_tsi-outputs-metrics"
+        },
+        {
+          "@id": "#genome_assembly_workflow_for_nanopore_reads__for_tsi-outputs-primary%20bandage%20info"
+        },
+        {
+          "@id": "#genome_assembly_workflow_for_nanopore_reads__for_tsi-outputs-primary%20bandage%20image"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "TSI-nanopore-workflow-diagram.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 958229
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-9906-0673",
+      "@type": "Person",
+      "name": "Anna Syme",
+      "identifier": "https://orcid.org/0000-0002-9906-0673"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/200",
+      "@type": "Person",
+      "name": "Anna Syme"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/30",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Australian BioCommons"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/54",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Galaxy Australia"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#genome_assembly_workflow_for_nanopore_reads__for_tsi-inputs-How many new files to split into during read filtering stage?",
+      "@type": "FormalParameter",
+      "name": "How many new files to split into during read filtering stage?",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_assembly_workflow_for_nanopore_reads__for_tsi-inputs-Minimum average read quality score to filter on",
+      "@type": "FormalParameter",
+      "name": "Minimum average read quality score to filter on",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_assembly_workflow_for_nanopore_reads__for_tsi-inputs-Minimum read length to filter on",
+      "@type": "FormalParameter",
+      "name": "Minimum read length to filter on",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_assembly_workflow_for_nanopore_reads__for_tsi-inputs-Sequencing reads (in any of these formats: fastq, fastq.gz, fastqsanger, fastqsanger.gz)",
+      "@type": "FormalParameter",
+      "name": "Sequencing reads (in any of these formats: fastq, fastq.gz, fastqsanger, fastqsanger.gz)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_assembly_workflow_for_nanopore_reads__for_tsi-inputs-Trim this many nucleotides from start of read",
+      "@type": "FormalParameter",
+      "name": "Trim this many nucleotides from start of read",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_assembly_workflow_for_nanopore_reads__for_tsi-outputs-text_file",
+      "@type": "FormalParameter",
+      "name": "text_file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_assembly_workflow_for_nanopore_reads__for_tsi-outputs-html_file",
+      "@type": "FormalParameter",
+      "name": "html_file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_assembly_workflow_for_nanopore_reads__for_tsi-outputs-output",
+      "@type": "FormalParameter",
+      "name": "output",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_assembly_workflow_for_nanopore_reads__for_tsi-outputs-assembly_graph",
+      "@type": "FormalParameter",
+      "name": "assembly_graph",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_assembly_workflow_for_nanopore_reads__for_tsi-outputs-assembly_gfa",
+      "@type": "FormalParameter",
+      "name": "assembly_gfa",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_assembly_workflow_for_nanopore_reads__for_tsi-outputs-assembly_info",
+      "@type": "FormalParameter",
+      "name": "assembly_info",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_assembly_workflow_for_nanopore_reads__for_tsi-outputs-flye_log",
+      "@type": "FormalParameter",
+      "name": "flye_log",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_assembly_workflow_for_nanopore_reads__for_tsi-outputs-consensus",
+      "@type": "FormalParameter",
+      "name": "consensus",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_assembly_workflow_for_nanopore_reads__for_tsi-outputs-metrics",
+      "@type": "FormalParameter",
+      "name": "metrics",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_assembly_workflow_for_nanopore_reads__for_tsi-outputs-primary bandage info",
+      "@type": "FormalParameter",
+      "name": "primary bandage info",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_assembly_workflow_for_nanopore_reads__for_tsi-outputs-primary bandage image",
+      "@type": "FormalParameter",
+      "name": "primary bandage image",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

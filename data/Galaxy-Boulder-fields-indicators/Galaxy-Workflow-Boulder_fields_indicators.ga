@@ -1,0 +1,258 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "format-version": "0.1",
+    "name": "Boulder fields indicators",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "champbloc_ivr.csv"
+                }
+            ],
+            "label": "champbloc_ivr.csv",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 3,
+                "top": 8
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "79e468dd-f1ec-45a8-b3e8-f029024e9af8",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "champbloc_qecb.csv"
+                }
+            ],
+            "label": "champbloc_qecb.csv",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 3,
+                "top": 128
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "f0b1f132-4f1f-457d-9b45-c1aa3a23eeff",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 2,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "ficheterrain.csv"
+                }
+            ],
+            "label": "ficheterrain.csv",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 0,
+                "top": 253
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "5d4511c3-e841-44d3-8a20-b7bb8d573f00",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ecology/cb_ivr/cb_ivr/0.0.0",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "fiche_val": {
+                    "id": 2,
+                    "output_name": "output"
+                },
+                "input_data": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "IVR",
+            "outputs": [
+                {
+                    "name": "plots",
+                    "type": "input"
+                },
+                {
+                    "name": "output_report",
+                    "type": "input"
+                },
+                {
+                    "name": "output_ivr",
+                    "type": "rdata"
+                }
+            ],
+            "position": {
+                "left": 514,
+                "top": 0
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ecology/cb_ivr/cb_ivr/0.0.0",
+            "tool_shed_repository": {
+                "changeset_revision": "bcbad4f83dec",
+                "name": "cb_ivr",
+                "owner": "ecology",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"fiche_val\": {\"__class__\": \"ConnectedValue\"}, \"input_data\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.0.0",
+            "type": "tool",
+            "uuid": "dc1821c7-9d45-4f95-a133-e6107358516f",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ecology/cb_dissim/cb_dissim/0.0.0",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "fiche_val": {
+                    "id": 2,
+                    "output_name": "output"
+                },
+                "input_data": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool QECB-Dissimilarity",
+                    "name": "choice"
+                }
+            ],
+            "label": null,
+            "name": "QECB-Dissimilarity",
+            "outputs": [
+                {
+                    "name": "plots_bf",
+                    "type": "input"
+                },
+                {
+                    "name": "plots_bm",
+                    "type": "input"
+                },
+                {
+                    "name": "plots",
+                    "type": "input"
+                },
+                {
+                    "name": "output_qecb",
+                    "type": "rdata"
+                },
+                {
+                    "name": "output_eco",
+                    "type": "rdata"
+                },
+                {
+                    "name": "output_matri",
+                    "type": "rdata"
+                }
+            ],
+            "position": {
+                "left": 521,
+                "top": 215
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ecology/cb_dissim/cb_dissim/0.0.0",
+            "tool_shed_repository": {
+                "changeset_revision": "8dc082da41c1",
+                "name": "cb_dissim",
+                "owner": "ecology",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"choice\": {\"__class__\": \"RuntimeValue\"}, \"choice_date\": \"2021\", \"fiche_val\": {\"__class__\": \"ConnectedValue\"}, \"input_data\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.0.0",
+            "type": "tool",
+            "uuid": "e948aac8-0de3-4f9d-b169-ce9dfed7d137",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "5": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ecology/cb_div/cb_div/0.0.0",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "input_data": {
+                    "id": 4,
+                    "output_name": "output_matri"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Diversity",
+            "outputs": [
+                {
+                    "name": "plots",
+                    "type": "input"
+                },
+                {
+                    "name": "output_div",
+                    "type": "tabular"
+                },
+                {
+                    "name": "output_rdata",
+                    "type": "rdata"
+                }
+            ],
+            "position": {
+                "left": 940,
+                "top": 128
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ecology/cb_div/cb_div/0.0.0",
+            "tool_shed_repository": {
+                "changeset_revision": "5b31641e6d30",
+                "name": "cb_div",
+                "owner": "ecology",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"input_data\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.0.0",
+            "type": "tool",
+            "uuid": "13cdfb12-b9da-44d6-ace2-94610323324c",
+            "when": null,
+            "workflow_outputs": []
+        }
+    },
+    "tags": [],
+    "uuid": "b9ab91b0-918a-4d2c-bb40-68b91a3cc3aa",
+    "version": 2
+}

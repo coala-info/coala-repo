@@ -1,0 +1,9 @@
+name: toil
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - toil
+  - enlighten
+  - nodejs

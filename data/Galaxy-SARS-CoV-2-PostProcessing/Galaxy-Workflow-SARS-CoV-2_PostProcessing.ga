@@ -1,0 +1,246 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "format-version": "0.1",
+    "name": "SARS-CoV-2 PostProcessing",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Consensus Genomes"
+                }
+            ],
+            "label": "Consensus Genomes",
+            "name": "Input dataset collection",
+            "outputs": [],
+            "position": {
+                "left": 0.0,
+                "top": 0
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"format\": [\"fasta\"], \"tag\": null, \"collection_type\": \"list\"}",
+            "tool_version": null,
+            "type": "data_collection_input",
+            "uuid": "cca69f24-c4a9-40d8-b337-d0db487eb930",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Reference Genome"
+                }
+            ],
+            "label": "Reference Genome",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 5.577159763571117,
+                "top": 122.57155500761172
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"format\": [\"fasta\"], \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "4b8e570b-1140-4527-b2df-2cbf7f554502",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 2,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Aligned reads (BAM)"
+                }
+            ],
+            "label": "Aligned reads (BAM)",
+            "name": "Input dataset collection",
+            "outputs": [],
+            "position": {
+                "left": 1.20001220703125,
+                "top": 234
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"format\": [\"bam\"], \"tag\": null, \"collection_type\": \"list\"}",
+            "tool_version": null,
+            "type": "data_collection_input",
+            "uuid": "1ff53e84-3cd9-4b42-baa8-7efb5926cc4d",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 3,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "SARS-CoV-2 Annotation (GFF3)"
+                }
+            ],
+            "label": "SARS-CoV-2 Annotation (GFF3)",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 0.61248779296875,
+                "top": 388
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"format\": [\"gff3\"], \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "4be81e45-ff9d-4330-bd35-b2daf478cb9c",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "4": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 4,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Amplicons"
+                }
+            ],
+            "label": "Amplicons",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 3.412506103515625,
+                "top": 564.3999938964844
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"format\": [\"bed\"], \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "fa95f489-5849-4835-a356-daaab7b311a1",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "5": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/nextclade/nextclade/2.7.0+galaxy0",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "input_fasta": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Nextclade",
+                    "name": "input_fasta"
+                }
+            ],
+            "label": null,
+            "name": "Nextclade",
+            "outputs": [
+                {
+                    "name": "report_tsv",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 339.21246337890625,
+                "top": 77.1999740600586
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/nextclade/nextclade/2.7.0+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "128ba8da994f",
+                "name": "nextclade",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adv\": {\"advanced_options\": \"no\", \"__current_case__\": 1}, \"db\": {\"source\": \"download\", \"__current_case__\": 1}, \"include_header\": false, \"input_fasta\": {\"__class__\": \"RuntimeValue\"}, \"organism\": \"sars-cov-2\", \"outputs\": [\"report_tsv\"], \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.7.0+galaxy0",
+            "type": "tool",
+            "uuid": "68f43f28-fa70-4cf4-86a7-5f967469a51a",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "6": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/jbrowse/jbrowse/1.16.11+galaxy1",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "reference_genome|genome": {
+                    "id": 1,
+                    "output_name": "output"
+                },
+                "track_groups_0|data_tracks_0|data_format|annotation": {
+                    "id": 3,
+                    "output_name": "output"
+                },
+                "track_groups_0|data_tracks_1|data_format|annotation": {
+                    "id": 4,
+                    "output_name": "output"
+                },
+                "track_groups_0|data_tracks_2|data_format|annotation": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool JBrowse",
+                    "name": "reference_genome"
+                }
+            ],
+            "label": null,
+            "name": "JBrowse",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "html"
+                }
+            ],
+            "position": {
+                "left": 343.3001886613564,
+                "top": 398.349997114093
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/jbrowse/jbrowse/1.16.11+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "a6e57ff585c0",
+                "name": "jbrowse",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"action\": {\"action_select\": \"create\", \"__current_case__\": 0}, \"gencode\": \"1\", \"jbgen\": {\"defaultLocation\": \"\", \"trackPadding\": \"20\", \"shareLink\": true, \"aboutDescription\": \"\", \"show_tracklist\": true, \"show_nav\": true, \"show_overview\": true, \"show_menu\": true, \"hideGenomeOptions\": false}, \"plugins\": {\"BlastView\": true, \"ComboTrackSelector\": false, \"GCContent\": false}, \"reference_genome\": {\"genome_type_select\": \"history\", \"__current_case__\": 1, \"genome\": {\"__class__\": \"RuntimeValue\"}}, \"standalone\": \"minimal\", \"track_groups\": [{\"__index__\": 0, \"category\": \"Default\", \"data_tracks\": [{\"__index__\": 0, \"data_format\": {\"data_format_select\": \"gene_calls\", \"__current_case__\": 2, \"annotation\": {\"__class__\": \"RuntimeValue\"}, \"match_part\": {\"match_part_select\": false, \"__current_case__\": 1}, \"index\": false, \"track_config\": {\"track_class\": \"NeatHTMLFeatures/View/Track/NeatFeatures\", \"__current_case__\": 3, \"html_options\": {\"topLevelFeatures\": null}}, \"jbstyle\": {\"style_classname\": \"feature\", \"style_label\": \"product,name,id\", \"style_description\": \"note,description\", \"style_height\": \"10px\", \"max_height\": \"600\"}, \"jbcolor_scale\": {\"color_score\": {\"color_score_select\": \"none\", \"__current_case__\": 0, \"color\": {\"color_select\": \"automatic\", \"__current_case__\": 0}}}, \"jb_custom_config\": {\"option\": []}, \"jbmenu\": {\"track_menu\": []}, \"track_visibility\": \"default_off\", \"override_apollo_plugins\": \"False\", \"override_apollo_drag\": \"False\"}}, {\"__index__\": 1, \"data_format\": {\"data_format_select\": \"gene_calls\", \"__current_case__\": 2, \"annotation\": {\"__class__\": \"RuntimeValue\"}, \"match_part\": {\"match_part_select\": false, \"__current_case__\": 1}, \"index\": false, \"track_config\": {\"track_class\": \"NeatHTMLFeatures/View/Track/NeatFeatures\", \"__current_case__\": 3, \"html_options\": {\"topLevelFeatures\": null}}, \"jbstyle\": {\"style_classname\": \"feature\", \"style_label\": \"product,name,id\", \"style_description\": \"note,description\", \"style_height\": \"10px\", \"max_height\": \"600\"}, \"jbcolor_scale\": {\"color_score\": {\"color_score_select\": \"none\", \"__current_case__\": 0, \"color\": {\"color_select\": \"automatic\", \"__current_case__\": 0}}}, \"jb_custom_config\": {\"option\": []}, \"jbmenu\": {\"track_menu\": []}, \"track_visibility\": \"default_off\", \"override_apollo_plugins\": \"False\", \"override_apollo_drag\": \"False\"}}, {\"__index__\": 2, \"data_format\": {\"data_format_select\": \"pileup\", \"__current_case__\": 3, \"annotation\": {\"__class__\": \"RuntimeValue\"}, \"auto_snp\": true, \"chunkSizeLimit\": \"30000000\", \"jb_custom_config\": {\"option\": []}, \"track_visibility\": \"default_off\", \"override_apollo_plugins\": \"False\", \"override_apollo_drag\": \"False\"}}]}], \"uglyTestingHack\": \"\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.16.11+galaxy1",
+            "type": "tool",
+            "uuid": "42d37882-8143-4dfc-94ca-a8a39468dc0c",
+            "when": null,
+            "workflow_outputs": []
+        }
+    },
+    "tags": [],
+    "uuid": "dcb02623-cc9e-4f48-94f7-ff55492470aa",
+    "version": 1
+}

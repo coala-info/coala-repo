@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Domestication and cloning simulation workflow</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-Domestication_and_cloning_simulation_workflow_v2.ga"
+      },
+      "datePublished": "2025-10-17 12:32:09 +0100",
+      "author": [
+
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://workflowhub.eu/workflows/2001?version=1",
+      "url": "https://workflowhub.eu/workflows/2001/ro_crate?version=1",
+      "name": "Research Object Crate for Domestication and cloning simulation workflow",
+      "description": "# Domestication of new parts and cloning simulation\nAdd new parts to your sequences before the cloning simulation and interact with the database.\n\n## input:\n\n* _input: csv file (without header)_ : The **CSV** file should contain the constraints line by line in the first column, along with their associated fragments on each line. This data will be passed to the seq_from_DB tool.\n* _JSON parameters file (optional)_ : The **JSON** file should contain the the parameters used in workflow tools. If this input is not set, user should set the parameters mannualy in the maystro tool.\n* _Missing Fragments (optional)_ : The **collection** of GenBank files that are not present in the database ( [make collection](https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/collections/tutorial.html)). If a fragment is listed in the Assembly Plan CSV but missing from the database, it must be provided through this input.\n* _Assembly Standard_ : The **CSV** file is crutial for the working of domestication tool.\n* _New fragments for cloning similation (optional)_ : The **collection** of GenBank files ( [make collection](https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/collections/tutorial.html)). This applies only when the user wishes to incorporate additional fragments into the cloning simulation that are not part of the domestication process.\n\n## steps:\n\n&gt;_workflow_2 Parameter_Maystro_\n\n1. Distribute workflow parameters on the workflow tools\n2. Parameters can be set as a JSON file in input (optional)\n3.  Parameters can be manually instate of JSON file\n4.  For the first use, it is recommended to set the parameters manually in the tool. A JSON file will then be generated automatically for use in subsequent runs.\n\n&gt;_seq_from_DB_\n\n1. Extract the fragments associated with each constraint from the CSV file.\n2. Check if all fragments are present in the database.\n        \n&gt;_evaluate_manufacturability_\n        \n1. If any fragment is missing it will serve from the unannotated Genbenk provided to annotate them and add them to the finale gb collection\n2. If all fragments are present in the database, GenBank files for each fragment will be passed to the cloning_simulation tool.\n\n&gt; _sculpt_sequences_\n\n1. Set the constraints for the sculpt.\n2. Generate sculpted and unsculpted sequences and pass all GenBank files to _domestication_of_new_parts_ tool.\n\n&gt; _domestication_of_new_parts_\n\n1. Import new parts from a CSV file.\n2. Perform domestication of the new parts in the sequences, generate reports, and create domesticated GenBank files and pass them to _seq_to_db_ tool.\n\n &gt;_clonning_simulation_\n\n1. GoldenGate cloning simulation based on constraints.\n2. Generate GenBank files for each simulated constraint.\n\n&gt;_seq_to_db_\n\n1. Constraint GenBank files can be saved to the database, depending on the user's choice.",
+      "sdDatePublished": "2026-03-24 16:30:59 +0000",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-Domestication_and_cloning_simulation_workflow_v2.ga"
+        },
+        {
+          "@id": "Capture%20d%E2%80%99%C3%A9cran%20du%202025-10-17%2013-28-45.png"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-Domestication_and_cloning_simulation_workflow_v2.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 24606,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "Capture%20d%E2%80%99%C3%A9cran%20du%202025-10-17%2013-28-45.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "# Domestication of new parts and cloning simulation\nAdd new parts to your sequences before the cloning simulation and interact with the database.\n\n## input:\n\n* _input: csv file (without header)_ : The **CSV** file should contain the constraints line by line in the first column, along with their associated fragments on each line. This data will be passed to the seq_from_DB tool.\n* _JSON parameters file (optional)_ : The **JSON** file should contain the the parameters used in workflow tools. If this input is not set, user should set the parameters mannualy in the maystro tool.\n* _Missing Fragments (optional)_ : The **collection** of GenBank files that are not present in the database ( [make collection](https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/collections/tutorial.html)). If a fragment is listed in the Assembly Plan CSV but missing from the database, it must be provided through this input.\n* _Assembly Standard_ : The **CSV** file is crutial for the working of domestication tool.\n* _New fragments for cloning similation (optional)_ : The **collection** of GenBank files ( [make collection](https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/collections/tutorial.html)). This applies only when the user wishes to incorporate additional fragments into the cloning simulation that are not part of the domestication process.\n\n## steps:\n\n&gt;_workflow_2 Parameter_Maystro_\n\n1. Distribute workflow parameters on the workflow tools\n2. Parameters can be set as a JSON file in input (optional)\n3.  Parameters can be manually instate of JSON file\n4.  For the first use, it is recommended to set the parameters manually in the tool. A JSON file will then be generated automatically for use in subsequent runs.\n\n&gt;_seq_from_DB_\n\n1. Extract the fragments associated with each constraint from the CSV file.\n2. Check if all fragments are present in the database.\n        \n&gt;_evaluate_manufacturability_\n        \n1. If any fragment is missing it will serve from the unannotated Genbenk provided to annotate them and add them to the finale gb collection\n2. If all fragments are present in the database, GenBank files for each fragment will be passed to the cloning_simulation tool.\n\n&gt; _sculpt_sequences_\n\n1. Set the constraints for the sculpt.\n2. Generate sculpted and unsculpted sequences and pass all GenBank files to _domestication_of_new_parts_ tool.\n\n&gt; _domestication_of_new_parts_\n\n1. Import new parts from a CSV file.\n2. Perform domestication of the new parts in the sequences, generate reports, and create domesticated GenBank files and pass them to _seq_to_db_ tool.\n\n &gt;_clonning_simulation_\n\n1. GoldenGate cloning simulation based on constraints.\n2. Generate GenBank files for each simulated constraint.\n\n&gt;_seq_to_db_\n\n1. Constraint GenBank files can be saved to the database, depending on the user's choice.",
+      "name": "Domestication and cloning simulation workflow",
+      "url": "https://workflowhub.eu/workflows/2001?version=1",
+      "keywords": "",
+      "version": 1,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/355"
+      },
+      "dateCreated": "2025-10-17T11:46:01Z",
+      "dateModified": "2025-10-17T11:46:48Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#domestication_and_cloning_simulation_workflow-inputs-%23main/Assembly%20Standard"
+        },
+        {
+          "@id": "#domestication_and_cloning_simulation_workflow-inputs-%23main/JSON%20parameters%20file"
+        },
+        {
+          "@id": "#domestication_and_cloning_simulation_workflow-inputs-%23main/Missing%20Fragments"
+        },
+        {
+          "@id": "#domestication_and_cloning_simulation_workflow-inputs-%23main/New%20fragment%20for%20cloning%20simulation"
+        },
+        {
+          "@id": "#domestication_and_cloning_simulation_workflow-inputs-%23main/Simulation%20Plan"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#domestication_and_cloning_simulation_workflow-outputs-%23main/Domesticated%20GenBank%20Files"
+        },
+        {
+          "@id": "#domestication_and_cloning_simulation_workflow-outputs-%23main/Evaluate%20Manufacturability%20(gb)"
+        },
+        {
+          "@id": "#domestication_and_cloning_simulation_workflow-outputs-%23main/GenBank%20Files%20collection"
+        },
+        {
+          "@id": "#domestication_and_cloning_simulation_workflow-outputs-%23main/Manufacturability%20Report%20(PDF)"
+        },
+        {
+          "@id": "#domestication_and_cloning_simulation_workflow-outputs-%23main/Manufacturability%20Report%20(tsv)"
+        },
+        {
+          "@id": "#domestication_and_cloning_simulation_workflow-outputs-%23main/Workflow-2%20Parameters"
+        },
+        {
+          "@id": "#domestication_and_cloning_simulation_workflow-outputs-%23main/_anonymous_output_1"
+        },
+        {
+          "@id": "#domestication_and_cloning_simulation_workflow-outputs-%23main/domestication%20results"
+        },
+        {
+          "@id": "#domestication_and_cloning_simulation_workflow-outputs-%23main/missing%20fragments"
+        },
+        {
+          "@id": "#domestication_and_cloning_simulation_workflow-outputs-%23main/saving%20report"
+        },
+        {
+          "@id": "#domestication_and_cloning_simulation_workflow-outputs-%23main/scul%20group"
+        },
+        {
+          "@id": "#domestication_and_cloning_simulation_workflow-outputs-%23main/simulation%20results%20(zip)"
+        },
+        {
+          "@id": "#domestication_and_cloning_simulation_workflow-outputs-%23main/unscul+scul%20gb"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "Capture%20d%E2%80%99%C3%A9cran%20du%202025-10-17%2013-28-45.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 205796
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/355",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "DNA Foundry"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#domestication_and_cloning_simulation_workflow-inputs-#main/Assembly Standard",
+      "@type": "FormalParameter",
+      "name": "#main/Assembly Standard",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#domestication_and_cloning_simulation_workflow-inputs-#main/JSON parameters file",
+      "@type": "FormalParameter",
+      "name": "#main/JSON parameters file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#domestication_and_cloning_simulation_workflow-inputs-#main/Missing Fragments",
+      "@type": "FormalParameter",
+      "name": "#main/Missing Fragments",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#domestication_and_cloning_simulation_workflow-inputs-#main/New fragment for cloning simulation",
+      "@type": "FormalParameter",
+      "name": "#main/New fragment for cloning simulation",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#domestication_and_cloning_simulation_workflow-inputs-#main/Simulation Plan",
+      "@type": "FormalParameter",
+      "name": "#main/Simulation Plan",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#domestication_and_cloning_simulation_workflow-outputs-#main/Domesticated GenBank Files",
+      "@type": "FormalParameter",
+      "name": "#main/Domesticated GenBank Files",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#domestication_and_cloning_simulation_workflow-outputs-#main/Evaluate Manufacturability (gb)",
+      "@type": "FormalParameter",
+      "name": "#main/Evaluate Manufacturability (gb)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#domestication_and_cloning_simulation_workflow-outputs-#main/GenBank Files collection",
+      "@type": "FormalParameter",
+      "name": "#main/GenBank Files collection",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#domestication_and_cloning_simulation_workflow-outputs-#main/Manufacturability Report (PDF)",
+      "@type": "FormalParameter",
+      "name": "#main/Manufacturability Report (PDF)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#domestication_and_cloning_simulation_workflow-outputs-#main/Manufacturability Report (tsv)",
+      "@type": "FormalParameter",
+      "name": "#main/Manufacturability Report (tsv)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#domestication_and_cloning_simulation_workflow-outputs-#main/Workflow-2 Parameters",
+      "@type": "FormalParameter",
+      "name": "#main/Workflow-2 Parameters",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#domestication_and_cloning_simulation_workflow-outputs-#main/_anonymous_output_1",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#domestication_and_cloning_simulation_workflow-outputs-#main/domestication results",
+      "@type": "FormalParameter",
+      "name": "#main/domestication results",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#domestication_and_cloning_simulation_workflow-outputs-#main/missing fragments",
+      "@type": "FormalParameter",
+      "name": "#main/missing fragments",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#domestication_and_cloning_simulation_workflow-outputs-#main/saving report",
+      "@type": "FormalParameter",
+      "name": "#main/saving report",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#domestication_and_cloning_simulation_workflow-outputs-#main/scul group",
+      "@type": "FormalParameter",
+      "name": "#main/scul group",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#domestication_and_cloning_simulation_workflow-outputs-#main/simulation results (zip)",
+      "@type": "FormalParameter",
+      "name": "#main/simulation results (zip)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#domestication_and_cloning_simulation_workflow-outputs-#main/unscul scul gb",
+      "@type": "FormalParameter",
+      "name": "#main/unscul+scul gb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Domestication and cloning simulation workflow</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/2001/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/2001/ro_crate?version=1</a>
+
+
+  <img src="Capture d’écran du 2025-10-17 13-28-45.png" style="width: 100%;"/>
+
+<p>
+  # Domestication of new parts and cloning simulation
+Add new parts to your sequences before the cloning simulation and interact with the database.
+
+## input:
+
+* _input: csv file (without header)_ : The **CSV** file should contain the constraints line by line in the first column, along with their associated fragments on each line. This data will be passed to the seq_from_DB tool.
+* _JSON parameters file (optional)_ : The **JSON** file should contain the the parameters used in workflow tools. If this input is not set, user should set the parameters mannualy in the maystro tool.
+* _Missing Fragments (optional)_ : The **collection** of GenBank files that are not present in the database ( [make collection](https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/collections/tutorial.html)). If a fragment is listed in the Assembly Plan CSV but missing from the database, it must be provided through this input.
+* _Assembly Standard_ : The **CSV** file is crutial for the working of domestication tool.
+* _New fragments for cloning similation (optional)_ : The **collection** of GenBank files ( [make collection](https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/collections/tutorial.html)). This applies only when the user wishes to incorporate additional fragments into the cloning simulation that are not part of the domestication process.
+
+## steps:
+
+&gt;_workflow_2 Parameter_Maystro_
+
+1. Distribute workflow parameters on the workflow tools
+2. Parameters can be set as a JSON file in input (optional)
+3.  Parameters can be manually instate of JSON file
+4.  For the first use, it is recommended to set the parameters manually in the tool. A JSON file will then be generated automatically for use in subsequent runs.
+
+&gt;_seq_from_DB_
+
+1. Extract the fragments associated with each constraint from the CSV file.
+2. Check if all fragments are present in the database.
+        
+&gt;_evaluate_manufacturability_
+        
+1. If any fragment is missing it will serve from the unannotated Genbenk provided to annotate them and add them to the finale gb collection
+2. If all fragments are present in the database, GenBank files for each fragment will be passed to the cloning_simulation tool.
+
+&gt; _sculpt_sequences_
+
+1. Set the constraints for the sculpt.
+2. Generate sculpted and unsculpted sequences and pass all GenBank files to _domestication_of_new_parts_ tool.
+
+&gt; _domestication_of_new_parts_
+
+1. Import new parts from a CSV file.
+2. Perform domestication of the new parts in the sequences, generate reports, and create domesticated GenBank files and pass them to _seq_to_db_ tool.
+
+ &gt;_clonning_simulation_
+
+1. GoldenGate cloning simulation based on constraints.
+2. Generate GenBank files for each simulated constraint.
+
+&gt;_seq_to_db_
+
+1. Constraint GenBank files can be saved to the database, depending on the user's choice.
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>CC-BY-4.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-Domestication_and_cloning_simulation_workflow_v2.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-Domestication_and_cloning_simulation_workflow_v2.ga">Domestication and cloning simulation workflow</a>
+      
+        <br/>Size: 24606 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_Capture%20d%E2%80%99%C3%A9cran%20du%202025-10-17%2013-28-45.png">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="Capture d’écran du 2025-10-17 13-28-45.png">Capture%20d%E2%80%99%C3%A9cran%20du%202025-10-17%2013-28-45.png</a>
+      
+        <br/>Size: 205796 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

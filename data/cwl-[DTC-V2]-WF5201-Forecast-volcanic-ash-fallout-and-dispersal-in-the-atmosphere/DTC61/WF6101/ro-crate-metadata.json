@@ -1,0 +1,952 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ],
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/process/0.4",
+      "@type": "CreativeWork",
+      "name": "Process Run Crate",
+      "version": "0.4"
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/workflow/0.4",
+      "@type": "CreativeWork",
+      "name": "Workflow Run Crate",
+      "version": "0.4"
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
+      "@type": "CreativeWork",
+      "name": "Workflow RO-Crate",
+      "version": "1.0"
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl",
+      "@type": "ComputerLanguage",
+      "identifier": "https://www.commonwl.org/",
+      "name": "Common Workflow Language",
+      "url": "https://www.commonwl.org/"
+    },
+    {
+      "@id": "0000-0003-1019-7321",
+      "@type": "Person",
+      "name": "Finn Løvholt",
+      "affiliation": {
+        "@id": "NGI"
+      }
+    },
+    {
+      "@id": "0000-0003-2882-1954",
+      "@type": "Person",
+      "name": "Valentina Magni",
+      "affiliation": {
+        "@id": "NGI"
+      }
+    },
+    {
+      "@id": "0000-0002-7822-0244",
+      "@type": "Person",
+      "name": "Steven Gibbons",
+      "affiliation": {
+        "@id": "NGI"
+      }
+    },
+    {
+      "@id": "0000-0002-6549-6268",
+      "@type": "Person",
+      "name": "Erlend Briseid Storrøsten",
+      "affiliation": {
+        "@id": "NGI"
+      }
+    },
+    {
+      "@id": "0000-0001-7617-7206",
+      "@type": "Person",
+      "name": "Roberto Tonini",
+      "affiliation": {
+        "@id": "INGV"
+      }
+    },
+    {
+      "@id": "0000-0003-4551-3339",
+      "@type": "Person",
+      "name": "Manuela Volpe",
+      "affiliation": {
+        "@id": "INGV"
+      }
+    },
+    {
+      "@id": "0000-0003-0112-8412",
+      "@type": "Person",
+      "name": "Alice-Agnes Gabriel",
+      "affiliation": {
+        "@id": "TUM"
+      }
+    },
+    {
+      "@id": "0000-0001-9836-8716",
+      "@type": "Person",
+      "name": "Jörn Behrens",
+      "affiliation": {
+        "@id": "UH"
+      }
+    },
+    {
+      "@id": "0000-0002-3010-8050",
+      "@type": "Person",
+      "name": "Jorge Macias",
+      "affiliation": {
+        "@id": "UMA"
+      }
+    },
+    {
+      "@id": "TUM",
+      "@type": "Organization",
+      "name": "Technical University of Munich"
+    },
+    {
+      "@id": "NGI",
+      "@type": "Organization",
+      "name": "Norwegian Geotechnical Institute"
+    },
+    {
+      "@id": "UH",
+      "@type": "Organization",
+      "name": "Universität Hamburg"
+    },
+    {
+      "@id": "INGV",
+      "@type": "Organization",
+      "name": "Istituto Nazionale di Geofisica e Vulcanologia (INGV)"
+    },
+    {
+      "@id": "UMA",
+      "@type": "Organization",
+      "name": "Universidad de Málaga (UMA)"
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "Probabilistic Tsunami Forecasting",
+      "description": "Workflow aiming at computing the probability of exceedance of given tsunami intensities at given locations, conditional upon an occurring tsunamigenic event. Presently made by a master python code managing the execution of different steps + a suite of python codes for each step + bash scripts for job submission to HPC resources. Other softwares described as separate DA are also to be considered part of the workflow.",
+      "license": "Open for non-cemmercial use. Type of license to be decided",
+      "datePublished": "2024-01-01",
+      "author": [
+        {
+          "@id": "INGV"
+        },
+        {
+          "@id": "NGI"
+        },
+        {
+          "@id": "UMA"
+        }
+      ],
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/wfrun/process/0.4"
+        },
+        {
+          "@id": "https://w3id.org/ro/wfrun/workflow/0.4"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ],
+      "hasPart": [
+        {
+          "@id": "WF6101.cwl"
+        },
+        {
+          "@id": "DT6102/"
+        },
+        {
+          "@id": "DT6103/"
+        },
+        {
+          "@id": "DT6104/"
+        },
+        {
+          "@id": "DT6105/"
+        },
+        {
+          "@id": "DT6109/"
+        },
+        {
+          "@id": "DT6101/"
+        },
+        {
+          "@id": "DT6106/"
+        },
+        {
+          "@id": "DT6107/"
+        },
+        {
+          "@id": "DT6108/"
+        },
+        {
+          "@id": "DT6110/"
+        },
+        {
+          "@id": "DT6111/"
+        },
+        {
+          "@id": "DT6112/"
+        },
+        {
+          "@id": "DT6113/"
+        },
+        {
+          "@id": "SS6101"
+        },
+        {
+          "@id": "SS6102"
+        },
+        {
+          "@id": "SS6103"
+        },
+        {
+          "@id": "SS6104"
+        },
+        {
+          "@id": "SS6105"
+        },
+        {
+          "@id": "ST610106.cwl"
+        },
+        {
+          "@id": "SS6113"
+        },
+        {
+          "@id": "SS6114"
+        },
+        {
+          "@id": "SS6117"
+        },
+        {
+          "@id": "SS6118"
+        },
+        {
+          "@id": "ST610109.cwl"
+        }
+      ],
+      "mainEntity": {
+        "@id": "WF6101.cwl"
+      }
+    },
+    {
+      "@id": "WF6101.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "name": "Probabilistic Tsunami Forecasting",
+      "author": [
+        {
+          "@id": "INGV"
+        },
+        {
+          "@id": "NGI"
+        },
+        {
+          "@id": "UMA"
+        }
+      ],
+      "programmingLanguage": {
+        "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl"
+      },
+      "input": [
+        {
+          "@id": "#DT6102->WF6101.cwl"
+        },
+        {
+          "@id": "#DT6103->WF6101.cwl"
+        },
+        {
+          "@id": "#DT6104->WF6101.cwl"
+        },
+        {
+          "@id": "#DT6105->WF6101.cwl"
+        },
+        {
+          "@id": "#DT6109->WF6101.cwl"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#WF6101.cwl->DT6101"
+        },
+        {
+          "@id": "#WF6101.cwl->DT6106"
+        },
+        {
+          "@id": "#WF6101.cwl->DT6107"
+        },
+        {
+          "@id": "#WF6101.cwl->DT6108"
+        },
+        {
+          "@id": "#WF6101.cwl->DT6110"
+        },
+        {
+          "@id": "#WF6101.cwl->DT6111"
+        },
+        {
+          "@id": "#WF6101.cwl->DT6112"
+        },
+        {
+          "@id": "#WF6101.cwl->DT6113"
+        }
+      ]
+    },
+    {
+      "@id": "#DT6102->WF6101.cwl",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "Long-term tsunami hazard model for the NEAM region (NEAMTHM18)",
+      "workExample": {
+        "@id": "DT6102/"
+      },
+      "name": "DT6102",
+      "valueRequired": true
+    },
+    {
+      "@id": "#DT6103->WF6101.cwl",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "Seismic waveforms and station metadata",
+      "workExample": {
+        "@id": "DT6103/"
+      },
+      "name": "DT6103",
+      "valueRequired": true
+    },
+    {
+      "@id": "#DT6104->WF6101.cwl",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "Global station monitoring service for real time sea level measuring",
+      "workExample": {
+        "@id": "DT6104/"
+      },
+      "name": "DT6104",
+      "valueRequired": true
+    },
+    {
+      "@id": "#DT6105->WF6101.cwl",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "Observational data of coseismic displacement",
+      "workExample": {
+        "@id": "DT6105/"
+      },
+      "name": "DT6105",
+      "valueRequired": true
+    },
+    {
+      "@id": "#DT6109->WF6101.cwl",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "Computational grids for numerical simulations",
+      "workExample": {
+        "@id": "DT6109/"
+      },
+      "name": "DT6109",
+      "valueRequired": true
+    },
+    {
+      "@id": "#WF6101.cwl->DT6101",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "Collection of observational data for the processing event",
+      "workExample": {
+        "@id": "DT6101/"
+      },
+      "name": "DT6101",
+      "valueRequired": true
+    },
+    {
+      "@id": "#WF6101.cwl->DT6106",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "List of earthquake scenarios",
+      "workExample": {
+        "@id": "DT6106/"
+      },
+      "name": "DT6106",
+      "valueRequired": true
+    },
+    {
+      "@id": "#WF6101.cwl->DT6107",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "List of scenario probabilities",
+      "workExample": {
+        "@id": "DT6107/"
+      },
+      "name": "DT6107",
+      "valueRequired": true
+    },
+    {
+      "@id": "#WF6101.cwl->DT6108",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "List of landslide scenarios",
+      "workExample": {
+        "@id": "DT6108/"
+      },
+      "name": "DT6108",
+      "valueRequired": true
+    },
+    {
+      "@id": "#WF6101.cwl->DT6110",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "Tsunami intensities",
+      "workExample": {
+        "@id": "DT6110/"
+      },
+      "name": "DT6110",
+      "valueRequired": true
+    },
+    {
+      "@id": "#WF6101.cwl->DT6111",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "Ground deformation",
+      "workExample": {
+        "@id": "DT6111/"
+      },
+      "name": "DT6111",
+      "valueRequired": true
+    },
+    {
+      "@id": "#WF6101.cwl->DT6112",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "Tsunami hazard curves",
+      "workExample": {
+        "@id": "DT6112/"
+      },
+      "name": "DT6112",
+      "valueRequired": true
+    },
+    {
+      "@id": "#WF6101.cwl->DT6113",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "Hazard visual products",
+      "workExample": {
+        "@id": "DT6113/"
+      },
+      "name": "DT6113",
+      "valueRequired": true
+    },
+    {
+      "@id": "SS6117",
+      "@type": "SoftwareSourceCode",
+      "name": "Landslide scenario manager",
+      "description": "Will combine shakemaps, slope, and soil information (if available) to compute a set of initial landslides volumes and associated conditional probabilities as input to the landslide source models.",
+      "author": [
+        {
+          "@id": "0000-0003-1019-7321"
+        },
+        {
+          "@id": "0000-0002-7822-0244"
+        },
+        {
+          "@id": "0000-0002-6549-6268"
+        }
+      ],
+      "license": "CC-BY 4.0",
+      "programmingLanguage": "Python",
+      "url": "TODO: add the url to the software definition from the EPOS APIs"
+    },
+    {
+      "@id": "ST610109.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "name": "AL and Visualization",
+      "author": [
+        {
+          "@id": "0000-0003-4551-3339"
+        },
+        {
+          "@id": "0000-0001-7617-7206"
+        },
+        {
+          "@id": "0000-0003-2882-1954"
+        }
+      ],
+      "programmingLanguage": {
+        "@id": "https://about.workflowhub.eu/Workflow-RO-Crate/#cwl"
+      },
+      "input": [
+        {
+          "@id": "#DT6112->ST610109.cwl"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#ST610109.cwl->DT6113"
+        }
+      ]
+    },
+    {
+      "@id": "#DT6112->ST610109.cwl",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "Tsunami hazard curves",
+      "workExample": {
+        "@id": "DT6112/"
+      },
+      "name": "DT6112",
+      "valueRequired": true
+    },
+    {
+      "@id": "#ST610109.cwl->DT6113",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "Hazard visual products",
+      "workExample": {
+        "@id": "DT6113/"
+      },
+      "name": "DT6113",
+      "valueRequired": true
+    },
+    {
+      "@id": "SS6115",
+      "@type": "SoftwareSourceCode",
+      "name": "AL conversion",
+      "description": "Conversion of hazard into Alert Levels, provided that conversion rules are given",
+      "url": "TODO: add the url to the software definition from the EPOS APIs"
+    },
+    {
+      "@id": "SS6116",
+      "@type": "SoftwareSourceCode",
+      "name": "Visualization",
+      "description": "Production of hazard maps for visualization",
+      "url": "TODO: add the url to the software definition from the EPOS APIs"
+    },
+    {
+      "@id": "DT6112/",
+      "@type": "Dataset",
+      "name": "Tsunami hazard curves",
+      "url": "https://ics-c.epos-ip.org/development/k8s-epos-deploy/dt-geo/api/v1/resources/details/9a9f8b23-55ef-4f05-aa2f-276ad84a579b"
+    },
+    {
+      "@id": "DT6113/",
+      "@type": "Dataset",
+      "name": "Hazard visual products",
+      "url": "https://ics-c.epos-ip.org/development/k8s-epos-deploy/dt-geo/api/v1/resources/details/42ef6530-c082-457b-8426-80dab28f34e7"
+    },
+    {
+      "@id": "SS6101",
+      "@type": "SoftwareSourceCode",
+      "name": "ScPlayer: Scenario Player",
+      "description": "Simulates real-time processing by sending to the workflow pre-stored sensor data packets, extracted from the input data DT6103, DT6104, and DT6105 and collected into the scenario library database. Each data packet will be sent at different time to simulate the real-time hazard event occurrence and processing (under development)",
+      "url": "TODO: add the url to the software definition from the EPOS APIs"
+    },
+    {
+      "@id": "SS6103",
+      "@type": "SoftwareSourceCode",
+      "name": "ListenerSL",
+      "description": "Listens for new sea level data packet(s) and conveys it/them to the MisfitEvaluator.",
+      "url": "TODO: add the url to the software definition from the EPOS APIs"
+    },
+    {
+      "@id": "SS6105",
+      "@type": "SoftwareSourceCode",
+      "name": "EnsembleManager",
+      "description": "Generates the list of earthquake scenarios (and associated probabilities) from incoming seismic parameters and long-term information; then updates the list based on further incoming data",
+      "url": "TODO: add the url to the software definition from the EPOS APIs"
+    },
+    {
+      "@id": "SS6114",
+      "@type": "SoftwareSourceCode",
+      "name": "Hazard Aggregator",
+      "description": "Aggregates hazard by using tsunami intensities from Scenario Modelling and scenario probabilities from Ensemble Manager. Scenario probabilities can be further updated based on the misfits from the Misfit Evaluator.",
+      "author": {
+        "@id": "0000-0003-4551-3339"
+      },
+      "license": "CC-BY 4.0",
+      "programmingLanguage": "Python",
+      "url": "TODO: add the url to the software definition from the EPOS APIs"
+    },
+    {
+      "@id": "ST610106.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "name": "Scenario Modeling",
+      "author": {
+        "@id": "0000-0003-4551-3339"
+      },
+      "programmingLanguage": {
+        "@id": "https://about.workflowhub.eu/Workflow-RO-Crate/#cwl"
+      },
+      "input": [
+        {
+          "@id": "#DT6109->ST610106.cwl"
+        },
+        {
+          "@id": "#DT6102->ST610106.cwl"
+        },
+        {
+          "@id": "#DT6106->ST610106.cwl"
+        },
+        {
+          "@id": "#DT6108->ST610106.cwl"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#ST610106.cwl->DT6110"
+        },
+        {
+          "@id": "#ST610106.cwl->DT6111"
+        }
+      ]
+    },
+    {
+      "@id": "#DT6109->ST610106.cwl",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "Computational grids for numerical simulations",
+      "workExample": {
+        "@id": "DT6109/"
+      },
+      "name": "DT6109",
+      "valueRequired": true
+    },
+    {
+      "@id": "#DT6102->ST610106.cwl",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "Long-term tsunami hazard model for the NEAM region (NEAMTHM18)",
+      "workExample": {
+        "@id": "DT6102/"
+      },
+      "name": "DT6102",
+      "valueRequired": true
+    },
+    {
+      "@id": "#DT6106->ST610106.cwl",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "List of earthquake scenarios",
+      "workExample": {
+        "@id": "DT6106/"
+      },
+      "name": "DT6106",
+      "valueRequired": true
+    },
+    {
+      "@id": "#DT6108->ST610106.cwl",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "List of landslide scenarios",
+      "workExample": {
+        "@id": "DT6108/"
+      },
+      "name": "DT6108",
+      "valueRequired": true
+    },
+    {
+      "@id": "#ST610106.cwl->DT6110",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "Tsunami intensities",
+      "workExample": {
+        "@id": "DT6110/"
+      },
+      "name": "DT6110",
+      "valueRequired": true
+    },
+    {
+      "@id": "#ST610106.cwl->DT6111",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "Ground deformation",
+      "workExample": {
+        "@id": "DT6111/"
+      },
+      "name": "DT6111",
+      "valueRequired": true
+    },
+    {
+      "@id": "SS6112",
+      "@type": "SoftwareSourceCode",
+      "name": "Source-to-wave filter",
+      "description": "Interface module to integrate source models to tsunami models",
+      "programmingLanguage": "Python",
+      "url": "TODO: add the url to the software definition from the EPOS APIs"
+    },
+    {
+      "@id": "SS6113",
+      "@type": "SoftwareSourceCode",
+      "name": "Misfit Evaluator",
+      "description": "Module computing the misfit between data and simulation outputs",
+      "author": {
+        "@id": "0000-0001-9836-8716"
+      },
+      "license": "TBD (probably GPL-3.0-or-later)",
+      "programmingLanguage": "Python",
+      "url": "TODO: add the url to the software definition from the EPOS APIs"
+    },
+    {
+      "@id": "SS6106",
+      "@type": "SoftwareSourceCode",
+      "name": "SeisSol",
+      "description": "Tool simulating earthquake dynamic rupture, off-fault deformation, seismic, acoustic wave propagation and tsunami generation in a 3D domain. It can be used to understand the physics of earthquake and tsunami interaction. SeisSol is a high-performance computational seismology software that focuses on the simulation of complex earthquake scenarios. It supports various rheologies (elastic, anisotropic-elastic, acoustic, viscoelastic, poroelastic), boundary conditions and dynamic rupture laws. SeisSol uses high-order discontinuous Galerkin discretisation with an Arbitrary DERivative (ADER) local time stepping on unstructured adaptive tetrahedral meshes. Works with Cartesian coordinate systems.",
+      "author": {
+        "@id": "0000-0003-0112-8412"
+      },
+      "license": "BSD-3-Clause",
+      "programmingLanguage": [
+        "C++",
+        "Python",
+        "Matlab"
+      ],
+      "url": "TODO: add the url to the software definition from the EPOS APIs"
+    },
+    {
+      "@id": "SS6107",
+      "@type": "SoftwareSourceCode",
+      "name": "Tsunami-HySEA",
+      "description": "GPU accelerated software for simulating seismic-triggered tsunamis. Tool towards simulating the wave propagation and resulting inundation. It includes bottom bathymetry deformation from the earthquake rupture using the Okada model and others initial conditions. CRS is geographic WGS84. Coordinate values are decimal degrees.",
+      "author": {
+        "@id": "0000-0002-3010-8050"
+      },
+      "license": "CC-BY-NC-ND-4.0",
+      "programmingLanguage": [
+        "C++",
+        "CUDA",
+        "OpenMPI"
+      ],
+      "url": "TODO: add the url to the software definition from the EPOS APIs"
+    },
+    {
+      "@id": "SS6108",
+      "@type": "SoftwareSourceCode",
+      "name": "Landslide-HySea",
+      "description": "GPU accelerated software for simulating landslide-triggered tsunamis. Tool towards  simulating the interaction between a granular material layer and a water layer via a coupled model. CRS is UTM. Coordinate values are metres",
+      "author": {
+        "@id": "0000-0002-3010-8050"
+      },
+      "license": "CC-BY-NC-ND-4.0",
+      "programmingLanguage": [
+        "C++",
+        "CUDA",
+        "OpenMPI"
+      ],
+      "url": "TODO: add the url to the software definition from the EPOS APIs"
+    },
+    {
+      "@id": "SS6109",
+      "@type": "SoftwareSourceCode",
+      "name": "BingClaw",
+      "description": "Tool for simulating submarine landslide dynamics for cohesive (clay dominated) landslides, both as a tool towards simulating the landslide dynamics and its run-out distance, but also for generating tsunamis. The code has been operational in 6-7 years for running at laptops of the developer. Presently a docker container is being developed and tested, both for standard Docker and Udocker. Github account exists and model is offered as service within GeoINQUIRE. Both cartesian and geographical coordinates (spherical) possible",
+      "author": {
+        "@id": [
+          {
+            "@id": "0000-0003-1019-7321"
+          },
+          {
+            "@id": "0000-0002-7822-0244"
+          }
+        ]
+      },
+      "license": "CC-BY-NC-ND-4.0",
+      "programmingLanguage": [
+        "Fortran",
+        "Python"
+      ],
+      "url": "TODO: add the url to the software definition from the EPOS APIs"
+    },
+    {
+      "@id": "SS6110",
+      "@type": "SoftwareSourceCode",
+      "name": "SHALTOP",
+      "description": "SHALTOP describes granular flows over complex topography based on thin-layer depth-averaged equations solved using finite volume  methods. Horizontal/vertical coordinate system but thin-layer approximation based on topography related coordinate system. As a result, the thickness of the initial released mass should be described in the direction perpendicular to the topography in each point.",
+      "url": "TODO: add the url to the software definition from the EPOS APIs"
+    },
+    {
+      "@id": "SS6111",
+      "@type": "SoftwareSourceCode",
+      "name": "InundationAI",
+      "description": "Estimates tsunami intensities source parameters or time-series simulation output using trained NN/deep learning models trained on previously performed simulations. Both cartesian and geographical coordinates (spherical) possible",
+      "url": "TODO: add the url to the software definition from the EPOS APIs"
+    },
+    {
+      "@id": "DT6102/",
+      "@type": "Dataset",
+      "name": "NEAMTHM18",
+      "url": "https://ics-c.epos-ip.org/development/k8s-epos-deploy/dt-geo/api/v1/resources/details/c55ff897-d8d5-4d51-97d5-1eaff3003ff2"
+    },
+    {
+      "@id": "DT6106/",
+      "@type": "Dataset",
+      "name": "List of earthquake scenarios",
+      "url": "https://ics-c.epos-ip.org/development/k8s-epos-deploy/dt-geo/api/v1/resources/details/18b1944f-dca9-469a-93b4-b66ae1afc952"
+    },
+    {
+      "@id": "DT6110/",
+      "@type": "Dataset",
+      "name": "Tsunami intensities",
+      "url": "https://ics-c.epos-ip.org/development/k8s-epos-deploy/dt-geo/api/v1/resources/details/d19947f4-9538-4a07-8be1-b89cd87c6d49"
+    },
+    {
+      "@id": "DT6108/",
+      "@type": "Dataset",
+      "name": "List of landslide scenarios",
+      "url": "https://ics-c.epos-ip.org/development/k8s-epos-deploy/dt-geo/api/v1/resources/details/64ff29df-aa2f-42e1-86d9-ca18ae56daac"
+    },
+    {
+      "@id": "DT6109/",
+      "@type": "Dataset",
+      "name": "SimGrids",
+      "url": "https://ics-c.epos-ip.org/development/k8s-epos-deploy/dt-geo/api/v1/resources/details/71851ad5-7864-496e-8079-42884d9d3939"
+    },
+    {
+      "@id": "DT6111/",
+      "@type": "Dataset",
+      "name": "Ground deformation",
+      "url": "https://ics-c.epos-ip.org/development/k8s-epos-deploy/dt-geo/api/v1/resources/details/55516e7a-cea7-4f4d-90aa-7f6a1f6e0bc3"
+    },
+    {
+      "@id": "SS6102",
+      "@type": "SoftwareSourceCode",
+      "name": "ListenerEQ",
+      "description": "Listens for new EQ parameter message and conveys it to the EnsembleManager #b05#. Optional processing/conversion of data (under discussion: to be compliant with the operational version in the monitoring room)",
+      "url": "TODO: add the url to the software definition from the EPOS APIs"
+    },
+    {
+      "@id": "SS6104",
+      "@type": "SoftwareSourceCode",
+      "name": "ListenerGNSS",
+      "description": "Listens for new GNSS data packet(s) and conveys it/them to the MisfitEvaluator.",
+      "url": "TODO: add the url to the software definition from the EPOS APIs"
+    },
+    {
+      "@id": "SS6118",
+      "@type": "SoftwareSourceCode",
+      "name": "Earthquake modeling",
+      "description": "Module to provide advanced source parameters, i.e. shakemaps retrieved from GNSS data, for landslide simulations.",
+      "url": "TODO: add the url to the software definition from the EPOS APIs"
+    },
+    {
+      "@id": "DT6103/",
+      "@type": "Dataset",
+      "name": "EIDA seismic data archive (European Integrated Data Archive)",
+      "url": "https://ics-c.epos-ip.org/development/k8s-epos-deploy/dt-geo/api/v1/resources/details/47b8f86d-b5c3-4791-b70e-c0cbee3be371"
+    },
+    {
+      "@id": "DT6101/",
+      "@type": "Dataset",
+      "name": "Scenario Library",
+      "url": "https://ics-c.epos-ip.org/development/k8s-epos-deploy/dt-geo/api/v1/resources/details/8f11a5cf-cf82-4db2-a657-a4cfa530f639"
+    },
+    {
+      "@id": "DT6107/",
+      "@type": "Dataset",
+      "name": "List of probabilities",
+      "url": "https://ics-c.epos-ip.org/development/k8s-epos-deploy/dt-geo/api/v1/resources/details/0b7b8fe6-b1a5-4acf-a998-2675631f5020"
+    },
+    {
+      "@id": "DT6104/",
+      "@type": "Dataset",
+      "name": "SLSMF sea level data (Sea Level Station Monitoring Facility)",
+      "url": "https://ics-c.epos-ip.org/development/k8s-epos-deploy/dt-geo/api/v1/resources/details/db8f095e-73d9-4460-be24-5670188db51d"
+    },
+    {
+      "@id": "DT6105/",
+      "@type": "Dataset",
+      "name": "GNSS displacements",
+      "url": "https://ics-c.epos-ip.org/development/k8s-epos-deploy/dt-geo/api/v1/resources/details/0af8b1cb-9304-4b51-9252-10c4a54dc2ba"
+    }
+  ]
+}

@@ -1,0 +1,261 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "comments": [],
+    "format-version": "0.1",
+    "name": "A workflow demonstrating the 'Run interpolation based on IDW' tool",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "run_idw_interpolation_test_input1.csv"
+                }
+            ],
+            "label": "run_idw_interpolation_test_input1.csv",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 0,
+                "top": 85
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "9c450ddf-031a-4f69-8a74-ae905e438f56",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "run_idw_interpolation_test_input2.geojson"
+                }
+            ],
+            "label": "run_idw_interpolation_test_input2.geojson",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 2,
+                "top": 276
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "fd3c1098-d93c-4e83-bb81-7536e7ef34f3",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": "Filter1",
+            "errors": null,
+            "id": 2,
+            "input_connections": {
+                "input": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Filter",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 326,
+                "top": 17
+            },
+            "post_job_actions": {},
+            "tool_id": "Filter1",
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"cond\": \"c9=='checked'\", \"header_lines\": \"1\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.1",
+            "type": "tool",
+            "uuid": "65d18352-f17e-438c-ac83-b631e53b489e",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ecology/interpolation_run_idw_interpolation/interpolation_run_idw_interpolation/1.0",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "observations_csv": {
+                    "id": 0,
+                    "output_name": "output"
+                },
+                "study_area": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Run interpolation",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "png"
+                }
+            ],
+            "position": {
+                "left": 908,
+                "top": 317
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ecology/interpolation_run_idw_interpolation/interpolation_run_idw_interpolation/1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "b4b9edf9ea27",
+                "name": "interpolation_run_idw_interpolation",
+                "owner": "ecology",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"color_type\": \"RdBu\", \"dot_size\": \"0.2\", \"idw_power\": \"2.0\", \"latitude_column\": \"3\", \"legend_label\": \"Legend\", \"legend_position\": \"false\", \"longitude_column\": \"4\", \"number_classes\": \"10\", \"observations_column\": \"5\", \"observations_csv\": {\"__class__\": \"ConnectedValue\"}, \"sample_points\": \"50000\", \"sample_type\": \"regular\", \"study_area\": {\"__class__\": \"ConnectedValue\"}, \"test_case\": false, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0",
+            "type": "tool",
+            "uuid": "929d9f5a-7d47-43e4-9eb4-c04e3132e44a",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "tabular_to_csv",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "tabular": {
+                    "id": 2,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Convert tabular to CSV",
+            "outputs": [
+                {
+                    "name": "csv",
+                    "type": "csv"
+                }
+            ],
+            "position": {
+                "left": 600,
+                "top": 0
+            },
+            "post_job_actions": {},
+            "tool_id": "tabular_to_csv",
+            "tool_state": "{\"__input_ext\": \"input\", \"__target_datatype__\": \"csv\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"tabular\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "8f7ff9d4-d8de-4e0d-b9b6-26fca77bbaf7",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "5": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ecology/interpolation_run_idw_interpolation/interpolation_run_idw_interpolation/1.0",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "observations_csv": {
+                    "id": 4,
+                    "output_name": "csv"
+                },
+                "study_area": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Run interpolation",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "png"
+                }
+            ],
+            "position": {
+                "left": 907,
+                "top": 102
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ecology/interpolation_run_idw_interpolation/interpolation_run_idw_interpolation/1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "b4b9edf9ea27",
+                "name": "interpolation_run_idw_interpolation",
+                "owner": "ecology",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"color_type\": \"RdBu\", \"dot_size\": \"0.2\", \"idw_power\": \"2.0\", \"latitude_column\": \"3\", \"legend_label\": \"Legend\", \"legend_position\": \"false\", \"longitude_column\": \"4\", \"number_classes\": \"10\", \"observations_column\": \"5\", \"observations_csv\": {\"__class__\": \"ConnectedValue\"}, \"sample_points\": \"50000\", \"sample_type\": \"regular\", \"study_area\": {\"__class__\": \"ConnectedValue\"}, \"test_case\": false, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0",
+            "type": "tool",
+            "uuid": "ca0a2dae-357f-4f7b-a011-2f1bd92d6a5b",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "6": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/graphicsmagick_image_compare/graphicsmagick_image_compare/1.3.42+galaxy0",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "input1": {
+                    "id": 3,
+                    "output_name": "output"
+                },
+                "input2": {
+                    "id": 5,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Compare two images",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "png"
+                }
+            ],
+            "position": {
+                "left": 1235,
+                "top": 294
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/graphicsmagick_image_compare/graphicsmagick_image_compare/1.3.42+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "bb871fbe177f",
+                "name": "graphicsmagick_image_compare",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"color\": \"AliceBlue\", \"highlight_style\": \"xor\", \"input1\": {\"__class__\": \"ConnectedValue\"}, \"input2\": {\"__class__\": \"ConnectedValue\"}, \"metric\": \"MAE\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.3.42+galaxy0",
+            "type": "tool",
+            "uuid": "ed796683-6ace-467d-9555-d84dd47d485c",
+            "when": null,
+            "workflow_outputs": []
+        }
+    },
+    "tags": [],
+    "uuid": "c9d7493f-d52c-4418-a14b-9963e7db1fae",
+    "version": 1
+}

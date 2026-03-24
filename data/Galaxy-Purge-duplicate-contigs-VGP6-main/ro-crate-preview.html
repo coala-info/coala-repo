@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Purge-duplicate-contigs-VGP6/main</title>
+  <script type="application/ld+json">{
+  "@context": [
+    "https://w3id.org/ro/crate/1.1/context",
+    {
+      "GithubService": "https://w3id.org/ro/terms/test#GithubService",
+      "JenkinsService": "https://w3id.org/ro/terms/test#JenkinsService",
+      "PlanemoEngine": "https://w3id.org/ro/terms/test#PlanemoEngine",
+      "TestDefinition": "https://w3id.org/ro/terms/test#TestDefinition",
+      "TestInstance": "https://w3id.org/ro/terms/test#TestInstance",
+      "TestService": "https://w3id.org/ro/terms/test#TestService",
+      "TestSuite": "https://w3id.org/ro/terms/test#TestSuite",
+      "TravisService": "https://w3id.org/ro/terms/test#TravisService",
+      "definition": "https://w3id.org/ro/terms/test#definition",
+      "engineVersion": "https://w3id.org/ro/terms/test#engineVersion",
+      "instance": "https://w3id.org/ro/terms/test#instance",
+      "resource": "https://w3id.org/ro/terms/test#resource",
+      "runsOn": "https://w3id.org/ro/terms/test#runsOn"
+    }
+  ],
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.1"
+      }
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "datePublished": "2026-01-28T23:12:07.980648",
+      "hasPart": [
+        {
+          "@id": "Purge-duplicate-contigs-VGP6.ga"
+        },
+        {
+          "@id": "README.md"
+        },
+        {
+          "@id": "Purge-duplicate-contigs-VGP6-tests.yml"
+        }
+      ],
+      "isBasedOn": "https://github.com/iwc-workflows/Purge-duplicate-contigs-VGP6",
+      "license": "CC-BY-4.0",
+      "mainEntity": {
+        "@id": "Purge-duplicate-contigs-VGP6.ga"
+      },
+      "mentions": [
+        {
+          "@id": "#test_main_1"
+        }
+      ],
+      "name": "Purge-duplicate-contigs-VGP6/main"
+    },
+    {
+      "@id": "Purge-duplicate-contigs-VGP6.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "creator": [
+        {
+          "@id": "#13605f54-4a5c-47f4-8f15-b3af6397de7d"
+        },
+        {
+          "@id": "https://vertebrategenomeproject.org"
+        }
+      ],
+      "name": "Purge-duplicate-contigs-VGP6/main",
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "url": "https://github.com/iwc-workflows/Purge-duplicate-contigs-VGP6",
+      "version": "0.10.5"
+    },
+    {
+      "@id": "README.md",
+      "@type": "File"
+    },
+    {
+      "@id": "Purge-duplicate-contigs-VGP6-tests.yml",
+      "@type": [
+        "File",
+        "TestDefinition"
+      ],
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/terms/test#PlanemoEngine"
+      },
+      "engineVersion": ">=0.75.35"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "name": "Galaxy",
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "version": "v19_09"
+    },
+    {
+      "@id": "#13605f54-4a5c-47f4-8f15-b3af6397de7d",
+      "@type": "Organization",
+      "name": "Galaxy"
+    },
+    {
+      "@id": "https://vertebrategenomeproject.org",
+      "@type": "Organization",
+      "name": "VGP"
+    },
+    {
+      "@id": "#test_main_1",
+      "@type": "TestSuite",
+      "definition": {
+        "@id": "Purge-duplicate-contigs-VGP6-tests.yml"
+      },
+      "instance": [
+        {
+          "@id": "#test_main_1_1"
+        }
+      ],
+      "mainEntity": {
+        "@id": "Purge-duplicate-contigs-VGP6.ga"
+      },
+      "name": "test_main_1"
+    },
+    {
+      "@id": "#test_main_1_1",
+      "@type": "TestInstance",
+      "name": "test_main_1_1",
+      "resource": "repos/iwc-workflows/Purge-duplicate-contigs-VGP6/actions/workflows/wftest.yml",
+      "runsOn": {
+        "@id": "https://w3id.org/ro/terms/test#GithubService"
+      },
+      "url": "https://api.github.com"
+    },
+    {
+      "@id": "https://w3id.org/ro/terms/test#GithubService",
+      "@type": "TestService",
+      "name": "Github Actions",
+      "url": {
+        "@id": "https://github.com"
+      }
+    },
+    {
+      "@id": "https://w3id.org/ro/terms/test#PlanemoEngine",
+      "@type": "SoftwareApplication",
+      "name": "Planemo",
+      "url": {
+        "@id": "https://github.com/galaxyproject/planemo"
+      }
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/ResearchObject/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <meta charset="utf-8">
+</head>
+<body>
+  <h1>Purge-duplicate-contigs-VGP6/main</h1>
+  
+  <p>
+    
+  </p>
+  <dl>
+    
+    
+    
+    
+      <dt>License</dt>
+      <dd>CC-BY-4.0</dd>
+    
+  </dl>
+
+  <h2>Contents</h2>
+  <ul>
+    
+      <li>
+        <strong>Purge-duplicate-contigs-VGP6/main</strong>
+        
+        
+      </li>
+    
+      <li>
+        <strong>README.md</strong>
+        
+        
+      </li>
+    
+      <li>
+        <strong>Purge-duplicate-contigs-VGP6-tests.yml</strong>
+        
+        
+      </li>
+    
+  </ul>
+</body>
+</html>

@@ -1,0 +1,26 @@
+2025-03-03 17:47:10.3384 QuantBasedAlignment TRACE CLIArguments: [TargetFiles
+   ["C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant"];
+ SourceFiles
+   ["C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant"];
+ OutputDirectory
+   "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantalign";
+ DiagnosticCharts; Parallelism_Level 18] 
+2025-03-03 17:47:10.3384 QuantBasedAlignment TRACE .quant files : [|"C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant\20170519 TM FScon3501.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant\20170519 TM FScon3503.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant\20170519 TM FScon3505.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant\20170519 TM FScon3507.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant\20170519 TM FScon3509.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant\20170519 TM FScon3511.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant\20170519 TM FScon3513.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant\20170519 TM FScon3515.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant\20170519 TM FScon3517.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant\20170519 TM FScon3601.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant\20170519 TM FScon3603.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant\20170519 TM FScon3605.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant\20170519 TM FScon3607.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant\20170519 TM FScon3609.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant\20170519 TM FScon3611.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant\20170519 TM FScon3613.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant\20170519 TM FScon3615.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant\20170519 TM FScon3617.quant"|] 
+2025-03-03 17:47:10.3384 QuantBasedAlignment TRACE Program is running on 18 cores 

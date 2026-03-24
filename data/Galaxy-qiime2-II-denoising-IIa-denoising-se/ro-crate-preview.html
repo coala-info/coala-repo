@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>qiime2-II-denoising/IIa-denoising-se</title>
+  <script type="application/ld+json">{
+  "@context": [
+    "https://w3id.org/ro/crate/1.1/context",
+    {
+      "GithubService": "https://w3id.org/ro/terms/test#GithubService",
+      "JenkinsService": "https://w3id.org/ro/terms/test#JenkinsService",
+      "PlanemoEngine": "https://w3id.org/ro/terms/test#PlanemoEngine",
+      "TestDefinition": "https://w3id.org/ro/terms/test#TestDefinition",
+      "TestInstance": "https://w3id.org/ro/terms/test#TestInstance",
+      "TestService": "https://w3id.org/ro/terms/test#TestService",
+      "TestSuite": "https://w3id.org/ro/terms/test#TestSuite",
+      "TravisService": "https://w3id.org/ro/terms/test#TravisService",
+      "definition": "https://w3id.org/ro/terms/test#definition",
+      "engineVersion": "https://w3id.org/ro/terms/test#engineVersion",
+      "instance": "https://w3id.org/ro/terms/test#instance",
+      "resource": "https://w3id.org/ro/terms/test#resource",
+      "runsOn": "https://w3id.org/ro/terms/test#runsOn"
+    }
+  ],
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.1"
+      }
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "datePublished": "2024-11-26T15:24:27.948112",
+      "hasPart": [
+        {
+          "@id": "QIIME2-IIa-denoising-and-feature-table-creation-single-end.ga"
+        },
+        {
+          "@id": "README.md"
+        },
+        {
+          "@id": "QIIME2-IIa-denoising-and-feature-table-creation-single-end-tests.yml"
+        },
+        {
+          "@id": "QIIME2-IIb-denoising-and-feature-table-creation-paired-end.ga"
+        },
+        {
+          "@id": "QIIME2-IIb-denoising-and-feature-table-creation-paired-end-tests.yml"
+        }
+      ],
+      "isBasedOn": "https://github.com/iwc-workflows/qiime2-II-denoising",
+      "license": "MIT",
+      "mainEntity": {
+        "@id": "QIIME2-IIa-denoising-and-feature-table-creation-single-end.ga"
+      },
+      "mentions": [
+        {
+          "@id": "#test_IIa-denoising-se_1"
+        },
+        {
+          "@id": "#test_IIb-denoising-pe_1"
+        }
+      ],
+      "name": "qiime2-II-denoising/IIa-denoising-se"
+    },
+    {
+      "@id": "QIIME2-IIa-denoising-and-feature-table-creation-single-end.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "creator": [
+        {
+          "@id": "#0009-0008-1496-1677"
+        },
+        {
+          "@id": "#9295b471-bbec-4e17-b2c1-10724f614515"
+        }
+      ],
+      "name": "qiime2-II-denoising/IIa-denoising-se",
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "url": "https://github.com/iwc-workflows/qiime2-II-denoising",
+      "version": "0.3"
+    },
+    {
+      "@id": "README.md",
+      "@type": "File"
+    },
+    {
+      "@id": "QIIME2-IIa-denoising-and-feature-table-creation-single-end-tests.yml",
+      "@type": [
+        "File",
+        "TestDefinition"
+      ],
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/terms/test#PlanemoEngine"
+      },
+      "engineVersion": ">=0.75.26"
+    },
+    {
+      "@id": "QIIME2-IIb-denoising-and-feature-table-creation-paired-end.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "creator": [
+        {
+          "@id": "#0009-0008-1496-1677"
+        },
+        {
+          "@id": "#3f809a7a-5564-4934-a2bd-dd0147ff07de"
+        }
+      ],
+      "name": "qiime2-II-denoising/IIb-denoising-pe",
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "url": "https://github.com/iwc-workflows/qiime2-II-denoising",
+      "version": "0.3"
+    },
+    {
+      "@id": "QIIME2-IIb-denoising-and-feature-table-creation-paired-end-tests.yml",
+      "@type": [
+        "File",
+        "TestDefinition"
+      ],
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/terms/test#PlanemoEngine"
+      },
+      "engineVersion": ">=0.75.26"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "name": "Galaxy",
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "version": "v19_09"
+    },
+    {
+      "@id": "#0009-0008-1496-1677",
+      "@type": "Person",
+      "name": "Debjyoti Ghosh"
+    },
+    {
+      "@id": "#9295b471-bbec-4e17-b2c1-10724f614515",
+      "@type": "Organization",
+      "name": "Helmholtz-Zentrum für Umweltforschung - UFZ"
+    },
+    {
+      "@id": "#test_IIa-denoising-se_1",
+      "@type": "TestSuite",
+      "definition": {
+        "@id": "QIIME2-IIa-denoising-and-feature-table-creation-single-end-tests.yml"
+      },
+      "instance": [
+        {
+          "@id": "#test_IIa-denoising-se_1_1"
+        }
+      ],
+      "mainEntity": {
+        "@id": "QIIME2-IIa-denoising-and-feature-table-creation-single-end.ga"
+      },
+      "name": "test_IIa-denoising-se_1"
+    },
+    {
+      "@id": "#test_IIa-denoising-se_1_1",
+      "@type": "TestInstance",
+      "name": "test_IIa-denoising-se_1_1",
+      "resource": "repos/iwc-workflows/qiime2-II-denoising/actions/workflows/wftest.yml",
+      "runsOn": {
+        "@id": "https://w3id.org/ro/terms/test#GithubService"
+      },
+      "url": "https://api.github.com"
+    },
+    {
+      "@id": "https://w3id.org/ro/terms/test#GithubService",
+      "@type": "TestService",
+      "name": "Github Actions",
+      "url": {
+        "@id": "https://github.com"
+      }
+    },
+    {
+      "@id": "https://w3id.org/ro/terms/test#PlanemoEngine",
+      "@type": "SoftwareApplication",
+      "name": "Planemo",
+      "url": {
+        "@id": "https://github.com/galaxyproject/planemo"
+      }
+    },
+    {
+      "@id": "#3f809a7a-5564-4934-a2bd-dd0147ff07de",
+      "@type": "Organization",
+      "name": "Helmholtz-Zentrum für Umweltforschung - UFZ"
+    },
+    {
+      "@id": "#test_IIb-denoising-pe_1",
+      "@type": "TestSuite",
+      "definition": {
+        "@id": "QIIME2-IIb-denoising-and-feature-table-creation-paired-end-tests.yml"
+      },
+      "instance": [
+        {
+          "@id": "#test_IIb-denoising-pe_1_1"
+        }
+      ],
+      "mainEntity": {
+        "@id": "QIIME2-IIb-denoising-and-feature-table-creation-paired-end.ga"
+      },
+      "name": "test_IIb-denoising-pe_1"
+    },
+    {
+      "@id": "#test_IIb-denoising-pe_1_1",
+      "@type": "TestInstance",
+      "name": "test_IIb-denoising-pe_1_1",
+      "resource": "repos/iwc-workflows/qiime2-II-denoising/actions/workflows/wftest.yml",
+      "runsOn": {
+        "@id": "https://w3id.org/ro/terms/test#GithubService"
+      },
+      "url": "https://api.github.com"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/ResearchObject/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <meta charset="utf-8">
+</head>
+<body>
+  <h1>qiime2-II-denoising/IIa-denoising-se</h1>
+  
+  <p>
+    
+  </p>
+  <dl>
+    
+    
+    
+    
+      <dt>License</dt>
+      <dd>MIT</dd>
+    
+  </dl>
+
+  <h2>Contents</h2>
+  <ul>
+    
+      <li>
+        <strong>qiime2-II-denoising/IIa-denoising-se</strong>
+        
+        
+      </li>
+    
+      <li>
+        <strong>README.md</strong>
+        
+        
+      </li>
+    
+      <li>
+        <strong>QIIME2-IIa-denoising-and-feature-table-creation-single-end-tests.yml</strong>
+        
+        
+      </li>
+    
+      <li>
+        <strong>qiime2-II-denoising/IIb-denoising-pe</strong>
+        
+        
+      </li>
+    
+      <li>
+        <strong>QIIME2-IIb-denoising-and-feature-table-creation-paired-end-tests.yml</strong>
+        
+        
+      </li>
+    
+  </ul>
+</body>
+</html>

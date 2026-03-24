@@ -1,0 +1,198 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Masking%20repeats%20with%20RepeatMasker.ga"
+      },
+      "datePublished": "2024-02-15 11:37:10 +0000",
+      "author": [
+
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://workflowhub.eu/workflows/753?version=1",
+      "url": "https://workflowhub.eu/workflows/753/ro_crate?version=1",
+      "name": "Research Object Crate for Masking repeats with RepeatMasker",
+      "description": "Masking repeats in a genome using RepeatMasker",
+      "sdDatePublished": "2026-03-24 17:51:09 +0000",
+      "hasPart": [
+        {
+          "@id": "Masking%20repeats%20with%20RepeatMasker.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Masking%20repeats%20with%20RepeatMasker.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 7029,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Masking repeats in a genome using RepeatMasker",
+      "name": "Masking repeats with RepeatMasker",
+      "url": "https://workflowhub.eu/workflows/753?version=1",
+      "keywords": "genome-annotation",
+      "version": 1,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "creator": {
+        "@id": "https://orcid.org/0000-0003-0914-2470"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/166"
+      },
+      "dateCreated": "2024-02-15T11:38:35Z",
+      "dateModified": "2025-11-04T09:55:52Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/13"
+      },
+      "input": {
+        "@id": "#masking_repeats_with_repeatmasker-inputs-%23main/Raw%20genome%20sequence"
+      },
+      "output": [
+        {
+          "@id": "#masking_repeats_with_repeatmasker-outputs-%23main/RepeatMasker%20masked%20sequence%20on%20input%20dataset(s)"
+        },
+        {
+          "@id": "#masking_repeats_with_repeatmasker-outputs-%23main/RepeatMasker%20output%20log%20on%20input%20dataset(s)"
+        },
+        {
+          "@id": "#masking_repeats_with_repeatmasker-outputs-%23main/RepeatMasker%20repeat%20catalogue%20on%20input%20dataset(s)"
+        },
+        {
+          "@id": "#masking_repeats_with_repeatmasker-outputs-%23main/RepeatMasker%20repeat%20statistics%20on%20input%20dataset(s)"
+        },
+        {
+          "@id": "#masking_repeats_with_repeatmasker-outputs-%23main/_anonymous_output_1"
+        },
+        {
+          "@id": "#masking_repeats_with_repeatmasker-outputs-%23main/_anonymous_output_2"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-0914-2470",
+      "@type": "Person",
+      "name": "Anthony Bretaudeau"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/166",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "EuroScienceGateway"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/13",
+      "@type": "Collection",
+      "name": "Workflows in EuroScienceGateway"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#masking_repeats_with_repeatmasker-inputs-#main/Raw genome sequence",
+      "@type": "FormalParameter",
+      "name": "#main/Raw genome sequence",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#masking_repeats_with_repeatmasker-outputs-#main/RepeatMasker masked sequence on input dataset(s)",
+      "@type": "FormalParameter",
+      "name": "#main/RepeatMasker masked sequence on input dataset(s)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#masking_repeats_with_repeatmasker-outputs-#main/RepeatMasker output log on input dataset(s)",
+      "@type": "FormalParameter",
+      "name": "#main/RepeatMasker output log on input dataset(s)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#masking_repeats_with_repeatmasker-outputs-#main/RepeatMasker repeat catalogue on input dataset(s)",
+      "@type": "FormalParameter",
+      "name": "#main/RepeatMasker repeat catalogue on input dataset(s)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#masking_repeats_with_repeatmasker-outputs-#main/RepeatMasker repeat statistics on input dataset(s)",
+      "@type": "FormalParameter",
+      "name": "#main/RepeatMasker repeat statistics on input dataset(s)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#masking_repeats_with_repeatmasker-outputs-#main/_anonymous_output_1",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#masking_repeats_with_repeatmasker-outputs-#main/_anonymous_output_2",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

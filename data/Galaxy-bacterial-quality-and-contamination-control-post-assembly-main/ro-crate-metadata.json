@@ -1,0 +1,191 @@
+{
+  "@context": [
+    "https://w3id.org/ro/crate/1.1/context",
+    {
+      "GithubService": "https://w3id.org/ro/terms/test#GithubService",
+      "JenkinsService": "https://w3id.org/ro/terms/test#JenkinsService",
+      "PlanemoEngine": "https://w3id.org/ro/terms/test#PlanemoEngine",
+      "TestDefinition": "https://w3id.org/ro/terms/test#TestDefinition",
+      "TestInstance": "https://w3id.org/ro/terms/test#TestInstance",
+      "TestService": "https://w3id.org/ro/terms/test#TestService",
+      "TestSuite": "https://w3id.org/ro/terms/test#TestSuite",
+      "TravisService": "https://w3id.org/ro/terms/test#TravisService",
+      "definition": "https://w3id.org/ro/terms/test#definition",
+      "engineVersion": "https://w3id.org/ro/terms/test#engineVersion",
+      "instance": "https://w3id.org/ro/terms/test#instance",
+      "resource": "https://w3id.org/ro/terms/test#resource",
+      "runsOn": "https://w3id.org/ro/terms/test#runsOn"
+    }
+  ],
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.1"
+      }
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "datePublished": "2025-12-03T15:09:21.777026",
+      "hasPart": [
+        {
+          "@id": "bacterial_quality_and_contamination_control_post_assembly.ga"
+        },
+        {
+          "@id": "README.md"
+        },
+        {
+          "@id": "bacterial_quality_and_contamination_control_post_assembly-tests.yml"
+        }
+      ],
+      "isBasedOn": "https://github.com/iwc-workflows/bacterial-quality-and-contamination-control-post-assembly",
+      "license": "GPL-3.0-or-later",
+      "mainEntity": {
+        "@id": "bacterial_quality_and_contamination_control_post_assembly.ga"
+      },
+      "mentions": [
+        {
+          "@id": "#test_main_1"
+        }
+      ],
+      "name": "bacterial-quality-and-contamination-control-post-assembly/main"
+    },
+    {
+      "@id": "bacterial_quality_and_contamination_control_post_assembly.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "creator": [
+        {
+          "@id": "#e866c2b3-e598-450a-a4bd-a761379e521d"
+        },
+        {
+          "@id": "https://www.abromics.fr/"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-8304-138X"
+        },
+        {
+          "@id": "https://orcid.org/0009-0005-6140-0379"
+        },
+        {
+          "@id": "https://orcid.org/0009-0005-6834-4058"
+        }
+      ],
+      "name": "bacterial-quality-and-contamination-control-post-assembly/main",
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "url": "https://github.com/iwc-workflows/bacterial-quality-and-contamination-control-post-assembly",
+      "version": "1.0.2"
+    },
+    {
+      "@id": "README.md",
+      "@type": "File"
+    },
+    {
+      "@id": "bacterial_quality_and_contamination_control_post_assembly-tests.yml",
+      "@type": [
+        "File",
+        "TestDefinition"
+      ],
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/terms/test#PlanemoEngine"
+      },
+      "engineVersion": ">=0.75.33"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "name": "Galaxy",
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "version": "v19_09"
+    },
+    {
+      "@id": "#e866c2b3-e598-450a-a4bd-a761379e521d",
+      "@type": "Person",
+      "name": "ABRomics"
+    },
+    {
+      "@id": "https://www.abromics.fr/",
+      "@type": "Organization",
+      "name": "abromics-consortium"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-8304-138X",
+      "@type": "Person",
+      "name": "Pierre Marin"
+    },
+    {
+      "@id": "https://orcid.org/0009-0005-6140-0379",
+      "@type": "Person",
+      "name": "Clea Siguret"
+    },
+    {
+      "@id": "https://orcid.org/0009-0005-6834-4058",
+      "@type": "Person",
+      "name": "Hugo Lefeuvre"
+    },
+    {
+      "@id": "#test_main_1",
+      "@type": "TestSuite",
+      "definition": {
+        "@id": "bacterial_quality_and_contamination_control_post_assembly-tests.yml"
+      },
+      "instance": [
+        {
+          "@id": "#test_main_1_1"
+        }
+      ],
+      "mainEntity": {
+        "@id": "bacterial_quality_and_contamination_control_post_assembly.ga"
+      },
+      "name": "test_main_1"
+    },
+    {
+      "@id": "#test_main_1_1",
+      "@type": "TestInstance",
+      "name": "test_main_1_1",
+      "resource": "repos/iwc-workflows/bacterial-quality-and-contamination-control-post-assembly/actions/workflows/wftest.yml",
+      "runsOn": {
+        "@id": "https://w3id.org/ro/terms/test#GithubService"
+      },
+      "url": "https://api.github.com"
+    },
+    {
+      "@id": "https://w3id.org/ro/terms/test#GithubService",
+      "@type": "TestService",
+      "name": "Github Actions",
+      "url": {
+        "@id": "https://github.com"
+      }
+    },
+    {
+      "@id": "https://w3id.org/ro/terms/test#PlanemoEngine",
+      "@type": "SoftwareApplication",
+      "name": "Planemo",
+      "url": {
+        "@id": "https://github.com/galaxyproject/planemo"
+      }
+    }
+  ]
+}

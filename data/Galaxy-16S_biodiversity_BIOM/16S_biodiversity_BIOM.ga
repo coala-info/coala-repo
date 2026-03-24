@@ -1,0 +1,477 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "Convert count table to BIOM file, perform differential genes expression by DESeq2 and generate plots by Phyloseq\nhttps://www.ncbi.nlm.nih.gov/pmc/articles/PMC6807170/",
+    "format-version": "0.1",
+    "name": "16S_biodiversity_BIOM",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/biom_convert/biom_convert/2.1.5.0",
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Convert BIOM",
+                    "name": "input_type"
+                },
+                {
+                    "description": "runtime parameter for tool Convert BIOM",
+                    "name": "output_type"
+                },
+                {
+                    "description": "runtime parameter for tool Convert BIOM",
+                    "name": "output_type"
+                }
+            ],
+            "label": null,
+            "name": "Convert BIOM",
+            "outputs": [
+                {
+                    "name": "output_table",
+                    "type": "biom1"
+                }
+            ],
+            "position": {
+                "bottom": 427.5,
+                "height": 232,
+                "left": 389,
+                "right": 589,
+                "top": 195.5,
+                "width": 200,
+                "x": 389,
+                "y": 195.5
+            },
+            "post_job_actions": {
+                "HideDatasetActionoutput_table": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output_table"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/biom_convert/biom_convert/2.1.5.0",
+            "tool_shed_repository": {
+                "changeset_revision": "501c21cce614",
+                "name": "biom_convert",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"input_type\": {\"input_type_selector\": \"tsv\", \"__current_case__\": 0, \"input_table\": {\"__class__\": \"RuntimeValue\"}, \"process_obs_metadata\": \"\"}, \"output_type\": {\"output_type_selector\": \"biom\", \"__current_case__\": 1, \"table_type\": \"OTU table\", \"biom_type\": {\"biom_type_selector\": \"json\", \"__current_case__\": 0}, \"sample_metadata_fp\": {\"__class__\": \"RuntimeValue\"}, \"observation_metadata_fp\": {\"__class__\": \"RuntimeValue\"}}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.1.5.0",
+            "type": "tool",
+            "uuid": "47b58bda-2e3c-4cbe-a66e-41ff8e1c954f",
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/biom_add_metadata/biom_add_metadata/2.1.5.0",
+            "errors": null,
+            "id": 1,
+            "input_connections": {
+                "input_table": {
+                    "id": 0,
+                    "output_name": "output_table"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool BIOM metadata",
+                    "name": "input_observation_metadata"
+                },
+                {
+                    "description": "runtime parameter for tool BIOM metadata",
+                    "name": "input_sample_metadata"
+                }
+            ],
+            "label": null,
+            "name": "BIOM metadata",
+            "outputs": [
+                {
+                    "name": "output_table",
+                    "type": "biom1"
+                }
+            ],
+            "position": {
+                "bottom": 649.015625,
+                "height": 232,
+                "left": 685.546875,
+                "right": 885.546875,
+                "top": 417.015625,
+                "width": 200,
+                "x": 685.546875,
+                "y": 417.015625
+            },
+            "post_job_actions": {
+                "HideDatasetActionoutput_table": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output_table"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/biom_add_metadata/biom_add_metadata/2.1.5.0",
+            "tool_shed_repository": {
+                "changeset_revision": "367b1ed91207",
+                "name": "biom_add_metadata",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"float_fields\": \"\", \"input_observation_metadata\": {\"__class__\": \"RuntimeValue\"}, \"input_sample_metadata\": {\"__class__\": \"RuntimeValue\"}, \"input_table\": {\"__class__\": \"ConnectedValue\"}, \"int_fields\": \"\", \"observation_header\": \"OTUID,taxonomy\", \"output_as_json\": \"true\", \"sample_header\": \"\", \"sc_pipe_separated\": \"\", \"sc_separated\": \"taxonomy\", \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.1.5.0",
+            "type": "tool",
+            "uuid": "2ab252cf-4af8-4eb8-a71f-c44dc55514c1",
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/qfabrepo/metadegalaxy_phyloseq_deseq2/phyloseq_DESeq2/1.22.3",
+            "errors": null,
+            "id": 2,
+            "input_connections": {
+                "biom_input": {
+                    "id": 1,
+                    "output_name": "output_table"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool DESeq2",
+                    "name": "metadata_input"
+                }
+            ],
+            "label": null,
+            "name": "DESeq2",
+            "outputs": [
+                {
+                    "name": "DE_table",
+                    "type": "tabular"
+                },
+                {
+                    "name": "normalised_table",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 291.5,
+                "height": 172,
+                "left": 1000,
+                "right": 1200,
+                "top": 119.5,
+                "width": 200,
+                "x": 1000,
+                "y": 119.5
+            },
+            "post_job_actions": {
+                "HideDatasetActionDE_table": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "DE_table"
+                },
+                "HideDatasetActionnormalised_table": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "normalised_table"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/qfabrepo/metadegalaxy_phyloseq_deseq2/phyloseq_DESeq2/1.22.3",
+            "tool_shed_repository": {
+                "changeset_revision": "bb78a1f94f50",
+                "name": "metadegalaxy_phyloseq_deseq2",
+                "owner": "qfabrepo",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"biom_input\": {\"__class__\": \"ConnectedValue\"}, \"cutoff\": \"0.05\", \"factor\": null, \"fitType\": \"parametric\", \"metadata_input\": {\"__class__\": \"RuntimeValue\"}, \"test\": \"Wald\", \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.22.3",
+            "type": "tool",
+            "uuid": "aa7bd52c-1618-4d6f-87f0-990fd9bd78c7",
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/qfabrepo/metadegalaxy_phyloseq_richness/phyloseq_richness/1.22.3.2",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "biom_input": {
+                    "id": 1,
+                    "output_name": "output_table"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Phyloseq Richness",
+                    "name": "metadata_input"
+                }
+            ],
+            "label": null,
+            "name": "Phyloseq Richness",
+            "outputs": [
+                {
+                    "name": "htmlfile",
+                    "type": "html"
+                }
+            ],
+            "position": {
+                "bottom": 615.5,
+                "height": 162,
+                "left": 998,
+                "right": 1198,
+                "top": 453.5,
+                "width": 200,
+                "x": 998,
+                "y": 453.5
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/qfabrepo/metadegalaxy_phyloseq_richness/phyloseq_richness/1.22.3.2",
+            "tool_shed_repository": {
+                "changeset_revision": "e0225f3e8ef6",
+                "name": "metadegalaxy_phyloseq_richness",
+                "owner": "qfabrepo",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"biom_input\": {\"__class__\": \"ConnectedValue\"}, \"legend_column\": null, \"metadata_input\": {\"__class__\": \"RuntimeValue\"}, \"xaxis_column\": null, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.22.3.2",
+            "type": "tool",
+            "uuid": "a168bc4f-7e5f-477d-adf5-33a7f341ad70",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "htmlfile",
+                    "uuid": "3e4d6b58-5de2-4c81-93a3-38f2e716c71a"
+                }
+            ]
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/qfabrepo/metadegalaxy_phyloseq_abundance_factor/phyloseq_abundance/1.22.3.3",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "biom_input": {
+                    "id": 1,
+                    "output_name": "output_table"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Phyloseq Abundance plot",
+                    "name": "metadata_input"
+                }
+            ],
+            "label": null,
+            "name": "Phyloseq Abundance plot",
+            "outputs": [
+                {
+                    "name": "htmlfile",
+                    "type": "html"
+                }
+            ],
+            "position": {
+                "bottom": 762.5,
+                "height": 162,
+                "left": 980.5,
+                "right": 1180.5,
+                "top": 600.5,
+                "width": 200,
+                "x": 980.5,
+                "y": 600.5
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/qfabrepo/metadegalaxy_phyloseq_abundance_factor/phyloseq_abundance/1.22.3.3",
+            "tool_shed_repository": {
+                "changeset_revision": "3856a1590a11",
+                "name": "metadegalaxy_phyloseq_abundance_factor",
+                "owner": "qfabrepo",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"biom_input\": {\"__class__\": \"ConnectedValue\"}, \"factor\": {\"type\": \"one\", \"__current_case__\": 0, \"factor_column1\": null}, \"legend_column\": null, \"metadata_input\": {\"__class__\": \"RuntimeValue\"}, \"xaxis_column\": null, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.22.3.3",
+            "type": "tool",
+            "uuid": "043ab74f-df8e-4b31-aece-1d99f26380ce",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "htmlfile",
+                    "uuid": "712251bc-2503-4c1c-8e3b-846e0ef4418c"
+                }
+            ]
+        },
+        "5": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/qfabrepo/metadegalaxy_phyloseq_abundance_taxonomy/phyloseq_taxonomy/1.22.3.3",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "biom_input": {
+                    "id": 1,
+                    "output_name": "output_table"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Phyloseq Abundance Taxonomy",
+                    "name": "metadata_input"
+                }
+            ],
+            "label": null,
+            "name": "Phyloseq Abundance Taxonomy",
+            "outputs": [
+                {
+                    "name": "htmlfile",
+                    "type": "html"
+                }
+            ],
+            "position": {
+                "bottom": 920.5,
+                "height": 162,
+                "left": 1002,
+                "right": 1202,
+                "top": 758.5,
+                "width": 200,
+                "x": 1002,
+                "y": 758.5
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/qfabrepo/metadegalaxy_phyloseq_abundance_taxonomy/phyloseq_taxonomy/1.22.3.3",
+            "tool_shed_repository": {
+                "changeset_revision": "b2fafdd3533d",
+                "name": "metadegalaxy_phyloseq_abundance_taxonomy",
+                "owner": "qfabrepo",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"biom_input\": {\"__class__\": \"ConnectedValue\"}, \"legend_column\": \"\", \"metadata_input\": {\"__class__\": \"RuntimeValue\"}, \"taxonomy_rank\": \"Phylum\", \"xaxis_column\": \"\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.22.3.3",
+            "type": "tool",
+            "uuid": "c8ebcfc3-4351-42ec-9c41-3d795c5eb334",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "htmlfile",
+                    "uuid": "3995e8f1-c2a2-4e8b-bab1-f566d75165ba"
+                }
+            ]
+        },
+        "6": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/qfabrepo/metadegalaxy_symmetric_plot/symmetricPlot/1.0.1",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "input_table": {
+                    "id": 2,
+                    "output_name": "normalised_table"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Symmetric Plot",
+                    "name": "meta_table"
+                },
+                {
+                    "description": "runtime parameter for tool Symmetric Plot",
+                    "name": "obs_table"
+                }
+            ],
+            "label": null,
+            "name": "Symmetric Plot",
+            "outputs": [
+                {
+                    "name": "htmlfile",
+                    "type": "html"
+                }
+            ],
+            "position": {
+                "bottom": 241,
+                "height": 192,
+                "left": 1325,
+                "right": 1525,
+                "top": 49,
+                "width": 200,
+                "x": 1325,
+                "y": 49
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/qfabrepo/metadegalaxy_symmetric_plot/symmetricPlot/1.0.1",
+            "tool_shed_repository": {
+                "changeset_revision": "91fb94d203df",
+                "name": "metadegalaxy_symmetric_plot",
+                "owner": "qfabrepo",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"group\": \"\", \"input_table\": {\"__class__\": \"ConnectedValue\"}, \"meta_table\": {\"__class__\": \"RuntimeValue\"}, \"nTop\": \"20\", \"norm_bool\": \"true\", \"obs_table\": {\"__class__\": \"RuntimeValue\"}, \"selectedCol\": \"\", \"taxonomy_rank\": \"Phylum\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.1",
+            "type": "tool",
+            "uuid": "b13922e1-b352-4b9c-bd47-67d22b7b73bd",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "htmlfile",
+                    "uuid": "26970c47-a079-4f27-9089-f770c69b2ebd"
+                }
+            ]
+        },
+        "7": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/qfabrepo/metadegalaxy_phyloseq_net/phyloseq_net/1.24.2",
+            "errors": null,
+            "id": 7,
+            "input_connections": {
+                "file_source|input": {
+                    "id": 2,
+                    "output_name": "normalised_table"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Phyloseq Network Plot",
+                    "name": "file_source"
+                },
+                {
+                    "description": "runtime parameter for tool Phyloseq Network Plot",
+                    "name": "metadata_input"
+                }
+            ],
+            "label": null,
+            "name": "Phyloseq Network Plot",
+            "outputs": [
+                {
+                    "name": "htmlfile",
+                    "type": "html"
+                }
+            ],
+            "position": {
+                "bottom": 512.5,
+                "height": 192,
+                "left": 1308.5,
+                "right": 1508.5,
+                "top": 320.5,
+                "width": 200,
+                "x": 1308.5,
+                "y": 320.5
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/qfabrepo/metadegalaxy_phyloseq_net/phyloseq_net/1.24.2",
+            "tool_shed_repository": {
+                "changeset_revision": "22abc415e142",
+                "name": "metadegalaxy_phyloseq_net",
+                "owner": "qfabrepo",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"file_source\": {\"file_source_selector\": \"set_table\", \"__current_case__\": 1, \"input\": {\"__class__\": \"ConnectedValue\"}, \"obstable\": {\"__class__\": \"RuntimeValue\"}, \"norm_bool\": \"true\"}, \"legend_column\": \"\", \"metadata_input\": {\"__class__\": \"RuntimeValue\"}, \"xaxis_column\": \"\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.24.2",
+            "type": "tool",
+            "uuid": "614a3a7d-4578-40a6-8395-954a2e0c628c",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "htmlfile",
+                    "uuid": "9df56cf3-84e3-4592-8186-1f510cf09e8e"
+                }
+            ]
+        }
+    },
+    "tags": [
+        "MetaDEGalaxy"
+    ],
+    "uuid": "688286fd-e247-4300-829d-f0789f5d0592",
+    "version": 9
+}

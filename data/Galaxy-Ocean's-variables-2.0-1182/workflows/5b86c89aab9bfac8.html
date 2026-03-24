@@ -1,0 +1,129 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <title>Galaxy Workflow</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.9.4/cytoscape.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1.14.7/dist/umd/popper.js"></script>
+    <script src="https://unpkg.com/tippy.js@4.0.1/umd/index.all.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@4.0.1/index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/cytoscape-popper@1.0.4/cytoscape-popper.min.js"></script>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    var cy = cytoscape({
+        container: document.getElementById('cy'),
+        elements: [{"group": "nodes", "data": {"id": "Workflow fully interactive", "label": "Workflow fully interactive", "doc": "Choose whether you want to have only interactive tools (for more experimented user) or if you want a workflow hat combines interactive and non-interactive tools (easier)", "tool_id": null, "step_type": "boolean", "repo_link": null}, "classes": ["type_boolean", "input"], "position": {"x": 29, "y": 359}}, {"group": "nodes", "data": {"id": "Eutrophication_Med_profiles_2022_unrestricted_SNAPSHOT_2023-10-24T16-39-44.zip", "label": "Eutrophication_Med_profiles_2022_unrestricted_SNAPSHOT_2023-10-24T16-39-44.zip", "doc": "The data here are Mediterranean Sea - Eutrophication and Acidity aggregated datasets EMODnet Chemistry.", "tool_id": null, "step_type": "data", "repo_link": null}, "classes": ["type_data", "input"], "position": {"x": 331, "y": 474}}, {"group": "nodes", "data": {"id": "Workflow semi automatic", "label": "Workflow semi automatic", "doc": "Choose whether you want to have only interactive tools (for more experimented user) or if you want a workflow hat combines interactive and non-interactive tools (easier)", "tool_id": null, "step_type": "boolean", "repo_link": null}, "classes": ["type_boolean", "input"], "position": {"x": 30, "y": 708}}, {"group": "nodes", "data": {"id": "gebco_30sec_8.nc", "label": "gebco_30sec_8.nc", "doc": "A bathymetry file in netcdf.", "tool_id": null, "step_type": "data", "repo_link": null}, "classes": ["type_data", "input"], "position": {"x": 614, "y": 903}}, {"group": "nodes", "data": {"id": "Ocean Data View", "label": "Ocean Data View", "doc": "Interactively subset you data.", "tool_id": "interactive_tool_odv", "step_type": "tool", "repo_link": null}, "classes": ["type_tool", "runnable"], "position": {"x": 604, "y": 486}}, {"group": "edges", "data": {"id": "Ocean Data View__to__Eutrophication_Med_profiles_2022_unrestricted_SNAPSHOT_2023-10-24T16-39-44.zip", "source": "Eutrophication_Med_profiles_2022_unrestricted_SNAPSHOT_2023-10-24T16-39-44.zip", "target": "Ocean Data View", "input": "method|folder", "output": null}}, {"group": "nodes", "data": {"id": "Interactive DIVAnd jupyterlab", "label": "Interactive DIVAnd jupyterlab", "doc": "Create a climatology interactively with notebooks", "tool_id": "interactive_tool_divand", "step_type": "tool", "repo_link": null}, "classes": ["type_tool", "runnable"], "position": {"x": 956, "y": 357}}, {"group": "edges", "data": {"id": "Interactive DIVAnd jupyterlab__to__Ocean Data View", "source": "Ocean Data View", "target": "Interactive DIVAnd jupyterlab", "input": "input", "output": "outputs_netcdf"}}, {"group": "edges", "data": {"id": "Interactive DIVAnd jupyterlab__to__Workflow fully interactive", "source": "Workflow fully interactive", "target": "Interactive DIVAnd jupyterlab", "input": "when", "output": null}}, {"group": "nodes", "data": {"id": "DIVAnd (create a climatology)", "label": "DIVAnd (create a climatology)", "doc": "Create a climatology (not interactively)", "tool_id": "toolshed.g2.bx.psu.edu/repos/ecology/divand_full_analysis/divand_full_analysis/0.1.0+galaxy0", "step_type": "tool", "repo_link": null}, "classes": ["type_tool", "runnable"], "position": {"x": 958, "y": 679}}, {"group": "edges", "data": {"id": "DIVAnd (create a climatology)__to__Ocean Data View", "source": "Ocean Data View", "target": "DIVAnd (create a climatology)", "input": "input_netcdf_identifier", "output": "outputs_netcdf"}}, {"group": "edges", "data": {"id": "DIVAnd (create a climatology)__to__gebco_30sec_8.nc", "source": "gebco_30sec_8.nc", "target": "DIVAnd (create a climatology)", "input": "bathname", "output": null}}, {"group": "edges", "data": {"id": "DIVAnd (create a climatology)__to__Workflow semi automatic", "source": "Workflow semi automatic", "target": "DIVAnd (create a climatology)", "input": "when", "output": null}}, {"group": "nodes", "data": {"id": "ODV (visualisation) interactive", "label": "ODV (visualisation) interactive", "doc": "Final step to visualize in different way a ocean variable like the phosphate.", "tool_id": "interactive_tool_odv", "step_type": "tool", "repo_link": null}, "classes": ["type_tool", "runnable"], "position": {"x": 1317, "y": 358}}, {"group": "edges", "data": {"id": "ODV (visualisation) interactive__to__Interactive DIVAnd jupyterlab", "source": "Interactive DIVAnd jupyterlab", "target": "ODV (visualisation) interactive", "input": "method|infiles", "output": "output_netcdf"}}, {"group": "edges", "data": {"id": "ODV (visualisation) interactive__to__Workflow fully interactive", "source": "Workflow fully interactive", "target": "ODV (visualisation) interactive", "input": "when", "output": null}}, {"group": "nodes", "data": {"id": "ODV (visualisation)", "label": "ODV (visualisation)", "doc": "Final step to visualize in different way a ocean variable like the phosphate.", "tool_id": "interactive_tool_odv", "step_type": "tool", "repo_link": null}, "classes": ["type_tool", "runnable"], "position": {"x": 1351, "y": 662}}, {"group": "edges", "data": {"id": "ODV (visualisation)__to__DIVAnd (create a climatology)", "source": "DIVAnd (create a climatology)", "target": "ODV (visualisation)", "input": "method|infiles", "output": "output_netcdf"}}, {"group": "edges", "data": {"id": "ODV (visualisation)__to__Workflow semi automatic", "source": "Workflow semi automatic", "target": "ODV (visualisation)", "input": "when", "output": null}}],
+        layout: {
+            name: 'preset'
+        },
+        // so we can see the ids
+        style: [
+            {
+                selector: 'node',
+                style: {
+                    'label': 'data(label)'
+                }
+            },
+            {
+                selector: 'edge',
+                style: {
+                    'curve-style': 'bezier',
+                    'target-arrow-shape': 'vee',
+                    'arrow-scale': 2
+                }
+            },
+            {
+                selector: ".input",
+                style: {
+                    shape: 'diamond',
+                    'background-color': '#d0bb46'
+                }
+            },
+            {
+                selector: ".runnable",
+                style: {
+                    shape: 'round-rectangle',
+                    'background-color': '#2c3143'
+                }
+            }
+        ]
+      });
+
+  function makePopper(ele) {
+    let ref = ele.popperRef(); // used only for positioning
+
+    ele.tippy = new tippy(ref, { // tippy options:
+      content: function() {
+        let content = document.createElement('div');
+
+        let innerHTML = '';
+        if(ele.isNode()) {
+            let stepType = ele.data("step_type");
+            innerHTML +=  "<p><i>Step Type:</i> " + stepType + "</p>";
+            let toolId = ele.data("tool_id");
+            if (toolId) {
+                innerHTML +=  "<p><i>ToolID:</i> " + toolId + "</p>";
+            }
+            let repoLink = ele.data("repo_link");
+            if (repoLink) {
+                innerHTML += "<a href=" + repoLink + '">Visit Tool Shed Repository</a>';
+            }
+            let doc = ele.data('doc');
+            if (doc) {
+                innerHTML += "<p>" + doc + "</p>";
+            }
+        } else {
+            let output = ele.data("output");
+            let input = ele.data("input");
+            if(output) {
+                innerHTML += "Output named " + output + " connects to " + input;
+            } else {
+                innerHTML += "Connected to input " + input;
+            }
+        }
+        content.innerHTML = innerHTML;
+
+        return content;
+      },
+      delay: [0,1000],
+      interactive: true,
+      placement: 'bottom',
+      trigger: 'manual' // probably want manual mode
+    });
+  }
+
+ cy.ready(function() {
+    cy.elements().forEach(function(ele) {
+      makePopper(ele);
+    });
+  });
+
+  cy.elements().unbind('mouseover');
+  cy.elements().bind('mouseover', function(event) { event.target.tippy.show(); });
+
+  cy.elements().unbind('mouseout');
+  cy.elements().bind('mouseout', function(event) { event.target.tippy.hide(); });
+  // document.querySelector('#cypng').setAttribute('src', cy.png());
+});
+
+    </script>
+</head>
+
+<style>
+    #cy {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+    a { 
+        color: #d0bb46
+    }
+</style>
+
+<body>
+    <div id="cy"></div>
+</body>
+</html>

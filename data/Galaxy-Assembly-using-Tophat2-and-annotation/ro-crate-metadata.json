@@ -1,0 +1,797 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Tophat2_and_annotation.ga"
+      },
+      "datePublished": "2020-06-19 00:17:39 +0100",
+      "author": [
+
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://workflowhub.eu/workflows/40?version=1",
+      "url": "https://workflowhub.eu/workflows/40/ro_crate?version=1",
+      "name": "Research Object Crate for Assembly using Tophat2 and annotation",
+      "description": "Alignment, assembly and annotation of generated transcripts from RNASEQ reads.",
+      "isBasedOn": "https://usegalaxy.eu/u/ambarishk/w/covid-19-assembly-using-tophat-and-annotation",
+      "sdDatePublished": "2026-03-24 18:13:00 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "Tophat2_and_annotation.ga"
+        },
+        {
+          "@id": "tophat2.jpg"
+        }
+      ]
+    },
+    {
+      "@id": "Tophat2_and_annotation.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 46216,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "tophat2.jpg"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Alignment, assembly and annotation of generated transcripts from RNASEQ reads.",
+      "name": "Assembly using Tophat2 and annotation",
+      "url": "https://workflowhub.eu/workflows/40?version=1",
+      "keywords": "Alignment, Assembly, Annotation, Tophat2, RNASEQ, covid-19",
+      "version": 1,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/3"
+      },
+      "dateCreated": "2020-06-18T23:17:39Z",
+      "dateModified": "2023-02-13T14:06:46Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-inputs-List%20of%20Illumina%20accessions"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-inputs-Reference%20annotation"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-inputs-Reference%20genome."
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-inputs-SARS-CoV-2%20proteins"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_4"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_6"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_7"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_8"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_9"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_10"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_11"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_12"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_13"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_14"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_15"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-fastq"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-fast"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_16"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_17"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_18"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_19"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_20"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_21"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_22"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_23"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_24"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_25"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_26"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_27"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_28"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_29"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_30"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_31"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_32"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_33"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_34"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_35"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_36"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_37"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_38"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-fasta"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_39"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_40"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_41"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_42"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_43"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_44"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_45"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_46"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_47"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_48"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_49"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_50"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_51"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_52"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_53"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_54"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_55"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_56"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_57"
+        },
+        {
+          "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_58"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "tophat2.jpg",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 280925
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/3",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "GalaxyProject SARS-CoV-2"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-inputs-List of Illumina accessions",
+      "@type": "FormalParameter",
+      "name": "List of Illumina accessions",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-inputs-Reference annotation",
+      "@type": "FormalParameter",
+      "name": "Reference annotation",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-inputs-Reference genome.",
+      "@type": "FormalParameter",
+      "name": "Reference genome.",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-inputs-SARS-CoV-2 proteins",
+      "@type": "FormalParameter",
+      "name": "SARS-CoV-2 proteins",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_4",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_4",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_6",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_6",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_7",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_7",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_8",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_8",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_9",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_9",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_10",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_10",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_11",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_11",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_12",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_12",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_13",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_13",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_14",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_14",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_15",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_15",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-fastq",
+      "@type": "FormalParameter",
+      "name": "fastq",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-fast",
+      "@type": "FormalParameter",
+      "name": "fast",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_16",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_16",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_17",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_17",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_18",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_18",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_19",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_19",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_20",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_20",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_21",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_21",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_22",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_22",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_23",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_23",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_24",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_24",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_25",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_25",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_26",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_26",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_27",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_27",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_28",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_28",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_29",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_29",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_30",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_30",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_31",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_31",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_32",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_32",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_33",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_33",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_34",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_34",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_35",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_35",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_36",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_36",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_37",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_37",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_38",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_38",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-fasta",
+      "@type": "FormalParameter",
+      "name": "fasta",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_39",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_39",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_40",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_40",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_41",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_41",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_42",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_42",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_43",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_43",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_44",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_44",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_45",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_45",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_46",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_46",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_47",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_47",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_48",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_48",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_49",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_49",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_50",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_50",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_51",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_51",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_52",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_52",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_53",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_53",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_54",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_54",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_55",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_55",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_56",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_56",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_57",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_57",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_using_tophat2_and_annotation-outputs-_anonymous_output_58",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_58",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

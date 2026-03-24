@@ -1,0 +1,721 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "WF8104.cwl"
+      },
+      "datePublished": "2025-10-14 10:10:54 +0100",
+      "author": [
+
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://workflowhub.eu/workflows/1986?version=1",
+      "url": "https://workflowhub.eu/workflows/1986/ro_crate?version=1",
+      "name": "Research Object Crate for [DTC-AGEF] WF8104: Forecasting induced shake map",
+      "description": "The workflow DT-AGEF4 will produce seismic hazard maps related to the nearfuture anthropogenic seismicity (induced or triggered seismicity). The anthropogenic seismicity hazard maps will be related to the time-varying technological factors. The rationales behind the proposed workflow are (Lasocki, S., Proc. Sixth Int. Symp. on Rockburst and Seismicity in Mines, 2005; Lasocki, S. and Orlecka-Sikora, B., Tectonophys., 2008; Orlecka-Sikora, B., Tectonophys., 2008; Lasocki, S., Rockburst Mechanisms, Monitoring, Warning, and Mitigation (Xia-Ting Feng, ed.), Butterworth-Heinemann (Elsevier), Oxford, 2017):\n1. Anthropogenic seismicity (AS) occurrence is partially controlled by time-varying operation works. Due to the time evolution, probabilistic representations of AS also change in time. Rockmass fracturing in an active source zone will be stationary unless conditions responsible for this process change.\n2. Activity of AS zones will cease after exploitation, to which they are linked. New zones will appear at locations where exploitation will commence. The source zones in AS are finite in both space and time. Results of the DT-AGEF4 are, in this case, predictions concerning a specified time period in the future.\n3. The DT-AGEF4 scheme is the general scheme of a short-term ground vibrations forecast that assumes that probabilistic functions describing activity in the whole lifetime of the future seismic zone do not change over a short D time. In result, the problem is solved for the sought value amax, with the exceedance probability p in a single seismic zone, where a is Peak Ground Acceleration (PGA) or Spectral Amplitude (SA). \n4. In the AGEF4 we estimate possible impacts due to seismic zone that will be active in the future, during the period [D1,D1+D]. In general, however, nothing or not much is known about zone activity during period [D1,D1+D]. In this situation we make use of estimates of probabilistic properties of seismic zones active in the past. The zones active in the past become activity models for future zones. Usually, many activity models for a single future zone are selected. Each alternative model has a’priori probability of realization. Here we propose to use a Multi-Model Ensembles Approach.",
+      "sdDatePublished": "2026-03-24 00:58:14 +0000",
+      "creativeWorkStatus": "Work-in-progress",
+      "hasPart": [
+        {
+          "@id": "WF8104.cwl"
+        },
+        {
+          "@id": "WF8104.dot"
+        }
+      ]
+    },
+    {
+      "@id": "WF8104.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "url": "https://gitlab.com/dtgeo/metadata/cwl-ro-crate/-/raw/main/DTC81/WF8104/WF8104.cwl",
+      "contentSize": 7180,
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "image": {
+        "@id": "WF8104.dot"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "The workflow DT-AGEF4 will produce seismic hazard maps related to the nearfuture anthropogenic seismicity (induced or triggered seismicity). The anthropogenic seismicity hazard maps will be related to the time-varying technological factors. The rationales behind the proposed workflow are (Lasocki, S., Proc. Sixth Int. Symp. on Rockburst and Seismicity in Mines, 2005; Lasocki, S. and Orlecka-Sikora, B., Tectonophys., 2008; Orlecka-Sikora, B., Tectonophys., 2008; Lasocki, S., Rockburst Mechanisms, Monitoring, Warning, and Mitigation (Xia-Ting Feng, ed.), Butterworth-Heinemann (Elsevier), Oxford, 2017):\n1. Anthropogenic seismicity (AS) occurrence is partially controlled by time-varying operation works. Due to the time evolution, probabilistic representations of AS also change in time. Rockmass fracturing in an active source zone will be stationary unless conditions responsible for this process change.\n2. Activity of AS zones will cease after exploitation, to which they are linked. New zones will appear at locations where exploitation will commence. The source zones in AS are finite in both space and time. Results of the DT-AGEF4 are, in this case, predictions concerning a specified time period in the future.\n3. The DT-AGEF4 scheme is the general scheme of a short-term ground vibrations forecast that assumes that probabilistic functions describing activity in the whole lifetime of the future seismic zone do not change over a short D time. In result, the problem is solved for the sought value amax, with the exceedance probability p in a single seismic zone, where a is Peak Ground Acceleration (PGA) or Spectral Amplitude (SA). \n4. In the AGEF4 we estimate possible impacts due to seismic zone that will be active in the future, during the period [D1,D1+D]. In general, however, nothing or not much is known about zone activity during period [D1,D1+D]. In this situation we make use of estimates of probabilistic properties of seismic zones active in the past. The zones active in the past become activity models for future zones. Usually, many activity models for a single future zone are selected. Each alternative model has a’priori probability of realization. Here we propose to use a Multi-Model Ensembles Approach.",
+      "name": "[DTC-AGEF] WF8104: Forecasting induced shake map",
+      "keywords": "",
+      "version": 1,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/182"
+      },
+      "dateCreated": "2025-10-14T09:11:21Z",
+      "dateModified": "2025-10-15T10:52:30Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-Mc"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-Mmax"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-P_phase_threshold"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-S_phase_threshold"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-acceleration_miniseed"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-attribute_range"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-blinding"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-catalog"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-damping_factor"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-depth_max"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-depth_min"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-forecast_length"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-frequency_range"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-gmm"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-grid_cell_size"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-ground_motion_params"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-injection_model"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-injection_rate"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-injection_rate_threshold"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-inter_event_time_threshold"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-kde_method"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-lat_max"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-lat_min"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-lon_max"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-lon_min"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-map_selection"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-model"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-model_weights"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-network_inventory"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-output_uncertainty"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-path_char"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-site_char"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-source_char_param"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-source_rock_density"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-source_wave_velocity"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-time_window_duration"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-time_window_length"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-velocity_model"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-waveform_miniseed"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-outputs-DT810401"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-outputs-DT810402"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-outputs-DT810403"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-outputs-DT810404"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-outputs-DT810405"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-outputs-DT810406"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-outputs-DT810407"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-outputs-DT810408"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-outputs-DT810409"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-outputs-DT810410"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-outputs-DT810411"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-outputs-DT810412"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-outputs-DT810413"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-outputs-DT810414"
+        },
+        {
+          "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-outputs-DT810415"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "WF8104.dot",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "url": "https://gitlab.com/dtgeo/metadata/cwl-ro-crate/-/raw/main/DTC81/WF8104/WF8104.dot",
+      "contentSize": 16226
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/182",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "WP8 - Anthropogenic geophysical extremes"
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-Mc",
+      "@type": "FormalParameter",
+      "name": "Mc",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-Mmax",
+      "@type": "FormalParameter",
+      "name": "Mmax",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-P_phase_threshold",
+      "@type": "FormalParameter",
+      "name": "P_phase_threshold",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-S_phase_threshold",
+      "@type": "FormalParameter",
+      "name": "S_phase_threshold",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-acceleration_miniseed",
+      "@type": "FormalParameter",
+      "name": "acceleration_miniseed",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-attribute_range",
+      "@type": "FormalParameter",
+      "name": "attribute_range",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-blinding",
+      "@type": "FormalParameter",
+      "name": "blinding",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-catalog",
+      "@type": "FormalParameter",
+      "name": "catalog",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-damping_factor",
+      "@type": "FormalParameter",
+      "name": "damping_factor",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-depth_max",
+      "@type": "FormalParameter",
+      "name": "depth_max",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-depth_min",
+      "@type": "FormalParameter",
+      "name": "depth_min",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-forecast_length",
+      "@type": "FormalParameter",
+      "name": "forecast_length",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-frequency_range",
+      "@type": "FormalParameter",
+      "name": "frequency_range",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-gmm",
+      "@type": "FormalParameter",
+      "name": "gmm",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-grid_cell_size",
+      "@type": "FormalParameter",
+      "name": "grid_cell_size",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-ground_motion_params",
+      "@type": "FormalParameter",
+      "name": "ground_motion_params",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-injection_model",
+      "@type": "FormalParameter",
+      "name": "injection_model",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-injection_rate",
+      "@type": "FormalParameter",
+      "name": "injection_rate",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-injection_rate_threshold",
+      "@type": "FormalParameter",
+      "name": "injection_rate_threshold",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-inter_event_time_threshold",
+      "@type": "FormalParameter",
+      "name": "inter_event_time_threshold",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-kde_method",
+      "@type": "FormalParameter",
+      "name": "kde_method",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-lat_max",
+      "@type": "FormalParameter",
+      "name": "lat_max",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-lat_min",
+      "@type": "FormalParameter",
+      "name": "lat_min",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-lon_max",
+      "@type": "FormalParameter",
+      "name": "lon_max",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-lon_min",
+      "@type": "FormalParameter",
+      "name": "lon_min",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-map_selection",
+      "@type": "FormalParameter",
+      "name": "map_selection",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-model",
+      "@type": "FormalParameter",
+      "name": "model",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-model_weights",
+      "@type": "FormalParameter",
+      "name": "model_weights",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-network_inventory",
+      "@type": "FormalParameter",
+      "name": "network_inventory",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-output_uncertainty",
+      "@type": "FormalParameter",
+      "name": "output_uncertainty",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-path_char",
+      "@type": "FormalParameter",
+      "name": "path_char",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-site_char",
+      "@type": "FormalParameter",
+      "name": "site_char",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-source_char_param",
+      "@type": "FormalParameter",
+      "name": "source_char_param",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-source_rock_density",
+      "@type": "FormalParameter",
+      "name": "source_rock_density",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-source_wave_velocity",
+      "@type": "FormalParameter",
+      "name": "source_wave_velocity",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-time_window_duration",
+      "@type": "FormalParameter",
+      "name": "time_window_duration",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-time_window_length",
+      "@type": "FormalParameter",
+      "name": "time_window_length",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-velocity_model",
+      "@type": "FormalParameter",
+      "name": "velocity_model",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-inputs-waveform_miniseed",
+      "@type": "FormalParameter",
+      "name": "waveform_miniseed",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-outputs-DT810401",
+      "@type": "FormalParameter",
+      "name": "DT810401",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-outputs-DT810402",
+      "@type": "FormalParameter",
+      "name": "DT810402",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-outputs-DT810403",
+      "@type": "FormalParameter",
+      "name": "DT810403",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-outputs-DT810404",
+      "@type": "FormalParameter",
+      "name": "DT810404",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-outputs-DT810405",
+      "@type": "FormalParameter",
+      "name": "DT810405",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-outputs-DT810406",
+      "@type": "FormalParameter",
+      "name": "DT810406",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-outputs-DT810407",
+      "@type": "FormalParameter",
+      "name": "DT810407",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-outputs-DT810408",
+      "@type": "FormalParameter",
+      "name": "DT810408",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-outputs-DT810409",
+      "@type": "FormalParameter",
+      "name": "DT810409",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-outputs-DT810410",
+      "@type": "FormalParameter",
+      "name": "DT810410",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-outputs-DT810411",
+      "@type": "FormalParameter",
+      "name": "DT810411",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-outputs-DT810412",
+      "@type": "FormalParameter",
+      "name": "DT810412",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-outputs-DT810413",
+      "@type": "FormalParameter",
+      "name": "DT810413",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-outputs-DT810414",
+      "@type": "FormalParameter",
+      "name": "DT810414",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8104__forecasting_induced_shake_map-outputs-DT810415",
+      "@type": "FormalParameter",
+      "name": "DT810415",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

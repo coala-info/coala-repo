@@ -1,0 +1,233 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "Run this workflow per tissue. \nInputs: masked_genome.fasta and the trimmed RNAseq reads (R1 and R2) from one type of tissue. \nIndex genome and align reads to genome with HISAT2, with default settings except for: Advanced options: spliced alignment options: specify options: Transcriptome assembly reporting: selected option: Report alignments tailored for transcript assemblers including StringTie (equivalent to -dta flag). \nRuns samtools sort to sort bam by coordinate. \nRuns StringTie to generate gtf from sorted bam. \nOutput: transcripts.gtf from a single tissue.",
+    "comments": [],
+    "format-version": "0.1",
+    "name": "Find transcripts - TSI",
+    "report": {
+        "markdown": "# Workflow Execution Report\n\nWorkflow name: Find transcripts - TSI\n\n## Percentage of reads aligned\n\nOutput of HISAT2\n\n\n```galaxy\nhistory_dataset_display(output=\"hisat2_summary_file\")\n```\n\n## Galaxy Australia\nThanks for using Galaxy! When you use Galaxy Australia to support your publication or project, please acknowledge its use with the following statement:\n\"This work is supported by Galaxy Australia, a service provided by the Australian Biocommons and its partners. The service receives NCRIS funding through Bioplatforms Australia and the Australian Research Data Commons (https://doi.org/10.47486/PL105), as well as The University of Melbourne and Queensland Government RICF funding.\"\n"
+    },
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Trimmed, merged R1 files"
+                }
+            ],
+            "label": "Trimmed, merged R1 files",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 2.459439920743638,
+                "top": 0
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "eddbc686-4e27-4b00-84ec-cc1acdde8c2e",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Trimmed, merged R2 files"
+                }
+            ],
+            "label": "Trimmed, merged R2 files",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 2.6508957821772934,
+                "top": 99.14756356454484
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "0a642818-b97f-4276-b414-a439b4a3b2fb",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 2,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "genome.fasta (use masked if available)"
+                }
+            ],
+            "label": "genome.fasta (use masked if available)",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 0,
+                "top": 222.7699668546234
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "219423b4-00cb-4014-96f5-9e6c959dbe74",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "\n",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/hisat2/hisat2/2.2.1+galaxy1",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "library|input_1": {
+                    "id": 0,
+                    "output_name": "output"
+                },
+                "library|input_2": {
+                    "id": 1,
+                    "output_name": "output"
+                },
+                "reference_genome|history_item": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool HISAT2",
+                    "name": "library"
+                },
+                {
+                    "description": "runtime parameter for tool HISAT2",
+                    "name": "library"
+                },
+                {
+                    "description": "runtime parameter for tool HISAT2",
+                    "name": "reference_genome"
+                }
+            ],
+            "label": "Build genome index and align reads with HISAT2",
+            "name": "HISAT2",
+            "outputs": [
+                {
+                    "name": "output_alignments",
+                    "type": "bam"
+                },
+                {
+                    "name": "summary_file",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "left": 310.94857566293115,
+                "top": 39.83294677734375
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/hisat2/hisat2/2.2.1+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "f4af63aaf57a",
+                "name": "hisat2",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adv\": {\"input_options\": {\"input_options_selector\": \"defaults\", \"__current_case__\": 0}, \"alignment_options\": {\"alignment_options_selector\": \"defaults\", \"__current_case__\": 0}, \"scoring_options\": {\"scoring_options_selector\": \"defaults\", \"__current_case__\": 0}, \"spliced_options\": {\"spliced_options_selector\": \"advanced\", \"__current_case__\": 1, \"canonical_penalty\": \"0\", \"noncanonical_penalty\": \"12\", \"function_type\": \"G\", \"constant_term\": \"-8.0\", \"coefficient\": \"1.0\", \"nc_function_type\": \"G\", \"nc_constant_term\": \"-8.0\", \"nc_coefficient\": \"1.0\", \"min_intron\": \"20\", \"max_intron\": \"500000\", \"no_spliced_alignment_options\": {\"no_spliced_alignment\": \"\", \"__current_case__\": 1}, \"known_splice_gtf\": {\"__class__\": \"RuntimeValue\"}, \"tma\": \"--dta\", \"notmplen\": false, \"novel_splicesite_outfile\": false}, \"reporting_options\": {\"reporting_options_selector\": \"defaults\", \"__current_case__\": 0}, \"output_options\": {\"output_options_selector\": \"defaults\", \"__current_case__\": 0}, \"sam_options\": {\"sam_options_selector\": \"defaults\", \"__current_case__\": 0}, \"other_options\": {\"other_options_selector\": \"defaults\", \"__current_case__\": 0}}, \"library\": {\"type\": \"paired\", \"__current_case__\": 1, \"input_1\": {\"__class__\": \"ConnectedValue\"}, \"input_2\": {\"__class__\": \"ConnectedValue\"}, \"rna_strandness\": \"\", \"paired_options\": {\"paired_options_selector\": \"defaults\", \"__current_case__\": 0}}, \"reference_genome\": {\"source\": \"history\", \"__current_case__\": 1, \"history_item\": {\"__class__\": \"ConnectedValue\"}}, \"sum\": {\"new_summary\": false, \"summary_file\": true}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.2.1+galaxy1",
+            "type": "tool",
+            "uuid": "d6a8572d-5bd5-45fa-b4c3-daaa52300648",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "hisat2_summary_file",
+                    "output_name": "summary_file",
+                    "uuid": "06434327-f1e6-4063-a0b8-3d0abd1244fb"
+                },
+                {
+                    "label": "output_alignments",
+                    "output_name": "output_alignments",
+                    "uuid": "ba250a6c-d02a-4251-9a24-1b901ed85f96"
+                }
+            ]
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/stringtie/stringtie/2.2.1+galaxy1",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "input_options|input_bam": {
+                    "id": 3,
+                    "output_name": "output_alignments"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool StringTie",
+                    "name": "adv"
+                },
+                {
+                    "description": "runtime parameter for tool StringTie",
+                    "name": "input_options"
+                }
+            ],
+            "label": null,
+            "name": "StringTie",
+            "outputs": [
+                {
+                    "name": "output_gtf",
+                    "type": "gtf"
+                }
+            ],
+            "position": {
+                "left": 585.6035766601562,
+                "top": 112.29928588867188
+            },
+            "post_job_actions": {
+                "TagDatasetActionoutput_gtf": {
+                    "action_arguments": {
+                        "tags": "#transcriptome.gtf"
+                    },
+                    "action_type": "TagDatasetAction",
+                    "output_name": "output_gtf"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/stringtie/stringtie/2.2.1+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "ae618321f34a",
+                "name": "stringtie",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adv\": {\"abundance_estimation\": false, \"omit_sequences\": \"\", \"name_prefix\": null, \"fraction\": \"0.01\", \"min_tlen\": \"200\", \"min_anchor_len\": \"10\", \"min_anchor_cov\": \"1\", \"min_bundle_cov\": \"1\", \"bdist\": \"50\", \"bundle_fraction\": \"1.0\", \"disable_trimming\": false, \"multi_mapping\": false, \"point_features\": {\"__class__\": \"RuntimeValue\"}}, \"guide\": {\"use_guide\": \"no\", \"__current_case__\": 0}, \"input_options\": {\"input_mode\": \"short_reads\", \"__current_case__\": 0, \"input_bam\": {\"__class__\": \"ConnectedValue\"}}, \"rna_strandness\": \"--rf\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.2.1+galaxy1",
+            "type": "tool",
+            "uuid": "9ffdbb0e-ba3e-4a6d-b282-fa51551592e7",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "output_gtf",
+                    "output_name": "output_gtf",
+                    "uuid": "64f34f9f-2da3-403f-bdc8-c13b4e60ab7e"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "ccc59d1f-ac4b-4d48-93a8-e9f9e27a7400",
+    "version": 1
+}

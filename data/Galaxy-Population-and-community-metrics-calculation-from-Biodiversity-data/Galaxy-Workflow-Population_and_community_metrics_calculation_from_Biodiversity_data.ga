@@ -1,0 +1,246 @@
+{
+    "a_galaxy_workflow": "true", 
+    "annotation": "", 
+    "format-version": "0.1", 
+    "name": "Population and community metrics calculation from Biodiversity data", 
+    "steps": {
+        "0": {
+            "annotation": "Species count.\nA tabular file with observation data. Must at least contain three columns 'observation.unit' which associate year and location (alternatively, you can have this column splited in 2 columns named 'year' and 'location'), 'species.code' with species ID and 'number' for abundance.", 
+            "content_id": null, 
+            "errors": null, 
+            "id": 0, 
+            "input_connections": {}, 
+            "inputs": [], 
+            "label": "Observations", 
+            "name": "Input dataset", 
+            "outputs": [], 
+            "position": {
+                "left": 112, 
+                "top": 345
+            }, 
+            "tool_id": null, 
+            "tool_state": "{}", 
+            "tool_version": null, 
+            "type": "data_input", 
+            "uuid": "8b8ca3af-1e9c-41fd-b31f-4c6fe489e914", 
+            "workflow_outputs": []
+        }, 
+        "1": {
+            "annotation": "Sampling sites geographical and temporal informations", 
+            "content_id": null, 
+            "errors": null, 
+            "id": 1, 
+            "input_connections": {}, 
+            "inputs": [], 
+            "label": "Unitobs", 
+            "name": "Input dataset", 
+            "outputs": [], 
+            "position": {
+                "left": 200, 
+                "top": 494
+            }, 
+            "tool_id": null, 
+            "tool_state": "{}", 
+            "tool_version": null, 
+            "type": "data_input", 
+            "uuid": "56b999d3-c2a0-448f-a5af-6f5551281976", 
+            "workflow_outputs": []
+        }, 
+        "2": {
+            "annotation": "", 
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ecology/pampa_communitymetrics/pampa_communitymetrics/0.0.1", 
+            "errors": null, 
+            "id": 2, 
+            "input_connections": {
+                "input": {
+                    "id": 0, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Calculate community metrics", 
+                    "name": "input"
+                }
+            ], 
+            "label": null, 
+            "name": "Calculate community metrics", 
+            "outputs": [
+                {
+                    "name": "output_community", 
+                    "type": "tabular"
+                }
+            ], 
+            "position": {
+                "left": 420, 
+                "top": 374
+            }, 
+            "post_job_actions": {
+                "TagDatasetActionoutput_community": {
+                    "action_arguments": {
+                        "tags": "#community"
+                    }, 
+                    "action_type": "TagDatasetAction", 
+                    "output_name": "output_community"
+                }
+            }, 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ecology/pampa_communitymetrics/pampa_communitymetrics/0.0.1", 
+            "tool_shed_repository": {
+                "changeset_revision": "ddd5b2e74b8b", 
+                "name": "pampa_communitymetrics", 
+                "owner": "ecology", 
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            }, 
+            "tool_state": "{\"__page__\": null, \"input\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"__rerun_remap_job_id__\": null, \"indexes\": \"[\\\"all\\\"]\"}", 
+            "tool_version": "0.0.1", 
+            "type": "tool", 
+            "uuid": "efcebc2e-3b96-4db2-a9d7-84ab7ef89233", 
+            "workflow_outputs": []
+        }, 
+        "3": {
+            "annotation": "", 
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ecology/pampa_presabs/pampa_presabs/0.0.1", 
+            "errors": null, 
+            "id": 3, 
+            "input_connections": {
+                "input": {
+                    "id": 0, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "label": null, 
+            "name": "Calculate presence absence table", 
+            "outputs": [
+                {
+                    "name": "output_presabs", 
+                    "type": "tabular"
+                }
+            ], 
+            "position": {
+                "left": 420, 
+                "top": 494
+            }, 
+            "post_job_actions": {}, 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ecology/pampa_presabs/pampa_presabs/0.0.1", 
+            "tool_shed_repository": {
+                "changeset_revision": "c9dfe4e20a45", 
+                "name": "pampa_presabs", 
+                "owner": "ecology", 
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            }, 
+            "tool_state": "{\"input\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\", \"__rerun_remap_job_id__\": null, \"chromInfo\": \"\\\"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\\\"\", \"__page__\": null}", 
+            "tool_version": "0.0.1", 
+            "type": "tool", 
+            "uuid": "f1ebe5eb-fec4-4c88-8c14-9de887332956", 
+            "workflow_outputs": []
+        }, 
+        "4": {
+            "annotation": "", 
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ecology/pampa_glmcomm/pampa_glmcomm/0.0.1", 
+            "errors": null, 
+            "id": 4, 
+            "input_connections": {
+                "input_metric": {
+                    "id": 2, 
+                    "output_name": "output_community"
+                }, 
+                "input_unitobs": {
+                    "id": 1, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "label": null, 
+            "name": "Compute GLM on community data", 
+            "outputs": [
+                {
+                    "name": "output_summary", 
+                    "type": "tabular"
+                }, 
+                {
+                    "name": "output_recap", 
+                    "type": "txt"
+                }, 
+                {
+                    "name": "output_rate", 
+                    "type": "txt"
+                }
+            ], 
+            "position": {
+                "left": 703, 
+                "top": 200
+            }, 
+            "post_job_actions": {}, 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ecology/pampa_glmcomm/pampa_glmcomm/0.0.1", 
+            "tool_shed_repository": {
+                "changeset_revision": "f0dc3958e65d", 
+                "name": "pampa_glmcomm", 
+                "owner": "ecology", 
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            }, 
+            "tool_state": "{\"varint\": \"\\\"4\\\"\", \"varrand\": \"[\\\"site\\\"]\", \"input_unitobs\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\", \"sep\": \"\\\"3\\\"\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"input_metric\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\", \"varrep\": \"[\\\"year\\\", \\\"site\\\", \\\"habitat\\\"]\", \"settings\": \"{\\\"__current_case__\\\": 0, \\\"advanced\\\": \\\"simple\\\"}\", \"chromInfo\": \"\\\"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\\\"\"}", 
+            "tool_version": "0.0.1", 
+            "type": "tool", 
+            "uuid": "aa4985f9-aec2-401a-823b-fd7c8ee63f46", 
+            "workflow_outputs": []
+        }, 
+        "5": {
+            "annotation": "", 
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ecology/pampa_glmsp/pampa_glmsp/0.0.1", 
+            "errors": null, 
+            "id": 5, 
+            "input_connections": {
+                "input_metric": {
+                    "id": 3, 
+                    "output_name": "output_presabs"
+                }, 
+                "input_unitobs": {
+                    "id": 1, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "label": null, 
+            "name": "Compute GLM on population data", 
+            "outputs": [
+                {
+                    "name": "output_summary", 
+                    "type": "tabular"
+                }, 
+                {
+                    "name": "output_recap", 
+                    "type": "txt"
+                }, 
+                {
+                    "name": "output_rate", 
+                    "type": "txt"
+                }
+            ], 
+            "position": {
+                "left": 754, 
+                "top": 502
+            }, 
+            "post_job_actions": {}, 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ecology/pampa_glmsp/pampa_glmsp/0.0.1", 
+            "tool_shed_repository": {
+                "changeset_revision": "0778efa9eb2e", 
+                "name": "pampa_glmsp", 
+                "owner": "ecology", 
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            }, 
+            "tool_state": "{\"varint\": \"\\\"4\\\"\", \"varrand\": \"[\\\"site\\\"]\", \"input_unitobs\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\", \"settings\": \"{\\\"__current_case__\\\": 0, \\\"advanced\\\": \\\"simple\\\"}\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"input_metric\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\", \"varrep\": \"[\\\"year\\\", \\\"site\\\", \\\"habitat\\\"]\", \"chromInfo\": \"\\\"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\\\"\"}", 
+            "tool_version": "0.0.1", 
+            "type": "tool", 
+            "uuid": "bb5d7b3e-6a2d-4428-8618-8961c06fa13b", 
+            "workflow_outputs": []
+        }
+    }, 
+    "tags": [
+        "Community_metrics", 
+        "Presence_absence", 
+        "GLM"
+    ], 
+    "uuid": "97621b7f-b6d1-470b-b1d7-9789480d8b18", 
+    "version": 3
+}

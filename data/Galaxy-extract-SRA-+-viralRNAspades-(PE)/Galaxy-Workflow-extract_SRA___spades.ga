@@ -1,0 +1,146 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "format-version": "0.1",
+    "name": "extract SRA + spades",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/fasterq_dump/2.11.0+galaxy1",
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [],
+            "label": null,
+            "name": "Faster Download and Extract Reads in FASTQ",
+            "outputs": [
+                {
+                    "name": "list_paired",
+                    "type": "input"
+                },
+                {
+                    "name": "output_collection",
+                    "type": "input"
+                },
+                {
+                    "name": "output_collection_other",
+                    "type": "input"
+                },
+                {
+                    "name": "log",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "left": 0.0,
+                "top": 28.355407714843764
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/sra_tools/fasterq_dump/2.11.0+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "83c7d564b128",
+                "name": "sra_tools",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adv\": {\"minlen\": null, \"split\": \"--split-3\", \"skip_technical\": \"true\"}, \"input\": {\"input_select\": \"accession_number\", \"__current_case__\": 0, \"accession\": \"\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.11.0+galaxy1",
+            "type": "tool",
+            "uuid": "1acce333-c462-4c05-afd0-133e6f41935d",
+            "workflow_outputs": [
+                {
+                    "label": "Pair-end data (fasterq-dump)",
+                    "output_name": "list_paired",
+                    "uuid": "3a75f1d1-500f-40fc-b9c0-49374fa6df03"
+                },
+                {
+                    "label": "Single-end data (fasterq-dump)",
+                    "output_name": "output_collection",
+                    "uuid": "65699d49-bbaa-4bc4-912f-28c047b519dc"
+                },
+                {
+                    "label": "Other data (fasterq-dump)",
+                    "output_name": "output_collection_other",
+                    "uuid": "bce871d8-3db5-4f0c-9bab-3de3c3f5bacd"
+                },
+                {
+                    "label": "fasterq-dump log",
+                    "output_name": "log",
+                    "uuid": "0a16ca38-1fd8-45e6-a1f4-f14693c6095a"
+                }
+            ]
+        },
+        "1": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/spades_rnaviralspades/spades_rnaviralspades/3.15.4+galaxy2",
+            "errors": null,
+            "id": 1,
+            "input_connections": {
+                "singlePaired|input": {
+                    "id": 0,
+                    "output_name": "list_paired"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool rnaviralSPAdes",
+                    "name": "arf"
+                },
+                {
+                    "description": "runtime parameter for tool rnaviralSPAdes",
+                    "name": "arf"
+                },
+                {
+                    "description": "runtime parameter for tool rnaviralSPAdes",
+                    "name": "arf"
+                },
+                {
+                    "description": "runtime parameter for tool rnaviralSPAdes",
+                    "name": "arf"
+                },
+                {
+                    "description": "runtime parameter for tool rnaviralSPAdes",
+                    "name": "arf"
+                },
+                {
+                    "description": "runtime parameter for tool rnaviralSPAdes",
+                    "name": "singlePaired"
+                }
+            ],
+            "label": null,
+            "name": "rnaviralSPAdes",
+            "outputs": [
+                {
+                    "name": "out_cn",
+                    "type": "fasta"
+                }
+            ],
+            "position": {
+                "left": 510.3532197459643,
+                "top": 0.0
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/spades_rnaviralspades/spades_rnaviralspades/3.15.4+galaxy2",
+            "tool_shed_repository": {
+                "changeset_revision": "d5fb354f745d",
+                "name": "spades_rnaviralspades",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"additional_reads\": {\"selector\": \"false\", \"__current_case__\": 1}, \"arf\": {\"sanger\": {\"__class__\": \"RuntimeValue\"}, \"nanopore\": {\"__class__\": \"RuntimeValue\"}, \"pacbio\": {\"__class__\": \"RuntimeValue\"}, \"trusted_contigs\": {\"__class__\": \"RuntimeValue\"}, \"untrusted_contigs\": {\"__class__\": \"RuntimeValue\"}}, \"kmer_cond\": {\"kmer_sel\": \"auto\", \"__current_case__\": 0}, \"mode_sel\": null, \"operation_mode\": \"--only-assembler\", \"optional_output\": [\"cn\"], \"phred_offset\": \"auto\", \"singlePaired\": {\"sPaired\": \"paired_collection\", \"__current_case__\": 3, \"input\": {\"__class__\": \"RuntimeValue\"}, \"type_paired\": \"pe\", \"orientation\": \"fr\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.15.4+galaxy2",
+            "type": "tool",
+            "uuid": "1b2583dc-2059-4e54-ad05-a68e5b44453d",
+            "workflow_outputs": [
+                {
+                    "label": "rnaviralSPAdes on input dataset(s): Contigs",
+                    "output_name": "out_cn",
+                    "uuid": "3998ce45-3e6a-41f6-a5f1-2a69676c822a"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "1a350a1f-de65-43b9-a684-7dd9199438dc",
+    "version": 3
+}

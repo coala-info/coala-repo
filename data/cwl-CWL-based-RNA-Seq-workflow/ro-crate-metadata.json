@@ -1,0 +1,1441 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "RNA-Seq_workflow.cwl"
+      },
+      "datePublished": "2023-07-05 09:46:25 +0100",
+      "author": [
+
+      ],
+      "license": "MIT",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.524.1",
+      "url": "https://workflowhub.eu/workflows/524/ro_crate?version=1",
+      "name": "Research Object Crate for CWL-based RNA-Seq workflow",
+      "description": "A CWL-based pipeline for processing RNA-Seq data (FASTQ format) and performing differential gene/transcript expression analysis. \n\nOn the respective GitHub folder are available:\n\n- The CWL wrappers for the workflow\n- A pre-configured YAML template, based on validation analysis of publicly available HTS data\n- A table of metadata (``mrna_cll_subsets_phenotypes.csv``), based on the same validation analysis, to serve as an input example for the design of comparisons during differential expression analysis\n\nBriefly, the workflow performs the following steps:\n\n1. Quality control of Illumina reads (FastQC)\n2. Trimming of the reads (e.g., removal of adapter and/or low quality sequences) (Trim galore)\n3. (Optional)  custom processing of the reads using FASTA/Q Trimmer (part of the FASTX-toolkit) \n4. Mapping to reference genome (HISAT2)\n5. Convertion of mapped reads from SAM (Sequence Alignment Map) to BAM (Binary Alignment Map) format (samtools)\n6. Sorting mapped reads based on chromosomal coordinates (samtools)\n\nSubsequently, two independent workflows are implemented for differential expression analysis at the transcript and gene level. \n\n**First**, following the [reference protocol](https://doi.org/10.1038/nprot.2016.095) for HISAT, StringTie and Ballgown transcript expression analysis, StringTie along with a reference transcript annotation GTF (Gene Transfer Format) file (if one is available) is used to:\n\n- Assemble transcripts for each RNA-Seq sample using the previous read alignments (BAM files)\n- Generate a global, non-redundant set of transcripts observed in any of the RNA-Seq samples\n- Estimate transcript abundances and generate read coverage tables for each RNA-Seq sample, based on the global, merged set of transcripts (rather than the reference) which is observed across all samples\n\nBallgown program is then used to load the coverage tables generated in the previous step and perform statistical analyses for differential expression at the transcript level. Notably, the StringTie - Ballgown protocol applied here was selected to include potentially novel transcripts in the analysis. \n\n**Second**, featureCounts is used to count reads that are mapped to selected genomic features, in this case genes by default, and generate a table of read counts per gene and sample. This table is passed as input to DESeq2 to perform differential expression analysis at the gene level. Both Ballgown and DESeq2 R scripts, along with their respective CWL wrappers, were designed to receive as input various parameters, such as experimental design, contrasts of interest, numeric thresholds, and hidden batch effects.\n",
+      "isBasedOn": "https://github.com/BiodataAnalysisGroup/CWL_HTS_pipelines/tree/main/RNA_Seq",
+      "sdDatePublished": "2026-03-24 01:06:36 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "RNA-Seq_workflow.cwl"
+        },
+        {
+          "@id": "workflow-524-a80a6c7a268fd71886a255fc45afa882d80bda0c-diagram.svg"
+        }
+      ]
+    },
+    {
+      "@id": "RNA-Seq_workflow.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 24199,
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "image": {
+        "@id": "workflow-524-a80a6c7a268fd71886a255fc45afa882d80bda0c-diagram.svg"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "A CWL-based pipeline for processing RNA-Seq data (FASTQ format) and performing differential gene/transcript expression analysis. \n\nOn the respective GitHub folder are available:\n\n- The CWL wrappers for the workflow\n- A pre-configured YAML template, based on validation analysis of publicly available HTS data\n- A table of metadata (``mrna_cll_subsets_phenotypes.csv``), based on the same validation analysis, to serve as an input example for the design of comparisons during differential expression analysis\n\nBriefly, the workflow performs the following steps:\n\n1. Quality control of Illumina reads (FastQC)\n2. Trimming of the reads (e.g., removal of adapter and/or low quality sequences) (Trim galore)\n3. (Optional)  custom processing of the reads using FASTA/Q Trimmer (part of the FASTX-toolkit) \n4. Mapping to reference genome (HISAT2)\n5. Convertion of mapped reads from SAM (Sequence Alignment Map) to BAM (Binary Alignment Map) format (samtools)\n6. Sorting mapped reads based on chromosomal coordinates (samtools)\n\nSubsequently, two independent workflows are implemented for differential expression analysis at the transcript and gene level. \n\n**First**, following the [reference protocol](https://doi.org/10.1038/nprot.2016.095) for HISAT, StringTie and Ballgown transcript expression analysis, StringTie along with a reference transcript annotation GTF (Gene Transfer Format) file (if one is available) is used to:\n\n- Assemble transcripts for each RNA-Seq sample using the previous read alignments (BAM files)\n- Generate a global, non-redundant set of transcripts observed in any of the RNA-Seq samples\n- Estimate transcript abundances and generate read coverage tables for each RNA-Seq sample, based on the global, merged set of transcripts (rather than the reference) which is observed across all samples\n\nBallgown program is then used to load the coverage tables generated in the previous step and perform statistical analyses for differential expression at the transcript level. Notably, the StringTie - Ballgown protocol applied here was selected to include potentially novel transcripts in the analysis. \n\n**Second**, featureCounts is used to count reads that are mapped to selected genomic features, in this case genes by default, and generate a table of read counts per gene and sample. This table is passed as input to DESeq2 to perform differential expression analysis at the gene level. Both Ballgown and DESeq2 R scripts, along with their respective CWL wrappers, were designed to receive as input various parameters, such as experimental design, contrasts of interest, numeric thresholds, and hidden batch effects.\n",
+      "name": "CWL-based RNA-Seq workflow",
+      "url": "https://workflowhub.eu/workflows/524?version=1",
+      "keywords": "RNASEQ, Transcriptomics, CWL, workflow",
+      "version": 1,
+      "license": "https://spdx.org/licenses/MIT",
+      "creator": [
+        {
+          "@id": "https://orcid.org/0000-0001-8035-341X"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-2502-612X"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-0222-4273"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/173"
+      },
+      "dateCreated": "2023-07-05T08:44:44Z",
+      "dateModified": "2023-07-05T09:16:36Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.524.1",
+      "input": [
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-raw_files_directory"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-input_file_split"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-input_file_split_fwd_single"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-input_file_split_rev"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-input_qc_check"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-input_trimming_check"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-premapping_input_check"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-tg_quality"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-tg_length"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-tg_compression"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-tg_do_not_compress"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-tg_trim_suffix"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-tg_strigency"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-fastx_first_base_to_keep"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-fastx_last_base_to_keep"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-hisat2_num_of_threads"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-hisat2_alignments_tailored_trans_assemb"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-hisat2_idx_directory"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-hisat2_idx_basename"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-hisat2_known_splicesite_infile"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_view_isbam"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_view_collapsecigar"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_view_uncompressed"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_view_fastcompression"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_view_samheader"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_view_count"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_view_readswithoutbits"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_view_readsingroup"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_view_readtagtostrip"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_view_readsquality"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_view_readswithbits"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_view_cigar"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_view_iscram"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_view_threads"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_view_randomseed"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_view_region"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_view_readsinlibrary"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_sort_compression_level"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_sort_threads"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_sort_memory"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_sort_sort_by_name"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-stringtie_guide_gff"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-stringtie_transcript_merge_mode"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-stringtie_out_gtf"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-stringtie_expression_estimation_mode"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-stringtie_ballgown_table_files"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-stringtie_cpus"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-stringtie_verbose"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-stringtie_min_isoform_abundance"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-stringtie_junction_coverage"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-stringtie_min_read_coverage"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-stringtie_conservative_mode"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-bg_phenotype_file"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-bg_phenotype"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-bg_samples"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-bg_timecourse"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-bg_feature"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-bg_measure"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-bg_confounders"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-bg_custom_model"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-bg_mod"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-bg_mod0"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-featureCounts_number_of_threads"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-featureCounts_annotation_file"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-featureCounts_output_file"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-featureCounts_read_meta_feature_overlap"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_metadata"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_design"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_samples"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_min_sum_of_reads"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_reference_level"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_phenotype"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_contrast"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_numerator"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_denominator"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_lfcThreshold"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_pAdjustMethod"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_alpha"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_parallelization"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_cores"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_transformation"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_blind"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_hypothesis"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_reduced"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_hidden_batch_effects"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_hidden_batch_row_means"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_hidden_batch_method"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_variables"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#cwl_based_rna_seq_workflow-outputs-o_trim_galore_single_fq"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-outputs-o_trim_galore_single_reports"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-outputs-o_trim_galore_paired_fq"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-outputs-o_trim_galore_paired_reports"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-outputs-o_fastqc_raw_html"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-outputs-o_fastqc_single_html"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-outputs-o_fastqc_paired_html"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-outputs-o_fastqc_raw_zip"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-outputs-o_fastqc_single_zip"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-outputs-o_fastqc_paired_zip"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-outputs-o_fastx_trimmer_single"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-outputs-o_fastx_trimmer_paired"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-outputs-o_hisat2_for_single_reads_reports"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-outputs-o_hisat2_for_paired_reads_reports"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-outputs-o_collect_hisat2_sam_files"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-outputs-o_samtools_view"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-outputs-o_samtools_sort"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-outputs-o_stringtie_transcript_assembly_gtf"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-outputs-o_stringtie_merge"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-outputs-o_stringtie_expression_gtf"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-outputs-o_stringtie_expression_outdir"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-outputs-o_ballgown_de_results"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-outputs-o_ballgown_object"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-outputs-o_ballgown_de_custom_model"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-outputs-o_featureCounts"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-outputs-o_deseq2_de_results"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-outputs-o_deseq2_dds_object"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-outputs-o_deseq2_res_lfcShrink_object"
+        },
+        {
+          "@id": "#cwl_based_rna_seq_workflow-outputs-o_deseq2_transformed_object"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "workflow-524-a80a6c7a268fd71886a255fc45afa882d80bda0c-diagram.svg",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 168876
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-8035-341X",
+      "@type": "Person",
+      "name": "Konstantinos Kyritsis"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-2502-612X",
+      "@type": "Person",
+      "name": "Nikolaos Pechlivanis"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-0222-4273",
+      "@type": "Person",
+      "name": "Fotis Psomopoulos"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/173",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Biodata Analysis Group"
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-raw_files_directory",
+      "@type": "FormalParameter",
+      "name": "raw_files_directory",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-input_file_split",
+      "@type": "FormalParameter",
+      "name": "input_file_split",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-input_file_split_fwd_single",
+      "@type": "FormalParameter",
+      "name": "input_file_split_fwd_single",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-input_file_split_rev",
+      "@type": "FormalParameter",
+      "name": "input_file_split_rev",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-input_qc_check",
+      "@type": "FormalParameter",
+      "name": "input_qc_check",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-input_trimming_check",
+      "@type": "FormalParameter",
+      "name": "input_trimming_check",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-premapping_input_check",
+      "@type": "FormalParameter",
+      "name": "premapping_input_check",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-tg_quality",
+      "@type": "FormalParameter",
+      "name": "tg_quality",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-tg_length",
+      "@type": "FormalParameter",
+      "name": "tg_length",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-tg_compression",
+      "@type": "FormalParameter",
+      "name": "tg_compression",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-tg_do_not_compress",
+      "@type": "FormalParameter",
+      "name": "tg_do_not_compress",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-tg_trim_suffix",
+      "@type": "FormalParameter",
+      "name": "tg_trim_suffix",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-tg_strigency",
+      "@type": "FormalParameter",
+      "name": "tg_strigency",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-fastx_first_base_to_keep",
+      "@type": "FormalParameter",
+      "name": "fastx_first_base_to_keep",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-fastx_last_base_to_keep",
+      "@type": "FormalParameter",
+      "name": "fastx_last_base_to_keep",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-hisat2_num_of_threads",
+      "@type": "FormalParameter",
+      "name": "hisat2_num_of_threads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-hisat2_alignments_tailored_trans_assemb",
+      "@type": "FormalParameter",
+      "name": "hisat2_alignments_tailored_trans_assemb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-hisat2_idx_directory",
+      "@type": "FormalParameter",
+      "name": "hisat2_idx_directory",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-hisat2_idx_basename",
+      "@type": "FormalParameter",
+      "name": "hisat2_idx_basename",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-hisat2_known_splicesite_infile",
+      "@type": "FormalParameter",
+      "name": "hisat2_known_splicesite_infile",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_view_isbam",
+      "@type": "FormalParameter",
+      "name": "samtools_view_isbam",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_view_collapsecigar",
+      "@type": "FormalParameter",
+      "name": "samtools_view_collapsecigar",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_view_uncompressed",
+      "@type": "FormalParameter",
+      "name": "samtools_view_uncompressed",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_view_fastcompression",
+      "@type": "FormalParameter",
+      "name": "samtools_view_fastcompression",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_view_samheader",
+      "@type": "FormalParameter",
+      "name": "samtools_view_samheader",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_view_count",
+      "@type": "FormalParameter",
+      "name": "samtools_view_count",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_view_readswithoutbits",
+      "@type": "FormalParameter",
+      "name": "samtools_view_readswithoutbits",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_view_readsingroup",
+      "@type": "FormalParameter",
+      "name": "samtools_view_readsingroup",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_view_readtagtostrip",
+      "@type": "FormalParameter",
+      "name": "samtools_view_readtagtostrip",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_view_readsquality",
+      "@type": "FormalParameter",
+      "name": "samtools_view_readsquality",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_view_readswithbits",
+      "@type": "FormalParameter",
+      "name": "samtools_view_readswithbits",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_view_cigar",
+      "@type": "FormalParameter",
+      "name": "samtools_view_cigar",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_view_iscram",
+      "@type": "FormalParameter",
+      "name": "samtools_view_iscram",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_view_threads",
+      "@type": "FormalParameter",
+      "name": "samtools_view_threads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_view_randomseed",
+      "@type": "FormalParameter",
+      "name": "samtools_view_randomseed",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_view_region",
+      "@type": "FormalParameter",
+      "name": "samtools_view_region",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_view_readsinlibrary",
+      "@type": "FormalParameter",
+      "name": "samtools_view_readsinlibrary",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_sort_compression_level",
+      "@type": "FormalParameter",
+      "name": "samtools_sort_compression_level",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_sort_threads",
+      "@type": "FormalParameter",
+      "name": "samtools_sort_threads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_sort_memory",
+      "@type": "FormalParameter",
+      "name": "samtools_sort_memory",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-samtools_sort_sort_by_name",
+      "@type": "FormalParameter",
+      "name": "samtools_sort_sort_by_name",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-stringtie_guide_gff",
+      "@type": "FormalParameter",
+      "name": "stringtie_guide_gff",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-stringtie_transcript_merge_mode",
+      "@type": "FormalParameter",
+      "name": "stringtie_transcript_merge_mode",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-stringtie_out_gtf",
+      "@type": "FormalParameter",
+      "name": "stringtie_out_gtf",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-stringtie_expression_estimation_mode",
+      "@type": "FormalParameter",
+      "name": "stringtie_expression_estimation_mode",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-stringtie_ballgown_table_files",
+      "@type": "FormalParameter",
+      "name": "stringtie_ballgown_table_files",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-stringtie_cpus",
+      "@type": "FormalParameter",
+      "name": "stringtie_cpus",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-stringtie_verbose",
+      "@type": "FormalParameter",
+      "name": "stringtie_verbose",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-stringtie_min_isoform_abundance",
+      "@type": "FormalParameter",
+      "name": "stringtie_min_isoform_abundance",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-stringtie_junction_coverage",
+      "@type": "FormalParameter",
+      "name": "stringtie_junction_coverage",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-stringtie_min_read_coverage",
+      "@type": "FormalParameter",
+      "name": "stringtie_min_read_coverage",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-stringtie_conservative_mode",
+      "@type": "FormalParameter",
+      "name": "stringtie_conservative_mode",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-bg_phenotype_file",
+      "@type": "FormalParameter",
+      "name": "bg_phenotype_file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-bg_phenotype",
+      "@type": "FormalParameter",
+      "name": "bg_phenotype",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-bg_samples",
+      "@type": "FormalParameter",
+      "name": "bg_samples",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-bg_timecourse",
+      "@type": "FormalParameter",
+      "name": "bg_timecourse",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-bg_feature",
+      "@type": "FormalParameter",
+      "name": "bg_feature",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-bg_measure",
+      "@type": "FormalParameter",
+      "name": "bg_measure",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-bg_confounders",
+      "@type": "FormalParameter",
+      "name": "bg_confounders",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-bg_custom_model",
+      "@type": "FormalParameter",
+      "name": "bg_custom_model",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-bg_mod",
+      "@type": "FormalParameter",
+      "name": "bg_mod",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-bg_mod0",
+      "@type": "FormalParameter",
+      "name": "bg_mod0",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-featureCounts_number_of_threads",
+      "@type": "FormalParameter",
+      "name": "featureCounts_number_of_threads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-featureCounts_annotation_file",
+      "@type": "FormalParameter",
+      "name": "featureCounts_annotation_file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-featureCounts_output_file",
+      "@type": "FormalParameter",
+      "name": "featureCounts_output_file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-featureCounts_read_meta_feature_overlap",
+      "@type": "FormalParameter",
+      "name": "featureCounts_read_meta_feature_overlap",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_metadata",
+      "@type": "FormalParameter",
+      "name": "deseq2_metadata",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_design",
+      "@type": "FormalParameter",
+      "name": "deseq2_design",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_samples",
+      "@type": "FormalParameter",
+      "name": "deseq2_samples",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_min_sum_of_reads",
+      "@type": "FormalParameter",
+      "name": "deseq2_min_sum_of_reads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_reference_level",
+      "@type": "FormalParameter",
+      "name": "deseq2_reference_level",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_phenotype",
+      "@type": "FormalParameter",
+      "name": "deseq2_phenotype",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_contrast",
+      "@type": "FormalParameter",
+      "name": "deseq2_contrast",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_numerator",
+      "@type": "FormalParameter",
+      "name": "deseq2_numerator",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_denominator",
+      "@type": "FormalParameter",
+      "name": "deseq2_denominator",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_lfcThreshold",
+      "@type": "FormalParameter",
+      "name": "deseq2_lfcThreshold",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_pAdjustMethod",
+      "@type": "FormalParameter",
+      "name": "deseq2_pAdjustMethod",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_alpha",
+      "@type": "FormalParameter",
+      "name": "deseq2_alpha",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_parallelization",
+      "@type": "FormalParameter",
+      "name": "deseq2_parallelization",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_cores",
+      "@type": "FormalParameter",
+      "name": "deseq2_cores",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_transformation",
+      "@type": "FormalParameter",
+      "name": "deseq2_transformation",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_blind",
+      "@type": "FormalParameter",
+      "name": "deseq2_blind",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_hypothesis",
+      "@type": "FormalParameter",
+      "name": "deseq2_hypothesis",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_reduced",
+      "@type": "FormalParameter",
+      "name": "deseq2_reduced",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_hidden_batch_effects",
+      "@type": "FormalParameter",
+      "name": "deseq2_hidden_batch_effects",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_hidden_batch_row_means",
+      "@type": "FormalParameter",
+      "name": "deseq2_hidden_batch_row_means",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_hidden_batch_method",
+      "@type": "FormalParameter",
+      "name": "deseq2_hidden_batch_method",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-inputs-deseq2_variables",
+      "@type": "FormalParameter",
+      "name": "deseq2_variables",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-outputs-o_trim_galore_single_fq",
+      "@type": "FormalParameter",
+      "name": "o_trim_galore_single_fq",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-outputs-o_trim_galore_single_reports",
+      "@type": "FormalParameter",
+      "name": "o_trim_galore_single_reports",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-outputs-o_trim_galore_paired_fq",
+      "@type": "FormalParameter",
+      "name": "o_trim_galore_paired_fq",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-outputs-o_trim_galore_paired_reports",
+      "@type": "FormalParameter",
+      "name": "o_trim_galore_paired_reports",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-outputs-o_fastqc_raw_html",
+      "@type": "FormalParameter",
+      "name": "o_fastqc_raw_html",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-outputs-o_fastqc_single_html",
+      "@type": "FormalParameter",
+      "name": "o_fastqc_single_html",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-outputs-o_fastqc_paired_html",
+      "@type": "FormalParameter",
+      "name": "o_fastqc_paired_html",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-outputs-o_fastqc_raw_zip",
+      "@type": "FormalParameter",
+      "name": "o_fastqc_raw_zip",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-outputs-o_fastqc_single_zip",
+      "@type": "FormalParameter",
+      "name": "o_fastqc_single_zip",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-outputs-o_fastqc_paired_zip",
+      "@type": "FormalParameter",
+      "name": "o_fastqc_paired_zip",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-outputs-o_fastx_trimmer_single",
+      "@type": "FormalParameter",
+      "name": "o_fastx_trimmer_single",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-outputs-o_fastx_trimmer_paired",
+      "@type": "FormalParameter",
+      "name": "o_fastx_trimmer_paired",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-outputs-o_hisat2_for_single_reads_reports",
+      "@type": "FormalParameter",
+      "name": "o_hisat2_for_single_reads_reports",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-outputs-o_hisat2_for_paired_reads_reports",
+      "@type": "FormalParameter",
+      "name": "o_hisat2_for_paired_reads_reports",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-outputs-o_collect_hisat2_sam_files",
+      "@type": "FormalParameter",
+      "name": "o_collect_hisat2_sam_files",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-outputs-o_samtools_view",
+      "@type": "FormalParameter",
+      "name": "o_samtools_view",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-outputs-o_samtools_sort",
+      "@type": "FormalParameter",
+      "name": "o_samtools_sort",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-outputs-o_stringtie_transcript_assembly_gtf",
+      "@type": "FormalParameter",
+      "name": "o_stringtie_transcript_assembly_gtf",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-outputs-o_stringtie_merge",
+      "@type": "FormalParameter",
+      "name": "o_stringtie_merge",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-outputs-o_stringtie_expression_gtf",
+      "@type": "FormalParameter",
+      "name": "o_stringtie_expression_gtf",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-outputs-o_stringtie_expression_outdir",
+      "@type": "FormalParameter",
+      "name": "o_stringtie_expression_outdir",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-outputs-o_ballgown_de_results",
+      "@type": "FormalParameter",
+      "name": "o_ballgown_de_results",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-outputs-o_ballgown_object",
+      "@type": "FormalParameter",
+      "name": "o_ballgown_object",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-outputs-o_ballgown_de_custom_model",
+      "@type": "FormalParameter",
+      "name": "o_ballgown_de_custom_model",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-outputs-o_featureCounts",
+      "@type": "FormalParameter",
+      "name": "o_featureCounts",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-outputs-o_deseq2_de_results",
+      "@type": "FormalParameter",
+      "name": "o_deseq2_de_results",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-outputs-o_deseq2_dds_object",
+      "@type": "FormalParameter",
+      "name": "o_deseq2_dds_object",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-outputs-o_deseq2_res_lfcShrink_object",
+      "@type": "FormalParameter",
+      "name": "o_deseq2_res_lfcShrink_object",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based_rna_seq_workflow-outputs-o_deseq2_transformed_object",
+      "@type": "FormalParameter",
+      "name": "o_deseq2_transformed_object",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

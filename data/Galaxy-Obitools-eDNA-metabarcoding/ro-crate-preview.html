@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Obitools eDNA metabarcoding</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-Obitools_eDNA_metabarcoding.ga"
+      },
+      "datePublished": "2023-11-09 12:35:02 +0000",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-8504-068X"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-4308-5617"
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.655.1",
+      "url": "https://workflowhub.eu/workflows/655/ro_crate?version=1",
+      "name": "Research Object Crate for Obitools eDNA metabarcoding",
+      "description": "Galaxy Workflow created on Galaxy-E european instance, ecology.usegalaxy.eu, related to the Galaxy training tutorial \"[Metabarcoding/eDNA through Obitools](https://training.galaxyproject.org/training-material/topics/ecology/tutorials/Obitools-metabarcoding/tutorial.html)\" .\n\nThis workflow allows to analyze DNA metabarcoding / eDNA data produced on Illumina sequencers using the OBITools.",
+      "isBasedOn": "https://ecology.usegalaxy.eu/u/ylebras/w/obitools-edna-metabarcoding",
+      "sdDatePublished": "2026-03-24 17:54:38 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-Obitools_eDNA_metabarcoding.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-Obitools_eDNA_metabarcoding.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 38160,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Galaxy Workflow created on Galaxy-E european instance, ecology.usegalaxy.eu, related to the Galaxy training tutorial \"[Metabarcoding/eDNA through Obitools](https://training.galaxyproject.org/training-material/topics/ecology/tutorials/Obitools-metabarcoding/tutorial.html)\" .\n\nThis workflow allows to analyze DNA metabarcoding / eDNA data produced on Illumina sequencers using the OBITools.",
+      "name": "Obitools eDNA metabarcoding",
+      "url": "https://workflowhub.eu/workflows/655?version=1",
+      "keywords": "Biodiversity, Ecology",
+      "version": 1,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/51"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/52"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/19"
+      },
+      "dateCreated": "2023-11-09T12:41:17Z",
+      "dateModified": "2024-12-09T08:45:07Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.655.1",
+      "input": {
+        "@id": "#obitools_edna_metabarcoding-inputs-wolf_tutorial.zip?download=1"
+      },
+      "output": [
+
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-8504-068X",
+      "@type": "Person",
+      "name": "Yvan Le Bras",
+      "identifier": "https://orcid.org/0000-0002-8504-068X"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-4308-5617",
+      "@type": "Person",
+      "name": "Coline Royaux",
+      "identifier": "https://orcid.org/0000-0003-4308-5617"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/51",
+      "@type": "Person",
+      "name": "Yvan Le Bras"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/52",
+      "@type": "Person",
+      "name": "Coline Royaux"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/19",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "PNDB"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#obitools_edna_metabarcoding-inputs-wolf_tutorial.zip?download=1",
+      "@type": "FormalParameter",
+      "name": "wolf_tutorial.zip?download=1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Obitools eDNA metabarcoding</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/655/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/655/ro_crate?version=1</a>
+
+
+<p>
+  Galaxy Workflow created on Galaxy-E european instance, ecology.usegalaxy.eu, related to the Galaxy training tutorial "[Metabarcoding/eDNA through Obitools](https://training.galaxyproject.org/training-material/topics/ecology/tutorials/Obitools-metabarcoding/tutorial.html)" .
+
+This workflow allows to analyze DNA metabarcoding / eDNA data produced on Illumina sequencers using the OBITools.
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://orcid.org/0000-0002-8504-068X" target="_blank">Yvan Le Bras</a>, <a href="https://orcid.org/0000-0003-4308-5617" target="_blank">Coline Royaux</a></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>CC-BY-4.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-Obitools_eDNA_metabarcoding.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-Obitools_eDNA_metabarcoding.ga">Obitools eDNA metabarcoding</a>
+      
+        <br/>Size: 38160 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

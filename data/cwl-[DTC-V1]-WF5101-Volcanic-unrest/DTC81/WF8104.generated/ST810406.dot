@@ -1,0 +1,20 @@
+strict digraph {
+
+
+	"SS8106" [ color="2", colorscheme="ylorbr3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ST810406" [ color="2", colorscheme="greens3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ST810406" -> "DT810406" [ label="is output from", labeltooltip="DT810406 - is output from - ST810406",  weight=0 ];
+
+	"DT810405" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"DT810405" -> "ST810406" [ label="is input to", labeltooltip="DT810405 - is input to - ST810406",  weight=0 ];
+
+	"grid_cell_size" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"grid_cell_size" -> "ST810406" [ label="is input to", labeltooltip="grid_cell_size - is input to - ST810406",  weight=0 ];
+
+	"DT810406" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+}

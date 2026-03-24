@@ -1,0 +1,221 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-2__Plant_virus_confirmation.ga"
+      },
+      "datePublished": "2021-02-04 09:10:04 +0000",
+      "author": [
+
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://workflowhub.eu/workflows/102?version=1",
+      "url": "https://workflowhub.eu/workflows/102/ro_crate?version=1",
+      "name": "Research Object Crate for 2: Plant virus confirmation",
+      "description": "Mapping against all plant virus then make contig out of the mapped reads then blast them.",
+      "sdDatePublished": "2026-03-24 17:59:53 +0000",
+      "creativeWorkStatus": "Work-in-progress",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-2__Plant_virus_confirmation.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-2__Plant_virus_confirmation.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 30174,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Mapping against all plant virus then make contig out of the mapped reads then blast them.",
+      "name": "2: Plant virus confirmation",
+      "url": "https://workflowhub.eu/workflows/102?version=1",
+      "keywords": "Virology, mapping, Assembly, reads_selection, blast",
+      "version": 1,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/27"
+      },
+      "dateCreated": "2021-02-04T09:10:04Z",
+      "dateModified": "2023-02-13T14:06:45Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#2__plant_virus_confirmation-inputs-Data_R1.fastq"
+        },
+        {
+          "@id": "#2__plant_virus_confirmation-inputs-Data_R2.fastq"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#2__plant_virus_confirmation-outputs-reference_fasta"
+        },
+        {
+          "@id": "#2__plant_virus_confirmation-outputs-Read_mapping_alignement"
+        },
+        {
+          "@id": "#2__plant_virus_confirmation-outputs-mapped_read"
+        },
+        {
+          "@id": "#2__plant_virus_confirmation-outputs-Paired-end%20forward"
+        },
+        {
+          "@id": "#2__plant_virus_confirmation-outputs-Paired-end%20reverse"
+        },
+        {
+          "@id": "#2__plant_virus_confirmation-outputs-Contigs"
+        },
+        {
+          "@id": "#2__plant_virus_confirmation-outputs-Log%20file"
+        },
+        {
+          "@id": "#2__plant_virus_confirmation-outputs-blastn%20result"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/27",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Integrated and Urban Plant Pathology Laboratory"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#2__plant_virus_confirmation-inputs-Data_R1.fastq",
+      "@type": "FormalParameter",
+      "name": "Data_R1.fastq",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#2__plant_virus_confirmation-inputs-Data_R2.fastq",
+      "@type": "FormalParameter",
+      "name": "Data_R2.fastq",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#2__plant_virus_confirmation-outputs-reference_fasta",
+      "@type": "FormalParameter",
+      "name": "reference_fasta",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#2__plant_virus_confirmation-outputs-Read_mapping_alignement",
+      "@type": "FormalParameter",
+      "name": "Read_mapping_alignement",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#2__plant_virus_confirmation-outputs-mapped_read",
+      "@type": "FormalParameter",
+      "name": "mapped_read",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#2__plant_virus_confirmation-outputs-Paired-end forward",
+      "@type": "FormalParameter",
+      "name": "Paired-end forward",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#2__plant_virus_confirmation-outputs-Paired-end reverse",
+      "@type": "FormalParameter",
+      "name": "Paired-end reverse",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#2__plant_virus_confirmation-outputs-Contigs",
+      "@type": "FormalParameter",
+      "name": "Contigs",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#2__plant_virus_confirmation-outputs-Log file",
+      "@type": "FormalParameter",
+      "name": "Log file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#2__plant_virus_confirmation-outputs-blastn result",
+      "@type": "FormalParameter",
+      "name": "blastn result",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

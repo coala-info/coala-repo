@@ -1,0 +1,352 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "TSI-Scaffolding-with-HiC.ga"
+      },
+      "datePublished": "2024-06-21 01:43:21 +0100",
+      "author": [
+        {
+          "@id": "#creator-1"
+        },
+        {
+          "@id": "#creator-2"
+        }
+      ],
+      "license": "GPL-3.0+",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.1054.1",
+      "url": "https://workflowhub.eu/workflows/1054/ro_crate?version=1",
+      "name": "Research Object Crate for TSI-Scaffolding-with-HiC (based on VGP-HiC-scaffolding)",
+      "description": "# Scaffolding using HiC data with YAHS\n\nThis workflow has been created from a Vertebrate Genomes Project (VGP) scaffolding workflow. \n\n* For more information about the VGP project see https://galaxyproject.org/projects/vgp/. \n* The scaffolding workflow is at https://dockstore.org/workflows/github.com/iwc-workflows/Scaffolding-HiC-VGP8/main:main?tab=info\n* Please see that link for the workflow diagram. \n\nSome minor changes have been made to better fit with TSI project data: \n\n* optional inputs of SAK info and sequence graph have been removed\n* the required input format for the genome is changed from gfa to fasta\n* the estimated genome size now requires user input rather than being extracted from output of a previous workflow.  \n\nInputs: \n\n* assembly.fasta  [note - scaffolding is done only one haplotype at a time. eg hap1 or primary]\n* Concatenated HiC forward reads in fastqsanger.gz\n* Concatenated HiC reverse reads in fastqsanger.gz\n* Restriction enzyme sequence\n* Estimated genome size (enter as integer)\n* Lineage for busco \n\nOutputs: the main outputs are: \n\n* scaffolded_assmbly.fasta\n* comparison of pre- post- scaffolding contact maps\n\n\n\n\n",
+      "sdDatePublished": "2026-03-24 17:45:24 +0000",
+      "hasPart": [
+        {
+          "@id": "TSI-Scaffolding-with-HiC.ga"
+        }
+      ]
+    },
+    {
+      "@id": "TSI-Scaffolding-with-HiC.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 83089,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "# Scaffolding using HiC data with YAHS\n\nThis workflow has been created from a Vertebrate Genomes Project (VGP) scaffolding workflow. \n\n* For more information about the VGP project see https://galaxyproject.org/projects/vgp/. \n* The scaffolding workflow is at https://dockstore.org/workflows/github.com/iwc-workflows/Scaffolding-HiC-VGP8/main:main?tab=info\n* Please see that link for the workflow diagram. \n\nSome minor changes have been made to better fit with TSI project data: \n\n* optional inputs of SAK info and sequence graph have been removed\n* the required input format for the genome is changed from gfa to fasta\n* the estimated genome size now requires user input rather than being extracted from output of a previous workflow.  \n\nInputs: \n\n* assembly.fasta  [note - scaffolding is done only one haplotype at a time. eg hap1 or primary]\n* Concatenated HiC forward reads in fastqsanger.gz\n* Concatenated HiC reverse reads in fastqsanger.gz\n* Restriction enzyme sequence\n* Estimated genome size (enter as integer)\n* Lineage for busco \n\nOutputs: the main outputs are: \n\n* scaffolded_assmbly.fasta\n* comparison of pre- post- scaffolding contact maps\n\n\n\n\n",
+      "name": "TSI-Scaffolding-with-HiC (based on VGP-HiC-scaffolding)",
+      "url": "https://workflowhub.eu/workflows/1054?version=1",
+      "keywords": "TSI",
+      "version": 1,
+      "license": "https://spdx.org/licenses/GPL-3.0+",
+      "creator": [
+        {
+          "@id": "#VGP%20Project"
+        },
+        {
+          "@id": "#VGP"
+        },
+        {
+          "@id": "#Galaxy"
+        }
+      ],
+      "producer": [
+        {
+          "@id": "https://workflowhub.eu/projects/30"
+        },
+        {
+          "@id": "https://workflowhub.eu/projects/54"
+        }
+      ],
+      "dateCreated": "2024-06-21T00:48:07Z",
+      "dateModified": "2024-06-21T01:10:22Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.1054.1",
+      "input": [
+        {
+          "@id": "#tsi_scaffolding_with_hic__based_on_vgp_hic_scaffolding_-inputs-Estimated%20genome%20size%20in%20bp"
+        },
+        {
+          "@id": "#tsi_scaffolding_with_hic__based_on_vgp_hic_scaffolding_-inputs-HiC%20Forward%20reads"
+        },
+        {
+          "@id": "#tsi_scaffolding_with_hic__based_on_vgp_hic_scaffolding_-inputs-HiC%20reverse%20reads"
+        },
+        {
+          "@id": "#tsi_scaffolding_with_hic__based_on_vgp_hic_scaffolding_-inputs-Lineage"
+        },
+        {
+          "@id": "#tsi_scaffolding_with_hic__based_on_vgp_hic_scaffolding_-inputs-Restriction%20enzymes"
+        },
+        {
+          "@id": "#tsi_scaffolding_with_hic__based_on_vgp_hic_scaffolding_-inputs-assembly.fasta"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#tsi_scaffolding_with_hic__based_on_vgp_hic_scaffolding_-outputs-YAHS%20on%20input%20dataset(s):%20Final%20scaffolds%20agp%20output"
+        },
+        {
+          "@id": "#tsi_scaffolding_with_hic__based_on_vgp_hic_scaffolding_-outputs-Reconciliated%20Scaffolds:%20gfa"
+        },
+        {
+          "@id": "#tsi_scaffolding_with_hic__based_on_vgp_hic_scaffolding_-outputs-Scaffold%20sizes%20for%20s2"
+        },
+        {
+          "@id": "#tsi_scaffolding_with_hic__based_on_vgp_hic_scaffolding_-outputs-Reconciliated%20Scaffolds:%20fasta"
+        },
+        {
+          "@id": "#tsi_scaffolding_with_hic__based_on_vgp_hic_scaffolding_-outputs-Assembly%20Statistics%20for%20s2"
+        },
+        {
+          "@id": "#tsi_scaffolding_with_hic__based_on_vgp_hic_scaffolding_-outputs-Pretext%20Map%20Before%20HiC%20scaffolding"
+        },
+        {
+          "@id": "#tsi_scaffolding_with_hic__based_on_vgp_hic_scaffolding_-outputs-Busco%20Summary"
+        },
+        {
+          "@id": "#tsi_scaffolding_with_hic__based_on_vgp_hic_scaffolding_-outputs-Busco%20Summary%20image"
+        },
+        {
+          "@id": "#tsi_scaffolding_with_hic__based_on_vgp_hic_scaffolding_-outputs-Nx%20Plot"
+        },
+        {
+          "@id": "#tsi_scaffolding_with_hic__based_on_vgp_hic_scaffolding_-outputs-Size%20Plot"
+        },
+        {
+          "@id": "#tsi_scaffolding_with_hic__based_on_vgp_hic_scaffolding_-outputs-Pretext%20Map%20After%20HiC%20scaffolding"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "#creator-1",
+      "@type": "Person",
+      "name": "VGP"
+    },
+    {
+      "@id": "#creator-2",
+      "@type": "Person",
+      "name": "Galaxy"
+    },
+    {
+      "@id": "#VGP Project",
+      "@type": "Person",
+      "name": "VGP Project"
+    },
+    {
+      "@id": "#VGP",
+      "@type": "Person",
+      "name": "VGP"
+    },
+    {
+      "@id": "#Galaxy",
+      "@type": "Person",
+      "name": "Galaxy"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/30",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Australian BioCommons"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/54",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Galaxy Australia"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#tsi_scaffolding_with_hic__based_on_vgp_hic_scaffolding_-inputs-Estimated genome size in bp",
+      "@type": "FormalParameter",
+      "name": "Estimated genome size in bp",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#tsi_scaffolding_with_hic__based_on_vgp_hic_scaffolding_-inputs-HiC Forward reads",
+      "@type": "FormalParameter",
+      "name": "HiC Forward reads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#tsi_scaffolding_with_hic__based_on_vgp_hic_scaffolding_-inputs-HiC reverse reads",
+      "@type": "FormalParameter",
+      "name": "HiC reverse reads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#tsi_scaffolding_with_hic__based_on_vgp_hic_scaffolding_-inputs-Lineage",
+      "@type": "FormalParameter",
+      "name": "Lineage",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#tsi_scaffolding_with_hic__based_on_vgp_hic_scaffolding_-inputs-Restriction enzymes",
+      "@type": "FormalParameter",
+      "name": "Restriction enzymes",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#tsi_scaffolding_with_hic__based_on_vgp_hic_scaffolding_-inputs-assembly.fasta",
+      "@type": "FormalParameter",
+      "name": "assembly.fasta",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#tsi_scaffolding_with_hic__based_on_vgp_hic_scaffolding_-outputs-YAHS on input dataset(s): Final scaffolds agp output",
+      "@type": "FormalParameter",
+      "name": "YAHS on input dataset(s): Final scaffolds agp output",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#tsi_scaffolding_with_hic__based_on_vgp_hic_scaffolding_-outputs-Reconciliated Scaffolds: gfa",
+      "@type": "FormalParameter",
+      "name": "Reconciliated Scaffolds: gfa",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#tsi_scaffolding_with_hic__based_on_vgp_hic_scaffolding_-outputs-Scaffold sizes for s2",
+      "@type": "FormalParameter",
+      "name": "Scaffold sizes for s2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#tsi_scaffolding_with_hic__based_on_vgp_hic_scaffolding_-outputs-Reconciliated Scaffolds: fasta",
+      "@type": "FormalParameter",
+      "name": "Reconciliated Scaffolds: fasta",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#tsi_scaffolding_with_hic__based_on_vgp_hic_scaffolding_-outputs-Assembly Statistics for s2",
+      "@type": "FormalParameter",
+      "name": "Assembly Statistics for s2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#tsi_scaffolding_with_hic__based_on_vgp_hic_scaffolding_-outputs-Pretext Map Before HiC scaffolding",
+      "@type": "FormalParameter",
+      "name": "Pretext Map Before HiC scaffolding",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#tsi_scaffolding_with_hic__based_on_vgp_hic_scaffolding_-outputs-Busco Summary",
+      "@type": "FormalParameter",
+      "name": "Busco Summary",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#tsi_scaffolding_with_hic__based_on_vgp_hic_scaffolding_-outputs-Busco Summary image",
+      "@type": "FormalParameter",
+      "name": "Busco Summary image",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#tsi_scaffolding_with_hic__based_on_vgp_hic_scaffolding_-outputs-Nx Plot",
+      "@type": "FormalParameter",
+      "name": "Nx Plot",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#tsi_scaffolding_with_hic__based_on_vgp_hic_scaffolding_-outputs-Size Plot",
+      "@type": "FormalParameter",
+      "name": "Size Plot",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#tsi_scaffolding_with_hic__based_on_vgp_hic_scaffolding_-outputs-Pretext Map After HiC scaffolding",
+      "@type": "FormalParameter",
+      "name": "Pretext Map After HiC scaffolding",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

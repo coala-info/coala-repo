@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for MGnify - raw-reads analysis pipeline</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "workflows/raw-reads-wf--v.5-cond.cwl"
+      },
+      "datePublished": "2022-02-25 15:06:24 +0000",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0001-6867-2039"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-3503-6383"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-3472-3736"
+        },
+        {
+          "@id": "#creator-1"
+        },
+        {
+          "@id": "#creator-2"
+        },
+        {
+          "@id": "#creator-3"
+        },
+        {
+          "@id": "#creator-4"
+        },
+        {
+          "@id": "#creator-5"
+        },
+        {
+          "@id": "#creator-6"
+        },
+        {
+          "@id": "#creator-7"
+        },
+        {
+          "@id": "#creator-8"
+        },
+        {
+          "@id": "#creator-9"
+        },
+        {
+          "@id": "#creator-10"
+        },
+        {
+          "@id": "#creator-11"
+        },
+        {
+          "@id": "#creator-12"
+        },
+        {
+          "@id": "#creator-13"
+        },
+        {
+          "@id": "#creator-14"
+        },
+        {
+          "@id": "#creator-15"
+        },
+        {
+          "@id": "#creator-16"
+        },
+        {
+          "@id": "#creator-17"
+        }
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.362.1",
+      "url": "https://workflowhub.eu/workflows/362/ro_crate?version=1",
+      "name": "Research Object Crate for MGnify - raw-reads analysis pipeline",
+      "description": "MGnify (http://www.ebi.ac.uk/metagenomics) provides a free to use platform for the assembly, analysis and archiving of microbiome data derived from sequencing microbial populations that are present in particular environments. Over the past 2 years, MGnify (formerly EBI Metagenomics) has more than doubled the number of publicly available analysed datasets held within the resource. Recently, an updated approach to data analysis has been unveiled (version 5.0), replacing the previous single pipeline with multiple analysis pipelines that are tailored according to the input data, and that are formally described using the Common Workflow Language, enabling greater provenance, reusability, and reproducibility. MGnify's new analysis pipelines offer additional approaches for taxonomic assertions based on ribosomal internal transcribed spacer regions (ITS1/2) and expanded protein functional annotations. Biochemical pathways and systems predictions have also been added for assembled contigs. MGnify's growing focus on the assembly of metagenomic data has also seen the number of datasets it has assembled and analysed increase six-fold. The non-redundant protein database constructed from the proteins encoded by these assemblies now exceeds 1 billion sequences. Meanwhile, a newly developed contig viewer provides fine-grained visualisation of the assembled contigs and their enriched annotations.\n\nDocumentation: https://docs.mgnify.org/en/latest/analysis.html#raw-reads-analysis-pipeline",
+      "isBasedOn": "https://github.com/EBI-Metagenomics/pipeline-v5.git",
+      "sdDatePublished": "2026-03-24 01:12:13 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "workflows/raw-reads-wf--v.5-cond.cwl"
+        },
+        {
+          "@id": "workflow-362-981aafc0df341a2536ed5059695bb7c33af4d3ee-diagram.svg"
+        }
+      ]
+    },
+    {
+      "@id": "workflows/raw-reads-wf--v.5-cond.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 6196,
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "image": {
+        "@id": "workflow-362-981aafc0df341a2536ed5059695bb7c33af4d3ee-diagram.svg"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "MGnify (http://www.ebi.ac.uk/metagenomics) provides a free to use platform for the assembly, analysis and archiving of microbiome data derived from sequencing microbial populations that are present in particular environments. Over the past 2 years, MGnify (formerly EBI Metagenomics) has more than doubled the number of publicly available analysed datasets held within the resource. Recently, an updated approach to data analysis has been unveiled (version 5.0), replacing the previous single pipeline with multiple analysis pipelines that are tailored according to the input data, and that are formally described using the Common Workflow Language, enabling greater provenance, reusability, and reproducibility. MGnify's new analysis pipelines offer additional approaches for taxonomic assertions based on ribosomal internal transcribed spacer regions (ITS1/2) and expanded protein functional annotations. Biochemical pathways and systems predictions have also been added for assembled contigs. MGnify's growing focus on the assembly of metagenomic data has also seen the number of datasets it has assembled and analysed increase six-fold. The non-redundant protein database constructed from the proteins encoded by these assemblies now exceeds 1 billion sequences. Meanwhile, a newly developed contig viewer provides fine-grained visualisation of the assembled contigs and their enriched annotations.\n\nDocumentation: https://docs.mgnify.org/en/latest/analysis.html#raw-reads-analysis-pipeline",
+      "name": "MGnify - raw-reads analysis pipeline",
+      "url": "https://workflowhub.eu/workflows/362?version=1",
+      "keywords": "Workflows, CWL, Metagenomics",
+      "version": 1,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/355"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/354"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/27"
+        },
+        {
+          "@id": "#Alex%20L%20Mitchell"
+        },
+        {
+          "@id": "#Alexandre%20Almeida"
+        },
+        {
+          "@id": "#Martin%20Beracochea"
+        },
+        {
+          "@id": "#Miguel%20Boland"
+        },
+        {
+          "@id": "#Josephine%20Burgin"
+        },
+        {
+          "@id": "#Guy%20Cochrane"
+        },
+        {
+          "@id": "#Michael%20R%20Crusoe"
+        },
+        {
+          "@id": "#Varsha%20Kale"
+        },
+        {
+          "@id": "#Simon%20C%20Potter"
+        },
+        {
+          "@id": "#Lorna%20J%20Richardson"
+        },
+        {
+          "@id": "#Ekaterina%20Sakharova"
+        },
+        {
+          "@id": "#Maxim%20Scheremetjew"
+        },
+        {
+          "@id": "#Anton%20Korobeynikov"
+        },
+        {
+          "@id": "#Alex%20Shlemov"
+        },
+        {
+          "@id": "#Olga%20Kunyavskaya"
+        },
+        {
+          "@id": "#Alla%20Lapidus"
+        },
+        {
+          "@id": "#Robert%20D%20Finn"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/9"
+      },
+      "dateCreated": "2022-06-07T08:40:40Z",
+      "dateModified": "2023-01-16T14:01:12Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.362.1",
+      "input": [
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-single_reads"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-forward_reads"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-reverse_reads"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-qc_min_length"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-ssu_db"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-lsu_db"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-ssu_tax"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-lsu_tax"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-ssu_otus"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-lsu_otus"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-rfam_models"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-rfam_model_clans"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-other_ncRNA_models"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-ssu_label"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-lsu_label"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-5s_pattern"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-5.8s_pattern"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-CGC_config"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-CGC_postfixes"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-cgc_chunk_size"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-protein_chunk_size_hmm"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-protein_chunk_size_IPS"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-func_ann_names_ips"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-func_ann_names_hmmer"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-HMM_gathering_bit_score"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-HMM_omit_alignment"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-HMM_name_database"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-hmmsearch_header"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-EggNOG_db"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-EggNOG_diamond_db"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-EggNOG_data_dir"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-InterProScan_databases"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-InterProScan_applications"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-InterProScan_outputFormat"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-ips_header"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-ko_file"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-go_config"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-outputs-qc-statistics"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-outputs-qc_summary"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-outputs-qc-status"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-outputs-hashsum_paired"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-outputs-hashsum_single"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-outputs-fastp_filtering_json_report"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-outputs-sequence-categorisation_folder"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-outputs-taxonomy-summary_folder"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-outputs-rna-count"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-outputs-motus_output"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-outputs-compressed_files"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-outputs-functional_annotation_folder"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-outputs-stats"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-outputs-chunking_nucleotides"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-outputs-chunking_proteins"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-outputs-completed_flag_file"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-outputs-no_cds_flag_file"
+        },
+        {
+          "@id": "#mgnify___raw_reads_analysis_pipeline-outputs-no_tax_flag_file"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "workflow-362-981aafc0df341a2536ed5059695bb7c33af4d3ee-diagram.svg",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 57591
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-6867-2039",
+      "@type": "Person",
+      "name": "Ekaterina Sakharova",
+      "identifier": "https://orcid.org/0000-0001-6867-2039"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-3503-6383",
+      "@type": "Person",
+      "name": "Varsha Kale",
+      "identifier": "https://orcid.org/0000-0002-3503-6383"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-3472-3736",
+      "@type": "Person",
+      "name": "Martin Beracochea",
+      "identifier": "https://orcid.org/0000-0003-3472-3736"
+    },
+    {
+      "@id": "#creator-1",
+      "@type": "Person",
+      "name": "Alex L Mitchell"
+    },
+    {
+      "@id": "#creator-2",
+      "@type": "Person",
+      "name": "Alexandre Almeida"
+    },
+    {
+      "@id": "#creator-3",
+      "@type": "Person",
+      "name": "Martin Beracochea"
+    },
+    {
+      "@id": "#creator-4",
+      "@type": "Person",
+      "name": "Miguel Boland"
+    },
+    {
+      "@id": "#creator-5",
+      "@type": "Person",
+      "name": "Josephine Burgin"
+    },
+    {
+      "@id": "#creator-6",
+      "@type": "Person",
+      "name": "Guy Cochrane"
+    },
+    {
+      "@id": "#creator-7",
+      "@type": "Person",
+      "name": "Michael R Crusoe"
+    },
+    {
+      "@id": "#creator-8",
+      "@type": "Person",
+      "name": "Varsha Kale"
+    },
+    {
+      "@id": "#creator-9",
+      "@type": "Person",
+      "name": "Simon C Potter"
+    },
+    {
+      "@id": "#creator-10",
+      "@type": "Person",
+      "name": "Lorna J Richardson"
+    },
+    {
+      "@id": "#creator-11",
+      "@type": "Person",
+      "name": "Ekaterina Sakharova"
+    },
+    {
+      "@id": "#creator-12",
+      "@type": "Person",
+      "name": "Maxim Scheremetjew"
+    },
+    {
+      "@id": "#creator-13",
+      "@type": "Person",
+      "name": "Anton Korobeynikov"
+    },
+    {
+      "@id": "#creator-14",
+      "@type": "Person",
+      "name": "Alex Shlemov"
+    },
+    {
+      "@id": "#creator-15",
+      "@type": "Person",
+      "name": "Olga Kunyavskaya"
+    },
+    {
+      "@id": "#creator-16",
+      "@type": "Person",
+      "name": "Alla Lapidus"
+    },
+    {
+      "@id": "#creator-17",
+      "@type": "Person",
+      "name": "Robert D Finn"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/355",
+      "@type": "Person",
+      "name": "Ekaterina Sakharova"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/354",
+      "@type": "Person",
+      "name": "Varsha Kale"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/27",
+      "@type": "Person",
+      "name": "Martin Beracochea"
+    },
+    {
+      "@id": "#Alex L Mitchell",
+      "@type": "Person",
+      "name": "Alex L Mitchell"
+    },
+    {
+      "@id": "#Alexandre Almeida",
+      "@type": "Person",
+      "name": "Alexandre Almeida"
+    },
+    {
+      "@id": "#Martin Beracochea",
+      "@type": "Person",
+      "name": "Martin Beracochea"
+    },
+    {
+      "@id": "#Miguel Boland",
+      "@type": "Person",
+      "name": "Miguel Boland"
+    },
+    {
+      "@id": "#Josephine Burgin",
+      "@type": "Person",
+      "name": "Josephine Burgin"
+    },
+    {
+      "@id": "#Guy Cochrane",
+      "@type": "Person",
+      "name": "Guy Cochrane"
+    },
+    {
+      "@id": "#Michael R Crusoe",
+      "@type": "Person",
+      "name": "Michael R Crusoe"
+    },
+    {
+      "@id": "#Varsha Kale",
+      "@type": "Person",
+      "name": "Varsha Kale"
+    },
+    {
+      "@id": "#Simon C Potter",
+      "@type": "Person",
+      "name": "Simon C Potter"
+    },
+    {
+      "@id": "#Lorna J Richardson",
+      "@type": "Person",
+      "name": "Lorna J Richardson"
+    },
+    {
+      "@id": "#Ekaterina Sakharova",
+      "@type": "Person",
+      "name": "Ekaterina Sakharova"
+    },
+    {
+      "@id": "#Maxim Scheremetjew",
+      "@type": "Person",
+      "name": "Maxim Scheremetjew"
+    },
+    {
+      "@id": "#Anton Korobeynikov",
+      "@type": "Person",
+      "name": "Anton Korobeynikov"
+    },
+    {
+      "@id": "#Alex Shlemov",
+      "@type": "Person",
+      "name": "Alex Shlemov"
+    },
+    {
+      "@id": "#Olga Kunyavskaya",
+      "@type": "Person",
+      "name": "Olga Kunyavskaya"
+    },
+    {
+      "@id": "#Alla Lapidus",
+      "@type": "Person",
+      "name": "Alla Lapidus"
+    },
+    {
+      "@id": "#Robert D Finn",
+      "@type": "Person",
+      "name": "Robert D Finn"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/9",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "MGnify"
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-single_reads",
+      "@type": "FormalParameter",
+      "name": "single_reads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-forward_reads",
+      "@type": "FormalParameter",
+      "name": "forward_reads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-reverse_reads",
+      "@type": "FormalParameter",
+      "name": "reverse_reads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-qc_min_length",
+      "@type": "FormalParameter",
+      "name": "qc_min_length",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-ssu_db",
+      "@type": "FormalParameter",
+      "name": "ssu_db",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-lsu_db",
+      "@type": "FormalParameter",
+      "name": "lsu_db",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-ssu_tax",
+      "@type": "FormalParameter",
+      "name": "ssu_tax",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-lsu_tax",
+      "@type": "FormalParameter",
+      "name": "lsu_tax",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-ssu_otus",
+      "@type": "FormalParameter",
+      "name": "ssu_otus",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-lsu_otus",
+      "@type": "FormalParameter",
+      "name": "lsu_otus",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-rfam_models",
+      "@type": "FormalParameter",
+      "name": "rfam_models",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-rfam_model_clans",
+      "@type": "FormalParameter",
+      "name": "rfam_model_clans",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-other_ncRNA_models",
+      "@type": "FormalParameter",
+      "name": "other_ncRNA_models",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-ssu_label",
+      "@type": "FormalParameter",
+      "name": "ssu_label",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-lsu_label",
+      "@type": "FormalParameter",
+      "name": "lsu_label",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-5s_pattern",
+      "@type": "FormalParameter",
+      "name": "5s_pattern",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-5.8s_pattern",
+      "@type": "FormalParameter",
+      "name": "5.8s_pattern",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-CGC_config",
+      "@type": "FormalParameter",
+      "name": "CGC_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-CGC_postfixes",
+      "@type": "FormalParameter",
+      "name": "CGC_postfixes",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-cgc_chunk_size",
+      "@type": "FormalParameter",
+      "name": "cgc_chunk_size",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-protein_chunk_size_hmm",
+      "@type": "FormalParameter",
+      "name": "protein_chunk_size_hmm",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-protein_chunk_size_IPS",
+      "@type": "FormalParameter",
+      "name": "protein_chunk_size_IPS",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-func_ann_names_ips",
+      "@type": "FormalParameter",
+      "name": "func_ann_names_ips",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-func_ann_names_hmmer",
+      "@type": "FormalParameter",
+      "name": "func_ann_names_hmmer",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-HMM_gathering_bit_score",
+      "@type": "FormalParameter",
+      "name": "HMM_gathering_bit_score",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-HMM_omit_alignment",
+      "@type": "FormalParameter",
+      "name": "HMM_omit_alignment",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-HMM_name_database",
+      "@type": "FormalParameter",
+      "name": "HMM_name_database",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-hmmsearch_header",
+      "@type": "FormalParameter",
+      "name": "hmmsearch_header",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-EggNOG_db",
+      "@type": "FormalParameter",
+      "name": "EggNOG_db",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-EggNOG_diamond_db",
+      "@type": "FormalParameter",
+      "name": "EggNOG_diamond_db",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-EggNOG_data_dir",
+      "@type": "FormalParameter",
+      "name": "EggNOG_data_dir",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-InterProScan_databases",
+      "@type": "FormalParameter",
+      "name": "InterProScan_databases",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-InterProScan_applications",
+      "@type": "FormalParameter",
+      "name": "InterProScan_applications",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-InterProScan_outputFormat",
+      "@type": "FormalParameter",
+      "name": "InterProScan_outputFormat",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-ips_header",
+      "@type": "FormalParameter",
+      "name": "ips_header",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-ko_file",
+      "@type": "FormalParameter",
+      "name": "ko_file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-inputs-go_config",
+      "@type": "FormalParameter",
+      "name": "go_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-outputs-qc-statistics",
+      "@type": "FormalParameter",
+      "name": "qc-statistics",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-outputs-qc_summary",
+      "@type": "FormalParameter",
+      "name": "qc_summary",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-outputs-qc-status",
+      "@type": "FormalParameter",
+      "name": "qc-status",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-outputs-hashsum_paired",
+      "@type": "FormalParameter",
+      "name": "hashsum_paired",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-outputs-hashsum_single",
+      "@type": "FormalParameter",
+      "name": "hashsum_single",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-outputs-fastp_filtering_json_report",
+      "@type": "FormalParameter",
+      "name": "fastp_filtering_json_report",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-outputs-sequence-categorisation_folder",
+      "@type": "FormalParameter",
+      "name": "sequence-categorisation_folder",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-outputs-taxonomy-summary_folder",
+      "@type": "FormalParameter",
+      "name": "taxonomy-summary_folder",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-outputs-rna-count",
+      "@type": "FormalParameter",
+      "name": "rna-count",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-outputs-motus_output",
+      "@type": "FormalParameter",
+      "name": "motus_output",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-outputs-compressed_files",
+      "@type": "FormalParameter",
+      "name": "compressed_files",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-outputs-functional_annotation_folder",
+      "@type": "FormalParameter",
+      "name": "functional_annotation_folder",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-outputs-stats",
+      "@type": "FormalParameter",
+      "name": "stats",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-outputs-chunking_nucleotides",
+      "@type": "FormalParameter",
+      "name": "chunking_nucleotides",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-outputs-chunking_proteins",
+      "@type": "FormalParameter",
+      "name": "chunking_proteins",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-outputs-completed_flag_file",
+      "@type": "FormalParameter",
+      "name": "completed_flag_file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-outputs-no_cds_flag_file",
+      "@type": "FormalParameter",
+      "name": "no_cds_flag_file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mgnify___raw_reads_analysis_pipeline-outputs-no_tax_flag_file",
+      "@type": "FormalParameter",
+      "name": "no_tax_flag_file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for MGnify - raw-reads analysis pipeline</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/362/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/362/ro_crate?version=1</a>
+
+
+  <img src="workflow-362-981aafc0df341a2536ed5059695bb7c33af4d3ee-diagram.svg" style="width: 100%;"/>
+
+<p>
+  MGnify (http://www.ebi.ac.uk/metagenomics) provides a free to use platform for the assembly, analysis and archiving of microbiome data derived from sequencing microbial populations that are present in particular environments. Over the past 2 years, MGnify (formerly EBI Metagenomics) has more than doubled the number of publicly available analysed datasets held within the resource. Recently, an updated approach to data analysis has been unveiled (version 5.0), replacing the previous single pipeline with multiple analysis pipelines that are tailored according to the input data, and that are formally described using the Common Workflow Language, enabling greater provenance, reusability, and reproducibility. MGnify's new analysis pipelines offer additional approaches for taxonomic assertions based on ribosomal internal transcribed spacer regions (ITS1/2) and expanded protein functional annotations. Biochemical pathways and systems predictions have also been added for assembled contigs. MGnify's growing focus on the assembly of metagenomic data has also seen the number of datasets it has assembled and analysed increase six-fold. The non-redundant protein database constructed from the proteins encoded by these assemblies now exceeds 1 billion sequences. Meanwhile, a newly developed contig viewer provides fine-grained visualisation of the assembled contigs and their enriched annotations.
+
+Documentation: https://docs.mgnify.org/en/latest/analysis.html#raw-reads-analysis-pipeline
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://orcid.org/0000-0001-6867-2039" target="_blank">Ekaterina Sakharova</a>, <a href="https://orcid.org/0000-0002-3503-6383" target="_blank">Varsha Kale</a>, <a href="https://orcid.org/0000-0003-3472-3736" target="_blank">Martin Beracochea</a>, Alex L Mitchell, Alexandre Almeida, Martin Beracochea, Miguel Boland, Josephine Burgin, Guy Cochrane, Michael R Crusoe, Varsha Kale, Simon C Potter, Lorna J Richardson, Ekaterina Sakharova, Maxim Scheremetjew, Anton Korobeynikov, Alex Shlemov, Olga Kunyavskaya, Alla Lapidus, Robert D Finn</dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>Apache-2.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_workflows/raw-reads-wf--v.5-cond.cwl">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="workflows/raw-reads-wf--v.5-cond.cwl">MGnify - raw-reads analysis pipeline</a>
+      
+        <br/>Size: 6196 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_workflow-362-981aafc0df341a2536ed5059695bb7c33af4d3ee-diagram.svg">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="workflow-362-981aafc0df341a2536ed5059695bb7c33af4d3ee-diagram.svg">workflow-362-981aafc0df341a2536ed5059695bb7c33af4d3ee-diagram.svg</a>
+      
+        <br/>Size: 57591 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

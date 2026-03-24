@@ -1,0 +1,260 @@
+# Workflow for assembly from Illumina reads and/or longreads. Customizable to a certain extend on which steps to run. (can also be used for isolates)
+# UNLOCK-FAIR Data Platform, Wageingen University & Research
+# Main steps involved:
+# - Workflow Illumina Quality
+# - Workflow Longread Quality
+# - Assembly: SPAdes / Flye
+# - Short read polishing (Pilon/PyPolca)
+# - ONT read polishing (Medaka)
+# - QUAST (Assembly quality report)
+# - Workflow Metagenomics Binning with selected Assembly (MaxBin2, MetaBAT2, SemiBin)
+# - Binning Evaluation (DAStool consensus, CheckM, busco, GTDB-Tk)
+# - Workflow Microbial Annotation
+# - Worklow Metagenomics GEM (Smetana, Memote, CarveMe)
+
+# This YAML file contains parameters for a workflow including files, databases, 
+# and configuration settings for tools involved
+# Comments below explain the purpose of each field, desired actions and options for customization. 
+# We have filled in some fields with example values (from a real mock data run) or placeholders, 
+# please replace them with your specific data and preferences.
+# Note that not all optional fields are adviced to be removed as you may need a reminder
+
+
+# [EDIT OR REMOVE] specify cwl workflow file path in the absencce of it in cwltool cmd
+# with this you can skip {cwl_document} command line argument 
+# when running cwltool with this yaml as {inputs_object}
+class: 
+cwl:tool: /unlock/infrastructure/cwl/dev/workflows/workflow_metagenomics_assembly.cwl
+
+# GLOBAL PARAMETERS
+
+# [EDIT] Unique name or ID for this workflow run. 
+# Change to a different identifier to distinguish between different analyses/runs.
+identifier: Metagenomics_BMOCK12_Synthetic_metagenome
+
+# [EDIT OR IGNORE] Specifies the amount of memory (in megabytes) allocated to the workflow.
+# Adjust based on available computational resources, take into account jobs running in parallel.
+memory: 100000
+
+# [EDIT OR IGNORE] Number of CPU threads allocated to the workflow. 
+# Increase or decrease based on available computational resources and desired speed, 
+# take into account jobs running in parallel.
+threads: 20
+
+
+
+# INPUT AND RAW-QC
+
+# [EDIT] Input file for forward reads from Illumina sequencing. 
+# Change the location to the path of your specific forward read file.
+illumina_forward_reads: 
+- class: File
+  location: /unlock/home/wur.fdp/stu_bmock12_prjna496047/obs_bmock12_mocktest_cwl/sam_bmock12_synthetic_metagenome/metagenomic_other_illumina/asy_illumina_srr8073716/data/SRR8073716_1.fastq.gz
+
+# [EDIT] Input file for reverse reads from Illumina sequencing. 
+# Change the location to the path of your specific reverse read file.
+illumina_reverse_reads: 
+- class: File
+  location: /unlock/home/wur.fdp/stu_bmock12_prjna496047/obs_bmock12_mocktest_cwl/sam_bmock12_synthetic_metagenome/metagenomic_other_illumina/asy_illumina_srr8073716/data/SRR8073716_2.fastq.gz
+
+# [EDIT OR REMOVE] Input file for long reads from Nanopore sequencing.
+# Required for all long-read based steps
+nanopore_reads:
+  - class: File
+    path: /unlock/home/wur.fdp/UNLOCK_mock/stu_bmock12_prjna496047/obs_bmock12_mocktest_cwl/sam_bmock12_synthetic_metagenome/metagenomic_other_Nanopore/asy_Nanopore_err3152364/data/ERR3152364.fastq.gz
+
+# [EDIT OR IGNORE OR REMOVE] If 'true', filtered reads will be kept in the output
+# Consider available storage space and the need for filtered reads in downstream analysis. 
+# DEFAULT: false
+keep_filtered_reads: false
+
+# [EDIT OR IGNORE] Skip quality control of unfiltered input reads
+# DEFAULT: false
+skip_qc_unfiltered: false
+
+# [EDIT OR IGNORE] If 'true', removes duplicate reads. 
+# Set to 'true' if duplicates are considered errors or 'false' to retain all reads.
+# DEFAULT: false
+deduplicate: false
+
+# [EDIT OR IGNORE OR REMOVE] If 'true', only reads mapped to a given reference 
+# with {filter_references} are used. 
+# DEFAULT=false will skip
+use_reference_mapped_reads: false
+
+# [ADD OR IGNORE] Reference fasta file(s) 
+# used for pre-filtering. Can be gzipped (not mixed)
+# filter_references:
+#   - class: File
+#     location: /unlock/references/genomes/GCA_000/GCA_000001/GCA_000001405/GCA_000001405.28.fasta.gz
+#   - class: File
+#     location: /unlock/references/genomes/GCA_000/GCA_000001/GCA_000001405/GCA_000001405.28.fasta.gz
+
+# [EDIT OR IGNORE OR REMOVE] Percentage of long reads to retain after filtering. 
+# Adjust the percentage based on desired data retention.
+# DEFAULT: 90.0
+longread_keep_percent: 90.0
+
+# [EDIT OR IGNORE OR REMOVE] Weight given to long read length score during QC. 
+# Modify to change how read length impacts analysis outcomes.
+# DEFAULT: 10.0
+longread_length_weight: 10.0
+
+# [EDIT OR IGNORE OR REMOVE] Minimum length of long reads to be considered. 
+# Increase or decrease this threshold based on the quality and type of long reads.
+# DEFAULT: 1000
+longread_minimum_length: 1000
+
+# [EDIT OR IGNORE OR REMOVE] Confidence threshold for Kraken2 taxonomic classification. 
+# Increase the value for more stringent classifications, in [0, 1]
+# DEFAULT=0.0
+kraken2_confidence: 0.3
+
+# [EDIT OR REMOVE] Directory for the Kraken2 database. 
+# Update the path to use a different version or location of the Kraken2 database.
+# multiple databases is possible by adding more entries in the list
+# REMOVE this field to skip Kraken2 classification.
+kraken2_database: 
+- class: Directory
+  path: /unlock/references/databases/Kraken2/k2_pluspfp_20240112
+
+
+# Assembly
+
+# [EDIT OR IGNORE OR REMOVE] If 'true', Run spades in only assembler mode (without read error correction)
+# DEFAULT=false
+only_assembler_mode_spades: false
+
+# [EDIT OR IGNORE] Indicates whether to run Flye, an assembler for long reads. 
+# Change to 'true' if you have long reads and want to use Flye.
+run_flye: true
+
+# [EDIT OR IGNORE] Indicates whether to run Pilon 
+# for improving genome assemblies with Illumina reads. 
+run_pilon: false
+
+# [EDIT OR IGNORE] If 'true', the SPAdes assembler for Illumina data will be run. 
+# Set to 'false' if you do not want to use SPAdes.
+run_spades: true
+
+# [EDIT OR IGNORE] Indicates whether to run Medaka polishing for ONT reads.
+# DEFAULT=false
+run_medaka: true
+
+# [EDIT OR IGNORE] Run PyPolCA assembly polishing for Long-reads with illumina data
+# a good alternative to pilon
+run_pypolca: true
+
+# [EDIT OR IGNORE] Basecalling model used with guppy 
+# Required by Medaka for ONT read polishing.
+# DEFAULT=r941_min_high.
+ont_basecall_model: r941_min_hac_g507
+
+# [EDIT OR IGNORE OR REMOVE] Directory for the BUSCO database, 
+# used for assessing genome assembly completeness.
+# Update 'path' if using a different version or location of the BUSCO database.
+# REMOVE this field to enable auto-lineage download dataset
+busco_data: 
+  class: Directory
+  path: /unlock/references/databases/BUSCO/BUSCO_odb10
+
+
+# [EDIT OR IGNORE] User's choice of assembler for post-assembly processes 
+# Options: ('spades', 'medaka', 'flye', 'pilon', 'pypolca'). Only one choice allowed.
+# DEFUALT=null will take the last available assembler in the list ordered as above.
+assembly_choice: 
+
+
+
+# Binning and Annotation
+
+# [EDIT OR IGNORE] If 'true', the workflow will run binning tools to group sequences into bins.
+# DEFUALT=false will disable this step, which may affect/skip downstream analysis.
+binning: true
+
+# [EDIT OR IGNORE] If 'true', the workflow will run the Binspreader tool for bin refinement of each binner. 
+# Note: Binspreader relys on the assembly graph topology and other connectivity information generated by the assembler, so it's not adviced to do it with polishing. 
+run_binspreader: false
+
+# [EDIT OR IGNORE] Specifies the environment for SemiBin, a binning tool. 
+# Change based on the scope of your binning environment, 
+# built-in models: human_gut/dog_gut/ocean/soil/cat_gut/human_oral/mouse_gut/pig_gut/built_environment/wastewater/chicken_caecum/global
+# DEFAULT=global 
+semibin_environment: global
+
+# [EDIT OR REMOVE] Directory for GTDB-Tk data, used for taxonomic classification of Bins.
+# Update the path to use a different version or location of the GTDB-Tk database.
+# REMOVE this field to skip GTDB-Tk classification.
+gtdbtk_data: 
+  class: Directory
+  path: /unlock/references/databases/GTDBTK/gtdbtk_release220
+
+# [EDIT OR IGNORE] If 'true', the workflow will annotate the binned sequences.
+# Otherwise, by DEFAULT=false, skipped
+annotate_bins: true
+
+# [EDIT OR IGNORE OR REMOVE] If 'true', the workflow will also annotate sequences that are not part of any bin.
+# DEFAULT=false will skip annotating unbinned sequences.
+annotate_unbinned: true
+
+# [EDIT OR IGNORE] If 'true', EggNOG will be run for functional annotation. 
+# DEFAULT=false will skip this step.
+# Run with eggNOG-mapper annotation. Requires eggnog database files.
+run_eggnog: true
+
+# [EDIT OR IGNORE] If 'true', InterProScan will be run for protein sequence analysis. 
+# DEFAULT=false will skip this step.
+# Run with eggNOG-mapper annotation. Requires InterProScan v5 program files.
+run_interproscan: true
+
+# [EDIT OR IGNORE] If 'true', KoFamKOALA will be run for functional annotation using KEGG. 
+# DEFAULT=false will skip this step.
+run_kofamscan: true
+
+# [EDIT OR REMOVE] Directory containing Bakta database for annotation. 
+# Update the 'path' to point to a different version or location of the Bakta database if needed.
+# REMOVE this field will skip Bakta annotation.
+bakta_db: 
+  class: Directory
+  path: /unlock/references/databases/bakta/bakta_db_v5.1-light
+
+# [EDIT OR REMOVE] Directories and files for EggNOG databases, used for functional annotation.
+# Update paths if using different versions or locations of these databases.
+# REMOVE this field to skip EggNOG annotation.
+eggnog_dbs: 
+  data_dir: 
+    class: Directory
+    path: /unlock/references/databases/eggnog/emapperdb-5.0.2
+  db: 
+    class: File
+    location: /unlock/references/databases/eggnog/emapperdb-5.0.2/eggnog.db
+  diamond_db: 
+    class: File
+    location: /unlock/references/databases/eggnog/emapperdb-5.0.2/eggnog_proteins.dmnd
+
+# [EDIT OR REMOVE] Directory for InterProScan, a tool for protein sequence analysis. 
+# Update the path if using a different version or location of InterProScan.
+# REMOVE this field to skip InterProScan analysis.
+interproscan_directory: 
+  class: Directory
+  path: /unlock/infrastructure/binaries/interproscan/interproscan-5.63-95.0
+
+
+# MetaGEM
+
+# [EDIT OR IGNORE] Indicates whether to run the GEM workflow. 
+# DEFAULT=false will skip this step, which may affect/skip downstream analysis.
+run_GEM: false
+
+# [EDIT OR IGNORE] Choose the solver for the Memote workflow.
+# Options: ('cplex', 'glpk', 'gurobi', 'glpk_exact'). Only one choice allowed.
+# DEFAULT=glpk. If use cplex, make sure you have correct container. 
+memote_solver: glpk
+
+# [EDIT OR IGNORE] Choose the solver for the carveme workflow.
+# Options: ('cplex', 'scip'). Only one choice allowed.
+# DEFAULT=scip. If use cplex, make sure you have correct container. 
+carveme_solver: scip
+
+# Run {cwltool -h} for instruction to run a cwl workflow with this yaml file as input
+# FOR MORE CUSTOMIZATION, ADDITIONAL PARAMETERS CAN BE FOUND ON THE WORKFLOW'S DOCUMENTATION

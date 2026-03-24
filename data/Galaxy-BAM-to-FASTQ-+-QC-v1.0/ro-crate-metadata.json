@@ -1,0 +1,211 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-BAM_to_FASTQ___QC_v1.0.ga"
+      },
+      "datePublished": "2022-09-19 01:11:11 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0003-2439-8650"
+        }
+      ],
+      "license": "GPL-3.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.220.2",
+      "url": "https://workflowhub.eu/workflows/220/ro_crate?version=2",
+      "name": "Research Object Crate for BAM to FASTQ + QC v1.0",
+      "description": "# BAM-to-FASTQ-QC\n\n## General recommendations for using BAM-to-FASTQ-QC\nPlease see the [`Genome assembly with hifiasm on Galaxy Australia`](https://australianbiocommons.github.io/how-to-guides/genome_assembly/hifi_assembly) guide.\n\n## Acknowledgements\n\nThe workflow &amp; the [doc_guidelines template used](https://github.com/AustralianBioCommons/doc_guidelines) are supported by the Australian BioCommons via Bioplatforms Australia funding, the Australian Research Data Commons (https://doi.org/10.47486/PL105) and the Queensland Government RICF programme. Bioplatforms Australia and the Australian Research Data Commons are enabled by the National Collaborative Research Infrastructure Strategy (NCRIS).\n",
+      "isBasedOn": "https://github.com/AustralianBioCommons/BAM-to-FASTQ-QC",
+      "sdDatePublished": "2026-03-24 18:01:52 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-BAM_to_FASTQ___QC_v1.0.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-BAM_to_FASTQ___QC_v1.0.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 10441,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "# BAM-to-FASTQ-QC\n\n## General recommendations for using BAM-to-FASTQ-QC\nPlease see the [`Genome assembly with hifiasm on Galaxy Australia`](https://australianbiocommons.github.io/how-to-guides/genome_assembly/hifi_assembly) guide.\n\n## Acknowledgements\n\nThe workflow &amp; the [doc_guidelines template used](https://github.com/AustralianBioCommons/doc_guidelines) are supported by the Australian BioCommons via Bioplatforms Australia funding, the Australian Research Data Commons (https://doi.org/10.47486/PL105) and the Queensland Government RICF programme. Bioplatforms Australia and the Australian Research Data Commons are enabled by the National Collaborative Research Infrastructure Strategy (NCRIS).\n",
+      "name": "BAM to FASTQ + QC v1.0",
+      "url": "https://workflowhub.eu/workflows/220?version=2",
+      "keywords": "BAM, FASTQ, Conversion, QC",
+      "version": 2,
+      "license": "https://spdx.org/licenses/GPL-3.0",
+      "creator": {
+        "@id": "https://workflowhub.eu/people/139"
+      },
+      "producer": [
+        {
+          "@id": "https://workflowhub.eu/projects/30"
+        },
+        {
+          "@id": "https://workflowhub.eu/projects/54"
+        }
+      ],
+      "dateCreated": "2022-10-17T02:51:00Z",
+      "dateModified": "2023-01-30T18:21:31Z",
+      "isPartOf": [
+        {
+          "@id": "https://workflowhub.eu/collections/5"
+        },
+        {
+          "@id": "https://workflowhub.eu/collections/6"
+        }
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.220.2",
+      "isBasedOn": "https://workflowhub.eu/workflows/220?version=1",
+      "input": {
+        "@id": "#bam_to_fastq___qc_v1_0-inputs-Input%20BAM"
+      },
+      "output": [
+        {
+          "@id": "#bam_to_fastq___qc_v1_0-outputs-Converted%20FastQ%20reads"
+        },
+        {
+          "@id": "#bam_to_fastq___qc_v1_0-outputs-BAM%20file%20information"
+        },
+        {
+          "@id": "#bam_to_fastq___qc_v1_0-outputs-FastQC%20HTML"
+        },
+        {
+          "@id": "#bam_to_fastq___qc_v1_0-outputs-FastQC%20text%20file"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-2439-8650",
+      "@type": "Person",
+      "name": "Gareth Price",
+      "identifier": "https://orcid.org/0000-0003-2439-8650"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/139",
+      "@type": "Person",
+      "name": "Gareth Price"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/30",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Australian BioCommons"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/54",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Galaxy Australia"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/5",
+      "@type": "Collection",
+      "name": "HiFi genome assembly on Galaxy"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/6",
+      "@type": "Collection",
+      "name": "BioCommons ‘Bring Your Own Data’ Expansion Project"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#bam_to_fastq___qc_v1_0-inputs-Input BAM",
+      "@type": "FormalParameter",
+      "name": "Input BAM",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#bam_to_fastq___qc_v1_0-outputs-Converted FastQ reads",
+      "@type": "FormalParameter",
+      "name": "Converted FastQ reads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#bam_to_fastq___qc_v1_0-outputs-BAM file information",
+      "@type": "FormalParameter",
+      "name": "BAM file information",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#bam_to_fastq___qc_v1_0-outputs-FastQC HTML",
+      "@type": "FormalParameter",
+      "name": "FastQC HTML",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#bam_to_fastq___qc_v1_0-outputs-FastQC text file",
+      "@type": "FormalParameter",
+      "name": "FastQC text file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

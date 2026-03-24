@@ -1,0 +1,12 @@
+cwl:tool: ../../tools/interproscan/interproscan.cwl
+destination: ./output
+input_fasta:
+   class: File
+   location: http://download.systemsbiology.nl/unlock/cwl/test_data/eggnog.fa
+interproscan:
+   class: Directory
+   location: /unlock/infrastructure/binaries/interproscan/interproscan-5.63-95.0/
+# interpro:
+#    class: Directory
+#    location: /unlock/infrastructure/binaries/interproscan/interproscan-5.53-87.0/
+applications: 'Pfam,SFLD,SMART,AntiFam,NCBIfam'

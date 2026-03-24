@@ -1,0 +1,343 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-Extended_Source.ga"
+      },
+      "datePublished": "2025-05-17 15:37:57 +0100",
+      "author": [
+
+      ],
+      "license": "MIT",
+      "identifier": "https://workflowhub.eu/workflows/1369?version=1",
+      "url": "https://workflowhub.eu/workflows/1369/ro_crate?version=1",
+      "name": "Research Object Crate for Extended Source",
+      "description": "Calculate extended gamma-ray source halo using crbeam simulation",
+      "isBasedOn": "https://github.com/okolo/extended_source.git",
+      "sdDatePublished": "2026-03-24 17:34:47 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-Extended_Source.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-Extended_Source.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 43202,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Calculate extended gamma-ray source halo using crbeam simulation",
+      "name": "Extended Source",
+      "url": "https://workflowhub.eu/workflows/1369?version=1",
+      "keywords": "",
+      "version": 1,
+      "license": "https://spdx.org/licenses/MIT",
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/305"
+      },
+      "dateCreated": "2025-05-17T14:52:42Z",
+      "dateModified": "2025-05-17T14:52:42Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#extended_source-inputs-Dec"
+        },
+        {
+          "@id": "#extended_source-inputs-EBL"
+        },
+        {
+          "@id": "#extended_source-inputs-EmaxSource"
+        },
+        {
+          "@id": "#extended_source-inputs-Emin"
+        },
+        {
+          "@id": "#extended_source-inputs-EminSource"
+        },
+        {
+          "@id": "#extended_source-inputs-IGMF"
+        },
+        {
+          "@id": "#extended_source-inputs-IGMF%20Lmax"
+        },
+        {
+          "@id": "#extended_source-inputs-N"
+        },
+        {
+          "@id": "#extended_source-inputs-RA"
+        },
+        {
+          "@id": "#extended_source-inputs-ThetaMax"
+        },
+        {
+          "@id": "#extended_source-inputs-ThetaMin"
+        },
+        {
+          "@id": "#extended_source-inputs-gamma"
+        },
+        {
+          "@id": "#extended_source-inputs-initial%20particle"
+        },
+        {
+          "@id": "#extended_source-inputs-redshift"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#extended_source-outputs-mc_data"
+        },
+        {
+          "@id": "#extended_source-outputs-prim_spectrum_data"
+        },
+        {
+          "@id": "#extended_source-outputs-prim_spectrum_plot"
+        },
+        {
+          "@id": "#extended_source-outputs-sec_spectrum_data"
+        },
+        {
+          "@id": "#extended_source-outputs-sec_spectrum_plot"
+        },
+        {
+          "@id": "#extended_source-outputs-source_fits_image"
+        },
+        {
+          "@id": "#extended_source-outputs-source_image"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/305",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Astroparticle Lab"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#extended_source-inputs-Dec",
+      "@type": "FormalParameter",
+      "name": "Dec",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#extended_source-inputs-EBL",
+      "@type": "FormalParameter",
+      "name": "EBL",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#extended_source-inputs-EmaxSource",
+      "@type": "FormalParameter",
+      "name": "EmaxSource",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#extended_source-inputs-Emin",
+      "@type": "FormalParameter",
+      "name": "Emin",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#extended_source-inputs-EminSource",
+      "@type": "FormalParameter",
+      "name": "EminSource",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#extended_source-inputs-IGMF",
+      "@type": "FormalParameter",
+      "name": "IGMF",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#extended_source-inputs-IGMF Lmax",
+      "@type": "FormalParameter",
+      "name": "IGMF Lmax",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#extended_source-inputs-N",
+      "@type": "FormalParameter",
+      "name": "N",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#extended_source-inputs-RA",
+      "@type": "FormalParameter",
+      "name": "RA",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#extended_source-inputs-ThetaMax",
+      "@type": "FormalParameter",
+      "name": "ThetaMax",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#extended_source-inputs-ThetaMin",
+      "@type": "FormalParameter",
+      "name": "ThetaMin",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#extended_source-inputs-gamma",
+      "@type": "FormalParameter",
+      "name": "gamma",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#extended_source-inputs-initial particle",
+      "@type": "FormalParameter",
+      "name": "initial particle",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#extended_source-inputs-redshift",
+      "@type": "FormalParameter",
+      "name": "redshift",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#extended_source-outputs-mc_data",
+      "@type": "FormalParameter",
+      "name": "mc_data",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#extended_source-outputs-prim_spectrum_data",
+      "@type": "FormalParameter",
+      "name": "prim_spectrum_data",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#extended_source-outputs-prim_spectrum_plot",
+      "@type": "FormalParameter",
+      "name": "prim_spectrum_plot",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#extended_source-outputs-sec_spectrum_data",
+      "@type": "FormalParameter",
+      "name": "sec_spectrum_data",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#extended_source-outputs-sec_spectrum_plot",
+      "@type": "FormalParameter",
+      "name": "sec_spectrum_plot",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#extended_source-outputs-source_fits_image",
+      "@type": "FormalParameter",
+      "name": "source_fits_image",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#extended_source-outputs-source_image",
+      "@type": "FormalParameter",
+      "name": "source_image",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

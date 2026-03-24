@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Workflow test for SABER (Falco and Bowtie2)</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Falco-bowtie2.ga"
+      },
+      "datePublished": "2025-08-08 15:59:54 +0100",
+      "author": [
+
+      ],
+      "license": "MIT",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.1845.1",
+      "url": "https://workflowhub.eu/workflows/1845/ro_crate?version=1",
+      "name": "Research Object Crate for Workflow test for SABER (Falco and Bowtie2)",
+      "description": "Automated workflow to validate Galaxy endpoint reliability using daily test runs of Falco and Bowtie2 via the SABER package. Designed for lightweight, scalable monitoring across multiple instances.",
+      "sdDatePublished": "2026-03-24 16:37:38 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "Falco-bowtie2.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Falco-bowtie2.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 7394,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Automated workflow to validate Galaxy endpoint reliability using daily test runs of Falco and Bowtie2 via the SABER package. Designed for lightweight, scalable monitoring across multiple instances.",
+      "name": "Workflow test for SABER (Falco and Bowtie2)",
+      "url": "https://workflowhub.eu/workflows/1845?version=1",
+      "keywords": "",
+      "version": 1,
+      "license": "https://spdx.org/licenses/MIT",
+      "creator": {
+        "@id": "https://orcid.org/0000-0003-3923-22660000-0003-3923-2266"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/166"
+      },
+      "dateCreated": "2025-08-08T15:05:26Z",
+      "dateModified": "2025-08-08T15:06:19Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/13"
+      },
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.1845.1",
+      "input": {
+        "@id": "#workflow_test_for_saber__falco_and_bowtie2_-inputs-%23main/1_reads"
+      },
+      "output": [
+        {
+          "@id": "#workflow_test_for_saber__falco_and_bowtie2_-outputs-%23main/html_file"
+        },
+        {
+          "@id": "#workflow_test_for_saber__falco_and_bowtie2_-outputs-%23main/text_file"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-3923-22660000-0003-3923-2266",
+      "@type": "Person",
+      "name": "Marco Antonio Tangaro"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/166",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "EuroScienceGateway"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/13",
+      "@type": "Collection",
+      "name": "Workflows in EuroScienceGateway"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#workflow_test_for_saber__falco_and_bowtie2_-inputs-#main/1_reads",
+      "@type": "FormalParameter",
+      "name": "#main/1_reads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_test_for_saber__falco_and_bowtie2_-outputs-#main/html_file",
+      "@type": "FormalParameter",
+      "name": "#main/html_file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_test_for_saber__falco_and_bowtie2_-outputs-#main/text_file",
+      "@type": "FormalParameter",
+      "name": "#main/text_file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Workflow test for SABER (Falco and Bowtie2)</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/1845/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/1845/ro_crate?version=1</a>
+
+
+<p>
+  Automated workflow to validate Galaxy endpoint reliability using daily test runs of Falco and Bowtie2 via the SABER package. Designed for lightweight, scalable monitoring across multiple instances.
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>MIT</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Falco-bowtie2.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Falco-bowtie2.ga">Workflow test for SABER (Falco and Bowtie2)</a>
+      
+        <br/>Size: 7394 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

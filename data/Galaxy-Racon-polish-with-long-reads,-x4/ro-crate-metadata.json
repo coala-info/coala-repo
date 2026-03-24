@@ -1,0 +1,201 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-Racon_polish_with_long_reads_x4.ga"
+      },
+      "datePublished": "2021-11-08 05:45:09 +0000",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-9906-0673"
+        }
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.227.1",
+      "url": "https://workflowhub.eu/workflows/227/ro_crate?version=1",
+      "name": "Research Object Crate for Racon polish with long reads, x4",
+      "description": "Assembly polishing subworkflow: Racon polishing with long reads\n\nInputs: long reads and assembly contigs\n\nWorkflow steps:\n* minimap2 : long reads are mapped to assembly =&gt; overlaps.paf. \n* overaps, long reads, assembly =&gt; Racon =&gt; polished assembly 1\n* using polished assembly 1 as input; repeat minimap2 + racon =&gt; polished assembly 2\n* using polished assembly 2 as input, repeat minimap2 + racon =&gt; polished assembly 3\n* using polished assembly 3 as input, repeat minimap2 + racon =&gt; polished assembly 4\n* Racon long-read polished assembly =&gt; Fasta statistics\n* Note: The Racon tool panel can be a bit confusing and is under review for improvement. Presently it requires sequences (= long reads), overlaps (= the paf file created by minimap2), and target sequences (= the contigs to be polished) as per \"usage\" described here https://github.com/isovic/racon/blob/master/README.md\n* Note: Racon: the default setting for \"output unpolished target sequences?\" is No. This has been changed to Yes for all Racon steps in these polishing workflows.  This means that even if no polishes are made in some contigs, they will be part of the output fasta file. \n* Note: the contigs output by Racon have new tags in their headers. For more on this see https://github.com/isovic/racon/issues/85.\n\n\nInfrastructure_deployment_metadata: Galaxy Australia (Galaxy)",
+      "sdDatePublished": "2026-03-24 18:07:58 +0000",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-Racon_polish_with_long_reads_x4.ga"
+        },
+        {
+          "@id": "Racon_polish_with_longreads.png"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-Racon_polish_with_long_reads_x4.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 26968,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "Racon_polish_with_longreads.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Assembly polishing subworkflow: Racon polishing with long reads\n\nInputs: long reads and assembly contigs\n\nWorkflow steps:\n* minimap2 : long reads are mapped to assembly =&gt; overlaps.paf. \n* overaps, long reads, assembly =&gt; Racon =&gt; polished assembly 1\n* using polished assembly 1 as input; repeat minimap2 + racon =&gt; polished assembly 2\n* using polished assembly 2 as input, repeat minimap2 + racon =&gt; polished assembly 3\n* using polished assembly 3 as input, repeat minimap2 + racon =&gt; polished assembly 4\n* Racon long-read polished assembly =&gt; Fasta statistics\n* Note: The Racon tool panel can be a bit confusing and is under review for improvement. Presently it requires sequences (= long reads), overlaps (= the paf file created by minimap2), and target sequences (= the contigs to be polished) as per \"usage\" described here https://github.com/isovic/racon/blob/master/README.md\n* Note: Racon: the default setting for \"output unpolished target sequences?\" is No. This has been changed to Yes for all Racon steps in these polishing workflows.  This means that even if no polishes are made in some contigs, they will be part of the output fasta file. \n* Note: the contigs output by Racon have new tags in their headers. For more on this see https://github.com/isovic/racon/issues/85.\n\n\nInfrastructure_deployment_metadata: Galaxy Australia (Galaxy)",
+      "name": "Racon polish with long reads, x4",
+      "url": "https://workflowhub.eu/workflows/227?version=1",
+      "keywords": "Large-genome-assembly",
+      "version": 1,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "creator": {
+        "@id": "https://workflowhub.eu/people/200"
+      },
+      "producer": [
+        {
+          "@id": "https://workflowhub.eu/projects/54"
+        },
+        {
+          "@id": "https://workflowhub.eu/projects/30"
+        }
+      ],
+      "dateCreated": "2021-11-08T05:45:09Z",
+      "dateModified": "2023-01-30T18:21:31Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/6"
+      },
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.227.1",
+      "input": [
+        {
+          "@id": "#racon_polish_with_long_reads__x4-inputs-Assembly%20to%20be%20polished"
+        },
+        {
+          "@id": "#racon_polish_with_long_reads__x4-inputs-long%20reads"
+        },
+        {
+          "@id": "#racon_polish_with_long_reads__x4-inputs-minimap%20setting%20(for%20long%20reads)%20"
+        }
+      ],
+      "output": {
+        "@id": "#racon_polish_with_long_reads__x4-outputs-Assembly%20polished%20by%20long%20reads%20using%20Racon"
+      },
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "Racon_polish_with_longreads.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 344676
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-9906-0673",
+      "@type": "Person",
+      "name": "Anna Syme",
+      "identifier": "https://orcid.org/0000-0002-9906-0673"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/200",
+      "@type": "Person",
+      "name": "Anna Syme"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/54",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Galaxy Australia"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/30",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Australian BioCommons"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/6",
+      "@type": "Collection",
+      "name": "BioCommons ‘Bring Your Own Data’ Expansion Project"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#racon_polish_with_long_reads__x4-inputs-Assembly to be polished",
+      "@type": "FormalParameter",
+      "name": "Assembly to be polished",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#racon_polish_with_long_reads__x4-inputs-long reads",
+      "@type": "FormalParameter",
+      "name": "long reads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#racon_polish_with_long_reads__x4-inputs-minimap setting (for long reads) ",
+      "@type": "FormalParameter",
+      "name": "minimap setting (for long reads) ",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#racon_polish_with_long_reads__x4-outputs-Assembly polished by long reads using Racon",
+      "@type": "FormalParameter",
+      "name": "Assembly polished by long reads using Racon",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

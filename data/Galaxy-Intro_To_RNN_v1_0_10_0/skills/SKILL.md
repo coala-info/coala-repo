@@ -1,0 +1,85 @@
+---
+name: intro_to_rnn_v1_0_10_0
+description: "This Galaxy workflow processes training and testing datasets to build, train, and evaluate Recurrent Neural Network models using Keras-based deep learning tools and visualization extensions. Use this skill when you need to analyze sequential or time-series data by developing deep learning architectures that capture temporal dependencies and evaluating their predictive performance."
+homepage: https://workflowhub.eu/workflows/1724
+---
+
+# Intro_To_RNN_v1_0_10_0
+
+## Overview
+
+This workflow provides a foundational pipeline for implementing Recurrent Neural Networks (RNN) using Keras within the Galaxy framework. It is designed to process sequential data through a supervised learning approach, requiring four primary datasets as input: training features (`X_train`), training labels (`y_train`), test features (`X_test`), and test labels (`y_test`).
+
+The process begins by defining the neural network architecture using the [Keras model config](https://toolshed.g2.bx.psu.edu/repos/bgruening/keras_model_config/keras_model_config/1.0.10.0) tool, followed by the [Keras model builder](https://toolshed.g2.bx.psu.edu/repos/bgruening/keras_model_builder/keras_model_builder/1.0.10.0) to initialize the deep learning model. Once the structure is established, the workflow executes the training and evaluation phase, where the model learns from the training data and assesses its accuracy against the test set.
+
+In the final stages, the workflow performs model predictions and generates performance metrics. It utilizes the [Machine Learning Visualization Extension](https://toolshed.g2.bx.psu.edu/repos/bgruening/ml_visualization_ex/ml_visualization_ex/1.0.10.0) to create visual representations of the results, making it easier to interpret model behavior. This resource is associated with the [Galaxy Training Network (GTN)](https://training.galaxyproject.org/) and is licensed under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/).
+
+## Inputs and data preparation
+
+| Step | Label | Type | Notes |
+| --- | --- | --- | --- |
+| 0 | X_test | data_input |  |
+| 1 | X_train | data_input |  |
+| 2 | y_test | data_input |  |
+| 3 | y_train | data_input |  |
+
+
+Ensure your training and testing features (X) and labels (y) are formatted as tabular or CSV files, ensuring that data types and dimensions are consistent across all four inputs. These files should be uploaded as individual datasets to align with the specific input ports of the Keras training and evaluation tools. For detailed instructions on the required data shapes and preprocessing steps, please consult the README.md. You may also use `planemo workflow_job_init` to create a `job.yml` file for streamlined job submission.
+
+## Steps (tools)
+
+| Step | Name | Tool ID | Notes |
+| --- | --- | --- | --- |
+| 4 | Create a deep learning model architecture | toolshed.g2.bx.psu.edu/repos/bgruening/keras_model_config/keras_model_config/1.0.10.0 |  |
+| 5 | Create deep learning model | toolshed.g2.bx.psu.edu/repos/bgruening/keras_model_builder/keras_model_builder/1.0.10.0 |  |
+| 6 | Deep learning training and evaluation | toolshed.g2.bx.psu.edu/repos/bgruening/keras_train_and_eval/keras_train_and_eval/1.0.10.0 |  |
+| 7 | Model Prediction | toolshed.g2.bx.psu.edu/repos/bgruening/model_prediction/model_prediction/1.0.10.0 |  |
+| 8 | Machine Learning Visualization Extension | toolshed.g2.bx.psu.edu/repos/bgruening/ml_visualization_ex/ml_visualization_ex/1.0.10.0 |  |
+
+
+## Workflow outputs (marked in Galaxy)
+
+_No explicit workflow outputs in this export; add outputs in the Galaxy editor or inspect tool steps._
+
+## How to run (Planemo)
+
+### Local Galaxy (default engine)
+
+```bash
+planemo run intro-to-rnn-v1-0-10-0.ga job.yml --download_outputs --output_directory . --output_json output.json
+```
+
+Optional: `--galaxy_root /path/to/galaxy` speeds up spinning up a local Galaxy.
+
+### Docker Galaxy
+
+Append e.g. `--engine docker_galaxy --ignore_dependency_problems` (requires Docker).
+
+### External Galaxy (usegalaxy.org / EU / …)
+
+```bash
+planemo run intro-to-rnn-v1-0-10-0.ga job.yml --engine external_galaxy --galaxy_url SERVER_URL --galaxy_user_key YOUR_API_KEY
+```
+
+Create a reusable profile: `planemo profile_create myprofile --galaxy_url ... --galaxy_user_key ... --engine external_galaxy` then `planemo run intro-to-rnn-v1-0-10-0.ga job.yml --profile myprofile`.
+
+### Job file
+
+- Generate a template: `planemo workflow_job_init intro-to-rnn-v1-0-10-0.ga -o job.yml`
+- Lint: `planemo workflow_lint intro-to-rnn-v1-0-10-0.ga`
+
+See **[Running Galaxy workflows](https://planemo.readthedocs.io/en/master/running.html)** in the Planemo documentation.
+
+## Invocation outputs
+
+After a successful run with `--download_outputs`, files appear under your chosen `--output_directory`. `--output_json` records CWL-style metadata for outputs (paths, checksums).
+
+On an external Galaxy, use `planemo invocation_download INVOCATION_ID --profile ...` to fetch outputs, or track progress with `planemo workflow_track INVOCATION_ID`.
+
+Workflow steps marked as **workflow outputs** in the editor are listed under **Workflow outputs**; exact filenames depend on tools and Galaxy configuration.
+
+## Files
+
+- `intro-to-rnn-v1-0-10-0.ga` — Galaxy workflow export (JSON)
+- `job.yml` — inputs/parameters for `planemo run` (create with `planemo workflow_job_init`)
+- [Planemo: Running Galaxy workflows](https://planemo.readthedocs.io/en/master/running.html)

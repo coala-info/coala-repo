@@ -1,0 +1,256 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-Cloning_Simulation_workflow_v2.ga"
+      },
+      "datePublished": "2025-10-17 12:19:45 +0100",
+      "author": [
+
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://workflowhub.eu/workflows/2000?version=1",
+      "url": "https://workflowhub.eu/workflows/2000/ro_crate?version=1",
+      "name": "Research Object Crate for Cloning Simulation workflow",
+      "description": "\n# Cloning simulation workflow for sequences present in DB\n\nRun the GoldenGate cloning simulation for a list of constructs in a CSV file and interact with a database\n\n## inputs:\n\n* _Assmbly Plan (without header)_ : The **CSV** file should contain the constraints line by line in the first column, along with their associated fragments on each line. This data will be passed to the _seq_from_DB_ tool.\n* _JSON parameters file (optional)_ : The **JSON** file should contain the the parameters used in workflow tools. If this input is not set, user should set the parameters mannualy in the maystro tool.\n* _Missing Fragments (optional)_ : The **collection** of GenBank files that are not present in the database ( [make collection](https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/collections/tutorial.html)). If a fragment is listed in the Assembly Plan CSV but missing from the database, it must be provided through this input.\n\n## steps:\n\n&gt;_workflow_1 Parameter_Maystro_\n\n1. Distribute workflow parameters on the workflow tools\n2. Parameters can be set as a JSON file in input (optional)\n3.  Parameters can be manually instate of JSON file\n4.  For the first use, it is recommended to set the parameters manually in the tool. A JSON file will then be generated automatically for use in subsequent runs.\n\n&gt;_seq_from_DB_\n\n1. Extract the fragments associated with each constraint from the CSV file.\n2. Check if all fragments are present in the database.\n        \n&gt;_evaluate_manufacturability_\n        \n1. If any fragment is missing it will serve from the unannotated Genbenk provided to annotate them and add them to the finale gb collection\n2. If all fragments are present in the database, GenBank files for each fragment will be passed to the cloning_simulation tool.\n\n &gt;_clonning_simulation_\n\n1. GoldenGate cloning simulation based on constraints.\n2. Generate GenBank files for each simulated constraint.\n\n&gt;_seq_to_db_\n\n1. Constraint GenBank files can be saved to the database, depending on the user's choice.\n\n",
+      "sdDatePublished": "2026-03-24 16:31:06 +0000",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-Cloning_Simulation_workflow_v2.ga"
+        },
+        {
+          "@id": "Capture%20d%E2%80%99%C3%A9cran%20du%202025-10-17%2012-05-45.png"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-Cloning_Simulation_workflow_v2.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 16371,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "Capture%20d%E2%80%99%C3%A9cran%20du%202025-10-17%2012-05-45.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "\n# Cloning simulation workflow for sequences present in DB\n\nRun the GoldenGate cloning simulation for a list of constructs in a CSV file and interact with a database\n\n## inputs:\n\n* _Assmbly Plan (without header)_ : The **CSV** file should contain the constraints line by line in the first column, along with their associated fragments on each line. This data will be passed to the _seq_from_DB_ tool.\n* _JSON parameters file (optional)_ : The **JSON** file should contain the the parameters used in workflow tools. If this input is not set, user should set the parameters mannualy in the maystro tool.\n* _Missing Fragments (optional)_ : The **collection** of GenBank files that are not present in the database ( [make collection](https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/collections/tutorial.html)). If a fragment is listed in the Assembly Plan CSV but missing from the database, it must be provided through this input.\n\n## steps:\n\n&gt;_workflow_1 Parameter_Maystro_\n\n1. Distribute workflow parameters on the workflow tools\n2. Parameters can be set as a JSON file in input (optional)\n3.  Parameters can be manually instate of JSON file\n4.  For the first use, it is recommended to set the parameters manually in the tool. A JSON file will then be generated automatically for use in subsequent runs.\n\n&gt;_seq_from_DB_\n\n1. Extract the fragments associated with each constraint from the CSV file.\n2. Check if all fragments are present in the database.\n        \n&gt;_evaluate_manufacturability_\n        \n1. If any fragment is missing it will serve from the unannotated Genbenk provided to annotate them and add them to the finale gb collection\n2. If all fragments are present in the database, GenBank files for each fragment will be passed to the cloning_simulation tool.\n\n &gt;_clonning_simulation_\n\n1. GoldenGate cloning simulation based on constraints.\n2. Generate GenBank files for each simulated constraint.\n\n&gt;_seq_to_db_\n\n1. Constraint GenBank files can be saved to the database, depending on the user's choice.\n\n",
+      "name": "Cloning Simulation workflow",
+      "url": "https://workflowhub.eu/workflows/2000?version=1",
+      "keywords": "",
+      "version": 1,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/355"
+      },
+      "dateCreated": "2025-10-17T11:22:46Z",
+      "dateModified": "2025-10-17T11:41:32Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#cloning_simulation_workflow-inputs-%23main/Assembly%20Plan"
+        },
+        {
+          "@id": "#cloning_simulation_workflow-inputs-%23main/JSON%20parameters%20file"
+        },
+        {
+          "@id": "#cloning_simulation_workflow-inputs-%23main/Missing%20Fragments"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#cloning_simulation_workflow-outputs-%23main/Evaluate%20Manufacturability%20(gb)"
+        },
+        {
+          "@id": "#cloning_simulation_workflow-outputs-%23main/GenBank%20Files%20collection"
+        },
+        {
+          "@id": "#cloning_simulation_workflow-outputs-%23main/Manufacturability%20Report%20(PDF)"
+        },
+        {
+          "@id": "#cloning_simulation_workflow-outputs-%23main/Manufacturability%20Report%20(tsv)"
+        },
+        {
+          "@id": "#cloning_simulation_workflow-outputs-%23main/Workflow-1%20Parameters"
+        },
+        {
+          "@id": "#cloning_simulation_workflow-outputs-%23main/missing%20fragments"
+        },
+        {
+          "@id": "#cloning_simulation_workflow-outputs-%23main/saving%20report"
+        },
+        {
+          "@id": "#cloning_simulation_workflow-outputs-%23main/simulation%20results%20(gb)"
+        },
+        {
+          "@id": "#cloning_simulation_workflow-outputs-%23main/simulation%20results%20(zip)"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "Capture%20d%E2%80%99%C3%A9cran%20du%202025-10-17%2012-05-45.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 124143
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/355",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "DNA Foundry"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#cloning_simulation_workflow-inputs-#main/Assembly Plan",
+      "@type": "FormalParameter",
+      "name": "#main/Assembly Plan",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cloning_simulation_workflow-inputs-#main/JSON parameters file",
+      "@type": "FormalParameter",
+      "name": "#main/JSON parameters file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cloning_simulation_workflow-inputs-#main/Missing Fragments",
+      "@type": "FormalParameter",
+      "name": "#main/Missing Fragments",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cloning_simulation_workflow-outputs-#main/Evaluate Manufacturability (gb)",
+      "@type": "FormalParameter",
+      "name": "#main/Evaluate Manufacturability (gb)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cloning_simulation_workflow-outputs-#main/GenBank Files collection",
+      "@type": "FormalParameter",
+      "name": "#main/GenBank Files collection",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cloning_simulation_workflow-outputs-#main/Manufacturability Report (PDF)",
+      "@type": "FormalParameter",
+      "name": "#main/Manufacturability Report (PDF)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cloning_simulation_workflow-outputs-#main/Manufacturability Report (tsv)",
+      "@type": "FormalParameter",
+      "name": "#main/Manufacturability Report (tsv)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cloning_simulation_workflow-outputs-#main/Workflow-1 Parameters",
+      "@type": "FormalParameter",
+      "name": "#main/Workflow-1 Parameters",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cloning_simulation_workflow-outputs-#main/missing fragments",
+      "@type": "FormalParameter",
+      "name": "#main/missing fragments",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cloning_simulation_workflow-outputs-#main/saving report",
+      "@type": "FormalParameter",
+      "name": "#main/saving report",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cloning_simulation_workflow-outputs-#main/simulation results (gb)",
+      "@type": "FormalParameter",
+      "name": "#main/simulation results (gb)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cloning_simulation_workflow-outputs-#main/simulation results (zip)",
+      "@type": "FormalParameter",
+      "name": "#main/simulation results (zip)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

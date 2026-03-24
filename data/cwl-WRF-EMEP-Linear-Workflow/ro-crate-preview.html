@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for WRF / EMEP Linear Workflow</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "wrf_emep_full_workflow.cwl"
+      },
+      "datePublished": "2023-04-12 12:56:20 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-1248-3594"
+        }
+      ],
+      "license": "MIT",
+      "identifier": "https://workflowhub.eu/workflows/455?version=1",
+      "url": "https://workflowhub.eu/workflows/455/ro_crate?version=1",
+      "name": "Research Object Crate for WRF / EMEP Linear Workflow",
+      "description": "# WRF/EMEP Linear Workflow\n\nExample Common Workflow Language (CWL) workflow and tool descriptors for running the \nWeather Research and Forecase (WRF) and EMEP models.\n\nThis workflow is designed for a single model domain. Example datasets for testing this \nworkflow can be downloaded from Zenodo.\n\n\n## Requirements:\n\n* docker or singularity\n* conda\n* cwltool\n* Toil - optional, useful for running on HPC or distributed computing systems\n\n### CWL / Toil Installation:\n\nThe workflow runner (either cwltool, or Toil) can be installed using either conda or pip.\nEnvironment files for conda are included, and can be used as shown below:\n* cwltool only:\n  * `conda env create --file install/env_cwlrunner.yml --name cwl`\n* Toil &amp; cwltool:\n  * `conda env create --file install/env_toil.yml --name toil`\n\n### Setup for Example Workflow\n\n* Download the example dataset from Zenodo: https://doi.org/10.5281/zenodo.7817216\n* Extract into the `input_files` directory:\n  * `tar -zxvf wrf_emep_UK_example_inputs.tar.gz -C input_files --strip-components=1`\n\n## Running the Workflow\n\nThe full workflow is broken into several logical steps:\n1. ERA5 download\n2. WPS 1st step: Geogrid geography file creation\n3. WPS process: ungribbing of ERA5 data, and running of metgrid to produce meteorology files.\n4. WRF process: generation of WRF input files by REAL, and running of WRF model\n5. EMEP model: running of EMEP chemistry and transport model\n\nSteps 1 and 3 require you to register with the CDS service, in order to download ERA5 data\nbefore using in the WPS process.\nSteps 2 and 5 require you to download extra input data - the instructions on how to do this\nare included in the README.txt files in the relevant input data directories.\n\nA full workflow for all steps is provided here. But each separate step can by run on it's \nown too, following the instructions given below. We recommend running step 4 first, to \nexplore how the REAL &amp; WRF workflow works, before trying the other steps.\n\n### 1. ERA5 download.\n\nBefore running the ERA5 download tool, ensure that you have reqistered for the CDS service, \nsigned the ERA5 licensing agreement, and saved the CDS API key (`.cdsapirc`) in your \nworking directory.\n\nTo run the ERA5 download tool use the following command:\n```\ncwltool [--cachdir CACHE] [--singularity] workflows/era5_workflow.cwl example_workflow_configurations/era5_download_settings.yaml\n```\nNote that the `--cachedir CACHE` option sets the working directory cache, which enables the\nreuse of any steps previously run (and the restarting of the workflow from this point).\nThe `--singularity` option is needed if you are using singularity instead of docker.\n\n### 2. WPS: Geogrid geography file creation\n\nBefore running the geogrid tool you will need to download the geography data from the\n[UCAR website](https://www2.mmm.ucar.edu/wrf/users/download/get_sources_wps_geog.html).\nThese should be extracted into the `input_files/geogrid_geog_input` directory.\n\nTo run the geogrid program use the following command:\n```\ncwltool [--cachdir CACHE] [--singularity] workflows/geogrid_workflow.cwl example_workflow_configurations/wps_geogrid_cwl_settings.yaml\n```\n\n### 3. WPS: Creation of meteorology input files\n\nBefore running the WPS process you will have to download the ERA5 datafiles (which will be\ncalled `preslev_[YYYYMMDD].grib` and `surface_[YYYYMMDD].grib`) and copy these to the directory\n`input_files/wps_era5_input`. If you have also run geogrid in step 2 you can replace the \n`geo_em.d01.nc` file in the `input_files/wps_geogrid_input` directory with the file that \ngeogrid created.\n\nTo run the wps metgrid process use the following command:\n```\ncwltool [--cachdir CACHE] [--singularity] workflows/wps_workflow.cwl example_workflow_configurations/wps_metgrid_cwl_settings.yaml\n```\n\n### 4. WRF: Creation of WRF input files, and running WRF model\n\nThe WRF model can be run without any prepreparation, except for the downloading of the \ninput data from Zenodo. However, if you have created new meteorology files (`met_em*`) using\nWPS you can replace the files in the `input_files/wrf_met_input` directory with these.\n\nTo run the WRF process (including REAL) use the following command:\n```\ncwltool [--cachdir CACHE] [--singularity] workflows/wrf_workflow.cwl example_workflow_configurations/wrf_real_cwl_settings.yaml\n``` \n\n### 5. EMEP: Running EMEP chemistry and transport model\n\nBefore running the EMEP model you will need to download the EMEP input dataset. This can be\ndone using the `catalog.py` tool, following the instructions in the `input_files/emep_input/README.txt`\nfile. If you have run WRF you can also replace the `wrfout*` data files in the \n`input_Files/emep_wrf_input` directory with those you have created.\n\nTo run the EMEP model use the following command:\n```\ncwltool [--cachdir CACHE] [--singularity] workflows/emep_workflow.cwl example_workflow_configurations/emep_cwl_settings.yaml\n```\n\n### Full Workflow\n\nBefore running the full workflow make sure you have carried out the setup tasks described\nabove.\n\nTo run the full workflow use the following command:\n```\ncwltool [--cachdir CACHE] [--singularity] wrf_emep_full_workflow.cwl example_workflow_configurations/wrf_emep_full_workflow_cwl_settings.yaml\n```\n\n## Notes\n\n### WRF filenames\n\nIn order to work with singularity, all filenames need to exclude special characters.\nTo ensure that all WRF filenames comply with this requirement, you will need to add the \n`nocolons = .true.` option to your WPS, REAL and WRF namelists to ensure this.\n\n### MPI parallel processing\n\nThe WPS processes all run in single thread mode. REAL, WRF and EMEP have been compiled with\nMPI support. The default cores for each of these is 2, 9 and 9, respectively. The \nsettings file can be edited to modify these requirements.\n\n### Caching intermediate workflow steps\n\nTo cache the data from individual steps you can use the `--cachedir ` optional flag.\n\n\n## License and Copyright \n\nThese workflow scripts have been developed by the [Research IT](https://research-it.manchester.ac.uk/) \nat the [University of Manchester](https://www.manchester.ac.uk/).\n\nCopyright 2023 [University of Manchester, UK](https://www.manchester.ac.uk/).\n\nLicensed under the MIT license, see the LICENSE file for details.",
+      "isBasedOn": "https://github.com/UoMResearchIT/wrf_emep_cwl_linear_workflow.git",
+      "sdDatePublished": "2026-03-24 01:08:15 +0000",
+      "creativeWorkStatus": "Work-in-progress",
+      "hasPart": [
+        {
+          "@id": "wrf_emep_full_workflow.cwl"
+        },
+        {
+          "@id": "workflow-455-70c6a6016eeb4434a3ad82af7908b83d4ea37ce7-diagram.svg"
+        }
+      ]
+    },
+    {
+      "@id": "wrf_emep_full_workflow.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 4306,
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "image": {
+        "@id": "workflow-455-70c6a6016eeb4434a3ad82af7908b83d4ea37ce7-diagram.svg"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "# WRF/EMEP Linear Workflow\n\nExample Common Workflow Language (CWL) workflow and tool descriptors for running the \nWeather Research and Forecase (WRF) and EMEP models.\n\nThis workflow is designed for a single model domain. Example datasets for testing this \nworkflow can be downloaded from Zenodo.\n\n\n## Requirements:\n\n* docker or singularity\n* conda\n* cwltool\n* Toil - optional, useful for running on HPC or distributed computing systems\n\n### CWL / Toil Installation:\n\nThe workflow runner (either cwltool, or Toil) can be installed using either conda or pip.\nEnvironment files for conda are included, and can be used as shown below:\n* cwltool only:\n  * `conda env create --file install/env_cwlrunner.yml --name cwl`\n* Toil &amp; cwltool:\n  * `conda env create --file install/env_toil.yml --name toil`\n\n### Setup for Example Workflow\n\n* Download the example dataset from Zenodo: https://doi.org/10.5281/zenodo.7817216\n* Extract into the `input_files` directory:\n  * `tar -zxvf wrf_emep_UK_example_inputs.tar.gz -C input_files --strip-components=1`\n\n## Running the Workflow\n\nThe full workflow is broken into several logical steps:\n1. ERA5 download\n2. WPS 1st step: Geogrid geography file creation\n3. WPS process: ungribbing of ERA5 data, and running of metgrid to produce meteorology files.\n4. WRF process: generation of WRF input files by REAL, and running of WRF model\n5. EMEP model: running of EMEP chemistry and transport model\n\nSteps 1 and 3 require you to register with the CDS service, in order to download ERA5 data\nbefore using in the WPS process.\nSteps 2 and 5 require you to download extra input data - the instructions on how to do this\nare included in the README.txt files in the relevant input data directories.\n\nA full workflow for all steps is provided here. But each separate step can by run on it's \nown too, following the instructions given below. We recommend running step 4 first, to \nexplore how the REAL &amp; WRF workflow works, before trying the other steps.\n\n### 1. ERA5 download.\n\nBefore running the ERA5 download tool, ensure that you have reqistered for the CDS service, \nsigned the ERA5 licensing agreement, and saved the CDS API key (`.cdsapirc`) in your \nworking directory.\n\nTo run the ERA5 download tool use the following command:\n```\ncwltool [--cachdir CACHE] [--singularity] workflows/era5_workflow.cwl example_workflow_configurations/era5_download_settings.yaml\n```\nNote that the `--cachedir CACHE` option sets the working directory cache, which enables the\nreuse of any steps previously run (and the restarting of the workflow from this point).\nThe `--singularity` option is needed if you are using singularity instead of docker.\n\n### 2. WPS: Geogrid geography file creation\n\nBefore running the geogrid tool you will need to download the geography data from the\n[UCAR website](https://www2.mmm.ucar.edu/wrf/users/download/get_sources_wps_geog.html).\nThese should be extracted into the `input_files/geogrid_geog_input` directory.\n\nTo run the geogrid program use the following command:\n```\ncwltool [--cachdir CACHE] [--singularity] workflows/geogrid_workflow.cwl example_workflow_configurations/wps_geogrid_cwl_settings.yaml\n```\n\n### 3. WPS: Creation of meteorology input files\n\nBefore running the WPS process you will have to download the ERA5 datafiles (which will be\ncalled `preslev_[YYYYMMDD].grib` and `surface_[YYYYMMDD].grib`) and copy these to the directory\n`input_files/wps_era5_input`. If you have also run geogrid in step 2 you can replace the \n`geo_em.d01.nc` file in the `input_files/wps_geogrid_input` directory with the file that \ngeogrid created.\n\nTo run the wps metgrid process use the following command:\n```\ncwltool [--cachdir CACHE] [--singularity] workflows/wps_workflow.cwl example_workflow_configurations/wps_metgrid_cwl_settings.yaml\n```\n\n### 4. WRF: Creation of WRF input files, and running WRF model\n\nThe WRF model can be run without any prepreparation, except for the downloading of the \ninput data from Zenodo. However, if you have created new meteorology files (`met_em*`) using\nWPS you can replace the files in the `input_files/wrf_met_input` directory with these.\n\nTo run the WRF process (including REAL) use the following command:\n```\ncwltool [--cachdir CACHE] [--singularity] workflows/wrf_workflow.cwl example_workflow_configurations/wrf_real_cwl_settings.yaml\n``` \n\n### 5. EMEP: Running EMEP chemistry and transport model\n\nBefore running the EMEP model you will need to download the EMEP input dataset. This can be\ndone using the `catalog.py` tool, following the instructions in the `input_files/emep_input/README.txt`\nfile. If you have run WRF you can also replace the `wrfout*` data files in the \n`input_Files/emep_wrf_input` directory with those you have created.\n\nTo run the EMEP model use the following command:\n```\ncwltool [--cachdir CACHE] [--singularity] workflows/emep_workflow.cwl example_workflow_configurations/emep_cwl_settings.yaml\n```\n\n### Full Workflow\n\nBefore running the full workflow make sure you have carried out the setup tasks described\nabove.\n\nTo run the full workflow use the following command:\n```\ncwltool [--cachdir CACHE] [--singularity] wrf_emep_full_workflow.cwl example_workflow_configurations/wrf_emep_full_workflow_cwl_settings.yaml\n```\n\n## Notes\n\n### WRF filenames\n\nIn order to work with singularity, all filenames need to exclude special characters.\nTo ensure that all WRF filenames comply with this requirement, you will need to add the \n`nocolons = .true.` option to your WPS, REAL and WRF namelists to ensure this.\n\n### MPI parallel processing\n\nThe WPS processes all run in single thread mode. REAL, WRF and EMEP have been compiled with\nMPI support. The default cores for each of these is 2, 9 and 9, respectively. The \nsettings file can be edited to modify these requirements.\n\n### Caching intermediate workflow steps\n\nTo cache the data from individual steps you can use the `--cachedir ` optional flag.\n\n\n## License and Copyright \n\nThese workflow scripts have been developed by the [Research IT](https://research-it.manchester.ac.uk/) \nat the [University of Manchester](https://www.manchester.ac.uk/).\n\nCopyright 2023 [University of Manchester, UK](https://www.manchester.ac.uk/).\n\nLicensed under the MIT license, see the LICENSE file for details.",
+      "name": "WRF / EMEP Linear Workflow",
+      "url": "https://workflowhub.eu/workflows/455?version=1",
+      "keywords": "",
+      "version": 1,
+      "license": "https://spdx.org/licenses/MIT",
+      "creator": {
+        "@id": "https://workflowhub.eu/people/37"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/103"
+      },
+      "dateCreated": "2023-04-12T12:04:44Z",
+      "dateModified": "2023-04-12T12:45:16Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#wrf___emep_linear_workflow-inputs-start_year"
+        },
+        {
+          "@id": "#wrf___emep_linear_workflow-inputs-start_month"
+        },
+        {
+          "@id": "#wrf___emep_linear_workflow-inputs-start_day"
+        },
+        {
+          "@id": "#wrf___emep_linear_workflow-inputs-end_year"
+        },
+        {
+          "@id": "#wrf___emep_linear_workflow-inputs-end_month"
+        },
+        {
+          "@id": "#wrf___emep_linear_workflow-inputs-end_day"
+        },
+        {
+          "@id": "#wrf___emep_linear_workflow-inputs-north_latitude"
+        },
+        {
+          "@id": "#wrf___emep_linear_workflow-inputs-south_latitude"
+        },
+        {
+          "@id": "#wrf___emep_linear_workflow-inputs-west_longitude"
+        },
+        {
+          "@id": "#wrf___emep_linear_workflow-inputs-east_longitude"
+        },
+        {
+          "@id": "#wrf___emep_linear_workflow-inputs-cdskey"
+        },
+        {
+          "@id": "#wrf___emep_linear_workflow-inputs-https_proxy"
+        },
+        {
+          "@id": "#wrf___emep_linear_workflow-inputs-geodir"
+        },
+        {
+          "@id": "#wrf___emep_linear_workflow-inputs-namelist_geogrid"
+        },
+        {
+          "@id": "#wrf___emep_linear_workflow-inputs-geotable"
+        },
+        {
+          "@id": "#wrf___emep_linear_workflow-inputs-namelist_ungrib_atm"
+        },
+        {
+          "@id": "#wrf___emep_linear_workflow-inputs-vtable_atm"
+        },
+        {
+          "@id": "#wrf___emep_linear_workflow-inputs-outname_atm"
+        },
+        {
+          "@id": "#wrf___emep_linear_workflow-inputs-namelist_ungrib_sfc"
+        },
+        {
+          "@id": "#wrf___emep_linear_workflow-inputs-vtable_sfc"
+        },
+        {
+          "@id": "#wrf___emep_linear_workflow-inputs-outname_sfc"
+        },
+        {
+          "@id": "#wrf___emep_linear_workflow-inputs-namelist_metgrid"
+        },
+        {
+          "@id": "#wrf___emep_linear_workflow-inputs-generate_metdir"
+        },
+        {
+          "@id": "#wrf___emep_linear_workflow-inputs-namelist_real"
+        },
+        {
+          "@id": "#wrf___emep_linear_workflow-inputs-namelist_wrf"
+        },
+        {
+          "@id": "#wrf___emep_linear_workflow-inputs-realcores"
+        },
+        {
+          "@id": "#wrf___emep_linear_workflow-inputs-wrfcores"
+        },
+        {
+          "@id": "#wrf___emep_linear_workflow-inputs-generate_rundir"
+        },
+        {
+          "@id": "#wrf___emep_linear_workflow-inputs-namelist_emep"
+        },
+        {
+          "@id": "#wrf___emep_linear_workflow-inputs-inputdir_emep"
+        },
+        {
+          "@id": "#wrf___emep_linear_workflow-inputs-runlabel_emep"
+        },
+        {
+          "@id": "#wrf___emep_linear_workflow-inputs-metdir_name"
+        },
+        {
+          "@id": "#wrf___emep_linear_workflow-inputs-emepcores"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#wrf___emep_linear_workflow-outputs-wrfout"
+        },
+        {
+          "@id": "#wrf___emep_linear_workflow-outputs-emepout"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "workflow-455-70c6a6016eeb4434a3ad82af7908b83d4ea37ce7-diagram.svg",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 37708
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-1248-3594",
+      "@type": "Person",
+      "name": "Douglas Lowe",
+      "identifier": "https://orcid.org/0000-0002-1248-3594"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/37",
+      "@type": "Person",
+      "name": "Douglas Lowe"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/103",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Air Quality Prediction"
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#wrf___emep_linear_workflow-inputs-start_year",
+      "@type": "FormalParameter",
+      "name": "Year for starting date",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#wrf___emep_linear_workflow-inputs-start_month",
+      "@type": "FormalParameter",
+      "name": "Month for starting date",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#wrf___emep_linear_workflow-inputs-start_day",
+      "@type": "FormalParameter",
+      "name": "Day for starting date",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#wrf___emep_linear_workflow-inputs-end_year",
+      "@type": "FormalParameter",
+      "name": "Year for end date",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#wrf___emep_linear_workflow-inputs-end_month",
+      "@type": "FormalParameter",
+      "name": "Month for end date",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#wrf___emep_linear_workflow-inputs-end_day",
+      "@type": "FormalParameter",
+      "name": "Day for end date",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#wrf___emep_linear_workflow-inputs-north_latitude",
+      "@type": "FormalParameter",
+      "name": "Latitude for top of domain",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#wrf___emep_linear_workflow-inputs-south_latitude",
+      "@type": "FormalParameter",
+      "name": "Latitude for bottom of domain",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#wrf___emep_linear_workflow-inputs-west_longitude",
+      "@type": "FormalParameter",
+      "name": "Longitude for left-edge of domain",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#wrf___emep_linear_workflow-inputs-east_longitude",
+      "@type": "FormalParameter",
+      "name": "Longitude for right-edge of domain",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#wrf___emep_linear_workflow-inputs-cdskey",
+      "@type": "FormalParameter",
+      "name": "API key for CDS service",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#wrf___emep_linear_workflow-inputs-https_proxy",
+      "@type": "FormalParameter",
+      "name": "HTTPS proxy information, if needed",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#wrf___emep_linear_workflow-inputs-geodir",
+      "@type": "FormalParameter",
+      "name": "Geographic inputs for geogrid",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#wrf___emep_linear_workflow-inputs-namelist_geogrid",
+      "@type": "FormalParameter",
+      "name": "Geogrid namelist",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#wrf___emep_linear_workflow-inputs-geotable",
+      "@type": "FormalParameter",
+      "name": "Geogrid data table",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#wrf___emep_linear_workflow-inputs-namelist_ungrib_atm",
+      "@type": "FormalParameter",
+      "name": "Configuration File",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#wrf___emep_linear_workflow-inputs-vtable_atm",
+      "@type": "FormalParameter",
+      "name": "grib variable table",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#wrf___emep_linear_workflow-inputs-outname_atm",
+      "@type": "FormalParameter",
+      "name": "outname_atm",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#wrf___emep_linear_workflow-inputs-namelist_ungrib_sfc",
+      "@type": "FormalParameter",
+      "name": "Configuration File",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#wrf___emep_linear_workflow-inputs-vtable_sfc",
+      "@type": "FormalParameter",
+      "name": "grib variable table",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#wrf___emep_linear_workflow-inputs-outname_sfc",
+      "@type": "FormalParameter",
+      "name": "outname_sfc",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#wrf___emep_linear_workflow-inputs-namelist_metgrid",
+      "@type": "FormalParameter",
+      "name": "metgrid configuration",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#wrf___emep_linear_workflow-inputs-generate_metdir",
+      "@type": "FormalParameter",
+      "name": "generate_metdir",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#wrf___emep_linear_workflow-inputs-namelist_real",
+      "@type": "FormalParameter",
+      "name": "Real preprocessor Configuration File",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#wrf___emep_linear_workflow-inputs-namelist_wrf",
+      "@type": "FormalParameter",
+      "name": "WRF Configuration File",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#wrf___emep_linear_workflow-inputs-realcores",
+      "@type": "FormalParameter",
+      "name": "realcores",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#wrf___emep_linear_workflow-inputs-wrfcores",
+      "@type": "FormalParameter",
+      "name": "wrfcores",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#wrf___emep_linear_workflow-inputs-generate_rundir",
+      "@type": "FormalParameter",
+      "name": "generate_rundir",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#wrf___emep_linear_workflow-inputs-namelist_emep",
+      "@type": "FormalParameter",
+      "name": "EMEP configuration file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#wrf___emep_linear_workflow-inputs-inputdir_emep",
+      "@type": "FormalParameter",
+      "name": "EMEP Input Files",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#wrf___emep_linear_workflow-inputs-runlabel_emep",
+      "@type": "FormalParameter",
+      "name": "EMEP run label, for output files, should match 'runlabel1' in namelist",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#wrf___emep_linear_workflow-inputs-metdir_name",
+      "@type": "FormalParameter",
+      "name": "Directory name for WRF input Files, should match 'meteo' base-directory in namelist",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#wrf___emep_linear_workflow-inputs-emepcores",
+      "@type": "FormalParameter",
+      "name": "emepcores",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#wrf___emep_linear_workflow-outputs-wrfout",
+      "@type": "FormalParameter",
+      "name": "output files",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#wrf___emep_linear_workflow-outputs-emepout",
+      "@type": "FormalParameter",
+      "name": "output files",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for WRF / EMEP Linear Workflow</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/455/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/455/ro_crate?version=1</a>
+
+
+  <img src="workflow-455-70c6a6016eeb4434a3ad82af7908b83d4ea37ce7-diagram.svg" style="width: 100%;"/>
+
+<p>
+  # WRF/EMEP Linear Workflow
+
+Example Common Workflow Language (CWL) workflow and tool descriptors for running the 
+Weather Research and Forecase (WRF) and EMEP models.
+
+This workflow is designed for a single model domain. Example datasets for testing this 
+workflow can be downloaded from Zenodo.
+
+
+## Requirements:
+
+* docker or singularity
+* conda
+* cwltool
+* Toil - optional, useful for running on HPC or distributed computing systems
+
+### CWL / Toil Installation:
+
+The workflow runner (either cwltool, or Toil) can be installed using either conda or pip.
+Environment files for conda are included, and can be used as shown below:
+* cwltool only:
+  * `conda env create --file install/env_cwlrunner.yml --name cwl`
+* Toil &amp; cwltool:
+  * `conda env create --file install/env_toil.yml --name toil`
+
+### Setup for Example Workflow
+
+* Download the example dataset from Zenodo: https://doi.org/10.5281/zenodo.7817216
+* Extract into the `input_files` directory:
+  * `tar -zxvf wrf_emep_UK_example_inputs.tar.gz -C input_files --strip-components=1`
+
+## Running the Workflow
+
+The full workflow is broken into several logical steps:
+1. ERA5 download
+2. WPS 1st step: Geogrid geography file creation
+3. WPS process: ungribbing of ERA5 data, and running of metgrid to produce meteorology files.
+4. WRF process: generation of WRF input files by REAL, and running of WRF model
+5. EMEP model: running of EMEP chemistry and transport model
+
+Steps 1 and 3 require you to register with the CDS service, in order to download ERA5 data
+before using in the WPS process.
+Steps 2 and 5 require you to download extra input data - the instructions on how to do this
+are included in the README.txt files in the relevant input data directories.
+
+A full workflow for all steps is provided here. But each separate step can by run on it's 
+own too, following the instructions given below. We recommend running step 4 first, to 
+explore how the REAL &amp; WRF workflow works, before trying the other steps.
+
+### 1. ERA5 download.
+
+Before running the ERA5 download tool, ensure that you have reqistered for the CDS service, 
+signed the ERA5 licensing agreement, and saved the CDS API key (`.cdsapirc`) in your 
+working directory.
+
+To run the ERA5 download tool use the following command:
+```
+cwltool [--cachdir CACHE] [--singularity] workflows/era5_workflow.cwl example_workflow_configurations/era5_download_settings.yaml
+```
+Note that the `--cachedir CACHE` option sets the working directory cache, which enables the
+reuse of any steps previously run (and the restarting of the workflow from this point).
+The `--singularity` option is needed if you are using singularity instead of docker.
+
+### 2. WPS: Geogrid geography file creation
+
+Before running the geogrid tool you will need to download the geography data from the
+[UCAR website](https://www2.mmm.ucar.edu/wrf/users/download/get_sources_wps_geog.html).
+These should be extracted into the `input_files/geogrid_geog_input` directory.
+
+To run the geogrid program use the following command:
+```
+cwltool [--cachdir CACHE] [--singularity] workflows/geogrid_workflow.cwl example_workflow_configurations/wps_geogrid_cwl_settings.yaml
+```
+
+### 3. WPS: Creation of meteorology input files
+
+Before running the WPS process you will have to download the ERA5 datafiles (which will be
+called `preslev_[YYYYMMDD].grib` and `surface_[YYYYMMDD].grib`) and copy these to the directory
+`input_files/wps_era5_input`. If you have also run geogrid in step 2 you can replace the 
+`geo_em.d01.nc` file in the `input_files/wps_geogrid_input` directory with the file that 
+geogrid created.
+
+To run the wps metgrid process use the following command:
+```
+cwltool [--cachdir CACHE] [--singularity] workflows/wps_workflow.cwl example_workflow_configurations/wps_metgrid_cwl_settings.yaml
+```
+
+### 4. WRF: Creation of WRF input files, and running WRF model
+
+The WRF model can be run without any prepreparation, except for the downloading of the 
+input data from Zenodo. However, if you have created new meteorology files (`met_em*`) using
+WPS you can replace the files in the `input_files/wrf_met_input` directory with these.
+
+To run the WRF process (including REAL) use the following command:
+```
+cwltool [--cachdir CACHE] [--singularity] workflows/wrf_workflow.cwl example_workflow_configurations/wrf_real_cwl_settings.yaml
+``` 
+
+### 5. EMEP: Running EMEP chemistry and transport model
+
+Before running the EMEP model you will need to download the EMEP input dataset. This can be
+done using the `catalog.py` tool, following the instructions in the `input_files/emep_input/README.txt`
+file. If you have run WRF you can also replace the `wrfout*` data files in the 
+`input_Files/emep_wrf_input` directory with those you have created.
+
+To run the EMEP model use the following command:
+```
+cwltool [--cachdir CACHE] [--singularity] workflows/emep_workflow.cwl example_workflow_configurations/emep_cwl_settings.yaml
+```
+
+### Full Workflow
+
+Before running the full workflow make sure you have carried out the setup tasks described
+above.
+
+To run the full workflow use the following command:
+```
+cwltool [--cachdir CACHE] [--singularity] wrf_emep_full_workflow.cwl example_workflow_configurations/wrf_emep_full_workflow_cwl_settings.yaml
+```
+
+## Notes
+
+### WRF filenames
+
+In order to work with singularity, all filenames need to exclude special characters.
+To ensure that all WRF filenames comply with this requirement, you will need to add the 
+`nocolons = .true.` option to your WPS, REAL and WRF namelists to ensure this.
+
+### MPI parallel processing
+
+The WPS processes all run in single thread mode. REAL, WRF and EMEP have been compiled with
+MPI support. The default cores for each of these is 2, 9 and 9, respectively. The 
+settings file can be edited to modify these requirements.
+
+### Caching intermediate workflow steps
+
+To cache the data from individual steps you can use the `--cachedir ` optional flag.
+
+
+## License and Copyright 
+
+These workflow scripts have been developed by the [Research IT](https://research-it.manchester.ac.uk/) 
+at the [University of Manchester](https://www.manchester.ac.uk/).
+
+Copyright 2023 [University of Manchester, UK](https://www.manchester.ac.uk/).
+
+Licensed under the MIT license, see the LICENSE file for details.
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://orcid.org/0000-0002-1248-3594" target="_blank">Douglas Lowe</a></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>MIT</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_wrf_emep_full_workflow.cwl">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="wrf_emep_full_workflow.cwl">WRF / EMEP Linear Workflow</a>
+      
+        <br/>Size: 4306 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_workflow-455-70c6a6016eeb4434a3ad82af7908b83d4ea37ce7-diagram.svg">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="workflow-455-70c6a6016eeb4434a3ad82af7908b83d4ea37ce7-diagram.svg">workflow-455-70c6a6016eeb4434a3ad82af7908b83d4ea37ce7-diagram.svg</a>
+      
+        <br/>Size: 37708 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

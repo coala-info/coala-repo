@@ -1,0 +1,43 @@
+# Workflow 3: Functional Information (quick) CWL Workflow Report
+
+### Metadata
+- **Docker Image**: N/A
+- **Homepage**: https://training.galaxyproject.org
+- **Package**: https://workflowhub.eu/workflows/1447
+- **Validation**: N/A
+
+- **RO-Crate download**: https://workflowhub.eu/workflows/1447/ro_crate?version=2
+- **Conda**: N/A
+- **Total Downloads**: 463
+- **Last updated**: 2025-07-14
+- **GitHub**: N/A
+- **Stars**: N/A
+- **Version**: 2
+- **License**: MIT
+- **Workflow type**: Galaxy
+- **Main workflow (WorkflowHub):** `workflow3-functional-information-quick.ga` (Main Workflow)
+- **Project**: Galaxy Training Network
+- **Views**: 2457
+- **Discussion / source**: https://matrix.to/#/%23galaxyproject_admin:gitter.im
+
+## Description
+
+Metatranscriptomics analysis using microbiome RNA-seq data (short)
+
+## Associated Tutorial
+
+This workflows is part of the tutorial [Metatranscriptomics analysis using microbiome RNA-seq data (short)](https://training.galaxyproject.org/training-material/topics/microbiome/tutorials/metatranscriptomics-short/tutorial.html), available in the [GTN](https://training.galaxyproject.org)
+
+## Features
+
+* Includes [Galaxy Workflow Tests](https://training.galaxyproject.org/training-material/faqs/gtn/workflow_run_test.html)
+
+## Thanks to...
+
+**Workflow Author(s)**: Bérénice Batut, Pratik Jagtap, Subina Mehta, Ray Sajulga, Emma Leith, Praveen Kumar, Saskia Hiltemann, Paul Zierep
+
+**Tutorial Author(s)**: [Pratik Jagtap](https://training.galaxyproject.org/training-material/hall-of-fame/pratikdjagtap/), [Subina Mehta](https://training.galaxyproject.org/training-material/hall-of-fame/subinamehta/), [Ray Sajulga](https://training.galaxyproject.org/training-material/hall-of-fame/jraysajulga/), [Bérénice Batut](https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/), [Emma Leith](https://training.galaxyproject.org/training-material/hall-of-fame/emmaleith/), [Praveen Kumar](https://training.galaxyproject.org/training-material/hall-of-fame/pravs3683/), [Saskia Hiltemann](https://training.galaxyproject.org/training-material/hall-of-fame/shiltemann/), [Paul Zierep](https://training.galaxyproject.org/training-material/hall-of-fame/paulzierep/), [Engy Nasr](https://training.galaxyproject.org/training-material/hall-of-fame/EngyNasr/)
+
+**Tutorial Contributor(s)**: [Christine Oger](https://training.galaxyproject.org/training-material/hall-of-fame/ogerdfx/), [Bérénice Batut](https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/), [Helena Rasche](https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/), [Saskia Hiltemann](https://training.galaxyproject.org/training-material/hall-of-fame/shiltemann/), [Paul Zierep](https://training.galaxyproject.org/training-material/hall-of-fame/paulzierep/), [Björn Grüning](https://training.galaxyproject.org/training-material/hall-of-fame/bgruening/)
+
+[![gtn star logo followed by the word workflows](https://training.galaxyproject.org/training-material/assets/branding/gtn-workflows.png)](https://training.galaxyproject.org/training-material/)

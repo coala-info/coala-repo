@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for beacon-omop-worker-survival</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "beacon-omop-worker-survival.cwl"
+      },
+      "datePublished": "2024-10-03 14:50:36 +0100",
+      "author": [
+
+      ],
+      "license": "MIT",
+      "identifier": "https://workflowhub.eu/workflows/1180?version=1",
+      "url": "https://workflowhub.eu/workflows/1180/ro_crate?version=1",
+      "name": "Research Object Crate for beacon-omop-worker-survival",
+      "description": "# beacon-omop-worker-survival-analysis",
+      "isBasedOn": "https://github.com/Health-Informatics-UoN/beacon-omop-worker-workflows.git",
+      "sdDatePublished": "2026-03-24 01:03:17 +0000",
+      "hasPart": [
+        {
+          "@id": "beacon-omop-worker-survival.cwl"
+        },
+        {
+          "@id": "workflow-1180-8f28313e98c028e2ceeb813c1ea623a95a6e50ed-diagram.svg"
+        }
+      ]
+    },
+    {
+      "@id": "beacon-omop-worker-survival.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 690,
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "image": {
+        "@id": "workflow-1180-8f28313e98c028e2ceeb813c1ea623a95a6e50ed-diagram.svg"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "# beacon-omop-worker-survival-analysis",
+      "name": "beacon-omop-worker-survival",
+      "url": "https://workflowhub.eu/workflows/1180?version=1",
+      "keywords": "",
+      "version": 1,
+      "license": "https://spdx.org/licenses/MIT",
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/129"
+      },
+      "dateCreated": "2024-10-10T12:40:05Z",
+      "dateModified": "2024-10-10T12:40:05Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#beacon_omop_worker_survival-inputs-vocabulary"
+        },
+        {
+          "@id": "#beacon_omop_worker_survival-inputs-output_name"
+        },
+        {
+          "@id": "#beacon_omop_worker_survival-inputs-strata"
+        }
+      ],
+      "output": {
+        "@id": "#beacon_omop_worker_survival-outputs-output_file"
+      },
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "workflow-1180-8f28313e98c028e2ceeb813c1ea623a95a6e50ed-diagram.svg",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 2369
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/129",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "TRE-FX"
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#beacon_omop_worker_survival-inputs-vocabulary",
+      "@type": "FormalParameter",
+      "name": "vocabulary",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#beacon_omop_worker_survival-inputs-output_name",
+      "@type": "FormalParameter",
+      "name": "output_name",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#beacon_omop_worker_survival-inputs-strata",
+      "@type": "FormalParameter",
+      "name": "strata",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#beacon_omop_worker_survival-outputs-output_file",
+      "@type": "FormalParameter",
+      "name": "output_file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for beacon-omop-worker-survival</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/1180/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/1180/ro_crate?version=1</a>
+
+
+  <img src="workflow-1180-8f28313e98c028e2ceeb813c1ea623a95a6e50ed-diagram.svg" style="width: 100%;"/>
+
+<p>
+  # beacon-omop-worker-survival-analysis
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>MIT</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_beacon-omop-worker-survival.cwl">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="beacon-omop-worker-survival.cwl">beacon-omop-worker-survival</a>
+      
+        <br/>Size: 690 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_workflow-1180-8f28313e98c028e2ceeb813c1ea623a95a6e50ed-diagram.svg">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="workflow-1180-8f28313e98c028e2ceeb813c1ea623a95a6e50ed-diagram.svg">workflow-1180-8f28313e98c028e2ceeb813c1ea623a95a6e50ed-diagram.svg</a>
+      
+        <br/>Size: 2369 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,194 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "stringtie.ga"
+      },
+      "datePublished": "2023-05-26 00:14:22 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-5752-2155"
+        }
+      ],
+      "license": "CC-BY-NC-4.0",
+      "identifier": "https://workflowhub.eu/workflows/483?version=1",
+      "url": "https://workflowhub.eu/workflows/483/ro_crate?version=1",
+      "name": "Research Object Crate for StringTie workflow",
+      "description": "Abstract CWL Automatically generated from the Galaxy workflow file: Copy of Genome-wide alternative splicing analysis",
+      "sdDatePublished": "2026-03-24 17:58:15 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "stringtie.ga"
+        },
+        {
+          "@id": "workflow-483-3609e473753414d319db849a12eea1230c3c7d75-diagram.svg"
+        },
+        {
+          "@id": "main_workflow.cwl"
+        }
+      ]
+    },
+    {
+      "@id": "stringtie.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 23236,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "workflow-483-3609e473753414d319db849a12eea1230c3c7d75-diagram.svg"
+      },
+      "subjectOf": {
+        "@id": "main_workflow.cwl"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Abstract CWL Automatically generated from the Galaxy workflow file: Copy of Genome-wide alternative splicing analysis",
+      "name": "StringTie workflow",
+      "url": "https://workflowhub.eu/workflows/483?version=1",
+      "keywords": "",
+      "version": 1,
+      "license": "https://spdx.org/licenses/CC-BY-NC-4.0",
+      "creator": {
+        "@id": "https://workflowhub.eu/people/247"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/12"
+      },
+      "dateCreated": "2023-05-25T23:15:06Z",
+      "dateModified": "2023-05-25T23:15:06Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#stringtie_workflow-inputs-Genome%20annotation"
+        },
+        {
+          "@id": "#stringtie_workflow-inputs-Reference%20genome"
+        }
+      ],
+      "output": [
+
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "workflow-483-3609e473753414d319db849a12eea1230c3c7d75-diagram.svg",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 15124
+    },
+    {
+      "@id": "main_workflow.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "HowTo"
+      ],
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "contentSize": 5852
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-5752-2155",
+      "@type": "Person",
+      "name": "Cristóbal Gallardo",
+      "identifier": "https://orcid.org/0000-0002-5752-2155"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/247",
+      "@type": "Person",
+      "name": "Cristóbal Gallardo"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/12",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Galaxy Training Network"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#stringtie_workflow-inputs-Genome annotation",
+      "@type": "FormalParameter",
+      "name": "Genome annotation",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#stringtie_workflow-inputs-Reference genome",
+      "@type": "FormalParameter",
+      "name": "Reference genome",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

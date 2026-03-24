@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Purge duplicates from hifiasm assembly v1.0</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-Purge_duplicates_from_hifiasm_assembly_v1.0.ga"
+      },
+      "datePublished": "2022-09-19 01:48:46 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0003-2439-8650"
+        },
+        {
+          "@id": "#creator-1"
+        }
+      ],
+      "license": "GPL-3.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.237.2",
+      "url": "https://workflowhub.eu/workflows/237/ro_crate?version=2",
+      "name": "Research Object Crate for Purge duplicates from hifiasm assembly v1.0",
+      "description": "# Purge-duplicates-from-hifiasm-assembly\n\n## General recommendations for using `Purge-duplicates-from-hifiasm-assembly`\n\nPlease see the [`Genome assembly with hifiasm on Galaxy Australia`](https://australianbiocommons.github.io/how-to-guides/genome_assembly/hifi_assembly) guide.\n\n## Acknowledgements\n\nThe workflow &amp; the [doc_guidelines template used](https://github.com/AustralianBioCommons/doc_guidelines) are \nsupported by the Australian BioCommons via Bioplatforms Australia funding, the Australian Research Data Commons \n(https://doi.org/10.47486/PL105) and the Queensland Government RICF programme. Bioplatforms Australia and the \nAustralian Research Data Commons are enabled by the National Collaborative Research Infrastructure Strategy (NCRIS).\n\n\n\n",
+      "isBasedOn": "https://github.com/AustralianBioCommons/Purge-duplicates-from-hifiasm-assembly",
+      "sdDatePublished": "2026-03-24 18:01:44 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-Purge_duplicates_from_hifiasm_assembly_v1.0.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-Purge_duplicates_from_hifiasm_assembly_v1.0.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 23112,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "# Purge-duplicates-from-hifiasm-assembly\n\n## General recommendations for using `Purge-duplicates-from-hifiasm-assembly`\n\nPlease see the [`Genome assembly with hifiasm on Galaxy Australia`](https://australianbiocommons.github.io/how-to-guides/genome_assembly/hifi_assembly) guide.\n\n## Acknowledgements\n\nThe workflow &amp; the [doc_guidelines template used](https://github.com/AustralianBioCommons/doc_guidelines) are \nsupported by the Australian BioCommons via Bioplatforms Australia funding, the Australian Research Data Commons \n(https://doi.org/10.47486/PL105) and the Queensland Government RICF programme. Bioplatforms Australia and the \nAustralian Research Data Commons are enabled by the National Collaborative Research Infrastructure Strategy (NCRIS).\n\n\n\n",
+      "name": "Purge duplicates from hifiasm assembly v1.0",
+      "url": "https://workflowhub.eu/workflows/237?version=2",
+      "keywords": "Assembly, purge_dups, HiFi",
+      "version": 2,
+      "license": "https://spdx.org/licenses/GPL-3.0",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/139"
+        },
+        {
+          "@id": "#Gareth%20Price"
+        }
+      ],
+      "producer": [
+        {
+          "@id": "https://workflowhub.eu/projects/54"
+        },
+        {
+          "@id": "https://workflowhub.eu/projects/30"
+        }
+      ],
+      "dateCreated": "2022-10-17T02:53:20Z",
+      "dateModified": "2023-01-30T18:21:31Z",
+      "isPartOf": [
+        {
+          "@id": "https://workflowhub.eu/collections/5"
+        },
+        {
+          "@id": "https://workflowhub.eu/collections/6"
+        }
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.237.2",
+      "isBasedOn": "https://workflowhub.eu/workflows/237?version=1",
+      "input": [
+        {
+          "@id": "#purge_duplicates_from_hifiasm_assembly_v1_0-inputs-HiFi%20reads%20as%20FASTQ"
+        },
+        {
+          "@id": "#purge_duplicates_from_hifiasm_assembly_v1_0-inputs-HiFiASM%201o%20assembly"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#purge_duplicates_from_hifiasm_assembly_v1_0-outputs-_anonymous_output_1"
+        },
+        {
+          "@id": "#purge_duplicates_from_hifiasm_assembly_v1_0-outputs-_anonymous_output_2"
+        },
+        {
+          "@id": "#purge_duplicates_from_hifiasm_assembly_v1_0-outputs-_anonymous_output_3"
+        },
+        {
+          "@id": "#purge_duplicates_from_hifiasm_assembly_v1_0-outputs-_anonymous_output_4"
+        },
+        {
+          "@id": "#purge_duplicates_from_hifiasm_assembly_v1_0-outputs-Purge%20overlaps%20on%20input%20dataset(s):%20purge_dups%20log%20file"
+        },
+        {
+          "@id": "#purge_duplicates_from_hifiasm_assembly_v1_0-outputs-Purge%20overlaps%20on%20input%20dataset(s):%20purge_dups%20bed%20file"
+        },
+        {
+          "@id": "#purge_duplicates_from_hifiasm_assembly_v1_0-outputs-_anonymous_output_5"
+        },
+        {
+          "@id": "#purge_duplicates_from_hifiasm_assembly_v1_0-outputs-_anonymous_output_6"
+        },
+        {
+          "@id": "#purge_duplicates_from_hifiasm_assembly_v1_0-outputs-_anonymous_output_7"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-2439-8650",
+      "@type": "Person",
+      "name": "Gareth Price",
+      "identifier": "https://orcid.org/0000-0003-2439-8650"
+    },
+    {
+      "@id": "#creator-1",
+      "@type": "Person",
+      "name": "Gareth Price"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/139",
+      "@type": "Person",
+      "name": "Gareth Price"
+    },
+    {
+      "@id": "#Gareth Price",
+      "@type": "Person",
+      "name": "Gareth Price"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/54",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Galaxy Australia"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/30",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Australian BioCommons"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/5",
+      "@type": "Collection",
+      "name": "HiFi genome assembly on Galaxy"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/6",
+      "@type": "Collection",
+      "name": "BioCommons ‘Bring Your Own Data’ Expansion Project"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#purge_duplicates_from_hifiasm_assembly_v1_0-inputs-HiFi reads as FASTQ",
+      "@type": "FormalParameter",
+      "name": "HiFi reads as FASTQ",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#purge_duplicates_from_hifiasm_assembly_v1_0-inputs-HiFiASM 1o assembly",
+      "@type": "FormalParameter",
+      "name": "HiFiASM 1o assembly",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#purge_duplicates_from_hifiasm_assembly_v1_0-outputs-_anonymous_output_1",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#purge_duplicates_from_hifiasm_assembly_v1_0-outputs-_anonymous_output_2",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#purge_duplicates_from_hifiasm_assembly_v1_0-outputs-_anonymous_output_3",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_3",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#purge_duplicates_from_hifiasm_assembly_v1_0-outputs-_anonymous_output_4",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_4",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#purge_duplicates_from_hifiasm_assembly_v1_0-outputs-Purge overlaps on input dataset(s): purge_dups log file",
+      "@type": "FormalParameter",
+      "name": "Purge overlaps on input dataset(s): purge_dups log file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#purge_duplicates_from_hifiasm_assembly_v1_0-outputs-Purge overlaps on input dataset(s): purge_dups bed file",
+      "@type": "FormalParameter",
+      "name": "Purge overlaps on input dataset(s): purge_dups bed file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#purge_duplicates_from_hifiasm_assembly_v1_0-outputs-_anonymous_output_5",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_5",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#purge_duplicates_from_hifiasm_assembly_v1_0-outputs-_anonymous_output_6",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_6",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#purge_duplicates_from_hifiasm_assembly_v1_0-outputs-_anonymous_output_7",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_7",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Purge duplicates from hifiasm assembly v1.0</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/237/ro_crate?version=2" target="_blank">https://workflowhub.eu/workflows/237/ro_crate?version=2</a>
+
+
+<p>
+  # Purge-duplicates-from-hifiasm-assembly
+
+## General recommendations for using `Purge-duplicates-from-hifiasm-assembly`
+
+Please see the [`Genome assembly with hifiasm on Galaxy Australia`](https://australianbiocommons.github.io/how-to-guides/genome_assembly/hifi_assembly) guide.
+
+## Acknowledgements
+
+The workflow &amp; the [doc_guidelines template used](https://github.com/AustralianBioCommons/doc_guidelines) are 
+supported by the Australian BioCommons via Bioplatforms Australia funding, the Australian Research Data Commons 
+(https://doi.org/10.47486/PL105) and the Queensland Government RICF programme. Bioplatforms Australia and the 
+Australian Research Data Commons are enabled by the National Collaborative Research Infrastructure Strategy (NCRIS).
+
+
+
+
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://orcid.org/0000-0003-2439-8650" target="_blank">Gareth Price</a>, Gareth Price</dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>GPL-3.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-Purge_duplicates_from_hifiasm_assembly_v1.0.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-Purge_duplicates_from_hifiasm_assembly_v1.0.ga">Purge duplicates from hifiasm assembly v1.0</a>
+      
+        <br/>Size: 23112 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

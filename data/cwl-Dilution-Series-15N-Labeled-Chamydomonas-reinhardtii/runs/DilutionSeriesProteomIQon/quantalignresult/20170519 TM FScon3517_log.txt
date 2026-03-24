@@ -1,0 +1,404 @@
+2025-03-03 17:54:14.1782 20170519 TM FScon3517 TRACE Input file: C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\mzlite\20170519 TM FScon3517.mzlite 
+2025-03-03 17:54:14.1782 20170519 TM FScon3517 TRACE Output directory: C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantalignresult 
+2025-03-03 17:54:14.1878 20170519 TM FScon3517 TRACE Parameters: { PerformLabeledQuantification = true
+  PerformLocalWarp = true
+  XicExtraction =
+   { ScanTimeWindow = 2.0
+     MzWindow_Da = Estimate
+     XicProcessing = Wavelet { Borderpadding = None
+                               BorderPadMethod = Random
+                               InternalPaddingMethod = LinearInterpolation
+                               HugeGapPaddingMethod = Zero
+                               HugeGapPaddingDistance = 100.0
+                               MinPeakDistance = None
+                               MinPeakLength = Some 0.1
+                               MaxPeakLength = 1.5
+                               NoiseQuantile = 0.01
+                               MinSNR = 0.01 }
+     TopKPSMs = None }
+  BaseLineCorrection = Some { MaxIterations = 10
+                              Lambda = 6
+                              P = 0.05 } } 
+2025-03-03 17:54:14.1878 20170519 TM FScon3517 TRACE Now performing Quantification using: C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\mzlite\20170519 TM FScon3517.mzlite and C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantalign\20170519 TM FScon3517.align, Results will be written to: C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantalignresult 
+2025-03-03 17:54:14.1878 20170519 TM FScon3517 TRACE outFilePath:C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantalignresult\20170519 TM FScon3517.quant 
+2025-03-03 17:54:14.2035 20170519 TM FScon3517 TRACE outFilePath:C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantalignresult\20170519 TM FScon3517.quant 
+2025-03-03 17:54:14.2119 20170519 TM FScon3517 TRACE plotDirectory:C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantalignresult\20170519 TM FScon3517_plots 
+2025-03-03 17:54:14.2119 20170519 TM FScon3517 TRACE Copy peptide DB into Memory 
+2025-03-03 17:54:14.2119 20170519 TM FScon3517 TRACE Database found at given location (C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeries\db\Chlamy.db) 
+2025-03-03 17:54:43.8311 20170519 TM FScon3517 TRACE Copy peptide DB into Memory: finished 
+2025-03-03 17:54:43.8311 20170519 TM FScon3517 TRACE Get peptide lookUp function 
+2025-03-03 17:54:43.8311 20170519 TM FScon3517 TRACE Get peptide lookUp function: finished 
+2025-03-03 17:54:43.8311 20170519 TM FScon3517 TRACE Init connection to mass spectrum data. 
+2025-03-03 17:54:43.8311 20170519 TM FScon3517 TRACE Create RetentionTime index 
+2025-03-03 17:55:13.3329 20170519 TM FScon3517 TRACE Create RetentionTime index:finished 
+2025-03-03 17:55:13.3570 20170519 TM FScon3517 TRACE Read and sort ms1s 
+2025-03-03 17:55:52.8531 20170519 TM FScon3517 TRACE Read and sort ms1s:finished 
+2025-03-03 17:55:52.8531 20170519 TM FScon3517 TRACE Read alignmentResults 
+2025-03-03 17:55:55.4089 20170519 TM FScon3517 TRACE Read scored alignmentResult:finished 
+2025-03-03 17:55:55.4101 20170519 TM FScon3517 TRACE Read alignmentResults 
+2025-03-03 17:55:57.2827 20170519 TM FScon3517 TRACE Read scored alignmentResult:finished 
+2025-03-03 17:55:57.2827 20170519 TM FScon3517 TRACE Read alignmentResults 
+2025-03-03 17:55:59.1937 20170519 TM FScon3517 TRACE Read scored alignmentResult:finished 
+2025-03-03 17:55:59.1937 20170519 TM FScon3517 TRACE Estimate precursor mz standard deviation and mz correction. 
+2025-03-03 17:56:00.0539 20170519 TM FScon3517 TRACE Estimate precursor mz standard deviation and mz correction.:finished, standard deviation: 0.050000 
+2025-03-03 17:56:00.0539 20170519 TM FScon3517 TRACE init lookup functions 
+2025-03-03 17:56:00.0539 20170519 TM FScon3517 TRACE init lookup functions:finished 
+2025-03-03 17:56:00.0539 20170519 TM FScon3517 TRACE init quantification functions 
+2025-03-03 17:56:00.0539 20170519 TM FScon3517 TRACE init quantification functions:finished 
+2025-03-03 17:56:00.0539 20170519 TM FScon3517 TRACE executing quantification of 5918 metric peptides 
+2025-03-03 17:57:11.5173 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:AIANGQVDGFPPK, GlobalMod:0, Charge:2 
+2025-03-03 18:01:31.3800 20170519 TM FScon3517 TRACE executing quantification metric peptides: finished 
+2025-03-03 18:01:31.3800 20170519 TM FScon3517 TRACE executing quantification 
+2025-03-03 18:01:31.5179 20170519 TM FScon3517 TRACE Quant failed: No Peak detected, Sequence:APAAAPVVEVPAAEPVAAPAAAAPEEPVVDEGPSLESLK, GlobalMod:0, Charge:3 
+2025-03-03 18:02:11.1730 20170519 TM FScon3517 TRACE Quant failed: No Peak detected, Sequence:GWDLGVDGMR, GlobalMod:0, Charge:2 
+2025-03-03 18:02:17.2657 20170519 TM FScon3517 TRACE Quantfailed: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ProteomIQon.FSharpStats'.Wavelet.leftSide@1(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Int32 i, Double currentX, Int32 iL, Double acc)
+   at ProteomIQon.FSharpStats'.Wavelet.mapping@1-3(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Double stepSize, Int32 i)
+   at ProteomIQon.FSharpStats'.Wavelet.identifyPeaksBy(FSharpOption`1 borderpadding, BorderPaddingMethod borderPadMethod, InternalPaddingMethod internalPaddingMethod, HugeGapPaddingMethod hugeGapPaddingMethod, Double maxDistance, FSharpOption`1 minPeakLength, Double maxPeakLength, FSharpOption`1 minPeakDistance, Double noiseQuantile, Double minSNR, Tuple`2[] trace) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 462
+   at ProteomIQon.FSharpStats'.Wavelet.identify[a](a parameters, Double[] x, Double[] y) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 696
+   at ProteomIQon.AlignmentBasedQuantification.labledQuantification@853(Boolean diagCharts, AlignmentBasedQuantificationParams processParams, Logger logger, String plotDirectory, FSharpFunc`2 peptideLookUp, MzSQL inReader, Tuple`2[] ms1SortedByScanTime, FSharpFunc`2 scanTimeToMzCorrection, FSharpFunc`2 getXIC, FSharpFunc`2 identifyPeaks, AlignmentResult alignmentResult) in C:\Users\jonat\source\repos\ProteomIQon\src\AlignmentBasedQuantification\AlignmentBasedQuantification.fs:line 876 
+2025-03-03 18:02:19.3818 20170519 TM FScon3517 TRACE Quantfailed: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ProteomIQon.FSharpStats'.Wavelet.leftSide@1(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Int32 i, Double currentX, Int32 iL, Double acc)
+   at ProteomIQon.FSharpStats'.Wavelet.mapping@1-3(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Double stepSize, Int32 i)
+   at ProteomIQon.FSharpStats'.Wavelet.identifyPeaksBy(FSharpOption`1 borderpadding, BorderPaddingMethod borderPadMethod, InternalPaddingMethod internalPaddingMethod, HugeGapPaddingMethod hugeGapPaddingMethod, Double maxDistance, FSharpOption`1 minPeakLength, Double maxPeakLength, FSharpOption`1 minPeakDistance, Double noiseQuantile, Double minSNR, Tuple`2[] trace) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 462
+   at ProteomIQon.FSharpStats'.Wavelet.identify[a](a parameters, Double[] x, Double[] y) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 696
+   at ProteomIQon.AlignmentBasedQuantification.labledQuantification@853(Boolean diagCharts, AlignmentBasedQuantificationParams processParams, Logger logger, String plotDirectory, FSharpFunc`2 peptideLookUp, MzSQL inReader, Tuple`2[] ms1SortedByScanTime, FSharpFunc`2 scanTimeToMzCorrection, FSharpFunc`2 getXIC, FSharpFunc`2 identifyPeaks, AlignmentResult alignmentResult) in C:\Users\jonat\source\repos\ProteomIQon\src\AlignmentBasedQuantification\AlignmentBasedQuantification.fs:line 876 
+2025-03-03 18:02:27.0428 20170519 TM FScon3517 TRACE Quant failed: No Peak detected, Sequence:VVFDMR, GlobalMod:0, Charge:2 
+2025-03-03 18:02:48.8547 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:DINSIQELVDALSDAGDR, GlobalMod:0, Charge:3 
+2025-03-03 18:03:55.5937 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:QAQQEAEAAFGNGAVYMER, GlobalMod:0, Charge:3 
+2025-03-03 18:04:20.9761 20170519 TM FScon3517 TRACE Quant failed: No Peak detected, Sequence:EENMDYDK, GlobalMod:0, Charge:2 
+2025-03-03 18:04:36.1339 20170519 TM FScon3517 TRACE Quant failed: No Peak detected, Sequence:ADAVAAALQDPSATSDRTEMPAR, GlobalMod:0, Charge:3 
+2025-03-03 18:04:41.4118 20170519 TM FScon3517 TRACE Quantfailed: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ProteomIQon.FSharpStats'.Wavelet.leftSide@1(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Int32 i, Double currentX, Int32 iL, Double acc)
+   at ProteomIQon.FSharpStats'.Wavelet.mapping@1-3(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Double stepSize, Int32 i)
+   at ProteomIQon.FSharpStats'.Wavelet.identifyPeaksBy(FSharpOption`1 borderpadding, BorderPaddingMethod borderPadMethod, InternalPaddingMethod internalPaddingMethod, HugeGapPaddingMethod hugeGapPaddingMethod, Double maxDistance, FSharpOption`1 minPeakLength, Double maxPeakLength, FSharpOption`1 minPeakDistance, Double noiseQuantile, Double minSNR, Tuple`2[] trace) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 462
+   at ProteomIQon.FSharpStats'.Wavelet.identify[a](a parameters, Double[] x, Double[] y) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 696
+   at ProteomIQon.AlignmentBasedQuantification.labledQuantification@853(Boolean diagCharts, AlignmentBasedQuantificationParams processParams, Logger logger, String plotDirectory, FSharpFunc`2 peptideLookUp, MzSQL inReader, Tuple`2[] ms1SortedByScanTime, FSharpFunc`2 scanTimeToMzCorrection, FSharpFunc`2 getXIC, FSharpFunc`2 identifyPeaks, AlignmentResult alignmentResult) in C:\Users\jonat\source\repos\ProteomIQon\src\AlignmentBasedQuantification\AlignmentBasedQuantification.fs:line 864 
+2025-03-03 18:04:53.2055 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:EILDLLATPISAK, GlobalMod:1, Charge:2 
+2025-03-03 18:05:37.6241 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:AKPPSNDL[ox]MR, GlobalMod:0, Charge:3 
+2025-03-03 18:06:00.1349 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:QQLQADWDK, GlobalMod:0, Charge:2 
+2025-03-03 18:06:21.5750 20170519 TM FScon3517 TRACE Quantfailed: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ProteomIQon.FSharpStats'.Wavelet.leftSide@1(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Int32 i, Double currentX, Int32 iL, Double acc)
+   at ProteomIQon.FSharpStats'.Wavelet.mapping@1-3(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Double stepSize, Int32 i)
+   at ProteomIQon.FSharpStats'.Wavelet.identifyPeaksBy(FSharpOption`1 borderpadding, BorderPaddingMethod borderPadMethod, InternalPaddingMethod internalPaddingMethod, HugeGapPaddingMethod hugeGapPaddingMethod, Double maxDistance, FSharpOption`1 minPeakLength, Double maxPeakLength, FSharpOption`1 minPeakDistance, Double noiseQuantile, Double minSNR, Tuple`2[] trace) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 462
+   at ProteomIQon.FSharpStats'.Wavelet.identify[a](a parameters, Double[] x, Double[] y) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 696
+   at ProteomIQon.AlignmentBasedQuantification.labledQuantification@853(Boolean diagCharts, AlignmentBasedQuantificationParams processParams, Logger logger, String plotDirectory, FSharpFunc`2 peptideLookUp, MzSQL inReader, Tuple`2[] ms1SortedByScanTime, FSharpFunc`2 scanTimeToMzCorrection, FSharpFunc`2 getXIC, FSharpFunc`2 identifyPeaks, AlignmentResult alignmentResult) in C:\Users\jonat\source\repos\ProteomIQon\src\AlignmentBasedQuantification\AlignmentBasedQuantification.fs:line 876 
+2025-03-03 18:06:31.6398 20170519 TM FScon3517 TRACE Quant failed: No Peak detected, Sequence:SGGVGYR, GlobalMod:1, Charge:2 
+2025-03-03 18:06:32.2716 20170519 TM FScon3517 TRACE Quant failed: No Peak detected, Sequence:VTAVPTQFHFHSTSEHLLAGK, GlobalMod:0, Charge:4 
+2025-03-03 18:06:49.2383 20170519 TM FScon3517 TRACE Quant failed: No Peak detected, Sequence:KVVEGAAAAVK, GlobalMod:1, Charge:3 
+2025-03-03 18:06:59.0715 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:EQQAAPEDQELK, GlobalMod:1, Charge:2 
+2025-03-03 18:07:18.7506 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:QGEVNYDFR, GlobalMod:0, Charge:2 
+2025-03-03 18:07:24.2220 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:NQWHVEVY, GlobalMod:1, Charge:2 
+2025-03-03 18:07:50.4650 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:GGEFAVER, GlobalMod:1, Charge:2 
+2025-03-03 18:08:00.0258 20170519 TM FScon3517 TRACE Quantfailed: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ProteomIQon.FSharpStats'.Wavelet.leftSide@1(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Int32 i, Double currentX, Int32 iL, Double acc)
+   at ProteomIQon.FSharpStats'.Wavelet.mapping@1-3(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Double stepSize, Int32 i)
+   at ProteomIQon.FSharpStats'.Wavelet.identifyPeaksBy(FSharpOption`1 borderpadding, BorderPaddingMethod borderPadMethod, InternalPaddingMethod internalPaddingMethod, HugeGapPaddingMethod hugeGapPaddingMethod, Double maxDistance, FSharpOption`1 minPeakLength, Double maxPeakLength, FSharpOption`1 minPeakDistance, Double noiseQuantile, Double minSNR, Tuple`2[] trace) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 462
+   at ProteomIQon.FSharpStats'.Wavelet.identify[a](a parameters, Double[] x, Double[] y) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 696
+   at ProteomIQon.AlignmentBasedQuantification.labledQuantification@853(Boolean diagCharts, AlignmentBasedQuantificationParams processParams, Logger logger, String plotDirectory, FSharpFunc`2 peptideLookUp, MzSQL inReader, Tuple`2[] ms1SortedByScanTime, FSharpFunc`2 scanTimeToMzCorrection, FSharpFunc`2 getXIC, FSharpFunc`2 identifyPeaks, AlignmentResult alignmentResult) in C:\Users\jonat\source\repos\ProteomIQon\src\AlignmentBasedQuantification\AlignmentBasedQuantification.fs:line 876 
+2025-03-03 18:09:24.4093 20170519 TM FScon3517 TRACE Quant failed: No Peak detected, Sequence:DLVWFDDEDFYDQLK, GlobalMod:0, Charge:2 
+2025-03-03 18:10:14.2550 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:DYDYEELLER, GlobalMod:0, Charge:2 
+2025-03-03 18:10:18.9714 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:ATFGAFGN[ox]MFNK, GlobalMod:0, Charge:2 
+2025-03-03 18:10:36.8287 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:MDSEPVGEDLR, GlobalMod:0, Charge:2 
+2025-03-03 18:11:01.7238 20170519 TM FScon3517 TRACE Quantfailed: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ProteomIQon.FSharpStats'.Wavelet.leftSide@1(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Int32 i, Double currentX, Int32 iL, Double acc)
+   at ProteomIQon.FSharpStats'.Wavelet.mapping@1-3(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Double stepSize, Int32 i)
+   at ProteomIQon.FSharpStats'.Wavelet.identifyPeaksBy(FSharpOption`1 borderpadding, BorderPaddingMethod borderPadMethod, InternalPaddingMethod internalPaddingMethod, HugeGapPaddingMethod hugeGapPaddingMethod, Double maxDistance, FSharpOption`1 minPeakLength, Double maxPeakLength, FSharpOption`1 minPeakDistance, Double noiseQuantile, Double minSNR, Tuple`2[] trace) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 462
+   at ProteomIQon.FSharpStats'.Wavelet.identify[a](a parameters, Double[] x, Double[] y) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 696
+   at ProteomIQon.AlignmentBasedQuantification.labledQuantification@853(Boolean diagCharts, AlignmentBasedQuantificationParams processParams, Logger logger, String plotDirectory, FSharpFunc`2 peptideLookUp, MzSQL inReader, Tuple`2[] ms1SortedByScanTime, FSharpFunc`2 scanTimeToMzCorrection, FSharpFunc`2 getXIC, FSharpFunc`2 identifyPeaks, AlignmentResult alignmentResult) in C:\Users\jonat\source\repos\ProteomIQon\src\AlignmentBasedQuantification\AlignmentBasedQuantification.fs:line 876 
+2025-03-03 18:11:14.0206 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:IAEFAFAYAR, GlobalMod:0, Charge:2 
+2025-03-03 18:11:46.6667 20170519 TM FScon3517 TRACE Quantfailed: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ProteomIQon.FSharpStats'.Wavelet.leftSide@1(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Int32 i, Double currentX, Int32 iL, Double acc)
+   at ProteomIQon.FSharpStats'.Wavelet.mapping@1-3(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Double stepSize, Int32 i)
+   at ProteomIQon.FSharpStats'.Wavelet.identifyPeaksBy(FSharpOption`1 borderpadding, BorderPaddingMethod borderPadMethod, InternalPaddingMethod internalPaddingMethod, HugeGapPaddingMethod hugeGapPaddingMethod, Double maxDistance, FSharpOption`1 minPeakLength, Double maxPeakLength, FSharpOption`1 minPeakDistance, Double noiseQuantile, Double minSNR, Tuple`2[] trace) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 462
+   at ProteomIQon.FSharpStats'.Wavelet.identify[a](a parameters, Double[] x, Double[] y) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 696
+   at ProteomIQon.AlignmentBasedQuantification.labledQuantification@853(Boolean diagCharts, AlignmentBasedQuantificationParams processParams, Logger logger, String plotDirectory, FSharpFunc`2 peptideLookUp, MzSQL inReader, Tuple`2[] ms1SortedByScanTime, FSharpFunc`2 scanTimeToMzCorrection, FSharpFunc`2 getXIC, FSharpFunc`2 identifyPeaks, AlignmentResult alignmentResult) in C:\Users\jonat\source\repos\ProteomIQon\src\AlignmentBasedQuantification\AlignmentBasedQuantification.fs:line 876 
+2025-03-03 18:12:05.0608 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:AGVQIETDPK, GlobalMod:0, Charge:2 
+2025-03-03 18:12:16.8948 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:DVPAEDFIK, GlobalMod:0, Charge:2 
+2025-03-03 18:12:36.1626 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:EAPEEADIK, GlobalMod:0, Charge:2 
+2025-03-03 18:12:41.1122 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:DFSNQDLR, GlobalMod:0, Charge:2 
+2025-03-03 18:13:09.2901 20170519 TM FScon3517 TRACE Quant failed: No Peak detected, Sequence:DFEEVWK, GlobalMod:0, Charge:2 
+2025-03-03 18:15:18.4369 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:ELTALIR, GlobalMod:0, Charge:2 
+2025-03-03 18:15:33.0976 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:TSLGALHDK, GlobalMod:0, Charge:2 
+2025-03-03 18:15:35.1770 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:YDYLTMR, GlobalMod:0, Charge:2 
+2025-03-03 18:16:20.9521 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:LGLVDVLAPDAAGL[ox]MPAAR, GlobalMod:0, Charge:2 
+2025-03-03 18:16:22.2909 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:ELTINVEYNQLDPLLR, GlobalMod:0, Charge:2 
+2025-03-03 18:16:41.8708 20170519 TM FScon3517 TRACE Quant failed: No Peak detected, Sequence:LDAAPSITYLATTAAGSPAGN[ox]MAPDAVNAVTWGVFPGK, GlobalMod:0, Charge:3 
+2025-03-03 18:16:53.4385 20170519 TM FScon3517 TRACE Quantfailed: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ProteomIQon.FSharpStats'.Wavelet.leftSide@1(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Int32 i, Double currentX, Int32 iL, Double acc)
+   at ProteomIQon.FSharpStats'.Wavelet.mapping@1-3(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Double stepSize, Int32 i)
+   at ProteomIQon.FSharpStats'.Wavelet.identifyPeaksBy(FSharpOption`1 borderpadding, BorderPaddingMethod borderPadMethod, InternalPaddingMethod internalPaddingMethod, HugeGapPaddingMethod hugeGapPaddingMethod, Double maxDistance, FSharpOption`1 minPeakLength, Double maxPeakLength, FSharpOption`1 minPeakDistance, Double noiseQuantile, Double minSNR, Tuple`2[] trace) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 462
+   at ProteomIQon.FSharpStats'.Wavelet.identify[a](a parameters, Double[] x, Double[] y) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 696
+   at ProteomIQon.AlignmentBasedQuantification.labledQuantification@853(Boolean diagCharts, AlignmentBasedQuantificationParams processParams, Logger logger, String plotDirectory, FSharpFunc`2 peptideLookUp, MzSQL inReader, Tuple`2[] ms1SortedByScanTime, FSharpFunc`2 scanTimeToMzCorrection, FSharpFunc`2 getXIC, FSharpFunc`2 identifyPeaks, AlignmentResult alignmentResult) in C:\Users\jonat\source\repos\ProteomIQon\src\AlignmentBasedQuantification\AlignmentBasedQuantification.fs:line 864 
+2025-03-03 18:16:55.5186 20170519 TM FScon3517 TRACE Quant failed: No Peak detected, Sequence:NPDEVTKEEYAAFYK, GlobalMod:0, Charge:3 
+2025-03-03 18:17:26.0312 20170519 TM FScon3517 TRACE Quantfailed: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ProteomIQon.FSharpStats'.Wavelet.leftSide@1(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Int32 i, Double currentX, Int32 iL, Double acc)
+   at ProteomIQon.FSharpStats'.Wavelet.mapping@1-3(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Double stepSize, Int32 i)
+   at ProteomIQon.FSharpStats'.Wavelet.identifyPeaksBy(FSharpOption`1 borderpadding, BorderPaddingMethod borderPadMethod, InternalPaddingMethod internalPaddingMethod, HugeGapPaddingMethod hugeGapPaddingMethod, Double maxDistance, FSharpOption`1 minPeakLength, Double maxPeakLength, FSharpOption`1 minPeakDistance, Double noiseQuantile, Double minSNR, Tuple`2[] trace) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 462
+   at ProteomIQon.FSharpStats'.Wavelet.identify[a](a parameters, Double[] x, Double[] y) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 696
+   at ProteomIQon.AlignmentBasedQuantification.labledQuantification@853(Boolean diagCharts, AlignmentBasedQuantificationParams processParams, Logger logger, String plotDirectory, FSharpFunc`2 peptideLookUp, MzSQL inReader, Tuple`2[] ms1SortedByScanTime, FSharpFunc`2 scanTimeToMzCorrection, FSharpFunc`2 getXIC, FSharpFunc`2 identifyPeaks, AlignmentResult alignmentResult) in C:\Users\jonat\source\repos\ProteomIQon\src\AlignmentBasedQuantification\AlignmentBasedQuantification.fs:line 864 
+2025-03-03 18:17:34.1770 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:GITDEIQR, GlobalMod:0, Charge:2 
+2025-03-03 18:17:56.1754 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:EVLSIMSDNR, GlobalMod:0, Charge:2 
+2025-03-03 18:17:59.4227 20170519 TM FScon3517 TRACE Quant failed: No Peak detected, Sequence:QNQVTILANEAVSAENINPEEAK, GlobalMod:0, Charge:2 
+2025-03-03 18:18:24.8835 20170519 TM FScon3517 TRACE Quantfailed: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ProteomIQon.FSharpStats'.Wavelet.leftSide@1(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Int32 i, Double currentX, Int32 iL, Double acc)
+   at ProteomIQon.FSharpStats'.Wavelet.mapping@1-3(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Double stepSize, Int32 i)
+   at ProteomIQon.FSharpStats'.Wavelet.identifyPeaksBy(FSharpOption`1 borderpadding, BorderPaddingMethod borderPadMethod, InternalPaddingMethod internalPaddingMethod, HugeGapPaddingMethod hugeGapPaddingMethod, Double maxDistance, FSharpOption`1 minPeakLength, Double maxPeakLength, FSharpOption`1 minPeakDistance, Double noiseQuantile, Double minSNR, Tuple`2[] trace) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 462
+   at ProteomIQon.FSharpStats'.Wavelet.identify[a](a parameters, Double[] x, Double[] y) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 696
+   at ProteomIQon.AlignmentBasedQuantification.labledQuantification@853(Boolean diagCharts, AlignmentBasedQuantificationParams processParams, Logger logger, String plotDirectory, FSharpFunc`2 peptideLookUp, MzSQL inReader, Tuple`2[] ms1SortedByScanTime, FSharpFunc`2 scanTimeToMzCorrection, FSharpFunc`2 getXIC, FSharpFunc`2 identifyPeaks, AlignmentResult alignmentResult) in C:\Users\jonat\source\repos\ProteomIQon\src\AlignmentBasedQuantification\AlignmentBasedQuantification.fs:line 864 
+2025-03-03 18:18:25.8771 20170519 TM FScon3517 TRACE Quantfailed: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ProteomIQon.FSharpStats'.Wavelet.leftSide@1(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Int32 i, Double currentX, Int32 iL, Double acc)
+   at ProteomIQon.FSharpStats'.Wavelet.mapping@1-3(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Double stepSize, Int32 i)
+   at ProteomIQon.FSharpStats'.Wavelet.identifyPeaksBy(FSharpOption`1 borderpadding, BorderPaddingMethod borderPadMethod, InternalPaddingMethod internalPaddingMethod, HugeGapPaddingMethod hugeGapPaddingMethod, Double maxDistance, FSharpOption`1 minPeakLength, Double maxPeakLength, FSharpOption`1 minPeakDistance, Double noiseQuantile, Double minSNR, Tuple`2[] trace) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 462
+   at ProteomIQon.FSharpStats'.Wavelet.identify[a](a parameters, Double[] x, Double[] y) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 696
+   at ProteomIQon.AlignmentBasedQuantification.labledQuantification@853(Boolean diagCharts, AlignmentBasedQuantificationParams processParams, Logger logger, String plotDirectory, FSharpFunc`2 peptideLookUp, MzSQL inReader, Tuple`2[] ms1SortedByScanTime, FSharpFunc`2 scanTimeToMzCorrection, FSharpFunc`2 getXIC, FSharpFunc`2 identifyPeaks, AlignmentResult alignmentResult) in C:\Users\jonat\source\repos\ProteomIQon\src\AlignmentBasedQuantification\AlignmentBasedQuantification.fs:line 864 
+2025-03-03 18:18:46.7328 20170519 TM FScon3517 TRACE Quantfailed: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ProteomIQon.FSharpStats'.Wavelet.leftSide@1(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Int32 i, Double currentX, Int32 iL, Double acc)
+   at ProteomIQon.FSharpStats'.Wavelet.mapping@1-3(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Double stepSize, Int32 i)
+   at ProteomIQon.FSharpStats'.Wavelet.identifyPeaksBy(FSharpOption`1 borderpadding, BorderPaddingMethod borderPadMethod, InternalPaddingMethod internalPaddingMethod, HugeGapPaddingMethod hugeGapPaddingMethod, Double maxDistance, FSharpOption`1 minPeakLength, Double maxPeakLength, FSharpOption`1 minPeakDistance, Double noiseQuantile, Double minSNR, Tuple`2[] trace) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 462
+   at ProteomIQon.FSharpStats'.Wavelet.identify[a](a parameters, Double[] x, Double[] y) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 696
+   at ProteomIQon.AlignmentBasedQuantification.labledQuantification@853(Boolean diagCharts, AlignmentBasedQuantificationParams processParams, Logger logger, String plotDirectory, FSharpFunc`2 peptideLookUp, MzSQL inReader, Tuple`2[] ms1SortedByScanTime, FSharpFunc`2 scanTimeToMzCorrection, FSharpFunc`2 getXIC, FSharpFunc`2 identifyPeaks, AlignmentResult alignmentResult) in C:\Users\jonat\source\repos\ProteomIQon\src\AlignmentBasedQuantification\AlignmentBasedQuantification.fs:line 876 
+2025-03-03 18:18:58.7781 20170519 TM FScon3517 TRACE Quantfailed: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ProteomIQon.FSharpStats'.Wavelet.leftSide@1(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Int32 i, Double currentX, Int32 iL, Double acc)
+   at ProteomIQon.FSharpStats'.Wavelet.mapping@1-3(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Double stepSize, Int32 i)
+   at ProteomIQon.FSharpStats'.Wavelet.identifyPeaksBy(FSharpOption`1 borderpadding, BorderPaddingMethod borderPadMethod, InternalPaddingMethod internalPaddingMethod, HugeGapPaddingMethod hugeGapPaddingMethod, Double maxDistance, FSharpOption`1 minPeakLength, Double maxPeakLength, FSharpOption`1 minPeakDistance, Double noiseQuantile, Double minSNR, Tuple`2[] trace) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 462
+   at ProteomIQon.FSharpStats'.Wavelet.identify[a](a parameters, Double[] x, Double[] y) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 696
+   at ProteomIQon.AlignmentBasedQuantification.labledQuantification@853(Boolean diagCharts, AlignmentBasedQuantificationParams processParams, Logger logger, String plotDirectory, FSharpFunc`2 peptideLookUp, MzSQL inReader, Tuple`2[] ms1SortedByScanTime, FSharpFunc`2 scanTimeToMzCorrection, FSharpFunc`2 getXIC, FSharpFunc`2 identifyPeaks, AlignmentResult alignmentResult) in C:\Users\jonat\source\repos\ProteomIQon\src\AlignmentBasedQuantification\AlignmentBasedQuantification.fs:line 876 
+2025-03-03 18:19:02.5126 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:YMISAIQYGGR, GlobalMod:0, Charge:2 
+2025-03-03 18:19:03.7443 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:AAATSAWVTAHSK, GlobalMod:0, Charge:2 
+2025-03-03 18:19:11.2200 20170519 TM FScon3517 TRACE Quantfailed: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ProteomIQon.FSharpStats'.Wavelet.leftSide@1(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Int32 i, Double currentX, Int32 iL, Double acc)
+   at ProteomIQon.FSharpStats'.Wavelet.mapping@1-3(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Double stepSize, Int32 i)
+   at ProteomIQon.FSharpStats'.Wavelet.identifyPeaksBy(FSharpOption`1 borderpadding, BorderPaddingMethod borderPadMethod, InternalPaddingMethod internalPaddingMethod, HugeGapPaddingMethod hugeGapPaddingMethod, Double maxDistance, FSharpOption`1 minPeakLength, Double maxPeakLength, FSharpOption`1 minPeakDistance, Double noiseQuantile, Double minSNR, Tuple`2[] trace) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 462
+   at ProteomIQon.FSharpStats'.Wavelet.identify[a](a parameters, Double[] x, Double[] y) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 696
+   at ProteomIQon.AlignmentBasedQuantification.labledQuantification@853(Boolean diagCharts, AlignmentBasedQuantificationParams processParams, Logger logger, String plotDirectory, FSharpFunc`2 peptideLookUp, MzSQL inReader, Tuple`2[] ms1SortedByScanTime, FSharpFunc`2 scanTimeToMzCorrection, FSharpFunc`2 getXIC, FSharpFunc`2 identifyPeaks, AlignmentResult alignmentResult) in C:\Users\jonat\source\repos\ProteomIQon\src\AlignmentBasedQuantification\AlignmentBasedQuantification.fs:line 864 
+2025-03-03 18:19:12.5710 20170519 TM FScon3517 TRACE Quantfailed: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ProteomIQon.FSharpStats'.Wavelet.leftSide@1(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Int32 i, Double currentX, Int32 iL, Double acc)
+   at ProteomIQon.FSharpStats'.Wavelet.mapping@1-3(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Double stepSize, Int32 i)
+   at ProteomIQon.FSharpStats'.Wavelet.identifyPeaksBy(FSharpOption`1 borderpadding, BorderPaddingMethod borderPadMethod, InternalPaddingMethod internalPaddingMethod, HugeGapPaddingMethod hugeGapPaddingMethod, Double maxDistance, FSharpOption`1 minPeakLength, Double maxPeakLength, FSharpOption`1 minPeakDistance, Double noiseQuantile, Double minSNR, Tuple`2[] trace) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 462
+   at ProteomIQon.FSharpStats'.Wavelet.identify[a](a parameters, Double[] x, Double[] y) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 696
+   at ProteomIQon.AlignmentBasedQuantification.labledQuantification@853(Boolean diagCharts, AlignmentBasedQuantificationParams processParams, Logger logger, String plotDirectory, FSharpFunc`2 peptideLookUp, MzSQL inReader, Tuple`2[] ms1SortedByScanTime, FSharpFunc`2 scanTimeToMzCorrection, FSharpFunc`2 getXIC, FSharpFunc`2 identifyPeaks, AlignmentResult alignmentResult) in C:\Users\jonat\source\repos\ProteomIQon\src\AlignmentBasedQuantification\AlignmentBasedQuantification.fs:line 864 
+2025-03-03 18:19:17.3801 20170519 TM FScon3517 TRACE Quantfailed: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ProteomIQon.FSharpStats'.Wavelet.leftSide@1(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Int32 i, Double currentX, Int32 iL, Double acc)
+   at ProteomIQon.FSharpStats'.Wavelet.mapping@1-3(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Double stepSize, Int32 i)
+   at ProteomIQon.FSharpStats'.Wavelet.identifyPeaksBy(FSharpOption`1 borderpadding, BorderPaddingMethod borderPadMethod, InternalPaddingMethod internalPaddingMethod, HugeGapPaddingMethod hugeGapPaddingMethod, Double maxDistance, FSharpOption`1 minPeakLength, Double maxPeakLength, FSharpOption`1 minPeakDistance, Double noiseQuantile, Double minSNR, Tuple`2[] trace) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 462
+   at ProteomIQon.FSharpStats'.Wavelet.identify[a](a parameters, Double[] x, Double[] y) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 696
+   at ProteomIQon.AlignmentBasedQuantification.labledQuantification@853(Boolean diagCharts, AlignmentBasedQuantificationParams processParams, Logger logger, String plotDirectory, FSharpFunc`2 peptideLookUp, MzSQL inReader, Tuple`2[] ms1SortedByScanTime, FSharpFunc`2 scanTimeToMzCorrection, FSharpFunc`2 getXIC, FSharpFunc`2 identifyPeaks, AlignmentResult alignmentResult) in C:\Users\jonat\source\repos\ProteomIQon\src\AlignmentBasedQuantification\AlignmentBasedQuantification.fs:line 876 
+2025-03-03 18:19:17.5613 20170519 TM FScon3517 TRACE Quantfailed: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ProteomIQon.FSharpStats'.Wavelet.leftSide@1(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Int32 i, Double currentX, Int32 iL, Double acc)
+   at ProteomIQon.FSharpStats'.Wavelet.mapping@1-3(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Double stepSize, Int32 i)
+   at ProteomIQon.FSharpStats'.Wavelet.identifyPeaksBy(FSharpOption`1 borderpadding, BorderPaddingMethod borderPadMethod, InternalPaddingMethod internalPaddingMethod, HugeGapPaddingMethod hugeGapPaddingMethod, Double maxDistance, FSharpOption`1 minPeakLength, Double maxPeakLength, FSharpOption`1 minPeakDistance, Double noiseQuantile, Double minSNR, Tuple`2[] trace) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 462
+   at ProteomIQon.FSharpStats'.Wavelet.identify[a](a parameters, Double[] x, Double[] y) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 696
+   at ProteomIQon.AlignmentBasedQuantification.labledQuantification@853(Boolean diagCharts, AlignmentBasedQuantificationParams processParams, Logger logger, String plotDirectory, FSharpFunc`2 peptideLookUp, MzSQL inReader, Tuple`2[] ms1SortedByScanTime, FSharpFunc`2 scanTimeToMzCorrection, FSharpFunc`2 getXIC, FSharpFunc`2 identifyPeaks, AlignmentResult alignmentResult) in C:\Users\jonat\source\repos\ProteomIQon\src\AlignmentBasedQuantification\AlignmentBasedQuantification.fs:line 864 
+2025-03-03 18:19:23.1167 20170519 TM FScon3517 TRACE Quantfailed: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ProteomIQon.FSharpStats'.Wavelet.leftSide@1(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Int32 i, Double currentX, Int32 iL, Double acc)
+   at ProteomIQon.FSharpStats'.Wavelet.mapping@1-3(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Double stepSize, Int32 i)
+   at ProteomIQon.FSharpStats'.Wavelet.identifyPeaksBy(FSharpOption`1 borderpadding, BorderPaddingMethod borderPadMethod, InternalPaddingMethod internalPaddingMethod, HugeGapPaddingMethod hugeGapPaddingMethod, Double maxDistance, FSharpOption`1 minPeakLength, Double maxPeakLength, FSharpOption`1 minPeakDistance, Double noiseQuantile, Double minSNR, Tuple`2[] trace) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 462
+   at ProteomIQon.FSharpStats'.Wavelet.identify[a](a parameters, Double[] x, Double[] y) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 696
+   at ProteomIQon.AlignmentBasedQuantification.labledQuantification@853(Boolean diagCharts, AlignmentBasedQuantificationParams processParams, Logger logger, String plotDirectory, FSharpFunc`2 peptideLookUp, MzSQL inReader, Tuple`2[] ms1SortedByScanTime, FSharpFunc`2 scanTimeToMzCorrection, FSharpFunc`2 getXIC, FSharpFunc`2 identifyPeaks, AlignmentResult alignmentResult) in C:\Users\jonat\source\repos\ProteomIQon\src\AlignmentBasedQuantification\AlignmentBasedQuantification.fs:line 864 
+2025-03-03 18:19:29.5919 20170519 TM FScon3517 TRACE Quant failed: No Peak detected, Sequence:VAAAVGDLEGAELDDFVPALASDR, GlobalMod:1, Charge:3 
+2025-03-03 18:19:41.6520 20170519 TM FScon3517 TRACE Quant failed: No Peak detected, Sequence:KLEVDDEAK, GlobalMod:1, Charge:3 
+2025-03-03 18:19:41.6957 20170519 TM FScon3517 TRACE Quant failed: No Peak detected, Sequence:LDKVQAALGK, GlobalMod:1, Charge:3 
+2025-03-03 18:20:17.2911 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:TVYGDHER, GlobalMod:0, Charge:2 
+2025-03-03 18:20:26.3755 20170519 TM FScon3517 TRACE Quant failed: No Peak detected, Sequence:VVVSHR, GlobalMod:1, Charge:2 
+2025-03-03 18:20:35.4173 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:VITNPTTNAAVIFGYLVK, GlobalMod:0, Charge:2 
+2025-03-03 18:20:57.9678 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:LQTLVFK, GlobalMod:1, Charge:2 
+2025-03-03 18:21:02.0142 20170519 TM FScon3517 TRACE Quant failed: No Peak detected, Sequence:ATLEMK, GlobalMod:1, Charge:2 
+2025-03-03 18:21:15.2921 20170519 TM FScon3517 TRACE Quant failed: No Peak detected, Sequence:IRPVLTVNK, GlobalMod:1, Charge:3 
+2025-03-03 18:21:15.5865 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:IPSAVGYQPTLATDLGGLQER, GlobalMod:1, Charge:2 
+2025-03-03 18:21:19.6078 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:TVVWNGP[ox]MGVFEFPK, GlobalMod:1, Charge:2 
+2025-03-03 18:21:36.6692 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:LLIWQTQPSLQ, GlobalMod:1, Charge:2 
+2025-03-03 18:22:39.9328 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:TDITAGGSVVHIIDK, GlobalMod:0, Charge:3 
+2025-03-03 18:22:52.8450 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:DTNTFASASLDR, GlobalMod:0, Charge:2 
+2025-03-03 18:23:19.2503 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:ELPALTAPGPGQVQLR, GlobalMod:0, Charge:2 
+2025-03-03 18:23:21.7533 20170519 TM FScon3517 TRACE Quant failed: No Peak detected, Sequence:VGDFVR, GlobalMod:1, Charge:2 
+2025-03-03 18:24:07.1508 20170519 TM FScon3517 TRACE Quantfailed: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ProteomIQon.FSharpStats'.Wavelet.leftSide@1(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Int32 i, Double currentX, Int32 iL, Double acc)
+   at ProteomIQon.FSharpStats'.Wavelet.mapping@1-3(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Double stepSize, Int32 i)
+   at ProteomIQon.FSharpStats'.Wavelet.identifyPeaksBy(FSharpOption`1 borderpadding, BorderPaddingMethod borderPadMethod, InternalPaddingMethod internalPaddingMethod, HugeGapPaddingMethod hugeGapPaddingMethod, Double maxDistance, FSharpOption`1 minPeakLength, Double maxPeakLength, FSharpOption`1 minPeakDistance, Double noiseQuantile, Double minSNR, Tuple`2[] trace) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 462
+   at ProteomIQon.FSharpStats'.Wavelet.identify[a](a parameters, Double[] x, Double[] y) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 696
+   at ProteomIQon.AlignmentBasedQuantification.labledQuantification@853(Boolean diagCharts, AlignmentBasedQuantificationParams processParams, Logger logger, String plotDirectory, FSharpFunc`2 peptideLookUp, MzSQL inReader, Tuple`2[] ms1SortedByScanTime, FSharpFunc`2 scanTimeToMzCorrection, FSharpFunc`2 getXIC, FSharpFunc`2 identifyPeaks, AlignmentResult alignmentResult) in C:\Users\jonat\source\repos\ProteomIQon\src\AlignmentBasedQuantification\AlignmentBasedQuantification.fs:line 864 
+2025-03-03 18:24:17.3973 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:SEIPEYLNGELAGDYGYDPLGLGKDPETVAK, GlobalMod:1, Charge:3 
+2025-03-03 18:24:27.6171 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:GTLEYGDATDVMGDFNK, GlobalMod:0, Charge:2 
+2025-03-03 18:24:39.2756 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:ITQELAEIVGGAAATSG, GlobalMod:1, Charge:2 
+2025-03-03 18:24:46.7122 20170519 TM FScon3517 TRACE Quantfailed: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ProteomIQon.FSharpStats'.Wavelet.leftSide@1(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Int32 i, Double currentX, Int32 iL, Double acc)
+   at ProteomIQon.FSharpStats'.Wavelet.mapping@1-3(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Double stepSize, Int32 i)
+   at ProteomIQon.FSharpStats'.Wavelet.identifyPeaksBy(FSharpOption`1 borderpadding, BorderPaddingMethod borderPadMethod, InternalPaddingMethod internalPaddingMethod, HugeGapPaddingMethod hugeGapPaddingMethod, Double maxDistance, FSharpOption`1 minPeakLength, Double maxPeakLength, FSharpOption`1 minPeakDistance, Double noiseQuantile, Double minSNR, Tuple`2[] trace) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 462
+   at ProteomIQon.FSharpStats'.Wavelet.identify[a](a parameters, Double[] x, Double[] y) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 696
+   at ProteomIQon.AlignmentBasedQuantification.labledQuantification@853(Boolean diagCharts, AlignmentBasedQuantificationParams processParams, Logger logger, String plotDirectory, FSharpFunc`2 peptideLookUp, MzSQL inReader, Tuple`2[] ms1SortedByScanTime, FSharpFunc`2 scanTimeToMzCorrection, FSharpFunc`2 getXIC, FSharpFunc`2 identifyPeaks, AlignmentResult alignmentResult) in C:\Users\jonat\source\repos\ProteomIQon\src\AlignmentBasedQuantification\AlignmentBasedQuantification.fs:line 864 
+2025-03-03 18:25:00.4559 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:EVVWYDDSDFLEER, GlobalMod:0, Charge:2 
+2025-03-03 18:25:27.6258 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:NGLDVASVDVPVVGGHAGVTILPLFSQATPK, GlobalMod:1, Charge:3 
+2025-03-03 18:25:28.6740 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:IASKEEDQLGDTSTLADPGVVATLVELR, GlobalMod:1, Charge:3 
+2025-03-03 18:25:36.1475 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:LAPDGAFPLLVTPAGAGLTAAGPSLK, GlobalMod:1, Charge:3 
+2025-03-03 18:25:47.5211 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:FGTEEDPIIVPSLEAER, GlobalMod:0, Charge:3 
+2025-03-03 18:26:00.7973 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:KWEHLELGPGGK, GlobalMod:1, Charge:3 
+2025-03-03 18:26:02.3102 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:AEEMAEQFRK, GlobalMod:1, Charge:3 
+2025-03-03 18:26:03.0929 20170519 TM FScon3517 TRACE Quantfailed: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ProteomIQon.FSharpStats'.Wavelet.leftSide@1(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Int32 i, Double currentX, Int32 iL, Double acc)
+   at ProteomIQon.FSharpStats'.Wavelet.mapping@1-3(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Double stepSize, Int32 i)
+   at ProteomIQon.FSharpStats'.Wavelet.identifyPeaksBy(FSharpOption`1 borderpadding, BorderPaddingMethod borderPadMethod, InternalPaddingMethod internalPaddingMethod, HugeGapPaddingMethod hugeGapPaddingMethod, Double maxDistance, FSharpOption`1 minPeakLength, Double maxPeakLength, FSharpOption`1 minPeakDistance, Double noiseQuantile, Double minSNR, Tuple`2[] trace) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 462
+   at ProteomIQon.FSharpStats'.Wavelet.identify[a](a parameters, Double[] x, Double[] y) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 696
+   at ProteomIQon.AlignmentBasedQuantification.labledQuantification@853(Boolean diagCharts, AlignmentBasedQuantificationParams processParams, Logger logger, String plotDirectory, FSharpFunc`2 peptideLookUp, MzSQL inReader, Tuple`2[] ms1SortedByScanTime, FSharpFunc`2 scanTimeToMzCorrection, FSharpFunc`2 getXIC, FSharpFunc`2 identifyPeaks, AlignmentResult alignmentResult) in C:\Users\jonat\source\repos\ProteomIQon\src\AlignmentBasedQuantification\AlignmentBasedQuantification.fs:line 876 
+2025-03-03 18:26:04.2971 20170519 TM FScon3517 TRACE Quant failed: No Peak detected, Sequence:YTELAGEHK, GlobalMod:1, Charge:3 
+2025-03-03 18:26:04.8696 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:TGVEPQAIGDIVIGSVLGPSSQR, GlobalMod:1, Charge:2 
+2025-03-03 18:26:04.9803 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:DLYNNIVLSGGTT[ox]MFPGIADR, GlobalMod:1, Charge:2 
+2025-03-03 18:26:19.7794 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:YGAAGLLSGDVLTGVVNK, GlobalMod:1, Charge:2 
+2025-03-03 18:26:58.2425 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:MLVGSDTIDNK, GlobalMod:1, Charge:2 
+2025-03-03 18:27:21.3264 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:NI[ox]MLGGDK, GlobalMod:1, Charge:2 
+2025-03-03 18:27:26.7942 20170519 TM FScon3517 TRACE Quant failed: No Peak detected, Sequence:NSLSLR, GlobalMod:1, Charge:2 
+2025-03-03 18:27:39.5239 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:QDYADLAN[ox]MLGLGGNTVDEK, GlobalMod:0, Charge:2 
+2025-03-03 18:27:51.0843 20170519 TM FScon3517 TRACE Quant failed: No Peak detected, Sequence:FTKPTPVQK, GlobalMod:1, Charge:3 
+2025-03-03 18:28:09.2326 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:TYLSDLAK, GlobalMod:1, Charge:2 
+2025-03-03 18:28:29.0852 20170519 TM FScon3517 TRACE Quant failed: No Peak detected, Sequence:NPDEVTKEEYAAFYK, GlobalMod:1, Charge:3 
+2025-03-03 18:28:29.7117 20170519 TM FScon3517 TRACE Quant failed: No Peak detected, Sequence:FFAISAPLATVFDNTGK, GlobalMod:0, Charge:3 
+2025-03-03 18:28:31.2838 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:NDVGALV[ox]MVTGGHNAGR, GlobalMod:1, Charge:3 
+2025-03-03 18:28:33.6227 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:VQYLHPADGVYPEK, GlobalMod:1, Charge:3 
+2025-03-03 18:28:36.2588 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:LDSHLAEQFSTGR, GlobalMod:1, Charge:3 
+2025-03-03 18:28:44.7512 20170519 TM FScon3517 TRACE Quant failed: No Peak detected, Sequence:SHHNVGGLPK, GlobalMod:1, Charge:3 
+2025-03-03 18:28:44.7957 20170519 TM FScon3517 TRACE Quant failed: No Peak detected, Sequence:GPDGKPLVAGK, GlobalMod:1, Charge:3 
+2025-03-03 18:28:49.5317 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:LGLVDVLAPDAAGL[ox]MPAAR, GlobalMod:1, Charge:2 
+2025-03-03 18:28:55.8753 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:VSATSIFFES[ox]MPYR, GlobalMod:1, Charge:2 
+2025-03-03 18:28:55.9918 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:ILGANPDINVYDITK, GlobalMod:1, Charge:2 
+2025-03-03 18:29:12.3155 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:RGDATEMAVIELV, GlobalMod:1, Charge:2 
+2025-03-03 18:29:45.0387 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:EDLGAV[ox]MDAIK, GlobalMod:1, Charge:2 
+2025-03-03 18:30:39.7982 20170519 TM FScon3517 TRACE Quant failed: No Peak detected, Sequence:APGLLAR, GlobalMod:1, Charge:2 
+2025-03-03 18:30:44.3816 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:IDGSFNDWF[ox]MEAVVR, GlobalMod:0, Charge:2 
+2025-03-03 18:30:55.7820 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:MPFVPTPYYK, GlobalMod:0, Charge:2 
+2025-03-03 18:31:06.3343 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:AGVQIETDPK, GlobalMod:1, Charge:2 
+2025-03-03 18:31:25.3989 20170519 TM FScon3517 TRACE Quant failed: No Peak detected, Sequence:LQMAAR, GlobalMod:1, Charge:2 
+2025-03-03 18:31:25.4675 20170519 TM FScon3517 TRACE Quant failed: No Peak detected, Sequence:IYAPAR, GlobalMod:1, Charge:2 
+2025-03-03 18:31:25.7997 20170519 TM FScon3517 TRACE Quant failed: No Peak detected, Sequence:LVGLPAK, GlobalMod:1, Charge:2 
+2025-03-03 18:32:16.9320 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:RVGPAGGVWGGGKPR, GlobalMod:1, Charge:2 
+2025-03-03 18:32:35.1316 20170519 TM FScon3517 TRACE Quant failed: No Peak detected, Sequence:GHGVQGVVQR, GlobalMod:1, Charge:3 
+2025-03-03 18:32:36.2480 20170519 TM FScon3517 TRACE Quantfailed: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ProteomIQon.FSharpStats'.Wavelet.leftSide@1(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Int32 i, Double currentX, Int32 iL, Double acc)
+   at ProteomIQon.FSharpStats'.Wavelet.mapping@1-3(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Double stepSize, Int32 i)
+   at ProteomIQon.FSharpStats'.Wavelet.identifyPeaksBy(FSharpOption`1 borderpadding, BorderPaddingMethod borderPadMethod, InternalPaddingMethod internalPaddingMethod, HugeGapPaddingMethod hugeGapPaddingMethod, Double maxDistance, FSharpOption`1 minPeakLength, Double maxPeakLength, FSharpOption`1 minPeakDistance, Double noiseQuantile, Double minSNR, Tuple`2[] trace) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 462
+   at ProteomIQon.FSharpStats'.Wavelet.identify[a](a parameters, Double[] x, Double[] y) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 696
+   at ProteomIQon.AlignmentBasedQuantification.labledQuantification@853(Boolean diagCharts, AlignmentBasedQuantificationParams processParams, Logger logger, String plotDirectory, FSharpFunc`2 peptideLookUp, MzSQL inReader, Tuple`2[] ms1SortedByScanTime, FSharpFunc`2 scanTimeToMzCorrection, FSharpFunc`2 getXIC, FSharpFunc`2 identifyPeaks, AlignmentResult alignmentResult) in C:\Users\jonat\source\repos\ProteomIQon\src\AlignmentBasedQuantification\AlignmentBasedQuantification.fs:line 876 
+2025-03-03 18:34:04.9716 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:AAAAQQGVLVSK, GlobalMod:0, Charge:2 
+2025-03-03 18:34:05.3739 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:TASDSESLDQDR, GlobalMod:0, Charge:2 
+2025-03-03 18:34:12.5222 20170519 TM FScon3517 TRACE Quantfailed: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ProteomIQon.FSharpStats'.Wavelet.leftSide@1(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Int32 i, Double currentX, Int32 iL, Double acc)
+   at ProteomIQon.FSharpStats'.Wavelet.mapping@1-3(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Double stepSize, Int32 i)
+   at ProteomIQon.FSharpStats'.Wavelet.identifyPeaksBy(FSharpOption`1 borderpadding, BorderPaddingMethod borderPadMethod, InternalPaddingMethod internalPaddingMethod, HugeGapPaddingMethod hugeGapPaddingMethod, Double maxDistance, FSharpOption`1 minPeakLength, Double maxPeakLength, FSharpOption`1 minPeakDistance, Double noiseQuantile, Double minSNR, Tuple`2[] trace) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 462
+   at ProteomIQon.FSharpStats'.Wavelet.identify[a](a parameters, Double[] x, Double[] y) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 696
+   at ProteomIQon.AlignmentBasedQuantification.labledQuantification@853(Boolean diagCharts, AlignmentBasedQuantificationParams processParams, Logger logger, String plotDirectory, FSharpFunc`2 peptideLookUp, MzSQL inReader, Tuple`2[] ms1SortedByScanTime, FSharpFunc`2 scanTimeToMzCorrection, FSharpFunc`2 getXIC, FSharpFunc`2 identifyPeaks, AlignmentResult alignmentResult) in C:\Users\jonat\source\repos\ProteomIQon\src\AlignmentBasedQuantification\AlignmentBasedQuantification.fs:line 864 
+2025-03-03 18:34:30.1752 20170519 TM FScon3517 TRACE Quantfailed: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ProteomIQon.FSharpStats'.Wavelet.leftSide@1(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Int32 i, Double currentX, Int32 iL, Double acc)
+   at ProteomIQon.FSharpStats'.Wavelet.mapping@1-3(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Double stepSize, Int32 i)
+   at ProteomIQon.FSharpStats'.Wavelet.identifyPeaksBy(FSharpOption`1 borderpadding, BorderPaddingMethod borderPadMethod, InternalPaddingMethod internalPaddingMethod, HugeGapPaddingMethod hugeGapPaddingMethod, Double maxDistance, FSharpOption`1 minPeakLength, Double maxPeakLength, FSharpOption`1 minPeakDistance, Double noiseQuantile, Double minSNR, Tuple`2[] trace) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 462
+   at ProteomIQon.FSharpStats'.Wavelet.identify[a](a parameters, Double[] x, Double[] y) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 696
+   at ProteomIQon.AlignmentBasedQuantification.labledQuantification@853(Boolean diagCharts, AlignmentBasedQuantificationParams processParams, Logger logger, String plotDirectory, FSharpFunc`2 peptideLookUp, MzSQL inReader, Tuple`2[] ms1SortedByScanTime, FSharpFunc`2 scanTimeToMzCorrection, FSharpFunc`2 getXIC, FSharpFunc`2 identifyPeaks, AlignmentResult alignmentResult) in C:\Users\jonat\source\repos\ProteomIQon\src\AlignmentBasedQuantification\AlignmentBasedQuantification.fs:line 876 
+2025-03-03 18:34:32.1517 20170519 TM FScon3517 TRACE Quantfailed: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ProteomIQon.FSharpStats'.Wavelet.leftSide@1(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Int32 i, Double currentX, Int32 iL, Double acc)
+   at ProteomIQon.FSharpStats'.Wavelet.mapping@1-3(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Double stepSize, Int32 i)
+   at ProteomIQon.FSharpStats'.Wavelet.identifyPeaksBy(FSharpOption`1 borderpadding, BorderPaddingMethod borderPadMethod, InternalPaddingMethod internalPaddingMethod, HugeGapPaddingMethod hugeGapPaddingMethod, Double maxDistance, FSharpOption`1 minPeakLength, Double maxPeakLength, FSharpOption`1 minPeakDistance, Double noiseQuantile, Double minSNR, Tuple`2[] trace) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 462
+   at ProteomIQon.FSharpStats'.Wavelet.identify[a](a parameters, Double[] x, Double[] y) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 696
+   at ProteomIQon.AlignmentBasedQuantification.labledQuantification@853(Boolean diagCharts, AlignmentBasedQuantificationParams processParams, Logger logger, String plotDirectory, FSharpFunc`2 peptideLookUp, MzSQL inReader, Tuple`2[] ms1SortedByScanTime, FSharpFunc`2 scanTimeToMzCorrection, FSharpFunc`2 getXIC, FSharpFunc`2 identifyPeaks, AlignmentResult alignmentResult) in C:\Users\jonat\source\repos\ProteomIQon\src\AlignmentBasedQuantification\AlignmentBasedQuantification.fs:line 876 
+2025-03-03 18:34:46.7629 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:DVAAGLLALSSEEGQK, GlobalMod:0, Charge:2 
+2025-03-03 18:34:47.5011 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:GIGQSEE[ox]MNTLFR, GlobalMod:0, Charge:2 
+2025-03-03 18:35:31.8578 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:QLWVHND[ox]MEK, GlobalMod:0, Charge:2 
+2025-03-03 18:35:58.1976 20170519 TM FScon3517 TRACE Quantfailed: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ProteomIQon.FSharpStats'.Wavelet.leftSide@1(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Int32 i, Double currentX, Int32 iL, Double acc)
+   at ProteomIQon.FSharpStats'.Wavelet.mapping@1-3(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Double stepSize, Int32 i)
+   at ProteomIQon.FSharpStats'.Wavelet.identifyPeaksBy(FSharpOption`1 borderpadding, BorderPaddingMethod borderPadMethod, InternalPaddingMethod internalPaddingMethod, HugeGapPaddingMethod hugeGapPaddingMethod, Double maxDistance, FSharpOption`1 minPeakLength, Double maxPeakLength, FSharpOption`1 minPeakDistance, Double noiseQuantile, Double minSNR, Tuple`2[] trace) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 462
+   at ProteomIQon.FSharpStats'.Wavelet.identify[a](a parameters, Double[] x, Double[] y) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 696
+   at ProteomIQon.AlignmentBasedQuantification.labledQuantification@853(Boolean diagCharts, AlignmentBasedQuantificationParams processParams, Logger logger, String plotDirectory, FSharpFunc`2 peptideLookUp, MzSQL inReader, Tuple`2[] ms1SortedByScanTime, FSharpFunc`2 scanTimeToMzCorrection, FSharpFunc`2 getXIC, FSharpFunc`2 identifyPeaks, AlignmentResult alignmentResult) in C:\Users\jonat\source\repos\ProteomIQon\src\AlignmentBasedQuantification\AlignmentBasedQuantification.fs:line 864 
+2025-03-03 18:36:07.1803 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:LPSGHGMKLVR, GlobalMod:1, Charge:2 
+2025-03-03 18:36:15.3833 20170519 TM FScon3517 TRACE Quantfailed: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ProteomIQon.FSharpStats'.Wavelet.leftSide@1(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Int32 i, Double currentX, Int32 iL, Double acc)
+   at ProteomIQon.FSharpStats'.Wavelet.mapping@1-3(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Double stepSize, Int32 i)
+   at ProteomIQon.FSharpStats'.Wavelet.identifyPeaksBy(FSharpOption`1 borderpadding, BorderPaddingMethod borderPadMethod, InternalPaddingMethod internalPaddingMethod, HugeGapPaddingMethod hugeGapPaddingMethod, Double maxDistance, FSharpOption`1 minPeakLength, Double maxPeakLength, FSharpOption`1 minPeakDistance, Double noiseQuantile, Double minSNR, Tuple`2[] trace) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 462
+   at ProteomIQon.FSharpStats'.Wavelet.identify[a](a parameters, Double[] x, Double[] y) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 696
+   at ProteomIQon.AlignmentBasedQuantification.labledQuantification@853(Boolean diagCharts, AlignmentBasedQuantificationParams processParams, Logger logger, String plotDirectory, FSharpFunc`2 peptideLookUp, MzSQL inReader, Tuple`2[] ms1SortedByScanTime, FSharpFunc`2 scanTimeToMzCorrection, FSharpFunc`2 getXIC, FSharpFunc`2 identifyPeaks, AlignmentResult alignmentResult) in C:\Users\jonat\source\repos\ProteomIQon\src\AlignmentBasedQuantification\AlignmentBasedQuantification.fs:line 864 
+2025-03-03 18:36:16.6403 20170519 TM FScon3517 TRACE Quant failed: No Peak detected, Sequence:NLNWPYGEFEVPQDVYDVFR, GlobalMod:0, Charge:2 
+2025-03-03 18:36:17.4175 20170519 TM FScon3517 TRACE Quantfailed: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ProteomIQon.FSharpStats'.Wavelet.leftSide@1(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Int32 i, Double currentX, Int32 iL, Double acc)
+   at ProteomIQon.FSharpStats'.Wavelet.mapping@1-3(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Double stepSize, Int32 i)
+   at ProteomIQon.FSharpStats'.Wavelet.identifyPeaksBy(FSharpOption`1 borderpadding, BorderPaddingMethod borderPadMethod, InternalPaddingMethod internalPaddingMethod, HugeGapPaddingMethod hugeGapPaddingMethod, Double maxDistance, FSharpOption`1 minPeakLength, Double maxPeakLength, FSharpOption`1 minPeakDistance, Double noiseQuantile, Double minSNR, Tuple`2[] trace) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 462
+   at ProteomIQon.FSharpStats'.Wavelet.identify[a](a parameters, Double[] x, Double[] y) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 696
+   at ProteomIQon.AlignmentBasedQuantification.labledQuantification@853(Boolean diagCharts, AlignmentBasedQuantificationParams processParams, Logger logger, String plotDirectory, FSharpFunc`2 peptideLookUp, MzSQL inReader, Tuple`2[] ms1SortedByScanTime, FSharpFunc`2 scanTimeToMzCorrection, FSharpFunc`2 getXIC, FSharpFunc`2 identifyPeaks, AlignmentResult alignmentResult) in C:\Users\jonat\source\repos\ProteomIQon\src\AlignmentBasedQuantification\AlignmentBasedQuantification.fs:line 864 
+2025-03-03 18:36:20.0821 20170519 TM FScon3517 TRACE Quant failed: No Peak detected, Sequence:DAGEEEEEEEDEKPQGK, GlobalMod:0, Charge:3 
+2025-03-03 18:36:22.6015 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:AITLTPEQFTVENDL[ox]MTPSYK, GlobalMod:0, Charge:3 
+2025-03-03 18:36:24.1510 20170519 TM FScon3517 TRACE Quantfailed: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ProteomIQon.FSharpStats'.Wavelet.leftSide@1(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Int32 i, Double currentX, Int32 iL, Double acc)
+   at ProteomIQon.FSharpStats'.Wavelet.mapping@1-3(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Double stepSize, Int32 i)
+   at ProteomIQon.FSharpStats'.Wavelet.identifyPeaksBy(FSharpOption`1 borderpadding, BorderPaddingMethod borderPadMethod, InternalPaddingMethod internalPaddingMethod, HugeGapPaddingMethod hugeGapPaddingMethod, Double maxDistance, FSharpOption`1 minPeakLength, Double maxPeakLength, FSharpOption`1 minPeakDistance, Double noiseQuantile, Double minSNR, Tuple`2[] trace) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 462
+   at ProteomIQon.FSharpStats'.Wavelet.identify[a](a parameters, Double[] x, Double[] y) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 696
+   at ProteomIQon.AlignmentBasedQuantification.labledQuantification@853(Boolean diagCharts, AlignmentBasedQuantificationParams processParams, Logger logger, String plotDirectory, FSharpFunc`2 peptideLookUp, MzSQL inReader, Tuple`2[] ms1SortedByScanTime, FSharpFunc`2 scanTimeToMzCorrection, FSharpFunc`2 getXIC, FSharpFunc`2 identifyPeaks, AlignmentResult alignmentResult) in C:\Users\jonat\source\repos\ProteomIQon\src\AlignmentBasedQuantification\AlignmentBasedQuantification.fs:line 864 
+2025-03-03 18:36:26.7188 20170519 TM FScon3517 TRACE Quantfailed: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ProteomIQon.FSharpStats'.Wavelet.leftSide@1(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Int32 i, Double currentX, Int32 iL, Double acc)
+   at ProteomIQon.FSharpStats'.Wavelet.mapping@1-3(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Double stepSize, Int32 i)
+   at ProteomIQon.FSharpStats'.Wavelet.identifyPeaksBy(FSharpOption`1 borderpadding, BorderPaddingMethod borderPadMethod, InternalPaddingMethod internalPaddingMethod, HugeGapPaddingMethod hugeGapPaddingMethod, Double maxDistance, FSharpOption`1 minPeakLength, Double maxPeakLength, FSharpOption`1 minPeakDistance, Double noiseQuantile, Double minSNR, Tuple`2[] trace) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 462
+   at ProteomIQon.FSharpStats'.Wavelet.identify[a](a parameters, Double[] x, Double[] y) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 696
+   at ProteomIQon.AlignmentBasedQuantification.labledQuantification@853(Boolean diagCharts, AlignmentBasedQuantificationParams processParams, Logger logger, String plotDirectory, FSharpFunc`2 peptideLookUp, MzSQL inReader, Tuple`2[] ms1SortedByScanTime, FSharpFunc`2 scanTimeToMzCorrection, FSharpFunc`2 getXIC, FSharpFunc`2 identifyPeaks, AlignmentResult alignmentResult) in C:\Users\jonat\source\repos\ProteomIQon\src\AlignmentBasedQuantification\AlignmentBasedQuantification.fs:line 864 
+2025-03-03 18:36:30.1907 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:TAGGGGGGGGHGDGGAGGVGGK, GlobalMod:0, Charge:2 
+2025-03-03 18:36:36.3216 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:DSIAEAG[ox]MDIK, GlobalMod:0, Charge:2 
+2025-03-03 18:36:39.1327 20170519 TM FScon3517 TRACE Quantfailed: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ProteomIQon.FSharpStats'.Wavelet.leftSide@1(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Int32 i, Double currentX, Int32 iL, Double acc)
+   at ProteomIQon.FSharpStats'.Wavelet.mapping@1-3(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Double stepSize, Int32 i)
+   at ProteomIQon.FSharpStats'.Wavelet.identifyPeaksBy(FSharpOption`1 borderpadding, BorderPaddingMethod borderPadMethod, InternalPaddingMethod internalPaddingMethod, HugeGapPaddingMethod hugeGapPaddingMethod, Double maxDistance, FSharpOption`1 minPeakLength, Double maxPeakLength, FSharpOption`1 minPeakDistance, Double noiseQuantile, Double minSNR, Tuple`2[] trace) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 462
+   at ProteomIQon.FSharpStats'.Wavelet.identify[a](a parameters, Double[] x, Double[] y) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 696
+   at ProteomIQon.AlignmentBasedQuantification.labledQuantification@853(Boolean diagCharts, AlignmentBasedQuantificationParams processParams, Logger logger, String plotDirectory, FSharpFunc`2 peptideLookUp, MzSQL inReader, Tuple`2[] ms1SortedByScanTime, FSharpFunc`2 scanTimeToMzCorrection, FSharpFunc`2 getXIC, FSharpFunc`2 identifyPeaks, AlignmentResult alignmentResult) in C:\Users\jonat\source\repos\ProteomIQon\src\AlignmentBasedQuantification\AlignmentBasedQuantification.fs:line 864 
+2025-03-03 18:36:39.6781 20170519 TM FScon3517 TRACE Quantfailed: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ProteomIQon.FSharpStats'.Wavelet.leftSide@1(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Int32 i, Double currentX, Int32 iL, Double acc)
+   at ProteomIQon.FSharpStats'.Wavelet.mapping@1-3(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Double stepSize, Int32 i)
+   at ProteomIQon.FSharpStats'.Wavelet.identifyPeaksBy(FSharpOption`1 borderpadding, BorderPaddingMethod borderPadMethod, InternalPaddingMethod internalPaddingMethod, HugeGapPaddingMethod hugeGapPaddingMethod, Double maxDistance, FSharpOption`1 minPeakLength, Double maxPeakLength, FSharpOption`1 minPeakDistance, Double noiseQuantile, Double minSNR, Tuple`2[] trace) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 462
+   at ProteomIQon.FSharpStats'.Wavelet.identify[a](a parameters, Double[] x, Double[] y) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 696
+   at ProteomIQon.AlignmentBasedQuantification.labledQuantification@853(Boolean diagCharts, AlignmentBasedQuantificationParams processParams, Logger logger, String plotDirectory, FSharpFunc`2 peptideLookUp, MzSQL inReader, Tuple`2[] ms1SortedByScanTime, FSharpFunc`2 scanTimeToMzCorrection, FSharpFunc`2 getXIC, FSharpFunc`2 identifyPeaks, AlignmentResult alignmentResult) in C:\Users\jonat\source\repos\ProteomIQon\src\AlignmentBasedQuantification\AlignmentBasedQuantification.fs:line 876 
+2025-03-03 18:36:44.1542 20170519 TM FScon3517 TRACE Quant failed: No Peak detected, Sequence:TPLVIR, GlobalMod:1, Charge:2 
+2025-03-03 18:36:44.3393 20170519 TM FScon3517 TRACE Quantfailed: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ProteomIQon.FSharpStats'.Wavelet.leftSide@1(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Int32 i, Double currentX, Int32 iL, Double acc)
+   at ProteomIQon.FSharpStats'.Wavelet.mapping@1-3(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Double stepSize, Int32 i)
+   at ProteomIQon.FSharpStats'.Wavelet.identifyPeaksBy(FSharpOption`1 borderpadding, BorderPaddingMethod borderPadMethod, InternalPaddingMethod internalPaddingMethod, HugeGapPaddingMethod hugeGapPaddingMethod, Double maxDistance, FSharpOption`1 minPeakLength, Double maxPeakLength, FSharpOption`1 minPeakDistance, Double noiseQuantile, Double minSNR, Tuple`2[] trace) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 462
+   at ProteomIQon.FSharpStats'.Wavelet.identify[a](a parameters, Double[] x, Double[] y) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 696
+   at ProteomIQon.AlignmentBasedQuantification.labledQuantification@853(Boolean diagCharts, AlignmentBasedQuantificationParams processParams, Logger logger, String plotDirectory, FSharpFunc`2 peptideLookUp, MzSQL inReader, Tuple`2[] ms1SortedByScanTime, FSharpFunc`2 scanTimeToMzCorrection, FSharpFunc`2 getXIC, FSharpFunc`2 identifyPeaks, AlignmentResult alignmentResult) in C:\Users\jonat\source\repos\ProteomIQon\src\AlignmentBasedQuantification\AlignmentBasedQuantification.fs:line 864 
+2025-03-03 18:36:53.4890 20170519 TM FScon3517 TRACE Quantfailed: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ProteomIQon.FSharpStats'.Wavelet.leftSide@1(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Int32 i, Double currentX, Int32 iL, Double acc)
+   at ProteomIQon.FSharpStats'.Wavelet.mapping@1-3(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Double stepSize, Int32 i)
+   at ProteomIQon.FSharpStats'.Wavelet.identifyPeaksBy(FSharpOption`1 borderpadding, BorderPaddingMethod borderPadMethod, InternalPaddingMethod internalPaddingMethod, HugeGapPaddingMethod hugeGapPaddingMethod, Double maxDistance, FSharpOption`1 minPeakLength, Double maxPeakLength, FSharpOption`1 minPeakDistance, Double noiseQuantile, Double minSNR, Tuple`2[] trace) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 462
+   at ProteomIQon.FSharpStats'.Wavelet.identify[a](a parameters, Double[] x, Double[] y) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 696
+   at ProteomIQon.AlignmentBasedQuantification.labledQuantification@853(Boolean diagCharts, AlignmentBasedQuantificationParams processParams, Logger logger, String plotDirectory, FSharpFunc`2 peptideLookUp, MzSQL inReader, Tuple`2[] ms1SortedByScanTime, FSharpFunc`2 scanTimeToMzCorrection, FSharpFunc`2 getXIC, FSharpFunc`2 identifyPeaks, AlignmentResult alignmentResult) in C:\Users\jonat\source\repos\ProteomIQon\src\AlignmentBasedQuantification\AlignmentBasedQuantification.fs:line 864 
+2025-03-03 18:37:06.2139 20170519 TM FScon3517 TRACE Quantfailed: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ProteomIQon.FSharpStats'.Wavelet.leftSide@1(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Int32 i, Double currentX, Int32 iL, Double acc)
+   at ProteomIQon.FSharpStats'.Wavelet.mapping@1-3(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Double stepSize, Int32 i)
+   at ProteomIQon.FSharpStats'.Wavelet.identifyPeaksBy(FSharpOption`1 borderpadding, BorderPaddingMethod borderPadMethod, InternalPaddingMethod internalPaddingMethod, HugeGapPaddingMethod hugeGapPaddingMethod, Double maxDistance, FSharpOption`1 minPeakLength, Double maxPeakLength, FSharpOption`1 minPeakDistance, Double noiseQuantile, Double minSNR, Tuple`2[] trace) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 462
+   at ProteomIQon.FSharpStats'.Wavelet.identify[a](a parameters, Double[] x, Double[] y) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 696
+   at ProteomIQon.AlignmentBasedQuantification.labledQuantification@853(Boolean diagCharts, AlignmentBasedQuantificationParams processParams, Logger logger, String plotDirectory, FSharpFunc`2 peptideLookUp, MzSQL inReader, Tuple`2[] ms1SortedByScanTime, FSharpFunc`2 scanTimeToMzCorrection, FSharpFunc`2 getXIC, FSharpFunc`2 identifyPeaks, AlignmentResult alignmentResult) in C:\Users\jonat\source\repos\ProteomIQon\src\AlignmentBasedQuantification\AlignmentBasedQuantification.fs:line 864 
+2025-03-03 18:37:27.4720 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:TADLGGNATTSDFTK, GlobalMod:1, Charge:2 
+2025-03-03 18:37:38.1700 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:SVPILPISGWLGDNLITK, GlobalMod:1, Charge:3 
+2025-03-03 18:38:30.9103 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:GVAVMMSGLDYER, GlobalMod:0, Charge:2 
+2025-03-03 18:38:37.2376 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:LDGYGQPHEDASFVYPDNLASPQQILIDASNGASDYGNK, GlobalMod:0, Charge:4 
+2025-03-03 18:38:39.6355 20170519 TM FScon3517 TRACE Quant failed: No Peak detected, Sequence:KLDSHLAEQFSTGR, GlobalMod:1, Charge:4 
+2025-03-03 18:38:48.9551 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:ADESAGGAAADKEAEELAK, GlobalMod:1, Charge:3 
+2025-03-03 18:39:17.1697 20170519 TM FScon3517 TRACE Quant failed: No Peak detected, Sequence:IDHADPVIR, GlobalMod:1, Charge:3 
+2025-03-03 18:39:19.5517 20170519 TM FScon3517 TRACE Quant failed: No Peak detected, Sequence:DLVWFDDEDFYDQLK, GlobalMod:1, Charge:2 
+2025-03-03 18:39:26.8887 20170519 TM FScon3517 TRACE Quantfailed: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ProteomIQon.FSharpStats'.Wavelet.leftSide@1(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Int32 i, Double currentX, Int32 iL, Double acc)
+   at ProteomIQon.FSharpStats'.Wavelet.mapping@1-3(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Double stepSize, Int32 i)
+   at ProteomIQon.FSharpStats'.Wavelet.identifyPeaksBy(FSharpOption`1 borderpadding, BorderPaddingMethod borderPadMethod, InternalPaddingMethod internalPaddingMethod, HugeGapPaddingMethod hugeGapPaddingMethod, Double maxDistance, FSharpOption`1 minPeakLength, Double maxPeakLength, FSharpOption`1 minPeakDistance, Double noiseQuantile, Double minSNR, Tuple`2[] trace) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 462
+   at ProteomIQon.FSharpStats'.Wavelet.identify[a](a parameters, Double[] x, Double[] y) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 696
+   at ProteomIQon.AlignmentBasedQuantification.labledQuantification@853(Boolean diagCharts, AlignmentBasedQuantificationParams processParams, Logger logger, String plotDirectory, FSharpFunc`2 peptideLookUp, MzSQL inReader, Tuple`2[] ms1SortedByScanTime, FSharpFunc`2 scanTimeToMzCorrection, FSharpFunc`2 getXIC, FSharpFunc`2 identifyPeaks, AlignmentResult alignmentResult) in C:\Users\jonat\source\repos\ProteomIQon\src\AlignmentBasedQuantification\AlignmentBasedQuantification.fs:line 864 
+2025-03-03 18:39:27.7559 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:LAAAALAAVQTAAADGGK, GlobalMod:1, Charge:2 
+2025-03-03 18:39:29.5868 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:D[ox]MLDFLYEFYR, GlobalMod:1, Charge:2 
+2025-03-03 18:39:30.3303 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:FIGMLVTGLPADTR, GlobalMod:1, Charge:2 
+2025-03-03 18:39:36.7214 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:IYVTTAVVENLR, GlobalMod:1, Charge:2 
+2025-03-03 18:40:25.9444 20170519 TM FScon3517 TRACE Quant failed: No Peak detected, Sequence:LMTTASNNITVVNGLTR, GlobalMod:1, Charge:4 
+2025-03-03 18:40:30.4875 20170519 TM FScon3517 TRACE Quantfailed: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ProteomIQon.FSharpStats'.Wavelet.leftSide@1(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Int32 i, Double currentX, Int32 iL, Double acc)
+   at ProteomIQon.FSharpStats'.Wavelet.mapping@1-3(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Double stepSize, Int32 i)
+   at ProteomIQon.FSharpStats'.Wavelet.identifyPeaksBy(FSharpOption`1 borderpadding, BorderPaddingMethod borderPadMethod, InternalPaddingMethod internalPaddingMethod, HugeGapPaddingMethod hugeGapPaddingMethod, Double maxDistance, FSharpOption`1 minPeakLength, Double maxPeakLength, FSharpOption`1 minPeakDistance, Double noiseQuantile, Double minSNR, Tuple`2[] trace) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 462
+   at ProteomIQon.FSharpStats'.Wavelet.identify[a](a parameters, Double[] x, Double[] y) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 696
+   at ProteomIQon.AlignmentBasedQuantification.labledQuantification@853(Boolean diagCharts, AlignmentBasedQuantificationParams processParams, Logger logger, String plotDirectory, FSharpFunc`2 peptideLookUp, MzSQL inReader, Tuple`2[] ms1SortedByScanTime, FSharpFunc`2 scanTimeToMzCorrection, FSharpFunc`2 getXIC, FSharpFunc`2 identifyPeaks, AlignmentResult alignmentResult) in C:\Users\jonat\source\repos\ProteomIQon\src\AlignmentBasedQuantification\AlignmentBasedQuantification.fs:line 864 
+2025-03-03 18:40:32.7940 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:VPMSQFEPHEYLNDR, GlobalMod:0, Charge:2 
+2025-03-03 18:40:42.6114 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:AGLGAALR, GlobalMod:1, Charge:2 
+2025-03-03 18:40:42.9339 20170519 TM FScon3517 TRACE Quantfailed: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ProteomIQon.FSharpStats'.Wavelet.leftSide@1(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Int32 i, Double currentX, Int32 iL, Double acc)
+   at ProteomIQon.FSharpStats'.Wavelet.mapping@1-3(Tuple`2[] paddedData, Ricker x, Double rickerPadd, Double stepSize, Int32 i)
+   at ProteomIQon.FSharpStats'.Wavelet.identifyPeaksBy(FSharpOption`1 borderpadding, BorderPaddingMethod borderPadMethod, InternalPaddingMethod internalPaddingMethod, HugeGapPaddingMethod hugeGapPaddingMethod, Double maxDistance, FSharpOption`1 minPeakLength, Double maxPeakLength, FSharpOption`1 minPeakDistance, Double noiseQuantile, Double minSNR, Tuple`2[] trace) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 462
+   at ProteomIQon.FSharpStats'.Wavelet.identify[a](a parameters, Double[] x, Double[] y) in C:\Users\jonat\source\repos\ProteomIQon\src\ProteomIQon\BioFSharp.Mz_Temp.fs:line 696
+   at ProteomIQon.AlignmentBasedQuantification.labledQuantification@853(Boolean diagCharts, AlignmentBasedQuantificationParams processParams, Logger logger, String plotDirectory, FSharpFunc`2 peptideLookUp, MzSQL inReader, Tuple`2[] ms1SortedByScanTime, FSharpFunc`2 scanTimeToMzCorrection, FSharpFunc`2 getXIC, FSharpFunc`2 identifyPeaks, AlignmentResult alignmentResult) in C:\Users\jonat\source\repos\ProteomIQon\src\AlignmentBasedQuantification\AlignmentBasedQuantification.fs:line 864 
+2025-03-03 18:40:43.0463 20170519 TM FScon3517 TRACE Quant failed: Peak fitting failed, Sequence:AIANGQVDGFPPK, GlobalMod:0, Charge:2 
+2025-03-03 18:40:47.2195 20170519 TM FScon3517 TRACE executing quantification:finished 

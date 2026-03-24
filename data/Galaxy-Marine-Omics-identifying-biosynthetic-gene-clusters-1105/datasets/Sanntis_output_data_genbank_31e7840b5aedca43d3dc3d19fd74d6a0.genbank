@@ -1,0 +1,211 @@
+LOCUS       BGC0001472_3             709 bp    DNA              UNK 01-JAN-1980
+DEFINITION  BGC0001472_3.
+ACCESSION   BGC0001472_3
+VERSION     BGC0001472_3
+KEYWORDS    .
+SOURCE      .
+  ORGANISM  .
+            .
+FEATURES             Location/Qualifiers
+     CDS             2..709
+                     /translation="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                     XXXXXXXXXPXXXXXXXXXPXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXQ
+                     XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXTXXXXXXXXXXXXXXXXX
+                     XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXNXXXXXXFX
+                     XXXXXKXXXXXXXN"
+                     /protein_id="BGC0001472_3_1"
+ORIGIN
+        1 mattsldlak vrnigimahi dagktttter ilfytgvsyk igevhdgaat mdwmeqeqer
+       61 gititsaatt chwplndvdh tiniidtpgh vdftvevers lrvldgavtv fdgvagvepq
+      121 setvwrqadr ygvpricfvn kldrtgadfl rcvdmivqrl gavpivmqlp igaeadfrgv
+      181 vdlvsmkafv ypeeavkgem ydtveipdnl keaaeewrgk lleavsendd qmmelylege
+      241 epteeqlhea irritlaskg sadsvtvtpv fcgtafknkg vqplldavvr ylpspldvea
+      301 ieghdvkdpe kvvqrkpsdd epfsglafki asdphlgklt fvriysgrle agtavlnsvk
+      361 gkkerigkiy rmhankreei psvgagdiva vmglkqtttg etlcddknpv ilesmdfpap
+      421 viqvaiepks kgdqeklgva iqrlseedps fqvhsdeetg qtiiggmgel hlevlvdrmk
+      481 refrveanvg kpqvayreti rkaveridyt hkkqtggtgq fakvqiaiep ieggdasyef
+      541 vnkvtggrip reyipsvdag aqeamqfgil agyemvgvrv tlldggyhev dsselafkia
+      601 gsqafkegar kaspvllepm mavevttped ymgevvgdin srrgqiqame erhgarvvkg
+      661 lvplsemfgy vgdlrsktsg rasysmqfds yaevprnvae eiiakakge
+//
+LOCUS       BGC0001472_4             397 bp    DNA              UNK 01-JAN-1980
+DEFINITION  BGC0001472_4.
+ACCESSION   BGC0001472_4
+VERSION     BGC0001472_4
+KEYWORDS    .
+SOURCE      .
+  ORGANISM  .
+            .
+FEATURES             Location/Qualifiers
+     CDS             2..397
+                     /translation="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                     XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                     XXXXXXXXXXXXXXXXXXLXXXXXXXXX"
+                     /protein_id="BGC0001472_4_1"
+ORIGIN
+        1 makakfertk phvnigtigh idhgkttlta aitkvlhday pdlneasafd qidkapeerq
+       61 rgitisiahv eyqtesrhya hvdcpghady iknmitgaaq mdgailvvaa tdgpmpqtke
+      121 hvllarqvgv pyivvalnka dmvddeeile lvelevrell seyefpgddl pvvkvsalka
+      181 legdaewgqt vldlmkavde sipqperdve kpflmpiedv ftitgrgtvv tgriergvlk
+      241 vnetvdivgi ktekttttvt giemfrklld egqagenvgl llrgikredv ergqviikpg
+      301 svtphtefqa qayilskdeg grhtpffnny rpqfyfrttd vtgvvtlpeg temvmpgdnt
+      361 lmdvaliqpv ameeglkfai reggrtvgag qvtkitk
+//
+LOCUS       BGC0001472_6             542 bp    DNA              UNK 01-JAN-1980
+DEFINITION  BGC0001472_6.
+ACCESSION   BGC0001472_6
+VERSION     BGC0001472_6
+KEYWORDS    .
+SOURCE      .
+  ORGANISM  .
+            .
+FEATURES             Location/Qualifiers
+     CDS             2..541
+                     /translation="TXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                     XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                     XXXXXXXXXXXXXXXXXXXXXXXXSXXXXXXXXXXXXXXXXXXSXXXXXXXXXXXXXXX
+                     XXXXXXXXXXXXXXXXX"
+                     /protein_id="BGC0001472_6_1"
+ORIGIN
+        1 mvaemkaeqi graartdmql tvparpvlrr gvrlrrages vvldgadraq vfsgafareg
+       61 lvplteacdg trdhtelalk tgfdeatvyk clallstaga veeamsgeep dvtpewavfl
+      121 srlgnstgsn pswadaaarl vsrsvrlegd aalvagarrs lrevcpvvte pagppgpgde
+      181 ltvffetpas apllaateer crqdgrpllr vradartiti gpyadlsitp cldcgrhgea
+      241 dlsgeppeyl hdlvvglash hvtallarat ishlpgdftv idtatlstvy rpvavrpgcp
+      301 rcsyargpva pqapagavye asvamppraf lapkdhqahy yasnlrlqsq fkdwpsrpht
+      361 plpaldisvl agserhdpsh gdtpltlssl glllkvafgv kedettperv krwtaasgni
+      421 gsttayavvr ddrimppgvy ayaqgshtlv tvsgevppgd spcdiiitgd lkkvmtkygt
+      481 fgfrlvflda gcnlaslrel aqhlglgftp rsdwdddala rllgtspade pvaafaslgg
+      541 ta
+//
+LOCUS       BGC0001472_8             448 bp    DNA              UNK 01-JAN-1980
+DEFINITION  BGC0001472_8.
+ACCESSION   BGC0001472_8
+VERSION     BGC0001472_8
+KEYWORDS    .
+SOURCE      .
+  ORGANISM  .
+            .
+FEATURES             Location/Qualifiers
+     CDS             2..448
+                     /translation="XXXXXXXXXXXXXXXXXXXXXXXXXXXXSXXXXXXXXXXXXXXXX
+                     XXXXXXXXXXIXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXFXXXXXXXXXXXXXXXXX
+                     XXXXXXXXXXXXXXXXXXXXTXXXXXXXXXXXXXXXXXXXXXXXX"
+                     /protein_id="BGC0001472_8_1"
+ORIGIN
+        1 mhlnrpqehi saelrgleel vspyglvsrt aplpvregep pfavqlaylg vpsralpnlr
+       61 twahdedtgn sdgagtgltp eraklvsiae alerystcaw dddemvvaae ndlteefvsp
+      121 srwpscspte larddcslsa ydpsvpirwv rawsltrrip vlvpaisvyl hmpyqsksee
+      181 firgittgaa vhsdvrsavl ggllevverd aialvwlqql rlpelvvdpa rldagvrelh
+      241 rvgtstdlrv rlfdattdfg vpviyavqls dadpalaqiv aatcdvhpeq algkiyrela
+      301 slrvalrgyl sayagrepdp akvsvvggav hnatrdrrdv fgflldgerp ayglegmpgl
+      361 pagadpldtv varlaargae vlvtdittde arqvgmravk vlvpeampvs fvhgerylgt
+      421 prlydapram ghtshaedav npvqqpfa
+//
+LOCUS       BGC0001472_9             399 bp    DNA              UNK 01-JAN-1980
+DEFINITION  BGC0001472_9.
+ACCESSION   BGC0001472_9
+VERSION     BGC0001472_9
+KEYWORDS    .
+SOURCE      .
+  ORGANISM  .
+            .
+FEATURES             Location/Qualifiers
+     CDS             1..399
+                     /translation="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                     XXRXXLXXCXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXLXXXXXXXXXXX
+                     XXXXLXXXXXXXXXXXXXXXXXXXXXXXX"
+                     /protein_id="BGC0001472_9_1"
+ORIGIN
+        1 mtqitlepgf lllislsygr lqdhvtarla paeisgvsfv hlfatipqpv gskyndtfap
+       61 lirelfaper vggagghgpy yfvrtqdaql gtdtlqisie gvsdedstra dlhrtaeryg
+      121 caaqvdatpl dsvpsplwna gftgtgfsas skrlfqeaap tlvsflnraa etpqspppal
+      181 gairlmaaht ratllrspqr eidgyefrel lslrllsyrs hfeaiylrtk dpqsfdaaca
+      241 rfyeqvgagv refitacgdp dddpademvr lwtksitses shlaenfsdg svvnaghtle
+      301 dlvrkrgapv eptrfhtpps peldrlmhrd adflafrlqt sllysclytl gfslaeryvf
+      361 cyvvaraned vcgksmkelq deldglarsm asgstktae
+//
+LOCUS       BGC0001472_11            885 bp    DNA              UNK 01-JAN-1980
+DEFINITION  BGC0001472_11.
+ACCESSION   BGC0001472_11
+VERSION     BGC0001472_11
+KEYWORDS    .
+SOURCE      .
+  ORGANISM  .
+            .
+FEATURES             Location/Qualifiers
+     CDS             2..874
+                     /translation="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                     XXXXXXXXXXXXXXXXXXXXXXXXXXXXGXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                     XXXXXXXXXXXXXXXXKXXXXXXXXKXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                     XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                     XXXXXXXXXXXXXXXXXXXXXXXXXXXXXKXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                     XXXXXXXXX"
+                     /protein_id="BGC0001472_11_1"
+ORIGIN
+        1 mgvnispyvv yrrsrlplge lggmsfttaw sridelhalr deigknavgl adrlgelvpt
+       61 lgddvradli rlrrdvhnlr hdravarlep lrphlgrevv devetwcalg vraeqcerag
+      121 reelesekar aadgfgalfe hdamarsiql sgdrlyrglr dlvagdeasa lkpskarlre
+      181 sslvnfayra slkpspfgrf teigafppdd prpadpggrh ggtqesvttl nrllvnwgpp
+      241 glplvpggme pghlvlnstl ragteyveyv gvapgsredg rmatervlrv rreglfdall
+      301 aampegsapa atvlrdltav tgkaetsrkv vqgliragil ffrpeiddhd pdysmkldrv
+      361 laaggtpeta alrghfselr rletdfseaa aderqkllds ayaaiggiae lckvspppee
+      421 vlkspvfedt pastapqawn lptvegsipa ltglwrlasm mdngqvkrlg lysfatrvlg
+      481 drstmpflef fqafssltdq eqvdvfmgrd veeaerytrq raealrtirq rlvpgdgtvh
+      541 ldpsviekac egvedlldte svtfraqfaq gvlpdrdrtl vvnglltgyg vyfsrfgsfv
+      601 egtdewslpa aqrehlarrf pgqvdlnsvl gfnfnlhpsv trrvvnypga vslgaertvy
+      661 glarlevrad qatrslrlwd peaqetldlv pmnfmtpigv pllyrlleal spsnrylwkp
+      721 lddirdaggp tvygetaprl vvgdvvadrr swnvaaaeip mlqdlsrdvp ealvafdawr
+      781 ltrglprhaf vlcqtpeerd vmagrsrkvt rqwadyahlr rasvhkpmyv dfrnpflvrs
+      841 faksalsrgd vvasireclp svddygpdtg wtaaeeffve lctdn
+//
+LOCUS       BGC0001472_13            400 bp    DNA              UNK 01-JAN-1980
+DEFINITION  BGC0001472_13.
+ACCESSION   BGC0001472_13
+VERSION     BGC0001472_13
+KEYWORDS    .
+SOURCE      .
+  ORGANISM  .
+            .
+FEATURES             Location/Qualifiers
+     CDS             1..399
+                     /translation="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                     XXXXXXXXXXXXXXTXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                     XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                     /protein_id="BGC0001472_13_1"
+ORIGIN
+        1 mtdrqdsayp yprtcplhpp keyaslraeq pitkvtlasg rtawlltrhe hirqlladph
+       61 vssnlahpgy plhfdappev meqmrpvlla mdppvhtaqr kmvipeftvk rvlqlrprve
+      121 eivdecissm lagegpadlv ealalpvpsl vicellgvpr sdraffqdrt nklvsvdadp
+      181 qernsahqel hayfselvta qeadpgddll grlvvknret gtfdhgelvg manvllvggh
+      241 ettanmislg vvgllenpdq laklradpgl apqavdellr yfsiadqvts rvatadleig
+      301 gvliragegv iglsasgnhd eavfpdpdrl dierggrhhl afghgihqci gqnlaklele
+      361 vvfnallari pglklatpva elpfkdsmgv yglhklpvsw
+//
+LOCUS       BGC0001472_16            556 bp    DNA              UNK 01-JAN-1980
+DEFINITION  BGC0001472_16.
+ACCESSION   BGC0001472_16
+VERSION     BGC0001472_16
+KEYWORDS    .
+SOURCE      .
+  ORGANISM  .
+            .
+FEATURES             Location/Qualifiers
+     CDS             2..556
+                     /translation="XXXXXXXXXXXXXXXXXXXXXXXXXXXTXXXXXXXXXXXLXXXXX
+                     XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXPXXXXXXXXXXX
+                     XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXYXXXXVXXXXXXXXXXXXXXXXXXXXXXX
+                     XXXXXXXXXXXXXXXXXXXXXX"
+                     /protein_id="BGC0001472_16_1"
+ORIGIN
+        1 allglrpftp wevsvaelgp dhraevnvla adgrrvelif lntamhtgrh rlglpslwqd
+       61 rrlvlrtvva dgsplrrags ytydglvgvl tglmesyrpt vvhtldpdpd iqhsteavrr
+      121 rdseqpgysd hadhtaaacf awaamirwva ratadggrip gfvtvayrgy ynrhwpknlp
+      181 qgvlarkaah lvpyggspdw dcgnpsgcgd ynvggdrplt nrkgwvrsth hrypgtrtvl
+      241 taepdgrlaa yavlglrvvr wqetgpgsga wgpphdlggg plapalgsat trdgrlllfg
+      301 lrfaalgghg adnereivvl eqsapgrgfr pwrglgspsp grdevrrtgv pvavaapdgq
+      361 ihlfvrdaek gvstrvrdga grwsawrdmg ggevqdglht avdeggrvhv fgaghhavhh
+      421 wtqdtpsagl tartqltaap vpahapaalp apdgsvslyy raaagsgltt aragtavpga
+      481 rfdgyxxvda apsprgpvll grtaeglvql lmggglhvrt dgpaaldgas lrlgpdgrps
+      541 vaglgpdaap wmwrpr
+//

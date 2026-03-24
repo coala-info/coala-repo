@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Pd-Al2O3 Catalyst for Ammonia</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "eac4157620e0fcac.ga"
+      },
+      "datePublished": "2025-07-11 12:01:17 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-6279-7823"
+        },
+        {
+          "@id": "#person-742"
+        },
+        {
+          "@id": "#person-649"
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.1803.1",
+      "url": "https://workflowhub.eu/workflows/1803/ro_crate?version=1",
+      "name": "Research Object Crate for Pd-Al2O3 Catalyst for Ammonia",
+      "description": "Galaxy workflow for the reproduction of the results published in: D. Decarolis, A. H. Clark, T. Pellegrinelli, M. Nachtegaal, E. W. Lynch, C. R. A. .Catlow, E. K. Gibson, A. Goguet, P. P. Wells (2021). Spatial Profiling of a Pd/Al2O3 Catalyst during Selective Ammonia Oxidation DOI: 10.1021/acscatal.0c05356.\n\nThis workflow is published as part of the research data submitted for the paper Facilitating Reproducibility in Catalysis Research with Managed Workflows and RO-Crates: A Galaxy Case Study, ChemCatChem, DOI: 10.1002/cctc.202401676.\n",
+      "isBasedOn": "https://zenodo.org/records/13941579",
+      "sdDatePublished": "2026-03-24 16:42:06 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "eac4157620e0fcac.ga"
+        },
+        {
+          "@id": "eac4157620e0fcac.abstract.cwl"
+        }
+      ]
+    },
+    {
+      "@id": "eac4157620e0fcac.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 66521,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "subjectOf": {
+        "@id": "eac4157620e0fcac.abstract.cwl"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Galaxy workflow for the reproduction of the results published in: D. Decarolis, A. H. Clark, T. Pellegrinelli, M. Nachtegaal, E. W. Lynch, C. R. A. .Catlow, E. K. Gibson, A. Goguet, P. P. Wells (2021). Spatial Profiling of a Pd/Al2O3 Catalyst during Selective Ammonia Oxidation DOI: 10.1021/acscatal.0c05356.\n\nThis workflow is published as part of the research data submitted for the paper Facilitating Reproducibility in Catalysis Research with Managed Workflows and RO-Crates: A Galaxy Case Study, ChemCatChem, DOI: 10.1002/cctc.202401676.\n",
+      "name": "Pd-Al2O3 Catalyst for Ammonia",
+      "url": "https://workflowhub.eu/workflows/1803?version=1",
+      "keywords": "",
+      "version": 1,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/1121"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/742"
+        },
+        {
+          "@id": "https://orcid.org/0009-0001-1723-4394"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-2777-5167"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-7348-7612"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/649"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/166"
+      },
+      "dateCreated": "2025-07-11T11:03:03Z",
+      "dateModified": "2025-11-11T12:33:49Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/13"
+      },
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.1803.1",
+      "input": [
+        {
+          "@id": "#pd_al2o3_catalyst_for_ammonia-inputs-He_after_reduction.prj"
+        },
+        {
+          "@id": "#pd_al2o3_catalyst_for_ammonia-inputs-reaction-100C.prj"
+        },
+        {
+          "@id": "#pd_al2o3_catalyst_for_ammonia-inputs-175C.prj"
+        },
+        {
+          "@id": "#pd_al2o3_catalyst_for_ammonia-inputs-300C.prj"
+        }
+      ],
+      "output": [
+
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "eac4157620e0fcac.abstract.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "HowTo"
+      ],
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "contentSize": 7635
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-6279-7823",
+      "@type": "Person",
+      "name": "Patrick Austin",
+      "identifier": "https://orcid.org/0000-0002-6279-7823"
+    },
+    {
+      "@id": "#person-742",
+      "@type": "Person",
+      "name": "Alexander Belozerov",
+      "identifier": "https://workflowhub.eu/people/742"
+    },
+    {
+      "@id": "#person-649",
+      "@type": "Person",
+      "name": "Tom Underwood",
+      "identifier": "https://workflowhub.eu/people/649"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/1121",
+      "@type": "Person",
+      "name": "Patrick Austin"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/742",
+      "@type": "Person",
+      "name": "Alexander Belozerov"
+    },
+    {
+      "@id": "https://orcid.org/0009-0001-1723-4394",
+      "@type": "Person",
+      "name": "Subindev Devadasan"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-2777-5167",
+      "@type": "Person",
+      "name": "Leandro Liborio"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-7348-7612",
+      "@type": "Person",
+      "name": "Abraham Nieva de la Hidalga"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/649",
+      "@type": "Person",
+      "name": "Tom Underwood"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/166",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "EuroScienceGateway"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/13",
+      "@type": "Collection",
+      "name": "Workflows in EuroScienceGateway"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#pd_al2o3_catalyst_for_ammonia-inputs-He_after_reduction.prj",
+      "@type": "FormalParameter",
+      "name": "He_after_reduction.prj",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pd_al2o3_catalyst_for_ammonia-inputs-reaction-100C.prj",
+      "@type": "FormalParameter",
+      "name": "reaction-100C.prj",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pd_al2o3_catalyst_for_ammonia-inputs-175C.prj",
+      "@type": "FormalParameter",
+      "name": "175C.prj",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pd_al2o3_catalyst_for_ammonia-inputs-300C.prj",
+      "@type": "FormalParameter",
+      "name": "300C.prj",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Pd-Al2O3 Catalyst for Ammonia</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/1803/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/1803/ro_crate?version=1</a>
+
+
+<p>
+  Galaxy workflow for the reproduction of the results published in: D. Decarolis, A. H. Clark, T. Pellegrinelli, M. Nachtegaal, E. W. Lynch, C. R. A. .Catlow, E. K. Gibson, A. Goguet, P. P. Wells (2021). Spatial Profiling of a Pd/Al2O3 Catalyst during Selective Ammonia Oxidation DOI: 10.1021/acscatal.0c05356.
+
+This workflow is published as part of the research data submitted for the paper Facilitating Reproducibility in Catalysis Research with Managed Workflows and RO-Crates: A Galaxy Case Study, ChemCatChem, DOI: 10.1002/cctc.202401676.
+
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://orcid.org/0000-0002-6279-7823" target="_blank">Patrick Austin</a>, <a href="https://workflowhub.eu/people/742" target="_blank">Alexander Belozerov</a>, <a href="https://workflowhub.eu/people/649" target="_blank">Tom Underwood</a></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>CC-BY-4.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_eac4157620e0fcac.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="eac4157620e0fcac.ga">Pd-Al2O3 Catalyst for Ammonia</a>
+      
+        <br/>Size: 66521 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_eac4157620e0fcac.abstract.cwl">
+      
+      
+      
+        <strong>Main Workflow Description: </strong>
+      
+      <a class="data-entity-link" href="eac4157620e0fcac.abstract.cwl">eac4157620e0fcac.abstract.cwl</a>
+      
+        <br/>Size: 7635 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

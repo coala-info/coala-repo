@@ -1,0 +1,670 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "Inputs required: assembled-genome.fasta, hard-repeat-masked-genome.fasta, and (because this workflow maps known mRNA sequences) .cdna, .pro and .dat files. It is also required to select certain databases for Fgenesh-annotate and for Busco. This workflow splits the input genomes into single sequences (to decrease computation time), annotates using FgenesH++, and merges the output. Outputs: genome annotation in gff3 format, genome annotation stats, fasta files of mRNAs, cDNAs and proteins, Busco report of proteins. Note: The input sequences to the tools to extract mRNA and cDNA here are the assembly.fasta sequences (unmasked) but there may be a reason to prefer the masked version, we are unsure of when that may be the case. Note: If you want to use this workflow without an input of known mRNAs, you can save a copy of the workflow and edit the \"Fgenesh annotate\" tool with \"no\" at this option, you will then not need an input of .cdna .pro and .dat files. \n\nChanges made 13 Nov 2024: Added correct input files and connected them to the split steps. Added inputs for db selections in the annotation step. Added lineage input to Busco. Added genome annotation stats derived from gff3 output. Connected in assembly.fasta sequences to \"get mRNA/cDNA\" tools. Expanded this information text and clarified the need for .cdna .pro and .dat files as input. ",
+    "comments": [],
+    "format-version": "0.1",
+    "name": "Fgenesh annotation -TSI",
+    "report": {
+        "markdown": "\n# Workflow Execution Report\n\n## Workflow Inputs\n```galaxy\ninvocation_inputs()\n```\n\n## Workflow Outputs\n```galaxy\ninvocation_outputs()\n```\n\n## Workflow\n```galaxy\nworkflow_display()\n```\n"
+    },
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "assembled_genome.fasta"
+                }
+            ],
+            "label": "assembled_genome.fasta",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 6.663372830690548,
+                "top": 28.119898804061435
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "a689686a-7310-4fd2-bffd-6aba83184157",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "hard_masked_genome.fasta"
+                }
+            ],
+            "label": "hard_masked_genome.fasta",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 0,
+                "top": 381.81989098932337
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "1d364f90-4f87-4806-80db-e21c2e3e8b87",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 2,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Select an approximately closely-related species"
+                }
+            ],
+            "label": "Select an approximately closely-related species",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 0.14531156568071502,
+                "top": 491.00293154305336
+            },
+            "tool_id": null,
+            "tool_state": "{\"restrictOnConnections\": true, \"parameter_type\": \"text\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "16b094ca-71e8-40e4-9801-1f8a237eea50",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 3,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Select mammal or non-mammal"
+                }
+            ],
+            "label": "Select mammal or non-mammal",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 4.454041756803008,
+                "top": 627.6527992678247
+            },
+            "tool_id": null,
+            "tool_state": "{\"restrictOnConnections\": true, \"parameter_type\": \"text\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "b0d2dd0b-49e2-4449-aefe-1bd20d2be4c2",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "4": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 4,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Select lineage"
+                }
+            ],
+            "label": "Select lineage",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 1190.872915338586,
+                "top": 621.7590036001117
+            },
+            "tool_id": null,
+            "tool_state": "{\"restrictOnConnections\": true, \"parameter_type\": \"text\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "63bb5159-c32b-4ed9-98f9-19cadaaa7ba8",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "5": {
+            "annotation": "",
+            "content_id": "fgenesh_split",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "input_fasta": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "FGENESH split",
+            "outputs": [
+                {
+                    "name": "fasta_collection",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 275.1963270646036,
+                "top": 161.7608663806054
+            },
+            "post_job_actions": {},
+            "tool_id": "fgenesh_split",
+            "tool_state": "{\"filename_format\": \"seq_id\", \"input_fasta\": {\"__class__\": \"ConnectedValue\"}, \"output_file_extension\": \"fa\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0+galaxy0",
+            "type": "tool",
+            "uuid": "8bb6ddaf-1bc4-4086-9512-7f97d5324b1f",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "6": {
+            "annotation": "",
+            "content_id": "fgenesh_split",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "input_fasta": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "FGENESH split",
+            "outputs": [
+                {
+                    "name": "fasta_collection",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 275.2131951462279,
+                "top": 310.8492030753687
+            },
+            "post_job_actions": {},
+            "tool_id": "fgenesh_split",
+            "tool_state": "{\"filename_format\": \"seq_id\", \"input_fasta\": {\"__class__\": \"ConnectedValue\"}, \"output_file_extension\": \"fa.N\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0+galaxy0",
+            "type": "tool",
+            "uuid": "fd2446be-ec15-4df9-b699-9e5c04763a07",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "7": {
+            "annotation": "",
+            "content_id": "fgenesh_annotate",
+            "errors": null,
+            "id": 7,
+            "input_connections": {
+                "db_type|genome_type": {
+                    "id": 3,
+                    "output_name": "output"
+                },
+                "inputs|multiple_seq": {
+                    "id": 5,
+                    "output_name": "fasta_collection"
+                },
+                "matrix_type|species_matrix": {
+                    "id": 2,
+                    "output_name": "output"
+                },
+                "repeat_sequence|masked_seq_multiple": {
+                    "id": 6,
+                    "output_name": "fasta_collection"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool FGENESH annotate",
+                    "name": "db_type"
+                },
+                {
+                    "description": "runtime parameter for tool FGENESH annotate",
+                    "name": "inputs"
+                },
+                {
+                    "description": "runtime parameter for tool FGENESH annotate",
+                    "name": "map_mrna"
+                },
+                {
+                    "description": "runtime parameter for tool FGENESH annotate",
+                    "name": "map_mrna"
+                },
+                {
+                    "description": "runtime parameter for tool FGENESH annotate",
+                    "name": "map_mrna"
+                },
+                {
+                    "description": "runtime parameter for tool FGENESH annotate",
+                    "name": "matrix_type"
+                },
+                {
+                    "description": "runtime parameter for tool FGENESH annotate",
+                    "name": "repeat_sequence"
+                }
+            ],
+            "label": null,
+            "name": "FGENESH annotate",
+            "outputs": [
+                {
+                    "name": "multiple_annotation",
+                    "type": "input"
+                },
+                {
+                    "name": "annotated_gff3",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 603.8832056025603,
+                "top": 294.25094826269515
+            },
+            "post_job_actions": {},
+            "tool_id": "fgenesh_annotate",
+            "tool_state": "{\"db_type\": {\"db_type_selector\": \"indexed\", \"__current_case__\": 0, \"genome_type\": {\"__class__\": \"ConnectedValue\"}}, \"find_homologs\": true, \"inputs\": {\"input_type\": \"multiple\", \"__current_case__\": 1, \"multiple_seq\": {\"__class__\": \"ConnectedValue\"}}, \"intronic_genes\": false, \"map_est\": {\"ESTs\": \"0\", \"__current_case__\": 1}, \"map_mrna\": {\"mRNAs\": \"1\", \"__current_case__\": 0, \"prot_file\": {\"__class__\": \"RuntimeValue\"}, \"cdna_file\": {\"__class__\": \"RuntimeValue\"}, \"dat_file\": {\"__class__\": \"RuntimeValue\"}}, \"matrix_type\": {\"matrix_type_selector\": \"indexed\", \"__current_case__\": 0, \"species_matrix\": {\"__class__\": \"ConnectedValue\"}}, \"nr_type\": {\"nr_type_selector\": \"indexed\", \"__current_case__\": 0, \"nr_db\": \"animals\"}, \"predict_gc\": true, \"repeat_sequence\": {\"selector\": \"multiple_masked_seq\", \"__current_case__\": 1, \"masked_seq_multiple\": {\"__class__\": \"ConnectedValue\"}}, \"use_proteins\": true, \"use_reads\": false, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0+galaxy0",
+            "type": "tool",
+            "uuid": "8495124a-3771-48d9-88a5-71b7580da02d",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "8": {
+            "annotation": "",
+            "content_id": "fgenesh_merge",
+            "errors": null,
+            "id": 8,
+            "input_connections": {
+                "input|input_resn3_collection": {
+                    "id": 7,
+                    "output_name": "multiple_annotation"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool FGENESH merge",
+                    "name": "input"
+                }
+            ],
+            "label": null,
+            "name": "FGENESH merge",
+            "outputs": [
+                {
+                    "name": "output_resn3",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "left": 875.7035466072849,
+                "top": 297.5585618865647
+            },
+            "post_job_actions": {},
+            "tool_id": "fgenesh_merge",
+            "tool_state": "{\"input\": {\"selector\": \"resn3\", \"__current_case__\": 1, \"input_resn3_collection\": {\"__class__\": \"ConnectedValue\"}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0+galaxy0",
+            "type": "tool",
+            "uuid": "fbaa26b8-c8ff-4bfb-a0e1-53d52e6a01f7",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "9": {
+            "annotation": "",
+            "content_id": "fgenesh_merge",
+            "errors": null,
+            "id": 9,
+            "input_connections": {
+                "input|input_gff_collection": {
+                    "id": 7,
+                    "output_name": "annotated_gff3"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool FGENESH merge",
+                    "name": "input"
+                }
+            ],
+            "label": "Merge into a single annotation file",
+            "name": "FGENESH merge",
+            "outputs": [
+                {
+                    "name": "output_gff",
+                    "type": "gff3"
+                }
+            ],
+            "position": {
+                "left": 878.2521553666292,
+                "top": 453.85797022829286
+            },
+            "post_job_actions": {
+                "TagDatasetActionoutput_gff": {
+                    "action_arguments": {
+                        "tags": "fgenesh-annotation-gff3"
+                    },
+                    "action_type": "TagDatasetAction",
+                    "output_name": "output_gff"
+                }
+            },
+            "tool_id": "fgenesh_merge",
+            "tool_state": "{\"input\": {\"selector\": \"gff\", \"__current_case__\": 0, \"input_gff_collection\": {\"__class__\": \"ConnectedValue\"}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0+galaxy0",
+            "type": "tool",
+            "uuid": "236debc5-69df-4ebf-b839-cb7c8f1e5880",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "output_gff",
+                    "output_name": "output_gff",
+                    "uuid": "b7b39522-4d5e-4685-91d6-662cc6bf75d9"
+                }
+            ]
+        },
+        "10": {
+            "annotation": "",
+            "content_id": "fgenesh_get_mrnas_gc",
+            "errors": null,
+            "id": 10,
+            "input_connections": {
+                "resn3_file": {
+                    "id": 8,
+                    "output_name": "output_resn3"
+                },
+                "sequence_file": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": "get mRNA sequences",
+            "name": "FGENESH get mRNA or GC",
+            "outputs": [
+                {
+                    "name": "output_mrna_file",
+                    "type": "fasta"
+                },
+                {
+                    "name": "log",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "left": 1091.9301371376166,
+                "top": 0
+            },
+            "post_job_actions": {
+                "TagDatasetActionoutput_mrna_file": {
+                    "action_arguments": {
+                        "tags": "output-mRNA-fasta"
+                    },
+                    "action_type": "TagDatasetAction",
+                    "output_name": "output_mrna_file"
+                }
+            },
+            "tool_id": "fgenesh_get_mrnas_gc",
+            "tool_state": "{\"CDS\": false, \"GC\": false, \"fix_id_type\": \"seq_name\", \"resn3_file\": {\"__class__\": \"ConnectedValue\"}, \"sequence_file\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0+galaxy0",
+            "type": "tool",
+            "uuid": "659f095c-4c23-4805-9a5c-5a550a73ccb5",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "output_mrna_file",
+                    "output_name": "output_mrna_file",
+                    "uuid": "22e3af38-0531-4576-a11b-e8e89e9b8d4f"
+                }
+            ]
+        },
+        "11": {
+            "annotation": "",
+            "content_id": "fgenesh_get_proteins",
+            "errors": null,
+            "id": 11,
+            "input_connections": {
+                "input|resn3": {
+                    "id": 8,
+                    "output_name": "output_resn3"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool FGENESH get protein",
+                    "name": "input"
+                }
+            ],
+            "label": null,
+            "name": "FGENESH get protein",
+            "outputs": [
+                {
+                    "name": "output_prot_file",
+                    "type": "fasta"
+                }
+            ],
+            "position": {
+                "left": 1170.8355708896431,
+                "top": 478.4127605458642
+            },
+            "post_job_actions": {
+                "TagDatasetActionoutput_prot_file": {
+                    "action_arguments": {
+                        "tags": "output-protein-fasta"
+                    },
+                    "action_type": "TagDatasetAction",
+                    "output_name": "output_prot_file"
+                }
+            },
+            "tool_id": "fgenesh_get_proteins",
+            "tool_state": "{\"input\": {\"selector\": \"single\", \"__current_case__\": 0, \"resn3\": {\"__class__\": \"ConnectedValue\"}, \"fix_id_type\": \"seq_name\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0+galaxy0",
+            "type": "tool",
+            "uuid": "5b5efdca-d415-4ede-abc5-56a384750780",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "output_prot_file",
+                    "output_name": "output_prot_file",
+                    "uuid": "fc521e49-4c6f-463d-ad99-263b65e70f3e"
+                }
+            ]
+        },
+        "12": {
+            "annotation": "",
+            "content_id": "fgenesh_get_mrnas_gc",
+            "errors": null,
+            "id": 12,
+            "input_connections": {
+                "resn3_file": {
+                    "id": 8,
+                    "output_name": "output_resn3"
+                },
+                "sequence_file": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": "get cDNA sequences",
+            "name": "FGENESH get mRNA or GC",
+            "outputs": [
+                {
+                    "name": "output_mrna_file",
+                    "type": "fasta"
+                },
+                {
+                    "name": "log",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "left": 1315.6461313977886,
+                "top": 209.65325780127984
+            },
+            "post_job_actions": {
+                "TagDatasetActionoutput_mrna_file": {
+                    "action_arguments": {
+                        "tags": "output-cDNA-fasta"
+                    },
+                    "action_type": "TagDatasetAction",
+                    "output_name": "output_mrna_file"
+                }
+            },
+            "tool_id": "fgenesh_get_mrnas_gc",
+            "tool_state": "{\"CDS\": true, \"GC\": false, \"fix_id_type\": \"seq_name\", \"resn3_file\": {\"__class__\": \"ConnectedValue\"}, \"sequence_file\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0+galaxy0",
+            "type": "tool",
+            "uuid": "db4ecd1f-2b02-49b9-9211-fce0f4a74532",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "output_cdna_file",
+                    "output_name": "output_mrna_file",
+                    "uuid": "0d030f99-9369-4648-84d3-20898d47ed54"
+                }
+            ]
+        },
+        "13": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/jcvi_gff_stats/jcvi_gff_stats/0.8.4",
+            "errors": null,
+            "id": 13,
+            "input_connections": {
+                "gff": {
+                    "id": 9,
+                    "output_name": "output_gff"
+                },
+                "ref_genome|genome": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Genome annotation statistics",
+                    "name": "ref_genome"
+                }
+            ],
+            "label": null,
+            "name": "Genome annotation statistics",
+            "outputs": [
+                {
+                    "name": "summary",
+                    "type": "txt"
+                },
+                {
+                    "name": "graphs",
+                    "type": "pdf"
+                }
+            ],
+            "position": {
+                "left": 895.136596456132,
+                "top": 723.0858158966724
+            },
+            "post_job_actions": {
+                "TagDatasetActionsummary": {
+                    "action_arguments": {
+                        "tags": "fgenesh-annotation-stats"
+                    },
+                    "action_type": "TagDatasetAction",
+                    "output_name": "summary"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/jcvi_gff_stats/jcvi_gff_stats/0.8.4",
+            "tool_shed_repository": {
+                "changeset_revision": "8cffbd184762",
+                "name": "jcvi_gff_stats",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"gff\": {\"__class__\": \"ConnectedValue\"}, \"ref_genome\": {\"genome_type_select\": \"history\", \"__current_case__\": 1, \"genome\": {\"__class__\": \"ConnectedValue\"}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.8.4",
+            "type": "tool",
+            "uuid": "491cd591-63d5-470f-80bc-0dc39847f4f8",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "14": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/busco/busco/5.5.0+galaxy0",
+            "errors": null,
+            "id": 14,
+            "input_connections": {
+                "input": {
+                    "id": 11,
+                    "output_name": "output_prot_file"
+                },
+                "lineage|lineage_dataset": {
+                    "id": 4,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Busco",
+                    "name": "lineage"
+                }
+            ],
+            "label": null,
+            "name": "Busco",
+            "outputs": [
+                {
+                    "name": "busco_sum",
+                    "type": "txt"
+                },
+                {
+                    "name": "busco_table",
+                    "type": "tabular"
+                },
+                {
+                    "name": "busco_missing",
+                    "type": "tabular"
+                },
+                {
+                    "name": "summary_image",
+                    "type": "png"
+                },
+                {
+                    "name": "busco_gff",
+                    "type": "gff3"
+                }
+            ],
+            "position": {
+                "left": 1474.3142503096192,
+                "top": 440.5870616255236
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/busco/busco/5.5.0+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "ea8146ee148f",
+                "name": "busco",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adv\": {\"evalue\": \"0.001\", \"limit\": \"3\", \"contig_break\": \"10\"}, \"busco_mode\": {\"mode\": \"prot\", \"__current_case__\": 2}, \"input\": {\"__class__\": \"ConnectedValue\"}, \"lineage\": {\"lineage_mode\": \"select_lineage\", \"__current_case__\": 1, \"lineage_dataset\": {\"__class__\": \"ConnectedValue\"}}, \"lineage_conditional\": {\"selector\": \"download\", \"__current_case__\": 1}, \"outputs\": [\"short_summary\", \"missing\", \"image\", \"gff\"], \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "5.5.0+galaxy0",
+            "type": "tool",
+            "uuid": "4c05fb64-e10d-4c9e-a29c-6b6daf5bc904",
+            "when": null,
+            "workflow_outputs": []
+        }
+    },
+    "tags": [],
+    "uuid": "ce778c1d-9ec2-44b9-81b1-1c083184dc50",
+    "version": 34
+}

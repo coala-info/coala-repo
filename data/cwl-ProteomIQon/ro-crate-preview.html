@@ -1,0 +1,630 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ProteomIQon</title>
+  <script type="application/ld+json">{
+  "@context": [
+    "https://w3id.org/ro/crate/1.2/context",
+    {
+      "Sample": "https://bioschemas.org/Sample",
+      "LabProtocol": "https://bioschemas.org/LabProtocol",
+      "LabProcess": "https://bioschemas.org/LabProcess",
+      "computationalTool": "https://bioschemas.org/properties/computationalTool",
+      "labEquipment": "https://bioschemas.org/properties/labEquipment",
+      "reagent": "https://bioschemas.org/properties/reagent",
+      "intendedUse": "https://bioschemas.org/properties/intendedUse",
+      "executesLabProtocol": "https://bioschemas.org/properties/executesLabProtocol",
+      "parameterValue": "https://bioschemas.org/properties/parameterValue",
+      "columnIndex": "https://w3id.org/ro/terms/arc#columnIndex"
+    }
+  ],
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ],
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "description": "The ProteomIQon is a collection of open source computational proteomics tools to build pipelines for the evaluation of MS derived proteomics data written in F#. The current state of the tool chain allows handle tasks like signal detection, peptide identification, quantification and protein inference. Each ProteomIQon tool is concerned with a specific task. This makes the tool-chain flexibel and easily extendable.",
+      "name": "ProteomIQon",
+      "identifier": "ProteomIQon",
+      "creator": {
+        "@id": "http://orcid.org/0000-0003-1512-9504"
+      },
+      "hasPart": [
+        {
+          "@id": "workflows/ProteomIQon/workflow.cwl"
+        }
+      ],
+      "mainEntity": {
+        "@id": "workflows/ProteomIQon/workflow.cwl"
+      },
+      "datePublished": "2026-01-12T15:41:21.9031968",
+      "license": {
+        "@id": "#LICENSE"
+      }
+    },
+    {
+      "@id": "workflows/ProteomIQon/workflow.cwl",
+      "@type": [
+        "File",
+        "ComputationalWorkflow",
+        "SoftwareSourceCode",
+        "LabProtocol"
+      ],
+      "additionalType": "WorkflowProtocol",
+      "input": [
+        {
+          "@id": "#FormalParameter_W_ProteomIQon_cores"
+        },
+        {
+          "@id": "#FormalParameter_W_ProteomIQon_outputMzML"
+        },
+        {
+          "@id": "#FormalParameter_W_ProteomIQon_outputDB"
+        },
+        {
+          "@id": "#FormalParameter_W_ProteomIQon_outputPSM"
+        },
+        {
+          "@id": "#FormalParameter_W_ProteomIQon_outputPSMStats"
+        },
+        {
+          "@id": "#FormalParameter_W_ProteomIQon_outputQuant"
+        },
+        {
+          "@id": "#FormalParameter_W_ProteomIQon_outputProt"
+        },
+        {
+          "@id": "#FormalParameter_W_ProteomIQon_outputAlignment"
+        },
+        {
+          "@id": "#FormalParameter_W_ProteomIQon_outputAlignmentQuant"
+        },
+        {
+          "@id": "#FormalParameter_W_ProteomIQon_outputAlignmentStats"
+        },
+        {
+          "@id": "#FormalParameter_W_ProteomIQon_outputProtDeduced"
+        },
+        {
+          "@id": "#FormalParameter_W_ProteomIQon_outputQuantAndProt"
+        },
+        {
+          "@id": "#FormalParameter_W_ProteomIQon_outputLabeledProt"
+        },
+        {
+          "@id": "#FormalParameter_W_ProteomIQon_inputMzML"
+        },
+        {
+          "@id": "#FormalParameter_W_ProteomIQon_inputPeptideDB"
+        },
+        {
+          "@id": "#FormalParameter_W_ProteomIQon_paramsMzML"
+        },
+        {
+          "@id": "#FormalParameter_W_ProteomIQon_paramsDB"
+        },
+        {
+          "@id": "#FormalParameter_W_ProteomIQon_paramsPSM"
+        },
+        {
+          "@id": "#FormalParameter_W_ProteomIQon_paramsPSMStats"
+        },
+        {
+          "@id": "#FormalParameter_W_ProteomIQon_paramsPSMBasedQuant"
+        },
+        {
+          "@id": "#FormalParameter_W_ProteomIQon_paramsAlignmentBasedQuant"
+        },
+        {
+          "@id": "#FormalParameter_W_ProteomIQon_paramsAlignmentBasedQuantStats"
+        },
+        {
+          "@id": "#FormalParameter_W_ProteomIQon_paramsProt"
+        },
+        {
+          "@id": "#FormalParameter_W_ProteomIQon_paramsLabeledProteinQuant"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#FormalParameter_W_ProteomIQon_db"
+        },
+        {
+          "@id": "#FormalParameter_W_ProteomIQon_mzml"
+        },
+        {
+          "@id": "#FormalParameter_W_ProteomIQon_psm"
+        },
+        {
+          "@id": "#FormalParameter_W_ProteomIQon_psmstats"
+        },
+        {
+          "@id": "#FormalParameter_W_ProteomIQon_quant"
+        },
+        {
+          "@id": "#FormalParameter_W_ProteomIQon_prot"
+        },
+        {
+          "@id": "#FormalParameter_W_ProteomIQon_alignment"
+        },
+        {
+          "@id": "#FormalParameter_W_ProteomIQon_alignmentQuant"
+        },
+        {
+          "@id": "#FormalParameter_W_ProteomIQon_alignmentStats"
+        },
+        {
+          "@id": "#FormalParameter_W_ProteomIQon_protDeduced"
+        },
+        {
+          "@id": "#FormalParameter_W_ProteomIQon_quantAndProt"
+        },
+        {
+          "@id": "#FormalParameter_W_ProteomIQon_labeledProteins"
+        }
+      ],
+      "name": "workflows/ProteomIQon/workflow.cwl",
+      "programmingLanguage": {
+        "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl"
+      },
+      "hasPart": [
+        {
+          "@id": "WorkflowStep_workflows/ProteomIQon/workflow.cwl_MzMLToMzlite"
+        },
+        {
+          "@id": "WorkflowStep_workflows/ProteomIQon/workflow.cwl_PeptideDB"
+        },
+        {
+          "@id": "WorkflowStep_workflows/ProteomIQon/workflow.cwl_PeptideSpectrumMatching"
+        },
+        {
+          "@id": "WorkflowStep_workflows/ProteomIQon/workflow.cwl_PSMStatistics"
+        },
+        {
+          "@id": "WorkflowStep_workflows/ProteomIQon/workflow.cwl_PSMBasedQuantification"
+        },
+        {
+          "@id": "WorkflowStep_workflows/ProteomIQon/workflow.cwl_ProteinInference"
+        },
+        {
+          "@id": "WorkflowStep_workflows/ProteomIQon/workflow.cwl_QuantBasedAlignment"
+        },
+        {
+          "@id": "WorkflowStep_workflows/ProteomIQon/workflow.cwl_AlignmentBasedQuantification"
+        },
+        {
+          "@id": "WorkflowStep_workflows/ProteomIQon/workflow.cwl_AlignmentBasedQuantStatistics"
+        },
+        {
+          "@id": "WorkflowStep_workflows/ProteomIQon/workflow.cwl_AddDeducedPeptides"
+        },
+        {
+          "@id": "WorkflowStep_workflows/ProteomIQon/workflow.cwl_JoinQuantPepIonsWithProteins"
+        },
+        {
+          "@id": "WorkflowStep_workflows/ProteomIQon/workflow.cwl_LabeledProteinQuantification"
+        }
+      ],
+      "version": "1.0.0",
+      "intendedUse": {
+        "@id": "http://purl.obolibrary.org/obo/EDAM_3857"
+      }
+    },
+    {
+      "@id": "#Organization_RPTU_Kaiserslautern-Landau,_Computational_Systems_Biology",
+      "@type": "Organization",
+      "name": "RPTU Kaiserslautern-Landau, Computational Systems Biology"
+    },
+    {
+      "@id": "http://orcid.org/0000-0003-1512-9504",
+      "@type": "Person",
+      "givenName": "Caroline",
+      "affiliation": {
+        "@id": "#Organization_RPTU_Kaiserslautern-Landau,_Computational_Systems_Biology"
+      },
+      "email": "caroline.ott@rptu.de",
+      "familyName": "Ott"
+    },
+    {
+      "@id": "#FormalParameter_W_ProteomIQon_cores",
+      "@type": "FormalParameter",
+      "additionalType": "int",
+      "name": "cores",
+      "valueRequired": true
+    },
+    {
+      "@id": "#FormalParameter_W_ProteomIQon_outputMzML",
+      "@type": "FormalParameter",
+      "additionalType": "Directory",
+      "name": "outputMzML",
+      "valueRequired": true
+    },
+    {
+      "@id": "#FormalParameter_W_ProteomIQon_outputDB",
+      "@type": "FormalParameter",
+      "additionalType": "Directory",
+      "name": "outputDB",
+      "valueRequired": true
+    },
+    {
+      "@id": "#FormalParameter_W_ProteomIQon_outputPSM",
+      "@type": "FormalParameter",
+      "additionalType": "Directory",
+      "name": "outputPSM",
+      "valueRequired": true
+    },
+    {
+      "@id": "#FormalParameter_W_ProteomIQon_outputPSMStats",
+      "@type": "FormalParameter",
+      "additionalType": "Directory",
+      "name": "outputPSMStats",
+      "valueRequired": true
+    },
+    {
+      "@id": "#FormalParameter_W_ProteomIQon_outputQuant",
+      "@type": "FormalParameter",
+      "additionalType": "Directory",
+      "name": "outputQuant",
+      "valueRequired": true
+    },
+    {
+      "@id": "#FormalParameter_W_ProteomIQon_outputProt",
+      "@type": "FormalParameter",
+      "additionalType": "Directory",
+      "name": "outputProt",
+      "valueRequired": true
+    },
+    {
+      "@id": "#FormalParameter_W_ProteomIQon_outputAlignment",
+      "@type": "FormalParameter",
+      "additionalType": "Directory",
+      "name": "outputAlignment",
+      "valueRequired": true
+    },
+    {
+      "@id": "#FormalParameter_W_ProteomIQon_outputAlignmentQuant",
+      "@type": "FormalParameter",
+      "additionalType": "Directory",
+      "name": "outputAlignmentQuant",
+      "valueRequired": true
+    },
+    {
+      "@id": "#FormalParameter_W_ProteomIQon_outputAlignmentStats",
+      "@type": "FormalParameter",
+      "additionalType": "Directory",
+      "name": "outputAlignmentStats",
+      "valueRequired": true
+    },
+    {
+      "@id": "#FormalParameter_W_ProteomIQon_outputProtDeduced",
+      "@type": "FormalParameter",
+      "additionalType": "Directory",
+      "name": "outputProtDeduced",
+      "valueRequired": true
+    },
+    {
+      "@id": "#FormalParameter_W_ProteomIQon_outputQuantAndProt",
+      "@type": "FormalParameter",
+      "additionalType": "Directory",
+      "name": "outputQuantAndProt",
+      "valueRequired": true
+    },
+    {
+      "@id": "#FormalParameter_W_ProteomIQon_outputLabeledProt",
+      "@type": "FormalParameter",
+      "additionalType": "Directory",
+      "name": "outputLabeledProt",
+      "valueRequired": true
+    },
+    {
+      "@id": "#FormalParameter_W_ProteomIQon_inputMzML",
+      "@type": "FormalParameter",
+      "additionalType": "Directory",
+      "name": "inputMzML",
+      "valueRequired": true
+    },
+    {
+      "@id": "#FormalParameter_W_ProteomIQon_inputPeptideDB",
+      "@type": "FormalParameter",
+      "additionalType": "File",
+      "name": "inputPeptideDB",
+      "valueRequired": true
+    },
+    {
+      "@id": "#FormalParameter_W_ProteomIQon_paramsMzML",
+      "@type": "FormalParameter",
+      "additionalType": "File",
+      "name": "paramsMzML",
+      "valueRequired": true
+    },
+    {
+      "@id": "#FormalParameter_W_ProteomIQon_paramsDB",
+      "@type": "FormalParameter",
+      "additionalType": "File",
+      "name": "paramsDB",
+      "valueRequired": true
+    },
+    {
+      "@id": "#FormalParameter_W_ProteomIQon_paramsPSM",
+      "@type": "FormalParameter",
+      "additionalType": "File",
+      "name": "paramsPSM",
+      "valueRequired": true
+    },
+    {
+      "@id": "#FormalParameter_W_ProteomIQon_paramsPSMStats",
+      "@type": "FormalParameter",
+      "additionalType": "File",
+      "name": "paramsPSMStats",
+      "valueRequired": true
+    },
+    {
+      "@id": "#FormalParameter_W_ProteomIQon_paramsPSMBasedQuant",
+      "@type": "FormalParameter",
+      "additionalType": "File",
+      "name": "paramsPSMBasedQuant",
+      "valueRequired": true
+    },
+    {
+      "@id": "#FormalParameter_W_ProteomIQon_paramsAlignmentBasedQuant",
+      "@type": "FormalParameter",
+      "additionalType": "File",
+      "name": "paramsAlignmentBasedQuant",
+      "valueRequired": true
+    },
+    {
+      "@id": "#FormalParameter_W_ProteomIQon_paramsAlignmentBasedQuantStats",
+      "@type": "FormalParameter",
+      "additionalType": "File",
+      "name": "paramsAlignmentBasedQuantStats",
+      "valueRequired": true
+    },
+    {
+      "@id": "#FormalParameter_W_ProteomIQon_paramsProt",
+      "@type": "FormalParameter",
+      "additionalType": "File",
+      "name": "paramsProt",
+      "valueRequired": true
+    },
+    {
+      "@id": "#FormalParameter_W_ProteomIQon_paramsLabeledProteinQuant",
+      "@type": "FormalParameter",
+      "additionalType": "File",
+      "name": "paramsLabeledProteinQuant",
+      "valueRequired": true
+    },
+    {
+      "@id": "#FormalParameter_W_ProteomIQon_db",
+      "@type": "FormalParameter",
+      "additionalType": "Directory",
+      "name": "db",
+      "valueRequired": true
+    },
+    {
+      "@id": "#FormalParameter_W_ProteomIQon_mzml",
+      "@type": "FormalParameter",
+      "additionalType": "Directory",
+      "name": "mzml",
+      "valueRequired": true
+    },
+    {
+      "@id": "#FormalParameter_W_ProteomIQon_psm",
+      "@type": "FormalParameter",
+      "additionalType": "Directory",
+      "name": "psm",
+      "valueRequired": true
+    },
+    {
+      "@id": "#FormalParameter_W_ProteomIQon_psmstats",
+      "@type": "FormalParameter",
+      "additionalType": "Directory",
+      "name": "psmstats",
+      "valueRequired": true
+    },
+    {
+      "@id": "#FormalParameter_W_ProteomIQon_quant",
+      "@type": "FormalParameter",
+      "additionalType": "Directory",
+      "name": "quant",
+      "valueRequired": true
+    },
+    {
+      "@id": "#FormalParameter_W_ProteomIQon_prot",
+      "@type": "FormalParameter",
+      "additionalType": "Directory",
+      "name": "prot",
+      "valueRequired": true
+    },
+    {
+      "@id": "#FormalParameter_W_ProteomIQon_alignment",
+      "@type": "FormalParameter",
+      "additionalType": "Directory",
+      "name": "alignment",
+      "valueRequired": true
+    },
+    {
+      "@id": "#FormalParameter_W_ProteomIQon_alignmentQuant",
+      "@type": "FormalParameter",
+      "additionalType": "Directory",
+      "name": "alignmentQuant",
+      "valueRequired": true
+    },
+    {
+      "@id": "#FormalParameter_W_ProteomIQon_alignmentStats",
+      "@type": "FormalParameter",
+      "additionalType": "Directory",
+      "name": "alignmentStats",
+      "valueRequired": true
+    },
+    {
+      "@id": "#FormalParameter_W_ProteomIQon_protDeduced",
+      "@type": "FormalParameter",
+      "additionalType": "Directory",
+      "name": "protDeduced",
+      "valueRequired": true
+    },
+    {
+      "@id": "#FormalParameter_W_ProteomIQon_quantAndProt",
+      "@type": "FormalParameter",
+      "additionalType": "Directory",
+      "name": "quantAndProt",
+      "valueRequired": true
+    },
+    {
+      "@id": "#FormalParameter_W_ProteomIQon_labeledProteins",
+      "@type": "FormalParameter",
+      "additionalType": "Directory",
+      "name": "labeledProteins",
+      "valueRequired": true
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.2/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#WorkflowStep_workflows/ProteomIQon/workflow.cwl_MzMLToMzlite",
+      "@type": "ComputationalWorkflow",
+      "name": "MzMLToMzlite",
+      "identifier": "./proteomiqon-mzmltomzlite.cwl"
+    },
+    {
+      "@id": "#WorkflowStep_workflows/ProteomIQon/workflow.cwl_PeptideDB",
+      "@type": "ComputationalWorkflow",
+      "name": "PeptideDB",
+      "identifier": "./proteomiqon-peptidedb.cwl"
+    },
+    {
+      "@id": "#WorkflowStep_workflows/ProteomIQon/workflow.cwl_PeptideSpectrumMatching",
+      "@type": "ComputationalWorkflow",
+      "name": "PeptideSpectrumMatching",
+      "identifier": "./proteomiqon-peptidespectrummatching.cwl"
+    },
+    {
+      "@id": "#WorkflowStep_workflows/ProteomIQon/workflow.cwl_PSMStatistics",
+      "@type": "ComputationalWorkflow",
+      "name": "PSMStatistics",
+      "identifier": "./proteomiqon-psmstatistics.cwl"
+    },
+    {
+      "@id": "#WorkflowStep_workflows/ProteomIQon/workflow.cwl_PSMBasedQuantification",
+      "@type": "ComputationalWorkflow",
+      "name": "PSMBasedQuantification",
+      "identifier": "./proteomiqon-psmbasedquantification.cwl"
+    },
+    {
+      "@id": "#WorkflowStep_workflows/ProteomIQon/workflow.cwl_ProteinInference",
+      "@type": "ComputationalWorkflow",
+      "name": "ProteinInference",
+      "identifier": "./proteomiqon-proteininference.cwl"
+    },
+    {
+      "@id": "#WorkflowStep_workflows/ProteomIQon/workflow.cwl_QuantBasedAlignment",
+      "@type": "ComputationalWorkflow",
+      "name": "QuantBasedAlignment",
+      "identifier": "./proteomiqon-quantbasedalignment.cwl"
+    },
+    {
+      "@id": "#WorkflowStep_workflows/ProteomIQon/workflow.cwl_AlignmentBasedQuantification",
+      "@type": "ComputationalWorkflow",
+      "name": "AlignmentBasedQuantification",
+      "identifier": "./proteomiqon-alignmentbasedquantification.cwl"
+    },
+    {
+      "@id": "#WorkflowStep_workflows/ProteomIQon/workflow.cwl_AlignmentBasedQuantStatistics",
+      "@type": "ComputationalWorkflow",
+      "name": "AlignmentBasedQuantStatistics",
+      "identifier": "./proteomiqon-alignmentbasedquantstatistics.cwl"
+    },
+    {
+      "@id": "#WorkflowStep_workflows/ProteomIQon/workflow.cwl_AddDeducedPeptides",
+      "@type": "ComputationalWorkflow",
+      "name": "AddDeducedPeptides",
+      "identifier": "./proteomiqon-adddeducedpeptides.cwl"
+    },
+    {
+      "@id": "#WorkflowStep_workflows/ProteomIQon/workflow.cwl_JoinQuantPepIonsWithProteins",
+      "@type": "ComputationalWorkflow",
+      "name": "JoinQuantPepIonsWithProteins",
+      "identifier": "./proteomiqon-joinquantpepionswithproteins.cwl"
+    },
+    {
+      "@id": "#WorkflowStep_workflows/ProteomIQon/workflow.cwl_LabeledProteinQuantification",
+      "@type": "ComputationalWorkflow",
+      "name": "LabeledProteinQuantification",
+      "identifier": "./proteomiqon-labeledproteinquantification.cwl"
+    },
+    {
+      "@id": "http://purl.obolibrary.org/obo/EDAM_3857",
+      "@type": "DefinedTerm",
+      "name": "CWL",
+      "termCode": "http://purl.obolibrary.org/obo/EDAM_3857"
+    },
+    {
+      "@id": "#LICENSE",
+      "@type": "CreativeWork",
+      "text": "ALL RIGHTS RESERVED BY THE AUTHORS"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/ResearchObject/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <meta charset="utf-8">
+</head>
+<body>
+  <h1>ProteomIQon</h1>
+  
+  <p>
+    The ProteomIQon is a collection of open source computational proteomics tools to build pipelines for the evaluation of MS derived proteomics data written in F#. The current state of the tool chain allows handle tasks like signal detection, peptide identification, quantification and protein inference. Each ProteomIQon tool is concerned with a specific task. This makes the tool-chain flexibel and easily extendable.
+  </p>
+  <dl>
+    
+    
+    
+    
+      <dt>License</dt>
+      <dd>#LICENSE</dd>
+    
+  </dl>
+
+  <h2>Contents</h2>
+  <ul>
+    
+      <li>
+        <strong>workflows/ProteomIQon/workflow.cwl</strong>
+        
+        
+      </li>
+    
+  </ul>
+</body>
+</html>

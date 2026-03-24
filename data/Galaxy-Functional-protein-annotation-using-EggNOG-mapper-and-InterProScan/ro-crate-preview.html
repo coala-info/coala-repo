@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Functional protein annotation using EggNOG-mapper and InterProScan</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Functional%20annotation%20of%20protein%20sequences.ga"
+      },
+      "datePublished": "2024-02-15 11:41:51 +0000",
+      "author": [
+
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://workflowhub.eu/workflows/755?version=1",
+      "url": "https://workflowhub.eu/workflows/755/ro_crate?version=1",
+      "name": "Research Object Crate for Functional protein annotation using EggNOG-mapper and InterProScan",
+      "description": "Functional annotation of protein sequences",
+      "sdDatePublished": "2026-03-24 17:50:54 +0000",
+      "hasPart": [
+        {
+          "@id": "Functional%20annotation%20of%20protein%20sequences.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Functional%20annotation%20of%20protein%20sequences.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 8415,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Functional annotation of protein sequences",
+      "name": "Functional protein annotation using EggNOG-mapper and InterProScan",
+      "url": "https://workflowhub.eu/workflows/755?version=1",
+      "keywords": "genome-annotation",
+      "version": 1,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "creator": {
+        "@id": "https://orcid.org/0000-0003-0914-2470"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/166"
+      },
+      "dateCreated": "2024-02-15T11:44:05Z",
+      "dateModified": "2025-11-06T13:19:05Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/13"
+      },
+      "input": {
+        "@id": "#functional_protein_annotation_using_eggnog_mapper_and_interproscan-inputs-%23main/Protein%20sequences"
+      },
+      "output": [
+        {
+          "@id": "#functional_protein_annotation_using_eggnog_mapper_and_interproscan-outputs-%23main/_anonymous_output_1"
+        },
+        {
+          "@id": "#functional_protein_annotation_using_eggnog_mapper_and_interproscan-outputs-%23main/_anonymous_output_2"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-0914-2470",
+      "@type": "Person",
+      "name": "Anthony Bretaudeau"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/166",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "EuroScienceGateway"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/13",
+      "@type": "Collection",
+      "name": "Workflows in EuroScienceGateway"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#functional_protein_annotation_using_eggnog_mapper_and_interproscan-inputs-#main/Protein sequences",
+      "@type": "FormalParameter",
+      "name": "#main/Protein sequences",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#functional_protein_annotation_using_eggnog_mapper_and_interproscan-outputs-#main/_anonymous_output_1",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#functional_protein_annotation_using_eggnog_mapper_and_interproscan-outputs-#main/_anonymous_output_2",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Functional protein annotation using EggNOG-mapper and InterProScan</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/755/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/755/ro_crate?version=1</a>
+
+
+<p>
+  Functional annotation of protein sequences
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>Apache-2.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Functional%20annotation%20of%20protein%20sequences.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Functional annotation of protein sequences.ga">Functional protein annotation using EggNOG-mapper and InterProScan</a>
+      
+        <br/>Size: 8415 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,167 @@
+{
+  "@context": [
+    "https://w3id.org/ro/crate/1.1/context",
+    {
+      "GithubService": "https://w3id.org/ro/terms/test#GithubService",
+      "JenkinsService": "https://w3id.org/ro/terms/test#JenkinsService",
+      "PlanemoEngine": "https://w3id.org/ro/terms/test#PlanemoEngine",
+      "TestDefinition": "https://w3id.org/ro/terms/test#TestDefinition",
+      "TestInstance": "https://w3id.org/ro/terms/test#TestInstance",
+      "TestService": "https://w3id.org/ro/terms/test#TestService",
+      "TestSuite": "https://w3id.org/ro/terms/test#TestSuite",
+      "TravisService": "https://w3id.org/ro/terms/test#TravisService",
+      "definition": "https://w3id.org/ro/terms/test#definition",
+      "engineVersion": "https://w3id.org/ro/terms/test#engineVersion",
+      "instance": "https://w3id.org/ro/terms/test#instance",
+      "resource": "https://w3id.org/ro/terms/test#resource",
+      "runsOn": "https://w3id.org/ro/terms/test#runsOn"
+    }
+  ],
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.1"
+      }
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "datePublished": "2026-03-12T21:41:40.351161",
+      "hasPart": [
+        {
+          "@id": "genotype-variant-calling-wgs-pe.ga"
+        },
+        {
+          "@id": "README.md"
+        },
+        {
+          "@id": "genotype-variant-calling-wgs-pe-test.yml"
+        }
+      ],
+      "isBasedOn": "https://github.com/iwc-workflows/ploidy-aware-genotype-calling",
+      "license": "MIT",
+      "mainEntity": {
+        "@id": "genotype-variant-calling-wgs-pe.ga"
+      },
+      "mentions": [
+        {
+          "@id": "#test_main_1"
+        }
+      ],
+      "name": "ploidy-aware-genotype-calling/main"
+    },
+    {
+      "@id": "genotype-variant-calling-wgs-pe.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "creator": [
+        {
+          "@id": "https://orcid.org/0009-0003-9935-828X"
+        },
+        {
+          "@id": "#0000-0002-9464-6640"
+        }
+      ],
+      "name": "ploidy-aware-genotype-calling/main",
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "url": "https://github.com/iwc-workflows/ploidy-aware-genotype-calling",
+      "version": "0.1.1"
+    },
+    {
+      "@id": "README.md",
+      "@type": "File"
+    },
+    {
+      "@id": "genotype-variant-calling-wgs-pe-test.yml",
+      "@type": [
+        "File",
+        "TestDefinition"
+      ],
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/terms/test#PlanemoEngine"
+      },
+      "engineVersion": ">=0.75.40"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "name": "Galaxy",
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "version": "v19_09"
+    },
+    {
+      "@id": "https://orcid.org/0009-0003-9935-828X",
+      "@type": "Person",
+      "name": "Saim Momin"
+    },
+    {
+      "@id": "#0000-0002-9464-6640",
+      "@type": "Person",
+      "name": "Wolfgang Maier"
+    },
+    {
+      "@id": "#test_main_1",
+      "@type": "TestSuite",
+      "definition": {
+        "@id": "genotype-variant-calling-wgs-pe-test.yml"
+      },
+      "instance": [
+        {
+          "@id": "#test_main_1_1"
+        }
+      ],
+      "mainEntity": {
+        "@id": "genotype-variant-calling-wgs-pe.ga"
+      },
+      "name": "test_main_1"
+    },
+    {
+      "@id": "#test_main_1_1",
+      "@type": "TestInstance",
+      "name": "test_main_1_1",
+      "resource": "repos/iwc-workflows/ploidy-aware-genotype-calling/actions/workflows/wftest.yml",
+      "runsOn": {
+        "@id": "https://w3id.org/ro/terms/test#GithubService"
+      },
+      "url": "https://api.github.com"
+    },
+    {
+      "@id": "https://w3id.org/ro/terms/test#GithubService",
+      "@type": "TestService",
+      "name": "Github Actions",
+      "url": {
+        "@id": "https://github.com"
+      }
+    },
+    {
+      "@id": "https://w3id.org/ro/terms/test#PlanemoEngine",
+      "@type": "SoftwareApplication",
+      "name": "Planemo",
+      "url": {
+        "@id": "https://github.com/galaxyproject/planemo"
+      }
+    }
+  ]
+}

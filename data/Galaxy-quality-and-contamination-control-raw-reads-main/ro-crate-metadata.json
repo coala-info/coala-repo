@@ -1,0 +1,191 @@
+{
+  "@context": [
+    "https://w3id.org/ro/crate/1.1/context",
+    {
+      "GithubService": "https://w3id.org/ro/terms/test#GithubService",
+      "JenkinsService": "https://w3id.org/ro/terms/test#JenkinsService",
+      "PlanemoEngine": "https://w3id.org/ro/terms/test#PlanemoEngine",
+      "TestDefinition": "https://w3id.org/ro/terms/test#TestDefinition",
+      "TestInstance": "https://w3id.org/ro/terms/test#TestInstance",
+      "TestService": "https://w3id.org/ro/terms/test#TestService",
+      "TestSuite": "https://w3id.org/ro/terms/test#TestSuite",
+      "TravisService": "https://w3id.org/ro/terms/test#TravisService",
+      "definition": "https://w3id.org/ro/terms/test#definition",
+      "engineVersion": "https://w3id.org/ro/terms/test#engineVersion",
+      "instance": "https://w3id.org/ro/terms/test#instance",
+      "resource": "https://w3id.org/ro/terms/test#resource",
+      "runsOn": "https://w3id.org/ro/terms/test#runsOn"
+    }
+  ],
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.1"
+      }
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "datePublished": "2025-12-03T15:04:03.691533",
+      "hasPart": [
+        {
+          "@id": "quality_and_contamination_control_raw_reads.ga"
+        },
+        {
+          "@id": "README.md"
+        },
+        {
+          "@id": "quality_and_contamination_control_raw_reads-tests.yml"
+        }
+      ],
+      "isBasedOn": "https://github.com/iwc-workflows/quality-and-contamination-control-raw-reads",
+      "license": "GPL-3.0-or-later",
+      "mainEntity": {
+        "@id": "quality_and_contamination_control_raw_reads.ga"
+      },
+      "mentions": [
+        {
+          "@id": "#test_main_1"
+        }
+      ],
+      "name": "quality-and-contamination-control-raw-reads/main"
+    },
+    {
+      "@id": "quality_and_contamination_control_raw_reads.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "creator": [
+        {
+          "@id": "#11b82e01-5f14-400c-9acb-c041cf90a6f2"
+        },
+        {
+          "@id": "https://www.abromics.fr/"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-8304-138X"
+        },
+        {
+          "@id": "https://orcid.org/0009-0005-6140-0379"
+        },
+        {
+          "@id": "https://orcid.org/0009-0005-6834-4058"
+        }
+      ],
+      "name": "quality-and-contamination-control-raw-reads/main",
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "url": "https://github.com/iwc-workflows/quality-and-contamination-control-raw-reads",
+      "version": "1.1.11"
+    },
+    {
+      "@id": "README.md",
+      "@type": "File"
+    },
+    {
+      "@id": "quality_and_contamination_control_raw_reads-tests.yml",
+      "@type": [
+        "File",
+        "TestDefinition"
+      ],
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/terms/test#PlanemoEngine"
+      },
+      "engineVersion": ">=0.75.33"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "name": "Galaxy",
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "version": "v19_09"
+    },
+    {
+      "@id": "#11b82e01-5f14-400c-9acb-c041cf90a6f2",
+      "@type": "Person",
+      "name": "ABRomics"
+    },
+    {
+      "@id": "https://www.abromics.fr/",
+      "@type": "Organization",
+      "name": "abromics-consortium"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-8304-138X",
+      "@type": "Person",
+      "name": "Pierre Marin"
+    },
+    {
+      "@id": "https://orcid.org/0009-0005-6140-0379",
+      "@type": "Person",
+      "name": "Clea Siguret"
+    },
+    {
+      "@id": "https://orcid.org/0009-0005-6834-4058",
+      "@type": "Person",
+      "name": "Hugo Lefeuvre"
+    },
+    {
+      "@id": "#test_main_1",
+      "@type": "TestSuite",
+      "definition": {
+        "@id": "quality_and_contamination_control_raw_reads-tests.yml"
+      },
+      "instance": [
+        {
+          "@id": "#test_main_1_1"
+        }
+      ],
+      "mainEntity": {
+        "@id": "quality_and_contamination_control_raw_reads.ga"
+      },
+      "name": "test_main_1"
+    },
+    {
+      "@id": "#test_main_1_1",
+      "@type": "TestInstance",
+      "name": "test_main_1_1",
+      "resource": "repos/iwc-workflows/quality-and-contamination-control-raw-reads/actions/workflows/wftest.yml",
+      "runsOn": {
+        "@id": "https://w3id.org/ro/terms/test#GithubService"
+      },
+      "url": "https://api.github.com"
+    },
+    {
+      "@id": "https://w3id.org/ro/terms/test#GithubService",
+      "@type": "TestService",
+      "name": "Github Actions",
+      "url": {
+        "@id": "https://github.com"
+      }
+    },
+    {
+      "@id": "https://w3id.org/ro/terms/test#PlanemoEngine",
+      "@type": "SoftwareApplication",
+      "name": "Planemo",
+      "url": {
+        "@id": "https://github.com/galaxyproject/planemo"
+      }
+    }
+  ]
+}

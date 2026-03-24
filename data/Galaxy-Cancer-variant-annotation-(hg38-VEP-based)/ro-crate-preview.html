@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Cancer variant annotation (hg38 VEP-based)</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-Cancer_variant_annotation_(hg38_VEP-based).ga"
+      },
+      "datePublished": "2023-10-10 17:07:24 +0100",
+      "author": [
+
+      ],
+      "license": "MIT",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.607.1",
+      "url": "https://workflowhub.eu/workflows/607/ro_crate?version=1",
+      "name": "Research Object Crate for Cancer variant annotation (hg38 VEP-based)",
+      "description": "This Galaxy workflow takes a list of tumor/normal sample pair variants in VCF format and\n1. annotates them using the ENSEMBL Variant Effect Predictor and custom annotation data\n2. turns the annotated VCF into a MAF file for import into cBioPortal\n3. generates human-readable variant- and gene-centric reports\n\nThe input VCF is expected to encode somatic status, somatic p-value and germline p-value of each variant in varscan somatic format, i.e., via SS, SPV and GPV INFO keys, respectively.",
+      "sdDatePublished": "2026-03-24 17:56:17 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-Cancer_variant_annotation_(hg38_VEP-based).ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-Cancer_variant_annotation_(hg38_VEP-based).ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "url": "https://usegalaxy.eu/api/workflows/2424282f793f0f1b/download?format=json-download",
+      "contentSize": 164505,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "This Galaxy workflow takes a list of tumor/normal sample pair variants in VCF format and\n1. annotates them using the ENSEMBL Variant Effect Predictor and custom annotation data\n2. turns the annotated VCF into a MAF file for import into cBioPortal\n3. generates human-readable variant- and gene-centric reports\n\nThe input VCF is expected to encode somatic status, somatic p-value and germline p-value of each variant in varscan somatic format, i.e., via SS, SPV and GPV INFO keys, respectively.",
+      "name": "Cancer variant annotation (hg38 VEP-based)",
+      "keywords": "EOSC4Cancer",
+      "version": 1,
+      "license": "https://spdx.org/licenses/MIT",
+      "creator": {
+        "@id": "#Wolfgang%20Maier"
+      },
+      "producer": [
+        {
+          "@id": "https://workflowhub.eu/projects/24"
+        },
+        {
+          "@id": "https://workflowhub.eu/projects/334"
+        }
+      ],
+      "dateCreated": "2023-10-10T16:08:59Z",
+      "dateModified": "2025-05-08T10:02:07Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.607.1",
+      "input": [
+        {
+          "@id": "#cancer_variant_annotation__hg38_vep_based_-inputs-Annotations%20data"
+        },
+        {
+          "@id": "#cancer_variant_annotation__hg38_vep_based_-inputs-Report%20germline%20variants?"
+        },
+        {
+          "@id": "#cancer_variant_annotation__hg38_vep_based_-inputs-Variants%20to%20be%20annotated"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-annotation_metadata"
+        },
+        {
+          "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-dbsnp_vcf"
+        },
+        {
+          "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-cancer_hotspots"
+        },
+        {
+          "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-civic_variants"
+        },
+        {
+          "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-cgi_biomarkers"
+        },
+        {
+          "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-uniprot_cancer_genes"
+        },
+        {
+          "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-cgi_genes"
+        },
+        {
+          "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-civic_genes"
+        },
+        {
+          "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-final_variants"
+        },
+        {
+          "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-maf_report"
+        },
+        {
+          "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-variant_reports_tabular"
+        },
+        {
+          "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-gene_reports_tabular"
+        },
+        {
+          "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-mutations_summary"
+        },
+        {
+          "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-somatic_report"
+        },
+        {
+          "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-loh_report"
+        },
+        {
+          "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-somatic_cancer_report"
+        },
+        {
+          "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-loh_cancer_report"
+        },
+        {
+          "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-germline_cancer_report"
+        },
+        {
+          "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-gene_cards_somatic"
+        },
+        {
+          "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-gene_cards_loh"
+        },
+        {
+          "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-gene_cards_germline"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "#Wolfgang Maier",
+      "@type": "Person",
+      "name": "Wolfgang Maier"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/24",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "usegalaxy-eu"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/334",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "EOSC4Cancer"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#cancer_variant_annotation__hg38_vep_based_-inputs-Annotations data",
+      "@type": "FormalParameter",
+      "name": "Annotations data",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cancer_variant_annotation__hg38_vep_based_-inputs-Report germline variants?",
+      "@type": "FormalParameter",
+      "name": "Report germline variants?",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cancer_variant_annotation__hg38_vep_based_-inputs-Variants to be annotated",
+      "@type": "FormalParameter",
+      "name": "Variants to be annotated",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-annotation_metadata",
+      "@type": "FormalParameter",
+      "name": "annotation_metadata",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-dbsnp_vcf",
+      "@type": "FormalParameter",
+      "name": "dbsnp_vcf",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-cancer_hotspots",
+      "@type": "FormalParameter",
+      "name": "cancer_hotspots",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-civic_variants",
+      "@type": "FormalParameter",
+      "name": "civic_variants",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-cgi_biomarkers",
+      "@type": "FormalParameter",
+      "name": "cgi_biomarkers",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-uniprot_cancer_genes",
+      "@type": "FormalParameter",
+      "name": "uniprot_cancer_genes",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-cgi_genes",
+      "@type": "FormalParameter",
+      "name": "cgi_genes",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-civic_genes",
+      "@type": "FormalParameter",
+      "name": "civic_genes",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-final_variants",
+      "@type": "FormalParameter",
+      "name": "final_variants",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-maf_report",
+      "@type": "FormalParameter",
+      "name": "maf_report",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-variant_reports_tabular",
+      "@type": "FormalParameter",
+      "name": "variant_reports_tabular",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-gene_reports_tabular",
+      "@type": "FormalParameter",
+      "name": "gene_reports_tabular",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-mutations_summary",
+      "@type": "FormalParameter",
+      "name": "mutations_summary",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-somatic_report",
+      "@type": "FormalParameter",
+      "name": "somatic_report",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-loh_report",
+      "@type": "FormalParameter",
+      "name": "loh_report",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-somatic_cancer_report",
+      "@type": "FormalParameter",
+      "name": "somatic_cancer_report",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-loh_cancer_report",
+      "@type": "FormalParameter",
+      "name": "loh_cancer_report",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-germline_cancer_report",
+      "@type": "FormalParameter",
+      "name": "germline_cancer_report",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-gene_cards_somatic",
+      "@type": "FormalParameter",
+      "name": "gene_cards_somatic",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-gene_cards_loh",
+      "@type": "FormalParameter",
+      "name": "gene_cards_loh",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cancer_variant_annotation__hg38_vep_based_-outputs-gene_cards_germline",
+      "@type": "FormalParameter",
+      "name": "gene_cards_germline",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Cancer variant annotation (hg38 VEP-based)</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/607/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/607/ro_crate?version=1</a>
+
+
+<p>
+  This Galaxy workflow takes a list of tumor/normal sample pair variants in VCF format and
+1. annotates them using the ENSEMBL Variant Effect Predictor and custom annotation data
+2. turns the annotated VCF into a MAF file for import into cBioPortal
+3. generates human-readable variant- and gene-centric reports
+
+The input VCF is expected to encode somatic status, somatic p-value and germline p-value of each variant in varscan somatic format, i.e., via SS, SPV and GPV INFO keys, respectively.
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>MIT</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-Cancer_variant_annotation_(hg38_VEP-based).ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-Cancer_variant_annotation_(hg38_VEP-based).ga">Cancer variant annotation (hg38 VEP-based)</a>
+      
+        <br/>Size: 164505 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

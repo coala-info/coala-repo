@@ -1,0 +1,158 @@
+---
+name: clustering-3k-pbmc-with-scanpy
+description: "This scRNA-seq workflow processes gene expression matrices, barcodes, and gene lists using Scanpy and AnnData tools to perform filtering, normalization, dimensionality reduction, and clustering. Use this skill when you need to identify distinct cell populations, detect marker genes, and visualize cluster-specific expression patterns in peripheral blood mononuclear cell datasets or similar single-cell experiments."
+homepage: https://workflowhub.eu/workflows/1519
+---
+
+# Clustering 3k PBMC with Scanpy
+
+## Overview
+
+This workflow implements a standard single-cell RNA-sequencing (scRNA-seq) analysis pipeline using Scanpy, specifically optimized for clustering 3,000 Peripheral Blood Mononuclear Cells (PBMCs). It begins by importing raw count data—consisting of barcodes, genes, and matrix files—into the AnnData format. The initial stages focus on rigorous quality control and preprocessing, including filtering low-quality cells, calculating mitochondrial gene percentages, and performing data normalization and log transformation.
+
+Following preprocessing, the workflow identifies highly variable genes to isolate biologically relevant signals from technical noise. It then executes dimensionality reduction using Principal Component Analysis (PCA) and UMAP to visualize the high-dimensional data. Cells are grouped into distinct populations using clustering algorithms like Louvain, which are then visualized through various embedding plots to assess the structure of the dataset.
+
+The final stages involve identifying cluster-specific marker genes using statistical methods such as Wilcoxon and t-tests. The workflow generates an extensive suite of visualizations, including heatmaps, dot plots, and violin plots, to facilitate cell-type annotation. The process concludes with a final annotated UMAP and a summary of cell counts per cluster, providing a comprehensive overview of the immune cell landscape.
+
+This workflow is based on the [Clustering 3K PBMCs with Scanpy](https://training.galaxyproject.org/training-material/topics/single-cell/tutorials/scrna-scanpy-pbmc3k/tutorial.html) tutorial from the [Galaxy Training Network (GTN)](https://training.galaxyproject.org). It is licensed under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) and is tagged for [scrna-seq](https://galaxyproject.org/use/scrna-seq/) and single-cell analysis.
+
+## Inputs and data preparation
+
+| Step | Label | Type | Notes |
+| --- | --- | --- | --- |
+| 0 | Barcodes | data_input |  |
+| 1 | Genes | data_input |  |
+| 2 | Matrix | data_input |  |
+
+
+To prepare your data for this Scanpy-based workflow, ensure you have the three standard 10x Genomics files: a barcodes TSV, a genes/features TSV, and a sparse matrix MTX file. These individual datasets are imported into an AnnData object at the start of the analysis, so verify that your gene identifiers match across all three files to avoid import errors. For large-scale processing, you may find it efficient to organize these inputs into a dataset collection. Detailed parameter settings and preprocessing thresholds are documented in the README.md file. You can also use `planemo workflow_job_init` to generate a `job.yml` file for automated execution.
+
+## Steps (tools)
+
+| Step | Name | Tool ID | Notes |
+| --- | --- | --- | --- |
+| 3 | Import Anndata | toolshed.g2.bx.psu.edu/repos/iuc/anndata_import/anndata_import/0.10.9+galaxy0 |  |
+| 4 | Inspect AnnData | toolshed.g2.bx.psu.edu/repos/iuc/anndata_inspect/anndata_inspect/0.10.9+galaxy0 |  |
+| 5 | Scanpy filter | toolshed.g2.bx.psu.edu/repos/iuc/scanpy_filter/scanpy_filter/1.10.2+galaxy0 |  |
+| 6 | Inspect AnnData | toolshed.g2.bx.psu.edu/repos/iuc/anndata_inspect/anndata_inspect/0.10.9+galaxy0 |  |
+| 7 | Inspect AnnData | toolshed.g2.bx.psu.edu/repos/iuc/anndata_inspect/anndata_inspect/0.10.9+galaxy0 |  |
+| 8 | Inspect AnnData | toolshed.g2.bx.psu.edu/repos/iuc/anndata_inspect/anndata_inspect/0.10.9+galaxy0 |  |
+| 9 | Manipulate AnnData | toolshed.g2.bx.psu.edu/repos/iuc/anndata_manipulate/anndata_manipulate/0.10.9+galaxy0 |  |
+| 10 | Scanpy Inspect and manipulate | toolshed.g2.bx.psu.edu/repos/iuc/scanpy_inspect/scanpy_inspect/1.10.2+galaxy1 |  |
+| 11 | Inspect AnnData | toolshed.g2.bx.psu.edu/repos/iuc/anndata_inspect/anndata_inspect/0.10.9+galaxy0 |  |
+| 12 | Scanpy plot | toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.10.2+galaxy0 |  |
+| 13 | Scanpy filter | toolshed.g2.bx.psu.edu/repos/iuc/scanpy_filter/scanpy_filter/1.10.2+galaxy0 |  |
+| 14 | Scanpy plot | toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.10.2+galaxy0 |  |
+| 15 | Scanpy plot | toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.10.2+galaxy0 |  |
+| 16 | Scanpy filter | toolshed.g2.bx.psu.edu/repos/iuc/scanpy_filter/scanpy_filter/1.10.2+galaxy0 |  |
+| 17 | Manipulate AnnData | toolshed.g2.bx.psu.edu/repos/iuc/anndata_manipulate/anndata_manipulate/0.10.9+galaxy0 |  |
+| 18 | Scanpy normalize | toolshed.g2.bx.psu.edu/repos/iuc/scanpy_normalize/scanpy_normalize/1.10.2+galaxy0 |  |
+| 19 | Scanpy Inspect and manipulate | toolshed.g2.bx.psu.edu/repos/iuc/scanpy_inspect/scanpy_inspect/1.10.2+galaxy1 |  |
+| 20 | Manipulate AnnData | toolshed.g2.bx.psu.edu/repos/iuc/anndata_manipulate/anndata_manipulate/0.10.9+galaxy0 |  |
+| 21 | Scanpy filter | toolshed.g2.bx.psu.edu/repos/iuc/scanpy_filter/scanpy_filter/1.10.2+galaxy0 |  |
+| 22 | Manipulate AnnData | toolshed.g2.bx.psu.edu/repos/iuc/anndata_manipulate/anndata_manipulate/0.10.9+galaxy0 |  |
+| 23 | Scanpy plot | toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.10.2+galaxy0 |  |
+| 24 | Scanpy remove confounders | toolshed.g2.bx.psu.edu/repos/iuc/scanpy_remove_confounders/scanpy_remove_confounders/1.10.2+galaxy0 |  |
+| 25 | Scanpy Inspect and manipulate | toolshed.g2.bx.psu.edu/repos/iuc/scanpy_inspect/scanpy_inspect/1.10.2+galaxy1 |  |
+| 26 | Scanpy cluster, embed | toolshed.g2.bx.psu.edu/repos/iuc/scanpy_cluster_reduce_dimension/scanpy_cluster_reduce_dimension/1.10.2+galaxy0 |  |
+| 27 | Scanpy plot | toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.10.2+galaxy0 |  |
+| 28 | Scanpy plot | toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.10.2+galaxy0 |  |
+| 29 | Scanpy plot | toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.10.2+galaxy0 |  |
+| 30 | Scanpy Inspect and manipulate | toolshed.g2.bx.psu.edu/repos/iuc/scanpy_inspect/scanpy_inspect/1.10.2+galaxy1 |  |
+| 31 | Scanpy plot | toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.10.2+galaxy0 |  |
+| 32 | Scanpy cluster, embed | toolshed.g2.bx.psu.edu/repos/iuc/scanpy_cluster_reduce_dimension/scanpy_cluster_reduce_dimension/1.10.2+galaxy0 |  |
+| 33 | Scanpy plot | toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.10.2+galaxy0 |  |
+| 34 | Scanpy cluster, embed | toolshed.g2.bx.psu.edu/repos/iuc/scanpy_cluster_reduce_dimension/scanpy_cluster_reduce_dimension/1.10.2+galaxy0 |  |
+| 35 | Scanpy plot | toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.10.2+galaxy0 |  |
+| 36 | Scanpy Inspect and manipulate | toolshed.g2.bx.psu.edu/repos/iuc/scanpy_inspect/scanpy_inspect/1.10.2+galaxy1 |  |
+| 37 | Scanpy Inspect and manipulate | toolshed.g2.bx.psu.edu/repos/iuc/scanpy_inspect/scanpy_inspect/1.10.2+galaxy1 |  |
+| 38 | Inspect AnnData | toolshed.g2.bx.psu.edu/repos/iuc/anndata_inspect/anndata_inspect/0.10.9+galaxy0 | Here I inspected the louviain clusters... |
+| 39 | Scanpy plot | toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.10.2+galaxy0 |  |
+| 40 | Scanpy plot | toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.10.2+galaxy0 |  |
+| 41 | Scanpy plot | toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.10.2+galaxy0 |  |
+| 42 | Scanpy plot | toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.10.2+galaxy0 |  |
+| 43 | Scanpy Inspect and manipulate | toolshed.g2.bx.psu.edu/repos/iuc/scanpy_inspect/scanpy_inspect/1.10.2+galaxy1 |  |
+| 44 | Inspect AnnData | toolshed.g2.bx.psu.edu/repos/iuc/anndata_inspect/anndata_inspect/0.10.9+galaxy0 |  |
+| 45 | Manipulate AnnData | toolshed.g2.bx.psu.edu/repos/iuc/anndata_manipulate/anndata_manipulate/0.10.9+galaxy0 |  |
+| 46 | Scanpy plot | toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.10.2+galaxy0 |  |
+| 47 | Scanpy plot | toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.10.2+galaxy0 |  |
+| 48 | Inspect AnnData | toolshed.g2.bx.psu.edu/repos/iuc/anndata_inspect/anndata_inspect/0.10.9+galaxy0 |  |
+| 49 | Datamash | toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.8+galaxy0 |  |
+| 50 | Scanpy plot | toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.10.2+galaxy0 |  |
+| 51 | Scanpy plot | toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.10.2+galaxy0 |  |
+| 52 | Scanpy plot | toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.10.2+galaxy0 |  |
+| 53 | Scanpy plot | toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.10.2+galaxy0 |  |
+
+
+## Workflow outputs (marked in Galaxy)
+
+| Step | Label | Output name |
+| --- | --- | --- |
+| 12 | pl_scatter_total_counts_vs_n_genes_by_counts | out_png |
+| 14 | pl_scatter_n_genes_by_counts_vs_pct_mito | out_png |
+| 15 | pl_violin | out_png |
+| 23 | pl_highly_variable | out_png |
+| 27 | pl_pca_overview | out_png |
+| 28 | pl_pca_overview_genes | out_png |
+| 29 | pl_pca_loadings | out_png |
+| 31 | pl_pca_variance_ratio | out_png |
+| 33 | pl_umap_initial | out_png |
+| 35 | pl_umap_louvain | out_png |
+| 39 | pl_rank_gene_groups_t_test_wilcoxon_test | out_png |
+| 40 | pl_rank_genes_heatmap | out_png |
+| 41 | pl_stacked_violin_marker_genes | out_png |
+| 42 | pl_umap_marker_genes | out_png |
+| 44 | uns_rank_genes_groups_names_wilcoxon_test | uns_rank_genes_groups_names |
+| 45 | anndata_out | anndata |
+| 46 | pl_violin_louvain | out_png |
+| 47 | pl_rank_gene_groups_t_test | out_png |
+| 48 | uns_rank_genes_groups_names_t_test | uns_rank_genes_groups_names |
+| 49 | cells_per_cluster | out_file |
+| 50 | pl_rank_gene_groups_0_vs_1 | out_png |
+| 51 | pl_rank_gene_groups_violin_0_vs_1 | collection_png |
+| 52 | pl_umap_celltypes | out_svg |
+| 53 | pl_dotplot_marker_genes | out_png |
+
+
+## How to run (Planemo)
+
+### Local Galaxy (default engine)
+
+```bash
+planemo run clustering-3k-pbmc-with-scanpy.ga job.yml --download_outputs --output_directory . --output_json output.json
+```
+
+Optional: `--galaxy_root /path/to/galaxy` speeds up spinning up a local Galaxy.
+
+### Docker Galaxy
+
+Append e.g. `--engine docker_galaxy --ignore_dependency_problems` (requires Docker).
+
+### External Galaxy (usegalaxy.org / EU / …)
+
+```bash
+planemo run clustering-3k-pbmc-with-scanpy.ga job.yml --engine external_galaxy --galaxy_url SERVER_URL --galaxy_user_key YOUR_API_KEY
+```
+
+Create a reusable profile: `planemo profile_create myprofile --galaxy_url ... --galaxy_user_key ... --engine external_galaxy` then `planemo run clustering-3k-pbmc-with-scanpy.ga job.yml --profile myprofile`.
+
+### Job file
+
+- Generate a template: `planemo workflow_job_init clustering-3k-pbmc-with-scanpy.ga -o job.yml`
+- Lint: `planemo workflow_lint clustering-3k-pbmc-with-scanpy.ga`
+
+See **[Running Galaxy workflows](https://planemo.readthedocs.io/en/master/running.html)** in the Planemo documentation.
+
+## Invocation outputs
+
+After a successful run with `--download_outputs`, files appear under your chosen `--output_directory`. `--output_json` records CWL-style metadata for outputs (paths, checksums).
+
+On an external Galaxy, use `planemo invocation_download INVOCATION_ID --profile ...` to fetch outputs, or track progress with `planemo workflow_track INVOCATION_ID`.
+
+Workflow steps marked as **workflow outputs** in the editor are listed under **Workflow outputs**; exact filenames depend on tools and Galaxy configuration.
+
+## Files
+
+- `clustering-3k-pbmc-with-scanpy.ga` — Galaxy workflow export (JSON)
+- `job.yml` — inputs/parameters for `planemo run` (create with `planemo workflow_job_init`)
+- [Planemo: Running Galaxy workflows](https://planemo.readthedocs.io/en/master/running.html)

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Biomarker screening in preeclampsia</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-Biomarker_screening_in_preeclampsia.ga"
+      },
+      "datePublished": "2022-05-03 14:00:49 +0100",
+      "author": [
+        {
+          "@id": "#person-269"
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.338.1",
+      "url": "https://workflowhub.eu/workflows/338/ro_crate?version=1",
+      "name": "Research Object Crate for Biomarker screening in preeclampsia",
+      "description": "Objective. Biomarkers have become important for the prognosis and diagnosis of various diseases. High-throughput methods such as RNA-sequencing facilitate the detection of differentially expressed genes (DEGs), hence potential biomarker candidates. Individual studies suggest long lists of DEGs, hampering the identification of clinically relevant ones. Concerning preeclampsia, a major obstetric burden with high risk for adverse maternal and/or neonatal outcomes, limitations in diagnosis and prediction are still important issues. Therefore, we developed a workflow to facilitate the screening for biomarkers.\nMethods. Based on the tool DeSeq2, we established a comprehensive workflow for the identification of  DEGs, analyzing data from multiple publicly available RNA-sSequencing studies. We applied it to four RNA-sSequencing datasets (one blood, three placenta) analyzing patients with preeclampsia and normotensive controls. We compared our results with other published approaches and evaluated their performance. \nResults. We identified 110 genes dysregulated in preeclampsia, observed in ≥3 of the analyzed studies, six even in all four studies. Among them were FLT-1, TREM-1, and FN1 which either represent established biomarkers on protein level, or promising candidates based on recent studies. In comparison, using a published meta-analysis approach we obtained 5,240  DEGs.\nConclusions. We present a data analysis workflow for preeclampsia biomarker screening, capable of identifying significant biomarker candidates, while drastically decreasing the numbers of candidates. Moreover, we were also able to confirm its performance for heart failure. Our approach can be applied to additional diseases for biomarker identification and the set of identified DEGs in preeclampsia represents a resource for further studies.\n",
+      "sdDatePublished": "2026-03-24 18:05:02 +0000",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-Biomarker_screening_in_preeclampsia.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-Biomarker_screening_in_preeclampsia.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 22749,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Objective. Biomarkers have become important for the prognosis and diagnosis of various diseases. High-throughput methods such as RNA-sequencing facilitate the detection of differentially expressed genes (DEGs), hence potential biomarker candidates. Individual studies suggest long lists of DEGs, hampering the identification of clinically relevant ones. Concerning preeclampsia, a major obstetric burden with high risk for adverse maternal and/or neonatal outcomes, limitations in diagnosis and prediction are still important issues. Therefore, we developed a workflow to facilitate the screening for biomarkers.\nMethods. Based on the tool DeSeq2, we established a comprehensive workflow for the identification of  DEGs, analyzing data from multiple publicly available RNA-sSequencing studies. We applied it to four RNA-sSequencing datasets (one blood, three placenta) analyzing patients with preeclampsia and normotensive controls. We compared our results with other published approaches and evaluated their performance. \nResults. We identified 110 genes dysregulated in preeclampsia, observed in ≥3 of the analyzed studies, six even in all four studies. Among them were FLT-1, TREM-1, and FN1 which either represent established biomarkers on protein level, or promising candidates based on recent studies. In comparison, using a published meta-analysis approach we obtained 5,240  DEGs.\nConclusions. We present a data analysis workflow for preeclampsia biomarker screening, capable of identifying significant biomarker candidates, while drastically decreasing the numbers of candidates. Moreover, we were also able to confirm its performance for heart failure. Our approach can be applied to additional diseases for biomarker identification and the set of identified DEGs in preeclampsia represents a resource for further studies.\n",
+      "name": "Biomarker screening in preeclampsia",
+      "url": "https://workflowhub.eu/workflows/338?version=1",
+      "keywords": "",
+      "version": 1,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "creator": {
+        "@id": "https://workflowhub.eu/people/269"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/91"
+      },
+      "dateCreated": "2022-05-03T13:05:01Z",
+      "dateModified": "2023-02-13T14:06:45Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.338.1",
+      "input": [
+
+      ],
+      "output": [
+        {
+          "@id": "#biomarker_screening_in_preeclampsia-outputs-Bowtie2%20on%20input%20dataset(s):%20alignments"
+        },
+        {
+          "@id": "#biomarker_screening_in_preeclampsia-outputs-FastQC%20on%20input%20dataset(s):%20Webpage"
+        },
+        {
+          "@id": "#biomarker_screening_in_preeclampsia-outputs-FastQC%20on%20input%20dataset(s):%20RawData"
+        },
+        {
+          "@id": "#biomarker_screening_in_preeclampsia-outputs-featureCounts%20on%20input%20dataset(s):%20Summary"
+        },
+        {
+          "@id": "#biomarker_screening_in_preeclampsia-outputs-featureCounts%20on%20input%20dataset(s):%20Counts"
+        },
+        {
+          "@id": "#biomarker_screening_in_preeclampsia-outputs-_anonymous_output_1"
+        },
+        {
+          "@id": "#biomarker_screening_in_preeclampsia-outputs-_anonymous_output_2"
+        },
+        {
+          "@id": "#biomarker_screening_in_preeclampsia-outputs-DESeq2%20result%20file%20on%20input%20dataset(s)"
+        },
+        {
+          "@id": "#biomarker_screening_in_preeclampsia-outputs-DESeq2%20plots%20on%20input%20dataset(s)"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "#person-269",
+      "@type": "Person",
+      "name": "Marlene Rezk",
+      "identifier": "https://workflowhub.eu/people/269"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/269",
+      "@type": "Person",
+      "name": "Marlene Rezk"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/91",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Gyn Department"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#biomarker_screening_in_preeclampsia-outputs-Bowtie2 on input dataset(s): alignments",
+      "@type": "FormalParameter",
+      "name": "Bowtie2 on input dataset(s): alignments",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#biomarker_screening_in_preeclampsia-outputs-FastQC on input dataset(s): Webpage",
+      "@type": "FormalParameter",
+      "name": "FastQC on input dataset(s): Webpage",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#biomarker_screening_in_preeclampsia-outputs-FastQC on input dataset(s): RawData",
+      "@type": "FormalParameter",
+      "name": "FastQC on input dataset(s): RawData",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#biomarker_screening_in_preeclampsia-outputs-featureCounts on input dataset(s): Summary",
+      "@type": "FormalParameter",
+      "name": "featureCounts on input dataset(s): Summary",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#biomarker_screening_in_preeclampsia-outputs-featureCounts on input dataset(s): Counts",
+      "@type": "FormalParameter",
+      "name": "featureCounts on input dataset(s): Counts",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#biomarker_screening_in_preeclampsia-outputs-_anonymous_output_1",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#biomarker_screening_in_preeclampsia-outputs-_anonymous_output_2",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#biomarker_screening_in_preeclampsia-outputs-DESeq2 result file on input dataset(s)",
+      "@type": "FormalParameter",
+      "name": "DESeq2 result file on input dataset(s)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#biomarker_screening_in_preeclampsia-outputs-DESeq2 plots on input dataset(s)",
+      "@type": "FormalParameter",
+      "name": "DESeq2 plots on input dataset(s)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Biomarker screening in preeclampsia</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/338/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/338/ro_crate?version=1</a>
+
+
+<p>
+  Objective. Biomarkers have become important for the prognosis and diagnosis of various diseases. High-throughput methods such as RNA-sequencing facilitate the detection of differentially expressed genes (DEGs), hence potential biomarker candidates. Individual studies suggest long lists of DEGs, hampering the identification of clinically relevant ones. Concerning preeclampsia, a major obstetric burden with high risk for adverse maternal and/or neonatal outcomes, limitations in diagnosis and prediction are still important issues. Therefore, we developed a workflow to facilitate the screening for biomarkers.
+Methods. Based on the tool DeSeq2, we established a comprehensive workflow for the identification of  DEGs, analyzing data from multiple publicly available RNA-sSequencing studies. We applied it to four RNA-sSequencing datasets (one blood, three placenta) analyzing patients with preeclampsia and normotensive controls. We compared our results with other published approaches and evaluated their performance. 
+Results. We identified 110 genes dysregulated in preeclampsia, observed in ≥3 of the analyzed studies, six even in all four studies. Among them were FLT-1, TREM-1, and FN1 which either represent established biomarkers on protein level, or promising candidates based on recent studies. In comparison, using a published meta-analysis approach we obtained 5,240  DEGs.
+Conclusions. We present a data analysis workflow for preeclampsia biomarker screening, capable of identifying significant biomarker candidates, while drastically decreasing the numbers of candidates. Moreover, we were also able to confirm its performance for heart failure. Our approach can be applied to additional diseases for biomarker identification and the set of identified DEGs in preeclampsia represents a resource for further studies.
+
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://workflowhub.eu/people/269" target="_blank">Marlene Rezk</a></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>CC-BY-4.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-Biomarker_screening_in_preeclampsia.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-Biomarker_screening_in_preeclampsia.ga">Biomarker screening in preeclampsia</a>
+      
+        <br/>Size: 22749 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

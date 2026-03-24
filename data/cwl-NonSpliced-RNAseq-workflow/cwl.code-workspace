@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"search.exclude": {
+			"**/packed": true,
+			"**/PROV": true,
+			"**/OUT": true,
+			"**/venv": true,
+			"**/packed.cwl": true,
+		}
+	}
+}

@@ -1,0 +1,231 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Refining%20Genome%20Annotations%20with%20Apollo%20(prokaryotes).ga"
+      },
+      "datePublished": "2024-02-14 15:58:09 +0000",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0003-0914-2470"
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.749.1",
+      "url": "https://workflowhub.eu/workflows/749/ro_crate?version=1",
+      "name": "Research Object Crate for Refining Genome Annotations with Apollo (prokaryotes)",
+      "description": "Refining Genome Annotations with Apollo",
+      "sdDatePublished": "2026-03-24 17:50:10 +0000",
+      "hasPart": [
+        {
+          "@id": "Refining%20Genome%20Annotations%20with%20Apollo%20(prokaryotes).ga"
+        }
+      ]
+    },
+    {
+      "@id": "Refining%20Genome%20Annotations%20with%20Apollo%20(prokaryotes).ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 18150,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Refining Genome Annotations with Apollo",
+      "name": "Refining Genome Annotations with Apollo (prokaryotes)",
+      "url": "https://workflowhub.eu/workflows/749?version=1",
+      "keywords": "genome-annotation",
+      "version": 1,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "creator": {
+        "@id": "https://workflowhub.eu/people/241"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/166"
+      },
+      "dateCreated": "2024-02-14T15:59:09Z",
+      "dateModified": "2025-11-04T09:59:27Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/13"
+      },
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.749.1",
+      "input": [
+        {
+          "@id": "#refining_genome_annotations_with_apollo__prokaryotes_-inputs-%23Amel_4.5_scaffolds.fa.gz"
+        },
+        {
+          "@id": "#refining_genome_annotations_with_apollo__prokaryotes_-inputs-%23amel_OGSv3.2.gff3.gz"
+        },
+        {
+          "@id": "#refining_genome_annotations_with_apollo__prokaryotes_-inputs-%23forager.bw"
+        },
+        {
+          "@id": "#refining_genome_annotations_with_apollo__prokaryotes_-inputs-%23forager_Amel4.5_accepted_hits.bam"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#refining_genome_annotations_with_apollo__prokaryotes_-outputs-%23main/_anonymous_output_5"
+        },
+        {
+          "@id": "#refining_genome_annotations_with_apollo__prokaryotes_-outputs-%23main/_anonymous_output_6"
+        },
+        {
+          "@id": "#refining_genome_annotations_with_apollo__prokaryotes_-outputs-%23main/_anonymous_output_7"
+        },
+        {
+          "@id": "#refining_genome_annotations_with_apollo__prokaryotes_-outputs-%23main/_anonymous_output_8"
+        },
+        {
+          "@id": "#refining_genome_annotations_with_apollo__prokaryotes_-outputs-%23main/_anonymous_output_9"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-0914-2470",
+      "@type": "Person",
+      "name": "Anthony Bretaudeau",
+      "identifier": "https://orcid.org/0000-0003-0914-2470"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/241",
+      "@type": "Person",
+      "name": "Anthony Bretaudeau"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/166",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "EuroScienceGateway"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/13",
+      "@type": "Collection",
+      "name": "Workflows in EuroScienceGateway"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#refining_genome_annotations_with_apollo__prokaryotes_-inputs-#Amel_4.5_scaffolds.fa.gz",
+      "@type": "FormalParameter",
+      "name": "#Amel_4.5_scaffolds.fa.gz",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#refining_genome_annotations_with_apollo__prokaryotes_-inputs-#amel_OGSv3.2.gff3.gz",
+      "@type": "FormalParameter",
+      "name": "#amel_OGSv3.2.gff3.gz",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#refining_genome_annotations_with_apollo__prokaryotes_-inputs-#forager.bw",
+      "@type": "FormalParameter",
+      "name": "#forager.bw",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#refining_genome_annotations_with_apollo__prokaryotes_-inputs-#forager_Amel4.5_accepted_hits.bam",
+      "@type": "FormalParameter",
+      "name": "#forager_Amel4.5_accepted_hits.bam",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#refining_genome_annotations_with_apollo__prokaryotes_-outputs-#main/_anonymous_output_5",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_5",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#refining_genome_annotations_with_apollo__prokaryotes_-outputs-#main/_anonymous_output_6",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_6",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#refining_genome_annotations_with_apollo__prokaryotes_-outputs-#main/_anonymous_output_7",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_7",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#refining_genome_annotations_with_apollo__prokaryotes_-outputs-#main/_anonymous_output_8",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_8",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#refining_genome_annotations_with_apollo__prokaryotes_-outputs-#main/_anonymous_output_9",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_9",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

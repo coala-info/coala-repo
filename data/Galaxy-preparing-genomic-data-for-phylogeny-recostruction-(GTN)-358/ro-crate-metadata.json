@@ -1,0 +1,321 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-preparing_genomic_data_for_phylogeny_recostruction_(GTN)(1).ga"
+      },
+      "datePublished": "2022-06-06 15:03:14 +0100",
+      "author": [
+        {
+          "@id": "#creator-1"
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://workflowhub.eu/workflows/358?version=1",
+      "url": "https://workflowhub.eu/workflows/358/ro_crate?version=1",
+      "name": "Research Object Crate for preparing genomic data for phylogeny recostruction (GTN)",
+      "description": "This workflow begins from a set of genome assemblies of different samples, strains, species. The genome is first annotated with Funnanotate. Predicted proteins are furtner annotated with Busco. Next, 'ProteinOrtho' finds orthologs across the samples and makes orthogroups. Orthogroups where all samples are represented are extracted. Orthologs in each orthogroup are aligned with ClustalW. Test dataset: https://zenodo.org/record/6610704#.Ypn3FzlBw5k",
+      "sdDatePublished": "2026-03-24 18:03:19 +0000",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-preparing_genomic_data_for_phylogeny_recostruction_(GTN)(1).ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-preparing_genomic_data_for_phylogeny_recostruction_(GTN)(1).ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 34691,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "This workflow begins from a set of genome assemblies of different samples, strains, species. The genome is first annotated with Funnanotate. Predicted proteins are furtner annotated with Busco. Next, 'ProteinOrtho' finds orthologs across the samples and makes orthogroups. Orthogroups where all samples are represented are extracted. Orthologs in each orthogroup are aligned with ClustalW. Test dataset: https://zenodo.org/record/6610704#.Ypn3FzlBw5k",
+      "name": "preparing genomic data for phylogeny recostruction (GTN)",
+      "url": "https://workflowhub.eu/workflows/358?version=1",
+      "keywords": "phylogenetics, phylogenomics, Annotation",
+      "version": 1,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "creator": {
+        "@id": "#Miguel%20Roncoroni"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/97"
+      },
+      "dateCreated": "2022-06-06T14:05:14Z",
+      "dateModified": "2023-02-13T14:06:44Z",
+      "isPartOf": [
+
+      ],
+      "input": {
+        "@id": "#preparing_genomic_data_for_phylogeny_recostruction__gtn_-inputs-Input%20genomes%20as%20collection"
+      },
+      "output": [
+        {
+          "@id": "#preparing_genomic_data_for_phylogeny_recostruction__gtn_-outputs-headers_shortened"
+        },
+        {
+          "@id": "#preparing_genomic_data_for_phylogeny_recostruction__gtn_-outputs-repeat_masked"
+        },
+        {
+          "@id": "#preparing_genomic_data_for_phylogeny_recostruction__gtn_-outputs-funannotate_predicted_proteins"
+        },
+        {
+          "@id": "#preparing_genomic_data_for_phylogeny_recostruction__gtn_-outputs-extracted_ORFs"
+        },
+        {
+          "@id": "#preparing_genomic_data_for_phylogeny_recostruction__gtn_-outputs-_anonymous_output_1"
+        },
+        {
+          "@id": "#preparing_genomic_data_for_phylogeny_recostruction__gtn_-outputs-sample_names_to_headers"
+        },
+        {
+          "@id": "#preparing_genomic_data_for_phylogeny_recostruction__gtn_-outputs-proteomes_to_one_file"
+        },
+        {
+          "@id": "#preparing_genomic_data_for_phylogeny_recostruction__gtn_-outputs-_anonymous_output_2"
+        },
+        {
+          "@id": "#preparing_genomic_data_for_phylogeny_recostruction__gtn_-outputs-Proteinortho%20on%20input%20dataset(s):%20orthology-groups"
+        },
+        {
+          "@id": "#preparing_genomic_data_for_phylogeny_recostruction__gtn_-outputs-_anonymous_output_3"
+        },
+        {
+          "@id": "#preparing_genomic_data_for_phylogeny_recostruction__gtn_-outputs-_anonymous_output_4"
+        },
+        {
+          "@id": "#preparing_genomic_data_for_phylogeny_recostruction__gtn_-outputs-_anonymous_output_5"
+        },
+        {
+          "@id": "#preparing_genomic_data_for_phylogeny_recostruction__gtn_-outputs-_anonymous_output_6"
+        },
+        {
+          "@id": "#preparing_genomic_data_for_phylogeny_recostruction__gtn_-outputs-_anonymous_output_7"
+        },
+        {
+          "@id": "#preparing_genomic_data_for_phylogeny_recostruction__gtn_-outputs-Proteinortho_extract_by_orthogroup"
+        },
+        {
+          "@id": "#preparing_genomic_data_for_phylogeny_recostruction__gtn_-outputs-fasta_header_cleaned"
+        },
+        {
+          "@id": "#preparing_genomic_data_for_phylogeny_recostruction__gtn_-outputs-ClustalW%20on%20input%20dataset(s):%20clustal"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "#creator-1",
+      "@type": "Person",
+      "name": "Miguel Roncoroni"
+    },
+    {
+      "@id": "#Miguel Roncoroni",
+      "@type": "Person",
+      "name": "Miguel Roncoroni"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/97",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "usegalaxy.be workflows"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#preparing_genomic_data_for_phylogeny_recostruction__gtn_-inputs-Input genomes as collection",
+      "@type": "FormalParameter",
+      "name": "Input genomes as collection",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#preparing_genomic_data_for_phylogeny_recostruction__gtn_-outputs-headers_shortened",
+      "@type": "FormalParameter",
+      "name": "headers_shortened",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#preparing_genomic_data_for_phylogeny_recostruction__gtn_-outputs-repeat_masked",
+      "@type": "FormalParameter",
+      "name": "repeat_masked",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#preparing_genomic_data_for_phylogeny_recostruction__gtn_-outputs-funannotate_predicted_proteins",
+      "@type": "FormalParameter",
+      "name": "funannotate_predicted_proteins",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#preparing_genomic_data_for_phylogeny_recostruction__gtn_-outputs-extracted_ORFs",
+      "@type": "FormalParameter",
+      "name": "extracted_ORFs",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#preparing_genomic_data_for_phylogeny_recostruction__gtn_-outputs-_anonymous_output_1",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#preparing_genomic_data_for_phylogeny_recostruction__gtn_-outputs-sample_names_to_headers",
+      "@type": "FormalParameter",
+      "name": "sample_names_to_headers",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#preparing_genomic_data_for_phylogeny_recostruction__gtn_-outputs-proteomes_to_one_file",
+      "@type": "FormalParameter",
+      "name": "proteomes_to_one_file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#preparing_genomic_data_for_phylogeny_recostruction__gtn_-outputs-_anonymous_output_2",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#preparing_genomic_data_for_phylogeny_recostruction__gtn_-outputs-Proteinortho on input dataset(s): orthology-groups",
+      "@type": "FormalParameter",
+      "name": "Proteinortho on input dataset(s): orthology-groups",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#preparing_genomic_data_for_phylogeny_recostruction__gtn_-outputs-_anonymous_output_3",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_3",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#preparing_genomic_data_for_phylogeny_recostruction__gtn_-outputs-_anonymous_output_4",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_4",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#preparing_genomic_data_for_phylogeny_recostruction__gtn_-outputs-_anonymous_output_5",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_5",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#preparing_genomic_data_for_phylogeny_recostruction__gtn_-outputs-_anonymous_output_6",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_6",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#preparing_genomic_data_for_phylogeny_recostruction__gtn_-outputs-_anonymous_output_7",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_7",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#preparing_genomic_data_for_phylogeny_recostruction__gtn_-outputs-Proteinortho_extract_by_orthogroup",
+      "@type": "FormalParameter",
+      "name": "Proteinortho_extract_by_orthogroup",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#preparing_genomic_data_for_phylogeny_recostruction__gtn_-outputs-fasta_header_cleaned",
+      "@type": "FormalParameter",
+      "name": "fasta_header_cleaned",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#preparing_genomic_data_for_phylogeny_recostruction__gtn_-outputs-ClustalW on input dataset(s): clustal",
+      "@type": "FormalParameter",
+      "name": "ClustalW on input dataset(s): clustal",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

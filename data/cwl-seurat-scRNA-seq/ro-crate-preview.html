@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for seurat scRNA-seq</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "steps.cwl"
+      },
+      "datePublished": "2022-04-12 19:54:18 +0100",
+      "author": [
+
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://workflowhub.eu/workflows/303?version=2",
+      "url": "https://workflowhub.eu/workflows/303/ro_crate?version=2",
+      "name": "Research Object Crate for seurat scRNA-seq",
+      "description": "",
+      "isBasedOn": "https://github.com/DimitraPanou/scRNAseq-cwl.git",
+      "sdDatePublished": "2026-03-24 01:15:40 +0000",
+      "creativeWorkStatus": "Work-in-progress",
+      "hasPart": [
+        {
+          "@id": "steps.cwl"
+        },
+        {
+          "@id": "workflow-303-f44e9e11a65a7a04400f963467f249054c95a92d-diagram.svg"
+        }
+      ]
+    },
+    {
+      "@id": "steps.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 6555,
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "image": {
+        "@id": "workflow-303-f44e9e11a65a7a04400f963467f249054c95a92d-diagram.svg"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "",
+      "name": "seurat scRNA-seq",
+      "url": "https://workflowhub.eu/workflows/303?version=2",
+      "keywords": "",
+      "version": 2,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/83"
+      },
+      "dateCreated": "2022-04-14T13:28:34Z",
+      "dateModified": "2023-01-16T13:59:13Z",
+      "isPartOf": [
+
+      ],
+      "isBasedOn": "https://workflowhub.eu/workflows/303?version=1",
+      "input": [
+        {
+          "@id": "#seurat_scrna_seq-inputs-running_step"
+        },
+        {
+          "@id": "#seurat_scrna_seq-inputs-loadDataR"
+        },
+        {
+          "@id": "#seurat_scrna_seq-inputs-barcodes"
+        },
+        {
+          "@id": "#seurat_scrna_seq-inputs-features"
+        },
+        {
+          "@id": "#seurat_scrna_seq-inputs-matrix"
+        },
+        {
+          "@id": "#seurat_scrna_seq-inputs-minCells"
+        },
+        {
+          "@id": "#seurat_scrna_seq-inputs-minFeatures"
+        },
+        {
+          "@id": "#seurat_scrna_seq-inputs-projectName"
+        },
+        {
+          "@id": "#seurat_scrna_seq-inputs-pattern"
+        },
+        {
+          "@id": "#seurat_scrna_seq-inputs-filterDataR"
+        },
+        {
+          "@id": "#seurat_scrna_seq-inputs-nFeatureRNAmin"
+        },
+        {
+          "@id": "#seurat_scrna_seq-inputs-nFeatureRNAmax"
+        },
+        {
+          "@id": "#seurat_scrna_seq-inputs-nCountRNAmin"
+        },
+        {
+          "@id": "#seurat_scrna_seq-inputs-nCountRNAmax"
+        },
+        {
+          "@id": "#seurat_scrna_seq-inputs-percentMTmin"
+        },
+        {
+          "@id": "#seurat_scrna_seq-inputs-percentMTmax"
+        },
+        {
+          "@id": "#seurat_scrna_seq-inputs-normalizeDataR"
+        },
+        {
+          "@id": "#seurat_scrna_seq-inputs-normalization_method"
+        },
+        {
+          "@id": "#seurat_scrna_seq-inputs-scale_factor"
+        },
+        {
+          "@id": "#seurat_scrna_seq-inputs-margin"
+        },
+        {
+          "@id": "#seurat_scrna_seq-inputs-block_size"
+        },
+        {
+          "@id": "#seurat_scrna_seq-inputs-verbose"
+        },
+        {
+          "@id": "#seurat_scrna_seq-inputs-featureSelectionDataR"
+        },
+        {
+          "@id": "#seurat_scrna_seq-inputs-selection_method"
+        },
+        {
+          "@id": "#seurat_scrna_seq-inputs-loess_span"
+        },
+        {
+          "@id": "#seurat_scrna_seq-inputs-clip_max"
+        },
+        {
+          "@id": "#seurat_scrna_seq-inputs-num_bin"
+        },
+        {
+          "@id": "#seurat_scrna_seq-inputs-binning_method"
+        },
+        {
+          "@id": "#seurat_scrna_seq-inputs-num_features"
+        },
+        {
+          "@id": "#seurat_scrna_seq-inputs-scaleDataR"
+        },
+        {
+          "@id": "#seurat_scrna_seq-inputs-runPCAR"
+        },
+        {
+          "@id": "#seurat_scrna_seq-inputs-findNeighborsR"
+        },
+        {
+          "@id": "#seurat_scrna_seq-inputs-neighbors_method"
+        },
+        {
+          "@id": "#seurat_scrna_seq-inputs-k"
+        },
+        {
+          "@id": "#seurat_scrna_seq-inputs-clusterDataR"
+        },
+        {
+          "@id": "#seurat_scrna_seq-inputs-runUmapR"
+        },
+        {
+          "@id": "#seurat_scrna_seq-inputs-runTSNER"
+        },
+        {
+          "@id": "#seurat_scrna_seq-inputs-find_markersR"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#seurat_scrna_seq-outputs-loadDataOutput"
+        },
+        {
+          "@id": "#seurat_scrna_seq-outputs-loadDataPlot"
+        },
+        {
+          "@id": "#seurat_scrna_seq-outputs-filterDataOutput"
+        },
+        {
+          "@id": "#seurat_scrna_seq-outputs-filterDataPlot"
+        },
+        {
+          "@id": "#seurat_scrna_seq-outputs-normalizeDataOutput"
+        },
+        {
+          "@id": "#seurat_scrna_seq-outputs-findFeaturesOutput"
+        },
+        {
+          "@id": "#seurat_scrna_seq-outputs-findFeaturesPlot"
+        },
+        {
+          "@id": "#seurat_scrna_seq-outputs-scaleDataOutput"
+        },
+        {
+          "@id": "#seurat_scrna_seq-outputs-runPCAOutput"
+        },
+        {
+          "@id": "#seurat_scrna_seq-outputs-runPCAPlot1"
+        },
+        {
+          "@id": "#seurat_scrna_seq-outputs-runPCAPlot2"
+        },
+        {
+          "@id": "#seurat_scrna_seq-outputs-runPCAPlot3"
+        },
+        {
+          "@id": "#seurat_scrna_seq-outputs-findNeighborsOutput"
+        },
+        {
+          "@id": "#seurat_scrna_seq-outputs-clusterDataOutput"
+        },
+        {
+          "@id": "#seurat_scrna_seq-outputs-runUMAPOutput"
+        },
+        {
+          "@id": "#seurat_scrna_seq-outputs-runUMAPOutputPlot"
+        },
+        {
+          "@id": "#seurat_scrna_seq-outputs-runTSNEOutput"
+        },
+        {
+          "@id": "#seurat_scrna_seq-outputs-findMarkersOutput"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "workflow-303-f44e9e11a65a7a04400f963467f249054c95a92d-diagram.svg",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 56489
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/83",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Single Cell Unit"
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-inputs-running_step",
+      "@type": "FormalParameter",
+      "name": "running_step",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-inputs-loadDataR",
+      "@type": "FormalParameter",
+      "name": "loadDataR",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-inputs-barcodes",
+      "@type": "FormalParameter",
+      "name": "barcodes",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-inputs-features",
+      "@type": "FormalParameter",
+      "name": "features",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-inputs-matrix",
+      "@type": "FormalParameter",
+      "name": "matrix",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-inputs-minCells",
+      "@type": "FormalParameter",
+      "name": "minCells",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-inputs-minFeatures",
+      "@type": "FormalParameter",
+      "name": "minFeatures",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-inputs-projectName",
+      "@type": "FormalParameter",
+      "name": "projectName",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-inputs-pattern",
+      "@type": "FormalParameter",
+      "name": "pattern",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-inputs-filterDataR",
+      "@type": "FormalParameter",
+      "name": "filterDataR",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-inputs-nFeatureRNAmin",
+      "@type": "FormalParameter",
+      "name": "nFeatureRNAmin",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-inputs-nFeatureRNAmax",
+      "@type": "FormalParameter",
+      "name": "nFeatureRNAmax",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-inputs-nCountRNAmin",
+      "@type": "FormalParameter",
+      "name": "nCountRNAmin",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-inputs-nCountRNAmax",
+      "@type": "FormalParameter",
+      "name": "nCountRNAmax",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-inputs-percentMTmin",
+      "@type": "FormalParameter",
+      "name": "percentMTmin",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-inputs-percentMTmax",
+      "@type": "FormalParameter",
+      "name": "percentMTmax",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-inputs-normalizeDataR",
+      "@type": "FormalParameter",
+      "name": "normalizeDataR",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-inputs-normalization_method",
+      "@type": "FormalParameter",
+      "name": "normalization_method",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-inputs-scale_factor",
+      "@type": "FormalParameter",
+      "name": "scale_factor",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-inputs-margin",
+      "@type": "FormalParameter",
+      "name": "margin",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-inputs-block_size",
+      "@type": "FormalParameter",
+      "name": "block_size",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-inputs-verbose",
+      "@type": "FormalParameter",
+      "name": "verbose",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-inputs-featureSelectionDataR",
+      "@type": "FormalParameter",
+      "name": "featureSelectionDataR",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-inputs-selection_method",
+      "@type": "FormalParameter",
+      "name": "selection_method",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-inputs-loess_span",
+      "@type": "FormalParameter",
+      "name": "loess_span",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-inputs-clip_max",
+      "@type": "FormalParameter",
+      "name": "clip_max",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-inputs-num_bin",
+      "@type": "FormalParameter",
+      "name": "num_bin",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-inputs-binning_method",
+      "@type": "FormalParameter",
+      "name": "binning_method",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-inputs-num_features",
+      "@type": "FormalParameter",
+      "name": "num_features",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-inputs-scaleDataR",
+      "@type": "FormalParameter",
+      "name": "scaleDataR",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-inputs-runPCAR",
+      "@type": "FormalParameter",
+      "name": "runPCAR",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-inputs-findNeighborsR",
+      "@type": "FormalParameter",
+      "name": "findNeighborsR",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-inputs-neighbors_method",
+      "@type": "FormalParameter",
+      "name": "neighbors_method",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-inputs-k",
+      "@type": "FormalParameter",
+      "name": "k",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-inputs-clusterDataR",
+      "@type": "FormalParameter",
+      "name": "clusterDataR",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-inputs-runUmapR",
+      "@type": "FormalParameter",
+      "name": "runUmapR",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-inputs-runTSNER",
+      "@type": "FormalParameter",
+      "name": "runTSNER",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-inputs-find_markersR",
+      "@type": "FormalParameter",
+      "name": "find_markersR",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-outputs-loadDataOutput",
+      "@type": "FormalParameter",
+      "name": "loadDataOutput",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-outputs-loadDataPlot",
+      "@type": "FormalParameter",
+      "name": "loadDataPlot",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-outputs-filterDataOutput",
+      "@type": "FormalParameter",
+      "name": "filterDataOutput",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-outputs-filterDataPlot",
+      "@type": "FormalParameter",
+      "name": "filterDataPlot",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-outputs-normalizeDataOutput",
+      "@type": "FormalParameter",
+      "name": "normalizeDataOutput",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-outputs-findFeaturesOutput",
+      "@type": "FormalParameter",
+      "name": "findFeaturesOutput",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-outputs-findFeaturesPlot",
+      "@type": "FormalParameter",
+      "name": "findFeaturesPlot",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-outputs-scaleDataOutput",
+      "@type": "FormalParameter",
+      "name": "scaleDataOutput",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-outputs-runPCAOutput",
+      "@type": "FormalParameter",
+      "name": "runPCAOutput",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-outputs-runPCAPlot1",
+      "@type": "FormalParameter",
+      "name": "runPCAPlot1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-outputs-runPCAPlot2",
+      "@type": "FormalParameter",
+      "name": "runPCAPlot2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-outputs-runPCAPlot3",
+      "@type": "FormalParameter",
+      "name": "runPCAPlot3",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-outputs-findNeighborsOutput",
+      "@type": "FormalParameter",
+      "name": "findNeighborsOutput",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-outputs-clusterDataOutput",
+      "@type": "FormalParameter",
+      "name": "clusterDataOutput",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-outputs-runUMAPOutput",
+      "@type": "FormalParameter",
+      "name": "runUMAPOutput",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-outputs-runUMAPOutputPlot",
+      "@type": "FormalParameter",
+      "name": "runUMAPOutputPlot",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-outputs-runTSNEOutput",
+      "@type": "FormalParameter",
+      "name": "runTSNEOutput",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#seurat_scrna_seq-outputs-findMarkersOutput",
+      "@type": "FormalParameter",
+      "name": "findMarkersOutput",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for seurat scRNA-seq</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/303/ro_crate?version=2" target="_blank">https://workflowhub.eu/workflows/303/ro_crate?version=2</a>
+
+
+  <img src="workflow-303-f44e9e11a65a7a04400f963467f249054c95a92d-diagram.svg" style="width: 100%;"/>
+
+<p>
+  
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>Apache-2.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_steps.cwl">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="steps.cwl">seurat scRNA-seq</a>
+      
+        <br/>Size: 6555 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_workflow-303-f44e9e11a65a7a04400f963467f249054c95a92d-diagram.svg">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="workflow-303-f44e9e11a65a7a04400f963467f249054c95a92d-diagram.svg">workflow-303-f44e9e11a65a7a04400f963467f249054c95a92d-diagram.svg</a>
+      
+        <br/>Size: 56489 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,182 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": [
+        { "@id": "https://w3id.org/ro/crate/1.1" },
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" }
+      ],
+      "about": { "@id": "./" }
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/process/0.4",
+      "@type": "CreativeWork",
+      "name": "Process Run Crate",
+      "version": "0.4"
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/workflow/0.4",
+      "@type": "CreativeWork",
+      "name": "Workflow Run Crate",
+      "version": "0.4"
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl",
+      "@type": "ComputerLanguage",
+      "identifier": "https://www.commonwl.org/",
+      "name": "Common Workflow Language",
+      "url": "https://www.commonwl.org/"
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "Workflow to transform input data.",
+      "datePublished": "2025-05-14",
+      "description": "Transforms input data into suitable form to use for the other workflows in DTC-E1.",
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "author": [
+        { "@id": "https://orcid.org/0009-0009-4291-2503" },
+        { "@id": "https://orcid.org/0000-0003-4086-8755" }
+      ],
+      "publisher": { "@id": "https://ror.org/05a28rw58" },
+      "conformsTo": [
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" }
+      ],
+      "hasPart": [
+        { "@id": "WF7101.cwl" },
+        { "@id": "DT7101/" },
+        { "@id": "DT7102/" },
+        { "@id": "DT7103/" }
+      ],
+      "mainEntity": { "@id": "WF7101.cwl" }
+    },
+    {
+      "@id": "WF7101.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "name": "Data Transformation",
+      "description": "Transforms input data into suitable form to use for the other workflows in DTC-E1.",
+      "author": [
+        { "@id": "https://orcid.org/0000-0002-8207-1464" },
+        { "@id": "https://orcid.org/0009-0009-4291-2503" },
+        { "@id": "https://orcid.org/0000-0003-4086-8755" }
+      ],
+      "programmingLanguage": [
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl" }
+      ],
+      "input": [
+        { "@id": "#DT7101->WF7101.cwl" },
+        { "@id": "#DT7102->WF7101.cwl" },
+        { "@id": "#DT7103->WF7101.cwl" }
+      ],
+      "output": [
+        { "@id": "#WF7101.cwl->CRUSTAL_FAULT_MODEL" },
+        { "@id": "#WF7101.cwl->SUBDUCTION_ZONES" },
+        { "@id": "#WF7101.cwl->ACTIVE_FAULT_DATASET" }
+      ],
+      "conformsTo": [
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" }
+      ]
+    },
+        {
+      "@id": "DT7101/",
+      "@type": "Dataset",
+      "name": "European instrumental earthquake catalogue (EMEC)",
+      "description": "European instrumental earthquake catalogue (EMEC).",
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "isPartOf": { "@id": "./" },
+      "creator": [
+        { "@id": "https://orcid.org/0000-0001-9347-2282" }
+      ]
+    },
+    {
+      "@id": "DT7102/",
+      "@type": "Dataset",
+      "name": "European PreInstrumental Earthquake Catalogue (EPICA)",
+      "description": "European PreInstrumental Earthquake Catalogue (EPICA).",
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "isPartOf": { "@id": "./" },
+      "creator": [
+        { "@id": "https://orcid.org/0000-0001-6147-9981" }
+      ]
+    },
+    {
+      "@id": "DT7103/",
+      "@type": "Dataset",
+      "name": "European Fault-Source Model",
+      "description": "European Fault-Source Model.",
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "isPartOf": { "@id": "./" },
+      "creator": [
+        { "@id": "https://orcid.org/0000-0002-1213-0828" }
+      ]
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-8207-1464",
+      "@type": "Person",
+      "name": "Johannes Kemper",
+      "email": "johannes.kemper@eaps.ethz.ch",
+      "affiliation": { "@id": "https://ror.org/05a28rw58" }
+    },
+    {
+      "@id": "https://orcid.org/0009-0009-4291-2503",
+      "@type": "Person",
+      "name": "Nicolas Schmid",
+      "email": "nicolas.schmid@sed.ethz.ch",
+      "affiliation": { "@id": "https://ror.org/05a28rw58" }
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-4086-8755",
+      "@type": "Person",
+      "name": "Laurentiu Danciu",
+      "email": "laurentiu.danciu@sed.ethz.ch",
+      "affiliation": { "@id": "https://ror.org/05a28rw58" }
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-9347-2282",
+      "@type": "Person",
+      "name": "Graeme Weatherill",
+      "email": "gweather@gfz-potsdam.de",
+      "affiliation": { "@id": "https://ror.org/04z8jg394" }
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-6147-9981",
+      "@type": "Person",
+      "name": "Andrea Rovida",
+      "email": "andrea.rovida@ingv.it",
+      "affiliation": { "@id": "https://ror.org/00vfbgd72" }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-1213-0828",
+      "@type": "Person",
+      "name": "Roberto Basili",
+      "email": "roberto.basili@ingv.it",
+      "affiliation": { "@id": "https://ror.org/00qps9a02" }
+    },
+    {
+      "@id": "https://ror.org/04z8jg394",
+      "@type": "Organization",
+      "name": "GFZ Helmholtz Centre for Geosciences"
+    },
+    {
+      "@id": "https://ror.org/05a28rw58",
+      "@type": "Organization",
+      "name": "Eidgenössische Technische Hochschule Zürich (ETH Zürich)"
+    },
+    {
+      "@id": "https://ror.org/00vfbgd72",
+      "@type": "Organization",
+      "name": "INGV Milano"
+    },
+    {
+      "@id": "https://ror.org/00qps9a02",
+      "@type": "Organization",
+      "name": "INGV Rome"
+    }
+  ]
+}

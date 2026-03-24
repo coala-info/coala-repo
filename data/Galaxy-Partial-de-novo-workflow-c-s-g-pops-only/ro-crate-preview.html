@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Partial de novo workflow: c-s-g-pops only</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-Partial_de_novo_workflow_c-s-g-pops_only.ga"
+      },
+      "datePublished": "2022-05-31 08:54:58 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-9906-0673"
+        }
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://workflowhub.eu/workflows/350?version=1",
+      "url": "https://workflowhub.eu/workflows/350/ro_crate?version=1",
+      "name": "Research Object Crate for Partial de novo workflow: c-s-g-pops only",
+      "description": "# workflow-partial-cstacks-sstacks-gstacks\n\nThese workflows are part of a set designed to work for RAD-seq data on the Galaxy platform, using the tools from the Stacks program. \n\nGalaxy Australia: https://usegalaxy.org.au/\n\nStacks: http://catchenlab.life.illinois.edu/stacks/\n\nThis workflow takes in ustacks output, and runs cstacks, sstacks and gstacks. \n\nTo generate ustacks output see https://workflowhub.eu/workflows/349\n\nFor the full de novo workflow see https://workflowhub.eu/workflows/348\n",
+      "isBasedOn": "https://github.com/AnnaSyme/workflow-partial-cstacks-sstacks-gstacks.git",
+      "sdDatePublished": "2026-03-24 18:04:21 +0000",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-Partial_de_novo_workflow_c-s-g-pops_only.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-Partial_de_novo_workflow_c-s-g-pops_only.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 23360,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "# workflow-partial-cstacks-sstacks-gstacks\n\nThese workflows are part of a set designed to work for RAD-seq data on the Galaxy platform, using the tools from the Stacks program. \n\nGalaxy Australia: https://usegalaxy.org.au/\n\nStacks: http://catchenlab.life.illinois.edu/stacks/\n\nThis workflow takes in ustacks output, and runs cstacks, sstacks and gstacks. \n\nTo generate ustacks output see https://workflowhub.eu/workflows/349\n\nFor the full de novo workflow see https://workflowhub.eu/workflows/348\n",
+      "name": "Partial de novo workflow: c-s-g-pops only",
+      "url": "https://workflowhub.eu/workflows/350?version=1",
+      "keywords": "",
+      "version": 1,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "creator": {
+        "@id": "https://workflowhub.eu/people/200"
+      },
+      "producer": [
+        {
+          "@id": "https://workflowhub.eu/projects/54"
+        },
+        {
+          "@id": "https://workflowhub.eu/projects/30"
+        }
+      ],
+      "dateCreated": "2022-05-31T07:56:39Z",
+      "dateModified": "2023-01-30T18:21:31Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/6"
+      },
+      "input": [
+        {
+          "@id": "#partial_de_novo_workflow__c_s_g_pops_only-inputs-Population%20map"
+        },
+        {
+          "@id": "#partial_de_novo_workflow__c_s_g_pops_only-inputs-Ustacks%20inputs"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-Stacks2:%20cstacks%20%20on%20input%20dataset(s)%20Catalog%20of%20loci"
+        },
+        {
+          "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-Stacks2:%20cstacks%20on%20input%20dataset(s)%20log%20file"
+        },
+        {
+          "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-Stacks2:%20sstacks%20on%20input%20dataset(s)%20log%20file"
+        },
+        {
+          "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-Stacks2:%20sstacks%20%20on%20input%20dataset(s)%20Matches%20to%20the%20catalog"
+        },
+        {
+          "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-Stacks2:%20tsv2bam%20on%20input%20dataset(s)%20log%20file"
+        },
+        {
+          "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-Stacks2:%20tsv2bam%20%20on%20input%20dataset(s)%20Matches%20to%20the%20catalog%20(bam)"
+        },
+        {
+          "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-Stacks2:%20gstacks%20%20on%20input%20dataset(s)%20Assembled%20contigs%20and%20variant%20sites"
+        },
+        {
+          "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-Stacks2:%20gstacks%20on%20input%20dataset(s)%20log%20file"
+        },
+        {
+          "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-_anonymous_output_2"
+        },
+        {
+          "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-Stacks2:%20populations%20%20on%20input%20dataset(s)%20Populations%20log%20distributions"
+        },
+        {
+          "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-_anonymous_output_3"
+        },
+        {
+          "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-_anonymous_output_4"
+        },
+        {
+          "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-Stacks2:%20populations%20%20on%20input%20dataset(s)%20Population-level%20summary%20statistics"
+        },
+        {
+          "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-Stacks2:%20populations%20on%20input%20dataset(s)%20log%20file"
+        },
+        {
+          "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-Stacks2:%20populations%20%20on%20input%20dataset(s)%20Raw%20Genotypes/Haplotypes"
+        },
+        {
+          "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-Stacks2:%20populations%20%20on%20input%20dataset(s)%20Summary%20of%20Population-level%20summary%20statistics"
+        },
+        {
+          "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-_anonymous_output_5"
+        },
+        {
+          "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-_anonymous_output_6"
+        },
+        {
+          "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-Stacks2:%20populations%20%20on%20input%20dataset(s)%20Population-level%20haplotype%20summary%20statistics"
+        },
+        {
+          "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-_anonymous_output_7"
+        },
+        {
+          "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-_anonymous_output_8"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-9906-0673",
+      "@type": "Person",
+      "name": "Anna Syme",
+      "identifier": "https://orcid.org/0000-0002-9906-0673"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/200",
+      "@type": "Person",
+      "name": "Anna Syme"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/54",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Galaxy Australia"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/30",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Australian BioCommons"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/6",
+      "@type": "Collection",
+      "name": "BioCommons ‘Bring Your Own Data’ Expansion Project"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#partial_de_novo_workflow__c_s_g_pops_only-inputs-Population map",
+      "@type": "FormalParameter",
+      "name": "Population map",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#partial_de_novo_workflow__c_s_g_pops_only-inputs-Ustacks inputs",
+      "@type": "FormalParameter",
+      "name": "Ustacks inputs",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-Stacks2: cstacks  on input dataset(s) Catalog of loci",
+      "@type": "FormalParameter",
+      "name": "Stacks2: cstacks  on input dataset(s) Catalog of loci",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-Stacks2: cstacks on input dataset(s) log file",
+      "@type": "FormalParameter",
+      "name": "Stacks2: cstacks on input dataset(s) log file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-Stacks2: sstacks on input dataset(s) log file",
+      "@type": "FormalParameter",
+      "name": "Stacks2: sstacks on input dataset(s) log file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-Stacks2: sstacks  on input dataset(s) Matches to the catalog",
+      "@type": "FormalParameter",
+      "name": "Stacks2: sstacks  on input dataset(s) Matches to the catalog",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-Stacks2: tsv2bam on input dataset(s) log file",
+      "@type": "FormalParameter",
+      "name": "Stacks2: tsv2bam on input dataset(s) log file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-Stacks2: tsv2bam  on input dataset(s) Matches to the catalog (bam)",
+      "@type": "FormalParameter",
+      "name": "Stacks2: tsv2bam  on input dataset(s) Matches to the catalog (bam)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-Stacks2: gstacks  on input dataset(s) Assembled contigs and variant sites",
+      "@type": "FormalParameter",
+      "name": "Stacks2: gstacks  on input dataset(s) Assembled contigs and variant sites",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-Stacks2: gstacks on input dataset(s) log file",
+      "@type": "FormalParameter",
+      "name": "Stacks2: gstacks on input dataset(s) log file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-_anonymous_output_2",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-Stacks2: populations  on input dataset(s) Populations log distributions",
+      "@type": "FormalParameter",
+      "name": "Stacks2: populations  on input dataset(s) Populations log distributions",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-_anonymous_output_3",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_3",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-_anonymous_output_4",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_4",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-Stacks2: populations  on input dataset(s) Population-level summary statistics",
+      "@type": "FormalParameter",
+      "name": "Stacks2: populations  on input dataset(s) Population-level summary statistics",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-Stacks2: populations on input dataset(s) log file",
+      "@type": "FormalParameter",
+      "name": "Stacks2: populations on input dataset(s) log file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-Stacks2: populations  on input dataset(s) Raw Genotypes/Haplotypes",
+      "@type": "FormalParameter",
+      "name": "Stacks2: populations  on input dataset(s) Raw Genotypes/Haplotypes",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-Stacks2: populations  on input dataset(s) Summary of Population-level summary statistics",
+      "@type": "FormalParameter",
+      "name": "Stacks2: populations  on input dataset(s) Summary of Population-level summary statistics",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-_anonymous_output_5",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_5",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-_anonymous_output_6",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_6",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-Stacks2: populations  on input dataset(s) Population-level haplotype summary statistics",
+      "@type": "FormalParameter",
+      "name": "Stacks2: populations  on input dataset(s) Population-level haplotype summary statistics",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-_anonymous_output_7",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_7",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#partial_de_novo_workflow__c_s_g_pops_only-outputs-_anonymous_output_8",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_8",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Partial de novo workflow: c-s-g-pops only</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/350/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/350/ro_crate?version=1</a>
+
+
+<p>
+  # workflow-partial-cstacks-sstacks-gstacks
+
+These workflows are part of a set designed to work for RAD-seq data on the Galaxy platform, using the tools from the Stacks program. 
+
+Galaxy Australia: https://usegalaxy.org.au/
+
+Stacks: http://catchenlab.life.illinois.edu/stacks/
+
+This workflow takes in ustacks output, and runs cstacks, sstacks and gstacks. 
+
+To generate ustacks output see https://workflowhub.eu/workflows/349
+
+For the full de novo workflow see https://workflowhub.eu/workflows/348
+
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://orcid.org/0000-0002-9906-0673" target="_blank">Anna Syme</a></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>Apache-2.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-Partial_de_novo_workflow_c-s-g-pops_only.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-Partial_de_novo_workflow_c-s-g-pops_only.ga">Partial de novo workflow: c-s-g-pops only</a>
+      
+        <br/>Size: 23360 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

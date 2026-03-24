@@ -1,0 +1,90 @@
+# Input files
+stringdb_input_file:
+  class: File
+  path: /home/dwijnbergen/ASI_workflow_data/input/9606.protein.links.detailed.v11.0.txt.gz
+
+mirtarbase_input_file:
+  class: File
+  path: /home/dwijnbergen/ASI_workflow_data/input/hsa_MTI.xlsx
+
+entrez2string:
+  class: File
+  path: /home/dwijnbergen/ASI_workflow_data/input/mapping/STRINGmapping/entrez2string
+
+bridgedb:
+  class: Directory
+  path: /home/dwijnbergen/ASI_workflow_data/input/mapping/BridgeDB
+
+mRNA-mRNA_bicor:
+  class: File
+  path: /home/dwijnbergen/ASI_workflow_data/input/sIBM/mRNA-cor_edges_bicor
+
+miRNA-mRNA_bicor:
+  class: File
+  path: /home/dwijnbergen/ASI_workflow_data/input/sIBM/mRNA-miRNA_cor_edges_bicor
+
+de_mRNA:
+  class: File
+  path: /home/dwijnbergen/ASI_workflow_data/input/sIBM/res_sIBM_AMP_main_updated.txt
+
+de_miRNA:
+  class: File
+  path: /home/dwijnbergen/ASI_workflow_data/input/sIBM/res_sIBM_AMP_mirna_updated.txt
+
+variant_burden:
+  class: File
+  path: /home/dwijnbergen/ASI_workflow_data/input/sIBM/rvtest_IBM_1000GFIN.Skat.assoc
+
+# Parameters
+stringdb_number_of_edges: 100
+stringdb_min_weight: 200
+mirtarbase_number_of_edges: 100
+
+max_cor_edges: 100
+
+mogamun_generations: 1
+mogamun_runs: 1
+mogamun_cores: 1
+
+mogamun_min_size: 15
+mogamun_max_size: 200
+mogamun_merge_threshold: 20
+
+# # Temporary intermediate files for testing
+# stringdb_edge_list:
+#   class: File
+#   path: /home/dwijnbergen/ASI_workflow_data/stringdb_edges
+
+# mirtarbase_edge_list:
+#   class: File
+#   path: /home/dwijnbergen/ASI_workflow_data/mirtarbase_edges
+
+# stringdb_mapped_edge_list:
+#   class: File
+#   path: /home/dwijnbergen/ASI_workflow_data/stringdb_edges_mapped
+
+# mirtarbase_mapped_edge_list:
+#   class: File
+#   path: /home/dwijnbergen/ASI_workflow_data/mirtarbase_edges_mapped
+
+# full_graph:
+#   class: File
+#   path: /home/dwijnbergen/ASI_workflow_data/full_graph.graphml
+
+# full_graph_rds:
+#   class: File
+#   path: /home/dwijnbergen/ASI_workflow_data/full_graph.rds
+
+# mogamun_input:
+#   class: Directory
+#   path: /home/dwijnbergen/ASI_workflow_data/MOGAMUN_input
+
+# mogamun_results:
+#   class: Directory
+#   path: /home/dwijnbergen/ASI_workflow_data/MOGAMUN_results
+
+# Comments
+# STRING download:
+#   https://stringdb-static.org/download/protein.links.detailed.v11.0/9606.protein.links.detailed.v11.0.txt.gz
+# miRTarBase Download:
+#   mirtarbase.cuhk.edu.cn/cache/download/8.0/hsa_MTI.xlsx

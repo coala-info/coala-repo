@@ -1,0 +1,70 @@
+2025-02-25 22:27:58.5198 PeptideDB_Chlamy TRACE Initializing PeptideDB at: C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeries\db 
+2025-02-25 22:27:58.5316 PeptideDB_Chlamy TRACE searchDBParams: { Name = "Chlamy"
+  DbFolder = "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeries\db"
+  FastaPath =
+   "C:\Users\ottj\repos\RatioLFQComparisons\studies\DilutionSeries\resources\Chlamy_JGI5_5Cp_Mp_gen.fasta"
+  FastaHeaderToName = <fun:parseProteinIdUsing@180>
+  Protease = { Name = "Trypsin"
+               Expression = <fun:Trypsin@175> }
+  MinMissedCleavages = 0
+  MaxMissedCleavages = 2
+  MaxMass = 15000.0
+  MinPepLength = 4
+  MaxPepLength = 65
+  IsotopicMod = [{ Name = "N15"
+                   SourceEl = Di { Symbol = "N"
+                                   X = { AtomicSymbol = "N"
+                                         AtomicNumberZ = 7
+                                         MassNumber = 14
+                                         Mass = 14.003074
+                                         NatAbundance = 0.99636
+                                         RelAtomicMass = 14.0067 }
+                                   Xcomp = 0.99636
+                                   X1 = { AtomicSymbol = "N"
+                                          AtomicNumberZ = 7
+                                          MassNumber = 15
+                                          Mass = 15.0001089
+                                          NatAbundance = 0.00364
+                                          RelAtomicMass = 14.0067 }
+                                   X1comp = 0.00364
+                                   Root = -273.7252747 }
+                   TargetEl = Di { Symbol = "N15"
+                                   X = { AtomicSymbol = "N"
+                                         AtomicNumberZ = 7
+                                         MassNumber = 15
+                                         Mass = 15.0001089
+                                         NatAbundance = 0.00364
+                                         RelAtomicMass = 14.0067 }
+                                   Xcomp = 0.99636
+                                   X1 = { AtomicSymbol = "N"
+                                          AtomicNumberZ = 7
+                                          MassNumber = 14
+                                          Mass = 14.003074
+                                          NatAbundance = 0.99636
+                                          RelAtomicMass = 14.0067 }
+                                   X1comp = 0.00364
+                                   Root = -273.7252747 } }]
+  MassMode = Monoisotopic
+  MassFunction = <fun:memoizeP@25>
+  FixedMods = []
+  VariableMods =
+   [{ Name = "Oxidation'Met'"
+      Accession = "35"
+      Description = "Oxidation"
+      IsBiological = true
+      Composition = "O"
+      Site = [Specific (Met, Residual)]
+      MType = Plus
+      XModCode = "ox" }; { Name = "Acetyl(Protein N-Term)"
+                           Accession = "1"
+                           Description = "Acetylation of the protein N-terminus"
+                           IsBiological = true
+                           Composition = "C2H2O"
+                           Site = [Any ProteinNterm]
+                           MType = Plus
+                           XModCode = "ac" }]
+  VarModThreshold = 4 } 
+2025-02-25 22:28:57.9451 PeptideDB_Chlamy TRACE Successfully created PeptideDB 
+2025-02-25 22:28:57.9451 PeptideDB_Chlamy TRACE Set Index on data base if not present. 
+2025-02-25 22:29:01.6271 PeptideDB_Chlamy TRACE Set Index on data base if not present: finished 
+2025-02-25 22:29:01.6342 PeptideDB_Chlamy TRACE Done 

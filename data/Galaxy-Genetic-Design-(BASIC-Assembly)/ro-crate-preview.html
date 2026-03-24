@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Genetic Design (BASIC Assembly)</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-Genetic_Design_(BASIC_Assembly).ga"
+      },
+      "datePublished": "2025-10-24 15:07:13 +0100",
+      "author": [
+
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://workflowhub.eu/workflows/2009?version=1",
+      "url": "https://workflowhub.eu/workflows/2009/ro_crate?version=1",
+      "name": "Research Object Crate for Genetic Design (BASIC Assembly)",
+      "description": "# Genetic Design (BASIC Assembly)\n\n* This workflow encodes the top-ranking predicted pathways from the previous workflow into plasmids intended to be expressed in the specified organism. BASIC is used as assembly method. \n* It provides ECHO® liquid handler instructions file.\n* pub DOI: 10.1016/j.isci.2025.113599\n\n## input:\n\n* _Sampling file: csv file_ : The **CSV** file should contain cell-free components combination. This data will be passed to the icFree_extractor &amp; icFree_learner tools.\n* _Fluo/Lumi values_ : The **CSV** file should contain fuorescence/luminescence values. This data will be passed to the icFree_extractor tool.\n* _referance file_ : The **CSV** reference yields file for calibratio. This data will be passed to the icFree_extractor tool.\n\n## Tools:\n\n&gt;_Selenzy_\n\nIt is an open-source tool for selecting enzyme sequences from reaction-based queries. It uses reaction templates (e.g., RetroRules) to search for similar reactions in the MetaNetX5 database and retrieves the corresponding annotated enzyme sequences. The tool provides combined scoring based on reaction similarity, sequence conservation, phylogenetic distance, and sequence properties. It accepts SBML pathway files as input and returns SBML pathways annotated with UniProt IDs.\n\n&gt;_BASIC-design_\n\nIt generates BASIC-compatible genetic constructs from SBML files annotated with enzyme IDs, such as those produced by Selenzyme. Using the BASIC DNA assembly method—based on orthogonal linkers and type IIs restriction enzymes—it assembles constructs with predefined or user-supplied linkers, promoters, and backbones. The tool outputs three CSV files (construct designs and plate coordinates for linkers and DNA parts) and a set of SBOL files, one per construct. It supports multiple promoter and RBS combinations for each enzyme-coding sequence, and can optionally permute gene order in operon designs.\n        \n&gt;_DNA-Bot_\n        \nIt is a software tool that converts construct design CSV files—such as those produced by rpBASICDesign—into automated assembly protocols for OpenTrons liquid-handling robots. Users may specify labware and protocol parameters (e.g., washing or incubation times). DNA-Bot outputs Python scripts implementing the four BASIC assembly steps: Clip reactions (ligation of DNA parts with linkers), Purification (magnetic-bead cleanup), Assembly (combining purified parts into final constructs), and Transformation (introducing plasmids into the host strain and plating). The tool also produces metadata for tracking experimental parameters.",
+      "sdDatePublished": "2026-03-24 16:27:09 +0000",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-Genetic_Design_(BASIC_Assembly).ga"
+        },
+        {
+          "@id": "Capture%20d%E2%80%99%C3%A9cran%20du%202025-10-24%2016-06-31.png"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-Genetic_Design_(BASIC_Assembly).ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 15239,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "Capture%20d%E2%80%99%C3%A9cran%20du%202025-10-24%2016-06-31.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "# Genetic Design (BASIC Assembly)\n\n* This workflow encodes the top-ranking predicted pathways from the previous workflow into plasmids intended to be expressed in the specified organism. BASIC is used as assembly method. \n* It provides ECHO® liquid handler instructions file.\n* pub DOI: 10.1016/j.isci.2025.113599\n\n## input:\n\n* _Sampling file: csv file_ : The **CSV** file should contain cell-free components combination. This data will be passed to the icFree_extractor &amp; icFree_learner tools.\n* _Fluo/Lumi values_ : The **CSV** file should contain fuorescence/luminescence values. This data will be passed to the icFree_extractor tool.\n* _referance file_ : The **CSV** reference yields file for calibratio. This data will be passed to the icFree_extractor tool.\n\n## Tools:\n\n&gt;_Selenzy_\n\nIt is an open-source tool for selecting enzyme sequences from reaction-based queries. It uses reaction templates (e.g., RetroRules) to search for similar reactions in the MetaNetX5 database and retrieves the corresponding annotated enzyme sequences. The tool provides combined scoring based on reaction similarity, sequence conservation, phylogenetic distance, and sequence properties. It accepts SBML pathway files as input and returns SBML pathways annotated with UniProt IDs.\n\n&gt;_BASIC-design_\n\nIt generates BASIC-compatible genetic constructs from SBML files annotated with enzyme IDs, such as those produced by Selenzyme. Using the BASIC DNA assembly method—based on orthogonal linkers and type IIs restriction enzymes—it assembles constructs with predefined or user-supplied linkers, promoters, and backbones. The tool outputs three CSV files (construct designs and plate coordinates for linkers and DNA parts) and a set of SBOL files, one per construct. It supports multiple promoter and RBS combinations for each enzyme-coding sequence, and can optionally permute gene order in operon designs.\n        \n&gt;_DNA-Bot_\n        \nIt is a software tool that converts construct design CSV files—such as those produced by rpBASICDesign—into automated assembly protocols for OpenTrons liquid-handling robots. Users may specify labware and protocol parameters (e.g., washing or incubation times). DNA-Bot outputs Python scripts implementing the four BASIC assembly steps: Clip reactions (ligation of DNA parts with linkers), Purification (magnetic-bead cleanup), Assembly (combining purified parts into final constructs), and Transformation (introducing plasmids into the host strain and plating). The tool also produces metadata for tracking experimental parameters.",
+      "name": "Genetic Design (BASIC Assembly)",
+      "url": "https://workflowhub.eu/workflows/2009?version=1",
+      "keywords": "brs, Assembly",
+      "version": 1,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/380"
+      },
+      "dateCreated": "2025-10-24T14:08:33Z",
+      "dateModified": "2025-12-16T13:22:21Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#genetic_design__basic_assembly_-inputs-%23main/DNA-Bot%20settings"
+        },
+        {
+          "@id": "#genetic_design__basic_assembly_-inputs-%23main/Enzyme%20taxon%20IDs"
+        },
+        {
+          "@id": "#genetic_design__basic_assembly_-inputs-%23main/Host%20taxon%20ID"
+        },
+        {
+          "@id": "#genetic_design__basic_assembly_-inputs-%23main/Linkers%20and%20user%20parts"
+        },
+        {
+          "@id": "#genetic_design__basic_assembly_-inputs-%23main/Pathway%20(SBML)"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#genetic_design__basic_assembly_-outputs-%23main/Uniprot%20IDs"
+        },
+        {
+          "@id": "#genetic_design__basic_assembly_-outputs-%23main/_anonymous_output_10"
+        },
+        {
+          "@id": "#genetic_design__basic_assembly_-outputs-%23main/_anonymous_output_6"
+        },
+        {
+          "@id": "#genetic_design__basic_assembly_-outputs-%23main/_anonymous_output_7"
+        },
+        {
+          "@id": "#genetic_design__basic_assembly_-outputs-%23main/_anonymous_output_8"
+        },
+        {
+          "@id": "#genetic_design__basic_assembly_-outputs-%23main/_anonymous_output_9"
+        },
+        {
+          "@id": "#genetic_design__basic_assembly_-outputs-%23main/dnabot_scripts"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "Capture%20d%E2%80%99%C3%A9cran%20du%202025-10-24%2016-06-31.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 479198
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/380",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "galaxy-SynBioCAD"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#genetic_design__basic_assembly_-inputs-#main/DNA-Bot settings",
+      "@type": "FormalParameter",
+      "name": "#main/DNA-Bot settings",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genetic_design__basic_assembly_-inputs-#main/Enzyme taxon IDs",
+      "@type": "FormalParameter",
+      "name": "#main/Enzyme taxon IDs",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genetic_design__basic_assembly_-inputs-#main/Host taxon ID",
+      "@type": "FormalParameter",
+      "name": "#main/Host taxon ID",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genetic_design__basic_assembly_-inputs-#main/Linkers and user parts",
+      "@type": "FormalParameter",
+      "name": "#main/Linkers and user parts",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genetic_design__basic_assembly_-inputs-#main/Pathway (SBML)",
+      "@type": "FormalParameter",
+      "name": "#main/Pathway (SBML)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genetic_design__basic_assembly_-outputs-#main/Uniprot IDs",
+      "@type": "FormalParameter",
+      "name": "#main/Uniprot IDs",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genetic_design__basic_assembly_-outputs-#main/_anonymous_output_10",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_10",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genetic_design__basic_assembly_-outputs-#main/_anonymous_output_6",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_6",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genetic_design__basic_assembly_-outputs-#main/_anonymous_output_7",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_7",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genetic_design__basic_assembly_-outputs-#main/_anonymous_output_8",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_8",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genetic_design__basic_assembly_-outputs-#main/_anonymous_output_9",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_9",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genetic_design__basic_assembly_-outputs-#main/dnabot_scripts",
+      "@type": "FormalParameter",
+      "name": "#main/dnabot_scripts",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Genetic Design (BASIC Assembly)</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/2009/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/2009/ro_crate?version=1</a>
+
+
+  <img src="Capture d’écran du 2025-10-24 16-06-31.png" style="width: 100%;"/>
+
+<p>
+  # Genetic Design (BASIC Assembly)
+
+* This workflow encodes the top-ranking predicted pathways from the previous workflow into plasmids intended to be expressed in the specified organism. BASIC is used as assembly method. 
+* It provides ECHO® liquid handler instructions file.
+* pub DOI: 10.1016/j.isci.2025.113599
+
+## input:
+
+* _Sampling file: csv file_ : The **CSV** file should contain cell-free components combination. This data will be passed to the icFree_extractor &amp; icFree_learner tools.
+* _Fluo/Lumi values_ : The **CSV** file should contain fuorescence/luminescence values. This data will be passed to the icFree_extractor tool.
+* _referance file_ : The **CSV** reference yields file for calibratio. This data will be passed to the icFree_extractor tool.
+
+## Tools:
+
+&gt;_Selenzy_
+
+It is an open-source tool for selecting enzyme sequences from reaction-based queries. It uses reaction templates (e.g., RetroRules) to search for similar reactions in the MetaNetX5 database and retrieves the corresponding annotated enzyme sequences. The tool provides combined scoring based on reaction similarity, sequence conservation, phylogenetic distance, and sequence properties. It accepts SBML pathway files as input and returns SBML pathways annotated with UniProt IDs.
+
+&gt;_BASIC-design_
+
+It generates BASIC-compatible genetic constructs from SBML files annotated with enzyme IDs, such as those produced by Selenzyme. Using the BASIC DNA assembly method—based on orthogonal linkers and type IIs restriction enzymes—it assembles constructs with predefined or user-supplied linkers, promoters, and backbones. The tool outputs three CSV files (construct designs and plate coordinates for linkers and DNA parts) and a set of SBOL files, one per construct. It supports multiple promoter and RBS combinations for each enzyme-coding sequence, and can optionally permute gene order in operon designs.
+        
+&gt;_DNA-Bot_
+        
+It is a software tool that converts construct design CSV files—such as those produced by rpBASICDesign—into automated assembly protocols for OpenTrons liquid-handling robots. Users may specify labware and protocol parameters (e.g., washing or incubation times). DNA-Bot outputs Python scripts implementing the four BASIC assembly steps: Clip reactions (ligation of DNA parts with linkers), Purification (magnetic-bead cleanup), Assembly (combining purified parts into final constructs), and Transformation (introducing plasmids into the host strain and plating). The tool also produces metadata for tracking experimental parameters.
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>Apache-2.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-Genetic_Design_(BASIC_Assembly).ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-Genetic_Design_(BASIC_Assembly).ga">Genetic Design (BASIC Assembly)</a>
+      
+        <br/>Size: 15239 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_Capture%20d%E2%80%99%C3%A9cran%20du%202025-10-24%2016-06-31.png">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="Capture d’écran du 2025-10-24 16-06-31.png">Capture%20d%E2%80%99%C3%A9cran%20du%202025-10-24%2016-06-31.png</a>
+      
+        <br/>Size: 479198 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

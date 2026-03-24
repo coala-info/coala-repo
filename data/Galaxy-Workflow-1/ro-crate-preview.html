@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Workflow-1</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-Unnamed_Workflow.ga"
+      },
+      "datePublished": "2025-08-19 08:33:02 +0100",
+      "author": [
+
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://workflowhub.eu/workflows/1877?version=1",
+      "url": "https://workflowhub.eu/workflows/1877/ro_crate?version=1",
+      "name": "Research Object Crate for Workflow-1",
+      "description": "# Cloning simulation workflow for sequences present in DB\n\nRun the GoldenGate cloning simulation for a list of constructs in a CSV file and interact with a database\n\n## steps:\n\n_input: csv file (without header)_ : The **CSV** file should contain the constraints line by line in the first column, along with their associated fragments on each line. This data will be passed to the _seq_from_DB_ tool.\n\n&gt;_workflow_1 Parameter_Maystro_\n\n1. Distribute workflow parameters on the workflow tools\n2. Parameters can be set as a JSON file in input (optional)\n3.  Parameters can be manually instate of JSON file\n\n&gt;_seq_from_DB_\n\n1. Extract the fragments associated with each constraint from the CSV file.\n2. Check if all fragments are present in the database.\n\t\t\n&gt;_evaluate_manufacturability_\n\t\t\n1. If any fragment is missing it will serve from the unannotated Genbenk provided to annotate them and add them to the finale gb collection\n2. If all fragments are present in the database, GenBank files for each fragment will be passed to the cloning_simulation tool.\n\n &gt;_clonning_simulation_\n\n1. GoldenGate cloning simulation based on constraints.\n2. Generate GenBank files for each simulated constraint.\n\n&gt;_seq_to_db_\n\n1. Constraint GenBank files can be saved to the database, depending on the user's choice.\n",
+      "sdDatePublished": "2026-03-24 16:33:25 +0000",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-Unnamed_Workflow.ga"
+        },
+        {
+          "@id": "all_workflow.png"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-Unnamed_Workflow.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 15862,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "all_workflow.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "# Cloning simulation workflow for sequences present in DB\n\nRun the GoldenGate cloning simulation for a list of constructs in a CSV file and interact with a database\n\n## steps:\n\n_input: csv file (without header)_ : The **CSV** file should contain the constraints line by line in the first column, along with their associated fragments on each line. This data will be passed to the _seq_from_DB_ tool.\n\n&gt;_workflow_1 Parameter_Maystro_\n\n1. Distribute workflow parameters on the workflow tools\n2. Parameters can be set as a JSON file in input (optional)\n3.  Parameters can be manually instate of JSON file\n\n&gt;_seq_from_DB_\n\n1. Extract the fragments associated with each constraint from the CSV file.\n2. Check if all fragments are present in the database.\n\t\t\n&gt;_evaluate_manufacturability_\n\t\t\n1. If any fragment is missing it will serve from the unannotated Genbenk provided to annotate them and add them to the finale gb collection\n2. If all fragments are present in the database, GenBank files for each fragment will be passed to the cloning_simulation tool.\n\n &gt;_clonning_simulation_\n\n1. GoldenGate cloning simulation based on constraints.\n2. Generate GenBank files for each simulated constraint.\n\n&gt;_seq_to_db_\n\n1. Constraint GenBank files can be saved to the database, depending on the user's choice.\n",
+      "name": "Workflow-1",
+      "url": "https://workflowhub.eu/workflows/1877?version=1",
+      "keywords": "",
+      "version": 1,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/355"
+      },
+      "dateCreated": "2025-08-19T07:42:32Z",
+      "dateModified": "2025-08-19T07:51:50Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#workflow_1-inputs-Assembly%20Plan"
+        },
+        {
+          "@id": "#workflow_1-inputs-JSON%20params"
+        },
+        {
+          "@id": "#workflow_1-inputs-Missing%20gb%20fragmets%20from%20DB%20"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#workflow_1-outputs-output_json"
+        },
+        {
+          "@id": "#workflow_1-outputs-report"
+        },
+        {
+          "@id": "#workflow_1-outputs-report_tsv"
+        },
+        {
+          "@id": "#workflow_1-outputs-report_pdf"
+        },
+        {
+          "@id": "#workflow_1-outputs-output_zip"
+        },
+        {
+          "@id": "#workflow_1-outputs-output"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "all_workflow.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 141559
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/355",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "DNA Foundry"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#workflow_1-inputs-Assembly Plan",
+      "@type": "FormalParameter",
+      "name": "Assembly Plan",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_1-inputs-JSON params",
+      "@type": "FormalParameter",
+      "name": "JSON params",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_1-inputs-Missing gb fragmets from DB ",
+      "@type": "FormalParameter",
+      "name": "Missing gb fragmets from DB ",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_1-outputs-output_json",
+      "@type": "FormalParameter",
+      "name": "output_json",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_1-outputs-report",
+      "@type": "FormalParameter",
+      "name": "report",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_1-outputs-report_tsv",
+      "@type": "FormalParameter",
+      "name": "report_tsv",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_1-outputs-report_pdf",
+      "@type": "FormalParameter",
+      "name": "report_pdf",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_1-outputs-output_zip",
+      "@type": "FormalParameter",
+      "name": "output_zip",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_1-outputs-output",
+      "@type": "FormalParameter",
+      "name": "output",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Workflow-1</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/1877/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/1877/ro_crate?version=1</a>
+
+
+  <img src="all_workflow.png" style="width: 100%;"/>
+
+<p>
+  # Cloning simulation workflow for sequences present in DB
+
+Run the GoldenGate cloning simulation for a list of constructs in a CSV file and interact with a database
+
+## steps:
+
+_input: csv file (without header)_ : The **CSV** file should contain the constraints line by line in the first column, along with their associated fragments on each line. This data will be passed to the _seq_from_DB_ tool.
+
+&gt;_workflow_1 Parameter_Maystro_
+
+1. Distribute workflow parameters on the workflow tools
+2. Parameters can be set as a JSON file in input (optional)
+3.  Parameters can be manually instate of JSON file
+
+&gt;_seq_from_DB_
+
+1. Extract the fragments associated with each constraint from the CSV file.
+2. Check if all fragments are present in the database.
+		
+&gt;_evaluate_manufacturability_
+		
+1. If any fragment is missing it will serve from the unannotated Genbenk provided to annotate them and add them to the finale gb collection
+2. If all fragments are present in the database, GenBank files for each fragment will be passed to the cloning_simulation tool.
+
+ &gt;_clonning_simulation_
+
+1. GoldenGate cloning simulation based on constraints.
+2. Generate GenBank files for each simulated constraint.
+
+&gt;_seq_to_db_
+
+1. Constraint GenBank files can be saved to the database, depending on the user's choice.
+
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>Apache-2.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-Unnamed_Workflow.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-Unnamed_Workflow.ga">Workflow-1</a>
+      
+        <br/>Size: 15862 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_all_workflow.png">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="all_workflow.png">all_workflow.png</a>
+      
+        <br/>Size: 141559 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

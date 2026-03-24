@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Trim and filter reads - fastp</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-Trim_and_filter_reads.ga"
+      },
+      "datePublished": "2021-11-08 04:56:09 +0000",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-9906-0673"
+        }
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.224.1",
+      "url": "https://workflowhub.eu/workflows/224/ro_crate?version=1",
+      "name": "Research Object Crate for Trim and filter reads - fastp",
+      "description": "Trim and filter reads; can run alone or as part of a combined workflow for large genome assembly. \n\n* What it does: Trims and filters raw sequence reads according to specified settings. \n* Inputs: Long reads (format fastq); Short reads R1 and R2 (format fastq) \n* Outputs: Trimmed and filtered reads: fastp_filtered_long_reads.fastq.gz (But note: no trimming or filtering is on by default), fastp_filtered_R1.fastq.gz, fastp_filtered_R2.fastq.gz\n* Reports: fastp report on long reads, html; fastp report on short reads, html\n* Tools used: fastp (Note. The latest version (0.20.1) of fastp has an issue displaying plot results. Using version 0.19.5 here instead until this is rectified). \n* Input parameters: None required, but recommend removing the long reads from the workflow if not using any trimming/filtering settings. \n\nWorkflow steps:\n\nLong reads: fastp settings: \n* These settings have been changed from the defaults (so that all filtering and trimming settings are now disabled). \n* Adapter trimming options: Disable adapter trimming: yes\n* Filter options: Quality filtering options: Disable quality filtering: yes\n* Filter options: Length filtering options: Disable length filtering: yes\n* Read modification options: PolyG tail trimming: Disable\n* Output options: output JSON report: yes\n\nShort reads: fastp settings:\n* adapter trimming (default setting: adapters are auto-detected)\n* quality filtering (default: phred quality 15), unqualified bases limit (default = 40%), number of Ns allowed in a read (default = 5)\n* length filtering (default length = min 15)\n* polyG tail trimming (default = on for NextSeq/NovaSeq data which is auto detected)\n* Output options: output JSON report: yes\n\nOptions:\n* Change any settings in fastp for any of the input reads. \n* Adapter trimming: input the actual adapter sequences. (Alternative tool for long read adapter trimming: Porechop.) \n* Trimming n bases from ends of reads if quality less than value x  (Alternative tool for trimming long reads: NanoFilt.)\n* Discard post-trimmed reads if length is &lt; x (e.g. for long reads, 1000 bp)\n* Example filtering/trimming that you might do on long reads: remove adapters (can also be done with Porechop), trim bases from ends of the reads with low quality (can also be done with NanoFilt), after this can keep only reads of length x (e.g. 1000 bp) \n\n\nInfrastructure_deployment_metadata: Galaxy Australia (Galaxy)",
+      "sdDatePublished": "2026-03-24 18:08:17 +0000",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-Trim_and_filter_reads.ga"
+        },
+        {
+          "@id": "Trim_and_filter_reads.png"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-Trim_and_filter_reads.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 14680,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "Trim_and_filter_reads.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Trim and filter reads; can run alone or as part of a combined workflow for large genome assembly. \n\n* What it does: Trims and filters raw sequence reads according to specified settings. \n* Inputs: Long reads (format fastq); Short reads R1 and R2 (format fastq) \n* Outputs: Trimmed and filtered reads: fastp_filtered_long_reads.fastq.gz (But note: no trimming or filtering is on by default), fastp_filtered_R1.fastq.gz, fastp_filtered_R2.fastq.gz\n* Reports: fastp report on long reads, html; fastp report on short reads, html\n* Tools used: fastp (Note. The latest version (0.20.1) of fastp has an issue displaying plot results. Using version 0.19.5 here instead until this is rectified). \n* Input parameters: None required, but recommend removing the long reads from the workflow if not using any trimming/filtering settings. \n\nWorkflow steps:\n\nLong reads: fastp settings: \n* These settings have been changed from the defaults (so that all filtering and trimming settings are now disabled). \n* Adapter trimming options: Disable adapter trimming: yes\n* Filter options: Quality filtering options: Disable quality filtering: yes\n* Filter options: Length filtering options: Disable length filtering: yes\n* Read modification options: PolyG tail trimming: Disable\n* Output options: output JSON report: yes\n\nShort reads: fastp settings:\n* adapter trimming (default setting: adapters are auto-detected)\n* quality filtering (default: phred quality 15), unqualified bases limit (default = 40%), number of Ns allowed in a read (default = 5)\n* length filtering (default length = min 15)\n* polyG tail trimming (default = on for NextSeq/NovaSeq data which is auto detected)\n* Output options: output JSON report: yes\n\nOptions:\n* Change any settings in fastp for any of the input reads. \n* Adapter trimming: input the actual adapter sequences. (Alternative tool for long read adapter trimming: Porechop.) \n* Trimming n bases from ends of reads if quality less than value x  (Alternative tool for trimming long reads: NanoFilt.)\n* Discard post-trimmed reads if length is &lt; x (e.g. for long reads, 1000 bp)\n* Example filtering/trimming that you might do on long reads: remove adapters (can also be done with Porechop), trim bases from ends of the reads with low quality (can also be done with NanoFilt), after this can keep only reads of length x (e.g. 1000 bp) \n\n\nInfrastructure_deployment_metadata: Galaxy Australia (Galaxy)",
+      "name": "Trim and filter reads - fastp",
+      "url": "https://workflowhub.eu/workflows/224?version=1",
+      "keywords": "Large-genome-assembly",
+      "version": 1,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "creator": {
+        "@id": "https://workflowhub.eu/people/200"
+      },
+      "producer": [
+        {
+          "@id": "https://workflowhub.eu/projects/54"
+        },
+        {
+          "@id": "https://workflowhub.eu/projects/30"
+        }
+      ],
+      "dateCreated": "2021-11-08T04:56:09Z",
+      "dateModified": "2023-01-30T18:21:31Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/6"
+      },
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.224.1",
+      "input": [
+        {
+          "@id": "#trim_and_filter_reads___fastp-inputs-Illumina%20reads%20R1"
+        },
+        {
+          "@id": "#trim_and_filter_reads___fastp-inputs-Illumina%20reads%20R2"
+        },
+        {
+          "@id": "#trim_and_filter_reads___fastp-inputs-long%20reads"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#trim_and_filter_reads___fastp-outputs-fastp%20filtered%20R2%20reads"
+        },
+        {
+          "@id": "#trim_and_filter_reads___fastp-outputs-fastp%20report%20on%20short%20reads%20html"
+        },
+        {
+          "@id": "#trim_and_filter_reads___fastp-outputs-fastp%20filtered%20R1%20reads"
+        },
+        {
+          "@id": "#trim_and_filter_reads___fastp-outputs-fastp%20report%20on%20short%20reads%20json"
+        },
+        {
+          "@id": "#trim_and_filter_reads___fastp-outputs-fastp%20report%20on%20long%20reads%20html"
+        },
+        {
+          "@id": "#trim_and_filter_reads___fastp-outputs-fastp%20filtered%20long%20reads"
+        },
+        {
+          "@id": "#trim_and_filter_reads___fastp-outputs-fastp%20report%20on%20long%20reads%20json"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "Trim_and_filter_reads.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 282014
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-9906-0673",
+      "@type": "Person",
+      "name": "Anna Syme",
+      "identifier": "https://orcid.org/0000-0002-9906-0673"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/200",
+      "@type": "Person",
+      "name": "Anna Syme"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/54",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Galaxy Australia"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/30",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Australian BioCommons"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/6",
+      "@type": "Collection",
+      "name": "BioCommons ‘Bring Your Own Data’ Expansion Project"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#trim_and_filter_reads___fastp-inputs-Illumina reads R1",
+      "@type": "FormalParameter",
+      "name": "Illumina reads R1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#trim_and_filter_reads___fastp-inputs-Illumina reads R2",
+      "@type": "FormalParameter",
+      "name": "Illumina reads R2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#trim_and_filter_reads___fastp-inputs-long reads",
+      "@type": "FormalParameter",
+      "name": "long reads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#trim_and_filter_reads___fastp-outputs-fastp filtered R2 reads",
+      "@type": "FormalParameter",
+      "name": "fastp filtered R2 reads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#trim_and_filter_reads___fastp-outputs-fastp report on short reads html",
+      "@type": "FormalParameter",
+      "name": "fastp report on short reads html",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#trim_and_filter_reads___fastp-outputs-fastp filtered R1 reads",
+      "@type": "FormalParameter",
+      "name": "fastp filtered R1 reads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#trim_and_filter_reads___fastp-outputs-fastp report on short reads json",
+      "@type": "FormalParameter",
+      "name": "fastp report on short reads json",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#trim_and_filter_reads___fastp-outputs-fastp report on long reads html",
+      "@type": "FormalParameter",
+      "name": "fastp report on long reads html",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#trim_and_filter_reads___fastp-outputs-fastp filtered long reads",
+      "@type": "FormalParameter",
+      "name": "fastp filtered long reads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#trim_and_filter_reads___fastp-outputs-fastp report on long reads json",
+      "@type": "FormalParameter",
+      "name": "fastp report on long reads json",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Trim and filter reads - fastp</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/224/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/224/ro_crate?version=1</a>
+
+
+  <img src="Trim_and_filter_reads.png" style="width: 100%;"/>
+
+<p>
+  Trim and filter reads; can run alone or as part of a combined workflow for large genome assembly. 
+
+* What it does: Trims and filters raw sequence reads according to specified settings. 
+* Inputs: Long reads (format fastq); Short reads R1 and R2 (format fastq) 
+* Outputs: Trimmed and filtered reads: fastp_filtered_long_reads.fastq.gz (But note: no trimming or filtering is on by default), fastp_filtered_R1.fastq.gz, fastp_filtered_R2.fastq.gz
+* Reports: fastp report on long reads, html; fastp report on short reads, html
+* Tools used: fastp (Note. The latest version (0.20.1) of fastp has an issue displaying plot results. Using version 0.19.5 here instead until this is rectified). 
+* Input parameters: None required, but recommend removing the long reads from the workflow if not using any trimming/filtering settings. 
+
+Workflow steps:
+
+Long reads: fastp settings: 
+* These settings have been changed from the defaults (so that all filtering and trimming settings are now disabled). 
+* Adapter trimming options: Disable adapter trimming: yes
+* Filter options: Quality filtering options: Disable quality filtering: yes
+* Filter options: Length filtering options: Disable length filtering: yes
+* Read modification options: PolyG tail trimming: Disable
+* Output options: output JSON report: yes
+
+Short reads: fastp settings:
+* adapter trimming (default setting: adapters are auto-detected)
+* quality filtering (default: phred quality 15), unqualified bases limit (default = 40%), number of Ns allowed in a read (default = 5)
+* length filtering (default length = min 15)
+* polyG tail trimming (default = on for NextSeq/NovaSeq data which is auto detected)
+* Output options: output JSON report: yes
+
+Options:
+* Change any settings in fastp for any of the input reads. 
+* Adapter trimming: input the actual adapter sequences. (Alternative tool for long read adapter trimming: Porechop.) 
+* Trimming n bases from ends of reads if quality less than value x  (Alternative tool for trimming long reads: NanoFilt.)
+* Discard post-trimmed reads if length is &lt; x (e.g. for long reads, 1000 bp)
+* Example filtering/trimming that you might do on long reads: remove adapters (can also be done with Porechop), trim bases from ends of the reads with low quality (can also be done with NanoFilt), after this can keep only reads of length x (e.g. 1000 bp) 
+
+
+Infrastructure_deployment_metadata: Galaxy Australia (Galaxy)
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://orcid.org/0000-0002-9906-0673" target="_blank">Anna Syme</a></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>Apache-2.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-Trim_and_filter_reads.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-Trim_and_filter_reads.ga">Trim and filter reads - fastp</a>
+      
+        <br/>Size: 14680 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_Trim_and_filter_reads.png">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="Trim_and_filter_reads.png">Trim_and_filter_reads.png</a>
+      
+        <br/>Size: 282014 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

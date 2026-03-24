@@ -1,0 +1,206 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": [
+        { "@id": "https://w3id.org/ro/crate/1.1" },
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" }
+      ],
+      "about": { "@id": "./" }
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/process/0.4",
+      "@type": "CreativeWork",
+      "name": "Process Run Crate",
+      "version": "0.4"
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/workflow/0.4",
+      "@type": "CreativeWork",
+      "name": "Workflow Run Crate",
+      "version": "0.4"
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl",
+      "@type": "ComputerLanguage",
+      "identifier": "https://www.commonwl.org/",
+      "name": "Common Workflow Language",
+      "url": "https://www.commonwl.org/"
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "WF7301 Workflow",
+      "datePublished": "2025-05-15",
+      "description": "A CWL-based workflow for processing and analyzing ground motion data.",
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "author": { "@id": "https://orcid.org/0000-0001-9347-2282" },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ],
+      "hasPart": [
+        { "@id": "WF7301.cwl" },
+        { "@id": "DT7301/" },
+        { "@id": "DT7303/" },
+        { "@id": "SS7302" },
+        { "@id": "SS7303" },
+        { "@id": "SS7102" }
+      ],
+      "mainEntity": {
+        "@id": "WF7301.cwl"
+      }
+    },
+    {
+      "@id": "WF7301.cwl",
+      "@type": [
+      "File",
+      "SoftwareSourceCode",
+      "ComputationalWorkflow"
+      ],
+      "name": "WF7301 Workflow",
+      "description": "A CWL-based computational workflow integrating multiple steps for ground motion data processing and validation.",
+      "author": [
+      {
+        "@id": "https://orcid.org/0000-0002-8207-1464"
+      },
+      {
+        "@id": "https://orcid.org/0000-0003-0499-4893"
+      }
+      ],
+      "programmingLanguage": {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl"
+      },
+      "input": [
+      { "@id": "#DT7301->WF7301.cwl" },
+      { "@id": "#SimulationDataset->WF7301.cwl" }
+      ],
+      "output": [
+      { "@id": "#WF7301.cwl->DT7303" },
+      { "@id": "#WF7301.cwl->UpdatedHazardnRiskProducts" }
+      ]
+    },
+    {
+      "@id": "DT7301/",
+      "@type": "Dataset",
+      "name": "Observed Ground Motion Data",
+      "description": "Observed ground motion data from ORFEUS (ESM, RRSM, EIDA).",
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "creator": { "@id": "https://orcid.org/0000-0001-9347-2282" }
+    },
+    {
+      "@id": "DT7303/",
+      "@type": "Dataset",
+      "name": "Hazard and Risk Products",
+      "description": "Hazard and risk products based on the processed ground motion data.",
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "creator": { "@id": "https://orcid.org/0000-0001-9347-2282" }
+    },
+    {
+      "@id": "SS7102",
+      "@type": "SoftwareSourceCode",
+      "name": "OpenQuake",
+      "description": "The OpenQuake Engine is an open source application that allows users to compute seismic hazard and seismic risk of earthquakes on a regional scale.",
+      "license": "https://spdx.org/licenses/AGPL-3.0",
+      "programmingLanguage": [
+      "Python",
+      "Numpy",
+      "Matplotlib"
+      ],
+      "url": "https://github.com/gem/oq-engine/",
+      "organization": { "@id": "https://ror.org/02xh1tf34" }
+    },
+    {
+      "@id": "SS7301",
+      "@type": "SoftwareSourceCode",
+      "name": "Stream2Segment",
+      "description": "Python library and command line application to download, process and visualize event-based seismic waveform segments, specifically designed to manage big volumes of data.",
+      "license": "https://spdx.org/licenses/GPL-3.0-or-later",
+      "programmingLanguage": [
+        "Python"
+      ],
+      "url": "https://github.com/rizac/stream2segment/",
+      "organization": [{ "@id": "https://ror.org/04z8jg394" }],
+      "person": [
+        { "@id": "https://orcid.org/0000-0001-9133-1750" }
+      ]
+    },
+    {
+      "@id": "SS7302",
+      "@type": "SoftwareSourceCode",
+      "name": "eGSIM (Online Ground Shaking Intensity Model Service)",
+      "description": "A web service for selecting and testing ground shaking models (GSIM) in Europe, developed at the GFZ in the framework of the Thematic Core Services for Seismology of EPOS under the umbrella of EFEHR.",
+      "license": "https://spdx.org/licenses/AGPL-3.0-or-later",
+      "programmingLanguage": [
+        "Python",
+        "JavaScript"
+      ],
+      "url": [
+        "https://egsim.gfz-potsdam.de/home",
+        "https://github.com/rizac/eGSIM"
+      ],
+      "organization": [{ "@id": "https://ror.org/04z8jg394" }],
+      "person": [
+        { "@id": "https://orcid.org/0000-0001-9133-1750" }
+      ]
+    },
+    {
+      "@id": "SS7303",
+      "@type": "SoftwareSourceCode",
+      "name": "Sdaas (Simple Machine Learning Tool for Seismic Anomaly Detection)",
+      "description": "Software for automatic classification of seismic data according to an anomaly score based on machine learning.",
+      "license": "https://spdx.org/licenses/GPL-3.0-or-later",
+      "programmingLanguage": [
+        "Python"
+      ],
+      "url": "https://github.com/rizac/sdaas",
+      "organization": [{ "@id": "https://ror.org/04z8jg394" }],
+      "person": [
+        { "@id": "https://orcid.org/0000-0001-9133-1750" }
+      ]
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-8207-1464",
+      "@type": "Person",
+      "name": "Johannes Kemper",
+      "email": "johannes.kemper@eaps.ethz.ch",
+      "affiliation": {
+        "@id": "https://ror.org/05a28rw58"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-9347-2282",
+      "@type": "Person",
+      "name": "Graeme Weatherill",
+      "email": "gweather@gfz.de",
+      "affiliation": { "@id": "https://ror.org/04z8jg394" }
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-9133-1750",
+      "@type": "Person",
+      "name": "Riccardo Zaccarelli",
+      "email": "riccardo.zaccarelli@gfz.de",
+      "affiliation": {
+        "@id": "https://ror.org/04z8jg394"
+      }
+    },
+    {
+      "@id": "https://ror.org/04z8jg394",
+      "@type": "Organization",
+      "name": "GFZ Helmholtz Centre for Geosciences"
+    },
+    {
+      "@id": "https://ror.org/05a28rw58",
+      "@type": "Organization",
+      "name": "Eidgenössische Technische Hochschule Zürich (ETH)"
+    },
+    {
+      "@id": "https://ror.org/02xh1tf34",
+      "@type": "Organization",
+      "name": "Global Earthquake Model Foundation (GEM)"
+    }
+  ]
+}

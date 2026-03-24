@@ -1,0 +1,317 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Cheminformatics-3-Docking.ga"
+      },
+      "datePublished": "2020-04-10 15:32:01 +0100",
+      "author": [
+        {
+          "@id": "#creator-1"
+        },
+        {
+          "@id": "#creator-2"
+        },
+        {
+          "@id": "#creator-3"
+        },
+        {
+          "@id": "#creator-4"
+        },
+        {
+          "@id": "#creator-5"
+        },
+        {
+          "@id": "#creator-6"
+        },
+        {
+          "@id": "#creator-7"
+        },
+        {
+          "@id": "#creator-8"
+        }
+      ],
+      "license": "MIT",
+      "identifier": "https://workflowhub.eu/workflows/14?version=1",
+      "url": "https://workflowhub.eu/workflows/14/ro_crate?version=1",
+      "name": "Research Object Crate for Cheminformatics - Docking",
+      "description": "Docking performed by rDock using as 3 different kind of inputs. More info can be found at https://covid19.galaxyproject.org/cheminformatics/",
+      "sdDatePublished": "2026-03-24 18:14:48 +0000",
+      "hasPart": [
+        {
+          "@id": "Cheminformatics-3-Docking.ga"
+        },
+        {
+          "@id": "Cheminformatics-3-Docking.svg"
+        },
+        {
+          "@id": "Cheminformatics-3-Docking.cwl"
+        }
+      ]
+    },
+    {
+      "@id": "Cheminformatics-3-Docking.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 9616,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "Cheminformatics-3-Docking.svg"
+      },
+      "subjectOf": {
+        "@id": "Cheminformatics-3-Docking.cwl"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Docking performed by rDock using as 3 different kind of inputs. More info can be found at https://covid19.galaxyproject.org/cheminformatics/",
+      "name": "Cheminformatics - Docking",
+      "url": "https://workflowhub.eu/workflows/14?version=1",
+      "keywords": "covid-19",
+      "version": 1,
+      "license": "https://spdx.org/licenses/MIT",
+      "creator": [
+        {
+          "@id": "#Tim%20Dudgeon"
+        },
+        {
+          "@id": "#Simon%20Bray"
+        },
+        {
+          "@id": "#Gianmauro%20Cuccuru"
+        },
+        {
+          "@id": "#Bj%C3%B6rn%20Gr%C3%BCning"
+        },
+        {
+          "@id": "#Rachael%20Skyner"
+        },
+        {
+          "@id": "#Jack%20Scantlebury"
+        },
+        {
+          "@id": "#Susan%20Leung"
+        },
+        {
+          "@id": "#Frank%20von%20Delft"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/3"
+      },
+      "dateCreated": "2020-04-10T14:32:01Z",
+      "dateModified": "2023-01-16T13:40:50Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#cheminformatics___docking-inputs-0_Input%20Dataset"
+        },
+        {
+          "@id": "#cheminformatics___docking-inputs-1_Input%20Dataset"
+        },
+        {
+          "@id": "#cheminformatics___docking-inputs-2_Input%20Dataset%20Collection"
+        }
+      ],
+      "output": [
+
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "Cheminformatics-3-Docking.svg",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 5524
+    },
+    {
+      "@id": "Cheminformatics-3-Docking.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "HowTo"
+      ],
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "contentSize": 2177
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#creator-1",
+      "@type": "Person",
+      "name": "Tim Dudgeon"
+    },
+    {
+      "@id": "#creator-2",
+      "@type": "Person",
+      "name": "Simon Bray"
+    },
+    {
+      "@id": "#creator-3",
+      "@type": "Person",
+      "name": "Gianmauro Cuccuru"
+    },
+    {
+      "@id": "#creator-4",
+      "@type": "Person",
+      "name": "Björn Grüning"
+    },
+    {
+      "@id": "#creator-5",
+      "@type": "Person",
+      "name": "Rachael Skyner"
+    },
+    {
+      "@id": "#creator-6",
+      "@type": "Person",
+      "name": "Jack Scantlebury"
+    },
+    {
+      "@id": "#creator-7",
+      "@type": "Person",
+      "name": "Susan Leung"
+    },
+    {
+      "@id": "#creator-8",
+      "@type": "Person",
+      "name": "Frank von Delft"
+    },
+    {
+      "@id": "#Tim Dudgeon",
+      "@type": "Person",
+      "name": "Tim Dudgeon"
+    },
+    {
+      "@id": "#Simon Bray",
+      "@type": "Person",
+      "name": "Simon Bray"
+    },
+    {
+      "@id": "#Gianmauro Cuccuru",
+      "@type": "Person",
+      "name": "Gianmauro Cuccuru"
+    },
+    {
+      "@id": "#Björn Grüning",
+      "@type": "Person",
+      "name": "Björn Grüning"
+    },
+    {
+      "@id": "#Rachael Skyner",
+      "@type": "Person",
+      "name": "Rachael Skyner"
+    },
+    {
+      "@id": "#Jack Scantlebury",
+      "@type": "Person",
+      "name": "Jack Scantlebury"
+    },
+    {
+      "@id": "#Susan Leung",
+      "@type": "Person",
+      "name": "Susan Leung"
+    },
+    {
+      "@id": "#Frank von Delft",
+      "@type": "Person",
+      "name": "Frank von Delft"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/3",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "GalaxyProject SARS-CoV-2"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#cheminformatics___docking-inputs-0_Input Dataset",
+      "@type": "FormalParameter",
+      "name": "0_Input Dataset",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cheminformatics___docking-inputs-1_Input Dataset",
+      "@type": "FormalParameter",
+      "name": "1_Input Dataset",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cheminformatics___docking-inputs-2_Input Dataset Collection",
+      "@type": "FormalParameter",
+      "name": "2_Input Dataset Collection",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

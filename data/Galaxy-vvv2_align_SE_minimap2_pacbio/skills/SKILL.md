@@ -1,0 +1,93 @@
+---
+name: vvv2_align_se_minimap2_pacbio
+description: "This workflow processes PacBio single-end viral sequencing data using minimap2 for alignment, VADR for annotation, and VarDict for variant calling to generate consensus sequences and visual summaries. Use this skill when you need to characterize viral populations by identifying significant variants, generating consensus sequences, and visualizing the relationship between mutations, gene annotations, and sequencing depth."
+homepage: https://workflowhub.eu/workflows/1741
+---
+
+# vvv2_align_SE_minimap2_pacbio
+
+## Overview
+
+This Galaxy workflow is designed for the alignment and variant calling of PacBio single-end sequencing data, specifically tailored for viral research. It begins by preprocessing sequences using [fastp](https://toolshed.g2.bx.psu.edu/repos/iuc/fastp/fastp/0.23.2+galaxy0) and formatting the reference FASTA. Viral annotation is performed via [VADR](https://toolshed.g2.bx.psu.edu/repos/ftouzain/vadr/vadr/0.2.0) to define genomic features, while reads are mapped to the reference using [minimap2](https://toolshed.g2.bx.psu.edu/repos/iuc/minimap2/minimap2/2.28+galaxy1).
+
+The pipeline identifies genomic variations using [VarDict](https://toolshed.g2.bx.psu.edu/repos/iuc/vardict_java/vardict_java/1.8.3+galaxy1) and the [bcftools](https://toolshed.g2.bx.psu.edu/repos/iuc/bcftools_call/bcftools_call/1.15.1+galaxy3) suite. It incorporates duplicate removal and depth calculation to ensure high-quality variant detection. The workflow concludes by generating both IUPAC and Majority consensus sequences based on the identified variants.
+
+The final outputs focus on data visualization and summarization through the [vvv2_display](https://toolshed.g2.bx.psu.edu/repos/ftouzain/vvv2_display/vvv2_display/0.2.4.0) tool. Users receive a comprehensive PNG image displaying SNP proportions, CDS annotations, and coverage depths, alongside a TSV file containing detailed information on significant variants. This workflow is licensed under GPL-3.0-or-later and is tagged for virus-specific variant calling and display.
+
+## Inputs and data preparation
+
+_None listed._
+
+
+To prepare your data, ensure your PacBio long reads are in fastq.gz format and your reference genome is a standard FASTA file. For high-throughput processing, organize multiple samples into a dataset collection to streamline the minimap2 and VarDict steps. Refer to the README.md for specific guidance on selecting the appropriate VADR model and configuring variant calling thresholds. You can automate the setup of these parameters by using `planemo workflow_job_init` to generate a `job.yml` file. Always verify that your input headers are compatible with the downstream consensus tools to avoid metadata mismatches.
+
+## Steps (tools)
+
+| Step | Name | Tool ID | Notes |
+| --- | --- | --- | --- |
+| 0 | FASTA Width | toolshed.g2.bx.psu.edu/repos/devteam/fasta_formatter/cshl_fasta_formatter/1.0.1+galaxy2 |  |
+| 1 | fastp | toolshed.g2.bx.psu.edu/repos/iuc/fastp/fastp/0.23.2+galaxy0 |  |
+| 2 | VADR - Viral Annotation DefineR | toolshed.g2.bx.psu.edu/repos/ftouzain/vadr/vadr/0.2.0 |  |
+| 3 | Map with minimap2 | toolshed.g2.bx.psu.edu/repos/iuc/minimap2/minimap2/2.28+galaxy1 |  |
+| 4 | RmDup | toolshed.g2.bx.psu.edu/repos/devteam/samtools_rmdup/samtools_rmdup/2.0.1 |  |
+| 5 | bcftools mpileup | toolshed.g2.bx.psu.edu/repos/iuc/bcftools_mpileup/bcftools_mpileup/1.15.1+galaxy3 |  |
+| 6 | VarDict | toolshed.g2.bx.psu.edu/repos/iuc/vardict_java/vardict_java/1.8.3+galaxy1 |  |
+| 7 | Samtools depth | toolshed.g2.bx.psu.edu/repos/iuc/samtools_depth/samtools_depth/1.15.1+galaxy2 |  |
+| 8 | bcftools call | toolshed.g2.bx.psu.edu/repos/iuc/bcftools_call/bcftools_call/1.15.1+galaxy3 |  |
+| 9 | vvv2_display: Display SNP proportions and CDS of an assembly in png image | toolshed.g2.bx.psu.edu/repos/ftouzain/vvv2_display/vvv2_display/0.2.4.0 | - png image of variants - tsv file of variants info |
+| 10 | bcftools consensus | toolshed.g2.bx.psu.edu/repos/iuc/bcftools_consensus/bcftools_consensus/1.15.1+galaxy3 |  |
+| 11 | bcftools consensus | toolshed.g2.bx.psu.edu/repos/iuc/bcftools_consensus/bcftools_consensus/1.15.1+galaxy3 | Gives consensus with major nucleotides only |
+
+
+## Workflow outputs (marked in Galaxy)
+
+| Step | Label | Output name |
+| --- | --- | --- |
+| 9 | tsv file of information for significant variants | snp_loc_summary |
+| 9 | image of all variants, genes, proteins and coverage depth | snp_img |
+| 10 | IUPAC_consensus | output_file |
+| 11 | Majority_consensus | output_file |
+
+
+## How to run (Planemo)
+
+### Local Galaxy (default engine)
+
+```bash
+planemo run 20250619_Galaxy-Workflow-vvv2_align_SE_minimap2_pacbio.ga job.yml --download_outputs --output_directory . --output_json output.json
+```
+
+Optional: `--galaxy_root /path/to/galaxy` speeds up spinning up a local Galaxy.
+
+### Docker Galaxy
+
+Append e.g. `--engine docker_galaxy --ignore_dependency_problems` (requires Docker).
+
+### External Galaxy (usegalaxy.org / EU / …)
+
+```bash
+planemo run 20250619_Galaxy-Workflow-vvv2_align_SE_minimap2_pacbio.ga job.yml --engine external_galaxy --galaxy_url SERVER_URL --galaxy_user_key YOUR_API_KEY
+```
+
+Create a reusable profile: `planemo profile_create myprofile --galaxy_url ... --galaxy_user_key ... --engine external_galaxy` then `planemo run 20250619_Galaxy-Workflow-vvv2_align_SE_minimap2_pacbio.ga job.yml --profile myprofile`.
+
+### Job file
+
+- Generate a template: `planemo workflow_job_init 20250619_Galaxy-Workflow-vvv2_align_SE_minimap2_pacbio.ga -o job.yml`
+- Lint: `planemo workflow_lint 20250619_Galaxy-Workflow-vvv2_align_SE_minimap2_pacbio.ga`
+
+See **[Running Galaxy workflows](https://planemo.readthedocs.io/en/master/running.html)** in the Planemo documentation.
+
+## Invocation outputs
+
+After a successful run with `--download_outputs`, files appear under your chosen `--output_directory`. `--output_json` records CWL-style metadata for outputs (paths, checksums).
+
+On an external Galaxy, use `planemo invocation_download INVOCATION_ID --profile ...` to fetch outputs, or track progress with `planemo workflow_track INVOCATION_ID`.
+
+Workflow steps marked as **workflow outputs** in the editor are listed under **Workflow outputs**; exact filenames depend on tools and Galaxy configuration.
+
+## Files
+
+- `20250619_Galaxy-Workflow-vvv2_align_SE_minimap2_pacbio.ga` — Galaxy workflow export (JSON)
+- `job.yml` — inputs/parameters for `planemo run` (create with `planemo workflow_job_init`)
+- [Planemo: Running Galaxy workflows](https://planemo.readthedocs.io/en/master/running.html)

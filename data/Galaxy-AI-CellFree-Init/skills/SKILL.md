@@ -1,0 +1,84 @@
+---
+name: ai-cellfree-init
+description: "This Galaxy workflow automates the initial design of experiments for cell-free systems by utilizing the iCFree sampler, plate designer, and instructor tools to generate sampling plans and liquid handling instructions. Use this skill when you need to optimize cell-free reaction conditions through systematic sampling and require precise plate layouts and automated instructions for laboratory robots."
+homepage: https://workflowhub.eu/workflows/2002
+---
+
+# AI-CellFree - Init
+
+## Overview
+
+This workflow automates the initial design phase of cell-free protein synthesis experiments within the AI-CellFree framework. It streamlines the transition from experimental parameters to actionable laboratory protocols by integrating a suite of [iCFree tools](https://toolshed.g2.bx.psu.edu/view/tduigou/) designed for synthetic biology applications.
+
+The process begins with the **iCFree sampler**, which utilizes Design of Experiments (DoE) methodologies to generate a sampling plan for the cell-free components. These samples are then processed by the **iCFree plate designer**, which maps the required volumes and concentrations into specific source and destination plate layouts.
+
+In the final stage, the **iCFree instructor** converts these plate maps into precise liquid handling instructions. The workflow outputs include the initial sampling distribution, comprehensive plate maps, and the final instruction sets necessary for executing the experiment on automated liquid handling platforms.
+
+## Inputs and data preparation
+
+_None listed._
+
+
+Ensure your input component lists and parameter files are formatted as CSV or TSV to ensure compatibility with the iCFree sampler and plate designer tools. Utilizing dataset collections is recommended when managing multiple experimental designs to maintain organization throughout the sampling and instruction generation phases. For exhaustive documentation on required column headers and specific tool parameters, please consult the README.md file. You may also use `planemo workflow_job_init` to create a `job.yml` for streamlined local execution and testing.
+
+## Steps (tools)
+
+| Step | Name | Tool ID | Notes |
+| --- | --- | --- | --- |
+| 0 | iCFree sampler | toolshed.g2.bx.psu.edu/repos/tduigou/doe_synbio_sampler/doe_synbio_sampler/2.9.0+galaxy0 |  |
+| 1 | iCFree plate designer | toolshed.g2.bx.psu.edu/repos/tduigou/icfree_plate_designer/icfree_plate_designer/2.9.0+galaxy0 |  |
+| 2 | iCFree instructor | toolshed.g2.bx.psu.edu/repos/tduigou/icfree_instructor/icfree_instructor/2.9.0+galaxy0 |  |
+
+
+## Workflow outputs (marked in Galaxy)
+
+| Step | Label | Output name |
+| --- | --- | --- |
+| 0 | iCFree sampler | output_sampling |
+| 1 | iCFree plate designer - Source | output_source_plate |
+| 1 | iCFree plate designer - Destination | output_destination_plate |
+| 2 | iCFree instructor - Instructions | output_instructor |
+
+
+## How to run (Planemo)
+
+### Local Galaxy (default engine)
+
+```bash
+planemo run Galaxy-Workflow-AI-CellFree_-_Init.ga job.yml --download_outputs --output_directory . --output_json output.json
+```
+
+Optional: `--galaxy_root /path/to/galaxy` speeds up spinning up a local Galaxy.
+
+### Docker Galaxy
+
+Append e.g. `--engine docker_galaxy --ignore_dependency_problems` (requires Docker).
+
+### External Galaxy (usegalaxy.org / EU / …)
+
+```bash
+planemo run Galaxy-Workflow-AI-CellFree_-_Init.ga job.yml --engine external_galaxy --galaxy_url SERVER_URL --galaxy_user_key YOUR_API_KEY
+```
+
+Create a reusable profile: `planemo profile_create myprofile --galaxy_url ... --galaxy_user_key ... --engine external_galaxy` then `planemo run Galaxy-Workflow-AI-CellFree_-_Init.ga job.yml --profile myprofile`.
+
+### Job file
+
+- Generate a template: `planemo workflow_job_init Galaxy-Workflow-AI-CellFree_-_Init.ga -o job.yml`
+- Lint: `planemo workflow_lint Galaxy-Workflow-AI-CellFree_-_Init.ga`
+
+See **[Running Galaxy workflows](https://planemo.readthedocs.io/en/master/running.html)** in the Planemo documentation.
+
+## Invocation outputs
+
+After a successful run with `--download_outputs`, files appear under your chosen `--output_directory`. `--output_json` records CWL-style metadata for outputs (paths, checksums).
+
+On an external Galaxy, use `planemo invocation_download INVOCATION_ID --profile ...` to fetch outputs, or track progress with `planemo workflow_track INVOCATION_ID`.
+
+Workflow steps marked as **workflow outputs** in the editor are listed under **Workflow outputs**; exact filenames depend on tools and Galaxy configuration.
+
+## Files
+
+- `Galaxy-Workflow-AI-CellFree_-_Init.ga` — Galaxy workflow export (JSON)
+- `job.yml` — inputs/parameters for `planemo run` (create with `planemo workflow_job_init`)
+- [Planemo: Running Galaxy workflows](https://planemo.readthedocs.io/en/master/running.html)

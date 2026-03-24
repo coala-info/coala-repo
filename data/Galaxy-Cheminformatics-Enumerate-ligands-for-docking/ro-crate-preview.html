@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Cheminformatics - Enumerate ligands for docking</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Cheminformatics-1-Ligand_enumeration.ga"
+      },
+      "datePublished": "2020-04-10 15:17:44 +0100",
+      "author": [
+        {
+          "@id": "#creator-1"
+        },
+        {
+          "@id": "#creator-2"
+        },
+        {
+          "@id": "#creator-3"
+        },
+        {
+          "@id": "#creator-4"
+        },
+        {
+          "@id": "#creator-5"
+        },
+        {
+          "@id": "#creator-6"
+        },
+        {
+          "@id": "#creator-7"
+        },
+        {
+          "@id": "#creator-8"
+        }
+      ],
+      "license": "MIT",
+      "identifier": "https://workflowhub.eu/workflows/12?version=1",
+      "url": "https://workflowhub.eu/workflows/12/ro_crate?version=1",
+      "name": "Research Object Crate for Cheminformatics - Enumerate ligands for docking",
+      "description": "This workflow is used form the preparation of protein and ligands for docking. More info can be found at https://covid19.galaxyproject.org/cheminformatics/",
+      "sdDatePublished": "2026-03-24 18:15:07 +0000",
+      "hasPart": [
+        {
+          "@id": "Cheminformatics-1-Ligand_enumeration.ga"
+        },
+        {
+          "@id": "Cheminformatics-1-Ligand_enumeration.svg"
+        },
+        {
+          "@id": "Cheminformatics-1-Ligand_enumeration.cwl"
+        }
+      ]
+    },
+    {
+      "@id": "Cheminformatics-1-Ligand_enumeration.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 7160,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "Cheminformatics-1-Ligand_enumeration.svg"
+      },
+      "subjectOf": {
+        "@id": "Cheminformatics-1-Ligand_enumeration.cwl"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "This workflow is used form the preparation of protein and ligands for docking. More info can be found at https://covid19.galaxyproject.org/cheminformatics/",
+      "name": "Cheminformatics - Enumerate ligands for docking",
+      "url": "https://workflowhub.eu/workflows/12?version=1",
+      "keywords": "covid-19",
+      "version": 1,
+      "license": "https://spdx.org/licenses/MIT",
+      "creator": [
+        {
+          "@id": "#Tim%20Dudgeon"
+        },
+        {
+          "@id": "#Simon%20Bray"
+        },
+        {
+          "@id": "#Gianmauro%20Cuccuru"
+        },
+        {
+          "@id": "#Bj%C3%B6rn%20Gr%C3%BCning"
+        },
+        {
+          "@id": "#Rachael%20Skyner"
+        },
+        {
+          "@id": "#Jack%20Scantlebury"
+        },
+        {
+          "@id": "#Susan%20Leung"
+        },
+        {
+          "@id": "#Frank%20von%20Delft"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/3"
+      },
+      "dateCreated": "2020-04-10T14:17:44Z",
+      "dateModified": "2023-01-16T13:40:34Z",
+      "isPartOf": [
+
+      ],
+      "input": {
+        "@id": "#cheminformatics___enumerate_ligands_for_docking-inputs-0_Input%20Dataset"
+      },
+      "output": [
+
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "Cheminformatics-1-Ligand_enumeration.svg",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 3960
+    },
+    {
+      "@id": "Cheminformatics-1-Ligand_enumeration.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "HowTo"
+      ],
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "contentSize": 1801
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#creator-1",
+      "@type": "Person",
+      "name": "Tim Dudgeon"
+    },
+    {
+      "@id": "#creator-2",
+      "@type": "Person",
+      "name": "Simon Bray"
+    },
+    {
+      "@id": "#creator-3",
+      "@type": "Person",
+      "name": "Gianmauro Cuccuru"
+    },
+    {
+      "@id": "#creator-4",
+      "@type": "Person",
+      "name": "Björn Grüning"
+    },
+    {
+      "@id": "#creator-5",
+      "@type": "Person",
+      "name": "Rachael Skyner"
+    },
+    {
+      "@id": "#creator-6",
+      "@type": "Person",
+      "name": "Jack Scantlebury"
+    },
+    {
+      "@id": "#creator-7",
+      "@type": "Person",
+      "name": "Susan Leung"
+    },
+    {
+      "@id": "#creator-8",
+      "@type": "Person",
+      "name": "Frank von Delft"
+    },
+    {
+      "@id": "#Tim Dudgeon",
+      "@type": "Person",
+      "name": "Tim Dudgeon"
+    },
+    {
+      "@id": "#Simon Bray",
+      "@type": "Person",
+      "name": "Simon Bray"
+    },
+    {
+      "@id": "#Gianmauro Cuccuru",
+      "@type": "Person",
+      "name": "Gianmauro Cuccuru"
+    },
+    {
+      "@id": "#Björn Grüning",
+      "@type": "Person",
+      "name": "Björn Grüning"
+    },
+    {
+      "@id": "#Rachael Skyner",
+      "@type": "Person",
+      "name": "Rachael Skyner"
+    },
+    {
+      "@id": "#Jack Scantlebury",
+      "@type": "Person",
+      "name": "Jack Scantlebury"
+    },
+    {
+      "@id": "#Susan Leung",
+      "@type": "Person",
+      "name": "Susan Leung"
+    },
+    {
+      "@id": "#Frank von Delft",
+      "@type": "Person",
+      "name": "Frank von Delft"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/3",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "GalaxyProject SARS-CoV-2"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#cheminformatics___enumerate_ligands_for_docking-inputs-0_Input Dataset",
+      "@type": "FormalParameter",
+      "name": "0_Input Dataset",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Cheminformatics - Enumerate ligands for docking</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/12/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/12/ro_crate?version=1</a>
+
+
+  <img src="Cheminformatics-1-Ligand_enumeration.svg" style="width: 100%;"/>
+
+<p>
+  This workflow is used form the preparation of protein and ligands for docking. More info can be found at https://covid19.galaxyproject.org/cheminformatics/
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd>Tim Dudgeon, Simon Bray, Gianmauro Cuccuru, Björn Grüning, Rachael Skyner, Jack Scantlebury, Susan Leung, Frank von Delft</dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>MIT</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Cheminformatics-1-Ligand_enumeration.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Cheminformatics-1-Ligand_enumeration.ga">Cheminformatics - Enumerate ligands for docking</a>
+      
+        <br/>Size: 7160 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_Cheminformatics-1-Ligand_enumeration.svg">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="Cheminformatics-1-Ligand_enumeration.svg">Cheminformatics-1-Ligand_enumeration.svg</a>
+      
+        <br/>Size: 3960 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_Cheminformatics-1-Ligand_enumeration.cwl">
+      
+      
+      
+        <strong>Main Workflow Description: </strong>
+      
+      <a class="data-entity-link" href="Cheminformatics-1-Ligand_enumeration.cwl">Cheminformatics-1-Ligand_enumeration.cwl</a>
+      
+        <br/>Size: 1801 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

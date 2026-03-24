@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for LaMnO3 catalytic behaviour</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "f06ca0d3d213b10e.ga"
+      },
+      "datePublished": "2025-07-11 11:56:30 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-6279-7823"
+        },
+        {
+          "@id": "#person-742"
+        },
+        {
+          "@id": "#person-649"
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.1802.1",
+      "url": "https://workflowhub.eu/workflows/1802/ro_crate?version=1",
+      "name": "Research Object Crate for LaMnO3 catalytic behaviour",
+      "description": "Galaxy workflow for the reproduction of the results published in: R. H. Blackmore, M. E. Rivas, T. Eralp Erden, T. Dung Tran, H. R. Marchbank, D. Ozkaya, M. Briceno de Gutierrez, A. Wagland, P. Collier, P. P. Wells (2018). Understanding the mechanochemical synthesis of the perovskite LaMnO3 and its catalytic behaviour DOI: 10.1039/C9DT03590G.\n\nThis workflow is published as part of the research data submitted for the paper Facilitating Reproducibility in Catalysis Research with Managed Workflows and RO-Crates: A Galaxy Case Study, ChemCatChem, DOI: 10.1002/cctc.202401676.",
+      "isBasedOn": "https://zenodo.org/records/14013574",
+      "sdDatePublished": "2026-03-24 16:42:18 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "f06ca0d3d213b10e.ga"
+        },
+        {
+          "@id": "f06ca0d3d213b10e.abstract.cwl"
+        }
+      ]
+    },
+    {
+      "@id": "f06ca0d3d213b10e.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 30518,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "subjectOf": {
+        "@id": "f06ca0d3d213b10e.abstract.cwl"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Galaxy workflow for the reproduction of the results published in: R. H. Blackmore, M. E. Rivas, T. Eralp Erden, T. Dung Tran, H. R. Marchbank, D. Ozkaya, M. Briceno de Gutierrez, A. Wagland, P. Collier, P. P. Wells (2018). Understanding the mechanochemical synthesis of the perovskite LaMnO3 and its catalytic behaviour DOI: 10.1039/C9DT03590G.\n\nThis workflow is published as part of the research data submitted for the paper Facilitating Reproducibility in Catalysis Research with Managed Workflows and RO-Crates: A Galaxy Case Study, ChemCatChem, DOI: 10.1002/cctc.202401676.",
+      "name": "LaMnO3 catalytic behaviour",
+      "url": "https://workflowhub.eu/workflows/1802?version=1",
+      "keywords": "",
+      "version": 1,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/1121"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/742"
+        },
+        {
+          "@id": "https://orcid.org/0009-0001-1723-4394"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-2777-5167"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-7348-7612"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/649"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/166"
+      },
+      "dateCreated": "2025-07-11T10:59:20Z",
+      "dateModified": "2025-11-11T12:33:29Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/13"
+      },
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.1802.1",
+      "input": [
+        {
+          "@id": "#lamno3_catalytic_behaviour-inputs-Upload:%20Figure%202-5_%20Mn_K_edge_LMOA_time_series.prj"
+        },
+        {
+          "@id": "#lamno3_catalytic_behaviour-inputs-Upload:%20Figure%202-5_%20La_L3_edge_LMOA_time_series.prj"
+        },
+        {
+          "@id": "#lamno3_catalytic_behaviour-inputs-mp-565203_Mn2O3.cif"
+        },
+        {
+          "@id": "#lamno3_catalytic_behaviour-inputs-1667441.cif"
+        }
+      ],
+      "output": [
+
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "f06ca0d3d213b10e.abstract.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "HowTo"
+      ],
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "contentSize": 3218
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-6279-7823",
+      "@type": "Person",
+      "name": "Patrick Austin",
+      "identifier": "https://orcid.org/0000-0002-6279-7823"
+    },
+    {
+      "@id": "#person-742",
+      "@type": "Person",
+      "name": "Alexander Belozerov",
+      "identifier": "https://workflowhub.eu/people/742"
+    },
+    {
+      "@id": "#person-649",
+      "@type": "Person",
+      "name": "Tom Underwood",
+      "identifier": "https://workflowhub.eu/people/649"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/1121",
+      "@type": "Person",
+      "name": "Patrick Austin"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/742",
+      "@type": "Person",
+      "name": "Alexander Belozerov"
+    },
+    {
+      "@id": "https://orcid.org/0009-0001-1723-4394",
+      "@type": "Person",
+      "name": "Subindev Devadasan"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-2777-5167",
+      "@type": "Person",
+      "name": "Leandro Liborio"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-7348-7612",
+      "@type": "Person",
+      "name": "Abraham Nieva de la Hidalga"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/649",
+      "@type": "Person",
+      "name": "Tom Underwood"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/166",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "EuroScienceGateway"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/13",
+      "@type": "Collection",
+      "name": "Workflows in EuroScienceGateway"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#lamno3_catalytic_behaviour-inputs-Upload: Figure 2-5_ Mn_K_edge_LMOA_time_series.prj",
+      "@type": "FormalParameter",
+      "name": "Upload: Figure 2-5_ Mn_K_edge_LMOA_time_series.prj",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#lamno3_catalytic_behaviour-inputs-Upload: Figure 2-5_ La_L3_edge_LMOA_time_series.prj",
+      "@type": "FormalParameter",
+      "name": "Upload: Figure 2-5_ La_L3_edge_LMOA_time_series.prj",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#lamno3_catalytic_behaviour-inputs-mp-565203_Mn2O3.cif",
+      "@type": "FormalParameter",
+      "name": "mp-565203_Mn2O3.cif",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#lamno3_catalytic_behaviour-inputs-1667441.cif",
+      "@type": "FormalParameter",
+      "name": "1667441.cif",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for LaMnO3 catalytic behaviour</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/1802/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/1802/ro_crate?version=1</a>
+
+
+<p>
+  Galaxy workflow for the reproduction of the results published in: R. H. Blackmore, M. E. Rivas, T. Eralp Erden, T. Dung Tran, H. R. Marchbank, D. Ozkaya, M. Briceno de Gutierrez, A. Wagland, P. Collier, P. P. Wells (2018). Understanding the mechanochemical synthesis of the perovskite LaMnO3 and its catalytic behaviour DOI: 10.1039/C9DT03590G.
+
+This workflow is published as part of the research data submitted for the paper Facilitating Reproducibility in Catalysis Research with Managed Workflows and RO-Crates: A Galaxy Case Study, ChemCatChem, DOI: 10.1002/cctc.202401676.
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://orcid.org/0000-0002-6279-7823" target="_blank">Patrick Austin</a>, <a href="https://workflowhub.eu/people/742" target="_blank">Alexander Belozerov</a>, <a href="https://workflowhub.eu/people/649" target="_blank">Tom Underwood</a></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>CC-BY-4.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_f06ca0d3d213b10e.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="f06ca0d3d213b10e.ga">LaMnO3 catalytic behaviour</a>
+      
+        <br/>Size: 30518 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_f06ca0d3d213b10e.abstract.cwl">
+      
+      
+      
+        <strong>Main Workflow Description: </strong>
+      
+      <a class="data-entity-link" href="f06ca0d3d213b10e.abstract.cwl">f06ca0d3d213b10e.abstract.cwl</a>
+      
+        <br/>Size: 3218 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

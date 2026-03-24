@@ -1,0 +1,2253 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "workflow.cwl"
+      },
+      "datePublished": "2023-06-12 09:34:43 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-8291-8071"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-0513-0288"
+        }
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.262.2",
+      "url": "https://workflowhub.eu/workflows/262/ro_crate?version=2",
+      "name": "Research Object Crate for CWL ABC MD Setup tutorial",
+      "description": "# AMBER Protein MD Setup tutorials using BioExcel Building Blocks (biobb)\n\n**Based on the official [GROMACS tutorial](http://www.mdtutorials.com/gmx/lysozyme/index.html).**\n\n***\n\nThis tutorial aims to illustrate the process of **setting up a simulation** system containing a **protein**, step by step, using the **BioExcel Building Blocks library (biobb)** wrapping the **Ambertools MD package**.\n\n***\n\n## Copyright &amp; Licensing\nThis software has been developed in the [MMB group](http://mmb.irbbarcelona.org) at the [BSC](http://www.bsc.es/) &amp; [IRB](https://www.irbbarcelona.org/) for the [European BioExcel](http://bioexcel.eu/), funded by the European Commission (EU H2020 [823830](http://cordis.europa.eu/projects/823830), EU H2020 [675728](http://cordis.europa.eu/projects/675728)).\n\n* (c) 2015-2022 [Barcelona Supercomputing Center](https://www.bsc.es/)\n* (c) 2015-2022 [Institute for Research in Biomedicine](https://www.irbbarcelona.org/)\n\nLicensed under the\n[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0), see the file LICENSE for details.\n\n![](https://bioexcel.eu/wp-content/uploads/2019/04/Bioexcell_logo_1080px_transp.png \"Bioexcel\")",
+      "isBasedOn": "https://github.com/bioexcel/biobb_workflows/tree/master/biobb_wf_amber_abc_md_setup/cwl",
+      "sdDatePublished": "2026-03-24 01:16:23 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "workflow.cwl"
+        },
+        {
+          "@id": "workflow-262-62d05f1208abc6a6ac532456486ecda97165a3df-diagram.svg"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_amber_abc_md_setup/cwl/sequence.pdb"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_amber_abc_md_setup/cwl/workflow_input_descriptions.yml"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_amber_abc_md_setup/cwl/README.md"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_amber_abc_md_setup/cwl/biobb_adapters/cpptraj_image.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_amber_abc_md_setup/cwl/biobb_adapters/cpptraj_randomize_ions.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_amber_abc_md_setup/cwl/biobb_adapters/cpptraj_rgyr.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_amber_abc_md_setup/cwl/biobb_adapters/cpptraj_rms.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_amber_abc_md_setup/cwl/biobb_adapters/leap_add_ions.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_amber_abc_md_setup/cwl/biobb_adapters/leap_gen_top.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_amber_abc_md_setup/cwl/biobb_adapters/leap_solvate.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_amber_abc_md_setup/cwl/biobb_adapters/parmed_hmassrepartition.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_amber_abc_md_setup/cwl/biobb_adapters/process_mdout.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_amber_abc_md_setup/cwl/biobb_adapters/process_minout.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_amber_abc_md_setup/cwl/biobb_adapters/sander_mdrun.cwl"
+        }
+      ]
+    },
+    {
+      "@id": "workflow.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "url": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_amber_abc_md_setup/cwl/workflow.cwl",
+      "contentSize": 46603,
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "image": {
+        "@id": "workflow-262-62d05f1208abc6a6ac532456486ecda97165a3df-diagram.svg"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "# AMBER Protein MD Setup tutorials using BioExcel Building Blocks (biobb)\n\n**Based on the official [GROMACS tutorial](http://www.mdtutorials.com/gmx/lysozyme/index.html).**\n\n***\n\nThis tutorial aims to illustrate the process of **setting up a simulation** system containing a **protein**, step by step, using the **BioExcel Building Blocks library (biobb)** wrapping the **Ambertools MD package**.\n\n***\n\n## Copyright &amp; Licensing\nThis software has been developed in the [MMB group](http://mmb.irbbarcelona.org) at the [BSC](http://www.bsc.es/) &amp; [IRB](https://www.irbbarcelona.org/) for the [European BioExcel](http://bioexcel.eu/), funded by the European Commission (EU H2020 [823830](http://cordis.europa.eu/projects/823830), EU H2020 [675728](http://cordis.europa.eu/projects/675728)).\n\n* (c) 2015-2022 [Barcelona Supercomputing Center](https://www.bsc.es/)\n* (c) 2015-2022 [Institute for Research in Biomedicine](https://www.irbbarcelona.org/)\n\nLicensed under the\n[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0), see the file LICENSE for details.\n\n![](https://bioexcel.eu/wp-content/uploads/2019/04/Bioexcell_logo_1080px_transp.png \"Bioexcel\")",
+      "name": "CWL ABC MD Setup tutorial",
+      "keywords": "",
+      "version": 2,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/57"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/47"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/11"
+      },
+      "dateCreated": "2023-06-12T08:27:43Z",
+      "dateModified": "2023-06-12T08:35:34Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.262.2",
+      "isBasedOn": "https://workflowhub.eu/workflows/262?version=1",
+      "input": [
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step1_leap_gen_top_input_pdb_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step1_leap_gen_top_output_pdb_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step1_leap_gen_top_output_top_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step1_leap_gen_top_output_crd_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step1_leap_gen_top_config"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step2_leap_solvate_output_pdb_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step2_leap_solvate_output_top_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step2_leap_solvate_output_crd_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step2_leap_solvate_config"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step3_leap_add_ions_output_pdb_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step3_leap_add_ions_output_top_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step3_leap_add_ions_output_crd_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step3_leap_add_ions_config"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step4_cpptraj_randomize_ions_output_pdb_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step4_cpptraj_randomize_ions_output_crd_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step4_cpptraj_randomize_ions_config"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step5_parmed_hmassrepartition_output_top_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step6_sander_mdrun_eq1_input_mdin_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step6_sander_mdrun_eq1_output_traj_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step6_sander_mdrun_eq1_output_rst_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step6_sander_mdrun_eq1_output_log_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step6_sander_mdrun_eq1_output_mdinfo_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step6_sander_mdrun_eq1_config"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step7_process_minout_eq1_output_dat_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step7_process_minout_eq1_config"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step8_sander_mdrun_eq2_input_mdin_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step8_sander_mdrun_eq2_output_traj_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step8_sander_mdrun_eq2_output_rst_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step8_sander_mdrun_eq2_output_log_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step8_sander_mdrun_eq2_output_mdinfo_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step8_sander_mdrun_eq2_config"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step9_process_mdout_eq2_output_dat_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step9_process_mdout_eq2_config"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step10_sander_mdrun_eq3_input_mdin_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step10_sander_mdrun_eq3_output_traj_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step10_sander_mdrun_eq3_output_rst_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step10_sander_mdrun_eq3_output_log_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step10_sander_mdrun_eq3_output_mdinfo_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step10_sander_mdrun_eq3_config"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step11_process_minout_eq3_output_dat_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step11_process_minout_eq3_config"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step12_sander_mdrun_eq4_input_mdin_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step12_sander_mdrun_eq4_output_traj_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step12_sander_mdrun_eq4_output_rst_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step12_sander_mdrun_eq4_output_log_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step12_sander_mdrun_eq4_output_mdinfo_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step12_sander_mdrun_eq4_config"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step13_process_minout_eq4_output_dat_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step13_process_minout_eq4_config"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step14_sander_mdrun_eq5_input_mdin_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step14_sander_mdrun_eq5_output_traj_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step14_sander_mdrun_eq5_output_rst_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step14_sander_mdrun_eq5_output_log_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step14_sander_mdrun_eq5_output_mdinfo_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step14_sander_mdrun_eq5_config"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step15_process_minout_eq5_output_dat_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step15_process_minout_eq5_config"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step16_sander_mdrun_eq6_input_mdin_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step16_sander_mdrun_eq6_output_traj_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step16_sander_mdrun_eq6_output_rst_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step16_sander_mdrun_eq6_output_log_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step16_sander_mdrun_eq6_output_mdinfo_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step16_sander_mdrun_eq6_config"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step17_process_mdout_eq6_output_dat_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step17_process_mdout_eq6_config"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step18_sander_mdrun_eq7_input_mdin_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step18_sander_mdrun_eq7_output_traj_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step18_sander_mdrun_eq7_output_rst_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step18_sander_mdrun_eq7_output_log_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step18_sander_mdrun_eq7_output_mdinfo_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step18_sander_mdrun_eq7_config"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step19_process_mdout_eq7_output_dat_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step19_process_mdout_eq7_config"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step20_sander_mdrun_eq8_input_mdin_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step20_sander_mdrun_eq8_output_traj_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step20_sander_mdrun_eq8_output_rst_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step20_sander_mdrun_eq8_output_log_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step20_sander_mdrun_eq8_output_mdinfo_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step20_sander_mdrun_eq8_config"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step21_process_mdout_eq8_output_dat_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step21_process_mdout_eq8_config"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step22_sander_mdrun_eq9_input_mdin_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step22_sander_mdrun_eq9_output_traj_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step22_sander_mdrun_eq9_output_rst_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step22_sander_mdrun_eq9_output_log_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step22_sander_mdrun_eq9_output_mdinfo_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step22_sander_mdrun_eq9_config"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step23_process_mdout_eq9_output_dat_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step23_process_mdout_eq9_config"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step24_sander_mdrun_eq10_input_mdin_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step24_sander_mdrun_eq10_output_traj_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step24_sander_mdrun_eq10_output_rst_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step24_sander_mdrun_eq10_output_log_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step24_sander_mdrun_eq10_output_mdinfo_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step24_sander_mdrun_eq10_config"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step25_process_mdout_eq10_output_dat_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step25_process_mdout_eq10_config"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step26_sander_mdrun_md_input_mdin_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step26_sander_mdrun_md_output_traj_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step26_sander_mdrun_md_output_rst_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step26_sander_mdrun_md_output_mdinfo_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step26_sander_mdrun_md_output_log_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step26_sander_mdrun_md_config"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step27_rmsd_first_output_cpptraj_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step27_rmsd_first_config"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step28_rmsd_exp_output_cpptraj_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step28_rmsd_exp_config"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step29_cpptraj_rgyr_output_cpptraj_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step29_cpptraj_rgyr_config"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step30_cpptraj_image_output_cpptraj_path"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-inputs-step30_cpptraj_image_config"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step1_leap_gen_top_out1"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step1_leap_gen_top_out2"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step1_leap_gen_top_out3"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step2_leap_solvate_out1"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step2_leap_solvate_out2"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step2_leap_solvate_out3"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step3_leap_add_ions_out1"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step3_leap_add_ions_out2"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step3_leap_add_ions_out3"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step4_cpptraj_randomize_ions_out1"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step4_cpptraj_randomize_ions_out2"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step5_parmed_hmassrepartition_out1"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step6_sander_mdrun_eq1_out1"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step6_sander_mdrun_eq1_out2"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step6_sander_mdrun_eq1_out3"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step6_sander_mdrun_eq1_out4"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step7_process_minout_eq1_out1"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step8_sander_mdrun_eq2_out1"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step8_sander_mdrun_eq2_out2"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step8_sander_mdrun_eq2_out3"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step8_sander_mdrun_eq2_out4"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step9_process_mdout_eq2_out1"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step10_sander_mdrun_eq3_out1"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step10_sander_mdrun_eq3_out2"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step10_sander_mdrun_eq3_out3"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step10_sander_mdrun_eq3_out4"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step11_process_minout_eq3_out1"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step12_sander_mdrun_eq4_out1"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step12_sander_mdrun_eq4_out2"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step12_sander_mdrun_eq4_out3"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step12_sander_mdrun_eq4_out4"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step13_process_minout_eq4_out1"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step14_sander_mdrun_eq5_out1"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step14_sander_mdrun_eq5_out2"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step14_sander_mdrun_eq5_out3"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step14_sander_mdrun_eq5_out4"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step15_process_minout_eq5_out1"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step16_sander_mdrun_eq6_out1"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step16_sander_mdrun_eq6_out2"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step16_sander_mdrun_eq6_out3"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step16_sander_mdrun_eq6_out4"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step17_process_mdout_eq6_out1"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step18_sander_mdrun_eq7_out1"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step18_sander_mdrun_eq7_out2"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step18_sander_mdrun_eq7_out3"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step18_sander_mdrun_eq7_out4"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step19_process_mdout_eq7_out1"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step20_sander_mdrun_eq8_out1"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step20_sander_mdrun_eq8_out2"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step20_sander_mdrun_eq8_out3"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step20_sander_mdrun_eq8_out4"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step21_process_mdout_eq8_out1"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step22_sander_mdrun_eq9_out1"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step22_sander_mdrun_eq9_out2"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step22_sander_mdrun_eq9_out3"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step22_sander_mdrun_eq9_out4"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step23_process_mdout_eq9_out1"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step24_sander_mdrun_eq10_out1"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step24_sander_mdrun_eq10_out2"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step24_sander_mdrun_eq10_out3"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step24_sander_mdrun_eq10_out4"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step25_process_mdout_eq10_out1"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step26_sander_mdrun_md_out1"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step26_sander_mdrun_md_out2"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step26_sander_mdrun_md_out3"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step26_sander_mdrun_md_out4"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step27_rmsd_first_out1"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step28_rmsd_exp_out1"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step29_cpptraj_rgyr_out1"
+        },
+        {
+          "@id": "#cwl_abc_md_setup_tutorial-outputs-step30_cpptraj_image_out1"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "workflow-262-62d05f1208abc6a6ac532456486ecda97165a3df-diagram.svg",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 230004
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_amber_abc_md_setup/cwl/sequence.pdb",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_amber_abc_md_setup/cwl/workflow_input_descriptions.yml",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_amber_abc_md_setup/cwl/README.md",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_amber_abc_md_setup/cwl/biobb_adapters/cpptraj_image.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_amber_abc_md_setup/cwl/biobb_adapters/cpptraj_randomize_ions.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_amber_abc_md_setup/cwl/biobb_adapters/cpptraj_rgyr.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_amber_abc_md_setup/cwl/biobb_adapters/cpptraj_rms.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_amber_abc_md_setup/cwl/biobb_adapters/leap_add_ions.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_amber_abc_md_setup/cwl/biobb_adapters/leap_gen_top.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_amber_abc_md_setup/cwl/biobb_adapters/leap_solvate.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_amber_abc_md_setup/cwl/biobb_adapters/parmed_hmassrepartition.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_amber_abc_md_setup/cwl/biobb_adapters/process_mdout.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_amber_abc_md_setup/cwl/biobb_adapters/process_minout.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_amber_abc_md_setup/cwl/biobb_adapters/sander_mdrun.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-8291-8071",
+      "@type": "Person",
+      "name": "Adam Hospital",
+      "identifier": "https://orcid.org/0000-0002-8291-8071"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-0513-0288",
+      "@type": "Person",
+      "name": "Genís Bayarri",
+      "identifier": "https://orcid.org/0000-0003-0513-0288"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/57",
+      "@type": "Person",
+      "name": "Adam Hospital"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/47",
+      "@type": "Person",
+      "name": "Genís Bayarri"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/11",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "BioBB Building Blocks"
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step1_leap_gen_top_input_pdb_path",
+      "@type": "FormalParameter",
+      "name": "Input file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step1_leap_gen_top_output_pdb_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step1_leap_gen_top_output_top_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step1_leap_gen_top_output_crd_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step1_leap_gen_top_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step2_leap_solvate_output_pdb_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step2_leap_solvate_output_top_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step2_leap_solvate_output_crd_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step2_leap_solvate_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step3_leap_add_ions_output_pdb_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step3_leap_add_ions_output_top_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step3_leap_add_ions_output_crd_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step3_leap_add_ions_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step4_cpptraj_randomize_ions_output_pdb_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step4_cpptraj_randomize_ions_output_crd_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step4_cpptraj_randomize_ions_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step5_parmed_hmassrepartition_output_top_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step6_sander_mdrun_eq1_input_mdin_path",
+      "@type": "FormalParameter",
+      "name": "Input file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step6_sander_mdrun_eq1_output_traj_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step6_sander_mdrun_eq1_output_rst_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step6_sander_mdrun_eq1_output_log_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step6_sander_mdrun_eq1_output_mdinfo_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step6_sander_mdrun_eq1_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step7_process_minout_eq1_output_dat_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step7_process_minout_eq1_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step8_sander_mdrun_eq2_input_mdin_path",
+      "@type": "FormalParameter",
+      "name": "Input file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step8_sander_mdrun_eq2_output_traj_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step8_sander_mdrun_eq2_output_rst_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step8_sander_mdrun_eq2_output_log_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step8_sander_mdrun_eq2_output_mdinfo_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step8_sander_mdrun_eq2_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step9_process_mdout_eq2_output_dat_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step9_process_mdout_eq2_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step10_sander_mdrun_eq3_input_mdin_path",
+      "@type": "FormalParameter",
+      "name": "Input file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step10_sander_mdrun_eq3_output_traj_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step10_sander_mdrun_eq3_output_rst_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step10_sander_mdrun_eq3_output_log_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step10_sander_mdrun_eq3_output_mdinfo_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step10_sander_mdrun_eq3_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step11_process_minout_eq3_output_dat_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step11_process_minout_eq3_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step12_sander_mdrun_eq4_input_mdin_path",
+      "@type": "FormalParameter",
+      "name": "Input file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step12_sander_mdrun_eq4_output_traj_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step12_sander_mdrun_eq4_output_rst_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step12_sander_mdrun_eq4_output_log_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step12_sander_mdrun_eq4_output_mdinfo_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step12_sander_mdrun_eq4_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step13_process_minout_eq4_output_dat_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step13_process_minout_eq4_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step14_sander_mdrun_eq5_input_mdin_path",
+      "@type": "FormalParameter",
+      "name": "Input file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step14_sander_mdrun_eq5_output_traj_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step14_sander_mdrun_eq5_output_rst_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step14_sander_mdrun_eq5_output_log_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step14_sander_mdrun_eq5_output_mdinfo_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step14_sander_mdrun_eq5_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step15_process_minout_eq5_output_dat_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step15_process_minout_eq5_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step16_sander_mdrun_eq6_input_mdin_path",
+      "@type": "FormalParameter",
+      "name": "Input file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step16_sander_mdrun_eq6_output_traj_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step16_sander_mdrun_eq6_output_rst_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step16_sander_mdrun_eq6_output_log_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step16_sander_mdrun_eq6_output_mdinfo_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step16_sander_mdrun_eq6_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step17_process_mdout_eq6_output_dat_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step17_process_mdout_eq6_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step18_sander_mdrun_eq7_input_mdin_path",
+      "@type": "FormalParameter",
+      "name": "Input file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step18_sander_mdrun_eq7_output_traj_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step18_sander_mdrun_eq7_output_rst_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step18_sander_mdrun_eq7_output_log_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step18_sander_mdrun_eq7_output_mdinfo_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step18_sander_mdrun_eq7_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step19_process_mdout_eq7_output_dat_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step19_process_mdout_eq7_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step20_sander_mdrun_eq8_input_mdin_path",
+      "@type": "FormalParameter",
+      "name": "Input file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step20_sander_mdrun_eq8_output_traj_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step20_sander_mdrun_eq8_output_rst_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step20_sander_mdrun_eq8_output_log_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step20_sander_mdrun_eq8_output_mdinfo_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step20_sander_mdrun_eq8_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step21_process_mdout_eq8_output_dat_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step21_process_mdout_eq8_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step22_sander_mdrun_eq9_input_mdin_path",
+      "@type": "FormalParameter",
+      "name": "Input file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step22_sander_mdrun_eq9_output_traj_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step22_sander_mdrun_eq9_output_rst_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step22_sander_mdrun_eq9_output_log_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step22_sander_mdrun_eq9_output_mdinfo_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step22_sander_mdrun_eq9_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step23_process_mdout_eq9_output_dat_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step23_process_mdout_eq9_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step24_sander_mdrun_eq10_input_mdin_path",
+      "@type": "FormalParameter",
+      "name": "Input file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step24_sander_mdrun_eq10_output_traj_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step24_sander_mdrun_eq10_output_rst_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step24_sander_mdrun_eq10_output_log_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step24_sander_mdrun_eq10_output_mdinfo_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step24_sander_mdrun_eq10_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step25_process_mdout_eq10_output_dat_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step25_process_mdout_eq10_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step26_sander_mdrun_md_input_mdin_path",
+      "@type": "FormalParameter",
+      "name": "Input file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step26_sander_mdrun_md_output_traj_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step26_sander_mdrun_md_output_rst_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step26_sander_mdrun_md_output_mdinfo_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step26_sander_mdrun_md_output_log_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step26_sander_mdrun_md_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step27_rmsd_first_output_cpptraj_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step27_rmsd_first_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step28_rmsd_exp_output_cpptraj_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step28_rmsd_exp_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step29_cpptraj_rgyr_output_cpptraj_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step29_cpptraj_rgyr_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step30_cpptraj_image_output_cpptraj_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-inputs-step30_cpptraj_image_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step1_leap_gen_top_out1",
+      "@type": "FormalParameter",
+      "name": "output_pdb_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step1_leap_gen_top_out2",
+      "@type": "FormalParameter",
+      "name": "output_top_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step1_leap_gen_top_out3",
+      "@type": "FormalParameter",
+      "name": "output_crd_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step2_leap_solvate_out1",
+      "@type": "FormalParameter",
+      "name": "output_pdb_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step2_leap_solvate_out2",
+      "@type": "FormalParameter",
+      "name": "output_top_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step2_leap_solvate_out3",
+      "@type": "FormalParameter",
+      "name": "output_crd_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step3_leap_add_ions_out1",
+      "@type": "FormalParameter",
+      "name": "output_pdb_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step3_leap_add_ions_out2",
+      "@type": "FormalParameter",
+      "name": "output_top_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step3_leap_add_ions_out3",
+      "@type": "FormalParameter",
+      "name": "output_crd_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step4_cpptraj_randomize_ions_out1",
+      "@type": "FormalParameter",
+      "name": "output_pdb_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step4_cpptraj_randomize_ions_out2",
+      "@type": "FormalParameter",
+      "name": "output_crd_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step5_parmed_hmassrepartition_out1",
+      "@type": "FormalParameter",
+      "name": "output_top_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step6_sander_mdrun_eq1_out1",
+      "@type": "FormalParameter",
+      "name": "output_traj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step6_sander_mdrun_eq1_out2",
+      "@type": "FormalParameter",
+      "name": "output_rst_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step6_sander_mdrun_eq1_out3",
+      "@type": "FormalParameter",
+      "name": "output_log_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step6_sander_mdrun_eq1_out4",
+      "@type": "FormalParameter",
+      "name": "output_mdinfo_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step7_process_minout_eq1_out1",
+      "@type": "FormalParameter",
+      "name": "output_dat_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step8_sander_mdrun_eq2_out1",
+      "@type": "FormalParameter",
+      "name": "output_traj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step8_sander_mdrun_eq2_out2",
+      "@type": "FormalParameter",
+      "name": "output_rst_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step8_sander_mdrun_eq2_out3",
+      "@type": "FormalParameter",
+      "name": "output_log_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step8_sander_mdrun_eq2_out4",
+      "@type": "FormalParameter",
+      "name": "output_mdinfo_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step9_process_mdout_eq2_out1",
+      "@type": "FormalParameter",
+      "name": "output_dat_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step10_sander_mdrun_eq3_out1",
+      "@type": "FormalParameter",
+      "name": "output_traj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step10_sander_mdrun_eq3_out2",
+      "@type": "FormalParameter",
+      "name": "output_rst_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step10_sander_mdrun_eq3_out3",
+      "@type": "FormalParameter",
+      "name": "output_log_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step10_sander_mdrun_eq3_out4",
+      "@type": "FormalParameter",
+      "name": "output_mdinfo_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step11_process_minout_eq3_out1",
+      "@type": "FormalParameter",
+      "name": "output_dat_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step12_sander_mdrun_eq4_out1",
+      "@type": "FormalParameter",
+      "name": "output_traj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step12_sander_mdrun_eq4_out2",
+      "@type": "FormalParameter",
+      "name": "output_rst_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step12_sander_mdrun_eq4_out3",
+      "@type": "FormalParameter",
+      "name": "output_log_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step12_sander_mdrun_eq4_out4",
+      "@type": "FormalParameter",
+      "name": "output_mdinfo_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step13_process_minout_eq4_out1",
+      "@type": "FormalParameter",
+      "name": "output_dat_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step14_sander_mdrun_eq5_out1",
+      "@type": "FormalParameter",
+      "name": "output_traj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step14_sander_mdrun_eq5_out2",
+      "@type": "FormalParameter",
+      "name": "output_rst_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step14_sander_mdrun_eq5_out3",
+      "@type": "FormalParameter",
+      "name": "output_log_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step14_sander_mdrun_eq5_out4",
+      "@type": "FormalParameter",
+      "name": "output_mdinfo_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step15_process_minout_eq5_out1",
+      "@type": "FormalParameter",
+      "name": "output_dat_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step16_sander_mdrun_eq6_out1",
+      "@type": "FormalParameter",
+      "name": "output_traj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step16_sander_mdrun_eq6_out2",
+      "@type": "FormalParameter",
+      "name": "output_rst_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step16_sander_mdrun_eq6_out3",
+      "@type": "FormalParameter",
+      "name": "output_log_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step16_sander_mdrun_eq6_out4",
+      "@type": "FormalParameter",
+      "name": "output_mdinfo_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step17_process_mdout_eq6_out1",
+      "@type": "FormalParameter",
+      "name": "output_dat_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step18_sander_mdrun_eq7_out1",
+      "@type": "FormalParameter",
+      "name": "output_traj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step18_sander_mdrun_eq7_out2",
+      "@type": "FormalParameter",
+      "name": "output_rst_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step18_sander_mdrun_eq7_out3",
+      "@type": "FormalParameter",
+      "name": "output_log_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step18_sander_mdrun_eq7_out4",
+      "@type": "FormalParameter",
+      "name": "output_mdinfo_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step19_process_mdout_eq7_out1",
+      "@type": "FormalParameter",
+      "name": "output_dat_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step20_sander_mdrun_eq8_out1",
+      "@type": "FormalParameter",
+      "name": "output_traj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step20_sander_mdrun_eq8_out2",
+      "@type": "FormalParameter",
+      "name": "output_rst_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step20_sander_mdrun_eq8_out3",
+      "@type": "FormalParameter",
+      "name": "output_log_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step20_sander_mdrun_eq8_out4",
+      "@type": "FormalParameter",
+      "name": "output_mdinfo_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step21_process_mdout_eq8_out1",
+      "@type": "FormalParameter",
+      "name": "output_dat_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step22_sander_mdrun_eq9_out1",
+      "@type": "FormalParameter",
+      "name": "output_traj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step22_sander_mdrun_eq9_out2",
+      "@type": "FormalParameter",
+      "name": "output_rst_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step22_sander_mdrun_eq9_out3",
+      "@type": "FormalParameter",
+      "name": "output_log_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step22_sander_mdrun_eq9_out4",
+      "@type": "FormalParameter",
+      "name": "output_mdinfo_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step23_process_mdout_eq9_out1",
+      "@type": "FormalParameter",
+      "name": "output_dat_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step24_sander_mdrun_eq10_out1",
+      "@type": "FormalParameter",
+      "name": "output_traj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step24_sander_mdrun_eq10_out2",
+      "@type": "FormalParameter",
+      "name": "output_rst_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step24_sander_mdrun_eq10_out3",
+      "@type": "FormalParameter",
+      "name": "output_log_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step24_sander_mdrun_eq10_out4",
+      "@type": "FormalParameter",
+      "name": "output_mdinfo_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step25_process_mdout_eq10_out1",
+      "@type": "FormalParameter",
+      "name": "output_dat_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step26_sander_mdrun_md_out1",
+      "@type": "FormalParameter",
+      "name": "output_traj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step26_sander_mdrun_md_out2",
+      "@type": "FormalParameter",
+      "name": "output_rst_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step26_sander_mdrun_md_out3",
+      "@type": "FormalParameter",
+      "name": "output_mdinfo_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step26_sander_mdrun_md_out4",
+      "@type": "FormalParameter",
+      "name": "output_log_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step27_rmsd_first_out1",
+      "@type": "FormalParameter",
+      "name": "output_cpptraj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step28_rmsd_exp_out1",
+      "@type": "FormalParameter",
+      "name": "output_cpptraj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step29_cpptraj_rgyr_out1",
+      "@type": "FormalParameter",
+      "name": "output_cpptraj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_abc_md_setup_tutorial-outputs-step30_cpptraj_image_out1",
+      "@type": "FormalParameter",
+      "name": "output_cpptraj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

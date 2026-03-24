@@ -1,0 +1,662 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "Take a temperature timeseries from any meteorological station. Input format is csv and it must be standardized with 6 columns:\n\n1. Year\t(ex: 2021)\n2. month\t(ex: 1)\n3. day\t(ex: 15) \n4. Time\t(ex: 16:56)\n5. Time zone\t(such as UTC)\n6. Air temperature (degC)",
+    "creator": [
+        {
+            "class": "Organization",
+            "name": "Anne Fouilloux",
+            "url": "https://github.com/annefou"
+        }
+    ],
+    "format-version": "0.1",
+    "license": "GPL-3.0-or-later",
+    "name": "Compute daily and monthly mean from meteorological station measurements",
+    "steps": {
+        "0": {
+            "annotation": "Data is usually sampled at a higher frequency (from second to a few minutes). \nThe dataset must contain 6 columns:\n\n1. Year\t\n2.m\t\n3.d\t\n4.Time\t\n5.Time zone\t(such as UTC) \n6. Air temperature (degC)",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "Data is usually sampled at a higher frequency (from second to a few minutes). \nThe dataset must contain 6 columns:\n\n1. Year\t\n2.m\t\n3.d\t\n4.Time\t\n5.Time zone\t(such as UTC) \n6. Air temperature (degC)",
+                    "name": "Temperature timeseries (csv)"
+                }
+            ],
+            "label": "Temperature timeseries (csv)",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": -42.8971370298471,
+                "height": 54.27000045776367,
+                "left": -608.1389014400653,
+                "right": -474.1388556636981,
+                "top": -97.16713748761077,
+                "width": 134.0000457763672,
+                "x": -608.1389014400653,
+                "y": -97.16713748761077
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "c172568a-5d17-4d82-b4b1-bcadc01073d9",
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": "csv_to_tabular",
+            "errors": null,
+            "id": 1,
+            "input_connections": {
+                "csv": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Convert CSV to tabular",
+            "outputs": [
+                {
+                    "name": "tabular",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 19.199956182223644,
+                "height": 88.44000244140625,
+                "left": -351.15966796875,
+                "right": -217.15966796875,
+                "top": -69.2400462591826,
+                "width": 134,
+                "x": -351.15966796875,
+                "y": -69.2400462591826
+            },
+            "post_job_actions": {
+                "HideDatasetActiontabular": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "tabular"
+                }
+            },
+            "tool_id": "csv_to_tabular",
+            "tool_state": "{\"__input_ext\": \"input\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"csv\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "66eefc5d-2572-4513-989d-795cd55edd67",
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/1.1.2",
+            "errors": null,
+            "id": 2,
+            "input_connections": {
+                "infile": {
+                    "id": 1,
+                    "output_name": "tabular"
+                }
+            },
+            "inputs": [],
+            "label": "Merge date columns to YYYYMMDD",
+            "name": "Text reformatting",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": -37.20005308692134,
+                "height": 75.04000091552734,
+                "left": -40.00341500808943,
+                "right": 93.99658499191057,
+                "top": -112.24005400244869,
+                "width": 134,
+                "x": -40.00341500808943,
+                "y": -112.24005400244869
+            },
+            "post_job_actions": {
+                "HideDatasetActionoutfile": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "outfile"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/1.1.2",
+            "tool_shed_repository": {
+                "changeset_revision": "ddf54b12c295",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"code\": \"BEGIN{FS=\\\"\\\\t\\\"} {printf \\\"%04d%02d%02d\\\\t%s\\\\t%s\\\\t%f\\\\n\\\", $1,$2,$3,$4,$5,$6}\", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.2",
+            "type": "tool",
+            "uuid": "b682c117-abee-4f9f-9d86-343a0293e938",
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/1.1.2",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "infile": {
+                    "id": 1,
+                    "output_name": "tabular"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Text reformatting",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 242.87286798277896,
+                "height": 75.04000091552734,
+                "left": -101.03468254430969,
+                "right": 32.96531745569031,
+                "top": 167.8328670672516,
+                "width": 134,
+                "x": -101.03468254430969,
+                "y": 167.8328670672516
+            },
+            "post_job_actions": {
+                "HideDatasetActionoutfile": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "outfile"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/1.1.2",
+            "tool_shed_repository": {
+                "changeset_revision": "ddf54b12c295",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"code\": \"BEGIN{FS=\\\"\\\\t\\\"} {printf \\\"%04d%02d\\\\t%02d\\\\t%s\\\\t%s\\\\t%f\\\\n\\\", $1,$2,$3,$4,$5,$6}\", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.2",
+            "type": "tool",
+            "uuid": "01d36b32-8428-40ae-9ff7-c04971ab1797",
+            "workflow_outputs": []
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.1.0",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "in_file": {
+                    "id": 2,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [],
+            "label": "Prepare daiky means",
+            "name": "Datamash",
+            "outputs": [
+                {
+                    "name": "out_file",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": -60.86255702687731,
+                "height": 88.44000244140625,
+                "left": 264.0799451230177,
+                "right": 398.0799451230177,
+                "top": -149.30255946828356,
+                "width": 134,
+                "x": 264.0799451230177,
+                "y": -149.30255946828356
+            },
+            "post_job_actions": {
+                "HideDatasetActionout_file": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "562f3c677828",
+                "name": "datamash_ops",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"grouping\": \"1\", \"header_in\": \"true\", \"header_out\": \"false\", \"ignore_case\": \"false\", \"in_file\": {\"__class__\": \"ConnectedValue\"}, \"need_sort\": \"true\", \"operations\": [{\"__index__\": 0, \"op_name\": \"mean\", \"op_column\": \"4\"}], \"print_full_line\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.0",
+            "type": "tool",
+            "uuid": "0f29f704-a609-413f-b14c-00cc6ef68978",
+            "workflow_outputs": []
+        },
+        "5": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.1.0",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "in_file": {
+                    "id": 2,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Datamash",
+                    "name": "in_file"
+                }
+            ],
+            "label": "Daily mean",
+            "name": "Datamash",
+            "outputs": [
+                {
+                    "name": "out_file",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 289.8728724237698,
+                "height": 75.04000854492188,
+                "left": 528.0799524107975,
+                "right": 662.0799524107975,
+                "top": 214.83286387884795,
+                "width": 134,
+                "x": 528.0799524107975,
+                "y": 214.83286387884795
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "562f3c677828",
+                "name": "datamash_ops",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"grouping\": \"1\", \"header_in\": \"true\", \"header_out\": \"true\", \"ignore_case\": \"false\", \"in_file\": {\"__class__\": \"RuntimeValue\"}, \"need_sort\": \"true\", \"operations\": [{\"__index__\": 0, \"op_name\": \"mean\", \"op_column\": \"4\"}], \"print_full_line\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.0",
+            "type": "tool",
+            "uuid": "4f4a2544-e335-4287-b948-ba4b25b02344",
+            "workflow_outputs": [
+                {
+                    "label": "daily_mean_timeseries",
+                    "output_name": "out_file",
+                    "uuid": "4f593fcd-232b-4c29-8723-716f32a56a9b"
+                }
+            ]
+        },
+        "6": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.1.0",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "in_file": {
+                    "id": 3,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Datamash",
+                    "name": "in_file"
+                }
+            ],
+            "label": "Monthly mean",
+            "name": "Datamash",
+            "outputs": [
+                {
+                    "name": "out_file",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 498.1999794120219,
+                "height": 88.44000244140625,
+                "left": 523.579930547458,
+                "right": 657.579930547458,
+                "top": 409.75997697061564,
+                "width": 134,
+                "x": 523.579930547458,
+                "y": 409.75997697061564
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "562f3c677828",
+                "name": "datamash_ops",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"grouping\": \"1\", \"header_in\": \"true\", \"header_out\": \"true\", \"ignore_case\": \"false\", \"in_file\": {\"__class__\": \"RuntimeValue\"}, \"need_sort\": \"true\", \"operations\": [{\"__index__\": 0, \"op_name\": \"mean\", \"op_column\": \"5\"}], \"print_full_line\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.0",
+            "type": "tool",
+            "uuid": "75974ece-8bca-40f3-afd7-3b5921b1e924",
+            "workflow_outputs": [
+                {
+                    "label": "monthly_mean_timeseries",
+                    "output_name": "out_file",
+                    "uuid": "8d842d03-2de2-47ea-8065-fb421356cc72"
+                }
+            ]
+        },
+        "7": {
+            "annotation": "",
+            "content_id": "Filter1",
+            "errors": null,
+            "id": 7,
+            "input_connections": {
+                "input": {
+                    "id": 4,
+                    "output_name": "out_file"
+                }
+            },
+            "inputs": [],
+            "label": "Positive only",
+            "name": "Filter",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 66.39995230489703,
+                "height": 61.63999938964844,
+                "left": 526.9861933010727,
+                "right": 660.9861933010727,
+                "top": 4.7599529152485855,
+                "width": 134,
+                "x": 526.9861933010727,
+                "y": 4.7599529152485855
+            },
+            "post_job_actions": {
+                "HideDatasetActionout_file1": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
+            "tool_id": "Filter1",
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"cond\": \"c2>=0\", \"header_lines\": \"0\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.1",
+            "type": "tool",
+            "uuid": "1d381108-93d3-408e-908c-6aa87cd83634",
+            "workflow_outputs": []
+        },
+        "8": {
+            "annotation": "",
+            "content_id": "Filter1",
+            "errors": null,
+            "id": 8,
+            "input_connections": {
+                "input": {
+                    "id": 4,
+                    "output_name": "out_file"
+                }
+            },
+            "inputs": [],
+            "label": "Negative only",
+            "name": "Filter",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": -81.28339306276234,
+                "height": 75.04000854492188,
+                "left": 534.0590747434701,
+                "right": 668.0590747434701,
+                "top": -156.32340160768422,
+                "width": 134,
+                "x": 534.0590747434701,
+                "y": -156.32340160768422
+            },
+            "post_job_actions": {
+                "HideDatasetActionout_file1": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
+            "tool_id": "Filter1",
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"cond\": \"c2<0\", \"header_lines\": \"0\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.1",
+            "type": "tool",
+            "uuid": "555b9522-e5a0-45e7-8fed-f5beba98d102",
+            "workflow_outputs": []
+        },
+        "9": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/climate/climate_stripes/climate_stripes/1.0.1",
+            "errors": null,
+            "id": 9,
+            "input_connections": {
+                "ifilename": {
+                    "id": 5,
+                    "output_name": "out_file"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool climate stripes",
+                    "name": "ifilename"
+                }
+            ],
+            "label": "Daily climate stripes",
+            "name": "climate stripes",
+            "outputs": [
+                {
+                    "name": "ofilename",
+                    "type": "png"
+                }
+            ],
+            "position": {
+                "bottom": 310.27288522293316,
+                "height": 88.44001770019531,
+                "left": 1161.0174833838619,
+                "right": 1295.0174833838619,
+                "top": 221.83286752273787,
+                "width": 134,
+                "x": 1161.0174833838619,
+                "y": 221.83286752273787
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/climate/climate_stripes/climate_stripes/1.0.1",
+            "tool_shed_repository": {
+                "changeset_revision": "c6f2435d680b",
+                "name": "climate_stripes",
+                "owner": "climate",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adv\": {\"xname\": \"GroupBy(00000000)\", \"format_date\": \"%Y%m%d\", \"format_plot\": \"%d %b %Y\", \"colormap\": \"coolwarm\"}, \"ifilename\": {\"__class__\": \"RuntimeValue\"}, \"title\": \"Temperature stripes (C) from January 2020 to May 2021\", \"variable\": \"mean(0.000000)\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.1",
+            "type": "tool",
+            "uuid": "d916a50d-80e8-4899-9cba-444834a6a684",
+            "workflow_outputs": [
+                {
+                    "label": "stripes_daily_temperatures",
+                    "output_name": "ofilename",
+                    "uuid": "ffeccf7d-eeeb-451d-a641-51a7d4449bd1"
+                }
+            ]
+        },
+        "10": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/climate/climate_stripes/climate_stripes/1.0.1",
+            "errors": null,
+            "id": 10,
+            "input_connections": {
+                "ifilename": {
+                    "id": 6,
+                    "output_name": "out_file"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool climate stripes",
+                    "name": "ifilename"
+                }
+            ],
+            "label": "Monthly climate stripes",
+            "name": "climate stripes",
+            "outputs": [
+                {
+                    "name": "ofilename",
+                    "type": "png"
+                }
+            ],
+            "position": {
+                "bottom": 526.1999939875816,
+                "height": 88.44000244140625,
+                "left": 1157.027879401819,
+                "right": 1291.027879401819,
+                "top": 437.75999154617534,
+                "width": 134,
+                "x": 1157.027879401819,
+                "y": 437.75999154617534
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/climate/climate_stripes/climate_stripes/1.0.1",
+            "tool_shed_repository": {
+                "changeset_revision": "c6f2435d680b",
+                "name": "climate_stripes",
+                "owner": "climate",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adv\": {\"xname\": \"GroupBy(000000)\", \"format_date\": \"%Y%m\", \"format_plot\": \"%b %Y\", \"colormap\": \"coolwarm\"}, \"ifilename\": {\"__class__\": \"RuntimeValue\"}, \"title\": \"Monthly mean temperature stripes (C) from January 2020 to May 2021\", \"variable\": \"mean(0.000000)\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.1",
+            "type": "tool",
+            "uuid": "896c654e-f5de-480a-87f7-197b01d6258c",
+            "workflow_outputs": [
+                {
+                    "label": "stripes_monthly_temperatures",
+                    "output_name": "ofilename",
+                    "uuid": "f51adac0-c249-4b91-b74f-4b82ef4b901b"
+                }
+            ]
+        },
+        "11": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/collection_column_join/collection_column_join/0.0.3",
+            "errors": null,
+            "id": 11,
+            "input_connections": {
+                "input_tabular": [
+                    {
+                        "id": 7,
+                        "output_name": "out_file1"
+                    },
+                    {
+                        "id": 8,
+                        "output_name": "out_file1"
+                    }
+                ]
+            },
+            "inputs": [],
+            "label": "Prepare bar chart",
+            "name": "Column Join",
+            "outputs": [
+                {
+                    "name": "tabular_output",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": -56.32504727947176,
+                "height": 75.04000854492188,
+                "left": 862.0174578766324,
+                "right": 996.0174578766324,
+                "top": -131.36505582439364,
+                "width": 134,
+                "x": 862.0174578766324,
+                "y": -131.36505582439364
+            },
+            "post_job_actions": {
+                "HideDatasetActiontabular_output": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "tabular_output"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/collection_column_join/collection_column_join/0.0.3",
+            "tool_shed_repository": {
+                "changeset_revision": "071084070619",
+                "name": "collection_column_join",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"fill_char\": \"0.0\", \"has_header\": \"0\", \"identifier_column\": \"1\", \"include_outputs\": null, \"input_tabular\": {\"__class__\": \"ConnectedValue\"}, \"old_col_in_header\": \"true\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.0.3",
+            "type": "tool",
+            "uuid": "239aafc6-c3fe-4166-8adc-d6722a1a89bf",
+            "workflow_outputs": []
+        },
+        "12": {
+            "annotation": "",
+            "content_id": "barchart_gnuplot",
+            "errors": null,
+            "id": 12,
+            "input_connections": {
+                "input": {
+                    "id": 11,
+                    "output_name": "tabular_output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Bar chart",
+                    "name": "input"
+                }
+            ],
+            "label": "bar char for daily temperatures (C)",
+            "name": "Bar chart",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "png"
+                }
+            ],
+            "position": {
+                "bottom": -56.32504727947176,
+                "height": 75.04000854492188,
+                "left": 1165.0591038945895,
+                "right": 1299.0591038945895,
+                "top": -131.36505582439364,
+                "width": 134,
+                "x": 1165.0591038945895,
+                "y": -131.36505582439364
+            },
+            "post_job_actions": {},
+            "tool_id": "barchart_gnuplot",
+            "tool_state": "{\"colList\": \"2\\n3\\n\", \"input\": {\"__class__\": \"RuntimeValue\"}, \"pdf_size\": \"1480,800\", \"title\": \"Bar Chart\", \"xtic\": {\"userSpecified\": \"No\", \"__current_case__\": 1}, \"ylabel\": \"Temperature (C)\", \"ymax\": \"0\", \"ymin\": \"0\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "36fe54a2-5658-468a-a6da-db1e7693f902",
+            "workflow_outputs": [
+                {
+                    "label": "daily_barchart",
+                    "output_name": "out_file1",
+                    "uuid": "4674da6f-cd3c-467a-bf9c-a50830f23b28"
+                }
+            ]
+        }
+    },
+    "tags": [
+        "climate",
+        "eosc-nordic",
+        "observation"
+    ],
+    "uuid": "0b91c1a4-1f21-4611-896b-f70f987cae19",
+    "version": 15
+}

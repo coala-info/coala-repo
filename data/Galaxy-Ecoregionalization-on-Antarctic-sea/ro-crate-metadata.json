@@ -1,0 +1,178 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-Ecoregionalization_on_Antarctic_sea.ga"
+      },
+      "datePublished": "2023-11-09 20:51:08 +0000",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-8504-068X"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-4308-5617"
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.658.1",
+      "url": "https://workflowhub.eu/workflows/658/ro_crate?version=1",
+      "name": "Research Object Crate for Ecoregionalization on Antarctic sea",
+      "description": "\n\nGalaxy Workflow created on Galaxy-E european instance, ecology.usegalaxy.eu, related to the Galaxy training tutorial \"Antarctic sea ecoregionalization\" .\n\nThis workflow allows to analyze marine benthic biodiversity data to compute ecoregions regarding environmental data.\n",
+      "isBasedOn": "https://ecology.usegalaxy.eu/u/ylebras/w/workflow-constructed-from-history-test-ecoregionalization",
+      "sdDatePublished": "2026-03-24 17:54:10 +0000",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-Ecoregionalization_on_Antarctic_sea.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-Ecoregionalization_on_Antarctic_sea.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 12973,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "\n\nGalaxy Workflow created on Galaxy-E european instance, ecology.usegalaxy.eu, related to the Galaxy training tutorial \"Antarctic sea ecoregionalization\" .\n\nThis workflow allows to analyze marine benthic biodiversity data to compute ecoregions regarding environmental data.\n",
+      "name": "Ecoregionalization on Antarctic sea",
+      "url": "https://workflowhub.eu/workflows/658?version=1",
+      "keywords": "Biodiversity, Ecology",
+      "version": 1,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/51"
+        },
+        {
+          "@id": "#Pauline%20Seguineau"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/52"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/19"
+      },
+      "dateCreated": "2023-11-09T20:55:03Z",
+      "dateModified": "2024-12-09T08:24:38Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.658.1",
+      "input": [
+        {
+          "@id": "#ecoregionalization_on_antarctic_sea-inputs-ceamarc_env.csv"
+        },
+        {
+          "@id": "#ecoregionalization_on_antarctic_sea-inputs-cnidaria_filtered.csv"
+        }
+      ],
+      "output": [
+
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-8504-068X",
+      "@type": "Person",
+      "name": "Yvan Le Bras",
+      "identifier": "https://orcid.org/0000-0002-8504-068X"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-4308-5617",
+      "@type": "Person",
+      "name": "Coline Royaux",
+      "identifier": "https://orcid.org/0000-0003-4308-5617"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/51",
+      "@type": "Person",
+      "name": "Yvan Le Bras"
+    },
+    {
+      "@id": "#Pauline Seguineau",
+      "@type": "Person",
+      "name": "Pauline Seguineau"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/52",
+      "@type": "Person",
+      "name": "Coline Royaux"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/19",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "PNDB"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#ecoregionalization_on_antarctic_sea-inputs-ceamarc_env.csv",
+      "@type": "FormalParameter",
+      "name": "ceamarc_env.csv",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ecoregionalization_on_antarctic_sea-inputs-cnidaria_filtered.csv",
+      "@type": "FormalParameter",
+      "name": "cnidaria_filtered.csv",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

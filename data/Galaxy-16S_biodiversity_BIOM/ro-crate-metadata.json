@@ -1,0 +1,203 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "16S_biodiversity_BIOM.ga"
+      },
+      "datePublished": "2021-08-11 05:12:04 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-1480-3563"
+        }
+      ],
+      "license": "GPL-3.0",
+      "identifier": "https://workflowhub.eu/workflows/142?version=1",
+      "url": "https://workflowhub.eu/workflows/142/ro_crate?version=1",
+      "name": "Research Object Crate for 16S_biodiversity_BIOM",
+      "description": "This is a Galaxy workflow that uses to convert the16S BIOM file to table and figures. It is part of the metaDEGalaxy workflow MetaDEGalaxy: Galaxy workflow for differential abundance analysis of 16s metagenomic data. ",
+      "isBasedOn": "https://github.com/QFAB-Bioinformatics/metaDEGalaxy",
+      "sdDatePublished": "2026-03-24 18:09:30 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "16S_biodiversity_BIOM.ga"
+        },
+        {
+          "@id": "16S_biodiversity_BIOM.PNG"
+        }
+      ]
+    },
+    {
+      "@id": "16S_biodiversity_BIOM.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 19403,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "16S_biodiversity_BIOM.PNG"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "This is a Galaxy workflow that uses to convert the16S BIOM file to table and figures. It is part of the metaDEGalaxy workflow MetaDEGalaxy: Galaxy workflow for differential abundance analysis of 16s metagenomic data. ",
+      "name": "16S_biodiversity_BIOM",
+      "url": "https://workflowhub.eu/workflows/142?version=1",
+      "keywords": "MetaDEGalaxy",
+      "version": 1,
+      "license": "https://spdx.org/licenses/GPL-3.0",
+      "creator": {
+        "@id": "https://workflowhub.eu/people/162"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/54"
+      },
+      "dateCreated": "2021-08-11T04:12:04Z",
+      "dateModified": "2024-04-17T04:16:05Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/6"
+      },
+      "input": [
+
+      ],
+      "output": [
+        {
+          "@id": "#16s_biodiversity_biom-outputs-_anonymous_output_1"
+        },
+        {
+          "@id": "#16s_biodiversity_biom-outputs-_anonymous_output_2"
+        },
+        {
+          "@id": "#16s_biodiversity_biom-outputs-_anonymous_output_3"
+        },
+        {
+          "@id": "#16s_biodiversity_biom-outputs-_anonymous_output_4"
+        },
+        {
+          "@id": "#16s_biodiversity_biom-outputs-_anonymous_output_5"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "16S_biodiversity_BIOM.PNG",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 102835
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-1480-3563",
+      "@type": "Person",
+      "name": "Mike Thang",
+      "identifier": "https://orcid.org/0000-0002-1480-3563"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/162",
+      "@type": "Person",
+      "name": "Mike Thang"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/54",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Galaxy Australia"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/6",
+      "@type": "Collection",
+      "name": "BioCommons ‘Bring Your Own Data’ Expansion Project"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#16s_biodiversity_biom-outputs-_anonymous_output_1",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#16s_biodiversity_biom-outputs-_anonymous_output_2",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#16s_biodiversity_biom-outputs-_anonymous_output_3",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_3",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#16s_biodiversity_biom-outputs-_anonymous_output_4",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_4",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#16s_biodiversity_biom-outputs-_anonymous_output_5",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_5",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

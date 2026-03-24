@@ -1,0 +1,469 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ],
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "TODO",
+      "description": "TODO",
+      "license": "TODO",
+      "author": {
+        "@id": "TODO"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/wfrun/process/0.4"
+        },
+        {
+          "@id": "https://w3id.org/ro/wfrun/workflow/0.4"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ],
+      "hasPart": [
+        {
+          "@id": "WF5101.cwl"
+        },
+        {
+          "@id": "DT5101"
+        },
+        {
+          "@id": "DT5102"
+        },
+        {
+          "@id": "DT5103"
+        },
+        {
+          "@id": "DT5104"
+        },
+        {
+          "@id": "DT5105"
+        },
+        {
+          "@id": "DT5109"
+        },
+        {
+          "@id": "DT5110"
+        },
+        {
+          "@id": "DT5111"
+        },
+        {
+          "@id": "ST510101.cwl"
+        },
+        {
+          "@id": "ST510102.cwl"
+        },
+        {
+          "@id": "ST510103.cwl"
+        },
+        {
+          "@id": "ST510107.cwl"
+        },
+        {
+          "@id": "ST510109.cwl"
+        },
+        {
+          "@id": "ST510110.cwl"
+        },
+        {
+          "@id": "ST510111.cwl"
+        },
+        {
+          "@id": "ST510112.cwl"
+        }
+      ],
+      "mainEntity": {
+        "@id": "WF5101.cwl"
+      }
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/process/0.4",
+      "@type": "CreativeWork",
+      "name": "Process Run Crate",
+      "version": "0.4"
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/workflow/0.4",
+      "@type": "CreativeWork",
+      "name": "Workflow Run Crate",
+      "version": "0.4"
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
+      "@type": "CreativeWork",
+      "name": "Workflow RO-Crate",
+      "version": "1.0"
+    },
+    {
+      "@id": "WF5101.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "name": "TODO",
+      "author": {
+        "@id": "TODO"
+      },
+      "creator": {
+        "@id": "TODO"
+      },
+      "programmingLanguage": {
+        "@id": "https://about.workflowhub.eu/Workflow-RO-Crate/#cwl"
+      },
+      "input": [
+        {
+          "@id": "#DT5109-param"
+        },
+        {
+          "@id": "#DT5102-param"
+        },
+        {
+          "@id": "#DT5104-param"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#DT5111-param"
+        },
+        {
+          "@id": "#DT5101-param"
+        },
+        {
+          "@id": "#DT5103-param"
+        },
+        {
+          "@id": "#DT5105-param"
+        },
+        {
+          "@id": "#DT5110-param"
+        }
+      ]
+    },
+    {
+      "@id": "#DT5109-param",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "TODO",
+      "workExample": {
+        "@id": "DT5109"
+      },
+      "name": "TODO",
+      "valueRequired": true
+    },
+    {
+      "@id": "#DT5102-param",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "TODO",
+      "workExample": {
+        "@id": "DT5102"
+      },
+      "name": "TODO",
+      "valueRequired": true
+    },
+    {
+      "@id": "#DT5104-param",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "TODO",
+      "workExample": {
+        "@id": "DT5104"
+      },
+      "name": "TODO",
+      "valueRequired": true
+    },
+    {
+      "@id": "#DT5111-param",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "TODO",
+      "workExample": {
+        "@id": "DT5111"
+      },
+      "name": "TODO",
+      "valueRequired": true
+    },
+    {
+      "@id": "#DT5101-param",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "TODO",
+      "workExample": {
+        "@id": "DT5101"
+      },
+      "name": "TODO",
+      "valueRequired": true
+    },
+    {
+      "@id": "#DT5103-param",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "TODO",
+      "workExample": {
+        "@id": "DT5103"
+      },
+      "name": "TODO",
+      "valueRequired": true
+    },
+    {
+      "@id": "#DT5105-param",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "TODO",
+      "workExample": {
+        "@id": "DT5105"
+      },
+      "name": "TODO",
+      "valueRequired": true
+    },
+    {
+      "@id": "#DT5110-param",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "TODO",
+      "workExample": {
+        "@id": "DT5110"
+      },
+      "name": "TODO",
+      "valueRequired": true
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl",
+      "@type": "ComputerLanguage",
+      "identifier": "https://www.commonwl.org/",
+      "name": "Common Workflow Language",
+      "url": "https://www.commonwl.org/"
+    },
+    {
+      "@id": "ST510101",
+      "@type": "SoftwareSourceCode",
+      "name": "TODO",
+      "description": "TODO",
+      "author": {},
+      "license": "",
+      "programmingLanguage": ""
+    },
+    {
+      "@id": "ST510102",
+      "@type": "SoftwareSourceCode",
+      "name": "TODO",
+      "description": "TODO",
+      "author": {},
+      "license": "",
+      "programmingLanguage": ""
+    },
+    {
+      "@id": "ST510103",
+      "@type": "SoftwareSourceCode",
+      "name": "TODO",
+      "description": "TODO",
+      "author": {},
+      "license": "",
+      "programmingLanguage": ""
+    },
+    {
+      "@id": "ST510107",
+      "@type": "SoftwareSourceCode",
+      "name": "TODO",
+      "description": "TODO",
+      "author": {},
+      "license": "",
+      "programmingLanguage": ""
+    },
+    {
+      "@id": "ST510109",
+      "@type": "SoftwareSourceCode",
+      "name": "TODO",
+      "description": "TODO",
+      "author": {},
+      "license": "",
+      "programmingLanguage": ""
+    },
+    {
+      "@id": "ST510110",
+      "@type": "SoftwareSourceCode",
+      "name": "TODO",
+      "description": "TODO",
+      "author": {},
+      "license": "",
+      "programmingLanguage": ""
+    },
+    {
+      "@id": "ST510111",
+      "@type": "SoftwareSourceCode",
+      "name": "TODO",
+      "description": "TODO",
+      "author": {},
+      "license": "",
+      "programmingLanguage": ""
+    },
+    {
+      "@id": "ST510112",
+      "@type": "SoftwareSourceCode",
+      "name": "TODO",
+      "description": "TODO",
+      "author": {},
+      "license": "",
+      "programmingLanguage": ""
+    },
+    {
+      "@id": "DT5101",
+      "@type": "Dataset",
+      "name": "TODO",
+      "abstract": "TODO",
+      "url": "TODO",
+      "author": {
+        "@id": "TODO"
+      },
+      "exampleOfWork": {
+        "@id": "#DT5101-param"
+      }
+    },
+    {
+      "@id": "DT5102",
+      "@type": "Dataset",
+      "name": "TODO",
+      "abstract": "TODO",
+      "url": "TODO",
+      "author": {
+        "@id": "TODO"
+      },
+      "exampleOfWork": {
+        "@id": "#DT5102-param"
+      }
+    },
+    {
+      "@id": "DT5103",
+      "@type": "Dataset",
+      "name": "TODO",
+      "abstract": "TODO",
+      "url": "TODO",
+      "author": {
+        "@id": "TODO"
+      },
+      "exampleOfWork": {
+        "@id": "#DT5103-param"
+      }
+    },
+    {
+      "@id": "DT5104",
+      "@type": "Dataset",
+      "name": "TODO",
+      "abstract": "TODO",
+      "url": "TODO",
+      "author": {
+        "@id": "TODO"
+      },
+      "exampleOfWork": {
+        "@id": "#DT5104-param"
+      }
+    },
+    {
+      "@id": "DT5105",
+      "@type": "Dataset",
+      "name": "TODO",
+      "abstract": "TODO",
+      "url": "TODO",
+      "author": {
+        "@id": "TODO"
+      },
+      "exampleOfWork": {
+        "@id": "#DT5105-param"
+      }
+    },
+    {
+      "@id": "DT5109",
+      "@type": "Dataset",
+      "name": "TODO",
+      "abstract": "TODO",
+      "url": "TODO",
+      "author": {
+        "@id": "TODO"
+      },
+      "exampleOfWork": {
+        "@id": "#DT5109-param"
+      }
+    },
+    {
+      "@id": "DT5110",
+      "@type": "Dataset",
+      "name": "TODO",
+      "abstract": "TODO",
+      "url": "TODO",
+      "author": {
+        "@id": "TODO"
+      },
+      "exampleOfWork": {
+        "@id": "#DT5110-param"
+      }
+    },
+    {
+      "@id": "DT5111",
+      "@type": "Dataset",
+      "name": "TODO",
+      "abstract": "TODO",
+      "url": "TODO",
+      "author": {
+        "@id": "TODO"
+      },
+      "exampleOfWork": {
+        "@id": "#DT5111-param"
+      }
+    },
+    {
+      "@id": "TODO",
+      "@type": "Person",
+      "name": "TODO",
+      "affiliation": {
+        "@id": "TODO"
+      }
+    },
+    {
+      "@id": "TODO",
+      "@type": "Organization",
+      "name": "TODO"
+    }
+  ]
+}

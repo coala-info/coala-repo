@@ -1,0 +1,741 @@
+INFO /home/francis/dev/conda/envs/ogc/bin/cwltool 3.1.20230906142556
+INFO Resolved '/home/francis/dev/ogc/ogc-ospd/OSPD/algae_usecase/ogc_app_pkg/algae-usecase-workflow-earth-search.cwl' to 'file:///home/francis/dev/ogc/ogc-ospd/OSPD/algae_usecase/ogc_app_pkg/algae-usecase-workflow-earth-search.cwl'
+INFO [workflow ] start
+INFO [workflow ] starting step select_products
+INFO [step select_products] start
+INFO [job select_products] /tmp/3v6myc4m$ docker \
+    run \
+    -i \
+    --mount=type=bind,source=/tmp/3v6myc4m,target=/JZLvUs \
+    --mount=type=bind,source=/tmp/sc7_ngez,target=/tmp \
+    --mount=type=bind,source=/home/francis/dev/ogc/ogc-ospd/OSPD/algae_usecase/ogc_app_pkg/example/algae-usecase-region.geojson,target=/var/lib/cwl/stge8c68f66-1f46-46c2-8014-452c6f7a1ffe/algae-usecase-region.geojson,readonly \
+    --workdir=/JZLvUs \
+    --read-only=true \
+    --log-driver=none \
+    --user=1000:1000 \
+    --rm \
+    --cidfile=/tmp/yaqykc33/20240531161130-664215.cid \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/JZLvUs \
+    ogc-ospd/algae-usecase/select-products-sentinel2:1.1.0 \
+    --aoi \
+    /var/lib/cwl/stge8c68f66-1f46-46c2-8014-452c6f7a1ffe/algae-usecase-region.geojson \
+    --catalog \
+    earth-search \
+    --cloud-cover \
+    0.1 \
+    --collection \
+    sentinel-2-l2a \
+    --delta \
+    4 \
+    --product-level \
+    L2A \
+    --toi \
+    2019-06-25 \
+    2019-07-03 > /tmp/3v6myc4m/collection-urls.json
+INFO [job select_products] Max memory used: 0MiB
+INFO [job select_products] completed success
+INFO [step select_products] completed success
+INFO [workflow ] starting step process
+INFO [step process] start
+INFO [workflow process] start
+INFO [workflow process] starting step download_b03_10m
+INFO [step download_b03_10m] start
+INFO [job download_b03_10m] /tmp/w3u_qk9f$ docker \
+    run \
+    -i \
+    --mount=type=bind,source=/tmp/w3u_qk9f,target=/JZLvUs \
+    --mount=type=bind,source=/tmp/9fqv7asm,target=/tmp \
+    --workdir=/JZLvUs \
+    --read-only=true \
+    --user=1000:1000 \
+    --rm \
+    --cidfile=/tmp/_v8z0obl/20240531161131-966259.cid \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/JZLvUs \
+    ogc-ospd/algae-usecase/download-band-sentinel2-stac-item:1.1.0 \
+    --band \
+    B03 \
+    --stac-item-url \
+    https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_29SPC_20190701_0_L2A
+/JZLvUs/B03.tif
+INFO [job download_b03_10m] Max memory used: 19MiB
+INFO [job download_b03_10m] completed success
+INFO [step download_b03_10m] completed success
+INFO [workflow process] starting step download_b02_10m
+INFO [step download_b02_10m] start
+INFO [job download_b02_10m] /tmp/xfoge6za$ docker \
+    run \
+    -i \
+    --mount=type=bind,source=/tmp/xfoge6za,target=/JZLvUs \
+    --mount=type=bind,source=/tmp/nos7z1l8,target=/tmp \
+    --workdir=/JZLvUs \
+    --read-only=true \
+    --user=1000:1000 \
+    --rm \
+    --cidfile=/tmp/ytcxkstr/20240531161148-404648.cid \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/JZLvUs \
+    ogc-ospd/algae-usecase/download-band-sentinel2-stac-item:1.1.0 \
+    --band \
+    B02 \
+    --stac-item-url \
+    https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_29SPC_20190701_0_L2A
+/JZLvUs/B02.tif
+INFO [job download_b02_10m] Max memory used: 19MiB
+INFO [job download_b02_10m] completed success
+INFO [step download_b02_10m] completed success
+INFO [workflow process] starting step download_b04_10m
+INFO [step download_b04_10m] start
+INFO [job download_b04_10m] /tmp/kr3o56uk$ docker \
+    run \
+    -i \
+    --mount=type=bind,source=/tmp/kr3o56uk,target=/JZLvUs \
+    --mount=type=bind,source=/tmp/_awhz7mx,target=/tmp \
+    --workdir=/JZLvUs \
+    --read-only=true \
+    --user=1000:1000 \
+    --rm \
+    --cidfile=/tmp/pxpdutdd/20240531161205-637910.cid \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/JZLvUs \
+    ogc-ospd/algae-usecase/download-band-sentinel2-stac-item:1.1.0 \
+    --band \
+    B04 \
+    --stac-item-url \
+    https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_29SPC_20190701_0_L2A
+/JZLvUs/B04.tif
+INFO [job download_b04_10m] Max memory used: 19MiB
+INFO [job download_b04_10m] completed success
+INFO [step download_b04_10m] completed success
+INFO [workflow process] starting step reproject_b03_60m
+INFO [step reproject_b03_60m] start
+INFO [job reproject_b03_60m] /tmp/n1lkywy1$ docker \
+    run \
+    -i \
+    --mount=type=bind,source=/tmp/n1lkywy1,target=/JZLvUs \
+    --mount=type=bind,source=/tmp/i22q2chx,target=/tmp \
+    --mount=type=bind,source=/tmp/w3u_qk9f/B03.tif,target=/var/lib/cwl/stg2a9e7a1e-c2e5-4875-80ff-e32697bdbcd2/B03.tif,readonly \
+    --workdir=/JZLvUs \
+    --read-only=true \
+    --net=none \
+    --user=1000:1000 \
+    --rm \
+    --cidfile=/tmp/ncdnhtjv/20240531161222-265942.cid \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/JZLvUs \
+    ogc-ospd/algae-usecase/reproject-image \
+    gdalwarp \
+    -ot \
+    Float32 \
+    -of \
+    GTiff \
+    -tr \
+    60 \
+    60 \
+    /var/lib/cwl/stg2a9e7a1e-c2e5-4875-80ff-e32697bdbcd2/B03.tif \
+    B03_60m.tiff
+Creating output file that is 1830P x 1830L.
+Processing /var/lib/cwl/stg2a9e7a1e-c2e5-4875-80ff-e32697bdbcd2/B03.tif [1/1] : 0Using internal nodata values (e.g. 0) for image /var/lib/cwl/stg2a9e7a1e-c2e5-4875-80ff-e32697bdbcd2/B03.tif.
+Copying nodata values from source /var/lib/cwl/stg2a9e7a1e-c2e5-4875-80ff-e32697bdbcd2/B03.tif to destination B03_60m.tiff.
+...10...20...30...40...50...60...70...80...90...100 - done.
+INFO [job reproject_b03_60m] completed success
+INFO [step reproject_b03_60m] completed success
+INFO [workflow process] starting step calculate_cyanobacteria
+INFO [step calculate_cyanobacteria] start
+INFO [job calculate_cyanobacteria] /tmp/vft792_o$ docker \
+    run \
+    -i \
+    --mount=type=bind,source=/tmp/vft792_o,target=/JZLvUs \
+    --mount=type=bind,source=/tmp/z8hjy5pa,target=/tmp \
+    --mount=type=bind,source=/tmp/xfoge6za/B02.tif,target=/var/lib/cwl/stgc5908b18-0dbb-4cd8-82d2-80e50af7b7c8/B02.tif,readonly \
+    --mount=type=bind,source=/tmp/w3u_qk9f/B03.tif,target=/var/lib/cwl/stg6c2e3dce-916c-4a99-b3ca-3f95150971ca/B03.tif,readonly \
+    --mount=type=bind,source=/tmp/kr3o56uk/B04.tif,target=/var/lib/cwl/stgb3b9b83f-a5e9-44ef-b24a-845334a14c15/B04.tif,readonly \
+    --workdir=/JZLvUs \
+    --read-only=true \
+    --net=none \
+    --user=1000:1000 \
+    --rm \
+    --cidfile=/tmp/cwk6mv4i/20240531161223-311779.cid \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/JZLvUs \
+    ogc-ospd/algae-usecase/calculate-band:1.1.0 \
+    --co \
+    TILED=YES \
+    --overwrite \
+    --type \
+    Float32 \
+    -A \
+    /var/lib/cwl/stgc5908b18-0dbb-4cd8-82d2-80e50af7b7c8/B02.tif \
+    -B \
+    /var/lib/cwl/stg6c2e3dce-916c-4a99-b3ca-3f95150971ca/B03.tif \
+    -C \
+    /var/lib/cwl/stgb3b9b83f-a5e9-44ef-b24a-845334a14c15/B04.tif \
+    --calc \
+    '115530*(((B.astype(float)*C.astype(float))/A.astype(float))**2.38)' \
+    --outfile \
+    S2A_29SPC_20190701_0_L2A_cyanobacteria.tiff
+<string>:1: RuntimeWarning: invalid value encountered in divide
+0.. 0.. 1.. 2.. 3.. 4.. 4.. 5.. 6.. 7.. 8.. 9.. 9.. 10.. 11.. 12.. 13.. 14.. 14.. 15.. 16.. 17.. 18.. 19.. 19.. 20.. 21.. 22.. 23.. 23.. 24.. 25.. 26.. 27.. 28.. 28.. 29.. 30.. 31.. 32.. 33.. 33.. 34.. 35.. 36.. 37.. 38.. 38.. 39.. 40.. 41.. 42.. 42.. 43.. 44.. 45.. 46.. 47.. 47.. 48.. 49.. 50.. 51.. 52.. 52.. 53.. 54.. 55.. 56.. 57.. 57.. 58.. 59.. 60.. 61.. 61.. 62.. 63.. 64.. 65.. 66.. 66.. 67.. 68.. 69.. 70.. 71.. 71.. 72.. 73.. 74.. 75.. 76.. 76.. 77.. 78.. 79.. 80.. 80.. 81.. 82.. 83.. 84.. 85.. 85.. 86.. 87.. 88.. 89.. 90.. 90.. 91.. 92.. 93.. 94.. 95.. 95.. 96.. 97.. 98.. 99.. 100 - Done
+INFO [job calculate_cyanobacteria] Max memory used: 1155MiB
+INFO [job calculate_cyanobacteria] completed success
+INFO [step calculate_cyanobacteria] completed success
+INFO [workflow process] starting step download_b01_60m
+INFO [step download_b01_60m] start
+INFO [job download_b01_60m] /tmp/lr6vsj_8$ docker \
+    run \
+    -i \
+    --mount=type=bind,source=/tmp/lr6vsj_8,target=/JZLvUs \
+    --mount=type=bind,source=/tmp/lcz75zlo,target=/tmp \
+    --workdir=/JZLvUs \
+    --read-only=true \
+    --user=1000:1000 \
+    --rm \
+    --cidfile=/tmp/codoith5/20240531161232-499870.cid \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/JZLvUs \
+    ogc-ospd/algae-usecase/download-band-sentinel2-stac-item:1.1.0 \
+    --band \
+    B01 \
+    --stac-item-url \
+    https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_29SPC_20190701_0_L2A
+/JZLvUs/B01.tif
+INFO [job download_b01_60m] Max memory used: 15MiB
+INFO [job download_b01_60m] completed success
+INFO [step download_b01_60m] completed success
+INFO [workflow process] starting step calculate_chlorophyll_a
+INFO [step calculate_chlorophyll_a] start
+INFO [job calculate_chlorophyll_a] /tmp/i78lm06w$ docker \
+    run \
+    -i \
+    --mount=type=bind,source=/tmp/i78lm06w,target=/JZLvUs \
+    --mount=type=bind,source=/tmp/iae_iety,target=/tmp \
+    --mount=type=bind,source=/tmp/xfoge6za/B02.tif,target=/var/lib/cwl/stgd6ea8ae2-f42b-4965-acdc-57d71db2f430/B02.tif,readonly \
+    --mount=type=bind,source=/tmp/w3u_qk9f/B03.tif,target=/var/lib/cwl/stg5c59a6ec-865d-4eef-8069-8523c079a199/B03.tif,readonly \
+    --mount=type=bind,source=/tmp/kr3o56uk/B04.tif,target=/var/lib/cwl/stgf4d84351-c3fa-4715-9193-d2f1a2e4beef/B04.tif,readonly \
+    --workdir=/JZLvUs \
+    --read-only=true \
+    --net=none \
+    --user=1000:1000 \
+    --rm \
+    --cidfile=/tmp/znksi0bv/20240531161235-754077.cid \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/JZLvUs \
+    ogc-ospd/algae-usecase/calculate-band:1.1.0 \
+    --co \
+    TILED=YES \
+    --overwrite \
+    --type \
+    Float32 \
+    -A \
+    /var/lib/cwl/stgd6ea8ae2-f42b-4965-acdc-57d71db2f430/B02.tif \
+    -B \
+    /var/lib/cwl/stg5c59a6ec-865d-4eef-8069-8523c079a199/B03.tif \
+    -C \
+    /var/lib/cwl/stgf4d84351-c3fa-4715-9193-d2f1a2e4beef/B04.tif \
+    --calc \
+    '4.26*((C/A)**3.94)' \
+    --outfile \
+    S2A_29SPC_20190701_0_L2A_chlorophyll_a.tiff
+<string>:1: RuntimeWarning: invalid value encountered in divide
+0.. 0.. 1.. 2.. 3.. 4.. 4.. 5.. 6.. 7.. 8.. 9.. 9.. 10.. 11.. 12.. 13.. 14.. 14.. 15.. 16.. 17.. 18.. 19.. 19.. 20.. 21.. 22.. 23.. 23.. 24.. 25.. 26.. 27.. 28.. 28.. 29.. 30.. 31.. 32.. 33.. 33.. 34.. 35.. 36.. 37.. 38.. 38.. 39.. 40.. 41.. 42.. 42.. 43.. 44.. 45.. 46.. 47.. 47.. 48.. 49.. 50.. 51.. 52.. 52.. 53.. 54.. 55.. 56.. 57.. 57.. 58.. 59.. 60.. 61.. 61.. 62.. 63.. 64.. 65.. 66.. 66.. 67.. 68.. 69.. 70.. 71.. 71.. 72.. 73.. 74.. 75.. 76.. 76.. 77.. 78.. 79.. 80.. 80.. 81.. 82.. 83.. 84.. 85.. 85.. 86.. 87.. 88.. 89.. 90.. 90.. 91.. 92.. 93.. 94.. 95.. 95.. 96.. 97.. 98.. 99.. 100 - Done
+INFO [job calculate_chlorophyll_a] Max memory used: 1159MiB
+INFO [job calculate_chlorophyll_a] completed success
+INFO [step calculate_chlorophyll_a] completed success
+INFO [workflow process] starting step plot_cyanobacteria
+INFO [step plot_cyanobacteria] start
+INFO [job plot_cyanobacteria] /tmp/4dycg_4j$ docker \
+    run \
+    -i \
+    --mount=type=bind,source=/tmp/4dycg_4j,target=/JZLvUs \
+    --mount=type=bind,source=/tmp/pwl04367,target=/tmp \
+    --mount=type=bind,source=/tmp/vft792_o/S2A_29SPC_20190701_0_L2A_cyanobacteria.tiff,target=/var/lib/cwl/stg0bedf9ff-14b0-4265-a6d0-6a8a3f640201/S2A_29SPC_20190701_0_L2A_cyanobacteria.tiff,readonly \
+    --workdir=/JZLvUs \
+    --read-only=true \
+    --net=none \
+    --user=1000:1000 \
+    --rm \
+    --cidfile=/tmp/5csk7uip/20240531161244-800649.cid \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/JZLvUs \
+    ogc-ospd/algae-usecase/plot-image:1.0.0 \
+    --clip-max \
+    100000000000000 \
+    --clip-min \
+    1000000 \
+    --color-scale \
+    '[
+  [1E6,  [ 18,  28,  60] ],
+  [1E7,  [ 73, 111, 242] ],
+  [1E8,  [130, 211,  95] ],
+  [1E9,  [254, 253,   5] ],
+  [1E10, [253,   0,   4] ],
+  [1E11, [142,  32,  38] ],
+  [1E12, [111, 63,  125] ],
+  [1E13, [ 58,   6,   3] ],
+  [1E14, [ 18,  28,  60] ]
+]
+' \
+    --input-image \
+    /var/lib/cwl/stg0bedf9ff-14b0-4265-a6d0-6a8a3f640201/S2A_29SPC_20190701_0_L2A_cyanobacteria.tiff \
+    --output-name \
+    S2A_29SPC_20190701_0_L2A_cyanobacteria_color \
+    --plot-name \
+    S2A_29SPC_20190701_0_L2A_cyanobacteria_plot \
+    --plot-title \
+    Cyanobacteria
+nodata value: 3.4028234663852886e+38
+nodata count: 0
+Data range: 55574.06640625 to 3.1049018696812986e+19
+Clip values below minimum: 1000000.0 (except 'nodata')
+Clip values above maximum: 100000000000000.0 (except 'nodata')
+Normalized Color Scales: [
+  [
+    0.0,
+    [
+      0.07058823529411765,
+      0.10980392156862745,
+      0.23529411764705882,
+      1
+    ]
+  ],
+  [
+    9.000000090000001e-08,
+    [
+      0.28627450980392155,
+      0.43529411764705883,
+      0.9490196078431372,
+      1
+    ]
+  ],
+  [
+    9.900000099e-07,
+    [
+      0.5098039215686274,
+      0.8274509803921568,
+      0.37254901960784315,
+      1
+    ]
+  ],
+  [
+    9.990000099900002e-06,
+    [
+      0.996078431372549,
+      0.9921568627450981,
+      0.0196078431372549,
+      1
+    ]
+  ],
+  [
+    9.999000099990002e-05,
+    [
+      0.9921568627450981,
+      0.0,
+      0.01568627450980392,
+      1
+    ]
+  ],
+  [
+    0.0009999900099999,
+    [
+      0.5568627450980392,
+      0.12549019607843137,
+      0.14901960784313725,
+      1
+    ]
+  ],
+  [
+    0.009999990099999901,
+    [
+      0.43529411764705883,
+      0.24705882352941178,
+      0.49019607843137253,
+      1
+    ]
+  ],
+  [
+    0.09999999099999991,
+    [
+      0.22745098039215686,
+      0.023529411764705882,
+      0.011764705882352941,
+      1
+    ]
+  ],
+  [
+    1.0,
+    [
+      0.07058823529411765,
+      0.10980392156862745,
+      0.23529411764705882,
+      1
+    ]
+  ],
+  [
+    3.4028235004135235e+24,
+    [
+      0,
+      0,
+      0,
+      0
+    ]
+  ]
+]
+INFO [job plot_cyanobacteria] Max memory used: 13103MiB
+INFO [job plot_cyanobacteria] completed success
+INFO [step plot_cyanobacteria] completed success
+INFO [workflow process] starting step calculate_turbidity
+INFO [step calculate_turbidity] start
+INFO [job calculate_turbidity] /tmp/f4e27i2d$ docker \
+    run \
+    -i \
+    --mount=type=bind,source=/tmp/f4e27i2d,target=/JZLvUs \
+    --mount=type=bind,source=/tmp/cm5r4hk5,target=/tmp \
+    --mount=type=bind,source=/tmp/lr6vsj_8/B01.tif,target=/var/lib/cwl/stg34d48217-3570-491f-ae20-5c6989b13b95/B01.tif,readonly \
+    --mount=type=bind,source=/tmp/n1lkywy1/B03_60m.tiff,target=/var/lib/cwl/stg44eb3e96-0704-4c12-984f-539e53a7667f/B03_60m.tiff,readonly \
+    --workdir=/JZLvUs \
+    --read-only=true \
+    --net=none \
+    --user=1000:1000 \
+    --rm \
+    --cidfile=/tmp/0lcesmay/20240531161303-356156.cid \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/JZLvUs \
+    ogc-ospd/algae-usecase/calculate-band:1.1.0 \
+    --co \
+    TILED=YES \
+    --overwrite \
+    --type \
+    Float32 \
+    -A \
+    /var/lib/cwl/stg34d48217-3570-491f-ae20-5c6989b13b95/B01.tif \
+    -C \
+    /var/lib/cwl/stg44eb3e96-0704-4c12-984f-539e53a7667f/B03_60m.tiff \
+    --calc \
+    '(8.93*(C/A))-6.39' \
+    --outfile \
+    S2A_29SPC_20190701_0_L2A_turbidity.tiff
+<string>:1: RuntimeWarning: invalid value encountered in divide
+0.. 1.. 3.. 4.. 6.. 7.. 9.. 10.. 12.. 14.. 15.. 17.. 18.. 20.. 21.. 23.. 25.. 26.. 28.. 29.. 31.. 32.. 34.. 35.. 37.. 39.. 40.. 42.. 43.. 45.. 46.. 48.. 50.. 51.. 53.. 54.. 56.. 57.. 59.. 60.. 62.. 64.. 65.. 67.. 68.. 70.. 71.. 73.. 75.. 76.. 78.. 79.. 81.. 82.. 84.. 85.. 87.. 89.. 90.. 92.. 93.. 95.. 96.. 98.. 100 - Done
+INFO [job calculate_turbidity] completed success
+INFO [step calculate_turbidity] completed success
+INFO [workflow process] starting step plot_chlorophyll_a
+INFO [step plot_chlorophyll_a] start
+INFO [job plot_chlorophyll_a] /tmp/68bkdyb0$ docker \
+    run \
+    -i \
+    --mount=type=bind,source=/tmp/68bkdyb0,target=/JZLvUs \
+    --mount=type=bind,source=/tmp/skoc5hdf,target=/tmp \
+    --mount=type=bind,source=/tmp/i78lm06w/S2A_29SPC_20190701_0_L2A_chlorophyll_a.tiff,target=/var/lib/cwl/stg79ef5a6f-b2aa-4ef0-8319-fe4a252b8f7b/S2A_29SPC_20190701_0_L2A_chlorophyll_a.tiff,readonly \
+    --workdir=/JZLvUs \
+    --read-only=true \
+    --net=none \
+    --user=1000:1000 \
+    --rm \
+    --cidfile=/tmp/9bnstjsp/20240531161304-389847.cid \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/JZLvUs \
+    ogc-ospd/algae-usecase/plot-image:1.0.0 \
+    --color-scale \
+    '[
+  [0,  [ 73, 111, 242] ],
+  [6,  [130, 211,  95] ],
+  [12, [254, 253,   5] ],
+  [20, [253,   0,   4] ],
+  [30, [142,  32,  38] ],
+  [50, [217, 124, 245] ]
+]
+' \
+    --input-image \
+    /var/lib/cwl/stg79ef5a6f-b2aa-4ef0-8319-fe4a252b8f7b/S2A_29SPC_20190701_0_L2A_chlorophyll_a.tiff \
+    --output-name \
+    S2A_29SPC_20190701_0_L2A_chlorophyll_a_color \
+    --plot-name \
+    S2A_29SPC_20190701_0_L2A_chlorophyll_a_plot \
+    --plot-title \
+    'Chlorophyll a'
+nodata value: 3.4028234663852886e+38
+nodata count: 0
+Data range: 4.221334393150755e-10 to 34423691018240.0
+Clip values below minimum: None (except 'nodata')
+Clip values above maximum: None (except 'nodata')
+Normalized Color Scales: [
+  [
+    -1.2262875561234868e-23,
+    [
+      0.28627450980392155,
+      0.43529411764705883,
+      0.9490196078431372,
+      1
+    ]
+  ],
+  [
+    1.742985665424042e-13,
+    [
+      0.5098039215686274,
+      0.8274509803921568,
+      0.37254901960784315,
+      1
+    ]
+  ],
+  [
+    3.485971330970713e-13,
+    [
+      0.996078431372549,
+      0.9921568627450981,
+      0.0196078431372549,
+      1
+    ]
+  ],
+  [
+    5.809952218366274e-13,
+    [
+      0.9921568627450981,
+      0.0,
+      0.01568627450980392,
+      1
+    ]
+  ],
+  [
+    8.714928327610726e-13,
+    [
+      0.5568627450980392,
+      0.12549019607843137,
+      0.14901960784313725,
+      1
+    ]
+  ],
+  [
+    1.4524880546099629e-12,
+    [
+      0.8509803921568627,
+      0.48627450980392156,
+      0.9607843137254902,
+      1
+    ]
+  ],
+  [
+    9.885120873825653e+24,
+    [
+      0,
+      0,
+      0,
+      0
+    ]
+  ]
+]
+INFO [job plot_chlorophyll_a] Max memory used: 12881MiB
+INFO [job plot_chlorophyll_a] completed success
+INFO [step plot_chlorophyll_a] completed success
+INFO [workflow process] starting step plot_turbidity
+INFO [step plot_turbidity] start
+INFO [job plot_turbidity] /tmp/2wq8ftgz$ docker \
+    run \
+    -i \
+    --mount=type=bind,source=/tmp/2wq8ftgz,target=/JZLvUs \
+    --mount=type=bind,source=/tmp/zbkqo1h5,target=/tmp \
+    --mount=type=bind,source=/tmp/f4e27i2d/S2A_29SPC_20190701_0_L2A_turbidity.tiff,target=/var/lib/cwl/stgd624f809-8ab4-441f-b88a-403dd6fa62de/S2A_29SPC_20190701_0_L2A_turbidity.tiff,readonly \
+    --workdir=/JZLvUs \
+    --read-only=true \
+    --net=none \
+    --user=1000:1000 \
+    --rm \
+    --cidfile=/tmp/7z_17t9u/20240531161323-053320.cid \
+    --env=TMPDIR=/tmp \
+    --env=HOME=/JZLvUs \
+    ogc-ospd/algae-usecase/plot-image:1.0.0 \
+    --color-scale \
+    '[
+  [0,  [ 73, 111, 242] ],
+  [4,  [130, 211,  95] ],
+  [8,  [254, 253,   5] ],
+  [12, [253,   0,   4] ],
+  [16, [142,  32,  38] ],
+  [20, [217, 124, 245] ]
+]
+' \
+    --input-image \
+    /var/lib/cwl/stgd624f809-8ab4-441f-b88a-403dd6fa62de/S2A_29SPC_20190701_0_L2A_turbidity.tiff \
+    --output-name \
+    S2A_29SPC_20190701_0_L2A_turbidity_color \
+    --plot-name \
+    S2A_29SPC_20190701_0_L2A_turbidity_plot \
+    --plot-title \
+    Turbidity
+nodata value: 3.4028234663852886e+38
+nodata count: 376
+Data range: -4.642073631286621 to 145.95428466796875
+Clip values below minimum: None (except 'nodata')
+Clip values above maximum: None (except 'nodata')
+Normalized Color Scales: [
+  [
+    0.030824607471996047,
+    [
+      0.28627450980392155,
+      0.43529411764705883,
+      0.9490196078431372,
+      1
+    ]
+  ],
+  [
+    0.0573856747193956,
+    [
+      0.5098039215686274,
+      0.8274509803921568,
+      0.37254901960784315,
+      1
+    ]
+  ],
+  [
+    0.08394674196679516,
+    [
+      0.996078431372549,
+      0.9921568627450981,
+      0.0196078431372549,
+      1
+    ]
+  ],
+  [
+    0.11050780921419472,
+    [
+      0.9921568627450981,
+      0.0,
+      0.01568627450980392,
+      1
+    ]
+  ],
+  [
+    0.13706887646159427,
+    [
+      0.5568627450980392,
+      0.12549019607843137,
+      0.14901960784313725,
+      1
+    ]
+  ],
+  [
+    0.16362994370899384,
+    [
+      0.8509803921568627,
+      0.48627450980392156,
+      0.9607843137254902,
+      1
+    ]
+  ],
+  [
+    2.2595655730422228e+36,
+    [
+      0,
+      0,
+      0,
+      0
+    ]
+  ]
+]
+INFO [job plot_turbidity] Max memory used: 453MiB
+INFO [job plot_turbidity] completed success
+INFO [step plot_turbidity] completed success
+INFO [workflow process] completed success
+INFO [step process] completed success
+INFO [workflow ] completed success
+{
+    "chlorophyll_a": [
+        {
+            "location": "file:///tmp/S2A_29SPC_20190701_0_L2A_chlorophyll_a.tiff",
+            "basename": "S2A_29SPC_20190701_0_L2A_chlorophyll_a.tiff",
+            "class": "File",
+            "checksum": "sha1$4167380e09709513ec2f426f059b6cbb39dd125c",
+            "size": 484719456,
+            "format": "http://www.opengis.net/def/media-type/ogc/1.0/geotiff",
+            "path": "/tmp/S2A_29SPC_20190701_0_L2A_chlorophyll_a.tiff"
+        }
+    ],
+    "chlorophyll_a_color": [
+        {
+            "location": "file:///tmp/S2A_29SPC_20190701_0_L2A_chlorophyll_a_color.tif",
+            "basename": "S2A_29SPC_20190701_0_L2A_chlorophyll_a_color.tif",
+            "class": "File",
+            "checksum": "sha1$04dca324461a031097eeae77df7e2d97cf5fe123",
+            "size": 482241806,
+            "format": "http://www.opengis.net/def/media-type/ogc/1.0/geotiff",
+            "path": "/tmp/S2A_29SPC_20190701_0_L2A_chlorophyll_a_color.tif"
+        }
+    ],
+    "chlorophyll_a_plot": [
+        {
+            "location": "file:///tmp/S2A_29SPC_20190701_0_L2A_chlorophyll_a_plot.png",
+            "basename": "S2A_29SPC_20190701_0_L2A_chlorophyll_a_plot.png",
+            "class": "File",
+            "checksum": "sha1$b1898ccdeaafd778b5fca86aaaf99dad6921dd01",
+            "size": 765727,
+            "format": "https://www.iana.org/assignments/media-types/image/png",
+            "path": "/tmp/S2A_29SPC_20190701_0_L2A_chlorophyll_a_plot.png"
+        }
+    ],
+    "cyanobacteria": [
+        {
+            "location": "file:///tmp/S2A_29SPC_20190701_0_L2A_cyanobacteria.tiff",
+            "basename": "S2A_29SPC_20190701_0_L2A_cyanobacteria.tiff",
+            "class": "File",
+            "checksum": "sha1$cc6bb63888f31fd06775c32a868a226a9e5f6f79",
+            "size": 484719456,
+            "format": "http://www.opengis.net/def/media-type/ogc/1.0/geotiff",
+            "path": "/tmp/S2A_29SPC_20190701_0_L2A_cyanobacteria.tiff"
+        }
+    ],
+    "cyanobacteria_color": [
+        {
+            "location": "file:///tmp/S2A_29SPC_20190701_0_L2A_cyanobacteria_color.tif",
+            "basename": "S2A_29SPC_20190701_0_L2A_cyanobacteria_color.tif",
+            "class": "File",
+            "checksum": "sha1$ee28bfbb1143c5e869cc07962f87b8cfac6106f6",
+            "size": 482241806,
+            "format": "http://www.opengis.net/def/media-type/ogc/1.0/geotiff",
+            "path": "/tmp/S2A_29SPC_20190701_0_L2A_cyanobacteria_color.tif"
+        }
+    ],
+    "cyanobacteria_plot": [
+        {
+            "location": "file:///tmp/S2A_29SPC_20190701_0_L2A_cyanobacteria_plot.png",
+            "basename": "S2A_29SPC_20190701_0_L2A_cyanobacteria_plot.png",
+            "class": "File",
+            "checksum": "sha1$95cfd2032497a783e4fd47b6a06fbd92e181d721",
+            "size": 702380,
+            "format": "https://www.iana.org/assignments/media-types/image/png",
+            "path": "/tmp/S2A_29SPC_20190701_0_L2A_cyanobacteria_plot.png"
+        }
+    ],
+    "turbidity": [
+        {
+            "location": "file:///tmp/S2A_29SPC_20190701_0_L2A_turbidity.tiff",
+            "basename": "S2A_29SPC_20190701_0_L2A_turbidity.tiff",
+            "class": "File",
+            "checksum": "sha1$9d39ae3c714d6f52c904d156ef4e8e0dec8d1893",
+            "size": 16778136,
+            "format": "http://www.opengis.net/def/media-type/ogc/1.0/geotiff",
+            "path": "/tmp/S2A_29SPC_20190701_0_L2A_turbidity.tiff"
+        }
+    ],
+    "turbidity_color": [
+        {
+            "location": "file:///tmp/S2A_29SPC_20190701_0_L2A_turbidity_color.tif",
+            "basename": "S2A_29SPC_20190701_0_L2A_turbidity_color.tif",
+            "class": "File",
+            "checksum": "sha1$a2beee36554454e4c0090480d062bc893f3ae7cc",
+            "size": 13395806,
+            "format": "http://www.opengis.net/def/media-type/ogc/1.0/geotiff",
+            "path": "/tmp/S2A_29SPC_20190701_0_L2A_turbidity_color.tif"
+        }
+    ],
+    "turbidity_plot": [
+        {
+            "location": "file:///tmp/S2A_29SPC_20190701_0_L2A_turbidity_plot.png",
+            "basename": "S2A_29SPC_20190701_0_L2A_turbidity_plot.png",
+            "class": "File",
+            "checksum": "sha1$96bbca0656525af83d0d7b5e0a2a64f235a32362",
+            "size": 802069,
+            "format": "https://www.iana.org/assignments/media-types/image/png",
+            "path": "/tmp/S2A_29SPC_20190701_0_L2A_turbidity_plot.png"
+        }
+    ]
+}INFO Final process status is success

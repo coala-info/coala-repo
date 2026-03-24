@@ -1,0 +1,978 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "Genome assembly workflow for nanopore reads, for TSI \n---\nInput: Nanopore reads (can be in format: fastq, fastq.gz, fastqsanger, or fastqsanger.gz) \n--- \nOptional settings to specify when the workflow is run:\n[1] how many input files to split the original input into (to speed up the workflow). default = 0. example: set to 2000 to split a 60 GB read file into 2000 files of ~ 30 MB. \n[2] filtering: min average read quality score. default = 10\n[3] filtering: min read length. default = 200\n[4] trimming: trim this many nucleotides from start of read. default = 50\n[5] note: these are suggestions and will depend on the characteristics of your raw reads and downstream aims. If filtering and trimming settings are too stringent, there may be no reads remaining and workflow will fail. \n--- \nWorkflow steps:\n[1] runs FastQC on raw reads\n[2] splits input reads file into separate files to speed up the next step of Porechop\n[3] trims nanopore adapters using Porechop\n[4] trims and filters nanopore reads by quality and length using Nanofilt\n[5] collapses back into a single read file, fastqsanger format\n[6] runs FastqQC on trimmed/filtered reads\n[7] assembles genome with Flye\n[8] calculates statistics on genome assembly contigs with Fasta Statistics\n[9] draws genome assembly graph with Bandage \n--- \nMain outputs:\n[1] FastQC report on raw reads, html\n[2] Adpater-chopped, trimmed, filtered reads in fastqsanger format\n[3] FastQC report on filtered reads, html\n[4] genome assembly contigs in fasta format (primary assembly)\n[5] genome assembly statistics\n[6] genome assembly graph in Bandage format \n--- \nNote: You may wish to plot raw reads first (e.g. using the tool NanoPlot), to get a better of idea of read lengths and quality, to decide on filtering/trimming settings.",
+    "comments": [
+        {
+            "child_comments": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "child_steps": [
+                9,
+                6,
+                7,
+                8
+            ],
+            "color": "none",
+            "data": {
+                "title": "Frame"
+            },
+            "id": 0,
+            "position": [
+                303.7920640298065,
+                246.5
+            ],
+            "size": [
+                1167,
+                606
+            ],
+            "type": "frame"
+        },
+        {
+            "color": "none",
+            "data": {
+                "size": 2,
+                "text": "read QC reports"
+            },
+            "id": 8,
+            "position": [
+                1628.7019118391563,
+                56.5
+            ],
+            "size": [
+                284,
+                42
+            ],
+            "type": "text"
+        },
+        {
+            "color": "none",
+            "data": {
+                "size": 2,
+                "text": "Read filtering settings"
+            },
+            "id": 6,
+            "position": [
+                299.8545288085937,
+                1090.4
+            ],
+            "size": [
+                391.1,
+                76.2
+            ],
+            "type": "text"
+        },
+        {
+            "color": "blue",
+            "data": {
+                "size": 1,
+                "text": "Nanofilt<br>default settings except for:<br><br>average read quality: 10<br>min read length: 200<br>trim from start of read: 50 bp<br><br>these are suggestions <br>and can be changed at <br>runtime. e.g., if reads are very high quality, you may wish to set a higher average read quality cutoff (or vice versa).<br>"
+            },
+            "id": 4,
+            "position": [
+                882.1545288085938,
+                341.7
+            ],
+            "size": [
+                255,
+                224
+            ],
+            "type": "text"
+        },
+        {
+            "color": "blue",
+            "data": {
+                "size": 1,
+                "text": "Porechop adapter trimming<br><br>default settings; can be changed at runtime.<br><br>output is uncompressed, as required by nanofilt"
+            },
+            "id": 3,
+            "position": [
+                593.6019118391562,
+                449.9
+            ],
+            "size": [
+                215,
+                165
+            ],
+            "type": "text"
+        },
+        {
+            "color": "blue",
+            "data": {
+                "size": 1,
+                "text": "Input file is split to make Porechop step faster"
+            },
+            "id": 2,
+            "position": [
+                341.0545288085938,
+                355
+            ],
+            "size": [
+                135,
+                104
+            ],
+            "type": "text"
+        },
+        {
+            "color": "none",
+            "data": {
+                "size": 2,
+                "text": "Trim and filter reads"
+            },
+            "id": 1,
+            "position": [
+                323.0920640298065,
+                284.5999999999999
+            ],
+            "size": [
+                398.4,
+                43.6
+            ],
+            "type": "text"
+        },
+        {
+            "color": "none",
+            "data": {
+                "size": 2,
+                "text": "Assembly"
+            },
+            "id": 10,
+            "position": [
+                1660.3019118391562,
+                834.6999999999999
+            ],
+            "size": [
+                689.1,
+                51.6
+            ],
+            "type": "text"
+        },
+        {
+            "child_steps": [
+                11,
+                12,
+                13,
+                14
+            ],
+            "color": "none",
+            "data": {
+                "title": "Frame"
+            },
+            "id": 9,
+            "position": [
+                1569.9019118391561,
+                789.8000000000001
+            ],
+            "size": [
+                737,
+                763
+            ],
+            "type": "frame"
+        },
+        {
+            "child_comments": [
+                8
+            ],
+            "child_steps": [
+                5,
+                10
+            ],
+            "color": "none",
+            "data": {
+                "title": "Frame"
+            },
+            "id": 7,
+            "position": [
+                1601.6019118391562,
+                0
+            ],
+            "size": [
+                361,
+                758
+            ],
+            "type": "frame"
+        },
+        {
+            "child_comments": [
+                6
+            ],
+            "child_steps": [
+                2,
+                3,
+                4
+            ],
+            "color": "none",
+            "data": {
+                "title": "Frame"
+            },
+            "id": 5,
+            "position": [
+                284.0545288085938,
+                1057
+            ],
+            "size": [
+                558,
+                526
+            ],
+            "type": "frame"
+        }
+    ],
+    "creator": [
+        {
+            "class": "Person",
+            "identifier": "",
+            "name": "Gareth Price"
+        },
+        {
+            "class": "Person",
+            "identifier": "https://orcid.org/0000-0002-9009-7453",
+            "name": "Katherine Farquharson"
+        }
+    ],
+    "format-version": "0.1",
+    "license": "GPL-3.0-or-later",
+    "name": "Genome assembly workflow for nanopore reads, for TSI",
+    "report": {
+        "markdown": "## Genome assembly with nanopore data\n\n```galaxy\nworkflow_display()\n```\n\n\n```galaxy\ninvocation_inputs()\n```\n\n\r\n```galaxy\ninvocation_outputs()\n```\r\n"
+    },
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Sequencing reads (in any of these formats: fastq, fastq.gz, fastqsanger, fastqsanger.gz)"
+                }
+            ],
+            "label": "Sequencing reads (in any of these formats: fastq, fastq.gz, fastqsanger, fastqsanger.gz)",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 29.1485595703125,
+                "top": 72.78781127929688
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "3c8c96ad-0f37-46af-aac9-339790293885",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "Split input to speed up next step with Porechop. e.g. if input fastq is 60 GB, split into 2000 files of approx 30 MB. ",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "Split input to speed up next step with Porechop. e.g. if input fastq is 60 GB, split into 2000 files of approx 30 MB. ",
+                    "name": "How many new files to split into during read filtering stage?"
+                }
+            ],
+            "label": "How many new files to split into during read filtering stage?",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 0.0,
+                "top": 466.158203125
+            },
+            "tool_id": null,
+            "tool_state": "{\"parameter_type\": \"integer\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "e18299f7-e62b-4ce7-a831-d1b8a706dee2",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 2,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Minimum average read quality score to filter on"
+                }
+            ],
+            "label": "Minimum average read quality score to filter on",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 431.5180500632991,
+                "top": 1201.6372015055836
+            },
+            "tool_id": null,
+            "tool_state": "{\"default\": 10, \"parameter_type\": \"integer\", \"optional\": true}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "ea0b5811-5b79-4d2a-9f64-524fa336dbdd",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 3,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Minimum read length to filter on"
+                }
+            ],
+            "label": "Minimum read length to filter on",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 478.3170356973923,
+                "top": 1320.343915049351
+            },
+            "tool_id": null,
+            "tool_state": "{\"default\": 200, \"parameter_type\": \"integer\", \"optional\": true}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "aad43e21-c885-4d43-b3a5-94a5f6fe4322",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "4": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 4,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Trim this many nucleotides from start of read"
+                }
+            ],
+            "label": "Trim this many nucleotides from start of read",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 566.3575292416633,
+                "top": 1421.9049581756376
+            },
+            "tool_id": null,
+            "tool_state": "{\"default\": 50, \"parameter_type\": \"integer\", \"optional\": true}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "b0b704b7-c639-480d-b723-24b7a2e87a3f",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "5": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.74+galaxy0",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "input_file": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool FastQC",
+                    "name": "adapters"
+                },
+                {
+                    "description": "runtime parameter for tool FastQC",
+                    "name": "contaminants"
+                },
+                {
+                    "description": "runtime parameter for tool FastQC",
+                    "name": "limits"
+                }
+            ],
+            "label": "Raw reads FastQC",
+            "name": "FastQC",
+            "outputs": [
+                {
+                    "name": "html_file",
+                    "type": "html"
+                },
+                {
+                    "name": "text_file",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "left": 1670.1947313038836,
+                "top": 118.58740685178134
+            },
+            "post_job_actions": {
+                "TagDatasetActionhtml_file": {
+                    "action_arguments": {
+                        "tags": "fastqc-on-raw-reads"
+                    },
+                    "action_type": "TagDatasetAction",
+                    "output_name": "html_file"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.74+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "5ec9f6bceaee",
+                "name": "fastqc",
+                "owner": "devteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adapters\": {\"__class__\": \"RuntimeValue\"}, \"contaminants\": {\"__class__\": \"RuntimeValue\"}, \"input_file\": {\"__class__\": \"ConnectedValue\"}, \"kmers\": \"7\", \"limits\": {\"__class__\": \"RuntimeValue\"}, \"min_length\": null, \"nogroup\": false, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.74+galaxy0",
+            "type": "tool",
+            "uuid": "a0cc95b6-a618-4f3e-9f07-a7b0e55d92ea",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "text_file",
+                    "output_name": "text_file",
+                    "uuid": "282718e8-a971-48dc-9356-537fce45b772"
+                },
+                {
+                    "label": "html_file",
+                    "output_name": "html_file",
+                    "uuid": "d44ae37a-393a-4823-ac09-4224c5a7a293"
+                }
+            ]
+        },
+        "6": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/split_file_to_collection/split_file_to_collection/0.5.2",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "split_parms|input": {
+                    "id": 0,
+                    "output_name": "output"
+                },
+                "split_parms|select_mode|numnew": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Split file",
+                    "name": "split_parms"
+                }
+            ],
+            "label": "Split into separate files",
+            "name": "Split file",
+            "outputs": [
+                {
+                    "name": "list_output_fastq",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 339.77398681640625,
+                "top": 436.9261474609375
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/split_file_to_collection/split_file_to_collection/0.5.2",
+            "tool_shed_repository": {
+                "changeset_revision": "2dae863c8f42",
+                "name": "split_file_to_collection",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"split_parms\": {\"select_ftype\": \"fastq\", \"__current_case__\": 2, \"input\": {\"__class__\": \"ConnectedValue\"}, \"select_mode\": {\"mode\": \"numnew\", \"__current_case__\": 1, \"numnew\": {\"__class__\": \"ConnectedValue\"}}, \"newfilenames\": \"split_file\", \"select_allocate\": {\"allocate\": \"byrow\", \"__current_case__\": 2}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.5.2",
+            "type": "tool",
+            "uuid": "147bf006-f5d8-4e8c-aaa8-5b0212900861",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "7": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/porechop/porechop/0.2.4+galaxy0",
+            "errors": null,
+            "id": 7,
+            "input_connections": {
+                "input_file": {
+                    "id": 6,
+                    "output_name": "list_output_fastq"
+                }
+            },
+            "inputs": [],
+            "label": "Porechop on each file",
+            "name": "Porechop",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "fasta"
+                }
+            ],
+            "position": {
+                "left": 583.5234171660879,
+                "top": 594.1319463479057
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/porechop/porechop/0.2.4+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "543cbeef3949",
+                "name": "porechop",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adapter_search_settings\": {\"adapter_threshold\": \"90.0\", \"check_reads\": \"10000\", \"scoring_scheme\": \"3,-6,-5,-2\"}, \"barcode_binning_settings\": {\"barcode_threshold\": \"75.0\", \"barcode_diff\": \"5.0\", \"require_two_barcodes\": false, \"discard_unassigned\": false}, \"end_adapter_settings\": {\"end_size\": \"150\", \"min_trim_size\": \"4\", \"extra_end_trim\": \"2\", \"end_threshold\": \"75.0\"}, \"format\": \"fastq\", \"input_file\": {\"__class__\": \"ConnectedValue\"}, \"middle_adapter_settings\": {\"no_split\": false, \"discard_middle\": false, \"middle_threshold\": \"85.0\", \"extra_middle_trim_good_side\": \"10\", \"extra_middle_trim_bad_side\": \"100\", \"min_split_read_size\": \"1000\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.2.4+galaxy0",
+            "type": "tool",
+            "uuid": "df72cfe8-f331-4b0e-8be2-2263793e2f14",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "8": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/leomrtns/nanofilt/nanofilt/0.1.0",
+            "errors": null,
+            "id": 8,
+            "input_connections": {
+                "crop|head": {
+                    "id": 4,
+                    "output_name": "output"
+                },
+                "filter|minlength": {
+                    "id": 3,
+                    "output_name": "output"
+                },
+                "filter|quality": {
+                    "id": 2,
+                    "output_name": "output"
+                },
+                "input1": {
+                    "id": 7,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool NanoFilt",
+                    "name": "crop"
+                },
+                {
+                    "description": "runtime parameter for tool NanoFilt",
+                    "name": "filter"
+                },
+                {
+                    "description": "runtime parameter for tool NanoFilt",
+                    "name": "filter"
+                }
+            ],
+            "label": null,
+            "name": "NanoFilt",
+            "outputs": [
+                {
+                    "name": "output1",
+                    "type": "fastqsanger"
+                },
+                {
+                    "name": "logfile",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 908.0813598632812,
+                "top": 574.631591796875
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/leomrtns/nanofilt/nanofilt/0.1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "a2c318b04f49",
+                "name": "nanofilt",
+                "owner": "leomrtns",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"crop\": {\"head\": {\"__class__\": \"ConnectedValue\"}, \"tail\": null}, \"filter\": {\"quality\": {\"__class__\": \"ConnectedValue\"}, \"maxlength\": null, \"minlength\": {\"__class__\": \"ConnectedValue\"}}, \"input1\": {\"__class__\": \"ConnectedValue\"}, \"summary\": {\"selector\": false, \"__current_case__\": 1, \"minGC\": null, \"maxGC\": null}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1.0",
+            "type": "tool",
+            "uuid": "ff0c0a4c-630f-4ce1-9eaa-f9f60b4bbf03",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "9": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/nml/collapse_collections/collapse_dataset/5.1.0",
+            "errors": null,
+            "id": 9,
+            "input_connections": {
+                "input_list": {
+                    "id": 8,
+                    "output_name": "output1"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Collapse Collection",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 1227.2460118058837,
+                "top": 525.1695730513181
+            },
+            "post_job_actions": {
+                "TagDatasetActionoutput": {
+                    "action_arguments": {
+                        "tags": "filtered-reads-fastqsanger"
+                    },
+                    "action_type": "TagDatasetAction",
+                    "output_name": "output"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/nml/collapse_collections/collapse_dataset/5.1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "90981f86000f",
+                "name": "collapse_collections",
+                "owner": "nml",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"filename\": {\"add_name\": false, \"__current_case__\": 1}, \"input_list\": {\"__class__\": \"ConnectedValue\"}, \"one_header\": false, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "5.1.0",
+            "type": "tool",
+            "uuid": "5c272533-6a94-4043-92b5-d669b6c59345",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "output",
+                    "output_name": "output",
+                    "uuid": "201b2b0b-2a4f-4db3-9c2a-ade76059cd4d"
+                }
+            ]
+        },
+        "10": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.74+galaxy0",
+            "errors": null,
+            "id": 10,
+            "input_connections": {
+                "input_file": {
+                    "id": 9,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool FastQC",
+                    "name": "adapters"
+                },
+                {
+                    "description": "runtime parameter for tool FastQC",
+                    "name": "contaminants"
+                },
+                {
+                    "description": "runtime parameter for tool FastQC",
+                    "name": "limits"
+                }
+            ],
+            "label": "Trimmed, filtered reads FastQC",
+            "name": "FastQC",
+            "outputs": [
+                {
+                    "name": "html_file",
+                    "type": "html"
+                },
+                {
+                    "name": "text_file",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "left": 1669.132356216742,
+                "top": 440.8905100191736
+            },
+            "post_job_actions": {
+                "TagDatasetActionhtml_file": {
+                    "action_arguments": {
+                        "tags": "fastqc-on-filtered-reads"
+                    },
+                    "action_type": "TagDatasetAction",
+                    "output_name": "html_file"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.74+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "5ec9f6bceaee",
+                "name": "fastqc",
+                "owner": "devteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adapters\": {\"__class__\": \"RuntimeValue\"}, \"contaminants\": {\"__class__\": \"RuntimeValue\"}, \"input_file\": {\"__class__\": \"ConnectedValue\"}, \"kmers\": \"7\", \"limits\": {\"__class__\": \"RuntimeValue\"}, \"min_length\": null, \"nogroup\": false, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.74+galaxy0",
+            "type": "tool",
+            "uuid": "7bb08b8c-ac98-42ad-ba5b-dcf6159c06ec",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "11": {
+            "annotation": "default setting changed: remove non-primary contigs from assembly = yes",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/flye/flye/2.9.3+galaxy0",
+            "errors": null,
+            "id": 11,
+            "input_connections": {
+                "inputs": {
+                    "id": 9,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Flye",
+            "outputs": [
+                {
+                    "name": "consensus",
+                    "type": "fasta"
+                },
+                {
+                    "name": "assembly_graph",
+                    "type": "graph_dot"
+                },
+                {
+                    "name": "assembly_gfa",
+                    "type": "txt"
+                },
+                {
+                    "name": "assembly_info",
+                    "type": "tabular"
+                },
+                {
+                    "name": "flye_log",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "left": 1683.742234989677,
+                "top": 908.5127828107826
+            },
+            "post_job_actions": {
+                "TagDatasetActionassembly_gfa": {
+                    "action_arguments": {
+                        "tags": "primary-assembly-gfa"
+                    },
+                    "action_type": "TagDatasetAction",
+                    "output_name": "assembly_gfa"
+                },
+                "TagDatasetActionconsensus": {
+                    "action_arguments": {
+                        "tags": "primary-assembly-contigs-fasta"
+                    },
+                    "action_type": "TagDatasetAction",
+                    "output_name": "consensus"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/flye/flye/2.9.3+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "291923e6f276",
+                "name": "flye",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"asm\": {\"asm_select\": \"false\", \"__current_case__\": 1}, \"generate_log\": true, \"inputs\": {\"__class__\": \"ConnectedValue\"}, \"iterations\": \"1\", \"keep_haplotypes\": false, \"meta\": false, \"min_overlap\": null, \"mode_conditional\": {\"mode\": \"--nano-raw\", \"__current_case__\": 0}, \"no_alt_contigs\": true, \"scaffold\": false, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.9.3+galaxy0",
+            "type": "tool",
+            "uuid": "9d285420-9e3e-4777-a41a-1e76e66ee16a",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "assembly_graph",
+                    "output_name": "assembly_graph",
+                    "uuid": "eae3767b-ee35-405d-86d4-a5f392673fbd"
+                },
+                {
+                    "label": "assembly_gfa",
+                    "output_name": "assembly_gfa",
+                    "uuid": "e6695c9a-8ed0-45ae-9cd3-004c851fa109"
+                },
+                {
+                    "label": "assembly_info",
+                    "output_name": "assembly_info",
+                    "uuid": "b4ae7306-992b-4705-8a51-21f06a51467e"
+                },
+                {
+                    "label": "flye_log",
+                    "output_name": "flye_log",
+                    "uuid": "30106c74-cb0d-4e42-b65f-9e09e7cbdd80"
+                },
+                {
+                    "label": "consensus",
+                    "output_name": "consensus",
+                    "uuid": "e197d77b-420f-419e-bf45-1c05d10cec7c"
+                }
+            ]
+        },
+        "12": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/fasta_stats/fasta-stats/1.0.3",
+            "errors": null,
+            "id": 12,
+            "input_connections": {
+                "dataset": {
+                    "id": 11,
+                    "output_name": "consensus"
+                }
+            },
+            "inputs": [],
+            "label": "Primary assembly Fasta Statistics",
+            "name": "Fasta Statistics",
+            "outputs": [
+                {
+                    "name": "stats",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 2038.9289397037214,
+                "top": 910.0626011727107
+            },
+            "post_job_actions": {
+                "TagDatasetActionstats": {
+                    "action_arguments": {
+                        "tags": "primary-assembly-fasta-stats"
+                    },
+                    "action_type": "TagDatasetAction",
+                    "output_name": "stats"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/fasta_stats/fasta-stats/1.0.3",
+            "tool_shed_repository": {
+                "changeset_revision": "56022eb50bbd",
+                "name": "fasta_stats",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"dataset\": {\"__class__\": \"ConnectedValue\"}, \"genome_size\": null, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.3",
+            "type": "tool",
+            "uuid": "0bdfe948-7160-40d3-a2b6-ed01bbe33773",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "metrics",
+                    "output_name": "stats",
+                    "uuid": "38f7875b-7794-41b8-9783-cbb81a82ef3f"
+                }
+            ]
+        },
+        "13": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/bandage/bandage_info/0.8.1+galaxy1",
+            "errors": null,
+            "id": 13,
+            "input_connections": {
+                "input_file": {
+                    "id": 11,
+                    "output_name": "assembly_gfa"
+                }
+            },
+            "inputs": [],
+            "label": "Primary assembly Bandage info",
+            "name": "Bandage Info",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "left": 2007.4410577097337,
+                "top": 1099.9907101789327
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/bandage/bandage_info/0.8.1+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "b2860df42e16",
+                "name": "bandage",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"input_file\": {\"__class__\": \"ConnectedValue\"}, \"tsv\": false, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.8.1+galaxy1",
+            "type": "tool",
+            "uuid": "1e0c4e91-34c0-497f-9b6c-10653a129f4c",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "primary bandage info",
+                    "output_name": "outfile",
+                    "uuid": "4a73f0b3-b8e9-4895-a4a2-5899304ea076"
+                }
+            ]
+        },
+        "14": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/bandage/bandage_image/0.8.1+galaxy3",
+            "errors": null,
+            "id": 14,
+            "input_connections": {
+                "input_file": {
+                    "id": 11,
+                    "output_name": "assembly_gfa"
+                }
+            },
+            "inputs": [],
+            "label": "Primary assembly Bandage image",
+            "name": "Bandage Image",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "jpg"
+                }
+            ],
+            "position": {
+                "left": 2042.6258455684665,
+                "top": 1291.2874814613706
+            },
+            "post_job_actions": {
+                "TagDatasetActionoutfile": {
+                    "action_arguments": {
+                        "tags": "primary-assembly-bandage-graph"
+                    },
+                    "action_type": "TagDatasetAction",
+                    "output_name": "outfile"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/bandage/bandage_image/0.8.1+galaxy3",
+            "tool_shed_repository": {
+                "changeset_revision": "b9e31c5c01c7",
+                "name": "bandage",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"fontsize\": null, \"height\": \"1000\", \"input_file\": {\"__class__\": \"ConnectedValue\"}, \"lengths\": false, \"names\": false, \"output_format\": \"jpg\", \"width\": null, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.8.1+galaxy3",
+            "type": "tool",
+            "uuid": "f64a0936-ad46-4ec8-b759-0b724d3e78bb",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "primary bandage image",
+                    "output_name": "outfile",
+                    "uuid": "1e55ab8b-93a3-48ca-bd05-1c533853e5b2"
+                }
+            ]
+        }
+    },
+    "tags": [
+        "genome_assembly",
+        "nanopore",
+        "TSI"
+    ],
+    "uuid": "e96992d0-77fb-4c4f-aab4-b8bffa82fd9a",
+    "version": 47
+}

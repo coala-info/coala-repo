@@ -1,0 +1,16 @@
+name: algae-usecase
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - requests
+  - python-dateutil
+  - shapely
+  - lxml
+  - pandas
+  - gdal=3.6.2
+  - matplotlib
+  - numpy
+  - pip
+  - pip:
+      - s3cmd

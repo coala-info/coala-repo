@@ -1,0 +1,362 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>consensus-peaks/consensus-peaks-chip-sr</title>
+  <script type="application/ld+json">{
+  "@context": [
+    "https://w3id.org/ro/crate/1.1/context",
+    {
+      "GithubService": "https://w3id.org/ro/terms/test#GithubService",
+      "JenkinsService": "https://w3id.org/ro/terms/test#JenkinsService",
+      "PlanemoEngine": "https://w3id.org/ro/terms/test#PlanemoEngine",
+      "TestDefinition": "https://w3id.org/ro/terms/test#TestDefinition",
+      "TestInstance": "https://w3id.org/ro/terms/test#TestInstance",
+      "TestService": "https://w3id.org/ro/terms/test#TestService",
+      "TestSuite": "https://w3id.org/ro/terms/test#TestSuite",
+      "TravisService": "https://w3id.org/ro/terms/test#TravisService",
+      "definition": "https://w3id.org/ro/terms/test#definition",
+      "engineVersion": "https://w3id.org/ro/terms/test#engineVersion",
+      "instance": "https://w3id.org/ro/terms/test#instance",
+      "resource": "https://w3id.org/ro/terms/test#resource",
+      "runsOn": "https://w3id.org/ro/terms/test#runsOn"
+    }
+  ],
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.1"
+      }
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "datePublished": "2026-02-19T20:10:07.882030",
+      "hasPart": [
+        {
+          "@id": "consensus-peaks-chip-sr.ga"
+        },
+        {
+          "@id": "README.md"
+        },
+        {
+          "@id": "consensus-peaks-chip-sr-tests.yml"
+        },
+        {
+          "@id": "consensus-peaks-chip-pe.ga"
+        },
+        {
+          "@id": "consensus-peaks-chip-pe-tests.yml"
+        },
+        {
+          "@id": "consensus-peaks-atac-cutandrun.ga"
+        },
+        {
+          "@id": "consensus-peaks-atac-cutandrun-tests.yml"
+        }
+      ],
+      "isBasedOn": "https://github.com/iwc-workflows/consensus-peaks",
+      "license": "MIT",
+      "mainEntity": {
+        "@id": "consensus-peaks-chip-sr.ga"
+      },
+      "mentions": [
+        {
+          "@id": "#test_consensus-peaks-atac-cutandrun_1"
+        },
+        {
+          "@id": "#test_consensus-peaks-chip-pe_1"
+        },
+        {
+          "@id": "#test_consensus-peaks-chip-sr_1"
+        }
+      ],
+      "name": "consensus-peaks/consensus-peaks-chip-sr"
+    },
+    {
+      "@id": "consensus-peaks-chip-sr.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "creator": [
+        {
+          "@id": "https://orcid.org/0000-0002-1964-4960"
+        }
+      ],
+      "name": "consensus-peaks/consensus-peaks-chip-sr",
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "url": "https://github.com/iwc-workflows/consensus-peaks",
+      "version": "1.4"
+    },
+    {
+      "@id": "README.md",
+      "@type": "File"
+    },
+    {
+      "@id": "consensus-peaks-chip-sr-tests.yml",
+      "@type": [
+        "File",
+        "TestDefinition"
+      ],
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/terms/test#PlanemoEngine"
+      },
+      "engineVersion": ">=0.75.37"
+    },
+    {
+      "@id": "consensus-peaks-chip-pe.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "creator": [
+        {
+          "@id": "https://orcid.org/0000-0002-1964-4960"
+        }
+      ],
+      "name": "consensus-peaks/consensus-peaks-chip-pe",
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "url": "https://github.com/iwc-workflows/consensus-peaks",
+      "version": "1.4"
+    },
+    {
+      "@id": "consensus-peaks-chip-pe-tests.yml",
+      "@type": [
+        "File",
+        "TestDefinition"
+      ],
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/terms/test#PlanemoEngine"
+      },
+      "engineVersion": ">=0.75.37"
+    },
+    {
+      "@id": "consensus-peaks-atac-cutandrun.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "creator": [
+        {
+          "@id": "https://orcid.org/0000-0002-1964-4960"
+        }
+      ],
+      "name": "consensus-peaks/consensus-peaks-atac-cutandrun",
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "url": "https://github.com/iwc-workflows/consensus-peaks",
+      "version": "1.4"
+    },
+    {
+      "@id": "consensus-peaks-atac-cutandrun-tests.yml",
+      "@type": [
+        "File",
+        "TestDefinition"
+      ],
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/terms/test#PlanemoEngine"
+      },
+      "engineVersion": ">=0.75.37"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "name": "Galaxy",
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "version": "v19_09"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-1964-4960",
+      "@type": "Person",
+      "name": "Lucille Delisle"
+    },
+    {
+      "@id": "#test_consensus-peaks-chip-sr_1",
+      "@type": "TestSuite",
+      "definition": {
+        "@id": "consensus-peaks-chip-sr-tests.yml"
+      },
+      "instance": [
+        {
+          "@id": "#test_consensus-peaks-chip-sr_1_1"
+        }
+      ],
+      "mainEntity": {
+        "@id": "consensus-peaks-chip-sr.ga"
+      },
+      "name": "test_consensus-peaks-chip-sr_1"
+    },
+    {
+      "@id": "#test_consensus-peaks-chip-sr_1_1",
+      "@type": "TestInstance",
+      "name": "test_consensus-peaks-chip-sr_1_1",
+      "resource": "repos/iwc-workflows/consensus-peaks/actions/workflows/wftest.yml",
+      "runsOn": {
+        "@id": "https://w3id.org/ro/terms/test#GithubService"
+      },
+      "url": "https://api.github.com"
+    },
+    {
+      "@id": "https://w3id.org/ro/terms/test#GithubService",
+      "@type": "TestService",
+      "name": "Github Actions",
+      "url": {
+        "@id": "https://github.com"
+      }
+    },
+    {
+      "@id": "https://w3id.org/ro/terms/test#PlanemoEngine",
+      "@type": "SoftwareApplication",
+      "name": "Planemo",
+      "url": {
+        "@id": "https://github.com/galaxyproject/planemo"
+      }
+    },
+    {
+      "@id": "#test_consensus-peaks-chip-pe_1",
+      "@type": "TestSuite",
+      "definition": {
+        "@id": "consensus-peaks-chip-pe-tests.yml"
+      },
+      "instance": [
+        {
+          "@id": "#test_consensus-peaks-chip-pe_1_1"
+        }
+      ],
+      "mainEntity": {
+        "@id": "consensus-peaks-chip-pe.ga"
+      },
+      "name": "test_consensus-peaks-chip-pe_1"
+    },
+    {
+      "@id": "#test_consensus-peaks-chip-pe_1_1",
+      "@type": "TestInstance",
+      "name": "test_consensus-peaks-chip-pe_1_1",
+      "resource": "repos/iwc-workflows/consensus-peaks/actions/workflows/wftest.yml",
+      "runsOn": {
+        "@id": "https://w3id.org/ro/terms/test#GithubService"
+      },
+      "url": "https://api.github.com"
+    },
+    {
+      "@id": "#test_consensus-peaks-atac-cutandrun_1",
+      "@type": "TestSuite",
+      "definition": {
+        "@id": "consensus-peaks-atac-cutandrun-tests.yml"
+      },
+      "instance": [
+        {
+          "@id": "#test_consensus-peaks-atac-cutandrun_1_1"
+        }
+      ],
+      "mainEntity": {
+        "@id": "consensus-peaks-atac-cutandrun.ga"
+      },
+      "name": "test_consensus-peaks-atac-cutandrun_1"
+    },
+    {
+      "@id": "#test_consensus-peaks-atac-cutandrun_1_1",
+      "@type": "TestInstance",
+      "name": "test_consensus-peaks-atac-cutandrun_1_1",
+      "resource": "repos/iwc-workflows/consensus-peaks/actions/workflows/wftest.yml",
+      "runsOn": {
+        "@id": "https://w3id.org/ro/terms/test#GithubService"
+      },
+      "url": "https://api.github.com"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/ResearchObject/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <meta charset="utf-8">
+</head>
+<body>
+  <h1>consensus-peaks/consensus-peaks-chip-sr</h1>
+  
+  <p>
+    
+  </p>
+  <dl>
+    
+    
+    
+    
+      <dt>License</dt>
+      <dd>MIT</dd>
+    
+  </dl>
+
+  <h2>Contents</h2>
+  <ul>
+    
+      <li>
+        <strong>consensus-peaks/consensus-peaks-chip-sr</strong>
+        
+        
+      </li>
+    
+      <li>
+        <strong>README.md</strong>
+        
+        
+      </li>
+    
+      <li>
+        <strong>consensus-peaks-chip-sr-tests.yml</strong>
+        
+        
+      </li>
+    
+      <li>
+        <strong>consensus-peaks/consensus-peaks-chip-pe</strong>
+        
+        
+      </li>
+    
+      <li>
+        <strong>consensus-peaks-chip-pe-tests.yml</strong>
+        
+        
+      </li>
+    
+      <li>
+        <strong>consensus-peaks/consensus-peaks-atac-cutandrun</strong>
+        
+        
+      </li>
+    
+      <li>
+        <strong>consensus-peaks-atac-cutandrun-tests.yml</strong>
+        
+        
+      </li>
+    
+  </ul>
+</body>
+</html>

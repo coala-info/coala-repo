@@ -1,0 +1,167 @@
+{
+  "@context": [
+    "https://w3id.org/ro/crate/1.1/context",
+    {
+      "GithubService": "https://w3id.org/ro/terms/test#GithubService",
+      "JenkinsService": "https://w3id.org/ro/terms/test#JenkinsService",
+      "PlanemoEngine": "https://w3id.org/ro/terms/test#PlanemoEngine",
+      "TestDefinition": "https://w3id.org/ro/terms/test#TestDefinition",
+      "TestInstance": "https://w3id.org/ro/terms/test#TestInstance",
+      "TestService": "https://w3id.org/ro/terms/test#TestService",
+      "TestSuite": "https://w3id.org/ro/terms/test#TestSuite",
+      "TravisService": "https://w3id.org/ro/terms/test#TravisService",
+      "definition": "https://w3id.org/ro/terms/test#definition",
+      "engineVersion": "https://w3id.org/ro/terms/test#engineVersion",
+      "instance": "https://w3id.org/ro/terms/test#instance",
+      "resource": "https://w3id.org/ro/terms/test#resource",
+      "runsOn": "https://w3id.org/ro/terms/test#runsOn"
+    }
+  ],
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.1"
+      }
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "datePublished": "2022-06-13T14:36:29.894406",
+      "hasPart": [
+        {
+          "@id": "meryldb-creation-trio.ga"
+        },
+        {
+          "@id": "README.md"
+        },
+        {
+          "@id": "meryldb-creation-trio-tests.yml"
+        }
+      ],
+      "isBasedOn": "https://github.com/iwc-workflows/VGP-meryldb-creation-trio",
+      "license": "CC-BY-4.0",
+      "mainEntity": {
+        "@id": "meryldb-creation-trio.ga"
+      },
+      "mentions": [
+        {
+          "@id": "#test1"
+        }
+      ],
+      "name": "VGP-meryldb-creation-trio/main"
+    },
+    {
+      "@id": "meryldb-creation-trio.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "creator": [
+        {
+          "@id": "https://vertebrategenomeproject.org"
+        },
+        {
+          "@id": "#078048a7-29c0-487a-818f-83fcf8b5d893"
+        }
+      ],
+      "name": "VGP-meryldb-creation-trio/main",
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "url": "https://github.com/iwc-workflows/VGP-meryldb-creation-trio",
+      "version": "0.1"
+    },
+    {
+      "@id": "README.md",
+      "@type": "File"
+    },
+    {
+      "@id": "meryldb-creation-trio-tests.yml",
+      "@type": [
+        "File",
+        "TestDefinition"
+      ],
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/terms/test#PlanemoEngine"
+      },
+      "engineVersion": ">=0.74.11"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "name": "Galaxy",
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "version": "v19_09"
+    },
+    {
+      "@id": "https://vertebrategenomeproject.org",
+      "@type": "Organization",
+      "name": "VGP"
+    },
+    {
+      "@id": "#078048a7-29c0-487a-818f-83fcf8b5d893",
+      "@type": "Organization",
+      "name": "Galaxy"
+    },
+    {
+      "@id": "#test1",
+      "@type": "TestSuite",
+      "definition": {
+        "@id": "meryldb-creation-trio-tests.yml"
+      },
+      "instance": [
+        {
+          "@id": "#test1_1"
+        }
+      ],
+      "mainEntity": {
+        "@id": "meryldb-creation-trio.ga"
+      },
+      "name": "test1"
+    },
+    {
+      "@id": "#test1_1",
+      "@type": "TestInstance",
+      "name": "test1_1",
+      "resource": "repos/iwc-workflows/VGP-meryldb-creation-trio/actions/workflows/wftest.yml",
+      "runsOn": {
+        "@id": "https://w3id.org/ro/terms/test#GithubService"
+      },
+      "url": "https://api.github.com"
+    },
+    {
+      "@id": "https://w3id.org/ro/terms/test#GithubService",
+      "@type": "TestService",
+      "name": "Github Actions",
+      "url": {
+        "@id": "https://github.com"
+      }
+    },
+    {
+      "@id": "https://w3id.org/ro/terms/test#PlanemoEngine",
+      "@type": "SoftwareApplication",
+      "name": "Planemo",
+      "url": {
+        "@id": "https://github.com/galaxyproject/planemo"
+      }
+    }
+  ]
+}

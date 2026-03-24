@@ -1,0 +1,8 @@
+subitems:
+  - title: About
+    url: /index
+  - title: scRNAseq Workflows Guide
+    url: /scrnaseq_wf_guide
+  - title: Contributors
+    url: /contributors
+  

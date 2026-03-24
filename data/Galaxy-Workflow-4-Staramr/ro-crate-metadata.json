@@ -1,0 +1,322 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-AMR_detection.ga"
+      },
+      "datePublished": "2023-05-11 09:28:32 +0100",
+      "author": [
+
+      ],
+      "license": "GPL-3.0",
+      "identifier": "https://workflowhub.eu/workflows/470?version=1",
+      "url": "https://workflowhub.eu/workflows/470/ro_crate?version=1",
+      "name": "Research Object Crate for Workflow 4: Staramr",
+      "description": "Correlation between Phenotypic and In Silico Detection of Antimicrobial Resistance in Salmonella enterica in Canada Using Staramr. \n\nDoi: [10.3390/microorganisms10020292](https://doi.org/10.3390/microorganisms10020292)\n\n| tool | version | license |\n| -- | -- | -- |\n| staramr | 0.8.0 | [Apache-2.0 license](https://github.com/phac-nml/staramr/blob/development/LICENSE) |\n",
+      "isBasedOn": "https://usegalaxy.eu/u/dennisd/w/103390microorganisms10020292",
+      "sdDatePublished": "2026-03-24 17:43:20 +0000",
+      "creativeWorkStatus": "Work-in-progress",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-AMR_detection.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-AMR_detection.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 23190,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Correlation between Phenotypic and In Silico Detection of Antimicrobial Resistance in Salmonella enterica in Canada Using Staramr. \n\nDoi: [10.3390/microorganisms10020292](https://doi.org/10.3390/microorganisms10020292)\n\n| tool | version | license |\n| -- | -- | -- |\n| staramr | 0.8.0 | [Apache-2.0 license](https://github.com/phac-nml/staramr/blob/development/LICENSE) |\n",
+      "name": "Workflow 4: Staramr",
+      "url": "https://workflowhub.eu/workflows/470?version=1",
+      "keywords": "AMR, AMR-detection, 10.3390/microorganisms10020292, Bioinformatics, antimicrobial resistance",
+      "version": 1,
+      "license": "https://spdx.org/licenses/GPL-3.0",
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/110"
+      },
+      "dateCreated": "2023-05-11T08:29:41Z",
+      "dateModified": "2024-09-09T08:06:05Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+
+      ],
+      "output": [
+        {
+          "@id": "#workflow_4__staramr-outputs-_anonymous_output_1"
+        },
+        {
+          "@id": "#workflow_4__staramr-outputs-_anonymous_output_2"
+        },
+        {
+          "@id": "#workflow_4__staramr-outputs-_anonymous_output_3"
+        },
+        {
+          "@id": "#workflow_4__staramr-outputs-_anonymous_output_4"
+        },
+        {
+          "@id": "#workflow_4__staramr-outputs-_anonymous_output_5"
+        },
+        {
+          "@id": "#workflow_4__staramr-outputs-_anonymous_output_6"
+        },
+        {
+          "@id": "#workflow_4__staramr-outputs-_anonymous_output_7"
+        },
+        {
+          "@id": "#workflow_4__staramr-outputs-_anonymous_output_8"
+        },
+        {
+          "@id": "#workflow_4__staramr-outputs-_anonymous_output_9"
+        },
+        {
+          "@id": "#workflow_4__staramr-outputs-_anonymous_output_10"
+        },
+        {
+          "@id": "#workflow_4__staramr-outputs-_anonymous_output_11"
+        },
+        {
+          "@id": "#workflow_4__staramr-outputs-_anonymous_output_12"
+        },
+        {
+          "@id": "#workflow_4__staramr-outputs-_anonymous_output_13"
+        },
+        {
+          "@id": "#workflow_4__staramr-outputs-_anonymous_output_14"
+        },
+        {
+          "@id": "#workflow_4__staramr-outputs-_anonymous_output_15"
+        },
+        {
+          "@id": "#workflow_4__staramr-outputs-_anonymous_output_16"
+        },
+        {
+          "@id": "#workflow_4__staramr-outputs-_anonymous_output_17"
+        },
+        {
+          "@id": "#workflow_4__staramr-outputs-_anonymous_output_18"
+        },
+        {
+          "@id": "#workflow_4__staramr-outputs-_anonymous_output_19"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/110",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Seq4AMR"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#workflow_4__staramr-outputs-_anonymous_output_1",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_4__staramr-outputs-_anonymous_output_2",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_4__staramr-outputs-_anonymous_output_3",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_3",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_4__staramr-outputs-_anonymous_output_4",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_4",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_4__staramr-outputs-_anonymous_output_5",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_5",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_4__staramr-outputs-_anonymous_output_6",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_6",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_4__staramr-outputs-_anonymous_output_7",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_7",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_4__staramr-outputs-_anonymous_output_8",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_8",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_4__staramr-outputs-_anonymous_output_9",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_9",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_4__staramr-outputs-_anonymous_output_10",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_10",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_4__staramr-outputs-_anonymous_output_11",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_11",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_4__staramr-outputs-_anonymous_output_12",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_12",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_4__staramr-outputs-_anonymous_output_13",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_13",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_4__staramr-outputs-_anonymous_output_14",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_14",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_4__staramr-outputs-_anonymous_output_15",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_15",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_4__staramr-outputs-_anonymous_output_16",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_16",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_4__staramr-outputs-_anonymous_output_17",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_17",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_4__staramr-outputs-_anonymous_output_18",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_18",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_4__staramr-outputs-_anonymous_output_19",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_19",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

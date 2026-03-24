@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for NMR pipe</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "nmrpipe_workflow.cwl"
+      },
+      "datePublished": "2020-07-22 11:49:00 +0100",
+      "author": [
+
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://workflowhub.eu/workflows/43?version=1",
+      "url": "https://workflowhub.eu/workflows/43/ro_crate?version=1",
+      "name": "Research Object Crate for NMR pipe",
+      "description": "CWL workflow for NMR spectra Peak Picking\nThe workflow takes as input a series of 2D 1H 15N HSQC NMR spectra and uses nmrpipe tools to convert the spectra in nmrpipe format and performs an automatic peak picking.\nThis test uses a protein MDM2 with different ligands and peptide and generates a peak list with 1H and 15N chemical shift values for each spectrum. The difference among these peak lists can be used to characterize the ligand binding site on the protein.",
+      "isBasedOn": "https://github.com/andreagia/CWL_dem1_NMR_Peak_Picking",
+      "sdDatePublished": "2026-03-24 01:20:39 +0000",
+      "creativeWorkStatus": "Work-in-progress",
+      "hasPart": [
+        {
+          "@id": "nmrpipe_workflow.cwl"
+        },
+        {
+          "@id": "workflow-43-9fa4f7fde166cfedf761ec2f6ff9ab01f7a6446b-diagram.svg"
+        }
+      ]
+    },
+    {
+      "@id": "nmrpipe_workflow.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 1268,
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "image": {
+        "@id": "workflow-43-9fa4f7fde166cfedf761ec2f6ff9ab01f7a6446b-diagram.svg"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "CWL workflow for NMR spectra Peak Picking\nThe workflow takes as input a series of 2D 1H 15N HSQC NMR spectra and uses nmrpipe tools to convert the spectra in nmrpipe format and performs an automatic peak picking.\nThis test uses a protein MDM2 with different ligands and peptide and generates a peak list with 1H and 15N chemical shift values for each spectrum. The difference among these peak lists can be used to characterize the ligand binding site on the protein.",
+      "name": "NMR pipe",
+      "url": "https://workflowhub.eu/workflows/43?version=1",
+      "keywords": "",
+      "version": 1,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/14"
+      },
+      "dateCreated": "2020-07-22T10:49:00Z",
+      "dateModified": "2023-01-16T13:43:41Z",
+      "isPartOf": [
+
+      ],
+      "input": {
+        "@id": "#nmr_pipe-inputs-workdir_array"
+      },
+      "output": {
+        "@id": "#nmr_pipe-outputs-final_result"
+      },
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "workflow-43-9fa4f7fde166cfedf761ec2f6ff9ab01f7a6446b-diagram.svg",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 6650
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/14",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "NMR Workflow"
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#nmr_pipe-inputs-workdir_array",
+      "@type": "FormalParameter",
+      "name": "workdir_array",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#nmr_pipe-outputs-final_result",
+      "@type": "FormalParameter",
+      "name": "final_result",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for NMR pipe</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/43/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/43/ro_crate?version=1</a>
+
+
+  <img src="workflow-43-9fa4f7fde166cfedf761ec2f6ff9ab01f7a6446b-diagram.svg" style="width: 100%;"/>
+
+<p>
+  CWL workflow for NMR spectra Peak Picking
+The workflow takes as input a series of 2D 1H 15N HSQC NMR spectra and uses nmrpipe tools to convert the spectra in nmrpipe format and performs an automatic peak picking.
+This test uses a protein MDM2 with different ligands and peptide and generates a peak list with 1H and 15N chemical shift values for each spectrum. The difference among these peak lists can be used to characterize the ligand binding site on the protein.
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>Apache-2.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_nmrpipe_workflow.cwl">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="nmrpipe_workflow.cwl">NMR pipe</a>
+      
+        <br/>Size: 1268 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_workflow-43-9fa4f7fde166cfedf761ec2f6ff9ab01f7a6446b-diagram.svg">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="workflow-43-9fa4f7fde166cfedf761ec2f6ff9ab01f7a6446b-diagram.svg">workflow-43-9fa4f7fde166cfedf761ec2f6ff9ab01f7a6446b-diagram.svg</a>
+      
+        <br/>Size: 6650 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

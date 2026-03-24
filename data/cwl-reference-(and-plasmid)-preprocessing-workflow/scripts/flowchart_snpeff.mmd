@@ -1,0 +1,9 @@
+graph TD;
+    A[Do you want to include SnpEff?] -->|No| B[Set 'include_snpeff' to false]
+    A -->|Yes| C[Does the SnpEff database already exist?]
+    C -->|Yes| D[Set 'snpeff_database_exists' to true, and set 'snpeff_genome' to the appropriate database name]
+    C -->|No| E[Do you have a GenBank file containing both sequence and protein data?]
+    E -->|Yes| F[Fill in 'reference_gb']
+    E -->|No| G[Does NCBI contain the above data?]
+    G -->|Yes| H[Fill in 'NCBI_identifier']
+    G -->|No| I[Without curated reference, SNPEff annotation and variant calling are not logical, annotation will be performed with Bakta after which the pipeline will terminate]

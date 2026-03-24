@@ -1,0 +1,79 @@
+```mermaid
+graph LR;
+    %% inputs
+    subgraph Inputs
+        AA1[/Input reads/]
+        AB1[/Input reference/]
+    end
+
+    %% Preprocessing
+    subgraph Preprocessing
+
+        AB1 --> A1[Preprocess workflow]
+        A1 --> B1[samtools faidx]
+        AA1 --> C1[LongReadSum unfiltered]
+        AA1 --> D1[Filtlong]
+        D1 --> E1[LongReadSum filtered]
+    end
+
+    %% Reads branch
+    subgraph Reads-based analysis
+        D1 --> |include reads| F1[minimap2 reads]
+        F1 --> U1
+        F1 --> H1
+        AA1 --> F1
+        F1 --> G1[samtools index]
+        G1 --> U1[deeptools bamCoverage]
+        G1 --> H1[Clair3]
+        B1 --> H1
+        A1 --> H1
+    end
+
+    %% Assembly branch
+    subgraph Assembly-based analysis
+        D1 --> |include assembly| J1[Flye]
+        J1 --> K1[QUAST]
+        AA1 --> L1
+        J1 --> L1[minimap2 assembly]
+        L1 --> V1[bedtools bamtobed]
+        J1 --> M1[samtools faidx]
+        L1 --> N1[freebayes]
+        B1 --> N1
+        A1 --> N1
+        N1 --> O1[Strainy]
+    end
+
+    %% Postprocessing
+    subgraph Postprocessing
+        H1 --> I1[SnpEff reads]
+        N1 --> P1[SnpEff assembly]
+        H1 --> Q1[Merge VCFs]
+        N1 --> Q1
+        Q1 --> R1[SnpEff on merged VCF]
+        R1 --> S1[Liftoff]
+        J1 --> S1
+    end
+
+    %% No reference
+    subgraph Without reference
+        D1 --> |neither included| T1[Bakta]
+    end
+
+    %% outputs
+    subgraph Outputs
+        H1 --> W1[\Clair3 output\]
+        N1 --> X1[\freebayes output\]
+        S1 --> Y1[\liftoff output\]
+        R1 --> Z1[\Snpeff output\]
+        P1 --> Z1
+        I1 --> Z1
+        O1 --> Z2[\Strainy output\]
+        C1 --> Z3[\Longreadsum output\]
+        E1 --> Z3
+        U1 --> Z4[\Deeptools coverage track\]
+        V1 --> Z5[\Bedtools annotation\]
+        K1 --> Z6[\QUAST output\]
+        J1 --> Z7[\Flye output\]
+        T1 --> Z8[\Bakta output\]
+    end
+```

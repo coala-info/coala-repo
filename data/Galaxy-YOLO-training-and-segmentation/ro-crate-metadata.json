@@ -1,0 +1,223 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-YOLO_-_Tail_analysis_training_workflow.ga"
+      },
+      "datePublished": "2025-07-16 11:13:52 +0100",
+      "author": [
+        {
+          "@id": "#creator-1"
+        }
+      ],
+      "license": "GPL-3.0-or-later",
+      "identifier": "https://workflowhub.eu/workflows/1811?version=1",
+      "url": "https://workflowhub.eu/workflows/1811/ro_crate?version=1",
+      "name": "Research Object Crate for YOLO training and segmentation",
+      "description": " \n Based on  the Tail analysis workflow at https://git.embl.org/grp-cba/tail-analysis/-/blob/main/analysis_workflow.md",
+      "sdDatePublished": "2026-03-24 16:41:12 +0000",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-YOLO_-_Tail_analysis_training_workflow.ga"
+        },
+        {
+          "@id": "yolo-train-wf-overview.png"
+        },
+        {
+          "@id": "yolo-training-wf.cwl"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-YOLO_-_Tail_analysis_training_workflow.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 11959,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "yolo-train-wf-overview.png"
+      },
+      "subjectOf": {
+        "@id": "yolo-training-wf.cwl"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": " \n Based on  the Tail analysis workflow at https://git.embl.org/grp-cba/tail-analysis/-/blob/main/analysis_workflow.md",
+      "name": "YOLO training and segmentation",
+      "url": "https://workflowhub.eu/workflows/1811?version=1",
+      "keywords": "yolo, Bioimage",
+      "version": 1,
+      "license": "https://spdx.org/licenses/GPL-3.0-or-later",
+      "creator": [
+        {
+          "@id": "#Yi%20Sun"
+        },
+        {
+          "@id": "#Arif%20Khan"
+        },
+        {
+          "@id": "#nfdi4bioimage"
+        }
+      ],
+      "producer": [
+        {
+          "@id": "https://workflowhub.eu/projects/206"
+        },
+        {
+          "@id": "https://workflowhub.eu/projects/311"
+        }
+      ],
+      "dateCreated": "2025-07-16T09:40:16Z",
+      "dateModified": "2025-07-16T11:43:13Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#yolo_training_and_segmentation-inputs-0_Input%20Dataset%20Collection"
+        },
+        {
+          "@id": "#yolo_training_and_segmentation-inputs-Class%20File"
+        }
+      ],
+      "output": [
+
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "yolo-train-wf-overview.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 183484
+    },
+    {
+      "@id": "yolo-training-wf.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "HowTo"
+      ],
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "contentSize": 2771
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#creator-1",
+      "@type": "Person",
+      "name": "nfdi4bioimage"
+    },
+    {
+      "@id": "#Yi Sun",
+      "@type": "Person",
+      "name": "Yi Sun"
+    },
+    {
+      "@id": "#Arif Khan",
+      "@type": "Person",
+      "name": "Arif Khan"
+    },
+    {
+      "@id": "#nfdi4bioimage",
+      "@type": "Person",
+      "name": "nfdi4bioimage"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/206",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "EMBL-Bioimage Analysis Support"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/311",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "BioImage Informatics and Analysis Workflows"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#yolo_training_and_segmentation-inputs-0_Input Dataset Collection",
+      "@type": "FormalParameter",
+      "name": "0_Input Dataset Collection",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#yolo_training_and_segmentation-inputs-Class File",
+      "@type": "FormalParameter",
+      "name": "Class File",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

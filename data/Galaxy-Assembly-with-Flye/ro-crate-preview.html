@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Assembly with Flye</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-Assembly_with_Flye.ga"
+      },
+      "datePublished": "2021-11-08 05:07:16 +0000",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-9906-0673"
+        }
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.225.1",
+      "url": "https://workflowhub.eu/workflows/225/ro_crate?version=1",
+      "name": "Research Object Crate for Assembly with Flye",
+      "description": "Assembly with Flye; can run alone or as part of a combined workflow for large genome assembly. \n\n* What it does: Assembles long reads with the tool Flye\n* Inputs: long reads (may be raw, or filtered, and/or corrected); fastq.gz format\n* Outputs: Flye assembly fasta; Fasta stats on assembly.fasta; Assembly graph image from Bandage; Bar chart of contig sizes; Quast reports of genome assembly\n* Tools used: Flye, Fasta statistics, Bandage, Bar chart, Quast\n* Input parameters: None required, but recommend setting assembly mode to match input sequence type\n\nWorkflow steps:\n* Long reads are assembled with Flye, using default tool settings. Note: the default setting for read type (\"mode\") is nanopore raw. Change this at runtime if required. \n* Statistics are computed from the assembly.fasta file output, using Fasta Statistics and Quast (is genome large: Yes; distinguish contigs with more that 50% unaligned bases: no)\n* The graphical fragment assembly file is visualized with the tool Bandage. \n* Assembly information sent to bar chart to visualize contig sizes\n\nOptions\n* See other Flye options. \n* Use a different assembler (in a different workflow). \n* Bandage image options - change size (max size is 32767), labels - add (e.g. node lengths). You can also install Bandage on your own computer and donwload the \"graphical fragment assembly\" file to view in greater detail. \n\n\nInfrastructure_deployment_metadata: Galaxy Australia (Galaxy)\n\n",
+      "sdDatePublished": "2026-03-24 18:08:07 +0000",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-Assembly_with_Flye.ga"
+        },
+        {
+          "@id": "Assembly_with_Flye.png"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-Assembly_with_Flye.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 14840,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "Assembly_with_Flye.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Assembly with Flye; can run alone or as part of a combined workflow for large genome assembly. \n\n* What it does: Assembles long reads with the tool Flye\n* Inputs: long reads (may be raw, or filtered, and/or corrected); fastq.gz format\n* Outputs: Flye assembly fasta; Fasta stats on assembly.fasta; Assembly graph image from Bandage; Bar chart of contig sizes; Quast reports of genome assembly\n* Tools used: Flye, Fasta statistics, Bandage, Bar chart, Quast\n* Input parameters: None required, but recommend setting assembly mode to match input sequence type\n\nWorkflow steps:\n* Long reads are assembled with Flye, using default tool settings. Note: the default setting for read type (\"mode\") is nanopore raw. Change this at runtime if required. \n* Statistics are computed from the assembly.fasta file output, using Fasta Statistics and Quast (is genome large: Yes; distinguish contigs with more that 50% unaligned bases: no)\n* The graphical fragment assembly file is visualized with the tool Bandage. \n* Assembly information sent to bar chart to visualize contig sizes\n\nOptions\n* See other Flye options. \n* Use a different assembler (in a different workflow). \n* Bandage image options - change size (max size is 32767), labels - add (e.g. node lengths). You can also install Bandage on your own computer and donwload the \"graphical fragment assembly\" file to view in greater detail. \n\n\nInfrastructure_deployment_metadata: Galaxy Australia (Galaxy)\n\n",
+      "name": "Assembly with Flye",
+      "url": "https://workflowhub.eu/workflows/225?version=1",
+      "keywords": "Large-genome-assembly",
+      "version": 1,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "creator": {
+        "@id": "https://workflowhub.eu/people/200"
+      },
+      "producer": [
+        {
+          "@id": "https://workflowhub.eu/projects/54"
+        },
+        {
+          "@id": "https://workflowhub.eu/projects/30"
+        }
+      ],
+      "dateCreated": "2021-11-08T05:07:16Z",
+      "dateModified": "2023-01-30T18:21:31Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/6"
+      },
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.225.1",
+      "input": {
+        "@id": "#assembly_with_flye-inputs-long%20reads"
+      },
+      "output": [
+        {
+          "@id": "#assembly_with_flye-outputs-Flye%20assembly%20on%20input%20dataset(s)%20(consensus)"
+        },
+        {
+          "@id": "#assembly_with_flye-outputs-Flye%20assembly%20on%20input%20dataset(s)%20(assembly_graph)"
+        },
+        {
+          "@id": "#assembly_with_flye-outputs-Flye%20assembly%20on%20input%20dataset(s)%20(Graphical%20Fragment%20Assembly)"
+        },
+        {
+          "@id": "#assembly_with_flye-outputs-Flye%20assembly%20on%20input%20dataset(s)%20(assembly_info)"
+        },
+        {
+          "@id": "#assembly_with_flye-outputs-Flye%20assembly%20on%20input%20dataset(s)%20(log)"
+        },
+        {
+          "@id": "#assembly_with_flye-outputs-_anonymous_output_1"
+        },
+        {
+          "@id": "#assembly_with_flye-outputs-Bandage%20Image%20on%20input%20dataset(s):%20Assembly%20Graph%20Image"
+        },
+        {
+          "@id": "#assembly_with_flye-outputs-Quast%20on%20input%20dataset(s):%20Log"
+        },
+        {
+          "@id": "#assembly_with_flye-outputs-Quast%20on%20input%20dataset(s):%20%20PDF%20report"
+        },
+        {
+          "@id": "#assembly_with_flye-outputs-Quast%20on%20input%20dataset(s):%20tabular%20report"
+        },
+        {
+          "@id": "#assembly_with_flye-outputs-Quast%20on%20input%20dataset(s):%20%20HTML%20report"
+        },
+        {
+          "@id": "#assembly_with_flye-outputs-Bar%20chart%20showing%20contig%20sizes"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "Assembly_with_Flye.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 567125
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-9906-0673",
+      "@type": "Person",
+      "name": "Anna Syme",
+      "identifier": "https://orcid.org/0000-0002-9906-0673"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/200",
+      "@type": "Person",
+      "name": "Anna Syme"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/54",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Galaxy Australia"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/30",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Australian BioCommons"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/6",
+      "@type": "Collection",
+      "name": "BioCommons ‘Bring Your Own Data’ Expansion Project"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#assembly_with_flye-inputs-long reads",
+      "@type": "FormalParameter",
+      "name": "long reads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_with_flye-outputs-Flye assembly on input dataset(s) (consensus)",
+      "@type": "FormalParameter",
+      "name": "Flye assembly on input dataset(s) (consensus)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_with_flye-outputs-Flye assembly on input dataset(s) (assembly_graph)",
+      "@type": "FormalParameter",
+      "name": "Flye assembly on input dataset(s) (assembly_graph)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_with_flye-outputs-Flye assembly on input dataset(s) (Graphical Fragment Assembly)",
+      "@type": "FormalParameter",
+      "name": "Flye assembly on input dataset(s) (Graphical Fragment Assembly)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_with_flye-outputs-Flye assembly on input dataset(s) (assembly_info)",
+      "@type": "FormalParameter",
+      "name": "Flye assembly on input dataset(s) (assembly_info)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_with_flye-outputs-Flye assembly on input dataset(s) (log)",
+      "@type": "FormalParameter",
+      "name": "Flye assembly on input dataset(s) (log)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_with_flye-outputs-_anonymous_output_1",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_with_flye-outputs-Bandage Image on input dataset(s): Assembly Graph Image",
+      "@type": "FormalParameter",
+      "name": "Bandage Image on input dataset(s): Assembly Graph Image",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_with_flye-outputs-Quast on input dataset(s): Log",
+      "@type": "FormalParameter",
+      "name": "Quast on input dataset(s): Log",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_with_flye-outputs-Quast on input dataset(s):  PDF report",
+      "@type": "FormalParameter",
+      "name": "Quast on input dataset(s):  PDF report",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_with_flye-outputs-Quast on input dataset(s): tabular report",
+      "@type": "FormalParameter",
+      "name": "Quast on input dataset(s): tabular report",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_with_flye-outputs-Quast on input dataset(s):  HTML report",
+      "@type": "FormalParameter",
+      "name": "Quast on input dataset(s):  HTML report",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assembly_with_flye-outputs-Bar chart showing contig sizes",
+      "@type": "FormalParameter",
+      "name": "Bar chart showing contig sizes",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Assembly with Flye</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/225/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/225/ro_crate?version=1</a>
+
+
+  <img src="Assembly_with_Flye.png" style="width: 100%;"/>
+
+<p>
+  Assembly with Flye; can run alone or as part of a combined workflow for large genome assembly. 
+
+* What it does: Assembles long reads with the tool Flye
+* Inputs: long reads (may be raw, or filtered, and/or corrected); fastq.gz format
+* Outputs: Flye assembly fasta; Fasta stats on assembly.fasta; Assembly graph image from Bandage; Bar chart of contig sizes; Quast reports of genome assembly
+* Tools used: Flye, Fasta statistics, Bandage, Bar chart, Quast
+* Input parameters: None required, but recommend setting assembly mode to match input sequence type
+
+Workflow steps:
+* Long reads are assembled with Flye, using default tool settings. Note: the default setting for read type ("mode") is nanopore raw. Change this at runtime if required. 
+* Statistics are computed from the assembly.fasta file output, using Fasta Statistics and Quast (is genome large: Yes; distinguish contigs with more that 50% unaligned bases: no)
+* The graphical fragment assembly file is visualized with the tool Bandage. 
+* Assembly information sent to bar chart to visualize contig sizes
+
+Options
+* See other Flye options. 
+* Use a different assembler (in a different workflow). 
+* Bandage image options - change size (max size is 32767), labels - add (e.g. node lengths). You can also install Bandage on your own computer and donwload the "graphical fragment assembly" file to view in greater detail. 
+
+
+Infrastructure_deployment_metadata: Galaxy Australia (Galaxy)
+
+
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://orcid.org/0000-0002-9906-0673" target="_blank">Anna Syme</a></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>Apache-2.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-Assembly_with_Flye.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-Assembly_with_Flye.ga">Assembly with Flye</a>
+      
+        <br/>Size: 14840 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_Assembly_with_Flye.png">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="Assembly_with_Flye.png">Assembly_with_Flye.png</a>
+      
+        <br/>Size: 567125 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

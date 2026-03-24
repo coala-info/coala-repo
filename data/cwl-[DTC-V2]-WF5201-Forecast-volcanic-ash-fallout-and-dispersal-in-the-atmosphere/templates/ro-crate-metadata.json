@@ -1,0 +1,89 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": [
+        { "@id": "https://w3id.org/ro/crate/1.1" },
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" }
+      ],
+      "about": { "@id": "./" }
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/process/0.4",
+      "@type": "CreativeWork",
+      "name": "Process Run Crate",
+      "version": "0.4"
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/workflow/0.4",
+      "@type": "CreativeWork",
+      "name": "Workflow Run Crate",
+      "version": "0.4"
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
+      "@type": "CreativeWork",
+      "name": "Workflow RO-Crate",
+      "version": "1.0"
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "YOUR_WORKFLOW_REPOSITORY_NAME",
+      "datePublished": "YYYY-MM-DD",
+      "description": "A brief description of your workflow.",
+      "license": "https://spdx.org/licenses/YOUR_LICENSE",
+      "author": { "@id": "YOUR_ORGANIZATION_OR_PERSON_ID" },
+      "conformsTo": [
+        { "@id": "https://w3id.org/ro/wfrun/process/0.4" },
+        { "@id": "https://w3id.org/ro/wfrun/workflow/0.4" },
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" }
+      ],
+      "hasPart": [
+        { "@id": "YourWorkflow.cwl" },
+        { "@id": "YourInputData/" }
+        /* Add additional parts (files, datasets, etc.) as needed */
+      ],
+      "mainEntity": { "@id": "YourWorkflow.cwl" }
+    },
+    {
+      "@id": "YourWorkflow.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "name": "YOUR_WORKFLOW_NAME",
+      "author": { "@id": "YOUR_ORGANIZATION_OR_PERSON_ID" },
+      "programmingLanguage": { "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl" },
+      "input": [
+        { "@id": "#INPUT_DIR->YourWorkflow.cwl" }
+      ],
+      "output": [
+        { "@id": "#YourWorkflow.cwl->OUTPUT_DIR" }
+      ]
+    },
+    {
+      "@id": "#INPUT_DIR->YourWorkflow.cwl",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": { "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE" },
+      "workExample": { "@id": "YourInputData/" },
+      "name": "INPUT_DIR",
+      "valueRequired": true
+    },
+    {
+      "@id": "#YourWorkflow.cwl->OUTPUT_DIR",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": { "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE" },
+      "workExample": { "@id": "YourOutputData/" },
+      "name": "OUTPUT_DIR",
+      "valueRequired": true
+    }
+    /* Add additional objects here for other workflow components (software, extra datasets, etc.) */
+  ]
+}
+

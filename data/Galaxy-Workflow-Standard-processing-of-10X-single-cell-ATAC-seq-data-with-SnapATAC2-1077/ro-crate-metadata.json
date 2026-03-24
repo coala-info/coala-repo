@@ -1,0 +1,484 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-Standard_processing_of_single_cell_ATAC-seq_data_with_SnapATAC2.ga"
+      },
+      "datePublished": "2024-08-30 09:38:08 +0100",
+      "author": [
+
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://workflowhub.eu/workflows/1077?version=1",
+      "url": "https://workflowhub.eu/workflows/1077/ro_crate?version=1",
+      "name": "Research Object Crate for Workflow - Standard processing of 10X single cell ATAC-seq data with SnapATAC2",
+      "description": "Workflow for Single-cell ATAC-seq standard processing with SnapATAC2.\nThis workflow takes a fragment file as input and performs the standard steps of scATAC-seq analysis: filtering, dimension reduction, embedding and visualization of marker genes with SnapATAC2. Finally, the clusters are manually annotated with the help of marker genes. \nIn an alternative step, the fragment file can also be generated from a BAM file. \n* newer Version: Updated SnapATAC2 version from 2.5.3 to 2.6.4",
+      "sdDatePublished": "2026-03-24 19:29:08 +0000",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-Standard_processing_of_single_cell_ATAC-seq_data_with_SnapATAC2.ga"
+        },
+        {
+          "@id": "SnapATAC2-Pipeline-Overview.png"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-Standard_processing_of_single_cell_ATAC-seq_data_with_SnapATAC2.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 83654,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "SnapATAC2-Pipeline-Overview.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Workflow for Single-cell ATAC-seq standard processing with SnapATAC2.\nThis workflow takes a fragment file as input and performs the standard steps of scATAC-seq analysis: filtering, dimension reduction, embedding and visualization of marker genes with SnapATAC2. Finally, the clusters are manually annotated with the help of marker genes. \nIn an alternative step, the fragment file can also be generated from a BAM file. \n* newer Version: Updated SnapATAC2 version from 2.5.3 to 2.6.4",
+      "name": "Workflow - Standard processing of 10X single cell ATAC-seq data with SnapATAC2",
+      "url": "https://workflowhub.eu/workflows/1077?version=1",
+      "keywords": "scATAC-seq, epigenetics",
+      "version": 1,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "creator": {
+        "@id": "#Timon%20Schlegel"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/24"
+      },
+      "dateCreated": "2024-07-17T15:56:28Z",
+      "dateModified": "2024-08-30T08:38:14Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-inputs-Bam-file"
+        },
+        {
+          "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-inputs-Fragment_file"
+        },
+        {
+          "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-inputs-Keys%20for%20annotations%20of%20obs/cells%20or%20vars/genes"
+        },
+        {
+          "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-inputs-Replace_file"
+        },
+        {
+          "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-inputs-chromosome_sizes.tabular"
+        },
+        {
+          "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-inputs-gene_annotation"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-plot%20frag_size"
+        },
+        {
+          "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-plot%20log%20frag_size"
+        },
+        {
+          "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-anndata%20tsse"
+        },
+        {
+          "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-anndata"
+        },
+        {
+          "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-plot%20tsse"
+        },
+        {
+          "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-anndata%20filter%20cells"
+        },
+        {
+          "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-anndata%20tile%20matrix"
+        },
+        {
+          "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-anndata%20select%20features"
+        },
+        {
+          "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-anndata%20scrublet"
+        },
+        {
+          "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-anndata%20filter%20doublets"
+        },
+        {
+          "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-anndata%20spectral"
+        },
+        {
+          "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-anndata%20umap"
+        },
+        {
+          "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-anndata%20knn"
+        },
+        {
+          "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-anndata_leiden_clustering"
+        },
+        {
+          "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-umap_leiden-clusters"
+        },
+        {
+          "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-anndata%20gene%20matrix"
+        },
+        {
+          "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-anndata%20filter%20genes"
+        },
+        {
+          "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-anndata%20normalize"
+        },
+        {
+          "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-anndata%20log1p"
+        },
+        {
+          "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-anndata_magic"
+        },
+        {
+          "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-anndata_gene-matrix_leiden"
+        },
+        {
+          "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-umap_marker-genes"
+        },
+        {
+          "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-leiden%20annotation"
+        },
+        {
+          "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-cell%20type%20annotation"
+        },
+        {
+          "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-anndata_cell_type"
+        },
+        {
+          "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-umap_cell-type"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "SnapATAC2-Pipeline-Overview.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 821119
+    },
+    {
+      "@id": "#Timon Schlegel",
+      "@type": "Person",
+      "name": "Timon Schlegel"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/24",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "usegalaxy-eu"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-inputs-Bam-file",
+      "@type": "FormalParameter",
+      "name": "Bam-file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-inputs-Fragment_file",
+      "@type": "FormalParameter",
+      "name": "Fragment_file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-inputs-Keys for annotations of obs/cells or vars/genes",
+      "@type": "FormalParameter",
+      "name": "Keys for annotations of obs/cells or vars/genes",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-inputs-Replace_file",
+      "@type": "FormalParameter",
+      "name": "Replace_file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-inputs-chromosome_sizes.tabular",
+      "@type": "FormalParameter",
+      "name": "chromosome_sizes.tabular",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-inputs-gene_annotation",
+      "@type": "FormalParameter",
+      "name": "gene_annotation",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-plot frag_size",
+      "@type": "FormalParameter",
+      "name": "plot frag_size",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-plot log frag_size",
+      "@type": "FormalParameter",
+      "name": "plot log frag_size",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-anndata tsse",
+      "@type": "FormalParameter",
+      "name": "anndata tsse",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-anndata",
+      "@type": "FormalParameter",
+      "name": "anndata",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-plot tsse",
+      "@type": "FormalParameter",
+      "name": "plot tsse",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-anndata filter cells",
+      "@type": "FormalParameter",
+      "name": "anndata filter cells",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-anndata tile matrix",
+      "@type": "FormalParameter",
+      "name": "anndata tile matrix",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-anndata select features",
+      "@type": "FormalParameter",
+      "name": "anndata select features",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-anndata scrublet",
+      "@type": "FormalParameter",
+      "name": "anndata scrublet",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-anndata filter doublets",
+      "@type": "FormalParameter",
+      "name": "anndata filter doublets",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-anndata spectral",
+      "@type": "FormalParameter",
+      "name": "anndata spectral",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-anndata umap",
+      "@type": "FormalParameter",
+      "name": "anndata umap",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-anndata knn",
+      "@type": "FormalParameter",
+      "name": "anndata knn",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-anndata_leiden_clustering",
+      "@type": "FormalParameter",
+      "name": "anndata_leiden_clustering",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-umap_leiden-clusters",
+      "@type": "FormalParameter",
+      "name": "umap_leiden-clusters",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-anndata gene matrix",
+      "@type": "FormalParameter",
+      "name": "anndata gene matrix",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-anndata filter genes",
+      "@type": "FormalParameter",
+      "name": "anndata filter genes",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-anndata normalize",
+      "@type": "FormalParameter",
+      "name": "anndata normalize",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-anndata log1p",
+      "@type": "FormalParameter",
+      "name": "anndata log1p",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-anndata_magic",
+      "@type": "FormalParameter",
+      "name": "anndata_magic",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-anndata_gene-matrix_leiden",
+      "@type": "FormalParameter",
+      "name": "anndata_gene-matrix_leiden",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-umap_marker-genes",
+      "@type": "FormalParameter",
+      "name": "umap_marker-genes",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-leiden annotation",
+      "@type": "FormalParameter",
+      "name": "leiden annotation",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-cell type annotation",
+      "@type": "FormalParameter",
+      "name": "cell type annotation",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-anndata_cell_type",
+      "@type": "FormalParameter",
+      "name": "anndata_cell_type",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow___standard_processing_of_10x_single_cell_atac_seq_data_with_snapatac2-outputs-umap_cell-type",
+      "@type": "FormalParameter",
+      "name": "umap_cell-type",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

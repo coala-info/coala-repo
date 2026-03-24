@@ -1,0 +1,13 @@
+cwl:tool: ../../workflows/workflow_longread_quality.cwl
+# cwl:tool: https://gitlab.com/m-unlock/cwl/-/raw/master/workflows/workflow_longread_quality.cwl
+identifier: TEST
+readtype: Nanopore
+fastq_rich: true
+threads: 6
+memory: 4000
+longreads:
+   - class: File
+     location: http://download.systemsbiology.nl/unlock/cwl/test_data/ont_guppy_reads.fq.gz
+filter_references:
+   - class: File
+     location: http://download.systemsbiology.nl/unlock/cwl/test_data/human_small.fa.gz

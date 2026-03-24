@@ -1,0 +1,94 @@
+---
+name: host-or-contamination-removal-on-long-reads
+description: "This workflow processes Nanopore fastq files by mapping them against a reference genome using Minimap2 and filtering out host or contaminant sequences with BAMtools and Samtools. Use this skill when you need to isolate microbiome sequences from long-read sequencing data by removing human or host DNA contamination to improve downstream analysis accuracy and speed."
+homepage: https://workflowhub.eu/workflows/2027
+---
+
+# Host or Contamination Removal on Long-Reads
+
+## Overview
+
+This Galaxy workflow is designed to filter out host or contaminant sequences from long-read sequencing data, such as Nanopore or PacBio. Removing these sequences is a critical preprocessing step in microbiome analysis to improve computational efficiency and prevent host DNA/RNA from compromising downstream results.
+
+The process begins by mapping input `fastqsanger` or `fastqsanger.gz` reads against a user-defined reference genome using [Minimap2](https://github.com/lh3/minimap2). The workflow then utilizes [BAMtools](https://github.com/pezmaster31/bamtools) and [Samtools](https://www.htslib.org/) to isolate and extract only the unmapped reads, which represent the microbiome sequences of interest.
+
+To ensure data quality, the workflow generates comprehensive mapping statistics using [QualiMap](http://qualimap.genesilico.pl/). These statistics are aggregated into a final [MultiQC](https://multiqc.info/) report, providing a visual summary of the contamination levels and filtering efficiency across all samples.
+
+This workflow is released under the MIT license and is tagged for microbiome and long-read analysis. For detailed information on input preparation and file structures, please refer to the README.md in the Files section.
+
+## Inputs and data preparation
+
+| Step | Label | Type | Notes |
+| --- | --- | --- | --- |
+| 0 | Host/Contaminant Reference Genome (long-reads) | parameter_input | Reads not mapping to this reference genome will be kept. |
+| 1 | Long-reads | data_collection_input | Long-reads as a collection of fastqsanger(.gz) files |
+| 2 | Profile of preset options for the mapping (long-read) | parameter_input | Each profile comes with the preconfigured settings mentioned in parentheses. You can customize each profile further in the indexing, mapping and alignment options sections below. If you do not select a profile here, the tool will use the per-parameter defaults listed in the below sections unless you customize them. |
+
+
+Ensure your input long-reads are provided as a dataset collection in `fastqsanger` or `fastqsanger.gz` format to enable efficient batch processing. You must also provide a suitable reference genome for the host or contaminant and select the appropriate Minimap2 preset profile (e.g., map-ont) for your specific sequencing technology. For automated execution, you can initialize a job template using `planemo workflow_job_init` to generate a `job.yml` file. Refer to the `README.md` for comprehensive details on parameter selection and output interpretation.
+
+## Steps (tools)
+
+| Step | Name | Tool ID | Notes |
+| --- | --- | --- | --- |
+| 3 | Map with minimap2 | toolshed.g2.bx.psu.edu/repos/iuc/minimap2/minimap2/2.28+galaxy2 | Map the reads against a reference genome and output the ones not mapping the reference genome |
+| 4 | QualiMap BamQC | toolshed.g2.bx.psu.edu/repos/iuc/qualimap_bamqc/qualimap_bamqc/2.3+galaxy0 | Generation of mapping statistics |
+| 5 | Split BAM by reads mapping status | toolshed.g2.bx.psu.edu/repos/iuc/bamtools_split_mapped/bamtools_split_mapped/2.5.2+galaxy2 | Split BAM into mapped and unmapped |
+| 6 | Flatten collection | __FLATTEN__ | Prepare QualiMap stats for MultiQC |
+| 7 | Samtools fastx | toolshed.g2.bx.psu.edu/repos/iuc/samtools_fastx/samtools_fastx/1.22+galaxy1 | Extractions of FastQ from the unmapped reads |
+| 8 | MultiQC | toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.33+galaxy0 | Aggregation of the mapping statistics for all samples |
+
+
+## Workflow outputs (marked in Galaxy)
+
+| Step | Label | Output name |
+| --- | --- | --- |
+| 4 | QualiMap Statistics | raw_data |
+| 6 | QualiMap mapping statistics | output |
+| 7 | Reads without Host or Contamination | output |
+| 8 | MultiQC HTML Report | html_report |
+
+
+## How to run (Planemo)
+
+### Local Galaxy (default engine)
+
+```bash
+planemo run host-or-contamination-removal-on-long-reads.ga job.yml --download_outputs --output_directory . --output_json output.json
+```
+
+Optional: `--galaxy_root /path/to/galaxy` speeds up spinning up a local Galaxy.
+
+### Docker Galaxy
+
+Append e.g. `--engine docker_galaxy --ignore_dependency_problems` (requires Docker).
+
+### External Galaxy (usegalaxy.org / EU / …)
+
+```bash
+planemo run host-or-contamination-removal-on-long-reads.ga job.yml --engine external_galaxy --galaxy_url SERVER_URL --galaxy_user_key YOUR_API_KEY
+```
+
+Create a reusable profile: `planemo profile_create myprofile --galaxy_url ... --galaxy_user_key ... --engine external_galaxy` then `planemo run host-or-contamination-removal-on-long-reads.ga job.yml --profile myprofile`.
+
+### Job file
+
+- Generate a template: `planemo workflow_job_init host-or-contamination-removal-on-long-reads.ga -o job.yml`
+- Lint: `planemo workflow_lint host-or-contamination-removal-on-long-reads.ga`
+
+See **[Running Galaxy workflows](https://planemo.readthedocs.io/en/master/running.html)** in the Planemo documentation.
+
+## Invocation outputs
+
+After a successful run with `--download_outputs`, files appear under your chosen `--output_directory`. `--output_json` records CWL-style metadata for outputs (paths, checksums).
+
+On an external Galaxy, use `planemo invocation_download INVOCATION_ID --profile ...` to fetch outputs, or track progress with `planemo workflow_track INVOCATION_ID`.
+
+Workflow steps marked as **workflow outputs** in the editor are listed under **Workflow outputs**; exact filenames depend on tools and Galaxy configuration.
+
+## Files
+
+- `host-or-contamination-removal-on-long-reads.ga` — Galaxy workflow export (JSON)
+- `job.yml` — inputs/parameters for `planemo run` (create with `planemo workflow_job_init`)
+- `README.md` — project reference (inputs, data, preparation)
+- [Planemo: Running Galaxy workflows](https://planemo.readthedocs.io/en/master/running.html)

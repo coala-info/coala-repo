@@ -1,0 +1,480 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "WF8101.cwl"
+      },
+      "datePublished": "2025-10-14 10:02:11 +0100",
+      "author": [
+
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://workflowhub.eu/workflows/1983?version=1",
+      "url": "https://workflowhub.eu/workflows/1983/ro_crate?version=1",
+      "name": "Research Object Crate for [DTC-AGEF] WF8101: Forecasting the long range responses of georeservoirs",
+      "description": "The advanced earthquake catalog is built from existing applications on the EPISODES platform (step 1,3, 4 in Figure 4.2) and a newly developed application for phase association (step 2) and an application for catalog homogenization (step 5). The last application is designed to facilitate the creation of a homogenized earthquake catalog, ensuring consistency across key parameters such as location (X, Y, Z), time (T), and magnitude (M). This is achieved by standardizing various magnitude measurements, including moment magnitude, local magnitude, duration magnitude, among others, to maintain uniform features throughout the catalog. Utilizing the Maximum Curvature Method (Step 5), an existing application of the EPISODES Platform, we calculated Mc (magnitude of completeness) for the comprehensive catalog. The advanced catalog serves as the foundation for our subsequent analyses of spatial and temporal density.",
+      "isBasedOn": "https://gitlab.com/dtgeo/metadata/cwl-ro-crate",
+      "sdDatePublished": "2026-03-24 00:58:42 +0000",
+      "creativeWorkStatus": "Work-in-progress",
+      "hasPart": [
+        {
+          "@id": "WF8101.cwl"
+        },
+        {
+          "@id": "WF8101.dot"
+        }
+      ]
+    },
+    {
+      "@id": "WF8101.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "url": "https://gitlab.com/dtgeo/metadata/cwl-ro-crate/-/raw/main/DTC81/WF8101/WF8101.cwl",
+      "contentSize": 4599,
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "image": {
+        "@id": "WF8101.dot"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "The advanced earthquake catalog is built from existing applications on the EPISODES platform (step 1,3, 4 in Figure 4.2) and a newly developed application for phase association (step 2) and an application for catalog homogenization (step 5). The last application is designed to facilitate the creation of a homogenized earthquake catalog, ensuring consistency across key parameters such as location (X, Y, Z), time (T), and magnitude (M). This is achieved by standardizing various magnitude measurements, including moment magnitude, local magnitude, duration magnitude, among others, to maintain uniform features throughout the catalog. Utilizing the Maximum Curvature Method (Step 5), an existing application of the EPISODES Platform, we calculated Mc (magnitude of completeness) for the comprehensive catalog. The advanced catalog serves as the foundation for our subsequent analyses of spatial and temporal density.",
+      "name": "[DTC-AGEF] WF8101: Forecasting the long range responses of georeservoirs",
+      "keywords": "",
+      "version": 1,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/182"
+      },
+      "dateCreated": "2025-10-14T09:03:55Z",
+      "dateModified": "2025-10-15T10:47:30Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-P_phase_threshold"
+        },
+        {
+          "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-S_phase_threshold"
+        },
+        {
+          "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-blinding"
+        },
+        {
+          "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-depth_max"
+        },
+        {
+          "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-depth_min"
+        },
+        {
+          "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-frequency_range"
+        },
+        {
+          "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-lat_max"
+        },
+        {
+          "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-lat_min"
+        },
+        {
+          "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-lon_max"
+        },
+        {
+          "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-lon_min"
+        },
+        {
+          "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-model"
+        },
+        {
+          "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-model_weights"
+        },
+        {
+          "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-network_inventory"
+        },
+        {
+          "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-raw_catalog"
+        },
+        {
+          "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-relevant_surfaces_points"
+        },
+        {
+          "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-simulation_params"
+        },
+        {
+          "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-source_rock_density"
+        },
+        {
+          "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-source_wave_velocity"
+        },
+        {
+          "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-time_window_length"
+        },
+        {
+          "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-velocity_model"
+        },
+        {
+          "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-waveform_miniseed"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-outputs-DT810101"
+        },
+        {
+          "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-outputs-DT810102"
+        },
+        {
+          "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-outputs-DT810103"
+        },
+        {
+          "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-outputs-DT810104"
+        },
+        {
+          "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-outputs-DT810105"
+        },
+        {
+          "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-outputs-DT810106"
+        },
+        {
+          "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-outputs-DT810107"
+        },
+        {
+          "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-outputs-DT810108"
+        },
+        {
+          "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-outputs-DT810109"
+        },
+        {
+          "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-outputs-DT810110"
+        },
+        {
+          "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-outputs-DT810111"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "WF8101.dot",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "url": "https://gitlab.com/dtgeo/metadata/cwl-ro-crate/-/raw/main/DTC81/WF8101/WF8101.dot",
+      "contentSize": 10035
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/182",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "WP8 - Anthropogenic geophysical extremes"
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-P_phase_threshold",
+      "@type": "FormalParameter",
+      "name": "P_phase_threshold",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-S_phase_threshold",
+      "@type": "FormalParameter",
+      "name": "S_phase_threshold",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-blinding",
+      "@type": "FormalParameter",
+      "name": "blinding",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-depth_max",
+      "@type": "FormalParameter",
+      "name": "depth_max",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-depth_min",
+      "@type": "FormalParameter",
+      "name": "depth_min",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-frequency_range",
+      "@type": "FormalParameter",
+      "name": "frequency_range",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-lat_max",
+      "@type": "FormalParameter",
+      "name": "lat_max",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-lat_min",
+      "@type": "FormalParameter",
+      "name": "lat_min",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-lon_max",
+      "@type": "FormalParameter",
+      "name": "lon_max",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-lon_min",
+      "@type": "FormalParameter",
+      "name": "lon_min",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-model",
+      "@type": "FormalParameter",
+      "name": "model",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-model_weights",
+      "@type": "FormalParameter",
+      "name": "model_weights",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-network_inventory",
+      "@type": "FormalParameter",
+      "name": "network_inventory",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-raw_catalog",
+      "@type": "FormalParameter",
+      "name": "raw_catalog",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-relevant_surfaces_points",
+      "@type": "FormalParameter",
+      "name": "relevant_surfaces_points",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-simulation_params",
+      "@type": "FormalParameter",
+      "name": "simulation_params",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-source_rock_density",
+      "@type": "FormalParameter",
+      "name": "source_rock_density",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-source_wave_velocity",
+      "@type": "FormalParameter",
+      "name": "source_wave_velocity",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-time_window_length",
+      "@type": "FormalParameter",
+      "name": "time_window_length",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-velocity_model",
+      "@type": "FormalParameter",
+      "name": "velocity_model",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-inputs-waveform_miniseed",
+      "@type": "FormalParameter",
+      "name": "waveform_miniseed",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-outputs-DT810101",
+      "@type": "FormalParameter",
+      "name": "DT810101",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-outputs-DT810102",
+      "@type": "FormalParameter",
+      "name": "DT810102",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-outputs-DT810103",
+      "@type": "FormalParameter",
+      "name": "DT810103",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-outputs-DT810104",
+      "@type": "FormalParameter",
+      "name": "DT810104",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-outputs-DT810105",
+      "@type": "FormalParameter",
+      "name": "DT810105",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-outputs-DT810106",
+      "@type": "FormalParameter",
+      "name": "DT810106",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-outputs-DT810107",
+      "@type": "FormalParameter",
+      "name": "DT810107",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-outputs-DT810108",
+      "@type": "FormalParameter",
+      "name": "DT810108",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-outputs-DT810109",
+      "@type": "FormalParameter",
+      "name": "DT810109",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-outputs-DT810110",
+      "@type": "FormalParameter",
+      "name": "DT810110",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8101__forecasting_the_long_range_responses_of_georeservoirs-outputs-DT810111",
+      "@type": "FormalParameter",
+      "name": "DT810111",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

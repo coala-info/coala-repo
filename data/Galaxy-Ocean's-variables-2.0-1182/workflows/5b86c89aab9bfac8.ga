@@ -1,0 +1,482 @@
+{
+    "a_galaxy_workflow": "true",
+    "format-version": "0.1",
+    "name": "Ocean's variables 2.0",
+    "annotation": "Subset data on the Mediterreanean see and extract and visualise the Phosphate variable",
+    "tags": [
+        "earth-system",
+        "Ocean"
+    ],
+    "uuid": "43af9a23-39a5-4ca9-b36f-c325ce104d3d",
+    "steps": {
+        "0": {
+            "id": 0,
+            "type": "parameter_input",
+            "content_id": null,
+            "tool_id": null,
+            "tool_version": null,
+            "name": "Input parameter",
+            "tool_state": "{\"parameter_type\": \"boolean\", \"optional\": false}",
+            "errors": null,
+            "uuid": "250d862b-4c3d-462d-9bcd-9a5053c52b5e",
+            "label": "Workflow fully interactive",
+            "annotation": "Choose whether you want to have only interactive tools (for more experimented user) or if you want a workflow hat combines interactive and non-interactive tools (easier)",
+            "when": null,
+            "inputs": [
+                {
+                    "name": "Workflow fully interactive",
+                    "description": "Choose whether you want to have only interactive tools (for more experimented user) or if you want a workflow hat combines interactive and non-interactive tools (easier)"
+                }
+            ],
+            "workflow_outputs": [
+                {
+                    "output_name": "output",
+                    "label": null,
+                    "uuid": "f84583d8-7925-4ddb-ab19-ca6940625f48"
+                }
+            ],
+            "outputs": [],
+            "input_connections": {},
+            "position": {
+                "left": 29.80677214543107,
+                "top": 359.1046708180256
+            }
+        },
+        "1": {
+            "id": 1,
+            "type": "data_input",
+            "content_id": null,
+            "tool_id": null,
+            "tool_version": null,
+            "name": "Input dataset",
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "errors": null,
+            "uuid": "b513664a-1176-4fd9-bb79-439010069177",
+            "label": "Eutrophication_Med_profiles_2022_unrestricted_SNAPSHOT_2023-10-24T16-39-44.zip",
+            "annotation": "The data here are Mediterranean Sea - Eutrophication and Acidity aggregated datasets EMODnet Chemistry.",
+            "when": null,
+            "inputs": [
+                {
+                    "name": "Eutrophication_Med_profiles_2022_unrestricted_SNAPSHOT_2023-10-24T16-39-44.zip",
+                    "description": "The data here are Mediterranean Sea - Eutrophication and Acidity aggregated datasets EMODnet Chemistry."
+                }
+            ],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {},
+            "position": {
+                "left": 331.37356461320985,
+                "top": 474.6166042326029
+            }
+        },
+        "2": {
+            "id": 2,
+            "type": "parameter_input",
+            "content_id": null,
+            "tool_id": null,
+            "tool_version": null,
+            "name": "Input parameter",
+            "tool_state": "{\"parameter_type\": \"boolean\", \"optional\": false}",
+            "errors": null,
+            "uuid": "6e2ed5ec-3760-44fe-a722-4e44356f9058",
+            "label": "Workflow semi automatic",
+            "annotation": "Choose whether you want to have only interactive tools (for more experimented user) or if you want a workflow hat combines interactive and non-interactive tools (easier)",
+            "when": null,
+            "inputs": [
+                {
+                    "name": "Workflow semi automatic",
+                    "description": "Choose whether you want to have only interactive tools (for more experimented user) or if you want a workflow hat combines interactive and non-interactive tools (easier)"
+                }
+            ],
+            "workflow_outputs": [
+                {
+                    "output_name": "output",
+                    "label": null,
+                    "uuid": "5a5f8026-e554-4959-8274-979dac717a84"
+                }
+            ],
+            "outputs": [],
+            "input_connections": {},
+            "position": {
+                "left": 30.803726616808316,
+                "top": 708.6669947644027
+            }
+        },
+        "3": {
+            "id": 3,
+            "type": "data_input",
+            "content_id": null,
+            "tool_id": null,
+            "tool_version": null,
+            "name": "Input dataset",
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "errors": null,
+            "uuid": "006a3936-6151-4724-9fab-6b41f869e1ee",
+            "label": "gebco_30sec_8.nc",
+            "annotation": "A bathymetry file in netcdf.",
+            "when": null,
+            "inputs": [
+                {
+                    "name": "gebco_30sec_8.nc",
+                    "description": "A bathymetry file in netcdf."
+                }
+            ],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {},
+            "position": {
+                "left": 614.0977004616734,
+                "top": 903.4688531054738
+            }
+        },
+        "4": {
+            "id": 4,
+            "type": "tool",
+            "content_id": "interactive_tool_odv",
+            "tool_id": "interactive_tool_odv",
+            "tool_version": "v5.7.2",
+            "name": "interactive_tool_odv",
+            "tool_state": "{\"__input_ext\": \"zip\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"method\": {\"__current_case__\": 1, \"folder\": {\"__class__\": \"ConnectedValue\"}, \"type\": \"zip\"}}",
+            "errors": "Tool is not installed",
+            "uuid": "773aa0ed-a5e8-44ae-9688-cf62a4f7b91d",
+            "label": "Ocean Data View",
+            "annotation": "Interactively subset you data.",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "method|folder": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "position": {
+                "left": 604.0101209455609,
+                "top": 486.70594520850074
+            }
+        },
+        "5": {
+            "id": 5,
+            "type": "tool",
+            "content_id": "interactive_tool_divand",
+            "tool_id": "interactive_tool_divand",
+            "tool_version": "0.0.6",
+            "name": "interactive_tool_divand",
+            "tool_state": "{\"__page__\": null, \"__rerun_remap_job_id__\": null, \"input\": {\"__class__\": \"ConnectedValue\"}, \"mode\": {\"__current_case__\": 0, \"mode_select\": \"scratch\"}}",
+            "errors": "Tool is not installed",
+            "uuid": "30e5c69b-7ceb-4e60-8471-685da9c8e7d3",
+            "label": "Interactive DIVAnd jupyterlab",
+            "annotation": "Create a climatology interactively with notebooks",
+            "when": "$(inputs.when)",
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "input": {
+                    "id": 4,
+                    "output_name": "outputs_netcdf"
+                },
+                "when": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "position": {
+                "left": 956.526945566784,
+                "top": 357.7537761235078
+            }
+        },
+        "6": {
+            "id": 6,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ecology/divand_full_analysis/divand_full_analysis/0.1.0+galaxy0",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ecology/divand_full_analysis/divand_full_analysis/0.1.0+galaxy0",
+            "tool_version": "0.1.0+galaxy0",
+            "name": "toolshed.g2.bx.psu.edu/repos/ecology/divand_full_analysis/divand_full_analysis/0.1.0+galaxy0",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"bathname\": {\"__class__\": \"ConnectedValue\"}, \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"enddate\": \"2017-01-01\", \"input_netcdf_identifier\": {\"__class__\": \"ConnectedValue\"}, \"input_netcdf_identifier|__identifier__\": \"data_from_Eutrophication_Med_profiles_2022_unrestricted.nc\", \"latmax\": \"38.0\", \"latmin\": \"32.0\", \"longmax\": \"30.0\", \"longmin\": \"19.0\", \"selmax\": \"100\", \"selmin\": \"0\", \"startdate\": \"1950-12-31\", \"varname\": \"phosphate\"}",
+            "errors": "Tool is not installed",
+            "uuid": "d1c07265-1da0-40d6-9fd5-1041a9d9f658",
+            "label": "DIVAnd (create a climatology)",
+            "annotation": "Create a climatology (not interactively)",
+            "when": "$(inputs.when)",
+            "post_job_actions": {
+                "RenameDatasetActionoutput_netcdf": {
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "output_netcdf",
+                    "action_arguments": {
+                        "newname": "Water_body_Phosphate_Mediterranean.nc"
+                    }
+                }
+            },
+            "inputs": [],
+            "workflow_outputs": [
+                {
+                    "output_name": "output_netcdf",
+                    "label": "Water_body_Phosphate_Mediterranean.nc",
+                    "uuid": "59963282-87bf-4432-a777-8a9b61dea03c"
+                }
+            ],
+            "outputs": [],
+            "input_connections": {
+                "input_netcdf_identifier": {
+                    "id": 4,
+                    "output_name": "outputs_netcdf"
+                },
+                "bathname": {
+                    "id": 3,
+                    "output_name": "output"
+                },
+                "when": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "position": {
+                "left": 958.2529539113443,
+                "top": 679.118779662132
+            }
+        },
+        "7": {
+            "id": 7,
+            "type": "tool",
+            "content_id": "interactive_tool_odv",
+            "tool_id": "interactive_tool_odv",
+            "tool_version": "v5.7.2",
+            "name": "interactive_tool_odv",
+            "tool_state": "{\"__input_ext\": \"netcdf\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"method\": {\"__current_case__\": 0, \"infiles\": {\"__class__\": \"ConnectedValue\"}, \"type\": \"own_data\"}}",
+            "errors": "Tool is not installed",
+            "uuid": "50c35d61-7b8d-4706-9d56-d3bd94a46960",
+            "label": "ODV (visualisation) interactive",
+            "annotation": "Final step to visualize in different way a ocean variable like the phosphate.",
+            "when": "$(inputs.when)",
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [
+                {
+                    "output_name": "outputs_all",
+                    "label": "Ocean variables visualisation interactive",
+                    "uuid": "dc8316a4-e57c-476b-b885-bbe4fb84d8c7"
+                }
+            ],
+            "outputs": [],
+            "input_connections": {
+                "method|infiles": {
+                    "id": 5,
+                    "output_name": "output_netcdf"
+                },
+                "when": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "position": {
+                "left": 1317.571555631274,
+                "top": 358.7519190550188
+            }
+        },
+        "8": {
+            "id": 8,
+            "type": "tool",
+            "content_id": "interactive_tool_odv",
+            "tool_id": "interactive_tool_odv",
+            "tool_version": "v5.7.2",
+            "name": "interactive_tool_odv",
+            "tool_state": "{\"__input_ext\": \"netcdf\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"method\": {\"__current_case__\": 0, \"infiles\": {\"__class__\": \"ConnectedValue\"}, \"type\": \"own_data\"}}",
+            "errors": "Tool is not installed",
+            "uuid": "9bff476c-be32-4d87-a655-db241126ae49",
+            "label": "ODV (visualisation)",
+            "annotation": "Final step to visualize in different way a ocean variable like the phosphate.",
+            "when": "$(inputs.when)",
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [
+                {
+                    "output_name": "outputs_all",
+                    "label": "Ocean variables visualisation",
+                    "uuid": "7b072253-5bf9-434f-b06a-70b375ddaa03"
+                }
+            ],
+            "outputs": [],
+            "input_connections": {
+                "method|infiles": {
+                    "id": 6,
+                    "output_name": "output_netcdf"
+                },
+                "when": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "position": {
+                "left": 1351.631142647093,
+                "top": 662.9057765448973
+            }
+        }
+    },
+    "comments": [
+        {
+            "id": 0,
+            "position": [
+                0,
+                271.4
+            ],
+            "size": [
+                279,
+                631
+            ],
+            "type": "frame",
+            "color": "orange",
+            "data": {
+                "title": "Choose your workflow"
+            },
+            "child_steps": [
+                0,
+                2
+            ]
+        },
+        {
+            "id": 7,
+            "position": [
+                889.6,
+                959.9
+            ],
+            "size": [
+                344,
+                252
+            ],
+            "type": "text",
+            "color": "none",
+            "data": {
+                "italic": true,
+                "size": 1,
+                "text": "If you choose the workflow fully interactive it will be the top one DIVAnd that will be runned. Then, this will launch a Jupyterlab with the notebooks for using DIVAnd . However if you choose the semi automatic it will be a DIVAnd batch tool that will run. Thus, you don't have to do anything the tool will run by itself.<br><br>In conclusion if you want more flexibility on DIVAnd choose the fully interactive workflow but, if you don't want to bother yourself with a jupyterlab choose the semi automatic one.<br>"
+            }
+        },
+        {
+            "id": 2,
+            "position": [
+                327.3,
+                47.39999999999998
+            ],
+            "size": [
+                839,
+                131
+            ],
+            "type": "markdown",
+            "color": "yellow",
+            "data": {
+                "text": "# Galaxy Earth system \ud83c\udf0d\n## https://earth-system.usegalaxy.eu/\n### Come try our earth system **subdomain** and test our tutorials with the **earth-system** tag !\n"
+            }
+        },
+        {
+            "id": 6,
+            "position": [
+                608.3,
+                995.1999999999999
+            ],
+            "size": [
+                216,
+                197
+            ],
+            "type": "text",
+            "color": "blue",
+            "data": {
+                "italic": true,
+                "size": 1,
+                "text": "A bathymetry file (directly downloaded in the jupyterlab for the other workflow).&nbsp; Here you need to download a bathymetry file you can use this link https://dox.ulg.ac.be/index.php/s/U0pqyXhcQrXjEUX/download"
+            }
+        },
+        {
+            "id": 5,
+            "position": [
+                876.6,
+                290.9
+            ],
+            "size": [
+                363,
+                925
+            ],
+            "type": "frame",
+            "color": "lime",
+            "data": {
+                "title": "The impact of your choice"
+            },
+            "child_steps": [
+                6,
+                5
+            ],
+            "child_comments": [
+                7
+            ]
+        },
+        {
+            "id": 4,
+            "position": [
+                328.5,
+                607.5
+            ],
+            "size": [
+                196,
+                123
+            ],
+            "type": "text",
+            "color": "blue",
+            "data": {
+                "italic": true,
+                "size": 1,
+                "text": "The data here are Mediterranean Sea - Eutrophication and Acidity aggregated datasets\nEMODnet Chemistry"
+            }
+        },
+        {
+            "id": 3,
+            "position": [
+                17,
+                563.0999999999999
+            ],
+            "size": [
+                268,
+                112
+            ],
+            "type": "text",
+            "color": "none",
+            "data": {
+                "size": 1,
+                "text": "Choose whether you want to have only interactive tools (for more experimented user) or if you want a workflow hat combines interactive and non-interactive tools (easier)"
+            }
+        },
+        {
+            "id": 1,
+            "position": [
+                306.4,
+                0
+            ],
+            "size": [
+                876,
+                189
+            ],
+            "type": "frame",
+            "color": "yellow",
+            "data": {
+                "title": "EOSC FAIR-EASE"
+            },
+            "child_comments": [
+                2
+            ]
+        }
+    ],
+    "report": {
+        "markdown": "\n# Workflow Execution Report\n\n## Workflow Inputs\n```galaxy\ninvocation_inputs()\n```\n\n## Workflow Outputs\n```galaxy\ninvocation_outputs()\n```\n\n## Workflow\n```galaxy\nworkflow_display()\n```\n"
+    },
+    "creator": [
+        {
+            "class": "Person",
+            "identifier": "0009-0008-0622-604X",
+            "name": "Marie Joss\u00e9",
+            "url": "https://github.com/Marie59"
+        }
+    ],
+    "license": "CC-BY-4.0"
+}

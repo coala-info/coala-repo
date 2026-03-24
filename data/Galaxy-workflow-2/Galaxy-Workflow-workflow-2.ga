@@ -1,0 +1,581 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "Domestication of new parts before cloning simulation",
+    "format-version": "0.1",
+    "name": "workflow-2",
+    "steps": {
+        "0": {
+            "annotation": "Without Header",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "Without Header",
+                    "name": "Assembly dataset (constructs+fragments)"
+                }
+            ],
+            "label": "Assembly dataset (constructs+fragments)",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 347.53334045410156,
+                "height": 103.35000610351562,
+                "left": 350.3999938964844,
+                "right": 550.3999938964844,
+                "top": 244.18333435058594,
+                "width": 200,
+                "x": 350.3999938964844,
+                "y": 244.18333435058594
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"format\": [\"csv\"]}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "835f4857-7b81-4c47-bf03-4931550be8cd",
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "new sequences to domestication"
+                }
+            ],
+            "label": "new sequences to domestication",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 638.1333465576172,
+                "height": 82.94999694824219,
+                "left": 774.4000244140625,
+                "right": 974.4000244140625,
+                "top": 555.183349609375,
+                "width": 200,
+                "x": 774.4000244140625,
+                "y": 555.183349609375
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"format\": [\"csv\"]}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "b3fe6ec2-3bd7-4396-9b9a-eb34bb47a5ea",
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 2,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "DB Table Name"
+                }
+            ],
+            "label": "DB Table Name",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "bottom": 710.7333526611328,
+                "height": 62.55000305175781,
+                "left": 1350.4000244140625,
+                "right": 1550.4000244140625,
+                "top": 648.183349609375,
+                "width": 200,
+                "x": 1350.4000244140625,
+                "y": 648.183349609375
+            },
+            "tool_id": null,
+            "tool_state": "{\"parameter_type\": \"text\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "56d441a4-4973-4536-93b5-a0417e05a6e8",
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 3,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "DB Column Contains Sequence For gb Files"
+                }
+            ],
+            "label": "DB Column Contains Sequence For gb Files",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "bottom": 828.5333557128906,
+                "height": 103.35000610351562,
+                "left": 1351.4000244140625,
+                "right": 1551.4000244140625,
+                "top": 725.183349609375,
+                "width": 200,
+                "x": 1351.4000244140625,
+                "y": 725.183349609375
+            },
+            "tool_id": null,
+            "tool_state": "{\"parameter_type\": \"text\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "c15e6aab-0bb5-4289-9f69-362d99b4ab70",
+            "workflow_outputs": []
+        },
+        "4": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 4,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "DB Column Contains Annotation For gb Files"
+                }
+            ],
+            "label": "DB Column Contains Annotation For gb Files",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "bottom": 940.5333557128906,
+                "height": 103.35000610351562,
+                "left": 1354.4000244140625,
+                "right": 1554.4000244140625,
+                "top": 837.183349609375,
+                "width": 200,
+                "x": 1354.4000244140625,
+                "y": 837.183349609375
+            },
+            "tool_id": null,
+            "tool_state": "{\"parameter_type\": \"text\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "81d7dec8-44bb-494c-a5d0-24706d8fde6b",
+            "workflow_outputs": []
+        },
+        "5": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 5,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "DB IDs Column Name"
+                }
+            ],
+            "label": "DB IDs Column Name",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "bottom": 1032.1333465576172,
+                "height": 82.94999694824219,
+                "left": 1356.4000244140625,
+                "right": 1556.4000244140625,
+                "top": 949.183349609375,
+                "width": 200,
+                "x": 1356.4000244140625,
+                "y": 949.183349609375
+            },
+            "tool_id": null,
+            "tool_state": "{\"parameter_type\": \"text\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "03e32f6f-8497-4afe-92ab-a4d8fe472814",
+            "workflow_outputs": []
+        },
+        "6": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 6,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "DB URI"
+                }
+            ],
+            "label": "DB URI",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "bottom": 1097.7333526611328,
+                "height": 62.55000305175781,
+                "left": 1355.4000244140625,
+                "right": 1555.4000244140625,
+                "top": 1035.183349609375,
+                "width": 200,
+                "x": 1355.4000244140625,
+                "y": 1035.183349609375
+            },
+            "tool_id": null,
+            "tool_state": "{\"parameter_type\": \"text\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "d4e4d8dc-cd50-4c35-b55e-6130de8718a1",
+            "workflow_outputs": []
+        },
+        "7": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 7,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Enable Save to DB"
+                }
+            ],
+            "label": "Enable Save to DB",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "bottom": 1193.1333465576172,
+                "height": 82.94999694824219,
+                "left": 1358.4000244140625,
+                "right": 1558.4000244140625,
+                "top": 1110.183349609375,
+                "width": 200,
+                "x": 1358.4000244140625,
+                "y": 1110.183349609375
+            },
+            "tool_id": null,
+            "tool_state": "{\"parameter_type\": \"boolean\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "30772818-50d0-482d-bd60-d6e26febcf57",
+            "workflow_outputs": []
+        },
+        "8": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/tduigou/seq_from_db/seq_form_db/0.1.0+galaxy0",
+            "errors": null,
+            "id": 8,
+            "input_connections": {
+                "input": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Get sequences Data From DB",
+            "outputs": [
+                {
+                    "name": "output_gb",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 518.183349609375,
+                "height": 135,
+                "left": 590.4000244140625,
+                "right": 790.4000244140625,
+                "top": 383.183349609375,
+                "width": 200,
+                "x": 590.4000244140625,
+                "y": 383.183349609375
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/tduigou/seq_from_db/seq_form_db/0.1.0+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "3dfba58f44f1",
+                "name": "seq_from_db",
+                "owner": "tduigou",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"annotation_columns\": \"\", \"db_uri\": \"\", \"fragment_column\": \"\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"sequence_column\": \"\", \"table\": \"\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1.0+galaxy0",
+            "type": "tool",
+            "uuid": "3c848de5-f097-4197-9e27-22b44ecc3b5d",
+            "workflow_outputs": [
+                {
+                    "label": "GenBank Files collection",
+                    "output_name": "output_gb",
+                    "uuid": "b27109f3-7af1-4b78-85b8-5e3e287f98fe"
+                }
+            ]
+        },
+        "9": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/tduigou/sculpt_sequences/sculpt_sequences/0.1.0+galaxy0",
+            "errors": null,
+            "id": 9,
+            "input_connections": {
+                "genbank_files": {
+                    "id": 8,
+                    "output_name": "output_gb"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Sculpt Sequences",
+            "outputs": [
+                {
+                    "name": "scul",
+                    "type": "input"
+                },
+                {
+                    "name": "unscul",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 528.183349609375,
+                "height": 145,
+                "left": 840.4000244140625,
+                "right": 1040.4000244140625,
+                "top": 383.183349609375,
+                "width": 200,
+                "x": 840.4000244140625,
+                "y": 383.183349609375
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/tduigou/sculpt_sequences/sculpt_sequences/0.1.0+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "a05746a5560f",
+                "name": "sculpt_sequences",
+                "owner": "tduigou",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"DnaOptimizationProblemClass\": \"DnaOptimizationProblem\", \"adv\": {\"rep_gc_constraints\": [], \"kmer_size\": \"15\", \"rep_avoid_hairpins\": [], \"use_file_names_as_ids\": \"true\"}, \"genbank_files\": {\"__class__\": \"ConnectedValue\"}, \"rep_avoid_pattern\": [], \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1.0+galaxy0",
+            "type": "tool",
+            "uuid": "42488c58-3db9-4c47-bcbc-99bb154171b6",
+            "workflow_outputs": [
+                {
+                    "label": "scul group",
+                    "output_name": "scul",
+                    "uuid": "b54ec955-a462-4baf-b6f5-101fbc2970e0"
+                },
+                {
+                    "label": "unscul+scul gb",
+                    "output_name": "unscul",
+                    "uuid": "2e2b5ad6-d617-47e3-a251-5eecc464bb10"
+                }
+            ]
+        },
+        "10": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/tduigou/domestication_of_new_parts/domestication_of_new_parts/0.1.0+galaxy0",
+            "errors": null,
+            "id": 10,
+            "input_connections": {
+                "domestication_csv": {
+                    "id": 1,
+                    "output_name": "output"
+                },
+                "genbank_files": {
+                    "id": 9,
+                    "output_name": "unscul"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Domestication Of New Parts",
+            "outputs": [
+                {
+                    "name": "methprot_gb",
+                    "type": "input"
+                },
+                {
+                    "name": "domesticated_zip",
+                    "type": "zip"
+                }
+            ],
+            "position": {
+                "bottom": 626.7833557128906,
+                "height": 236.60000610351562,
+                "left": 1110.4000244140625,
+                "right": 1310.4000244140625,
+                "top": 390.183349609375,
+                "width": 200,
+                "x": 1110.4000244140625,
+                "y": 390.183349609375
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/tduigou/domestication_of_new_parts/domestication_of_new_parts/0.1.0+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "c36b0b4ee668",
+                "name": "domestication_of_new_parts",
+                "owner": "tduigou",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adv\": {\"use_file_names_as_ids\": \"true\", \"allow_edits\": \"true\"}, \"domestication_csv\": {\"__class__\": \"ConnectedValue\"}, \"genbank_files\": {\"__class__\": \"ConnectedValue\"}, \"methylation_protection\": \"true\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1.0+galaxy0",
+            "type": "tool",
+            "uuid": "2fd2a7a8-43c2-4f13-bb1d-c09051d3ee64",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "methprot_gb",
+                    "uuid": "66757e1e-3658-46af-8c38-a4f9a7ea6828"
+                },
+                {
+                    "label": "domestication results",
+                    "output_name": "domesticated_zip",
+                    "uuid": "3f865b16-aad5-41aa-8947-06690a046ab9"
+                }
+            ]
+        },
+        "11": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/tduigou/cloning_simulation/cloning_simulation/0.1.0+galaxy0",
+            "errors": null,
+            "id": 11,
+            "input_connections": {
+                "assembly_csv": {
+                    "id": 0,
+                    "output_name": "output"
+                },
+                "domesticated_input": {
+                    "id": 10,
+                    "output_name": "methprot_gb"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Cloning Simulation",
+            "outputs": [
+                {
+                    "name": "construct_gb",
+                    "type": "input"
+                },
+                {
+                    "name": "output_zip",
+                    "type": "zip"
+                }
+            ],
+            "position": {
+                "bottom": 484.18333435058594,
+                "height": 267,
+                "left": 1365.4000244140625,
+                "right": 1565.4000244140625,
+                "top": 217.18333435058594,
+                "width": 200,
+                "x": 1365.4000244140625,
+                "y": 217.18333435058594
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/tduigou/cloning_simulation/cloning_simulation/0.1.0+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "3a3b0f7cb5c2",
+                "name": "cloning_simulation",
+                "owner": "tduigou",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adv\": {\"enzyme\": \"auto\", \"use_file_names_as_ids\": \"true\"}, \"assembly_csv\": {\"__class__\": \"ConnectedValue\"}, \"assembly_plan_name\": \"Type2sRestrictionAssembly\", \"domesticated_input\": {\"__class__\": \"ConnectedValue\"}, \"genbank_files\": {\"__class__\": \"ConnectedValue\"}, \"topology\": \"circular\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1.0+galaxy0",
+            "type": "tool",
+            "uuid": "8b306a60-2a71-4508-ab7d-ded060bb868b",
+            "workflow_outputs": [
+                {
+                    "label": "simulation results (gb)",
+                    "output_name": "construct_gb",
+                    "uuid": "da09f874-32b6-4bfd-9d91-64c4dbf4b885"
+                },
+                {
+                    "label": "simulation results (zip)",
+                    "output_name": "output_zip",
+                    "uuid": "464d6479-3975-45f4-8bc1-35d416ea6434"
+                }
+            ]
+        },
+        "12": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/tduigou/seq_to_db/seq_to_db/0.2.0+galaxy1",
+            "errors": null,
+            "id": 12,
+            "input_connections": {
+                "adv|execution_enable": {
+                    "id": 7,
+                    "output_name": "output"
+                },
+                "annotation_column": {
+                    "id": 4,
+                    "output_name": "output"
+                },
+                "db_uri": {
+                    "id": 6,
+                    "output_name": "output"
+                },
+                "fragment_column": {
+                    "id": 5,
+                    "output_name": "output"
+                },
+                "genbank_files": {
+                    "id": 11,
+                    "output_name": "construct_gb"
+                },
+                "sequence_column": {
+                    "id": 3,
+                    "output_name": "output"
+                },
+                "table": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Save Sequence Data In DB",
+                    "name": "adv"
+                }
+            ],
+            "label": null,
+            "name": "Save Sequence Data In DB",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 802.7833557128906,
+                "height": 388.6000061035156,
+                "left": 1708.4000244140625,
+                "right": 1908.4000244140625,
+                "top": 414.183349609375,
+                "width": 200,
+                "x": 1708.4000244140625,
+                "y": 414.183349609375
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/tduigou/seq_to_db/seq_to_db/0.2.0+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "3daf04425ea1",
+                "name": "seq_to_db",
+                "owner": "tduigou",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adv\": {\"execution_enable\": {\"__class__\": \"ConnectedValue\"}, \"json_conf\": {\"__class__\": \"RuntimeValue\"}}, \"annotation_column\": {\"__class__\": \"ConnectedValue\"}, \"db_uri\": {\"__class__\": \"ConnectedValue\"}, \"fragment_column\": {\"__class__\": \"ConnectedValue\"}, \"genbank_files\": {\"__class__\": \"ConnectedValue\"}, \"sequence_column\": {\"__class__\": \"ConnectedValue\"}, \"table\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.2.0+galaxy1",
+            "type": "tool",
+            "uuid": "2e99d2a5-b469-4f73-a390-f6aa185ef046",
+            "workflow_outputs": [
+                {
+                    "label": "saving report",
+                    "output_name": "output",
+                    "uuid": "bd86fd5b-1427-4058-bde0-2ffd56c3055e"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "031c78f6-d65d-4832-bbcf-57a52402a5e3",
+    "version": 6
+}

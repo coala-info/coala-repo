@@ -1,0 +1,273 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "workflow.cwl"
+      },
+      "datePublished": "2021-02-18 15:01:31 +0000",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-4806-5140"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-4929-1219"
+        }
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.107.1",
+      "url": "https://workflowhub.eu/workflows/107/ro_crate?version=1",
+      "name": "Research Object Crate for VariantCaller_GATK3.6",
+      "description": "Rare disease researchers workflow is that they submit their raw data (fastq), run the mapping and variant calling RD-Connect pipeline and obtain unannotated gvcf files to further submit to the RD-Connect GPAP or analyse on their own.\n\nThis demonstrator focuses on the variant calling pipeline. The raw genomic data is processed using the RD-Connect pipeline ([Laurie et al., 2016](https://www.ncbi.nlm.nih.gov/pubmed/27604516)) running on the standards (GA4GH) compliant, interoperable container orchestration platform.\n\nThis demonstrator will be aligned with the current implementation study on [Development of Architecture for Software Containers at ELIXIR and its use by EXCELERATE use-case communities](docs/Appendix%201%20-%20Project%20Plan%202018-biocontainers%2020171117.pdf) \n\nFor this implementation, different steps are required:\n\n1. Adapt the pipeline to CWL and dockerise elements \n2. Align with IS efforts on software containers to package the different components (Nextflow) \n3. Submit trio of Illumina NA12878 Platinum Genome or Exome to the GA4GH platform cloud (by Aspera or ftp server)\n4. Run the RD-Connect pipeline on the container platform\n5. Return corresponding gvcf files\n6. OPTIONAL: annotate and update to RD-Connect playground instance\n\nN.B: The demonstrator might have some manual steps, which will not be in production. \n\n## RD-Connect pipeline\n\nDetailed information about the RD-Connect pipeline can be found in [Laurie et al., 2016](https://www.ncbi.nlm.nih.gov/pubmed/?term=27604516)\n\n![alt text](https://raw.githubusercontent.com/inab/Wetlab2Variations/eosc-life/docs/RD-Connect_pipeline.jpg)\n\n## The applications\n\n**1\\. Name of the application: Adaptor removal**\nFunction: remove sequencing adaptors   \nContainer (readiness status, location, version): [cutadapt (v.1.18)](https://hub.docker.com/r/cnag/cutadapt)  \nRequired resources in cores and RAM: current container size 169MB  \nInput data (amount, format, directory..): raw fastq  \nOutput data: paired fastq without adaptors  \n\n**2\\. Name of the application: Mapping and bam sorting**  \nFunction: align data to reference genome  \nContainer : [bwa-mem (v.0.7.17)](https://hub.docker.com/r/cnag/bwa) / [Sambamba (v. 0.6.8 )](https://hub.docker.com/r/cnag/sambamba)(or samtools)  \nResources :current container size 111MB / 32MB  \nInput data: paired fastq without adaptors  \nOutput data: sorted bam  \n\n**3\\. Name of the application: MarkDuplicates**  \nFunction: Mark (and remove) duplicates  \nContainer: [Picard (v.2.18.25)](https://hub.docker.com/r/cnag/picard)\nResources: current container size 261MB  \nInput data:sorted bam  \nOutput data: Sorted bam with marked (or removed) duplicates  \n\n**4\\. Name of the application: Base quality recalibration (BQSR)**  \nFunction: Base quality recalibration  \nContainer: [GATK (v.3.6-0)](https://hub.docker.com/r/cnag/gatk)\nResources: current container size 270MB  \nInput data: Sorted bam with marked (or removed) duplicates  \nOutput data: Sorted bam with marked duplicates &amp; base quality recalculated  \n\n**5\\. Name of the application: Variant calling**  \nFunction: variant calling  \nContainer: [GATK (v.3.6-0)](https://hub.docker.com/r/cnag/gatk)\nResources: current container size 270MB  \nInput data:Sorted bam with marked duplicates &amp; base quality recalculated  \nOutput data: unannotated gvcf per sample  \n\n**6\\. (OPTIONAL)Name of the application: Quality of the fastq**  \nFunction: report on the sequencing quality  \nContainer: [fastqc 0.11.8](https://hub.docker.com/r/cnag/fastqc)\nResources: current container size 173MB  \nInput data: raw fastq  \nOutput data: QC report \n\n## Licensing\n\nGATK declares that archived packages are made available for free to academic researchers under a limited license for non-commercial use. If you need to use one of these packages for commercial use. https://software.broadinstitute.org/gatk/download/archive ",
+      "isBasedOn": "https://github.com/inab/Wetlab2Variations/blob/eosc-life/cwl-workflows/workflows/workflow.cwl",
+      "sdDatePublished": "2026-03-24 01:20:06 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "workflow.cwl"
+        },
+        {
+          "@id": "workflow-107-e0f868f36095db8590147a97a88572ede5457f9d-diagram.svg"
+        }
+      ]
+    },
+    {
+      "@id": "workflow.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 7205,
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "image": {
+        "@id": "workflow-107-e0f868f36095db8590147a97a88572ede5457f9d-diagram.svg"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Rare disease researchers workflow is that they submit their raw data (fastq), run the mapping and variant calling RD-Connect pipeline and obtain unannotated gvcf files to further submit to the RD-Connect GPAP or analyse on their own.\n\nThis demonstrator focuses on the variant calling pipeline. The raw genomic data is processed using the RD-Connect pipeline ([Laurie et al., 2016](https://www.ncbi.nlm.nih.gov/pubmed/27604516)) running on the standards (GA4GH) compliant, interoperable container orchestration platform.\n\nThis demonstrator will be aligned with the current implementation study on [Development of Architecture for Software Containers at ELIXIR and its use by EXCELERATE use-case communities](docs/Appendix%201%20-%20Project%20Plan%202018-biocontainers%2020171117.pdf) \n\nFor this implementation, different steps are required:\n\n1. Adapt the pipeline to CWL and dockerise elements \n2. Align with IS efforts on software containers to package the different components (Nextflow) \n3. Submit trio of Illumina NA12878 Platinum Genome or Exome to the GA4GH platform cloud (by Aspera or ftp server)\n4. Run the RD-Connect pipeline on the container platform\n5. Return corresponding gvcf files\n6. OPTIONAL: annotate and update to RD-Connect playground instance\n\nN.B: The demonstrator might have some manual steps, which will not be in production. \n\n## RD-Connect pipeline\n\nDetailed information about the RD-Connect pipeline can be found in [Laurie et al., 2016](https://www.ncbi.nlm.nih.gov/pubmed/?term=27604516)\n\n![alt text](https://raw.githubusercontent.com/inab/Wetlab2Variations/eosc-life/docs/RD-Connect_pipeline.jpg)\n\n## The applications\n\n**1\\. Name of the application: Adaptor removal**\nFunction: remove sequencing adaptors   \nContainer (readiness status, location, version): [cutadapt (v.1.18)](https://hub.docker.com/r/cnag/cutadapt)  \nRequired resources in cores and RAM: current container size 169MB  \nInput data (amount, format, directory..): raw fastq  \nOutput data: paired fastq without adaptors  \n\n**2\\. Name of the application: Mapping and bam sorting**  \nFunction: align data to reference genome  \nContainer : [bwa-mem (v.0.7.17)](https://hub.docker.com/r/cnag/bwa) / [Sambamba (v. 0.6.8 )](https://hub.docker.com/r/cnag/sambamba)(or samtools)  \nResources :current container size 111MB / 32MB  \nInput data: paired fastq without adaptors  \nOutput data: sorted bam  \n\n**3\\. Name of the application: MarkDuplicates**  \nFunction: Mark (and remove) duplicates  \nContainer: [Picard (v.2.18.25)](https://hub.docker.com/r/cnag/picard)\nResources: current container size 261MB  \nInput data:sorted bam  \nOutput data: Sorted bam with marked (or removed) duplicates  \n\n**4\\. Name of the application: Base quality recalibration (BQSR)**  \nFunction: Base quality recalibration  \nContainer: [GATK (v.3.6-0)](https://hub.docker.com/r/cnag/gatk)\nResources: current container size 270MB  \nInput data: Sorted bam with marked (or removed) duplicates  \nOutput data: Sorted bam with marked duplicates &amp; base quality recalculated  \n\n**5\\. Name of the application: Variant calling**  \nFunction: variant calling  \nContainer: [GATK (v.3.6-0)](https://hub.docker.com/r/cnag/gatk)\nResources: current container size 270MB  \nInput data:Sorted bam with marked duplicates &amp; base quality recalculated  \nOutput data: unannotated gvcf per sample  \n\n**6\\. (OPTIONAL)Name of the application: Quality of the fastq**  \nFunction: report on the sequencing quality  \nContainer: [fastqc 0.11.8](https://hub.docker.com/r/cnag/fastqc)\nResources: current container size 173MB  \nInput data: raw fastq  \nOutput data: QC report \n\n## Licensing\n\nGATK declares that archived packages are made available for free to academic researchers under a limited license for non-commercial use. If you need to use one of these packages for commercial use. https://software.broadinstitute.org/gatk/download/archive ",
+      "name": "VariantCaller_GATK3.6",
+      "url": "https://workflowhub.eu/workflows/107?version=1",
+      "keywords": "CWL, variant_calling",
+      "version": 1,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/110"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/4"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/31"
+      },
+      "dateCreated": "2021-02-18T15:01:31Z",
+      "dateModified": "2023-04-21T12:35:06Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.107.1",
+      "input": [
+        {
+          "@id": "#variantcaller_gatk3_6-inputs-fastq_files"
+        },
+        {
+          "@id": "#variantcaller_gatk3_6-inputs-reference_genome"
+        },
+        {
+          "@id": "#variantcaller_gatk3_6-inputs-known_indels_file"
+        },
+        {
+          "@id": "#variantcaller_gatk3_6-inputs-known_sites_file"
+        },
+        {
+          "@id": "#variantcaller_gatk3_6-inputs-chromosome"
+        },
+        {
+          "@id": "#variantcaller_gatk3_6-inputs-readgroup_str"
+        },
+        {
+          "@id": "#variantcaller_gatk3_6-inputs-sample_name"
+        },
+        {
+          "@id": "#variantcaller_gatk3_6-inputs-gqb"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#variantcaller_gatk3_6-outputs-metrics"
+        },
+        {
+          "@id": "#variantcaller_gatk3_6-outputs-gvcf"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "workflow-107-e0f868f36095db8590147a97a88572ede5457f9d-diagram.svg",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 30352
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-4806-5140",
+      "@type": "Person",
+      "name": "José Mª Fernández",
+      "identifier": "https://orcid.org/0000-0002-4806-5140"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-4929-1219",
+      "@type": "Person",
+      "name": "Laura Rodriguez-Navas",
+      "identifier": "https://orcid.org/0000-0003-4929-1219"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/110",
+      "@type": "Person",
+      "name": "José Mª Fernández"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/4",
+      "@type": "Person",
+      "name": "Laura Rodriguez-Navas"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/31",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "EOSC-Life - Demonstrator 7: Rare Diseases"
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#variantcaller_gatk3_6-inputs-fastq_files",
+      "@type": "FormalParameter",
+      "name": "fastq_files",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#variantcaller_gatk3_6-inputs-reference_genome",
+      "@type": "FormalParameter",
+      "name": "reference_genome",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#variantcaller_gatk3_6-inputs-known_indels_file",
+      "@type": "FormalParameter",
+      "name": "known_indels_file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#variantcaller_gatk3_6-inputs-known_sites_file",
+      "@type": "FormalParameter",
+      "name": "known_sites_file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#variantcaller_gatk3_6-inputs-chromosome",
+      "@type": "FormalParameter",
+      "name": "chromosome",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#variantcaller_gatk3_6-inputs-readgroup_str",
+      "@type": "FormalParameter",
+      "name": "readgroup_str",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#variantcaller_gatk3_6-inputs-sample_name",
+      "@type": "FormalParameter",
+      "name": "sample_name",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#variantcaller_gatk3_6-inputs-gqb",
+      "@type": "FormalParameter",
+      "name": "gqb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#variantcaller_gatk3_6-outputs-metrics",
+      "@type": "FormalParameter",
+      "name": "metrics",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#variantcaller_gatk3_6-outputs-gvcf",
+      "@type": "FormalParameter",
+      "name": "gvcf",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

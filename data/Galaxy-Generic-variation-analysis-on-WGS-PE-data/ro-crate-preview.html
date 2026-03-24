@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Generic variation analysis on WGS PE data</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-Generic_variation_analysis_on_WGS_PE_data.ga"
+      },
+      "datePublished": "2022-06-01 13:41:09 +0100",
+      "author": [
+        {
+          "@id": "#creator-1"
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://workflowhub.eu/workflows/353?version=1",
+      "url": "https://workflowhub.eu/workflows/353/ro_crate?version=1",
+      "name": "Research Object Crate for Generic variation analysis on WGS PE data",
+      "description": "# Generic variant calling\n\n\nA generic workflow for identification of variants in a haploid genome such as genomes of bacteria or viruses. It can be readily used on MonkeyPox. The workflow accepts two inputs:\n\n- A genbank file with the reference genomes\n- A collection of paired fastqsanger files\n\nThe workflow outputs a collection of VCF files for each sample (each fastq pair). These VCF files serve as input to the [Reporting workflow](https://workflowhub.eu/workflows/354). \n\nWorkflow can be accessed directly on [usegalaxy.org](https://usegalaxy.org/u/aun1/w/generic-variation-analysis-on-wgs-pe-data)\n\nThe general idea of the workflow is:\n\n![](https://i.imgur.com/rk40Y4t.png)",
+      "sdDatePublished": "2026-03-24 18:03:54 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-Generic_variation_analysis_on_WGS_PE_data.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-Generic_variation_analysis_on_WGS_PE_data.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 38255,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "# Generic variant calling\n\n\nA generic workflow for identification of variants in a haploid genome such as genomes of bacteria or viruses. It can be readily used on MonkeyPox. The workflow accepts two inputs:\n\n- A genbank file with the reference genomes\n- A collection of paired fastqsanger files\n\nThe workflow outputs a collection of VCF files for each sample (each fastq pair). These VCF files serve as input to the [Reporting workflow](https://workflowhub.eu/workflows/354). \n\nWorkflow can be accessed directly on [usegalaxy.org](https://usegalaxy.org/u/aun1/w/generic-variation-analysis-on-wgs-pe-data)\n\nThe general idea of the workflow is:\n\n![](https://i.imgur.com/rk40Y4t.png)",
+      "name": "Generic variation analysis on WGS PE data",
+      "url": "https://workflowhub.eu/workflows/353?version=1",
+      "keywords": "mpxv, generic",
+      "version": 1,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "creator": {
+        "@id": "#Wolfgang%20Maier"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/24"
+      },
+      "dateCreated": "2022-06-01T12:46:37Z",
+      "dateModified": "2023-02-13T14:06:44Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#generic_variation_analysis_on_wgs_pe_data-inputs-GenBank%20genome"
+        },
+        {
+          "@id": "#generic_variation_analysis_on_wgs_pe_data-inputs-Paired%20Collection"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#generic_variation_analysis_on_wgs_pe_data-outputs-fastp_pe"
+        },
+        {
+          "@id": "#generic_variation_analysis_on_wgs_pe_data-outputs-fastp_html_report"
+        },
+        {
+          "@id": "#generic_variation_analysis_on_wgs_pe_data-outputs-SnpEff4.3%20database%20for%20"
+        },
+        {
+          "@id": "#generic_variation_analysis_on_wgs_pe_data-outputs-Fasta%20sequences%20for%20"
+        },
+        {
+          "@id": "#generic_variation_analysis_on_wgs_pe_data-outputs-Map%20with%20BWA-MEM%20on%20input%20dataset(s)%20(mapped%20reads%20in%20BAM%20format)"
+        },
+        {
+          "@id": "#generic_variation_analysis_on_wgs_pe_data-outputs-filtered_mapped_reads"
+        },
+        {
+          "@id": "#generic_variation_analysis_on_wgs_pe_data-outputs-mapped_reads_stats"
+        },
+        {
+          "@id": "#generic_variation_analysis_on_wgs_pe_data-outputs-markduplicates_reads"
+        },
+        {
+          "@id": "#generic_variation_analysis_on_wgs_pe_data-outputs-markduplicates_stats"
+        },
+        {
+          "@id": "#generic_variation_analysis_on_wgs_pe_data-outputs-preprocessing_and_mapping_reports"
+        },
+        {
+          "@id": "#generic_variation_analysis_on_wgs_pe_data-outputs-realigned_deduplicated_filtered_mapped_reads"
+        },
+        {
+          "@id": "#generic_variation_analysis_on_wgs_pe_data-outputs-realigned_deduplicated_filtered_mapped_reads_with_indel_quals"
+        },
+        {
+          "@id": "#generic_variation_analysis_on_wgs_pe_data-outputs-called_variants"
+        },
+        {
+          "@id": "#generic_variation_analysis_on_wgs_pe_data-outputs-soft_filtered_variants"
+        },
+        {
+          "@id": "#generic_variation_analysis_on_wgs_pe_data-outputs-_anonymous_output_1"
+        },
+        {
+          "@id": "#generic_variation_analysis_on_wgs_pe_data-outputs-SnpEff%20eff:%20on%20input%20dataset(s)%20-%20stats"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "#creator-1",
+      "@type": "Person",
+      "name": "Wolfgang Maier"
+    },
+    {
+      "@id": "#Wolfgang Maier",
+      "@type": "Person",
+      "name": "Wolfgang Maier"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/24",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "usegalaxy-eu"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#generic_variation_analysis_on_wgs_pe_data-inputs-GenBank genome",
+      "@type": "FormalParameter",
+      "name": "GenBank genome",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#generic_variation_analysis_on_wgs_pe_data-inputs-Paired Collection",
+      "@type": "FormalParameter",
+      "name": "Paired Collection",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#generic_variation_analysis_on_wgs_pe_data-outputs-fastp_pe",
+      "@type": "FormalParameter",
+      "name": "fastp_pe",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#generic_variation_analysis_on_wgs_pe_data-outputs-fastp_html_report",
+      "@type": "FormalParameter",
+      "name": "fastp_html_report",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#generic_variation_analysis_on_wgs_pe_data-outputs-SnpEff4.3 database for ",
+      "@type": "FormalParameter",
+      "name": "SnpEff4.3 database for ",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#generic_variation_analysis_on_wgs_pe_data-outputs-Fasta sequences for ",
+      "@type": "FormalParameter",
+      "name": "Fasta sequences for ",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#generic_variation_analysis_on_wgs_pe_data-outputs-Map with BWA-MEM on input dataset(s) (mapped reads in BAM format)",
+      "@type": "FormalParameter",
+      "name": "Map with BWA-MEM on input dataset(s) (mapped reads in BAM format)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#generic_variation_analysis_on_wgs_pe_data-outputs-filtered_mapped_reads",
+      "@type": "FormalParameter",
+      "name": "filtered_mapped_reads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#generic_variation_analysis_on_wgs_pe_data-outputs-mapped_reads_stats",
+      "@type": "FormalParameter",
+      "name": "mapped_reads_stats",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#generic_variation_analysis_on_wgs_pe_data-outputs-markduplicates_reads",
+      "@type": "FormalParameter",
+      "name": "markduplicates_reads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#generic_variation_analysis_on_wgs_pe_data-outputs-markduplicates_stats",
+      "@type": "FormalParameter",
+      "name": "markduplicates_stats",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#generic_variation_analysis_on_wgs_pe_data-outputs-preprocessing_and_mapping_reports",
+      "@type": "FormalParameter",
+      "name": "preprocessing_and_mapping_reports",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#generic_variation_analysis_on_wgs_pe_data-outputs-realigned_deduplicated_filtered_mapped_reads",
+      "@type": "FormalParameter",
+      "name": "realigned_deduplicated_filtered_mapped_reads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#generic_variation_analysis_on_wgs_pe_data-outputs-realigned_deduplicated_filtered_mapped_reads_with_indel_quals",
+      "@type": "FormalParameter",
+      "name": "realigned_deduplicated_filtered_mapped_reads_with_indel_quals",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#generic_variation_analysis_on_wgs_pe_data-outputs-called_variants",
+      "@type": "FormalParameter",
+      "name": "called_variants",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#generic_variation_analysis_on_wgs_pe_data-outputs-soft_filtered_variants",
+      "@type": "FormalParameter",
+      "name": "soft_filtered_variants",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#generic_variation_analysis_on_wgs_pe_data-outputs-_anonymous_output_1",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#generic_variation_analysis_on_wgs_pe_data-outputs-SnpEff eff: on input dataset(s) - stats",
+      "@type": "FormalParameter",
+      "name": "SnpEff eff: on input dataset(s) - stats",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Generic variation analysis on WGS PE data</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/353/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/353/ro_crate?version=1</a>
+
+
+<p>
+  # Generic variant calling
+
+
+A generic workflow for identification of variants in a haploid genome such as genomes of bacteria or viruses. It can be readily used on MonkeyPox. The workflow accepts two inputs:
+
+- A genbank file with the reference genomes
+- A collection of paired fastqsanger files
+
+The workflow outputs a collection of VCF files for each sample (each fastq pair). These VCF files serve as input to the [Reporting workflow](https://workflowhub.eu/workflows/354). 
+
+Workflow can be accessed directly on [usegalaxy.org](https://usegalaxy.org/u/aun1/w/generic-variation-analysis-on-wgs-pe-data)
+
+The general idea of the workflow is:
+
+![](https://i.imgur.com/rk40Y4t.png)
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd>Wolfgang Maier</dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>CC-BY-4.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-Generic_variation_analysis_on_WGS_PE_data.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-Generic_variation_analysis_on_WGS_PE_data.ga">Generic variation analysis on WGS PE data</a>
+      
+        <br/>Size: 38255 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

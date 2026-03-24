@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for ERGA HiC Collapsed Scaffolding+QC YaHS v2311 (WF4)</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-ERGA_HiC_Collapsed_Scaffolding_QC_YaHS_v2311_(WF4).ga"
+      },
+      "datePublished": "2024-01-09 10:58:00 +0000",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-3679-9585"
+        },
+        {
+          "@id": "#creator-1"
+        }
+      ],
+      "license": "MIT",
+      "identifier": "https://workflowhub.eu/workflows/702?version=1",
+      "url": "https://workflowhub.eu/workflows/702/ro_crate?version=1",
+      "name": "Research Object Crate for ERGA HiC Collapsed Scaffolding+QC YaHS v2311 (WF4)",
+      "description": "The workflow takes trimmed HiC forward and reverse reads, and one assembly (e.g.: Hap1 or Pri or Collapsed) to produce a scaffolded assembly using YaHS. It also runs all the QC analyses (gfastats, BUSCO, and Merqury). ",
+      "isBasedOn": "https://github.com/ERGA-consortium/pipelines/tree/main/assembly/galaxy",
+      "sdDatePublished": "2026-03-24 17:51:28 +0000",
+      "creativeWorkStatus": "Work-in-progress",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-ERGA_HiC_Collapsed_Scaffolding_QC_YaHS_v2311_(WF4).ga"
+        },
+        {
+          "@id": "Scaf_yahs_pri_2311.png"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-ERGA_HiC_Collapsed_Scaffolding_QC_YaHS_v2311_(WF4).ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "url": "https://github.com/ERGA-consortium/pipelines/blob/main/assembly/galaxy/4.Scaffolding/Galaxy-Workflow-ERGA_HiC_Collapsed_Scaffolding_QC_YaHS_v2311_(WF4).ga",
+      "contentSize": 46334,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "Scaf_yahs_pri_2311.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "The workflow takes trimmed HiC forward and reverse reads, and one assembly (e.g.: Hap1 or Pri or Collapsed) to produce a scaffolded assembly using YaHS. It also runs all the QC analyses (gfastats, BUSCO, and Merqury). ",
+      "name": "ERGA HiC Collapsed Scaffolding+QC YaHS v2311 (WF4)",
+      "keywords": "name:ASSEMBLY+QC, ERGA, HiC",
+      "version": 1,
+      "license": "https://spdx.org/licenses/MIT",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/445"
+        },
+        {
+          "@id": "#ERGA"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/163"
+      },
+      "dateCreated": "2024-01-09T11:00:47Z",
+      "dateModified": "2024-01-09T11:00:47Z",
+      "isPartOf": [
+        {
+          "@id": "https://workflowhub.eu/collections/17"
+        },
+        {
+          "@id": "https://workflowhub.eu/collections/18"
+        }
+      ],
+      "input": [
+        {
+          "@id": "#erga_hic_collapsed_scaffolding_qc_yahs_v2311__wf4_-inputs-Estimated%20genome%20size"
+        },
+        {
+          "@id": "#erga_hic_collapsed_scaffolding_qc_yahs_v2311__wf4_-inputs-HiC%20F%20trimmed"
+        },
+        {
+          "@id": "#erga_hic_collapsed_scaffolding_qc_yahs_v2311__wf4_-inputs-HiC%20R%20trimmed"
+        },
+        {
+          "@id": "#erga_hic_collapsed_scaffolding_qc_yahs_v2311__wf4_-inputs-Meryl%20database"
+        },
+        {
+          "@id": "#erga_hic_collapsed_scaffolding_qc_yahs_v2311__wf4_-inputs-Purged%20GFA"
+        },
+        {
+          "@id": "#erga_hic_collapsed_scaffolding_qc_yahs_v2311__wf4_-inputs-lineage"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#erga_hic_collapsed_scaffolding_qc_yahs_v2311__wf4_-outputs-_anonymous_output_1"
+        },
+        {
+          "@id": "#erga_hic_collapsed_scaffolding_qc_yahs_v2311__wf4_-outputs-_anonymous_output_2"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "Scaf_yahs_pri_2311.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "url": "https://github.com/ERGA-consortium/pipelines/blob/main/assembly/galaxy/4.Scaffolding/pics/Scaf_yahs_pri_2311.png",
+      "contentSize": 172042
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-3679-9585",
+      "@type": "Person",
+      "name": "Diego De Panis",
+      "identifier": "https://orcid.org/0000-0002-3679-9585"
+    },
+    {
+      "@id": "#creator-1",
+      "@type": "Person",
+      "name": "ERGA"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/445",
+      "@type": "Person",
+      "name": "Diego De Panis"
+    },
+    {
+      "@id": "#ERGA",
+      "@type": "Person",
+      "name": "ERGA"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/163",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "ERGA Assembly"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/17",
+      "@type": "Collection",
+      "name": "ERGA Assembly Galaxy ONT+Illumina &amp; HiC Pipelines (NextDenovo-HyPo + Purge_Dups + YaHS)"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/18",
+      "@type": "Collection",
+      "name": "ERGA Assembly Galaxy ONT+Illumina &amp; HiC Pipelines (Flye-HyPo + Purge_Dups + YaHS)"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#erga_hic_collapsed_scaffolding_qc_yahs_v2311__wf4_-inputs-Estimated genome size",
+      "@type": "FormalParameter",
+      "name": "Estimated genome size",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_hic_collapsed_scaffolding_qc_yahs_v2311__wf4_-inputs-HiC F trimmed",
+      "@type": "FormalParameter",
+      "name": "HiC F trimmed",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_hic_collapsed_scaffolding_qc_yahs_v2311__wf4_-inputs-HiC R trimmed",
+      "@type": "FormalParameter",
+      "name": "HiC R trimmed",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_hic_collapsed_scaffolding_qc_yahs_v2311__wf4_-inputs-Meryl database",
+      "@type": "FormalParameter",
+      "name": "Meryl database",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_hic_collapsed_scaffolding_qc_yahs_v2311__wf4_-inputs-Purged GFA",
+      "@type": "FormalParameter",
+      "name": "Purged GFA",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_hic_collapsed_scaffolding_qc_yahs_v2311__wf4_-inputs-lineage",
+      "@type": "FormalParameter",
+      "name": "lineage",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_hic_collapsed_scaffolding_qc_yahs_v2311__wf4_-outputs-_anonymous_output_1",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_hic_collapsed_scaffolding_qc_yahs_v2311__wf4_-outputs-_anonymous_output_2",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for ERGA HiC Collapsed Scaffolding+QC YaHS v2311 (WF4)</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/702/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/702/ro_crate?version=1</a>
+
+
+  <img src="Scaf_yahs_pri_2311.png" style="width: 100%;"/>
+
+<p>
+  The workflow takes trimmed HiC forward and reverse reads, and one assembly (e.g.: Hap1 or Pri or Collapsed) to produce a scaffolded assembly using YaHS. It also runs all the QC analyses (gfastats, BUSCO, and Merqury). 
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://orcid.org/0000-0002-3679-9585" target="_blank">Diego De Panis</a>, ERGA</dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>MIT</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-ERGA_HiC_Collapsed_Scaffolding_QC_YaHS_v2311_(WF4).ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-ERGA_HiC_Collapsed_Scaffolding_QC_YaHS_v2311_(WF4).ga">ERGA HiC Collapsed Scaffolding+QC YaHS v2311 (WF4)</a>
+      
+        <br/>Size: 46334 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_Scaf_yahs_pri_2311.png">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="Scaf_yahs_pri_2311.png">Scaf_yahs_pri_2311.png</a>
+      
+        <br/>Size: 172042 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for [DTC-E4] WF7401: Dynamic Source Inversion Workflow</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "WF7401.cwl"
+      },
+      "datePublished": "2025-10-14 14:00:51 +0100",
+      "author": [
+
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://workflowhub.eu/workflows/1994?version=1",
+      "url": "https://workflowhub.eu/workflows/1994/ro_crate?version=1",
+      "name": "Research Object Crate for [DTC-E4] WF7401: Dynamic Source Inversion Workflow",
+      "description": "## Overview\nThis repository contains the **Common Workflow Language (CWL)** and **RO-Crate metadata** definition for **WF7401**, the **Dynamic Source Inversion** workflow of **DTC-E4**, developed under the [DT-GEO project](https://dtgeo.eu).  \n\nThe **WF7401** workflow performs **dynamic source inversion of earthquakes** using seismic and geodetic data. It prepares input data, executes high-performance computing (HPC) inversions, and extracts rupture models to characterize the physical parameters of earthquake sources.\n\nThe workflow leverages the **FD3D_TSN** inversion code, combining a quasi-dynamic boundary element solver and a Bayesian inversion framework with Parallel Tempering Monte Carlo to estimate model parameters and uncertainties.\n\n## Workflow Structure\n\n1. **Workflow Inputs**\n   - **DT7401 – Dynamic Source Inversion Input**: Input dataset including fault geometry, velocity models, and seismic and geodetic data from arrays of seismic and GPS stations.  \n\n2. **Processing Steps**\n   - **ST740101:** Input data preparation and format standardization.  \n   - **ST740102:** Configuration of the FD3D_TSN inversion model.  \n   - **ST740103:** Execution of HPC-based inversion for rupture dynamics.  \n   - **ST740104:** Post-processing and extraction of rupture parameters (prestress, friction, misfits).  \n   - **ST740105:** Generation of final model products and metadata export.  \n\n3. **Workflow Outputs**\n   - **DT7402 – Dynamic Source Inversion Output**: Model input parameters, rupture characteristics, and misfit statistics in text and binary formats.",
+      "isBasedOn": "https://gitlab.com/dtgeo/metadata/cwl-ro-crate/-/blob/main/DTC74/WF7401",
+      "sdDatePublished": "2026-03-24 00:59:34 +0000",
+      "creativeWorkStatus": "Work-in-progress",
+      "hasPart": [
+        {
+          "@id": "WF7401.cwl"
+        },
+        {
+          "@id": "workflow.png"
+        }
+      ]
+    },
+    {
+      "@id": "WF7401.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 1481,
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "image": {
+        "@id": "workflow.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "## Overview\nThis repository contains the **Common Workflow Language (CWL)** and **RO-Crate metadata** definition for **WF7401**, the **Dynamic Source Inversion** workflow of **DTC-E4**, developed under the [DT-GEO project](https://dtgeo.eu).  \n\nThe **WF7401** workflow performs **dynamic source inversion of earthquakes** using seismic and geodetic data. It prepares input data, executes high-performance computing (HPC) inversions, and extracts rupture models to characterize the physical parameters of earthquake sources.\n\nThe workflow leverages the **FD3D_TSN** inversion code, combining a quasi-dynamic boundary element solver and a Bayesian inversion framework with Parallel Tempering Monte Carlo to estimate model parameters and uncertainties.\n\n## Workflow Structure\n\n1. **Workflow Inputs**\n   - **DT7401 – Dynamic Source Inversion Input**: Input dataset including fault geometry, velocity models, and seismic and geodetic data from arrays of seismic and GPS stations.  \n\n2. **Processing Steps**\n   - **ST740101:** Input data preparation and format standardization.  \n   - **ST740102:** Configuration of the FD3D_TSN inversion model.  \n   - **ST740103:** Execution of HPC-based inversion for rupture dynamics.  \n   - **ST740104:** Post-processing and extraction of rupture parameters (prestress, friction, misfits).  \n   - **ST740105:** Generation of final model products and metadata export.  \n\n3. **Workflow Outputs**\n   - **DT7402 – Dynamic Source Inversion Output**: Model input parameters, rupture characteristics, and misfit statistics in text and binary formats.",
+      "name": "[DTC-E4] WF7401: Dynamic Source Inversion Workflow",
+      "url": "https://workflowhub.eu/workflows/1994?version=1",
+      "keywords": "Digital Twin, DT-GEO, Geophysics",
+      "version": 1,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "creator": [
+        {
+          "@id": "https://orcid.org/0009-0004-7825-9458"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-8207-1464"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/181"
+      },
+      "dateCreated": "2025-10-14T13:01:54Z",
+      "dateModified": "2025-10-14T13:02:34Z",
+      "isPartOf": [
+
+      ],
+      "input": {
+        "@id": "#_dtc_e4__wf7401__dynamic_source_inversion_workflow-inputs-DT7401"
+      },
+      "output": {
+        "@id": "#_dtc_e4__wf7401__dynamic_source_inversion_workflow-outputs-DT7402"
+      },
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "workflow.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 17901
+    },
+    {
+      "@id": "https://orcid.org/0009-0004-7825-9458",
+      "@type": "Person",
+      "name": "Nico Schliwa"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-8207-1464",
+      "@type": "Person",
+      "name": "Johannes Kemper"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/181",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "WP7 - Earthquakes"
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#_dtc_e4__wf7401__dynamic_source_inversion_workflow-inputs-DT7401",
+      "@type": "FormalParameter",
+      "name": "DT7401",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_e4__wf7401__dynamic_source_inversion_workflow-outputs-DT7402",
+      "@type": "FormalParameter",
+      "name": "DT7402",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for [DTC-E4] WF7401: Dynamic Source Inversion Workflow</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/1994/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/1994/ro_crate?version=1</a>
+
+
+  <img src="workflow.png" style="width: 100%;"/>
+
+<p>
+  ## Overview
+This repository contains the **Common Workflow Language (CWL)** and **RO-Crate metadata** definition for **WF7401**, the **Dynamic Source Inversion** workflow of **DTC-E4**, developed under the [DT-GEO project](https://dtgeo.eu).  
+
+The **WF7401** workflow performs **dynamic source inversion of earthquakes** using seismic and geodetic data. It prepares input data, executes high-performance computing (HPC) inversions, and extracts rupture models to characterize the physical parameters of earthquake sources.
+
+The workflow leverages the **FD3D_TSN** inversion code, combining a quasi-dynamic boundary element solver and a Bayesian inversion framework with Parallel Tempering Monte Carlo to estimate model parameters and uncertainties.
+
+## Workflow Structure
+
+1. **Workflow Inputs**
+   - **DT7401 – Dynamic Source Inversion Input**: Input dataset including fault geometry, velocity models, and seismic and geodetic data from arrays of seismic and GPS stations.  
+
+2. **Processing Steps**
+   - **ST740101:** Input data preparation and format standardization.  
+   - **ST740102:** Configuration of the FD3D_TSN inversion model.  
+   - **ST740103:** Execution of HPC-based inversion for rupture dynamics.  
+   - **ST740104:** Post-processing and extraction of rupture parameters (prestress, friction, misfits).  
+   - **ST740105:** Generation of final model products and metadata export.  
+
+3. **Workflow Outputs**
+   - **DT7402 – Dynamic Source Inversion Output**: Model input parameters, rupture characteristics, and misfit statistics in text and binary formats.
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>Apache-2.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_WF7401.cwl">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="WF7401.cwl">[DTC-E4] WF7401: Dynamic Source Inversion Workflow</a>
+      
+        <br/>Size: 1481 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_workflow.png">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="workflow.png">workflow.png</a>
+      
+        <br/>Size: 17901 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

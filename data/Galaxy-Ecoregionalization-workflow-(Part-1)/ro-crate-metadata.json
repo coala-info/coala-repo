@@ -1,0 +1,303 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Ecoregionalization_workflow_Part_1.ga"
+      },
+      "datePublished": "2024-11-18 14:18:33 +0000",
+      "author": [
+        {
+          "@id": "https://orcid.org/0009-0009-5969-8478"
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.1208.1",
+      "url": "https://workflowhub.eu/workflows/1208/ro_crate?version=1",
+      "name": "Research Object Crate for Ecoregionalization workflow (Part 1)",
+      "description": "Part 1 of ecoregionalization workflow\n\nThis workflow allows you to create an ecoregionalization map from occurrences and environmental data using a boosted regression trees model for predictions.\n\nThe workflow is intended for processing occurrence data, which should include latitude, longitude and species presence or absence. You can use example test data available with the workflow, highlighting a use case centered on the Dumont d'Urville sea region and benthic invertebrates. The primary goal of this workflow is to generate species distribution maps and identify ecoregions within the study area. The project's objective is to offer accessible, reproducible, and transparent IT solutions for processing and analyzing species occurrence data.\n\nThis workflow is linked to the Galaxy training ecoregionalization tutorial. (https://ecology.usegalaxy.eu/training-material/topics/ecology/tutorials/Ecoregionalization_tutorial/tutorial.html)\n\nFor practical use the ecoregionalization workflow is split in two worklows and this is the first part. ",
+      "sdDatePublished": "2026-03-24 17:39:50 +0000",
+      "hasPart": [
+        {
+          "@id": "Ecoregionalization_workflow_Part_1.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Ecoregionalization_workflow_Part_1.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 40038,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Part 1 of ecoregionalization workflow\n\nThis workflow allows you to create an ecoregionalization map from occurrences and environmental data using a boosted regression trees model for predictions.\n\nThe workflow is intended for processing occurrence data, which should include latitude, longitude and species presence or absence. You can use example test data available with the workflow, highlighting a use case centered on the Dumont d'Urville sea region and benthic invertebrates. The primary goal of this workflow is to generate species distribution maps and identify ecoregions within the study area. The project's objective is to offer accessible, reproducible, and transparent IT solutions for processing and analyzing species occurrence data.\n\nThis workflow is linked to the Galaxy training ecoregionalization tutorial. (https://ecology.usegalaxy.eu/training-material/topics/ecology/tutorials/Ecoregionalization_tutorial/tutorial.html)\n\nFor practical use the ecoregionalization workflow is split in two worklows and this is the first part. ",
+      "name": "Ecoregionalization workflow (Part 1)",
+      "url": "https://workflowhub.eu/workflows/1208?version=1",
+      "keywords": "Ecology, FAIR workflows, Ecoregionalization",
+      "version": 1,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "creator": {
+        "@id": "https://workflowhub.eu/people/860"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/12"
+      },
+      "dateCreated": "2024-11-18T14:13:06Z",
+      "dateModified": "2024-12-09T09:04:00Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.1208.1",
+      "input": [
+        {
+          "@id": "#ecoregionalization_workflow__part_1_-inputs-0030809-240506114902167.zip"
+        },
+        {
+          "@id": "#ecoregionalization_workflow__part_1_-inputs-ceamarc_env.tab"
+        },
+        {
+          "@id": "#ecoregionalization_workflow__part_1_-inputs-pivot_wider_jupytool_notebook.ipynb"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#ecoregionalization_workflow__part_1_-outputs-occ_out"
+        },
+        {
+          "@id": "#ecoregionalization_workflow__part_1_-outputs-occ_env_out"
+        },
+        {
+          "@id": "#ecoregionalization_workflow__part_1_-outputs-info_out"
+        },
+        {
+          "@id": "#ecoregionalization_workflow__part_1_-outputs-coll_pred"
+        },
+        {
+          "@id": "#ecoregionalization_workflow__part_1_-outputs-coll_val"
+        },
+        {
+          "@id": "#ecoregionalization_workflow__part_1_-outputs-coll_distri"
+        },
+        {
+          "@id": "#ecoregionalization_workflow__part_1_-outputs-coll_plots"
+        },
+        {
+          "@id": "#ecoregionalization_workflow__part_1_-outputs-summary"
+        },
+        {
+          "@id": "#ecoregionalization_workflow__part_1_-outputs-taxa"
+        },
+        {
+          "@id": "#ecoregionalization_workflow__part_1_-outputs-taxa_clean"
+        },
+        {
+          "@id": "#ecoregionalization_workflow__part_1_-outputs-SIH_index"
+        },
+        {
+          "@id": "#ecoregionalization_workflow__part_1_-outputs-data_to_clus"
+        },
+        {
+          "@id": "#ecoregionalization_workflow__part_1_-outputs-databio_table"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0009-0009-5969-8478",
+      "@type": "Person",
+      "name": "Pauline Seguineau",
+      "identifier": "https://orcid.org/0009-0009-5969-8478"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/860",
+      "@type": "Person",
+      "name": "Pauline Seguineau"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/12",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Galaxy Training Network"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#ecoregionalization_workflow__part_1_-inputs-0030809-240506114902167.zip",
+      "@type": "FormalParameter",
+      "name": "0030809-240506114902167.zip",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ecoregionalization_workflow__part_1_-inputs-ceamarc_env.tab",
+      "@type": "FormalParameter",
+      "name": "ceamarc_env.tab",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ecoregionalization_workflow__part_1_-inputs-pivot_wider_jupytool_notebook.ipynb",
+      "@type": "FormalParameter",
+      "name": "pivot_wider_jupytool_notebook.ipynb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ecoregionalization_workflow__part_1_-outputs-occ_out",
+      "@type": "FormalParameter",
+      "name": "occ_out",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ecoregionalization_workflow__part_1_-outputs-occ_env_out",
+      "@type": "FormalParameter",
+      "name": "occ_env_out",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ecoregionalization_workflow__part_1_-outputs-info_out",
+      "@type": "FormalParameter",
+      "name": "info_out",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ecoregionalization_workflow__part_1_-outputs-coll_pred",
+      "@type": "FormalParameter",
+      "name": "coll_pred",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ecoregionalization_workflow__part_1_-outputs-coll_val",
+      "@type": "FormalParameter",
+      "name": "coll_val",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ecoregionalization_workflow__part_1_-outputs-coll_distri",
+      "@type": "FormalParameter",
+      "name": "coll_distri",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ecoregionalization_workflow__part_1_-outputs-coll_plots",
+      "@type": "FormalParameter",
+      "name": "coll_plots",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ecoregionalization_workflow__part_1_-outputs-summary",
+      "@type": "FormalParameter",
+      "name": "summary",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ecoregionalization_workflow__part_1_-outputs-taxa",
+      "@type": "FormalParameter",
+      "name": "taxa",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ecoregionalization_workflow__part_1_-outputs-taxa_clean",
+      "@type": "FormalParameter",
+      "name": "taxa_clean",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ecoregionalization_workflow__part_1_-outputs-SIH_index",
+      "@type": "FormalParameter",
+      "name": "SIH_index",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ecoregionalization_workflow__part_1_-outputs-data_to_clus",
+      "@type": "FormalParameter",
+      "name": "data_to_clus",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ecoregionalization_workflow__part_1_-outputs-databio_table",
+      "@type": "FormalParameter",
+      "name": "databio_table",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

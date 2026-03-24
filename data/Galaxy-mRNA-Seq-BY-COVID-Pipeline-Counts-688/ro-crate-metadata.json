@@ -1,0 +1,258 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-mRNA-Seq_BY-COVID_Pipeline__Counts.ga"
+      },
+      "datePublished": "2024-01-23 10:50:41 +0000",
+      "author": [
+        {
+          "@id": "#creator-1"
+        },
+        {
+          "@id": "#creator-2"
+        },
+        {
+          "@id": "#creator-3"
+        }
+      ],
+      "license": "GPL-3.0",
+      "identifier": "https://workflowhub.eu/workflows/688?version=1",
+      "url": "https://workflowhub.eu/workflows/688/ro_crate?version=1",
+      "name": "Research Object Crate for mRNA-Seq BY-COVID Pipeline: Counts",
+      "description": "This portion of the workflow produces sets of feature Counts ready for analysis by limma/etc.",
+      "sdDatePublished": "2026-03-24 17:52:21 +0000",
+      "creativeWorkStatus": "Work-in-progress",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-mRNA-Seq_BY-COVID_Pipeline__Counts.ga"
+        },
+        {
+          "@id": "Galaxy6-%5BConvert_image_format_on_data_4%5D.png"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-mRNA-Seq_BY-COVID_Pipeline__Counts.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 26083,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "Galaxy6-%5BConvert_image_format_on_data_4%5D.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "This portion of the workflow produces sets of feature Counts ready for analysis by limma/etc.",
+      "name": "mRNA-Seq BY-COVID Pipeline: Counts",
+      "url": "https://workflowhub.eu/workflows/688?version=1",
+      "keywords": "BY-COVID, covid-19",
+      "version": 1,
+      "license": "https://spdx.org/licenses/GPL-3.0",
+      "creator": [
+        {
+          "@id": "#Iacopo%20Cristoferi"
+        },
+        {
+          "@id": "#Helena%20Rasche"
+        },
+        {
+          "@id": "#Clinical%20Bioinformatics%20Unit"
+        },
+        {
+          "@id": "#Pathology%20Department"
+        },
+        {
+          "@id": "#Eramus%20Medical%20Center"
+        }
+      ],
+      "producer": [
+        {
+          "@id": "https://workflowhub.eu/projects/12"
+        },
+        {
+          "@id": "https://workflowhub.eu/projects/215"
+        }
+      ],
+      "dateCreated": "2023-12-19T10:10:00Z",
+      "dateModified": "2024-01-24T09:42:47Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#mrna_seq_by_covid_pipeline__counts-inputs-%23main/UCSC%20Genome"
+        },
+        {
+          "@id": "#mrna_seq_by_covid_pipeline__counts-inputs-%23main/mRNA-Seq%20Reads"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#mrna_seq_by_covid_pipeline__counts-outputs-%23main/html_report"
+        },
+        {
+          "@id": "#mrna_seq_by_covid_pipeline__counts-outputs-%23main/output_feature_lengths"
+        },
+        {
+          "@id": "#mrna_seq_by_covid_pipeline__counts-outputs-%23main/output_short"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "Galaxy6-%5BConvert_image_format_on_data_4%5D.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 772694
+    },
+    {
+      "@id": "#creator-1",
+      "@type": "Person",
+      "name": "Clinical Bioinformatics Unit"
+    },
+    {
+      "@id": "#creator-2",
+      "@type": "Person",
+      "name": "Pathology Department"
+    },
+    {
+      "@id": "#creator-3",
+      "@type": "Person",
+      "name": "Eramus Medical Center"
+    },
+    {
+      "@id": "#Iacopo Cristoferi",
+      "@type": "Person",
+      "name": "Iacopo Cristoferi"
+    },
+    {
+      "@id": "#Helena Rasche",
+      "@type": "Person",
+      "name": "Helena Rasche"
+    },
+    {
+      "@id": "#Clinical Bioinformatics Unit",
+      "@type": "Person",
+      "name": "Clinical Bioinformatics Unit"
+    },
+    {
+      "@id": "#Pathology Department",
+      "@type": "Person",
+      "name": "Pathology Department"
+    },
+    {
+      "@id": "#Eramus Medical Center",
+      "@type": "Person",
+      "name": "Eramus Medical Center"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/12",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Galaxy Training Network"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/215",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "BY-COVID (general)"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#mrna_seq_by_covid_pipeline__counts-inputs-#main/UCSC Genome",
+      "@type": "FormalParameter",
+      "name": "#main/UCSC Genome",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mrna_seq_by_covid_pipeline__counts-inputs-#main/mRNA-Seq Reads",
+      "@type": "FormalParameter",
+      "name": "#main/mRNA-Seq Reads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mrna_seq_by_covid_pipeline__counts-outputs-#main/html_report",
+      "@type": "FormalParameter",
+      "name": "#main/html_report",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mrna_seq_by_covid_pipeline__counts-outputs-#main/output_feature_lengths",
+      "@type": "FormalParameter",
+      "name": "#main/output_feature_lengths",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mrna_seq_by_covid_pipeline__counts-outputs-#main/output_short",
+      "@type": "FormalParameter",
+      "name": "#main/output_short",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

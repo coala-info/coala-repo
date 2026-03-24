@@ -1,0 +1,412 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "GATK4.ga"
+      },
+      "datePublished": "2020-06-18 16:49:59 +0100",
+      "author": [
+
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://workflowhub.eu/workflows/35?version=1",
+      "url": "https://workflowhub.eu/workflows/35/ro_crate?version=1",
+      "name": "Research Object Crate for COVID-19: GATK4",
+      "description": "Detects SNPs and INDELs.",
+      "isBasedOn": "https://usegalaxy.eu/u/ambarishk/w/gatk4",
+      "sdDatePublished": "2026-03-24 18:13:26 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "GATK4.ga"
+        },
+        {
+          "@id": "gatk4.jpg"
+        }
+      ]
+    },
+    {
+      "@id": "GATK4.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 27629,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "gatk4.jpg"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Detects SNPs and INDELs.",
+      "name": "COVID-19: GATK4",
+      "url": "https://workflowhub.eu/workflows/35?version=1",
+      "keywords": "Galaxy, SNPs, INDELs, GATK4",
+      "version": 1,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/3"
+      },
+      "dateCreated": "2020-06-18T15:49:59Z",
+      "dateModified": "2023-02-13T14:06:46Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#covid_19__gatk4-inputs-List%20of%20Illumina%20accessions"
+        },
+        {
+          "@id": "#covid_19__gatk4-inputs-Reference%20genome%20annotation"
+        },
+        {
+          "@id": "#covid_19__gatk4-inputs-Refrence%20genome"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#covid_19__gatk4-outputs-_anonymous_output_4"
+        },
+        {
+          "@id": "#covid_19__gatk4-outputs-_anonymous_output_5"
+        },
+        {
+          "@id": "#covid_19__gatk4-outputs-_anonymous_output_6"
+        },
+        {
+          "@id": "#covid_19__gatk4-outputs-_anonymous_output_7"
+        },
+        {
+          "@id": "#covid_19__gatk4-outputs-_anonymous_output_8"
+        },
+        {
+          "@id": "#covid_19__gatk4-outputs-_anonymous_output_9"
+        },
+        {
+          "@id": "#covid_19__gatk4-outputs-_anonymous_output_10"
+        },
+        {
+          "@id": "#covid_19__gatk4-outputs-_anonymous_output_11"
+        },
+        {
+          "@id": "#covid_19__gatk4-outputs-_anonymous_output_12"
+        },
+        {
+          "@id": "#covid_19__gatk4-outputs-_anonymous_output_13"
+        },
+        {
+          "@id": "#covid_19__gatk4-outputs-_anonymous_output_14"
+        },
+        {
+          "@id": "#covid_19__gatk4-outputs-_anonymous_output_15"
+        },
+        {
+          "@id": "#covid_19__gatk4-outputs-_anonymous_output_16"
+        },
+        {
+          "@id": "#covid_19__gatk4-outputs-_anonymous_output_17"
+        },
+        {
+          "@id": "#covid_19__gatk4-outputs-_anonymous_output_18"
+        },
+        {
+          "@id": "#covid_19__gatk4-outputs-_anonymous_output_19"
+        },
+        {
+          "@id": "#covid_19__gatk4-outputs-_anonymous_output_20"
+        },
+        {
+          "@id": "#covid_19__gatk4-outputs-VCF"
+        },
+        {
+          "@id": "#covid_19__gatk4-outputs-_anonymous_output_21"
+        },
+        {
+          "@id": "#covid_19__gatk4-outputs-_anonymous_output_22"
+        },
+        {
+          "@id": "#covid_19__gatk4-outputs-_anonymous_output_23"
+        },
+        {
+          "@id": "#covid_19__gatk4-outputs-_anonymous_output_24"
+        },
+        {
+          "@id": "#covid_19__gatk4-outputs-_anonymous_output_25"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "gatk4.jpg",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 203637
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/3",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "GalaxyProject SARS-CoV-2"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#covid_19__gatk4-inputs-List of Illumina accessions",
+      "@type": "FormalParameter",
+      "name": "List of Illumina accessions",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19__gatk4-inputs-Reference genome annotation",
+      "@type": "FormalParameter",
+      "name": "Reference genome annotation",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19__gatk4-inputs-Refrence genome",
+      "@type": "FormalParameter",
+      "name": "Refrence genome",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19__gatk4-outputs-_anonymous_output_4",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_4",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19__gatk4-outputs-_anonymous_output_5",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_5",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19__gatk4-outputs-_anonymous_output_6",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_6",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19__gatk4-outputs-_anonymous_output_7",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_7",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19__gatk4-outputs-_anonymous_output_8",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_8",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19__gatk4-outputs-_anonymous_output_9",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_9",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19__gatk4-outputs-_anonymous_output_10",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_10",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19__gatk4-outputs-_anonymous_output_11",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_11",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19__gatk4-outputs-_anonymous_output_12",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_12",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19__gatk4-outputs-_anonymous_output_13",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_13",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19__gatk4-outputs-_anonymous_output_14",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_14",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19__gatk4-outputs-_anonymous_output_15",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_15",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19__gatk4-outputs-_anonymous_output_16",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_16",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19__gatk4-outputs-_anonymous_output_17",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_17",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19__gatk4-outputs-_anonymous_output_18",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_18",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19__gatk4-outputs-_anonymous_output_19",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_19",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19__gatk4-outputs-_anonymous_output_20",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_20",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19__gatk4-outputs-VCF",
+      "@type": "FormalParameter",
+      "name": "VCF",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19__gatk4-outputs-_anonymous_output_21",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_21",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19__gatk4-outputs-_anonymous_output_22",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_22",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19__gatk4-outputs-_anonymous_output_23",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_23",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19__gatk4-outputs-_anonymous_output_24",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_24",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#covid_19__gatk4-outputs-_anonymous_output_25",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_25",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

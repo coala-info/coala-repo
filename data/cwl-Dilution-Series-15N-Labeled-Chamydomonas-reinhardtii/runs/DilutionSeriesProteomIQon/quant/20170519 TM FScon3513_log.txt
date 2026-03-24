@@ -1,0 +1,899 @@
+2025-03-03 17:27:24.5675 20170519 TM FScon3513 TRACE Input file: C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\mzlite\20170519 TM FScon3513.mzlite 
+2025-03-03 17:27:24.5675 20170519 TM FScon3513 TRACE Output directory: C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant 
+2025-03-03 17:27:24.5675 20170519 TM FScon3513 TRACE Parameters: { PerformLabeledQuantification = N15Labeling
+  XicExtraction =
+   { ScanTimeWindow = 2.0
+     MzWindow_Da = Estimate
+     XicProcessing = Wavelet { Borderpadding = None
+                               BorderPadMethod = Random
+                               InternalPaddingMethod = LinearInterpolation
+                               HugeGapPaddingMethod = Zero
+                               HugeGapPaddingDistance = 100.0
+                               MinPeakDistance = None
+                               MinPeakLength = Some 0.1
+                               MaxPeakLength = 1.5
+                               NoiseQuantile = 0.01
+                               MinSNR = 0.01 }
+     TopKPSMs = None }
+  BaseLineCorrection = Some { MaxIterations = 10
+                              Lambda = 6
+                              P = 0.05 } } 
+2025-03-03 17:27:24.5799 20170519 TM FScon3513 TRACE Now performing Quantification using: C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\mzlite\20170519 TM FScon3513.mzlite and C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psmstats\20170519 TM FScon3513.qpsm, Results will be written to: C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant 
+2025-03-03 17:27:24.5799 20170519 TM FScon3513 TRACE outFilePath:C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant\20170519 TM FScon3513.quant 
+2025-03-03 17:27:24.5799 20170519 TM FScon3513 TRACE plotDirectory:C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant\20170519 TM FScon3513_plots 
+2025-03-03 17:27:24.5799 20170519 TM FScon3513 TRACE Copy peptide DB into Memory 
+2025-03-03 17:27:55.7949 20170519 TM FScon3513 TRACE Copy peptide DB into Memory: finished 
+2025-03-03 17:27:55.7949 20170519 TM FScon3513 TRACE Get peptide lookUp function 
+2025-03-03 17:27:55.7962 20170519 TM FScon3513 TRACE Get peptide lookUp function: finished 
+2025-03-03 17:27:55.7962 20170519 TM FScon3513 TRACE Init connection to mass spectrum data. 
+2025-03-03 17:27:55.7962 20170519 TM FScon3513 TRACE Create RetentionTime index 
+2025-03-03 17:28:26.5011 20170519 TM FScon3513 TRACE Create RetentionTime index:finished 
+2025-03-03 17:28:26.5011 20170519 TM FScon3513 TRACE Read and sort ms1s 
+2025-03-03 17:29:01.9899 20170519 TM FScon3513 TRACE Read and sort ms1s:finished 
+2025-03-03 17:29:01.9899 20170519 TM FScon3513 TRACE Read scored PSMs 
+2025-03-03 17:29:02.1240 20170519 TM FScon3513 TRACE Read scored PSMs:finished 
+2025-03-03 17:29:02.1247 20170519 TM FScon3513 TRACE Estimate precursor mz standard deviation and mz correction. 
+2025-03-03 17:29:02.1686 20170519 TM FScon3513 TRACE Estimate precursor mz standard deviation and mz correction.:finished, standard deviation: 0.002938 
+2025-03-03 17:29:02.1780 20170519 TM FScon3513 TRACE init lookup functions 
+2025-03-03 17:29:02.1780 20170519 TM FScon3513 TRACE optimal mz Window for XIC look up found by estimation :0.011754 Da 
+2025-03-03 17:29:02.1780 20170519 TM FScon3513 TRACE init lookup functions:finished 
+2025-03-03 17:29:02.1780 20170519 TM FScon3513 TRACE init quantification functions 
+2025-03-03 17:29:02.1780 20170519 TM FScon3513 TRACE init quantification functions:finished 
+2025-03-03 17:29:02.1780 20170519 TM FScon3513 TRACE executing quantification 
+2025-03-03 17:29:02.1904 20170519 TM FScon3513 TRACE 0 peptides quantified 
+2025-03-03 17:29:02.6283 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LAAIPSK, GlobalMod:0, Charge:2 
+2025-03-03 17:29:06.1889 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:KVGIVGK, GlobalMod:0, Charge:2 
+2025-03-03 17:29:06.3296 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AAIEAAR, GlobalMod:0, Charge:2 
+2025-03-03 17:29:07.5239 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AGMTVAR, GlobalMod:0, Charge:2 
+2025-03-03 17:29:08.6613 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SGAMFAK, GlobalMod:0, Charge:2 
+2025-03-03 17:29:09.0252 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GYGVYR, GlobalMod:0, Charge:2 
+2025-03-03 17:29:11.6166 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DLINIK, GlobalMod:0, Charge:2 
+2025-03-03 17:29:13.7618 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VNDVFK, GlobalMod:0, Charge:2 
+2025-03-03 17:29:14.5394 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:APITVPK, GlobalMod:0, Charge:2 
+2025-03-03 17:29:16.1256 20170519 TM FScon3513 TRACE Quant failed: No Peak detected, Sequence:TPGAPER, GlobalMod:0, Charge:2 
+2025-03-03 17:29:16.1256 20170519 TM FScon3513 TRACE 100 peptides quantified 
+2025-03-03 17:29:16.4459 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VILLDR, GlobalMod:0, Charge:2 
+2025-03-03 17:29:19.8436 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SPEEFK, GlobalMod:0, Charge:2 
+2025-03-03 17:29:20.4689 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AGFTDVK, GlobalMod:0, Charge:2 
+2025-03-03 17:29:21.7831 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ASAGFYK, GlobalMod:0, Charge:2 
+2025-03-03 17:29:25.0024 20170519 TM FScon3513 TRACE 200 peptides quantified 
+2025-03-03 17:29:26.5684 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ASATEFK, GlobalMod:0, Charge:2 
+2025-03-03 17:29:33.5489 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VASAYTR, GlobalMod:0, Charge:2 
+2025-03-03 17:29:34.3025 20170519 TM FScon3513 TRACE 300 peptides quantified 
+2025-03-03 17:29:38.2231 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LAGEFDK, GlobalMod:0, Charge:2 
+2025-03-03 17:29:38.2683 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:IQDLYK, GlobalMod:0, Charge:2 
+2025-03-03 17:29:38.5323 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LSVDYGK, GlobalMod:0, Charge:2 
+2025-03-03 17:29:39.4956 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TFFNEK, GlobalMod:0, Charge:2 
+2025-03-03 17:29:42.3770 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SEGIDLR, GlobalMod:0, Charge:2 
+2025-03-03 17:29:42.5154 20170519 TM FScon3513 TRACE 400 peptides quantified 
+2025-03-03 17:29:43.1963 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TSADELR, GlobalMod:0, Charge:2 
+2025-03-03 17:29:44.5602 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:FGTDEAR, GlobalMod:0, Charge:2 
+2025-03-03 17:29:45.1899 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LAAMVYK, GlobalMod:0, Charge:2 
+2025-03-03 17:29:45.2280 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SSGTFAVK, GlobalMod:0, Charge:2 
+2025-03-03 17:29:46.5492 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:YFSQVR, GlobalMod:0, Charge:2 
+2025-03-03 17:29:46.6764 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VVTDPIR, GlobalMod:0, Charge:2 
+2025-03-03 17:29:49.1166 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LVASIGDK, GlobalMod:0, Charge:2 
+2025-03-03 17:29:49.1772 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ALSEVVGK, GlobalMod:0, Charge:2 
+2025-03-03 17:29:49.6032 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LVSGVSLK, GlobalMod:0, Charge:2 
+2025-03-03 17:29:51.5990 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VGAAFIAR, GlobalMod:0, Charge:2 
+2025-03-03 17:29:52.0949 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:YNQLLR, GlobalMod:0, Charge:2 
+2025-03-03 17:29:52.0949 20170519 TM FScon3513 TRACE 500 peptides quantified 
+2025-03-03 17:29:52.1280 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EYLASPK, GlobalMod:0, Charge:2 
+2025-03-03 17:29:52.3266 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:NFAGEDR, GlobalMod:0, Charge:2 
+2025-03-03 17:29:52.8832 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SFVTDIK, GlobalMod:0, Charge:2 
+2025-03-03 17:29:53.2747 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LLGPGLNK, GlobalMod:0, Charge:2 
+2025-03-03 17:29:53.9591 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EGLPLKR, GlobalMod:0, Charge:2 
+2025-03-03 17:29:54.9825 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VNVPDDR, GlobalMod:0, Charge:2 
+2025-03-03 17:29:57.3597 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:IISLLEK, GlobalMod:0, Charge:2 
+2025-03-03 17:29:57.5455 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:HGVAGFTK, GlobalMod:0, Charge:2 
+2025-03-03 17:30:02.3551 20170519 TM FScon3513 TRACE 600 peptides quantified 
+2025-03-03 17:30:02.4675 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GMEGTVTK, GlobalMod:0, Charge:2 
+2025-03-03 17:30:03.1728 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:FAAVI[ox]MR, GlobalMod:0, Charge:2 
+2025-03-03 17:30:03.4826 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:FDGLA[ox]MR, GlobalMod:0, Charge:2 
+2025-03-03 17:30:06.4235 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AEVGQVVK, GlobalMod:0, Charge:2 
+2025-03-03 17:30:07.8297 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LLELSGAK, GlobalMod:0, Charge:2 
+2025-03-03 17:30:08.4528 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TLDLLTR, GlobalMod:0, Charge:2 
+2025-03-03 17:30:09.5456 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:MNTNPTR, GlobalMod:0, Charge:2 
+2025-03-03 17:30:10.3271 20170519 TM FScon3513 TRACE 700 peptides quantified 
+2025-03-03 17:30:11.9742 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:FVAAEAVK, GlobalMod:0, Charge:2 
+2025-03-03 17:30:12.0811 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:MISEIDK, GlobalMod:0, Charge:2 
+2025-03-03 17:30:12.7025 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:FIAEDIK, GlobalMod:0, Charge:2 
+2025-03-03 17:30:12.8682 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SYEVGPGK, GlobalMod:0, Charge:2 
+2025-03-03 17:30:13.2254 20170519 TM FScon3513 TRACE Quant failed: No Peak detected, Sequence:AYVMEPK, GlobalMod:0, Charge:2 
+2025-03-03 17:30:15.3295 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:MQYVFR, GlobalMod:0, Charge:2 
+2025-03-03 17:30:16.9321 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LSGGVAVIK, GlobalMod:0, Charge:2 
+2025-03-03 17:30:16.9999 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GAEGVVGGAK, GlobalMod:0, Charge:2 
+2025-03-03 17:30:18.4141 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SDSWVPR, GlobalMod:0, Charge:2 
+2025-03-03 17:30:18.9506 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DTLLASVK, GlobalMod:0, Charge:2 
+2025-03-03 17:30:19.1018 20170519 TM FScon3513 TRACE 800 peptides quantified 
+2025-03-03 17:30:19.2471 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LSTEGVDK, GlobalMod:0, Charge:2 
+2025-03-03 17:30:19.5628 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:IGDFGIAR, GlobalMod:0, Charge:2 
+2025-03-03 17:30:22.3994 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:QYGQSLR, GlobalMod:0, Charge:2 
+2025-03-03 17:30:23.3959 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VLPPATVR, GlobalMod:0, Charge:2 
+2025-03-03 17:30:24.1018 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LVVPDALK, GlobalMod:0, Charge:2 
+2025-03-03 17:30:24.2495 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EFQIYR, GlobalMod:0, Charge:2 
+2025-03-03 17:30:24.4277 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GTKPVLLK, GlobalMod:0, Charge:2 
+2025-03-03 17:30:24.8912 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:[ac]ADPEAVGR, GlobalMod:0, Charge:2 
+2025-03-03 17:30:24.9861 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:YMSLTDK, GlobalMod:0, Charge:2 
+2025-03-03 17:30:25.0959 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GNVQVQGR, GlobalMod:0, Charge:2 
+2025-03-03 17:30:26.2211 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:[ac]SADFYSK, GlobalMod:0, Charge:2 
+2025-03-03 17:30:28.2861 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LSTNVAVR, GlobalMod:0, Charge:2 
+2025-03-03 17:30:28.3600 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ALEDVTGR, GlobalMod:0, Charge:2 
+2025-03-03 17:30:28.5164 20170519 TM FScon3513 TRACE 900 peptides quantified 
+2025-03-03 17:30:29.9241 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EFLQGLR, GlobalMod:0, Charge:2 
+2025-03-03 17:30:30.1710 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:FNEYYK, GlobalMod:0, Charge:2 
+2025-03-03 17:30:31.6447 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:IEAQSYR, GlobalMod:0, Charge:2 
+2025-03-03 17:30:34.6805 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DVVIVGNR, GlobalMod:0, Charge:2 
+2025-03-03 17:30:35.4786 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:RWQDIR, GlobalMod:0, Charge:2 
+2025-03-03 17:30:35.5677 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EAAEAALAK, GlobalMod:0, Charge:2 
+2025-03-03 17:30:36.3488 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ASELVSLR, GlobalMod:0, Charge:2 
+2025-03-03 17:30:36.4215 20170519 TM FScon3513 TRACE 1000 peptides quantified 
+2025-03-03 17:30:37.7412 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SALTEAQR, GlobalMod:0, Charge:2 
+2025-03-03 17:30:39.0121 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ALGLYVLK, GlobalMod:0, Charge:2 
+2025-03-03 17:30:39.5328 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TSWQDLK, GlobalMod:0, Charge:2 
+2025-03-03 17:30:40.2642 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TDSVMVAR, GlobalMod:0, Charge:2 
+2025-03-03 17:30:40.3334 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VLAYEAGR, GlobalMod:0, Charge:2 
+2025-03-03 17:30:40.8748 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GGTMLGTSR, GlobalMod:0, Charge:2 
+2025-03-03 17:30:41.2627 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AVGDYVEK, GlobalMod:0, Charge:2 
+2025-03-03 17:30:41.7712 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DFQGISSK, GlobalMod:0, Charge:2 
+2025-03-03 17:30:41.8889 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:FLNAFDR, GlobalMod:0, Charge:2 
+2025-03-03 17:30:42.4881 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:FATPYER, GlobalMod:0, Charge:2 
+2025-03-03 17:30:42.5581 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:YGFVELR, GlobalMod:0, Charge:2 
+2025-03-03 17:30:42.7828 20170519 TM FScon3513 TRACE Quant failed: No Peak detected, Sequence:YDATTEGK, GlobalMod:0, Charge:2 
+2025-03-03 17:30:43.4875 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DFAVAFSK, GlobalMod:0, Charge:2 
+2025-03-03 17:30:43.6614 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AFGDAYLK, GlobalMod:0, Charge:2 
+2025-03-03 17:30:43.8029 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:QGYVVYR, GlobalMod:0, Charge:2 
+2025-03-03 17:30:44.1165 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GSPQVVLGK, GlobalMod:0, Charge:2 
+2025-03-03 17:30:45.8854 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LSAFYER, GlobalMod:0, Charge:2 
+2025-03-03 17:30:46.0380 20170519 TM FScon3513 TRACE 1100 peptides quantified 
+2025-03-03 17:30:49.5348 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EAELTNGR, GlobalMod:0, Charge:2 
+2025-03-03 17:30:49.6248 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GWEALADK, GlobalMod:0, Charge:2 
+2025-03-03 17:30:49.9653 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ALVADMAAK, GlobalMod:0, Charge:2 
+2025-03-03 17:30:50.0030 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:STMGKPIR, GlobalMod:0, Charge:2 
+2025-03-03 17:30:52.2885 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:IGMDAATGR, GlobalMod:0, Charge:2 
+2025-03-03 17:30:52.3335 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AQASEVMR, GlobalMod:0, Charge:2 
+2025-03-03 17:30:52.3719 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:QAATPEFK, GlobalMod:0, Charge:2 
+2025-03-03 17:30:53.3485 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ATDFTNPK, GlobalMod:0, Charge:2 
+2025-03-03 17:30:54.0340 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:YLLDNGAK, GlobalMod:0, Charge:2 
+2025-03-03 17:30:54.3078 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:FSTNTTPK, GlobalMod:0, Charge:2 
+2025-03-03 17:30:54.3560 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VVDAGPLPK, GlobalMod:0, Charge:2 
+2025-03-03 17:30:55.2058 20170519 TM FScon3513 TRACE 1200 peptides quantified 
+2025-03-03 17:30:56.4092 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:FMEAMAAK, GlobalMod:0, Charge:2 
+2025-03-03 17:30:58.0610 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GQATIAPSR, GlobalMod:0, Charge:2 
+2025-03-03 17:30:58.1248 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:QQVADVLK, GlobalMod:0, Charge:2 
+2025-03-03 17:30:58.9986 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TNFGIGHR, GlobalMod:0, Charge:2 
+2025-03-03 17:30:59.6391 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AVLLEAASK, GlobalMod:0, Charge:2 
+2025-03-03 17:31:00.7474 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:QIEQMVR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:00.8769 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:MLQDIQR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:01.0985 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VGLTEEQK, GlobalMod:0, Charge:2 
+2025-03-03 17:31:03.4831 20170519 TM FScon3513 TRACE Quant failed: No Peak detected, Sequence:DMDQIAGR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:03.5256 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VGANQN[ox]MR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:04.3825 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:IEYDPNR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:04.8647 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:QTFTNAPK, GlobalMod:0, Charge:2 
+2025-03-03 17:31:05.1138 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:FTDSYFK, GlobalMod:0, Charge:2 
+2025-03-03 17:31:05.1515 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ENLGDGFR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:05.1893 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DGDGTITTK, GlobalMod:0, Charge:2 
+2025-03-03 17:31:05.2276 20170519 TM FScon3513 TRACE 1300 peptides quantified 
+2025-03-03 17:31:05.7350 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:YGLEEAVK, GlobalMod:0, Charge:2 
+2025-03-03 17:31:05.8321 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:RSEEIFK, GlobalMod:0, Charge:2 
+2025-03-03 17:31:06.6443 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:FAEEMRK, GlobalMod:0, Charge:2 
+2025-03-03 17:31:07.5192 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VPVQQALR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:10.5218 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LRADVEGR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:11.4071 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SLVTEVIR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:11.4464 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:IQIMADAR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:12.2970 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:V[ox]MNVPTNK, GlobalMod:0, Charge:2 
+2025-03-03 17:31:12.9664 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:MGSPALTSR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:13.3198 20170519 TM FScon3513 TRACE 1400 peptides quantified 
+2025-03-03 17:31:14.3824 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GFGIAEDGR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:14.5379 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GLEDAAAFK, GlobalMod:0, Charge:2 
+2025-03-03 17:31:15.5606 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:IFSPDDTK, GlobalMod:0, Charge:2 
+2025-03-03 17:31:15.8326 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:YTAEIAVR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:15.9626 20170519 TM FScon3513 TRACE Quant failed: No Peak detected, Sequence:FADSISAGR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:16.3034 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AELTTMMK, GlobalMod:0, Charge:2 
+2025-03-03 17:31:16.3435 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:QPEFLYK, GlobalMod:0, Charge:2 
+2025-03-03 17:31:16.4015 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LESGLYSR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:16.5425 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:[ac]AAAAPEEPK, GlobalMod:0, Charge:2 
+2025-03-03 17:31:17.0383 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:RVLPEGVR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:17.2726 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AASAYDMAK, GlobalMod:0, Charge:2 
+2025-03-03 17:31:20.3592 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TALPADWR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:20.5840 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GDVIQLER, GlobalMod:0, Charge:2 
+2025-03-03 17:31:21.7679 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TSPASILLK, GlobalMod:0, Charge:2 
+2025-03-03 17:31:21.8404 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EVDVANGAR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:22.5522 20170519 TM FScon3513 TRACE 1500 peptides quantified 
+2025-03-03 17:31:22.9837 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ATEQEVVR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:23.2616 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:STEALLAAR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:24.0086 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ALS[ox]MPENR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:24.1639 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:IGTPAMTSR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:25.1227 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GYTEPDPR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:25.1867 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TDTLPYPK, GlobalMod:0, Charge:2 
+2025-03-03 17:31:25.6003 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ESLESQSR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:26.1078 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:[ox]MGSPALTSR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:26.6858 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LDGIPPAPR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:27.5934 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VDNVYGDR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:27.7856 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:NYLVVDSK, GlobalMod:0, Charge:2 
+2025-03-03 17:31:27.9375 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SEILDAYK, GlobalMod:0, Charge:2 
+2025-03-03 17:31:29.1019 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AELTTM[ox]MK, GlobalMod:0, Charge:2 
+2025-03-03 17:31:30.0150 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LADQAPTVK, GlobalMod:0, Charge:2 
+2025-03-03 17:31:30.5455 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AVNIAVDLK, GlobalMod:0, Charge:2 
+2025-03-03 17:31:30.9789 20170519 TM FScon3513 TRACE 1600 peptides quantified 
+2025-03-03 17:31:31.5317 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DLSVPALTK, GlobalMod:0, Charge:2 
+2025-03-03 17:31:31.6886 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AQVAVNTLK, GlobalMod:0, Charge:2 
+2025-03-03 17:31:31.8336 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LVLEEADR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:32.1594 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:[ac][ox]MNPINGLK, GlobalMod:0, Charge:2 
+2025-03-03 17:31:34.2967 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TQENINAR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:36.5943 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DFQTGEPR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:37.3415 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SAIMAMGLR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:38.4538 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EAEGIYIR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:38.8137 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DAFVSAGER, GlobalMod:0, Charge:2 
+2025-03-03 17:31:38.9443 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GFSELSLAK, GlobalMod:0, Charge:2 
+2025-03-03 17:31:39.0652 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:MGDQFINK, GlobalMod:0, Charge:2 
+2025-03-03 17:31:40.9295 20170519 TM FScon3513 TRACE 1700 peptides quantified 
+2025-03-03 17:31:41.0470 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:IVALLAAAGR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:43.9438 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:YEEYVTR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:44.4658 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LGAEVEEGR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:45.3166 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:NLQNEITK, GlobalMod:0, Charge:2 
+2025-03-03 17:31:45.5928 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ATAAEVEAAK, GlobalMod:0, Charge:2 
+2025-03-03 17:31:47.0326 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:YDYLTMR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:47.4096 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GTDAPFVVR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:47.4470 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AVGSLSGGWK, GlobalMod:0, Charge:2 
+2025-03-03 17:31:47.7609 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VGSDGSAELK, GlobalMod:0, Charge:2 
+2025-03-03 17:31:48.1894 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:QSLLGIG[ox]MK, GlobalMod:0, Charge:2 
+2025-03-03 17:31:49.3101 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SDTPLIYR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:49.4154 20170519 TM FScon3513 TRACE 1800 peptides quantified 
+2025-03-03 17:31:49.4500 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EGGLNGSFGK, GlobalMod:0, Charge:2 
+2025-03-03 17:31:50.0511 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ALNEYDIK, GlobalMod:0, Charge:2 
+2025-03-03 17:31:50.1200 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TPMVYLNK, GlobalMod:0, Charge:2 
+2025-03-03 17:31:50.1935 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EWELSFR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:50.2296 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:MEEMVSLK, GlobalMod:0, Charge:2 
+2025-03-03 17:31:51.1264 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SQFEWDR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:53.2495 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:FWEQFGR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:55.3169 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:MESHLEAR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:55.9474 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:FPTPPGTQK, GlobalMod:0, Charge:2 
+2025-03-03 17:31:56.0856 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VWSVAAALR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:56.1905 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:YYAGWADK, GlobalMod:0, Charge:2 
+2025-03-03 17:31:56.5308 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AAWDAQLAK, GlobalMod:0, Charge:2 
+2025-03-03 17:31:56.6994 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LELSEVKR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:57.8986 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LIYPELVK, GlobalMod:0, Charge:2 
+2025-03-03 17:31:57.9768 20170519 TM FScon3513 TRACE Quant failed: No Peak detected, Sequence:MQVGAEAGGR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:58.0921 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SELDATSPR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:58.5821 20170519 TM FScon3513 TRACE 1900 peptides quantified 
+2025-03-03 17:31:58.8636 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AGFAGDDAPR, GlobalMod:0, Charge:2 
+2025-03-03 17:31:59.2664 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:NMVSELQR, GlobalMod:0, Charge:2 
+2025-03-03 17:32:00.0186 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:NADSMAVNR, GlobalMod:0, Charge:2 
+2025-03-03 17:32:00.0561 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ESDGIMVAR, GlobalMod:0, Charge:2 
+2025-03-03 17:32:01.2064 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:FLDALEDR, GlobalMod:0, Charge:2 
+2025-03-03 17:32:02.3621 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DVNTFVMR, GlobalMod:0, Charge:2 
+2025-03-03 17:32:03.8041 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AGELINVLR, GlobalMod:0, Charge:2 
+2025-03-03 17:32:03.9267 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LTITAVPAAK, GlobalMod:0, Charge:2 
+2025-03-03 17:32:03.9981 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:NLQEYYR, GlobalMod:0, Charge:2 
+2025-03-03 17:32:04.0268 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ANIDYAYR, GlobalMod:0, Charge:2 
+2025-03-03 17:32:05.6167 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:MTMAELYK, GlobalMod:0, Charge:2 
+2025-03-03 17:32:07.9013 20170519 TM FScon3513 TRACE 2000 peptides quantified 
+2025-03-03 17:32:08.0566 20170519 TM FScon3513 TRACE Quant failed: No Peak detected, Sequence:ATAEQAAAEK, GlobalMod:0, Charge:2 
+2025-03-03 17:32:08.3213 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:IWNWQSR, GlobalMod:0, Charge:2 
+2025-03-03 17:32:08.4253 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VLIEGDSEK, GlobalMod:0, Charge:2 
+2025-03-03 17:32:08.5816 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AGVDLVMER, GlobalMod:0, Charge:2 
+2025-03-03 17:32:09.7854 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:IDDPNYVR, GlobalMod:0, Charge:2 
+2025-03-03 17:32:11.9808 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DFSNQDLR, GlobalMod:0, Charge:2 
+2025-03-03 17:32:12.0387 20170519 TM FScon3513 TRACE Quant failed: No Peak detected, Sequence:FDDKPGGMK, GlobalMod:0, Charge:2 
+2025-03-03 17:32:12.4047 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AKVEDDYR, GlobalMod:0, Charge:2 
+2025-03-03 17:32:13.3048 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GYNVVAFAR, GlobalMod:0, Charge:2 
+2025-03-03 17:32:13.3411 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TLLETEYK, GlobalMod:0, Charge:2 
+2025-03-03 17:32:13.4637 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:MANTEEFR, GlobalMod:0, Charge:2 
+2025-03-03 17:32:16.2810 20170519 TM FScon3513 TRACE 2100 peptides quantified 
+2025-03-03 17:32:16.7555 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TYDFATQR, GlobalMod:0, Charge:2 
+2025-03-03 17:32:16.7868 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TFTGVEGYK, GlobalMod:0, Charge:2 
+2025-03-03 17:32:17.3275 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VFDSSYER, GlobalMod:0, Charge:2 
+2025-03-03 17:32:17.3275 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LSVEEAAQR, GlobalMod:0, Charge:2 
+2025-03-03 17:32:17.6192 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:D[ox]MQYFGAR, GlobalMod:0, Charge:2 
+2025-03-03 17:32:17.7684 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:KAGDAESGLR, GlobalMod:0, Charge:2 
+2025-03-03 17:32:19.5807 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GVTMTALLAK, GlobalMod:0, Charge:2 
+2025-03-03 17:32:19.9783 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ETLGFDPAR, GlobalMod:0, Charge:2 
+2025-03-03 17:32:20.0655 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GVDPVEAYR, GlobalMod:0, Charge:2 
+2025-03-03 17:32:21.9730 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TQEALDAMK, GlobalMod:0, Charge:2 
+2025-03-03 17:32:23.7686 20170519 TM FScon3513 TRACE Quant failed: No Peak detected, Sequence:NIAMGYVDK, GlobalMod:0, Charge:2 
+2025-03-03 17:32:24.4838 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:YNDPLYVK, GlobalMod:0, Charge:2 
+2025-03-03 17:32:25.4095 20170519 TM FScon3513 TRACE 2200 peptides quantified 
+2025-03-03 17:32:28.1808 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AEYQYVQD, GlobalMod:0, Charge:2 
+2025-03-03 17:32:29.8367 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TELENVIAK, GlobalMod:0, Charge:2 
+2025-03-03 17:32:30.2728 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SVGSDANVIR, GlobalMod:0, Charge:2 
+2025-03-03 17:32:30.4305 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:WGVSSVNLR, GlobalMod:0, Charge:2 
+2025-03-03 17:32:30.8679 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VMLQGPTSGK, GlobalMod:0, Charge:2 
+2025-03-03 17:32:33.5261 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:IHNSIIGIR, GlobalMod:0, Charge:2 
+2025-03-03 17:32:33.6571 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TFI[ox]MPDQR, GlobalMod:0, Charge:2 
+2025-03-03 17:32:33.6858 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VIASFEDDK, GlobalMod:0, Charge:2 
+2025-03-03 17:32:33.9120 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EVMAELFGK, GlobalMod:0, Charge:2 
+2025-03-03 17:32:33.9788 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VPFMIDSSK, GlobalMod:0, Charge:2 
+2025-03-03 17:32:34.9391 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GYAYLVLPK, GlobalMod:0, Charge:2 
+2025-03-03 17:32:35.3311 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AEFVPLPPR, GlobalMod:0, Charge:2 
+2025-03-03 17:32:35.3311 20170519 TM FScon3513 TRACE 2300 peptides quantified 
+2025-03-03 17:32:35.4072 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SPPGTVVAVAK, GlobalMod:0, Charge:2 
+2025-03-03 17:32:35.6355 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SFFVGDAAGR, GlobalMod:0, Charge:2 
+2025-03-03 17:32:36.5826 20170519 TM FScon3513 TRACE Quant failed: No Peak detected, Sequence:KNAPVGEALK, GlobalMod:0, Charge:2 
+2025-03-03 17:32:36.7128 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SEGPLSFYK, GlobalMod:0, Charge:2 
+2025-03-03 17:32:37.2635 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:HVMTNLGEK, GlobalMod:0, Charge:2 
+2025-03-03 17:32:37.3760 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AEFYADDAK, GlobalMod:0, Charge:2 
+2025-03-03 17:32:37.7814 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GFEATYDVK, GlobalMod:0, Charge:2 
+2025-03-03 17:32:37.8959 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LDQQLQQR, GlobalMod:0, Charge:2 
+2025-03-03 17:32:38.1099 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:G[ox]MQTTSYVK, GlobalMod:0, Charge:2 
+2025-03-03 17:32:38.7245 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AVIDTLDVGK, GlobalMod:0, Charge:2 
+2025-03-03 17:32:38.8232 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EAEEAAAAAAK, GlobalMod:0, Charge:2 
+2025-03-03 17:32:39.7720 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LPPSNAYNR, GlobalMod:0, Charge:2 
+2025-03-03 17:32:39.9814 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:MGLNGVDNGR, GlobalMod:0, Charge:2 
+2025-03-03 17:32:41.6671 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:[ox]MLNEDELR, GlobalMod:0, Charge:2 
+2025-03-03 17:32:41.8547 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ANRPNVA[ox]MF, GlobalMod:0, Charge:2 
+2025-03-03 17:32:42.9848 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:IYITDAAAAK, GlobalMod:0, Charge:2 
+2025-03-03 17:32:43.0198 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:[ac][ox]MEDQSTIR, GlobalMod:0, Charge:2 
+2025-03-03 17:32:43.1740 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:FA[ox]MESYFK, GlobalMod:0, Charge:2 
+2025-03-03 17:32:44.1702 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:NEGPLAFYK, GlobalMod:0, Charge:2 
+2025-03-03 17:32:44.2956 20170519 TM FScon3513 TRACE 2400 peptides quantified 
+2025-03-03 17:32:44.2956 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LPAPGTAVGGAK, GlobalMod:0, Charge:2 
+2025-03-03 17:32:45.4478 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LLTLPSNER, GlobalMod:0, Charge:2 
+2025-03-03 17:32:45.5854 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:N[ox]MSFASSQR, GlobalMod:0, Charge:2 
+2025-03-03 17:32:45.7342 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AGDVAAAGLGGGK, GlobalMod:0, Charge:2 
+2025-03-03 17:32:46.3000 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VVLIGDSGVGK, GlobalMod:0, Charge:2 
+2025-03-03 17:32:47.1067 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AAASNADAAAAAA, GlobalMod:0, Charge:2 
+2025-03-03 17:32:47.2647 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AQLEELSQK, GlobalMod:0, Charge:2 
+2025-03-03 17:32:50.6614 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GYDDPQTQK, GlobalMod:0, Charge:2 
+2025-03-03 17:32:50.7883 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TVIPESYDK, GlobalMod:0, Charge:2 
+2025-03-03 17:32:52.2103 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LIPGNVISLK, GlobalMod:0, Charge:2 
+2025-03-03 17:32:53.4812 20170519 TM FScon3513 TRACE 2500 peptides quantified 
+2025-03-03 17:32:53.7015 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SAPYS[ox]MIDR, GlobalMod:0, Charge:2 
+2025-03-03 17:32:53.7432 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:RADPWTGPR, GlobalMod:0, Charge:2 
+2025-03-03 17:32:54.3927 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GGGGPNGAASRR, GlobalMod:0, Charge:2 
+2025-03-03 17:32:54.8269 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ETPQIVVDR, GlobalMod:0, Charge:2 
+2025-03-03 17:32:54.9333 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VDLLLSQIR, GlobalMod:0, Charge:2 
+2025-03-03 17:32:55.0604 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DTPDAPATAAK, GlobalMod:0, Charge:2 
+2025-03-03 17:32:55.7795 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:NYGEYQER, GlobalMod:0, Charge:2 
+2025-03-03 17:32:55.8227 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:M[ox]MMTSGSAVK, GlobalMod:0, Charge:2 
+2025-03-03 17:32:56.8319 20170519 TM FScon3513 TRACE Quant failed: No Peak detected, Sequence:QVAQQEAER, GlobalMod:0, Charge:2 
+2025-03-03 17:32:57.0943 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EAGALADAADR, GlobalMod:0, Charge:2 
+2025-03-03 17:32:57.5996 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DTLADNVNAK, GlobalMod:0, Charge:2 
+2025-03-03 17:32:57.6689 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:MIDAINEVR, GlobalMod:0, Charge:2 
+2025-03-03 17:32:58.1713 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:APEGGSSGFPR, GlobalMod:0, Charge:2 
+2025-03-03 17:32:58.5461 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:YKDPTVNPQ, GlobalMod:0, Charge:2 
+2025-03-03 17:32:59.0261 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:KMDAEVLKK, GlobalMod:0, Charge:2 
+2025-03-03 17:32:59.0928 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ATADALSEER, GlobalMod:0, Charge:2 
+2025-03-03 17:33:01.0330 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:QAFEQSVEK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:01.7133 20170519 TM FScon3513 TRACE 2600 peptides quantified 
+2025-03-03 17:33:03.4627 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TQAAVAAAAAPK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:04.6389 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EIERQHMK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:04.8868 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TGQVTLNNPK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:05.7053 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AIQEAVAELK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:06.7352 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:IQDAAEAAER, GlobalMod:0, Charge:2 
+2025-03-03 17:33:10.2358 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ITFNDAEAAK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:10.2730 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:[ac]AG[ox]MGLSTGTAR, GlobalMod:0, Charge:2 
+2025-03-03 17:33:10.3479 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VQVGMFGDVK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:10.3805 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EQVEDYAAR, GlobalMod:0, Charge:2 
+2025-03-03 17:33:10.4151 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TMDQVDFPK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:10.4151 20170519 TM FScon3513 TRACE 2700 peptides quantified 
+2025-03-03 17:33:10.4506 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EVYDGIQEK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:11.0882 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ESGYGNVTVR, GlobalMod:0, Charge:2 
+2025-03-03 17:33:11.0882 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AAAAPPPHPPR, GlobalMod:0, Charge:2 
+2025-03-03 17:33:13.4534 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GHMAANTDIR, GlobalMod:0, Charge:2 
+2025-03-03 17:33:14.5947 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LTADIGLPSAK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:16.2386 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AAEAEAVEAAR, GlobalMod:0, Charge:2 
+2025-03-03 17:33:16.9087 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AISVLSELTR, GlobalMod:0, Charge:2 
+2025-03-03 17:33:17.0570 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ETLQGDATVR, GlobalMod:0, Charge:2 
+2025-03-03 17:33:17.2285 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ILVLGMTGTGK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:17.7122 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DYVFP[ox]MFR, GlobalMod:0, Charge:2 
+2025-03-03 17:33:18.5099 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:NFDEWILR, GlobalMod:0, Charge:2 
+2025-03-03 17:33:18.8586 20170519 TM FScon3513 TRACE 2800 peptides quantified 
+2025-03-03 17:33:19.4866 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ELGITALHIK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:19.5163 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:WSQYADAVR, GlobalMod:0, Charge:2 
+2025-03-03 17:33:20.9777 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:NENIIQLPR, GlobalMod:0, Charge:2 
+2025-03-03 17:33:22.2455 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:YSLAESSNTK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:23.9852 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SLEYFSEVK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:24.2047 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:STYDDFIIK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:25.0043 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ANTGTYSAYR, GlobalMod:0, Charge:2 
+2025-03-03 17:33:25.0385 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EAEEQLSAAR, GlobalMod:0, Charge:2 
+2025-03-03 17:33:26.0094 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ATDFVVDGPGK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:26.1191 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:NEDAAQGFVR, GlobalMod:0, Charge:2 
+2025-03-03 17:33:27.3283 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:STLQSDGVFR, GlobalMod:0, Charge:2 
+2025-03-03 17:33:27.9262 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LLATLHDDGR, GlobalMod:0, Charge:2 
+2025-03-03 17:33:28.0893 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:FVSVAEAD[ox]MK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:28.0893 20170519 TM FScon3513 TRACE 2900 peptides quantified 
+2025-03-03 17:33:28.5012 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LGSGGAGPEAAAR, GlobalMod:0, Charge:2 
+2025-03-03 17:33:29.0304 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VEITGPVDRK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:29.1976 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:NIYILPPGVK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:30.3010 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LYEYDEER, GlobalMod:0, Charge:2 
+2025-03-03 17:33:31.9379 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VI[ox]MSGNQEPK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:32.8723 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:MLTSPNQSLK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:32.9214 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GYPIEELAAR, GlobalMod:0, Charge:2 
+2025-03-03 17:33:33.2181 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SGADYLDNHK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:33.8540 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ADTSGMVEAIK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:33.9260 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GAEYERQIR, GlobalMod:0, Charge:2 
+2025-03-03 17:33:34.4719 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EQGVTGEFEK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:34.6096 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AGAGS[ox]MIELMK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:34.8253 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LVLVAAPVADR, GlobalMod:0, Charge:2 
+2025-03-03 17:33:36.9305 20170519 TM FScon3513 TRACE Quant failed: No Peak detected, Sequence:GKPNNAPATMK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:37.3497 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LDAVEQALNR, GlobalMod:0, Charge:2 
+2025-03-03 17:33:37.4816 20170519 TM FScon3513 TRACE 3000 peptides quantified 
+2025-03-03 17:33:38.8387 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:FLEASMAYAK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:39.2028 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:QQLQADWDK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:39.3135 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:NDAANLDGSVR, GlobalMod:0, Charge:2 
+2025-03-03 17:33:40.3623 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GGIIDDTVITK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:43.4521 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GILDPALEIAK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:44.0797 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SGLYVNFEGR, GlobalMod:0, Charge:2 
+2025-03-03 17:33:44.1511 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:YVNLIYNDK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:46.4900 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GSITIDYYGR, GlobalMod:0, Charge:2 
+2025-03-03 17:33:46.5350 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ELAPGGDLSASK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:46.5350 20170519 TM FScon3513 TRACE 3100 peptides quantified 
+2025-03-03 17:33:47.9223 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:APFDVAELQR, GlobalMod:0, Charge:2 
+2025-03-03 17:33:48.1375 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:FLEAS[ox]MAYAK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:48.6295 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EGVLAEENMR, GlobalMod:0, Charge:2 
+2025-03-03 17:33:48.6690 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:[ac]SAMTAVAVNNK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:48.7923 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VISSMQELLQ, GlobalMod:0, Charge:2 
+2025-03-03 17:33:49.5273 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:NNFEVENER, GlobalMod:0, Charge:2 
+2025-03-03 17:33:49.5652 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ASPEYVEEAR, GlobalMod:0, Charge:2 
+2025-03-03 17:33:49.6030 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:NADELAQYAR, GlobalMod:0, Charge:2 
+2025-03-03 17:33:50.1614 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ADVVYDAWGR, GlobalMod:0, Charge:2 
+2025-03-03 17:33:51.4513 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EYDNEQDLK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:51.5318 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:NDNPYFQAGK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:51.6510 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AYIATGEPFGK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:51.7216 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:FLQAYTPGTR, GlobalMod:0, Charge:2 
+2025-03-03 17:33:51.7588 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:YSSLGDEALAK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:52.1706 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SLGSPEPQSPR, GlobalMod:0, Charge:2 
+2025-03-03 17:33:52.2627 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ADAVILTLPGGK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:52.3154 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SVGGVLLPASVR, GlobalMod:0, Charge:2 
+2025-03-03 17:33:52.4646 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GGEAAGAQQPLR, GlobalMod:0, Charge:2 
+2025-03-03 17:33:53.6703 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:FLEYLEMGR, GlobalMod:0, Charge:2 
+2025-03-03 17:33:53.8183 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:WNNGPSNLQK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:54.9841 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GAYFLTEDDK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:55.2272 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VGALVMVLNDK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:55.9554 20170519 TM FScon3513 TRACE 3200 peptides quantified 
+2025-03-03 17:33:58.5121 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AKVDYEAIVR, GlobalMod:0, Charge:2 
+2025-03-03 17:33:58.5867 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SVWGTNDETR, GlobalMod:0, Charge:2 
+2025-03-03 17:33:58.6540 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GLKEDFDAAAK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:58.6821 20170519 TM FScon3513 TRACE Quant failed: No Peak detected, Sequence:LVGEANDYVGK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:59.6898 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EQYAIFAVPK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:59.8370 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AETAAVMESMK, GlobalMod:0, Charge:2 
+2025-03-03 17:33:59.9400 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:NYPVNNFSGR, GlobalMod:0, Charge:2 
+2025-03-03 17:33:59.9692 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:MQLGDTMLMK, GlobalMod:0, Charge:2 
+2025-03-03 17:34:01.1798 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:FEADYSGLLR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:02.0533 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EGEEAAKPEGR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:04.2225 20170519 TM FScon3513 TRACE 3300 peptides quantified 
+2025-03-03 17:34:04.8531 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:RRGSAEQQDK, GlobalMod:0, Charge:2 
+2025-03-03 17:34:04.8936 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:NLSSLLEDRK, GlobalMod:0, Charge:2 
+2025-03-03 17:34:04.9363 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VGALV[ox]MVLNDK, GlobalMod:0, Charge:2 
+2025-03-03 17:34:05.5297 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:MGGSLAGASAEAR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:05.7501 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ETAQAFLGADR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:06.3372 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AVPNIVVGTPGR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:06.7346 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ILTPAQLQGLK, GlobalMod:0, Charge:2 
+2025-03-03 17:34:08.1766 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:QPTNDPASQVK, GlobalMod:0, Charge:2 
+2025-03-03 17:34:09.0940 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VFENVVVQPR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:10.1544 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ADSAAAELINGR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:10.2131 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DHVAFGVDATR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:10.2663 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GAAGAGRKQEDK, GlobalMod:0, Charge:2 
+2025-03-03 17:34:10.5249 20170519 TM FScon3513 TRACE Quant failed: No Peak detected, Sequence:VGESDGNINRK, GlobalMod:0, Charge:2 
+2025-03-03 17:34:11.6461 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GDLGMEIPTEK, GlobalMod:0, Charge:2 
+2025-03-03 17:34:11.8489 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GGGLMGQTEAIR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:12.6439 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DIAESIEEER, GlobalMod:0, Charge:2 
+2025-03-03 17:34:12.6931 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VQFYLDYSR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:13.1705 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AQSAYADFYR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:13.2738 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:NLEEMVLDTK, GlobalMod:0, Charge:2 
+2025-03-03 17:34:13.3448 20170519 TM FScon3513 TRACE 3400 peptides quantified 
+2025-03-03 17:34:13.8295 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VVDLDSFLER, GlobalMod:0, Charge:2 
+2025-03-03 17:34:14.8624 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:YVEDITSTNR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:15.6987 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EGNDLYTEMK, GlobalMod:0, Charge:2 
+2025-03-03 17:34:16.8972 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:NGAISVIAVAER, GlobalMod:0, Charge:2 
+2025-03-03 17:34:16.9948 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:RGGGGGGGEDEPR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:18.4816 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GVDSAAAAAEADR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:19.4912 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GDLG[ox]MEIPTEK, GlobalMod:0, Charge:2 
+2025-03-03 17:34:20.6058 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DLQMVNMSLR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:21.4349 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DVDTLICGAFR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:21.9296 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LVNDWNYMR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:21.9910 20170519 TM FScon3513 TRACE 3500 peptides quantified 
+2025-03-03 17:34:22.5897 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LTPLSPEVISR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:24.0963 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:QAFTGPPENVR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:24.1229 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LIMPPMTQER, GlobalMod:0, Charge:2 
+2025-03-03 17:34:24.2444 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:FTLDTDNYTK, GlobalMod:0, Charge:2 
+2025-03-03 17:34:27.7063 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SPAQMGVTM[ox]MR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:28.4502 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AFESALEFSPK, GlobalMod:0, Charge:2 
+2025-03-03 17:34:28.5390 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DAAWAPSLGLPK, GlobalMod:0, Charge:2 
+2025-03-03 17:34:29.0304 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VGAELLGGGTAGAR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:29.1046 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LAVAQSLDDAAR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:29.9932 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:MMPGLLEGQEK, GlobalMod:0, Charge:2 
+2025-03-03 17:34:30.0917 20170519 TM FScon3513 TRACE 3600 peptides quantified 
+2025-03-03 17:34:32.0998 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TINYDWVSSR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:32.5477 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DEGPIAENEIR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:32.5826 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ENALALAQEAGR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:34.9565 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LNLSSAPFLER, GlobalMod:0, Charge:2 
+2025-03-03 17:34:35.1217 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GNLLNPGADSYK, GlobalMod:0, Charge:2 
+2025-03-03 17:34:35.7105 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VNEEVFIAMAK, GlobalMod:0, Charge:2 
+2025-03-03 17:34:36.6746 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AADEIFISDGSK, GlobalMod:0, Charge:2 
+2025-03-03 17:34:37.2178 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AEYDSVVANMR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:37.2510 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SSNFMENLANK, GlobalMod:0, Charge:2 
+2025-03-03 17:34:38.0547 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AAAPTAGSTGTVPR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:38.9702 20170519 TM FScon3513 TRACE 3700 peptides quantified 
+2025-03-03 17:34:39.0068 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DITVVDTDPER, GlobalMod:0, Charge:2 
+2025-03-03 17:34:40.3713 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ALLDVYGTLGIK, GlobalMod:0, Charge:2 
+2025-03-03 17:34:41.2001 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ALGQLTPPEIVK, GlobalMod:0, Charge:2 
+2025-03-03 17:34:41.4204 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GETEATVEFTGK, GlobalMod:0, Charge:2 
+2025-03-03 17:34:42.4749 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LNAGEVSASVVPK, GlobalMod:0, Charge:2 
+2025-03-03 17:34:42.7634 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DLELLMMHNR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:44.1500 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GLIDEATFYDK, GlobalMod:0, Charge:2 
+2025-03-03 17:34:45.6705 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LSVEEIDEWR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:45.7775 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:[ac][ox]MADESAPLTKR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:45.8089 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:NGTGPAGYSPGIGK, GlobalMod:0, Charge:2 
+2025-03-03 17:34:47.0675 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ISYVVLDEADR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:48.1344 20170519 TM FScon3513 TRACE 3800 peptides quantified 
+2025-03-03 17:34:49.7141 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:NGGEGGEGPVMER, GlobalMod:0, Charge:2 
+2025-03-03 17:34:49.8275 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DQNAEAEPLFR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:49.8924 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:QLPGDWSFVLK, GlobalMod:0, Charge:2 
+2025-03-03 17:34:50.2322 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AGDVSATWTARR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:50.3514 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SGILSGLPDGYGR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:50.6381 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:YAAGLEQLNTGR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:50.9711 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:FDMGGAGATLGAAR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:51.5238 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:IGIVLAPEGGALGK, GlobalMod:0, Charge:2 
+2025-03-03 17:34:52.0446 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VSQWELEFMK, GlobalMod:0, Charge:2 
+2025-03-03 17:34:52.6462 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DIIPILEQVTR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:52.7344 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DTNTFASASLDR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:52.9658 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AGGLGGGLGGGNIAAR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:53.1693 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VVIAGAGLAGLSAAK, GlobalMod:0, Charge:2 
+2025-03-03 17:34:55.1922 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:NADAGTDVVVTSR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:56.5665 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LIDVDTFEVMK, GlobalMod:0, Charge:2 
+2025-03-03 17:34:56.5941 20170519 TM FScon3513 TRACE 3900 peptides quantified 
+2025-03-03 17:34:57.0466 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TVTAMDVVYALK, GlobalMod:0, Charge:2 
+2025-03-03 17:34:57.1031 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EMLDFMQELR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:57.1426 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SNNTIYNASAAGK, GlobalMod:0, Charge:2 
+2025-03-03 17:34:57.1859 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:NGFADVVYLDAK, GlobalMod:0, Charge:2 
+2025-03-03 17:34:57.9932 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:YPSMDLAYAAGR, GlobalMod:0, Charge:2 
+2025-03-03 17:34:58.2250 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LGGMVSALGSQPAK, GlobalMod:0, Charge:2 
+2025-03-03 17:34:58.9696 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EFDDLVPELLK, GlobalMod:0, Charge:2 
+2025-03-03 17:34:59.7290 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:YGLHEVDEGATK, GlobalMod:0, Charge:2 
+2025-03-03 17:34:59.8938 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SLGGATSGAAAAEEK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:01.1179 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AVS[ox]MNPTEGLMR, GlobalMod:0, Charge:2 
+2025-03-03 17:35:01.4603 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AESVTSFNAQLR, GlobalMod:0, Charge:2 
+2025-03-03 17:35:01.7486 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:YMQYGDNFGTK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:02.6686 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VFLEDAGFDWK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:03.4379 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:[ox]MRAEIDAVPAGIA, GlobalMod:0, Charge:2 
+2025-03-03 17:35:04.0121 20170519 TM FScon3513 TRACE Quant failed: No Peak detected, Sequence:TDQDAPFPDVVK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:04.1039 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AADMWLNDAAVR, GlobalMod:0, Charge:2 
+2025-03-03 17:35:04.8680 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VEDMFPADAIAR, GlobalMod:0, Charge:2 
+2025-03-03 17:35:05.0311 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EIPWETYATAR, GlobalMod:0, Charge:2 
+2025-03-03 17:35:05.1070 20170519 TM FScon3513 TRACE 4000 peptides quantified 
+2025-03-03 17:35:05.1374 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DGGVPDPLIYYK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:06.3321 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EAAEGESFGSDLK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:06.9214 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LADAVASEPELAR, GlobalMod:0, Charge:2 
+2025-03-03 17:35:08.2019 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ATEALESSGVEVR, GlobalMod:0, Charge:2 
+2025-03-03 17:35:08.5265 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LSEEEVDEMIR, GlobalMod:0, Charge:2 
+2025-03-03 17:35:09.4100 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:MTPNPDGTMPYK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:09.5935 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DNLAAAPAELVLR, GlobalMod:0, Charge:2 
+2025-03-03 17:35:11.2963 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AGIQVAIMDGPER, GlobalMod:0, Charge:2 
+2025-03-03 17:35:11.4232 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AEAALEATLQAAAK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:12.0320 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VLSKVEEAAGLSR, GlobalMod:0, Charge:2 
+2025-03-03 17:35:12.1996 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TVNYQHIMPTR, GlobalMod:0, Charge:2 
+2025-03-03 17:35:13.1630 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:QYEADSAPAVALK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:13.9986 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:MDADVLTIENSR, GlobalMod:0, Charge:2 
+2025-03-03 17:35:14.0427 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:MVQVGNYPEAQK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:14.1256 20170519 TM FScon3513 TRACE 4100 peptides quantified 
+2025-03-03 17:35:14.8023 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:MGPVMAEAFEGVK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:14.9785 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SQTDNLFASGTAR, GlobalMod:0, Charge:2 
+2025-03-03 17:35:15.1861 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:YLQEETFPGER, GlobalMod:0, Charge:2 
+2025-03-03 17:35:16.7410 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VNELEELLREK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:16.8844 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:FSAHLAEDEIAAV, GlobalMod:0, Charge:2 
+2025-03-03 17:35:18.8509 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:INQDPD[ox]MGDLLK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:19.5858 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:[ac][ox]MNPEYDYLFK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:20.6722 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:RADELSFADVEK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:20.7137 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LADPSATWTDFR, GlobalMod:0, Charge:2 
+2025-03-03 17:35:21.0887 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GVDIVG[ox]MSDMGGVK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:21.1237 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GVDIVGMSD[ox]MGGVK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:21.1463 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ILDILPGISGGVAR, GlobalMod:0, Charge:2 
+2025-03-03 17:35:22.0315 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ALDLVDAVGDAVVK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:22.9466 20170519 TM FScon3513 TRACE 4200 peptides quantified 
+2025-03-03 17:35:23.0427 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:QNFMTEYVVTR, GlobalMod:0, Charge:2 
+2025-03-03 17:35:23.1913 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VVDGDTLVINGER, GlobalMod:0, Charge:2 
+2025-03-03 17:35:23.8007 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:IFEVPLGYVVPR, GlobalMod:0, Charge:2 
+2025-03-03 17:35:23.8240 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DVYDTFLEI[ox]MK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:24.0949 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AGDADGIMALLTDK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:25.2924 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TYMPSAITPALVK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:25.3179 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LTVPMASNALGYR, GlobalMod:0, Charge:2 
+2025-03-03 17:35:25.4229 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:G[ox]MMPGIQDMLER, GlobalMod:0, Charge:2 
+2025-03-03 17:35:25.4548 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GMMPGIQD[ox]MLER, GlobalMod:0, Charge:2 
+2025-03-03 17:35:26.0908 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AGDDIPEWFAFK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:26.1240 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:NYSDLVEALDEK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:29.1291 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TLDSQVSVPSDPR, GlobalMod:0, Charge:2 
+2025-03-03 17:35:29.5464 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:KEAMGAFDSFTVV, GlobalMod:0, Charge:2 
+2025-03-03 17:35:29.5868 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TLFEMFEQSAAK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:29.6945 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LAEDWVAAWNAR, GlobalMod:0, Charge:2 
+2025-03-03 17:35:30.2918 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TIVNNESPEIMR, GlobalMod:0, Charge:2 
+2025-03-03 17:35:30.4800 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AGAGAGAAGTGGLSDGGR, GlobalMod:0, Charge:2 
+2025-03-03 17:35:32.5263 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SLLNTLYNLDIK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:32.5682 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EGGGNNLYGEELR, GlobalMod:0, Charge:2 
+2025-03-03 17:35:32.5682 20170519 TM FScon3513 TRACE 4300 peptides quantified 
+2025-03-03 17:35:32.7259 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EGIMWEFVQLR, GlobalMod:0, Charge:2 
+2025-03-03 17:35:33.2015 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:G[ox]M[ox]MPGIQDMLER, GlobalMod:0, Charge:2 
+2025-03-03 17:35:34.2023 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LEVYGSSSAAEDGK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:34.2291 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EFEDFAAELVSR, GlobalMod:0, Charge:2 
+2025-03-03 17:35:34.2646 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:QVGVPNVVVFLNK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:35.6740 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:NMEYISYAATAGK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:35.7646 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ALEYYYQALER, GlobalMod:0, Charge:2 
+2025-03-03 17:35:38.3115 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:NPTPPPITDDLSR, GlobalMod:0, Charge:2 
+2025-03-03 17:35:38.9765 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:G[ox]M[ox]MPGIQD[ox]MLER, GlobalMod:0, Charge:2 
+2025-03-03 17:35:39.3268 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:[ox]MT[ox]MLLTDTNNIK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:39.6084 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:YSVLATWPDFTK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:40.1948 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TG[ox]MVMVFGEITTK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:40.3083 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DAAEVAASLTGLALK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:41.0973 20170519 TM FScon3513 TRACE 4400 peptides quantified 
+2025-03-03 17:35:41.3826 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:MALAGALEQ[ox]MQVR, GlobalMod:0, Charge:2 
+2025-03-03 17:35:42.6122 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:KYSVDVALSPDNK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:44.1803 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DFYDISIAVATPK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:46.0243 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:KPTSGEVVQLGDGR, GlobalMod:0, Charge:2 
+2025-03-03 17:35:46.3080 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:E[ox]MTTDTVQIVYK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:47.0891 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:IQLLNLGGVYTVR, GlobalMod:0, Charge:2 
+2025-03-03 17:35:47.2165 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:YFPTQALNFAFK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:48.2297 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:WTLWFDNPNQK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:48.6183 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LDPGWAFASGSGASK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:50.1150 20170519 TM FScon3513 TRACE 4500 peptides quantified 
+2025-03-03 17:35:50.2176 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EGTGWLYDI[ox]MTR, GlobalMod:0, Charge:2 
+2025-03-03 17:35:50.2841 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DAQQLLEAAEVDR, GlobalMod:0, Charge:2 
+2025-03-03 17:35:50.9217 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TNSSSDPFYWVR, GlobalMod:0, Charge:2 
+2025-03-03 17:35:52.2108 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SADDLATQLEGWR, GlobalMod:0, Charge:2 
+2025-03-03 17:35:52.2373 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TLILDEADEMLAK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:53.0737 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:IAFLDGNTAV[ox]MLGK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:53.8594 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:QMKSFMDMGPAAR, GlobalMod:0, Charge:2 
+2025-03-03 17:35:53.9802 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AAIEASFGSVDE[ox]MK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:54.5118 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:QFVENGEFYVLK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:54.5366 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:MGEPDADLNALSNK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:55.2886 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DLVGNLFENAPER, GlobalMod:0, Charge:2 
+2025-03-03 17:35:55.3487 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VAEDVDLQEVAMR, GlobalMod:0, Charge:2 
+2025-03-03 17:35:55.7536 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AEAFIGELTGTDPR, GlobalMod:0, Charge:2 
+2025-03-03 17:35:56.2409 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VAAEA[ox]MDGYFIFK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:57.0678 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:K[ox]MQMDAADAERAK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:57.5149 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LAFYDYIGNNPAK, GlobalMod:0, Charge:2 
+2025-03-03 17:35:58.3610 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TSSVLSIILGGGAGTR, GlobalMod:0, Charge:2 
+2025-03-03 17:35:58.3610 20170519 TM FScon3513 TRACE 4600 peptides quantified 
+2025-03-03 17:35:58.9932 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DLGLPVTPLPDNLK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:00.1074 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LIYVSQVVFGDQK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:00.2308 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SNIVG[ox]MPAALLLQR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:00.2589 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LVLVPADADTFLPK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:00.8323 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DLDLTAKEPVTVEA, GlobalMod:0, Charge:2 
+2025-03-03 17:36:01.7854 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ALT[ox]MFLVTDDGFR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:02.0109 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:YDYDGIFGTALNR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:02.1418 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TYLDTDLENYMK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:03.0101 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GALP[ox]MPNIGYGSNAK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:03.1032 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:[ac]AAPNPSQLAGALGAAR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:03.6376 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:[ac][ox]MDFAALEDIDGVR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:04.2050 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DNITFGLPFDEDK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:04.6692 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DVFLSSSWDDTIK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:05.2781 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:[ac]ASNGAAPDRWSNVK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:06.0609 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:[ox]MNLVYFDPYPNK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:06.1763 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VDPAASLDFDGAPDK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:06.5769 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EVVVDDFLGAEEAK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:07.1594 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LWLEEDLGDDYR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:07.4339 20170519 TM FScon3513 TRACE 4700 peptides quantified 
+2025-03-03 17:36:08.1100 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SGGMSNEMYNVLAR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:09.2327 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TVGVTTEWPADAAGR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:10.1375 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GITYDEVVDAYYK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:10.9325 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AGLPPTTTPYDDYK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:10.9680 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TYLENQ[ox]MAVALGGR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:11.0651 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DVSDAPEVVLPSGVR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:11.2946 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:MAVDREECVYMAK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:12.0139 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LAGEAALMQELASLGA, GlobalMod:0, Charge:2 
+2025-03-03 17:36:12.4417 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LPSLPVLDNAYESK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:14.0737 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AEVEALATSFP[ox]MPGL, GlobalMod:0, Charge:2 
+2025-03-03 17:36:17.2416 20170519 TM FScon3513 TRACE 4800 peptides quantified 
+2025-03-03 17:36:17.6968 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:IPALNWQVPNVEGK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:18.9693 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AMGEGDSALDI[ox]MWR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:19.5759 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TYIDLPQVPALSPR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:19.9749 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:YGDEQHLEEALDR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:20.6261 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VGTTAWPFGSGVWSK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:21.9379 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:KAQAGDVDGAIAENVK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:22.9106 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ITVVPATYPASEVLK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:22.9605 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EMVILGT[ox]MYAGEMK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:23.0077 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:[ox]MFTLDEADE[ox]MLSR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:23.2580 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TWPEPPNYYEAPK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:24.5595 20170519 TM FScon3513 TRACE Quant failed: No Peak detected, Sequence:AAAVELPAPALDNVLK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:24.7914 20170519 TM FScon3513 TRACE Quant failed: No Peak detected, Sequence:NAEGDIVSAIMELTM, GlobalMod:0, Charge:2 
+2025-03-03 17:36:26.7447 20170519 TM FScon3513 TRACE 4900 peptides quantified 
+2025-03-03 17:36:26.7748 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:FPILLDAVASE[ox]MQR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:27.2353 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AAYQGVPGAYSEVAAR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:27.4805 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DAAAAAQQQAAAAADAAK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:27.4805 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:WVAPSWGAVGDQTLK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:28.0354 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AVALTAPSYVVADLVK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:28.0749 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SEDFAYAIMSNLTR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:29.3830 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ASLVAAAATAAADRLAGK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:29.4444 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:IDVDENPDLSNMLR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:29.4814 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SLDYQQYFDSPLR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:29.5083 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:RLDSIGVENTEENR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:29.6304 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EGPAPYNLEVPEYR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:30.4164 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GVGVANEDWGELNTGK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:31.2818 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EQIFEMPTGGAAIMR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:31.3220 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LLAAAEAGLPAGVADALK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:31.8960 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:[ac]AEQQFEDMEAFLR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:32.1478 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GWTDPVQNWVGQNR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:33.2962 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EATDNLPNTLSNDEK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:34.0700 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DSSTGASFADVTLWSK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:34.4426 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LTQGELSVFVAPGQAR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:34.5237 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:IFVGGLAPETDDAQLK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:35.0689 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LIEPYNYYDFGQR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:35.1583 20170519 TM FScon3513 TRACE 5000 peptides quantified 
+2025-03-03 17:36:35.1881 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AIL[ox]MDLEPGT[ox]MDSVR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:35.5232 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:YDGWVTEMQTDSPR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:35.7336 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ELAPYDPDWYYVR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:36.4522 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GYNTDWEAAISAIER, GlobalMod:0, Charge:2 
+2025-03-03 17:36:37.1666 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LSEGEVAELDATAASLK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:38.2515 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VLSEAEVSDYLQEVE, GlobalMod:0, Charge:2 
+2025-03-03 17:36:38.5873 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VVDGIQLQGGTILGTSR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:39.0585 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:[ac]ANIQQWFASIDIDR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:39.1289 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ETYEIMSPESIGLPR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:39.1685 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:NSIEGWVASANYPVSK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:39.2761 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TAPTFVTYGNLSSLPR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:39.3265 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DQETTGFAWWSGNAR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:39.3553 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:WFVDGELASDYNGPR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:40.0619 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AFDAENYFIQENLR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:41.2742 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AYDNLYSYQVSVWK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:42.8002 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:HSISKDVHGPLEAAMR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:43.5828 20170519 TM FScon3513 TRACE 5100 peptides quantified 
+2025-03-03 17:36:44.2500 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AMSI[ox]MNSFINDIFEK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:45.1655 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:A[ox]MSI[ox]MNSFINDIFEK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:46.0874 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:[ac]MINDEGQVVDLYIPR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:47.1491 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:[ac][ox]MINDEGQVVDLYIPR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:47.3272 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EQFSDGVGYNWIDGLK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:47.5382 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AYDSLVAEHPAAS[ox]MQAR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:48.0230 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GLEGQIDIVTPQTIGGLK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:48.2364 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:MAGKNEGARWLALDPSK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:49.8237 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DPDGYWIEILNADNAR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:49.8654 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LLLTILDANPYLSDGSR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:49.8966 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EAFTLFDSDGDGFITTK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:50.0562 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:FVEGVSTV[ox]MRTVTDTGR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:50.3509 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TLLACPHVLTLPPETLR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:51.2603 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:YAQLVYNGFWFSPER, GlobalMod:0, Charge:2 
+2025-03-03 17:36:51.7601 20170519 TM FScon3513 TRACE 5200 peptides quantified 
+2025-03-03 17:36:53.1312 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:KEYYQPHNNLLLRAK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:53.2833 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ESVPYFPWNEPWNKV, GlobalMod:0, Charge:2 
+2025-03-03 17:36:54.0550 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GSDGSIWALGDAATIDQPK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:54.4638 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AIIGT[ox]MGDIDAYQLPDAK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:54.8501 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AYALANGPIVMEMDTYR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:55.9765 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:IYDAPELTPLLDAANAEK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:56.0794 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TGETGFLSFAPFDPMG[ox]MK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:57.1474 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:FTLLTVNETAPEAVPEDK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:57.7433 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VMDITDEDM[ox]MASVIAGIR, GlobalMod:0, Charge:2 
+2025-03-03 17:36:57.8244 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:QAG[ox]MTQFGSGWAWLNADK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:57.8538 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EGLYYNPYFPGGAIAMPK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:57.9907 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:MYNFDWDPEPGTVQYK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:58.9285 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TIGGGDDAFNTFFSETGAGK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:59.0034 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:YYTPEWSTVASQASFEK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:59.1606 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:FGVTPEYIMNAEQMEIK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:59.2020 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EAVAAAMPVFGTEVPLAQAK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:59.7319 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DGSGTIDFEEFLT[ox]MMTAK, GlobalMod:0, Charge:2 
+2025-03-03 17:36:59.9814 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:[ac]ADETVAVEEVAAAEPASGKK, GlobalMod:0, Charge:2 
+2025-03-03 17:37:00.0469 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ELGDISTLAEPGVVD[ox]MLIK, GlobalMod:0, Charge:2 
+2025-03-03 17:37:00.5263 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AVGQDGLVAGQVVDIQSEDK, GlobalMod:0, Charge:2 
+2025-03-03 17:37:00.8852 20170519 TM FScon3513 TRACE 5300 peptides quantified 
+2025-03-03 17:37:00.9384 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DADEADTLDAFVALGGNLDK, GlobalMod:0, Charge:2 
+2025-03-03 17:37:01.3542 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TFGEPDFVIYNAGAFPANK, GlobalMod:0, Charge:2 
+2025-03-03 17:37:02.1946 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VLNAGLAEVDPDLFDIIEK, GlobalMod:0, Charge:2 
+2025-03-03 17:37:02.4720 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TCPPKGSAAAAVTRGAPDSAGAK, GlobalMod:0, Charge:2 
+2025-03-03 17:37:02.5128 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ILPS[ox]MGGAAASAGGAGAGGAWEGR, GlobalMod:0, Charge:2 
+2025-03-03 17:37:03.1894 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DVDWDDSLGGNQLDMVLAR, GlobalMod:0, Charge:2 
+2025-03-03 17:37:03.8570 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:NAVLSDILGSEDALGD[ox]MDFK, GlobalMod:0, Charge:2 
+2025-03-03 17:37:03.9124 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LDSTAVSQPAIYVASLAAVEK, GlobalMod:0, Charge:2 
+2025-03-03 17:37:04.1811 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LVEALSTALGLAEEPPALETL, GlobalMod:0, Charge:2 
+2025-03-03 17:37:04.3256 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AASAAAAAGTEYLNEADPSVLR, GlobalMod:0, Charge:2 
+2025-03-03 17:37:05.7351 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:QATITTELIEIIAGASAL[ox]MDA, GlobalMod:0, Charge:2 
+2025-03-03 17:37:06.8393 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AVAGLSAGGIGALVGSPADLTLIR, GlobalMod:0, Charge:2 
+2025-03-03 17:37:07.4325 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SYQLLDSELEAAVEGSGAGSGR, GlobalMod:0, Charge:2 
+2025-03-03 17:37:08.0729 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:[ac]AALESFLYTSESVNEGHPDK, GlobalMod:0, Charge:2 
+2025-03-03 17:37:08.2012 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LPDGNEPGYPGGIFDPFGWSK, GlobalMod:0, Charge:2 
+2025-03-03 17:37:08.2350 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ADFEATDVPFYLYGGDVESR, GlobalMod:0, Charge:2 
+2025-03-03 17:37:08.7660 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:IEAPSNVVETNVEELTNFYK, GlobalMod:0, Charge:2 
+2025-03-03 17:37:08.8207 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AVTSGDG[ox]MTADWYSFTPAFLR, GlobalMod:0, Charge:2 
+2025-03-03 17:37:10.0215 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:IGEFTLATADDFEYTDPIDGSK, GlobalMod:0, Charge:2 
+2025-03-03 17:37:10.5900 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DLITAYDADGALAFEDAPGTWTK, GlobalMod:0, Charge:2 
+2025-03-03 17:37:10.6517 20170519 TM FScon3513 TRACE Quant failed: No Peak detected, Sequence:TSGAAGVVSMAGAGAGGATSGMPGAQAQR, GlobalMod:0, Charge:2 
+2025-03-03 17:37:11.0729 20170519 TM FScon3513 TRACE Quant failed: No Peak detected, Sequence:[ac]AEGSLAGFASLEELLEEYVPADK, GlobalMod:0, Charge:2 
+2025-03-03 17:37:11.1795 20170519 TM FScon3513 TRACE Quant failed: No Peak detected, Sequence:QNQVTILANEAVSAENINPEEAK, GlobalMod:0, Charge:2 
+2025-03-03 17:37:12.0362 20170519 TM FScon3513 TRACE 5400 peptides quantified 
+2025-03-03 17:37:12.2095 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VVPPEVEHR, GlobalMod:0, Charge:3 
+2025-03-03 17:37:13.0514 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:NSALWLDSR, GlobalMod:0, Charge:3 
+2025-03-03 17:37:13.1777 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ESTLHLVLR, GlobalMod:0, Charge:3 
+2025-03-03 17:37:14.3374 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EGKPLISLPK, GlobalMod:0, Charge:3 
+2025-03-03 17:37:15.0591 20170519 TM FScon3513 TRACE Quant failed: No Peak detected, Sequence:AAPEGSDYRK, GlobalMod:0, Charge:3 
+2025-03-03 17:37:15.1483 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AALAMVHEVR, GlobalMod:0, Charge:3 
+2025-03-03 17:37:18.9063 20170519 TM FScon3513 TRACE Quant failed: No Peak detected, Sequence:VSNTVAQGRPK, GlobalMod:0, Charge:3 
+2025-03-03 17:37:19.4926 20170519 TM FScon3513 TRACE Quant failed: No Peak detected, Sequence:EAAKPTEEAPK, GlobalMod:0, Charge:3 
+2025-03-03 17:37:21.6293 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EHAPVALGAAGAK, GlobalMod:0, Charge:3 
+2025-03-03 17:37:21.7350 20170519 TM FScon3513 TRACE Quant failed: No Peak detected, Sequence:YAREPENADK, GlobalMod:0, Charge:3 
+2025-03-03 17:37:21.7350 20170519 TM FScon3513 TRACE 5500 peptides quantified 
+2025-03-03 17:37:21.8391 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AAAHPAITVVDK, GlobalMod:0, Charge:3 
+2025-03-03 17:37:22.3493 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LHGADQMAVEK, GlobalMod:0, Charge:3 
+2025-03-03 17:37:23.1381 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:KQDNQAYLPK, GlobalMod:0, Charge:3 
+2025-03-03 17:37:24.1978 20170519 TM FScon3513 TRACE Quant failed: No Peak detected, Sequence:SISGEYDVSKK, GlobalMod:0, Charge:3 
+2025-03-03 17:37:27.4824 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:MAEIGTPIHDR, GlobalMod:0, Charge:3 
+2025-03-03 17:37:29.1351 20170519 TM FScon3513 TRACE Quant failed: No Peak detected, Sequence:LREENEAQAAK, GlobalMod:0, Charge:3 
+2025-03-03 17:37:35.2690 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:RPAETPATANGGK, GlobalMod:0, Charge:3 
+2025-03-03 17:37:35.5759 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:THRDDETFPR, GlobalMod:0, Charge:3 
+2025-03-03 17:37:35.7223 20170519 TM FScon3513 TRACE Quant failed: No Peak detected, Sequence:NRGPGDGESMQK, GlobalMod:0, Charge:3 
+2025-03-03 17:37:35.7430 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DPYKLPSSIEK, GlobalMod:0, Charge:3 
+2025-03-03 17:37:35.7768 20170519 TM FScon3513 TRACE Quant failed: No Peak detected, Sequence:GADLIVIPAGVPR, GlobalMod:0, Charge:3 
+2025-03-03 17:37:36.3469 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AFIVHADNVGSR, GlobalMod:0, Charge:3 
+2025-03-03 17:37:36.4107 20170519 TM FScon3513 TRACE 5600 peptides quantified 
+2025-03-03 17:37:37.2298 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GASTHILDEAER, GlobalMod:0, Charge:3 
+2025-03-03 17:37:38.0236 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:HNLLGV[ox]MDEEK, GlobalMod:0, Charge:3 
+2025-03-03 17:37:40.3154 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:HNNVVPNNHFK, GlobalMod:0, Charge:3 
+2025-03-03 17:37:40.5076 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AGVSAIVHPGGSLR, GlobalMod:0, Charge:3 
+2025-03-03 17:37:41.0283 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AGDEDIHTANER, GlobalMod:0, Charge:3 
+2025-03-03 17:37:43.5249 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TDGQHYMFLNK, GlobalMod:0, Charge:3 
+2025-03-03 17:37:44.0636 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EPLTTLEGLKTR, GlobalMod:0, Charge:3 
+2025-03-03 17:37:44.9259 20170519 TM FScon3513 TRACE Quant failed: No Peak detected, Sequence:AGGDKAEEAEGEAK, GlobalMod:0, Charge:3 
+2025-03-03 17:37:46.2949 20170519 TM FScon3513 TRACE Quant failed: No Peak detected, Sequence:HAEDSAGAADAAGSR, GlobalMod:0, Charge:3 
+2025-03-03 17:37:46.8510 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:RVSEQFTA[ox]MFR, GlobalMod:0, Charge:3 
+2025-03-03 17:37:46.8510 20170519 TM FScon3513 TRACE 5700 peptides quantified 
+2025-03-03 17:37:47.9499 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TLGHTVTSPDDTR, GlobalMod:0, Charge:3 
+2025-03-03 17:37:48.1313 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EANREDQGFVIK, GlobalMod:0, Charge:3 
+2025-03-03 17:37:48.1613 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SSAASTAVSVADAIR, GlobalMod:0, Charge:3 
+2025-03-03 17:37:50.5686 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:RVESEEGWQAVR, GlobalMod:0, Charge:3 
+2025-03-03 17:37:51.0008 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:MAAEAIVEGSANGTK, GlobalMod:0, Charge:3 
+2025-03-03 17:37:52.3321 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AVVEGDEDRINDK, GlobalMod:0, Charge:3 
+2025-03-03 17:37:52.5520 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:QYGVAVLEPETVR, GlobalMod:0, Charge:3 
+2025-03-03 17:37:53.4979 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DPLAEIDDGDRVR, GlobalMod:0, Charge:3 
+2025-03-03 17:37:55.4104 20170519 TM FScon3513 TRACE Quant failed: No Peak detected, Sequence:A[ox]MTHEEQEAAAASK, GlobalMod:0, Charge:3 
+2025-03-03 17:37:56.1185 20170519 TM FScon3513 TRACE 5800 peptides quantified 
+2025-03-03 17:37:59.8822 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DHTAEVVGVTTHPSR, GlobalMod:0, Charge:3 
+2025-03-03 17:38:00.0789 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AELAAVAALPDAELEK, GlobalMod:0, Charge:3 
+2025-03-03 17:38:00.8428 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VQYLHPADGVYPEK, GlobalMod:0, Charge:3 
+2025-03-03 17:38:04.4018 20170519 TM FScon3513 TRACE 5900 peptides quantified 
+2025-03-03 17:38:07.9664 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LQTPTGQYKPDSGALR, GlobalMod:0, Charge:3 
+2025-03-03 17:38:08.4435 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:IFNVLGEPVDNMGNVK, GlobalMod:0, Charge:3 
+2025-03-03 17:38:08.8824 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DATQDFEEIGHSNSAK, GlobalMod:0, Charge:3 
+2025-03-03 17:38:08.9237 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DSLNNTPLHYAAGYGR, GlobalMod:0, Charge:3 
+2025-03-03 17:38:09.5130 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:YIEQLVDADEKWEK, GlobalMod:0, Charge:3 
+2025-03-03 17:38:10.2515 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:MDTQLFDKEEQLQR, GlobalMod:0, Charge:3 
+2025-03-03 17:38:12.9125 20170519 TM FScon3513 TRACE 6000 peptides quantified 
+2025-03-03 17:38:13.0435 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:[ac]AAAIPMVEVHSIETGEK, GlobalMod:0, Charge:3 
+2025-03-03 17:38:15.0602 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:WIVTSDHGNADDMVQR, GlobalMod:0, Charge:3 
+2025-03-03 17:38:18.6867 20170519 TM FScon3513 TRACE Quant failed: No Peak detected, Sequence:EAEAATSNKPGGGSGANAEAK, GlobalMod:0, Charge:3 
+2025-03-03 17:38:19.0416 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DLENPDFESAFAIYHR, GlobalMod:0, Charge:3 
+2025-03-03 17:38:19.4862 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TNAAQAEGNVHDMVAYEK, GlobalMod:0, Charge:3 
+2025-03-03 17:38:19.5203 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:IEEELGENAVYAGESWR, GlobalMod:0, Charge:3 
+2025-03-03 17:38:20.3357 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GLDSTYHVVVNNFYVSR, GlobalMod:0, Charge:3 
+2025-03-03 17:38:21.3620 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LAEQAERYDE[ox]MVEE[ox]MK, GlobalMod:0, Charge:3 
+2025-03-03 17:38:22.1578 20170519 TM FScon3513 TRACE 6100 peptides quantified 
+2025-03-03 17:38:23.3074 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:NTIKRDVALTLLTDPDLR, GlobalMod:0, Charge:3 
+2025-03-03 17:38:27.2629 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TVPTKLEEGEMPLNTYSNK, GlobalMod:0, Charge:3 
+2025-03-03 17:38:28.3357 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:DA[ox]METTAQSGEAELAEELLR, GlobalMod:0, Charge:3 
+2025-03-03 17:38:28.4415 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AAPAPVAAPVAEPVAVEAPAVASE, GlobalMod:0, Charge:3 
+2025-03-03 17:38:29.2612 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:FGPLMNEGGAVISLTYNASNR, GlobalMod:0, Charge:3 
+2025-03-03 17:38:29.4233 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:WGLPGGNADSADAGLLQETAMR, GlobalMod:0, Charge:3 
+2025-03-03 17:38:29.4454 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LLLYTLNGGRDEVSGDQVGPK, GlobalMod:0, Charge:3 
+2025-03-03 17:38:30.0062 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TTAAEPQTAAPVAAEDVFAYTK, GlobalMod:0, Charge:3 
+2025-03-03 17:38:31.0476 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:RKADDDEEEEAEEEEPVIK, GlobalMod:0, Charge:3 
+2025-03-03 17:38:31.0764 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VLAVPLTAVSVQDTTVLNF[ox]MK, GlobalMod:0, Charge:3 
+2025-03-03 17:38:31.1049 20170519 TM FScon3513 TRACE 6200 peptides quantified 
+2025-03-03 17:38:31.2779 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TGVEPQAIGDIVIGSVLGPSSQR, GlobalMod:0, Charge:3 
+2025-03-03 17:38:31.6635 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:YYQPGESVPAFVLESSLVDGR, GlobalMod:0, Charge:3 
+2025-03-03 17:38:32.9253 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LAGLPAAYPTLLDAPVSGGVVGADK, GlobalMod:0, Charge:3 
+2025-03-03 17:38:35.3133 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SPAPGGFIAPHLFCQRVEDVGAR, GlobalMod:0, Charge:3 
+2025-03-03 17:38:35.5286 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VVVVANPANTNALILAENAPSIPR, GlobalMod:0, Charge:3 
+2025-03-03 17:38:36.8737 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TYPEE[ox]MIQTGISTIDVMNSIAR, GlobalMod:0, Charge:3 
+2025-03-03 17:38:37.2599 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ENTEGEYSGLEHEVVPGVVESLK, GlobalMod:0, Charge:3 
+2025-03-03 17:38:38.0389 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:[ac][ox]MDQNVFALLGDDENADPHVLAAK, GlobalMod:0, Charge:3 
+2025-03-03 17:38:38.1383 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:EAEAEASTSKPSGDGDAAALEALEAR, GlobalMod:0, Charge:3 
+2025-03-03 17:38:38.8330 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:G[ox]MEQDLTWDNAASIYEEVLVAAK, GlobalMod:0, Charge:3 
+2025-03-03 17:38:38.8633 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SEIPEYLNGELAGDYGYDPLGLGK, GlobalMod:0, Charge:3 
+2025-03-03 17:38:39.4794 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:GAAAPLDLQELLADPEALPGA[ox]MELAK, GlobalMod:0, Charge:3 
+2025-03-03 17:38:39.9478 20170519 TM FScon3513 TRACE 6300 peptides quantified 
+2025-03-03 17:38:41.5879 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:AEEILASTPDAF[ox]MLQQFQNPNNPK, GlobalMod:0, Charge:3 
+2025-03-03 17:38:44.3137 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:LGMVPGGEVPG[ox]MGALDMEAAEGSIVNNTR, GlobalMod:0, Charge:3 
+2025-03-03 17:38:47.9893 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SEIPEYLNGELAGDYGYDPLGLGKDPETVAK, GlobalMod:0, Charge:3 
+2025-03-03 17:38:48.4604 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:FDSSVFDGLDPLYPGGPFDPLGLADDPEVLQELK, GlobalMod:0, Charge:3 
+2025-03-03 17:38:48.7544 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SGETVNFVNNAGFPHNIVFDEDAIPSGVNADAISR, GlobalMod:0, Charge:3 
+2025-03-03 17:38:48.7544 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:FDSSVFDGLDPLYPGGPFDPLGLADDPEVLQELK, GlobalMod:1, Charge:3 
+2025-03-03 17:38:48.7895 20170519 TM FScon3513 TRACE Quant failed: No Peak detected, Sequence:LDAAPSITYLATTAAGSPAGN[ox]MAPDAVNAVTWGVFPGK, GlobalMod:0, Charge:3 
+2025-03-03 17:38:49.7070 20170519 TM FScon3513 TRACE 6400 peptides quantified 
+2025-03-03 17:38:50.3752 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:ENAPVATYNVHEHLR, GlobalMod:0, Charge:4 
+2025-03-03 17:38:50.4195 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:KDEKPATQEAAAEAPAK, GlobalMod:0, Charge:4 
+2025-03-03 17:38:50.9784 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:FYKEEEKNEPEFAK, GlobalMod:0, Charge:4 
+2025-03-03 17:38:56.5671 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:KGDASHLATTEFDVTKK, GlobalMod:0, Charge:4 
+2025-03-03 17:38:56.8316 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:[ox]MQAILEAHTPPSGSLGAGHK, GlobalMod:0, Charge:4 
+2025-03-03 17:38:58.8338 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VLVHIEEQSPDIGQGVHG[ox]MGTK, GlobalMod:0, Charge:4 
+2025-03-03 17:38:58.9014 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:VKADRDESSPYAAMLAAQDVAQK, GlobalMod:0, Charge:4 
+2025-03-03 17:38:59.1643 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:SASAGSAHHASSGAATSASGASADAGFQK, GlobalMod:0, Charge:4 
+2025-03-03 17:38:59.2737 20170519 TM FScon3513 TRACE Quant failed: No Peak detected, Sequence:KEESSDDSDDDDDSDDDSDDEPPKK, GlobalMod:0, Charge:4 
+2025-03-03 17:39:00.4577 20170519 TM FScon3513 TRACE Quant failed: No Peak detected, Sequence:FLGPFSEGDTPAYLTGEFPGDYGWDTAGLSADPETFK, GlobalMod:0, Charge:4 
+2025-03-03 17:39:00.5211 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:WLGPYSENSTPAYLTGEFPGDYGWDTAGLSADPETFK, GlobalMod:0, Charge:4 
+2025-03-03 17:39:00.5629 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:V[ox]MSQLAAQDTDQGYNDGLSAVGGSSGVEAVLTPALAAQAEVK, GlobalMod:0, Charge:4 
+2025-03-03 17:39:00.6360 20170519 TM FScon3513 TRACE Quant failed: Peak fitting failed, Sequence:TGSGNTGNQEPGAAGMSWSTTPSASPGSVDPTSLEVPLAPPDSR, GlobalMod:0, Charge:4 
+2025-03-03 17:39:05.1504 20170519 TM FScon3513 TRACE executing quantification:finished 

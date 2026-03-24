@@ -1,0 +1,44 @@
+2025-03-03 17:46:06.4691 ProteinInference_readAndInferFile TRACE Getting proteins with peptide sequence from db 
+2025-03-03 17:46:06.5000 ProteinInference_readAndInferFile TRACE Perfom digestion on reversed proteins for decoy set 
+2025-03-03 17:46:10.7072 ProteinInference_readAndInferFile TRACE Map peptide sequences to proteins 
+2025-03-03 17:46:10.7504 ProteinInference_readAndInferFile TRACE Create combined list 
+2025-03-03 17:46:10.9200 ProteinInference_readAndInferFile TRACE Create a map with peptide scores 
+2025-03-03 17:46:10.9595 ProteinInference_readAndInferFile TRACE Assign scores to decoy set 
+2025-03-03 17:46:11.4647 ProteinInference_readAndInferFile TRACE Assign target and decoy scores inferred proteins 
+2025-03-03 17:46:12.0738 ProteinInference_readAndInferFile TRACE Calculate q values for all proteins 
+2025-03-03 17:46:12.0940 ProteinInference_readAndInferFile TRACE Writing now 20170519 TM FScon3501 
+2025-03-03 17:46:12.1136 ProteinInference_readAndInferFile TRACE File written to C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\prot\20170519 TM FScon3501.prot 
+2025-03-03 17:46:12.1136 ProteinInference_readAndInferFile TRACE Writing now 20170519 TM FScon3503 
+2025-03-03 17:46:12.1332 ProteinInference_readAndInferFile TRACE File written to C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\prot\20170519 TM FScon3503.prot 
+2025-03-03 17:46:12.1332 ProteinInference_readAndInferFile TRACE Writing now 20170519 TM FScon3505 
+2025-03-03 17:46:12.1503 ProteinInference_readAndInferFile TRACE File written to C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\prot\20170519 TM FScon3505.prot 
+2025-03-03 17:46:12.1537 ProteinInference_readAndInferFile TRACE Writing now 20170519 TM FScon3507 
+2025-03-03 17:46:12.1537 ProteinInference_readAndInferFile TRACE File written to C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\prot\20170519 TM FScon3507.prot 
+2025-03-03 17:46:12.1537 ProteinInference_readAndInferFile TRACE Writing now 20170519 TM FScon3509 
+2025-03-03 17:46:12.1878 ProteinInference_readAndInferFile TRACE File written to C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\prot\20170519 TM FScon3509.prot 
+2025-03-03 17:46:12.1878 ProteinInference_readAndInferFile TRACE Writing now 20170519 TM FScon3511 
+2025-03-03 17:46:12.2061 ProteinInference_readAndInferFile TRACE File written to C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\prot\20170519 TM FScon3511.prot 
+2025-03-03 17:46:12.2061 ProteinInference_readAndInferFile TRACE Writing now 20170519 TM FScon3513 
+2025-03-03 17:46:12.2234 ProteinInference_readAndInferFile TRACE File written to C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\prot\20170519 TM FScon3513.prot 
+2025-03-03 17:46:12.2234 ProteinInference_readAndInferFile TRACE Writing now 20170519 TM FScon3515 
+2025-03-03 17:46:12.2415 ProteinInference_readAndInferFile TRACE File written to C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\prot\20170519 TM FScon3515.prot 
+2025-03-03 17:46:12.2415 ProteinInference_readAndInferFile TRACE Writing now 20170519 TM FScon3517 
+2025-03-03 17:46:12.2606 ProteinInference_readAndInferFile TRACE File written to C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\prot\20170519 TM FScon3517.prot 
+2025-03-03 17:46:12.2606 ProteinInference_readAndInferFile TRACE Writing now 20170519 TM FScon3601 
+2025-03-03 17:46:12.2790 ProteinInference_readAndInferFile TRACE File written to C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\prot\20170519 TM FScon3601.prot 
+2025-03-03 17:46:12.2790 ProteinInference_readAndInferFile TRACE Writing now 20170519 TM FScon3603 
+2025-03-03 17:46:12.2959 ProteinInference_readAndInferFile TRACE File written to C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\prot\20170519 TM FScon3603.prot 
+2025-03-03 17:46:12.2959 ProteinInference_readAndInferFile TRACE Writing now 20170519 TM FScon3605 
+2025-03-03 17:46:12.2959 ProteinInference_readAndInferFile TRACE File written to C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\prot\20170519 TM FScon3605.prot 
+2025-03-03 17:46:12.3159 ProteinInference_readAndInferFile TRACE Writing now 20170519 TM FScon3607 
+2025-03-03 17:46:12.3311 ProteinInference_readAndInferFile TRACE File written to C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\prot\20170519 TM FScon3607.prot 
+2025-03-03 17:46:12.3311 ProteinInference_readAndInferFile TRACE Writing now 20170519 TM FScon3609 
+2025-03-03 17:46:12.3512 ProteinInference_readAndInferFile TRACE File written to C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\prot\20170519 TM FScon3609.prot 
+2025-03-03 17:46:12.3512 ProteinInference_readAndInferFile TRACE Writing now 20170519 TM FScon3611 
+2025-03-03 17:46:12.3689 ProteinInference_readAndInferFile TRACE File written to C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\prot\20170519 TM FScon3611.prot 
+2025-03-03 17:46:12.3689 ProteinInference_readAndInferFile TRACE Writing now 20170519 TM FScon3613 
+2025-03-03 17:46:12.3871 ProteinInference_readAndInferFile TRACE File written to C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\prot\20170519 TM FScon3613.prot 
+2025-03-03 17:46:12.3897 ProteinInference_readAndInferFile TRACE Writing now 20170519 TM FScon3615 
+2025-03-03 17:46:12.3897 ProteinInference_readAndInferFile TRACE File written to C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\prot\20170519 TM FScon3615.prot 
+2025-03-03 17:46:12.4074 ProteinInference_readAndInferFile TRACE Writing now 20170519 TM FScon3617 
+2025-03-03 17:46:12.4225 ProteinInference_readAndInferFile TRACE File written to C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\prot\20170519 TM FScon3617.prot 

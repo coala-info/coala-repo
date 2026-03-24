@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for ERGA HiFi Hap1Hap2 Purge+QC v2309 (WF3)</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-ERGA_HiFi_Hap1Hap2_Purge_QC_v2310_(WF3).ga"
+      },
+      "datePublished": "2024-01-02 13:06:21 +0000",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-3679-9585"
+        },
+        {
+          "@id": "#creator-1"
+        }
+      ],
+      "license": "MIT",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.606.2",
+      "url": "https://workflowhub.eu/workflows/606/ro_crate?version=2",
+      "name": "Research Object Crate for ERGA HiFi Hap1Hap2 Purge+QC v2309 (WF3)",
+      "description": "The workflow takes a trimmed HiFi reads collection, Hap1/Hap2 contigs, and the values for transition parameter and max coverage depth (calculated from WF1) to run Purge_Dups. It produces purged Hap1 and Hap2 contigs assemblies, and runs all the QC analysis (gfastats, BUSCO, and Merqury).",
+      "isBasedOn": "https://github.com/ERGA-consortium/pipelines/tree/main/assembly/galaxy",
+      "sdDatePublished": "2026-03-24 17:51:57 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-ERGA_HiFi_Hap1Hap2_Purge_QC_v2310_(WF3).ga"
+        },
+        {
+          "@id": "Purge_hifi_2309.png"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-ERGA_HiFi_Hap1Hap2_Purge_QC_v2310_(WF3).ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "url": "https://github.com/ERGA-consortium/pipelines/blob/main/assembly/galaxy/3.Purging/Galaxy-Workflow-ERGA_HiFi_Hap1Hap2_Purge_QC_v2310_(WF3).ga",
+      "contentSize": 73154,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "Purge_hifi_2309.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "The workflow takes a trimmed HiFi reads collection, Hap1/Hap2 contigs, and the values for transition parameter and max coverage depth (calculated from WF1) to run Purge_Dups. It produces purged Hap1 and Hap2 contigs assemblies, and runs all the QC analysis (gfastats, BUSCO, and Merqury).",
+      "name": "ERGA HiFi Hap1Hap2 Purge+QC v2309 (WF3)",
+      "keywords": "ERGA, Assembly+QC, HiFi",
+      "version": 2,
+      "license": "https://spdx.org/licenses/MIT",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/445"
+        },
+        {
+          "@id": "#ERGA"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/163"
+      },
+      "dateCreated": "2024-01-02T13:04:04Z",
+      "dateModified": "2024-03-13T09:53:44Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/10"
+      },
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.606.2",
+      "isBasedOn": "https://workflowhub.eu/workflows/606?version=1",
+      "input": [
+
+      ],
+      "output": [
+
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "Purge_hifi_2309.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "url": "https://github.com/ERGA-consortium/pipelines/blob/main/assembly/galaxy/3.Purging/pics/Purge_hifi_2309.png",
+      "contentSize": 235117
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-3679-9585",
+      "@type": "Person",
+      "name": "Diego De Panis",
+      "identifier": "https://orcid.org/0000-0002-3679-9585"
+    },
+    {
+      "@id": "#creator-1",
+      "@type": "Person",
+      "name": "ERGA"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/445",
+      "@type": "Person",
+      "name": "Diego De Panis"
+    },
+    {
+      "@id": "#ERGA",
+      "@type": "Person",
+      "name": "ERGA"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/163",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "ERGA Assembly"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/10",
+      "@type": "Collection",
+      "name": "ERGA Assembly Galaxy Long Reads &amp; Hi-C Pipelines (Hifiasm-HiC + Purge_Dups + YaHS)"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for ERGA HiFi Hap1Hap2 Purge+QC v2309 (WF3)</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/606/ro_crate?version=2" target="_blank">https://workflowhub.eu/workflows/606/ro_crate?version=2</a>
+
+
+  <img src="Purge_hifi_2309.png" style="width: 100%;"/>
+
+<p>
+  The workflow takes a trimmed HiFi reads collection, Hap1/Hap2 contigs, and the values for transition parameter and max coverage depth (calculated from WF1) to run Purge_Dups. It produces purged Hap1 and Hap2 contigs assemblies, and runs all the QC analysis (gfastats, BUSCO, and Merqury).
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://orcid.org/0000-0002-3679-9585" target="_blank">Diego De Panis</a>, ERGA</dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>MIT</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-ERGA_HiFi_Hap1Hap2_Purge_QC_v2310_(WF3).ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-ERGA_HiFi_Hap1Hap2_Purge_QC_v2310_(WF3).ga">ERGA HiFi Hap1Hap2 Purge+QC v2309 (WF3)</a>
+      
+        <br/>Size: 73154 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_Purge_hifi_2309.png">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="Purge_hifi_2309.png">Purge_hifi_2309.png</a>
+      
+        <br/>Size: 235117 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "format-version": "0.1",
+    "name": "STEC pipeline",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": "pipeline_stec_1.0",
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [],
+            "label": null,
+            "name": "STEC pipeline 1.0",
+            "outputs": [
+                {
+                    "name": "output_html",
+                    "type": "html"
+                },
+                {
+                    "name": "output_summary",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 663.6499938964844,
+                "height": 211.64999389648438,
+                "left": 331.5,
+                "right": 506.5,
+                "top": 452,
+                "width": 175,
+                "x": 331.5,
+                "y": 452
+            },
+            "post_job_actions": {},
+            "tool_id": "pipeline_stec_1.0",
+            "tool_state": "{\"section_amr\": {\"dbs_amr\": [\"resfinder\", \"argannot\", \"card\", \"ncbi-amr\", \"pointfinder\"]}, \"section_input\": {\"sample_name\": \"\", \"read_type\": {\"input_type_selector\": \"illumina\", \"__current_case__\": 0, \"fastq_1\": {\"__class__\": \"RuntimeValue\"}, \"fastq_2\": {\"__class__\": \"RuntimeValue\"}, \"library\": \"NexteraPE\"}, \"detection_method\": \"blast\"}, \"section_plasmid\": {\"dbs_plasmid\": [\"plasmid\"]}, \"section_qc\": {\"kraken\": \"true\"}, \"section_report\": {\"report_include_fastq\": \"false\", \"report_include_bam\": \"false\"}, \"section_serotype\": {\"serotypefinder\": \"true\"}, \"section_st\": {\"schemes\": [\"mlst-pasteur\", \"mlst-warwick\", \"cgmlst\"]}, \"section_virulence\": {\"dbs_viru\": [\"virulence\"]}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0",
+            "type": "tool",
+            "uuid": "411192ab-6248-4bfa-af3e-d5fc10ef4ebd",
+            "workflow_outputs": [
+                {
+                    "label": "Report - STEC pipeline (blast) on input dataset(s)",
+                    "output_name": "output_html",
+                    "uuid": "99cff4c0-932e-43c2-9f9a-f7a30e4cda13"
+                },
+                {
+                    "label": "Summary - STEC pipeline (blast) on input dataset(s)",
+                    "output_name": "output_summary",
+                    "uuid": "63cf3d52-d717-4df9-b4bd-c2cd846aa66c"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "100d6b5a-ba65-4b18-863a-3386d65dae38",
+    "version": 2
+}

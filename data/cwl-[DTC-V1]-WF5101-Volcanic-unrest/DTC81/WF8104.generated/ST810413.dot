@@ -1,0 +1,32 @@
+strict digraph {
+
+
+	"DT810408" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"DT810408" -> "ST810413" [ label="is input to", labeltooltip="DT810408 - is input to - ST810413",  weight=0 ];
+
+	"forecast_length" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"forecast_length" -> "ST810413" [ label="is input to", labeltooltip="forecast_length - is input to - ST810413",  weight=0 ];
+
+	"DT810413" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"SS8107" [ color="2", colorscheme="ylorbr3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ST810413" [ color="2", colorscheme="greens3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ST810413" -> "DT810413" [ label="is output from", labeltooltip="DT810413 - is output from - ST810413",  weight=0 ];
+
+	"gmm" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"gmm" -> "ST810413" [ label="is input to", labeltooltip="gmm - is input to - ST810413",  weight=0 ];
+
+	"DT810406" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"DT810406" -> "ST810413" [ label="is input to", labeltooltip="DT810406 - is input to - ST810413",  weight=0 ];
+
+	"DT810407" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"DT810407" -> "ST810413" [ label="is input to", labeltooltip="DT810407 - is input to - ST810413",  weight=0 ];
+
+}

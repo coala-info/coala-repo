@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for VGP hybrid scaffolding with Bionano optical maps</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "bionano.ga"
+      },
+      "datePublished": "2022-04-05 23:20:31 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0001-6421-3484"
+        }
+      ],
+      "license": "GPL-3.0",
+      "identifier": "https://workflowhub.eu/workflows/322?version=1",
+      "url": "https://workflowhub.eu/workflows/322/ro_crate?version=1",
+      "name": "Research Object Crate for VGP hybrid scaffolding with Bionano optical maps",
+      "description": "Performs scaffolding using Bionano Data. Part of VGP assembly pipeline.",
+      "isBasedOn": "https://github.com/Delphine-L/iwc/tree/VGP/workflows/VGP-assembly-v2",
+      "sdDatePublished": "2026-03-24 18:05:34 +0000",
+      "hasPart": [
+        {
+          "@id": "bionano.ga"
+        },
+        {
+          "@id": "bionano.cwl"
+        }
+      ]
+    },
+    {
+      "@id": "bionano.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 26876,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "subjectOf": {
+        "@id": "bionano.cwl"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Performs scaffolding using Bionano Data. Part of VGP assembly pipeline.",
+      "name": "VGP hybrid scaffolding with Bionano optical maps",
+      "url": "https://workflowhub.eu/workflows/322?version=1",
+      "keywords": "vgp, Assembly, Galaxy",
+      "version": 1,
+      "license": "https://spdx.org/licenses/GPL-3.0",
+      "creator": {
+        "@id": "https://workflowhub.eu/people/248"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/24"
+      },
+      "dateCreated": "2022-04-05T22:21:34Z",
+      "dateModified": "2023-01-16T13:59:34Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/8"
+      },
+      "input": [
+        {
+          "@id": "#vgp_hybrid_scaffolding_with_bionano_optical_maps-inputs-Bionano%20Data"
+        },
+        {
+          "@id": "#vgp_hybrid_scaffolding_with_bionano_optical_maps-inputs-Conflict%20resolution%20files%20"
+        },
+        {
+          "@id": "#vgp_hybrid_scaffolding_with_bionano_optical_maps-inputs-Estimated%20genome%20size%20-%20Parameter%20File"
+        },
+        {
+          "@id": "#vgp_hybrid_scaffolding_with_bionano_optical_maps-inputs-Hifiasm%20Purged%20Assembly"
+        },
+        {
+          "@id": "#vgp_hybrid_scaffolding_with_bionano_optical_maps-inputs-Pacbio%20trimmed%20reads"
+        }
+      ],
+      "output": [
+
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "bionano.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "HowTo"
+      ],
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "contentSize": 4265
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-6421-3484",
+      "@type": "Person",
+      "name": "Delphine Lariviere",
+      "identifier": "https://orcid.org/0000-0001-6421-3484"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/248",
+      "@type": "Person",
+      "name": "Delphine Lariviere"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/24",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "usegalaxy-eu"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/8",
+      "@type": "Collection",
+      "name": "Vertebrate Genomes Pipelines (VGP) workflows"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#vgp_hybrid_scaffolding_with_bionano_optical_maps-inputs-Bionano Data",
+      "@type": "FormalParameter",
+      "name": "Bionano Data",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#vgp_hybrid_scaffolding_with_bionano_optical_maps-inputs-Conflict resolution files ",
+      "@type": "FormalParameter",
+      "name": "Conflict resolution files ",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#vgp_hybrid_scaffolding_with_bionano_optical_maps-inputs-Estimated genome size - Parameter File",
+      "@type": "FormalParameter",
+      "name": "Estimated genome size - Parameter File",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#vgp_hybrid_scaffolding_with_bionano_optical_maps-inputs-Hifiasm Purged Assembly",
+      "@type": "FormalParameter",
+      "name": "Hifiasm Purged Assembly",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#vgp_hybrid_scaffolding_with_bionano_optical_maps-inputs-Pacbio trimmed reads",
+      "@type": "FormalParameter",
+      "name": "Pacbio trimmed reads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for VGP hybrid scaffolding with Bionano optical maps</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/322/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/322/ro_crate?version=1</a>
+
+
+<p>
+  Performs scaffolding using Bionano Data. Part of VGP assembly pipeline.
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://orcid.org/0000-0001-6421-3484" target="_blank">Delphine Lariviere</a></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>GPL-3.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_bionano.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="bionano.ga">VGP hybrid scaffolding with Bionano optical maps</a>
+      
+        <br/>Size: 26876 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_bionano.cwl">
+      
+      
+      
+        <strong>Main Workflow Description: </strong>
+      
+      <a class="data-entity-link" href="bionano.cwl">bionano.cwl</a>
+      
+        <br/>Size: 4265 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

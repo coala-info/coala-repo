@@ -1,0 +1,221 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-Population_and_community_metrics_calculation_from_Biodiversity_data.ga"
+      },
+      "datePublished": "2020-07-24 14:00:50 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-8504-068X"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-4308-5617"
+        }
+      ],
+      "license": "MIT",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.49.2",
+      "url": "https://workflowhub.eu/workflows/49/ro_crate?version=2",
+      "name": "Research Object Crate for Population and community metrics calculation from Biodiversity data",
+      "description": "Galaxy-E (ecology.usegalaxy.eu) workflow to calculate species presence / absence, community metrics and compute generalized linear models to identify effects and significativity of these effects on biodiversity.",
+      "isBasedOn": "https://ecology.usegalaxy.eu/u/ylebras/w/workflow-constructed-from-history-population-and-community-metrics-calculation-from-biodiversity-data-1",
+      "sdDatePublished": "2026-03-24 18:11:57 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-Population_and_community_metrics_calculation_from_Biodiversity_data.ga"
+        },
+        {
+          "@id": "workflow-49-a8d75b09b19f7ae5e2858eee3d33cd2a73035a52-diagram.svg"
+        },
+        {
+          "@id": "Galaxy-Workflow-Population_and_community_metrics_calculation_from_Biodiversity_data.cwl"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-Population_and_community_metrics_calculation_from_Biodiversity_data.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 9837,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "workflow-49-a8d75b09b19f7ae5e2858eee3d33cd2a73035a52-diagram.svg"
+      },
+      "subjectOf": {
+        "@id": "Galaxy-Workflow-Population_and_community_metrics_calculation_from_Biodiversity_data.cwl"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Galaxy-E (ecology.usegalaxy.eu) workflow to calculate species presence / absence, community metrics and compute generalized linear models to identify effects and significativity of these effects on biodiversity.",
+      "name": "Population and community metrics calculation from Biodiversity data",
+      "url": "https://workflowhub.eu/workflows/49?version=2",
+      "keywords": "Community_metrics, Presence_absence, GLM, Ecology, Biodiversity, Species abundance, Modeling, Statistics",
+      "version": 2,
+      "license": "https://spdx.org/licenses/MIT",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/51"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/52"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/19"
+      },
+      "dateCreated": "2020-07-24T13:00:50Z",
+      "dateModified": "2024-12-09T08:46:05Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/33"
+      },
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.49.2",
+      "isBasedOn": "https://workflowhub.eu/workflows/49?version=1",
+      "input": [
+        {
+          "@id": "#population_and_community_metrics_calculation_from_biodiversity_data-inputs-0_Input%20Dataset"
+        },
+        {
+          "@id": "#population_and_community_metrics_calculation_from_biodiversity_data-inputs-1_Input%20Dataset"
+        }
+      ],
+      "output": [
+
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "workflow-49-a8d75b09b19f7ae5e2858eee3d33cd2a73035a52-diagram.svg",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 6739
+    },
+    {
+      "@id": "Galaxy-Workflow-Population_and_community_metrics_calculation_from_Biodiversity_data.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "HowTo"
+      ],
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "contentSize": 2434
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-8504-068X",
+      "@type": "Person",
+      "name": "Yvan Le Bras",
+      "identifier": "https://orcid.org/0000-0002-8504-068X"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-4308-5617",
+      "@type": "Person",
+      "name": "Coline Royaux",
+      "identifier": "https://orcid.org/0000-0003-4308-5617"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/51",
+      "@type": "Person",
+      "name": "Yvan Le Bras"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/52",
+      "@type": "Person",
+      "name": "Coline Royaux"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/19",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "PNDB"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/33",
+      "@type": "Collection",
+      "name": "Biodiversity &amp; ecology workflows"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#population_and_community_metrics_calculation_from_biodiversity_data-inputs-0_Input Dataset",
+      "@type": "FormalParameter",
+      "name": "0_Input Dataset",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#population_and_community_metrics_calculation_from_biodiversity_data-inputs-1_Input Dataset",
+      "@type": "FormalParameter",
+      "name": "1_Input Dataset",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

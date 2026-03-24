@@ -1,0 +1,286 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "DTC61/WF6101/WF6101.cwl"
+      },
+      "datePublished": "2025-06-26 13:03:36 +0100",
+      "author": [
+        {
+          "@id": "#creator-1"
+        }
+      ],
+      "license": "CC-BY-NC-ND-4.0",
+      "identifier": "https://workflowhub.eu/workflows/1231?version=3",
+      "url": "https://workflowhub.eu/workflows/1231/ro_crate?version=3",
+      "name": "Research Object Crate for [DTC-T1] WF6101: Tsunami impact forecasting",
+      "description": "# [DTC-T1] WF6101: Tsunami impact forecasting\n\nThis repository contains a Common Workflow Language (CWL) and Ro-Crate metadata definition for DTC-T1 workflow 6101, which is designed for \nproviding tsunami impact forecasting following a tsunamigenic earthquake event, based on a probabilistic approach. The workflow integrates real-time\nearthquake data, runs HPC simulations, and generates tsunami hazard maps. \n\nThe main CWL implementation is found in WF6101.cwl, together with ST610106 and ST610109 describing complex steps. The file mini-ST610106.cwl is refereed to a specific\nrealization of the ST610106, where different alternative options are included.\n\nTo see a preview of the RO-Crate metadata the `ro-crate-preview.html` file can be opeens in the browser.\n\n## Overview\n\nThe DTC-T1 Digital Twin component operates a single workflow (WF6101) that runs 11 main steps. DTC-T1 is also referred to as PTF,\nProbabilistic Tsunami Forecasting. \n\nThe workflow is initialized by a potentially tsunamigenic earthquake event. Based on the real-time event parameters together with long-term information \nretrieved from a regional-scale tsunami hazard model, an ensemble of earthquake scenarios compatible with the occurring event is built, where each scenario\nis weighted by the probability of being a good representation of the actual event. The tsunami impact computed by numerical modeling and the scenario \nprobabilities are aggregated into exceedance probabilities for given tsunami intensities at given coastal points to calculate the hazard curves and\nsubsequently the hazard maps. \n\nThe workflow is designed to operate in (near-)real-time and to be employed at Tsunami Warning Centres for operational tsunami early warning and forecasting,\nas well as for rapid post-event assessment.\n\n## Workflow structure\n\nThe workflow consists of multiple steps (ST), datasets (DT), and software services (SS). Below is a simplified breakdown:\n\n- The Scenario Player (ST610101) acts like a data archive, storing observations (synthetic or measured) (DT6101) recorded by external data providers\n(i.e. seismic data, labeled as DT6103, sea level data, labeled as DT6104, and GNSS data, labeled as DT6105) and sending them to specific data listeners.\n\n- The Listener EQ (ST610102) evaluates the earthquake information that initialise the workflow execution, while Listeners SL (ST610103) and GNSS (ST610104)\nelaborate observational sea level and ground deformation data for further comparison with simulated data. \n\n- The Ensemble Manager (ST610105) combines the information from the Listener EQ with the long-term information from a regional hazard model (DT6102) and \ndefines a list of scenarios (DT6106) compatible with the triggering event, with their associated probabilities (DT6107). \n\n- The ensemble of earthquake scenarios is provided as input to the Scenario Modelling (ST610106), which makes use of pre-defined topo-bathymetric grids (DT6109) \nand computes tsunami intensities (DT6110) and ground deformation (DT6111). In the modeling step different alternative and/or combined models can be used \nin each single workflow realization. More specifically, different source and tsunami models can be combined through the following software: \nTsunami-HySEA (SS6107), SeisSol (SS6106), BingClaw (SS6109), Shaltop (SS6110), Landslide-HySEA (SS6108), Source-to-wave filter (SS6112), \nand the Inundation AI module (SS6111). User settings will dictate which model combinations are invoked. As an alternative, precomputed scenarios \ncan be simply retrieved (SS6119). \n\n- The Misfit Evaluator (ST610107) combines simulation outputs with eventual SL and GNSS data to evaluate the degree of confidence between the simulated \nscenarios and observations. According to the computed misfit, the initial scenario ensemble and related probabilities can be updated. \n\n- The Hazard Aggregator (ST610108) aggregates scenario probabilities and impact metrics to calculate hazard curves at multiple forecast points (DT6112).\n\n-  The AL (Alert level) and Visualization step (ST610109) makes the final processing of the results, converting hazard into Alert Levels and producing \nprobabilistic visual maps (DT6113). It is worth noting that only the Tsunami Service Providers (TSP) are allowed in producing and issuing the AL for \noperational tsunami early warning and forecasting.\n\n- In case of landslide-triggered tsunamis, input in the form of shake maps generated for the occurring event through the Earthquake Modeling \n(ST610111) is forwarded to the Landslide Scenario Manager (ST610110), which in turn feeds landslide scenarios (DT6108) to the Scenario Modelling.\n\n\n## Workflow diagram\n\nHere is a visual overview of the described workflow, and the corresponding CWL graph automatically generated from the metadata information stored in the \nCWL workflow file.\n\n![wf_diag](images/PTF_Workflow_Diagram_FROZEN.drawio.png)\n\n![cwl_wf](images/cwl_graph_wf.png)\n\n## The mini-ST610106 for operationalization\n\nWe focused on one realization of the Scenario Modeling step (hereinafter called mini-ST610106), where the T-HySEA code (SS6107) is used\nto model both the earthquake source and the following tsunami, and only tsunami intensities (DT6110) are saved. In this experiment, the singularity \nimage of the T-HySEA code created with the eFlows4HPC image service creation is used. Moreover, PyCOMPSs functionalities have been implemented in \norder to execute the mini-ST610106 as a COMPSs job on the Booster partition of the Leonardo cluster at the HPC CINECA infrastructure.\n\n![cwl_mini](images/ministep_graph.png)\n\nTo enable execution, an executable CWL file containing only the information required to run the process has been produced. In this case, \nthe processing step is implemented by the bash script `run_gpu_compss.sh` that uses PyCOMPSs to submit a job to the Leonardo cluster queue through \nthe Slurm scheduler. The executable CWL file does not explicitly specify input and output data because the underlying processing step manages \nthese details internally. An input configuration file `input.yaml` provides the necessary global input data.\n\n### How to execute the mini-ST610106\n\nThe mini-workflow depicted is executed using the following command:\n\n`cwltool --cachedir cache --preserve-entire-environment mini-ST610106.cwl input.yaml`\n\nIn this command, the --cachedir flag is employed to save all files generated during execution for debugging purposes, while the \n--preserve-entire-environment flag ensures that the current environment variables are transferred into the custom execution environment \nestablished by cwltool. Once the command is launched, cwltool creates an isolated execution environment where it runs the bash script, which, in turn, \nsubmits the PyCOMPSs job to the computational node via Slurm, with the standard output and error captured in the cwl.out and cwl.err files, respectively.\n\nThe execution exploits the singularity image of the Tsunami-HySEA code, built with the image creation service of eFlows4HPC using\nparameters that fit the architecture of the Cineca cluster Leonardo (i.e., linux/amd64, x86_64, openmpi@4.1.4, cuda@11.8).",
+      "isBasedOn": "https://gitlab.com/dtgeo/metadata/cwl-ro-crate.git",
+      "sdDatePublished": "2026-03-24 00:57:59 +0000",
+      "creativeWorkStatus": "Work-in-progress",
+      "hasPart": [
+        {
+          "@id": "DTC61/WF6101/WF6101.cwl"
+        },
+        {
+          "@id": "workflow-1231-b8047c380ebbc82f897842f03ca0a1d17a852cd1-diagram.svg"
+        }
+      ]
+    },
+    {
+      "@id": "DTC61/WF6101/WF6101.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 3862,
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "image": {
+        "@id": "workflow-1231-b8047c380ebbc82f897842f03ca0a1d17a852cd1-diagram.svg"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "# [DTC-T1] WF6101: Tsunami impact forecasting\n\nThis repository contains a Common Workflow Language (CWL) and Ro-Crate metadata definition for DTC-T1 workflow 6101, which is designed for \nproviding tsunami impact forecasting following a tsunamigenic earthquake event, based on a probabilistic approach. The workflow integrates real-time\nearthquake data, runs HPC simulations, and generates tsunami hazard maps. \n\nThe main CWL implementation is found in WF6101.cwl, together with ST610106 and ST610109 describing complex steps. The file mini-ST610106.cwl is refereed to a specific\nrealization of the ST610106, where different alternative options are included.\n\nTo see a preview of the RO-Crate metadata the `ro-crate-preview.html` file can be opeens in the browser.\n\n## Overview\n\nThe DTC-T1 Digital Twin component operates a single workflow (WF6101) that runs 11 main steps. DTC-T1 is also referred to as PTF,\nProbabilistic Tsunami Forecasting. \n\nThe workflow is initialized by a potentially tsunamigenic earthquake event. Based on the real-time event parameters together with long-term information \nretrieved from a regional-scale tsunami hazard model, an ensemble of earthquake scenarios compatible with the occurring event is built, where each scenario\nis weighted by the probability of being a good representation of the actual event. The tsunami impact computed by numerical modeling and the scenario \nprobabilities are aggregated into exceedance probabilities for given tsunami intensities at given coastal points to calculate the hazard curves and\nsubsequently the hazard maps. \n\nThe workflow is designed to operate in (near-)real-time and to be employed at Tsunami Warning Centres for operational tsunami early warning and forecasting,\nas well as for rapid post-event assessment.\n\n## Workflow structure\n\nThe workflow consists of multiple steps (ST), datasets (DT), and software services (SS). Below is a simplified breakdown:\n\n- The Scenario Player (ST610101) acts like a data archive, storing observations (synthetic or measured) (DT6101) recorded by external data providers\n(i.e. seismic data, labeled as DT6103, sea level data, labeled as DT6104, and GNSS data, labeled as DT6105) and sending them to specific data listeners.\n\n- The Listener EQ (ST610102) evaluates the earthquake information that initialise the workflow execution, while Listeners SL (ST610103) and GNSS (ST610104)\nelaborate observational sea level and ground deformation data for further comparison with simulated data. \n\n- The Ensemble Manager (ST610105) combines the information from the Listener EQ with the long-term information from a regional hazard model (DT6102) and \ndefines a list of scenarios (DT6106) compatible with the triggering event, with their associated probabilities (DT6107). \n\n- The ensemble of earthquake scenarios is provided as input to the Scenario Modelling (ST610106), which makes use of pre-defined topo-bathymetric grids (DT6109) \nand computes tsunami intensities (DT6110) and ground deformation (DT6111). In the modeling step different alternative and/or combined models can be used \nin each single workflow realization. More specifically, different source and tsunami models can be combined through the following software: \nTsunami-HySEA (SS6107), SeisSol (SS6106), BingClaw (SS6109), Shaltop (SS6110), Landslide-HySEA (SS6108), Source-to-wave filter (SS6112), \nand the Inundation AI module (SS6111). User settings will dictate which model combinations are invoked. As an alternative, precomputed scenarios \ncan be simply retrieved (SS6119). \n\n- The Misfit Evaluator (ST610107) combines simulation outputs with eventual SL and GNSS data to evaluate the degree of confidence between the simulated \nscenarios and observations. According to the computed misfit, the initial scenario ensemble and related probabilities can be updated. \n\n- The Hazard Aggregator (ST610108) aggregates scenario probabilities and impact metrics to calculate hazard curves at multiple forecast points (DT6112).\n\n-  The AL (Alert level) and Visualization step (ST610109) makes the final processing of the results, converting hazard into Alert Levels and producing \nprobabilistic visual maps (DT6113). It is worth noting that only the Tsunami Service Providers (TSP) are allowed in producing and issuing the AL for \noperational tsunami early warning and forecasting.\n\n- In case of landslide-triggered tsunamis, input in the form of shake maps generated for the occurring event through the Earthquake Modeling \n(ST610111) is forwarded to the Landslide Scenario Manager (ST610110), which in turn feeds landslide scenarios (DT6108) to the Scenario Modelling.\n\n\n## Workflow diagram\n\nHere is a visual overview of the described workflow, and the corresponding CWL graph automatically generated from the metadata information stored in the \nCWL workflow file.\n\n![wf_diag](images/PTF_Workflow_Diagram_FROZEN.drawio.png)\n\n![cwl_wf](images/cwl_graph_wf.png)\n\n## The mini-ST610106 for operationalization\n\nWe focused on one realization of the Scenario Modeling step (hereinafter called mini-ST610106), where the T-HySEA code (SS6107) is used\nto model both the earthquake source and the following tsunami, and only tsunami intensities (DT6110) are saved. In this experiment, the singularity \nimage of the T-HySEA code created with the eFlows4HPC image service creation is used. Moreover, PyCOMPSs functionalities have been implemented in \norder to execute the mini-ST610106 as a COMPSs job on the Booster partition of the Leonardo cluster at the HPC CINECA infrastructure.\n\n![cwl_mini](images/ministep_graph.png)\n\nTo enable execution, an executable CWL file containing only the information required to run the process has been produced. In this case, \nthe processing step is implemented by the bash script `run_gpu_compss.sh` that uses PyCOMPSs to submit a job to the Leonardo cluster queue through \nthe Slurm scheduler. The executable CWL file does not explicitly specify input and output data because the underlying processing step manages \nthese details internally. An input configuration file `input.yaml` provides the necessary global input data.\n\n### How to execute the mini-ST610106\n\nThe mini-workflow depicted is executed using the following command:\n\n`cwltool --cachedir cache --preserve-entire-environment mini-ST610106.cwl input.yaml`\n\nIn this command, the --cachedir flag is employed to save all files generated during execution for debugging purposes, while the \n--preserve-entire-environment flag ensures that the current environment variables are transferred into the custom execution environment \nestablished by cwltool. Once the command is launched, cwltool creates an isolated execution environment where it runs the bash script, which, in turn, \nsubmits the PyCOMPSs job to the computational node via Slurm, with the standard output and error captured in the cwl.out and cwl.err files, respectively.\n\nThe execution exploits the singularity image of the Tsunami-HySEA code, built with the image creation service of eFlows4HPC using\nparameters that fit the architecture of the Cineca cluster Leonardo (i.e., linux/amd64, x86_64, openmpi@4.1.4, cuda@11.8).",
+      "name": "[DTC-T1] WF6101: Tsunami impact forecasting",
+      "url": "https://workflowhub.eu/workflows/1231?version=3",
+      "keywords": "Digital Twin, DT-GEO, Geophysics",
+      "version": 3,
+      "license": "https://spdx.org/licenses/CC-BY-NC-ND-4.0",
+      "creator": {
+        "@id": "#Marco%20Salvi"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/180"
+      },
+      "dateCreated": "2025-06-30T09:42:22Z",
+      "dateModified": "2025-10-15T10:54:36Z",
+      "isPartOf": [
+
+      ],
+      "isBasedOn": "https://workflowhub.eu/workflows/1231?version=2",
+      "input": [
+        {
+          "@id": "#_dtc_t1__wf6101__tsunami_impact_forecasting-inputs-DT6102"
+        },
+        {
+          "@id": "#_dtc_t1__wf6101__tsunami_impact_forecasting-inputs-DT6103"
+        },
+        {
+          "@id": "#_dtc_t1__wf6101__tsunami_impact_forecasting-inputs-DT6104"
+        },
+        {
+          "@id": "#_dtc_t1__wf6101__tsunami_impact_forecasting-inputs-DT6105"
+        },
+        {
+          "@id": "#_dtc_t1__wf6101__tsunami_impact_forecasting-inputs-DT6109"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#_dtc_t1__wf6101__tsunami_impact_forecasting-outputs-DT6101"
+        },
+        {
+          "@id": "#_dtc_t1__wf6101__tsunami_impact_forecasting-outputs-DT6106"
+        },
+        {
+          "@id": "#_dtc_t1__wf6101__tsunami_impact_forecasting-outputs-DT6107"
+        },
+        {
+          "@id": "#_dtc_t1__wf6101__tsunami_impact_forecasting-outputs-DT6108"
+        },
+        {
+          "@id": "#_dtc_t1__wf6101__tsunami_impact_forecasting-outputs-DT6110"
+        },
+        {
+          "@id": "#_dtc_t1__wf6101__tsunami_impact_forecasting-outputs-DT6111"
+        },
+        {
+          "@id": "#_dtc_t1__wf6101__tsunami_impact_forecasting-outputs-DT6112"
+        },
+        {
+          "@id": "#_dtc_t1__wf6101__tsunami_impact_forecasting-outputs-DT6113"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "workflow-1231-b8047c380ebbc82f897842f03ca0a1d17a852cd1-diagram.svg",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 21562
+    },
+    {
+      "@id": "#creator-1",
+      "@type": "Person",
+      "name": "Marco Salvi"
+    },
+    {
+      "@id": "#Marco Salvi",
+      "@type": "Person",
+      "name": "Marco Salvi"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/180",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "WP6 - Tsunamis"
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#_dtc_t1__wf6101__tsunami_impact_forecasting-inputs-DT6102",
+      "@type": "FormalParameter",
+      "name": "DT6102",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_t1__wf6101__tsunami_impact_forecasting-inputs-DT6103",
+      "@type": "FormalParameter",
+      "name": "DT6103",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_t1__wf6101__tsunami_impact_forecasting-inputs-DT6104",
+      "@type": "FormalParameter",
+      "name": "DT6104",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_t1__wf6101__tsunami_impact_forecasting-inputs-DT6105",
+      "@type": "FormalParameter",
+      "name": "DT6105",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_t1__wf6101__tsunami_impact_forecasting-inputs-DT6109",
+      "@type": "FormalParameter",
+      "name": "DT6109",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_t1__wf6101__tsunami_impact_forecasting-outputs-DT6101",
+      "@type": "FormalParameter",
+      "name": "DT6101",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_t1__wf6101__tsunami_impact_forecasting-outputs-DT6106",
+      "@type": "FormalParameter",
+      "name": "DT6106",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_t1__wf6101__tsunami_impact_forecasting-outputs-DT6107",
+      "@type": "FormalParameter",
+      "name": "DT6107",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_t1__wf6101__tsunami_impact_forecasting-outputs-DT6108",
+      "@type": "FormalParameter",
+      "name": "DT6108",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_t1__wf6101__tsunami_impact_forecasting-outputs-DT6110",
+      "@type": "FormalParameter",
+      "name": "DT6110",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_t1__wf6101__tsunami_impact_forecasting-outputs-DT6111",
+      "@type": "FormalParameter",
+      "name": "DT6111",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_t1__wf6101__tsunami_impact_forecasting-outputs-DT6112",
+      "@type": "FormalParameter",
+      "name": "DT6112",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_t1__wf6101__tsunami_impact_forecasting-outputs-DT6113",
+      "@type": "FormalParameter",
+      "name": "DT6113",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for ERGA HiC Hap1Hap2 Scaffolding+QC YaHS v2309 (WF4)</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-ERGA_HiC_Hap1Hap2_Scaffolding_QC_YaHS_v2309_(WF4).ga"
+      },
+      "datePublished": "2023-10-11 16:05:09 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-3679-9585"
+        },
+        {
+          "@id": "#creator-1"
+        }
+      ],
+      "license": "MIT",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.608.1",
+      "url": "https://workflowhub.eu/workflows/608/ro_crate?version=1",
+      "name": "Research Object Crate for ERGA HiC Hap1Hap2 Scaffolding+QC YaHS v2309 (WF4)",
+      "description": "The workflow takes trimmed HiC forward and reverse reads, and Hap1/Hap2 assemblies to produce Hap1 and Hap2 scaffolded assemblies using YaHS. It also runs all the QC analyses (gfastats, BUSCO, Merqury and Pretext).",
+      "isBasedOn": "https://github.com/ERGA-consortium/pipelines/tree/main/assembly/galaxy",
+      "sdDatePublished": "2026-03-24 17:55:37 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-ERGA_HiC_Hap1Hap2_Scaffolding_QC_YaHS_v2309_(WF4).ga"
+        },
+        {
+          "@id": "Scaf_yahs_h1h2_2309.png"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-ERGA_HiC_Hap1Hap2_Scaffolding_QC_YaHS_v2309_(WF4).ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "url": "https://github.com/ERGA-consortium/pipelines/blob/main/assembly/galaxy/4.Scaffolding/Galaxy-Workflow-ERGA_HiC_Hap1Hap2_Scaffolding_QC_YaHS_v2309_(WF4).ga",
+      "contentSize": 84357,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "Scaf_yahs_h1h2_2309.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "The workflow takes trimmed HiC forward and reverse reads, and Hap1/Hap2 assemblies to produce Hap1 and Hap2 scaffolded assemblies using YaHS. It also runs all the QC analyses (gfastats, BUSCO, Merqury and Pretext).",
+      "name": "ERGA HiC Hap1Hap2 Scaffolding+QC YaHS v2309 (WF4)",
+      "keywords": "ERGA, Assembly+QC, Hi-C",
+      "version": 1,
+      "license": "https://spdx.org/licenses/MIT",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/445"
+        },
+        {
+          "@id": "#ERGA"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/163"
+      },
+      "dateCreated": "2023-10-11T15:06:56Z",
+      "dateModified": "2024-03-13T09:55:11Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/10"
+      },
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.608.1",
+      "input": [
+        {
+          "@id": "#erga_hic_hap1hap2_scaffolding_qc_yahs_v2309__wf4_-inputs-Estimated%20genome%20size"
+        },
+        {
+          "@id": "#erga_hic_hap1hap2_scaffolding_qc_yahs_v2309__wf4_-inputs-Hap1%20GFA"
+        },
+        {
+          "@id": "#erga_hic_hap1hap2_scaffolding_qc_yahs_v2309__wf4_-inputs-Hap2%20GFA"
+        },
+        {
+          "@id": "#erga_hic_hap1hap2_scaffolding_qc_yahs_v2309__wf4_-inputs-HiC%20F%20trimmed"
+        },
+        {
+          "@id": "#erga_hic_hap1hap2_scaffolding_qc_yahs_v2309__wf4_-inputs-HiC%20R%20trimmed"
+        },
+        {
+          "@id": "#erga_hic_hap1hap2_scaffolding_qc_yahs_v2309__wf4_-inputs-Meryl%20database"
+        },
+        {
+          "@id": "#erga_hic_hap1hap2_scaffolding_qc_yahs_v2309__wf4_-inputs-lineage"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#erga_hic_hap1hap2_scaffolding_qc_yahs_v2309__wf4_-outputs-_anonymous_output_1"
+        },
+        {
+          "@id": "#erga_hic_hap1hap2_scaffolding_qc_yahs_v2309__wf4_-outputs-_anonymous_output_2"
+        },
+        {
+          "@id": "#erga_hic_hap1hap2_scaffolding_qc_yahs_v2309__wf4_-outputs-_anonymous_output_3"
+        },
+        {
+          "@id": "#erga_hic_hap1hap2_scaffolding_qc_yahs_v2309__wf4_-outputs-_anonymous_output_4"
+        },
+        {
+          "@id": "#erga_hic_hap1hap2_scaffolding_qc_yahs_v2309__wf4_-outputs-_anonymous_output_5"
+        },
+        {
+          "@id": "#erga_hic_hap1hap2_scaffolding_qc_yahs_v2309__wf4_-outputs-_anonymous_output_6"
+        },
+        {
+          "@id": "#erga_hic_hap1hap2_scaffolding_qc_yahs_v2309__wf4_-outputs-_anonymous_output_7"
+        },
+        {
+          "@id": "#erga_hic_hap1hap2_scaffolding_qc_yahs_v2309__wf4_-outputs-_anonymous_output_8"
+        },
+        {
+          "@id": "#erga_hic_hap1hap2_scaffolding_qc_yahs_v2309__wf4_-outputs-_anonymous_output_9"
+        },
+        {
+          "@id": "#erga_hic_hap1hap2_scaffolding_qc_yahs_v2309__wf4_-outputs-_anonymous_output_10"
+        },
+        {
+          "@id": "#erga_hic_hap1hap2_scaffolding_qc_yahs_v2309__wf4_-outputs-_anonymous_output_11"
+        },
+        {
+          "@id": "#erga_hic_hap1hap2_scaffolding_qc_yahs_v2309__wf4_-outputs-_anonymous_output_12"
+        },
+        {
+          "@id": "#erga_hic_hap1hap2_scaffolding_qc_yahs_v2309__wf4_-outputs-_anonymous_output_13"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "Scaf_yahs_h1h2_2309.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "url": "https://github.com/ERGA-consortium/pipelines/blob/main/assembly/galaxy/4.Scaffolding/pics/Scaf_yahs_h1h2_2309.png",
+      "contentSize": 592516
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-3679-9585",
+      "@type": "Person",
+      "name": "Diego De Panis",
+      "identifier": "https://orcid.org/0000-0002-3679-9585"
+    },
+    {
+      "@id": "#creator-1",
+      "@type": "Person",
+      "name": "ERGA"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/445",
+      "@type": "Person",
+      "name": "Diego De Panis"
+    },
+    {
+      "@id": "#ERGA",
+      "@type": "Person",
+      "name": "ERGA"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/163",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "ERGA Assembly"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/10",
+      "@type": "Collection",
+      "name": "ERGA Assembly Galaxy Long Reads &amp; Hi-C Pipelines (Hifiasm-HiC + Purge_Dups + YaHS)"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#erga_hic_hap1hap2_scaffolding_qc_yahs_v2309__wf4_-inputs-Estimated genome size",
+      "@type": "FormalParameter",
+      "name": "Estimated genome size",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_hic_hap1hap2_scaffolding_qc_yahs_v2309__wf4_-inputs-Hap1 GFA",
+      "@type": "FormalParameter",
+      "name": "Hap1 GFA",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_hic_hap1hap2_scaffolding_qc_yahs_v2309__wf4_-inputs-Hap2 GFA",
+      "@type": "FormalParameter",
+      "name": "Hap2 GFA",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_hic_hap1hap2_scaffolding_qc_yahs_v2309__wf4_-inputs-HiC F trimmed",
+      "@type": "FormalParameter",
+      "name": "HiC F trimmed",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_hic_hap1hap2_scaffolding_qc_yahs_v2309__wf4_-inputs-HiC R trimmed",
+      "@type": "FormalParameter",
+      "name": "HiC R trimmed",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_hic_hap1hap2_scaffolding_qc_yahs_v2309__wf4_-inputs-Meryl database",
+      "@type": "FormalParameter",
+      "name": "Meryl database",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_hic_hap1hap2_scaffolding_qc_yahs_v2309__wf4_-inputs-lineage",
+      "@type": "FormalParameter",
+      "name": "lineage",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_hic_hap1hap2_scaffolding_qc_yahs_v2309__wf4_-outputs-_anonymous_output_1",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_hic_hap1hap2_scaffolding_qc_yahs_v2309__wf4_-outputs-_anonymous_output_2",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_hic_hap1hap2_scaffolding_qc_yahs_v2309__wf4_-outputs-_anonymous_output_3",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_3",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_hic_hap1hap2_scaffolding_qc_yahs_v2309__wf4_-outputs-_anonymous_output_4",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_4",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_hic_hap1hap2_scaffolding_qc_yahs_v2309__wf4_-outputs-_anonymous_output_5",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_5",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_hic_hap1hap2_scaffolding_qc_yahs_v2309__wf4_-outputs-_anonymous_output_6",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_6",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_hic_hap1hap2_scaffolding_qc_yahs_v2309__wf4_-outputs-_anonymous_output_7",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_7",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_hic_hap1hap2_scaffolding_qc_yahs_v2309__wf4_-outputs-_anonymous_output_8",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_8",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_hic_hap1hap2_scaffolding_qc_yahs_v2309__wf4_-outputs-_anonymous_output_9",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_9",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_hic_hap1hap2_scaffolding_qc_yahs_v2309__wf4_-outputs-_anonymous_output_10",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_10",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_hic_hap1hap2_scaffolding_qc_yahs_v2309__wf4_-outputs-_anonymous_output_11",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_11",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_hic_hap1hap2_scaffolding_qc_yahs_v2309__wf4_-outputs-_anonymous_output_12",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_12",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_hic_hap1hap2_scaffolding_qc_yahs_v2309__wf4_-outputs-_anonymous_output_13",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_13",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for ERGA HiC Hap1Hap2 Scaffolding+QC YaHS v2309 (WF4)</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/608/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/608/ro_crate?version=1</a>
+
+
+  <img src="Scaf_yahs_h1h2_2309.png" style="width: 100%;"/>
+
+<p>
+  The workflow takes trimmed HiC forward and reverse reads, and Hap1/Hap2 assemblies to produce Hap1 and Hap2 scaffolded assemblies using YaHS. It also runs all the QC analyses (gfastats, BUSCO, Merqury and Pretext).
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://orcid.org/0000-0002-3679-9585" target="_blank">Diego De Panis</a>, ERGA</dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>MIT</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-ERGA_HiC_Hap1Hap2_Scaffolding_QC_YaHS_v2309_(WF4).ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-ERGA_HiC_Hap1Hap2_Scaffolding_QC_YaHS_v2309_(WF4).ga">ERGA HiC Hap1Hap2 Scaffolding+QC YaHS v2309 (WF4)</a>
+      
+        <br/>Size: 84357 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_Scaf_yahs_h1h2_2309.png">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="Scaf_yahs_h1h2_2309.png">Scaf_yahs_h1h2_2309.png</a>
+      
+        <br/>Size: 592516 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

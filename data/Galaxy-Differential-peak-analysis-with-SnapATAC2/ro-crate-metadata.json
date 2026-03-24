@@ -1,0 +1,192 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-Differential_peak_analysis_with_SnapATAC2.ga"
+      },
+      "datePublished": "2024-08-02 19:22:34 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0009-0001-3228-105X"
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://workflowhub.eu/workflows/1089?version=1",
+      "url": "https://workflowhub.eu/workflows/1089/ro_crate?version=1",
+      "name": "Research Object Crate for Differential peak analysis with SnapATAC2",
+      "description": "This workflow takes a cell-type-annotated AnnData object (processed with SnapATAC2) and performs peak calling with MACS3 on the cell types. Next, a cell-by-peak matrix is constructed and differential accessibility tests are performed for comparison of either two cell types or one cell type with a background of all other cells. \nLastly, differentially accessible marker regions for each cell type are identified. ",
+      "sdDatePublished": "2026-03-24 17:44:13 +0000",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-Differential_peak_analysis_with_SnapATAC2.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-Differential_peak_analysis_with_SnapATAC2.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 24746,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "This workflow takes a cell-type-annotated AnnData object (processed with SnapATAC2) and performs peak calling with MACS3 on the cell types. Next, a cell-by-peak matrix is constructed and differential accessibility tests are performed for comparison of either two cell types or one cell type with a background of all other cells. \nLastly, differentially accessible marker regions for each cell type are identified. ",
+      "name": "Differential peak analysis with SnapATAC2",
+      "url": "https://workflowhub.eu/workflows/1089?version=1",
+      "keywords": "",
+      "version": 1,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "creator": {
+        "@id": "https://workflowhub.eu/people/796"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/24"
+      },
+      "dateCreated": "2024-08-02T18:23:43Z",
+      "dateModified": "2024-08-02T18:23:43Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#differential_peak_analysis_with_snapatac2-inputs-Cell-type%20%231"
+        },
+        {
+          "@id": "#differential_peak_analysis_with_snapatac2-inputs-Cell-type%20%232"
+        },
+        {
+          "@id": "#differential_peak_analysis_with_snapatac2-inputs-Cell-type%20Annotated%20AnnData"
+        },
+        {
+          "@id": "#differential_peak_analysis_with_snapatac2-inputs-chrom_sizes_new.txt"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#differential_peak_analysis_with_snapatac2-outputs-marker_regions"
+        },
+        {
+          "@id": "#differential_peak_analysis_with_snapatac2-outputs-marker_regions-plot"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0009-0001-3228-105X",
+      "@type": "Person",
+      "name": "Timon Schlegel",
+      "identifier": "https://orcid.org/0009-0001-3228-105X"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/796",
+      "@type": "Person",
+      "name": "Timon Schlegel"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/24",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "usegalaxy-eu"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#differential_peak_analysis_with_snapatac2-inputs-Cell-type #1",
+      "@type": "FormalParameter",
+      "name": "Cell-type #1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#differential_peak_analysis_with_snapatac2-inputs-Cell-type #2",
+      "@type": "FormalParameter",
+      "name": "Cell-type #2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#differential_peak_analysis_with_snapatac2-inputs-Cell-type Annotated AnnData",
+      "@type": "FormalParameter",
+      "name": "Cell-type Annotated AnnData",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#differential_peak_analysis_with_snapatac2-inputs-chrom_sizes_new.txt",
+      "@type": "FormalParameter",
+      "name": "chrom_sizes_new.txt",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#differential_peak_analysis_with_snapatac2-outputs-marker_regions",
+      "@type": "FormalParameter",
+      "name": "marker_regions",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#differential_peak_analysis_with_snapatac2-outputs-marker_regions-plot",
+      "@type": "FormalParameter",
+      "name": "marker_regions-plot",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+
+sample_id: "tiny_test_chip"
+fastq1:
+  - class: File
+    path: ./sample1_1.fastq
+  - class: File
+    path: ./sample2_1.fastq
+fastq2:
+  - class: File
+    path: ./sample1_2.fastq
+  - class: File
+    path: ./sample2_2.fastq
+genome:
+  class: File
+  path: ./ref_genome.fa
+genome_spike_in:
+  class: File
+  path: ./ref_genome.fa
+is_paired_end: true
+fragment_size: null
+effective_genome_size: 199

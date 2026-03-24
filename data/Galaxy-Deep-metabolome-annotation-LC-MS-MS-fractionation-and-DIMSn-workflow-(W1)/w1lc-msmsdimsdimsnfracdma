@@ -1,0 +1,8966 @@
+<!DOCTYPE HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+    <!--base_panels.mako-->
+    
+
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name = "viewport" content = "maximum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+
+        <title>
+            Galaxy
+            | 
+    
+Published Workflow | 
+    W1_LC-MSMS_DIMS_DIMSn_FRAC_DMA
+
+        </title>
+
+        <link rel="index" href="/"/>
+        
+        
+    
+    
+    <!--- base/base_panels.mako stylesheets() -->
+    <link href="/static/style/bootstrap-tour.css?v=1770815392" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/static/dist/base.css?v=1770815392" media="screen" rel="stylesheet" type="text/css" />
+
+    <link href="/static/style/embed_item.css?v=1770815392" media="screen" rel="stylesheet" type="text/css" />
+<link href="/static/style/library.css?v=1770815392" media="screen" rel="stylesheet" type="text/css" />
+<link href="/static/style/jquery-ui/smoothness/jquery-ui.css?v=1770815392" media="screen" rel="stylesheet" type="text/css" />
+
+    <style type="text/css">
+        .page-body {
+            height: 100%;
+            overflow: auto;
+        }
+        .page-meta {
+            float: right;
+            width: 27%;
+            padding: 0.5em;
+            margin: 0.25em;
+            vertical-align: text-top;
+            border: 2px solid #DDDDDD;
+            border-top: 4px solid #DDDDDD;
+        }
+
+        .toolForm {
+            max-width: 500px;
+        }
+
+        div.toolForm{
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+    </style>
+
+
+
+        
+
+    <!--- base/base_panels.mako javascripts() -->
+    <script src="/static/dist/libs.chunk.js?v=1770815392" type="text/javascript"></script>
+<script src="/static/dist/base.chunk.js?v=1770815392" type="text/javascript"></script>
+<script src="/static/dist/generic.bundled.js?v=1770815392" type="text/javascript"></script>
+
+
+        
+    
+
+    <!--- base/base_panels.mako javascript_app() -->
+    
+    <script type="text/javascript">
+        // galaxy_client_app.mako, load
+
+        var bootstrapped;
+        try {
+            bootstrapped = 
+{}
+;
+        } catch(err) {
+            console.warn("Unable to parse bootstrapped variable", err);
+            bootstrapped = {};
+        }
+
+        var options = {
+            root: '/',
+            config: 
+    
+{
+"is_admin_user": false,
+"allow_user_dataset_purge": true,
+"has_user_tool_filters": true,
+"enable_openid": false,
+"simplified_workflow_run_ui_job_cache": "off",
+"message_box_visible": false,
+"message_box_class": "info",
+"require_login": false,
+"upload_from_form_button": "always-off",
+"version_major": "21.01",
+"brand": null,
+"oidc": {},
+"version_minor": "",
+"use_remote_user": null,
+"topk_recommendations": 10,
+"search_url": "https://galaxyproject.org/search/",
+"overwrite_model_recommendations": false,
+"registration_warning_message": "Please register only one account - we provide this service free of charge and have limited computational resources. Multi-accounts are tracked and will be subjected to account termination and data deletion.",
+"enable_quotas": false,
+"visualizations_visible": true,
+"show_welcome_with_login": false,
+"allow_user_creation": true,
+"wiki_url": "https://galaxyproject.org/",
+"server_startttime": 1770815392,
+"aws_estimate": false,
+"terms_url": null,
+"datatypes_disable_auto": false,
+"myexperiment_target_url": "www.myexperiment.org:80",
+"logo_url": "/",
+"enable_unique_workflow_defaults": false,
+"chunk_upload_size": 104857600,
+"logo_src": "/static/favicon.png",
+"simplified_workflow_run_ui_target_history": "current",
+"quota_url": "https://galaxyproject.org/support/account-quotas/",
+"enable_beta_markdown_export": false,
+"tool_recommendation_model_path": "https://github.com/galaxyproject/galaxy-test-data/raw/master/tool_recommendation_model.hdf5",
+"python": [
+3,
+6
+],
+"file_sources_configured": false,
+"welcome_url": "/static/welcome.html",
+"enable_tool_recommendations": false,
+"admin_tool_recommendations_path": "/rds/projects/w/weberrj-galaxy-dma/galaxy/config/tool_recommendations_overwrite.yml",
+"helpsite_url": null,
+"ftp_upload_site": null,
+"select_type_workflow_threshold": -1,
+"mailing_lists": "https://galaxyproject.org/mailing-lists/",
+"lims_doc_url": "https://usegalaxy.org/u/rkchak/p/sts",
+"support_url": "https://galaxyproject.org/support/",
+"nginx_upload_path": null,
+"screencasts_url": "https://vimeo.com/galaxyproject",
+"cookie_domain": null,
+"allow_user_impersonation": true,
+"interactivetools_enable": false,
+"default_locale": "auto",
+"display_galaxy_brand": true,
+"logo_src_secondary": null,
+"mailing_join_addr": null,
+"ga_code": null,
+"user_library_import_dir_available": true,
+"server_mail_configured": false,
+"inactivity_box_content": "Your account has not been activated yet.  Feel free to browse around and see what's available, but you won't be able to upload data or run jobs until you have verified your email address.",
+"release_doc_base_url": "https://docs.galaxyproject.org/en/release_",
+"remote_user_logout_href": null,
+"single_user": false,
+"enable_oidc": false,
+"message_box_content": null,
+"simplified_workflow_run_ui": "prefer",
+"citation_url": "https://galaxyproject.org/citing-galaxy"
+}
+,
+            user: 
+    
+{
+"total_disk_usage": 0,
+"nice_total_disk_usage": "0 bytes",
+"quota_percent": null
+}
+,
+            session_csrf_token: '43bb7a5ae2798848'
+        };
+
+        config.set({
+            options: options,
+            bootstrapped: bootstrapped
+        });
+
+
+    </script>
+
+
+
+    
+    
+
+<script type="text/javascript">
+
+    // Map item rating to number of stars to show.
+    function map_rating_to_num_stars(rating) {
+        if (rating <= 0)
+            return 0;
+        else if (rating > 0 && rating <= 1.5)
+            return 1;
+        else if (rating > 1.5 && rating <= 2.5)
+            return 2;
+        else if (rating > 2.5 && rating <= 3.5)
+            return 3;
+        else if (rating > 3.5 && rating <= 4.5)
+            return 4;
+        else if (rating > 4.5)
+            return 5;
+    }
+
+    // Init. on document load.
+    $(function() {
+        // Set links to Galaxy screencasts to open in overlay.
+        $(this).find("a[href^='http://screencast.g2.bx.psu.edu/']").each( function() {
+            $(this).click( function() {
+                var href = $(this).attr('href');
+                show_in_overlay(
+                    {
+                        url: href,
+                        width: 640,
+                        height: 480,
+                        scroll: 'no'
+                    }
+                );
+                return false;
+            });
+        });
+
+        // Init user item rating.
+        $('.user_rating_star').rating({
+            callback: function(rating, link) {
+                $.ajax({
+                    type: "GET",
+                    url: "/workflow/rate_async",
+                    data: { id : "0aab0e4c25198ad8", rating : rating },
+                    dataType: 'json',
+                    error: function() { alert( "Rating submission failed" ); },
+                    success: function( community_data ) {
+                        $('#rating_feedback').show();
+                        $('#num_ratings').text(Math.round(community_data[1]*10)/10);
+                        $('#ave_rating').text(community_data[0]);
+                        $('.community_rating_star').rating('readOnly', false);
+                        $('.community_rating_star').rating('select', map_rating_to_num_stars(community_data[0])-1);
+                        $('.community_rating_star').rating('readOnly', true);
+                    }
+                });
+            },
+            required: true // Hide cancel button.
+        });
+    });
+</script>
+
+
+
+    </head>
+
+    
+
+
+    <body scroll="no" class="full-content ">
+        <div id="everything">
+            
+            <div id="background"></div>
+            
+            <div id="masthead" class="navbar navbar-fixed-top navbar-inverse">
+                
+    
+    
+    
+
+    <script type="text/javascript">
+        if (window.self === window.top) {
+            config.addInitialization(function (galaxy, config) {
+                console.log("galaxy.masthead.mako", "initialize masthead");
+                let options = {"brand": "", "display_galaxy_brand": true, "nginx_upload_path": "/api/tools", "use_remote_user": null, "remote_user_logout_href": null, "enable_cloud_launch": false, "lims_doc_url": "https://usegalaxy.org/u/rkchak/p/sts", "default_locale": "auto", "support_url": "https://galaxyproject.org/support/", "search_url": "https://galaxyproject.org/search/", "mailing_lists": "https://galaxyproject.org/mailing-lists/", "screencasts_url": "https://vimeo.com/galaxyproject", "wiki_url": "https://galaxyproject.org/", "citation_url": "https://galaxyproject.org/citing-galaxy", "release_doc_base_url": "https://docs.galaxyproject.org/en/release_", "terms_url": "", "allow_user_creation": true, "logo_url": "/", "logo_src": "/static/favicon.png", "logo_src_secondary": null, "is_admin_user": null, "active_view": "shared", "ftp_upload_site": null, "datatypes_disable_auto": false, "user_json": {"total_disk_usage": 0, "nice_total_disk_usage": "0 bytes", "quota_percent": null}};
+                const container = document.getElementById("masthead");
+                window.bundleEntries.initMasthead(options, container);
+            });
+        } else {
+            console.log("galaxy.masthead.mako", "Detected embedding, not initializing masthead");
+            const container = document.getElementById("masthead");
+            container.parentNode.removeChild(container);
+        }
+    </script>
+
+
+            </div>
+            
+            
+            
+            
+    
+    
+
+    
+
+    <div id="top-modal" class="modal " style='display: none;'>
+        <div id="top-modal-backdrop" class="modal-backdrop fade " style="z-index: -1"></div>
+        <div id="top-modal-dialog" class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type='button' class='close' style="display: none;">&times;</button>
+                    <h4 class='title'></h4>
+                </div>
+                <div class="modal-body"></div>
+                <div class="modal-footer">
+                    <div class="buttons" style="float: right;"></div>
+                    <div class="extra_buttons" style=""></div>
+                    <div style="clear: both;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+            
+            <div id="columns">
+                <div id="center" class="inbound">
+                    
+    
+
+    
+    
+    
+    
+
+    <div class="page-body p-3">
+        <div>
+            
+    <h3>
+    W1_LC-MSMS_DIMS_DIMSn_FRAC_DMA</h3>
+        <div class="annotation">Annotation: </div>
+    <hr/>
+
+        </div>
+        
+    
+    <table class="annotated-item">
+        <tr><th>Step</th><th class="annotation">Annotation</th></tr>
+            <tr><td>
+            
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 1: Input parameter</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>Polarity (short)</label>
+        <div>
+                Nothing selected.
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+            
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 2: Input parameter</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>Adducts (string)</label>
+        <div>
+                Not available.
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+            
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 3: Input parameter</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>Polarity (long)</label>
+        <div>
+                Not available.
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+            
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 4: Input parameter</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>DIMS mz range remove (min)</label>
+        <div>
+                Not available.
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+            
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 5: Input parameter</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>DIMS mz range remove (max)</label>
+        <div>
+                Not available.
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+            
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 6: Input dataset</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>Sample list blank DIMS (.tsv, .tabular)</label>
+        <div>
+                    <i>select at runtime</i>
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+            
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 7: Input dataset</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>Sample list for DIMS (.tsv, .tabular)</label>
+        <div>
+                    <i>select at runtime</i>
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+            
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 8: Input parameter</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>Sim stitch?</label>
+        <div>
+                Not available.
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+            
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 9: Input dataset collection</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>DIMS data files blank (.raw)</label>
+        <div>
+                    <i>select at runtime</i>
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+            
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 10: Input dataset collection</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>DIMS data files sample (.raw)</label>
+        <div>
+                    <i>select at runtime</i>
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+            
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 11: Input dataset</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>Sample list sample DIMS (.tsv, .tabular)</label>
+        <div>
+                    <i>select at runtime</i>
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+            
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 12: Input dataset collection</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>LC-MS and LC-MS/MS data files (.mzML)</label>
+        <div>
+                    <i>select at runtime</i>
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+            
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 13: Input dataset collection</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>DIMS data files sample (.mzML)</label>
+        <div>
+                    <i>select at runtime</i>
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+            
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 14: Input parameter</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>XCMS mzdiff (findChromPeaks)</label>
+        <div>
+                Not available.
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+            
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 15: Input parameter</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>XCMS ppm</label>
+        <div>
+                Not available.
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+            
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 16: Input parameter</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>DIMS and DIMSn (ppm)</label>
+        <div>
+                Not available.
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+            
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 17: Input dataset</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>Sample list (.tsv, .tabular)</label>
+        <div>
+                    <i>select at runtime</i>
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+            
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 18: Input dataset</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>Adduct list - MSnPy (.tsv, .tabular)</label>
+        <div>
+                    <i>select at runtime</i>
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+            
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 19: Input dataset collection</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>DIMSn data files (.raw)</label>
+        <div>
+                    <i>select at runtime</i>
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+            
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 20: Input parameter</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>XCMS bw (grouping)</label>
+        <div>
+                Not available.
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+            
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 21: Input dataset</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>Adduct list (.tsv, .tabular)</label>
+        <div>
+                    <i>select at runtime</i>
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+            
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 22: Input parameter</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>XCMS mzwid (grouping)</label>
+        <div>
+                Not available.
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 23: Process Scans (and SIM-Stitch)</div>
+                  <div class="card-body">
+                    
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Select the MS data file type?</label>
+        <div>
+                *.raw files
+        </div>
+    </div>
+
+      
+      
+    
+    <div class="form-row">
+        <label>Do you agree to the RawFileReader license terms?</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>*.raw files</label>
+        <div>
+                    
+                    Output dataset 'output' from step 9
+        </div>
+    </div>
+
+
+      
+    
+    <div class="form-row">
+        <label>Filelist / Samplelist</label>
+        <div>
+                    
+                    Output dataset 'output' from step 6
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Function to calculate the noise from each scan</label>
+        <div>
+                As shown in Xcalibur Qual Browser (Available for *.RAW files only)
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Signal-to-noise ratio threshold</label>
+        <div>
+                3.0
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter specific windows or scan events?</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+      
+    
+    <div class="form-row">
+        <label>Include / Exclude scan event(s)</label>
+        <div>
+                Exclude
+        </div>
+    </div>
+
+      <div>
+          <div class="form-row"><b>Descriptions</b></div>
+          
+            <div class="ui-portlet-section ml-2">
+                
+                <div class="form-row"><b>Description 1</b></div>
+                
+      
+    
+    <div class="form-row">
+        <label>Start m/z for scan event</label>
+        <div>
+                Not available.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>End m/z for scan event</label>
+        <div>
+                Not available.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Scan type</label>
+        <div>
+                Full scan
+        </div>
+    </div>
+
+
+            </div> 
+      </div>
+
+      
+      
+      <div class="form-row"><b>Show options for multiple scans:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+    
+    <div class="form-row">
+        <label>Minimum number of scans required for each m/z window or event</label>
+        <div>
+                1
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Ppm error tolerance</label>
+        <div>
+                2.0
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Minimum fraction (i.e. percentage) of scans a peak has to be present in.</label>
+        <div>
+                0.0
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Relative standard deviation threshold</label>
+        <div>
+                0.0
+        </div>
+    </div>
+
+
+        </div>
+      </div>
+      
+      
+      <div class="form-row"><b>Show advanced options:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+    
+    <div class="form-row">
+        <label>Skip SIM-Stitching?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      <div>
+          <div class="form-row"><b>Remove m/z range(s)?s</b></div>
+          
+      </div>
+      
+    
+    <div class="form-row">
+        <label>Relative intensity threshold used to remove ringing artifacts</label>
+        <div>
+                0.0
+        </div>
+    </div>
+
+
+        </div>
+      </div>
+      
+    
+    <div class="form-row">
+        <label>None</label>
+        <div>
+                tab
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 24: msPurity.purityA</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>*.mzML file</label>
+        <div>
+                    
+                    Output dataset 'output' from step 12
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Use most intense peak within isolation window for precursor?</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Use nearest full scan to determine precursor?</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Interpolation PPM</label>
+        <div>
+                7.0
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>offsets</label>
+        <div>
+                Uses offsets determined in the mzML file
+        </div>
+    </div>
+
+      
+
+      
+    
+    <div class="form-row">
+        <label>Threshold to remove peaks below x % of the relative intensity of                precursor of interest</label>
+        <div>
+                0.05
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Normalisation for isolation efficiency</label>
+        <div>
+                No normalisation
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Handling of isotopic peaks</label>
+        <div>
+                Exclude C12/C13 isotopes in precursor ion purity calculation
+        </div>
+    </div>
+
+      
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 25: MSnbase readMSData</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>File(s) from your history containing your chromatograms</label>
+        <div>
+                    
+                    Output dataset 'output' from step 12
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 26: Process Scans (and SIM-Stitch)</div>
+                  <div class="card-body">
+                    
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Select the MS data file type?</label>
+        <div>
+                *.raw files
+        </div>
+    </div>
+
+      
+      
+    
+    <div class="form-row">
+        <label>Do you agree to the RawFileReader license terms?</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>*.raw files</label>
+        <div>
+                    
+                    Output dataset 'output' from step 10
+        </div>
+    </div>
+
+
+      
+    
+    <div class="form-row">
+        <label>Filelist / Samplelist</label>
+        <div>
+                    
+                    Output dataset 'output' from step 11
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Function to calculate the noise from each scan</label>
+        <div>
+                As shown in Xcalibur Qual Browser (Available for *.RAW files only)
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Signal-to-noise ratio threshold</label>
+        <div>
+                3.0
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter specific windows or scan events?</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+      
+    
+    <div class="form-row">
+        <label>Include / Exclude scan event(s)</label>
+        <div>
+                Exclude
+        </div>
+    </div>
+
+      <div>
+          <div class="form-row"><b>Descriptions</b></div>
+          
+            <div class="ui-portlet-section ml-2">
+                
+                <div class="form-row"><b>Description 1</b></div>
+                
+      
+    
+    <div class="form-row">
+        <label>Start m/z for scan event</label>
+        <div>
+                Not available.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>End m/z for scan event</label>
+        <div>
+                Not available.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Scan type</label>
+        <div>
+                Full scan
+        </div>
+    </div>
+
+
+            </div> 
+      </div>
+
+      
+      
+      <div class="form-row"><b>Show options for multiple scans:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+    
+    <div class="form-row">
+        <label>Minimum number of scans required for each m/z window or event</label>
+        <div>
+                1
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Ppm error tolerance</label>
+        <div>
+                Not available.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Minimum fraction (i.e. percentage) of scans a peak has to be present in.</label>
+        <div>
+                0.0
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Relative standard deviation threshold</label>
+        <div>
+                0.0
+        </div>
+    </div>
+
+
+        </div>
+      </div>
+      
+      
+      <div class="form-row"><b>Show advanced options:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+    
+    <div class="form-row">
+        <label>Skip SIM-Stitching?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      <div>
+          <div class="form-row"><b>Remove m/z range(s)?s</b></div>
+          
+      </div>
+      
+    
+    <div class="form-row">
+        <label>Relative intensity threshold used to remove ringing artifacts</label>
+        <div>
+                0.0
+        </div>
+    </div>
+
+
+        </div>
+      </div>
+      
+    
+    <div class="form-row">
+        <label>None</label>
+        <div>
+                tab
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 27: MSnPy Group Scans</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>Single *.mzml or *.raw</label>
+        <div>
+                    
+                    Output dataset 'output' from step 19
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>number_of_headers</label>
+        <div>
+                2
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>min_replicates</label>
+        <div>
+                1
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>max_injection_time</label>
+        <div>
+                0.0
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>split</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>merge_ms1</label>
+        <div>
+                True
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 28: xcms findChromPeaks (xcmsSet)</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>RData file</label>
+        <div>
+                    
+                    Output dataset 'xsetRData' from step 25
+        </div>
+    </div>
+
+      
+      
+      <div class="form-row"><b>Spectra Filters:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+    
+    <div class="form-row">
+        <label>Filter on Acquisition Numbers</label>
+        <div>
+                Empty.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Filter on Retention Time</label>
+        <div>
+                Empty.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Filter on Mz</label>
+        <div>
+                Empty.
+        </div>
+    </div>
+
+
+        </div>
+      </div>
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Extraction method for peaks detection</label>
+        <div>
+                CentWave - chromatographic peak detection using the centWave method
+        </div>
+    </div>
+
+      
+      
+    
+    <div class="form-row">
+        <label>Max tolerated ppm m/z deviation in consecutive scans in ppm</label>
+        <div>
+                Not available.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Min,Max peak width in seconds</label>
+        <div>
+                3,30
+        </div>
+    </div>
+
+      
+      
+      <div class="form-row"><b>Advanced Options:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+    
+    <div class="form-row">
+        <label>Signal to Noise ratio cutoff</label>
+        <div>
+                10
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Prefilter step for for the first analysis step (ROI detection)</label>
+        <div>
+                3,100
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Name of the function to calculate the m/z center of the chromatographic peak</label>
+        <div>
+                intensity weighted mean of the peak&#39;s m/z values
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Integration method</label>
+        <div>
+                peak limits are found through descent on the mexican hat filtered data (more robust, but less exact)
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Minimum difference in m/z for peaks with overlapping retention times</label>
+        <div>
+                Not available.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>fitgauss</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Noise filter</label>
+        <div>
+                0
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>verbose Columns</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Get a list of found chromatographic peaks</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+      
+      <div class="form-row"><b>List of regions-of-interest (ROI):</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+    
+    <div class="form-row">
+        <label>List of regions-of-interest (ROI) representing detected mass traces</label>
+        <div>
+                    <i>select at runtime</i>
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Is continuous data within regions of interest is checked to be above the first baseline.</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Numeric vector defining the scale for each region of interest in ‘roiList’</label>
+        <div>
+                Empty.
+        </div>
+    </div>
+
+
+        </div>
+      </div>
+
+        </div>
+      </div>
+
+      
+      
+      <div class="form-row"><b>Resubmit your raw dataset or your zip file:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Resubmit your dataset or your zip file</label>
+        <div>
+                no need
+        </div>
+    </div>
+
+      
+
+
+        </div>
+      </div>
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 29: Merge peaklists</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>Peaklist to merge</label>
+        <div>
+                    
+                    Output dataset 'hdf5_file_out' from step 23,Output dataset 'hdf5_file_out' from step 26
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Create multiple merged peaklists?</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Filelist</label>
+        <div>
+                    
+                    Output dataset 'output' from step 7
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 30: MSnPy Process Scans</div>
+                  <div class="card-body">
+                    
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Select the MS data file type?</label>
+        <div>
+                *.raw files
+        </div>
+    </div>
+
+      
+      
+    
+    <div class="form-row">
+        <label>Do you agree to the RawFileReader license terms?</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>*.raw file</label>
+        <div>
+                    
+                    Output dataset 'output' from step 19
+        </div>
+    </div>
+
+
+      
+    
+    <div class="form-row">
+        <label>Groups</label>
+        <div>
+                    
+                    Output dataset 'grouped_scans' from step 27
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Noise function</label>
+        <div>
+                As shown in Xcalibur Qual Browser (Available for *.RAW files only)
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Signal-to-noise threshold</label>
+        <div>
+                3.0
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>PPM tolerance</label>
+        <div>
+                Not available.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Min fraction</label>
+        <div>
+                0.5
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>RSD threshold</label>
+        <div>
+                0.0
+        </div>
+    </div>
+
+      
+      
+      <div class="form-row"><b>Show advanced options:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+    
+    <div class="form-row">
+        <label>Normalise</label>
+        <div>
+                0.0
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Relative intensity threshold used to remove ringing artifacts</label>
+        <div>
+                0.05
+        </div>
+    </div>
+
+      <div>
+          <div class="form-row"><b>Exclusion values</b></div>
+          
+      </div>
+
+        </div>
+      </div>
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 31: xcms findChromPeaks Merger</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>RData file</label>
+        <div>
+                    
+                    Output dataset 'xsetRData' from step 28
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Sample metadata file </label>
+        <div>
+                    
+                    Output dataset 'output' from step 17
+        </div>
+    </div>
+
+      
+      
+      <div class="form-row"><b>Resubmit your raw dataset or your zip file:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Resubmit your dataset or your zip file</label>
+        <div>
+                no need
+        </div>
+    </div>
+
+      
+
+
+        </div>
+      </div>
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 32: Align Samples</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>Peaklists (HDF5 file)</label>
+        <div>
+                    
+                    Output dataset 'multiple_merged' from step 29
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Filelist / Samplelist</label>
+        <div>
+                    
+                    Output dataset 'output' from step 7
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Ppm error tolerance</label>
+        <div>
+                Not available.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>None</label>
+        <div>
+                tab
+        </div>
+    </div>
+
+      
+      
+      <div class="form-row"><b>Show options for addtional output (*.tsv files):</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+    
+    <div class="form-row">
+        <label>Standard output?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Comprehensive output?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Should the rows or columns represent the samples?</label>
+        <div>
+                Rows
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>The Peak Matrix should contain ... values</label>
+        <div>
+                Intensity
+        </div>
+    </div>
+
+
+        </div>
+      </div>
+      
+      
+      <div class="form-row"><b>Advanced options:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+    
+    <div class="form-row">
+        <label>Block size</label>
+        <div>
+                5000
+        </div>
+    </div>
+
+
+        </div>
+      </div>
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 33: MSnPy Create Spectral Trees</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>HDF5 file (Peaklist objects) from step &#39;process-scans&#39;.</label>
+        <div>
+                    
+                    Output dataset 'processed_peaklists' from step 30
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Groups</label>
+        <div>
+                    
+                    Output dataset 'grouped_scans' from step 27
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 34: xcms groupChromPeaks (group)</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>RData file</label>
+        <div>
+                    
+                    Output dataset 'xsetRData' from step 31
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Method to use for grouping</label>
+        <div>
+                PeakDensity - peak grouping based on time dimension peak densities
+        </div>
+    </div>
+
+      
+      
+    
+    <div class="form-row">
+        <label>Bandwidth</label>
+        <div>
+                Not available.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Minimum fraction of samples</label>
+        <div>
+                0.5
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Minimum number of samples</label>
+        <div>
+                1
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Width of overlapping m/z slices</label>
+        <div>
+                Not available.
+        </div>
+    </div>
+
+      
+      
+      <div class="form-row"><b>Advanced Options:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+    
+    <div class="form-row">
+        <label>Maximum number of groups to identify in a single m/z slice</label>
+        <div>
+                50
+        </div>
+    </div>
+
+
+        </div>
+      </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Get the Peak List</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+      
+    
+    <div class="form-row">
+        <label>Convert retention time (seconds) into minutes</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Number of decimal places for mass values reported in ions&#39; identifiers.</label>
+        <div>
+                4
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Number of decimal places for retention time values reported in ions&#39; identifiers.</label>
+        <div>
+                0
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Reported intensity values</label>
+        <div>
+                into
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>If NA values remain, replace them by 0 in the dataMatrix</label>
+        <div>
+                True
+        </div>
+    </div>
+
+
+      
+      
+      <div class="form-row"><b>Resubmit your raw dataset or your zip file:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Resubmit your dataset or your zip file</label>
+        <div>
+                no need
+        </div>
+    </div>
+
+      
+
+
+        </div>
+      </div>
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 35: Blank Filter</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>Peak Intensity Matrix (HDF5 file)</label>
+        <div>
+                    
+                    Output dataset 'hdf5_file_out' from step 32
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Label for the blank samples</label>
+        <div>
+                BLANK
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Minimum fraction (percentage)</label>
+        <div>
+                1.0
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Function</label>
+        <div>
+                mean
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>min_fold_change</label>
+        <div>
+                10.0
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Remove blank samples (rows)</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>None</label>
+        <div>
+                tab
+        </div>
+    </div>
+
+      
+      
+      <div class="form-row"><b>Show options for addtional output (*.tsv files):</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+    
+    <div class="form-row">
+        <label>Standard output?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Comprehensive output?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Should the rows or columns represent the samples?</label>
+        <div>
+                Rows
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>The Peak Matrix should contain ... values</label>
+        <div>
+                Intensity
+        </div>
+    </div>
+
+
+        </div>
+      </div>
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 36: Filter failed</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>Input Collection</label>
+        <div>
+                    
+                    Output dataset 'spectral_trees' from step 33
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 37: msPurity.frag4feature</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>xcmsSet object</label>
+        <div>
+                    
+                    Output dataset 'xsetRData' from step 34
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>purityA object</label>
+        <div>
+                    
+                    Output dataset 'purityA_output_rdata' from step 24
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>ppm error tolerance between precursor mz and XCMS feature mz</label>
+        <div>
+                10.0
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Precursor ion purity threshold</label>
+        <div>
+                0.0
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Should the most intense precursor be used within the isolation window?</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Was retention time correction used?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>For matching fragmentation to a feature, use the grouped feature range</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Resubmit your dataset</label>
+        <div>
+                no need
+        </div>
+    </div>
+
+      
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 38: CAMERA.annotate</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>RData file</label>
+        <div>
+                    
+                    Output dataset 'xsetRData' from step 34
+        </div>
+    </div>
+
+      
+      
+      <div class="form-row"><b>Group co-eluted peaks based on RT [groupFWHM]:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+    
+    <div class="form-row">
+        <label>Multiplier of the standard deviation</label>
+        <div>
+                6
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Percentage of FWHM width</label>
+        <div>
+                0.6
+        </div>
+    </div>
+
+
+        </div>
+      </div>
+      
+      
+      <div class="form-row"><b>Annotation general options:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+    
+    <div class="form-row">
+        <label>General ppm error</label>
+        <div>
+                5
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>General absolut error in m/z</label>
+        <div>
+                0.015
+        </div>
+    </div>
+
+
+        </div>
+      </div>
+      
+      
+      <div class="form-row"><b>Annotate Isotopes [findIsotopes]:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+    
+    <div class="form-row">
+        <label>Max. ion charge</label>
+        <div>
+                3
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Max. number of expected isotopes</label>
+        <div>
+                4
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>The percentage number of samples, which must satisfy the C12/C13 rule for isotope annotation</label>
+        <div>
+                0.5
+        </div>
+    </div>
+
+
+        </div>
+      </div>
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Mode</label>
+        <div>
+                All functions
+        </div>
+    </div>
+
+      
+      
+      
+      <div class="form-row"><b>Verifying grouping co-eluted peaks [groupCorr]:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+    
+    <div class="form-row">
+        <label>groupCorr: correlation threshold (0..1)</label>
+        <div>
+                0.75
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>groupCorr: Method selection for grouping peaks after correlation analysis into pseudospectra</label>
+        <div>
+                hcs
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>groupCorr: significant correlation threshold</label>
+        <div>
+                0.05
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>groupCorr: Use correlation inside samples for peak grouping</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>groupCorr: Use isotopic relationship for peak grouping</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>groupCorr: Use correlation across samples for peak grouping</label>
+        <div>
+                False
+        </div>
+    </div>
+
+
+        </div>
+      </div>
+      
+      
+      <div class="form-row"><b>Annotate Adducts [findAdducts]:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+    
+    <div class="form-row">
+        <label>Which polarity mode was used for measuring of the ms sample</label>
+        <div>
+                Not available.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>How much peaks will be calculated in every thread using the parallel mode</label>
+        <div>
+                100
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Use a personal ruleset file</label>
+        <div>
+                FALSE
+        </div>
+    </div>
+
+      
+      
+    
+    <div class="form-row">
+        <label>If no ruleset is provided, calculate ruleset with max. number n of [nM+x] clusterions</label>
+        <div>
+                3
+        </div>
+    </div>
+
+
+
+        </div>
+      </div>
+
+      
+      
+      <div class="form-row"><b>Statistics and results export: [diffreport]:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Number of condition</label>
+        <div>
+                One condition
+        </div>
+    </div>
+
+      
+
+
+        </div>
+      </div>
+      
+      
+      <div class="form-row"><b>Export options:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+    
+    <div class="form-row">
+        <label>Convert retention time (seconds) into minutes</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Number of decimal places for mass values reported in ions&#39; identifiers.</label>
+        <div>
+                4
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Number of decimal places for retention time values reported in ions&#39; identifiers.</label>
+        <div>
+                0
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>General used intensity value</label>
+        <div>
+                into
+        </div>
+    </div>
+
+
+        </div>
+      </div>
+      
+      
+      <div class="form-row"><b>Resubmit your raw dataset or your zip file:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Resubmit your dataset or your zip file</label>
+        <div>
+                yes
+        </div>
+    </div>
+
+      
+      
+    
+    <div class="form-row">
+        <label>File(s) from your history containing your chromatograms</label>
+        <div>
+                    
+                    Output dataset 'output' from step 12
+        </div>
+    </div>
+
+
+
+        </div>
+      </div>
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 39: Add column</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>Add this value</label>
+        <div>
+                intensity
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>to Dataset</label>
+        <div>
+                    
+                    Output dataset 'variableMetadata' from step 34
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Iterate?</label>
+        <div>
+                NO
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 40: msPurity.flagRemove</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>xset_path</label>
+        <div>
+                    
+                    Output dataset 'xsetRData' from step 34
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Change biological sample flag parameters?</label>
+        <div>
+                Update biological sample flag parameters
+        </div>
+    </div>
+
+      
+      
+    
+    <div class="form-row">
+        <label>rsd_i_sample</label>
+        <div>
+                NA
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>minfrac_sample</label>
+        <div>
+                0.5
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>rsd_rt_sample</label>
+        <div>
+                NA
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>ithres_sample</label>
+        <div>
+                NA
+        </div>
+    </div>
+
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Change blank flag parameters?</label>
+        <div>
+                Update blank flag parameters
+        </div>
+    </div>
+
+      
+      
+    
+    <div class="form-row">
+        <label>blank_class</label>
+        <div>
+                blank
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>rsd_i_blank</label>
+        <div>
+                NA
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>minfrac_blank</label>
+        <div>
+                0.1
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>rsd_rt_blank</label>
+        <div>
+                NA
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>ithres_blank</label>
+        <div>
+                NA
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>s2b</label>
+        <div>
+                10.0
+        </div>
+    </div>
+
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Remove peaks from xcmsSet object?</label>
+        <div>
+                Only flag peaks (do not remove and re-group)
+        </div>
+    </div>
+
+      
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Advanced parameters</label>
+        <div>
+                Use default advanced parameters
+        </div>
+    </div>
+
+      
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Samplelist</label>
+        <div>
+                Use samplelist
+        </div>
+    </div>
+
+      
+      
+    
+    <div class="form-row">
+        <label>samplelist</label>
+        <div>
+                    
+                    Output dataset 'output' from step 17
+        </div>
+    </div>
+
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 41: Get peaklists</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>Peak Intensity Matrix (HDF5 file)</label>
+        <div>
+                    
+                    Output dataset 'hdf5_file_out' from step 35
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Get...</label>
+        <div>
+                Average Peaklist
+        </div>
+    </div>
+
+      
+      
+    
+    <div class="form-row">
+        <label>Name average Peaklist</label>
+        <div>
+                dims
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Write Peaklists to tsv files (data collection)?</label>
+        <div>
+                True
+        </div>
+    </div>
+
+
+      
+    
+    <div class="form-row">
+        <label>None</label>
+        <div>
+                tab
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 42: MSnPy Annotate Spectral Trees</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>Spectra trees</label>
+        <div>
+                    
+                    Output dataset 'output' from step 36
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Molecular formulae database</label>
+        <div>
+                https://mfdb.bham.ac.uk
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Ion mode</label>
+        <div>
+                Not available.
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Input type adducts</label>
+        <div>
+                Provide a tab-separated text file with a list of adducts
+        </div>
+    </div>
+
+      
+      
+    
+    <div class="form-row">
+        <label>List of adducts</label>
+        <div>
+                    
+                    Output dataset 'output' from step 18
+        </div>
+    </div>
+
+
+      
+    
+    <div class="form-row">
+        <label>Mass tolerance in Parts per million.</label>
+        <div>
+                Not available.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Apply heuristic rules?</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Filter the spectral tree annotations?</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Keep un-annotated fragments?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Use time limit?</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+      
+    
+    <div class="form-row">
+        <label>Time limit to annotate and filter each tree (seconds)</label>
+        <div>
+                7200
+        </div>
+    </div>
+
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 43: MSnPy Convert Spectral Trees</div>
+                  <div class="card-body">
+                    
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Input type</label>
+        <div>
+                MSnPy JSON spectral trees
+        </div>
+    </div>
+
+      
+      
+    
+    <div class="form-row">
+        <label>MSnPy Spectral Trees</label>
+        <div>
+                    
+                    Output dataset 'output' from step 36
+        </div>
+    </div>
+
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>merge</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+      
+    
+    <div class="form-row">
+        <label>Mass tolerance in parts per million.</label>
+        <div>
+                Not available.
+        </div>
+    </div>
+
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>msp</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+      
+    
+    <div class="form-row">
+        <label>MSP file type?</label>
+        <div>
+                European MassBank format
+        </div>
+    </div>
+
+
+      
+    
+    <div class="form-row">
+        <label>adjust_mz</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>ms1</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Polarity</label>
+        <div>
+                Not applicable
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 44: msPurity.filterFragSpectra</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>purityA object with fragmentation linked to XCMS features</label>
+        <div>
+                    
+                    Output dataset 'frag4feature_output_rdata' from step 37
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Miniumum precursor ion purity of the associated precursor for                      fragmentation spectra scan</label>
+        <div>
+                0.0
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Peak instensity threshold</label>
+        <div>
+                0.0
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Relative abundance threshold</label>
+        <div>
+                0.0
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Signal-to-noise threshold</label>
+        <div>
+                0.0
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Function to calculate noise.</label>
+        <div>
+                median
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Remove peaks that do not meet the filtering criteria.                       Otherwise peaks will be flagged instead.</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Perform filtering on all fragmentation spectra (not just those aligned to XCMS features)</label>
+        <div>
+                True
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 45: Cut</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>Cut columns</label>
+        <div>
+                c1,c13,c14,c15
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Delimited by</label>
+        <div>
+                Tab
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>From</label>
+        <div>
+                    
+                    Output dataset 'variableMetadata' from step 38
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 46: Replace</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>File to process</label>
+        <div>
+                    
+                    Output dataset 'out_file1' from step 39
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Find pattern</label>
+        <div>
+                intensity
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Replace with</label>
+        <div>
+                1
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Find-Pattern is a regular expression</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Replace all occurences of the pattern</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Case-Insensitive search</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Find whole-words</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Ignore first line</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Find and Replace text in</label>
+        <div>
+                entire line
+        </div>
+    </div>
+
+      
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 47: Column arrange</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>file to rearrange</label>
+        <div>
+                    
+                    Output dataset 'peaklist_filtered' from step 40
+        </div>
+    </div>
+
+      <div>
+          <div class="form-row"><b>Specify the first few columns by names</b></div>
+          
+            <div class="ui-portlet-section ml-2">
+                
+                <div class="form-row"><b>Specify the first few columns by name 1</b></div>
+                
+      
+    
+    <div class="form-row">
+        <label>column</label>
+        <div>
+                &#34;grpid&#34;
+        </div>
+    </div>
+
+
+            </div> 
+            <div class="ui-portlet-section ml-2">
+                
+                <div class="form-row"><b>Specify the first few columns by name 2</b></div>
+                
+      
+    
+    <div class="form-row">
+        <label>column</label>
+        <div>
+                &#34;grp_names&#34;
+        </div>
+    </div>
+
+
+            </div> 
+      </div>
+      
+    
+    <div class="form-row">
+        <label>Discard unspecified columns?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 48: Filter failed</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>Input Collection</label>
+        <div>
+                    
+                    Output dataset 'tsv_file_out' from step 41
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 49: MSnPy Rank Spectral Trees</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>Spectral trees</label>
+        <div>
+                    
+                    Output dataset 'output_trees' from step 42
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Rank threshold</label>
+        <div>
+                0
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 50: SIRIUS-CSI:FingerID</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>MSP file (output from Create MSP tool)</label>
+        <div>
+                    
+                    Output dataset 'non_merged_msp' from step 43
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Select SIRIUS-CSI:FingerID Database</label>
+        <div>
+                Bio (all biological)
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Mass deviation of the fragment peaks in ppm</label>
+        <div>
+                5
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Maximum number of candidates in the output</label>
+        <div>
+                5
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Ion mode</label>
+        <div>
+                Not available.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Analysis used</label>
+        <div>
+                Orbitrap
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Schema</label>
+        <div>
+                Auto
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Choose how additional metadata columns are extracted</label>
+        <div>
+                
+                Extra metadata columns from the Name or RECORD_TITLE
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Minimum number of MS/MS peaks</label>
+        <div>
+                0
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>How to handle adducts</label>
+        <div>
+                Use pre-selected adducts for either pos or neg ionisation mode
+        </div>
+    </div>
+
+      
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 51: msp2db</div>
+                  <div class="card-body">
+                    
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Choose source for the dataset</label>
+        <div>
+                Single msp file
+        </div>
+    </div>
+
+      
+      
+    
+    <div class="form-row">
+        <label>MSP file</label>
+        <div>
+                    
+                    Output dataset 'non_merged_msp' from step 43
+        </div>
+    </div>
+
+
+      
+    
+    <div class="form-row">
+        <label>Polarity</label>
+        <div>
+                Not available.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Name of spectral library (e.g. Lipids, LocalLibrary)</label>
+        <div>
+                dimsn
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Msp schema / format</label>
+        <div>
+                European MassBank
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Ignore compound lookup to PubChem</label>
+        <div>
+                True
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 52: MetFrag</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>MSP file (Output from Create MSP tool)</label>
+        <div>
+                    
+                    Output dataset 'merged_msp' from step 43
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Choose Compound Database</label>
+        <div>
+                MetChem
+        </div>
+    </div>
+
+      
+      
+    
+    <div class="form-row">
+        <label>MetChem URL</label>
+        <div>
+                bberdb.bb2.cluster
+        </div>
+    </div>
+
+
+      
+    
+    <div class="form-row">
+        <label>Relative Mass Deviation for database search (ppm)</label>
+        <div>
+                5.0
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Fragment Peak Match Relative Mass Deviation (ppm)</label>
+        <div>
+                5.0
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Fragment Peak Match Absolute Mass Deviation (Da)</label>
+        <div>
+                0.001
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Polarity</label>
+        <div>
+                Not available.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Schema</label>
+        <div>
+                Auto
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Choose how additional metadata columns are extracted</label>
+        <div>
+                Extra metadata columns from MSP parameters
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Suspect list</label>
+        <div>
+                Include suspect list
+        </div>
+    </div>
+
+      
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Use default list of suspect compounds?</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+
+      
+    
+    <div class="form-row">
+        <label>MetFrag Score Types</label>
+        <div>
+                FragmenterScore
+OfflineMetFusionScore
+SuspectListScore
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>MetFrag Score Weights</label>
+        <div>
+                0.2,0.3,0.5
+        </div>
+    </div>
+
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>How to handle adducts</label>
+        <div>
+                Use all available adducts for either pos or neg ionisation mode
+        </div>
+    </div>
+
+      
+
+      
+    
+    <div class="form-row">
+        <label>Skip invalid or undefined adduct types?</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Minimum number of MS/MS peaks</label>
+        <div>
+                1
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Output the MetFrag command line call</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+      
+      <div class="form-row"><b>PreProcessing filters:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+    
+    <div class="form-row">
+        <label>filter non-connected compounds (e.g. salts)</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>filter compounds containing non-standard isotopes</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Minimum Elements Filter</label>
+        <div>
+                Empty.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Maximum Elements Filter</label>
+        <div>
+                Empty.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Include substructures</label>
+        <div>
+                Empty.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Exclude substructures</label>
+        <div>
+                Empty.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Include elements</label>
+        <div>
+                Empty.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Include elements (exclusive)</label>
+        <div>
+                Empty.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Exclude elements</label>
+        <div>
+                Empty.
+        </div>
+    </div>
+
+
+        </div>
+      </div>
+      
+      
+      <div class="form-row"><b>PostProcessing filters:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+    
+    <div class="form-row">
+        <label>Threshold for score after MetFrag search</label>
+        <div>
+                0.6
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Minimum percentage of explain peaks</label>
+        <div>
+                15.0
+        </div>
+    </div>
+
+
+        </div>
+      </div>
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 53: msPurity.averageFragSpectra</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>purityA object</label>
+        <div>
+                    
+                    Output dataset 'filterFragSpectra_output_rdata' from step 44
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Average and filter fragmentation spectra for each XCMS feature</label>
+        <div>
+                within a MS data file
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Signal-to-noise threshold after averaging or summing</label>
+        <div>
+                0.0
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Relative abundance threshold after averaging or summing</label>
+        <div>
+                0.0
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Minimum fraction (i.e. percentage) of (averaged) scans a fragment peak has to be present in.</label>
+        <div>
+                0.5
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Minimum number of (averaged) fragmentation scans for a fragmentation event (precursor).</label>
+        <div>
+                1
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Ppm error tolerance</label>
+        <div>
+                5.0
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Sum intensities across (averaged) scans?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Function to calculate the average intensity, m/z and SNR values across (averaged) scans after filtering.</label>
+        <div>
+                median
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Remove peaks that do not meet the filtering criteria. Otherwise peaks will be flagged instead.</label>
+        <div>
+                True
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 54: Replace</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>File to process</label>
+        <div>
+                    
+                    Output dataset 'out_file1' from step 45
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Find pattern</label>
+        <div>
+                name
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Replace with</label>
+        <div>
+                grp_names
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Find-Pattern is a regular expression</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Replace all occurences of the pattern</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Case-Insensitive search</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Find whole-words</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Ignore first line</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Find and Replace text in</label>
+        <div>
+                entire line
+        </div>
+    </div>
+
+      
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 55: BEAMSpy</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>Peaklist</label>
+        <div>
+                    
+                    Output dataset 'outfile' from step 46
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Intensity matrix</label>
+        <div>
+                    
+                    Output dataset 'dataMatrix' from step 34
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Ion mode</label>
+        <div>
+                Not available.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Library adducts</label>
+        <div>
+                    
+                    Output dataset 'output' from step 21
+        </div>
+    </div>
+
+      
+      
+      <div class="form-row"><b>Group Features:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label> </label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+
+        </div>
+      </div>
+      
+      
+      <div class="form-row"><b>Annotate Peak Patterns:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label> </label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+
+        </div>
+      </div>
+      
+      
+      <div class="form-row"><b>Annotate Molecular Formulae:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label> </label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+
+        </div>
+      </div>
+      
+      
+      <div class="form-row"><b>Annotate Compounds / Metabolites:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label> </label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+      
+    
+    <div class="form-row">
+        <label>Ppm error tolerance</label>
+        <div>
+                5.0
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Source</label>
+        <div>
+                Compound databases
+        </div>
+    </div>
+
+      
+      
+    
+    <div class="form-row">
+        <label>Select databases</label>
+        <div>
+                hmdb_full_v4_0_v1
+        </div>
+    </div>
+
+
+
+
+        </div>
+      </div>
+      
+      
+      <div class="form-row"><b>Create summary table(s):</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+    
+    <div class="form-row">
+        <label>Multiple rows for each feature and separate columns</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Single row for each feature and separate columns</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Single row for each feature and merged columns</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Convert RT</label>
+        <div>
+                skip
+        </div>
+    </div>
+
+
+        </div>
+      </div>
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 56: Replace</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>File to process</label>
+        <div>
+                    
+                    Output dataset 'output' from step 47
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Find pattern</label>
+        <div>
+                &#34;
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Replace with</label>
+        <div>
+                Empty.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Find-Pattern is a regular expression</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Replace all occurences of the pattern</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Case-Insensitive search</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Find whole-words</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Ignore first line</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Find and Replace text in</label>
+        <div>
+                entire line
+        </div>
+    </div>
+
+      
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 57: msPurity.dimsPredictPuritySingle</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>peaks_file</label>
+        <div>
+                    
+                    Output dataset 'output' from step 48
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Choose the source for the dataset</label>
+        <div>
+                A single .mzML files to check purity from
+        </div>
+    </div>
+
+      
+      
+    
+    <div class="form-row">
+        <label>Single *.mzML</label>
+        <div>
+                    
+                    Output dataset 'output' from step 13
+        </div>
+    </div>
+
+
+      
+    
+    <div class="form-row">
+        <label>Threshold to remove peaks below x % of the relative intensity of                precursor of interest</label>
+        <div>
+                0.05
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Normalisation for isolation efficiency</label>
+        <div>
+                 Calculated from Q-Exactive for +/- 0.5 Da windows 
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Handling of isotopic peaks</label>
+        <div>
+                Exclude C12/C13 isotopes in precursor ion purity calculation
+        </div>
+    </div>
+
+      
+
+      
+    
+    <div class="form-row">
+        <label>minoffset</label>
+        <div>
+                0.5
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>maxoffset</label>
+        <div>
+                0.5
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>ppm</label>
+        <div>
+                10.0
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Remove rows where mz value is NA or NaN?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>SIM-Stitch experiment?</label>
+        <div>
+                Not available.
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>dimspy peak matrix text file usage?</label>
+        <div>
+                dimspy not used to prepare the mz text file
+        </div>
+    </div>
+
+      
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 58: Filter failed</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>Input Collection</label>
+        <div>
+                    
+                    Output dataset 'output_ranks' from step 49
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 59: Regex Find And Replace</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>Select lines from</label>
+        <div>
+                    
+                    Output dataset 'structure_results' from step 50
+        </div>
+    </div>
+
+      <div>
+          <div class="form-row"><b>Checks</b></div>
+          
+            <div class="ui-portlet-section ml-2">
+                
+                <div class="form-row"><b>Check 1</b></div>
+                
+      
+    
+    <div class="form-row">
+        <label>Find Regex</label>
+        <div>
+                CSI:FingerIDScore
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Replacement</label>
+        <div>
+                Score
+        </div>
+    </div>
+
+
+            </div> 
+      </div>
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 60: msPurity.spectralMatching</div>
+                  <div class="card-body">
+                    
+      
+      
+      <div class="form-row"><b>Query spectra input and filters:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Input</label>
+        <div>
+                SQLite database of (LC)-MS/MS data
+        </div>
+    </div>
+
+      
+      
+    
+    <div class="form-row">
+        <label>Query SQLite database</label>
+        <div>
+                    
+                    Output dataset 'out_pth' from step 51
+        </div>
+    </div>
+
+
+      
+      
+      <div class="form-row"><b>Filters:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+    
+    <div class="form-row">
+        <label>ppm error of the precursor for spectra</label>
+        <div>
+                5.0
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>ppm error of the product for spectra</label>
+        <div>
+                5.0
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on relative abundance threshold?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on polarity?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on precursor ion purity?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on XCMS groups ids?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on pids?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on retention time range?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on accessions?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on sources?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on instrument type?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on instrument name?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on spectral type?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+    
+    <div class="form-row">
+        <label>Ignore any peaks flagged in the spectra in previous stages?</label>
+        <div>
+                True
+        </div>
+    </div>
+
+
+        </div>
+      </div>
+
+        </div>
+      </div>
+      
+      
+      <div class="form-row"><b>Library spectra input and filters:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Input</label>
+        <div>
+                Locally configured SQLite, MySQL or PostgreSQL database
+        </div>
+    </div>
+
+      
+
+      
+      
+      <div class="form-row"><b>Filters:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+    
+    <div class="form-row">
+        <label>ppm error of the precursor for spectra</label>
+        <div>
+                5.0
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>ppm error of the product for spectra</label>
+        <div>
+                5.0
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on relative abundance threshold?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on polarity?</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+      
+    
+    <div class="form-row">
+        <label>Polarity</label>
+        <div>
+                Not available.
+        </div>
+    </div>
+
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on precursor ion purity?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on XCMS groups ids?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on pids?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on retention time range?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on accessions?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on sources?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on instrument type?</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+      
+    
+    <div class="form-row">
+        <label>l_instrumentTypes</label>
+        <div>
+                APCI-ITFT
+APCI-ITTOF
+CE-ESI-TOF
+ESI-ITFT
+ESI-ITTOF
+ESI-QFT
+ESI-QTOF
+ESI-TOF
+in source CID
+In-silico QTOF
+Ion trap
+LC-APCI-ITFT
+LC-APCI-QTOF
+LC-APCI-Q
+LC-ESI-IT
+LC-ESI-ITFT
+LC-ESI-ITTOF
+LC-ESI-Q
+LC-ESI-QFT
+LC-ESI-QIT
+LC-ESI-QQ
+LC-ESI-QTOF
+LC-ESI-TOF
+LC-Q-TOF/MS
+LC-QTOF
+Linear Ion Trap
+LIT
+MALDI-QIT
+MALDI-TOF
+MALDI-TOFTOF
+orbitrap
+QIT
+QIT-FT
+QIT-TOF
+QqQ
+Q-TOF
+Quattro_QQQ
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>l_instrumentTypesUser</label>
+        <div>
+                Empty.
+        </div>
+    </div>
+
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on instrument name?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on spectral type?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+    
+    <div class="form-row">
+        <label>Ignore any peaks flagged in the spectra in previous stages?</label>
+        <div>
+                True
+        </div>
+    </div>
+
+
+        </div>
+      </div>
+
+        </div>
+      </div>
+      
+      
+      <div class="form-row"><b>General arguments:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on retention time match?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+    
+    <div class="form-row">
+        <label>Filter on matching precursors?</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Weighting for relative abundance</label>
+        <div>
+                0.5
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Weighting for mz</label>
+        <div>
+                2.0
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Update database with results?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+
+        </div>
+      </div>
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 61: msPurity.averageFragSpectra</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>purityA object</label>
+        <div>
+                    
+                    Output dataset 'averageFragSpectra_output_rdata' from step 53
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Average and filter fragmentation spectra for each XCMS feature</label>
+        <div>
+                across MS data files
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Signal-to-noise threshold after averaging or summing</label>
+        <div>
+                0.0
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Relative abundance threshold after averaging or summing</label>
+        <div>
+                0.0
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Minimum fraction (i.e. percentage) of (averaged) scans a fragment peak has to be present in.</label>
+        <div>
+                0.5
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Minimum number of (averaged) fragmentation scans for a fragmentation event (precursor).</label>
+        <div>
+                1
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Ppm error tolerance</label>
+        <div>
+                5.0
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Sum intensities across (averaged) scans?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Function to calculate the average intensity, m/z and SNR values across (averaged) scans after filtering.</label>
+        <div>
+                median
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Remove peaks that do not meet the filtering criteria. Otherwise peaks will be flagged instead.</label>
+        <div>
+                True
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 62: Select</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>Select lines from</label>
+        <div>
+                    
+                    Output dataset 'output_summary_mr_mc' from step 55
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>that</label>
+        <div>
+                Matching
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>the pattern</label>
+        <div>
+                .*HMDB|compound_id.*
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 63: Replace</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>File to process</label>
+        <div>
+                    
+                    Output dataset 'outfile' from step 56
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Find pattern</label>
+        <div>
+                rtmed
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Replace with</label>
+        <div>
+                rt
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Find-Pattern is a regular expression</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Replace all occurences of the pattern</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Case-Insensitive search</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Find whole-words</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Ignore first line</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Find and Replace text in</label>
+        <div>
+                entire line
+        </div>
+    </div>
+
+      
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 64: Cut</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>Cut columns</label>
+        <div>
+                c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c16
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Delimited by</label>
+        <div>
+                Tab
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>From</label>
+        <div>
+                    
+                    Output dataset 'dimsPredictPuritySingle_output' from step 57
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 65: Regex Find And Replace</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>Select lines from</label>
+        <div>
+                    
+                    Output dataset 'output' from step 58
+        </div>
+    </div>
+
+      <div>
+          <div class="form-row"><b>Checks</b></div>
+          
+            <div class="ui-portlet-section ml-2">
+                
+                <div class="form-row"><b>Check 1</b></div>
+                
+      
+    
+    <div class="form-row">
+        <label>Find Regex</label>
+        <div>
+                Empty.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Replacement</label>
+        <div>
+                Empty.
+        </div>
+    </div>
+
+
+            </div> 
+      </div>
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+                    Filter failed does not rename file correct. Hence this tool is required to force file rename. No regex actually performed
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 66: Filter failed</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>Input Collection</label>
+        <div>
+                    
+                    Output dataset 'matches' from step 60
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 67: msPurity.createMSP</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>msPurity purityA dataset</label>
+        <div>
+                    
+                    Output dataset 'averageFragSpectra_output_rdata' from step 61
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>How to choose fragmentation spectra (if precursor was fragmented in &gt;1 scans per XCMS group feature)</label>
+        <div>
+                Average (inter)
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Use additional metadata?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Select XCMS groups?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+    
+    <div class="form-row">
+        <label>Include intensity, relative abundanace or both in the MSP file</label>
+        <div>
+                Both intensity and relative abundance
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>MSP schema to use for files</label>
+        <div>
+                MassBank (Europe)
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Filter peaks that have been flagged in prior processing steps</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Always include the following adduct descriptions in the MSP file</label>
+        <div>
+                Nothing selected.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Always include the following custom adducts</label>
+        <div>
+                Not available.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Create MSP spectra for each adduct?</label>
+        <div>
+                True
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 68: Cut</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>Cut columns</label>
+        <div>
+                c1-c14,c16
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Delimited by</label>
+        <div>
+                Tab
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>From</label>
+        <div>
+                    
+                    Output dataset 'out_file1' from step 62
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 69: Replace</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>File to process</label>
+        <div>
+                    
+                    Output dataset 'outfile' from step 63
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Find pattern</label>
+        <div>
+                mzmed
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Replace with</label>
+        <div>
+                mz
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Find-Pattern is a regular expression</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Replace all occurences of the pattern</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Case-Insensitive search</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Find whole-words</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Ignore first line</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Find and Replace text in</label>
+        <div>
+                entire line
+        </div>
+    </div>
+
+      
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 70: CAMERA_DIMS</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>peaks_file</label>
+        <div>
+                    
+                    Output dataset 'out_file1' from step 64
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>ppm (adduct)</label>
+        <div>
+                5.0
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>ppm (iso)</label>
+        <div>
+                5.0
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>mzabs (adduct)</label>
+        <div>
+                0.015
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>mzabs (iso)</label>
+        <div>
+                0.015
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>maxmol</label>
+        <div>
+                3
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>maxiso</label>
+        <div>
+                4
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>maxcharge</label>
+        <div>
+                3
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>polarity</label>
+        <div>
+                Not available.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Intensity filter</label>
+        <div>
+                1000.0
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Rules for adducts</label>
+        <div>
+                Extended adducts
+        </div>
+    </div>
+
+      
+
+      
+    
+    <div class="form-row">
+        <label>Export the adduct ruleset used?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 71: msp_split</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>Input MSP file</label>
+        <div>
+                    
+                    Output dataset 'createMSP_output' from step 67
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Number of new files</label>
+        <div>
+                20
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Starting parameter for each spectra</label>
+        <div>
+                RECORD_TITLE:
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 72: Join</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>1st file</label>
+        <div>
+                    
+                    Output dataset 'outfile' from step 69
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Column to use from 1st file</label>
+        <div>
+                2
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>2nd File</label>
+        <div>
+                    
+                    Output dataset 'outfile' from step 54
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Column to use from 2nd file</label>
+        <div>
+                1
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Output lines appearing in</label>
+        <div>
+                Both 1st &amp; 2nd file.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>First line is a header line</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Ignore case</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Value to put in unpaired (empty) fields</label>
+        <div>
+                Empty.
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 73: Replace</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>File to process</label>
+        <div>
+                    
+                    Output dataset 'camera_annotated_peaklist' from step 70
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Find pattern</label>
+        <div>
+                i
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Replace with</label>
+        <div>
+                intensity
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Find-Pattern is a regular expression</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Replace all occurences of the pattern</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Case-Insensitive search</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Find whole-words</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Ignore first line</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Find and Replace text in</label>
+        <div>
+                entire line
+        </div>
+    </div>
+
+      
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 74: MetFrag</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>MSP file (Output from Create MSP tool)</label>
+        <div>
+                    
+                    Output dataset 'multiple' from step 71
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Choose Compound Database</label>
+        <div>
+                MetChem
+        </div>
+    </div>
+
+      
+      
+    
+    <div class="form-row">
+        <label>MetChem URL</label>
+        <div>
+                bberdb.bb2.cluster
+        </div>
+    </div>
+
+
+      
+    
+    <div class="form-row">
+        <label>Relative Mass Deviation for database search (ppm)</label>
+        <div>
+                5.0
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Fragment Peak Match Relative Mass Deviation (ppm)</label>
+        <div>
+                5.0
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Fragment Peak Match Absolute Mass Deviation (Da)</label>
+        <div>
+                0.001
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Polarity</label>
+        <div>
+                Not available.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Schema</label>
+        <div>
+                Auto
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Choose how additional metadata columns are extracted</label>
+        <div>
+                Extra metadata columns from the Name or RECORD_TITLE (each column is split on &#34;|&#34; and &#34;:&#34; ) 
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Suspect list</label>
+        <div>
+                Include suspect list
+        </div>
+    </div>
+
+      
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Use default list of suspect compounds?</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+
+      
+    
+    <div class="form-row">
+        <label>MetFrag Score Types</label>
+        <div>
+                FragmenterScore
+OfflineMetFusionScore
+SuspectListScore
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>MetFrag Score Weights</label>
+        <div>
+                0.2,0.3,0.5
+        </div>
+    </div>
+
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>How to handle adducts</label>
+        <div>
+                Use adducts defined in MSP file
+        </div>
+    </div>
+
+      
+
+      
+    
+    <div class="form-row">
+        <label>Skip invalid or undefined adduct types?</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Minimum number of MS/MS peaks</label>
+        <div>
+                1
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Output the MetFrag command line call</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+      
+      <div class="form-row"><b>PreProcessing filters:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+    
+    <div class="form-row">
+        <label>filter non-connected compounds (e.g. salts)</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>filter compounds containing non-standard isotopes</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Minimum Elements Filter</label>
+        <div>
+                Empty.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Maximum Elements Filter</label>
+        <div>
+                Empty.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Include substructures</label>
+        <div>
+                Empty.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Exclude substructures</label>
+        <div>
+                Empty.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Include elements</label>
+        <div>
+                Empty.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Include elements (exclusive)</label>
+        <div>
+                Empty.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Exclude elements</label>
+        <div>
+                Empty.
+        </div>
+    </div>
+
+
+        </div>
+      </div>
+      
+      
+      <div class="form-row"><b>PostProcessing filters:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+    
+    <div class="form-row">
+        <label>Threshold for score after MetFrag search</label>
+        <div>
+                0.6
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Minimum percentage of explain peaks</label>
+        <div>
+                10.0
+        </div>
+    </div>
+
+
+        </div>
+      </div>
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 75: SIRIUS-CSI:FingerID</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>MSP file (output from Create MSP tool)</label>
+        <div>
+                    
+                    Output dataset 'multiple' from step 71
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Select SIRIUS-CSI:FingerID Database</label>
+        <div>
+                Bio (all biological)
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Mass deviation of the fragment peaks in ppm</label>
+        <div>
+                5
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Maximum number of candidates in the output</label>
+        <div>
+                5
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Ion mode</label>
+        <div>
+                Not available.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Analysis used</label>
+        <div>
+                Orbitrap
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Schema</label>
+        <div>
+                Auto
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Choose how additional metadata columns are extracted</label>
+        <div>
+                
+                Extra metadata columns from the Name or
+                RECORD_TITLE (each column is split on &#34;|&#34; and &#34;:&#34; ) 
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Minimum number of MS/MS peaks</label>
+        <div>
+                0
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>How to handle adducts</label>
+        <div>
+                Use adducts defined in MSP file
+        </div>
+    </div>
+
+      
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 76: msPurity.createDatabase</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>xcmsSet or CAMERA object</label>
+        <div>
+                    
+                    Output dataset 'rdata_quick_false' from step 38
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Use CAMERA object or XCMS object from RData?</label>
+        <div>
+                CAMERA (xa)
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>purityA object (frag4feature output)</label>
+        <div>
+                    
+                    Output dataset 'averageFragSpectra_output_rdata' from step 61
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Include EIC data?</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Add a different grouped peaklist to database?</label>
+        <div>
+                Provide group peaklist 
+        </div>
+    </div>
+
+      
+      
+    
+    <div class="form-row">
+        <label>grouped peaklist</label>
+        <div>
+                    
+                    Output dataset 'output' from step 72
+        </div>
+    </div>
+
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Resubmit your dataset</label>
+        <div>
+                no need
+        </div>
+    </div>
+
+      
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 77: BEAMSpy</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>Peaklist</label>
+        <div>
+                    
+                    Output dataset 'outfile' from step 73
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Intensity matrix</label>
+        <div>
+                    <i>select at runtime</i>
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Ion mode</label>
+        <div>
+                Not available.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Library adducts</label>
+        <div>
+                    
+                    Output dataset 'output' from step 21
+        </div>
+    </div>
+
+      
+      
+      <div class="form-row"><b>Group Features:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label> </label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+
+        </div>
+      </div>
+      
+      
+      <div class="form-row"><b>Annotate Peak Patterns:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label> </label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+
+        </div>
+      </div>
+      
+      
+      <div class="form-row"><b>Annotate Molecular Formulae:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label> </label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+
+        </div>
+      </div>
+      
+      
+      <div class="form-row"><b>Annotate Compounds / Metabolites:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label> </label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+      
+    
+    <div class="form-row">
+        <label>Ppm error tolerance</label>
+        <div>
+                5.0
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Source</label>
+        <div>
+                Compound databases
+        </div>
+    </div>
+
+      
+      
+    
+    <div class="form-row">
+        <label>Select databases</label>
+        <div>
+                hmdb_full_v4_0_v1
+        </div>
+    </div>
+
+
+
+
+        </div>
+      </div>
+      
+      
+      <div class="form-row"><b>Create summary table(s):</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+    
+    <div class="form-row">
+        <label>Multiple rows for each feature and separate columns</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Single row for each feature and separate columns</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Single row for each feature and merged columns</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Convert RT</label>
+        <div>
+                skip
+        </div>
+    </div>
+
+
+        </div>
+      </div>
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 78: Column arrange</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>file to rearrange</label>
+        <div>
+                    
+                    Output dataset 'results' from step 74
+        </div>
+    </div>
+
+      <div>
+          <div class="form-row"><b>Specify the first few columns by names</b></div>
+          
+            <div class="ui-portlet-section ml-2">
+                
+                <div class="form-row"><b>Specify the first few columns by name 1</b></div>
+                
+      
+    
+    <div class="form-row">
+        <label>column</label>
+        <div>
+                sample_name
+        </div>
+    </div>
+
+
+            </div> 
+            <div class="ui-portlet-section ml-2">
+                
+                <div class="form-row"><b>Specify the first few columns by name 2</b></div>
+                
+      
+    
+    <div class="form-row">
+        <label>column</label>
+        <div>
+                MZ
+        </div>
+    </div>
+
+
+            </div> 
+            <div class="ui-portlet-section ml-2">
+                
+                <div class="form-row"><b>Specify the first few columns by name 3</b></div>
+                
+      
+    
+    <div class="form-row">
+        <label>column</label>
+        <div>
+                grpid
+        </div>
+    </div>
+
+
+            </div> 
+            <div class="ui-portlet-section ml-2">
+                
+                <div class="form-row"><b>Specify the first few columns by name 4</b></div>
+                
+      
+    
+    <div class="form-row">
+        <label>column</label>
+        <div>
+                RT
+        </div>
+    </div>
+
+
+            </div> 
+            <div class="ui-portlet-section ml-2">
+                
+                <div class="form-row"><b>Specify the first few columns by name 5</b></div>
+                
+      
+    
+    <div class="form-row">
+        <label>column</label>
+        <div>
+                adduct
+        </div>
+    </div>
+
+
+            </div> 
+            <div class="ui-portlet-section ml-2">
+                
+                <div class="form-row"><b>Specify the first few columns by name 6</b></div>
+                
+      
+    
+    <div class="form-row">
+        <label>column</label>
+        <div>
+                CompoundName
+        </div>
+    </div>
+
+
+            </div> 
+            <div class="ui-portlet-section ml-2">
+                
+                <div class="form-row"><b>Specify the first few columns by name 7</b></div>
+                
+      
+    
+    <div class="form-row">
+        <label>column</label>
+        <div>
+                ExplPeaks
+        </div>
+    </div>
+
+
+            </div> 
+            <div class="ui-portlet-section ml-2">
+                
+                <div class="form-row"><b>Specify the first few columns by name 8</b></div>
+                
+      
+    
+    <div class="form-row">
+        <label>column</label>
+        <div>
+                FormulasOfExplPeaks
+        </div>
+    </div>
+
+
+            </div> 
+            <div class="ui-portlet-section ml-2">
+                
+                <div class="form-row"><b>Specify the first few columns by name 9</b></div>
+                
+      
+    
+    <div class="form-row">
+        <label>column</label>
+        <div>
+                FragmenterScore
+        </div>
+    </div>
+
+
+            </div> 
+            <div class="ui-portlet-section ml-2">
+                
+                <div class="form-row"><b>Specify the first few columns by name 10</b></div>
+                
+      
+    
+    <div class="form-row">
+        <label>column</label>
+        <div>
+                FragmenterScore_Values
+        </div>
+    </div>
+
+
+            </div> 
+            <div class="ui-portlet-section ml-2">
+                
+                <div class="form-row"><b>Specify the first few columns by name 11</b></div>
+                
+      
+    
+    <div class="form-row">
+        <label>column</label>
+        <div>
+                Identifier
+        </div>
+    </div>
+
+
+            </div> 
+            <div class="ui-portlet-section ml-2">
+                
+                <div class="form-row"><b>Specify the first few columns by name 12</b></div>
+                
+      
+    
+    <div class="form-row">
+        <label>column</label>
+        <div>
+                InChI
+        </div>
+    </div>
+
+
+            </div> 
+            <div class="ui-portlet-section ml-2">
+                
+                <div class="form-row"><b>Specify the first few columns by name 13</b></div>
+                
+      
+    
+    <div class="form-row">
+        <label>column</label>
+        <div>
+                InChIKey
+        </div>
+    </div>
+
+
+            </div> 
+            <div class="ui-portlet-section ml-2">
+                
+                <div class="form-row"><b>Specify the first few columns by name 14</b></div>
+                
+      
+    
+    <div class="form-row">
+        <label>column</label>
+        <div>
+                InChIKey1
+        </div>
+    </div>
+
+
+            </div> 
+            <div class="ui-portlet-section ml-2">
+                
+                <div class="form-row"><b>Specify the first few columns by name 15</b></div>
+                
+      
+    
+    <div class="form-row">
+        <label>column</label>
+        <div>
+                InChIKey2
+        </div>
+    </div>
+
+
+            </div> 
+            <div class="ui-portlet-section ml-2">
+                
+                <div class="form-row"><b>Specify the first few columns by name 16</b></div>
+                
+      
+    
+    <div class="form-row">
+        <label>column</label>
+        <div>
+                InChIKey3
+        </div>
+    </div>
+
+
+            </div> 
+            <div class="ui-portlet-section ml-2">
+                
+                <div class="form-row"><b>Specify the first few columns by name 17</b></div>
+                
+      
+    
+    <div class="form-row">
+        <label>column</label>
+        <div>
+                MaximumTreeDepth
+        </div>
+    </div>
+
+
+            </div> 
+            <div class="ui-portlet-section ml-2">
+                
+                <div class="form-row"><b>Specify the first few columns by name 18</b></div>
+                
+      
+    
+    <div class="form-row">
+        <label>column</label>
+        <div>
+                MolecularFormula
+        </div>
+    </div>
+
+
+            </div> 
+            <div class="ui-portlet-section ml-2">
+                
+                <div class="form-row"><b>Specify the first few columns by name 19</b></div>
+                
+      
+    
+    <div class="form-row">
+        <label>column</label>
+        <div>
+                MonoisotopicMass
+        </div>
+    </div>
+
+
+            </div> 
+            <div class="ui-portlet-section ml-2">
+                
+                <div class="form-row"><b>Specify the first few columns by name 20</b></div>
+                
+      
+    
+    <div class="form-row">
+        <label>column</label>
+        <div>
+                NoExplPeaks
+        </div>
+    </div>
+
+
+            </div> 
+            <div class="ui-portlet-section ml-2">
+                
+                <div class="form-row"><b>Specify the first few columns by name 21</b></div>
+                
+      
+    
+    <div class="form-row">
+        <label>column</label>
+        <div>
+                NumberPeaksUsed
+        </div>
+    </div>
+
+
+            </div> 
+      </div>
+      
+    
+    <div class="form-row">
+        <label>Discard unspecified columns?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 79: Collapse Collection</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>Collection of files to collapse into single dataset</label>
+        <div>
+                    
+                    Output dataset 'structure_results' from step 75
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Keep one header line</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Append File name</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 80: msPurity.spectralMatching</div>
+                  <div class="card-body">
+                    
+      
+      
+      <div class="form-row"><b>Query spectra input and filters:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Input</label>
+        <div>
+                SQLite database of (LC)-MS/MS data
+        </div>
+    </div>
+
+      
+      
+    
+    <div class="form-row">
+        <label>Query SQLite database</label>
+        <div>
+                    
+                    Output dataset 'createDatabase_output_sqlite' from step 76
+        </div>
+    </div>
+
+
+      
+      
+      <div class="form-row"><b>Filters:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+    
+    <div class="form-row">
+        <label>ppm error of the precursor for spectra</label>
+        <div>
+                5.0
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>ppm error of the product for spectra</label>
+        <div>
+                5.0
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on relative abundance threshold?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on polarity?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on precursor ion purity?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on XCMS groups ids?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on pids?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on retention time range?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on accessions?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on sources?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on instrument type?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on instrument name?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on spectral type?</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+      
+    
+    <div class="form-row">
+        <label>Spectra type</label>
+        <div>
+                Averaged inter spectra
+        </div>
+    </div>
+
+
+      
+    
+    <div class="form-row">
+        <label>Ignore any peaks flagged in the spectra in previous stages?</label>
+        <div>
+                True
+        </div>
+    </div>
+
+
+        </div>
+      </div>
+
+        </div>
+      </div>
+      
+      
+      <div class="form-row"><b>Library spectra input and filters:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Input</label>
+        <div>
+                Locally configured SQLite, MySQL or PostgreSQL database
+        </div>
+    </div>
+
+      
+
+      
+      
+      <div class="form-row"><b>Filters:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+    
+    <div class="form-row">
+        <label>ppm error of the precursor for spectra</label>
+        <div>
+                5.0
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>ppm error of the product for spectra</label>
+        <div>
+                5.0
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on relative abundance threshold?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on polarity?</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+      
+    
+    <div class="form-row">
+        <label>Polarity</label>
+        <div>
+                Not available.
+        </div>
+    </div>
+
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on precursor ion purity?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on XCMS groups ids?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on pids?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on retention time range?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on accessions?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on sources?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on instrument type?</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+      
+    
+    <div class="form-row">
+        <label>l_instrumentTypes</label>
+        <div>
+                APCI-ITFT
+APCI-ITTOF
+CE-ESI-TOF
+ESI-ITFT
+ESI-ITTOF
+ESI-QFT
+ESI-QTOF
+ESI-TOF
+in source CID
+In-silico QTOF
+Ion trap
+LC-APCI-ITFT
+LC-APCI-QTOF
+LC-APCI-Q
+LC-ESI-IT
+LC-ESI-ITFT
+LC-ESI-ITTOF
+LC-ESI-Q
+LC-ESI-QFT
+LC-ESI-QIT
+LC-ESI-QQ
+LC-ESI-QTOF
+LC-ESI-TOF
+LC-Q-TOF/MS
+LC-QTOF
+Linear Ion Trap
+LIT
+MALDI-QIT
+MALDI-TOF
+MALDI-TOFTOF
+orbitrap
+QIT
+QIT-FT
+QIT-TOF
+QqQ
+Q-TOF
+Quattro_QQQ
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>l_instrumentTypesUser</label>
+        <div>
+                Empty.
+        </div>
+    </div>
+
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on instrument name?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on spectral type?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+    
+    <div class="form-row">
+        <label>Ignore any peaks flagged in the spectra in previous stages?</label>
+        <div>
+                True
+        </div>
+    </div>
+
+
+        </div>
+      </div>
+
+        </div>
+      </div>
+      
+      
+      <div class="form-row"><b>General arguments:</b></div>
+      <div>
+        <div class="ui-portlet-section ml-2">
+          
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Filter on retention time match?</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+      
+    
+    <div class="form-row">
+        <label>Filter on matching precursors?</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Weighting for relative abundance</label>
+        <div>
+                0.5
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Weighting for mz</label>
+        <div>
+                2.0
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Update database with results?</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+      
+    
+    <div class="form-row">
+        <label>Make a copy of the database?</label>
+        <div>
+                True
+        </div>
+    </div>
+
+
+
+        </div>
+      </div>
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 81: Select</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>Select lines from</label>
+        <div>
+                    
+                    Output dataset 'output_summary_mr_mc' from step 77
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>that</label>
+        <div>
+                Matching
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>the pattern</label>
+        <div>
+                .*HMDB|compound_id.*
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 82: Collapse Collection</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>Collection of files to collapse into single dataset</label>
+        <div>
+                    
+                    Output dataset 'output' from step 78
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Keep one header line</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Append File name</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 83: Regex Find And Replace</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>Select lines from</label>
+        <div>
+                    
+                    Output dataset 'output' from step 79
+        </div>
+    </div>
+
+      <div>
+          <div class="form-row"><b>Checks</b></div>
+          
+            <div class="ui-portlet-section ml-2">
+                
+                <div class="form-row"><b>Check 1</b></div>
+                
+      
+    
+    <div class="form-row">
+        <label>Find Regex</label>
+        <div>
+                CSI:FingerIDScore
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Replacement</label>
+        <div>
+                Score
+        </div>
+    </div>
+
+
+            </div> 
+      </div>
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 84: Cut</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>Cut columns</label>
+        <div>
+                c1-c14,c16
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Delimited by</label>
+        <div>
+                Tab
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>From</label>
+        <div>
+                    
+                    Output dataset 'out_file1' from step 81
+        </div>
+    </div>
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 85: msPurity.combineAnnotations</div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>Spectral matching result</label>
+        <div>
+                    
+                    Output dataset 'sqlite_results' from step 80
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Metfrag result</label>
+        <div>
+                    
+                    Output dataset 'output' from step 82
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Sirius CSI:FingerID result</label>
+        <div>
+                    
+                    Output dataset 'out_file1' from step 83
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Use probmetab data</label>
+        <div>
+                Do not include probmetab results
+        </div>
+    </div>
+
+      
+
+      
+    
+    <div class="form-row">
+        <label>MS1 Lookup result</label>
+        <div>
+                    
+                    Output dataset 'out_file1' from step 68
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>MS1 lookup adducts to keep</label>
+        <div>
+                Not available.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>MS1 lookup check adducts to CAMERA</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>MS1 lookup database source</label>
+        <div>
+                hmdb
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Spectral matching weight</label>
+        <div>
+                0.45
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Metfrag weight</label>
+        <div>
+                0.15
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Sirius CSI:FingerID weight</label>
+        <div>
+                0.25
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Probmetab weight</label>
+        <div>
+                0.0
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>MS1 Lookup weight</label>
+        <div>
+                0.1
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Biological similarity weight</label>
+        <div>
+                0.05
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Create summary output</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Create a new database for the results?</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>compoundDbType</label>
+        <div>
+                Locally configured MySQL, Postgres or SQLite database
+        </div>
+    </div>
+
+      
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+            <tr><td>
+              
+              <div class="card mt-3 mr-3">
+                  <div class="card-header">Step 86: LC-MS/MS fractionation processor - </div>
+                  <div class="card-body">
+                    
+      
+    
+    <div class="form-row">
+        <label>LC-MS(/MS) SQlite results</label>
+        <div>
+                    
+                    Output dataset 'combined_annotations_sqlite' from step 85
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>DIMS peaklist for fractions</label>
+        <div>
+                    
+                    Output dataset 'hdf5_file_out' from step 41
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>DIMSn merged</label>
+        <div>
+                    
+                    Output dataset 'merged_hdf5' from step 43
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>DIMSn non merged</label>
+        <div>
+                    
+                    Output dataset 'non_merged_hdf5' from step 43
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>DIMSn MS1 precursors</label>
+        <div>
+                    
+                    Output dataset 'precursors_hdf5' from step 43
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>BEAMS MS1 annotation results for DIMS</label>
+        <div>
+                    
+                    Output dataset 'out_file1' from step 84
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Metfrag results for DIMSn</label>
+        <div>
+                    
+                    Output dataset 'results' from step 52
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>SIRIUS CSI:FingerID results for DIMSn</label>
+        <div>
+                    
+                    Output dataset 'out_file1' from step 59
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Spectral matching results for DIMSn</label>
+        <div>
+                    
+                    Output dataset 'output' from step 66
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Molecular formula annotation based on MSn (MSnPy)</label>
+        <div>
+                    
+                    Output dataset 'out_file1' from step 65
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Additional details</label>
+        <div>
+                    
+                    Output dataset 'camera_annotated_peaklist' from step 70
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>PPM error for LC-MS measurements</label>
+        <div>
+                5.0
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>PPM error for DI-MS measurements</label>
+        <div>
+                5.0
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Tolerance in seconds to map DIMS to LC-MS</label>
+        <div>
+                10.0
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Spectral matching weight</label>
+        <div>
+                0.45
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Metfrag weight</label>
+        <div>
+                0.15
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Sirius CSI:FingerID weight</label>
+        <div>
+                0.25
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>MS1 Lookup weight</label>
+        <div>
+                0.1
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Biological similarity weight</label>
+        <div>
+                0.05
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Create a new database for the results?</label>
+        <div>
+                True
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>MS1 lookup database source</label>
+        <div>
+                hmdb
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>MS1 lookup adducts to keep</label>
+        <div>
+                Not available.
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>MS1 lookup check adducts to CAMERA</label>
+        <div>
+                False
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Limit for sirius annotations by rank</label>
+        <div>
+                0
+        </div>
+    </div>
+
+      
+    
+    <div class="form-row">
+        <label>Limit for annotations by rank</label>
+        <div>
+                0
+        </div>
+    </div>
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Compound database</label>
+        <div>
+                Locally configured SQLite database
+        </div>
+    </div>
+
+      
+
+      
+      
+      
+      
+    
+    <div class="form-row">
+        <label>Spectral library database</label>
+        <div>
+                Locally configured SQLite database
+        </div>
+    </div>
+
+      
+
+
+                  </div>
+              </div>
+            </td>
+            <td class="annotation">
+            </td>
+            </tr>
+    </table>
+
+    </div>
+
+
+                </div><!--end center-->
+                    <div id="right">
+                        
+    
+    
+    
+    
+
+    <div class="unified-panel-header" unselectable="on">
+        <div class="unified-panel-header-inner">
+            About this 
+Workflow
+            
+      <a
+          href="/workflow/imp?id=0aab0e4c25198ad8"
+          class="btn btn-secondary fa fa-plus float-right"
+          title="Import workflow"></a>
+      <a
+          href="/workflow/export_to_file?id=0aab0e4c25198ad8"
+          class="btn btn-secondary fa fa-download float-right mr-2"
+          title="Save workflow"></a>
+
+        </div>
+    </div>
+    <div class="unified-panel-body">
+        <div style="overflow: auto; height: 100%;">
+            <div class="p-3">
+                <div style="float: right;"><img src="https://secure.gravatar.com/avatar/2396211a8d1f6af59f051a3de368c223?d=identicon"></div>
+                <h4>Author</h4>
+                <p>lawsontn</p>
+                <h4>Related Workflows</h4>
+                <p>
+                    <a href="/workflows/list_published">All published workflows</a><br>
+                    <a href="/workflows/list_published?f-username=lawsontn">Published workflows by lawsontn</a>
+                <h4>Rating</h4>
+                
+                <div style="padding-bottom: 0.75em; float: left">
+                    Community<br>
+                    <span style="font-size:80%">
+                        (<span id="num_ratings">0</span> ratings,
+                         <span id="ave_rating">0.0</span> average)
+                    <span>
+                </div>
+                <div style="float: right">
+                    <input name="star1" type="radio" class="community_rating_star star" disabled="disabled" value="1"
+                    />
+                    <input name="star1" type="radio" class="community_rating_star star" disabled="disabled" value="2"
+                    />
+                    <input name="star1" type="radio" class="community_rating_star star" disabled="disabled" value="3"
+                    />
+                    <input name="star1" type="radio" class="community_rating_star star" disabled="disabled" value="4"
+                    />
+                    <input name="star1" type="radio" class="community_rating_star star" disabled="disabled" value="5"
+                    />
+                </div>
+                <div style="clear: both;"></div>
+                <div style="clear: both;"></div>
+                <h4>Tags</h4>
+                <p>
+                <div>
+                    Community:
+                    
+    
+    
+    
+    
+    
+    <div id="tags-community-workflow-0aab0e4c25198ad8"></div>
+
+    <script type="text/javascript">
+        config.addInitialization(function(galaxy, config) {
+            var container = document.getElementById("tags-community-workflow-0aab0e4c25198ad8");
+            var options = {
+                tags: [],
+                id: "0aab0e4c25198ad8",
+                itemClass: "StoredWorkflow",
+                context: "None",
+                tagClickFn: "community_tag_click",
+                clickUrl: "/workflows/list_published",
+                disabled: true
+            }
+            bundleEntries.mountMakoTags(options, container);
+        });
+    </script>
+
+                        none
+                </div>
+            </div>
+        </div>
+    </div>
+
+                        <div class="unified-panel-footer">
+                            <div id="right-panel-collapse" class="panel-collapse right"></div>
+                            <div id="right-panel-drag" class="drag"></div>
+                        </div>
+                    </div><!--end right-->
+            </div><!--end columns-->
+        </div><!--end everything-->
+
+        <div id='dd-helper' style="display: none;"></div>
+        
+
+    <!--- base/base_panels.mako late_javascripts() -->
+
+    <script type="text/javascript">
+
+        var panelConfig = {
+            left_panel: false,
+            right_panel: true,
+            rightPanelSelector: '#right',
+            leftPanelSelector: '#left'
+        };
+
+        // "late javascripts"
+        config.addInitialization(function() {
+            console.log("base/base_panels.mako, panel init");
+            window.bundleEntries.panelManagement(panelConfig);
+        });
+
+    </script>
+
+
+
+
+    </body>
+</html>

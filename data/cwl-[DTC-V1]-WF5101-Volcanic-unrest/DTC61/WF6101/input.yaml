@@ -1,0 +1,3 @@
+job:
+  class: File
+  path: new_run_gpu_compss.sh

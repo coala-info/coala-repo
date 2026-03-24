@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Somatic-Variant-Discovery-from-WES-Data-Using-Control-FREEC</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Somatic-Variant-Discovery-from-WES-Data-Using-Control-FREEC.ga"
+      },
+      "datePublished": "2023-11-23 17:15:04 +0000",
+      "author": [
+        {
+          "@id": "#creator-1"
+        }
+      ],
+      "license": "GPL-3.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.676.1",
+      "url": "https://workflowhub.eu/workflows/676/ro_crate?version=1",
+      "name": "Research Object Crate for Somatic-Variant-Discovery-from-WES-Data-Using-Control-FREEC",
+      "description": "This workflow is created as part of a tutorial listed on GTN. The workflow shows the steps in human copy number variance detection using the Contrl_FREEC tool. ",
+      "isBasedOn": "https://usegalaxy.eu/u/khaled_jumah/w/somatic-variant-discovery-from-wes-data-using-control-freec",
+      "sdDatePublished": "2026-03-24 17:53:12 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "Somatic-Variant-Discovery-from-WES-Data-Using-Control-FREEC.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Somatic-Variant-Discovery-from-WES-Data-Using-Control-FREEC.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 70117,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "This workflow is created as part of a tutorial listed on GTN. The workflow shows the steps in human copy number variance detection using the Contrl_FREEC tool. ",
+      "name": "Somatic-Variant-Discovery-from-WES-Data-Using-Control-FREEC",
+      "url": "https://workflowhub.eu/workflows/676?version=1",
+      "keywords": "hCNV, variant-analysis, MIRACUM",
+      "version": 1,
+      "license": "https://spdx.org/licenses/GPL-3.0",
+      "creator": [
+        {
+          "@id": "#khaled%20Jumah"
+        },
+        {
+          "@id": "#Katarzyna%20Kamieniecka"
+        },
+        {
+          "@id": "#Wolfgang%20Maier"
+        },
+        {
+          "@id": "#Krzysztof%20Poterlowicz"
+        },
+        {
+          "@id": "#poterlowicz-lab"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/12"
+      },
+      "dateCreated": "2023-11-23T17:19:43Z",
+      "dateModified": "2024-04-03T15:20:03Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.676.1",
+      "input": [
+        {
+          "@id": "#somatic_variant_discovery_from_wes_data_using_control_freec-inputs-Normal_r1.fastq.gz"
+        },
+        {
+          "@id": "#somatic_variant_discovery_from_wes_data_using_control_freec-inputs-Normal_r2.fastq.gz"
+        },
+        {
+          "@id": "#somatic_variant_discovery_from_wes_data_using_control_freec-inputs-Tumor_r1.fastq.gz"
+        },
+        {
+          "@id": "#somatic_variant_discovery_from_wes_data_using_control_freec-inputs-Tumor_r2.fastq.gz"
+        },
+        {
+          "@id": "#somatic_variant_discovery_from_wes_data_using_control_freec-inputs-capture_targets_chr5_12_17.bed"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#somatic_variant_discovery_from_wes_data_using_control_freec-outputs-out_ratio_log2_circos"
+        },
+        {
+          "@id": "#somatic_variant_discovery_from_wes_data_using_control_freec-outputs-out_chr_sorted_circos"
+        },
+        {
+          "@id": "#somatic_variant_discovery_from_wes_data_using_control_freec-outputs-output_png"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "#creator-1",
+      "@type": "Person",
+      "name": "poterlowicz-lab"
+    },
+    {
+      "@id": "#khaled Jumah",
+      "@type": "Person",
+      "name": "khaled Jumah"
+    },
+    {
+      "@id": "#Katarzyna Kamieniecka",
+      "@type": "Person",
+      "name": "Katarzyna Kamieniecka"
+    },
+    {
+      "@id": "#Wolfgang Maier",
+      "@type": "Person",
+      "name": "Wolfgang Maier"
+    },
+    {
+      "@id": "#Krzysztof Poterlowicz",
+      "@type": "Person",
+      "name": "Krzysztof Poterlowicz"
+    },
+    {
+      "@id": "#poterlowicz-lab",
+      "@type": "Person",
+      "name": "poterlowicz-lab"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/12",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Galaxy Training Network"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#somatic_variant_discovery_from_wes_data_using_control_freec-inputs-Normal_r1.fastq.gz",
+      "@type": "FormalParameter",
+      "name": "Normal_r1.fastq.gz",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#somatic_variant_discovery_from_wes_data_using_control_freec-inputs-Normal_r2.fastq.gz",
+      "@type": "FormalParameter",
+      "name": "Normal_r2.fastq.gz",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#somatic_variant_discovery_from_wes_data_using_control_freec-inputs-Tumor_r1.fastq.gz",
+      "@type": "FormalParameter",
+      "name": "Tumor_r1.fastq.gz",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#somatic_variant_discovery_from_wes_data_using_control_freec-inputs-Tumor_r2.fastq.gz",
+      "@type": "FormalParameter",
+      "name": "Tumor_r2.fastq.gz",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#somatic_variant_discovery_from_wes_data_using_control_freec-inputs-capture_targets_chr5_12_17.bed",
+      "@type": "FormalParameter",
+      "name": "capture_targets_chr5_12_17.bed",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#somatic_variant_discovery_from_wes_data_using_control_freec-outputs-out_ratio_log2_circos",
+      "@type": "FormalParameter",
+      "name": "out_ratio_log2_circos",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#somatic_variant_discovery_from_wes_data_using_control_freec-outputs-out_chr_sorted_circos",
+      "@type": "FormalParameter",
+      "name": "out_chr_sorted_circos",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#somatic_variant_discovery_from_wes_data_using_control_freec-outputs-output_png",
+      "@type": "FormalParameter",
+      "name": "output_png",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Somatic-Variant-Discovery-from-WES-Data-Using-Control-FREEC</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/676/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/676/ro_crate?version=1</a>
+
+
+<p>
+  This workflow is created as part of a tutorial listed on GTN. The workflow shows the steps in human copy number variance detection using the Contrl_FREEC tool. 
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd>poterlowicz-lab</dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>GPL-3.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Somatic-Variant-Discovery-from-WES-Data-Using-Control-FREEC.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Somatic-Variant-Discovery-from-WES-Data-Using-Control-FREEC.ga">Somatic-Variant-Discovery-from-WES-Data-Using-Control-FREEC</a>
+      
+        <br/>Size: 70117 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,143 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Obis%20marine%20indicators.ga"
+      },
+      "datePublished": "2024-02-15 11:56:30 +0000",
+      "author": [
+
+      ],
+      "license": "CC-BY-SA-4.0",
+      "identifier": "https://workflowhub.eu/workflows/758?version=1",
+      "url": "https://workflowhub.eu/workflows/758/ro_crate?version=1",
+      "name": "Research Object Crate for Calculating and visualizing OBIS marine biodiversity indicators",
+      "description": "Calculating and visualizing marine biodiversity indicators",
+      "sdDatePublished": "2026-03-24 17:50:27 +0000",
+      "hasPart": [
+        {
+          "@id": "Obis%20marine%20indicators.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Obis%20marine%20indicators.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 5916,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Calculating and visualizing marine biodiversity indicators",
+      "name": "Calculating and visualizing OBIS marine biodiversity indicators",
+      "url": "https://workflowhub.eu/workflows/758?version=1",
+      "keywords": "Ecology, Earth-system",
+      "version": 1,
+      "license": "https://spdx.org/licenses/CC-BY-SA-4.0",
+      "creator": {
+        "@id": "#Marie%20Josse"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/166"
+      },
+      "dateCreated": "2024-02-15T11:58:49Z",
+      "dateModified": "2025-11-06T13:18:06Z",
+      "isPartOf": [
+        {
+          "@id": "https://workflowhub.eu/collections/13"
+        },
+        {
+          "@id": "https://workflowhub.eu/collections/33"
+        }
+      ],
+      "input": {
+        "@id": "#calculating_and_visualizing_obis_marine_biodiversity_indicators-inputs-Occurrence.csv"
+      },
+      "output": [
+
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "#Marie Josse",
+      "@type": "Person",
+      "name": "Marie Josse"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/166",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "EuroScienceGateway"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/13",
+      "@type": "Collection",
+      "name": "Workflows in EuroScienceGateway"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/33",
+      "@type": "Collection",
+      "name": "Biodiversity &amp; ecology workflows"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#calculating_and_visualizing_obis_marine_biodiversity_indicators-inputs-Occurrence.csv",
+      "@type": "FormalParameter",
+      "name": "Occurrence.csv",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

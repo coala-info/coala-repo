@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for VVV2_align_PE</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "20231016_Galaxy-Workflow-VVV2_align_PE.ga"
+      },
+      "datePublished": "2023-10-16 12:58:56 +0100",
+      "author": [
+
+      ],
+      "license": "GPL-3.0",
+      "identifier": "https://workflowhub.eu/workflows/518?version=1",
+      "url": "https://workflowhub.eu/workflows/518/ro_crate?version=1",
+      "name": "Research Object Crate for VVV2_align_PE",
+      "description": "PAIRED-END workflow. Align reads on fasta reference/assembly using bwa mem, get a consensus, variants, mutation explanations.\n\nIMPORTANT: \n* For \"bcftools call\" consensus step, the --ploidy file is in \"Données partagées\" (Shared Data) and must be imported in your history to use the worflow by providing this file (tells bcftools to consider haploid variant calling). \n* SELECT THE MOST ADAPTED VADR MODEL for annotation (see vadr parameters).\n",
+      "isBasedOn": "https://github.com/ANSES-Ploufragan/vvv2_display",
+      "sdDatePublished": "2026-03-24 16:47:12 +0000",
+      "creativeWorkStatus": "Deprecated",
+      "hasPart": [
+        {
+          "@id": "20231016_Galaxy-Workflow-VVV2_align_PE.ga"
+        },
+        {
+          "@id": "vvv2_align_PE.png"
+        }
+      ]
+    },
+    {
+      "@id": "20231016_Galaxy-Workflow-VVV2_align_PE.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 31003,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "vvv2_align_PE.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "PAIRED-END workflow. Align reads on fasta reference/assembly using bwa mem, get a consensus, variants, mutation explanations.\n\nIMPORTANT: \n* For \"bcftools call\" consensus step, the --ploidy file is in \"Données partagées\" (Shared Data) and must be imported in your history to use the worflow by providing this file (tells bcftools to consider haploid variant calling). \n* SELECT THE MOST ADAPTED VADR MODEL for annotation (see vadr parameters).\n",
+      "name": "VVV2_align_PE",
+      "url": "https://workflowhub.eu/workflows/518?version=1",
+      "keywords": "paired-end, variant_calling, Annotation, Virus, Alignment, Bioinformatics, Galaxy, SNPs, covid-19, variant calling, workflow",
+      "version": 1,
+      "license": "https://spdx.org/licenses/GPL-3.0",
+      "creator": {
+        "@id": "https://orcid.org/0000-0002-1103-2425"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/170"
+      },
+      "dateCreated": "2023-06-28T09:52:35Z",
+      "dateModified": "2025-06-19T10:23:49Z",
+      "isPartOf": [
+
+      ],
+      "input": {
+        "@id": "#vvv2_align_pe-inputs-Ploidy%20file%20(Y%20for%20happloid)"
+      },
+      "output": [
+        {
+          "@id": "#vvv2_align_pe-outputs-_anonymous_output_1"
+        },
+        {
+          "@id": "#vvv2_align_pe-outputs-_anonymous_output_3"
+        },
+        {
+          "@id": "#vvv2_align_pe-outputs-_anonymous_output_4"
+        },
+        {
+          "@id": "#vvv2_align_pe-outputs-_anonymous_output_5"
+        },
+        {
+          "@id": "#vvv2_align_pe-outputs-_anonymous_output_6"
+        },
+        {
+          "@id": "#vvv2_align_pe-outputs-_anonymous_output_7"
+        },
+        {
+          "@id": "#vvv2_align_pe-outputs-_anonymous_output_8"
+        },
+        {
+          "@id": "#vvv2_align_pe-outputs-_anonymous_output_9"
+        },
+        {
+          "@id": "#vvv2_align_pe-outputs-_anonymous_output_10"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "vvv2_align_PE.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 236295
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-1103-2425",
+      "@type": "Person",
+      "name": "Fabrice Touzain"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/170",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "ANSES-Ploufragan"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#vvv2_align_pe-inputs-Ploidy file (Y for happloid)",
+      "@type": "FormalParameter",
+      "name": "Ploidy file (Y for happloid)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#vvv2_align_pe-outputs-_anonymous_output_1",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#vvv2_align_pe-outputs-_anonymous_output_3",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_3",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#vvv2_align_pe-outputs-_anonymous_output_4",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_4",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#vvv2_align_pe-outputs-_anonymous_output_5",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_5",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#vvv2_align_pe-outputs-_anonymous_output_6",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_6",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#vvv2_align_pe-outputs-_anonymous_output_7",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_7",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#vvv2_align_pe-outputs-_anonymous_output_8",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_8",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#vvv2_align_pe-outputs-_anonymous_output_9",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_9",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#vvv2_align_pe-outputs-_anonymous_output_10",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_10",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for VVV2_align_PE</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/518/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/518/ro_crate?version=1</a>
+
+
+  <img src="vvv2_align_PE.png" style="width: 100%;"/>
+
+<p>
+  PAIRED-END workflow. Align reads on fasta reference/assembly using bwa mem, get a consensus, variants, mutation explanations.
+
+IMPORTANT: 
+* For "bcftools call" consensus step, the --ploidy file is in "Données partagées" (Shared Data) and must be imported in your history to use the worflow by providing this file (tells bcftools to consider haploid variant calling). 
+* SELECT THE MOST ADAPTED VADR MODEL for annotation (see vadr parameters).
+
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>GPL-3.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_20231016_Galaxy-Workflow-VVV2_align_PE.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="20231016_Galaxy-Workflow-VVV2_align_PE.ga">VVV2_align_PE</a>
+      
+        <br/>Size: 31003 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_vvv2_align_PE.png">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="vvv2_align_PE.png">vvv2_align_PE.png</a>
+      
+        <br/>Size: 236295 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

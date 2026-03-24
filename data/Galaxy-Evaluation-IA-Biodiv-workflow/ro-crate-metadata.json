@@ -1,0 +1,160 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-Evaluation_IA-Biodiv_workflow.ga"
+      },
+      "datePublished": "2024-10-15 14:24:26 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-8504-068X"
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.1181.1",
+      "url": "https://workflowhub.eu/workflows/1181/ro_crate?version=1",
+      "name": "Research Object Crate for Evaluation IA-Biodiv workflow",
+      "description": "Workflow permettant de prendre en entrée les résultats du challenge IA-biodiv par tâche, le fichier de référence par tâche afin de faire tourner un jupyter notebook produisant les scores pour chaque consortium participant.",
+      "sdDatePublished": "2026-03-24 17:41:15 +0000",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-Evaluation_IA-Biodiv_workflow.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-Evaluation_IA-Biodiv_workflow.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 5173,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Workflow permettant de prendre en entrée les résultats du challenge IA-biodiv par tâche, le fichier de référence par tâche afin de faire tourner un jupyter notebook produisant les scores pour chaque consortium participant.",
+      "name": "Evaluation IA-Biodiv workflow",
+      "url": "https://workflowhub.eu/workflows/1181?version=1",
+      "keywords": "IA, Evaluation, Biodiversity",
+      "version": 1,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/51"
+        },
+        {
+          "@id": "#Daniel%20Caon%20(LNE)"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/19"
+      },
+      "dateCreated": "2024-10-15T13:25:50Z",
+      "dateModified": "2024-10-15T13:29:45Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.1181.1",
+      "input": [
+        {
+          "@id": "#evaluation_ia_biodiv_workflow-inputs-%23main/IABiodiv_DryRun_participant_v.tsv"
+        },
+        {
+          "@id": "#evaluation_ia_biodiv_workflow-inputs-%23main/Tn_attributes_REF.tsv"
+        }
+      ],
+      "output": [
+
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-8504-068X",
+      "@type": "Person",
+      "name": "Yvan Le Bras",
+      "identifier": "https://orcid.org/0000-0002-8504-068X"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/51",
+      "@type": "Person",
+      "name": "Yvan Le Bras"
+    },
+    {
+      "@id": "#Daniel Caon (LNE)",
+      "@type": "Person",
+      "name": "Daniel Caon (LNE)"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/19",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "PNDB"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#evaluation_ia_biodiv_workflow-inputs-#main/IABiodiv_DryRun_participant_v.tsv",
+      "@type": "FormalParameter",
+      "name": "#main/IABiodiv_DryRun_participant_v.tsv",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#evaluation_ia_biodiv_workflow-inputs-#main/Tn_attributes_REF.tsv",
+      "@type": "FormalParameter",
+      "name": "#main/Tn_attributes_REF.tsv",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

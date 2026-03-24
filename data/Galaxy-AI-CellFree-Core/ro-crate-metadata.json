@@ -1,0 +1,234 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-AI-CellFree_-_Core.ga"
+      },
+      "datePublished": "2025-10-21 15:57:33 +0100",
+      "author": [
+
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://workflowhub.eu/workflows/2003?version=1",
+      "url": "https://workflowhub.eu/workflows/2003/ro_crate?version=1",
+      "name": "Research Object Crate for AI-CellFree - Core",
+      "description": "",
+      "sdDatePublished": "2026-03-24 16:30:14 +0000",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-AI-CellFree_-_Core.ga"
+        },
+        {
+          "@id": "Capture%20d%E2%80%99%C3%A9cran%20du%202025-10-21%2016-56-47.png"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-AI-CellFree_-_Core.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 16033,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "Capture%20d%E2%80%99%C3%A9cran%20du%202025-10-21%2016-56-47.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "",
+      "name": "AI-CellFree - Core",
+      "url": "https://workflowhub.eu/workflows/2003?version=1",
+      "keywords": "",
+      "version": 1,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/358"
+      },
+      "dateCreated": "2025-10-21T14:59:45Z",
+      "dateModified": "2025-11-04T12:57:43Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#ai_cellfree___core-inputs-%23main/Fluo/Lumi%20values"
+        },
+        {
+          "@id": "#ai_cellfree___core-inputs-%23main/Reference%20file%20for%20calibration"
+        },
+        {
+          "@id": "#ai_cellfree___core-inputs-%23main/Sampling%20file"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#ai_cellfree___core-outputs-%23main/_anonymous_output_1"
+        },
+        {
+          "@id": "#ai_cellfree___core-outputs-%23main/_anonymous_output_2"
+        },
+        {
+          "@id": "#ai_cellfree___core-outputs-%23main/_anonymous_output_3"
+        },
+        {
+          "@id": "#ai_cellfree___core-outputs-%23main/_anonymous_output_4"
+        },
+        {
+          "@id": "#ai_cellfree___core-outputs-%23main/_anonymous_output_5"
+        },
+        {
+          "@id": "#ai_cellfree___core-outputs-%23main/_anonymous_output_6"
+        },
+        {
+          "@id": "#ai_cellfree___core-outputs-%23main/iCFree%20instructor%20-%20Instructions"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "Capture%20d%E2%80%99%C3%A9cran%20du%202025-10-21%2016-56-47.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 83563
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/358",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Cell Free"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#ai_cellfree___core-inputs-#main/Fluo/Lumi values",
+      "@type": "FormalParameter",
+      "name": "#main/Fluo/Lumi values",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ai_cellfree___core-inputs-#main/Reference file for calibration",
+      "@type": "FormalParameter",
+      "name": "#main/Reference file for calibration",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ai_cellfree___core-inputs-#main/Sampling file",
+      "@type": "FormalParameter",
+      "name": "#main/Sampling file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ai_cellfree___core-outputs-#main/_anonymous_output_1",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ai_cellfree___core-outputs-#main/_anonymous_output_2",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ai_cellfree___core-outputs-#main/_anonymous_output_3",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_3",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ai_cellfree___core-outputs-#main/_anonymous_output_4",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_4",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ai_cellfree___core-outputs-#main/_anonymous_output_5",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_5",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ai_cellfree___core-outputs-#main/_anonymous_output_6",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_6",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ai_cellfree___core-outputs-#main/iCFree instructor - Instructions",
+      "@type": "FormalParameter",
+      "name": "#main/iCFree instructor - Instructions",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

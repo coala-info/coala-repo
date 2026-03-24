@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Query a metaplasmidome database to identify and annotate plasmids in metagenomes</title>
+  <script type="application/ld+json">{
+  "@context": [
+    "https://w3id.org/ro/crate/1.1/context"
+  ],
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "https://training.galaxyproject.org/training-material/topics/microbiome/tutorials/metaplasmidome_query/workflows/metaplasmidome.html"
+      },
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.1"
+      }
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "https://training.galaxyproject.org/training-material/topics/microbiome/tutorials/metaplasmidome_query/workflows/metaplasmidome.html",
+      "@type": "Dataset",
+      "name": "Query a metaplasmidome database to identify and annotate plasmids in metagenomes",
+      "description": "This workflow query metagenomic raw data against a metaplasmidome database to identify plasmids and annotate them with genes, KO, PFAM\n\n## Associated Tutorial\n\nThis workflows is part of the tutorial [Query an annotated mobile genetic element database to identify and annotate genetic elements (e.g. plasmids) in metagenomics data](https://training.galaxyproject.org/training-material/topics/microbiome/tutorials/metaplasmidome_query/tutorial.html), available in the [GTN](https://training.galaxyproject.org)\n\n## Features\n\n* Includes [Galaxy Workflow Tests](https://training.galaxyproject.org/training-material/faqs/gtn/workflow_run_test.html)\n* Includes a [Galaxy Workflow Report](https://training.galaxyproject.org/training-material/faqs/galaxy/workflows_report_view.html)\n\n## Thanks to...\n\n**Workflow Author(s)**: Bérénice Batut, Nadia Goué\n\n**Tutorial Author(s)**: [Bérénice Batut](https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/), [Nadia Goué](https://training.galaxyproject.org/training-material/hall-of-fame/nagoue/), [Didier Debroas](https://training.galaxyproject.org/training-material/hall-of-fame/debroas/)\n\n**Tutorial Contributor(s)**: [Björn Grüning](https://training.galaxyproject.org/training-material/hall-of-fame/bgruening/), [Bérénice Batut](https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/)\n\n[![gtn star logo followed by the word workflows](https://training.galaxyproject.org/training-material/assets/branding/gtn-workflows.png)](https://training.galaxyproject.org/training-material/)",
+      "version": "1.0",
+      "license": "https://spdx.org/licenses/MIT",
+      "datePublished": "2025-06-02T09:46:42.318+00:00",
+      "mainEntity": {
+        "@id": "metaplasmidome.ga"
+      },
+      "hasPart": [
+        {
+          "@id": "metaplasmidome.ga"
+        },
+        {
+          "@id": "graph.png"
+        }
+      ]
+    },
+    {
+      "@id": "metaplasmidome.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0001-9852-1987"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-2750-1473"
+        }
+      ],
+      "name": "Query a metaplasmidome database to identify and annotate plasmids in metagenomes",
+      "programmingLanguage": {
+        "@id": "https://w3id.org/workflowhub/workflow-ro-crate#galaxy"
+      },
+      "image": {
+        "@id": "graph.png"
+      }
+    },
+    {
+      "@id": "graph.png",
+      "@type": [
+        "File",
+        "ImageObject",
+        "WorkflowSketch"
+      ],
+      "contentSize": 275538
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate#galaxy",
+      "@type": "ComputerLanguage",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "name": "Galaxy",
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "version": "23.1"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-9852-1987",
+      "@type": "Person",
+      "name": "Bérénice Batut"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-2750-1473",
+      "@type": "Person",
+      "name": "Nadia Goué"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/ResearchObject/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <meta charset="utf-8">
+</head>
+<body>
+  <h1>Query a metaplasmidome database to identify and annotate plasmids in metagenomes</h1>
+  
+  <p>
+    This workflow query metagenomic raw data against a metaplasmidome database to identify plasmids and annotate them with genes, KO, PFAM
+
+## Associated Tutorial
+
+This workflows is part of the tutorial [Query an annotated mobile genetic element database to identify and annotate genetic elements (e.g. plasmids) in metagenomics data](https://training.galaxyproject.org/training-material/topics/microbiome/tutorials/metaplasmidome_query/tutorial.html), available in the [GTN](https://training.galaxyproject.org)
+
+## Features
+
+* Includes [Galaxy Workflow Tests](https://training.galaxyproject.org/training-material/faqs/gtn/workflow_run_test.html)
+* Includes a [Galaxy Workflow Report](https://training.galaxyproject.org/training-material/faqs/galaxy/workflows_report_view.html)
+
+## Thanks to...
+
+**Workflow Author(s)**: Bérénice Batut, Nadia Goué
+
+**Tutorial Author(s)**: [Bérénice Batut](https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/), [Nadia Goué](https://training.galaxyproject.org/training-material/hall-of-fame/nagoue/), [Didier Debroas](https://training.galaxyproject.org/training-material/hall-of-fame/debroas/)
+
+**Tutorial Contributor(s)**: [Björn Grüning](https://training.galaxyproject.org/training-material/hall-of-fame/bgruening/), [Bérénice Batut](https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/)
+
+[![gtn star logo followed by the word workflows](https://training.galaxyproject.org/training-material/assets/branding/gtn-workflows.png)](https://training.galaxyproject.org/training-material/)
+  </p>
+  <dl>
+    
+    
+    
+    
+      <dt>License</dt>
+      <dd>https://spdx.org/licenses/MIT</dd>
+    
+  </dl>
+
+  <h2>Contents</h2>
+  <ul>
+    
+      <li>
+        <strong>Query a metaplasmidome database to identify and annotate plasmids in metagenomes</strong>
+        
+        
+      </li>
+    
+      <li>
+        <strong>graph.png</strong>
+        
+          <br/>Size: 275538
+        
+        
+      </li>
+    
+  </ul>
+</body>
+</html>

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Use Case 13: Novel Cell Surface Targets for Individual Cancer Patients Analyzed with Common Fund Datasets</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "workflow.cwl"
+      },
+      "datePublished": "2024-04-23 16:49:21 +0100",
+      "author": [
+
+      ],
+      "license": "CC-BY-NC-SA-4.0",
+      "identifier": "https://workflowhub.eu/workflows/814?version=1",
+      "url": "https://workflowhub.eu/workflows/814/ro_crate?version=1",
+      "name": "Research Object Crate for Use Case 13: Novel Cell Surface Targets for Individual Cancer Patients Analyzed with Common Fund Datasets",
+      "description": "The input to this workflow is a data matrix of gene expression that was collected from a pediatric patient tumor patient from the KidsFirst Common Fund program [1]. The RNA-seq samples are the columns of the matrix, and the rows are the raw expression gene count for all human coding genes (Table 1). This data matrix is fed into TargetRanger [2] to screen for targets which are highly expressed in the tumor but lowly expressed across most healthy human tissues based on gene expression data collected from postmortem patients with RNA-seq by the GTEx Common Fund program [3]. Based on this analysis the gene IMP U3 small nucleolar ribonucleoprotein 3 (IMP3) was selected because it was the top candidate returned from the TargetRanger analysis (Tables 2-3). IMP3 is also commonly called insulin-like growth factor 2 mRNA-binding protein 3 (IGF2BP3). Next, we leverage unique knowledge from various other Common Fund programs to examine various functions and knowledge related to IMP3. First, we queried the LINCS L1000 data [4] from the LINCS program [5] converted into RNA-seq-like LINCS L1000 Signatures [6] using the SigCom LINCS API [7] to identify mimicker or reverser small molecules that maximally impact the expression of IMP3 in human cell lines (Fig. 1, Table 4). In addition, we also queried the LINCS L1000 data to identify single gene CRISPR knockouts that down-regulate the expression of IMP3 (Fig. 1, Table 5). These potential drug targets were filtered using the Common Fund IDG program's list of understudied proteins [8] to produce a set of additional targets (Table 6). Next, IMP3 was searched for knowledge provided by the with the Metabolomics Workbench MetGENE tool [9]. MetGENE aggregates knowledge about pathways, reactions, metabolites, and studies from the Metabolomics Workbench Common Fund supported resource [10]. The Metabolomics Workbench was searched to find associated metabolites linked to IMP3 [10]. Furthermore, we leveraged the Linked Data Hub API [11] to list knowledge about regulatory elements associated with IMP3 (Table 6). Finally, the GlyGen database [12] was queried to identify relevant sets of proteins that are the product of the IMP3 genes, as well as known post-translational modifications discovered on IMP3.\n\n1. Lonsdale, J. et al. The Genotype-Tissue Expression (GTEx) project. Nature Genetics vol. 45 580–585 (2013). doi:10.1038/ng.2653\n2. Evangelista, J. E. et al. SigCom LINCS: data and metadata search engine for a million gene expression signatures. Nucleic Acids Research vol. 50 W697–W709 (2022). doi:10.1093/nar/gkac328\n3. IDG Understudied Proteins, https://druggablegenome.net/AboutIDGProteinList\n4. MetGENE, https://sc-cfdewebdev.sdsc.edu/MetGENE/metGene.php\n5. The Metabolomics Workbench, https://www.metabolomicsworkbench.org/\n6. Linked Data Hub, https://ldh.genome.network/cfde/ldh/\n7. York, W. S. et al. GlyGen: Computational and Informatics Resources for Glycoscience. Glycobiology vol. 30 72–73 (2019). doi:10.1093/glycob/cwz080",
+      "sdDatePublished": "2026-03-24 01:04:41 +0000",
+      "creativeWorkStatus": "Work-in-progress",
+      "hasPart": [
+        {
+          "@id": "workflow.cwl"
+        },
+        {
+          "@id": "workflow-814-7d7d4ea1ceb21c3d7370ae29806321a98a616fae-diagram.svg"
+        },
+        {
+          "@id": "https://playbook-workflow-builder.cloud/report/63d937db-8082-78f3-4961-57f814a0d0ef"
+        }
+      ]
+    },
+    {
+      "@id": "workflow.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 8205,
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "image": {
+        "@id": "workflow-814-7d7d4ea1ceb21c3d7370ae29806321a98a616fae-diagram.svg"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "The input to this workflow is a data matrix of gene expression that was collected from a pediatric patient tumor patient from the KidsFirst Common Fund program [1]. The RNA-seq samples are the columns of the matrix, and the rows are the raw expression gene count for all human coding genes (Table 1). This data matrix is fed into TargetRanger [2] to screen for targets which are highly expressed in the tumor but lowly expressed across most healthy human tissues based on gene expression data collected from postmortem patients with RNA-seq by the GTEx Common Fund program [3]. Based on this analysis the gene IMP U3 small nucleolar ribonucleoprotein 3 (IMP3) was selected because it was the top candidate returned from the TargetRanger analysis (Tables 2-3). IMP3 is also commonly called insulin-like growth factor 2 mRNA-binding protein 3 (IGF2BP3). Next, we leverage unique knowledge from various other Common Fund programs to examine various functions and knowledge related to IMP3. First, we queried the LINCS L1000 data [4] from the LINCS program [5] converted into RNA-seq-like LINCS L1000 Signatures [6] using the SigCom LINCS API [7] to identify mimicker or reverser small molecules that maximally impact the expression of IMP3 in human cell lines (Fig. 1, Table 4). In addition, we also queried the LINCS L1000 data to identify single gene CRISPR knockouts that down-regulate the expression of IMP3 (Fig. 1, Table 5). These potential drug targets were filtered using the Common Fund IDG program's list of understudied proteins [8] to produce a set of additional targets (Table 6). Next, IMP3 was searched for knowledge provided by the with the Metabolomics Workbench MetGENE tool [9]. MetGENE aggregates knowledge about pathways, reactions, metabolites, and studies from the Metabolomics Workbench Common Fund supported resource [10]. The Metabolomics Workbench was searched to find associated metabolites linked to IMP3 [10]. Furthermore, we leveraged the Linked Data Hub API [11] to list knowledge about regulatory elements associated with IMP3 (Table 6). Finally, the GlyGen database [12] was queried to identify relevant sets of proteins that are the product of the IMP3 genes, as well as known post-translational modifications discovered on IMP3.\n\n1. Lonsdale, J. et al. The Genotype-Tissue Expression (GTEx) project. Nature Genetics vol. 45 580–585 (2013). doi:10.1038/ng.2653\n2. Evangelista, J. E. et al. SigCom LINCS: data and metadata search engine for a million gene expression signatures. Nucleic Acids Research vol. 50 W697–W709 (2022). doi:10.1093/nar/gkac328\n3. IDG Understudied Proteins, https://druggablegenome.net/AboutIDGProteinList\n4. MetGENE, https://sc-cfdewebdev.sdsc.edu/MetGENE/metGene.php\n5. The Metabolomics Workbench, https://www.metabolomicsworkbench.org/\n6. Linked Data Hub, https://ldh.genome.network/cfde/ldh/\n7. York, W. S. et al. GlyGen: Computational and Informatics Resources for Glycoscience. Glycobiology vol. 30 72–73 (2019). doi:10.1093/glycob/cwz080",
+      "name": "Use Case 13: Novel Cell Surface Targets for Individual Cancer Patients Analyzed with Common Fund Datasets",
+      "url": "https://workflowhub.eu/workflows/814?version=1",
+      "keywords": "",
+      "version": 1,
+      "license": "https://spdx.org/licenses/CC-BY-NC-SA-4.0",
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/201"
+      },
+      "dateCreated": "2024-04-16T21:42:58Z",
+      "dateModified": "2024-04-23T15:54:49Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#use_case_13__novel_cell_surface_targets_for_individual_cancer_patients_analyzed_with_common_fund_datasets-inputs-step-1-data"
+        },
+        {
+          "@id": "#use_case_13__novel_cell_surface_targets_for_individual_cancer_patients_analyzed_with_common_fund_datasets-inputs-step-4-data"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#use_case_13__novel_cell_surface_targets_for_individual_cancer_patients_analyzed_with_common_fund_datasets-outputs-step-1-output"
+        },
+        {
+          "@id": "#use_case_13__novel_cell_surface_targets_for_individual_cancer_patients_analyzed_with_common_fund_datasets-outputs-step-2-output"
+        },
+        {
+          "@id": "#use_case_13__novel_cell_surface_targets_for_individual_cancer_patients_analyzed_with_common_fund_datasets-outputs-step-3-output"
+        },
+        {
+          "@id": "#use_case_13__novel_cell_surface_targets_for_individual_cancer_patients_analyzed_with_common_fund_datasets-outputs-step-4-output"
+        },
+        {
+          "@id": "#use_case_13__novel_cell_surface_targets_for_individual_cancer_patients_analyzed_with_common_fund_datasets-outputs-step-5-output"
+        },
+        {
+          "@id": "#use_case_13__novel_cell_surface_targets_for_individual_cancer_patients_analyzed_with_common_fund_datasets-outputs-step-6-output"
+        },
+        {
+          "@id": "#use_case_13__novel_cell_surface_targets_for_individual_cancer_patients_analyzed_with_common_fund_datasets-outputs-step-7-output"
+        },
+        {
+          "@id": "#use_case_13__novel_cell_surface_targets_for_individual_cancer_patients_analyzed_with_common_fund_datasets-outputs-step-8-output"
+        },
+        {
+          "@id": "#use_case_13__novel_cell_surface_targets_for_individual_cancer_patients_analyzed_with_common_fund_datasets-outputs-step-9-output"
+        },
+        {
+          "@id": "#use_case_13__novel_cell_surface_targets_for_individual_cancer_patients_analyzed_with_common_fund_datasets-outputs-step-10-output"
+        },
+        {
+          "@id": "#use_case_13__novel_cell_surface_targets_for_individual_cancer_patients_analyzed_with_common_fund_datasets-outputs-step-11-output"
+        },
+        {
+          "@id": "#use_case_13__novel_cell_surface_targets_for_individual_cancer_patients_analyzed_with_common_fund_datasets-outputs-step-12-output"
+        },
+        {
+          "@id": "#use_case_13__novel_cell_surface_targets_for_individual_cancer_patients_analyzed_with_common_fund_datasets-outputs-step-13-output"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "workflow-814-7d7d4ea1ceb21c3d7370ae29806321a98a616fae-diagram.svg",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 32077
+    },
+    {
+      "@id": "https://playbook-workflow-builder.cloud/report/63d937db-8082-78f3-4961-57f814a0d0ef",
+      "@type": "File"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/201",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "NIH CFDE Playbook Workflow Partnership"
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#use_case_13__novel_cell_surface_targets_for_individual_cancer_patients_analyzed_with_common_fund_datasets-inputs-step-1-data",
+      "@type": "FormalParameter",
+      "name": "Input File",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#use_case_13__novel_cell_surface_targets_for_individual_cancer_patients_analyzed_with_common_fund_datasets-inputs-step-4-data",
+      "@type": "FormalParameter",
+      "name": "Select One Gene",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#use_case_13__novel_cell_surface_targets_for_individual_cancer_patients_analyzed_with_common_fund_datasets-outputs-step-1-output",
+      "@type": "FormalParameter",
+      "name": "File URL",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#use_case_13__novel_cell_surface_targets_for_individual_cancer_patients_analyzed_with_common_fund_datasets-outputs-step-2-output",
+      "@type": "FormalParameter",
+      "name": "Gene Count Matrix",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#use_case_13__novel_cell_surface_targets_for_individual_cancer_patients_analyzed_with_common_fund_datasets-outputs-step-3-output",
+      "@type": "FormalParameter",
+      "name": "Scored Genes",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#use_case_13__novel_cell_surface_targets_for_individual_cancer_patients_analyzed_with_common_fund_datasets-outputs-step-4-output",
+      "@type": "FormalParameter",
+      "name": "Gene",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#use_case_13__novel_cell_surface_targets_for_individual_cancer_patients_analyzed_with_common_fund_datasets-outputs-step-5-output",
+      "@type": "FormalParameter",
+      "name": "LINCS L1000 Reverse Search Dashboard",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#use_case_13__novel_cell_surface_targets_for_individual_cancer_patients_analyzed_with_common_fund_datasets-outputs-step-6-output",
+      "@type": "FormalParameter",
+      "name": "Scored Drugs",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#use_case_13__novel_cell_surface_targets_for_individual_cancer_patients_analyzed_with_common_fund_datasets-outputs-step-7-output",
+      "@type": "FormalParameter",
+      "name": "Scored Genes",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#use_case_13__novel_cell_surface_targets_for_individual_cancer_patients_analyzed_with_common_fund_datasets-outputs-step-8-output",
+      "@type": "FormalParameter",
+      "name": "Scored Genes",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#use_case_13__novel_cell_surface_targets_for_individual_cancer_patients_analyzed_with_common_fund_datasets-outputs-step-9-output",
+      "@type": "FormalParameter",
+      "name": "MetGENE Summary",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#use_case_13__novel_cell_surface_targets_for_individual_cancer_patients_analyzed_with_common_fund_datasets-outputs-step-10-output",
+      "@type": "FormalParameter",
+      "name": "MetGENE metabolite table",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#use_case_13__novel_cell_surface_targets_for_individual_cancer_patients_analyzed_with_common_fund_datasets-outputs-step-11-output",
+      "@type": "FormalParameter",
+      "name": "MetGENE Reaction Table",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#use_case_13__novel_cell_surface_targets_for_individual_cancer_patients_analyzed_with_common_fund_datasets-outputs-step-12-output",
+      "@type": "FormalParameter",
+      "name": "Regulatory Element Set",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#use_case_13__novel_cell_surface_targets_for_individual_cancer_patients_analyzed_with_common_fund_datasets-outputs-step-13-output",
+      "@type": "FormalParameter",
+      "name": "GlyGen Protein Products",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Use Case 13: Novel Cell Surface Targets for Individual Cancer Patients Analyzed with Common Fund Datasets</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/814/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/814/ro_crate?version=1</a>
+
+
+  <img src="workflow-814-7d7d4ea1ceb21c3d7370ae29806321a98a616fae-diagram.svg" style="width: 100%;"/>
+
+<p>
+  The input to this workflow is a data matrix of gene expression that was collected from a pediatric patient tumor patient from the KidsFirst Common Fund program [1]. The RNA-seq samples are the columns of the matrix, and the rows are the raw expression gene count for all human coding genes (Table 1). This data matrix is fed into TargetRanger [2] to screen for targets which are highly expressed in the tumor but lowly expressed across most healthy human tissues based on gene expression data collected from postmortem patients with RNA-seq by the GTEx Common Fund program [3]. Based on this analysis the gene IMP U3 small nucleolar ribonucleoprotein 3 (IMP3) was selected because it was the top candidate returned from the TargetRanger analysis (Tables 2-3). IMP3 is also commonly called insulin-like growth factor 2 mRNA-binding protein 3 (IGF2BP3). Next, we leverage unique knowledge from various other Common Fund programs to examine various functions and knowledge related to IMP3. First, we queried the LINCS L1000 data [4] from the LINCS program [5] converted into RNA-seq-like LINCS L1000 Signatures [6] using the SigCom LINCS API [7] to identify mimicker or reverser small molecules that maximally impact the expression of IMP3 in human cell lines (Fig. 1, Table 4). In addition, we also queried the LINCS L1000 data to identify single gene CRISPR knockouts that down-regulate the expression of IMP3 (Fig. 1, Table 5). These potential drug targets were filtered using the Common Fund IDG program's list of understudied proteins [8] to produce a set of additional targets (Table 6). Next, IMP3 was searched for knowledge provided by the with the Metabolomics Workbench MetGENE tool [9]. MetGENE aggregates knowledge about pathways, reactions, metabolites, and studies from the Metabolomics Workbench Common Fund supported resource [10]. The Metabolomics Workbench was searched to find associated metabolites linked to IMP3 [10]. Furthermore, we leveraged the Linked Data Hub API [11] to list knowledge about regulatory elements associated with IMP3 (Table 6). Finally, the GlyGen database [12] was queried to identify relevant sets of proteins that are the product of the IMP3 genes, as well as known post-translational modifications discovered on IMP3.
+
+1. Lonsdale, J. et al. The Genotype-Tissue Expression (GTEx) project. Nature Genetics vol. 45 580–585 (2013). doi:10.1038/ng.2653
+2. Evangelista, J. E. et al. SigCom LINCS: data and metadata search engine for a million gene expression signatures. Nucleic Acids Research vol. 50 W697–W709 (2022). doi:10.1093/nar/gkac328
+3. IDG Understudied Proteins, https://druggablegenome.net/AboutIDGProteinList
+4. MetGENE, https://sc-cfdewebdev.sdsc.edu/MetGENE/metGene.php
+5. The Metabolomics Workbench, https://www.metabolomicsworkbench.org/
+6. Linked Data Hub, https://ldh.genome.network/cfde/ldh/
+7. York, W. S. et al. GlyGen: Computational and Informatics Resources for Glycoscience. Glycobiology vol. 30 72–73 (2019). doi:10.1093/glycob/cwz080
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>CC-BY-NC-SA-4.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_workflow.cwl">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="workflow.cwl">Use Case 13: Novel Cell Surface Targets for Individual Cancer Patients Analyzed with Common Fund Datasets</a>
+      
+        <br/>Size: 8205 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_workflow-814-7d7d4ea1ceb21c3d7370ae29806321a98a616fae-diagram.svg">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="workflow-814-7d7d4ea1ceb21c3d7370ae29806321a98a616fae-diagram.svg">workflow-814-7d7d4ea1ceb21c3d7370ae29806321a98a616fae-diagram.svg</a>
+      
+        <br/>Size: 32077 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_https://playbook-workflow-builder.cloud/report/63d937db-8082-78f3-4961-57f814a0d0ef">
+      
+      
+      
+      <a class="data-entity-link" href="https://playbook-workflow-builder.cloud/report/63d937db-8082-78f3-4961-57f814a0d0ef">https://playbook-workflow-builder.cloud/report/63d937db-8082-78f3-4961-57f814a0d0ef</a>
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-clonal_population.ga"
+      },
+      "datePublished": "2025-05-26 11:28:02 +0100",
+      "author": [
+
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.1355.1",
+      "url": "https://workflowhub.eu/workflows/1355/ro_crate?version=1",
+      "name": "Research Object Crate for Clonal population analysis for TracerX study",
+      "description": "The Galaxy workflow for clonal population analysis was designed to process patient mutation data extracted from cBioPortal, specifically using the TracerX study as an example. This workflow, part of the deliverable D3.2 for EOSC4Cancer developed at UiO, begins with a raw patient mutation table from cBioPortal, where modifications and formatting occur to prepare the data for analysis. Some data, notably the copy number alterations (referred to as \"All_CN\"), were manually uploaded to Galaxy to complement the mutation data, as this information was missing in cBioPortal.\n\nThe workflow facilitates the integration of various datasets by utilizing tools that enable the easy export of processed data back to cBioPortal for comparison and further analysis. Key steps in the workflow include:\n* **Data Input**: The raw mutation data from cBioPortal and the uploaded copy number alteration data are ingested.\n* **Query Tabular**: This step extracts and formats the necessary data for PyClone-VI, a tool used for inferring clonal population structures.\n* **Data Merging and Filtering**: The workflow merges mutation data with copy number data and filters incomplete entries to ensure quality inputs for analysis.\n* **Running PyClone-VI**: The formatted data is then analyzed using PyClone-VI to model clonal evolution.\n* **Visualization**: Outputs from PyClone-VI are visualized through cellular prevalence graphs to illustrate clonal dynamics over time.\n* **Export to cBioPortal**: Finally, the results, along with relevant plots, are exported back to cBioPortal, allowing researchers to link findings directly within the resource.\n\nThe design of this workflow enhances the analytical capabilities available to researchers by integrating diverse cancer data and providing a seamless pathway for data management and visualization across platforms, all achieved as part of the EOSC4Cancer initiative.\n\n**Requirements**\n\nTo successfully deploy the Galaxy workflow and the associated components, the following requirements must be met:\n* **Intermediary Server**: A custom server developed to act as a bridge between cBioPortal and Galaxy. This server handles API requests from cBioPortal and interacts with Galaxy using Bioblend. It is essential for the integration of the two platforms.\n* **Docker**: The workflow components can be orchestrated using Docker. \n\nA full example of the setup can be found at the following repository: https://github.com/elixir-oslo/cbioportal-docker-compose\n\nFor more details on the tools and wrappers used in this workflow, please visit our GitHub repositories:\ncBioPortal Frontend: https://github.com/cBioPortal/cbioportal-frontend\ncBioPortal Backend: https://github.com/cBioPortal/cbioportal/tree/tmr\nWrapper for PyClone-VI: https://github.com/iuc/galaxy-tool-pyclone-vi\nIntermediary Server: https://github.com/your-repo/cbioportal-galaxy-connector\nPlotting for PyClone-VI Output: https://github.com/your-repo/galaxy-tool-plot-cluster-prevalence\nExport Resource Image to cBioPortal: https://github.com/your-repo/galaxy-tool-export-cbioportal-image\nExport Timeline Data to cBioPortal: https://github.com/your-repo/galaxy-tool-export-cbioportal-timeline\nGalaxy Server with Tools: https://github.com/your-repo/docker-galaxy-pyclone",
+      "sdDatePublished": "2026-03-24 19:27:38 +0000",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-clonal_population.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-clonal_population.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 21670,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "The Galaxy workflow for clonal population analysis was designed to process patient mutation data extracted from cBioPortal, specifically using the TracerX study as an example. This workflow, part of the deliverable D3.2 for EOSC4Cancer developed at UiO, begins with a raw patient mutation table from cBioPortal, where modifications and formatting occur to prepare the data for analysis. Some data, notably the copy number alterations (referred to as \"All_CN\"), were manually uploaded to Galaxy to complement the mutation data, as this information was missing in cBioPortal.\n\nThe workflow facilitates the integration of various datasets by utilizing tools that enable the easy export of processed data back to cBioPortal for comparison and further analysis. Key steps in the workflow include:\n* **Data Input**: The raw mutation data from cBioPortal and the uploaded copy number alteration data are ingested.\n* **Query Tabular**: This step extracts and formats the necessary data for PyClone-VI, a tool used for inferring clonal population structures.\n* **Data Merging and Filtering**: The workflow merges mutation data with copy number data and filters incomplete entries to ensure quality inputs for analysis.\n* **Running PyClone-VI**: The formatted data is then analyzed using PyClone-VI to model clonal evolution.\n* **Visualization**: Outputs from PyClone-VI are visualized through cellular prevalence graphs to illustrate clonal dynamics over time.\n* **Export to cBioPortal**: Finally, the results, along with relevant plots, are exported back to cBioPortal, allowing researchers to link findings directly within the resource.\n\nThe design of this workflow enhances the analytical capabilities available to researchers by integrating diverse cancer data and providing a seamless pathway for data management and visualization across platforms, all achieved as part of the EOSC4Cancer initiative.\n\n**Requirements**\n\nTo successfully deploy the Galaxy workflow and the associated components, the following requirements must be met:\n* **Intermediary Server**: A custom server developed to act as a bridge between cBioPortal and Galaxy. This server handles API requests from cBioPortal and interacts with Galaxy using Bioblend. It is essential for the integration of the two platforms.\n* **Docker**: The workflow components can be orchestrated using Docker. \n\nA full example of the setup can be found at the following repository: https://github.com/elixir-oslo/cbioportal-docker-compose\n\nFor more details on the tools and wrappers used in this workflow, please visit our GitHub repositories:\ncBioPortal Frontend: https://github.com/cBioPortal/cbioportal-frontend\ncBioPortal Backend: https://github.com/cBioPortal/cbioportal/tree/tmr\nWrapper for PyClone-VI: https://github.com/iuc/galaxy-tool-pyclone-vi\nIntermediary Server: https://github.com/your-repo/cbioportal-galaxy-connector\nPlotting for PyClone-VI Output: https://github.com/your-repo/galaxy-tool-plot-cluster-prevalence\nExport Resource Image to cBioPortal: https://github.com/your-repo/galaxy-tool-export-cbioportal-image\nExport Timeline Data to cBioPortal: https://github.com/your-repo/galaxy-tool-export-cbioportal-timeline\nGalaxy Server with Tools: https://github.com/your-repo/docker-galaxy-pyclone",
+      "name": "Clonal population analysis for TracerX study",
+      "url": "https://workflowhub.eu/workflows/1355?version=1",
+      "keywords": "",
+      "version": 1,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/334"
+      },
+      "dateCreated": "2025-05-09T14:07:37Z",
+      "dateModified": "2025-05-26T10:30:37Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.1355.1",
+      "input": [
+
+      ],
+      "output": [
+
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/334",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "EOSC4Cancer"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

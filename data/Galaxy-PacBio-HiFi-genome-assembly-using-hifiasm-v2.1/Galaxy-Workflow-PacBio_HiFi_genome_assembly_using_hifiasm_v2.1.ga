@@ -1,0 +1,683 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "Assembly, visualisation and quality control workflow for high fidelity reads built from circular consensus sequence (PacBio HiFi) data.",
+    "creator": [
+        {
+            "class": "Person",
+            "identifier": "",
+            "name": "Gareth Price"
+        },
+        {
+            "class": "Person",
+            "identifier": "https://orcid.org/0000-0002-9009-7453",
+            "name": "Katherine Farquharson"
+        }
+    ],
+    "format-version": "0.1",
+    "license": "GPL-3.0-or-later",
+    "name": "PacBio HiFi genome assembly using hifiasm v2.1",
+    "report": {
+        "markdown": "\n# Workflow Report\n\nTest Language Output - Gareth is excited\n\n```galaxy\ngenerate_galaxy_version()\n```\n\n```galaxy\ngenerate_time()\n```\n\nBandage Graph of Primary HiFiASM result\n```galaxy\nhistory_dataset_as_image(output=\"PrimaryHifiASM\")\n```\n\nI'd like to see final FASTA metrics\n\n\n```galaxy\nhistory_dataset_peek(output=\"metrics\")\n```\nGareth is very happy\n"
+    },
+    "steps": {
+        "0": {
+            "annotation": "The FASTQ input to hifiasm can be sourced from the \"BAM to FASTQ + QC\" sub workflow. ",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "The FASTQ input to hifiasm can be sourced from the \"BAM to FASTQ + QC\" sub workflow. ",
+                    "name": "FASTQ input"
+                }
+            ],
+            "label": "FASTQ input",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 0,
+                "top": 529.6666870117188
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "3c8c96ad-0f37-46af-aac9-339790293885",
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/galaxy-australia/hifiadapterfilt/hifiadapterfilt/2.0.0+galaxy0",
+            "errors": null,
+            "id": 1,
+            "input_connections": {
+                "input_file": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "HiFi Adapter Filter",
+            "outputs": [
+                {
+                    "name": "cleanfastq",
+                    "type": "fastq.gz"
+                },
+                {
+                    "name": "blastout",
+                    "type": "tabular"
+                },
+                {
+                    "name": "blocklist",
+                    "type": "txt"
+                },
+                {
+                    "name": "stats",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "left": 346.23333740234375,
+                "top": 435.7166748046875
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxy-australia/hifiadapterfilt/hifiadapterfilt/2.0.0+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "41f5b4a4eac0",
+                "name": "hifiadapterfilt",
+                "owner": "galaxy-australia",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"input_file\": {\"__class__\": \"ConnectedValue\"}, \"match_length\": \"44\", \"match_percentage\": \"97\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.0.0+galaxy0",
+            "type": "tool",
+            "uuid": "2131a1c7-2a2c-47eb-b753-31ac346a1791",
+            "workflow_outputs": [
+                {
+                    "label": "HiFi Adapter Filter on input dataset(s): clean reads",
+                    "output_name": "cleanfastq",
+                    "uuid": "8ae12bb3-90ee-4e38-82a9-e8610e73b934"
+                },
+                {
+                    "label": "HiFi Adapter Filter on input dataset(s): contaminant statistic",
+                    "output_name": "stats",
+                    "uuid": "962fda74-da6d-408e-9194-477238ec59ea"
+                },
+                {
+                    "label": "HiFi Adapter Filter on input dataset(s): contaminant blastout",
+                    "output_name": "blastout",
+                    "uuid": "57ff2080-44be-4470-91b9-78f48488797e"
+                },
+                {
+                    "label": "HiFi Adapter Filter on input dataset(s): blocklist",
+                    "output_name": "blocklist",
+                    "uuid": "7cfe7a9c-4a30-43a9-9dc5-95bd77a07713"
+                }
+            ]
+        },
+        "2": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/hifiasm/hifiasm/0.16.1+galaxy3",
+            "errors": null,
+            "id": 2,
+            "input_connections": {
+                "mode|reads": {
+                    "id": 1,
+                    "output_name": "cleanfastq"
+                }
+            },
+            "inputs": [],
+            "label": "hifiasm assembly",
+            "name": "Hifiasm",
+            "outputs": [
+                {
+                    "name": "raw_unitigs",
+                    "type": "gfa1"
+                },
+                {
+                    "name": "processed_unitigs",
+                    "type": "gfa1"
+                },
+                {
+                    "name": "primary_contig_graph",
+                    "type": "gfa1"
+                },
+                {
+                    "name": "alternate_contig_graph",
+                    "type": "gfa1"
+                }
+            ],
+            "position": {
+                "left": 640.316650390625,
+                "top": 421.4000244140625
+            },
+            "post_job_actions": {
+                "HideDatasetActionalternate_contig_graph": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "alternate_contig_graph"
+                },
+                "HideDatasetActionprimary_contig_graph": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "primary_contig_graph"
+                },
+                "HideDatasetActionprocessed_unitigs": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "processed_unitigs"
+                },
+                "HideDatasetActionraw_unitigs": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "raw_unitigs"
+                },
+                "TagDatasetActionalternate_contig_graph": {
+                    "action_arguments": {
+                        "tags": "alternate assembly contig graph"
+                    },
+                    "action_type": "TagDatasetAction",
+                    "output_name": "alternate_contig_graph"
+                },
+                "TagDatasetActionprimary_contig_graph": {
+                    "action_arguments": {
+                        "tags": "primary assembly contig graph"
+                    },
+                    "action_type": "TagDatasetAction",
+                    "output_name": "primary_contig_graph"
+                },
+                "TagDatasetActionprocessed_unitigs": {
+                    "action_arguments": {
+                        "tags": "processed unitig graph"
+                    },
+                    "action_type": "TagDatasetAction",
+                    "output_name": "processed_unitigs"
+                },
+                "TagDatasetActionraw_unitigs": {
+                    "action_arguments": {
+                        "tags": "haplotype resolved raw unitig graph"
+                    },
+                    "action_type": "TagDatasetAction",
+                    "output_name": "raw_unitigs"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/hifiasm/hifiasm/0.16.1+galaxy3",
+            "tool_shed_repository": {
+                "changeset_revision": "366a11d316a7",
+                "name": "hifiasm",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"advanced_options\": {\"advanced_selector\": \"blank\", \"__current_case__\": 0}, \"assembly_options\": {\"assembly_selector\": \"blank\", \"__current_case__\": 0}, \"filter_bits\": \"37\", \"hic_partition\": {\"hic_partition_selector\": \"blank\", \"__current_case__\": 0}, \"log_out\": \"false\", \"mode\": {\"mode_selector\": \"standard\", \"__current_case__\": 0, \"reads\": {\"__class__\": \"ConnectedValue\"}}, \"purge_options\": {\"purge_selector\": \"blank\", \"__current_case__\": 0}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.16.1+galaxy3",
+            "type": "tool",
+            "uuid": "d1d38547-63b9-4561-8691-22270e5e9e26",
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/bandage/bandage_info/0.8.1+galaxy1",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "input_file": {
+                    "id": 2,
+                    "output_name": "raw_unitigs"
+                }
+            },
+            "inputs": [],
+            "label": "Haplotype resolved Bandage info",
+            "name": "Bandage Info",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "left": 937.7833251953125,
+                "top": 8.333328247070312
+            },
+            "post_job_actions": {
+                "HideDatasetActionoutfile": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "outfile"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/bandage/bandage_info/0.8.1+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "b2860df42e16",
+                "name": "bandage",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"input_file\": {\"__class__\": \"ConnectedValue\"}, \"tsv\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.8.1+galaxy1",
+            "type": "tool",
+            "uuid": "f7ad5373-a85b-4ec4-aa3e-5f37929575b9",
+            "workflow_outputs": []
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/bandage/bandage_image/0.8.1+galaxy3",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "input_file": {
+                    "id": 2,
+                    "output_name": "raw_unitigs"
+                }
+            },
+            "inputs": [],
+            "label": "Haplotype resolved Bandage image",
+            "name": "Bandage Image",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "jpg"
+                }
+            ],
+            "position": {
+                "left": 939.5166015625,
+                "top": 196.25
+            },
+            "post_job_actions": {
+                "HideDatasetActionoutfile": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "outfile"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/bandage/bandage_image/0.8.1+galaxy3",
+            "tool_shed_repository": {
+                "changeset_revision": "b9e31c5c01c7",
+                "name": "bandage",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"fontsize\": null, \"height\": \"1000\", \"input_file\": {\"__class__\": \"ConnectedValue\"}, \"lengths\": \"false\", \"names\": \"false\", \"output_format\": \"jpg\", \"width\": null, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.8.1+galaxy3",
+            "type": "tool",
+            "uuid": "0d6c3373-703f-414d-bf99-9bce6a350f2e",
+            "workflow_outputs": []
+        },
+        "5": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/bandage/bandage_info/0.8.1+galaxy1",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "input_file": {
+                    "id": 2,
+                    "output_name": "processed_unitigs"
+                }
+            },
+            "inputs": [],
+            "label": "Processed unitig Bandage info",
+            "name": "Bandage Info",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "left": 1194.5166015625,
+                "top": 0.0
+            },
+            "post_job_actions": {
+                "HideDatasetActionoutfile": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "outfile"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/bandage/bandage_info/0.8.1+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "b2860df42e16",
+                "name": "bandage",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"input_file\": {\"__class__\": \"ConnectedValue\"}, \"tsv\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.8.1+galaxy1",
+            "type": "tool",
+            "uuid": "f8b26972-ff4d-404e-afdf-3e1363b3e606",
+            "workflow_outputs": []
+        },
+        "6": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/bandage/bandage_image/0.8.1+galaxy3",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "input_file": {
+                    "id": 2,
+                    "output_name": "processed_unitigs"
+                }
+            },
+            "inputs": [],
+            "label": "Processed unitig Bandage image",
+            "name": "Bandage Image",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "jpg"
+                }
+            ],
+            "position": {
+                "left": 1197.316650390625,
+                "top": 187.5
+            },
+            "post_job_actions": {
+                "HideDatasetActionoutfile": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "outfile"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/bandage/bandage_image/0.8.1+galaxy3",
+            "tool_shed_repository": {
+                "changeset_revision": "b9e31c5c01c7",
+                "name": "bandage",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"fontsize\": null, \"height\": \"1000\", \"input_file\": {\"__class__\": \"ConnectedValue\"}, \"lengths\": \"false\", \"names\": \"false\", \"output_format\": \"jpg\", \"width\": null, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.8.1+galaxy3",
+            "type": "tool",
+            "uuid": "12de5f86-392c-45a8-a4cc-a8f3dcd734cc",
+            "workflow_outputs": []
+        },
+        "7": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/bandage/bandage_info/0.8.1+galaxy1",
+            "errors": null,
+            "id": 7,
+            "input_connections": {
+                "input_file": {
+                    "id": 2,
+                    "output_name": "alternate_contig_graph"
+                }
+            },
+            "inputs": [],
+            "label": "Alternate assembly Bandage info",
+            "name": "Bandage Info",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "left": 985.6500244140625,
+                "top": 778.5
+            },
+            "post_job_actions": {
+                "HideDatasetActionoutfile": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "outfile"
+                },
+                "TagDatasetActionoutfile": {
+                    "action_arguments": {
+                        "tags": "alternate bandage info"
+                    },
+                    "action_type": "TagDatasetAction",
+                    "output_name": "outfile"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/bandage/bandage_info/0.8.1+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "b2860df42e16",
+                "name": "bandage",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"input_file\": {\"__class__\": \"ConnectedValue\"}, \"tsv\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.8.1+galaxy1",
+            "type": "tool",
+            "uuid": "cc3ac31c-0897-45cb-a7ac-4d51ef04e556",
+            "workflow_outputs": []
+        },
+        "8": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/bandage/bandage_info/0.8.1+galaxy1",
+            "errors": null,
+            "id": 8,
+            "input_connections": {
+                "input_file": {
+                    "id": 2,
+                    "output_name": "primary_contig_graph"
+                }
+            },
+            "inputs": [],
+            "label": "Primary assembly Bandage info",
+            "name": "Bandage Info",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "left": 1245.1500244140625,
+                "top": 387.25
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/bandage/bandage_info/0.8.1+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "b2860df42e16",
+                "name": "bandage",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"input_file\": {\"__class__\": \"ConnectedValue\"}, \"tsv\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.8.1+galaxy1",
+            "type": "tool",
+            "uuid": "1e0c4e91-34c0-497f-9b6c-10653a129f4c",
+            "workflow_outputs": [
+                {
+                    "label": "primary bandage info",
+                    "output_name": "outfile",
+                    "uuid": "4a73f0b3-b8e9-4895-a4a2-5899304ea076"
+                }
+            ]
+        },
+        "9": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/gfa_to_fa/gfa_to_fa/0.1.2",
+            "errors": null,
+            "id": 9,
+            "input_connections": {
+                "in_gfa": {
+                    "id": 2,
+                    "output_name": "primary_contig_graph"
+                }
+            },
+            "inputs": [],
+            "label": "Convert primary assembly GFA to FASTA",
+            "name": "GFA to FASTA",
+            "outputs": [
+                {
+                    "name": "out_fa",
+                    "type": "fasta"
+                }
+            ],
+            "position": {
+                "left": 1245.316650390625,
+                "top": 552.4166870117188
+            },
+            "post_job_actions": {
+                "RenameDatasetActionout_fa": {
+                    "action_arguments": {
+                        "newname": "#{in_gfa, basename}"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "out_fa"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/gfa_to_fa/gfa_to_fa/0.1.2",
+            "tool_shed_repository": {
+                "changeset_revision": "e33c82b63727",
+                "name": "gfa_to_fa",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"in_gfa\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1.2",
+            "type": "tool",
+            "uuid": "03bedda8-23db-4ca3-9043-dbb0d641e4a2",
+            "workflow_outputs": [
+                {
+                    "label": "converted FASTA",
+                    "output_name": "out_fa",
+                    "uuid": "1ec820ce-6a48-42cc-82e2-4a8ca7bf3742"
+                }
+            ]
+        },
+        "10": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/bandage/bandage_image/0.8.1+galaxy3",
+            "errors": null,
+            "id": 10,
+            "input_connections": {
+                "input_file": {
+                    "id": 2,
+                    "output_name": "alternate_contig_graph"
+                }
+            },
+            "inputs": [],
+            "label": "Alternate assembly Bandage image",
+            "name": "Bandage Image",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "jpg"
+                }
+            ],
+            "position": {
+                "left": 985.6500244140625,
+                "top": 964.5833740234375
+            },
+            "post_job_actions": {
+                "HideDatasetActionoutfile": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "outfile"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/bandage/bandage_image/0.8.1+galaxy3",
+            "tool_shed_repository": {
+                "changeset_revision": "b9e31c5c01c7",
+                "name": "bandage",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"fontsize\": null, \"height\": \"1000\", \"input_file\": {\"__class__\": \"ConnectedValue\"}, \"lengths\": \"false\", \"names\": \"false\", \"output_format\": \"jpg\", \"width\": null, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.8.1+galaxy3",
+            "type": "tool",
+            "uuid": "8b0c2396-d7b7-4af4-b76c-bfd61a1d9caa",
+            "workflow_outputs": []
+        },
+        "11": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/bandage/bandage_image/0.8.1+galaxy3",
+            "errors": null,
+            "id": 11,
+            "input_connections": {
+                "input_file": {
+                    "id": 2,
+                    "output_name": "primary_contig_graph"
+                }
+            },
+            "inputs": [],
+            "label": "Primary assembly Bandage image",
+            "name": "Bandage Image",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "jpg"
+                }
+            ],
+            "position": {
+                "left": 1246.816650390625,
+                "top": 696.0833129882812
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/bandage/bandage_image/0.8.1+galaxy3",
+            "tool_shed_repository": {
+                "changeset_revision": "b9e31c5c01c7",
+                "name": "bandage",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"fontsize\": null, \"height\": \"1000\", \"input_file\": {\"__class__\": \"ConnectedValue\"}, \"lengths\": \"false\", \"names\": \"false\", \"output_format\": \"jpg\", \"width\": null, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.8.1+galaxy3",
+            "type": "tool",
+            "uuid": "f64a0936-ad46-4ec8-b759-0b724d3e78bb",
+            "workflow_outputs": [
+                {
+                    "label": "primary bandage image",
+                    "output_name": "outfile",
+                    "uuid": "1e55ab8b-93a3-48ca-bd05-1c533853e5b2"
+                }
+            ]
+        },
+        "12": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/fasta_stats/fasta-stats/1.0.3",
+            "errors": null,
+            "id": 12,
+            "input_connections": {
+                "dataset": {
+                    "id": 9,
+                    "output_name": "out_fa"
+                }
+            },
+            "inputs": [],
+            "label": "Primary assembly Fasta Statistics",
+            "name": "Fasta Statistics",
+            "outputs": [
+                {
+                    "name": "stats",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 1560.3333740234375,
+                "top": 657.5833129882812
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/fasta_stats/fasta-stats/1.0.3",
+            "tool_shed_repository": {
+                "changeset_revision": "56022eb50bbd",
+                "name": "fasta_stats",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"dataset\": {\"__class__\": \"ConnectedValue\"}, \"genome_size\": null, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.3",
+            "type": "tool",
+            "uuid": "0bdfe948-7160-40d3-a2b6-ed01bbe33773",
+            "workflow_outputs": [
+                {
+                    "label": "metrics",
+                    "output_name": "stats",
+                    "uuid": "38f7875b-7794-41b8-9783-cbb81a82ef3f"
+                }
+            ]
+        }
+    },
+    "tags": [
+        "fastq",
+        "hifiasm",
+        "HiFi",
+        "genome_assembly"
+    ],
+    "uuid": "dc4571d6-e513-4f49-a86c-f597b75c948a",
+    "version": 3
+}

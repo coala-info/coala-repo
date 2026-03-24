@@ -1,0 +1,240 @@
+{
+  "@context": [
+    "https://w3id.org/ro/crate/1.1/context",
+    {
+      "GithubService": "https://w3id.org/ro/terms/test#GithubService",
+      "JenkinsService": "https://w3id.org/ro/terms/test#JenkinsService",
+      "PlanemoEngine": "https://w3id.org/ro/terms/test#PlanemoEngine",
+      "TestDefinition": "https://w3id.org/ro/terms/test#TestDefinition",
+      "TestInstance": "https://w3id.org/ro/terms/test#TestInstance",
+      "TestService": "https://w3id.org/ro/terms/test#TestService",
+      "TestSuite": "https://w3id.org/ro/terms/test#TestSuite",
+      "TravisService": "https://w3id.org/ro/terms/test#TravisService",
+      "definition": "https://w3id.org/ro/terms/test#definition",
+      "engineVersion": "https://w3id.org/ro/terms/test#engineVersion",
+      "instance": "https://w3id.org/ro/terms/test#instance",
+      "resource": "https://w3id.org/ro/terms/test#resource",
+      "runsOn": "https://w3id.org/ro/terms/test#runsOn"
+    }
+  ],
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.1"
+      }
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "datePublished": "2024-11-25T12:41:36.526572",
+      "hasPart": [
+        {
+          "@id": "QIIME2-III-V-Phylogeny-Rarefaction-Taxonomic-Analysis.ga"
+        },
+        {
+          "@id": "README.md"
+        },
+        {
+          "@id": "QIIME2-III-V-Phylogeny-Rarefaction-Taxonomic-Analysis-tests.yml"
+        },
+        {
+          "@id": "QIIME2-VI-diversity-metrics-and-estimations.ga"
+        },
+        {
+          "@id": "QIIME2-VI-diversity-metrics-and-estimations-tests.yml"
+        }
+      ],
+      "isBasedOn": "https://github.com/iwc-workflows/qiime2-III-VI-downsteam",
+      "license": "MIT",
+      "mainEntity": {
+        "@id": "QIIME2-III-V-Phylogeny-Rarefaction-Taxonomic-Analysis.ga"
+      },
+      "mentions": [
+        {
+          "@id": "#test_QIIME2-III-V-Phylogeny-Rarefaction-Taxonomic-Analysis_1"
+        },
+        {
+          "@id": "#test_QIIME2-VI-diversity-metrics-and-estimations_1"
+        }
+      ],
+      "name": "qiime2-III-VI-downsteam/QIIME2-III-V-Phylogeny-Rarefaction-Taxonomic-Analysis"
+    },
+    {
+      "@id": "QIIME2-III-V-Phylogeny-Rarefaction-Taxonomic-Analysis.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "creator": [
+        {
+          "@id": "#0009-0008-1496-1677"
+        },
+        {
+          "@id": "#04f8b126-6f20-4d32-89a8-579e8cc81540"
+        }
+      ],
+      "name": "qiime2-III-VI-downsteam/QIIME2-III-V-Phylogeny-Rarefaction-Taxonomic-Analysis",
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "url": "https://github.com/iwc-workflows/qiime2-III-VI-downsteam",
+      "version": "0.2"
+    },
+    {
+      "@id": "README.md",
+      "@type": "File"
+    },
+    {
+      "@id": "QIIME2-III-V-Phylogeny-Rarefaction-Taxonomic-Analysis-tests.yml",
+      "@type": [
+        "File",
+        "TestDefinition"
+      ],
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/terms/test#PlanemoEngine"
+      },
+      "engineVersion": ">=0.75.26"
+    },
+    {
+      "@id": "QIIME2-VI-diversity-metrics-and-estimations.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "creator": [
+        {
+          "@id": "#0009-0008-1496-1677"
+        },
+        {
+          "@id": "#00e660e5-be17-4351-98eb-7f384eb822fc"
+        }
+      ],
+      "name": "qiime2-III-VI-downsteam/QIIME2-VI-diversity-metrics-and-estimations",
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "url": "https://github.com/iwc-workflows/qiime2-III-VI-downsteam",
+      "version": "0.2"
+    },
+    {
+      "@id": "QIIME2-VI-diversity-metrics-and-estimations-tests.yml",
+      "@type": [
+        "File",
+        "TestDefinition"
+      ],
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/terms/test#PlanemoEngine"
+      },
+      "engineVersion": ">=0.75.26"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "name": "Galaxy",
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "version": "v19_09"
+    },
+    {
+      "@id": "#0009-0008-1496-1677",
+      "@type": "Person",
+      "name": "Debjyoti Ghosh"
+    },
+    {
+      "@id": "#04f8b126-6f20-4d32-89a8-579e8cc81540",
+      "@type": "Organization",
+      "name": "Helmholtz-Zentrum für Umweltforschung - UFZ"
+    },
+    {
+      "@id": "#test_QIIME2-III-V-Phylogeny-Rarefaction-Taxonomic-Analysis_1",
+      "@type": "TestSuite",
+      "definition": {
+        "@id": "QIIME2-III-V-Phylogeny-Rarefaction-Taxonomic-Analysis-tests.yml"
+      },
+      "instance": [
+        {
+          "@id": "#test_QIIME2-III-V-Phylogeny-Rarefaction-Taxonomic-Analysis_1_1"
+        }
+      ],
+      "mainEntity": {
+        "@id": "QIIME2-III-V-Phylogeny-Rarefaction-Taxonomic-Analysis.ga"
+      },
+      "name": "test_QIIME2-III-V-Phylogeny-Rarefaction-Taxonomic-Analysis_1"
+    },
+    {
+      "@id": "#test_QIIME2-III-V-Phylogeny-Rarefaction-Taxonomic-Analysis_1_1",
+      "@type": "TestInstance",
+      "name": "test_QIIME2-III-V-Phylogeny-Rarefaction-Taxonomic-Analysis_1_1",
+      "resource": "repos/iwc-workflows/qiime2-III-VI-downsteam/actions/workflows/wftest.yml",
+      "runsOn": {
+        "@id": "https://w3id.org/ro/terms/test#GithubService"
+      },
+      "url": "https://api.github.com"
+    },
+    {
+      "@id": "https://w3id.org/ro/terms/test#GithubService",
+      "@type": "TestService",
+      "name": "Github Actions",
+      "url": {
+        "@id": "https://github.com"
+      }
+    },
+    {
+      "@id": "https://w3id.org/ro/terms/test#PlanemoEngine",
+      "@type": "SoftwareApplication",
+      "name": "Planemo",
+      "url": {
+        "@id": "https://github.com/galaxyproject/planemo"
+      }
+    },
+    {
+      "@id": "#00e660e5-be17-4351-98eb-7f384eb822fc",
+      "@type": "Organization",
+      "name": "Helmholtz-Zentrum für Umweltforschung - UFZ"
+    },
+    {
+      "@id": "#test_QIIME2-VI-diversity-metrics-and-estimations_1",
+      "@type": "TestSuite",
+      "definition": {
+        "@id": "QIIME2-VI-diversity-metrics-and-estimations-tests.yml"
+      },
+      "instance": [
+        {
+          "@id": "#test_QIIME2-VI-diversity-metrics-and-estimations_1_1"
+        }
+      ],
+      "mainEntity": {
+        "@id": "QIIME2-VI-diversity-metrics-and-estimations.ga"
+      },
+      "name": "test_QIIME2-VI-diversity-metrics-and-estimations_1"
+    },
+    {
+      "@id": "#test_QIIME2-VI-diversity-metrics-and-estimations_1_1",
+      "@type": "TestInstance",
+      "name": "test_QIIME2-VI-diversity-metrics-and-estimations_1_1",
+      "resource": "repos/iwc-workflows/qiime2-III-VI-downsteam/actions/workflows/wftest.yml",
+      "runsOn": {
+        "@id": "https://w3id.org/ro/terms/test#GithubService"
+      },
+      "url": "https://api.github.com"
+    }
+  ]
+}

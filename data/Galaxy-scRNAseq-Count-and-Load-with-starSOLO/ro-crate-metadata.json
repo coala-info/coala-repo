@@ -1,0 +1,287 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "workflows/count_and_load_starsolo.ga"
+      },
+      "datePublished": "2024-05-30 06:00:44 +0100",
+      "author": [
+
+      ],
+      "license": "MIT",
+      "identifier": "https://workflowhub.eu/workflows/513?version=3",
+      "url": "https://workflowhub.eu/workflows/513/ro_crate?version=3",
+      "name": "Research Object Crate for scRNAseq: Count and Load with starSOLO",
+      "description": "Takes fastqs and reference data, to produce a single cell counts matrix into and save in annData format - adding a column called sample with the sample name.  ",
+      "isBasedOn": "https://github.com/swbioinf/scrnaseq_howto_ga_workflows.git",
+      "sdDatePublished": "2026-03-24 19:30:08 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "workflows/count_and_load_starsolo.ga"
+        }
+      ]
+    },
+    {
+      "@id": "workflows/count_and_load_starsolo.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 28457,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Takes fastqs and reference data, to produce a single cell counts matrix into and save in annData format - adding a column called sample with the sample name.  ",
+      "name": "scRNAseq: Count and Load with starSOLO",
+      "url": "https://workflowhub.eu/workflows/513?version=3",
+      "keywords": "scRNAseq",
+      "version": 3,
+      "license": "https://spdx.org/licenses/MIT",
+      "creator": [
+        {
+          "@id": "#Sarah%20Williams"
+        },
+        {
+          "@id": "#Mike%20Thang"
+        },
+        {
+          "@id": "#Valentine%20Murigneaux"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/41"
+      },
+      "dateCreated": "2024-05-30T05:47:35Z",
+      "dateModified": "2024-05-30T05:47:35Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/9"
+      },
+      "isBasedOn": "https://workflowhub.eu/workflows/513?version=2",
+      "input": [
+        {
+          "@id": "#scrnaseq__count_and_load_with_starsolo-inputs-%23main/Barcode%20Whitelist%20file"
+        },
+        {
+          "@id": "#scrnaseq__count_and_load_with_starsolo-inputs-%23main/Expected%20Cells"
+        },
+        {
+          "@id": "#scrnaseq__count_and_load_with_starsolo-inputs-%23main/Paired%20Fastqs%20for%20one%20sample"
+        },
+        {
+          "@id": "#scrnaseq__count_and_load_with_starsolo-inputs-%23main/Reference%20Genome%20fasta"
+        },
+        {
+          "@id": "#scrnaseq__count_and_load_with_starsolo-inputs-%23main/Reference%20annotation"
+        },
+        {
+          "@id": "#scrnaseq__count_and_load_with_starsolo-inputs-%23main/Sample"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#scrnaseq__count_and_load_with_starsolo-outputs-%23main/AnnData%20Loaded"
+        },
+        {
+          "@id": "#scrnaseq__count_and_load_with_starsolo-outputs-%23main/RNA%20STARSolo%20on%20input%20dataset(s):%20Alignments"
+        },
+        {
+          "@id": "#scrnaseq__count_and_load_with_starsolo-outputs-%23main/RNA%20STARSolo%20on%20input%20dataset(s):%20Barcode/Feature%20Statistic%20Summaries"
+        },
+        {
+          "@id": "#scrnaseq__count_and_load_with_starsolo-outputs-%23main/RNA%20STARSolo%20on%20input%20dataset(s):%20Barcodes%20filtered"
+        },
+        {
+          "@id": "#scrnaseq__count_and_load_with_starsolo-outputs-%23main/RNA%20STARSolo%20on%20input%20dataset(s):%20Genes%20filtered"
+        },
+        {
+          "@id": "#scrnaseq__count_and_load_with_starsolo-outputs-%23main/RNA%20STARSolo%20on%20input%20dataset(s):%20Matrix%20Gene%20Counts%20filtered"
+        },
+        {
+          "@id": "#scrnaseq__count_and_load_with_starsolo-outputs-%23main/RNA%20STARSolo%20on%20input%20dataset(s):%20log"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "#Sarah Williams",
+      "@type": "Person",
+      "name": "Sarah Williams"
+    },
+    {
+      "@id": "#Mike Thang",
+      "@type": "Person",
+      "name": "Mike Thang"
+    },
+    {
+      "@id": "#Valentine Murigneaux",
+      "@type": "Person",
+      "name": "Valentine Murigneaux"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/41",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "QCIF Bioinformatics"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/9",
+      "@type": "Collection",
+      "name": "scRNAseq processing in galaxy"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#scrnaseq__count_and_load_with_starsolo-inputs-#main/Barcode Whitelist file",
+      "@type": "FormalParameter",
+      "name": "#main/Barcode Whitelist file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#scrnaseq__count_and_load_with_starsolo-inputs-#main/Expected Cells",
+      "@type": "FormalParameter",
+      "name": "#main/Expected Cells",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#scrnaseq__count_and_load_with_starsolo-inputs-#main/Paired Fastqs for one sample",
+      "@type": "FormalParameter",
+      "name": "#main/Paired Fastqs for one sample",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#scrnaseq__count_and_load_with_starsolo-inputs-#main/Reference Genome fasta",
+      "@type": "FormalParameter",
+      "name": "#main/Reference Genome fasta",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#scrnaseq__count_and_load_with_starsolo-inputs-#main/Reference annotation",
+      "@type": "FormalParameter",
+      "name": "#main/Reference annotation",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#scrnaseq__count_and_load_with_starsolo-inputs-#main/Sample",
+      "@type": "FormalParameter",
+      "name": "#main/Sample",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#scrnaseq__count_and_load_with_starsolo-outputs-#main/AnnData Loaded",
+      "@type": "FormalParameter",
+      "name": "#main/AnnData Loaded",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#scrnaseq__count_and_load_with_starsolo-outputs-#main/RNA STARSolo on input dataset(s): Alignments",
+      "@type": "FormalParameter",
+      "name": "#main/RNA STARSolo on input dataset(s): Alignments",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#scrnaseq__count_and_load_with_starsolo-outputs-#main/RNA STARSolo on input dataset(s): Barcode/Feature Statistic Summaries",
+      "@type": "FormalParameter",
+      "name": "#main/RNA STARSolo on input dataset(s): Barcode/Feature Statistic Summaries",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#scrnaseq__count_and_load_with_starsolo-outputs-#main/RNA STARSolo on input dataset(s): Barcodes filtered",
+      "@type": "FormalParameter",
+      "name": "#main/RNA STARSolo on input dataset(s): Barcodes filtered",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#scrnaseq__count_and_load_with_starsolo-outputs-#main/RNA STARSolo on input dataset(s): Genes filtered",
+      "@type": "FormalParameter",
+      "name": "#main/RNA STARSolo on input dataset(s): Genes filtered",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#scrnaseq__count_and_load_with_starsolo-outputs-#main/RNA STARSolo on input dataset(s): Matrix Gene Counts filtered",
+      "@type": "FormalParameter",
+      "name": "#main/RNA STARSolo on input dataset(s): Matrix Gene Counts filtered",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#scrnaseq__count_and_load_with_starsolo-outputs-#main/RNA STARSolo on input dataset(s): log",
+      "@type": "FormalParameter",
+      "name": "#main/RNA STARSolo on input dataset(s): log",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

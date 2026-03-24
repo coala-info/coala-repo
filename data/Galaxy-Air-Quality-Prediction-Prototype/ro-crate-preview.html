@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Air Quality Prediction Prototype</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-EMEP_WPS_WRF.ga"
+      },
+      "datePublished": "2022-07-29 12:08:34 +0100",
+      "author": [
+        {
+          "@id": "#person-159"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-1248-3594"
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://workflowhub.eu/workflows/380?version=1",
+      "url": "https://workflowhub.eu/workflows/380/ro_crate?version=1",
+      "name": "Research Object Crate for Air Quality Prediction Prototype",
+      "description": "A prototype implementation of the Air Quality Prediction pipeline in Galaxy, using CWL tools.",
+      "sdDatePublished": "2026-03-24 18:02:02 +0000",
+      "creativeWorkStatus": "Work-in-progress",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-EMEP_WPS_WRF.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-EMEP_WPS_WRF.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 25311,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "A prototype implementation of the Air Quality Prediction pipeline in Galaxy, using CWL tools.",
+      "name": "Air Quality Prediction Prototype",
+      "url": "https://workflowhub.eu/workflows/380?version=1",
+      "keywords": "",
+      "version": 1,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/159"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/37"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/103"
+      },
+      "dateCreated": "2022-07-29T11:16:20Z",
+      "dateModified": "2023-01-16T14:02:21Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#air_quality_prediction_prototype-inputs-Geofile"
+        },
+        {
+          "@id": "#air_quality_prediction_prototype-inputs-Grib%20ATM"
+        },
+        {
+          "@id": "#air_quality_prediction_prototype-inputs-Grib%20ATM%20Namelist"
+        },
+        {
+          "@id": "#air_quality_prediction_prototype-inputs-Grib%20SFC"
+        },
+        {
+          "@id": "#air_quality_prediction_prototype-inputs-Grib%20SFC%20Namelist%20"
+        },
+        {
+          "@id": "#air_quality_prediction_prototype-inputs-Metgrid%20Namelist"
+        },
+        {
+          "@id": "#air_quality_prediction_prototype-inputs-Real%20Namelist"
+        },
+        {
+          "@id": "#air_quality_prediction_prototype-inputs-VTable%20ATM"
+        },
+        {
+          "@id": "#air_quality_prediction_prototype-inputs-VTable%20SFC"
+        },
+        {
+          "@id": "#air_quality_prediction_prototype-inputs-WRF%20namelist"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#air_quality_prediction_prototype-outputs-_anonymous_output_1"
+        },
+        {
+          "@id": "#air_quality_prediction_prototype-outputs-_anonymous_output_2"
+        },
+        {
+          "@id": "#air_quality_prediction_prototype-outputs-_anonymous_output_4"
+        },
+        {
+          "@id": "#air_quality_prediction_prototype-outputs-_anonymous_output_5"
+        },
+        {
+          "@id": "#air_quality_prediction_prototype-outputs-_anonymous_output_6"
+        },
+        {
+          "@id": "#air_quality_prediction_prototype-outputs-_anonymous_output_7"
+        },
+        {
+          "@id": "#air_quality_prediction_prototype-outputs-_anonymous_output_8"
+        },
+        {
+          "@id": "#air_quality_prediction_prototype-outputs-_anonymous_output_9"
+        },
+        {
+          "@id": "#air_quality_prediction_prototype-outputs-_anonymous_output_10"
+        },
+        {
+          "@id": "#air_quality_prediction_prototype-outputs-_anonymous_output_11"
+        },
+        {
+          "@id": "#air_quality_prediction_prototype-outputs-_anonymous_output_12"
+        },
+        {
+          "@id": "#air_quality_prediction_prototype-outputs-_anonymous_output_13"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "#person-159",
+      "@type": "Person",
+      "name": "Oliver Woolland",
+      "identifier": "https://workflowhub.eu/people/159"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-1248-3594",
+      "@type": "Person",
+      "name": "Douglas Lowe",
+      "identifier": "https://orcid.org/0000-0002-1248-3594"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/159",
+      "@type": "Person",
+      "name": "Oliver Woolland"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/37",
+      "@type": "Person",
+      "name": "Douglas Lowe"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/103",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Air Quality Prediction"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#air_quality_prediction_prototype-inputs-Geofile",
+      "@type": "FormalParameter",
+      "name": "Geofile",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#air_quality_prediction_prototype-inputs-Grib ATM",
+      "@type": "FormalParameter",
+      "name": "Grib ATM",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#air_quality_prediction_prototype-inputs-Grib ATM Namelist",
+      "@type": "FormalParameter",
+      "name": "Grib ATM Namelist",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#air_quality_prediction_prototype-inputs-Grib SFC",
+      "@type": "FormalParameter",
+      "name": "Grib SFC",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#air_quality_prediction_prototype-inputs-Grib SFC Namelist ",
+      "@type": "FormalParameter",
+      "name": "Grib SFC Namelist ",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#air_quality_prediction_prototype-inputs-Metgrid Namelist",
+      "@type": "FormalParameter",
+      "name": "Metgrid Namelist",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#air_quality_prediction_prototype-inputs-Real Namelist",
+      "@type": "FormalParameter",
+      "name": "Real Namelist",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#air_quality_prediction_prototype-inputs-VTable ATM",
+      "@type": "FormalParameter",
+      "name": "VTable ATM",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#air_quality_prediction_prototype-inputs-VTable SFC",
+      "@type": "FormalParameter",
+      "name": "VTable SFC",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#air_quality_prediction_prototype-inputs-WRF namelist",
+      "@type": "FormalParameter",
+      "name": "WRF namelist",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#air_quality_prediction_prototype-outputs-_anonymous_output_1",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#air_quality_prediction_prototype-outputs-_anonymous_output_2",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#air_quality_prediction_prototype-outputs-_anonymous_output_4",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_4",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#air_quality_prediction_prototype-outputs-_anonymous_output_5",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_5",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#air_quality_prediction_prototype-outputs-_anonymous_output_6",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_6",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#air_quality_prediction_prototype-outputs-_anonymous_output_7",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_7",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#air_quality_prediction_prototype-outputs-_anonymous_output_8",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_8",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#air_quality_prediction_prototype-outputs-_anonymous_output_9",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_9",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#air_quality_prediction_prototype-outputs-_anonymous_output_10",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_10",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#air_quality_prediction_prototype-outputs-_anonymous_output_11",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_11",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#air_quality_prediction_prototype-outputs-_anonymous_output_12",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_12",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#air_quality_prediction_prototype-outputs-_anonymous_output_13",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_13",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Air Quality Prediction Prototype</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/380/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/380/ro_crate?version=1</a>
+
+
+<p>
+  A prototype implementation of the Air Quality Prediction pipeline in Galaxy, using CWL tools.
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://workflowhub.eu/people/159" target="_blank">Oliver Woolland</a>, <a href="https://orcid.org/0000-0002-1248-3594" target="_blank">Douglas Lowe</a></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>CC-BY-4.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-EMEP_WPS_WRF.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-EMEP_WPS_WRF.ga">Air Quality Prediction Prototype</a>
+      
+        <br/>Size: 25311 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

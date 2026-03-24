@@ -1,0 +1,5 @@
+cwl:tool: ../../tools/kofamscan/kofamscan.cwl
+destination: ./output
+input_fasta:
+   class: File
+   location: http://download.systemsbiology.nl/unlock/cwl/test_data/eggnog.fa

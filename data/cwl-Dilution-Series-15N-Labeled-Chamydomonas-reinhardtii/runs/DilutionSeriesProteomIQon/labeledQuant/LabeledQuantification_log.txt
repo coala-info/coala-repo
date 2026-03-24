@@ -1,0 +1,43 @@
+2025-03-04 14:20:38.7700 LabeledQuantification TRACE Input files: [|"C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantandprot\20170519 TM FScon3501.quantAndProt";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantandprot\20170519 TM FScon3503.quantAndProt";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantandprot\20170519 TM FScon3505.quantAndProt";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantandprot\20170519 TM FScon3507.quantAndProt";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantandprot\20170519 TM FScon3509.quantAndProt";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantandprot\20170519 TM FScon3511.quantAndProt";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantandprot\20170519 TM FScon3513.quantAndProt";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantandprot\20170519 TM FScon3515.quantAndProt";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantandprot\20170519 TM FScon3517.quantAndProt";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantandprot\20170519 TM FScon3601.quantAndProt";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantandprot\20170519 TM FScon3603.quantAndProt";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantandprot\20170519 TM FScon3605.quantAndProt";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantandprot\20170519 TM FScon3607.quantAndProt";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantandprot\20170519 TM FScon3609.quantAndProt";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantandprot\20170519 TM FScon3611.quantAndProt";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantandprot\20170519 TM FScon3613.quantAndProt";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantandprot\20170519 TM FScon3615.quantAndProt";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantandprot\20170519 TM FScon3617.quantAndProt"|] 
+2025-03-04 14:20:38.7700 LabeledQuantification TRACE Output directory: C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\labeledQuant 
+2025-03-04 14:20:41.4205 LabeledQuantification TRACE QuantAndProt file with name:20170519 TM FScon3501 contributes 22066 quantifications 
+2025-03-04 14:20:43.4168 LabeledQuantification TRACE QuantAndProt file with name:20170519 TM FScon3503 contributes 22022 quantifications 
+2025-03-04 14:20:45.3321 LabeledQuantification TRACE QuantAndProt file with name:20170519 TM FScon3505 contributes 21203 quantifications 
+2025-03-04 14:20:47.1856 LabeledQuantification TRACE QuantAndProt file with name:20170519 TM FScon3507 contributes 21148 quantifications 
+2025-03-04 14:20:48.9181 LabeledQuantification TRACE QuantAndProt file with name:20170519 TM FScon3509 contributes 20193 quantifications 
+2025-03-04 14:20:50.5823 LabeledQuantification TRACE QuantAndProt file with name:20170519 TM FScon3511 contributes 19679 quantifications 
+2025-03-04 14:20:52.1990 LabeledQuantification TRACE QuantAndProt file with name:20170519 TM FScon3513 contributes 18995 quantifications 
+2025-03-04 14:20:53.7729 LabeledQuantification TRACE QuantAndProt file with name:20170519 TM FScon3515 contributes 19002 quantifications 
+2025-03-04 14:20:55.3646 LabeledQuantification TRACE QuantAndProt file with name:20170519 TM FScon3517 contributes 19140 quantifications 
+2025-03-04 14:20:57.2333 LabeledQuantification TRACE QuantAndProt file with name:20170519 TM FScon3601 contributes 22263 quantifications 
+2025-03-04 14:20:59.1076 LabeledQuantification TRACE QuantAndProt file with name:20170519 TM FScon3603 contributes 21776 quantifications 
+2025-03-04 14:21:00.8371 LabeledQuantification TRACE QuantAndProt file with name:20170519 TM FScon3605 contributes 20715 quantifications 
+2025-03-04 14:21:02.5684 LabeledQuantification TRACE QuantAndProt file with name:20170519 TM FScon3607 contributes 20920 quantifications 
+2025-03-04 14:21:04.2299 LabeledQuantification TRACE QuantAndProt file with name:20170519 TM FScon3609 contributes 20343 quantifications 
+2025-03-04 14:21:05.8741 LabeledQuantification TRACE QuantAndProt file with name:20170519 TM FScon3611 contributes 19471 quantifications 
+2025-03-04 14:21:07.4601 LabeledQuantification TRACE QuantAndProt file with name:20170519 TM FScon3613 contributes 19339 quantifications 
+2025-03-04 14:21:09.0587 LabeledQuantification TRACE QuantAndProt file with name:20170519 TM FScon3615 contributes 19203 quantifications 
+2025-03-04 14:21:10.6479 LabeledQuantification TRACE QuantAndProt file with name:20170519 TM FScon3617 contributes 19009 quantifications 
+2025-03-04 14:21:12.3625 LabeledQuantification TRACE Starting Aggregation with 366487 quantifications 
+2025-03-04 14:21:30.2916 LabeledQuantification TRACE Global Modification aggregation yields 88237 quantifications 
+2025-03-04 14:21:35.5823 LabeledQuantification TRACE Charge State to modified peptide sequence aggregation yields 84061 quantifications. 
+2025-03-04 14:21:40.2299 LabeledQuantification TRACE Modified peptide sequence to peptide Sequence aggregation yields 80967 quantifications. 
+2025-03-04 14:21:52.8373 LabeledQuantification TRACE Peptide to Protein Group aggregation yields 35370 quantifications. 
+2025-03-04 14:21:53.6410 LabeledQuantification TRACE Finally, 3804 Protein Groups are reported across all files. 226 of all protein groups were quantified across all samples. 

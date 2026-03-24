@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Voronoi segmentation for Astronomy on Legacy Survey data</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-Voronoi_segmentation_for_Astronomy_on_Legacy_Survey_data.ga"
+      },
+      "datePublished": "2025-06-13 11:00:36 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0001-8615-602X"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-2104-9519"
+        }
+      ],
+      "license": "MIT",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.1730.1",
+      "url": "https://workflowhub.eu/workflows/1730/ro_crate?version=1",
+      "name": "Research Object Crate for Voronoi segmentation for Astronomy on Legacy Survey data",
+      "description": "Modified workflow to perform Voronoi segmentation, based on https://usegalaxy.eu/published/workflow?id=23030421cd9fcfb2.\n\nInput requirements: \n* RA: \n-- right ascension in degrees as a float number.\n* Dec: \n-- Declination in degrees as a float number\n* Radius: \n-- the radius of the cone to be queried in arcminutes as a float number\n* Pixel size: \n-- the size of the pixel in arcseconds\n* Band: \n-- the band (channel) of the image: g, r, z, i",
+      "isBasedOn": "https://usegalaxy.eu/published/workflow?id=bc78c184fabcff1d",
+      "sdDatePublished": "2026-03-24 16:44:04 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-Voronoi_segmentation_for_Astronomy_on_Legacy_Survey_data.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-Voronoi_segmentation_for_Astronomy_on_Legacy_Survey_data.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "url": "https://usegalaxy.eu/published/workflow?id=bc78c184fabcff1d",
+      "contentSize": 44213,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Modified workflow to perform Voronoi segmentation, based on https://usegalaxy.eu/published/workflow?id=23030421cd9fcfb2.\n\nInput requirements: \n* RA: \n-- right ascension in degrees as a float number.\n* Dec: \n-- Declination in degrees as a float number\n* Radius: \n-- the radius of the cone to be queried in arcminutes as a float number\n* Pixel size: \n-- the size of the pixel in arcseconds\n* Band: \n-- the band (channel) of the image: g, r, z, i",
+      "name": "Voronoi segmentation for Astronomy on Legacy Survey data",
+      "keywords": "Segmentation, imageanaylsis, Voronoi, astronomy",
+      "version": 1,
+      "license": "https://spdx.org/licenses/MIT",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/1038"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/916"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-8380-6370"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/166"
+      },
+      "dateCreated": "2025-06-13T10:02:46Z",
+      "dateModified": "2025-07-11T09:42:39Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/13"
+      },
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.1730.1",
+      "input": [
+        {
+          "@id": "#voronoi_segmentation_for_astronomy_on_legacy_survey_data-inputs-Band"
+        },
+        {
+          "@id": "#voronoi_segmentation_for_astronomy_on_legacy_survey_data-inputs-Dec"
+        },
+        {
+          "@id": "#voronoi_segmentation_for_astronomy_on_legacy_survey_data-inputs-RA"
+        },
+        {
+          "@id": "#voronoi_segmentation_for_astronomy_on_legacy_survey_data-inputs-Radius%20(arcmin)"
+        },
+        {
+          "@id": "#voronoi_segmentation_for_astronomy_on_legacy_survey_data-inputs-pixel%20size%20(arcsec)"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#voronoi_segmentation_for_astronomy_on_legacy_survey_data-outputs-Single%20channel%20image"
+        },
+        {
+          "@id": "#voronoi_segmentation_for_astronomy_on_legacy_survey_data-outputs-multi-channel%20image"
+        },
+        {
+          "@id": "#voronoi_segmentation_for_astronomy_on_legacy_survey_data-outputs-Smoothed%20image"
+        },
+        {
+          "@id": "#voronoi_segmentation_for_astronomy_on_legacy_survey_data-outputs-mask"
+        },
+        {
+          "@id": "#voronoi_segmentation_for_astronomy_on_legacy_survey_data-outputs-label%20map"
+        },
+        {
+          "@id": "#voronoi_segmentation_for_astronomy_on_legacy_survey_data-outputs-tesselation"
+        },
+        {
+          "@id": "#voronoi_segmentation_for_astronomy_on_legacy_survey_data-outputs-segmentation"
+        },
+        {
+          "@id": "#voronoi_segmentation_for_astronomy_on_legacy_survey_data-outputs-object%20count"
+        },
+        {
+          "@id": "#voronoi_segmentation_for_astronomy_on_legacy_survey_data-outputs-image%20features"
+        },
+        {
+          "@id": "#voronoi_segmentation_for_astronomy_on_legacy_survey_data-outputs-colorized%20label%20map"
+        },
+        {
+          "@id": "#voronoi_segmentation_for_astronomy_on_legacy_survey_data-outputs-segmented%20image"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-8615-602X",
+      "@type": "Person",
+      "name": "Andrei Variu",
+      "identifier": "https://orcid.org/0000-0001-8615-602X"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-2104-9519",
+      "@type": "Person",
+      "name": "Riccardo Massei",
+      "identifier": "https://orcid.org/0000-0003-2104-9519"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/1038",
+      "@type": "Person",
+      "name": "Andrei Variu"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/916",
+      "@type": "Person",
+      "name": "Riccardo Massei"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-8380-6370",
+      "@type": "Person",
+      "name": "Even Moa  Myklebust "
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/166",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "EuroScienceGateway"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/13",
+      "@type": "Collection",
+      "name": "Workflows in EuroScienceGateway"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#voronoi_segmentation_for_astronomy_on_legacy_survey_data-inputs-Band",
+      "@type": "FormalParameter",
+      "name": "Band",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#voronoi_segmentation_for_astronomy_on_legacy_survey_data-inputs-Dec",
+      "@type": "FormalParameter",
+      "name": "Dec",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#voronoi_segmentation_for_astronomy_on_legacy_survey_data-inputs-RA",
+      "@type": "FormalParameter",
+      "name": "RA",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#voronoi_segmentation_for_astronomy_on_legacy_survey_data-inputs-Radius (arcmin)",
+      "@type": "FormalParameter",
+      "name": "Radius (arcmin)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#voronoi_segmentation_for_astronomy_on_legacy_survey_data-inputs-pixel size (arcsec)",
+      "@type": "FormalParameter",
+      "name": "pixel size (arcsec)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#voronoi_segmentation_for_astronomy_on_legacy_survey_data-outputs-Single channel image",
+      "@type": "FormalParameter",
+      "name": "Single channel image",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#voronoi_segmentation_for_astronomy_on_legacy_survey_data-outputs-multi-channel image",
+      "@type": "FormalParameter",
+      "name": "multi-channel image",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#voronoi_segmentation_for_astronomy_on_legacy_survey_data-outputs-Smoothed image",
+      "@type": "FormalParameter",
+      "name": "Smoothed image",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#voronoi_segmentation_for_astronomy_on_legacy_survey_data-outputs-mask",
+      "@type": "FormalParameter",
+      "name": "mask",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#voronoi_segmentation_for_astronomy_on_legacy_survey_data-outputs-label map",
+      "@type": "FormalParameter",
+      "name": "label map",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#voronoi_segmentation_for_astronomy_on_legacy_survey_data-outputs-tesselation",
+      "@type": "FormalParameter",
+      "name": "tesselation",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#voronoi_segmentation_for_astronomy_on_legacy_survey_data-outputs-segmentation",
+      "@type": "FormalParameter",
+      "name": "segmentation",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#voronoi_segmentation_for_astronomy_on_legacy_survey_data-outputs-object count",
+      "@type": "FormalParameter",
+      "name": "object count",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#voronoi_segmentation_for_astronomy_on_legacy_survey_data-outputs-image features",
+      "@type": "FormalParameter",
+      "name": "image features",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#voronoi_segmentation_for_astronomy_on_legacy_survey_data-outputs-colorized label map",
+      "@type": "FormalParameter",
+      "name": "colorized label map",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#voronoi_segmentation_for_astronomy_on_legacy_survey_data-outputs-segmented image",
+      "@type": "FormalParameter",
+      "name": "segmented image",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Voronoi segmentation for Astronomy on Legacy Survey data</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/1730/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/1730/ro_crate?version=1</a>
+
+
+<p>
+  Modified workflow to perform Voronoi segmentation, based on https://usegalaxy.eu/published/workflow?id=23030421cd9fcfb2.
+
+Input requirements: 
+* RA: 
+-- right ascension in degrees as a float number.
+* Dec: 
+-- Declination in degrees as a float number
+* Radius: 
+-- the radius of the cone to be queried in arcminutes as a float number
+* Pixel size: 
+-- the size of the pixel in arcseconds
+* Band: 
+-- the band (channel) of the image: g, r, z, i
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://orcid.org/0000-0001-8615-602X" target="_blank">Andrei Variu</a>, <a href="https://orcid.org/0000-0003-2104-9519" target="_blank">Riccardo Massei</a></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>MIT</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-Voronoi_segmentation_for_Astronomy_on_Legacy_Survey_data.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-Voronoi_segmentation_for_Astronomy_on_Legacy_Survey_data.ga">Voronoi segmentation for Astronomy on Legacy Survey data</a>
+      
+        <br/>Size: 44213 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

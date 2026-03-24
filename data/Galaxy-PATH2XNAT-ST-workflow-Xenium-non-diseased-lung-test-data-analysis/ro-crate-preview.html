@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for PATH2XNAT ST workflow Xenium non-diseased lung test data analysis</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-PATH2XNAT_ST_workflow_Xenium_non-diseased_lung_test_data_analysis.ga"
+      },
+      "datePublished": "2025-07-24 10:11:10 +0100",
+      "author": [
+
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://workflowhub.eu/workflows/1831?version=1",
+      "url": "https://workflowhub.eu/workflows/1831/ro_crate?version=1",
+      "name": "Research Object Crate for PATH2XNAT ST workflow Xenium non-diseased lung test data analysis",
+      "description": "The Spatial Transcriptomics analysis workflow for Xenium data from the PATH2XNAT project tested on the non-diseased lung dataset from 10X genomics. The analysis workflow written in R and executed in the interactive RStudio environment consists of visualizations, clustering, feature selection and cluster annotation.\n\nTraining materials elaborating on this analysis workflows can be found in this GitHub repository: https://github.com/HCGB-IGTP/PATH2XNAT/tree/main.\n\nThis workflow was developed in the PATH2XNAT joint research action within the ISIDORe project. ISIDORe has received funding from the European Union’s Horizon Europe research and innovation programme under grant agreement number 101046133.",
+      "sdDatePublished": "2026-03-24 16:32:15 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-PATH2XNAT_ST_workflow_Xenium_non-diseased_lung_test_data_analysis.ga"
+        },
+        {
+          "@id": "workflow-1831-326626447472cae41e9e0d1ebbfdb297a14741a0-diagram.svg"
+        },
+        {
+          "@id": "Galaxy-Workflow-PATH2XNAT_ST_workflow_Xenium_non-diseased_lung_test_data_analysis.cwl"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-PATH2XNAT_ST_workflow_Xenium_non-diseased_lung_test_data_analysis.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 7041,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "workflow-1831-326626447472cae41e9e0d1ebbfdb297a14741a0-diagram.svg"
+      },
+      "subjectOf": {
+        "@id": "Galaxy-Workflow-PATH2XNAT_ST_workflow_Xenium_non-diseased_lung_test_data_analysis.cwl"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "The Spatial Transcriptomics analysis workflow for Xenium data from the PATH2XNAT project tested on the non-diseased lung dataset from 10X genomics. The analysis workflow written in R and executed in the interactive RStudio environment consists of visualizations, clustering, feature selection and cluster annotation.\n\nTraining materials elaborating on this analysis workflows can be found in this GitHub repository: https://github.com/HCGB-IGTP/PATH2XNAT/tree/main.\n\nThis workflow was developed in the PATH2XNAT joint research action within the ISIDORe project. ISIDORe has received funding from the European Union’s Horizon Europe research and innovation programme under grant agreement number 101046133.",
+      "name": "PATH2XNAT ST workflow Xenium non-diseased lung test data analysis",
+      "url": "https://workflowhub.eu/workflows/1831?version=1",
+      "keywords": "",
+      "version": 1,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/277"
+      },
+      "dateCreated": "2025-07-24T09:16:14Z",
+      "dateModified": "2025-08-22T10:24:51Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#path2xnat_st_workflow_xenium_non_diseased_lung_test_data_analysis-inputs-Non_diseased_lung_minimal_RDS"
+        },
+        {
+          "@id": "#path2xnat_st_workflow_xenium_non_diseased_lung_test_data_analysis-inputs-Non_diseased_lung_minimal_zip"
+        },
+        {
+          "@id": "#path2xnat_st_workflow_xenium_non_diseased_lung_test_data_analysis-inputs-Xenium_hLung_v1_metadata_csv"
+        },
+        {
+          "@id": "#path2xnat_st_workflow_xenium_non_diseased_lung_test_data_analysis-inputs-test_RData"
+        },
+        {
+          "@id": "#path2xnat_st_workflow_xenium_non_diseased_lung_test_data_analysis-inputs-test_RHistory"
+        },
+        {
+          "@id": "#path2xnat_st_workflow_xenium_non_diseased_lung_test_data_analysis-inputs-workspace_RData"
+        },
+        {
+          "@id": "#path2xnat_st_workflow_xenium_non_diseased_lung_test_data_analysis-inputs-workspace_RHistory"
+        }
+      ],
+      "output": [
+
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "workflow-1831-326626447472cae41e9e0d1ebbfdb297a14741a0-diagram.svg",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 3497
+    },
+    {
+      "@id": "Galaxy-Workflow-PATH2XNAT_ST_workflow_Xenium_non-diseased_lung_test_data_analysis.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "HowTo"
+      ],
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "contentSize": 828
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/277",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "ErasmusMC Clinical Bioinformatics"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#path2xnat_st_workflow_xenium_non_diseased_lung_test_data_analysis-inputs-Non_diseased_lung_minimal_RDS",
+      "@type": "FormalParameter",
+      "name": "Non_diseased_lung_minimal_RDS",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#path2xnat_st_workflow_xenium_non_diseased_lung_test_data_analysis-inputs-Non_diseased_lung_minimal_zip",
+      "@type": "FormalParameter",
+      "name": "Non_diseased_lung_minimal_zip",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#path2xnat_st_workflow_xenium_non_diseased_lung_test_data_analysis-inputs-Xenium_hLung_v1_metadata_csv",
+      "@type": "FormalParameter",
+      "name": "Xenium_hLung_v1_metadata_csv",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#path2xnat_st_workflow_xenium_non_diseased_lung_test_data_analysis-inputs-test_RData",
+      "@type": "FormalParameter",
+      "name": "test_RData",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#path2xnat_st_workflow_xenium_non_diseased_lung_test_data_analysis-inputs-test_RHistory",
+      "@type": "FormalParameter",
+      "name": "test_RHistory",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#path2xnat_st_workflow_xenium_non_diseased_lung_test_data_analysis-inputs-workspace_RData",
+      "@type": "FormalParameter",
+      "name": "workspace_RData",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#path2xnat_st_workflow_xenium_non_diseased_lung_test_data_analysis-inputs-workspace_RHistory",
+      "@type": "FormalParameter",
+      "name": "workspace_RHistory",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for PATH2XNAT ST workflow Xenium non-diseased lung test data analysis</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/1831/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/1831/ro_crate?version=1</a>
+
+
+  <img src="workflow-1831-326626447472cae41e9e0d1ebbfdb297a14741a0-diagram.svg" style="width: 100%;"/>
+
+<p>
+  The Spatial Transcriptomics analysis workflow for Xenium data from the PATH2XNAT project tested on the non-diseased lung dataset from 10X genomics. The analysis workflow written in R and executed in the interactive RStudio environment consists of visualizations, clustering, feature selection and cluster annotation.
+
+Training materials elaborating on this analysis workflows can be found in this GitHub repository: https://github.com/HCGB-IGTP/PATH2XNAT/tree/main.
+
+This workflow was developed in the PATH2XNAT joint research action within the ISIDORe project. ISIDORe has received funding from the European Union’s Horizon Europe research and innovation programme under grant agreement number 101046133.
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>CC-BY-4.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-PATH2XNAT_ST_workflow_Xenium_non-diseased_lung_test_data_analysis.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-PATH2XNAT_ST_workflow_Xenium_non-diseased_lung_test_data_analysis.ga">PATH2XNAT ST workflow Xenium non-diseased lung test data analysis</a>
+      
+        <br/>Size: 7041 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_workflow-1831-326626447472cae41e9e0d1ebbfdb297a14741a0-diagram.svg">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="workflow-1831-326626447472cae41e9e0d1ebbfdb297a14741a0-diagram.svg">workflow-1831-326626447472cae41e9e0d1ebbfdb297a14741a0-diagram.svg</a>
+      
+        <br/>Size: 3497 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_Galaxy-Workflow-PATH2XNAT_ST_workflow_Xenium_non-diseased_lung_test_data_analysis.cwl">
+      
+      
+      
+        <strong>Main Workflow Description: </strong>
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-PATH2XNAT_ST_workflow_Xenium_non-diseased_lung_test_data_analysis.cwl">Galaxy-Workflow-PATH2XNAT_ST_workflow_Xenium_non-diseased_lung_test_data_analysis.cwl</a>
+      
+        <br/>Size: 828 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

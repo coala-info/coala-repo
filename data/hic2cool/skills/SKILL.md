@@ -4,7 +4,6 @@ description: hic2cool converts Hi-C contact matrices from the .hic format into .
 homepage: https://github.com/4dn-dcic/hic2cool
 ---
 
-
 # hic2cool
 
 ## Overview

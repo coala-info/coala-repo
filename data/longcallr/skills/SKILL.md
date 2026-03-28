@@ -4,7 +4,6 @@ description: longcallR is a bioinformatics tool for calling SNPs, phasing haplot
 homepage: https://github.com/huangnengCSU/longcallR
 ---
 
-
 # longcallr
 
 ## Overview

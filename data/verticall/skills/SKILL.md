@@ -4,7 +4,6 @@ description: Verticall reconstructs the vertical evolutionary history of bacteri
 homepage: https://github.com/rrwick/Verticall
 ---
 
-
 # verticall
 
 ## Overview

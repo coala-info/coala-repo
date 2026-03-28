@@ -4,7 +4,6 @@ description: unikseq is an alignment-free tool that identifies unique genomic re
 homepage: https://github.com/bcgsc/unikseq
 ---
 
-
 # unikseq
 
 ## Overview

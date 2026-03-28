@@ -4,7 +4,6 @@ description: MetaGraph is a bioinformatics suite that constructs, manipulates, a
 homepage: https://github.com/ratschlab/metagraph
 ---
 
-
 # metagraph
 
 ## Overview

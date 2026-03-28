@@ -7,14 +7,15 @@ Views a VCF or BCF or VCF.GZ file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/vt:2015.11.10--2
-- **Homepage**: https://github.com/Aikoyori/ProgrammingVTuberLogos
+- **Homepage**: https://genome.sph.umich.edu/wiki/Vt
 - **Package**: Not found
 - **Validation**: PASS
+- **wiki**: https://genome.sph.umich.edu/wiki/Vt
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/vt/overview
 - **Total Downloads**: 155.8K
 - **Last updated**: 2025-09-21
-- **GitHub**: https://github.com/Aikoyori/ProgrammingVTuberLogos
+- **GitHub**: https://genome.sph.umich.edu/wiki/Vt
 - **Stars**: N/A
 ### Original Help Text
 ```text
@@ -46,7 +47,7 @@ Indexes a VCF.GZ or BCF file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/vt:2015.11.10--2
-- **Homepage**: https://github.com/Aikoyori/ProgrammingVTuberLogos
+- **Homepage**: https://genome.sph.umich.edu/wiki/Vt
 - **Package**: Not found
 - **Validation**: PASS
 
@@ -72,7 +73,7 @@ normalizes variants in a VCF file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/vt:2015.11.10--2
-- **Homepage**: https://github.com/Aikoyori/ProgrammingVTuberLogos
+- **Homepage**: https://genome.sph.umich.edu/wiki/Vt
 - **Package**: Not found
 - **Validation**: PASS
 
@@ -105,7 +106,7 @@ decomposes multiallelic variants into biallelic in a VCF file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/vt:2015.11.10--2
-- **Homepage**: https://github.com/Aikoyori/ProgrammingVTuberLogos
+- **Homepage**: https://genome.sph.umich.edu/wiki/Vt
 - **Package**: Not found
 - **Validation**: PASS
 
@@ -134,7 +135,7 @@ Drops duplicate variants that appear later in the the VCF file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/vt:2015.11.10--2
-- **Homepage**: https://github.com/Aikoyori/ProgrammingVTuberLogos
+- **Homepage**: https://genome.sph.umich.edu/wiki/Vt
 - **Package**: Not found
 - **Validation**: PASS
 
@@ -162,7 +163,7 @@ Concatenate VCF files. Individuals must be in the same order.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/vt:2015.11.10--2
-- **Homepage**: https://github.com/Aikoyori/ProgrammingVTuberLogos
+- **Homepage**: https://genome.sph.umich.edu/wiki/Vt
 - **Package**: Not found
 - **Validation**: PASS
 
@@ -196,7 +197,7 @@ Pastes VCF files like the unix paste functions. This is used after the per sampl
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/vt:2015.11.10--2
-- **Homepage**: https://github.com/Aikoyori/ProgrammingVTuberLogos
+- **Homepage**: https://genome.sph.umich.edu/wiki/Vt
 - **Package**: Not found
 - **Validation**: PASS
 
@@ -234,7 +235,7 @@ Sorts a VCF or BCF or VCF.GZ file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/vt:2015.11.10--2
-- **Homepage**: https://github.com/Aikoyori/ProgrammingVTuberLogos
+- **Homepage**: https://genome.sph.umich.edu/wiki/Vt
 - **Package**: Not found
 - **Validation**: PASS
 
@@ -268,7 +269,7 @@ Subsets a VCF file to a set of variants that are polymorphic on a selected set o
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/vt:2015.11.10--2
-- **Homepage**: https://github.com/Aikoyori/ProgrammingVTuberLogos
+- **Homepage**: https://genome.sph.umich.edu/wiki/Vt
 - **Package**: Not found
 - **Validation**: PASS
 
@@ -298,7 +299,7 @@ Summarizes the variants in a VCF file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/vt:2015.11.10--2
-- **Homepage**: https://github.com/Aikoyori/ProgrammingVTuberLogos
+- **Homepage**: https://genome.sph.umich.edu/wiki/Vt
 - **Package**: Not found
 - **Validation**: PASS
 
@@ -329,7 +330,7 @@ partition variants from two data sets.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/vt:2015.11.10--2
-- **Homepage**: https://github.com/Aikoyori/ProgrammingVTuberLogos
+- **Homepage**: https://genome.sph.umich.edu/wiki/Vt
 - **Package**: Not found
 - **Validation**: PASS
 
@@ -359,7 +360,7 @@ partition variants from any number of data sets.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/vt:2015.11.10--2
-- **Homepage**: https://github.com/Aikoyori/ProgrammingVTuberLogos
+- **Homepage**: https://genome.sph.umich.edu/wiki/Vt
 - **Package**: Not found
 - **Validation**: PASS
 
@@ -388,7 +389,7 @@ annotates variants in a VCF file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/vt:2015.11.10--2
-- **Homepage**: https://github.com/Aikoyori/ProgrammingVTuberLogos
+- **Homepage**: https://genome.sph.umich.edu/wiki/Vt
 - **Package**: Not found
 - **Validation**: PASS
 
@@ -420,7 +421,7 @@ No inputs — do not generate CWL.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/vt:2015.11.10--2
-- **Homepage**: https://github.com/Aikoyori/ProgrammingVTuberLogos
+- **Homepage**: https://genome.sph.umich.edu/wiki/Vt
 - **Package**: Not found
 - **Validation**: FAIL (generation failed)
 
@@ -474,7 +475,7 @@ annotates variants that are present in 1000 Genomes variant set
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/vt:2015.11.10--2
-- **Homepage**: https://github.com/Aikoyori/ProgrammingVTuberLogos
+- **Homepage**: https://genome.sph.umich.edu/wiki/Vt
 - **Package**: Not found
 - **Validation**: PASS
 
@@ -504,7 +505,7 @@ annotates regions in a VCF file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/vt:2015.11.10--2
-- **Homepage**: https://github.com/Aikoyori/ProgrammingVTuberLogos
+- **Homepage**: https://genome.sph.umich.edu/wiki/Vt
 - **Package**: Not found
 - **Validation**: PASS
 
@@ -537,7 +538,7 @@ Compute Concordance.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/vt:2015.11.10--2
-- **Homepage**: https://github.com/Aikoyori/ProgrammingVTuberLogos
+- **Homepage**: https://genome.sph.umich.edu/wiki/Vt
 - **Package**: Not found
 - **Validation**: PASS
 
@@ -568,7 +569,7 @@ Compute features for variants.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/vt:2015.11.10--2
-- **Homepage**: https://github.com/Aikoyori/ProgrammingVTuberLogos
+- **Homepage**: https://genome.sph.umich.edu/wiki/Vt
 - **Package**: Not found
 - **Validation**: PASS
 
@@ -598,7 +599,7 @@ Discovers variants from reads in a BAM file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/vt:2015.11.10--2
-- **Homepage**: https://github.com/Aikoyori/ProgrammingVTuberLogos
+- **Homepage**: https://genome.sph.umich.edu/wiki/Vt
 - **Package**: Not found
 - **Validation**: PASS
 
@@ -634,7 +635,7 @@ Genotypes variants for each sample.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/vt:2015.11.10--2
-- **Homepage**: https://github.com/Aikoyori/ProgrammingVTuberLogos
+- **Homepage**: https://genome.sph.umich.edu/wiki/Vt
 - **Package**: Not found
 - **Validation**: PASS
 
@@ -661,4 +662,4 @@ options : -d  debug alignments
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

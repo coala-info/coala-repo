@@ -4,7 +4,6 @@ description: ProPhex is a bioinformatics tool for memory-efficient k-mer indexin
 homepage: https://github.com/prophyle/prophex
 ---
 
-
 # prophex
 
 ## Overview
@@ -51,10 +50,10 @@ ProPhex matches k-mers from input reads against the constructed index.
 
 | Command | Description |
 |---------|-------------|
-| bwt2fa | Convert BWT index to FASTA format |
-| bwtdowngrade | Downgrades a BWT index to an older version. |
-| klcp | Construct k-LCP array |
+| prophex bwt2fa | Convert BWT index to FASTA format |
+| prophex bwtdowngrade | Downgrades a BWT index to an older version. |
 | prophex index | Constructs index for prophex |
+| prophex klcp | Construct k-LCP array |
 | prophex query | Query a prophex index |
 
 ## Reference documentation

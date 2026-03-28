@@ -4,7 +4,6 @@ description: GroopM is an automated tool for binning metagenomic contigs into in
 homepage: https://ecogenomics.github.io/GroopM/
 ---
 
-
 # groopm
 
 ## Overview
@@ -52,9 +51,9 @@ groopm extract <output_directory> <fasta_file> <bin_file>
 
 | Command | Description |
 |---------|-------------|
-| flyover | Visualize the contig binning process. |
 | groopm core | Load saved data and make bin cores |
 | groopm explore | Exploration mode [binpoints, binids, allcontigs, unbinnedcontigs, binnedcontigs, binassignments, compare, sidebyside, together] |
+| groopm flyover | Visualize the contig binning process. |
 | groopm highlight | Highlight contigs in a groopm database. |
 | groopm merge | Merge BAM files based on a database of alignments. |
 | groopm recruit | Recruit more contigs into existing bins |

@@ -4,7 +4,6 @@ description: Hecatomb is a bioinformatic pipeline designed to identify and extra
 homepage: https://github.com/shandley/hecatomb
 ---
 
-
 # hecatomb
 
 ## Overview
@@ -71,11 +70,11 @@ Hecatomb supports Snakemake profiles for job scheduling (e.g., Slurm).
 
 | Command | Description |
 |---------|-------------|
-| add-host | Add a new host genome to use with Hecatomb |
-| combine | Combine multiple Hecatomb runs |
-| config | Copy the system default config file |
-| list-hosts | List the available host genomes |
-| run | Run hecatomb |
+| hecatomb add-host | Add a new host genome to use with Hecatomb |
+| hecatomb combine | Combine multiple Hecatomb runs |
+| hecatomb config | Copy the system default config file |
+| hecatomb list-hosts | List the available host genomes |
+| hecatomb run | Run hecatomb |
 | snakemake | Snakemake is a Python based language and execution environment for GNU Make-like workflows. |
 | snakemake | Snakemake is a Python based language and execution environment for GNU Make-like workflows. |
 

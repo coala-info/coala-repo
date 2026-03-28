@@ -4,7 +4,6 @@ description: Unicore performs high-throughput phylogenetic inference by utilizin
 homepage: https://github.com/steineggerlab/unicore
 ---
 
-
 # unicore
 
 ## Overview
@@ -63,12 +62,12 @@ For fine-grained control, Unicore can be run in discrete steps:
 
 | Command | Description |
 |---------|-------------|
-| cluster | Cluster Foldseek database |
-| profile | Create core structures from Foldseek database |
-| tree | Infer phylogenetic tree from core structures |
+| unicore cluster | Cluster Foldseek database |
 | unicore createdb | Create Foldseek database from amino acid sequences |
 | unicore easy-core | Easy core gene phylogeny workflow, from fasta files to phylogenetic tree |
 | unicore gene-tree | Infer phylogenetic tree of each core structures |
+| unicore profile | Create core structures from Foldseek database |
+| unicore tree | Infer phylogenetic tree from core structures |
 | unicore_config | Runtime environment configuration |
 | unicore_search | Search Foldseek database against reference database |
 

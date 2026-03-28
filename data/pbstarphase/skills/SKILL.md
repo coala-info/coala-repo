@@ -4,7 +4,6 @@ description: pbstarphase is a pharmacogenomic diplotyper that uses phased PacBio
 homepage: https://github.com/PacificBiosciences/pb-StarPhase
 ---
 
-
 # pbstarphase
 
 ## Overview
@@ -50,9 +49,9 @@ The tool produces a primary JSON output containing the diplotype calls.
 
 | Command | Description |
 |---------|-------------|
-| build | Download and build the database for StarPhase |
-| db-stat | Generate statistics about a database file |
-| diplotype | Run the diplotyper on a dataset |
+| pbstarphase build | Download and build the database for StarPhase |
+| pbstarphase db-stat | Generate statistics about a database file |
+| pbstarphase diplotype | Run the diplotyper on a dataset |
 
 ## Reference documentation
 

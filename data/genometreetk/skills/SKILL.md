@@ -4,7 +4,6 @@ description: genometreetk is a toolkit designed for the refinement, rooting, pru
 homepage: http://pypi.python.org/pypi/genometreetk/
 ---
 
-
 # genometreetk
 
 ## Overview
@@ -38,27 +37,27 @@ genometreetk is a specialized toolkit designed for the refinement and analysis o
 
 | Command | Description |
 |---------|-------------|
-| derep_tree | Dereplicate tree to taxa of interest. |
-| fill_ranks | Ensure taxonomy strings contain all 7 canonical ranks. |
 | genometreetk append | Append taxonomy to extant tree labels. |
 | genometreetk arb_records | Create an ARB records file from GTDB metadata. |
 | genometreetk bootstrap | Bootstrap multiple sequence alignment. |
+| genometreetk derep_tree | Dereplicate tree to taxa of interest. |
+| genometreetk fill_ranks | Ensure taxonomy strings contain all 7 canonical ranks. |
 | genometreetk jk_markers | Jackknife marker genes. |
 | genometreetk jk_taxa | Jackknife ingroup taxa. |
 | genometreetk lsu_tree | Infer 23S tree spanning GTDB genomes. |
 | genometreetk midpoint | Reroot tree at midpoint. |
+| genometreetk outgroup | Reroot tree with outgroup. |
 | genometreetk pd | Calculate phylogenetic diversity of specified taxa. |
 | genometreetk pd_clade | Calculate phylogenetic diversity of named groups. |
 | genometreetk propagate | Propagate labels to all genomes in a cluster. |
+| genometreetk rm_support | Remove support values from tree. |
+| genometreetk rna_dump | Dump all 5S, 16S, and 23S sequences to files. |
+| genometreetk rna_tree | Infer a concatenated 16S + 23S tree spanning GTDB genomes. |
+| genometreetk ssu_tree | Infer 16S tree spanning GTDB genomes. |
 | genometreetk strip | Remove taxonomic labels from a tree. |
 | genometreetk_combine | Combine all support values into a single tree. |
 | genometreetk_prune | Prune tree to a specific set of extant taxa. |
 | genometreetk_pull | Create taxonomy file from a decorated tree. |
-| outgroup | Reroot tree with outgroup. |
-| rm_support | Remove support values from tree. |
-| rna_dump | Dump all 5S, 16S, and 23S sequences to files. |
-| rna_tree | Infer a concatenated 16S + 23S tree spanning GTDB genomes. |
-| ssu_tree | Infer 16S tree spanning GTDB genomes. |
 
 ## Reference documentation
 - [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_genometreetk_overview.md)

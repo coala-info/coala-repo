@@ -4,7 +4,6 @@ description: contigtax assigns taxonomic labels to metagenomic sequences by quer
 homepage: https://github.com/NBISweden/contigtax
 ---
 
-
 # contigtax
 
 ## Overview

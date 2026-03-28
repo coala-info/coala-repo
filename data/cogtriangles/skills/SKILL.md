@@ -4,7 +4,6 @@ description: The cogtriangles tool assembles Clusters of Orthologous Groups (COG
 homepage: https://ftp.ncbi.nih.gov/pub/wolf/COGs/COGsoft/
 ---
 
-
 # cogtriangles
 
 ## Overview
@@ -34,6 +33,15 @@ The `cogtriangles` program typically takes the processed hit files and produces 
 *   **E-value Thresholds**: When pre-processing with `COGreadblast`, use a stringent e-value (e.g., `-e 1e-10`) to ensure that only high-confidence orthologs are used for triangle formation.
 *   **Symmetric Matches**: Ensure that your input data consists of reciprocal best hits. The algorithm relies on the "triangle" property (if A matches B, B matches C, and C matches A) to form stable clusters.
 *   **Genome Coverage**: The algorithm is most effective when comparing a diverse set of genomes; however, ensure that the "self-hits" (paralogs within the same genome) are handled correctly during the `COGreadblast` stage using the `-s` flag.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| COGmakehash | Create a hash file from a list of IDs for COG processing |
+| COGreadblast | Processes and filters BLAST results for COG analysis, including options for handling non-contiguous blocks and reciprocal hits. |
 
 ## Reference documentation
 - [cogtriangles - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_cogtriangles_overview.md)

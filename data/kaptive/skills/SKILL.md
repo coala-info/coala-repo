@@ -4,7 +4,6 @@ description: Kaptive identifies and characterizes surface polysaccharide gene cl
 homepage: https://kaptive.readthedocs.io/en/latest
 ---
 
-
 # kaptive
 
 ## Overview
@@ -63,10 +62,10 @@ kaptive convert -i results.json -f table -o summary.tsv
 
 | Command | Description |
 |---------|-------------|
-| convert | Convert Kaptive results into different formats |
-| extract | Extract entries from a Kaptive database |
 | kaptive | In silico serotyping |
 | kaptive assembly | In silico serotyping of assemblies |
+| kaptive convert | Convert Kaptive results into different formats |
+| kaptive extract | Extract entries from a Kaptive database |
 
 ## Reference documentation
 - [Kaptive README](./references/github_com_klebgenomics_Kaptive_blob_master_README.md)

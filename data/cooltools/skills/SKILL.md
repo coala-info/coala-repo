@@ -4,7 +4,6 @@ description: cooltools is a Python-based suite for analyzing genome folding data
 homepage: https://github.com/mirnylab/cooltools
 ---
 
-
 # cooltools
 
 ## Overview
@@ -56,19 +55,19 @@ To visualize the average local neighborhood around specific genomic features (e.
 
 | Command | Description |
 |---------|-------------|
+| cooltools coverage | Calculate the sums of cis and genome-wide contacts (aka coverage aka marginals) for a sparse Hi-C contact map in Cooler HDF5 format. Note that the sum(tot_cov) from this function is two times the number of reads contributing to the cooler, as each side contributes to the coverage. |
+| cooltools dots | Call dots on a Hi-C heatmap that are not larger than max_loci_separation. |
+| cooltools eigs-cis | Perform eigen value decomposition on a cooler matrix to calculate compartment signal by finding the eigenvector that correlates best with the phasing track. |
+| cooltools eigs-trans | Perform eigen value decomposition on a cooler matrix to calculate compartment signal by finding the eigenvector that correlates best with the phasing track. |
+| cooltools expected-cis | Calculate expected Hi-C signal for cis regions of chromosomal interaction   map: average of interactions separated by the same genomic distance, i.e.   are on the same diagonal on the cis-heatmap. |
 | cooltools expected-trans | Calculate expected Hi-C signal for trans regions of chromosomal interaction map: average of interactions in a rectangular block defined by a pair of regions, e.g. inter-chromosomal blocks. |
+| cooltools genome | Utilities for binned genome assemblies. |
+| cooltools insulation | Calculate the diamond insulation scores and call insulating boundaries. |
+| cooltools pileup | Perform retrieval of the snippets from .cool file. |
+| cooltools random-sample | Pick a random sample of contacts from a Hi-C map. |
+| cooltools rearrange | Rearrange data from a cooler according to a new genomic view |
 | cooltools saddle | Calculate saddle statistics and generate saddle plots for an arbitrary signal track on the genomic bins of a contact matrix. |
-| coverage | Calculate the sums of cis and genome-wide contacts (aka coverage aka marginals) for a sparse Hi-C contact map in Cooler HDF5 format. Note that the sum(tot_cov) from this function is two times the number of reads contributing to the cooler, as each side contributes to the coverage. |
-| dots | Call dots on a Hi-C heatmap that are not larger than max_loci_separation. |
-| eigs-cis | Perform eigen value decomposition on a cooler matrix to calculate compartment signal by finding the eigenvector that correlates best with the phasing track. |
-| eigs-trans | Perform eigen value decomposition on a cooler matrix to calculate compartment signal by finding the eigenvector that correlates best with the phasing track. |
-| expected-cis | Calculate expected Hi-C signal for cis regions of chromosomal interaction   map: average of interactions separated by the same genomic distance, i.e.   are on the same diagonal on the cis-heatmap. |
-| genome | Utilities for binned genome assemblies. |
-| insulation | Calculate the diamond insulation scores and call insulating boundaries. |
-| pileup | Perform retrieval of the snippets from .cool file. |
-| random-sample | Pick a random sample of contacts from a Hi-C map. |
-| rearrange | Rearrange data from a cooler according to a new genomic view |
-| virtual4c | Generate virtual 4C profile from a contact map by extracting all interactions of a given viewpoint with the rest of the genome. |
+| cooltools virtual4c | Generate virtual 4C profile from a contact map by extracting all interactions of a given viewpoint with the rest of the genome. |
 
 ## Reference documentation
 - [cooltools: enabling high-resolution Hi-C analysis in Python](./references/github_com_open2c_cooltools.md)

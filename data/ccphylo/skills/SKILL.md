@@ -4,7 +4,6 @@ description: ccphylo is a high-performance tool for rapid phylogenetic inference
 homepage: https://bitbucket.org/genomicepidemiology/ccphylo
 ---
 
-
 # ccphylo
 
 ## Overview

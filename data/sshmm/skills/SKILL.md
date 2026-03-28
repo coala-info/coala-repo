@@ -4,7 +4,6 @@ description: ssHMM models the relationship between RNA primary sequences and sec
 homepage: https://github.molgen.mpg.de/heller/ssHMM
 ---
 
-
 # sshmm
 
 ## Overview

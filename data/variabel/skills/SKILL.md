@@ -4,7 +4,6 @@ description: Variabel is a specialized variant caller for detecting intrahost mu
 homepage: https://gitlab.com/treangenlab/variabel
 ---
 
-
 # variabel
 
 ## Overview
@@ -44,6 +43,15 @@ The main entry point for the tool is `variabel.py`. The package also includes se
 - **VCF Compatibility**: If you encounter "Sample could not be read as a VCF file" errors when using outputs from other tools (like Clair3 or Medaka) with Variabel's comparison scripts, ensure the VCF headers are standard and the sample names match the expected input labels.
 - **Python Environment**: Variabel is designed for Python 3. Ensure your environment uses `python3`. If running scripts directly from the source, use `#!/usr/bin/env python3` to ensure the environment-specific interpreter is used rather than the system default.
 - **Input Lists**: The tool supports `.txt` files containing lists of inputs for batch processing.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| variabel | Variant calling from long-read sequencing data |
+| variabel | A tool for calling low-frequency variants in viral populations from NGS data. |
 
 ## Reference documentation
 - [anaconda_org_channels_bioconda_packages_variabel_overview.md](./references/anaconda_org_channels_bioconda_packages_variabel_overview.md)

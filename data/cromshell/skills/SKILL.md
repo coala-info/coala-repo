@@ -4,7 +4,6 @@ description: Cromshell provides a command-line interface for managing the lifecy
 homepage: https://github.com/broadinstitute/cromshell
 ---
 
-
 # cromshell
 
 ## Overview
@@ -45,20 +44,20 @@ Cromshell tracks the "current" workflow (usually the last one submitted) to save
 
 | Command | Description |
 |---------|-------------|
-| abort | Abort a running workflow. |
-| alias | Label the given workflow ID or relative id with the given alias. Aliases can be used in place of workflow IDs to reference jobs. |
-| cost | Get the cost for a workflow. Only works for workflows that completed more than 24 hours ago on GCS. Requires the 'bq_cost_table' key in the cromshell configuration file to be set to the big query cost table for your organization. |
-| counts | Get the summarized statuses of all tasks in the workflow. |
+| cromshell abort | Abort a running workflow. |
+| cromshell alias | Label the given workflow ID or relative id with the given alias. Aliases can be used in place of workflow IDs to reference jobs. |
+| cromshell cost | Get the cost for a workflow. Only works for workflows that completed more than 24 hours ago on GCS. Requires the 'bq_cost_table' key in the cromshell configuration file to be set to the big query cost table for your organization. |
+| cromshell counts | Get the summarized statuses of all tasks in the workflow. |
+| cromshell list-outputs | List all output files produced by a workflow. |
+| cromshell logs | Get a subset of the workflow metadata. |
+| cromshell metadata | Get the full metadata of a workflow. |
+| cromshell slim-metadata | Get a subset of the workflow metadata. |
+| cromshell status | Check the status of a Cromwell workflow. |
+| cromshell submit | Submit a workflow and arguments to the Cromwell Server |
+| cromshell timing | Analyze and display timing information for a Cromwell workflow. |
+| cromshell update-server | Update the cromwell server in the following config file /root/.cromshell/cromshell_config.json |
+| cromshell validate | Validate a WDL workflow and its input JSON using the Cromwell server's womtool API and miniwdl. |
 | cromshell_list | List the status of workflows. |
-| list-outputs | List all output files produced by a workflow. |
-| logs | Get a subset of the workflow metadata. |
-| metadata | Get the full metadata of a workflow. |
-| slim-metadata | Get a subset of the workflow metadata. |
-| status | Check the status of a Cromwell workflow. |
-| submit | Submit a workflow and arguments to the Cromwell Server |
-| timing | Analyze and display timing information for a Cromwell workflow. |
-| update-server | Update the cromwell server in the following config file /root/.cromshell/cromshell_config.json |
-| validate | Validate a WDL workflow and its input JSON using the Cromwell server's womtool API and miniwdl. |
 
 ## Reference documentation
 - [Cromshell README](./references/github_com_broadinstitute_cromshell_blob_main_README.md)

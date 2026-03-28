@@ -4,7 +4,6 @@ description: CRAMTools is a Java suite designed for the efficient compression, c
 homepage: https://github.com/enasequence/cramtools
 ---
 
-
 # cramtools
 
 ## Overview
@@ -77,11 +76,11 @@ java -jar cramtools-3.0.jar getref --input-cram-file <file.cram>
 | cramtools bam | A tool to process CRAM files, including conversion to BAM, decryption, and tag calculation. |
 | cramtools cram | CRAM compression tool for converting BAM/SAM to CRAM |
 | cramtools fastq | Uncompress CRAM files into FASTQ format. |
+| cramtools fixheader | Fix headers in CRAM files, including MD5 calculation and URI injection for reference sequences. |
+| cramtools getref | A list of MD5 checksums for which the sequences should be downloaded. |
 | cramtools index | Index a BAM or CRAM file using cramtools. |
-| fixheader | Fix headers in CRAM files, including MD5 calculation and URI injection for reference sequences. |
-| getref | A list of MD5 checksums for which the sequences should be downloaded. |
-| merge | The paths to the CRAM or BAM files to uncompress. |
-| qstat | Quality statistics for CRAM or BAM files |
+| cramtools merge | The paths to the CRAM or BAM files to uncompress. |
+| cramtools qstat | Quality statistics for CRAM or BAM files |
 
 ## Reference documentation
 - [CRAMTools GitHub Repository](./references/github_com_enasequence_cramtools.md)

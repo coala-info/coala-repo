@@ -4,7 +4,6 @@ description: pycisTopic is a Python framework for analyzing single-cell chromati
 homepage: https://github.com/aertslab/pycistopic
 ---
 
-
 # pycistopic
 
 ## Overview
@@ -53,6 +52,16 @@ Once topics are defined, the tool enables:
 - **Memory Management**: For large datasets, use the `collapsed` LDA implementation or ensure you are utilizing a high-memory environment, as the cell-by-peak matrix can be extremely sparse but large.
 - **Blacklist Filtering**: Always filter your peaks against genomic blacklists (e.g., ENCODE blacklist) before running `pycisTopic` to avoid topics being driven by repetitive elements or sequencing artifacts.
 - **Integration**: pycisTopic is designed to feed directly into `pycistarget` for motif enrichment and `SCENIC+` for gene regulatory network (GRN) inference.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| pycistopic qc | QC for scATAC-seq data. |
+| pycistopic topic_modeling | Topic modeling for pycisTopic |
+| pycistopic tss | TSS: List of TSS subcommands. |
 
 ## Reference documentation
 - [pycisTopic GitHub Repository](./references/github_com_aertslab_pycisTopic.md)

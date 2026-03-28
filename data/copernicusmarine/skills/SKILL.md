@@ -4,7 +4,6 @@ description: The copernicusmarine tool provides a streamlined workflow for disco
 homepage: https://github.com/pepijn-devries/CopernicusMarine
 ---
 
-
 # copernicusmarine
 
 ## Overview
@@ -74,9 +73,9 @@ cms_download_native(
 | Command | Description |
 |---------|-------------|
 | copernicusmarine describe | Retrieve and parse the metadata information from the Copernicus Marine catalogue. |
+| copernicusmarine login | Create a configuration file with your Copernicus Marine credentials under the ``$HOME/.copernicusmarine`` directory. |
+| copernicusmarine subset | Extract a subset of data from a specified dataset using given parameters. |
 | copernicusmarine_get | Download originally produced data files. |
-| login | Create a configuration file with your Copernicus Marine credentials under the ``$HOME/.copernicusmarine`` directory. |
-| subset | Extract a subset of data from a specified dataset using given parameters. |
 
 ## Reference documentation
 

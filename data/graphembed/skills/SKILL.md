@@ -4,7 +4,6 @@ description: The graphembed tool generates low-dimensional embeddings for large-
 homepage: https://github.com/jean-pierreBoth/graphembed
 ---
 
-
 # graphembed
 
 ## Overview
@@ -56,8 +55,8 @@ To assess embedding quality, `graphembed` can perform link prediction by randoml
 
 | Command | Description |
 |---------|-------------|
-| embedding | Graph/Network Embedding |
-| validation | Graph/Network Embedding with Accuracy Benchmark |
+| graphembed embedding | Graph/Network Embedding |
+| graphembed validation | Graph/Network Embedding with Accuracy Benchmark |
 
 ## Reference documentation
 

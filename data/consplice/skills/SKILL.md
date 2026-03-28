@@ -4,7 +4,6 @@ description: ConSplice is a bioinformatics toolset that measures splicing constr
 homepage: https://github.com/mikecormier/ConSplice
 ---
 
-
 # consplice
 
 ## Overview

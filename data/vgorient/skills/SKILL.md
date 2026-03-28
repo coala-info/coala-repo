@@ -4,7 +4,6 @@ description: vgorient is a toolkit for normalizing the orientation and starting 
 homepage: https://github.com/whelixw/vgOrient
 ---
 
-
 # vgorient
 
 ## Overview

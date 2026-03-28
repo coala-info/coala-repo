@@ -4,7 +4,6 @@ description: cpstools is a bioinformatic suite designed for the processing, stru
 homepage: https://github.com/Xwb7533/CPStools
 ---
 
-
 # cpstools
 
 ## Overview
@@ -55,7 +54,6 @@ Convert GenBank files to formats required by other popular tools:
 
 | Command | Description |
 |---------|-------------|
-| RSCU | Calculate RSCU values for CDS sequences. |
 | cpstools | A collection of tools for analyzing and manipulating sequence data. |
 | cpstools | A collection of tools for phylogenetic analysis. |
 | cpstools | A collection of tools for analyzing sequence data. |
@@ -63,15 +61,16 @@ Convert GenBank files to formats required by other popular tools:
 | cpstools IR | (No description) |
 | cpstools LSRs | Process GenBank files for LSRs |
 | cpstools Pi | Calculate pairwise pi values for a set of sequences. |
+| cpstools RSCU | Calculate RSCU values for CDS sequences. |
 | cpstools SSRs | Find Simple Sequence Repeats (SSRs) in GenBank files. |
 | cpstools Seq | Sequence manipulation tool |
 | cpstools convert | Convert genbank format files to other formats. |
 | cpstools depth | Calculate sequencing depth for paired-end reads against a reference genome. |
 | cpstools exc | Extracts gene sequences from a reference genbank file. |
+| cpstools gbcheck | Check GenBank files for consistency. |
 | cpstools phy | Phylogenetic analysis tools |
 | cpstools_KaKs | KaKs calculator |
 | cpstools_info | Show information about a genbank file. |
-| gbcheck | Check GenBank files for consistency. |
 
 ## Reference documentation
 - [CPStools README](./references/github_com_Xwb7533_CPStools_blob_main_README.md)

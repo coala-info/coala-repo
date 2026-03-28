@@ -4,7 +4,6 @@ description: "ucsc-bedintersect identifies and extracts genomic regions from one
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
 
-
 # ucsc-bedintersect
 
 ## Overview
@@ -55,6 +54,7 @@ While some tools use decimals, UCSC utilities often use integer-based logic or s
 | Command | Description |
 |---------|-------------|
 | bedClip | Remove lines from bed file that refer to nucleotides outside of a chromosome. |
+| bedIntersect | Find overlaps between two bed files. |
 | bedSort | Sort a BED file. The input and output can be the same file. |
 
 ## Reference documentation

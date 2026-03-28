@@ -4,7 +4,6 @@ description: RD-Analyzer detects Regions of Difference in Mycobacterium tubercul
 homepage: https://github.com/xiaeryu/RD-Analyzer
 ---
 
-
 # rd-analyzer
 
 ## Overview

@@ -4,7 +4,6 @@ description: Lorikeet is a metagenomic analysis pipeline that performs local re-
 homepage: https://github.com/rhysnewell/Lorikeet
 ---
 
-
 # lorikeet-genome
 
 ## Overview
@@ -51,11 +50,11 @@ lorikeet evolve --bam <input.bam> --genome <reference.fasta> --outdir <output_di
 
 | Command | Description |
 |---------|-------------|
-| call | Perform read mapping and variant calling using local reassembly of active regions |
-| consensus | Consensus caller for lorikeet |
-| genotype | Report strain-level genotypes and abundances based on variant read mappings |
 | lorikeet | Variant calling and strain genotyping analysis for metagenomics |
-| shell-completion | Generate a shell completion script for lorikeet |
+| lorikeet call | Perform read mapping and variant calling using local reassembly of active regions |
+| lorikeet consensus | Consensus caller for lorikeet |
+| lorikeet genotype | Report strain-level genotypes and abundances based on variant read mappings |
+| lorikeet shell-completion | Generate a shell completion script for lorikeet |
 
 ## Reference documentation
 - [Lorikeet GitHub Repository](./references/github_com_rhysnewell_Lorikeet.md)

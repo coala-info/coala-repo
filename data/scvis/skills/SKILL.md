@@ -4,7 +4,6 @@ description: "scvis performs dimension reduction on high-dimensional biological 
 homepage: https://bitbucket.org/jerry00/scvis-dev/commits/all
 ---
 
-
 # scvis
 
 yaml
@@ -62,6 +61,16 @@ print(f"Shape of embeddings: {low_dim_embeddings.shape}")
 *   **Parameter Tuning**: Experiment with `scvis` model parameters (e.g., `n_components`, learning rates, regularization) to achieve optimal results for your specific dataset. Consult the official `scvis` documentation for a full list of configurable options.
 *   **Visualization**: The output embeddings are typically used for creating scatter plots. Consider coloring points by known metadata (e.g., cell type, experimental condition) to reveal biological insights.
 *   **Integration with other tools**: `scvis` is often used in conjunction with other bioinformatics tools and visualization libraries in Python.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| scvis | Learning a parametric mapping for high-dimensional single cell data or mapping high-dimensional single cell data to a low-dimensional space given a pretrained mapping |
+| scvis train | Train a scVIS model. |
+| scvis_map | Map new data to a pretrained scvis model. |
 
 ## Reference documentation
 - [scvis Overview (Anaconda.org)](./references/anaconda_org_channels_bioconda_packages_scvis_overview.md)

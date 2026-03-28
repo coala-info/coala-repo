@@ -4,7 +4,6 @@ description: "ENASearch interacts with the European Nucleotide Archive (ENA) to 
 homepage: http://bebatut.fr/enasearch/
 ---
 
-
 # enasearch
 
 ## Overview
@@ -46,8 +45,10 @@ If you already have accession IDs, use specific retrieval commands for better pe
 | Command | Description |
 |---------|-------------|
 | enasearch retrieve_analysis_report | Retrieve analysis report from ENA. |
+| enasearch retrieve_data | Retrieve ENA data (other than taxon). |
 | enasearch retrieve_run_report | Retrieve run report from ENA. |
 | enasearch retrieve_taxons | Retrieve data from the ENA Taxon Portal. |
+| enasearch search_data | Search data given a query. |
 | enasearch_get_analysis_fields | Get analysis fields from ENA. |
 | enasearch_get_display_options | Get display options for ENA search results. |
 | enasearch_get_filter_fields | Get the filter fields of a result to build a query. |
@@ -56,8 +57,6 @@ If you already have accession IDs, use specific retrieval commands for better pe
 | enasearch_get_returnable_fields | Get the fields extractable for a result. |
 | enasearch_get_sortable_fields | Get the fields of a result that can sorted. |
 | enasearch_get_taxonomy_results | Get taxonomy results for a given accession. |
-| retrieve_data | Retrieve ENA data (other than taxon). |
-| search_data | Search data given a query. |
 
 ## Reference documentation
 - [Interacting with ENA Database](./references/bebatut_fr_enasearch_ena.html.md)

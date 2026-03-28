@@ -4,7 +4,6 @@ description: CheckM evaluates the quality of genomic bins by estimating complete
 homepage: https://github.com/Ecogenomics/CheckM
 ---
 
-
 # checkm-genome
 
 ## Overview
@@ -77,12 +76,12 @@ Standard "High-Quality" MAG (Metagenome-Assembled Genome) definitions often requ
 
 | Command | Description |
 |---------|-------------|
-| analyze | Identify marker genes in bins and calculate genome statistics. |
 | checkm | CheckM is a tool for assessing the quality of microbial genome bins. |
-| lineage_wf | Runs tree, lineage_set, analyze, qa |
-| qa | Assess bins for contamination and completeness. |
-| ssu_finder | Identify SSU (16S/18S) rRNAs in sequences. |
-| taxonomy_wf | Runs taxon_set, analyze, qa |
+| checkm analyze | Identify marker genes in bins and calculate genome statistics. |
+| checkm lineage_wf | Runs tree, lineage_set, analyze, qa |
+| checkm qa | Assess bins for contamination and completeness. |
+| checkm ssu_finder | Identify SSU (16S/18S) rRNAs in sequences. |
+| checkm taxonomy_wf | Runs taxon_set, analyze, qa |
 
 ## Reference documentation
 - [CheckM Wiki Home](./references/github_com_Ecogenomics_CheckM_wiki.md)

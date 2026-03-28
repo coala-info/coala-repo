@@ -4,7 +4,6 @@ description: "tqdist computes triplet distances for rooted trees and quartet dis
 homepage: http://users-cs.au.dk/cstorm/software/tqdist/
 ---
 
-
 # tqdist
 
 ## Overview

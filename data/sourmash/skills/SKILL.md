@@ -4,7 +4,6 @@ description: Sourmash performs fast genomic sketching and comparison using MinHa
 homepage: https://github.com/sourmash-bio/sourmash
 ---
 
-
 # sourmash
 
 ## Overview
@@ -65,15 +64,15 @@ sourmash tax annotate -g gather_results.csv -t taxonomy_db.csv
 
 | Command | Description |
 |---------|-------------|
-| compare | Compares one or more signatures (created with `sketch`) using estimated Jaccard index [1] or (if signatures are created with `-p abund`) the angular similarity [2]). |
 | plot | Generate plots from sourmash compare output. |
 | prefetch | Search for query signatures within specified databases. |
-| search | Searches a collection of signatures or SBTs for matches to the query signature. It can search for matches with either high Jaccard similarity or containment; the default is to use Jaccard similarity, unless --containment is specified. -o/--output will create a CSV file containing the matches. |
-| sig | Manipulate signature files |
-| sig | Manipulate signature files |
+| sourmash compare | Compares one or more signatures (created with `sketch`) using estimated Jaccard index [1] or (if signatures are created with `-p abund`) the angular similarity [2]). |
 | sourmash compute | Create MinHash sketches at k-mer sizes of 21, 31 and 51, for all FASTA and FASTQ files in the current directory, and save them in signature files ending in '.sig'. You can rapidly compare these files with `compare` and query them with `search`, among other operations; see the full documentation at http://sourmash.rtfd.io/. The key options for compute are: |
 | sourmash gather | Selects the best reference genomes to use for a metagenome analysis, by finding the smallest set of non-overlapping matches to the query in a database. This is specifically meant for metagenome and genome bin analysis. |
 | sourmash index | Create an on-disk database of signatures that can be searched quickly & in low memory. All signatures must be scaled, and must be the same k-mer size and molecule type; the standard signature selectors (-k/--ksize, --scaled, --dna/--protein) choose which signatures to be added. |
+| sourmash search | Searches a collection of signatures or SBTs for matches to the query signature. It can search for matches with either high Jaccard similarity or containment; the default is to use Jaccard similarity, unless --containment is specified. -o/--output will create a CSV file containing the matches. |
+| sourmash sig | Manipulate signature files |
+| sourmash sig | Manipulate signature files |
 | sourmash sketch | Create signatures |
 | sourmash_lca | Taxonomic utilities |
 | sourmash_storage | Storage utilities |

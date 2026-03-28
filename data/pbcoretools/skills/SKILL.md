@@ -4,7 +4,6 @@ description: pbcoretools is a collection of Python-based command-line utilities 
 homepage: https://github.com/mpkocher/pbcoretools
 ---
 
-
 # pbcoretools
 
 ## Overview

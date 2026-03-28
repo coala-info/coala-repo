@@ -4,7 +4,6 @@ description: panGWAS is an integrated bioinformatics framework for building pang
 homepage: https://github.com/phac-nml/pangwas
 ---
 
-
 # pangwas
 
 ## Overview
@@ -48,24 +47,24 @@ nextflow run phac-nml/pangwas --input samplesheet.csv --outdir results
 
 | Command | Description |
 |---------|-------------|
-| binarize | Convert a categorical column to multiple binary (0/1) columns. |
-| defrag | Defrag clusters by associating fragments with their parent cluster. |
-| gwas | Run genome-wide association study (GWAS) tests with pyseer. |
-| heatmap | Plot a heatmap of variants alongside a tree. |
-| manhattan | Plot the distribution of variant p-values across the genome. |
+| pangwas binarize | Convert a categorical column to multiple binary (0/1) columns. |
 | pangwas collect | Collect extracted sequences from multiple samples into one file. |
+| pangwas defrag | Defrag clusters by associating fragments with their parent cluster. |
+| pangwas gwas | Run genome-wide association study (GWAS) tests with pyseer. |
+| pangwas heatmap | Plot a heatmap of variants alongside a tree. |
+| pangwas manhattan | Plot the distribution of variant p-values across the genome. |
 | pangwas presence_absence | Extract presence absence of clusters. |
+| pangwas root_tree | Root tree on outgroup taxa. |
+| pangwas snps | Extract SNPs from a pangenome alignment. |
 | pangwas structural | Extract structural variants from cluster alignments. |
+| pangwas table_to_rtab | Convert a TSV/CSV table to an Rtab file based on regex filters. |
 | pangwas tree | Estimate a maximum-likelihood tree with IQ-TREE. |
+| pangwas vcf_to_rtab | Convert a VCF file to an Rtab file. |
 | pangwas_align | Align clusters using mafft and create a pangenome alignment. |
 | pangwas_annotate | Annotate genomic assemblies with bakta. |
 | pangwas_cluster | Cluster nucleotide sequences with mmseqs. |
 | pangwas_extract | Extract sequences and annotations from GFF files. |
 | pangwas_summarize | Summarize clusters according to their annotations. |
-| root_tree | Root tree on outgroup taxa. |
-| snps | Extract SNPs from a pangenome alignment. |
-| table_to_rtab | Convert a TSV/CSV table to an Rtab file based on regex filters. |
-| vcf_to_rtab | Convert a VCF file to an Rtab file. |
 
 ## Reference documentation
 - [panGWAS GitHub Repository](./references/github_com_phac-nml_pangwas_blob_main_README.md)

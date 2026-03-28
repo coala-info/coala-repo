@@ -4,7 +4,6 @@ description: adVNTR is a bioinformatics tool designed to genotype Variable Numbe
 homepage: https://github.com/mehrdadbakhtiari/adVNTR
 ---
 
-
 # advntr
 
 ## Overview
@@ -66,8 +65,8 @@ advntr addmodel -r <ref.fa> -c <chrom> -p <motif_pattern> -s <start_pos> -e <end
 
 | Command | Description |
 |---------|-------------|
-| addmodel | Add a new VNTR model to the database |
-| genotype | Genotype VNTRs from sequencing data |
+| advntr addmodel | Add a new VNTR model to the database |
+| advntr genotype | Genotype VNTRs from sequencing data |
 
 ## Reference documentation
 - [adVNTR Tutorial](./references/advntr_readthedocs_io_en_latest_tutorial.html.md)

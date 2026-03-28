@@ -4,7 +4,6 @@ description: SegAlign is a GPU-accelerated system for performing pairwise whole 
 homepage: https://github.com/gsneha26/SegAlign
 ---
 
-
 # segalign-galaxy
 
 ## Overview

@@ -4,7 +4,6 @@ description: Krona creates interactive, multi-layered pie charts for visualizing
 homepage: https://github.com/marbl/Krona
 ---
 
-
 # krona
 
 ## Overview

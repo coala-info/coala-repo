@@ -4,7 +4,6 @@ description: Seqnado fetches, organizes, and processes genomic sequence data fro
 homepage: https://alsmith151.github.io/SeqNado/
 ---
 
-
 # seqnado
 
 ## Overview

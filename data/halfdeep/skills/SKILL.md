@@ -4,7 +4,6 @@ description: HalfDeep automates the detection of genomic regions with half-depth
 homepage: https://github.com/richard-burhans/HalfDeep
 ---
 
-
 # halfdeep
 
 ## Overview

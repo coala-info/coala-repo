@@ -4,7 +4,6 @@ description: BANNER is a machine learning tool that classifies microbiome sketch
 homepage: https://www.github.com/will-rowe/banner
 ---
 
-
 # banner
 
 ## Overview
@@ -50,8 +49,8 @@ banner predict -m banner.rfc -i mystery-sample.sketch
 
 | Command | Description |
 |---------|-------------|
-| predict | Collects sketches from STDIN and classifies them using a RFC |
-| train | Train takes a banner-matrix file from hulk and uses it to train a Random Forest Classifier |
+| banner predict | Collects sketches from STDIN and classifies them using a RFC |
+| banner train | Train takes a banner-matrix file from hulk and uses it to train a Random Forest Classifier |
 
 ## Reference documentation
 - [BANNER README](./references/github_com_will-rowe_banner_blob_master_README.md)

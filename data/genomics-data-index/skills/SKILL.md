@@ -4,7 +4,6 @@ description: The genomics-data-index transforms genomic features into a searchab
 homepage: https://github.com/apetkau/genomics-data-index
 ---
 
-
 # genomics-data-index
 
 ## Overview
@@ -75,10 +74,10 @@ You can export nucleotide alignments, distance matrices, or trees constructed fr
 
 | Command | Description |
 |---------|-------------|
-| analysis | Perform analysis on genomic data. |
-| mlst-sistr | Load MLST-sistr data into the Genomics Data Index. |
-| mlst-tseemann | Load MLST data from TSEEMANN format into the Genomics Data Index. |
-| vcf | Load VCF files into the Genomics Data Index. |
+| gdi analysis | Perform analysis on genomic data. |
+| gdi load mlst-sistr | Load MLST-sistr data into the Genomics Data Index. |
+| gdi load mlst-tseemann | Load MLST data from TSEEMANN format into the Genomics Data Index. |
+| gdi load vcf | Load VCF files into the Genomics Data Index. |
 
 ## Reference documentation
 - [Genomics Data Index README](./references/github_com_apetkau_genomics-data-index_blob_development_README.md)

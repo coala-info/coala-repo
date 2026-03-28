@@ -4,7 +4,6 @@ description: Rastair is a command-line tool used for prokaryotic genome annotati
 homepage: https://bitbucket.org/bsblabludwig/rastair/src/v0.8.2/
 ---
 
-
 # rastair
 
 ## Overview
@@ -34,12 +33,12 @@ Once a job is submitted, rastair can be used to poll status and download results
 
 | Command | Description |
 |---------|-------------|
-| call | Call methylated positions |
-| convert | Convert between different file formats |
-| mbias | Calculate conversion per base position in read |
 | rastair | A command-line tool for managing rastair configurations. |
 | rastair | For more information, try '--help'. |
 | rastair | A tool for analyzing and visualizing RNA sequencing data. |
+| rastair call | Call methylated positions |
+| rastair convert | Convert between different file formats |
+| rastair mbias | Calculate conversion per base position in read |
 | rastair per-read | Call methylation per-read This will produce a bed file that list the methylation status of all CpGs in every read that overlaps a CpG, plus some other metadata |
 | rastair_view | View internal format as JSON lines |
 

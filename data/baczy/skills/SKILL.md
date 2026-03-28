@@ -4,7 +4,6 @@ description: Baczy is a bioinformatics pipeline that automates bacterial genome 
 homepage: https://github.com/npbhavya/baczy/
 ---
 
-
 # baczy
 
 ## Overview
@@ -67,9 +66,9 @@ baczy run --input path/to/reads --sequencing longread --cores 32 --use-singulari
 
 | Command | Description |
 |---------|-------------|
+| baczy config | Copy the system default config file |
+| baczy run | Run baczy |
 | baczy_citation | Please cite sphaehost in your paper using this article: |
-| config | Copy the system default config file |
-| run | Run baczy |
 
 ## Reference documentation
 - [Baczy README](./references/github_com_npbhavya_baczy_blob_master_README.md)

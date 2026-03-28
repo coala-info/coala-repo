@@ -4,7 +4,6 @@ description: PathwayMatcher maps biological identifiers such as genes, proteins,
 homepage: https://github.com/LuisFranciscoHS/PathwayMatcher
 ---
 
-
 # pathwaymatcher
 
 ## Overview
@@ -58,15 +57,15 @@ java -jar PathwayMatcher.jar -i variants.vcf -t vcf
 
 | Command | Description |
 |---------|-------------|
-| match-chrbp | Match a list of genetic variants as chromosome and base pairs |
-| match-ensembl | Match a list of Ensembl protein identifiers |
-| match-genes | Match a list of gene names and perform over-representation analysis |
-| match-modified-peptides | Match a list of peptides with post translational modifications |
-| match-peptides | Match a list of peptides to proteins and identify associated reactions and pathways. |
-| match-proteoforms | Match a list of proteoforms to reactions and pathways |
-| match-rsids | Match a list of genetic variants as RsIds |
-| match-uniprot | Match a list of UniProt protein accessions to reactions and pathways, and perform over-representation analysis. |
-| match-vcf | Match a list of genetic variants in VCF format |
+| java -jar PathwayMatcher.jar match-chrbp | Match a list of genetic variants as chromosome and base pairs |
+| java -jar PathwayMatcher.jar match-ensembl | Match a list of Ensembl protein identifiers |
+| java -jar PathwayMatcher.jar match-genes | Match a list of gene names and perform over-representation analysis |
+| java -jar PathwayMatcher.jar match-modified-peptides | Match a list of peptides with post translational modifications |
+| java -jar PathwayMatcher.jar match-peptides | Match a list of peptides to proteins and identify associated reactions and pathways. |
+| java -jar PathwayMatcher.jar match-proteoforms | Match a list of proteoforms to reactions and pathways |
+| java -jar PathwayMatcher.jar match-rsids | Match a list of genetic variants as RsIds |
+| java -jar PathwayMatcher.jar match-uniprot | Match a list of UniProt protein accessions to reactions and pathways, and perform over-representation analysis. |
+| java -jar PathwayMatcher.jar match-vcf | Match a list of genetic variants in VCF format |
 
 ## Reference documentation
 - [Input Formatting Guide](./references/github_com_PathwayAnalysisPlatform_PathwayMatcher_Dev_wiki_Input.md)

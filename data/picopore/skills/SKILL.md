@@ -4,7 +4,6 @@ description: Picopore compresses Oxford Nanopore FAST5 files using HDF5 compress
 homepage: https://github.com/scottgigante/picopore
 ---
 
-
 # picopore
 
 ## Overview
@@ -63,6 +62,7 @@ The tool requires a specific mode to be selected for any operation:
 
 | Command | Description |
 |---------|-------------|
+| picopore | A tool for reducing the size of an Oxford Nanopore Technologies dataset without losing any data |
 | picopore-realtime | A tool for monitoring a directory for new Oxford Nanopore Technologies reads and compressing them in real time without losing data. |
 | picopore-test | A tool for reducing the size of an Oxford Nanopore Technologies dataset without losing any data. picopore-test compresses to temporary files and checks that all datasets and attributes are equal (lossless modes only). |
 

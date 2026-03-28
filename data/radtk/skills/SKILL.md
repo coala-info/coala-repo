@@ -4,7 +4,6 @@ description: radtk is a performant toolkit for processing and inspecting binary 
 homepage: https://github.com/COMBINE-lab/radtk
 ---
 
-
 # radtk
 
 ## Overview
@@ -44,9 +43,9 @@ Use the `view` command to transform the binary RAD format into a textual JSON re
 
 | Command | Description |
 |---------|-------------|
+| radtk view | view a text representation of the RAD file |
 | radtk_cat | concatenate the records in a sequence of RAD files |
 | radtk_split | split an input RAD file into multiple output files |
-| view | view a text representation of the RAD file |
 
 ## Reference documentation
 - [radtk README](./references/github_com_COMBINE-lab_radtk_blob_main_README.md)

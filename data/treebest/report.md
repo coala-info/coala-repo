@@ -10,6 +10,7 @@ Neighbor-joining tree building using various distance metrics and models.
 - **Homepage**: https://github.com/lh3/treebest
 - **Package**: Not found
 - **Validation**: PASS
+- **usage**: https://treesoft.sourceforge.net/treebest.shtml
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/treebest/overview
 - **Total Downloads**: 22.6K
@@ -707,4 +708,4 @@ WARNING: Skipping mount /var/lib/apptainer/mnt/session/etc/resolv.conf [files]: 
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

@@ -4,7 +4,6 @@ description: Mikado is a Python-based pipeline that consolidates multiple transc
 homepage: https://github.com/lucventurini/mikado
 ---
 
-
 # mikado
 
 ## Overview

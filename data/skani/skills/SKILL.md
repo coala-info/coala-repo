@@ -4,7 +4,6 @@ description: skani calculates Average Nucleotide Identity and Aligned Fraction b
 homepage: https://github.com/bluenote-1577/skani
 ---
 
-
 # skani
 
 ## Overview
@@ -71,9 +70,9 @@ skani triangle folder/*.fa -E > edge_list.txt
 
 | Command | Description |
 |---------|-------------|
-| search | Search queries against a large pre-sketched database of reference genomes in a memory efficient manner. |
 | skani | skani |
 | skani dist | Compute ANI for queries against references fasta files or pre-computed sketch files. |
+| skani search | Search queries against a large pre-sketched database of reference genomes in a memory efficient manner. |
 
 ## Reference documentation
 - [skani basic usage guide](./references/github_com_bluenote-1577_skani_wiki_skani-basic-usage-guide.md)

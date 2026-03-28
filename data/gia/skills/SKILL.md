@@ -4,7 +4,6 @@ description: gia is a high-performance command-line toolset designed for perform
 homepage: https://github.com/noamteyssier/gia
 ---
 
-
 # gia
 
 ## Overview
@@ -80,17 +79,19 @@ gia complement -i annotations.bed -g hg38.genome > gaps.bed
 
 | Command | Description |
 |---------|-------------|
-| bcf | BCF-centric commands |
-| flank | Flanks the intervals of a BED file |
-| get-fasta | Extracts FASTA sequences using intervals from a BED file |
 | gia bam | BAM-centric commands |
+| gia bcf | BCF-centric commands |
 | gia closest | Finds the closest interval in a secondary BED file for all intervals in a primary BED file |
 | gia complement | Generates the complement of a BED file |
+| gia flank | Flanks the intervals of a BED file |
+| gia get-fasta | Extracts FASTA sequences using intervals from a BED file |
+| gia intersect | Intersects two BED files |
 | gia join | Joins two BED files |
 | gia segment | Segments a BED file into non-overlapping regions |
 | gia shift | Shifts the intervals of a BED file by a specified amount |
 | gia sort | Sorts a BED file by chromosome, start, and end |
 | gia subtract | Subtracts two BED files |
+| gia unionbedg | Combines multiple BedGraph files into a single file and shows coverage over segmented intervals of each BedGraph file as a separate column |
 | gia_cluster | Annotates the intervals of a BED file with their Cluster ID |
 | gia_coverage | Calculates the coverage of intervals in Set A by intervals in Set B |
 | gia_extend | Extends the intervals of a BED file |
@@ -99,8 +100,6 @@ gia complement -i annotations.bed -g hg38.genome > gaps.bed
 | gia_sample | Randomly sample a BED file |
 | gia_spacing | Calculates the spacing between intervals in a BED file |
 | gia_window | Finds all the overlapping intervals in Set B after adding a window around all intervals in Set A |
-| intersect | Intersects two BED files |
-| unionbedg | Combines multiple BedGraph files into a single file and shows coverage over segmented intervals of each BedGraph file as a separate column |
 
 ## Reference documentation
 

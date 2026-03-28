@@ -4,7 +4,6 @@ description: "Performs image fusion using Discrete Wavelet Transformation (DWT).
 homepage: https://github.com/iamsh4shank/Imfusion
 ---
 
-
 # imfusion
 
 imfusion/SKILL.md
@@ -53,6 +52,18 @@ For each feature, you will be prompted to insert the image(s) on which the opera
 *   **Input Image Quality**: The quality of the fused image is highly dependent on the quality of the input images. Ensure input images are clear and well-aligned for optimal results.
 *   **Understanding DWT**: Discrete Wavelet Transformation decomposes images into different frequency sub-bands, allowing for targeted processing and reconstruction. This is key to preserving and enhancing important features during fusion.
 *   **Troubleshooting**: If you encounter issues, first verify that all dependencies listed in `requirements.txt` are correctly installed. Check the console output for specific error messages.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| imfusion | imfusion |
+| imfusion | imfusion |
+| imfusion-ctg | imfusion-ctg: error: the following arguments are required: --insertions, --reference, --output |
+| imfusion-expression | imfusion-expression: error: the following arguments are required: --sample_dir, --reference |
+| imfusion-merge | Merges multiple samples into a single imfusion object. |
 
 ## Reference documentation
 - [Imfusion README](./references/github_com_iamsh4shank_Imfusion.md)

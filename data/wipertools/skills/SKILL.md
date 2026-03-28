@@ -4,7 +4,6 @@ description: wipertools is a utility suite designed to sanitize malformed FASTQ 
 homepage: https://github.com/mazzalab/fastqwiper
 ---
 
-
 # wipertools
 
 ## Overview
@@ -52,8 +51,8 @@ The primary command-line interface is accessed via `wipertools`.
 
 | Command | Description |
 |---------|-------------|
-| fastqgather | Joins multiple FASTQ files into a single one. |
-| fastqwiper | Wipes quality scores from a FASTQ file. |
+| wipertools fastqgather | Joins multiple FASTQ files into a single one. |
+| wipertools fastqwiper | Wipes quality scores from a FASTQ file. |
 | wipertools reportgather | Gathers multiple report files into a single final report. |
 | wipertools_fastqscatter | Split a FASTQ file into multiple smaller files. |
 

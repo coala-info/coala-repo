@@ -4,7 +4,6 @@ description: MAGeCK is a computational pipeline for analyzing genome-scale CRISP
 homepage: http://mageck.sourceforge.net
 ---
 
-
 # mageck
 
 ## Overview

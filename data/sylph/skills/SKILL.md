@@ -4,7 +4,6 @@ description: Sylph performs rapid metagenomic profiling and containment ANI esti
 homepage: https://github.com/bluenote-1577/sylph
 ---
 
-
 # sylph
 
 ## Overview
@@ -66,10 +65,10 @@ sylph-tax taxprof results.tsv -t GTDB_r220
 
 | Command | Description |
 |---------|-------------|
-| profile | Species-level taxonomic profiling with abundances and ANIs |
-| query | Coverage-adjusted ANI querying between databases and samples |
-| sketch | Sketch sequences into samples (reads) and databases (genomes). Each sample.fq -> sample.sylsp. All *.fa -> *.syldb |
 | sylph inspect | Inspect sketched .syldb and .sylsp files |
+| sylph profile | Species-level taxonomic profiling with abundances and ANIs |
+| sylph query | Coverage-adjusted ANI querying between databases and samples |
+| sylph sketch | Sketch sequences into samples (reads) and databases (genomes). Each sample.fq -> sample.sylsp. All *.fa -> *.syldb |
 
 ## Reference documentation
 

@@ -4,7 +4,6 @@ description: "seqmagick provides a streamlined interface for biological sequence
 homepage: http://github.com/fhcrc/seqmagick
 ---
 
-
 # seqmagick
 
 ## Overview
@@ -56,11 +55,11 @@ The `convert` command creates a new output file, while `mogrify` updates the inp
 
 | Command | Description |
 |---------|-------------|
-| convert | Convert between sequence formats |
-| help | Show help for seqmagick actions. |
-| mogrify | Modify sequence file(s) in place. |
 | seqmagick backtrans-align | Given a protein alignment and unaligned nucleotides, align the nucleotides using the protein alignment. Protein and nucleotide sequence files must contain the same number of sequences, in the same order, with the same IDs. |
+| seqmagick convert | Convert between sequence formats |
 | seqmagick extract-ids | Extract the sequence IDs from a file |
+| seqmagick help | Show help for seqmagick actions. |
+| seqmagick mogrify | Modify sequence file(s) in place. |
 | seqmagick quality-filter | Filter reads based on quality scores |
 | seqmagick_info | Info action |
 

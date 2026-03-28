@@ -4,7 +4,6 @@ description: Haptools is a toolkit for simulating and analyzing genotypes and ph
 homepage: https://github.com/cast-genomics/haptools
 ---
 
-
 # haptools
 
 ## Overview
@@ -74,12 +73,12 @@ haptools simphenotype \
 | Command | Description |
 |---------|-------------|
 | haptools index | Takes in an unsorted .hap file and outputs it as a .gz and a .tbi file |
+| haptools karyogram | Visualize a karyogram of local ancestry tracks |
+| haptools ld | Compute the pair-wise LD (Pearson's correlation) between haplotypes (or variants) and a single TARGET haplotype (or variant) |
 | haptools simgenotype | Simulate admixed genomes under a pre-defined model. |
+| haptools simphenotype | Haplotype-aware phenotype simulation. Create a set of simulated phenotypes from a set of haplotypes. |
 | haptools transform | Creates a VCF composed of haplotypes |
 | haptools_clump | Performs clumping on datasets with SNPs, SNPs and STRs, and STRs. Clumping is the process of identifying SNPs or STRs that are highly correlated with one another and concatenating them all together into a single "clump" in order to not repeat the same effect size due to LD. |
-| karyogram | Visualize a karyogram of local ancestry tracks |
-| ld | Compute the pair-wise LD (Pearson's correlation) between haplotypes (or variants) and a single TARGET haplotype (or variant) |
-| simphenotype | Haplotype-aware phenotype simulation. Create a set of simulated phenotypes from a set of haplotypes. |
 
 ## Reference documentation
 - [Haptools ReadTheDocs Home](./references/haptools_readthedocs_io_en_stable.md)

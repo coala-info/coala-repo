@@ -4,7 +4,6 @@ description: Ganon classifies DNA sequences and performs metagenomic analysis us
 homepage: https://github.com/pirovc/ganon
 ---
 
-
 # ganon
 
 ## Overview
@@ -72,10 +71,10 @@ Use `ganon table` to create contingency tables (OTU-like tables) from multiple c
 | ganon build | Build a Ganon database |
 | ganon build-custom | Build a custom Ganon database. |
 | ganon classify | Classify reads against a database. |
+| ganon reassign | Reassigns sequences based on EM algorithm. |
 | ganon report | Report generation from Ganon classification results. |
 | ganon_table | Create a table from Ganon report files. |
 | ganon_update | Update an existing Ganon database. |
-| reassign | Reassigns sequences based on EM algorithm. |
 
 ## Reference documentation
 - [ganon GitHub Repository](./references/github_com_pirovc_ganon.md)

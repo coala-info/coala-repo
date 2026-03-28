@@ -4,7 +4,6 @@ description: Architeuthis is a bioinformatics utility designed to process, merge
 homepage: https://github.com/cdiener/architeuthis
 ---
 
-
 # architeuthis
 
 ## Overview
@@ -63,9 +62,9 @@ Filter Kraken output files (`.k2`) to retain only high-confidence reads based on
 
 | Command | Description |
 |---------|-------------|
-| completion | Generate the autocompletion script for the specified shell |
-| mapping | A tool for processing Kraken output, including filtering, k-mer summarization, and scoring. |
-| merge | Merge results using architeuthis |
+| architeuthis completion | Generate the autocompletion script for the specified shell |
+| architeuthis mapping | A tool for processing Kraken output, including filtering, k-mer summarization, and scoring. |
+| architeuthis merge | Merge results using architeuthis |
 
 ## Reference documentation
 

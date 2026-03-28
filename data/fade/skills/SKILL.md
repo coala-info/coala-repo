@@ -4,7 +4,6 @@ description: FADE detects and eliminates sequencing artifacts introduced by enzy
 homepage: https://github.com/blachlylab/fade
 ---
 
-
 # fade
 
 ## Overview
@@ -76,11 +75,11 @@ fade extract -b annotated.bam > artifacts_only.bam
 
 | Command | Description |
 |---------|-------------|
-| annotate | performs re-alignment of soft-clips and annotates bam records with bitflag (rs) and realignment tags (am) |
-| extract | extracts artifacts into a mapped SAM/BAM (used after annotate) |
-| out | Fragmentase Artifact Detection and Elimination. Removes all reads and mates for reads containing the artifact (used after annotate) or hard clips out artifact sequence from reads. |
-| stats | reports extended information about all artifact reads (used after annotate) |
-| stats-clip | reports extended information about all soft-clipped reads (used after annotate) |
+| ./fade extract | extracts artifacts into a mapped SAM/BAM (used after annotate) |
+| ./fade stats | reports extended information about all artifact reads (used after annotate) |
+| ./fade stats-clip | reports extended information about all soft-clipped reads (used after annotate) |
+| fade annotate | performs re-alignment of soft-clips and annotates bam records with bitflag (rs) and realignment tags (am) |
+| fade out | Fragmentase Artifact Detection and Elimination. Removes all reads and mates for reads containing the artifact (used after annotate) or hard clips out artifact sequence from reads. |
 
 ## Reference documentation
 

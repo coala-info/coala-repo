@@ -4,7 +4,6 @@ description: BEDOPS is a suite of command-line tools designed for high-performan
 homepage: http://bedops.readthedocs.io
 ---
 
-
 # bedops
 
 ## Overview

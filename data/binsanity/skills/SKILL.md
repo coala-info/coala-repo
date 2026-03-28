@@ -4,7 +4,6 @@ description: BinSanity transforms metagenomic assemblies into putative genomes u
 homepage: https://github.com/edgraham/BinSanity
 ---
 
-
 # binsanity
 
 ## Overview

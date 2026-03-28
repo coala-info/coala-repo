@@ -4,7 +4,6 @@ description: CrossFilt mitigates alignment and annotation bias in comparative ge
 homepage: https://github.com/kennethabarr/CrossFilt
 ---
 
-
 # crossfilt
 
 ## Overview

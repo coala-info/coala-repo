@@ -4,7 +4,6 @@ description: Themis extracts deep quality metrics and validates the integrity of
 homepage: https://github.com/xujialupaoli/Themis
 ---
 
-
 # themis
 
 ## Overview
@@ -35,7 +34,8 @@ To assess library complexity and duplication rates:
 
 | Command | Description |
 |---------|-------------|
-| build-custom | Build a custom database for Ganon. |
+| ganon build-custom | Build a custom database for Ganon. |
+| themis | Themis: a robust and accurate species-level metagenomic profiler. |
 | themis profile | Profile microbial communities using a compressed de Bruijn graph. |
 
 ## Reference documentation

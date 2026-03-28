@@ -4,7 +4,6 @@ description: "Ropebwt3 transforms massive genomic datasets into a run-length enc
 homepage: https://github.com/lh3/ropebwt3
 ---
 
-
 # ropebwt3
 
 ## Overview
@@ -81,15 +80,15 @@ ropebwt3 hapdiv index.fmd query.fa > diversity_stats.txt
 
 | Command | Description |
 |---------|-------------|
-| build | Builds a BWT index for a FASTA file. |
-| fa2line | Convert FASTA file to line-based format |
-| kount | Count k-mers in FMD-index files. |
-| merge | Merge multiple FMR files into a single FMR file. |
+| ropebwt3 build | Builds a BWT index for a FASTA file. |
+| ropebwt3 fa2line | Convert FASTA file to line-based format |
+| ropebwt3 kount | Count k-mers in FMD-index files. |
+| ropebwt3 merge | Merge multiple FMR files into a single FMR file. |
+| ropebwt3 ssa | Builds a suffix array for a FM-index. |
 | ropebwt3 suffix | Build suffix array and BWT for a FASTA file. |
 | ropebwt3_get | Get sequences from an FMR index |
 | ropebwt3_plain2fmd | Convert plain text to FM-index |
 | ropebwt3_stat | Compute statistics for an FMD-index. |
-| ssa | Builds a suffix array for a FM-index. |
 
 ## Reference documentation
 - [Ropebwt3 Main README](./references/github_com_lh3_ropebwt3_blob_master_README.md)

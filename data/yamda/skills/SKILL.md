@@ -4,7 +4,6 @@ description: "Yamda is a GPU-accelerated software package designed for the rapid
 homepage: https://github.com/daquang/YAMDA
 ---
 
-
 # yamda
 
 ## Overview

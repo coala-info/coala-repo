@@ -4,7 +4,6 @@ description: pbsv identifies structural variants from PacBio long-read data by d
 homepage: https://github.com/PacificBiosciences/pbsv
 ---
 
-
 # pbsv
 
 ## Overview
@@ -69,8 +68,8 @@ For large genomes or high coverage, process chromosomes independently to save ti
 
 | Command | Description |
 |---------|-------------|
-| call | Call structural variants from SV signatures and assign genotypes (SVSIG to VCF). |
-| discover | Find structural variant (SV) signatures in read alignments (BAM to SVSIG). |
+| pbsv call | Call structural variants from SV signatures and assign genotypes (SVSIG to VCF). |
+| pbsv discover | Find structural variant (SV) signatures in read alignments (BAM to SVSIG). |
 
 ## Reference documentation
 - [Official pbsv README](./references/github_com_PacificBiosciences_pbsv_blob_master_README.md)

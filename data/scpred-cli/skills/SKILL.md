@@ -4,7 +4,6 @@ description: scpred-cli automates cell type classification in single-cell transc
 homepage: https://github.com/ebi-gene-expression-group/scPred-cli
 ---
 
-
 # scpred-cli
 
 ## Overview

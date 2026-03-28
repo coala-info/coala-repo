@@ -4,7 +4,6 @@ description: yacrd identifies and processes chimeric reads in long-read sequenci
 homepage: https://github.com/natir/yacrd
 ---
 
-
 # yacrd
 
 ## Overview
@@ -78,10 +77,10 @@ yacrd -i overlap.paf -o report.yacrd -c 4 -n 0.4 scrubb -i reads.fasta -o reads.
 
 | Command | Description |
 |---------|-------------|
-| filter | Record mark as chimeric or NotCovered is filter |
-| split | Record mark as chimeric or NotCovered is split |
 | yacrd | All bad region of read is removed |
 | yacrd extract | Record mark as chimeric or NotCovered is extract |
+| yacrd filter | Record mark as chimeric or NotCovered is filter |
+| yacrd split | Record mark as chimeric or NotCovered is split |
 
 ## Reference documentation
 - [yacrd Main Documentation](./references/github_com_natir_yacrd_blob_master_Readme.md)

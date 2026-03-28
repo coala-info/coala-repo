@@ -4,7 +4,6 @@ description: "HotSpot3D maps linear protein sequence mutations onto 3D structure
 homepage: https://github.com/ding-lab/hotspot3d
 ---
 
-
 # hotspot3d
 
 ## Overview
@@ -54,21 +53,21 @@ Essential standard columns include: `Hugo_Symbol`, `Chromosome`, `Start_Position
 
 | Command | Description |
 |---------|-------------|
-| cluster | Cluster mutation-mutation, mutation-drug, or mutation-site pairs using network or density-based methods. |
-| drugport | Drugport parsing tool for HotSpot3D |
 | hotspot3d | 3D mutation proximity analysis program. |
 | hotspot3d | 3D mutation proximity analysis program. |
 | hotspot3d | 3D mutation proximity analysis program. Preprocessing steps include parsing drugport database, updating proximity files, and running ROI generation, statistical calculation, annotation, and prioritization. |
 | hotspot3d | 3D mutation proximity analysis program. |
-| main | Hotspot3D main pipeline for proximity search, clustering, and analysis of mutations. |
-| prep | Preparation step for Hotspot3D to generate proximity files and perform various analysis steps. |
-| prior | Calculate prior probabilities for Hotspot3D analysis |
-| search | Search for proximity results using HotSpot3D preprocessing results |
-| sigclus | Calculate significance of clusters using simulations |
-| summary | Summarize Hotspot3D clusters |
-| trans | Generate proximity files for 3D hotspots |
-| uppro | Generate proximity files for proteins using PDB data and distance measures. |
-| visual | Visualize clusters and mutations using PyMol scripts |
+| hotspot3d cluster | Cluster mutation-mutation, mutation-drug, or mutation-site pairs using network or density-based methods. |
+| hotspot3d drugport | Drugport parsing tool for HotSpot3D |
+| hotspot3d main | Hotspot3D main pipeline for proximity search, clustering, and analysis of mutations. |
+| hotspot3d prep | Preparation step for Hotspot3D to generate proximity files and perform various analysis steps. |
+| hotspot3d prior | Calculate prior probabilities for Hotspot3D analysis |
+| hotspot3d search | Search for proximity results using HotSpot3D preprocessing results |
+| hotspot3d sigclus | Calculate significance of clusters using simulations |
+| hotspot3d summary | Summarize Hotspot3D clusters |
+| hotspot3d trans | Generate proximity files for 3D hotspots |
+| hotspot3d uppro | Generate proximity files for proteins using PDB data and distance measures. |
+| hotspot3d visual | Visualize clusters and mutations using PyMol scripts |
 
 ## Reference documentation
 - [HotSpot3D GitHub Repository](./references/github_com_ding-lab_hotspot3d.md)

@@ -4,7 +4,6 @@ description: LDhelmet infers fine-scale crossover recombination rates from popul
 homepage: http://sourceforge.net/projects/ldhelmet/
 ---
 
-
 # ldhelmet
 
 ldhelmet/
@@ -46,6 +45,20 @@ While specific commands depend on your data and desired output, a typical workfl
 3.  **Post-processing**: Analyze the output files to visualize and interpret recombination rates.
 
 For detailed command-line arguments and options, refer to the official LDhelmet documentation or its associated resources.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| ldhelmet find_confs | Finds configurations for LDHelmet. |
+| ldhelmet max_lk | Maximum likelihood estimation of recombination rate |
+| ldhelmet pade | Compute Pade coefficients for LDHelmet |
+| ldhelmet post_to_text | Converts LDHelmet output files to text format. |
+| ldhelmet rjmcmc | Run rjmcmc |
+| ldhelmet table_gen | Generate tables for LDHelmet |
+| ldhelmet_convert_table | Converts LDhat style tables to a format suitable for LDhelmet. |
 
 ## Reference documentation
 - [LDhelmet Overview (Anaconda.org)](./references/anaconda_org_channels_bioconda_packages_ldhelmet_overview.md)

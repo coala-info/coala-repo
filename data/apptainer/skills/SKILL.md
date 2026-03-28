@@ -4,7 +4,6 @@ description: Apptainer is a container platform designed for high-performance com
 homepage: https://github.com/apptainer/apptainer
 ---
 
-
 # apptainer
 
 ## Overview
@@ -51,33 +50,33 @@ Apptainer is a powerful container platform designed specifically for the needs o
 
 | Command | Description |
 |---------|-------------|
-| build | Build an Apptainer image |
-| cache | Manage your local Apptainer cache. You can list/clean using the specific types. |
-| capability | Manage Linux capabilities for users and groups. Capabilities allow you to have fine grained control over the permissions that your containers need to run. |
-| checkpoint | Manage container checkpoint state (experimental) |
-| completion | Generate the autocompletion script for apptainer for the specified shell. |
-| config | Manage various apptainer configuration (root user only). The config command allows root user to manage various configuration like fakeroot user mapping entries. |
-| delete | Deletes requested image from the library |
-| exec | Run a command within a container |
-| inspect | Show metadata for an image. Inspect will show you labels, environment variables, apps and scripts associated with the image determined by the flags you pass. |
-| instance | Manage containers running as services. Instances allow you to run containers as background processes. This can be useful for running services such as web servers or databases. |
-| key | Manage your trusted, public and private keys in your local or in the global keyring (local keyring: '~/.apptainer/keys' if 'APPTAINER_KEYSDIR' is not set, global keyring: '/usr/local/etc/apptainer/global-pgp-public') |
-| keyserver | The 'keyserver' command allows you to manage standalone keyservers that will be used for retrieving cryptographic keys. |
-| oci | Manage OCI containers. Allow you to manage containers from OCI bundle directories. NOTE: all oci commands requires to run as root. |
-| overlay | The overlay command allows management of EXT3 writable overlay images. |
-| plugin | The 'plugin' command allows you to manage Apptainer plugins which provide add-on functionality to the default Apptainer installation. |
-| pull | The 'pull' command allows you to download or build a container from a given URI. |
-| push | Upload image to the provided URI. The 'push' command allows you to upload a SIF container to a given URI (library:// or oras://). |
-| registry | Manage authentication to OCI/Docker registries. The 'registry' command allows you to manage authentication to standalone OCI/Docker registries, such as 'docker://' or 'oras://'. |
-| remote | Manage apptainer remote endpoints through its subcommands. A 'remote endpoint' is a group of services compatible with the container library API. |
-| run | Run the user-defined default command within a container. This command will launch an Apptainer container and execute a runscript if one is defined for that container. |
-| run-help | Show the user-defined help for an image |
-| search | Search a Container Library for container images matching the search query. You can specify an alternate architecture, and/or limit the results to only signed images. |
-| shell | Run a shell within a container |
-| sif | Manipulate Singularity Image Format (SIF) images. A set of commands are provided to display elements such as the SIF global header, the data object descriptors and to dump data objects. It is also possible to modify a SIF file via this tool via the add/del commands. |
-| sign | Add digital signature(s) to an image. The sign command allows a user to add one or more digital signatures to a SIF image. By default, one digital signature is added for each object group in the file. |
-| test | Run the user-defined tests within a container |
-| verify | The verify command allows a user to verify one or more digital signatures within a SIF image. |
+| apptainer build | Build an Apptainer image |
+| apptainer cache | Manage your local Apptainer cache. You can list/clean using the specific types. |
+| apptainer capability | Manage Linux capabilities for users and groups. Capabilities allow you to have fine grained control over the permissions that your containers need to run. |
+| apptainer checkpoint | Manage container checkpoint state (experimental) |
+| apptainer completion | Generate the autocompletion script for apptainer for the specified shell. |
+| apptainer config | Manage various apptainer configuration (root user only). The config command allows root user to manage various configuration like fakeroot user mapping entries. |
+| apptainer delete | Deletes requested image from the library |
+| apptainer exec | Run a command within a container |
+| apptainer inspect | Show metadata for an image. Inspect will show you labels, environment variables, apps and scripts associated with the image determined by the flags you pass. |
+| apptainer instance | Manage containers running as services. Instances allow you to run containers as background processes. This can be useful for running services such as web servers or databases. |
+| apptainer key | Manage your trusted, public and private keys in your local or in the global keyring (local keyring: '~/.apptainer/keys' if 'APPTAINER_KEYSDIR' is not set, global keyring: '/usr/local/etc/apptainer/global-pgp-public') |
+| apptainer keyserver | The 'keyserver' command allows you to manage standalone keyservers that will be used for retrieving cryptographic keys. |
+| apptainer oci | Manage OCI containers. Allow you to manage containers from OCI bundle directories. NOTE: all oci commands requires to run as root. |
+| apptainer overlay | The overlay command allows management of EXT3 writable overlay images. |
+| apptainer plugin | The 'plugin' command allows you to manage Apptainer plugins which provide add-on functionality to the default Apptainer installation. |
+| apptainer pull | The 'pull' command allows you to download or build a container from a given URI. |
+| apptainer push | Upload image to the provided URI. The 'push' command allows you to upload a SIF container to a given URI (library:// or oras://). |
+| apptainer registry | Manage authentication to OCI/Docker registries. The 'registry' command allows you to manage authentication to standalone OCI/Docker registries, such as 'docker://' or 'oras://'. |
+| apptainer remote | Manage apptainer remote endpoints through its subcommands. A 'remote endpoint' is a group of services compatible with the container library API. |
+| apptainer run | Run the user-defined default command within a container. This command will launch an Apptainer container and execute a runscript if one is defined for that container. |
+| apptainer run-help | Show the user-defined help for an image |
+| apptainer search | Search a Container Library for container images matching the search query. You can specify an alternate architecture, and/or limit the results to only signed images. |
+| apptainer shell | Run a shell within a container |
+| apptainer sif | Manipulate Singularity Image Format (SIF) images. A set of commands are provided to display elements such as the SIF global header, the data object descriptors and to dump data objects. It is also possible to modify a SIF file via this tool via the add/del commands. |
+| apptainer sign | Add digital signature(s) to an image. The sign command allows a user to add one or more digital signatures to a SIF image. By default, one digital signature is added for each object group in the file. |
+| apptainer test | Run the user-defined tests within a container |
+| apptainer verify | The verify command allows a user to verify one or more digital signatures within a SIF image. |
 
 ## Reference documentation
 - [Apptainer Index](./references/apptainer_org_index.md)

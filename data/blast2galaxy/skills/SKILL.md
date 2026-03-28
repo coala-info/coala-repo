@@ -4,7 +4,6 @@ description: blast2galaxy bridges local environments and Galaxy servers to perfo
 homepage: https://github.com/IPK-BIT/blast2galaxy
 ---
 
-
 # blast2galaxy
 
 ## Overview
@@ -91,14 +90,14 @@ result = blast2galaxy.blastp(
 
 | Command | Description |
 |---------|-------------|
+| blast2galaxy blastn | search nucleotide databases using a nucleotide query |
+| blast2galaxy blastp | search protein databases using a protein query |
+| blast2galaxy blastx | search protein databases using a translated nucleotide query |
+| blast2galaxy diamond-blastp | search protein databases using a protein query with DIAMOND |
+| blast2galaxy diamond-blastx | search protein databases using a translated nucleotide query with DIAMOND |
 | blast2galaxy list-dbs | list available databases of a BLAST+ or DIAMOND tool installed on a Galaxy server |
 | blast2galaxy list-tools | list available and compatible BLAST+ and DIAMOND tools installed on a Galaxy server |
-| blastn | search nucleotide databases using a nucleotide query |
-| blastp | search protein databases using a protein query |
-| blastx | search protein databases using a translated nucleotide query |
-| diamond-blastp | search protein databases using a protein query with DIAMOND |
-| diamond-blastx | search protein databases using a translated nucleotide query with DIAMOND |
-| tblastn | search translated nucleotide databases using a protein query |
+| blast2galaxy tblastn | search translated nucleotide databases using a protein query |
 
 ## Reference documentation
 - [CLI Reference](./references/blast2galaxy_readthedocs_io_en_latest_cli.md)

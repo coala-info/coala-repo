@@ -4,7 +4,6 @@ description: ntStat is a bioinformatics toolkit for efficient k-mer analysis and
 homepage: https://github.com/bcgsc/ntStat
 ---
 
-
 # ntstat
 
 ## Overview

@@ -4,7 +4,6 @@ description: itero is a bioinformatics pipeline designed for the iterative, guid
 homepage: https://github.com/faircloth-lab/itero
 ---
 
-
 # itero
 
 ## Overview
@@ -88,8 +87,8 @@ mpirun -hostfile my_hosts -n 96 itero assemble mpi \
 
 | Command | Description |
 |---------|-------------|
-| check | Check to ensure binaries are installed and configured. |
 | itero assemble | Assemble cleaned/trimmed sequencing reads. |
+| itero check | Check to ensure binaries are installed and configured. |
 
 ## Reference documentation
 - [itero: guided contig assembly for target enrichment data](./references/itero_readthedocs_io_en_latest.md)

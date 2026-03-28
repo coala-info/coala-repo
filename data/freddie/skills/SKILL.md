@@ -4,7 +4,6 @@ description: Freddie is a bioinformatics pipeline that discovers transcriptomic 
 homepage: https://github.com/vpc-ccg/freddie
 ---
 
-
 # freddie
 
 ## Overview

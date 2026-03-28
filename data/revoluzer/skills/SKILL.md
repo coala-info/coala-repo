@@ -4,7 +4,6 @@ description: revoluzer is a bioinformatics suite designed to analyze gene order 
 homepage: https://gitlab.com/Bernt/revoluzer/
 ---
 
-
 # revoluzer
 
 ## Overview
@@ -47,6 +46,7 @@ Use `distmat` to generate a matrix of genomic distances for multiple genomes.
 |---------|-------------|
 | crex | Process gene orders in a file or process random rearrangement scenario and compare with reconstruction. |
 | distmat | Compute distance matrix between genomes. |
+| revoluzer_sim | Simulates rearrangements on a genome. |
 | trex | trex method selection |
 
 ## Reference documentation

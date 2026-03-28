@@ -4,7 +4,6 @@ description: gxformat2 converts Galaxy workflows between native JSON and human-f
 homepage: https://github.com/jmchilton/gxformat2
 ---
 
-
 # gxformat2
 
 ## Overview

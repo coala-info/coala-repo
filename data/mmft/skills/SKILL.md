@@ -4,7 +4,6 @@ description: mmft is a collection of Rust-based utilities for rapid FASTA file p
 homepage: https://github.com/ARU-life-sciences/mmft
 ---
 
-
 # mmft
 
 ## Overview

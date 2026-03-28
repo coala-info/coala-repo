@@ -4,7 +4,6 @@ description: odamnet identifies and quantifies molecular links between environme
 homepage: https://pypi.org/project/ODAMNet/1.1.0/
 ---
 
-
 # odamnet
 
 ## Overview
@@ -60,9 +59,9 @@ odamnet networkDownloading --netUUID <NDEx_UUID> --networkFile <output_filename>
 
 | Command | Description |
 |---------|-------------|
-| domino | Perform Active module identification analysis between genes targeted by   chemicals and rare diseases pathways using DOMINO. |
-| multixrank | Performs a Random Walk with Restart analysis using multiXrank with genes and diseases multilayers. |
-| networkCreation | Creates network (GR format) from WikiPathways request or pathways of interest given in GMT file. |
+| odamnet domino | Perform Active module identification analysis between genes targeted by   chemicals and rare diseases pathways using DOMINO. |
+| odamnet multixrank | Performs a Random Walk with Restart analysis using multiXrank with genes and diseases multilayers. |
+| odamnet networkCreation | Creates network (GR format) from WikiPathways request or pathways of interest given in GMT file. |
 | odamnet networkDownloading | Download networks from NDEx using the UUID network. Create SIF (3 columns   with header) or GR (2 columns without header) network |
 | odamnet_overlap | Perform Overlap analysis between genes targeted by chemicals and rare diseases pathways. |
 

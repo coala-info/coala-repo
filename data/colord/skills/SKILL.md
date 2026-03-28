@@ -4,7 +4,6 @@ description: colord is a genomic data utility designed to compress and decompres
 homepage: https://github.com/refresh-bio/colord
 ---
 
-
 # colord
 
 ## Overview
@@ -60,11 +59,11 @@ To achieve the highest possible compression ratio, provide a reference genome (`
 
 | Command | Description |
 |---------|-------------|
-| compress-ont | compress ONT data |
-| compress-pbhifi | compress PacBio HiFi data |
-| compress-pbraw | compress PacBio Raw data |
-| decompress | decompression mode |
-| info | print archive informations |
+| /usr/local/bin/colord decompress | decompression mode |
+| /usr/local/bin/colord info | print archive informations |
+| colord compress-ont | compress ONT data |
+| colord compress-pbhifi | compress PacBio HiFi data |
+| colord compress-pbraw | compress PacBio Raw data |
 
 ## Reference documentation
 - [CoLoRd README](./references/github_com_refresh-bio_colord_blob_master_README.md)

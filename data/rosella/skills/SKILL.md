@@ -4,7 +4,6 @@ description: Rosella is a high-performance metagenomic binning pipeline that use
 homepage: https://github.com/rhysnewell/rosella.git
 ---
 
-
 # rosella
 
 ## Overview
@@ -43,6 +42,16 @@ rosella -r [CONTIGS.fasta] -b [MAPPING_1.bam] [MAPPING_2.bam] -o [OUTPUT_DIRECTO
 ## Expert Tips
 - **Submodules:** If building from source, the `--recursive` flag during git clone is critical because Rosella relies on specific sub-components (like `flight`) for its manifold learning implementation.
 - **Version Selection:** For the most stable results, use the latest release from Bioconda. For cutting-edge improvements in clustering accuracy, consider building from the `dev` branch on GitHub.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| rosella recover | Recover MAGs from contigs using UMAP and HDBSCAN clustering. |
+| rosella refine | Refine MAGs using UMAP and HDBSCAN clustering. |
+| rosella shell-completion | Generate a shell completion script for lorikeet |
 
 ## Reference documentation
 - [Rosella GitHub Repository](./references/github_com_rhysnewell_rosella.md)

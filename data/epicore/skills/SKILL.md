@@ -4,7 +4,6 @@ description: Epicore identifies and visualizes shared consensus epitopes by grou
 homepage: https://github.com/AG-Walz/epicore
 ---
 
-
 # epicore
 
 ## Overview

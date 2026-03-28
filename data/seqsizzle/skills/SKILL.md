@@ -4,7 +4,6 @@ description: SeqSizzle is a bioinformatics tool for the rapid visualization and 
 homepage: https://github.com/ChangqingW/SeqSizzle
 ---
 
-
 # seqsizzle
 
 ## Overview
@@ -69,13 +68,13 @@ seqsizzle data.fastq -p patterns.csv summarize
 
 | Command | Description |
 |---------|-------------|
-| enrich | Find enriched k-mers in the reads. This can be used to identify potential adapter/primer sequences |
 | seqsizzle | A pager for viewing FASTQ and FASTA files with fuzzy matching, allowing different adaptors to be colored differently. |
 | seqsizzle | A pager for viewing FASTQ and FASTA files with fuzzy matching, allowing different adaptors to be colored differently. |
 | seqsizzle | A pager for viewing FASTQ and FASTA files with fuzzy matching, allowing different adaptors to be colored differently. |
 | seqsizzle | A pager for viewing FASTQ and FASTA files with fuzzy matching, allowing different adaptors to be colored differently. |
 | seqsizzle | A pager for viewing FASTQ and FASTA files with fuzzy matching, allowing different adaptors to be colored differently. |
-| summarize | Summarize the reads with patterns specified by the --patterns argument or the adapter flags. Make sure you supply the flags BEFORE the subcommand, e.g. `./SeqSizzle my.fastq -p my_patterns.csv --adapter-3p summarize`. '..' indicats unmatched regions of positive length, '-' indicates the patterns are overlapped, print the number of reads that match each pattern combination in TSV format. To be moved to the UI in the future |
+| seqsizzle enrich | Find enriched k-mers in the reads. This can be used to identify potential adapter/primer sequences |
+| seqsizzle summarize | Summarize the reads with patterns specified by the --patterns argument or the adapter flags. Make sure you supply the flags BEFORE the subcommand, e.g. `./SeqSizzle my.fastq -p my_patterns.csv --adapter-3p summarize`. '..' indicats unmatched regions of positive length, '-' indicates the patterns are overlapped, print the number of reads that match each pattern combination in TSV format. To be moved to the UI in the future |
 
 ## Reference documentation
 - [SeqSizzle README](./references/github_com_ChangqingW_SeqSizzle_blob_master_README.md)

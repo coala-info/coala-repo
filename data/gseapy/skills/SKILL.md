@@ -4,7 +4,6 @@ description: GSEApy performs gene set enrichment analysis and functional annotat
 homepage: https://github.com/zqfang/gseapy
 ---
 
-
 # gseapy
 
 ## Overview
@@ -48,13 +47,13 @@ Use for quick enrichment analysis of a simple gene list (e.g., "top 100 up-regul
 
 | Command | Description |
 |---------|-------------|
-| biomart | Query Ensembl biomart database. |
-| gsea | Run Gene Set Enrichment Analysis |
+| gseapy biomart | Query Ensembl biomart database. |
 | gseapy enrichr | Enrichr uses a list of gene names as input. |
+| gseapy gsea | Run Gene Set Enrichment Analysis |
+| gseapy gsva | Performs Gene Set Variation Analysis (GSVA) |
+| gseapy prerank | GSEA prerank module |
 | gseapy replot | Reproduce GSEA figures from GSEA desktop results directory. |
-| gsva | Performs Gene Set Variation Analysis (GSVA) |
-| prerank | GSEA prerank module |
-| ssgsea | Single Sample GSEA |
+| gseapy ssgsea | Single Sample GSEA |
 
 ## Reference documentation
 

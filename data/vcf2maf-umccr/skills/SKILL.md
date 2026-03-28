@@ -4,7 +4,6 @@ description: This tool converts VCF files into standardized MAF format while sel
 homepage: https://github.com/umccr/vcf2maf/
 ---
 
-
 # vcf2maf-umccr
 
 ## Overview

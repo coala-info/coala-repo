@@ -4,7 +4,6 @@ description: Funnel is a distributed batch processing system that schedules and 
 homepage: https://ohsu-comp-bio.github.io/funnel/
 ---
 
-
 # funnel
 
 ## Overview
@@ -82,17 +81,17 @@ To ensure tasks have sufficient hardware, include a `resources` object in the JS
 
 | Command | Description |
 |---------|-------------|
-| dashboard | Start a Funnel dashboard in your terminal. |
 | full-hello | A simple hello world example that demonstrates the full CWL functionality. |
 | funnel aws | Development utilities for creating funnel resources on AWS |
+| funnel dashboard | Start a Funnel dashboard in your terminal. |
+| funnel gce | Manage GCE resources for funnel |
+| funnel node | Funnel node subcommands. |
 | funnel run | Run a task. |
+| funnel server | Funnel server commands. |
 | funnel storage | Access storage via Funnel's client libraries. |
+| funnel task | Make API calls to a TES server. |
 | funnel worker | Funnel worker commands. |
 | funnel_completion | Generate shell completion code |
-| gce | Manage GCE resources for funnel |
-| node | Funnel node subcommands. |
-| server | Funnel server commands. |
-| task | Make API calls to a TES server. |
 
 ## Reference documentation
 - [Funnel Overview](./references/ohsu-comp-bio_github_io_funnel.md)

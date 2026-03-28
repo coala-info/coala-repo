@@ -4,7 +4,6 @@ description: The fasta3 tool compares biological sequences to identify homologou
 homepage: http://faculty.virginia.edu/wrpearson/fasta
 ---
 
-
 # fasta3
 
 ## Overview

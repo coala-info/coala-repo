@@ -4,7 +4,6 @@ description: phyloFlash is a bioinformatics pipeline that performs taxonomic pro
 homepage: https://github.com/HRGV/phyloFlash
 ---
 
-
 # phyloflash
 
 ## Overview

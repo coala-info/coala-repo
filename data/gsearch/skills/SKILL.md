@@ -4,7 +4,6 @@ description: gsearch performs large-scale genomic comparisons and searches using
 homepage: https://github.com/jean-pierreBoth/gsearch
 ---
 
-
 # gsearch
 
 ## Overview
@@ -48,6 +47,17 @@ gsearch --pio 2000 --nbthreads 24 add -b ./database_dir -n ./new_genomes
     - Use `super2` if you need maximum speed with integer-type sketches.
 - **ANI Estimation**: The tool uses the Jaccard index as a proxy for ANI. For DNA, a k-mer size of 21 is standard for resolving species-level differences.
 - **Scaling**: For massive datasets (e.g., GTDB), ensure your `--ef` (entry factor) and `-n` (neighbors) parameters are balanced; higher `--ef` improves search accuracy but increases search time.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| gsearch request | Request nearest neighbors of query genomes against a pre-built HNSW graph database/index |
+| gsearch tohnsw | Build HNSW/HubNSW graph database from a collection of database genomes based on MinHash-like metric |
+| gsearch_add | Add new genome files to a pre-built HNSW graph database |
+| gsearch_ann | Approximate Nearest Neighbor Embedding using UMAP-like algorithm |
 
 ## Reference documentation
 - [GitHub Repository Overview](./references/github_com_jean-pierreBoth_gsearch.md)

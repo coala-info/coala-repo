@@ -4,7 +4,6 @@ description: mgikit is a high-performance bioinformatics suite designed for demu
 homepage: https://sagc-bioinformatics.github.io/mgikit/
 ---
 
-
 # mgikit
 
 ## Overview
@@ -50,10 +49,10 @@ If your downstream pipeline requires Illumina-style FASTQ headers and file namin
 
 | Command | Description |
 |---------|-------------|
-| demultiplex | Demultipex fastq files. |
-| reformat | Reformat MGI fastq headers to Illumina's and prepare quality report. |
-| report | Merge demultipexing reports. |
-| template | Detect barcode template. |
+| mgikit demultiplex | Demultipex fastq files. |
+| mgikit reformat | Reformat MGI fastq headers to Illumina's and prepare quality report. |
+| mgikit report | Merge demultipexing reports. |
+| mgikit template | Detect barcode template. |
 
 ## Reference documentation
 - [mgikit Overview](./references/github_com_sagc-bioinformatics_mgikit_blob_main_README.md)

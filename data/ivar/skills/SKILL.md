@@ -4,7 +4,6 @@ description: iVar is a computational toolkit designed to process viral amplicon 
 homepage: https://andersen-lab.github.io/ivar/html/
 ---
 
-
 # ivar
 
 ## Overview

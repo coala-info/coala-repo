@@ -4,7 +4,6 @@ description: The fraposa-pgsc tool projects study samples onto a reference PCA s
 homepage: https://github.com/PGScatalog/fraposa_pgsc
 ---
 
-
 # fraposa-pgsc
 
 ## Overview

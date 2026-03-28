@@ -4,7 +4,6 @@ description: The conus tool analyzes RNA secondary structures by training and ap
 homepage: http://eddylab.org/software/conus/
 ---
 
-
 # conus
 
 ## Overview

@@ -4,7 +4,6 @@ description: IsoRefiner improves the accuracy of transcript isoform identificati
 homepage: https://github.com/rkajitani/IsoRefiner
 ---
 
-
 # isorefiner
 
 ## Overview
@@ -82,12 +81,12 @@ For greater control over specific tool parameters, execute the subcommands indiv
 | isorefiner run_bambu | Run Bambu for isoform refinement |
 | isorefiner run_espresso | Run ESPRESSO for transcript assembly and quantification. |
 | isorefiner run_isoquant | Run isoquant |
+| isorefiner run_rnabloom | Run RNA-Bloom for transcript assembly and quantification. |
 | isorefiner run_stringtie | Run StringTie to assemble transcripts |
 | isorefiner trans_struct_wf | This tool refines transcript structures based on reads and reference annotation. |
 | isorefiner_map | Map reads to a reference genome using minimap2 and sort the output. |
 | isorefiner_refine | Refine transcript isoform structures based on reads and reference annotation. |
 | isorefiner_trim | Trim reads using Porechop_ABI |
-| run_rnabloom | Run RNA-Bloom for transcript assembly and quantification. |
 
 ## Reference documentation
 - [IsoRefiner GitHub README](./references/github_com_rkajitani_IsoRefiner_blob_main_README.md)

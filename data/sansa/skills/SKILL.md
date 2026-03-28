@@ -4,7 +4,6 @@ description: "Sansa is a high-performance tool for the functional and population
 homepage: https://github.com/dellytools/sansa
 ---
 
-
 # sansa
 
 ## Overview
@@ -78,9 +77,9 @@ Fine-tune how SVs are matched between the query and the database:
 
 | Command | Description |
 |---------|-------------|
-| annotate | Annotate structural variants |
-| compvcf | Compare two VCF/BCF files and report differences. |
-| markdup | Filter sites for PASS |
+| sansa annotate | Annotate structural variants |
+| sansa compvcf | Compare two VCF/BCF files and report differences. |
+| sansa markdup | Filter sites for PASS |
 
 ## Reference documentation
 - [Sansa README](./references/github_com_dellytools_sansa_blob_main_README.md)

@@ -4,7 +4,6 @@ description: "Crimson converts legacy bioinformatics text outputs from tools lik
 homepage: https://github.com/bow/crimson
 ---
 
-
 # crimson
 
 ## Overview
@@ -75,13 +74,13 @@ with open("sample.metrics") as f:
 
 | Command | Description |
 |---------|-------------|
-| fastqc | Convert FastQC output to JSON |
-| flagstat | Crimson flagstat parses samtools flagstat output into structured data. |
-| fusioncatcher | Convert FusionCatcher output to a structured format using Crimson. |
-| picard | Converts Picard metrics output. |
-| star | Converts STAR Log.final.out file. |
-| star-fusion | Convert STAR-Fusion output to Crimson format |
-| vep | Converts plain text output of Variant Effect Predictor. |
+| crimson fastqc | Convert FastQC output to JSON |
+| crimson flagstat | Crimson flagstat parses samtools flagstat output into structured data. |
+| crimson fusioncatcher | Convert FusionCatcher output to a structured format using Crimson. |
+| crimson picard | Converts Picard metrics output. |
+| crimson star | Converts STAR Log.final.out file. |
+| crimson star-fusion | Convert STAR-Fusion output to Crimson format |
+| crimson vep | Converts plain text output of Variant Effect Predictor. |
 
 ## Reference documentation
 - [Crimson README](./references/github_com_bow_crimson_blob_master_README.md)

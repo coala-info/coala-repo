@@ -4,7 +4,6 @@ description: bioSyntax-vim provides domain-specific syntax highlighting for biol
 homepage: https://github.com/bioSyntax/bioSyntax-vim
 ---
 
-
 # biosyntax-vim
 
 ## Overview

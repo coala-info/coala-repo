@@ -4,7 +4,6 @@ description: dmtools is a high-performance suite for processing bisulfite sequen
 homepage: https://github.com/ZhouQiangwei/dmtools
 ---
 
-
 # dmtools
 
 ## Overview
@@ -37,6 +36,31 @@ Generate profiles for visualization (e.g., around TSS or gene bodies).
 - **Memory Management**: For extremely large datasets, use the `-m` flag during parsing to limit memory usage, though this may increase processing time.
 - **Strand Specificity**: By default, dmtools handles strand information. If your library prep is non-directional, ensure you use the appropriate flags during the `parse` step to avoid miscalculating levels.
 - **Filtering**: Use the `-q` flag to filter out low-quality alignments (MAPQ) during the initial parsing phase to improve the accuracy of methylation calls.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| dmtools | A collection of tools for DNA methylation analysis. |
+| dmtools align | Align reads to a genome. |
+| dmtools bam2dm | Convert BAM files to DM format for methylation ratio and chromatin accessibility analysis. |
+| dmtools chrmeth | Calculates chromosome methylation statistics from a DM file. |
+| dmtools chromstats | Calculate chromosome methylation statistics from DM files. |
+| dmtools ebsrate | Calculate bisulfite conversion rate from DM file. |
+| dmtools index | Index a genome for dmtools. |
+| dmtools mr2dm | Convert methylation ratio files to DM format. |
+| dmtools overlap | Calculate overlap between two DM files. |
+| dmtools regionstats | Calculate methylation statistics for regions in a DM file. |
+| dmtools view | View mode parameters |
+| dmtools_addzm | add zoom levels for dm |
+| dmtools_bodystats | Calculate DNA methylation level of upstream and downstream N-bp window. |
+| dmtools_bw | Convert DM file to bigwig format. |
+| dmtools_merge | Merge multiple DM files |
+| dmtools_profile | Calculate the methylation matrix mode of every region or gene. |
+| dmtools_stats | Calculate statistics from DM files. |
+| dmtools_viewheader | View header of a DM file |
 
 ## Reference documentation
 - [dmtools Overview](./references/anaconda_org_channels_bioconda_packages_dmtools_overview.md)

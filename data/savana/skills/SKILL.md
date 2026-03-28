@@ -4,7 +4,6 @@ description: "SAVANA is a somatic structural variant caller and copy number aber
 homepage: https://github.com/cortes-ciriano-lab/savana
 ---
 
-
 # savana
 
 ## Overview
@@ -56,12 +55,12 @@ savana to --tumour <tumour.bam> --outdir <output_dir> --ref <reference.fasta> --
 
 | Command | Description |
 |---------|-------------|
-| run | Savana is a tool for structural variant detection in cancer genomes. |
 | savana classify | Classify variants in a VCF file. |
 | savana cna | Copy Number Aberration analysis tool |
 | savana evaluate | Evaluate VCF files by comparing them against reference VCFs and adding labels to the INFO field. |
+| savana run | Savana is a tool for structural variant detection in cancer genomes. |
+| savana to | Convert BAM files to SAVANA output format |
 | savana train | Train the model to predict germline and somatic variants (GERMLINE label must be present) |
-| to | Convert BAM files to SAVANA output format |
 
 ## Reference documentation
 - [SAVANA Main Repository and Documentation](./references/github_com_cortes-ciriano-lab_savana_blob_main_README.md)

@@ -4,7 +4,6 @@ description: This tool automates the alignment and matching of polygenic score f
 homepage: https://github.com/PGScatalog/pygscatalog
 ---
 
-
 # pgscatalog.match
 
 ## Overview
@@ -39,6 +38,16 @@ A utility for finding the intersection of variants across two different variant 
 *   **Overwrite Logic**: When re-running analyses, the `--overwrite` flag is available. Note that future updates may implement MD5 checksum comparisons to only overwrite if remote and local files differ.
 *   **Memory Management**: For very large target datasets, prefer processing by chromosome and then using `pgscatalog-matchmerge` to avoid memory exhaustion.
 *   **Installation**: The tool is best installed via `pipx install pgscatalog.match` for isolated environments or `conda install bioconda::pgscatalog.match` for bioinformatics pipelines.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| pgscatalog-intersect | Program to find matched variants (same strand) between a set of reference and target data .pvar/bim files. This also evaluate whether the variants in the TARGET are suitable for inclusion in a PCA analysis (excludes strand ambiguous and multi-allelic/INDEL variants), and can also uses the .afreq and .vmiss files exclude variants with missingness and MAF filters. |
+| pgscatalog-match | Match variants from a combined scoring file against a set of target genomes from the same fileset, and output scoring files compatible with the plink2 --score function. |
+| pgscatalog-matchmerge | Match and merge score files with target genomic datasets. |
 
 ## Reference documentation
 

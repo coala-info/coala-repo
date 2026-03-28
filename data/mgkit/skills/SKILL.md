@@ -4,7 +4,6 @@ description: MGKit is a modular bioinformatics framework designed for processing
 homepage: https://github.com/frubino/mgkit
 ---
 
-
 # mgkit
 
 ## Overview
@@ -43,6 +42,17 @@ For manipulating mapping files or key-value data:
 - **Memory Management**: When parsing large GFF files, use specific attributes like `uid` or `gene_id` to filter annotations early and reduce the memory footprint.
 - **Output Formats**: For large datasets, prefer Parquet output to improve performance and reduce disk usage. You can later convert these to CSV using `count-utils` if human readability is required.
 - **Python Integration**: Beyond the CLI, mgkit is a library. You can integrate its modules (like `mgkit.gff` or `mgkit.vcf`) directly into custom Python scripts for more complex logic.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| count-utils | Main function for count-utils, providing utilities to combine, map, and convert count tables. |
+| dict-utils | Main function for dictionary utility commands |
+| fasta-utils | Main function for FASTA file utilities |
+| snp_parser | DEPRECATED, use `pnps-gen vcf` SNPs analysis, requires a vcf file |
 
 ## Reference documentation
 - [MGKit GitHub Overview](./references/github_com_frubino_mgkit.md)

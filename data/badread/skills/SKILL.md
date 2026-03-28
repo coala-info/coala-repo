@@ -4,7 +4,6 @@ description: Badread simulates realistic, imperfect long reads from a reference 
 homepage: https://github.com/rrwick/Badread
 ---
 
-
 # badread
 
 ## Overview

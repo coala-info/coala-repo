@@ -4,7 +4,6 @@ description: MACS3 is a suite of tools designed to identify genomic regions of e
 homepage: https://pypi.org/project/MACS3/
 ---
 
-
 # macs3
 
 ## Overview
@@ -64,20 +63,20 @@ To compare two conditions (e.g., Condition A vs Condition B), you must first run
 
 | Command | Description |
 |---------|-------------|
-| bdgbroadcall | MACS3 tool to call broad peaks from bedGraph score tracks |
-| bdgcmp | Deduct noise by comparing treatment and control bedGraph files using various methods. |
-| bdgdiff | Differential peak detection based on paired bedGraph files |
-| bdgopt | Modify the score column of a bedGraph file using various methods. |
-| bdgpeakcall | Call peaks from bedGraph output of MACS3 |
-| callpeak | Model-based Analysis of ChIP-Seq (MACS) for identifying transcript factor binding sites. |
-| callvar | Call variants from ChIP-seq/ATAC-seq treatment and optional control BAM files within peak regions. |
-| cmbreps | Combine scores from replicates using different methods such as Fisher's, max, or mean. |
-| filterdup | MACS3 filterdup tool to remove duplicate reads at the same location based on binomial distribution. |
-| hmmratac | HMMRATAC is a dedicated tool specifically designed for processing ATAC-seq data, utilizing a Hidden Markov Model to learn the nucleosome structure around open chromatin regions. |
-| pileup | Create a bedGraph file by piling up alignment files with a given extension size. |
-| predictd | Predict d or fragment size from alignment files |
-| randsample | Randomly sample tags from alignment files to a specified percentage or number. |
-| refinepeak | Refine peak summits and compute enrichment scores using MACS3 |
+| macs3 bdgbroadcall | MACS3 tool to call broad peaks from bedGraph score tracks |
+| macs3 bdgcmp | Deduct noise by comparing treatment and control bedGraph files using various methods. |
+| macs3 bdgdiff | Differential peak detection based on paired bedGraph files |
+| macs3 bdgopt | Modify the score column of a bedGraph file using various methods. |
+| macs3 bdgpeakcall | Call peaks from bedGraph output of MACS3 |
+| macs3 callpeak | Model-based Analysis of ChIP-Seq (MACS) for identifying transcript factor binding sites. |
+| macs3 callvar | Call variants from ChIP-seq/ATAC-seq treatment and optional control BAM files within peak regions. |
+| macs3 cmbreps | Combine scores from replicates using different methods such as Fisher's, max, or mean. |
+| macs3 filterdup | MACS3 filterdup tool to remove duplicate reads at the same location based on binomial distribution. |
+| macs3 hmmratac | HMMRATAC is a dedicated tool specifically designed for processing ATAC-seq data, utilizing a Hidden Markov Model to learn the nucleosome structure around open chromatin regions. |
+| macs3 pileup | Create a bedGraph file by piling up alignment files with a given extension size. |
+| macs3 predictd | Predict d or fragment size from alignment files |
+| macs3 randsample | Randomly sample tags from alignment files to a specified percentage or number. |
+| macs3 refinepeak | Refine peak summits and compute enrichment scores using MACS3 |
 
 ## Reference documentation
 

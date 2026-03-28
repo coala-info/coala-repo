@@ -4,7 +4,6 @@ description: Eido is a framework and command-line tool for managing SQLite-based
 homepage: https://github.com/mayneyao/eidos
 ---
 
-
 # eido
 
 ## Overview

@@ -4,7 +4,6 @@ description: Trimnami is a Snaketool designed to streamline the preprocessing of
 homepage: https://github.com/beardymcjohnface/Trimnami
 ---
 
-
 # trimnami
 
 ## Overview

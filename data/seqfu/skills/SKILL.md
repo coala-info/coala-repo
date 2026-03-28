@@ -4,7 +4,6 @@ description: SeqFu is a versatile toolkit for the manipulation, filtering, and s
 homepage: http://github.com/quadram-institute-bioscience/seqfu/
 ---
 
-
 # seqfu
 
 ## Overview
@@ -83,7 +82,6 @@ seqfu <command> [options] <input_files>
 |---------|-------------|
 | bases | Print the DNA bases, and %GC content, in the input files |
 | cat | Concatenate multiple FASTA or FASTQ files. |
-| check | Check the integrity of FASTQ files, returns non zero   if an error occurs. Will print a table with a report. |
 | count | Count sequences in paired-end aware format |
 | dei | interleave FASTQ files |
 | derep | Dereplicate sequences based on their content. |
@@ -95,6 +93,7 @@ seqfu <command> [options] <input_files>
 | list | Print sequences that are present in a list file, which can contains leading ">" or "@" characters. Duplicated entries in the list will be ignored. |
 | metadata | Prepare mapping files from directory containing FASTQ files |
 | rc | Print the reverse complementary of sequences in files or sequences given as parameters. Can read FASTA/FASTQ also from STDIN, but not naked strings. |
+| seqfu check | Check the integrity of FASTQ files, returns non zero   if an error occurs. Will print a table with a report. |
 | sort | Sort sequences by size printing only unique sequences |
 | stats | Print statistics about input files |
 | tabulate | Convert FASTQ to TSV and viceversa. Single end is a 4 columns table (name, comment, seq, qual), paired end have 4 columns for the R1 and 4 columns for the R2. Paired end reads need to be supplied as interleaved. |

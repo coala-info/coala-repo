@@ -4,7 +4,6 @@ description: Nextclade performs viral genome alignment, mutation calling, clade 
 homepage: https://github.com/nextstrain/nextclade
 ---
 
-
 # nextclade_js
 
 ## Overview
@@ -54,8 +53,8 @@ When using `--output-all`, Nextclade generates several critical files:
 
 | Command | Description |
 |---------|-------------|
-| dataset | List and download available Nextclade datasets (pathogens) |
 | nextclade | Viral genome alignment, mutation calling, clade assignment, quality checks and phylogenetic placement. |
+| nextclade dataset | List and download available Nextclade datasets (pathogens) |
 
 ## Reference documentation
 - [Nextclade GitHub Repository](./references/github_com_nextstrain_nextclade.md)

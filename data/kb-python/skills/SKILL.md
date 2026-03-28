@@ -4,7 +4,6 @@ description: kb-python is a unified wrapper for the kallisto and bustools suite 
 homepage: https://github.com/pachterlab/kb_python
 ---
 
-
 # kb-python
 
 ## Overview
@@ -74,10 +73,10 @@ kb extract -i index.idx -g t2g.txt -o <OUTPUT_FASTQ> <FASTQ_FILES>
 
 | Command | Description |
 |---------|-------------|
-| --list | List of supported single-cell technologies |
-| count | Generate count matrices from a set of single-cell FASTQ files. Run `kb --list` to view single-cell technology information. |
 | kb | kb_python 0.30.0 |
-| ref | Build a kallisto index and transcript-to-gene mapping |
+| kb count | Generate count matrices from a set of single-cell FASTQ files. Run `kb --list` to view single-cell technology information. |
+| kb ref | Build a kallisto index and transcript-to-gene mapping |
+| kb-python kb --list | List of supported single-cell technologies |
 
 ## Reference documentation
 - [kb-python README](./references/github_com_pachterlab_kb_python_blob_master_README.md)

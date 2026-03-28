@@ -4,7 +4,6 @@ description: Steamboat formats and batches bioinformatics results with metadata 
 homepage: https://github.com/rpetit3/steamboat-py
 ---
 
-
 # steamboat
 
 ## Overview

@@ -4,7 +4,6 @@ description: STAG performs taxonomic assignment of metagenomic sequences and gen
 homepage: https://github.com/zellerlab/stag
 ---
 
-
 # stag
 
 ## Overview
@@ -59,7 +58,6 @@ Building a custom database requires three primary components: reference sequence
 
 | Command | Description |
 |---------|-------------|
-| check_input | Check the input for the train command |
 | stag | Supervised Taxonomic Assignment of marker Genes |
 | stag | Supervised Taxonomic Assignment of marker Genes |
 | stag | Supervised Taxonomic Assignment of marker Genes |
@@ -69,7 +67,8 @@ Building a custom database requires three primary components: reference sequence
 | stag | Supervised Taxonomic Assignment of marker Genes |
 | stag | Supervised Taxonomic Assignment of marker Genes |
 | stag | Supervised Taxonomic Assignment of marker Genes |
-| train | Train a STAG database |
+| stag check_input | Check the input for the train command |
+| stag train | Train a STAG database |
 
 ## Reference documentation
 - [GitHub - zellerlab/stag: A hierarchical taxonomic classifier for metagenomic sequences](./references/github_com_zellerlab_stag.md)

@@ -4,7 +4,6 @@ description: khmer provides memory-efficient tools for analyzing DNA shotgun seq
 homepage: https://khmer.readthedocs.io/
 ---
 
-
 # khmer
 
 ## Overview

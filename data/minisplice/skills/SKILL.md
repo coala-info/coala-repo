@@ -4,7 +4,6 @@ description: minisplice evaluates the probability of potential splice sites usin
 homepage: https://github.com/lh3/minisplice
 ---
 
-
 # minisplice
 
 ## Overview
@@ -59,7 +58,7 @@ The generated `scores.tsv` can be passed directly to compatible aligners to reso
 
 | Command | Description |
 |---------|-------------|
-| gentrain | Generate training data for minisplice |
+| minisplice gentrain | Generate training data for minisplice |
 | minisplice predict | Predict splice sites |
 | minisplice_train | Train a model for minisplice |
 

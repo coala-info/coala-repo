@@ -4,7 +4,6 @@ description: "MetaSBT indexes large-scale microbial genomes into Sequence Bloom 
 homepage: https://github.com/cumbof/MetaSBT
 ---
 
-
 # metasbt
 
 ## Overview

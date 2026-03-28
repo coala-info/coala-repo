@@ -4,7 +4,6 @@ description: bwa-mem2 is a high-performance tool for aligning DNA sequences agai
 homepage: https://github.com/bwa-mem2/bwa-mem2
 ---
 
-
 # bwa-mem2
 
 ## Overview
@@ -60,7 +59,7 @@ To get the most out of the tool, align the execution mode with your hardware:
 | Command | Description |
 |---------|-------------|
 | bwa-mem2 index | Build index for BWA-MEM2 |
-| mem | Align sequences to the reference genome. |
+| bwa-mem2 mem | Align sequences to the reference genome. |
 
 ## Reference documentation
 - [Original README with Performance Notes](./references/github_com_bwa-mem2_bwa-mem2_blob_master_README-ori.md)

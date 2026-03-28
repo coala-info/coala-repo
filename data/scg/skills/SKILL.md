@@ -4,7 +4,6 @@ description: The Single Cell Genotyper is a statistical framework for inferring 
 homepage: https://bitbucket.org/aroth85/scg/wiki/Home
 ---
 
-
 # scg
 
 ## Overview
@@ -42,6 +41,16 @@ The tool typically operates via a command-line interface. Common patterns involv
 - **Initialization**: Since the underlying models may be sensitive to initial conditions, run the tool with multiple random restarts to ensure the global optimum is reached.
 - **Convergence**: Monitor the log-likelihood of the model to ensure the inference has converged before interpreting the clonal structure.
 - **Complexity**: If the number of clones is unknown, run SCG across a range of values and use model selection criteria (like BIC or AIC) to determine the most parsimonious fit.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| scg_run_dirichlet_mixture_model | Run Dirichlet Mixture Model |
+| scg_run_doublet_model | Run the doublet model. |
+| scg_run_singlet_model | Run the singlet model for Single Cell Genotyper. |
 
 ## Reference documentation
 - [SCG Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_scg_overview.md)

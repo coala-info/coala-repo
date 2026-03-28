@@ -4,7 +4,6 @@ description: dRep compares and de-replicates microbial genome sets to identify c
 homepage: https://github.com/MrOlm/drep
 ---
 
-
 # drep
 
 ## Overview
@@ -71,8 +70,8 @@ dRep dereplicate <out_dir> -g /path/to/genomes/*.fasta --ignoreGenomeQuality
 
 | Command | Description |
 |---------|-------------|
-| compare | Compare genomes to find similar ones |
-| dereplicate | Dereplicate genomes based on ANI and other quality metrics. |
+| dRep compare | Compare genomes to find similar ones |
+| dRep dereplicate | Dereplicate genomes based on ANI and other quality metrics. |
 | drep_dRep | Check dependencies for dRep |
 
 ## Reference documentation

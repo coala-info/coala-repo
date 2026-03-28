@@ -4,7 +4,6 @@ description: AC-DIAMOND is a high-performance sequence alignment tool optimized 
 homepage: https://github.com/Maihj/AC-DIAMOND
 ---
 
-
 # ac-diamond
 
 ## Overview
@@ -70,9 +69,9 @@ Convert the binary DAA file into human-readable formats like BLAST tabular or SA
 | ac-diamond | AC-DIAMOND is a tool for aligning DNA query sequences against a protein reference database, featuring database building, alignment, and viewing capabilities. |
 | ac-diamond | AC-DIAMOND is a tool for aligning DNA query sequences against a protein reference database, building databases, and viewing alignment archives. |
 | ac-diamond | AC-DIAMOND: A tool for building databases, aligning DNA sequences against protein databases, and viewing alignment archives. |
-| align | Align DNA query sequences against a protein reference database |
-| makedb | Build AC-DIAMOND database from a FASTA file |
-| view | View AC-DIAMOND alignment archive (DAA) formatted file |
+| ac-diamond align | Align DNA query sequences against a protein reference database |
+| ac-diamond makedb | Build AC-DIAMOND database from a FASTA file |
+| ac-diamond view | View AC-DIAMOND alignment archive (DAA) formatted file |
 
 ## Reference documentation
 - [AC-DIAMOND README](./references/github_com_Maihj_AC-DIAMOND_blob_master_README.rst.md)

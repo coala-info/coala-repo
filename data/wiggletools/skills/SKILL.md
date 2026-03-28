@@ -4,7 +4,6 @@ description: WiggleTools is a high-performance framework for processing and perf
 homepage: https://github.com/Ensembl/WiggleTools
 ---
 
-
 # wiggletools
 
 ## Overview

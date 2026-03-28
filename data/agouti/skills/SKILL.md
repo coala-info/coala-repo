@@ -4,7 +4,6 @@ description: AGouTI processes genomic and transcriptomic intervals to label them
 homepage: https://github.com/zywicki-lab/agouti
 ---
 
-
 # agouti
 
 ## Overview
@@ -55,8 +54,8 @@ When your coordinates are relative to a transcript (e.g., "Position 50 of ENST00
 
 | Command | Description |
 |---------|-------------|
-| annotate | Annotate BED or custom column-based files using a database created with agouti create_db. |
-| create_db | Create a genomic annotation database from GTF or GFF3 files |
+| agouti annotate | Annotate BED or custom column-based files using a database created with agouti create_db. |
+| agouti create_db | Create a genomic annotation database from GTF or GFF3 files |
 
 ## Reference documentation
 - [AGouTI README](./references/github_com_zywicki-lab_agouti_blob_main_README.md)

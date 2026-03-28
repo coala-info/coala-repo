@@ -4,7 +4,6 @@ description: tbpore is a bioinformatics pipeline for processing raw Nanopore seq
 homepage: https://github.com/mbhall88/tbpore/
 ---
 
-
 # tbpore
 
 ## Overview
@@ -66,8 +65,8 @@ tbpore cluster --threshold 6 --outdir ./clusters/ output/sample_*/*.consensus.fa
 
 | Command | Description |
 |---------|-------------|
-| cluster | Cluster consensus sequences |
-| process | Single-sample TB genomic analysis from Nanopore sequencing data |
+| tbpore cluster | Cluster consensus sequences |
+| tbpore process | Single-sample TB genomic analysis from Nanopore sequencing data |
 | tbpore_download | Downloads and validates the decontamination database for TBpore. |
 
 ## Reference documentation

@@ -4,7 +4,6 @@ description: vgan is a suite of pangenomic tools designed for mitochondrial hapl
 homepage: https://github.com/grenaud/vgan
 ---
 
-
 # vgan
 
 ## Overview
@@ -98,10 +97,10 @@ vgan soibean -fq1 filtered_reads.fq.gz
 
 | Command | Description |
 |---------|-------------|
-| euka | euka performs abundance estimation of eukaryotic taxa from an environmental DNA sample. |
-| gam2prof | Convert gam file to profile file. |
-| haplocart | Haplocart predicts the mitochondrial haplogroup for reads originating from an uncontaminated modern human sample. |
-| soibean | First, to create a taxon of interest for the --dbprefix option please use:       /usr/local/bin/../share/vgan/soibean_dir/make_graph_files.sh [taxon name] The taxon name must be from our database. To get an overview of the available taxa use:       /usr/local/bin/../share/vgan/soibean_dir/make_graph_files.sh taxa |
+| vgan euka | euka performs abundance estimation of eukaryotic taxa from an environmental DNA sample. |
+| vgan gam2prof | Convert gam file to profile file. |
+| vgan haplocart | Haplocart predicts the mitochondrial haplogroup for reads originating from an uncontaminated modern human sample. |
+| vgan soibean | First, to create a taxon of interest for the --dbprefix option please use:       /usr/local/bin/../share/vgan/soibean_dir/make_graph_files.sh [taxon name] The taxon name must be from our database. To get an overview of the available taxa use:       /usr/local/bin/../share/vgan/soibean_dir/make_graph_files.sh taxa |
 | vgan_duprm | Remove duplicates from GAM file. |
 
 ## Reference documentation

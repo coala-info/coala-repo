@@ -4,7 +4,6 @@ description: ucsc-bedtogenepred converts BED-formatted genomic features into the
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
 
-
 # ucsc-bedtogenepred
 
 ## Overview
@@ -43,6 +42,15 @@ While specific versions may vary, the following patterns are standard for this u
 2.  **Verify BED12 Integrity**: If your conversion results in "single-exon" genes when you expected multiple exons, verify that your input BED file actually contains 12 columns and that the block counts and sizes are correctly formatted.
 3.  **GenePred Validation**: After conversion, it is a best practice to run `genePredCheck` on the output to ensure the resulting file is well-formed and biologically plausible (e.g., no overlapping exons in the same transcript).
 4.  **Permission Handling**: If running the binary directly from a download, ensure it has execution permissions: `chmod +x bedToGenePred`.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| bedToGenePred | Convert a BED file to a genePred file. |
+| genePredCheck | Validate genePred files, checking for various errors such as overlapping exons, invalid coordinates, and consistency with chromosome sizes. |
 
 ## Reference documentation
 - [bioconda | ucsc-bedtogenepred](./references/anaconda_org_channels_bioconda_packages_ucsc-bedtogenepred_overview.md)

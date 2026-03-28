@@ -4,7 +4,6 @@ description: rnanorm performs standard RNA-seq normalization techniques includin
 homepage: https://github.com/genialis/RNAnorm
 ---
 
-
 # rnanorm
 
 ## Overview
@@ -81,13 +80,13 @@ normalized_df = tpm_transformer.fit_transform(df)
 
 | Command | Description |
 |---------|-------------|
-| cpm | Calculate counts per million (CPM) for RNA-Seq data. |
-| ctf | Convert count data to TPM format. |
-| cuf | Normalize RNA-Seq count data using the CUF method. |
-| fpkm | Calculate FPKM values from gene expression data. |
-| tmm | Apply TMM normalization to an expression matrix. |
-| tpm | Compute TPM. |
-| uq | Performs Upper Quartile Normalization on expression data. |
+| rnanorm cpm | Calculate counts per million (CPM) for RNA-Seq data. |
+| rnanorm ctf | Convert count data to TPM format. |
+| rnanorm cuf | Normalize RNA-Seq count data using the CUF method. |
+| rnanorm fpkm | Calculate FPKM values from gene expression data. |
+| rnanorm tmm | Apply TMM normalization to an expression matrix. |
+| rnanorm tpm | Compute TPM. |
+| rnanorm uq | Performs Upper Quartile Normalization on expression data. |
 
 ## Reference documentation
 - [RNAnorm GitHub README](./references/github_com_genialis_RNAnorm_blob_main_README.rst.md)

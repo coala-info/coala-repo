@@ -4,7 +4,6 @@ description: mothur is a comprehensive bioinformatics suite used to process ampl
 homepage: https://www.mothur.org
 ---
 
-
 # mothur
 
 ## Overview

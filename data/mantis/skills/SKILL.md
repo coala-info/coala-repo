@@ -4,7 +4,6 @@ description: Mantis builds, compresses, and queries large-scale sequence-search 
 homepage: https://github.com/splatlab/mantis
 ---
 
-
 # mantis
 
 think---

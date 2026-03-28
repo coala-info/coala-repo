@@ -4,7 +4,6 @@ description: HowDeSBT indexes and searches large collections of k-mer sets from 
 homepage: https://github.com/medvedevgroup/HowDeSBT
 ---
 
-
 # howdesbt
 
 ## Overview

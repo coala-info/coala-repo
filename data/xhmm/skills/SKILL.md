@@ -4,7 +4,6 @@ description: XHMM detects rare de novo or inherited copy number variations from 
 homepage: http://atgu.mgh.harvard.edu/xhmm/index.shtml
 ---
 
-
 # xhmm
 
 ## Overview
@@ -61,6 +60,16 @@ xhmm --genotype -R ./normalized.RD.txt \
 - **Target Intervals**: Always use the same interval list (`-G`) that was used during the GATK DepthOfCoverage step to maintain coordinate consistency.
 - **PCA Components**: If the data remains noisy, adjust `--PCAnormalizeMaxVarianceProp`. Typically, removing components that explain the top 70-90% of variance helps isolate biological signals from capture-related noise.
 - **Visual Validation**: Always cross-reference high-quality XHMM calls (SQ > 60) against the normalized read depth plots to verify the deletion or duplication signal.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| xhmm | Uses principal component analysis (PCA) normalization and a hidden Markov model (HMM) to detect and genotype copy number variation (CNV) from normalized read-depth data from targeted sequencing experiments. |
+| xhmm | Uses principal component analysis (PCA) normalization and a hidden Markov model (HMM) to detect and genotype copy number variation (CNV) from normalized read-depth data from targeted sequencing experiments. |
+| xhmm | Uses principal component analysis (PCA) normalization and a hidden Markov model (HMM) to detect and genotype copy number variation (CNV) from normalized read-depth data from targeted sequencing experiments. |
 
 ## Reference documentation
 - [XHMM Overview](./references/anaconda_org_channels_bioconda_packages_xhmm_overview.md)

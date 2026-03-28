@@ -4,7 +4,6 @@ description: PanTools is a bioinformatics framework that uses a Neo4j graph data
 homepage: https://git.wur.nl/bioinformatics/pantools
 ---
 
-
 # pantools
 
 ## Overview
@@ -43,7 +42,6 @@ PanTools v4+ features an optimized pangenome construction process.
 
 | Command | Description |
 |---------|-------------|
-| deactivate_grouping | Deactivate the currently active homology grouping. |
 | pantools | Path to the database root directory. |
 | pantools | A comprehensive suite of tools for pangenome analysis. |
 | pantools | Path to the database root directory. |
@@ -51,11 +49,12 @@ PanTools v4+ features an optimized pangenome construction process.
 | pantools | A command-line tool for pangenome analysis. |
 | pantools | A command-line tool for pangenome analysis. |
 | pantools | Path to the database root directory. |
+| pantools deactivate_grouping | Deactivate the currently active homology grouping. |
+| pantools remove_annotations | Remove all the genomic features that belong to annotations. |
+| pantools remove_functions | Remove functional annotations from the pangenome. |
+| pantools remove_grouping | Remove an homology grouping from the pangenome. |
 | pantools remove_nodes | Remove a selection of nodes and their relationships from the pangenome. |
-| remove_annotations | Remove all the genomic features that belong to annotations. |
-| remove_functions | Remove functional annotations from the pangenome. |
-| remove_grouping | Remove an homology grouping from the pangenome. |
-| remove_phenotypes | Delete phenotype nodes or remove specific phenotype information from the nodes. |
+| pantools remove_phenotypes | Delete phenotype nodes or remove specific phenotype information from the nodes. |
 
 ## Reference documentation
 - [PanTools Project Overview](./references/git_wur_nl_bioinformatics_pantools.md)

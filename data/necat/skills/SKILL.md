@@ -4,7 +4,6 @@ description: NECAT is a bioinformatics pipeline designed for error correction an
 homepage: https://github.com/xiaochuanle/NECAT
 ---
 
-
 # necat
 
 ## Overview
@@ -67,10 +66,10 @@ To run NECAT across multiple nodes on PBS or SGE clusters, modify these fields i
 
 | Command | Description |
 |---------|-------------|
-| config | generate default config file |
 | necat.pl | NECAT is a tool for assembling long reads. |
 | necat.pl | necat.pl correct\|assemble\|bridge\|config cfg_fname |
 | necat.pl bridge | bridge contigs |
+| necat.pl config | generate default config file |
 
 ## Reference documentation
 - [NECAT README](./references/github_com_xiaochuanle_NECAT_blob_master_README.md)

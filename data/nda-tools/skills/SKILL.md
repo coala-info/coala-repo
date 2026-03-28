@@ -4,7 +4,6 @@ description: The nda-tools package provides a command-line interface for validat
 homepage: https://github.com/NDAR/nda-tools
 ---
 
-
 # nda-tools
 
 ## Overview

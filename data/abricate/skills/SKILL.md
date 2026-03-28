@@ -4,7 +4,6 @@ description: "ABRicate identifies acquired antibiotic resistance and virulence g
 homepage: https://github.com/tseemann/abricate
 ---
 
-
 # abricate
 
 ## Overview
@@ -51,6 +50,15 @@ To create a gene presence/absence matrix across multiple samples (useful for pan
 2. **Point Mutations**: Always remember that ABRicate will not find resistance caused by SNPs (e.g., gyrA mutations). For those cases, consider tools like AMRFinderPlus or PointFinder.
 3. **Summary Metrics**: When using `--summary`, the values in the matrix represent the `%COVERAGE`. If you prefer to see the `%IDENTITY`, add the `--identity` flag to the summary command.
 4. **Database Selection**: For general AMR screening, `ncbi` or `card` are standard. For E. coli specific virulence, `ecoli_vf` or `ecoh` provide more granular results than the general `vfdb`.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| abricate | Find and collate amplicons in assembled contigs |
+| abricate-get_db | Download databases for abricate to use |
 
 ## Reference documentation
 

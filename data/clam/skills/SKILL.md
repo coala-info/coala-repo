@@ -4,7 +4,6 @@ description: "Clam identifies callable genomic regions from sequencing depth to 
 homepage: https://github.com/cademirch/clam
 ---
 
-
 # clam
 
 ## Overview
@@ -56,8 +55,8 @@ If you plan to experiment with multiple depth thresholds, pre-process raw depth 
 | Command | Description |
 |---------|-------------|
 | clam collect | Collect depth from multiple files into a Zarr store |
-| loci | Calculate callable sites from depth statistics |
-| stat | Calculate population genetic statistics from VCF |
+| clam loci | Calculate callable sites from depth statistics |
+| clam stat | Calculate population genetic statistics from VCF |
 
 ## Reference documentation
 

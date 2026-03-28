@@ -4,7 +4,6 @@ description: Seaview identifies and localizes road infrastructure issues using a
 homepage: https://github.com/berry-ding/ShiYu_SeaView_GRDDC2022
 ---
 
-
 # seaview
 
 ## Overview
@@ -57,6 +56,17 @@ This script is designed to consolidate detection results from different architec
 - **MMDetection Backbone**: The `Faster_Swin_l_w12_DeformRoI` model provides the strongest localization for complex damage patterns but requires significant VRAM.
 - **Weight Compatibility**: Ensure you are using the specific PyTorch 1.8.2 LTS version; newer versions of PyTorch may encounter serialization issues with the provided `.pt` or `.pth` weights.
 - **Inference**: When running inference on large datasets, use the `merge.py` script to handle the Weighted Boxes Fusion (WBF) or NMS across the different model outputs.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| seaview | seaview [options] [alignment-or-tree-file] where alignment-or-tree-file is an optional sequence alignment or tree file to be read (always the last argument) and options are: |
+| seaview | seaview [options] [alignment-or-tree-file] |
+| seaview | seaview [options] [alignment-or-tree-file] |
+| seaview | seaview [options] [alignment-or-tree-file] |
 
 ## Reference documentation
 - [Main Repository README](./references/github_com_berry-ding_ShiYu_SeaView_GRDDC2022.md)

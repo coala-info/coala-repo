@@ -4,7 +4,6 @@ description: genmod is a bioinformatics suite that automates the annotation and 
 homepage: http://github.com/moonso/genmod
 ---
 
-
 # genmod
 
 ## Overview
@@ -53,12 +52,12 @@ Once annotated, use these tools to prioritize variants:
 
 | Command | Description |
 |---------|-------------|
-| annotate | Annotate vcf variants. |
-| filter | Filter vcf variants. |
+| genmod annotate | Annotate vcf variants. |
 | genmod compound | Score compound variants in a vcf file based on their rank score. |
+| genmod filter | Filter vcf variants. |
+| genmod models | Annotate genetic models for vcf variants. |
+| genmod score | Score variants in a vcf file using a Weighted Sum Model. |
 | genmod_sort | Sort a VCF file based on rank score. |
-| models | Annotate genetic models for vcf variants. |
-| score | Score variants in a vcf file using a Weighted Sum Model. |
 
 ## Reference documentation
 - [Genmod Overview](./references/clinical-genomics_github_io_genmod.md)

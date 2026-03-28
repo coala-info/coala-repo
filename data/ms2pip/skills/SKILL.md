@@ -4,7 +4,6 @@ description: MS²PIP predicts the relative intensities of fragment ions in tande
 homepage: http://compomics.github.io/projects/ms2pip_c
 ---
 
-
 # ms2pip
 
 ## Overview
@@ -64,11 +63,11 @@ Choosing the correct model is critical for prediction accuracy. Available models
 
 | Command | Description |
 |---------|-------------|
-| annotate-spectra | Annotate observed spectra. |
-| correlate | Compare predicted and observed intensities and optionally compute correlations. |
-| get-training-data | Extract feature vectors and target intensities from observed spectra for training. |
-| predict-batch | Predict fragmentation spectra for a batch of peptides. |
-| predict-library | Predict spectral library from protein FASTA file. |
+| ms2pip annotate-spectra | Annotate observed spectra. |
+| ms2pip correlate | Compare predicted and observed intensities and optionally compute correlations. |
+| ms2pip get-training-data | Extract feature vectors and target intensities from observed spectra for training. |
+| ms2pip predict-batch | Predict fragmentation spectra for a batch of peptides. |
+| ms2pip predict-library | Predict spectral library from protein FASTA file. |
 
 ## Reference documentation
 - [MS2PIP GitHub Repository](./references/github_com_CompOmics_ms2pip.md)

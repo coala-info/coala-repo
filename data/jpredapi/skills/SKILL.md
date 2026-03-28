@@ -4,7 +4,6 @@ description: The jpredapi tool provides a programmatic interface for submitting 
 homepage: https://github.com/MoseleyBioinformaticsLab/jpredapi
 ---
 
-
 # jpredapi
 
 ## Overview
@@ -57,11 +56,11 @@ jpredapi check_rest_version
 
 | Command | Description |
 |---------|-------------|
-| check_rest_version | Check the version of the REST API. |
-| get_results | Retrieves the results of a JPred API job. |
 | jpredapi | The JPred API allows users to submit jobs from the command-line. |
 | jpredapi | jpredapi command-line interface The JPred API allows users to submit jobs from the command-line. |
-| quota | Check your JPred API quota |
+| jpredapi check_rest_version | Check the version of the REST API. |
+| jpredapi get_results | Retrieves the results of a JPred API job. |
+| jpredapi quota | Check your JPred API quota |
 
 ## Reference documentation
 

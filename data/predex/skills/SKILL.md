@@ -4,7 +4,6 @@ description: Predex is a data preprocessing utility that prepares expression mat
 homepage: https://github.com/tomkuipers1402/predex
 ---
 
-
 # predex
 
 ## Overview
@@ -44,8 +43,8 @@ predex --ipa [IPA_INPUT_FILE] [OUTPUT_DIRECTORY]
 
 | Command | Description |
 |---------|-------------|
-| ipa | Input dir with IPA downloaded table |
 | predex comparison | Perform comparisons between samples based on a design matrix and a specified column. |
+| predex ipa | Input dir with IPA downloaded table |
 | predex_annotation | Perform annotation using predex. |
 | predex_design | Design experiment based on input count matrix. |
 

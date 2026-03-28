@@ -4,7 +4,6 @@ description: SnakeAltPromoter is a Snakemake-based pipeline that automates the i
 homepage: https://github.com/YidanSunResearchLab/SnakeAltPromoter
 ---
 
-
 # snakealtpromoter
 
 ## Overview

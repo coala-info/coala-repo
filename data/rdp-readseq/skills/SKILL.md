@@ -4,7 +4,6 @@ description: rdp-readseq converts and manipulates ribosomal RNA sequence data be
 homepage: https://anaconda.org/channels/bioconda/packages/rdp-readseq/overview
 ---
 
-
 # rdp-readseq
 
 ## Overview
@@ -41,6 +40,7 @@ Use these flags with the `-f` option to specify output formats:
 
 | Command | Description |
 |---------|-------------|
+| ReadSeqMain | Main entry point for ReadSeq operations. Use with a subcommand. |
 | ResampleSeqFile | ResampleSeqFile |
 | RevComplement | Reverse complement a DNA sequence |
 | RmRedundantSeqs | Remove redundant sequences from a FASTA file. |

@@ -4,7 +4,6 @@ description: pySCENIC is a Python implementation of the SCENIC pipeline used to 
 homepage: https://github.com/aertslab/pySCENIC
 ---
 
-
 # pyscenic
 
 ## Overview
@@ -62,8 +61,8 @@ pyscenic aucell [EXPRESSION_MTX] regulons.csv -o auc_output.loom
 
 | Command | Description |
 |---------|-------------|
-| grn | Infer gene regulatory networks |
 | pyscenic add_cor | Add correlation information to GRN adjacencies. |
+| pyscenic grn | Infer gene regulatory networks |
 | pyscenic_aucell | Calculate AUC for each cell and each gene signature. |
 | pyscenic_ctx | Enrich motifs in modules and generate regulons. |
 

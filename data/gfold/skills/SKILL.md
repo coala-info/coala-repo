@@ -4,7 +4,6 @@ description: "gfold provides a read-only overview of local Git repositories to t
 homepage: https://github.com/nickgerace/gfold
 ---
 
-
 # gfold
 
 ## Overview

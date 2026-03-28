@@ -4,7 +4,6 @@ description: NucleoATAC identifies nucleosome positions and occupancy levels fro
 homepage: http://nucleoatac.readthedocs.io/en/latest/
 ---
 
-
 # nucleoatac
 
 ## Overview
@@ -62,12 +61,12 @@ Use `pyatac` for preprocessing and diagnostic checks:
 
 | Command | Description |
 |---------|-------------|
-| nfr | NFR determination parameters |
-| nuc | Nucleosome calling |
 | nucleoatac merge | Merge nucleosome occupancy and position files. |
+| nucleoatac nfr | NFR determination parameters |
+| nucleoatac nuc | Nucleosome calling |
+| nucleoatac occ | Calculate nucleosome occupancy |
 | nucleoatac run | Run the nucleoatac pipeline |
-| occ | Calculate nucleosome occupancy |
-| vprocess | Processes nucleosome positioning data to generate various outputs and plots related to insert sizes and nucleosome footprints. |
+| nucleoatac vprocess | Processes nucleosome positioning data to generate various outputs and plots related to insert sizes and nucleosome footprints. |
 
 ## Reference documentation
 - [NucleoATAC Overview](./references/nucleoatac_readthedocs_io_en_latest_nucleoatac.md)

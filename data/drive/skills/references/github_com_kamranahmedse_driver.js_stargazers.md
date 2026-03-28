@@ -181,14 +181,37 @@ Additional navigation options
 
 [All 5,000+](/kamranahmedse/driver.js/stargazers) [You know](/kamranahmedse/driver.js/stargazers/you_know)
 
-1. [![@Nicohidalgo](https://avatars.githubusercontent.com/u/45693668?s=96&v=4)](/Nicohidalgo)
+1. [![@RicoSanches4](https://avatars.githubusercontent.com/u/212244685?s=96&v=4)](/RicoSanches4)
+
+   ## [RicoSanches4](/RicoSanches4)
+
+   Joined on May 18, 2025
+
+   [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fkamranahmedse%2Fdriver.js%2Fstargazers)
+2. [![@ifrederico](https://avatars.githubusercontent.com/u/160797211?s=96&v=4)](/ifrederico)
+
+   ## [ifrederico](/ifrederico)
+
+   Works for @tecompanytea
+
+   @tecompanytea
+
+   [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fkamranahmedse%2Fdriver.js%2Fstargazers)
+3. [![@JoshGoldfeder](https://avatars.githubusercontent.com/u/180716784?s=96&v=4)](/JoshGoldfeder)
+
+   ## [JoshGoldfeder](/JoshGoldfeder)
+
+   Joined on Sep 7, 2024
+
+   [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fkamranahmedse%2Fdriver.js%2Fstargazers)
+4. [![@Nicohidalgo](https://avatars.githubusercontent.com/u/45693668?s=96&v=4)](/Nicohidalgo)
 
    ## [Nicohidalgo](/Nicohidalgo)
 
    Joined on Dec 7, 2018
 
    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fkamranahmedse%2Fdriver.js%2Fstargazers)
-2. [![@Shekhar854](https://avatars.githubusercontent.com/u/85551183?s=96&v=4)](/Shekhar854)
+5. [![@Shekhar854](https://avatars.githubusercontent.com/u/85551183?s=96&v=4)](/Shekhar854)
 
    ## [Shekhar854](/Shekhar854)
 
@@ -197,7 +220,7 @@ Additional navigation options
    @startup4Nation
 
    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fkamranahmedse%2Fdriver.js%2Fstargazers)
-3. [![@mdnaimul22](https://avatars.githubusercontent.com/u/64520358?s=96&v=4)](/mdnaimul22)
+6. [![@mdnaimul22](https://avatars.githubusercontent.com/u/64520358?s=96&v=4)](/mdnaimul22)
 
    ## [mdnaimul22](/mdnaimul22)
 
@@ -206,21 +229,21 @@ Additional navigation options
    Bangladesh
 
    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fkamranahmedse%2Fdriver.js%2Fstargazers)
-4. [![@NodeGPTjs](https://avatars.githubusercontent.com/u/168474725?s=96&v=4)](/NodeGPTjs)
+7. [![@NodeGPTjs](https://avatars.githubusercontent.com/u/168474725?s=96&v=4)](/NodeGPTjs)
 
    ## [NodeGPTjs](/NodeGPTjs)
 
    Joined on Apr 29, 2024
 
    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fkamranahmedse%2Fdriver.js%2Fstargazers)
-5. [![@slam357](https://avatars.githubusercontent.com/u/47313310?s=96&v=4)](/slam357)
+8. [![@slam357](https://avatars.githubusercontent.com/u/47313310?s=96&v=4)](/slam357)
 
    ## [slam357](/slam357)
 
    Joined on Feb 4, 2019
 
    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fkamranahmedse%2Fdriver.js%2Fstargazers)
-6. [![@minya92](https://avatars.githubusercontent.com/u/4252803?s=96&v=4)](/minya92)
+9. [![@minya92](https://avatars.githubusercontent.com/u/4252803?s=96&v=4)](/minya92)
 
    ## [minya92](/minya92)
 
@@ -229,41 +252,41 @@ Additional navigation options
    Turkey
 
    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fkamranahmedse%2Fdriver.js%2Fstargazers)
-7. [![@pavlentij](https://avatars.githubusercontent.com/u/971128?s=96&v=4)](/pavlentij)
+10. [![@pavlentij](https://avatars.githubusercontent.com/u/971128?s=96&v=4)](/pavlentij)
 
-   ## [pavlentij](/pavlentij)
+    ## [pavlentij](/pavlentij)
 
-   Is from Dnipro, Ukraine
+    Is from Dnipro, Ukraine
 
-   Dnipro, Ukraine
+    Dnipro, Ukraine
 
-   [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fkamranahmedse%2Fdriver.js%2Fstargazers)
-8. [![@yybmion](https://avatars.githubusercontent.com/u/113106136?s=96&v=4)](/yybmion)
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fkamranahmedse%2Fdriver.js%2Fstargazers)
+11. [![@yybmion](https://avatars.githubusercontent.com/u/113106136?s=96&v=4)](/yybmion)
 
-   ## [yybmion](/yybmion)
+    ## [yybmion](/yybmion)
 
-   Works for hypercape
+    Works for hypercape
 
-   hypercape
+    hypercape
 
-   [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fkamranahmedse%2Fdriver.js%2Fstargazers)
-9. [![@lcaohoanq](https://avatars.githubusercontent.com/u/136492579?s=96&v=4)](/lcaohoanq)
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fkamranahmedse%2Fdriver.js%2Fstargazers)
+12. [![@lcaohoanq](https://avatars.githubusercontent.com/u/136492579?s=96&v=4)](/lcaohoanq)
 
-   ## [lcaohoanq](/lcaohoanq)
+    ## [lcaohoanq](/lcaohoanq)
 
-   Is from Ho Chi Minh City
+    Is from Ho Chi Minh City
 
-   Ho Chi Minh City
+    Ho Chi Minh City
 
-   [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fkamranahmedse%2Fdriver.js%2Fstargazers)
-10. [![@MengmengWang](https://avatars.githubusercontent.com/u/10238620?s=96&v=4)](/MengmengWang)
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fkamranahmedse%2Fdriver.js%2Fstargazers)
+13. [![@MengmengWang](https://avatars.githubusercontent.com/u/10238620?s=96&v=4)](/MengmengWang)
 
     ## [MengmengWang](/MengmengWang)
 
     Joined on Dec 19, 2014
 
     [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fkamranahmedse%2Fdriver.js%2Fstargazers)
-11. [![@mk11232](https://avatars.githubusercontent.com/u/71728492?s=96&v=4)](/mk11232)
+14. [![@mk11232](https://avatars.githubusercontent.com/u/71728492?s=96&v=4)](/mk11232)
 
     ## [mk11232](/mk11232)
 
@@ -272,14 +295,14 @@ Additional navigation options
     Atlanta, Georgia
 
     [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fkamranahmedse%2Fdriver.js%2Fstargazers)
-12. [![@gabrielmax-maker](https://avatars.githubusercontent.com/u/267635255?s=96&v=4)](/gabrielmax-maker)
+15. [![@gabrielmax-maker](https://avatars.githubusercontent.com/u/267635255?s=96&v=4)](/gabrielmax-maker)
 
     ## [gabrielmax-maker](/gabrielmax-maker)
 
     Joined on Mar 12, 2026
 
     [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fkamranahmedse%2Fdriver.js%2Fstargazers)
-13. [![@cevhyruz](https://avatars.githubusercontent.com/u/20886353?s=96&v=4)](/cevhyruz)
+16. [![@cevhyruz](https://avatars.githubusercontent.com/u/20886353?s=96&v=4)](/cevhyruz)
 
     ## [cevhyruz](/cevhyruz)
 
@@ -288,7 +311,7 @@ Additional navigation options
     @ABEST-Express-Inc
 
     [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fkamranahmedse%2Fdriver.js%2Fstargazers)
-14. [![@willwearing](https://avatars.githubusercontent.com/u/47907933?s=96&v=4)](/willwearing)
+17. [![@willwearing](https://avatars.githubusercontent.com/u/47907933?s=96&v=4)](/willwearing)
 
     ## [willwearing](/willwearing)
 
@@ -297,7 +320,7 @@ Additional navigation options
     Posthog
 
     [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fkamranahmedse%2Fdriver.js%2Fstargazers)
-15. [![@HuKoTuH](https://avatars.githubusercontent.com/u/11271419?s=96&v=4)](/HuKoTuH)
+18. [![@HuKoTuH](https://avatars.githubusercontent.com/u/11271419?s=96&v=4)](/HuKoTuH)
 
     ## [HuKoTuH](/HuKoTuH)
 
@@ -306,7 +329,7 @@ Additional navigation options
     World
 
     [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fkamranahmedse%2Fdriver.js%2Fstargazers)
-16. [![@ibrahemid](https://avatars.githubusercontent.com/u/25980614?s=96&v=4)](/ibrahemid)
+19. [![@ibrahemid](https://avatars.githubusercontent.com/u/25980614?s=96&v=4)](/ibrahemid)
 
     ## [ibrahemid](/ibrahemid)
 
@@ -315,14 +338,14 @@ Additional navigation options
     CTO @ Studio 20
 
     [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fkamranahmedse%2Fdriver.js%2Fstargazers)
-17. [![@mamerisawesome](https://avatars.githubusercontent.com/u/9782450?s=96&v=4)](/mamerisawesome)
+20. [![@mamerisawesome](https://avatars.githubusercontent.com/u/9782450?s=96&v=4)](/mamerisawesome)
 
     ## [mamerisawesome](/mamerisawesome)
 
     Joined on Nov 16, 2014
 
     [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fkamranahmedse%2Fdriver.js%2Fstargazers)
-18. [![@Artursrossi](https://avatars.githubusercontent.com/u/78820818?s=96&v=4)](/Artursrossi)
+21. [![@Artursrossi](https://avatars.githubusercontent.com/u/78820818?s=96&v=4)](/Artursrossi)
 
     ## [Artursrossi](/Artursrossi)
 
@@ -331,14 +354,14 @@ Additional navigation options
     @vertical-midia
 
     [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fkamranahmedse%2Fdriver.js%2Fstargazers)
-19. [![@hishamk](https://avatars.githubusercontent.com/u/2189717?s=96&v=4)](/hishamk)
+22. [![@hishamk](https://avatars.githubusercontent.com/u/2189717?s=96&v=4)](/hishamk)
 
     ## [hishamk](/hishamk)
 
     Joined on Aug 21, 2012
 
     [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fkamranahmedse%2Fdriver.js%2Fstargazers)
-20. [![@sourcecube](https://avatars.githubusercontent.com/u/3285018?s=96&v=4)](/sourcecube)
+23. [![@sourcecube](https://avatars.githubusercontent.com/u/3285018?s=96&v=4)](/sourcecube)
 
     ## [sourcecube](/sourcecube)
 
@@ -347,38 +370,11 @@ Additional navigation options
     Germany
 
     [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fkamranahmedse%2Fdriver.js%2Fstargazers)
-21. [![@qixing-jk](https://avatars.githubusercontent.com/u/125447674?s=96&v=4)](/qixing-jk)
+24. [![@qixing-jk](https://avatars.githubusercontent.com/u/125447674?s=96&v=4)](/qixing-jk)
 
     ## [qixing-jk](/qixing-jk)
 
     Joined on Feb 15, 2023
-
-    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fkamranahmedse%2Fdriver.js%2Fstargazers)
-22. [![@ToyB0x](https://avatars.githubusercontent.com/u/83337042?s=96&v=4)](/ToyB0x)
-
-    ## [ToyB0x](/ToyB0x)
-
-    Works for Available for hire
-
-    Available for hire
-
-    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fkamranahmedse%2Fdriver.js%2Fstargazers)
-23. [![@tbrianjones](https://avatars.githubusercontent.com/u/2577299?s=96&v=4)](/tbrianjones)
-
-    ## [tbrianjones](/tbrianjones)
-
-    Works for Infinity Engineering
-
-    Infinity Engineering
-
-    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fkamranahmedse%2Fdriver.js%2Fstargazers)
-24. [![@CodesSky](https://avatars.githubusercontent.com/u/26740320?s=96&v=4)](/CodesSky)
-
-    ## [CodesSky](/CodesSky)
-
-    Is from HangZhou ZheJiang Province China
-
-    HangZhou ZheJiang Province China
 
     [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fkamranahmedse%2Fdriver.js%2Fstargazers)
 

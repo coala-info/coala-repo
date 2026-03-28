@@ -10,6 +10,7 @@ Index a genome for tracy
 - **Homepage**: https://github.com/gear-genomics/tracy
 - **Package**: https://anaconda.org/channels/bioconda/packages/tracy/overview
 - **Validation**: PASS
+- **usage**: https://www.gear-genomics.com/docs/tracy/cli/
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/tracy/overview
 - **Total Downloads**: 76.3K
@@ -223,4 +224,4 @@ Output options:
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

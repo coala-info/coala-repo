@@ -4,7 +4,6 @@ description: hapbin is a high-performance software suite used to detect signatur
 homepage: https://github.com/evotools/hapbin
 ---
 
-
 # hapbin
 
 ## Overview

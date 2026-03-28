@@ -4,7 +4,6 @@ description: "HoCoRT identifies and removes contaminant host sequences from sequ
 homepage: https://github.com/ignasrum/hocort
 ---
 
-
 # hocort
 
 ## Overview
@@ -60,8 +59,8 @@ hocort map bowtie2 -x indexes/target_organism -i input.fastq -o extracted.fastq 
 
 | Command | Description |
 |---------|-------------|
-| index | build index/-es for supported tools |
-| map | map reads to a reference genome and output mapped/unmapped reads |
+| hocort index | build index/-es for supported tools |
+| hocort map | map reads to a reference genome and output mapped/unmapped reads |
 
 ## Reference documentation
 - [HoCoRT GitHub Repository](./references/github_com_ignasrum_hocort.md)

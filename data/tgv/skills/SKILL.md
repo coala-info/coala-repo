@@ -4,7 +4,6 @@ description: The Terminal Genome Viewer (tgv) is a lightweight, command-line too
 homepage: https://github.com/zeqianli/tgv
 ---
 
-
 # tgv
 
 ## Overview

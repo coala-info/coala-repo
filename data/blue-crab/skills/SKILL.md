@@ -4,7 +4,6 @@ description: The blue-crab tool performs bidirectional conversion between ONT PO
 homepage: https://github.com/Psy-Fer/blue-crab
 ---
 
-
 # blue-crab
 
 ## Overview
@@ -39,7 +38,7 @@ Use this to return data to the ONT-native format if required by specific ONT pro
 | Command | Description |
 |---------|-------------|
 | blue-crab p2s | Convert POD5 -> SLOW5/BLOW5 |
-| s2p | Convert SLOW5/BLOW5 -> POD5 |
+| blue-crab s2p | Convert SLOW5/BLOW5 -> POD5 |
 
 ## Reference documentation
 - [GitHub Repository Overview](./references/github_com_Psy-Fer_blue-crab.md)

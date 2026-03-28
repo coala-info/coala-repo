@@ -4,7 +4,6 @@ description: "CoreProfiler generates core genome multilocus sequence types (cgML
 homepage: https://gitlab.com/ifb-elixirfr/abromics
 ---
 
-
 # coreprofiler
 
 yaml
@@ -64,6 +63,15 @@ coreprofiler --input ./genomes --output ./results --scheme ./my_custom_scheme.tx
 - **Monitor output:** Always check the `summary.txt` file for any warnings or errors that might indicate issues with your input data or the analysis process.
 - **Leverage multi-threading:** For large-scale analyses, utilize the `--threads` option to reduce computation time.
 - **Understand allele calling:** Be aware of the `--min_coverage` and `--min_identity` parameters, as they directly influence how alleles are called and can impact the accuracy of your typing results.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| coreprofiler allele_calling | Allele calling specific arguments. |
+| coreprofiler db | Database handling specific arguments. |
 
 ## Reference documentation
 

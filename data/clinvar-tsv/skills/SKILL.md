@@ -4,7 +4,6 @@ description: The clinvar-tsv tool transforms ClinVar XML data into standardized 
 homepage: https://github.com/bihealth/clinvar-tsv
 ---
 
-
 # clinvar-tsv
 
 ## Overview
@@ -56,8 +55,8 @@ The tool produces two distinct types of summary files for each genome build. Cho
 | Command | Description |
 |---------|-------------|
 | clinvar-tsv | A tool for processing ClinVar data. |
-| main | Main command for clinvar-tsv |
-| parse_xml | Parse ClinVar XML file into TSV format. |
+| clinvar-tsv main | Main command for clinvar-tsv |
+| clinvar-tsv parse_xml | Parse ClinVar XML file into TSV format. |
 
 ## Reference documentation
 - [Clinvar-TSV README](./references/github_com_bihealth_clinvar-tsv_blob_main_README.md)

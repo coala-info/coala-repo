@@ -4,7 +4,6 @@ description: hybkit is a bioinformatic suite for processing, filtering, and anal
 homepage: https://github.com/RenneLab/hybkit
 ---
 
-
 # hybkit
 
 ## Overview
@@ -62,6 +61,17 @@ with hybkit.HybFile.open('data.hyb', 'r') as hyb_file:
 - **Secondary Structure**: When performing fold analysis, ensure your `.vienna` or `.ct` files match the order of the `.hyb` file.
 - **Memory Efficiency**: For very large datasets, prefer the CLI filters or the API's iterative processing over loading entire datasets into memory.
 - **Visualization**: `hyb_analyze` relies on `matplotlib`. Ensure a backend is available if running in a headless environment (e.g., use `Agg`).
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| hyb_analyze | Read hyb / vienna files and analyze the fold information in the contained hybrid sequences. |
+| hyb_check | Read one or more hyb (and optional fold) format files and check for errors. |
+| hyb_eval | Read hyb files (and optional matched fold files) and evaluate the contained hybrids. |
+| hyb_filter | Filter hyb (and corresponding fold) files to meet (or exclude) specific criteria. |
 
 ## Reference documentation
 - [hybkit Overview](./references/anaconda_org_channels_bioconda_packages_hybkit_overview.md)

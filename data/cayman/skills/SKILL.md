@@ -4,7 +4,6 @@ description: "Cayman quantifies the abundance of carbohydrate-active enzymes in 
 homepage: https://github.com/zellerlab/cayman
 ---
 
-
 # cayman
 
 ## Overview
@@ -68,7 +67,7 @@ cayman profile \
 
 | Command | Description |
 |---------|-------------|
-| annotate_proteome | Annotate proteome with HMMs |
+| cayman annotate_proteome | Annotate proteome with HMMs |
 | cayman profile | Profile reads against an annotation database and BWA index. |
 
 ## Reference documentation

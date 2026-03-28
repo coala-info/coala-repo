@@ -4,7 +4,6 @@ description: GNU Datamash is a command-line utility for performing basic numeric
 homepage: https://github.com/agordon/datamash
 ---
 
-
 # datamash
 
 ## Overview

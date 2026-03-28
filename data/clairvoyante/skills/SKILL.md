@@ -4,7 +4,6 @@ description: Clairvoyante is a multi-task convolutional neural network designed 
 homepage: https://github.com/aquaskyline/Clairvoyante
 ---
 
-
 # clairvoyante
 
 ## Overview

@@ -4,7 +4,6 @@ description: The galaxy-workflow-executor automates the execution of Galaxy work
 homepage: https://github.com/ebi-gene-expression-group/galaxy-workflow-executor
 ---
 
-
 # galaxy-workflow-executor
 
 ## Overview

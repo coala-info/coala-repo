@@ -4,7 +4,6 @@ description: batch_brb automates a two-way reciprocal BLAST process to identify 
 homepage: https://github.com/erin-r-butterfield/batch_brb
 ---
 
-
 # batch_brb
 
 ## Overview
@@ -48,6 +47,7 @@ The Best Reciprocal BLAST procedure follows these logic steps:
 
 | Command | Description |
 |---------|-------------|
+| Rscript | Wrapper scripts for batch correction. |
 | Rscript batch_correction_docker_wrapper.R | Wrapper script for batch correction, with options to use LOESS-based methods. |
 | Rscript batch_correction_docker_wrapper.R | Wrapper script for batch correction, can call different underlying batch correction methods. |
 

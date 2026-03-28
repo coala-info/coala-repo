@@ -4,7 +4,6 @@ description: "Accelerates BLAST searches by distributing them across multiple cl
 homepage: https://pypi.org/project/elastic-blast/
 ---
 
-
 # elastic-blast
 
 yaml
@@ -101,6 +100,18 @@ Consult the official documentation for detailed instructions on cloud provider s
 *   **Cloud Provider Configuration**: Thoroughly configure your cloud provider's credentials and permissions before running jobs. This is often the most complex part of setting up ElasticBLAST. Refer to the official documentation for detailed guides on AWS and GCP.
 *   **Project Naming**: Use descriptive project names (`--project-name`) to easily manage and identify your different BLAST runs.
 *   **Error Handling**: Pay close attention to any error messages during job submission or execution. Issues often stem from incorrect cloud configurations or malformed input files.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| elastic-blast | This application facilitates running BLAST on large amounts of query sequence data on the cloud |
+| elastic-blast delete | Deletes an ElasticBLAST job. |
+| elastic-blast run-summary | Show a summary of the ElasticBLAST run. |
+| elastic-blast status | Check the status of an ElasticBLAST job. |
+| elastic-blast submit | Submit a BLAST search to ElasticBLAST |
 
 ## Reference documentation
 - [ElasticBLAST Documentation](https://blast.ncbi.nlm.nih.gov/doc/elastic-blast/)

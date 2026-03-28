@@ -4,7 +4,6 @@ description: Freyja recovers the relative abundance of SARS-CoV-2 lineages from 
 homepage: https://github.com/andersen-lab/Freyja
 ---
 
-
 # freyja
 
 ## Overview
@@ -69,11 +68,13 @@ freyja aggregate path/to/demix_results/ \
 
 | Command | Description |
 |---------|-------------|
-| ampliconstat | Calculate amplicon statistics from a FASTA file. |
-| barcode-build | Builds a barcode reference from a FASTA file. |
-| demix | Generate relative lineage abundances from VARIANTS and DEPTHS |
 | freyja aggregate | Aggregates all demix data in RESULTS directory |
+| freyja ampliconstat | Calculate amplicon statistics from a FASTA file. |
+| freyja barcode-build | Builds a barcode reference from a FASTA file. |
 | freyja boot | Perform bootstrapping method for freyja using VARIANTS and DEPTHS |
+| freyja demix | Generate relative lineage abundances from VARIANTS and DEPTHS |
+| freyja get-lineage-def | Get the mutations defining a LINEAGE of interest from provided barcodes |
+| freyja plot-covariants | Plot COVARIANTS output as a heatmap |
 | freyja update | Update to the most recent barcodes and curated lineage data |
 | freyja_covariants | Calls physically linked mutations in BAM_FILE using coVar (https://github.com/andersen-lab/covar) |
 | freyja_dash | Generate an interactive dashboard from Freyja results. |
@@ -82,8 +83,6 @@ freyja aggregate path/to/demix_results/ \
 | freyja_plot | Create plot from AGG_RESULTS |
 | freyja_relgrowthrate | Calculates relative growth rates for each lineage using AGG_RESULTS and METADATA |
 | freyja_variants | Perform variant calling using samtools and iVar on a BAMFILE |
-| get-lineage-def | Get the mutations defining a LINEAGE of interest from provided barcodes |
-| plot-covariants | Plot COVARIANTS output as a heatmap |
 
 ## Reference documentation
 - [Freyja README](./references/github_com_andersen-lab_Freyja.md)

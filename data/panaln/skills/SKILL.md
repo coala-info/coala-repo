@@ -4,7 +4,6 @@ description: Panaln maps sequencing reads to a pangenome index created from a re
 homepage: https://github.com/Lilu-guo/Panaln
 ---
 
-
 # panaln
 
 ## Overview
@@ -67,9 +66,9 @@ Map sequencing reads to the pangenome index to produce a SAM file.
 
 | Command | Description |
 |---------|-------------|
-| align | Align fastq sequences using panaln |
-| combine | Generate Pangenome by combining FASTA and VCF files |
-| index | Index a pan-genome file |
+| panaln align | Align fastq sequences using panaln |
+| panaln combine | Generate Pangenome by combining FASTA and VCF files |
+| panaln index | Index a pan-genome file |
 
 ## Reference documentation
 - [Panaln README](./references/github_com_Lilu-guo_Panaln_blob_master_README.md)

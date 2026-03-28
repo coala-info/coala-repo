@@ -4,7 +4,6 @@ description: Sinto is a suite of command-line utilities designed to manipulate s
 homepage: https://timoast.github.io/sinto/
 ---
 
-
 # sinto
 
 ## Overview
@@ -78,15 +77,15 @@ sinto fastq -r1 read1.fastq.gz -r2 read2.fastq.gz -b barcodes.fastq.gz -o output
 
 | Command | Description |
 |---------|-------------|
-| addtags | Add read tags to reads from individual cells |
-| nametotag | Copy cell barcode sequences from read name to read tag |
+| sinto addtags | Add read tags to reads from individual cells |
 | sinto fragments | Create ATAC-seq fragment file from BAM file |
+| sinto nametotag | Copy cell barcode sequences from read name to read tag |
+| sinto tagtorg | Append a read tag to the read group ID of each read. Also appends the read tag to the SM field of the read group. |
 | sinto_barcode | Add cell barcode sequences to read names in FASTQ file. |
 | sinto_blocks | Create scRNA-seq block file from BAM file |
 | sinto_filterbarcodes | Filter reads based on input list of cell barcodes |
 | sinto_tagtoname | Copy cell barcode sequences from tag to read names. Cell barcodes will be added as a readname prefix, followed by ":" |
 | sinto_tagtotag | Copies BAM entries to a new file while copying a read tag to another read tag and optionally deleting the originating tag. |
-| tagtorg | Append a read tag to the read group ID of each read. Also appends the read tag to the SM field of the read group. |
 
 ## Reference documentation
 

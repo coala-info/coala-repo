@@ -4,7 +4,6 @@ description: Skmer estimates genomic distances and identifies samples from low-p
 homepage: https://github.com/shahab-sarmashghi/Skmer
 ---
 
-
 # skmer
 
 ## Overview

@@ -4,7 +4,6 @@ description: mseqtools is a high-performance C-based toolkit designed for handli
 homepage: https://github.com/arumugamlab/mseqtools
 ---
 
-
 # mseqtools
 
 ## Overview
@@ -43,6 +42,15 @@ mseqtools automatically detects compressed input using `zlib`. For output, it us
 - **Streaming**: Use `-` as a filename to read from `stdin` or write to `stdout`, allowing mseqtools to be integrated into complex bioinformatics pipes.
 - **Performance**: Because mseqtools uses `kseq.h`, it is extremely memory-efficient. It is preferred over Python or Perl scripts for processing multi-gigabyte FASTQ files.
 - **Illumina Headers**: The tool contains internal logic for parsing Illumina-specific mate-paired template names (e.g., handling the `/1` and `/2` suffixes), making it ideal for preprocessing raw reads before assembly.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| mseqtools | Sequence manipulation toolkit |
+| mseqtools_subset | Subset a fasta/fastq file based on a list of identifiers. |
 
 ## Reference documentation
 

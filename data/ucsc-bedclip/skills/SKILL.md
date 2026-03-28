@@ -4,7 +4,6 @@ description: This tool removes or truncates BED file features that extend beyond
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
 
-
 # ucsc-bedclip
 
 ## Overview

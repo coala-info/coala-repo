@@ -4,7 +4,6 @@ description: SGA is a modular assembly pipeline that uses a memory-efficient str
 homepage: https://github.com/jts/sga
 ---
 
-
 # sga
 
 ## Overview
@@ -76,32 +75,32 @@ SGA uses the ASQG (Assembly Graph) format for representing the string graph.
 
 | Command | Description |
 |---------|-------------|
-| assemble | Create contigs from the assembly graph ASQGFILE. |
-| bwt2fa | Transform the bwt BWTFILE back into a set of sequences |
-| cluster | Extract clusters of reads belonging to the same connected components. |
-| correct | Correct sequencing errors in all the reads in READSFILE |
-| filter | Remove reads from a data set. The currently available filters are removing exact-match duplicates and removing reads with low-frequency k-mers. Automatically rebuilds the FM-index without the discarded reads. |
-| filterBAM | Discard mate-pair alignments from a BAM file that are potentially erroneous |
-| gapfill | Fill in scaffold gaps using walks through a de Bruijn graph |
-| graph-diff | Find and report strings only present in the graph of VARIANT when compared to BASE |
-| kmer-count | Generate a table of the k-mers in src.{bwt,fa,fq}, and optionally count the number of time they appears in testX.bwt. Output on stdout the canonical kmers and their counts on forward and reverse strand if input is .bwt If src is a sequence file output forward and reverse counts for each kmer in the file |
-| oview | Draw overlaps in ASQGFILE |
-| preqc | Perform pre-assembly quality checks |
-| rmdup | Remove duplicate reads from the data set. |
 | scaffold | Construct scaffolds from CONTIGSFILE using distance estimates. |
 | scaffold2fasta | Write out a fasta file for the scaffolds indicated in SCAFFOLDFILE |
+| sga assemble | Create contigs from the assembly graph ASQGFILE. |
+| sga bwt2fa | Transform the bwt BWTFILE back into a set of sequences |
+| sga cluster | Extract clusters of reads belonging to the same connected components. |
+| sga correct | Correct sequencing errors in all the reads in READSFILE |
+| sga filter | Remove reads from a data set. The currently available filters are removing exact-match duplicates and removing reads with low-frequency k-mers. Automatically rebuilds the FM-index without the discarded reads. |
+| sga filterBAM | Discard mate-pair alignments from a BAM file that are potentially erroneous |
 | sga fm-merge | Merge unambiguously sequences from the READSFILE using the FM-index. This program requires filter to be run before it and rmdup to be run after. |
+| sga gapfill | Fill in scaffold gaps using walks through a de Bruijn graph |
 | sga graph-concordance | Count read support for variants in a vcf file |
+| sga graph-diff | Find and report strings only present in the graph of VARIANT when compared to BASE |
 | sga index | Index the reads in READSFILE using a suffixarray/bwt |
+| sga kmer-count | Generate a table of the k-mers in src.{bwt,fa,fq}, and optionally count the number of time they appears in testX.bwt. Output on stdout the canonical kmers and their counts on forward and reverse strand if input is .bwt If src is a sequence file output forward and reverse counts for each kmer in the file |
 | sga overlap | Compute pairwise overlap between all the sequences in READS |
+| sga oview | Draw overlaps in ASQGFILE |
+| sga preqc | Perform pre-assembly quality checks |
 | sga rewrite-evidence-bam | Discard mate-pair alignments from a BAM file that are potentially erroneous |
+| sga rmdup | Remove duplicate reads from the data set. |
+| sga stats | Print statistics about the read set. Currently this only prints a histogram of the k-mer counts |
+| sga subgraph | Extract the subgraph around the sequence with ID from an asqg file. |
 | sga_gen-ssa | Build a sampled suffix array for the reads in READSFILE using the BWT |
 | sga_haplotype-filter | Remove haplotypes and their associated variants from a data set. |
 | sga_merge | Merge the sequence files READS1, READS2 into a single file/index |
 | sga_preprocess | Prepare READS1, READS2, ... data files for assembly |
 | somatic-variant-filters | Filters somatic variants based on tumor and normal BAM files and a reference genome. |
-| stats | Print statistics about the read set. Currently this only prints a histogram of the k-mer counts |
-| subgraph | Extract the subgraph around the sequence with ID from an asqg file. |
 
 ## Reference documentation
 - [SGA GitHub Repository](./references/github_com_jts_sga.md)

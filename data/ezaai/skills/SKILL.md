@@ -4,7 +4,6 @@ description: EzAAI is a bioinformatics suite for calculating Average Amino Acid 
 homepage: http://leb.snu.ac.kr/ezaai
 ---
 
-
 # ezaai
 
 ## Overview
@@ -47,11 +46,11 @@ Generate a clustering analysis based on the AAI results to understand taxonomic 
 
 | Command | Description |
 |---------|-------------|
-| calculate | Calculate AAI value from protein databases |
-| cluster | Hierarchical clustering of taxa with AAI values |
-| convert | Convert CDS FASTA file into protein DB |
-| convertdb | Convert protein DB into FASTA file |
-| extract | Extract protein DB from prokaryotic genome sequence(s) using Prodigal |
+| ezaai calculate | Calculate AAI value from protein databases |
+| ezaai cluster | Hierarchical clustering of taxa with AAI values |
+| ezaai convert | Convert CDS FASTA file into protein DB |
+| ezaai convertdb | Convert protein DB into FASTA file |
+| ezaai extract | Extract protein DB from prokaryotic genome sequence(s) using Prodigal |
 
 ## Reference documentation
 - [EzAAI GitHub Repository](./references/github_com_endixk_ezaai_blob_main_README.md)

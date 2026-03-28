@@ -4,7 +4,6 @@ description: LevioSAM translates sequence alignments between different genomic c
 homepage: https://github.com/alshai/levioSAM
 ---
 
-
 # leviosam
 
 ## Overview
@@ -72,8 +71,8 @@ LevioSAM scales well with multiple cores. Always specify the `-t` parameter to m
 
 | Command | Description |
 |---------|-------------|
-| collate | Collate alignments to make sure reads are paired |
 | leviosam | lifting over alignments |
+| leviosam collate | Collate alignments to make sure reads are paired |
 | leviosam reconcile | Reconcile multiple BAM files into a single BAM file. |
 | leviosam_bed | Lift over a BED file |
 

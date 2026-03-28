@@ -4,7 +4,6 @@ description: AGFusion annotates and visualizes gene fusion events to predict the
 homepage: https://github.com/murphycj/AGFusion
 ---
 
-
 # agfusion
 
 ## Overview
@@ -78,10 +77,10 @@ AGFusion produces a structured output directory:
 
 | Command | Description |
 |---------|-------------|
-| annotate | Annotate and visualize gene fusion events using the AGFusion database. |
-| batch | AGFusion batch processing for fusion-finding algorithm outputs to visualize and analyze gene fusions. |
-| build | Build the AGFusion database for a specific species and Ensembl release. |
-| download | Download the AGFusion database for specific genomes, species, and releases. |
+| agfusion annotate | Annotate and visualize gene fusion events using the AGFusion database. |
+| agfusion batch | AGFusion batch processing for fusion-finding algorithm outputs to visualize and analyze gene fusions. |
+| agfusion build | Build the AGFusion database for a specific species and Ensembl release. |
+| agfusion download | Download the AGFusion database for specific genomes, species, and releases. |
 
 ## Reference documentation
 

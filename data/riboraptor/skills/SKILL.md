@@ -4,7 +4,6 @@ description: Riboraptor is a Python package for analyzing ribosome profiling dat
 homepage: https://github.com/saketkc/riboraptor
 ---
 
-
 # riboraptor
 
 A Python package for analyzing ribosome profiling data. Use this skill when you need to process and analyze ribosome profiling (ribo-seq) data, including tasks related to SRA dataset processing, dependency management, and running analysis workflows.
@@ -73,6 +72,24 @@ Riboraptor can be used in several ways, primarily as a Snakemake-based workflow 
 *   **Output:** Analysis results are usually generated in various formats, including text files, plots, and potentially BED or BigWig files, depending on the specific analysis step.
 *   **SRA Downloads:** Use the `pysradb` tool (installed as a dependency) to download SRA datasets efficiently. For example: `pysradb download -p <project_accession>`.
 *   **Note on `ribotricer`:** Be aware that `ribotricer` is the successor to Riboraptor and may offer more up-to-date features and support. If starting a new project, consider evaluating `ribotricer` first.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| riboraptor bam-to-bedgraph | Convert bam to bedgraph |
+| riboraptor bedgraph-to-bigwig | Convert bedgraph to bigwig |
+| riboraptor export-bed-fasta | Export gene level fasta from specified bed regions |
+| riboraptor export-gene-coverages | Export gene level coverage for all genes for given region |
+| riboraptor export-metagene-coverage | Export metagene coverage for given region |
+| riboraptor periodicity | Calculate periodicity of Ribo-seq data. |
+| riboraptor plot-metagene | Plot metagene read counts. |
+| riboraptor plot-read-length | Plot read length distribution |
+| riboraptor read-length-dist | Calculate read length distribution |
+| riboraptor uniq-bam | Create a new bam with unique mapping reads only |
+| riboraptor uniq-mapping-count | Count number of unique mapping reads |
 
 ## Reference documentation
 

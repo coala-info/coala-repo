@@ -4,7 +4,6 @@ description: ReSeq simulates Illumina sequencing reads by extracting error profi
 homepage: https://github.com/schmeing/ReSeq/tree/devel
 ---
 
-
 # reseq
 
 ## Overview
@@ -61,8 +60,8 @@ reseq illuminaPE -j 32 -R ref.fa -s profile.reseq -V variations.vcf -1 out_1.fq 
 | reseq illuminaPE | ReSeq version 1.1 in illuminaPE mode |
 | reseq queryProfile | Runs ReSeq in queryProfile mode |
 | reseq replaceN | Replace Ns in reference sequences |
-| seqToIllumina | Converts a FASTA file to FASTQ format with simulated sequencing errors. |
-| test | Runs ReSeq in test mode |
+| reseq seqToIllumina | Converts a FASTA file to FASTQ format with simulated sequencing errors. |
+| reseq test | Runs ReSeq in test mode |
 
 ## Reference documentation
 - [ReSeq GitHub README](./references/github_com_schmeing_ReSeq_blob_master_README.md)

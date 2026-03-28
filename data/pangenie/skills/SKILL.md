@@ -4,7 +4,6 @@ description: PanGenie is a k-mer based genotyper that uses a pangenome graph and
 homepage: https://github.com/eblerjana/pangenie
 ---
 
-
 # pangenie
 
 ## Overview

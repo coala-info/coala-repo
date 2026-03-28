@@ -4,7 +4,6 @@ description: The Resistance Gene Identifier predicts the antibiotic resistome fr
 homepage: https://card.mcmaster.ca
 ---
 
-
 # rgi_conda_dev
 
 ## Overview

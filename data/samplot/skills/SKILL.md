@@ -4,7 +4,6 @@ description: Samplot creates visual representations of genomic structural varian
 homepage: https://github.com/ryanlayer/samplot
 ---
 
-
 # samplot
 
 ## Overview

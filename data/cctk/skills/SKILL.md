@@ -4,7 +4,6 @@ description: CCTK is a Python toolkit for the comparative analysis and evolution
 homepage: https://github.com/Alan-Collins/CRISPR_comparison_toolkit
 ---
 
-
 # cctk
 
 ## Overview

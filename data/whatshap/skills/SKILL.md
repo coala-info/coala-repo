@@ -4,7 +4,6 @@ description: WhatsHap reconstructs haplotypes from sequencing data by phasing ge
 homepage: https://whatshap.readthedocs.io
 ---
 
-
 # whatshap
 
 ## Overview
@@ -76,19 +75,19 @@ whatshap compare --names "Method1,Method2" phased1.vcf phased2.vcf
 
 | Command | Description |
 |---------|-------------|
-| compare | Compare two or more phased variant files |
-| find_snv_candidates | Generate candidate SNP positions. |
-| hapcut2vcf | Convert hapCUT output format to VCF |
-| haplotag | Tag reads by haplotype |
-| haplotagphase | Phase variants in VCF based on information from haplotagged reads |
-| polyphase | Phase variants in a polyploid VCF using a clustering+threading algorithm. |
-| polyphasegenetic | Phase variants in a polyploid VCF using a clustering+threading algorithm. |
-| split | Split reads by haplotype |
-| stats | Print phasing statistics of a single VCF file |
-| unphase | Remove phasing information from a VCF file |
+| whatshap compare | Compare two or more phased variant files |
+| whatshap find_snv_candidates | Generate candidate SNP positions. |
 | whatshap genotype | Genotype variants |
+| whatshap hapcut2vcf | Convert hapCUT output format to VCF |
+| whatshap haplotag | Tag reads by haplotype |
+| whatshap haplotagphase | Phase variants in VCF based on information from haplotagged reads |
 | whatshap learn | Generate sequencing technology specific error profiles |
 | whatshap phase | Phase variants in a VCF with the WhatsHap algorithm |
+| whatshap polyphase | Phase variants in a polyploid VCF using a clustering+threading algorithm. |
+| whatshap polyphasegenetic | Phase variants in a polyploid VCF using a clustering+threading algorithm. |
+| whatshap split | Split reads by haplotype |
+| whatshap stats | Print phasing statistics of a single VCF file |
+| whatshap unphase | Remove phasing information from a VCF file |
 
 ## Reference documentation
 - [WhatsHap GitHub Repository](./references/github_com_whatshap_whatshap.md)

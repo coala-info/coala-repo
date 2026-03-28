@@ -4,7 +4,6 @@ description: Seqtk is a fast and lightweight toolkit for processing and transfor
 homepage: https://github.com/lh3/seqtk
 ---
 
-
 # seqtk
 
 ## Overview
@@ -50,27 +49,27 @@ Seqtk is a lightweight and exceptionally fast toolkit written in C for processin
 
 | Command | Description |
 |---------|-------------|
-| comp | Get the nucleotide composition of a FASTA/FASTQ file |
-| cutN | Cut sequences at long N tracts |
-| dropse | Drop single-end reads from interleaved FASTQ |
-| famask | Apply a mask to a FASTA sequence file |
-| fqchk | Fastq quality check and distribution analysis |
-| gap | Find gaps in a FASTA file |
-| gc | Identify GC-rich or AT-rich regions in a FASTA file |
-| hety | Analyze heterozygosity in a FASTA file |
-| listhet | Identify and list heterozygous sites from a sequence file. |
-| mergefa | Merge two FASTA/Q files |
-| mergepe | Merge paired-end reads from two separate FASTQ files |
-| mutfa | Mutate a FASTA file based on a SNP list. The SNP file should contain at least four columns: 'chr', '1-based-pos', 'any', and 'base-changed-to'. |
-| randbase | Randomize bases in a sequence file (usually part of the seqtk toolkit) |
-| rename | Rename sequences in a FASTA/FASTQ file |
-| sample | Subsample sequences from FASTA/FASTQ files |
-| seq | Common transformation of FASTA/FASTQ sequences, including masking, partitioning, and format conversion. |
+| seqtk comp | Get the nucleotide composition of a FASTA/FASTQ file |
+| seqtk cutN | Cut sequences at long N tracts |
+| seqtk dropse | Drop single-end reads from interleaved FASTQ |
+| seqtk famask | Apply a mask to a FASTA sequence file |
+| seqtk fqchk | Fastq quality check and distribution analysis |
+| seqtk gap | Find gaps in a FASTA file |
+| seqtk gc | Identify GC-rich or AT-rich regions in a FASTA file |
+| seqtk hety | Analyze heterozygosity in a FASTA file |
+| seqtk listhet | Identify and list heterozygous sites from a sequence file. |
+| seqtk mergefa | Merge two FASTA/Q files |
+| seqtk mergepe | Merge paired-end reads from two separate FASTQ files |
+| seqtk mutfa | Mutate a FASTA file based on a SNP list. The SNP file should contain at least four columns: 'chr', '1-based-pos', 'any', and 'base-changed-to'. |
+| seqtk randbase | Randomize bases in a sequence file (usually part of the seqtk toolkit) |
+| seqtk rename | Rename sequences in a FASTA/FASTQ file |
+| seqtk sample | Subsample sequences from FASTA/FASTQ files |
+| seqtk seq | Common transformation of FASTA/FASTQ sequences, including masking, partitioning, and format conversion. |
+| seqtk size | Calculate the total number of bases and sequences in a FASTA/FASTQ file |
+| seqtk split | Split a FASTA/FASTQ file into multiple files |
+| seqtk subseq | Extract subsequences from FASTA/FASTQ files using a BED file or a list of names |
+| seqtk trimfq | Trim low-quality regions from FASTQ sequences |
 | seqtk_hpc | A tool for processing biological sequences (HPC version). |
-| size | Calculate the total number of bases and sequences in a FASTA/FASTQ file |
-| split | Split a FASTA/FASTQ file into multiple files |
-| subseq | Extract subsequences from FASTA/FASTQ files using a BED file or a list of names |
-| trimfq | Trim low-quality regions from FASTQ sequences |
 
 ## Reference documentation
 

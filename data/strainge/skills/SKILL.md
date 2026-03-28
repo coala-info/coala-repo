@@ -4,7 +4,6 @@ description: Strainge performs high-resolution identification and genomic variat
 homepage: The package home page
 ---
 
-
 # strainge
 
 ## Overview
@@ -44,6 +43,29 @@ Once a reference strain is identified, use `straingr` to perform detailed alignm
 *   **Input Quality**: Ensure adapters are trimmed and low-quality reads are filtered before running `straingst` to reduce k-mer noise.
 *   **Resource Management**: `straingst` database files (HDF5) can be large; ensure sufficient RAM is available when loading comprehensive databases.
 *   **Multi-sample Analysis**: When comparing strains across multiple samples, use the same reference database and version of `strainge` to ensure consistency in SNP calling and abundance estimates.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| strainge | A command-line tool for analyzing and manipulating k-mer databases. |
+| strainge | A command-line tool for analyzing genomic sequences. |
+| strainge | A toolkit for analyzing k-mer profiles of sequencing data. |
+| strainge | A toolkit for analyzing microbial genomes and metagenomes. |
+| strainge | A toolkit for analyzing genomic sequences using k-mer based methods. |
+| strainge | A tool for analyzing and comparing k-mer profiles of genomic sequences. |
+| strainge | A toolkit for analyzing and comparing k-mer profiles of sequencing data. |
+| strainge createdb | Create pan-genome database in HDF5 format from a list of k-merized strains. |
+| strainge kmerize | K-merize a given reference sequence or a sample read dataset. |
+| strainge kmersim | Compare k-mer sets with each other. Both all-vs-all and one-vs-all is supported. |
+| strainge plot | Generate plots for a given k-mer set. |
+| strainge tree | Build an approximate phylogenetic tree based on a given distance matrix, using neighbour joining. Because our pairwise distances are pretty rough (especially at lower coverages), the triangle inequality may not hold, and the resulting tree may not be accurate. |
+| strainge_cluster | Group k-mer sets that are very similar to each other together. |
+| strainge_compare | Compare strains and variant calls in two different samples. Reads of both samples must be aligned to the same reference. |
+| strainge_stats | Obtain statistics about a given k-mer set. |
+| strainge_view | View call statistics stored in a HDF5 file and output results to different file formats |
 
 ## Reference documentation
 - [strainge Overview](./references/anaconda_org_channels_bioconda_packages_strainge_overview.md)

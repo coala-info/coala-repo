@@ -4,7 +4,6 @@ description: YASMA is a bioinformatics suite designed for the comprehensive anno
 homepage: https://github.com/NateyJay/YASMA
 ---
 
-
 # yasma
 
 ## Overview
@@ -58,14 +57,14 @@ The core engine that identifies sRNA loci.
 
 | Command | Description |
 |---------|-------------|
-| adapter | Tool to check untrimmed-libraries for 3' adapter content. |
-| align | Aligner based on shortstack3-style weighting |
-| count | Gets counts for all readgroups, loci, strand, and sizes. |
-| coverage | Produces bigwig coverage files |
-| hairpin | Evaluates annotated loci for hairpin or miRNA structures. |
-| size-profile | Convenience function for calculating aligned size profile. |
-| tradeoff | Annotator using focused capturing the most reads in the least genomic space |
-| trim | Wrapper for trimming using cutadapt. |
+| yasma adapter | Tool to check untrimmed-libraries for 3' adapter content. |
+| yasma align | Aligner based on shortstack3-style weighting |
+| yasma count | Gets counts for all readgroups, loci, strand, and sizes. |
+| yasma coverage | Produces bigwig coverage files |
+| yasma hairpin | Evaluates annotated loci for hairpin or miRNA structures. |
+| yasma size-profile | Convenience function for calculating aligned size profile. |
+| yasma tradeoff | Annotator using focused capturing the most reads in the least genomic space |
+| yasma trim | Wrapper for trimming using cutadapt. |
 | yasma_download | Download libraries from the NCBI SRA using their SRR code |
 | yasma_inputs | Initialize a project and log inputs for later analyses |
 | yasma_jbrowse | Build coverage and config files for jbrowse2 |

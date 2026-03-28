@@ -4,7 +4,6 @@ description: This tool provides a cross-platform Rust implementation of GNU core
 homepage: https://github.com/uutils/coreutils
 ---
 
-
 # coreutils
 
 ## Overview

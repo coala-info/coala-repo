@@ -4,7 +4,6 @@ description: "Aligns and classifies peptides from reference-independent de novo 
 homepage: https://pypi.org/project/darkprofiler/
 ---
 
-
 # darkprofiler
 
 darkprofiler/
@@ -60,6 +59,16 @@ darkprofiler -i <input_file1> [<input_file2> ...] -o <output_directory> [options
 *   **File Formats**: While `.fasta` is common, consult the tool's documentation for any specific format requirements or recommendations for optimal performance.
 *   **Large Datasets**: For very large datasets, consider running DarkProfiler on a high-performance computing cluster. Ensure sufficient disk space for the output directory.
 *   **Interpreting Results**: The output will typically include information on peptide identification, classification, and alignment scores. Familiarize yourself with these metrics to effectively interpret the results.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| darkprofiler | DarkProfiler: classify peptides into canonical, alternative, mutant, and dark proteome categories. |
+| darkprofiler download | Download reference genome assemblies for darkprofiler. |
+| darkprofiler_run | Run darkprofiler |
 
 ## Reference documentation
 - [DarkProfiler Overview](./references/anaconda_org_channels_bioconda_packages_darkprofiler_overview.md)

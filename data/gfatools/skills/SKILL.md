@@ -4,7 +4,6 @@ description: "gfatools is a suite of utilities for manipulating and converting s
 homepage: https://github.com/lh3/gfatools
 ---
 
-
 # gfatools
 
 ## Overview
@@ -56,9 +55,9 @@ For assembly graphs, gfatools can simplify the topology:
 
 | Command | Description |
 |---------|-------------|
-| gfa2bed | Convert GFA to BED format |
-| gfa2fa | Convert a GFA file to FASTA format |
 | gfatools bubble | Extract bubbles from a GFA graph. |
+| gfatools gfa2bed | Convert GFA to BED format |
+| gfatools gfa2fa | Convert a GFA file to FASTA format |
 | gfatools view | View and subset GFA graphs |
 | gfatools_asm | Perform assembly operations on a GFA graph. |
 | gfatools_blacklist | Identify and output regions from a GFA graph that are considered 'blacklisted'. |

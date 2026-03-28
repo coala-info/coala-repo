@@ -4,7 +4,6 @@ description: py2neo provides a high-level Python API for interacting with Neo4j 
 homepage: https://github.com/MazzaWill/neo4j-python-pandas-py2neo-v3
 ---
 
-
 # py2neo
 
 ## Overview
@@ -97,6 +96,7 @@ def get_adjacency_matrix(graph, label):
 | Command | Description |
 |---------|-------------|
 | evaluate | Evaluate a Cypher statement |
+| py2neo | A tool to run or evaluate Cypher statements against a Neo4j database. |
 | run | Run a Cypher statement |
 
 ## Reference documentation

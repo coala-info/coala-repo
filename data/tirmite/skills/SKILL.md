@@ -4,7 +4,6 @@ description: "tirmite models natural variation in transposon termini to identify
 homepage: https://github.com/Adamtaranto/TIRmite
 ---
 
-
 # tirmite
 
 ## Overview

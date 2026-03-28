@@ -4,7 +4,6 @@ description: unikmer is a high-performance toolkit for nucleic acid k-mer manipu
 homepage: https://github.com/shenwei356/unikmer
 ---
 
-
 # unikmer
 
 ## Overview
@@ -74,18 +73,18 @@ Once you have a set of k-mers of interest (e.g., unique k-mers), you can map the
 
 | Command | Description |
 |---------|-------------|
-| autocompletion | Generate shell autocompletion script |
-| count | Generate k-mers (sketch) from FASTA/Q sequences |
-| rfilter | Filter k-mers by taxonomic rank |
-| split | Split k-mers into sorted chunk files |
-| tsplit | Split k-mers according to taxid |
+| unikmer autocompletion | Generate shell autocompletion script |
+| unikmer count | Generate k-mers (sketch) from FASTA/Q sequences |
 | unikmer diff | Set difference of k-mers in multiple binary files |
 | unikmer dump | Convert plain k-mer text to binary format |
 | unikmer filter | Filter out low-complexity k-mers (experimental) |
 | unikmer locate | Locate k-mers in genome |
 | unikmer map | Mapping k-mers back to the genome and extract successive regions/subsequences |
 | unikmer merge | Merge k-mers from sorted chunk files |
+| unikmer rfilter | Filter k-mers by taxonomic rank |
 | unikmer sort | Sort k-mers to reduce the file size and accelerate downstream analysis |
+| unikmer split | Split k-mers into sorted chunk files |
+| unikmer tsplit | Split k-mers according to taxid |
 | unikmer_common | Find k-mers shared by most of the binary files |
 | unikmer_concat | Concatenate multiple binary files without removing duplicates |
 | unikmer_decode | Decode encoded integer to k-mer text |

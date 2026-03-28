@@ -4,7 +4,6 @@ description: The fq utility is a command-line tool designed for the efficient va
 homepage: https://github.com/stjude-rust-labs/fq
 ---
 
-
 # fq
 
 ## Overview
@@ -61,10 +60,10 @@ Useful for creating "light" versions of datasets for pipeline testing.
 
 | Command | Description |
 |---------|-------------|
+| fq lint | Validates a FASTQ file pair |
 | fq subsample | Outputs a subset of records |
 | fq_filter | Filters a FASTQ file |
 | fq_generate | Generates a random FASTQ file pair |
-| lint | Validates a FASTQ file pair |
 
 ## Reference documentation
 - [fq README and Usage Guide](./references/github_com_stjude-rust-labs_fq_blob_master_README.md)

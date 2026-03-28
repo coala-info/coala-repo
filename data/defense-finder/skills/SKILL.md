@@ -4,7 +4,6 @@ description: DefenseFinder identifies anti-phage defense systems in genomic or p
 homepage: https://github.com/mdmparis/defense-finder
 ---
 
-
 # defense-finder
 
 ## Overview
@@ -65,8 +64,8 @@ defense-finder --version
 
 | Command | Description |
 |---------|-------------|
-| run | Search for all known anti-phage defense systems in the target fasta file. |
-| update | Fetches the latest defense finder models. |
+| defense-finder run | Search for all known anti-phage defense systems in the target fasta file. |
+| defense-finder update | Fetches the latest defense finder models. |
 
 ## Reference documentation
 - [Main README](./references/github_com_mdmparis_defense-finder_blob_master_README.md)

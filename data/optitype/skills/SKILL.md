@@ -4,7 +4,6 @@ description: OptiType performs high-accuracy 4-digit HLA Class I typing by formu
 homepage: https://github.com/FRED-2/OptiType
 ---
 
-
 # optitype
 
 ## Overview

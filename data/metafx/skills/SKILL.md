@@ -4,7 +4,6 @@ description: MetaFX transforms raw metagenomic reads into numerical features usi
 homepage: https://github.com/ctlab/metafx
 ---
 
-
 # metafx
 
 ## Overview
@@ -64,21 +63,21 @@ Once a feature table is generated (usually `feature_table.tsv`), use these modul
 
 | Command | Description |
 |---------|-------------|
-| calc_features | MetaFX calc_features module – to count values for new samples based on previously extracted features |
-| chisq | supervised feature extraction using top significant k-mers by chi-squared test |
-| extract_kmers | Counting k-mers presence for samples |
-| metafast | MetaFX metafast module – unsupervised feature extraction and distance estimation via MetaFast (https://github.com/ctlab/metafast/) |
 | metafx bandage | MetaFX bandage module – Machine Learning methods to train classifier and prepare for visualisation in Bandage (https://github.com/ctlab/BandageNG) |
+| metafx calc_features | MetaFX calc_features module – to count values for new samples based on previously extracted features |
+| metafx chisq | supervised feature extraction using top significant k-mers by chi-squared test |
 | metafx colored | supervised feature extraction using group-colored de Bruijn graph |
 | metafx cv | Machine Learning methods to train classification model based on extracted features and check accuracy via cross-validation |
+| metafx extract_kmers | Counting k-mers presence for samples |
 | metafx feature_analysis | MetaFX feature_analysis module – pipeline to build de Bruijn graphs for samples with selected feature and visualize them in BandageNG (https://github.com/ctlab/BandageNG) |
 | metafx fit | Machine Learning methods to train classification model based on extracted features |
 | metafx fit_predict | Machine Learning methods to train classification model based on extracted features and immediately apply it to classify new samples |
+| metafx metafast | MetaFX metafast module – unsupervised feature extraction and distance estimation via MetaFast (https://github.com/ctlab/metafast/) |
+| metafx metaspades | MetaFX metaspades module – unsupervised feature extraction and distance estimation via metaSpades (https://cab.spbu.ru/software/meta-spades/) |
 | metafx pca | PCA dimensionality reduction and visualisation of samples based on extracted features |
 | metafx predict | MetaFX predict module – Machine Learning methods to classify new samples based on pre-trained model |
 | metafx stats | supervised feature extraction using statistically significant k-mers |
 | metafx unique | supervised feature extraction using group-specific k-mers |
-| metaspades | MetaFX metaspades module – unsupervised feature extraction and distance estimation via metaSpades (https://cab.spbu.ru/software/meta-spades/) |
 
 ## Reference documentation
 - [MetaFX GitHub Wiki](./references/github_com_ctlab_metafx_wiki.md)

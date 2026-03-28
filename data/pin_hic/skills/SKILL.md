@@ -4,7 +4,6 @@ description: Pin_hic is a genome assembly tool that uses Hi-C spatial informatio
 homepage: https://github.com/dfguan/pin_hic/
 ---
 
-
 # pin_hic
 
 ## Overview
@@ -65,10 +64,10 @@ Breaks incorrect joins and outputs the final FASTA.
 
 | Command | Description |
 |---------|-------------|
-| build | Build scaffolding graph using Hi-C links matrix |
-| gets | Extract sequences from a SAT file |
-| link | Collect Hi-C links from BAM files |
 | pin_hic | Identify breaks in a SAT file using Hi-C BAM files |
+| pin_hic build | Build scaffolding graph using Hi-C links matrix |
+| pin_hic gets | Extract sequences from a SAT file |
+| pin_hic link | Collect Hi-C links from BAM files |
 | pin_hic_it | A tool for Hi-C based scaffolding of genomic contigs. |
 
 ## Reference documentation

@@ -4,7 +4,6 @@ description: "maelstrom-core extracts and normalizes depth-of-coverage data from
 homepage: https://github.com/bihealth/maelstrom-core
 ---
 
-
 # maelstrom-core
 
 ## Overview
@@ -35,6 +34,15 @@ Since the tool is built with the Rust `clap` library, it follows standard GNU-st
 *   **Input Requirements**: Ensure BAM files are properly sorted and indexed. The underlying `rust-htslib` requires indices (`.bai`) for efficient region-based coverage collection.
 *   **Error Handling**: If the tool crashes during region-specific collection, ensure you are using version 0.1.1 or later, as early versions had known issues with region-based processing.
 *   **Memory Management**: As a Rust-based tool, it is highly efficient with memory; however, when processing many samples in parallel, monitor system resources as HTSlib can still allocate significant buffers for decompression.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| maelstrom-core | Tools for processing of NGS data |
+| maelstrom-core bam-collect-doc | Create contigs with synthetic sequence |
 
 ## Reference documentation
 - [Maelstrom Core README](./references/github_com_bihealth_maelstrom-core_blob_main_README.md)

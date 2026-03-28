@@ -4,7 +4,6 @@ description: Yak evaluates genomic assembly quality and base-level accuracy by c
 homepage: https://github.com/lh3/yak
 ---
 
-
 # yak
 
 ## Overview
@@ -78,11 +77,11 @@ For human de novo assemblies, yak can help separate X and Y contigs using specia
 
 | Command | Description |
 |---------|-------------|
-| count | Count k-mers in FASTA files |
-| inspect | Evaluates k-mer QV and k-mer sensitivity. |
-| qv | Calculate k-mer quality values (QV) for sequences. |
-| triobin | Identify and extract triobins from yak files. |
-| trioeval | Evaluate trios from yak files and a reference FASTA. |
+| yak count | Count k-mers in FASTA files |
+| yak inspect | Evaluates k-mer QV and k-mer sensitivity. |
+| yak qv | Calculate k-mer quality values (QV) for sequences. |
+| yak triobin | Identify and extract triobins from yak files. |
+| yak trioeval | Evaluate trios from yak files and a reference FASTA. |
 
 ## Reference documentation
 - [Yak GitHub Repository Overview](./references/github_com_lh3_yak.md)

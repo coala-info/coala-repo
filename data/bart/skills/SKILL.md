@@ -4,7 +4,6 @@ description: bart performs high-throughput bacterial sequence typing and antimic
 homepage: https://github.com/tomdstanton/bart
 ---
 
-
 # bart
 
 ## Overview
@@ -54,8 +53,8 @@ Use `bart-update` to maintain the local database of schemes and genes.
 
 | Command | Description |
 |---------|-------------|
-| alpha | A simplified implementation of iterative sense reconstruction with l2-regularization. |
 | avg | Calculates (weighted) average along dimensions specified by bitmask. |
+| bart itsense alpha | A simplified implementation of iterative sense reconstruction with l2-regularization. |
 | bart_casorati | Casorati matrix with kernel (kern1, ..., kernn) along dimensions (dim1, ..., dimn). |
 | bart_crop | Extracts a sub-array corresponding to the central part of {size} along {dimension} |
 | bart_estshift | Estimate shift in spectral data |

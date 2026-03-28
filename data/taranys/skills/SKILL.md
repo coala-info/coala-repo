@@ -4,7 +4,6 @@ description: Taranys is a computational pipeline for high-resolution bacterial t
 homepage: https://github.com/BU-ISCIII/taranys
 ---
 
-
 # taranys
 
 ## Overview

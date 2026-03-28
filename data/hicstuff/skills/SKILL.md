@@ -4,7 +4,6 @@ description: hicstuff is a lightweight Python library and command-line toolset d
 homepage: https://github.com/koszullab/hicstuff
 ---
 
-
 # hicstuff
 
 ## Overview

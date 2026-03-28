@@ -4,7 +4,6 @@ description: Autocycler is a bioinformatics tool that generates high-quality con
 homepage: https://github.com/rrwick/Autocycler
 ---
 
-
 # autocycler
 
 ## Overview
@@ -73,18 +72,18 @@ If the consensus assembly is not fully resolved (e.g., contains orange sequences
 
 | Command | Description |
 |---------|-------------|
-| clean | manual manipulation of the final consensus assebly graph |
-| cluster | cluster contigs in the unitig graph based on similarity |
-| combine | combine Autocycler GFAs into one assembly |
-| compress | compress input contigs into a unitig graph |
-| decompress | decompress contigs from a unitig graph |
-| dotplot | generate an all-vs-all dotplot from a unitig graph |
-| gfa2fasta | convert an Autocycler GFA file to FASTA format |
-| helper | helper commands for long-read assemblers |
-| resolve | resolve repeats in the the unitig graph |
-| subsample | subsample a long-read set |
-| table | create TSV line from YAML files |
-| trim | trim contigs in a cluster |
+| autocycler clean | manual manipulation of the final consensus assebly graph |
+| autocycler cluster | cluster contigs in the unitig graph based on similarity |
+| autocycler combine | combine Autocycler GFAs into one assembly |
+| autocycler compress | compress input contigs into a unitig graph |
+| autocycler decompress | decompress contigs from a unitig graph |
+| autocycler dotplot | generate an all-vs-all dotplot from a unitig graph |
+| autocycler gfa2fasta | convert an Autocycler GFA file to FASTA format |
+| autocycler helper | helper commands for long-read assemblers |
+| autocycler resolve | resolve repeats in the the unitig graph |
+| autocycler subsample | subsample a long-read set |
+| autocycler table | create TSV line from YAML files |
+| autocycler trim | trim contigs in a cluster |
 
 ## Reference documentation
 - [Home](./references/github_com_rrwick_Autocycler_wiki.md)

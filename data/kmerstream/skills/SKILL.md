@@ -4,7 +4,6 @@ description: KmerStream estimates k-mer frequency distributions and genomic para
 homepage: https://github.com/pmelsted/KmerStream
 ---
 
-
 # kmerstream
 
 ## Overview

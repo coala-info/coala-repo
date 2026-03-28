@@ -4,7 +4,6 @@ description: vSNP3 is a bioinformatics pipeline for pathogen surveillance that p
 homepage: https://github.com/USDA-VS/vsnp3
 ---
 
-
 # vsnp3
 
 ## Overview

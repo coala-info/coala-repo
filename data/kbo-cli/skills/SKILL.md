@@ -4,7 +4,6 @@ description: kbo-cli is a bioinformatics tool for fast, approximate local alignm
 homepage: https://docs.rs/kbo
 ---
 
-
 # kbo-cli
 
 ## Overview
@@ -65,11 +64,11 @@ Use this to project a query sequence onto a reference coordinate system.
 
 | Command | Description |
 |---------|-------------|
-| build | Build a k-mer index |
-| call | Call variants using k-mer based approach. |
-| find | Finds sequences in query files based on a reference or index. |
 | kbo | kbo |
-| map | Map sequence data against a reference. |
+| kbo-cli kbo build | Build a k-mer index |
+| kbo-cli kbo call | Call variants using k-mer based approach. |
+| kbo-cli kbo find | Finds sequences in query files based on a reference or index. |
+| kbo-cli kbo map | Map sequence data against a reference. |
 
 ## Reference documentation
 - [Crate kbo Overview](./references/docs_rs_kbo_latest_kbo.md)

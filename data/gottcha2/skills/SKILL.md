@@ -4,7 +4,6 @@ description: GOTTCHA2 is a signature-based bioinformatics tool used for rapid an
 homepage: https://github.com/poeli/gottcha2
 ---
 
-
 # gottcha2
 
 ## Overview

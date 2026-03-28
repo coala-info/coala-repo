@@ -4,7 +4,6 @@ description: HybPiper extracts target sequences and flanking intronic regions fr
 homepage: https://github.com/mossmatters/HybPiper
 ---
 
-
 # hybpiper
 
 ## Overview
@@ -84,10 +83,10 @@ If you suspect "stitched" contigs (where HybPiper joins multiple SPAdes contigs)
 
 | Command | Description |
 |---------|-------------|
-| fix_targetfile | Fixes DNA and amino-acid target files by testing for open reading frames, removing stop codons, and filtering sequences. |
 | hybpiper assemble | HybPiper is a pipeline for assembling target-capture data. |
 | hybpiper check_targetfile | Check target files for issues such as stop codons and low complexity regions. |
 | hybpiper filter_by_length | Filters sequences based on length criteria. |
+| hybpiper fix_targetfile | Fixes DNA and amino-acid target files by testing for open reading frames, removing stop codons, and filtering sequences. |
 | hybpiper paralog_retriever | Extracts paralogous genes from HybPiper output. |
 | hybpiper recovery_heatmap | Generates a heatmap of recovery based on sequence lengths. |
 | hybpiper retrieve_sequences | Type of sequence to extract. |

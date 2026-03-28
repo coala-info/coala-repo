@@ -4,7 +4,6 @@ description: SCelVis is an interactive web-based tool for visualizing and explor
 homepage: https://github.com/bihealth/scelvis
 ---
 
-
 # scelvis
 
 ## Overview

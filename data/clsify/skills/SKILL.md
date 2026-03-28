@@ -4,7 +4,6 @@ description: The clsify tool automates the haplotyping of Candidatus Liberibacte
 homepage: https://github.com/holtgrewe/clsify
 ---
 
-
 # clsify
 
 ## Overview
@@ -49,8 +48,8 @@ hlso --use-file-name -o results.tsv samples/*.fasta
 
 | Command | Description |
 |---------|-------------|
-| cli | Classify sequence files and extract sample information using regular expressions. |
-| web | Start the clsify web server |
+| clsify cli | Classify sequence files and extract sample information using regular expressions. |
+| clsify web | Start the clsify web server |
 
 ## Reference documentation
 

@@ -4,7 +4,6 @@ description: Biopet is a Java-based framework for executing and managing high-th
 homepage: https://github.com/biopet/biopet
 ---
 
-
 # biopet
 
 ## Overview
@@ -56,6 +55,15 @@ Biopet relies heavily on JSON for configuration. Ensure your JSON is valid and f
 - **Samples**: Definitions of libraries and read groups.
 - **Reference**: Paths to FASTA files, indexes, and annotation files.
 - **Tools**: Specific parameters for underlying tools like BWA, GATK, or Picard.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| java -jar biopet.jar | A bioinformatics pipeline and tool suite for processing genomic data. |
+| java -jar biopet.jar | Biopet is a framework for genomic analysis pipelines and tools developed by the SASC team at LUMC. |
 
 ## Reference documentation
 - [Welcome to Biopet](./references/github_com_biopet_biopet.md)

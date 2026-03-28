@@ -4,7 +4,6 @@ description: The pancake tool manages the PancakeSwap frontend monorepo and proc
 homepage: https://github.com/pancakeswap/pancake-frontend
 ---
 
-
 # pancake
 
 ## Overview
@@ -61,13 +60,13 @@ PancakeSwap uses a centralized localization system integrated with Crowdin.
 
 | Command | Description |
 |---------|-------------|
-| core | Identify and extract core genome regions from a PanCake Data Object File. |
-| create | Create a PanCake Object from sequences and alignments |
-| graph | Generate a DOT graph from PanCake Data Object Files |
-| sequence | Extract sequences from PanCake Data Object Files |
-| singletons | Identify singleton regions in a PanCake Data Object File and output them as FASTA or BED files. |
-| specify | Specify or modify chromosome information in a PanCake Data Object File |
-| status | Check the status of a PAN_FILE |
+| pancake core | Identify and extract core genome regions from a PanCake Data Object File. |
+| pancake create | Create a PanCake Object from sequences and alignments |
+| pancake graph | Generate a DOT graph from PanCake Data Object Files |
+| pancake sequence | Extract sequences from PanCake Data Object Files |
+| pancake singletons | Identify singleton regions in a PanCake Data Object File and output them as FASTA or BED files. |
+| pancake specify | Specify or modify chromosome information in a PanCake Data Object File |
+| pancake status | Check the status of a PAN_FILE |
 
 ## Reference documentation
 - [Pancake Frontend Overview](./references/github_com_pancakeswap_pancake-frontend.md)

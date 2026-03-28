@@ -4,7 +4,6 @@ description: The sr2silo tool converts BAM alignment files into the LAPIS-SILO N
 homepage: https://github.com/cbg-ethz/sr2silo
 ---
 
-
 # sr2silo
 
 ## Overview

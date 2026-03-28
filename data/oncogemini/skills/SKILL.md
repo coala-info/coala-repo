@@ -4,7 +4,6 @@ description: Oncogemini is a specialized framework for analyzing tumor-normal pa
 homepage: https://github.com/fakedrtom/oncogemini
 ---
 
-
 # oncogemini
 
 ## Overview
@@ -60,9 +59,9 @@ OncoGEMINI includes several specialized tools for tumor evolution:
 
 | Command | Description |
 |---------|-------------|
-| db_info | Show information about a specific database. |
 | oncogemini annotate | Annotate variants with information from a BED file. |
 | oncogemini bottleneck | Analyze bottleneck in cancer evolution |
+| oncogemini db_info | Show information about a specific database. |
 | oncogemini dump | Dump data from the oncogemini database. |
 | oncogemini fusions | Query the database for fusions. |
 | oncogemini loh | Filter and query LOH variants from a database. |

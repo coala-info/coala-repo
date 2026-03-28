@@ -4,7 +4,6 @@ description: cellxgene is an interactive explorer for visualizing and analyzing 
 homepage: https://chanzuckerberg.github.io/cellxgene/
 ---
 
-
 # cellxgene
 
 ## Overview
@@ -50,8 +49,8 @@ cellxgene prepare raw_data.h5ad --output=processed_data.h5ad
 
 | Command | Description |
 |---------|-------------|
-| annotate | Add predicted annotations to an H5AD file. Run `cellxgene annotate --help` for more information. |
 | cellxgene | Command-line interface for cellxgene |
+| cellxgene annotate | Add predicted annotations to an H5AD file. Run `cellxgene annotate --help` for more information. |
 | cellxgene launch | Launch the cellxgene data viewer. This web app lets you explore single-cell expression data. Data must be in a format that cellxgene expects. Read the "getting started" guide to learn more: https://github.com/chanzuckerberg/cellxgene- documentation/blob/main/README.md |
 | cellxgene prepare | Preprocess data for use with cellxgene. This tool runs a series of scanpy routines for preparing a dataset for use with cellxgene. It loads data from different formats (h5ad, loom, or a 10x directory), runs dimensionality reduction, computes nearest neighbors, computes an embedding, performs clustering, and saves the results. Includes additional options for naming annotations, ensuring sparsity, and plotting results. |
 

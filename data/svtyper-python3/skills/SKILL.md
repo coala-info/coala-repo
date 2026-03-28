@@ -4,7 +4,6 @@ description: SVTyper genotypes structural variants by analyzing discordant and c
 homepage: https://github.com/hall-lab/svtyper
 ---
 
-
 # svtyper-python3
 
 ## Overview

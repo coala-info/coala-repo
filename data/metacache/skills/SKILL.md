@@ -4,7 +4,6 @@ description: MetaCache is a high-performance taxonomic classification system tha
 homepage: https://github.com/muellan/metacache
 ---
 
-
 # metacache
 
 ## Overview
@@ -79,12 +78,12 @@ python3 krona-from-abundances.py <abundance_file> -o <output.html>
 
 | Command | Description |
 |---------|-------------|
-| build | Build a metacache database from sequence files or directories. |
-| merge | Merge query files or directories with taxonomy information. |
 | metacache | MetaCache  Copyright (C) 2016-2026  André Müller & Robin Kobus This program comes with ABSOLUTELY NO WARRANTY. This is free software, and you are welcome to redistribute it under certain conditions. See the file 'LICENSE' for details. |
+| metacache build | Build a metacache database from sequence files or directories. |
 | metacache build+query | Builds and queries a sequence cache. |
+| metacache merge | Merge query files or directories with taxonomy information. |
+| metacache modify | Modify a metacache database with new sequence files. |
 | metacache query | Query a metacache database with sequence files or directories. |
-| modify | Modify a metacache database with new sequence files. |
 
 ## Reference documentation
 - [MetaCache Main README](./references/github_com_muellan_metacache_blob_master_README.md)

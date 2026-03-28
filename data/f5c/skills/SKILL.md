@@ -4,7 +4,6 @@ description: f5c is an optimized tool for processing Oxford Nanopore raw signal 
 homepage: https://github.com/hasindu2008/f5c
 ---
 
-
 # f5c
 
 ## Overview
@@ -64,12 +63,12 @@ f5c meth-freq -i methylation_calls.tsv > frequencies.tsv
 
 | Command | Description |
 |---------|-------------|
-| call-methylation | Call methylation from nanopore reads using f5c |
-| eventalign | Align nanopore events to a reference genome |
-| freq-merge | Merge multiple methylation frequency files into one. |
-| index | Build an index for accessing the base sequence (fastq/fasta) and raw signal (fast5/slow5) for a given read ID. f5c index is an extended and optimised version of nanopolish index by Jared Simpson |
-| meth-freq | Calculate methylation frequency from methylation calls |
-| resquiggle | f5c resquiggle aligns nanopore signals to reference sequences |
+| f5c call-methylation | Call methylation from nanopore reads using f5c |
+| f5c eventalign | Align nanopore events to a reference genome |
+| f5c freq-merge | Merge multiple methylation frequency files into one. |
+| f5c index | Build an index for accessing the base sequence (fastq/fasta) and raw signal (fast5/slow5) for a given read ID. f5c index is an extended and optimised version of nanopolish index by Jared Simpson |
+| f5c meth-freq | Calculate methylation frequency from methylation calls |
+| f5c resquiggle | f5c resquiggle aligns nanopore signals to reference sequences |
 
 ## Reference documentation
 - [f5c README](./references/github_com_hasindu2008_f5c_blob_master_README.md)

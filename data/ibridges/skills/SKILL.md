@@ -4,7 +4,6 @@ description: The ibridges tool provides a simplified high-level interface for in
 homepage: https://github.com/iBridges-for-iRODS/iBridges
 ---
 
-
 # ibridges
 
 ## Overview

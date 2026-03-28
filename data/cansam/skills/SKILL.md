@@ -4,7 +4,6 @@ description: cansam is a C++ library and utility suite designed for high-perform
 homepage: https://github.com/jmarshall/cansam
 ---
 
-
 # cansam
 
 ## Overview

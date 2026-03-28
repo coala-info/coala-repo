@@ -4,7 +4,6 @@ description: metaquantome integrates taxonomic identification and functional qua
 homepage: https://github.com/galaxyproteomics/metaquant
 ---
 
-
 # metaquantome
 
 ## Overview
@@ -57,6 +56,7 @@ Generate plots to interpret the complex multi-dimensional data.
 
 | Command | Description |
 |---------|-------------|
+| metaquantome | metaQuantome is a tool that performs quantitative analysis on the function and taxonomy of microbomes and their interactions. For more background information, please read the associated manuscript: https://doi.org/10.1074/mcp.ra118.001240. For a more hands-on tutorial, please visit the following page: https://galaxyproteomics.github.io/metaquantome_mcp_analysis/cli_tutorial/cli_tutorial.html. |
 | metaquantome db | metaQuantome uses freely available bioinformatic databases to expand your set of direct annotations. For most cases, all 3 databases can be downloaded (the default). |
 | metaquantome expand | The expand module is the first analysis step in the metaQuantome analysis workflow, and can be run to analyze function, taxonomy, or function and taxonomy together. |
 | metaquantome filter | The filter module is the second step in the metaQuantome analysis workflow. The purpose of the filter module is to filter expanded terms to those that are representative and well-supported by the data. Please see the manuscript (https://doi.org/10.1074/mcp.ra118.001240) for further details about filtering. |

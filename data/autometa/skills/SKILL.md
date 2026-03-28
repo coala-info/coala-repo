@@ -4,7 +4,6 @@ description: Autometa is a bioinformatics pipeline that recovers high-quality mi
 homepage: https://github.com/KwanLab/Autometa
 ---
 
-
 # autometa
 
 ## Overview

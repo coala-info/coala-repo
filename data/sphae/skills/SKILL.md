@@ -4,7 +4,6 @@ description: Sphae is a Snakemake-based toolkit for the end-to-end processing, a
 homepage: https://github.com/linsalrob/sphae/
 ---
 
-
 # sphae
 
 ## Overview
@@ -78,10 +77,10 @@ Outputs are located in the `RESULTS` subdirectory of your specified output folde
 
 | Command | Description |
 |---------|-------------|
-| config | Copy the system default config file |
 | snakemake | Snakemake is a Python based language and execution environment for GNU Make-like workflows. |
 | snakemake | Snakemake is a Python based language and execution environment for GNU Make-like workflows. |
 | snakemake | Snakemake is a Python based language and execution environment for GNU Make-like workflows. |
+| sphae config | Copy the system default config file |
 
 ## Reference documentation
 - [Sphae GitHub Repository](./references/github_com_linsalrob_sphae.md)

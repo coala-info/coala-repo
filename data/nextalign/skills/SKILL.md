@@ -4,7 +4,6 @@ description: Nextalign performs codon-aware sequence alignment and translation f
 homepage: https://github.com/nextstrain/nextclade/tree/master/packages/nextalign_cli
 ---
 
-
 # nextalign
 
 ## Overview
@@ -48,6 +47,18 @@ nextalign run \
 - **Reference Selection**: Always use a reference that is closely related to your query sequences. `nextalign` is optimized for small genomic variations rather than highly divergent sequences.
 - **Memory Efficiency**: For very large datasets, `nextalign` is generally faster and more memory-efficient than `nextclade` if you only require the alignment and translation without the phylogenetic placement or clade assignment.
 - **GFF3 Compatibility**: Ensure your GFF3 file uses the same sequence ID as your reference FASTA file to ensure the coordinates map correctly.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| nextalign | Nextalign is a tool for aligning sequences to a reference genome. |
+| nextalign | nextalign is a tool for aligning Nextclade outputs. |
+| nextalign | nextalign is a command-line tool for aligning sequences to a reference genome. |
+| nextalign | Align sequences to a reference or gene map. |
+| nextalign run | Run alignment and translation. |
 
 ## Reference documentation
 - [Nextclade and Nextalign Overview](./references/github_com_nextstrain_nextclade.md)

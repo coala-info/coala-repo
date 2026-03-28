@@ -4,7 +4,6 @@ description: argNorm normalizes antibiotic resistance gene naming inconsistencie
 homepage: https://github.com/BigDataBiology/argNorm
 ---
 
-
 # argnorm
 
 ## Overview
@@ -78,7 +77,7 @@ argNorm includes a `Cut_Off` column in its output. These scores (`Perfect`, `Str
 | argnorm | argNorm normalizes ARG annotation results from different tools and databases to the same ontology, namely ARO (Antibiotic Resistance Ontology). |
 | argnorm | argNorm normalizes ARG annotation results from different tools and databases to the same ontology, namely ARO (Antibiotic Resistance Ontology). |
 | argnorm | argNorm normalizes ARG annotation results from different tools and databases to the same ontology, namely ARO (Antibiotic Resistance Ontology). |
-| argsoap | argNorm normalizes ARG annotation results from different tools and databases to the same ontology, namely ARO (Antibiotic Resistance Ontology). |
+| argnorm argsoap | argNorm normalizes ARG annotation results from different tools and databases to the same ontology, namely ARO (Antibiotic Resistance Ontology). |
 
 ## Reference documentation
 - [argNorm README](./references/github_com_BigDataBiology_argNorm_blob_main_README.md)

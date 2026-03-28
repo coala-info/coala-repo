@@ -4,7 +4,6 @@ description: The scran-cli toolset provides a command-line interface for perform
 homepage: https://github.com/ebi-gene-expression-group/scran-cli
 ---
 
-
 # scran-cli
 
 ## Overview

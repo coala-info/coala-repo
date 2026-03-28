@@ -4,7 +4,6 @@ description: CoaTran simulates coalescent trees that are topologically and tempo
 homepage: https://github.com/niemasd/CoaTran
 ---
 
-
 # coatran
 
 ## Overview

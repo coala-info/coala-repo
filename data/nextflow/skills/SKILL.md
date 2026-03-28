@@ -4,7 +4,6 @@ description: Nextflow is a reactive workflow framework used to develop and execu
 homepage: https://github.com/nextflow-io/nextflow
 ---
 
-
 # nextflow
 
 ## Overview
@@ -78,12 +77,12 @@ Nextflow uses a hierarchical configuration system (`nextflow.config`).
 |---------|-------------|
 | config | Print a project configuration |
 | drop | Delete the local copy of a project |
-| fs | File system operations |
 | kuberun | Execute a workflow in a Kubernetes cluster (experimental) |
-| lineage | Explore workflows lineage metadata |
 | lint | Lint Nextflow scripts and config files |
 | nextflow auth | Manage Seqera Platform authentication |
+| nextflow fs | File system operations |
 | nextflow launch | Launch a workflow in Seqera Platform |
+| nextflow lineage | Explore workflows lineage metadata |
 | nextflow secrets | Manage pipeline secrets |
 | nextflow_clean | Clean up project cache and work directories |
 | nextflow_clone | Clone a project into a folder |

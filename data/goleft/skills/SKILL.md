@@ -4,7 +4,6 @@ description: goleft is a high-performance bioinformatics suite designed for rapi
 homepage: https://github.com/brentp/goleft
 ---
 
-
 # goleft
 
 ## Overview

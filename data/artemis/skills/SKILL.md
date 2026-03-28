@@ -4,7 +4,6 @@ description: Artemis is an interactive visualization and analysis environment fo
 homepage: http://sanger-pathogens.github.io/Artemis/
 ---
 
-
 # artemis
 
 ## Overview

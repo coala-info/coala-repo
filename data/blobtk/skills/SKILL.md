@@ -4,7 +4,6 @@ description: BlobTk is a high-performance toolkit designed to process genome ass
 homepage: https://github.com/genomehubs/blobtk
 ---
 
-
 # blobtk
 
 ## Overview
@@ -49,12 +48,12 @@ BlobTk provides specialized commands for generating standard BlobToolKit visuali
 
 | Command | Description |
 |---------|-------------|
+| blobtk depth | Calculate sequencing coverage depth. |
+| blobtk filter | Filter files based on list of sequence names. |
+| blobtk index | Index files for GenomeHubs. Called as `blobtk index` |
+| blobtk plot | Process a BlobDir and produce static plots. |
+| blobtk validate | Validate BlobToolKit and GenomeHubs files. |
 | blobtk_taxonomy | Process a taxonomy and lookup lineages, or start the API server with --api |
-| depth | Calculate sequencing coverage depth. |
-| filter | Filter files based on list of sequence names. |
-| index | Index files for GenomeHubs. Called as `blobtk index` |
-| plot | Process a BlobDir and produce static plots. |
-| validate | Validate BlobToolKit and GenomeHubs files. |
 
 ## Reference documentation
 - [blobtk depth](./references/github_com_genomehubs_blobtk_wiki_blobtk-depth.md)

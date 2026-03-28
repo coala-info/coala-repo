@@ -4,7 +4,6 @@ description: MOB-suite is a bioinformatics framework for the reconstruction, typ
 homepage: https://github.com/phac-nml/mob-suite
 ---
 
-
 # mob_suite
 
 ## Overview

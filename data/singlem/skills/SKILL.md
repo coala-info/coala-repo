@@ -4,7 +4,6 @@ description: SingleM performs taxonomic profiling of shotgun metagenomic data by
 homepage: https://github.com/wwood/singlem
 ---
 
-
 # singlem
 
 ## Overview
@@ -79,8 +78,6 @@ singlem renew --archive-otu-table sample.otu.json --taxonomic-profile updated.pr
 
 | Command | Description |
 |---------|-------------|
-| get_tree | Extract path to Newick tree file in a SingleM package. |
-| makedb | Create a searchable OTU sequence database from an OTU table |
 | singlem | singlem: error: argument subparser_name: invalid choice: 'are' (choose from data, pipe, appraise, seqs, makedb, query, summarise, prokaryotic_fraction, microbial_fraction, renew, create, get_tree, regenerate, metapackage, chainsaw, condense, trim_package_hmms, supplement) |
 | singlem | singlem: error: argument subparser_name: invalid choice: 'eukaryote' (choose from data, pipe, appraise, seqs, makedb, query, summarise, prokaryotic_fraction, microbial_fraction, renew, create, get_tree, regenerate, metapackage, chainsaw, condense, trim_package_hmms, supplement) |
 | singlem | singlem: error: argument subparser_name: invalid choice: 'sequences' (choose from data, pipe, appraise, seqs, makedb, query, summarise, prokaryotic_fraction, microbial_fraction, renew, create, get_tree, regenerate, metapackage, chainsaw, condense, trim_package_hmms, supplement) |
@@ -90,6 +87,8 @@ singlem renew --archive-otu-table sample.otu.json --taxonomic-profile updated.pr
 | singlem condense | Combine OTU tables across different markers into a single taxonomic profile. |
 | singlem create | Create a SingleM package. |
 | singlem data | Download reference metapackage data |
+| singlem get_tree | Extract path to Newick tree file in a SingleM package. |
+| singlem makedb | Create a searchable OTU sequence database from an OTU table |
 | singlem metapackage | Create or describe a metapackage (i.e. set of SingleM packages) |
 | singlem microbial_fraction | Estimate the fraction of reads from a metagenome that are assigned to Bacteria and Archaea compared to e.g. eukaryote or phage. Also estimate average genome size. [deprecated; use prokaryotic_fraction] |
 | singlem pipe | Generate a taxonomic profile or OTU table from raw sequences |

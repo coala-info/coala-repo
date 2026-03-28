@@ -4,7 +4,6 @@ description: kfilt subsets sequencing reads based on their similarity to a set o
 homepage: https://github.com/davidebolo1993/kfilt
 ---
 
-
 # kfilt
 
 ## Overview

@@ -4,7 +4,6 @@ description: VarFish Server Worker processes genomic data by converting VCF file
 homepage: https://github.com/bihealth/varfish-server-worker
 ---
 
-
 # varfish-server-worker
 
 ## Overview
@@ -62,9 +61,9 @@ varfish-server-worker db compile --input-path reference_data/ --output-path data
 
 | Command | Description |
 |---------|-------------|
-| seqvars | Sequence variant related commands |
-| strucvars | Structural variant related commands |
 | varfish-server-worker | varfish-server-worker |
+| varfish-server-worker seqvars | Sequence variant related commands |
+| varfish-server-worker strucvars | Structural variant related commands |
 
 ## Reference documentation
 - [VarFish Server Worker README](./references/github_com_varfish-org_varfish-server-worker_blob_main_README.md)

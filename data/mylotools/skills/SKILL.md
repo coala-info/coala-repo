@@ -4,7 +4,6 @@ description: "mylotools provides utilities for manipulating and performing quali
 homepage: https://github.com/bluenote-1577/mylotools
 ---
 
-
 # mylotools
 
 Utilities for manipulation and quality control of the myloasm long-read assembler.
@@ -62,3 +61,13 @@ body: |
 
   - [README.md](./references/github_com_bluenote-1577_mylotools.md)
   - [mylotools/bin at main · bluenote-1577/mylotools · GitHub](./references/github_com_bluenote-1577_mylotools_tree_main_bin.md)
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| mylotools extract-contigs | Extract contigs based on minimum length from a Myloasm fasta file. |
+| mylotools plot | Plot contig analysis results. |
+| mylotools report | Generate a report from Myloasm assembly files. |
+| mylotools sanitize-headers | Sanitize FASTA headers |
+| mylotools_strain-viz | Generate a visualization of contig relationships based on read overlaps. |

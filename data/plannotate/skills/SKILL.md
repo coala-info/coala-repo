@@ -4,7 +4,6 @@ description: pLannotate automatically annotates engineered genetic constructs an
 homepage: https://github.com/barricklab/pLannotate
 ---
 
-
 # plannotate
 
 ## Overview
@@ -55,8 +54,8 @@ plannotate batch -i sequence.fasta --detailed
 | Command | Description |
 |---------|-------------|
 | plannotate batch | Annotates engineered DNA sequences, primarily plasmids. Accepts a FASTA or GenBank file and outputs a GenBank file with annotations, as well as an optional interactive plasmid map as an HTLM file. |
+| plannotate streamlit | Launches pLannotate as an interactive web app. |
 | plannotate_yaml | Annotates sequences with information from various databases. |
-| streamlit | Launches pLannotate as an interactive web app. |
 
 ## Reference documentation
 - [pLannotate README](./references/github_com_barricklab_pLannotate_blob_master_README.md)

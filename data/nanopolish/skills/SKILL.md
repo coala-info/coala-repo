@@ -4,7 +4,6 @@ description: Nanopolish analyzes raw signal data from Oxford Nanopore sequencers
 homepage: https://github.com/jts/nanopolish
 ---
 
-
 # nanopolish
 
 ## Overview
@@ -77,17 +76,17 @@ nanopolish polya -t 8 -r reads.fastq -b reads.sorted.bam -g reference.fa > polya
 
 | Command | Description |
 |---------|-------------|
-| call-methylation | Classify nucleotides as methylated or not. |
-| detect-polyi | Detect presence of poly(I) tails and estimate length of tails in direct RNA reads |
-| eventalign | Align nanopore events to reference k-mers |
-| fast5-check | Check whether the fast5 files are indexed correctly and readable by nanopolish |
-| methyltrain | Train a methylation model |
+| nanopolish call-methylation | Classify nucleotides as methylated or not. |
+| nanopolish detect-polyi | Detect presence of poly(I) tails and estimate length of tails in direct RNA reads |
+| nanopolish eventalign | Align nanopore events to reference k-mers |
+| nanopolish fast5-check | Check whether the fast5 files are indexed correctly and readable by nanopolish |
 | nanopolish index | Build an index mapping from basecalled reads to the signals measured by the sequencer |
+| nanopolish methyltrain | Train a methylation model |
 | nanopolish phase-reads | Output a BAM file where each record shows the combination of alleles from variants.vcf that each read supports. variants.vcf can be any VCF file but only SNPs will be phased and variants that have a homozygous reference genotype (0/0) will be skipped. |
-| polya | Estimate the length of the poly-A tail on direct RNA reads |
-| scorereads | Score reads against an alignment, model |
-| variants | Find SNPs using a signal-level HMM |
-| vcf2fasta | Write a new genome sequence by introducing variants from the input files |
+| nanopolish polya | Estimate the length of the poly-A tail on direct RNA reads |
+| nanopolish scorereads | Score reads against an alignment, model |
+| nanopolish variants | Find SNPs using a signal-level HMM |
+| nanopolish vcf2fasta | Write a new genome sequence by introducing variants from the input files |
 
 ## Reference documentation
 

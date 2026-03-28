@@ -4,7 +4,6 @@ description: FermiKit is a de novo assembly-based pipeline for identifying SNPs,
 homepage: https://github.com/lh3/fermikit
 ---
 
-
 # fermikit
 
 ## Overview

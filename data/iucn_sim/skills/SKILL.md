@@ -4,7 +4,6 @@ description: iucn_sim models the future of biodiversity by simulating species tr
 homepage: https://github.com/tobiashofmann88/iucn_extinction_simulator
 ---
 
-
 # iucn_sim
 
 ## Overview
@@ -55,9 +54,9 @@ The simulation process generally follows these steps:
 
 | Command | Description |
 |---------|-------------|
-| get_iucn_data | Download IUCN data for future simulations |
+| iucn_sim get_iucn_data | Download IUCN data for future simulations |
+| iucn_sim run_sim | Run future simulations based on IUCN data and status transition rates |
 | iucn_sim transition_rates | MCMC-estimation of status transition rates from IUCN record |
-| run_sim | Run future simulations based on IUCN data and status transition rates |
 
 ## Reference documentation
 - [IUCN Extinction Simulator README](./references/github_com_tandermann_iucn_extinction_simulator_blob_master_README.md)

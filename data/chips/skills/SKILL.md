@@ -4,7 +4,6 @@ description: ChIPs is a toolkit designed to model and simulate realistic ChIP-se
 homepage: https://github.com/gymreklab/chips
 ---
 
-
 # chips
 
 ## Overview

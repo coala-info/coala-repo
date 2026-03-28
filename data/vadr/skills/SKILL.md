@@ -4,7 +4,6 @@ description: VADR classifies and annotates viral sequences by comparing them aga
 homepage: https://github.com/ncbi/vadr
 ---
 
-
 # vadr
 
 ## Overview

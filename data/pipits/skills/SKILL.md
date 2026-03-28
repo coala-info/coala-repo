@@ -4,7 +4,6 @@ description: "pipits is a bioinformatics workflow designed for the analysis of f
 homepage: https://github.com/hsgweon/pipits
 ---
 
-
 # pipits
 
 ## Overview

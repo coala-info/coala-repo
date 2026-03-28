@@ -4,7 +4,6 @@ description: msstitch is a suite of command-line utilities for post-processing s
 homepage: https://github.com/lehtiolab/msstitch
 ---
 
-
 # msstitch
 
 ## Overview
@@ -74,17 +73,20 @@ If analyzing modified peptides, you can use `--medianintensity` to summarize spe
 
 | Command | Description |
 |---------|-------------|
-| dedupperco | When running dedupperco also remove "duplicate" PSMs (by PSM ID plus sequence). Keeps first PSM encountered of each PSM ID / sequence combination |
-| filterperco | Filter peptides based on their properties and a lookup database. |
-| merge | Merge results from multiple msstitch runs. |
 | msstitch conffilt | Applies confidence filtering to PSM data. |
+| msstitch dedupperco | When running dedupperco also remove "duplicate" PSMs (by PSM ID plus sequence). Keeps first PSM encountered of each PSM ID / sequence combination |
 | msstitch deduppsms | Deduplicate spectra based on peptide sequences. |
 | msstitch ensg | Stitches together isobaric quantification data from PSMs and other sources. |
+| msstitch filterperco | Filter peptides based on their properties and a lookup database. |
+| msstitch merge | Merge results from multiple msstitch runs. |
 | msstitch perco2psm | Converts Percolator output to PSM table format. |
 | msstitch proteins | Processes protein quantification data, including isobaric labeling and FDR calculation. |
+| msstitch psmtable | Processes PSM tables with various options for analysis and output. |
 | msstitch seqfilt | Filter sequences based on a database lookup. |
+| msstitch seqmatch | Performs sequence matching against a database. |
 | msstitch split | Split an input file based on a specified column or identifier. |
 | msstitch splitperco | Split peptides based on protein headers. |
+| msstitch storequant | Store quantitative data from various MS1 quantitation tools. |
 | msstitch storeseq | Store sequence information |
 | msstitch storespectra | Stores spectra from mzML files into a database. |
 | msstitch trypsinize | Trypsinizes proteins in a file. |
@@ -94,9 +96,6 @@ If analyzing modified peptides, you can use `--medianintensity` to summarize spe
 | msstitch_isosummarize | Summarize isobaric quantification data. |
 | msstitch_makedecoy | Create decoy sequences for MS/MS analysis. |
 | msstitch_peptides | Stitches together peptide-level quantification data. |
-| psmtable | Processes PSM tables with various options for analysis and output. |
-| seqmatch | Performs sequence matching against a database. |
-| storequant | Store quantitative data from various MS1 quantitation tools. |
 
 ## Reference documentation
 - [msstitch GitHub Repository](./references/github_com_lehtiolab_msstitch.md)

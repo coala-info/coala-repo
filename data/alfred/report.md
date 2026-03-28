@@ -10,6 +10,7 @@ Quality control for aligned sequencing reads
 - **Homepage**: https://github.com/tobiasrausch/alfred
 - **Package**: https://anaconda.org/channels/bioconda/packages/alfred/overview
 - **Validation**: PASS
+- **manual**: https://www.gear-genomics.com/docs/alfred/cli/
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/alfred/overview
 - **Total Downloads**: 179.4K
@@ -532,4 +533,4 @@ Generic options:
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

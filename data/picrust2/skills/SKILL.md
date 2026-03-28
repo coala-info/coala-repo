@@ -4,7 +4,6 @@ description: PICRUSt2 predicts the functional potential of microbial communities
 homepage: https://github.com/picrust/picrust2
 ---
 
-
 # picrust2
 
 ## Overview

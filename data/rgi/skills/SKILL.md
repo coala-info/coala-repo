@@ -4,7 +4,6 @@ description: The Resistance Gene Identifier (rgi) predicts antimicrobial resista
 homepage: https://card.mcmaster.ca
 ---
 
-
 # rgi
 
 ## Overview
@@ -52,11 +51,12 @@ rgi kmer_query --input_sequence [input.fasta] --output_file [output_prefix]
 
 | Command | Description |
 |---------|-------------|
-| bwt | Aligns metagenomic reads to CARD and wildCARD reference using kma, bowtie2 or bwa and provide reports. |
-| kmer_query | Tests sequenes using CARD*kmers |
-| load | Resistance Gene Identifier - 6.0.5 - Load |
-| main | Resistance Gene Identifier - 6.0.5 - Main |
+| rgi | Use the Resistance Gene Identifier to predict resistome(s) from protein or nucleotide data based on homology and SNP models. Check https://card.mcmaster.ca/download for software and data updates. Receive email notification of monthly CARD updates via the CARD Mailing List (https://mailman.mcmaster.ca/mailman/listinfo/card-l) |
+| rgi bwt | Aligns metagenomic reads to CARD and wildCARD reference using kma, bowtie2 or bwa and provide reports. |
 | rgi heatmap | Creates a heatmap when given multiple RGI results. |
+| rgi kmer_query | Tests sequenes using CARD*kmers |
+| rgi load | Resistance Gene Identifier - 6.0.5 - Load |
+| rgi main | Resistance Gene Identifier - 6.0.5 - Main |
 
 ## Reference documentation
 - [CARD Analyze - RGI Overview](./references/card_mcmaster_ca_analyze.md)

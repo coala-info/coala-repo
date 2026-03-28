@@ -4,7 +4,6 @@ description: Scrappie is a research-oriented basecaller that converts raw electr
 homepage: https://github.com/nanoporetech/scrappie
 ---
 
-
 # scrappie
 
 think thoughtfully.name: scrappie

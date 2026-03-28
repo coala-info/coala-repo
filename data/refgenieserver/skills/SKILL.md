@@ -4,7 +4,6 @@ description: Refgenie is a reference genome manager that standardizes the storag
 homepage: https://refgenie.databio.org/
 ---
 
-
 # refgenieserver
 
 ## Overview
@@ -72,8 +71,8 @@ Always build the `fasta` asset first. Most derived assets (bowtie2, bwa, salmon)
 
 | Command | Description |
 |---------|-------------|
-| archive | prepare servable archives |
-| serve | run the server |
+| refgenieserver archive | prepare servable archives |
+| refgenieserver serve | run the server |
 
 ## Reference documentation
 - [Refgenie Overview](./references/refgenie_databio_org_en_latest_overview.md)

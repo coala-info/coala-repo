@@ -4,7 +4,6 @@ description: The pbaa tool performs reference-aided clustering and consensus gen
 homepage: https://github.com/PacificBiosciences/pbAA
 ---
 
-
 # pbaa
 
 ## Overview
@@ -53,8 +52,8 @@ pbaa bampaint <prefix>_read_info.txt <input.bam> <output_tagged.bam>
 
 | Command | Description |
 |---------|-------------|
-| bampaint | Add color tags to BAM records, based on pbaa clusters. |
-| cluster | Run clustering tool for HiFi reads using guide sequences. |
+| pbaa bampaint | Add color tags to BAM records, based on pbaa clusters. |
+| pbaa cluster | Run clustering tool for HiFi reads using guide sequences. |
 
 ## Reference documentation
 - [PacBio Amplicon Analysis Overview](./references/github_com_PacificBiosciences_pbAA_blob_main_README.md)

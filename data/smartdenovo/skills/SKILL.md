@@ -4,7 +4,6 @@ description: SMARTdenovo is a specialized assembly pipeline designed for the rap
 homepage: https://github.com/ruanjue/smartdenovo
 ---
 
-
 # smartdenovo
 
 ## Overview

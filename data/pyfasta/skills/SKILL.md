@@ -4,7 +4,6 @@ description: "pyfasta provides fast, memory-efficient access to FASTA files thro
 homepage: https://github.com/brentp/pyfasta
 ---
 
-
 # pyfasta
 
 ## Overview

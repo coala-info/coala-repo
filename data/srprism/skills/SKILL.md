@@ -4,7 +4,6 @@ description: SRPRISM aligns short DNA sequences to a reference genome. Use when 
 homepage: https://github.com/ncbi/SRPRISM
 ---
 
-
 # srprism
 
 ---
@@ -63,6 +62,16 @@ Refer to the `README.md` for detailed instructions on compiling SRPRISM for Linu
 *   **Error Tolerance**: Carefully consider the `-e`, `--indel`, and `--sub` parameters based on your experimental goals. Too strict parameters might miss valid alignments, while too lenient ones can lead to false positives.
 *   **Minimizer Strategy**: For very large reference genomes, enabling the `--minimizer` option can offer performance benefits.
 *   **SRA Integration**: If working with data directly from NCBI SRA, ensure the SRA toolkit is correctly installed and use the `--sra` flag.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| srprism | Fast Short Read Aligner |
+| srprism | Fast Short Read Aligner |
+| srprism | Fast Short Read Aligner |
 
 ## Reference documentation
 - [SRPRISM README](./references/github_com_ncbi_SRPRISM.md)

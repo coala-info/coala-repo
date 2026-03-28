@@ -4,7 +4,6 @@ description: Constava quantifies protein residue conformational state propensiti
 homepage: https://github.com/bio2byte/constava
 ---
 
-
 # constava
 
 ## Overview
@@ -65,8 +64,8 @@ constava test
 |---------|-------------|
 | constava analyze | The `constava analyze` submodule analyzes the provided backbone dihedral angles and infers the propensities for each residue to reside in a given conformational state. |
 | constava dihedrals | The `constava dihedrals` submodule is used to extract the backbone dihedrals needed for the analysis from conformational ensembles. By default the results are written out in radians as this is the preferred format for `constava analyze`. |
-| fit-model | The `constava fit-model` submodule is used to generate the probabilistic conformational state models used in the analysis. By default, when running `constava analyze` these models are generated on-the-fly. In selected cases generating a model beforehand and loading it can be useful, though. |
-| test | The `constava test` submodule runs a couple of test cases to check, if consistent results are achieved. This should be done once after installation and takes about a minute. |
+| constava fit-model | The `constava fit-model` submodule is used to generate the probabilistic conformational state models used in the analysis. By default, when running `constava analyze` these models are generated on-the-fly. In selected cases generating a model beforehand and loading it can be useful, though. |
+| constava test | The `constava test` submodule runs a couple of test cases to check, if consistent results are achieved. This should be done once after installation and takes about a minute. |
 
 ## Reference documentation
 - [Constava README](./references/github_com_Bio2Byte_constava_blob_main_README.md)

@@ -4,7 +4,6 @@ description: PhyloFisher is a Python-based software suite for managing eukaryoti
 homepage: https://github.com/TheBrownLab/PhyloFisher
 ---
 
-
 # phylofisher
 
 ## Overview

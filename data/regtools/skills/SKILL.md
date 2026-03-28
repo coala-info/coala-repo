@@ -4,7 +4,6 @@ description: RegTools integrates genomic variants with transcriptomic data to id
 homepage: https://github.com/griffithlab/regtools/
 ---
 
-
 # regtools
 
 ## Overview
@@ -74,9 +73,9 @@ regtools variants annotate variants.vcf -o annotated_variants.vcf
 
 | Command | Description |
 |---------|-------------|
-| cis-ase | Identify cis ase. |
+| regtools cis-ase | Identify cis ase. |
 | regtools junctions | Identify exon-exon junctions from alignments or annotate junctions. |
-| variants | Annotate variants with splicing information. |
+| regtools variants | Annotate variants with splicing information. |
 
 ## Reference documentation
 - [GitHub Repository Overview](./references/github_com_griffithlab_regtools.md)

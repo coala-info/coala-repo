@@ -10,6 +10,7 @@ Extract information from output(s) of abricate (OUTPUT.tsv)
 - **Homepage**: https://gitlab.com/ifb-elixirfr/abromics
 - **Package**: https://anaconda.org/channels/bioconda/packages/tooldistillator/overview
 - **Validation**: PASS
+- **usage**: https://gitlab.com/ifb-elixirfr/abromics/tooldistillator/-/raw/main/README.md
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/tooldistillator/overview
 - **Total Downloads**: 5.1K
@@ -1925,4 +1926,4 @@ options:
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

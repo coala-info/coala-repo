@@ -4,7 +4,6 @@ description: MACS2 identifies transcription factor binding sites and histone mod
 homepage: https://pypi.org/project/MACS2/
 ---
 
-
 # macs2
 
 ## Overview
@@ -63,18 +62,18 @@ macs2 bdgdiff --t1 cond1_treat_pileup.bdg --c1 cond1_control_lambda.bdg \
 
 | Command | Description |
 |---------|-------------|
-| bdgbroadcall | MACS2 subtool to call broad peaks from bedGraph score tracks. |
-| bdgcmp | Deduct noise by comparing treatment and control bedGraph files from MACS2 |
-| bdgdiff | Differential peak detection based on paired bedGraph files |
-| bdgopt | Modify the score column of a bedGraph file using various methods like multiply, add, max, min, or p2q conversion. |
-| bdgpeakcall | Call peaks from bedGraph output of MACS2 |
-| callpeak | Model-based Analysis of ChIP-Seq (MACS2) for identifying transcript factor binding sites. |
-| cmbreps | Combine scores from replicates in bedGraph format using various methods like Fisher's, max, or mean. |
-| filterdup | Filter duplicate reads from alignment files based on a binomial distribution test or a fixed threshold. |
-| pileup | Create a pileup bedGraph file from alignment files |
-| predictd | Predict fragment size from ChIP-seq alignment files using MACS2 |
-| randsample | Randomly sample alignment files to a specific number or percentage of tags. |
-| refinepeak | Refine peak summits and give a score measuring the balance of Watson and Crick tags. MACS2 refinepeak is used to take a candidate peak list and alignment files to refine the peak summits. |
+| macs2 bdgbroadcall | MACS2 subtool to call broad peaks from bedGraph score tracks. |
+| macs2 bdgcmp | Deduct noise by comparing treatment and control bedGraph files from MACS2 |
+| macs2 bdgdiff | Differential peak detection based on paired bedGraph files |
+| macs2 bdgopt | Modify the score column of a bedGraph file using various methods like multiply, add, max, min, or p2q conversion. |
+| macs2 bdgpeakcall | Call peaks from bedGraph output of MACS2 |
+| macs2 callpeak | Model-based Analysis of ChIP-Seq (MACS2) for identifying transcript factor binding sites. |
+| macs2 cmbreps | Combine scores from replicates in bedGraph format using various methods like Fisher's, max, or mean. |
+| macs2 filterdup | Filter duplicate reads from alignment files based on a binomial distribution test or a fixed threshold. |
+| macs2 pileup | Create a pileup bedGraph file from alignment files |
+| macs2 predictd | Predict fragment size from ChIP-seq alignment files using MACS2 |
+| macs2 randsample | Randomly sample alignment files to a specific number or percentage of tags. |
+| macs2 refinepeak | Refine peak summits and give a score measuring the balance of Watson and Crick tags. MACS2 refinepeak is used to take a candidate peak list and alignment files to refine the peak summits. |
 
 ## Reference documentation
 - [Advanced: Call peaks using MACS2 subcommands](./references/github_com_macs3-project_MACS_wiki_Advanced_3A-Call-peaks-using-MACS2-subcommands.md)

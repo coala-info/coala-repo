@@ -4,7 +4,6 @@ description: pstools produces base-level resolution haplotypes from genomic asse
 homepage: https://github.com/shilpagarg/pstools
 ---
 
-
 # pstools
 
 ## Overview
@@ -60,13 +59,13 @@ pstools resolve_haplotypes -t <threads> -i true <map.out> <hifiasm_r_utg.gfa> <o
 
 | Command | Description |
 |---------|-------------|
-| completeness | Calculate completeness using Hi-C data and a sequence file |
-| haplotype_scaffold | Haplotype scaffolding tool using connection files and predicted haplotypes |
-| hic_mapping_haplo | Map Hi-C reads to predicted haplotypes |
-| hic_mapping_unitig | Map Hi-C reads to unitig graphs |
-| phasing_error | Calculate phasing errors using haplotype assemblies and Hi-C data |
-| qv | Calculate QV (Quality Value) using Hi-C data and a sequence file |
-| resolve_haplotypes | Resolve haplotypes using Hi-C mapping and GFA files |
+| pstools completeness | Calculate completeness using Hi-C data and a sequence file |
+| pstools haplotype_scaffold | Haplotype scaffolding tool using connection files and predicted haplotypes |
+| pstools hic_mapping_haplo | Map Hi-C reads to predicted haplotypes |
+| pstools hic_mapping_unitig | Map Hi-C reads to unitig graphs |
+| pstools phasing_error | Calculate phasing errors using haplotype assemblies and Hi-C data |
+| pstools qv | Calculate QV (Quality Value) using Hi-C data and a sequence file |
+| pstools resolve_haplotypes | Resolve haplotypes using Hi-C mapping and GFA files |
 
 ## Reference documentation
 - [github_com_shilpagarg_pstools_blob_main_README.md](./references/github_com_shilpagarg_pstools_blob_main_README.md)

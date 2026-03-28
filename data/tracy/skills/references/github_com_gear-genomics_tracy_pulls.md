@@ -300,7 +300,7 @@ opened Nov 19, 2025 by
 [1](/gear-genomics/tracy/issues/107/linked_closing_reference?reference_location=REPO_ISSUES_INDEX)
 
 **ProTip!**
-Adding [no:label](/gear-genomics/tracy/issues?q=is%3Apr+is%3Aopen+no%3Alabel) will show everything without a label.
+[no:milestone](/gear-genomics/tracy/issues?q=is%3Apr+is%3Aopen+no%3Amilestone) will show everything without a milestone.
 
 ## Footer
 

@@ -4,7 +4,6 @@ description: eggnog-mapper performs functional annotation of novel biological se
 homepage: https://github.com/jhcepas/eggnog-mapper
 ---
 
-
 # eggnog-mapper
 
 ## Overview

@@ -4,7 +4,6 @@ description: transanno is a high-performance genomic liftover tool that converts
 homepage: https://github.com/informationsea/transanno
 ---
 
-
 # transanno
 
 ## Overview
@@ -79,12 +78,12 @@ transanno is flexible with contig naming; you generally do not need to manually 
 
 | Command | Description |
 |---------|-------------|
-| chain-to-bed-vcf | Create BED and VCF file from chain file |
-| left-align | Left align and normalize chain file |
-| liftbed | Lift BED file |
-| liftgene | Lift GENCODE or Ensemble GFF3/GTF file |
-| liftvcf | LiftOver VCF file |
-| minimap2chain | Convert minimap2 result to chain file |
+| transanno chain-to-bed-vcf | Create BED and VCF file from chain file |
+| transanno left-align | Left align and normalize chain file |
+| transanno liftbed | Lift BED file |
+| transanno liftgene | Lift GENCODE or Ensemble GFF3/GTF file |
+| transanno liftvcf | LiftOver VCF file |
+| transanno minimap2chain | Convert minimap2 result to chain file |
 
 ## Reference documentation
 - [transanno README](./references/github_com_informationsea_transanno_blob_master_README.md)

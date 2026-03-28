@@ -4,7 +4,6 @@ description: Seshat automates the annotation of TP53 mutations by facilitating a
 homepage: https://github.com/clintval/tp53
 ---
 
-
 # seshat
 
 ## Overview

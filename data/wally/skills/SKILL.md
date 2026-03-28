@@ -4,7 +4,6 @@ description: Wally is a command-line utility for the rapid visualization and bat
 homepage: https://github.com/tobiasrausch/wally
 ---
 
-
 # wally
 
 ## Overview
@@ -79,9 +78,9 @@ wally region -b annotations.bed.gz -r chr1:1000-5000 -g ref.fa input.bam
 
 | Command | Description |
 |---------|-------------|
-| dotplot | Generates dot plots for sequence alignment visualization. |
-| matches | Display matches from BAM files |
-| region | Display BAM alignments in a specified region. |
+| wally dotplot | Generates dot plots for sequence alignment visualization. |
+| wally matches | Display matches from BAM files |
+| wally region | Display BAM alignments in a specified region. |
 
 ## Reference documentation
 - [Wally GitHub README](./references/github_com_tobiasrausch_wally_blob_main_README.md)

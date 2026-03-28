@@ -4,7 +4,6 @@ description: kgwasflow is a bioinformatics pipeline for performing k-mer based g
 homepage: https://github.com/akcorut/kGWASflow
 ---
 
-
 # kgwasflow
 
 ## Overview

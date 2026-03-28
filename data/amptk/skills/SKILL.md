@@ -4,7 +4,6 @@ description: AMPtk is a suite of scripts designed to process raw amplicon sequen
 homepage: https://github.com/nextgenusfs/amptk
 ---
 
-
 # amptk
 
 ## Overview
@@ -77,6 +76,8 @@ amptk taxonomy -i data.final.txt -f data.filtered.otus.fa -m data.mapping_file.t
 
 | Command | Description |
 |---------|-------------|
+| amptk funguild | Script takes OTU table as input and runs FUNGuild to assing functional annotation to an OTU              based on the Guilds database. AMPtk runs method based off of script by Zewei Song (2015-2021). |
+| amptk summarize | Summarize amplicon sequencing data |
 | amptk-OTU_cluster_ref.py | Script runs UPARSE OTU clustering. Requires USEARCH by Robert C. Edgar: http://drive5.com/usearch |
 | amptk-assign_taxonomy.py | assign taxonomy to OTUs |
 | amptk-barcode_rarify.py | Script to sub-sample reads down to the same number for each sample (barcode) |
@@ -101,8 +102,6 @@ amptk taxonomy -i data.final.txt -f data.filtered.otus.fa -m data.mapping_file.t
 | amptk-unoise3.py | Script runs UNOISE3 algorithm. Requires USEARCH9 by Robert C. Edgar: http://drive5.com/usearch |
 | amptk_primers | Primers hard-coded into AMPtk |
 | csv2heatmap.py | Script that creates heatmap(s) from csv data, column 1 is the row name, csv file has headers. |
-| funguild | Script takes OTU table as input and runs FUNGuild to assing functional annotation to an OTU              based on the Guilds database. AMPtk runs method based off of script by Zewei Song (2015-2021). |
-| summarize | Summarize amplicon sequencing data |
 
 ## Reference documentation
 - [AMPtk Overview](./references/amptk_readthedocs_io_en_latest_overview.html.md)

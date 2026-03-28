@@ -4,7 +4,6 @@ description: The newick_utils suite provides a high-performance toolkit for proc
 homepage: http://cegg.unige.ch/newick_utils
 ---
 
-
 # newick_utils
 
 ## Overview

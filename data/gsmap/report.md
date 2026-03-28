@@ -10,7 +10,11 @@ Performs a quick mode analysis with gsMap.
 - **Homepage**: https://github.com/LeonSong1995/gsMap
 - **Package**: https://anaconda.org/channels/bioconda/packages/gsmap/overview
 - **Validation**: PASS
-
+- **tutorial**: https://yanglab.westlake.edu.cn/gps_data/website_docs/html/quick_mode.html
+- **step**: https://yanglab.westlake.edu.cn/gps_data/website_docs/html/step_by_step.html
+- **usage**: https://yanglab.westlake.edu.cn/gps_data/website_docs/html/advanced_usage.html
+- **10x**: https://yanglab.westlake.edu.cn/gps_data/website_docs/html/10x.html
+- **data**: https://yanglab.westlake.edu.cn/gps_data/website_docs/html/data_format.html
 - **Conda**: https://anaconda.org/channels/bioconda/packages/gsmap/overview
 - **Total Downloads**: 2.3K
 - **Last updated**: 2026-02-12
@@ -627,4 +631,4 @@ options:
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

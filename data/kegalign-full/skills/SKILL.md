@@ -4,7 +4,6 @@ description: KegAlign is a GPU-accelerated genome alignment tool that identifies
 homepage: https://github.com/galaxyproject/KegAlign
 ---
 
-
 # kegalign-full
 
 ## Overview

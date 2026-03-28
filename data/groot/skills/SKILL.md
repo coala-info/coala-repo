@@ -4,7 +4,6 @@ description: groot identifies and quantifies antibiotic resistance genes in meta
 homepage: https://github.com/will-rowe/groot
 ---
 
-
 # groot
 
 ## Overview

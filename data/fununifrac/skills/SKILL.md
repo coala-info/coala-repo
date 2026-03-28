@@ -4,7 +4,6 @@ description: FunUniFrac performs functional UniFrac analysis on metagenomic data
 homepage: https://github.com/KoslickiLab/FunUniFrac
 ---
 
-
 # fununifrac
 
 ## Overview

@@ -4,7 +4,6 @@ description: The sodar-cli tool provides a command-line interface and Python lib
 homepage: https://github.com/bihealth/sodar-cli
 ---
 
-
 # sodar-cli
 
 ## Overview
@@ -52,6 +51,16 @@ The CLI is structured around specific SODAR modules. When using the tool, target
 - **Security**: Since `~/.sodarrc.toml` contains a sensitive API token, ensure the file permissions are restricted (e.g., `chmod 600 ~/.sodarrc.toml`).
 - **Version Compatibility**: Ensure the CLI version matches the SODAR server API version. Recent updates (v0.2.0+) include compatibility fixes for newer SODAR API endpoints.
 - **Automation**: Use the Python package directly (`import sodar_cli`) within scripts when complex logic is required that exceeds simple CLI command chaining.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| sodar-cli landingzone | Landing zone operations |
+| sodar-cli project | Manage SODAR projects. |
+| sodar-cli samplesheet | Manage sample sheets for projects. |
 
 ## Reference documentation
 - [SODAR CLI Overview](./references/anaconda_org_channels_bioconda_packages_sodar-cli_overview.md)

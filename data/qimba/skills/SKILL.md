@@ -4,7 +4,6 @@ description: Qimba is a bioinformatics toolkit for managing and processing metab
 homepage: https://github.com/quadram-institute-bioscience/qimba
 ---
 
-
 # qimba
 
 ## Overview
@@ -55,12 +54,12 @@ To override these settings for a specific run, use the `--config` flag:
 
 | Command | Description |
 |---------|-------------|
-| check-tab | Check TSV files for their dimensions and consistency. |
-| dada2-split | Split DADA2 TSV file into FASTA and simplified TSV. |
-| make-mapping | Generate a sample mapping file from a directory of sequence files. |
-| merge | Merge paired end into a single file using USEARCH |
+| qimba check-tab | Check TSV files for their dimensions and consistency. |
+| qimba dada2-split | Split DADA2 TSV file into FASTA and simplified TSV. |
+| qimba make-mapping | Generate a sample mapping file from a directory of sequence files. |
+| qimba merge | Merge paired end into a single file using USEARCH |
+| qimba show-samples | Display sample information from a mapping file. |
 | qimba_derep | Dereplicate FASTA sequences using USEARCH. |
-| show-samples | Display sample information from a mapping file. |
 
 ## Reference documentation
 - [Qimba Main Repository](./references/github_com_quadram-institute-bioscience_qimba.md)

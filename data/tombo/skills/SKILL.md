@@ -4,7 +4,6 @@ description: Tombo analyzes raw nanopore sequencing signals by aligning them to 
 homepage: https://github.com/nanoporetech/tombo
 ---
 
-
 # tombo
 
 ## Overview
@@ -79,28 +78,28 @@ tombo text_output browser_files --fast5-basedirs path/to/fast5s/ \
 
 | Command | Description |
 |---------|-------------|
-| clear_filters | Clear filters from FAST5 files in the specified directories. |
-| cluster_most_significant | Cluster and plot the most significant signal differences between two sets of FAST5 files. |
-| estimate_alt_reference | Estimate alternative reference models from FAST5 data for non-standard base detection. |
-| estimate_kmer_reference | Estimate k-mer reference model from FAST5 files. |
-| event_resquiggle | Resquiggle (align) raw nanopore signal to a reference genome using existing basecalls. |
-| filter_stuck | Filter reads based on observations per base percentile thresholds to identify 'stuck' reads. |
-| model_resquiggle | Perform model-based re-squiggle of FAST5 files to refine signal-to-sequence alignment. |
-| plot_correction | Plot signal-to-sequence alignment correction (resquiggle) results from FAST5 files. |
-| plot_genome_location | Plot raw signal at specific genomic locations from fast5 files. |
-| plot_kmer | Plot k-mer distributions from FAST5 data using Tombo. |
-| plot_max_coverage | Plot regions with maximum coverage from FAST5 data using Tombo. |
-| plot_max_difference | Plot regions with the maximum difference in signal between two sets of FAST5 files. |
-| plot_most_significant | Plot the most significant regions of difference between two sets of FAST5 files or based on statistics. |
-| plot_motif_centered | Plot signal and statistics centered at a specific motif using Tombo-processed FAST5 data. |
-| plot_motif_with_stats | Plot signal and statistics at a specific motif using Tombo. |
-| plot_multi_correction | Plot multiple corrected signal alignments from FAST5 files. |
-| plot_per_read | Plot per-read signal at specific genomic locations using Tombo. |
-| resquiggle | Re-annotate raw nanopore signal to a genomic reference (resquiggle). |
-| test_significance | Test for significant differences in signal between two sets of FAST5 files or against a model to identify modified bases. |
 | tombo | Tombo is a suite of tools primarily for the identification of modified nucleotides from nanopore sequencing data. |
-| write_most_significant_fasta | Write FASTA file of sequences from the most significant regions based on Tombo statistics. |
-| write_wiggles | Write wiggle files from FAST5 data or statistics for visualization. |
+| tombo clear_filters | Clear filters from FAST5 files in the specified directories. |
+| tombo cluster_most_significant | Cluster and plot the most significant signal differences between two sets of FAST5 files. |
+| tombo estimate_alt_reference | Estimate alternative reference models from FAST5 data for non-standard base detection. |
+| tombo estimate_kmer_reference | Estimate k-mer reference model from FAST5 files. |
+| tombo event_resquiggle | Resquiggle (align) raw nanopore signal to a reference genome using existing basecalls. |
+| tombo filter_stuck | Filter reads based on observations per base percentile thresholds to identify 'stuck' reads. |
+| tombo model_resquiggle | Perform model-based re-squiggle of FAST5 files to refine signal-to-sequence alignment. |
+| tombo plot_correction | Plot signal-to-sequence alignment correction (resquiggle) results from FAST5 files. |
+| tombo plot_genome_location | Plot raw signal at specific genomic locations from fast5 files. |
+| tombo plot_kmer | Plot k-mer distributions from FAST5 data using Tombo. |
+| tombo plot_max_coverage | Plot regions with maximum coverage from FAST5 data using Tombo. |
+| tombo plot_max_difference | Plot regions with the maximum difference in signal between two sets of FAST5 files. |
+| tombo plot_most_significant | Plot the most significant regions of difference between two sets of FAST5 files or based on statistics. |
+| tombo plot_motif_centered | Plot signal and statistics centered at a specific motif using Tombo-processed FAST5 data. |
+| tombo plot_motif_with_stats | Plot signal and statistics at a specific motif using Tombo. |
+| tombo plot_multi_correction | Plot multiple corrected signal alignments from FAST5 files. |
+| tombo plot_per_read | Plot per-read signal at specific genomic locations using Tombo. |
+| tombo resquiggle | Re-annotate raw nanopore signal to a genomic reference (resquiggle). |
+| tombo test_significance | Test for significant differences in signal between two sets of FAST5 files or against a model to identify modified bases. |
+| tombo write_most_significant_fasta | Write FASTA file of sequences from the most significant regions based on Tombo statistics. |
+| tombo write_wiggles | Write wiggle files from FAST5 data or statistics for visualization. |
 
 ## Reference documentation
 - [Tombo README and Usage Guide](./references/github_com_nanoporetech_tombo_blob_master_README.rst.md)

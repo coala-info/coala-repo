@@ -4,7 +4,6 @@ description: BioBloomTools is a bioinformatics suite that uses Bloom filters for
 homepage: https://github.com/bcgsc/biobloom
 ---
 
-
 # biobloomtools
 
 ## Overview

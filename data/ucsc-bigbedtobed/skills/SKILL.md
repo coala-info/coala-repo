@@ -4,7 +4,6 @@ description: This tool converts binary BigBed files into text-based BED format. 
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
 
-
 # ucsc-bigbedtobed
 
 ## Overview
@@ -59,6 +58,15 @@ To stream the BED output directly into another tool (like `head` or a custom scr
 ```bash
 bigBedToBed input.bb stdout | head -n 20
 ```
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| bigBedInfo | Show information about a bigBed file. |
+| bigBedToBed | Convert from bigBed to ascii bed format. |
 
 ## Reference documentation
 - [UCSC Genome Browser Kent Wiki](./references/github_com_ucscGenomeBrowser_kent_wiki.md)

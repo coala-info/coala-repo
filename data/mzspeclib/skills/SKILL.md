@@ -4,7 +4,6 @@ description: "This tool handles the creation, validation, and manipulation of mz
 homepage: https://github.com/HUPO-PSI/mzSpecLib
 ---
 
-
 # mzspeclib
 
 yaml
@@ -66,6 +65,17 @@ mzspeclib <command> [options] <input_file> [output_file]
 *   **Consult the documentation:** For the most up-to-date command-line options and specific subcommand usage, always refer to the official `mzspeclib` documentation or use the `--help` flag for the tool and its subcommands.
 *   **Input/Output Formats:** Be mindful of the supported input and output file formats for creation and conversion operations. The tool's primary focus is the mzSpecLib format itself.
 *   **Validation is Crucial:** Always validate your mzSpecLib files after creation or modification to ensure data integrity and compatibility with downstream tools.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| mzspeclib convert | Convert a spectral library from one format to another. If `outpath` is `-`, instead of writing to file, data will instead be sent to STDOUT. |
+| mzspeclib describe | Produce a minimal textual description of a spectral library. |
+| mzspeclib index | Build an external on-disk SQL-based index for the spectral library |
+| mzspeclib validate | Semantically and structurally validate a spectral library. |
 
 ## Reference documentation
 - [Overview of mzspeclib](https://anaconda.org/bioconda/mzspeclib)

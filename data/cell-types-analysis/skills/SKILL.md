@@ -4,7 +4,6 @@ description: The cell-types-analysis suite benchmarks single-cell RNA sequencing
 homepage: https://github.com/ebi-gene-expression-group/cell-types-analysis
 ---
 
-
 # cell-types-analysis
 
 ## Overview

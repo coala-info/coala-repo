@@ -4,7 +4,6 @@ description: MagCluster is a bioinformatics pipeline designed to identify, annot
 homepage: https://github.com/runjiaji/magcluster
 ---
 
-
 # magcluster
 
 ## Overview
@@ -73,9 +72,9 @@ magcluster clinker [options]
 
 | Command | Description |
 |---------|-------------|
-| clinker | magcluster clinker |
-| mgc_screen | Analyzes .gbk/.gbf files to identify potential MGCs based on magnetosome gene content within specified windows. |
-| prokka | Prokka: rapid prokaryotic genome annotation |
+| magcluster clinker | magcluster clinker |
+| magcluster mgc_screen | Analyzes .gbk/.gbf files to identify potential MGCs based on magnetosome gene content within specified windows. |
+| magcluster prokka | Prokka: rapid prokaryotic genome annotation |
 
 ## Reference documentation
 - [MagCluster GitHub README](./references/github_com_RunJiaJi_MagCluster_blob_main_README.md)

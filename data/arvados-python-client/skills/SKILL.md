@@ -4,7 +4,6 @@ description: The arvados-python-client provides command-line tools for interacti
 homepage: https://github.com/curoverse/arvados/tree/main/sdk/python
 ---
 
-
 # arvados-python-client
 
 ## Overview

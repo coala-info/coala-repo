@@ -4,7 +4,6 @@ description: pysradb is a toolkit for retrieving metadata and raw data from geno
 homepage: https://github.com/saketkc/pysradb
 ---
 
-
 # pysradb
 
 ## Overview
@@ -67,40 +66,40 @@ Find genomic accessions associated with PubMed IDs or DOIs:
 
 | Command | Description |
 |---------|-------------|
-| doi-to-gse | Convert DOI(s) to GSE accession(s) |
-| doi-to-srp | Convert DOI(s) to SRP accession(s) |
-| gse-to-gsm | Convert GSE accession IDs to GSM accession IDs |
-| gsm-to-gse | Convert GSM IDs to GSE IDs. |
-| gsm-to-srp | Convert GSM IDs to SRP IDs |
-| gsm-to-srr | Convert GSM IDs to SRR IDs |
-| gsm-to-srs | Convert GSM IDs to SRS IDs |
-| gsm-to-srx | Convert GSM IDs to SRX IDs. |
-| pmid-to-gse | Convert PMID(s) to GSE accession(s) |
-| pmid-to-identifiers | Convert PMID(s) to SRA accession(s) and Experiment accession(s) |
-| pmid-to-srp | Convert PMID(s) to SRP accession(s) |
 | pysradb | Query NGS metadata and data from NCBI Sequence Read Archive. |
+| pysradb doi-to-gse | Convert DOI(s) to GSE accession(s) |
 | pysradb doi-to-identifiers | Convert DOI(s) to SRA/GEO identifiers. |
+| pysradb doi-to-srp | Convert DOI(s) to SRP accession(s) |
 | pysradb geo-matrix | Generates a matrix from GEO accession data. |
+| pysradb gse-to-gsm | Convert GSE accession IDs to GSM accession IDs |
 | pysradb gse-to-pmid | Convert GSE accession(s) to PMID(s) |
 | pysradb gse-to-srp | Convert GSE accession IDs to SRP accession IDs |
+| pysradb gsm-to-gse | Convert GSM IDs to GSE IDs. |
+| pysradb gsm-to-srp | Convert GSM IDs to SRP IDs |
+| pysradb gsm-to-srr | Convert GSM IDs to SRR IDs |
+| pysradb gsm-to-srs | Convert GSM IDs to SRS IDs |
+| pysradb gsm-to-srx | Convert GSM IDs to SRX IDs. |
 | pysradb metadata | Retrieve metadata for given SRP IDs. |
 | pysradb pmc-to-identifiers | Convert PMC IDs to accession identifiers. |
+| pysradb pmid-to-gse | Convert PMID(s) to GSE accession(s) |
+| pysradb pmid-to-identifiers | Convert PMID(s) to SRA accession(s) and Experiment accession(s) |
+| pysradb pmid-to-srp | Convert PMID(s) to SRP accession(s) |
 | pysradb search | Search for data in SRA, ENA, or GEO databases. |
 | pysradb srp-to-gse | Convert SRP accession to GSE accession |
+| pysradb srp-to-pmid | Convert SRP accession(s) to PMID(s) |
+| pysradb srp-to-srr | Convert SRP accession to SRR accessions |
+| pysradb srp-to-srs | Convert SRP accession to SRS accession |
+| pysradb srp-to-srx | Convert SRP accession to SRX accession |
+| pysradb srr-to-gsm | Convert SRR IDs to GSM IDs |
+| pysradb srr-to-srp | Convert SRR IDs to SRP IDs |
+| pysradb srr-to-srs | Convert SRR IDs to SRS IDs |
+| pysradb srr-to-srx | Convert SRR IDs to SRX IDs. |
+| pysradb srs-to-gsm | Convert SRS IDs to GSM IDs |
+| pysradb srs-to-srx | Convert SRS IDs to SRX IDs |
+| pysradb srx-to-srp | Convert SRX IDs to SRP IDs |
+| pysradb srx-to-srr | Convert SRX IDs to SRR IDs |
+| pysradb srx-to-srs | Convert SRX IDs to SRS IDs |
 | pysradb_download | Download SRA data. Accepts a list of accession IDs from stdin or a file. |
-| srp-to-pmid | Convert SRP accession(s) to PMID(s) |
-| srp-to-srr | Convert SRP accession to SRR accessions |
-| srp-to-srs | Convert SRP accession to SRS accession |
-| srp-to-srx | Convert SRP accession to SRX accession |
-| srr-to-gsm | Convert SRR IDs to GSM IDs |
-| srr-to-srp | Convert SRR IDs to SRP IDs |
-| srr-to-srs | Convert SRR IDs to SRS IDs |
-| srr-to-srx | Convert SRR IDs to SRX IDs. |
-| srs-to-gsm | Convert SRS IDs to GSM IDs |
-| srs-to-srx | Convert SRS IDs to SRX IDs |
-| srx-to-srp | Convert SRX IDs to SRP IDs |
-| srx-to-srr | Convert SRX IDs to SRR IDs |
-| srx-to-srs | Convert SRX IDs to SRS IDs |
 
 ## Reference documentation
 - [pysradb README](./references/github_com_saketkc_pysradb_blob_develop_README.md)

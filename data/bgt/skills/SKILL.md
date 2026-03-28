@@ -4,7 +4,6 @@ description: "This tool provides flexible genotype querying across large whole-g
 homepage: https://github.com/Dysman/bgTools-playerPrefsEditor
 ---
 
-
 # bgt
 
 Provides flexible genotype querying across large whole-genome datasets.
@@ -56,6 +55,18 @@ body: |
   *   **Region Specification:** Use precise region specifications for targeted queries to reduce processing time and memory usage. Consider using BED files for complex region definitions if supported.
 
   Always refer to the official `bgt` documentation for the most up-to-date command-line options and advanced features.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| bgt atomize | Atomize a VCF/BCF file |
+| bgt bcfidx | Index a BCF file. |
+| bgt import | Import VCF/BCF files into BGT format |
+| bgt view | View and convert VCF/BCF files |
+| fmf | Process FMF files |
 
 ## Reference documentation
 - [bgt - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_bgt_overview.md)

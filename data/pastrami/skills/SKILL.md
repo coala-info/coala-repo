@@ -4,7 +4,6 @@ description: Pastrami is a scalable computational framework for high-throughput 
 homepage: https://github.com/healthdisparities/pastrami
 ---
 
-
 # pastrami
 
 ## Overview
@@ -64,12 +63,12 @@ Always utilize the `--threads` flag to leverage multi-core processing, as the `c
 
 | Command | Description |
 |---------|-------------|
-| aggregate | Aggregate Pastrami ancestry estimates based on population groupings |
-| all | PASTRAMI tool for haplotype-based population structure analysis |
-| build | Build reference copying matrices and pickle files for PASTRAMI |
-| coanc | Calculate copying matrices for reference and query haplotypes |
-| hapmake | Generate haplotype blocks based on genetic maps and SNP constraints |
-| query | Query a reference pickle with TPED/TFAM input files to generate copying matrices. |
+| pastrami.py aggregate | Aggregate Pastrami ancestry estimates based on population groupings |
+| pastrami.py all | PASTRAMI tool for haplotype-based population structure analysis |
+| pastrami.py build | Build reference copying matrices and pickle files for PASTRAMI |
+| pastrami.py coanc | Calculate copying matrices for reference and query haplotypes |
+| pastrami.py hapmake | Generate haplotype blocks based on genetic maps and SNP constraints |
+| pastrami.py query | Query a reference pickle with TPED/TFAM input files to generate copying matrices. |
 
 ## Reference documentation
 - [Pastrami README](./references/github_com_healthdisparities_pastrami_blob_master_README.md)

@@ -4,7 +4,6 @@ description: hackgap is a fast, JIT-compiled k-mer counter that supports gapped 
 homepage: https://gitlab.com/rahmannlab/hackgap
 ---
 
-
 # hackgap
 
 hackgap/
@@ -66,6 +65,21 @@ This would count sequences like `A-C-G` where the second and fourth characters a
 *   **Gapped K-mer Design:** Carefully consider the placement of gaps (`--gaps`) based on the biological question. Gaps can help capture longer-range dependencies or account for variations.
 *   **Parameter Tuning:** Experiment with different `--k` values to find the optimal k-mer length for your specific analysis. Shorter k-mers are more abundant but less specific; longer k-mers are less abundant but more specific.
 *   **JIT Compilation:** The JIT compilation means the first run might be slightly slower as the code is optimized. Subsequent runs with similar parameters should be faster.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| hackgap | hackgap: error: argument COMMAND: invalid choice: 'COMMAND' (choose from count, countwith, pycount, info) |
+| hackgap | hackgap: error: argument COMMAND: invalid choice: 'The' (choose from count, countwith, pycount, info) |
+| hackgap | hackgap: error: argument COMMAND: invalid choice: 'counts' (choose from count, countwith, pycount, info) |
+| hackgap | hackgap: error: argument COMMAND: invalid choice: 'or' (choose from count, countwith, pycount, info) |
+| hackgap count | Count k-mers in specified files. |
+| hackgap countwith | Count k-mers in files using an existing index. |
+| hackgap pycount | Index and count k-mers in FASTQ files. |
+| hackgap_info | Prints information about a hash table. |
 
 ## Reference documentation
 - [hackgap Overview](./references/anaconda_org_channels_bioconda_packages_hackgap_overview.md)

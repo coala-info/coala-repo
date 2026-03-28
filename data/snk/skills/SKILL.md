@@ -4,7 +4,6 @@ description: The snk tool transforms Snakemake workflows into standalone command
 homepage: https://snk.wytamma.com
 ---
 
-
 # snk
 
 ## Overview

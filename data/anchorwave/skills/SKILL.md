@@ -4,7 +4,6 @@ description: AnchorWave performs sensitive genome-to-genome alignment by identif
 homepage: https://github.com/baoxingsong/AnchorWave
 ---
 
-
 # anchorwave
 
 ## Overview
@@ -50,6 +49,17 @@ anchorwave proali -i ref.gff3 -as ref.cds.fa -r ref.fa -a query.sam -ar ref.sam 
 *   **WGD Parameters**: When using `proali` for polyploid genomes, tune the `-R` (reference duplication) and `-Q` (query duplication) parameters to match the known ploidy levels or duplication history.
 *   **Anchor Filtering**: If the alignment is too noisy, increase the `-m` parameter in `gff2seq` to filter out short exons (default is 20bp), which can reduce false-positive anchor matches.
 *   **Output Format**: The primary output is in MAF (Multiple Alignment Format). If downstream tools require other formats (like BAM or PAF), use external converters like `bioconvert` or `paftools`.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| anchorwave ali | Sequence alignment using AnchorWave |
+| anchorwave genoAli | Perform genome alignment using anchorwave |
+| anchorwave gff2seq | Extract the longest CDS or exon sequences for each gene from a GFF/GTF file and a reference genome. |
+| anchorwave proali | Identify collinear blocks and perform genome alignment using anchors. |
 
 ## Reference documentation
 - [AnchorWave Main Documentation](./references/github_com_baoxingsong_AnchorWave.md)

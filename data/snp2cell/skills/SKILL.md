@@ -4,7 +4,6 @@ description: snp2cell maps GWAS results onto cell-type-specific regulatory lands
 homepage: https://github.com/Teichlab/snp2cell
 ---
 
-
 # snp2cell
 
 ## Overview
@@ -68,8 +67,8 @@ s2c.run_propagation(n_permutations=1000)
 
 | Command | Description |
 |---------|-------------|
-| add-score | Add scores for network nodes to the s2c object and propagate the scores across the network. |
-| combine-scores | Assuming that both a SNP score and DE scores have been added to the s2c object, combine SNP score with DE scores and compute statistics. |
+| snp2cell add-score | Add scores for network nodes to the s2c object and propagate the scores across the network. |
+| snp2cell combine-scores | Assuming that both a SNP score and DE scores have been added to the s2c object, combine SNP score with DE scores and compute statistics. |
 | snp2cell contrast-scores | Add a new score that is a contrast of two scores, propagate it across the network and calculate statistics based on random permutations. |
 | snp2cell export-locations | Save the genomic locations of network nodes in the s2c object to a tsv file. |
 | snp2cell score-de | Add an anndata object to the s2c object, find differentially expressed genes and propagate the gene scores across the network. Then the DE scores and previously computed SNP scores are combined and statistics are computed based on random permutations. |

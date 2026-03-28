@@ -4,7 +4,6 @@ description: DANPOS is a toolkit for high-resolution analysis of chromatin featu
 homepage: https://sites.google.com/site/danposdoc/
 ---
 
-
 # danpos
 
 ## Overview
@@ -68,8 +67,8 @@ python danpos.py wiq --buffer_size 50 chrom_size_file.xls sampleA.wig:sampleB.wi
 
 | Command | Description |
 |---------|-------------|
-| dpeak | The dpeak function in DANPOS is used for calling peaks (nucleosomes) from sequencing data, typically after preprocessing or for specific enrichment analysis. |
-| dpos | Analyze dynamics of nucleosome positions, including occupancy, position, and fuzziness changes. |
+| danpos dpos | Analyze dynamics of nucleosome positions, including occupancy, position, and fuzziness changes. |
+| danpos.py dpeak | The dpeak function in DANPOS is used for calling peaks (nucleosomes) from sequencing data, typically after preprocessing or for specific enrichment analysis. |
 
 ## Reference documentation
 - [Dpos Parameters](./references/sites_google_com_site_danposdoc_b-documentation_1-dpos_parameters.md)

@@ -4,7 +4,6 @@ description: This tool maps DNA sequences to a reference genome using the Burrow
 homepage: https://github.com/fulcrumgenomics/bwa-aln-interactive
 ---
 
-
 # bwa-aln-interactive
 
 ## Overview
@@ -72,20 +71,20 @@ This version supports the **XB** tag to output alignment scores and mapping qual
 
 | Command | Description |
 |---------|-------------|
-| aln | Align sequences using BWA (Burrows-Wheeler Aligner) aln algorithm. |
-| bwasw | BWA-SW algorithm for long-read alignment |
-| bwt2sa | Generate suffix array (SA) from BWT |
+| bwa aln | Align sequences using BWA (Burrows-Wheeler Aligner) aln algorithm. |
+| bwa bwasw | BWA-SW algorithm for long-read alignment |
+| bwa bwt2sa | Generate suffix array (SA) from BWT |
+| bwa bwtupdate | Update or regenerate the BWT (Burrows-Wheeler Transform) file. |
+| bwa fa2pac | Convert FASTA to PAC format for BWA indexing |
+| bwa fastmap | Fastmap identifies Super Maximal Exact Matches (SMEMs) in sequences using a BWA index. |
+| bwa index | Index database sequences in the FASTA format |
+| bwa mem | Burrows-Wheeler Alignment Tool, MEM algorithm for long-read alignment |
+| bwa pac2bwt | Convert a PAC file to a BWT file. |
+| bwa pemerge | Merge paired-end reads |
+| bwa sampe | Generate alignments in the SAM format given single-end alignments for paired-end reads. |
+| bwa samse | Generate alignments in the SAM format for single-end reads |
+| bwa shm | Manage BWA indices in shared memory |
 | bwtgen | Generate a BWT (Burrows-Wheeler Transform) from a PAC file. |
-| bwtupdate | Update or regenerate the BWT (Burrows-Wheeler Transform) file. |
-| fa2pac | Convert FASTA to PAC format for BWA indexing |
-| fastmap | Fastmap identifies Super Maximal Exact Matches (SMEMs) in sequences using a BWA index. |
-| index | Index database sequences in the FASTA format |
-| mem | Burrows-Wheeler Alignment Tool, MEM algorithm for long-read alignment |
-| pac2bwt | Convert a PAC file to a BWT file. |
-| pemerge | Merge paired-end reads |
-| sampe | Generate alignments in the SAM format given single-end alignments for paired-end reads. |
-| samse | Generate alignments in the SAM format for single-end reads |
-| shm | Manage BWA indices in shared memory |
 
 ## Reference documentation
 - [BWA NEWS and Release Notes](./references/github_com_fulcrumgenomics_bwa-aln-interactive_blob_main_NEWS.md)

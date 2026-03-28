@@ -4,7 +4,6 @@ description: JAFFA is a transcript-centric bioinformatics pipeline designed to d
 homepage: https://github.com/Oshlack/JAFFA
 ---
 
-
 # jaffa
 
 ## Overview

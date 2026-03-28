@@ -4,7 +4,6 @@ description: Snakebids is a framework that extends Snakemake to build portable B
 homepage: https://github.com/khanlab/snakebids
 ---
 
-
 # snakebids
 
 ## Overview

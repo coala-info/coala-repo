@@ -4,7 +4,6 @@ description: Met4j is a Java library for metabolic network analysis that enables
 homepage: https://forgemia.inra.fr/metexplore/met4j/-/blob/master/met4j-toolbox/README.md
 ---
 
-
 # met4j
 
 ## Overview
@@ -40,10 +39,6 @@ Met4j is typically invoked via a launcher or by calling specific class files wit
 
 | Command | Description |
 |---------|-------------|
-| bigg.GetBiggModelProteome | Get proteome in fasta format of a model present in the BIGG database |
-| convert.Sbml2CarbonSkeletonNet | Create a carbon skeleton graph representation of a SBML file content, using GSAM atom-mapping file (see https://forgemia.inra.fr/metexplore/gsam) |
-| convert.Sbml2CompoundGraph | Advanced creation of a compound graph representation of a SBML file content |
-| convert.Sbml2Graph | Create a graph representation of a SBML file content, and export it in graph file format. |
 | met4j | Extract databases' references from SBML annotations or notes. |
 | met4j | Extract pathway(s) from a SBML file and create a sub-network SBML file |
 | met4j | Met4j-Toolbox: Applications classified by package. |
@@ -67,6 +62,10 @@ Met4j is typically invoked via a launcher or by calling specific class files wit
 | met4j | Met4j-Toolbox: Applications classified by package. |
 | met4j | Met4j-Toolbox: Applications classified by package. The complete class name must be provided (e.g. fr.inrae.toulouse.metexplore.met4j_toolbox.attributes.SbmlSetChargesFromFile) to launch the app. Launch the application with the -h parameter to get the list of the parameters and a complete description. |
 | met4j | The applications are classified by package. The complete class name must be provided (e.g. fr.inrae.toulouse.metexplore.met4j_toolbox.attributes.SbmlSetChargesFromFile) to launch the app Launch the application with the -h parameter to get the list of the parameters and a complete description. |
+| met4j bigg.GetBiggModelProteome | Get proteome in fasta format of a model present in the BIGG database |
+| met4j convert.Sbml2CarbonSkeletonNet | Create a carbon skeleton graph representation of a SBML file content, using GSAM atom-mapping file (see https://forgemia.inra.fr/metexplore/gsam) |
+| met4j convert.Sbml2CompoundGraph | Advanced creation of a compound graph representation of a SBML file content |
+| met4j convert.Sbml2Graph | Create a graph representation of a SBML file content, and export it in graph file format. |
 
 ## Reference documentation
 - [Met4j Toolbox README](./references/forge_inrae_fr_metexplore_met4j_-_blob_master_met4j-toolbox_README.md)

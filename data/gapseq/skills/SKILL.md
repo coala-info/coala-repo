@@ -4,7 +4,6 @@ description: gapseq automates the reconstruction of bacterial metabolic models b
 homepage: https://github.com/jotech/gapseq
 ---
 
-
 # gapseq
 
 ## Overview

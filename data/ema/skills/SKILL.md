@@ -4,7 +4,6 @@ description: EMA is a specialized alignment tool that leverages shared barcode i
 homepage: http://ema.csail.mit.edu/
 ---
 
-
 # ema
 
 ## Overview
@@ -55,8 +54,8 @@ EMA performs internal duplicate marking. After alignment:
 
 | Command | Description |
 |---------|-------------|
-| align | choose best alignments based on barcodes |
 | ema | EMA is a tool for processing and aligning barcoded sequencing data. |
+| ema align | choose best alignments based on barcodes |
 
 ## Reference documentation
 - [EMA GitHub Repository](./references/github_com_arshajii_ema_blob_master_README.md)

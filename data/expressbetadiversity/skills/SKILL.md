@@ -4,7 +4,6 @@ description: Express Beta Diversity is a high-performance tool for calculating t
 homepage: https://github.com/dparks1134/ExpressBetaDiversity
 ---
 
-
 # expressbetadiversity
 
 ## Overview

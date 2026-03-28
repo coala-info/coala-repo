@@ -4,7 +4,6 @@ description: PIRATE performs pangenome analysis by iteratively clustering orthol
 homepage: https://github.com/SionBayliss/PIRATE
 ---
 
-
 # pirate
 
 ## Overview

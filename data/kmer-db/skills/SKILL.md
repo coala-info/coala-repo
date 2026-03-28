@@ -4,7 +4,6 @@ description: kmer-db is a high-performance bioinformatics tool for estimating ge
 homepage: https://github.com/refresh-bio/kmer-db
 ---
 
-
 # kmer-db
 
 ## Overview
@@ -61,14 +60,14 @@ Convert raw k-mer counts into biological metrics.
 
 | Command | Description |
 |---------|-------------|
-| build | Building a database |
 | kmer-db all2all | Counting common k-mers for all the samples in the database |
 | kmer-db all2all-parts | Counting common k-mers for all the samples in the database parts (sparse computation) |
 | kmer-db all2all-sp | Counting common k-mers for all the samples in the database (sparse computation) |
+| kmer-db build | Building a database |
 | kmer-db distance | Calculating similarities/distances on the basis of common k-mers |
+| kmer-db minhash | Storing minhashed k-mers |
 | kmer-db one2all | Counting common kmers between single sample and all the samples in the database |
 | kmer-db_new2all | Counting common kmers between set of new samples and all the samples in the database |
-| minhash | Storing minhashed k-mers |
 
 ## Reference documentation
 - [Kmer-db GitHub README](./references/github_com_refresh-bio_kmer-db_blob_master_README.md)

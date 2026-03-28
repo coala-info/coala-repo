@@ -10,6 +10,7 @@ Assessing level of soft clipping in BAM file
 - **Homepage**: https://bitbucket.org/wegmannlab/atlas/wiki/Home
 - **Package**: https://anaconda.org/channels/bioconda/packages/atlas/overview
 - **Validation**: PASS
+- **manual**: https://atlaswiki.netlify.app/
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/atlas/overview
 - **Total Downloads**: 9.1K
@@ -2563,4 +2564,4 @@ ATLAS 2.0.1
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

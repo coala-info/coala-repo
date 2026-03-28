@@ -4,7 +4,6 @@ description: The pgscatalog.calc package performs polygenic score calculation, r
 homepage: https://github.com/PGScatalog/pygscatalog/
 ---
 
-
 # pgscatalog.calc
 
 ## Overview

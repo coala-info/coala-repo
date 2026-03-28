@@ -4,7 +4,6 @@ description: VirProf is a bioinformatics pipeline that extracts, identifies, and
 homepage: https://github.com/seiboldlab/virprof
 ---
 
-
 # virprof
 
 ## Overview
@@ -52,15 +51,15 @@ Results are aggregated in the `reports/` directory with the naming convention `<
 
 | Command | Description |
 |---------|-------------|
-| blast-classify | Compute LCA classification from BLAST search result |
-| download-genomes | Download genomes from NCBI. |
-| export-fasta | Exports blastbin hits in FASTA format |
-| fasta-qc | Calculates contig QC values |
-| find-bins | Collects recovered sequences into per-species files |
-| init-test | Set up a demo/test directory |
-| prepare-phylo | Prepares sequences for phylogenetic analysis |
+| virprof blast-classify | Compute LCA classification from BLAST search result |
+| virprof download-genomes | Download genomes from NCBI. |
+| virprof export-fasta | Exports blastbin hits in FASTA format |
+| virprof fasta-qc | Calculates contig QC values |
 | virprof filter-blast | Filter sequences based on blast hits |
+| virprof find-bins | Collects recovered sequences into per-species files |
 | virprof index-tree | Parse NCBI taxonomy from dump files and write tree to binary |
+| virprof init-test | Set up a demo/test directory |
+| virprof prepare-phylo | Prepares sequences for phylogenetic analysis |
 | virprof_blastbin | Merge and classify contigs based on BLAST search results |
 | ymp | Welcome to YMP! |
 

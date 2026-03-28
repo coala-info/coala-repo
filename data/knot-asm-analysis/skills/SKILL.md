@@ -4,7 +4,6 @@ description: knot-asm-analysis resolves fragmented bacterial genome assemblies b
 homepage: https://github.com/natir/knot
 ---
 
-
 # knot-asm-analysis
 
 ## Overview

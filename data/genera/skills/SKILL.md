@@ -4,7 +4,6 @@ description: The genera skill performs genomic phylostratigraphy to infer gene a
 homepage: https://github.com/josuebarrera/GenEra
 ---
 
-
 # genera
 
 ## Overview

@@ -4,7 +4,6 @@ description: lra is a specialized alignment tool designed to map long-read seque
 homepage: https://github.com/ChaissonLab/LRA
 ---
 
-
 # lra
 
 ## Overview
@@ -68,9 +67,9 @@ lra includes specialized tags in SAM/PAF output to assist in downstream SV calli
 
 | Command | Description |
 |---------|-------------|
-| align | Align reads to a genome. The genome should be indexed using the 'lra index' program. 'reads' may be either fasta, sam, or bam, and multiple input files may be given. |
-| global | Index global reference |
-| global | Index global reference for aligning reads |
+| lra align | Align reads to a genome. The genome should be indexed using the 'lra index' program. 'reads' may be either fasta, sam, or bam, and multiple input files may be given. |
+| lra global | Index global reference |
+| lra global | Index global reference for aligning reads |
 | lra_global | Index global reference for aligning reads or contigs |
 
 ## Reference documentation

@@ -4,7 +4,6 @@ description: This tool manipulates SAM, BAM, and CRAM files. Use when user asks 
 homepage: https://github.com/samtools/samtools
 ---
 
-
 # localhgt
 
 yaml
@@ -79,6 +78,15 @@ The primary use of `localhgt` involves interacting with SAM, BAM, and CRAM files
 *   **Header Management:** Be mindful of header information when merging or manipulating files. The `view` command with `-h` can display the header, and options exist to preserve or modify it.
 *   **Region Specification:** For large files, querying specific regions (`chr:start-end`) is much faster if the file is indexed.
 *   **Temporary Files:** For operations like sorting, `localhgt` uses temporary files. Ensure you have sufficient disk space and that the `TMPDIR` environment variable is set to a suitable location if the default is not adequate.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| localhgt bkp | Detect HGT breakpoints from metagenomic sequencing data. |
+| localhgt event | Infer complete HGT events based on detected HGT breakpoints. |
 
 ## Reference documentation
 - [Tools (written in C using htslib) for manipulating next-generation sequencing data](./references/github_com_samtools_samtools.md)

@@ -4,7 +4,6 @@ description: mlstdb manages local MLST databases by automating OAuth2 authentica
 homepage: https://github.com/himal2007/mlstdb
 ---
 
-
 # mlstdb
 
 ## Overview

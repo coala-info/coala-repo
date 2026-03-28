@@ -4,7 +4,6 @@ description: vclean identifies and mitigates contamination in viral genomes from
 homepage: https://github.com/TsumaR/vclean
 ---
 
-
 # vclean
 
 ## Overview
@@ -57,8 +56,8 @@ vclean run <input_fasta_dir> <output_dir> [options]
 
 | Command | Description |
 |---------|-------------|
-| download_database | Download the latest version of vClean's database |
 | vclean | Run vClean |
+| vclean download_database | Download the latest version of vClean's database |
 
 ## Reference documentation
 - [vClean README](./references/github_com_TsumaR_vclean_blob_main_README.md)

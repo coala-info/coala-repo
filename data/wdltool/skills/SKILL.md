@@ -4,7 +4,6 @@ description: wdltool is a Java utility used to validate, parse, and prepare WDL 
 homepage: https://github.com/broadinstitute/wdltool
 ---
 
-
 # wdltool
 
 ## Overview

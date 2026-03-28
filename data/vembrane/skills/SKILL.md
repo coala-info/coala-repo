@@ -4,7 +4,6 @@ description: "vembrane manipulates VCF and BCF files using Python expressions fo
 homepage: https://github.com/vembrane/vembrane
 ---
 
-
 # vembrane
 
 ## Overview
@@ -81,11 +80,11 @@ INFO.get("DP", 0) > 10
 
 | Command | Description |
 |---------|-------------|
-| structured | Create structured output from a VCF/BCF and a YTE template. |
 | vembrane annotate | Add new INFO field annotations to a VCF/BCF from other data sources, using a configuration file. |
 | vembrane fhir | Generate FHIR records from VCF/BCF files. |
 | vembrane filter | Filter VCF/BCF records and annotations based on a user-defined Python expression.Only records for which the expression evaluates to True are kept. |
 | vembrane sort | Sort VCF/BCF records by one or multiple Python expressions that encode keys for the desired order. This feature is primarily meant to prioritizing records for the human eye. For large unfiltered VCF/BCF files, the only relevant sorting is usually by position, which is better done with e.g. bcftools (and usually the standard sorting that variant callers output). Expects the VCF/BCF file to be single-allelic, i.e., one ALT allele per record. |
+| vembrane structured | Create structured output from a VCF/BCF and a YTE template. |
 | vembrane tag | Flag records by adding a tag to their FILTER field based on one or more expressions. This is a non-destructive alternative to `filter`, as it keeps all records. |
 | vembrane_table | Convert VCF/BCF records to tabular format. |
 

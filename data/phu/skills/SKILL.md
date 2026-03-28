@@ -4,7 +4,6 @@ description: The phu toolkit streamlines the analysis of viral and phage genomic
 homepage: https://github.com/camilogarciabotero/phu
 ---
 
-
 # phu
 
 ## Overview
@@ -51,9 +50,9 @@ Use this to convert verbose vContact3 output into a readable format.
 
 | Command | Description |
 |---------|-------------|
-| cluster | Sequence clustering wrapper around external 'vclust' with three modes. |
+| phu cluster | Sequence clustering wrapper around external 'vclust' with three modes. |
+| phu screen | Screen contigs for protein families using HMMER on predicted CDS. |
 | phu simplify-taxa | Simplify vContact taxonomy prediction columns into compact lineage codes. |
-| screen | Screen contigs for protein families using HMMER on predicted CDS. |
 
 ## Reference documentation
 

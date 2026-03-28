@@ -4,7 +4,6 @@ description: "Predicts antibiotic resistance from genome sequence data for speci
 homepage: https://github.com/iqbal-lab/Mykrobe-predictor
 ---
 
-
 # mykrobe
 
 Predicts antibiotic resistance from genome sequence data for specific bacterial species.
@@ -60,6 +59,17 @@ mykrobe predict --input <genome_file> --species <species_name>
 *   **Input file format**: mykrobe typically expects genome sequences in FASTA format. Ensure your input file is correctly formatted.
 *   **Check for updates**: Regularly check for updates to mykrobe to benefit from improved prediction models and expanded resistance gene databases. The bioconda channel is a reliable source for the latest versions.
 *   **Interpreting results**: The output will detail predicted resistance or susceptibility to various antibiotics based on identified genetic markers. Consult the mykrobe documentation or relevant literature for detailed interpretation of the resistance profiles.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| mykrobe predict | Predicts antimicrobial resistance from sequencing data. |
+| mykrobe variants | Manage variant databases |
+| mykrobe_panels | Manage mykrobe panels |
+| mykrobe_variants | mykrobe variants |
 
 ## Reference documentation
 - [Overview](./references/anaconda_org_channels_bioconda_packages_mykrobe_overview.md)

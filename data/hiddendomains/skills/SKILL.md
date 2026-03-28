@@ -4,7 +4,6 @@ description: hiddendomains uses a Hidden Markov Model to detect broad epigenetic
 homepage: http://hiddendomains.sourceforge.net/
 ---
 
-
 # hiddendomains
 
 ## Overview

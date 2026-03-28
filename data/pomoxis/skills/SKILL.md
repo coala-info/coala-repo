@@ -4,7 +4,6 @@ description: Pomoxis is a suite of bioinformatics utilities designed to streamli
 homepage: https://github.com/nanoporetech/pomoxis
 ---
 
-
 # pomoxis
 
 ## Overview

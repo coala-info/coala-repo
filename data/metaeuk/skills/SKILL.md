@@ -4,7 +4,6 @@ description: MetaEuk is a toolkit designed to identify and annotate eukaryotic g
 homepage: https://github.com/soedinglab/metaeuk
 ---
 
-
 # metaeuk
 
 ## Overview

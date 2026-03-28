@@ -4,7 +4,6 @@ description: "merfishtools uses a Bayesian model to analyze MERFISH data for acc
 homepage: https://merfishtools.github.io
 ---
 
-
 # merfishtools
 
 ## Overview
@@ -58,10 +57,10 @@ merfishtools multidiffexp --threads <N> <exp1.txt> <exp2.txt> <exp3.txt> ... > <
 
 | Command | Description |
 |---------|-------------|
-| diffexp | Test for differential expression between two groups of cells. |
-| gen-mhd2 | Generate MERFISH MHD2 codebook with given parameters. |
+| merfishtools diffexp | Test for differential expression between two groups of cells. |
 | merfishtools est-error-rates | Estimate 0-1 and 1-0 error rates. |
 | merfishtools exp | Estimate expressions for each feature (e.g. gene or transcript) in each cell. |
+| merfishtools gen-mhd2 | Generate MERFISH MHD2 codebook with given parameters. |
 | merfishtools gen-mhd4 | Generate MERFISH MHD4 codebook with given parameters. |
 | merfishtools multidiffexp | Test for differential expression between multiple groups of cells. |
 

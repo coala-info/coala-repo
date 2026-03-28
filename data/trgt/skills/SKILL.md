@@ -4,7 +4,6 @@ description: TRGT characterizes tandem repeats and identifies pathogenic expansi
 homepage: https://github.com/PacificBiosciences/trgt
 ---
 
-
 # trgt
 
 ## Overview
@@ -89,11 +88,11 @@ trgt deepdive \
 
 | Command | Description |
 |---------|-------------|
-| deepdive | Locus-specific Deep Dive |
-| genotype | Tandem Repeat Genotyper |
-| merge | Tandem Repeat VCF Merger |
-| plot | Tandem Repeat Plotter |
-| validate | Tandem Repeat Catalog Validator |
+| trgt deepdive | Locus-specific Deep Dive |
+| trgt genotype | Tandem Repeat Genotyper |
+| trgt merge | Tandem Repeat VCF Merger |
+| trgt plot | Tandem Repeat Plotter |
+| trgt validate | Tandem Repeat Catalog Validator |
 
 ## Reference documentation
 

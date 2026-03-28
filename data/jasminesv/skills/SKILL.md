@@ -4,7 +4,6 @@ description: Jasmine consolidates structural variant calls from multiple VCF fil
 homepage: https://github.com/mkirsche/Jasmine
 ---
 
-
 # jasminesv
 
 ## Overview

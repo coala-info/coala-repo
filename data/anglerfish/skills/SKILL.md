@@ -4,7 +4,6 @@ description: Anglerfish demultiplexes Oxford Nanopore reads that were prepared u
 homepage: https://github.com/remiolsen/anglerfish
 ---
 
-
 # anglerfish
 
 ## Overview
@@ -44,8 +43,8 @@ anglerfish run -s /path/to/samples.csv
 
 | Command | Description |
 |---------|-------------|
-| explore | This is an advanced samplesheet-free version of anglerfish. |
-| run | Run anglerfish. This is the main command for anglerfish |
+| anglerfish explore | This is an advanced samplesheet-free version of anglerfish. |
+| anglerfish run | Run anglerfish. This is the main command for anglerfish |
 
 ## Reference documentation
 - [Anglerfish README](./references/github_com_remiolsen_anglerfish_blob_master_README.md)

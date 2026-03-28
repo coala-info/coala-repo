@@ -4,7 +4,6 @@ description: CMAT processes ClinVar XML data to map clinical variants to genes, 
 homepage: https://github.com/EBIvariation/CMAT
 ---
 
-
 # cmat
 
 ## Overview

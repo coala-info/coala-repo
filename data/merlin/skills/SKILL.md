@@ -4,7 +4,6 @@ description: Merlin performs multipoint linkage analysis, error detection, and h
 homepage: http://csg.sph.umich.edu/abecasis/merlin
 ---
 
-
 # merlin
 
 ## Overview

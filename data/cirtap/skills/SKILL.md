@@ -4,7 +4,6 @@ description: cirtap is a command-line utility for mirroring, indexing, and manag
 homepage: https://github.com/MGXlab/cirtap/
 ---
 
-
 # cirtap
 
 ## Overview
@@ -66,11 +65,11 @@ Create a compressed archive from a specific list of genome IDs.
 
 | Command | Description |
 |---------|-------------|
-| best | Select best genomes based on stats retrieved from genome_summary |
+| cirtap best | Select best genomes based on stats retrieved from genome_summary |
 | cirtap collect | Create sequence sets based on the installed files |
-| index | Create an index of contents for all directories |
-| mirror | Mirror all data from ftp.patricbrc.org in the specified DB_DIR |
-| pack | Create a gzipped tar archive from a list of genome ids in a file |
+| cirtap index | Create an index of contents for all directories |
+| cirtap mirror | Mirror all data from ftp.patricbrc.org in the specified DB_DIR |
+| cirtap pack | Create a gzipped tar archive from a list of genome ids in a file |
 
 ## Reference documentation
 - [cirtap Overview](./references/github_com_MGXlab_cirtap.md)

@@ -4,7 +4,6 @@ description: Kipoi is a standardized repository and software framework for acces
 homepage: https://github.com/kipoi/kipoi
 ---
 
-
 # kipoi
 
 ## Overview
@@ -68,17 +67,17 @@ prediction = model.predict_on_batch(data)
 
 | Command | Description |
 |---------|-------------|
-| env | Kipoi model-zoo command line tool |
+| kipoi env | Kipoi model-zoo command line tool |
 | kipoi ls | Lists available models |
 | kipoi predict | Run the model prediction. |
+| kipoi preproc | Run the dataloader and save the output to an hdf5 file. |
 | kipoi pull | Downloads the directory associated with the model. |
 | kipoi test | script to test model zoo submissions. Example usage: `kipoi test model/directory`, where `model/directory` is the path to a directory containing a model.yaml file. |
+| kipoi test-source | Test models in model source |
 | kipoi_get-example | Get example files |
 | kipoi_info | Prints dataloader keyword arguments. |
 | kipoi_init | Initializing a new Kipoi model |
 | kipoi_list_plugins | List installed Kipoi plugins |
-| preproc | Run the dataloader and save the output to an hdf5 file. |
-| test-source | Test models in model source |
 
 ## Reference documentation
 - [Kipoi GitHub README](./references/github_com_kipoi_kipoi_blob_master_README.md)

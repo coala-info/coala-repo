@@ -4,7 +4,6 @@ description: Bamsurgeon modifies existing BAM files by introducing synthetic mut
 homepage: https://github.com/adamewing/bamsurgeon
 ---
 
-
 # bamsurgeon
 
 ## Overview

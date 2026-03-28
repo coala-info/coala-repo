@@ -4,7 +4,6 @@ description: Mason is a high-performance read simulator that generates synthetic
 homepage: https://www.seqan.de/apps/mason.html
 ---
 
-
 # mason
 
 ## Overview
@@ -40,6 +39,15 @@ Mason includes specific models for older or specialized technologies:
 - **Seed for Reproducibility**: Use the `--seed` flag with a fixed integer to ensure that the simulated data is identical across different runs.
 - **Quality Profiles**: Mason uses empirical models for Illumina quality scores. If your project requires specific error profiles, you can provide custom probability tables, though the defaults are generally sufficient for standard benchmarking.
 - **Memory Management**: Mason is optimized for large genomes (e.g., Human), but ensure you have enough RAM to load the reference index, especially when using `mason_variator`.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| mason_simulator | Simulate NUM reads/pairs from the reference sequence IN.fa, potentially with variants from IN.vcf. |
+| mason_variator | Either simulate variation and write out the result to VCF and optionally FASTA files. |
 
 ## Reference documentation
 - [Mason Application Page](./references/www_seqan_de_apps_mason.html.md)

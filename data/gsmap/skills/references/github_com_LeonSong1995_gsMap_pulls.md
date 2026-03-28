@@ -194,7 +194,7 @@ New](/LeonSong1995/gsMap/compare)
 Pull requests help you collaborate on code with other people. As pull requests are created, they’ll appear here in a searchable and filterable list. To get started, you should [create a pull request](/LeonSong1995/gsMap/compare).
 
 **ProTip!**
-Adding [no:label](/LeonSong1995/gsMap/issues?q=is%3Apr+is%3Aopen+no%3Alabel) will show everything without a label.
+What’s not been updated in a month: [updated:<2026-02-28](/LeonSong1995/gsMap/issues?q=is%3Apr+is%3Aopen+updated%3A%3C2026-02-28).
 
 ## Footer
 

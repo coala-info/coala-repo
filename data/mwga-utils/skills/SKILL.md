@@ -4,7 +4,6 @@ description: The mwga-utils toolkit provides C++ utilities for post-processing a
 homepage: https://github.com/RomainFeron/mgwa_utils
 ---
 
-
 # mwga-utils
 
 ## Overview

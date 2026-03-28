@@ -4,7 +4,6 @@ description: The kmertools skill transforms DNA sequences into numerical represe
 homepage: https://github.com/anuradhawick/kmertools
 ---
 
-
 # kmertools
 
 ## Overview
@@ -57,7 +56,7 @@ kmertools min -i input.fasta -o binned_output.txt -k 15 -w 10
 
 | Command | Description |
 |---------|-------------|
-| comp | Generate sequence composition based features |
+| kmertools comp | Generate sequence composition based features |
 | kmertools min | Bin reads using minimisers |
 | kmertools_cov | Generates coverage histogram based on the reads |
 | kmertools_ctr | Count k-mers |

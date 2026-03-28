@@ -4,7 +4,6 @@ description: Pacini-typing automates the detection of specific DNA sequences and
 homepage: https://github.com/RIVM-bioinformatics/Pacini-typing
 ---
 
-
 # pacini_typing
 
 ## Overview

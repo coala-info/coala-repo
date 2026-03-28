@@ -4,7 +4,6 @@ description: taxator-tk performs taxonomic analysis and classification of geneti
 homepage: https://github.com/fungs/taxator-tk
 ---
 
-
 # taxator-tk
 
 ## Overview

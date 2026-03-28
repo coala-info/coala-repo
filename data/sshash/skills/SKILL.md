@@ -4,7 +4,6 @@ description: SSHash is a high-performance C++ data structure designed to store a
 homepage: https://github.com/jermp/sshash
 ---
 
-
 # sshash
 
 ## Overview

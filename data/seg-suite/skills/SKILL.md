@@ -4,7 +4,6 @@ description: The seg-suite toolkit performs composition, transformation, and int
 homepage: https://github.com/mcfrith/seg-suite
 ---
 
-
 # seg-suite
 
 ## Overview

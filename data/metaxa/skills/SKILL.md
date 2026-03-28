@@ -4,7 +4,6 @@ description: Metaxa2 detects and classifies ribosomal RNA sequences from metagen
 homepage: http://microbiology.se/software/metaxa2/
 ---
 
-
 # metaxa
 
 ## Overview

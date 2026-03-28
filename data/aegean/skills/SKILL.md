@@ -4,7 +4,6 @@ description: The AEGeAn Toolkit provides a suite of programs for analyzing, eval
 homepage: https://github.com/BrendelGroup/AEGeAn
 ---
 
-
 # aegean
 
 ## Overview

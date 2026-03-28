@@ -4,7 +4,6 @@ description: bedparse is a Python-based tool designed for the processing and fea
 homepage: https://github.com/tleonardi/bedparse
 ---
 
-
 # bedparse
 
 ## Overview
@@ -85,17 +84,17 @@ Extract specific genomic regions from transcript models. `bedparse` automaticall
 
 | Command | Description |
 |---------|-------------|
-| bed12tobed6 | Convert the BED12 format into BED6 by reporting a separate line for each block of the original record. |
 | bedparse | A tool for parsing and manipulating BED files, with various sub-commands for specific operations. |
 | bedparse | bedparse: error: argument sub-command: invalid choice: '5putr' (choose from '3pUTR', '5pUTR', 'cds', 'promoter', 'introns', 'filter', 'join', 'gtf2bed', 'bed12tobed6', 'convertChr', 'validateFormat') |
 | bedparse | bedparse: error: argument sub-command: invalid choice: 'convertchr' (choose from '3pUTR', '5pUTR', 'cds', 'promoter', 'introns', 'filter', 'join', 'gtf2bed', 'bed12tobed6', 'convertChr', 'validateFormat') |
 | bedparse | bedparse: error: argument sub-command: invalid choice: 'validateformat' (choose from '3pUTR', '5pUTR', 'cds', 'promoter', 'introns', 'filter', 'join', 'gtf2bed', 'bed12tobed6', 'convertChr', 'validateFormat') |
+| bedparse bed12tobed6 | Convert the BED12 format into BED6 by reporting a separate line for each block of the original record. |
 | bedparse filter | Filters a BED file based on an annotation. BED entries with a name (i.e. col4) that appears in the specified column of the annotation are printed to stdout. For efficiency reasons this command doesn't perform BED validation. |
+| bedparse gtf2bed | Converts a GTF file to BED12 format. This tool supports the Ensembl GTF format, which uses features of type 'transcript' (field 3) to define transcripts. In case the GTF file defines transcripts with a different feature type, it is possible to provide the feature name from the command line. If the GTF file also annotates 'CDS' 'start_codon' or 'stop_codon' these are used to annotate the thickStart and thickEnd in the BED file. |
 | bedparse_cds | Report the CDS of each coding transcript (i.e. transcripts with distinct values of thickStart and thickEnd). Transcripts without CDS are not reported. |
 | bedparse_introns | Report BED12 lines corresponding to the introns of each transcript. Unspliced transcripts are not reported. |
 | bedparse_join | Adds the content of an annotation file to a BED file as extra columns. The two files are joined by matching the BED Name field (column 4) with a user-specified field of the annotation file. |
 | bedparse_promoter | Report the promoter of each transcript, defined as a fixed interval around its start. |
-| gtf2bed | Converts a GTF file to BED12 format. This tool supports the Ensembl GTF format, which uses features of type 'transcript' (field 3) to define transcripts. In case the GTF file defines transcripts with a different feature type, it is possible to provide the feature name from the command line. If the GTF file also annotates 'CDS' 'start_codon' or 'stop_codon' these are used to annotate the thickStart and thickEnd in the BED file. |
 
 ## Reference documentation
 - [Bedparse Usage Guide](./references/bedparse_readthedocs_io_en_stable_Usage.html.md)

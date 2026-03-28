@@ -4,7 +4,6 @@ description: "Pyensembl provides a Python interface for downloading, indexing, a
 homepage: https://github.com/openvax/pyensembl
 ---
 
-
 # pyensembl
 
 ## Overview
@@ -113,10 +112,10 @@ custom_data.index()
 
 | Command | Description |
 |---------|-------------|
-| delete-index-files | Deletes all files other than the original GTF and FASTA files for a genome. |
 | pyensembl | Manipulate pyensembl's local cache. |
 | pyensembl | Manipulate pyensembl's local cache. |
 | pyensembl | Manipulate pyensembl's local cache. |
+| pyensembl delete-index-files | Deletes all files other than the original GTF and FASTA files for a genome. |
 
 ## Reference documentation
 - [GitHub - openvax/pyensembl](./references/github_com_openvax_pyensembl.md)

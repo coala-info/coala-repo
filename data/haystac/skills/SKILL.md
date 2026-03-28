@@ -4,7 +4,6 @@ description: haystac is a Bayesian-based pipeline for identifying species and es
 homepage: https://github.com/antonisdim/haystac
 ---
 
-
 # haystac
 
 ## Overview

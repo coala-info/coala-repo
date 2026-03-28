@@ -4,7 +4,6 @@ description: Needle performs semi-quantitative analysis of large nucleotide sequ
 homepage: https://github.com/seqan/needle
 ---
 
-
 # needle
 
 ## Overview

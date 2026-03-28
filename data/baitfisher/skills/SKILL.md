@@ -4,7 +4,6 @@ description: BaitFisher is a bioinformatic suite designed to create and optimize
 homepage: https://github.com/cmayer/BaitFisher-package
 ---
 
-
 # baitfisher
 
 ## Overview
@@ -42,6 +41,15 @@ Use BaitFilter to perform the following post-processing steps:
 
 *   **Skipped Features**: If a feature is skipped, check the overlap with the transcript. If the overlap is too short, the feature cannot host a tiling design of the required length.
 *   **Compilation**: If building from source, ensure system headers like `unistd.h` and `dirent.h` are available (standard on Linux/macOS). Use `make` in the root directory to generate the `BaitFisher-vX.X.X` and `BaitFilter-vX.X.X` executables.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| BaitFilter | BaitFilter is designed to post-process the output of the BaitFisher program to select appropriate bait regions, filter baits based on specificity (BLAST), and convert bait files to uploadable formats. |
+| BaitFisher | BaitFisher program for designing bait sets for phylogenomics and other applications. |
 
 ## Reference documentation
 - [BaitFisher Package README](./references/github_com_cmayer_BaitFisher-package.md)

@@ -4,7 +4,6 @@ description: agtools is a toolkit for manipulating assembly graph files and perf
 homepage: https://github.com/Vini2/agtools
 ---
 
-
 # agtools
 
 ## Overview
@@ -60,17 +59,17 @@ cg = spades.get_contig_graph("graph.gfa", "contigs.fasta", "contigs.paths")
 
 | Command | Description |
 |---------|-------------|
-| asqg2gfa | Convert ASQG file to GFA format |
-| clean | Clean a GFA file based on segments in a FASTA file |
-| component | Extract a component containing a given segment |
-| concat | Concatenate two or more GFA files |
-| fastg2gfa | Convert FASTG file to GFA format |
-| filter | Filter segments from GFA file |
-| gfa2adj | Get adjacency matrix of the assembly graph |
-| gfa2dot | Convert GFA file to DOT format (GraphViz) |
-| gfa2fasta | Get segments in FASTA format |
-| rename | Rename segments, paths and walks in a GFA file |
-| stats | Compute statistics about the graph |
+| agtools asqg2gfa | Convert ASQG file to GFA format |
+| agtools clean | Clean a GFA file based on segments in a FASTA file |
+| agtools component | Extract a component containing a given segment |
+| agtools concat | Concatenate two or more GFA files |
+| agtools fastg2gfa | Convert FASTG file to GFA format |
+| agtools filter | Filter segments from GFA file |
+| agtools gfa2adj | Get adjacency matrix of the assembly graph |
+| agtools gfa2dot | Convert GFA file to DOT format (GraphViz) |
+| agtools gfa2fasta | Get segments in FASTA format |
+| agtools rename | Rename segments, paths and walks in a GFA file |
+| agtools stats | Compute statistics about the graph |
 
 ## Reference documentation
 - [agtools CLI Reference](./references/agtools_readthedocs_io_en_latest_cli.md)

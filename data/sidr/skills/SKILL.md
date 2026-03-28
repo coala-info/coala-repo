@@ -4,7 +4,6 @@ description: SIDR uses machine learning to classify and separate target genomic 
 homepage: https://github.com/damurdock/SIDR
 ---
 
-
 # sidr
 
 ## Overview
@@ -64,7 +63,7 @@ The runfile (`-i`) should be a tab-delimited file containing contig IDs, your cu
 
 | Command | Description |
 |---------|-------------|
-| default | Runs the default analysis using raw preassembly data. |
+| sidr default | Runs the default analysis using raw preassembly data. |
 | sidr_runfile | Runs a custom analysis using pre-computed data from BBMap or other sources. |
 
 ## Reference documentation

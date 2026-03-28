@@ -4,7 +4,6 @@ description: AlphaFill transplants ligands and co-factors from experimental stru
 homepage: https://alphafill.eu
 ---
 
-
 # alphafill
 
 ## Overview
@@ -80,8 +79,8 @@ If you need to fetch data from the public AlphaFill databank instead of running 
 |---------|-------------|
 | alphafill | AlphaFill is a tool to process AlphaFold structures by enriching them with ligands and co-factors from the PDB. |
 | alphafill | AlphaFill is a tool to process AlphaFold structures by filling in missing compounds. It can create indices from PDB files or process AlphaFill structures. |
-| create-index | Create an index for AlphaFill using PDB mmCIF files and sequences |
-| process | Process AlphaFold models to fill them with ligands and other missing structural information. |
+| alphafill create-index | Create an index for AlphaFill using PDB mmCIF files and sequences |
+| alphafill process | Process AlphaFold models to fill them with ligands and other missing structural information. |
 
 ## Reference documentation
 - [AlphaFill README](./references/github_com_PDB-REDO_alphafill_blob_trunk_README.md)

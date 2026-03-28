@@ -4,7 +4,6 @@ description: VirSorter identifies viral sequences within microbial genomic datas
 homepage: https://github.com/simroux/VirSorter
 ---
 
-
 # virsorter
 
 ## Overview
@@ -63,7 +62,7 @@ The main output is found in the `output_directory`:
 
 | Command | Description |
 |---------|-------------|
-| config | CLI for managing configurations. |
+| virsorter config | CLI for managing configurations. |
 | virsorter run | Runs the virsorter main function to classify viral sequences |
 | virsorter setup | Setup databases and install dependencies. |
 | virsorter train-model | Training customized classifier model. |

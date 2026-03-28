@@ -4,7 +4,6 @@ description: LongReadSum is a bioinformatics utility for rapid quality assessmen
 homepage: https://github.com/WGLab/LongReadSum
 ---
 
-
 # longreadsum
 
 ## Overview
@@ -52,13 +51,13 @@ The tool follows a consistent syntax: `longreadsum <subcommand> -i <input> -o <o
 
 | Command | Description |
 |---------|-------------|
-| bam | Summarize BAM files for long reads. |
-| f5 | Summarize long read sequencing data from fast5 files. |
-| f5s | Parses fast5 files for long read summary statistics. |
-| fq | For example: python longreadsum fq -i input.fastq -o /output_directory/ |
+| longreadsum bam | Summarize BAM files for long reads. |
+| longreadsum f5 | Summarize long read sequencing data from fast5 files. |
+| longreadsum f5s | Parses fast5 files for long read summary statistics. |
 | longreadsum fa | Summarize long read data from FASTA files. |
+| longreadsum fq | For example: python longreadsum fq -i input.fastq -o /output_directory/ |
 | longreadsum rrms | Extracts read information based on a CSV file and BAM input. |
-| seqtxt | Processes sequencing summary files. |
+| longreadsum seqtxt | Processes sequencing summary files. |
 
 ## Reference documentation
 - [LongReadSum README](./references/github_com_WGLab_LongReadSum_blob_main_README.md)

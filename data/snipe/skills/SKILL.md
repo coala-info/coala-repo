@@ -4,7 +4,6 @@ description: Snipe detects non-germline variants and de novo mutations across mu
 homepage: https://github.com/snipe-bio/snipe
 ---
 
-
 # snipe
 
 ## Overview
@@ -35,8 +34,8 @@ snipe -r [reference.fa] -t [target_regions.bed] -o [output.vcf] [sample1.bam] [s
 
 | Command | Description |
 |---------|-------------|
-| qc | Perform quality control (QC) on multiple samples against a reference genome. |
-| sketch | Sketch genomic data to generate signatures for QC. |
+| snipe qc | Perform quality control (QC) on multiple samples against a reference genome. |
+| snipe sketch | Sketch genomic data to generate signatures for QC. |
 | snipe_ops | Perform operations on SnipeSig signatures. |
 
 ## Reference documentation

@@ -4,7 +4,6 @@ description: "SeqForge is a modular bioinformatics pipeline for microbial genomi
 homepage: https://github.com/ERBringHorvath/SeqForge
 ---
 
-
 # seqforge
 
 ## Overview
@@ -77,15 +76,15 @@ Use these utilities to clean and analyze FASTA data before or after searching.
 
 | Command | Description |
 |---------|-------------|
-| extract | Extract sequences based on SeqForge Query results. |
-| extract-contig | Extract entire contigs containing matching sequences. |
-| fasta-metrics | Compute FASTA statistics (e.g., N50, GC content). |
-| makedb | Create a BLAST database from a FASTA file. |
-| query | Run BLAST queries in parallel. |
-| sanitize | Remove special characters from input file names (content unchanged; needed for BLAST+). |
-| search | Extract metadata from GenBank or JSON files. |
-| split-fasta | Split a multi-FASTA into per-record files or fixed-size fragments. |
-| unique-headers | Append source and a unique suffix to FASTA headers (supports --deterministic). |
+| seqforge extract | Extract sequences based on SeqForge Query results. |
+| seqforge extract-contig | Extract entire contigs containing matching sequences. |
+| seqforge fasta-metrics | Compute FASTA statistics (e.g., N50, GC content). |
+| seqforge makedb | Create a BLAST database from a FASTA file. |
+| seqforge query | Run BLAST queries in parallel. |
+| seqforge sanitize | Remove special characters from input file names (content unchanged; needed for BLAST+). |
+| seqforge search | Extract metadata from GenBank or JSON files. |
+| seqforge split-fasta | Split a multi-FASTA into per-record files or fixed-size fragments. |
+| seqforge unique-headers | Append source and a unique suffix to FASTA headers (supports --deterministic). |
 
 ## Reference documentation
 - [SeqForge README](./references/github_com_ERBringHorvath_SeqForge_blob_main_README.md)

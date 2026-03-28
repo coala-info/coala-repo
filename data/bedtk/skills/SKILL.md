@@ -4,7 +4,6 @@ description: "bedtk is a high-performance utility for the rapid manipulation, fi
 homepage: https://github.com/lh3/bedtk
 ---
 
-
 # bedtk
 
 ## Overview
@@ -58,11 +57,11 @@ Unlike many genomic tools, bedtk can often perform operations without requiring 
 
 | Command | Description |
 |---------|-------------|
+| bedtk cov | Calculate coverage of intervals in a BED file. |
+| bedtk flt | Filter BED records based on overlap with another BED file or VCF/PAF. |
+| bedtk isec | Find intersections between two BED files |
+| bedtk sub | Subtracts regions from another set of regions. |
 | bedtk_sum | Sum the lengths of intervals in a BED file. |
-| cov | Calculate coverage of intervals in a BED file. |
-| flt | Filter BED records based on overlap with another BED file or VCF/PAF. |
-| isec | Find intersections between two BED files |
-| sub | Subtracts regions from another set of regions. |
 
 ## Reference documentation
 

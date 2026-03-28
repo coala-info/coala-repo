@@ -4,7 +4,6 @@ description: The fuc package is a comprehensive bioinformatics suite for genomic
 homepage: https://github.com/sbslee/fuc
 ---
 
-
 # fuc
 
 ## Overview
@@ -47,49 +46,49 @@ The `fuc` tool uses a subcommand-based structure: `fuc [COMMAND] [ARGUMENTS]`.
 
 | Command | Description |
 |---------|-------------|
-| bam-depth | Compute per-base read depth from BAM files. |
-| bam-head | Print the header of a BAM file. |
-| bam-index | Index a BAM file. |
-| bam-rename | Rename the sample in a BAM file. |
-| bam-slice | Slice a BAM file. |
-| bed-intxn | Find the intersection of BED files. |
-| fq-count | Count sequence reads in FASTQ files. |
-| fq-sum | Summarize a FASTQ file. |
+| fuc bam-depth | Compute per-base read depth from BAM files. |
+| fuc bam-head | Print the header of a BAM file. |
+| fuc bam-index | Index a BAM file. |
+| fuc bam-rename | Rename the sample in a BAM file. |
+| fuc bam-slice | Slice a BAM file. |
+| fuc bed-intxn | Find the intersection of BED files. |
 | fuc fa-filter | Filter sequence records in a FASTA file. |
+| fuc fq-count | Count sequence reads in FASTQ files. |
+| fuc fq-sum | Summarize a FASTQ file. |
+| fuc fuc-bgzip | Write a BGZF compressed file. |
+| fuc fuc-compf | Compare the contents of two files. |
+| fuc fuc-demux | Parse the Reports directory from bcl2fastq. |
+| fuc fuc-exist | Check whether certain files exist. |
+| fuc fuc-find | Retrieve absolute paths of files whose name matches a specified pattern, optionally recursively. |
+| fuc fuc-undetm | Compute top unknown barcodes using undertermined FASTQ from bcl2fastq. |
+| fuc maf-maf2vcf | Convert a MAF file to a VCF file. |
+| fuc maf-oncoplt | Create an oncoplot with a MAF file. The format of output image (PDF/PNG/JPEG/SVG) will be automatically determined by the output file's extension. |
+| fuc maf-sumplt | Create a summary plot with a MAF file. |
 | fuc maf-vcf2maf | Convert a VCF file to a MAF file. |
 | fuc ngs-bam2fq | Pipeline for converting BAM files to FASTQ files. |
 | fuc ngs-fq2bam | Pipeline for converting FASTQ files to analysis-ready BAM files. |
+| fuc ngs-hc | Pipeline for germline short variant discovery. |
 | fuc ngs-m2 | Pipeline for somatic short variant discovery. |
 | fuc ngs-pon | Pipeline for constructing a panel of normals (PoN). |
 | fuc ngs-quant | Pipeline for running RNAseq quantification from FASTQ files with Kallisto. |
-| fuc-bgzip | Write a BGZF compressed file. |
-| fuc-compf | Compare the contents of two files. |
-| fuc-demux | Parse the Reports directory from bcl2fastq. |
-| fuc-exist | Check whether certain files exist. |
-| fuc-find | Retrieve absolute paths of files whose name matches a specified pattern, optionally recursively. |
-| fuc-undetm | Compute top unknown barcodes using undertermined FASTQ from bcl2fastq. |
+| fuc ngs-trim | Pipeline for trimming adapters from FASTQ files. |
+| fuc tabix-index | Index a GFF/BED/SAM/VCF file with Tabix. |
+| fuc tabix-slice | Slice a GFF/BED/SAM/VCF file with Tabix. |
+| fuc tbl-merge | Merge two table files. |
+| fuc tbl-sum | Summarize a table file. |
+| fuc vcf-call | Call SNVs and indels from BAM files. |
+| fuc vcf-filter | Filter a VCF file. |
+| fuc vcf-index | Index a VCF file. |
+| fuc vcf-merge | Merge two or more VCF files. |
+| fuc vcf-rename | Rename the samples in a VCF file. |
+| fuc vcf-slice | Slice a VCF file for specified regions. |
+| fuc vcf-split | Split a VCF file by individual. |
+| fuc vcf-vcf2bed | Convert a VCF file to a BED file. |
+| fuc vcf-vep | Filter a VCF file by annotations from Ensembl VEP. |
 | fuc_bam-aldepth | Count allelic depth from a BAM file. |
 | fuc_bed-sum | Summarize a BED file. |
 | fuc_cov-concat | Concatenate depth of coverage files. |
 | fuc_cov-rename | Rename the samples in a depth of coverage file. |
-| maf-maf2vcf | Convert a MAF file to a VCF file. |
-| maf-oncoplt | Create an oncoplot with a MAF file. The format of output image (PDF/PNG/JPEG/SVG) will be automatically determined by the output file's extension. |
-| maf-sumplt | Create a summary plot with a MAF file. |
-| ngs-hc | Pipeline for germline short variant discovery. |
-| ngs-trim | Pipeline for trimming adapters from FASTQ files. |
-| tabix-index | Index a GFF/BED/SAM/VCF file with Tabix. |
-| tabix-slice | Slice a GFF/BED/SAM/VCF file with Tabix. |
-| tbl-merge | Merge two table files. |
-| tbl-sum | Summarize a table file. |
-| vcf-call | Call SNVs and indels from BAM files. |
-| vcf-filter | Filter a VCF file. |
-| vcf-index | Index a VCF file. |
-| vcf-merge | Merge two or more VCF files. |
-| vcf-rename | Rename the samples in a VCF file. |
-| vcf-slice | Slice a VCF file for specified regions. |
-| vcf-split | Split a VCF file by individual. |
-| vcf-vcf2bed | Convert a VCF file to a BED file. |
-| vcf-vep | Filter a VCF file by annotations from Ensembl VEP. |
 
 ## Reference documentation
 

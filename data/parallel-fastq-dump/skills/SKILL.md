@@ -4,7 +4,6 @@ description: "parallel-fastq-dump is a parallelized wrapper for the NCBI fastq-d
 homepage: https://github.com/rvalieris/parallel-fastq-dump
 ---
 
-
 # parallel-fastq-dump
 
 ## Overview
@@ -68,6 +67,7 @@ The tool uses `sra-stat` to calculate the total number of spots to determine how
 | Command | Description |
 |---------|-------------|
 | fastq-dump | Dump SRA data into FASTQ format |
+| parallel-fastq-dump | parallel fastq-dump wrapper, extra args will be passed through |
 | prefetch | Download SRA accessions and their dependencies |
 | sra-stat | Display table statistics |
 

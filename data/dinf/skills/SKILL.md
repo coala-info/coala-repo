@@ -4,7 +4,6 @@ description: dinf performs population genetics parameter inference by training n
 homepage: https://github.com/RacimoLab/dinf
 ---
 
-
 # dinf
 
 ## Overview
@@ -50,11 +49,11 @@ Always specify the simulation model and the discriminator architecture using the
 | Command | Description |
 |---------|-------------|
 | dinf mc | Adversarial Monte Carlo. |
+| dinf mcmc | Adversarial MCMC. |
 | dinf pg-gan | PG-GAN style simulated annealing. |
 | dinf predict | Make predictions using a trained discriminator. |
 | dinf train | Train a discriminator. |
 | dinf_check | Basic dinf_model health checks. |
-| mcmc | Adversarial MCMC. |
 
 ## Reference documentation
 

@@ -4,7 +4,6 @@ description: Bamkit is a suite of Python utilities designed for specialized BAM 
 homepage: https://github.com/hall-lab/bamkit
 ---
 
-
 # bamkit
 
 ## Overview

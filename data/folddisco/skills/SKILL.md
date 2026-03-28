@@ -4,7 +4,6 @@ description: Folddisco is a bioinformatics tool that uses geometric hashing to s
 homepage: https://github.com/steineggerlab/folddisco
 ---
 
-
 # folddisco
 
 ## Overview
@@ -59,8 +58,8 @@ Folddisco supports a flexible syntax for defining query motifs:
 
 | Command | Description |
 |---------|-------------|
+| folddisco index | Index PDB files for folddisco |
 | folddisco query | Search for patterns in PDB files using an index. |
-| index | Index PDB files for folddisco |
 
 ## Reference documentation
 - [Folddisco GitHub README](./references/github_com_steineggerlab_folddisco_blob_master_README.md)

@@ -4,7 +4,6 @@ description: Abismal is a high-performance read mapper designed for aligning bis
 homepage: https://github.com/smithlabcode/abismal
 ---
 
-
 # abismal
 
 ## Overview
@@ -77,9 +76,9 @@ abismal map -i reference.idx -P -o pbat_reads.sam reads.fq
 
 | Command | Description |
 |---------|-------------|
-| idx | build abismal index |
-| map | map bisulfite converted reads (v3.3.0) |
-| sim | Simulate reads from a reference genome with optional bisulfite conversion and mutations. |
+| abismal idx | build abismal index |
+| abismal map | map bisulfite converted reads (v3.3.0) |
+| abismal sim | Simulate reads from a reference genome with optional bisulfite conversion and mutations. |
 
 ## Reference documentation
 - [Abismal README](./references/github_com_smithlabcode_abismal_blob_master_README.md)

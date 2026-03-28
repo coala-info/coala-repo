@@ -4,7 +4,6 @@ description: "hubward maps DNA sequences against large reference genomes using t
 homepage: https://github.com/lh3/bwa
 ---
 
-
 # hubward
 
 ## Overview
@@ -76,6 +75,17 @@ bwa mem -x ont2d ref.fa reads.fq > aln.sam
   bwa mem ref.fa r1.fq r2.fq | samtools view -Sb - > aln.bam
   ```
 - **ALT Contigs**: If working with GRCh38, use `bwakit` or ensure your reference includes `.alt` files to handle HLA and other highly polymorphic regions correctly.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| hubward liftover | Lift over coordinates from one assembly to another, in bulk. For all configured tracks in <dirname>/metadata.yaml, if the configured track genome matches <from_assembly> then perform the liftover to a temporary directory and then move the result to <newdir> when complete. |
+| hubward process | Process one or many studies. Items can be directories containing metadata.yaml/metadata-builder.py or a group configuration YAML file. |
+| hubward skeleton | Populate <dirname> with template files that can be customized on a per-study basis. The skeleton is actually a working example. |
+| hubward upload | Creates a track hub and uploads to configured host. Track hub files include hub.txt, genomes.txt, and trackDb.txt files. If --hub-only has been specified, only these files will be uploaded to the host configured in the group config file. Otherwise, these files and all of the configured data files (bigBed, bigWig, BAM, and VCF files) from individual studies are uploaded via rsync to their respective configured locations on the remote host. |
 
 ## Reference documentation
 - [BWA Main Documentation](./references/github_com_lh3_bwa.md)

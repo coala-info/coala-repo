@@ -4,7 +4,6 @@ description: The arcs tool organizes and orients contigs into larger scaffolds u
 homepage: https://github.com/bcgsc/arcs
 ---
 
-
 # arcs
 
 ## Overview
@@ -58,6 +57,15 @@ Long reads have higher error rates. When using `arcs-long` or `arks-long`, adjus
 - **Draft Assembly:** FASTA format.
 - **Linked Reads:** Must be interleaved. Barcodes must be in the `BX` tag of the header or appended to the read name (e.g., `@readname_BARCODE`).
 - **Long Reads:** FASTA or FASTQ (can be gzipped).
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| arcs | ARCS/ARKS utilizes linked read alignments or kmers for scaffolding draft genomes. |
+| arcs-make | A pipeline to run ARCS/ARKS with or without Tigmint for scaffolding genomic drafts using linked or long reads. |
 
 ## Reference documentation
 - [github_com_BirolLab_arcs_blob_master_README.md](./references/github_com_BirolLab_arcs_blob_master_README.md)

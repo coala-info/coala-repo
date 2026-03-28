@@ -4,7 +4,6 @@ description: GEMINI is a lightweight database framework that converts VCF files 
 homepage: https://github.com/arq5x/gemini
 ---
 
-
 # gemini
 
 ## Overview
@@ -70,25 +69,29 @@ gemini list_samples output.db
 
 | Command | Description |
 |---------|-------------|
-| autosomal_dominant | Identify candidate variants for autosomal dominant inheritance. |
-| autosomal_recessive | Find autosomal recessive variants. |
-| bcolz_index | Index a Gemini database with bcolz. |
-| db_info | Show information about a GEMINI database. |
-| de_novo | Find de novo mutations |
-| fusions | Query the database for fusion events. |
 | gemini actionable_mutations | Query the database for actionable mutations. |
 | gemini amend | Amend a Gemini database. |
 | gemini annotate | Annotate a gemini database with information from a TABIX'ed BED file. |
+| gemini autosomal_dominant | Identify candidate variants for autosomal dominant inheritance. |
+| gemini autosomal_recessive | Find autosomal recessive variants. |
+| gemini bcolz_index | Index a Gemini database with bcolz. |
 | gemini browser | Launch the Gemini browser |
 | gemini comp_hets | Find compound heterozygous variants. |
+| gemini db_info | Show information about a GEMINI database. |
+| gemini de_novo | Find de novo mutations |
 | gemini dump | Report all rows/columns from the variants table. |
+| gemini fusions | Query the database for fusion events. |
 | gemini gene_wise | Perform gene-wise analysis on a GEMINI database. |
 | gemini interactions | Query gemini database for interactions |
+| gemini lof_interactions | Finds interactions for genes that harbor LoF variants. |
+| gemini lof_sieve | Queries the database for LOF variants. |
+| gemini mendel_errors | Identify mendelian errors in a family structure. |
 | gemini merge_chunks | Merge multiple chunked databases into a single database. |
 | gemini pathways | Report pathways for indivs/genes/sites with LoF variants |
 | gemini qc | Run quality control tests on a Gemini database. |
 | gemini query | Query the GEMINI database. |
 | gemini roh | Finds regions of homozygosity (ROH) in a VCF file. |
+| gemini set_somatic | Set the is_somatic flag for variants in a gemini database. |
 | gemini update | Update GEMINI database and associated tools. |
 | gemini windower | Window a database for analysis. |
 | gemini x_linked_de_novo | Find X-linked de novo variants |
@@ -99,10 +102,6 @@ gemini list_samples output.db
 | gemini_load_chunk | Load a VCF file into a GEMINI database. |
 | gemini_region | Query regions in a GEMINI database. |
 | gemini_stats | Report statistics about variants in a GEMINI database. |
-| lof_interactions | Finds interactions for genes that harbor LoF variants. |
-| lof_sieve | Queries the database for LOF variants. |
-| mendel_errors | Identify mendelian errors in a family structure. |
-| set_somatic | Set the is_somatic flag for variants in a gemini database. |
 
 ## Reference documentation
 - [GEMINI - integrative exploration of genetic variation and genome annotations.](./references/github_com_arq5x_gemini.md)

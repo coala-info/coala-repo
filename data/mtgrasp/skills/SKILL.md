@@ -4,7 +4,6 @@ description: mtGrasp automates the assembly and standardization of high-quality 
 homepage: https://github.com/bcgsc/mtGrasp
 ---
 
-
 # mtgrasp
 
 ## Overview

@@ -4,7 +4,6 @@ description: Intervene automates the intersection and visualization of genomic i
 homepage: https://github.com/asntech/intervene
 ---
 
-
 # intervene
 
 ## Overview
@@ -49,9 +48,9 @@ Use the `pairwise` subcommand to perform an "all-vs-all" comparison of N genomic
 
 | Command | Description |
 |---------|-------------|
+| intervene pairwise | Pairwise intersection and heatmap of N genomic region sets in (BED/GTF/GFF) format or list/name sets. |
 | intervene upset | Create UpSet diagram after intersection of genomic regions in (BED/GTF/GFF) or list sets. |
-| pairwise | Pairwise intersection and heatmap of N genomic region sets in (BED/GTF/GFF) format or list/name sets. |
-| venn | Create Venn diagram upto 6-way after intersection of genomic regions in (BED/GTF/GFF) format or list sets. |
+| intervene venn | Create Venn diagram upto 6-way after intersection of genomic regions in (BED/GTF/GFF) format or list sets. |
 
 ## Reference documentation
 - [Intervene GitHub README](./references/github_com_asntech_intervene_blob_master_README.rst.md)

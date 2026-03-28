@@ -4,7 +4,6 @@ description: grzctl is an administrative tool used to manage the Genome Resource
 homepage: https://github.com/BfArM-MVH/grz-tools
 ---
 
-
 # grzctl
 
 ## Overview
@@ -48,6 +47,22 @@ grzctl manages the internal submission database (supporting both SQLite and Post
 *   **State Management**: Submissions with null IDs are automatically ignored in quarterly reports to prevent data corruption.
 *   **Date Handling**: The submission date is automatically set to the date the metadata.json upload finished, ensuring accurate tracking of the submission timeline.
 *   **Configuration**: grzctl supports merging multiple configuration files, allowing for separate environment-specific and user-specific settings.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| grzctl consent | Check if a submission is consented for research. |
+| grzctl db | Database operations |
+| grzctl download | Download a submission from a GRZ. |
+| grzctl encrypt | Encrypt a submission. |
+| grzctl list | List resources managed by grzctl |
+| grzctl pruefbericht | Generate and submit Prüfberichte. |
+| grzctl report | Generate various reports related to GRZ activities. |
+| grzctl submit | Validate, encrypt, and then upload. |
+| grzctl validate | Validate the submission. |
 
 ## Reference documentation
 - [grzctl Overview](./references/anaconda_org_channels_bioconda_packages_grzctl_overview.md)

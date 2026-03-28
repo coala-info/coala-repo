@@ -4,7 +4,6 @@ description: LEVIATHAN is a structural variant calling tool designed to detect g
 homepage: https://github.com/morispi/LEVIATHAN
 ---
 
-
 # leviathan
 
 ## Overview

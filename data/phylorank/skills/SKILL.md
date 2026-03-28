@@ -4,7 +4,6 @@ description: PhyloRank is a tool for the manual taxonomic curation of phylogenet
 homepage: https://github.com/dparks1134/PhyloRank
 ---
 
-
 # phylorank
 
 ## Overview
@@ -60,18 +59,18 @@ phylorank outliers <decorated_tree> <taxonomy_file> <output_dir>
 
 | Command | Description |
 |---------|-------------|
-| bl_decorate | Decorate tree using a mean branch length criterion. |
-| bl_dist | Calculate distribution of branch lengths at each taxonomic rank. |
-| bl_optimal | Determine branch length for best congruency with existing taxonomy. |
-| bl_table | Generate a branch length table for a given input tree and taxon category. |
-| compare_red | Compare RED (Relative Evolutionary Divergence) tables and dictionaries. |
-| decorate | Place internal taxonomic labels on tree. |
-| mark_tree | Mark nodes with distribution information and predicted taxonomic ranks. |
-| outliers | Create information for identifying taxonomic outliers |
-| rank_res | Calculate rank results based on an input tree and taxonomy. |
-| rogue_test | Perform rogue taxon testing within the phylorank suite. |
-| scale_tree | Scale a phylogenetic tree using phylorank |
-| taxon_stats | Calculate taxon statistics based on a taxonomy file. |
+| phylorank bl_decorate | Decorate tree using a mean branch length criterion. |
+| phylorank bl_dist | Calculate distribution of branch lengths at each taxonomic rank. |
+| phylorank bl_optimal | Determine branch length for best congruency with existing taxonomy. |
+| phylorank bl_table | Generate a branch length table for a given input tree and taxon category. |
+| phylorank compare_red | Compare RED (Relative Evolutionary Divergence) tables and dictionaries. |
+| phylorank decorate | Place internal taxonomic labels on tree. |
+| phylorank mark_tree | Mark nodes with distribution information and predicted taxonomic ranks. |
+| phylorank outliers | Create information for identifying taxonomic outliers |
+| phylorank rank_res | Calculate rank results based on an input tree and taxonomy. |
+| phylorank rogue_test | Perform rogue taxon testing within the phylorank suite. |
+| phylorank scale_tree | Scale a phylogenetic tree using phylorank |
+| phylorank taxon_stats | Calculate taxon statistics based on a taxonomy file. |
 
 ## Reference documentation
 - [PhyloRank GitHub Repository](./references/github_com_donovan-h-parks_PhyloRank.md)

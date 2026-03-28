@@ -4,7 +4,6 @@ description: "Plasmidhawk detects the lab-of-origin for input plasmids by buildi
 homepage: https://gitlab.com/treangenlab/plasmidhawk
 ---
 
-
 # plasmidhawk
 
 yaml
@@ -41,6 +40,16 @@ plasmidhawk predict -i <input_plasmid_fasta> -o <output_directory>
 *   **Dependencies**: Plasmidhawk has dependencies, including `plaster`. Ensure these are correctly installed, preferably via a package manager like Conda.
 *   **Output Interpretation**: The output directory will contain prediction results. Examine these files to understand the inferred lab-of-origin for each input plasmid. The exact format of the output files may vary, but typically includes scores or classifications.
 *   **Troubleshooting Disk Space/Time**: If you encounter issues with excessive disk space usage or long runtimes, consider the diversity of your input plasmids. For very large and diverse datasets, the pangenome construction and subsequent alignment steps can be resource-heavy.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| plasmidhawk | PlasmidHawk: A tool for plasmid analysis |
+| plasmidhawk annotate | Annotates plasmid metadata based on fragment metadata and plasmid ordering information. |
+| plasmidhawk_predict | Choose prediction mode (max, supermax, correct), default max. supermax is max mode, but output top 50 labs |
 
 ## Reference documentation
 - [Plasmidhawk Overview](./references/anaconda_org_channels_bioconda_packages_plasmidhawk_overview.md)

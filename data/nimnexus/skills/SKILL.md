@@ -4,7 +4,6 @@ description: nimnexus is a high-performance toolkit designed for processing ChIP
 homepage: https://github.com/avsecz/nimnexus
 ---
 
-
 # nimnexus
 
 ## Overview
@@ -50,7 +49,7 @@ nimnexus dedup -t 8 sorted_input.bam | samtools view -b > final_deduped.bam
 
 | Command | Description |
 |---------|-------------|
-| dedup | Remove duplicate reads from the sorted bam file |
+| nimnexus dedup | Remove duplicate reads from the sorted bam file |
 | nimnexus_trim | Trim the fastq reads |
 
 ## Reference documentation

@@ -4,7 +4,6 @@ description: kMetaShot is a high-performance taxonomic classifier that uses k-me
 homepage: https://github.com/gdefazio/kMetaShot
 ---
 
-
 # kmetashot
 
 ## Overview

@@ -4,7 +4,6 @@ description: bioconda2biocontainer maps Bioconda packages to their corresponding
 homepage: https://github.com/BioContainers/bioconda2biocontainer
 ---
 
-
 # bioconda2biocontainer
 
 ## Overview
@@ -65,6 +64,15 @@ bioconda2biocontainer --package_name samtools
 - **Metadata Verification**: Use the `--all` flag to check the `updated` timestamp. This helps ensure you are not pulling an outdated build if multiple builds exist for the same version.
 - **Sorting Logic**: When using `--sort_by_size`, the tool helps optimize workflow performance by identifying the most lightweight image, which reduces pull times in cloud environments.
 - **Registry API**: Note that these scripts query `api.biocontainers.pro`. If the tool returns no results, verify the package name matches the Bioconda recipe name exactly.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| bioconda2biocontainer | Find Biocontainers images from Bioconda packages |
+| biocontainers-search | Find Biocontainers tools |
 
 ## Reference documentation
 - [bioconda2biocontainer README](./references/github_com_BioContainers_bioconda2biocontainer_blob_master_README.md)

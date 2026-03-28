@@ -4,7 +4,6 @@ description: The varda2-client is a command-line interface for interacting with 
 homepage: https://github.com/varda/varda2-client
 ---
 
-
 # varda2-client
 
 ## Overview
@@ -48,14 +47,14 @@ Since annotation and large queries are processed asynchronously on the server, u
 
 | Command | Description |
 |---------|-------------|
-| mnv | Finds and reports insertions in a given region. |
-| sample | Sample management for Varda2 |
-| snv | SNV subcommand for varda2-client |
-| submit | Submit VCF or sample sheet to Varda |
 | varda2-client annotate | Annotate variants with sample information. |
+| varda2-client mnv | Finds and reports insertions in a given region. |
 | varda2-client monitor | Monitor tasks |
+| varda2-client sample | Sample management for Varda2 |
 | varda2-client seq | Sequence |
+| varda2-client snv | SNV subcommand for varda2-client |
 | varda2-client stab | Get stabilized sequence for a given region |
+| varda2-client submit | Submit VCF or sample sheet to Varda |
 | varda2-client task | (No description) |
 
 ## Reference documentation

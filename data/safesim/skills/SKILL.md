@@ -4,7 +4,6 @@ description: SafeSim is a UMI-aware toolkit designed to create realistic synthet
 homepage: https://github.com/genetronhealth/safesim
 ---
 
-
 # safesim
 
 ## Overview

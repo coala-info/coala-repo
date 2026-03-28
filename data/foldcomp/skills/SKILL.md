@@ -4,7 +4,6 @@ description: Foldcomp compresses protein structure data by encoding backbone and
 homepage: https://github.com/steineggerlab/foldcomp
 ---
 
-
 # foldcomp
 
 ## Overview

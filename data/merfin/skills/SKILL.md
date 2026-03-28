@@ -4,7 +4,6 @@ description: Merfin improves the accuracy of genomic assemblies and variant call
 homepage: https://github.com/arangrhie/merfin
 ---
 
-
 # merfin
 
 ## Overview

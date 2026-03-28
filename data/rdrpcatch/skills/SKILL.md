@@ -4,7 +4,6 @@ description: RdRpCATCH is a bioinformatic pipeline designed to discover and char
 homepage: https://github.com/dimitris-karapliafis/RdRpCATCH
 ---
 
-
 # rdrpcatch
 
 ## Overview

@@ -4,7 +4,6 @@ description: ufcg is a bioinformatics pipeline for taxonomic classification and 
 homepage: https://ufcg.steineggerlab.com
 ---
 
-
 # ufcg
 
 ## Overview

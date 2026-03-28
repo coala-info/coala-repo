@@ -4,7 +4,6 @@ description: gem3-mapper is a high-throughput tool designed to align single-end 
 homepage: https://github.com/smarco/gem3-mapper
 ---
 
-
 # gem3-mapper
 
 ## Overview

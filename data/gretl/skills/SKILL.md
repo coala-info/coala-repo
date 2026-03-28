@@ -4,7 +4,6 @@ description: gretl is a command-line utility for the quantitative analysis and e
 homepage: https://github.com/moinsebi/gretl
 ---
 
-
 # gretl
 
 ## Overview

@@ -4,7 +4,6 @@ description: Domainator is a modular bioinformatics suite for domain-centric ana
 homepage: https://github.com/nebiolabs/domainator
 ---
 
-
 # domainator
 
 ## Overview

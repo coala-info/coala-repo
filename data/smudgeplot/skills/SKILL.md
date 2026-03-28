@@ -4,7 +4,6 @@ description: Smudgeplot is a bioinformatic tool that visualizes genome structure
 homepage: https://github.com/KamilSJaron/smudgeplot
 ---
 
-
 # smudgeplot
 
 ## Overview

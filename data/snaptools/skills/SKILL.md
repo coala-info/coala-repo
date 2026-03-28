@@ -4,7 +4,6 @@ description: Snaptools processes single-cell epigenomics data by managing the cr
 homepage: https://github.com/r3fang/SnapTools.git
 ---
 
-
 # snaptools
 
 ## Overview
@@ -90,15 +89,15 @@ snaptools snap-add-gmat \
 
 | Command | Description |
 |---------|-------------|
-| snap-add-bmat | Add cell-by-bin count matrix to snap file. |
-| snap-add-gmat | Add gene matrix to snap file. |
-| snap-add-pmat | Add peak information to snap file. |
-| snap-del | Delete a session from a snap file. |
-| snap-pre | Preprocess single-cell ATAC-seq data into snap format. |
 | snaptools align-paired-end | Align paired-end FASTQ files to a reference genome. |
 | snaptools align-single-end | Align single-end reads to a reference genome. |
 | snaptools dex-fastq | Decomplexes a fastq file containing reads from multiple cells into individual fastq files for each cell. |
 | snaptools index-genome | Builds genome index for snaptools. |
+| snaptools snap-add-bmat | Add cell-by-bin count matrix to snap file. |
+| snaptools snap-add-gmat | Add gene matrix to snap file. |
+| snaptools snap-add-pmat | Add peak information to snap file. |
+| snaptools snap-del | Delete a session from a snap file. |
+| snaptools snap-pre | Preprocess single-cell ATAC-seq data into snap format. |
 
 ## Reference documentation
 - [SnapTools README](./references/github_com_r3fang_SnapTools_blob_master_README.md)

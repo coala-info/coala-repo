@@ -4,7 +4,6 @@ description: Raptor is a bioinformatics tool that performs large-scale genomic s
 homepage: https://github.com/seqan/raptor
 ---
 
-
 # raptor
 
 ## Overview

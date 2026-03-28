@@ -4,7 +4,6 @@ description: Taxor is a bioinformatics tool designed for fast, memory-efficient 
 homepage: https://github.com/JensUweUlrich/Taxor
 ---
 
-
 # taxor
 
 ## Overview

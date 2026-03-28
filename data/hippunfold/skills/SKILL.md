@@ -4,7 +4,6 @@ description: Hippunfold is a neuroimaging pipeline that automates the topologica
 homepage: https://github.com/khanlab/hippunfold
 ---
 
-
 # hippunfold
 
 ## Overview

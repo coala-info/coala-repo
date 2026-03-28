@@ -4,7 +4,6 @@ description: Stacks processes short-read sequences into genetic markers for popu
 homepage: https://catchenlab.life.illinois.edu/stacks/
 ---
 
-
 # stacks
 
 ## Overview

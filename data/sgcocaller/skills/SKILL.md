@@ -4,7 +4,6 @@ description: "This tool constructs personalized haplotypes and calls crossover e
 homepage: https://gitlab.svi.edu.au/biocellgen-public/sgcocaller
 ---
 
-
 # sgcocaller
 
 yaml
@@ -45,6 +44,18 @@ The tool's main purpose is to process single-cell DNA sequencing data to identif
 *   **Parameter Tuning**: Experiment with different parameter settings to optimize the performance of sgcocaller for your specific experimental conditions and biological questions. Refer to the tool's documentation (if available) for detailed explanations of each parameter.
 *   **Version Control**: Keep track of the sgcocaller version used for your analysis, as updates may introduce changes in algorithms or output formats. The latest version available on bioconda is 0.3.9.
 *   **Computational Resources**: Be mindful of the computational resources required, especially for large datasets. Haplotype construction and crossover calling can be computationally intensive.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| sgcocaller | sgcocaller is a tool for phasing and analyzing single-cell DNA sequencing data. |
+| sgcocaller | sgcocaller phase command |
+| sgcocaller | sgcocaller swphase [options] <gtMtxFile> <phasedSnpAnnotFile> <referenceVCF> <out_prefix> |
+| sgcocaller | sgcocaller sxo [options] <SNPPhaseFile> <phaseOutputPrefix> <barcodeFile> <out_prefix> |
+| sgcocaller | sgcocaller xo [options] <BAM> <VCF> <barcodeFile> <out_prefix> |
 
 ## Reference documentation
 - [sgcocaller Overview](https://anaconda.org/bioconda/sgcocaller)

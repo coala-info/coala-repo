@@ -4,7 +4,6 @@ description: "varlinker maps genomic coordinates from VCF files to biological fe
 homepage: https://github.com/IBCHgenomic/varlinker
 ---
 
-
 # varlinker
 
 ## Overview

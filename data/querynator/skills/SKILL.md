@@ -4,7 +4,6 @@ description: "querynator automates the clinical interpretation of cancer variant
 homepage: https://github.com/qbic-pipelines/querynator
 ---
 
-
 # querynator
 
 ## Overview
@@ -57,7 +56,7 @@ querynator query-api-cgi -i variants.vcf.gz -o ./output
 
 | Command | Description |
 |---------|-------------|
-| create-report | Generates reports from CGI and CIViC result folders. |
+| querynator create-report | Generates reports from CGI and CIViC result folders. |
 | querynator query-api-cgi | Query the CGI API |
 | querynator query-api-civic | Query the Civic API for variants in a VCF file. |
 

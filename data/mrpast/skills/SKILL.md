@@ -4,7 +4,6 @@ description: mrpast is a population genetics tool that infers demographic histor
 homepage: https://aprilweilab.github.io/
 ---
 
-
 # mrpast
 
 ## Overview
@@ -53,7 +52,7 @@ mrpast uses a specific YAML format for demographic models. If you are working wi
 
 | Command | Description |
 |---------|-------------|
-| arginfer | Infer ARG trees from VCF files. |
+| mrpast arginfer | Infer ARG trees from VCF files. |
 | mrpast confidence | Solve for all bootstrapped samples instead of using GIM (theoretical). |
 | mrpast init | Initialize a mrpast model. |
 | mrpast model | Builds and manipulates demographic models. |
@@ -61,11 +60,11 @@ mrpast uses a specific YAML format for demographic models. If you are working wi
 | mrpast select | Selects the best model based on AIC from multiple solver outputs. |
 | mrpast sim2vcf | Convert .trees files to VCF format. |
 | mrpast simulate | Simulate demographic histories using mr.py. |
+| mrpast solve | Solve problems using the mrpast solver. |
 | mrpast_polarize | Polarize VCF file based on ancestral FASTA file. |
 | mrpast_show | Show results from mrpast solver. |
 | mrpast_simulate | Simulate demographic histories using mrpaste. |
 | mrpast_solve | The solver input JSON files. The output filenames will be derived from the input filenames. |
-| solve | Solve problems using the mrpast solver. |
 
 ## Reference documentation
 - [github_com_aprilweilab_mrpast_blob_main_README.md](./references/github_com_aprilweilab_mrpast_blob_main_README.md)

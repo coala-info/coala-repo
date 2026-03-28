@@ -4,7 +4,6 @@ description: SeqKit is a high-performance command-line toolkit for the rapid man
 homepage: https://github.com/shenwei356/seqkit
 ---
 
-
 # seqkit
 
 ## Overview
@@ -59,7 +58,6 @@ The `seq` command is the primary tool for modifying sequence content.
 
 | Command | Description |
 |---------|-------------|
-| sana | sanitize broken single line FASTQ files Sana is a resilient FASTQ/FASTA parser. Unlike many parsers, it won't stop at the first error. Instead, it skips malformed records and continues processing the file. |
 | seqkit amplicon | extract amplicon (or specific region around it) via primer(s). |
 | seqkit bam | monitoring and online histograms of BAM record features |
 | seqkit common | find common/shared sequences of multiple files by id/name/sequence |
@@ -73,6 +71,7 @@ The `seq` command is the primary tool for modifying sequence content.
 | seqkit pair | match up paired-end reads from two fastq files |
 | seqkit restart | reset start position for circular genome |
 | seqkit sample | sample sequences by number or proportion. |
+| seqkit sana | sanitize broken single line FASTQ files Sana is a resilient FASTQ/FASTA parser. Unlike many parsers, it won't stop at the first error. Instead, it skips malformed records and continues processing the file. |
 | seqkit shuffle | shuffle sequences. |
 | seqkit split | split sequences into files by name ID, subsequence of given region, part size or number of parts. |
 | seqkit sum | compute message digest for all sequences in FASTA/Q files |

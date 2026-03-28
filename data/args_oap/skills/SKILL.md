@@ -4,7 +4,6 @@ description: The args_oap tool is a bioinformatics pipeline designed to detect, 
 homepage: https://github.com/xinehc/args_oap
 ---
 
-
 # args_oap
 
 ## Overview
@@ -66,9 +65,9 @@ You can use `args_oap` for other gene categories (e.g., metal resistance) by pro
 
 | Command | Description |
 |---------|-------------|
-| make_db | Create a database from a FASTA file (nucleotide or protein). |
-| stage_one | Stage one of the ARGs-OAP pipeline for antibiotic resistance genes (ARGs) analysis. |
-| stage_two | Stage two of the ARGs-OAP pipeline for antibiotic resistance gene analysis, performing sequence alignment and classification. |
+| args_oap make_db | Create a database from a FASTA file (nucleotide or protein). |
+| args_oap stage_one | Stage one of the ARGs-OAP pipeline for antibiotic resistance genes (ARGs) analysis. |
+| args_oap stage_two | Stage two of the ARGs-OAP pipeline for antibiotic resistance gene analysis, performing sequence alignment and classification. |
 
 ## Reference documentation
 

@@ -4,7 +4,6 @@ description: "PSASS detects genomic signatures of sex determination and calculat
 homepage: https://github.com/RomainFeron/PSASS
 ---
 
-
 # psass
 
 ## Overview
@@ -65,9 +64,9 @@ This calculates pool-specific SNPs and depth for both coding and non-coding regi
 
 | Command | Description |
 |---------|-------------|
-| analyze | Analyze sliding window metrics and sex-biased SNPs from sync files |
-| convert | Convert samtools pileup output to PSASS format |
-| pileup | Alignment files to include in pileup, in bam or cram format and indexed |
+| psass analyze | Analyze sliding window metrics and sex-biased SNPs from sync files |
+| psass convert | Convert samtools pileup output to PSASS format |
+| psass pileup | Alignment files to include in pileup, in bam or cram format and indexed |
 
 ## Reference documentation
 - [PSASS README](./references/github_com_SexGenomicsToolkit_PSASS_blob_master_README.md)

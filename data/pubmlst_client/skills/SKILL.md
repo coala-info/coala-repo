@@ -4,7 +4,6 @@ description: The pubmlst_client tool interacts with the pubMLST REST API to brow
 homepage: https://github.com/Public-Health-Bioinformatics/pubmlst_client
 ---
 
-
 # pubmlst_client
 
 ## Overview

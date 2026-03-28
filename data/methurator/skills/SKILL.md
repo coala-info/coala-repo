@@ -4,7 +4,6 @@ description: Methurator estimates DNA methylation sequencing saturation and pred
 homepage: https://github.com/VIBTOBIlab/methurator
 ---
 
-
 # methurator
 
 ## Overview
@@ -61,9 +60,9 @@ methurator plot --summary output/methurator_summary.yml
 
 | Command | Description |
 |---------|-------------|
-| downsample | Downsample BAM files and estimate sequencing saturation. |
-| gt-estimator | Fit the Chao estimator. |
-| plot | Plot the sequencing saturation curve from downsampling results. |
+| methurator downsample | Downsample BAM files and estimate sequencing saturation. |
+| methurator gt-estimator | Fit the Chao estimator. |
+| methurator plot | Plot the sequencing saturation curve from downsampling results. |
 
 ## Reference documentation
 - [Main README](./references/github_com_VIBTOBIlab_methurator_blob_main_README.md)

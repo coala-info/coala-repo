@@ -4,7 +4,6 @@ description: "pbmm2 is a high-performance wrapper for minimap2 designed to align
 homepage: https://github.com/PacificBiosciences/pbmm2
 ---
 
-
 # pbmm2
 
 ## Overview
@@ -70,8 +69,8 @@ Choosing the correct `--preset` is critical for alignment quality:
 
 | Command | Description |
 |---------|-------------|
-| align | Align PacBio reads to reference sequences |
-| index | Index reference and store as .mmi file |
+| pbmm2 align | Align PacBio reads to reference sequences |
+| pbmm2 index | Index reference and store as .mmi file |
 
 ## Reference documentation
 - [github_com_PacificBiosciences_pbmm2_blob_develop_README.md](./references/github_com_PacificBiosciences_pbmm2_blob_develop_README.md)

@@ -4,7 +4,6 @@ description: Vamb is a metagenomic binning tool that uses deep learning to group
 homepage: https://github.com/RasmussenLab/vamb
 ---
 
-
 # vamb
 
 ## Overview
@@ -58,8 +57,8 @@ vamb taxometer --outdir taxo_refine --fasta contigs.fna.gz --abundance_tsv abund
 
 | Command | Description |
 |---------|-------------|
-| recluster | Use marker genes to re-cluster (DBScan) or refine (K-means) clusters. |
 | vamb bin | Binning module of VAMB |
+| vamb recluster | Use marker genes to re-cluster (DBScan) or refine (K-means) clusters. |
 | vamb taxometer | Refine taxonomy using composition and abundance information. |
 
 ## Reference documentation

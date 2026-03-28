@@ -4,7 +4,6 @@ description: The Genotype Query Tool (GQT) converts large genotype datasets into
 homepage: https://github.com/ryanlayer/gqt
 ---
 
-
 # gqt
 
 ## Overview
@@ -74,13 +73,13 @@ GQT supports several built-in functions for genotype filtering:
 
 | Command | Description |
 |---------|-------------|
-| calpha | Calculates alpha diversity statistics between subpopulations. |
-| convert | Convert VCF/BCF to GQT index or sample phenotype database |
-| fst | Calculate Fst between populations. |
 | gqt | gqt, v1.1.3 |
+| gqt calpha | Calculates alpha diversity statistics between subpopulations. |
+| gqt convert | Convert VCF/BCF to GQT index or sample phenotype database |
+| gqt fst | Calculate Fst between populations. |
+| gqt gst | Calculates GST and FST statistics for subpopulations. NOTE: gst and fst assume that variants are biallelic. If your data contains multiallelic sites, we recommend decomposing your VCF (see A. Tan, Bioinformatics 2015) prior to indexing. |
 | gqt pca-shared | Performs Principal Component Analysis (PCA) on shared genotypes between populations. |
 | gqt query | A GQT query returns a set of variants that meet some number of population and genotype conditions. Conditions are specified by a population query and genotype query pair, where the population query defines the set of individuals to consider and the genotype query defines a filter on that population. The result is the set of variants within that sub-population that meet the given conditions. |
-| gst | Calculates GST and FST statistics for subpopulations. NOTE: gst and fst assume that variants are biallelic. If your data contains multiallelic sites, we recommend decomposing your VCF (see A. Tan, Bioinformatics 2015) prior to indexing. |
 
 ## Reference documentation
 - [GQT GitHub Repository](./references/github_com_ryanlayer_gqt.md)

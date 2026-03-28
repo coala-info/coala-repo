@@ -4,7 +4,6 @@ description: MAGpurify is a modular pipeline designed to improve the quality of 
 homepage: https://github.com/snayfach/MAGpurify
 ---
 
-
 # magpurify
 
 ## Overview

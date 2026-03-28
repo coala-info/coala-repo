@@ -4,7 +4,6 @@ description: fastaindex is a utility that manages FASTA indices with extended ba
 homepage: https://github.com/lpryszcz/FastaIndex
 ---
 
-
 # fastaindex
 
 ## Overview

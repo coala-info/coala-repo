@@ -4,7 +4,6 @@ description: Sambamba is a high-performance tool for parallelized processing, fi
 homepage: https://github.com/biod/sambamba
 ---
 
-
 # sambamba
 
 ## Overview

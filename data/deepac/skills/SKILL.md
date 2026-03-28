@@ -4,7 +4,6 @@ description: DeePaC is a deep learning framework designed to classify short DNA 
 homepage: https://gitlab.com/rki_bioinformatics/DeePaC
 ---
 
-
 # deepac
 
 ## Overview
@@ -52,13 +51,13 @@ To understand *why* a read was classified as pathogenic, use the explainability 
 | deepac convert | Convert a trained deepac model to a format suitable for inference. |
 | deepac eval | Evaluate deep-AC models. |
 | deepac filter | Filter predictions based on thresholds and classes. |
+| deepac gwpa | DeePaC gwpa subcommands. See command --help for details. |
+| deepac preproc | Preprocessing config file. |
 | deepac test | Test the deepac tool |
 | deepac train | Train a deep learning model for DNA classification. |
 | deepac_explain | DeePaC explain subcommands. See command --help for details. |
 | deepac_getmodels | Rebuilds or fetches deep learning models for deep-AMR. |
 | deepac_predict | Predicts the presence of bacteriophages in DNA sequences. |
-| gwpa | DeePaC gwpa subcommands. See command --help for details. |
-| preproc | Preprocessing config file. |
 
 ## Reference documentation
 - [DeePaC README](./references/gitlab_com_rki_bioinformatics_DeePaC_-_blob_master_README.md)

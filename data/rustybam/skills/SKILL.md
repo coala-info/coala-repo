@@ -4,7 +4,6 @@ description: "rustybam is a specialized toolkit for the rapid manipulation and t
 homepage: https://github.com/mrvollger/rustybam
 ---
 
-
 # rustybam
 
 ## Overview
@@ -43,9 +42,6 @@ One of the most powerful features is the ability to move coordinates between ass
 
 | Command | Description |
 |---------|-------------|
-| fastx-split | Splits fastx from stdin into multiple files. |
-| get-fasta | Mimic bedtools getfasta but allow for bgzip in both bed and fasta inputs |
-| liftover | Liftover target sequence coordinates onto query sequence using a PAF. |
 | rustybam | A tool for manipulating BAM files. |
 | rustybam | A Rust library for reading and writing BAM files. |
 | rustybam | A Rust library for working with BAM files. |
@@ -61,8 +57,11 @@ One of the most powerful features is the ability to move coordinates between ass
 | rustybam | A tool for processing BAM files. |
 | rustybam add-rg | Add RG lines from a source BAM file to the BAM from stdin to the BAM going to stdout |
 | rustybam break-paf | Break PAF records with large indels into multiple records (useful for SafFire) |
+| rustybam fastx-split | Splits fastx from stdin into multiple files. |
 | rustybam filter | Filter PAF records in various ways |
+| rustybam get-fasta | Mimic bedtools getfasta but allow for bgzip in both bed and fasta inputs |
 | rustybam invert | Invert the target and query sequences in a PAF along with the CIGAR string |
+| rustybam liftover | Liftover target sequence coordinates onto query sequence using a PAF. |
 | rustybam nucfreq | Get the frequencies of each bp at each position |
 | rustybam orient | Orient paf records so that most of the bases are in the forward direction. |
 | rustybam paf-to-sam | Convert a PAF file into a SAM file. Warning, all alignments will be marked as primary! |
@@ -70,8 +69,8 @@ One of the most powerful features is the ability to move coordinates between ass
 | rustybam seq-stats | Calculate summary statistics from fasta/q, sam, bam, or bed files. e.g. N50, mean, quantiles |
 | rustybam stats | Get percent identity stats from a sam/bam/cram or PAF. Requires =/X operations in the CIGAR string! |
 | rustybam suns | Extract the intervals in a genome (fasta) that are made up of SUNs |
+| rustybam trim-paf | Trim PAF records that overlap in query sequence to find and optimal splitting point using dynamic programing. |
 | rustybam_bed-length | Count the number of bases in a bed file |
-| trim-paf | Trim PAF records that overlap in query sequence to find and optimal splitting point using dynamic programing. |
 
 ## Reference documentation
 - [rustybam GitHub README](./references/github_com_vollgerlab_rustybam_blob_main_README.md)

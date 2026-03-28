@@ -4,7 +4,6 @@ description: sneakernet-qc automates the QA/QC process for primary genomic seque
 homepage: https://github.com/lskatz/sneakernet
 ---
 
-
 # sneakernet-qc
 
 ## Overview

@@ -4,7 +4,6 @@ description: pycistarget identifies enriched transcription factor motifs within 
 homepage: https://github.com/aertslab/pycistarget
 ---
 
-
 # pycistarget
 
 ## Overview
@@ -65,6 +64,15 @@ pycistarget uses HDF5 and Pickle formats for storing large-scale enrichment resu
 - **Memory Management**: Motif enrichment on large peak sets can be memory-intensive. Use the HDF5 reading capabilities to process data efficiently.
 - **Parameter Sensitivity**: If you receive an error stating input does not overlap with the database, lower the `--fr_overlap_w_ctx_db` threshold or check your genome assembly version.
 - **Deterministic Results**: In version 1.1 and later, regions are sorted internally in `get_foreground_and_background_regions` to ensure reproducible results across runs.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| pycistarget cistarget | Run motif enrichment analysis using the cisTarget algorithm. |
+| pycistarget dem | dem |
 
 ## Reference documentation
 - [pycistarget Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_pycistarget_overview.md)

@@ -4,7 +4,6 @@ description: metapi is a Snakemake-based pipeline designed to streamline metagen
 homepage: https://github.com/ohmeta/metapi
 ---
 
-
 # metapi
 
 ## Overview

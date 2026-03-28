@@ -4,7 +4,6 @@ description: daligner identifies local alignments and overlaps between long-read
 homepage: https://github.com/thegenemyers/DALIGNER
 ---
 
-
 # daligner
 
 ## Overview

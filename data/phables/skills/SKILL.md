@@ -4,7 +4,6 @@ description: Phables resolves complete bacteriophage genomes from fragmented met
 homepage: https://github.com/Vini2/phables
 ---
 
-
 # phables
 
 ## Overview
@@ -79,7 +78,7 @@ Phables outputs resolved paths in FASTA format. You should evaluate these using 
 | Command | Description |
 |---------|-------------|
 | phables config | Copy system default config to phables.out/config.yaml |
-| run | Run Phables |
+| phables run | Run Phables |
 | snakemake | Snakemake is a Python based language and execution environment for GNU Make-like workflows. |
 | snakemake | Snakemake is a Python based language and execution environment for GNU Make-like workflows. |
 

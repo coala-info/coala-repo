@@ -4,7 +4,6 @@ description: LAST performs high-sensitivity sequence alignment and comparison fo
 homepage: https://gitlab.com/mcfrith/last
 ---
 
-
 # last-align
 
 ## Overview

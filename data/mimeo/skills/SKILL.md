@@ -4,7 +4,6 @@ description: Mimeo is a bioinformatics suite that parses and annotates repeats, 
 homepage: https://github.com/Adamtaranto/mimeo
 ---
 
-
 # mimeo
 
 ## Overview

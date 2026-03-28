@@ -4,7 +4,6 @@ description: BleTIES is a bioinformatics toolkit designed to identify and analyz
 homepage: https://github.com/Swart-lab/bleties
 ---
 
-
 # bleties
 
 ## Overview
@@ -65,9 +64,9 @@ BleTIES includes standalone scripts for plotting results, typically found in the
 | Command | Description |
 |---------|-------------|
 | bleties milcor | MILCOR - Method of IES Long-read CORrelation |
+| bleties milraa | MILRAA - Method of Identification by Long Read Alignment Anomalies |
 | bleties miltel | MILTEL - Method of Long-read Telomere detection |
 | bleties_insert | Insert - Insert/Remove IESs to/from MAC reference sequence |
-| milraa | MILRAA - Method of Identification by Long Read Alignment Anomalies |
 
 ## Reference documentation
 - [BleTIES Main Documentation](./references/github_com_Swart-lab_bleties_blob_master_docs_index.md)

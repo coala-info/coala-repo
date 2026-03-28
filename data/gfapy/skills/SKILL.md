@@ -4,7 +4,6 @@ description: Gfapy is a Python library for parsing, manipulating, and navigating
 homepage: https://github.com/ggonnella/gfapy
 ---
 
-
 # gfapy
 
 ## Overview

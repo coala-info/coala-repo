@@ -4,7 +4,6 @@ description: Spacedust discovers and identifies conserved gene clusters and homo
 homepage: https://github.com/soedinglab/spacedust
 ---
 
-
 # spacedust
 
 thinkname: spacedust
@@ -72,9 +71,9 @@ When searching a database against itself to find internal duplications or paralo
 
 | Command | Description |
 |---------|-------------|
-| aa2foldseek | By Ruoshi Zhang <ruoshi.zhang@mpinat.mpg.de> & Milot Mirdita <milot@mirdita.de> |
-| clusterdb | By Ruoshi Zhang <ruoshi.zhang@mpinat.mpg.de> & Milot Mirdita <milot@mirdita.de> |
-| clustersearch | By Ruoshi Zhang <ruoshi.zhang@mpinat.mpg.de> & Milot Mirdita <milot@mirdita.de> |
+| spacedust aa2foldseek | By Ruoshi Zhang <ruoshi.zhang@mpinat.mpg.de> & Milot Mirdita <milot@mirdita.de> |
+| spacedust clusterdb | By Ruoshi Zhang <ruoshi.zhang@mpinat.mpg.de> & Milot Mirdita <milot@mirdita.de> |
+| spacedust clustersearch | By Ruoshi Zhang <ruoshi.zhang@mpinat.mpg.de> & Milot Mirdita <milot@mirdita.de> |
 | spacedust_createsetdb | Creates a database for spacedust. |
 
 ## Reference documentation

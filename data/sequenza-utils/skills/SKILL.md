@@ -4,7 +4,6 @@ description: "sequenza-utils provides a Python-based command-line interface to p
 homepage: http://sequenza-utils.readthedocs.org
 ---
 
-
 # sequenza-utils
 
 ## Overview
@@ -55,12 +54,12 @@ Raw seqz files are often too large for R to process efficiently.
 
 | Command | Description |
 |---------|-------------|
-| bam2seqz | Convert BAM files to Sequenza's .seqz format. |
-| gc_wiggle | Generates a wiggle file with GC content information for each bin. |
-| pileup2acgt | Converts a pileup file to ACGT format. |
-| seqz_binning | Binning of the genome based on allele frequencies. |
-| seqz_merge | Merge multiple Sequenza .seqz files into a single file. |
-| snp2seqz | Convert SNP-calling results to seqz format |
+| sequenza-utils bam2seqz | Convert BAM files to Sequenza's .seqz format. |
+| sequenza-utils gc_wiggle | Generates a wiggle file with GC content information for each bin. |
+| sequenza-utils pileup2acgt | Converts a pileup file to ACGT format. |
+| sequenza-utils seqz_binning | Binning of the genome based on allele frequencies. |
+| sequenza-utils seqz_merge | Merge multiple Sequenza .seqz files into a single file. |
+| sequenza-utils snp2seqz | Convert SNP-calling results to seqz format |
 
 ## Reference documentation
 - [Command line interface](./references/sequenza-utils_readthedocs_io_en_latest_commands.html.md)

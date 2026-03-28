@@ -4,7 +4,6 @@ description: RapMap is a specialized tool designed for the rapid quasi-mapping o
 homepage: https://github.com/COMBINE-lab/RapMap
 ---
 
-
 # rapmap
 
 ## Overview

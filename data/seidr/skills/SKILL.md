@@ -4,7 +4,6 @@ description: Seiðr is a toolkit for ensemble gene regulatory network inference 
 homepage: https://github.com/bschiffthaler/seidr
 ---
 
-
 # seidr
 
 # Seiðr
@@ -44,23 +43,23 @@ Seiðr integrates several high-performance libraries for network inference. When
 
 | Command | Description |
 |---------|-------------|
-| aggregate | Aggregate multiple SeidrFiles. |
-| cluster-enrichment | Test whether clusters of two networks show significant overlap or extract clusters |
-| neighbours | Get the top N first-degree neighbours for each node or a list of nodes |
-| resolve | Resolve node indices in text file to node names. |
-| roc | Calculate ROC curves of predictions in SeidrFiles given true edges |
+| seidr aggregate | Aggregate multiple SeidrFiles. |
 | seidr backbone | Determine noisy network backbone scores. Optionally filter on these scores. |
+| seidr cluster-enrichment | Test whether clusters of two networks show significant overlap or extract clusters |
 | seidr compare | Compare edges or nodes in two networks. |
 | seidr graphstats | Calculate graph level network statistics |
 | seidr index | Create index for SeidrFiles |
+| seidr neighbours | Get the top N first-degree neighbours for each node or a list of nodes |
+| seidr resolve | Resolve node indices in text file to node names. |
+| seidr roc | Calculate ROC curves of predictions in SeidrFiles given true edges |
 | seidr sample | Sample edges from a SeidrFile |
+| seidr threshold | Pick hard network threshold according to topology |
+| seidr view | View and filter contents of SeidrFiles |
 | seidr_adjacency | Transform a SeidrFile into an adjacency matrix |
 | seidr_convert | Convert different text based formats |
 | seidr_import | Convert various text based network representations to SeidrFiles |
 | seidr_reheader | Modify SeidrFile headers. Currently only drops disconnected nodes and resets stats. |
 | seidr_stats | Calculate network centrality statistics |
-| threshold | Pick hard network threshold according to topology |
-| view | View and filter contents of SeidrFiles |
 
 ## Reference documentation
 - [Seidr GitHub Repository](./references/github_com_bschiffthaler_seidr.md)

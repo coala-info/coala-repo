@@ -4,7 +4,6 @@ description: snakesee is a passive monitoring tool and terminal dashboard that t
 homepage: https://github.com/nh13/snakesee
 ---
 
-
 # snakesee
 
 ## Overview

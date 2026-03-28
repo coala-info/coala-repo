@@ -10,6 +10,7 @@ Processes raw mass spectrometry scan data to generate peaklists.
 - **Homepage**: https://github.com/computational-metabolomics/dimspy
 - **Package**: https://anaconda.org/channels/bioconda/packages/dimspy/overview
 - **Validation**: PASS
+- **manual**: https://dimspy.readthedocs.io/en/latest/
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/dimspy/overview
 - **Total Downloads**: 27.4K
@@ -615,4 +616,4 @@ If you distribute this Software to others, you agree to:
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

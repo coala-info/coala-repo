@@ -4,7 +4,6 @@ description: ShoRAH is a bioinformatics suite designed to characterize genetic d
 homepage: https://github.com/cbg-ethz/shorah
 ---
 
-
 # shorah
 
 ## Overview
@@ -53,8 +52,8 @@ ShoRAH includes a specific tool for SNV detection that accounts for strand bias,
 | Command | Description |
 |---------|-------------|
 | shorah | Call SNVs from amplicon sequencing data |
-| shotgun | Call SNVs from shotgun sequencing data. |
-| snv | Call SNVs from BAM files. |
+| shorah shotgun | Call SNVs from shotgun sequencing data. |
+| shorah snv | Call SNVs from BAM files. |
 
 ## Reference documentation
 - [ShoRAH GitHub Repository](./references/github_com_cbg-ethz_shorah.md)

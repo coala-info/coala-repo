@@ -4,7 +4,6 @@ description: "Tool for analyzing Global Protein Stability (GPS) Profiling data. 
 homepage: https://github.com/niekwit/gps-orfeome
 ---
 
-
 # gpsw
 
 yaml
@@ -48,6 +47,16 @@ gpsw --input <path_to_input_data> --output <path_to_output_directory> [other_opt
 *   **Data Requirements**: Ensure your input data is correctly formatted and organized before running the analysis. Refer to the project's documentation for specific data format requirements.
 *   **Configuration**: Advanced users might need to configure aspects of the Snakemake workflow. While direct configuration details are not provided, understanding Snakemake's configuration practices (e.g., `config.yaml` files) might be beneficial for customization.
 *   **Post-Analysis Tools**: The project also mentions "post-analysis scripts" for further analysis and figure generation, available in a separate repository (`gps-orfeome-tools`). This suggests that GPSW's primary role is the core data processing, with additional tools available for downstream tasks.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| gpsw | GPSW: A tool for analysing and processing Global Protein Stability Profiling data. |
+| gpsw_fetch | Fetch GPSW code from a specific release from https://github.com/niekwit/gps-orfeome. |
+| gpsw_run | Run the GPSW pipeline and create report. |
 
 ## Reference documentation
 - [GPSW Overview on Anaconda.org](./references/anaconda_org_channels_bioconda_packages_gpsw_overview.md)

@@ -4,7 +4,6 @@ description: SCENIC+ is a Python framework that decodes cellular regulatory logi
 homepage: https://github.com/aertslab/scenicplus
 ---
 
-
 # scenicplus
 
 ## Overview
@@ -55,6 +54,16 @@ Use the built-in plotting functions to evaluate the strength and specificity of 
 - **Shape Mismatches**: If you encounter `ValueError: Shape of passed values is...`, verify that your cell filtering in the scRNA-seq and scATAC-seq assays is identical.
 - **Missing Fragments**: Ensure fragment files are indexed (`.tbi`) and the paths provided to the tool are absolute to avoid "file does not exist" errors during region-based analysis.
 - **Package Deprecations**: If you see `pkg_resources` warnings, they are typically related to `pycistopic` dependencies and can usually be ignored unless they cause a crash.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| scenicplus grn_inference | Infer Enhancer driven Gene Regulatory Networks. |
+| scenicplus init_snakemake | Initialize ScenicPlus project for Snakemake |
+| scenicplus prepare_data | Prepare gene expression, chromatin accessibility and motif enrichment data. |
 
 ## Reference documentation
 - [scenicplus Overview](./references/anaconda_org_channels_bioconda_packages_scenicplus_overview.md)

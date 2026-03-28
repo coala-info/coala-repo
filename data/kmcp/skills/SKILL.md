@@ -4,7 +4,6 @@ description: KMCP performs high-performance metagenomic profiling and pathogen d
 homepage: https://github.com/shenwei356/kmcp
 ---
 
-
 # kmcp
 
 ## Overview
@@ -93,7 +92,7 @@ KMCP supports custom taxonomies (GTDB, ICTV) by using `taxonkit create-taxdump` 
 
 | Command | Description |
 |---------|-------------|
-| autocompletion | Generate shell autocompletion script |
+| kmcp autocompletion | Generate shell autocompletion script |
 | kmcp compute | Generate k-mers (sketches) from FASTA/Q sequences |
 | kmcp index | Construct a database from k-mer files |
 | kmcp profile | Generate the taxonomic profile from search results |

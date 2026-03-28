@@ -4,7 +4,6 @@ description: IntaRNA predicts the hybridization and interaction sites between tw
 homepage: https://github.com/BackofenLab/IntaRNA
 ---
 
-
 # intarna
 
 ## Overview

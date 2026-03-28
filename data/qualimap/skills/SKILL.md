@@ -4,7 +4,6 @@ description: Qualimap evaluates the quality of alignments from Next Generation S
 homepage: http://qualimap.bioinfo.cipf.es/
 ---
 
-
 # qualimap
 
 ## Overview
@@ -65,7 +64,7 @@ qualimap counts -c -bam input.bam -gtf annotation.gtf -outdir ./counts_report
 | qualimap comp-counts | QualiMap v.2.3 |
 | qualimap counts | QualiMap v.2.3 |
 | qualimap multi-bamqc | Multi-sample BAM quality control analysis |
-| rnaseq | QualiMap v.2.3 |
+| qualimap rnaseq | QualiMap v.2.3 |
 
 ## Reference documentation
 - [Qualimap 2.3 documentation](./references/qualimap_conesalab_org_doc_html_index.html.md)

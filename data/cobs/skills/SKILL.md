@@ -4,7 +4,6 @@ description: COBS is a specialized indexing tool that enables rapid membership q
 homepage: https://panthema.net/cobs
 ---
 
-
 # cobs
 
 ## Overview
@@ -47,18 +46,18 @@ cobs construct -i <input_dir> -o <output.cobs_compact> --compact
 
 | Command | Description |
 |---------|-------------|
-| benchmark-fpr | Calculate false positive distribution for COBS |
-| classic-combine | Combines multiple COBS indices into a single index. |
+| cobs benchmark-fpr | Calculate false positive distribution for COBS |
+| cobs classic-combine | Combines multiple COBS indices into a single index. |
 | cobs classic-construct | Constructs a COBS index for a given input directory or file. |
 | cobs classic-construct-random | Constructs a random COBS index. |
 | cobs compact-construct | Constructs a COBS compact index. |
 | cobs compact-construct-combine | Constructs and combines compact indexes from input directory to output file. |
+| cobs doc-dump | Dump documents from a path |
+| cobs doc-list | list documents |
+| cobs generate-queries | Generates positive and negative queries from base documents. |
+| cobs print-kmers | Prints all k-mers of a given DNA sequence. |
 | cobs print-parameters | Prints parameters for COBS. |
-| doc-dump | Dump documents from a path |
-| doc-list | list documents |
-| generate-queries | Generates positive and negative queries from base documents. |
-| print-kmers | Prints all k-mers of a given DNA sequence. |
-| query | Query the COBS index |
+| cobs query | Query the COBS index |
 
 ## Reference documentation
 - [COBS: A Compact Bit-Sliced Signature Index](./references/panthema_net_cobs.md)

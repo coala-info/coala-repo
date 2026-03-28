@@ -4,7 +4,6 @@ description: Scrubby filters non-target background sequences from metagenomic da
 homepage: https://github.com/esteinig/scrubby
 ---
 
-
 # scrubby
 
 ## Overview

@@ -4,7 +4,6 @@ description: The Nucleotide Archival Format tool provides efficient, reference-f
 homepage: https://github.com/KirillKryukov/naf
 ---
 
-
 # naf
 
 ## Overview

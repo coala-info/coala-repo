@@ -4,7 +4,6 @@ description: Homopolish is a genome polisher that uses Support Vector Machines a
 homepage: https://github.com/ythuang0522/homopolish
 ---
 
-
 # homopolish
 
 ## Overview
@@ -69,10 +68,10 @@ homopolish modpolish -a assembly.fasta -q reads.fastq -m R9.4.pkl -s bacteria.ms
 
 | Command | Description |
 |---------|-------------|
-| make_train_data | Make training data for homopolish by aligning reference genomes to assembly genomes and downloading homologous sequences. |
-| modpolish | A tool for polishing genome assemblies using mash sketches and local databases. |
-| polish | Homopolish is a tool for polishing genome assemblies using homologous sequences. |
-| train | Train a model for homopolish using alignment dataframes. |
+| homopolish make_train_data | Make training data for homopolish by aligning reference genomes to assembly genomes and downloading homologous sequences. |
+| homopolish modpolish | A tool for polishing genome assemblies using mash sketches and local databases. |
+| homopolish polish | Homopolish is a tool for polishing genome assemblies using homologous sequences. |
+| homopolish train | Train a model for homopolish using alignment dataframes. |
 
 ## Reference documentation
 - [Homopolish Main Documentation](./references/github_com_ythuang0522_homopolish_blob_master_README.md)

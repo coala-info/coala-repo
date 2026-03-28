@@ -4,7 +4,6 @@ description: Smalt is a minimalist template engine that renders environment vari
 homepage: https://github.com/roquie/smalte
 ---
 
-
 # smalt
 
 ## Overview

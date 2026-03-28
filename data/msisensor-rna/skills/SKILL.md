@@ -4,7 +4,6 @@ description: MSIsensor-RNA detects microsatellite instability status by analyzin
 homepage: https://github.com/xjtu-omics/msisensor-rna
 ---
 
-
 # msisensor-rna
 
 ## Overview
@@ -66,10 +65,10 @@ msisensor-rna msi -i query_expression.csv -m model/default_model.pkl -o results.
 
 | Command | Description |
 |---------|-------------|
-| genes | Select informative genes for microsatellite instability detection. |
 | msisensor-rna detection | Microsatellite instability detection. |
-| show | Show the information of the model and add more details. |
-| train | Train custom model for microsatellite instability detection. |
+| msisensor-rna genes | Select informative genes for microsatellite instability detection. |
+| msisensor-rna show | Show the information of the model and add more details. |
+| msisensor-rna train | Train custom model for microsatellite instability detection. |
 
 ## Reference documentation
 - [MSIsensor-RNA GitHub Repository](./references/github_com_xjtu-omics_msisensor-rna_blob_main_README.md)

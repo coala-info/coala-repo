@@ -4,7 +4,6 @@ description: cdskit is a toolkit for processing protein-coding DNA sequences tha
 homepage: https://github.com/kfuku52/cdskit
 ---
 
-
 # cdskit
 
 ## Overview
@@ -64,10 +63,11 @@ cat input.fasta | cdskit pad | cdskit mask | cdskit translate > final_pep.fasta
 
 | Command | Description |
 |---------|-------------|
-| backalign | Backalign CDS sequences to their corresponding aligned amino acid sequences. |
 | cdskit accession2fasta | Convert NCBI accession numbers to FASTA sequences. |
+| cdskit backalign | Backalign CDS sequences to their corresponding aligned amino acid sequences. |
 | cdskit intersection | Performs intersection operations on CDS sequences. |
 | cdskit label | Label sequences in a file. |
+| cdskit rmseq | Remove sequences based on name or problematic characters. |
 | cdskit_aggregate | Aggregate sequences based on a regular expression. |
 | cdskit_backtrim | Backtrim CDS alignments to match trimmed amino acid alignments. |
 | cdskit_gapjust | Adjusts gap lengths in sequences. |
@@ -78,7 +78,6 @@ cat input.fasta | cdskit pad | cdskit mask | cdskit translate > final_pep.fasta
 | cdskit_printseq | Print sequences from a sequence file. |
 | cdskit_split | Split CDS sequences into multiple files based on sequence identifiers. |
 | cdskit_stats | Calculate statistics for CDS sequences. |
-| rmseq | Remove sequences based on name or problematic characters. |
 
 ## Reference documentation
 

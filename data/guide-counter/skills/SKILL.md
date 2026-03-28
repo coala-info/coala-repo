@@ -4,7 +4,6 @@ description: "guide-counter quantifies sgRNA sequences from CRISPR screen FASTQ 
 homepage: https://github.com/fulcrumgenomics/guide-counter
 ---
 
-
 # guide-counter
 
 ## Overview
@@ -59,8 +58,8 @@ For the best QC results, provide the `--essential-genes` and `--nonessential-gen
 
 | Command | Description |
 |---------|-------------|
-| count | Counts the guides observed in a CRISPR screen, starting from one or more FASTQs. FASTQs are one per sample and currently only single-end FASTQ inputs are supported. |
 | guide-counter | A tool for counting guide RNAs in FASTQ files. |
+| guide-counter count | Counts the guides observed in a CRISPR screen, starting from one or more FASTQs. FASTQs are one per sample and currently only single-end FASTQ inputs are supported. |
 
 ## Reference documentation
 - [guide-counter README](./references/github_com_fulcrumgenomics_guide-counter_blob_main_README.md)

@@ -4,7 +4,6 @@ description: This tool provides a specialized guide for the Go programming langu
 homepage: https://github.com/avelino/awesome-go
 ---
 
-
 # go
 
 ## Overview
@@ -50,12 +49,12 @@ When choosing libraries from the Awesome Go collection, prioritize those that al
 
 | Command | Description |
 |---------|-------------|
-| clean | Run 'go help clean' for details. |
-| doc | Display documentation for Go packages and symbols. |
-| fix | Run 'go help fix' for details. |
 | go | A collection of tools for Go development. |
 | go | Go is a tool for managing Go source code. |
 | go build | Builds the specified packages and their dependencies. |
+| go clean | Run 'go help clean' for details. |
+| go doc | Display documentation for Go packages and symbols. |
+| go fix | Run 'go help fix' for details. |
 | go fmt | Format Go programs |
 | go generate | Run 'go help generate' for details. |
 | go get | Run 'go help get' for details. |
@@ -63,9 +62,9 @@ When choosing libraries from the Awesome Go collection, prioritize those that al
 | go list | List packages or modules |
 | go mod | Provides access to operations on modules. |
 | go run | Run a Go program |
+| go test | Build and test Go packages |
 | go_bug | Please file a new issue at golang.org/issue/new using this template: |
 | go_env | Prints Go runtime environment information. |
-| test | Build and test Go packages |
 
 ## Reference documentation
 - [Awesome Go Actor Model](./references/awesome-go_com_actor-model.md)

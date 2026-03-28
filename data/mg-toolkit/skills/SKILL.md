@@ -4,7 +4,6 @@ description: The mg-toolkit is a command-line utility for fetching metadata, sea
 homepage: https://github.com/EBI-metagenomics/emg-toolkit
 ---
 
-
 # mg-toolkit
 
 ## Overview
@@ -59,9 +58,9 @@ If a download fails or returns no results for a known public study, use the `-d`
 
 | Command | Description |
 |---------|-------------|
-| bulk_download | Bulk download study or project data from MGnify. |
-| original_metadata | Retrieve original metadata for given study accessions using mg-toolkit. |
-| sequence_search | Search non-redundant protein database using HMMER. |
+| mg-toolkit bulk_download | Bulk download study or project data from MGnify. |
+| mg-toolkit original_metadata | Retrieve original metadata for given study accessions using mg-toolkit. |
+| mg-toolkit sequence_search | Search non-redundant protein database using HMMER. |
 
 ## Reference documentation
 - [MG-Toolkit README](./references/github_com_EBI-Metagenomics_emg-toolkit_blob_master_README.md)

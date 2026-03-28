@@ -4,7 +4,6 @@ description: Peakhood identifies the most probable sequence context for CLIP-seq
 homepage: https://github.com/BackofenLab/Peakhood
 ---
 
-
 # peakhood
 
 ## Overview
@@ -47,10 +46,10 @@ Use `peakhood merge` to consolidate transcript context datasets into unified sit
 
 | Command | Description |
 |---------|-------------|
-| batch | Batch processing for peakhood to extract transcript context and genomic context for sites using BAM, BED, GTF, and genomic sequence files. |
-| extract | Extract transcript and genomic context for CLIP-seq peak regions using BAM coverage and GTF annotations. |
-| merge | Merge peakhood results |
-| motif | Search for motifs or regular expressions in genomic or transcript sequences based on peakhood extract output, BED files, or transcript lists. |
+| peakhood batch | Batch processing for peakhood to extract transcript context and genomic context for sites using BAM, BED, GTF, and genomic sequence files. |
+| peakhood extract | Extract transcript and genomic context for CLIP-seq peak regions using BAM coverage and GTF annotations. |
+| peakhood merge | Merge peakhood results |
+| peakhood motif | Search for motifs or regular expressions in genomic or transcript sequences based on peakhood extract output, BED files, or transcript lists. |
 
 ## Reference documentation
 

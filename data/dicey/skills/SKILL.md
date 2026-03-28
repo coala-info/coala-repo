@@ -4,7 +4,6 @@ description: Dicey is a bioinformatics tool used for simulating PCR reactions, d
 homepage: https://github.com/gear-genomics/dicey
 ---
 
-
 # dicey
 
 ## Overview
@@ -51,13 +50,13 @@ Design probes for imaging mRNA in single cells.
 
 | Command | Description |
 |---------|-------------|
-| blacklist | Generates a blacklist file for a given genome. |
-| chop | Generic options: |
+| dicey blacklist | Generates a blacklist file for a given genome. |
+| dicey chop | Generic options: |
+| dicey hunt | Finds matches of a given sequence in a genome file. |
+| dicey index | Index a genome FASTA file |
+| dicey mappability2 | Calculate mappability of a BAM file |
 | dicey search | Generic options: |
 | dicey_padlock | Probes for one gene, one transcript, a set of genes, or custom FASTA input. |
-| hunt | Finds matches of a given sequence in a genome file. |
-| index | Index a genome FASTA file |
-| mappability2 | Calculate mappability of a BAM file |
 
 ## Reference documentation
 - [Dicey GitHub README](./references/github_com_gear-genomics_dicey_blob_main_README.md)

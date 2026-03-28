@@ -4,7 +4,6 @@ description: Deacon is a high-performance bioinformatics tool used for the rapid
 homepage: https://github.com/bede/deacon
 ---
 
-
 # deacon
 
 ## Overview
@@ -78,9 +77,9 @@ Sensitivity and specificity are controlled by absolute (`-a`) and relative (`-r`
 
 | Command | Description |
 |---------|-------------|
+| deacon filter | Retain or deplete sequence records with sufficient minimizer hits to an indexed query |
 | deacon index | Build, inspect, compose and fetch minimizer indexes |
 | deacon server | Start/stop a server process for reduced latency filtering |
-| filter | Retain or deplete sequence records with sufficient minimizer hits to an indexed query |
 
 ## Reference documentation
 - [Deacon README](./references/github_com_bede_deacon_blob_main_README.md)

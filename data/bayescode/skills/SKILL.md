@@ -4,7 +4,6 @@ description: BayesCode is a Bayesian MCMC framework for molecular evolution stud
 homepage: https://github.com/ThibaultLatrille/bayescode
 ---
 
-
 # bayescode
 
 ## Overview

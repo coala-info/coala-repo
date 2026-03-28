@@ -4,7 +4,6 @@ description: Surpyvor is a Python utility that wraps the SURVIVOR toolset to man
 homepage: https://github.com/wdecoster/surpyvor
 ---
 
-
 # surpyvor
 
 ## Overview
@@ -44,12 +43,13 @@ Calculate precision, recall, and F-measure by comparing a query VCF against a tr
 
 | Command | Description |
 |---------|-------------|
-| highconf | Merge variants from multiple VCF files, considering high confidence variants. |
-| highsens | Merge variants from multiple VCF files. |
-| minlen | Filter SVs by minimum length |
+| surpyvor highconf | Merge variants from multiple VCF files, considering high confidence variants. |
+| surpyvor highsens | Merge variants from multiple VCF files. |
 | surpyvor lengthplot | Plot variant lengths from a VCF file. |
+| surpyvor minlen | Filter SVs by minimum length |
 | surpyvor prf | Calculate performance metrics for structural variant calls. |
 | surpyvor purge2d | Filter alignments from a BAM file. |
+| surpyvor svlentruncate | Truncates SVLEN in VCF files. |
 | surpyvor upset | Generate upset plots for structural variants |
 | surpyvor varcount | VCF to plot from |
 | surpyvor venn | Generate Venn diagrams of structural variants from multiple VCF files. |
@@ -58,7 +58,6 @@ Calculate precision, recall, and F-measure by comparing a query VCF against a tr
 | surpyvor_fixvcf | Fix problems related to using jasmine |
 | surpyvor_haplomerge | Merge VCF files from multiple callers. |
 | surpyvor_merge | Merge VCF files from multiple callers. |
-| svlentruncate | Truncates SVLEN in VCF files. |
 
 ## Reference documentation
 - [surpyvor README](./references/github_com_wdecoster_surpyvor_blob_master_README.md)

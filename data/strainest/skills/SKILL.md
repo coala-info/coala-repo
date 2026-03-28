@@ -4,7 +4,6 @@ description: StrainEst resolves the strain-level composition and relative abunda
 homepage: https://github.com/compmetagen/strainest
 ---
 
-
 # strainest
 
 ## Overview
@@ -55,12 +54,12 @@ If a precomputed database is not available, you can build one using the followin
 
 | Command | Description |
 |---------|-------------|
-| est | Estimate relative abundance of strains. The BAM file must be sorted and indexed. |
-| map2snp | Build the SNP matrix in DGRP format. |
-| mapgenomes | Map genomes to a reference. |
-| mapstats | Compute basic statistics on the mapped genomes file. |
-| snpclust | Given a SNP matrix (in DGRP format) and a distance matrix, snpdist clusters the profiles returning a SNP matrix containing the representative profiles (SNPOUT) and a cluster file (CLUST). |
-| snpdist | Compute the Hamming distances between sequences in SNP matrix (in DGRP format). Moreover, it returns the distances histogram in HIST. |
+| strainest est | Estimate relative abundance of strains. The BAM file must be sorted and indexed. |
+| strainest map2snp | Build the SNP matrix in DGRP format. |
+| strainest mapgenomes | Map genomes to a reference. |
+| strainest mapstats | Compute basic statistics on the mapped genomes file. |
+| strainest snpclust | Given a SNP matrix (in DGRP format) and a distance matrix, snpdist clusters the profiles returning a SNP matrix containing the representative profiles (SNPOUT) and a cluster file (CLUST). |
+| strainest snpdist | Compute the Hamming distances between sequences in SNP matrix (in DGRP format). Moreover, it returns the distances histogram in HIST. |
 
 ## Reference documentation
 - [StrainEst GitHub Repository](./references/github_com_compmetagen_strainest_blob_master_README.rst.md)

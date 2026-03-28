@@ -4,7 +4,6 @@ description: Philosopher is a bioinformatics suite for the post-processing, vali
 homepage: https://github.com/Nesvilab/philosopher
 ---
 
-
 # philosopher
 
 ## Overview
@@ -65,24 +64,24 @@ For standard workflows, use the `pipeline` command to execute the entire process
 
 | Command | Description |
 |---------|-------------|
-| abacus | Generates abacus reports. |
-| bioquant | Bioquant |
-| completion | Generate the autocompletion script for philosopher for the specified shell. |
-| filter | Filter peptides and proteins based on FDR levels and other criteria. |
-| freequant | Quantify peaks using free energy calculations. |
-| iprophet | iprophet |
-| peptideprophet | peptideprophet |
+| philosopher abacus | Generates abacus reports. |
+| philosopher bioquant | Bioquant |
 | philosopher comet | Run comet |
+| philosopher completion | Generate the autocompletion script for philosopher for the specified shell. |
 | philosopher database | Process a database for peptide identification. |
+| philosopher filter | Filter peptides and proteins based on FDR levels and other criteria. |
+| philosopher freequant | Quantify peaks using free energy calculations. |
+| philosopher iprophet | iprophet |
 | philosopher labelquant | Quantify isobaric labeling experiments. |
 | philosopher msfragger | MSFragger is a fast and accurate mass spectrometry data analysis tool for peptide identification. |
+| philosopher peptideprophet | peptideprophet |
+| philosopher proteinprophet | Runs ProteinProphet on Philosopher results. |
+| philosopher ptmprophet | PTMProphet is a tool for PTM localization. |
 | philosopher report | Generate reports from philosopher runs. |
+| philosopher slack | Send messages to Slack |
+| philosopher tmtintegrator | Integrates TMT quantification results from Philosopher. |
 | philosopher workspace | Manage the experiment workspace for the analysis |
 | philosopher_pipeline | Executes a pipeline. |
-| proteinprophet | Runs ProteinProphet on Philosopher results. |
-| ptmprophet | PTMProphet is a tool for PTM localization. |
-| slack | Send messages to Slack |
-| tmtintegrator | Integrates TMT quantification results from Philosopher. |
 
 ## Reference documentation
 - [Philosopher Wiki Home](./references/github_com_Nesvilab_philosopher_wiki.md)

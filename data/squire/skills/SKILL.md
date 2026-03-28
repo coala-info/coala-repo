@@ -4,7 +4,6 @@ description: SQuIRE is a pipeline for the locus-specific quantification and diff
 homepage: https://github.com/wyang17/SQuIRE
 ---
 
-
 # squire
 
 ## Overview

@@ -4,7 +4,6 @@ description: This tool identifies and characterizes biosynthetic gene clusters i
 homepage: https://docs.antismash.secondarymetabolites.org/intro/
 ---
 
-
 # antismash-lite
 
 ## Overview

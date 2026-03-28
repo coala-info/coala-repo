@@ -4,7 +4,6 @@ description: PhyloAln maps query sequences or raw reads directly to reference al
 homepage: https://github.com/huangyh45/PhyloAln
 ---
 
-
 # phyloaln
 
 ## Overview

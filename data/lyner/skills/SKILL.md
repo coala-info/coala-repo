@@ -4,7 +4,6 @@ description: lyner is a command-line chaining toolbox designed for efficient dat
 homepage: https://github.com/tedil/lyner
 ---
 
-
 # lyner
 
 ## Overview
@@ -52,36 +51,36 @@ lyner stores metadata in specific pipe fields. For example, clustering results a
 
 | Command | Description |
 |---------|-------------|
-| astype | Convert data to a specified type. |
-| center | Center the matrix. |
-| cluster | Cluster cells based on their expression profiles. |
-| cluster-agglomerative | Agglomerative clustering of cells |
-| cluster-from | Cluster sequences from a file. |
-| cluster-hierarchical | Hierarchical clustering of samples. |
-| compose | Compose a pipeline from a list of transformations. |
-| correlate | Calculate pairwise Pearson correlation coefficients between columns of a matrix. |
-| decompose | Decompose a matrix into its constituent parts. |
-| dendro | Plot a dendrogram from a distance matrix. |
-| design | Description of the experiment. Expects 2-column tsv (Sample, Class). |
-| dist-graph | Generates a distance graph from a distance matrix. |
-| estimate | Estimate gene expression levels from RNA-Seq data. |
-| filter | Filter data according to selected option. |
-| frequent-sets | Find frequent itemsets in a binary matrix. |
-| pairwise-distances | Compute pairwise distances between samples. |
-| read | Read abundance/count matrix from MATRIX (tsv format). |
-| read-annotation | Reads annotation from given file and stores it in `annotation`. |
-| reindex | Reindex the matrix. |
-| seed | Try "lyner seed --help" for help. |
-| select | Select a datum based on its name (e.g. 'matrix' or 'estimate'), making it the target of commands such as `show`, `save` and `plot`. |
-| show | Show the content of a lyner pipe. |
-| sort | Sorts the matrix by columns. |
-| sort-index | Sorts and indexes a matrix. |
-| summarise | Summarise a lyner matrix |
-| supplement | Supply additional data which may be used for plot colors, for example. |
-| targets | Specify targets for lyner |
-| threshold | Set \|data\| < value to 0, data >= value to 1, -data >= value to -1. |
-| transpose | Transpose a matrix or a selection of columns from a matrix. |
-| uncluster | Uncluster sequences |
+| lyner astype | Convert data to a specified type. |
+| lyner center | Center the matrix. |
+| lyner cluster | Cluster cells based on their expression profiles. |
+| lyner cluster-agglomerative | Agglomerative clustering of cells |
+| lyner cluster-from | Cluster sequences from a file. |
+| lyner cluster-hierarchical | Hierarchical clustering of samples. |
+| lyner compose | Compose a pipeline from a list of transformations. |
+| lyner correlate | Calculate pairwise Pearson correlation coefficients between columns of a matrix. |
+| lyner decompose | Decompose a matrix into its constituent parts. |
+| lyner dendro | Plot a dendrogram from a distance matrix. |
+| lyner design | Description of the experiment. Expects 2-column tsv (Sample, Class). |
+| lyner dist-graph | Generates a distance graph from a distance matrix. |
+| lyner estimate | Estimate gene expression levels from RNA-Seq data. |
+| lyner filter | Filter data according to selected option. |
+| lyner frequent-sets | Find frequent itemsets in a binary matrix. |
+| lyner pairwise-distances | Compute pairwise distances between samples. |
+| lyner read | Read abundance/count matrix from MATRIX (tsv format). |
+| lyner read-annotation | Reads annotation from given file and stores it in `annotation`. |
+| lyner reindex | Reindex the matrix. |
+| lyner seed | Try "lyner seed --help" for help. |
+| lyner select | Select a datum based on its name (e.g. 'matrix' or 'estimate'), making it the target of commands such as `show`, `save` and `plot`. |
+| lyner show | Show the content of a lyner pipe. |
+| lyner sort | Sorts the matrix by columns. |
+| lyner sort-index | Sorts and indexes a matrix. |
+| lyner summarise | Summarise a lyner matrix |
+| lyner supplement | Supply additional data which may be used for plot colors, for example. |
+| lyner targets | Specify targets for lyner |
+| lyner threshold | Set \|data\| < value to 0, data >= value to 1, -data >= value to -1. |
+| lyner transpose | Transpose a matrix or a selection of columns from a matrix. |
+| lyner uncluster | Uncluster sequences |
 
 ## Reference documentation
 - [Main README and Examples](./references/github_com_tedil_lyner_blob_master_README.md)

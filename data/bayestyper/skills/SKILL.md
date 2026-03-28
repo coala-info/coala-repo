@@ -4,7 +4,6 @@ description: BayesTyper is a probabilistic genotyping framework that uses k-mer 
 homepage: https://github.com/bioinformatics-centre/BayesTyper
 ---
 
-
 # bayestyper
 
 ## Overview

@@ -4,7 +4,6 @@ description: "dx-cwl compiles Common Workflow Language definitions into DNAnexus
 homepage: https://github.com/dnanexus/dx-cwl
 ---
 
-
 # dx-cwl
 
 ## Overview

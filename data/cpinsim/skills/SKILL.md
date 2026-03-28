@@ -4,7 +4,6 @@ description: CPINSim models the stochastic assembly of protein complexes by acco
 homepage: https://github.com/BiancaStoecker/cpinsim
 ---
 
-
 # cpinsim
 
 ## Overview

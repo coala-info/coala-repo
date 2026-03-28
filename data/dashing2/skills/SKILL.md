@@ -4,7 +4,6 @@ description: Dashing2 utilizes advanced sketching algorithms to rapidly estimate
 homepage: https://github.com/dnbaker/dashing2
 ---
 
-
 # dashing2
 
 ## Overview
@@ -56,11 +55,11 @@ To treat every interval as having equal weight regardless of length:
 
 | Command | Description |
 |---------|-------------|
-| cmp | Performs comparisons across inputs, but sketches if necessary. |
+| dashing2 cmp | Performs comparisons across inputs, but sketches if necessary. |
 | dashing2 contain | This application is inspired by mash screen. |
-| printmin | Prints the minimum sketch size for a given k-mer size and sketch size. |
-| sketch | Sketch only generates sketches, while cmp performs comparisons across inputs, but sketches if necessary. |
-| wsketch | Sketch raw IDs, with optional weights added |
+| dashing2 printmin | Prints the minimum sketch size for a given k-mer size and sketch size. |
+| dashing2 sketch | Sketch only generates sketches, while cmp performs comparisons across inputs, but sketches if necessary. |
+| dashing2 wsketch | Sketch raw IDs, with optional weights added |
 
 ## Reference documentation
 - [Dashing2 GitHub README](./references/github_com_dnbaker_dashing2_blob_main_README.md)

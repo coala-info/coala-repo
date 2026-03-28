@@ -4,7 +4,6 @@ description: FastK is a high-performance k-mer counter that generates histograms
 homepage: https://github.com/thegenemyers/FASTK
 ---
 
-
 # fastk
 
 ## Overview

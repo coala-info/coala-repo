@@ -4,7 +4,6 @@ description: StrainR2 provides high-resolution strain quantification from metage
 homepage: https://github.com/BisanzLab/StrainR2
 ---
 
-
 # strainr2
 
 ## Overview

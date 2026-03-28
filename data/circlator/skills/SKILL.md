@@ -4,7 +4,6 @@ description: Circlator is a bioinformatics pipeline designed to circularize geno
 homepage: https://github.com/sanger-pathogens/circlator
 ---
 
-
 # circlator
 
 ## Overview
@@ -69,16 +68,16 @@ For troubleshooting or specific tasks, you can run modules independently:
 
 | Command | Description |
 |---------|-------------|
-| bam2reads | Make reads from mapping to be reassembled |
+| ariba test | Run Circlator on a small test dataset |
 | circlator all | Run mapreads, bam2reads, assemble, merge, clean, fixstart |
+| circlator bam2reads | Make reads from mapping to be reassembled |
+| circlator clean | Clean contigs |
+| circlator merge | Merge original and new assembly |
+| circlator minimus2 | Runs minimus2 circularisation pipeline, see https://github.com/PacificBiosciences/Bioinformatics-Training/wiki/Circularising-and-trimming ... this script is a modified version of that protocol. It first runs minimus2 on the input contigs (unless --no_pre_merge is used). Then it tries to circularise each contig one at a time, by breaking it in the middle and using the two pieces as input to minimus2. If minimus2 outputs one contig, then that new one is assumed to be circularised and is kept, otherwise the original contig is kept. |
 | circlator_assemble | Assemble reads using SPAdes/Canu |
 | circlator_fixstart | Change start point of each sequence in assembly |
 | circlator_get_dnaa | Downloads and filters a file of dnaA (or other) genes from uniprot |
 | circlator_mapreads | Map reads using bwa mem |
-| clean | Clean contigs |
-| merge | Merge original and new assembly |
-| minimus2 | Runs minimus2 circularisation pipeline, see https://github.com/PacificBiosciences/Bioinformatics-Training/wiki/Circularising-and-trimming ... this script is a modified version of that protocol. It first runs minimus2 on the input contigs (unless --no_pre_merge is used). Then it tries to circularise each contig one at a time, by breaking it in the middle and using the two pieces as input to minimus2. If minimus2 outputs one contig, then that new one is assumed to be circularised and is kept, otherwise the original contig is kept. |
-| test | Run Circlator on a small test dataset |
 
 ## Reference documentation
 - [Circlator Wiki Home](./references/github_com_sanger-pathogens_circlator_wiki.md)

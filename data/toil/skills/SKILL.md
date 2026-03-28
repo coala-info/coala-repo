@@ -4,7 +4,6 @@ description: Toil is a scalable pipeline management system designed to execute c
 homepage: https://toil.ucsc-cgl.org/
 ---
 
-
 # toil
 
 ## Overview
@@ -46,17 +45,17 @@ Toil's autoscaler uses a bin-packing approach to match job requirements (mem, co
 
 | Command | Description |
 |---------|-------------|
-| clean | The location of the job store for the workflow. A job store holds persistent information about the jobs, stats, and files in a workflow. |
-| debug-file | Debug and manage files within a Toil job store. |
-| debug-job | Debug a job within a Toil workflow by running it or retrieving its task directory. |
-| destroy-cluster | Destroy a Toil cluster |
-| kill | Kill a Toil workflow and its associated jobs in the job store. |
-| launch-cluster | Launch a Toil cluster with a specified provisioner and node types. |
-| rsync-cluster | Rsync files to or from a Toil cluster leader node. |
-| ssh-cluster | SSH into a Toil managed cluster |
-| stats | The location of the job store for the workflow. A job store holds persistent information about the jobs, stats, and files in a workflow. |
-| status | Report the status of a Toil workflow and its jobs. |
 | toil | Generate a configuration file for Toil. |
+| toil clean | The location of the job store for the workflow. A job store holds persistent information about the jobs, stats, and files in a workflow. |
+| toil debug-file | Debug and manage files within a Toil job store. |
+| toil debug-job | Debug a job within a Toil workflow by running it or retrieving its task directory. |
+| toil destroy-cluster | Destroy a Toil cluster |
+| toil kill | Kill a Toil workflow and its associated jobs in the job store. |
+| toil launch-cluster | Launch a Toil cluster with a specified provisioner and node types. |
+| toil rsync-cluster | Rsync files to or from a Toil cluster leader node. |
+| toil ssh-cluster | SSH into a Toil managed cluster |
+| toil stats | The location of the job store for the workflow. A job store holds persistent information about the jobs, stats, and files in a workflow. |
+| toil status | Report the status of a Toil workflow and its jobs. |
 
 ## Reference documentation
 

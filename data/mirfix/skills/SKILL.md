@@ -4,7 +4,6 @@ description: MIRfix is a bioinformatics pipeline that curates microRNA datasets 
 homepage: https://github.com/Bierinformatik/MIRfix
 ---
 
-
 # mirfix
 
 ## Overview

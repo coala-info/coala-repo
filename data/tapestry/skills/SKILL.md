@@ -4,7 +4,6 @@ description: Tapestry is a toolkit for the manual and automated refinement of cl
 homepage: https://github.com/johnomics/tapestry
 ---
 
-
 # tapestry
 
 ## Overview

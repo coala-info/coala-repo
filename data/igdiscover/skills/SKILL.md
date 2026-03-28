@@ -4,7 +4,6 @@ description: IgDiscover analyzes antibody repertoire sequencing data to identify
 homepage: https://igdiscover.se/
 ---
 
-
 # igdiscover
 
 ## Overview
@@ -49,14 +48,14 @@ igdiscover run
 
 | Command | Description |
 |---------|-------------|
-| augment | Augment AIRR-formatted IgBLAST output with extra IgDiscover-specific columns |
-| clonoquery | Query a table of assigned sequences by clonotype |
-| clonotypes | Group assigned sequences by clonotype |
-| clusterplot | Plot a clustermap of all sequences assigned to a gene |
-| commonv | Find common V genes between two different antibody libraries. |
-| config | Configure igdiscover |
-| dbdiff | Compare two FASTA files based on sequences |
+| igdiscover augment | Augment AIRR-formatted IgBLAST output with extra IgDiscover-specific columns |
+| igdiscover clonoquery | Query a table of assigned sequences by clonotype |
+| igdiscover clonotypes | Group assigned sequences by clonotype |
+| igdiscover clusterplot | Plot a clustermap of all sequences assigned to a gene |
+| igdiscover commonv | Find common V genes between two different antibody libraries. |
+| igdiscover config | Configure igdiscover |
 | igdiscover count | Compute expression counts |
+| igdiscover dbdiff | Compare two FASTA files based on sequences |
 
 ## Reference documentation
 - [IgDiscover Documentation Index](./references/igdiscover_se_index.md)

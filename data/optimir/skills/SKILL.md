@@ -4,7 +4,6 @@ description: OptimiR is a bioinformatics workflow designed for the alignment of 
 homepage: https://github.com/FlorianThibord/OptimiR
 ---
 
-
 # optimir
 
 ## Overview

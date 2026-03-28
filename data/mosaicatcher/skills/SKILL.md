@@ -4,7 +4,6 @@ description: Mosaicatcher analyzes Strand-seq genomic data to generate binned co
 homepage: https://github.com/friendsofstrandseq/mosaicatcher/
 ---
 
-
 # mosaicatcher
 
 ## Overview

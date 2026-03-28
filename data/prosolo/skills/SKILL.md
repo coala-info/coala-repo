@@ -4,7 +4,6 @@ description: ProSolo is a genomic variant caller designed to identify single-nuc
 homepage: https://github.com/PROSIC/prosolo/tree/v0.2.0
 ---
 
-
 # prosolo
 
 ## Overview
@@ -62,9 +61,9 @@ prosolo control-fdr \
 
 | Command | Description |
 |---------|-------------|
-| control-fdr | Filter calls for controlling the false discovery rate (FDR) at given level. |
 | prosolo | Prosolo variants tool |
 | prosolo | ProSolo is a tool for processing and analyzing single-cell RNA sequencing data. |
+| prosolo control-fdr | Filter calls for controlling the false discovery rate (FDR) at given level. |
 | prosolo estimate-mutation-rate | Estimate the effective mutation rate of a tumor sample from a VCF/BCF with candidate variants from STDIN. |
 | prosolo single-cell-bulk | Call somatic and germline variants from a single cell-bulk sample pair and a VCF/BCF with candidate variants. |
 

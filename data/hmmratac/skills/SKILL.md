@@ -4,7 +4,6 @@ description: HMMRATAC is a specialized peak caller that uses a Hidden Markov Mod
 homepage: https://github.com/LiuLabUB/HMMRATAC
 ---
 
-
 # hmmratac
 
 ## Overview

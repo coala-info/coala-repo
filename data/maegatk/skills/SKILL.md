@@ -4,7 +4,6 @@ description: maegatk extracts high-quality mitochondrial genotypes from sequenci
 homepage: https://github.com/caleblareau/maegatk
 ---
 
-
 # maegatk
 
 ## Overview

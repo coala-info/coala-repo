@@ -4,7 +4,6 @@ description: Flexiplex is a high-performance tool designed for error-tolerant de
 homepage: https://github.com/DavidsonGroup/flexiplex/
 ---
 
-
 # flexiplex
 
 ## Overview
@@ -53,6 +52,15 @@ flexiplex -x GCTCTTC -u "??????????" -x GAAA -b "????????????????" -x TTTTTTT -k
     *   For 16bp barcodes, `-e 2` is standard. For ~30bp total flanking sequences, `-f 8` is recommended.
 *   **Read ID Modification**: By default (`-i true`), Flexiplex replaces the read ID with the found Barcode and UMI (e.g., `@BC_UMI#OriginalID`). This is essential for downstream tools like `oarfish` or `nailpolish` that expect CB/UB tags or specific ID formats.
 *   **Filtering Discovery Results**: Always use the companion `flexiplex-filter` script on the `flexiplex_barcodes_counts.txt` file to identify the "knee" or inflection point, which separates real cells from empty droplets or ambient RNA.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| flexiplex | A versatile demultiplexer and search tool for omics data, used for searching and reporting barcodes, UMIs, and flanking sequences in sequencing reads. |
+| flexiplex-filter | A tool to filter flexiplex results, typically processing count data from a file or stdin. |
 
 ## Reference documentation
 - [Flexiplex Documentation Home](./references/davidsongroup_github_io_flexiplex.md)

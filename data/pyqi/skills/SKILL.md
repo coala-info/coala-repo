@@ -4,7 +4,6 @@ description: "pyqi provides APIs for generating, parsing, and evaluating Quantum
 homepage: https://github.com/qir-alliance/pyqir
 ---
 
-
 # pyqi
 
 Provides APIs for generating, parsing, and evaluating Quantum Intermediate Representation (QIR).
@@ -39,6 +38,18 @@ A key use case for `pyqi` is its seamless integration into existing Python-based
 *   **Leverage `qirlib` for advanced scenarios:** For more complex QIR manipulation and LLVM-based operations, consider the underlying Rust library `qirlib` which `pyqi` wraps.
 *   **Understand QIR structure:** Familiarize yourself with the structure of QIR, which is based on LLVM IR, to effectively generate and parse it.
 *   **Explore examples:** The `examples/` directory in the `pyqir` repository (as seen in `github_com_qir-alliance_pyqir.md`) is a valuable resource for understanding practical usage patterns.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| pyqi make-bash-completion | Construct a bash tab completion script that will search through available commands and options |
+| pyqi make-command | This command is intended to construct the basics of a Command object so that a developer can dive straight into the implementation of the command |
+| pyqi make-optparse | Construct and stub out the basic optparse configuration for a given Command. This template provides comments and examples of what to fill in. |
+| pyqi make-release | Do all the things for a release |
+| pyqi serve-html-interface | Start the HTMLInterface server and load the provided interface_module and port |
 
 ## Reference documentation
 - [PyQIR GitHub Repository Overview](./references/github_com_qir-alliance_pyqir.md)

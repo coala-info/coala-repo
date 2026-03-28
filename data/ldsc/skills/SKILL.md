@@ -4,7 +4,6 @@ description: ldsc is a command-line toolset for estimating heritability and gene
 homepage: https://github.com/bulik/ldsc/
 ---
 
-
 # ldsc
 
 ## Overview

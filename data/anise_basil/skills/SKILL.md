@@ -4,7 +4,6 @@ description: The anise_basil toolset discovers and reconstructs novel genomic se
 homepage: https://github.com/seqan/anise_basil
 ---
 
-
 # anise_basil
 
 ## Overview
@@ -72,6 +71,7 @@ Since ANISE assembles sequence both inside and slightly flanking the insertion, 
 | Command | Description |
 |---------|-------------|
 | anise | Assembly of Novel Inserted SEquence. ANISE will try to assemble the inserted sequences at the sites in IN.vcf and write the assembled sequences to OUT.vcf. |
+| basil | Scan SAM/BAM file MAPPING for signatures of structural variations. |
 | filter_basil.py | Filter BASIL output VCF. |
 
 ## Reference documentation

@@ -4,7 +4,6 @@ description: jobTree is a Python-based pipeline management system designed for e
 homepage: https://github.com/benedictpaten/jobTree
 ---
 
-
 # jobtree
 
 ## Overview

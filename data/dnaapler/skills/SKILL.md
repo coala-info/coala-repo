@@ -4,7 +4,6 @@ description: "dnaapler reorients circular microbial genome assemblies to begin a
 homepage: https://github.com/gbouras13/dnaapler
 ---
 
-
 # dnaapler
 
 ## Overview
@@ -59,9 +58,9 @@ dnaapler all -i input.fasta -o out -p test --ignore exclude_list.txt
 | dnaapler largest | Finds the largest contig in a FASTA or GFA file. |
 | dnaapler mystery | Mystery tool for dnaapler |
 | dnaapler nearest | Find the nearest reference genome for each input sequence. |
+| dnaapler phage | Run dnaapler on phage genomes |
 | dnaapler plasmid | Runs the plasmid detection pipeline. |
 | dnaapler_custom | Custom reorientation of sequences using a custom MMseqs2 database. |
-| phage | Run dnaapler on phage genomes |
 
 ## Reference documentation
 - [github_com_gbouras13_dnaapler_blob_main_README.md](./references/github_com_gbouras13_dnaapler_blob_main_README.md)

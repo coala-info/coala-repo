@@ -4,7 +4,6 @@ description: Minnow is a read-level simulation framework that generates raw sequ
 homepage: https://github.com/COMBINE-lab/minnow
 ---
 
-
 # minnow
 
 ## Overview

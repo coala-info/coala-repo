@@ -4,7 +4,6 @@ description: PopIns2 discovers and genotypes large non-reference insertions acro
 homepage: https://github.com/kehrlab/PopIns2
 ---
 
-
 # popins2
 
 ## Overview
@@ -72,11 +71,11 @@ popins2 genotype <sample_id>
 
 | Command | Description |
 |---------|-------------|
-| assemble | Assembly of unmapped reads. |
-| contigmap | Alignment of unmapped reads to assembled contigs. |
-| multik | Multi-k framework for a colored and compacted de Bruijn Graph (CCDBG) |
+| popins2 assemble | Assembly of unmapped reads. |
+| popins2 contigmap | Alignment of unmapped reads to assembled contigs. |
 | popins2 genotype | Computes genotype likelihoods for a sample for all insertions given in the input VCF file by aligning all reads, which are mapped to the reference genome around the insertion breakpoint or to the contig, to the reference and to the alternative insertion sequence. VCF records with the genotype likelihoods in GT:PL format for the individual are written to a file insertions.vcf in the sample directory. |
 | popins2 merge | Build or read a colored and compacted de Bruijn Graph (CCDBG) and generate supercontigs. |
+| popins2 multik | Multi-k framework for a colored and compacted de Bruijn Graph (CCDBG) |
 | popins2 place-finish | Combining breakpoint positions from split-read alignment. |
 | popins2 place-refalign | Contig placing by alignment of contig ends to reference genome. |
 | popins2 place-splitalign | Contig placing by split-read alignment. |

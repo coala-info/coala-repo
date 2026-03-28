@@ -4,7 +4,6 @@ description: metaGEM is a Snakemake-based pipeline that automates the workflow f
 homepage: https://github.com/franciscozorrilla/metaGEM
 ---
 
-
 # metagem
 
 ## Overview

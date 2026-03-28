@@ -4,7 +4,6 @@ description: This tool automates the retrieval, standardization, and relabeling 
 homepage: https://github.com/PGScatalog/pygscatalog/
 ---
 
-
 # pgscatalog.core
 
 ## Overview

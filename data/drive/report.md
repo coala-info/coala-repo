@@ -7,14 +7,15 @@ Gives information about the drive.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/drive:0.3.9--0
-- **Homepage**: https://github.com/kamranahmedse/driver.js
+- **Homepage**: https://github.com/odeke-em/drive
 - **Package**: Not found
 - **Validation**: PASS
+- **readme**: https://raw.githubusercontent.com/odeke-em/drive/refs/heads/master/README.md
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/drive/overview
 - **Total Downloads**: 10.4K
 - **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/kamranahmedse/driver.js
+- **GitHub**: https://github.com/odeke-em/drive
 - **Stars**: N/A
 ### Original Help Text
 ```text
@@ -887,4 +888,4 @@ Usage of unpub:
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

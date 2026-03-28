@@ -4,7 +4,6 @@ description: Newmap determines genome mappability by identifying the shortest un
 homepage: https://github.com/hoffmangroup/newmap
 ---
 
-
 # newmap
 
 ## Overview
@@ -55,9 +54,9 @@ newmap track --single-read=output.bed --multi-read=output.wig <read_length> uniq
 
 | Command | Description |
 |---------|-------------|
+| newmap search | Search for unique k-mers in a FASTA file. |
 | newmap_index | Create an index for a FASTA file. |
 | newmap_track | Calculate mappability values based on read length and unique count files. |
-| search | Search for unique k-mers in a FASTA file. |
 
 ## Reference documentation
 - [Newmap README](./references/github_com_hoffmangroup_newmap_blob_master_README.md)

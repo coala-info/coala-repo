@@ -4,7 +4,6 @@ description: jvarkit is a suite of Java-based bioinformatics utilities designed 
 homepage: https://github.com/lindenb/jvarkit
 ---
 
-
 # jvarkit
 
 ## Overview
@@ -70,10 +69,10 @@ jvarkit is frequently used to bridge the gap between bioinformatics formats and 
 | bam2raster | Create raster images from BAM files. |
 | bam2sql | Convert BAM files to SQL |
 | bam2svg | Create SVG images from BAM files. |
-| bamclip2insertion | Clip reads to a given insertion point and output them as BAM. |
 | bamcmpcoverage | Calculate coverage statistics for BAM files. |
 | bamliftover | LiftOver BAM/SAM/CRAM files to a new reference genome. |
 | bammatrix | Create a matrix of read counts per region. |
+| jvarkit bamclip2insertion | Clip reads to a given insertion point and output them as BAM. |
 | jvarkit_bam2haplotypes | Create haplotypes from BAM files based on variants in a VCF file. |
 | jvarkit_bam2xml | Convert BAM to XML |
 

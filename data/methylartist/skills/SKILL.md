@@ -4,7 +4,6 @@ description: Methylartist is a toolkit for processing, aggregating, and visualiz
 homepage: https://github.com/adamewing/methylartist
 ---
 
-
 # methylartist
 
 ## Overview
@@ -51,19 +50,19 @@ To compare methylation across different regions (e.g., comparing WT vs. Mutant a
 
 | Command | Description |
 |---------|-------------|
-| adjustcutoffs | Adjust methylation cutoffs in a methylartist database |
-| composite | Generate composite methylation plots for transposable elements or other genomic features. |
-| db-custom | Create or update a methylartist database from a custom per-read methylation output table. |
-| db-guppy | Process Guppy-called fast5 files to generate a methylation database |
-| db-megalodon | Process megalodon per_read_text methylation output into a database |
-| db-nanopolish | Process nanopolish methylation output into a database |
-| db-sub | Methylartist database submission/subcommand tool |
-| locus | Plot methylation data for a specific genomic locus, including alignments, smoothed methylation profiles, and gene annotations. |
-| region | Plot methylation data for a specific genomic region, including alignment tracks, smoothed methylation profiles, and gene annotations. |
-| scoredist | Plot the distribution of modification scores from methylartist databases or BAM files. |
-| segmeth | Segmented methylation analysis tool for calculating methylation levels over specific intervals. |
-| segplot | Generate segmentation plots from methylartist segmeth output |
-| wgmeth | Whole-genome methylation calling and processing tool |
+| methylartist adjustcutoffs | Adjust methylation cutoffs in a methylartist database |
+| methylartist composite | Generate composite methylation plots for transposable elements or other genomic features. |
+| methylartist db-custom | Create or update a methylartist database from a custom per-read methylation output table. |
+| methylartist db-guppy | Process Guppy-called fast5 files to generate a methylation database |
+| methylartist db-megalodon | Process megalodon per_read_text methylation output into a database |
+| methylartist db-nanopolish | Process nanopolish methylation output into a database |
+| methylartist db-sub | Methylartist database submission/subcommand tool |
+| methylartist locus | Plot methylation data for a specific genomic locus, including alignments, smoothed methylation profiles, and gene annotations. |
+| methylartist region | Plot methylation data for a specific genomic region, including alignment tracks, smoothed methylation profiles, and gene annotations. |
+| methylartist scoredist | Plot the distribution of modification scores from methylartist databases or BAM files. |
+| methylartist segmeth | Segmented methylation analysis tool for calculating methylation levels over specific intervals. |
+| methylartist segplot | Generate segmentation plots from methylartist segmeth output |
+| methylartist wgmeth | Whole-genome methylation calling and processing tool |
 
 ## Reference documentation
 - [methylartist GitHub Repository](./references/github_com_adamewing_methylartist_blob_main_README.md)

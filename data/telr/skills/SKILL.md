@@ -4,7 +4,6 @@ description: TELR identifies transposable element insertions in long-read sequen
 homepage: https://github.com/bergmanlab/telr
 ---
 
-
 # telr
 
 ## Overview
@@ -63,6 +62,7 @@ TELR allows swapping components based on your data quality and computational res
 | minimap2 | Minimap2 is a versatile tool for sequence alignment. It can be used for various tasks including indexing reference genomes, mapping long reads (PacBio, Nanopore), short reads, and performing overlap detection for assembly. |
 | ngmlr | ngmlr 0.2.7 (build: Feb 21 2022 18:53:53, start: 2026-02-25.22:02:43) |
 | sniffles | Structural Variant Caller |
+| telr | Program for detecting non-reference TEs in long read data |
 
 ## Reference documentation
 - [TELR Usage Guide](./references/github_com_bergmanlab_TELR_blob_master_docs_02_Usage.md)

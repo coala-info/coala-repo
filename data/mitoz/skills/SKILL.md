@@ -4,7 +4,6 @@ description: MitoZ is a specialized bioinformatic pipeline that performs de novo
 homepage: https://github.com/linzhi2013/MitoZ
 ---
 
-
 # mitoz
 
 ## Overview
@@ -67,12 +66,12 @@ MitoZ includes a suite of auxiliary commands for post-processing:
 
 | Command | Description |
 |---------|-------------|
-| annotate | Annotate PCGs, tRNA and rRNA genes. |
 | mitoz all | Run all steps for mitochondrial genome anlysis from input fastq files. |
+| mitoz annotate | Annotate PCGs, tRNA and rRNA genes. |
 | mitoz assemble | Mitochondrial genome assembly from input fastq files. |
+| mitoz visualize | Visualize input GenBank file. |
 | mitoz_filter | Filter input fastq reads. |
 | mitoz_findmitoscaf | Search for mitochondrial sequences from input fasta file. |
-| visualize | Visualize input GenBank file. |
 
 ## Reference documentation
 - [MitoZ Wiki Home](./references/github_com_linzhi2013_MitoZ_wiki.md)

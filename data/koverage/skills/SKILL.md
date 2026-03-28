@@ -4,7 +4,6 @@ description: "Koverage generates coverage statistics from sequencing reads and r
 homepage: https://github.com/beardymcjohnface/Koverage
 ---
 
-
 # koverage
 
 ## Overview
@@ -85,8 +84,8 @@ koverage run --reads readDir --ref assembly.fasta --profile mySlurmProfile
 
 | Command | Description |
 |---------|-------------|
-| config | Copy the system default config file |
-| run | Run Koverage |
+| koverage config | Copy the system default config file |
+| koverage run | Run Koverage |
 | snakemake | Snakemake is a Python based language and execution environment for GNU Make-like workflows. |
 
 ## Reference documentation

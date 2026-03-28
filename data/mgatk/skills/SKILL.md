@@ -4,7 +4,6 @@ description: mgatk processes mitochondrial reads from single-cell or bulk sequen
 homepage: https://github.com/caleblareau/mgatk
 ---
 
-
 # mgatk
 
 ## Overview
@@ -64,12 +63,12 @@ mgatk del -i input.bam -n sample_name -o output_dir -m chrM
 
 | Command | Description |
 |---------|-------------|
-| bcall | mgatk: a mitochondrial genome analysis toolkit. bcall mode is used for mitochondrial genome analysis from single-cell data (e.g., with barcodes). |
-| call | mgatk: a mitochondrial genome analysis toolkit. Mitochondrial genome analysis for 'call' mode. |
-| check | mgatk: a mitochondrial genome analysis toolkit. check mode. |
-| remove-background | mgatk: a mitochondrial genome analysis toolkit. remove-background mode. |
-| support | mgatk: a mitochondrial genome analysis toolkit. Support mode for mitochondrial genome analysis. |
-| tenx | mgatk: a mitochondrial genome analysis toolkit. Mode: tenx. |
+| mgatk bcall | mgatk: a mitochondrial genome analysis toolkit. bcall mode is used for mitochondrial genome analysis from single-cell data (e.g., with barcodes). |
+| mgatk call | mgatk: a mitochondrial genome analysis toolkit. Mitochondrial genome analysis for 'call' mode. |
+| mgatk check | mgatk: a mitochondrial genome analysis toolkit. check mode. |
+| mgatk remove-background | mgatk: a mitochondrial genome analysis toolkit. remove-background mode. |
+| mgatk support | mgatk: a mitochondrial genome analysis toolkit. Support mode for mitochondrial genome analysis. |
+| mgatk tenx | mgatk: a mitochondrial genome analysis toolkit. Mode: tenx. |
 
 ## Reference documentation
 - [An overview of mgatk's modes](./references/github_com_caleblareau_mgatk_wiki_Modes.md)

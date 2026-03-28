@@ -4,7 +4,6 @@ description: mdmcleaner is a bioinformatics pipeline designed to identify and re
 homepage: https://github.com/KIT-IBG-5/mdmcleaner
 ---
 
-
 # mdmcleaner
 
 ## Overview
@@ -72,15 +71,15 @@ mdmcleaner uses a hierarchy where CLI arguments override local configs, and loca
 
 | Command | Description |
 |---------|-------------|
-| check_dependencies | Checks if all required dependencies for MDMcleaner are met. |
-| get_markers | Extracts marker genes from input FASTA files. |
-| makedb | Builds the reference database for MDMcleaner. |
 | mdmcleaner acc2taxpath | Convert accessions to taxonomic paths. |
+| mdmcleaner check_dependencies | Checks if all required dependencies for MDMcleaner are met. |
 | mdmcleaner completeness | Completeness analysis for mdmcleaner |
+| mdmcleaner get_markers | Extracts marker genes from input FASTA files. |
+| mdmcleaner makedb | Builds the reference database for MDMcleaner. |
 | mdmcleaner refdb_contams | Analyze the ambiguity report file to identify and manage contaminants in a reference database. |
+| mdmcleaner set_configs | Set mdmcleaner configuration options. |
+| mdmcleaner show_configs | Show MDMcleaner configurations |
 | mdmcleaner_clean | Clean input fastas of genomes and/or bins. |
-| set_configs | Set mdmcleaner configuration options. |
-| show_configs | Show MDMcleaner configurations |
 
 ## Reference documentation
 - [MDMcleaner GitHub Overview](./references/github_com_KIT-IBG-5_mdmcleaner.md)

@@ -4,7 +4,6 @@ description: "MindaGap repairs tiled panorama images by filling grid gaps and id
 homepage: https://github.com/ViriatoII/MindaGap
 ---
 
-
 # mindagap
 
 ## Overview

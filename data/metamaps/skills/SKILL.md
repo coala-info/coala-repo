@@ -4,7 +4,6 @@ description: MetaMaps performs high-resolution taxonomic assignment and abundanc
 homepage: https://github.com/DiltheyLab/MetaMaps
 ---
 
-
 # metamaps
 
 ## Overview

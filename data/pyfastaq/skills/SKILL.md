@@ -4,7 +4,6 @@ description: pyfastaq is a toolkit for the rapid manipulation and transformation
 homepage: https://github.com/sanger-pathogens/Fastaq
 ---
 
-
 # pyfastaq
 
 ## Overview
@@ -69,24 +68,24 @@ fastaq reverse_complement input.fastq.gz - | fastaq translate - output.fasta
 
 | Command | Description |
 |---------|-------------|
-| count_sequences | Count the number of sequences in a FASTA or FASTQ file. |
-| deinterleave | Deinterleaves a FASTAQ file into two separate FASTAQ files. |
 | fastaq | A command-line tool for manipulating FASTA and FASTQ files. |
-| interleave | Interleave two FASTA files. |
+| fastaq interleave | Interleave two FASTA files. |
+| pyfastaq fastaq count_sequences | Count the number of sequences in a FASTA or FASTQ file. |
+| pyfastaq fastaq deinterleave | Deinterleaves a FASTAQ file into two separate FASTAQ files. |
+| pyfastaq fastaq reverse_complement | Reverse complement a FASTA file |
+| pyfastaq fastaq scaffolds_to_contigs | Convert scaffolds to contigs |
+| pyfastaq fastaq sort_by_name | Sort FASTA/FASTQ records by name. |
+| pyfastaq fastaq sort_by_size | Sort FASTA/FASTQ files by sequence length. |
+| pyfastaq fastaq strip_illumina_suffix | Remove Illumina suffix from FASTA/FASTQ IDs |
+| pyfastaq fastaq to_fake_qual | Convert FASTA to FASTQ with fake quality scores. |
+| pyfastaq fastaq to_random_subset | Select a random subset of sequences from a FASTA file. |
+| pyfastaq fastaq to_unique_by_id | Remove duplicate sequences from a FASTA or FASTQ file, keeping only the first occurrence of each sequence ID. |
+| pyfastaq fastaq trim_Ns_at_end | Remove Ns from the ends of sequences. |
 | pyfastaq_fastaq | Convert FASTA to FASTQ format. |
 | pyfastaq_fastaq acgtn_only | Filter FASTA/FASTQ sequences to only include ACGTN characters. |
 | pyfastaq_fastaq filter | Filter FASTA/FASTQ files based on various criteria. |
 | pyfastaq_fastaq to_fasta | Convert FASTA to FASTA format. |
 | pyfastaq_fastaq_translate | Translate DNA sequences to protein sequences. |
-| reverse_complement | Reverse complement a FASTA file |
-| scaffolds_to_contigs | Convert scaffolds to contigs |
-| sort_by_name | Sort FASTA/FASTQ records by name. |
-| sort_by_size | Sort FASTA/FASTQ files by sequence length. |
-| strip_illumina_suffix | Remove Illumina suffix from FASTA/FASTQ IDs |
-| to_fake_qual | Convert FASTA to FASTQ with fake quality scores. |
-| to_random_subset | Select a random subset of sequences from a FASTA file. |
-| to_unique_by_id | Remove duplicate sequences from a FASTA or FASTQ file, keeping only the first occurrence of each sequence ID. |
-| trim_Ns_at_end | Remove Ns from the ends of sequences. |
 
 ## Reference documentation
 - [GitHub Repository Overview](./references/github_com_sanger-pathogens_Fastaq.md)

@@ -4,7 +4,6 @@ description: Hostile removes host DNA sequences from metagenomic datasets using 
 homepage: https://github.com/bede/hostile
 ---
 
-
 # hostile
 
 ## Overview
@@ -58,9 +57,9 @@ cat reads.fastq.gz | hostile clean --fastq1 - --output - | gzip > decontaminated
 
 | Command | Description |
 |---------|-------------|
-| clean | Remove reads aligning to an index from fastq[.gz] input files or stdin. |
-| index | Manage and download indexes for use with hostile clean |
-| mask | Mask reference genome against target genome(s) |
+| hostile clean | Remove reads aligning to an index from fastq[.gz] input files or stdin. |
+| hostile index | Manage and download indexes for use with hostile clean |
+| hostile mask | Mask reference genome against target genome(s) |
 
 ## Reference documentation
 - [Hostile README](./references/github_com_bede_hostile_blob_main_README.md)

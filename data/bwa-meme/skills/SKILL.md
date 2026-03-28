@@ -4,7 +4,6 @@ description: BWA-MEME is a high-performance genomic alignment tool that uses mac
 homepage: https://github.com/kaist-ina/BWA-MEME
 ---
 
-
 # bwa-meme
 
 ## Overview
@@ -69,8 +68,8 @@ make -j<threads> MODE=1
 | Command | Description |
 |---------|-------------|
 | build_rmis_dna.sh | Learned-index training script for BWA-MEME. For human reference, training requires around 15 minutes and 64GB memory. |
-| index | Build an index for a FASTA file using various BWT construction algorithms, including MEME. |
-| mem | BWA-MEME (bwa-mem2) alignment tool using learned or ERT indexes for seeding. |
+| bwa-meme index | Build an index for a FASTA file using various BWT construction algorithms, including MEME. |
+| bwa-meme mem | BWA-MEME (bwa-mem2) alignment tool using learned or ERT indexes for seeding. |
 
 ## Reference documentation
 - [BWA-MEME README](./references/github_com_kaist-ina_BWA-MEME_blob_master_README.md)

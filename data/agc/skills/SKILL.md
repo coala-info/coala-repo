@@ -4,7 +4,6 @@ description: The Assembled Genomes Compressor (AGC) performs multi-genome compre
 homepage: https://github.com/refresh-bio/agc
 ---
 
-
 # agc
 
 ## Overview
@@ -54,15 +53,15 @@ Extraction is the primary advantage of AGC, allowing for sub-second retrieval of
 
 | Command | Description |
 |---------|-------------|
-| append | Assembled Genomes Compressor - append genomes to an existing archive |
-| create | AGC (Assembled Genomes Compressor) - Create a compressed archive from assembled genomes in FASTA format. |
-| getcol | Assembled Genomes Compressor - get collection of sequences |
-| getctg | Extract contigs from an AGC (Assembled Genomes Compressor) file. Supports various formats for specifying contigs, samples, and ranges. |
-| getset | Assembled Genomes Compressor - extract a set of samples from an AGC file |
-| info | AGC (Assembled Genomes Compressor) - Get information about an AGC file |
-| listctg | List contigs in an AGC (Assembled Genomes Compressor) file for specified samples. |
-| listref | List reference genomes in an AGC (Assembled Genomes Compressor) file |
-| listset | List datasets in an Assembled Genomes Compressor (AGC) file |
+| agc append | Assembled Genomes Compressor - append genomes to an existing archive |
+| agc create | AGC (Assembled Genomes Compressor) - Create a compressed archive from assembled genomes in FASTA format. |
+| agc getcol | Assembled Genomes Compressor - get collection of sequences |
+| agc getctg | Extract contigs from an AGC (Assembled Genomes Compressor) file. Supports various formats for specifying contigs, samples, and ranges. |
+| agc getset | Assembled Genomes Compressor - extract a set of samples from an AGC file |
+| agc info | AGC (Assembled Genomes Compressor) - Get information about an AGC file |
+| agc listctg | List contigs in an AGC (Assembled Genomes Compressor) file for specified samples. |
+| agc listref | List reference genomes in an AGC (Assembled Genomes Compressor) file |
+| agc listset | List datasets in an Assembled Genomes Compressor (AGC) file |
 
 ## Reference documentation
 - [Assembled Genomes Compressor README](./references/github_com_refresh-bio_agc_blob_main_README.md)

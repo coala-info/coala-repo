@@ -4,7 +4,6 @@ description: "pytransaln aligns nucleotide sequences by translating them into am
 homepage: https://github.com/monagrland/pytransaln
 ---
 
-
 # pytransaln
 
 ## Overview

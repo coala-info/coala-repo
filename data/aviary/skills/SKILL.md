@@ -4,7 +4,6 @@ description: Aviary is a Snakemake-based wrapper that automates complex metageno
 homepage: https://github.com/rhysnewell/aviary/
 ---
 
-
 # aviary
 
 ## Overview

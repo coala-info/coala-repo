@@ -4,7 +4,6 @@ description: "MSIsensor detects replication slippage variants at microsatellite 
 homepage: https://github.com/ding-lab/msisensor
 ---
 
-
 # msisensor
 
 Detects replication slippage variants at microsatellite regions and differentiates them as somatic or germline.
@@ -46,6 +45,16 @@ MSIsensor generates output files that detail the detected microsatellite variant
 *   **Reference Consistency**: Use the same reference genome for both tumor and normal BAM files.
 *   **Parameter Tuning**: While specific parameters are not detailed here, be aware that advanced usage might involve tuning parameters related to window size, minimum variant length, or statistical thresholds. Consult the tool's full documentation if available for these options.
 *   **Archived Repository**: Note that the primary repository for `msisensor` (ding-lab/msisensor) has been archived. For the latest developments or support, consider looking for newer versions or related projects like `msisensor-pro` or `msisensor2` as mentioned in the documentation.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| msisensor | homopolymer and miscrosatelite analysis using bam files |
+| msisensor msi | Calculate MSI score and distribution |
+| msisensor_scan | Scan for homopolymers and microsatellites in a reference genome. |
 
 ## Reference documentation
 - [MSIsensor Overview](https://anaconda.org/bioconda/msisensor)

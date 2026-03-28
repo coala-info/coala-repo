@@ -4,7 +4,6 @@ description: ProPhyle is a DNA sequence classifier that uses k-mer based approac
 homepage: https://github.com/karel-brinda/prophyle
 ---
 
-
 # prophyle
 
 ## Overview
@@ -66,10 +65,10 @@ prophyle analyze <index_prefix> <assignments.txt> <output_prefix>
 
 | Command | Description |
 |---------|-------------|
-| classify | Classify reads using a prophyle index. |
-| decompress | Decompress a prophyle archive |
 | prophyle analyze | Analyze classified reads based on an index directory or phylogenetic tree. |
+| prophyle classify | Classify reads using a prophyle index. |
 | prophyle compress | Compresses a prophyle index directory into a tar.gz archive. |
+| prophyle decompress | Decompress a prophyle archive |
 | prophyle download | Download genomic libraries and associated data. |
 | prophyle_classify | Classify reads based on a prophyle index. |
 | prophyle_compile | Compile prophyle database |

@@ -4,7 +4,6 @@ description: This tool converts BED genomic feature records into PSL alignment r
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
 
-
 # ucsc-bedtopsl
 
 ## Overview
@@ -36,6 +35,7 @@ bedToPsl chrom.sizes input.bed output.psl
 | Command | Description |
 |---------|-------------|
 | bedSort | Sort a BED file. The input and output can be the same file. |
+| bedToPsl | Convert BED format to PSL format. |
 | fetchChromSizes | Fetch chromosome sizes for a specified UCSC genome database (e.g., hg38, mm10). |
 | pslCheck | Check PSL files for correctness. |
 

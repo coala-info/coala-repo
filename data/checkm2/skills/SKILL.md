@@ -4,7 +4,6 @@ description: CheckM2 is a machine learning-based tool used to assess the quality
 homepage: https://github.com/chklovski/CheckM2
 ---
 
-
 # checkm2
 
 ## Overview
@@ -64,7 +63,7 @@ checkm2 predict --input <in> -o <out> --remove_intermediates
 |---------|-------------|
 | checkm2 | checkm2: error: argument subparser_name: invalid choice: 'directory' (choose from predict, testrun, database) |
 | checkm2 predict | Predict the completeness and contamination of genome bins in a folder. |
-| testrun | Runs Checkm2 on internal test genomes to ensure it runs without errors. |
+| checkm2 testrun | Runs Checkm2 on internal test genomes to ensure it runs without errors. |
 
 ## Reference documentation
 - [CheckM2 GitHub README](./references/github_com_chklovski_CheckM2_blob_main_README.md)

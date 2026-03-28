@@ -4,7 +4,6 @@ description: GLIMPSE2 recovers high-density genotype and haplotype information f
 homepage: https://odelaneau.github.io/GLIMPSE/
 ---
 
-
 # glimpse-bio
 
 ## Overview

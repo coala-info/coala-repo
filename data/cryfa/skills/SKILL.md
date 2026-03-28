@@ -4,7 +4,6 @@ description: "Cryfa is a security and compression utility that encrypts genomic 
 homepage: https://github.com/smortezah/cryfa
 ---
 
-
 # cryfa
 
 ## Overview
@@ -66,6 +65,15 @@ Cryfa requires a key file containing a password of at least 8 characters.
     ```
 *   **Security Standards:** For maximum security, always use the `keygen` utility. A "strong" password should be at least 12 characters and include a mix of cases, digits, and symbols.
 *   **Performance:** When working with high-throughput sequencing data (large FASTQ files), always specify the `-t` flag matching your available CPU cores to significantly reduce processing time.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| cryfa | A secure encryption tool for genomic data. Compacts and encrypts FASTA/FASTQ files, or encrypts any text-based genomic data like VCF/SAM/BAM. |
+| cryfa_keygen | A utility to generate a key for Cryfa encryption by providing a password and an output file path. |
 
 ## Reference documentation
 - [Cryfa GitHub README](./references/github_com_smortezah_cryfa_blob_master_README.md)

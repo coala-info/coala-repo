@@ -4,7 +4,6 @@ description: Change-O is a suite of command-line utilities for processing B cell
 homepage: http://changeo.readthedocs.io
 ---
 
-
 # changeo
 
 ## Overview

@@ -4,7 +4,6 @@ description: Crux is a framework for building cross-platform applications with a
 homepage: https://github.com/redbadger/crux
 ---
 
-
 # crux
 
 ## Overview
@@ -86,7 +85,6 @@ Instead of calling APIs directly, use Crux Capabilities to request actions:
 
 | Command | Description |
 |---------|-------------|
-| bullseye | Bullseye will search for PPIDs in these spectra. Bullseye will assign high-resolution precursor masses to these spectra. |
 | crux | Supports a variety of primary and utility commands for mass spectrometry data analysis. |
 | crux | crux supports the following primary commands: |
 | crux | Crux supports the following primary commands and utility commands. |
@@ -121,31 +119,32 @@ Instead of calling APIs directly, use Crux Capabilities to request actions:
 | crux | Crux is a suite of tools for analyzing mass spectrometry data. |
 | crux assign-confidence | Assign confidence estimates to peptide-spectrum matches (PSMs). |
 | crux barista | Barista is a tool for identifying peptides from tandem mass spectra. |
+| crux bullseye | Bullseye will search for PPIDs in these spectra. Bullseye will assign high-resolution precursor masses to these spectra. |
 | crux cascade-search | Searches spectra against a series of databases in a cascade. |
 | crux comet | Comet is a widely used open-source tandem mass spectrometry search algorithm. |
 | crux extract-columns | Extracts specified columns from a tab-delimited file. |
 | crux extract-rows | Extract rows from a TSV file based on a column value. |
 | crux generate-peptides | Generate peptides from a protein FASTA file. |
 | crux get-ms2-spectrum | Parse fragmentation spectra from MS2 files. |
+| crux hardklor | Parses high-resolution spectra from a file. |
 | crux localize-modification | Localize modifications in PSM files. |
 | crux make-pin | Creates a pin file from one or more input files containing peptide-spectrum matches (PSMs). |
 | crux param-medic | Parse fragmentation spectra to estimate measurement error. |
 | crux pipeline | Run the Crux pipeline for peptide identification. |
 | crux predict-peptide-ions | Predict theoretical peptide ions. |
 | crux print-processed-spectra | Parse fragmentation spectra from MS2 files and write processed spectra to an output file. |
+| crux psm-convert | Convert PSM files to different formats. |
 | crux q-ranker | Rank fragmentation spectra using search results. |
+| crux search-for-xlinks | Search for cross-linked peptides in MS2 and FASTA files. |
+| crux sort-by-column | Sorts a tab-delimited file by the values in a specified column. |
+| crux spectral-counts | Calculate spectral counts for PSMs. |
 | crux stat-column | Extracts a column from a tab-delimited file. |
 | crux subtract-index | A new peptide index containing all peptides that occur in the first index but not the second. |
 | crux tide-index | Create a peptide index for the tide search engine. |
 | crux tide-search | Search for peptides in mass spectrometry data using the Tide algorithm. |
 | crux xlink-assign-ions | Assigns cross-linked peptides to MS/MS spectra. |
 | crux xlink-score-spectrum | Score cross-linked peptides based on their mass spectrum. |
-| hardklor | Parses high-resolution spectra from a file. |
 | percolator | Percolator is a widely used tool for the statistical validation and rescoring of peptide identification results from mass spectrometry. |
-| psm-convert | Convert PSM files to different formats. |
-| search-for-xlinks | Search for cross-linked peptides in MS2 and FASTA files. |
-| sort-by-column | Sorts a tab-delimited file by the values in a specified column. |
-| spectral-counts | Calculate spectral counts for PSMs. |
 
 ## Reference documentation
 - [README.md](./references/github_com_redbadger_crux.md)

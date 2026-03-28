@@ -4,7 +4,6 @@ description: handyreadgenotyper classifies Oxford Nanopore multiplex PCR reads a
 homepage: https://github.com/AntonS-bio/HandyReadGenotyper
 ---
 
-
 # handyreadgenotyper
 
 ## Overview

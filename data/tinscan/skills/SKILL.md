@@ -4,7 +4,6 @@ description: tinscan scans whole-genome alignments to identify transposable elem
 homepage: https://github.com/Adamtaranto/TE-insertion-scanner
 ---
 
-
 # tinscan
 
 ## Overview

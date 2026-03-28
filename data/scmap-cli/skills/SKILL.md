@@ -4,7 +4,6 @@ description: scmap-cli projects single-cell RNA-seq datasets across different ex
 homepage: https://github.com/ebi-gene-expression-group/scmap-cli
 ---
 
-
 # scmap-cli
 
 ## Overview

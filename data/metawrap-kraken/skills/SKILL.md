@@ -4,7 +4,6 @@ description: This tool performs taxonomic classification and visualization of me
 homepage: https://github.com/bxlab/metaWRAP
 ---
 
-
 # metawrap-kraken
 
 ## Overview
@@ -51,8 +50,8 @@ metawrap kraken2 -o KRAKEN2_OUT -t 24 sample_1.fastq sample_2.fastq
 
 | Command | Description |
 |---------|-------------|
-| kraken | Run on any number of fasta assembly files and/or or paired-end reads. |
 | metawrap | Please select a proper module of metaWRAP. |
+| metawrap kraken | Run on any number of fasta assembly files and/or or paired-end reads. |
 
 ## Reference documentation
 - [MetaWRAP README](./references/github_com_bxlab_metaWRAP_blob_master_README.md)

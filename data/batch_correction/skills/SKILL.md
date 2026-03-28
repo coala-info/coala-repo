@@ -4,7 +4,6 @@ description: This tool applies a single correction or transformation to a collec
 homepage: https://github.com/USTCPCS/CVPR2018_attention
 ---
 
-
 # batch_correction
 
 ## Overview
@@ -28,6 +27,16 @@ The `batch_correction` tool is primarily used via its command-line interface. Wh
 *   **Understand Tool Dependencies**: If `batch_correction` relies on other libraries or tools (e.g., for specific image processing functions), ensure these dependencies are correctly installed in your environment. The Anaconda.org page suggests it's available via `conda` in the `bioconda` channel, implying it's a Python-based tool.
 *   **Output Directory Management**: Ensure the specified output directory exists and has the necessary write permissions. Consider using options to create output directories if they don't exist, if supported by the tool.
 *   **Error Handling**: Implement error handling in your scripts to gracefully manage cases where `batch_correction` might fail for specific files. This could involve logging errors and continuing with the rest of the batch.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| Rscript batch_correction_docker_wrapper.R | Wrapper script for batch correction, which can call either batch_correction_all_loess_wrapper.R or batch_correction_wrapper.R based on the --loess option. |
+| Rscript batch_correction_docker_wrapper.R | Wrapper script for batch correction, with options to call different correction methods. |
+| Rscript batch_correction_docker_wrapper.R | Wrapper script for batch correction, which can call different batch correction methods. |
 
 ## Reference documentation
 

@@ -4,7 +4,6 @@ description: Binchicken recovers low-abundance genomes from metagenomic samples 
 homepage: https://github.com/aroneys/binchicken
 ---
 
-
 # binchicken
 
 ## Overview
@@ -75,10 +74,10 @@ binchicken iterate \
 | binchen_build | Create dependency environments |
 | binchicken | Evaluate binchicken results |
 | binchicken | A command-line tool for binning chicken genomes. |
+| binchicken coassemble | Perform co-assembly of multiple samples. |
 | binchicken iterate | Iterate through binning and assembly strategies. |
+| binchicken single | Perform single-sample assembly and binning |
 | binchicken update | Update binchicken's databases and configurations. |
-| coassemble | Perform co-assembly of multiple samples. |
-| single | Perform single-sample assembly and binning |
 
 ## Reference documentation
 - [Bin Chicken Tools Overview](./references/aroneys_github_io_binchicken_tools.md)

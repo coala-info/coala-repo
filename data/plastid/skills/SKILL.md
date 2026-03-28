@@ -4,7 +4,6 @@ description: "Plastid is a toolkit for high-resolution analysis of sequencing da
 homepage: http://plastid.readthedocs.io/en/latest/
 ---
 
-
 # plastid
 
 ## Overview

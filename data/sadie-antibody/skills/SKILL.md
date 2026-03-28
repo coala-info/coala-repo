@@ -4,7 +4,6 @@ description: SADIE is a framework for processing antibody sequence data through 
 homepage: https://sadie.jordanrwillis.com
 ---
 
-
 # sadie-antibody
 
 ## Overview
@@ -47,9 +46,9 @@ For more complex workflows or data exploration in notebooks (like Jupyter or Col
 
 | Command | Description |
 |---------|-------------|
-| airr | Run the AIRR annotation pipeline from the command line on a single file or a directory of abi files. |
-| renumbering | Renumber antibody sequences based on specified schemes and regions. |
 | sadie | SADIE Antibody Analysis |
+| sadie airr | Run the AIRR annotation pipeline from the command line on a single file or a directory of abi files. |
+| sadie renumbering | Renumber antibody sequences based on specified schemes and regions. |
 
 ## Reference documentation
 - [SADIE Main README](./references/github_com_jwillis0720_sadie_blob_main_README.md)

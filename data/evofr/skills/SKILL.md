@@ -4,7 +4,6 @@ description: evofr is a Python framework for analyzing evolutionary dynamics and
 homepage: https://github.com/blab/evofr
 ---
 
-
 # evofr
 
 ## Overview
@@ -76,8 +75,8 @@ GrowthAdvantagePlot(posterior).plot(ax=ax)
 
 | Command | Description |
 |---------|-------------|
-| prepare-data | Prepare data for evofr analysis using a configuration file and optional overrides. |
-| run-model | Run an evofr model using a configuration file and optional data overrides. |
+| evofr prepare-data | Prepare data for evofr analysis using a configuration file and optional overrides. |
+| evofr run-model | Run an evofr model using a configuration file and optional data overrides. |
 
 ## Reference documentation
 - [Getting started with evofr](./references/blab_github_io_evofr_notebooks_example_mlr.html.md)

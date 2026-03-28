@@ -4,7 +4,6 @@ description: This tool filters Multiple Alignment Format (MAF) files to extract 
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
 
-
 # ucsc-mafspeciessubset
 
 ## Overview
@@ -47,6 +46,15 @@ MAF files can be massive (gigabytes to terabytes).
 
 ### Post-Processing
 After subsetting, it is often useful to run `mafFilter` to remove blocks that are now too short or have too many gaps due to the removal of the other species.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| mafFilter | Filter a MAF (Multiple Alignment Format) file based on species, score, or completeness. |
+| mafSpeciesSubset | Extract a subset of species from a MAF (Multiple Alignment Format) file. |
 
 ## Reference documentation
 - [ucsc-mafspeciessubset - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_ucsc-mafspeciessubset_overview.md)

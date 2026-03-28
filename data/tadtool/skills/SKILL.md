@@ -4,7 +4,6 @@ description: TADtool identifies and visualizes Topologically Associating Domains
 homepage: https://github.com/vaquerizaslab/tadtool
 ---
 
-
 # tadtool
 
 ## Overview
@@ -53,8 +52,8 @@ For very large matrices, use the `subset` command to create smaller, more manage
 
 | Command | Description |
 |---------|-------------|
-| tads | Call TADs with pre-defined parameters |
 | tadtool plot | Main interactive TADtool plotting window |
+| tadtool tads | Call TADs with pre-defined parameters |
 | tadtool_subset | Reduce a matrix to a smaller region. |
 
 ## Reference documentation

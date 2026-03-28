@@ -4,7 +4,6 @@ description: MUMmer4 is a high-performance alignment system designed for compari
 homepage: https://mummer4.github.io/
 ---
 
-
 # mummer4
 
 ## Overview

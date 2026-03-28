@@ -4,7 +4,6 @@ description: smof is a suite of UNIX-style tools designed for the manipulation, 
 homepage: https://github.com/incertae-sedis/smof
 ---
 
-
 # smof
 
 ## Overview

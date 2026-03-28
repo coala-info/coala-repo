@@ -4,7 +4,6 @@ description: isONcorrect performs de novo error correction on Oxford Nanopore cD
 homepage: https://github.com/ksahlin/isONcorrect
 ---
 
-
 # isoncorrect
 
 ## Overview

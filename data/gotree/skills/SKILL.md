@@ -4,7 +4,6 @@ description: "Gotree is a command-line toolkit for the rapid manipulation, analy
 homepage: https://github.com/fredericlemoine/gotree
 ---
 
-
 # gotree
 
 ## Overview
@@ -55,42 +54,42 @@ Generate trees for testing or null model comparisons.
 
 | Command | Description |
 |---------|-------------|
-| acr | Reconstructs most parsimonious ancestral characters. |
-| asr | Reconstructs most parsimonious ancestral sequences. |
-| brlen | Set a minimum branch length, or set random branch lengths, or multiply branch lengths by a factor. |
-| collapse | Collapse branches of input trees. |
-| comment | Modify branch/node comments |
-| completion | Generate the autocompletion script for gotree for the specified shell. |
-| compute | Computations such as consensus and supports. |
-| cut | Cut the tree |
-| draw | Draw trees |
-| generate | Generate random trees |
+| gotree acr | Reconstructs most parsimonious ancestral characters. |
+| gotree asr | Reconstructs most parsimonious ancestral sequences. |
+| gotree brlen | Set a minimum branch length, or set random branch lengths, or multiply branch lengths by a factor. |
+| gotree collapse | Collapse branches of input trees. |
+| gotree comment | Modify branch/node comments |
 | gotree compare | Compare full trees, edges, or tips. |
+| gotree completion | Generate the autocompletion script for gotree for the specified shell. |
+| gotree compute | Computations such as consensus and supports. |
+| gotree cut | Cut the tree |
 | gotree download | Download trees or images from different servers (itol, ncbi taxonomy) |
+| gotree draw | Draw trees |
+| gotree generate | Generate random trees |
 | gotree graft | Graft a tree t2 on a tree t1, at the position of a given tip. The root of t2 will replace the given tip of t2. |
 | gotree labels | Lists labels of all tree tips |
+| gotree ltt | Compute Lineage Through Time data. |
+| gotree matrix | Prints distance matrix associated to the input tree. |
+| gotree nni | Perform Nearest Neighbor Interchange (NNI) rearrangement on a tree. |
 | gotree prune | This tool removes tips of the input reference tree that : |
+| gotree reformat | Reformats an input tree file into different formats. |
+| gotree rename | Rename nodes/tips of the input tree. |
+| gotree repopulate | Re populate the tree with tips that have the same sequences. |
+| gotree reroot | Reroot trees using an outgroup or at midpoint. |
+| gotree resolve | Resolve multifurcations by adding 0 length branches. |
 | gotree rtt | Compute Root To Tip regression. |
 | gotree sample | Takes a subsample of the set of trees from the input file. |
 | gotree shuffletips | Shuffle tip names of an input tree. |
+| gotree stats | Print statistics about the tree |
+| gotree subtree | Select a subtree from the input tree whose root has the given name. |
+| gotree support | Modify supports of branches from input trees |
 | gotree unroot | Unroot input tree. |
 | gotree upload | Upload a tree to a given server |
+| gotree version | Displays version of gotree. |
 | gotree_annotate | Annotates internal branches of a tree with given data. |
 | gotree_divide | Divide an input tree file into several tree files |
 | gotree_merge | Merges two rooted trees by adding a new root connecting two former roots. |
 | gotree_rotate | Rotates children of internal nodes by different means. |
-| ltt | Compute Lineage Through Time data. |
-| matrix | Prints distance matrix associated to the input tree. |
-| nni | Perform Nearest Neighbor Interchange (NNI) rearrangement on a tree. |
-| reformat | Reformats an input tree file into different formats. |
-| rename | Rename nodes/tips of the input tree. |
-| repopulate | Re populate the tree with tips that have the same sequences. |
-| reroot | Reroot trees using an outgroup or at midpoint. |
-| resolve | Resolve multifurcations by adding 0 length branches. |
-| stats | Print statistics about the tree |
-| subtree | Select a subtree from the input tree whose root has the given name. |
-| support | Modify supports of branches from input trees |
-| version | Displays version of gotree. |
 
 ## Reference documentation
 

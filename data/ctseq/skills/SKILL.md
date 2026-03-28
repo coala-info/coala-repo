@@ -4,7 +4,6 @@ description: ctseq is a bioinformatics pipeline that processes methylation patch
 homepage: https://github.com/ryanhmiller/ctseq
 ---
 
-
 # ctseq
 
 ## Overview
@@ -69,14 +68,14 @@ To generate heatmaps and molecule depth plots, provide a fragment info file (e.g
 
 | Command | Description |
 |---------|-------------|
-| call_methylation | Call methylation status for molecules. |
 | ctseq analyze | Analyze sequencing data from ctseq. |
+| ctseq call_methylation | Call methylation status for molecules. |
 | ctseq call_molecules | Call methylation states for molecules based on UMIs and consensus threshold. |
+| ctseq make_methyl_ref | Build a reference methylation genome. |
+| ctseq plot_multiple | Create plots for multiple samples combined. |
 | ctseq_add_umis | Add UMIs to fastq files. |
 | ctseq_align | Aligns sequencing reads to a reference genome and prepares methylation calls. |
 | ctseq_plot | Generate plots from CT-seq data. |
-| make_methyl_ref | Build a reference methylation genome. |
-| plot_multiple | Create plots for multiple samples combined. |
 
 ## Reference documentation
 - [Main README and Usage Guide](./references/github_com_ryanhmiller_ctseq_blob_master_README.md)

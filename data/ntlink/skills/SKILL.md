@@ -4,7 +4,6 @@ description: ntLink is a genome assembly tool that bridges and orients contigs u
 homepage: https://github.com/bcgsc/ntLink
 ---
 
-
 # ntlink
 
 ## Overview

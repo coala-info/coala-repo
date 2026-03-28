@@ -4,7 +4,6 @@ description: The Toolkit for Annotating Genomes (tag) provides a Python API and 
 homepage: https://github.com/standage/tag/
 ---
 
-
 # tag
 
 ## Overview
@@ -52,7 +51,7 @@ for gene in tag.select.features(reader, type='gene'):
 
 | Command | Description |
 |---------|-------------|
-| bae | Group features in GFF3 files into loci. |
+| tag bae | Group features in GFF3 files into loci. |
 | tag bcollapse | Collapse overlapping features in GFF3 files into loci. |
 | tag gff3 | Processes GFF3 files. |
 | tag merge | Merges multiple GFF3 files into a single GFF3 file. |

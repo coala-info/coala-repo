@@ -4,7 +4,6 @@ description: Locityper resolves genotypes in highly polymorphic and structurally
 homepage: https://github.com/tprodanov/locityper
 ---
 
-
 # locityper
 
 ## Overview
@@ -58,10 +57,10 @@ Perform the final genotype call based on alignment likelihoods.
 |---------|-------------|
 | locityper | Align medium-size sequence to each other. |
 | locityper | Remove similar target haplotypes. |
+| locityper preproc | Preprocess WGS dataset. |
+| locityper recruit | Recruit reads to one/multiple loci. |
 | locityper_genotype | Genotype complex loci. |
 | locityper_target | Adds target locus/loci to the database. |
-| preproc | Preprocess WGS dataset. |
-| recruit | Recruit reads to one/multiple loci. |
 
 ## Reference documentation
 

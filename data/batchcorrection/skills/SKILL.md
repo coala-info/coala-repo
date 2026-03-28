@@ -4,7 +4,6 @@ description: The batchcorrection tool automates the application and evaluation o
 homepage: https://github.com/carpenter-singh-lab/2023_Arevalo_NatComm_BatchCorrection
 ---
 
-
 # batchcorrection
 
 ## Overview
@@ -76,8 +75,8 @@ The pipeline can execute the following methods as defined in the `Snakefile`:
 
 | Command | Description |
 |---------|-------------|
+| Rscript batch_correction_docker_wrapper.R | Wrapper script for batch correction, with options to use LOESS or other methods. |
 | Rscript batch_correction_docker_wrapper.R | Wrapper script for batch correction, can delegate to different underlying scripts based on options. |
-| batch_correction_docker_wrapper.R | Wrapper script for batch correction, with options to use LOESS or other methods. |
 
 ## Reference documentation
 

@@ -4,7 +4,6 @@ description: Plassembler automates the recovery and assembly of plasmids from ba
 homepage: https://github.com/gbouras13/plassembler
 ---
 
-
 # plassembler
 
 ## Overview
@@ -63,9 +62,9 @@ plassembler run \
 
 | Command | Description |
 |---------|-------------|
-| long | Plassembler with long reads only |
 | plassembler assembled | Runs assembled mode |
 | plassembler download | Downloads Plassembler DB |
+| plassembler long | Plassembler with long reads only |
 | plassembler run | Runs Plassembler |
 | plassembler_citation | Please cite plassembler in your paper using: |
 

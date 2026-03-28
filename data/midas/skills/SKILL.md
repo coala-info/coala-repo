@@ -4,7 +4,6 @@ description: MIDAS is a pipeline for high-resolution metagenomics that quantifie
 homepage: https://github.com/snayfach/MIDAS
 ---
 
-
 # midas
 
 ## Overview

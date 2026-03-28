@@ -4,7 +4,6 @@ description: The Google Cloud SDK provides a command-line interface and tools fo
 homepage: https://cloud.google.com/sdk/
 ---
 
-
 # google-cloud-sdk
 
 ## Overview

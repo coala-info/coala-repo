@@ -4,7 +4,6 @@ description: "cojac identifies viral lineages in complex samples by analyzing th
 homepage: https://github.com/cbg-ethz/cojac
 ---
 
-
 # cojac
 
 ## Overview
@@ -52,13 +51,13 @@ Once a scan is complete (resulting in a JSON or YAML output), use the following 
 
 | Command | Description |
 |---------|-------------|
+| cojac cooc-colourmut | Print coloured pretty table on terminal |
+| cojac cooc-curate | Helps determining specific mutations and cooccurrences by querying covSPECTRUM |
+| cojac cooc-mutbamscan | Scan amplicon (covered by long read pairs) for mutation cooccurrence |
 | cojac generate-sigs-nextstrains | Generating a list of variants from nextstrain |
+| cojac phe2cojac | convert phe-genomics to cojac's dedicated variant YAML format |
+| cojac sig-generate | Helps generating a list of mutations frequently found in a variant by querying covSPECTRUM |
 | cojac_cooc-pubmut | Calculates co-occurrence of mutations in published datasets. |
-| cooc-colourmut | Print coloured pretty table on terminal |
-| cooc-curate | Helps determining specific mutations and cooccurrences by querying covSPECTRUM |
-| cooc-mutbamscan | Scan amplicon (covered by long read pairs) for mutation cooccurrence |
-| phe2cojac | convert phe-genomics to cojac's dedicated variant YAML format |
-| sig-generate | Helps generating a list of mutations frequently found in a variant by querying covSPECTRUM |
 
 ## Reference documentation
 - [COJAC GitHub Repository](./references/github_com_cbg-ethz_cojac_blob_master_README.md)

@@ -4,7 +4,6 @@ description: GenoDSP is a high-performance workbench that treats genomic data as
 homepage: https://github.com/rsharris/genodsp
 ---
 
-
 # genodsp
 
 ## Overview

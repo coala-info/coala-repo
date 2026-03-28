@@ -4,7 +4,6 @@ description: SolveBio is a unified data platform for storing, indexing, and quer
 homepage: https://github.com/solvebio/solvebio-python
 ---
 
-
 # solvebio
 
 ## Overview
@@ -76,17 +75,17 @@ Use migrations to move data between datasets or apply `expressions` for real-tim
 
 | Command | Description |
 |---------|-------------|
-| queue | Show the status of tasks in the queue. |
 | solvebio create-dataset | Create a new dataset |
 | solvebio download | Downloads files from SolveBio. |
 | solvebio import | Import files into SolveBio datasets. |
 | solvebio login | Log in to SolveBio |
 | solvebio logout | Logs out of the SolveBio CLI. |
 | solvebio ls | List files and folders in the SolveBio vault |
+| solvebio queue | Show the status of tasks in the queue. |
 | solvebio shell | Interactive SolveBio shell |
 | solvebio tag | Apply tag updates to files, folders, or datasets. |
 | solvebio upload | Upload local files or directories to SolveBio. |
-| whoami | Show the current user and their permissions. |
+| solvebio whoami | Show the current user and their permissions. |
 
 ## Reference documentation
 

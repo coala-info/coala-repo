@@ -4,7 +4,6 @@ description: FsnViz is a command-line utility that generates Circos plots to vis
 homepage: https://github.com/bow/fsnviz
 ---
 
-
 # fsnviz
 
 ## Overview
@@ -60,8 +59,8 @@ fsnviz star-fusion predictions.tsv --circos-conf custom_circos.conf
 
 | Command | Description |
 |---------|-------------|
-| fusioncatcher | Plots output of FusionCatcher. |
-| star-fusion | Plots output of STAR-Fusion. |
+| fsnviz fusioncatcher | Plots output of FusionCatcher. |
+| fsnviz star-fusion | Plots output of STAR-Fusion. |
 
 ## Reference documentation
 

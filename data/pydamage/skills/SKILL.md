@@ -4,7 +4,6 @@ description: PyDamage automates the identification and estimation of DNA damage 
 homepage: https://github.com/maxibor/pydamage
 ---
 
-
 # pydamage
 
 ## Overview
@@ -60,9 +59,9 @@ The primary workflow involves analyzing an aligned BAM file to estimate damage p
 
 | Command | Description |
 |---------|-------------|
-| analyze | Analyze BAM files for DNA damage. |
-| binplot | Plot Damage patterns for a given bin fasta file |
-| filter | Filter PyDamage results on predicted accuracy and qvalue thresholds. |
+| pydamage analyze | Analyze BAM files for DNA damage. |
+| pydamage binplot | Plot Damage patterns for a given bin fasta file |
+| pydamage filter | Filter PyDamage results on predicted accuracy and qvalue thresholds. |
 
 ## Reference documentation
 

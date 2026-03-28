@@ -4,7 +4,6 @@ description: GToTree automates the retrieval of genomes, identification of singl
 homepage: https://github.com/AstrobioMike/GToTree/wiki/what-is-gtotree%3F
 ---
 
-
 # gtotree
 
 ## Overview

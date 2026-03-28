@@ -4,7 +4,6 @@ description: cutqc automates adapter trimming and quality control for NGS data w
 homepage: https://github.com/obenno/cutqc
 ---
 
-
 # cutqc
 
 ## Overview

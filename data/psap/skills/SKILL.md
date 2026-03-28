@@ -4,7 +4,6 @@ description: PSAP is a machine learning tool that predicts the likelihood of pro
 homepage: https://github.com/vanheeringen-lab/psap
 ---
 
-
 # psap
 
 ## Overview
@@ -61,9 +60,9 @@ psap annotate -f sequences.fasta -o ./annotations
 
 | Command | Description |
 |---------|-------------|
-| annotate | Annotate peptide fasta files with LLPS labels and store as a data frame |
-| predict | Predict protein phase separation potential using the PSAP classifier. |
-| train | Train a RandomForest classifier for PSAP (Phase Separation Associated Proteins) |
+| psap annotate | Annotate peptide fasta files with LLPS labels and store as a data frame |
+| psap predict | Predict protein phase separation potential using the PSAP classifier. |
+| psap train | Train a RandomForest classifier for PSAP (Phase Separation Associated Proteins) |
 
 ## Reference documentation
 - [psap GitHub Repository](./references/github_com_vanheeringen-lab_psap_blob_master_README.rst.md)

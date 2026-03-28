@@ -4,7 +4,6 @@ description: Flexsweep is a machine learning tool used to identify genomic regio
 homepage: https://github.com/jmurga/flexsweep
 ---
 
-
 # flexsweep
 
 ## Overview
@@ -48,10 +47,10 @@ flexsweep [OPTIONS] COMMAND [ARGS]...
 
 | Command | Description |
 |---------|-------------|
-| cnn | Run the Flexsweep CNN for training or prediction. |
+| flexsweep cnn | Run the Flexsweep CNN for training or prediction. |
+| flexsweep fvs-discoal | Estimate summary statistics from discoal simulations and build feature vectors. |
+| flexsweep fvs-vcf | Estimate summary statistics from VCF files and build feature vectors. |
 | flexsweep simulator | Run the discoal Simulator with user-specified parameters. |
-| fvs-discoal | Estimate summary statistics from discoal simulations and build feature vectors. |
-| fvs-vcf | Estimate summary statistics from VCF files and build feature vectors. |
 
 ## Reference documentation
 - [Flexsweep GitHub Repository](./references/github_com_jmurga_flexsweep_blob_main_README.md)

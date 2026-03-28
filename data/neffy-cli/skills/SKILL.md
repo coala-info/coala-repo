@@ -4,7 +4,6 @@ description: neffy-cli calculates the effective number of sequences in a multipl
 homepage: https://maryam-haghani.github.io/NEFFy
 ---
 
-
 # neffy-cli
 
 ## Overview

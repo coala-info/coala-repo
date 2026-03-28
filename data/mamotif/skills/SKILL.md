@@ -4,7 +4,6 @@ description: MAmotif identifies transcription factors that drive differential ge
 homepage: https://github.com/shao-lab/MAmotif
 ---
 
-
 # mamotif
 
 ## Overview
@@ -45,6 +44,15 @@ mamotif [subcommand] --p1 peaks_sample1.bed --p2 peaks_sample2.bed --r1 reads_sa
 - **Normalization**: Always provide the raw read files (BAM/BED) rather than just peak lists to allow `mamotif` to perform proper quantitative normalization via MAnorm.
 - **Regulatory Elements**: When using histone marks like H3K4me3 or H3K27ac, `mamotif` is particularly effective at identifying regulators of active promoters and enhancers.
 - **Motif Selection**: Use the built-in motif databases or provide custom PWMs (Position Weight Matrices) if looking for specific, non-standard regulators.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| mamotif integrate | Run the integration module with MAnorm and MotifScan results. |
+| mamotif run | Run complete workflow (MAnorm + MotifScan + Integration). |
 
 ## Reference documentation
 - [MAmotif GitHub Repository](./references/github_com_shao-lab_MAmotif.md)

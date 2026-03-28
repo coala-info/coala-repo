@@ -4,7 +4,6 @@ description: varpubs is a command-line utility that queries PubMed and uses larg
 homepage: https://github.com/koesterlab/varpubs
 ---
 
-
 # varpubs
 
 ## Overview
@@ -62,9 +61,9 @@ varpubs update-cache \
 
 | Command | Description |
 |---------|-------------|
-| update-cache | UpdateCacheArgs ['args']: Arguments for updating the cache. |
 | var pubs deploy-db | DeployDBArgs ['args']: Command-line arguments for deploying the PubMed variant database. |
 | var pubs summarize-variants | SummarizeArgs ['args']: Command-line arguments for summarizing PubMed articles related to variants. |
+| var pubs update-cache | UpdateCacheArgs ['args']: Arguments for updating the cache. |
 
 ## Reference documentation
 - [varpubs README](./references/github_com_koesterlab_varpubs_blob_main_README.md)

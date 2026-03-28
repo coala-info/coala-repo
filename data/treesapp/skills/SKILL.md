@@ -4,7 +4,6 @@ description: TreeSAPP provides a framework for the functional and taxonomic anno
 homepage: https://github.com/hallamlab/TreeSAPP
 ---
 
-
 # treesapp
 
 ## Overview
@@ -65,11 +64,11 @@ Reference packages (.pkl files) are the core of TreeSAPP.
 
 | Command | Description |
 |---------|-------------|
-| phylotu | A tool for sorting query sequences placed on a phylogeny into phylogenetically-inferred clusters. |
 | treesapp abundance | Calculate query sequence abundances from read coverage. |
 | treesapp evaluate | Evaluate classification performance using clade-exclusion analysis. |
 | treesapp layer | This script adds extra feature annotations, such as Subgroup and Metabolic Pathway, to an existing classification table made by treesapp assign. A new column is bound to the table for each feature. |
 | treesapp package | Facilitate operations on reference packages |
+| treesapp phylotu | A tool for sorting query sequences placed on a phylogeny into phylogenetically-inferred clusters. |
 | treesapp_assign | Classify sequences through evolutionary placement. |
 | treesapp_colour | Generates colour style and strip files for visualizing a reference package's phylogeny in iTOL based on taxonomic or phenotypic data. |
 | treesapp_create | Create a reference package for TreeSAPP. |

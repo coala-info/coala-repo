@@ -4,7 +4,6 @@ description: RABIES is an image processing pipeline designed to transform raw ro
 homepage: https://github.com/CoBrALab/RABIES
 ---
 
-
 # rabies
 
 ## Overview

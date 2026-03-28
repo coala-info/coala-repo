@@ -4,7 +4,6 @@ description: diapysef processes and converts multi-dimensional Trapped Ion Mobil
 homepage: https://github.com/Roestlab/dia-pasef
 ---
 
-
 # diapysef
 
 ## Overview
@@ -52,11 +51,11 @@ The tool supports exporting data to specialized formats for downstream software:
 
 | Command | Description |
 |---------|-------------|
-| converttdftomzml | Conversion program to convert a Bruker TIMS .d data file to mzML format |
+| diapysef converttdftomzml | Conversion program to convert a Bruker TIMS .d data file to mzML format |
+| diapysef export | Export a reduced targeted mzML file to a tsv, parquet or sqMass file |
 | diapysef prepare-coordinates | Generate peptide coordinates for targeted extraction of DIA-PASEF data |
-| export | Export a reduced targeted mzML file to a tsv, parquet or sqMass file |
-| report | Generate a report for a specfific type of plot |
-| targeted-extraction | Extract from the raw data given a set of target coordinates to extract for. |
+| diapysef report | Generate a report for a specfific type of plot |
+| diapysef targeted-extraction | Extract from the raw data given a set of target coordinates to extract for. |
 
 ## Reference documentation
 - [TIMS-TOF Analysis Scripts](./references/github_com_Roestlab_dia-pasef_blob_master_README.md)

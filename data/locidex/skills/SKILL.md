@@ -4,7 +4,6 @@ description: Locidex is a search engine and allele-calling tool designed for bac
 homepage: https://pypi.org/project/locidex/
 ---
 
-
 # locidex
 
 ## Overview

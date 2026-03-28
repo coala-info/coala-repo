@@ -4,7 +4,6 @@ description: CanSNPer2 is a bioinformatics pipeline that classifies bacterial ge
 homepage: https://github.com/FOI-Bioinformatics/CanSNPer2
 ---
 
-
 # cansnper2
 
 ## Overview

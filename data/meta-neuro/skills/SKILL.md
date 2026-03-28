@@ -4,7 +4,6 @@ description: meta-neuro is a neuroimaging workflow for medial tractography analy
 homepage: https://github.com/bagari/meta
 ---
 
-
 # meta-neuro
 
 ## Overview

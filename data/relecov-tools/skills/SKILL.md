@@ -4,7 +4,6 @@ description: relecov-tools manages the end-to-end lifecycle of SARS-CoV-2 genomi
 homepage: https://github.com/BU-ISCIII/relecov-tools
 ---
 
-
 # relecov-tools
 
 ## Overview
@@ -54,19 +53,19 @@ The tool follows a standard command-line interface pattern: `relecov-tools [OPTI
 
 | Command | Description |
 |---------|-------------|
-| build-schema | Generates and updates JSON Schema files from Excel-based database definitions. |
-| download | Download files located in sftp server. |
-| map | Convert data between phage plus schema to ENA, GISAID, or any other schema |
-| metadata-homogeneizer | Parse institution metadata lab to the one used in relecov |
-| read-bioinfo-metadata | Create the json compliant from the Bioinfo Metadata. |
-| read-lab-metadata | Create the json compliant to the relecov schema from the Metadata file. |
+| relecov-tools build-schema | Generates and updates JSON Schema files from Excel-based database definitions. |
+| relecov-tools download | Download files located in sftp server. |
 | relecov-tools logs-to-excel | Creates a merged xlsx and Json report from all the log summary jsons given as input |
+| relecov-tools map | Convert data between phage plus schema to ENA, GISAID, or any other schema |
+| relecov-tools metadata-homogeneizer | Parse institution metadata lab to the one used in relecov |
 | relecov-tools pipeline-manager | Create the symbolic links for the samples which are validated to prepare for bioinformatics pipeline execution. |
+| relecov-tools read-bioinfo-metadata | Create the json compliant from the Bioinfo Metadata. |
+| relecov-tools read-lab-metadata | Create the json compliant to the relecov schema from the Metadata file. |
+| relecov-tools send-mail | Send a sample validation report by mail. |
+| relecov-tools update-db | upload the information included in json file to the database |
 | relecov-tools upload-to-ena | parse data to create xml files to upload to ena |
-| send-mail | Send a sample validation report by mail. |
-| update-db | upload the information included in json file to the database |
-| upload-to-gisaid | parsed data to create files to upload to gisaid |
-| validate | Validate json file against schema. |
+| relecov-tools upload-to-gisaid | parsed data to create files to upload to gisaid |
+| relecov-tools validate | Validate json file against schema. |
 
 ## Reference documentation
 - [Main README](./references/github_com_BU-ISCIII_relecov-tools_blob_main_README.md)

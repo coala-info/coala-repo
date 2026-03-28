@@ -4,7 +4,6 @@ description: DeepNOG uses deep convolutional neural networks to assign protein s
 homepage: https://github.com/univieCUBE/deepnog
 ---
 
-
 # deepnog
 
 ## Overview

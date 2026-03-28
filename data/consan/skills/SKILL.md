@@ -4,7 +4,6 @@ description: Consan performs pairwise RNA structural alignment by simultaneously
 homepage: http://eddylab.org/software/consan/
 ---
 
-
 # consan
 
 ## Overview

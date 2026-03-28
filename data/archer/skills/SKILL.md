@@ -4,7 +4,6 @@ description: Archer is a microservice that validates sample metadata and filters
 homepage: https://github.com/will-rowe/archer
 ---
 
-
 # archer
 
 ## Overview
@@ -67,9 +66,9 @@ Archer is designed to compress on-target reads and upload them directly to an S3
 
 | Command | Description |
 |---------|-------------|
-| launch | Launch the Archer service. This will start a gRPC server running that will accept incoming Process and Watch requests. It will offer the Archer API for filtering, compressing and uploading ARTIC reads to an S3 endpoint. |
-| process | Add a sample to the processing queue. The processing request is collected via STDIN and should be in JSON. The request will be validated prior to submitting it to the Archer service. |
-| watch | Watch a running Archer service. This command will start a gRPC message stream and print samples that have completed processing. It will include sample name, amplicon coverage, S3 location and processing time. |
+| archer launch | Launch the Archer service. This will start a gRPC server running that will accept incoming Process and Watch requests. It will offer the Archer API for filtering, compressing and uploading ARTIC reads to an S3 endpoint. |
+| archer process | Add a sample to the processing queue. The processing request is collected via STDIN and should be in JSON. The request will be validated prior to submitting it to the Archer service. |
+| archer watch | Watch a running Archer service. This command will start a gRPC message stream and print samples that have completed processing. It will include sample name, amplicon coverage, S3 location and processing time. |
 
 ## Reference documentation
 

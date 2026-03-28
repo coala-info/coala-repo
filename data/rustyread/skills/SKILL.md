@@ -4,7 +4,6 @@ description: "rustyread is a high-performance long-read simulator that generates
 homepage: https://github.com/natir/rustyread
 ---
 
-
 # rustyread
 
 ## Overview
@@ -71,7 +70,7 @@ rustyread simulate --reference ref.fa --quantity 10x --seed 42 > reproducible_re
 | Command | Description |
 |---------|-------------|
 | rustyread | A long read simulator based on badread idea and model |
-| simulate | Generate fake long read |
+| rustyread simulate | Generate fake long read |
 
 ## Reference documentation
 - [Rustyread Main Readme](./references/github_com_natir_rustyread_blob_master_Readme.md)

@@ -4,7 +4,6 @@ description: SNPGenie calculates nucleotide diversity and its nonsynonymous and 
 homepage: https://github.com/chasewnelson/SNPGenie
 ---
 
-
 # snpgenie
 
 ## Overview

@@ -4,7 +4,6 @@ description: RefineM is a bioinformatics toolkit used to improve the quality of 
 homepage: http://pypi.python.org/pypi/refinem/
 ---
 
-
 # refinem
 
 ## Overview
@@ -70,9 +69,9 @@ refinem taxon_filter <taxon_profile_file> <output_dir>
 
 | Command | Description |
 |---------|-------------|
-| filter_bins | Remove scaffolds across a set of bins. |
-| modify_bin | Modify scaffolds in a single bin. |
 | refinem call_genes | Identify genes within genomes. |
+| refinem filter_bins | Remove scaffolds across a set of bins. |
+| refinem modify_bin | Modify scaffolds in a single bin. |
 | refinem scaffold_stats | Calculate statistics for scaffolds. |
 | refinem ssu_erroneous | Identify scaffolds with erroneous 16S rRNA genes. |
 | refinem taxon_filter | Identify scaffolds with divergent taxonomic classification. |

@@ -4,7 +4,6 @@ description: knock-knock is a bioinformatic pipeline that deconstructs and class
 homepage: https://github.com/jeffhussmann/knock-knock
 ---
 
-
 # knock-knock
 
 ## Overview
@@ -61,8 +60,8 @@ Once the project directory is populated and indices are built, execute the analy
 | knock-knock download-genome | Download a genome and its associated annotations. |
 | knock-knock install-example-data | Installs example data for a knock-knock project. |
 | knock-knock parallel | Run knock-knock in parallel across multiple samples. |
+| knock-knock process-sample | Process a sample using knock-knock. |
 | knock-knock table | Generates a table of knock-knock results. |
-| process-sample | Process a sample using knock-knock. |
 
 ## Reference documentation
 - [GitHub Repository Overview](./references/github_com_jeffhussmann_knock-knock.md)

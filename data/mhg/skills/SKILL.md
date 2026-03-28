@@ -4,7 +4,6 @@ description: MHG identifies and partitions homologous regions across multiple ge
 homepage: https://github.com/NakhlehLab/Maximal-Homologous-Groups
 ---
 
-
 # mhg
 
 ## Overview

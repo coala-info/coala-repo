@@ -4,7 +4,6 @@ description: Quasitools is a bioinformatics suite designed to analyze genetic di
 homepage: https://github.com/phac-nml/quasitools/
 ---
 
-
 # quasitools
 
 ## Overview
@@ -62,16 +61,16 @@ The `hydra` command is a high-level workflow specifically for identifying HIV dr
 
 | Command | Description |
 |---------|-------------|
-| aacoverage | This script builds an amino acid census and returns its coverage. The BAM alignment file corresponds to a pileup of sequences aligned to the REFERENCE. A BAM index file (.bai) must also be present and, except for the extension, have the same name as the BAM file. The REFERENCE must be in FASTA format. The BED4_FILE must be a BED file with at least 4 columns and specify the gene locations within the REFERENCE. The output is in CSV format. |
-| call | Call nucleotide variants from a BAM file. |
-| consensus | Generate consensus sequences from BAM files. |
-| distance | Quasitools distance produces a measure of evolutionary distance [0 - 1] between quasispecies, computed using the angular cosine distance function defined below. |
-| dnds | Calculate dN/dS ratios for coding sequences. |
-| drmutations | Detects drug-resistant mutations from BAM files. |
-| hydra | Generate a mixed base consensus sequence. |
-| quality | Quasitools quality performs quality control on FASTQ reads and outputs the   filtered FASTQ reads in the specified directory. |
 | quasitools | A command-line tool for manipulating and analyzing quasigenomes. |
+| quasitools aacoverage | This script builds an amino acid census and returns its coverage. The BAM alignment file corresponds to a pileup of sequences aligned to the REFERENCE. A BAM index file (.bai) must also be present and, except for the extension, have the same name as the BAM file. The REFERENCE must be in FASTA format. The BED4_FILE must be a BED file with at least 4 columns and specify the gene locations within the REFERENCE. The output is in CSV format. |
+| quasitools call | Call nucleotide variants from a BAM file. |
 | quasitools complexity | Reports the per-amplicon (fasta) or k-mer complexity of the pileup, for each k-mer position in the reference complexity (bam and reference) of a quasispecies using several measures outlined in the following work: |
+| quasitools consensus | Generate consensus sequences from BAM files. |
+| quasitools distance | Quasitools distance produces a measure of evolutionary distance [0 - 1] between quasispecies, computed using the angular cosine distance function defined below. |
+| quasitools dnds | Calculate dN/dS ratios for coding sequences. |
+| quasitools drmutations | Detects drug-resistant mutations from BAM files. |
+| quasitools hydra | Generate a mixed base consensus sequence. |
+| quasitools quality | Quasitools quality performs quality control on FASTQ reads and outputs the   filtered FASTQ reads in the specified directory. |
 
 ## Reference documentation
 - [Quasitools README](./references/github_com_phac-nml_quasitools_blob_master_README.md)

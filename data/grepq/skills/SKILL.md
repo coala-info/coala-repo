@@ -4,7 +4,6 @@ description: grepq is a high-performance utility for filtering and analyzing FAS
 homepage: https://github.com/Rbfinch/grepq
 ---
 
-
 # grepq
 
 ## Overview
@@ -81,9 +80,9 @@ While simple text files work, JSON pattern files allow for named regex sets and 
 | grepq | Searches the sequence line of FASTQ records for regular expressions that are contained in a text or JSON file, or it searches for the absence of those regular expressions when used with the `inverted` command. The FASTQ file on which it operates can be supplied uncompressed or in gzip or zstd compressed format. |
 | grepq | Searches the sequence line of FASTQ records for regular expressions that are contained in a text or JSON file, or it searches for the absence of those regular expressions when used with the `inverted` command. The FASTQ file on which it operates can be supplied uncompressed or in gzip or zstd compressed format. |
 | grepq | Searches the sequence line of FASTQ records for regular expressions that are contained in a text or JSON file, or it searches for the absence of those regular expressions when used with the `inverted` command. The FASTQ file on which it operates can be supplied uncompressed or in gzip or zstd compressed format. |
-| inverted | Search for PATTERNS in FILE |
-| summarise | Summarise records matching regex patterns and variants in the FASTQ file |
-| tune | Tune the regex patterns by analyzing matched substrings |
+| grepq inverted | Search for PATTERNS in FILE |
+| grepq summarise | Summarise records matching regex patterns and variants in the FASTQ file |
+| grepq tune | Tune the regex patterns by analyzing matched substrings |
 
 ## Reference documentation
 - [grepq README](./references/github_com_Rbfinch_grepq_blob_main_README.md)

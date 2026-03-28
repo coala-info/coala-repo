@@ -4,7 +4,6 @@ description: VCF-kit is a suite of utilities designed for the analysis, transfor
 homepage: https://github.com/AndersenLab/VCF-kit
 ---
 
-
 # vcfkit
 
 ## Overview
@@ -53,14 +52,14 @@ One of VCF-kit's most powerful features is automating primer design for specific
 
 | Command | Description |
 |---------|-------------|
-| calc | Calculate various statistics from VCF files. |
-| filter | Filter VCF based on genotype counts. |
-| genome | Manage genome data |
-| phylo | Phylogenetic analysis tools for VCF files. |
-| rename | Rename samples in a VCF file. |
-| tajima | Calculate Tajima's D |
-| vcf2tsv | Convert VCF to TSV format |
+| vcfkit vk filter | Filter VCF based on genotype counts. |
+| vcfkit vk rename | Rename samples in a VCF file. |
 | vk | A toolkit for variant calling and analysis. |
+| vk calc | Calculate various statistics from VCF files. |
+| vk genome | Manage genome data |
+| vk phylo | Phylogenetic analysis tools for VCF files. |
+| vk tajima | Calculate Tajima's D |
+| vk vcf2tsv | Convert VCF to TSV format |
 
 ## Reference documentation
 - [VCF-kit Main Repository](./references/github_com_AndersenLab_VCF-kit.md)

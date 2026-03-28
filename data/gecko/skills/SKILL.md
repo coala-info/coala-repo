@@ -4,7 +4,6 @@ description: GECKO identifies high-scoring segment pairs in pairwise genome comp
 homepage: https://github.com/otorreno/gecko
 ---
 
-
 # gecko
 
 ## Overview

@@ -4,7 +4,6 @@ description: Biocode provides a standardized library and CLI utilities for handl
 homepage: http://github.com/jorvis/biocode
 ---
 
-
 # biocode
 
 ## Overview

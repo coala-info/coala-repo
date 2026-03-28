@@ -4,7 +4,6 @@ description: "STRling detects large Short Tandem Repeat expansions from short-re
 homepage: https://github.com/quinlan-lab/STRling
 ---
 
-
 # strling
 
 yaml
@@ -76,6 +75,19 @@ strling --threads 4 --min_len 2 --max_len 20 --output_dir ./strling_output data/
 *   **Reference Genome**: Use a high-quality, appropriately indexed reference genome that matches the origin of your sequencing data.
 *   **Log Files**: Always check the `.strling.log` file for any warnings or errors during execution.
 *   **Output Interpretation**: The primary output file (`.strling.tsv`) contains detailed information about detected STR expansions, including locus, repeat unit, expansion size, and supporting read counts. Refer to the STRling documentation for a full explanation of each column.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| str index | Index a FASTA file for STR analysis. |
+| strling | STRling is a tool for analyzing short tandem repeats (STRs) in sequencing data. |
+| strling call | Call STR alleles from BAM files. |
+| strling merge | Merge bin files previously created by `strling extract` |
+| strling_extract | Extract STRs from BAM file |
+| strling_pull_region | Extracts a region from a BAM file. |
 
 ## Reference documentation
 - [STRling Documentation](./references/github_com_quinlan-lab_STRling.md)

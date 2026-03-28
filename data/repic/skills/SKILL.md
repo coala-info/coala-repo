@@ -4,7 +4,6 @@ description: REPIC identifies consensus particles from multiple cryo-EM particle
 homepage: https://github.com/ccameron/REPIC
 ---
 
-
 # repic
 
 ## Overview
@@ -60,8 +59,8 @@ docker run --gpus all -v /path/to/your/data:/data repic_img repic iter_pick /dat
 
 | Command | Description |
 |---------|-------------|
-| get_cliques | Finds cliques of particles based on proximity in 3D space. |
-| iter_config | Generates configuration files for iterative particle picking. |
+| repic get_cliques | Finds cliques of particles based on proximity in 3D space. |
+| repic iter_config | Generates configuration files for iterative particle picking. |
 | repic_iter_pick | Iteratively pick particles based on a configuration file. |
 | repic_run_ilp | Run the ILP solver to find the optimal particle configuration. |
 

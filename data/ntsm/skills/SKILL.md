@@ -4,7 +4,6 @@ description: ntsm is a quality control toolset that determines if genomic sample
 homepage: https://github.com/JustinChu/ntsm
 ---
 
-
 # ntsm
 
 ## Overview

@@ -4,7 +4,6 @@ description: PanChIP identifies protein colocalization by comparing experimental
 homepage: https://github.com/hanjunlee21/PanChIP
 ---
 
-
 # panchip
 
 ## Overview
@@ -48,9 +47,9 @@ Use the filter command to process specific peak sets for quality control within 
 
 | Command | Description |
 |---------|-------------|
-| analysis | Analysis of a list peak sets |
-| filter | Filtering library for quality control |
-| init | Initialization of the PanChIP library |
+| panchip analysis | Analysis of a list peak sets |
+| panchip filter | Filtering library for quality control |
+| panchip init | Initialization of the PanChIP library |
 
 ## Reference documentation
 - [PanChIP README](./references/github_com_hanjunlee21_PanChIP_blob_main_README.md)

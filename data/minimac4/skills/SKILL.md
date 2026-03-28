@@ -4,7 +4,6 @@ description: Minimac4 is a specialized tool for efficient genotype imputation th
 homepage: https://github.com/statgen/Minimac4
 ---
 
-
 # minimac4
 
 ## Overview

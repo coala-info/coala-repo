@@ -4,7 +4,6 @@ description: PhyClone reconstructs cancer phylogenies and infers clonal relation
 homepage: https://github.com/Roth-Lab/PhyClone
 ---
 
-
 # phyclone
 
 ## Overview
@@ -62,9 +61,9 @@ The output `trace.h5` file contains the sampled topologies. Use the summary sub-
 | Command | Description |
 |---------|-------------|
 | phyclone consensus | Build consensus results. |
+| phyclone run | Run a new PhyClone analysis. |
 | phyclone_map | Build MAP results. |
 | phyclone_topology-report | Build topology report. |
-| run | Run a new PhyClone analysis. |
 
 ## Reference documentation
 - [PhyClone GitHub README](./references/github_com_Roth-Lab_PhyClone_blob_main_README.md)

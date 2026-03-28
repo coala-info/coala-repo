@@ -4,7 +4,6 @@ description: nwkit is a toolkit for the programmatic manipulation, rooting, prun
 homepage: https://github.com/kfuku52/nwkit
 ---
 
-
 # nwkit
 
 ## Overview
@@ -57,15 +56,16 @@ Convert trees to tables for easier manipulation in R or Python (Pandas).
 
 | Command | Description |
 |---------|-------------|
-| mcmctree | Calculate divergence times for a given newick tree. |
-| nhx2nwk | Convert NHX-annotated Newick trees to standard Newick format. |
 | nwkit dist | Calculate distances between two Newick trees. |
 | nwkit drop | Drop nodes from a newick tree. |
 | nwkit intersection | Computes the intersection of two phylogenetic trees. |
 | nwkit label | Label nodes in a Newick tree. |
 | nwkit mark | Mark nodes in a Newick tree based on a pattern and target type. |
+| nwkit mcmctree | Calculate divergence times for a given newick tree. |
+| nwkit nhx2nwk | Convert NHX-annotated Newick trees to standard Newick format. |
 | nwkit printlabel | Print labels from a newick tree based on a pattern. |
 | nwkit prune | Prune leaves from a newick tree based on a pattern. |
+| nwkit rescale | Rescale branch lengths of a newick tree. |
 | nwkit sanitize | Sanitize a Newick tree file. |
 | nwkit subtree | Extract subtrees from a Newick file. |
 | nwkit_constrain | Constrain a newick tree based on taxonomic information. |
@@ -74,7 +74,6 @@ Convert trees to tables for easier manipulation in R or Python (Pandas).
 | nwkit_shuffle | Shuffle newick trees |
 | nwkit_skim | Prunes a newick tree based on trait data. |
 | nwkit_transfer | Transfer information between two Newick trees. |
-| rescale | Rescale branch lengths of a newick tree. |
 
 ## Reference documentation
 

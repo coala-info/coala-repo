@@ -4,7 +4,6 @@ description: SegAlign is a GPU-accelerated system designed for high-performance 
 homepage: https://github.com/gsneha26/SegAlign
 ---
 
-
 # segalign-full
 
 ## Overview

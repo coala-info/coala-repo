@@ -4,7 +4,6 @@ description: HUMAnN2 profiles the functional and metabolic potential of microbia
 homepage: http://huttenhower.sph.harvard.edu/humann2
 ---
 
-
 # humann2
 
 ## Overview

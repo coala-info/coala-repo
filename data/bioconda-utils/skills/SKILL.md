@@ -4,7 +4,6 @@ description: Bioconda-utils is a command-line toolkit used to automate the linti
 homepage: http://bioconda.github.io/build-system.html
 ---
 
-
 # bioconda-utils
 
 ## Overview
@@ -44,18 +43,18 @@ Recent versions of the tool allow for tracking resource consumption during the b
 
 | Command | Description |
 |---------|-------------|
-| annotate-build-failures | Annotate build failures for recipes. |
-| autobump | Updates recipes in recipe_folder |
+| bioconda-utils annotate-build-failures | Annotate build failures for recipes. |
+| bioconda-utils autobump | Updates recipes in recipe_folder |
+| bioconda-utils bioconductor-skeleton | Build a Bioconductor recipe. The recipe will be created in the 'recipes' directory and will be prefixed by "bioconductor-". If --recursive is set, then any R dependency recipes will be prefixed by "r-". |
 | bioconda-utils build | Build packages for Bioconda. |
+| bioconda-utils clean-cran-skeleton | Cleans skeletons created by ``conda skeleton cran``. |
+| bioconda-utils dag | Export the DAG of packages to a graph format file for visualization |
 | bioconda-utils dependent | Print recipes dependent on a package |
 | bioconda-utils duplicates | Detect packages in bioconda that have duplicates in the other defined channels. |
+| bioconda-utils handle-merged-pr | Handle merged pull requests for Bioconda recipes. |
 | bioconda-utils lint | Lint recipes |
 | bioconda-utils list-build-failures | List recipes with build failure records |
-| bioconductor-skeleton | Build a Bioconductor recipe. The recipe will be created in the 'recipes' directory and will be prefixed by "bioconductor-". If --recursive is set, then any R dependency recipes will be prefixed by "r-". |
-| clean-cran-skeleton | Cleans skeletons created by ``conda skeleton cran``. |
-| dag | Export the DAG of packages to a graph format file for visualization |
-| handle-merged-pr | Handle merged pull requests for Bioconda recipes. |
-| update-pinning | Bump a package build number and all dependencies as required due to a change in pinnings |
+| bioconda-utils update-pinning | Bump a package build number and all dependencies as required due to a change in pinnings |
 
 ## Reference documentation
 - [Bioconda-utils README](./references/github_com_bioconda_bioconda-utils_blob_master_README.md)

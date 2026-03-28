@@ -1,0 +1,321 @@
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fgkarthik%2Fivar)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fgkarthik%2Fivar)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=gkarthik%2Fivar)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[gkarthik](/gkarthik)
+/
+**[ivar](/gkarthik/ivar)**
+Public
+
+* [Notifications](/login?return_to=%2Fgkarthik%2Fivar) You must be signed in to change notification settings
+* [Fork
+  44](/login?return_to=%2Fgkarthik%2Fivar)
+* [Star
+   4](/login?return_to=%2Fgkarthik%2Fivar)
+
+* [Code](/gkarthik/ivar)
+* [Issues
+  0](/gkarthik/ivar/issues)
+* [Pull requests
+  0](/gkarthik/ivar/pulls)
+* [Actions](/gkarthik/ivar/actions)
+* [Projects](/gkarthik/ivar/projects)
+* [Security
+  0](/gkarthik/ivar/security)
+* [Insights](/gkarthik/ivar/pulse)
+
+Additional navigation options
+
+* [Code](/gkarthik/ivar)
+* [Issues](/gkarthik/ivar/issues)
+* [Pull requests](/gkarthik/ivar/pulls)
+* [Actions](/gkarthik/ivar/actions)
+* [Projects](/gkarthik/ivar/projects)
+* [Security](/gkarthik/ivar/security)
+* [Insights](/gkarthik/ivar/pulse)
+
+# gkarthik/ivar
+
+master
+
+[Branches](/gkarthik/ivar/branches)[Tags](/gkarthik/ivar/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[561 Commits](/gkarthik/ivar/commits/master/)   561 Commits | | |
+| [.github](/gkarthik/ivar/tree/master/.github ".github") | | [.github](/gkarthik/ivar/tree/master/.github ".github") |  |  |
+| [data](/gkarthik/ivar/tree/master/data "data") | | [data](/gkarthik/ivar/tree/master/data "data") |  |  |
+| [docs](/gkarthik/ivar/tree/master/docs "docs") | | [docs](/gkarthik/ivar/tree/master/docs "docs") |  |  |
+| [pipeline](/gkarthik/ivar/tree/master/pipeline "pipeline") | | [pipeline](/gkarthik/ivar/tree/master/pipeline "pipeline") |  |  |
+| [pipeline\_consensus](/gkarthik/ivar/tree/master/pipeline_consensus "pipeline_consensus") | | [pipeline\_consensus](/gkarthik/ivar/tree/master/pipeline_consensus "pipeline_consensus") |  |  |
+| [pipeline\_field](/gkarthik/ivar/tree/master/pipeline_field "pipeline_field") | | [pipeline\_field](/gkarthik/ivar/tree/master/pipeline_field "pipeline_field") |  |  |
+| [scripts](/gkarthik/ivar/tree/master/scripts "scripts") | | [scripts](/gkarthik/ivar/tree/master/scripts "scripts") |  |  |
+| [src](/gkarthik/ivar/tree/master/src "src") | | [src](/gkarthik/ivar/tree/master/src "src") |  |  |
+| [tests](/gkarthik/ivar/tree/master/tests "tests") | | [tests](/gkarthik/ivar/tree/master/tests "tests") |  |  |
+| [.clang-format](/gkarthik/ivar/blob/master/.clang-format ".clang-format") | | [.clang-format](/gkarthik/ivar/blob/master/.clang-format ".clang-format") |  |  |
+| [.gitignore](/gkarthik/ivar/blob/master/.gitignore ".gitignore") | | [.gitignore](/gkarthik/ivar/blob/master/.gitignore ".gitignore") |  |  |
+| [AUTHORS](/gkarthik/ivar/blob/master/AUTHORS "AUTHORS") | | [AUTHORS](/gkarthik/ivar/blob/master/AUTHORS "AUTHORS") |  |  |
+| [ChangeLog](/gkarthik/ivar/blob/master/ChangeLog "ChangeLog") | | [ChangeLog](/gkarthik/ivar/blob/master/ChangeLog "ChangeLog") |  |  |
+| [Dockerfile](/gkarthik/ivar/blob/master/Dockerfile "Dockerfile") | | [Dockerfile](/gkarthik/ivar/blob/master/Dockerfile "Dockerfile") |  |  |
+| [Doxyfile](/gkarthik/ivar/blob/master/Doxyfile "Doxyfile") | | [Doxyfile](/gkarthik/ivar/blob/master/Doxyfile "Doxyfile") |  |  |
+| [LICENSE](/gkarthik/ivar/blob/master/LICENSE "LICENSE") | | [LICENSE](/gkarthik/ivar/blob/master/LICENSE "LICENSE") |  |  |
+| [Makefile.am](/gkarthik/ivar/blob/master/Makefile.am "Makefile.am") | | [Makefile.am](/gkarthik/ivar/blob/master/Makefile.am "Makefile.am") |  |  |
+| [NEWS](/gkarthik/ivar/blob/master/NEWS "NEWS") | | [NEWS](/gkarthik/ivar/blob/master/NEWS "NEWS") |  |  |
+| [README](/gkarthik/ivar/blob/master/README "README") | | [README](/gkarthik/ivar/blob/master/README "README") |  |  |
+| [README.md](/gkarthik/ivar/blob/master/README.md "README.md") | | [README.md](/gkarthik/ivar/blob/master/README.md "README.md") |  |  |
+| [autogen.sh](/gkarthik/ivar/blob/master/autogen.sh "autogen.sh") | | [autogen.sh](/gkarthik/ivar/blob/master/autogen.sh "autogen.sh") |  |  |
+| [call\_variants.sh](/gkarthik/ivar/blob/master/call_variants.sh "call_variants.sh") | | [call\_variants.sh](/gkarthik/ivar/blob/master/call_variants.sh "call_variants.sh") |  |  |
+| [config.h.in](/gkarthik/ivar/blob/master/config.h.in "config.h.in") | | [config.h.in](/gkarthik/ivar/blob/master/config.h.in "config.h.in") |  |  |
+| [configure.ac](/gkarthik/ivar/blob/master/configure.ac "configure.ac") | | [configure.ac](/gkarthik/ivar/blob/master/configure.ac "configure.ac") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* GPL-3.0 license
+
+# iVar
+
+[![C/C++ CI](https://github.com/andersen-lab/ivar/workflows/C/C++%20CI/badge.svg)](https://github.com/andersen-lab/ivar/workflows/C/C%2B%2B%20CI/badge.svg) [![DOI](https://camo.githubusercontent.com/7dd7e06c980e5e2fca762931d942a7a8282b7e1b9cd93bf95bea2a53bc66a98b/68747470733a2f2f7a656e6f646f2e6f72672f62616467652f3134333437313238382e737667)](https://zenodo.org/badge/latestdoi/143471288) [![install with conda](https://camo.githubusercontent.com/81d30c964e6607410c9138a651eac0810647f4ca7d9bb771536263e21b3e1910/68747470733a2f2f616e61636f6e64612e6f72672f62696f636f6e64612f697661722f6261646765732f76657273696f6e2e737667)](https://anaconda.org/bioconda/ivar) [![install with conda](https://camo.githubusercontent.com/4af139d2946543fa7991178266495e60f659651d04d826e0ed4f5b9f47a7fc77/68747470733a2f2f616e61636f6e64612e6f72672f62696f636f6e64612f697661722f6261646765732f706c6174666f726d732e737667)](https://anaconda.org/bioconda/ivar)
+
+iVar is a computational package that contains functions broadly useful for viral amplicon-based sequencing. Additional tools for metagenomic sequencing are actively being incorporated into iVar. While each of these functions can be accomplished using existing tools, iVar contains an intersection of functionality from multiple tools that are required to call iSNVs and consensus sequences from viral sequencing data across multiple replicates. We implemented the following functions in iVar: (1) trimming of primers and low-quality bases, (2) consensus calling, (3) variant calling - both iSNVs and insertions/deletions, and (4) identifying mismatches to primer sequences and excluding the corresponding reads from alignment files.
+
+[An amplicon-based sequencing framework for accurately measuring intrahost virus diversity using PrimalSeq and iVar](https://doi.org/10.1186/s13059-018-1618-7)
+
+*Genome Biology* 2019 **20**:8
+
+Nathan D Grubaugh, Karthik Gangavarapu, Joshua Quick, Nathaniel L Matteson, Jaqueline Goes De Jesus, Bradley J Main, Amanda L Tan, Lauren M Paul, Doug E Brackney, Saran Grewal, Nikos Gurfield, Koen KA Van Rompay, Sharon Isern, Scott F Michael, Lark L Coffey, Nicholas J Loman, Kristian G Andersen
+
+bioRxiv doi: <https://doi.org/10.1101/383513>
+
+## Manual
+
+Manual for iVar is available [here](https://andersen-lab.github.io/ivar/html/).
+
+## Insallation
+
+### Dependencies
+
+* [HTSlib](http://www.htslib.org/download/)
+* [GCC](https://gcc.gnu.org/) any version after v5.0. Support for C++11 standard required.
+
+Note:
+
+* It is highly recommended that [samtools](https://github.com/samtools/samtools) also be installed alongside iVar. iVar uses the output of samtools mpileup to call variants and generate consensus sequences. In addition, samtools `sort` and `index` commands are very useful to setup a pipeline using iVar.
+
+# Installing via conda
+
+iVar is available on bioconda. To install conda, please use the [miniconda](https://conda.io/miniconda.html) package. After intalling conda please add the following channels,
+
+```
+conda config --add channels defaults
+conda config --add channels bioconda
+conda config --add channels conda-forge
+```
+
+To install iVar,
+
+```
+conda install ivar
+```
+
+# Installing via homebrew
+
+iVar can be installed using [Homebrew](https://brew.sh/).
+
+```
+brew install brewsci/bio/ivar
+```
+
+# Installing on Mac
+
+## Installing build tools
+
+[Xcode](https://developer.apple.com/xcode/) from Apple is required to compile iVar (and other tools) from source. If you don't want to install the full Xcode package from the AppStore, you can install the Xcode command line tools,
+
+```
+xcode-select --install
+```
+
+[GNU Autotools](https://www.gnu.org/software/automake/manual/html_node/Autotools-Introduction.html#Autotools-Introduction) is required to compile iVar from source.
+
+To install Autotools using [homebrew](https://brew.sh/) please use the command below,
+
+```
+brew install autoconf automake libtool
+```
+
+## HTSlib installed using conda
+
+HTSlib can be installed with [conda](https://conda.io/docs/) using the command,
+
+```
+conda install -c bioconda htslib
+```
+
+The conda binary is by default installed at /opt/. You can check the installation location by running the following command,
+
+```
+which conda
+```
+
+The output of the command will be in this format - /opt/conda/bin/conda or /opt/anaconda2/bin/conda or /opt/anaconda3/bin/conda depending on whether you installed miniconda or anaconda.
+
+If the output is for example, /opt/conda/bin/conda, then you can add the path to the lib folder to $LD\_LIBRARY\_PATH using the command below.
+You can add this to your ~/.bash\_profile or ~/.bashrc to avoid rerunning the command everytime a new bash session starts.
+
+```
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/conda/lib
+```
+
+## HTSlib installed from source
+
+Installa

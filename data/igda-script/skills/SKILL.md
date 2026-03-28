@@ -1,6 +1,6 @@
 ---
 name: igda-script
-description: The igda-script package provides shell wrappers for the iGDA toolkit to perform high-sensitivity detection and phasing of minor variants in long-read sequencing data. Use when user asks to detect minor SNVs, phase haplotypes in haploid or diploid samples, add genotype quality scores to VCF files, or extract specific genomic regions from BAM files.
+description: "igda-script provides a suite of utilities for genomic data post-processing, including long-read alignment, VCF manipulation, and assembly refinement. Use when user asks to align genomes, add genotype quality to VCF files, fill gaps in assembled sequences, or convert haploid assemblies to diploid formats."
 homepage: https://github.com/zhixingfeng/shell
 ---
 
@@ -8,53 +8,84 @@ homepage: https://github.com/zhixingfeng/shell
 # igda-script
 
 ## Overview
-The `igda-script` package is a collection of shell wrappers for the iGDA (integrated Genetic Data Analysis) toolkit. It is specifically designed for high-sensitivity detection and phasing of minor variants—those occurring at low frequencies—within long-read sequencing datasets. It streamlines complex bioinformatics workflows, including genome alignment, variant calling, and haplotype phasing for both haploid and diploid samples.
 
-## Core Workflows
+The `igda-script` skill provides a suite of specialized utilities designed to support the Integrated Genome Detection and Assembly (IGDA) workflow. It focuses on the post-processing of genomic data, including the alignment of long reads, the manipulation of VCF files to include quality metrics, and the refinement of assembly contigs. Key capabilities include filling gaps in assembled sequences using read pileups and converting haploid assembly representations into diploid formats.
 
-### Variant Detection
-Use the detection pipelines to identify minor SNVs. The tool supports platform-specific error models for PacBio and Oxford Nanopore Technology (ONT).
+## Core Workflows and CLI Patterns
 
-*   **General Detection**: `igda_pipe_detect`
-*   **PacBio Specific**: `igda_pipe_detect_pb`
-*   **ONT Specific**: `igda_pipe_detect_ont`
+### Genome Alignment
+Use these scripts to wrap `minimap2` for genomic assembly alignment (typically using the `asm20` preset).
 
-**Key Parameters:**
-*   `--outdir`: Specify the output directory. The script checks for the existence of this directory before execution.
-*   `--isfast`: Use this flag in platform-specific scripts to prioritize speed during the detection process.
-*   `dforest_r`: This parameter is often auto-selected by the script (calculated as `0.00125 * median_coverage`). You can manually override this if you have specific sensitivity requirements.
+*   **Single File Alignment**:
+    `align_genome <input.fasta> <reference.fasta> <output.sam>`
+*   **Directory Batch Alignment**:
+    `align_genome_dir <input_dir> <reference.fasta> <output_dir>`
+    *Note: This script specifically looks for `.fasta` files in the input directory.*
 
-### Variant Phasing
-Once variants are detected, use the phasing pipelines to determine the chromosomal context (haplotypes) of the SNVs.
+### VCF Manipulation
+*   **Add Genotype Quality (GQ)**:
+    `add_gq_to_vcf <input.vcf> <output.vcf>`
+    This script appends a `##FORMAT=<ID=GQ...>` header and assigns a default GQ value of 100 to all records.
 
-*   **Standard Phasing**: `igda_pipe_phase`
-*   **PacBio Specific**: `igda_pipe_phase_pb`
-*   **ONT Specific**: `igda_pipe_phase_ont`
-*   **Diploid Samples**: Use `igda_pipe_phase_diploid` or `igda_pipe_phase_pb_diploid` for samples with two sets of chromosomes.
+### Assembly Refinement (IGDA Toolset)
+The `igda` binary and its associated wrappers manage `.ann` (annotation/contig) files.
 
-**Best Practices for Phasing:**
-*   **Parameter Selection**: For PacBio data, the `bf` (Bayes Factor) parameter defaults to optimized values for minor variant resolution.
-*   **Contig Organization**: The pipeline automatically reorganizes contigs during the phasing process to ensure consistency in the output.
+*   **Convert ANN to SAM**:
+    `igda_ann2sam <input.ann> <reference.fasta> <output.sam>`
+*   **Find Non-Chimeric Contigs**:
+    `igda find_nccontigs -j <overlap_threshold> <input.ann> <output.ann>`
+    *Common threshold: 0.5 or 0.8.*
+*   **Transitive Reduction (tred)**:
+    `igda tred -r -l 0 -p 0 -j <threshold> <input.ann>`
+*   **Assemble Contigs**:
+    `igda assemble <input.ann> <output.tred.dot>`
 
-## Utility and Post-Processing
+### Advanced Assembly Processing (R-based)
+These scripts require `rGDA` and `intervals` libraries.
 
-### VCF Refinement
-After generating a VCF file, you may need to add Genotype Quality (GQ) scores for downstream filtering.
-*   **Command**: `add_gq_to_vcf <input.vcf> > <output.vcf>`
+*   **Gap Filling**:
+    `ann_fill_gap <ann_file> <recode_file> <m5_file> <ref_file> <left_n> <right_n> <min_prop> <outdir>`
+    *   `left_n`/`right_n`: Number of loci to check to the left/right of a gap.
+    *   `min_prop`: Minimum proportion of reads supporting the fill.
+*   **Diploid Reconstruction**:
+    `ann_to_diploid <ann_file> <var_file> <outdir>`
+    Used to expand haploid contigs into diploid representations by identifying and flipping SNVs within contig ranges.
 
-### Data Preparation
-*   **Splitting Ranges**: Use `split_range` to divide genomic regions for parallel processing.
-*   **BAM Manipulation**: Use `getbambyregion` or `getbambyregion_dir` to extract specific genomic coordinates from alignment files for localized analysis.
-*   **Format Conversion**: 
-    *   `fa2table`: Convert FASTA files to tabular format.
-    *   `fastq2fasta`: Convert FASTQ sequences to FASTA.
+### Data Conversion
+*   **BAM to FASTA/FASTQ**:
+    `bamtofasta <input.bam> <output.fasta>`
+    `bamtofastq <input.bam> <output.fastq>`
+    *Use `_dir` versions (e.g., `bamtofasta_dir`) for batch processing entire directories.*
 
 ## Expert Tips
-*   **Auto-Parameter Selection**: By default, `igda_pipe_detect` attempts to select optimal parameters based on data depth. If you need full manual control, look for the option to turn off auto-selection in the script help menu.
-*   **Memory Management**: If running on a system with limited resources, note that recent updates to the `igda polish` step (invoked within the pipes) have been optimized to reduce RAM consumption.
-*   **Coverage Estimation**: Use `est_depth` or `est_depth_dir` before running the main pipelines to understand your data's median coverage, which informs the `dforest_r` parameter.
+*   **Memory Management**: When running `align_genome_dir`, ensure the environment has sufficient cores as the script may attempt to process files sequentially but `minimap2` itself is resource-intensive.
+*   **File Extensions**: Many scripts in this suite are hardcoded to look for specific extensions (e.g., `.fasta` or `.bam`). Ensure your input files match these expectations or the scripts will return empty results.
+*   **R Dependencies**: The `ann_fill_gap` and `ann_to_diploid` scripts depend on the `rGDA` package. Ensure this is installed in the R environment before execution.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| add_gq_to_vcf | Add GQ (Genotype Quality) to VCF file |
+| est_depth | only work for single chromosome data |
+| fastq2fasta | Converts FASTQ format to FASTA format. |
+| igda-script_est_depth_dir | only work for single chromosome data |
+| igda-script_getbambyregion | Extract BAM alignments within a specified genomic region. |
+| igda-script_getbambyregion_dir | Get BAM files by region within a directory |
+| igda-script_split_range | Splits a range into segments. |
+| igda_pipe_detect | Detects structural variants using IGDA pipeline. |
+| igda_pipe_detect_ont | Detects ONT reads using IGDA pipeline |
+| igda_pipe_detect_pb | Detects potential structural variations in sequencing data. |
+| igda_pipe_phase | Phase contigs using PacBio or Oxford Nanopore sequencing data. |
+| igda_pipe_phase | Phases diploid genomes using PacBio or Oxford Nanopore sequencing data. |
+| igda_pipe_phase_ont | Phase ONT reads using IGDA |
+| igda_pipe_phase_pb | Performs phasing of pangenome graphs. |
+| igda_pipe_phase_pb | Phase diploid genomes using long reads |
 
 ## Reference documentation
-- [igda-script Overview](./references/anaconda_org_channels_bioconda_packages_igda-script_overview.md)
-- [Shell Script Repository](./references/github_com_zhixingfeng_shell.md)
-- [Commit History and Updates](./references/github_com_zhixingfeng_shell_commits_master.md)
+- [add_gq_to_vcf source](./references/github_com_zhixingfeng_shell_blob_master_add_gq_to_vcf.md)
+- [align_genome source](./references/github_com_zhixingfeng_shell_blob_master_align_genome.md)
+- [ann_fill_gap logic](./references/github_com_zhixingfeng_shell_blob_master_ann_fill_gap.md)
+- [ann_to_diploid logic](./references/github_com_zhixingfeng_shell_blob_master_ann_to_diploid.md)

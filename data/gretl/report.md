@@ -396,3 +396,6 @@ Output options:
     -o, --output <output>    Output
 ```
 
+
+## Metadata
+- **Skill**: generated

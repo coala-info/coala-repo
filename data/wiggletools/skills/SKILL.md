@@ -1,6 +1,6 @@
 ---
 name: wiggletools
-description: WiggleTools performs mathematical and statistical operations on genomic data, treating it as continuous numerical functions. Use when user asks to aggregate multiple genomic tracks, apply thresholds, scale data, compute derived statistics, calculate coverage, restrict analysis to specific genomic regions, or perform mathematical transformations on genomic data.
+description: WiggleTools is a high-performance framework for processing and performing mathematical operations on genome-wide data files as numerical functions. Use when user asks to scale genomic signals, calculate statistics across multiple files, aggregate data from various formats, or perform complex nesting of genomic operators.
 homepage: https://github.com/Ensembl/WiggleTools
 ---
 
@@ -8,70 +8,78 @@ homepage: https://github.com/Ensembl/WiggleTools
 # wiggletools
 
 ## Overview
+WiggleTools is a high-performance framework designed to treat genome-wide data as numerical functions. It uses lazy evaluation to process massive datasets efficiently without loading everything into memory. This skill provides the syntax for building complex command-level "programs" that can scale, filter, and aggregate genomic signals across different file formats.
 
-WiggleTools is a specialized toolkit designed to treat genomic data as continuous numerical functions. By utilizing lazy evaluation and iterators, it allows for complex mathematical and statistical operations across entire genomes without the memory overhead of loading full datasets. Use this skill when you need to aggregate multiple genomic tracks, apply thresholds, scale data by constants, or compute derived statistics like variance and Wilcoxon rank-sum tests directly from standard bioinformatics file formats.
-
-## Command Line Usage
-
-The primary interface is the `wiggletools` executable, which accepts a "program" string describing the operations to perform.
-
-### Basic Syntax
-```bash
-wiggletools <program_string>
-```
-
-For complex or very long commands that might exceed shell character limits, use a script file:
-```bash
-wiggletools run program.txt
-```
+## Core Command Patterns
+The basic syntax follows a functional nesting pattern: `wiggletools <program>`.
 
 ### Input Formats
-WiggleTools automatically detects formats based on file extensions:
-- **Continuous data**: `.wig`, `.bw` (BigWig), `.bg` (BedGraph)
-- **Interval data**: `.bed`, `.bb` (BigBed)
-- **Sequence/Variant data**: `.bam`, `.cram` (requires `.bai`), `.vcf`, `.bcf` (requires `.tbi`)
+WiggleTools automatically detects formats by extension:
+- **Signal**: `.bw` (BigWig), `.wig` (Wiggle), `.bg` (BedGraph)
+- **Features/Intervals**: `.bed`, `.bb` (BigBed)
+- **Reads/Variants**: `.bam`, `.cram`, `.vcf`, `.bcf` (Note: Index files like `.bai` or `.tbi` must be in the same directory).
 
-### Common Operations
+### Unary Operators (Single Input)
+Modify a single data stream:
+- **Scaling**: `wiggletools scale 1.5 input.bw`
+- **Log Transformation**: `wiggletools ln input.bw` or `wiggletools log 10 input.bw`
+- **Thresholding**: `wiggletools gt 5 input.bw` (Returns boolean regions where value > 5)
+- **Absolute Value**: `wiggletools abs input.bw`
 
-#### Unary Operators (Single Input)
-- **Scaling and Math**:
-  - `scale <scalar> <input>`: Multiply all values by a decimal.
-  - `offset <scalar> <input>`: Add a constant to all values.
-  - `abs <input>`, `ln <input>`, `log <base> <input>`: Standard mathematical transformations.
-- **Thresholding (Boolean Output)**:
-  - `gt <value> <input>`: Regions where data > value.
-  - `lt <value> <input>`: Regions where data < value.
-  - `unit <input>`: Returns 1 for non-zero regions, 0 otherwise.
+### Binary and N-ary Operators (Multiple Inputs)
+Combine multiple files:
+- **Summation**: `wiggletools sum file1.bw file2.bw file3.bw`
+- **Mean**: `wiggletools mean file1.bw file2.bw`
+- **Product**: `wiggletools product file1.bw file2.bw`
+- **Ratio**: `wiggletools ratio file1.bw file2.bw`
 
-#### Multi-Input Operators
-- **Aggregation**:
-  - `sum <input1> <input2> ...`
-  - `product <input1> <input2> ...`
-  - `mean <input1> <input2> ...`
-  - `median <input1> <input2> ...`
+### Statistics and Comparisons
+- **Variance/StdDev**: `wiggletools var file1.bw file2.bw file3.bw`
+- **T-test**: `wiggletools ttest file1_groupA.bw file2_groupB.bw`
+- **Coverage**: `wiggletools coverage reads.bed` (Generates a signal track from overlapping intervals)
 
-#### Genomic Specifics
-- **Coverage**: `wiggletools coverage input.bed` calculates the number of overlapping intervals.
-- **Region Extraction**: `wiggletools seek <chrom> <start> <finish> <input>` restricts analysis to a specific genomic window.
+## Advanced Workflows
+
+### Complex Nesting
+You can nest operators to create sophisticated pipelines.
+Example: Calculate the mean of two scaled files:
+`wiggletools mean [ scale 0.5 file1.bw ] [ scale 0.8 file2.bw ]`
+
+### Genomic Filtering (Seek)
+To restrict operations to a specific genomic region:
+`wiggletools seek chr1 100 2000 sum file1.bw file2.bw`
+
+### Handling Large Command Strings
+If the command becomes too long for the shell, save the program to a text file and run:
+`wiggletools run program.txt`
 
 ### Streaming Data
-You can pipe data into WiggleTools using the `-` symbol for standard input (assumes Wig or BedGraph format):
-```bash
-cat data.wig | wiggletools scale 10 -
-```
+Pipe data from other tools using `-` for stdin:
+`cat data.wig | wiggletools sum - other_data.bw`
 For SAM format specifically:
-```bash
-samtools view input.bam | wiggletools sam -
-```
+`samtools view input.bam | wiggletools sam -`
 
-## Best Practices and Tips
+## Expert Tips
+- **Lazy Evaluation**: WiggleTools only computes values when requested by the output. This means you can chain many operators without a significant memory penalty.
+- **Boolean Masks**: Use operators like `gt` (greater than) or `unit` in combination with `product` to effectively mask regions of the genome.
+- **Integrity Checks**: Use `isZero` to verify if a subtraction or comparison results in an empty signal; it exits with an error code if any non-zero value is found.
 
-- **Lazy Evaluation**: WiggleTools only computes values as they are requested for output. This makes it extremely efficient for piping complex operations together.
-- **File Extensions**: Ensure your files have standard extensions (e.g., `.bw` for BigWig) so the auto-detector functions correctly.
-- **Indexing**: Always ensure `.bai` or `.tbi` index files are present in the same directory as your BAM, CRAM, or BCF files, or operations like `seek` will fail.
-- **Boolean Masks**: Use operators like `gt` or `lt` to create masks. These can be combined with `apply` (if supported by the version) to perform operations only on specific genomic regions.
-- **Memory Management**: While WiggleTools is memory efficient, processing hundreds of files simultaneously can still hit system file descriptor limits. Use `sum` or `mean` on groups of files if necessary.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| wiggletools_apply | Apply a function to wiggle files. |
+| wiggletools_entropy | Calculate the entropy of a wiggle track. |
+| wiggletools_mean | Calculates the mean of wiggle files. |
+| wiggletools_median | Calculates the median of wiggle tracks. |
+| wiggletools_min | Find the minimum value across wiggle files. |
+| wiggletools_nearest | Find the nearest feature in a wiggle file. |
+| wiggletools_ratio | Calculates the ratio of two wiggle files. |
+| wiggletools_stddev | Calculates the standard deviation of wiggle tracks. |
+| wiggletools_ttest | Performs a t-test on wiggle files. |
+| wiggletools_wilcoxon | Performs a Wilcoxon rank-sum test on wiggle files. |
 
 ## Reference documentation
-- [WiggleTools Overview](./references/anaconda_org_channels_bioconda_packages_wiggletools_overview.md)
-- [WiggleTools GitHub README](./references/github_com_Ensembl_WiggleTools.md)
+- [WiggleTools GitHub Repository](./references/github_com_Ensembl_WiggleTools.md)

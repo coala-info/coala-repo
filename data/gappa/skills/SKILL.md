@@ -1,6 +1,6 @@
 ---
 name: gappa
-description: Gappa is a high-performance toolkit designed for the post-processing, analysis, and visualization of phylogenetic placement data. Use when user asks to assign taxonomy to environmental reads, visualize placement mass on heat-trees, compare microbial communities using Edge PCA, or manipulate and filter placement files.
+description: Gappa is a command-line toolset designed for the downstream analysis, visualization, and manipulation of phylogenetic placement data. Use when user asks to assign sequences to taxa, visualize placement density on trees, calculate phylogenetic distances between samples, or filter and merge placement files.
 homepage: https://github.com/lczech/gappa
 ---
 
@@ -9,66 +9,93 @@ homepage: https://github.com/lczech/gappa
 
 ## Overview
 
-Gappa (Genesis Applications for Phylogenetic Placement Analysis) is a high-performance toolkit designed for the post-processing of phylogenetic placement data. It serves as the primary bridge between raw placement outputs (from tools like EPA-ng, RAxML-EPA, or pplacer) and biological interpretation. Use this skill to handle large-scale metagenomic datasets where you need to compare microbial communities, assign taxonomy to environmental reads, or visualize the distribution of placement mass across a reference phylogeny.
+Gappa (Genesis Applications for Phylogenetic Placement Analysis) is a high-performance C++ command-line toolset designed to handle the downstream analysis of phylogenetic placement results produced by tools like EPA-ng or pplacer. It provides a modular interface to transform raw placement data into biological insights through statistical analysis, data manipulation, and tree-based visualizations. It is particularly effective for large-scale metagenomic studies where memory efficiency and speed are critical.
 
-## Command Line Usage
+## Core CLI Patterns
 
-Gappa follows a hierarchical command structure:
-`gappa <module> <subcommand> <options>`
+Gappa uses a hierarchical command structure:
+`gappa <module> <subcommand> [options]`
 
-### Core Modules
+### 1. Examining and Assigning Placements
+Use the `examine` module to summarize data or perform taxonomic classification.
 
-*   **analyze**: Statistical comparisons and clustering (e.g., Edge PCA, KR Distance).
-*   **edit**: Manipulation of `.jplace`, `.fasta`, or `.newick` files (e.g., merging, filtering).
-*   **examine**: Visualization and tabulation (e.g., taxonomic assignment, heat-trees).
-*   **prepare**: Pre-processing tasks (e.g., cleaning trees, chunking alignments).
+*   **Taxonomic Assignment**: Assign query sequences to taxa based on their placements.
+    ```bash
+    gappa examine assign --jplace-path placements.jplace --taxonomy-file taxonomy.csv
+    ```
+*   **Visualizing Mass**: Create a "heat-tree" where branch colors represent placement density.
+    ```bash
+    gappa examine heat-tree --jplace-path sample.jplace --out-dir ./viz/
+    ```
+*   **Grafting**: Create a Newick tree where query sequences are added as actual pendant edges.
+    ```bash
+    gappa examine graft --jplace-path sample.jplace
+    ```
 
-### Common Workflows and Patterns
+### 2. Analyzing Multiple Samples
+Use the `analyze` module to compare different samples or find patterns across datasets.
 
-#### 1. Inspecting Placement Data
-Before running complex analyses, verify the contents of your placement files.
-```bash
-gappa examine info --jplace input.jplace
-```
+*   **Phylogenetic Distance (KRD)**: Calculate the Kantorovich-Rubinstein distance between samples.
+    ```bash
+    gappa analyze krd --jplace-path ./samples/ --out-dir ./results/
+    ```
+*   **Edge PCA**: Perform Principal Component Analysis on the placement masses.
+    ```bash
+    gappa analyze edgepca --jplace-path ./samples/
+    ```
+*   **Clustering**: Group samples using Squash Clustering or Phylogenetic k-means.
+    ```bash
+    gappa analyze squash --jplace-path ./samples/
+    ```
 
-#### 2. Taxonomic Assignment
-Assign taxonomy to placed sequences using a reference taxonomy.
-```bash
-gappa examine assign --jplace input.jplace --taxonomy taxonomy.db --out-dir output_folder
-```
+### 3. Editing and Filtering Data
+Use the `edit` module to clean or restructure `.jplace` files.
 
-#### 3. Visualizing Placement Mass
-Generate a "heat-tree" where branch colors or widths represent the amount of placement mass (reads) assigned to those lineages.
-```bash
-gappa examine heat-tree --jplace input.jplace --out-dir visualization_results
-```
+*   **Merging**: Combine multiple placement files into one.
+    ```bash
+    gappa edit merge --jplace-path file1.jplace file2.jplace --out-dir ./merged/
+    ```
+*   **Filtering**: Remove placements based on likelihood weight ratios (LWR) or specific taxa.
+    ```bash
+    gappa edit filter --jplace-path input.jplace --threshold 0.01
+    ```
+*   **Accumulation**: Move placement mass up to basal branches to reach a confidence threshold.
+    ```bash
+    gappa edit accumulate --jplace-path input.jplace --threshold 0.95
+    ```
 
-#### 4. Community Comparison (Edge PCA)
-Compare multiple samples to find differences in community composition based on their phylogenetic placements.
-```bash
-gappa analyze edgepca --jplace sample1.jplace sample2.jplace sample3.jplace
-```
+### 4. Data Preparation
+Use the `prepare` module to format reference data.
 
-#### 5. Merging Results
-Combine multiple placement files into a single file for collective analysis.
-```bash
-gappa edit merge --jplace *.jplace --out-dir merged_data
-```
+*   **Tree Cleaning**: Fix Newick trees that have incompatible formatting for other tools.
+    ```bash
+    gappa prepare clean-tree --tree-path reference.tre
+    ```
+*   **Taxonomy to Tree**: Convert a tabular taxonomy into a constraint tree.
+    ```bash
+    gappa prepare taxonomy-tree --taxonomy-file tax.csv
+    ```
 
-#### 6. Filtering Placements
-Remove low-confidence placements based on Likelihood Weight Ratio (LWR) or other criteria.
-```bash
-gappa edit filter --jplace input.jplace --threshold 0.9 --out-dir filtered_results
-```
+## Expert Tips
 
-### Expert Tips
+*   **Directory Processing**: Most commands accept a directory for `--jplace-path`. Gappa will automatically process all `.jplace` and `.jplace.gz` files within that folder.
+*   **Performance**: Use the `--threads` flag to speed up heavy analytical tasks like KRD or Edge PCA.
+*   **Memory Efficiency**: Gappa is significantly more memory-efficient than its predecessor `guppy`. If you are hitting memory limits with other tools on large datasets, Gappa is the preferred alternative.
+*   **Output Prefixes**: Use `--file-prefix` and `--file-suffix` to prevent overwriting results when running multiple iterations of the same subcommand in the same directory.
 
-*   **Memory Efficiency**: Gappa is written in C++ and is significantly faster and more memory-efficient than older tools like `guppy`. It is preferred for datasets with millions of environmental sequences.
-*   **Reference Citations**: Use `gappa tools citation` to get the specific papers to cite for the subcommands you used in your analysis.
-*   **Tree Cleaning**: Many phylogenetic tools fail on non-standard Newick characters. Use `gappa prepare clean-tree` to sanitize your reference trees before starting a pipeline.
-*   **Output Formats**: Most `examine` commands produce tabulated text files or SVG/PDF visualizations. Always specify an `--out-dir` to keep results organized.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| gappa analyze | Commands for analyzing and comparing placement data, that is, finding differences and patterns. |
+| gappa edit | Commands for editing and manipulating files like jplace, fasta or newick. |
+| gappa examine | Commands for examining, visualizing, and tabulating information in placement data. |
+| tools | Auxiliary commands of gappa. |
 
 ## Reference documentation
-
-- [Gappa Wiki - Command Overview](./references/github_com_lczech_gappa_wiki.md)
-- [Gappa GitHub Repository](./references/github_com_lczech_gappa.md)
+- [Gappa Wiki Home](./references/github_com_lczech_gappa_wiki.md)
+- [Subcommand: assign](./references/github_com_lczech_gappa_wiki_Subcommand_-assign.md)
+- [Subcommand: accumulate](./references/github_com_lczech_gappa_wiki_Subcommand_-accumulate.md)
+- [Subcommand: heat-tree](./references/github_com_lczech_gappa_wiki_Subcommand_-heat-tree.md)

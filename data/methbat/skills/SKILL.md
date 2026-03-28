@@ -1,0 +1,68 @@
+---
+name: methbat
+description: MethBat processes and analyzes CpG methylation data from PacBio HiFi reads to identify regional methylation states and allele-specific patterns. Use when user asks to segment the genome into methylation states, profile methylation over specific regions, detect allele-specific methylation, or compare methylation signatures across cohorts.
+homepage: https://github.com/PacificBiosciences/MethBat
+---
+
+
+# methbat
+
+## Overview
+
+MethBat is a specialized toolkit designed to process and analyze CpG methylation data specifically generated from PacBio HiFi reads. It transforms raw methylation calls into actionable biological insights by identifying regional methylation states, detecting allele-specific methylation (ASM), and comparing methylation signatures across different populations or cell types. Use this skill to navigate the various sub-commands for profiling, segmentation, and statistical comparison of epigenetic data.
+
+## Core Workflows
+
+### Genomic Segmentation
+Use `methbat segment` to partition the genome into functional methylation states.
+* **Methylated/Unmethylated**: Based on combined methylation fraction.
+* **ASM**: Based on the delta between haplotype 1 and haplotype 2.
+* **Key Parameters**:
+  * `--output-prefix`: Generates `.meth_regions.bed`, `.combined_methyl.bedgraph`, and `.asm.bedgraph`.
+  * `--max-gap`: Default 1000bp. Prevents segments from spanning large data gaps.
+  * `--min-cpgs`: Minimum number of CpGs required to form a segment (prevents over-segmentation).
+  * `--enable-haplotype-segmentation`: Runs segmentation on individual haplotypes (H1/H2).
+
+### Methylation Profiling
+Use `methbat profile` to aggregate methylation data over specific genomic regions (e.g., CpG islands).
+* **Input**: Requires BED files from pb-CpG-tools (supports `.gz` compression).
+* **Output**: TSV files containing `cpg_label`, `mean_combined_methyl`, and coverage metrics.
+* **Tip**: If haplotype BED files are missing, the tool will produce a warning and skip haplotype-specific metrics.
+
+### Cohort Analysis and Signatures
+* **Build**: Use `methbat build` to create background/cohort profiles from individual sample profiles.
+* **Signature**: Use `methbat signature` to identify regions with significant methylation differences between case and control populations.
+* **Joint-Segment**: Use `methbat joint-segment` to segment the average methylation of an entire cohort.
+
+### Specialized Analysis
+* **Deconvolution**: Use `methbat deconvolve` with a reference atlas to estimate cell type proportions in bulk methylation data.
+* **Reporting**: Use `methbat report` to check observed methylation against expected patterns in specific regions, such as known imprinting loci.
+
+## CLI Best Practices
+
+* **Global Flags**: The verbosity flag `-v` must be placed before the sub-command (e.g., `methbat -v segment ...`).
+* **Input Handling**: MethBat natively supports gzipped BED files from pb-CpG-tools.
+* **Statistical Tuning**:
+  * Adjust `--min-abs-zscore` to control segmentation sensitivity. Higher values result in fewer, larger segments.
+  * Use `--min-asm-abs-delta-mean` (default 0.5) to define the threshold for Allele Specific Methylation.
+* **Output Headers**: Most CSV/TSV outputs include a `#` prefixed header with version and command metadata. Note that `profile` TSV column headers do not use the `#` prefix for easier downstream parsing.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| build | Build a background/cohort profile from a collection of profiles |
+| compare | Compare sub-groups in a background/cohort profile |
+| deconvolve | Perform cell-type deconvolution based on an atlas |
+| joint-segment | Jointly segments a collection a samples into common methylation types |
+| profile | Create a CpG profile for a single dataset from pb-CpG-tools output |
+| report | Generate a report for a single dataset from pb-CpG-tools output |
+| segment | Segments the output from pb-CpG-tools |
+| signature | Identify signature regions distinguishing cases from controls |
+
+## Reference documentation
+- [MethBat User Guide](./references/github_com_PacificBiosciences_MethBat_blob_main_docs_user_guide.md)
+- [MethBat Methods Summary](./references/github_com_PacificBiosciences_MethBat_blob_main_docs_methods.md)
+- [MethBat Changelog](./references/github_com_PacificBiosciences_MethBat_blob_main_CHANGELOG.md)

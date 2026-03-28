@@ -1,6 +1,6 @@
 ---
 name: pcasuite
-description: pcasuite manages molecular dynamics data by compressing trajectories into PCA-based formats and performing structural analysis on the compressed files. Use when user asks to compress trajectories with pcazip, reconstruct files with pcaunzip, or analyze dynamics and extract structural metadata using pczdump.
+description: pcasuite is a toolkit for compressing and analyzing molecular dynamics trajectories using Principal Component Analysis. Use when user asks to compress trajectories into PCZ files, decompress data into standard formats, or analyze essential dynamics and structural fluctuations.
 homepage: https://mmb.irbbarcelona.org/gitlab/andrio/pcasuite
 ---
 
@@ -8,49 +8,57 @@ homepage: https://mmb.irbbarcelona.org/gitlab/andrio/pcasuite
 # pcasuite
 
 ## Overview
-
-The `pcasuite` is a specialized toolkit for the efficient management of molecular dynamics (MD) data. It allows you to transform bulky trajectory files into compact PCA-compressed formats (.pcz) while retaining a specified percentage of the system's variance. This skill provides the procedural knowledge to compress trajectories with `pcazip`, reconstruct them with `pcaunzip`, and perform high-level analysis (like fluctuation calculations or hinge point prediction) directly on compressed data using `pczdump`.
+pcasuite is a specialized toolkit designed for the efficient storage and analysis of molecular dynamics trajectories. By applying Principal Component Analysis, it reduces the storage footprint of trajectory data while preserving essential conformational variance. It is particularly useful when handling large-scale simulation data where disk space is a constraint or when rapid analysis of essential dynamics (eigenvectors and projections) is required.
 
 ## Core Workflows
 
-### Trajectory Compression (`pcazip`)
-Use `pcazip` to reduce trajectory size. You must provide a trajectory and a reference structure (PDB) to define atom names.
+### Compressing Trajectories (pcazip)
+Use `pcazip` to convert standard MD trajectories into compressed PCZ files.
 
-*   **Basic Compression:**
-    `pcazip -i input.traj -o output.pcz -p reference.pdb`
-*   **Quality Control:**
-    Use `-q` to specify the percentage of total variance to maintain (e.g., `-q 90`) or `-e` to specify a fixed number of eigenvectors.
-*   **Atom Selection:**
-    Use `-M "mask"` (Amber-style syntax) to compress only specific residues or atom types (e.g., `:1-100@CA`).
-*   **Gaussian RMSd:**
-    Add the `-g` flag to use a Gaussian-weighted RMSd algorithm for recentering, which can be more robust for flexible systems.
+*   **Basic Compression**:
+    `pcazip -i trajectory.x -o output.pcz -p reference.pdb`
+*   **Quality-Based Compression**: Define the percentage of total variance to retain (e.g., 90%).
+    `pcazip -i trajectory.x -o output.pcz -p reference.pdb -q 90`
+*   **Fixed Eigenvector Count**: Store a specific number of principal components.
+    `pcazip -i trajectory.x -o output.pcz -p reference.pdb -e 20`
+*   **Atom Selection**: Use an Amber-style mask to compress only specific regions (e.g., C-alpha atoms).
+    `pcazip -i trajectory.x -o output.pcz -p reference.pdb -M ":@CA"`
 
-### Trajectory Reconstruction (`pcaunzip`)
-Use `pcaunzip` to revert a .pcz file back to a readable trajectory format.
+### Decompressing Trajectories (pcaunzip)
+Use `pcaunzip` to restore a trajectory for use in other MD analysis tools.
 
-*   **Standard Recovery:**
-    `pcaunzip -i input.pcz -o output.traj`
-*   **PDB Output:**
-    If the original compression included a PDB, you can extract frames directly to PDB format using the `--pdb` flag.
+*   **Restore to Amber Format**:
+    `pcaunzip -i input.pcz -o restored.x`
+*   **Restore to PDB Format**: (Requires that a PDB was provided during compression)
+    `pcaunzip -i input.pcz -o restored.pdb --pdb`
 
-### Analysis without Decompression (`pczdump`)
-`pczdump` is the most versatile tool in the suite, allowing for rapid querying of the compressed data.
+### Analyzing Compressed Data (pczdump)
+Use `pczdump` to query the contents of a PCZ file without decompressing the entire trajectory.
 
-*   **Metadata Retrieval:**
-    `pczdump -i input.pcz --info` (Returns atom counts, frames, and explained variance).
-*   **Dynamics Analysis:**
-    *   **Fluctuations:** `pczdump -i input.pcz --fluc` (Add `--bfactor` to output as B-factors).
-    *   **Hinge Prediction:** `pczdump -i input.pcz --hinge` to identify potential pivot points in the protein.
-    *   **Collectivity:** `pczdump -i input.pcz --collectivity` to measure how many atoms participate in a specific eigenvector's movement.
-*   **Structural Extraction:**
-    *   **Average Structure:** `pczdump -i input.pcz --avg`
-    *   **Projections:** `pczdump -i input.pcz --proj` to get projections for specific eigenvectors.
+*   **Metadata and Statistics**: View variance, atom counts, and compression quality.
+    `pczdump -i input.pcz --info`
+*   **Atomic Fluctuations**: Calculate RMSF or B-factors.
+    `pczdump -i input.pcz --fluc --bfactor`
+*   **Essential Dynamics**: Extract eigenvalues or animate movement along a specific eigenvector.
+    `pczdump -i input.pcz --evals`
+    `pczdump -i input.pcz --anim --evec 1`
+*   **Structural Analysis**: Extract the average structure or compute RMSD.
+    `pczdump -i input.pcz --avg -o average.pdb --pdb`
 
 ## Expert Tips
+*   **Recentering**: By default, `pcazip` uses standard RMSd for recentering. For systems with high local flexibility, use the `-g` flag for Gaussian-weighted recentering to improve the definition of the essential subspace.
+*   **Masking**: Always use the `-M` (mask) or `-m` (PDB mask) option if you only care about the protein backbone or specific residues. This significantly increases compression ratios and reduces noise in the PCA.
+*   **Verbosity**: Use the `-v` flag during compression of large trajectories to monitor progress, as PCA calculation on high-atom-count systems can be computationally intensive.
 
-*   **Masking is Critical:** Always use a mask (`-M`) during compression to focus on the solute (e.g., protein backbones) and exclude solvent/ions. This significantly improves compression ratios and the quality of the PCA.
-*   **Verbose Mode:** Use `-v` during long compression tasks to monitor progress, as PCA calculation on large trajectories can be computationally intensive.
-*   **Eigenvector Animation:** Use `pczdump -i input.pcz --anim --evec 1` to generate a trajectory showing the motion described by the first principal component.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| pcaunzip | Decompress PCA data from a file |
+| pcazip | Compresses amber format trajectory files using Principal Component Analysis (PCA). |
+| pczdump | Extract information and perform calculations on PCZ files |
 
 ## Reference documentation
-- [pcasuite GitHub Repository](./references/github_com_mmb-irb_pcasuite.md)
+- [pcasuite README](./references/github_com_mmb-irb_pcasuite_blob_master_README.md)

@@ -1,6 +1,6 @@
 ---
 name: argnorm
-description: argnorm normalizes antibiotic resistance gene identifiers from various databases into standardized ARO accession numbers and provides functional drug categorization. Use when user asks to normalize ARG annotations, map gene identifiers to ARO terms, or categorize antibiotic resistance genes by drug class.
+description: argNorm normalizes antibiotic resistance gene naming inconsistencies by mapping tool-specific identifiers to the Antibiotic Resistance Ontology. Use when user asks to normalize ARG database outputs, map gene identifiers to ARO terms, or standardize resistance annotations from tools like Abricate, ResFinder, and AMRFinderPlus.
 homepage: https://github.com/BigDataBiology/argNorm
 ---
 
@@ -8,57 +8,78 @@ homepage: https://github.com/BigDataBiology/argNorm
 # argnorm
 
 ## Overview
-argnorm is a specialized bioinformatic tool designed to solve the "vocabulary problem" in antibiotic resistance gene (ARG) annotation. Different tools and databases (e.g., CARD, Megares, ARG-ANNOT) often use inconsistent naming conventions for the same genes. argnorm maps these diverse identifiers to a standardized ARO accession number. Beyond simple normalization, it provides functional enrichment by adding drug categorization, identifying the specific antibiotic classes a gene confers resistance to, and grouping them into broader categories (e.g., mapping a specific gene to "amoxicillin" and then to the broader "beta-lactam" class).
 
-## Installation
-Install via conda or pip:
-```bash
-conda install bioconda::argnorm
-# OR
-pip install argnorm
-```
+argNorm is a normalization tool designed to resolve the naming inconsistencies found across different antibiotic resistance gene (ARG) databases. By mapping tool-specific gene identifiers to the Antibiotic Resistance Ontology (ARO) maintained by the CARD database, argNorm provides a "common language" for resistance annotations. Beyond simple mapping, it enhances datasets by appending functional metadata, including the specific drugs and broader drug classes to which a gene confers resistance. This allows researchers to compare results from different pipelines (e.g., comparing ResFinder results with AMRFinderPlus results) on a standardized scale.
 
 ## CLI Usage Patterns
 
-### Basic Normalization
-The core command requires specifying the tool used for the original annotation, the input file, and the output path.
+The general syntax for argNorm follows a tool-specific subcommand structure:
 
 ```bash
-argnorm [tool] -i input_annotation.tsv -o normalized_output.tsv
+argnorm [tool] -i <input_file> -o <output_file>
 ```
 
-### Supported Tools and Database Selection
-For many tools, you must specify the database used during the initial annotation via the `--db` flag to ensure correct mapping.
+### Supported Tool Subcommands
+- `amrfinderplus`: For NCBI AMRFinderPlus outputs (v3.10 and v4.0 supported).
+- `resfinder`: For ResFinder outputs.
+- `deeparg`: For DeepARG outputs.
+- `groot`: For GROOT outputs.
+- `abricate`: For Abricate outputs (requires specifying the database used).
+- `sarg`: For SARG (Structured Antibiotic Resistance Genes) database outputs.
+- `hamronization`: For outputs already processed by the hAMRonization tool.
 
-| Tool | Required/Optional `--db` | Supported DB Values |
-| :--- | :--- | :--- |
-| `abricate` | Required | `ncbi`, `resfinder`, `argannot`, `megares`, `card` |
-| `deeparg` | Optional | `deeparg` |
-| `resfinder` | Optional | `resfinder` |
-| `amrfinderplus`| Optional | `ncbi` |
-| `groot` | Required | `groot-db`, `groot-core-db`, `groot-argannot`, `groot-card`, `groot-resfinder` |
-| `argsoap` | Optional | `sarg` |
-| `hamronization`| Optional | N/A (Processes hAMRonized outputs) |
+### Common CLI Examples
 
-### Handling hAMRonization Outputs
-If you have already used the `hAMRonization` tool to unify file formats, use the `hamronization` subcommand. Note that argnorm only supports hAMRonized results that originated from its supported tool list.
-
+**Normalizing Abricate results:**
+When using Abricate, you must specify the database that was used during the initial annotation:
 ```bash
-argnorm hamronization -i hamronized_results.tsv -o normalized_output.tsv
+argnorm abricate --db resfinder -i results.tsv -o normalized_results.tsv
 ```
 
-To skip unsupported tools within a large hAMRonized file:
+**Normalizing GROOT results:**
 ```bash
-argnorm hamronization -i input.tsv -o output.tsv --hamronization_skip_unsupported_tool
+argnorm groot --db groot-card -i groot_output.tsv -o normalized_groot.tsv
+```
+
+**Processing hAMRonization outputs:**
+hAMRonization often combines results from multiple tools. If the input contains tools not supported by argNorm, use the skip flag to prevent errors:
+```bash
+argnorm hamronization -i hamronized_report.tsv -o normalized_report.tsv --hamronization_skip_unsupported_tool
 ```
 
 ## Expert Tips and Best Practices
-- **Check Versions**: argnorm is version-sensitive regarding the underlying databases. If mapping rates are low, verify that your annotation tool version matches those supported by argnorm (e.g., ResFinder v4.0, DeepARG v2).
-- **Output Columns**: The normalized file will include new columns: `ARO`, `ARO_name`, `confers_resistance_to_names`, and `resistance_to_drug_classes_names`. Use these for downstream statistical analysis and visualization.
-- **Memory Efficiency**: The tool is highly optimized, requiring only ~200MiB of RAM, making it suitable for execution on standard laptops even with thousands of input genes.
-- **Library Usage**: For Python-based workflows, you can use `argnorm.lib.map_to_aro` to map individual gene names to ARO terms programmatically.
+
+### Handling Output Headers
+When argNorm generates a TSV via the CLI, it prepends a comment line indicating the version (e.g., `# argNorm version: 1.1.0`). 
+**Critical for Downstream Analysis:** If you are loading these files into Python/Pandas, you must skip this header line:
+```python
+import pandas as pd
+df = pd.read_csv('argnorm_output.tsv', sep='\t', skiprows=1)
+```
+
+### Drug Categorization Logic
+argNorm maps genes to the immediate child of the 'antibiotic molecule' node in the ARO. For example, if a gene confers resistance to Tobramycin, argNorm will categorize the drug class as "aminoglycoside antibiotic." It utilizes `regulates`, `part_of`, and `participates_in` relationships to ensure efflux pumps and complex proteins are correctly mapped to resistance profiles even when direct `is_a` relationships are missing.
+
+### ARO Versioning
+As of version 0.7.0, argNorm supports ARO v4.0.0. Be aware that ARO mappings can change significantly between ontology versions. If you are re-analyzing old data, ensure you are using the latest version of argNorm to benefit from the 1200+ beta-lactamase genes added in recent ARO updates.
+
+### Cut-Off Scores
+argNorm includes a `Cut_Off` column in its output. These scores (`Perfect`, `Strict`, `Loose`) are derived from RGI's discovery paradigm. If a mapping was performed via manual curation rather than RGI, the score will be labeled as `Manual`.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| argnorm | argNorm normalizes ARG annotation results from different tools and databases to the same ontology, namely ARO (Antibiotic Resistance Ontology). |
+| argnorm | argNorm normalizes ARG annotation results from different tools and databases to the same ontology, namely ARO (Antibiotic Resistance Ontology). |
+| argnorm | argNorm normalizes ARG annotation results from different tools and databases to the same ontology, namely ARO (Antibiotic Resistance Ontology). |
+| argnorm | argNorm normalizes ARG annotation results from different tools and databases to the same ontology, namely ARO (Antibiotic Resistance Ontology). |
+| argnorm | argNorm normalizes ARG annotation results from different tools and databases to the same ontology, namely ARO (Antibiotic Resistance Ontology). |
+| argnorm | argNorm normalizes ARG annotation results from different tools and databases to the same ontology, namely ARO (Antibiotic Resistance Ontology). |
+| argsoap | argNorm normalizes ARG annotation results from different tools and databases to the same ontology, namely ARO (Antibiotic Resistance Ontology). |
 
 ## Reference documentation
-- [argNorm GitHub Repository](./references/github_com_BigDataBiology_argNorm.md)
-- [argNorm Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_argnorm_overview.md)
-- [argNorm Tags and Versions](./references/github_com_BigDataBiology_argNorm_tags.md)
+- [argNorm README](./references/github_com_BigDataBiology_argNorm_blob_main_README.md)
+- [argNorm Changelog](./references/github_com_BigDataBiology_argNorm_blob_main_CHANGELOG.md)

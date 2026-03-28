@@ -1003,3 +1003,6 @@ others:
     --version                              Show version.
 ```
 
+
+## Metadata
+- **Skill**: generated

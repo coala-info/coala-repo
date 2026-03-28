@@ -258,3 +258,6 @@ Genotyping:
       --soma-vaf <SOMA_VAF>      Max somatic VAF [default: 0.2]
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -247,4 +247,4 @@ htseq-clip: error: argument subparser: invalid choice: 'trimannotation' (choose 
 
 
 ## Metadata
-- **Skill**: generated
+- **Skill**: not generated

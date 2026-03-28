@@ -1,6 +1,6 @@
 ---
 name: bamsurgeon
-description: Bamsurgeon modifies existing sequence alignment files to introduce known mutations such as SNVs, indels, and structural variants. Use when user asks to add synthetic mutations to BAM files, test variant callers with realistic sequencing data, or simulate genomic variants in existing alignments.
+description: Bamsurgeon modifies existing BAM files by introducing synthetic mutations into reads while preserving the original data's noise and bias profiles. Use when user asks to add single nucleotide variants, introduce small insertions or deletions, or create complex structural variants in sequencing data.
 homepage: https://github.com/adamewing/bamsurgeon
 ---
 
@@ -8,46 +8,63 @@ homepage: https://github.com/adamewing/bamsurgeon
 # bamsurgeon
 
 ## Overview
+Bamsurgeon allows for the "surgical" modification of high-throughput sequencing data by re-aligning reads around a target site, introducing a mutation, and replacing the original reads with the mutated versions. Unlike simulators that generate data from scratch, Bamsurgeon preserves the original noise, coverage biases, and error profiles of the source BAM file, making it an industry standard for creating realistic "spike-in" datasets.
 
-Bamsurgeon is a specialized toolkit for "surgerizing" existing sequence alignment files. Instead of generating synthetic reads from a reference genome, it modifies real sequencing data to introduce known mutations. This approach is superior for testing variant callers because it preserves the original data's characteristics, such as sequencing artifacts, coverage fluctuations, and mapping biases. 
+## Core Commands
+The toolset consists of three primary Python scripts located in the `bin/` directory:
 
-The tool suite consists of three primary scripts: `addsnv.py` for single nucleotide variants, `addindel.py` for small insertions and deletions, and `addsv.py` for complex structural variants.
+- `addsnv.py`: Introduces Single Nucleotide Variants.
+- `addindel.py`: Introduces small insertions and deletions.
+- `addsv.py`: Introduces complex Structural Variants (deletions, duplications, inversions, translocations).
 
-## Core CLI Usage
+## Common CLI Patterns
 
-### 1. Adding Single Nucleotide Variants (SNVs)
-Use `addsnv.py` to introduce point mutations. You must provide a site list containing the chromosome, start, end, and desired variant allele frequency (VAF).
-
-```bash
-python3 -O bin/addsnv.py -v snv_sites.txt -f input.bam -r reference.fasta -o output_mutated.bam
-```
-
-### 2. Adding Indels
-Use `addindel.py` for small insertions and deletions. The variant file format typically requires chromosome, start, end, VAF, and the sequence to be inserted or "DEL" for deletions.
+### Adding Structural Variants (SV)
+To add structural variants, you must provide a variant file containing coordinates and types, a reference genome, and an insertion library if performing insertions.
 
 ```bash
-python3 -O bin/addindel.py -v indel_sites.txt -f input.bam -r reference.fasta -o output_indels.bam
+python3 bin/addsv.py \
+    -p 1 \
+    -v variants.txt \
+    -f input.bam \
+    -r reference.fasta \
+    -o output_mutated.bam \
+    --aligner mem \
+    --keepsecondary \
+    --seed 1234 \
+    --inslib insertion_library.fa
 ```
 
-### 3. Adding Structural Variants (SVs)
-Use `addsv.py` for large-scale changes like inversions, duplications, and translocations. This often requires an insertion library for novel sequences.
+### Adding SNVs or Indels
+The syntax for SNVs and Indels is similar, requiring a list of positions and desired allele frequencies.
 
 ```bash
-python3 -O bin/addsv.py -p 4 -v sv_sites.txt -f input.bam -r reference.fasta -o output_sv.bam --aligner mem --inslib insertion_library.fa
+python3 bin/addsnv.py -v snv_list.txt -f input.bam -r reference.fasta -o output_snv.bam
 ```
 
-## Expert Tips and Best Practices
+## Input File Formats
+- **Variant File (-v)**: Typically a tab-delimited file. 
+    - For SNVs: `chrom  pos  vaf`
+    - For SVs: `chrom  start  end  type` (Types include DEL, DUP, INV, TRA).
+- **Insertion Library**: A FASTA file containing sequences to be used for insertions or translocations.
 
-- **Dependency Verification**: Before running complex simulations, always verify your environment using the included check script:
-  `python3 -O scripts/check_dependencies.py`
-- **Performance Optimization**: Always use the `-O` flag with `python3`. This enables Python's basic optimizations and skips internal `assert` statements, which significantly improves processing speed for large BAM files.
-- **Aligner Consistency**: Ensure the `--aligner` argument matches the aligner used for the original BAM file (e.g., `mem` for BWA-MEM, `bowtie2` for Bowtie2). Bamsurgeon realigns reads around the mutation site to ensure the spiked-in variant is biologically plausible.
-- **Multithreading**: Use the `-p` flag to specify the number of threads. Variant simulation is computationally expensive because it involves local re-assembly and re-alignment.
-- **Variant File Format**: Variant files are generally tab-delimited. 
-  - For SNVs: `chrom  pos  pos  VAF`
-  - For SVs: `chrom  start  end  type` (where type can be DEL, INS, DUP, INV, or TRA).
-- **Secondary Alignments**: If your downstream caller relies on secondary or supplementary alignments, use the `--keepsecondary` flag to prevent Bamsurgeon from stripping them during the surgerization process.
+## Expert Tips & Best Practices
+- **Dependency Validation**: Before running complex simulations, use the provided check script to ensure all external aligners (BWA, Novoalign) and tools (Samtools, Picard, Velvet, Exonerate) are in your PATH:
+  `python3 scripts/check_dependencies.py`
+- **Aligner Consistency**: Always use the same aligner and parameters for Bamsurgeon that were used to create the original BAM file to avoid introducing alignment artifacts that variant callers might pick up as false positives.
+- **Performance**: For large BAM files, Bamsurgeon can be resource-intensive. Use the `-p` flag to specify the number of threads for parallel processing where supported.
+- **Secondary Alignments**: Use the `--keepsecondary` flag if your downstream analysis depends on secondary or supplementary alignments, as these are often stripped during the re-alignment phase by default.
+- **Randomness**: Always set a `--seed` if you need to generate reproducible datasets for benchmarking.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| addsnv.py | Add SNVs to a BAM file to create a synthetic dataset. |
+| bamsurgeon_addsv.py | Add structural variants to existing BAM files |
 
 ## Reference documentation
 - [Bamsurgeon GitHub Repository](./references/github_com_adamewing_bamsurgeon.md)
-- [Bioconda Bamsurgeon Overview](./references/anaconda_org_channels_bioconda_packages_bamsurgeon_overview.md)
+- [Bamsurgeon Documentation and Manuals](./references/github_com_adamewing_bamsurgeon_tree_master_doc.md)

@@ -83,6 +83,7 @@ Appearance settings
     - [Security Lab](https://securitylab.github.com)
     - [Maintainer Community](https://maintainers.github.com)
     - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
     - [Archive Program](https://archiveprogram.github.com)
   + REPOSITORIES
     - [Topics](https://github.com/topics)
@@ -148,7 +149,7 @@ Public
 
 * [Notifications](/login?return_to=%2Flh3%2Fbwa) You must be signed in to change notification settings
 * [Fork
-  575](/login?return_to=%2Flh3%2Fbwa)
+  576](/login?return_to=%2Flh3%2Fbwa)
 * [Star
    1.7k](/login?return_to=%2Flh3%2Fbwa)
 
@@ -371,6 +372,4 @@ Yes. Since 0.6.x, all BWA algorithms work with a genome with total length over
 
 This is correct. Mapping quality is assigned for individual read, not for a read
 pair. It is possible that one read can be mapped unambiguously, but its mate
-falls in a tandem repeat and thus its accurate position cannot be determined.
-
-#### 5. How 
+falls in a tandem repeat and thus its accura

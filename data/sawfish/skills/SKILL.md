@@ -1,6 +1,6 @@
 ---
 name: sawfish
-description: "Sawfish identifies structural and copy number variants in HiFi sequencing data. Use when user asks to discover structural variants, call copy number variants, or jointly call variants across samples."
+description: Sawfish is a high-resolution variant caller that identifies structural variations and copy number changes in PacBio HiFi reads. Use when user asks to call structural variants, perform copy number segmentation, or conduct joint-calling across a cohort of samples.
 homepage: https://github.com/PacificBiosciences/sawfish
 ---
 
@@ -9,53 +9,71 @@ homepage: https://github.com/PacificBiosciences/sawfish
 
 ## Overview
 
-Sawfish is a powerful tool designed for the sophisticated analysis of HiFi sequencing data. It excels at jointly identifying both structural variants (SVs) and copy number variants (CNVs) within a genome. This means it can pinpoint large-scale changes in DNA structure, such as deletions, insertions, duplications, and inversions, while simultaneously detecting variations in the number of copies of specific DNA segments. Sawfish is particularly useful for germline variant discovery and for analyzing these variations across multiple samples to understand population-level genetic differences or familial relationships.
+Sawfish is a high-resolution variant caller specifically optimized for Pacific Biosciences (PacBio) HiFi reads. It provides a unified analysis of structural variations and copy number changes by combining local sequence assembly with sequencing coverage segmentation. The tool operates in a two-stage workflow: an initial discovery phase per sample followed by a joint-calling phase that harmonizes variants across a cohort. It is particularly effective at resolving complex variants to base-pair resolution and correcting for GC-bias in depth-based calls.
 
-## Usage Instructions
+## Command Line Usage
 
-Sawfish operates through a command-line interface, with a streamlined workflow for discovering and jointly calling variants. The primary commands involve `discover` and `joint-call` steps.
-
-### Core Workflow
-
-1.  **Discovery**: This step identifies potential structural variants within individual samples.
-2.  **Joint Calling**: This step genotypes the discovered variants across multiple samples, providing a unified view of SVs and CNVs.
-
-### Key Command-Line Patterns
-
-Sawfish is designed for a simple, multi-threaded workflow. The general structure involves running the `discover` command for each sample, followed by a `joint-call` command that aggregates the results.
-
-**Basic Discovery Command Structure:**
+### 1. Discovery Step (Per-Sample)
+Run the discovery module on each individual BAM or CRAM file. This step performs local assembly and initial depth analysis.
 
 ```bash
-sawfish discover --reads <path/to/reads.fastq.gz> --output-dir <output_directory> --threads <number_of_threads>
+sawfish discover \
+    --bam sample.bam \
+    --ref reference.fasta \
+    --out-dir ./sample_discovery
 ```
 
-*   `--reads`: Path to the input HiFi sequencing reads (FASTQ format).
-*   `--output-dir`: Directory to store the discovery results for the sample.
-*   `--threads`: Number of CPU threads to use for the discovery process.
+**Key Options:**
+- `--min-sv-minq`: Sets the minimum mapping quality for evidence reads (default is 5).
+- `--disable-cnv`: Use this for non-WGS data or when depth-based CNV calling is not required.
+- `--min-variant-size`: Minimum size for reported variants (default is 35bp).
 
-**Basic Joint Calling Command Structure:**
+### 2. Joint-Call Step (Cohort)
+Combine the results from multiple discovery directories to produce a joint VCF and synchronized copy number segments.
 
 ```bash
-sawfish joint-call --input-dirs <dir1>,<dir2>,... --output-dir <output_directory> --threads <number_of_threads>
+sawfish joint-call \
+    --discover-dir ./sample1_discovery \
+    --discover-dir ./sample2_discovery \
+    --ref reference.fasta \
+    --out-dir ./joint_output
 ```
 
-*   `--input-dirs`: Comma-separated list of output directories from the `discover` step for each sample.
-*   `--output-dir`: Directory to store the final joint-called variants.
-*   `--threads`: Number of CPU threads to use for the joint calling process.
+**Advanced Joint-Calling:**
+For large cohorts, use a CSV file to specify inputs instead of multiple `--discover-dir` flags:
+```bash
+sawfish joint-call \
+    --sample-csv samples.csv \
+    --ref reference.fasta \
+    --out-dir ./joint_output
+```
 
-### Important Considerations and Expert Tips
+## Expert Tips and Best Practices
 
-*   **Minimum Variant Size**: The minimum variant size is 35 bases by default, but this is configurable.
-*   **Breakpoint-based SVs**: These are reported as deletions, insertions, duplications, and inversions if supported by both breakpoint and depth patterns. Otherwise, only the breakpoint is reported.
-*   **Copy Number Variants (CNVs)**: These are reported as deletions and duplications.
-*   **Unified View**: Sawfish merges redundant calls into single variants that describe both breakpoint and copy number details, providing a comprehensive view.
-*   **Local Haplotype Modeling**: For high SV discovery and genotyping accuracy, Sawfish models and genotypes breakpoint-based structural variants as local haplotypes.
-*   **GC-bias Correction**: Integrated copy number segmentation includes GC-bias correction for accurate CNV calling and improved classification of large SVs.
-*   **Output Formats**: While not explicitly detailed in the provided documentation, expect standard genomic variant formats like VCF for SVs and potentially BED or similar for CNVs. Refer to the official documentation for specific output file details.
-*   **Configuration**: Explore command-line options for fine-tuning parameters such as minimum variant size, threading, and output details. Use `sawfish --help` or `sawfish discover --help` and `sawfish joint-call --help` for a full list of available arguments.
+- **Input Requirements**: Ensure your HiFi reads are mapped to the reference genome. Sawfish relies on existing alignments to trigger local assembly.
+- **Memory Management**: When working with CRAM files in large cohorts, monitor memory usage. Recent updates (v1.0.1+) have optimized memory for CRAM, but BAM remains the most stable for extremely high thread counts.
+- **Inversion Calling**: Sawfish applies specific phasing requirements for large inversions (>100kb). Breakends must not be in phase with unrelated breakends on the same read to reduce false positives.
+- **Output Interpretation**:
+    - **VCF**: Contains merged SV and CNV records.
+    - **Depth Tracks**: Look for the GC-bias corrected depth tracks in the joint-call output for accurate copy number visualization.
+    - **Assembled Contigs**: Use the optional BAM output of assembled SV contig alignments to manually review complex breakpoints in a genome browser.
+- **Supporting Reads**: To identify which specific reads contributed to a call, use the `--report-supporting-reads` flag during the joint-call step.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| sawfish | For more information, try '--help'. |
+| sawfish | For more information, try '--help'. |
+| sawfish | Print help information for sawfish commands. |
+| sawfish | For more information, try '--help'. |
+| sawfish | For more information, try '--help'. |
+| sawfish discover | Discover SV candidate alleles in one sample |
+| sawfish joint-call | Merge and genotype SVs from one or more samples, given the discover command results from each |
 
 ## Reference documentation
-
-*   [Sawfish Overview](./references/anaconda_org_channels_bioconda_packages_sawfish_overview.md)
-*   [Sawfish GitHub Repository](./references/github_com_PacificBiosciences_sawfish.md)
+- [Sawfish README](./references/github_com_PacificBiosciences_sawfish_blob_main_README.md)
+- [Sawfish Changelog](./references/github_com_PacificBiosciences_sawfish_blob_main_CHANGELOG.md)
+- [Sawfish User Guide Reference](./references/github_com_PacificBiosciences_sawfish_blob_main_docs_user_guide.md)

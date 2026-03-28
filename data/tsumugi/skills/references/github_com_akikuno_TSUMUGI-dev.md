@@ -1,1 +1,303 @@
-GitHub - akikuno/TSUMUGI-dev: Web tool for visualizing phenotype-similarity gene networks Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} akikuno / TSUMUGI-dev Public Notifications You must be signed in to change notification settings Fork 0 Star 4 Web tool for visualizing phenotype-similarity gene networks larc-tsukuba.github.io/tsumugi/ License MIT license 4 stars 0 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 9 Pull requests 0 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights akikuno/TSUMUGI-dev main Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 820 Commits 820 Commits .github .github doc doc image image src/ TSUMUGI src/ TSUMUGI tests tests .gitattributes .gitattributes .gitignore .gitignore LICENSE LICENSE README.md README.md pyproject.toml pyproject.toml View all files Repository files navigation README MIT license Translations: 日本語 | 한국어 | 简体中文 | 繁體中文 | हिन्दी | Bahasa Indonesia | Tiếng Việt | Español | Français | Deutsch | Português TSUMUGI (Trait-driven Surveillance for Mutation-based Gene module Identification) is a web tool that uses knockout (KO) mouse phenotype data from the International Mouse Phenotyping Consortium (IMPC) to extract and visualize gene modules based on phenotypic similarity . TSUMUGI (紡ぎ in Japanese) comes from the idea of “weaving together gene groups that form phenotypes.” This web app is available to everyone online👇️ 🔗 https://larc-tsukuba.github.io/tsumugi/ 📖 How to Use TSUMUGI TSUMUGI supports three kinds of input. Phenotype Enter a phenotype of interest to search for genes whose KO mice have similar overall phenotype profiles . Phenotype names follow Mammalian Phenotype Ontology (MPO) . 👉 Phenotype list Gene Specify one gene to search for other genes whose KO mice show similar phenotypes . Gene symbols follow MGI . 👉 Gene list Gene List Paste multiple genes (one per line). This extracts phenotypically similar genes among the genes in the list . Caution If no similar genes are found: No similar phenotypes were found among the entered genes. If more than 200 similar genes are found: Too many genes submitted. Please limit the number to 200 or fewer. 📥 Download data TSUMUGI reports gzipped JSONL files. genewise_phenotype_annotations.jsonl.gz Gene symbol (e.g., "1110059G10Rik") Marker accession ID (e.g., "MGI:1913452") Phenotype term name/ID (e.g., "fused joints", "MP:0000137") Effect size (e.g., 0.0, 1.324) Significance flag (true/false) Zygosity ("Homo", "Hetero", "Hemi") Life stage ("Embryo", "Early", "Interval", "Late") Sexual dimorphism ("None", "Male", "Female") Disease annotation (e.g., [] or "Premature Ovarian Failure 18") Example: { "significant" : true , "sexual_dimorphism" : " Female " , "effect_size" : 0.0119677350763567 , "marker_symbol" : " 4930447C04Rik " , "zygosity" : " Homo " , "marker_accession_id" : " MGI:1923051 " , "mp_term_id" : " MP:0000063 " , "disease_annotation" : [ " Male Infertility With Azoospermia Or Oligozoospermia Due To Single Gene Mutation " , " Premature Ovarian Failure 18 " , " Spermatogenic Failure 52 " ], "life_stage" : " Early " , "mp_term_name" : " decreased bone mineral density " } pairwise_similarity_annotations.jsonl.gz Gene pair ( gene1_symbol , gene2_symbol ) phenotype_shared_annotations (per-phenotype metadata: life stage, zygosity, sexual dimorphism) phenotype_similarity_score (Phenodigm score, 0–100) Example: { "gene1_symbol" : " 1500009L16Rik " , "gene2_symbol" : " Aak1 " , "phenotype_shared_annotations" : [{ "mp_term_name" : " increased circulating enzyme level " , "life_stage" : " Early " , "zygosity" : " Homo " , "sexual_dimorphism" : " None " }], "phenotype_similarity_score" : 47 } 🌐 Network The page transitions and draws the network automatically. Important Gene pairs with 3 or more shared abnormal phenotypes and phenotypic similarity &gt; 0.0 are visualized. Network panel Nodes represent genes. Click to see the list of abnormal phenotypes observed in that KO mouse; drag to rearrange positions. Edges show shared phenotypes; click to view details. Modules outline subnetworks of genes. Click a module to list phenotypes involving its member genes; drag modules to reposition them and avoid overlap. Control panel Adjust network display from the left panel. Filter by phenotypic similarity Phenotypes similarity slider thresholds edges by Resnik→Phenodigm score. Note For how we compute similarity, see: 👉 🔍 How We Calculate Phenotypically Similar Genes Filter by phenotype severity Phenotype severity slider filters nodes by effect size (severity in KO mice). Higher values mean stronger impact. Note Hidden for binary phenotypes (e.g., abnormal embryo development ; binary list: 👉 here ) or gene(s) input. Specify genotype Choose the genotype in which phenotypes appear: Homo : homozygous Hetero : heterozygous Hemi : hemizygous Specify sex Extract sex-specific phenotypes: Female Male Specify life stage Filter by life stage in which phenotypes appear: Embryo Early (0–16 weeks) Interval (17–48 weeks) Late (49+ weeks) Markup panel Highlight: Human Disease Highlight genes linked to human disease (IMPC Disease Models Portal data). Search: Specific Gene Search gene names within the network. Layout &amp; Display Adjust layout, font size, edge width, and node repulsion (Cose layout). Export Export the current network as PNG/CSV/GraphML. CSV includes connected-component (module) IDs and phenotype lists per gene; GraphML is Cytoscape-compatible. 🛠 Command-Line Interface (CLI) The TSUMUGI CLI allows you to use the latest IMPC data downloaded locally, and provides more fine-grained filtering and output options than the web tool. Features Recompute with IMPC statistical-results-ALL.csv.gz (optionally mp.obo , impc_phenodigm.csv ). Filter by presence/absence of MP terms. Filter by gene list (comma-separated or text file). Outputs: GraphML ( tsumugi build-graphml ), offline webapp bundle ( tsumugi build-webapp ). Installation BioConda: conda install -c conda-forge -c bioconda tsumugi PyPI: pip install tsumugi You are ready if tsumugi --version prints the version. Available commands tsumugi run : Recompute the network from IMPC data tsumugi mp --include/--exclude (--pairwise/--genewise) : Filter gene pairs or genes that contain / do not show an MP term tsumugi count --pairwise/--genewise (--min/--max) : Filter by phenotype counts (pairwise or per gene) tsumugi score (--min/--max) : Filter by phenotype similarity score (pairwise) tsumugi genes --keep/--drop : Keep/drop by gene list (comma-separated or text file) tsumugi life-stage --keep/--drop : Filter by life stage (Embryo/Early/Interval/Late) tsumugi sex --keep/--drop : Filter by sex (Male/Female/None) tsumugi zygosity --keep/--drop : Filter by zygosity (Homo/Hetero/Hemi) tsumugi build-graphml : Generate GraphML (Cytoscape, etc.) tsumugi build-webapp : Generate TSUMUGI webapp assets (local HTML/CSS/JS) Note All filtering subcommands stream JSONL to STDOUT. Redirect with &gt; if you want to save results to a file. Important All commands except tsumugi run require either pairwise_similarity_annotation.jsonl.gz or genewise_phenotype_annotation.jsonl.gz . Both files can be downloaded from the TSUMUGI top page . Usage Recompute from IMPC data ( tsumugi run ) If --mp_obo is omitted, TSUMUGI uses the bundled data-version: releases/2025-08-27/mp.obo . If --impc_phenodigm is omitted, it uses the file fetched on 2025-10-01 from the IMPC Disease Models Portal . tsumugi run \ --ou
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fakikuno%2FTSUMUGI-dev)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fakikuno%2FTSUMUGI-dev)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=akikuno%2FTSUMUGI-dev)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[akikuno](/akikuno)
+/
+**[TSUMUGI-dev](/akikuno/TSUMUGI-dev)**
+Public
+
+* [Notifications](/login?return_to=%2Fakikuno%2FTSUMUGI-dev) You must be signed in to change notification settings
+* [Fork
+  0](/login?return_to=%2Fakikuno%2FTSUMUGI-dev)
+* [Star
+   4](/login?return_to=%2Fakikuno%2FTSUMUGI-dev)
+
+* [Code](/akikuno/TSUMUGI-dev)
+* [Issues
+  14](/akikuno/TSUMUGI-dev/issues)
+* [Pull requests
+  0](/akikuno/TSUMUGI-dev/pulls)
+* [Actions](/akikuno/TSUMUGI-dev/actions)
+* [Projects](/akikuno/TSUMUGI-dev/projects)
+* [Security
+  0](/akikuno/TSUMUGI-dev/security)
+* [Insights](/akikuno/TSUMUGI-dev/pulse)
+
+Additional navigation options
+
+* [Code](/akikuno/TSUMUGI-dev)
+* [Issues](/akikuno/TSUMUGI-dev/issues)
+* [Pull requests](/akikuno/TSUMUGI-dev/pulls)
+* [Actions](/akikuno/TSUMUGI-dev/actions)
+* [Projects](/akikuno/TSUMUGI-dev/projects)
+* [Security](/akikuno/TSUMUGI-dev/security)
+* [Insights](/akikuno/TSUMUGI-dev/pulse)
+
+# akikuno/TSUMUGI-dev
+
+main
+
+[Branches](/akikuno/TSUMUGI-dev/branches)[Tags](/akikuno/TSUMUGI-dev/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[822 Commits](/akikuno/TSUMUGI-dev/commits/main/)   822 Commits | | |
+| [.github](/akikuno/TSUMUGI-dev/tree/main/.github ".github") | | [.github](/akikuno/TSUMUGI-dev/tree/main/.github ".github") |  |  |
+| [doc](/akikuno/TSUMUGI-dev/tree/main/doc "doc") | | [doc](/akikuno/TSUMUGI-dev/tree/main/doc "doc") |  |  |
+| [image](/akikuno/TSUMUGI-dev/tree/main/image "image") | | [image](/akikuno/TSUMUGI-dev/tree/main/image "image") |  |  |
+| [src/TSUMUGI](/akikuno/TSUMUGI-dev/tree/main/src/TSUMUGI "This path skips through empty directories") | | [src/TSUMUGI](/akikuno/TSUMUGI-dev/tree/main/src/TSUMUGI "This path skips through empty directories") |  |  |
+| [tests](/akikuno/TSUMUGI-dev/tree/main/tests "tests") | | [tests](/akikuno/TSUMUGI-dev/tree/main/tests "tests") |  |  |
+| [.gitattributes](/akikuno/TSUMUGI-dev/blob/main/.gitattributes ".gitattributes") | | [.gitattributes](/akikuno/TSUMUGI-dev/blob/main/.gitattributes ".gitattributes") |  |  |
+| [.gitignore](/akikuno/TSUMUGI-dev/blob/main/.gitignore ".gitignore") | | [.gitignore](/akikuno/TSUMUGI-dev/blob/main/.gitignore ".gitignore") |  |  |
+| [LICENSE](/akikuno/TSUMUGI-dev/blob/main/LICENSE "LICENSE") | | [LICENSE](/akikuno/TSUMUGI-dev/blob/main/LICENSE "LICENSE") |  |  |
+| [README.md](/akikuno/TSUMUGI-dev/blob/main/README.md "README.md") | | [README.md](/akikuno/TSUMUGI-dev/blob/main/README.md "README.md") |  |  |
+| [pyproject.toml](/akikuno/TSUMUGI-dev/blob/main/pyproject.toml "pyproject.toml") | | [pyproject.toml](/akikuno/TSUMUGI-dev/blob/main/pyproject.toml "pyproject.toml") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* MIT license
+
+[![Tsumugi Logo](https://raw.githubusercontent.com/akikuno/TSUMUGI-dev/refs/heads/main/image/tsumugi-logo.jpg)](https://larc-tsukuba.github.io/tsumugi/)
+
+[![License](https://camo.githubusercontent.com/bd6fd148b2b0e7b24b0c93899a73a70d08a6931ffb5c8c2ebfaf844d137c0af7/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c6963656e73652d4d49542d3963662e737667)](https://choosealicense.com/licenses/mit/)
+[![Test](https://camo.githubusercontent.com/5317d27a674a98ab232e33190897596ed51cc7c2c0fd376d8b776c6c32c90680/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f616374696f6e732f776f726b666c6f772f7374617475732f616b696b756e6f2f7473756d7567692d6465762f7079746573742e796d6c3f6272616e63683d6d61696e266c6162656c3d5465737426636f6c6f723d627269676874677265656e)](https://github.com/akikuno/tsumugi-dev/actions)
+[![PyPI](https://camo.githubusercontent.com/6813a579bb09febcaafbf405556e7af5712139d3178ea490f99079d265f90ab7/68747470733a2f2f696d672e736869656c64732e696f2f707970692f762f7473756d7567692e7376673f6c6162656c3d5079504926636f6c6f723d6f72616e6765)](https://pypi.org/project/tsumugi/)
+[![Bioconda](https://camo.githubusercontent.com/82dd254e2a1a40f97941c629fbe63b551fd05dafdfcc99cee1c9fdbe031691ff/68747470733a2f2f696d672e736869656c64732e696f2f636f6e64612f762f62696f636f6e64612f7473756d7567693f6c6162656c3d42696f636f6e646126636f6c6f723d6f72616e6765)](https://anaconda.org/bioconda/tsumugi)
+[![Preprint](https://camo.githubusercontent.com/31cd0d244d2e1338d1ec90ca2230c99ba92a9e1c9acbd791372a5af4f08f5755/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f62696f527869762d31302e36343839382f323032362e30322e31382e3730363732302d726564)](https://doi.org/10.64898/2026.02.18.706720)
+[![DOI](https://camo.githubusercontent.com/7ea14f964ac997ecf290bf557da3286700147771ce5d632394808d6522722319/68747470733a2f2f7a656e6f646f2e6f72672f62616467652f3434313032353232372e737667)](https://doi.org/10.5281/zenodo.14957711)
+[![Contact](https://camo.githubusercontent.com/83f969143a92a64fa4dc1d7421f9eb583bc73176d359da66c0bfafe760836fa1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f436f6e746163742d393233444532)](https://forms.gle/ME8EJZZHaRNgKZ979)
+
+Translations: [日本語](https://github.com/akikuno/TSUMUGI-dev/blob/main/doc/README_JP.md) | [한국어](https://github.com/akikuno/TSUMUGI-dev/blob/main/doc/README_KR.md) | [简体中文](https://github.com/akikuno/TSUMUGI-dev/blob/main/doc/README_ZH_CN.md) | [繁體中文](https://github.com/akikuno/TSUMUGI-dev/blob/main/doc/README_ZH_TW.md) | [हिन्दी](https://github.com/akikuno/TSUMUGI-dev/blob/main/doc/README_HI.md) | [Bahasa Indonesia](https://github.com/akikuno/TSUMUGI-dev/blob/main/doc/README_ID.md) | [Tiếng Việt](https://github.com/akikuno/TSUMUGI-dev/blob/main/doc/README_VN.md) | [Español](https://github.com/akikuno/TSUMUGI-dev/blob/main/doc/README_ES.md) | [Français](https://github.com/akikuno/TSUMUGI-dev/blob/main/doc/README_FR.md) | [Deutsch](https://github.com/akikuno/TSUMUGI-dev/blob/main/doc/README_DE.md) | [Português](https://github.com/akikuno/TSUMUGI-dev/blob/main/doc/README_PT.md)
+
+**TSUMUGI (Trait-driven Surveillance for Mutation-based Gene module Identification)** is a web tool that uses knockout (KO) mouse phenotype data from the [International Mouse Phenotyping Consortium (IMPC)](https://www.mousephenotype.org/) to **extract and visualize gene modules based on phenotypic similarity**.
+
+**TSUMUGI (紡ぎ in Japanese)** comes from the idea of “weaving together gene groups that form phenotypes.”
+
+This web app is available to everyone online👇️
+
+🔗 <https://larc-tsukuba.github.io/tsumugi/>
+
+# 📖 How to Use TSUMUGI
+
+TSUMUGI supports three kinds of input.
+
+### Phenotype
+
+Enter a phenotype of interest to search for **genes whose KO mice have similar overall phenotype profiles**.
+Phenotype names follow [Mammalian Phenotype Ontology (MPO)](https://www.informatics.jax.org/vocab/mp_ontology).
+
+👉 [Phenotype list](https://github.com/larc-tsukuba/tsumugi/blob/main/data/available_mp_terms.txt)
+
+### Gene
+
+Specify one gene to search for **other genes whose KO mice show similar phenotypes**.
+Gene symbols follow [MGI](http://www.informatics.jax.org/).
+
+👉 [Gene list](https://github.com/larc-tsukuba/tsumugi/blob/main/data/available_gene_symbols.txt)
+
+### Gene List
+
+Paste multiple genes (one per line). This extracts phenotypically similar genes **among the genes in the list**.
+
+Caution
+
+If no similar genes are found: `No similar phenotypes were found among the entered genes.`
+If more than 200 similar genes are found: `Too many genes submitted. Please limit the number to 200 or fewer.`
+
+### 📥 Download data
+
+TSUMUGI reports gzipped JSONL files.
+
+#### `genewise_phenotype_annotations.jsonl.gz`
+
+* Gene symbol (e.g., "1110059G10Rik")
+* Marker accession ID (e.g., "MGI:1913452")
+* Phenotype term name/ID (e.g., "fused joints", "MP:0000137")
+* Effect size (e.g., 0.0, 1.324)
+* Significance flag (true/false)
+* Zygosity ("Homo", "Hetero", "Hemi")
+* Life stage ("Embryo", "Early", "Interval", "Late")
+* Sexual dimorphism ("None", "Male", "Female")
+* Disease annotation (e.g., [] or "Premature Ovarian Failure 18")
+
+Example:
+
+```
+{"significant": true, "sexual_dimorphism": "Female", "effect_size": 0.0119677350763567, "marker_symbol": "4930447C04Rik", "zygosity": "Homo", "marker_accession_id": "MGI:1923051", "mp_term_id": "MP:0000063", "disease_annotation": ["Male Infertility With Azoospermia Or Oligozoospermia Due To Single Gene Mutation", "Premature Ovarian Failure 18", "Spermatogenic Failure 52"], "life_stage": "Early", "mp_term_name": "decreased bone mineral density"}
+```
+
+#### `pairwise_similarity_annotations.jsonl.gz`
+
+* Gene pair (`gene1_symbol`, `gene2_symbol`)
+* `phenotype_shared_annotations` (per-phenotype metadata: life stage, zygosity, sexual dimorphism)
+* `phenotype_similarity_score` (Phenodigm score, 0–100)
+
+Example:
+
+```
+{"gene1_symbol": "1500009L16Rik", "gene2_symbol": "Aak1", "phenotype_shared_annotations": [{"mp_term_name": "increased circulating enzyme level", "life_stage": "Early", "zygosity": "Homo", "sexual_dimorphism": "None"}], "phenotype_similarity_score": 47}
+```
+
+# 🌐 Network
+
+The page transitions and draws the network automatically.
+
+Important
+
+Gene pairs with **3 or more shared abnormal phenotypes** and **phenotypic similarity > 0.0** are visualized.
+
+### Network panel
+
+**Nodes** represent genes. Click to see the list of abnormal phenotypes observed in that KO mouse; drag to rearrange positions.
+**Edge

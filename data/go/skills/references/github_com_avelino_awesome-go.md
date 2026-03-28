@@ -1,1 +1,274 @@
-GitHub - avelino/awesome-go: A curated list of awesome Go frameworks, libraries and software Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} avelino / awesome-go Public Uh oh! There was an error while loading. Please reload this page . Notifications You must be signed in to change notification settings Fork 13k Star 165k A curated list of awesome Go frameworks, libraries and software awesome-go.com License MIT license 165k stars 13k forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 12 Pull requests 170 Discussions Actions Security 0 Insights Additional navigation options Code Issues Pull requests Discussions Actions Security Insights avelino/awesome-go main Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 5,203 Commits 5,203 Commits .github .github pkg pkg tmpl tmpl .codeclimate.yml .codeclimate.yml .cursorrules .cursorrules .dockerignore .dockerignore .gitattributes .gitattributes .gitignore .gitignore AGENTS.md AGENTS.md CODE_OF_CONDUCT.md CODE_OF_CONDUCT.md CONTRIBUTING.md CONTRIBUTING.md COVERAGE.md COVERAGE.md LICENSE LICENSE MAINTAINERS MAINTAINERS README.md README.md go.mod go.mod go.sum go.sum main.go main.go main_test.go main_test.go maturity_test.go maturity_test.go netlify.toml netlify.toml stale_repositories_test.go stale_repositories_test.go View all files Repository files navigation README Code of conduct Contributing MIT license Awesome Go We use the Golang Bridge community Slack for instant communication, follow the form here to join . Sponsorships: Special thanks to Your app, enterprise-ready. Start selling to enterprise customers with just a few lines of code. Add Single Sign-On (and more) in minutes instead of months. Awesome Go has no monthly fee , but we have employees who work hard to keep it running. With money raised, we can repay the effort of each person involved! You can see how we calculate our billing and distribution as it is open to the entire community. Want to be a supporter of the project click here . A curated list of awesome Go frameworks, libraries, and software. Inspired by awesome-python . Contributing: Please take a quick gander at the contribution guidelines first. Thanks to all contributors ; you rock! If you see a package or project here that is no longer maintained or is not a good fit, please submit a pull request to improve this file. Thank you! Contents Expand contents Awesome Go Contents Actor Model Artificial Intelligence Audio and Music Authentication and Authorization Blockchain Bot Building Build Automation Command Line Advanced Console UIs Standard CLI Configuration Continuous Integration CSS Preprocessors Data Integration Frameworks Data Structures and Algorithms Bit-packing and Compression Bit Sets Bloom and Cuckoo Filters Data Structure and Algorithm Collections Iterators Maps Miscellaneous Data Structures and Algorithms Nullable Types Queues Sets Text Analysis Trees Pipes Database Caches Databases Implemented in Go Database Schema Migration Database Tools SQL Query Builders Database Drivers Interfaces to Multiple Backends Relational Database Drivers NoSQL Database Drivers Search and Analytic Databases Date and Time Distributed Systems Dynamic DNS Email Embeddable Scripting Languages Error Handling File Handling Financial Forms Functional Game Development Generators Geographic Go Compilers Goroutines GUI Hardware Images IoT (Internet of Things) Job Scheduler JSON Logging Machine Learning Messaging Microsoft Office Microsoft Excel Microsoft Word Miscellaneous Dependency Injection Project Layout Strings Uncategorized Natural Language Processing Language Detection Morphological Analyzers Slugifiers Tokenizers Translation Transliteration Networking HTTP Clients OpenGL ORM Package Management Performance Query Language Reflection Resource Embedding Science and Data Analysis Security Serialization Server Applications Stream Processing Template Engines Testing Testing Frameworks Mock Fuzzing and delta-debugging/reducing/shrinking Selenium and browser control tools Fail injection Text Processing Formatters Markup Languages Parsers/Encoders/Decoders Regular Expressions Sanitation Scrapers RSS Utility/Miscellaneous Third-party APIs Utilities UUID Validation Version Control Video Web Frameworks Middlewares Actual middlewares Libraries for creating HTTP middlewares Routers WebAssembly Webhooks Server Windows Workflow Frameworks XML Zero Trust Code Analysis Editor Plugins Go Generate Tools Go Tools Software Packages DevOps Tools Other Software Resources Benchmarks Conferences E-Books E-books for purchase Free e-books Gophers Meetups Style Guides Social Media Twitter Reddit Websites Tutorials Guided Learning ⬆ back to top Actor Model Libraries for building actor-based programs. asyncmachine-go/pkg/machine - Graph control flow library (AOP, actor, state-machine). Ergo - An actor-based Framework with network transparency for creating event-driven architecture in Golang. Inspired by Erlang. Goakt - Fast and Distributed Actor framework using protocol buffers as message for Golang. Hollywood - Blazingly fast and light-weight Actor engine written in Golang. ProtoActor - Distributed actors for Go, C#, and Java/Kotlin. ⬆ back to top Artificial Intelligence Libraries for building programs that leverage AI. chromem-go - Embeddable vector database for Go with Chroma-like interface and zero third-party dependencies. In-memory with optional persistence. fun - The simplest but powerful way to use large language models (LLMs) in Go. langchaingo - LangChainGo is a framework for developing applications powered by language models. LocalAI - Open Source OpenAI alternative, self-host AI models. Ollama - Run large language models locally. OllamaFarm - Manage, load-balance, and failover packs of Ollamas. ⬆ back to top Audio and Music Libraries for manipulating audio. beep - A simple library for playback and audio manipulation. flac - Native Go FLAC encoder/decoder with support for FLAC streams. gaad - Native Go AAC bitstream parser. go-mpris - Client for mpris dbus interfaces. GoAudio - Native Go Audio Processing Library. gosamplerate - libsamplerate bindings for go. id3v2 - ID3 decoding and encoding library for Go. malgo - Mini audio library. minimp3 - Lightweight MP3 decoder library. Oto - A low-level library to play sound on multiple platforms. PortAudio - Go bindings for the PortAudio audio I/O library. ⬆ back to top Authentication and Authorization Libraries for implementing authentication and authorization. authboss - Modular authentication system for the web. It tries to remove as much boilerplate and "hard things" as possible so that each time you start a new web project in Go, you can plug it in, configure it, and start building your app without having to build an authentication system each time. branca - branca token specification implementation for Golang 1.15+. casbin - Authorization library that supports access control models like ACL, RBAC, and ABAC. cookiestxt - provides a parser of cookies.txt file format. go-githubauth - Utilities for GitHub authentication: generate and use GitHub application and installation tokens. go-guardian - Go-Guardian is a golang library that provides a simple, clean, and idiomatic way to create powerful modern API and web authentication that supports LDAP, Basic, Bearer token, and Certificate based authentication. go-iam - Developer-first Identity and Access Management system with a simple UI. go-jose - Fairly complete implementation of the JOSE working group's JSON Web Token, JSON Web Signatures, and 
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Favelino%2Fawesome-go)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Favelino%2Fawesome-go)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=avelino%2Fawesome-go)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[avelino](/avelino)
+/
+**[awesome-go](/avelino/awesome-go)**
+Public
+
+* ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* [Notifications](/login?return_to=%2Favelino%2Fawesome-go) You must be signed in to change notification settings
+* [Fork
+  13.1k](/login?return_to=%2Favelino%2Fawesome-go)
+* [Star
+   168k](/login?return_to=%2Favelino%2Fawesome-go)
+
+* [Code](/avelino/awesome-go)
+* [Issues
+  12](/avelino/awesome-go/issues)
+* [Pull requests
+  158](/avelino/awesome-go/pulls)
+* [Discussions](/avelino/awesome-go/discussions)
+* [Actions](/avelino/awesome-go/actions)
+* [Security
+  0](/avelino/awesome-go/security)
+* [Insights](/avelino/awesome-go/pulse)
+
+Additional navigation options
+
+* [Code](/avelino/awesome-go)
+* [Issues](/avelino/awesome-go/issues)
+* [Pull requests](/avelino/awesome-go/pulls)
+* [Discussions](/avelino/awesome-go/discussions)
+* [Actions](/avelino/awesome-go/actions)
+* [Security](/avelino/awesome-go/security)
+* [Insights](/avelino/awesome-go/pulse)
+
+# avelino/awesome-go
+
+main
+
+[Branches](/avelino/awesome-go/branches)[Tags](/avelino/awesome-go/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[5,294 Commits](/avelino/awesome-go/commits/main/)   5,294 Commits | | |
+| [.github](/avelino/awesome-go/tree/main/.github ".github") | | [.github](/avelino/awesome-go/tree/main/.github ".github") |  |  |
+| [pkg](/avelino/awesome-go/tree/main/pkg "pkg") | | [pkg](/avelino/awesome-go/tree/main/pkg "pkg") |  |  |
+| [tmpl](/avelino/awesome-go/tree/main/tmpl "tmpl") | | [tmpl](/avelino/awesome-go/tree/main/tmpl "tmpl") |  |  |
+| [.codeclimate.yml](/avelino/awesome-go/blob/main/.codeclimate.yml ".codeclimate.yml") | | [.codeclimate.yml](/avelino/awesome-go/blob/main/.codeclimate.yml ".codeclimate.yml") |  |  |
+| [.cursorrules](/avelino/awesome-go/blob/main/.cursorrules ".cursorrules") | | [.cursorrules](/avelino/awesome-go/blob/main/.cursorrules ".cursorrules") |  |  |
+| [.dockerignore](/avelino/awesome-go/blob/main/.dockerignore ".dockerignore") | | [.dockerignore](/avelino/awesome-go/blob/main/.dockerignore ".dockerignore") |  |  |
+| [.gitattributes](/avelino/awesome-go/blob/main/.gitattributes ".gitattributes") | | [.gitattributes](/avelino/awesome-go/blob/main/.gitattributes ".gitattributes") |  |  |
+| [.gitignore](/avelino/awesome-go/blob/main/.gitignore ".gitignore") | | [.gitignore](/avelino/awesome-go/blob/main/.gitignore ".gitignore") |  |  |
+| [AGENTS.md](/avelino/awesome-go/blob/main/AGENTS.md "AGENTS.md") | | [AGENTS.md](/avelino/awesome-go/blob/main/AGENTS.md "AGENTS.md") |  |  |
+| [CODE\_OF\_CONDUCT.md](/avelino/awesome-go/blob/main/CODE_OF_CONDUCT.md "CODE_OF_CONDUCT.md") | | [CODE\_OF\_CONDUCT.md](/avelino/awesome-go/blob/main/CODE_OF_CONDUCT.md "CODE_OF_CONDUCT.md") |  |  |
+| [CONTRIBUTING.md](/avelino/awesome-go/blob/main/CONTRIBUTING.md "CONTRIBUTING.md") | | [CONTRIBUTING.md](/avelino/awesome-go/blob/main/CONTRIBUTING.md "CONTRIBUTING.md") |  |  |
+| [COVERAGE.md](/avelino/awesome-go/blob/main/COVERAGE.md "COVERAGE.md") | | [COVERAGE.md](/avelino/awesome-go/blob/main/COVERAGE.md "COVERAGE.md") |  |  |
+| [LICENSE](/avelino/awesome-go/blob/main/LICENSE "LICENSE") | | [LICENSE](/avelino/awesome-go/blob/main/LICENSE "LICENSE") |  |  |
+| [MAINTAINERS](/avelino/awesome-go/blob/main/MAINTAINERS "MAINTAINERS") | | [MAINTAINERS](/avelino/awesome-go/blob/main/MAINTAINERS "MAINTAINERS") |  |  |
+| [README.md](/avelino/awesome-go/blob/main/README.md "README.md") | | [README.md](/avelino/awesome-go/blob/main/README.md "README.md") |  |  |
+| [SECURITY.md](/avelino/awesome-go/blob/main/SECURITY.md "SECURITY.md") | | [SECURITY.md](/avelino/awesome-go/blob/main/SECURITY.md "SECURITY.md") |  |  |
+| [go.mod](/avelino/awesome-go/blob/main/go.mod "go.mod") | | [go.mod](/avelino/awesome-go/blob/main/go.mod "go.mod") |  |  |
+| [go.sum](/avelino/awesome-go/blob/main/go.sum "go.sum") | | [go.sum](/avelino/awesome-go/blob/main/go.sum "go.sum") |  |  |
+| [main.go](/avelino/awesome-go/blob/main/main.go "main.go") | | [main.go](/avelino/awesome-go/blob/main/main.go "main.go") |  |  |
+| [main\_test.go](/avelino/awesome-go/blob/main/main_test.go "main_test.go") | | [main\_test.go](/avelino/awesome-go/blob/main/main_test.go "main_test.go") |  |  |
+| [maturity\_test.go](/avelino/awesome-go/blob/main/maturity_test.go "maturity_test.go") | | [maturity\_test.go](/avelino/awesome-go/blob/main/maturity_test.go "maturity_test.go") |  |  |
+| [netlify.toml](/avelino/awesome-go/blob/main/netlify.toml "netlify.toml") | | [netlify.toml](/avelino/awesome-go/blob/main/netlify.toml "netlify.toml") |  |  |
+| [stale\_repositories\_test.go](/avelino/awesome-go/blob/main/stale_repositories_test.go "stale_repositories_test.go") | | [stale\_repositories\_test.go](/avelino/awesome-go/blob/main/stale_repositories_test.go "stale_repositories_test.go") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* Code of conduct
+* Contributing
+* MIT license
+* Security
+
+# Awesome Go
+
+[![awesome-go](https://github.com/avelino/awesome-go/raw/main/tmpl/assets/logo.png "awesome-go")](https://awesome-go.com/)
+
+[![Build Status](https://github.com/avelino/awesome-go/actions/workflows/tests.yaml/badge.svg?branch=main)](https://github.com/avelino/awesome-go/actions/workflows/tests.yaml?query=branch%3Amain)
+[![Awesome](https://camo.githubusercontent.com/2727609d8bfde9ba1a95be1449eb878bfafa4d76789ba05661857e2c8ac70fa1/68747470733a2f2f63646e2e7261776769742e636f6d2f73696e647265736f726875732f617765736f6d652f643733303566333864323966656437386661383536353265336136336531353464643865383832392f6d656469612f62616467652e737667)](https://github.com/sindresorhus/awesome)
+[![Slack Widget](https://camo.githubusercontent.com/148ec6187f7c1c0dab24316d0071509f5ec9bef4f8938174048938b6ca17b1c1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6a6f696e2d75732532306f6e253230736c61636b2d677261792e7376673f6c6f6e6743616368653d74727565266c6f676f3d736c61636b26636f6c6f72423d726564)](https://gophers.slack.com/messages/awesome)
+[![Netlify Status](https://camo.githubusercontent.com/4842034d224c63e1997d7831c67f435b06eeadb69a2a6c4537ad9f04abb47423/68747470733a2f2f6170692e6e65746c6966792e636f6d2f6170692f76312f6261646765732f38336136646362652d306461362d343333652d623538362d6636383130393238366264352f6465706c6f792d737461747573)](https://app.netlify.com/sites/awesome-go/deploys)
+[![Track Awesome List](https://camo.githubusercontent.com/8fa7c98d143166f9cefdeea8345db7c4a7c3d97d503134e3cd19713ff0df6631/68747470733a2f2f7777772e747261636b617765736f6d656c6973742e636f6d2f62616467652e737667)](https://www.trackawesomelist.com/avelino/awesome-go/)
+[![Last Commit](https://camo.githubusercontent.com/bc7362038fdb0f50ffa32b75c4a4337f8ce8294eb717fee59bd13228c52f9888/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6173742d636f6d6d69742f6176656c696e6f2f617765736f6d652d676f)](https://github.com/avelino/awesome-go/commits/main)
+
+We use the *[Golang Bridge](https://github.com/gobridge/about-us/blob/master/README.md)* community Slack for instant communication, follow the [form here to join](https://invite.slack.golangbridge.org/).
+
+[![awesome-go - Curated list awesome Go frameworks, libraries and software | Product Hunt](https://camo.githubusercontent.com/c978a1b5ed2f887c0471e439df39b5f2a230abf045e705e693684131d97593db/68747470733a2f2f6170692e70726f6475637468756e742e636f6d2f776964676574732f656d6265642d696d6167652f76312f66656174757265642e7376673f706f73745f69643d323931353335267468656d653d6c69676874)](https://www.producthunt.com/posts/awesome-go?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-awesome-go)
+
+**Sponsorships:**
+
+*Special thanks to*
+
+|  |  |
+| --- | --- |
+| [![Digital Ocean](https://camo.githubusercontent.com/9779ed154322dcd9c38f11295f1606730e0f84515bd11a0ecb4204d091332a13/68747470733a2f2f6176656c696e6f2e72756e2f73706f6e736f72732f646f5f6c6f676f5f686f72697a6f6e74616c5f626c75652d3231302e706e67)](https://bit.ly/awesome-go-digitalocean) | |
+
+**Awesome Go has no monthly fee***, but we have employees who **work hard** to keep it running. With money raised, we can repay the effort of each person involved! You can see how we calculate our billing and distribution as it is open to the entire community. Want to be a supporter of the project click here.*
+
+> A curated list of awesome Go frameworks, libraries, and software. Inspired by [awesome-python](https://github.com/vinta/awesome-python).
+
+**Contributing:**
+
+Please take a quick gander at the [contribution guidelines](https://github.com/avelino/awesome-go/blob/main/CONTRIBUTING.md) first. Thanks to all [contributors](https://github.com/avelino/awesome-go/graphs/contributors); you rock!
+
+> *If you see a package or project here that is no longer maintained or is not a good fit, please submit a pull request to improve this file. Thank you!*
+
+## Contents
+
+Expand contents
+
+* [Awesome Go](#awesome-go)
+  + [Contents](#contents)
+  + [Actor Model](#actor-model)
+  + [Artificial Intelligence](#artificial-intelligence)
+  + [Audio and Music](#audio-and-music)
+  + [Authentication and Authorization](#authentication-and-authorization)
+  + [Blockchain](#blockchain)
+  + [Bo

@@ -685,3 +685,6 @@ optional arguments:
   --output OUTPUT       The directory in which to store the plots.
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -1,1 +1,299 @@
-GitHub - COL-IU/graph2pro-var Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} COL-IU / graph2pro-var Public Notifications You must be signed in to change notification settings Fork 4 Star 3 License GPL-3.0 license 3 stars 4 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 3 Pull requests 1 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights COL-IU/graph2pro-var master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 14 Commits 14 Commits FragGeneScan1.30 FragGeneScan1.30 Graph2Pro Graph2Pro MSGF+ MSGF+ RAPSearch2.24_64bits RAPSearch2.24_64bits RAPSearch2.26_64bits RAPSearch2.26_64bits Tests Tests bowtie2-2.3.3.1 bowtie2-2.3.3.1 cd-hit cd-hit metaspades metaspades msCRUSH msCRUSH patch patch pyscript pyscript LICENSE LICENSE RAPSearch RAPSearch README README git.history git.history graph2pro-var.sh graph2pro-var.sh install install summarize.sh summarize.sh View all files Repository files navigation README GPL-3.0 license Package name: graph2pro-var This package contains a wrapper script (graph2pro-var.sh) and component packages for two algorithms: graph2pro and var2pep for protein/peptide identification from metaproteomic mass spectral data with matching metagenomic/transcriptomic data (i.e., meta-proteogenomic approach). The graph2pro approach is based on assembly graph for protein/peptide identification. The var2pep aims to use the sequencing reads that cannot be assembled to further improve peptide identification. Released: Nov 21, 2018 Developers: Sujun Li (sujli@indiana.edu), Yuzhen Ye (yye@indiana.edu) and Haixu Tang (hatang@indiana.edu) This work was supported by NIH grant 1R01AI108888 to YY and HT graph2pro-var is free software under the terms of the GNU General Public License as published by the Free Software Foundation. &gt;&gt; Package contents graph2pro-var.sh -- wrapper script for the package that can be called directly Graph2Pro -- programs for assembly graph based protein/peptide identification MSGF+ -- MS search engine FragGeneScan, bowtie2, RAPSearch2, cd-hit and pyscript -- folders contain programs/scripts for other purposes Tests folder, which contains a small dataset for testing the pipeline. SML.par -- the parameter file other files, including the fastg and spectral files &gt;&gt; Installation If you run the pipeline on a linux machine, the pipeline probably works just fine. If not, you may need to recompile the tools included. We provide a script for recompiling the tools: $./install &gt;&gt; Try a testing example (under Tests folder) Check readme file under the Tests folder for usage; all necessary files are provided in the same folder. Command to test the provided testing example: $cd Tests $nohup sh ../graph2pro-var.sh SML.par &gt; SML.log &amp; Notes: 1) Included in this folder you can see SML.par, the parameter file that will be used by the wrapper script. 2) The first four parameters (id, kmer, fastg, ms) are mandatory; reads, thread, memory, and fdr are optional. By default fdr is set to 0.01, thread is set to 8, and memory is set to 32g (if you have extremely large spectral files, you may consider increasing the memory) 3) The kmer parameter specifies the kmer size; it must be the same as the kmer size used for the assembly graph generation (see "How to prepare assembly graph?" below) 4) Note the toy dataset is extremely small so only very few peptides will be identified. Required and optional input files (specified in the parameter file): 1) fastg file, the assembly graph of metagenome (and/or metatranscriptome) (required) 2) spectral file (required) 3) reads files (optional) graph2pro uses the first two inputs, and var2pep needs the additional reads files. If no reads files are provided, the pipeline stops after graph2pro is completed. Outputs: 1) If this test example runs successfully, the pipeline reports identified peptides and other result files, all having the specified id (in this case SML, as specified in the parameter file) as the prefix in their names. 2) *.final-peptide.txt this file lists the identified peptides, # of supporting spectra, and by which program (graph2pro or var2pep). 3) Other intermediate files you may find useful: *.graph2pro.fasta -- the Graph2Pro database *.var2pro.fasta -- the Var2Pep database *.mzid files -- MSGF+ search results *.0.01.tsv -- details of peptide identification, with FDR control (set to 1% in this case) by different approaches; *.fgs.tsv.0.01.tsv -- results from using contigs only *.graph2pro.tsv.0.01.tsv -- results from graph2pro *.var2pep.tsv.0.01.tsv -- results from var2pep &gt;&gt; Try graph2pro &amp; var2pep for your own datasets As graph2pro-var.sh pipeline creates large intermediate result files in **current** folder, we recommend that you create a dedicated working folder for each of your job, and work under that folder. ** Prepare the parameter file for running the pipeline for your job. See SML.par under the Tests folder for an example. Copy and paste this file to your working folder, and revise the parameter file accordingly. Please note the graph2pro-var.sh pipeline gets the input file names (fastg, MS data, reads files) from the parameter file. Make sure that you provide the paths for the input files in the parameter file, if the input files are not in the current folder. ** Call graph2pro-var.sh (referring to the script with full path information) as following: $path-to-the-wrapper-script/graph2pro-var.sh parameter-file OR $nohup sh path-to-the-wrapper-script/graph2pro-var.sh parameter-file &gt; parameter-file.log &amp; &gt;&gt; How to prepare assembly graph? An important input to the pipeline is the assembly graph (in fastg format). We recommend that you use MegaHit assembler to prepare assembly graph, i.e., fastg file as following: a) First run megahit with the option like --k-list 21,29,39,59,79,99 (notice the ending k-mer size 99) b) Then use metahit_toolkit to prepare fastg: megahit_toolkit contig2fastg 99 intermediate_contigs/k99.contigs.fa &gt; k99.contigs.fastg c) If you use MetaSpade, please use the customized parameters and follow the instruction of the software to get the fastg #new update at March, 2019 &gt;&gt; Use graph2pep only To be compatible with fastg from Megahit or Metaspades, we have re-coded the program graph2pep. If users only want to use graph2pep to produce database from fastg file. Please use the following example: ./Graph2Pro/DBGraph2Pro -s assembly_graph.fastg -S -k 49 -o test.graph2pep.fasta &gt;&gt; Use graph2pro only If you want to call only the graph2pro, but no var2pep for your dataset, you can simply do it by removing "reads=" parameter from the parameter file, and call the same wrapper script graph2pro-var.sh. For this case, only the fastg file (assembly graph) and the spectral data, but not the reads files, will be needed as the inputs. &gt;&gt; Other option: cascaded search If you want to try cascaded search (only unidentified spectra from the Graph2Pro step goes to the Var2Pep based search), simply add a line to the end of your parameter file: cascaded=yes &gt;&gt; Submit the pipeline to queue using qsub Petide identification from spectral data is very time consuming. If you have many datasets, you may want to use a computer cluster. Note: make sure you specify -v par=par-file-name, and -v pgmdir=program-folder to pass along these information to the queue, if your computer cluster uses qsub. &gt;&gt; Summarize the results (see example under Tests folder) $pa
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FCOL-IU%2Fgraph2pro-var)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FCOL-IU%2Fgraph2pro-var)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=COL-IU%2Fgraph2pro-var)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[COL-IU](/COL-IU)
+/
+**[graph2pro-var](/COL-IU/graph2pro-var)**
+Public
+
+* [Notifications](/login?return_to=%2FCOL-IU%2Fgraph2pro-var) You must be signed in to change notification settings
+* [Fork
+  4](/login?return_to=%2FCOL-IU%2Fgraph2pro-var)
+* [Star
+   3](/login?return_to=%2FCOL-IU%2Fgraph2pro-var)
+
+* [Code](/COL-IU/graph2pro-var)
+* [Issues
+  3](/COL-IU/graph2pro-var/issues)
+* [Pull requests
+  1](/COL-IU/graph2pro-var/pulls)
+* [Actions](/COL-IU/graph2pro-var/actions)
+* [Projects](/COL-IU/graph2pro-var/projects)
+* [Security
+  0](/COL-IU/graph2pro-var/security)
+* [Insights](/COL-IU/graph2pro-var/pulse)
+
+Additional navigation options
+
+* [Code](/COL-IU/graph2pro-var)
+* [Issues](/COL-IU/graph2pro-var/issues)
+* [Pull requests](/COL-IU/graph2pro-var/pulls)
+* [Actions](/COL-IU/graph2pro-var/actions)
+* [Projects](/COL-IU/graph2pro-var/projects)
+* [Security](/COL-IU/graph2pro-var/security)
+* [Insights](/COL-IU/graph2pro-var/pulse)
+
+# COL-IU/graph2pro-var
+
+master
+
+[Branches](/COL-IU/graph2pro-var/branches)[Tags](/COL-IU/graph2pro-var/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[14 Commits](/COL-IU/graph2pro-var/commits/master/)   14 Commits | | |
+| [FragGeneScan1.30](/COL-IU/graph2pro-var/tree/master/FragGeneScan1.30 "FragGeneScan1.30") | | [FragGeneScan1.30](/COL-IU/graph2pro-var/tree/master/FragGeneScan1.30 "FragGeneScan1.30") |  |  |
+| [Graph2Pro](/COL-IU/graph2pro-var/tree/master/Graph2Pro "Graph2Pro") | | [Graph2Pro](/COL-IU/graph2pro-var/tree/master/Graph2Pro "Graph2Pro") |  |  |
+| [MSGF+](/COL-IU/graph2pro-var/tree/master/MSGF%2B "MSGF+") | | [MSGF+](/COL-IU/graph2pro-var/tree/master/MSGF%2B "MSGF+") |  |  |
+| [RAPSearch2.24\_64bits](/COL-IU/graph2pro-var/tree/master/RAPSearch2.24_64bits "RAPSearch2.24_64bits") | | [RAPSearch2.24\_64bits](/COL-IU/graph2pro-var/tree/master/RAPSearch2.24_64bits "RAPSearch2.24_64bits") |  |  |
+| [RAPSearch2.26\_64bits](/COL-IU/graph2pro-var/tree/master/RAPSearch2.26_64bits "RAPSearch2.26_64bits") | | [RAPSearch2.26\_64bits](/COL-IU/graph2pro-var/tree/master/RAPSearch2.26_64bits "RAPSearch2.26_64bits") |  |  |
+| [Tests](/COL-IU/graph2pro-var/tree/master/Tests "Tests") | | [Tests](/COL-IU/graph2pro-var/tree/master/Tests "Tests") |  |  |
+| [bowtie2-2.3.3.1](/COL-IU/graph2pro-var/tree/master/bowtie2-2.3.3.1 "bowtie2-2.3.3.1") | | [bowtie2-2.3.3.1](/COL-IU/graph2pro-var/tree/master/bowtie2-2.3.3.1 "bowtie2-2.3.3.1") |  |  |
+| [cd-hit](/COL-IU/graph2pro-var/tree/master/cd-hit "cd-hit") | | [cd-hit](/COL-IU/graph2pro-var/tree/master/cd-hit "cd-hit") |  |  |
+| [metaspades](/COL-IU/graph2pro-var/tree/master/metaspades "metaspades") | | [metaspades](/COL-IU/graph2pro-var/tree/master/metaspades "metaspades") |  |  |
+| [msCRUSH](/COL-IU/graph2pro-var/tree/master/msCRUSH "msCRUSH") | | [msCRUSH](/COL-IU/graph2pro-var/tree/master/msCRUSH "msCRUSH") |  |  |
+| [patch](/COL-IU/graph2pro-var/tree/master/patch "patch") | | [patch](/COL-IU/graph2pro-var/tree/master/patch "patch") |  |  |
+| [pyscript](/COL-IU/graph2pro-var/tree/master/pyscript "pyscript") | | [pyscript](/COL-IU/graph2pro-var/tree/master/pyscript "pyscript") |  |  |
+| [LICENSE](/COL-IU/graph2pro-var/blob/master/LICENSE "LICENSE") | | [LICENSE](/COL-IU/graph2pro-var/blob/master/LICENSE "LICENSE") |  |  |
+| [RAPSearch](/COL-IU/graph2pro-var/blob/master/RAPSearch "RAPSearch") | | [RAPSearch](/COL-IU/graph2pro-var/blob/master/RAPSearch "RAPSearch") |  |  |
+| [README](/COL-IU/graph2pro-var/blob/master/README "README") | | [README](/COL-IU/graph2pro-var/blob/master/README "README") |  |  |
+| [git.history](/COL-IU/graph2pro-var/blob/master/git.history "git.history") | | [git.history](/COL-IU/graph2pro-var/blob/master/git.history "git.history") |  |  |
+| [graph2pro-var.sh](/COL-IU/graph2pro-var/blob/master/graph2pro-var.sh "graph2pro-var.sh") | | [graph2pro-var.sh](/COL-IU/graph2pro-var/blob/master/graph2pro-var.sh "graph2pro-var.sh") |  |  |
+| [install](/COL-IU/graph2pro-var/blob/master/install "install") | | [install](/COL-IU/graph2pro-var/blob/master/install "install") |  |  |
+| [summarize.sh](/COL-IU/graph2pro-var/blob/master/summarize.sh "summarize.sh") | | [summarize.sh](/COL-IU/graph2pro-var/blob/master/summarize.sh "summarize.sh") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* GPL-3.0 license
+
+```
+Package name: graph2pro-var
+This package contains a wrapper script (graph2pro-var.sh) and component packages for two algorithms:
+graph2pro and var2pep for protein/peptide identification from metaproteomic mass spectral data with matching
+metagenomic/transcriptomic data (i.e., meta-proteogenomic approach).
+The graph2pro approach is based on assembly graph for protein/peptide identification.
+The var2pep aims to use the sequencing reads that cannot be assembled to further improve peptide identification.
+
+Released: Nov 21, 2018
+Developers: Sujun Li (sujli@indiana.edu), Yuzhen Ye (yye@indiana.edu) and Haixu Tang (hatang@indiana.edu)
+
+This work was supported by NIH grant 1R01AI108888 to YY and HT
+
+graph2pro-var is free software under the terms of the GNU General Public License as published by
+the Free Software Foundation.
+
+>> Package contents
+graph2pro-var.sh -- wrapper script for the package that can be called directly
+Graph2Pro -- programs for assembly graph based protein/peptide identification
+MSGF+ -- MS search engine
+FragGeneScan, bowtie2, RAPSearch2, cd-hit and pyscript -- folders contain programs/scripts for other purposes
+Tests folder, which contains a small dataset for testing the pipeline.
+   SML.par -- the parameter file
+   other files, including the fastg and spectral files
+
+>> Installation
+   If you run the pipeline on a linux machine, the pipeline probably works just fine.
+   If not, you may need to recompile the tools included.
+   We provide a script for recompiling the tools:
+	 $./install
+
+>> Try a testing example (under Tests folder)
+   Check readme file under the Tests folder for usage; all necessary files are provided in the same folder.
+   Command to test the provided testing example:
+   	$cd Tests
+        $nohup sh ../graph2pro-var.sh SML.par > SML.log &
+
+   Notes:
+       1) Included in this folder you can see SML.par, the parameter file that will be used by the wrapper script.
+       2) The first four parameters (id, kmer, fastg, ms) are mandatory; reads, thread, memory, and fdr are optional.
+          By default fdr is set to 0.01, thread is set to 8, and memory is set to 32g
+         (if you have extremely large spectral files, you may consider increasing the memory)
+       3) The kmer parameter specifies the kmer size; it must be the same as the kmer size
+          used for the assembly graph generation (see "How to prepare assembly graph?" below)
+       4) Note the toy dataset is extremely small so only very few peptides will be identified.
+   Required and optional input files (specified in the parameter file):
+       1) fastg file, the assembly graph of metagenome (and/or metatranscriptome) (required)
+       2) spectral file (required)
+       3) reads files (optional)
+       graph2pro uses the first two inputs, and var2pep needs the additional reads files.
+       If no reads files are provided, the pipeline stops after graph2pro is completed.
+   Outputs:
+       1) If this test example runs successfully, the pipeline reports identified peptides and other result files,
+          all having the specified id (in this case SML, as specified in the parameter file) as the prefix in their names.
+       2) *.final-peptide.txt
+          this file lists the identified peptides, # of supporting spectra, and by which program (graph2pro or var2pep).
+       3) Other intermediate files you may find useful:
+          *.graph2pro.fasta -- the Graph2Pro database
+  	  *.var2pro.fasta -- the Var2Pep database
+          *.mzid files -- MSGF+ search results
+          *.0.01.tsv -- details of peptide identification, with FDR control (set to 1% in this case) by different approaches;
+              *.fgs.tsv.0.01.tsv -- results from using contigs only
+              *.graph2pro.tsv.0.01.tsv -- results from graph2pro
+              *.var2pep.tsv.0.01.tsv -- results from var2pep
+
+>> Try graph2pro & var2pep for your own datasets
+   As graph2pro-var.sh pipeline creates large intermediate result files in **current** folder,
+   we recommend that you create a dedicated working folder for each of your job, and work under that folder.
+
+   ** Prepare the parameter file for running the pipeline for your job.
+      See SML.par under the Tests folder for an example.
+      Copy and paste this file to your working folder, and revise the parameter file accordingly.
+      Please note the graph2pro-var.sh pipeline gets the input file names (fastg, MS data, reads files) from
+      the parameter file. Make sure that you provide the paths for the input files in the parameter file, if
+      the input files are not in the current folder.
+
+   ** Call graph2pro-var.sh (referring to the script with full path information) as following:
+         $path-to-the-wrapper-script/graph2pro-var.sh parameter-file
+         OR
+         $nohup sh path-to-the-wrapper-script/graph2pro-var.sh parame

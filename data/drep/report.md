@@ -369,3 +369,6 @@ ANALYZE:
 Example: dRep dereplicate output_dir/ -g /path/to/genomes/*.fasta
 ```
 
+
+## Metadata
+- **Skill**: generated

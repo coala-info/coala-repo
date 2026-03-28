@@ -1,6 +1,6 @@
 ---
 name: cirtap
-description: cirtap automates the large-scale acquisition, indexing, and organization of PATRIC genomic data into a local mirror. Use when user asks to mirror the PATRIC FTP repository, index local genomic files, collect specific sequence types like proteins or 16S SSU, filter for high-quality genomes, or archive specific genome sets.
+description: cirtap is a command-line utility for mirroring, indexing, and managing large-scale genomic data from the PATRIC FTP server. Use when user asks to mirror the PATRIC database, select high-quality representative genomes, or extract specific sequence sets into consolidated FASTA files.
 homepage: https://github.com/MGXlab/cirtap/
 ---
 
@@ -9,75 +9,73 @@ homepage: https://github.com/MGXlab/cirtap/
 
 ## Overview
 
-cirtap is a specialized CLI utility designed to handle the large-scale acquisition and organization of PATRIC genomic data. It automates the process of maintaining a local mirror of the PATRIC FTP repository and provides tools to parse, index, and filter these datasets. By using cirtap, you can avoid the instability of web APIs when dealing with thousands of genomes, instead working with a structured local database that supports parallelized sequence extraction and quality-based genome selection.
-
-## Installation and Setup
-
-Install cirtap via bioconda or pip:
-
-```bash
-conda install bioconda::cirtap
-# OR
-pip install cirtap
-```
+cirtap is a command-line utility designed to streamline the handling of large-scale genomic data from the PATRIC FTP server. It allows researchers to maintain a local, synchronized copy of the database and provides specialized subcommands to index, filter, and extract sequences. This tool is particularly useful for bioinformaticians who need to build local BLAST databases or select representative "best" genomes for comparative genomics without relying on external APIs.
 
 ## Core Workflows
 
-### 1. Mirroring the PATRIC FTP
-The `mirror` command is the entry point for all other functionality. It creates a local copy of the FTP data.
+### 1. Mirroring the PATRIC Database
+The `mirror` command is the foundation of the cirtap workflow. It creates a local copy of the FTP data.
 
-*   **Start a new mirror**: Use the `-j` flag to specify parallel download threads.
-    ```bash
-    cirtap mirror -j 8 /path/to/local_db
-    ```
-*   **Resume a failed job**: Use the `-r` flag to pick up where a previous mirror attempt stopped.
-    ```bash
-    cirtap mirror -j 8 -r /path/to/local_db
-    ```
-*   **Notifications**: Set up email alerts for long-running mirror jobs.
-    ```bash
-    cirtap mirror -j 8 --notify user@example.com /path/to/local_db
-    ```
+- **Start a new mirror**: Use the `-j` flag to specify parallel downloads.
+  `cirtap mirror -j 8 /path/to/local_db`
+- **Resume a failed job**: Use the `-r` flag to pick up where a previous mirror attempt stopped.
+  `cirtap mirror -j 8 -r /path/to/local_db`
+- **Notifications**: Send email alerts upon job launch or failure.
+  `cirtap mirror -j 8 --notify user@example.com /path/to/local_db`
 
 ### 2. Indexing Local Data
-Before running analysis or collection commands, you must generate a presence/absence index of the files in your mirror.
+Before using `collect` or `best`, you must generate a presence/absence index of the downloaded files.
 
-```bash
-cirtap index -j 16 /path/to/genomes index.tsv
-```
+- **Create an index**:
+  `cirtap index -j 16 /path/to/genomes index.tsv`
 
-### 3. Collecting Sequence Sets
-Extract specific sequence types across all genomes in your index into a single compressed FASTA file.
+### 3. Selecting High-Quality Genomes
+The `best` module filters genomes based on assembly statistics (completeness and contamination) and outputs the top candidates per taxonomic rank.
 
-*   **Collect all proteins**:
-    ```bash
-    cirtap collect -t proteins -j 4 -i index.tsv /path/to/genomes all_proteins.fa.gz
-    ```
-*   **Collect 16S SSU sequences**:
-    ```bash
-    cirtap collect -t SSU -j 4 -i index.tsv /path/to/genomes SSU.fa.gz
-    ```
+- **Selection Logic**: By default, it uses the formula `completeness - 5 * contamination > 70`.
+- **Run selection**:
+  `cirtap best -i /path/to/index.tsv -d /path/to/local_db output_directory`
+- **Custom Threshold**: Adjust the quality requirements using `--thresh`.
+  `cirtap best --thresh 80 -i index.tsv -d /path/to/db output_dir`
 
-### 4. Selecting High-Quality Genomes
-Use the `best` command to filter genomes based on completeness and consistency statistics retrieved from the genome summary.
+### 4. Collecting Sequence Sets
+Extract specific data types across the entire mirrored dataset to create consolidated FASTA files.
 
-```bash
-cirtap best -i index.tsv -d /path/to/local/patric output_best_genomes.txt
-```
+- **Extract Proteins**: Useful for building `blastp` databases.
+  `cirtap collect -t proteins -i index.tsv /path/to/genomes all_proteins.fa.gz`
+- **Extract 16S SSU**: Useful for building `blastn` databases.
+  `cirtap collect -t SSU -i index.tsv /path/to/genomes SSU.fa.gz`
+- **Cleanup**: Use `--cleanup` to remove intermediate files generated during parallel processing.
 
-### 5. Archiving Specific Genomes
-Create a gzipped tar archive from a specific list of PATRIC genome IDs.
+### 5. Packaging Genomes
+Create a compressed archive from a specific list of genome IDs.
 
-```bash
-cirtap pack -i genome_ids.txt -d /path/to/local/patric archive.tar.gz
-```
+- **Pack genomes**:
+  `cirtap pack -f genome_ids.txt /path/to/genomes archive.tar.gz`
 
-## Best Practices
+## Expert Tips and Best Practices
 
-*   **Parallelization**: Always utilize the `-j` flag. For mirroring, 8-16 threads are usually optimal depending on your network; for indexing and collection, you can scale higher based on available CPU cores.
-*   **Index Maintenance**: Re-run the `index` command whenever you update your mirror to ensure the `index.tsv` reflects the current state of the local filesystem.
-*   **Storage**: Ensure the destination path for `mirror` has significant disk space, as the PATRIC FTP contains a massive volume of genomic data and annotations.
+- **Parallelization**: Always utilize the `-j` flag for `mirror`, `index`, and `collect`. For `collect`, note that the actual number of processes may be up to 4x the value provided due to internal implementation.
+- **Taxonomy Database**: The `best` command relies on `ete3`. If you have a specific version of the NCBI taxonomy you wish to use, point to it with `--ncbi-db /path/to/taxa.sqlite`.
+- **Data Integrity**: cirtap validates FASTA entries during collection (e.g., ensuring sequence length > 1) to filter out artifacts often found on the server side.
+- **Directory Structure**: Ensure your local mirror directory contains both a `RELEASE_NOTES` directory and a `genomes` directory for the tool to function correctly.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| best | Select best genomes based on stats retrieved from genome_summary |
+| cirtap collect | Create sequence sets based on the installed files |
+| index | Create an index of contents for all directories |
+| mirror | Mirror all data from ftp.patricbrc.org in the specified DB_DIR |
+| pack | Create a gzipped tar archive from a list of genome ids in a file |
 
 ## Reference documentation
-- [cirtap GitHub README](./references/github_com_MGXlab_cirtap.md)
-- [cirtap Wiki](./references/github_com_MGXlab_cirtap_wiki.md)
+- [cirtap Overview](./references/github_com_MGXlab_cirtap.md)
+- [Mirroring Guide](./references/github_com_MGXlab_cirtap_wiki_mirror.md)
+- [Indexing Guide](./references/github_com_MGXlab_cirtap_wiki_index.md)
+- [Best Genome Selection](./references/github_com_MGXlab_cirtap_wiki_best.md)
+- [Sequence Collection](./references/github_com_MGXlab_cirtap_wiki_collect.md)
+- [Genome Packaging](./references/github_com_MGXlab_cirtap_wiki_pack.md)

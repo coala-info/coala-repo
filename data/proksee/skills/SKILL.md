@@ -1,54 +1,69 @@
 ---
 name: proksee
-description: Proksee is a specialized toolkit for the assembly and evaluation of microbial genomes from sequencing data. Use when user asks to assemble microbial genomes, evaluate assembly quality metrics, or manage genomic reference databases.
+description: Proksee is an expert-system command-line suite for the automated assembly and evaluation of microbial genomes. Use when user asks to assemble raw sequencing reads into high-quality genomes, evaluate the quality of existing assemblies, or initialize the Mash sketch database.
 homepage: https://github.com/proksee-project/proksee-cmd
 ---
 
 
 # proksee
 
+---
+
 ## Overview
 
-Proksee is a specialized toolkit designed for the assembly and evaluation of microbial genomes. It provides an automated pipeline that moves from raw sequencing data to refined assemblies through a three-stage process: pre-assembly (filtering and estimation), fast assembly (initial metrics), and expert assembly (high-quality refinement). Use this skill to execute genomic workflows, manage the required reference databases, and generate quality reports for microbial contigs.
+Proksee is an expert-system command-line suite designed for the automated assembly and evaluation of microbial genomes. It streamlines the process of turning raw sequencing reads into high-quality assemblies by employing a tiered pipeline approach. The system is capable of identifying sequencing platforms, estimating species, filtering reads, and performing comparative evaluations between fast and expert assembly stages. It is an essential tool for bioinformaticians requiring a standardized, reproducible workflow for bacterial genome reconstruction.
 
-## Core Commands
+## Core Workflows
 
-### Database Management
-Before running assembly workflows, you must initialize the Mash sketch database used for species estimation.
+### 1. Database Initialization
+Before running any assembly or evaluation tasks, the Mash sketch database must be downloaded and installed.
 ```bash
 proksee updatedb
 ```
 
-### Genome Assembly
-The `assemble` command handles read filtering, assembly, and basic annotation. It supports both paired-end and single-end reads.
+### 2. Genome Assembly
+The `assemble` command runs a three-stage pipeline: Pre-Assembly (validation and species estimation), Fast Assembly (approximate metrics and contamination check), and Expert Assembly (high-quality final output).
 
-**Paired-end reads:**
+**Basic Usage:**
 ```bash
-proksee assemble -o <output_directory> <FORWARD_FASTQ> <REVERSE_FASTQ>
+proksee assemble -o output_directory forward_reads.fastq reverse_reads.fastq
 ```
 
-**Single-end reads:**
+**Key Options:**
+- **Species Specification**: Use `-s` or `--species` with the exact scientific name (e.g., `'Listeria monocytogenes'`) to bypass automated species estimation.
+- **Platform Selection**: Use `-p` or `--platform` to specify 'Illumina', 'Pac Bio', or 'Ion Torrent'.
+- **Resource Management**: Control performance with `-t` (threads) and `-m` (memory in GB).
+- **Bypassing Safeguards**: Use `--force` to continue the pipeline if Proksee detects contamination or unusual assembly statistics that would normally trigger termination.
+
+### 3. Assembly Evaluation
+The `evaluate` command assesses the quality of existing assembled contigs using metrics like N50 and L50.
+
+**Basic Usage:**
 ```bash
-proksee assemble -o <output_directory> <FORWARD_FASTQ>
+proksee evaluate -o output_directory assembly.fasta
 ```
 
-### Assembly Evaluation
-To assess the quality of an existing assembly (FASTA format) using metrics like N50, contig count, and k-mer multiplicity:
-```bash
-proksee evaluate -o <output_directory> <CONTIGS_FASTA>
-```
+## Best Practices and Expert Tips
 
-## Expert Tips and Best Practices
+- **Input Validation**: Proksee will terminate early if it detects incorrect sequence encoding during the Pre-Assembly stage. Ensure your FASTQ files are properly formatted and not corrupted.
+- **Handling Contamination**: If the pipeline terminates during Fast Assembly, it is often because large contigs disagree with the estimated species. Review the `assembly_info.json` to identify the source of the conflict.
+- **Expert Assembly Deviations**: The Expert Assembly stage compares results against RefSeq-included assemblies. If your assembly falls outside the 5th to 95th percentile for that species, the pipeline may stop unless `--force` is used.
+- **Output Interpretation**:
+    - `contigs.fasta`: Your final high-quality expert assembly.
+    - `assembly_statistics.csv`: Contains comparative metrics for all stages.
+    - `assembly_info.json`: Use this for downstream automated parsing of the assembly results.
 
-- **Output Management**: The `-o` (output directory) argument is mandatory for both `assemble` and `evaluate` commands. Proksee will create this directory if it does not exist.
-- **Resource Parallelization**: Recent versions of Proksee support parallelization for Mash. Ensure your environment has sufficient threads allocated if processing large datasets or multiple assemblies.
-- **Minimum Contig Size**: When evaluating assemblies, Proksee passes user-specified minimum contig sizes to QUAST. Use this to filter out small, uninformative contigs (e.g., <500bp) from your final statistics.
-- **Species Estimation**: Proksee uses Mash to estimate information about the reads before assembly. If the species estimation seems incorrect, verify that `proksee updatedb` was run recently to ensure the sketch database is current.
-- **Assembly Stages**:
-    - **Stage 1 (Pre-Assembly)**: Uses `fastp` for read trimming and `Mash` for estimation.
-    - **Stage 2 (Fast Assembly)**: Uses `Skesa` for a rapid initial look at the genome.
-    - **Stage 3 (Expert Assembly)**: Uses `SPAdes` for the final high-quality output.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| proksee assemble | Assemble reads into a genome. |
+| proksee evaluate | Evaluate assembly quality |
+| updatedb | Update the proksee database |
 
 ## Reference documentation
-- [Proksee Command Line Tools Overview](./references/github_com_proksee-project_proksee-cmd.md)
-- [Proksee Bioconda Package](./references/anaconda_org_channels_bioconda_packages_proksee_overview.md)
+- [Proksee README](./references/github_com_proksee-project_proksee-cmd_blob_develop_README.md)
+- [Assemble Tool Documentation](./references/github_com_proksee-project_proksee-cmd_blob_develop_docs_tools_assemble.md)
+- [Evaluate Tool Documentation](./references/github_com_proksee-project_proksee-cmd_blob_develop_docs_tools_evaluate.md)

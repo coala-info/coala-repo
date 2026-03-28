@@ -1,6 +1,6 @@
 ---
 name: taxmyphage
-description: taxmyphage automates the taxonomic classification of bacteriophage genomes according to ICTV standards using intergenomic distance calculations. Use when user asks to classify bacteriophages, determine phage taxonomy, or calculate intergenomic similarity against ICTV reference databases.
+description: taxmyphage is a bioinformatics tool for the taxonomic classification of complete dsDNA bacteriophage genomes against the ICTV database. Use when user asks to classify phage genomes, determine genus and species assignments, or identify novel phage taxa.
 homepage: https://github.com/amillard/tax_myPHAGE
 ---
 
@@ -8,55 +8,47 @@ homepage: https://github.com/amillard/tax_myPHAGE
 # taxmyphage
 
 ## Overview
+`taxmyphage` is a specialized bioinformatics tool designed for the taxonomic classification of complete dsDNA bacteriophage genomes. It streamlines the process of comparing a query sequence against the official ICTV database, providing genus and species-level assignments based on current taxonomic cutoffs. Use this skill when you have a newly sequenced phage and need to determine its place in the ICTV hierarchy or verify if it constitutes a novel genus.
 
-taxmyphage is a specialized bioinformatics tool that automates the classification of bacteriophages according to the International Committee on Taxonomy of Viruses (ICTV) standards. It identifies the most similar genomes within the currently classified ICTV set and applies the VIRIDIC formula to calculate intergenomic distances. This allows researchers to determine taxonomic placement without manually running complex comparative genomics pipelines. It is optimized for individual complete isolates rather than metagenomic samples or eukaryotic viruses.
+## Core Workflows
 
-## Installation and Setup
-
-Before running analysis, the environment must be configured and the reference databases must be initialized.
-
-### Environment Setup (Conda/Mamba)
-The preferred method is using Mamba to handle dependencies like MASH and BLAST.
-```bash
-mamba create -n taxmyphage -c conda-forge -c bioconda taxmyphage
-mamba activate taxmyphage
-```
-
-**Note for Apple Silicon (M1/M2/M3):** Bioconda does not natively support osx-arm64 for this package. Use the x86_64 emulation:
-```bash
-CONDA_SUBDIR=osx-64 mamba create -n taxmyphage -c conda-forge -c bioconda taxmyphage
-```
-
-### Database Initialization
-You must download the ICTV databases (MASH index, fasta genomes, and VMR spreadsheet) before the first run:
+### 1. Database Initialization
+Before running classification, the required databases (MASH index, FASTA sequences, and VMR metadata) must be installed.
 ```bash
 taxmyphage install
 ```
 
-## Command Line Usage
-
-### Basic Taxonomic Assignment
-To run the classification on a single or multiple FASTA files:
+### 2. Running Classification
+The primary command for classification requires an input FASTA file.
 ```bash
-taxmyphage run -i query_genome.fna -t 4
+# Basic run
+taxmyphage run -i query_genome.fna
+
+# Run with multiple threads for faster BLAST/MASH processing
+taxmyphage run -i query_genome.fna -t 8
+
+# Processing multiple genomes simultaneously
+taxmyphage run -i folder_of_phages/ -t 4
 ```
 
-### Advanced Execution Flags
-- **Force Rerun**: Use `-f` or `--force` to overwrite existing results in the output directory.
-- **Disable Precomputed Results**: By default, the tool may use pre-computed BLAST results. To force a full BLAST search against the database, use:
-  ```bash
-  taxmyphage run -i query_genome.fna --no-precomputed
-  ```
-- **Thread Management**: Use `-t` to specify CPU cores. BLAST and MASH operations scale well with additional threads.
-
 ## Expert Tips and Best Practices
+- **Genome Completeness**: This tool is optimized for complete or near-complete genomes. Using fragmented metagenomic assemblies may lead to inaccurate results.
+- **Taxonomic Scope**: The tool is specifically designed for dsDNA phages. While it may provide results for RNA or ssDNA phages, these are not the intended targets and results should be treated with extreme caution.
+- **Database Updates**: Taxonomy is updated frequently by the ICTV. If a new VMR is released (e.g., MSL40), you may need to update the database files. If the automated `install` command does not fetch the latest version, manually replace `VMR.xlsx`, `ICTV.msh`, and `Bacteriophage_genomes.fasta.gz` in the tool's database directory.
+- **Output Interpretation**: The tool uses a VIRIDIC-like formula for similarity. If the similarity to the closest relative is below the ICTV genus cutoff (typically <70%), the phage likely represents a new genus.
+- **Hardware Requirements**: The tool can be run on a standard laptop, but increasing the thread count (`-t`) significantly improves performance during the BLAST and MASH stages.
 
-- **Input Scope**: Only use this tool for dsDNA phages. While it will produce results for ssDNA or RNA phages, the underlying ICTV cutoffs and similarity metrics used by the tool are not validated for those virus types and may be inaccurate.
-- **Database Currency**: Taxonomy is a moving target. If your installation is older than March 2025, you should delete your current environment and reinstall to ensure compatibility with VMR MSL40.
-- **Manual Database Updates**: If the automated `taxmyphage install` fails or you need a specific VMR version (e.g., switching between MSL39 and MSL40), you can manually replace the files in the `taxmyphage/database/` directory. Ensure filenames match the expected internal naming convention (e.g., `ICTV.msh`, `Bacteriophage_genomes.fasta.gz`).
-- **Output Interpretation**: The tool provides a VIRIDIC-like similarity matrix. A result >95% similarity typically indicates the same species, while >70% typically indicates the same genus, following current ICTV guidelines.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| taxmyphage install | Install taxmyphage databases and dependencies. |
+| taxmyphage mash | Performs MASH comparison for phage classification. |
+| taxmyphage run | Run taxmyphage analysis |
+| taxmyphage similarity | Compares phage genomes and generates similarity reports. |
 
 ## Reference documentation
-- [taxmyphage GitHub Repository](./references/github_com_amillard_tax_myPHAGE.md)
-- [taxmyphage Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_taxmyphage_overview.md)
-- [taxmyphage Commit History (Flags and Updates)](./references/github_com_amillard_tax_myPHAGE_commits_main.md)
+- [taxmyPHAGE GitHub README](./references/github_com_amillard_tax_myPHAGE_blob_main_README.md)
+- [Bioconda taxmyphage Overview](./references/anaconda_org_channels_bioconda_packages_taxmyphage_overview.md)

@@ -1,97 +1,71 @@
 ---
 name: eukfinder
-description: "Eukfinder identifies eukaryotic sequences within metagenomic data. Use when user asks to find eukaryotic genomes in metagenomic datasets, process short reads or assembled contigs, or analyze microbial communities for eukaryotes."
+description: Eukfinder is a modular bioinformatics pipeline designed to identify and extract eukaryotic genomic sequences from complex metagenomic datasets. Use when user asks to preprocess short reads, classify and assemble eukaryotic sequences from metagenomes, or identify eukaryotic contigs in long-read datasets.
 homepage: https://github.com/RogerLab/Eukfinder
 ---
 
 
 # eukfinder
 
-A pipeline for detecting eukaryotic sequences in metagenomic data.
-  Use when you need to identify and potentially recover eukaryotic genomes from WGS metagenomic datasets,
-  supporting both Illumina short reads and assembled contigs or long-read data.
-  This tool is particularly useful for analyzing complex microbial communities where eukaryotic
-  organisms are of interest.
----
 ## Overview
+Eukfinder is a modular bioinformatics pipeline designed to solve the challenge of "finding the needle in the haystack"—extracting eukaryotic genomic signals from complex metagenomic datasets dominated by prokaryotes. It operates in two primary modes: a multi-step assembly-and-reclassification workflow for short reads, and a direct classification workflow for long reads or existing contigs. By utilizing a combination of Centrifuge and PLAST against specialized databases, it filters out non-target sequences and provides a refined set of potential eukaryotic contigs ready for genome binning.
 
-Eukfinder is a bioinformatics pipeline designed to sift through metagenomic sequencing data to identify and isolate sequences belonging to eukaryotes. It can process raw Illumina short reads by classifying them and then assembling the eukaryotic candidates, or it can directly analyze pre-assembled contigs or long-read data. The pipeline aims to facilitate the recovery of microbial eukaryote genomes from diverse environments.
+## Core Workflows
 
-## Usage Instructions
+### 1. Illumina Short-Read Processing
+Short-read analysis requires a two-stage approach: preprocessing and classification/assembly.
 
-Eukfinder can be run using its command-line interface. The tool supports two primary modes: `Eukfinder_short` for Illumina short reads and `Eukfinder_long` for assembled contigs or long-read data.
-
-### Installation
-
-Install Eukfinder via Conda:
+**Step A: Read Preprocessing (`read_prep`)**
+Removes adapters, low-quality bases, and host contamination (e.g., human or environmental host).
 ```bash
-conda install bioconda::eukfinder
+Eukfinder read_prep --r1 R1.fastq --r2 R2.fastq \
+    -n 16 --hcrop 10 -l 15 -t 15 --wsize 40 --qscore 25 --mlen 40 \
+    -i adapters.fa --hg host_genome.fasta \
+    -o sample_output --mhlen 50 --cdb /path/to/centrifuge_db_prefix
+```
+*   **Note**: Use `read_prep_env` instead of `read_prep` for environmental samples where no specific host genome needs to be filtered.
+
+**Step B: Sequence Classification and Assembly (`short_seqs`)**
+Classifies reads, assembles "Eukaryotic" and "Unknown" reads using metaSPAdes, and reclassifies the resulting contigs.
+```bash
+Eukfinder short_seqs --r1 sample_output_p.1.fastq --r2 sample_output_p.2.fastq --un sample_output_un.fastq \
+    -o final_euk -n 16 -z 4 -t True \
+    -e 1e-5 --pid 60 --cov 60 --mhlen 50 \
+    --pclass sample_output_centrifuge_P --uclass sample_output_centrifuge_UP \
+    --cdb /path/to/centrifuge_db_prefix -p /path/to/plast_db -m /path/to/plast_map
 ```
 
-### Running Eukfinder_short (Illumina Short Reads)
-
-This mode processes raw paired-end FASTQ files.
-
-**Basic command structure:**
-
+### 2. Long-Read or Contig Processing (`long_seqs`)
+For Nanopore, PacBio, or pre-assembled contigs, use the simplified single-pass classification.
 ```bash
-eukfinder_short --input_dir <path_to_input_directory> --output_dir <path_to_output_directory> [options]
+Eukfinder long_seqs -i assembly.fasta -o euk_contigs -n 16 \
+    -p /path/to/plast_db -m /path/to/plast_map --cdb /path/to/centrifuge_db_prefix \
+    -e 1e-5 --pid 60 --cov 60 --mhlen 100
 ```
 
-**Key arguments:**
+## Expert Tips and Best Practices
 
-*   `--input_dir`: Directory containing your raw paired-end FASTQ files (e.g., `sample1_R1.fastq.gz`, `sample1_R2.fastq.gz`).
-*   `--output_dir`: Directory where all output files will be saved.
-*   `--threads`: Number of CPU threads to use.
-*   `--db`: Path to the Centrifuge database (if not using default).
-*   `--plast_db`: Path to the PLAST database (if not using default).
+*   **Output Path Restriction**: The `-o` (output prefix) parameter must be a simple filename prefix. Do **not** include directory paths in the prefix (e.g., use `my_sample`, not `/path/to/my_sample`). Run the command from within the desired output directory.
+*   **Centrifuge Database Reference**: When specifying `--cdb`, provide the common filename prefix only (the part before `.1.cf`, `.2.cf`, etc.).
+*   **Memory Management**: The `-z` (number of chunks) parameter in `short_seqs` is critical for memory control during PLAST searches. Increase this value (e.g., 4-8) for very large datasets (>100M reads) to prevent OOM (Out of Memory) errors.
+*   **Sensitivity vs. Specificity**:
+    *   **`--mhlen`**: Controls the minimum sequence length for Centrifuge matches. Use `50` for standard runs. Lowering to `30-40` increases sensitivity for short fragments but raises false positives.
+    *   **`--pid` and `--cov`**: For divergent or novel environmental eukaryotes, consider lowering `--pid` (percent identity) to `50` to capture more distant homologs.
+*   **Taxonomy Updates**: Set `-t True` only for the first run on a system to initialize the taxonomy database; set to `False` for subsequent runs to save time.
 
-**Example:**
 
-```bash
-eukfinder_short --input_dir ./raw_reads --output_dir ./eukfinder_output --threads 16
-```
 
-### Running Eukfinder_long (Metagenome Assembled Contigs or Long Reads)
+## Subcommands
 
-This mode is for analyzing pre-assembled contigs (e.g., from metaSpades) or long-read sequencing data (e.g., Nanopore, PacBio).
-
-**Basic command structure:**
-
-```bash
-eukfinder_long --input_contigs <path_to_contigs_fasta> --output_dir <path_to_output_directory> [options]
-```
-
-**Key arguments:**
-
-*   `--input_contigs`: Path to the FASTA file containing your assembled contigs or long reads.
-*   `--output_dir`: Directory where all output files will be saved.
-*   `--threads`: Number of CPU threads to use.
-*   `--db`: Path to the Centrifuge database (if not using default).
-*   `--plast_db`: Path to the PLAST database (if not using default).
-
-**Example:**
-
-```bash
-eukfinder_long --input_contigs ./assembled_contigs.fasta --output_dir ./eukfinder_long_output --threads 8
-```
-
-### Database Management
-
-Eukfinder relies on classification databases (Centrifuge and PLAST). You can specify custom database paths using `--db` and `--plast_db`. For detailed information on database setup and configuration, refer to the Eukfinder Wiki.
-
-### Output Interpretation
-
-The output directory will contain various files, including classified reads/contigs, assembled contigs, and potentially binned genomes if the optional binning workflow is used. The primary output of interest for eukaryotic sequence detection will be files containing sequences classified as 'Eukaryotic' or 'Unknown' that are deemed potential eukaryotic candidates.
-
-## Expert Tips
-
-*   **Resource Allocation:** Ensure sufficient CPU threads (`--threads`) and memory are allocated, especially for `Eukfinder_short` which involves assembly.
-*   **Database Choice:** For specific environments (e.g., gut, ocean, soil), consider using or building custom databases for improved classification accuracy. Refer to the Eukfinder Wiki for database building instructions.
-*   **Input File Naming:** For `Eukfinder_short`, ensure your FASTQ files follow a consistent naming convention (e.g., `sample_name_R1.fastq.gz`, `sample_name_R2.fastq.gz`).
-*   **Troubleshooting:** If you encounter issues, consult the Eukfinder Wiki's FAQ and troubleshooting sections. For persistent problems, consider opening an issue on the GitHub repository.
+| Command | Description |
+|---------|-------------|
+| download_db | Download EukFinder databases |
+| eukfinder long_seqs | Finds long sequences in a given file and searches them against a database. |
+| eukfinder read_prep | Description |
+| eukfinder read_prep_env | Prepare environment for eukfinder |
+| eukfinder short_seqs | optional arguments:   -h, --help            show this help message and exit |
 
 ## Reference documentation
-
-- [Eukfinder Wiki](https://github.com/RogerLab/Eukfinder/wiki)
-- [Eukfinder README](https://github.com/RogerLab/Eukfinder.md)
+- [Eukfinder with Illumina short reads](./references/github_com_RogerLab_Eukfinder_wiki_Eukfinder_with_Illumina_short_reads.md)
+- [Eukfinder with Long read or contig data](./references/github_com_RogerLab_Eukfinder_wiki_Eukfinder_with_Long_read_or_contig_data.md)
+- [Eukfinder FAQ](./references/github_com_RogerLab_Eukfinder_wiki_FAQ.md)

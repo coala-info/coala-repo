@@ -31,7 +31,7 @@ FATAL ERROR: Failed to write to output filesystem
 
 
 ## Metadata
-- **Skill**: generated
+- **Skill**: not generated
 
 ## perm_php artisan permission:create-role
 

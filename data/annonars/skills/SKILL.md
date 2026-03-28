@@ -1,6 +1,6 @@
 ---
 name: annonars
-description: annonars is a high-performance genome annotation tool that converts large variant TSV files into indexed RocksDB databases for efficient querying. Use when user asks to import variant annotation data from sources like CADD or dbNSFP, build indexed databases from TSV files, or perform SPDI-style coordinate queries.
+description: annonars is a high-performance genome annotation toolset that transforms large genomic TSV files into optimized RocksDB key-value stores for fast variant lookups. Use when user asks to import variant annotations from TSV files, create local mirrors of datasets like CADD or dbNSFP, or build queryable genomic databases using SPDI representation.
 homepage: https://github.com/bihealth/annona-rs
 ---
 
@@ -8,61 +8,99 @@ homepage: https://github.com/bihealth/annona-rs
 # annonars
 
 ## Overview
-annonars is a high-performance genome annotation tool built with Rust and RocksDB. It is designed to handle massive variant datasets by converting flat TSV files into indexed, queryable databases. This skill provides the necessary commands to build these databases from common sources like CADD or dbNSFP and perform efficient lookups using SPDI-style coordinates.
 
-## Core Workflows
+`annonars` is a high-performance genome annotation toolset written in Rust. It is designed to handle massive genomic datasets by transforming flat TSV files into optimized RocksDB key-value stores. By using the SPDI (Sequence Position Deletion Insertion) representation for variants, it enables extremely fast lookups of variant-specific scores and metadata. This tool is particularly useful for bioinformaticians who need to create local, queryable mirrors of large public datasets like CADD or dbNSFP to avoid the latency of remote API calls or the overhead of parsing multi-gigabyte text files.
 
-### Importing TSV Data
-To import variant annotations into a RocksDB database, use the `tsv import` command. This process requires specifying the genome release and mapping the relevant columns.
+## CLI Usage and Patterns
 
-**Example: Importing CADD data**
+### Importing Variant Annotations
+
+The primary workflow involves the `tsv import` command. This command parses input TSVs, infers data types, and builds the RocksDB structure.
+
+#### Basic Import Template
 ```bash
 annonars tsv import \
-  --path-in-tsv InDels_inclAnno.tsv.gz \
-  --path-in-tsv whole_genome_SNVs_inclAnno.tsv.gz \
-  --path-out-rocksdb cadd-rocksdb \
-  --genome-release grch37 \
-  --db-name cadd \
-  --db-version 1.6 \
-  --col-chrom Chrom \
-  --col-start Pos \
-  --col-ref Ref \
-  --col-alt Alt \
-  --skip-row-count=1 \
-  --inference-row-count 100000 \
-  --add-default-null-values
+    --path-in-tsv <input_file.tsv.gz> \
+    --path-out-rocksdb <output_dir> \
+    --genome-release <grch37|grch38> \
+    --db-name <name> \
+    --db-version <version> \
+    --col-chrom <chrom_col> \
+    --col-start <pos_col> \
+    --col-ref <ref_col> \
+    --col-alt <alt_col>
 ```
 
-**Example: Importing dbNSFP data**
+#### Importing CADD Data
+CADD files often contain copyright headers that must be skipped.
 ```bash
 annonars tsv import \
-  $(for f in dbNSFP4.4a_variant.*.gz; do echo --path-in-tsv $f; done) \
-  --path-out-rocksdb dbnsfp-rocksdb \
-  --genome-release grch37 \
-  --db-name dbnsfp \
-  --db-version 4.4a \
-  --col-chrom hg19_chr \
-  --col-start "hg19_pos(1-based)" \
-  --col-ref ref \
-  --col-alt alt \
-  --inference-row-count 100000 \
-  --null-values=.
+    --path-in-tsv InDels_inclAnno.tsv.gz \
+    --path-in-tsv whole_genome_SNVs_inclAnno.tsv.gz \
+    --path-out-rocksdb cadd-rocksdb \
+    --genome-release grch37 \
+    --db-name cadd \
+    --db-version 1.6 \
+    --col-chrom Chrom \
+    --col-start Pos \
+    --col-ref Ref \
+    --col-alt Alt \
+    --skip-row-count 1 \
+    --add-default-null-values
 ```
 
-### Querying Databases
-Queries use SPDI-style coordinates (1-based, inclusive). You can query by specific variant, position, or range.
+#### Importing dbNSFP Data
+Since dbNSFP is split across multiple files (one per chromosome), use shell expansion to include all files.
+```bash
+annonars tsv import \
+    $(for f in dbNSFP4.4a_variant.*.gz; do echo --path-in-tsv $f; done) \
+    --path-out-rocksdb dbnsfp-rocksdb \
+    --genome-release grch38 \
+    --db-name dbnsfp \
+    --db-version 4.4a \
+    --col-chrom "#chr" \
+    --col-start pos\(1-based\) \
+    --col-ref ref \
+    --col-alt alt
+```
 
-*   **Variant Query:** `tsv query --path-rocksdb path/to/db --range GRCh37:1:1000:A:T`
-*   **Position Query:** `tsv query --path-rocksdb path/to/db --pos GRCh37:1:1000`
-*   **Region Query:** `tsv query --path-rocksdb path/to/db --range GRCh37:1:1000:1001`
+## Expert Tips and Best Practices
 
-## Expert Tips & Best Practices
+### Schema Inference
+*   **Row Count**: By default, `annonars` uses the first 100,000 rows to infer column types. If your data has sparse columns that only appear later in the file, increase this with `--inference-row-count`.
+*   **Manual Seeds**: If inference fails or results in "Unknown" types, you can provide a JSON schema file as a seed to guide the importer.
 
-*   **Parallel Import:** If `.tbi` (tabix) files exist for your input TSVs, annonars will automatically perform a parallel window-based import. Without indices, it will still process files in parallel but read them sequentially.
-*   **Performance Tuning:** Control the number of threads used for database building by setting the `RAYON_NUM_THREADS` environment variable.
-*   **Schema Inference:** Use a high `--inference-row-count` (e.g., 100,000) to ensure data types are correctly detected. If "Unknown" types appear in the resulting JSON schema, provide a manual JSON schema seed.
-*   **Database Maintenance:** After import, annonars compacts the database. Once finished, check the output directory for `.log` files (Write-Ahead Logs); if they are zero-sized, they can be safely deleted to save space.
-*   **Coordinate Systems:** Always verify if your input TSV is 0-based or 1-based. annonars expects 1-based inclusive coordinates for its internal SPDI representation.
+### Performance and Storage
+*   **Compaction**: At the end of an import, `annonars` automatically compacts the database. This is a heavy I/O operation but is critical for reducing disk space and enabling fast read-only access later.
+*   **WAL Cleanup**: After a successful import, check the output directory for `.log` files (Write-Ahead Logs). If they are zero-sized, they can be safely deleted to keep the database directory clean.
+*   **Genome Releases**: Always build separate RocksDB instances for different genome releases (e.g., one for GRCh37 and one for GRCh38).
+
+### Feature Gates
+*   When building from source, ensure the `cli` feature is enabled. The easiest way is to use:
+    `cargo run --all-features -- [commands]`
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| clinvar-genes | clinvar-genes sub commands |
+| clinvar-minimal | clinvar-minimal sub commands |
+| clinvar-sv | clinvar-sv sub commands |
+| cons | "cons" sub commands |
+| db-utils | "db-utils" sub commands |
+| dbsnp | dbsnp sub commands |
+| freqs | "freqs" sub commands |
+| functional | "functional" sub commands |
+| gene | "genes" sub commands |
+| gnomad-mtdna | gnomad-mtdna sub commands |
+| gnomad-nuclear | gnomad-nuclear sub commands |
+| gnomad-sv | gnomad-sv sub commands for annonars |
+| helixmtdb | "helixmtdb" sub commands |
+| regions | "regions" sub commands |
+| server | "server" sub command |
+| tsv | annonars tsv subcommands for importing and querying TSV data |
 
 ## Reference documentation
-- [GitHub Repository and README](./references/github_com_varfish-org_annonars.md)
+- [Annonars README](./references/github_com_varfish-org_annonars_blob_main_README.md)

@@ -1,6 +1,6 @@
 ---
 name: rasusa
-description: "Rasusa performs unbiased downsampling of genomic sequencing data to a target coverage, base count, or fraction. Use when user asks to subsample reads to a specific coverage, downsample FastQ or BAM files, or reduce sequencing data volume while maintaining read length distribution."
+description: Rasusa stochastically downsamples genomic sequencing reads or alignments to a target coverage, fraction, or number of bases. Use when user asks to subsample FASTQ or BAM files, normalize datasets to a specific depth of coverage, or reduce the size of genomic data for assembly and benchmarking.
 homepage: https://github.com/mbhall88/rasusa
 ---
 
@@ -8,52 +8,47 @@ homepage: https://github.com/mbhall88/rasusa
 # rasusa
 
 ## Overview
-`rasusa` is a high-performance utility designed for the unbiased downsampling of genomic sequencing data. While many tools subsample by a simple percentage or read count, `rasusa` allows users to target a specific fold-coverage (e.g., 30x). It achieves this by calculating the required base count based on a provided genome size and then randomly selecting reads until that threshold is met. This ensures that the resulting subset maintains the original library's length distribution, which is critical for long-read applications like de novo assembly.
+Rasusa is a high-performance tool designed for the stochastic downsampling of genomic data. Unlike simple line-counting methods, rasusa can calculate the required number of reads to achieve a target depth of coverage based on a provided genome size. It supports single-end and paired-end reads, as well as aligned sequence data, making it an essential utility for normalizing datasets, benchmarking bioinformatic pipelines, or reducing computational load for assembly and variant calling.
 
-## Common CLI Patterns
+## Core Workflows
 
-### Subsampling Reads (FastQ/Fasta)
-To subsample reads to a specific coverage, you must provide the target coverage and the estimated genome size.
+### Subsampling Reads (FASTQ/FASTA)
+Use the `reads` subcommand to process raw sequencing files.
 
-```bash
-# Subsample to 30x coverage for an E. coli (4.6Mb) genome
-rasusa reads --coverage 30 --genome-size 4.6mb input.fq -o output.fq
+*   **By Coverage**: Subsample to 30x coverage for a 4.6Mb genome.
+    `rasusa reads --coverage 30 --genome-size 4.6mb input.fastq.gz --output output.fastq.gz`
+*   **Paired-end Reads**: Ensure both R1 and R2 are provided. Note that `--output` must be specified for each input.
+    `rasusa reads -c 50 -g 5mb r1.fq r2.fq --output out.r1.fq --output out.r2.fq`
+*   **By Fraction**: Keep 10% of the reads.
+    `rasusa reads --frac 0.1 input.fq -o output.fq`
+*   **By Absolute Number**: Keep exactly 1,000,000 bases.
+    `rasusa reads --bases 1m input.fq -o output.fq`
 
-# Subsample paired-end Illumina reads to 50x coverage
-rasusa reads -c 50 -g 3gb -o out.R1.fq -o out.R2.fq in.R1.fq in.R2.fq
-```
+### Subsampling Alignments (BAM/SAM/CRAM)
+Use the `aln` subcommand for mapped data. This uses a sweep-line algorithm for efficient downsampling.
 
-### Subsampling by Base Count or Fraction
-If the genome size is unknown or you prefer a specific volume of data:
-
-```bash
-# Subsample to exactly 1Gb of data
-rasusa reads --bases 1gb input.fq > output.fq
-
-# Subsample to 10% of the original reads
-rasusa reads --frac 0.1 input.fq -o output.fq
-
-# Subsample to a specific number of reads
-rasusa reads --num 1000000 input.fq -o output.fq
-```
-
-### Subsampling Alignments (SAM/BAM)
-The `aln` command subsamples an indexed alignment file to a maximum depth per position.
-
-```bash
-# Subsample BAM to 20x coverage and pipe to samtools for sorting
-rasusa aln --coverage 20 input.bam | samtools sort -o output.bam
-```
+*   **Target Coverage**: `rasusa aln --coverage 20 input.bam -o output.bam`
+*   **Strict Mode**: Use `--strict` to trigger an error if the input file has less coverage than the requested target.
 
 ## Expert Tips and Best Practices
 
-- **Genome Size Suffixes**: The `--genome-size` (-g) and `--bases` (-b) flags accept human-readable suffixes: `kb`, `mb`, `gb`, and `tb` (case-insensitive).
-- **Reproducibility**: Use the `--seed` (-s) flag with a specific integer to ensure the random subsampling produces the same result across different runs.
-- **Output Compression**: Use `-O` or `--output-type` to specify the output format (e.g., `g` for gzip, `z` for zstd, `b` for bzip2, `u` for uncompressed). You can also control the compression level with `-l`.
-- **Alignment Requirements**: For the `aln` command, the input must be a valid, indexed SAM or BAM file.
-- **Streaming**: `rasusa` writes to `stdout` by default if no output file is specified, allowing it to be integrated into pipelines without creating intermediate files.
-- **Long-Read Advantage**: Unlike `seqtk`, `rasusa` accounts for read length. This prevents the bias toward shorter or longer reads that can occur when simply taking the first N reads of a file.
+*   **Genome Size Formats**: The `--genome-size` (or `-g`) flag accepts human-readable strings like `4.6mb`, `1gb`, or a path to a FASTA index (`.fai`) file. If a `.fai` is provided, rasusa automatically sums the lengths of all contigs.
+*   **Reproducibility**: Always provide a seed with `--seed <INT>` to ensure the same reads are selected across different runs. If no seed is provided, rasusa logs the random seed used; check the logs to retrieve it for future replication.
+*   **Compression**: Rasusa automatically detects output compression based on the file extension (`.gz`, `.bz2`, `.xz`, `.zst`). You can manually set the compression level using `-l <1-9>`.
+*   **Performance**: For large FASTQ files, rasusa is significantly faster than many alternatives because it uses the `needletail` parser and a two-pass approach (first pass to calculate read lengths, second to stream selected reads).
+*   **Validation**: If you are unsure of the input coverage, rasusa logs the calculated input coverage before it begins the downsampling process.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| rasusa aln | Randomly subsample alignments to a specified depth of coverage |
+| rasusa_cite | Rasusa: Randomly subsample sequencing reads to a specified coverage |
+| rasusa_reads | Randomly subsample reads |
 
 ## Reference documentation
-- [Rasusa GitHub Repository](./references/github_com_mbhall88_rasusa.md)
-- [Bioconda Rasusa Overview](./references/anaconda_org_channels_bioconda_packages_rasusa_overview.md)
+- [Rasusa README](./references/github_com_mbhall88_rasusa_blob_main_README.md)
+- [Rasusa Changelog](./references/github_com_mbhall88_rasusa_blob_main_CHANGELOG.md)
+- [JOSS Paper: Rasusa](./references/joss_theoj_org_papers_10.21105_joss.03941.md)

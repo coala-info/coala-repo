@@ -255,3 +255,6 @@ Options:
   -h, --help                 Show this help
 ```
 
+
+## Metadata
+- **Skill**: generated

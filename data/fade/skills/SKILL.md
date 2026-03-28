@@ -1,6 +1,6 @@
 ---
 name: fade
-description: Fade identifies and removes or trims sequencing artifacts introduced during enzymatic DNA fragmentation. Use when user asks to detect fragmentase artifacts, annotate soft-clipped regions, or filter biased reads from BAM files.
+description: FADE detects and eliminates sequencing artifacts introduced by enzymatic DNA fragmentation. Use when user asks to annotate BAM files for artifacts, filter or clip artifact-containing reads, report artifact statistics, or extract artifact sequences.
 homepage: https://github.com/blachlylab/fade
 ---
 
@@ -8,52 +8,82 @@ homepage: https://github.com/blachlylab/fade
 # fade
 
 ## Overview
-`fade` (Fragmentase Artifact Detection and Elimination) is a specialized bioinformatics tool designed to clean up DNA sequencing data. It targets artifacts introduced during enzymatic shearing, which often manifest as sequences from the opposite strand being ligated to the fragment. By identifying these via soft-clip re-alignment, `fade` can either filter out the problematic reads entirely or trim the artifactual sequences to preserve the valid portion of the data.
+
+FADE (Fragmentase Artifact Detection and Elimination) is a specialized bioinformatics tool designed to address a specific type of sequencing artifact introduced by enzymatic DNA fragmentation. Unlike physical shearing (sonication), enzymatic methods can create unexpected alterations in the DNA source material, often manifesting as specific soft-clipped sequences that align elsewhere in the reference. This skill provides the procedural knowledge to run the FADE pipeline—from initial annotation of BAM files to the final extraction or clipping of artifact-free reads.
 
 ## Core Workflow
-The standard `fade` pipeline requires three primary steps: annotation, sorting, and elimination.
 
-### 1. Annotate Artifacts
-The `annotate` command performs Smith-Waterman local alignment on soft-clipped regions to identify artifacts. It adds the `rs` (bitflag) and `am` (realignment) tags to the BAM records.
+The standard FADE pipeline consists of three primary steps: annotation, sorting, and filtering.
+
+### 1. Annotation
+Identify potential artifacts by re-aligning soft-clipped regions to the reference genome.
 
 ```bash
-fade annotate -t 8 -b input.bam reference.fasta > annotated.bam
+fade annotate -b input.bam reference.fa > annotated.bam
 ```
-*   **-t**: Specify extra threads for parsing.
-*   **--min-length**: Minimum soft-clip length to consider (default is usually sufficient).
+*   **Input**: A BAM/SAM file and an indexed FASTA reference.
+*   **Mechanism**: FADE extracts the reference sequence around the mapped read (default 300nt padding), reverse-complements the read, and performs a Smith-Waterman local alignment to detect stem-loop structures or other enzymatic artifacts.
+*   **Key Flags**:
+    *   `--min-length`: Minimum bases for a soft-clip to be considered (default is usually sufficient).
+    *   `-w, --window-size`: Number of bases considered outside the read/mate region for re-alignment.
 
-### 2. Queryname Sort (Critical Step)
-Before running the elimination step, you must sort the BAM file by query name. This ensures that `fade` can see both reads in a pair (R1 and R2) simultaneously.
+### 2. Queryname Sorting (Recommended)
+To ensure FADE can remove entire fragments (both R1 and R2) when an artifact is found on either read, the BAM should be sorted by queryname.
 
 ```bash
 samtools sort -n annotated.bam > annotated.qsort.bam
 ```
 
-### 3. Eliminate or Clip Artifacts
-The `out` command uses the tags created in step 1 to process the reads.
+### 3. Elimination or Clipping
+Remove the artifact-containing reads or hard-clip the artifact sequences.
 
-**Option A: Filter (Recommended)**
-Removes the entire fragment (both R1 and R2) if an artifact is detected on either read.
+**Option A: Filter entire fragments (Highest Stringency)**
 ```bash
 fade out -b annotated.qsort.bam > filtered.bam
 ```
 
-**Option B: Hard Clip**
-Trims the artifactual sequence from the read instead of deleting the read.
+**Option B: Hard-clip artifacts (Preserve Read)**
 ```bash
 fade out -c -b annotated.qsort.bam > clipped.bam
 ```
+*   **Note**: If using the `-c` (clip) flag, you should run a tool like Picard `FixMateInformation` after re-sorting to ensure mate coordinates and flags are updated correctly.
 
-## Expert Tips and Best Practices
-*   **Fragment-Level Logic**: Always use queryname-sorted BAMs for `fade out`. If the file is coordinate-sorted, `fade` will only eject the specific read containing the artifact, orphaning its mate. The tool assumes the entire fragment is biased and should be removed together.
-*   **Post-Processing**: Because `fade annotate` works in parallel, the output order is non-deterministic. You must re-sort the final output (e.g., `samtools sort`) before indexing or viewing in IGV.
-*   **Fixing Mate Info**: If using the `-c` (clip) flag in `fade out`, the starting positions of alignments may change. It is highly recommended to run `Picard FixMateInformation` after the final sort to ensure BAM consistency.
-*   **Docker Usage**: If running via Docker, ensure you mount your current working directory to `/data` and reference files relative to that path.
-    ```bash
-    docker run -v `pwd`:/data blachlylab/fade annotate -b /data/in.bam /data/ref.fa > out.bam
-    ```
-*   **Statistics**: Use `fade stats` after the annotation step to generate a report on the percentage of soft-clipped reads and identified artifacts to assess the severity of fragmentation bias in your library.
+## Advanced Operations and Diagnostics
+
+### Reporting Statistics
+Generate detailed reports on artifact prevalence after the annotation step.
+*   `fade stats`: Reports extended info about identified artifact reads.
+*   `fade stats-clip`: Reports info on all soft-clipped reads, regardless of artifact status.
+
+### Extracting Artifacts
+To inspect the artifacts themselves for quality control:
+```bash
+fade extract -b annotated.bam > artifacts_only.bam
+```
+
+## Expert Tips
+
+*   **Parallelization**: `fade annotate` supports multi-threading. Use the `-t` flag to speed up processing on large datasets.
+*   **Sorting Impact**: `fade annotate` works in parallel and does not guarantee output order. Always re-sort the output if you require coordinate-sorted BAMs for IGV or indexing.
+*   **BAM Tags**: FADE adds specific tags to the BAM records:
+    *   `rs`: A 6-bit flag indicating artifact status (e.g., bit 1 for left artifact, bit 2 for right).
+    *   `am`: Mapping information for the artifact sequence (Chrom, Pos, CIGAR).
+*   **Docker Usage**: When running via Docker, ensure you mount your local directory to `/data` and reference paths relative to that mount point.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| annotate | performs re-alignment of soft-clips and annotates bam records with bitflag (rs) and realignment tags (am) |
+| extract | extracts artifacts into a mapped SAM/BAM (used after annotate) |
+| out | Fragmentase Artifact Detection and Elimination. Removes all reads and mates for reads containing the artifact (used after annotate) or hard clips out artifact sequence from reads. |
+| stats | reports extended information about all artifact reads (used after annotate) |
+| stats-clip | reports extended information about all soft-clipped reads (used after annotate) |
 
 ## Reference documentation
-- [GitHub Repository - blachlylab/fade](./references/github_com_blachlylab_fade.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_fade_overview.md)
+
+- [FADE Main Documentation](./references/github_com_blachlylab_fade_blob_master_README.md)
+- [BAM Tag Specifications](./references/github_com_blachlylab_fade_blob_master_TAGS.md)
+- [Installation and Prerequisites](./references/github_com_blachlylab_fade_blob_master_INSTALL.md)

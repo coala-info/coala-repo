@@ -1,1 +1,332 @@
-GitHub - umccr/vcf2maf: Convert a VCF into a MAF, where each variant is annotated to only one of all possible gene isoforms Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} umccr / vcf2maf Public forked from mskcc/vcf2maf Notifications You must be signed in to change notification settings Fork 1 Star 0 Convert a VCF into a MAF, where each variant is annotated to only one of all possible gene isoforms License View license 0 stars 221 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 0 Pull requests 0 Actions Security 0 Insights Additional navigation options Code Issues Pull requests Actions Security Insights umccr/vcf2maf main Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 358 Commits 358 Commits data data docs docs tests tests .gitignore .gitignore .travis.yml .travis.yml Dockerfile Dockerfile LICENSE LICENSE README.md README.md maf2maf.pl maf2maf.pl maf2vcf.pl maf2vcf.pl vcf2maf.pl vcf2maf.pl vcf2vcf.pl vcf2vcf.pl View all files Repository files navigation README License vcf maf To convert a VCF into a MAF , each variant must be mapped to only one of all possible gene transcripts/isoforms that it might affect. But even within a single isoform, a Missense_Mutation close enough to a Splice_Site , can be labeled as either in MAF format, but not as both. This selection of a single effect per variant, is often subjective. And that's what this project attempts to standardize. The vcf2maf and maf2maf scripts leave most of that responsibility to Ensembl's VEP , but allows you to override their "canonical" isoforms, or use a custom ExAC VCF for annotation. Though the most useful feature is the extensive support in parsing a wide range of crappy MAF-like or VCF-like formats we've seen out in the wild. Quick start Find the latest stable release , download it, and view the detailed usage manuals for vcf2maf and maf2maf : export VCF2MAF_URL=`curl -sL https://api.github.com/repos/mskcc/vcf2maf/releases | grep -m1 tarball_url | cut -d\" -f4` curl -L -o mskcc-vcf2maf.tar.gz $VCF2MAF_URL; tar -zxf mskcc-vcf2maf.tar.gz; cd mskcc-vcf2maf-* perl vcf2maf.pl --man perl maf2maf.pl --man If you don't have VEP installed, then follow this gist . Of the many annotators out there, VEP is preferred for its large team of active coders, and its CLIA-compliant HGVS formats . After installing VEP, test out vcf2maf like this: perl vcf2maf.pl --input-vcf tests/test.vcf --output-maf tests/test.vep.maf To fill columns 16 and 17 of the output MAF with tumor/normal sample IDs, and to parse out genotypes and allele counts from matched genotype columns in the VCF, use options --tumor-id and --normal-id . Skip option --normal-id if you didn't have a matched normal: perl vcf2maf.pl --input-vcf tests/test.vcf --output-maf tests/test.vep.maf --tumor-id WD1309 --normal-id NB1308 VCFs from variant callers like VarScan use hardcoded sample IDs TUMOR/NORMAL to name genotype columns. To have vcf2maf correctly locate the columns to parse genotypes, while still printing proper sample IDs in the output MAF: perl vcf2maf.pl --input-vcf tests/test_varscan.vcf --output-maf tests/test_varscan.vep.maf --tumor-id WD1309 --normal-id NB1308 --vcf-tumor-id TUMOR --vcf-normal-id NORMAL If VEP is installed under /opt/vep and the VEP cache is under /srv/vep , there are options available to tell vcf2maf where to find them: perl vcf2maf.pl --input-vcf tests/test.vcf --output-maf tests/test.vep.maf --vep-path /opt/vep --vep-data /srv/vep If you want to skip running VEP and need a minimalist MAF-like file listing data from the input VCF only, then use the --inhibit-vep option. If your input VCF contains VEP annotation, then vcf2maf will try to extract it. But be warned that the accuracy of your resulting MAF depends on how VEP was operated upstream. In standard operation, vcf2maf runs VEP with very specific parameters to make sure everyone produces comparable MAFs. So, it is strongly recommended to avoid --inhibit-vep unless you know what you're doing. maf2maf If you have a MAF or a MAF-like file that you want to reannotate, then use maf2maf , which simply runs maf2vcf followed by vcf2maf : perl maf2maf.pl --input-maf tests/test.maf --output-maf tests/test.vep.maf After tests on variant lists from many sources, maf2vcf and maf2maf are quite good at dealing with formatting errors or "MAF-like" files. It even supports VCF-style alleles, as long as Start_Position == POS . But it's OK if the input format is imperfect. Any variants with a reference allele mismatch are kept aside in a separate file for debugging. The bare minimum columns that maf2maf expects as input are: Chromosome Start_Position Reference_Allele Tumor_Seq_Allele2 Tumor_Sample_Barcode 1 3599659 C T TCGA-A1-A0SF-01 1 6676836 A AGC TCGA-A1-A0SF-01 1 7886690 G A TCGA-A1-A0SI-01 See data/minimalist_test_maf.tsv for a sampler. Addition of Tumor_Seq_Allele1 will be used to determine zygosity. Otherwise, it will try to determine zygosity from variant allele fractions, assuming that arguments --tum-vad-col and --tum-depth-col are set correctly to the names of columns containing those read counts. Specifying the Matched_Norm_Sample_Barcode with its respective columns containing read-counts, is also strongly recommended. Columns containing normal allele read counts can be specified using argument --nrm-vad-col and --nrm-depth-col . License Apache-2.0 | Apache License, Version 2.0 | https://www.apache.org/licenses/LICENSE-2.0 Citation Cyriac Kandoth. mskcc/vcf2maf: vcf2maf v1.6.19. (2020). doi:10.5281/zenodo.593251 About Convert a VCF into a MAF, where each variant is annotated to only one of all possible gene isoforms Resources Readme License View license Uh oh! There was an error while loading. Please reload this page . Activity Custom properties Stars 0 stars Watchers 0 watching Forks 1 fork Report repository Releases 1 v1.6.21.20230511 Latest May 11, 2023 Packages 0 No packages published Languages Perl 99.1% Dockerfile 0.9% Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fumccr%2Fvcf2maf)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fumccr%2Fvcf2maf)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=umccr%2Fvcf2maf)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[umccr](/umccr)
+/
+**[vcf2maf](/umccr/vcf2maf)**
+Public
+
+forked from [mskcc/vcf2maf](/mskcc/vcf2maf)
+
+* [Notifications](/login?return_to=%2Fumccr%2Fvcf2maf) You must be signed in to change notification settings
+* [Fork
+  1](/login?return_to=%2Fumccr%2Fvcf2maf)
+* [Star
+   0](/login?return_to=%2Fumccr%2Fvcf2maf)
+
+* [Code](/umccr/vcf2maf)
+* [Issues
+  0](/umccr/vcf2maf/issues)
+* [Pull requests
+  0](/umccr/vcf2maf/pulls)
+* [Actions](/umccr/vcf2maf/actions)
+* [Security
+  0](/umccr/vcf2maf/security)
+* [Insights](/umccr/vcf2maf/pulse)
+
+Additional navigation options
+
+* [Code](/umccr/vcf2maf)
+* [Issues](/umccr/vcf2maf/issues)
+* [Pull requests](/umccr/vcf2maf/pulls)
+* [Actions](/umccr/vcf2maf/actions)
+* [Security](/umccr/vcf2maf/security)
+* [Insights](/umccr/vcf2maf/pulse)
+
+# umccr/vcf2maf
+
+main
+
+[Branches](/umccr/vcf2maf/branches)[Tags](/umccr/vcf2maf/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[358 Commits](/umccr/vcf2maf/commits/main/)   358 Commits | | |
+| [data](/umccr/vcf2maf/tree/main/data "data") | | [data](/umccr/vcf2maf/tree/main/data "data") |  |  |
+| [docs](/umccr/vcf2maf/tree/main/docs "docs") | | [docs](/umccr/vcf2maf/tree/main/docs "docs") |  |  |
+| [tests](/umccr/vcf2maf/tree/main/tests "tests") | | [tests](/umccr/vcf2maf/tree/main/tests "tests") |  |  |
+| [.gitignore](/umccr/vcf2maf/blob/main/.gitignore ".gitignore") | | [.gitignore](/umccr/vcf2maf/blob/main/.gitignore ".gitignore") |  |  |
+| [.travis.yml](/umccr/vcf2maf/blob/main/.travis.yml ".travis.yml") | | [.travis.yml](/umccr/vcf2maf/blob/main/.travis.yml ".travis.yml") |  |  |
+| [Dockerfile](/umccr/vcf2maf/blob/main/Dockerfile "Dockerfile") | | [Dockerfile](/umccr/vcf2maf/blob/main/Dockerfile "Dockerfile") |  |  |
+| [LICENSE](/umccr/vcf2maf/blob/main/LICENSE "LICENSE") | | [LICENSE](/umccr/vcf2maf/blob/main/LICENSE "LICENSE") |  |  |
+| [README.md](/umccr/vcf2maf/blob/main/README.md "README.md") | | [README.md](/umccr/vcf2maf/blob/main/README.md "README.md") |  |  |
+| [maf2maf.pl](/umccr/vcf2maf/blob/main/maf2maf.pl "maf2maf.pl") | | [maf2maf.pl](/umccr/vcf2maf/blob/main/maf2maf.pl "maf2maf.pl") |  |  |
+| [maf2vcf.pl](/umccr/vcf2maf/blob/main/maf2vcf.pl "maf2vcf.pl") | | [maf2vcf.pl](/umccr/vcf2maf/blob/main/maf2vcf.pl "maf2vcf.pl") |  |  |
+| [vcf2maf.pl](/umccr/vcf2maf/blob/main/vcf2maf.pl "vcf2maf.pl") | | [vcf2maf.pl](/umccr/vcf2maf/blob/main/vcf2maf.pl "vcf2maf.pl") |  |  |
+| [vcf2vcf.pl](/umccr/vcf2maf/blob/main/vcf2vcf.pl "vcf2vcf.pl") | | [vcf2vcf.pl](/umccr/vcf2maf/blob/main/vcf2vcf.pl "vcf2vcf.pl") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* License
+
+# vcf[![](https://camo.githubusercontent.com/cb9aa11fbf6bf08f93ce78eba7d62bf4abeb37c52a37882f861c4c41ab8cffa5/68747470733a2f2f692e67697068792e636f6d2f523658374765684a5751596d732e676966)](https://camo.githubusercontent.com/cb9aa11fbf6bf08f93ce78eba7d62bf4abeb37c52a37882f861c4c41ab8cffa5/68747470733a2f2f692e67697068792e636f6d2f523658374765684a5751596d732e676966)maf
+
+To convert a [VCF](http://samtools.github.io/hts-specs/) into a [MAF](https://docs.gdc.cancer.gov/Data/File_Formats/MAF_Format), each variant must be mapped to only one of all possible gene transcripts/isoforms that it might affect. But even within a single isoform, a `Missense_Mutation` close enough to a `Splice_Site`, can be labeled as either in MAF format, but not as both. **This selection of a single effect per variant, is often subjective. And that's what this project attempts to standardize.** The `vcf2maf` and `maf2maf` scripts leave most of that responsibility to [Ensembl's VEP](http://useast.ensembl.org/info/docs/tools/vep/index.html), but allows you to override their "canonical" isoforms, or use a custom ExAC VCF for annotation. Though the most useful feature is the **extensive support in parsing a wide range of crappy MAF-like or VCF-like formats** we've seen out in the wild.
+
+[![Build Status](https://camo.githubusercontent.com/cd68cdd8176ae43ab52d1010cc55ea2a0e7675bc148162f0460e15232420e8ee/68747470733a2f2f7472617669732d63692e636f6d2f6d736b63632f766366326d61662e7376673f6272616e63683d6d6173746572)](https://travis-ci.com/mskcc/vcf2maf)
+
+## Quick start
+
+Find the [latest stable release](https://github.com/mskcc/vcf2maf/releases), download it, and view the detailed usage manuals for `vcf2maf` and `maf2maf`:
+
+```
+export VCF2MAF_URL=`curl -sL https://api.github.com/repos/mskcc/vcf2maf/releases | grep -m1 tarball_url | cut -d\" -f4`
+curl -L -o mskcc-vcf2maf.tar.gz $VCF2MAF_URL; tar -zxf mskcc-vcf2maf.tar.gz; cd mskcc-vcf2maf-*
+perl vcf2maf.pl --man
+perl maf2maf.pl --man
+```
+
+If you don't have [VEP](http://useast.ensembl.org/info/docs/tools/vep/index.html) installed, then [follow this gist](https://gist.github.com/ckandoth/61c65ba96b011f286220fa4832ad2bc0). Of the many annotators out there, VEP is preferred for its large team of active coders, and its CLIA-compliant [HGVS formats](http://www.hgvs.org/mutnomen/recs.html). After installing VEP, test out `vcf2maf` like this:
+
+```
+perl vcf2maf.pl --input-vcf tests/test.vcf --output-maf tests/test.vep.maf
+```
+
+To fill columns 16 and 17 of the output MAF with tumor/normal sample IDs, and to parse out genotypes and allele counts from matched genotype columns in the VCF, use options `--tumor-id` and `--normal-id`. Skip option `--normal-id` if you didn't have a matched normal:
+
+```
+perl vcf2maf.pl --input-vcf tests/test.vcf --output-maf tests/test.vep.maf --tumor-id WD1309 --normal-id NB1308
+```
+
+VCFs from variant callers like [VarScan](http://varscan.sourceforge.net/somatic-calling.html#somatic-output) use hardcoded sample IDs TUMOR/NORMAL to name genotype columns. To have `vcf2maf` correctly locate the columns to parse genotypes, while still printing proper sample IDs in the output MAF:
+
+```
+perl vcf2maf.pl --input-vcf tests/test_varscan.vcf --output-maf tests/test_varscan.vep.maf --tumor-id WD1309 --normal-id NB1308 --vcf-tumor-id TUMOR --vcf-normal-id NORMAL
+```
+
+If VEP is installed under `/opt/vep` and the VEP cache is under `/srv/vep`, there are options available to tell `vcf2maf` where to find them:
+
+```
+perl vcf2maf.pl --input-vcf tests/test.vcf --output-maf tests/test.vep.maf --vep-path /opt/vep --vep-data /srv/vep
+```
+
+If you want to skip running VEP and need a minimalist MAF-like file listing data from the input VCF only, then use the `--inhibit-vep` option. If your input VCF contains VEP annotation, then `vcf2maf` will try to extract it. But be warned that the accuracy of your resulting MAF depends on how VEP was operated upstream. In standard operation, `vcf2maf` runs VEP with very specific parameters to make sure everyone produces comparable MAFs. So, it is strongly recommended to avoid `--inhibit-vep` unless you know what you're doing.
+
+## maf2maf
+
+If you have a MAF or a MAF-like file that you want to reannotate, then use `maf2maf`, which simply runs `maf2vcf` followed by `vcf2maf`:
+
+```
+perl maf2maf.pl --input-maf tests/test.maf --output-maf tests/test.vep.maf
+```
+
+After tests on variant lists from many sources, `maf2vcf` and `maf2maf` are quite good at dealing with formatting errors or "MAF-like" files. It even supports VCF-style alleles, as long as `Start_Position == POS`. But it's OK if the input format is imperfect. Any variants with a reference allele mismatch are kept aside in a separate file for debugging. The bare minimum columns that `maf2maf` expects as input are:
+
+```
+Chromosome	Start_Position	Reference_Allele	Tumor_Seq_Allele2	Tumor_Sample_Barcode
+1	3599659	C	T	TCGA-A1-A0SF-01
+1	6676836	A	AGC	TCGA-A1-A0SF-01
+1	7886690	G	A	TCGA-A1-A0SI-01
+```
+
+See `data/minimalist_test_maf.tsv` for a sampler. Addition of `Tumor_Seq_Allele1` will be used to determine zygosity. Otherwise, it will try to determine zygosity from variant allele fractions, assuming that arguments `--tum-vad-col` and `--tum-depth-col` are set correctly to the names of columns containing those read counts. Specifying the `Matched_Norm_Sample_Barcode` with its respective columns containing read-counts, is also strongly recommended. Columns containing normal allele read counts can be specified using argument `--nrm-vad-col` and `--nrm-depth-col`.
+
+## License
+
+```
+Apache-2.0 | Apache License, Version 2.0 | https://www.apache.org/licenses/LICENSE-2.0
+```
+
+## Citation
+
+```
+Cyriac Kandoth. mskcc/vcf2maf: vcf2maf v1.6.19. (2020). doi:10.5281/zenodo.593251
+```
+
+## About
+
+Convert a VCF into a MAF, where each variant is annotated to only one of all possible gene isoforms
+
+### Resources
+
+[Readme](#readme-ov-file)
+
+### License
+
+[View license](#License-1-ov-file)
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+[Activity](/umccr/vcf2maf/activity)
+
+[Custom properties](/umccr/vcf2maf/custom-properties)
+
+### Stars
+
+[**0**
+stars](/umccr/vcf2maf/stargazers)
+
+### Watchers
+
+[**0**
+watching](/umccr/vcf2maf/watchers)
+
+### Forks
+
+[**1**
+fork](/umccr/vcf2maf/forks)
+
+[Report repository](/contact/report-content?content_url=https%3A%2F%2Fgithub.com%2Fumccr%2Fvcf2maf&report=umccr+%28user%29)
+
+## [Releases 1](/umccr/vcf2maf/releases)
+
+[v1.6.21.20230511
+
+Latest
+
+May 11, 2023](/umccr/vcf2maf/releases/tag/v1.6.21.20230511)
+
+## [Package

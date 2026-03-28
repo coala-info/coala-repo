@@ -424,3 +424,6 @@ options:
   --fontsize FONTSIZE   The font size of output graph [default=10]
 ```
 
+
+## Metadata
+- **Skill**: generated

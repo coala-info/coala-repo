@@ -1,6 +1,6 @@
 ---
 name: datafunk
-description: Datafunk is a suite of command-line utilities designed for the manipulation, curation, and standardization of genomic data in FASTA and SAM formats. Use when user asks to clean sequence headers, merge or filter FASTA files, remove low-coverage sequences, convert SAM files to FASTA, or process GISAID data.
+description: Datafunk is a Python-based utility suite designed to streamline the preparation, cleaning, and processing of genomic sequence data and metadata for viral surveillance pipelines. Use when user asks to clean FASTA headers, filter sequences by coverage or length, merge genomic files, process GISAID data, or standardize metadata for phylogenetic analysis.
 homepage: https://github.com/cov-ert/datafunk
 ---
 
@@ -8,62 +8,86 @@ homepage: https://github.com/cov-ert/datafunk
 # datafunk
 
 ## Overview
+Datafunk is a specialized Python-based utility suite designed for the "snake-flu" and broader genomic surveillance pipelines. It provides a collection of subcommands to streamline the preparation and cleaning of sequence data and metadata, particularly for SARS-CoV-2 workflows. Use this skill to automate repetitive bioinformatics tasks like FASTA record filtering, coverage-based pruning, and metadata standardization without writing custom scripts.
 
-`datafunk` is a specialized suite of command-line utilities designed for the manipulation and curation of genomic data, primarily focusing on FASTA and SAM file formats. It is frequently used in viral genomics to standardize sequence headers, filter out low-quality sequences, and prepare datasets for phylogenetic analysis. Use this tool when you need a lightweight, Python-based solution for common bioinformatics "data munging" tasks that go beyond simple sequence editing.
+## CLI Usage and Patterns
 
-## Installation
-
-The tool is available via Bioconda or can be installed from source:
-
-```bash
-# Via Conda
-conda install -c bioconda datafunk
-
-# Via Pip (from source)
-pip install .
-```
-
-## Command Line Usage
-
-`datafunk` uses a subcommand-based architecture. The general syntax is:
-
-```bash
-datafunk <subcommand> [options]
-```
+The tool is invoked using the `datafunk` entry point followed by a specific subcommand.
 
 ### Core Subcommands
+- **clean_names**: Sanitizes FASTA headers to ensure compatibility with downstream phylogenetic tools.
+- **merge_fasta**: Combines multiple FASTA files into a single output.
+- **remove_fasta**: Removes specific sequences from a FASTA file based on a list of IDs.
+- **filter_low_coverage**: Filters out sequences that do not meet a minimum coverage threshold.
+- **process_gisaid_data**: Specialized parser for GISAID-formatted genomic data and metadata.
+- **sam_2_fasta**: Extracts sequence data from SAM alignment files into FASTA format.
+- **phylotype_consensus**: Produces consensus sequences grouped by phylotype.
 
-- **clean_names**: Standardizes sequence names/headers in a FASTA file to ensure compatibility with downstream tools.
-- **merge_fasta**: Combines multiple FASTA files into a single output file.
-- **remove_fasta**: Filters out specific sequences from a FASTA file.
-- **filter_low_coverage**: Removes sequences that do not meet a specific coverage threshold (e.g., too many 'N' characters).
-- **sam_2_fasta**: Converts SAM alignment files into FASTA format.
-- **process_gisaid_data**: A specialized workflow for handling and reformatting data downloaded from the GISAID database.
-- **phylotype_consensus**: Generates consensus sequences based on assigned phylotypes.
-
-### Common Patterns
-
-Most subcommands follow a standard argument pattern for input and output:
+### Common Command Patterns
+Most subcommands follow a standard input/output flag pattern:
 
 ```bash
-# Example: Filtering low coverage sequences
-datafunk filter_low_coverage -i input.fasta -o filtered.fasta --threshold 29000
+# General syntax
+datafunk <subcommand> -i <input_file> -o <output_file> [options]
 
-# Example: Merging multiple files
-datafunk merge_fasta -i file1.fasta file2.fasta -o combined.fasta
+# Example: Removing specific records
+datafunk remove_fasta -i sequences.fasta -f exclude_list.txt -o filtered_sequences.fasta
 ```
 
-## Best Practices
+## Expert Tips
+- **Environment**: Ensure `biopython`, `pysam`, and `pandas` are installed in your environment, as datafunk relies heavily on these for sequence and metadata handling.
+- **GISAID Workflows**: When using `process_gisaid_data`, ensure your metadata headers match the expected GISAID fields (e.g., "Virus name", "Accession ID").
+- **Header Cleaning**: Use `clean_names` early in your pipeline. Many phylogenetic tools (like IQ-TREE or RAxML) fail if headers contain special characters or spaces that datafunk can automatically resolve.
+- **Coverage Filtering**: When running `filter_low_coverage`, you typically need to provide a threshold (e.g., 90%) to keep only high-quality genomes for analysis.
 
-1. **Help Discovery**: Since `datafunk` is a collection of miscellaneous tools, always check the specific arguments for a subcommand using the `--help` flag:
-   ```bash
-   datafunk <subcommand> --help
-   ```
-2. **Input Validation**: Ensure FASTA headers do not contain characters that might break downstream phylogenetic software (like spaces or special symbols) by running `clean_names` early in your pipeline.
-3. **GISAID Workflows**: When working with GISAID data, use the dedicated `process_gisaid_data` command rather than generic scripts, as it handles the specific metadata formatting requirements of that database.
-4. **Piping**: While `datafunk` commands often expect explicit `-i` and `-o` flags, verify the specific version's support for stdin/stdout if building complex shell pipes.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| Gisaid | Process GISAID sequence data |
+| Split | Split a fasta file into multiple files based on padding. |
+| add_epi_week | Add epidemiological week and day columns to metadata. |
+| add_header_column | Add header column to metadata table corresponding to fasta record ids |
+| cell | Subcommand for datafunk. The provided 'cell' is not a valid subcommand. Please choose from the available subcommands. |
+| clean_names | Cleans trait names in a metadata file. |
+| consensus | Subcommand for datafunk, specifically 'consensus'. The available subcommands for datafunk are: 'repair_names', 'remove_fasta', 'clean_names', 'merge_fasta', 'filter_fasta_by_covg_and_length', 'process_gisaid_sequence_data', 'sam_2_fasta', 'phylotype_consensus', 'gisaid_json_2_metadata', 'set_uniform_header', 'add_epi_week', 'process_gisaid_data', 'pad_alignment -i <input.fasta> -o <output.fasta> --left-pad <int> --right-pad <int> [--stdout]', 'exclude_uk_seqs', 'get_CDS', 'distance_to_root', 'mask', 'curate_lineages', 'snp_finder', 'del_finder', 'add_header_column', 'extract_unannotated_seqs', 'AA_finder', 'bootstrap'. |
+| curate_lineages | Find new lineages, merge ones that need merging, split ones that need splitting |
+| datafunk | A collection of bioinformatics tools for sequence data processing. |
+| datafunk | Process GISAID sequence data |
+| datafunk | A command-line tool with various subcommands for data manipulation and analysis. |
+| datafunk | External subcommand for datafunk. The provided help text indicates an error and lists available subcommands. |
+| datafunk | A collection of bioinformatics tools for sequence data manipulation and analysis. |
+| datafunk | A collection of bioinformatics tools for data processing and analysis. |
+| datafunk | A command-line tool for various bioinformatics data processing tasks. |
+| datafunk | A collection of bioinformatics tools for sequence data processing and analysis. |
+| datafunk | A tool with various subcommands for data processing. |
+| datafunk AA_finder | Query a codon position for amino acids |
+| datafunk bootstrap | bootstrap an alignment |
+| datafunk del_finder | Query an alignment position for deletions |
+| datafunk extract_unannotated_seqs | extract sequences with an empty cell in a specified cell in a metadata table |
+| datafunk filter_fasta_by_covg_and_length | Filters a FASTA file based on coverage and length thresholds. |
+| datafunk mask | mask regions of a fasta file using information in an external file |
+| datafunk phylotype_consensus | Splits a fasta file into phylotypes based on metadata and clade definitions, and generates consensus sequences. |
+| distance_to_root | calculates per sample genetic distance to WH04 and writes it to 'distances.tsv' |
+| duplicates | Subcommand for datafunk. The provided help text indicates 'duplicates' is an invalid choice, suggesting it might be a placeholder or an incorrect subcommand name. The valid subcommands are listed. |
+| exclude_uk_seqs | exclude UK sequences from fasta |
+| extract | Extract unannotated sequences from a FASTA file. |
+| falls | Subcommand 'falls' is not a valid subcommand for datafunk. Please choose from the available subcommands. |
+| get_CDS | Extracts CDS from alignments in Wuhan-Hu-1 coordinates |
+| gisaid_json_2_metadata | Add the info from a Gisaid json dump to an existing metadata table (or create a new one) |
+| merge_fasta | Merges multiple FASTA files into a single FASTA file based on a metadata file. |
+| pad | Pad an alignment with gaps |
+| pad_alignment | Pads a FASTA alignment with gaps on the left and/or right. |
+| process_gisaid_data | Gisaid json (+ metadata) -> (new) gisaid.fasta + metadata |
+| process_gisaid_sequence_data | Process raw sequence data in fasta or json format |
+| remove_fasta | Removes sequences from a FASTA file based on a filter file. |
+| repair_names | Repair FASTA headers using a phylogenetic tree. |
+| sam_2_fasta | aligned sam -> fasta (with optional trim to user-defined (reference) co-ordinates) |
+| set_uniform_header | Set uniform headers for FASTA and metadata files. |
+| snp_finder | Find SNPs from alignment files. |
 
 ## Reference documentation
-
-- [datafunk GitHub Repository](./references/github_com_snake-flu_datafunk.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_datafunk_overview.md)
+- [Datafunk README](./references/github_com_snake-flu_datafunk_blob_master_README.md)
+- [Setup and Dependencies](./references/github_com_snake-flu_datafunk_blob_master_setup.py.md)

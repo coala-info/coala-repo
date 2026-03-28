@@ -274,3 +274,6 @@ Additional help topics:
 Use gsutil help <command or topic> for detailed help.
 ```
 
+
+## Metadata
+- **Skill**: generated

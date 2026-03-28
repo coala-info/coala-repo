@@ -1,1 +1,18 @@
-Index &mdash; iCLIPro 0.1.1 documentation Navigation index iCLIPro 0.1.1 documentation &raquo; Index Quick search Enter search terms or a module, class or function name. Navigation index iCLIPro 0.1.1 documentation &raquo; &copy; Copyright 2014, Tomaz Curk. Created using Sphinx 1.1.3.
+### Navigation
+
+* index
+* [iCLIPro 0.1.1 documentation](index.html) »
+
+# Index
+
+### Quick search
+
+Enter search terms or a module, class or function name.
+
+### Navigation
+
+* index
+* [iCLIPro 0.1.1 documentation](index.html) »
+
+© Copyright 2014, Tomaz Curk.
+Created using [Sphinx](http://sphinx.pocoo.org/) 1.1.3.

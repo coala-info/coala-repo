@@ -1,1 +1,1 @@
-pyqi - bioconda | Anaconda.org CMD + K Sign In Sign Up bioconda / pyqi pyqi Community pyqi: expose your interface Overview Files 8 Labels 2 Badges Versions 0.3.2 Installation To install this package, run one of the following: Conda $ conda install bioconda::pyqi Usage Tracking Monthly Downloads Updates Version 0.3.2 0.3.1 2 / 8 versions selected Downloads (Last 6 months): 0 About Summary pyqi: expose your interface Last Updated Mar 5, 2016 at 17:15 License BSD License Total Downloads 59.6K Version Downloads 53.2K Supported Platforms linux-64 macOS-64
+Anaconda.org

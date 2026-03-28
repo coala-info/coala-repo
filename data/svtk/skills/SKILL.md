@@ -1,6 +1,6 @@
 ---
 name: svtk
-description: The Structural Variant ToolKit (svtk) provides a suite of utilities for standardizing, clustering, and annotating structural variant calls from genomic data. Use when user asks to convert VCF files to BED format, cluster overlapping variants across samples, annotate variants with genomic features, or resolve complex structural events.
+description: The Structural Variation Toolkit (svtk) provides a suite of utilities for processing, annotating, and evaluating structural variant calls. Use when user asks to convert VCF files to BED format, annotate functional context, count variant types, or perform statistical validation using split-read and read-depth evidence.
 homepage: https://github.com/talkowski-lab/svtk
 ---
 
@@ -8,63 +8,59 @@ homepage: https://github.com/talkowski-lab/svtk
 # svtk
 
 ## Overview
-The Structural Variant ToolKit (svtk) is a suite of utilities designed to handle the complexities of structural variant discovery and refinement. It is particularly useful for bioinformaticians who need to standardize VCF outputs from different SV callers, cluster overlapping variants across samples, and annotate variants with genomic features. While the repository is archived in favor of the GATK-SV pipeline, svtk remains a core component for legacy workflows and specific SV manipulation tasks.
 
-## Installation
-Install via bioconda to ensure all dependencies (Python, pysam, etc.) are correctly managed:
-```bash
-conda install bioconda::svtk
-```
+The Structural Variation Toolkit (svtk) is a specialized suite of utilities designed to process, annotate, and evaluate structural variant calls. It serves as a bridge between standard genomic formats like VCF and BED, while providing domain-specific logic for SV-type counting and complex variant resolution. While the core package has been migrated to the official GATK-SV repository, this standalone version remains a reference for specific PESR (Paired-End/Split-Read) and RD (Read-Depth) testing procedures.
 
-## Common CLI Patterns
+## Common CLI Patterns and Commands
 
-### Standardizing and Converting Formats
-Convert VCF files to BED format for easier manipulation in genomic interval tools.
-```bash
-# Basic conversion
-svtk vcf2bed input.vcf output.bed
+### Format Conversion
+Use `vcf2bed` to transform SV VCF files into BED format for downstream interval-based analysis.
+* **Coordinate System**: Note that `svtk vcf2bed` automatically converts VCF coordinates to 0-based coordinates in the output BED file.
+* **Filtering**: The tool preserves FILTER column information; ensure your input VCF is properly pre-filtered to avoid carrying low-quality sites into the BED output.
 
-# Handle complex insertions and report unresolved variants
-svtk vcf2bed --split-sinks input.vcf output.bed
-```
+### SV Annotation
+Use `svtk annotate` to add functional context to SV calls.
+* **Chromosome Naming**: The annotator is flexible with naming conventions. It accepts both "chr#" (e.g., chr1, chrX) and bare integers/characters (e.g., 1, X, Y).
+* **Impact Analysis**: Use this to identify Loss-of-Function (LoF) events, particularly for deletions and duplications (DUP_LOF).
 
-### Clustering Variants
-Merge overlapping SV calls from multiple samples or callers to create a non-redundant site list.
-```bash
-# Cluster variants in a VCF
-svtk vcfcluster input_list.txt output.vcf
+### Dataset Summarization
+Use `count-svtypes` to generate a breakdown of variant classes (DEL, DUP, INV, BND, etc.) within a file.
+* **Piping**: This command supports standard input, allowing for efficient integration into shell pipelines:
+  `cat variants.vcf | svtk count-svtypes`
 
-# Cluster BED-formatted SVs with identical coordinates
-svtk bedcluster input.bed output.bed
-```
-
-### Annotation
-Annotate SVs with gene overlaps, functional impact (LOF), and specific chromosome naming conventions.
-```bash
-# Annotate a VCF with genomic features
-svtk annotate input.vcf references/gencode.gtf output.vcf
-```
-
-### Quality Control and Statistics
-Generate summaries of variant types across your dataset.
-```bash
-# Count SV types from a VCF (supports stdin)
-cat input.vcf | svtk count-svtypes
-```
-
-### Resolving Complex Variants
-Refine breakpoints and resolve complex event types (like inversions or translocations) that may be represented inconsistently by different callers.
-```bash
-svtk resolve raw_calls.vcf unresolved.vcf resolved.vcf
-```
+### Statistical Testing
+The toolkit includes specialized modules for validating SVs using orthogonal evidence:
+* **SRTest**: Evaluates split-read support, including specific logic for interchromosomal breakends (BNDs).
+* **RdTest**: Performs read-depth validation to confirm copy-number changes.
+* **KS Stats**: Used for calculating Kolmogorov-Smirnov statistics to compare depth distributions, often used in filtering pipelines to eliminate stochastic noise.
 
 ## Expert Tips
-- **Coordinate Systems**: `svtk vcf2bed` converts VCF (1-based) to BED (0-based) coordinates. Always verify your coordinate system before downstream analysis.
-- **Chromosome Naming**: The `annotate` command is flexible with chromosome prefixes; it accepts both "chr1" and "1" formats.
-- **Complex Insertions**: When working with complex insertions (INS), use the latest version of `vcf2bed` to ensure complex classes are correctly parsed into separate variables.
-- **Piping**: Many svtk subcommands, such as `count-svtypes`, support `stdin`, allowing for efficient integration into bash one-liners without creating intermediate files.
+
+* **Complex Variant Resolution**: When working with complex SVs (CPX), ensure you are using the resolution logic that matches your pipeline version, as resolution code for complex events often undergoes significant refinement during DSP (Data Sciences Platform) integration.
+* **Dependency Management**: `svtk` relies heavily on `pysam`, `pybedtools`, and `cython`. If encountering performance issues with large VCFs, ensure the Cython extensions (`svtk/utils/helpers.pyx`) are properly compiled during installation.
+* **Migration Note**: For the most actively maintained version of these tools, refer to the GATK-SV repository. This standalone `svtk` package is primarily for legacy support or specific research workflows.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| bincov | Calculates non-duplicate primary-aligned binned coverage of a chromosome from an input BAM file |
+| sr-test | Calculate enrichment of clipped reads at SV breakpoints. |
+| svtk | Annotate resolved SV with genic effects and noncoding hits. |
+| svtk | Convert a VCF to a BED. |
+| svtk collect-pesr | Collect split read and discordant pair data from a bam alignment. |
+| svtk pe-test | Calculate enrichment of discordant pairs at SV breakpoints. |
+| svtk resolve | Resolve complex SV from inversion/translocation breakpoints and CNV intervals. |
+| svtk standardize | Standardize a VCF of SV calls. |
+| svtk_bedcluster | Cluster a bed of structural variants based on reciprocal overlap. |
+| svtk_count-svtypes | Count the instances of each SVTYPE observed in each sample in a VCF. |
+| svtk_rdtest2vcf | Convert an RdTest-formatted bed to the standard VCF format. |
+| vcfcluster | Intersect SV called by PE/SR-based algorithms. |
 
 ## Reference documentation
-- [Anaconda Bioconda svtk Overview](./references/anaconda_org_channels_bioconda_packages_svtk_overview.md)
-- [svtk GitHub Repository](./references/github_com_talkowski-lab_svtk.md)
-- [svtk Master Commits](./references/github_com_talkowski-lab_svtk_commits_master.md)
+
+- [SVTK README](./references/github_com_talkowski-lab_svtk_blob_master_README.md)
+- [Setup and Dependencies](./references/github_com_talkowski-lab_svtk_blob_master_setup.py.md)
+- [SVTK Commit History and Subcommands](./references/github_com_talkowski-lab_svtk_commits_master.md)

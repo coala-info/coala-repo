@@ -121,3 +121,6 @@ Usage: merqury.sh <read-db.meryl> [<mat.meryl> <pat.meryl>] <asm1.fasta> [asm2.f
 Arang Rhie, 2020-01-29. arrhie@gmail.com
 ```
 
+
+## Metadata
+- **Skill**: generated

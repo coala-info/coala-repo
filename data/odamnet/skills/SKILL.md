@@ -1,94 +1,71 @@
 ---
 name: odamnet
-description: "ODAMNet analyzes molecular relationships between chemicals and rare diseases. Use when user asks to analyze chemical-disease associations using overlap, active module identification, or random walk approaches."
+description: odamnet identifies and quantifies molecular links between environmental chemicals and rare diseases by integrating chemical-gene interactions with biological networks and disease pathways. Use when user asks to perform overlap analysis, identify active modules using DOMINO, conduct random walk with restart analysis, or create and download biological networks.
 homepage: https://pypi.org/project/ODAMNet/1.1.0/
 ---
 
 
 # odamnet
 
-A Python package for studying molecular relationships between chemicals and rare diseases.
-  Use when Claude needs to analyze chemical-disease associations using overlap, active module identification, or random walk approaches.
-  This skill is suitable for researchers and bioinformaticians working with chemical and disease data.
-body: |
-  ## Overview
-  ODAMNet is a Python tool designed to investigate the molecular connections between environmental chemicals and rare diseases. It offers three primary analytical approaches: overlap analysis to find direct associations between chemical targets and disease pathways, active module identification (AMI) using DOMINO to uncover functional modules within biological networks, and random walk with restart (RWR) via multiXrank to measure proximity within a multilayer network. This skill enables users to leverage these methods for in-depth biological relationship studies.
+## Overview
+ODAMNet is a bioinformatics package designed to identify and quantify the molecular links between environmental factors (chemicals) and rare diseases. It automates the process of fetching chemical-gene interactions from the Comparative Toxicogenomics Database (CTD) and rare disease pathways from WikiPathways. By integrating these data sources with biological networks, it allows researchers to explore direct overlaps or more complex network-based proximities.
 
-  ## Usage Instructions
+## Command Line Usage
 
-  ODAMNet can be installed via pip or conda.
+### 1. Overlap Analysis
+Use this for finding direct associations where chemical target genes are explicitly part of rare disease pathways.
+```bash
+odamnet overlap --chemicalsFile <path_to_chemicals_list>
+```
 
-  **Installation:**
-  *   **pip:** `python3 -m pip install odamnet`
-  *   **conda:** `conda install bioconda::odamnet`
+### 2. Active Module Identification (AMI)
+Use this to identify "active modules" within a Protein-Protein Interaction (PPI) network using the DOMINO algorithm, then check for overlaps with disease pathways.
+```bash
+odamnet domino --chemicalsFile <path_to_chemicals_list> --networkFile <path_to_ppi_network>
+```
 
-  **Core Command Structure:**
-  The general command structure is:
-  `odamnet [command] [ARGS]`
+### 3. Random Walk with Restart (RWR)
+Use this for measuring the proximity of nodes in a multilayer network. This is the most complex approach, requiring a specific directory structure and configuration.
+```bash
+odamnet multixrank \
+    --chemicalsFile <path_to_chemicals_list> \
+    --configPath <path_to_config_json_or_yaml> \
+    --networksPath <path_to_networks_dir> \
+    --seedsFile <path_to_seeds_file> \
+    --sifFileName <output_filename>
+```
 
-  **Available Commands:**
-  *   `overlap`: Computes the overlap between chemical target genes and rare disease pathways.
-  *   `domino`: Performs Active Module Identification (AMI) using the DOMINO tool.
-  *   `multixrank`: Executes Random Walk with Restart (RWR) using the multiXrank package.
-  *   `networkCreation`: Creates a rare disease pathways network and its corresponding disease-gene bipartite.
-  *   `networkDownloading`: Downloads biological networks from NDEx using a network UUID.
+### 4. Network Management
+Before running RWR, you often need to create the disease-specific network layer or download PPI networks.
 
-  **Detailed Command Examples:**
+**Create Disease Network and Bipartite:**
+```bash
+odamnet networkCreation --networksPath <output_dir> --bipartitePath <output_bipartite_path>
+```
 
-  ### Overlap Analysis
-  This approach identifies direct associations by finding chemical target genes within rare disease pathways.
+**Download from NDEx:**
+```bash
+odamnet networkDownloading --netUUID <NDEx_UUID> --networkFile <output_filename>
+```
 
-  ```bash
-  odamnet overlap --chemicalsFile <path/to/your/chemicals.txt>
-  ```
-  *   `--chemicalsFile`: Path to a file containing the list of chemicals.
+## Best Practices
+- **Chemical Input**: Ensure your chemicals file contains identifiers compatible with CTD (typically chemical names or MeSH IDs).
+- **Network Selection**: For `domino`, a high-quality PPI network is critical. You can use the `networkDownloading` function to pull validated networks from NDEx.
+- **RWR Configuration**: The `multixrank` approach requires a configuration file that defines the multilayer layout. Ensure your `--networksPath` contains the subdirectories expected by the multiXrank package.
+- **Automated Retrieval**: Remember that ODAMNet automatically handles the SPARQL queries to WikiPathways and API calls to CTD, so an active internet connection is required for the initial data gathering.
 
-  ### Active Module Identification (AMI)
-  Uses DOMINO to find active modules in a biological network based on chemical targets and then overlaps these modules with rare disease pathways.
 
-  ```bash
-  odamnet domino --chemicalsFile <path/to/your/chemicals.txt> --networkFile <path/to/your/network.sif>
-  ```
-  *   `--chemicalsFile`: Path to a file containing the list of chemicals.
-  *   `--networkFile`: Path to the biological network file (e.g., PPI network).
 
-  ### Random Walk with Restart (RWR)
-  Measures the proximity of genes and diseases to target genes within a multilayer network.
+## Subcommands
 
-  ```bash
-  odamnet multixrank --chemicalsFile <path/to/your/chemicals.txt> --configPath <path/to/config.ini> --networksPath <path/to/networks/directory> --seedsFile <path/to/seeds.txt> --sifFileName <output_network_name>
-  ```
-  *   `--chemicalsFile`: Path to a file containing the list of chemicals.
-  *   `--configPath`: Path to the multiXrank configuration file.
-  *   `--networksPath`: Path to the directory containing network files.
-  *   `--seedsFile`: Path to the file containing target genes (seeds).
-  *   `--sifFileName`: Name for the output network file.
+| Command | Description |
+|---------|-------------|
+| domino | Perform Active module identification analysis between genes targeted by   chemicals and rare diseases pathways using DOMINO. |
+| multixrank | Performs a Random Walk with Restart analysis using multiXrank with genes and diseases multilayers. |
+| networkCreation | Creates network (GR format) from WikiPathways request or pathways of interest given in GMT file. |
+| odamnet networkDownloading | Download networks from NDEx using the UUID network. Create SIF (3 columns   with header) or GR (2 columns without header) network |
+| odamnet_overlap | Perform Overlap analysis between genes targeted by chemicals and rare diseases pathways. |
 
-  ### Network Creation
-  Generates a rare disease pathway network and its disease-gene bipartite, useful for RWR.
-
-  ```bash
-  odamnet networkCreation --networksPath <path/to/save/networks/> --bipartitePath <path/to/save/bipartite/>
-  ```
-  *   `--networksPath`: Directory to save the generated disease network.
-  *   `--bipartitePath`: Directory to save the generated disease-gene bipartite.
-
-  ### Network Downloading
-  Downloads biological networks from NDEx.
-
-  ```bash
-  odamnet networkDownloading --netUUID <network_uuid> --networkFile <output_network_name.sif>
-  ```
-  *   `--netUUID`: The unique identifier for the network on NDEx.
-  *   `--networkFile`: The desired name for the downloaded network file.
-
-  ## Expert Tips
-  *   Ensure your chemical lists and network files are correctly formatted as per the ODAMNet documentation.
-  *   For RWR, carefully configure the `config.ini` file to match your network structure and analysis goals. Refer to the ODAMNet documentation for details on the configuration file.
-  *   Rare disease pathways are automatically retrieved from WikiPathways.
-  *   Chemical target genes are automatically retrieved from the Comparative Toxicogenomics Database (CTD).
-
-  ## Reference documentation
-  - [ODAMNet Usage and Installation Details](./github_com_MOohTus_ODAMNet.md)
-  - [ODAMNet Overview and Installation](./anaconda_org_channels_bioconda_packages_odamnet_overview.md)
-  - [ODAMNet PyPI Information](./pypi_org_project_ODAMNet_1.1.0.md)
+## Reference documentation
+- [ODAMNet Repository Overview](./references/github_com_MOohTus_ODAMNet_blob_main_README.md)
+- [Project Dependencies and Metadata](./references/github_com_MOohTus_ODAMNet_blob_main_pyproject.toml.md)

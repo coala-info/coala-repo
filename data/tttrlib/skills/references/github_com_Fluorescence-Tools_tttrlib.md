@@ -1,1 +1,357 @@
-GitHub - Fluorescence-Tools/tttrlib: File format agnostic low level, high performance API to read and process time-tagged-time resolved (TTTR) data for single-molecule and image spectroscopy (Sample data: https://gitlab.peulen.xyz/skf/tttr-data) Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} Fluorescence-Tools / tttrlib Public Notifications You must be signed in to change notification settings Fork 3 Star 23 File format agnostic low level, high performance API to read and process time-tagged-time resolved (TTTR) data for single-molecule and image spectroscopy (Sample data: https://gitlab.peulen.xyz/skf/tttr-data ) tttrlib.rtfd.io/ License BSD-3-Clause license 23 stars 3 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 4 Pull requests 2 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights Fluorescence-Tools/tttrlib main Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 1,499 Commits 1,499 Commits .github/ workflows .github/ workflows benchmarks benchmarks bin bin cmake cmake conda-recipe conda-recipe doc doc examples examples ext ext include include src src test test thirdparty thirdparty tools tools .gitignore .gitignore .gitlab-ci.yml .gitlab-ci.yml .readthedocs.yaml .readthedocs.yaml AUTHORS AUTHORS CMakeLists.txt CMakeLists.txt LICENSE.txt LICENSE.txt README.md README.md pyproject.toml pyproject.toml requirements.txt requirements.txt setup.py setup.py View all files Repository files navigation README BSD-3-Clause license tttrlib General description tttrlib is a file format agnostic high performance library to read, process, and write time-tagged-time resolved (TTTR) data acquired by PicoQuant (PQ) and Becker &amp; Hickl measurement devices/cards or TTTR files in the open Photon-HDF format. The library facilitates the work with files containing time-tagged time resolved photon streams by providing a vendor independent C++ application programming interface (API) for TTTR files that is wrapped by SWIG (Simplified Wrapper and Interface Generator) for common scripting languages as Python as target languages and non-scripting languages such as C# and Java including Octave, Scilab and R. Currently, tttrlib is wrapped for the use in Python. Multi-dimensional histograms Correlation analysis Time-window analysis Photon distribution anaylsis FLIM image generation and analysis tttrlib is programmed in C++ and wrapped for python. Thus, it can be used to integrate time-resolved data into advanced data analysis pipelines. Capabilities Fast reading TTTR files (IO limited) Generation / analysis of fluorescence decays Time window analysis Correlation of time event traces Filtering of time event traces to generate instrument response functions for fluorescence decays analysis without the need of independent measurements.. Fast photon distribution analysis Fast selection of photons from a photon stream Generation of fluorescence decay histograms tttrlib outperforms pure numpy and Python based libraries by a factor of ~40. Documentation Installation In an anaconda environment the library can be installed by the following command: conda install -c tpeulen tttrlib Alternatively, you can use pip to install tttrlib pip install tttrlib Usage The API of tttrlib as well as some use cases are documented on its web page . Below you find a small selection of code snippets. Access photon data as follows: import tttrlib fn = 'photon_stream.ptu' data = tttrlib . TTTR ( fn ) macro_times = data . macro_times micro_times = data . micro_times routing_channels = data . routing_channels Print header-information: import tttrlib fn = 'photon_stream.ptu' data = tttrlib . TTTR ( fn ) print ( data . json ) Correlate photon streams: import tttrlib fn = 'photon_stream.ptu' data = tttrlib . TTTR ( fn ) correlator = tttrlib . Correlator ( channels = ([ 1 ], [ 2 ]), tttr = data ) taus = correlator . x_axis , correlation_amplitude = correlator . correlation Create intensity images from CLSM data: import tttrlib fn = 'image.ptu' data = tttrlib . TTTR ( fn ) clsm = tttrlib . CLSM ( data ) channels = [ 0 , 1 ] prompt_range = [ 0 , 16000 ] clsm . fill ( channels = channels , micro_time_ranges = [ prompt_range ]) intensity_image = clsm . intensity tttrlib is in active development. In case you notice unusual behaviour do not hesitate to contact the authors. Supported file formats PicoQuant (PQ) PicoHarp ptu, T2/T3 HydraHarp ptu, T2/T3 HydraHarp ht3, PTU Becker &amp; Hickl (BH) spc132 spc630 (256 &amp; 4096 mode) Photon HDF5 Design goals Low memory footprint (keep objective large datasets, e.g., FLIM in memory). Platform independent C/C++ library with interfaces for scripting libraries Building and Installation C++ shared library The C++ shared library can be installed from source with cmake : git clone --recursive https://github.com/fluorescence-tools/tttrlib.git mkdir tttrlib/build; cd tttrlib/build cmake .. sudo make install On Linux you can build and install a package instead: Python bindings The Python bindings can be either be installed by downloading and compiling the source code or by using a precompiled distribution for Python anaconda environment. The following commands can be used to download and compile the source code: git clone --recursive https://github.com/fluorescence-tools/tttrlib.git cd tttrlib sudo python setup.py install In an anaconda environment the library can be installed by the following command: conda install -c tpeulen tttrlib For most users, the latter approach is recommended. Currently, pre-compiled packages for the anaconda distribution system are available for Windows (x86), Linux (x86, ARM64, PPCle), and macOS (x86). Precompiled libary are linked against conda-forge HDF5 &amp; Boost. Thus, the use of miniforge is recommended. Legacy 32-bit platforms and versions of programming languages, e.g., Python 2.7 are not supported. Citation If you use this software please also check the pre-print: tttrlib: modular software for integrating fluorescence spectroscopy, imaging, and molecular modeling; Thomas-Otavio Peulen, Katherina Hemmen, Annemarie Greife, Benjamin M. Webb, Suren Felekyan, Andrej Sali, Claus A. M. Seidel, Hugo Sanabria, Katrin G. Heinze; https://arxiv.org/abs/2402.17252 License Copyright 2007-2024 tttrlib developers. Licensed under the BSD-3-Clause About File format agnostic low level, high performance API to read and process time-tagged-time resolved (TTTR) data for single-molecule and image spectroscopy (Sample data: https://gitlab.peulen.xyz/skf/tttr-data ) tttrlib.rtfd.io/ Topics python single-molecule fluorescence imaging fluorescence-microscopy-imaging ptu flim becker fluorescence-correlation picoquant Resources Readme License BSD-3-Clause license Uh oh! There was an error while loading. Please reload this page . Activity Custom properties Stars 23 stars Watchers 2 watching Forks 3 forks Report repository Releases 12 0.25.1 Latest Nov 15, 2024 + 11 releases Packages 0 No packages published Uh oh! There was an error while loading. Please reload this page . Contributors 2 &nbsp; &nbsp; Uh oh! There was an error while loading. Please reload this page . Languages C++ 50.6% Python 19.8% SWIG 15.8% C 10.9% CMake 2.5% Shell 0.3% Batchfile 0.1% Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FFluorescence-Tools%2Ftttrlib)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FFluorescence-Tools%2Ftttrlib)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=Fluorescence-Tools%2Ftttrlib)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[Fluorescence-Tools](/Fluorescence-Tools)
+/
+**[tttrlib](/Fluorescence-Tools/tttrlib)**
+Public
+
+* [Notifications](/login?return_to=%2FFluorescence-Tools%2Ftttrlib) You must be signed in to change notification settings
+* [Fork
+  3](/login?return_to=%2FFluorescence-Tools%2Ftttrlib)
+* [Star
+   23](/login?return_to=%2FFluorescence-Tools%2Ftttrlib)
+
+* [Code](/Fluorescence-Tools/tttrlib)
+* [Issues
+  1](/Fluorescence-Tools/tttrlib/issues)
+* [Pull requests
+  0](/Fluorescence-Tools/tttrlib/pulls)
+* [Actions](/Fluorescence-Tools/tttrlib/actions)
+* [Projects](/Fluorescence-Tools/tttrlib/projects)
+* [Security
+  0](/Fluorescence-Tools/tttrlib/security)
+* [Insights](/Fluorescence-Tools/tttrlib/pulse)
+
+Additional navigation options
+
+* [Code](/Fluorescence-Tools/tttrlib)
+* [Issues](/Fluorescence-Tools/tttrlib/issues)
+* [Pull requests](/Fluorescence-Tools/tttrlib/pulls)
+* [Actions](/Fluorescence-Tools/tttrlib/actions)
+* [Projects](/Fluorescence-Tools/tttrlib/projects)
+* [Security](/Fluorescence-Tools/tttrlib/security)
+* [Insights](/Fluorescence-Tools/tttrlib/pulse)
+
+# Fluorescence-Tools/tttrlib
+
+main
+
+[Branches](/Fluorescence-Tools/tttrlib/branches)[Tags](/Fluorescence-Tools/tttrlib/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[2,049 Commits](/Fluorescence-Tools/tttrlib/commits/main/)   2,049 Commits | | |
+| [.github/workflows](/Fluorescence-Tools/tttrlib/tree/main/.github/workflows "This path skips through empty directories") | | [.github/workflows](/Fluorescence-Tools/tttrlib/tree/main/.github/workflows "This path skips through empty directories") |  |  |
+| [bin](/Fluorescence-Tools/tttrlib/tree/main/bin "bin") | | [bin](/Fluorescence-Tools/tttrlib/tree/main/bin "bin") |  |  |
+| [cmake](/Fluorescence-Tools/tttrlib/tree/main/cmake "cmake") | | [cmake](/Fluorescence-Tools/tttrlib/tree/main/cmake "cmake") |  |  |
+| [conda-recipe](/Fluorescence-Tools/tttrlib/tree/main/conda-recipe "conda-recipe") | | [conda-recipe](/Fluorescence-Tools/tttrlib/tree/main/conda-recipe "conda-recipe") |  |  |
+| [doc](/Fluorescence-Tools/tttrlib/tree/main/doc "doc") | | [doc](/Fluorescence-Tools/tttrlib/tree/main/doc "doc") |  |  |
+| [examples](/Fluorescence-Tools/tttrlib/tree/main/examples "examples") | | [examples](/Fluorescence-Tools/tttrlib/tree/main/examples "examples") |  |  |
+| [ext](/Fluorescence-Tools/tttrlib/tree/main/ext "ext") | | [ext](/Fluorescence-Tools/tttrlib/tree/main/ext "ext") |  |  |
+| [include](/Fluorescence-Tools/tttrlib/tree/main/include "include") | | [include](/Fluorescence-Tools/tttrlib/tree/main/include "include") |  |  |
+| [rattler-recipe](/Fluorescence-Tools/tttrlib/tree/main/rattler-recipe "rattler-recipe") | | [rattler-recipe](/Fluorescence-Tools/tttrlib/tree/main/rattler-recipe "rattler-recipe") |  |  |
+| [src](/Fluorescence-Tools/tttrlib/tree/main/src "src") | | [src](/Fluorescence-Tools/tttrlib/tree/main/src "src") |  |  |
+| [test](/Fluorescence-Tools/tttrlib/tree/main/test "test") | | [test](/Fluorescence-Tools/tttrlib/tree/main/test "test") |  |  |
+| [thirdparty](/Fluorescence-Tools/tttrlib/tree/main/thirdparty "thirdparty") | | [thirdparty](/Fluorescence-Tools/tttrlib/tree/main/thirdparty "thirdparty") |  |  |
+| [tools](/Fluorescence-Tools/tttrlib/tree/main/tools "tools") | | [tools](/Fluorescence-Tools/tttrlib/tree/main/tools "tools") |  |  |
+| [.gitignore](/Fluorescence-Tools/tttrlib/blob/main/.gitignore ".gitignore") | | [.gitignore](/Fluorescence-Tools/tttrlib/blob/main/.gitignore ".gitignore") |  |  |
+| [AUTHORS](/Fluorescence-Tools/tttrlib/blob/main/AUTHORS "AUTHORS") | | [AUTHORS](/Fluorescence-Tools/tttrlib/blob/main/AUTHORS "AUTHORS") |  |  |
+| [BUILDING.md](/Fluorescence-Tools/tttrlib/blob/main/BUILDING.md "BUILDING.md") | | [BUILDING.md](/Fluorescence-Tools/tttrlib/blob/main/BUILDING.md "BUILDING.md") |  |  |
+| [CHANGELOG.md](/Fluorescence-Tools/tttrlib/blob/main/CHANGELOG.md "CHANGELOG.md") | | [CHANGELOG.md](/Fluorescence-Tools/tttrlib/blob/main/CHANGELOG.md "CHANGELOG.md") |  |  |
+| [CMakeLists.txt](/Fluorescence-Tools/tttrlib/blob/main/CMakeLists.txt "CMakeLists.txt") | | [CMakeLists.txt](/Fluorescence-Tools/tttrlib/blob/main/CMakeLists.txt "CMakeLists.txt") |  |  |
+| [LICENSE.txt](/Fluorescence-Tools/tttrlib/blob/main/LICENSE.txt "LICENSE.txt") | | [LICENSE.txt](/Fluorescence-Tools/tttrlib/blob/main/LICENSE.txt "LICENSE.txt") |  |  |
+| [README.md](/Fluorescence-Tools/tttrlib/blob/main/README.md "README.md") | | [README.md](/Fluorescence-Tools/tttrlib/blob/main/README.md "README.md") |  |  |
+| [pyproject.toml](/Fluorescence-Tools/tttrlib/blob/main/pyproject.toml "pyproject.toml") | | [pyproject.toml](/Fluorescence-Tools/tttrlib/blob/main/pyproject.toml "pyproject.toml") |  |  |
+| [run\_pytest\_windows.py](/Fluorescence-Tools/tttrlib/blob/main/run_pytest_windows.py "run_pytest_windows.py") | | [run\_pytest\_windows.py](/Fluorescence-Tools/tttrlib/blob/main/run_pytest_windows.py "run_pytest_windows.py") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* BSD-3-Clause license
+
+# tttrlib
+
+[![Anaconda](https://camo.githubusercontent.com/25034103f47feb66beba62a591da39b5bb3393b1d312f909d9ed6fbdff8a3541/68747470733a2f2f616e61636f6e64612e6f72672f747065756c656e2f747474726c69622f6261646765732f76657273696f6e2e737667)](https://anaconda.org/tpeulen/tttrlib)
+[![PyPI](https://camo.githubusercontent.com/890d93ab9c465cd4dc95ce48682fc459347184c6681b9257867f106d068f381b/68747470733a2f2f62616467652e667572792e696f2f70792f747474726c69622e737667)](https://pypi.org/project/tttrlib/)
+[![CI](https://github.com/Fluorescence-Tools/tttrlib/actions/workflows/ci.yml/badge.svg)](https://github.com/Fluorescence-Tools/tttrlib/actions/workflows/ci.yml)
+
+---
+
+## General description
+
+tttrlib is a file format agnostic high performance library to
+read, process, and write time-tagged-time resolved (TTTR) data acquired by
+PicoQuant (PQ) and Becker & Hickl measurement devices/cards or TTTR
+files in the open Photon-HDF format.
+
+**tttrlib** is a high-performance, file-format-agnostic library to read, process, and write **time-tagged time-resolved (TTTR)** data from
+**PicoQuant**, **Becker & Hickl**, and **Photon-HDF5** files.
+
+Written in **C++** with **Python bindings**, it provides a fast, vendor-independent API for handling photon streams and enables integration into advanced data analysis pipelines for time-resolved fluorescence spectroscopy and imaging.
+
+[![tttrlib FLIM](https://github.com/Fluorescence-Tools/tttrlib/raw/main/doc/logos/mashup.png?raw=true "tttrlib FLIM")](https://github.com/Fluorescence-Tools/tttrlib/blob/main/doc/logos/mashup.png?raw=true)
+
+### Key Features
+
+* Fast TTTR file reading (IO-limited)
+* Multi-dimensional histogramming
+* Correlation analysis
+* Fluorescence decay generation and analysis
+* Photon distribution (FIDA/PCH)
+* Burst and time-window selection
+* FLIM and ISM image generation
+* Experimental ISM tools (Adaptive Pixel Reassignment, Focus-ISM background rejection)
+
+`tttrlib` typically outperforms pure Python implementations by
+~40× in decay histogramming and ~2–5× in burst selection.
+
+## Installation
+
+### pip (recommended)
+
+```
+pip install tttrlib
+```
+
+Pre-built wheels are available on [PyPI](https://pypi.org/project/tttrlib/) for
+**Linux** (x86\_64), **macOS** (arm64, x86\_64), and **Windows** (x86\_64)
+across Python 3.9–3.13.
+
+### Conda / Mamba
+
+**macOS / Linux** (via [bioconda](https://bioconda.github.io/recipes/tttrlib/README.html))
+
+```
+mamba install -c conda-forge -c bioconda tttrlib
+```
+
+**Windows** (via [tpeulen](https://anaconda.org/tpeulen/tttrlib))
+
+```
+mamba install -c tpeulen tttrlib
+```
+
+We recommend [**Miniforge**](https://github.com/conda-forge/miniforge) with the
+fast **mamba** solver.
+
+### From Source
+
+```
+git clone https://github.com/fluorescence-tools/tttrlib.git
+cd tttrlib
+pip install -e .
+```
+
+Pre-compiled packages are available for Windows, Linux (x86\_64), and macOS (arm64, x86\_64).
+Legacy 32-bit and Python 2.7 are not supported.
+
+---
+
+## Usage
+
+See [**docs.peulen.xyz/tttrlib**](https://docs.peulen.xyz/tttrlib) for the full API and tutorials.
+Below are minimal examples.
+
+Detailed build instructions for developers are available in [BUILDING.md](/Fluorescence-Tools/tttrlib/blob/main/BUILDING.md).
+
+### Read TTTR data
+
+```
+import tttrlib
+data = tttrlib.TTTR("photon_stream.ptu")
+
+macro = data.macro_times
+micro = data.micro_times
+routing = data.routing_channels
+```
+
+### Inspect header
+
+```
+import tttrlib
+fn = 'photon_stream.ptu'
+data = tttrlib.TTTR(fn)
+print(data.header.json)
+print(data.header.to_csv())
+```
+
+### Cross-correlate photon streams
+
+```
+import tttrlib
+fn = 'photon_stream.ptu'
+data = tttrlib.TTTR(fn)
+correlator = tttrlib.Correlator(
+    channels=([1], [2]),
+    tttr=data
+)
+taus = correlator.x_axis,
+correlation_amplitude = correlator.correlation
+```
+
+### Create intensity images (CLSM)
+
+```
+import tttrlib
+fn = 'image.ptu'
+data = tttrlib.TTTR(fn)
+clsm = tttrlib.CLSMImage(data)
+channels = [0, 1]
+prompt_range = [0, 16000]
+clsm.fill(channels=channels, micro_time_ranges=[prompt_range])
+intensity_image = clsm.intensity
+
+# Alternatively
+clsm = tttrlib.CLSMImage(fn, fill=True)
+intens

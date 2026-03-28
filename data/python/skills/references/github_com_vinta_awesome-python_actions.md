@@ -1,1 +1,545 @@
-Workflow runs · vinta/awesome-python · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners View all resources Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} vinta / awesome-python Public Notifications You must be signed in to change notification settings Fork 27.2k Star 284k Code Pull requests 8 Discussions Actions Security 0 Insights Additional navigation options Code Pull requests Discussions Actions Security Insights Actions: vinta/awesome-python Actions All workflows Workflows Claude PR Review Claude PR Review Copilot code review Copilot code review Show more workflows... Management Caches Deployments All workflows All workflows Actions Loading... Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page . will be ignored since log searching is not yet available Showing runs from all workflows will be ignored since log searching is not yet available 49 workflow runs 49 workflow runs Event Filter by Event Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching events. Status Filter by Status Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching statuses. Branch Filter by Branch Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching branches. Actor Filter by Actor Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching users. adding arparse a command-line library Claude PR Review #124: Pull request #2896 reopened by NinjaOfNeurons 2s NinjaOfNeurons:add-stdlib-argparse NinjaOfNeurons:add-stdlib-argparse 2s View #2896 View workflow file adding arparse a command-line library Claude PR Review #120: Pull request #2896 opened by NinjaOfNeurons 1s NinjaOfNeurons:add-stdlib-argparse NinjaOfNeurons:add-stdlib-argparse 1s View #2896 View workflow file Add ScanAPI Claude PR Review #110: Pull request #2889 synchronize by camilamaia Action required camilamaia:master camilamaia:master Action required View #2889 View workflow file Add ScanAPI Claude PR Review #109: Pull request #2889 opened by camilamaia Action required camilamaia:master camilamaia:master Action required View #2889 View workflow file Add textual Claude PR Review #108: Pull request #2881 synchronize by JinyangWang27 30s thisadityasoni:add-textual thisadityasoni:add-textual 30s View #2881 View workflow file Add textual Claude PR Review #107: Pull request #2881 synchronize by JinyangWang27 26s thisadityasoni:add-textual thisadityasoni:add-textual 26s View #2881 View workflow file Add plotly Claude PR Review #102: Pull request #2884 opened by thisadityasoni 25s thisadityasoni:add-plotly thisadityasoni:add-plotly 25s View #2884 View workflow file Add textual Claude PR Review #100: Pull request #2881 opened by thisadityasoni 28s thisadityasoni:add-textual thisadityasoni:add-textual 28s View #2881 View workflow file Add LlamaIndex to Machine Learning Claude PR Review #98: Pull request #2875 synchronize by vinDelphini Skipped vinDelphini:add-llamaindex vinDelphini:add-llamaindex Skipped View #2875 View workflow file Add docling Claude PR Review #81: Pull request #2864 synchronize by JinyangWang27 26s thisadityasoni:add-docling thisadityasoni:add-docling 26s View #2864 View workflow file Remove public archive and unmaintained projects Claude PR Review #79: Pull request #2863 synchronize by JinyangWang27 2s JinyangWang27:remove-archived JinyangWang27:remove-archived 2s View #2863 View workflow file Remove public archive and unmaintained projects Claude PR Review #78: Pull request #2863 opened by JinyangWang27 1s JinyangWang27:remove-archived JinyangWang27:remove-archived 1s View #2863 View workflow file Add Pydantic AI Claude PR Review #77: Pull request #2862 opened by JinyangWang27 1s JinyangWang27:add-pydantic-ai JinyangWang27:add-pydantic-ai 1s View #2862 View workflow file add ty Claude PR Review #75: Pull request #2859 synchronize by JinyangWang27 1s JinyangWang27:add-ty JinyangWang27:add-ty 1s View #2859 View workflow file add ty Claude PR Review #74: Pull request #2859 opened by JinyangWang27 2s JinyangWang27:add-ty JinyangWang27:add-ty 2s View #2859 View workflow file add yfinance Claude PR Review #73: Pull request #2858 opened by JinyangWang27 1s JinyangWang27:add-yfinance JinyangWang27:add-yfinance 1s View #2858 View workflow file Add Beanie Claude PR Review #72: Pull request #2857 opened by alexbevi 1s alexbevi:patch-5 alexbevi:patch-5 1s View #2857 View workflow file add shapely Claude PR Review #66: Pull request #2849 synchronize by JinyangWang27 1s JinyangWang27:add-shapely JinyangWang27:add-shapely 1s View #2849 View workflow file Add manim Claude PR Review #65: Pull request #2850 synchronize by JinyangWang27 1s JinyangWang27:add-manim JinyangWang27:add-manim 1s View #2850 View workflow file Add RAGFlow Claude PR Review #63: Pull request #2852 opened by JinyangWang27 1s JinyangWang27:add-ragflow JinyangWang27:add-ragflow 1s View #2852 View workflow file Add OpenBB Claude PR Review #62: Pull request #2851 opened by JinyangWang27 1s JinyangWang27:add-open-bb JinyangWang27:add-open-bb 1s View #2851 View workflow file Add manim Claude PR Review #61: Pull request #2850 opened by JinyangWang27 1s JinyangWang27:add-manim JinyangWang27:add-manim 1s View #2850 View workflow file add shapely Claude PR Review #60: Pull request #2849 opened by JinyangWang27 Skipped JinyangWang27:add-shapely JinyangWang27:add-shapely Skipped View #2849 View workflow file Add geopandas Claude PR Review #59: Pull request #2848 opened by JinyangWang27 2s JinyangWang27:master JinyangWang27:master 2s View #2848 View workflow file Add Beautiful Soup Claude PR Review #58: Pull request #2847 opened by Sakth1 1s Sakth1:Beautiful-Soup Sakth1:Beautiful-Soup 1s View #2847 View workflow file Previous 1 2 Next You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fvinta%2Fawesome-python%2Factions)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fvinta%2Fawesome-python%2Factions)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Factions%2Findex&source=header-repo&source_repo=vinta%2Fawesome-python)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[vinta](/vinta)
+/
+**[awesome-python](/vinta/awesome-python)**
+Public
+
+* [Notifications](/login?return_to=%2Fvinta%2Fawesome-python) You must be signed in to change notification settings
+* [Fork
+  27.5k](/login?return_to=%2Fvinta%2Fawesome-python)
+* [Star
+   289k](/login?return_to=%2Fvinta%2Fawesome-python)
+
+* [Code](/vinta/awesome-python)
+* [Pull requests
+  4](/vinta/awesome-python/pulls)
+* [Discussions](/vinta/awesome-python/discussions)
+* [Actions](/vinta/awesome-python/actions)
+* [Security
+  0](/vinta/awesome-python/security)
+* [Insights](/vinta/awesome-python/pulse)
+
+Additional navigation options
+
+* [Code](/vinta/awesome-python)
+* [Pull requests](/vinta/awesome-python/pulls)
+* [Discussions](/vinta/awesome-python/discussions)
+* [Actions](/vinta/awesome-python/actions)
+* [Security](/vinta/awesome-python/security)
+* [Insights](/vinta/awesome-python/pulse)
+
+# Actions: vinta/awesome-python
+
+## Actions
+
+## All workflows All workflows Actions Loading... Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page.
+
+will be ignored since log searching is not yet available
+
+Showing runs from all workflows
+
+will be ignored since log searching is not yet available
+
+**101 workflow runs**
+
+**101 workflow runs**
+
+Event
+
+# Filter by Event
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching events.
+
+Status
+
+# Filter by Status
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching statuses.
+
+Branch
+
+# Filter by Branch
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching branches.
+
+Actor
+
+# Filter by Actor
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching users.
+
+[Deploy Website](/vinta/awesome-python/actions/runs/23672727416)
+
+Deploy Website
+#54:
+Scheduled
+
+32s
+[master](/vinta/awesome-python/tree/refs/heads/master "master")
+
+[master](/vinta/awesome-python/tree/refs/heads/master "master")
+
+32s
+
+* [View workflow file](/vinta/awesome-python/actions/runs/23672727416/workflow)
+
+[Create django.yml](/vinta/awesome-python/actions/runs/23657055200)
+
+Django CI
+#1:
+Pull request [#3001](/vinta/awesome-python/pull/3001)
+opened
+by
+[manishr075](/manishr075)
+
+Action required
+[manishr075:master](/manishr075/awesome-python/tree/refs/heads/master "manishr075:master")
+
+[manishr075:master](/manishr075/awesome-python/tree/refs/heads/master "manishr075:master")
+
+Action required
+
+* [View #3001](/vinta/awesome-python/pull/3001)
+* [View workflow file](/vinta/awesome-python/actions/runs/23657055200/workflow)
+
+[feat: add pyodide to Python Implementations](/vinta/awesome-python/actions/runs/23645531464)
+
+Deploy Website
+#53:
+Commit [50600b9](/vinta/awesome-python/commit/50600b945638256843e7df6068aabd5114255a29)
+pushed
+by
+[vinta](/vinta)
+
+1m 14s
+[master](/vinta/awesome-python/tree/refs/heads/master "master")
+
+[master](/vinta/awesome-python/tree/refs/heads/master "master")
+
+1m 14s
+
+* [View workflow file](/vinta/awesome-python/actions/runs/23645531464/workflow)
+
+[Update ToC display text to match CLI category headings](/vinta/awesome-python/actions/runs/23635899141)
+
+Deploy Website
+#52:
+Commit [c96e58b](/vinta/awesome-python/commit/c96e58be7f441d70fc5bb03ba4a8ece9884646f8)
+pushed
+by
+[vinta](/vinta)
+
+27s
+[master](/vinta/awesome-python/tree/refs/heads/master "master")
+
+[master](/vinta/awesome-python/tree/refs/heads/master "master")
+
+27s
+
+* [View workflow file](/vinta/awesome-python/actions/runs/23635899141/workflow)
+
+[Merge pull request #2998 from ShiwamKumar2208/fix-readme-links](/vinta/awesome-python/actions/runs/23635799541)
+
+Deploy Website
+#51:
+Commit [04515e7](/vinta/awesome-python/commit/04515e7c594307cfa6f8a28460f50eacff940f3d)
+pushed
+by
+[vinta](/vinta)
+
+38s
+[master](/vinta/awesome-python/tree/refs/heads/master "master")
+
+[master](/vinta/awesome-python/tree/refs/heads/master "master")
+
+38s
+
+* [View workflow file](/vinta/awesome-python/actions/runs/23635799541/workflow)
+
+[Deploy Website](/vinta/awesome-python/actions/runs/23624267839)
+
+Deploy Website
+#50:
+Scheduled
+
+1m 3s
+[master](/vinta/awesome-python/tree/refs/heads/master "master")
+
+[master](/vinta/awesome-python/tree/refs/heads/master "master")
+
+1m 3s
+
+* [View workflow file](/vinta/awesome-python/actions/runs/23624267839/workflow)
+
+[Merge pull request #2993 from JinyangWang27/remove-jieba](/vinta/awesome-python/actions/runs/23580006166)
+
+Deploy Website
+#49:
+Commit [a87ba8e](/vinta/awesome-python/commit/a87ba8ed01dc2d39edb9a417a886025023bdc65b)
+pushed
+by
+[JinyangWang27](/JinyangWang27)
+
+29s
+[master](/vinta/awesome-python/tree/refs/heads/master "master")
+
+[master](/vinta/awesome-python/tree/refs/heads/master "master")
+
+29s
+
+* [View workflow file](/vinta/awesome-python/actions/runs/23580006166/workflow)
+
+[Merge pull request #2974 from josheppinette/add-logfmter-logging-library](/vinta/awesome-python/actions/runs/23577841030)
+
+Deploy Website
+#48:
+Commit [bddb692](/vinta/awesome-python/commit/bddb692d743960397ce18ffc072afb632d263429)
+pushed
+by
+[JinyangWang27](/JinyangWang27)
+
+36s
+[master](/vinta/awesome-python/tree/refs/heads/master "master")
+
+[master](/vinta/awesome-python/tree/refs/heads/master "master")
+
+36s
+
+* [View workflow file](/vinta/awesome-python/actions/runs/23577841030/workflow)
+
+[feat(ai): add unsloth for faster LLM fine-tuning](/vinta/awesome-python/actions/runs/23577800371)
+
+Deploy Website
+#47:
+Commit [e65d9d3](/vinta/awesome-python/commit/e65d9d36670c6edd8a2db5e5be422d44ca81c8e2)
+pushed
+by
+[vinta](/vinta)
+
+31s
+[master](/vinta/awesome-python/tree/refs/heads/master "master")
+
+[master](/vinta/awesome-python/tree/refs/heads/master "master")
+
+31s
+
+* [View workflow file](/vinta/awesome-python/actions/runs/23577800371/workflow)
+
+[Deploy Website](/vinta/awesome-python/actions/runs/23570633508)
+
+Deploy Website
+#46:
+Scheduled
+
+1m 7s
+[master](/vinta/awesome-python/tree/refs/heads/master "master")
+
+[master](/vinta/awesome-python/tree/refs/heads/master "master")
+
+1m 7s
+
+* [View workflow file](/vinta/awesome-python/actions/runs/23570633508/workflow)
+
+[Merge pull request #2990 from JinyangWang27/fix-xlwings-url](/vinta/awesome-python/actions/runs/23534823168)
+
+Deploy Website
+#45:
+Commit [2368bad](/vinta/awesome-python/commit/2368bad3aec6076ef37feee2d9d21b9e2aedb965)
+pushed
+by
+[JinyangWang27](/JinyangWang27)
+
+1m 10s
+[master](/vinta/awesome-python/tree/refs/heads/master "master")
+
+[master](/vinta/awesome-python/tree/refs/heads/master "master")
+
+1m 10s
+
+* [View workflow file](/vinta/awesome-python/actions/runs/23534823168/workflow)
+
+[Deploy Website](/vinta/awesome-python/actions/runs/23518281614)
+
+Deploy Website
+#44:
+Scheduled
+
+32s
+[master](/vinta/awesome-python/tree/refs/heads/master "master")
+
+[master](/vinta/awesome-python/tree/refs/heads/master "master")
+
+32s
+
+* [View workflow file](/vinta/awesome-python/actions/runs/23518281614/workflow)
+
+[refactor(ai): reorganize AI agent subsections and add mem0](/vinta/awesome-python/actions/runs/23512530088)
+
+Deploy Website
+#43:
+Commit [a667c1e](/vinta/awesome-python/commit/a667c1e079efeec6c59587bbe8a321511b8da5b7)
+pushed
+by
+[vinta](/vinta)
+
+1m 7s
+[master](/vinta/awesome-python/tree/refs/heads/master "master")
+
+[master](/vinta/awesome-python/tree/refs/heads/master "master")
+
+1m 7s
+
+* [View workflow file](/vinta/awesome-python/actions/runs/23512530088/workflow)
+
+[refactor(js): replace var with const for immutable bindings](/vinta/awesome-python/actions/runs/23474902049)
+
+Deploy Website
+#42:
+Commit [9425ab5](/vinta/awesome-python/commit/9425ab5921705ff4cfb7dec10380c33212632e2b)
+pushed
+by
+[vinta](/vinta)
+
+35s
+[master](/vinta/awesome-python/tree/refs/heads/master "master")
+
+[master](/vinta/awesome-python/tree/refs/heads/master "master")
+
+35s
+
+* [View workflow file](/vinta/awesome-python/actions/runs/23474902049/workflow)
+
+[fix(js): drop legacy category/group URL param aliases for filter](/vinta/awesome-python/actions/runs/23474498542)
+
+Deploy Website
+#41:
+Commit [57a5b43](/vinta/awesome-python/commit/57a5b432f652553e940b68cb9f86a9a66d37b120)
+pushed
+by
+[vinta](/vinta)
+
+34s
+[master](/vinta/awesome-python/tree/refs/heads/master "master")
+
+[master](/vinta/awesome-python/tree/refs/heads/master "master")
+
+34s
+
+* [View workflow file](/vinta/awesome-python/actions/runs/23474498542/workflow)
+
+[Deploy Website](/vinta/awesome-python/actions/runs/23466366641)
+
+Deploy Website
+#40:
+Scheduled
+
+1m 3s
+[master](/vinta/awesome-python/tree/refs/heads/master "master")
+
+[master](/vinta/awesome-python/tree/refs/heads/master "master")
+
+1m 3s
+
+* [View workflow file](/vinta/awesome-python/actions/runs/23466366641/workflow)
+
+[Deploy Website](/vinta/awesome-python/actions/runs/23415774946)
+
+Deploy Website
+#39:
+Scheduled
+
+36s
+[master](/vinta/awesome-python/tree/refs/heads/master "master")
+
+[master](/vinta/awesome-python/tree/refs/heads/master "master")
+
+36s
+
+* [View workflow file](/vinta/awesome-python/actions/runs/23415774946/workflow)
+
+[test: add coverage for detect\_source\_type, format\_stars\_short, extrac…](/vinta/awesome-python/actions/runs/23409544826)
+
+Deploy Website
+#38:
+Commit [e71f38e](/vinta/awesome-python/commit/e71f38ef4ecb02532dc1535d56e91b8ea027f7c4)
+pushed
+by
+[vinta](/vinta)
+
+27s
+[master](/

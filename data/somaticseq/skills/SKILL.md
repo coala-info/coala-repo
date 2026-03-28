@@ -1,6 +1,6 @@
 ---
 name: somaticseq
-description: SomaticSeq is a meta-caller that integrates results from multiple somatic mutation detection tools to produce a more accurate final call set. Use when user asks to merge VCFs from different callers, train machine learning models for variant filtering, or predict somatic mutations in tumor-normal and tumor-only samples.
+description: SomaticSeq is an ensemble framework that combines outputs from multiple somatic mutation callers to produce high-confidence variant sets using consensus or machine learning models. Use when user asks to merge results from multiple somatic callers, train site-specific machine learning models for variant filtering, or identify somatic mutations in tumor-normal paired or tumor-only samples.
 homepage: http://bioinform.github.io/somaticseq/
 ---
 
@@ -8,79 +8,68 @@ homepage: http://bioinform.github.io/somaticseq/
 # somaticseq
 
 ## Overview
-SomaticSeq is a meta-caller that integrates outputs from various somatic mutation detection tools to produce a more accurate final call set. It functions by extracting features from the alignment files (BAMs) and the candidate VCFs provided by individual callers. It can operate in three modes: a simple majority-vote consensus, a training mode to build site-specific machine learning models, or a prediction mode that uses pre-existing classifiers to score and filter variants.
+SomaticSeq is an ensemble framework that leverages the strengths of multiple individual somatic mutation callers to produce a high-confidence call set. By combining outputs from tools such as MuTect2, VarScan2, and LoFreq, it reduces false positives and improves sensitivity. It can operate in three modes: a simple majority-vote consensus, a training mode to build site-specific machine learning models, and a prediction mode that uses pre-trained models to score and filter variants.
 
-## Common CLI Patterns
+## Core CLI Patterns
 
 ### Tumor-Normal Paired Mode
-Use the `paired` subcommand to merge results from a tumor and a matched normal sample. You must provide the BAM files for both and the VCF outputs from the individual callers used.
+Use `somaticseq_parallel.py paired` to merge results when a matched normal sample is available. This is the most accurate way to distinguish somatic mutations from germline variants.
 
 ```bash
 somaticseq_parallel.py \
-    --output-directory $OUTPUT_DIR \
-    --genome-reference GRCh38.fa \
-    --inclusion-region genome.bed \
-    --threads 8 \
-    paired \
-    --tumor-bam-file tumor.bam \
-    --normal-bam-file matched_normal.bam \
-    --mutect2-vcf MuTect2.vcf \
-    --varscan-snv VarScan2.snp.vcf \
-    --varscan-indel VarScan2.indel.vcf \
-    --vardict-vcf VarDict.vcf \
-    --strelka-snv Strelka.snv.vcf \
-    --strelka-indel Strelka.indel.vcf
+  --output-directory $OUTPUT_DIR \
+  --genome-reference GRCh38.fa \
+  --threads 8 \
+  paired \
+  --tumor-bam-file tumor.bam \
+  --normal-bam-file matched_normal.bam \
+  --mutect2-vcf MuTect2.vcf \
+  --varscan-snv VarScan2.snp.vcf \
+  --varscan-indel VarScan2.indel.vcf \
+  --vardict-vcf VarDict.vcf \
+  --strelka-snv Strelka.snv.vcf \
+  --strelka-indel Strelka.indel.vcf
 ```
 
 ### Tumor-Only (Single) Mode
-Use the `single` subcommand when a matched normal sample is unavailable.
+Use `somaticseq_parallel.py single` when no matched normal is available. Note that fewer callers support this mode compared to paired analysis.
 
 ```bash
 somaticseq_parallel.py \
-    --output-directory $OUTPUT_DIR \
-    --genome-reference GRCh38.fa \
-    --inclusion-region genome.bed \
-    single \
-    --bam-file tumor.bam \
-    --mutect2-vcf MuTect2.vcf \
-    --varscan-vcf VarScan2.vcf \
-    --vardict-vcf VarDict.vcf
+  --output-directory $OUTPUT_DIR \
+  --genome-reference GRCh38.fa \
+  single \
+  --bam-file tumor.bam \
+  --mutect2-vcf MuTect2.vcf \
+  --vardict-vcf VarDict.vcf \
+  --lofreq-vcf LoFreq.vcf
 ```
 
-### Training Mode
-To build a machine learning model, add the training flags before the `paired` or `single` subcommand. This requires ground truth VCFs.
+### Machine Learning Workflows
+To move beyond simple consensus voting, use the training or prediction flags **before** the `paired` or `single` subcommand.
 
-```bash
-somaticseq_parallel.py \
-    --output-directory $TRAINING_OUT \
-    --genome-reference reference.fa \
-    --somaticseq-train \
-    --truth-snv truth_snvs.vcf \
-    --truth-indel truth_indels.vcf \
-    paired [ARGS...]
-```
+*   **Training Mode**: Requires ground truth VCFs.
+    `--somaticseq-train --truth-snv truth_snv.vcf --truth-indel truth_indel.vcf`
+*   **Prediction Mode**: Requires pre-built `.RData` classifiers.
+    `--classifier-snv SNV.RData --classifier-indel Indel.RData`
 
-### Prediction Mode
-To apply a previously trained classifier to new data, provide the `.RData` or model files before the subcommand.
+## Expert Tips & Best Practices
 
-```bash
-somaticseq_parallel.py \
-    --output-directory $PREDICT_OUT \
-    --genome-reference reference.fa \
-    --classifier-snv trained_snv.RData \
-    --classifier-indel trained_indel.RData \
-    paired [ARGS...]
-```
+*   **Parallelization**: Always use the `--threads X` parameter. SomaticSeq parallelizes by splitting the genomic regions (defined in `--inclusion-region`) into chunks, processing them, and merging the results. This requires `bedtools` to be in your PATH.
+*   **Input Consistency**: Ensure the reference FASTA, BAM files, and all input VCFs are sorted identically (e.g., all by coordinate). Mismatched headers or sort orders will cause the tool to fail or produce incorrect features.
+*   **Region Filtering**: Use `--inclusion-region` (e.g., an exome target BED) to limit analysis to relevant areas and speed up processing. Use `--exclusion-region` to mask out "blacklist" regions known for mapping artifacts.
+*   **Software Dependencies**: Ensure `numpy`, `scipy`, `pysam`, `pandas`, and `xgboost` are installed in the Python environment. If using training mode, R and the `ada` package are required.
+*   **VCF Formats**: SomaticSeq accepts both `.vcf` and `.vcf.gz` files. It is generally better to provide the specific SNV and Indel files for callers that separate them (like VarScan2 or LoFreq) to ensure the ensemble logic correctly categorizes the variants.
 
-## Expert Tips and Best Practices
 
-- **Identical Sorting**: Ensure the genome reference FASTA, all input BAM files, and all input VCF files are sorted identically (e.g., all by coordinate using the same dictionary).
-- **Parallelization**: Always use the `--threads` parameter to speed up processing. This requires `bedtools` to be in your PATH, as it splits the inclusion BED file into chunks for parallel execution.
-- **Input Flexibility**: SomaticSeq accepts both uncompressed `.vcf` and compressed `.vcf.gz` files.
-- **Region Filtering**: Use `--inclusion-region` (BED format) to restrict calling to specific areas like the whole exome capture kit targets to reduce computation time and false positives in off-target regions.
-- **Default Behavior**: If neither `--somaticseq-train` nor `--classifier-snv/indel` are specified, the tool defaults to a majority-vote consensus mode.
-- **Tool Selection**: While SomaticSeq supports many callers (MuTect2, VarScan2, JointSNVMix2, SomaticSniper, VarDict, MuSE, LoFreq, Scalpel, Strelka2), you do not need to provide all of them. It will process whatever subset of supported VCFs you provide.
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| paired | Run somatic variant callers in paired mode |
+| somaticseq_single | SomaticSeq single mode |
 
 ## Reference documentation
-- [SomaticSeq Home](./references/bioinform_github_io_somaticseq.md)
-- [SomaticSeq Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_somaticseq_overview.md)
+- [SomaticSeq Overview](./references/anaconda_org_channels_bioconda_packages_somaticseq_overview.md)
+- [SomaticSeq GitHub Documentation](./references/bioinform_github_io_somaticseq.md)

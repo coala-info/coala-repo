@@ -1,1 +1,438 @@
-Pull requests · sourmash-bio/sourmash · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} sourmash-bio / sourmash Public Notifications You must be signed in to change notification settings Fork 87 Star 538 Code Issues 768 Pull requests 69 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights Pull requests: sourmash-bio/sourmash Labels 56 Milestones 7 Labels 56 Milestones 7 New pull request New 69 Open 1,950 Closed 69 Open 1,950 Closed Author Filter by author Loading Uh oh! There was an error while loading. Please reload this page . author: Filter by this user Label Filter by label Loading Uh oh! There was an error while loading. Please reload this page . Use alt + click/return to exclude labels or ⇧ + click/return for logical OR Projects Filter by project Loading Uh oh! There was an error while loading. Please reload this page . Milestones Filter by milestone Loading Uh oh! There was an error while loading. Please reload this page . Reviews Filter by reviews No reviews Review required Approved review Changes requested Assignee Filter by who’s assigned Assigned to nobody Loading Uh oh! There was an error while loading. Please reload this page . assignee: Filter by this user Sort Sort by Newest Oldest Most commented Least commented Recently updated Least recently updated Best match Most reactions 👍 👎 😄 🎉 😕 ❤️ 🚀 👀 Pull requests list Build(deps-rs): Bump the dependencies group across 1 directory with 5 updates dependencies Pull requests that update a dependency file rust #3901 opened Feb 9, 2026 by dependabot bot Loading… 1 Build(ci): Bump actions/download-artifact from 6 to 7 dependencies Pull requests that update a dependency file github_actions Pull requests that update GitHub Actions code #3900 opened Feb 9, 2026 by dependabot bot Loading… 1 [pre-commit.ci] pre-commit autoupdate #3899 opened Feb 9, 2026 by pre-commit-ci bot Loading… 1 Build(deps-rs): Bump bytes from 1.5.0 to 1.11.1 dependencies Pull requests that update a dependency file rust #3897 opened Feb 3, 2026 by dependabot bot Loading… 1 WIP: add code to get matches w/o full signatures #3863 opened Nov 26, 2025 by ctb Loading… 1 [MRG] Adding picklist arg to sourmash_args.load_picklist to allow the option #3839 opened Oct 23, 2025 by ccbaumler Loading… 1 2 [MRG] Lineage methods to allow easier pangenomic ranktable generation #3837 opened Oct 22, 2025 by ccbaumler Loading… 3 Fix Laurent Gautier ORCID #3832 opened Oct 15, 2025 by luizirber Loading… 1 Build(ci): Bump CodSpeedHQ/action from 3 to 4 dependencies Pull requests that update a dependency file github_actions Pull requests that update GitHub Actions code #3808 opened Sep 8, 2025 by dependabot bot Loading… 2 MRG: add picklist to sig collect #3805 opened Sep 4, 2025 by bluegenes Loading… 4 WIP: add exception for unkown manifest output format #3804 opened Sep 4, 2025 by ctb Loading… 1 Implement a WortStorage backend #3789 opened Aug 20, 2025 by luizirber &bull; Draft 1 EXP: add bp_weighted_at_rank to tax output #3716 opened Jun 29, 2025 by ctb Loading… 1 EXP: upgrade selection and other things in Rust #3658 opened May 23, 2025 by ctb Loading… 1 CI: test debian package build #3525 opened Feb 9, 2025 by luizirber &bull; Draft 1 [EXP] use roaring bitmaps for MinHash #3444 opened Dec 19, 2024 by luizirber &bull; Draft 2 EXP: avoid cloning in gather, use iterators directly #3394 opened Nov 12, 2024 by luizirber Loading… 1 EXP: Implement into_iter() on Collection #3372 opened Nov 4, 2024 by ctb Loading… remove match_ #3351 opened Oct 14, 2024 by luizirber &bull; Draft 3 EXP: Added derives for mem-dbg #3292 opened Aug 15, 2024 by LucaCappelletti94 Loading… 9 CI: enable codspeed for Python #3262 opened Jul 25, 2024 by luizirber &bull; Draft 2 Replace serde_json with simd_json #3174 opened May 25, 2024 by luizirber &bull; Draft 2 Remove methods that allocate, prefer iterators instead #3056 opened Mar 3, 2024 by luizirber &bull; Draft 1 WIP: add manifest summarization #3030 opened Feb 22, 2024 by bluegenes Loading… 1 WIP: add plugins to docs #3017 opened Feb 20, 2024 by ctb Loading… 1 Previous 1 2 3 Next Previous Next ProTip! Adding no:label will show everything without a label. Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fsourmash-bio%2Fsourmash%2Fpulls)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fsourmash-bio%2Fsourmash%2Fpulls)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Fpull_requests%2Findex&source=header-repo&source_repo=sourmash-bio%2Fsourmash)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[sourmash-bio](/sourmash-bio)
+/
+**[sourmash](/sourmash-bio/sourmash)**
+Public
+
+* [Notifications](/login?return_to=%2Fsourmash-bio%2Fsourmash) You must be signed in to change notification settings
+* [Fork
+  89](/login?return_to=%2Fsourmash-bio%2Fsourmash)
+* [Star
+   542](/login?return_to=%2Fsourmash-bio%2Fsourmash)
+
+* [Code](/sourmash-bio/sourmash)
+* [Issues
+  768](/sourmash-bio/sourmash/issues)
+* [Pull requests
+  72](/sourmash-bio/sourmash/pulls)
+* [Actions](/sourmash-bio/sourmash/actions)
+* [Projects](/sourmash-bio/sourmash/projects)
+* [Security
+  0](/sourmash-bio/sourmash/security)
+* [Insights](/sourmash-bio/sourmash/pulse)
+
+Additional navigation options
+
+* [Code](/sourmash-bio/sourmash)
+* [Issues](/sourmash-bio/sourmash/issues)
+* [Pull requests](/sourmash-bio/sourmash/pulls)
+* [Actions](/sourmash-bio/sourmash/actions)
+* [Projects](/sourmash-bio/sourmash/projects)
+* [Security](/sourmash-bio/sourmash/security)
+* [Insights](/sourmash-bio/sourmash/pulse)
+
+# Pull requests: sourmash-bio/sourmash
+
+[Labels
+56](/sourmash-bio/sourmash/labels) [Milestones
+7](/sourmash-bio/sourmash/milestones)
+
+[Labels
+56](/sourmash-bio/sourmash/labels) [Milestones
+7](/sourmash-bio/sourmash/milestones)
+
+[New pull request
+New](/sourmash-bio/sourmash/compare)
+
+[72 Open](/sourmash-bio/sourmash/pulls?q=is%3Aopen+is%3Apr)
+[1,958 Closed](/sourmash-bio/sourmash/pulls?q=is%3Apr+is%3Aclosed)
+
+[72 Open](/sourmash-bio/sourmash/pulls?q=is%3Aopen+is%3Apr)
+[1,958 Closed](/sourmash-bio/sourmash/pulls?q=is%3Apr+is%3Aclosed)
+
+Author
+
+Filter by author
+
+Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+author:
+
+Filter by this user
+
+Label
+
+Filter by label
+
+ Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+Use `alt` + `click/return` to exclude labels
+
+or `⇧` + `click/return` for logical OR
+
+ Projects
+
+Filter by project
+
+ Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+ Milestones
+
+Filter by milestone
+
+ Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+ Reviews
+
+Filter by reviews
+
+[No reviews](/sourmash-bio/sourmash/pulls?q=is%3Apr+is%3Aopen+review%3Anone)
+[Review required](/sourmash-bio/sourmash/pulls?q=is%3Apr+is%3Aopen+review%3Arequired)
+[Approved review](/sourmash-bio/sourmash/pulls?q=is%3Apr+is%3Aopen+review%3Aapproved)
+[Changes requested](/sourmash-bio/sourmash/pulls?q=is%3Apr+is%3Aopen+review%3Achanges-requested)
+
+Assignee
+
+Filter by who’s assigned
+
+[**Assigned to nobody**](/sourmash-bio/sourmash/pulls?q=is%3Apr+is%3Aopen+no%3Aassignee)
+
+ Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+assignee:
+
+Filter by this user
+
+Sort
+
+Sort by
+
+[Newest](/sourmash-bio/sourmash/pulls?q=is%3Aopen+is%3Apr)
+[Oldest](/sourmash-bio/sourmash/pulls?q=is%3Apr+is%3Aopen+sort%3Acreated-asc)
+[Most commented](/sourmash-bio/sourmash/pulls?q=is%3Apr+is%3Aopen+sort%3Acomments-desc)
+[Least commented](/sourmash-bio/sourmash/pulls?q=is%3Apr+is%3Aopen+sort%3Acomments-asc)
+[Recently updated](/sourmash-bio/sourmash/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc)
+[Least recently updated](/sourmash-bio/sourmash/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-asc)
+[Best match](/sourmash-bio/sourmash/pulls?q=is%3Apr+is%3Aopen+sort%3Arelevance-desc)
+
+Most reactions
+
+[👍](/sourmash-bio/sourmash/pulls?q=is%3Apr+is%3Aopen+sort%3Areactions-%2B1-desc)
+[👎](/sourmash-bio/sourmash/pulls?q=is%3Apr+is%3Aopen+sort%3Areactions--1-desc)
+[😄](/sourmash-bio/sourmash/pulls?q=is%3Apr+is%3Aopen+sort%3Areactions-smile-desc)
+[🎉](/sourmash-bio/sourmash/pulls?q=is%3Apr+is%3Aopen+sort%3Areactions-tada-desc)
+[😕](/sourmash-bio/sourmash/pulls?q=is%3Apr+is%3Aopen+sort%3Areactions-thinking_face-desc)
+[❤️](/sourmash-bio/sourmash/pulls?q=is%3Apr+is%3Aopen+sort%3Areactions-heart-desc)
+[🚀](/sourmash-bio/sourmash/pulls?q=is%3Apr+is%3Aopen+sort%3Areactions-rocket-desc)
+[👀](/sourmash-bio/sourmash/pulls?q=is%3Apr+is%3Aopen+sort%3Areactions-eyes-desc)
+
+## Pull requests list
+
+[Build(deps-rs): Bump the dependencies group across 1 directory with 7 updates](/sourmash-bio/sourmash/pull/3912)
+
+[dependencies](/sourmash-bio/sourmash/pulls?q=is%3Apr+is%3Aopen+label%3Adependencies)
+Pull requests that update a dependency file
+[rust](/sourmash-bio/sourmash/pulls?q=is%3Apr+is%3Aopen+label%3Arust)
+
+#3912
+opened Mar 23, 2026 by
+[dependabot](/sourmash-bio/sourmash/issues?q=is%3Apr+is%3Aopen+author%3Aapp%2Fdependabot "Open pull requests created by dependabot[bot]")
+bot
+
+[1](/sourmash-bio/sourmash/pull/3912)
+
+[[pre-commit.ci] pre-commit autoupdate](/sourmash-bio/sourmash/pull/3911)
+
+#3911
+opened Mar 16, 2026 by
+[pre-commit-ci](/sourmash-bio/sourmash/issues?q=is%3Apr+is%3Aopen+author%3Aapp%2Fpre-commit-ci "Open pull requests created by pre-commit-ci[bot]")
+bot
+
+[1](/sourmash-bio/sourmash/pull/3911)
+
+[Build(ci): Bump pypa/cibuildwheel from 3.3.1 to 3.4.0](/sourmash-bio/sourmash/pull/3910)
+
+[dependencies](/sourmash-bio/sourmash/pulls?q=is%3Apr+is%3Aopen+label%3Adependencies)
+Pull requests that update a dependency file
+[github\_actions](/sourmash-bio/sourmash/pulls?q=is%3Apr+is%3Aopen+label%3Agithub_actions)
+Pull requests that update GitHub Actions code
+
+#3910
+opened Mar 9, 2026 by
+[dependabot](/sourmash-bio/sourmash/issues?q=is%3Apr+is%3Aopen+author%3Aapp%2Fdependabot "Open pull requests created by dependabot[bot]")
+bot
+
+[1](/sourmash-bio/sourmash/pull/3910)
+
+[CI: rust fixes for 2026-03-06](/sourmash-bio/sourmash/pull/3908)
+
+#3908
+opened Mar 6, 2026 by
+[luizirber](/sourmash-bio/sourmash/issues?q=is%3Apr+is%3Aopen+author%3Aluizirber "Open pull requests created by luizirber")
+
+[2](/sourmash-bio/sourmash/pull/3908)
+
+[Build(ci): Bump actions/download-artifact from 6 to 8](/sourmash-bio/sourmash/pull/3907)
+
+[dependencies](/sourmash-bio/sourmash/pulls?q=is%3Apr+is%3Aopen+label%3Adependencies)
+Pull requests that update a dependency file
+[github\_actions](/sourmash-bio/sourmash/pulls?q=is%3Apr+is%3Aopen+label%3Agithub_actions)
+Pull requests that update GitHub Actions code
+
+#3907
+opened Mar 2, 2026 by
+[dependabot](/sourmash-bio/sourmash/issues?q=is%3Apr+is%3Aopen+author%3Aapp%2Fdependabot "Open pull requests created by dependabot[bot]")
+bot
+
+[1](/sourmash-bio/sourmash/pull/3907)
+
+[Build(ci): Bump actions/upload-artifact from 6 to 7](/sourmash-bio/sourmash/pull/3906)
+
+[dependencies](/sourmash-bio/sourmash/pulls?q=is%3Apr+is%3Aopen+label%3Adependencies)
+Pull requests that update a dependency file
+[github\_actions](/sourmash-bio/sourmash/pulls?q=is%3Apr+is%3Aopen+label%3Agithub_actions)
+Pull requests that update GitHub Actions code
+
+#3906
+opened Mar 2, 2026 by
+[dependabot](/sourmash-bio/sourmash/issues?q=is%3Apr+is%3Aopen+author%3Aapp%2Fdependabot "Open pull requests created by dependabot[bot]")
+bot
+
+[2](/sourmash-bio/sourmash/pull/3906)
+
+[Build(deps-py): Update maturin requirement from <1.12.0,>=1 to >=1,<1.13.0 in the dependencies group](/sourmash-bio/sourmash/pull/3902)
+
+[dependencies](/sourmash-bio/sourmash/pulls?q=is%3Apr+is%3Aopen+label%3Adependencies)
+Pull requests that update a dependency file
+[python](/sourmash-bio/sourmash/pulls?q=is%3Apr+is%3Aopen+label%3Apython)
+Pull requests that update Python code
+
+#3902
+opened Feb 16, 2026 by
+[dependabot](/sourmash-bio/sourmash/issues?q=is%3Apr+is%3Aopen+author%3Aapp%2Fdependabot "Open pull requests created by dependabot[bot]")
+bot
+
+[2](/sourmash-bio/sourmash/pull/3902)
+
+[WIP: add code to get matches w/o full signatures](/sourmash-bio/sourmash/pull/3863)
+
+#3863
+opened Nov 26, 2025 by
+[ctb](/sourmash-bio/sourmash/issues?q=is%3Apr+is%3Aopen+author%3Actb "Open pull requests created by ctb")
+
+Loading…
+
+[1](/sourmash-bio/sourmash/pull/3863)
+
+[[MRG] Adding picklist arg to `sourmash_args.load_picklist` to allow the option](/sourmash-bio/sourmash/pull/3839)
+
+#3839
+opened Oct 23, 2025 by
+[ccbaumler](/sourmash-bio/sourmash/issues?q=is%3Apr+is%3Aopen+author%3Accbaumler "Open pull requests created by ccbaumler")
+
+Loading…
+
+[1](/sourmash-bio/sourmash/issues/3839/linked_closing_reference?reference_location=REPO_ISSUES_INDEX)
+
+[2](/sourmash-bio/sourmash/pull/3839)
+
+[[MRG] Lineage methods to allow easier pangenomic ranktable generation](/sourmash-bio/sourmash/pull/3837)
+
+#3837
+opened Oct 22, 2025 by
+[ccbaumler](/sourmash-bio/sourmash/issues?q=is%3Apr+is%3Aopen+author%3Accbaumler "Open pull requests created by ccbaumler")
+
+Loading…
+
+[3](/sourmash-bio/sourmash/pull/3837)
+
+[Fix Laurent Gautier ORCID](/sourmash-bio/sourmash/pull/3832)
+
+#3832
+opened Oct 15, 2025 by
+[luizirber](/sourmash-bio/sourmash/issues?q=is%3Apr+is%3Aopen+author%3Aluizirber "Open pull requests created by luizirber")
+
+Loading…
+
+[1](/sourmash-bio/sourmash/pull/3832)
+
+[Build(ci): Bump CodSpeedHQ/action from 3 to 4](/sourmash-bio/sourmash/pull/3808)
+
+[dependencies](/sourmash-bio/sourmash/pulls?q=is%3Apr+is%3Aopen+label%3Adependencies)
+Pull requests that update a dependency file
+[github\_actions](/sourmash-bio/sourmash/pulls?q=is%3Apr+is%3Aopen+label%3Agithub_actions)
+Pull requests that update GitHub Actions code
+
+#3808
+opened Sep 8, 2025 by
+[dependabot](/sourmash-bio/sourmash/issues?q=is%3Apr+is%3Aopen+author%3Aapp%2Fdependabot "Open pull requests created by dependabot[bot]")
+bot
+
+Loading…
+
+[2](/sourmash-bio/sourmash/pull/3808)
+
+[MRG: add picklist 

@@ -1,1 +1,301 @@
-GitHub - koisland/srf-n-trf: Script to extract specific monomers from srf and trf output Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} koisland / srf-n-trf Public Notifications You must be signed in to change notification settings Fork 0 Star 0 Script to extract specific monomers from srf and trf output License MIT license 0 stars 0 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 0 Pull requests 0 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights koisland/srf-n-trf main Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 18 Commits 18 Commits .github/ workflows .github/ workflows src src test test .gitignore .gitignore .pre-commit-config.yaml .pre-commit-config.yaml Cargo.lock Cargo.lock Cargo.toml Cargo.toml LICENSE LICENSE README.md README.md View all files Repository files navigation README MIT license srf-n-trf Script to take srf and trf output and produce a BED file with only regions corresponding to monomers of a given periodicity. Getting Started Run srf and trf on a T2T genome assembly using https://github.com/logsdon-lab/Snakemake-srf.git . Use these outputs. results/{sample}/{contig} ├── trf_monomers.tsv (*) ├── srf.bed ├── srf.fa └── srf.paf (*) Clone repo. Requires rust . git clone https://github.com/koisland/srf-n-trf.git Compile. cargo build --release Usage monomers target/release/srf-n-trf monomers \ -p results/{sample}/{contig}/srf.paf \ -m results/{sample}/{contig}/monomers.tsv \ -s 170 340 42 \ -d 0.02 \ -c 0.8 This will: Search for trf monomers in PAF cigar with a periodicity of 170 , 340 , and 42 with a 2% length difference. Each monomer must cover at least 80% of a motif. These correspond to α-satellite and HSAT-1A repeats. Generate a BED9 file in target coordinate space and the overlapping monomers delimited by commas in the name column. Elements in name column with . indicate a motif match with no trf output. chr3_mat_hsa4 76301546 76301589 TATGAAAAGAAAGGTTAAACTCTGTGAGTTGAACGCACACATCACAAAGTAGTTTCTGAGAATGATTCTCTCTAGTTTTTATACGAAGATATTTCCTTTTCTACCATTGGCCTCAAAGCACTTGAAATCTCCACCTGCAAATTCCACAAAAAGAGTGTTTCAAATCTGCTCTGTCTAAAGGAAGCTTCAACTCTGTGAGTTGAATACACACAACACAAAGAAGTTACTGAGAATTCTTCTGTCTAGCATTATATGAAGAAATCCCGTTTCCAACGAAGGCCTCAAAGAGGTCCAAATATCCACTTGCAGACTTAACAAACAGAGTGTTTCCAAACTGCTC,AAAAGAAAGGTTAAACTCTGTGAGTTGAACACACACAACACAAAGAAGTTACTGAGAATGATTCTGTCTAGCATTATACGAAGAAATCCCGTTTCCAACGAAGGCCTCAAAGAGGTCCAAATATCCACTTGCAACTTAACAAACAGAGTGTTTCCAAACTGCTCTGTC,AAAGGAAGGTTCAACTCTGTGAGTTGAACACACACATCACAAAGAAGTTACTGAGAATGATTCTCTCTAGTTTTATACGAAGATATTTCCTTTTCAAAAATGGCCTCAAAGCGCTTCAAATCTCCACTTGCAAATTCCACAAAAAGAGTGTTTCAAATCTGCTCTGTCT 0 - 76301546 76301589 0,0,0 The example in test/chr3 is mGorGor1 chr3_mat_hsa4 from the T2T Primates project . motifs target/release/srf-n-trf motifs \ -f results/{sample}/{contig}/srf.fa \ -m results/{sample}/{contig}/monomers.tsv \ -s 170 340 \ -d 0.02 This will: Search for srf motifs with monomers with a periodicity of 170 and 340 within a 2% length difference. These correspond to α-satellite and HSAT-1A repeats. &gt;prefix#circ2-1706 TTGAATGCACTTATCACAAAGCAGTTTCTGAGAATGCTTCCGTCCAGCTTTTGTGCAATGATATTTCCTTTTGCAGCATAGGCCTCAAAATGTTCCAAATATCCACTTGCAGATTCTACAAAAAGAGTGTTTCAAAACTGCTCTATGGAAAGGCAGGTGGATCTCTGTGAGTTGAGTGCACAAAGCACAGGGAACTTTCTGAGAATGCTTTTGTCTAGTTTCTAGGTGAAGATATTTCCTTGTCCAGCATAGGCCTCAAAGCACTCCATCCATCCACTTGAAGATTCTGCTAAAAGAGTGTTTCAAAACTTCTCTATCGAAAGAAAGGTTCAACTCTGTGAGTTGAATGCAGACGTTACAAAGAAGTTTCTGAGAATGCTTCTGTCCAGTTTTTATGTGAAGGTATTTCCTTTTCCAGCATAGGCCTCAAAGCGCTCCATATATCCACTTGCAGATTCTGCAAAAAGAGCGTTTCCAAACTGCTCTCTCAAAAGGAAGGTTCAACTCTGTGAGTTGAATGCGTGCATCGCGAAGAAGTTTCAGAGAATGCTTCTGTCTAGTTTTTAGGTGAAGATATTTCATTTCCCAGCATAGGCCTCAAGGCGCTAGAAATATCCACTTGCAGATTCTACAAAAAGAGTGTTTCATAACTGCGCTTTGAAAAAGAAGGTTCAAGTCTGTGAGTTGAATGCACTGAGCAGAAAGAAGTTTGTGAGAGCGCTTCTATCTAGTTTTCATCTGCATGTAGTTCCTTTTCCACTAGATGCCGCAATCGCACCAAATATCCACATGCAGTTTCCACAAAAAGAGTGTTGCAGAACTGCTCCATGAAAAGGAATGTTCAACTCTGTGAGTTCAATCCCCACATGACATAGCAGTTTCTGAAATGCTTCTGTCTAGTTTGTATATGAAGATATTTCCTTTTCCAGCATAAGCCTCAAAGAGCTCCAAATATCCACTTGCTGAGTCTACAAAAACAGTGTTTCAAAACTGGTCTCTCAAAAGGAAGGTTCAACTCTGTGAGTTGAATGCACTTATCACAAAGCAGTTTCTGAGAATGCTTCCGTCCAGCTTTTATGCAACGATATTTCCTTTGGCAGCATAGGCCTCAAAGCGCTCCAAATATCCCCTTGCAGATTCTACAAAAAGGGTGTTTCCAAACTGCTCTCTCAAAAGGAAGGTTCAACTCTGTGAGTTGAATGCGTGCATCGCGAAGAAGTTTCTTAGAATGCTTCTGTCTAGTTCTTAGGTGAAGATATTTCATTTCCCAGCATAGGCCTCAAGGCGCTCCAAATATCCACTTGCAGATTCTACAAAAAGAGTGTTTCAAAACTGCGCTTTGAAAAGGAAGGTTCAAGTCTGTCAGTTGAATGCACTCAGCAGAAAGAAGTTTCTGAGAGCGCTTCTATCCAGTTTTCATCTGCATGTAGTTCCTTTTCCACTAGATGCCGCAATCGCACCAAATATCCAATTGCAGTTTCTACAAAAAGAGTGTTGCAGAACTGCTCCATGAAAAGGAATGTTCAACTCTGTGAGTTCAATCCCCACATTACATAGCAGTTTCTGAAATGCTTCTGTCTTGTTTGTATATGAAGATATTTCCTTTTACAGCATAAGCCTCAAAGAGCTCCAAATATCCAATTGCTGACTCTACAAAAACTGTGTTTCAAAACTGGTCTCTCAAAAGGAAGGTTCAACTCTGTGAG regions target/release/srf-n-trf regions \ -b extract.bed \ -d 100000 \ -m 30000 \ -s 170 340 \ --diff 0.02 This will: Merge the extract bed output by 100 kbp. Retain only regions that contain monomers of periodicity within 2% difference in length of 170 and 340 bp and are at least 30 kbp. chr3_mat_hsa4 76301546 86011178 CAAGCGCTTTGGGGCCAATGGTAGAAAAGGAAATATCTTCGTATAAAAACTAGAGAGAATCATTCTCAGCAACCACTTTGTGATGTGTGCGTTCCACTCACAGAGTTTAACCTTTCTTTTCATAGAGCAGTTTGGAAACACTCTGTTTGTAAAGTCTGCAAGTGGATATTTGGACCTCTTTGAGGATTTCGTTGGAAACGGGATTTCTGCATATAACGCTAGACAGAAGAATTCTCAGTAACTTCTTTGGGCTGCGTGTGTTCAACTCACAGAGTTGAACCTTCCTTTAGACAGAGCAGATTTGAAACCCTCTTTTTGTGGAATTTGCAAGTGGAGATTT,GTTTGTAAAGTCTGCATGTGGATATATGGACCTCTTTGAGGATTTCGTTGGAAACGGGATTTCTTCATCTAATGCTAAACAGAAGAATTCTCAGTAACTTCTTTGGGTTGCGTGTGTTCAACTCACAGAGATGAACATTACTTGAGACAGAGCAGATTTGAAACCCTCTTTTCCTGGAATTTGCAACTGGACATTTCAAGCGCTTTGGGGCCAACGGAAGAAAAGGAAATATCTTCGTATAAAAACTAGAGTGAATCAGTCTGAGAAACCACTTTCTGATGTGGGCATTCCACTCACAGAGTTTAACCTTTTTTTCATAGAACAGTTTGGAAACACTGT,TATGAAAAGAAAGGTTAAACTCTGTGAGTTGAACGCACACATCACAAAGTAGTTTCTGAGAATGATTCTCTCTAGTTTTTATACGAAGATATTTCCTTTTCTACCATTGGCCTCAAAGCACTTGAAATCTCCACCTGCAAATTCCACAAAAAGAGTGTTTCAAATCTGCTCTGTCTAAAGGAAGCTTCAACTCTGTGAGTTGAATACACACAACACAAAGAAGTTACTGAGAATTCTTCTGTCTAGCATTATATGAAGAAATCCCGTTTCCAACGAAGGCCTCAAAGAGGTCCAAATATCCACTTGCAGACTTAACAAACAGAGTGTTTCCAAACTGCTC,AAATCTGCTCTGTCTAAAGGAAAGTTCATCTCTGTGAGTTGAACACACACAACCCAAAGAAGTTACTGAGAATTCTTCTGTCTAGCATTAGATGAAGAAATCCCATTTCCAACGAAATCCTCAAAGAGGTCCAAATATCCACATGCAGACTTTACAAACACAGTGTTTCCAAACTGTTCTATGAAAAGAAAGGTTAAACTCTGTGAGTGGAACGCACACATCACAAAGTAGTTTCTCAGAATGATTCACTCTAGTTTTTATACGAAGATATTTCCTTTTCTACCGTTGGCCCCAAACCGCTTGAAATGTCCACTTGCAAATTCCACAAAAAGAGGGTTTC,ACGGTAGAAAAGGAAATATCTTCGCTTAAAAACTAGAGAGAATCAGTCTGAGAAACCACTTTGTGAGGTGTCCATTCCACTCACAGAGTTTAACCTTTCTATTCATAGAACAGTTTGGAAACACTCTGTTTGTAAAGTCTGCACGTGGATATATGGACCACTTTGAGGATTTCGTTGGAAACGGGATTTCTTCAACAAATGCTAAAAAGAAGAATTCTCAGTAACTTATTTGGGTTGTGTGAGATCAACTCACAGAGATCAACTTCACTTTAGACAGAGCAGATATGAAACCCTCTTTTTGTGGAATGTGCAAGTGGACATTTCAAGCGCTTTGGCGCCA,TGAAACCCTCTTTTTGTGGAATTTGCAAGTGGACATTTCAAGCGCTTTGGGGCCAACGGTAGAAAAGGAAATATCTTCGTATAAAAACTAGAGTGAATCATTCTGAGAAACCACTTTCTGATGTGTGCGTTCCACTCACAGAGTTTAACCTTTCTTTTCATAGAACAGTTTGGAAACACTGTGTTTGTAAAGTCTGCATGTGGATATTTGGACCTCTTTGAGGATTTCGTTGGAAACGGGATTTCTTCATCTAATGCTAGACAGAAGAATTCTCAGTAACTTATTTGGGTTGCGTGTGTTCAACTCACAGAGATGAACATTCCTTTAGACAGAGCAGATT,AAAAGAAAGGTTAAACTCTGTGAGTTGAACACACACAACACAAAGAAGTTACTGAGAATGATTCTGTCTAGCATTATACGAAGAAATCCCGTTTCCAACGAAGGCCTCAAAGAGGTCCAAATATCCACTTGCAACTTAACAAACAGAGTGTTTCCAAACTGCTCTGTC,AAAGGAAGGTTCAACTCTGTGAGTTGAACACACACATCACAAAGAAGTTACTGAGAATGATTCTCTCTAGTTTTATACGAAGATATTTCCTTTTCAAAAATGGCCTCAAAGCGCTTCAAATCTCCACTTGCAAATTCCACAAAAAGAGTGTTTCAAATCTGC
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fkoisland%2Fsrf-n-trf)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fkoisland%2Fsrf-n-trf)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=koisland%2Fsrf-n-trf)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[koisland](/koisland)
+/
+**[srf-n-trf](/koisland/srf-n-trf)**
+Public
+
+* [Notifications](/login?return_to=%2Fkoisland%2Fsrf-n-trf) You must be signed in to change notification settings
+* [Fork
+  0](/login?return_to=%2Fkoisland%2Fsrf-n-trf)
+* [Star
+   0](/login?return_to=%2Fkoisland%2Fsrf-n-trf)
+
+* [Code](/koisland/srf-n-trf)
+* [Issues
+  0](/koisland/srf-n-trf/issues)
+* [Pull requests
+  0](/koisland/srf-n-trf/pulls)
+* [Actions](/koisland/srf-n-trf/actions)
+* [Projects](/koisland/srf-n-trf/projects)
+* [Security
+  0](/koisland/srf-n-trf/security)
+* [Insights](/koisland/srf-n-trf/pulse)
+
+Additional navigation options
+
+* [Code](/koisland/srf-n-trf)
+* [Issues](/koisland/srf-n-trf/issues)
+* [Pull requests](/koisland/srf-n-trf/pulls)
+* [Actions](/koisland/srf-n-trf/actions)
+* [Projects](/koisland/srf-n-trf/projects)
+* [Security](/koisland/srf-n-trf/security)
+* [Insights](/koisland/srf-n-trf/pulse)
+
+# koisland/srf-n-trf
+
+main
+
+[Branches](/koisland/srf-n-trf/branches)[Tags](/koisland/srf-n-trf/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[18 Commits](/koisland/srf-n-trf/commits/main/)   18 Commits | | |
+| [.github/workflows](/koisland/srf-n-trf/tree/main/.github/workflows "This path skips through empty directories") | | [.github/workflows](/koisland/srf-n-trf/tree/main/.github/workflows "This path skips through empty directories") |  |  |
+| [src](/koisland/srf-n-trf/tree/main/src "src") | | [src](/koisland/srf-n-trf/tree/main/src "src") |  |  |
+| [test](/koisland/srf-n-trf/tree/main/test "test") | | [test](/koisland/srf-n-trf/tree/main/test "test") |  |  |
+| [.gitignore](/koisland/srf-n-trf/blob/main/.gitignore ".gitignore") | | [.gitignore](/koisland/srf-n-trf/blob/main/.gitignore ".gitignore") |  |  |
+| [.pre-commit-config.yaml](/koisland/srf-n-trf/blob/main/.pre-commit-config.yaml ".pre-commit-config.yaml") | | [.pre-commit-config.yaml](/koisland/srf-n-trf/blob/main/.pre-commit-config.yaml ".pre-commit-config.yaml") |  |  |
+| [Cargo.lock](/koisland/srf-n-trf/blob/main/Cargo.lock "Cargo.lock") | | [Cargo.lock](/koisland/srf-n-trf/blob/main/Cargo.lock "Cargo.lock") |  |  |
+| [Cargo.toml](/koisland/srf-n-trf/blob/main/Cargo.toml "Cargo.toml") | | [Cargo.toml](/koisland/srf-n-trf/blob/main/Cargo.toml "Cargo.toml") |  |  |
+| [LICENSE](/koisland/srf-n-trf/blob/main/LICENSE "LICENSE") | | [LICENSE](/koisland/srf-n-trf/blob/main/LICENSE "LICENSE") |  |  |
+| [README.md](/koisland/srf-n-trf/blob/main/README.md "README.md") | | [README.md](/koisland/srf-n-trf/blob/main/README.md "README.md") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* MIT license
+
+# `srf-n-trf`
+
+Script to take `srf` and `trf` output and produce a BED file with only regions corresponding to monomers of a given periodicity.
+
+## Getting Started
+
+1. Run `srf` and `trf` on a T2T genome assembly using <https://github.com/logsdon-lab/Snakemake-srf.git>. Use these outputs.
+
+```
+results/{sample}/{contig}
+├── trf_monomers.tsv (*)
+├── srf.bed
+├── srf.fa
+└── srf.paf (*)
+```
+
+2. Clone repo. Requires `rust`.
+
+```
+git clone https://github.com/koisland/srf-n-trf.git
+```
+
+3. Compile.
+
+```
+cargo build --release
+```
+
+## Usage
+
+### `monomers`
+
+```
+target/release/srf-n-trf monomers \
+-p results/{sample}/{contig}/srf.paf \
+-m results/{sample}/{contig}/monomers.tsv \
+-s 170 340 42 \
+-d 0.02 \
+-c 0.8
+```
+
+This will:
+
+* Search for `trf` monomers in PAF cigar with a periodicity of `170`, `340`, and `42` with a `2%` length difference. Each monomer must cover at least `80%` of a motif.
+  + These correspond to α-satellite and HSAT-1A repeats.
+* Generate a BED9 file in target coordinate space and the overlapping monomers delimited by commas in the `name` column.
+  + Elements in name column with `.` indicate a motif match with no `trf` output.
+
+```
+chr3_mat_hsa4	76301546	76301589	TATGAAAAGAAAGGTTAAACTCTGTGAGTTGAACGCACACATCACAAAGTAGTTTCTGAGAATGATTCTCTCTAGTTTTTATACGAAGATATTTCCTTTTCTACCATTGGCCTCAAAGCACTTGAAATCTCCACCTGCAAATTCCACAAAAAGAGTGTTTCAAATCTGCTCTGTCTAAAGGAAGCTTCAACTCTGTGAGTTGAATACACACAACACAAAGAAGTTACTGAGAATTCTTCTGTCTAGCATTATATGAAGAAATCCCGTTTCCAACGAAGGCCTCAAAGAGGTCCAAATATCCACTTGCAGACTTAACAAACAGAGTGTTTCCAAACTGCTC,AAAAGAAAGGTTAAACTCTGTGAGTTGAACACACACAACACAAAGAAGTTACTGAGAATGATTCTGTCTAGCATTATACGAAGAAATCCCGTTTCCAACGAAGGCCTCAAAGAGGTCCAAATATCCACTTGCAACTTAACAAACAGAGTGTTTCCAAACTGCTCTGTC,AAAGGAAGGTTCAACTCTGTGAGTTGAACACACACATCACAAAGAAGTTACTGAGAATGATTCTCTCTAGTTTTATACGAAGATATTTCCTTTTCAAAAATGGCCTCAAAGCGCTTCAAATCTCCACTTGCAAATTCCACAAAAAGAGTGTTTCAAATCTGCTCTGTCT	0	-	76301546	76301589	0,0,0
+```
+
+> The example in `test/chr3` is mGorGor1 chr3\_mat\_hsa4 from the [T2T Primates project](https://github.com/marbl/Primates?tab=readme-ov-file).
+
+### `motifs`
+
+```
+target/release/srf-n-trf motifs \
+-f results/{sample}/{contig}/srf.fa \
+-m results/{sample}/{contig}/monomers.tsv \
+-s 170 340 \
+-d 0.02
+```
+
+This will:
+
+* Search for `srf` motifs with monomers with a periodicity of `170` and `340` within a `2%` length difference.
+  + These correspond to α-satellite and HSAT-1A repeats.
+
+```
+>prefix#circ2-1706
+TTGAATGCACTTATCACAAAGCAGTTTCTGAGAATGCTTCCGTCCAGCTTTTGTGCAATGATATTTCCTTTTGCAGCATAGGCCTCAAAATGTTCCAAATATCCACTTGCAGATTCTACAAAAAGAGTGTTTCAAAACTGCTCTATGGAAAGGCAGGTGGATCTCTGTGAGTTGAGTGCACAAAGCACAGGGAACTTTCTGAGAATGCTTTTGTCTAGTTTCTAGGTGAAGATATTTCCTTGTCCAGCATAGGCCTCAAAGCACTCCATCCATCCACTTGAAGATTCTGCTAAAAGAGTGTTTCAAAACTTCTCTATCGAAAGAAAGGTTCAACTCTGTGAGTTGAATGCAGACGTTACAAAGAAGTTTCTGAGAATGCTTCTGTCCAGTTTTTATGTGAAGGTATTTCCTTTTCCAGCATAGGCCTCAAAGCGCTCCATATATCCACTTGCAGATTCTGCAAAAAGAGCGTTTCCAAACTGCTCTCTCAAAAGGAAGGTTCAACTCTGTGAGTTGAATGCGTGCATCGCGAAGAAGTTTCAGAGAATGCTTCTGTCTAGTTTTTAGGTGAAGATATTTCATTTCCCAGCATAGGCCTCAAGGCGCTAGAAATATCCACTTGCAGATTCTACAAAAAGAGTGTTTCATAACTGCGCTTTGAAAAAGAAGGTTCAAGTCTGTGAGTTGAATGCACTGAGCAGAAAGAAGTTTGTGAGAGCGCTTCTATCTAGTTTTCATCTGCATGTAGTTCCTTTTCCACTAGATGCCGCAATCGCACCAAATATCCACATGCAGTTTCCACAAAAAGAGTGTTGCAGAACTGCTCCATGAAAAGGAATGTTCAACTCTGTGAGTTCAATCCCCACATGACATAGCAGTTTCTGAAATGCTTCTGTCTAGTTTGTATATGAAGATATTTCCTTTTCCAGCATAAGCCTCAAAGAGCTCCAAATATCCACTTGCTGAGTCTACAAAAACAGTGTTTCAAAACTGGTCTCTCAAAAGGAAGGTTCAACTCTGTGAGTTGAATGCACTTATCACAAAGCAGTTTCTGAGAATGCTTCCGTCCAGCTTTTATGCAACGATATTTCCTTTGGCAGCATAGGCCTCAAAGCGCTCCAAATATCCCCTTGCAGATTCTACAAAAAGGGTGTTTCCAAACTGCTCTCTCAAAAGGAAGGTTCAACTCTGTGAGTTGAATGCGTGCATCGCGAAGAAGTTTCTTAGAATGCTTCTGTCTAGTTCTTAGGTGAAGATATTTCATTTCCCAGCATAGGCCTCAAGGCGCTCCAAATATCCACTTGCAGATTCTACAAAAAGAGTGTTTCAAAACTGCGCTTTGAAAAGGAAGGTTCAAGTCTGTCAGTTGAATGCACTCAGCAGAAAGAAGTTTCTGAGAGCGCTTCTATCCAGTTTTCATCTGCATGTAGTTCCTTTTCCACTAGATGCCGCAATCGCACCAAATATCCAATTGCAGTTTCTACAAAAAGAGTGTTGCAGAACTGCTCCATGAAAAGGAATGTTCAACTCTGTGAGTTCAATCCCCACATTACATAGCAGTTTCTGAAATGCTTCTGTCTTGTTTGTATATGAAGATATTTCCTTTTACAGCATAAGCCTCAAAGAGCTCCAAATATCCAATTGCTGACTCTACAAAAACTGTGTTTCAAAACTGGTCTCTCAAAAGGAAGGTTCAACTCTGTGAG
+```
+
+### `regions`
+
+```
+target/release/srf-n-trf regions \
+-b extract.bed \
+-d 100000 \
+-m 30000 \
+-s 170 340 \
+--diff 0.02
+```
+
+This will:
+
+* Merge the extract bed output by 100 kbp.
+* Retain only regions that contain monomers of periodicity within `2%` difference in length of `170` and `340` bp and are at least 30 kbp.
+
+```
+chr3_mat_hsa4   76301546        86011178        CAAGCGCTTTGGGGCCAATGGTAGAAAAGGAAATATCTTCGTATAAAAACTAGAGAGAATCATTCTCAGCAACCACTTTGTGATGTGTGCGTTCCACTCACAGAGTTTAACCTTTCTTTTCATAGAGCAGTTTGGAAACACTCTGTTTGTAAAGTCTGCAAGTGGATATTTGGACCTCTTTGAGGATTTCGTTGGAAACGGGATTTCTGCATATAACGCTAGACAGAAGAATTCTCAGTAACTTCTTTGGGCTGCGTGTGTTCAACTCACAGAGTTGAACCTTCCTTTAGACAGAGCAGATTTGAAACCCTCTTTTTGTGGAATTTGCAAGTGGAGATTT,GTTTGTAAAGTCTGCATGTGGATATATGGACCTCTTTGAGGATTTCGTTGGAAACGGGATTTCTTCATCTAATGCTAAACAGAAGAATTCTCAGTAACTTCTTTGGGTTGCGTGTGTTCAACTCACAGAGATGAACATTACTTGAGACAGAGCAGATTTGAAACCCTCTTTTCCTGGAATTTGCAACTGGACATTTCAAGCGCTTTGGGGCCAACGGAAGAAAAGGAAATATCTTCGTATAAAAACTAGAGTGAATCAGTCTGAGAAACCACTTTCTGATGTGGGCATTCCACTCACAGAGTTTAACCTTTTTTTCATAGAACAGTTTGGAAACACTGT,TATGAAAAGAAAGGTTAAACTCTGTGAGTTGAACGCACACATCACAAAGTAGTTTCTGAGAATGATTCTCTCTAGTTTTTATACGAAGATATTTCCTTTTCTACCATTGGCCTCAAAGCACTTGAAATCTCCACCTGCAAATTCCACAAAAAGAGTGTTTCAAATCTGCTCTGTCTAAAGGAAGCTTCAACTCTGTGAGTTGAATACACACAACACAAAGAAGTTACTGAGAATTCTTCTGTCTAGCATTATATGAAGAAATCCCGTTTCCAACGAAGGCCTCAAAGAGGTCCAAATATCCACTTGCAGACTTAACAAACAGAGTGTTTCCAAACTGCTC,AAATCTGCTCTGTCTAAAGGAAAGTTCATCTCTGTGAGTTGAACACACACAACCCAAAGAAGTTACTGAGAATTCTTCTGTCTAGCATTAGATGAAGAAATCCCATTTCCAACGAAATCCTCAAAGAGGTCCAAATATCCACATGCAGACTTTACAAACACAGTGTTTCCAAACTGTTCTATGAAAAGAAAGGTTAAACTCTGTGAGTGGAACGCACACATCACAAAGTAGTTTCTCAGAATGATTCACTCTAGTTTTTATACGAAGATATTTCCTTTTCTACCGTTGGCCCCAAACCGCTTGAAATGTCCACTTGCAAATTCCACAAAAAGAGGGTTTC,ACGGTAGAAAAGGAAATATCTTCGCTTAAAAACTAGAGAGAATCAGTCTGAGAAACCACTTTGTGAGGTGTCCATTCCACTCACAGAGTTTAACCTTTCTATTCATAGAACAGTTTGGAAACACTCTGTTTGTAAAGTCTGCACGTGGATATATGGACCACTTTGAGGATTTCGTTGGAAACGGGATTTCTTCAACAAATGCTAAAAAGAAGAATTCTCAGTAACTTATTTGGGTTGTGTGAGATCAACTCACAGAGATCAACTTCACTTTAGACAGAGCAGATATGAAACCCTCTTTTTGTGGAATGTGCAAGTGGACATTTCAAGCGCTTTGGCGCCA,TGAAACCCTCTTTTTGTGGAATTTGCAAGTGGACATTTCAAGCGCTTTGGGGCCAACGGTAGAAAAGGAAATATCTTCGTATAAAAACTAGAGTGAATCATTCTGAGAAACCACTTTCTGATGTGTGCGTTCCACTCACAGAGTTTAACCTTTCTTTTCATAGAACAGTTTGGAAACACTGTGTTTGTAAAGTCTGCATGTGGATATTTGGACCTCTTTGAGGATTTCGTTGGAAACGGGATTTCTTCATCTAATGCTAGACAGAAGAATTCTCAGTAACTTATTTGGGTTGCGTGTGTTCAACTCACAGAGATGAA

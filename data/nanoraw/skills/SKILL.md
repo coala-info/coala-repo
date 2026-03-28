@@ -1,6 +1,6 @@
 ---
 name: nanoraw
-description: "nanoraw is a toolkit for genome-guided re-segmentation and visualization of raw nanopore sequencing data. Use when user asks to resquiggle nanopore reads, visualize signal intensity at specific genomic locations, or identify differences in signal between control and treatment groups."
+description: Nanoraw processes FAST5 files to align raw nanopore electrical signals to a reference genome through a process called re-squiggling. Use when user asks to re-squiggle reads, visualize signal traces across genomic regions, or export signal statistics into wiggle formats.
 homepage: https://github.com/marcus1487/nanoraw
 ---
 
@@ -8,60 +8,73 @@ homepage: https://github.com/marcus1487/nanoraw
 # nanoraw
 
 ## Overview
-nanoraw is a specialized toolkit designed for genome-guided re-segmentation and visualization of raw nanopore sequencing data. It functions by anchoring the raw electrical signal from a nanopore read to a specific genomic alignment, a process often referred to as "resquiggling." This allows for high-resolution analysis of signal intensity at the level of individual bases. While the project is now in maintenance mode (succeeded by the Tombo package), it remains a standard tool for legacy workflows involving signal-level analysis and de novo identification of DNA modifications.
 
-## Core Workflow: The genome_resquiggle Command
-The `genome_resquiggle` command is the mandatory first step in any nanoraw pipeline. It re-annotates raw signal with the genomic alignment of existing basecalls.
+The `nanoraw` skill enables the processing of FAST5 files to align raw electrical signal levels to a reference genome. This process, known as "re-squiggling," is a prerequisite for downstream analysis such as DNA modification detection or signal-level visualization. Use this skill when you need to correct basecall-to-signal assignments, plot signal traces across genomic regions, or export signal statistics into wiggle formats for genome browsers.
+
+Note: This package is the predecessor to Tombo. While functional for legacy workflows, users seeking the latest features in nanopore signal analysis may also consider Tombo.
+
+## Core Workflow
+
+### 1. Genome Resquiggling (Required First Step)
+Before any plotting or analysis, you must run `genome_resquiggle`. This command maps existing basecalls to the reference genome and then re-aligns the raw signal to that genomic sequence.
 
 ```bash
-nanoraw genome_resquiggle --fast5-directory /path/to/fast5s/ --genome-fasta /path/to/genome.fasta
+nanoraw genome_resquiggle --fast5-search-dir /path/to/fast5s/ --genome-lib-prep /path/to/genome.fa
 ```
 
-### Key Parameters
-- `--fast5-directory`: Path to the folder containing your .fast5 files.
-- `--genome-fasta`: The reference genome in FASTA format.
-- `--recursive`: Use this flag if your FAST5 files are organized in subdirectories.
-- `--aligner`: Choose between `graphmap` (default) or `bwamem`. Ensure the chosen aligner is installed in your PATH.
+### 2. Signal Visualization
+Once resquiggled, use plotting commands to inspect the data.
 
-## Visualization and Plotting
-Once the data is resquiggled, you can use various plotting commands to inspect the signal. Most plotting commands require the `[plot]` installation variant and an R environment with `ggplot2`.
+*   **By Location**: View signal at specific coordinates.
+    ```bash
+    nanoraw plot_genome_location --fast5-search-dir /path/to/fast5s/ --genome-location chr1:100-200
+    ```
+*   **By Motif**: Center plots on a specific DNA sequence (e.g., GATC).
+    ```bash
+    nanoraw plot_motif_centered --fast5-search-dir /path/to/fast5s/ --motif GATC --genome-lib-prep /path/to/genome.fa
+    ```
+*   **Comparison**: Identify differences between a "treatment" and "control" set of reads.
+    ```bash
+    nanoraw plot_most_significant --fast5-search-dir /path/to/treatment/ --control-fast5-search-dir /path/to/control/
+    ```
 
-### Genome Anchored Plotting
-- **Specific Locations**: Plot signal at defined coordinates.
-  ```bash
-  nanoraw plot_genome_location --genome-locations chr1:1000-1100
-  ```
-- **Motif Centered**: Visualize signal around a specific sequence motif (e.g., GATC).
-  ```bash
-  nanoraw plot_motif_centered --motif GATC --genome-lib /path/to/resquiggled_data/
-  ```
-- **Max Difference**: Compare two groups of reads to find where signal differs most.
-  ```bash
-  nanoraw plot_max_difference --control-fast5-dirs /path/to/control/ --test-fast5-dirs /path/to/treatment/
-  ```
+### 3. Data Export
+Export signal data for use in external tools like IGV or UCSC Genome Browser.
 
-### Sequencing Time Anchored Plotting
-- **Correction Check**: Compare the segmentation before and after the resquiggle process.
-  ```bash
-  nanoraw plot_correction --fast5-file /path/to/read.fast5
-  ```
-
-## Data Export and Auxiliary Commands
-- **Wiggle Files**: Export signal values, coverage, or statistics for viewing in genome browsers like IGV.
-  ```bash
-  nanoraw write_wiggles --fast5-directories /path/to/resquiggled_data/ --output-prefix my_experiment
-  ```
-- **Significant Regions**: Write out sequences where signal differences between groups are statistically significant.
-  ```bash
-  nanoraw write_most_significant --control-fast5-dirs /path/to/control/ --test-fast5-dirs /path/to/treatment/
-  ```
+```bash
+nanoraw write_wiggles --fast5-search-dir /path/to/fast5s/ --output-filename my_experiment
+```
 
 ## Expert Tips and Best Practices
-- **Installation**: For full functionality including plotting, use `pip install nanoraw[plot]`. This requires `rpy2`, `ggplot2`, and `cowplot` to be available in your R environment.
-- **Alignment Failures**: If `genome_resquiggle` fails to produce alignments, verify that your reference genome is indexed for the aligner you are using (e.g., `bwa index genome.fasta`).
-- **Resource Management**: For large datasets, use the `--processes` flag to parallelize the resquiggling process.
-- **Legacy Note**: If you encounter limitations or bugs, consider migrating your workflow to **Tombo**, which is the official successor to nanoraw and handles many of these tasks with improved algorithms.
+
+*   **Alignment Tools**: `nanoraw` requires either `graphmap` or `BWA-MEM` to be installed and in your system PATH for the resquiggle step.
+*   **Plotting Dependencies**: If plotting commands fail, ensure the R packages `ggplot2` and `cowplot` are installed in your R environment, as `nanoraw` calls these via `rpy2`.
+*   **Recursive Search**: Use the `--recursive` flag if your FAST5 files are organized in subdirectories.
+*   **Batch Size**: If encountering memory issues during alignment, adjust the alignment batch size (default is 500 reads).
+*   **HDF5 Errors**: If you see "simultaneous access" errors, avoid running multiple `nanoraw` instances on the same directory of FAST5 files, as the HDF5 format often restricts concurrent write access.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| nanoraw | nanoraw: error: invalid choice: 'Additional' (choose from 'genome_resquiggle', 'plot_max_coverage', 'plot_genome_location', 'plot_motif_centered', 'plot_max_difference', 'plot_most_significant', 'plot_motif_with_stats', 'plot_correction', 'plot_multi_correction', 'cluster_most_significant', 'plot_kmer', 'write_most_significant_fasta', 'write_wiggles') |
+| nanoraw cluster_most_significant | Compares two sets of fast5 files to find significant differences in signal levels. |
+| nanoraw genome_resquiggle | Resquiggle raw signal data to a reference genome. |
+| nanoraw plot_correction | Plotting tool for Nanopore genome correction. |
+| nanoraw plot_genome_location | Plot signal at specified genomic locations. |
+| nanoraw plot_kmer | Plot k-mer distribution from FAST5 files. |
+| nanoraw plot_max_coverage | Plots the maximum coverage of Nanopore reads across genomic regions. |
+| nanoraw plot_max_difference | Plotting the maximum difference between two sets of fast5 files. |
+| nanoraw plot_most_significant | Plot regions with significant differences in signal level between two sets of FAST5 files. |
+| nanoraw plot_motif_centered | Plot motif centered regions and statistic distributions at each genomic base in the region. |
+| nanoraw plot_multi_correction | Plot signal at specified genomic locations. |
+| nanoraw_plot_motif_with_stats | Plot motif statistics |
+| nanoraw_write_wiggles | Write wiggle files for Nanopore data. |
+| write_most_significant_fasta | Write the most significant regions to a FASTA file. |
 
 ## Reference documentation
-- [nanoraw GitHub Repository](./references/github_com_marcus1487_nanoraw.md)
-- [nanoraw Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_nanoraw_overview.md)
+
+- [nanoraw GitHub README](./references/github_com_marcus1487_nanoraw_blob_master_README.md)
+- [nanoraw PyPI Overview](./references/pypi_org_project_nanoraw.md)

@@ -159,3 +159,6 @@ optional arguments:
   -BED                  Output recombination data into BED files.
 ```
 
+
+## Metadata
+- **Skill**: generated

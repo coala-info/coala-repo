@@ -169,3 +169,6 @@ Most up-to-date motif set, please visit: https://zenodo.org/records/16286509
        -h                Print out help message.
 ```
 
+
+## Metadata
+- **Skill**: generated

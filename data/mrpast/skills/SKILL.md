@@ -1,121 +1,72 @@
 ---
 name: mrpast
-description: "Performs demographic inference from Ancestral Recombination Graphs. Use when user asks to infer demographic history, simulate demographic models, or process genetic data for demographic analysis."
+description: mrpast is a population genetics tool that infers demographic history from genomic data by leveraging Ancestral Recombination Graphs. Use when user asks to estimate population sizes, divergence times, or migration rates, simulate tree sequences, process coalescence counts, or perform maximum likelihood estimation for demographic parameters.
 homepage: https://aprilweilab.github.io/
 ---
 
 
 # mrpast
 
-Performs demographic inference from Ancestral Recombination Graphs (ARGs).
-  Use when you need to analyze population genetics data to infer demographic history,
-  simulate demographic models, or process genetic data for demographic analysis.
-  This tool is particularly useful for researchers working with population genetics,
-  evolutionary biology, and genomics.
-body: |
-  ## Overview
-  The `mrpast` tool is designed for advanced demographic inference using Ancestral Recombination Graphs (ARGs). It allows users to simulate demographic models, process genetic data (like tree-sequences or VCF files) to extract relevant information, and then solve for demographic parameters. This is crucial for understanding population dynamics, migration patterns, and evolutionary history.
+## Overview
+mrpast is a population genetics tool used to infer demographic history from genomic data. By leveraging Ancestral Recombination Graphs (ARGs), it allows researchers to estimate parameters such as population sizes, divergence times, and migration rates. The tool follows a structured pipeline: simulating data to verify models, processing tree sequences to extract coalescence counts, and numerically solving for the most likely demographic parameters.
 
-  ## Usage
+## Installation and Setup
+mrpast requires Python 3.8+ and can be installed via standard package managers:
+- **PyPI**: `pip install mrpast`
+- **Bioconda**: `conda install -c bioconda mrpast`
 
-  `mrpast` typically involves a sequence of commands: simulation, processing, and solving.
+For performance-critical tasks, building from source with native CPU optimization is recommended:
+`MRPAST_ENABLE_NATIVE=1 pip install .`
 
-  ### Installation
+## Core Workflow
+The standard mrpast pipeline consists of three primary subcommands executed in sequence.
 
-  Install via conda:
-  ```bash
-  conda install bioconda::mrpast
-  ```
-  Or via pip (requires Python 3.8+ and build tools like CMake and a C++17 compiler on macOS):
-  ```bash
-  pip install mrpast
-  ```
+### 1. Simulation
+Use `mrpast simulate` to generate tree sequences (.trees files) based on a demographic model. This is typically used to verify that a specific model can be recovered accurately before applying it to real data.
+- **Basic Pattern**: `mrpast simulate --replicates [N] --seq-len [BP] --debug-demo [model.yaml] [prefix]`
+- **Tip**: Use `--debug-demo` to print the demographic events to the console to ensure the model is interpreted correctly.
 
-  ### Core Workflows
+### 2. Processing
+Use `mrpast process` to extract coalescence information from the tree sequences generated in the previous step or from inferred ARGs.
+- **Basic Pattern**: `mrpast process --jobs [threads] --replicates [N] --bootstrap coalcounts [model.yaml] [prefix]`
+- **Key Options**:
+    - `--jobs`: Parallelize processing across multiple CPU cores.
+    - `--bootstrap`: Generates bootstrap samples (default 100) to improve the stability of the likelihood function.
+    - `--suffix`: Appends a unique identifier to output files to manage different trial runs.
 
-  #### 1. Simulated ARG Workflow (No ARG Inference)
+### 3. Solving
+Use `mrpast solve` to perform maximum likelihood estimation (MLE) to find the demographic parameters that best fit the processed data.
+- **Basic Pattern**: `mrpast solve [processed_data_prefix]`
 
-  This workflow is useful for testing demographic models and verifying `mrpast`'s ability to recover parameters.
+## Model Management
+mrpast uses a specific YAML format for demographic models. If you are working with older models (pre-August 2025), you must convert them to the new format to ensure compatibility.
+- **Conversion Command**: `mrpast init --from-old-mrpast old_model.yaml > new_model.yaml`
 
-  1.  **Simulate:** Generate tree-sequence files (ARGs) from a demographic model.
-      ```bash
-      mrpast simulate --replicates <num_replicates> --seq-len <sequence_length> <model_yaml_file> <output_prefix>
-      ```
-      *Example:*
-      ```bash
-      mrpast simulate --replicates 10 --seq-len 100000 examples/5deme1epoch.yaml 5de1
-      ```
-      This command simulates the model defined in `examples/5deme1epoch.yaml` 10 times, creating files like `5de1*.trees`.
+## Expert Tips
+- **Discretization**: When processing, pay attention to time discretization settings. If the demographic events are very recent or very ancient, you may need to adjust the time windows to capture enough coalescence events.
+- **Native Compilation**: If the `solve` step is slow, reinstalling with `MRPAST_ENABLE_NATIVE=1` can significantly speed up the underlying numerical solver.
+- **Verification**: Always run the `simulate -> process -> solve` loop on a known model first to establish a baseline for parameter recovery accuracy before moving to empirical data.
 
-  2.  **Process:** Extract coalescence information from the simulated ARGs.
-      ```bash
-      mrpast process --jobs <num_cpu_threads> --replicates <num_replicates> --suffix <output_suffix> [--bootstrap] <model_yaml_file> <input_tree_files_pattern>
-      ```
-      *Example:*
-      ```bash
-      mrpast process --jobs 10 --replicates 10 --suffix trial1 --bootstrap coalcounts examples/5deme1epoch.yaml 5de1*.trees
-      ```
-      This processes the `.trees` files, producing output files for the solver. The `--bootstrap` option generates bootstrap samples for more robust analysis.
 
-  3.  **Solve:** Infer demographic parameters from the processed data.
-      ```bash
-      mrpast solve --jobs <num_cpu_threads> <input_solve_files_pattern>
-      ```
-      *Example:*
-      ```bash
-      mrpast solve --jobs 10 5deme1epoch.*.solve_in.*.json
-      ```
-      This command runs the solver on the JSON input files generated by `mrpast process`. The output includes parameter values, bounds, and ground truth if available.
 
-  #### 2. Simulated Data, Inferred ARG Workflow
+## Subcommands
 
-  This workflow involves inferring the ARG from simulated data.
-
-  1.  **Simulate:** As above.
-      ```bash
-      mrpast simulate ...
-      ```
-  2.  **Convert to VCF:** Convert simulated tree-sequences to VCF files.
-      ```bash
-      mrpast sim2vcf -p <vcf_prefix> <input_tree_files_pattern>
-      ```
-      This also generates `.popmap.json` files mapping samples to populations.
-  3.  **Infer ARG:** Infer the ARG from VCF files.
-      ```bash
-      mrpast arginfer <vcf_files_pattern> <popmap_files_pattern>
-      ```
-      This attaches population IDs to the inferred ARGs.
-  4.  **Process:** As in the first workflow, but using the inferred ARGs.
-      ```bash
-      mrpast process ...
-      ```
-
-  #### 3. Real Data, Inferred ARG Workflow
-
-  This workflow is for analyzing actual genetic data.
-
-  1.  **Create `.popmap.json`:** Manually create a population map file for your VCF dataset.
-  2.  **Infer ARG:** Infer ARG from your VCF files.
-      ```bash
-      mrpast arginfer <vcf_files_pattern> <popmap_files_pattern>
-      ```
-  3.  **Process:** Process and solve the inferred ARGs.
-      ```bash
-      mrpast process ...
-      ```
-
-  ### Modeling
-
-  Demographic models are specified using YAML files. Refer to the `examples/` directory in the repository for model syntax and behavior.
-
-  ### Expert Tips
-
-  *   **Native CPU Compilation:** For performance gains on your specific CPU architecture, compile with `MRPAST_ENABLE_NATIVE=1 pip install mrpast/`. Note that this may reduce portability.
-  *   **Debug Mode:** To enable debugging with GDB, build in debug mode using `MRPAST_DEBUG=1 pip install mrpast/`.
-  *   **New Model Format:** If you are migrating from older versions, be aware of the new, more user-friendly YAML model format. Use `mrpast init --from-old-mrpast <old_model.yaml> > <new_model.yaml>` to convert old models.
-  *   **Parallel Processing:** Utilize the `--jobs` flag in `mrpast process` and `mrpast solve` to leverage multiple CPU cores for faster computation.
-  *   **Bootstrap Sampling:** Use the `--bootstrap` option in `mrpast process` to generate bootstrap samples, which are crucial for estimating the uncertainty of inferred parameters.
+| Command | Description |
+|---------|-------------|
+| arginfer | Infer ARG trees from VCF files. |
+| mrpast confidence | Solve for all bootstrapped samples instead of using GIM (theoretical). |
+| mrpast init | Initialize a mrpast model. |
+| mrpast model | Builds and manipulates demographic models. |
+| mrpast process | Process MRPAST model and ARG files. |
+| mrpast select | Selects the best model based on AIC from multiple solver outputs. |
+| mrpast sim2vcf | Convert .trees files to VCF format. |
+| mrpast simulate | Simulate demographic histories using mr.py. |
+| mrpast_polarize | Polarize VCF file based on ancestral FASTA file. |
+| mrpast_show | Show results from mrpast solver. |
+| mrpast_simulate | Simulate demographic histories using mrpaste. |
+| mrpast_solve | The solver input JSON files. The output filenames will be derived from the input filenames. |
+| solve | Solve problems using the mrpast solver. |
 
 ## Reference documentation
-- [mrpast Usage Documentation](./references/github_com_aprilweilab_mrpast.md)
-- [mrpast Overview on Anaconda.org](./references/anaconda_org_channels_bioconda_packages_mrpast_overview.md)
+- [github_com_aprilweilab_mrpast_blob_main_README.md](./references/github_com_aprilweilab_mrpast_blob_main_README.md)
+- [anaconda_org_channels_bioconda_packages_mrpast_overview.md](./references/anaconda_org_channels_bioconda_packages_mrpast_overview.md)

@@ -1,1 +1,393 @@
-GitHub - HadrienG/taxadb: :hatching_chick: locally query the ncbi taxonomy Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} HadrienG / taxadb Public Notifications You must be signed in to change notification settings Fork 15 Star 39 🐣 locally query the ncbi taxonomy taxadb.readthedocs.io/ License MIT license 39 stars 15 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 7 Pull requests 5 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights HadrienG/taxadb master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 222 Commits 222 Commits doc doc taxadb taxadb .codecov.yml .codecov.yml .gitignore .gitignore .travis.yml .travis.yml Dockerfile Dockerfile LICENSE LICENSE Pipfile Pipfile Pipfile.lock Pipfile.lock README.md README.md setup.cfg setup.cfg setup.py setup.py taxadb.ini taxadb.ini taxadb.ini.example taxadb.ini.example View all files Repository files navigation README MIT license Taxadb ⚠️ **This project will not receive updates for the time being ⚠️ Taxadb is an application to locally query the ncbi taxonomy. Taxadb is written in python, and access its database using the peewee library. In brief Taxadb: is a small tool to query the ncbi taxonomy. is written in python &gt;= 3.5. has built-in support for SQLite , MySQL and PostgreSQL . has available pre-built SQLite databases. has a comprehensive API documentation. Installation Taxadb requires python &gt;= 3.5 to work. To install taxadb with sqlite support, simply type the following in your terminal: pip3 install taxadb If you wish to use MySQL or PostgreSQL, please refer to the full documentation Usage Querying the Database Firstly, make sure you have built the database Below you can find basic examples. For more complete examples, please refer to the complete API documentation &gt; &gt;&gt; from taxadb . taxid import TaxID &gt; &gt;&gt; taxid = TaxID ( dbtype = 'sqlite' , dbname = 'mydb.sqlite' ) &gt; &gt;&gt; name = taxid . sci_name ( 33208 ) &gt; &gt;&gt; print ( name ) Metazoa &gt; &gt;&gt; lineage = taxid . lineage_name ( 33208 ) &gt; &gt;&gt; print ( lineage ) [ 'Metazoa' , 'Opisthokonta' , 'Eukaryota' , 'cellular organisms' ] &gt; &gt;&gt; lineage = taxid . lineage_name ( 33208 , reverse = True ) &gt; &gt;&gt; print ( lineage ) [ 'cellular organism' , 'Eukaryota' , 'Opisthokonta' , 'Metazoa' ] &gt; &gt;&gt; taxid . has_parent ( 33208 , 'Eukaryota' ) True Get the taxid from a scientific name. &gt; &gt;&gt; from taxadb . names import SciName &gt; &gt;&gt; names = SciName ( dbtype = 'sqlite' , dbname = 'mydb.sqlite' ) &gt; &gt;&gt; taxid = names . taxid ( 'Physisporinus cinereus' ) &gt; &gt;&gt; print ( taxid ) 2056287 Get the taxonomic information for accession number(s). &gt; &gt;&gt; from taxadb . accessionid import AccessionID &gt; &gt;&gt; my_accessions = [ 'X17276' , 'Z12029' ] &gt; &gt;&gt; accession = AccessionID ( dbtype = 'sqlite' , dbname = 'mydb.sqlite' ) &gt; &gt;&gt; taxids = accession . taxid ( my_accessions ) &gt; &gt;&gt; taxids &lt; generator object taxid at 0x1051b0830 &gt; &gt; &gt;&gt; for tax in taxids : print ( tax ) ( 'X17276' , 9646 ) ( 'Z12029' , 9915 ) You can also use a configuration file in order to automatically set database connection parameters at object build. Either set config parameter to __init__ object method: &gt; &gt;&gt; from taxadb . accessionid import AccessionID &gt; &gt;&gt; my_accessions = [ 'X17276' , 'Z12029' ] &gt; &gt;&gt; accession = AccessionID ( config = '/path/to/taxadb.cfg' ) &gt; &gt;&gt; taxids = accession . taxid ( my_accessions ) &gt; &gt;&gt; ... or set environment variable TAXADB_CONFIG which point to configuration file: $ export TAXADB_CONFIG= ' /path/to/taxadb.cfg ' then &gt; &gt;&gt; from taxadb . accessionid import AccessionID &gt; &gt;&gt; my_accessions = [ 'X17276' , 'Z12029' ] &gt; &gt;&gt; accession = AccessionID () &gt; &gt;&gt; taxids = accession . taxid ( my_accessions ) &gt; &gt;&gt; ... Check documentation for more information. Creating the Database Download data The following commands will download the necessary files from the ncbi ftp into the directory taxadb . $ taxadb download -o taxadb Insert data SQLite $ taxadb create -i taxadb --dbname taxadb.sqlite You can then safely remove the downloaded files $ rm -r taxadb MySQL Creating databases is a very vendor specific task. Peewee, as most ORMs, can create tables but not databases. In order to use taxadb with MySQL, you'll have to create the database yourself. Connect to your mysql server $ mysql -u $user -p $ mysql&gt; CREATE DATABASE taxadb; Load data $ taxadb create -i taxadb --dbname taxadb --dbtype mysql --username &lt;user&gt; --password &lt;pwd&gt; ... PostgreSQL Creating databases is a very vendor specific task. Peewee, as most ORMs, can create tables but not databases. In order to use taxadb with PosgreSQL, you'll have to create the database yourself. Connect to your postgresql server $ psql -U $user -d postgres $ psql&gt; CREATE DATABASE taxadb; Load data $ taxadb create -i taxadb --dbname taxadb --dbtype postgres --username &lt;user&gt; --password &lt;pwd&gt; ... You can easily rerun the same command, taxadb is able to skip already inserted taxid as well as accession . Tests You can easily run some tests. Go to the root directory of this projects cd /path/to/taxadb and run nosetests . This simple command will run tests against an SQLite test database called test_db.sqlite located in taxadb/test directory. It is also possible to only run tests related to accessionid or taxid as follow $ nosetests -a 'taxid' $ nosetests -a 'accessionid' You can also use the configuration file located in root distribution taxadb.ini as follow. This file should contains database connection settings: $ nosetests --tc-file taxadb.ini You can easily override configuration file settings using command line options --tc such as: $ nosetest --tc-file taxadb.ini --tc=sql.dbname:another_dbname More info at nose-testconfig Running tests against PostgreSQL or MySQL First create a test database to insert test data PostgreSQL $ createdb &lt;test_db&gt; or $ psql -U postgres psql&gt; CREATE DATABASE &lt;test_db&gt;; MySQL $ mysql -u root mysql&gt; CREATE DATABASE &lt;test_db&gt;; Load test data PostgreSQL $ gunzip -c /path/to/taxadb/taxadb/test/test_mypg_db.sql.gz | psql -d &lt;test_db&gt; -U &lt;user&gt; MySQL $ gunzip -c /path/to/taxadb/taxadb/test/test_mypg_db.sql.gz | mysql -D &lt;test_db&gt; -u &lt;user&gt; -p Run tests Either edit taxadb.ini to fit database configuration or use --tc command line option and set appropriate values like username, password, port, hostname, dbtype(postgres or mysql), dbname . PostgreSQL $ nosetests --tc-file taxadb.ini OR $ nosetests -tc-file taxadb.ini --tc=sql.dbtype:postgres --tc=sql.username:postgres --tc=sql.dbname:test_db2 MySQL $ nosetests --tc-file taxadb.ini OR $ nosetests -tc-file taxadb.ini --tc=sql.dbtype:mysql --tc=sql.username:root --tc=sql.dbname:newdbname License Code is under the MIT license. Issues Found a bug or have a question? Please open an issue Contributing Thought about a new feature that you'd like us to implement? Open an issue or fork the repository and submit a pull request About 🐣 locally query the ncbi taxonomy taxadb.readthedocs.io/ Topics python bioinformatics database taxonomy ncbi-taxonomy ncbi Resources Readme License MIT license Uh oh! There was an error while loading. Please reload this page . Activity Stars 39 stars Watchers 2 watching Forks 15 forks Report repo
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FHadrienG%2Ftaxadb)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FHadrienG%2Ftaxadb)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=HadrienG%2Ftaxadb)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[HadrienG](/HadrienG)
+/
+**[taxadb](/HadrienG/taxadb)**
+Public
+
+* [Notifications](/login?return_to=%2FHadrienG%2Ftaxadb) You must be signed in to change notification settings
+* [Fork
+  15](/login?return_to=%2FHadrienG%2Ftaxadb)
+* [Star
+   39](/login?return_to=%2FHadrienG%2Ftaxadb)
+
+* [Code](/HadrienG/taxadb)
+* [Issues
+  7](/HadrienG/taxadb/issues)
+* [Pull requests
+  5](/HadrienG/taxadb/pulls)
+* [Actions](/HadrienG/taxadb/actions)
+* [Projects](/HadrienG/taxadb/projects)
+* [Security
+  0](/HadrienG/taxadb/security)
+* [Insights](/HadrienG/taxadb/pulse)
+
+Additional navigation options
+
+* [Code](/HadrienG/taxadb)
+* [Issues](/HadrienG/taxadb/issues)
+* [Pull requests](/HadrienG/taxadb/pulls)
+* [Actions](/HadrienG/taxadb/actions)
+* [Projects](/HadrienG/taxadb/projects)
+* [Security](/HadrienG/taxadb/security)
+* [Insights](/HadrienG/taxadb/pulse)
+
+# HadrienG/taxadb
+
+master
+
+[Branches](/HadrienG/taxadb/branches)[Tags](/HadrienG/taxadb/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[222 Commits](/HadrienG/taxadb/commits/master/)   222 Commits | | |
+| [doc](/HadrienG/taxadb/tree/master/doc "doc") | | [doc](/HadrienG/taxadb/tree/master/doc "doc") |  |  |
+| [taxadb](/HadrienG/taxadb/tree/master/taxadb "taxadb") | | [taxadb](/HadrienG/taxadb/tree/master/taxadb "taxadb") |  |  |
+| [.codecov.yml](/HadrienG/taxadb/blob/master/.codecov.yml ".codecov.yml") | | [.codecov.yml](/HadrienG/taxadb/blob/master/.codecov.yml ".codecov.yml") |  |  |
+| [.gitignore](/HadrienG/taxadb/blob/master/.gitignore ".gitignore") | | [.gitignore](/HadrienG/taxadb/blob/master/.gitignore ".gitignore") |  |  |
+| [.travis.yml](/HadrienG/taxadb/blob/master/.travis.yml ".travis.yml") | | [.travis.yml](/HadrienG/taxadb/blob/master/.travis.yml ".travis.yml") |  |  |
+| [Dockerfile](/HadrienG/taxadb/blob/master/Dockerfile "Dockerfile") | | [Dockerfile](/HadrienG/taxadb/blob/master/Dockerfile "Dockerfile") |  |  |
+| [LICENSE](/HadrienG/taxadb/blob/master/LICENSE "LICENSE") | | [LICENSE](/HadrienG/taxadb/blob/master/LICENSE "LICENSE") |  |  |
+| [Pipfile](/HadrienG/taxadb/blob/master/Pipfile "Pipfile") | | [Pipfile](/HadrienG/taxadb/blob/master/Pipfile "Pipfile") |  |  |
+| [Pipfile.lock](/HadrienG/taxadb/blob/master/Pipfile.lock "Pipfile.lock") | | [Pipfile.lock](/HadrienG/taxadb/blob/master/Pipfile.lock "Pipfile.lock") |  |  |
+| [README.md](/HadrienG/taxadb/blob/master/README.md "README.md") | | [README.md](/HadrienG/taxadb/blob/master/README.md "README.md") |  |  |
+| [setup.cfg](/HadrienG/taxadb/blob/master/setup.cfg "setup.cfg") | | [setup.cfg](/HadrienG/taxadb/blob/master/setup.cfg "setup.cfg") |  |  |
+| [setup.py](/HadrienG/taxadb/blob/master/setup.py "setup.py") | | [setup.py](/HadrienG/taxadb/blob/master/setup.py "setup.py") |  |  |
+| [taxadb.ini](/HadrienG/taxadb/blob/master/taxadb.ini "taxadb.ini") | | [taxadb.ini](/HadrienG/taxadb/blob/master/taxadb.ini "taxadb.ini") |  |  |
+| [taxadb.ini.example](/HadrienG/taxadb/blob/master/taxadb.ini.example "taxadb.ini.example") | | [taxadb.ini.example](/HadrienG/taxadb/blob/master/taxadb.ini.example "taxadb.ini.example") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* MIT license
+
+# Taxadb
+
+[![Build Status](https://camo.githubusercontent.com/b5ad7142097b0c93f4a15f2b79c5caedc925c7e10c027b153d47f6489682026a/68747470733a2f2f7472617669732d63692e6f72672f4861647269656e472f7461786164622e7376673f6272616e63683d6d6173746572)](https://travis-ci.org/HadrienG/taxadb)
+[![Documentation Status](https://camo.githubusercontent.com/bc44b7cf68ee19e26cfa35c4f6491a606ef4b9f11b16ac2e750a1fd0037176c2/68747470733a2f2f72656164746865646f63732e6f72672f70726f6a656374732f7461786164622f62616467652f3f76657273696f6e3d6c6174657374)](http://taxadb.readthedocs.io/en/latest/?badge=latest)
+[![made-with-python](https://camo.githubusercontent.com/18acae9527ec46ac274bf3c8b203bf59923d8d25291cbfc5ef112a08c8ee08f0/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6d616465253230776974682d707974686f6e332d626c75652e737667)](https://www.python.org/)
+[![PyPI version](https://camo.githubusercontent.com/3bad7d7f0e8fb0b3854c2625f397fcd68cb7ab734aa13b2bc48cf4c6cdb46c8c/68747470733a2f2f62616467652e667572792e696f2f70792f7461786164622e737667)](https://pypi.org/project/taxadb/)
+[![codecov](https://camo.githubusercontent.com/7658fab788285b8311f259ab8c002d08e1b24c15b326263d8199d2eb31604e0f/68747470733a2f2f636f6465636f762e696f2f67682f4861647269656e472f7461786164622f6272616e63682f6d61737465722f67726170682f62616467652e737667)](https://codecov.io/gh/HadrienG/taxadb)
+[![LICENSE](https://camo.githubusercontent.com/891419a00e04aa0e311068fa8a04eec92cab4f7026c76278279bf2a1da50e578/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c6963656e73652d4d49542d6c69676874677265792e737667)](https://github.com/HadrienG/taxadb)
+
+⚠️ \*\*This project will not receive updates for the time being ⚠️
+
+Taxadb is an application to locally query the ncbi taxonomy. Taxadb is written in python, and access its database using the [peewee](http://peewee.readthedocs.io) library.
+
+In brief Taxadb:
+
+* is a small tool to query the [ncbi](https://ncbi.nlm.nih.gov/taxonomy) taxonomy.
+* is written in python >= 3.5.
+* has built-in support for [SQLite](https://www.sqlite.org), [MySQL](https://www.mysql.com) and [PostgreSQL](https://www.postgresql.org).
+* has available pre-built SQLite databases.
+* has a comprehensive API documentation.
+
+## Installation
+
+Taxadb requires python >= 3.5 to work. To install taxadb with sqlite support, simply type the following in your terminal:
+
+```
+pip3 install taxadb
+```
+
+If you wish to use MySQL or PostgreSQL, please refer to the full [documentation](http://taxadb.readthedocs.io/en/latest/)
+
+## Usage
+
+### Querying the Database
+
+Firstly, make sure you have [built](#creating-the-database) the database
+
+Below you can find basic examples. For more complete examples, please refer to the complete [API documentation](http://taxadb.readthedocs.io/en/latest/)
+
+```
+    >>> from taxadb.taxid import TaxID
+
+    >>> taxid = TaxID(dbtype='sqlite', dbname='mydb.sqlite')
+    >>> name = taxid.sci_name(33208)
+    >>> print(name)
+    Metazoa
+
+    >>> lineage = taxid.lineage_name(33208)
+    >>> print(lineage)
+    ['Metazoa', 'Opisthokonta', 'Eukaryota', 'cellular organisms']
+    >>> lineage = taxid.lineage_name(33208, reverse=True)
+    >>> print(lineage)
+    ['cellular organism', 'Eukaryota', 'Opisthokonta', 'Metazoa']
+
+    >>> taxid.has_parent(33208, 'Eukaryota')
+    True
+```
+
+Get the taxid from a scientific name.
+
+```
+    >>> from taxadb.names import SciName
+
+    >>> names = SciName(dbtype='sqlite', dbname='mydb.sqlite')
+    >>> taxid = names.taxid('Physisporinus cinereus')
+    >>> print(taxid)
+    2056287
+```
+
+Get the taxonomic information for accession number(s).
+
+```
+    >>> from taxadb.accessionid import AccessionID
+
+    >>> my_accessions = ['X17276', 'Z12029']
+    >>> accession = AccessionID(dbtype='sqlite', dbname='mydb.sqlite')
+    >>> taxids = accession.taxid(my_accessions)
+    >>> taxids
+    <generator object taxid at 0x1051b0830>
+
+    >>> for tax in taxids:
+        print(tax)
+    ('X17276', 9646)
+    ('Z12029', 9915)
+```
+
+You can also use a configuration file in order to automatically set database
+connection parameters at object build. Either set `config` parameter to `__init__`
+object method:
+
+```
+   >>> from taxadb.accessionid import AccessionID
+
+   >>> my_accessions = ['X17276', 'Z12029']
+   >>> accession = AccessionID(config='/path/to/taxadb.cfg')
+   >>> taxids = accession.taxid(my_accessions)
+   >>> ...
+```
+
+or set environment variable `TAXADB_CONFIG` which point to configuration file:
+
+```
+   $ export TAXADB_CONFIG='/path/to/taxadb.cfg'
+```
+
+then
+
+```
+   >>> from taxadb.accessionid import AccessionID
+
+   >>> my_accessions = ['X17276', 'Z12029']
+   >>> accession = AccessionID()
+   >>> taxids = accession.taxid(my_accessions)
+   >>> ...
+```
+
+Check documentation for more information.
+
+### Creating the Database
+
+#### Download data
+
+The following commands will download the necessary files from the ncbi ftp into the directory `taxadb`.
+
+```
+$ taxadb download -o taxadb
+```
+
+#### Insert data
+
+##### SQLite
+
+```
+$ taxadb create -i taxadb --dbname taxadb.sqlite
+```
+
+You can then safely remove the downloaded files
+
+```
+$ rm -r taxadb
+```
+
+##### MySQL
+
+Creating databases is a very vendor specific task. Peewee, as most ORMs, can create tables but not databases.
+In order to use taxadb with MySQL, you'll have to create the database yourself.
+
+Connect to your mysql server
+
+```
+$ mysql -u $user -p
+$ mysql> CREATE DATABASE taxadb;
+```
+
+Load data
+
+```
+$ taxadb create -i taxadb --dbname taxadb --dbtype mysql --username <user> --password <pwd> ...
+```
+
+##### PostgreSQL
+
+Creating databases is a very vendor specific task. Peewee, as most ORMs, can create tables but not databases.
+In order to use taxadb with PosgreSQL, you'll have to create the database yourself.
+
+Connect to your postgresql server
+
+```
+$ psql -U $user -d postgres
+$ psql> CREATE DATABASE taxadb;
+```
+
+Load data
+
+```
+$ taxadb create -i taxadb --dbname taxadb --dbtype postgres --username <user> --password <pwd> ...
+```
+
+You can easily rerun the same command, `tax

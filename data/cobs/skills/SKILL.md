@@ -1,6 +1,6 @@
 ---
 name: cobs
-description: "COBS indexes and searches large collections of genomic sequences using a compact bit-sliced signature index. Use when user asks to build a classic or compact index from genomic data, query sequences against an index, or retrieve index metadata."
+description: COBS is a specialized indexing tool that enables rapid membership queries of k-mers across large-scale sequencing datasets. Use when user asks to construct a bit-sliced signature index, query DNA sequences against multiple experiments, or search for k-mer membership in genomic data.
 homepage: https://panthema.net/cobs
 ---
 
@@ -8,54 +8,58 @@ homepage: https://panthema.net/cobs
 # cobs
 
 ## Overview
-COBS is a specialized indexing tool designed for rapid search across massive collections of genomic data. It utilizes a compact bit-sliced signature index to determine if specific k-mers or q-grams exist within a dataset. This skill provides the necessary CLI patterns to build indices from FASTA/FASTQ files and query them efficiently, making it ideal for metagenomics and large-scale sequence comparison where traditional BLAST-like tools are too slow or memory-intensive.
+COBS is a specialized indexing tool designed for bioinformatics that allows for rapid membership queries of k-mers across thousands of experiments. Unlike traditional Bloom filter indices, COBS uses a bit-sliced signature index that is more compact and provides faster query performance. It is particularly effective for searching large-scale sequencing data where you need to determine which datasets contain a specific sequence or set of k-mers.
 
-## Installation
-The recommended way to install COBS is via Bioconda:
+## Core CLI Patterns
+
+### Index Construction
+To build an index from a set of FASTA/FASTQ files:
 ```bash
-conda install -c bioconda cobs
+cobs construct -i <input_directory> -o <output_index.cobs_classic> -k <kmer_size> -f <false_positive_rate>
+```
+- Use `.cobs_classic` for the standard index format.
+- The `-k` parameter (default 31) defines the k-mer length.
+- The `-f` parameter (default 0.3) controls the false positive rate per document.
+
+### Querying the Index
+To search for a DNA sequence within a constructed index:
+```bash
+cobs query -i <index_file.cobs_classic> -s <query_sequence> -t <threshold>
+```
+- The `-t` threshold (0.0 to 1.0) determines the minimum fraction of k-mers from the query that must match a document for it to be reported.
+- For batch queries, provide a file containing sequences: `cobs query -i <index> -f <query_file.fasta>`.
+
+### Compact Indexing
+For even smaller memory footprints, use the compact construction mode which adapts the number of hash functions per document:
+```bash
+cobs construct -i <input_dir> -o <output.cobs_compact> --compact
 ```
 
-## Core Workflows
+## Expert Tips
+- **Memory Mapping**: COBS uses `mmap` for queries. This means you can query indices larger than your RAM, as the OS handles paging.
+- **K-mer Selection**: Ensure the k-mer size used during construction matches the k-mer size used during queries.
+- **False Positives**: While a default FPR of 0.3 seems high, the probability of a long sequence (many k-mers) matching by chance is exponentially lower.
+- **Preprocessing**: For best results, ensure input files are cleaned of low-complexity sequences or sequencing adapters before indexing.
 
-### 1. Index Construction
-To search data, you must first construct an index. COBS supports two main index types: `classic` and `compact`.
 
-**Classic Index:**
-Best for datasets with similar document sizes.
-```bash
-cobs index --threads 8 --kmer-size 31 --false-positive 0.01 --input-path ./data_folder --index-file my_index.cobs_classic
-```
 
-**Compact Index:**
-Best for datasets with varying document sizes to save space.
-```bash
-cobs index --threads 8 --kmer-size 31 --compact --input-path ./data_folder --index-file my_index.cobs_compact
-```
+## Subcommands
 
-### 2. Querying the Index
-Once the index is built, you can query it for specific sequences.
-
-**CLI Query:**
-```bash
-cobs query --index-file my_index.cobs_compact --threshold 0.8 "GATTACA..."
-```
-*   `--threshold`: The fraction of k-mers in the query that must match a document for it to be reported.
-
-### 3. Index Maintenance
-You can combine multiple indices or check the metadata of an existing index.
-
-**Check Index Info:**
-```bash
-cobs info my_index.cobs_compact
-```
-
-## Best Practices
-- **K-mer Selection**: For most genomic applications, a k-mer size of 31 is standard. Smaller k-mers increase sensitivity but also increase false positive rates and index size.
-- **Memory Management**: During construction, COBS can be memory-intensive. Use the `--threads` flag to match your CPU cores, but monitor RAM usage as bit-slicing requires significant workspace.
-- **False Positive Rate**: The default is often 0.01 (1%). If you are performing very sensitive searches, consider lowering this (e.g., 0.001), though it will result in a larger index file.
-- **Input Preparation**: Ensure your input directory contains clean FASTA/FASTQ files. COBS treats each file in the input directory as a separate "document" in the index.
+| Command | Description |
+|---------|-------------|
+| benchmark-fpr | Calculate false positive distribution for COBS |
+| classic-combine | Combines multiple COBS indices into a single index. |
+| cobs classic-construct | Constructs a COBS index for a given input directory or file. |
+| cobs classic-construct-random | Constructs a random COBS index. |
+| cobs compact-construct | Constructs a COBS compact index. |
+| cobs compact-construct-combine | Constructs and combines compact indexes from input directory to output file. |
+| cobs print-parameters | Prints parameters for COBS. |
+| doc-dump | Dump documents from a path |
+| doc-list | list documents |
+| generate-queries | Generates positive and negative queries from base documents. |
+| print-kmers | Prints all k-mers of a given DNA sequence. |
+| query | Query the COBS index |
 
 ## Reference documentation
-- [COBS Overview](./references/anaconda_org_channels_bioconda_packages_cobs_overview.md)
-- [COBS Project Page](./references/panthema_net_cobs.md)
+- [COBS: A Compact Bit-Sliced Signature Index](./references/panthema_net_cobs.md)
+- [Bioconda COBS Package Overview](./references/anaconda_org_channels_bioconda_packages_cobs_overview.md)

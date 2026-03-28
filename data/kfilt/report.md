@@ -77,3 +77,6 @@ Flags:
   -v, --verbose string         Verbose per-read output file (optional)
 ```
 
+
+## Metadata
+- **Skill**: generated

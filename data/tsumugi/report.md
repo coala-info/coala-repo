@@ -301,3 +301,6 @@ options:
   -o, --out OUTPUT_DIR
 ```
 
+
+## Metadata
+- **Skill**: generated

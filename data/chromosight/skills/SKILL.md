@@ -1,6 +1,6 @@
 ---
 name: chromosight
-description: Chromosight performs pattern recognition in chromosome contact maps to identify structural features like loops and boundaries using template matching. Use when user asks to detect genomic patterns in Hi-C data, quantify interaction strengths at specific coordinates, or generate custom kernels for feature detection.
+description: Chromosight identifies spatial patterns such as loops and boundaries in chromosome contact maps using computer vision and template matching. Use when user asks to detect chromatin patterns, quantify matching scores for specific coordinates, or generate custom kernels for genomic features.
 homepage: https://github.com/koszullab/chromosight
 ---
 
@@ -8,51 +8,60 @@ homepage: https://github.com/koszullab/chromosight
 # chromosight
 
 ## Overview
-Chromosight is a specialized tool for pattern recognition in chromosome contact maps. It leverages template matching (convolution) to identify features like loops and boundaries with high sensitivity. It is particularly useful for researchers working with Hi-C data who need to automate the detection of structural elements or quantify the strength of known interactions across different samples.
 
-## Core Workflows
+Chromosight is a computer vision-based tool designed for the high-throughput identification of spatial patterns in chromosome contact maps. It leverages template matching to find specific structures like loops and boundaries, allowing for both the discovery of new features and the quantification of known ones across different datasets. Use this skill to guide the execution of pattern detection workflows, optimize parameters for low-coverage data, or generate custom kernels for specialized genomic features.
 
-### Pattern Detection
-Use the `detect` subcommand to find structural features in a Hi-C matrix.
+## Core Subcommands
+
+- `detect`: The primary command used to find patterns (loops, borders, etc.) in a contact map.
+- `quantify`: Computes pattern matching scores for a provided list of 2D coordinates on a Hi-C matrix.
+- `list-kernels`: Displays information about available pattern presets.
+- `generate-config`: Creates a new pattern template (kernel) that can be used with the `--custom-kernel` option in `detect`.
+- `test`: Downloads a small dataset and runs a sample detection to verify the installation.
+
+## Common CLI Patterns
+
+### Basic Loop Detection
+To detect chromatin loops within a specific genomic distance range (e.g., 20kb to 200kb) using multiple threads:
 ```bash
-# Basic loop detection
-chromosight detect input.cool output_prefix
-
-# Optimized detection for specific loop sizes (e.g., 20kb to 200kb)
-chromosight detect --threads 8 --min-dist 20000 --max-dist 200000 input.cool output_prefix
+chromosight detect --threads 8 --min-dist 20000 --max-dist 200000 input_data.cool output_prefix
 ```
 
-### Scoring Known Coordinates
-Use the `quantify` subcommand to calculate correlation scores for a pre-defined list of genomic pairs (e.g., comparing loop strength between wild-type and mutant).
+### Quantifying Existing Coordinates
+To score a set of known coordinates against a contact map:
 ```bash
-# Input bed2d format: chrom1 start1 end1 chrom2 start2 end2
-chromosight quantify coordinates.bed2d input.cool output_prefix
+chromosight quantify coordinates.bed input_data.cool output_prefix
 ```
 
-### Custom Pattern Creation
-If the built-in kernels (loops, borders, centromeres, etc.) are insufficient, generate a custom kernel configuration.
-```bash
-# Generate a config based on a specific pattern in your data
-chromosight generate-config --preset loops --click input.cool custom_kernel_prefix
-```
+## Expert Tips and Parameter Tuning
 
-## Parameter Tuning & Best Practices
+### Sensitivity and Specificity
+- **`--pearson`**: This is the detection threshold. Lowering this value increases sensitivity (more patterns detected) but may increase false positives. Note that extremely low values can sometimes reduce the count due to the algorithm merging neighboring patterns.
+- **`--min-separation`**: Use this to control the minimum distance between two detected patterns to avoid redundant calls.
 
-| Parameter | Purpose | Expert Tip |
-| :--- | :--- | :--- |
-| `--min-dist` | Minimum genomic distance | Set this to at least 2-3x your matrix resolution to avoid diagonal noise. |
-| `--pearson` | Detection threshold | Default is `auto`. Decrease this value if you are missing known loops; increase it to reduce false positives. |
-| `--perc-zero` | Zero-pixel tolerance | For low-coverage datasets, increase this value to prevent valid regions from being skipped. |
-| `--norm` | Normalization | Use `auto` (default) which typically handles balanced/ICE matrices correctly. |
+### Handling Low Coverage
+- **`--perc-zero`**: If working with low-coverage Hi-C data, increase the proportion of allowed zero pixels in a window to improve detection success.
+- **`--perc-undetected`**: Adjust this if many regions are being skipped due to missing data.
 
-## Output Interpretation
-Chromosight generates three primary files:
-- `.tsv`: The main results file containing coordinates, bin IDs, and Pearson correlation scores.
-- `.json` or `.npy`: Contains the raw windows/sub-matrices extracted around each detected pattern.
-- `.pdf`: A "pileup" plot showing the average signal of all detected patterns, useful for visual validation of the run's success.
+### Performance Optimization
+- **`--max-dist`**: Genomic distance significantly impacts memory and runtime. Always set a realistic maximum distance relevant to the biological feature (e.g., 2Mb for loops) to keep the tool efficient.
+- **`--threads`**: Chromosight is parallelized; always specify threads to match your hardware capabilities.
 
-**Note on Statistics:** The p-values and q-values in the `.tsv` output are best used for ranking calls rather than absolute filtering, as they can be biased by the spatial dependence of Hi-C data.
+### Custom Patterns
+If the built-in kernels (loops, borders, centromeres, hairpins) are insufficient, use `generate-config` to create a custom kernel based on a specific region of your contact map.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| chromosight | Explore and detect patterns (loops, borders, centromeres, etc.) in Hi-C contact maps with pattern matching. |
+| chromosight | Explore and detect patterns (loops, borders, centromeres, etc.) in Hi-C contact maps with pattern matching. |
+| chromosight | Explore and detect patterns (loops, borders, centromeres, etc.) in Hi-C contact maps with pattern matching. |
+| chromosight detect | Explore and detect patterns (loops, borders, centromeres, etc.) in Hi-C contact maps with pattern matching. |
+| quantify | Given a list of pairs of positions and a contact map, computes the correlation coefficients between those positions and the kernel of the selected pattern. |
 
 ## Reference documentation
-- [Chromosight GitHub Repository](./references/github_com_koszullab_chromosight.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_chromosight_overview.md)
+- [Chromosight Main Repository](./references/github_com_koszullab_chromosight_blob_master_README.md)
+- [Chromosight Overview](./references/github_com_koszullab_chromosight.md)

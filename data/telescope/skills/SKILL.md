@@ -1,6 +1,6 @@
 ---
 name: telescope
-description: Telescope estimates the expression of individual transposable element loci by reassigning multi-mapping RNA-seq reads using a Bayesian model. Use when user asks to quantify specific transposable element insertions, reassign multi-mapping reads, or analyze locus-specific TE expression.
+description: Telescope resolves the ambiguity of multi-mapping reads to provide locus-specific expression profiling of repetitive elements like transposable elements. Use when user asks to reassign ambiguous fragments to their most likely locus of origin, quantify transposable element expression, or generate updated alignment files with final locus assignments.
 homepage: https://github.com/mlbendall/telescope
 ---
 
@@ -8,50 +8,70 @@ homepage: https://github.com/mlbendall/telescope
 # telescope
 
 ## Overview
-Telescope provides a specialized workflow for estimating the expression of individual transposable element loci. Standard RNA-seq pipelines often struggle with TEs because reads frequently map to multiple highly similar genomic locations. Telescope addresses this by taking multi-mapping alignments and an annotation file as input, then applying a Bayesian model to reassign reads to their most likely locus of origin. This allows for precise quantification of specific TE insertions rather than just family-level summaries.
+Telescope is a computational tool designed to resolve the ambiguity of multi-mapping reads in high-throughput sequencing, a common challenge when studying repetitive elements like Transposable Elements (TEs). By using a statistical model (EM algorithm), it reassigns reads to the most likely locus of origin rather than discarding them or distributing them randomly. This allows for accurate, locus-specific expression profiling of TEs, which is critical for understanding their role in health and disease.
 
-## Installation and Setup
-The most reliable way to install Telescope is via Bioconda:
+## Core Workflows
+
+### 1. Initial Read Assignment
+The primary command is `telescope assign`. It requires a SAM/BAM file of alignments and a GTF annotation file.
+
+**Key Requirements:**
+- **Alignment Order**: Input BAM files must be collated/sorted by read name (`samtools sort -n` or `samtools collate`). Coordinate-sorted files will fail.
+- **Mapping Parameters**: Reads should be aligned with settings that allow multiple mapping locations (e.g., `bowtie2 -k 100` or similar).
+
+**Basic Command:**
 ```bash
-conda install -c bioconda telescope
+telescope assign [samfile] [gtffile]
 ```
 
-## Core Workflow: telescope assign
-The primary command is `assign`, which performs the read reassignment and quantification.
-
-### 1. Input Requirements
-*   **SAM/BAM File**: Must contain multi-mapping reads (e.g., aligned with `bowtie2 -k 100` or `star --outFilterMultimapNmax 100`).
-*   **Sorting**: Input files **must** be sorted by read name or collated so that all alignments for a specific read pair appear sequentially. Coordinate-sorted BAMs will not work.
-    *   *Tip*: Use `samtools sort -n` or `samtools collate` to prepare your BAM.
-*   **Annotation**: A GTF file defining the TE loci.
-
-### 2. Basic Usage
-```bash
-telescope assign alignment.bam annotation.gtf
+### 2. Common CLI Patterns
+- **Custom Attributes**: If your GTF uses a tag other than "locus" to identify TE units, specify it:
+  ```bash
+  telescope assign --attribute gene_id [samfile] [gtffile]
+```
+- **Output Management**: Use tags and directories to organize experiments:
+  ```bash
+  telescope assign --outdir ./results --exp_tag sample_01 [samfile] [gtffile]
+```
+- **Generating Updated Alignments**: To get a BAM file where reads are tagged with their final assigned locus:
+  ```bash
+  telescope assign --updated_sam [samfile] [gtffile]
 ```
 
-### 3. Advanced CLI Patterns
-*   **Handling Strandedness**: If your library is stranded, specify the orientation to improve accuracy:
-    ```bash
-    # For typical Illumina TruSeq stranded (Read 1 reverse, Read 2 forward)
-    telescope assign --stranded_mode RF alignment.bam annotation.gtf
-    ```
-*   **Adjusting Overlap Sensitivity**: By default, 20% of a fragment must overlap a feature. For stricter or looser requirements:
-    ```bash
-    telescope assign --overlap_threshold 0.5 alignment.bam annotation.gtf
-    ```
-*   **Reassignment Modes**: Control how the final counts are reported for fragments that remain ambiguous after EM:
-    *   `exclude`: (Default) Excludes fragments with multiple "best" assignments.
-    *   `average`: Divides the fragment count evenly among best assignments.
-    *   `choose`: Randomly selects one of the best assignments.
-    *   `unique`: Only includes uniquely aligned reads.
+### 3. Reassignment Modes
+Telescope supports different strategies for the final count column in the report:
+- `exclude`: (Default) Fragments with multiple "best" assignments are ignored.
+- `choose`: Randomly picks one of the best assignments.
+- `average`: Divides the fragment count equally among best assignments.
+- `unique`: Only counts uniquely aligned reads.
+
+Specify the mode using:
+```bash
+telescope assign --reassign_mode average [samfile] [gtffile]
+```
+
+### 4. Resuming and Checkpointing
+For large runs that were interrupted, use the resume functionality:
+```bash
+telescope resume [checkpoint_file]
+```
 
 ## Expert Tips
-*   **Alignment Strategy**: When aligning reads for Telescope, ensure your aligner is configured to report multiple alignments per read. If you only provide unique mappers, the EM algorithm cannot effectively resolve the repetitive landscape.
-*   **Updated SAM**: If you need to visualize the reassigned reads in a genome browser (like IGV), use the `--updated_sam` flag. This generates a new SAM file where the `AS` (Alignment Score) and other tags are updated based on the Telescope model.
-*   **GTF Attributes**: If your GTF uses a custom attribute to define a locus (other than the default `locus`), specify it with `--attribute YOUR_ATTR_NAME`.
-*   **Performance**: While `--ncpu` is an available argument, note that multi-core support may be limited in certain versions; monitor system resources to verify parallel execution.
+- **Validation**: Always run `telescope test` after installation to ensure the environment and floating-point precision are correct for the EM algorithm.
+- **Annotation Sources**: Use specialized TE gene models (like those from the `telescope_annotation_db`) rather than standard gene annotations for best results.
+- **Performance**: While `--ncpu` is an option, check the current version's documentation as multi-core support for the EM step may be limited; the primary bottleneck is often I/O and alignment parsing.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| telescope assign | Reassign ambiguous fragments that map to repetitive elements |
+| telescope assign | Assigns reads to genomic features. |
+| telescope resume | Resume a previous telescope run |
 
 ## Reference documentation
-- [Telescope GitHub Repository](./references/github_com_mlbendall_telescope.md)
-- [Bioconda Telescope Package](./references/anaconda_org_channels_bioconda_packages_telescope_overview.md)
+- [Telescope README](./references/github_com_mlbendall_telescope_blob_main_README.md)
+- [Version History and Changes](./references/github_com_mlbendall_telescope_blob_main_CHANGELOG.md)
+- [Environment and Dependencies](./references/github_com_mlbendall_telescope_blob_main_environment.yml.md)

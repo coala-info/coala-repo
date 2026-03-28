@@ -1,0 +1,91 @@
+[Ephemeris](index.html)
+
+* [Introduction](readme.html)
+* [Installation](installation.html)
+* Commands
+  + [Galaxy-wait](commands/galaxy-wait.html)
+  + [Get-tool-list](commands/get-tool-list.html)
+  + [Run-data-managers](commands/run-data-managers.html)
+  + [Setup-data-libraries](commands/setup-data-libraries.html)
+  + [Shed-tools](commands/shed-tools.html)
+  + [Install-tool-deps](commands/install-tool-deps.html)
+  + [Workflow-install](commands/workflow-install.html)
+  + [Workflow-to-tools](commands/workflow-to-tools.html)
+* [Code of conduct](conduct.html)
+* [Contributing](contributing.html)
+* [Project Governance](organization.html)
+* [Release Checklist](developing.html)
+* [History](history.html)
+
+[Ephemeris](index.html)
+
+* Commands
+* [View page source](_sources/commands.rst.txt)
+
+---
+
+# Commands[¶](#commands "Link to this heading")
+
+* [Galaxy-wait](commands/galaxy-wait.html)
+  + [Usage](commands/galaxy-wait.html#usage)
+    - [Named Arguments](commands/galaxy-wait.html#ephemeris.sleep-_parser-named-arguments)
+    - [General options](commands/galaxy-wait.html#ephemeris.sleep-_parser-general-options)
+    - [Galaxy connection](commands/galaxy-wait.html#ephemeris.sleep-_parser-galaxy-connection)
+  + [Galaxy URL](commands/galaxy-wait.html#galaxy-url)
+  + [Example Usage](commands/galaxy-wait.html#example-usage)
+  + [Timeout](commands/galaxy-wait.html#timeout)
+  + [Notes](commands/galaxy-wait.html#notes)
+* [Get-tool-list](commands/get-tool-list.html)
+  + [Usage](commands/get-tool-list.html#usage)
+    - [Named Arguments](commands/get-tool-list.html#ephemeris.get_tool_list_from_galaxy-_parser-named-arguments)
+    - [General options](commands/get-tool-list.html#ephemeris.get_tool_list_from_galaxy-_parser-general-options)
+    - [Galaxy connection](commands/get-tool-list.html#ephemeris.get_tool_list_from_galaxy-_parser-galaxy-connection)
+* [Run-data-managers](commands/run-data-managers.html)
+  + [Usage](commands/run-data-managers.html#usage)
+    - [Named Arguments](commands/run-data-managers.html#ephemeris.run_data_managers-_parser-named-arguments)
+    - [General options](commands/run-data-managers.html#ephemeris.run_data_managers-_parser-general-options)
+    - [Galaxy connection](commands/run-data-managers.html#ephemeris.run_data_managers-_parser-galaxy-connection)
+* [Setup-data-libraries](commands/setup-data-libraries.html)
+  + [Usage](commands/setup-data-libraries.html#usage)
+    - [Named Arguments](commands/setup-data-libraries.html#ephemeris.setup_data_libraries-_parser-named-arguments)
+    - [General options](commands/setup-data-libraries.html#ephemeris.setup_data_libraries-_parser-general-options)
+    - [Galaxy connection](commands/setup-data-libraries.html#ephemeris.setup_data_libraries-_parser-galaxy-connection)
+* [Shed-tools](commands/shed-tools.html)
+  + [Usage](commands/shed-tools.html#usage)
+    - [Sub-commands](commands/shed-tools.html#Sub-commands)
+      * [install](commands/shed-tools.html#install)
+        + [Named Arguments](commands/shed-tools.html#named-arguments)
+        + [General options](commands/shed-tools.html#general-options)
+        + [Galaxy connection](commands/shed-tools.html#galaxy-connection)
+      * [update](commands/shed-tools.html#update)
+        + [Named Arguments](commands/shed-tools.html#named-arguments_repeat1)
+        + [General options](commands/shed-tools.html#general-options_repeat1)
+        + [Galaxy connection](commands/shed-tools.html#galaxy-connection_repeat1)
+      * [test](commands/shed-tools.html#test)
+        + [Named Arguments](commands/shed-tools.html#named-arguments_repeat2)
+        + [General options](commands/shed-tools.html#general-options_repeat2)
+        + [Galaxy connection](commands/shed-tools.html#galaxy-connection_repeat2)
+* [Install-tool-deps](commands/install-tool-deps.html)
+  + [Usage](commands/install-tool-deps.html#usage)
+    - [Named Arguments](commands/install-tool-deps.html#ephemeris.install_tool_deps-_parser-named-arguments)
+    - [General options](commands/install-tool-deps.html#ephemeris.install_tool_deps-_parser-general-options)
+    - [Galaxy connection](commands/install-tool-deps.html#ephemeris.install_tool_deps-_parser-galaxy-connection)
+* [Workflow-install](commands/workflow-install.html)
+  + [Usage](commands/workflow-install.html#usage)
+    - [Named Arguments](commands/workflow-install.html#ephemeris.workflow_install-_parser-named-arguments)
+    - [General options](commands/workflow-install.html#ephemeris.workflow_install-_parser-general-options)
+    - [Galaxy connection](commands/workflow-install.html#ephemeris.workflow_install-_parser-galaxy-connection)
+* [Workflow-to-tools](commands/workflow-to-tools.html)
+  + [Usage](commands/workflow-to-tools.html#usage)
+    - [Named Arguments](commands/workflow-to-tools.html#ephemeris.generate_tool_list_from_ga_workflow_files-_parser-named-arguments)
+
+[Previous](installation.html "Installation")
+[Next](commands/galaxy-wait.html "Galaxy-wait")
+
+---
+
+© Copyright 2017.
+
+Built with [Sphinx](https://www.sphinx-doc.org/) using a
+[theme](https://github.com/readthedocs/sphinx_rtd_theme)
+provided by [Read the Docs](https://readthedocs.org).

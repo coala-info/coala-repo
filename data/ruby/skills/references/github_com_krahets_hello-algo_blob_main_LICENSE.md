@@ -1,1 +1,1292 @@
-hello-algo/LICENSE at main · krahets/hello-algo · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners View all resources Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} krahets / hello-algo Public Notifications You must be signed in to change notification settings Fork 14.8k Star 122k Code Issues 8 Pull requests 18 Discussions Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Discussions Actions Projects Security Insights Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fkrahets%2Fhello-algo%2Fblob%2Fmain%2FLICENSE)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fkrahets%2Fhello-algo%2Fblob%2Fmain%2FLICENSE)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Fblob%2Fshow&source=header-repo&source_repo=krahets%2Fhello-algo)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[krahets](/krahets)
+/
+**[hello-algo](/krahets/hello-algo)**
+Public
+
+* [Notifications](/login?return_to=%2Fkrahets%2Fhello-algo) You must be signed in to change notification settings
+* [Fork
+  15k](/login?return_to=%2Fkrahets%2Fhello-algo)
+* [Star
+   124k](/login?return_to=%2Fkrahets%2Fhello-algo)
+
+* [Code](/krahets/hello-algo)
+* [Issues
+  9](/krahets/hello-algo/issues)
+* [Pull requests
+  23](/krahets/hello-algo/pulls)
+* [Discussions](/krahets/hello-algo/discussions)
+* [Actions](/krahets/hello-algo/actions)
+* [Projects](/krahets/hello-algo/projects)
+* [Security
+  0](/krahets/hello-algo/security)
+* [Insights](/krahets/hello-algo/pulse)
+
+Additional navigation options
+
+* [Code](/krahets/hello-algo)
+* [Issues](/krahets/hello-algo/issues)
+* [Pull requests](/krahets/hello-algo/pulls)
+* [Discussions](/krahets/hello-algo/discussions)
+* [Actions](/krahets/hello-algo/actions)
+* [Projects](/krahets/hello-algo/projects)
+* [Security](/krahets/hello-algo/security)
+* [Insights](/krahets/hello-algo/pulse)
+
+## FilesExpand file tree
+
+main
+
+## Breadcrumbs
+
+1. [hello-algo](/krahets/hello-algo/tree/main)
+
+/
+
+# LICENSE
+
+Copy path
+
+BlameMore file actions
+
+BlameMore file actions
+
+## Latest commit
+
+## History
+
+[History](/krahets/hello-algo/commits/main/LICENSE)
+
+History
+
+437 lines (341 loc) · 20.4 KB
+
+main
+
+## Breadcrumbs
+
+1. [hello-algo](/krahets/hello-algo/tree/main)
+
+/
+
+# LICENSE
+
+Top
+
+## File metadata and controls
+
+* Code
+* Blame
+
+437 lines (341 loc) · 20.4 KB
+
+[Raw](https://github.com/krahets/hello-algo/raw/refs/heads/main/LICENSE)
+
+Copy raw file
+
+Download raw file
+
+Open symbols panel
+
+Edit and raw actions
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+10
+
+11
+
+12
+
+13
+
+14
+
+15
+
+16
+
+17
+
+18
+
+19
+
+20
+
+21
+
+22
+
+23
+
+24
+
+25
+
+26
+
+27
+
+28
+
+29
+
+30
+
+31
+
+32
+
+33
+
+34
+
+35
+
+36
+
+37
+
+38
+
+39
+
+40
+
+41
+
+42
+
+43
+
+44
+
+45
+
+46
+
+47
+
+48
+
+49
+
+50
+
+51
+
+52
+
+53
+
+54
+
+55
+
+56
+
+57
+
+58
+
+59
+
+60
+
+61
+
+62
+
+63
+
+64
+
+65
+
+66
+
+67
+
+68
+
+69
+
+70
+
+71
+
+72
+
+73
+
+74
+
+75
+
+76
+
+77
+
+78
+
+79
+
+80
+
+81
+
+82
+
+83
+
+84
+
+85
+
+86
+
+87
+
+88
+
+89
+
+90
+
+91
+
+92
+
+93
+
+94
+
+95
+
+96
+
+97
+
+98
+
+99
+
+100
+
+101
+
+102
+
+103
+
+104
+
+105
+
+106
+
+107
+
+108
+
+109
+
+110
+
+111
+
+112
+
+113
+
+114
+
+115
+
+116
+
+117
+
+118
+
+119
+
+120
+
+121
+
+122
+
+123
+
+124
+
+125
+
+126
+
+127
+
+128
+
+129
+
+130
+
+131
+
+132
+
+133
+
+134
+
+135
+
+136
+
+137
+
+138
+
+139
+
+140
+
+141
+
+142
+
+143
+
+144
+
+145
+
+146
+
+147
+
+148
+
+149
+
+150
+
+151
+
+152
+
+153
+
+154
+
+155
+
+156
+
+157
+
+158
+
+159
+
+160
+
+161
+
+162
+
+163
+
+164
+
+165
+
+166
+
+167
+
+168
+
+169
+
+170
+
+171
+
+172
+
+173
+
+174
+
+175
+
+176
+
+177
+
+178
+
+179
+
+180
+
+181
+
+182
+
+183
+
+184
+
+185
+
+186
+
+187
+
+188
+
+189
+
+190
+
+191
+
+192
+
+193
+
+194
+
+195
+
+196
+
+197
+
+198
+
+199
+
+200
+
+201
+
+202
+
+203
+
+204
+
+205
+
+206
+
+207
+
+208
+
+209
+
+210
+
+211
+
+212
+
+213
+
+214
+
+215
+
+216
+
+217
+
+218
+
+219
+
+220
+
+221
+
+222
+
+223
+
+224
+
+225
+
+226
+
+227
+
+228
+
+229
+
+230
+
+231
+
+232
+
+233
+
+234
+
+235
+
+236
+
+237
+
+238
+
+239
+
+240
+
+241
+
+242
+
+243
+
+244
+
+245
+
+246
+
+247
+
+248
+
+249
+
+250
+
+251
+
+252
+
+253
+
+254
+
+255
+
+256
+
+257
+
+258
+
+259
+
+260
+
+261
+
+262
+
+263
+
+264
+
+265
+
+266
+
+267
+
+268
+
+269
+
+270
+
+271
+
+272
+
+273
+
+274
+
+275
+
+276
+
+277
+
+278
+
+279
+
+280
+
+281
+
+282
+
+283
+
+284
+
+285
+
+286
+
+287
+
+288
+
+289
+
+290
+
+291
+
+292
+
+293
+
+294
+
+295
+
+296
+
+297
+
+298
+
+299
+
+300
+
+301
+
+302
+
+303
+
+304
+
+305
+
+306
+
+307
+
+308
+
+309
+
+310
+
+311
+
+312
+
+313
+
+314
+
+315
+
+316
+
+317
+
+318
+
+319
+
+320
+
+321
+
+322
+
+323
+
+324
+
+325
+
+326
+
+327
+
+328
+
+329
+
+330
+
+331
+
+332
+
+333
+
+334
+
+335
+
+336
+
+337
+
+338
+
+339
+
+340
+
+341
+
+342
+
+343
+
+344
+
+345
+
+346
+
+347
+
+348
+
+349
+
+350
+
+351
+
+352
+
+353
+
+354
+
+355
+
+356
+
+357
+
+358
+
+359
+
+360
+
+361
+
+362
+
+363
+
+364
+
+365
+
+366
+
+367
+
+368
+
+369
+
+370
+
+371
+
+372
+
+373
+
+374
+
+375
+
+376
+
+377
+
+378
+
+379
+
+380
+
+381
+
+382
+
+383
+
+384
+
+385
+
+386
+
+387
+
+388
+
+389
+
+390
+
+391
+
+392
+
+393
+
+394
+
+395
+
+396
+
+397
+
+398
+
+399
+
+400
+
+401
+
+402
+
+403
+
+404
+
+405
+
+406
+
+407
+
+408
+
+409
+
+410
+
+411
+
+412
+
+413
+
+414
+
+415
+
+416
+
+417
+
+418
+
+419
+
+420
+
+421
+
+422
+
+423
+
+424
+
+425
+
+426
+
+427
+
+428
+
+429
+
+430
+
+431
+
+432
+
+433
+
+434
+
+435
+
+436
+
+437
+
+Attribution-NonCommercial-ShareAlike 4.0 International
+
+=======================================================================
+
+Creative Commons Corporation ("Creative Commons") is not a law firm and
+
+does not provide legal services or legal advice. Distribution of
+
+Creative Commons public licenses does not create a lawyer-client or
+
+other relationship. Creative Commons makes its licenses and related
+
+information available on an "as-is" basis. Creative Commons gives no
+
+warranties regarding its licenses, any material licensed under their
+
+terms and conditions, or any related information. Creative Commons
+
+disclaims all liability for damages resulting from their use to the
+
+fullest extent possible.
+
+Using Creative Commons Public Licenses
+
+Creative Commons public licenses provide a standard set of terms and
+
+conditions that creators and other rights holders may use to share
+
+original works of authorship and other material subject to copyright
+
+and certain other rights specified in the public license below. The
+
+following considerations are for informational purposes only, are not
+
+exhaustive, and do not form part of our licenses.
+
+Considerations for licensors: Our public licenses are
+
+intended for use by those authorized to give the public
+
+permission to use material in ways otherwise restricted by
+
+copyright and certain other rights. Our licenses are
+
+irrevocable. Licensors should read and understand the terms
+
+and conditions of the license they choose before applying it.
+
+Licensors should also secure all rights necessary before
+
+applying our licenses so that the public can reuse the
+
+material as expected. Licensors should clearly mark any
+
+material not subject to the license. This includes other CC-
+
+licensed material, or material used under an exception or
+
+limitation to copyright. More considerations for licensors:
+
+wiki.creativecommons.org/Considerations\_for\_licensors
+
+Considerations for the public: By using one of our public
+
+licenses, a licensor grants the public permission to use the
+
+licensed material under specified terms and conditions. If
+
+the licensor's permission is not necessary for any reason--for
+
+example, because of any applicable exception or limitation to
+
+copyright--then that use is not regulated by the license. Our
+
+licenses grant only permissions under copyright and certain
+
+other rights that a licensor has authority to grant. Use of
+
+the licensed material may still be restricted for other
+
+reasons, including because others have copyright or other
+
+rights in the material. A licensor may make special requests,
+
+such as asking that all changes be marked or described.
+
+Although not required by our licenses, you are encouraged to
+
+respect those requests where reasonable. More considerations
+
+for the public:
+
+wiki.creativecommons.org/Considerations\_for\_licensees
+
+=======================================================================
+
+Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+
+Public License
+
+By exercising the Licensed Rights (defined below), You accept and agree
+
+to be bound by the terms and conditions of this Creative Commons
+
+Attribution-NonCommercial-ShareAlike 4.0 International Public License
+
+("Public License"). To the extent this Public License may be
+
+interpreted as a contract, You are granted the Licensed Rights in
+
+consideration of Your acceptance of these terms and conditions, and the
+
+Licensor grants You such rights in consideration of benefits the
+
+Licensor receives from making the Licensed Material available under
+
+these terms and conditions.
+
+Section 1 -- Definitions.
+
+a. Adapted Material means material subject to Copyright and Similar
+
+Rights that is derived from or based upon the Licensed Material
+
+and in which the Licensed Material is translated, altered,
+
+arranged, transformed, or otherwise modified in a manner requiring
+
+permission under the Copyright and Similar Rights held by the
+
+Licensor. For purposes of this Public License, where the Licensed
+
+Material is a musical work, performance, or sound recording,
+
+Adapted Material is always produced where the Licensed Material is
+
+synched in timed relation with a moving image.
+
+b. Adapter's License means the license You apply to Your Copyright
+
+and Similar Rights in Your contributions to Adapted Material in
+
+accordance with the terms and conditions of this Public License.
+
+c. BY-NC-SA Compatible License means a license listed at
+
+creativecommons.org/compatiblelicenses, approved by Creative
+
+Commons as essentially the equivalent of this Public License.
+
+d. Copyright and Similar Rights means copyright and/or similar rights
+
+closely related to copyright including, without limitation,
+
+performance, broadcast, sound recording, and Sui Generis Database
+
+Rights, without regard to how the rights are labeled or
+
+categorized. For purposes of this Public License, the rights
+
+specified in Section 2(b)(1)-(2) are not Copyright and Similar
+
+Rights.
+
+e. Effective Technological Measures means those measures that, in the
+
+absence of proper authority, may not be circumvented under laws
+
+fulfilling obligations under Article 11 of the WIPO Copyright
+
+Treaty adopted on December 20, 1996, and/or similar international
+
+agreements.
+
+f. Exceptions and Limitations means fair use, fair dealing, and/or
+
+any other exception or limitation to Copyright and Similar Rights
+
+that applies to Your use of the Licensed Material.
+
+g. License Elements means the license attributes listed in the name
+
+of a Creative Commons Public Licen

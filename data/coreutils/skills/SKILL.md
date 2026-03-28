@@ -1,6 +1,6 @@
 ---
 name: coreutils
-description: This tool provides a cross-platform reimplementation of GNU coreutils for performing fundamental filesystem operations, text processing, and system queries. Use when user asks to list files, copy or move directories, modify file permissions, filter and sort text data, or check disk usage and system status.
+description: This tool provides a cross-platform Rust implementation of GNU coreutils that functions as a drop-in replacement for standard system utilities. Use when user asks to build the utilities from source, install the multicall binary, generate shell completions, or handle cross-platform command-line operations.
 homepage: https://github.com/uutils/coreutils
 ---
 
@@ -8,47 +8,104 @@ homepage: https://github.com/uutils/coreutils
 # coreutils
 
 ## Overview
-The `coreutils` skill provides access to a comprehensive reimplementation of the GNU coreutils in Rust. These tools are the fundamental building blocks for interacting with the filesystem and processing data streams in a Unix-like environment. This implementation is designed to be cross-platform, offering consistent behavior across Linux, macOS, and Windows. Use this skill when you need to automate file operations, transform text data, or query system status using standard command-line interfaces that aim for 1:1 compatibility with GNU counterparts.
 
-## Common CLI Patterns
+The uutils coreutils project is a cross-platform reimplementation of the GNU coreutils in Rust. It serves as a drop-in replacement for the standard GNU utilities, aiming for exact output matching (stdout and error codes) while providing better error messages, improved performance, and native support for Linux, macOS, and Windows. This skill helps you navigate the specific installation, building, and usage patterns unique to the Rust implementation, such as multicall binary dispatching and feature-based compilation.
 
-### File Operations
-*   **Listing Files**: Use `ls` to view directory contents. Use `-l` for long format, `-a` for all files (including hidden), and `-h` for human-readable sizes.
-*   **Copying and Moving**: Use `cp` and `mv`. For recursive directory copying, use `cp -r`.
-*   **Deletion**: Use `rm`. Use `-f` to force and `-r` for recursive deletion of directories.
-*   **Permissions**: Use `chmod` to change file modes (e.g., `chmod +x script.sh`) and `chown` to change ownership.
+## Installation and Setup
 
-### Text Processing
-*   **Reading**: Use `cat` to concatenate and display files. Use `tac` to display files in reverse (last line first).
-*   **Filtering**: Use `head` and `tail` to view the beginning or end of files. Use `tail -f` to follow file growth in real-time.
-*   **Sorting and Uniqueness**: Use `sort` to order lines and `uniq` to filter out repeated lines.
-*   **Extraction**: Use `cut` to extract specific columns or fields from text (e.g., `cut -d',' -f1` for the first column of a CSV).
+### Building from Source
+Use Cargo to build the most portable common core set of utilities:
+```bash
+cargo build --release
+```
+To include platform-specific utilities, specify the target feature:
+```bash
+cargo build --release --features unix
+# or
+cargo build --release --features macos
+# or
+cargo build --release --features windows
+```
 
-### System Information
-*   **Disk Usage**: Use `df -h` for a summary of filesystem disk space and `du -sh <dir>` for the size of a specific directory.
-*   **Environment**: Use `env` to view or run a command in a modified environment.
-*   **Basic Info**: Use `arch` for machine architecture, `whoami` for current user, and `uptime` for system run time.
+### Installing the Multicall Binary
+The multicall binary allows you to access all utilities through a single executable. Install it via Cargo:
+```bash
+cargo install --path . --locked
+```
+Once installed, you can call utilities as subcommands:
+```bash
+coreutils ls -la
+coreutils cat file.txt
+```
 
-## Expert Tips and Extensions
+## Generating Shell Completions
 
-### Multicall Binary Usage
-If the utilities are installed as a single multicall binary, you can invoke them via:
-`coreutils <utility> [arguments]`
-Example: `coreutils ls -la`
+The `uudoc` tool (or the `coreutils completion` command) generates shell completions for bash, zsh, fish, powershell, and elvish.
 
-### Progress Bars
-The `uutils` implementation often includes a `--progress` flag for long-running operations like `cp` or `mv`, which is an extension not found in standard GNU coreutils. Use this to monitor large file transfers.
+### Using uudoc
+1. Install the documentation tool:
+   ```bash
+   cargo install --bin uudoc --features uudoc --path .
+   ```
+2. Generate completion for a specific utility and shell:
+   ```bash
+   uudoc completion ls bash > /usr/local/share/bash-completion/completions/ls
+   ```
 
-### Generating Shell Completions
-You can generate shell completion scripts for various shells (bash, zsh, fish, powershell, elvish) using the `uudoc` tool or the multicall binary:
-`coreutils completion <utility> <shell>`
+### Using the coreutils binary
+If using the multicall binary, generate completions directly:
+```bash
+coreutils completion ls zsh > ~/.zsh/completions/_ls
+```
 
-### Numerical Formatting
-Use `numfmt` to convert numbers to and from human-readable formats (e.g., `numfmt --to=iec 1024` outputs `1.0K`). This is highly useful for piping output from scripts into readable reports.
+## Common CLI Patterns and Best Practices
 
-### Handling Non-UTF8 Data
-While `uutils` prioritizes UTF-8, tools like `base32`, `base64`, and `basenc` are essential for encoding and decoding binary data for text-based transmission.
+### Handling Cross-Platform Differences
+While uutils aims for GNU compatibility, use the `--features` flag during compilation to ensure platform-specific tools like `chcon` (SELinux) or specific `ls` behaviors are available on your target OS.
+
+### Performance and Extensions
+- **Progress Bars**: Some uutils tools include extensions not found in GNU, such as the `--progress` flag for long-running operations.
+- **Small Binaries**: If disk space is a concern, optimize the build for size:
+  ```bash
+  cargo build --profile=release-small
+  ```
+
+### Testing Compatibility
+If you encounter a behavior difference between uutils and GNU coreutils, it is treated as a bug. Verify the version and report issues via the GitHub tracker. To run the test suite:
+```bash
+cargo test
+# Run platform-specific tests
+cargo test --features unix
+```
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| base32 | Base32 encode or decode FILE, or standard input, to standard output. |
+| base64 | Base64 encode or decode FILE, or standard input, to standard output. |
+| basenc | basenc encode or decode FILE, or standard input, to standard output. |
+| cat | Concatenate FILE(s) to standard output. |
+| chmod | Change the mode of each FILE to MODE. With --reference, change the mode of each FILE to that of RFILE. |
+| chown | Change the owner and/or group of each FILE to OWNER and/or GROUP. With --reference, change the owner and group of each FILE to those of RFILE. |
+| cp | Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY. |
+| cut | Print selected parts of lines from each FILE to standard output. |
+| df | Show information about the file system on which each FILE resides, or all file systems by default. |
+| du | Estimate file space usage |
+| env | Set each NAME to VALUE in the environment and run COMMAND. If no COMMAND is specified, print the resulting environment. |
+| head | Print the first 10 lines of each FILE to standard output. With more than one FILE, precede each with a header giving the file name. With no FILE, or when FILE is -, read standard input. |
+| ls | List information about the FILEs (the current directory by default). Sort entries alphabetically if none of -cftuSUX nor --sort is specified. |
+| mv | Rename SOURCE to DEST, or move SOURCE(s) to DIRECTORY. |
+| numfmt | Reformat NUMBER(s), or the numbers from standard input if none are specified. |
+| rm | Remove (unlink) the FILE(s). |
+| sort | Write sorted concatenation of all FILE(s) to standard output. |
+| tac | Write each FILE to standard output, last line first. With no FILE, or when FILE is -, read standard input. |
+| tail | Print the last 10 lines of each FILE to standard output. With more than one FILE, precede each with a header giving the file name. |
+| uniq | Filter adjacent matching lines from INPUT (or standard input), writing to OUTPUT (or standard output). |
+| uptime | Print the current time, the length of time the system has been up, the number of users on the system, and the average number of jobs in the run queue over the last 1, 5 and 15 minutes. Processes in an uninterruptible sleep state also contribute to the load average. If FILE is not specified, use /var/run/utmp. |
 
 ## Reference documentation
 - [uutils coreutils README](./references/github_com_uutils_coreutils.md)
-- [uutils coreutils Wiki](./references/github_com_uutils_coreutils_wiki.md)
+- [uutils coreutils Wiki Home](./references/github_com_uutils_coreutils_wiki.md)

@@ -1,6 +1,6 @@
 ---
 name: regtools
-description: RegTools is a suite of tools designed to integrate DNA-seq and RNA-seq data to identify genomic variants that influence RNA splicing patterns. Use when user asks to extract exon-exon junctions from RNA-seq alignments, identify cis-splice effects of variants, or annotate junctions and variants with respect to a reference transcriptome.
+description: RegTools integrates genomic variants with transcriptomic data to identify variants that cause non-canonical splicing and allele-specific expression. Use when user asks to identify cis-splice-effects, extract or annotate exon-exon junctions from BAM files, and analyze allele-specific expression.
 homepage: https://github.com/griffithlab/regtools/
 ---
 
@@ -8,56 +8,78 @@ homepage: https://github.com/griffithlab/regtools/
 # regtools
 
 ## Overview
-RegTools is a specialized suite of tools designed to bridge the gap between DNA-seq and RNA-seq data. It allows researchers to identify how specific genomic variants influence splicing patterns, such as exon skipping, intron retention, or the creation of cryptic splice sites. By extracting exon-exon junctions directly from RNA-seq alignments and cross-referencing them with variant calls and reference transcriptomes, RegTools provides a streamlined workflow for discovering regulatory mutations that might otherwise be overlooked in standard pipelines.
 
-## Common CLI Patterns
+RegTools is a specialized suite designed to bridge the gap between genomic variants (DNA-seq) and transcriptomic outcomes (RNA-seq). It is primarily used in cancer genomics and rare disease research to identify "cis-splice-effects"—variants that cause non-canonical splicing—and allele-specific expression (ASE). The tool is highly efficient for processing large BAM files to extract exon-exon junctions and provides automated workflows to associate these junctions with specific mutations.
 
-### 1. Extracting Junctions from RNA-seq
-The first step in most workflows is extracting exon-exon junctions from a BAM file.
+## Core Workflows and Commands
+
+### 1. Identifying Splicing Effects (The Primary Use Case)
+To identify variants that cause aberrant splicing, use the `cis-splice-effects` modules.
+
+*   **From BAM files (Direct):**
+    ```bash
+    regtools cis-splice-effects identify [options] variants.vcf alignments.bam ref.fa annotations.gtf
+    ```
+*   **From BED files (Association):** Use this if you have already extracted junctions and want to save time on re-processing BAMs.
+    ```bash
+    regtools cis-splice-effects associate [options] variants.vcf junctions.bed ref.fa annotations.gtf
+    ```
+
+### 2. Junction Extraction and Annotation
+If you only need to characterize the splicing landscape of an RNA-seq sample:
+
+*   **Extract:** Pulls all exon-exon junctions from a BAM.
+    ```bash
+    regtools junctions extract -s [STRAND] -a [MIN_ANCHOR] alignments.bam -o junctions.bed
+    ```
+*   **Annotate:** Compares extracted junctions against a known transcriptome (GTF).
+    ```bash
+    regtools junctions annotate junctions.bed ref.fa annotations.gtf -o annotated_junctions.txt
+    ```
+
+### 3. Allele-Specific Expression (ASE)
+To find polymorphisms showing unbalanced expression near somatic variants:
 ```bash
-regtools junctions extract -a 8 -m 50 -M 500000 -s 1 input.bam -o junctions.bed
+regtools cis-ase identify [options] somatic.vcf poly.vcf dna.bam rna.bam ref.fa annotations.gtf
 ```
-*   `-a`: Minimum anchor length (number of bases that must overlap an exon).
-*   `-m`: Minimum intron length.
-*   `-M`: Maximum intron length.
-*   `-s`: Strand specificity (0 for unstranded, 1 for RF/fr-firststrand, 2 for FR/fr-secondstrand).
-
-### 2. Identifying Cis-Splice Effects
-This is the primary command for integrating variants and RNA-seq data to find mutations associated with splicing changes.
-```bash
-regtools cis-splice-effects identify \
-    -s 1 \
-    -e 10 \
-    -i 10 \
-    variants.vcf.gz \
-    alignments.bam \
-    ref_genome.fa \
-    annotations.gtf
-```
-*   **Inputs**: Requires a BGZIP-compressed and indexed VCF, a coordinate-sorted and indexed BAM, a FASTA genome, and a GTF annotation file.
-*   **Logic**: It looks for junctions in the BAM file that are within a specific window (defined by `-e` and `-i`) of the variants in the VCF.
-
-### 3. Annotating Junctions
-To determine if junctions are known or novel compared to a reference:
-```bash
-regtools junctions annotate junctions.bed ref_genome.fa annotations.gtf -o annotated_junctions.txt
-```
-
-### 4. Annotating Variants
-To specifically annotate variants with their proximity to splice regions:
-```bash
-regtools variants annotate variants.vcf -g annotations.gtf -r 20 -o annotated_variants.vcf
-```
-*   `-r`: Defines the "splice region" distance from the exon-intron boundary.
 
 ## Expert Tips and Best Practices
 
-*   **Strand Awareness**: Incorrectly specifying the `-s` (strand) parameter is the most common cause of empty or misleading results. Verify your library preparation (e.g., dUTP/fr-firststrand usually requires `-s 1`).
-*   **Indexing Requirements**: Ensure all large genomic files are indexed. Use `samtools index` for BAMs, `tabix` for VCFs, and `samtools faidx` for FASTA files.
-*   **Anchor Length**: For short-read data (e.g., 50-75bp), a smaller anchor length (e.g., 6) may increase sensitivity but also noise. For 100bp+ reads, an anchor of 8-10 is standard.
-*   **Filtering**: The output of `cis-splice-effects identify` can be large. Focus on the `variant_info` and `junction_info` columns to prioritize junctions that have high read support (`score` column) and are not present in the "known" annotation.
-*   **Memory Management**: RegTools is generally efficient, but processing very high-depth BAM files or large VCFs may require significant RAM. Ensure your environment has at least 8GB-16GB for standard human samples.
+*   **Strand Specificity (`-s`):** This is the most common source of error. Ensure you know your library preparation:
+    *   `0`: Unstranded (Default)
+    *   `1`: RF (first-strand / stranded-reverse)
+    *   `2`: FR (second-strand / stranded-forward)
+*   **Window Size (`-w`):** By default, the tool looks for junctions in a window between the previous and next exons. If you are looking for deep intronic mutations that might create cryptic splice sites, increase the window size (e.g., `-w 1000`).
+*   **Anchor Length (`-a`):** The default anchor length is 8bp. For short-read data with low complexity, increasing this to 10 or 12 can reduce false-positive junction calls at the expense of sensitivity.
+*   **Input Sorting:** Ensure your BAM files are coordinate-sorted and indexed (`samtools index`). VCF files should also be sorted by coordinate.
+*   **GTF Compatibility:** Always ensure the chromosome naming convention in your GTF (e.g., "chr1" vs "1") matches your reference FASTA and BAM headers.
+
+## Common CLI Patterns
+
+**Filtering for Novel Junctions:**
+After running `junctions annotate`, novel junctions are those where the `known_junction` column is `0`. You can quickly filter these using `awk`:
+```bash
+awk '$14 == 0' annotated_junctions.txt > novel_junctions.txt
+```
+
+**Annotating Variants for Splice-Site Proximity:**
+If you just want to know which variants in a VCF fall within the splice region (default 2bp intronic, 3bp exonic):
+```bash
+regtools variants annotate variants.vcf -o annotated_variants.vcf
+```
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| cis-ase | Identify cis ase. |
+| regtools junctions | Identify exon-exon junctions from alignments or annotate junctions. |
+| variants | Annotate variants with splicing information. |
 
 ## Reference documentation
-- [RegTools GitHub Repository](./references/github_com_griffithlab_regtools.md)
-- [Bioconda RegTools Overview](./references/anaconda_org_channels_bioconda_packages_regtools_overview.md)
+- [GitHub Repository Overview](./references/github_com_griffithlab_regtools.md)
+- [cis-splice-effects identify Command](./references/regtools_readthedocs_io_en_latest_commands_cis-splice-effects-identify.md)
+- [junctions extract Command](./references/regtools_readthedocs_io_en_latest_commands_junctions-extract.md)
+- [cis-ase identify Command](./references/regtools_readthedocs_io_en_latest_commands_cis-ase-identify.md)

@@ -1,6 +1,6 @@
 ---
 name: snakebids
-description: Snakebids integrates BIDS datasets into Snakemake workflows to automate the discovery of neuroimaging data and create standardized BIDS Apps. Use when user asks to build Snakemake workflows for BIDS data, automate subject and session discovery, or generate BIDS-compliant file paths.
+description: Snakebids is a framework that extends Snakemake to build portable BIDS Apps for neuroimaging data processing. Use when user asks to create BIDS-compliant workflows, automate path construction, filter participants for analysis, or generate Boutiques descriptors.
 homepage: https://github.com/khanlab/snakebids
 ---
 
@@ -8,54 +8,54 @@ homepage: https://github.com/khanlab/snakebids
 # snakebids
 
 ## Overview
-Snakebids is a specialized framework that integrates BIDS datasets into Snakemake workflows. It automates the discovery of subjects, sessions, and modalities, allowing you to write generic Snakemake rules that scale across complex neuroimaging datasets. By using Snakebids, you transform a standard Snakemake script into a "BIDS App," providing a standardized CLI for end-users while maintaining the parallel execution and reproducibility of Snakemake.
+Snakebids is a specialized framework that extends Snakemake to handle the complexities of BIDS-formatted neuroimaging data. It transforms standard Snakemake workflows into portable BIDS Apps, providing a consistent command-line interface for data processing. By using snakebids, developers can automate path construction, handle complex dataset queries via Pybids, and ensure their pipelines are reproducible and scalable across different computing environments.
 
-## Core CLI Usage
-Snakebids workflows are typically executed through a Python entry point (e.g., `run.py`) that wraps the Snakemake execution.
+## CLI Usage Patterns
+Snakebids workflows typically expose a CLI that follows the BIDS App standard.
 
-### Standard Execution Pattern
-The basic syntax for running a Snakebids-based BIDS App is:
-`python run.py <input_bids_dir> <output_dir> <analysis_level> [options]`
+### Basic Execution
+Run a snakebids-based pipeline by specifying the input BIDS directory, output directory, and analysis level:
+`python run.py /path/to/bids_root /path/to/output participant`
 
-*   **analysis_level**: Usually `participant` or `group`.
-*   **--participant-label**: Filter the dataset to specific subjects (e.g., `--participant-label 01 02`).
-*   **--bids-filter-file**: Path to a JSON file for complex Pybids filtering.
+### Participant Filtering
+Process specific subjects using the `--participant-label` flag (do not include the `sub-` prefix):
+`python run.py /path/to/bids_root /path/to/output participant --participant-label 01 02`
 
-### Advanced Filtering via CLI
-You can provide entity-specific filters directly on the command line to narrow down inputs:
-`python run.py data/bids out/ participant --filter-<entity>=<value>`
+### Snakemake Passthrough
+To pass arguments directly to the underlying Snakemake engine (like core count, dry-runs, or cluster configuration), use the `--` separator:
+`python run.py /path/to/bids_root /path/to/output participant -- --cores 8 --dry-run`
 
-Example:
-`python run.py data/bids out/ participant --filter-t1w acquisition=preproc`
+## Path Construction Best Practices
+Use the `bids()` function within your Snakefile to generate valid BIDS paths. This ensures that your workflow remains compliant with BIDS naming conventions and handles optional entities gracefully.
 
-## Workflow Development Best Practices
+### Standard Path Generation
+`bids(root='results', subject='{subject}', session='{session}', suffix='T1w.nii.gz')`
 
-### BIDS Path Construction
-Use the `bids()` function within your Snakefile to ensure all output paths follow BIDS naming conventions. This avoids manual string formatting and ensures consistency.
+### Handling Transforms (ANTs style)
+When working with registration outputs, follow the `from-<modality>_to-<target>` pattern for clarity and compliance:
+`bids(root='work', subject='{subject}', from_='T1w', to='MNI152', suffix='1Warp.nii.gz')`
 
-```python
-from snakebids import bids
-
-# Example: Constructing a derivative path
-rule align_t1:
-    input:
-        t1w = bids(subject="{subject}", suffix="T1w.nii.gz")
-    output:
-        aligned = bids(root="derivatives", subject="{subject}", desc="aligned", suffix="T1w.nii.gz")
-```
-
-### Input Generation
-Leverage `generate_inputs()` to automatically populate Snakemake wildcards based on the contents of the BIDS directory. This function queries the BIDS layout and returns a `BidsDataset` object containing the discovered entities.
-
-### Handling Optional Entities
-When working with entities that may not exist for all subjects (like `session` or `acquisition`), use the `SnakemakeWildcards` class or the `get()` method on `BidsComponent` to handle runtime file retrieval without breaking the Snakemake DAG.
+## Directory Organization
+Follow the standardized structure to ensure compatibility with BIDS validators and workflow modularity:
+- **results/**: Contains final derivative datasets and the required `dataset_description.json`.
+- **sourcedata/**: Stores intermediate files generated during the workflow. This directory is named to be ignored by BIDS validators while keeping the workspace organized.
 
 ## Expert Tips
-*   **Dry Runs**: Since Snakebids wraps Snakemake, you can pass standard Snakemake arguments like `-n` (dry-run) or `-p` (print commands) through the CLI.
-*   **Plugin System**: Use the Snakebids plugin system to extend CLI functionality, such as adding custom version reporting or specialized data validation steps.
-*   **UV Integration**: For development, Snakebids utilizes `uv`. Use `uv run poe quality` and `uv run poe test` to maintain code standards if contributing to or extending the core library.
+- **Plugin System**: Leverage the plugin system to extend CLI functionality, such as adding custom versioning or specialized filtering logic without modifying the core workflow.
+- **Pybids Querying**: Snakebids leverages Pybids for data discovery. If the workflow fails to find files, verify that the input dataset passes the BIDS validator.
+- **Development Workflow**: For developers contributing to snakebids or building complex apps, use `uv` for dependency management. Run `uv run poe quality` to check code standards and `uv run poe test` for validation.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| snakebids boutiques | Generate a Boutiques descriptor for a Snakebids app. |
+| snakebids_create | Create a new snakebids project. |
 
 ## Reference documentation
 - [Snakebids GitHub Repository](./references/github_com_khanlab_snakebids.md)
-- [Snakebids Wiki](./references/github_com_khanlab_snakebids_wiki.md)
-- [Bioconda Snakebids Overview](./references/anaconda_org_channels_bioconda_packages_snakebids_overview.md)
+- [Directory Structure Wiki](./references/github_com_khanlab_snakebids_wiki_Directory-Structure.md)
+- [File Naming Wiki](./references/github_com_khanlab_snakebids_wiki_File-Naming.md)
+- [Snakebids Documentation Index](./references/snakebids_readthedocs_io_en_stable_index.html.md)

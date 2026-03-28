@@ -1,6 +1,6 @@
 ---
 name: phyloflash
-description: phyloFlash is a bioinformatics pipeline that extracts, assembles, and analyzes SSU rRNA sequences directly from raw Illumina metagenomic reads. Use when user asks to perform rapid taxonomic screening, reconstruct full-length rRNA genes, or generate comparative reports of microbial community composition.
+description: phyloFlash is a bioinformatics pipeline that performs taxonomic profiling and targeted assembly of SSU rRNA sequences from metagenomic data. Use when user asks to profile microbial community composition, assemble ribosomal RNA genes from raw reads, or compare taxonomic diversity across multiple metagenomic samples.
 homepage: https://github.com/HRGV/phyloFlash
 ---
 
@@ -8,68 +8,59 @@ homepage: https://github.com/HRGV/phyloFlash
 # phyloflash
 
 ## Overview
+phyloFlash is a specialized bioinformatics pipeline designed to bypass the heavy computational requirements of full metagenomic assembly when the primary goal is taxonomic profiling. It works by specifically targeting Small Subunit (SSU) rRNA reads, mapping them against the SILVA database, and performing targeted assembly. This allows for high-resolution phylogenetic analysis even from low-abundance organisms that might fail to assemble in a standard global assembly.
 
-phyloFlash is a specialized bioinformatics pipeline designed to extract, assemble, and analyze SSU rRNA sequences (16S/18S) directly from raw Illumina sequencing reads. It bypasses the need for full metagenome assembly by mapping reads against the SILVA database, then performing targeted assembly of the extracted rRNA-related reads. Use this skill to perform rapid taxonomic screening of metagenomes, reconstruct full-length rRNA genes for high-resolution phylogenetic placement, and generate interactive HTML reports of community composition.
+## Core Workflow and CLI Patterns
 
-## Installation and Setup
+### 1. Environment and Database Setup
+Before running analysis, ensure the environment is functional and the SILVA database is correctly indexed.
 
-The recommended way to install phyloFlash is via Conda or Mamba:
+*   **Check Environment**: `phyloFlash.pl -check_env`
+*   **Database Path**: Always specify the location of the formatted SILVA database using `-dbhome`.
+*   **Custom Database**: If using a non-preformatted SILVA release, use `phyloFlash_makedb.pl`.
 
-```bash
-conda create -n pf -c conda-forge -c bioconda phyloflash
-conda activate pf
-```
+### 2. Standard Analysis Runs
+The main driver is `phyloFlash.pl`. Use the following patterns based on your data type:
 
-### Database Preparation
-phyloFlash requires a formatted SILVA database. Pre-formatted versions (SILVA 138.1+) are available via Zenodo.
-1. Download and unpack the database: `tar -xzf 138.1.tar.gz`
-2. Point to the database location using the `-dbhome` flag during execution.
+*   **Recommended Default (SPAdes assembly)**:
+    `phyloFlash.pl -lib <NAME> -dbhome <DB_PATH> -read1 R1.fq.gz -read2 R2.fq.gz -almosteverything -CPUs <INT>`
+    *Note: `-almosteverything` is the standard "best practice" flag for most users.*
 
-## Common CLI Patterns
+*   **Interleaved Reads**:
+    `phyloFlash.pl -lib <NAME> -read1 interleaved.fq.gz -interleaved -almosteverything`
 
-### Standard Analysis (Recommended)
-The `-almosteverything` flag is the standard recommendation for most users. It runs the SPAdes assembler for rRNA reconstruction but skips the more time-consuming EMIRGE.
+*   **Single-Cell (MDA) or Low Diversity**:
+    Add the `-sc` flag to optimize assembly parameters for non-uniform coverage.
 
-```bash
-phyloFlash.pl -lib <sample_name> -dbhome /path/to/138.1 -read1 R1.fq.gz -read2 R2.fq.gz -almosteverything -CPUs 16
-```
+*   **Maximum Sensitivity**:
+    Use `-everything` to run both SPAdes and EMIRGE for rRNA reconstruction, though this significantly increases runtime.
 
-### Working with Interleaved Reads
-If your paired-end reads are in a single file:
+### 3. Advanced Processing Options
+*   **Alternative Mapping**: Use `-sortmerna` instead of the default BBmap if higher sensitivity for divergent SSU sequences is required.
+*   **Trusted Contigs**: If you have an existing assembly, use `-trusted contigs.fasta` to screen those contigs for SSU sequences alongside the raw reads.
+*   **Output Management**: Use `-zip` to automatically package results into a tarball and `-log` to ensure a record of the run parameters is preserved.
 
-```bash
-phyloFlash.pl -lib <sample_name> -read1 interleaved.fq.gz -interleaved -almosteverything
-```
+### 4. Multi-Sample Comparison
+After running individual samples, use `phyloFlash_compare.pl` to generate comparative visualizations.
 
-### Single-Cell or MDA Data
-For datasets with highly uneven coverage (e.g., Multiple Displacement Amplification), use the `-sc` toggle to optimize assembly parameters:
+*   **Generate Heatmaps/Barplots**:
+    `phyloFlash_compare.pl -task all -out <PREFIX> <SAMPLE1_FOLDER> <SAMPLE2_FOLDER> ...`
+*   **Distance Matrices**: Use `-task distance` to calculate beta-diversity metrics between samples based on SSU abundances.
 
-```bash
-phyloFlash.pl -lib <sample_name> -read1 R1.fq.gz -read2 R2.fq.gz -sc -almosteverything
-```
+## Expert Tips
+*   **Resource Allocation**: By default, phyloFlash attempts to use all available CPUs. Always specify `-CPUs` in shared HPC environments to avoid job termination.
+*   **Read Accessions**: Use `ENA_phyloFlash.pl` to automate the download and processing of public datasets directly from the European Nucleotide Archive.
+*   **Assembly Graphs**: If you have a `.fastg` file from a metagenome assembly, use `phyloFlash_fastgFishing.pl` to "fish out" contigs connected to identified SSU sequences, helping to link phylogeny to genomic context.
 
-### Comprehensive Reconstruction
-To run both SPAdes and EMIRGE for maximum reconstruction potential:
 
-```bash
-phyloFlash.pl -lib <sample_name> -read1 R1.fq.gz -read2 R2.fq.gz -everything
-```
 
-### Comparing Multiple Samples
-After running phyloFlash on individual libraries, use `phyloFlash_compare.pl` to generate comparative heatmaps or barplots:
+## Subcommands
 
-```bash
-phyloFlash_compare.pl -task barplot -out comparison_output sample1.json sample2.json sample3.json
-```
-
-## Expert Tips and Best Practices
-
-- **Environment Check**: Always run `phyloFlash.pl -check_env` after installation to ensure all dependencies (BBmap, SPAdes, VSEARCH, etc.) are correctly in the PATH.
-- **Resource Management**: Use the `-CPUs` flag to limit thread usage, as the default behavior is to use all available cores.
-- **Sensitivity vs. Speed**: By default, phyloFlash uses BBmap for initial mapping. If you need higher sensitivity for divergent sequences, use `-sortmerna`, though this is significantly slower.
-- **Trusted Contigs**: If you have a prior assembly, use `-trusted contigs.fasta` to help the pipeline identify and prioritize known SSU sequences.
-- **Output Organization**: Use `-zip` to automatically package results into a tarball and `-log` to ensure a record of the run parameters is preserved.
+| Command | Description |
+|---------|-------------|
+| phyloFlash.pl | Runs the phyloFlash pipeline to assemble and annotate eukaryotic viral genomes from sequencing data. |
+| phyloFlash_compare.pl | Compare phyloFlash runs. |
 
 ## Reference documentation
 - [phyloFlash GitHub Repository](./references/github_com_HRGV_phyloFlash.md)
-- [phyloFlash Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_phyloflash_overview.md)
+- [phyloFlash Documentation/Wiki](./references/github_com_HRGV_phyloFlash_wiki.md)

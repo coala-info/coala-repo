@@ -149,3 +149,6 @@ Usage:   chips learn -b reads.bam -p peak.bed -o outprefix [OPTIONS]
     --help        Print this help menu.
 ```
 
+
+## Metadata
+- **Skill**: generated

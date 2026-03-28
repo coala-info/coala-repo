@@ -1,6 +1,6 @@
 ---
 name: lexicmap
-description: LexicMap is a high-performance genomic alignment tool that provides base-level alignment and positional information for large-scale database searches. Use when user asks to index genomic databases, search for sequences with full base-level alignment, or identify matches for circular queries like plasmids and mitochondrial DNA.
+description: LexicMap performs base-level nucleotide alignment of sequences against massive databases of prokaryotic genomes using a hierarchical indexing strategy. Use when user asks to index large genome collections, search sequences against a genomic database, identify genes or plasmids, or convert alignment results to SAM and BLAST formats.
 homepage: https://github.com/shenwei356/LexicMap
 ---
 
@@ -9,54 +9,81 @@ homepage: https://github.com/shenwei356/LexicMap
 
 ## Overview
 
-LexicMap is a high-performance alignment tool specifically engineered to handle the scale of modern genomic databases. Unlike alignment-free tools that only identify matching genomes, LexicMap provides full base-level alignment and positional information. It utilizes a hierarchical index and an improved LexicHash sketching method to maintain high sensitivity while operating with significantly lower memory and time requirements than BLAST or MMseqs2. It is particularly robust for circular queries (plasmids/mtDNA) and fragmented assemblies.
-
-## Installation
-
-Install via Bioconda:
-```bash
-conda install bioconda::lexicmap
-```
+LexicMap is a specialized tool designed for base-level nucleotide alignment against massive databases of prokaryotic genomes (up to millions). It overcomes the memory and speed limitations of traditional tools like BLASTn by using a hierarchical indexing strategy based on LexicHash. It is particularly effective for identifying genes, plasmids, and viral sequences within fragmented or complete assemblies, providing standard metrics like identity, coverage, e-value, and bitscore.
 
 ## Core Workflows
 
-### 1. Building an Index
-Indexing is the first step and can be performed on directories of FASTA/Q files or specific file lists.
+### 1. Database Indexing
+To search sequences, you must first build a LexicMap index (`.lmi`).
 
-*   **From a directory**:
-    `lexicmap index -I /path/to/genomes/ -O db.lmi`
-*   **From a file list** (one path per line):
-    `lexicmap index -S -X genome_list.txt -O db.lmi`
+*   **From a directory of genomes:**
+    ```bash
+    lexicmap index -I /path/to/genomes/ -O database.lmi
+    ```
+*   **From a file list (recommended for >1M files):**
+    ```bash
+    lexicmap index --skip-file-check -X genome_list.txt -O database.lmi
+    ```
+*   **For Fungi or larger genomes:** Increase the max genome size (default 15MB):
+    ```bash
+    lexicmap index -g 300000000 -I fungi_dir/ -O fungi.lmi
+    ```
 
-### 2. Searching the Database
-Search parameters should be tuned based on the length and expected conservation of the query.
+### 2. Sequence Searching
+Search queries against the generated index.
 
-*   **For Short Queries (Genes, 16S, Long Reads)**:
-    Use a higher hit limit and strict coverage filters.
-    `lexicmap search -d db.lmi query.fasta -o results.tsv --top-n-genomes 10000 --align-min-match-pident 80 --min-qcov-per-genome 70`
+*   **Standard Gene/Short Query Search:**
+    ```bash
+    lexicmap search -d database.lmi query.fasta -o results.tsv
+    ```
+*   **Plasmid or Long Query Search:** Use lower identity and coverage thresholds to capture fragmented matches:
+    ```bash
+    lexicmap search -d database.lmi query.fasta -o results.tsv \
+        --align-min-match-pident 70 --min-qcov-per-genome 50 --top-n-genomes 0
+    ```
+*   **Taxonomic Filtering:** Limit search to specific TaxIDs (requires taxdump and mapping file):
+    ```bash
+    lexicmap search -d database.lmi query.fasta -t 543,-561 \
+        -T taxdump/ -G genome2taxid.tsv -o filtered_results.tsv
+    ```
 
-*   **For Long/Circular Queries (Plasmids, Viruses)**:
-    Set `top-n-genomes` to 0 to return all matches and lower the coverage threshold to account for fragmentation.
-    `lexicmap search -d db.lmi query.fasta -o results.tsv --top-n-genomes 0 --min-qcov-per-genome 50 --align-min-match-len 1000`
+### 3. Utility Operations
+*   **Extract Matched Subsequences:**
+    ```bash
+    lexicmap utils subseq -d database.lmi -f results.tsv -o matched_seqs.fasta
+    ```
+*   **Convert Output to SAM/BLAST format:**
+    ```bash
+    lexicmap utils 2sam -f results.tsv > results.sam
+    lexicmap utils 2blast -f results.tsv > results.blast
+    ```
+*   **Resume Unfinished Indexing:** If a merge step was interrupted:
+    ```bash
+    lexicmap utils remerge -d database.lmi
+    ```
 
-## Command Line Tips and Best Practices
+## Expert Tips & Best Practices
 
-*   **Memory Management**: If running on a system with limited RAM during search, use the `--gc-interval` flag to trigger garbage collection and reduce memory usage by up to 50%.
-*   **Handling Multi-copy Genes**: LexicMap returns all possible matches by default. To see every instance of a gene within a single genome, ensure you are inspecting the `hsp` and `cls` columns in the TSV output.
-*   **Circular Query Coverage**: Use the `qcovGnm` (genome-wide query coverage) metric instead of standard HSP coverage when dealing with circular sequences that might map across assembly gaps or start/end boundaries.
-*   **Resuming Tasks**: If an indexing or search task is interrupted, LexicMap provides utility commands to resume or merge partial results.
-*   **Merging Results**: For very large queries split across multiple runs, use:
-    `lexicmap utils merge-search-results -i search_dir/ -o combined_results.tsv`
-*   **Subsequence Extraction**: After identifying hits, you can extract the specific matched regions from the subject genomes using:
-    `lexicmap utils subseq -d db.lmi -i search_results.tsv -o matched_regions.fasta`
+*   **Memory Management:** If indexing crashes due to RAM limits, reduce the batch size using `-b` (e.g., `-b 2000`).
+*   **Short Read Support:** LexicMap is optimized for >150bp. For shorter reads (e.g., 100bp), you must index with smaller desert parameters: `-D 50 -d 25`.
+*   **Genome IDs:** Ensure your FASTA filenames contain unique identifiers. If you forget to use a regex during indexing, use `lexicmap utils edit-genome-ids` to fix the index without rebuilding.
+*   **Soft-Masking:** When working with eukaryotic or repeat-heavy genomes, use the `--soft-masking` flag during indexing to treat lowercase bases as 'A's for seeding while preserving them for alignment.
+*   **Performance:** For batch searching, use `--gc-interval 64` to force garbage collection and keep memory usage stable.
 
-## Output Format Key
-The default TSV output includes:
-*   `qcovGnm`: Total coverage of the query sequence by all HSPs in a genome.
-*   `qcovHSP`: Coverage of the query by a single High-scoring Segment Pair.
-*   `pident`: Percentage of identical matches.
-*   `sstr`: Subject strand (+ or -).
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| lexicmap | Generate shell autocompletion scripts |
+| lexicmap index | Generate an index from FASTA/Q sequences |
+| lexicmap search | Search sequences against an index |
+| utils | Some utilities |
 
 ## Reference documentation
-- [LexicMap Main Documentation](./references/github_com_shenwei356_LexicMap.md)
-- [LexicMap Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_lexicmap_overview.md)
+- [LexicMap Introduction](./references/bioinf_shenwei_me_LexicMap_introduction.md)
+- [Step 1: Building a Database](./references/bioinf_shenwei_me_LexicMap_tutorials_index.md)
+- [LexicMap Usage Overview](./references/bioinf_shenwei_me_LexicMap_usage_lexicmap.md)
+- [LexicMap FAQs](./references/bioinf_shenwei_me_LexicMap_faqs.md)
+- [LexicMap Utilities](./references/bioinf_shenwei_me_LexicMap_usage_utils.md)

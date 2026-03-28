@@ -553,3 +553,6 @@ optional arguments:
   --copy       Make a copy of files instead of moving
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -142,3 +142,6 @@ options:
                         -t option is for the previous NGSCheckMate version. No longer used.
 ```
 
+
+## Metadata
+- **Skill**: generated

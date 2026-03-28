@@ -1,6 +1,6 @@
 ---
 name: sam2lca
-description: sam2lca resolves taxonomic ambiguity in metagenomic datasets by calculating the Lowest Common Ancestor for sequencing reads that align to multiple reference sequences. Use when user asks to resolve taxonomic assignments, calculate the Lowest Common Ancestor for alignments, or update the local NCBI taxonomy database.
+description: sam2lca identifies the lowest common ancestor for reads that align to multiple reference sequences to provide accurate taxonomic classification. Use when user asks to resolve taxonomic ambiguity in sequencing data, analyze alignments for taxonomic assignment, or add taxonomic tags to BAM files.
 homepage: https://github.com/maxibor/sam2lca
 ---
 
@@ -8,55 +8,53 @@ homepage: https://github.com/maxibor/sam2lca
 # sam2lca
 
 ## Overview
-
-The `sam2lca` tool is designed to resolve taxonomic ambiguity in metagenomic and environmental DNA (eDNA) datasets. When a sequencing read aligns to multiple reference sequences, `sam2lca` calculates the Lowest Common Ancestor—the most specific node in the NCBI taxonomic tree that encompasses all identified hits for that read. This ensures conservative and accurate taxonomic assignment, preventing over-classification when sequences are conserved across multiple species or genera.
+sam2lca is a specialized bioinformatics tool designed to resolve taxonomic ambiguity in sequencing data. When a single read aligns to multiple reference sequences representing different organisms, sam2lca identifies the Lowest Common Ancestor (LCA) in the taxonomic tree to provide a conservative and accurate classification. It is particularly useful in metagenomics and environmental DNA (eDNA) workflows where reads often map to multiple related species.
 
 ## Core Workflows
 
-### 1. Database Management
-Before running an analysis, you must initialize or update the local taxonomic database.
+### Database Management
+Before analyzing alignments, the taxonomic database must be initialized or updated. sam2lca supports NCBI, GTDB, and custom taxonomies.
 
-*   **Initialize/Update Database**: Downloads and parses the latest NCBI taxonomy and accession-to-taxid mappings.
-    ```bash
-    sam2lca update-db
-    ```
-*   **List Available Databases**: Verify which database versions are currently stored locally.
-    ```bash
-    sam2lca list-db
-    ```
+- **List available databases**: `sam2lca list-db`
+- **Update or create a database**: `sam2lca update-db --db <database_name>`
+  - Common database names include `ncbi`, `gtdb`, and `18s`.
 
-### 2. Analyzing Alignments
-The primary function of the tool is the `analyze` command, which processes alignment files to produce taxonomic assignments.
+### Analyzing Alignments
+The primary command is `analyze`, which processes alignment files and produces taxonomic assignments.
 
-*   **Standard Analysis**:
-    ```bash
-    sam2lca analyze input.bam
-    ```
-*   **Custom Taxonomy Dumps**: As of version 1.1.4, you can provide specific NCBI taxonomy dump files (e.g., `nodes.dmp`, `names.dmp`) if you need to use a specific version of the taxonomy rather than the latest online version.
+- **Basic analysis**:
+  `sam2lca analyze input.bam`
+- **Filter by sequence identity**:
+  Use the `--min-identity` flag to ignore low-quality alignments (e.g., 0.90 to 1.0).
+  `sam2lca analyze input.bam --min-identity 0.95`
+- **Filter by edit distance**:
+  Use `--max-edit-dist` to limit the number of allowed mismatches.
+  `sam2lca analyze input.bam --max-edit-dist 2`
 
-## CLI Patterns and Best Practices
+### Advanced Output Options
+sam2lca can modify the alignment files themselves to include taxonomic metadata.
 
-### Input Requirements
-*   **Accession Numbers**: The reference sequences in your SAM/BAM/CRAM headers must use NCBI accession numbers. The tool relies on these to map alignments to the NCBI Taxonomy ID (TaxID).
-*   **File Formats**: While SAM is supported, using BAM or CRAM is highly recommended for better performance and reduced disk I/O.
+- **Add taxonomic tags to BAM**:
+  The tool can add `XN` (Taxon Name) and `XR` (Taxon Rank) flags to each alignment record.
+- **Split BAM by Taxonomy**:
+  Generate separate BAM files for different taxonomic groups at a specific rank (e.g., genus or family).
+  `sam2lca analyze input.bam --split-by-rank genus`
 
-### Common Command Options
-To see specific parameters for the analysis, such as filtering thresholds or output formatting, use the help flag:
-```bash
-sam2lca analyze --help
-```
+## Expert Tips
+- **Unclassified Reads**: By default, reads that cannot be assigned are given the TAXID `12908`.
+- **Performance**: The tool utilizes multithreading on shared dictionaries. Ensure your environment has sufficient memory when working with large taxonomic databases like NCBI.
+- **Custom Mappings**: You can provide custom accession-to-taxid mappings using JSON files via the `update-db` command.
+- **Progress Tracking**: For large files, sam2lca calculates the total read count early to provide an accurate progress bar during processing.
 
-### Performance Tips
-*   **Pre-filtering**: For very large datasets, consider pre-filtering your BAM files to remove unmapped reads or low-quality alignments before running `sam2lca` to speed up processing.
-*   **Database Maintenance**: Periodically run `update-db` to ensure your assignments reflect the most current NCBI taxonomy, as TaxIDs are frequently merged or updated.
 
-## Troubleshooting
-*   **Unknown TaxID Errors**: If the tool encounters accessions not present in the local database, ensure you have run `update-db` recently.
-*   **Installation**: The preferred installation method is via Bioconda:
-    ```bash
-    conda install -c bioconda sam2lca
-    ```
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| analyze | Run the sam2lca analysis |
+| update-db | Download/prepare acc2tax and taxonomy databases |
 
 ## Reference documentation
-- [sam2lca GitHub Repository](./references/github_com_maxibor_sam2lca.md)
-- [sam2lca Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_sam2lca_overview.md)
+- [sam2lca README](./references/github_com_maxibor_sam2lca_blob_master_README.md)
+- [sam2lca Changelog](./references/github_com_maxibor_sam2lca_blob_master_CHANGELOG.md)

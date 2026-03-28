@@ -1,0 +1,451 @@
+[ ]
+[ ]
+
+[Skip to content](#output-file-formats)
+
+clam
+
+Output File Formats
+
+Initializing search
+
+[GitHub](https://github.com/cademirch/clam "Go to repository")
+
+clam
+
+[GitHub](https://github.com/cademirch/clam "Go to repository")
+
+* [ ]
+
+  clam
+
+  clam
+  + [Home](../..)
+  + [Why clam?](../../explanation/why-clam/)
+  + [Core Concepts](../../explanation/concepts/)
+* [ ]
+
+  Tutorial
+
+  Tutorial
+  + [Getting Started](../../tutorial/01_overview/)
+* [ ]
+
+  How-to Guides
+
+  How-to Guides
+  + [Generate Callable Loci](../../how-to/generate-callable-loci/)
+  + [Calculate Statistics](../../how-to/calculate-statistics/)
+  + [Collect Depth Data](../../how-to/collect-depth-data/)
+* [x]
+
+  Reference
+
+  Reference
+  + [CLI Reference](../cli/)
+  + [Input Formats](../input-formats/)
+  + [ ]
+
+    Output Formats
+
+    [Output Formats](./)
+
+    Table of contents
+    - [Zarr Format Overview](#zarr-format-overview)
+
+      * [Depth Zarr Store](#depth-zarr-store)
+    - [clam loci Output](#clam-loci-output)
+
+      * [Callable Sites Zarr Store (default)](#callable-sites-zarr-store-default)
+      * [Per-Sample Mask Zarr Store (--per-sample)](#per-sample-mask-zarr-store-per-sample)
+    - [clam stat Output](#clam-stat-output)
+
+      * [pi.tsv](#pitsv)
+      * [dxy.tsv](#dxytsv)
+      * [fst.tsv](#fsttsv)
+      * [heterozygosity.tsv](#heterozygositytsv)
+    - [Output Summary](#output-summary)
+    - [Working with Outputs](#working-with-outputs)
+
+      * [Reading Zarr in Python](#reading-zarr-in-python)
+
+Table of contents
+
+* [Zarr Format Overview](#zarr-format-overview)
+
+  + [Depth Zarr Store](#depth-zarr-store)
+* [clam loci Output](#clam-loci-output)
+
+  + [Callable Sites Zarr Store (default)](#callable-sites-zarr-store-default)
+  + [Per-Sample Mask Zarr Store (--per-sample)](#per-sample-mask-zarr-store-per-sample)
+* [clam stat Output](#clam-stat-output)
+
+  + [pi.tsv](#pitsv)
+  + [dxy.tsv](#dxytsv)
+  + [fst.tsv](#fsttsv)
+  + [heterozygosity.tsv](#heterozygositytsv)
+* [Output Summary](#output-summary)
+* [Working with Outputs](#working-with-outputs)
+
+  + [Reading Zarr in Python](#reading-zarr-in-python)
+
+# Output File Formats
+
+This page documents the output files produced by clam commands.
+
+## Zarr Format Overview
+
+clam uses [Zarr](https://zarr.dev/) for its intermediate and output files. Zarr is a format for storing chunked, compressed N-dimensional arrays. Zarr enables better compression for storing multisample per-base values (depth in this case) than. Please see this [small benchmark](https://github.com/cademirch/clam/tree/486827890a54585545e208f895211d237e896c7d/benches) for a comparison.
+
+Schema Stability
+
+The Zarr schema (metadata structure, array layout) is not yet stable and may change in future versions of clam. If you are building tools that read clam's Zarr outputs, please reach out via Github issue with any feedback and/or your use case(s).
+
+### Depth Zarr Store
+
+`clam collect` produces a Zarr store containing raw depth values for all samples.
+
+**Structure:**
+
+```
+depths.zarr/
+├── zarr.json           # Zarr v3 metadata
+├── chr1/               # Per-chromosome arrays
+│   └── ...
+├── chr2/
+│   └── ...
+└── ...
+```
+
+**Root Metadata (`clam_metadata`):**
+
+```
+{
+  "contigs": [
+    {"name": "chr1", "length": 248956422},
+    {"name": "chr2", "length": 242193529}
+  ],
+  "column_names": ["sample1", "sample2", "sample3"],
+  "chunk_size": 1000000,
+  "populations": [
+    {"name": "PopA", "samples": ["sample1", "sample2"]},
+    {"name": "PopB", "samples": ["sample3"]}
+  ]
+}
+```
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `contigs` | array | List of chromosomes with names and lengths |
+| `column_names` | array | Sample names in column order |
+| `chunk_size` | integer | Chunk size in base pairs |
+| `populations` | array | Population definitions with sample membership (present when populations were specified during `collect`) |
+
+Note
+
+The `populations` field is present when populations were defined via `--samples` or `--population-file` during the `collect` step. This metadata is automatically read by `clam loci` when the zarr store is used as input.
+
+**Array Properties:**
+
+| Property | Value |
+| --- | --- |
+| Data type | `uint32` |
+| Shape | `(chromosome_length, num_samples)` |
+| Chunk shape | `(chunk_size, num_samples)` |
+| Compression | Blosc (Zstd, level 5, byte shuffle) |
+
+**Per-Chromosome Metadata (`contig_info`):**
+
+```
+{
+  "contig": "chr1",
+  "length": 248956422
+}
+```
+
+---
+
+## clam loci Output
+
+### Callable Sites Zarr Store (default)
+
+By default, `clam loci` produces a Zarr store containing callable sample counts per population.
+
+**Structure:** Same as depth Zarr (see above).
+
+**Root Metadata (`clam_metadata`):**
+
+```
+{
+  "contigs": [
+    {"name": "chr1", "length": 248956422},
+    {"name": "chr2", "length": 242193529}
+  ],
+  "column_names": ["PopA", "PopB", "PopC"],
+  "chunk_size": 1000000,
+  "callable_loci_type": "population_counts",
+  "populations": [
+    {"name": "PopA", "samples": ["sample1", "sample2", "sample3"]},
+    {"name": "PopB", "samples": ["sample4", "sample5"]},
+    {"name": "PopC", "samples": ["sample6", "sample7", "sample8"]}
+  ]
+}
+```
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `contigs` | array | List of chromosomes with names and lengths |
+| `column_names` | array | Population names in column order |
+| `chunk_size` | integer | Chunk size in base pairs |
+| `callable_loci_type` | string | Type of callable loci data (`population_counts`) |
+| `populations` | array | Population definitions with sample membership (see below) |
+
+**Population metadata:**
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `name` | string | Population name |
+| `samples` | array | List of sample names in this population |
+
+**Array Properties:**
+
+| Property | Value |
+| --- | --- |
+| Data type | `uint16` |
+| Shape | `(chromosome_length, num_populations)` |
+| Chunk shape | `(chunk_size, num_populations)` |
+| Compression | Blosc (Zstd, level 5, byte shuffle) |
+
+**Data interpretation:**
+
+Each value represents the number of samples in that population that are callable at that position. For example, if `PopA` has 10 samples and the value at position 1000 is 8, then 8 of the 10 samples in `PopA` are callable at position 1000.
+
+### Per-Sample Mask Zarr Store (`--per-sample`)
+
+When using `--per-sample`, `clam loci` outputs a boolean mask indicating callability for each sample.
+
+**Root Metadata (`clam_metadata`):**
+
+```
+{
+  "contigs": [
+    {"name": "chr1", "length": 248956422}
+  ],
+  "column_names": ["sample1", "sample2", "sample3"],
+  "chunk_size": 1000000,
+  "callable_loci_type": "sample_masks",
+  "populations": [
+    {"name": "PopA", "samples": ["sample1", "sample2"]},
+    {"name": "PopB", "samples": ["sample3"]}
+  ]
+}
+```
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `contigs` | array | List of chromosomes with names and lengths |
+| `column_names` | array | Sample names in column order |
+| `chunk_size` | integer | Chunk size in base pairs |
+| `callable_loci_type` | string | Type of callable loci data (`sample_masks`) |
+| `populations` | array | Population definitions with sample membership |
+
+**Array Properties:**
+
+| Property | Value |
+| --- | --- |
+| Data type | `bool` |
+| Shape | `(chromosome_length, num_samples)` |
+| Chunk shape | `(chunk_size, num_samples)` |
+| Compression | PackBits |
+
+**Data interpretation:**
+
+* `true`: Site is callable for this sample
+* `false`: Site is not callable for this sample
+
+---
+
+## clam stat Output
+
+`clam stat` produces tab-separated (TSV) files in the specified output directory.
+
+### pi.tsv
+
+Nucleotide diversity (π) per population per window.
+
+**Always generated.**
+
+| Column | Type | Description |
+| --- | --- | --- |
+| `chrom` | string | Chromosome name |
+| `start` | integer | Window start position (1-based) |
+| `end` | integer | Window end position (1-based, inclusive) |
+| `population` | string | Population name |
+| `pi` | float | Nucleotide diversity estimate |
+| `comparisons` | integer | Total pairwise comparisons (denominator) |
+| `differences` | integer | Pairwise differences observed (numerator) |
+
+**Example:**
+
+```
+chrom   start   end population  pi  comparisons differences
+chr1    1   10000   PopA    0.00234 4500000 10530
+chr1    1   10000   PopB    0.00198 3800000 7524
+chr1    10001   20000   PopA    0.00241 4600000 11086
+```
+
+**Notes:**
+
+* `pi = differences / comparisons`
+* `comparisons` includes both variant and invariant callable sites
+* `NaN` indicates no valid comparisons in the window
+
+### dxy.tsv
+
+Absolute divergence (dxy) between population pairs.
+
+**Generated only when >1 population is defined.**
+
+| Column | Type | Description |
+| --- | --- | --- |
+| `chrom` | string | Chromosome name |
+| `start` | integer | Window start position (1-based) |
+| `end` | integer | Window end position (1-based, inclusive) |
+| `population1` | string | First population name |
+| `population2` | string | Second population name |
+| `dxy` | float | Absolute divergence estimate |
+| `comparisons` | integer | Total between-population comparisons |
+| `differences` | integer | Between-population differences |
+
+**Example:**
+
+```
+chrom   start   end population1 population2 dxy comparisons differences
+chr1    1   10000   PopA    PopB    0.00312 8500000 26520
+chr1    1   10000   PopA    PopC    0.00287 7200000 20664
+chr1    1   10000   PopB    PopC    0.00301 6800000 20468
+```
+
+**Notes:**
+
+* One row per population pair per window
+* Population pairs are unordered (`PopA-PopB` is the same as `PopB-PopA`)
+* `dxy = differences / comparisons`
+
+### fst.tsv
+
+Fixation index (FST) between population pairs.
+
+**Generated only when >1 population is defined.**
+
+| Column | Type | Description |
+| --- | --- | --- |
+| `chrom` | string | Chromosome name |
+| `start` | integer | Window start position (1-based) |
+| `end` | integer | Window end position (1-based, inclusive) |
+| `population1` | string | First population name |
+| `population2` | string | Second population name |
+| `fst` | float | FST estimate (Hudson estimator) |
+
+**Example:**
+
+```
+chrom   start   end population1 population2 fst
+chr1    1   10000   PopA    PopB    0.156
+chr1    1   10000   PopA    PopC    0.089
+chr1    1   10000   PopB    PopC    0.201
+```
+
+**Notes:**
+
+* FST is calculated using the Hudson estimator: FST = (dxy - πavg) / dxy
+* Values range from 0 (no differentiation) to 1 (complete differentiation)
+* Negative values can occur when within-population diversity exceeds between-population divergence
+* `NaN` indicates undefined FST (e.g., no polymorphic sites)
+
+### heterozygosity.tsv
+
+Per-sample or per-population heterozygosity.
+
+**Generated only when callable sites are provided.**
+
+| Column | Type | Description |
+| --- | --- | --- |
+| `chrom` | string | Chromosome name |
+| `start` | integer | Window start position (1-based) |
+| `end` | integer | Window end position (1-based, inclusive) |
+| `sample` | string | Sample name (only in per-sample mode) |
+| `population` | string | Population name |
+| `het_total` | integer | Number of heterozygous sites |
+| `callable_total` | integer | Number of callable sites |
+| `heterozygosity` | float | Heterozygosity rate (het\_total / callable\_total) |
+| `het_not_in_roh` | integer | Het sites excluding ROH (if `--roh` provided) |
+| `callable_not_in_roh` | integer | Callable sites excluding ROH (if `--roh` provided) |
+| `heterozygosity_not_in_roh` | float | Heterozygosity excluding ROH (if `--roh` provided) |
+
+**Example (per-sample mode):**
+
+```
+chrom   start   end sample  population  het_total   callable_total  heterozygosity  het_not_in_roh  callable_not_in_roh heterozygosity_not_in_roh
+chr1    1   10000   sample1 PopA    234 9500    0.0246  220 9000    0.0244
+chr1    1   10000   sample2 PopA    198 9200    0.0215  198 9200    0.0215
+```
+
+**Example (per-population mode):**
+
+```
+chrom   start   end population  het_total   callable_total  heterozygosity  het_not_in_roh  callable_not_in_roh heterozygosity_not_in_roh
+chr1    1   10000   PopA    1856    94500   0.0196  1750    89000   0.0197
+chr1    1   10000   PopB    2134    96000   0.0222  2134    96000   0.0222
+```
+
+**Notes:**
+
+* Per-sample mode is used when callable sites were generated with `--per-sample` in `clam loci`
+* Per-population mode is used when callable sites contain population counts (default `clam loci` output)
+
+---
+
+## Output Summary
+
+| Command | Output | Format | Description |
+| --- | --- | --- | --- |
+| `collect` | `*.zarr/` | Zarr | Raw depth values (uint32) |
+| `loci` | `*.zarr/` | Zarr | Callable counts (uint16) or masks (bool) |
+| `stat` | `pi.tsv` | TSV | Nucleotide diversity |
+| `stat` | `dxy.tsv` | TSV | Absolute divergence (if >1 pop) |
+| `stat` | `fst.tsv` | TSV | Fixation index (if >1 pop) |
+| `stat` | `heterozygosity.tsv` | TSV | Heterozygosity (if callable sites provided) |
+
+---
+
+## Working with Outputs
+
+### Reading Zarr in Python
+
+```
+import zarr
+
+# Open store
+store = zarr.open("callable.zarr", mode="r")
+
+# Get metadata
+meta = store.attrs["clam_metadata"]
+populations = meta["column_names"]
+chunk_size = meta["chunk_size"]
+
+# Read chromosome data
+chr1 = store["chr1"][:]  # Shape: (chrom_length, num_populations)
+
+# Read specific region (efficient)
+region = store["chr1"][1000000:2000000, :]
+```
+
+For more detailed examples of working with Zarr outputs, including exploring depth distributions, see the [example notebooks](https://github.com/cademirch/clam/tree/main/notebooks) (coming soon).
+
+[Previous
+
+Input Formats](../input-formats/)
+
+Made with
+[Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)

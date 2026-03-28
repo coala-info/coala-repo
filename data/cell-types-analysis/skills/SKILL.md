@@ -1,6 +1,6 @@
 ---
 name: cell-types-analysis
-description: This tool processes scRNA-seq cell type classification results to evaluate tool performance or generate consensus predictions using the Cell Ontology. Use when user asks to evaluate classification accuracy, map labels to ontology terms, or aggregate multiple tool predictions into a consensus.
+description: The cell-types-analysis suite benchmarks single-cell RNA sequencing cell type classifiers and generates consensus labels from multiple classification outputs. Use when user asks to map cell labels to ontologies, evaluate tool performance against ground truth, or aggregate multiple classifier results into consensus labels.
 homepage: https://github.com/ebi-gene-expression-group/cell-types-analysis
 ---
 
@@ -9,73 +9,60 @@ homepage: https://github.com/ebi-gene-expression-group/cell-types-analysis
 
 ## Overview
 
-The `cell-types-analysis` suite is a collection of R scripts designed to process the results of scRNA-seq cell type classifiers. It supports two primary workflows:
-1.  **Evaluation**: Benchmarking classification tools by comparing their predictions against labeled reference data using metrics like F1-score, accuracy, and semantic similarity.
-2.  **Production**: Aggregating predictions from multiple independent tools to derive a high-confidence consensus for novel, unlabeled datasets.
+The cell-types-analysis suite provides a standardized framework for processing and benchmarking single-cell RNA sequencing (scRNA-seq) cell type labels. It bridges the gap between raw classification tool outputs and biological interpretation by enabling rigorous performance evaluation and the generation of high-confidence consensus labels from disparate classification methods. The toolset is particularly useful for researchers needing to validate new classification methods or harmonize results across multiple pre-trained classifiers for novel datasets.
 
-The tool is essential for handling the semantic complexity of cell type nomenclature by mapping labels to the Cell Ontology (CL).
+## Core Workflows
 
-## Tool-Specific Best Practices
+### 1. Ontology Mapping
+Before analysis, map free-text cell labels to formal Cell Ontology (CL) terms to enable semantic similarity metrics.
+- **Script**: `build_cell_ontology_dict.R`
+- **Input**: Directory of (condensed) SDRF metadata files.
+- **Key Arguments**:
+  - `--input-dir`: Path to SDRF files.
+  - `--cell-label-col-name`: Column name for inferred labels (default: "inferred cell type").
+  - `--cell-ontology-col-name`: Column name for CL terms (default: "cell.type.ontology").
+  - `--output-dict-path`: Path for the resulting `.rds` dictionary.
 
-### Input Data Preparation
-*   **Standard Format**: Ensure tool outputs are tab-separated files with three columns: `cell_id`, `predicted_label`, and `score`.
-*   **Metadata Headers**: For performance tracking, include metadata at the top of your output files:
-    ```text
-    # tool <tool_name>
-    # dataset <dataset_name>
-    ```
-*   **File Naming**: When evaluating multiple tools, store outputs in a single directory and prefix filenames with the tool name (e.g., `toolA_output.tsv`, `toolB_output.tsv`).
+### 2. Tool Evaluation
+Benchmark classification tools against a "ground truth" reference dataset.
+- **Script**: `get_tool_performance_table.R`
+- **Metrics Calculated**: Accuracy, Median F1-score, percentage of unlabelled cells, exact/partial matching, and semantic similarity.
+- **Input Requirements**: 
+  - Standardized TSV files (cell_id, predicted_label, score).
+  - A reference table with cell_id, reference_label, and CL terms.
+- **Metadata**: Tool output files must include headers:
+  ```text
+  # tool <tool_name>
+  # dataset <training_dataset_name>
+  ```
 
-### Reference Data Requirements
-*   Evaluation requires a reference table with `cell_id`, `reference_label`, and `cell_ontology_term` (CL ID).
-*   Use `build_cell_ontology_dict.R` to create the necessary mapping between text labels and ontology terms before running performance metrics.
+### 3. Production Consensus
+Aggregate predictions from multiple tools to improve label confidence for novel data.
+- **Step A**: Run `combine_tool_outputs.R` to aggregate individual tool predictions into a single table.
+- **Step B**: Run `get_consensus_output.R` to calculate agreement rates and semantic consistency across tools.
+- **Output**: A table containing top labels, weighted scores, and an `agreement_rate`.
 
-## Common CLI Patterns
+## CLI Best Practices
 
-### 1. Building an Ontology Dictionary
-Map your labels to ontology terms using metadata from SDRF files.
-```bash
-build_cell_ontology_dict.R \
-  --input-dir <path_to_sdrf_dir> \
-  --barcode-col-name "barcode" \
-  --cell-label-col-name "cell_type" \
-  --cell-ontology-col-name "ontology_term" \
-  --output-dict-path "cl_dict.rds"
-```
+- **Standardized Input**: Ensure all tool output files are in a single directory and prefixed with the tool name (e.g., `toolX_output.tsv`).
+- **Parallelization**: Use the `--num-cores` flag in `get_tool_performance_table.R` to speed up semantic similarity calculations on large datasets.
+- **P-Value Calculation**: For robust evaluation, use `get_empirical_dist.R` followed by `get_tool_pvals.R` to assign statistical significance to performance scores.
+- **Validation**: Always run `label_analysis_run_post_install_tests.sh` after installation to verify the R environment and dependencies (e.g., `dropletutils-scripts`, `bioconductor-onassis`).
 
-### 2. Evaluating Tool Performance
-Generate a comprehensive table of metrics (Accuracy, F1, Semantic Similarity) for all tools in a directory.
-```bash
-get_tool_performance_table.R \
-  --input-dir <predictions_dir> \
-  --ref-file <reference_labels.tsv> \
-  --ontology-graph <cl_graph.obj> \
-  --lab-cl-mapping "cl_dict.rds" \
-  --barcode-col-ref "cell_id" \
-  --barcode-col-pred "cell_id" \
-  --label-column-ref "reference_label" \
-  --label-column-pred "predicted_label" \
-  --num-cores 4
-```
 
-### 3. Generating Consensus Predictions
-For novel data, first combine outputs from different tools, then calculate the consensus.
-```bash
-# Step 1: Combine outputs
-combine_tool_outputs.R --input-dir <predictions_dir> --output-table "combined_results.tsv"
 
-# Step 2: Get consensus
-get_consensus_output.R \
-  --input-table "combined_results.tsv" \
-  --ontology-graph <cl_graph.obj> \
-  --output-table "consensus_final.tsv"
-```
+## Subcommands
 
-## Expert Tips
-*   **Semantic Similarity**: Use the `--semantic-sim-metric` flag in performance scripts to choose between different similarity measures (e.g., Resnik, Lin) depending on how strictly you want to penalize "near-miss" classifications in the ontology tree.
-*   **Handling Unlabeled Cells**: Use the `--exclusions` flag with a YAML file to define terms that should be treated as "unlabelled" (e.g., "unknown", "unclassified") to avoid skewing accuracy metrics.
-*   **P-Value Calculation**: If you need statistical confidence for your scores, run `get_empirical_dist.R` followed by `get_tool_pvals.R` to estimate the significance of the observed classification performance.
+| Command | Description |
+|---------|-------------|
+| /usr/local/bin/get_empirical_dist.R | Computes empirical distributions for cell type analysis. |
+| /usr/local/bin/get_tool_performance_table.R | Generates a performance table for cell type annotation tools. |
+| build_cell_ontology_dict.R | Builds a dictionary mapping cell labels to cell ontology terms from SDRF files. |
+| cell-types-analysis_get_consensus_output.R | Generates consensus output for cell type analysis. |
+| combine_tool_outputs.R | Combines standardized output TSV files from multiple classifiers. |
+| get_tool_pvals.R | Calculate p-values for tool performance statistics. |
 
 ## Reference documentation
-- [cell-types-analysis GitHub Repository](./references/github_com_ebi-gene-expression-group_cell-types-analysis.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_cell-types-analysis_overview.md)
+- [Main README](./references/github_com_ebi-gene-expression-group_cell-types-analysis_blob_develop_README.md)
+- [Ontology Dictionary Builder](./references/github_com_ebi-gene-expression-group_cell-types-analysis_blob_develop_build_cell_ontology_dict.R.md)
+- [Performance Table Generator](./references/github_com_ebi-gene-expression-group_cell-types-analysis_blob_develop_get_tool_performance_table.R.md)

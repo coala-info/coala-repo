@@ -190,3 +190,6 @@ optional arguments:
   -S, --is_sam  input is SAM
 ```
 
+
+## Metadata
+- **Skill**: generated

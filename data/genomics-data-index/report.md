@@ -464,3 +464,6 @@ Try 'gdi load mlst-sistr --help' for help.
 Error: No such option: --h Did you mean --help?
 ```
 
+
+## Metadata
+- **Skill**: generated

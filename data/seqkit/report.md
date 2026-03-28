@@ -2729,3 +2729,6 @@ Global Flags:
                                         SEQKIT_THREADS) (default 4)
 ```
 
+
+## Metadata
+- **Skill**: generated

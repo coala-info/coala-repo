@@ -186,3 +186,6 @@ options:
   --no_gtag             Do not filter read junction with GT-AG signal
 ```
 
+
+## Metadata
+- **Skill**: generated

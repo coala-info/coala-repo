@@ -1,6 +1,6 @@
 ---
 name: macrel
-description: Macrel classifies and retrieves antimicrobial peptides from genomic and metagenomic data using machine learning models. Use when user asks to predict antimicrobial peptides from sequences, analyze contigs or metagenomic reads, determine peptide abundance, or query the AMPSphere database.
+description: Macrel identifies and classifies antimicrobial peptides within genomic and metagenomic datasets. Use when user asks to predict antimicrobial peptides from sequences, mine contigs for small open reading frames, process raw metagenomic reads, or perform abundance profiling.
 homepage: https://github.com/BigDataBiology/macrel
 ---
 
@@ -9,67 +9,83 @@ homepage: https://github.com/BigDataBiology/macrel
 
 ## Overview
 
-Macrel is a comprehensive pipeline designed for the classification and retrieval of antimicrobial peptides (AMPs) from (meta)genomic data. It employs machine learning models to predict whether a sequence functions as an AMP and further assesses its potential hemolytic activity. The tool is versatile, handling inputs ranging from raw sequencing reads to assembled contigs and protein FASTA files. Beyond prediction, Macrel facilitates the discovery of known peptides by interfacing with the AMPSphere database, making it a vital tool for researchers in drug discovery and microbiome analysis.
+Macrel is a specialized pipeline designed for the identification and classification of antimicrobial peptides (AMPs) within genomic and metagenomic datasets. It excels at processing raw sequencing reads, assembled contigs, or pre-extracted peptide sequences to predict both antimicrobial potential and hemolytic activity. By leveraging machine learning models, Macrel provides a high-throughput solution for discovering novel bioactive molecules in complex biological samples.
 
-## Command Line Usage
+## Core Workflows
 
-Macrel uses a subcommand-based interface. The general syntax is `macrel COMMAND [OPTIONS]`.
-
-### 1. Peptide Prediction
-Use this when you have a set of amino acid sequences and want to predict their AMP potential and hemolytic activity.
+### 1. Peptide Prediction and Classification
+Use this mode when you already have a set of amino acid sequences and want to identify which ones are likely to be AMPs.
 
 ```bash
-macrel peptides --fasta input_peptides.faa --output out_peptides
+macrel peptides \
+    --fasta input_peptides.faa \
+    --output out_folder \
+    --threads 4
 ```
 
-### 2. Contig Analysis
-Use this for assembled nucleotide sequences. Macrel will predict small genes (≤ 100 amino acids) and then classify them.
+### 2. Mining Contigs
+Use this mode to predict small Open Reading Frames (smORFs) from nucleotide assemblies and classify them.
 
 ```bash
-macrel contigs --fasta assembly.fna --output out_contigs
+macrel contigs \
+    --fasta assembly.fna \
+    --output out_contigs
 ```
+*   **Note**: This generates a prediction table, a FASTA file of predicted smORFs (≤ 100aa), and gene coordinates.
 
-### 3. Metagenomic Reads
-Use this to process raw short reads. This mode performs assembly/gene prediction internally before classification.
+### 3. Metagenomic Read Processing
+Use this mode to perform an end-to-end analysis starting from raw FASTQ reads. Macrel will handle assembly and gene prediction internally.
 
 ```bash
-# For paired-end reads
-macrel reads -1 R1.fq.gz -2 R2.fq.gz --output out_metag --outtag sample_name
+# Paired-end reads
+macrel reads \
+    -1 R1.fq.gz \
+    -2 R2.fq.gz \
+    --output out_metagenomics \
+    --outtag sample_name
 
-# For single-end reads
-macrel reads -1 single.fq.gz --output out_metag
+# Single-end reads
+macrel reads \
+    -1 reads.fq.gz \
+    --output out_single_end
 ```
 
 ### 4. Abundance Profiling
-Use this to map short reads against a reference set of peptides to determine their abundance in a sample.
+Use this mode to map metagenomic reads against a reference database of AMPs to determine their relative abundance.
 
 ```bash
-macrel abundance -1 reads.fq.gz --fasta reference_peptides.faa --output out_abundance
-```
-
-### 5. Querying AMPSphere
-Use this to check if your sequences match known AMPs in the AMPSphere database.
-
-```bash
-# Exact matching via API (requires internet)
-macrel query-ampsphere --fasta peptides.faa --output out_query
-
-# Approximate matching using MMSeqs2 or HMMER
-macrel query-ampsphere --query-mode mmseqs --fasta peptides.faa --output out_query
-
-# Local execution (downloads database on first run)
-macrel query-ampsphere --local --fasta peptides.faa --output out_query
+macrel abundance \
+    -1 reads.fq.gz \
+    --fasta reference_amps.faa \
+    --output out_abundance
 ```
 
 ## Expert Tips and Best Practices
 
-- **Probability Interpretation**: Macrel considers any peptide with a probability (p) > 0.5 as an AMP. However, for high-confidence candidates, prioritize sequences with probabilities closer to 1.0.
-- **Hemolytic Activity**: Always check the hemolytic activity prediction columns in the output table to filter out peptides that might be toxic to host cells.
-- **Resource Management**: For large metagenomic datasets, ensure you have sufficient disk space for intermediate files generated during the `reads` and `contigs` subcommands.
-- **Database Updates**: When using `query-ampsphere --local`, Macrel caches the database. If you need to ensure you are using the latest version of AMPSphere, check the documentation for cache clearing or redownload triggers.
-- **Input Formats**: Macrel natively supports compressed FASTA and FASTQ files (.gz, .bz2, .xz), which saves significant disk space when handling large-scale metagenomic data.
+*   **Probability Thresholds**: Macrel considers any peptide with a probability ($p$) > 0.5 as an AMP. However, for high-confidence candidates, prioritize sequences with probabilities closer to 1.0.
+*   **Resource Management**: Use the `--threads` flag to speed up processing, especially during the `reads` and `contigs` subcommands which involve assembly and gene prediction.
+*   **Output Interpretation**: The main output table includes:
+    *   `sequence`: The peptide sequence.
+    *   `classification`: Structural/compositional class.
+    *   `amp_prob`: Probability of being an AMP.
+    *   `hemolytic`: Prediction of hemolytic activity.
+    *   `hemo_prob`: Probability of being hemolytic.
+*   **AMPSphere Integration**: Recent versions support querying AMPSphere. Use `--verbose` to track the progress of online or local database matching.
+*   **Input Formats**: Macrel supports compressed FASTA/FASTQ files (`.gz`, `.bz2`, `.xz`).
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| macrel | Macrel v1.6.0 |
+| macrel | macrel v1.6.0 |
+| macrel | macrel v1.6.0 |
+| macrel | macrel v1.6.0 |
+| macrel | Macrel command to execute (see documentation) |
 
 ## Reference documentation
-- [Macrel GitHub Repository](./references/github_com_BigDataBiology_macrel.md)
-- [Macrel Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_macrel_overview.md)
-- [Macrel Version History](./references/github_com_BigDataBiology_macrel_tags.md)
+
+- [Macrel GitHub README](./references/github_com_BigDataBiology_macrel_blob_main_README.md)
+- [Macrel ChangeLog](./references/github_com_BigDataBiology_macrel_blob_main_ChangeLog.md)

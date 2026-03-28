@@ -1,0 +1,297 @@
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fbulik%2Fldsc%2Fwiki%2FPartitioned-Heritability)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fbulik%2Fldsc%2Fwiki%2FPartitioned-Heritability)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Fwiki%2Fshow&source=header-repo&source_repo=bulik%2Fldsc)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[bulik](/bulik)
+/
+**[ldsc](/bulik/ldsc)**
+Public
+
+* [Notifications](/login?return_to=%2Fbulik%2Fldsc) You must be signed in to change notification settings
+* [Fork
+  368](/login?return_to=%2Fbulik%2Fldsc)
+* [Star
+   770](/login?return_to=%2Fbulik%2Fldsc)
+
+* [Code](/bulik/ldsc)
+* [Issues
+  320](/bulik/ldsc/issues)
+* [Pull requests
+  12](/bulik/ldsc/pulls)
+* [Actions](/bulik/ldsc/actions)
+* [Projects](/bulik/ldsc/projects)
+* [Wiki](/bulik/ldsc/wiki)
+* [Security
+  0](/bulik/ldsc/security)
+* [Insights](/bulik/ldsc/pulse)
+
+Additional navigation options
+
+* [Code](/bulik/ldsc)
+* [Issues](/bulik/ldsc/issues)
+* [Pull requests](/bulik/ldsc/pulls)
+* [Actions](/bulik/ldsc/actions)
+* [Projects](/bulik/ldsc/projects)
+* [Wiki](/bulik/ldsc/wiki)
+* [Security](/bulik/ldsc/security)
+* [Insights](/bulik/ldsc/pulse)
+
+# Partitioned Heritability
+
+[Jump to bottom](#wiki-pages-box)
+
+hilaryfinucane edited this page Feb 7, 2021
+·
+[16 revisions](/bulik/ldsc/wiki/Partitioned-Heritability/_history)
+
+## Overview
+
+In this tutorial, you will partition the heritability of BMI by functional category, using the baseline model. We will assume you have already followed the instructions in the [README](https://github.com/bulik/ldsc) for downloading and installing `python` and `ldsc`.
+
+## Step 1: Download the data
+
+The LD scores used in [Finucane, Bulik-Sullivan et al., bioRxiv](http://biorxiv.org/content/early/2015/01/23/014241) can be downloaded [here](http://data.broadinstitute.org/alkesgroup/LDSCORE/). To do the basic baseline analysis, you will need to download the baseline model LD scores (`baseline.*` in `1000G_Phase1_baseline_ldscores.tgz`), regression weights (`weights.*` in `weights_hm3_no_hla.tgz`), and allele frequencies (`1000G.mac5eur.*` in `1000G_Phase1_frq.tgz`). To do a cell-type group comparison (described below) you will also have to download the cell type files (`1000G_Phase1_cell_type_groups.tgz`). Corresponding files built from 1000 Genomes Phase 3 are also available.
+
+To download the BMI summary statistics, go to <http://www.broadinstitute.org/collaboration/giant/index.php/GIANT_consortium_data_files> and download `GIANT_BMI_Speliotes2010_publicrelease_HapMapCeuFreq.txt`. (You can use the `download GZIP` link and then unzip the resulting file.)
+
+Check that the file head is:
+
+```
+ > head GIANT_BMI_Speliotes2010_publicrelease_HapMapCeuFreq.txt
+MarkerName Allele1 Allele2 Freq.Allele1.HapMapCEU p N
+rs10 a c 0.0333 0.708 80566
+rs1000000 g a 0.6333 0.506 123865
+rs10000010 c t 0.425 0.736 123827
+rs10000012 c g 0.8083 0.042 123809
+rs10000013 c a 0.1667 0.0689 123863
+rs10000017 t c 0.2333 0.457 123262
+rs1000002 c t 0.475 0.0322 123783
+rs10000023 t g 0.5917 0.939 123756
+rs10000029 t c 0.975 0.24 103623
+```
+
+Next, convert this file to the `.sumstats` format (see the [docs](../docs/file_formats_sumstats.txt)) using `munge_sumstats.py`. We recommend only keeping HapMap3 SNPs; to do this, you can download a list of HapMap3 SNPs [here](https://data.broadinstitute.org/alkesgroup/LDSCORE/w_hm3.snplist.bz2). Unzip this file to get `w_hm3.snplist`, and then run
+
+```
+python munge_sumstats.py --sumstats GIANT_BMI_Speliotes2010_publicrelease_HapMapCeuFreq.txt\
+--merge-alleles w_hm3.snplist
+--out BMI\
+ --a1-inc
+```
+
+This will give you a file called `BMI.sumstats.gz`.
+
+## Step 2: Partition heritability
+
+The following command will allow you to partition heritability:
+
+```
+python ldsc.py
+	--h2 BMI.sumstats.gz\
+	--ref-ld-chr baseline.\
+	--w-ld-chr weights.\
+	--overlap-annot\
+	--frqfile-chr 1000G.mac5eur.\
+	--out BMI_baseline
+```
+
+Partitioning heritability with 53 overlapping categories takes about 10 minutes, mostly spent reading in all of the annotation matrices. Here is what each of the flags means:
+
+### `--h2`
+
+This flag tells `ldsc` to compute partitioned heritability. The argument should be a file in the `.sumstats` format, which can be gzipped or not. This file should not include custom array data like immunochip, and it should be data from a population that is similar to the population in the LD scores. The LD scores downloaded for this tutorial are European LD scores.
+
+### `--ref-ld-chr`
+
+The `--ref-ld` flag tells `ldsc` which LD Score files to use as the independent variable in the LD Score regression. The `--ref-ld-chr` flag is used for LD Score files split across chromosomes. By default, `ldsc` appends the chromosome number to the end. For example, typing `--ref-ld-chr baseline.` tells `ldsc` to use the files `baseline.1.l2.ldscore.gz`, ... , `baseline.22.l2.ldscore.gz` and `baseline.1.l2.M_5_50`, ... , `baseline.22.l2.M_5_50`. If the chromosome number is in the middle of the filename, you can tell `ldsc` where to insert the chromosome number by using an `@` symbol. For example, `--ref-ld-chr ld/chr@`. The argument to `--ref-ld` should omit the file suffixes (`.l2.ldscore.gz`, `.M_5_50`).
+
+If you are using the `--overlap-annot` flag, then you must have `.annot.gz` files with the same prefix, and these must be the `.annot.gz` files that were used as input to `--l2` when computing the LD scores. In other words, your `.annot.gz` files must have a row for every SNP in your reference panel. On the other hand, your `.l2.ldscore.gz` files may have fewer rows if you used the `--print-snps` flag when they were computed.
+
+You can input here either a single set of file or a comma-separated list of files. Below, there is an example with comma-separated files. When inputting multiple files, be extra careful not to introduce any co-linearity! For example, don't have the same annotation in two files, or a set of annotations in one file that forms a disjoint union of an annotation from the second file. This will cause `ldsc` to throw an error. This won't be a problem if you only use the files downloaded from the LDSCORE folder above. Also, if you are using your own annotation files, be sure that the union of all annotations you are including is the set of all variants, for example by including an annotation of all ones.
+
+### `--w-ld-chr`
+
+This flag gives the location of the LD scores used for regression weights. It should be a non-partitioned `.l2.ldscore.gz` file that was computed using the regression SNPs. We recommend using HapMap3 SNPs, excluding the HLA region, as default regression SNPs; that is what is in `weights.*`.
+
+### `--out`
+
+This flag tells `ldsc` where to print the the output. It will append .log and .results to this prefix. So in this case, you will see `BMI_baseline.log` and `BMI_baseline.results`.
+
+### `--overlap-annot`
+
+This flag tells `ldsc` that the categories you used to generate `baseline.*.l2.ldscore.gz` overlap with each other. To interpret the results when there are overlapping categories, `ldsc` needs to read in the `.annot.gz` files. It does this using the same prefix as in `--ref-ld` or `--ref-ld-chr`.
+
+### `--frqfile-chr`
+
+In order to use only SNPs with MAF > 5% (see [discussion of 22.M\_5\_50](https://github.com/bulik/ldsc/wiki/LD-Score-Estimation-Tutorial#22l2m-22l2m_5_50)), `ldsc` needs to know how many SNPs with MAF > 5% there are in every pairwise intersection of categories. Because the same annotations may be used in different combinations--for example, several different reference panels may be input at the same time--a single `.M_5_50` file doesn't suffix. Thus `--overlap-annot` requires a frequency file, rather than just a `.M_5_50` file. If you use the `--not-M-5-50` flag, then this file is not necessary.
+
+## Output files
+
+### `.log` file
+
+Format for overlapping categories changing soon.
+
+### `.results` file
+
+This file has the results of the analysis in tab-delimited form. If any category contains all SNPs, then that category will not appear in this file. There is one row for each category and columns summarizing the results: Proportion of SNPs, Proportion of heritability, Enrichment, and standard errors. Enrichment is (Prop. heritability) / (Prop. SNPs). If you use the `--print-coefficients` flag, then there will also be columns for the regression coefficients. (See [Finucane, Bulik-Sullivan et al., bioRxiv](http://biorxiv.org/content/early/2015/01/23/014241) for a discussion of the relationship between the coefficients and proportions of heritability.)
+
+## Cell-type group analysis
+
+Update: a more efficient way to do cell type-specific analyses is now implemented and described in the [Cell type-specific analyses](https://github.com/bulik/ldsc/wiki/Cell-type-specific-analyses) section. We only recommend the approach described here if you are interested not just in prioritizing relevant cell types but also in estimating proportion of heritability.
+
+==
+
+To compare cell-type groups, we use the coefficient z-score in an analysis containing the full baseline model. This means that we are controlling for the 53 categories of the full baseline model when comparing cell-type groups. To run the analysis for a single cell-type group, say CNS, run:
+
+```
+python ldsc.py
+	--h2 BMI.sumstats.gz\
+	--w-ld-chr weights.\
+	--ref-ld-chr CNS.,baseline.\
+	--overlap-annot\
+	--frqfile-chr 1000G.mac5eur.\
+	--out BMI_CNS\
+	--print-coefficients
+```
+
+Note that here, we are using a comma-separated list of file prefixes with `--ref-ld-chr`, and we also include the `--print

@@ -3012,3 +3012,6 @@ Flag could not be matched: h
         -h, --help                        Print a help message for odgi viz.
 ```
 
+
+## Metadata
+- **Skill**: generated

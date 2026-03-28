@@ -115,3 +115,6 @@ ARGS:
     <INPUT_FASTQ>...    FASTA file with RefSeq sequences
 ```
 
+
+## Metadata
+- **Skill**: generated

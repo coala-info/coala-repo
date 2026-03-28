@@ -314,3 +314,6 @@ Other:
   --version               Show program's version number and exit
 ```
 
+
+## Metadata
+- **Skill**: generated

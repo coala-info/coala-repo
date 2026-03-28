@@ -317,3 +317,6 @@ Options:
                         color for unbridged gaps (default: orange)
 ```
 
+
+## Metadata
+- **Skill**: generated

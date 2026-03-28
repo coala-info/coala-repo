@@ -1,6 +1,6 @@
 ---
 name: modle
-description: MoDLE models the stochastic formation of DNA loops to simulate Hi-C-like contact matrices based on the loop extrusion model. Use when user asks to simulate DNA loop extrusion, generate contact matrices in Cooler format, or run MoDLE simulations using Docker or Singularity containers.
+description: MoDLE is a high-performance stochastic simulator that models the formation of DNA loops and molecular contacts to generate genome-wide contact maps. Use when user asks to simulate loop extrusion, generate in silico chromatin contact maps, or predict the effects of genomic rearrangements on 3D genome architecture.
 homepage: https://github.com/paulsengroup/MoDLE
 ---
 
@@ -9,61 +9,71 @@ homepage: https://github.com/paulsengroup/MoDLE
 
 ## Overview
 
-MoDLE (Molecular DNA Loop Extrusion) is a high-performance tool designed to model the stochastic formation of DNA loops. It is particularly useful for researchers looking to simulate Hi-C-like contact matrices based on the loop extrusion model without the computational overhead of traditional molecular dynamics. Use this skill to execute simulations, prepare necessary genomic coordinate files, and troubleshoot environment-specific issues when running MoDLE in containers.
+MoDLE (Molecular DNA Loop Extrusion) is a high-performance stochastic simulator that models the formation of DNA loops and molecular contacts. It is designed to generate realistic genome-wide contact maps in minutes, significantly faster than traditional molecular dynamics approaches. By providing chromosome sizes and extrusion barrier positions (typically CTCF sites), users can simulate how ring-shaped proteins like cohesin shape the 3D genome. The tool is essential for "in silico" genetics, allowing researchers to predict the effects of genomic rearrangements or protein perturbations on chromatin architecture.
 
-## Simulation Workflow
+## Command Line Usage
 
-The primary function of MoDLE is the `simulate` (or `sim`) subcommand. A standard simulation requires chromosome dimensions and the locations of extrusion barriers (typically CTCF binding sites).
+The primary interface for MoDLE is the `simulate` (or `sim`) subcommand.
 
-### Basic Command Pattern
+### Basic Simulation
+To run a standard simulation, you must provide the chromosome lengths and the positions of extrusion barriers.
+
 ```bash
 modle simulate \
-  --chrom-sizes <path_to_chrom_sizes> \
-  --extrusion-barrier-file <path_to_barriers_bed> \
-  --output-prefix <prefix_for_outputs>
+  --chrom-sizes hg38.chrom.sizes \
+  --extrusion-barrier-file ctcf_sites.bed \
+  --output-prefix simulation_results
 ```
 
-### Key Input Requirements
-- **Chromosome Sizes**: A tab-separated file containing chromosome names and their respective lengths in base pairs.
-- **Extrusion Barriers**: A BED-formatted file (often compressed as `.bed.xz`) specifying the positions and orientations of barriers that stop or stall Loop Extruding Factors (LEFs).
+### Key Arguments
+- `--chrom-sizes`: Path to a text file containing chromosome names and lengths.
+- `--extrusion-barrier-file`: A BED file containing barrier positions. For realistic results, these should include the orientation of the binding site (e.g., CTCF motifs) in the 6th column.
+- `--output-prefix`: Base name for output files.
+- `--config`: (Optional) Path to a TOML configuration file to override default simulation parameters.
 
-### Output Files
-MoDLE generates several files upon completion:
-- `.cool`: The resulting molecular contact matrix in Cooler format.
-- `_lef_1d_occupancy.bw`: A BigWig file showing the 1D density of LEFs along the genome.
-- `_config.toml`: A record of the parameters used for the simulation.
-- `.log`: Execution details and performance metrics.
-
-## Containerized Execution
-
-MoDLE is frequently run via Docker or Singularity to manage dependencies. The most common failure point is file accessibility.
-
-### Docker Best Practices
-When using Docker, you must explicitly mount the host directory containing your data to a path inside the container using the `-v` flag.
+### Running via Container (Docker/Singularity)
+Because MoDLE is optimized for Linux, use containers for Windows or macOS environments. Ensure host directories are mounted to make data accessible.
 
 ```bash
+# Docker example with volume mounting
 docker run -v "$(pwd):/data" ghcr.io/paulsengroup/modle:1.1.0 simulate \
-  --chrom-sizes /data/genome.chrom.sizes \
+  --chrom-sizes /data/my.chrom.sizes \
   --extrusion-barrier-file /data/barriers.bed \
-  --output-prefix /data/sim_results
+  --output-prefix /data/output
 ```
 
-### Singularity/Apptainer Best Practices
-Singularity typically mounts the user's home directory or current working directory by default, but explicit binding is safer for external drives or specific clusters.
+## Expert Tips and Best Practices
 
-```bash
-singularity run -B /path/to/data:/mnt \
-  docker://ghcr.io/paulsengroup/modle:1.1.0 simulate \
-  --chrom-sizes /mnt/genome.chrom.sizes \
-  --extrusion-barrier-file /mnt/barriers.bed \
-  --output-prefix /mnt/output
-```
+### Input Preparation
+- **Barrier Orientation**: Loop extrusion is directional. Ensure your barrier BED file correctly identifies the strand (+/-) of CTCF sites. Convergent CTCF sites are the primary drivers of loop "dots" in contact maps.
+- **Chrom Sizes**: Ensure the chromosome names in your `--chrom-sizes` file exactly match those in your `--extrusion-barrier-file`.
 
-## Expert Tips
+### Simulation Tuning
+- **Stopping Criteria**: MoDLE halts based on a target number of epochs or a target number of contacts. If your output map is too sparse (noisy), increase the simulation depth.
+- **Modeling Perturbations**:
+    - **CTCF Depletion**: Adjust the barrier binding probability (stationary distribution of the Markov chain) to simulate weaker or fewer CTCF barriers.
+    - **WAPL Depletion**: Decrease the LEF release rate to simulate longer-lived loops and "vermicelli" chromosomes.
 
-- **Performance**: MoDLE is optimized for multi-threading. Ensure your environment provides sufficient CPU resources for genome-wide simulations.
-- **Troubleshooting**: If the tool reports "File does not exist" while running in Docker, verify that the path provided to the CLI matches the *internal* container path defined in the `-v` mount, not the host path.
-- **Configuration**: Use the `--config` flag to pass a pre-defined configuration file if you need to override default biophysical parameters (e.g., LEF processivity or density).
+### Performance
+- **Multithreading**: MoDLE scales near-linearly with CPU cores. On high-performance clusters, allocate multiple cores to significantly reduce wall-clock time.
+- **Memory**: Memory usage scales with the size of the genomic region and the number of contacts being recorded. For genome-wide human simulations, ensure at least 8-16GB of RAM is available.
+
+### Output Interpretation
+MoDLE produces several files:
+- `.cool`: The main contact matrix in Cooler format, compatible with `cooler`, `cooltools`, and `HiGlass`.
+- `.bw`: BigWig file showing 1D LEF occupancy (how often a LEF was present at a specific locus).
+- `.log`: Detailed execution logs and statistics.
+- `_config.toml`: A record of all parameters used for the simulation, ensuring reproducibility.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| simulate | Simulate loop extrusion and write resulting molecular contacts in a .cool file. |
+| simulate | Simulate loop extrusion and write resulting molecular contacts in a .cool file. |
 
 ## Reference documentation
 - [MoDLE GitHub Repository](./references/github_com_paulsengroup_MoDLE.md)
+- [MoDLE: high-performance stochastic modeling of DNA loop extrusion interactions](./references/link_springer_com_article_10.1186_s13059-022-02815-7.md)

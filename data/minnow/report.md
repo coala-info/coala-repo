@@ -50,3 +50,6 @@ minnow simulate [--alevin-mode] [--splatter-mode] [--normal-mode] [--testUniqnes
         minnow help [-v]
 ```
 
+
+## Metadata
+- **Skill**: generated

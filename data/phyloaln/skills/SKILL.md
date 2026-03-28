@@ -1,6 +1,6 @@
 ---
 name: phyloaln
-description: PhyloAln creates multiple sequence alignments for phylogenetic studies by mapping sequences directly to reference alignments while filtering for contamination. Use when user asks to create multiple sequence alignments, map reads to reference alignments, process large-scale genomic data for phylogenetics, or remove foreign sequences from alignments.
+description: PhyloAln maps query sequences or raw reads directly to reference alignments to streamline the creation of datasets for evolutionary analysis. Use when user asks to align sequences to reference alignments, detect contamination in genomic data, or generate concatenated matrices for phylogenetic trees.
 homepage: https://github.com/huangyh45/PhyloAln
 ---
 
@@ -8,61 +8,67 @@ homepage: https://github.com/huangyh45/PhyloAln
 # phyloaln
 
 ## Overview
+PhyloAln is a specialized tool designed for the "omic era" that streamlines the creation of alignments for evolutionary analysis. Unlike traditional workflows that require separate steps for assembly, gene prediction, and orthology assignment, PhyloAln maps query data directly to existing reference alignments. It is particularly effective for processing high-throughput sequencing (HTS) reads and includes built-in mechanisms to detect and filter foreign or cross-contamination, ensuring higher quality downstream phylogenetic trees.
 
-PhyloAln is a specialized tool for the "omic era" that streamlines the creation of multiple sequence alignments (MSA) for phylogenetic studies. Instead of following the traditional pipeline of assembly, gene prediction, and orthology assignment, PhyloAln maps sequences directly to existing reference alignments. This approach is highly efficient for large-scale genomic data and includes built-in mechanisms to detect and remove foreign or cross-contamination, ensuring higher quality alignments for downstream evolutionary analysis.
+## Core Workflows and CLI Patterns
 
-## Installation
-
-The recommended way to install PhyloAln is via Bioconda:
-
+### Basic Alignment
+To align query sequences (assembled or raw) against a set of reference alignments:
 ```bash
-conda install bioconda::phyloaln
+PhyloAln -i query_sequences.fasta -r reference_dir/ -o output_dir/
 ```
+*   `-i`: Input file (FASTA format for sequences or FASTQ for reads).
+*   `-r`: Directory containing reference alignments (FASTA format).
+*   `-o`: Output directory for results.
 
-## Common CLI Patterns
+### Handling Different Data Types
+*   **Raw Reads**: PhyloAln can map reads directly. Ensure you have sufficient memory for large HTS datasets.
+*   **Translated Sequences**: Use the auxiliary script `transseq.pl` if you need to convert nucleotide sequences to amino acids before alignment.
+*   **Gene Families**: PhyloAln supports generating alignments for multiple-copy genes, making it suitable for gene family evolution studies.
 
-### Basic Alignment (Single Species)
-To align sequences from a single source against a single reference alignment:
+### Contamination Detection
+PhyloAln automatically checks for foreign sequences. To optimize this:
+*   Provide an appropriate outgroup in your reference alignments to improve the sensitivity of contamination detection.
+*   Review the contamination reports in the output directory to identify and remove suspicious taxa.
 
-```bash
-PhyloAln -a reference_alignment.fas -s SpeciesName -i input_sequences.fastq -o output_dir/
-```
+### Post-Alignment Processing
+Use the provided auxiliary scripts in the `scripts/` directory to finalize your matrix:
+*   **Concatenation**: Combine multiple gene alignments into a single supermatrix.
+    ```bash
+    perl scripts/connect.pl -i aln_dir/ -o concatenated.fas
+    ```
+*   **Trimming**: Remove poorly aligned or high-gap regions.
+    ```bash
+    python3 scripts/trim_matrix.py -i concatenated.fas -o trimmed.fas -p 0.5
+    ```
+*   **Back-translation**: Convert protein alignments back to nucleotide alignments.
+    ```bash
+    perl scripts/revertransseq.pl -p protein_aln.fas -n nucleotide_seqs.fas -o output_nt_aln.fas
+    ```
 
-### Batch Processing (Multiple Species)
-Use a configuration file to process multiple species or data sources simultaneously. The configuration file should be tab-separated:
+## Expert Tips
+*   **Memory Management**: If running on large datasets and encountering memory errors, process reference genes in smaller batches or increase the available swap space.
+*   **Reference Quality**: The accuracy of PhyloAln is highly dependent on the quality of the reference alignments. Ensure your references are well-curated and representative of the diversity in your query.
+*   **Path Configuration**: Always add the PhyloAln and scripts directory to your `$PATH` for easier access to auxiliary tools:
+    ```bash
+    export PATH=$PATH:/path/to/PhyloAln:/path/to/PhyloAln/scripts
+    ```
+*   **Tree Rooting**: Use `root_tree.py` after your phylogenetic inference (e.g., via IQ-TREE or RAxML) to automatically root your tree based on specified outgroups.
 
-```bash
-# Example config.txt content:
-# species1    /path/to/reads_1.fq,/path/to/reads_2.fq
-# species2    /path/to/assembly.fasta
 
-PhyloAln -c config.txt -o output_dir/
-```
 
-### Using Multiple Reference Alignments
-If you have a directory containing several reference alignments (e.g., different genes or loci):
+## Subcommands
 
-```bash
-PhyloAln -d /path/to/reference_dir/ -c config.txt -o output_dir/
-```
-
-## Auxiliary Scripts and Workflows
-
-PhyloAln includes several utility scripts in its `scripts/` directory to assist with the phylogenetic pipeline:
-
-- **Concatenation**: Use `connect.pl` to merge individual gene alignments into a supermatrix.
-- **Trimming**: Use `trim_matrix.py` to remove sites or sequences with excessive unknown data.
-- **Translation**: Use `transseq.pl` and `revertransseq.pl` for handling protein-coding DNA sequences.
-- **Tree Manipulation**: Use `root_tree.py` and `prune_tree.py` for post-phylogeny processing.
-
-## Expert Tips and Best Practices
-
-- **Contamination Filtering**: One of PhyloAln's strengths is removing foreign sequences. If you suspect high contamination, ensure your reference alignments are well-curated, as the tool uses them as the "truth" for mapping.
-- **Memory Management**: For very large datasets or high-coverage reads, the memory requirement can be significant. If the process fails due to memory, consider subsampling your reads or increasing the available RAM.
-- **Paired-End Reads**: When using paired-end data, provide both files separated by a comma in the input flag or configuration file.
-- **Reference Selection**: The accuracy of the output is highly dependent on the quality of the reference alignment. Ensure the reference contains a representative set of taxa for the group you are studying.
-- **Site Consistency**: Note that PhyloAln maintains the site positions of the reference alignment in the output, which is critical for maintaining the established coordinate system of your markers.
+| Command | Description |
+|---------|-------------|
+| PhyloAln | A program to directly generate multiple sequence alignments from FASTA/FASTQ files based on reference alignments for phylogenetic analyses. |
+| perl /usr/local/bin/connect.pl | Concatenate multiple alignments into a matrix. |
+| perl /usr/local/bin/revertransseq.pl | Used the aligned translated sequences in a file as blueprint to aligned nucleotide sequences, which means reverse-translation. |
+| prune_tree.py | Prunes a phylogenetic tree by removing specified sequences from clades. |
+| root_tree.py | Roots a phylogenetic tree. |
+| transseq.pl | Converts sequences between different formats. |
+| trim_matrix.py | Trims a multiple sequence alignment matrix based on specified criteria for columns and rows. |
 
 ## Reference documentation
 - [PhyloAln GitHub Repository](./references/github_com_huangyh45_PhyloAln.md)
-- [PhyloAln Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_phyloaln_overview.md)
+- [PhyloAln README and Usage Guide](./references/github_com_huangyh45_PhyloAln_blob_main_README.md)

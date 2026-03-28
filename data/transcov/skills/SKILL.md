@@ -1,6 +1,6 @@
 ---
 name: transcov
-description: `transcov` maps sequencing reads around transcription start sites. Use when user asks to map coverage around transcription start sites, quantify transcriptional activity or protein binding, identify promoter-proximal pausing, determine TSS strength, generate aggregate coverage plots, or normalize coverage data.
+description: transcov analyzes read depth distribution relative to transcription start sites by processing genomic annotations and alignment files into coverage matrices. Use when user asks to preprocess annotations, generate coverage matrices from BAM files, or collapse multiple matrices for comparative analysis.
 homepage: https://github.com/hogfeldt/transcov
 ---
 
@@ -8,38 +8,62 @@ homepage: https://github.com/hogfeldt/transcov
 # transcov
 
 ## Overview
-The `transcov` tool is designed for high-resolution mapping of sequencing reads around transcription start sites. It allows researchers to quantify and visualize how transcriptional activity or protein binding (in the case of ChIP-seq) is distributed relative to the start of genes. It is particularly useful for identifying promoter-proximal pausing, determining TSS strength, and generating aggregate coverage plots across multiple genomic loci.
 
-## Installation
-The recommended way to install `transcov` is via the Bioconda channel:
+`transcov` is a specialized bioinformatics utility for analyzing read depth distribution relative to transcription start sites. It streamlines the process of converting genomic annotations into target regions, calculating coverage from alignment files (BAM), and collapsing data from multiple experiments into a single matrix for downstream visualization or statistical analysis. Use this skill to automate the extraction of TSS-centric coverage data for genomic research.
+
+## Command Line Usage
+
+The `transcov` tool follows a three-step functional workflow: preprocessing, matrix generation, and data collapsing.
+
+### 1. Preprocessing Annotations
+Generate the necessary BED and TSS metadata files from a genomic annotation file (e.g., GFF3). This defines the rows of the coverage matrices.
 
 ```bash
-conda install -c bioconda transcov
+transcov preprocess <annotation_file> --bed-file <output.bed> --tss-file <output_tss.tsv> --region-size <bp_size>
 ```
+*   **Best Practice**: Use a `--region-size` that captures sufficient upstream and downstream context (e.g., `10000` for a 10kb window).
 
-## Common CLI Patterns
-While specific subcommands depend on the version, the general workflow involves providing genomic coordinates (often in BED format) and alignment files (BAM).
+### 2. Generating Coverage Matrices
+Calculate the read depth around the TSS defined in the preprocessing step using a BAM alignment file.
 
-### Basic Coverage Mapping
-To map coverage around a set of defined points:
 ```bash
-transcov --bam input.bam --bed sites.bed --window 500 --output coverage_profile.txt
+transcov generate <bam_file> <bed_file> --output-file <output_matrix.npy>
 ```
-*   `--window`: Defines the base pair range upstream and downstream of the TSS to analyze.
-*   `--bam`: The indexed alignment file.
-*   `--bed`: The genomic locations of interest (TSS).
+*   **Note**: The output is saved as a NumPy binary file (`.npy`), which is optimized for high-performance numerical data handling in Python.
+*   **Resource Tip**: This step is computationally intensive. Ensure at least 6GB of memory is available for standard human/mouse datasets.
 
-### Normalization and Scaling
-For comparing multiple samples, ensure you use normalization flags if available (e.g., RPM/BPM) to account for differences in sequencing depth:
+### 3. Collapsing Matrices
+Aggregate multiple coverage matrices into a single file. This is useful for comparing coverage across different biological replicates or samples.
+
 ```bash
-transcov --bam input.bam --bed sites.bed --normalize --output normalized_profile.txt
+transcov collapse <matrix1.npy> <matrix2.npy> ... --output-file <collapsed_matrix.npy>
 ```
+*   **Expert Tip**: Collapsing many large matrices can be memory-heavy. For large-scale projects, ensure the environment has significant RAM (e.g., 24GB+) to prevent OOM (Out of Memory) errors.
 
-## Expert Tips
-- **Indexing**: Always ensure your BAM files are indexed (`samtools index file.bam`) before running `transcov`, as the tool requires random access to genomic regions to calculate coverage efficiently.
-- **Strand Specificity**: When working with TSS data, strand orientation is critical. Ensure your BED file has the correct strand information in column 6 so `transcov` can orient the upstream/downstream windows correctly.
-- **Memory Management**: For very large BAM files or thousands of BED entries, consider subsetting your BED file to specific chromosomes to test parameters before running a genome-wide analysis.
+## Technical Specifications
+
+*   **Input Formats**: GFF3 (Annotations), BAM (Alignments).
+*   **Output Formats**: BED, TSV (Metadata), NPY (Matrices).
+*   **Dependencies**: Requires `pysam`, `numpy`, `pandas`, and `scipy`.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| cut-tails | Cut tails of coverage profiles. |
+| generate-coverage | Generate coverage tracks from BAM files based on BED regions. |
+| generate-length | Generate transcript lengths from BAM and BED files. |
+| generate-read-ends | Generate read ends from BAM and BED files. |
+| pick-subset | Picks a subset of samples from a transcov index. |
+| plot-coverage-dist | Plot coverage distribution from a coverage matrix. |
+| plot-tensor-dist | Plot distance distribution for tensors. |
+| transcov collapse | (No description) |
+| transcov generate-end-length | Generate end-length distributions from BAM and BED files. |
+| transcov_preprocess | Preprocess annotation file for TransCov |
 
 ## Reference documentation
-- [Bioconda transcov Overview](./references/anaconda_org_channels_bioconda_packages_transcov_overview.md)
-- [transcov GitHub Repository](./references/github_com_Hogfeldt_transcov.md)
+- [Workflow Implementation Details](./references/github_com_Hogfeldt_transcov_blob_master_workflow.py.md)
+- [Project Setup and Dependencies](./references/github_com_Hogfeldt_transcov_blob_master_setup.py.md)
+- [General Tool Overview](./references/github_com_Hogfeldt_transcov_blob_master_README.md)

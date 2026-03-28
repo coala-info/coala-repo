@@ -1,6 +1,6 @@
 ---
 name: metamaps
-description: MetaMaps performs simultaneous read assignment and sample composition estimation for long-read metagenomic datasets. Use when user asks to map long reads to a reference database, classify taxonomic assignments, or estimate strain-level sample composition.
+description: MetaMaps performs high-resolution taxonomic assignment and abundance estimation for long-read metagenomic data. Use when user asks to build a reference database, map long reads to a database, or classify microbial species and strains.
 homepage: https://github.com/DiltheyLab/MetaMaps
 ---
 
@@ -8,64 +8,73 @@ homepage: https://github.com/DiltheyLab/MetaMaps
 # metamaps
 
 ## Overview
-MetaMaps is a specialized bioinformatics tool designed for the analysis of long-read metagenomic datasets. It simultaneously performs read assignment and sample composition estimation, offering a balance between the speed of k-mer methods and the detail of exact alignment. It is particularly effective for strain-level resolution and provides rich output including approximate alignment locations, identity estimates, and mapping qualities.
+
+MetaMaps is a specialized tool for the analysis of long-read metagenomic data. It bridges the gap between fast k-mer based methods and slower, exact alignment approaches by providing high-resolution taxonomic assignments and abundance estimations. It is particularly effective for identifying species and strains within complex microbial communities using the higher information content of long reads.
 
 ## Core Workflow
 
-The standard MetaMaps analysis consists of two primary steps: mapping and classification.
-
-### 1. Mapping Reads
-Use `mapDirectly` to align long reads against a reference database.
+### 1. Database Construction
+Before analyzing reads, you must build a MetaMaps database. This requires reference FASTA files and NCBI-style taxonomy files (nodes.dmp, names.dmp).
 
 ```bash
-./metamaps mapDirectly --all -r databases/DB.fa -q input.fastq -o classification_results
+perl buildDB.pl --DB databases/myDB --FASTAs references.fa --taxonomy /path/to/taxonomy/
 ```
 
-### 2. Classification
-Use `classify` to process the mapping results and generate taxonomic assignments.
+*   **Tip**: Use `annotateRefSeqSequencesWithUniqueTaxonIDs.pl` if working with RefSeq to ensure every sequence has a unique, valid taxon ID.
+*   **Database Stats**: Check the composition of your database using `DBinfo.pl`:
+    ```bash
+    perl DBinfo.pl databases/myDB species
+    ```
+
+### 2. Mapping Reads
+You can map reads directly or use a pre-built index for better performance on repeated runs.
+
+**Direct Mapping:**
+```bash
+./metamaps mapDirectly --all -r databases/myDB/DB.fa -q sample_reads.fastq -o results/mapping_output
+```
+
+**Indexed Mapping:**
+1. Create Index:
+   ```bash
+   ./metamaps index -r databases/myDB/DB.fa -i databases/myDB/index -m 2000 --pi 80
+   ```
+2. Map against Index:
+   ```bash
+   ./metamaps mapAgainstIndex --all -i databases/myDB/index -q sample_reads.fastq -o results/mapping_output
+   ```
+
+### 3. Classification and Abundance Estimation
+After mapping, run the classification step to generate the final taxonomic profiles.
 
 ```bash
-./metamaps classify --mappings classification_results --DB databases/DB_folder
+./metamaps classify --mappings results/mapping_output --DB databases/myDB
 ```
 
-## Performance Optimization
+## Expert Tips and Best Practices
 
-### Memory Management
-MetaMaps uses a heuristic approach to memory. It is recommended to set the target memory to approximately 70% of your available system RAM.
+*   **Memory Management**: For large databases or limited hardware, use the `--maxmemory` flag (in GB) during mapping to prevent crashes:
+    ```bash
+    ./metamaps mapDirectly --maxmemory 20 ...
+    ```
+*   **Sensitivity Tuning**: Adjust the minimum read length (`-m`) and percentage identity (`--pi`) based on your sequencing quality. For Nanopore, `--pi 80` is a common starting point.
+*   **Multi-threading**: MetaMaps utilizes OpenMP. Ensure your environment has `OMP_NUM_THREADS` set or check if the specific build supports the `--threads` flag for parallel processing.
+*   **Output Interpretation**: The classification step produces several files. Focus on the `.EM.WIMP` or similar summary files for the most accurate abundance estimations after the Expectation-Maximization algorithm has converged.
 
-```bash
-# Example for a 32GB machine (targeting 20GB)
-./metamaps mapDirectly --all -r DB.fa -q input.fastq -o results --maxmemory 20
-```
 
-### Multithreading
-Use the `-t` flag to specify the number of threads for both mapping and classification.
 
-```bash
-./metamaps mapDirectly -t 8 ...
-./metamaps classify -t 8 ...
-```
+## Subcommands
 
-**Expert Tip:** If you experience poor multithreading efficiency or crashes during high-thread execution, run the following command immediately before calling MetaMaps:
-```bash
-unset MALLOC_ARENA_MAX
-```
-
-## Output File Reference
-
-MetaMaps generates several files prefixed with your output name (e.g., `results.EM.*`):
-
-| File Extension | Description | Key Columns |
-| :--- | :--- | :--- |
-| `.EM.WIMP` | Sample composition at various taxonomic levels. | `Absolute` (reads), `EMFrequency` (pre-correction), `PotFrequency` (final frequency). |
-| `.EM.reads2Taxon` | Per-read taxonomic assignments. | Read ID, Taxon ID. |
-| `.EM.contigCoverage` | Read coverage for contigs in 1kbp windows. | `taxonID`, `contigID`, `readCoverage`. |
-| `.EM` | Complete set of approximate mappings. | Read/Contig IDs, mapping coordinates, identity, mapping quality. |
-| `.krona` | Taxonomic assignments formatted for Krona tools. | Standard NCBI Taxon IDs and quality values. |
-
-## Database Requirements
-MetaMaps requires a specific database structure. When using a downloaded database (e.g., miniSeq+H), ensure the entire directory is provided to the `--DB` parameter during the classification step, while the specific FASTA file is provided to `-r` during mapping.
+| Command | Description |
+|---------|-------------|
+| metamaps | Simultaneous metagenomic classification and mapping. |
+| metamaps | Simultaneous metagenomic classification and mapping. |
+| metamaps_classify | Classify contigs based on sequence identity and length. |
+| metamaps_index | Index a reference genome for mapping. |
 
 ## Reference documentation
-- [MetaMaps GitHub Repository](./references/github_com_DiltheyLab_MetaMaps.md)
-- [Bioconda MetaMaps Overview](./references/anaconda_org_channels_bioconda_packages_metamaps_overview.md)
+- [Commands and Usage Examples](./references/github_com_DiltheyLab_MetaMaps_blob_master_Commands.txt.md)
+- [Experimental and Simulation Commands](./references/github_com_DiltheyLab_MetaMaps_blob_master_Commands_experiments.txt.md)
+- [Database Information Script](./references/github_com_DiltheyLab_MetaMaps_blob_master_DBinfo.pl.md)
+- [Database Building Guide](./references/github_com_DiltheyLab_MetaMaps_blob_master_buildDB.pl.md)
+- [Main README](./references/github_com_DiltheyLab_MetaMaps_blob_master_README.md)

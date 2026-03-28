@@ -131,3 +131,6 @@ options:
                         How to save the plots
 ```
 
+
+## Metadata
+- **Skill**: generated

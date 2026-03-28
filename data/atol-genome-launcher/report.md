@@ -89,3 +89,6 @@ options:
   --file_checksum FILE_CHECKSUM
 ```
 
+
+## Metadata
+- **Skill**: generated

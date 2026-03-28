@@ -1,6 +1,6 @@
 ---
 name: rnavirhost
-description: rnavirhost is a hierarchical classification framework that predicts RNA virus hosts based on viral genome sequences. Use when user asks to predict RNA virus hosts, classify viral taxonomic orders, or identify host groups for metagenomic viral sequences.
+description: RNAVirHost is a machine learning tool that identifies the natural hosts of RNA viruses based on their genomic sequences. Use when user asks to predict viral host groups, classify virus orders, or identify host taxa for RNA viral genomes.
 homepage: https://github.com/GreyGuoweiChen/VirHost.git
 ---
 
@@ -8,47 +8,60 @@ homepage: https://github.com/GreyGuoweiChen/VirHost.git
 # rnavirhost
 
 ## Overview
-rnavirhost is a specialized classification framework designed to predict RNA virus hosts based solely on viral genomes. It operates using a two-layer hierarchical model: Layer 1 classifies viruses into broad groups (Chordata, Invertebrate, Viridiplantae, Fungi, Bacteria), while Layer 2 provides higher resolution for Chordata (class and order levels). The tool is particularly useful for analyzing "viral dark matter" from metagenomic sequencing where host information is unknown.
+RNAVirHost is a machine learning-based bioinformatics tool designed to identify the natural hosts of RNA viruses solely from their genomic sequences. It addresses the limitations of traditional alignment-based methods, which often struggle with the high genetic diversity of RNA viruses. The tool employs a two-layer hierarchical classification framework: Layer 1 categorizes viruses into five major host groups (Chordata, Invertebrate, Viridiplantae, Fungi, and Bacteria), while Layer 2 provides higher-resolution predictions (class and order level) for viruses infecting Chordata.
 
-## Installation
-The recommended method is via conda/mamba:
+## Usage Guidelines
+
+### 1. Taxonomic Pre-processing
+RNAVirHost requires viral taxonomic information (specifically the virus order) to perform host predictions. If you do not have this information, use the built-in alignment-based classifier first.
+
+**Command:**
 ```bash
-conda install -c bioconda rnavirhost
+rnavirhost classify_order -i input_sequences.fasta -o viral_taxa.csv
 ```
 
-## Core Workflow
-The tool requires viral taxonomic information (specifically the virus order) to function. The process typically involves two steps:
+*   **Input:** FASTA file containing complete RNA viral genomes.
+*   **Output:** A CSV file with two columns: sequence ID and the predicted virus order.
 
-### 1. Generate Taxonomic Information
-If you do not have a `.csv` file mapping sequence IDs to virus orders, use the built-in alignment-based classifier:
+### 2. Host Prediction
+Once the taxonomic information is ready, run the prediction engine.
+
+**Command:**
 ```bash
-rnavirhost classify_order -i input_sequences.fasta -o RVH_taxa.csv
+rnavirhost predict -i input_sequences.fasta --taxa viral_taxa.csv -o results_dir
 ```
 
-### 2. Predict Hosts
-Run the prediction engine using the fasta file and the taxonomic mapping:
-```bash
-rnavirhost predict -i input_sequences.fasta --taxa RVH_taxa.csv -o output_directory
-```
+*   **--taxa:** The CSV file generated in the previous step (or a custom file following the same format).
+*   **-o:** The directory where results will be stored (defaults to `RVH_result`).
 
-## Input Requirements
-- **Fasta File**: Complete RNA viral genomes.
-- **Taxa CSV**: A two-column file (no header required, but accepted) where:
-  - Column 1: Sequence Accession/ID (must match Fasta headers).
-  - Column 2: Virus Order (e.g., *Ortervirales*, *Norzivirales*).
+### 3. Interpreting Results
+The output table includes several key columns:
+*   **pred|L1:** Kingdom/Phylum level host prediction.
+*   **pred|L2:** Class/Order level host prediction (primarily for Chordata).
+*   **evidence:** Indicates the method and confidence of the prediction.
 
-## Interpreting Results
-The output file contains an `evidence` column which is critical for assessing prediction reliability:
-- `pred_high_confidence`: ML model prediction exceeding the score cutoff.
-- `pred_low_confidence`: ML model prediction below the score cutoff.
-- `assign`: Host assigned based on known host ranges for that virus order (no ML prediction performed).
-- `BLASTn`: Used for non-coding sequences where protein-level encoding failed; host is assigned via best alignment hit.
-- `unclassified`: Resulted when no order information was provided or found.
+**Evidence Labels:**
+*   `pred_high_confidence`: ML model prediction exceeding the built-in score cutoff.
+*   `pred_low_confidence`: ML model prediction below the score cutoff.
+*   `assign`: Host assigned based on known host ranges for that virus order.
+*   `BLASTn`: Host assigned via best alignment hit (used for non-coding sequences).
+*   `unclassified`: No order information was provided or found.
 
-## Expert Tips
-- **Protein Translation**: rnavirhost uses Prodigal to translate sequences into proteins for its ML features. If a sequence is non-coding, the tool defaults to a BLASTn strategy.
-- **Custom Taxa**: If you have high-quality taxonomic assignments from other tools (like Kraken2 or Kaiju), you can manually format them into the required CSV structure to bypass `classify_order`.
-- **Chordata Focus**: Note that the second layer of classification (Order/Class level) is currently optimized specifically for the Chordata subtree.
+## Best Practices and Tips
+*   **Complete Genomes:** For the highest accuracy, provide complete or near-complete RNA viral genomes rather than short fragments.
+*   **Non-coding Sequences:** If a sequence does not contain open reading frames (ORFs), RNAVirHost automatically falls back to a BLASTn-based alignment strategy to provide a "best guess" host.
+*   **Custom Taxonomy:** If you have high-quality taxonomic assignments from other tools (like ICTV-based classifiers), you can manually create the `--taxa` CSV file to improve the downstream host prediction accuracy.
+*   **Environment Management:** Ensure `prodigal` and `blast` are in your system PATH, as the tool relies on them for protein translation and homology searches.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| rnavirhost classify_order | Classifier query viruses at order level |
+| rnavirhost predict | Predict hosts of the query viruses |
 
 ## Reference documentation
-- [RNAVirHost GitHub Repository](./references/github_com_GreyGuoweiChen_VirHost.md)
+- [RNAVirHost GitHub Repository](./references/github_com_GreyGuoweiChen_VirHost_blob_main_README.md)
+- [RNAVirHost Environment Setup](./references/github_com_GreyGuoweiChen_VirHost_blob_main_environment.yml.md)

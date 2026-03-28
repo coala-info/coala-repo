@@ -1,6 +1,6 @@
 ---
 name: canu
-description: Canu is a hierarchical assembly pipeline that transforms noisy long-read sequences into high-quality contigs. Use when user asks to assemble long-read sequencing data, perform trio binning for haplotype-resolved assemblies, or generate a corrected sequence consensus from PacBio or Nanopore reads.
+description: Canu is a hierarchical assembly pipeline that corrects, trims, and assembles long-read sequencing data into high-quality contigs. Use when user asks to assemble genomes from PacBio or Oxford Nanopore reads, perform trio binning for haplotype-resolved assemblies, or correct and trim noisy long-read data.
 homepage: https://github.com/marbl/canu
 ---
 
@@ -8,50 +8,86 @@ homepage: https://github.com/marbl/canu
 # canu
 
 ## Overview
-Canu is a hierarchical assembly pipeline optimized for long-read technology. It transforms noisy raw reads into high-quality contigs through a four-step process: detecting overlaps using the MinHash Alignment Process (MHAP), generating a corrected sequence consensus, trimming corrected sequences to remove low-quality ends or technology-specific artifacts, and finally performing the assembly. While it is a legacy tool that has reached end-of-life for the most recent sequencing chemistries, it remains a standard for processing data from the 2017–2021 era and for specific workflows like trio binning.
 
-## Common CLI Patterns
+Canu is a specialized hierarchical assembly pipeline designed to handle the high error rates associated with long-read sequencing technologies. It operates through three distinct phases: **Correction** (improving base accuracy), **Trimming** (removing adapters and low-quality regions), and **Assembly** (ordering reads into contigs/unitigs). 
 
-### Basic Assembly
-The core command requires a project prefix, an output directory, an estimated genome size, and the input reads.
+The tool is highly automated, capable of detecting available hardware resources (CPU/Memory) and grid engines (SLURM, SGE, PBS, etc.) to scale from a single workstation to a massive compute cluster. It is idempotent, meaning it can safely resume interrupted runs by re-evaluating the state of the output directory.
+
+## Core CLI Usage
+
+The basic syntax for a Canu run requires a project prefix, an output directory, an estimated genome size, and the input read type.
 
 ```bash
 canu \
-  -p ecoli -d ecoli-assembly \
-  genomeSize=4.6m \
-  -nanopore-raw reads.fastq.gz
+  -p <project_prefix> \
+  -d <output_directory> \
+  genomeSize=<size>[g|m|k] \
+  -[pacbio|nanopore|pacbio-hifi] <input_files>
 ```
 
-### Read Type Selection
-Specify the correct technology flag to ensure the pipeline uses the appropriate error models:
-- **PacBio Raw**: `-pacbio-raw`
-- **PacBio HiFi**: `-pacbio-hifi` (triggers the HiCanu algorithm)
-- **Oxford Nanopore**: `-nanopore-raw`
-
-### Trio Binning
-For haplotype-resolved assembly when parental data is available:
-1. Use `meryl` (included with Canu) to count k-mers in parental reads.
-2. Run Canu with the `-haplotype` flags to bin the offspring reads before assembly.
+### Common Input Types
+- `-pacbio`: Raw PacBio CLR reads.
+- `-nanopore`: Raw Oxford Nanopore reads.
+- `-pacbio-hifi`: PacBio High-Fidelity (CCS) reads (skips initial correction).
+- `-nanopore-raw`: Explicitly identifies raw ONT reads.
 
 ## Expert Tips and Best Practices
 
-### Genome Size Estimation
-The `genomeSize` parameter is mandatory. It does not need to be exact, but it must be within a reasonable range (e.g., 3.1g for human, 4.6m for E. coli) as it influences memory allocation and coverage sampling.
-
 ### Resource Management
-Canu is designed to run on both single machines and large clusters (SGE, Slurm, LSF, PBS). 
-- On a local machine, it will attempt to use all available cores and memory unless restricted.
-- For large genomes, ensure you have significant disk space; the intermediate overlap files (MHAP) can be much larger than the final assembly.
+- **Local Execution**: If working on a single machine and you want to prevent Canu from attempting to submit jobs to a detected grid, use `useGrid=false`.
+- **Memory/Threads**: Limit resources manually if the auto-detection is too aggressive:
+  ```bash
+  maxMemory=64g maxThreads=16
+  ```
+- **Grid Options**: Pass specific cluster parameters (like partitions or accounts) using `gridOptions`:
+  ```bash
+  gridOptions="--partition=long --account=bio"
+  ```
 
-### Handling Modern Data
-If you are working with very recent high-fidelity data (e.g., PacBio Revio or latest Nanopore Q20+), consider using newer assemblers like **Flye**, **Hifiasm**, or **Verkko** as recommended by the Canu developers, as Canu has not been tuned for these error profiles since 2021.
+### Handling Coverage and Error Rates
+- **Low Coverage (< 30x)**: Increase the `correctedErrorRate` to be more inclusive of overlaps:
+  ```bash
+  correctedErrorRate=0.105
+  ```
+- **High Coverage (> 60x)**: Decrease the `correctedErrorRate` to speed up the run and reduce false overlaps:
+  ```bash
+  correctedErrorRate=0.035
+  ```
+- **Read Sampling**: If you have excessive coverage (e.g., >100x), use `readSamplingCoverage=100` to reduce the computational burden while keeping the longest reads.
 
-### Installation Note
-Avoid downloading the source `.zip` from GitHub as it lacks necessary submodules. Use the pre-compiled binary releases or install via Conda:
-```bash
-conda install -c bioconda canu
-```
+### Specialized Workflows
+- **Trio Binning**: Assemble haplotype-resolved genomes using parental short-read data:
+  ```bash
+  canu -p offspring -d assembly \
+    genomeSize=3g \
+    -haplotypeFather father_kmers.fasta \
+    -haplotypeMother mother_kmers.fasta \
+    -pacbio offspring_reads.fastq
+  ```
+- **Manual Stepping**: You can run phases individually to test different assembly parameters without re-running correction:
+  1. `-correct`: Generate corrected reads.
+  2. `-trim`: Trim corrected reads.
+  3. `-assemble`: Build the final assembly using `-trimmed -corrected` flags.
+
+### Troubleshooting
+- **Resuming**: If a run fails (power outage, disk space), simply run the **exact same command** again. Canu will skip completed steps.
+- **Empty Contigs**: If `asm.contigs.fasta` is empty, check `asm.report`. This often indicates that `genomeSize` was set significantly higher than the actual data coverage supports, or that the `minOverlapLength` is too high for the read lengths provided.
+- **Circular Elements**: For small circular genomes (plasmids, mitochondria), Canu may produce overlapping ends. Use tools like `bercca` or `circlator` to trim and orient the final circular contig.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| canu | Canu is a de novo assembler for long-read sequencing data. It is designed to produce high-quality assemblies from PacBio, Nanopore, and other long-read technologies. |
+| canu | To restrict canu to only a specific stage, use:     -haplotype     - generate haplotype-specific reads     -correct       - generate corrected reads     -trim          - generate trimmed reads     -assemble      - generate an assembly     -trim-assemble - generate trimmed reads and then assemble them |
+| canu | Canu is a de novo assembler for highly accurate long-read sequencing data. It is particularly well-suited for PacBio and Nanopore sequencing data, and can also be used for shorter reads. This command is specifically for generating haplotype-specific reads. |
+| canu | Canu is a de novo assembler for long, noisy reads. It is designed to assemble genomes from PacBio, Nanopore, and other long-read technologies. It can also be used to assemble genomes from short reads, but it is not as efficient as other short-read assemblers. |
+| canu | To restrict canu to only a specific stage, use:     -haplotype     - generate haplotype-specific reads     -correct       - generate corrected reads     -trim          - generate trimmed reads     -assemble      - generate an assembly     -trim-assemble - generate trimmed reads and then assemble them |
 
 ## Reference documentation
-- [Canu GitHub Repository](./references/github_com_marbl_canu.md)
-- [Canu Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_canu_overview.md)
+- [Canu Quick Start](./references/canu_readthedocs_io_en_latest_quick-start.html.md)
+- [Canu Parameter Reference](./references/canu_readthedocs_io_en_latest_parameter-reference.html.md)
+- [Canu FAQ](./references/canu_readthedocs_io_en_latest_faq.html.md)
+- [Canu Tutorial](./references/canu_readthedocs_io_en_latest_tutorial.html.md)

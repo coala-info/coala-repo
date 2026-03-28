@@ -176,3 +176,6 @@ Verbosity:
           If both `--color` and `--no-color` are provided, the one specified last takes effect.
 ```
 
+
+## Metadata
+- **Skill**: generated

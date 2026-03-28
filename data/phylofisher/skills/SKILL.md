@@ -1,6 +1,6 @@
 ---
 name: phylofisher
-description: PhyloFisher is a Python-based toolkit that automates the construction and analysis of phylogenomic datasets from eukaryotic protein sequences. Use when user asks to construct single-gene trees, build phylogenomic matrices, identify orthologs, or filter contaminants and paralogs.
+description: PhyloFisher is a Python-based software suite for managing eukaryotic phylogenomic workflows and ortholog identification. Use when user asks to identify orthologs in new proteomes, refine datasets by removing fast-evolving sites or taxa, construct supermatrices, or perform phylogenomic tree reconstructions.
 homepage: https://github.com/TheBrownLab/PhyloFisher
 ---
 
@@ -8,46 +8,66 @@ homepage: https://github.com/TheBrownLab/PhyloFisher
 # phylofisher
 
 ## Overview
-PhyloFisher is a specialized Python3-based toolkit designed for eukaryotic phylogenomics. It automates the complex workflow of transforming protein sequences into phylogenomic datasets, handling tasks such as ortholog identification, paralog detection, and matrix construction. It is particularly effective for researchers working with eukaryotic protein sequences who need to build robust phylogenies while managing common issues like contamination and heterotachy.
 
-## Core Workflow and CLI Patterns
+PhyloFisher is a specialized Python-based suite designed to streamline the phylogenomic workflow for eukaryotic organisms. It bridges the gap between raw protein sequences and sophisticated phylogenomic analyses. The tool provides a comprehensive environment for managing ortholog databases, "fishing" for sequences in new proteomes, and performing rigorous data cleaning—such as removing fast-evolving sites or heterotactic sequences—to improve the signal-to-noise ratio in large-scale tree reconstructions.
 
-### Installation
-Install the package via Bioconda to ensure all dependencies are correctly resolved:
-```bash
-conda install bioconda::phylofisher
-```
+## Core Workflow and CLI Usage
 
-### Dataset Preparation and Construction
-The primary workflow involves constructing single-gene trees (SGTs) and then concatenating them into a matrix.
+PhyloFisher operates through a series of modular scripts. Most commands require a configuration file or a pre-built database.
 
-*   **SGT Construction**: Use `sgt_constructor.py` to generate single-gene trees. 
-    *   *Tip*: This process is computationally intensive. Ensure your environment has sufficient resources and that the environment location is correctly resolved.
-*   **Matrix Construction**: Use `matrix_constructor.py` to build the final phylogenomic matrix.
-    *   Supports `trimal` parameters (e.g., `-gt` for gap thresholding).
-    *   Use `nucl_matrix_constructor.py` if working with nucleotide data.
-*   **Ortholog Selection**: Use `select_ortholog.py` to refine the set of genes included in your analysis.
+### 1. Initialization and Configuration
+Before running analyses, you must configure the environment and build the starting database.
+- `config.py`: Run this first to set up paths to external dependencies (e.g., MAFFT, IQ-TREE, RAxML-NG).
+- `build_database.py`: Used to initialize the local database from provided eukaryotic ortholog sets.
+- `working_dataset_constructor.py`: Creates the directory structure and metadata files for a new project.
 
-### Data Visualization and Filtering
-*   **Forest**: Use `forest.py` for the visualization of trees and to identify/filter out potential contaminants.
-*   **Taxon Management**: 
-    *   `select_taxa.py`: Used to subset your dataset. Note that this script typically recognizes short names for taxa.
-    *   `taxon_collapser.py`: Useful for merging or collapsing specific taxonomic groups.
-    *   `leaf_rename_utility`: Use this to clean up or standardize leaf names in your trees.
+### 2. Ortholog Identification ("Fishing")
+- `fisher.py`: The primary tool for identifying orthologs in new proteomes. It uses the existing database as a reference to "fish" for homologous sequences in your input data.
+- `informant.py`: Provides summary statistics and information about the sequences currently in your database or project.
 
-### Advanced Analysis and Utilities
-*   **Recoding**: Use `aa_recoder.py` or `SR4_class_recoder.py` for amino acid recoding to mitigate the effects of compositional bias.
-*   **Heterotachy**: Use `heterotachy.py` to analyze or account for site-specific rate variations over time.
-*   **Database Management**: Use `apply_to_db.py` to update or modify the underlying PhyloFisher database with new information.
+### 3. Dataset Refinement
+Refining the dataset is critical for reducing systematic errors in eukaryotic phylogenetics.
+- `select_taxa.py` / `select_orthologs.py`: Subsets your data based on occupancy or specific research questions.
+- `fast_site_remover.py`: Removes the fastest-evolving sites which often contribute to long-branch attraction.
+- `fast_taxa_remover.py`: Identifies and removes unstable or fast-evolving taxa.
+- `aa_recoder.py`: Recodes amino acids (e.g., Dayhoff-6) to mitigate the effects of compositional bias.
+- `heterotachy.py`: Identifies and removes heterotactic sites.
 
-## Expert Tips and Best Practices
-*   **Name Lengths**: When using `select_taxa.py`, ensure your taxon names follow the expected short-name format to avoid recognition errors.
-*   **Collision Prevention**: Recent versions (v1.2.14+) include file locking mechanisms to prevent writing collisions during parallel processing.
-*   **Matrix Completeness**: Use `plot_matrix_completeness.py` to visualize the occupancy of your final matrix and identify taxa or genes with excessive missing data.
-*   **Informant Script**: When using the `informant` utility, the `sht_include` option can be used to include specific sequences in the analysis.
+### 4. Matrix and Tree Construction
+- `matrix_constructor.py`: Concatenates single-gene alignments into a supermatrix.
+- `nucl_matrix_constructor.py`: Specifically for constructing nucleotide-based matrices if required.
+- `sgt_constructor.py`: Automates the construction of single-gene trees for orthology validation.
+- `astral_runner.py`: Utility for running ASTRAL on a set of single-gene trees to perform species tree estimation.
+
+### 5. Database Management and Utilities
+- `explore_database.py`: Queries the SQLite database to check for taxon/ortholog presence.
+- `apply_to_db.py`: Updates the master database with newly identified sequences or manual corrections.
+- `purge.py`: Removes specific taxa or orthologs from the working dataset.
+- `backup_restoration.py`: Manages project backups to prevent data loss during iterative filtering.
+
+## Expert Tips
+
+- **Database Exploration**: Use `explore_database.py` frequently to verify the state of your SQLite database, especially after running `fisher.py` or `apply_to_db.py`.
+- **Model Selection**: When running tree reconstructions, use `mammal_modeler.py` for specialized protein model selection tailored to eukaryotic datasets.
+- **Compositional Analysis**: Run `aa_comp_calculator.py` before and after `aa_recoder.py` to quantify how much compositional heterogeneity has been reduced.
+- **Taxon Collapsing**: If your dataset has high redundancy (e.g., multiple strains of the same species), use `taxon_collapser.py` to create a single representative sequence per clade.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| aa_recoder.py | Recodes input matrix based on SR4 amino acid classification. |
+| apply_to_db.py | Apply parsing decisions and add new data to the database. |
+| heterotachy.py | Removes the most heterotachous sites within a phylogenomic supermatrix in a stepwise fashion, leading to a user defined set of new matrices with these sites removed. |
+| matrix_constructor.py | To trim align and concatenate orthologs into a super-matrix run: |
+| nucl_matrix_constructor.py | To get nucleotides trim align and concatenate orthologs into a nucleotide super-matrix: |
+| select_taxa.py | Selects taxa to be included in super matrix construction |
+| sgt_constructor.py | Aligns, trims, and builds single gene trees from unaligned gene files. |
+| taxon_collapser.py | Collapses dataset entries into a single taxon |
 
 ## Reference documentation
-- [PhyloFisher GitHub Repository](./references/github_com_TheBrownLab_PhyloFisher.md)
-- [PhyloFisher Discussions](./references/github_com_TheBrownLab_PhyloFisher_discussions.md)
-- [PhyloFisher Issues](./references/github_com_TheBrownLab_PhyloFisher_issues.md)
-- [Bioconda PhyloFisher Overview](./references/anaconda_org_channels_bioconda_packages_phylofisher_overview.md)
+- [PhyloFisher Repository Overview](./references/github_com_TheBrownLab_PhyloFisher.md)
+- [PhyloFisher Setup and Script List](./references/github_com_TheBrownLab_PhyloFisher_blob_master_setup.py.md)
+- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_phylofisher_overview.md)

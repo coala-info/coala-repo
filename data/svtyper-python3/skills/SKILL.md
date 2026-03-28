@@ -1,6 +1,6 @@
 ---
 name: svtyper-python3
-description: SVTyper assigns genotypes to structural variant calls by analyzing paired-end and split-read alignment patterns. Use when user asks to genotype structural variants, refine SV calls from discovery tools, or extract library metrics for genomic alignments.
+description: SVTyper genotypes structural variants by analyzing discordant and concordant read alignments at specific breakpoints. Use when user asks to genotype structural variants, perform single-sample parallelized genotyping, or generate library statistics from BAM files.
 homepage: https://github.com/hall-lab/svtyper
 ---
 
@@ -8,51 +8,65 @@ homepage: https://github.com/hall-lab/svtyper
 # svtyper-python3
 
 ## Overview
-
-SVTyper is a specialized tool for assigning genotypes to structural variant (SV) calls. It works by analyzing the alignment patterns of paired-end and split reads at specific breakpoints. It is particularly useful for refining SV calls made by discovery tools like LUMPY, providing a probabilistic framework to distinguish between homozygous reference, heterozygous, and homozygous alternative genotypes. This skill covers both the standard multi-sample implementation and the parallelized single-sample optimized (`svtyper-sso`) version.
+SVTyper is a tool designed to provide high-confidence genotypes for structural variants by analyzing discordant and concordant read alignments. It works by assessing paired-end and split-read data at specific breakpoints defined in an input VCF. This skill provides the necessary command-line patterns to perform genotyping, generate library statistics, and utilize the parallelized single-sample implementation for faster processing.
 
 ## Core Workflows
 
 ### Standard Genotyping
-Use the base `svtyper` command for multi-sample VCFs or standard processing.
-
+Use the base `svtyper` command for general purposes or multi-sample VCFs.
 ```bash
 svtyper \
     -i input_svs.vcf \
-    -B alignments.bam \
+    -B sample_alignments.bam \
     -l library_metrics.json \
     > genotyped_svs.vcf
 ```
 
 ### Single-Sample Optimization (svtyper-sso)
-Use `svtyper-sso` for faster processing of a single sample by utilizing multiple CPU cores.
-
+For significantly faster processing of a single sample, use the `svtyper-sso` variant. This utilizes multiple CPU cores.
 ```bash
 svtyper-sso \
-    --core 4 \
+    --cores 4 \
     --batch_size 1000 \
     -i input_svs.vcf \
-    -B alignments.bam \
+    -B sample_alignments.bam \
     -l library_metrics.json \
     > genotyped_svs.vcf
 ```
 
-### Library Metadata Extraction
-Before genotyping, extract library metrics to a JSON file. This step is highly recommended for large datasets to avoid redundant calculations.
-
+### Library Calibration
+If you do not have a library JSON file, generate one first. This is critical for accurate genotyping as it defines the expected insert size distribution.
 ```bash
-svtyper -B alignments.bam -l library_metrics.json
+svtyper \
+    -B sample_alignments.bam \
+    -l sample_library.json
 ```
+*Note: By default, this samples the first 1 million reads.*
 
-## Expert Tips and Best Practices
+## Parameters and Best Practices
 
-- **Pre-calculate Library Stats**: Always generate the `.json` library file separately if you plan to run multiple genotyping iterations or troubleshoot specific variants. It saves significant compute time.
-- **Monitor Insert Sizes**: Many genotyping errors stem from abnormal insert size distributions. Use the `scripts/lib_stats.R` script provided in the repository to visualize the JSON output:
-  `Rscript scripts/lib_stats.R library_metrics.json output_histogram.pdf`
-- **CRAM Support**: While SVTyper supports CRAM, be aware that `svtyper-sso` may occasionally encounter stability issues with CRAM files. If errors occur, fallback to the standard `svtyper` command or convert to BAM.
-- **Adjusting Max Reads**: If a specific SV region has extremely high coverage (e.g., repetitive regions), use `--max_reads` (default 1000) to skip genotyping for that site to prevent bottlenecks.
-- **Python Integration**: For pipeline developers, SVTyper can be imported directly. Use `svtyper.classic` for standard genotyping and `svtyper.singlesample` for the SSO implementation.
+| Parameter | Description | Recommendation |
+| :--- | :--- | :--- |
+| `-i`, `--input_vcf` | Input VCF file of SV sites | Required. Often from LUMPY. |
+| `-B`, `--bam` | Input BAM or CRAM file | Must be indexed. |
+| `-l`, `--lib_info` | JSON file for library metrics | Always generate/use for consistency. |
+| `--max_reads` | Skip genotyping if reads exceed this | Use (e.g., 1000) to avoid high-depth artifacts. |
+| `--cores` | Number of CPUs (sso only) | Match to available hardware for ~2x speedup. |
+
+### Expert Tips
+- **CRAM Support**: While supported, `svtyper-sso` may occasionally encounter stability issues with CRAM files. If errors occur, fallback to the standard `svtyper` command or convert to BAM.
+- **Insert Size Issues**: If genotyping results seem off, use the `scripts/lib_stats.R` utility (found in the source repository) on your JSON file to visualize the insert size distribution and check for abnormalities.
+- **Python Integration**: SVTyper can be imported as a library. Use `import svtyper.classic as svt` for standard genotyping or `import svtyper.singlesample as sso` for parallelized tasks within Python scripts.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| svtyper | Compute genotype of structural variants based on breakpoint depth |
+| svtyper-sso | Compute genotype of structural variants based on breakpoint depth on a SINGLE sample |
 
 ## Reference documentation
-- [SVTyper GitHub Repository](./references/github_com_hall-lab_svtyper.md)
-- [Bioconda svtyper-python3 Overview](./references/anaconda_org_channels_bioconda_packages_svtyper-python3_overview.md)
+- [GitHub Repository Overview](./references/github_com_hall-lab_svtyper.md)
+- [Known Issues and Limitations](./references/github_com_hall-lab_svtyper_issues.md)

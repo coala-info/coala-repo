@@ -1,6 +1,6 @@
 ---
 name: get_homologues
-description: The get_homologues suite clusters protein or nucleotide sequences into homologous groups to define core and pan-genomes. Use when user asks to cluster sequences into homologous groups, identify core and pan-genomes, or generate pangenome presence-absence matrices.
+description: The get_homologues suite clusters protein or nucleotide sequences into homologous groups to define the core and pan-genomes of a set of organisms. Use when user asks to cluster sequences into homologous groups, define core or pan-genomes, generate presence-absence matrices, or perform comparative genomic analysis.
 homepage: https://github.com/eead-csic-compbio/get_homologues
 ---
 
@@ -8,54 +8,76 @@ homepage: https://github.com/eead-csic-compbio/get_homologues
 # get_homologues
 
 ## Overview
-The `get_homologues` suite is a versatile toolkit designed for comparative genomics. It specializes in clustering protein or nucleotide sequences into homologous groups using various algorithms (BDBH, COGtriangles, and OrthoMCL). It is particularly effective for defining the "core" genome (genes shared by all taxa) and the "pan" genome (the entire set of genes within a group). Use `get_homologues.pl` for bacterial protein-coding sequences and `get_homologues-est.pl` for eukaryotic or intra-specific transcriptomes and CDS.
+The `get_homologues` suite is a versatile bioinformatic toolkit designed for pangenomic studies. It automates the clustering of protein-coding sequences (using `get_homologues.pl`) or nucleotide sequences/transcripts (using `get_homologues-est.pl`) into homologous groups. By leveraging multiple algorithms like Best Bidirectional Hits (BDBH), COGtriangles, and OrthoMCL, it allows researchers to define the core, soft-core, and pan-genome of a set of organisms. It is particularly effective for bacterial comparative genomics and large-scale plant transcriptomic datasets.
 
-## Common CLI Patterns
+## Core Workflows and CLI Patterns
 
-### Basic Clustering
-The most common entry point is running the main script on a directory containing GenBank (.gbk) or FASTA files.
+### 1. Basic Pan-genome Clustering
+The primary entry point is `get_homologues.pl`. It requires a directory containing GenBank (.gbk) or FASTA files.
 
+*   **Bacterial Genomes (Protein-based):**
+    ```bash
+    # Run using the BDBH algorithm (fastest, best for closely related strains)
+    perl get_homologues.pl -d directory_of_gbk_files -M
+
+    # Run using COGtriangles (balanced)
+    perl get_homologues.pl -d directory_of_gbk_files -G
+
+    # Run using OrthoMCL (most sensitive, handles multi-gene families well)
+    perl get_homologues.pl -d directory_of_gbk_files -t 0
+    ```
+
+*   **Plant/Eukaryotic Sequences (Nucleotide-based):**
+    Use the EST version for transcripts or CDS where protein-level conservation might be lower or non-coding sequences are involved.
+    ```bash
+    perl get_homologues-est.pl -d directory_of_fasta_files
+    ```
+
+### 2. Defining the Consensus Pan-genome
+A robust practice is to run multiple algorithms and find the intersection (consensus) to reduce false positives.
 ```bash
-# Cluster bacterial genomes using the BDBH algorithm (default)
-get_homologues.pl -d directory_with_gbk_files
-
-# Cluster using COGtriangles (-G) and OrthoMCL (-M) for more robust results
-get_homologues.pl -d directory_with_gbk_files -G -M
-
-# For plant or eukaryotic transcriptomes, use the EST version
-get_homologues-est.pl -d directory_with_fasta_files
+# 1. Run BDBH
+perl get_homologues.pl -d genomes/ -M
+# 2. Run COGtriangles
+perl get_homologues.pl -d genomes/ -G
+# 3. Compare results to find the intersection
+perl compare_clusters.pl -d genomes_BDBH_clusters,genomes_COG_clusters -o intersection_output
 ```
 
-### Pan-Genome and Core-Genome Definition
-After clustering, use `compare_clusters.pl` to find the intersection (core) or union (pan) of different algorithm results or different sets of genomes.
+### 3. Matrix Generation and Analysis
+After clustering, use the following scripts to extract biological meaning:
 
-```bash
-# Create a pangenome matrix from clusters
-compare_clusters.pl -d cluster_directory1,cluster_directory2 -o output_directory -m
-```
-
-### Matrix and Plotting
-Generate matrices for downstream statistical analysis or visualization.
-
-```bash
-# Parse a pangenome matrix to get a presence/absence table
-parse_pangenome_matrix.pl -m pangenome_matrix.tab
-
-# Plot pan-genome and core-genome growth curves
-plot_pancore_matrix.pl -i pangenome_matrix.tab -f 10
-```
+*   **Generate a Pan-genome Matrix:**
+    Creates a presence/absence matrix (0/1) of clusters across all genomes.
+    ```bash
+    perl parse_pangenome_matrix.pl -d cluster_directory
+    ```
+*   **Calculate Pan-core Statistics:**
+    Estimate the growth of the pan-genome and the decay of the core genome.
+    ```bash
+    perl plot_pancore_matrix.pl -i pangenome_matrix.tab -f pan
+    perl plot_pancore_matrix.pl -i pangenome_matrix.tab -f core
+    ```
 
 ## Expert Tips and Best Practices
+*   **Input Preparation:** For bacterial genomes, GenBank files are preferred over FASTA because they contain high-quality gene annotations. If using FASTA, ensure headers are unique and consistent.
+*   **Reference Genome:** When using the BDBH algorithm (`-M`), the first genome processed acts as the reference. Use the `-r` flag to specify a high-quality finished genome as the reference.
+*   **Sequence Identity:** Use the `-S` flag to adjust the minimum sequence identity percentage (default is 70%). Lower this for inter-species comparisons.
+*   **Coverage:** Use the `-C` flag to control the minimum alignment coverage (default is 75%).
+*   **Parallelization:** Use the `-n` flag to specify the number of CPU cores to speed up the BLAST/Diamond search phase.
+*   **Memory Management:** For very large datasets (hundreds of genomes), prefer the COGtriangles algorithm over OrthoMCL, as it is generally more memory-efficient.
 
-- **Input Quality**: For `get_homologues.pl`, GenBank files are preferred over FASTA because they contain coordinates and locus tags, which are essential for identifying gene synteny and producing better annotations.
-- **Algorithm Selection**: 
-    - **BDBH (Bidirectional Best Hits)**: Fastest, best for very closely related strains.
-    - **COGtriangles**: Good balance of speed and sensitivity for genus-level analysis.
-    - **OrthoMCL**: Most sensitive, recommended for divergent species, but computationally intensive.
-- **Consensus Clusters**: It is a best practice to run all three algorithms (`-M -G`) and then use `compare_clusters.pl` to identify the "consensus" core genome (clusters found by all methods).
-- **Reference Genomes**: Use the `-r` flag to specify a reference genome. This anchors the clustering process and is useful when comparing several isolates to a well-annotated type strain.
-- **Parallelization**: Use the `-n` flag to specify the number of CPU cores to speed up the BLAST/DIAMOND all-against-all search phase.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| /usr/local/bin/get_homologues_get_homologues-est.pl | This program uses BLASTN/HMMER to define clusters of 'orthologous' transcripts and pan/core-trancriptome sets. Different algorithm choices are available and search parameters are customizable. It is designed to process (in a HPC computer cluster) files contained in a directory (-d), so that new .fna/.faa files can be added while conserving previous BLASTN/HMMER results. In general the program will try to re-use previous results when run with the same input directory. |
+| get_homologues_compare_clusters.pl | Compares cluster directories generated by get_homologues.pl |
+| get_homologues_get_homologues.pl | This program uses BLAST (and optionally HMMER/Pfam) to define clusters of 'orthologous' genomic sequences and pan/core-genome gene sets. Several algorithms are available and search parameters are customizable. It is designed to process (in a HPC computer cluster) files contained in a directory (-d), so that new .faa/.gbk files can be added while conserving previous BLAST results. In general the program will try to re-use previous results when run with the same input directory. |
+| get_homologues_parse_pangenome_matrix.pl | Parses the pangenome matrix generated by compare_clusters.pl to report cluster types and perform various analyses. |
+| get_homologues_plot_pancore_matrix.pl | Plot pancore matrix |
 
 ## Reference documentation
 - [GET_HOMOLOGUES: a versatile software package for pan-genome analysis](./references/github_com_eead-csic-compbio_get_homologues.md)
-- [get_homologues - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_get_homologues_overview.md)

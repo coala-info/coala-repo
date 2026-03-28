@@ -442,3 +442,6 @@ optional arguments:
                         specify a temp directory. Default (./kallisto)
 ```
 
+
+## Metadata
+- **Skill**: generated

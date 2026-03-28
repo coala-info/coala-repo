@@ -103,3 +103,6 @@ options:
   -q, --quietly         Run without printing processing updates to console.
 ```
 
+
+## Metadata
+- **Skill**: generated

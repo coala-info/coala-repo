@@ -2836,3 +2836,6 @@ Options:
   Citation: Liu H, Xin B, Zheng J, Zhong H, Yu Y, Peng D, Sun M. Build a bioinformatic analysis platform and apply it to routine analysis of microbial genomics and comparative genomics. Protocol exchange, 2022. DOI: 10.21203/rs.2.21224/v6
 ```
 
+
+## Metadata
+- **Skill**: not generated

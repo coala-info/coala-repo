@@ -1,1 +1,237 @@
-GitHub - RIVM-bioinformatics/Pacini-typing: YAML-based bacterial genotyping application Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} RIVM-bioinformatics / Pacini-typing Public Notifications You must be signed in to change notification settings Fork 0 Star 2 YAML-based bacterial genotyping application License AGPL-3.0 license 2 stars 0 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 0 Pull requests 0 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights RIVM-bioinformatics/Pacini-typing main Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 468 Commits 468 Commits .github/ workflows .github/ workflows additional_scripts additional_scripts config config docs docs parsing parsing preprocessing preprocessing queries queries test_data test_data tests tests .gitignore .gitignore CHANGELOG.md CHANGELOG.md LICENSE LICENSE MANIFEST.in MANIFEST.in README.md README.md codon_table_enum.py codon_table_enum.py command_utils.py command_utils.py handle_search_modes.py handle_search_modes.py linux-environment.yaml linux-environment.yaml mac-environment.yaml mac-environment.yaml make_gene_database.py make_gene_database.py make_snp_database.py make_snp_database.py pacini_typing.py pacini_typing.py requirements.txt requirements.txt setup.py setup.py View all files Repository files navigation README AGPL-3.0 license Pylint output: Your code has been rated at 9.35/10 Pacini-typing Directly go to Installation or Getting Started Application information Author(s): Mark van de Streek Organization: Rijksinstituut voor Volksgezondheid en Milieu (RIVM) Department: Infectieziekteonderzoek, Diagnostiek en Laboratorium Surveillance (IDS) Start date: 02 - 09 - 2024 Commissioned by: Roxanne Wolthuis &amp; Boas van der Putten &amp; Sohana Singh About this project Pacini-typing is a user-friendly application for the detection of DNA sequences and SNPs in both FASTA and FASTQ files. The application is designed to be used in a Linux-like environment and is easily executable via a YAML-based configuration scheme. Pacini-typing is not limited to bacterial genomes, although it was primarily developed with Yersinia pestis and Vibrio cholerae as first real use cases. Performance in other species is not yet validated but the application is designed to be flexible. Quick start command of the application: pacini_typing --config path_to_config_file.yaml --input file_1.fastq file_2.fastq --search_mode SNPs The structure of the YAML configuration file is explained here and the search modes are explained here . Table of Contents Application information About this project Table of Contents Prerequisites Complete list of packages Installation Modes of Pacini-typing Configuration file Approach Getting Started Parameters &amp; Usage Output Example Run of Pacini-typing Testing Issues Future Ideas License Contact Prerequisites All required packages are available in a pre-defined conda environment. Steps to install this environment are found in the Automatic installation of the required packages section. Pacini-typing requires: Linux-like environment with (mini) conda installed Python 3.10 or higher (developed on 3.12) The following Python packages are required: pip=&gt;24.2 pyyaml=&gt;6.0.2 setuptools=&gt;75.1.0 cgecore=&gt;2.0.1 The following Tools are required: blast=&gt;2.16.0 kma=&gt;1.4.15 The subcommands of blast ( makeblastdb ) and kma ( kma_index ) are also required in the PATH of the system. They will be installed automatically by the conda environment. Complete list of packages Package Version pip &gt;=24.2 pyyaml &gt;=6.0.2 setuptools &gt;=75.1.0 pandas &gt;=2.2.3 blast &gt;=2.16.0 kma &gt;=1.4.15 pytest &gt;=8.3.3 cgecore &gt;=2.0.1 Installation 🐍 Conda installation Pacini-typing can be installed using the conda/mamba package manager. The package is available on the bioconda channel, under the name pacini_typing . conda install bioconda::pacini_typing 💻 Other installation methods Manual installation of the application is achieved by cloning the repository and installing the requirements: Clone the repository. git clone https://github.com/RIVM-bioinformatics/Pacini-typing.git Go to the Pacini-typing directory. cd Pacini-typing At this point, the repository is cloned to your system. It is advised to install the required packages. This is achieved by following the steps in the section Installation of the required packages or by installing the required packages manually listed in the Prerequisites section. Install the package. pip install . Pacini-typing is now installed on your system. After installation, the application executed by calling pacini_typing or Pacini-typing . Additionally, the application can also be executed by calling the original pacini_typing.py script in the pacini_typing directory with the following command: python3 directory_of_clone/pacini_typing.py --help Installation of the required packages For both macOS and Linux users, a complete conda environment, containing all required packages, is found in the root of the repository. To install the environment, run the following command: # For Linux users: conda env create -f linux-environment.yaml -n pacini-typing # or for macOS users: conda env create -f mac-environment.yaml -n pacini-typing After the environment is installed, activate the environment by running: conda activate pacini-typing Back to top Modes of Pacini-typing Pacini-typing accepts both assembled FASTA contigs and paired-end FASTQ files as input. The application is executed using the following three search modes: genes : Search for genes in the input genome(s) SNPs : Search for SNPs in the input genome(s) both : Search for both genes and SNPs in the input genome(s) In addition, Pacini-typing has two subcommands which can be used to (1) manually create a gene reference database or (2) manually run a query against the gene reference database. These subcommands are named makedatabase and query , respectively. More information about these subcommands is found in the Parameters &amp; Usage section. Configuration file The configuration file of Pacini-typing delivers the required information to run in a easy-to-use manner. The configuration file is a YAML-based file with paths to input files, database locations, and genetic threshold to use for a specific run. Three pre-defined configuration schemes are available in the config directory of the repository: O1-scheme.yaml : Configuration file for pandemic serotype O1 of Vibrio cholerae O139-scheme.yaml : Configuration file for pandemic serotype O139 of Vibrio cholerae Yersinia-pestis-scheme.yaml : EXAMPLE Configuration file for Yersinia pestis (since sharing pandemic-related genes is not allowed at the time of writing, this file is only an example and does not contain any real genes) The schemes for Vibrio cholerae are based on real genetic patterns. These patterns, including gene sequences ( O1/O139.fasta ), can be used detect pandemic serotypes O1 and O139 of Vibrio cholerae . Example configuration file for Yersinia pestis related variants: %YAML 1.2 --- metadata : # Metadata information that will be used in the output report filename : " Yersinia.yaml " id : " YP-01 " type : " Y. pestis related variants " description : " Genetic pattern run config file for Yersinia pestis related variants " date_created : " 2025-05-24 " # Path to the PointFinder script location, # if not available, it will be installed here automatically pointfinder_script_path : " /my_o
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FRIVM-bioinformatics%2FPacini-typing)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FRIVM-bioinformatics%2FPacini-typing)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=RIVM-bioinformatics%2FPacini-typing)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[RIVM-bioinformatics](/RIVM-bioinformatics)
+/
+**[Pacini-typing](/RIVM-bioinformatics/Pacini-typing)**
+Public
+
+* [Notifications](/login?return_to=%2FRIVM-bioinformatics%2FPacini-typing) You must be signed in to change notification settings
+* [Fork
+  0](/login?return_to=%2FRIVM-bioinformatics%2FPacini-typing)
+* [Star
+   2](/login?return_to=%2FRIVM-bioinformatics%2FPacini-typing)
+
+* [Code](/RIVM-bioinformatics/Pacini-typing)
+* [Issues
+  0](/RIVM-bioinformatics/Pacini-typing/issues)
+* [Pull requests
+  1](/RIVM-bioinformatics/Pacini-typing/pulls)
+* [Actions](/RIVM-bioinformatics/Pacini-typing/actions)
+* [Projects](/RIVM-bioinformatics/Pacini-typing/projects)
+* [Security
+  0](/RIVM-bioinformatics/Pacini-typing/security)
+* [Insights](/RIVM-bioinformatics/Pacini-typing/pulse)
+
+Additional navigation options
+
+* [Code](/RIVM-bioinformatics/Pacini-typing)
+* [Issues](/RIVM-bioinformatics/Pacini-typing/issues)
+* [Pull requests](/RIVM-bioinformatics/Pacini-typing/pulls)
+* [Actions](/RIVM-bioinformatics/Pacini-typing/actions)
+* [Projects](/RIVM-bioinformatics/Pacini-typing/projects)
+* [Security](/RIVM-bioinformatics/Pacini-typing/security)
+* [Insights](/RIVM-bioinformatics/Pacini-typing/pulse)
+
+# RIVM-bioinformatics/Pacini-typing
+
+main
+
+[Branches](/RIVM-bioinformatics/Pacini-typing/branches)[Tags](/RIVM-bioinformatics/Pacini-typing/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[475 Commits](/RIVM-bioinformatics/Pacini-typing/commits/main/)   475 Commits | | |
+| [.github/workflows](/RIVM-bioinformatics/Pacini-typing/tree/main/.github/workflows "This path skips through empty directories") | | [.github/workflows](/RIVM-bioinformatics/Pacini-typing/tree/main/.github/workflows "This path skips through empty directories") |  |  |
+| [additional\_scripts](/RIVM-bioinformatics/Pacini-typing/tree/main/additional_scripts "additional_scripts") | | [additional\_scripts](/RIVM-bioinformatics/Pacini-typing/tree/main/additional_scripts "additional_scripts") |  |  |
+| [config](/RIVM-bioinformatics/Pacini-typing/tree/main/config "config") | | [config](/RIVM-bioinformatics/Pacini-typing/tree/main/config "config") |  |  |
+| [docs](/RIVM-bioinformatics/Pacini-typing/tree/main/docs "docs") | | [docs](/RIVM-bioinformatics/Pacini-typing/tree/main/docs "docs") |  |  |
+| [parsing](/RIVM-bioinformatics/Pacini-typing/tree/main/parsing "parsing") | | [parsing](/RIVM-bioinformatics/Pacini-typing/tree/main/parsing "parsing") |  |  |
+| [preprocessing](/RIVM-bioinformatics/Pacini-typing/tree/main/preprocessing "preprocessing") | | [preprocessing](/RIVM-bioinformatics/Pacini-typing/tree/main/preprocessing "preprocessing") |  |  |
+| [queries](/RIVM-bioinformatics/Pacini-typing/tree/main/queries "queries") | | [queries](/RIVM-bioinformatics/Pacini-typing/tree/main/queries "queries") |  |  |
+| [test\_data](/RIVM-bioinformatics/Pacini-typing/tree/main/test_data "test_data") | | [test\_data](/RIVM-bioinformatics/Pacini-typing/tree/main/test_data "test_data") |  |  |
+| [tests](/RIVM-bioinformatics/Pacini-typing/tree/main/tests "tests") | | [tests](/RIVM-bioinformatics/Pacini-typing/tree/main/tests "tests") |  |  |
+| [.gitignore](/RIVM-bioinformatics/Pacini-typing/blob/main/.gitignore ".gitignore") | | [.gitignore](/RIVM-bioinformatics/Pacini-typing/blob/main/.gitignore ".gitignore") |  |  |
+| [CHANGELOG.md](/RIVM-bioinformatics/Pacini-typing/blob/main/CHANGELOG.md "CHANGELOG.md") | | [CHANGELOG.md](/RIVM-bioinformatics/Pacini-typing/blob/main/CHANGELOG.md "CHANGELOG.md") |  |  |
+| [LICENSE](/RIVM-bioinformatics/Pacini-typing/blob/main/LICENSE "LICENSE") | | [LICENSE](/RIVM-bioinformatics/Pacini-typing/blob/main/LICENSE "LICENSE") |  |  |
+| [MANIFEST.in](/RIVM-bioinformatics/Pacini-typing/blob/main/MANIFEST.in "MANIFEST.in") | | [MANIFEST.in](/RIVM-bioinformatics/Pacini-typing/blob/main/MANIFEST.in "MANIFEST.in") |  |  |
+| [README.md](/RIVM-bioinformatics/Pacini-typing/blob/main/README.md "README.md") | | [README.md](/RIVM-bioinformatics/Pacini-typing/blob/main/README.md "README.md") |  |  |
+| [codon\_table\_enum.py](/RIVM-bioinformatics/Pacini-typing/blob/main/codon_table_enum.py "codon_table_enum.py") | | [codon\_table\_enum.py](/RIVM-bioinformatics/Pacini-typing/blob/main/codon_table_enum.py "codon_table_enum.py") |  |  |
+| [command\_utils.py](/RIVM-bioinformatics/Pacini-typing/blob/main/command_utils.py "command_utils.py") | | [command\_utils.py](/RIVM-bioinformatics/Pacini-typing/blob/main/command_utils.py "command_utils.py") |  |  |
+| [handle\_search\_modes.py](/RIVM-bioinformatics/Pacini-typing/blob/main/handle_search_modes.py "handle_search_modes.py") | | [handle\_search\_modes.py](/RIVM-bioinformatics/Pacini-typing/blob/main/handle_search_modes.py "handle_search_modes.py") |  |  |
+| [linux-environment.yaml](/RIVM-bioinformatics/Pacini-typing/blob/main/linux-environment.yaml "linux-environment.yaml") | | [linux-environment.yaml](/RIVM-bioinformatics/Pacini-typing/blob/main/linux-environment.yaml "linux-environment.yaml") |  |  |
+| [mac-environment.yaml](/RIVM-bioinformatics/Pacini-typing/blob/main/mac-environment.yaml "mac-environment.yaml") | | [mac-environment.yaml](/RIVM-bioinformatics/Pacini-typing/blob/main/mac-environment.yaml "mac-environment.yaml") |  |  |
+| [make\_gene\_database.py](/RIVM-bioinformatics/Pacini-typing/blob/main/make_gene_database.py "make_gene_database.py") | | [make\_gene\_database.py](/RIVM-bioinformatics/Pacini-typing/blob/main/make_gene_database.py "make_gene_database.py") |  |  |
+| [make\_snp\_database.py](/RIVM-bioinformatics/Pacini-typing/blob/main/make_snp_database.py "make_snp_database.py") | | [make\_snp\_database.py](/RIVM-bioinformatics/Pacini-typing/blob/main/make_snp_database.py "make_snp_database.py") |  |  |
+| [pacini\_typing.py](/RIVM-bioinformatics/Pacini-typing/blob/main/pacini_typing.py "pacini_typing.py") | | [pacini\_typing.py](/RIVM-bioinformatics/Pacini-typing/blob/main/pacini_typing.py "pacini_typing.py") |  |  |
+| [requirements.txt](/RIVM-bioinformatics/Pacini-typing/blob/main/requirements.txt "requirements.txt") | | [requirements.txt](/RIVM-bioinformatics/Pacini-typing/blob/main/requirements.txt "requirements.txt") |  |  |
+| [setup.py](/RIVM-bioinformatics/Pacini-typing/blob/main/setup.py "setup.py") | | [setup.py](/RIVM-bioinformatics/Pacini-typing/blob/main/setup.py "setup.py") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* AGPL-3.0 license
+
+[![](https://camo.githubusercontent.com/c6204e3a8ae11b4519ff367f04fc345674c95ed15d439de7ded62ed4d4a6ae1d/68747470733a2f2f616e61636f6e64612e6f72672f62696f636f6e64612f706163696e695f747970696e672f6261646765732f76657273696f6e2e737667)](https://camo.githubusercontent.com/c6204e3a8ae11b4519ff367f04fc345674c95ed15d439de7ded62ed4d4a6ae1d/68747470733a2f2f616e61636f6e64612e6f72672f62696f636f6e64612f706163696e695f747970696e672f6261646765732f76657273696f6e2e737667)
+[![install with bioconda](https://camo.githubusercontent.com/9940610b859f8e4dd2daade6d2f4fb4c45d56afedc37ae98d8617daf79c1f836/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f696e7374616c6c253230776974682d62696f636f6e64612d627269676874677265656e2e7376673f7374796c653d666c6174)](http://bioconda.github.io/recipes/pacini_typing/README.html)
+[![GitHub release (latest by date including pre-releases)](https://camo.githubusercontent.com/c12a402f1b1ba21bdbb4a8d9571eee87ca10be1cee51bd8b957b7feed4b19a49/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f762f72656c656173652f5249564d2d62696f696e666f726d61746963732f506163696e692d747970696e673f696e636c7564655f70726572656c6561736573)](https://github.com/RIVM-bioinformatics/Pacini-typing/releases/latest)
+[![Unit tests](https://github.com/RIVM-bioinformatics/Pacini-typing/actions/workflows/run_unit_tests.yaml/badge.svg)](https://github.com/RIVM-bioinformatics/Pacini-typing/actions/workflows/run_unit_tests.yaml/badge.svg)
+[![GitHub latest commit](https://camo.githubusercontent.com/b4c661f8607c925584ffdc1edb8a3ff6e57b5bf1e40b043f24351fe6267fd76a/68747470733a2f2f62616467656e2e6e65742f6769746875622f6c6173742d636f6d6d69742f5249564d2d62696f696e666f726d61746963732f506163696e692d747970696e67)](https://github.com/RIVM-bioinformatics/Pacini-typing/commit/main)
+[![](https://camo.githubusercontent.com/17a7d274b613ed0fc39663eb3224b06fe5f4b72499e09674f2b148fa786c4bd0/68747470733a2f2f616e61636f6e64612e6f72672f62696f636f6e64612f706163696e695f747970696e672f6261646765732f646f776e6c6f6164732e737667)](https://camo.githubusercontent.com/17a7d274b613ed0fc39663eb3224b06fe5f4b72499e09674f2b148fa786c4bd0/68747470733a2f2f616e61636f6e64612e6f72672f62696f636f6e64612f706163696e695f747970696e672f6261646765732f646f776e6c6f6164732e737667)
+[![GitHub](https://camo.githubusercontent.com/c5be76f5d4cffd7ef1ec4804395de0c13a52999436ce4403cc252149314a3b21/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f5249564d2d62696f696e666f726d61746963732f506163696e692d747970696e67)](https://github.com/RIVM-bioinformatics/Pacini-typing/blob/main/LICENSE)
+
+Pylint output: Your code has been rated at 9.35/10
+
+# Pacini-typing
+
+[![pipeline logo](/RIVM-bioinformatics/P

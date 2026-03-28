@@ -1,60 +1,51 @@
 ---
 name: mseqtools
-description: "mseqtools is a command-line utility for manipulating biological sequence files. Use when user asks to subset sequences from FASTQ or FASTA files."
+description: mseqtools is a high-performance C-based toolkit designed for handling and manipulating genomic sequence data with a focus on microbiome workflows. Use when user asks to subset sequences, convert sequence formats, or process large gzipped FASTQ files efficiently.
 homepage: https://github.com/arumugamlab/mseqtools
 ---
 
 
 # mseqtools
 
----
 ## Overview
-mseqtools is a command-line utility designed for efficient manipulation of FASTQ and FASTA files, which are standard formats for biological sequence data. It offers a range of functionalities useful in bioinformatics workflows, particularly for shotgun metagenomics analysis. This tool is valuable when you need to process, filter, or transform sequence data before or during downstream analysis.
 
-## Usage Instructions
+mseqtools is a high-performance C-based toolkit for handling genomic sequence data. While it shares some functional overlap with tools like `seqtk`, it is specifically optimized for microbiome workflows and implements unique sequence manipulation routines. It leverages the `kseq.h` library for maximum parsing efficiency and natively supports gzipped files by piping through the system's `gzip` utility. This skill provides the necessary patterns for executing its primary functions, such as sequence subsetting and format conversion.
 
-mseqtools provides several subcommands for various sequence manipulation tasks. The general syntax is `mseqtools <subcommand> [options] <input_file>`.
+## Installation and Setup
 
-### Installation
+Before using mseqtools, ensure the environment is properly configured:
 
-The recommended installation method is via conda from the bioconda channel:
+- **Conda**: `conda install -c bioconda mseqtools`
+- **Dependencies**: The tool requires `gzip` to be available in the system PATH for handling compressed output.
+- **Verification**: Run `mseqtools help` to verify the installation and view available subcommands.
+
+## Common CLI Patterns
+
+### Basic Usage
+The primary entry point is the `mseqtools` executable followed by a subcommand:
 ```bash
-conda install -c bioconda mseqtools
+mseqtools <subcommand> [options] <input_file>
 ```
-Alternatively, you can install from source by following the instructions in the `README.md` file within the repository. Ensure `gcc`, `gzip`, `tar`, and `wget` are installed, along with `zlib` and `argtable2` development libraries if building from source.
 
-### Core Functionalities and Examples
-
-mseqtools is a wrapper around several functionalities. The primary tool is `mseqtools` itself, and a notable subcommand is `mseq_subset`.
-
-#### Subsetting Sequences (`mseq_subset`)
-
-The `mseq_subset` command allows you to extract specific sequences from a FASTQ or FASTA file based on sequence IDs.
-
-**Example:** Extract sequences with specific IDs from a FASTA file.
+### Subsetting Sequences
+One of the core functionalities is extracting specific subsets of data from large metagenomic files.
 ```bash
-mseqtools mseq_subset --seqid_file seqids.txt --input input.fasta --output output.fasta
+mseqtools subset -n <number_of_sequences> input.fastq.gz > subset.fastq
 ```
-*   `--seqid_file`: A file containing the sequence IDs to extract, one per line.
-*   `--input`: The input FASTA or FASTQ file.
-*   `--output`: The output file for the extracted sequences.
 
-#### General `mseqtools` Commands
+### Handling Compressed Data
+mseqtools automatically detects compressed input using `zlib`. For output, it uses system pipes to `gzip`.
+- **Reading**: Pass a `.gz` file directly as the input argument.
+- **Writing**: Redirect output to a file or pipe to `gzip` if the subcommand does not handle compression internally.
 
-While `mseq_subset` is a specific subcommand, the `mseqtools` executable itself can be used for various operations. The documentation suggests it's a "watered down version" of a larger package, implying it focuses on commonly needed functions.
+## Expert Tips
 
-**Common Use Cases (Inferred from tool's purpose):**
-
-*   **Filtering sequences:** Based on length, quality scores (for FASTQ).
-*   **Format conversion:** Between FASTA and FASTQ.
-*   **Sequence manipulation:** Reverse complement, etc. (though specific commands for these are not detailed in the provided snippets).
-
-**Expert Tips:**
-
-*   **Leverage `gzip`:** mseqtools uses `zlib` for reading compressed files and pipes to `gzip` for writing compressed output. Ensure `gzip` is in your system's PATH if building from source. Conda and Docker installations handle this dependency.
-*   **Refer to `seqtk`:** The README explicitly recommends Heng Li's `seqtk` package for many sequence manipulation tasks, suggesting `mseqtools` might be best for functionalities not covered by `seqtk` or for specific integrations within a larger pipeline.
-*   **Check `mseqtools help`:** For a comprehensive list of available subcommands and options, run `mseqtools help` after installation.
+- **Streaming**: Use `-` as a filename to read from `stdin` or write to `stdout`, allowing mseqtools to be integrated into complex bioinformatics pipes.
+- **Performance**: Because mseqtools uses `kseq.h`, it is extremely memory-efficient. It is preferred over Python or Perl scripts for processing multi-gigabyte FASTQ files.
+- **Illumina Headers**: The tool contains internal logic for parsing Illumina-specific mate-paired template names (e.g., handling the `/1` and `/2` suffixes), making it ideal for preprocessing raw reads before assembly.
 
 ## Reference documentation
-- [mseqtools Overview](./references/anaconda_org_channels_bioconda_packages_mseqtools_overview.md)
-- [mseqtools GitHub Repository](./references/github_com_arumugamlab_mseqtools.md)
+
+- [mseqtools README](./references/github_com_arumugamlab_mseqtools_blob_main_README.md)
+- [mseqtools Main Source](./references/github_com_arumugamlab_mseqtools_blob_main_mseqtools.c.md)
+- [Sequence Subsetting Logic](./references/github_com_arumugamlab_mseqtools_blob_main_mseq_subset.c.md)

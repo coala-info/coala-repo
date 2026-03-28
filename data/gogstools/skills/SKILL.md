@@ -1,6 +1,6 @@
 ---
 name: gogstools
-description: gogstools is a bioinformatics suite used to manage, merge, and refine Official Gene Sets by synchronizing automated annotations with manual curation results. Use when user asks to merge Apollo manual curations with base annotations, preserve and version gene identifiers, or convert GFF3 files to EMBL format for ENA submission.
+description: gogstools is a suite of utilities designed to manage genome annotation lifecycles by merging curated gene models and preparing database submissions. Use when user asks to merge gene sets into an official gene set, update gene models from Apollo, manage gene ID versioning, or convert GFF3 files to EMBL format for ENA submission.
 homepage: https://github.com/genouest/ogs-tools
 ---
 
@@ -8,54 +8,62 @@ homepage: https://github.com/genouest/ogs-tools
 # gogstools
 
 ## Overview
-gogstools is a specialized suite of bioinformatics utilities designed to manage and refine Official Gene Sets. It is primarily used to synchronize base automated annotations (e.g., from Maker) with manual curation results (e.g., from Apollo). The tool ensures that gene identifiers are preserved and versioned correctly during merges and provides a pathway for submitting finalized annotations to the European Nucleotide Archive (ENA).
 
-## Installation and Environment
-The tool can be installed via Bioconda or pip. Note that `ogs_merge` has specific external dependencies.
+gogstools is a specialized suite of utilities designed to manage the lifecycle of genome annotations. It facilitates the transition from automated gene prediction (e.g., Maker) to manual curation (e.g., Apollo) and final database submission. The primary workflow involves merging curated gene models into a base annotation while maintaining consistent ID versioning and generating the necessary formats for ENA/EBI submission.
 
-```bash
-# Recommended: Conda installation
-conda install bioconda::gogstools
+## Merging Gene Sets with ogs_merge
 
-# Manual setup for ogs_merge (requires specific bedops version)
-conda create --name ogsmerger bedops=2.4.39 bedtools cufflinks bcbiogff
-pip install gogstools
-```
-
-## Merging Annotations with ogs_merge
-The `ogs_merge` script replaces base annotations with overlapping manual curation (Apollo) genes while preserving original IDs with version suffixes.
+The `ogs_merge` script is the core tool for updating an Official Gene Set. It replaces base annotation features with overlapping curated features from Apollo.
 
 ### Basic Command Structure
 ```bash
-ogs_merge [options] <genome.fasta> <ogs_name> <id_regex> <id_syntax> <base.gff> <apollo.gff>
+ogs_merge [options] <genome.fasta> <ogs_name> <id_regex> <id_syntax> <base_gff> <apollo_gff>
 ```
 
-### Key Arguments
-- **id_regex**: A regex with two capturing groups: (1) the incremental part of the ID, and (2) the version suffix.
-  - *Example*: `'GSSPF[GPT]([0-9]{8})[0-9]{3}(\.[0-9]+)?'`
-- **id_syntax**: A template string for the gene ID using `{id}` as a placeholder for the incremental part.
-  - *Example*: `'GSSPFG{id}001'`
+### ID Configuration Patterns
+The tool relies on regex and syntax strings to manage gene identifiers:
+- **id_regex**: Use a regex with capturing groups. Group 1 should be the incremental part of the ID, and Group 2 should be the version suffix.
+  - Example: `'FOOBAR([0-9]{6})(\.[0-9]+)?'`
+- **id_syntax**: Define how the new ID should be constructed using the `{id}` placeholder.
+  - Example: `'FOOBAR{id}'`
 
-### Common CLI Patterns
-- **Standard Versioning**: To merge and increment version suffixes (e.g., `ID.1` to `ID.2`):
-  ```bash
-  ogs_merge genome.fa OGS_v2.1 "FOO([0-9]{6})(\.[0-9]+)?" "FOO{id}" base.gff apollo.gff
-  ```
-- **Handling Isoforms**: By default, isoforms use letters (-RA, -RB). Use `--use_numbers_for_isoform` to switch to numeric suffixes (-1, -2).
-- **Removing Genes**: Use the `-d` flag with a text file containing mRNA IDs to explicitly delete specific models during the merge.
+### Handling Different ID Systems
+- **Default (Letters for isoforms)**: Uses `-RA`, `-RB` suffixes.
+- **Numeric Isoforms**: Use `--use_numbers_for_isoform` and `--isoform_prefix "-"`.
+- **No Padding**: Use `--no_id_padding` if your IDs do not require leading zeros to reach a fixed length.
 
-## ENA Submission with gff2embl
-Use `gff2embl` to convert GFF3 annotations into EMBL format for EBI/ENA submission.
+### Advanced Merging Options
+- **Deletion**: Provide a text file of mRNA IDs to remove using `-d <deleted_list.txt>`.
+- **Previous Version**: If the current base GFF differs from the previous OGS version, specify the previous version with `-p <previous.gff>` to ensure correct version incrementing.
 
-```bash
-gff2embl -g genome.fasta -p proteins.fasta -s "Species Name" -d "Description" -e email@domain.com -j PROJECT_ID
-```
+## Preparing Submissions with gff2embl
 
-## Expert Tips
-- **ID Padding**: By default, numeric IDs are zero-padded. If your naming convention does not use fixed-length padding, use the `--no_id_padding` flag.
-- **Regex Validation**: Always test your `id_regex` against your GFF attributes before running a full merge, as "creative" GFF formatting is a common cause of failure.
-- **Output Files**: The merge process generates GFF, transcript/CDS/protein FASTA files, and a tabular correspondence file. Check the correspondence file to verify that IDs were mapped as expected.
+Use `gff2embl` to convert your GFF3 annotations and genome fasta into the EMBL format required by ENA.
+
+### Required Parameters
+- `-g`: Genome fasta file.
+- `-p`: Protein fasta file.
+- `-s`: Species name (e.g., "Drosophila melanogaster").
+- `-d`: Project description.
+- `-e`: Submitter email.
+- `-j`: Project ID.
+
+## Best Practices and Troubleshooting
+
+- **Dependency Management**: Ensure `bedops` is pinned to version `2.4.39`. Version `2.4.40` is known to break `gff2bed` output compatibility required by gogstools.
+- **GFF Compatibility**: The tools are sensitive to GFF3 formatting. Ensure your Apollo export is valid GFF3.
+- **Output Files**: `ogs_merge` produces several files. Always check the tabular correspondence file to verify that gene IDs were mapped and versioned as expected.
+- **Regex Testing**: Always validate your `id_regex` against your GFF IDs before running a full merge to prevent malformed identifiers in the output.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| gff2embl | Convert GFF3 to EMBL format for ENA submission. |
+| ogs_merge | Merges two GFF files to create a new OGS annotation. |
 
 ## Reference documentation
-- [GitHub Repository - ogs-tools](./references/github_com_genouest_ogs-tools.md)
-- [Bioconda - gogstools Overview](./references/anaconda_org_channels_bioconda_packages_gogstools_overview.md)
+- [OGS Tools README](./references/github_com_genouest_ogs-tools_blob_master_README.md)
+- [Gogstools Overview](./references/anaconda_org_channels_bioconda_packages_gogstools_overview.md)

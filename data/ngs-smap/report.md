@@ -358,3 +358,6 @@ No inputs — do not generate CWL.
 16:50:22
 ```
 
+
+## Metadata
+- **Skill**: generated

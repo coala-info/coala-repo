@@ -393,3 +393,6 @@ Options:
 Input path is missing. Supply it with -i, --input.
 ```
 
+
+## Metadata
+- **Skill**: generated

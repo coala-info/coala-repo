@@ -1,6 +1,6 @@
 ---
 name: esme_pnetcdf_openmpi_4_1_6
-description: PnetCDF provides a library and command-line utilities for high-performance parallel access to multi-dimensional netCDF data using MPI. Use when user asks to validate netCDF file formats, compare two netCDF files in parallel, report variable file offsets, or optimize parallel I/O performance through collective APIs and file alignment.
+description: PnetCDF provides high-performance parallel access to NetCDF files using MPI-IO for concurrent reading and writing. Use when user asks to compare NetCDF files, validate file formats, inspect variable offsets, check library configurations, or optimize parallel I/O performance.
 homepage: https://parallel-netcdf.github.io/
 ---
 
@@ -8,49 +8,69 @@ homepage: https://parallel-netcdf.github.io/
 # esme_pnetcdf_openmpi_4_1_6
 
 ## Overview
-PnetCDF (Parallel netCDF) is a library that enables MPI-based applications to concurrently access netCDF files. It provides a high-level interface for multi-dimensional arrays while maintaining compatibility with the classic netCDF file formats. This skill focuses on utilizing the PnetCDF command-line utilities and applying performance tuning strategies such as request aggregation, nonblocking I/O, and file alignment to maximize throughput on high-performance computing (HPC) clusters.
+
+PnetCDF (Parallel NetCDF) is a high-performance library designed for concurrent access to NetCDF files in classic formats (CDF-1, CDF-2, and CDF-5). By leveraging MPI-IO, it allows multiple processes to read and write to a single file efficiently. This skill provides guidance on using the bundled utility programs for file validation, comparison, and metadata inspection, as well as expert tips for tuning I/O performance on parallel file systems.
 
 ## Utility Programs
-PnetCDF includes several command-line tools for managing and inspecting parallel netCDF files:
 
-- **ncvalidator**: Validates a netCDF file against CDF-1, CDF-2, and CDF-5 format specifications.
+The following CLI tools are essential for managing PnetCDF files and verifying library configurations:
+
+- **ncmpidiff**: Compares two NetCDF files in parallel and reports differences in header metadata or variable data.
+  - Usage: `mpiexec -n <procs> ncmpidiff file1.nc file2.nc`
+- **ncvalidator**: Validates a classic NetCDF file against CDF-1, CDF-2, and CDF-5 format specifications.
   - Usage: `ncvalidator <filename>`
-- **ncmpidiff**: Performs a parallel comparison of two netCDF files and reports differences in metadata or data.
-  - Usage: `mpiexec -n <procs> ncmpidiff <file1> <file2>`
-- **ncoffsets**: Reports the starting and ending file offsets of variables within a netCDF file. This is critical for verifying file alignment and debugging "data shift" penalties.
+- **ncoffsets**: Reports the starting and ending file offsets of NetCDF variables, which is useful for debugging alignment and layout issues.
   - Usage: `ncoffsets <filename>`
-- **pnetcdf-config**: Provides information about the PnetCDF installation, including compiler flags and library dependencies.
-  - Usage: `pnetcdf-config --libs` or `pnetcdf-config --all`
-- **pnetcdf_version**: Reports the version and build information of the PnetCDF library.
+- **pnetcdf-config**: Reports the configuration and compilation options used to build the PnetCDF library.
+  - Usage: `pnetcdf-config --all`
+- **pnetcdf_version**: Reports the version information of the PnetCDF library.
+- **cdfdiff**: A serial version of `ncmpidiff` for comparing files without requiring an MPI environment.
 
 ## Performance Tuning and Best Practices
 
+To achieve maximum I/O throughput, especially on parallel file systems like Lustre or GPFS, follow these expert guidelines:
+
 ### 1. Use Collective APIs
-Always prefer collective APIs (functions ending in `_all`) over independent APIs. Collective I/O allows the underlying MPI-IO layer to coordinate requests across processes, enabling optimizations like collective buffering and merged I/O requests.
+Always prefer collective APIs (e.g., `ncmpi_put_vara_all`) over independent APIs. Collective I/O allows the library and the underlying MPI-IO implementation to coordinate requests, merge small accesses, and optimize the pattern for the file system's striping.
 
-### 2. Nonblocking I/O Aggregation
-For applications accessing many small variables or non-contiguous data, use the nonblocking interface (`ncmpi_iput_*` / `ncmpi_iget_*`).
-- **Aggregation**: Post multiple requests and then call `ncmpi_wait_all`. This allows PnetCDF to "stitch" small requests into a single, large, efficient MPI-IO operation.
-- **Buffered Writes**: Use `ncmpi_bput_*` if you need to modify the user buffer immediately after the call. This requires attaching a buffer first via `ncmpi_buffer_attach`.
+### 2. File Alignment
+Aligning the start of variables to file system block boundaries (striping size) can eliminate "unaligned" access penalties.
+- **Hint**: Use `nc_var_align_size` to set the alignment (e.g., 1MB or 4MB depending on the OST striping).
+- **Header Alignment**: Use `nc_header_align_size` to reserve extra space in the file header. This prevents a "data shift penalty" if you later add attributes or variables that cause the header to grow beyond its initial allocation.
 
-### 3. File Layout Alignment
-Unaligned file access can cause significant performance degradation due to file locking contention.
-- **Header Alignment**: Use the `nc_header_align_size` hint to reserve extra space in the file header. This prevents a "data shift penalty" (moving the entire data section) if attributes or variables are added later.
-- **Variable Alignment**: Use the `nc_var_align_size` hint to align the start of fixed-size variables with the file system's striping size (e.g., 1MB for Lustre).
+### 3. Nonblocking APIs for Small Requests
+If your application performs many small I/O requests, use nonblocking APIs (e.g., `ncmpi_iput_vara`).
+- Post multiple requests using `iput`/`iget`.
+- Commit them all at once using `ncmpi_wait_all`.
+- This allows PnetCDF to aggregate multiple small requests into a single large, contiguous I/O operation.
 
-### 4. Environment Variables
-Control library behavior at runtime without recompilation:
-- `PNETCDF_HINTS`: Set I/O hints globally (e.g., `export PNETCDF_HINTS="nc_var_align_size=1048576"`).
-- `PNETCDF_SAFE_MODE`: Enable data consistency checking (1 to enable, 0 to disable).
-- `PNETCDF_VERBOSE_DEBUG_MODE`: Enable detailed debugging output for I/O operations.
+### 4. Lustre Striping
+On Lustre file systems, set the striping count to the maximum allowable for large files to distribute I/O across multiple Object Storage Targets (OSTs).
+- Command: `lfs setstripe -c -1 -s 1M <directory>`
 
-### 5. File Format Selection
-- **CDF-1**: Classic format (32-bit offsets). Use for maximum compatibility with old tools.
-- **CDF-2**: 64-bit offset format. Use for files larger than 2GB.
-- **CDF-5**: 64-bit data format. Use for datasets with more than 2^32 elements per variable or when using 64-bit integer types (`NC_INT64`, `NC_UINT64`).
+## Runtime Environment Variables
+
+You can tune PnetCDF behavior without recompiling by setting these environment variables:
+
+- **PNETCDF_HINTS**: Pass I/O hints directly to the library.
+  - Example: `export PNETCDF_HINTS="nc_header_align_size=1048576;nc_var_align_size=1048576"`
+- **PNETCDF_SAFE_MODE**: Set to `1` to enable internal consistency checking for attributes and arguments across all processes (useful for debugging).
+- **PNETCDF_VERBOSE_DEBUG_MODE**: Set to `1` to print the source code location where error codes originate (requires library built with `--enable-debug`).
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| esme_pnetcdf_openmpi_4_1_6_pnetcdf_version | PnetCDF Version Information |
+| ncoffsets | Prints offsets of variables in a netCDF file. |
+| ncvalidator | Validate a netCDF file. |
+| pnetcdf-config | A utility program to display the build and installation information of the PnetCDF library. |
 
 ## Reference documentation
-- [PnetCDF C Interface Guide](./references/parallel-netcdf_github_io_doc_c-reference_pnetcdf_c_index.html.md)
-- [PnetCDF FAQ](./references/parallel-netcdf_github_io_doc_faq.html.md)
-- [PnetCDF Quick Tutorial](./references/parallel-netcdf_github_io_wiki_QuickTutorial.html.md)
-- [File Format Specifications (CDF-5)](./references/parallel-netcdf_github_io_doc_c-reference_pnetcdf_c_CDF_002d5-file-format-specification.html.md)
+
+- [PnetCDF C Interface Guide](./references/parallel-netcdf_github_io_doc_c-reference_pnetcdf-c_index.html.md)
+- [PnetCDF Q&A and Performance Tuning](./references/parallel-netcdf_github_io_doc_faq.html.md)
+- [PnetCDF I/O Aggregation (Nonblocking APIs)](./references/parallel-netcdf_github_io_wiki_CombiningOperations.html.md)
+- [CDF-5 File Format Specification](./references/parallel-netcdf_github_io_doc_c-reference_pnetcdf-c_CDF_002d5-file-format-specification.html.md)

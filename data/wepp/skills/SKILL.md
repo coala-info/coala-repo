@@ -1,6 +1,6 @@
 ---
 name: wepp
-description: WEPP is a pathogen-agnostic pipeline that analyzes wastewater samples to provide high-resolution insights into pathogen composition. Use when user asks to deconvolve complex pathogen mixtures, estimate lineage proportions, flag unaccounted alleles, or identify emerging variants.
+description: WEPP is a pathogen-agnostic pipeline that uses phylogenetic placements to estimate lineage abundances and identify novel variants in wastewater sequencing data. Use when user asks to analyze wastewater surveillance data, map sequencing reads to a phylogeny, estimate haplotype proportions, or identify unaccounted alleles.
 homepage: https://github.com/TurakhiaLab/WEPP
 ---
 
@@ -9,58 +9,51 @@ homepage: https://github.com/TurakhiaLab/WEPP
 
 ## Overview
 
-WEPP (Wastewater-Based Epidemiology using Phylogenetic Placements) is a pathogen-agnostic pipeline designed to provide high-resolution insights into the composition of community wastewater samples. By leveraging mutation-annotated trees (MAT), it moves beyond simple marker-based detection to perform parsimonious read placement. This allows for the deconvolution of complex mixtures, accurate estimation of lineage proportions, and the flagging of alleles that do not match known haplotypes—potentially indicating the emergence of new variants.
+WEPP (Wastewater-Based Epidemiology using Phylogenetic Placements) is a pathogen-agnostic pipeline designed to enhance wastewater surveillance. Instead of relying on a small set of signature mutations, WEPP leverages the full phylogeny of a pathogen to map sequencing reads parsimoniously. It provides detailed reports on haplotype and lineage abundances and identifies "Unaccounted Alleles"—mutations observed in the sample that are not explained by known haplotypes—which can serve as early indicators of novel variants.
 
-## Installation and Setup
+## CLI Usage and Best Practices
 
-The recommended installation method is via Bioconda to ensure all phylogenetic dependencies are correctly managed.
+The primary interface for the pipeline is the `run-wepp` command.
 
-```bash
-# Create and configure environment
-conda create --name wepp-env
-conda activate wepp-env
-conda config --env --add channels bioconda
-conda config --env --add channels conda-forge
-conda config --env --set channel_priority flexible
+### Basic Commands
 
-# Install WEPP
-conda install wepp
-```
+- **Display Help**: View all available arguments and subcommands.
+  ```bash
+  run-wepp help --cores 1 --use-conda
+  ```
 
-## Common CLI Patterns
+- **Execute Pipeline**: Run the standard analysis on your dataset.
+  ```bash
+  run-wepp --cores <number_of_cores> --use-conda
+  ```
 
-WEPP is built on Snakemake. The primary entry point is the `run-wepp` command.
+- **Launch Dashboard**: Start the interactive visualization tool to analyze results.
+  ```bash
+  run-wepp dashboard
+  ```
 
-### Basic Execution
-To run the pipeline on your data, specify the number of cores and ensure conda integration is enabled for the internal workflow steps.
+### Workflow Requirements
 
-```bash
-run-wepp --cores 8 --use-conda
-```
+1. **Data Organization**: Place your input sequencing files (FASTQ) and reference files (FASTA, MAT) within a `data` directory in the project root before execution.
+2. **Environment Management**: Always include the `--use-conda` flag. This allows WEPP to manage its internal Snakemake-based dependencies automatically.
+3. **Resource Optimization**: When running multiple samples across different directories, use the `--conda-prefix` argument pointing to an existing `.snakemake` directory to avoid redundant environment creation.
+4. **Pathogen Agnosticism**: While often used for SARS-CoV-2, WEPP can be applied to any pathogen (e.g., RSV-A) provided a Mutation-Annotated Tree (MAT) and a reference genome are supplied.
 
-### Optimization for Multiple Runs
-When processing multiple datasets across different directories, use the `--conda-prefix` flag. This prevents the pipeline from recreating identical Snakemake environments for every run, saving significant time and disk space.
+### Analyzing Results
 
-```bash
-run-wepp --cores 8 --use-conda --conda-prefix /path/to/shared/snakemake_envs
-```
+- **Haplotype Abundances**: Check the output files for estimated proportions of specific strains.
+- **Unaccounted Alleles**: Pay close attention to the outlier detection results. Alleles with high residue values often indicate the presence of a lineage or variant not yet represented in the reference tree.
+- **Read Mapping**: Use the dashboard to inspect how individual reads are parsimoniously placed on the tree to validate low-abundance detections.
 
-### Docker Integration
-If running via Docker, ensure you map the appropriate ports to access the interactive dashboard.
 
-```bash
-# Map container port 80 to host port 8080 for dashboard access
-docker run -it -p 8080:80 -v "$PWD":/WEPP -w /WEPP pranavgangwar/wepp:latest
-```
 
-## Expert Tips and Best Practices
+## Subcommands
 
-- **Pathogen Agnosticism**: While often used for SARS-CoV-2 or RSV-A, WEPP is pathogen-agnostic. To adapt it to a new pathogen, you must provide a corresponding Mutation-Annotated Tree (MAT).
-- **Unaccounted Alleles**: Pay close attention to the "Unaccounted Alleles" report. These are mutations observed in your sample that cannot be explained by the selected haplotypes. High frequencies of unaccounted alleles often suggest the presence of a novel lineage or a sub-lineage not yet represented in your MAT.
-- **Dashboard Visualization**: The interactive dashboard is the most effective way to validate parsimonious placements. It allows you to see exactly which reads were mapped to which haplotypes and identify the specific "residue" (unexplained mutations) at the read level.
-- **Resource Allocation**: Because WEPP performs phylogenetic placement (which can be computationally intensive), always specify the `--cores` argument to match your hardware capabilities.
-- **Troubleshooting**: If the pipeline fails during the environment creation phase, verify that your conda channels are prioritized correctly (conda-forge and bioconda should be at the top).
+| Command | Description |
+|---------|-------------|
+| wepp_detectpeaks | Detects Peaks from the MAT |
+| wepp_sam2pb | Applies QC before running WEPP |
 
 ## Reference documentation
-- [WEPP GitHub Repository](./references/github_com_TurakhiaLab_WEPP.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_wepp_overview.md)
+- [WEPP README](./references/github_com_TurakhiaLab_WEPP_blob_main_README.md)
+- [WEPP Usage Guide](./references/turakhia_ucsd_edu_WEPP_usage.html.md)

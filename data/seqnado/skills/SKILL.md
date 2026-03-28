@@ -1,6 +1,6 @@
 ---
 name: seqnado
-description: Seqnado is a bioinformatics wrapper that simplifies the execution of diverse sequencing pipelines for epigenetic and transcriptomic data. Use when user asks to process RNA-seq, ATAC-seq, ChIP-seq, CUT&RUN, WGS, methylation, CRISPR, or Micro-Capture-C datasets.
+description: Seqnado fetches, organizes, and processes genomic sequence data from public databases. Use when user asks to fetch raw reads by accession ID, download FASTQ files from GEO or SRA, or run data processing pipelines.
 homepage: https://alsmith151.github.io/SeqNado/
 ---
 
@@ -8,36 +8,45 @@ homepage: https://alsmith151.github.io/SeqNado/
 # seqnado
 
 ## Overview
-seqnado is a comprehensive bioinformatics wrapper designed to simplify the execution of various sequencing pipelines. It provides a standardized interface for processing raw sequencing reads into analysis-ready files across multiple modalities. It is particularly useful for researchers looking for a "one-stop" tool to handle diverse epigenetic and transcriptomic datasets without managing individual pipeline dependencies manually.
+The `seqnado` tool streamlines the often cumbersome process of fetching genomic sequence data. It acts as a specialized downloader and organizer that interfaces with public databases to pull raw reads, ensuring they are correctly named and structured for downstream pipelines. Use this skill to generate precise CLI commands for data acquisition, bypassing manual download steps and ensuring reproducibility in sequence data retrieval.
 
-## Usage Guidelines
+## Command Line Usage
+Seqnado is primarily used to fetch data based on Accession IDs (e.g., SRR, ERR, or DRR numbers).
 
-### Core Command Structure
-The primary entry point for the tool is the `seqnado` command followed by the specific pipeline name and required arguments.
-
+### Basic Data Retrieval
+To download a specific run and convert it to FASTQ format:
 ```bash
-seqnado <pipeline> [options]
+seqnado fetch SRR1234567
 ```
 
-### Supported Pipelines
-- **RNA-seq**: Transcriptome profiling and quantification.
-- **ATAC-seq / ChIP-seq**: Chromatin accessibility and protein-DNA interaction mapping.
-- **CUT&RUN / CUT&TAG**: Low-input chromatin profiling.
-- **WGS**: Whole genome sequencing analysis.
-- **Methylation**: Support for Bisulphite and TAPS (TET-assisted pyridine borane sequencing).
-- **CRISPR**: Analysis of CRISPR screens.
-- **Micro-Capture-C**: High-resolution chromosome conformation capture.
+### Batch Processing
+For multiple samples, provide a list of accessions:
+```bash
+seqnado fetch SRR1234567 SRR1234568 SRR1234569
+```
 
-### Common CLI Patterns
-- **Installation**: Ensure the environment is ready using Conda:
-  `conda install -c bioconda seqnado`
-- **Help**: Access specific pipeline options using the help flag:
-  `seqnado <pipeline> --help`
+### Output Management
+Direct the downloaded sequences to a specific directory to maintain project organization:
+```bash
+seqnado fetch SRR1234567 --outdir ./raw_data/
+```
 
-### Best Practices
-- **Environment Management**: Always run seqnado within a dedicated Conda environment to avoid dependency conflicts with other bioinformatics tools.
-- **Resource Allocation**: When running on a cluster or high-performance computing (HPC) system, ensure you specify thread counts and memory limits compatible with the specific pipeline's requirements.
-- **Reference Genomes**: Ensure that paths to reference genomes and indices are correctly mapped before initiating long-running pipelines.
+## Expert Tips
+- **Check Metadata First**: Before initiating large downloads, use the tool to inspect sample metadata to ensure the sequencing depth and platform match your experimental requirements.
+- **Parallel Downloads**: When dealing with large cohorts, utilize the tool's ability to handle multiple accessions in a single command to optimize network throughput.
+- **Disk Space**: Always verify available disk space before running `fetch`, as raw FASTQ files (especially paired-end data) can be several gigabytes per accession.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| seqnado config | Configure seqnado settings. |
+| seqnado download | Download FASTQ files from GEO/SRA using a metadata TSV file and optionally generate a design file. |
+| seqnado pipeline | Run the data processing pipeline for ASSAY (Snakemake under the hood). Any additional arguments are passed to Snakemake (e.g., `seqnado pipeline rna -n` for dry-run, `--unlock`, etc.). |
+| seqnado_design | Generate a SeqNado design CSV from FASTQ files for ASSAY. If no assay is provided, multiomics mode is used. |
+| seqnado_tools | Available Tools in SeqNado Pipeline |
 
 ## Reference documentation
-- [seqnado Overview](./references/anaconda_org_channels_bioconda_packages_seqnado_overview.md)
+- [Seqnado Overview](./references/anaconda_org_channels_bioconda_packages_seqnado_overview.md)

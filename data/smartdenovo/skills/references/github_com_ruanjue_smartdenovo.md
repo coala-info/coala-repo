@@ -1,1 +1,242 @@
-GitHub - ruanjue/smartdenovo: Ultra-fast de novo assembler using long noisy reads Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} ruanjue / smartdenovo Public Notifications You must be signed in to change notification settings Fork 31 Star 136 Ultra-fast de novo assembler using long noisy reads License GPL-3.0 license 136 stars 31 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 18 Pull requests 1 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights ruanjue/smartdenovo master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 80 Commits 80 Commits LICENSE.txt LICENSE.txt Makefile Makefile Makefile.pbh5 Makefile.pbh5 README-tools.md README-tools.md README.md README.md bit2vec.h bit2vec.h bitsvec.h bitsvec.h bitvec.h bitvec.h block_sparse_array.h block_sparse_array.h bloom_filter.h bloom_filter.h counting_bloom_filter.h counting_bloom_filter.h dagcns.h dagcns.h dbm_index_fa.pl dbm_index_fa.pl dbm_read_fa.pl dbm_read_fa.pl dna.h dna.h file_reader.c file_reader.c file_reader.h file_reader.h fq2fa.pl fq2fa.pl golomb.h golomb.h hashset.h hashset.h heap.h heap.h hzm_aln.h hzm_aln.h ksw.c ksw.c ksw.h ksw.h kswx.h kswx.h large_seqs.pl large_seqs.pl linkset.h linkset.h list.h list.h longest_pacbio_subreads.pl longest_pacbio_subreads.pl longest_pacbio_subreads_f5q.pl longest_pacbio_subreads_f5q.pl mem_share.h mem_share.h pairaln.c pairaln.c pbcluster_haplo.pl pbcluster_haplo.pl pbcluster_upgma.pl pbcluster_upgma.pl pbcorr_dbg.c pbcorr_dbg.c pbcorr_dbg.h pbcorr_dbg.h pbh5tof5q.c pbh5tof5q.c pomsa.h pomsa.h queue.h queue.h rename_fa.pl rename_fa.pl rename_fq.pl rename_fq.pl run_dmo.sh run_dmo.sh run_zmo.sh run_zmo.sh seq_n50.pl seq_n50.pl smartdenovo.pl smartdenovo.pl sort.h sort.h string.h string.h thread.h thread.h timer.h timer.h upgma.h upgma.h wtbase.h wtbase.h wtclp.c wtclp.c wtcns.c wtcns.c wtcorr.c wtcorr.c wtcyc.c wtcyc.c wtdif.c wtdif.c wtext.c wtext.c wtgbo.c wtgbo.c wtidx.c wtidx.c wtidx.h wtidx.h wtjnt.c wtjnt.c wtlay.c wtlay.c wtlay.h wtlay.h wtmer.c wtmer.c wtmsa.c wtmsa.c wtobt.c wtobt.c wtpre.c wtpre.c wtsky.c wtsky.c wtzmo.c wtzmo.c View all files Repository files navigation README GPL-3.0 license Getting Started # Download sample PacBio from the PBcR website wget -O- http://www.cbcb.umd.edu/software/PBcR/data/selfSampleData.tar.gz | tar zxf - awk ' NR%4==1||NR%4==2 ' selfSampleData/pacbio_filtered.fastq | sed ' s/^@/&gt;/g ' &gt; reads.fa # Install SMARTdenovo git clone https://github.com/ruanjue/smartdenovo.git &amp;&amp; (cd smartdenovo ; make) # Assemble (raw unitigs in wtasm.lay.utg; consensus unitigs: wtasm.cns) smartdenovo/smartdenovo.pl -c 1 reads.fa &gt; wtasm.mak make -f wtasm.mak Introduction SMARTdenovo is a de novo assembler for PacBio and Oxford Nanopore (ONT) data. It produces an assembly from all-vs-all raw read alignments without an error correction stage. It also provides tools to generate accurate consensus sequences, though a platform dependent consensus polish tools (e.g. Quiver for PacBio or Nanopolish for ONT) are still required for higher accuracy. SMARTdenovo consists of several separate command line tools: wtzmo for read overlapping, wtgbo to rescue missing overlaps, wtclp for identifying low-quality regions and chimaera, and wtcns or wtmsa to produce better unitig consensus. The smartdenovo.pl script provides a convenient interface to call these programs in one go. If you do not care about the internal of SMARTdenovo, you may simply run with: /path/to/smartdenovo/smartdenovo.pl -p prefix -c 1 reads.fa &gt; prefix.mak make -f prefix.mak It calls other SMARTdenovo executables in the same directory containing smartdenovo.pl . After assembly, the raw unitigs are reported in file prefix.lay.utg and consensus unitigs in prefix.cns . If you want to know more about how SMARTdenovo works in detail, please see README-tools.md . New development Most time of assembly is spent on Smith-Waterm alignment, which might be not necessary to long reads assembly. We are developping a novel algorithm, called dot matrix alignment , which is smith-waterman free. wtzmo now supports dot matrix alignment by add option -U -1 -m 0.1 . run_dmo.sh works well on E.coli, Yeast PacBio dataset, Bacteria ERS554120, and drosopila. About Ultra-fast de novo assembler using long noisy reads Topics assembler pacbio Resources Readme License GPL-3.0 license Uh oh! There was an error while loading. Please reload this page . Activity Stars 136 stars Watchers 14 watching Forks 31 forks Report repository Releases No releases published Packages 0 No packages published Contributors 5 Uh oh! There was an error while loading. Please reload this page . Languages C 95.2% C++ 2.7% Perl 1.6% Other 0.5% Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fruanjue%2Fsmartdenovo)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fruanjue%2Fsmartdenovo)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=ruanjue%2Fsmartdenovo)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[ruanjue](/ruanjue)
+/
+**[smartdenovo](/ruanjue/smartdenovo)**
+Public
+
+* [Notifications](/login?return_to=%2Fruanjue%2Fsmartdenovo) You must be signed in to change notification settings
+* [Fork
+  31](/login?return_to=%2Fruanjue%2Fsmartdenovo)
+* [Star
+   136](/login?return_to=%2Fruanjue%2Fsmartdenovo)
+
+* [Code](/ruanjue/smartdenovo)
+* [Issues
+  18](/ruanjue/smartdenovo/issues)
+* [Pull requests
+  1](/ruanjue/smartdenovo/pulls)
+* [Actions](/ruanjue/smartdenovo/actions)
+* [Projects](/ruanjue/smartdenovo/projects)
+* [Security
+  0](/ruanjue/smartdenovo/security)
+* [Insights](/ruanjue/smartdenovo/pulse)
+
+Additional navigation options
+
+* [Code](/ruanjue/smartdenovo)
+* [Issues](/ruanjue/smartdenovo/issues)
+* [Pull requests](/ruanjue/smartdenovo/pulls)
+* [Actions](/ruanjue/smartdenovo/actions)
+* [Projects](/ruanjue/smartdenovo/projects)
+* [Security](/ruanjue/smartdenovo/security)
+* [Insights](/ruanjue/smartdenovo/pulse)
+
+# ruanjue/smartdenovo
+
+master
+
+[Branches](/ruanjue/smartdenovo/branches)[Tags](/ruanjue/smartdenovo/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[80 Commits](/ruanjue/smartdenovo/commits/master/)   80 Commits | | |
+| [LICENSE.txt](/ruanjue/smartdenovo/blob/master/LICENSE.txt "LICENSE.txt") | | [LICENSE.txt](/ruanjue/smartdenovo/blob/master/LICENSE.txt "LICENSE.txt") |  |  |
+| [Makefile](/ruanjue/smartdenovo/blob/master/Makefile "Makefile") | | [Makefile](/ruanjue/smartdenovo/blob/master/Makefile "Makefile") |  |  |
+| [Makefile.pbh5](/ruanjue/smartdenovo/blob/master/Makefile.pbh5 "Makefile.pbh5") | | [Makefile.pbh5](/ruanjue/smartdenovo/blob/master/Makefile.pbh5 "Makefile.pbh5") |  |  |
+| [README-tools.md](/ruanjue/smartdenovo/blob/master/README-tools.md "README-tools.md") | | [README-tools.md](/ruanjue/smartdenovo/blob/master/README-tools.md "README-tools.md") |  |  |
+| [README.md](/ruanjue/smartdenovo/blob/master/README.md "README.md") | | [README.md](/ruanjue/smartdenovo/blob/master/README.md "README.md") |  |  |
+| [bit2vec.h](/ruanjue/smartdenovo/blob/master/bit2vec.h "bit2vec.h") | | [bit2vec.h](/ruanjue/smartdenovo/blob/master/bit2vec.h "bit2vec.h") |  |  |
+| [bitsvec.h](/ruanjue/smartdenovo/blob/master/bitsvec.h "bitsvec.h") | | [bitsvec.h](/ruanjue/smartdenovo/blob/master/bitsvec.h "bitsvec.h") |  |  |
+| [bitvec.h](/ruanjue/smartdenovo/blob/master/bitvec.h "bitvec.h") | | [bitvec.h](/ruanjue/smartdenovo/blob/master/bitvec.h "bitvec.h") |  |  |
+| [block\_sparse\_array.h](/ruanjue/smartdenovo/blob/master/block_sparse_array.h "block_sparse_array.h") | | [block\_sparse\_array.h](/ruanjue/smartdenovo/blob/master/block_sparse_array.h "block_sparse_array.h") |  |  |
+| [bloom\_filter.h](/ruanjue/smartdenovo/blob/master/bloom_filter.h "bloom_filter.h") | | [bloom\_filter.h](/ruanjue/smartdenovo/blob/master/bloom_filter.h "bloom_filter.h") |  |  |
+| [counting\_bloom\_filter.h](/ruanjue/smartdenovo/blob/master/counting_bloom_filter.h "counting_bloom_filter.h") | | [counting\_bloom\_filter.h](/ruanjue/smartdenovo/blob/master/counting_bloom_filter.h "counting_bloom_filter.h") |  |  |
+| [dagcns.h](/ruanjue/smartdenovo/blob/master/dagcns.h "dagcns.h") | | [dagcns.h](/ruanjue/smartdenovo/blob/master/dagcns.h "dagcns.h") |  |  |
+| [dbm\_index\_fa.pl](/ruanjue/smartdenovo/blob/master/dbm_index_fa.pl "dbm_index_fa.pl") | | [dbm\_index\_fa.pl](/ruanjue/smartdenovo/blob/master/dbm_index_fa.pl "dbm_index_fa.pl") |  |  |
+| [dbm\_read\_fa.pl](/ruanjue/smartdenovo/blob/master/dbm_read_fa.pl "dbm_read_fa.pl") | | [dbm\_read\_fa.pl](/ruanjue/smartdenovo/blob/master/dbm_read_fa.pl "dbm_read_fa.pl") |  |  |
+| [dna.h](/ruanjue/smartdenovo/blob/master/dna.h "dna.h") | | [dna.h](/ruanjue/smartdenovo/blob/master/dna.h "dna.h") |  |  |
+| [file\_reader.c](/ruanjue/smartdenovo/blob/master/file_reader.c "file_reader.c") | | [file\_reader.c](/ruanjue/smartdenovo/blob/master/file_reader.c "file_reader.c") |  |  |
+| [file\_reader.h](/ruanjue/smartdenovo/blob/master/file_reader.h "file_reader.h") | | [file\_reader.h](/ruanjue/smartdenovo/blob/master/file_reader.h "file_reader.h") |  |  |
+| [fq2fa.pl](/ruanjue/smartdenovo/blob/master/fq2fa.pl "fq2fa.pl") | | [fq2fa.pl](/ruanjue/smartdenovo/blob/master/fq2fa.pl "fq2fa.pl") |  |  |
+| [golomb.h](/ruanjue/smartdenovo/blob/master/golomb.h "golomb.h") | | [golomb.h](/ruanjue/smartdenovo/blob/master/golomb.h "golomb.h") |  |  |
+| [hashset.h](/ruanjue/smartdenovo/blob/master/hashset.h "hashset.h") | | [hashset.h](/ruanjue/smartdenovo/blob/master/hashset.h "hashset.h") |  |  |
+| [heap.h](/ruanjue/smartdenovo/blob/master/heap.h "heap.h") | | [heap.h](/ruanjue/smartdenovo/blob/master/heap.h "heap.h") |  |  |
+| [hzm\_aln.h](/ruanjue/smartdenovo/blob/master/hzm_aln.h "hzm_aln.h") | | [hzm\_aln.h](/ruanjue/smartdenovo/blob/master/hzm_aln.h "hzm_aln.h") |  |  |
+| [ksw.c](/ruanjue/smartdenovo/blob/master/ksw.c "ksw.c") | | [ksw.c](/ruanjue/smartdenovo/blob/master/ksw.c "ksw.c") |  |  |
+| [ksw.h](/ruanjue/smartdenovo/blob/master/ksw.h "ksw.h") | | [ksw.h](/ruanjue/smartdenovo/blob/master/ksw.h "ksw.h") |  |  |
+| [kswx.h](/ruanjue/smartdenovo/blob/master/kswx.h "kswx.h") | | [kswx.h](/ruanjue/smartdenovo/blob/master/kswx.h "kswx.h") |  |  |
+| [large\_seqs.pl](/ruanjue/smartdenovo/blob/master/large_seqs.pl "large_seqs.pl") | | [large\_seqs.pl](/ruanjue/smartdenovo/blob/master/large_seqs.pl "large_seqs.pl") |  |  |
+| [linkset.h](/ruanjue/smartdenovo/blob/master/linkset.h "linkset.h") | | [linkset.h](/ruanjue/smartdenovo/blob/master/linkset.h "linkset.h") |  |  |
+| [list.h](/ruanjue/smartdenovo/blob/master/list.h "list.h") | | [list.h](/ruanjue/smartdenovo/blob/master/list.h "list.h") |  |  |
+| [longest\_pacbio\_subreads.pl](/ruanjue/smartdenovo/blob/master/longest_pacbio_subreads.pl "longest_pacbio_subreads.pl") | | [longest\_pacbio\_subreads.pl](/ruanjue/smartdenovo/blob/master/longest_pacbio_subreads.pl "longest_pacbio_subreads.pl") |  |  |
+| [longest\_pacbio\_subreads\_f5q.pl](/ruanjue/smartdenovo/blob/master/longest_pacbio_subreads_f5q.pl "longest_pacbio_subreads_f5q.pl") | | [longest\_pacbio\_subreads\_f5q.pl](/ruanjue/smartdenovo/blob/master/longest_pacbio_subreads_f5q.pl "longest_pacbio_subreads_f5q.pl") |  |  |
+| [mem\_share.h](/ruanjue/smartdenovo/blob/master/mem_share.h "mem_share.h") | | [mem\_share.h](/ruanjue/smartdenovo/blob/master/mem_share.h "mem_share.h") |  |  |
+| [pairaln.c](/ruanjue/smartdenovo/blob/master/pairaln.c "pairaln.c") | | [pairaln.c](/ruanjue/smartdenovo/blob/master/pairaln.c "pairaln.c") |  |  |
+| [pbcluster\_haplo.pl](/ruanjue/smartdenovo/blob/master/pbcluster_haplo.pl "pbcluster_haplo.pl") | | [pbcluster\_haplo.pl](/ruanjue/smartdenovo/blob/master/pbcluster_haplo.pl "pbcluster_haplo.pl") |  |  |
+| [pbcluster\_upgma.pl](/ruanjue/smartdenovo/blob/master/pbcluster_upgma.pl "pbcluster_upgma.pl") | | [pbcluster\_upgma.pl](/ruanjue/smartdenovo/blob/master/pbcluster_upgma.pl "pbcluster_upgma.pl") |  |  |
+| [pbcorr\_dbg.c](/ruanjue/smartdenovo/blob/master/pbcorr_dbg.c "pbcorr_dbg.c") | | [pbcorr\_dbg.c](/ruanjue/smartdenovo/blob/master/pbcorr_dbg.c "pbcorr_dbg.c") |  |  |
+| [pbcorr\_dbg.h](/ruanjue/smartdenovo/blob/master/pbcorr_dbg.h "pbcorr_dbg.h") | | [pbcorr\_dbg.h](/ruanjue/smartdenovo/blob/master/pbcorr_dbg.h "pbcorr_dbg.h") |  |  |
+| [pbh5tof5q.c](/ruanjue/smartdenovo/blob/master/pbh5tof5q.c "pbh5tof5q.c") | | [pbh5tof5q.c](/ruanjue/smartdenovo/blob/master/pbh5tof5q.c "pbh5tof5q.c") |  |  |
+| [pomsa.h](/ruanjue/smartdenovo/blob/master/pomsa.h "pomsa.h") | | [pomsa.h](/ruanjue/smartdenovo/blob/master/pomsa.h "pomsa.h") |  |  |
+| [queue.h](/ruanjue/smartdenovo/blob/master/queue.h "queue.h") | | [queue.h](/ruanjue/smartdenovo/blob/master/queue.h "queue.h") |  |  |
+| [rename\_fa.pl](/ruanjue/smartdenovo/blob/master/rename_fa.pl "rename_fa.pl") | | [rename\_fa.pl](/ruanjue/smartdenovo/blob/master/rename_fa.pl "rename_fa.pl") |  |  |
+| [rename\_fq.pl](/ruanjue/smartdenovo/blob/master/rename_fq.pl "rename_fq.pl") | | [rename\_fq.pl](/ruanjue/smartdenovo/blob/master/rename_fq.pl "rename_fq.pl") |  |  |
+| [run\_dmo.sh](/ruanjue/smartdenovo/blob/master/run_dmo.sh "run_dmo.sh") | | [run\_dmo.sh](/ruanjue/smartdenovo/blob/master/run_dmo.sh "run_dmo.sh") |  |  |
+| [run\_zmo.sh](/ruanjue/smartdenovo/blob/master/run_zmo.sh "run_zmo.sh") | | [run\_zmo.sh](/ruanjue/smartdenovo/blob/master/run_zmo.sh "run_zmo.sh") |  |  |
+| [seq\_n50.pl](/ruanjue/smartdenovo/blob/master/seq_n50.pl "seq_n50.pl") | | [seq\_n50.pl](/ruanjue/smartdenovo/blob/master/seq_n50.pl "seq_n50.pl") |  |  |
+| [smartdenovo.pl](/ruanjue/smartdenovo/blob/master/smartdenovo.pl "smartdenovo.pl") | | [smartdenovo.pl](/ruanjue/smartdenovo/blob/master/smartdenovo.pl "smartdenovo.pl") |  |  |
+| [sort.h](/ruanjue/smartdenovo/blob/master/sort.h "sort.h") | | [sort.h](/ruanjue/smartdenovo/blob/master/sort.h "sort.h") |  |  |
+| [string.h](/ruanjue/smartdenovo/blob/master/string.h "string.h") | | [string.h](/ruanjue/smartdenovo/blob/master/string.h "string.h") |  |  |
+| [thread.h](/ruanjue/smartdenovo/blob/master/thread.h "thread.h") | | [thread.h](/ruanjue/smartdenovo/blob/master/thread.h "thread.h") |  |  |
+| [timer.h](/ruanjue/smartdenovo/blob/master/timer.h "timer.h") |

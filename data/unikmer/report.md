@@ -1292,3 +1292,6 @@ Global Flags:
       --verbose                 print verbose information
 ```
 
+
+## Metadata
+- **Skill**: generated

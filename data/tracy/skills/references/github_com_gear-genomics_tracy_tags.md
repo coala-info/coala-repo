@@ -1,1 +1,319 @@
-Tags · gear-genomics/tracy · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} gear-genomics / tracy Public Notifications You must be signed in to change notification settings Fork 23 Star 121 Code Issues 7 Pull requests 2 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights Tags: gear-genomics/tracy Releases Tags Tags v0.8.1 Aug 4, 2025 0dcb3a8 zip tar.gz Downloads v0.7.8 Toggle v0.7.8&#39;s commit message Merge branch 'main' of github.com:gear-genomics/tracy Sep 17, 2024 363750f zip tar.gz Downloads v0.7.6 Toggle v0.7.6&#39;s commit message push docker release Nov 16, 2023 7660565 zip tar.gz Downloads v0.7.5 Apr 12, 2023 970bb5b zip tar.gz Downloads v0.7.3 Toggle v0.7.3&#39;s commit message libdeflate Dec 6, 2022 d79036a zip tar.gz Downloads v0.7.2 Apr 30, 2022 1e80578 zip tar.gz Downloads v0.7.1 Feb 22, 2022 34b199e zip tar.gz Downloads v0.6.1 Toggle v0.6.1&#39;s commit message Verified Verified This commit was created on GitHub.com and signed with GitHub’s verified signature . The key has expired. GPG key ID: 4AEE18F83AFDEB23 Expired Verified Learn about vigilant mode Merge pull request #32 from gear-genomics/dependabot/npm_and_yarn/doc… …s/color-string-1.5.5 Bump color-string from 1.5.4 to 1.5.5 in /docs Jun 29, 2021 51c65e0 zip tar.gz Downloads v0.5.9 Toggle v0.5.9&#39;s commit message dockerfile May 4, 2021 015798a zip tar.gz Downloads v0.5.8 Toggle v0.5.8&#39;s commit message updated readme Feb 17, 2021 58cbaa3 zip tar.gz Downloads Previous Next Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fgear-genomics%2Ftracy%2Ftags)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fgear-genomics%2Ftracy%2Ftags)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Freleases%2Ftag_history&source=header-repo&source_repo=gear-genomics%2Ftracy)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[gear-genomics](/gear-genomics)
+/
+**[tracy](/gear-genomics/tracy)**
+Public
+
+* [Notifications](/login?return_to=%2Fgear-genomics%2Ftracy) You must be signed in to change notification settings
+* [Fork
+  24](/login?return_to=%2Fgear-genomics%2Ftracy)
+* [Star
+   122](/login?return_to=%2Fgear-genomics%2Ftracy)
+
+* [Code](/gear-genomics/tracy)
+* [Issues
+  7](/gear-genomics/tracy/issues)
+* [Pull requests
+  1](/gear-genomics/tracy/pulls)
+* [Actions](/gear-genomics/tracy/actions)
+* [Projects](/gear-genomics/tracy/projects)
+* [Security
+  0](/gear-genomics/tracy/security)
+* [Insights](/gear-genomics/tracy/pulse)
+
+Additional navigation options
+
+* [Code](/gear-genomics/tracy)
+* [Issues](/gear-genomics/tracy/issues)
+* [Pull requests](/gear-genomics/tracy/pulls)
+* [Actions](/gear-genomics/tracy/actions)
+* [Projects](/gear-genomics/tracy/projects)
+* [Security](/gear-genomics/tracy/security)
+* [Insights](/gear-genomics/tracy/pulse)
+
+# Tags: gear-genomics/tracy
+
+[Releases](/gear-genomics/tracy/releases)
+[Tags](/gear-genomics/tracy/tags)
+
+Tags
+
+## [v0.8.9](/gear-genomics/tracy/releases/tag/v0.8.9)
+
+Toggle v0.8.9's commit message
+
+```
+fix build
+```
+
+* Feb 25, 2026
+* [9928e24](/gear-genomics/tracy/commit/9928e249d693a7754fa1a0726b48e57ccca32e35)
+* [zip](/gear-genomics/tracy/archive/refs/tags/v0.8.9.zip)
+* [tar.gz](/gear-genomics/tracy/archive/refs/tags/v0.8.9.tar.gz)
+* [Downloads](/gear-genomics/tracy/releases/tag/v0.8.9)
+
+## [v0.8.8](/gear-genomics/tracy/releases/tag/v0.8.8)
+
+Toggle v0.8.8's commit message
+
+```
+drop macos-13
+```
+
+* Feb 25, 2026
+* [573698f](/gear-genomics/tracy/commit/573698f8344b08b098479eba96aa902803e4b225)
+* [zip](/gear-genomics/tracy/archive/refs/tags/v0.8.8.zip)
+* [tar.gz](/gear-genomics/tracy/archive/refs/tags/v0.8.8.tar.gz)
+
+## [v0.8.7](/gear-genomics/tracy/releases/tag/v0.8.7)
+
+* Feb 25, 2026
+* [5949fa3](/gear-genomics/tracy/commit/5949fa39272977fab017ce865f190236d8ca2a4b)
+* [zip](/gear-genomics/tracy/archive/refs/tags/v0.8.7.zip)
+* [tar.gz](/gear-genomics/tracy/archive/refs/tags/v0.8.7.tar.gz)
+
+## [v0.8.6](/gear-genomics/tracy/releases/tag/v0.8.6)
+
+Toggle v0.8.6's commit message
+
+```
+apptainer
+```
+
+* Feb 25, 2026
+* [65a5c9b](/gear-genomics/tracy/commit/65a5c9b1c449171fea27f0e9b85bdc495611ef63)
+* [zip](/gear-genomics/tracy/archive/refs/tags/v0.8.6.zip)
+* [tar.gz](/gear-genomics/tracy/archive/refs/tags/v0.8.6.tar.gz)
+
+## [v0.8.3](/gear-genomics/tracy/releases/tag/v0.8.3)
+
+Toggle v0.8.3's commit message
+
+```
+token
+```
+
+* Feb 25, 2026
+* [13f0093](/gear-genomics/tracy/commit/13f0093bd59139d49d8994824f04e6015d81e804)
+* [zip](/gear-genomics/tracy/archive/refs/tags/v0.8.3.zip)
+* [tar.gz](/gear-genomics/tracy/archive/refs/tags/v0.8.3.tar.gz)
+
+## [v0.8.2](/gear-genomics/tracy/releases/tag/v0.8.2)
+
+Toggle v0.8.2's commit message
+
+```
+bump version
+```
+
+* Feb 25, 2026
+* [282d834](/gear-genomics/tracy/commit/282d834a416d23c41c2e80d3370044e3dfa02cff)
+* [zip](/gear-genomics/tracy/archive/refs/tags/v0.8.2.zip)
+* [tar.gz](/gear-genomics/tracy/archive/refs/tags/v0.8.2.tar.gz)
+
+## [v0.8.1](/gear-genomics/tracy/releases/tag/v0.8.1)
+
+* Aug 4, 2025
+* [0dcb3a8](/gear-genomics/tracy/commit/0dcb3a832f3ab6a5ed5b1c3d7f5bbfd03ed5f01d)
+* [zip](/gear-genomics/tracy/archive/refs/tags/v0.8.1.zip)
+* [tar.gz](/gear-genomics/tracy/archive/refs/tags/v0.8.1.tar.gz)
+* [Downloads](/gear-genomics/tracy/releases/tag/v0.8.1)
+
+## [v0.7.8](/gear-genomics/tracy/releases/tag/v0.7.8)
+
+Toggle v0.7.8's commit message
+
+```
+Merge branch 'main' of github.com:gear-genomics/tracy
+```
+
+* Sep 17, 2024
+* [363750f](/gear-genomics/tracy/commit/363750fe3d653c763f44d61b43e252e47a445ab6)
+* [zip](/gear-genomics/tracy/archive/refs/tags/v0.7.8.zip)
+* [tar.gz](/gear-genomics/tracy/archive/refs/tags/v0.7.8.tar.gz)
+* [Downloads](/gear-genomics/tracy/releases/tag/v0.7.8)
+
+## [v0.7.6](/gear-genomics/tracy/releases/tag/v0.7.6)
+
+Toggle v0.7.6's commit message
+
+```
+push docker release
+```
+
+* Nov 16, 2023
+* [7660565](/gear-genomics/tracy/commit/766056591d7eb0f19188847392064f32902326e0)
+* [zip](/gear-genomics/tracy/archive/refs/tags/v0.7.6.zip)
+* [tar.gz](/gear-genomics/tracy/archive/refs/tags/v0.7.6.tar.gz)
+* [Downloads](/gear-genomics/tracy/releases/tag/v0.7.6)
+
+## [v0.7.5](/gear-genomics/tracy/releases/tag/v0.7.5)
+
+* Apr 12, 2023
+* [970bb5b](/gear-genomics/tracy/commit/970bb5b51e25f8f592a3dcd19dd38a4e9bdc0662)
+* [zip](/gear-genomics/tracy/archive/refs/tags/v0.7.5.zip)
+* [tar.gz](/gear-genomics/tracy/archive/refs/tags/v0.7.5.tar.gz)
+* [Downloads](/gear-genomics/tracy/releases/tag/v0.7.5)
+
+Previous[Next](/gear-genomics/tracy/tags?after=v0.7.5)
+
+## Footer
+
+© 2026 GitHub, Inc.
+
+### Footer navigation
+
+* [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+* [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+* [Security](https://github.com/security)
+* [Status](https://www.githubstatus.com/)
+* [Community](https://github.community/)
+* [Docs](https://docs.github.com/)
+* [Contact](https://support.github.com?tags=dotcom-footer)
+* Manage cookies
+* Do not share my personal information
+
+You can’t perform that action at this time.

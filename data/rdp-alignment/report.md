@@ -118,7 +118,7 @@ usage:  [options] fulllengthSeqFile queryFile passedSeqOutFile
 
 
 ## Metadata
-- **Skill**: generated
+- **Skill**: not generated
 
 ## rdp-alignment
 

@@ -42,3 +42,6 @@ Version 1.2.0
 Usage: sh short_read_connector_linker.sh [index/query]
 ```
 
+
+## Metadata
+- **Skill**: generated

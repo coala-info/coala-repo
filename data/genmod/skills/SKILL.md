@@ -1,6 +1,6 @@
 ---
 name: genmod
-description: "genmod is a bioinformatics suite for the functional annotation and inheritance modeling of genomic variants. Use when user asks to annotate gene regions, identify inheritance models from pedigree files, or score and rank variants based on their predicted impact."
+description: genmod is a bioinformatics suite that automates the annotation and analysis of genetic inheritance patterns in VCF files. Use when user asks to identify Mendelian inheritance models, annotate variants with CADD scores or population frequencies, and filter or sort genetic variants based on functional scores.
 homepage: http://github.com/moonso/genmod
 ---
 
@@ -9,47 +9,60 @@ homepage: http://github.com/moonso/genmod
 
 ## Overview
 
-`genmod` is a specialized bioinformatics suite for the functional annotation and inheritance modeling of genomic variants. It allows researchers to move beyond simple variant calling by identifying how specific mutations segregate within families and scoring them based on their predicted impact. It is highly efficient, utilizing multithreading to process whole-exome or whole-genome data rapidly.
+genmod is a specialized bioinformatics suite designed to automate the annotation and analysis of genetic inheritance patterns in VCF files. It is particularly powerful for family-based genomics, allowing researchers to identify variants that follow specific Mendelian models (such as Autosomal Recessive, Dominant, or X-linked) across pedigrees of arbitrary size. Beyond inheritance modeling, it provides utilities for functional annotation, variant scoring, and high-performance filtering.
 
-## Common CLI Patterns
+## Core Workflows
 
-### Basic Annotation and Modeling
-The most common workflow involves annotating gene regions and then identifying inheritance models using a pedigree (.ped) file.
-
-```bash
-# Annotate regions and inheritance models in a single pipeline
-cat study_group.vcf | \
-  genmod annotate - --annotate-regions | \
-  genmod models - --family_file family_trio.ped > annotated_variants.vcf
-```
-
-### Building Custom Annotations
-If working with non-human organisms or specific gene sets, use the build tool to create a compatible annotation database.
+### 1. Standard Annotation Pipeline
+The most common workflow involves annotating gene regions followed by inheritance model analysis.
 
 ```bash
-genmod build_annotation <annotation_source_file> -t <type> -o <output_directory>
+# Annotate regions and then identify genetic models
+cat input.vcf | \
+  genmod annotate - --annotate_regions | \
+  genmod models - --family_file family.ped > annotated_output.vcf
 ```
 
-### Sorting and Scoring
-After annotation, variants can be sorted by genomic position or rank score, and then filtered.
+### 2. Annotating External Data
+Enhance VCFs with frequency and pathogenicity data:
+- **CADD Scores**: `genmod annotate <vcf> --cadd_file <path_to_cadd.tsv.gz>`
+- **Population Frequencies**: Use `--thousand_g <vcf>` or `--exac <vcf>` to add allele frequency data.
+- **Custom Regions**: Use `-a <dir>` to point to a custom annotation directory built via `genmod build`.
 
-```bash
-# Sort variants by rank score
-genmod sort annotated_variants.vcf --sort_key rank_score > sorted_variants.vcf
+### 3. Genetic Model Analysis (`genmod models`)
+This command requires a pedigree file (`.ped` or `.family`).
+- **Strict Mode**: Use `-s/--strict` to only annotate models where there is "proof" (all individuals must have non-missing genotype calls).
+- **Phased Data**: Use `--phased` if your VCF is phased. This significantly improves the accuracy of Autosomal Compound Heterozygote (`AR_comp`) detection by ensuring variants are on different alleles.
+- **Reduced Penetrance**: Provide a TSV of gene IDs using `-r <file.tsv>` to allow healthy carriers in Autosomal Dominant models.
 
-# Score variants based on existing annotations
-genmod score sorted_variants.vcf > scored_variants.vcf
-```
+### 4. Filtering and Sorting
+Once annotated, use these tools to prioritize variants:
+- **Filter by Score**: `genmod filter <vcf> -a CADD -t 15 --greater --discard` (keeps variants with CADD > 15 and removes those missing the score).
+- **Sort by Rank**: `genmod sort <vcf> --rank_score` (useful after running `genmod score`).
 
-## Tool-Specific Best Practices
+## Expert Tips
 
-- **Standard Input/Output**: Use the `-` character to represent stdin or stdout when chaining commands. This avoids creating massive intermediate VCF files on disk.
-- **Pedigree Files**: Ensure your `.ped` (or `.family`) file follows standard Linkage format. `genmod models` relies on this to correctly identify inheritance patterns like `AR_hom` (Autosomal Recessive Homozygous) or `AR_comp` (Compound Heterozygote).
-- **Annotation Keys**: By default, `genmod` uses the `Annotation` key in the VCF INFO field for gene names. If you use custom annotations, you can specify the keyword using the `--keyword` flag.
-- **Performance**: `genmod` is multithreaded by default. For large datasets (WGS), ensure the environment has sufficient CPU cores to take advantage of the parallel processing of chromosome chunks.
-- **Compound Heterozygotes**: To identify compound heterozygotes, `genmod models` must be used. It will add a `Compounds` entry to the INFO field listing the variant pairs.
+- **Compound Heterozygotes**: By default, `genmod` looks for compound heterozygotes only in exonic or canonical splice sites to reduce noise. To check the entire gene body, use the `--whole_gene` flag (if available in your version) or ensure your region annotations include intronic areas.
+- **Performance**: Use the `-p/--processes` flag to enable multithreading. However, if you need to maintain VCF record order during streaming, set `-p 1`.
+- **Keyword Matching**: If your VCF already has gene annotations under a different INFO key (e.g., "Gene"), use `-k Gene` in the `models` command so `genmod` knows which variants belong to the same functional unit.
+- **X-Linked Logic**: `genmod` accounts for X-inactivation; it allows healthy females to be carriers in X-Linked Dominant models, whereas healthy males cannot carry the variant.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| annotate | Annotate vcf variants. |
+| filter | Filter vcf variants. |
+| genmod compound | Score compound variants in a vcf file based on their rank score. |
+| genmod_sort | Sort a VCF file based on rank score. |
+| models | Annotate genetic models for vcf variants. |
+| score | Score variants in a vcf file using a Weighted Sum Model. |
 
 ## Reference documentation
-- [genmod GitHub Overview](./references/github_com_Clinical-Genomics_genmod.md)
-- [genmod Wiki: Annotate](./references/github_com_Clinical-Genomics_genmod_wiki_Annotate.md)
-- [genmod Wiki: Build Annotation](./references/github_com_Clinical-Genomics_genmod_wiki_Build-Annotation.md)
+- [Genmod Overview](./references/clinical-genomics_github_io_genmod.md)
+- [Annotating Patterns of Inheritance](./references/clinical-genomics_github_io_genmod_commands_annotate-models.md)
+- [Genetic Models and Conditions](./references/clinical-genomics_github_io_genmod_genetic-models.md)
+- [Annotate Variants CLI](./references/clinical-genomics_github_io_genmod_commands_annotate-variants.md)
+- [Filtering Variants](./references/clinical-genomics_github_io_genmod_commands_filter-variants.md)

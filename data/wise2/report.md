@@ -173,3 +173,6 @@ Standard options
   -errorstyle [server/program] style of error reporting (default program)
 ```
 
+
+## Metadata
+- **Skill**: generated

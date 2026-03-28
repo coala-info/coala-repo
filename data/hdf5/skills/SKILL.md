@@ -1,6 +1,6 @@
 ---
 name: hdf5
-description: HDF5 is a high-performance data management framework used to store, organize, and manipulate massive amounts of data in a hierarchical structure. Use when user asks to explore file metadata, extract specific datasets, compare data between files, optimize storage through compression, or compile HDF5 applications.
+description: HDF5 provides a suite of command-line utilities and compiler wrappers for managing, inspecting, and optimizing large, complex datasets stored in the .h5 format. Use when user asks to list file hierarchies, dump dataset contents, compare files, apply compression filters, or compile HDF5 applications using library wrappers.
 homepage: https://github.com/HDFGroup/hdf5
 ---
 
@@ -8,60 +8,72 @@ homepage: https://github.com/HDFGroup/hdf5
 # hdf5
 
 ## Overview
-HDF5 is a high-performance data management framework used to store and organize massive amounts of data in a hierarchical structure, similar to a filesystem within a single file. This skill enables efficient interaction with HDF5 files using the standard suite of command-line tools. Use this skill to explore metadata, extract specific datasets, verify data integrity between files, and optimize storage through repacking and compression.
+HDF5 is a specialized data model and file format designed for high-performance storage and management of large, complex datasets. This skill provides procedural knowledge for using the native HDF5 command-line toolsuite to interact with .h5 files and optimize library behavior. It covers essential utilities for data inspection, comparison, and compilation, as well as expert-level tuning for metadata performance and compression.
 
-## Common CLI Patterns
+## Core Command-Line Utilities
 
-### Inspecting File Structure and Metadata
-Use `h5ls` for quick navigation and `h5dump` for detailed inspection.
+### Inspection and Extraction
+*   **h5ls**: Use to quickly view the hierarchy of an HDF5 file.
+    *   `h5ls -r file.h5`: Recursively list all groups and datasets.
+    *   `h5ls -v file.h5/dataset_name`: View detailed metadata, including data type, chunking, and fill values.
+*   **h5dump**: Use to examine the contents of a file or export data to text/XML.
+    *   `h5dump -H file.h5`: Display only the header (metadata) without the raw data.
+    *   `h5dump -d /group/dataset file.h5`: Dump a specific dataset.
+    *   `h5dump -b LE -o output.bin file.h5`: Export data to a binary file in Little Endian format.
+*   **h5stat**: Use to generate a statistical report on the file's storage efficiency, including object headers, free space, and metadata overhead.
 
-*   **List top-level groups:**
-    `h5ls file.h5`
-*   **Recursive listing of all objects:**
-    `h5ls -r file.h5`
-*   **View file metadata (header only) without data values:**
-    `h5dump -H file.h5`
-*   **Examine a specific dataset or group:**
-    `h5dump -d /path/to/dataset file.h5`
-    `h5dump -g /path/to/group file.h5`
+### Comparison and Modification
+*   **h5diff**: Use to compare two HDF5 files and identify differences in datasets.
+    *   `h5diff file1.h5 file2.h5`: Compare all objects.
+    *   `h5diff -v file1.h5 file2.h5 /dataset1 /dataset1`: Compare specific datasets with verbose output.
+*   **h5repack**: Use to apply or remove filters (like compression) and change the layout of an existing file.
+    *   `h5repack -f GZIP=6 input.h5 output.h5`: Apply GZIP compression level 6 to all datasets.
+    *   `h5repack -l CHUNK=20x20 input.h5 output.h5`: Change the chunking layout.
 
-### Comparing and Verifying Data
-Use `h5diff` to identify discrepancies between two HDF5 files.
+## Development and Compilation
+The HDF5 library provides wrappers to simplify the inclusion of necessary headers and libraries during compilation.
 
-*   **Basic comparison of two files:**
-    `h5diff file1.h5 file2.h5`
-*   **Compare specific datasets with a relative error tolerance:**
-    `h5diff -d /dataset1 file1.h5 file2.h5 -r 1e-7`
-*   **Report only the differences (quiet mode):**
-    `h5diff -q file1.h5 file2.h5`
+*   **h5cc**: C compiler wrapper.
+*   **h5c++**: C++ compiler wrapper.
+*   **h5fc**: Fortran compiler wrapper.
 
-### Data Manipulation and Optimization
-Use `h5repack` to change layout, chunking, or compression filters on an existing file.
+**Common Pattern:**
+To see the underlying command being executed (including include paths and library links), use the `-show` flag:
+`h5cc -show -c my_program.c`
 
-*   **Apply GZIP compression (level 6) to all datasets:**
-    `h5repack -f GZIP=6 input.h5 output.h5`
-*   **Convert a dataset to a chunked layout:**
-    `h5repack -l /dataset:CHUNK=20x20 input.h5 output.h5`
-*   **Remove all filters (uncompress):**
-    `h5repack -f NONE input.h5 output.h5`
+*Note: In recent versions, `h5cc -show` behavior has been standardized to ensure it does not repeat the `-show` argument in the output, making it easier to use in shell scripts.*
 
-### Compiling HDF5 Applications
-Use the provided compiler wrappers to ensure correct linking of HDF5 libraries and headers.
+## Expert Performance Tuning
 
-*   **Compile a C application:**
-    `h5cc -o my_app my_app.c`
-*   **Compile a C++ application:**
-    `h5c++ -o my_cpp_app my_app.cpp`
-*   **Show the underlying compile command and flags:**
-    `h5cc -show`
+### Metadata Cache Management
+For applications with high metadata overhead (e.g., thousands of small datasets or external links), performance can be improved by adjusting the Metadata Cache (MDC).
+*   **Cache Limits**: The library typically defaults to a 2 MiB cache. For large working sets, consider increasing this to 32 MiB or 64 MiB.
+*   **Aggressive Adaptation**: If performance lags during file opening or closing, the cache may need to be more aggressive about adapting to larger working sets.
 
-## Expert Tips
-*   **Partial Data Extraction:** When dealing with massive datasets, use `h5dump -s` (start) and `-c` (count) to subset the data output and avoid flooding the terminal.
-*   **External Links:** HDF5 files can link to datasets in other files. Use `h5ls -v` to identify if an object is a hard link, soft link, or external link.
-*   **Parallel HDF5:** If working on HPC systems, ensure you are using the parallel-enabled wrappers (often requiring `mpicc` integration) and check `libhdf5.settings` to verify if "Parallel HDF5" is set to `yes`.
-*   **Performance Tuning:** For large writes, always use chunked layouts. Use `h5repack` to tune chunk sizes if read/write performance is suboptimal; chunks should generally be between 10KB and 1MB.
+### Compression and Filters
+*   **zlib/GZIP**: By default, HDF5 is often built with zlib support. If a file requires GZIP and the library was built without it, operations will fail.
+*   **Filter Requirements**: Filters are generally required only when writing data. If a dataset was written with a specific filter (e.g., SZIP), the reading library must have that filter available to decode the data.
+
+### Parallel HDF5 (PHDF5)
+When running on HPC systems using MPI:
+*   Ensure the library is configured with `--enable-parallel`.
+*   Use `MPIO` as the Virtual File Driver (VFD).
+*   Collective I/O operations are generally more efficient than independent I/O for large-scale data writes.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| h5c++ | Compile line for HDF5 C++ programs |
+| h5cc | Compile line for HDF5 |
+| h5diff | Compares HDF5 files and objects within them. |
+| h5dump | Print a usage message and exit |
+| h5ls | List the contents of an HDF5 file |
+| h5repack | Repacks HDF5 files |
 
 ## Reference documentation
 - [Official HDF5 Library Repository](./references/github_com_HDFGroup_hdf5.md)
-- [HDF5 Tags and Releases](./references/github_com_HDFGroup_hdf5_tags.md)
-- [HDF5 Discussions and Tool Usage](./references/github_com_HDFGroup_hdf5_discussions.md)
+- [HDF5 Wiki 2024 Notes](./references/github_com_HDFGroup_hdf5_wiki_2024.md)
+- [HDF5 Tags and Release Notes](./references/github_com_HDFGroup_hdf5_tags.md)

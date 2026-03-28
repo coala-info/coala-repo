@@ -1,6 +1,6 @@
 ---
 name: fiona
-description: Fiona is a Python library and command-line toolset for reading, writing, and managing vector spatial data as GeoJSON-like dictionaries. Use when user asks to inspect spatial metadata, stream geographic features, convert between vector data formats, or perform spatial filtering using bounding boxes.
+description: "Fiona is a Python library and CLI tool for reading, writing, and filtering geospatial vector data using simple mappings. Use when user asks to read or write GIS vector layers, convert between spatial file formats, filter features by attribute or bounding box, or process GeoJSON-like records in Python."
 homepage: https://github.com/Toblerity/Fiona
 ---
 
@@ -8,86 +8,70 @@ homepage: https://github.com/Toblerity/Fiona
 # fiona
 
 ## Overview
-
-Fiona is a high-performance Python library and command-line toolset designed for the efficient handling of vector spatial data. It acts as a Pythonic wrapper around the OGR abstraction library (part of GDAL), treating geographic features as standard Python dictionaries modeled after the GeoJSON format. This makes it exceptionally well-suited for developers who need to integrate spatial data into broader data science workflows without the overhead of a full GIS suite. Fiona focuses on data access and "plumbing," leaving complex geometric manipulations to complementary libraries like Shapely.
-
-## Command Line Interface (fio)
-
-The `fio` CLI is the primary tool for quick data inspection and transformation.
-
-### Common Patterns
-
-- **Inspect Metadata**: Use `fio info` to view the driver, coordinate reference system (CRS), schema, and feature count of a dataset.
-  ```bash
-  fio info data.shp
-  ```
-- **Stream Features**: Use `fio cat` to output features as a sequence of GeoJSON objects. This is often piped into `jq` for processing.
-  ```bash
-  fio cat data.gpkg | jq '.properties.NAME'
-  ```
-- **Spatial Filtering**: Filter features by a bounding box during extraction.
-  ```bash
-  fio cat data.shp --bbox -107.0 37.0 -105.0 39.0
-  ```
-- **Data Conversion**: Load GeoJSON data into a different format like a Shapefile.
-  ```bash
-  fio cat features.json | fio load output.shp --driver "ESRI Shapefile"
-  ```
+Fiona is a high-performance Python library and CLI toolset designed for "no-nonsense" geospatial data handling. It treats GIS vector layers as simple Python mappings (GeoJSON-like) and provides a streamlined interface for reading and writing records. It is particularly effective for batch processing, format conversion, and attribute filtering where complex geometric operations (like those in Shapely) are not the primary focus, but data integrity and speed are.
 
 ## Python API Best Practices
 
-### Efficient Data Access
-
-Always use context managers to ensure file handles and GDAL resources are properly closed.
-
+### Reading and Filtering
+Always use the context manager (`with`) to ensure file handles and GDAL resources are released.
 ```python
 import fiona
 
-with fiona.open('data.gpkg', 'r') as src:
-    # Access metadata
-    print(src.driver)
-    print(src.crs)
-    
-    # Iterate over features
-    for feature in src:
-        # feature is a GeoJSON-like dictionary
-        print(feature['properties'])
+with fiona.open("data.gpkg", "r") as src:
+    # Filter by bounding box (minx, miny, maxx, maxy)
+    for feature in src.filter(bbox=(-107.0, 37.0, -105.0, 39.0)):
+        print(feature.properties['name'])
 ```
 
-### Writing Data
-
-When creating a new file, you must define the "profile," which includes the driver, CRS, and schema. It is often easiest to copy and modify the profile of an existing source file.
-
+### Writing New Files
+To create a new file, you must define a `schema` (geometry type and properties) and a `crs`. The easiest way is to copy the `profile` from a source file.
 ```python
-# Copying a profile for a new file
-with fiona.open('source.shp') as src:
+with fiona.open("input.shp") as src:
     profile = src.profile
-    profile.update(driver='GPKG') # Change format to GeoPackage
-
-    with fiona.open('destination.gpkg', 'w', **profile) as dst:
+    profile.update(driver="GPKG") # Change format
+    
+    with fiona.open("output.gpkg", "w", **profile) as dst:
         for feat in src:
             dst.write(feat)
 ```
 
-### Filtering and Performance
+### Virtual File Systems (VFS)
+Fiona can read directly from zip files or cloud storage using URI prefixes:
+- **Zip**: `zip://path/to/data.zip!folder/file.shp`
+- **HTTP/S3**: `zip+https://example.com/data.zip`
 
-Use the `filter()` method on a collection to perform spatial queries (bounding box) or slice the dataset. This is significantly faster than iterating over the entire collection and checking conditions in Python.
+## CLI Usage (fio)
 
-```python
-with fiona.open('data.shp') as src:
-    # Only process features within the specified bounding box
-    for feat in src.filter(bbox=(-107.0, 37.0, -105.0, 39.0)):
-        process(feat)
-```
+The `fio` command line interface is ideal for piping geospatial data through standard Unix utilities.
+
+### Common Patterns
+- **Inspect a dataset**: `fio info data.shp`
+- **Convert to GeoJSON**: `fio dump data.shp > data.json`
+- **Filter by attribute**: `fio cat data.shp --where "POP_CNTRY > 1000000"`
+- **Spatial Clipping**: `fio cat data.shp --bbox -107,37,-105,39 | fio load output.shp --driver Shapefile`
+
+### Advanced Transformations
+If the `calc` extra is installed, use `fio map` and `fio reduce` for inline transformations:
+- **Buffer geometries**: `fio cat input.shp | fio map "buffer g 0.1" | fio load output.shp`
+- **Dissolve geometries**: `fio cat input.shp | fio reduce "unary_union c" > dissolved.json`
 
 ## Expert Tips
+- **Performance**: Fiona copies data into Python objects. If you only need to reproject or perform heavy spatial joins, consider `ogr2ogr`. Use Fiona when you need to manipulate feature properties using Python logic.
+- **Coordinate Ordering**: Fiona follows the OGR convention. Ensure your CRS is correctly defined in the profile when writing to avoid axis-order issues (Lat/Long vs Long/Lat).
+- **Layer Access**: For multi-layer formats like GeoPackage or FileGDB, use the `layer` keyword in `fiona.open()` or `fio ls` to list available layers.
 
-- **Virtual File Systems (VFS)**: Fiona can read directly from zipped archives or cloud storage by prefixing the path.
-  - Zip: `zip://data.zip!folder/file.shp`
-  - HTTP/S: `https://example.com/data.geojson`
-- **Coordinate Reference Systems**: Fiona uses PROJ.4 strings or EPSG codes. Always verify the `src.crs` before performing spatial operations with other libraries.
-- **Geometry Integration**: Since Fiona features are GeoJSON-like, they integrate seamlessly with Shapely using `shapely.geometry.shape()` for analysis and `shapely.geometry.mapping()` for writing.
-- **In-Memory Files**: For ephemeral data processing, use `fiona.io.MemoryFile` to avoid disk I/O overhead.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| cat | Concatenate and print the features of input datasets as a sequence of GeoJSON features. |
+| fio | Fiona command line interface. |
+| info | Print information about a dataset. |
+| load | Load features from JSON to a file in another format. |
 
 ## Reference documentation
-- [Fiona README](./references/github_com_Toblerity_Fiona.md)
+- [Fiona User Manual](./references/fiona_readthedocs_io_en_stable_manual.html.md)
+- [CLI Documentation](./references/fiona_readthedocs_io_en_stable_cli.html.md)
+- [API Reference](./references/fiona_readthedocs_io_en_stable_fiona.html.md)

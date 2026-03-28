@@ -1,6 +1,6 @@
 ---
 name: gffmunger
-description: gffmunger restructures GFF3 files by transferring functional annotations from polypeptide features to their parent mRNA or transcript features. Use when user asks to fix GFF3 feature relationships for WebApollo, move annotations from polypeptides to transcripts, or prepare Chado database exports for annotation platforms.
+description: gffmunger restructures GFF3 data by moving annotations from the polypeptide level to the mRNA level to ensure compatibility between Chado database exports and WebApollo. Use when user asks to munge GFF files, move polypeptide annotations to mRNA, or prepare Chado exports for WebApollo.
 homepage: https://github.com/sanger-pathogens/gffmunger
 ---
 
@@ -8,42 +8,58 @@ homepage: https://github.com/sanger-pathogens/gffmunger
 # gffmunger
 
 ## Overview
-gffmunger is a specialized bioinformatics utility designed to bridge the gap between GMOD/Chado database exports and the WebApollo annotation platform. Chado often exports GFF3 files where functional annotations (like Gene Ontology terms or protein metadata) are attached to "polypeptide" features. WebApollo, however, typically requires these annotations to be associated with the parent "mRNA" or "transcript" features. This tool automates that restructuring process.
 
-## CLI Usage and Patterns
+gffmunger is a specialized utility designed to bridge the gap between Chado database exports and WebApollo requirements. Its primary function is to restructure GFF3 data, specifically by moving annotations (like functional descriptions or GO terms) from the `polypeptide` level—where Chado often stores them—up to the `mRNA` level, which is required for proper display and editing in WebApollo.
 
-### Basic Transformation
-The most common use case is running the default munging command to fix feature relationships.
+## Usage Guidelines
+
+### Basic Command Structure
+
+The tool follows a simple command-based syntax. You can chain multiple commands if necessary, though `move_polypeptide_annot` is the primary and default operation.
+
 ```bash
-gffmunger --input chado_export.gff3 --output webapollo_ready.gff3
+gffmunger [command] --input <input.gff3> --output <output.gff3>
 ```
 
-### Handling Compressed Inputs and Streams
-gffmunger supports gzipped input files and standard streams, making it easy to integrate into shell pipelines.
-```bash
-# Using gzipped input
-gffmunger --input export.gff3.gz --output output.gff3
+### Common CLI Patterns
 
-# Using pipes
-zcat export.gff3.gz | gffmunger > output.gff3
-```
+- **Standard Transformation**: To process a Chado export for WebApollo:
+  ```bash
+  gffmunger move_polypeptide_annot --input chado_export.gff3 --output webapollo_ready.gff3
+  ```
 
-### Managing FASTA Data
-WebApollo often requires the underlying genomic sequence. If your GFF3 file does not contain the `##FASTA` section, you can provide an external FASTA file.
-```bash
-gffmunger --input input.gff3 --fasta genome.fasta --output output.gff3
-```
-*Note: If `--fasta` is omitted, the tool will automatically attempt to read FASTA data if it is embedded at the end of the input GFF3 file.*
+- **Handling Compressed Inputs**: The tool can natively read gzipped GFF3 files:
+  ```bash
+  gffmunger move_polypeptide_annot --input chado_export.gff3.gz --output processed.gff3
+  ```
 
-### Available Commands
-While `move_polypeptide_annot` is the default behavior, you can explicitly specify commands:
-*   `move_polypeptide_annot`: Transfers annotations (attributes) from polypeptide features to the feature from which the polypeptide derives (usually the mRNA).
+- **External FASTA Integration**: If the FASTA sequence is not embedded in the GFF3 file (after the `##FASTA` directive), provide it explicitly:
+  ```bash
+  gffmunger move_polypeptide_annot --input input.gff3 --fasta sequence.fasta --output output.gff3
+  ```
 
-## Expert Tips
-*   **Verbosity**: Use the `--verbose` flag when debugging complex Chado exports to see exactly which features are being modified.
-*   **Configuration**: The tool looks for a configuration file at `/etc/gffmunger/gffmunger-config.yml`. If you are running in a restricted environment or a container, you can specify a custom config path using the `GFFMUNGER_CONFIG` environment variable.
-*   **Quiet Mode**: Use `--quiet` in automated production pipelines to suppress all output except for critical errors.
+- **Pipe-based Workflows**: Use standard streams for integration into larger bioinformatics pipelines:
+  ```bash
+  cat export.gff3 | gffmunger move_polypeptide_annot > processed.gff3
+  ```
+
+### Expert Tips
+
+- **Default Command**: If no command is specified, `move_polypeptide_annot` is executed by default.
+- **Logging**: Use `--verbose` to debug transformation issues or `--quiet` to suppress all output except errors during automated batch processing.
+- **Configuration**: The tool looks for a `gffmunger-config.yml` for specific mapping logic. You can override the default config path by setting the `GFFMUNGER_CONFIG` environment variable.
+- **GenomeTools Dependency**: Ensure `genometools` (specifically the `gt` binary) is in your PATH, as gffmunger relies on it for GFF3 validation and processing.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| gffmunger | Munges GFF files. Use one or more of the following commands: |
+| gffmunger | Munges GFF files. Use one or more of the following commands: |
 
 ## Reference documentation
-- [GFF munger README](./references/github_com_sanger-pathogens_gffmunger.md)
-- [gffmunger Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_gffmunger_overview.md)
+
+- [GFF munger README](./references/github_com_sanger-pathogens_gffmunger_blob_master_README.md)
+- [GFF munger Config Schema](./references/github_com_sanger-pathogens_gffmunger_blob_master_gffmunger-config.yml.md)

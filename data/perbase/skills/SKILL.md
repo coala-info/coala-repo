@@ -1,6 +1,6 @@
 ---
 name: perbase
-description: "perbase provides high-speed per-base metrics and nucleotide counts from sequencing alignment files. Use when user asks to calculate base depth, generate per-base composition tables, or resolve overlapping mates in BAM or CRAM files."
+description: Perbase is a high-performance bioinformatics utility designed to calculate per-position depth and nucleotide-specific pileup statistics from BAM or CRAM files. Use when user asks to calculate sequencing depth, count nucleotide frequencies at specific positions, or generate pileup statistics with hardware-accelerated parallelization.
 homepage: https://github.com/sstadick/perbase
 ---
 
@@ -8,66 +8,58 @@ homepage: https://github.com/sstadick/perbase
 # perbase
 
 ## Overview
-perbase is a specialized bioinformatics utility written in Rust, designed to provide extremely fast and accurate per-base metrics from sequencing alignment files. It excels at breaking down the composition of every genomic position, providing counts for all four nucleotides, ambiguity codes, insertions, and deletions. It is significantly faster than traditional tools like bam-readcount or sambamba because it leverages Rust's concurrency to automatically parallelize analysis over input regions.
+Perbase is a specialized bioinformatics utility written in Rust, designed to overcome the performance bottlenecks of traditional depth-calculation tools. It leverages hardware concurrency to parallelize analysis over input regions, making it significantly faster than tools like `samtools depth` or `bam-readcount` when compute resources are available. It is particularly useful for generating detailed pileup statistics, including base-specific counts (A, C, T, G, N), insertion/deletion frequencies, and handling mate-pair overlaps with customizable resolution strategies.
 
-## Core CLI Usage
+## CLI Usage and Patterns
 
-The primary tool within the suite is `base-depth`.
+### Basic Depth and Nucleotide Counting
+The primary command is `base-depth`, which provides a comprehensive breakdown of every base at each position.
 
-### Basic Depth Analysis
-To generate a table of per-base metrics for an entire BAM or CRAM file:
 ```bash
+# Analyze a BAM file and output to stdout
 perbase base-depth input.bam
+
+# Analyze specific regions using a BED file
+perbase base-depth input.bam --bed regions.bed
+
+# Provide a reference FASTA to include the REF_BASE column in output
+perbase base-depth input.bam --ref reference.fasta
 ```
 
-### Using a Reference Genome
-Providing a reference FASTA allows the tool to include the `REF_BASE` column in the output, which is essential for identifying mismatches:
-```bash
-perbase base-depth --reference-fasta reference.fasta input.bam
-```
+### Performance and Output Optimization
+*   **Compression**: Use the `-Z` or `--bgzip` flag to output BGZF compressed data directly. This is highly recommended for genome-wide analyses to save disk space.
+*   **Parallelization**: Perbase automatically scales to available cores. Ensure your environment has sufficient threads allocated.
+*   **Zero-Depth Positions**: By default, perbase may truncate regions with 0 depth at the start/end. Use `--keep-zeros` to ensure every position in your target interval is reported.
 
-### Compressed Output and Indexing
-For large-scale analyses, always use the compressed output flag (`-Z`) and index the resulting file with `tabix` for rapid downstream querying:
-```bash
-# Generate compressed output
-perbase base-depth -Z input.bam -o output.tsv.gz
+### Quality Filtering and Accuracy
+*   **Base Quality**: Use `-Q` or `--min-base-quality` to ignore low-quality bases. Bases below this threshold are counted as `N` rather than being discarded, maintaining accurate depth counts while flagging low-confidence sites.
+*   **Mate Resolution**: When read pairs overlap, perbase can resolve conflicts. Use `--mate-fix` to choose a strategy (e.g., preferring the base with higher quality or higher mapping quality).
+*   **Filtering**: Reads failing standard filters (mapping quality, flags) are tracked in the `FAIL` column rather than simply ignored, providing better visibility into data quality.
 
-# Index with tabix (Columns: REF=1, POS=2)
-tabix -S 1 -s 1 -b 2 -e 2 output.tsv.gz
-
-# Query a specific region
-tabix output.tsv.gz chr1:1000-2000
-```
-
-## Advanced Features and Best Practices
-
-### Overlapping Mate Resolution
-When working with paired-end data, overlapping mates can artificially inflate depth. Use the `--mate-fix` flag to resolve these overlaps.
-
-**Recommended Strategies:**
-*   `BaseQualMapQualFirstInPair`: (Standard) Prioritizes the base with higher quality, then higher MAPQ.
-*   `MapQualBaseQualIUPAC`: Prioritizes mapping quality and returns IUPAC ambiguity codes for ties.
-*   `N`: Conservative approach; returns 'N' if mates disagree.
-
-Example command:
-```bash
-perbase base-depth --mate-fix --mate-resolution-strategy BaseQualMapQualFirstInPair input.bam
-```
-
-### Handling Empty SEQ Fields
-perbase gracefully handles BAM records with empty SEQ fields (marked as `*`). These reads contribute to the total `DEPTH` but are categorized under the `N` column since the specific nucleotide is unknown.
-
-### Understanding Depth Calculations
-Be aware of how perbase differs from other tools to ensure consistent results:
-*   **Deletions (DEL):** Counted toward total depth.
-*   **Reference Skips (REF_SKIP):** Not counted toward depth (unlike sambamba).
-*   **Failures:** Reads failing filters are tracked in the `FAIL` column but do not contribute to `DEPTH`.
+### Common Tool Flags
+| Flag | Description |
+| --- | --- |
+| `-Z, --bgzip` | Output in BGZF compressed format. |
+| `--keep-zeros` | Report positions even if depth is zero. |
+| `-Q, --min-base-quality` | Minimum base quality to count a nucleotide (else counts as N). |
+| `--skip-merging-intervals` | Prevent merging of overlapping BED regions (useful for maintaining 1:1 mapping with input). |
+| `--bed-format` | (For `only-depth`) Outputs a 5-column BED-like file without headers. |
 
 ## Expert Tips
-*   **Performance:** perbase scales linearly with available compute resources. On high-core machines, it can be orders of magnitude faster than single-threaded alternatives.
-*   **Memory Management:** If you encounter performance bottlenecks on extremely high-coverage sites, ensure you are using the latest version, as optimizations for "deep" regions are a primary focus of the tool.
-*   **IUPAC Codes:** If your downstream pipeline can handle ambiguity, use the `IUPAC` strategies to preserve information about heterogeneous base calls between mates.
+*   **CRAM Support**: When working with CRAM files, always provide the reference genome using `--ref` to ensure proper decoding and to enable the `REF_BASE` output column.
+*   **Memory Management**: While perbase is fast, analyzing extremely high-depth regions (e.g., amplicon sequencing) with many threads can consume significant memory. Monitor usage when depth exceeds 10,000x.
+*   **Downstream Analysis**: The output is TSV-formatted. For rapid filtering of the results, pipe the output to `awk` or use `tabix` on the bgzipped output (after indexing).
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| base-depth | Calculate the depth at each base, per-nucleotide |
+| only-depth | Calculate the only the depth at each base |
 
 ## Reference documentation
-- [perbase GitHub Repository](./references/github_com_sstadick_perbase.md)
-- [Bioconda perbase Overview](./references/anaconda_org_channels_bioconda_packages_perbase_overview.md)
+- [Perbase GitHub Repository](./references/github_com_sstadick_perbase.md)
+- [Perbase README](./references/github_com_sstadick_perbase_blob_master_README.md)
+- [Changelog and Version History](./references/github_com_sstadick_perbase_blob_master_CHANGELOG.md)

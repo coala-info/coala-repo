@@ -1,6 +1,6 @@
 ---
 name: prophex
-description: ProPhex is a specialized tool for efficient k-mer indexing and genomic sequence querying using a minimal memory footprint. Use when user asks to construct BWT-based indices from FASTA files, query sequencing reads against an index, or generate k-LCP arrays for accelerated k-mer matching.
+description: ProPhex is a bioinformatics tool for memory-efficient k-mer indexing and sequence read mapping using the Burrows-Wheeler Transform. Use when user asks to build a k-LCP index, query sequencing reads against a reference database, or convert BWT files to FASTA format.
 homepage: https://github.com/prophyle/prophex
 ---
 
@@ -8,69 +8,55 @@ homepage: https://github.com/prophyle/prophex
 # prophex
 
 ## Overview
-ProPhex is a specialized tool designed for efficient k-mer indexing with a minimal memory footprint. It leverages the BWA implementation of the BWT-index to allow for rapid querying of genomic sequences. You should use this skill to construct indices from FASTA files and query sequencing reads (FASTQ) against those indices. It supports k-LCP (longest common prefix) arrays to accelerate queries and provides output in an extended Kraken format, making it compatible with downstream metagenomic analysis pipelines.
 
-## Installation
-ProPhex can be installed via Bioconda:
-```bash
-conda install -c bioconda prophex
-```
+ProPhex is a high-performance bioinformatics tool designed for lossless k-mer indexing. By leveraging the Burrows-Wheeler Transform (BWT) implementation from BWA, it provides a memory-efficient method for mapping sequencing reads to a reference database. It serves as a core computational engine for the ProPhyle metagenomic classifier, enabling fast read assignment through the use of k-LCP (Longest Common Prefix) arrays to accelerate the search process.
 
 ## Core Workflows
 
 ### 1. Index Construction
-To query k-mers, you must first build a BWT-based index of your reference sequences.
+To query sequences, you must first build a BWT-based index and a k-LCP array for a specific k-mer length.
 
-```bash
-# Basic index construction
-prophex index -k <kmer_length> <reference.fa>
-
-# Parallel construction of k-LCP and Suffix Array (SA) for speed
-prophex index -k 25 -s <reference.fa>
-```
-*   **Tip**: The `-k` parameter is essential if you plan to use k-LCP for faster querying later.
+*   **Basic Indexing**:
+    `prophex index -k 25 reference.fa`
+*   **Parallel Construction**: Use the `-s` flag to build the k-LCP and Suffix Array (SA) in parallel to save time.
+    `prophex index -k 25 -s reference.fa`
 
 ### 2. Querying Reads
-Once the index is built, you can search for k-mer matches from sequencing data.
+ProPhex matches k-mers from input reads against the constructed index.
 
-```bash
-# Query with k-LCP acceleration (requires index built with -k)
-prophex query -k 25 -u -t 4 <index_prefix> <reads.fq>
-
-# Standard query without k-LCP
-prophex query -k 20 <index_prefix> <reads.fq>
-```
-*   **-u**: Enables k-LCP for significant speedups.
-*   **-t**: Specifies the number of threads.
-*   **-v**: Outputs the set of chromosomes for every k-mer (useful for detailed assignment).
+*   **Standard Query**:
+    `prophex query -k 25 index.fa reads.fq`
+*   **Accelerated Query (Recommended)**: Use the `-u` flag to enable k-LCP-based searching, which significantly improves performance.
+    `prophex query -k 25 -u -t 4 index.fa reads.fq`
+*   **Detailed Output**: Use `-v` to see the specific set of chromosomes/contigs associated with every k-mer.
+    `prophex query -k 25 -u -v index.fa reads.fq`
 
 ### 3. Index Maintenance and Conversion
-*   **Construct k-LCP separately**: If you have an existing BWA index, you can add k-LCP support:
-    ```bash
-    prophex klcp -k 25 <idxbase>
-    ```
-*   **Reconstruct FASTA**: To verify index contents or recover sequences from a BWT:
-    ```bash
-    prophex bwt2fa <idxbase> <output.fa>
-    ```
-*   **Downgrade BWT**: To save space by removing Occ values (uses the older, more compact format):
-    ```bash
-    prophex bwtdowngrade <input.bwt> <output.bwt>
-    ```
+*   **Standalone k-LCP Generation**: If you have an existing BWT index but need a different k-mer length k-LCP:
+    `prophex klcp -k 31 index.fa`
+*   **BWT to FASTA**: Reconstruct the original sequence from a BWT file:
+    `prophex bwt2fa index.fa output.fa`
 
-## Output Format
-ProPhex produces a tab-delimited file (Extended Kraken format):
-1.  **Category**: Legacy value (usually 'U').
-2.  **Sequence Name**: ID from the input FASTQ.
-3.  **Final Decision**: Legacy value (usually '0').
-4.  **Sequence Length**: Length of the query read.
-5.  **Assigned k-mers**: Space-delimited blocks (e.g., `node_id:count`). `0:N` indicates N unassigned k-mers.
+## Expert Tips and Best Practices
 
-## Expert Tips
-*   **Memory Optimization**: If the index is too large, consider removing duplicate k-mers using a pre-processor like `ProphAsm` or `BCalm` before indexing.
-*   **Border Check**: By default, ProPhex checks if a k-mer spans the border of two contigs. Use `-p` in the `query` command to disable this check if your reference consists of long, continuous sequences where border k-mers are negligible.
-*   **Log Statistics**: Use `-l <logfile>` during queries to capture performance metrics and match statistics for pipeline optimization.
+*   **Memory Optimization**: Before indexing, consider using tools like **ProphAsm** or **BCalm** to remove duplicate k-mers. This reduces the index size and memory footprint during querying.
+*   **Thread Scaling**: The `-t` parameter in the `query` command scales well for multi-core systems. Always match this to your available CPU resources for large FASTQ files.
+*   **Output Interpretation**: ProPhex uses an extended Kraken format. Column 5 is the most critical, providing a space-delimited list of k-mer blocks. A `0` indicates no match, while `A` indicates an ambiguous match.
+*   **Contig Borders**: By default, ProPhex checks if a k-mer spans the border of two contigs. If you are working with continuous genomic data where this check is unnecessary, use `-p` to disable it and potentially show more k-mers in the output.
+*   **Format Compatibility**: If using older downstream tools, `bwtdowngrade` can convert the `.bwt` file to a more compact legacy format by removing the Occurrence (Occ) table.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| bwt2fa | Convert BWT index to FASTA format |
+| bwtdowngrade | Downgrades a BWT index to an older version. |
+| klcp | Construct k-LCP array |
+| prophex index | Constructs index for prophex |
+| prophex query | Query a prophex index |
 
 ## Reference documentation
+- [ProPhex README](./references/github_com_prophyle_prophex_blob_master_README.md)
 - [ProPhex GitHub Repository](./references/github_com_prophyle_prophex.md)
-- [Bioconda ProPhex Package](./references/anaconda_org_channels_bioconda_packages_prophex_overview.md)

@@ -1,6 +1,6 @@
 ---
 name: jaffa
-description: JAFFA is a transcript-centric pipeline designed to identify gene fusions and provide their breakpoint cDNA sequences from short-read or long-read transcriptome data. Use when user asks to detect gene fusions, analyze RNA-seq data for chimeric transcripts, or identify fusion breakpoints in long-read sequencing.
+description: JAFFA is a transcript-centric bioinformatics pipeline designed to detect gene fusions across various sequencing read lengths. Use when user asks to identify gene fusions, perform de novo assembly of transcripts, or analyze long-read RNA sequencing data for chimeric sequences.
 homepage: https://github.com/Oshlack/JAFFA
 ---
 
@@ -9,58 +9,65 @@ homepage: https://github.com/Oshlack/JAFFA
 
 ## Overview
 
-JAFFA (Joined Assembly of Fusion Transcripts) is a specialized pipeline designed to identify gene fusions by comparing a sample's transcriptome against a reference transcriptome. Unlike genome-centric fusion finders, JAFFA's transcript-centric approach allows it to maintain high sensitivity across a wide range of read lengths, from 50bp short reads to full-length transcripts. It is particularly effective because it provides the cDNA sequence of the fusion breakpoint, facilitating downstream validation.
+JAFFA (Joined Assembly and Fusion Fasta) is a multi-step bioinformatics pipeline designed to detect gene fusions by comparing a sample's transcriptome against a reference. Unlike genome-centric fusion finders, JAFFA's transcript-centric approach allows it to perform consistently across a wide range of read lengths, from 50bp short-reads to full-length transcripts. It is executed using the `bpipe` workflow engine and outputs both a summary table of candidates and the cDNA sequences of the fusion breakpoints.
 
-## Execution Modes
+## Pipeline Modes
 
-Select the appropriate wrapper based on your input data type:
+Select the appropriate `.groovy` workflow based on your input data and requirements:
 
-- **jaffa-direct**: Recommended for short reads (typically 100bp or longer). It aligns reads directly to the reference transcriptome.
-- **jaffa-assembly**: Best for very short reads (e.g., 50bp) where de novo assembly helps resolve fusion boundaries.
-- **jaffa-hybrid**: Combines assembly and direct alignment; use this when maximum sensitivity is required at the cost of computational time.
-- **JAFFAL**: The dedicated pipeline for long-read transcriptome sequencing (ONT or PacBio).
-
-## Configuration and Environment
-
-Before running JAFFA, you must define the location of your reference data. JAFFA requires a reference base directory containing the necessary genomic and transcriptomic indices (e.g., hg19, hg38).
-
-Set the environment variable:
-```bash
-export JAFFA_REF_BASE=/path/to/your/jaffa_reference_directory
-```
+*   **Assembly (`JAFFA_assembly.groovy`)**: The most sensitive mode for short reads (50bp+). It performs de novo assembly using Velvet/Oases. Note: This mode is computationally expensive and requires significant RAM.
+*   **Direct (`JAFFA_direct.groovy`)**: Faster than assembly mode. It maps reads directly to a reference transcriptome and identifies those that do not align normally.
+*   **Hybrid (`JAFFA_hybrid.groovy`)**: Combines both assembly and direct approaches to balance speed and sensitivity.
+*   **Long (`JAFFAL.groovy`)**: Specifically optimized for noisy long-read data from Oxford Nanopore (ONT) or PacBio. It utilizes `minimap2` for alignment.
 
 ## Common CLI Patterns
 
-### Basic Short-Read Analysis
-To run the direct pipeline on paired-end FASTQ files:
+JAFFA is invoked through the `bpipe` binary included in the `tools/bin` directory of the JAFFA installation.
+
+### Basic Execution
+Run a pipeline by pointing to the desired groovy script and your input fastq files:
 ```bash
-jaffa-direct sample_R1.fastq.gz sample_R2.fastq.gz
+# Run assembly mode on paired-end reads
+<JAFFA_dir>/tools/bin/bpipe run <JAFFA_dir>/JAFFA_assembly.groovy sample_R1.fastq.gz sample_R2.fastq.gz
+
+# Run long-read mode
+<JAFFA_dir>/tools/bin/bpipe run <JAFFA_dir>/JAFFAL.groovy long_reads.fastq.gz
 ```
 
-### Long-Read Analysis (JAFFAL)
-For Oxford Nanopore or PacBio data, use the JAFFAL script:
+### Parallelization
+Use the `-n` flag to specify the number of threads/cores. JAFFA can run multiple samples in parallel branches:
 ```bash
-bpipe run JAFFAL.groovy sample_long_reads.fastq.gz
+# Run with 8 cores
+<JAFFA_dir>/tools/bin/bpipe run -n 8 <JAFFA_dir>/JAFFA_direct.groovy *.fastq.gz
 ```
 
-### Customizing Parameters
-JAFFA wrappers pass arguments directly to the underlying Bpipe execution. You can specify the number of threads or other Bpipe-specific configurations:
+### Specifying Genomes and Annotations
+If not using the default (hg38/Gencode), specify the genome and annotation version using the `-p` parameter:
 ```bash
-jaffa-direct -n 8 sample_R1.fastq.gz sample_R2.fastq.gz
+# Run using hg19 and Gencode v19
+bpipe run -p genome=hg19 -p annotation=genCode19 <JAFFA_dir>/JAFFA_direct.groovy *.fastq.gz
 ```
 
 ## Expert Tips and Best Practices
 
-- **Reference Preparation**: Ensure you have run the `prepare_reference.sh` script (found in the JAFFA source) if you are using a custom reference or if the pre-built indices are missing.
-- **Memory Management**: Assembly-based modes (`jaffa-assembly` and `jaffa-hybrid`) are memory-intensive. Ensure your environment has sufficient RAM (typically 32GB+) for human transcriptome assembly.
-- **Output Interpretation**: The primary output is a CSV file containing candidate fusions. Pay close attention to the "Classification" column:
-    - **HighConfidence**: Fusions with strong supporting evidence.
-    - **LowConfidence**: Often characterized by low read support or homology issues.
-    - **PotentialTranscriptStart**: Fusions that may be alternative splicing events or internal read-throughs.
-- **Long-Read Advantages**: When using `JAFFAL`, the pipeline can often resolve complex rearrangements that short reads miss by spanning the entire fusion transcript in a single read.
+*   **Memory Management**: Assembly mode is RAM-intensive because it runs multiple k-mer assemblies. If the pipeline fails at `Stage run_assembly`, ensure the machine has sufficient memory or reduce the number of parallel samples.
+*   **Reference Preparation**: For non-default genomes (like mm10 or hg19), you must download the reference tarball and run `makeblastdb` on the fasta file before execution.
+*   **Output Files**:
+    *   `jaffa_results.csv`: The main summary table containing fusion genes, genomic coordinates, and the number of spanning reads/pairs.
+    *   `jaffa_results.fasta`: Contains the predicted cDNA sequence for each fusion breakpoint.
+*   **Trimming**: By default, JAFFA uses Trimmomatic but performs no actual trimming. You can modify `JAFFA_stages.groovy` to adjust trimming parameters if your library has high adapter contamination.
+*   **Filtering**: JAFFA automatically filters out reads mapping to intronic, intergenic, or mitochondrial (chrM) regions to improve performance in assembly and hybrid modes.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| jaffa-assembly | JAFFA is a tool for detecting gene fusions from RNA-Seq data. |
+| jaffa-hybrid | JAFFA is a tool for detecting fusion sequences in next-generation sequencing data. |
 
 ## Reference documentation
-
-- [JAFFA Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_jaffa_overview.md)
-- [JAFFA GitHub Repository](./references/github_com_Oshlack_JAFFA.md)
-- [JAFFA Wiki Home](./references/github_com_Oshlack_JAFFA_wiki.md)
+- [JAFFA Example Workflow](./references/github_com_Oshlack_JAFFA_wiki_Example.md)
+- [FAQ and Troubleshooting](./references/github_com_Oshlack_JAFFA_wiki_FAQandTroubleshooting.md)
+- [Reference Download Instructions](./references/github_com_Oshlack_JAFFA_wiki_Download.md)

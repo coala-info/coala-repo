@@ -93,3 +93,6 @@ Usage: proovframe error ref.fa qry.fa
 Requires minimap2 and seqkit in PATH
 ```
 
+
+## Metadata
+- **Skill**: generated

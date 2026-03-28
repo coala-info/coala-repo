@@ -549,3 +549,6 @@ NOTE:File needs to be sorted by Reference ID (i.e. target name)
 Use 'samtools sort <in.bam>' to such effect.
 ```
 
+
+## Metadata
+- **Skill**: generated

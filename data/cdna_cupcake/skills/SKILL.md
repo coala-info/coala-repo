@@ -1,6 +1,6 @@
 ---
 name: cdna_cupcake
-description: cdna_cupcake is a suite of scripts used to process and refine long-read transcriptomic data by collapsing redundant isoforms and generating abundance statistics. Use when user asks to collapse redundant transcripts, filter 5' degraded isoforms, calculate transcript abundance, perform rarefaction analysis, or manipulate FASTA/FASTQ sequences.
+description: cdna_cupcake is a suite of scripts designed to process and refine transcript isoforms from Iso-Seq workflows. Use when user asks to collapse redundant isoforms, filter 5' degraded products, perform rarefaction analysis, or detect fusion genes.
 homepage: https://github.com/Magdoll/cDNA_Cupcake
 ---
 
@@ -8,66 +8,84 @@ homepage: https://github.com/Magdoll/cDNA_Cupcake
 # cdna_cupcake
 
 ## Overview
-cDNA_Cupcake is a suite of Python and R scripts designed to refine long-read transcriptomic data. While official tools like `isoseq3` handle initial clustering, Cupcake is essential for post-clustering workflows—specifically for collapsing alignments into a clean, non-redundant set of isoforms and preparing those results for downstream functional annotation (e.g., SQANTI3). It is also highly effective for quick sequence utility tasks like format conversion, length statistics, and targeted sequence extraction.
 
-## Core Workflows
+cDNA_Cupcake is a specialized suite of Python and R scripts designed to supplement official Iso-Seq workflows. It provides essential tools for the "ToFU" (Transcript Isoforms: Full-length and Unassembled) pipeline, focusing on refining clustered transcript sequences. You should use this skill to handle tasks that occur after the initial clustering step, such as merging redundant transcripts that map to the same genomic location, filtering 5' degraded products, and performing saturation (rarefaction) analysis to estimate sequencing depth sufficiency.
 
-### 1. Post-Clustering Isoform Collapse
-After aligning clustered HQ isoforms to a reference genome (typically using `minimap2`), use Cupcake to collapse redundant transcripts.
+## Core Workflows and CLI Patterns
 
-*   **Collapse isoforms**:
+### 1. Collapsing Redundant Isoforms
+The most common use case is collapsing HQ (High Quality) isoforms into a unique set based on genomic coordinates.
+
+*   **Basic Collapse**:
     ```bash
-    collapse_isoforms_by_sam.py --input <hq_isoforms.fasta> -s <aligned.sorted.sam> -o <output_prefix>
+    collapse_isoforms_by_sam.py --input <input.fq> -s <aligned.sam> -o <output_prefix> -c 0.99 -i 0.95
     ```
-    *Note: Use `--gen_mol_count` if working with UMI-based data or FLNC counts.*
-*   **Filter 5' degraded transcripts**:
-    ```bash
-    filter_away_subset.py <output_prefix>.collapsed
-    ```
-*   **Filter by FL count**:
-    ```bash
-    filter_by_count.py <output_prefix>.collapsed --min_count 2
-    ```
+    *   `-c`: Minimum coverage (default 0.99).
+    *   `-i`: Minimum identity (default 0.95).
+    *   `--gen_mol_count`: Use this if you have UMI-based or FLNC counts to generate an abundance file automatically.
 
-### 2. Abundance and Statistics
-Generate the count information required for differential expression or saturation analysis.
+### 2. Abundance and Filtering
+After collapsing, you must associate full-length (FL) read counts with the unique isoforms.
 
-*   **Get abundance**:
+*   **Get Abundance**:
     ```bash
-    get_abundance_post_collapse.py <output_prefix>.collapsed.group.txt <cluster_report.csv>
+    get_abundance_post_collapse.py <collapsed_prefix>.cluster_report.csv <collapsed_prefix>.abundance.txt
     ```
-*   **Generate summary stats**:
+*   **Filter 5' Degraded Isoforms**:
     ```bash
-    simple_stats_post_collapse.py <output_prefix>.collapsed
+    filter_away_subset.py <collapsed_prefix>
+    ```
+*   **Filter by FL Count**:
+    ```bash
+    filter_by_count.py --min_count 2 <collapsed_prefix>
     ```
 
-### 3. Rarefaction (Subsampling) Analysis
-To determine if sequencing depth has reached saturation for transcript discovery.
+### 3. Rarefaction (Saturation) Analysis
+To determine if you have sequenced deeply enough to capture the majority of the transcriptome:
 
-1.  **Prepare subsampling file**:
+1.  **Prepare the file**:
     ```bash
-    make_file_for_subsampling_from_collapsed.py <collapsed.abundance.txt>
+    make_file_for_subsampling_from_collapsed.py -i <collapsed_prefix> -o subsample_input.txt
     ```
 2.  **Run subsampling**:
     ```bash
-    subsample.py <subsample_input.txt>
+    subsample.py --input subsample_input.txt --step 10000 --iterations 5 > rarefaction_results.txt
     ```
 
 ### 4. Sequence Manipulation Utilities
-Quick CLI patterns for handling FASTA/FASTQ files.
+Cupcake includes several "one-liner" scripts for fast FASTA/FASTQ processing:
 
 *   **Summarize lengths**: `get_seq_stats.py <file.fasta>`
-*   **Extract specific IDs**: `get_seqs_from_list.py <file.fasta> <id_list.txt> > extracted.fasta`
-*   **Format conversion**: `fa2fq.py <file.fasta>` or `fq2fa.py <file.fastq>`
+*   **Extract specific IDs**: `get_seqs_from_list.py <file.fasta> <id_list.txt>`
 *   **Reverse complement**: `rev_comp.py "ATGC"`
+*   **Format conversion**: `fa2fq.py <file.fa>` or `fq2fa.py <file.fq>`
 
-## Best Practices and Constraints
-*   **Nucleotide Assumptions**: Scripts assume standard A, T, C, G bases. Non-canonical bases (N, U, R) may cause unexpected behavior.
-*   **Path Management**: Scripts are organized into subdirectories (e.g., `sequence/`, `cupcake/tofu/`). Ensure the specific subdirectory containing the script is in your `$PATH`.
-*   **Tool Transition**: For core clustering and "collapse" functions in modern pipelines, check if an `isoseq3` equivalent exists (e.g., `isoseq3 collapse`), as these are now preferred over older Cupcake scripts.
-*   **Input Formats**: `collapse_isoforms_by_sam.py` accepts both SAM and BAM inputs. If using BAM, ensure `samtools` is installed.
+### 5. Fusion Gene Detection
+If looking for fusion events, use the `fusion_finder.py` script on your aligned SAM file.
+
+```bash
+fusion_finder.py -s <aligned.sam> -o <output_prefix> --input <input.fq>
+```
+
+## Expert Tips and Best Practices
+
+*   **Input Assumptions**: All scripts assume standard A, T, C, G nucleotides. Presence of `N` or `U` may cause unexpected behavior.
+*   **Path Management**: Since Cupcake is a collection of scripts, it is often easiest to add the specific subdirectories (e.g., `sequence/`, `cupcake/tofu/`) to your `$PATH` rather than relying on a single installation point.
+*   **SAM Requirements**: When using `collapse_isoforms_by_sam.py`, ensure your SAM file is sorted by coordinate. If using `minimap2`, use the `-ax splice` preset for best results.
+*   **Integration with SQANTI3**: Cupcake outputs (GFF/GTF and abundance files) are the standard input for SQANTI3. Use `make_file_for_subsampling_from_collapsed.py` with the `-m2` flag to incorporate SQANTI3 classifications into your rarefaction curves.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| cdna_cupcake_fa2fq.py | Convert FASTA format files to FASTQ format. (Note: The provided help text contained system error logs; arguments are derived from the tool's standard usage). |
+| cdna_cupcake_get_abundance_post_collapse.py | Calculate transcript abundance after collapsing redundant isoforms by mapping back to the original cluster reports. |
+| collapse_isoforms_by_sam.py | Collapse redundant isoforms based on SAM alignments. |
 
 ## Reference documentation
-- [cDNA_Cupcake GitHub Repository](./references/github_com_Magdoll_cDNA_Cupcake.md)
-- [cDNA_Cupcake Wiki](./references/github_com_Magdoll_cDNA_Cupcake_wiki.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_cdna_cupcake_overview.md)
+- [github_com_Magdoll_cDNA_Cupcake.md](./references/github_com_Magdoll_cDNA_Cupcake.md)
+- [github_com_Magdoll_cDNA_Cupcake_wiki_Annotation-and-Rarefaction-Wiki.md](./references/github_com_Magdoll_cDNA_Cupcake_wiki_Annotation-and-Rarefaction-Wiki.md)
+- [github_com_Magdoll_cDNA_Cupcake_wiki_Cupcake_-supporting-scripts-for-Iso-Seq-after-clustering-step.md](./references/github_com_Magdoll_cDNA_Cupcake_wiki_Cupcake_-supporting-scripts-for-Iso-Seq-after-clustering-step.md)
+- [github_com_Magdoll_cDNA_Cupcake_wiki_Sequence-Manipulation-Wiki.md](./references/github_com_Magdoll_cDNA_Cupcake_wiki_Sequence-Manipulation-Wiki.md)

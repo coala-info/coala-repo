@@ -1,6 +1,6 @@
 ---
 name: cromwell-tools
-description: Cromwell-tools is a utility suite for interacting with the Cromwell workflow execution engine to manage and monitor WDL-based workflows. Use when user asks to submit workflows, check workflow status, abort runs, query workflow metadata, or wait for workflow completion.
+description: Cromwell-tools provides a Python library and command-line interface for interacting with the Cromwell REST API to manage bioinformatics workflows. Use when user asks to submit WDL workflows, authenticate with Cromwell instances, monitor workflow status, or query workflow metadata.
 homepage: http://github.com/broadinstitute/cromwell-tools
 ---
 
@@ -8,44 +8,106 @@ homepage: http://github.com/broadinstitute/cromwell-tools
 # cromwell-tools
 
 ## Overview
-`cromwell-tools` is a utility suite designed to streamline interactions with the Cromwell workflow execution engine. It provides a consistent interface for both command-line users and Python developers to manage the lifecycle of workflows—from submission to completion—while handling authentication and metadata retrieval efficiently. It is particularly useful for bioinformaticians and data engineers who need to automate workflow management or extract performance metrics from Cromwell instances.
 
-## CLI Usage Patterns
-The command-line interface mirrors the Cromwell REST API but simplifies authentication and parameter passing.
+The `cromwell-tools` skill provides a streamlined interface for managing bioinformatics workflows on Cromwell instances. It abstracts the complexities of the Cromwell REST API into a consistent Pythonic library and command-line tool. This skill is essential for automating workflow submissions, handling various authentication schemes (including Google Cloud OAuth for CaaS), and implementing robust polling logic to wait for workflow completion.
 
-### Workflow Submission
-To submit a new workflow, you must provide the WDL file and its associated inputs.
-`cromwell-tools submit --wdl workflow.wdl --inputs inputs.json --options options.json --dependencies deps.zip`
+## Authentication Patterns
 
-### Monitoring and Control
-- **Check Status**: Retrieve the current state of a workflow.
-  `cromwell-tools status --uuid <WORKFLOW_ID>`
-- **Wait for Completion**: Block the terminal until a workflow finishes.
-  `cromwell-tools wait --uuid <WORKFLOW_ID>`
-- **Abort a Run**: Stop a running workflow.
-  `cromwell-tools abort --uuid <WORKFLOW_ID>`
-- **Server Health**: Verify the Cromwell server is responsive.
-  `cromwell-tools health`
+Cromwell-tools supports multiple authentication methods. The recommended approach is using the standardized credential harmonizer.
 
-### Querying Workflows
-Search for workflows based on specific criteria like name or status:
-`cromwell-tools query --name <WORKFLOW_NAME> --status Succeeded`
-
-## Python API Integration
-For complex automation, the Python API is the preferred method.
+### Python API Authentication
 ```python
-import cromwell_tools.api as cwt
-# Example: Checking status
-response = cwt.status(uuid='your-uuid-here', auth=my_auth_object)
+from cromwell_tools.cromwell_auth import CromwellAuth
+
+# Recommended: Harmonized method
+auth = CromwellAuth.harmonize_credentials(
+    url='https://cromwell.your-org.org',
+    username='user',
+    password='password'
+)
+
+# OAuth for Cromwell-as-a-Service (CaaS)
+auth_caas = CromwellAuth.harmonize_credentials(
+    service_account_key='path/to/key.json',
+    url='https://cromwell.caas-prod.broadinstitute.org'
+)
 ```
 
-## Best Practices and Expert Tips
-- **Authentication Consistency**: Use the tool's built-in authentication handlers to ensure consistent access across different Cromwell deployments (e.g., local vs. cloud-based).
-- **Long-running Jobs**: Be aware that OAuth tokens may expire during the `wait` command for very long-running workflows. For production pipelines, use service account credentials where possible.
-- **Metadata Retrieval**: Use the `metadata` sub-command to get detailed JSON logs of a run, which is essential for debugging failed tasks or calculating costs.
-- **Environment Management**: Always install `cromwell-tools` in a dedicated Python 3 virtual environment to avoid conflicts with other genomic processing tools.
-- **Resource Monitoring**: Leverage the accessory scripts provided in the repository to monitor resource usage and visualize benchmarking metrics for your WDL tasks.
+### CLI Authentication
+The CLI shares a common set of arguments across sub-commands:
+- `--url`: The Cromwell server endpoint.
+- `--secrets-file`: Path to a JSON containing `url`, `username`, and `password`.
+- `--service-account-key`: Path to Google Service Account JSON for OAuth.
+
+## Workflow Submission
+
+### CLI Submission
+You can submit workflows using local paths or remote URLs.
+```bash
+cromwell-tools submit \
+    --url "https://cromwell.server.org" \
+    --wdl "https://raw.githubusercontent.com/user/repo/main/workflow.wdl" \
+    --inputs-files "inputs.json" \
+    --deps-file "dependencies.zip" \
+    --label-file "labels.json"
+```
+
+### Python Submission
+```python
+from cromwell_tools import api
+
+response = api.submit(
+    auth=auth,
+    wdl_file='workflow.wdl',
+    inputs_files=['inputs.json'],
+    dependencies=['sub_workflow.wdl'],
+    on_hold=False
+)
+workflow_id = response.json()['id']
+```
+
+## Monitoring and Management
+
+### Waiting for Completion
+The `wait` command is highly efficient for automation scripts as it handles polling logic internally.
+- **CLI**: `cromwell-tools wait --poll-interval-seconds 60 <workflow-uuid>`
+- **Python**: `api.wait(workflow_ids=[uuid], auth=auth, poll_interval_seconds=60)`
+
+### Querying Workflows
+Use the `query` method to filter workflows by status, name, or labels.
+```python
+query_dict = {
+    'status': ['Running', 'Submitted'],
+    'name': 'MyWorkflowName',
+    'additionalQueryResultFields': ['labels']
+}
+response = api.query(query_dict=query_dict, auth=auth)
+```
+
+## Expert Tips
+
+1. **Remote Assets**: Use URLs for `--wdl-file` and `--inputs-files` in the CLI to avoid local file management overhead; `cromwell-tools` handles the download and composition automatically.
+2. **Dependency Zipping**: When using the Python API, you can pass a list of file paths to the `dependencies` argument, and the tool will automatically create the required zip archive in memory.
+3. **CaaS Collections**: When interacting with Cromwell-as-a-Service, always specify the `--collection-name` (CLI) or `collection_name` (API) to ensure workflows are associated with the correct SAM collection.
+4. **On-Hold Workflows**: Use `on_hold=True` during submission for complex CI/CD pipelines where you need a UUID generated but want to delay execution until external data validation is complete. Use `release_hold` to start the run.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| cromwell-tools abort | Request Cromwell to abort a running workflow by UUID. |
+| cromwell-tools health | Check that cromwell is running and that provided authentication is valid. |
+| cromwell-tools metadata | Retrieve the workflow and call-level metadata for a specified workflow by UUID. |
+| cromwell-tools query | Query for workflows. |
+| cromwell-tools status | Get the status of one or more workflows. |
+| cromwell-tools submit | Submit a WDL workflow on Cromwell. |
+| cromwell-tools task_runtime | Output tsv breakdown of task runtimes by execution event categories |
+| cromwell-tools wait | Wait for one or more running workflow to finish. |
+| release_hold | Request Cromwell to release the hold on a workflow. |
 
 ## Reference documentation
-- [Cromwell-tools GitHub Repository](./references/github_com_broadinstitute_cromwell-tools.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_cromwell-tools_overview.md)
+- [Cromwell-tools Python API Quickstart](./references/cromwell-tools_readthedocs_io_en_latest_Tutorials_Quickstart_api_quickstart.html.md)
+- [Cromwell-tools Command Line Interface Quickstart](./references/cromwell-tools_readthedocs_io_en_latest_Tutorials_Quickstart_cli_quickstart.html.md)
+- [API Documentation Reference](./references/cromwell-tools_readthedocs_io_en_latest_API_index.html.md)

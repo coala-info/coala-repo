@@ -7844,3 +7844,6 @@ The manual and more examples are available at
   https://www.gnu.org/software/datamash
 ```
 
+
+## Metadata
+- **Skill**: generated

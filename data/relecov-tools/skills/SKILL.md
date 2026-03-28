@@ -1,6 +1,6 @@
 ---
 name: relecov-tools
-description: relecov-tools automates the data lifecycle for the Spanish Network for Genomic Surveillance of SARS-CoV-2 by managing metadata extraction, validation, and database submission. Use when user asks to download files from SFTP, process laboratory metadata, validate JSON schemas, map data to ENA or GISAID formats, or update the RELECOV database.
+description: relecov-tools manages the end-to-end lifecycle of SARS-CoV-2 genomic data by handling metadata standardization, schema validation, and database submission. Use when user asks to transform laboratory metadata, validate JSON files against schemas, map data for ENA or GISAID submissions, or update the central RELECOV database.
 homepage: https://github.com/BU-ISCIII/relecov-tools
 ---
 
@@ -9,40 +9,66 @@ homepage: https://github.com/BU-ISCIII/relecov-tools
 
 ## Overview
 
-The `relecov-tools` suite is a specialized collection of utilities designed to automate the data lifecycle for the Spanish Network for Genomic Surveillance of SARS-CoV-2 (RELECOV). It bridges the gap between raw laboratory output and public database submission by providing standardized workflows for metadata extraction, data validation, and format conversion. This tool is essential for ensuring that genomic data and its associated metadata meet the rigorous schema requirements of the RELECOV platform and international repositories.
+The `relecov-tools` suite is a specialized toolkit designed for the Spanish Network for genomic surveillance of SARS-CoV-2 (RELECOV). It facilitates the end-to-end lifecycle of genomic data management, including secure data retrieval, metadata standardization, schema validation, and submission to international databases. Use this skill to automate the processing of laboratory results and bioinformatic outputs into compliant formats for public health reporting and database storage.
 
 ## Core CLI Usage
 
-The tool follows a standard command-line interface: `relecov-tools [OPTIONS] COMMAND [ARGS]...`.
+The tool follows a standard command-line interface pattern: `relecov-tools [OPTIONS] COMMAND [ARGS]...`.
 
-### Data Acquisition
-Use the `download` command to retrieve files from the RELECOV SFTP server.
-- **Basic Download**: `relecov-tools download -u <username> -p <password> -o <output_directory>`
-- **Cleanup**: Use `-d download_clean` to remove files from the SFTP server after a successful download.
-- **Targeting**: Use `-t '["folder1", "folder2"]'` to limit the download to specific directories.
+### Global Options
+- **Verbose Output**: Use `-v` or `--verbose` to print logs to the console during execution.
+- **Debugging**: Use `-d` or `--debug` to show full tracebacks on error.
+- **Logging**: Use `-l <path>` or `--log-path <path>` to save execution logs to a specific directory.
+- **Hex-code**: Use `-h <hex>` or `--hex-code <hex>` to define a specific hexadecimal identifier for the execution. This is useful for grouping related files or forcing the overwrite of existing files with the same code.
 
-### Metadata Processing
-- **Laboratory Metadata**: `relecov-tools read-lab-metadata` processes Excel files from labs into platform-compliant JSON.
-- **Bioinformatics Metadata**: `relecov-tools read-bioinfo-metadata` extracts technical metrics from analysis pipelines.
-- **Homogenization**: `relecov-tools metadata-homogeneizer` aligns disparate institution metadata formats into a single standard.
+### Common Command Patterns
 
-### Validation and Mapping
-- **Schema Validation**: `relecov-tools validate` checks JSON files against the official RELECOV schema. This is a critical step before any database upload.
-- **Repository Mapping**: `relecov-tools map` converts internal RELECOV data into formats required by ENA or GISAID.
+- **Metadata Preparation**:
+  - `read-lab-metadata`: Use this to transform laboratory spreadsheets into the JSON format required by the RELECOV schema.
+  - `read-bioinfo-metadata`: Use this to extract and format bioinformatic analysis results.
+  - `metadata-homogeneizer`: Use this to normalize institution-specific metadata into the standard RELECOV format.
 
-### Submission and Storage
-- **ENA Upload**: `relecov-tools upload-to-ena` generates the XML files required for European Nucleotide Archive submission.
-- **GISAID Upload**: `relecov-tools upload-to-gisaid` prepares files for GISAID submission.
-- **Database Update**: `relecov-tools update-db` pushes validated JSON data into the RELECOV platform's central database.
+- **Validation and Mapping**:
+  - `validate`: Always run this command to check your JSON files against the official schema before attempting uploads or database updates.
+  - `map`: Use this to convert internal data schemas into specific formats required by ENA or GISAID.
 
-## Expert Tips and Best Practices
+- **Data Submission**:
+  - `upload-to-ena`: Generates the XML files necessary for European Nucleotide Archive submissions.
+  - `upload-to-gisaid`: Prepares files for GISAID submission.
+  - `update-db`: Synchronizes the processed JSON information with the central RELECOV database.
 
-- **Avoid Overwrites**: By default, the tool generates a random hexadecimal code for output files. If you need to maintain consistency across multiple runs or prevent accidental overwrites, use the `--hex-code <TEXT>` flag to define a fixed identifier.
-- **Debugging**: If a command fails without a clear error, use the `-d` or `--debug` flag to see the full Python traceback. Use `-v` or `--verbose` to see real-time logs in the console.
-- **Batch Processing**: The `wrapper` command allows you to execute multiple modules sequentially based on a configuration file. This is the preferred method for production pipelines.
-- **Log Management**: Use `relecov-tools logs-to-excel` to merge multiple JSON/log reports into a single Excel file for easier manual review of batch processing results.
-- **System Requirements**: Ensure `p7zip` is installed on your system, as the tool relies on it for handling compressed genomic data.
+- **Workflow Automation**:
+  - `wrapper`: Executes a sequence of modules as defined in the local configuration.
+  - `pipeline-manager`: Manages symbolic links for samples that need to be processed through specific bioinformatic pipelines.
+
+## Best Practices and Tips
+
+- **Environment Requirements**: Ensure Python >= 3.10 and `p7zip` (7-Zip) are installed. The tool relies on `p7zip` for handling compressed genomic data.
+- **Configuration Profiles**: The tool supports different project profiles (e.g., `relecov`, `mepram`, `EQA2026`). Use the `add-extra-config` command to load or overwrite specific configuration parameters for these projects.
+- **Log Management**: For large batches, use `logs-to-excel` to merge multiple JSON and log reports into a single, readable Excel file for auditing.
+- **Schema Updates**: If the metadata requirements change, use `build-schema` to regenerate or update the JSON Schema files from the underlying Python definitions.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| build-schema | Generates and updates JSON Schema files from Excel-based database definitions. |
+| download | Download files located in sftp server. |
+| map | Convert data between phage plus schema to ENA, GISAID, or any other schema |
+| metadata-homogeneizer | Parse institution metadata lab to the one used in relecov |
+| read-bioinfo-metadata | Create the json compliant from the Bioinfo Metadata. |
+| read-lab-metadata | Create the json compliant to the relecov schema from the Metadata file. |
+| relecov-tools logs-to-excel | Creates a merged xlsx and Json report from all the log summary jsons given as input |
+| relecov-tools pipeline-manager | Create the symbolic links for the samples which are validated to prepare for bioinformatics pipeline execution. |
+| relecov-tools upload-to-ena | parse data to create xml files to upload to ena |
+| send-mail | Send a sample validation report by mail. |
+| update-db | upload the information included in json file to the database |
+| upload-to-gisaid | parsed data to create files to upload to gisaid |
+| validate | Validate json file against schema. |
 
 ## Reference documentation
-- [relecov-tools GitHub Repository](./references/github_com_BU-ISCIII_relecov-tools.md)
-- [relecov-tools Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_relecov-tools_overview.md)
+- [Main README](./references/github_com_BU-ISCIII_relecov-tools_blob_main_README.md)
+- [Project Changelog](./references/github_com_BU-ISCIII_relecov-tools_blob_main_CHANGELOG.md)
+- [RELECOV Schema Definition](./references/github_com_BU-ISCIII_relecov-tools_blob_main_relecov_tools_schema_relecov_schema.json.md)

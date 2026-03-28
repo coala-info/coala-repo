@@ -1,0 +1,69 @@
+☰
+[ ]
+
+[![Bin Chicken logo](/binchicken/binchicken_logo.png)](/binchicken/)
+
+## [Bin Chicken](/binchicken/)
+
+S
+
+* [installation](/binchicken/installation)
+* [setup](/binchicken/setup)
+* [usage](/binchicken/usage)
+* [demo](/binchicken/demo)
+* [tools](/binchicken/tools)
+
++ [Bin Chicken coassemble](/binchicken/tools/coassemble)
++ [Bin Chicken single](/binchicken/tools/single)
++ [Bin Chicken update](/binchicken/tools/update)
++ [Bin Chicken iterate](/binchicken/tools/iterate)
++ [Bin Chicken evaluate](/binchicken/tools/evaluate)
++ [Bin Chicken build](/binchicken/tools/build)
+
+# General usage
+
+## General Options
+
+* **Cores**: The `--cores` option sets the maximum number of cores to use. The default value is 1. When running in cluster mode, this restricts the number of cores per job submitted.
+* **Local Cores**: The `--local-cores` option sets the maximum number of cores to use on local rules when running in cluster mode. The default value is 1.
+* **Cluster Retries**: The `--cluster-retries` option sets the number of times to retry a failed job. The default value is 3. This is especially important when using `--run-aviary` to run assembly and genome recovery. Jobs are submitted with sequentially increasing walltime, and sometimes CPUs and RAM with each failure. See below.
+
+## Memory issues
+
+If you encounter memory issues with target\_elusive or cluster\_graph, you can try the following:
+
+* **Kmer preclustering**: The `--kmer-precluster` option can be set to `always` to enable kmer preclustering. This is the default if more than 1000 samples are provided. This greatly reduces memory usage and allows scaling up to at least 250k samples on a single HPC node. Kmer preclustering can be disabled with `--kmer-precluster never`.
+* **Precluster size**: The `--precluster-size` option sets the maximum number of samples to use for preclustering. The default value is 5 x the number of recovery samples. Reducing this value will reduce memory usage by reducing the number of combinations that are considered. However, this reduces the samples combinations that are considered for both coassembly and differential-abundance binning (co-binning), so may result in sub-optimal coassembly suggestions.
+* **Target taxa**: The `--taxa-of-interest` option can be used to filter the taxa of the considered sequences to target a specific taxon. This can reduce memory usage.
+
+## Cluster submission
+
+Snakemake profiles can be used to automatically submit jobs to HPC clusters (`--snakemake-profile`).
+Note that Aviary assemble commands are submitted to the cluster, while Aviary recover commands are run locally such that Aviary handles cluster submission.
+The `--cluster-submission` flag sets the local Aviary recover thread usage to 1, to enable multiple runs in parallel by setting `--local-cores` to greater than 1.
+This is required to prevent `--local-cores` from limiting the number of threads per submitted job.
+
+## Aviary Assemble
+
+* **Maximum number of cores**: The `--aviary-assemble-cores` option sets the maximum number of cores for Aviary assemble to use. The default value is 64.
+* **Maximum amount of memory**: The `--aviary-assemble-memory` option sets the maximum amount of memory for Aviary assemble to use (in Gigabytes). The default value is 500.
+* **Dynamic assembly strategy**: The `--assembly-strategy dynamic` (default) option means that assembly is initially attempted using metaSPAdes with 32 CPUs, 250 GB RAM. If this fails, metaSPAdes is attempted again with 64 CPUs, 500 GB RAM. If this also fails, MEGAHIT is attempted with 32 CPUs, 250 GB RAM.
+* **MetaSPAdes assembly strategy**: The `--assembly-strategy metaspades` option means that assembly is attempted using metaSPAdes with 32 CPUs, 250 GB RAM, with CPUs and RAM increasing with each attempt.
+* **MEGAHIT assembly strategy**: The `--assembly-strategy megahit` option means that assembly is attempted using MEGAHIT with 32 CPUs, 250 GB RAM, with CPUs and RAM increasing with each attempt.
+* **Assemble unmapped**: The `--assemble-unmapped` option means that reads are first mapped to reference genomes, and only unmapped reads are assembled. This can reduce the complexity of the assembly, thus reducing computational requirements. Note that will likely reduce the number of recovered novel genomes, possibly due to overlap of reads from conserved sequences of different species.
+
+## Aviary Recover
+
+* **Maximum number of cores**: The `--aviary-recover-cores` option sets the maximum number of cores for Aviary recover to use. The default value is 32. If `--cluster-submission` is set, then this applies to jobs submitted by Aviary. Binners, refinement steps and characterisation are submitted as separate jobs.
+* **Maximum amount of memory**: The `--aviary-recover-memory` option sets the maximum amount of memory for Aviary recover to use (in Gigabytes). The default value is 250. If `--cluster-submission` is set, then this applies to jobs submitted by Aviary.
+
+On this page
+
+* [General usage](#general-usage)
+* [General Options](#general-options)
+* [Memory issues](#memory-issues)
+* [Cluster submission](#cluster-submission)
+* [Aviary Assemble](#aviary-assemble)
+* [Aviary Recover](#aviary-recover)
+
+Powered by [Doctave](https://cli.doctave.com)

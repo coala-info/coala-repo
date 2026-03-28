@@ -171,3 +171,6 @@ options:
   -w W, --workdir W     working directory
 ```
 
+
+## Metadata
+- **Skill**: generated

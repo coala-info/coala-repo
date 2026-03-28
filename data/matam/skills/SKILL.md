@@ -1,6 +1,6 @@
 ---
 name: matam
-description: MATAM reconstructs complete marker genes from short-read metagenomic datasets using a reference-guided assembly approach. Use when user asks to reconstruct full-length marker sequences, perform taxonomic assignment, or compare abundances across metagenomic samples.
+description: MATAM is a reference-guided assembly tool designed to reconstruct full-length genomic markers, such as 16S rRNA, from metagenomic short-read sequences. Use when user asks to reconstruct phylogenetic markers from metagenomics data, index reference databases, perform taxonomic assignment, or generate abundance tables across multiple samples.
 homepage: https://github.com/bonsai-team/matam
 ---
 
@@ -9,74 +9,80 @@ homepage: https://github.com/bonsai-team/matam
 
 ## Overview
 
-MATAM (Mapping-Assisted Targeted-Assembly for Metagenomics) is a specialized bioinformatic tool designed to reconstruct complete marker genes from short-read metagenomic datasets. While standard metagenomic assemblers often struggle with closely related species or conserved regions, MATAM uses a reference-guided approach to recruit reads belonging to specific markers and then performs a targeted assembly. This results in high-quality, full-length sequences suitable for precise taxonomic identification and abundance estimation.
+MATAM (Mapping-Assisted Targeted-Assembly for Metagenomics) is a specialized assembly tool designed to extract and reconstruct specific genomic markers from short-read metagenomic sequences. While general assemblers often struggle with closely related species in complex communities, MATAM uses a reference-guided approach to ensure high-quality, full-length marker reconstruction. It is optimized for 16S rRNA markers but can be adapted for other phylogenetic markers through custom database indexing.
 
-## Installation and Setup
+## Resource Management
 
-The recommended way to install MATAM is via Conda using the Bioconda channel:
+MATAM is parallelized and memory-intensive. Adjust these parameters based on your environment:
 
-```bash
-conda config --add channels defaults
-conda config --add channels bioconda
-conda config --add channels conda-forge
-conda install matam
-```
+- **Memory**: 10GB RAM is recommended. Use `--max_memory` (in MB) to cap usage.
+- **CPU**: Use `--cpu` to specify the number of threads.
+- **Input Format**: Reads must be in FASTQ format with unique identifiers and Phred+33 encoding.
 
 ## Database Preparation
 
-Before running an assembly, you must prepare a reference database. MATAM provides a default SSU rRNA database based on SILVA 128.
+Before assembly, you must index a reference database.
 
-### Using the Default Database
-To index the provided SSU rRNA database, specify a directory for storage and the memory limit (in MB):
-
+### Using the Default SSU rRNA Database
+MATAM provides a pre-clustered (95% identity) SILVA 128 database.
 ```bash
 index_default_ssu_rrna_db.py -d /path/to/db_dir --max_memory 10000
 ```
 
 ### Using a Custom Database
-If working with markers other than 16S rRNA, prepare a custom FASTA database:
-
+For markers other than 16S rRNA, prepare a custom FASTA reference.
 ```bash
-matam_db_preprocessing.py -i ref_db.fasta -d /path/to/db_dir --cpu 4 --max_memory 10000 -v
+matam_db_preprocessing.py -i custom_ref.fasta -d /path/to/db_dir --cpu 8 --max_memory 10000 -v
 ```
 
 ## Assembly Workflows
 
-The core functionality is handled by `matam_assembly.py`.
-
 ### Standard De-novo Assembly
-To reconstruct full-length sequences from a FASTQ file:
-
+Reconstructs full-length sequences present in the sample.
 ```bash
-matam_assembly.py -d /path/to/db_dir/SILVA_128_SSURef_NR95 -i reads.fastq --cpu 8 --max_memory 10000 -v
+matam_assembly.py -d /path/to/db_dir/prefix -i reads.fastq --cpu 8 --max_memory 10000 -v
 ```
-*Note: The `-d` argument requires the common prefix of the database files (e.g., `SILVA_128_SSURef_NR95` for the default).*
+*Note: The `prefix` for the default database is `SILVA_128_SSURef_NR95`.*
 
 ### Assembly with Taxonomic Assignment
-To include taxonomic classification and abundance estimation (using the RDP classifier):
-
+Performs assembly followed by classification using the RDP classifier.
 ```bash
-matam_assembly.py -d /path/to/db_dir/prefix -i reads.fastq --cpu 8 --max_memory 10000 -v --perform_taxonomic_assignment
+matam_assembly.py -d /path/to/db_dir/prefix -i reads.fastq --cpu 8 --perform_taxonomic_assignment -v
 ```
+*Warning: The default RDP training model is "16srrna". This mode may not be suitable for non-16S markers.*
 
-## Sample Comparison
+## Comparing Multiple Samples
 
-If you have processed multiple samples with taxonomic assignment enabled, you can generate a contingency table to compare abundances:
+If you have processed multiple samples with `--perform_taxonomic_assignment`, you can generate abundance tables.
 
-```bash
-matam_compare_samples.py -s samples_list.tsv -t contingency_table.tsv -c comparison_table.tsv
-```
-The `samples_list.tsv` should be a tab-separated file containing:
-`SampleName    /path/to/final_assembly.fa    /path/to/rdp.tab`
+1. Create a tabulated `samples.tsv` file:
+   ```text
+   sample1    /path/to/sample1/final_assembly.fa    /path/to/sample1/rdp.tab
+   sample2    /path/to/sample2/final_assembly.fa    /path/to/sample2/rdp.tab
+   ```
 
-## Expert Tips and Best Practices
+2. Run the comparison script:
+   ```bash
+   matam_compare_samples.py -s samples.tsv -t contingency_table.tsv -c comparison_table.tsv
+   ```
+   - `contingency_table.tsv`: Reports abundance per sequence.
+   - `comparison_table.tsv`: Reports abundance by taxonomic path.
 
-- **Memory Management**: MATAM recommends at least 10GB of RAM. If running on a resource-constrained system, use `--max_memory 4000` (4GB), but be aware that performance and assembly quality may degrade.
-- **Input Requirements**: Ensure FASTQ identifiers are unique and scores are Phred+33 encoded.
-- **Parallelization**: Use the `--cpu` flag to match your hardware; many steps in the MATAM pipeline are highly parallelized.
-- **Taxonomy Limitations**: The `--perform_taxonomic_assignment` flag uses the RDP classifier with the "16srrna" model by default. If you are using a custom database for a different marker, the taxonomic assignment step may not be appropriate.
-- **Output Files**: The primary output is `final_assembly.fa`, which contains the reconstructed marker sequences.
+## Expert Tips
+
+- **Low Memory Environments**: If running on a machine with limited RAM, set `--max_memory 4000` (4GB), but be aware this may degrade assembly performance or increase runtime.
+- **Taxonomic Accuracy**: When using `--perform_taxonomic_assignment`, MATAM tags RDP nodes below the confidence threshold as "unclassified" to prevent false positives.
+- **Output Files**: The primary output is `final_assembly.fa`. If taxonomic assignment was run, check `rdp.tab` for classification details.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| index_default_ssu_rrna_db.py | Index default SSU rRNA DB |
+| matam_assembly.py | MATAM assembly |
+| matam_compare_samples.py | This script let you compare two or more samples coming from MATAM -- v1.5.1 or superior |
 
 ## Reference documentation
 - [MATAM GitHub Repository](./references/github_com_bonsai-team_matam.md)
-- [Bioconda MATAM Overview](./references/anaconda_org_channels_bioconda_packages_matam_overview.md)

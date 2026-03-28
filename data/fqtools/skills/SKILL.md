@@ -1,6 +1,6 @@
 ---
 name: fqtools
-description: fqtools is a high-performance software suite designed for the efficient processing, manipulation, and validation of FASTQ files. Use when user asks to count reads, validate file integrity, identify quality encoding, convert FASTQ to FASTA, trim sequences, or extract specific read components.
+description: fqtools is a high-performance C-based toolkit designed for the rapid processing, validation, and transformation of sequencing data. Use when user asks to validate FASTQ integrity, detect quality encoding, count reads, convert FASTQ to FASTA, trim reads, or process interleaved paired-end data.
 homepage: https://github.com/alastair-droop/fqtools
 ---
 
@@ -9,57 +9,75 @@ homepage: https://github.com/alastair-droop/fqtools
 
 ## Overview
 
-`fqtools` is a high-performance software suite written in C, designed for the efficient processing of FASTQ files. It provides a modular set of subcommands to handle common sequence manipulation tasks without the overhead of larger bioinformatics frameworks. The tool is particularly adept at handling compressed data (.gz) and unaligned BAM files, supporting both single-end and paired-end data structures, including interleaved formats.
+fqtools is a high-performance C-based toolkit designed for the rapid processing of sequencing data. It provides a modular set of subcommands to handle common FASTQ tasks with minimal overhead. It supports compressed (.gz) files, unaligned BAM files, and interleaved paired-end data. This tool is ideal for quick data inspection, quality control validation, and preparing sequences for downstream analysis.
 
 ## Common CLI Patterns
 
-### Basic File Inspection
-*   **Count reads**: `fqtools count input.fastq.gz`
-*   **View first few reads**: `fqtools head input.fastq.gz`
-*   **Validate file integrity**: `fqtools validate input.fastq.gz`
-*   **Identify quality encoding**: `fqtools type input.fastq.gz` (Detects Sanger, Solexa, or Illumina encodings).
+### File Inspection and Validation
+* **Validate file integrity**: Check if a FASTQ file is properly formatted.
+  `fqtools validate input.fastq.gz`
+* **Detect quality encoding**: Automatically guess if a file uses Sanger, Solexa, or Illumina encoding.
+  `fqtools type input.fastq.gz`
+* **Count reads**: Quickly get the total number of reads in a file.
+  `fqtools count input.fastq.gz`
+* **Preview data**: View the first few reads (similar to the unix `head` command but FASTQ-aware).
+  `fqtools head input.fastq.gz`
 
 ### Data Transformation
-*   **Convert to FASTA**: `fqtools fasta input.fastq.gz > output.fasta`
-*   **Trim reads**: `fqtools trim -l [length] input.fastq.gz`
-*   **Extract specific components**:
-    *   Headers only: `fqtools header input.fastq.gz`
-    *   Sequences only: `fqtools sequence input.fastq.gz`
-    *   Quality scores only: `fqtools quality input.fastq.gz`
+* **Convert to FASTA**: Transform FASTQ data into FASTA format.
+  `fqtools fasta input.fastq.gz > output.fasta`
+* **Trim reads**: Remove bases from the start or end of reads.
+  `fqtools trim -5 10 -3 10 input.fastq.gz -o trimmed.fastq.gz`
+* **Tabulate frequencies**: Generate tables of base or quality character frequencies.
+  `fqtools basetab input.fastq.gz`
+  `fqtools qualtab input.fastq.gz`
 
 ### Working with Paired-End Data
-`fqtools` natively supports paired files. Most subcommands accept two input files:
-*   **Count paired reads**: `fqtools count read1.fq.gz read2.fq.gz`
-*   **Process interleaved files**: Use the `-i` flag for input and `-I` for output.
-    *   `fqtools view -i interleaved.fq`
+fqtools uses a specific pattern for paired files. The `%` character is used as a placeholder for the pair member (1 or 2).
+* **Process pairs**:
+  `fqtools count read_%.fastq.gz` (This will process read_1.fastq.gz and read_2.fastq.gz)
+* **Interleaved files**: Use `-i` for interleaved input and `-I` for interleaved output.
+  `fqtools view -i interleaved_input.fastq.gz`
 
-### Advanced Filtering and Tabulation
-*   **Find sequences**: Search for specific motifs within reads.
-    *   `fqtools find -s ATGC input.fastq.gz`
-*   **Base frequencies**: Generate a table of nucleotide distributions.
-    *   `fqtools basetab input.fastq.gz`
-*   **Quality distribution**: Tabulate quality character frequencies.
-    *   `fqtools qualtab input.fastq.gz`
+### Advanced Filtering and Searching
+* **Find sequences**: Search for reads containing specific sequences.
+  `fqtools find -s GATCGGAAGAG input.fastq.gz`
+* **Translate quality scores**: Use a mapping file to change quality values.
+  `fqtools qualmap -m map_file.txt input.fastq.gz`
 
-## Expert Tips and Best Practices
+## Expert Tips
 
-### Handling Formats and Compression
-*   **Auto-inference**: By default, `fqtools` attempts to infer the file format from the extension. If using non-standard extensions or piping from `stdin`, explicitly set the format using `-f`.
-    *   `F`: Uncompressed FASTQ
-    *   `f`: Compressed FASTQ (.gz)
-    *   `b`: Unaligned BAM
-*   **Standard Input**: When reading from a pipe, specify the format: `cat data.fq | fqtools count -f F`.
+* **Standard Input/Output**: If no input file is specified, fqtools reads from `stdin`. When piping data into fqtools, always specify the input format using `-f` (e.g., `-f F` for uncompressed FASTQ, `-f f` for compressed).
+* **Buffer Tuning**: For extremely large datasets, you can tune the input (`-b`) and output (`-B`) buffer sizes. Suffixes like `k`, `M`, or `G` are supported (e.g., `-b 1M`).
+* **Sequence Constraints**: By default, fqtools is strict. Use global flags to allow specific characters:
+    * `-a`: Allow ambiguous bases (RYKMSWBDHV).
+    * `-m`: Allow masked bases (X).
+    * `-l`/`-u`: Allow lowercase or uppercase bases.
+* **BAM Support**: fqtools can read unaligned BAM files directly if built with `htslib`. Use `-f b` to specify BAM input.
 
-### Performance Tuning
-*   **Buffer Sizes**: For high-throughput environments, you can tune the input (`-b`) and output (`-B`) buffer sizes. Suffixes like `k`, `M`, or `G` are supported (e.g., `-b 1M`).
-*   **Character Sets**: By default, `fqtools` is strict. Use global flags to allow specific character sets if your data contains them:
-    *   `-d`: DNA (ACGTN)
-    *   `-r`: RNA (ACGUN)
-    *   `-a`: Ambiguous bases (RYKMSWBDHV)
-    *   `-m`: Masked bases (X)
 
-### Quality Score Mapping
-If you need to migrate quality scores between encodings (e.g., converting old Illumina data to Sanger), use the `qualmap` subcommand with a mapping file to translate values deterministically.
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| fqtools_basetab | Tabulate FASTQ base frequencies. |
+| fqtools_count | Count FASTQ file reads. |
+| fqtools_fasta | Convert FASTQ files to FASTA format. |
+| fqtools_find | Find FASTQ reads containing specific sequences. |
+| fqtools_head | View the first reads in FASTQ files. |
+| fqtools_header | View FASTQ file header data. |
+| fqtools_header2 | View FASTQ file secondary header data. |
+| fqtools_lengthtab | Tabulate FASTQ read lengths. |
+| fqtools_quality | View FASTQ file quality data. |
+| fqtools_qualmap | Translate quality values using a mapping file. |
+| fqtools_qualtab | Tabulate FASTQ quality character frequencies. |
+| fqtools_sequence | View FASTQ file sequence data. |
+| fqtools_trim | View FASTQ files. |
+| fqtools_type | Attempt to guess the FASTQ quality encoding type. |
+| fqtools_validate | Validate FASTQ file. |
+| fqtools_view | View FASTQ files. |
 
 ## Reference documentation
-- [fqtools: An efficient FASTQ manipulation suite](./references/github_com_alastair-droop_fqtools.md)
+
+- [fqtools README](./references/github_com_alastair-droop_fqtools_blob_master_README.md)

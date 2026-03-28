@@ -56,3 +56,6 @@ Commands:
 Note: use merge_midas.py <command> -h to view usage for a specific command
 ```
 
+
+## Metadata
+- **Skill**: generated

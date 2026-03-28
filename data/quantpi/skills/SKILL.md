@@ -1,6 +1,6 @@
 ---
 name: quantpi
-description: Quantpi is a microbiome profiling system that orchestrates metagenomic workflows to transform raw sequencing data into taxonomic and functional abundance tables. Use when user asks to initialize microbiome projects, generate sample sheets, or execute profiling pipelines using tools like Kraken2, MetaPhlAn, and HUMAnN3.
+description: The quantpi tool is a comprehensive profiling system that transforms raw sequencing data into taxonomic and functional microbiome profiles through unified bioinformatics workflows. Use when user asks to initialize a microbiome project, perform taxonomic classification with Kraken2 or MetaPhlAn3, conduct functional profiling with HUMAnN3, or simulate metagenomic datasets.
 homepage: https://github.com/ohmeta/quantpi
 ---
 
@@ -8,74 +8,61 @@ homepage: https://github.com/ohmeta/quantpi
 # quantpi
 
 ## Overview
-Quantpi is a robust microbiome profiling system that orchestrates complex metagenomic workflows. It streamlines the transition from raw sequencing data to processed abundance tables by wrapping various bioinformatics tools into a unified command-line interface. Use this skill to initialize microbiome projects, generate sample sheets, and execute standardized profiling pipelines for taxonomic and functional characterization of microbial communities.
 
-## Installation and Environment
-The recommended way to use quantpi is via a dedicated Conda environment to manage its extensive dependencies.
+The `quantpi` tool is a comprehensive profiling system designed for microbiome research. It streamlines the transition from raw sequencing data to taxonomic and functional profiles by wrapping complex bioinformatics workflows into a unified command-line interface. It is particularly useful for researchers who need to perform standardized preprocessing (trimming and host removal) followed by multi-method taxonomic classification or functional analysis.
 
-```bash
-# Create and activate environment
-conda create -n quantpi-env -c bioconda -c conda-forge quantpi snakemake
-conda activate quantpi-env
-```
+## Core Workflows
 
-## Project Initialization
-Every analysis begins with the `init` subcommand to set up the project structure and configuration.
+### Project Initialization
+Before running a pipeline, you must initialize the workspace. This creates the necessary directory structure and configuration.
 
-### Preparing the Sample Sheet
-Quantpi requires a TSV file (`samples.tsv`) to identify input data.
-- **For Fastq files**: Header must be `sample_id`, `fq1`, `fq2`.
-- **For SRA data**: Header must be `sample_id`, `sra`.
-- **For Simulations**: Header must be `id`, `genome`, `abundance`, `reads_num`, `model`.
-
-### Running Init
 ```bash
 # Basic initialization
-quantpi init -d ./my_project -s samples.tsv
+quantpi init -d ./my_project -s samples.tsv -b trimming
 
-# Initialization with specific preprocessing options
-quantpi init -d ./my_project -s samples.tsv --trimmer fastp --rmhoster bowtie2 --begin trimming
+# Initialization with specific tools
+quantpi init --trimmer fastp --rmhoster bowtie2 -b rmhost
 ```
 
-## Executing Workflows
-Quantpi uses Snakemake internally to manage execution. You can list available targets or run specific profiling modules.
+### Sample Sheet Requirements (`samples.tsv`)
+The input TSV file must follow specific header formats based on the starting point (`-b`):
 
-### Listing Available Targets
-To see all possible profiling steps and outputs:
-```bash
-quantpi profiling_wf --list
-```
+*   **Trimming/RMHost/Profiling (Fastq):** `sample_id`, `fq1`, `fq2`
+*   **Trimming/RMHost/Profiling (SRA):** `sample_id`, `sra`
+*   **Simulation:** `id`, `genome`, `abundance`, `reads_num`, `model`
 
-### Common Profiling Commands
-Run these commands from within your project directory:
+### Executing Profiling Pipelines
+`quantpi` supports several specialized sub-workflows for metagenomic analysis:
 
-- **Taxonomic Profiling (Kraken2/Bracken)**:
-  ```bash
-  quantpi profiling_wf --until profiling_kraken2_all
-  quantpi profiling_wf --until profiling_bracken_all
-  ```
+*   **Taxonomic Classification:**
+    *   `profiling_kraken2_all`: Standard k-mer based classification.
+    *   `profiling_bracken_all`: Bayesian re-estimation of abundance.
+    *   `profiling_kmcp_all`: Classification using the KMCP tool.
+*   **Genome Coverage:**
+    *   `profiling_genomecov_all`: General coverage analysis.
+    *   `profiling_genome_coverm_all`: Coverage calculation via CoverM.
+*   **Functional & Marker-based Profiling:**
+    *   `profiling_metaphlan3_all`: Marker-gene based taxonomic profiling.
+    *   `profiling_humann3_all`: Functional metabolic profiling.
 
-- **Taxonomic Profiling (MetaPhlAn)**:
-  ```bash
-  quantpi profiling_wf --until profiling_metaphlan3_all
-  ```
+## Expert Tips and Best Practices
 
-- **Functional Profiling (HUMAnN3)**:
-  ```bash
-  quantpi profiling_wf --until profiling_humann3_all
-  ```
+*   **Environment Management:** Always ensure the `quantpi-env` is active. The tool relies on a specific stack of dependencies including Snakemake, Mamba, and various Biopython libraries.
+*   **PYTHONPATH Configuration:** If installing from source (GitHub), ensure the path to the repository is added to your `PYTHONPATH` to allow the `run_quantpi.py` script to locate internal modules.
+*   **Host Removal:** When using `--rmhoster`, ensure your reference database (e.g., for Bowtie2 or Kraken2) is correctly indexed and accessible in your environment configuration.
+*   **Simulation:** Use the `simulate_wf` subcommand to generate mock datasets for validating your profiling parameters before running on real-world samples.
 
-- **Full Pipeline**:
-  ```bash
-  quantpi profiling_wf --until profiling_all
-  ```
 
-## Best Practices
-- **Workdir Management**: Always specify the `-d` (workdir) flag during `init` to keep raw data and results organized.
-- **Starting Points**: Use the `-b` or `--begin` flag if your data is already pre-processed (e.g., start at `profiling` if host sequences are already removed).
-- **Resource Allocation**: Since quantpi wraps Snakemake, you can often pass execution parameters like `--cores` to manage computational load during the `profiling_wf` step.
-- **Sample Validation**: Use the `--check-samples` flag during initialization to ensure your TSV paths are valid before starting long-running jobs.
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| quantpi simulate_wf | Pipeline for simulating data with quantpi |
+| quantpi_init | Initialize a quantpi project. |
+| quantpi_profiling_wf | Pipeline end point. |
+| quantpi_sync | Sync project data to a directory. |
 
 ## Reference documentation
-- [Microbiome profiling pipeline overview](./references/github_com_ohmeta_quantpi.md)
-- [Bioconda package details](./references/anaconda_org_channels_bioconda_packages_quantpi_overview.md)
+- [Microbiome profiling pipeline overview](./references/github_com_ohmeta_quantpi_blob_main_README.md)
+- [Quantpi initialization and CLI usage](./references/github_com_ohmeta_quantpi.md)

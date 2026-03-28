@@ -1,6 +1,6 @@
 ---
 name: rapmap-example-data
-description: RapMap performs rapid quasi-mapping of sequencing reads to a transcriptome by building a reference index and executing high-speed alignment. Use when user asks to index a reference transcriptome, map sequencing reads using quasi-mapping, or perform selective alignment for improved mapping accuracy.
+description: RapMap maps sequencing reads to a transcriptome with high speed and accuracy using a quasi-mapping approach. Use when user asks to index a reference transcriptome, map reads to a transcriptome, or generate SAM/BAM alignments.
 homepage: https://github.com/COMBINE-lab/RapMap
 ---
 
@@ -9,59 +9,69 @@ homepage: https://github.com/COMBINE-lab/RapMap
 
 ## Overview
 
-RapMap is a high-performance tool designed for the rapid mapping of sequencing reads, primarily optimized for transcriptomes rather than large mammalian genomes. It utilizes a "quasi-mapping" approach that provides high speed and sensitivity. This skill covers the two-phase workflow required by the tool: building a reference index and performing the actual mapping. It also includes guidance on using selective alignment for improved accuracy and managing large output files through BAM compression.
+RapMap is a high-performance "quasi-mapper" designed to map sequencing reads to a transcriptome with extreme speed and high accuracy. It serves as a core component for transcript quantification tools like Salmon. This skill guides the user through the two-step process of transcriptome mapping: first, generating a specialized index from a reference FASTA file, and second, mapping reads (FASTQ) against that index to produce SAM/BAM alignments. It is particularly useful for testing workflows using the provided sample data before scaling to full-sized genomic experiments.
 
-## Command Line Usage
+## Core Workflows
 
 ### 1. Indexing the Reference
-Before mapping, you must create an index from your reference transcriptome (e.g., `ref.fa`).
+Before mapping, you must build an index of your reference transcriptome.
 
-**Basic Indexing:**
+**Standard Indexing:**
 ```bash
 rapmap quasiindex -t ref.fa -i ref_index
 ```
 
 **Memory-Optimized Indexing:**
-To reduce memory requirements during the mapping phase, use a minimum perfect hash.
+To reduce the memory footprint during the mapping phase, use a minimum perfect hash.
 ```bash
 rapmap quasiindex -t ref.fa -i ref_index -p -x 4
 ```
-*   `-p`: Enables minimum perfect hash.
-*   `-x [threads]`: Sets the number of threads used to build the hash.
+*   `-p`: Enables minimum perfect hashing.
+*   `-x`: Specifies the number of threads to use during index construction.
 
 ### 2. Mapping Reads
 Once the index is created, you can map paired-end or single-end reads.
 
-**Standard Mapping (Paired-End):**
+**Standard Quasi-mapping (Paired-end):**
+```bash
+rapmap quasimap -i ref_index -1 r1.fq.gz -2 r2.fq.gz -o mapped_reads.sam
+```
+
+**High-Accuracy Mapping (Selective Alignment):**
+It is highly recommended to use the `-s` flag to enable selective alignment, which validates the alignment score of hits and improves mapping quality.
 ```bash
 rapmap quasimap -i ref_index -1 r1.fq.gz -2 r2.fq.gz -s -t 8 -o mapped_reads.sam
 ```
-*   `-i`: Path to the index created in step 1.
-*   `-1`, `-2`: Paths to the first and second mate files.
-*   `-s`: **Highly Recommended.** Enables selective alignment to validate hits and improve mapping quality.
-*   `-t`: Number of threads.
+*   `-s`: Enables selective alignment.
+*   `-t`: Number of threads for mapping.
 
 ### 3. Efficient Output Handling
-SAM files are large and slow to write. It is best practice to pipe output directly to `samtools` for BAM compression.
+SAM files are large and slow to write. Stream the output directly to `samtools` to create compressed BAM files on-the-fly.
 
-**Streaming to BAM:**
 ```bash
 rapmap quasimap -i ref_index -1 r1.fq.gz -2 r2.fq.gz -s -t 8 | samtools view -Sb -@ 4 - > mapped_reads.bam
 ```
 
-**Using the Wrapper Script:**
-RapMap includes a wrapper script `RunRapMap.sh` that simplifies the BAM conversion process.
+Alternatively, use the provided wrapper script which simplifies this syntax:
 ```bash
 RunRapMap.sh quasimap -i ref_index -1 r1.fq.gz -2 r2.fq.gz -s -t 8 --bamOut mapped_reads.bam --bamThreads 4
 ```
 
-## Best Practices and Tips
+## Expert Tips and Best Practices
 
-*   **Selective Alignment:** Always use the `-s` flag during the `quasimap` step. This validates the alignment score of hits and significantly improves the accuracy of the results.
-*   **Transcriptome Focus:** RapMap is specifically geared toward transcriptomes. While it can map to small genomes (viral or bacterial), it will consume excessive memory if applied to mammalian-sized genomes.
-*   **Thread Allocation:** When piping to `samtools` or using `RunRapMap.sh`, ensure you balance threads between the mapper and the compressor to avoid bottlenecks.
-*   **Index Persistence:** The index records whether it was built with a perfect hash (`-p`); you do not need to specify this again during the mapping phase.
+*   **Transcriptome Focus:** RapMap is specifically engineered for transcriptomes. While it can map to small genomes (bacterial/viral), it will consume excessive memory if applied to mammalian-sized genomes.
+*   **Selective Alignment:** Always prefer the `-s` flag for production runs. While quasi-mapping alone is faster, selective alignment provides the necessary validation to ensure reads are mapped to the correct isoforms.
+*   **Thread Scaling:** Mapping is highly parallelizable. Increase the `-t` parameter based on available CPU cores to significantly decrease processing time.
+*   **Index Persistence:** The index records whether it was built with a perfect hash (`-p`). You do not need to specify this flag again during the mapping step; RapMap detects it automatically.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| rapmap | RapMap Transcriptome Aligner v0.6.0 |
+| rapmap-example-data_RunRapMap.sh | RapMap Transcriptome Aligner v0.6.0 |
 
 ## Reference documentation
-- [RapMap GitHub Repository](./references/github_com_COMBINE-lab_RapMap.md)
-- [Bioconda RapMap Package Overview](./references/anaconda_org_channels_bioconda_packages_rapmap_overview.md)
+- [RapMap Main Repository and Usage Guide](./references/github_com_COMBINE-lab_RapMap.md)

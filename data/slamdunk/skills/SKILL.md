@@ -1,6 +1,6 @@
 ---
 name: slamdunk
-description: Slamdunk is a bioinformatics pipeline designed to analyze SLAMseq data by identifying T>C conversions to quantify metabolic RNA labeling. Use when user asks to analyze SLAMseq data, detect 4-thiouridine incorporation, map reads with T>C conversion awareness, or quantify RNA transcription and stability.
+description: Slamdunk is a high-sensitivity pipeline designed to analyze SLAM-seq data by identifying and quantifying T-to-C conversions in RNA-seq reads. Use when user asks to process metabolic labeling data, map reads to a reference genome, call T-to-C conversions, perform quality control on SLAM-seq experiments, or visualize conversion patterns.
 homepage: http://t-neumann.github.io/slamdunk
 ---
 
@@ -8,60 +8,64 @@ homepage: http://t-neumann.github.io/slamdunk
 # slamdunk
 
 ## Overview
-Slamdunk is a specialized bioinformatics pipeline designed to streamline the analysis of SLAMseq data. It automates the detection of 4-thiouridine (4sU) incorporation events by identifying T>C conversions in high-throughput sequencing reads. By distinguishing metabolic labeling events from the background, it enables the study of intracellular RNA dynamics, including transcription rates and RNA stability. The tool integrates mapping (via NextGenMap), filtering, SNP calling (to exclude genomic T>C variants), and UTR-based quantification.
+Slamdunk is a high-sensitivity pipeline designed to streamline the analysis of SLAM-seq data. It automates the identification and quantification of T-to-C conversions in RNA-seq reads, which serve as markers for newly synthesized transcripts. This skill provides guidance on using the core CLI components—`slamdunk`, `alleyoop`, and `splash`—to move from raw sequencing files to quantified metabolic labeling results.
 
-## Core Workflow: The "All" Dunk
-The most efficient way to process SLAMseq data is using the `all` module, which executes the entire pipeline (map, filter, snp, and count) in one command.
+## Core Workflow
+The slamdunk suite consists of three primary command-line tools:
+1.  **slamdunk**: The main processing pipeline for mapping and conversion calling.
+2.  **alleyoop**: A utility tool for quality control, statistics, and data conversion.
+3.  **splash**: A visualization tool for inspecting conversion patterns.
 
-### Standard Execution
+### 1. Primary Analysis with `slamdunk`
+The `slamdunk` command handles the heavy lifting of the pipeline. It typically requires a reference genome (FASTA) and a set of 3' UTR annotations (BED).
+
+**Common Pattern:**
 ```bash
-slamdunk all -r <reference.fasta> -b <utr_coordinates.bed> -o <output_dir> -t <threads> -m -rl <read_length> <input_files>
+slamdunk all -r <reference.fa> -b <utr_annotations.bed> -o <output_dir> <input_reads.fastq.gz>
 ```
 
-### Key Parameters
-- `-r`: Reference genome in FASTA format.
-- `-b`: BED file containing 3' UTR coordinates. This is critical as Slamdunk focuses on UTR-specific signal.
-- `-o`: Output directory for all intermediate and final results.
-- `-t`: Number of threads. Note that NextGenMap is multi-threaded; it is recommended to use more threads than the number of samples.
-- `-m`: **Multimapper reconciliation**. Highly recommended. It reassigns reads mapping to both a 3' UTR and a non-UTR region to the UTR, increasing signal sensitivity.
-- `-5`: Number of bases to trim from the 5' end (default is often 12 for QuantSeq).
-- `-n`: Maximum number of mismatches allowed in the alignment.
+**Key Parameters:**
+- `all`: Runs the full pipeline (map, filter, snp, count).
+- `-n <int>`: Number of threads to use for parallel processing.
+- `-m <int>`: Maximum number of mismatches allowed in a read.
+- `-mv <float>`: Minimum variant fraction for SNP calling.
 
-## Quality Control with Alleyoop
-After running the main pipeline, use the `alleyoop` utility to perform sanity checks and generate diagnostic plots.
+### 2. Quality Control with `alleyoop`
+Use `alleyoop` to validate the success of the labeling and the accuracy of the conversion calling.
 
-### UTR Conversion Rates
-To verify if the metabolic labeling was successful and check for biases:
+**Essential QC Commands:**
+- **Summary Stats**: `alleyoop summary -o <summary_output> <slamdunk_directory>`
+- **Conversion Rates**: `alleyoop rates -r <reference.fa> -o <rates_output> <bam_file>`
+  - *Tip*: Use this to check the background T-to-C conversion rate in non-labeled control samples.
+- **U-Content Analysis**: `alleyoop utail -o <utail_output> <bam_file>`
+
+### 3. Visualization with `splash`
+`splash` generates plots to help interpret the distribution of conversions across your samples.
+
+**Usage:**
 ```bash
-alleyoop utrrates -o <plot_dir> -r <reference.fasta> -b <utr_coordinates.bed> -l <read_length> <filter_folder/*.bam>
+splash -o <plot_output> <slamdunk_results.csv>
 ```
 
-### Other Alleyoop Modules
-- `rates`: General conversion rates to check T>C excess.
-- `tcperreadpos`: Check if T>C conversions are evenly distributed across read positions (to identify sequencing artifacts).
-- `tcperutrpos`: Check T>C distribution across UTR positions.
+## Expert Tips & Best Practices
+- **Reference Preparation**: Ensure your reference FASTA is indexed (`samtools faidx`). Slamdunk relies on precise coordinate mapping to identify T-to-C transitions.
+- **3' UTR Focus**: SLAM-seq is most effective when focused on 3' UTRs. If your BED file is too broad (e.g., whole genes), the signal-to-noise ratio for T-to-C conversions may decrease.
+- **Multimappers**: By default, slamdunk handles multimappers. If you have a highly repetitive genome, consider adjusting the mapping parameters to avoid over-counting conversions in ambiguous regions.
+- **SNP Correction**: Always run the SNP calling step (included in `slamdunk all`) or provide a VCF file. This prevents genomic T-to-C SNPs from being incorrectly counted as metabolic labeling events.
 
-## Data Formats and Best Practices
 
-### Input Samplesheet
-Instead of listing every file, you can provide a tab-separated (TSV) or comma-separated (CSV) samplesheet:
-- **Column 1**: Path to raw reads (BAM/FASTQ/FASTA).
-- **Column 2**: Sample description.
-- **Column 3**: Sample type (e.g., pulse/chase).
-- **Column 4**: Timepoint (in minutes).
 
-### Understanding Tcount Output
-The primary output is the `.tcount` file. Key columns for downstream analysis:
-- `conversionRate`: The average T>C conversion rate for the UTR, normalized by T-content and coverage.
-- `readsCPM`: Normalized read counts (Counts Per Million).
-- `coverageOnTs`: Total number of T-positions covered by reads.
-- `conversionsOnTs`: Total number of T>C conversions detected.
+## Subcommands
 
-### Expert Tips
-1. **Strand Specificity**: Slamdunk is designed for strand-specific assays (like QuantSeq). It only considers sense reads for the final analysis.
-2. **SNP Filtering**: Slamdunk automatically runs a SNP calling step to ensure that genomic T>C mutations are not miscounted as metabolic labeling events.
-3. **MultiQC Integration**: Slamdunk results are compatible with MultiQC (v0.9+). Run `multiqc .` in your output directory to aggregate all "dunk" statistics into a single report.
+| Command | Description |
+|---------|-------------|
+| slamdunk all | Run SLAM-seq analysis |
+| slamdunk filter | Filter BAM files based on various criteria. |
+| slamdunk snp | Call SNPs from BAM files. |
+| slamdunk_count | Count T>C conversions in BAM files. |
+| slamdunk_map | Map sequencing reads to a reference genome. |
 
 ## Reference documentation
-- [Slamdunk Documentation](./references/t-neumann_github_io_slamdunk_docs.html.md)
-- [Slamdunk Home](./references/t-neumann_github_io_slamdunk.md)
+- [Slamdunk GitHub Repository](./references/github_com_t-neumann_slamdunk.md)
+- [Slamdunk Documentation Home](./references/t-neumann_github_io_slamdunk.md)
+- [Slamdunk Detailed Docs](./references/t-neumann_github_io_slamdunk_docs.html.md)

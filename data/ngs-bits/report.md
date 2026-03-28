@@ -1230,3 +1230,6 @@ Special parameters:
   --settings [file] Settings override file (no other settings files are used).
 ```
 
+
+## Metadata
+- **Skill**: generated

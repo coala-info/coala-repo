@@ -1,6 +1,6 @@
 ---
 name: aquila
-description: Aquila is a bioinformatic pipeline designed for diploid genome reconstruction and local assembly using linked-read sequencing data. Use when user asks to partition reads into haplotypes, perform de novo diploid assembly, or detect complex structural variations in personal genomes.
+description: Aquila performs diploid genome assembly and comprehensive variant discovery using linked-read sequencing data. Use when user asks to perform diploid genome assembly, partition genomic fragments into haplotypes, call assembly-based variants, or phase genomic variants.
 homepage: https://github.com/maiziex/Aquila
 ---
 
@@ -8,51 +8,68 @@ homepage: https://github.com/maiziex/Aquila
 # aquila
 
 ## Overview
-Aquila is a specialized bioinformatic pipeline designed for diploid genome reconstruction. It leverages the long-range information provided by linked-reads to partition sequencing data into two haplotypes. By performing local assembly on these partitioned reads, Aquila generates high-quality contigs that facilitate the detection of complex structural variations and provide a phased view of the personal genome. It is particularly useful for researchers working with 10x Genomics data who require more than just standard variant calling.
+Aquila is a bioinformatic suite designed for diploid genome assembly and comprehensive variant discovery. It utilizes the long-range information provided by linked-reads to partition genomic fragments into two distinct haplotypes. By performing local assemblies on these partitioned reads, Aquila can reconstruct a diploid genome and identify a wide range of variants—including complex structural variants—that are often missed by standard short-read pipelines. It is particularly effective for researchers needing phased variant data and high-quality contig assemblies from 10X Genomics data.
 
-## Installation and Setup
-The most efficient way to install Aquila is via Bioconda:
+## Core Workflow and CLI Patterns
+
+### 1. Pre-processing (Optional)
+If your computing environment is prone to interruptions, run the sorting step first to save time during the main assembly.
 ```bash
-conda install bioconda::aquila
-```
-You must also download the required uniqueness map and reference files (specifically for hg38) from the project's Zenodo repository as specified in the documentation.
-
-## Core Workflow
-
-### Step 0: Sorting BAM (Optional/Recommended)
-If you plan to run assembly on specific chromosomes or if your computing environment is prone to interruptions, run the sorting step first to save time in Step 1.
-```bash
-Aquila_step0_sortbam --bam_file possorted_bam.bam --out_dir Assembly_results --num_threads_for_samtools_sort 30
+python Aquila/bin/Aquila_step0_sortbam.py --bam_file possorted_bam.bam --out_dir Assembly_results_S12878 --num_threads_for_samtools_sort 30
 ```
 
-### Step 1: Read Partitioning and Phasing
-This step partitions the linked-reads based on a provided VCF file.
+### 2. Step 1: Fragment Partitioning
+This step performs haplotype-aware partitioning. It requires a barcode-aware BAM (from Longranger) and a VCF (from FreeBayes or 1000 Genomes).
 ```bash
-Aquila_step1 --bam_file possorted_bam.bam --vcf_file sample_variants.vcf --sample_name MySample --out_dir Assembly_results --uniq_map_dir ./Uniqness_map_hg38
+Aquila_step1.py --bam_file <input.bam> --vcf_file <input.vcf> --sample_name <sample_id> --out_dir <output_dir> --uniq_map_dir <uniqueness_map_path>
 ```
-**Key Parameters:**
-- `--bam_file`: Must be a barcode-aware BAM (e.g., from Longranger).
-- `--vcf_file`: Small variants VCF (e.g., from FreeBayes or 1000 Genomes).
-- `--uniq_map_dir`: Path to the uniqueness map directory.
-- `--chr_start` / `--chr_end`: Use these to process specific chromosomes (use `23` for chrX).
+*   **Expert Tip**: Use `23` to represent `chrX`. Note that `chrY` is currently not supported.
+*   **Memory Note**: This is the most resource-intensive step. 60X coverage typically requires ~100GB RAM for a single chromosome or ~450GB for WGS on a single node.
 
-### Step 2: Diploid Assembly
-This step performs the actual de novo assembly using the phased fragments from Step 1.
+### 3. Step 2: Local Assembly
+Assembles the partitioned fragments into contigs using SPAdes.
 ```bash
-Aquila_step2 --out_dir Assembly_results --reference ./ref.fa --num_threads 30
+Aquila_step2.py --out_dir <output_dir_from_step1> --num_threads 30 --reference <ref.fa>
 ```
-**Key Parameters:**
-- `--reference`: Path to the GRCh38 reference fasta.
-- `--num_threads`: Number of files to assemble simultaneously.
-- `--num_threads_spades`: Number of threads assigned to the underlying SPAdes assembler.
+*   **Optimization**: `--num_threads` controls how many files are assembled simultaneously, while `--num_threads_spades` (default 5) controls threads per SPAdes instance.
 
-## Best Practices and Tips
-- **Memory Management**: Step 1 is memory-intensive. For a 60X human genome, expect to need ~450GB of RAM if running WGS on a single node.
-- **Parallelization**: To reduce wall-clock time, run chromosomes in parallel across multiple nodes using the `--chr_start` and `--chr_end` flags.
-- **Sex Chromosomes**: Always use `23` to represent `chrX`. Note that the current version of Aquila does not support `chrY`.
-- **Input VCF**: While you can use a sample-specific VCF, using a 1000 Genomes VCF as input can help Aquila better partition linked-reads by providing a set of common variants.
-- **Output**: The final contigs are located in `Assembly_results/Assembly_Contigs_files/` as `Aquila_contig.fasta`.
+### 4. Assembly-Based Variant Calling
+Generates a VCF containing SNPs, indels, and SVs based on the contigs produced in Step 2.
+```bash
+Aquila_assembly_based_variants_call.py --assembly_dir <step2_out_dir> --out_dir <variants_dir> --ref_file <ref.fa>
+```
+*   **Indel/SV Cutoff**: Use `--var_size` (default 1) to set the minimum size for indel and SV detection.
+*   **Compound SVs**: Use `--all_regions_flag 1` to split compound SVs into heterozygous SVs, which is the recommended mode for comprehensive reporting.
+
+### 5. Phasing All Variants
+Combines the assembly-based calls with the original VCF to produce a final phased output.
+```bash
+Aquila_phasing_all_variants.py --assembly_vcf <variants_dir>/Aquila_final_sorted.vcf --vcf_file <original.vcf> --assembly_dir <step2_out_dir>
+```
+
+## Best Practices and Resource Management
+
+*   **Input Requirements**: 
+    *   BAM files must be generated by a barcode-aware aligner like `longranger align`.
+    *   VCF files should ideally be generated by `FreeBayes`.
+*   **Parallelization**: For Whole Genome Sequencing (WGS), it is highly recommended to run Step 1 and Step 2 for chromosomes in parallel across multiple nodes to reduce wall-clock time.
+*   **Reference Files**: Ensure you have the `Uniqness_map` and the correct reference FASTA (hg38/GRCh38). These can be downloaded using the `install.sh` script or manually from Zenodo.
+*   **Output Files**:
+    *   Final Contigs: Found in `Assembly_results/Assembly_Contigs_files`.
+    *   Final Phased VCF: `Aquila_all_phased_sorted.vcf` (coordinates start at 1).
+    *   Unsorted Variant VCF: `Aquila_final_sorted.vcf` (coordinates start at 0).
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| Aquila_step0_sortbam | sort bam by qname |
+| python3 Aquila_step1 | Aquila_step1 tool for assembly |
+| python3 Aquila_step2 | Aquila_step2 |
 
 ## Reference documentation
-- [Aquila GitHub Repository](./references/github_com_maiziex_Aquila.md)
-- [Bioconda Aquila Overview](./references/anaconda_org_channels_bioconda_packages_aquila_overview.md)
+- [Aquila Main README](./references/github_com_maiziex_Aquila_blob_master_README.md)
+- [Assembly-based Variant Calling Guide](./references/github_com_maiziex_Aquila_blob_master_Assembly_based_variants_call_README.md)
+- [Input Preparation (BAM/VCF)](./references/github_com_maiziex_Aquila_blob_master_src_How_to_get_bam_and_vcf.md)

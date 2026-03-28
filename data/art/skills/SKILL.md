@@ -1,6 +1,6 @@
 ---
 name: art
-description: The art skill provides a collection of command-line patterns and tools designed to improve productivity in Bash-centric environments. Use when user asks to master CLI principles, manage files and data, monitor system processes, or optimize shell efficiency.
+description: This tool provides expert-level command line patterns and high-utility shell workflows for data processing, system debugging, and terminal productivity. Use when user asks to master shell basics, manage files and data, debug system resources, or optimize command line navigation and history.
 homepage: https://github.com/jlevy/the-art-of-command-line
 ---
 
@@ -8,46 +8,66 @@ homepage: https://github.com/jlevy/the-art-of-command-line
 # art
 
 ## Overview
-The "art" skill provides a distilled collection of command-line wisdom designed to improve flexibility and productivity for engineers. It focuses on Bash-centric environments (Linux, macOS, and Windows via WSL/Cygwin) and emphasizes the most impactful tools and patterns for interactive use and scripting. Use this skill to move beyond basic commands into professional-grade CLI mastery.
+The `art` skill provides a distilled knowledge base for mastering the command line, based on "The Art of Command Line." It transforms general terminal usage into a high-productivity workflow by providing specific, high-utility patterns for data processing, system debugging, and everyday shell interactions. This skill is designed to help users move beyond basic commands into expert-level fluency with Linux and macOS environments.
 
-## Core CLI Principles
-- **Prefer Bash**: While other shells exist, Bash is the industry standard and is available on almost every system.
-- **Read the Manual**: Use `man <command>` for documentation. Use `apropos <keyword>` to find relevant commands.
-- **Understand Command Types**: Use `type <command>` to determine if a command is an executable, a shell builtin, or an alias.
-- **Redirection Mastery**: 
-    - `>` overwrites, `>>` appends.
-    - `|` pipes stdout to the next command.
-    - `2>&1` redirects stderr to stdout.
+## Command Line Basics
+*   **Shell Mastery**: Prefer Bash for its ubiquity. Use `man bash` to understand shell behavior.
+*   **Documentation**: Use `man` for command references (e.g., `man 1` for commands, `man 5` for file formats). Use `apropos` to find relevant manual pages.
+*   **Redirection**: 
+    *   Use `>` to overwrite and `>>` to append.
+    *   Understand the difference between `stdout` (1) and `stderr` (2). Use `2>&1` to redirect errors to standard output.
+*   **Job Control**: Use `&` to background tasks, `ctrl-z` to suspend, and `fg`/`bg` to manage active jobs.
 
-## Everyday Efficiency
-- **History Search**: Use `ctrl-r` to search through command history. Press it repeatedly to cycle through matches.
-- **Line Editing**:
-    - `ctrl-a`: Move to beginning of line.
-    - `ctrl-e`: Move to end of line.
-    - `ctrl-w`: Delete the last word.
-    - `ctrl-u`: Delete from cursor to start of line.
-    - `alt-b` / `alt-f`: Move backward/forward by word.
-- **Job Control**:
-    - `&`: Run command in background.
-    - `ctrl-z`: Suspend current process.
-    - `fg`: Bring suspended/background job to foreground.
-    - `bg`: Resume suspended job in background.
+## Everyday Productivity
+*   **Navigation**: Use `cd -` to return to the previous directory. Use `pushd` and `popd` for stack-based directory management.
+*   **History**: Use `ctrl-r` for reverse-searching command history. Use `history` to view past commands and `!$` to refer to the last argument of the previous command.
+*   **SSH**: Set up passwordless authentication using `ssh-agent` and `ssh-add`. Use `ssh -t` to force pseudo-terminal allocation for remote commands.
 
-## File and Data Management
-- **Inspection**: Use `less` for viewing files (it doesn't load the whole file into memory). Use `tail -f` (or `less +F`) to watch log files in real-time.
-- **Permissions**: Understand `ls -l` columns. Use `chmod` and `chown` for access control.
-- **Disk Usage**: Use `du -hs *` for a human-readable summary of directory sizes. Use `df -h` for disk partition status.
-- **Links**: Use `ln -s` for symbolic links. Understand that hard links (`ln`) share the same inode.
+## File and Data Processing
+*   **Search**: Use `grep` with flags:
+    *   `-i`: Case-insensitive.
+    *   `-v`: Invert match (exclude).
+    *   `-o`: Show only the matching part.
+    *   `-A`, `-B`, `-C`: Show context (After, Before, Center).
+*   **Analysis**: 
+    *   Use `ls -l` to inspect permissions and ownership.
+    *   Use `du -hs *` to identify large files/directories.
+    *   Use `head` and `tail -f` (or `less +F`) to monitor log files.
+*   **Manipulation**: Use `ln -s` for symbolic links. Understand that `>` truncates files while `>>` preserves existing content.
 
-## System Debugging and Networking
-- **Network**: Use `ip addr` (or `ifconfig`) for interface status, `dig` for DNS lookups, and `traceroute` to find network bottlenecks.
-- **Process Monitoring**: Use `top` (or `htop`) to see system resource usage. Use `ps aux` to list all running processes.
-- **Connectivity**: Use `ssh` with `ssh-agent` and `ssh-add` for secure, passwordless authentication.
+## System Debugging
+*   **Network**: Use `ip` (or `ifconfig`) for interface configuration and `dig` for DNS lookups.
+*   **Resources**: Use `df` for disk space and `lsblk` for block device information. Understand `inodes` using `ls -i` or `df -i`.
+*   **Processes**: Use `kill` to terminate processes by PID.
 
 ## Expert Tips
-- **Xargs**: Use `xargs` to execute commands against a list of items (e.g., `find . -name "*.log" | xargs rm`).
-- **Grep**: Master `-i` (ignore case), `-v` (invert match), and context flags `-A`, `-B`, `-C`.
-- **Aliases**: Create aliases in `.bashrc` for frequently used complex commands to save keystrokes.
+*   **Brevity**: Focus on specific, short commands rather than long scripts for interactive use.
+*   **Explainshell**: When encountering complex nested commands, use tools like `explainshell.com` to break down flags and pipes.
+*   **Portability**: While `zsh` or `fish` are powerful for local use, maintain Bash proficiency for working on remote servers.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| art_df | Display information about the amount of available disk space on file systems. |
+| art_du | Summarize disk usage of the set of FILEs, recursively for directories. |
+| art_find | A tool to search for and list files within a directory structure, specifically tailored for identifying 'art' related project files and documentation. |
+| art_ifconfig | Configure a network interface or display information about network interfaces. |
+| art_illumina | A simulation tool to generate synthetic Illumina reads |
+| chmod | Change file mode bits (BusyBox version). MODE is octal number or [ugoa]{+\|-\|=}[rwxXst]. |
+| chown | Change the owner and/or group of FILEs to USER and/or GRP |
+| grep | Search for PATTERN in FILEs (or stdin) |
+| ip | Network configuration tool for managing addresses, routes, links, tunnels, neighbors, and rules. |
+| ln | Create a link LINK or DIR/TARGET to the specified TARGET(s) |
+| man | Display manual page |
+| rm | Remove (unlink) FILEs |
+| tail | Print last 10 lines of FILEs (or stdin). With more than one FILE, precede each with a filename header. |
+| top | Show a view of process activity in real time. Read the status of all processes from /proc each SECONDS and show a screenful of them. |
+| traceroute | Trace the route to HOST |
+| xargs | Run PROG on every item given by stdin |
 
 ## Reference documentation
 - [The Art of Command Line](./references/github_com_jlevy_the-art-of-command-line.md)
+- [Contributing to the Guide](./references/github_com_jlevy_the-art-of-command-line_blob_master_CONTRIBUTING.md)

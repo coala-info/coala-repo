@@ -614,3 +614,6 @@ OPTIONAL ARGUMENTS
    Compute locally optimal Smith-Waterman alignments?
 ```
 
+
+## Metadata
+- **Skill**: generated

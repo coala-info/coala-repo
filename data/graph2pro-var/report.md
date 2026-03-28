@@ -66,3 +66,6 @@ Usage: DBGraph2Pro -e edgefile -s edgeseqfile -o outfile -p min_peptide_len -m m
 -S (FastG output by MetaSPaDes when set; default off for SOAP2)
 ```
 
+
+## Metadata
+- **Skill**: generated

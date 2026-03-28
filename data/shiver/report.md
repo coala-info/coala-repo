@@ -77,3 +77,6 @@ In normal usage this script requires either 8 or 7 arguments:
 Alternatively call this script with one argument - '--help' or '-h' - to see this message. Alternatively call this script with three arguments - '--test', then the configuration file, then either 'paired' or 'unpaired' - to just test whether the configuration file is OK (including whether this script can call the external programs it needs using commands given in the config file) and then exit. That third argument being 'paired' or 'unpaired' determines whether the config file is checked for suitability for use with paired or unpaired reads respectively.
 ```
 
+
+## Metadata
+- **Skill**: generated

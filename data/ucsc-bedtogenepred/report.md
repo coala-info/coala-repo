@@ -28,7 +28,7 @@ FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-bedtogenepred:482-
 
 
 ## Metadata
-- **Skill**: generated
+- **Skill**: not generated
 
 ## ucsc-bedtogenepred_bedSort
 

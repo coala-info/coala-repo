@@ -1,6 +1,6 @@
 ---
 name: raxml
-description: RAxML performs phylogenetic tree inference using the Maximum Likelihood criterion for large DNA or protein datasets. Use when user asks to infer phylogenetic trees, perform rapid bootstrapping, conduct partitioned multi-gene analyses, or estimate memory requirements for large alignments.
+description: "RAxML is a high-performance tool for phylogenetic tree inference using Maximum Likelihood. Use when user asks to perform phylogenetic analysis, infer Maximum Likelihood trees, conduct rapid bootstrapping, or run partitioned evolutionary analyses on large datasets."
 homepage: http://sco.h-its.org/exelixis/web/software/raxml/index.html
 ---
 
@@ -8,57 +8,57 @@ homepage: http://sco.h-its.org/exelixis/web/software/raxml/index.html
 # raxml
 
 ## Overview
-RAxML is a high-performance tool designed for phylogenetic tree inference under the Maximum Likelihood (ML) criterion. It is particularly optimized for large datasets, offering a balance between computational efficiency and tree search thoroughness. This skill provides the necessary command-line patterns to execute standard workflows, including rapid bootstrapping, model selection, and memory estimation.
+RAxML (Randomized Axelerated Maximum Likelihood) is a high-performance tool for phylogenetic analysis of large datasets. It is specifically optimized for Maximum Likelihood (ML) tree inference and provides specialized algorithms for rapid bootstrapping and evolutionary placement. This skill provides guidance on command-line configuration, substitution model selection, and resource estimation to ensure efficient and accurate phylogenetic reconstructions.
 
-## Core CLI Patterns
+## Core Command-Line Patterns
 
 ### Standard ML Tree Search
-To find the best-scoring ML tree for a DNA alignment:
-`raxmlHPC -m GTRGAMMA -p 12345 -s input.phy -n result_name`
+To perform a simple ML search on a DNA alignment:
+`raxmlHPC -m GTRGAMMA -p 12345 -s alignment.phy -n result_name`
 
-- `-m`: Substitution model (e.g., `GTRGAMMA` for DNA, `PROTGAMMAWAG` for Protein).
-- `-p`: Random number seed for parsimony starting trees.
-- `-s`: Input alignment in PHYLIP format.
-- `-n`: Suffix for output files.
+### Rapid Bootstrap and ML Search
+The `-f a` flag performs a rapid bootstrap analysis and a search for the best-scoring ML tree in a single run:
+`raxmlHPC -f a -m GTRGAMMA -p 12345 -x 12345 -# 100 -s alignment.phy -n bootstrap_result`
+*   `-x`: Random seed for the rapid bootstrap.
+*   `-#`: Number of bootstrap replicates (or use `autoMRE` for convergence testing).
 
-### Rapid Bootstrapping and Best ML Tree
-To perform a complete analysis (ML search + bootstrapping) in a single run:
-`raxmlHPC -f a -m GTRGAMMA -p 12345 -x 12345 -# 100 -s input.phy -n analysis`
+### Partitioned Analysis
+For multi-gene alignments, use a partition file with the `-q` flag:
+`raxmlHPC -m GTRGAMMA -p 12345 -q partitions.txt -s alignment.phy -n partitioned_run`
+*   **Partition File Format**: `DNA, gene1 = 1-500` (one per line).
 
-- `-f a`: Rapid Bootstrap analysis and search for the best-scoring ML tree in one program run.
-- `-x`: Rapid bootstrap random number seed.
-- `-#`: Number of bootstrap replicates (or use `autoMRE` for convergence criteria).
+## Model Selection and Optimization
 
-### Working with Partitions
-For multi-gene alignments, define partitions in a separate file (e.g., `partitions.txt`):
-`DNA, gene1 = 1-500`
-`DNA, gene2 = 501-1000`
+### DNA Models
+*   **GTRGAMMA**: Standard model for most DNA analyses.
+*   **GTRCAT**: Use for very large datasets (>50 taxa). It is faster and uses less memory than GAMMA while maintaining high accuracy for topology.
 
-Execute using the `-q` flag:
-`raxmlHPC -m GTRGAMMA -p 12345 -q partitions.txt -s input.phy -n partitioned_run`
+### Protein Models
+*   Use the `ProteinModelSelection.pl` script to determine the best-scoring amino acid (AA) substitution model (e.g., LG, WAG, JTT) before running the full analysis.
+*   Example: `raxmlHPC -m PROTGAMMALG -p 12345 -s protein_alignment.phy -n protein_tree`
 
-## Expert Tips & Best Practices
+## Memory Estimation
+Before running large datasets, estimate memory consumption using these formulas (where *n* is taxa and *m* is distinct patterns):
 
-### Memory Estimation
-Before running large datasets, estimate memory requirements to avoid crashes.
-- **DNA + GAMMA**: `(taxa - 2) * patterns * 128 bytes`
-- **AA + GAMMA**: `(taxa - 2) * patterns * 640 bytes`
-*Note: "patterns" refers to the number of distinct site patterns, not the total alignment length.*
+*   **DNA + GAMMA**: `(n-2) * m * 128 bytes`
+*   **DNA + CAT**: `(n-2) * m * 32 bytes`
+*   **AA + GAMMA**: `(n-2) * m * 640 bytes`
+*   **AA + CAT**: `(n-2) * m * 160 bytes`
 
-### Executable Selection
-RAxML comes in different versions depending on your hardware:
-- `raxmlHPC`: Standard sequential version.
-- `raxmlHPC-PTHREADS`: Use for multi-core machines (specify threads with `-T`).
-- `raxmlHPC-MPI`: Use for distributed computing clusters.
+## Expert Tips
+*   **Binary Alignments**: For faster processing of large alignments, convert PHYLIP files to binary format using the `-f e` option.
+*   **Bootstrap Convergence**: Instead of picking an arbitrary number of replicates, use `-I autoMRE` to let RAxML determine when enough replicates have been generated based on the majority-rule consensus tree.
+*   **Branch Lengths**: To re-estimate branch lengths on a fixed topology using bootstrap replicates, use the `bsBranchLengths.pl` helper script.
+*   **Thread Optimization**: Use the Pthreads version (`raxmlHPC-PTHREADS`) for multi-core machines. Generally, assign 1 thread per 500-1000 alignment patterns for optimal scaling.
 
-### Model Selection
-- For Protein data, use the `ProteinModelSelection.pl` script or the `-m PROTGAMMAAUTO` flag to let RAxML automatically determine the best-fit substitution model (WAG, LG, JTT, etc.).
-- Use `GAMMA` models over `CAT` for datasets with fewer than 500 taxa to ensure stable likelihood values.
 
-### Convergence Criteria
-Instead of guessing the number of bootstrap replicates, use the bootstopping criteria:
-`raxmlHPC -f a -m GTRGAMMA -p 12345 -x 12345 -# autoMRE -s input.phy -n convergence_test`
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| raxmlHPC | RAxML (Randomized Axelerated Maximum Likelihood) is a program for phylogenetic tree inference using maximum likelihood. |
+| raxmlHPC-PTHREADS | RAxML version 8.2.12 |
 
 ## Reference documentation
-- [RAxML Web Home and Documentation](./references/cme_h-its_org_exelixis_web_software_raxml_index.html.md)
-- [Bioconda RAxML Package Overview](./references/anaconda_org_channels_bioconda_packages_raxml_overview.md)
+- [RAxML Software Page](./references/cme_h-its_org_exelixis_web_software_raxml_index.html.md)

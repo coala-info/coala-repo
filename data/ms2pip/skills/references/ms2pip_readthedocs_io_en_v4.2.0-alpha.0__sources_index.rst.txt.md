@@ -1,0 +1,25 @@
+.. include:: ../../README.rst
+.. toctree::
+:caption: About
+:hidden:
+:includehidden:
+:maxdepth: 2
+Home
+installation
+usage
+prediction-models
+webserver-api
+.. toctree::
+:caption: Command line interface
+:hidden:
+:includehidden:
+:glob:
+:maxdepth: 2
+cli/\*
+.. toctree::
+:caption: Python API reference
+:hidden:
+:includehidden:
+:glob:
+:maxdepth: 2
+api/\*

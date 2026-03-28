@@ -76,3 +76,6 @@ Options:
     -t N           Use N threads (availability varies by format)
 ```
 
+
+## Metadata
+- **Skill**: generated

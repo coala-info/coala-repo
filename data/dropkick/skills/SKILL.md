@@ -1,6 +1,6 @@
 ---
 name: dropkick
-description: dropkick is a data-driven tool that automates the filtering of cells from empty droplets in scRNA-seq data using a logistic regression model. Use when user asks to filter scRNA-seq data, identify true cells from ambient RNA, or perform automated quality control on raw count matrices.
+description: dropkick is a machine learning tool that automates the filtering of single-cell RNA sequencing data to distinguish true cells from empty droplets and ambient RNA. Use when user asks to filter scRNA-seq data, identify ambient RNA, or perform quality control on count matrices.
 homepage: https://github.com/KenLauLab/dropkick
 ---
 
@@ -9,51 +9,51 @@ homepage: https://github.com/KenLauLab/dropkick
 
 ## Overview
 
-dropkick is a data-driven tool designed to automate the cell filtering process in scRNA-seq workflows. Unlike traditional methods that rely on hard manual thresholds for UMI counts or mitochondrial gene percentages, dropkick uses a logistic regression model trained on the specific dataset to identify "true" cells. It is particularly effective for datasets with high ambient RNA or complex droplet distributions where manual cutoffs are difficult to define. It integrates seamlessly with the Scanpy ecosystem but can also be used as a standalone command-line tool.
-
-## Installation
-
-Install dropkick via bioconda or pip. Note that a Fortran compiler (gcc/gfortran) is required for installation.
-
-```bash
-# Via Conda
-conda install bioconda::dropkick
-
-# Via Pip
-pip install dropkick
-```
+dropkick is a machine learning-based tool designed to automate the filtering process for single-cell RNA sequencing data. It addresses the challenge of distinguishing true cells from empty droplets and ambient RNA by calculating cell probability scores based on gene expression patterns. The tool integrates with the scanpy ecosystem and provides a robust alternative to manual, heuristic-based filtering (like fixed UMI or gene count thresholds). Use this skill to execute the dropkick pipeline via the command line or to understand the outputs generated during scRNA-seq preprocessing.
 
 ## Command Line Usage
 
-The dropkick CLI provides two primary modules: `qc` for initial data inspection and `run` for the automated filtering pipeline.
+The dropkick CLI provides two primary modules for processing and quality control.
 
-### 1. Quality Control (QC)
-Before running the full filtering model, use the `qc` module to generate a summary of the total UMI distribution and identify ambient genes.
-
-```bash
-dropkick qc path/to/counts.h5ad
-```
-*   **Output**: Saves a `*_qc.png` file containing the UMI distribution plot and a list of top ambient genes.
-*   **Input Formats**: Supports `.h5ad`, `.csv`, and `.tsv`.
-
-### 2. Automated Filtering
-The `run` command executes the full dropkick pipeline, including automated thresholding, model training, and cell scoring.
-
+### Automated Filtering
+To run the full filtering pipeline on a count matrix:
 ```bash
 dropkick run path/to/counts.h5ad
 ```
-*   **Output**: Generates a new `.h5ad` file containing:
-    *   `dropkick_score`: Probability scores for each barcode.
-    *   `dropkick_label`: Binary classification (cell vs. empty).
-    *   Model coefficients and parameters stored in the object's metadata.
+* **Input**: Supports `.h5ad`, `.csv`, and `.tsv` formats.
+* **Output**: Generates a new `.h5ad` file containing:
+    * `dropkick_score`: Probability scores for each cell.
+    * `dropkick_label`: Binary classification (cell vs. empty).
+    * Model parameters and coefficients.
 
-## Best Practices and Tips
+### Quality Control (QC)
+To generate a quick assessment of the dataset without running the full model:
+```bash
+dropkick qc path/to/counts.h5ad
+```
+* **Function**: Analyzes total UMI distribution and identifies ambiently expressed genes.
+* **Output**: Saves a visualization as `*_qc.png` in the working directory.
 
--   **Input Data**: Always provide **raw, unfiltered count matrices**. dropkick needs to see the full distribution of droplets (including empty ones) to accurately train its model.
--   **File Formats**: While flat files (.csv, .tsv) are supported, using `.h5ad` (AnnData) is preferred as it preserves metadata and allows for easier downstream analysis with Scanpy.
--   **Ambient RNA**: Use the `qc` output to verify if expected marker genes are appearing as "ambient." If highly expressed biological markers are flagged as ambient, it may indicate high levels of cell lysis or background noise in your sample.
--   **Interactive Analysis**: For more control, dropkick can be imported as a Python module within a Jupyter notebook alongside `scanpy`. This allows for manual adjustment of thresholds if the automated heuristics (based on Otsu's method) require tuning.
+## Best Practices and Expert Tips
+
+* **Environment Setup**: Ensure a Fortran compiler (`gfortran` or `gcc`) is installed on the system before installing dropkick via pip, as it is required for compiling dependencies.
+* **Format Preference**: Use `.h5ad` (AnnData) files whenever possible. This format preserves metadata and is the native structure for the underlying scanpy integration.
+* **QC First**: Always run `dropkick qc` before the full `run` command. Inspect the resulting PNG to ensure the UMI distribution looks as expected and to identify high-abundance ambient genes that might skew results.
+* **Interactive Analysis**: For complex datasets, use the dropkick Python API within a Jupyter notebook to fine-tune model parameters before committing to a full CLI run.
+* **Downstream Integration**: Since dropkick stores its results in the `obs` and `uns` slots of the AnnData object, you can immediately filter your dataset in scanpy using:
+  ```python
+  adata = adata[adata.obs["dropkick_label"] == "yes"]
+  ```
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| dropkick run | Run dropkick to identify ambient RNA in single-cell data. |
+| dropkick_qc | Quality control for single-cell RNA-seq data. |
 
 ## Reference documentation
-- [dropkick - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_dropkick_overview.md)
-- [KenLauLab/dropkick: Automated cell filtering for single-cell RNA sequencing data](./references/github_com_KenLauLab_dropkick.md)
+- [README.rst](./references/github_com_KenLauLab_dropkick_blob_master_README.rst.md)
+- [dropkick_tutorial.ipynb](./references/github_com_KenLauLab_dropkick_blob_master_dropkick_tutorial.ipynb.md)

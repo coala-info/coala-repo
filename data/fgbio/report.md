@@ -1217,3 +1217,6 @@ Input and output fastq files may be gzipped.
 Error: Argument 'input' must be specified at least once.[0m
 ```
 
+
+## Metadata
+- **Skill**: generated

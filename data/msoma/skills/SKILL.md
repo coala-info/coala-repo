@@ -1,6 +1,6 @@
 ---
 name: msoma
-description: "mSOMA identifies somatic mutations by analyzing sequencing data across multiple tissues using a betabinomial null model. Use when user asks to extract allele counts from BAM files, merge multi-tissue count data, or perform statistical inference to call somatic variants."
+description: msoma detects somatic mutations by applying a betabinomial null model to sequencing data from multiple tissues of the same individual. Use when user asks to generate base counts from BAM files, merge count files across tissues, or perform maximum likelihood estimation to identify somatic variants.
 homepage: https://github.com/AkeyLab/mSOMA
 ---
 
@@ -9,66 +9,75 @@ homepage: https://github.com/AkeyLab/mSOMA
 
 ## Overview
 
-mSOMA is a specialized bioinformatics tool designed to identify somatic mutations by analyzing sequencing data across multiple tissues from the same individual. It utilizes a betabinomial null model to account for the overdispersion often found in high-throughput sequencing data, providing a more accurate statistical basis for variant calling than standard binomial models. The tool follows a two-stage workflow: first, extracting allele counts from BAM files, and second, applying maximum likelihood estimation (MLE) to calculate p-values for potential somatic sites.
+mSOMA is a specialized bioinformatics tool designed for detecting somatic mutations by leveraging data across multiple tissues from the same individual. It addresses the challenge of distinguishing true somatic variants from sequencing noise and low-frequency germline variants by employing a betabinomial null model. The workflow typically involves generating base counts from alignment files (BAM), merging these counts across tissues, and then performing Maximum Likelihood Estimation (MLE) to calculate p-values for potential somatic sites.
 
 ## Installation and Environment Setup
 
-The recommended installation method is via Bioconda. mSOMA requires several external dependencies, including `samtools`, `bamutil`, and specific R libraries (e.g., `bbmle`, `VGAM`, `survcomp`).
+mSOMA is primarily distributed via Bioconda and requires a specific environment due to its dependencies on R and specialized tools like `bamutil`.
 
 ```bash
-# Create and activate environment
+# Create and activate the environment
 conda create --name msoma_env -c bioconda -c conda-forge msoma
 conda activate msoma_env
 
-# Verify all Python, R, and binary dependencies are present
+# Verify all external and R dependencies are present
 msoma check-dependencies
 ```
 
 ## Core Workflow
 
-### 1. Generating Allele Counts
-The `count` command processes a BAM file to produce a counts file. This step requires a reference FASTA, a BED file defining callable regions, and the read length.
+### 1. Generating Counts
+The `count` command processes a BAM file to produce a site-specific count file. This step is resource-intensive and requires a reference FASTA and a BED file defining callable regions.
 
 ```bash
-msoma count [INPUT_BAM] \
-  --fasta [REFERENCE_FASTA] \
-  --bed [CALLABLE_REGIONS_BED] \
-  --seq-length [READ_LENGTH] \
-  --output [OUTPUT_COUNTS_FILE]
+msoma count INPUT.bam \
+  --fasta reference.fasta \
+  --bed regions.bed \
+  --seq-length 150 \
+  --output sample.counts
 ```
 
 **Expert Tips for Counting:**
-- **Quality Filtering:** Use `-q` (Minimum Mapping Quality) and `-b` (Minimum Base Quality) to filter out low-confidence alignments.
-- **Read Trimming:** Use `-n` to trim bases from both ends of reads if you suspect end-of-read sequencing errors.
-- **Artifact Reduction:** Adjust `--max-indel` and `--mismatch-frac` to exclude reads with high numbers of differences from the reference, which often represent mapping artifacts.
+*   **Filtering**: Use `-q` (min mapping quality) and `-b` (min base quality) to reduce noise. Defaults are usually sensible, but high-sensitivity projects may require tuning.
+*   **Trimming**: Use `-n` to trim ends of reads if you suspect end-of-read artifacts.
+*   **Indel Control**: Use `-I` to limit the number of indel bases allowed in a read to ensure alignment stability.
 
-### 2. Merging Counts (Multi-tissue)
-If you have generated count files for multiple tissues separately, merge them before running the statistical model.
+### 2. Merging Tissues
+If you have multiple tissues for a single individual, merge their count files before statistical analysis.
 
 ```bash
-msoma merge-counts [COUNT_FILE_1] [COUNT_FILE_2] ... -o [MERGED_COUNTS_FILE]
+msoma merge-counts -o merged.counts tissue1.counts tissue2.counts tissue3.counts
 ```
 
-### 3. Statistical Inference (MLE)
-The `mle` command performs the actual somatic variant calling by calculating p-values based on the betabinomial model.
+### 3. Statistical Analysis (MLE)
+The `mle` command performs the actual mutation calling by fitting the betabinomial model. It generates p-values (`.pval`) and parameter estimates (`.abs`).
 
 ```bash
-msoma mle [INPUT_COUNTS] \
-  --output [OUTPUT_PVAL_FILE] \
-  --min-depth [MIN_DEPTH] \
-  --ab [ALPHA_BETA_ESTIMATES_FILE]
+msoma mle merged.counts \
+  --output results.pval \
+  --ab parameters.abs \
+  --min-depth 10
 ```
 
 **Best Practices for MLE:**
-- **Depth Threshold:** Set `--min-depth` (e.g., 10 or 20) to ensure there is enough data at a locus to make a reliable statistical inference.
-- **Parameter Inspection:** The `--ab` flag generates a file containing alpha and beta parameter estimates. Review these to understand the overdispersion characteristics of your specific dataset.
+*   **Depth Threshold**: The `-d` (min-depth) parameter is critical. Setting it too low introduces noise from poorly covered regions; setting it too high may miss valid somatic mutations in low-coverage tissues.
+*   **Output Interpretation**: The `.pval` file contains the significance of each site being a somatic mutation. The `.abs` file provides the alpha and beta parameters of the betabinomial fit, which are useful for quality control of the model fit.
 
-## Troubleshooting Common Issues
+## Troubleshooting
 
-- **Architecture Constraints:** mSOMA depends on `bamutil`, which currently limits its native execution to Linux and Mac AMD64 architectures.
-- **R Path Conflicts:** If mSOMA fails to find R libraries despite a correct installation, ensure the Conda environment is fully activated. mSOMA makes subprocess calls to `Rscript`, and local user R libraries can sometimes interfere with the environment-specific versions.
-- **Dependency Failures:** If `check-dependencies` reports missing R libraries, you may need to manually install them within the environment using `conda install r-[library-name]`.
+*   **R Path Issues**: If mSOMA fails during the MLE step, ensure that your R environment is not picking up local/personal R libraries that conflict with the conda-installed versions.
+*   **Architecture**: Ensure you are running on `linux` or `mac amd64`. The underlying `bamutil` dependency does not support ARM64 (Apple Silicon) natively without translation.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| merge-counts | Merge count files into a single count file |
+| msoma count | Count somatic mutations |
+| msoma_mle | Calculate p-values for each locus using maximum likelihood estimation from counts file |
 
 ## Reference documentation
 - [mSOMA GitHub Repository](./references/github_com_AkeyLab_mSOMA.md)
-- [mSOMA Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_msoma_overview.md)
+- [mSOMA README](./references/github_com_AkeyLab_mSOMA_blob_main_README.md)

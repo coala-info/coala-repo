@@ -1,6 +1,6 @@
 ---
 name: pindel
-description: Pindel detects structural variants and precisely pinpoints breakpoints in genomic data using a pattern growth algorithm. Use when user asks to detect deletions, identify small insertions, or characterize structural variants from paired-end reads.
+description: Pindel detects structural genomic variations such as deletions, insertions, and inversions by analyzing split-read alignments. Use when user asks to detect structural variants, identify genomic breakpoints, or convert Pindel output to VCF format.
 homepage: http://gmt.genome.wustl.edu/packages/pindel/index.html
 ---
 
@@ -8,46 +8,53 @@ homepage: http://gmt.genome.wustl.edu/packages/pindel/index.html
 # pindel
 
 ## Overview
-Pindel is a specialized bioinformatic tool for the high-resolution detection of structural variants. While many callers struggle with the exact boundaries of insertions and deletions, Pindel uses a pattern growth algorithm to pinpoint breakpoints precisely. It is most effective when you have paired-end genomic data and need to characterize variants that are too large for standard indels callers but require more precision than basic depth-based SV callers.
+Pindel is a specialized bioinformatic tool used to uncover structural genomic variations that standard alignment tools often miss. By analyzing "split-reads" (where one end of a paired-read maps uniquely but the other does not), it precisely defines the boundaries of SVs. This skill provides the necessary command-line patterns to configure input files, run the detection algorithm, and process the resulting variant calls.
 
-## Core Workflow
+## Configuration and Input
+Pindel requires a specific configuration file (often named `pindel_input.txt`) to define the BAM files and insert sizes.
 
-### 1. Input Configuration
-Pindel requires a specific configuration file (often named `pindel_conf.txt`) rather than direct BAM input on the command line. Each line in the file represents a library:
-`[BAM_PATH] [INSERT_SIZE] [SAMPLE_LABEL]`
+**Input Configuration Format:**
+Each line in the configuration file should follow this tab-delimited format:
+`<path_to_bam> <insert_size> <sample_tag>`
 
-Example configuration:
-```text
-/path/to/sample1.bam 400 Sample1
+Example:
+```bash
+/data/sample1.bam  300  Sample1
+/data/sample2.bam  350  Sample2
 ```
 
-### 2. Running the Analysis
-The primary command executes the detection algorithm. You must provide the reference genome and the configuration file.
+## Common CLI Patterns
+
+### 1. Basic SV Detection
+To run Pindel on a specific chromosome (recommended for speed):
+```bash
+pindel -f reference.fa -i pindel_input.txt -c chr20 -o output_prefix
+```
+
+### 2. Whole Genome Analysis
+To run on all chromosomes (ensure sufficient computational resources):
+```bash
+pindel -f reference.fa -i pindel_input.txt -o output_prefix
+```
+
+### 3. Detecting Specific Variant Sizes
+Use the `-m` flag to define the minimum number of supporting reads required to report a variant (default is 3):
+```bash
+pindel -f reference.fa -i pindel_input.txt -m 5 -o output_prefix
+```
+
+## Output Processing
+Pindel produces several output files based on variant type (e.g., `_D` for deletions, `_SI` for small insertions, `_INV` for inversions). To convert these into a standard VCF format, use the `pindel2vcf` utility:
 
 ```bash
-pindel -f reference.fa -i pindel_conf.txt -c ALL -o output_prefix
+pindel2vcf -p output_prefix_D -r reference.fa -R hg19 -d 20101123 -v output.vcf
 ```
 
-**Key Parameters:**
-- `-f`: Path to the reference genome in FASTA format.
-- `-i`: The configuration file listing BAMs and insert sizes.
-- `-c`: The chromosome/contig to analyze (use `ALL` for the whole genome).
-- `-o`: Prefix for the multiple output files generated (e.g., `_D` for deletions, `_SI` for small insertions).
-- `-T`: Number of threads to use for parallel processing.
-
-### 3. Converting Output to VCF
-Pindel produces raw text files for different variant types. To use these in standard downstream pipelines, convert them to VCF format using `pindel2vcf`.
-
-```bash
-pindel2vcf -p output_prefix_D -r reference.fa -R reference_name -d date -v output.vcf
-```
-
-## Expert Tips and Best Practices
-- **Insert Size Accuracy**: Ensure the insert size provided in the configuration file is as accurate as possible, as Pindel uses this to identify "anchor" reads where one end maps and the other is unmapped or clipped.
-- **Memory Management**: For large genomes or high coverage, process by chromosome (using `-c`) rather than `ALL` to manage memory consumption and runtime.
-- **Breakpoint Refinement**: Pindel is particularly strong at "medium-sized" insertions (up to 100-500bp) that are often missed by standard assembly-based or split-read callers.
-- **Filtering**: Raw Pindel output can be noisy. Always use `pindel2vcf` with quality filters or post-process the VCF to filter based on the number of supporting reads (the `AD` or `SR` fields).
+## Expert Tips
+- **Reference Indexing:** Ensure your reference genome is indexed with `samtools faidx`.
+- **Memory Management:** Pindel can be memory-intensive. If processing large genomes, run chromosomes in parallel across different jobs to reduce the memory footprint per process.
+- **Insert Size:** Accuracy depends heavily on the correct expected insert size provided in the configuration file. Use tools like `Picard CollectInsertSizeMetrics` to determine this value before running Pindel.
+- **Filtering:** Raw Pindel output often contains many candidates. Always convert to VCF and apply quality filters (e.g., read depth, mapping quality) before downstream analysis.
 
 ## Reference documentation
-- [Pindel Overview](./references/anaconda_org_channels_bioconda_packages_pindel_overview.md)
-- [Pindel Home and Documentation](./references/gmt_genome_wustl_edu_packages_pindel_index.html.md)
+- [Pindel Overview](./references/gmt_genome_wustl_edu_packages_pindel_index.html.md)

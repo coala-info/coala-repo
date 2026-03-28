@@ -249,3 +249,6 @@ Options:
                         Prefix of output files.[required]
 ```
 
+
+## Metadata
+- **Skill**: generated

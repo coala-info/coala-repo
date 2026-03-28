@@ -1,6 +1,6 @@
 ---
 name: meta-neuro
-description: MeTA is a neuroimaging workflow that extracts and parcellates the core volume of white matter bundles to minimize microstructural heterogeneity in diffusion MRI metrics. Use when user asks to generate medial surfaces, perform bundle parcellation, extract microstructural profiles, or calculate shape features from tractography data.
+description: meta-neuro is a neuroimaging workflow for medial tractography analysis that extracts and parcellates the core volume of white matter bundles to minimize microstructural heterogeneity. Use when user asks to generate medial surfaces, perform bundle parcellation, compute microstructural profiles, or extract shape metrics from diffusion MRI data.
 homepage: https://github.com/bagari/meta
 ---
 
@@ -9,90 +9,90 @@ homepage: https://github.com/bagari/meta
 
 ## Overview
 
-Medial Tractography Analysis (MeTA) is a specialized neuroimaging workflow designed to minimize microstructural heterogeneity in diffusion MRI metrics. Unlike standard tractography analysis which may include peripheral "noise" or partial volume effects, MeTA extracts and parcellates the core volume of a white matter bundle. This approach effectively preserves the bundle's shape while capturing regional variations in metrics like Fractional Anisotropy (FA) or Mean Diffusivity (MD) both within and along the bundle length.
+Medial Tractography Analysis (MeTA) is a specialized neuroimaging workflow designed to minimize microstructural heterogeneity in diffusion MRI (dMRI) metrics. Unlike standard tractometry which may include peripheral voxels, MeTA extracts and parcellates the core volume along the bundle length in voxel-space. This approach effectively preserves bundle shape while capturing regional variations within white matter (WM) bundles, making it ideal for population analyses and genetic correlation studies.
 
-## Installation and Environment
+## Command Line Usage
 
-MeTA is primarily distributed via Bioconda. Ensure your environment uses Python >= 3.9 and < 3.14.
-
-```bash
-conda config --add channels bioconda
-conda create -n meta python=3.13
-conda activate meta
-conda install bioconda::meta-neuro=2.0.1
-```
-
-Alternatively, use the Singularity/Apptainer image for containerized execution:
-`apptainer run docker://quay.io/biocontainers/meta-neuro:2.0.1--py313h47f2c4e_0 meta --help`
-
-## Core Workflow Commands
+The meta-neuro package provides several CLI entry points for a complete tractography analysis pipeline.
 
 ### 1. Medial Surface Generation
-Before running the main MeTA analysis, you must generate a 3D medial surface (skeleton) of the bundle.
+Before running the main MeTA workflow, you must generate a medial surface (skeleton) for the white matter bundle.
 
-**Step A: Create a binary density map**
-Converts streamlines (trk/tck) into a voxel-space binary image.
+**Step A: Create a density map**
+Convert streamlines into a binary image.
 ```bash
-density_map --tractogram bundle.trk --reference dti_FA.nii.gz --output bundle_mask.nii.gz
+density_map --tractogram bundle.trk --reference fa_map.nii.gz --output bundle_mask.nii.gz
 ```
 
-**Step B: Generate VTK Level Set**
+**Step B: Generate the 3D Medial Surface**
+Use the CMREP (Continuous Medial Representation) method.
 ```bash
+# Create a level set mesh
 vtklevelset bundle_mask.nii.gz bundle.vtk 0.1
-```
 
-**Step C: Extract Medial Skeleton**
-Uses the Continuous Medial Representation (CMREP) method.
-```bash
+# Generate the skeleton
 cmrep_vskel -c 3 -p 1.5 -g bundle.vtk bundle_skeleton.vtk
 ```
 
-### 2. Main MeTA Analysis
-The `meta` command performs the core volume extraction and parcellation.
-
+### 2. Main MeTA Workflow
+Extract the core volume and parcellate it into segments.
 ```bash
 meta --subject SUBJ_ID \
      --bundle CST \
      --medial_surface bundle_skeleton.vtk \
      --volume bundle.vtk \
      --sbundle bundle.trk \
-     --mbundle bundle_model.trk \
-     --transform subject_to_template_affine.mat \
+     --mbundle model_template.trk \
+     --transform subject_to_template.mat \
      --mask bundle_mask.nii.gz \
      --num_segments 15 \
-     --output ./output_dir
+     --output output_prefix
 ```
 
 ### 3. Microstructural Profiling
-After parcellation, extract metrics along the bundle length.
+Compute metrics (FA, MD, RD, AD) along the bundle.
 
 **Voxel-based Profile:**
-Computes averages based on the parcellated masks and a metric map (e.g., FA).
 ```bash
-volumetric_profile --subject SUBJ_ID --bundle CST --mask bundle_local_all.nii.gz --map FA.nii.gz --output ./output_dir
+volumetric_profile --subject SUBJ_ID --bundle CST --mask bundle_local_all.nii.gz --map FA.nii.gz --output ./results
 ```
 
 **Streamline-based Profile:**
-Computes metrics mapped directly onto the streamlines.
 ```bash
-streamlines_profile --subject SUBJ_ID --bundle CST --tractogram bundle.trk --mask bundle_local_all.nii.gz --map FA.nii.gz --output ./output_dir
+streamlines_profile --subject SUBJ_ID --bundle CST --tractogram bundle.trk --mask bundle_local_all.nii.gz --map FA.nii.gz --output ./results
 ```
 
-### 4. Shape Feature Extraction
-Extract geometric features including length, span, curl, volume, surface area, and elongation.
+### 4. Shape Metrics Extraction
+Calculate geometric features of the bundle.
 ```bash
-shape_metrics --subject SUBJ_ID --bundle CST --mask bundle_mask.nii.gz --tractogram bundle.trk --output bundle_metrics.csv
+shape_metrics --subject SUBJ_ID --bundle CST --mask bundle_mask.nii.gz --tractogram bundle.trk --output metrics.csv
 ```
 
 ## Expert Tips and Best Practices
 
-- **Segment Selection**: The `--num_segments` parameter in the `meta` command determines the granularity of the analysis along the bundle length. For most major bundles (like the CST), 15-20 segments provide a good balance between spatial resolution and signal-to-noise ratio.
-- **Input Formats**: MeTA supports `.trk`, `.tck`, and `.tt.gz` tractography formats. Ensure your reference image (`--reference`) matches the orientation and dimensions of your dMRI metric maps.
-- **Output Files**: 
-    - `*_segments_average.csv`: Contains the mean metric value for each segment along the bundle.
-    - `*_segments_voxelwise.h5`: Contains high-dimensional data for every voxel within the bundle core, useful for advanced statistical mapping.
-- **Medial Surface Tuning**: If the skeletonization (`cmrep_vskel`) fails or produces artifacts, check the threshold used in `vtklevelset` (default 0.1). A cleaner binary mask from `density_map` usually resolves skeletonization issues.
+- **File Formats**: Version 2.0.1+ supports `trk`, `tck`, `trx`, and `tt.gz` formats. Ensure your tractograms are compatible with the reference image space.
+- **Transformations**: If your registration matrix is from template-to-subject but the tool expects subject-to-template, check for the matrix inversion options in the `meta` command.
+- **Segmentation Granularity**: The `--num_segments` parameter typically ranges from 15 to 100 depending on the length of the bundle and the desired spatial resolution.
+- **Output Interpretation**: 
+    - `*_segments_average.csv`: Contains the mean metric value for each segment along the tract.
+    - `*_segments_voxelwise.h5`: Contains data for every voxel, useful for more complex statistical modeling.
+- **Shape Features**: The `shape_metrics` tool extracts 9 key features: Streamline count, Average length, Span, Curl, Volume, Surface area, Diameter, Elongation, and Irregularity.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| cmrep_vskel | Skeletonize a boundary mesh |
+| density_map | Convert streamlines of white matter bundle into a density map and binary mask. |
+| meta | Medial Tractography Analysis (MeTA) for White Matter Bundle Parcellation |
+| shape_metrics | Extract shape features from white matter bundle streamlines |
+| streamlines_profile | Compute streamlines profile (average mean and point-wise) of a white matter bundle. |
+| volumetric_profile | Compute volumetric profile (average mean and voxel-wise) of a white matter bundle. |
+| vtklevelset | Generates a VTK mesh from a level set implicit surface defined by an input image. |
 
 ## Reference documentation
-- [MeTA GitHub Repository](./references/github_com_bagari_meta.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_meta-neuro_overview.md)
+- [MeTA GitHub Repository](./references/github_com_bagari_meta_blob_main_README.md)
+- [MeTA Changelog](./references/github_com_bagari_meta_blob_main_CHANGELOG.md)
+- [MeTA Project Configuration](./references/github_com_bagari_meta_blob_main_pyproject.toml.md)

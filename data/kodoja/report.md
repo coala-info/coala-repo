@@ -194,3 +194,6 @@ the files will be named ``virus_12345_...`` instead.
 See also https://github.com/abaizan/kodoja/wiki/Kodoja-Manual
 ```
 
+
+## Metadata
+- **Skill**: generated

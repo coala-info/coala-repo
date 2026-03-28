@@ -205,3 +205,6 @@ Try 'bifrost-httr split-data --help' for help.
 Error: No such option: --h Did you mean --help?
 ```
 
+
+## Metadata
+- **Skill**: not generated

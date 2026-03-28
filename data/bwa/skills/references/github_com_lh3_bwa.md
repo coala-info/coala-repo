@@ -83,6 +83,7 @@ Appearance settings
     - [Security Lab](https://securitylab.github.com)
     - [Maintainer Community](https://maintainers.github.com)
     - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
     - [Archive Program](https://archiveprogram.github.com)
   + REPOSITORIES
     - [Topics](https://github.com/topics)
@@ -148,7 +149,7 @@ Public
 
 * [Notifications](/login?return_to=%2Flh3%2Fbwa) You must be signed in to change notification settings
 * [Fork
-  575](/login?return_to=%2Flh3%2Fbwa)
+  576](/login?return_to=%2Flh3%2Fbwa)
 * [Star
    1.7k](/login?return_to=%2Flh3%2Fbwa)
 
@@ -254,4 +255,4 @@ Open more actions menu
 | [pemerge.c](/lh3/bwa/blob/master/pemerge.c "pemerge.c") | | [pemerge.c](/lh3/bwa/blob/master/pemerge.c "pemerge.c") |  |  |
 | [qualfa2fq.pl](/lh3/bwa/blob/master/qualfa2fq.pl "qualfa2fq.pl") | | [qualfa2fq.pl](/lh3/bwa/blob/master/qualfa2fq.pl "qualfa2fq.pl") |  |  |
 | [rle.c](/lh3/bwa/blob/master/rle.c "rle.c") | | [rle.c](/lh3/bwa/blob/master/rle.c "rle.c") |  |  |
-| [rle.h](/lh3/bwa/blob/master/rle.h "rle.h") | | [rle.h](/lh3/bwa/blob/mas
+| [rle.h](/lh3/bwa/blob/mast

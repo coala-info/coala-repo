@@ -97,3 +97,6 @@ options:
   --log LOG             Path to write log to. Default is stderr
 ```
 
+
+## Metadata
+- **Skill**: generated

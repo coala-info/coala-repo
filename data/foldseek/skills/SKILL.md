@@ -1,6 +1,6 @@
 ---
 name: foldseek
-description: Foldseek performs rapid, large-scale protein structure comparisons and alignments by encoding tertiary interactions into a structural alphabet. Use when user asks to search protein structures against databases, cluster structures by similarity, create custom structural databases, or perform multimer alignments.
+description: Foldseek performs fast and sensitive structural alignments by encoding protein tertiary structures into a specialized 3Di alphabet. Use when user asks to search for structural homologs, cluster protein monomers or multimers, rescore alignments using TM-score, or perform sequence-to-structure searches using ProstT5.
 homepage: https://github.com/steineggerlab/foldseek
 ---
 
@@ -8,72 +8,91 @@ homepage: https://github.com/steineggerlab/foldseek
 # foldseek
 
 ## Overview
-Foldseek is a high-performance tool designed for the rapid comparison of large-scale protein structure datasets. It works by encoding tertiary interactions into a structural alphabet (3Di), allowing it to leverage optimized sequence alignment algorithms for structural search. Use this skill to perform monomer or multimer searches, create custom structural databases, and execute structural clustering at speeds orders of magnitude faster than traditional tools like TM-align, while maintaining comparable sensitivity.
+
+Foldseek is a high-performance tool designed to bridge the gap between the speed of sequence-based searches and the sensitivity of structural comparisons. It works by encoding tertiary protein structures into a "3Di" alphabet, allowing for extremely fast structural alignments. Use this skill to perform monomer or multimer searches, cluster protein universes at scale, or rescore alignments using TM-score. It is particularly effective for identifying remote homologs that have conserved structures despite low sequence identity.
 
 ## Core Workflows
 
-### Structural Search (Easy Search)
-The `easy-search` module is the most common entry point for querying structures against a target set.
+### Structural Search (Monomers)
+The `easy-search` module is the most common entry point for comparing structures.
 
 ```bash
-# Search query PDBs against a target folder of PDBs
-foldseek easy-search input_queries/ target_pdb_folder/ results.tsv tmp/
+# Basic search: query PDBs against a target database/folder
+foldseek easy-search input_folder/ target_folder/ results.m8 tmp/
 
-# Search against a pre-built database (e.g., AlphaFoldDB)
-foldseek easy-search query.pdb path/to/afdb results.tsv tmp/
-```
-
-### Database Management
-For repetitive searches or very large datasets, create a formatted Foldseek database first.
-
-```bash
-# Create a database from a folder of PDB/mmCIF files
-foldseek createdb path/to/pdb_folder/ targetDB
-
-# Download common databases (AlphaFoldDB, PDB, etc.)
-foldseek databases AFDB target_dir tmp/
+# Search with TM-score rescoring (more accurate but slower)
+foldseek easy-search query.pdb target_db results.m8 tmp/ --alignment-type 1
 ```
 
 ### Structural Clustering
-Cluster structures based on structural similarity (TM-score or 3Di-score).
+Use `easy-cluster` to group similar structures based on structural redundancy.
 
 ```bash
-# Cluster a database
-foldseek cluster targetDB clusterDB tmp/
+# Cluster structures with 50% sequence identity and 80% coverage
+foldseek easy-cluster structures/ cluster_out tmp/ --min-seq-id 0.5 -c 0.8
+```
 
-# Generate a TSV of cluster members
-foldseek createtsv targetDB targetDB clusterDB clustering_results.tsv
+### Multimer Search and Clustering
+For protein complexes, use the multimer-specific modules which account for relative chain orientations.
+
+```bash
+# Search protein complexes
+foldseek easy-multimersearch query_complex/ target_db results.m8 tmp/
+
+# Cluster protein complexes
+foldseek easy-multimercluster input_complexes/ cluster_out tmp/
+```
+
+### Sequence-to-Structure Search (ProstT5)
+If you only have sequences but want structural sensitivity, Foldseek can use the ProstT5 language model to predict structural descriptors.
+
+```bash
+# Search FASTA sequences against a structure database
+foldseek easy-search sequences.fasta structure_db results.m8 tmp/
 ```
 
 ## Expert Tips and Parameters
 
-### Customizing Output Fields
-Use `--format-output` to extract specific metrics. Useful codes include:
-- `query,target`: Identifiers
-- `alntmscore`: TM-score of the alignment
-- `qtmscore,ttmscore`: TM-score normalized by query or target length
-- `lddt`: Local Distance Difference Test score
-- `u,t`: Rotation matrix and translation vector for superposition
+### Alignment Modes (`--alignment-mode`)
+- `0`: High-speed 3Di-based alignment (default).
+- `1`: TM-align (global-to-global) - best for high-quality structural similarity.
+- `2`: 3Di + Smith-Waterman - better for local structural similarities.
+
+### Output Customization
+Use `--format-output` to define specific columns in the tab-separated results.
+Common fields: `query,target,fident,alnlen,mismatch,gapopen,qstart,qend,tstart,tend,evalue,bits,prob,tmscore`.
 
 ```bash
-foldseek easy-search query.pdb targetDB aln.tsv tmp --format-output "query,target,evalue,alntmscore,lddt"
+foldseek easy-search q/ t/ res.m8 tmp/ --format-output "query,target,evalue,tmscore"
 ```
 
-### Alignment Modes
-- **Default**: Fast 3Di-based alignment.
-- **TM-align mode** (`--alignment-type 1`): Uses TM-align for the alignment stage (slower but standard for some publications).
-- **GPU Acceleration**: If using the GPU build, add `--prefilter-mode 1` to utilize GPU resources for the prefilter step, which is significantly faster for single-query searches.
+### Performance Optimization
+- **GPU Acceleration**: If available, Foldseek automatically detects CUDA. For large-scale searches, ensure the database is padded for GPU using `foldseek createdb ... --pad-for-gpu 1`.
+- **Memory**: For massive databases like AlphaFoldDB, ensure you have sufficient RAM or use `.idx` files to limit memory footprint.
 
-### Memory Optimization
-- **Large Databases**: Searching the full AFDB50 requires ~151GB RAM with Cα information.
-- **Low RAM Mode**: Disable structure bits (`--sort-by-structure-bits 0`) to reduce RAM usage (e.g., AFDB50 drops to ~35GB). This affects ranking for hits with E-values > 10⁻¹ but preserves E-value accuracy.
+### Database Management
+For repetitive searches, create a permanent database instead of pointing to a folder.
 
-### Multimer Search
-For complex-to-complex alignment, use the `complexsearch` module.
 ```bash
-foldseek complexsearch query_complex.pdb target_complex_dir/ results.tsv tmp/
+# Create a database from PDB files
+foldseek createdb input_pdbs/ target_db
+
+# Create an index for faster subsequent searches
+foldseek createindex target_db tmp/
 ```
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| foldseek easy-cluster | By Martin Steinegger <martin.steinegger@snu.ac.kr> |
+| foldseek easy-multimercluster | By Seongeun Kim <seamustard52@gmail.com> & Sooyoung Cha <ellen2g77@gmail.com> |
+| foldseek easy-multimersearch | By Woosub Kim <woosubgo@snu.ac.kr> |
+| foldseek easy-rbh | By Eli Levy Karin & Martin Steinegger <martin.steinegger@snu.ac.kr> |
+| foldseek easy-search | By Martin Steinegger <martin.steinegger@snu.ac.kr> |
 
 ## Reference documentation
-- [Foldseek Wiki](./references/github_com_steineggerlab_foldseek_wiki.md)
-- [Foldseek Main README](./references/github_com_steineggerlab_foldseek.md)
+- [Foldseek README](./references/github_com_steineggerlab_foldseek_blob_master_README.md)
+- [Foldseek Main Page](./references/github_com_steineggerlab_foldseek.md)

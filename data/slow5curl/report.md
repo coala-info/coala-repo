@@ -95,3 +95,6 @@ Prints the reads in a remote BLOW5 file. Usage: slow5curl reads [OPTIONS] [SLOW5
 See https://slow5.bioinf.science/slow5curl for a detailed description of these command-line options.
 ```
 
+
+## Metadata
+- **Skill**: generated

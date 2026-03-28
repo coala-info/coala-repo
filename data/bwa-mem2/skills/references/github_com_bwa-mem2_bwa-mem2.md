@@ -1,1 +1,213 @@
-GitHub - bwa-mem2/bwa-mem2: The next version of bwa-mem Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} bwa-mem2 / bwa-mem2 Public Notifications You must be signed in to change notification settings Fork 120 Star 816 The next version of bwa-mem License View license 816 stars 120 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 99 Pull requests 10 Actions Security 0 Insights Additional navigation options Code Issues Pull requests Actions Security Insights bwa-mem2/bwa-mem2 master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 241 Commits 241 Commits ext ext images images src src test test .gitignore .gitignore .gitmodules .gitmodules LICENSE LICENSE Makefile Makefile NEWS.md NEWS.md README-ori.md README-ori.md README.md README.md View all files Repository files navigation README License Important Information We are happy to announce that the index size on disk is down by 8 times and in memory by 4 times due to moving to only one type of FM-index (2bit.64 instead of 2bit.64 and 8bit.32) and 8x compression of suffix array. For example, for human genome, index size on disk is down to ~10GB from ~80GB and memory footprint is down to ~10GB from ~40GB. There is a substantial reduction in index IO time due to the reduction and hardly any performance impact on read mapping. Due to this change in index structure (in commit #4b59796, 10th October 2020), you will need to rebuild the index. Added MC flag in the output sam file in commit a591e22. Output should match original bwa-mem version 0.7.17. As of commit e0ac59e, we have a git submodule safestringlib. To get it, use --recursive while cloning or use "git submodule init" and "git submodule update" in an already cloned repository (See below for more details). Getting Started # Use precompiled binaries (recommended) curl -L https://github.com/bwa-mem2/bwa-mem2/releases/download/v2.2.1/bwa-mem2-2.2.1_x64-linux.tar.bz2 \ | tar jxf - bwa-mem2-2.2.1_x64-linux/bwa-mem2 index ref.fa bwa-mem2-2.2.1_x64-linux/bwa-mem2 mem ref.fa read1.fq read2.fq &gt; out.sam # Compile from source (not recommended for general users) # Get the source git clone --recursive https://github.com/bwa-mem2/bwa-mem2 cd bwa-mem2 # Or git clone https://github.com/bwa-mem2/bwa-mem2 cd bwa-mem2 git submodule init git submodule update # Compile and run make ./bwa-mem2 Introduction The tool bwa-mem2 is the next version of the bwa-mem algorithm in bwa . It produces alignment identical to bwa and is ~1.3-3.1x faster depending on the use-case, dataset and the running machine. The original bwa was developed by Heng Li (@lh3). Performance enhancement in bwa-mem2 was primarily done by Vasimuddin Md (@yuk12) and Sanchit Misra (@sanchit-misra) from Parallel Computing Lab, Intel. bwa-mem2 is distributed under the MIT license. Installation For general users, it is recommended to use the precompiled binaries from the release page . These binaries were compiled with the Intel compiler and runs faster than gcc-compiled binaries. The precompiled binaries also indirectly support CPU dispatch. The bwa-mem2 binary can automatically choose the most efficient implementation based on the SIMD instruction set available on the running machine. Precompiled binaries were generated on a CentOS7 machine using the following command line: make CXX=icpc multi Usage The usage is exactly same as the original BWA MEM tool. Here is a brief synopsys. Run ./bwa-mem2 for available commands. # Indexing the reference sequence (Requires 28N GB memory where N is the size of the reference sequence). ./bwa-mem2 index [-p prefix] &lt; in.fasta &gt; Where &lt; in.fasta &gt; is the path to reference sequence fasta file and &lt; prefix &gt; is the prefix of the names of the files that store the resultant index. Default is in.fasta. # Mapping # Run "./bwa-mem2 mem" to get all options ./bwa-mem2 mem -t &lt; num_threads &gt; &lt; prefix &gt; &lt; reads.fq/fa &gt; &gt; out.sam Where &lt; prefix &gt; is the prefix specified when creating the index or the path to the reference fasta file in case no prefix was provided. Performance Datasets: Reference Genome: human_g1k_v37.fasta Alias Dataset source No. of reads Read length D1 Broad Institute 2 x 2.5M bp 151bp D2 SRA: SRR7733443 2 x 2.5M bp 151bp D3 SRA: SRR9932168 2 x 2.5M bp 151bp D4 SRA: SRX6999918 2 x 2.5M bp 151bp Machine details: Processor: Intel(R) Xeon(R) 8280 CPU @ 2.70GHz OS: CentOS Linux release 7.6.1810 Memory: 100GB We followed the steps below to collect the performance results: A. Data download steps: Download SRA toolkit from https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=software#header-global tar xfzv sratoolkit.2.10.5-centos_linux64.tar.gz Download D2: sratoolkit.2.10.5-centos_linux64/bin/fastq-dump --split-files SRR7733443 Download D3: sratoolkit.2.10.5-centos_linux64/bin/fastq-dump --split-files SRR9932168 Download D4: sratoolkit.2.10.5-centos_linux64/bin/fastq-dump --split-files SRX6999918 B. Alignment steps: git clone https://github.com/bwa-mem2/bwa-mem2.git cd bwa-mem2 make CXX=icpc (using intel C/C++ compiler) or make (using gcc compiler) ./bwa-mem2 index &lt;ref.fa&gt; ./bwa-mem2 mem [-t &lt;#threads&gt;] &lt;ref.fa&gt; &lt;in_1.fastq&gt; [&lt;in_2.fastq&gt;] &gt; &lt;output.sam&gt; For example, in our double socket (56 threads each) and double numa compute node, we used the following command line to align D2 to human_g1k_v37.fasta reference genome. numactl -m 0 -C 0-27,56-83 ./bwa-mem2 index human_g1k_v37.fasta numactl -m 0 -C 0-27,56-83 ./bwa-mem2 mem -t 56 human_g1k_v37.fasta SRR7733443_1.fastq SRR7733443_2.fastq &gt; d2_align.sam bwa-mem2 seeding phase accelerated using LISA (Learned-Indexes for Sequence Analysis) bwa-mem2-lisa is an accelerated version of bwa-mem2 where we apply learned-indexes to the seeding phase. bwa-mem2-lisa branch contains the source code of the implementation. Following are the features of bwa-mem2-lisa: Exact same output as bwa-mem2. All command-lines for creating an index and the read mapping are exactly same as bwa-mem2. bwa-mem2-lisa accelerates seeding phase (one of the major bottlenecks in bwa-mem2) by up to 4.5x compared to bwa-mem2. The memory footprint of bwa-mem2-lisa index is ~120GB for human genome. The code is present in bwa-mem2-lisa branch: https://github.com/bwa-mem2/bwa-mem2/tree/bwa-mem2-lisa bwa-mem2 seeding speedup with Enumerated Radix Trees (Code in ert branch) The ert branch of bwa-mem2 repository contains codebase of enuerated radix tree based acceleration of bwa-mem2. The ert code is built on the top of bwa-mem2 (thanks to the hard work by @arun-sub). The following are the highlights of the ert based bwa-mem2 tool: Exact same output as bwa-mem(2) The tool has two additional flags to enable the use of ert solution (for index creation and mapping), else it runs in vanilla bwa-mem2 mode It uses 1 additional flag to create ert index (different from bwa-mem2 index) and 1 additional flag for using that ert index (please see the readme of ert branch) The ert solution is 10% - 30% faster (tested on above machine configuration) in comparison to vanilla bwa-mem2 -- users are adviced to use option -K 1000000 to see the speedups The memory foot print of the ert index is ~60GB The code is present in ert branch: https://github.com/bwa-mem2/bwa-mem2/tree/ert Citation Vasimuddin Md, Sanchit Misra, Heng Li, Srinivas Aluru. Efficient Architecture-Aware Acceleration of BWA-MEM for Multicore Systems. IEEE Parallel and Distributed Processing Symposium (IPDPS), 2019. 10.1109/IPDPS.2019.00041 About 
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fbwa-mem2%2Fbwa-mem2)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fbwa-mem2%2Fbwa-mem2)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=bwa-mem2%2Fbwa-mem2)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[bwa-mem2](/bwa-mem2)
+/
+**[bwa-mem2](/bwa-mem2/bwa-mem2)**
+Public
+
+* [Notifications](/login?return_to=%2Fbwa-mem2%2Fbwa-mem2) You must be signed in to change notification settings
+* [Fork
+  122](/login?return_to=%2Fbwa-mem2%2Fbwa-mem2)
+* [Star
+   825](/login?return_to=%2Fbwa-mem2%2Fbwa-mem2)
+
+* [Code](/bwa-mem2/bwa-mem2)
+* [Issues
+  100](/bwa-mem2/bwa-mem2/issues)
+* [Pull requests
+  12](/bwa-mem2/bwa-mem2/pulls)
+* [Actions](/bwa-mem2/bwa-mem2/actions)
+* [Security
+  0](/bwa-mem2/bwa-mem2/security)
+* [Insights](/bwa-mem2/bwa-mem2/pulse)
+
+Additional navigation options
+
+* [Code](/bwa-mem2/bwa-mem2)
+* [Issues](/bwa-mem2/bwa-mem2/issues)
+* [Pull requests](/bwa-mem2/bwa-mem2/pulls)
+* [Actions](/bwa-mem2/bwa-mem2/actions)
+* [Security](/bwa-mem2/bwa-mem2/security)
+* [Insights](/bwa-mem2/bwa-mem2/pulse)
+
+# bwa-mem2/bwa-mem2
+
+master
+
+[Branches](/bwa-mem2/bwa-mem2/branches)[Tags](/bwa-mem2/bwa-mem2/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[241 Commits](/bwa-mem2/bwa-mem2/commits/master/)   241 Commits | | |
+| [ext](/bwa-mem2/bwa-mem2/tree/master/ext "ext") | | [ext](/bwa-mem2/bwa-mem2/tree/master/ext "ext") |  |  |
+| [images](/bwa-mem2/bwa-mem2/tree/master/images "images") | | [images](/bwa-mem2/bwa-mem2/tree/master/images "images") |  |  |
+| [src](/bwa-mem2/bwa-mem2/tree/master/src "src") | | [src](/bwa-mem2/bwa-mem2/tree/master/src "src") |  |  |
+| [test](/bwa-mem2/bwa-mem2/tree/master/test "test") | | [test](/bwa-mem2/bwa-mem2/tree/master/test "test") |  |  |
+| [.gitignore](/bwa-mem2/bwa-mem2/blob/master/.gitignore ".gitignore") | | [.gitignore](/bwa-mem2/bwa-mem2/blob/master/.gitignore ".gitignore") |  |  |
+| [.gitmodules](/bwa-mem2/bwa-mem2/blob/master/.gitmodules ".gitmodules") | | [.gitmodules](/bwa-mem2/bwa-mem2/blob/master/.gitmodules ".gitmodules") |  |  |
+| [LICENSE](/bwa-mem2/bwa-mem2/blob/master/LICENSE "LICENSE") | | [LICENSE](/bwa-mem2/bwa-mem2/blob/master/LICENSE "LICENSE") |  |  |
+| [Makefile](/bwa-mem2/bwa-mem2/blob/master/Makefile "Makefile") | | [Makefile](/bwa-mem2/bwa-mem2/blob/master/Makefile "Makefile") |  |  |
+| [NEWS.md](/bwa-mem2/bwa-mem2/blob/master/NEWS.md "NEWS.md") | | [NEWS.md](/bwa-mem2/bwa-mem2/blob/master/NEWS.md "NEWS.md") |  |  |
+| [README-ori.md](/bwa-mem2/bwa-mem2/blob/master/README-ori.md "README-ori.md") | | [README-ori.md](/bwa-mem2/bwa-mem2/blob/master/README-ori.md "README-ori.md") |  |  |
+| [README.md](/bwa-mem2/bwa-mem2/blob/master/README.md "README.md") | | [README.md](/bwa-mem2/bwa-mem2/blob/master/README.md "README.md") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* License
+
+[![GitHub Downloads](https://camo.githubusercontent.com/c8697bb8b88e2ddf13c4eb33e5d613535297df07866536df9e2601eb60814fd9/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f646f776e6c6f6164732f6277612d6d656d322f6277612d6d656d322f746f74616c3f6c6162656c3d476974487562253230446f776e6c6f616473)](https://github.com/bwa-mem2/bwa-mem2/releases)
+[![BioConda Install](https://camo.githubusercontent.com/c89e1e30ed84ecdebbdc408a6fb3f72142e2be773bb6ffe51fe8ffe6ae36310b/68747470733a2f2f696d672e736869656c64732e696f2f636f6e64612f646e2f62696f636f6e64612f6277612d6d656d323f6c6162656c3d42696f436f6e6461253230496e7374616c6c73)](https://anaconda.org/bioconda/bwa-mem2)
+[![European Galaxy server](https://camo.githubusercontent.com/bbbdbce65026e26616abf27c23c79165b856be43fc2a668756aa54018d909d62/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f75736567616c6178792d2e65752d627269676874677265656e3f6c6f676f3d646174613a696d6167652f706e673b6261736536342c6956424f5277304b47676f414141414e53556845556741414142674141414153434159414141424237423665414141414247644254554541414c4750432f7868425141414143426a53464a4e414142364a6741416749514141506f41414143413641414164544141414f7067414141366d41414146334363756c4538414141414358424957584d41414173544141414c457745416d7077594141414343326c555748525954557736593239744c6d466b62324a6c4c6e687463414141414141415048673665473177625756305953423462577875637a703450534a685a4739695a547075637a70745a5852684c7949676544703462584230617a30695745315149454e76636d55674e5334304c6a416950676f6749434138636d526d4f6c4a455269423462577875637a70795a475939496d6830644841364c79393364336375647a4d7562334a6e4c7a45354f546b764d4449764d6a4974636d526d4c584e35626e52686543317563794d6950676f674943416749434138636d526d4f6b526c63324e79615842306157397549484a6b5a6a7068596d39316444306949676f674943416749434167494341674943423462577875637a703061575a6d50534a6f644852774f693876626e4d7559575276596d5575593239744c3352705a6d59764d5334774c79492b4369416749434167494341674944783061575a6d4f6c4a6c633239736458527062323556626d6c30506a49384c3352705a6d5936556d567a6232783164476c76626c56756158512b4369416749434167494341674944783061575a6d4f6b4e76625842795a584e7a61573975506a45384c3352705a6d59365132397463484a6c63334e706232342b4369416749434167494341674944783061575a6d4f6b3979615756756447463061573975506a45384c3352705a6d593654334a705a573530595852706232342b4369416749434167494341674944783061575a6d4f6c426f6233527662575630636d6c6a535735305a584a77636d5630595852706232342b4d6a777664476c6d5a6a7051614739306232316c64484a7059306c756447567963484a6c644746306157397550676f6749434167494341384c334a6b5a6a70455a584e6a636d6c7764476c76626a344b49434167504339795a475936556b524750676f384c33673665473177625756305954344b443055716b774141416e394a524546554f42476c5645754c453045517275715a69667477447a345159543149594d3865466b4846772f344859582b4742332f42346c2f59502b4350384f424e5477704377464d51584151504b746e7367356e4a5a704b646e69362f366b7a487641594446745255543731663355774145626b4c6368396f675178634277524b4d66416e4d312f434277677262786b67504159716c424f79316a666f766c61507345695750524f5a6d716d5a4b4b7a4f59434a622f416264594c736f392f39423647707042527143726a5359596171755a71323045554b417a56706a6f31467a57524456724e617936432f48447854393277587241564348334153717135567145747631575a31334d647766384c4679794b45434e62674848414f62576853636634576e6a3943625170507a5759553355466f5833716b686c473841593242545174352f45413771614550517367474c57696564304138564b72484173434331654a3645466f5564317636476f504f615241744450566955722f77507a6b494656394161415a4774594235363856794a66696a562b5a427a6c565a4a335737584842325245534765346f705849477a5254646a634175704f4b30395241366b7a72314e5472546a37563175674d34566750475745772b65333943784f364a5577355868684b69686d614461635532476952304f68636334635a2b4b7133416a6c456e45655253617a4c73362f39622f6b68346554432b686e674533515144375979636c78737266336370787350586e2b634664656e463961716c42584d5861446945796679666177427a325271432f4f39574631797361634f7079746c55536f714e72746662533634322b34443443533956337862347538502f414349344f38313065665275364b734330516e6a484a47617134494f47556a57546f2f59445a444233785349786347794e6c576354756362345433696e2f33496175654e725a7958306c474f72576e6473744f722b773231556c56466f6b494c6a4a4c466850756b625659384f6d774e51336e5a674e4a4e6d4b44636375735362345549652b67746b492b392f62534c4a446a716e3736336635435135544c41706d49436b71775230516e55504b5a4649556e6f6f7a57635175526243304b6d30326b6e6a30745059783633667572477333782f69506e7a38337a4a44564e746450335141414141424a52553545726b4a6767673d3d)](https://usegalaxy.eu/root?tool_id=bwa_mem2)
+[![US Galaxy server](https://camo.githubusercontent.com/32cd77cf0accf6455b0613449c2dea7037b3db6d15d9c42de6b1ca6da2fbcde8/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f75736567616c6178792d2e6f72672d6f72616e67653f6c6f676f3d646174613a696d6167652f706e673b6261736536342c6956424f5277304b47676f414141414e53556845556741414142674141414153434159414141424237423665414141414247644254554541414c4750432f7868425141414143426a53464a4e414142364a6741416749514141506f41414143413641414164544141414f7067414141366d41414146334363756c4538414141414358424957584d41414173544141414c457745416d7077594141414343326c555748525954557736593239744c6d466b62324a6c4c6e687463414141414141415048673665473177625756305953423462577875637a703450534a685a4739695a547075637a70745a5852684c7949676544703462584230617a30695745315149454e76636d55674e5334304c6a416950676f6749434138636d526d4f6c4a455269423462577875637a70795a475939496d6830644841364c79393364336375647a4d7562334a6e4c7a45354f546b764d4449764d6a4974636d526d4c584e35626e52686543317563794d6950676f674943416749434138636d526d4f6b526c63324e79615842306157397549484a6b5a6a7068596d39316444306949676f674943416749434167494341674943423462577875637a703061575a6d50534a6f644852774f693876626e4d7559575276596d5575593239744c3352705a6d59764d5334774c79492b4369416749434167494341674944783061575a6d4f6c4a6c633239736458527062323556626d6c30506a49384c3352705a6d5936556d567a6232783164476c76626c56756158512b4369416749434167494341674944783061575a6d4f6b4e76625842795a584e7a61573975506a45384c3352705a6d59365132397463484a6c63334e706232342b4369416749434167494341674944783061575a6d4f6b3979615756756447463061573975506a45384c3352705a6d593654334a705a573530595852706232342b4369416749434167494341674944783061575a6d4f6c426f6233527662575630636d6c6a535735305a584a77636d5630595852706232342b4d6a777664476c6d5a6a7051614739306232316c64484a7059306c756447567963484a6c644746306157397550676f6749434167494341384c334a6b5a6a70455a584e6a636d6c7764476c76626a344b49434167504339795a475936556b524750676f384c33673665473177625756305954344b443055716b774141416e394a524546554f424

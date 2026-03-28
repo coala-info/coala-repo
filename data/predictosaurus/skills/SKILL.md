@@ -1,6 +1,6 @@
 ---
 name: predictosaurus
-description: Predictosaurus is a command-line utility for haplotype-based genomic variant effect prediction that incorporates uncertainty using variant graphs. Use when user asks to build variant graphs from VCF files, calculate scores for haplotypes, or extract peptide sequences for neoantigen identification.
+description: Predictosaurus is a haplotype-based bioinformatics tool that constructs variant graphs to predict genomic variant effects and extract peptide sequences. Use when user asks to build variant graphs from VCF files, process genomic features to calculate haplotype scores, or extract peptide sequences for neoantigen discovery.
 homepage: https://github.com/fxwiegand/predictosaurus
 ---
 
@@ -8,70 +8,85 @@ homepage: https://github.com/fxwiegand/predictosaurus
 # predictosaurus
 
 ## Overview
-Predictosaurus is a command-line utility designed for haplotype-based genomic variant effect prediction that incorporates uncertainty. Unlike traditional tools that treat variants in isolation, Predictosaurus constructs variant graphs to represent complex haplotypes. This allows researchers to quantify the likelihood of specific protein-level changes (peptides) based on the underlying probability of genomic observations. It is particularly effective for analyzing subgraphs of individual features and calculating scores for all possible haplotypes of a transcript.
 
-## Command-line Usage
+Predictosaurus is a specialized bioinformatics command-line tool that moves beyond simple site-based variant annotation by utilizing a haplotype-based approach. It constructs variant graphs from VCF files, allowing for the prediction of genomic variant effects while accounting for the uncertainty inherent in sequencing data. By integrating reference genomes, feature annotations (GFF), and variant observations, it can quantify the impact on transcripts and extract specific peptide sequences, making it a powerful asset for proteogenomics and neoantigen discovery workflows.
+
+## Core Workflow
+
+The standard predictosaurus pipeline consists of three primary stages: building the graph, processing features to calculate scores, and exporting results for visualization.
 
 ### 1. Building the Variant Graph
-The first step in any workflow is to construct a variant graph from VCF files. This graph is stored in a DuckDB database for efficient querying.
+The `build` command creates a persistent variant graph stored in a DuckDB database.
 
 ```bash
 predictosaurus build \
-    --calls path/to/calls.vcf \
-    --observations sample1=path/to/obs1.vcf sample2=path/to/obs2.vcf \
-    --min-prob-present 0.8 \
-    --min-vaf 0.05 \
-    --output graphs.duckdb
+  --calls path/to/calls.vcf \
+  --observations sample1=path/to/obs1.vcf \
+  --min-prob-present 0.8 \
+  --min-vaf 0.05 \
+  --output graphs.duckdb
 ```
 
-*   **Expert Tip**: Use `--min-prob-present` to filter out low-confidence variants early. The default is 0.8; lowering this increases graph complexity but captures more potential haplotypes.
+*   **Expert Tip**: Use `--min-prob-present` to filter out low-confidence variants early. The default is 0.8, but you can lower it (e.g., 0.65) if you need to explore more speculative haplotypes.
+*   **Requirement**: Ensure sample names in the `--observations` flag match the sample names present in the `--calls` VCF.
 
 ### 2. Processing Features and Scoring
-Once the graph is built, use a GFF file and a reference genome to calculate scores for haplotypes.
+The `process` command maps the variant graph onto genomic features to calculate haplotype scores.
 
 ```bash
 predictosaurus process \
-    --features features.gff \
-    --reference reference.fasta \
-    --graph graphs.duckdb \
-    --haplotype-metric geometric-mean \
-    --output scores.duckdb
+  --features annotations.gff \
+  --reference genome.fasta \
+  --graph graphs.duckdb \
+  --haplotype-metric geometric-mean \
+  --output scores.duckdb
 ```
 
-*   **Metric Selection**: Choose `--haplotype-metric` based on your statistical model:
-    *   `geometric-mean` (Default): Balanced approach for haplotype quantification.
-    *   `product`: Strict probability multiplication.
-    *   `minimum`: Focuses on the "weakest link" in the haplotype chain.
+*   **Haplotype Metrics**: Choose between `product`, `geometric-mean` (default), or `minimum` depending on how you want to aggregate variant probabilities across a haplotype.
+*   **Performance**: Use the `--threads` or `-t` flag to utilize multi-core processing for large GFF files.
 
-### 3. Extracting Peptide Sequences
-Extract peptide sequences for specific samples and events, useful for neoantigen identification.
+### 3. Extracting Peptides
+For neoantigen workflows, use the `peptides` command to generate FASTA files of potential peptide sequences.
 
 ```bash
 predictosaurus peptides \
-    --features features.gff \
-    --reference reference.fasta \
-    --graph graphs.duckdb \
-    --sample sample1 \
-    --interval 8-11 \
-    --events event1 event2 \
-    --min-event-prob 0.8 \
-    --output peptides.fasta
+  --features annotations.gff \
+  --reference genome.fasta \
+  --graph graphs.duckdb \
+  --sample sample1 \
+  --interval 8-11 \
+  --events somatic_event \
+  --min-event-prob 0.8 \
+  --output peptides.fasta
 ```
 
-*   **Peptide Length**: The `--interval` flag (default 8-11) is optimized for MHC Class I binding predictions.
-*   **Probability Thresholds**: Use `--min-event-prob` and `--max-background-event-prob` to filter peptides based on the cumulative probability of the variants that cause them.
+*   **Intervals**: The `--interval` flag (default 8-11) defines the amino acid length of the generated peptides, which is critical for MHC binding predictions.
+*   **Probability Filtering**: Use `--min-event-prob` to ensure the extracted peptides meet a specific confidence threshold based on the summed probabilities of the variants and frameshifts involved.
 
-### 4. Exporting Results
-Convert the internal DuckDB scores into a human-readable TSV format for downstream analysis.
+### 4. Exporting and Plotting
+To convert the internal DuckDB format into a human-readable or downstream-compatible format:
 
 ```bash
 predictosaurus plot --input scores.duckdb --output scores.tsv
 ```
 
-## Performance and Global Options
-*   **Multi-threading**: Use `--threads` (or `-t`) to specify the number of cores. If set to 0, it defaults to all available logical cores.
-*   **Logging**: Use `--verbose` (or `-v`) to get detailed execution logs, which is critical for debugging complex graph builds.
+## CLI Best Practices
+
+*   **Verbosity**: Always include `-v` or `--verbose` during initial runs to monitor the logging information and ensure the graph is building as expected.
+*   **Resource Management**: If running on a shared HPC node, explicitly set `--threads` to match your allocated resources; otherwise, it defaults to all available logical cores.
+*   **Reverse Strand Handling**: Predictosaurus automatically handles features on the reverse strand, including calculating 0-based positions and reverse complements.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| predictosaurus build | Build a full variant graph out of VCF files and store it |
+| predictosaurus peptides | Output all distinct peptides from the given features to a fastq file per given CDS in the feature file |
+| predictosaurus plot | Create visualizations and output HTML, TSV, or Vega specs |
+| process | Retrieve subgraphs for individual features from the given GFF file |
 
 ## Reference documentation
-- [Predictosaurus GitHub README](./references/github_com_fxwiegand_predictosaurus.md)
-- [Predictosaurus Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_predictosaurus_overview.md)
+- [Predictosaurus GitHub README](./references/github_com_fxwiegand_predictosaurus_blob_main_README.md)
+- [Predictosaurus Changelog](./references/github_com_fxwiegand_predictosaurus_blob_main_CHANGELOG.md)

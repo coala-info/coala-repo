@@ -74,3 +74,6 @@ where options are:
   --bit-test                    Test bit operations [off]
 ```
 
+
+## Metadata
+- **Skill**: generated

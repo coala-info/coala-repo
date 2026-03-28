@@ -1,1 +1,400 @@
-Stargazers · heathsc/gemBS · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} heathsc / gemBS Public Notifications You must be signed in to change notification settings Fork 21 Star 32 Code Issues 34 Pull requests 1 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights Stargazers All 32 You know zhengshimao Joined on Sep 20, 2020 Follow amulyagarimella Works for Harvard College Harvard College Follow hippo-yf Joined on Jul 20, 2020 Follow Hendricks27 Works for WUSTL WUSTL Follow WANGchuang715 Joined on Jun 30, 2020 Follow blueskybone Joined on Jul 5, 2020 Follow JING-XINXING Is from CHINA, SHANGHAI CHINA, SHANGHAI Follow dohlee Works for Galux Inc. Galux Inc. Follow semenko Works for Medical College of Wisconsin Medical College of Wisconsin Follow dariarom94 Works for CeMM CeMM Follow cbreenmachine Works for SecureBio SecureBio Follow camilogarciabotero Works for Universidad de los Andes Universidad de los Andes Follow YoannPa Joined on Jun 9, 2015 Follow AndyWangSFU Works for Harvard Medical School Harvard Medical School Follow weinformatics Works for weinformatics weinformatics Follow JiantaoShi Works for Shanghai Institute of Biochemistry and Cell Biology Shanghai Institute of Biochemistry and Cell Biology Follow hauduc Is from Vancouver Vancouver Follow lemonskiller Joined on Nov 30, 2018 Follow alexg9010 Works for @BIMSBbioinfo @BIMSBbioinfo Follow exa564 Works for University of Miami Miller Medical School University of Miami Miller Medical School Follow ThymeLy Joined on Apr 13, 2018 Follow YingYa Joined on Apr 22, 2013 Follow darked89 Is from Barcelona, Spain Barcelona, Spain Follow slw287r Works for @geneplus @geneplus Follow Previous Next Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fheathsc%2FgemBS%2Fstargazers)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fheathsc%2FgemBS%2Fstargazers)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Frepositories%2Fstargazers&source=header-repo&source_repo=heathsc%2FgemBS)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[heathsc](/heathsc)
+/
+**[gemBS](/heathsc/gemBS)**
+Public
+
+* [Notifications](/login?return_to=%2Fheathsc%2FgemBS) You must be signed in to change notification settings
+* [Fork
+  21](/login?return_to=%2Fheathsc%2FgemBS)
+* [Star
+   32](/login?return_to=%2Fheathsc%2FgemBS)
+
+* [Code](/heathsc/gemBS)
+* [Issues
+  34](/heathsc/gemBS/issues)
+* [Pull requests
+  1](/heathsc/gemBS/pulls)
+* [Actions](/heathsc/gemBS/actions)
+* [Projects](/heathsc/gemBS/projects)
+* [Security
+  0](/heathsc/gemBS/security)
+* [Insights](/heathsc/gemBS/pulse)
+
+Additional navigation options
+
+* [Code](/heathsc/gemBS)
+* [Issues](/heathsc/gemBS/issues)
+* [Pull requests](/heathsc/gemBS/pulls)
+* [Actions](/heathsc/gemBS/actions)
+* [Projects](/heathsc/gemBS/projects)
+* [Security](/heathsc/gemBS/security)
+* [Insights](/heathsc/gemBS/pulse)
+
+# Stargazers
+
+[All 32](/heathsc/gemBS/stargazers) [You know](/heathsc/gemBS/stargazers/you_know)
+
+1. [![@zhengshimao](https://avatars.githubusercontent.com/u/71577617?s=96&v=4)](/zhengshimao)
+
+   ## [zhengshimao](/zhengshimao)
+
+   Joined on Sep 20, 2020
+
+   [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fheathsc%2FgemBS%2Fstargazers)
+2. [![@amulyagarimella](https://avatars.githubusercontent.com/u/8853022?s=96&v=4)](/amulyagarimella)
+
+   ## [amulyagarimella](/amulyagarimella)
+
+   Works for Harvard College
+
+   Harvard College
+
+   [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fheathsc%2FgemBS%2Fstargazers)
+3. [![@hippo-yf](https://avatars.githubusercontent.com/u/68546557?s=96&v=4)](/hippo-yf)
+
+   ## [hippo-yf](/hippo-yf)
+
+   Joined on Jul 20, 2020
+
+   [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fheathsc%2FgemBS%2Fstargazers)
+4. [![@Hendricks27](https://avatars.githubusercontent.com/u/33260365?s=96&v=4)](/Hendricks27)
+
+   ## [Hendricks27](/Hendricks27)
+
+   Works for WUSTL
+
+   WUSTL
+
+   [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fheathsc%2FgemBS%2Fstargazers)
+5. [![@WANGchuang715](https://avatars.githubusercontent.com/u/67625036?s=96&v=4)](/WANGchuang715)
+
+   ## [WANGchuang715](/WANGchuang715)
+
+   Joined on Jun 30, 2020
+
+   [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fheathsc%2FgemBS%2Fstargazers)
+6. [![@blueskybone](https://avatars.githubusercontent.com/u/67865323?s=96&v=4)](/blueskybone)
+
+   ## [blueskybone](/blueskybone)
+
+   Joined on Jul 5, 2020
+
+   [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fheathsc%2FgemBS%2Fstargazers)
+7. [![@JING-XINXING](https://avatars.githubusercontent.com/u/18610624?s=96&v=4)](/JING-XINXING)
+
+   ## [JING-XINXING](/JING-XINXING)
+
+   Is from CHINA, SHANGHAI
+
+   CHINA, SHANGHAI
+
+   [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fheathsc%2FgemBS%2Fstargazers)
+8. [![@dohlee](https://avatars.githubusercontent.com/u/30403812?s=96&v=4)](/dohlee)
+
+   ## [dohlee](/dohlee)
+
+   Works for Galux Inc.
+
+   Galux Inc.
+
+   [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fheathsc%2FgemBS%2Fstargazers)
+9. [![@semenko](https://avatars.githubusercontent.com/u/167135?s=96&v=4)](/semenko)
+
+   ## [semenko](/semenko)
+
+   Works for Medical College of Wisconsin
+
+   Medical College of Wisconsin
+
+   [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fheathsc%2FgemBS%2Fstargazers)
+10. [![@dariarom94](https://avatars.githubusercontent.com/u/29308509?s=96&v=4)](/dariarom94)
+
+    ## [dariarom94](/dariarom94)
+
+    Works for CeMM
+
+    CeMM
+
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fheathsc%2FgemBS%2Fstargazers)
+11. [![@cbreenmachine](https://avatars.githubusercontent.com/u/23140414?s=96&v=4)](/cbreenmachine)
+
+    ## [cbreenmachine](/cbreenmachine)
+
+    Works for SecureBio
+
+    SecureBio
+
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fheathsc%2FgemBS%2Fstargazers)
+12. [![@camilogarciabotero](https://avatars.githubusercontent.com/u/25586362?s=96&v=4)](/camilogarciabotero)
+
+    ## [camilogarciabotero](/camilogarciabotero)
+
+    Works for Universidad de los Andes
+
+    Universidad de los Andes
+
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fheathsc%2FgemBS%2Fstargazers)
+13. [![@YoannPa](https://avatars.githubusercontent.com/u/12813932?s=96&v=4)](/YoannPa)
+
+    ## [YoannPa](/YoannPa)
+
+    Joined on Jun 9, 2015
+
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fheathsc%2FgemBS%2Fstargazers)
+14. [![@AndyWangSFU](https://avatars.githubusercontent.com/u/48002686?s=96&v=4)](/AndyWangSFU)
+
+    ## [AndyWangSFU](/AndyWangSFU)
+
+    Works for Harvard Medical School
+
+    Harvard Medical School
+
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fheathsc%2FgemBS%2Fstargazers)
+15. [![@weinformatics](https://avatars.githubusercontent.com/u/52520990?s=96&v=4)](/weinformatics)
+
+    ## [weinformatics](/weinformatics)
+
+    Works for weinformatics
+
+    weinformatics
+
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fheathsc%2FgemBS%2Fstargazers)
+16. [![@JiantaoShi](https://avatars.githubusercontent.com/u/5055792?s=96&v=4)](/JiantaoShi)
+
+    ## [JiantaoShi](/JiantaoShi)
+
+    Works for Shanghai Institute of Biochemistry and Cell Biology
+
+    Shanghai Institute of Biochemistry and Cell Biology
+
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fheathsc%2FgemBS%2Fstargazers)
+17. [![@hauduc](https://avatars.githubusercontent.com/u/56134214?s=96&v=4)](/hauduc)
+
+    ## [hauduc](/hauduc)
+
+    Is from Vancouver
+
+    Vancouver
+
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fheathsc%2FgemBS%2Fstargazers)
+18. [![@lemonskiller](https://avatars.githubusercontent.com/u/45478535?s=96&v=4)](/lemonskiller)
+
+    ## [lemonskiller](/lemonskiller)
+
+    Joined on Nov 30, 2018
+
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fheathsc%2FgemBS%2Fstargazers)
+19. [![@alexg9010](https://avatars.githubusercontent.com/u/14021775?s=96&v=4)](/alexg9010)
+
+    ## [alexg9010](/alexg9010)
+
+    Works for @BIMSBbioinfo
+
+    @BIMSBbioinfo
+
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fheathsc%2FgemBS%2Fstargazers)
+20. [![@exa564](https://avatars.githubusercontent.com/u/38796658?s=96&v=4)](/exa564)
+
+    ## [exa564](/exa564)
+
+    Works for University of Miami Miller Medical School
+
+    University of Miami Miller Medical School
+
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fheathsc%2FgemBS%2Fstargazers)
+21. [![@ThymeLy](https://avatars.githubusercontent.com/u/38356458?s=96&v=4)](/ThymeLy)
+
+    ## [ThymeLy](/ThymeLy)
+
+    Joined on Apr 13, 2018
+
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fheathsc%2FgemBS%2Fstargazers)
+22. [![@YingYa](https://avatars.githubusercontent.com/u/4224226?s=96&v=4)](/YingYa)
+
+    ## [YingYa](/YingYa)
+
+    Joined on Apr 22, 2013
+
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fheathsc%2FgemBS%2Fstargazers)
+23. [![@darked89](https://avatars.githubusercontent.com/u/367479?s=96&v=4)](/darked89)
+
+    ## [darked89](/darked89)
+
+    Is from Barcelona, Spain
+
+    Barcelona, Spain
+
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fheathsc%2FgemBS%2Fstargazers)
+24. [![@slw287r](https://avatars.githubusercontent.com/u/4134899?s=96&v=4)](/slw287r)
+
+    ## [slw287r](/slw287r)
+
+    Works for @geneplus
+
+    @geneplus
+
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fheathsc%2FgemBS%2Fstargazers)
+
+Previous[Next](https://github.com/heathsc/gemBS/stargazers?page=2)
+
+## Footer
+
+© 2026 GitHub, Inc.
+
+### Footer navigation
+
+* [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+* [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+* [Security](https://github.com/security)
+* [Status](https://www.githubstatus.com/)
+* [Community](https://github.community/)
+* [Docs](https://docs.github.com/)
+* [Contact](https://support.github.com?tags=dotcom-footer)
+* Manage cookies
+* Do not share my personal information
+
+You can’t perform that action at this time.

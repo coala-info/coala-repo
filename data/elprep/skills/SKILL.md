@@ -1,6 +1,6 @@
 ---
 name: elprep
-description: elPrep is a high-performance tool for rapid, single-pass processing of sequence alignment files including sorting, marking duplicates, and variant calling. Use when user asks to process SAM or BAM files, mark duplicates, perform base quality score recalibration, or run variant calling pipelines.
+description: elprep is a high-performance tool for processing SAM and BAM files that executes multiple genomic pipeline steps in a single pass using RAM. Use when user asks to process sequence alignment files, mark duplicates, perform base quality score recalibration, or call variants.
 homepage: https://github.com/ExaScience/elprep
 ---
 
@@ -8,49 +8,59 @@ homepage: https://github.com/ExaScience/elprep
 # elprep
 
 ## Overview
+elprep is a specialized tool for analyzing sequence alignment files (SAM/BAM) that significantly outperforms traditional pipelines by using a single-pass execution model. Instead of running multiple independent tools that read and write intermediate files, elprep loads data into RAM and applies all filters and processing steps (like BQSR and variant calling) simultaneously. It is optimized for high-memory environments and is not recommended for use on standard laptops or low-end desktops.
 
-elPrep is a high-performance tool designed for the rapid processing of sequence alignment files (.sam, .bam, and .vcf.gz). Unlike traditional tools that require multiple passes over data, elPrep uses a single-pass, in-memory architecture to execute complex pipelines (sorting, marking duplicates, BQSR, and variant calling) simultaneously. This approach significantly reduces runtime and disk I/O, making it ideal for high-end servers and cloud environments.
+## Core CLI Usage
 
-## Core CLI Patterns
+### 1. Preparation of Reference Files
+Before running a pipeline, elprep requires references and known sites to be converted into its internal high-performance formats.
 
-### Single-Pass Filter Mode (sfm)
-The `sfm` command is the primary entry point for combining multiple processing steps into a single execution.
+*   **Convert FASTA to elfasta:**
+    `elprep fasta-to-elfasta reference.fasta reference.elfasta`
+*   **Convert VCF to elsites (for BQSR):**
+    `elprep vcf-to-elsites known_sites.vcf known_sites.elsites`
+*   **Convert BED to elsites:**
+    `elprep bed-to-elsites regions.bed regions.elsites`
 
-```bash
-# Example: Sorting and Marking Duplicates in one pass
-elprep sfm input.bam output.bam \
-    --mark-duplicates \
-    --sorting-order coordinate
-```
+### 2. The sfm (Split-Filter-Merge) Command
+The `sfm` command is the primary entry point for processing. It allows you to chain multiple operations in one command.
 
-### Full Variant Calling Pipeline
-To run a GATK-best-practices-equivalent pipeline (Sorting, MarkDuplicates, BQSR, and HaplotypeCaller):
+*   **Basic Pipeline (Sorting + Duplicate Marking):**
+    `elprep sfm input.bam output.bam --mark-duplicates --sorting-order coordinate`
 
-```bash
-elprep sfm input.bam output.vcf.gz \
-    --mark-duplicates \
-    --sorting-order coordinate \
-    --bqsr output.recal \
-    --known-sites known_sites.elsites \
-    --reference reference.elfasta \
-    --haplotypecaller output.vcf.gz
-```
+*   **Full Best Practices Pipeline:**
+    `elprep sfm input.bam output.vcf --mark-duplicates --sorting-order coordinate --bqsr known_sites.elsites --reference reference.elfasta --haplotypecaller output.vcf`
 
-### Format Conversions
-elPrep uses optimized internal formats (`.elsites` and `.elfasta`) to speed up BQSR and variant calling.
+### 3. Common Command Flags
+*   `--mark-duplicates`: Identifies and tags duplicate reads.
+*   `--mark-optical-duplicates <file>`: Specifically marks optical duplicates and outputs metrics.
+*   `--sorting-order <coordinate|keep|unknown>`: Defines the output sort order. Coordinate sorting is required for most downstream tools.
+*   `--bqsr <elsites>`: Performs Base Quality Score Recalibration.
+*   `--haplotypecaller <vcf>`: Performs variant calling (equivalent to GATK HaplotypeCaller).
+*   `--timed`: Outputs timing information for each processing stage.
+*   `--log-path <dir>`: Specifies where to store execution logs.
 
-*   **VCF to elsites**: `elprep vcf-to-elsites input.vcf output.elsites`
-*   **FASTA to elfasta**: `elprep fasta-to-elfasta input.fasta output.elfasta`
+## Expert Tips and Best Practices
 
-## Best Practices and Expert Tips
+*   **Hardware Requirements:** elprep is RAM-intensive. Ensure the server has enough memory to hold the entire BAM file in its uncompressed state. For Whole Genome Sequencing (WGS), this typically requires 256GB+ of RAM.
+*   **Avoid Intermediate Files:** One of elprep's main advantages is the lack of intermediate disk I/O. Do not split the command into multiple elprep calls; use the `sfm` command to bundle all filters.
+*   **BAM/VCF Support:** elprep 5+ natively supports `.bam` and `.vcf.gz` files. You do not need to pipe through `samtools` or `bcftools` for standard input/output.
+*   **CRAM Files:** elprep does not natively support CRAM. Convert CRAM to BAM using `samtools` before processing with elprep.
+*   **Single-End Data:** While optimized for paired-end, elprep supports single-end data. Ensure you use version 5.1.2 or later for correct metrics output on single-end inputs.
+*   **Temporary Storage:** If memory is a constraint, use the `--tmp-path` flag to specify a fast SSD for overflow, though this will degrade performance compared to pure in-memory execution.
 
-*   **Memory Management**: elPrep is an in-memory tool. For Whole Genome Sequencing (WGS) data, ensure the server has sufficient RAM (typically 160GB+ for 30x-50x WGS). If memory is limited, use the `split`/`merge` tools to process data by chromosome.
-*   **Avoid Intermediate Files**: One of elPrep's main advantages is reducing disk I/O. Avoid piping between elPrep and other tools if the operation can be handled within a single `sfm` command.
-*   **Optical Duplicates**: When marking duplicates, use `--optical-duplicate-pixel-distance 2500` (for patterned flow cells like NovaSeq) to improve accuracy.
-*   **System Requirements**: elPrep is optimized for high-end servers. It is not recommended for use on laptops or low-end desktops due to its high RAM and multi-threading requirements.
-*   **CRAM Support**: elPrep does not natively support .cram. Convert .cram to .bam using `samtools` before processing with elPrep.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| bed-to-elsites | Convert BED file to ELSIngleSite format. |
+| elprep filter | Filter SAM/BAM/CRAM files. |
+| fasta-to-elfasta | Converts a FASTA file to an elFASTA file. |
+| sfm | sfm parameters: |
+| vcf-to-elsites | Converts a VCF file to an ELSIF sites file. |
 
 ## Reference documentation
-
 - [elPrep GitHub Repository](./references/github_com_ExaScience_elprep.md)
-- [elPrep Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_elprep_overview.md)
+- [elPrep Version Tags and Features](./references/github_com_ExaScience_elprep_tags.md)

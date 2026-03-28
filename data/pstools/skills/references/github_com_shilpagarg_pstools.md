@@ -1,1 +1,248 @@
-GitHub - shilpagarg/pstools Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} shilpagarg / pstools Public Notifications You must be signed in to change notification settings Fork 6 Star 37 License MIT license 37 stars 6 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 6 Pull requests 0 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights shilpagarg/pstools main Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 30 Commits 30 Commits LICENSE LICENSE Makefile Makefile README.md README.md array.c array.c array.h array.h bam_test.py bam_test.py bbf.c bbf.c bseq.c bseq.c bseq.h bseq.h bubble_chain.h bubble_chain.h count.c count.c dict.c dict.c dict.h dict.h experiments.sh experiments.sh graph.h graph.h haplo_mapping.cpp haplo_mapping.cpp hash.c hash.c hash.h hash.h hic_completeness.cpp hic_completeness.cpp hic_mapping.cpp hic_mapping.cpp hic_mapping.h hic_mapping.h hic_qv.c hic_qv.c hic_switch_error.cpp hic_switch_error.cpp htab.cpp htab.cpp kalloc.c kalloc.c kalloc.h kalloc.h kavl.h kavl.h kdq.h kdq.h ketopt.h ketopt.h khash.h khash.h khashl.h khashl.h kseq.h kseq.h ksort.h ksort.h kstring.h kstring.h ksw2.h ksw2.h ksw2_extz2_sse.c ksw2_extz2_sse.c kthread.c kthread.c kthread.h kthread.h kvec.h kvec.h libminimap2.a libminimap2.a libz.a libz.a main.cpp main.cpp minimap.h minimap.h minimizer_sketch.h minimizer_sketch.h misc.c misc.c modmap.c modmap.c modmap.h modmap.h paf.cpp paf.cpp paf.h paf.h paf_intersect.h paf_intersect.h paf_parser.cpp paf_parser.cpp qv.c qv.c resolve_repeat_haplotype.h resolve_repeat_haplotype.h samIdentity.py samIdentity.py seqhash.c seqhash.c seqhash.h seqhash.h seqio.c seqio.c seqio.h seqio.h sys.cpp sys.cpp temp.cpp temp.cpp test.sh test.sh utils.c utils.c utils.h utils.h yak-priv.h yak-priv.h yak.h yak.h View all files Repository files navigation README MIT license pstools: Toolkit for fully phased sequences on chromosome level Routine production of phased sequences (haplotypes) of genomes are important to study variation occurring in complex cancer and healthy samples. We developed a novel graph-based algorithm to integrate HiFi and Hi-C data types to produce haplotypes at the base-level resolution for routine clinical research. When benchmarking our method on healthy human genomes, we produced significantly high-quality genomes with a sequence continuity NG50 &gt;130 Mb, switch/hamming error rates &lt;1.5% and a completeness of &gt;6.0 Gb, and an order of magnitude faster process (only &lt;12 hours). This simple approach will facilitate improvement in understanding of the mechanisms of clinical diseases. Installation (requiring g++ and zlib) git clone https://github.com/shilpagarg/pstools.git cd pstools &amp;&amp; make Execution Once you compiled the repo, you will see binary file pstools in the same directory. Now you are ready to go to produce fully phased sequences on chromosome level. # Use Hi-C data and node sequences of hifiasm graph (awk '/^S/{print "&gt;"$2;print $3}' hifiasm_r_utg.gfa &gt; hifiasm_r_utg.fa) pstools hic_mapping -t32 -o &lt; map.out &gt; &lt; hifiasm_r_utg.fa &gt; &lt; hic.R1.fastq.gz &gt; &lt; hic.R2.fastq.gz &gt; # Use Hi-C mapped reads through hifiasm graph to produce fully phased sequences pstools resolve_haplotypes -t32 -i true &lt; map.out &gt; &lt; hifiasm_r_utg.gfa &gt; &lt; out &gt; # where `map.out` is the file from above process, `hifiasm_r_utg.gfa` is the hifiasm r_utg graph and `out` is the output directory name. This command produces fully phased sequences in ` pred_hap1.fa ` and ` pred_hap2.fa ` . Results Table shows the benchmarking results of HG002 using OmniC or Arima genomics data: Hi-C dataset Size CPU time NG50 QV [HG002] ~6.1Gb ~5h ~132 Mb ~Q50 For further experiments, please run ` experiments.sh ` . Limitations At the current stage, the phased sequences don't contain centromeric regions. The UL nanopore data is not used. Need to be tested on trio-hifiasm graph Note that pstools is under active development. For any issues or suggestions, please create an issue or a pull request. About No description, website, or topics provided. Resources Readme License MIT license Uh oh! There was an error while loading. Please reload this page . Activity Stars 37 stars Watchers 4 watching Forks 6 forks Report repository Releases 2 v0.1 Latest Dec 7, 2020 + 1 release Packages 0 No packages published Languages C++ 69.1% C 30.0% Other 0.9% Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fshilpagarg%2Fpstools)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fshilpagarg%2Fpstools)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=shilpagarg%2Fpstools)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[shilpagarg](/shilpagarg)
+/
+**[pstools](/shilpagarg/pstools)**
+Public
+
+* [Notifications](/login?return_to=%2Fshilpagarg%2Fpstools) You must be signed in to change notification settings
+* [Fork
+  6](/login?return_to=%2Fshilpagarg%2Fpstools)
+* [Star
+   37](/login?return_to=%2Fshilpagarg%2Fpstools)
+
+* [Code](/shilpagarg/pstools)
+* [Issues
+  6](/shilpagarg/pstools/issues)
+* [Pull requests
+  0](/shilpagarg/pstools/pulls)
+* [Actions](/shilpagarg/pstools/actions)
+* [Projects](/shilpagarg/pstools/projects)
+* [Security
+  0](/shilpagarg/pstools/security)
+* [Insights](/shilpagarg/pstools/pulse)
+
+Additional navigation options
+
+* [Code](/shilpagarg/pstools)
+* [Issues](/shilpagarg/pstools/issues)
+* [Pull requests](/shilpagarg/pstools/pulls)
+* [Actions](/shilpagarg/pstools/actions)
+* [Projects](/shilpagarg/pstools/projects)
+* [Security](/shilpagarg/pstools/security)
+* [Insights](/shilpagarg/pstools/pulse)
+
+# shilpagarg/pstools
+
+main
+
+[Branches](/shilpagarg/pstools/branches)[Tags](/shilpagarg/pstools/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[30 Commits](/shilpagarg/pstools/commits/main/)   30 Commits | | |
+| [LICENSE](/shilpagarg/pstools/blob/main/LICENSE "LICENSE") | | [LICENSE](/shilpagarg/pstools/blob/main/LICENSE "LICENSE") |  |  |
+| [Makefile](/shilpagarg/pstools/blob/main/Makefile "Makefile") | | [Makefile](/shilpagarg/pstools/blob/main/Makefile "Makefile") |  |  |
+| [README.md](/shilpagarg/pstools/blob/main/README.md "README.md") | | [README.md](/shilpagarg/pstools/blob/main/README.md "README.md") |  |  |
+| [array.c](/shilpagarg/pstools/blob/main/array.c "array.c") | | [array.c](/shilpagarg/pstools/blob/main/array.c "array.c") |  |  |
+| [array.h](/shilpagarg/pstools/blob/main/array.h "array.h") | | [array.h](/shilpagarg/pstools/blob/main/array.h "array.h") |  |  |
+| [bam\_test.py](/shilpagarg/pstools/blob/main/bam_test.py "bam_test.py") | | [bam\_test.py](/shilpagarg/pstools/blob/main/bam_test.py "bam_test.py") |  |  |
+| [bbf.c](/shilpagarg/pstools/blob/main/bbf.c "bbf.c") | | [bbf.c](/shilpagarg/pstools/blob/main/bbf.c "bbf.c") |  |  |
+| [bseq.c](/shilpagarg/pstools/blob/main/bseq.c "bseq.c") | | [bseq.c](/shilpagarg/pstools/blob/main/bseq.c "bseq.c") |  |  |
+| [bseq.h](/shilpagarg/pstools/blob/main/bseq.h "bseq.h") | | [bseq.h](/shilpagarg/pstools/blob/main/bseq.h "bseq.h") |  |  |
+| [bubble\_chain.h](/shilpagarg/pstools/blob/main/bubble_chain.h "bubble_chain.h") | | [bubble\_chain.h](/shilpagarg/pstools/blob/main/bubble_chain.h "bubble_chain.h") |  |  |
+| [count.c](/shilpagarg/pstools/blob/main/count.c "count.c") | | [count.c](/shilpagarg/pstools/blob/main/count.c "count.c") |  |  |
+| [dict.c](/shilpagarg/pstools/blob/main/dict.c "dict.c") | | [dict.c](/shilpagarg/pstools/blob/main/dict.c "dict.c") |  |  |
+| [dict.h](/shilpagarg/pstools/blob/main/dict.h "dict.h") | | [dict.h](/shilpagarg/pstools/blob/main/dict.h "dict.h") |  |  |
+| [experiments.sh](/shilpagarg/pstools/blob/main/experiments.sh "experiments.sh") | | [experiments.sh](/shilpagarg/pstools/blob/main/experiments.sh "experiments.sh") |  |  |
+| [graph.h](/shilpagarg/pstools/blob/main/graph.h "graph.h") | | [graph.h](/shilpagarg/pstools/blob/main/graph.h "graph.h") |  |  |
+| [haplo\_mapping.cpp](/shilpagarg/pstools/blob/main/haplo_mapping.cpp "haplo_mapping.cpp") | | [haplo\_mapping.cpp](/shilpagarg/pstools/blob/main/haplo_mapping.cpp "haplo_mapping.cpp") |  |  |
+| [hash.c](/shilpagarg/pstools/blob/main/hash.c "hash.c") | | [hash.c](/shilpagarg/pstools/blob/main/hash.c "hash.c") |  |  |
+| [hash.h](/shilpagarg/pstools/blob/main/hash.h "hash.h") | | [hash.h](/shilpagarg/pstools/blob/main/hash.h "hash.h") |  |  |
+| [hic\_completeness.cpp](/shilpagarg/pstools/blob/main/hic_completeness.cpp "hic_completeness.cpp") | | [hic\_completeness.cpp](/shilpagarg/pstools/blob/main/hic_completeness.cpp "hic_completeness.cpp") |  |  |
+| [hic\_mapping.cpp](/shilpagarg/pstools/blob/main/hic_mapping.cpp "hic_mapping.cpp") | | [hic\_mapping.cpp](/shilpagarg/pstools/blob/main/hic_mapping.cpp "hic_mapping.cpp") |  |  |
+| [hic\_mapping.h](/shilpagarg/pstools/blob/main/hic_mapping.h "hic_mapping.h") | | [hic\_mapping.h](/shilpagarg/pstools/blob/main/hic_mapping.h "hic_mapping.h") |  |  |
+| [hic\_qv.c](/shilpagarg/pstools/blob/main/hic_qv.c "hic_qv.c") | | [hic\_qv.c](/shilpagarg/pstools/blob/main/hic_qv.c "hic_qv.c") |  |  |
+| [hic\_switch\_error.cpp](/shilpagarg/pstools/blob/main/hic_switch_error.cpp "hic_switch_error.cpp") | | [hic\_switch\_error.cpp](/shilpagarg/pstools/blob/main/hic_switch_error.cpp "hic_switch_error.cpp") |  |  |
+| [htab.cpp](/shilpagarg/pstools/blob/main/htab.cpp "htab.cpp") | | [htab.cpp](/shilpagarg/pstools/blob/main/htab.cpp "htab.cpp") |  |  |
+| [kalloc.c](/shilpagarg/pstools/blob/main/kalloc.c "kalloc.c") | | [kalloc.c](/shilpagarg/pstools/blob/main/kalloc.c "kalloc.c") |  |  |
+| [kalloc.h](/shilpagarg/pstools/blob/main/kalloc.h "kalloc.h") | | [kalloc.h](/shilpagarg/pstools/blob/main/kalloc.h "kalloc.h") |  |  |
+| [kavl.h](/shilpagarg/pstools/blob/main/kavl.h "kavl.h") | | [kavl.h](/shilpagarg/pstools/blob/main/kavl.h "kavl.h") |  |  |
+| [kdq.h](/shilpagarg/pstools/blob/main/kdq.h "kdq.h") | | [kdq.h](/shilpagarg/pstools/blob/main/kdq.h "kdq.h") |  |  |
+| [ketopt.h](/shilpagarg/pstools/blob/main/ketopt.h "ketopt.h") | | [ketopt.h](/shilpagarg/pstools/blob/main/ketopt.h "ketopt.h") |  |  |
+| [khash.h](/shilpagarg/pstools/blob/main/khash.h "khash.h") | | [khash.h](/shilpagarg/pstools/blob/main/khash.h "khash.h") |  |  |
+| [khashl.h](/shilpagarg/pstools/blob/main/khashl.h "khashl.h") | | [khashl.h](/shilpagarg/pstools/blob/main/khashl.h "khashl.h") |  |  |
+| [kseq.h](/shilpagarg/pstools/blob/main/kseq.h "kseq.h") | | [kseq.h](/shilpagarg/pstools/blob/main/kseq.h "kseq.h") |  |  |
+| [ksort.h](/shilpagarg/pstools/blob/main/ksort.h "ksort.h") | | [ksort.h](/shilpagarg/pstools/blob/main/ksort.h "ksort.h") |  |  |
+| [kstring.h](/shilpagarg/pstools/blob/main/kstring.h "kstring.h") | | [kstring.h](/shilpagarg/pstools/blob/main/kstring.h "kstring.h") |  |  |
+| [ksw2.h](/shilpagarg/pstools/blob/main/ksw2.h "ksw2.h") | | [ksw2.h](/shilpagarg/pstools/blob/main/ksw2.h "ksw2.h") |  |  |
+| [ksw2\_extz2\_sse.c](/shilpagarg/pstools/blob/main/ksw2_extz2_sse.c "ksw2_extz2_sse.c") | | [ksw2\_extz2\_sse.c](/shilpagarg/pstools/blob/main/ksw2_extz2_sse.c "ksw2_extz2_sse.c") |  |  |
+| [kthread.c](/shilpagarg/pstools/blob/main/kthread.c "kthread.c") | | [kthread.c](/shilpagarg/pstools/blob/main/kthread.c "kthread.c") |  |  |
+| [kthread.h](/shilpagarg/pstools/blob/main/kthread.h "kthread.h") | | [kthread.h](/shilpagarg/pstools/blob/main/kthread.h "kthread.h") |  |  |
+| [kvec.h](/shilpagarg/pstools/blob/main/kvec.h "kvec.h") | | [kvec.h](/shilpagarg/pstools/blob/main/kvec.h "kvec.h") |  |  |
+| [libminimap2.a](/shilpagarg/pstools/blob/main/libminimap2.a "libminimap2.a") | | [libminimap2.a](/shilpagarg/pstools/blob/main/libminimap2.a "libminimap2.a") |  |  |
+| [libz.a](/shilpagarg/pstools/blob/main/libz.a "libz.a") | | [libz.a](/shilpagarg/pstools/blob/main/libz.a "libz.a") |  |  |
+| [main.cpp](/shilpagarg/pstools/blob/main/main.cpp "main.cpp") | | [main.cpp](/shilpagarg/pstools/blob/main/main.cpp "main.cpp") |  |  |
+| [minimap.h](/shilpagarg/pstools/blob/main/minimap.h "minimap.h") | | [minimap.h](/shilpagarg/pstools/blob/main/minimap.h "minimap.h") |  |  |
+| [minimizer\_sketch.h](/shilpagarg/pstools/blob/main/minimizer_sketch.h "minimizer_sketch.h") | | [minimizer\_sketch.h](/shilpagarg/pstools/blob/main/minimizer_sketch.h "minimizer_sketch.h") |  |  |
+| [misc.c](/shilpagarg/pstools/blob/main/misc.c "misc.c") | | [misc.c](/shilpagarg/pstools/blob/main/misc.c "misc.c") |  |  |
+| [modmap.c](/shilpagarg/pstools/blob/main/modmap.c "modmap.c") | | [modmap.c](/shilpagarg/pstools/blob/main/modmap.c "modmap.c") |  |  |
+| [modmap.h](/shilpagarg/pstools/blob/main/modmap.h "modmap.h") | | [modmap.h](/shilpagarg/pstools/blob/main/modmap.h "modmap.h") |  |  |
+| [paf.cpp](/shilpagarg/pstools/blob/main/paf.cpp "paf.cpp") | | [paf.cpp](/shilpagarg/pstools/blob/main/paf.cpp "paf.cpp") |  |  |
+| [paf.h](/shilpagarg/pstools/blob/main/paf.h "paf.h") | | [paf.h](/shilpagarg/pstools/blob/main/paf.h "paf.h") |  |  |
+| [paf\_intersect.h](/shilpagarg/pstools/blob/main/paf_intersect.h "paf_intersect.h") | | [paf\_intersect.h](/shilpagarg/pstools/blob/main/paf_intersect.h "paf_intersect.h") |  |  |
+| [paf\_parser.cpp](/shilpagarg/pstools/blob/main/paf_parser.cpp "paf_parser.cpp") | | [paf\_parser.cpp](/shilpagarg/pstools/blob/main/paf_parser.cpp "paf_parser.cpp") |  |  |
+| [qv.c](/shilpagarg/pstools/blob/main/qv.c "qv.c") | | [qv.c](/shilpagarg/pstools/blob/main/qv.c "qv.c") |  |  |
+| [resolve\_repeat\_haplotype.h](/shilpagarg/pstools/blob/main/resolve_repeat_haplotype.h "resolve_repeat_haplotype.h") | | [resolve\_repeat\_haplotype.h](/shilpagarg/pstools/blob/main/resolve_repeat_haplotype.h "resolve_repeat_haplotype.h") |  |  |
+| [samIdentity.py](/shilpagarg/pstools/blob/main/samIdentity.py "samIdentity.py") | | [samIdentity.py](/shilpagarg/pstools/blob/main/samIdentity.py "samIdentity.py") |  |  |
+| [seqhash.c](/shilpagarg/pstools/blob/main/seq

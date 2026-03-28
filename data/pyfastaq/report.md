@@ -534,3 +534,6 @@ Traceback (most recent call last):
 NameError: name 'pyfastaq' is not defined
 ```
 
+
+## Metadata
+- **Skill**: generated

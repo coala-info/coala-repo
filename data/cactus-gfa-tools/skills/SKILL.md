@@ -1,6 +1,6 @@
 ---
 name: cactus-gfa-tools
-description: This tool provides utilities for converting, filtering, and processing graph-based alignments between GAF and PAF formats. Use when user asks to convert GAF to PAF, filter overlapping alignments, project graph coordinates to stable reference space, or split query contigs by reference coverage.
+description: cactus-gfa-tools is a suite of C++ utilities designed to manipulate pangenome graph alignments and coordinate spaces within the Cactus pipeline. Use when user asks to convert GAF files to PAF, filter redundant alignments, split graphs based on reference designations, or map coordinates between stable sequence and graph-node space.
 homepage: https://github.com/ComparativeGenomicsToolkit/cactus-gfa-tools
 ---
 
@@ -8,71 +8,68 @@ homepage: https://github.com/ComparativeGenomicsToolkit/cactus-gfa-tools
 # cactus-gfa-tools
 
 ## Overview
-This skill provides specialized procedures for using the `cactus-gfa-tools` suite. These utilities are essential for bridging the gap between graph-based alignments (GAF) and linear sequence alignments (PAF). Use these tools to prepare data for the Minigraph-Cactus pipeline, filter overlapping alignments, or project graph coordinates back into stable reference sequence space.
 
-## Core Workflows and CLI Patterns
+The `cactus-gfa-tools` suite is a collection of high-performance C++ utilities designed to support the Cactus Pangenome Pipeline. These tools bridge the gap between graph-based alignments (GAF) and traditional pairwise alignments (PAF), allowing researchers to manipulate coordinates between stable sequence space and unstable graph-node space. They are particularly useful for filtering redundant alignments and splitting pangenome graphs based on reference designations.
 
-### Converting GAF to PAF
-The `gaf2paf` tool converts minigraph output to stable sequence space. Because GAF files do not contain target sequence lengths, you must provide them manually.
+## Tool-Specific Usage and Best Practices
 
-**Standard Pattern:**
-1. Generate sequence lengths (using `samtools faidx`).
-2. Run conversion with the `-l` flag.
+### GAF to PAF Conversion
 
-```bash
-# Generate lengths table
-cat ref1.fa.fai ref2.fa.fai > lengths.tsv
+Converting minigraph GAF output to PAF requires specific handling of sequence lengths, as GAF files do not inherently contain target sequence lengths.
 
-# Convert GAF to PAF
-gaf2paf input.gaf -l lengths.tsv > output.paf
-```
+*   **Stable Coordinates (`gaf2paf`)**: Use this to convert GAF to PAF in stable sequence space (e.g., chromosome names).
+    *   **Requirement**: You must provide a lengths table using `-l`.
+    *   **Pattern**:
+        ```bash
+        # Generate lengths table from FASTA indices
+        cat *.fai > lengths.tsv
+        gaf2paf input.gaf -l lengths.tsv > output.paf
+        ```
+*   **Unstable Coordinates (`gaf2unstable`)**: Use this when the pipeline requires PAF in node-space (e.g., `s1234`) for better performance.
+    *   **Workflow**:
+        ```bash
+        # 1. Generate unstable GAF and node-lengths table using the rGFA
+        gaf2unstable input.gaf -g graph.gfa -o node-lengths.tsv > unstable.gaf
+        # 2. Convert the resulting unstable GAF to PAF
+        gaf2paf unstable.gaf -l node-lengths.tsv > unstable.paf
+        ```
 
-### Working with Unstable Coordinates
-For optimal performance in the Minigraph-Cactus pipeline, alignments often need to be in "unstable" coordinates (referencing graph nodes like `s1` rather than contigs like `chr1`).
+### Alignment Filtering (`gaffilter`)
 
-**Workflow:**
-1. Use `gaf2unstable` to generate a node-lengths table and the unstable GAF.
-2. Use `gaf2paf` with that specific node-lengths table.
+Use `gaffilter` to resolve overlapping query intervals in GAF or PAF files. This is critical for cleaning up noisy alignments before graph construction.
 
-```bash
-# Generate unstable GAF and node-lengths
-gaf2unstable input.gaf -g graph.gfa -o node-lengths.tsv > unstable.gaf
+*   **Heuristic Logic**: The tool keeps records based on primary status, MAPQ, and block length.
+*   **Sensitivity**: The default MAPQ/length ratio is 2. Adjust this with `-r` (e.g., `-r 5` for stricter filtering).
+*   **PAF Support**: To filter PAF files, you must use the `-p` flag. Note that this expects a `gl` (GAF block length) tag in the PAF.
 
-# Convert to unstable PAF
-gaf2paf unstable.gaf -l node-lengths.tsv > unstable.paf
-```
+### Graph Splitting and Assignment (`rgfa-split`)
 
-### Alignment Filtering
-Use `gaffilter` to remove overlapping query intervals using heuristics (MapQ and block length).
+`rgfa-split` uses rGFA tags to assign query contigs to reference contigs.
 
-*   **Default Behavior:** Keeps a record if it doesn't overlap, is primary, or has significantly higher MapQ/length (2x by default).
-*   **PAF Support:** Use the `-p` flag to filter PAF files (requires the `gl` tag from the original GAF).
-*   **Sensitivity:** Adjust the ratio threshold with `-r` (default is 2).
+*   **Mechanism**: It performs a Breadth-First Search (BFS) from rank-0 nodes to assign every node to its nearest reference contig.
+*   **Assignment**: Query contigs are assigned to the reference contig where they have the highest alignment coverage.
+*   **Expert Tip**: Use the uniqueness and specificity filters to label low-confidence assignments as "ambiguous" to prevent false-positive mappings in complex regions.
 
-```bash
-# Filter GAF
-gaffilter input.gaf > filtered.gaf
+### Coordinate Mapping and Anchoring
 
-# Filter PAF with custom ratio
-gaffilter -p -r 3 input.paf > filtered.paf
-```
+*   **`mzgaf2paf`**: Use this for legacy minigraph outputs generated with `-S --write-mz`. It converts minimizer-based GAFs into PAF records with CIGAR strings, which can serve as initial anchors for Cactus.
+*   **`rgfa2paf`**: Quickly generate a PAF representing the rank-0 (reference) paths within an rGFA file.
+*   **`faprefix.sh`**: A utility script to ensure consistency between FASTA headers and PAF records by adding prefixes (e.g., `mg_anchors`).
 
-### Reference-Based Contig Splitting
-The `rgfa-split` tool assigns query contigs to reference contigs based on alignment coverage and rGFA tags. This is useful for partitioning pangenome data by chromosome.
 
-1. It assigns graph nodes to the nearest rank-0 (reference) node via BFS.
-2. It calculates alignment coverage for query contigs against these reference assignments.
-3. It outputs assignments based on the highest alignment coverage.
 
-### Legacy Tool Notes
-*   **paf2lastz:** Converts PAF with `cg` cigars to LASTZ cigars. Note that modern Cactus versions handle PAF natively, making this tool largely optional.
-*   **mzgaf2paf:** Previously used for minimizer-based conversion. Since `minigraph` now produces cigars with `-c`, use `gaf2paf` instead.
+## Subcommands
 
-## Expert Tips
-*   **Cigars:** Ensure `minigraph` is run with the `-c` flag; otherwise, conversion tools like `gaf2paf` will lack the necessary CIGAR data for valid PAF output.
-*   **Sequence Names:** When concatenating `.fai` files for the `-l` parameter, ensure there are no duplicate sequence names across different reference files, as this will cause coordinate mapping errors.
-*   **Memory Management:** For very large pangenome graphs, `rgfa-split` performs a Breadth-First Search (BFS) on the graph structure; ensure sufficient RAM is available for the GFA topology.
+| Command | Description |
+|---------|-------------|
+| gaf2paf | Convert minigraph GAF to PAF |
+| gaf2unstable | Replace stable sequences in path steps, ex >chr1:500-1000, with the unstable graph node names, ex >s1:1-100>s2:100-600 |
+| gaffilter | Filter GAF record if its query interval overlaps another query interval based on primary/secondary status, MAPQ ratio, or block length ratio. |
+| mzgaf2paf | Convert minigraph --write-mz output(s) to PAF |
+| paf2lastz | Convert PAF(s) with cg cigars to LASTZ cigars |
+| rgfa-split | Partition rGFA nodes into reference contigs. Input must be uncompressed GFA (not stdin) |
 
 ## Reference documentation
-- [Cactus-GFA-Tools GitHub Repository](./references/github_com_ComparativeGenomicsToolkit_cactus-gfa-tools.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_cactus-gfa-tools_overview.md)
+- [cactus-gfa-tools README](./references/github_com_ComparativeGenomicsToolkit_cactus-gfa-tools_blob_main_README.md)
+- [faprefix.sh source](./references/github_com_ComparativeGenomicsToolkit_cactus-gfa-tools_blob_main_faprefix.sh.md)
+- [Makefile build targets](./references/github_com_ComparativeGenomicsToolkit_cactus-gfa-tools_blob_main_Makefile.md)

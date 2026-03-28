@@ -1,1 +1,368 @@
-Home · rrwick/Verticall Wiki · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} rrwick / Verticall Public Notifications You must be signed in to change notification settings Fork 2 Star 63 Code Issues 0 Pull requests 0 Actions Projects 0 Wiki Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Wiki Security Insights Home Jump to bottom Ryan Wick edited this page Sep 18, 2023 &middot; 19 revisions The problem Phylogenetic trees of bacteria aim to reconstruct their vertical (i.e. via parent cell to daughter cell) evolutionary history. And if bacteria only evolved vertically, then you could confidently use their entire genomes when building a tree. However, many bacteria also exchange DNA horizontally, e.g. via phage integration or homologous recombination. This means that different parts of bacterial genomes can have different evolutionary histories, so building a tree with the entire genome can yield a confused and distorted tree. So if you have a collection of bacterial genomes and want to build a tree that accurately reflects their vertical evolutionary history, you want to only use the parts of their genomes that were inherited vertically – i.e. ignore horizontally acquired parts of their genomes. Programs such as Gubbins and ClonalFrameML have been developed to solve this exact problem, and they can work very well in some circumstances. But they require closely related genomes and don't scale well to very large numbers. E.g. you can't run Gubbins/ClonalFrameML on genomes that span a species such as E. coli – there's too much variation. And you can't run Gubbins/ClonalFrameML on a collection of 10000 genomes – it would take too long. The solution Verticall is a tool for building recombination-free trees, and it works in contexts that Gubbins and ClonalFrameML do not. In addition to finding/masking recombination from outside the genomes (i.e. regions with too much sequence divergence), it can also find/mask recombination from within the genomes (i.e. regions with too little sequence divergence). This allows it to handle more diverse datasets than other tools. Briefly, Verticall works by conducting pairwise alignment between genome assemblies, non-parametrically determining the vertical-only genomic distance and then labelling regions of the assemblies as either vertical or horizontal (see Pairwise assembly comparison for details). Verticall can be run in two distinct ways, each with their advantages: Conduct all pairwise assembly comparisons and use the results to build a distance matrix. You can then use that distance matrix to build a distance tree. This mode is appropriate for diverse datasets, even spanning multiple species. See Distance tree workflow for details. Compare each assembly to a reference genome to mask horizontal regions from a SNP matrix. You can then use that masked SNP matrix to build an ML tree. This mode is appropriate for very large datasets with thousands of genomes. See Alignment tree workflow for details. Some caveats Before you dive in to using Verticall, here are some things to keep in mind: Verticall doesn't build trees itself. It just produces a distance matrix (if you used the distance tree workflow ) or a masked alignment (if you used the alignment tree workflow ). The actual tree-building needs to be done by a separate program. Since Verticall is assembly-based, you'll need to assemble your genomes before you can use it. Good assemblies (e.g. with a big N50) are better, but fragmented assemblies are okay. Verticall takes a more broad-brushstroke approach to finding recombination than Gubbins, i.e. it finds/masks recombination in larger chunks. This means that if your dataset is suitable for Gubbins (i.e. a small and closely related group of genomes), then it will probably give you better results. Where to begin? Are you new to Verticall and interested in trying it out? If so, you'll first need to get it installed, so check out the Software requirements and installation page. Then head over to the Quick start page for a concise overview on how to run Verticall. A manuscript for Verticall is in the works, so stay tuned! If you need to cite it in the meantime, you can cite this repo using this DOI: Toggle table of contents Pages 20 Loading Home The problem The solution Some caveats Where to begin? Loading Alignment tree workflow Uh oh! There was an error while loading. Please reload this page . Loading Columns in pairwise tsv file Uh oh! There was an error while loading. Please reload this page . Loading Distance based tree methods Uh oh! There was an error while loading. Please reload this page . Loading Distance tree workflow Uh oh! There was an error while loading. Please reload this page . Loading Effect of assembly fragmentation Uh oh! There was an error while loading. Please reload this page . Loading FAQ and miscellaneous tips Uh oh! There was an error while loading. Please reload this page . Loading Illustrated example 1 Uh oh! There was an error while loading. Please reload this page . Loading Illustrated example 2 Uh oh! There was an error while loading. Please reload this page . Loading Illustrated example 3 Uh oh! There was an error while loading. Please reload this page . Loading Pairwise assembly comparison Uh oh! There was an error while loading. Please reload this page . Loading Primary vs secondary results Uh oh! There was an error while loading. Please reload this page . Loading Quick start Uh oh! There was an error while loading. Please reload this page . Loading Software requirements and installation Uh oh! There was an error while loading. Please reload this page . Loading Verticall mask Uh oh! There was an error while loading. Please reload this page . Loading Verticall matrix Uh oh! There was an error while loading. Please reload this page . Loading Verticall pairwise Uh oh! There was an error while loading. Please reload this page . Loading Verticall repair Uh oh! There was an error while loading. Please reload this page . Loading Verticall summary Uh oh! There was an error while loading. Please reload this page . Loading Verticall view Uh oh! There was an error while loading. Please reload this page . Show 5 more pages… Home Software requirements and installation How to run Verticall Quick start Distance tree workflow Alignment tree workflow Usage information Verticall pairwise Verticall view Verticall matrix Verticall mask Verticall summary Verticall repair Implementation details Pairwise assembly comparison Illustrated example 1 Illustrated example 2 Illustrated example 3 Columns in pairwise TSV file Primary vs secondary results Other info Distance-based tree methods FAQ and miscellaneous tips Clone this wiki locally Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Frrwick%2FVerticall%2Fwiki)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Frrwick%2FVerticall%2Fwiki)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Fwiki%2Findex&source=header-repo&source_repo=rrwick%2FVerticall)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[rrwick](/rrwick)
+/
+**[Verticall](/rrwick/Verticall)**
+Public
+
+* [Notifications](/login?return_to=%2Frrwick%2FVerticall) You must be signed in to change notification settings
+* [Fork
+  2](/login?return_to=%2Frrwick%2FVerticall)
+* [Star
+   63](/login?return_to=%2Frrwick%2FVerticall)
+
+* [Code](/rrwick/Verticall)
+* [Issues
+  0](/rrwick/Verticall/issues)
+* [Pull requests
+  0](/rrwick/Verticall/pulls)
+* [Actions](/rrwick/Verticall/actions)
+* [Projects](/rrwick/Verticall/projects)
+* [Wiki](/rrwick/Verticall/wiki)
+* [Security
+  0](/rrwick/Verticall/security)
+* [Insights](/rrwick/Verticall/pulse)
+
+Additional navigation options
+
+* [Code](/rrwick/Verticall)
+* [Issues](/rrwick/Verticall/issues)
+* [Pull requests](/rrwick/Verticall/pulls)
+* [Actions](/rrwick/Verticall/actions)
+* [Projects](/rrwick/Verticall/projects)
+* [Wiki](/rrwick/Verticall/wiki)
+* [Security](/rrwick/Verticall/security)
+* [Insights](/rrwick/Verticall/pulse)
+
+# Home
+
+[Jump to bottom](#wiki-pages-box)
+
+Ryan Wick edited this page Sep 18, 2023
+·
+[19 revisions](/rrwick/Verticall/wiki/Home/_history)
+
+![Verticall logo](https://github.com/rrwick/Verticall/wiki/images/logo.png)
+
+## The problem
+
+Phylogenetic trees of bacteria aim to reconstruct their vertical (i.e. via parent cell to daughter cell) evolutionary history. And if bacteria *only* evolved vertically, then you could confidently use their entire genomes when building a tree. However, many bacteria also exchange DNA horizontally, e.g. via phage integration or homologous recombination. This means that different parts of bacterial genomes can have different evolutionary histories, so building a tree with the entire genome can yield a confused and distorted tree. So if you have a collection of bacterial genomes and want to build a tree that accurately reflects their vertical evolutionary history, you want to only use the parts of their genomes that were inherited vertically – i.e. ignore horizontally acquired parts of their genomes.
+
+Programs such as [Gubbins](https://github.com/nickjcroucher/gubbins) and [ClonalFrameML](https://github.com/xavierdidelot/ClonalFrameML) have been developed to solve this exact problem, and they can work very well in some circumstances. But they require closely related genomes and don't scale well to very large numbers. E.g. you can't run Gubbins/ClonalFrameML on genomes that span a species such as *E. coli* – there's too much variation. And you can't run Gubbins/ClonalFrameML on a collection of 10000 genomes – it would take too long.
+
+## The solution
+
+Verticall is a tool for building recombination-free trees, and it works in contexts that Gubbins and ClonalFrameML do not. In addition to finding/masking recombination from outside the genomes (i.e. regions with too much sequence divergence), it can also find/mask recombination from within the genomes (i.e. regions with too little sequence divergence). This allows it to handle more diverse datasets than other tools.
+
+Briefly, Verticall works by conducting pairwise alignment between genome assemblies, non-parametrically determining the vertical-only genomic distance and then labelling regions of the assemblies as either vertical or horizontal (see [Pairwise assembly comparison](/rrwick/Verticall/wiki/Pairwise-assembly-comparison) for details).
+
+Verticall can be run in two distinct ways, each with their advantages:
+
+1. Conduct all pairwise assembly comparisons and use the results to build a distance matrix. You can then use that distance matrix to build a distance tree. This mode is appropriate for diverse datasets, even spanning multiple species. See [Distance tree workflow](/rrwick/Verticall/wiki/Distance-tree-workflow) for details.
+2. Compare each assembly to a reference genome to mask horizontal regions from a SNP matrix. You can then use that masked SNP matrix to build an ML tree. This mode is appropriate for very large datasets with thousands of genomes. See [Alignment tree workflow](/rrwick/Verticall/wiki/Alignment-tree-workflow) for details.
+
+## Some caveats
+
+Before you dive in to using Verticall, here are some things to keep in mind:
+
+* Verticall doesn't build trees itself. It just produces a distance matrix (if you used the [distance tree workflow](/rrwick/Verticall/wiki/Distance-tree-workflow)) or a masked alignment (if you used the [alignment tree workflow](/rrwick/Verticall/wiki/Alignment-tree-workflow)). The actual tree-building needs to be done by a separate program.
+* Since Verticall is assembly-based, you'll need to assemble your genomes before you can use it. Good assemblies (e.g. with a big N50) are better, but fragmented assemblies are okay.
+* Verticall takes a more broad-brushstroke approach to finding recombination than Gubbins, i.e. it finds/masks recombination in larger chunks. This means that if your dataset is suitable for Gubbins (i.e. a small and closely related group of genomes), then it will probably give you better results.
+
+## Where to begin?
+
+Are you new to Verticall and interested in trying it out? If so, you'll first need to get it installed, so check out the [Software requirements and installation](/rrwick/Verticall/wiki/Software-requirements-and-installation) page. Then head over to the [Quick start](/rrwick/Verticall/wiki/Quick-start) page for a concise overview on how to run Verticall.
+
+A manuscript for Verticall is in the works, so stay tuned! If you need to cite it in the meantime, you can cite this repo using this DOI:
+
+[![DOI](https://camo.githubusercontent.com/7f36420b857544d990c78ed5e606a9d47b1c93501f53879862caf0178e6d5492/68747470733a2f2f7a656e6f646f2e6f72672f62616467652f444f492f31302e353238312f7a656e6f646f2e383335343235392e737667)](https://doi.org/10.5281/zenodo.8354259)
+
+## Toggle table of contents Pages 20
+
+* Loading
+
+  [Home](/rrwick/Verticall/wiki)
+
+  + [The problem](/rrwick/Verticall/wiki#the-problem)
+  + [The solution](/rrwick/Verticall/wiki#the-solution)
+  + [Some caveats](/rrwick/Verticall/wiki#some-caveats)
+  + [Where to begin?](/rrwick/Verticall/wiki#where-to-begin)
+* Loading
+
+  [Alignment tree workflow](/rrwick/Verticall/wiki/Alignment-tree-workflow)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [Columns in pairwise tsv file](/rrwick/Verticall/wiki/Columns-in-pairwise-tsv-file)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [Distance based tree methods](/rrwick/Verticall/wiki/Distance-based-tree-methods)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [Distance tree workflow](/rrwick/Verticall/wiki/Distance-tree-workflow)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [Effect of assembly fragmentation](/rrwick/Verticall/wiki/Effect-of-assembly-fragmentation)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [FAQ and miscellaneous tips](/rrwick/Verticall/wiki/FAQ-and-miscellaneous-tips)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [Illustrated example 1](/rrwick/Verticall/wiki/Illustrated-example-1)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [Illustrated example 2](/rrwick/Verticall/wiki/Illustrated-example-2)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [Illustrated example 3](/rrwick/Verticall/wiki/Illustrated-example-3)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [Pairwise assembly comparison](/rrwick/Verticall/wiki/Pairwise-assembly-comparison)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [Primary vs secondary results](/rrwick/Verticall/wiki/Primary-vs-secondary-results)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [Quick start](/rrwick/Verticall/wiki/Quick-start)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [Software requirements and installation](/rrwick/Verticall/wiki/Software-requirements-and-installation)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [Verticall mask](/rrwick/Verticall/wiki/Verticall-mask)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [Verticall matrix](/rrwick/Verticall/wiki/Verticall-matrix)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [Verticall pairwise](/rrwick/Verticall/wiki/Verticall-pairwise)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [Verticall repair](/rrwick/Verticall/wiki/Verticall-repair)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [Verticall summary](/rrwick/Verticall/wiki/Verticall-summary)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [Verticall view](/rrwick/Verticall/wiki/Verticall-view)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Show 5 more pages…
+
+* [Home](/rrwick/Verticall/wiki/Home)
+* [Software requirements and installation](/rrwick/Verticall/wiki/Software-requirements-and-installatio

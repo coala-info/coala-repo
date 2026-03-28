@@ -280,3 +280,6 @@ Options:
  -V          Print version information and then exit
 ```
 
+
+## Metadata
+- **Skill**: generated

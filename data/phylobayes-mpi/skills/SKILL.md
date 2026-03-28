@@ -1,6 +1,6 @@
 ---
 name: phylobayes-mpi
-description: Phylobayes-MPI is a Bayesian MCMC sampler that performs phylogenetic reconstruction using site-heterogeneous models on large protein alignments. Use when user asks to perform phylogenetic reconstruction, run Bayesian MCMC sampling with CAT models, or estimate marginal likelihoods using MPI parallelization.
+description: PhyloBayes-MPI is a Bayesian MCMC sampler used for phylogenetic inference under site-heterogeneous models. Use when user asks to perform phylogenetic reconstruction, run CAT-GTR models, assess MCMC convergence, or compare model fit using cross-validation.
 homepage: https://github.com/bayesiancook/pbmpi
 ---
 
@@ -8,63 +8,74 @@ homepage: https://github.com/bayesiancook/pbmpi
 # phylobayes-mpi
 
 ## Overview
-Phylobayes-MPI is a specialized Bayesian MCMC sampler designed for phylogenetic reconstruction under complex, site-heterogeneous models. It is particularly effective for analyzing large protein alignments where standard site-homogeneous models (like GTR) may fail due to long-branch attraction. By utilizing the Message Passing Interface (MPI), it distributes the computational load of site-specific likelihood calculations across multiple processors, enabling the use of Dirichlet Process mixture models (CAT) on phylogenomic-scale data.
+
+PhyloBayes-MPI is a specialized Bayesian Monte Carlo Markov Chain (MCMC) sampler designed for phylogenetic inference. Its primary strength lies in its implementation of site-heterogeneous models (like the CAT model), which better account for the varying biochemical constraints across different positions in protein or DNA sequences compared to standard site-homogeneous models. The MPI version allows these computationally intensive models to be scaled across multiple CPU cores. Use this skill to determine the correct command-line arguments for model selection, resource allocation, and post-analysis convergence checks.
 
 ## Core Command Line Usage
 
-### Starting a New Chain
-The primary executable is `pb_mpi`. It must be launched via `mpirun` or `mpiexec`. You must allocate at least two processes: one master process and at least one slave process.
+### Running the Sampler (pb_mpi)
 
-```bash
-# Basic run using the CAT-GTR model on a protein alignment
-mpirun -np 16 pb_mpi -d alignment.phy -cat -gtr chain_name
+The primary executable is `pb_mpi`. Because it uses MPI, it must be launched with `mpirun` or `mpiexec`.
 
-# Using the CAT-Poisson model (faster than CAT-GTR)
-mpirun -np 8 pb_mpi -d alignment.phy -cat -poisson chain_name
-```
+*   **Start a new chain with CAT-GTR:**
+    `mpirun -np <number_of_cores> pb_mpi -d <alignment_file> -cat -gtr <chain_name>`
+*   **Start a chain with a fixed topology:**
+    `mpirun -np <number_of_cores> pb_mpi -d <alignment_file> -t <tree_file> -cat -gtr <chain_name>`
+*   **Resume an existing chain:**
+    `mpirun -np <number_of_cores> pb_mpi <chain_name>`
+*   **Specify sampling frequency (thinning):**
+    Use `-x <thinning> <total_samples>` to control how often the MCMC state is saved to disk.
 
-### Common Model Options
-*   `-cat`: Activates the Dirichlet Process mixture for site-specific amino-acid profiles.
+### Model Selection Flags
+
+*   `-cat`: Invokes the Dirichlet process mixture (CAT) model for site-specific amino-acid or nucleotide preferences.
 *   `-gtr`: Uses a General Time Reversible exchangeability matrix.
-*   `-poisson`: Uses a Poisson (F81-like) exchangeability matrix.
-*   `-d <file>`: Specifies the input dataset (typically Phylip format).
-*   `-T <treefile>`: Fixes the topology to a specific tree, sampling only model parameters.
-*   `-mutsel`: Invokes the mutation-selection framework for codon-based models.
+*   `-poisson`: Uses a Poisson (F81-style) exchangeability process.
+*   `-ncat <int>`: Sets a fixed number of components for the mixture model (instead of the default Dirichlet process).
+*   `-uniformbaseprior` / `-rigidbaseprior`: Adjusts the priors on the base frequencies for CAT-GTR models.
 
-### Advanced Model Fit and Comparison
-Phylobayes-MPI includes specific flags for assessing model fit and calculating marginal likelihoods:
+## Model Fit and Comparison
 
-*   **Cross-Validation**: Use `-sitecv` or `-jointcv` for site-wise or joint cross-validation.
-*   **Information Criteria**: Use `-loocv_waic` to calculate the Widely Applicable Information Criterion via Leave-One-Out Cross-Validation.
-*   **Marginal Likelihood**: Use Sequential Importance Sampling (SIS) for model comparison:
-    *   `-sis`: Standard SIS.
-    *   `-self_tuned_sis`: Automatically tuned SIS for marginal likelihood estimation.
-    *   `-emp_ref`: Uses an empirical reference for SIS.
+PhyloBayes-MPI includes tools for assessing model fit and calculating marginal likelihoods.
 
-### Priors and Constraints
-*   `-uniformbaseprior`: Sets a uniform prior on the base frequencies of the mixture components.
-*   `-rigidbaseprior`: Sets a more constrained prior on base frequencies.
-*   `-v`: Verbose output; writes posterior samples of relative rates to file.
+*   **WAIC and LOO-CV:**
+    Use `-sitecv` or `-jointcv` to perform cross-validation or calculate the Widely Applicable Information Criterion (WAIC).
+*   **Sequential Importance Sampling (SIS):**
+    Use `-sis`, `-self_tuned_sis`, or `-emp_ref` to estimate marginal likelihoods for model comparison.
+*   **Site Log-Likelihoods:**
+    Use `-sitelogl` to output the log-likelihood for each site, which is useful for downstream selection or fit analysis.
 
 ## Post-Analysis and Convergence
-After running multiple chains (e.g., `chain1`, `chain2`), use the auxiliary tools to check for convergence:
 
-1.  **tracecomp**: Checks for convergence of continuous parameters (burn-in and thinning should be applied).
-    ```bash
-    tracecomp -x 100 chain1 chain2
-    ```
-2.  **bpcomp**: Compares the consensus trees and calculates the maximum difference (maxdiff) between bipartitions.
-    ```bash
-    bpcomp -x 100 1 chain1 chain2
-    ```
+After running at least two independent chains (e.g., `chain1` and `chain2`), you must assess convergence.
+
+*   **Tracecomp (Parameter Convergence):**
+    `tracecomp -x <burn_in> <chain1> <chain2>`
+    *   Check the "maxdiff" column. Values < 0.1 indicate good convergence; > 0.3 suggests the chains have not converged.
+*   **Bpcomp (Topological Convergence):**
+    `bpcomp -x <burn_in> <sampling_interval> <chain1> <chain2>`
+    *   This generates a consensus tree and calculates the maximum difference in bipartition frequencies (maxdiff).
+*   **Readpb (Posterior Summary):**
+    `readpb_mpi -x <burn_in> <chain_name>`
+    *   Summarizes the posterior distribution of the parameters for a single chain.
 
 ## Expert Tips
-*   **Process Allocation**: For optimal performance, ensure the number of MPI processes minus one is a divisor of the number of sites in your alignment, or simply provide enough slaves to handle the site-likelihood distribution.
-*   **Chain Monitoring**: Monitor the `.trace` file to ensure the log-likelihood has stabilized before assuming convergence.
-*   **Memory Management**: If the program hangs or crashes with "corrupted size" errors during `-mutsel` runs, check for memory limits on your HPC cluster or reduce the number of mixture components if possible.
-*   **Restarting**: To resume a crashed or stopped chain, simply run the exact same command again with the same chain name; the program will detect the existing `.param` file and resume.
+
+1.  **Resource Allocation:** One process (the master) manages the MCMC moves, while the remaining processes (slaves) calculate site likelihoods. For very large alignments, increasing `-np` significantly speeds up the likelihood calculation.
+2.  **Burn-in:** A standard burn-in is 10-20% of the total points. Always verify that the log-likelihood has reached a plateau using `tracecomp` before trusting the results.
+3.  **Effective Sample Size (ESS):** In `tracecomp`, ensure the ESS for all parameters is > 100 (ideally > 500) for reliable posterior estimates.
+4.  **Memory Management:** If the program hangs or crashes with "singular logl" errors, it may be due to empty categories in the mixture model; check your data for highly gapped regions or use the `-v` flag for more verbose output during the run.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| bpcomp | compare bipartition frequencies between independent chains and build consensus based on merged lists of trees |
+| mpirun -np <np> pb_mpi | creates a new chain, sampling from the posterior distribution, conditional on specified data |
+| tracecomp | measure the effective sizes and overlap between 95% CI of several independent chains |
 
 ## Reference documentation
-- [Phylobayes-MPI Overview](./references/anaconda_org_channels_bioconda_packages_phylobayes-mpi_overview.md)
-- [GitHub Repository and Commit History](./references/github_com_bayesiancook_pbmpi_commits_master.md)
-- [Issue Tracker for Troubleshooting](./references/github_com_bayesiancook_pbmpi_issues.md)
+- [PhyloBayes-MPI GitHub Repository](./references/github_com_bayesiancook_pbmpi.md)
+- [PhyloBayes-MPI Commit History and Feature Updates](./references/github_com_bayesiancook_pbmpi_commits_master.md)

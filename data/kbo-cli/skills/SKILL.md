@@ -1,6 +1,6 @@
 ---
 name: kbo-cli
-description: kbo-cli is a high-performance command-line interface for rapid approximate genomic alignment and analysis. Use when user asks to call variants, search for sequence segments, or perform reference-based mapping.
+description: kbo-cli is a bioinformatics tool for fast, approximate local alignment and sequence comparison using the Spectral Burrows-Wheeler Transform. Use when user asks to identify genomic variants, locate gene sequences, or map query sequences to a reference genome.
 homepage: https://docs.rs/kbo
 ---
 
@@ -9,37 +9,71 @@ homepage: https://docs.rs/kbo
 
 ## Overview
 
-kbo-cli is a high-performance command-line interface for the kbo local aligner. It specializes in "approximate" alignment, which allows for rapid analysis of genomic data by converting matching statistics into character representations of alignments. Unlike many traditional aligners, kbo-cli can operate directly on raw or compressed sequence files without pre-building an index, though it supports indexing for specific search optimizations. Use this tool when you need a lightweight alternative to tools like Snippy, SKA, or BLAST for variant detection and sequence localization.
+kbo-cli is a specialized bioinformatics tool designed for fast, approximate local alignment. It leverages the Spectral Burrows-Wheeler Transform (SBWT) to convert matching statistics into character representations of alignments. It is particularly effective for comparing assembly contigs against reference genomes, identifying gene locations in large datasets, and generating VCF files for genomic variations without the overhead of traditional full-alignment algorithms.
 
-## Core Commands and Usage
+## Core Workflows
 
-### Variant Calling (kbo call)
-Use this to identify single/multi-base substitutions, insertions, and deletions.
-- **Basic Command**: `kbo call --reference <ref.fasta> <query.fasta.gz> > variants.vcf`
-- **Output**: Standard VCF v4.4 format.
-- **Tip**: This is the preferred command for generating input for downstream phylogenetic or mutational analysis.
+### Variant Calling (`kbo call`)
+Use this command to identify single and multi-base substitutions, insertions, and deletions. It is the primary tool for generating VCF files.
 
-### Sequence Searching (kbo find)
-Use this to locate local alignment segments, similar to a BLAST search.
-- **Basic Command**: `kbo find --reference <target_genes.fasta> <genome.fasta>`
-- **Detailed Output**: Add the `--detailed` flag to include specific contig names and product descriptions in the output table instead of generic IDs.
-- **Gap Management**: Use `--max-gap-len <int>` to control the maximum length of a single gap segment before the tool splits an alignment.
+*   **Basic Usage**:
+    ```bash
+    kbo call --reference reference.fna query.fasta > variants.vcf
+    ```
+*   **Expert Tip**: Adjust `--max-error-prob` (default is often $10^{-7}$) to control the sensitivity of the derandomization process. Higher values allow more noise; lower values increase stringency.
+*   **VCF Output**: Produces VCF v4.4. Note that the `QUAL` and `FILTER` columns are typically placeholders (`.`) as kbo uses a deterministic matching statistic rather than a probabilistic mapping quality.
 
-### Reference-Based Mapping (kbo map)
-Use this to map a query against a reference and generate a nucleotide sequence relative to that reference.
-- **Basic Command**: `kbo map --reference <ref.fasta> <query.fasta>`
-- **Functionality**: It masks characters not present in the query with a `-`, providing a clear view of conservation and gaps relative to the reference.
+### Finding Gene Locations (`kbo find`)
+Use this to locate specific sequences (like a gene database) within a larger genome. It functions similarly to BLAST but uses k-mer matching.
 
-## Expert Tips and Best Practices
+*   **Basic Usage**:
+    ```bash
+    kbo find --reference genes.fasta genome.fna
+    ```
+*   **Detailed Output**: Use the `--detailed` flag to include the specific contig names from the reference file in the output table.
+*   **Gap Management**: Use `--max-gap-len` (e.g., `--max-gap-len 100`) to define the maximum distance between k-mer matches that can be merged into a single alignment block.
 
-- **K-mer Selection**: The default k-mer size is often 31. For highly divergent sequences, decreasing `k` may increase sensitivity but will introduce more noise. For very similar sequences, a larger `k` improves speed and specificity.
-- **Handling Noise**: Use the `--max-error-prob` parameter to filter out random matches. Matches with a probability higher than this threshold are treated as noise and discarded.
-- **Memory Management**: When using `kbo build` for large datasets, use the `--mem-gb` flag to specify available RAM, which helps the Spectral Burrows-Wheeler Transform (SBWT) construction algorithm optimize performance.
-- **Direct Compression Support**: kbo-cli natively reads DEFLATE formats (gzip, zlib). You do not need to decompress files before running `call`, `find`, or `map`.
-- **Indexing Strategy**: While kbo-cli can run without an index, use `kbo build` when performing multiple `find` operations against the same large reference to save time on subsequent runs.
+### Sequence Mapping (`kbo map`)
+Use this to project a query sequence onto a reference coordinate system.
+
+*   **Basic Usage**:
+    ```bash
+    kbo map --reference reference.fna query.fasta > alignment.txt
+    ```
+*   **Output**: Returns the reference sequence where non-matching bases are masked with `-`.
+*   **Configuration**: Ensure `build_select` is enabled in the underlying index (automatic in CLI) to support the mapping coordinate lookups.
+
+## Parameter Tuning
+
+| Parameter | Command | Description |
+| :--- | :--- | :--- |
+| `-k` | `build`, `find` | k-mer size. Larger `k` increases specificity but reduces sensitivity to highly divergent sequences. |
+| `--max-gap-len` | `find` | Maximum gap size (in bases) allowed when merging local matches. |
+| `--max-error-prob`| `call`, `map` | Probability threshold for considering a match "random noise." |
+| `--add-revcomp` | `build` | Includes reverse complements in the index. Essential for double-stranded DNA queries. |
+
+## Best Practices
+
+*   **Input Formats**: kbo-cli natively supports FASTA and FASTQ. It can read DEFLATE-compressed files (e.g., `.gz`) automatically.
+*   **Indexing**: While kbo can run directly on FASTA files, you can use `kbo build` to create a prebuilt index for `kbo find` tasks involving repetitive queries against the same reference.
+*   **Memory Management**: For large genomes, use the `--mem-gb` flag during indexing to limit RAM usage. The tool defaults to 4GB.
+*   **Threading**: Use `--num-threads` to parallelize the SBWT construction phase, which is the most computationally intensive part of the workflow.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| build | Build a k-mer index |
+| call | Call variants using k-mer based approach. |
+| find | Finds sequences in query files based on a reference or index. |
+| kbo | kbo |
+| map | Map sequence data against a reference. |
 
 ## Reference documentation
-- [kbo-cli Overview](./references/anaconda_org_channels_bioconda_packages_kbo-cli_overview.md)
-- [kbo Crate Documentation](./references/docs_rs_kbo_latest_kbo.md)
-- [Build Options Reference](./references/docs_rs_kbo_latest_kbo_struct.BuildOpts.html.md)
-- [Find Options Reference](./references/docs_rs_kbo_latest_kbo_struct.FindOpts.html.md)
+- [Crate kbo Overview](./references/docs_rs_kbo_latest_kbo.md)
+- [Function: kbo find](./references/docs_rs_kbo_latest_kbo_fn.find.html.md)
+- [Function: kbo call](./references/docs_rs_kbo_latest_kbo_fn.call.html.md)
+- [Function: kbo map](./references/docs_rs_kbo_latest_kbo_fn.map.html.md)
+- [Build Options](./references/docs_rs_kbo_latest_kbo_struct.BuildOpts.html.md)

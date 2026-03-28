@@ -442,3 +442,6 @@ usage: snakedeploy [-h] [--version] [--quiet] [--verbose]
 snakedeploy: error: argument subcommand: invalid choice: 'dependencies' (choose from deploy-workflow, collect-files, pin-conda-envs, update-conda-envs, update-snakemake-wrappers, scaffold-snakemake-plugin)
 ```
 
+
+## Metadata
+- **Skill**: generated

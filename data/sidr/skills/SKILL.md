@@ -1,6 +1,6 @@
 ---
 name: sidr
-description: SIDR uses machine learning to identify and filter target sequences from assembly data based on taxonomic classifications. Use when user asks to clean sequence data before assembly, filter contigs by target phylum, or generate lists of sequence IDs to keep or remove.
+description: SIDR uses machine learning to classify and separate target genomic sequences from contaminants based on features like GC content and sequencing coverage. Use when user asks to refine genomic assemblies, filter out sequence contaminants, or classify contigs using decision trees.
 homepage: https://github.com/damurdock/SIDR
 ---
 
@@ -8,56 +8,66 @@ homepage: https://github.com/damurdock/SIDR
 # sidr
 
 ## Overview
-SIDR (Sequence Identification with Decision Trees) is a bioinformatics tool used to clean and filter sequence data before assembly. It bridges the gap between raw classification data (like BLAST results) and final sequence sets by using machine learning to automate the identification of target sequences. You should use this skill when you have preliminary taxonomic assignments and want to generate a refined list of contig IDs to keep or remove based on a target phylum.
 
-## Installation
-The tool is available via Bioconda or pip:
-```bash
-conda install bioconda::sidr
-# OR
-pip install sidr
-```
+SIDR (Sequence Identification with Decision tRees) is a bioinformatics tool designed to refine genomic assemblies by separating target sequences from contaminants. It automates the creation of a machine-learning classifier (Decision Tree) that uses sequence-specific features—primarily GC content and per-base sequencing coverage—to predict whether a contig belongs to a specified target taxon. By using a subset of sequences with known taxonomic assignments (from BLAST) as a training set, SIDR can classify the remaining unassigned sequences in an assembly, providing a more comprehensive filter than simple taxon-searching alone.
 
-## Command Line Usage
+## Usage Patterns
 
 ### Default Mode
-Use this mode when you have raw bioinformatics files (BAM, FASTA, BLAST) and need SIDR to calculate features like GC content and per-base coverage automatically.
+Use this mode when you have raw bioinformatics files and need SIDR to calculate features (GC and coverage) automatically.
 
 ```bash
-sidr default -d [taxdump path] \
-             -b [bamfile] \
-             -f [assembly FASTA] \
-             -r [BLAST results] \
-             -k tokeep.contigids \
-             -x toremove.contigids \
-             -t [target phylum]
+sidr default \
+    -d /path/to/ncbi/taxdump \
+    -b alignment.bam \
+    -f assembly.fasta \
+    -r blast_results.txt \
+    -t "Arthropoda" \
+    -k keep.contigids \
+    -x remove.contigids
 ```
 
-**Required Arguments:**
-- `-d`: Path to the NCBI taxdump directory.
-- `-b`: BAM file containing mapping information.
-- `-f`: The assembly FASTA file.
-- `-r`: BLAST results (or similar classifier output).
-- `-k`: Output file for contig IDs to keep.
-- `-x`: Output file for contig IDs to remove.
-- `-t`: The specific target phylum to isolate.
+**Required Inputs:**
+- `-d`: Path to the NCBI taxdump directory (containing `nodes.dmp` and `names.dmp`).
+- `-b`: BAM file of reads mapped back to the assembly (used to calculate coverage).
+- `-f`: The assembly FASTA file (used to calculate GC content).
+- `-r`: BLAST results (typically `outfmt 6` or `7`) used for training the model.
+- `-t`: The target phylum or taxon name to keep.
 
 ### Runfile Mode
-Use this mode if you have already pre-calculated variables for your contigs and have them in a tab-delimited format.
+Use this mode if you have already calculated your own variables (e.g., different coverage metrics or k-mer frequencies) and want to provide them in a tabular format.
 
 ```bash
-sidr runfile -i [runfile] \
-             -k tokeep.contigids \
-             -x toremove.contigids \
-             -t [target phylum]
+sidr runfile \
+    -i features.tsv \
+    -t "Chordata" \
+    -k keep.contigids \
+    -x remove.contigids
 ```
 
-## Best Practices and Tips
-- **Target Phylum Accuracy**: Ensure the string provided to `-t` matches the taxonomic nomenclature used in your `taxdump` and BLAST results exactly.
-- **BLAST Formatting**: For best results, ensure your BLAST output includes the necessary fields for taxonomic identification (typically standard outfmt 6 or 7 with taxids).
-- **Alpha Software Caution**: As SIDR is currently in alpha, always validate the `tokeep.contigids` and `toremove.contigids` files against a subset of known sequences before proceeding to large-scale assembly.
-- **Data Preparation**: Ensure your BAM file is indexed and corresponds exactly to the contigs in your FASTA file to avoid mapping errors during feature calculation.
+**Input Format:**
+The runfile (`-i`) should be a tab-delimited file containing contig IDs, your custom variables, and the taxonomic classification.
+
+## Expert Tips and Best Practices
+
+- **Taxdump Preparation**: Ensure the NCBI taxdump is up to date and the directory contains both `nodes.dmp` and `names.dmp`. The target phylum name provided with `-t` must match the taxdump exactly.
+- **BLAST Formatting**: For the default mode, BLAST results should ideally include the `staxids` (Subject Taxonomy IDs) to allow SIDR to map hits to the taxdump correctly.
+- **BAM Indexing**: Ensure your BAM file is sorted and indexed (`samtools index`) before running SIDR to prevent errors during coverage calculation.
+- **Output Interpretation**:
+    - `keep.contigids`: A list of IDs the model classified as the target organism.
+    - `remove.contigids`: A list of IDs classified as contaminants or "other."
+- **Filtering Strategy**: Use the resulting `keep.contigids` file with a tool like `seqtk` or a custom script to extract the desired sequences from your original FASTA for downstream assembly or analysis.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| default | Runs the default analysis using raw preassembly data. |
+| sidr_runfile | Runs a custom analysis using pre-computed data from BBMap or other sources. |
 
 ## Reference documentation
-- [SIDR GitHub Repository](./references/github_com_damurdock_SIDR.md)
-- [Bioconda SIDR Package Overview](./references/anaconda_org_channels_bioconda_packages_sidr_overview.md)
+
+- [SIDR GitHub README](./references/github_com_damurdock_SIDR_blob_master_README.rst.md)
+- [SIDR Package Metadata](./references/github_com_damurdock_SIDR_blob_master_setup.py.md)

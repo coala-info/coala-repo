@@ -111,3 +111,6 @@ Example: scTE <-i scRNA.sorted.bam> <-g mm10> <-o out> [--min_genes 200]
 [--min_counts 400] [-p -10] <-x mm10.exclusive.idx>
 ```
 
+
+## Metadata
+- **Skill**: generated

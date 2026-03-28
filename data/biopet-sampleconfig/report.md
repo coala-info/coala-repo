@@ -176,4 +176,4 @@ Exception in thread "main" java.lang.IllegalArgumentException
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

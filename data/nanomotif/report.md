@@ -330,3 +330,6 @@ usage: nanomotif [-h] [--version]
 nanomotif: error: argument {motif_discovery, detect_contamination, include_contigs, MTase-linker, check_installation}: invalid choice: 'installation' (choose from motif_discovery, detect_contamination, include_contigs, MTase-linker, check_installation)
 ```
 
+
+## Metadata
+- **Skill**: generated

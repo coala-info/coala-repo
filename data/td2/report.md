@@ -149,3 +149,6 @@ required arguments:
   -t TRANSCRIPTS        REQUIRED path to transcripts.fasta
 ```
 
+
+## Metadata
+- **Skill**: generated

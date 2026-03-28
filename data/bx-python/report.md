@@ -69,3 +69,6 @@ Options:
                         memory (requires ~20MB per MAF)
 ```
 
+
+## Metadata
+- **Skill**: not generated

@@ -190,3 +190,6 @@ Traceback (most recent call last):
 argparse.ArgumentError: argument module: conflicting subparser: snp2seqz
 ```
 
+
+## Metadata
+- **Skill**: generated

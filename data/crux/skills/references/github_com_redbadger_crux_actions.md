@@ -1,1 +1,548 @@
-Workflow runs · redbadger/crux · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} redbadger / crux Public Notifications You must be signed in to change notification settings Fork 98 Star 2.4k Code Issues 36 Pull requests 4 Discussions Actions Projects 1 Security 0 Insights Additional navigation options Code Issues Pull requests Discussions Actions Projects Security Insights Actions: redbadger/crux Actions All workflows Workflows build build pages pages pages-build-deployment pages-build-deployment Show more workflows... Management Caches Deployments All workflows All workflows Actions Loading... Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page . will be ignored since log searching is not yet available Showing runs from all workflows will be ignored since log searching is not yet available 1,160 workflow runs 1,160 workflow runs Event Filter by Event Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching events. Status Filter by Status Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching statuses. Branch Filter by Branch Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching branches. Actor Filter by Actor Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching users. v0.17.0-rc3 build #2379: Pull request #490 synchronize by StuartHarris 6m 43s v0-17-0-rc3 v0-17-0-rc3 6m 43s View #490 View workflow file v0.17.0-rc3 build #2378: Pull request #490 synchronize by StuartHarris 6m 23s v0-17-0-rc3 v0-17-0-rc3 6m 23s View #490 View workflow file Merge pull request #489 from redbadger/serde-qs build #2377: Commit 83d5a07 pushed by StuartHarris 7m 4s master master 7m 4s View workflow file Merge pull request #489 from redbadger/serde-qs pages #512: Commit 83d5a07 pushed by StuartHarris 2m 4s master master 2m 4s View workflow file v0.17.0-rc3 build #2376: Pull request #490 synchronize by StuartHarris 6m 8s v0-17-0-rc3 v0-17-0-rc3 6m 8s View #490 View workflow file feat: NativeBridge for typed FFI without serialization build #2375: Pull request #491 synchronize by fraschm1998 1m 22s fraschm1998:feat/native-bridge fraschm1998:feat/native-bridge 1m 22s View #491 View workflow file feat: NativeBridge for typed FFI without serialization build #2374: Pull request #491 opened by fraschm1998 1m 39s fraschm1998:feat/native-bridge fraschm1998:feat/native-bridge 1m 39s View #491 View workflow file v0.17.0-rc3 build #2373: Pull request #490 synchronize by StuartHarris 7m 32s v0-17-0-rc3 v0-17-0-rc3 7m 32s View #490 View workflow file update to serde_qs v1.0, relaxes querystring encoding build #2372: Pull request #489 synchronize by StuartHarris 6m 24s serde-qs serde-qs 6m 24s View #489 View workflow file v0.17.0-rc3 build #2371: Pull request #490 synchronize by StuartHarris 6m 22s v0-17-0-rc3 v0-17-0-rc3 6m 22s View #490 View workflow file v0.17.0-rc3 build #2370: Pull request #490 opened by StuartHarris 10m 42s v0-17-0-rc3 v0-17-0-rc3 10m 42s View #490 View workflow file chore: update readme to reflect change to update signature build #2369: Commit c3699f0 pushed by StuartHarris 6m 48s master master 6m 48s View workflow file chore: update readme to reflect change to update signature pages #511: Commit c3699f0 pushed by StuartHarris 3m 43s master master 3m 43s View workflow file Merge pull request #488 from ccgauche/master pages #510: Commit a51ba68 pushed by StuartHarris 2m 17s master master 2m 17s View workflow file Merge pull request #488 from ccgauche/master build #2368: Commit a51ba68 pushed by StuartHarris 4m 59s master master 4m 59s View workflow file update to serde_qs v1.0, relaxes querystring encoding build #2367: Pull request #489 opened by StuartHarris 5m 44s serde-qs serde-qs 5m 44s View #489 View workflow file feat: Support passing App and Model object to construct the Core build #2366: Pull request #488 synchronize by ccgauche 4m 42s ccgauche:master ccgauche:master 4m 42s View #488 View workflow file feat: Support passing App and Model object to construct the Core build #2365: Pull request #488 opened by ccgauche Action required ccgauche:master ccgauche:master Action required View #488 View workflow file Merge pull request #452 from graemeasher/feature-simple-counter-macos… pages #509: Commit 433ec69 pushed by StuartHarris 2m 3s master master 2m 3s View workflow file Merge pull request #452 from graemeasher/feature-simple-counter-macos… build #2364: Commit 433ec69 pushed by StuartHarris 5m 19s master master 5m 19s View workflow file Simple Counter macOS example build #2363: Pull request #452 synchronize by StuartHarris 5m 25s graemeasher:feature-simple-counter-macos-example graemeasher:feature-simple-counter-macos-example 5m 25s View #452 View workflow file Simple Counter macOS example build #2362: Pull request #452 synchronize by StuartHarris 5m 18s graemeasher:feature-simple-counter-macos-example graemeasher:feature-simple-counter-macos-example 5m 18s View #452 View workflow file Merge pull request #479 from mgeisler/simplify-cat-fact-view pages #508: Commit b0cd437 pushed by StuartHarris 2m 5s master master 2m 5s View workflow file Merge pull request #479 from mgeisler/simplify-cat-fact-view build #2361: Commit b0cd437 pushed by StuartHarris 5m 22s master master 5m 22s View workflow file refactor: Simplify CatFacts::view build #2360: Pull request #479 synchronize by StuartHarris 5m 16s mgeisler:simplify-cat-fact-view mgeisler:simplify-cat-fact-view 5m 16s View #479 View workflow file Previous 1 2 3 4 5 &hellip; 46 47 Next You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fredbadger%2Fcrux%2Factions)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fredbadger%2Fcrux%2Factions)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Factions%2Findex&source=header-repo&source_repo=redbadger%2Fcrux)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[redbadger](/redbadger)
+/
+**[crux](/redbadger/crux)**
+Public
+
+* [Notifications](/login?return_to=%2Fredbadger%2Fcrux) You must be signed in to change notification settings
+* [Fork
+  103](/login?return_to=%2Fredbadger%2Fcrux)
+* [Star
+   2.5k](/login?return_to=%2Fredbadger%2Fcrux)
+
+* [Code](/redbadger/crux)
+* [Issues
+  15](/redbadger/crux/issues)
+* [Pull requests
+  3](/redbadger/crux/pulls)
+* [Discussions](/redbadger/crux/discussions)
+* [Actions](/redbadger/crux/actions)
+* [Projects](/redbadger/crux/projects)
+* [Security
+  0](/redbadger/crux/security)
+* [Insights](/redbadger/crux/pulse)
+
+Additional navigation options
+
+* [Code](/redbadger/crux)
+* [Issues](/redbadger/crux/issues)
+* [Pull requests](/redbadger/crux/pulls)
+* [Discussions](/redbadger/crux/discussions)
+* [Actions](/redbadger/crux/actions)
+* [Projects](/redbadger/crux/projects)
+* [Security](/redbadger/crux/security)
+* [Insights](/redbadger/crux/pulse)
+
+# Actions: redbadger/crux
+
+## Actions
+
+## All workflows All workflows Actions Loading... Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page.
+
+will be ignored since log searching is not yet available
+
+Showing runs from all workflows
+
+will be ignored since log searching is not yet available
+
+**1,092 workflow runs**
+
+**1,092 workflow runs**
+
+Event
+
+# Filter by Event
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching events.
+
+Status
+
+# Filter by Status
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching statuses.
+
+Branch
+
+# Filter by Branch
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching branches.
+
+Actor
+
+# Filter by Actor
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching users.
+
+[Reorganize Examples](/redbadger/crux/actions/runs/23394355698)
+
+examples
+#26:
+Pull request [#507](/redbadger/crux/pull/507)
+synchronize
+by
+[mhedgpeth](/mhedgpeth)
+
+8m 46s
+[michael/examples](/redbadger/crux/tree/refs/heads/michael/examples "michael/examples")
+
+[michael/examples](/redbadger/crux/tree/refs/heads/michael/examples "michael/examples")
+
+8m 46s
+
+* [View #507](/redbadger/crux/pull/507)
+* [View workflow file](/redbadger/crux/actions/runs/23394355698/workflow)
+
+[Reorganize Examples](/redbadger/crux/actions/runs/23394355697)
+
+build
+#2474:
+Pull request [#507](/redbadger/crux/pull/507)
+synchronize
+by
+[mhedgpeth](/mhedgpeth)
+
+2m 46s
+[michael/examples](/redbadger/crux/tree/refs/heads/michael/examples "michael/examples")
+
+[michael/examples](/redbadger/crux/tree/refs/heads/michael/examples "michael/examples")
+
+2m 46s
+
+* [View #507](/redbadger/crux/pull/507)
+* [View workflow file](/redbadger/crux/actions/runs/23394355697/workflow)
+
+[Reorganize Examples](/redbadger/crux/actions/runs/23394241968)
+
+build
+#2473:
+Pull request [#507](/redbadger/crux/pull/507)
+synchronize
+by
+[mhedgpeth](/mhedgpeth)
+
+2m 52s
+[michael/examples](/redbadger/crux/tree/refs/heads/michael/examples "michael/examples")
+
+[michael/examples](/redbadger/crux/tree/refs/heads/michael/examples "michael/examples")
+
+2m 52s
+
+* [View #507](/redbadger/crux/pull/507)
+* [View workflow file](/redbadger/crux/actions/runs/23394241968/workflow)
+
+[Reorganize Examples](/redbadger/crux/actions/runs/23394241958)
+
+examples
+#25:
+Pull request [#507](/redbadger/crux/pull/507)
+synchronize
+by
+[mhedgpeth](/mhedgpeth)
+
+8m 15s
+[michael/examples](/redbadger/crux/tree/refs/heads/michael/examples "michael/examples")
+
+[michael/examples](/redbadger/crux/tree/refs/heads/michael/examples "michael/examples")
+
+8m 15s
+
+* [View #507](/redbadger/crux/pull/507)
+* [View workflow file](/redbadger/crux/actions/runs/23394241958/workflow)
+
+[Reorganize Examples](/redbadger/crux/actions/runs/23394163167)
+
+examples
+#24:
+Pull request [#507](/redbadger/crux/pull/507)
+synchronize
+by
+[mhedgpeth](/mhedgpeth)
+
+5m 57s
+[michael/examples](/redbadger/crux/tree/refs/heads/michael/examples "michael/examples")
+
+[michael/examples](/redbadger/crux/tree/refs/heads/michael/examples "michael/examples")
+
+5m 57s
+
+* [View #507](/redbadger/crux/pull/507)
+* [View workflow file](/redbadger/crux/actions/runs/23394163167/workflow)
+
+[Reorganize Examples](/redbadger/crux/actions/runs/23394163163)
+
+build
+#2472:
+Pull request [#507](/redbadger/crux/pull/507)
+synchronize
+by
+[mhedgpeth](/mhedgpeth)
+
+3m 5s
+[michael/examples](/redbadger/crux/tree/refs/heads/michael/examples "michael/examples")
+
+[michael/examples](/redbadger/crux/tree/refs/heads/michael/examples "michael/examples")
+
+3m 5s
+
+* [View #507](/redbadger/crux/pull/507)
+* [View workflow file](/redbadger/crux/actions/runs/23394163163/workflow)
+
+[Reorganize Examples](/redbadger/crux/actions/runs/23392632709)
+
+build
+#2471:
+Pull request [#507](/redbadger/crux/pull/507)
+synchronize
+by
+[mhedgpeth](/mhedgpeth)
+
+3m 19s
+[michael/examples](/redbadger/crux/tree/refs/heads/michael/examples "michael/examples")
+
+[michael/examples](/redbadger/crux/tree/refs/heads/michael/examples "michael/examples")
+
+3m 19s
+
+* [View #507](/redbadger/crux/pull/507)
+* [View workflow file](/redbadger/crux/actions/runs/23392632709/workflow)
+
+[Reorganize Examples](/redbadger/crux/actions/runs/23392632701)
+
+examples
+#23:
+Pull request [#507](/redbadger/crux/pull/507)
+synchronize
+by
+[mhedgpeth](/mhedgpeth)
+
+8m 20s
+[michael/examples](/redbadger/crux/tree/refs/heads/michael/examples "michael/examples")
+
+[michael/examples](/redbadger/crux/tree/refs/heads/michael/examples "michael/examples")
+
+8m 20s
+
+* [View #507](/redbadger/crux/pull/507)
+* [View workflow file](/redbadger/crux/actions/runs/23392632701/workflow)
+
+[Reorganize Examples](/redbadger/crux/actions/runs/23391283681)
+
+examples
+#22:
+Pull request [#507](/redbadger/crux/pull/507)
+synchronize
+by
+[mhedgpeth](/mhedgpeth)
+
+9m 16s
+[michael/examples](/redbadger/crux/tree/refs/heads/michael/examples "michael/examples")
+
+[michael/examples](/redbadger/crux/tree/refs/heads/michael/examples "michael/examples")
+
+9m 16s
+
+* [View #507](/redbadger/crux/pull/507)
+* [View workflow file](/redbadger/crux/actions/runs/23391283681/workflow)
+
+[Reorganize Examples](/redbadger/crux/actions/runs/23391283672)
+
+build
+#2470:
+Pull request [#507](/redbadger/crux/pull/507)
+synchronize
+by
+[mhedgpeth](/mhedgpeth)
+
+3m 1s
+[michael/examples](/redbadger/crux/tree/refs/heads/michael/examples "michael/examples")
+
+[michael/examples](/redbadger/crux/tree/refs/heads/michael/examples "michael/examples")
+
+3m 1s
+
+* [View #507](/redbadger/crux/pull/507)
+* [View workflow file](/redbadger/crux/actions/runs/23391283672/workflow)
+
+[Reorganize Examples](/redbadger/crux/actions/runs/23391174494)
+
+build
+#2469:
+Pull request [#507](/redbadger/crux/pull/507)
+synchronize
+by
+[mhedgpeth](/mhedgpeth)
+
+2m 51s
+[michael/examples](/redbadger/crux/tree/refs/heads/michael/examples "michael/examples")
+
+[michael/examples](/redbadger/crux/tree/refs/heads/michael/examples "michael/examples")
+
+2m 51s
+
+* [View #507](/redbadger/crux/pull/507)
+* [View workflow file](/redbadger/crux/actions/runs/23391174494/workflow)
+
+[Reorganize Examples](/redbadger/crux/actions/runs/23391174489)
+
+examples
+#21:
+Pull request [#507](/redbadger/crux/pull/507)
+synchronize
+by
+[mhedgpeth](/mhedgpeth)
+
+7m 6s
+[michael/examples](/redbadger/crux/tree/refs/heads/michael/examples "michael/examples")
+
+[michael/examples](/redbadger/crux/tree/refs/heads/michael/examples "michael/examples")
+
+7m 6s
+
+* [View #507](/redbadger/crux/pull/507)
+* [View workflow file](/redbadger/crux/actions/runs/23391174489/workflow)
+
+[Reorganize Examples](/redbadger/crux/actions/runs/23391170079)
+
+examples
+#20:
+Pull request [#507](/redbadger/crux/pull/507)
+synchronize
+by
+[mhedgpeth](/mhedgpeth)
+
+19s
+[michael/examples](/redbadger/crux/tree/refs/heads/michael/examples "michael/examples")
+
+[michael/examples](/redbadger/crux/tree/refs/heads/michael/examples "michael/examples")
+
+19s
+
+* [View #507](/redbadger/crux/pull/507)
+* [View workflow file](/redbadger/crux/actions/runs/23391170079/workflow)
+
+[Reorganize Examples](/redbadger/crux/actions/runs/23391170078)
+
+build
+#2468:
+Pull request [#507](/redbadger/crux/pull/507)
+synchronize
+by
+[mhedgpeth](/mhedgpeth)
+
+34s
+[michael/examples](/redbadger/crux/tree/refs/heads/michael/examples "michael/examples")
+
+[michael/examples](/redbadger/crux/tree/refs/heads/michael/examples "michael/examples")
+
+34s
+
+* [View #507](/redbadger/crux/pull/507)
+* [View workflow file](/redbadger/crux/actions/runs/23391170078/workflow)
+
+[Reorganize Examples](/redbadger/crux/actions/runs/23391103989)
+
+build
+#2467:
+Pull request [#507](/redbadger/crux/pull/507)
+synchronize
+by
+[mhedgpeth](/mhedgpeth)
+
+2m 9s
+[michael/examples](/redbadger/crux/tree/refs/heads/michael/examples "michael/examples")
+
+[michael/examples](/redbadger/crux/tree/refs/heads/michael/examples "michael/examples")
+
+2m 9s
+
+* [View #507](/redbadger/crux/pull/507)
+* [View workflow file](/redbadger/crux/actions/runs/23391103989/workflow)
+
+[Reorganize Examples](/redbadger/crux/actions/runs/23391103987)
+
+examples
+#19:
+Pull request [#507](/redbadger/crux/pull/507)
+synchronize
+by
+[mhedgpeth](/mhedgpeth)
+
+5m 5s
+[michael/examples](/redbadger/crux/tree/refs/heads/michael/examples "michael/examples")
+
+[michael/examples](/redbadger/crux/tree/refs/heads/michael

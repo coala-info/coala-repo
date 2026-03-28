@@ -1,1 +1,231 @@
-GitHub - cmayer/BaitFisher-package: The BaitFisher-package is a software package for designing hybrid enrichment probes. For more information see: Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} cmayer / BaitFisher-package Public Notifications You must be signed in to change notification settings Fork 7 Star 13 The BaitFisher-package is a software package for designing hybrid enrichment probes. For more information see: cmayer.github.io/BaitFisher-package/ License GPL-3.0 license 13 stars 7 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 3 Pull requests 0 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights cmayer/BaitFisher-package master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 27 Commits 27 Commits CAligner CAligner CFile CFile Documentation Documentation Example Example fast-dynamic-bitset fast-dynamic-bitset scoring-matrices scoring-matrices tclap tclap .DS_Store .DS_Store CBaitRecord.h CBaitRecord.h CBlastParser.h CBlastParser.h CDistance_matrix.h CDistance_matrix.h CDnaString2.h CDnaString2.h CHistogram.h CHistogram.h CRequiredTaxon.h CRequiredTaxon.h CSeqNameList.h CSeqNameList.h CSequence_Mol2_1.h CSequence_Mol2_1.h CSequences2.h CSequences2.h CSplit2.h CSplit2.h CTaxonNamesDictionary.h CTaxonNamesDictionary.h Csequence_cluster_and_center_sequence.cpp Csequence_cluster_and_center_sequence.cpp Csequence_cluster_and_center_sequence.h Csequence_cluster_and_center_sequence.h Ctriple.h Ctriple.h DEBUG_STUFF.h DEBUG_STUFF.h GFF-class.h GFF-class.h GFF-collection.h GFF-collection.h LICENSE.GPLv3.txt LICENSE.GPLv3.txt LICENSE.md LICENSE.md LICENSE_AND_COPYRIGHT_as_found_in_each_source_file LICENSE_AND_COPYRIGHT_as_found_in_each_source_file README.md README.md VERSION_HISTORY.md VERSION_HISTORY.md bait-filter.cpp bait-filter.cpp bait-fisher-helper.cpp bait-fisher-helper.cpp bait-fisher-helper.h bait-fisher-helper.h bait-fisher.cpp bait-fisher.cpp basic-DNA-RNA-AA-routines.h basic-DNA-RNA-AA-routines.h easystring.h easystring.h fast-realloc-vector.h fast-realloc-vector.h faststring2.h faststring2.h global-types-and-parameters.cpp global-types-and-parameters.cpp global-types-and-parameters.h global-types-and-parameters.h makefile makefile makefile_win makefile_win mydir-unix.cpp mydir-unix.cpp mydir-unix.h mydir-unix.h primefactors.h primefactors.h print_container.h print_container.h range_functions.h range_functions.h simpledna_N0.mat simpledna_N0.mat statistic_functions.h statistic_functions.h typedefs.h typedefs.h View all files Repository files navigation README GPL-3.0 license BaitFisher-package: Design DNA hybrid enrichment baits Table of contents: About the BaitFisher package Documentation Compiling and installing BaitFisher and BaitFilter System requirements: Quickstart Frequently aksed questions About the BaitFisher package The BaitFisher package consists of two programs: BaitFisher and BaitFilter. BaitFisher was been designed to construct hybrid enrichment baits from multiple sequence alignments (MSAs) or annotated features in MSAs. The main goal of BaitFisher is to avoid redundancy in the construction of baits by designing fewer baits in conserved regions of the MSAs and designing more baits in variable regions. This makes use of the fact that hybrid enrichment baits can differ to some extends from the target region, which they should capture in the enrichment procedure. By specifying the allowed distance between baits and the sequences in the MSAs the user can control the allowed bait-to-target distance and the degree of reduction in the number of baits that are designed. See the BaitFisher paper for details. BaitFilter was designed (i) to determine whether baits bind unspecifically to a reference genome, (ii) to filter baits that only have partial length matches to a reference genome, (iii) to determine the optimal bait region in a MSA and to convert baits to a format that can be uploaded at a bait constructing company. The optimal bait region can be the most conserved region in the MSA or the region with the highest number of sequences without gaps or ambiguous nucleotides. Since performance was one of the major design goals, the BaitFisher and BaitFilter programs are both written in C++. Software development: Christoph Mayer, Forschungsmuseum Alexander Koenig, 53113 Bonn, Germany Main contributors: The main contributors to the development of the BaitFisher software are: Christoph Mayer (*), Oliver Niehuis (**,*), Manuela Sann (**,*) (*): Forschungsmuseum Alexander Koenig, 53113 Bonn, Germany (**): Institut für Biologie I (Zoologie), Albert-Ludwigs-Universität Freiburg, Germany When using BaitFisher please cite: Mayer, C., Sann, M., Donath, A., Meixner, M., Podsiadlowski, L., Peters, R.S., Petersen, M., Meusemann, K., Liere, K., Wägele, J.-W., Misof, B., Bleidorn, C., Ohl, M., Niehuis, O., 2016. BaitFisher: A Software Package for Multispecies Target DNA Enrichment Probe Design. Mol. Biol. Evol. doi:10.1093/molbev/msw056 Documentation A full manual for the BaitFisher package as PDF can be found in the "Documentation" folder. Furthermore, example analyses can be found in the Example folder. Online help for the BaitFisher and BaitFilter programs can be obtained by called he programs as follows: PATH/BaitFisher -h PATH/BaitFileter -h Compiling and installing BaitFisher and BaitFilter System requirements: BaitFisher can be compiled on all platforms, which provide a C++ compiler that includes the following system header files: unistd.h, sys/stat.h, sys/types.h, dirent.h. These header files are standard header files on all unix systems such as Linux and Mac Os X. I also managed to compile BaitFisher and BaitFilter on Windows using the Mingw compiler ( www.mingw.org ). Compiling BaitFisher and BaitFilter: Please, unpack the BaitFisher archive you downloaded. On the command line enter the BaitFisher-package-master directory. Now type "make" on the command line. This compiles the BaitFisher as well as the BaitFilter program. The executables of these to programs care called: BaitFisher-v1.2.7 and BaitFilter-v1.0.5. They can be copied on your computer to any place you like. To use these executables they have to be addressed with its full path, or they have to be placed somewhere where in your system path. Quickstart More content will me added soon. For details please see the manual in the "Documentation" folder. Frequently asked questions BaitFisher does not design baits for all input files or all excised features. What is the reason for this? BaitFisher does not design baits for input files or excised features, which cannot host a tiling design of the required length. How can I determine the input files or excised features for which no baits have been designed? There are different reasons and therefore different messages why no baits have been designed for a given input file or excised feature. A full list of the messages written to the screen (i.e. to standard output) and the underlying problem are listed here: Message: NOTICE: Skipping alignment since it is too short. Alignment length: the-number Reason: In this case the alignment is shorter than the requested tiling design. Solution: If the size of the requested tiling design is decreased, it might be possible to design baits for this alignment. Be sure that decreasing the size of the tiling design makes sense. Message 1: ALERT: Skipping feature-name feature since its overlap with the transcript is too short. Length of over
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fcmayer%2FBaitFisher-package)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fcmayer%2FBaitFisher-package)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=cmayer%2FBaitFisher-package)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[cmayer](/cmayer)
+/
+**[BaitFisher-package](/cmayer/BaitFisher-package)**
+Public
+
+* [Notifications](/login?return_to=%2Fcmayer%2FBaitFisher-package) You must be signed in to change notification settings
+* [Fork
+  7](/login?return_to=%2Fcmayer%2FBaitFisher-package)
+* [Star
+   13](/login?return_to=%2Fcmayer%2FBaitFisher-package)
+
+* [Code](/cmayer/BaitFisher-package)
+* [Issues
+  3](/cmayer/BaitFisher-package/issues)
+* [Pull requests
+  0](/cmayer/BaitFisher-package/pulls)
+* [Actions](/cmayer/BaitFisher-package/actions)
+* [Projects](/cmayer/BaitFisher-package/projects)
+* [Security
+  0](/cmayer/BaitFisher-package/security)
+* [Insights](/cmayer/BaitFisher-package/pulse)
+
+Additional navigation options
+
+* [Code](/cmayer/BaitFisher-package)
+* [Issues](/cmayer/BaitFisher-package/issues)
+* [Pull requests](/cmayer/BaitFisher-package/pulls)
+* [Actions](/cmayer/BaitFisher-package/actions)
+* [Projects](/cmayer/BaitFisher-package/projects)
+* [Security](/cmayer/BaitFisher-package/security)
+* [Insights](/cmayer/BaitFisher-package/pulse)
+
+# cmayer/BaitFisher-package
+
+master
+
+[Branches](/cmayer/BaitFisher-package/branches)[Tags](/cmayer/BaitFisher-package/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[27 Commits](/cmayer/BaitFisher-package/commits/master/)   27 Commits | | |
+| [CAligner](/cmayer/BaitFisher-package/tree/master/CAligner "CAligner") | | [CAligner](/cmayer/BaitFisher-package/tree/master/CAligner "CAligner") |  |  |
+| [CFile](/cmayer/BaitFisher-package/tree/master/CFile "CFile") | | [CFile](/cmayer/BaitFisher-package/tree/master/CFile "CFile") |  |  |
+| [Documentation](/cmayer/BaitFisher-package/tree/master/Documentation "Documentation") | | [Documentation](/cmayer/BaitFisher-package/tree/master/Documentation "Documentation") |  |  |
+| [Example](/cmayer/BaitFisher-package/tree/master/Example "Example") | | [Example](/cmayer/BaitFisher-package/tree/master/Example "Example") |  |  |
+| [fast-dynamic-bitset](/cmayer/BaitFisher-package/tree/master/fast-dynamic-bitset "fast-dynamic-bitset") | | [fast-dynamic-bitset](/cmayer/BaitFisher-package/tree/master/fast-dynamic-bitset "fast-dynamic-bitset") |  |  |
+| [scoring-matrices](/cmayer/BaitFisher-package/tree/master/scoring-matrices "scoring-matrices") | | [scoring-matrices](/cmayer/BaitFisher-package/tree/master/scoring-matrices "scoring-matrices") |  |  |
+| [tclap](/cmayer/BaitFisher-package/tree/master/tclap "tclap") | | [tclap](/cmayer/BaitFisher-package/tree/master/tclap "tclap") |  |  |
+| [.DS\_Store](/cmayer/BaitFisher-package/blob/master/.DS_Store ".DS_Store") | | [.DS\_Store](/cmayer/BaitFisher-package/blob/master/.DS_Store ".DS_Store") |  |  |
+| [CBaitRecord.h](/cmayer/BaitFisher-package/blob/master/CBaitRecord.h "CBaitRecord.h") | | [CBaitRecord.h](/cmayer/BaitFisher-package/blob/master/CBaitRecord.h "CBaitRecord.h") |  |  |
+| [CBlastParser.h](/cmayer/BaitFisher-package/blob/master/CBlastParser.h "CBlastParser.h") | | [CBlastParser.h](/cmayer/BaitFisher-package/blob/master/CBlastParser.h "CBlastParser.h") |  |  |
+| [CDistance\_matrix.h](/cmayer/BaitFisher-package/blob/master/CDistance_matrix.h "CDistance_matrix.h") | | [CDistance\_matrix.h](/cmayer/BaitFisher-package/blob/master/CDistance_matrix.h "CDistance_matrix.h") |  |  |
+| [CDnaString2.h](/cmayer/BaitFisher-package/blob/master/CDnaString2.h "CDnaString2.h") | | [CDnaString2.h](/cmayer/BaitFisher-package/blob/master/CDnaString2.h "CDnaString2.h") |  |  |
+| [CHistogram.h](/cmayer/BaitFisher-package/blob/master/CHistogram.h "CHistogram.h") | | [CHistogram.h](/cmayer/BaitFisher-package/blob/master/CHistogram.h "CHistogram.h") |  |  |
+| [CRequiredTaxon.h](/cmayer/BaitFisher-package/blob/master/CRequiredTaxon.h "CRequiredTaxon.h") | | [CRequiredTaxon.h](/cmayer/BaitFisher-package/blob/master/CRequiredTaxon.h "CRequiredTaxon.h") |  |  |
+| [CSeqNameList.h](/cmayer/BaitFisher-package/blob/master/CSeqNameList.h "CSeqNameList.h") | | [CSeqNameList.h](/cmayer/BaitFisher-package/blob/master/CSeqNameList.h "CSeqNameList.h") |  |  |
+| [CSequence\_Mol2\_1.h](/cmayer/BaitFisher-package/blob/master/CSequence_Mol2_1.h "CSequence_Mol2_1.h") | | [CSequence\_Mol2\_1.h](/cmayer/BaitFisher-package/blob/master/CSequence_Mol2_1.h "CSequence_Mol2_1.h") |  |  |
+| [CSequences2.h](/cmayer/BaitFisher-package/blob/master/CSequences2.h "CSequences2.h") | | [CSequences2.h](/cmayer/BaitFisher-package/blob/master/CSequences2.h "CSequences2.h") |  |  |
+| [CSplit2.h](/cmayer/BaitFisher-package/blob/master/CSplit2.h "CSplit2.h") | | [CSplit2.h](/cmayer/BaitFisher-package/blob/master/CSplit2.h "CSplit2.h") |  |  |
+| [CTaxonNamesDictionary.h](/cmayer/BaitFisher-package/blob/master/CTaxonNamesDictionary.h "CTaxonNamesDictionary.h") | | [CTaxonNamesDictionary.h](/cmayer/BaitFisher-package/blob/master/CTaxonNamesDictionary.h "CTaxonNamesDictionary.h") |  |  |
+| [Csequence\_cluster\_and\_center\_sequence.cpp](/cmayer/BaitFisher-package/blob/master/Csequence_cluster_and_center_sequence.cpp "Csequence_cluster_and_center_sequence.cpp") | | [Csequence\_cluster\_and\_center\_sequence.cpp](/cmayer/BaitFisher-package/blob/master/Csequence_cluster_and_center_sequence.cpp "Csequence_cluster_and_center_sequence.cpp") |  |  |
+| [Csequence\_cluster\_and\_center\_sequence.h](/cmayer/BaitFisher-package/blob/master/Csequence_cluster_and_center_sequence.h "Csequence_cluster_and_center_sequence.h") | | [Csequence\_cluster\_and\_center\_sequence.h](/cmayer/BaitFisher-package/blob/master/Csequence_cluster_and_center_sequence.h "Csequence_cluster_and_center_sequence.h") |  |  |
+| [Ctriple.h](/cmayer/BaitFisher-package/blob/master/Ctriple.h "Ctriple.h") | | [Ctriple.h](/cmayer/BaitFisher-package/blob/master/Ctriple.h "Ctriple.h") |  |  |
+| [DEBUG\_STUFF.h](/cmayer/BaitFisher-package/blob/master/DEBUG_STUFF.h "DEBUG_STUFF.h") | | [DEBUG\_STUFF.h](/cmayer/BaitFisher-package/blob/master/DEBUG_STUFF.h "DEBUG_STUFF.h") |  |  |
+| [GFF-class.h](/cmayer/BaitFisher-package/blob/master/GFF-class.h "GFF-class.h") | | [GFF-class.h](/cmayer/BaitFisher-package/blob/master/GFF-class.h "GFF-class.h") |  |  |
+| [GFF-collection.h](/cmayer/BaitFisher-package/blob/master/GFF-collection.h "GFF-collection.h") | | [GFF-collection.h](/cmayer/BaitFisher-package/blob/master/GFF-collection.h "GFF-collection.h") |  |  |
+| [LICENSE.GPLv3.txt](/cmayer/BaitFisher-package/blob/master/LICENSE.GPLv3.txt "LICENSE.GPLv3.txt") | | [LICENSE.GPLv3.txt](/cmayer/BaitFisher-package/blob/master/LICENSE.GPLv3.txt "LICENSE.GPLv3.txt") |  |  |
+| [LICENSE.md](/cmayer/BaitFisher-package/blob/master/LICENSE.md "LICENSE.md") | | [LICENSE.md](/cmayer/BaitFisher-package/blob/master/LICENSE.md "LICENSE.md") |  |  |
+| [LICENSE\_AND\_COPYRIGHT\_as\_found\_in\_each\_source\_file](/cmayer/BaitFisher-package/blob/master/LICENSE_AND_COPYRIGHT_as_found_in_each_source_file "LICENSE_AND_COPYRIGHT_as_found_in_each_source_file") | | [LICENSE\_AND\_COPYRIGHT\_as\_found\_in\_each\_source\_file](/cmayer/BaitFisher-package/blob/master/LICENSE_AND_COPYRIGHT_as_found_in_each_source_file "LICENSE_AND_COPYRIGHT_as_found_in_each_source_file") |  |  |
+| [README.md](/cmayer/BaitFisher-package/blob/master/README.md "README.md") | | [README.md](/cmayer/BaitFisher-package/blob/master/README.md "README.md") |  |  |
+| [VERSION\_HISTORY.md](/cmayer/BaitFisher-package/blob/master/VERSION_HISTORY.md "VERSION_HISTORY.md") | | [VERSION\_HISTORY.md](/cmayer/BaitFisher-package/blob/master/VERSION_HISTORY.md "VERSION_HISTORY.md") |  |  |
+| [bait-filter.cpp](/cmayer/BaitFisher-package/blob/master/bait-filter.cpp "bait-filter.cpp") | | [bait-filter.cpp](/cmayer/BaitFisher-package/blob/master/bait-filter.cpp "bait-filter.cpp") |  |  |
+| [bait-fisher-helper.cpp](/cmayer/BaitFisher-package/blob/master/bait-fisher-helper.cpp "bait-fisher-helper.cpp") | | [bait-fisher-helper.cpp](/cmayer/BaitFisher-package/blob/master/bait-fisher-helper.cpp "bait-fisher-helper.cpp") |  |  |
+| [bait-fisher-helper.h](/cmayer/BaitFisher-package/blob/master/bait-fisher-helper.h "bait-fisher-helper.h") | | [bait-fisher-helper.h](/cmayer/BaitFisher-package/blob/master/bait-fisher-helper.h "bait-fisher-helper.h") |  |  |
+| [bait-fisher.cpp](/cmayer/BaitFisher-package/blob/master/bait-fisher.cpp "bait-fisher.cpp") | | [bait-fisher.cpp](/cmayer/BaitFisher-package/blob/master/bait-fisher.cpp "bait-fisher.cpp") |  |  |
+| [basic-DNA-RNA-AA-routines.h](/cmayer/BaitFisher-package/blob/master/basic-DNA-RNA-AA-routines.h "basic-DNA-RNA-AA-routines.h") | | [basic-DNA-RNA-AA-routines.h](/cmayer/BaitFisher-package/blob/master/basic-DNA-RNA-AA-routines.h "basic-DNA-RNA-AA-routines.h") |  |  |
+| [easystring.h](/cmayer/BaitFisher-package/blob/master/easystring.h "easystring.h") | | [easystring.h](/cmayer/BaitFisher-package/blob/master/easystring.h "easystring.h") |  |  |
+| [fast-realloc-vector.h](/cmayer/BaitFisher-package/blob/master/fast-realloc-vector.h "fast-realloc-vector.h") | | [fast-realloc-vector.h](/cmayer/BaitFisher-package/blob/master/fast-realloc-vector.h "fast-realloc-vector.h") |  |  |
+| [faststring2.h](/cmayer/BaitFisher-package/blob/master/faststring2.h "faststring2.h") | | [faststring2.h](/cmayer/BaitFisher-pa

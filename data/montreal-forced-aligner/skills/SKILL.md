@@ -1,6 +1,6 @@
 ---
 name: montreal-forced-aligner
-description: The Montreal Forced Aligner automates the alignment of speech audio with transcripts to provide precise word and phoneme timing information. Use when user asks to align audio to transcripts, validate speech datasets, download pre-trained acoustic models, identify out-of-vocabulary words, or generate transcriptions.
+description: The Montreal Forced Aligner synchronizes audio files with text transcripts to produce precise word-level and phone-level timestamps. Use when user asks to align speech corpora, validate dataset consistency, manage acoustic models, or generate pronunciation dictionaries using grapheme-to-phoneme conversion.
 homepage: https://github.com/MontrealCorpusTools/Montreal-Forced-Aligner
 ---
 
@@ -9,46 +9,51 @@ homepage: https://github.com/MontrealCorpusTools/Montreal-Forced-Aligner
 
 ## Overview
 
-The Montreal Forced Aligner (MFA) is a command-line utility designed to automate the process of aligning speech audio with its corresponding transcript. By utilizing the Kaldi ASR toolkit, it provides highly accurate timing information for words and individual phonemes. This skill enables the user to validate datasets, download pre-trained models, identify out-of-vocabulary (OOV) words, and execute alignment tasks across various languages.
+The Montreal Forced Aligner (MFA) is a high-performance command-line utility used to synchronize audio files with their corresponding text transcripts. Built on the Kaldi ASR toolkit, it produces precise word-level and phone-level boundaries in TextGrid format. Use this skill to automate the alignment of large speech corpora, validate dataset consistency, and manage pretrained acoustic models and pronunciation dictionaries.
 
-## Core CLI Workflows
+## Common CLI Patterns
 
-### 1. Environment Setup and Verification
-Before running alignment, ensure the environment is correctly configured.
-- **Check version**: `mfa version`
+### Model Management
+Before aligning, you must obtain the necessary language resources.
 - **List available models**: `mfa model list acoustic`
-- **Download a pre-trained model**: `mfa model download acoustic english_mfa`
+- **Download a pretrained model**: `mfa model download acoustic english_mfa`
 - **Download a dictionary**: `mfa model download dictionary english_mfa`
 
-### 2. Validating a Corpus
-Always validate your dataset before attempting alignment to catch formatting errors or missing pronunciations.
-- **Basic validation**: `mfa validate <corpus_directory> <dictionary_path> <acoustic_model_path>`
-- **Identify missing words**: Use `mfa find_oovs <corpus_directory> <dictionary_path> <output_path>` to generate a list of words not present in the dictionary.
+### Validation
+Always validate your corpus before starting a long alignment process to identify missing files, OOV (Out-Of-Vocabulary) words, or audio-transcript mismatches.
+- **Basic validation**: `mfa validate /path/to/corpus /path/to/dictionary.dict english_mfa`
+- **Validation with OOV output**: `mfa validate /path/to/corpus /path/to/dictionary.dict english_mfa --output_oovs /path/to/oovs.txt`
 
-### 3. Performing Forced Alignment
-The primary command for generating TextGrids from audio and transcripts.
-- **Standard alignment**:
-  `mfa align <corpus_directory> <dictionary_path> <acoustic_model_path> <output_directory>`
-- **Resume/Clean start**: Use the `--clean` flag to reset the temporary directory and metadata if you have modified the corpus or dictionary since the last run.
-- **Parallelization**: Use `--num_jobs <number>` to specify the number of CPU cores to use (default is usually all available).
+### Alignment
+The core command for generating TextGrids.
+- **Standard alignment**: `mfa align /path/to/corpus /path/to/dictionary.dict english_mfa /path/to/output_directory`
+- **Alignment with specific number of jobs**: `mfa align /path/to/corpus /path/to/dictionary.dict english_mfa /path/to/output_directory -j 8`
+- **Resume a failed alignment**: `mfa align /path/to/corpus /path/to/dictionary.dict english_mfa /path/to/output_directory --clean false`
 
-### 4. Advanced Features
-- **Grapheme-to-Phoneme (G2P)**: Generate pronunciations for OOV words using a G2P model.
-  `mfa g2p <g2p_model_path> <input_path> <output_path>`
-- **Transcription**: If you have audio but no transcripts, use a pre-trained model to generate them.
-  `mfa transcribe <corpus_directory> <dictionary_path> <acoustic_model_path> <output_directory>`
-- **Whisper Integration**: For newer versions, MFA supports Whisper-based transcription.
-  `mfa transcribe_whisper <corpus_directory> <output_directory>`
+### G2P (Grapheme-to-Phoneme)
+Generate pronunciation dictionaries for words not found in your existing dictionary.
+- **Generate dictionary**: `mfa g2p /path/to/oov_list.txt english_mfa_g2p /path/to/output_dictionary.dict`
 
 ## Expert Tips and Best Practices
 
-- **Audio Format**: Ensure audio is mono and sampled at 16kHz for best results with most pre-trained models. MFA can downsample on the fly, but pre-processing saves time.
-- **Dictionary Management**: If `mfa validate` reports many OOV words, use the `mfa g2p` command to predict pronunciations and append them to your dictionary file.
-- **Handling OOV Tokens**: Use the `--ignore_oovs` flag during alignment or transcription if you want the process to skip tokens that are not in the dictionary rather than failing or using a generic `<unk>` tag.
-- **Fine-tuning**: If alignment quality is low, consider using the `mfa train_acoustic` command to adapt a model specifically to your speakers or recording conditions.
-- **Temporary Files**: MFA creates large temporary files in `~/Documents/MFA`. If you run out of disk space, use `mfa configure --temp_directory <path>` to move the cache to a larger drive.
+- **Transcripts**: Ensure transcripts are plain text. Remove punctuation and normalize numbers (e.g., "10" to "ten") unless the dictionary specifically supports them.
+- **Audio Format**: Use 16kHz or 44.1kHz mono WAV files for best results. MFA can handle other formats but converts them internally, which increases processing time.
+- **The `--clean` Flag**: If you encounter database errors or unexpected behavior, use the `--clean` flag to wipe the temporary directory and start fresh.
+- **Speaker Adaptation**: For better precision on long recordings of a single speaker, MFA automatically performs speaker adaptation (SAT). Ensure your corpus directory is structured by speaker (e.g., `corpus/speaker_id/file.wav`) to leverage this.
+- **Handling OOV Words**: If validation shows many OOV words, use the `g2p` command to generate pronunciations rather than manually guessing, as this maintains consistency with the acoustic model's phone set.
+- **Database Management**: MFA uses a backend database (PostgreSQL). If running in a restricted environment like Docker, ensure the server is initialized using `mfa server init` before attempting alignment.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| mfa | Download an acoustic model for Montreal Forced Aligner. |
+| montreal-forced-aligner_mfa | Validate the alignment files for a corpus. |
+| train_acoustic | Train an acoustic model. |
 
 ## Reference documentation
-- [Montreal Forced Aligner README](./references/github_com_MontrealCorpusTools_Montreal-Forced-Aligner.md)
-- [MFA Commit History (Functional Updates)](./references/github_com_MontrealCorpusTools_Montreal-Forced-Aligner_commits_main.md)
-- [MFA Issues (Troubleshooting)](./references/github_com_MontrealCorpusTools_Montreal-Forced-Aligner_issues.md)
+- [Montreal Forced Aligner README](./references/github_com_MontrealCorpusTools_Montreal-Forced-Aligner_blob_main_README.md)
+- [MFA Documentation Home](./references/montrealcorpustools_github_io_Montreal-Forced-Aligner.md)
+- [MFA Docker Configuration](./references/github_com_MontrealCorpusTools_Montreal-Forced-Aligner_blob_main_Dockerfile.md)

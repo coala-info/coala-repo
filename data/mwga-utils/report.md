@@ -83,3 +83,6 @@ Compute a series of statistics on a MAF file:
       -h --help        Show this screen.
 ```
 
+
+## Metadata
+- **Skill**: generated

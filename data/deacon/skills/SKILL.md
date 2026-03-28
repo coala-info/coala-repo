@@ -1,6 +1,6 @@
 ---
 name: deacon
-description: Deacon is a high-performance bioinformatics tool for the rapid classification, extraction, or depletion of DNA sequences using SIMD-accelerated minimizer comparisons. Use when user asks to classify DNA sequences without alignment, remove host contamination from metagenomic datasets, or search for specific target sequences within large genomic catalogs.
+description: Deacon is a high-performance bioinformatics tool used for the rapid classification, searching, and filtering of DNA sequences using SIMD-accelerated minimizer comparison. Use when user asks to build or fetch sequence indexes, perform host depletion, search for matching reads, or filter paired-end sequencing data.
 homepage: https://github.com/bede/deacon
 ---
 
@@ -8,77 +8,80 @@ homepage: https://github.com/bede/deacon
 # deacon
 
 ## Overview
-Deacon is a high-performance bioinformatics tool designed for the rapid classification of DNA sequences without the need for full alignment. By utilizing SIMD-accelerated minimizer comparisons, it can process gigabases of sequence data per second. Its primary function is to either extract sequences that match a reference index (search mode) or filter them out (deplete mode). This makes it an essential tool for "cleaning" metagenomic datasets by removing host contamination or identifying specific targets within massive sequence catalogs.
 
-## Installation
-Deacon can be installed via Conda or built from source using Cargo:
+Deacon is a high-performance bioinformatics tool designed for the rapid classification and filtering of DNA sequences. It utilizes SIMD-accelerated minimizer comparison to match input reads against a query index. It operates in two primary modes: **search mode** (emitting matching sequences) and **deplete mode** (emitting sequences that do not match). Its efficiency makes it suitable for processing terabase-scale datasets on standard hardware, providing a faster alternative to traditional alignment-based filtering.
 
-```bash
-# Via Conda
-conda install -c bioconda deacon
+## Core Workflows
 
-# Via Cargo (requires Rust 1.88+)
-RUSTFLAGS="-C target-cpu=native" cargo install deacon
-```
+### 1. Index Management
+Before filtering, you must either build an index from a reference FASTA or fetch a pre-built one.
 
-## Indexing
-Before filtering, you must either build a custom index or fetch a pre-built one.
+*   **Fetch Pre-built Index**: Downloads validated indexes (e.g., the human pangenome).
+    ```bash
+    deacon index fetch panhuman-1
+    ```
+*   **Build Custom Index**: Create an index from your own reference sequences.
+    ```bash
+    deacon index build reference.fa > reference.idx
+    ```
+*   **Combine Indexes**: Merge multiple indexes into one.
+    ```bash
+    deacon index union index1.idx index2.idx > combined.idx
+    ```
 
-### Fetching Pre-built Indexes
-Deacon provides validated pangenome indexes for common hosts:
-- `panhuman-1`: Human pangenome (HPRC + CHM13 + GRCh38)
-- `panmouse-1`: Mouse genome (GRCm39)
+### 2. Sequence Filtering
+Filtering is the primary operation for search or depletion.
 
-```bash
-deacon index fetch panhuman-1
-```
+*   **Host Depletion (Deplete Mode)**: Remove sequences matching the index (e.g., removing human reads).
+    ```bash
+    deacon filter -d reference.idx input.fq -o clean.fq
+    ```
+*   **Sequence Search (Search Mode)**: Keep only sequences matching the index.
+    ```bash
+    deacon filter reference.idx input.fq > matches.fq
+    ```
+*   **Paired-End Filtering**: Process R1 and R2 files simultaneously.
+    ```bash
+    deacon filter -d reference.idx r1.fq.gz r2.fq.gz -o clean.r1.fq.gz -O clean.r2.fq.gz
+    ```
 
-### Building Custom Indexes
-To search for specific genes or genomes, build an index from a FASTA file:
-```bash
-deacon index build targets.fa > targets.idx
-```
-*Note: Indexing a 3Gbp genome takes ~30s and requires ~18GB RAM, but filtering only uses ~5GB.*
+## Expert CLI Patterns
 
-## Filtering Operations
-The `filter` command is the core of the tool. It detects compression (gz, zst, xz) automatically by file extension.
+### Threshold Tuning
+Sensitivity and specificity are controlled by absolute (`-a`) and relative (`-r`) match thresholds. A sequence matches if it exceeds **both**.
+*   **Increase Sensitivity**: Lower the thresholds (e.g., `-a 1 -r 0.005`).
+*   **Increase Specificity**: Raise the thresholds (e.g., `-a 5 -r 0.05`).
+*   **Default**: `-a 2` (shared minimizers) and `-r 0.01` (1% of distinct minimizers).
 
-### Host Depletion (Removing Matches)
-Use the `-d` or `--deplete` flag to output only sequences that **do not** match the index.
+### Performance Optimization
+*   **Compression**: Deacon natively handles `.gz`, `.zst`, and `.xz`. Using `.gz` extensions for output triggers parallel compression.
+*   **Streaming**: Use stdin/stdout for piping between tools.
+    ```bash
+    cat reads.fq | deacon filter reference.idx - > filtered.fq
+    ```
+*   **Process Substitution**: Use named pipes for complex inputs.
+    ```bash
+    deacon filter reference.idx <(zcat r1.fq.gz) -o filtered.fq
+    ```
 
-```bash
-# Single-end reads
-deacon filter -d panhuman-1.k31w15.idx reads.fq.gz -o clean_reads.fq.gz
+### Privacy and Metadata
+*   **Anonymization**: Use `--rename` or `--rename-random` to replace read headers with incrementing or random integers, reducing file size and protecting privacy.
+*   **Format Conversion**: Force FASTA output from FASTQ input using `-f` or `--fasta`.
+*   **Summary Statistics**: Generate a JSON report of the filtering process.
+    ```bash
+    deacon filter --summary stats.json -d ref.idx input.fq -o output.fq
+    ```
 
-# Paired-end reads
-deacon filter -d panhuman-1.k31w15.idx r1.fq.gz r2.fq.gz -o clean.r1.fq.gz -O clean.r2.fq.gz
-```
 
-### Sequence Search (Keeping Matches)
-Omit the `-d` flag to output only sequences that match the index.
 
-```bash
-deacon filter amr-genes.idx metagenome.fa.zst > hits.fa
-```
+## Subcommands
 
-## Tuning Sensitivity and Specificity
-Matching is controlled by two thresholds. A sequence matches if it exceeds **both**:
-1.  **Absolute Threshold (`-a`)**: Number of shared distinct minimizers (default: 2).
-2.  **Relative Threshold (`-r`)**: Fraction of shared distinct minimizers (default: 0.01 or 1%).
-
-### Expert Patterns
-- **Maximum Sensitivity**: Set thresholds to the lowest possible values to catch any trace of the target.
-  `deacon filter -d -a 1 -r 0 ...`
-- **High Specificity**: Increase the relative threshold to ensure only strong matches are filtered.
-  `deacon filter -d -r 0.1 ...` (Requires 10% shared minimizers)
-
-## Performance and Workflow Integration
-- **Piping**: Deacon fully supports stdin and stdout for integration into pipelines.
-  `zcat reads.fq.gz | deacon filter -d human.idx - > clean.fq`
-- **Summary Output**: Generate a JSON report of filtering statistics using `-s`.
-  `deacon filter -d human.idx reads.fq -o clean.fq -s summary.json`
-- **Privacy**: Use `--rename` to anonymize sequence headers in the output.
+| Command | Description |
+|---------|-------------|
+| deacon index | Build, inspect, compose and fetch minimizer indexes |
+| deacon server | Start/stop a server process for reduced latency filtering |
+| filter | Retain or deplete sequence records with sufficient minimizer hits to an indexed query |
 
 ## Reference documentation
-- [Deacon GitHub Repository](./references/github_com_bede_deacon.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_deacon_overview.md)
+- [Deacon README](./references/github_com_bede_deacon_blob_main_README.md)
+- [Changelog and Version History](./references/github_com_bede_deacon_blob_main_CHANGELOG.md)

@@ -257,3 +257,6 @@ INFO    25/02 07:33:18   Downloads directory for current version does not exist 
 INFO    25/02 07:33:18   Run "deepbgc download" to download current models
 ```
 
+
+## Metadata
+- **Skill**: generated

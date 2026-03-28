@@ -1,1 +1,561 @@
-Workflow runs · open2c/cooler · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} open2c / cooler Public Notifications You must be signed in to change notification settings Fork 59 Star 231 Code Issues 41 Pull requests 10 Discussions Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Discussions Actions Projects Security Insights Actions: open2c/cooler Actions All workflows Workflows CI CI Dependabot Updates Dependabot Updates Publish Python Package to PyPI Publish Python Package to PyPI Show more workflows... Management Caches Deployments All workflows All workflows Actions Loading... Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page . will be ignored since log searching is not yet available Showing runs from all workflows will be ignored since log searching is not yet available 178 workflow runs 178 workflow runs Event Filter by Event Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching events. Status Filter by Status Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching statuses. Branch Filter by Branch Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching branches. Actor Filter by Actor Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching users. github_actions in /. - Update #1238336743 Dependabot Updates #100: by dependabot bot 4m 27s master master 4m 27s github_actions in /. - Update #1230755890 Dependabot Updates #99: by dependabot bot 31s master master 31s [pre-commit.ci] pre-commit autoupdate (#479) CI #412: Commit 6c2d65b pushed by nvictus 3m 19s master master 3m 19s View workflow file [pre-commit.ci] pre-commit autoupdate CI #411: Pull request #479 synchronize by pre-commit-ci bot 3m 29s pre-commit-ci-update-config pre-commit-ci-update-config 3m 29s View #479 View workflow file github_actions in /. - Update #1221230548 Dependabot Updates #98: by dependabot bot 28s master master 28s github_actions in /. - Update #1213507479 Dependabot Updates #97: by dependabot bot 29s master master 29s [pre-commit.ci] pre-commit autoupdate CI #410: Pull request #479 synchronize by pre-commit-ci bot 3m 17s pre-commit-ci-update-config pre-commit-ci-update-config 3m 17s View #479 View workflow file github_actions in /. - Update #1206816659 Dependabot Updates #96: by dependabot bot 33s master master 33s [pre-commit.ci] pre-commit autoupdate CI #409: Pull request #479 synchronize by pre-commit-ci bot 4m 26s pre-commit-ci-update-config pre-commit-ci-update-config 4m 26s View #479 View workflow file github_actions in /. - Update #1199287633 Dependabot Updates #95: by dependabot bot 30s master master 30s github_actions in /. - Update #1192914323 Dependabot Updates #94: by dependabot bot 36s master master 36s [pre-commit.ci] pre-commit autoupdate CI #408: Pull request #479 opened by pre-commit-ci bot 2m 56s pre-commit-ci-update-config pre-commit-ci-update-config 2m 56s View #479 View workflow file github_actions in /. - Update #1188505550 Dependabot Updates #93: by dependabot bot 34s master master 34s [pre-commit.ci] pre-commit autoupdate (#478) CI #407: Commit 3f5db6e pushed by nvictus 3m 45s master master 3m 45s View workflow file [pre-commit.ci] pre-commit autoupdate CI #406: Pull request #478 synchronize by pre-commit-ci bot 3m 4s pre-commit-ci-update-config pre-commit-ci-update-config 3m 4s View #478 View workflow file github_actions in /. - Update #1182937491 Dependabot Updates #92: by dependabot bot 34s master master 34s [pre-commit.ci] pre-commit autoupdate CI #405: Pull request #478 opened by pre-commit-ci bot 3m 6s pre-commit-ci-update-config pre-commit-ci-update-config 3m 6s View #478 View workflow file github_actions in /. - Update #1177328919 Dependabot Updates #91: by dependabot bot 37s master master 37s Update gitgnore CI #404: Commit 72a30bc pushed by nvictus 3m 33s master master 3m 33s View workflow file build(deps): bump actions/checkout from 5 to 6 (#477) CI #403: Commit e69e34a pushed by nvictus 3m 3s master master 3m 3s View workflow file build(deps): bump actions/checkout from 5 to 6 CI #402: Pull request #477 synchronize by nvictus 3m 20s dependabot/github_actions/actions/checkout-6 dependabot/github_actions/actions/checkout-6 3m 20s View #477 View workflow file [pre-commit.ci] pre-commit autoupdate (#450) CI #401: Commit db295f9 pushed by nvictus 3m 1s master master 3m 1s View workflow file [pre-commit.ci] pre-commit autoupdate CI #400: Pull request #450 synchronize by nvictus 3m 24s pre-commit-ci-update-config pre-commit-ci-update-config 3m 24s View #450 View workflow file [pre-commit.ci] pre-commit autoupdate CI #399: Pull request #450 synchronize by pre-commit-ci bot 1m 42s pre-commit-ci-update-config pre-commit-ci-update-config 1m 42s View #450 View workflow file github_actions in /. - Update #1169886653 Dependabot Updates #90: by dependabot bot 28s master master 28s Previous 1 2 3 4 5 6 7 8 Next You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fopen2c%2Fcooler%2Factions)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fopen2c%2Fcooler%2Factions)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Factions%2Findex&source=header-repo&source_repo=open2c%2Fcooler)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[open2c](/open2c)
+/
+**[cooler](/open2c/cooler)**
+Public
+
+* [Notifications](/login?return_to=%2Fopen2c%2Fcooler) You must be signed in to change notification settings
+* [Fork
+  60](/login?return_to=%2Fopen2c%2Fcooler)
+* [Star
+   233](/login?return_to=%2Fopen2c%2Fcooler)
+
+* [Code](/open2c/cooler)
+* [Issues
+  41](/open2c/cooler/issues)
+* [Pull requests
+  10](/open2c/cooler/pulls)
+* [Discussions](/open2c/cooler/discussions)
+* [Actions](/open2c/cooler/actions)
+* [Projects](/open2c/cooler/projects)
+* [Security
+  0](/open2c/cooler/security)
+* [Insights](/open2c/cooler/pulse)
+
+Additional navigation options
+
+* [Code](/open2c/cooler)
+* [Issues](/open2c/cooler/issues)
+* [Pull requests](/open2c/cooler/pulls)
+* [Discussions](/open2c/cooler/discussions)
+* [Actions](/open2c/cooler/actions)
+* [Projects](/open2c/cooler/projects)
+* [Security](/open2c/cooler/security)
+* [Insights](/open2c/cooler/pulse)
+
+# Actions: open2c/cooler
+
+## Actions
+
+## All workflows All workflows Actions Loading... Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page.
+
+will be ignored since log searching is not yet available
+
+Showing runs from all workflows
+
+will be ignored since log searching is not yet available
+
+**161 workflow runs**
+
+**161 workflow runs**
+
+Event
+
+# Filter by Event
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching events.
+
+Status
+
+# Filter by Status
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching statuses.
+
+Branch
+
+# Filter by Branch
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching branches.
+
+Actor
+
+# Filter by Actor
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching users.
+
+[[pre-commit.ci] pre-commit autoupdate](/open2c/cooler/actions/runs/23448196860)
+
+CI
+#419:
+Pull request [#481](/open2c/cooler/pull/481)
+synchronize
+by
+[pre-commit-ci](/apps/pre-commit-ci)
+bot
+
+3m 11s
+[pre-commit-ci-update-config](/open2c/cooler/tree/refs/heads/pre-commit-ci-update-config "pre-commit-ci-update-config")
+
+[pre-commit-ci-update-config](/open2c/cooler/tree/refs/heads/pre-commit-ci-update-config "pre-commit-ci-update-config")
+
+3m 11s
+
+* [View #481](/open2c/cooler/pull/481)
+* [View workflow file](/open2c/cooler/actions/runs/23448196860/workflow)
+
+[github\_actions in /. - Update #1289438442](/open2c/cooler/actions/runs/23444091305)
+
+Dependabot Updates
+#106:
+by
+[dependabot](/apps/dependabot)
+bot
+
+34s
+[master](/open2c/cooler/tree/refs/heads/master "master")
+
+[master](/open2c/cooler/tree/refs/heads/master "master")
+
+34s
+
+[[pre-commit.ci] pre-commit autoupdate](/open2c/cooler/actions/runs/23154363940)
+
+CI
+#418:
+Pull request [#481](/open2c/cooler/pull/481)
+synchronize
+by
+[pre-commit-ci](/apps/pre-commit-ci)
+bot
+
+3m 5s
+[pre-commit-ci-update-config](/open2c/cooler/tree/refs/heads/pre-commit-ci-update-config "pre-commit-ci-update-config")
+
+[pre-commit-ci-update-config](/open2c/cooler/tree/refs/heads/pre-commit-ci-update-config "pre-commit-ci-update-config")
+
+3m 5s
+
+* [View #481](/open2c/cooler/pull/481)
+* [View workflow file](/open2c/cooler/actions/runs/23154363940/workflow)
+
+[github\_actions in /. - Update #1281137619](/open2c/cooler/actions/runs/23150356258)
+
+Dependabot Updates
+#105:
+by
+[dependabot](/apps/dependabot)
+bot
+
+45s
+[master](/open2c/cooler/tree/refs/heads/master "master")
+
+[master](/open2c/cooler/tree/refs/heads/master "master")
+
+45s
+
+[[pre-commit.ci] pre-commit autoupdate](/open2c/cooler/actions/runs/22863565967)
+
+CI
+#417:
+Pull request [#481](/open2c/cooler/pull/481)
+synchronize
+by
+[pre-commit-ci](/apps/pre-commit-ci)
+bot
+
+3m 20s
+[pre-commit-ci-update-config](/open2c/cooler/tree/refs/heads/pre-commit-ci-update-config "pre-commit-ci-update-config")
+
+[pre-commit-ci-update-config](/open2c/cooler/tree/refs/heads/pre-commit-ci-update-config "pre-commit-ci-update-config")
+
+3m 20s
+
+* [View #481](/open2c/cooler/pull/481)
+* [View workflow file](/open2c/cooler/actions/runs/22863565967/workflow)
+
+[github\_actions in /. - Update #1273170810](/open2c/cooler/actions/runs/22863062276)
+
+Dependabot Updates
+#104:
+by
+[dependabot](/apps/dependabot)
+bot
+
+33s
+[master](/open2c/cooler/tree/refs/heads/master "master")
+
+[master](/open2c/cooler/tree/refs/heads/master "master")
+
+33s
+
+[[pre-commit.ci] pre-commit autoupdate](/open2c/cooler/actions/runs/22585360055)
+
+CI
+#416:
+Pull request [#481](/open2c/cooler/pull/481)
+synchronize
+by
+[pre-commit-ci](/apps/pre-commit-ci)
+bot
+
+3m 23s
+[pre-commit-ci-update-config](/open2c/cooler/tree/refs/heads/pre-commit-ci-update-config "pre-commit-ci-update-config")
+
+[pre-commit-ci-update-config](/open2c/cooler/tree/refs/heads/pre-commit-ci-update-config "pre-commit-ci-update-config")
+
+3m 23s
+
+* [View #481](/open2c/cooler/pull/481)
+* [View workflow file](/open2c/cooler/actions/runs/22585360055/workflow)
+
+[github\_actions in /. - Update #1265340149](/open2c/cooler/actions/runs/22584166986)
+
+Dependabot Updates
+#103:
+by
+[dependabot](/apps/dependabot)
+bot
+
+37s
+[master](/open2c/cooler/tree/refs/heads/master "master")
+
+[master](/open2c/cooler/tree/refs/heads/master "master")
+
+37s
+
+[Improve chromsizes File Validation to Catch Formatting Errors Early](/open2c/cooler/actions/runs/22413036188)
+
+CI
+#415:
+Pull request [#458](/open2c/cooler/pull/458)
+synchronize
+by
+[ShigrafS](/ShigrafS)
+
+3m 34s
+[ShigrafS:chromsizes-error-fix](/ShigrafS/cooler/tree/refs/heads/chromsizes-error-fix "ShigrafS:chromsizes-error-fix")
+
+[ShigrafS:chromsizes-error-fix](/ShigrafS/cooler/tree/refs/heads/chromsizes-error-fix "ShigrafS:chromsizes-error-fix")
+
+3m 34s
+
+* [View #458](/open2c/cooler/pull/458)
+* [View workflow file](/open2c/cooler/actions/runs/22413036188/workflow)
+
+[[pre-commit.ci] pre-commit autoupdate](/open2c/cooler/actions/runs/22315103814)
+
+CI
+#414:
+Pull request [#481](/open2c/cooler/pull/481)
+synchronize
+by
+[pre-commit-ci](/apps/pre-commit-ci)
+bot
+
+6m 26s
+[pre-commit-ci-update-config](/open2c/cooler/tree/refs/heads/pre-commit-ci-update-config "pre-commit-ci-update-config")
+
+[pre-commit-ci-update-config](/open2c/cooler/tree/refs/heads/pre-commit-ci-update-config "pre-commit-ci-update-config")
+
+6m 26s
+
+* [View #481](/open2c/cooler/pull/481)
+* [View workflow file](/open2c/cooler/actions/runs/22315103814/workflow)
+
+[github\_actions in /. - Update #1255068777](/open2c/cooler/actions/runs/22314260340)
+
+Dependabot Updates
+#102:
+by
+[dependabot](/apps/dependabot)
+bot
+
+25m 25s
+[master](/open2c/cooler/tree/refs/heads/master "master")
+
+[master](/open2c/cooler/tree/refs/heads/master "master")
+
+25m 25s
+
+[[pre-commit.ci] pre-commit autoupdate](/open2c/cooler/actions/runs/22070459071)
+
+CI
+#413:
+Pull request [#481](/open2c/cooler/pull/481)
+synchronize
+by
+[pre-commit-ci](/apps/pre-commit-ci)
+bot
+
+3m 4s
+[pre-commit-ci-update-config](/open2c/cooler/tree/refs/heads/pre-commit-ci-update-config "pre-commit-ci-update-config")
+
+[pre-commit-ci-update-config](/open2c/cooler/tree/refs/heads/pre-commit-ci-update-config "pre-commit-ci-update-config")
+
+3m 4s
+
+* [View #481](/open2c/cooler/pull/481)
+* [View workflow file](/open2c/cooler/actions/runs/22070459071/workflow)
+
+[github\_actions in /. - Update #1245641698](/open2c/cooler/actions/runs/22069255369)
+
+Dependabot Updates
+#101:
+by
+[dependabot](/apps/dependabot)
+bot
+
+21s
+[master](/open2c/cooler/tree/refs/heads/master "master")
+
+[master](/open2c/cooler/tree/refs/heads/master "master")
+
+21s
+
+[github\_actions in /. - Update #1238336743](/open2c/cooler/actions/runs/21833129895)
+
+Dependabot Updates
+#100:
+by
+[dependabot](/apps/dependabot)
+bot
+
+4m 27s
+[master](/open2c/cooler/tree/refs/heads/master "master")
+
+[master](/open2c/cooler/tree/refs/heads/master "master")
+
+4m 27s
+
+[github\_actions in /. - Update #1230755890](/open2c/cooler/actions/runs/21599170074)
+
+Dependabot Updates
+#99:
+by
+[dependabot](/apps/dependabot)
+bot
+
+31s
+[master](/open2c/cooler/tree/refs/heads/master "master")
+
+[master](/open2c/cooler/tree/refs/heads/master "master")
+
+31s
+
+[[pre-commit.ci] pre-commit autoupdate (#479)](/open2c/cooler/actions/runs/21449625462)
+
+CI
+#412:
+Commit [6c2d65b](/open2c/cooler/commit/6c2d65b1420a636193b7f05100a96410ea252147)
+pushed
+by
+[nvictus](/nvictus)
+
+3m 19s
+[master](/open2c/cooler/tree/refs/heads/master "master")
+
+[master](/open2c/cooler/tree/refs/heads/master "master")
+
+3m 19s
+
+* [View workflow file](/open2c/cooler/actions/runs/21449625462/workflow)
+
+[[pre-commit.ci] pre-commit autoupdate](/open2c/cooler/actions/runs/21365332673)
+
+CI
+#411:
+Pull request [#479](/open2c/cooler/pull/479)
+synchronize
+by
+[pre-commit-ci](/apps/pre-commit-ci)
+bot
+
+3m 29s
+[pre-commit-ci-update-config](/open2c/cooler/tree/refs/heads/pre-commit-ci-update-config "pre-commit-ci-update-config")
+
+[pre-commit-ci-update-config](/open2c/cooler/tree/refs/heads/pre-commit-ci-update-config "pre-commit-ci-update-config")
+
+3m 29s
+
+* [View #479](/open2c/cooler/pull/479)
+* [View workflow file](/open2c/cooler/actions/runs/21365332673/workflow)
+
+[github\_actions in /. - Update #1221230548](/open2c/cooler/actions/runs/21364865894)
+
+Dependabot Updates
+#98:
+by
+[dependabot](/apps/dependabot)
+bot
+
+28s
+[master](/open2c/cooler/tree/refs/heads/master "master")
+
+[master](/open2c/cooler/tree/refs/heads/master "master")
+
+28s

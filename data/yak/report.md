@@ -118,3 +118,6 @@ Notes: when in2.yak is present, inspect evaluates the k-mer QV of in1.yak and
   the k-mer sensitivity of in2.yak.
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -1,6 +1,6 @@
 ---
 name: ccne
-description: The Carbapenemase-encoding gene copy number estimator quantifies the abundance of antimicrobial resistance genes in bacterial samples by comparing read depth against a reference. Use when user asks to estimate resistance gene copy numbers, list supported species and genes, or calculate gene abundance from raw reads or genome assemblies.
+description: The Carbapenemase-encoding gene Copy Number Estimator (ccne) quantifies the abundance of antimicrobial resistance genes by comparing their coverage depth to a single-copy reference. Use when user asks to estimate AMR gene copy numbers, perform fast species-specific gene quantification, or calculate gene abundance using assembly-based depth.
 homepage: https://github.com/biojiang/ccne
 ---
 
@@ -8,52 +8,62 @@ homepage: https://github.com/biojiang/ccne
 # ccne
 
 ## Overview
-The Carbapenemase-encoding gene copy number estimator (ccne) is a specialized bioinformatics tool used to quantify the abundance of resistance genes within a bacterial sample. By calculating the ratio of reads mapped to a target AMR gene versus a reference (either a single-copy housekeeping gene or the average genome depth), it provides a numerical estimate of how many copies of a resistance gene are present. This is essential for identifying high-level resistance caused by gene duplication or multi-copy plasmids.
+
+The Carbapenemase-encoding gene Copy Number Estimator (ccne) is a specialized bioinformatics tool designed to quantify the abundance of AMR genes within a sample. By comparing the depth of coverage of a target AMR gene to a known single-copy reference (either a housekeeping gene or the average genome depth), ccne provides a numerical estimate of how many copies of the resistance gene are present. This is critical for understanding the genetic basis of high-level resistance in clinical pathogens like *Klebsiella pneumoniae* or *Escherichia coli*.
 
 ## Core Workflows
 
-### 1. Database and Species Discovery
-Before running an analysis, verify the supported genes and species codes to ensure compatibility.
-- List all supported AMR genes: `ccne-fast --listdb`
-- List supported species and their default housekeeping genes: `ccne-fast --listsp`
-- Format the internal BWA indices (required after first installation): `ccne-fast --fmtdb`
+### 1. Fast Estimation (ccne-fast)
+Use this mode when you know the species of the isolate. it relies on pre-configured housekeeping genes (e.g., `rpoB`, `polB`).
 
-### 2. Fast Estimation (ccne-fast)
-Use this mode when you have raw FASTQ reads and know the species of the isolate. It relies on specific housekeeping genes (e.g., *rpoB* for *K. pneumoniae*).
+**Required Parameters:**
+- `--amr`: The target gene name (e.g., KPC-2, NDM-1).
+- `--sp`: The species code (e.g., `Kpn` for *K. pneumoniae*, `Eco` for *E. coli*).
+- `--in`: A tab-delimited file listing samples.
+- `--out`: Path for the results file.
 
-**Input File Format (`File.list`):**
-The input is a tab-delimited or space-delimited file with the following structure:
-`SampleID  /path/to/read_1.fastq.gz  /path/to/read_2.fastq.gz`
-
-**Command Pattern:**
+**Example Command:**
 ```bash
-ccne-fast --amr KPC-2 --sp Kpn --in File.list --out results.txt --cpus 4
+ccne-fast --amr KPC-2 --sp Kpn --in samples.list --out results.txt --cpus 4
 ```
-- `--amr`: The target gene (e.g., NDM-1, OXA-48).
-- `--sp`: The species code (e.g., `Kpn` for Klebsiella, `Eco` for E. coli, `Aba` for A. baumannii).
-- `--multiref`: Optional flag to use all available reference sequences for depth calculation, increasing robustness.
 
-### 3. Accurate Estimation (ccne-acc)
-Use this mode if you have a draft genome assembly (FASTA) in addition to raw reads. This is generally more accurate as it calculates the average depth across the entire genome rather than a single reference gene.
+### 2. Assembly-Based Estimation (ccne-acc)
+Use this mode for higher accuracy or when a draft genome assembly is available. It calculates the average depth across the entire assembly to use as the baseline.
 
-**Input File Format (`File.list`):**
-`SampleID  /path/to/read_1.fastq.gz  /path/to/read_2.fastq.gz  /path/to/assembly.fasta`
-
-**Command Pattern:**
+**Example Command:**
 ```bash
-ccne-acc --amr KPC-2 --in File.list --out results.txt --cpus 4
+ccne-acc --amr NDM-1 --in samples_with_assembly.list --out results.txt --cpus 8
 ```
+
+## Input File Preparation
+
+The `--in` file must be a tab-delimited list without headers. The structure varies by tool:
+
+**For ccne-fast:**
+`[SampleID]    [Path_to_Read_1]    [Path_to_Read_2]`
+
+**For ccne-acc:**
+`[SampleID]    [Path_to_Read_1]    [Path_to_Read_2]    [Path_to_Assembly_Fasta]`
 
 ## Expert Tips and Best Practices
 
-- **Species Selection**: If your species is not listed in `--listsp`, you can use the `Pls` (Plasmid) code, but you must manually specify a reference gene or replicon type using the `--ref` parameter.
-- **Flanking Sequences**: Use the `--flank` parameter (e.g., `--flank 100`) to exclude the ends of the target gene from depth calculations. This helps avoid edge-effect biases where read mapping might be less reliable.
-- **Interpreting Results**: 
-    - A copy number near **1.0** suggests a single chromosomal integration.
-    - Values significantly higher (e.g., **>3.0**) typically indicate plasmid-borne genes or tandem duplications.
-    - Check the "SD" (Standard Deviation) columns in the output; high SD relative to the depth suggests uneven coverage or mapping issues.
-- **Resource Management**: Always specify `--cpus` to match your environment, as the underlying BWA mapping is the primary bottleneck.
+- **Database Discovery**: Before running an analysis, always verify the exact nomenclature of the AMR genes and species codes supported by your local installation:
+  - `ccne-fast --listdb` (Lists all 2400+ supported AMR genes)
+  - `ccne-fast --listsp` (Lists supported species and their default housekeeping genes)
+- **Reference Overrides**: In `ccne-fast`, you can manually specify a reference gene using `--ref` if the default housekeeping gene is unsuitable for your specific strain.
+- **Handling Plasmids**: When analyzing replicons or specific plasmid types, set `--sp Pls` and use the `--ref` parameter to specify the replicon type.
+- **Noise Reduction**: Use the `--flank [N]` parameter to exclude a specific number of bases from the ends of sequences, which can help reduce errors caused by poor mapping at the edges of gene fragments.
+- **Performance**: Always utilize the `--cpus` flag to enable multi-threading, as mapping reads to the database is computationally intensive.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| ccne-acc | Carbapenemase-encoding gene copy number estimator (accurate estimator) |
+| ccne-fast | Carbapenemase-encoding gene copy number estimator (fast screener) |
 
 ## Reference documentation
 - [ccne GitHub Repository](./references/github_com_biojiang_ccne.md)
-- [Bioconda ccne Package Overview](./references/anaconda_org_channels_bioconda_packages_ccne_overview.md)
+- [ccne README and Usage Guide](./references/github_com_biojiang_ccne_blob_main_README.md)

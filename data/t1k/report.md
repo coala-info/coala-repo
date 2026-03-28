@@ -93,3 +93,6 @@ Optional:
 		--post-varMaxGroup INT: the maximum variant group size to call novel variant. -1 for no limitation (default: 8)
 ```
 
+
+## Metadata
+- **Skill**: generated

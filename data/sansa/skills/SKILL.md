@@ -1,6 +1,6 @@
 ---
 name: sansa
-description: "Sansa is a toolkit designed for the post-processing, annotation, and benchmarking of structural variants. Use when user asks to annotate structural variants with population databases or genomic features, identify and remove redundant variant calls, or compare VCF files for benchmarking."
+description: "Sansa is a high-performance tool for the functional and population-based annotation of structural variants. Use when user asks to annotate structural variants against reference databases, map variants to genomic features like genes or exons, identify gene fusion candidates, or mark duplicate variants in multi-sample files."
 homepage: https://github.com/dellytools/sansa
 ---
 
@@ -8,65 +8,80 @@ homepage: https://github.com/dellytools/sansa
 # sansa
 
 ## Overview
-Sansa is a specialized toolkit designed for the post-processing of structural variants (SVs). It streamlines the annotation of SVs using population databases (like gnomAD) or genomic features (GTF/GFF), identifies redundant variant calls in multi-sample datasets caused by breakpoint imprecision, and provides utilities for benchmarking SV call sets. It is highly optimized for variants produced by the Delly caller but supports standard VCF/BCF formats.
 
-## Installation
-The most efficient way to deploy sansa is via bioconda:
-```bash
-conda install -c bioconda sansa
-```
+Sansa is a high-performance tool designed for the functional and population-based annotation of structural variants. It facilitates the identification of known SVs by comparing query calls against reference databases using flexible breakpoint and size-ratio matching. Additionally, it enables functional prioritization by mapping SVs to genomic features like genes or exons and can be used to identify potential gene fusion candidates based on breakpoint orientation.
 
-## SV Annotation Patterns
+## SV Annotation Workflow
 
-### Database-driven Annotation
-To annotate a query VCF with a database like gnomAD-SV or 1000 Genomes:
+To annotate SVs against a population database, use the `annotate` subcommand. This process typically requires a post-processing step to merge the results.
+
+### 1. Run Annotation
+Execute the annotation against a VCF database (e.g., gnomAD-SV).
 ```bash
 sansa annotate -d database.vcf.gz input.vcf.gz
 ```
-*   **Output**: Generates `anno.bcf` (containing a unique `INFO/ANNOID`) and `query.tsv.gz` (mapping query SVs to database IDs).
-*   **Refining Results**: Use `bcftools` to join the results and extract specific fields (e.g., Allele Frequency):
-    ```bash
-    bcftools query -H -f "%INFO/ANNOID\t%ID\t%INFO/EUR_AF\n" anno.bcf > anno.tsv
-    ```
+This generates:
+- `anno.bcf`: The annotation database SVs augmented with a unique `INFO/ANNOID`.
+- `query.tsv.gz`: The query SVs matched to these `ANNOID` values.
 
-### Gene and Feature Annotation
-Annotate SVs with nearby genes or exons using GTF or GFF3 files:
+### 2. Extract Database Fields
+Use `bcftools` to extract the specific metadata (e.g., ID and Allele Frequency) from the generated BCF, ensuring `INFO/ANNOID` is the first column.
 ```bash
-# Gene-level annotation
-sansa annotate -g Homo_sapiens.GRCh38.gtf.gz input.vcf.gz
-
-# Exon-level annotation with specific ID attributes
-sansa annotate -f exon -i exon_id -g annotation.gff3.gz input.vcf.gz
+bcftools query -H -f "%INFO/ANNOID\t%ID\t%INFO/EUR_AF\n" anno.bcf | sed -e 's/^# //' > anno.tsv
 ```
-*   **Distance Cutoff**: Use `-t` to set the distance threshold for matching (default is 0, meaning the SV must overlap or be immediately adjacent).
 
-### Matching Logic Control
-Fine-tune how sansa determines if two SVs are "the same":
-*   `-b [int]`: Max allowed breakpoint distance (default: 50bp).
-*   `-r [float]`: Minimum size ratio of the smaller SV to the larger SV (default: 0.8).
-*   `-n`: Deactivate SV type check (allows matching DELs to BNDs, etc.).
-*   `-s all`: Report all matching database entries instead of just the best match.
-
-## Duplicate Removal (markdup)
-In multi-sample VCFs where single-sample calls have been merged, use `markdup` to identify sites that are likely duplicates due to imprecise breakpoint calling:
+### 3. Join Results
+Sort the query matches and join them with the extracted database metadata.
 ```bash
-sansa markdup -o cleaned.bcf input.vcf.gz
+join anno.tsv <(zcat query.tsv.gz | sort -k 1b,1) > results.tsv
 ```
-*   **Criteria**: Matches based on genomic proximity, genotype concordance, and allele similarity.
-*   **Haplotype matching**: Requires the `INFO/CONSENSUS` field (standard in Delly output) for SV allele comparison.
 
-## VCF Comparison (compvcf)
-Compare a query VCF against a gold-standard "base" VCF:
-```bash
-sansa compvcf -a base.bcf input.bcf
-```
-*   **Site-only comparison**: If genotypes are missing, set the minimum allele count to zero using `-e 0`.
+## Feature and Gene Annotation
+
+Sansa can map SVs to nearby genes or specific features using GTF or GFF files.
+
+- **Basic Gene Annotation**:
+  `sansa annotate -g features.gtf.gz input.vcf.gz`
+- **Specify ID Attribute**: Use `-i` to select the attribute for the output (e.g., `Name`, `gene_id`).
+  `sansa annotate -i Name -g features.gff3.gz input.vcf.gz`
+- **Exon-level Annotation**: Use `-f` to restrict matching to specific feature types.
+  `sansa annotate -f exon -i exon_id -g features.gtf.gz input.vcf.gz`
+
+The output provides two columns (start and end breakpoints) containing the feature name, distance (0 if within the feature), and strand.
+
+## Advanced Matching Parameters
+
+Fine-tune how SVs are matched between the query and the database:
+
+- **Breakpoint Sensitivity**: Adjust `-b` (default 50bp) to change the allowed absolute difference in breakpoint locations.
+- **Size Similarity**: Adjust `-r` (default 0.8) to set the minimum size ratio between the smaller and larger SV.
+- **Matching Strategy**: Use `-s all` to report all matches instead of just the best one.
+- **Unmatched Records**: Use `-m` to include query SVs that did not find a match in the output.
+- **Type Agnostic Matching**: Use `-n` to compare SVs regardless of their type (e.g., comparing a DEL to a BND).
+
+## Multi-Sample Operations
+
+- **Mark Duplicates**: Identify and mark duplicate SV sites across multi-sample VCF files.
+  `sansa markdup input_multi.vcf.gz`
+- **Compare VCFs**: Compare different multi-sample VCF files to identify shared or unique variants.
+  `sansa compvcf file1.vcf.gz file2.vcf.gz`
 
 ## Expert Tips
-*   **Gene Fusions**: When using Delly, sansa utilizes `INFO/CT` (Connection Type) values to identify gene fusion candidates. Pay attention to the strand orientation (+/-) and distance reported in the output to prioritize high-confidence fusions.
-*   **Memory Efficiency**: For large-scale population VCFs, prefer BCF format over VCF for faster processing and reduced I/O overhead.
-*   **Unmatched Variants**: Use the `-m` flag during annotation to include query SVs that did not match any database entry in the output TSV, which is critical for filtering for rare/de novo variants.
+
+- **Gene Fusion Discovery**: When using Delly-called SVs, pay attention to the `INFO/CT` (Connection Type) values. Sansa's gene annotation combined with `CT` orientation (e.g., 3to5 for deletions, 3to3 for inversions) allows for the identification of specific gene fusion candidates.
+- **Distance Logic**: In gene annotation output, negative distance values indicate the feature is before the breakpoint, while positive values indicate it is after. A value of 0 indicates the breakpoint falls within the feature.
+- **Performance**: For large-scale annotations, ensure your input VCFs are indexed (`.tbi` or `.csi`) to allow for efficient random access.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| annotate | Annotate structural variants |
+| compvcf | Compare two VCF/BCF files and report differences. |
+| markdup | Filter sites for PASS |
 
 ## Reference documentation
-- [Sansa GitHub Repository](./references/github_com_dellytools_sansa.md)
-- [Bioconda Sansa Overview](./references/anaconda_org_channels_bioconda_packages_sansa_overview.md)
+- [Sansa README](./references/github_com_dellytools_sansa_blob_main_README.md)
+- [Sansa Repository Overview](./references/github_com_dellytools_sansa.md)

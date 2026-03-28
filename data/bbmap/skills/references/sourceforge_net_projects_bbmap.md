@@ -57,10 +57,10 @@ Brought to you by:
 [1 Review](/projects/bbmap/reviews/ "BBMap Reviews")
 
 **Downloads:**
-[496 This Week](/projects/bbmap/files/stats/timeline "Downloads This Week")
+[767 This Week](/projects/bbmap/files/stats/timeline "Downloads This Week")
 
 **Last Update:**
-[4 days ago](/p/bbmap/activity/)
+[2026-03-10](/p/bbmap/activity/)
 
 [![](//a.fsdn.com/con/images/sandiego/sf-icon-black.svg) Download](/projects/bbmap/files/latest/download "Download BBMap_39.80.tar.gz from SourceForge  - 54.4 MB")
 
@@ -138,15 +138,15 @@ BBDuk: Filters, trims, or masks reads with kmer matches to an artifact/contamina
 
 Other Useful Business Software
 
-![Auth0 B2B Essentials: SSO, MFA, and RBAC Built In Icon](//a.fsdn.com/con/app/nel_img/20534)
+![Try Google Cloud Risk-Free With $300 in Credit Icon](//a.fsdn.com/con/app/nel_img/20542)
 
-Auth0 B2B Essentials: SSO, MFA, and RBAC Built In
+Try Google Cloud Risk-Free With $300 in Credit
 
-Unlimited organizations, 3 enterprise SSO connections, role-based access control, and pro MFA included. Dev and prod tenants out of the box.
+No hidden charges. No surprise bills. Cancel anytime.
 
-Auth0's B2B Essentials plan gives you everything you need to ship secure multi-tenant apps. Unlimited orgs, enterprise SSO, RBAC, audit log streaming, and higher auth and API limits included. Add on M2M tokens, enterprise MFA, or additional SSO connections as you scale.
+Use your credit across every product. Compute, storage, AI, analytics. When it runs out, 20+ products stay free. You only pay when you choose to.
 
-Sign Up Free
+Start Free
 
 Rate This Project
 
@@ -294,6 +294,13 @@ Similar Business Software
   Cufflinks assemble transcripts, estimate their abundances and test for differential expression and regulation in RNA-Seq samples. It accepts aligned RNA-Seq reads and assembles the alignments into a parsimonious set of transcripts. Cufflinks then estimates the relative abundances of these...
 
   [See Software](/software/product/Cufflinks/ "Find out more about Cufflinks")
+* ![OmnibusX](//a.fsdn.com/allura/s/omnibusx/icon?639313b2a2958b2ffb7f10823387392827437e130de3b2b2305a2608b8f5c874?&w=48 "OmnibusX")
+
+  [**OmnibusX**](/software/product/OmnibusX/ "Find out more about OmnibusX")
+
+  In the world of biological data science, navigating vast and complex datasets can be a daunting task. Our software toolkit is designed to empower you by accelerating analysis, promoting accessibility, and providing comprehensive visualization tools to help you make sense of these intricate...
+
+  [See Software](/software/product/OmnibusX/ "Find out more about OmnibusX")
 * ![RegDesk](//a.fsdn.com/allura/s/regdesk/icon?3238151ff55c09b7404b8022f4c2dd8d46f1cc31f06bd81af29c02029bc6ebcf?&w=48 "RegDesk")
 
   [**RegDesk**](/software/product/RegDesk/ "Find out more about RegDesk")
@@ -308,45 +315,40 @@ Similar Business Software
   SAP Cloud ERP is the premier ERP solution for growth-focused organizations. Seamlessly integrating AI, and predictive analytics, it empowers businesses to digitally transform and streamline processes end to end. Leveraging built-in industry best practices, SAP Cloud ERP accelerates...
 
   [See Software](/software/product/SAP-S-4HANA-Cloud-Public-Edition/ "Find out more about SAP S/4HANA Cloud Public Edition")
-* ![Qualio](//a.fsdn.com/allura/s/quality-management-software/icon?79176fdf6cc1e3b37e8ceb16803b3f19f8f6a64dcbd52095427fcbf2814ba828?&w=48 "Qualio")
-
-  [**Qualio**](/software/product/Qualio/ "Find out more about Qualio")
-
-  Qualio is the leading quality and compliance platform built exclusively for emerging life sciences companies. MedTech, pharma, biotech, and diagnostics teams use Qualio to standardize quality processes, connect them to regulatory obligations, and gain real-time visibility into compliance...
-
-  [See Software](/software/product/Qualio/ "Find out more about Qualio")
 
 [Report inappropriate content](/projects/bbmap/report_inappropriate)
 
 Featured
 
-![Gemini 3 and 200+ AI Models on One Platform Icon](//a.fsdn.com/con/app/nel_img/20604)
+![Try Google Cloud Risk-Free With $300 in Credit Icon](//a.fsdn.com/con/app/nel_img/20542)
 
-Gemini 3 and 200+ AI Models on One Platform
+Try Google Cloud Risk-Free With $300 in Credit
 
-Access Google's best plus Claude, Llama, and Gemma. Fine-tune and deploy from one console.
+No hidden charges. No surprise bills. Cancel anytime.
 
-Build generative AI apps with Vertex AI. Switch between models without switching platforms.
+Use your credit across every product. Compute, storage, AI, analytics. When it runs out, 20+ products stay free. You only pay when you choose to.
 
 Start Free
 
 Recommended Projects
 
-* [CUSHAW3: Accurate Short-read Alignment](/projects/cushaw3/ "Learn more about CUSHAW3: Accurate Short-read Alignment ")
+* [Phusion2](/projects/phusion2/ "Learn more about Phusion2 ")
 
-  CUSHAW3 is an open-source parallelized, sensitive and accurate short-read aligner. This aligner proposes a general approach to properly aligning both easy and hard reads to large genomes such as the human genome. Perform evaluation on alignment quality reals that CUSHAW3 consistently outperforms CUSHAW2, BWA-MEM, Bowtie2 and GEM in terms of single-end and paired-end alignment. Furthermore, our aligner has demonstrated better paired-end alignment performance than Novalign3 for short-reads with high error rates.
-* [JFASTA](/projects/jfasta/ "Learn more about JFASTA ")
-
-  Java implementation for the FASTA file format.
+  The genome assembly pipeline based on read clustering
 * [Bowtie](/projects/bowtie-bio/ "Learn more about Bowtie ")
 
   Bowtie, an ultrafast, memory-efficient short read aligner for short DNA sequences (reads) from next-gen sequencers. Please cite: Langmead B, et al. Ultrafast and memory-efficient alignment of short DNA sequences to the human genome. Genome Biol 10:R25.
 * [Subread](/projects/subread/ "Learn more about Subread ")
 
   High-performance read alignment, quantification and mutation discovery
-* [lemonade\_assemble](/projects/lemonade-assemble/ "Learn more about lemonade_assemble ")
+* [![KimBlast](//a.fsdn.com/allura/p/lp-csic-uab/kimblast3/icon?1594670852 "KimBlast")](/projects/kimblast3.lp-csic-uab.p/ "KimBlast")
 
-  Specialized sequence assembly tools
+  [KimBlast](/projects/kimblast3.lp-csic-uab.p/ "Learn more about KimBlast ")
+
+  Blast+ the easy way
+* [GapFiller](/projects/gapfiller/ "Learn more about GapFiller ")
+
+  A de novo local assembler for paired reads
 
 Top Searches
 
@@ -370,4 +372,24 @@ Company
 * [Team](/about/leadership "Open Source Software Directory")
 * SourceForge Headquarters
   1320 Columbia Street Suite 310
-  San Dieg
+  San Diego, CA 92101
+  +1 (858) 422-6466
+
+Resources
+
+* [Support](/support "Support Section")
+* [Site Documentation](/p/forge/documentation/Docs%20Home/ "Site Documentation")
+* [Site Status](https://fosstodon.org/%40sourceforgestatus "Site Status")
+* [SourceForge Reviews](/reviews "Reviews")
+
+[![SourceForge logo](//a.fsdn.com/con/images/sandiego/sf-logo-full.svg)](/ "Home")
+
+© 2026 Slashdot Media. All Rights Reserved.
+
+Your Opt-Out Rights
+
+×
+
+[Terms](https://slashdotmedia.com/terms-of-use "Terms")
+[Privacy](https://slashdotmedia.com/privacy-statement/ "Privacy")
+[Advertise](https://slashdotmedia.com/contact/ "Ad

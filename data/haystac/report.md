@@ -270,3 +270,6 @@ The haystac commands are:
 haystac: error: argument command: invalid choice: 'Command' (choose from 'config', 'database', 'sample', 'analyse')
 ```
 
+
+## Metadata
+- **Skill**: generated

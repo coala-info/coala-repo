@@ -1,1 +1,566 @@
-Workflow runs · nextgenusfs/gfftk · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} nextgenusfs / gfftk Public Notifications You must be signed in to change notification settings Fork 2 Star 15 Code Issues 1 Pull requests 0 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights Actions: nextgenusfs/gfftk Actions All workflows Workflows Production Release Production Release Test Release to TestPyPI Test Release to TestPyPI Tests Tests [DEPRECATED] Old Release Workflow [DEPRECATED] Old Release Workflow Show more workflows... Management Caches Deployments All workflows All workflows Actions Loading... Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page . will be ignored since log searching is not yet available Showing runs from all workflows will be ignored since log searching is not yet available 41 workflow runs 41 workflow runs Event Filter by Event Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching events. Status Filter by Status Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching statuses. Branch Filter by Branch Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching branches. Actor Filter by Actor Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching users. fix sorting bug in gff2dict() Tests #21: Commit f52a333 pushed by nextgenusfs 1m 7s main main 1m 7s View workflow file support combined gff+fasta, build yeast parser; add table2asn functio… Tests #20: Commit a58c6c0 pushed by nextgenusfs 57s main main 57s View workflow file improve release notes generation to exclude version bump commits Tests #19: Commit 7a4d315 pushed by nextgenusfs 49s main main 49s View workflow file Production Release Production Release #3: Manually run by nextgenusfs 56s main main 56s View workflow file add PyPI error handling for version conflicts and allow GitHub releas… Tests #18: Commit 0a6c7b8 pushed by nextgenusfs 54s main main 54s View workflow file improve github release creation with fallback and error handling Tests #17: Commit 04ef78a pushed by nextgenusfs 57s main main 57s View workflow file Production Release Production Release #2: Manually run by nextgenusfs 1m 8s main main 1m 8s View workflow file fix production release workflow conditional logic Tests #16: Commit 469f83e pushed by nextgenusfs 46s main main 46s View workflow file Production Release Production Release #1: Manually run by nextgenusfs 24s main main 24s View workflow file make gff3 default output for convert; allow gff3--&gt;gff3 conversion Tests #15: Commit 79f8eb8 pushed by nextgenusfs 54s main main 54s View workflow file bump version to 25.6.10 to match git tag Tests #14: Commit c9e9c12 pushed by nextgenusfs 50s main main 50s View workflow file Test Release to TestPyPI Test Release to TestPyPI #3: by nextgenusfs 2m 45s v25.6.10 v25.6.10 2m 45s View workflow file add --grep --grepv filtering to convert Test Release to TestPyPI #2: Commit e1959f8 pushed by nextgenusfs 1m 9s v25.6.10 v25.6.10 1m 9s View workflow file add --grep --grepv filtering to convert Tests #13: Commit e1959f8 pushed by nextgenusfs 42s main main 42s View workflow file update version Test Release to TestPyPI #1: Commit 9cf162a pushed by nextgenusfs 1m 31s v25.6.9 v25.6.9 1m 31s View workflow file update version Tests #12: Commit 9cf162a pushed by nextgenusfs 47s main main 47s View workflow file update actions Tests #11: Commit e7b31d0 pushed by nextgenusfs 1m 1s main main 1m 1s View workflow file tweaks to utr extension Tests #10: Commit 6687b01 pushed by nextgenusfs 54s main main 54s View workflow file tweaks to utr extension [DEPRECATED] Old Release Workflow #25: Commit 6687b01 pushed by nextgenusfs 40s main main 40s View workflow file allow UTR pass through, fix consensus clustering; bump version [DEPRECATED] Old Release Workflow #24: Commit 2072377 pushed by nextgenusfs 44s main main 44s View workflow file allow UTR pass through, fix consensus clustering; bump version Tests #9: Commit 2072377 pushed by nextgenusfs 59s main main 59s View workflow file add utr extension to consensus module Tests #8: Commit d44a61a pushed by nextgenusfs 1m 0s main main 1m 0s View workflow file add utr extension to consensus module [DEPRECATED] Old Release Workflow #23: Commit d44a61a pushed by nextgenusfs 43s main main 43s View workflow file bump version for re-build [DEPRECATED] Old Release Workflow #22: Commit bec1791 pushed by nextgenusfs 36s v25.4.17 v25.4.17 36s View workflow file bump version for re-build [DEPRECATED] Old Release Workflow #21: Commit bec1791 pushed by nextgenusfs 43s main main 43s View workflow file Previous 1 2 Next You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fnextgenusfs%2Fgfftk%2Factions)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fnextgenusfs%2Fgfftk%2Factions)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Factions%2Findex&source=header-repo&source_repo=nextgenusfs%2Fgfftk)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[nextgenusfs](/nextgenusfs)
+/
+**[gfftk](/nextgenusfs/gfftk)**
+Public
+
+* [Notifications](/login?return_to=%2Fnextgenusfs%2Fgfftk) You must be signed in to change notification settings
+* [Fork
+  3](/login?return_to=%2Fnextgenusfs%2Fgfftk)
+* [Star
+   16](/login?return_to=%2Fnextgenusfs%2Fgfftk)
+
+* [Code](/nextgenusfs/gfftk)
+* [Issues
+  2](/nextgenusfs/gfftk/issues)
+* [Pull requests
+  1](/nextgenusfs/gfftk/pulls)
+* [Actions](/nextgenusfs/gfftk/actions)
+* [Projects](/nextgenusfs/gfftk/projects)
+* [Security
+  0](/nextgenusfs/gfftk/security)
+* [Insights](/nextgenusfs/gfftk/pulse)
+
+Additional navigation options
+
+* [Code](/nextgenusfs/gfftk)
+* [Issues](/nextgenusfs/gfftk/issues)
+* [Pull requests](/nextgenusfs/gfftk/pulls)
+* [Actions](/nextgenusfs/gfftk/actions)
+* [Projects](/nextgenusfs/gfftk/projects)
+* [Security](/nextgenusfs/gfftk/security)
+* [Insights](/nextgenusfs/gfftk/pulse)
+
+# Actions: nextgenusfs/gfftk
+
+## Actions
+
+## All workflows All workflows Actions Loading... Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page.
+
+will be ignored since log searching is not yet available
+
+Showing runs from all workflows
+
+will be ignored since log searching is not yet available
+
+**44 workflow runs**
+
+**44 workflow runs**
+
+Event
+
+# Filter by Event
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching events.
+
+Status
+
+# Filter by Status
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching statuses.
+
+Branch
+
+# Filter by Branch
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching branches.
+
+Actor
+
+# Filter by Actor
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching users.
+
+[Update utils.py](/nextgenusfs/gfftk/actions/runs/23041703669)
+
+Tests
+#24:
+Pull request [#10](/nextgenusfs/gfftk/pull/10)
+opened
+by
+[gerverska](/gerverska)
+
+Action required
+[gerverska:main](/gerverska/gfftk/tree/refs/heads/main "gerverska:main")
+
+[gerverska:main](/gerverska/gfftk/tree/refs/heads/main "gerverska:main")
+
+Action required
+
+* [View #10](/nextgenusfs/gfftk/pull/10)
+* [View workflow file](/nextgenusfs/gfftk/actions/runs/23041703669/workflow)
+
+[Production Release](/nextgenusfs/gfftk/actions/runs/21974788489)
+
+Production Release
+#4:
+Manually run
+by
+[nextgenusfs](/nextgenusfs)
+
+1m 20s
+[main](/nextgenusfs/gfftk/tree/refs/heads/main "main")
+
+[main](/nextgenusfs/gfftk/tree/refs/heads/main "main")
+
+1m 20s
+
+* [View workflow file](/nextgenusfs/gfftk/actions/runs/21974788489/workflow)
+
+[Fix phase field initialization for ncRNA genes without CDS](/nextgenusfs/gfftk/actions/runs/21974701042)
+
+Test Release to TestPyPI
+#5:
+Commit [41f4054](/nextgenusfs/gfftk/commit/41f4054768f3c72c2fde68da80481a7601bb6d4e)
+pushed
+by
+[nextgenusfs](/nextgenusfs)
+
+1m 16s
+[v26.2.12](/nextgenusfs/gfftk/tree/refs/tags/v26.2.12 "v26.2.12")
+
+[v26.2.12](/nextgenusfs/gfftk/tree/refs/tags/v26.2.12 "v26.2.12")
+
+1m 16s
+
+* [View workflow file](/nextgenusfs/gfftk/actions/runs/21974701042/workflow)
+
+[Fix phase field initialization for ncRNA genes without CDS](/nextgenusfs/gfftk/actions/runs/21971662152)
+
+Tests
+#23:
+Commit [41f4054](/nextgenusfs/gfftk/commit/41f4054768f3c72c2fde68da80481a7601bb6d4e)
+pushed
+by
+[nextgenusfs](/nextgenusfs)
+
+56s
+[main](/nextgenusfs/gfftk/tree/refs/heads/main "main")
+
+[main](/nextgenusfs/gfftk/tree/refs/heads/main "main")
+
+56s
+
+* [View workflow file](/nextgenusfs/gfftk/actions/runs/21971662152/workflow)
+
+[pass/update phase on return](/nextgenusfs/gfftk/actions/runs/21971607907)
+
+Test Release to TestPyPI
+#4:
+Commit [920c201](/nextgenusfs/gfftk/commit/920c201a2bc197396ce54593c0008cae70c1334f)
+pushed
+by
+[nextgenusfs](/nextgenusfs)
+
+3m 21s
+[v26.2.12](/nextgenusfs/gfftk/tree/refs/tags/v26.2.12 "v26.2.12")
+
+[v26.2.12](/nextgenusfs/gfftk/tree/refs/tags/v26.2.12 "v26.2.12")
+
+3m 21s
+
+* [View workflow file](/nextgenusfs/gfftk/actions/runs/21971607907/workflow)
+
+[pass/update phase on return](/nextgenusfs/gfftk/actions/runs/21971556826)
+
+Tests
+#22:
+Commit [920c201](/nextgenusfs/gfftk/commit/920c201a2bc197396ce54593c0008cae70c1334f)
+pushed
+by
+[nextgenusfs](/nextgenusfs)
+
+49s
+[main](/nextgenusfs/gfftk/tree/refs/heads/main "main")
+
+[main](/nextgenusfs/gfftk/tree/refs/heads/main "main")
+
+49s
+
+* [View workflow file](/nextgenusfs/gfftk/actions/runs/21971556826/workflow)
+
+[fix sorting bug in gff2dict()](/nextgenusfs/gfftk/actions/runs/21957120703)
+
+Tests
+#21:
+Commit [f52a333](/nextgenusfs/gfftk/commit/f52a33377dccff022912fd3db56160bc1bdba28f)
+pushed
+by
+[nextgenusfs](/nextgenusfs)
+
+1m 7s
+[main](/nextgenusfs/gfftk/tree/refs/heads/main "main")
+
+[main](/nextgenusfs/gfftk/tree/refs/heads/main "main")
+
+1m 7s
+
+* [View workflow file](/nextgenusfs/gfftk/actions/runs/21957120703/workflow)
+
+[support combined gff+fasta, build yeast parser; add table2asn functio…](/nextgenusfs/gfftk/actions/runs/17046012325)
+
+Tests
+#20:
+Commit [a58c6c0](/nextgenusfs/gfftk/commit/a58c6c04733374d2a65714243b15323fdfeb08c4)
+pushed
+by
+[nextgenusfs](/nextgenusfs)
+
+57s
+[main](/nextgenusfs/gfftk/tree/refs/heads/main "main")
+
+[main](/nextgenusfs/gfftk/tree/refs/heads/main "main")
+
+57s
+
+* [View workflow file](/nextgenusfs/gfftk/actions/runs/17046012325/workflow)
+
+[improve release notes generation to exclude version bump commits](/nextgenusfs/gfftk/actions/runs/15550543191)
+
+Tests
+#19:
+Commit [7a4d315](/nextgenusfs/gfftk/commit/7a4d315315257725feea90a7b78ecc4b5e9507de)
+pushed
+by
+[nextgenusfs](/nextgenusfs)
+
+49s
+[main](/nextgenusfs/gfftk/tree/refs/heads/main "main")
+
+[main](/nextgenusfs/gfftk/tree/refs/heads/main "main")
+
+49s
+
+* [View workflow file](/nextgenusfs/gfftk/actions/runs/15550543191/workflow)
+
+[Production Release](/nextgenusfs/gfftk/actions/runs/15550464207)
+
+Production Release
+#3:
+Manually run
+by
+[nextgenusfs](/nextgenusfs)
+
+56s
+[main](/nextgenusfs/gfftk/tree/refs/heads/main "main")
+
+[main](/nextgenusfs/gfftk/tree/refs/heads/main "main")
+
+56s
+
+* [View workflow file](/nextgenusfs/gfftk/actions/runs/15550464207/workflow)
+
+[add PyPI error handling for version conflicts and allow GitHub releas…](/nextgenusfs/gfftk/actions/runs/15550450907)
+
+Tests
+#18:
+Commit [0a6c7b8](/nextgenusfs/gfftk/commit/0a6c7b86c6fd12e4472839b286e2fe6ab1467183)
+pushed
+by
+[nextgenusfs](/nextgenusfs)
+
+54s
+[main](/nextgenusfs/gfftk/tree/refs/heads/main "main")
+
+[main](/nextgenusfs/gfftk/tree/refs/heads/main "main")
+
+54s
+
+* [View workflow file](/nextgenusfs/gfftk/actions/runs/15550450907/workflow)
+
+[improve github release creation with fallback and error handling](/nextgenusfs/gfftk/actions/runs/15550430818)
+
+Tests
+#17:
+Commit [04ef78a](/nextgenusfs/gfftk/commit/04ef78afb0bee2c5faeae804a3b18bc18292732b)
+pushed
+by
+[nextgenusfs](/nextgenusfs)
+
+57s
+[main](/nextgenusfs/gfftk/tree/refs/heads/main "main")
+
+[main](/nextgenusfs/gfftk/tree/refs/heads/main "main")
+
+57s
+
+* [View workflow file](/nextgenusfs/gfftk/actions/runs/15550430818/workflow)
+
+[Production Release](/nextgenusfs/gfftk/actions/runs/15550396827)
+
+Production Release
+#2:
+Manually run
+by
+[nextgenusfs](/nextgenusfs)
+
+1m 8s
+[main](/nextgenusfs/gfftk/tree/refs/heads/main "main")
+
+[main](/nextgenusfs/gfftk/tree/refs/heads/main "main")
+
+1m 8s
+
+* [View workflow file](/nextgenusfs/gfftk/actions/runs/15550396827/workflow)
+
+[fix production release workflow conditional logic](/nextgenusfs/gfftk/actions/runs/15550386478)
+
+Tests
+#16:
+Commit [469f83e](/nextgenusfs/gfftk/commit/469f83ecd0c9dab0f6e1cf588b240743729c20d7)
+pushed
+by
+[nextgenusfs](/nextgenusfs)
+
+46s
+[main](/nextgenusfs/gfftk/tree/refs/heads/main "main")
+
+[main](/nextgenusfs/gfftk/tree/refs/heads/main "main")
+
+46s
+
+* [View workflow file](/nextgenusfs/gfftk/actions/runs/15550386478/workflow)
+
+[Production Release](/nextgenusfs/gfftk/actions/runs/15550332842)
+
+Production Release
+#1:
+Manually run
+by
+[nextgenusfs](/nextgenusfs)
+
+24s
+[main](/nextgenusfs/gfftk/tree/refs/heads/main "main")
+
+[main](/nextgenusfs/gfftk/tree/refs/heads/main "main")
+
+24s
+
+* [View workflow file](/nextgenusfs/gfftk/actions/runs/15550332842/workflow)
+
+[make gff3 default output for convert; allow gff3-->gff3 conversion](/nextgenusfs/gfftk/actions/runs/15550244650)
+
+Tests
+#15:
+Commit [79f8eb8](/nextgenusfs/gfftk/commit/79f8eb8c2907ddffb53cc9bcc64fbdf67d3e3a0d)
+pushed
+by
+[nextgenusfs](/nextgenusfs)
+
+54s
+[main](/nextgenusfs/gfftk/tree/refs/heads/main "main")
+
+[main](/nextgenusfs/gfftk/tree/refs/heads/main "main")
+
+54s
+
+* [View workflow file](/nextgenusfs/gfftk/actions/runs/15550244650/workflow)
+
+[bump version to 25.6.10 to match git tag](/nextgenusfs/gfftk/actions/runs/15550028894)
+
+Tests
+#14:
+Commit [c9e9c12](/nextgenusfs/gfftk/commit/c9e9c12c544e9100c24a6bb7649e24b5c6635edd)
+pushed
+by
+[nextgenusfs](/nextgenusfs)
+
+50s
+[main](/nextgenusfs/gfftk/tree/refs/heads/main "main")
+
+[main](/nextgenusfs/gfftk/tree/refs/heads/main "main")
+
+50s
+
+* [View workflow file](/nextgenusfs/gfftk/actions/runs/15550028894/workflow)
+
+[Test Release to TestPyPI](/nextgenusfs/gfftk/actions/runs/15550027626)
+
+Test Release to TestPyPI
+#3:
+by
+[nextgenusfs](/nextgenusfs)
+
+2m 45s
+[v25.6.10](/nextgenusfs/gfftk/tree/refs/tags/v25.6.10 "v25.6.10")
+
+[v25.6.10](/nextgenusfs/gfftk/tree/refs/tags/v25.6.10 "v25.6.10")
+
+2m 45s
+
+* [View workflo

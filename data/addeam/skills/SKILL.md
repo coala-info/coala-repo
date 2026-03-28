@@ -1,6 +1,6 @@
 ---
 name: addeam
-description: AdDeam characterizes nucleotide misincorporation patterns in ancient DNA and clusters sequences based on their degradation profiles. Use when user asks to estimate ancient DNA damage, generate damage profiles from BAM files, or cluster metagenomic sequences by degradation levels.
+description: AdDeam estimates and analyzes post-mortem DNA damage profiles from sequencing data to distinguish between ancient DNA and modern contamination. Use when user asks to detect C->T transitions in BAM files, generate damage profiles for metagenomic assemblies, or cluster sequences based on damage characteristics.
 homepage: https://github.com/LouisPwr/AdDeam
 ---
 
@@ -9,57 +9,70 @@ homepage: https://github.com/LouisPwr/AdDeam
 
 ## Overview
 
-AdDeam (Ancient DNA Damage Estimation and Management) is a high-performance toolkit designed to characterize nucleotide misincorporation patterns—the hallmark of ancient DNA. It processes BAM files to generate damage profiles and employs unsupervised learning to group sequences with similar degradation levels. It is particularly powerful for metagenomic datasets where it can calculate damage for every individual reference (contig or scaffold) within a single BAM file, allowing researchers to identify which specific organisms in a sample are likely ancient.
+AdDeam (Ancient DNA Damage Estimation and Analysis) is a specialized toolkit for processing sequencing data to detect post-mortem DNA damage, specifically C->T transitions. It transforms raw alignment data (BAM files) into statistical damage profiles. By utilizing a "Meta Mode," it can generate individual profiles for every contig or scaffold in a metagenomic assembly, allowing researchers to identify which specific parts of a sample are authentically ancient and which represent modern contamination through automated clustering.
 
-## Core Workflow and CLI Usage
+## Core Workflow
 
-### 1. Mandatory Pre-processing
-AdDeam requires BAM files to have **MD tags** (mismatch information) and recommends they be **sorted** for performance. If your BAM files lack MD tags, generate them using `samtools`:
+### 1. Prepare BAM Files
+Ensure all input BAM files are sorted and contain **MD tags** (mismatch annotations). If MD tags are missing, generate them using `samtools`:
 
 ```bash
-samtools calmd -b input.bam reference.fasta > input_with_md.bam
+samtools calmd -b input.bam reference.fasta > output_with_md.bam
 ```
 
-### 2. Generating Damage Profiles
-Use `addeam-bam2prof.py` to process a list of BAM files. The input should be a text file containing the full paths to your BAM files (one per line).
+### 2. Generate Damage Profiles
+Use `addeam-bam2prof.py` to process a list of BAM files.
 
-**Basic Command:**
+**Basic Usage:**
 ```bash
-python addeam-bam2prof.py -o profiles_output_dir list_of_bams.txt
+python addeam-bam2prof.py -o output_profiles_dir list_of_bams.txt
 ```
 
-**Key Parameters:**
-- `-o`: Directory where `.prof` files will be stored.
-- `--bam2profpath`: (Optional) Explicit path to the `bam2prof` binary if not in your PATH.
-- `Meta Mode`: Automatically triggered if the BAM contains multiple references and you wish to analyze them individually.
+**Key Execution Patterns:**
+- **Classic Mode**: Use `-classic` to generate one profile per BAM file (best for single-source samples).
+- **Meta Mode**: Use `-meta` to generate individual profiles for every reference/contig (best for metagenomics).
+- **Performance Tuning**: 
+    - Use `-threads <int>` to process multiple files in parallel.
+    - Use `-precision 0.01` or `0.001` to speed up analysis on large files by enabling early convergence checks.
+- **Library Specifics**: 
+    - Use `-single` for single-strand libraries.
+    - Use `-double` for double-strand libraries.
+    - Use `-both` to report both C->T and G->A transitions.
 
-### 3. Clustering and Visualization
-Once profiles are generated, use `addeam-cluster.py` to perform Gaussian Mixture Model (GMM) clustering and Principal Component Analysis (PCA).
+### 3. Cluster and Visualize
+Use `addeam-cluster.py` to analyze the generated `.prof` files.
 
-**Basic Command:**
+**Basic Usage:**
 ```bash
-python addeam-cluster.py -i profiles_output_dir -o results_plots_dir
+python addeam-cluster.py -i output_profiles_dir -o plots_dir
 ```
 
-**Key Parameters:**
-- `-i`: The directory containing the `.prof` files generated in the previous step.
-- `-o`: Output directory for reports and plots.
-
-## Interpreting Results
-
-The clustering step produces several critical outputs in the results directory:
-
-- **PDF Damage Reports**: (e.g., `damage_report_k3.pdf`) Visualizes the PCA clusters and the representative damage profiles for each group.
-- **Cluster Assignments**: Found in `GMM/kx/cluster_report_kx.tsv`. This file provides the probability of each sample/reference belonging to a specific cluster.
-- **Excluded References**: A text file listing IDs that had insufficient data (aligned reads) to be reliably clustered.
+**Advanced Clustering:**
+- **Cluster Count**: By default, the tool generates reports for k=2, 3, and 4 clusters.
+- **Output Interpretation**:
+    - **PDF Reports**: Visual summaries of damage for each cluster.
+    - **GMM Directory**: Contains TSV files with probability assignments (which sample belongs to which cluster).
+    - **PCA Directory**: Visual separation of samples based on damage characteristics.
 
 ## Expert Tips and Best Practices
 
-- **Convergence Speed**: AdDeam uses an early stopping criterion. If a damage profile converges early, it will stop processing that BAM, significantly saving time on high-coverage samples.
-- **Metagenomic Screening**: In "Meta Mode," use the TSV cluster reports to filter your assembly. Contigs assigned to the "high damage" cluster are your primary candidates for authentic ancient sequences.
-- **MD Tag Piping**: You can pipe `samtools calmd` directly from aligners like `bwa` or `bowtie` to avoid creating massive intermediate files without MD tags.
-- **K-selection**: By default, the tool generates reports for k=2, 3, and 4 clusters. Compare the PCA plots across these values to determine which grouping best represents the biological reality of your data (e.g., separating "undamaged," "low damage," and "high damage").
+- **Early Stopping**: For very large datasets, set `-minAligned` (e.g., 1,000,000) and `-minConverge` (e.g., 0.01). AdDeam will stop processing a file once the damage profile stabilizes, significantly reducing runtime without losing accuracy.
+- **Filtering**: Use `-minq` (base quality) and `-minl` (read length, default 35) to exclude low-quality data that might skew damage estimates.
+- **Handling Contamination**: In metagenomic contexts, look for clusters with near-zero damage profiles in the GMM output; these typically represent modern contaminants or poorly aligned reads.
+- **Binary Pathing**: If the tool cannot find the underlying `bam2prof` C++ binary, explicitly provide the path using `--bam2profpath /path/to/binary`.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| addeam-bam2prof.py | Python wrapper for bam2prof |
+| addeam-cluster.py | Cluster and plot damage profiles. |
+| samtools | Tools for alignments in the SAM format |
 
 ## Reference documentation
-- [AdDeam GitHub Repository](./references/github_com_LouisPwr_AdDeam.md)
-- [AdDeam Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_addeam_overview.md)
+
+- [AdDeam Repository Overview](./references/github_com_LouisPwr_AdDeam_blob_main_README.md)
+- [Damage Profile Generation (addeam-bam2prof.py)](./references/github_com_LouisPwr_AdDeam_blob_main_addeam-bam2prof.py.md)
+- [Clustering and Visualization (addeam-cluster.py)](./references/github_com_LouisPwr_AdDeam_blob_main_addeam-cluster.py.md)

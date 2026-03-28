@@ -1,6 +1,6 @@
 ---
 name: unikseq
-description: unikseq identifies genomic regions present in a reference and an ingroup but absent or minimally present in an outgroup. Use when user asks to 'identify unique genomic regions', 'design qPCR assays', 'develop eDNA assays', or 'characterize genomic gaps'.
+description: unikseq is an alignment-free tool that identifies unique genomic regions in a reference sequence by comparing k-mers against ingroup and outgroup datasets. Use when user asks to find unique sequences for eDNA applications, identify species-specific k-mers, or design highly specific qPCR primers from fragmented genomic data.
 homepage: https://github.com/bcgsc/unikseq
 ---
 
@@ -9,54 +9,70 @@ homepage: https://github.com/bcgsc/unikseq
 
 ## Overview
 
-`unikseq` identifies genomic regions that are present in a reference and an ingroup but absent (or minimally present) in an outgroup. By utilizing k-mer frequencies rather than sequence alignment, the tool can process unordered contigs, unoriented reads, and inconsistent start coordinates. This makes it a robust choice for comparative genomics and diagnostic assay development where high specificity is required.
+unikseq is a k-mer based tool designed to find genomic regions that are unique to a specific reference sequence relative to a set of outgroup sequences. Unlike Multiple Sequence Alignment (MSA) methods, unikseq is alignment-free, making it significantly faster and capable of handling unstructured data such as raw sequencing reads, fragmented contigs, or unordered genome sequences. It is particularly effective for environmental DNA (eDNA) applications where high specificity is required to distinguish between closely related species.
 
 ## Installation and Setup
 
-Install `unikseq` via Bioconda to ensure all dependencies, including Bloom filter libraries for large-scale data, are correctly configured:
+The most reliable way to install unikseq and its dependencies (including Bloom filter libraries) is via Conda:
 
 ```bash
 conda install -c bioconda unikseq
 ```
 
-## Command Line Usage
+Alternatively, clone the repository for the Perl source:
 
-The core tool is a Perl script (`unikseq.pl`). It requires three primary input files in FASTA format.
-
-### Basic Command Pattern
 ```bash
-unikseq.pl -r reference.fa -i ingroup.fa -o outgroup.fa [options]
+git clone https://github.com/BirolLab/unikseq
+cd unikseq
 ```
 
-### Key Parameters
-- `-r`: **Reference FASTA** (Required). The sequence you want to find unique regions within.
-- `-i`: **Ingroup FASTA** (Required). Sequences where the reference k-mers should be conserved/tolerated.
-- `-o`: **Outgroup FASTA** (Required). Sequences where the reference k-mers should NOT appear.
-- `-k`: **k-mer length** (Default: 25). Increase for higher specificity in complex genomes; decrease for higher sensitivity.
-- `-l`: **Leniency** (Default: 0). The number of consecutive non-unique k-mers allowed in the outgroup before a region is rejected.
-- `-m`: **Max % entries** (Default: 0). The maximum percentage of outgroup entries allowed to contain a reference k-mer.
-- `-c`: **Conserved regions** (1=Yes, 0=No). Set to `-c 1` to output conserved FASTA regions between the reference and ingroup.
+## Core Usage Patterns
+
+### Standard Uniqueness Analysis
+The primary script `unikseq.pl` identifies k-mers in the reference that are found in the ingroup but not in the outgroup.
+
+```bash
+perl unikseq.pl -r reference.fa -i ingroup.fa -o outgroup.fa -k 25 > unique_regions.txt
+```
+
+### Large-Scale Analysis (Bloom Filter Version)
+For Gbp-scale genomes or massive sequencing datasets, use the Bloom filter variant to save memory. This requires a two-step process:
+
+1. **Generate Bloom Filters**:
+   ```bash
+   # Create a Bloom filter for the outgroup sequences
+   perl tools/writeBloom.pl outgroup.fa 25 10G outgroup.bf
+   ```
+
+2. **Run unikseq-Bloom**:
+   Use the specialized Bloom filter implementation (typically provided in the `tools/` directory or via conda) to check k-mer presence against the pre-built filter.
 
 ## Expert Tips and Best Practices
 
-### Ensuring Specificity
-The accuracy of "uniqueness" is relative to your outgroup. Always ensure your outgroup file is as complete as possible. If an outgroup is missing a specific sequence, `unikseq` may incorrectly flag a region in your reference as unique when it actually exists in the missing outgroup data.
+- **Outgroup Completeness**: The uniqueness of identified regions is strictly relative to the outgroup provided. Ensure your outgroup is as complete as possible to avoid false positives (regions flagged as unique only because the corresponding sequence was missing from the outgroup file).
+- **K-mer Size Selection**: A k-mer size of 25 is standard for many applications, but you should increase `k` for highly repetitive genomes or decrease it if looking for very short conserved motifs.
+- **Handling Incomplete Data**: unikseq is robust against fragmented data. You can mix raw WGS reads and finished genomes in your ingroup/outgroup files without prior assembly or orientation.
+- **qPCR Design**: Use the output coordinates to extract sequences for primer-probe design. Since the regions are pre-validated against the outgroup, the resulting assays typically require less manual screening for cross-reactivity.
 
-### Handling Large Datasets
-For Gbp-scale genomes or massive sequencing sets, use the Bloom filter utility (`unikseq-Bloom`). This requires pre-building Bloom filters using the `writeBloom.pl` utility provided in the package. This version uses presence/absence logic rather than k-mer counting to save memory.
+## Visualization
 
-### Input Flexibility
-`unikseq` supports:
-- Raw RNA-seq or WGS reads.
-- Fragmented or unoriented contigs.
-- Compressed FASTA files (.gz).
-- Mixed sets of reads and assembled sequences.
+To visualize the distribution of unique k-mers across a reference (e.g., a mitogenome), use the provided R script to generate a "butterfly plot":
 
-### Downstream Applications
-- **qPCR Design**: Use the unique regions identified in the TSV output to target specific taxa without manual sequence inspection.
-- **eDNA Assays**: Identify taxon-specific regions within mitogenomes for environmental monitoring.
-- **Gap Characterization**: Use an incomplete outgroup to identify regions in your reference that characterize missing stretches in the outgroup sequences.
+```bash
+Rscript butterfly-plot.r <data_file> <species_name>
+```
+This produces a PDF showing the proportion of species sharing specific k-mers at each position of the reference.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| /usr/local/bin/unikseq.pl | v2.0.0 |
+| unikseq_writeBloom.pl | Writes a bloom filter from sequences. |
 
 ## Reference documentation
-- [unikseq GitHub Repository](./references/github_com_bcgsc_unikseq.md)
-- [Bioconda unikseq Package Overview](./references/anaconda_org_channels_bioconda_packages_unikseq_overview.md)
+- [unikseq GitHub Repository](./references/github_com_BirolLab_unikseq.md)
+- [unikseq README](./references/github_com_BirolLab_unikseq_blob_main_README.md)
+- [Butterfly Plot Script](./references/github_com_BirolLab_unikseq_blob_main_butterfly-plot.r.md)

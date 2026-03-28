@@ -1,6 +1,6 @@
 ---
 name: pybda
-description: PyBDA processes massive biological datasets using Apache Spark and Snakemake to perform parallelized analytical workflows. Use when user asks to perform large-scale dimension reduction, run K-means clustering on big data, or execute distributed machine learning pipelines.
+description: PyBDA scales bioinformatics workflows and machine learning pipelines to high-performance computing environments using Apache Spark and Snakemake. Use when user asks to execute distributed dimensionality reduction, perform parallelized clustering on high-dimensional biological datasets, or run scalable machine learning regressions.
 homepage: https://github.com/cbg-ethz/pybda
 ---
 
@@ -9,39 +9,62 @@ homepage: https://github.com/cbg-ethz/pybda
 
 ## Overview
 
-PyBDA (Python Big Data Analytics) is a specialized tool for processing massive biological data sets that exceed the capacity of standard single-node tools. It integrates Apache Spark's DataFrame API for parallelized computation and Snakemake for workflow orchestration. The tool builds a Directed Acyclic Graph (DAG) of tasks—such as PCA followed by K-means clustering—ensuring that complex pipelines are executed efficiently and can be resumed automatically if a specific step fails.
+PyBDA (Python Big Data Analytics) is a specialized framework designed to scale bioinformatics workflows to high-performance computing (HPC) environments. By leveraging Apache Spark for parallel data processing and Snakemake for workflow orchestration, it allows researchers to execute complex machine learning pipelines—such as dimensionality reduction followed by clustering—across distributed nodes without manual parallelization. It is particularly effective for high-dimensional biological datasets where traditional single-node tools fail due to memory or processing constraints.
 
-## Command Line Usage
+## Usage Instructions
 
-The primary interface for PyBDA is the `run` command, which requires a configuration file and an execution mode.
+### Core Command Line Interface
 
-### Basic Syntax
-`pybda run [config_file] [mode]`
+The primary entry point for the tool is the `run` command, which requires a configuration file and an execution mode.
 
-*   **config_file**: A text-based configuration file defining data paths, Spark parameters, and the analytical methods to be used.
-*   **mode**: Typically `local` for single-machine testing or cluster-specific identifiers for distributed execution.
+```bash
+pybda run <config_file> <mode>
+```
 
-### Core Analytical Methods
-PyBDA supports sequential execution of the following modules:
-*   **Dimension Reduction**: Supports methods like PCA (Principal Component Analysis).
-*   **Clustering**: Supports K-means with the ability to test multiple center counts (e.g., `n_centers: 50, 100, 150`) in a single run.
-*   **Regression/Machine Learning**: Supports Random Forest models for classification or regression tasks.
+*   **config_file**: Path to the file defining your data sources, methods, and parameters.
+*   **mode**: Typically `local` for testing or a cluster-specific executor for HPC environments.
 
-## Configuration Best Practices
+### Pipeline Configuration Parameters
 
-Since PyBDA relies on a configuration file to define the pipeline, ensure the following parameters are correctly specified:
+Instead of manual scripting, pybda relies on specific keys defined in your configuration. Ensure the following parameters are correctly mapped:
 
-*   **Data Input**: Provide paths for the main data file (`infile`), metadata columns (`meta`), and feature columns (`features`). Data should typically be in TSV format.
-*   **Spark Optimization**: Use the `sparkparams` field to allocate resources. For large datasets, explicitly set `--driver-memory` and `--executor-memory` to prevent Out-of-Memory (OOM) errors.
-*   **Pipeline Resumption**: Because PyBDA uses Snakemake, if a job fails, you can re-run the same command. The tool will detect existing output files and only execute the missing or failed components of the DAG.
-*   **Debugging**: Set `debug: true` in the configuration to receive verbose output regarding the Spark session and Snakemake job scheduling.
+*   **Data Input**: Use `infile` for the primary dataset (e.g., .tsv) and `predict` for the target dataset.
+*   **Column Mapping**: Define `meta` for columns containing metadata and `features` for the actual data columns to be analyzed.
+*   **Dimensionality Reduction**: Set `dimension_reduction` (e.g., `pca`) and specify `n_components`.
+*   **Clustering**: Set `clustering` (e.g., `kmeans`) and provide a list of `n_centers` to test.
+*   **Machine Learning**: Specify `regression` (e.g., `forest`), the `family` (e.g., `binomial`), and the `response` column.
+
+### Spark Optimization
+
+Since pybda runs on Apache Spark, resource allocation is critical for "Big Data" tasks. Use the `sparkparams` section to pass native Spark flags:
+
+*   `--driver-memory`: Increase this if the master node is collecting large results.
+*   `--executor-memory`: Increase this to handle high-dimensional feature matrices across worker nodes.
+
+### Workflow Management
+
+*   **Resuming Jobs**: Because pybda uses Snakemake to build a Directed Acyclic Graph (DAG), if a pipeline fails (e.g., due to a cluster timeout), simply re-run the same command. The tool will detect existing results and resume from the failed step.
+*   **Debugging**: Enable the `debug` flag in your configuration to output verbose logs from the Spark driver, which is essential for identifying data partitioning issues or memory leaks.
 
 ## Expert Tips
 
-*   **Feature Selection**: Use the `features` and `meta` TSV files to strictly define which columns Spark should treat as variables versus identifiers. This reduces the memory footprint during the PCA and Clustering phases.
-*   **Scaling Centers**: When performing K-means, you can provide a comma-separated list of centers. PyBDA will parallelize the evaluation of these different cluster granularities.
-*   **Spark Submit**: Ensure the `spark` parameter in your config points to the correct `spark-submit` executable in your environment or container.
+*   **Feature Selection**: Always use the `features` column file to exclude non-numeric or irrelevant metadata before running PCA or K-Means to prevent Spark from attempting to vectorize string data.
+*   **Scaling Centers**: When running K-Means, you can provide a comma-separated list of centers (e.g., 50, 100, 150). PyBDA will parallelize the computation of these different center counts.
+*   **Environment**: For biological data, installing via Bioconda is the preferred method to ensure all C-dependencies for Spark and Snakemake are correctly linked.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| clustering | Do a clustering fit from a CONFIG in a SPARK session. |
+| dimension-reduction | Computes a dimension reduction from a CONFIG in a SPARK session. |
+| pybda_sample | Subsample a data set down to a specified fraction from a CONFIG in a SPARK session. |
+| regression | Fit a regression model from a CONFIG in a SPARK session. |
+| run | Execute all tasks defined in a CONFIG in a SPARK session. |
 
 ## Reference documentation
-- [PyBDA GitHub Repository](./references/github_com_cbg-ethz_pybda.md)
-- [PyBDA Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_pybda_overview.md)
+
+- [github_com_cbg-ethz_pybda_blob_master_README.md](./references/github_com_cbg-ethz_pybda_blob_master_README.md)
+- [pybda_readthedocs_io_en_latest_usage.html.md](./references/pybda_readthedocs_io_en_latest_usage.html.md)

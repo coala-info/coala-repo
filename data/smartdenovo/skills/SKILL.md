@@ -1,6 +1,6 @@
 ---
 name: smartdenovo
-description: SMARTdenovo is a high-performance assembler that produces unitigs and consensus sequences directly from raw long-read sequencing data without a prior error-correction step. Use when user asks to assemble long reads into unitigs, generate a draft genome assembly, or create a Makefile for a multi-step assembly workflow.
+description: SMARTdenovo is a specialized assembly pipeline designed for the rapid de novo assembly of high-noise long reads without an explicit error-correction step. Use when user asks to assemble long-read sequencing data, generate consensus sequences from raw reads, or perform computationally efficient large genome assembly.
 homepage: https://github.com/ruanjue/smartdenovo
 ---
 
@@ -8,58 +8,68 @@ homepage: https://github.com/ruanjue/smartdenovo
 # smartdenovo
 
 ## Overview
+SMARTdenovo is a specialized assembly pipeline designed for high-noise long reads. Unlike many other assemblers, it skips the explicit error-correction step, instead relying on a robust all-vs-all overlapping strategy and a final consensus generation phase. It is particularly effective for rapid assembly of large genomes where computational efficiency is required. The tool operates by generating a Makefile that orchestrates several sub-tools (wtzmo, wtobt, wtgbo, etc.) to produce raw unitigs and polished consensus sequences.
 
-SMARTdenovo is a high-performance assembler tailored for the characteristics of long-read sequencing data. Unlike many assemblers that require a computationally expensive error-correction step before assembly, SMARTdenovo produces unitigs directly from all-vs-all raw read alignments. It is composed of several modular tools (wtzmo, wtgbo, wtclp, wtcns) coordinated by a central Perl wrapper. While it produces accurate consensus sequences, the output is typically intended to be polished further by platform-specific tools like Quiver or Nanopolish.
+## Basic Usage
+The standard workflow involves generating a Makefile and then executing it using `make`.
 
-## Command Line Usage
+```bash
+# 1. Generate the assembly Makefile
+smartdenovo.pl -p my_assembly -c 1 reads.fa > my_assembly.mak
 
-The primary interface for SMARTdenovo is the `smartdenovo.pl` script, which generates a Makefile to manage the multi-step assembly process.
+# 2. Run the assembly pipeline
+make -f my_assembly.mak
+```
 
-### Standard Assembly Workflow
+### Key Output Files
+- `prefix.lay.utg`: Raw unitig sequences.
+- `prefix.cns`: Consensus unitig sequences (generated if `-c 1` is used).
 
-1. **Prepare Input**: Ensure reads are in FASTA format. If starting with FASTQ, convert them first:
-   ```bash
-   # Example conversion using sed
-   sed -n '1~4s/^@/>/p;2~4p' reads.fastq > reads.fa
-   ```
+## Command Line Options for smartdenovo.pl
+- `-p STR`: Output prefix (default: wtasm).
+- `-t INT`: Number of threads (default: 8).
+- `-c INT`: Generate consensus (0: no, 1: yes; default: 0).
+- `-J INT`: Minimum read length (default: 5000).
+- `-e STR`: Engine for overlapping (zmo or dmo; default: zmo).
 
-2. **Generate Makefile**:
-   ```bash
-   smartdenovo.pl -p my_assembly -c 1 reads.fa > my_assembly.mak
-   ```
-   * `-p`: Prefix for all output files.
-   * `-c 1`: Enables the generation of consensus sequences (default is 0, which only produces raw unitigs).
+## Expert Tips and Best Practices
 
-3. **Execute Assembly**:
-   ```bash
-   make -f my_assembly.mak
-   ```
+### Using the Dot Matrix Overlapper (DMO)
+For very long reads or specific datasets where Smith-Waterman alignment is a bottleneck, use the "dot matrix alignment" algorithm. This is Smith-Waterman free and can be significantly faster.
+- Add `-U -1 -m 0.1` to the `wtzmo` parameters or use the `run_dmo.sh` template for E. coli or Yeast datasets.
 
-### Output Files
+### Memory Management for Large Genomes
+The overlapper `wtzmo` can consume significant memory. For large genomes, use the `-G` option to split the kmer-index into parts:
+- `wtzmo -G 4 ...`: Reduces memory usage to approximately 1/4 by processing the index in 4 parts.
 
-* `prefix.lay.utg`: Raw unitig layouts.
-* `prefix.cns`: Final consensus unitig sequences in FASTA format.
-* `prefix.mak`: The generated Makefile containing the specific tool parameters.
+### Parallelization Across Nodes
+To run `wtzmo` across a cluster:
+- Use `-P <total_nodes> -p <node_index>`.
+- Example for node 1 of 60: `wtzmo -P 60 -p 0 ...`
 
-## Advanced Configuration and Best Practices
+### Tuning Overlaps (wtzmo)
+- **Homopolymer Compression**: Enabled by default. Use `-H 0` to disable if working with data where homopolymer lengths are critical.
+- **K-mer Frequency**: Use `-K 500` to discard high-frequency kmers (repeats) that slow down the overlapping process.
+- **Alignment Sensitivity**: Adjust `-w` (initial band width) and `-W` (max band width) to control the trade-off between speed and sensitivity in gap-heavy regions.
 
-### Dot Matrix Alignment (DMO)
-For maximum speed, SMARTdenovo supports a "Smith-Waterman free" algorithm called dot matrix alignment. This is significantly faster for large datasets.
+### Read Trimming and Chimera Detection (wtobt)
+`wtobt` is used to trim reads based on overlap evidence. It detects "spurs" and chimeric joins by analyzing read coverage and crossing overlaps.
+- Use `wtobt -i reads.fa -j overlaps.ovl -o trimmed.obt -c 2` to generate a read mask file.
 
-* **Manual Trigger**: Add `-U -1 -m 0.1` to the `wtzmo` overlapping stage.
-* **Automated Script**: Use the provided `run_dmo.sh` for a pre-configured DMO pipeline, which has been validated on E. coli, Yeast, and Drosophila datasets.
 
-### Tool-Specific Functions
-If you need to run components individually for custom pipelines:
-* **wtzmo**: Handles the initial read overlapping.
-* **wtgbo**: Rescues missing overlaps to improve assembly contiguity.
-* **wtclp**: Identifies and trims low-quality regions and chimeric reads.
-* **wtcns / wtmsa**: Generates the unitig consensus sequences.
 
-### Expert Tips
-* **Memory Management**: SMARTdenovo is memory-efficient, but for very large genomes, ensure your environment has sufficient RAM for the all-vs-all alignment phase.
-* **Polishing**: Always treat the `.cns` output as a "draft" assembly. For high-accuracy applications (e.g., variant calling), follow up with platform-specific polishers.
-* **Parallelization**: The generated Makefile supports parallel execution. Use `make -j <threads> -f prefix.mak` to speed up the assembly on multi-core systems.
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| smartdenovo.pl | Smartdenovo is a de novo assembler for long reads. |
+| wtclp | Maximizing legal overlap by clipping long reads |
+| wtcns | Consensus caller |
+| wtgbo | Overlapper based on overlap graph |
+| wtmsa | Consensus caller using POA |
+| wtzmo | Overlaper of long reads using homopolymer compressed k-mer seeding |
 
 ## Reference documentation
-- [SMARTdenovo Main Repository](./references/github_com_ruanjue_smartdenovo.md)
+- [SMARTdenovo Main README](./references/github_com_ruanjue_smartdenovo_blob_master_README.md)
+- [Detailed Tool Documentation (wtzmo, wtobt, etc.)](./references/github_com_ruanjue_smartdenovo_blob_master_README-tools.md)
+- [Makefile Configuration](./references/github_com_ruanjue_smartdenovo_blob_master_Makefile.md)

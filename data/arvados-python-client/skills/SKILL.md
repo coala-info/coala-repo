@@ -1,6 +1,6 @@
 ---
 name: arvados-python-client
-description: The Arvados Python Client provides a programmatic interface and command-line tools for managing data and orchestrating resources on the Arvados platform. Use when user asks to upload or download data from Keep, query metadata, manage collections, or interact with Arvados services via the Python SDK.
+description: The arvados-python-client provides command-line tools for interacting with the Arvados API and Keep storage system to manage large-scale biomedical data. Use when user asks to upload files to Keep, inspect object metadata, list collections, copy resources between clusters, or generate deduplication reports.
 homepage: https://github.com/curoverse/arvados/tree/main/sdk/python
 ---
 
@@ -8,55 +8,55 @@ homepage: https://github.com/curoverse/arvados/tree/main/sdk/python
 # arvados-python-client
 
 ## Overview
-The Arvados Python Client provides the programmatic interface for Arvados, an open-source platform for managing and analyzing scientific big data. This skill enables efficient interaction with Arvados services, specifically focusing on data management within the Keep storage system and resource orchestration. Use this tool to automate data uploads, query metadata, and manage collections without manual intervention through the Workbench UI.
+The `arvados-python-client` provides a suite of command-line tools designed to interact with the Arvados API and Keep storage system. This skill enables efficient management of large-scale biomedical data by leveraging Arvados' content-addressed storage. Use these tools to upload datasets, inspect collection metadata, and manage data across different Arvados clusters while benefiting from built-in features like automatic deduplication and data provenance.
 
-## Authentication and Setup
-Before using the client, ensure your environment is configured with Arvados API credentials.
-- **Environment Variables**: Set `ARVADOS_API_HOST` and `ARVADOS_API_TOKEN`.
-- **Insecure Connections**: If using a self-signed certificate, set `ARVADOS_API_HOST_INSECURE=1`.
+## Core CLI Tools and Patterns
 
-## Common CLI Patterns
-The Python SDK installs several high-utility command-line tools:
+### Data Upload and Storage (arv-put)
+Use `arv-put` to upload files or directories into Arvados Keep.
+- **Basic Upload**: `arv-put <path/to/data>`
+- **Specify Storage Class**: Use `--storage-classes` to define the underlying storage tier (e.g., `cold`, `archive`).
+- **Set Replication**: Use `--replication N` to ensure the data is stored across N different nodes.
+- **Output**: The command returns a Collection UUID and a Portable Data Hash (PDH).
 
-### Data Management (Keep)
-- **Upload data**: `arv-put path/to/data`
-  - Use `--project-uuid` to specify a destination project.
-  - Use `--stream` to pipe data directly into a collection.
-- **Download data**: `arv-get [collection-uuid-or-portable-data-hash]/filename path/to/local/file`
-- **Mount Keep**: `arv-mount /path/to/mountpoint`
-  - This exposes Arvados collections as a local filesystem for easy browsing.
+### Object Inspection (arv get)
+Retrieve the JSON representation of any Arvados object (collections, projects, etc.) using its UUID.
+- **Command**: `arv get <uuid>`
+- **Usage**: Useful for inspecting the `manifest_text` of a collection or checking the `portable_data_hash`.
 
-### Resource Management
-- **Querying objects**: `arv-get [uuid]` returns the JSON representation of any Arvados object (collections, projects, users).
-- **Deleting objects**: `arv-keepdocker --delete [image-name]` (specifically for managing Docker images in Keep).
+### Collection Management (arv collection)
+List and filter data sets within a project or cluster.
+- **List by Size**: `arv collection list --order 'file_size_total desc'`
+- **Filtering**: Use `jq` to parse the JSON output for specific fields like `portable_data_hash` or `uuid`.
 
-## Python SDK Best Practices
+### Data Copying (arv-copy)
+Move resources between different Arvados clusters.
+- **Command**: `arv-copy --src <source-cluster> --dst <destination-cluster> <uuid>`
+- **Credential Management**: `arv-copy` checks `settings.conf` for cluster credentials if a specific configuration file is not provided.
 
-### Initializing the Client
-```python
-import arvados
-api = arvados.api('v1')
-```
+### Deduplication Analysis (arvados-client)
+Arvados uses content-addressing to deduplicate data at the block level.
+- **Report**: `arvados-client deduplication-report <uuid1> <uuid2> ...`
+- **Insight**: This command compares the "Nominal size" (total size of files) against the "Actual size" (unique blocks stored) to show storage savings.
 
-### Working with Collections
-Use the `CollectionReader` and `CollectionWriter` classes for efficient data handling:
-- **Reading**: `arvados.collection.CollectionReader("uuid-or-pdh")` allows file-like access to data in Keep.
-- **Writing**: `arvados.collection.CollectionWriter()` allows you to build a collection programmatically and commit it to Keep.
+## Expert Tips and Best Practices
+- **Content Addressing**: Always prefer using the Portable Data Hash (PDH) for verifying data integrity, as it is a cryptographic hash of the collection's manifest.
+- **Streaming Performance**: Arvados 3.0+ supports a streaming architecture in Keep. When downloading or reading data, the system can send blocks before they are fully read, reducing "time to first byte."
+- **Metadata Search**: API text searches ignore identifier columns like UUIDs and PDHs to return more relevant results faster.
+- **Project Organization**: Use the `arv` tool to organize collections into projects for better access control and collaboration.
 
-### Efficient Searching
-When using `api.collections().list()`, always use filters to minimize payload size:
-```python
-# Example: Find collections by name
-results = api.collections().list(
-    filters=[["name", "like", "Project-Alpha-%"]]
-).execute()
-```
 
-## Expert Tips
-- **Portable Data Hashes (PDH)**: When referencing data for reproducibility, use the PDH (e.g., `d41d8cd98f00b204e9800998ecf8427e+0`) instead of the UUID. UUIDs point to the container, while PDHs point to the specific content.
-- **Batching**: For large metadata operations, use the `num_retries` parameter in `.execute(num_retries=n)` to handle transient network issues.
-- **Keep Locators**: Understand that Keep locators often include a hint (e.g., `+K@clusterid`) which is necessary for cross-cluster data access.
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| arv-get | Copy data from Keep to a local file or pipe. |
+| arv-keepdocker | Upload or list Docker images in Arvados |
+| arv-put | Copy data from the local filesystem to Keep. |
 
 ## Reference documentation
-- [Arvados GitHub Repository](./references/github_com_arvados_arvados.md)
-- [Arvados Python SDK Source](./references/github_com_arvados_arvados_tree_main_sdk_python.md)
+- [A Look At Deduplication In Keep](./references/arvados_org_2021_05_11_a_look_at_deduplication_in_Keep.md)
+- [Arvados 3.1 Release Highlights](./references/arvados_org_blog.md)
+- [Arvados 3.0 Release Highlights](./references/arvados_org_index_1.md)
+- [Arvados in Regulated Environments](./references/arvados_org_compliance.md)

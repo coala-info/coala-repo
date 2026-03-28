@@ -449,3 +449,6 @@ Examples:
     For more information,please read the docs: https://macrel.readthedocs.io/en/latest/
 ```
 
+
+## Metadata
+- **Skill**: generated

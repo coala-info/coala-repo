@@ -1,6 +1,6 @@
 ---
 name: gmsc-mapper
-description: GMSC-mapper predicts and annotates small proteins from microbiome sequences by aligning them against the Global Microbial Small ORF Catalog. Use when user asks to predict smORFs from genomic contigs, align amino acid or nucleotide sequences to the GMSC database, or characterize small proteins with habitat and taxonomic metadata.
+description: gmsc-mapper is a bioinformatics pipeline for predicting and aligning small proteins from metagenomic data against the Global Microbial SmORF Catalog. Use when user asks to predict smORFs from raw contigs, map amino acid or nucleotide sequences to the GMSC, or provide ecological and evolutionary context for small proteins.
 homepage: https://github.com/BigDataBiology/GMSC-mapper
 ---
 
@@ -8,40 +8,77 @@ homepage: https://github.com/BigDataBiology/GMSC-mapper
 # gmsc-mapper
 
 ## Overview
-GMSC-mapper is a specialized bioinformatics tool for the discovery and characterization of small proteins within the global microbiome. It automates the workflow of predicting smORFs from raw genomic contigs and performing high-throughput alignments against the GMSC database. By integrating with alignment engines like DIAMOND and MMseqs2, the tool provides ecological and evolutionary context for small proteins, including their likely habitats, taxonomic origins, and sequence quality metrics.
 
-## Core Workflows
+gmsc-mapper is a specialized bioinformatics pipeline for the analysis of small proteins within the global microbiome. It handles the end-to-end process of predicting smORFs from raw contigs or taking pre-defined gene sequences (nucleotide or amino acid) and aligning them against the GMSC. By leveraging optimized aligners like DIAMOND and MMseqs2, it provides ecological and evolutionary context to small proteins that are frequently missed by standard annotation pipelines.
 
-### 1. Database Preparation
-Before running queries, you must download and index the GMSC database.
+## Database Preparation
 
-*   **Download**: `gmsc-mapper downloaddb --dbdir ./db`
-*   **Index (DIAMOND - Default)**: `gmsc-mapper createdb -i ./db/GMSC10.90AA.faa.gz -o ./db -m diamond`
-*   **Index (MMseqs2)**: `gmsc-mapper createdb -i ./db/GMSC10.90AA.faa.gz -o ./db -m mmseqs`
+Before running annotations, you must prepare the local GMSC reference.
 
-### 2. Running Alignments
-The tool accepts three primary input types. Ensure the `--dbdir` points to the directory containing your indexed database.
+1.  **Download the database**:
+    ```bash
+    gmsc-mapper downloaddb --dbdir ./gmsc_db
+    ```
+2.  **Create the index**:
+    Choose an aligner (DIAMOND is default and generally faster; MMseqs2 is available for specific sensitivity requirements).
+    ```bash
+    # For DIAMOND (Default)
+    gmsc-mapper createdb -i ./gmsc_db/GMSC10.90AA.faa.gz -o ./gmsc_db -m diamond
 
-*   **From Genome Contigs**: Predicts smORFs automatically before mapping.
-    `gmsc-mapper -i ./input_contigs.fa --dbdir ./db -o ./output_dir`
-*   **From Amino Acid Sequences**:
-    `gmsc-mapper --aa-genes ./input_proteins.faa --dbdir ./db -o ./output_dir`
-*   **From Nucleotide Gene Sequences**:
-    `gmsc-mapper --nt-genes ./input_genes.fna --dbdir ./db -o ./output_dir`
+    # For MMseqs2
+    gmsc-mapper createdb -i ./gmsc_db/GMSC10.90AA.faa.gz -o ./gmsc_db -m mmseqs
+    ```
 
-### 3. Customizing Annotations
-By default, the tool attempts to provide habitat, taxonomy, quality, and domain annotations. You can disable specific modules to reduce processing time or output size:
+## Common Mapping Patterns
 
-`gmsc-mapper -i input.fa --dbdir ./db --no-habitat --no-taxonomy --no-quality --no-domain`
+The tool automatically detects the workflow based on the input flag used.
 
-## CLI Best Practices
-*   **Tool Selection**: Use `--tool mmseqs` if you require MMseqs2 alignment; otherwise, DIAMOND is the default and generally faster for most smORF mapping tasks.
-*   **Directory Consistency**: The `-o` path used during `createdb` must be the same path passed to `--dbdir` during the mapping phase.
+### 1. Predicting from Raw Contigs
+Use this when you have unannotated genomic or metagenomic assemblies.
+```bash
+gmsc-mapper -i assembly.fasta --dbdir ./gmsc_db -o ./output_dir
+```
+
+### 2. Mapping Amino Acid Sequences
+Use this when you already have predicted protein sequences.
+```bash
+gmsc-mapper --aa-genes proteins.faa --dbdir ./gmsc_db -o ./output_dir
+```
+
+### 3. Mapping Nucleotide Genes
+Use this for predicted gene sequences that require translation before mapping.
+```bash
+gmsc-mapper --nt-genes genes.fna --dbdir ./gmsc_db -o ./output_dir
+```
+
+## Expert Tips and Best Practices
+
+*   **Tool Selection**: If you created the database index with MMseqs2, you must explicitly specify the tool during the mapping phase using `--tool mmseqs`.
+*   **Performance Optimization**: If you only need specific information, disable unnecessary annotation modules to reduce processing time and output clutter:
+    ```bash
+    gmsc-mapper -i input.fasta --dbdir ./db --no-habitat --no-taxonomy --no-quality --no-domain
+    ```
 *   **Output Interpretation**:
-    *   `predicted.filterd.smorf.faa`: Contains the sequences predicted from your contigs.
-    *   `mapped.smorfs.faa`: Contains only the query sequences that had hits in the GMSC.
-    *   `*.out.smorfs.tsv`: Tab-separated files containing the specific metadata (habitat, taxonomy, etc.) for each hit.
+    *   `predicted.filtered.smorf.faa`: Contains the actual sequences of smORFs found in your contigs.
+    *   `alignment.out.smorfs.tsv`: The raw alignment hits; useful for custom filtering by e-value or bitscore.
+    *   `habitat.out.smorfs.tsv`: Provides ecological context (e.g., soil, human gut).
+*   **Citation**: To ensure reproducible research, print the citation for the specific GMSC version used:
+    ```bash
+    gmsc-mapper citation
+    ```
+*   **Environment Management**: Avoid heavy top-level imports if modifying the tool; keep dependencies like `pandas` or `numpy` inside functional blocks to maintain CLI responsiveness.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| downloaddb | Download the GMSCMapper database. |
+| gmsc-mapper createdb | Create a database for GMSC. |
 
 ## Reference documentation
-- [GMSC-mapper GitHub Repository](./references/github_com_BigDataBiology_GMSC-mapper.md)
-- [GMSC-mapper Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_gmsc-mapper_overview.md)
+
+- [GMSC-mapper README](./references/github_com_BigDataBiology_GMSC-mapper_blob_main_README.md)
+- [GMSC-mapper Agent Guidelines](./references/github_com_BigDataBiology_GMSC-mapper_blob_main_AGENTS.md)
+- [GMSC-mapper ChangeLog](./references/github_com_BigDataBiology_GMSC-mapper_blob_main_ChangeLog.md)

@@ -1,1 +1,301 @@
-# STOCKHOLM 1.0 #=GS U13369.1 DE U13369.1/6624-6776: 5.8S ribosomal RNA from Rfam's seed/5_8S_rRNA.stk U13369.1 GACUCUUAGCGGUGGAUCACUCGGCUCGUGCGUCGAUGAAGAACGCAGCU #=GR U13369.1 SS ................................>>.>>......>>>>>.. U13369.1 AGCUGCGAGAAUUAAUGUGAAUUGCAGGACACAUUGAUCAUCGACACUUC #=GR U13369.1 SS .. >>>>>...>>.......... >>>>>>>>..... >.>>......>>>>>.. AF223570.1 AGAAUGCGAUAUGCAGUGUGAAUUGCAGAACCACGAAUCAUCGGAUCUUU #=GR AF223570.1 SS ... >>>>>...>........... >>>>..... >.>>......>>>>>.. U48228.1 AAGUGCGAUAUGCAAUGAAAAAUGCAAUUACUGUGAAUCAUCAGAAUGCU #=GR U48228.1 SS .. >>>>>...>>......... >>>>>>>>................ >.>>......>>>>>.. X60210.1 AAACGCGAUAACGCUUGUGAUUCGCACUCUCUGUGAUCAACGUCACCUCG #=GR X60210.1 SS .. >>>.>...>>......... >>>>>>>>..... >.>>......>>>>>.. M14649.1 AAAUGUGAUAAGCAAUGUGAAUUGCAGAAUUCCGUGAACCAAUAGGGACU #=GR M14649.1 SS .. >>>>>...>>.......... >>>>>>>>..... >.>>......>>>>>.. AF223571.1 AAGUGCGAUAAGCAAUGCGAAUUGCAGACCGUGAGUCAUUAGAAUUUCGA #=GR AF223571.1 SS .. >>>>>...>.......... >>>>>>>>.. >.>>......>>>>>.. Y07978.1 AAAUGCGAUACGUCUUGCGACUUGCAGAACCCAGUGAAUCAUCAAACCUU #=GR Y07978.1 SS .. >>>>>...>>.......... >>>>>>>>.... >.>>......>>>>>.. Y07976.1 AAAUGCGAUACGUAAUGCGAAACGCAUCAGUAGUGAGUCAUCGAAACUUU #=GR Y07976.1 SS .. >>>>>...>>.......... >>>>>..... >.>>......>>>>>.. X58290.1 GACAGCGAGAUGCGGUGCAGCCCGGCACGAAGCACCGGUUUCCGAACGCU #=GR X58290.1 SS .. >>>>>...>...... >>>.... >.>>......>>>>>.. U35394.1 GAAUGCGAUACAUAAUGUGAAUUGCAAAUCCUGUGAAUCAUUGAGUUUUU #=GR U35394.1 SS .. >>>>>...>>......... >>>>>>>.... >.>>......>>>>>.. X80212.2 AAAUGCGAUACGUAGUGUGAAUUGCAGAAUUCCGCGAAUCAUCGAGUUUU #=GR X80212.2 SS .. >>>>>...>>.......... >>>>>>>..... >.>>......>>>>>.. AF196778.1 AAUUGCGAAAAGUAAUGCGAUCUGCAACCUUUGCGAAUCAUCGAAUUCUC #=GR AF196778.1 SS .. >>>>>...>>......... >>>>>>>>.... >.>>......>>>>>. Y00055.1 AAAGUGCGAUAAGUGGUAUCAAUUGCAGAAUCAUUCAAUUACCGAAUCUU #=GR Y00055.1 SS ... >>>>>...>>.......... >>>>>>>>................ >.>>......>>>>>.. M73682.1 GACGACGAUACUCGAUGUGGUCCAAGCACGUGACAUCGAUCUUCGAAUGG #=GR M73682.1 SS .. >..>>...>......... >.>>......>>>>>... U58510.1 AAAGCGACAUGCGAUGAUACGCGCAUAGACCAGGAUUCCGCGGACUCGUG #=GR U58510.1 SS . >>>>>...>.....>............ >>>>>>>>............ >.>>......>>>>>.. X52949.1 GAGCGCGAGACGCGGUGCGGACCCGCCCGCCCCGAGAAGCACCGACCCUC #=GR X52949.1 SS .. >>>>>...>>........... >>>.... >.>>......>>>>>.. AF093014.1 AAGUGCGAUAAGCAAUGUGAACUGCAUAAUUCUAUGAACAAUCAGAUCUC #=GR AF093014.1 SS .. >>>>>...>>.......... >>>>>.... >.>>......>>>>>.. AF026388.1 AAAUGCGAUACGCAUUGUGAAUUGCAGAUUUCAGUGAACCAUCAGAUUUC #=GR AF026388.1 SS .. >>>>>...>>.......... >>>>>>>>..... >.>>......>>>>>.. X03680.1 UGCUGCGUUACUUACCACGAAUUGCAGACGCUUAGAGUGGUGAAAUUUCG #=GR X03680.1 SS .. >>>>>...>>......... >>>>>>>>.... >.>>......>>>>>.. M21017.1 AACUGUGCGUCAUCGUGUGAACUGCAGGACACAUGAACAUCGACAUUUUG #=GR M21017.1 SS .. >.>>>...>>.......... >.>>......>>>>>.. X60705.1 AAACGCGAUAUGUAGUGUGAAUUGCAGAAUUCAGUGAAUCAUCGAAUCUU #=GR X60705.1 SS .. >>>>>...>>.......... >>>>>>>>.... >.>>......>>>>>.. X90410.1 AAAUGCGAUACGUAAUGUGAAUUGCAGAACGCGAGUCAUCGAAAUUUUGA #=GR X90410.1 SS .. >>>>>...>.......... >>>>>>>>.... >.>>......>>>>>.. AF468917.1 AACUGCGAAACGUAAUGCGAAUUGCAGAACUCGUGAAUCAUCAAAUUUUU #=GR AF468917.1 SS .. >>>>>...>>.......... >>>>>>>>.... >.>>......>>>>>.. X00601.1 AACUGCGAUAAUUCACUUGAAUUGCAGCCUACUGGGAUAGUUGAAAUGUU #=GR X00601.1 SS .. >>>>>...>>.......... >>>>>>>>......... >.>>......>>>>>.. X01533.1 AAAUGCGAUACGUAAUGCGAAUUGCAGAACCGCGAGUCAACAGAUCUUUG #=GR X01533.1 SS .. >>>>>...>........... >>>>>>.... >.>>......>>>>>.. L78065.1 AAAUGCGCGUCAGAAUGUGAACUGCAGGACACAUGAACACCGACACGUUG #=GR L78065.1 SS .. >>>.>...>>.......... >>>>>>>>...... >.>>......>>>>>... X53361.2 CCUUGCGAUACGUUCGGUGAUACGCAGAGUCUUGUGAUCUGGACAAAGGA #=GR X53361.2 SS . >>>>>...>>.......... >>>>>>>>..... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>...>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>....>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>...... >>.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>.>...>>..>>>>>>....... >>.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>...>.>>....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.......... >>>>>>>>....>>.>>>>.>...>>..>>>>>>....... >>.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>...... >>.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>...... >>.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>...... >>.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >.>>....>.>>.....>>.... >>>>>....>>.>>>>>...>.>..>>>>>>....... >.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>.>....... >>.>>..>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>.....>.... >>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>.....>... >>>>>>>>....>>.>>>>>...>>..>>>>>>...... >>.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>..>>>>>>....... >>.>>..>.>>........... >>>>>>>>....>>.>>>>>...>>..>>>>>>...... >>.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>.>...>>..>>>>>>....... >>.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>..>>.... >>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>....>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.......... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>................ >>>>>>>>....>>.>>>>>...>>..>>>>>>...... >>.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>...>>>>>>....... >>>>...>.>>....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>...... >>.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>........ >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>....>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>...... >>.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>....>.>>.....>>.... >>>>>....>>.>>>>>...>..>>>>>>....... >>.>>..>.>>....... >>>>>>>>....>>.>>>>>...>>..>>>>>>...... >>.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>...... >>.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>...... >>.>>....>.>>.....>>.... >>>>>>>...>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>......... >>>>>>>>....>>.>>>>>...>>..>>>>>>...... >>.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>.>...>>..>>>>>>....... >>.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>...... >>.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>...... >>.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>....>>.... >>>>>>....>>.>>>>>...>>..>>>>>>...... >>.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>...>>>>>>...... >>.>>..>.>>....>>.... >>>>>>....>>.>>>>>...>>..>>>>>>...... >>.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... .>>.>>..>.>>....>... >>>>>>....>>.>>>>>...>>..>>>>>>....... >.>>....>.>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>.............. >>>>>>....>>.>>>>>...>>..>>>>>>....... >.>>.....>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>...... >>.>>....>.>>.....>>.... >>>>....>>.>>>>>...>>..>>>>>>...... >>.>>.....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>....>>.. >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>...... >>.>>.....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >.>>....>.>>.....>>... >>>>>>>>....>>.>>>>>...>>..>>>>>>...... >>.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>...>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>......... >>.>>..>.>>.....>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>...... >>.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>...... >>.>>.....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>....>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>....>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>...... >>.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>........... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>....>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>........... >>>>>>>>....>>.>>>>>...>>..>>>>>>...... >>.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>.>...>>..>>>>>>....... >>.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>...... >>.>>....>.>>.....>>.... >....>>.>>>>>...>>..>>>>>>...... >>.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>....>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>...... >>.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>....>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>>>...>.>>.............. >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >.>>....>.>>............... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>.....>.>>....... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>...... >>.>>.....>.>>.....>>.... >>>>....>>.>>>>>...>>..>>>>>>....... >.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>...... >>.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>....>>..>>>>>>....... >>.>>..>.>>.......... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>............ >>>>>>>....>>.>>>>>...>.>..>>>>>>....... >.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>....>>... >>>>>>>>....>>.>>>>>...>>..>>>>>>...... >>.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>...>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >....>.>>...>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>....>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >....>.>>....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>...... >>.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>...... >>.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>....>.... >>>>>>>.......>>.>>>>>...>>..>>>>>>....... >>.>>..>.>>.............. >>>>>>>>....>>.>>>>.>...>>..>>>>>>....... >>.>>....>.>>.....>>.... >>>>>>>>....>>.>>>>>...>>.
+# STOCKHOLM 1.0
+#=GS U13369.1 DE U13369.1/6624-6776: 5.8S ribosomal RNA from Rfam's seed/5\_8S\_rRNA.stk
+U13369.1 GACUCUUAGCGGUGGAUCACUCGGCUCGUGCGUCGAUGAAGAACGCAGCU
+#=GR U13369.1 SS ................................>>.>>......>>>>>..
+U13369.1 AGCUGCGAGAAUUAAUGUGAAUUGCAGGACACAUUGAUCAUCGACACUUC
+#=GR U13369.1 SS ..<<<<<.>>>>>>...>>..........<<..<<.<<<<<<<<......
+U13369.1 GAACGCACUUGCGGCCCCGGGUUCCUCCCGGGGCUACGCCUGUCUGAGCG
+#=GR U13369.1 SS ............>>>>>>>>>.....<<<<<<<<<...............
+U13369.1 UCG
+#=GR U13369.1 SS ...
+//
+# STOCKHOLM 1.0
+#=GS AF223570.1 DE AF223570.1/244-389: 5.8S ribosomal RNA from Rfam's seed/5\_8S\_rRNA.stk
+AF223570.1 AAUUUUCAACGAUGGAUGUCUUGGCUCCCAUAUCGAUGAAGAACGCAGCU
+#=GR AF223570.1 SS ................................>>.>>......>>>>>..
+AF223570.1 AGAAUGCGAUAUGCAGUGUGAAUUGCAGAACCACGAAUCAUCGGAUCUUU
+#=GR AF223570.1 SS ...<<<<<.>>>>>>...>...........<..<<.<<<<<<<<......
+AF223570.1 GAACGCAACUGGCGCUGAUAAACUCAGCAUACUUGCUUCAGUGUGC
+#=GR AF223570.1 SS .............>>>>>.....<<<<<..................
+//
+# STOCKHOLM 1.0
+#=GS U48228.1 DE U48228.1/7-166: 5.8S ribosomal RNA from Rfam's seed/5\_8S\_rRNA.stk
+U48228.1 CAAUCUUAACGAUGGAUGUCUUGGUUCCUAUAGCGAUGAAGGCCGCAGCA
+#=GR U48228.1 SS ................................>>.>>......>>>>>..
+U48228.1 AAGUGCGAUAUGCAAUGAAAAAUGCAAUUACUGUGAAUCAUCAGAAUGCU
+#=GR U48228.1 SS ..<<<<<.>>>>>>...>>.........<.<..<<.<<<<<<<<......
+U48228.1 GAAUGUAAACUAUACCAUAUUUACCCUUAUGGGCAAAUUAACGUGGUAUU
+#=GR U48228.1 SS .............>>>>>>>>>................<<<<<<<<<...
+U48228.1 CCUACAGAAA
+#=GR U48228.1 SS ..........
+//
+# STOCKHOLM 1.0
+#=GS X60210.1 DE X60210.1/1-148: 5.8S ribosomal RNA from Rfam's seed/5\_8S\_rRNA.stk
+X60210.1 ACCGUUAGGCGAUGGAUUGCUGGGUACCCGCUUCGACGAAGAGCGCAGUG
+#=GR X60210.1 SS ................................>>.>>......>>>>>..
+X60210.1 AAACGCGAUAACGCUUGUGAUUCGCACUCUCUGUGAUCAACGUCACCUCG
+#=GR X60210.1 SS ..<<<<<.>>>>.>...>>.........<.<..<.<<<<<<<<.......
+X60210.1 AACAUCGAUGCGGCCUUGCCUUCGGGCACUGGCCCCCCUGGUUUGCCU
+#=GR X60210.1 SS ...........>>>>>>>>>.....<<<<<<<<<..............
+//
+# STOCKHOLM 1.0
+#=GS M14649.1 DE M14649.1/2015-2169: 5.8S ribosomal RNA from Rfam's seed/5\_8S\_rRNA.stk
+M14649.1 AACUUUCAGCGACGGAUGUCUCGGCUCGAACAACGAUGAAGGGCGCAGCG
+#=GR M14649.1 SS ................................>>.>>......>>>>>..
+M14649.1 AAAUGUGAUAAGCAAUGUGAAUUGCAGAAUUCCGUGAACCAAUAGGGACU
+#=GR M14649.1 SS ..<<<<<.>>>>>>...>>..........<.<..<<.<<<<<<<<.....
+M14649.1 UGAACGUAUACUGCGCUUUCGGGAUAUCCCUGAAGGCAUGCCUGCUUCAG
+#=GR M14649.1 SS ..............>>>>>>>>>.....<<<<<<<<<.............
+M14649.1 UGUCU
+#=GR M14649.1 SS .....
+//
+# STOCKHOLM 1.0
+#=GS AF223571.1 DE AF223571.1/210-358: 5.8S ribosomal RNA from Rfam's seed/5\_8S\_rRNA.stk
+AF223571.1 AACCUUCAACGGUGGAUGUCUUGGCUCUCAUAUCGAUGAAGAACGCAGCA
+#=GR AF223571.1 SS ................................>>.>>......>>>>>..
+AF223571.1 AAGUGCGAUAAGCAAUGCGAAUUGCAGACCGUGAGUCAUUAGAAUUUCGA
+#=GR AF223571.1 SS ..<<<<<.>>>>>>...>..........<..<<.<<<<<<<<........
+AF223571.1 AAGCAAUCUGCACCUCCGCCUAGCGAGAGGUAUGUCUGCUUCAGUGUUC
+#=GR AF223571.1 SS ...........>>>>>>>>>..<<<<<<<<<..................
+//
+# STOCKHOLM 1.0
+#=GS Y07978.1 DE Y07978.1/48-201: 5.8S ribosomal RNA from Rfam's seed/5\_8S\_rRNA.stk
+Y07978.1 AACUUUCAGCGACGGAUAUCUAGGCUCCCACAACGAUGAAGAACGCAGCG
+#=GR Y07978.1 SS ................................>>.>>......>>>>>..
+Y07978.1 AAAUGCGAUACGUCUUGCGACUUGCAGAACCCAGUGAAUCAUCAAACCUU
+#=GR Y07978.1 SS ..<<<<<.>>>>>>...>>..........<.<..<<.<<<<<<<<.....
+Y07978.1 CGAACGCACCUUGCGCUCUCGGGCAUUCCCGGGAGCAUGCUUGUCGGAGU
+#=GR Y07978.1 SS ..............>>>>>>>>>....<<<<<<<<<..............
+Y07978.1 GUCC
+#=GR Y07978.1 SS ....
+//
+# STOCKHOLM 1.0
+#=GS Y07976.1 DE Y07976.1/124-271: 5.8S ribosomal RNA from Rfam's seed/5\_8S\_rRNA.stk
+Y07976.1 CACUUUCAGCAACGGAUGUCUCGGUUCCCAUAACGAUGAAGAACGCAGCG
+#=GR Y07976.1 SS ................................>>.>>......>>>>>..
+Y07976.1 AAAUGCGAUACGUAAUGCGAAACGCAUCAGUAGUGAGUCAUCGAAACUUU
+#=GR Y07976.1 SS ..<<<<<.>>>>>>...>>..........<<..<<.<<<<<<<<......
+Y07976.1 GAACGCAACUUGCACUUCCCUUUGGGGAGUAUAUCUAUUGGAGUGUCU
+#=GR Y07976.1 SS .............>>>>>>.....<<<<<<..................
+//
+# STOCKHOLM 1.0
+#=GS X58290.1 DE X58290.1/119-234: 5.8S ribosomal RNA from Rfam's seed/5\_8S\_rRNA.stk
+X58290.1 GACCCAGACCGGCGGAUGCCUGGGCUCGGGCCUCGAGGAAGGACGCGGCG
+#=GR X58290.1 SS ................................>>.>>......>>>>>..
+X58290.1 GACAGCGAGAUGCGGUGCAGCCCGGCACGAAGCACCGGUUUCCGAACGCU
+#=GR X58290.1 SS ..<<<<<.>>>>>>...>......<..<<.<<<<<<<<............
+X58290.1 CGGCCUCCCCCGGGAG
+#=GR X58290.1 SS ....>>>>....<<<<
+//
+# STOCKHOLM 1.0
+#=GS U35394.1 DE U35394.1/2008-2158: 5.8S ribosomal RNA from Rfam's seed/5\_8S\_rRNA.stk
+U35394.1 AACUUUUGACGAUGGAUCUCUCGGCUCUCUCAUCGAUGAAGAACGUAGUA
+#=GR U35394.1 SS ................................>>.>>......>>>>>..
+U35394.1 GAAUGCGAUACAUAAUGUGAAUUGCAAAUCCUGUGAAUCAUUGAGUUUUU
+#=GR U35394.1 SS ..<<<<<.>>>>>>...>>.........<.<..<<.<<<<<<<<......
+U35394.1 GAACGCACAUUGCACCGACAGUUUACUGUUGGUUUGUUUGUUUGAAUUGC
+#=GR U35394.1 SS .............>>>>>>>>....<<<<<<<<.................
+U35394.1 U
+#=GR U35394.1 SS .
+//
+# STOCKHOLM 1.0
+#=GS X80212.2 DE X80212.2/2104-2256: 5.8S ribosomal RNA from Rfam's seed/5\_8S\_rRNA.stk
+X80212.2 AACUCUCAGCAACGGAUAUCUUGGCUCUUGCAACGAUGAAGAACGCAGCG
+#=GR X80212.2 SS ................................>>.>>......>>>>>..
+X80212.2 AAAUGCGAUACGUAGUGUGAAUUGCAGAAUUCCGCGAAUCAUCGAGUUUU
+#=GR X80212.2 SS ..<<<<<.>>>>>>...>>..........<.<..<<.<<<<<<<<.....
+X80212.2 UGAACGCAAGUUGCGCCCGAGGCUCGUCCGAGGGCAUUCCUGCCAGAGCG
+#=GR X80212.2 SS ..............>>>>>>>>.....<<<<<<<<...............
+X80212.2 UCA
+#=GR X80212.2 SS ...
+//
+# STOCKHOLM 1.0
+#=GS AF196778.1 DE AF196778.1/2-154: 5.8S ribosomal RNA from Rfam's seed/5\_8S\_rRNA.stk
+AF196778.1 AACUUUAAGCAAUGGAUCACUUGGUUCUCGCAUCGAUGAAGAACGUAGCA
+#=GR AF196778.1 SS ................................>>.>>......>>>>>..
+AF196778.1 AAUUGCGAAAAGUAAUGCGAUCUGCAACCUUUGCGAAUCAUCGAAUUCUC
+#=GR AF196778.1 SS ..<<<<<.>>>>>>...>>.........<.<..<<.<<<<<<<<......
+AF196778.1 GAACGCAUCUUGCACCCUUUGGUCAUCCAAUGGGUACGUCUAGUUCAGUA
+#=GR AF196778.1 SS .............>>>>>>>>>....<<<<<<<<<...............
+AF196778.1 UCU
+#=GR AF196778.1 SS ...
+//
+# STOCKHOLM 1.0
+#=GS Y00055.1 DE Y00055.1/4327-4494: 5.8S ribosomal RNA from Rfam's seed/5\_8S\_rRNA.stk
+Y00055.1 AACGUGUCGCGAUGGAUGACUUGGCUUCCUAUCUCGUUGAAGAACGCAGU
+#=GR Y00055.1 SS .................................>>.>>......>>>>>.
+Y00055.1 AAAGUGCGAUAAGUGGUAUCAAUUGCAGAAUCAUUCAAUUACCGAAUCUU
+#=GR Y00055.1 SS ...<<<<<.>>>>>>...>>..........<<..<<.<<<<<<<<.....
+Y00055.1 UGAACGCAAACGGCGCAUGGGAGAAGCUCUUUUGAGUCAUCCCCGUGCAU
+#=GR Y00055.1 SS ..............>>>>>>>>>................<<<<<<<<<..
+Y00055.1 GCCAUAUUCUCAGUGUCG
+#=GR Y00055.1 SS ..................
+//
+# STOCKHOLM 1.0
+#=GS M73682.1 DE M73682.1/109-223: 5.8S ribosomal RNA from Rfam's seed/5\_8S\_rRNA.stk
+M73682.1 GACGCGACCCGGUGGAUGCCUUGGCUCGGGGGACGAUGAAGGACGUGGCU
+#=GR M73682.1 SS ................................>>.>>......>>>>>..
+M73682.1 GACGACGAUACUCGAUGUGGUCCAAGCACGUGACAUCGAUCUUCGAAUGG
+#=GR M73682.1 SS ..<<<<<.>>..>>...>.........<..<<.<<<<<<...........
+M73682.1 AUCAUCGGGGUGGUG
+#=GR M73682.1 SS ...............
+//
+# STOCKHOLM 1.0
+#=GS U58510.1 DE U58510.1/2022-2198: 5.8S ribosomal RNA from Rfam's seed/5\_8S\_rRNA.stk
+U58510.1 AACCCUAGUGAUGGAUGUCUAGGCUCCCGUAUCGAUGAAGAACGUAGCAG
+#=GR U58510.1 SS ...............................>>.>>......>>>>>...
+U58510.1 AAAGCGACAUGCGAUGAUACGCGCAUAGACCAGGAUUCCGCGGACUCGUG
+#=GR U58510.1 SS .<<<<<.>>>>>>...>.....>............<.........<..<<
+U58510.1 AAUCAUUGAAUCUUCGAACGCAUCUGGCGCUCAGCAGUGGAGCCGUAGCA
+#=GR U58510.1 SS .<<<<<<<<...................>>>>>>>>>............<
+U58510.1 GGCUGAGCAUGCCCUGGAGUAGUGACA
+#=GR U58510.1 SS <<<<<<<<...................
+//
+# STOCKHOLM 1.0
+#=GS X52949.1 DE X52949.1/857-993: 5.8S ribosomal RNA from Rfam's seed/5\_8S\_rRNA.stk
+X52949.1 ACGCCCCGCCGGCGGAUGCCUCGGCCCGGGCGGCGACGAAGAGCGCGGCG
+#=GR X52949.1 SS ................................>>.>>......>>>>>..
+X52949.1 GAGCGCGAGACGCGGUGCGGACCCGCCCGCCCCGAGAAGCACCGACCCUC
+#=GR X52949.1 SS ..<<<<<.>>>>>>...>>...........<<..<<.<<<<<<<<.....
+X52949.1 GAACGCAGCGCGCCCCGGCGCCGCCGCCUCGGCGCCC
+#=GR X52949.1 SS .........>>>>....<<<<................
+//
+# STOCKHOLM 1.0
+#=GS AF093014.1 DE AF093014.1/662-809: 5.8S ribosomal RNA from Rfam's seed/5\_8S\_rRNA.stk
+AF093014.1 CACUUUAAGUAAUGGAUGUCUUGGUUCUCAUAACGAUGAAGGACGCAGCA
+#=GR AF093014.1 SS ................................>>.>>......>>>>>..
+AF093014.1 AAGUGCGAUAAGCAAUGUGAACUGCAUAAUUCUAUGAACAAUCAGAUCUC
+#=GR AF093014.1 SS ..<<<<<.>>>>>>...>>..........<.<..<<.<<<<<<<<.....
+AF093014.1 UCAACGCAAAUAGCAGUAAUUUACAUUACUAUAUUUAUAUCAGUGUCU
+#=GR AF093014.1 SS ..............>>>>>>....<<<<<<..................
+//
+# STOCKHOLM 1.0
+#=GS AF026388.1 DE AF026388.1/2852-3006: 5.8S ribosomal RNA from Rfam's seed/5\_8S\_rRNA.stk
+AF026388.1 AACUUUCAGCAAUGGAUGUCUUGGCUCACGCAUCGAUGAAGGACGCAGCG
+#=GR AF026388.1 SS ................................>>.>>......>>>>>..
+AF026388.1 AAAUGCGAUACGCAUUGUGAAUUGCAGAUUUCAGUGAACCAUCAGAUUUC
+#=GR AF026388.1 SS ..<<<<<.>>>>>>...>>..........<.<..<<.<<<<<<<<.....
+AF026388.1 UGAACGCACAUGGCGCUGCUGGUAUUUUGCCCGCAGCACGUCUGUUUCAG
+#=GR AF026388.1 SS ..............>>>>>>>>>.....<<<<<<<<<.............
+AF026388.1 UGUCU
+#=GR AF026388.1 SS .....
+//
+# STOCKHOLM 1.0
+#=GS X03680.1 DE X03680.1/3159-3308: 5.8S ribosomal RNA from Rfam's seed/5\_8S\_rRNA.stk
+X03680.1 UAGCUUCAGCGAUGGAUCGGUUGCAUCGAGUAUCGAUGAAGAACGCAGCU
+#=GR X03680.1 SS ................................>>.>>......>>>>>..
+X03680.1 UGCUGCGUUACUUACCACGAAUUGCAGACGCUUAGAGUGGUGAAAUUUCG
+#=GR X03680.1 SS ..<<<<<.>>>>>>...>>.........<<..<<.<<<<<<<<.......
+X03680.1 AACGCAUAGCACCAACUGGGCCUCCAGUUGGUACGUCUGGUUCAGGGUUG
+#=GR X03680.1 SS ..........>>>>>>>>>....<<<<<<<<<..................
+//
+# STOCKHOLM 1.0
+#=GS M21017.1 DE M21017.1/2722-2844: 5.8S ribosomal RNA from Rfam's seed/5\_8S\_rRNA.stk
+M21017.1 AACUCUAAGCGGUGGAUCACUCGGCUCAUGGGUCGAUGAAGAACGCAGCA
+#=GR M21017.1 SS ................................>>.>>......>>>>>..
+M21017.1 AACUGUGCGUCAUCGUGUGAACUGCAGGACACAUGAACAUCGACAUUUUG
+#=GR M21017.1 SS ..<<<<<.>>.>>>...>>..........<<..<<.<<<<<<<.......
+M21017.1 AACGCAUAUCGCAGUCCAUGCUG
+#=GR M21017.1 SS .......................
+//
+# STOCKHOLM 1.0
+#=GS X60705.1 DE X60705.1/112-265: 5.8S ribosomal RNA from Rfam's seed/5\_8S\_rRNA.stk
+X60705.1 AACUUUUAACAACGGAUCUCUUGGCUCUAGCAUCGAUGAAGAACGCAGCG
+#=GR X60705.1 SS ................................>>.>>......>>>>>..
+X60705.1 AAACGCGAUAUGUAGUGUGAAUUGCAGAAUUCAGUGAAUCAUCGAAUCUU
+#=GR X60705.1 SS ..<<<<<.>>>>>>...>>..........<.<..<<.<<<<<<<<.....
+X60705.1 UGAACGCACAUGGCGCCUUCCAGUAUCCUGGGAGGCAUGCCUGUCCGAGC
+#=GR X60705.1 SS ..............>>>>>>>>>....<<<<<<<<<..............
+X60705.1 GUCG
+#=GR X60705.1 SS ....
+//
+# STOCKHOLM 1.0
+#=GS X90410.1 DE X90410.1/15-165: 5.8S ribosomal RNA from Rfam's seed/5\_8S\_rRNA.stk
+X90410.1 AACUUUCAGCAAUGGAUCUCUUGGCUCUUGCAUCGAUGAAGAACGCAGCG
+#=GR X90410.1 SS ................................>>.>>......>>>>>..
+X90410.1 AAAUGCGAUACGUAAUGUGAAUUGCAGAACGCGAGUCAUCGAAAUUUUGA
+#=GR X90410.1 SS ..<<<<<.>>>>>>...>..........<..<<.<<<<<<<<........
+X90410.1 ACGCACAUUGCACUUGGUGGCAUUCCGCCAAGUAUGUUUGUUUGAGUGUC
+#=GR X90410.1 SS ...........>>>>>>>>>....<<<<<<<<<.................
+X90410.1 U
+#=GR X90410.1 SS .
+//
+# STOCKHOLM 1.0
+#=GS AF468917.1 DE AF468917.1/611-763: 5.8S ribosomal RNA from Rfam's seed/5\_8S\_rRNA.stk
+AF468917.1 AACUCGUAACGGUGGAUGUCUCGGCUCCUACAUCGAUGAAGAACGUAGCA
+#=GR AF468917.1 SS ................................>>.>>......>>>>>..
+AF468917.1 AACUGCGAAACGUAAUGCGAAUUGCAGAACUCGUGAAUCAUCAAAUUUUU
+#=GR AF468917.1 SS ..<<<<<.>>>>>>...>>..........<<..<<.<<<<<<<<......
+AF468917.1 GAACGCAAGUGGCGCUCGCGGGUAACCCUGCGAGCAUGUCUGUUUGAGUG
+#=GR AF468917.1 SS .............>>>>>>>>>....<<<<<<<<<...............
+AF468917.1 UCC
+#=GR AF468917.1 SS ...
+//
+# STOCKHOLM 1.0
+#=GS X00601.1 DE X00601.1/3997-4154: 5.8S ribosomal RNA from Rfam's seed/5\_8S\_rRNA.stk
+X00601.1 AAGCAUAAACGGUGAAUACCUCGACUCCUAAAUCGAUGAAGACCGUAGCA
+#=GR X00601.1 SS ................................>>.>>......>>>>>..
+X00601.1 AACUGCGAUAAUUCACUUGAAUUGCAGCCUACUGGGAUAGUUGAAAUGUU
+#=GR X00601.1 SS ..<<<<<.>>>>>>...>>..........<<..<<.<<<<<<<<......
+X00601.1 GAACGCACAUGAUGACAUCGGUCCUUUCGGAUUAGGUGUUAUACUUGGGU
+#=GR X00601.1 SS .............>>>>>>>>>.........<<<<<<<<<..........
+X00601.1 GAGAGUGG
+#=GR X00601.1 SS ........
+//
+# STOCKHOLM 1.0
+#=GS X01533.1 DE X01533.1/5-152: 5.8S ribosomal RNA from Rfam's seed/5\_8S\_rRNA.stk
+X01533.1 AACUUUCAACGGUGGAUAUCUUGGUUCCCGUGACGAUGAAGAACGCAGCG
+#=GR X01533.1 SS ................................>>.>>......>>>>>..
+X01533.1 AAAUGCGAUACGUAAUGCGAAUUGCAGAACCGCGAGUCAACAGAUCUUUG
+#=GR X01533.1 SS ..<<<<<.>>>>>>...>...........<..<<.<<<<<<<<.......
+X01533.1 AAAGCAAGUGGUGGAGGUGUAAAAACCUUCAUGUUUGUAUUAGUGUGG
+#=GR X01533.1 SS ............>>>>>>>....<<<<<<<..................
+//
+# STOCKHOLM 1.0
+#=GS L78065.1 DE L78065.1/3758-3910: 5.8S ribosomal RNA from Rfam's seed/5\_8S\_rRNA.stk
+L78065.1 AACCCUAGGCAGGGGAUCACUCGGCUCAUGGAUCGAUGAAGACCGCAGCU
+#=GR L78065.1 SS ................................>>.>>......>>>>>..
+L78065.1 AAAUGCGCGUCAGAAUGUGAACUGCAGGACACAUGAACACCGACACGUUG
+#=GR L78065.1 SS ..<<<<<.>>>>.>...>>..........<<..<.<<<<<<<<.......
+L78065.1 AACGAUAUUGCGCAUUGCACGACUCAGUGCGAUGUACACAUUUUUGAGUG
+#=GR L78065.1 SS ...........>>>>>>>>>......<<<<<<<<<...............
+L78065.1 CCC
+#=GR L78065.1 SS ...
+//
+# STOCKHOLM 1.0
+#=GS X53361.2 DE X53361.2/1206-1368: 5.8S ribosomal RNA from Rfam's seed/5\_8S\_rRNA.stk
+X53361.2 ACCUGUUGUGGUGGAUGUCUUGGCCCAGGUUCUGAGGAAGGACACAGCAG
+#=GR X53361.2 SS ...............................>>.>>......>>>>>...
+X53361.2 CCUUGCGAUACGUUCGGUGAUACGCAGAGUCUUGUGAUCUGGACAAAGGA
+#=GR X53361.2 SS .<.<<<<.>>>>>>...>>..........<<..<<.<<<<<<<<......
+X53361.2 ACAGCUUCGAACGCAACUGGCCAGCAAGGGGUUCCCCCCCGAGCUGCCUG
+#=GR X53361.2 SS ......................>>>>>>>>>.....<<<<<<<<<.....
+X53361.2 UGCGCCAGUGUUG
+#=GR X53361.2 SS .............
+//
+# STOCKHOLM 1.0
+#=GS M11716.1 DE M11716.1/2-115: 5S ribosomal RNA from Rfam's seed/5S\_rRNA.stk
+M11716.1 UUUGGCGGCCAUAGCGUCUUGGACCCACCCCUUCCCAUCCCGAACAGGGA
+#=GR M11716.1 SS >>>>>>>>>....>>.>>>>>...>>..>>>>>>.......<<..<<<<.
+M11716.1 CGUGAAACGAGACAGCGCCGAUGAUAGUGUGGAUUACCCAUGCGAAAGUA
+#=GR M11716.1 SS .<<....<<<<<..<<>>>.>>..>.>>...>....<.....<<.<.<<.
+M11716.1 GGUCACCGCCAGAC
+#=GR M11716.1 SS <<<.<<<<<<<<<.
+//
+# STOCKHOLM 1.0
+#=GS X06576.1 DE X06576.1/4-117: 5S ribosomal RNA from Rfam's seed/5S\_rRNA.stk
+X06576.1 CCUGGUGGCUAUGCCGGGGGUUACCCACCCGAUCCCAUUCCGAACUCGGU
+#=GR X06576.1 SS >>>>>>>>>....>>.>>>>>...>>..>>>>>>.......<<..<<<<.
+X06576.1 CGUUAAGUCCCCCUGGGCCAAUGGUACUUCGUCUCAAGGCGCGGGAGAGU
+#=GR X06576.1 SS .<<....<<<<<..<<>>>.>>..>.>>....>....<.....<<.<.<<
+X06576.1 AGGUCGCCGCCAGG
+#=GR X06576.1 SS .<<<.<<<<<<<<<
+//
+# STOCKHOLM 1.0
+#=GS M36307.1 DE M36307.1/1-119: 5S ribosomal RNA from Rfam's seed/5S\_rRNA.stk
+M36307.1 AGUUACGACCAUAUCAACUUGAAAGCACCACACCCCGUCAGAUCUGUGAA
+#=GR M36307.1 SS >>>>>>>>>....>>.>>>>>...>>..>>>>>>......<<..<<<<..
+M36307.1 GUUAAGCAAGUUAGAGCUUCGUUAGUAGUUUGGUGGGGGACCACAAGCGA
+#=GR M36307.1 SS <<....<<<<<..<<>>>.>>....>.>>.....>>....<<.....<<.
+M36307.1 AUACGAAGUGCCGUAGCUU
+#=GR M36307.1 SS <.

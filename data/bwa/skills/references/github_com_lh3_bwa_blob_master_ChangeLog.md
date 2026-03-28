@@ -83,6 +83,7 @@ Appearance settings
     - [Security Lab](https://securitylab.github.com)
     - [Maintainer Community](https://maintainers.github.com)
     - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
     - [Archive Program](https://archiveprogram.github.com)
   + REPOSITORIES
     - [Topics](https://github.com/topics)
@@ -148,7 +149,7 @@ Public
 
 * [Notifications](/login?return_to=%2Flh3%2Fbwa) You must be signed in to change notification settings
 * [Fork
-  575](/login?return_to=%2Flh3%2Fbwa)
+  576](/login?return_to=%2Flh3%2Fbwa)
 * [Star
    1.7k](/login?return_to=%2Flh3%2Fbwa)
 
@@ -2376,8 +2377,4 @@ print unmapped reads
 
 ------------------------------------------------------------------------
 
-r1555 | lh3 | 2010-12-09 21:17:20 -0500 (Thu, 09 Dec 2010) | 3 lines
-
-Changed paths:
-
-M /branches/pro
+r1555 | lh3 | 2010-12-09 21:17:20 -0500 (Thu, 09 Dec 2

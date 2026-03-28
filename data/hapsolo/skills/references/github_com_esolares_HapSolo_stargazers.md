@@ -1,1 +1,359 @@
-Stargazers · esolares/HapSolo · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} esolares / HapSolo Public Notifications You must be signed in to change notification settings Fork 6 Star 20 Code Issues 1 Pull requests 0 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights Stargazers All 20 You know Changwanseo Works for Seoul National University Seoul National University Follow ferrolad Joined on Jan 2, 2014 Follow fjruizruano Works for Leibniz Institute for the Analysis of Biodiversity Change (LIB), Museum Koenig (ZFMK) Leibniz Institute for the Analysis of Biodiversity Change (LIB), Museum Koenig (ZFMK) Follow Pengzw0909 Is from wuhan,China wuhan,China Follow Isoris Is from France, Thailand France, Thailand Follow jp-hamilton Works for University of Georgia University of Georgia Follow zhangwenda0518 Works for Peking Union Medical College Peking Union Medical College Follow DexinBo Works for Huazhong Agricultural University (HZAU) Huazhong Agricultural University (HZAU) Follow eernst Works for CSHL/HHMI CSHL/HHMI Follow sam217pa Works for LBBE LBBE Follow Sh1ne111 Works for Agricultral Genomics Insititute at Shenzhen(AGIS) Agricultral Genomics Insititute at Shenzhen(AGIS) Follow zovie1 Joined on Jan 26, 2018 Follow erikenbody Works for UC Santa Cruz UC Santa Cruz Follow peterdfields Works for University of Basel University of Basel Follow shulp2211 Joined on Feb 15, 2019 Follow malonge Joined on Jan 16, 2015 Follow lyrk50 Joined on Apr 11, 2020 Follow williamrowell Works for @PacificBiosciences @PacificBiosciences Follow JamieCFreeman Works for University of Wisconsin-Madison University of Wisconsin-Madison Follow Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fesolares%2FHapSolo%2Fstargazers)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fesolares%2FHapSolo%2Fstargazers)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Frepositories%2Fstargazers&source=header-repo&source_repo=esolares%2FHapSolo)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[esolares](/esolares)
+/
+**[HapSolo](/esolares/HapSolo)**
+Public
+
+* [Notifications](/login?return_to=%2Fesolares%2FHapSolo) You must be signed in to change notification settings
+* [Fork
+  6](/login?return_to=%2Fesolares%2FHapSolo)
+* [Star
+   20](/login?return_to=%2Fesolares%2FHapSolo)
+
+* [Code](/esolares/HapSolo)
+* [Issues
+  1](/esolares/HapSolo/issues)
+* [Pull requests
+  0](/esolares/HapSolo/pulls)
+* [Actions](/esolares/HapSolo/actions)
+* [Projects](/esolares/HapSolo/projects)
+* [Security
+  0](/esolares/HapSolo/security)
+* [Insights](/esolares/HapSolo/pulse)
+
+Additional navigation options
+
+* [Code](/esolares/HapSolo)
+* [Issues](/esolares/HapSolo/issues)
+* [Pull requests](/esolares/HapSolo/pulls)
+* [Actions](/esolares/HapSolo/actions)
+* [Projects](/esolares/HapSolo/projects)
+* [Security](/esolares/HapSolo/security)
+* [Insights](/esolares/HapSolo/pulse)
+
+# Stargazers
+
+[All 20](/esolares/HapSolo/stargazers) [You know](/esolares/HapSolo/stargazers/you_know)
+
+1. [![@Changwanseo](https://avatars.githubusercontent.com/u/64393882?s=96&v=4)](/Changwanseo)
+
+   ## [Changwanseo](/Changwanseo)
+
+   Works for Seoul National University
+
+   Seoul National University
+
+   [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fesolares%2FHapSolo%2Fstargazers)
+2. [![@ferrolad](https://avatars.githubusercontent.com/u/6301425?s=96&v=4)](/ferrolad)
+
+   ## [ferrolad](/ferrolad)
+
+   Joined on Jan 2, 2014
+
+   [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fesolares%2FHapSolo%2Fstargazers)
+3. [![@fjruizruano](https://avatars.githubusercontent.com/u/980700?s=96&v=4)](/fjruizruano)
+
+   ## [fjruizruano](/fjruizruano)
+
+   Works for Leibniz Institute for the Analysis of Biodiversity Change (LIB), Museum Koenig (ZFMK)
+
+   Leibniz Institute for the Analysis of Biodiversity Change (LIB), Museum Koenig (ZFMK)
+
+   [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fesolares%2FHapSolo%2Fstargazers)
+4. [![@Pengzw0909](https://avatars.githubusercontent.com/u/34698068?s=96&v=4)](/Pengzw0909)
+
+   ## [Pengzw0909](/Pengzw0909)
+
+   Is from wuhan,China
+
+   wuhan,China
+
+   [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fesolares%2FHapSolo%2Fstargazers)
+5. [![@Isoris](https://avatars.githubusercontent.com/u/78720716?s=96&v=4)](/Isoris)
+
+   ## [Isoris](/Isoris)
+
+   Is from France, Thailand
+
+   France, Thailand
+
+   [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fesolares%2FHapSolo%2Fstargazers)
+6. [![@jp-hamilton](https://avatars.githubusercontent.com/u/48839037?s=96&v=4)](/jp-hamilton)
+
+   ## [jp-hamilton](/jp-hamilton)
+
+   Works for University of Georgia
+
+   University of Georgia
+
+   [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fesolares%2FHapSolo%2Fstargazers)
+7. [![@zhangwenda0518](https://avatars.githubusercontent.com/u/77140740?s=96&v=4)](/zhangwenda0518)
+
+   ## [zhangwenda0518](/zhangwenda0518)
+
+   Works for Peking Union Medical College
+
+   Peking Union Medical College
+
+   [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fesolares%2FHapSolo%2Fstargazers)
+8. [![@DexinBo](https://avatars.githubusercontent.com/u/44394359?s=96&v=4)](/DexinBo)
+
+   ## [DexinBo](/DexinBo)
+
+   Works for Huazhong Agricultural University (HZAU)
+
+   Huazhong Agricultural University (HZAU)
+
+   [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fesolares%2FHapSolo%2Fstargazers)
+9. [![@eernst](https://avatars.githubusercontent.com/u/1472011?s=96&v=4)](/eernst)
+
+   ## [eernst](/eernst)
+
+   Works for CSHL/HHMI
+
+   CSHL/HHMI
+
+   [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fesolares%2FHapSolo%2Fstargazers)
+10. [![@sam217pa](https://avatars.githubusercontent.com/u/8091811?s=96&v=4)](/sam217pa)
+
+    ## [sam217pa](/sam217pa)
+
+    Works for LBBE
+
+    LBBE
+
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fesolares%2FHapSolo%2Fstargazers)
+11. [![@Sh1ne111](https://avatars.githubusercontent.com/u/26449680?s=96&v=4)](/Sh1ne111)
+
+    ## [Sh1ne111](/Sh1ne111)
+
+    Works for Agricultral Genomics Insititute at Shenzhen(AGIS)
+
+    Agricultral Genomics Insititute at Shenzhen(AGIS)
+
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fesolares%2FHapSolo%2Fstargazers)
+12. [![@zovie1](https://avatars.githubusercontent.com/u/35830618?s=96&v=4)](/zovie1)
+
+    ## [zovie1](/zovie1)
+
+    Joined on Jan 26, 2018
+
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fesolares%2FHapSolo%2Fstargazers)
+13. [![@erikenbody](https://avatars.githubusercontent.com/u/12717495?s=96&v=4)](/erikenbody)
+
+    ## [erikenbody](/erikenbody)
+
+    Works for UC Santa Cruz
+
+    UC Santa Cruz
+
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fesolares%2FHapSolo%2Fstargazers)
+14. [![@peterdfields](https://avatars.githubusercontent.com/u/202746?s=96&v=4)](/peterdfields)
+
+    ## [peterdfields](/peterdfields)
+
+    Works for University of Basel
+
+    University of Basel
+
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fesolares%2FHapSolo%2Fstargazers)
+15. [![@shulp2211](https://avatars.githubusercontent.com/u/47655262?s=96&v=4)](/shulp2211)
+
+    ## [shulp2211](/shulp2211)
+
+    Joined on Feb 15, 2019
+
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fesolares%2FHapSolo%2Fstargazers)
+16. [![@malonge](https://avatars.githubusercontent.com/u/10554710?s=96&v=4)](/malonge)
+
+    ## [malonge](/malonge)
+
+    Joined on Jan 16, 2015
+
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fesolares%2FHapSolo%2Fstargazers)
+17. [![@lyrk50](https://avatars.githubusercontent.com/u/63507560?s=96&v=4)](/lyrk50)
+
+    ## [lyrk50](/lyrk50)
+
+    Joined on Apr 11, 2020
+
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fesolares%2FHapSolo%2Fstargazers)
+18. [![@williamrowell](https://avatars.githubusercontent.com/u/627365?s=96&v=4)](/williamrowell)
+
+    ## [williamrowell](/williamrowell)
+
+    Works for @PacificBiosciences
+
+    @PacificBiosciences
+
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fesolares%2FHapSolo%2Fstargazers)
+19. [![@JamieCFreeman](https://avatars.githubusercontent.com/u/30966718?s=96&v=4)](/JamieCFreeman)
+
+    ## [JamieCFreeman](/JamieCFreeman)
+
+    Works for University of Wisconsin-Madison
+
+    University of Wisconsin-Madison
+
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fesolares%2FHapSolo%2Fstargazers)
+
+## Footer
+
+© 2026 GitHub, Inc.
+
+### Footer navigation
+
+* [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+* [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+* [Security](https://github.com/security)
+* [Status](https://www.githubstatus.com/)
+* [Community](https://github.community/)
+* [Docs](https://docs.github.com/)
+* [Contact](https://support.github.com?tags=dotcom-footer)
+* Manage cookies
+* Do not share my personal information
+
+You can’t perform that action at this time.

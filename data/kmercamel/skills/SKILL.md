@@ -1,6 +1,6 @@
 ---
 name: kmercamel
-description: KmerCamel represents k-mer sets as masked superstrings to reduce their storage footprint and optimize genomic data compression. Use when user asks to compute masked superstrings from FASTA files, optimize masks for indexing, or convert between masked superstring and simplitig formats.
+description: "KmerCamel compresses k-mer sets into masked superstrings to optimize genomic data storage and indexing. Use when user asks to compute masked superstrings, optimize masks for indexing or compression, or convert between masked superstring formats."
 homepage: https://github.com/OndrejSladky/kmercamel/
 ---
 
@@ -8,51 +8,75 @@ homepage: https://github.com/OndrejSladky/kmercamel/
 # kmercamel
 
 ## Overview
-KmerCamel is a specialized tool designed to reduce the storage footprint of k-mer sets by representing them as masked superstrings. Unlike traditional methods that simply list k-mers, KmerCamel uses greedy algorithms to find a single nucleotide sequence (superstring) where the case of the letters (upper/lower) acts as a mask to indicate which k-mers are actually present. This approach is highly effective for genomic data compression and building compact search indices.
 
-## Core Workflows
+KmerCamel is a specialized bioinformatics tool designed to compress k-mer sets into a single "masked superstring." By using a nucleotide alphabet where the character case (upper vs. lower) represents the mask symbols, it provides a unified framework for textual k-mer representations. This approach is significantly more efficient than storing raw k-mers and is particularly useful for genomic data compression and building k-mer indices. It supports both global and local greedy algorithms to balance between superstring compactness and memory usage.
+
+## Common CLI Patterns
 
 ### Computing Masked Superstrings
-The primary command is `compute`. It processes FASTA files to generate a masked-cased superstring.
+The `compute` subcommand is the primary entry point for generating a masked superstring from FASTA/FASTQ input.
 
-*   **Standard Compression**:
+*   **Standard usage (Bidirectional):**
     `kmercamel compute -k 31 -o output.msfa input.fa`
-*   **Memory-Efficient (Streaming)**: Use when RAM is limited (e.g., human genome on machines with <128GB RAM).
-    `kmercamel compute -k 31 -a streaming -o output.msfa input.fa`
-*   **Filtering by Frequency**: Only include k-mers appearing at least $z$ times.
-    `kmercamel compute -k 31 -z 2 -o filtered.msfa input.fa`
-*   **Bidirectional vs. Unidirectional**: By default, it treats k-mers and reverse complements as the same. To treat them as distinct:
-    `kmercamel compute -k 31 -u -o distinct.msfa input.fa`
+    *Note: By default, k-mers and their reverse complements are treated as identical.*
+
+*   **Unidirectional model:**
+    `kmercamel compute -k 31 -u -o output.msfa input.fa`
+    *Use `-u` if you need to treat a k-mer and its reverse complement as distinct entities.*
+
+*   **Filtering by frequency:**
+    `kmercamel compute -k 31 -z 2 -o output.msfa input.fa`
+    *Use `-z` to only represent k-mers appearing at least N times (useful for sequencing error removal).*
+
+*   **Optimizing for Simplitigs/Eulertigs:**
+    `kmercamel compute -k 31 -S -o output.msfa simplitigs.fa`
+    *The `-S` flag significantly speeds up computation if the input is already a set of maximal simplitigs.*
 
 ### Mask Optimization
-After generating a superstring, you can optimize the mask for specific downstream requirements (e.g., maximizing 1s for indexing or minimizing runs for compression).
+After computing a superstring, you can optimize its mask for different downstream applications using the `maskopt` subcommand.
 
-*   **Maximize 1s (MaxOne)**: Best for k-mer indexing.
-    `kmercamel maskopt -t maxone -k 31 -o optimized.msfa input.msfa`
-*   **Minimize 1s (MinOne)**: Useful for specific set subtraction tasks.
-    `kmercamel maskopt -t minone -k 31 -o optimized.msfa input.msfa`
-*   **Minimize Runs (MinRun)**: Best for reducing the complexity of the mask.
-    `kmercamel maskopt -t minrun -k 31 -o optimized.msfa input.msfa`
+*   **Maximize 1s (Best for Indexing):**
+    `kmercamel maskopt -t max-one -k 31 -o optimized.msfa input.msfa`
 
-### Format Conversion
-KmerCamel acts as a bridge between various k-mer representation formats.
+*   **Minimize 1s (Best for specific compression):**
+    `kmercamel maskopt -t min-one -k 31 -o optimized.msfa input.msfa`
 
-*   **MSFA to rSPSS**: Convert a masked superstring back to a general FASTA format.
-    `kmercamel ms2spss -k 31 -o output.rspss input.msfa`
-*   **rSPSS to MSFA**: Convert simplitigs or unitigs into a masked superstring.
-    `kmercamel spss2ms -k 31 -o output.msfa input.fa`
-*   **Split MSFA**: Separate the superstring sequence and the mask into two files.
+*   **Minimize Runs (Best for RLE-based storage):**
+    `kmercamel maskopt -t min-run -k 31 -o optimized.msfa input.msfa`
+
+### Format Conversions
+KmerCamel provides utilities to move between masked superstring formats and separated mask/string files.
+
+*   **Extract Superstring and Mask:**
     `kmercamel ms2mssep -m mask.txt -s superstring.txt input.msfa`
 
-## Expert Tips & Best Practices
+*   **Combine Superstring and Mask:**
+    `kmercamel mssep2ms -m mask.txt -s superstring.txt -o output.msfa`
 
-*   **Simplitig Speedup**: If your input file already contains simplitigs or eulertigs, add the `-S` flag to significantly accelerate the computation.
-*   **Large K-mers**: For $k > 127$, use the Aho-Corasick versions of the algorithms by adding `AC` to the algorithm name (e.g., `-a globalAC`), though note this is significantly slower.
-*   **Piping**: Use `-` as a filename to read from stdin or write to stdout for integration into bioinformatics pipelines.
-*   **Lower Bound Calculation**: To check how close your compression is to the theoretical limit, use:
+## Expert Tips and Best Practices
+
+*   **Memory Management:** The default "global greedy" algorithm produces the most compact superstrings but consumes significant memory (~115 GB for a human genome). If memory is limited, switch to the "local greedy" or "streaming" algorithms:
+    `kmercamel compute -a local -k 31 -o output.msfa input.fa`
+*   **Large K-mers:** KmerCamel natively supports $k$ up to 127. For $k$ values larger than this, use the experimental Aho-Corasick versions of the algorithms by appending `AC` to the algorithm name (e.g., `-a globalAC`), though be aware these are slower.
+*   **Downstream Compression:** For maximum storage efficiency, extract the superstring and mask using `ms2mssep`. Compress the mask with `bzip2 --best` and the superstring with `xz -9` or specialized genomic compressors like GeCo3 or Jarvis3.
+*   **Lower Bound Analysis:** To evaluate how close your representation is to the theoretical minimum length, use the `lowerbound` subcommand:
     `kmercamel lowerbound -k 31 input.fa`
-*   **Storage Optimization**: For maximum disk savings, extract the mask and superstring using `ms2mssep`, then compress the mask with `bzip2 --best` and the superstring with `xz -9` or specialized tools like `GeCo3`.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| kmercamel compute | Compute k-mer based superstrings. |
+| kmercamel maskopt | Masks a superstring using k-mers. |
+| lowerbound | Calculates the lower bound of the number of unique k-mers in a FASTA file. |
+| ms2mssep | Converts MS/MS spectra to MS2 format. |
+| ms2spss | Converts a masked superstring to a set of k-mers. |
+| mssep2ms | Cannot have both superstring and mask redirected from stdin. |
+| spss2ms | Converts a FASTA file to a masked superstring format. |
 
 ## Reference documentation
 - [KmerCamel GitHub Repository](./references/github_com_OndrejSladky_kmercamel.md)
-- [KmerCamel Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_kmercamel_overview.md)
+- [KmerCamel README](./references/github_com_OndrejSladky_kmercamel_blob_main_README.md)
+- [Source Code Documentation](./references/github_com_OndrejSladky_kmercamel_blob_main_src_README.md)

@@ -50,3 +50,6 @@ options:
   -f FILE, --file FILE  Path to the gene CSV or Excel file
 ```
 
+
+## Metadata
+- **Skill**: generated

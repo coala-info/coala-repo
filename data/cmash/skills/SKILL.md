@@ -1,6 +1,6 @@
 ---
 name: cmash
-description: "CMash estimates genomic set similarity and containment between sequences using MinHash sketches. Use when user asks to build a reference database from genomic files, estimate the presence of reference sequences in a metagenome, or perform multi-resolution k-mer analysis."
+description: CMash uses containment min hashing to estimate the presence and proportion of reference genomes within large genomic or metagenomic query samples. Use when user asks to build a reference database, query a metagenome for taxonomic profiling, perform multi-resolution k-mer analysis, or calculate containment and Jaccard indices.
 homepage: https://github.com/dkoslicki/CMash
 ---
 
@@ -8,60 +8,59 @@ homepage: https://github.com/dkoslicki/CMash
 # cmash
 
 ## Overview
-CMash is a bioinformatics tool designed for efficient genomic set similarity estimation using containment MinHash. It allows researchers to determine the presence and abundance of reference sequences within large query datasets, such as metagenomes. By reducing sequences to probabilistic sketches, it enables rapid calculation of Jaccard and containment indices. While the developers note that the tool has largely been supplanted by Sourmash and YACHT, CMash remains a functional option for multi-resolution k-mer analysis and specific containment estimation workflows.
+CMash is a probabilistic data analysis tool designed for large-scale genomic comparisons. It utilizes containment min hashing to provide multi-resolution estimations of how much of a reference genome is contained within a query sample (like a metagenome). This is particularly useful for taxonomic profiling, identifying organisms in complex environmental samples, and performing rapid pairwise comparisons of thousands of genomes. While the project notes it has been largely supplanted by Sourmash and YACHT, it remains a specialized tool for workflows requiring specific k-mer size flexibility and containment index visualizations.
 
-## Installation
-The recommended installation method is via Bioconda:
-```bash
-conda install bioconda::cmash
-```
+## Core Workflows
 
-## Core Workflow
+### 1. Building a Reference Database
+To query against a set of genomes, you must first create a training database.
+1. Create a text file (e.g., `FileNames.txt`) containing the absolute paths to your reference FASTA/Q files.
+2. Run the database construction script:
+   ```bash
+   MakeDNADatabase.py FileNames.txt TrainingDatabase.h5
+   ```
+*Tip: Use `MakeStreamingDNADatabase.py` if you want to support multiple k-mer sizes simultaneously for multi-resolution analysis.*
 
-### 1. Prepare Reference List
-Create a text file (e.g., `FileNames.txt`) containing the absolute paths to your reference FASTA or FASTQ files, one per line.
-```text
-/path/to/ref1.fa
-/path/to/ref2.fa
-/path/to/ref3.fa
-```
-
-### 2. Build the Reference Database
-Generate a training database in HDF5 format from your list of references.
-```bash
-MakeDNADatabase.py FileNames.txt TrainingDatabase.h5
-```
-
-### 3. Query the Database
-Compare a query file (metagenome) against the training database to estimate containment.
+### 2. Querying a Metagenome
+To estimate which references are present in a query sample:
 ```bash
 QueryDNADatabase.py Metagenome.fa TrainingDatabase.h5 Output.csv
 ```
-The output CSV contains:
-- Containment index estimate
-- Intersection cardinality
-- Jaccard index estimate
+The resulting CSV contains:
+- **Containment Index Estimate**: The proportion of the reference found in the query.
+- **Intersection Cardinality**: The estimated number of shared k-mers.
+- **Jaccard Index Estimate**: The overall similarity between the two sets.
 
-## Streaming and Multi-K-mer Analysis
-For workflows requiring multiple k-mer sizes simultaneously or to avoid the memory overhead of bloom filters, use the streaming scripts.
-
-### Create Streaming Database
+### 3. Using Bloom Filters (Optional)
+For very large query files, you can pre-process the metagenome into a bloom filter (nodegraph) to speed up subsequent queries:
 ```bash
-MakeStreamingDNADatabase.py FileNames.txt TrainingDatabase.h5
+MakeNodeGraph.py Metagenome.fa .
 ```
 
-### Query Streaming Database
+### 4. Streaming Analysis
+For workflows where disk space is a concern or when analyzing containment across a range of k-mer sizes:
 ```bash
 StreamingQueryDNADatabase.py Metagenome.fa TrainingDatabase.h5 Output.csv
 ```
+This approach avoids the creation of intermediate bloom filter files and is ideal for generating "containment vs. k" plots.
 
 ## Expert Tips and Best Practices
-- **Absolute Paths**: Always use absolute paths in your `FileNames.txt` to avoid issues when running scripts from different directories.
-- **Streaming Preference**: Use the `Streaming` versions of the scripts if you need to visualize containment as a function of $k$ or if you are working with limited memory, as they do not require pre-forming bloom filters.
-- **Database Management**: The Python API (`from CMash import MinHash as MH`) provides advanced functions like `MH.insert_to_database` and `MH.union_databases` for updating existing HDF5 databases without rebuilding them from scratch.
-- **Redundancy Check**: Use `MH.form_jaccard_matrix` within a Python script to identify structural redundancies in your training database before running large-scale queries.
-- **Deprecation Note**: Be aware that CMash is in a maintenance state. For new projects requiring long-term support or integration with the latest k-mer tools, consider transitioning to Sourmash.
+- **Database Management**: Use the `MinHash` Python module (`from CMash import MinHash as MH`) for advanced operations like `MH.insert_to_database`, `MH.delete_from_database`, or `MH.union_databases` to avoid rebuilding large databases from scratch.
+- **Identifying Redundancy**: Use `MH.form_jaccard_matrix` to create a pairwise similarity matrix of your reference database. This helps identify nearly identical genomes that might skew your metagenomic results.
+- **Memory Issues**: If installing on Linux and encountering `cairo` errors, ensure `libcairo2-dev` is installed via the system package manager.
+- **Multi-resolution**: When using the streaming scripts, you can visualize the containment index as a function of $k$. A stable containment index across various $k$ values typically indicates a more confident match.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| MakeDNADatabase.py | This script creates training/reference sketches for each FASTA/Q file listed in the input file. |
+| MakeStreamingDNADatabase.py | This script creates training/reference sketches for each FASTA/Q file listed in the input file. |
+| QueryDNADatabase.py | This script creates a CSV file of similarity indicies between the input file and each of the sketches in the training/reference file. |
+| StreamingQueryDNADatabase.py | This script calculates containment indicies for each of the training/reference sketches by streaming through the query file. |
 
 ## Reference documentation
-- [CMash GitHub Repository](./references/github_com_dkoslicki_CMash.md)
-- [Bioconda CMash Overview](./references/anaconda_org_channels_bioconda_packages_cmash_overview.md)
+- [CMash GitHub README](./references/github_com_dkoslicki_CMash_blob_master_README.md)
+- [CMash Setup and Requirements](./references/github_com_dkoslicki_CMash_blob_master_setup.py.md)

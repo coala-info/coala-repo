@@ -1701,3 +1701,6 @@ usage: tombo [-h] [-v]
 tombo: error: invalid choice: 'Additional' (choose from 'resquiggle', 'test_significance', 'write_wiggles', 'write_most_significant_fasta', 'plot_max_coverage', 'plot_genome_location', 'plot_motif_centered', 'plot_max_difference', 'plot_most_significant', 'plot_motif_with_stats', 'plot_per_read', 'plot_correction', 'plot_multi_correction', 'cluster_most_significant', 'plot_kmer', 'clear_filters', 'filter_stuck', 'event_resquiggle', 'model_resquiggle', 'estimate_kmer_reference', 'estimate_alt_reference')
 ```
 
+
+## Metadata
+- **Skill**: generated

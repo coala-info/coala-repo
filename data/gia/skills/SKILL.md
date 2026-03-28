@@ -1,6 +1,6 @@
 ---
 name: gia
-description: gia is a high-performance command-line utility designed for performing set operations and arithmetic on genomic intervals. Use when user asks to intersect intervals, perform relational joins, calculate genomic coverage, or find the complement of genomic regions.
+description: gia is a high-performance command-line toolset designed for performing complex set operations and arithmetic on genomic intervals. Use when user asks to sort intervals, intersect datasets, merge overlapping regions, subtract genomic features, calculate coverage, or find genomic complements.
 homepage: https://github.com/noamteyssier/gia
 ---
 
@@ -8,56 +8,104 @@ homepage: https://github.com/noamteyssier/gia
 # gia
 
 ## Overview
-`gia` (Genomic Interval Arithmetic) is a high-performance command-line utility designed for set operations on genomic intervals. Written in Rust and built on the `bedrs` library, it is optimized for speed and scalability, aiming to be a drop-in replacement for established tools like `bedtools` and `bedops`. Use this skill when you need to perform efficient set theory operations—such as intersections, joins, and coverage calculations—on genomic data formats like BED.
 
-## Common CLI Patterns
+`gia` (Genomic Interval Arithmetic) is a high-performance command-line toolset written in Rust, designed to perform complex set operations on genomic intervals. It serves as a modern, scalable alternative to established tools like `bedtools` and `bedops`. Use this skill to guide the execution of genomic workflows including overlap detection, interval merging, genomic complementation, and coverage analysis.
 
-### Basic Operations
-The tool follows a standard subcommand structure. You can view all available subcommands and global options using the help flag:
+## Installation and Setup
+
+`gia` is distributed via Cargo. Ensure the Rust toolchain is installed before proceeding.
+
+```bash
+cargo install gia
+```
+
+Verify the installation:
 ```bash
 gia --help
 ```
 
-### Intersecting Intervals
-To find overlaps between a query file and one or more reference files:
+## Core CLI Patterns
+
+### 1. Sorting Intervals
+Many `gia` operations require input files to be sorted by chromosome and start position.
 ```bash
-gia intersect -a query.bed -b reference.bed
+gia sort -i input.bed > sorted.bed
 ```
 
-### Relational Joins
-`gia` supports relational joins between interval sets, which is useful for maintaining metadata from both files during an overlap operation. Supported methods include `inner`, `left`, and `right`.
+### 2. Intersecting Datasets
+Find overlapping regions between two sets of intervals.
 ```bash
-gia join -a file1.bed -b file2.bed --method inner
+# Find overlaps between file A and file B
+gia intersect -a set_a.bed -b set_b.bed > overlaps.bed
 ```
 
-### Calculating Coverage
-For depth-of-coverage calculations, `gia` supports parallel processing to handle large datasets efficiently.
+### 3. Merging Intervals
+Collapse overlapping or book-ended intervals into single continuous regions.
 ```bash
-gia coverage -a regions.bed -b reads.bed --threads 8
+gia merge -i input.bed > merged.bed
 ```
 
-### Finding Complements
-To identify genomic regions that are NOT covered by your intervals:
+### 4. Subtracting Intervals
+Remove genomic regions in file B from the intervals in file A.
 ```bash
-gia complement -i input.bed
+gia subtract -a features.bed -b masks.bed > filtered.bed
+```
+
+### 5. Calculating Coverage
+`gia` supports parallel processing for coverage calculations, making it significantly faster for large datasets.
+```bash
+# Calculate coverage using 8 threads
+gia coverage -a regions.bed -b reads.bed -t 8 > coverage.txt
+```
+
+### 6. Genomic Complement
+Find regions of the genome not covered by the input intervals. This requires a genome file (chrom sizes).
+```bash
+gia complement -i annotations.bed -g hg38.genome > gaps.bed
 ```
 
 ## Expert Tips and Best Practices
 
-### Handling Multiple Inputs
-One of `gia`'s powerful features is the ability to accept multiple files for the `-b` (reference) argument. It will concatenate these inputs and treat them as a single reference set for the operation:
-```bash
-gia intersect -a query.bed -b ref1.bed ref2.bed ref3.bed
-```
+*   **Stream Processing**: `gia` is designed for Unix-style piping. Chain commands to avoid creating massive intermediate files.
+    ```bash
+    gia intersect -a A.bed -b B.bed | gia merge -i - > result.bed
+    ```
+*   **Parallelism**: When using the `coverage` subcommand, always specify the `-t` (threads) flag to leverage multi-core processors.
+*   **Join Operations**: `gia` supports relational joins (inner, left, right). Use these when you need to preserve metadata from both files during an intersection.
+*   **Memory Mapping**: The tool utilizes memory mapping for high-speed I/O; ensure your environment has sufficient virtual memory address space when working with exceptionally large files.
 
-### Performance Optimization
-*   **Parallelism**: When using the `coverage` subcommand, always specify the `--threads` parameter if working on a multi-core system to significantly reduce processing time.
-*   **Rust Toolchain**: If you require the absolute latest features or performance patches, install via `cargo install gia` to compile it specifically for your architecture.
 
-### Transitioning from bedtools
-While `gia` aims for compatibility, always check the specific subcommand help (e.g., `gia intersect --help`) as flag names or default behaviors may vary slightly to accommodate the underlying Rust implementation's optimizations.
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| bcf | BCF-centric commands |
+| flank | Flanks the intervals of a BED file |
+| get-fasta | Extracts FASTA sequences using intervals from a BED file |
+| gia bam | BAM-centric commands |
+| gia closest | Finds the closest interval in a secondary BED file for all intervals in a primary BED file |
+| gia complement | Generates the complement of a BED file |
+| gia join | Joins two BED files |
+| gia segment | Segments a BED file into non-overlapping regions |
+| gia shift | Shifts the intervals of a BED file by a specified amount |
+| gia sort | Sorts a BED file by chromosome, start, and end |
+| gia subtract | Subtracts two BED files |
+| gia_cluster | Annotates the intervals of a BED file with their Cluster ID |
+| gia_coverage | Calculates the coverage of intervals in Set A by intervals in Set B |
+| gia_extend | Extends the intervals of a BED file |
+| gia_merge | Merges intervals of a BED file with overlapping regions |
+| gia_random | gia_random |
+| gia_sample | Randomly sample a BED file |
+| gia_spacing | Calculates the spacing between intervals in a BED file |
+| gia_window | Finds all the overlapping intervals in Set B after adding a window around all intervals in Set A |
+| intersect | Intersects two BED files |
+| unionbedg | Combines multiple BedGraph files into a single file and shows coverage over segmented intervals of each BedGraph file as a separate column |
 
 ## Reference documentation
-- [gia Overview](./references/anaconda_org_channels_bioconda_packages_gia_overview.md)
-- [gia GitHub Repository](./references/github_com_noamteyssier_gia.md)
-- [gia Commit History](./references/github_com_noamteyssier_gia_commits_main.md)
+
+- [gia README](./references/github_com_noamteyssier_gia_blob_main_README.md)
+- [Intersection Tool](./references/noamteyssier_github_io_gia_tools_intersect.html.md)
+- [Merge Tool](./references/noamteyssier_github_io_gia_tools_merge.html.md)
+- [Sort Tool](./references/noamteyssier_github_io_gia_tools_sort.html.md)
+- [Subtract Tool](./references/noamteyssier_github_io_gia_tools_subtract.html.md)

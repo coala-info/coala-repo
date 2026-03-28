@@ -1,6 +1,6 @@
 ---
 name: koverage
-description: Koverage is a high-performance pipeline designed to calculate coverage metrics across multiple samples using mapping-based or k-mer-based methods. Use when user asks to calculate contig coverage, estimate k-mer depth, process read directories for mapping, or execute coverage workflows on HPC clusters.
+description: "Koverage generates coverage statistics from sequencing reads and reference assemblies using mapping or kmer-based methods. Use when user asks to calculate assembly coverage, estimate abundance in metagenomic datasets, or generate read alignment statistics."
 homepage: https://github.com/beardymcjohnface/Koverage
 ---
 
@@ -9,86 +9,87 @@ homepage: https://github.com/beardymcjohnface/Koverage
 
 ## Overview
 
-Koverage is a high-performance pipeline designed to generate coverage metrics across multiple samples while maintaining a small computational footprint. It addresses the scalability limitations of traditional tools by providing optimized workflows for both standard mapping and k-mer-based estimation. This skill helps you navigate its CLI to process read directories, manage sample metadata via TSV files, and execute workflows on high-performance computing (HPC) clusters using Snakemake profiles.
+Koverage is a high-performance tool designed to generate coverage statistics from sequencing reads and reference assemblies. It prioritizes low memory usage and efficient I/O, making it suitable for massive metagenomic datasets that traditional tools struggle to process. It offers two primary modes: a default mapping-based approach using minimap2 and a kmer-based approach that provides superior scalability for extremely large reference files.
 
 ## Installation and Setup
 
-Install koverage via Bioconda (recommended) or PyPI:
+Install Koverage via Bioconda or PyPI. It is recommended to use a dedicated Python 3.11 environment.
 
 ```bash
 # Bioconda installation
-conda create -n koverage python=3.11
-conda activate koverage
 conda install -c conda-forge -c bioconda koverage
 
 # PyPI installation
 pip install koverage
 ```
 
-Verify the installation with the internal test suite:
+Verify the installation using the built-in test suite:
 ```bash
 koverage test
 ```
 
-## Core Workflows
+## Command Line Usage
 
-### Mapping-based Coverage (Default)
-Use this for standard applications where coordinate-level coverage is needed. It utilizes `minimap2` for alignment.
+### Basic Execution
 
-```bash
-koverage run --reads path/to/reads --ref assembly.fasta
-```
-
-### K-mer-based Coverage
-Use this for exceptionally large reference genomes. It uses Jellyfish to sample k-mers, which significantly reduces I/O overhead.
+The primary command is `koverage run`. You must provide a directory or TSV file of reads and a reference FASTA file.
 
 ```bash
-koverage run --reads path/to/reads --ref assembly.fasta kmer
+# Default mapping-based coverage
+koverage run --reads /path/to/reads --ref assembly.fasta
 ```
 
-### CoverM Wrapper
-Use this to leverage CoverM's algorithms within the koverage framework. Note: This is not available on macOS.
+### Choosing a Coverage Method
+
+- **Map (Default)**: Uses `minimap2` to align reads. Best for standard accuracy.
+- **Kmer**: Uses kmer frequencies. Significantly more scalable for very large reference FASTAs (e.g., massive metagenomes).
 
 ```bash
-koverage run --reads path/to/reads --ref assembly.fasta coverm
+# Explicitly call mapping method
+koverage run --reads readDir --ref assembly.fasta map
+
+# Use kmer method for large references
+koverage run --reads readDir --ref assembly.fasta kmer
 ```
 
-## Input Management
+### Input Specification (`--reads`)
 
-### Automated Directory Parsing
-Point `--reads` to a directory. Koverage automatically pairs files containing `_R1` and `_R2` and infers sample names from the filenames.
+Koverage accepts two formats for the `--reads` argument:
 
-### Manual Sample Specification (TSV)
-For complex naming or specific sample groupings, provide a TSV file to `--reads`.
-- **2 Columns**: SampleName, Read1_Path
-- **3 Columns**: SampleName, Read1_Path, Read2_Path
+1.  **Directory**: Provide a path to a folder containing FASTQ files. Koverage automatically infers sample names and pairs files based on `_R1` and `_R2` suffixes.
+2.  **TSV File**: Provide a tab-separated file for precise control.
+    - 2 columns: `SampleID`, `Read_Path` (Single-end)
+    - 3 columns: `SampleID`, `R1_Path`, `R2_Path` (Paired-end)
 
-## Advanced Execution
+### High-Performance Computing (HPC)
 
-### HPC and Cluster Integration
-Since koverage is built on Snakemake, any unrecognized arguments are passed directly to the underlying Snakemake engine. Use profiles for cluster execution (e.g., Slurm, SGE).
+Koverage is built on Snakemake. Any arguments not recognized by Koverage are passed directly to the underlying Snakemake engine. Use this to run on clusters via profiles.
 
 ```bash
 koverage run --reads readDir --ref assembly.fasta --profile mySlurmProfile
 ```
 
-### Resource Tuning
-Control the parallelization of the pipeline using standard Snakemake flags:
+## Expert Tips and Best Practices
 
-```bash
-koverage run --reads readDir --ref assembly.fasta --cores 16
-```
+- **Scalability**: If the reference FASTA is exceptionally large (e.g., hundreds of thousands of contigs), prefer the `kmer` method to minimize the RAM footprint and I/O overhead associated with indexing and alignment.
+- **Filename Convention**: When using directory input, ensure read files follow standard naming conventions (e.g., `Sample_R1.fastq.gz`) so the auto-detection logic correctly identifies pairs.
+- **Resource Management**: Since Koverage passes arguments to Snakemake, use `--cores` or `-j` to limit local CPU usage if not running on a cluster.
+- **Testing Methods**: You can test specific methods or all of them simultaneously to ensure your environment supports the required dependencies:
+  ```bash
+  koverage test map kmer coverm
+  ```
 
-## Output Interpretation
 
-### Mapping Outputs
-- `sample_coverage.tsv`: Detailed per-sample and per-contig statistics including Mean, Median, Hitrate (fraction of contig covered), and Variance.
-- `all_coverage.tsv`: Aggregated counts across all samples per contig.
 
-### K-mer Outputs
-- `sample_kmer_coverage.[k]mer.tsv.gz`: Compressed per-sample k-mer depth statistics.
-- `all_kmer_coverage.[k]mer.tsv.gz`: Aggregated k-mer statistics for the entire project.
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| config | Copy the system default config file |
+| run | Run Koverage |
+| snakemake | Snakemake is a Python based language and execution environment for GNU Make-like workflows. |
 
 ## Reference documentation
-- [Koverage GitHub Repository](./references/github_com_beardymcjohnface_Koverage.md)
-- [Koverage Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_koverage_overview.md)
+
+- [Koverage README](./references/github_com_beardymcjohnface_Koverage_blob_main_README.md)
+- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_koverage_overview.md)

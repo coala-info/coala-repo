@@ -1,6 +1,6 @@
 ---
 name: nextpolish2
-description: NextPolish2 is a consensus refinement tool that corrects small-scale assembly errors using HiFi reads and short-read k-mer data while preserving haplotype structure. Use when user asks to polish genome assemblies, correct SNVs and indels in long-read assemblies, or refine assemblies using short-read k-mers without collapsing heterozygous regions.
+description: NextPolish2 improves the consensus accuracy of genome assemblies by correcting errors in homopolymers and microsatellites using short-read k-mer distributions. Use when user asks to polish a genome assembly, improve consensus accuracy with short reads, or correct errors in PacBio HiFi assemblies while maintaining haplotype phasing.
 homepage: https://github.com/Nextomics/NextPolish2
 ---
 
@@ -9,59 +9,61 @@ homepage: https://github.com/Nextomics/NextPolish2
 
 ## Overview
 
-NextPolish2 is a specialized consensus refinement tool that targets small-scale assembly errors (SNVs and Indels) while maintaining the original haplotype structure. It is particularly effective for polishing regions where HiFi reads may struggle or where ONT-based gap filling has introduced errors. By utilizing a built-in phasing module and short-read k-mer data, it ensures that corrections do not collapse heterozygous regions or produce artifacts in complex repeats.
+NextPolish2 is a specialized genomic tool used to improve the consensus accuracy of high-quality genome assemblies, particularly those generated from PacBio HiFi reads. While HiFi assemblies are generally excellent, they often contain small errors in microsatellites or homopolymer runs. NextPolish2 resolves these by leveraging the accuracy of short-read k-mer distributions. Unlike its predecessor, it includes a phasing module that ensures corrections do not collapse haplotypes, making it ideal for heterozygous regions and complex repeats.
 
-## Installation
+## Workflow and CLI Usage
 
-The tool is available via Bioconda:
+The polishing process requires three main components: the draft assembly, a sorted/indexed BAM file of HiFi reads mapped to that assembly, and k-mer files generated from short reads.
+
+### 1. Prepare the HiFi Mapping File
+It is recommended to use `winnowmap` for mapping to better handle repetitive regions.
+
 ```bash
-conda install bioconda::nextpolish2
-```
-
-## Core Workflow
-
-Polishing with NextPolish2 requires three main components: the assembly FASTA, a sorted/indexed BAM of HiFi reads mapped to that assembly, and k-mer count files generated from short reads.
-
-### 1. Prepare HiFi Mapping
-Winnowmap is the preferred aligner for repetitive regions, though Minimap2 is also supported.
-
-**Using Winnowmap (Recommended):**
-```bash
-# 1. Generate repetitive k-mers
+# 1. Count k-mers for winnowmap
 meryl count k=15 output merylDB asm.fa.gz
 meryl print greater-than distinct=0.9998 merylDB > repetitive_k15.txt
 
-# 2. Map and sort
-winnowmap -t 8 -W repetitive_k15.txt -ax map-pb asm.fa.gz hifi.fastq.gz | samtools sort -o hifi.map.sort.bam -
+# 2. Map HiFi reads and sort
+winnowmap -t 8 -W repetitive_k15.txt -ax map-pb asm.fa.gz hifi.fasta.gz | samtools sort -o hifi.map.sort.bam -
+
+# 3. Index the BAM
 samtools index hifi.map.sort.bam
 ```
 
 ### 2. Generate K-mer Datasets
-Use `yak` to count k-mers from high-quality short reads (>=60X coverage recommended). It is best practice to use multiple k-mer sizes (e.g., 21 and 31).
+Use `yak` to create k-mer files from Illumina short reads (recommended coverage >= 60X). Perform quality control with `fastp` before counting.
 
 ```bash
-# Count 21-mers
-yak count -o k21.yak -k 21 -b 37 <(zcat sr.R1.fastq.gz) <(zcat sr.R2.fastq.gz)
-
-# Count 31-mers
-yak count -o k31.yak -k 31 -b 37 <(zcat sr.R1.fastq.gz) <(zcat sr.R2.fastq.gz)
+# Generate 21-mer and 31-mer datasets
+yak count -o k21.yak -k 21 -b 37 <(zcat sr.R1.clean.fq.gz) <(zcat sr.R2.clean.fq.gz)
+yak count -o k31.yak -k 31 -b 37 <(zcat sr.R1.clean.fq.gz) <(zcat sr.R2.clean.fq.gz)
 ```
 
 ### 3. Run NextPolish2
-Execute the polisher using the BAM and the yak files.
+Execute the polishing command by providing the BAM, the assembly, and the yak files.
 
 ```bash
-nextPolish2 -t 8 hifi.map.sort.bam asm.fa.gz k21.yak k31.yak > asm.polished.fa
+nextPolish2 -t 10 hifi.map.sort.bam asm.fa.gz k21.yak k31.yak > polished_assembly.fa
 ```
 
 ## Expert Tips and Best Practices
 
-- **Short Read Quality:** The accuracy of NextPolish2 depends heavily on short-read quality. Always run `fastp` or a similar tool to remove adapters and low-quality bases before generating yak k-mer files.
-- **Haplotype Consistency:** If the genome was assembled via trio binning, discard reads belonging to the alternative haplotype before mapping to the reference to maximize accuracy.
-- **Overcorrection Prevention:** NextPolish2 is designed to avoid the overcorrection issues common in the original NextPolish. If you observe unexpected changes in heterozygous regions, ensure your short reads are not contaminated and that the mapping parameters are appropriate for your specific assembly.
-- **Memory/Threads:** Adjust the `-t` parameter based on available CPU cores. The tool is written in Rust and scales well with additional threads.
-- **Minimum Contig Length:** Use `-L` (or `--min_ctg_len`) to skip very small contigs if they are likely to be assembly artifacts.
+*   **Short Read Quality**: The accuracy of NextPolish2 is heavily dependent on the quality of the short reads. Always perform adapter removal and quality trimming (e.g., using `fastp`) to prevent overcorrection.
+*   **Haplotype Consistency**: If your genome was assembled via trio binning, you should discard reads belonging to the other haplotype before the mapping step to maximize accuracy.
+*   **The `-r` Flag**: Use the `-r` option if you want to try an alternative correction mode that may perform differently in specific genomic contexts.
+*   **Mapping Parameters**: If certain regions are not being corrected, it is often because HiFi reads failed to map there due to high local error rates. Try relaxing mapping parameters in `winnowmap` or `minimap2` to increase coverage in those areas.
+*   **Memory Management**: NextPolish2 is written in Rust and is generally efficient, but processing large T2T genomes with many k-mer files requires significant RAM. Ensure your environment has sufficient resources for the number of threads (`-t`) specified.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| nextPolish2 | Repeat-aware polishing genomes assembled using HiFi long reads |
+| yak | yak <command> <argument> |
 
 ## Reference documentation
-- [NextPolish2 Main Documentation](./references/github_com_Nextomics_NextPolish2.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_nextpolish2_overview.md)
+- [NextPolish2 Main Documentation](./references/github_com_Nextomics_NextPolish2_blob_main_README.md)
+- [NextPolish2 Benchmarking and Examples](./references/github_com_Nextomics_NextPolish2_blob_main_doc_benchmark1.md)
+- [NextPolish2 FAQ](./references/github_com_Nextomics_NextPolish2_blob_main_doc_faq.md)

@@ -1,6 +1,6 @@
 ---
 name: tandemtwister
-description: TandemTwister detects and genotypes interleaved and embedded tandem repeats using long-read sequencing data. Use when user asks to genotype germline tandem repeats, profile somatic expansions, or analyze repeats from genome assemblies.
+description: TandemTwister genotypes tandem repeats by leveraging long-read sequencing data to resolve complex repeat regions. Use when user asks to genotype germline tandem repeats, perform assembly-based genotyping, or profile somatic repeat expansions and contractions.
 homepage: https://github.com/Lionward/tandemtwister
 ---
 
@@ -8,63 +8,78 @@ homepage: https://github.com/Lionward/tandemtwister
 # tandemtwister
 
 ## Overview
-TandemTwister is a specialized bioinformatics tool designed to detect and genotype interleaved and embedded tandem repeats (TRs) using long-read sequencing data. It supports various technologies including PacBio (CLR and CCS) and Oxford Nanopore (ONT). The tool is particularly effective for resolving complex genomic regions by leveraging phasing algorithms and noise correction mechanisms tailored for short motifs (≤3bp). Use this skill to guide the execution of germline, somatic, or assembly-based tandem repeat analysis workflows.
 
-## Command Line Usage
+TandemTwister is a high-performance bioinformatic tool designed to genotype tandem repeats (TRs) by leveraging the unique advantages of long-read sequencing. It excels at resolving complex repeat regions that are typically inaccessible to short-read technologies. The tool supports multiple analysis workflows—germline, somatic (experimental), and assembly-based—and includes specialized algorithms for phasing and error correction of short motifs (≤3bp). It is particularly useful for large-scale genomic studies, capable of processing over a million regions in under 20 minutes using multi-threading.
 
-The tool uses a command-first interface:
-`tandemtwister [global options] <command> [command options]`
+## Core Workflows
 
-### Core Commands
-- `germline`: Standard workflow for genotyping germline tandem repeats.
-- `somatic`: Profiles somatic expansions (Note: currently experimental).
-- `assembly`: Genotypes repeats from aligned genome assemblies.
+TandemTwister uses a command-first interface: `tandemtwister <command> [options]`.
 
-### Required Arguments
-When running any command, the following flags are typically required:
-- `-b, --bam`: Path to the aligned BAM file.
-- `-r, --ref`: Path to the reference genome (.fa/.fna).
-- `-m, --motif_file`: BED/TSV/CSV file containing reference coordinates and motif sequences.
-- `-o, --output_file`: Destination for the genotype results (hap1/hap2 copy numbers).
-- `-sn, --sample`: Name of the sample.
-- `-rt, --reads_type`: Type of reads (`CCS`, `CLR`, or `ONT`). Default is `CCS`.
-
-### Common CLI Patterns
-
-**Standard Germline Genotyping (CCS):**
+### 1. Germline Genotyping
+Used for standard diploid genotyping from long-read alignments.
 ```bash
-tandemtwister germline -b sample.bam -r ref.fa -m repeats.bed -o results.txt -sn Sample01 -rt CCS -t 16
+tandemtwister germline \
+  --bam input.bam \
+  --ref reference.fa \
+  --motif_file regions.bed \
+  --output_file results.vcf \
+  --sample MySample \
+  --reads_type CCS \
+  --threads 8
 ```
 
-**High-Noise Long Reads (ONT/CLR) with Correction:**
-For ONT or CLR data, ensure correction is enabled (it is default for these types) to handle higher error rates in short motifs.
+### 2. Assembly Genotyping
+Used when comparing an assembled genome or contigs against a reference.
 ```bash
-tandemtwister germline -b ont_sample.bam -r ref.fa -m repeats.bed -o results.txt -sn Sample01 -rt ONT -cor true -t 32
+tandemtwister assembly \
+  --bam assembly_to_ref.bam \
+  --ref reference.fa \
+  --motif_file regions.bed \
+  --output_file assembly_genotypes.txt
 ```
 
-**Assembly-based Genotyping:**
-```bash
-tandemtwister assembly -b assembly_aligned.bam -r ref.fa -m repeats.bed -o assembly_genotypes.txt -bt reads
-```
+### 3. Somatic Profiling (Experimental)
+Used to identify expansions or contractions in somatic contexts. Note that this mode is currently in testing.
 
-## Expert Tips and Best Practices
+## Command Line Best Practices
+
+### Input Requirements
+- **Motif File**: Must be in BED, TSV, or CSV format containing reference coordinates and the repeat motif sequence.
+- **Read Types**: Explicitly set `--reads_type` to `CCS`, `CLR`, or `ONT`. This triggers specific error-correction models.
+- **Sex Specification**: Use `-s 0` for female and `-s 1` for male to ensure correct handling of sex chromosomes.
 
 ### Performance Optimization
-- **Multi-threading**: TandemTwister scales well. Use the `-t` flag to specify threads. It can process over 1 million regions in approximately 20 minutes using 32 threads.
-- **Memory Efficiency**: The tool uses multi-threading for parallel execution to maintain a lower memory footprint compared to multi-processing.
+- **Multi-threading**: Always utilize the `--threads` (or `-t`) flag for large datasets. The tool scales efficiently up to 32+ threads.
+- **Memory Management**: Ensure `htslib` and `libdeflate` are correctly linked (standard in the Bioconda installation) for fast BAM processing.
 
-### Accuracy and Refinement
-- **Coordinate Refinement**: Use the `-rtr` (refineTrRegions) flag to allow the tool to adjust the input BED coordinates based on the reference genome for better alignment accuracy.
-- **Phasing**: If your BAM file is already phased/tagged, use the `-btg` (bamIsTagged) flag to leverage existing phasing information.
-- **Quality Filtering**: Use `-qs` to set a minimum quality score (default 10) to exclude low-quality reads from the genotyping process.
+### Accuracy Tuning
+- **Phasing**: If your BAM file is already phased (e.g., via Whatshap), use the `--bamIsTagged` flag to improve haplotyping accuracy.
+- **Quality Filtering**: Use `--quality_score` (default 10) to exclude low-quality reads. For high-precision CCS data, consider increasing this threshold.
+- **Correction**: For CLR and ONT data, ensure `--correct` is set to `true` (default for these types) to enable interval-based consensus correction.
 
-### Input Preparation
-- **Motif Files**: Ensure your motif file includes the specific motif sequence. TandemTwister uses this for dynamic programming alignment.
-- **Read Type Selection**: Always specify the correct `-rt` (CCS, CLR, or ONT) as this triggers specific internal noise correction parameters.
+## Common CLI Patterns
 
-### Visualization
-- After generating the output, use the companion tool **ProleTRact** for interactive exploration and visualization of the genotyped regions.
+**Quick Test Run:**
+Verify installation and input formatting using a single thread and a small subset of regions:
+```bash
+tandemtwister germline -b test.bam -r ref.fa -m small_regions.bed -o test_out -sn test_sample -t 1
+```
+
+**High-Sensitivity ONT Profiling:**
+```bash
+tandemtwister germline -b ont_data.bam -r hg38.fa -m tr_catalog.bed -rt ONT --correct true -t 16
+```
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| assembly | Genotyping tandem repeats from aligned genome input. |
+| germline | Genotyping tandem repeats from long-read alignments. |
+| somatic | Somatic expansion profiling using long-read alignments. |
 
 ## Reference documentation
-- [TandemTwister GitHub Repository](./references/github_com_Lionward_tandemtwister.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_tandemtwister_overview.md)
+- [TandemTwister README](./references/github_com_Lionward_tandemtwister_blob_main_README.md)
+- [Installation and Build Guide](./references/github_com_Lionward_tandemtwister_blob_main_Makefile.md)

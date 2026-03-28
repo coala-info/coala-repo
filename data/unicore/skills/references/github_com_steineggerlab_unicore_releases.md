@@ -1,0 +1,463 @@
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fsteineggerlab%2Funicore%2Freleases)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fsteineggerlab%2Funicore%2Freleases)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Freleases%2Findex&source=header-repo&source_repo=steineggerlab%2Funicore)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[steineggerlab](/steineggerlab)
+/
+**[unicore](/steineggerlab/unicore)**
+Public
+
+* [Notifications](/login?return_to=%2Fsteineggerlab%2Funicore) You must be signed in to change notification settings
+* [Fork
+  10](/login?return_to=%2Fsteineggerlab%2Funicore)
+* [Star
+   86](/login?return_to=%2Fsteineggerlab%2Funicore)
+
+* [Code](/steineggerlab/unicore)
+* [Issues
+  3](/steineggerlab/unicore/issues)
+* [Pull requests
+  0](/steineggerlab/unicore/pulls)
+* [Actions](/steineggerlab/unicore/actions)
+* [Projects](/steineggerlab/unicore/projects)
+* [Security
+  0](/steineggerlab/unicore/security)
+* [Insights](/steineggerlab/unicore/pulse)
+
+Additional navigation options
+
+* [Code](/steineggerlab/unicore)
+* [Issues](/steineggerlab/unicore/issues)
+* [Pull requests](/steineggerlab/unicore/pulls)
+* [Actions](/steineggerlab/unicore/actions)
+* [Projects](/steineggerlab/unicore/projects)
+* [Security](/steineggerlab/unicore/security)
+* [Insights](/steineggerlab/unicore/pulse)
+
+# Releases: steineggerlab/unicore
+
+[Releases](/steineggerlab/unicore/releases)
+[Tags](/steineggerlab/unicore/tags)
+
+Releases · steineggerlab/unicore
+
+## v1.1.1
+
+20 May 15:07
+
+![@endixk](https://avatars.githubusercontent.com/u/49298377?s=40&v=4)
+[endixk](/endixk)
+
+[v1.1.1](/steineggerlab/unicore/tree/v1.1.1)
+
+[`bad9f2e`](/steineggerlab/unicore/commit/bad9f2e49daa31fcbdbb592d65195354b2ac70d5)
+
+Compare
+
+# Choose a tag to compare
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## No results found
+
+[View all tags](/steineggerlab/unicore/tags)
+
+[v1.1.1](/steineggerlab/unicore/releases/tag/v1.1.1)
+
+[Latest](/steineggerlab/unicore/releases/latest)
+
+[Latest](/steineggerlab/unicore/releases/latest)
+
+### New features
+
+* `tree` module now supports RAxML-NG and FastTree
+* `tree` module now generates a RAxML-style partition file containing the positions of the core genes from the resulting MSA
+* `tree --no-inference` mode will stop the process right before the phylogenetic inference; useful if you only need an alignment or a partition file
+* `createdb --custom-lookup` option accepts a Foldseek database with pre-computed 3Di sequences to lookup
+* `profile` module now gives a warning if a species contains less than 50% of the defined core genes
+
+### Bug fixes
+
+* Fixed behavior of the `--afdb-lookup` option
+
+### Misc
+
+* `--afdb-local` option is now deprecated and merged into the `--afdb-lookup` option
+
+Assets
+2
+
+Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## v1.1.0
+
+11 Feb 05:48
+
+![@endixk](https://avatars.githubusercontent.com/u/49298377?s=40&v=4)
+[endixk](/endixk)
+
+[v1.1.0](/steineggerlab/unicore/tree/v1.1.0)
+
+[`26c9998`](/steineggerlab/unicore/commit/26c99989ff4cf9355db14e1d9ee670fba72790e3)
+
+Compare
+
+# Choose a tag to compare
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## No results found
+
+[View all tags](/steineggerlab/unicore/tags)
+
+[v1.1.0](/steineggerlab/unicore/releases/tag/v1.1.0)
+
+### Major update
+
+* `createdb` - full support of Foldseek-ProstT5
+  + Requires Foldseek version 10 or higher ([detail](https://github.com/steineggerlab/unicore?tab=readme-ov-file#gpu-acceleration-with-foldseek-prostt5))
+  + PyTorch ProstT5 is now deprecated
+* `gene-tree` module
+  + Phylogenetic tree inference from individual core structures
+
+### Misc
+
+* `config` module
+  + Check and control the runtime configuration, especially regarding dependent binaries
+* Improved visibility of help messages
+* Minor fixes
+
+Assets
+2
+
+Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## v1.0.2
+
+13 Jan 04:47
+
+![@endixk](https://avatars.githubusercontent.com/u/49298377?s=40&v=4)
+[endixk](/endixk)
+
+[v1.0.2](/steineggerlab/unicore/tree/v1.0.2)
+
+[`65ab346`](/steineggerlab/unicore/commit/65ab346684e15ed1942e13e0a8e25b92e69bfbb9)
+
+Compare
+
+# Choose a tag to compare
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## No results found
+
+[View all tags](/steineggerlab/unicore/tags)
+
+[v1.0.2](/steineggerlab/unicore/releases/tag/v1.0.2)
+
+* `easy-core` module usability update
+  + Fixed issue [#1](https://github.com/steineggerlab/unicore/issues/1) raising error in `createdb` module run with Python script
+* [Step-by-step tutorial](https://github.com/steineggerlab/unicore#tutorial) with example dataset
+* Intermediate headers now use pseudo-random names derived from the input sequence (to aid cases such as [#3](https://github.com/steineggerlab/unicore/issues/3))
+* More user-friendly messages to track the progress and results
+* Minor improvements
+
+Assets
+2
+
+Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+All reactions
+
+## v1.0.1
+
+24 Dec 00:59
+
+![@endixk](https://avatars.githubusercontent.com/u/49298377?s=40&v=4)
+[endixk](/endixk)
+
+[v1.0.1](/steineggerlab/unicore/tree/v1.0.1)
+
+[`ab1c6aa`](/steineggerlab/unicore/commit/ab1c6aab874f3e1104628cc621b4d91d659ac31d)
+
+Compare
+
+# Choose a tag to compare
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## No results found
+
+[View all tags](/steineggerlab/unicore/tags)
+
+[v1.0.1](/steineggerlab/unicore/releases/tag/v1.0.1)
+
+* Quick fix on the path detection logic from Conda environment
+* Added citation to the bioRxiv [preprint](https://www.biorxiv.org/content/10.1101/2024.12.22.629535v1)
+
+Assets
+2
+
+Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+All reactions
+
+## v1.0.0
+
+18 Dec 06:53
+
+![@endixk](https://avatars.githubusercontent.com/u/49298377?s=40&v=4)
+[endixk](/endixk)
+
+[v1.0.0c](/steineggerlab/unicore/tree/v1.0.0c)
+
+[`78cd594`](/steineggerlab/unicore/commit/78cd594f1e736b5261e0fe4b6db1dd94f13b35be)
+
+Compare
+
+# Choose a tag to compare
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## No results found
+
+[View all tags](/steineggerlab/unicore/tags)
+
+[v1.0.0](/steineggerlab/unicore/releases/tag/v1.0.0c)
+
+Initial release with Conda compatibility
+
+Assets
+2
+
+Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+All reactions
+
+## Footer
+
+© 2026 GitHub, Inc.
+
+### Footer navigation
+
+* [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+* [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+* [Security](https://github.com/security)
+* [Status](https://www.githubstatus.com/)
+* [Community](https://github.community/)
+* [Docs](https://docs.github.com/)
+* [Contact](https://support.github.com?tags=dotcom-footer)
+* Manage cookies
+* Do not share my personal information
+
+You can’t perform that action at this time.

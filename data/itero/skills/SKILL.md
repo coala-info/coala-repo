@@ -1,6 +1,6 @@
 ---
 name: itero
-description: itero is a bioinformatics pipeline that performs guided contig assembly using a reference-based seed approach to iteratively map reads and extend sequences. Use when user asks to perform guided assembly, extend contigs from seeds, or run iterative local assemblies using BWA and SPAdes.
+description: itero is a bioinformatics pipeline designed for the iterative, guided assembly of target enrichment data using reference seeds. Use when user asks to assemble ultraconserved elements, perform guided assembly of hybrid enrichment data, or recover sequences from target enrichment reads.
 homepage: https://github.com/faircloth-lab/itero
 ---
 
@@ -9,56 +9,51 @@ homepage: https://github.com/faircloth-lab/itero
 
 ## Overview
 
-itero is a "strongly opinionated" bioinformatics pipeline designed for guided contig assembly. Unlike standard de novo assemblers, itero uses a reference-based "seed" approach to iteratively map reads, perform local assemblies, and extend contigs over multiple rounds. This method is particularly effective for capturing specific loci or resolving complex regions where general assembly methods might struggle. It streamlines the integration of BWA for alignment, Samtools for data handling, and SPAdes for the actual assembly process.
+itero is a specialized bioinformatics pipeline designed for the "guided" assembly of target enrichment data. It addresses the limitations of traditional de novo assemblers by using reference "seeds" to capture relevant reads, which are then assembled into contigs over multiple iterations. This iterative approach is particularly effective for recovering high-quality sequences from Ultraconserved Elements (UCEs) or other anchored hybrid enrichment protocols.
 
-## Installation and Environment
+The tool integrates several standard bioinformatic utilities—including BWA for alignment, SAMtools and BEDtools for data manipulation, and SPAdes for the actual assembly—into a single, parallelized workflow that can run on a local workstation or an MPI-enabled high-performance computing (HPC) cluster.
 
-The most reliable way to deploy itero is via Conda. Note that itero is built for Python 2.7 environments.
+## Installation and Environment Setup
+
+The most reliable way to use itero is through a Conda environment to ensure all third-party dependencies (BWA, SPAdes, etc.) are correctly versioned and linked.
 
 ```bash
-# Environment setup
-conda config --add channels defaults
-conda config --add channels conda-forge
+# Create and configure the environment
 conda config --add channels bioconda
-
-# Installation
 conda install itero
 
-# Verify dependencies
+# Verify the installation and dependency paths
 itero check binaries
 ```
 
-## Configuration
+If running on an HPC without Conda, you must manually define tool paths in a `~/.itero.conf` file:
+```ini
+[executables]
+bedtools:/path/to/bedtools
+bwa:/path/to/bwa
+gawk:/path/to/gawk
+samtools:/path/to/samtools
+spades:/path/to/spades.py
+```
 
-itero requires a configuration file (typically `.conf`) to define the reference seeds and the sample data.
+## Configuration File Structure
 
-### Sample Configuration File (`project.conf`)
-The file uses an INI-style format. The `[individuals]` section expects a path to a directory containing the R1 and R2 FASTQ files for each taxon.
+Before running an assembly, you must create a configuration file (e.g., `project.conf`) to define your reference seeds and sample locations.
 
 ```ini
 [reference]
-/path/to/locus/seeds.fasta
+/path/to/seeds.fasta
 
 [individuals]
-taxon-one:/path/to/fastq/sample1/
-taxon-two:/path/to/fastq/sample2/
+Sample_1:/path/to/fastq/folder/sample1/
+Sample_2:/path/to/fastq/folder/sample2/
 ```
-
-### Binary Path Overrides
-If binaries are not in your PATH or you are using non-standard locations, create a `~/.itero.conf` file:
-
-```ini
-[executables]
-bedtools:/path/to/bin/bedtools
-bwa:/path/to/bin/bwa
-samtools:/path/to/bin/samtools
-spades:/path/to/bin/spades.py
-```
+*Note: The paths in the `[individuals]` section should point to the directory containing the R1 and R2 FastQ files for that specific taxon.*
 
 ## Execution Patterns
 
-### Local Assembly
-Use this for single-node execution. itero will parallelize alignments first, then distribute individual locus assemblies across the available cores.
+### Local Multiprocessing
+Use this for single-node workstations. The `--local-cores` flag determines how many threads are used for BWA and how many simultaneous assemblies are run.
 
 ```bash
 itero assemble local \
@@ -68,12 +63,11 @@ itero assemble local \
     --iterations 6
 ```
 
-### MPI Assembly
-Use this for high-performance computing (HPC) clusters to distribute assemblies across multiple nodes.
+### MPI for HPC Clusters
+Use this to distribute locus-specific assemblies across multiple nodes.
 
 ```bash
-mpirun -hostfile cluster_hosts -n 96 \
-    itero assemble mpi \
+mpirun -hostfile my_hosts -n 96 itero assemble mpi \
     --config project.conf \
     --output mpi_results \
     --local-cores 16 \
@@ -82,12 +76,23 @@ mpirun -hostfile cluster_hosts -n 96 \
 
 ## Expert Tips and Best Practices
 
-- **Iteration Count**: 6 iterations is the standard recommendation. Increasing this may help extend contigs further but carries a diminishing return in assembly length versus computational time.
-- **Memory Management**: itero defaults to approximately 2GB of RAM per process. Ensure your node has sufficient memory (e.g., 16 cores * 2GB = 32GB RAM minimum).
-- **Input Validation**: Ensure that each taxon directory in the config file contains only the relevant paired-end FASTQ files. itero may fail or produce warnings if it encounters multiple sets of FASTQs for a single sample.
-- **Seed Selection**: The quality of your `seeds.fasta` is critical. Seeds should be representative of the target loci to ensure efficient initial mapping by BWA.
-- **Cleaning Up**: itero generates temporary SAM files during the alignment phases; the pipeline is designed to remove these automatically to save disk space, but ensure your output partition has enough overhead for intermediate BAM files.
+- **Iteration Count**: While 6 iterations is the standard recommendation, you may increase this if you are working with highly divergent references or very low-coverage data.
+- **Memory Management**: SPAdes is memory-intensive. itero defaults to approximately 2GB per process. Ensure your node has sufficient RAM (Total Cores × 2GB) to prevent crashes during the assembly phase.
+- **Input Data**: Ensure your FastQ files are cleaned of adapters and low-quality bases before running itero, as it does not perform pre-processing of raw reads.
+- **Seed Selection**: The quality of your assembly is highly dependent on the "seeds" provided. Use seeds that are as phylogenetically close to your target taxa as possible.
+- **Logging**: itero creates a unique log file for every run. If an assembly fails or hangs, check the log file in the output directory to identify if a specific locus or sample is causing the issue.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| check | Check to ensure binaries are installed and configured. |
+| itero assemble | Assemble cleaned/trimmed sequencing reads. |
 
 ## Reference documentation
-- [itero Main Repository](./references/github_com_faircloth-lab_itero.md)
-- [itero Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_itero_overview.md)
+- [itero: guided contig assembly for target enrichment data](./references/itero_readthedocs_io_en_latest.md)
+- [Running itero](./references/itero_readthedocs_io_en_latest_running.html.md)
+- [Installation](./references/itero_readthedocs_io_en_latest_installation.html.md)
+- [itero GitHub Repository](./references/github_com_faircloth-lab_itero.md)

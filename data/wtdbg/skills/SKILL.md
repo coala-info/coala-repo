@@ -1,6 +1,6 @@
 ---
 name: wtdbg
-description: wtdbg performs rapid de novo assembly of long, noisy genomic reads. Use when user asks to assemble long reads, generate a contig layout, derive a consensus sequence, polish an assembly, or tune assembly parameters.
+description: wtdbg is a de novo sequence assembler designed for rapid assembly of long, noisy reads from third-generation sequencing technologies. Use when user asks to perform de novo assembly, generate contig layouts from long reads, or produce polished consensus sequences.
 homepage: https://github.com/ruanjue/wtdbg-1.2.8
 ---
 
@@ -8,56 +8,64 @@ homepage: https://github.com/ruanjue/wtdbg-1.2.8
 # wtdbg
 
 ## Overview
-The `wtdbg2` toolset (also known as Redbean) is designed for rapid de novo assembly of long, noisy genomic reads. Unlike traditional OLC (Overlap-Layout-Consensus) or De Bruijn graph assemblers, it uses a fuzzy Bruijn graph that permits mismatches and gaps, making it exceptionally fast for large genomes (e.g., Human or Axolotl). The workflow typically involves two primary steps: generating a contig layout with `wtdbg2` and deriving a consensus sequence with `wtpoa-cns`.
+The `wtdbg2` toolset is designed for high-speed assembly of third-generation sequencing data without the need for prior error correction. It utilizes a Fuzzy Bruijn Graph approach, which operates on 1024bp segments rather than individual k-mers, making it exceptionally efficient for large genomes (e.g., Human or Axolotl). This skill provides guidance on executing the assembly pipeline, from raw reads to polished consensus.
 
 ## Core Workflow
+A standard assembly requires two primary steps: generating the layout and deriving the consensus.
 
 ### 1. Assembly (wtdbg2)
-The first step generates the assembly graph and layout. You must specify the genome size (`-g`) and the sequencing technology (`-x`).
-
+Generates the contig layout and edge sequences.
 ```bash
-# Basic assembly command
-wtdbg2 -x <tech> -g <size> -t <threads> -i <reads.fa.gz> -fo <prefix>
+wtdbg2 -x <preset> -g <size> -t <threads> -i <reads.fa.gz> -fo <prefix>
 ```
-
-**Technology Presets (`-x`):**
-- `rs`: PacBio RSII (Recommended: add `-L 5000` for better results)
-- `sq`: PacBio Sequel
-- `ccs`: PacBio CCS (HiFi) reads
-- `ont`: Oxford Nanopore
+*   **Presets (`-x`)**: **Must be set first.**
+    *   `rs`: PacBio RSII
+    *   `sq`: PacBio Sequel
+    *   `ccs`: PacBio CCS
+    *   `ont`: Oxford Nanopore
+*   **Genome Size (`-g`)**: Estimated size (e.g., `4.6m`, `3g`).
 
 ### 2. Consensus (wtpoa-cns)
-The assembler produces a `.ctg.lay.gz` file. Use the consensus tool to generate the final FASTA.
-
+Produces the final FASTA sequence from the layout file.
 ```bash
 wtpoa-cns -t <threads> -i <prefix>.ctg.lay.gz -fo <prefix>.ctg.fa
 ```
 
-## Advanced Usage & Optimization
+## Expert Tips and Parameter Tuning
 
-### Parameter Tuning for Low Coverage
-If the default settings produce a fragmented assembly, adjust the following:
-- **K-mer Sampling (`-S`):** Default is 4 (samples 1/4 of k-mers). Decrease to `2` or `1` to increase sensitivity for low coverage, though this significantly increases memory usage.
-- **Edge Coverage (`-e`):** Default is 3. For very low coverage data, reduce this to `2`.
-- **Alignment Sensitivity (`-A`):** Enable this flag to improve assembly in low-coverage regions at the cost of speed.
+### Handling Coverage Issues
+*   **Low Coverage**: Decrease `-e` (minimum edge coverage, default 3). Use `-e 2 --rescue-low-cov-edges`.
+*   **High Coverage**: Increase `--edge-min` to 4 or higher to reduce graph complexity.
+*   **Subsampling**: If memory allows, reduce `-S` (default 4) to increase the k-mer sampling rate for better sensitivity in low-coverage regions.
 
-### Polishing the Assembly
-While `wtpoa-cns` provides an initial consensus, accuracy can be improved by re-mapping reads:
+### Improving Accuracy
+*   **High Error Rates**: Decrease `-p` (HPC k-mer length) to 19 or 17.
+*   **Read Filtering**: Use `--tidy-reads 5000` to ignore short, noisy fragments.
+*   **Polishing**: While `wtpoa-cns` provides a base consensus, accuracy can be improved by re-mapping reads to the raw assembly:
+    ```bash
+    minimap2 -t16 -ax map-pb -r2k raw.fa reads.fa.gz | samtools sort -@4 > mapped.bam
+    samtools view -F0x900 mapped.bam | wtpoa-cns -t 16 -d raw.fa -i - -fo polished.fa
+    ```
 
-1. **Long-read polishing:**
-   ```bash
-   minimap2 -t 16 -ax map-pb -r2k <raw.fa> <reads.fa.gz> | samtools sort -@4 > <mapped.bam>
-   samtools view -F0x900 <mapped.bam> | wtpoa-cns -t 16 -d <raw.fa> -i - -fo <polished.fa>
-   ```
+### Read Mapping (kbm)
+`kbm` is the internal aligner. It can be used independently for fast synteny mapping.
+*   **Standard Mapping**: `kbm -d ref.fa -i queries.fa -o out.kbmap`
+*   **Server Mode**: For frequent queries against a large reference, use `-W` to build an index and `start` to cache it in memory.
 
-2. **Short-read polishing (Illumina):**
-   Use `bwa mem` to align short reads to the long-read consensus, then pipe the SAM output into `wtpoa-cns` using `-x sam-sr`.
+## Limitations
+*   **Input Order**: If mixing formats, provide FASTQ files before FASTA files to prevent parsing errors.
+*   **Read Length**: Maximum supported read length is 256 Kb; longer reads are automatically split.
+*   **OS**: Only supported on 64-bit Linux.
 
-## Expert Tips & Limitations
-- **Input Order:** If mixing FASTQ and FASTA files, always list FASTQ files first in the command line.
-- **Memory Requirements:** For a human genome (~3Gb), expect to need ~220GB of RAM.
-- **Nanopore Caution:** Assemblies for ONT data may occasionally be smaller than the actual genome size; verify completeness with BUSCO or similar tools.
-- **Speed:** `wtdbg2` is significantly faster than Canu or Falcon; it is the preferred choice when computational time or resources are limited for large-scale assemblies.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| wtdbg2 | De novo assembler for long noisy sequences |
+| wtpoa-cns | Consensuser for wtdbg using PO-MSA |
 
 ## Reference documentation
-- [Wtdbg2 GitHub Repository](./references/github_com_ruanjue_wtdbg2.md)
+- [github_com_ruanjue_wtdbg2_blob_master_README.md](./references/github_com_ruanjue_wtdbg2_blob_master_README.md)
+- [github_com_ruanjue_wtdbg2_blob_master_README-ori.md](./references/github_com_ruanjue_wtdbg2_blob_master_README-ori.md)

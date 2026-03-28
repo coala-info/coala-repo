@@ -163,3 +163,6 @@ required arguments:
   -f REF, --fasta REF   reference genome in fasta format
 ```
 
+
+## Metadata
+- **Skill**: generated

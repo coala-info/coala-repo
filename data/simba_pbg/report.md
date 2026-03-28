@@ -312,3 +312,6 @@ config:
 	Use half-precision training (GPU ONLY)
 ```
 
+
+## Metadata
+- **Skill**: generated

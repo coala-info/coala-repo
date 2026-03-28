@@ -1,0 +1,120 @@
+[Pynteny](.)
+
+* [Home](.)
+
+Subcommands
+
+* [Search](subcommands/search/)
+* [Build](subcommands/build/)
+* [Parse](subcommands/parse/)
+* [Download](subcommands/download/)
+
+Examples
+
+* [Example CLI](examples/example_cli/)
+* [Example API](examples/example_api/)
+* [Sus operon](examples/example_sus/)
+
+References
+
+* [API references](references/api/)
+
+[Pynteny](.)
+
+* »
+* Home
+* [Edit on GitHub](https://github.com/Robaina/Pynteny/edit/master/docs/index.md)
+
+---
+
+![logo](https://user-images.githubusercontent.com/21340147/191948930-3ee11b4e-4b13-4365-b14a-2b709c76a49f.png)
+
+## 1. What is Pynteny?
+
+`Pynteny` is Python tool to search for [synteny](https://en.wikipedia.org/wiki/Synteny) blocks in (prokaryotic) sequence data through [HMMs](https://www.bioinformatics.org/wiki/Hidden_Markov_Model) of the ORFs of interest and [HMMER](http://hmmer.janelia.org/). By leveraging genomic context information, `Pynteny` can be employed to decrease the uncertainty of functional annotation of unlabelled sequence data due to the effect of paralogs. `Pynteny` can be accessed (i) through the command line or (ii) as a Python module.
+
+These are the available subcommands in the CLI, run as `pynteny <subcommand> <options>`:
+
+* [search](subcommands/search/)
+* [build](subcommands/build/)
+* [download](subcommands/download/)
+* [parse](subcommands/parse/)
+
+## 2. Setup
+
+Install with conda:
+
+Pynteny requires Python 3.10. The easiest way to handle dependencies is by creating a dedicated conda environment:
+
+```
+conda create -n pynteny -c bioconda -c conda-forge python=3.10 pynteny
+conda activate pynteny
+```
+
+Check that installation worked fine:
+
+```
+(pynteny) pynteny --help
+```
+
+### 2.1. Installing on Windows
+
+Pynteny is designed to run on Linux machines. However, it can be installed within the [Windows Subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/install) via conda.
+
+### 2.2. Installing on MacOS with the latest ARM64 architecture
+
+Pynteny doesn't currently support the latest ARM64 architecture of silicon processors (e.g. MacBook M1 and M2). If that is your case, you can install Pynteny using the workaround below (based on [this post](https://towardsdatascience.com/how-to-manage-conda-environments-on-an-apple-silicon-m1-mac-1e29cb3bad12)):
+
+```
+CONDA_SUBDIR=osx-64 conda create -n pynteny_x86 python=3.10
+conda activate pynteny_x86
+conda config --env --set subdir osx-64
+conda install -c bioconda pynteny
+```
+
+## 3. General usage
+
+Pynteny's main subcommand, [`pynteny search`](subcommands/search/), requires a peptide (ORF) sequence database in fasta format in which record labels contain positional information of each sequence with respect to their contig of origin. Additionally, labels must follow the following format:
+
+```
+<genome ID>_<contig ID>_<gene position>_<locus start>_<locus end>_<strand>
+```
+
+To facilitate the construction of this database, Pynteny provides the subcommand [`pynteny build`](subcommands/build/), which takes as input a fasta file containing assembled nucleotide sequence data (or a single or a collection of genomes), such as that retrieved from MAG reconstruction pipelines.
+
+Additionally, [`pynteny search`](subcommands/search/) requires either the set of profile Hidden Markov Models (HMMs) used in the provided synteny structure or a database of profile HMMs from which to retrieve the necessary HMMs. The user may provide their own set of HMMs. However, you may also download the entire [PGAP HMM database](https://academic.oup.com/nar/article/49/D1/D1020/6018440) through [`pynteny download`](subcommands/download/), which will take care of downloading and storing the download path for future usage (by default any time no additional HMMs are provided as an argument in [`pynteny search`](subcommands/search/)).
+
+Once both the peptide database and the required HMMs are ready, you can query the peptide database with a text string encoding the query synteny structure such as the following:
+
+\(>HMM\_a \:\: n\_{ab} \:\: > (HMM\_{b1} | HMM\_{b2}) \:\: n\_{bc} \:\: < HMM\_c.\)
+
+Where \(HMM\_a\) represents the name of the HMM to be used (corresponding to the file name without the extension), \(n\_{ab}\) is an integer representing the maximum number of genes between HMMs a and b, < and > indicate the strand in which to search for the HMM pattern, antisense and sense, respectively. Note that more than one HMM can be employed for a single gene in the structure, as indicated by the HMM group \((HMM\_{b1} | HMM\_{b2})\) above. In these cases, [`pynteny search`](subcommands/search/) will search for sequences that matched any HMM contained within the HMM group.
+
+## 4. Getting started and Examples
+
+Here are some Jupyter Notebooks with examples to show how Pynteny works.
+
+* [Pynteny API](https://robaina.github.io/Pynteny/examples/example_api/)
+* [Pynteny CLI](https://robaina.github.io/Pynteny/examples/example_cli/)
+* [Sus operon](https://robaina.github.io/Pynteny/examples/example_sus/)
+
+You can find more notebooks in the [examples directory](docs/examples/). Find more info in the [documentation](https://robaina.github.io/Pynteny/).
+
+## 5. Contributing
+
+Contributions are always welcome! If you don't know where to start, you may find an interesting [issue to work in here](https://github.com/Robaina/Pynteny/issues). Please, read our [contribution guidelines](https://github.com/Robaina/Pynteny/blob/main/CONTRIBUTING.md) first.
+
+## 6. Citation
+
+If you use this software, please cite it as below:
+
+Semidán Robaina Estévez. (2022). Pynteny: synteny-aware hmm searches made easy(Version 0.0.4). Zenodo. https://doi.org/10.5281/zenodo.7048685
+
+[Next](subcommands/search/ "Search")
+
+---
+
+Built with [MkDocs](https://www.mkdocs.org/) using a [theme](https://github.com/readthedocs/sphinx_rtd_theme) provided by [Read the Docs](https://readthedocs.org).
+
+[GitHub](https://github.com/Robaina/Pynteny)
+[Next »](subcommands/search/)

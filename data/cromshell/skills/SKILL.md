@@ -1,6 +1,6 @@
 ---
 name: cromshell
-description: cromshell is a command-line wrapper for the Cromwell REST API that simplifies submitting, tracking, and managing WDL-based workflows. Use when user asks to submit genomic pipelines, check workflow status, retrieve execution logs, or calculate cloud processing costs.
+description: Cromshell provides a command-line interface for managing the lifecycle of WDL workflows through the Cromwell REST API. Use when user asks to submit WDL jobs, track workflow status, retrieve execution logs, or abort running tasks from the terminal.
 homepage: https://github.com/broadinstitute/cromshell
 ---
 
@@ -8,38 +8,57 @@ homepage: https://github.com/broadinstitute/cromshell
 # cromshell
 
 ## Overview
-cromshell is a command-line utility that acts as a wrapper for the Cromwell REST API. It simplifies the lifecycle of genomic and data processing pipelines by providing a local tracking system for submitted jobs. Instead of managing long UUIDs manually, users can reference recent jobs using relative indices (e.g., -1 for the most recent) or custom aliases. It is the primary tool for developers and bioinformaticians working with WDL-based workflows who need to interact with Cromwell from a terminal environment.
+Cromshell provides a streamlined command-line interface for managing the lifecycle of WDL (Workflow Description Language) jobs. It eliminates the need for manual CURL commands to the Cromwell REST API by providing high-level subcommands for submission, status tracking, and log retrieval. It is particularly useful for bioinformaticians and data engineers running large-scale genomic pipelines who need to quickly check job progress or troubleshoot failures from the terminal.
 
 ## Core Workflows
 
 ### Workflow Submission
-To submit a new workflow, provide the WDL file and the corresponding input JSON.
+To submit a new job, you need the WDL file and an inputs JSON.
 - **Basic submission**: `cromshell submit workflow.wdl inputs.json`
-- **With options and dependencies**: `cromshell submit workflow.wdl inputs.json options.json dependencies.zip`
-- **Validation**: Before submitting, use `cromshell validate workflow.wdl inputs.json` to check for syntax errors using miniwdl or womtool.
+- **With options**: `cromshell submit workflow.wdl inputs.json options.json`
+- **With dependencies**: If your WDL imports other WDLs, provide them in a zip: `cromshell submit workflow.wdl inputs.json options.json dependencies.zip`
 
 ### Monitoring and Status
-cromshell tracks your submissions locally in `~/.cromshell/`.
-- **List recent jobs**: `cromshell list` (use `-c` for color-coded completion status).
-- **Check status**: `cromshell status -1` (checks the most recently submitted job).
-- **Execution summary**: `cromshell counts -j -1` provides a summarized count of task statuses (Running, Succeeded, Failed) in JSON format.
+Cromshell tracks the "current" workflow (usually the last one submitted) to save you from typing long UUIDs.
+- **Check status**: `cromshell status`
+- **Summarize job counts**: `cromshell counts` (use `-j` for JSON output or `-x` to collapse subworkflows)
+- **List recent jobs**: `cromshell list` (if supported by the local installation)
 
-### Debugging and Metadata
-- **Retrieve logs**: `cromshell logs -1` lists the paths to all log files produced by the workflow.
-- **Inspect metadata**: Use `cromshell slim-metadata -1` to get a condensed version of the workflow metadata, which is often more readable than the full metadata dump.
-- **Timing diagram**: `cromshell timing -1` opens a visual representation of the workflow execution timing in your default browser.
+### Troubleshooting and Metadata
+- **Get logs**: `cromshell logs` (retrieves execution logs for the workflow)
+- **View metadata**: `cromshell metadata` or `cromshell slim-metadata` for a condensed version.
+- **Timing diagram**: `cromshell timing` opens a visual representation of task execution in a browser.
 
-### Resource and Cost Management
+### Job Management
+- **Alias a job**: `cromshell alias <workflow-id> <my_experiment_name>` to reference it easily later.
 - **Abort a job**: `cromshell abort <workflow-id>`
-- **Calculate costs**: For workflows run on Google Cloud (GCS) with BigQuery billing export enabled, use `cromshell cost -d -1` to see a detailed task-level cost breakdown. Note that cost data usually takes 24 hours to populate in the cloud provider's billing export.
 
-## Expert Tips and Best Practices
-- **Relative Referencing**: You can use negative integers to refer to previous jobs. `-1` is the last job, `-2` is the one before that, etc.
-- **Aliases**: For important long-running jobs, assign a readable name: `cromshell alias <workflow-id> "production_run_v1"`. You can then use the alias in place of the UUID for all other commands.
-- **Server Switching**: If you work with multiple Cromwell instances (e.g., dev and prod), use `cromshell update-server` to change the target URL for new commands.
-- **Timeout Management**: If the server is slow or the metadata is massive, increase the connection timeout using the `-t` flag: `cromshell -t 60 metadata -1`.
-- **Reproducibility**: cromshell automatically copies your submitted WDL and JSON files into a local folder named after the job ID in `~/.cromshell/`. Use these local copies to verify exactly what was sent to the server.
+## Expert Tips
+- **Server Configuration**: Use `--cromwell_url http://your-server:port` if the default environment variable is not set.
+- **Timeouts**: For large metadata requests that might hang, use `-t [SECONDS]` to increase the connection timeout (default is 5s).
+- **Authentication**: If your server is behind a proxy requiring Google Auth, use `--gcloud_token_email [EMAIL]` to automatically attach an access token.
+- **Relative Referencing**: Many commands accept negative integers to refer to previous jobs (e.g., `cromshell status -2` checks the second-to-last submitted job).
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| abort | Abort a running workflow. |
+| alias | Label the given workflow ID or relative id with the given alias. Aliases can be used in place of workflow IDs to reference jobs. |
+| cost | Get the cost for a workflow. Only works for workflows that completed more than 24 hours ago on GCS. Requires the 'bq_cost_table' key in the cromshell configuration file to be set to the big query cost table for your organization. |
+| counts | Get the summarized statuses of all tasks in the workflow. |
+| cromshell_list | List the status of workflows. |
+| list-outputs | List all output files produced by a workflow. |
+| logs | Get a subset of the workflow metadata. |
+| metadata | Get the full metadata of a workflow. |
+| slim-metadata | Get a subset of the workflow metadata. |
+| status | Check the status of a Cromwell workflow. |
+| submit | Submit a workflow and arguments to the Cromwell Server |
+| timing | Analyze and display timing information for a Cromwell workflow. |
+| update-server | Update the cromwell server in the following config file /root/.cromshell/cromshell_config.json |
+| validate | Validate a WDL workflow and its input JSON using the Cromwell server's womtool API and miniwdl. |
 
 ## Reference documentation
-- [Cromshell GitHub README](./references/github_com_broadinstitute_cromshell.md)
-- [Cromshell Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_cromshell_overview.md)
+- [Cromshell README](./references/github_com_broadinstitute_cromshell_blob_main_README.md)

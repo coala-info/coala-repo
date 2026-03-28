@@ -1,1 +1,313 @@
-GitHub - aweimann/traitar Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} aweimann / traitar Public Notifications You must be signed in to change notification settings Fork 27 Star 22 License GPL-3.0 license 22 stars 27 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 12 Pull requests 1 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights aweimann/traitar master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 257 Commits 257 Commits bin bin traitar traitar .gitignore .gitignore Dockerfile Dockerfile INSTALL.md INSTALL.md LICENSE LICENSE MANIFEST.in MANIFEST.in README.md README.md README.rst README.rst setup.py setup.py traits.tsv traits.tsv workflow.png workflow.png View all files Repository files navigation README GPL-3.0 license Traitar – the microbial trait analyzer Traitar is a software for characterizing microbial samples from nucleotide or protein sequences. It can accurately phenotype 67 diverse traits . Table of Contents Installation Basic usage Results Docker Citing Traitar Installation Please see INSTALL.md for installation instructions. Basic usage traitar phenotype &lt;in dir&gt; &lt;sample file&gt; from_nucleotides &lt;out_dir&gt; will trigger the standard workflow of Traitar, which is to predict open reading frames with Prodigal, annotate the coding sequences provided as nucleotide FASTAs in the &lt;in_dir&gt; for all samples in &lt;sample_file&gt; with Pfam families using HMMer and finally predict phenotypes from the models for the 67 traits. The sample file has one column for the sample file names and one for the names as specified by the user. You can also specify a grouping of the samples in the third column, which will be shown in the generated plots. The template looks like following - The header row is mandatory; please also take a look at the sample file for the packaged example data: sample_file_name{tab}sample_name{tab}category sample1_file_name{tab}sample1_name[{tabl}sample_category1] sample2_file_name{tab}sample2_name[{tabl}sample_category2] traitar phenotype &lt;in dir&gt; &lt;sample file&gt; from_genes &lt;out_dir&gt; assumes that gene prediction has been conducted already externally. In this case analysis will start with the Pfam annotation. If the output directory already exists, Traitar will offer to recompute or resume the individual analysis steps. This option is only available if the process is run interactively. Parallel usage Traitar can benefit from parallel execution. The -c parameter sets the number of processes used e.g. -c 2 for using two processes traitar phenotype &lt;in dir&gt; &lt;sample file&gt; from_nucleotides out_dir -c 2 This requires installing GNU parallel as noted above. Inspect phenotype classification models Traitar can be used to inspect the protein families in each phenotype model: traitar show 'Glucose fermenter will show the majority features i.e. the Pfam families that contribute to the assignment of the trait Glucose fermenter with phypat classifier to some genome sequence. Via --predictor the user may specify the classifier (phypat, phypat+PGL). Run Traitar with packaged sample data traitar phenotype &lt;traitar_dir&gt;/data/sample_data &lt;traitar_dir&gt;/data/sample_data/samples.txt from_genes &lt;out_dir&gt; -c 2 will trigger phenotyping of Listeria grayi DSM_20601 and Listeria ivanovii WSLC3009 . Computation should be done within 5 minutes. You can find out &lt;traitar_dir&gt; by running python &gt;&gt;&gt; import traitar &gt;&gt;&gt; traitar.__path__ Results Traitar provides the gene prediction results in &lt;out_dir&gt;/gene_prediction , the Pfam annotation in &lt;out_dir&gt;/pfam_annotation and the phenotype prediction in &lt;out_dir&gt;/phenotype prediction . Heatmaps The phenotype prediction is summarized in heatmaps individually for the phyletic pattern classifier in heatmap_phypat.png , for the phylogeny-aware classifier in heatmap_phypat_ggl.png and for both classifiers combined in heatmap_comb.png and provide hierarchical clustering dendrograms for phenotypes and the samples. Phenotype prediction - Tables and flat files These heatmaps are based on tab separated text files e.g. predictions_majority-vote_combined.txt . A negative prediction is encoded as 0, a prediction made only by the pure phyletic classifier as 1, one made by the phylogeny-aware classifier by 2 and a prediction supported by both algorithms as 3. predictions_flat_majority-votes_combined.txt provides a flat version of this table with one prediction per row. The expert user might also want to access the individual results for each algorithm in the respective sub folders phypat and phypat+PGL . Phenotype-relevant protein families and feature tracks Traitar will link the protein families and predicted phenotypes. The results can be found in phypat/feat_gffs and ``phypat+PGL/feat_gffs`. If the user picked the 'from nucleotides' option, Traitar will also generate GFF files that link the genes called by Prodidgal with the important protein families. The phenotype-specific protein family annotations tracks can be visualized via GFF files in a genome browser of choice. Feature tracks with from_genes option (experimental feature) If the from_genes option is set, the user may specify gene GFF files via an additional column called gene_gff in the sample file. As gene ids are not consistent across gene GFFs from different sources e.g. img, RefSeq or Prodigal the user needs to specify the origin of the gene gff file via the -g / --gene_gff_type parameter. Still there is no guarantee that this works currently. Using samples_gene_gff.txt as the sample file in the above example will generate phenotype-specific Pfam tracks for the two genomes. traitar phenotype . samples_gene_gff.txt from_genes traitar_out -g refseq Docker There is a Docker container available for Traitar. Pull by docker pull aweimann/traitar To run traitar for the sample data execute docker run -v &lt;traitar_dir&gt;/data/sample_data:/mnt 1445e6c01992 bash -c 'traitar phenotype /mnt/ /mnt/samples.txt from_nucleotides /mnt/traitar_out' , which will take ~30 minutes. Note there is a problem with parallel usage so -c option is not guaranteed to work. The output will be owned by root. So currently you still need root access to your machine to inspect the traitar_out folder. Citing Traitar If you use Traitar in your research, please cite our paper: From genomes to phenotypes: Traitar, the microbial trait analyzer Aaron Weimann, Kyra Mooren, Jeremy Frank, Phillip B Pope, Andreas Bremges, Alice C McHardy mSystem (2016) doi: 10.1101/043315 About No description, website, or topics provided. Resources Readme License GPL-3.0 license Uh oh! There was an error while loading. Please reload this page . Activity Stars 22 stars Watchers 6 watching Forks 27 forks Report repository Releases No releases published Packages 0 No packages published Uh oh! There was an error while loading. Please reload this page . Contributors 4 &nbsp; &nbsp; &nbsp; &nbsp; Uh oh! There was an error while loading. Please reload this page . Languages Python 100.0% Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Faweimann%2Ftraitar)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Faweimann%2Ftraitar)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=aweimann%2Ftraitar)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[aweimann](/aweimann)
+/
+**[traitar](/aweimann/traitar)**
+Public
+
+* [Notifications](/login?return_to=%2Faweimann%2Ftraitar) You must be signed in to change notification settings
+* [Fork
+  27](/login?return_to=%2Faweimann%2Ftraitar)
+* [Star
+   22](/login?return_to=%2Faweimann%2Ftraitar)
+
+* [Code](/aweimann/traitar)
+* [Issues
+  12](/aweimann/traitar/issues)
+* [Pull requests
+  1](/aweimann/traitar/pulls)
+* [Actions](/aweimann/traitar/actions)
+* [Projects](/aweimann/traitar/projects)
+* [Security
+  0](/aweimann/traitar/security)
+* [Insights](/aweimann/traitar/pulse)
+
+Additional navigation options
+
+* [Code](/aweimann/traitar)
+* [Issues](/aweimann/traitar/issues)
+* [Pull requests](/aweimann/traitar/pulls)
+* [Actions](/aweimann/traitar/actions)
+* [Projects](/aweimann/traitar/projects)
+* [Security](/aweimann/traitar/security)
+* [Insights](/aweimann/traitar/pulse)
+
+# aweimann/traitar
+
+master
+
+[Branches](/aweimann/traitar/branches)[Tags](/aweimann/traitar/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[257 Commits](/aweimann/traitar/commits/master/)   257 Commits | | |
+| [bin](/aweimann/traitar/tree/master/bin "bin") | | [bin](/aweimann/traitar/tree/master/bin "bin") |  |  |
+| [traitar](/aweimann/traitar/tree/master/traitar "traitar") | | [traitar](/aweimann/traitar/tree/master/traitar "traitar") |  |  |
+| [.gitignore](/aweimann/traitar/blob/master/.gitignore ".gitignore") | | [.gitignore](/aweimann/traitar/blob/master/.gitignore ".gitignore") |  |  |
+| [Dockerfile](/aweimann/traitar/blob/master/Dockerfile "Dockerfile") | | [Dockerfile](/aweimann/traitar/blob/master/Dockerfile "Dockerfile") |  |  |
+| [INSTALL.md](/aweimann/traitar/blob/master/INSTALL.md "INSTALL.md") | | [INSTALL.md](/aweimann/traitar/blob/master/INSTALL.md "INSTALL.md") |  |  |
+| [LICENSE](/aweimann/traitar/blob/master/LICENSE "LICENSE") | | [LICENSE](/aweimann/traitar/blob/master/LICENSE "LICENSE") |  |  |
+| [MANIFEST.in](/aweimann/traitar/blob/master/MANIFEST.in "MANIFEST.in") | | [MANIFEST.in](/aweimann/traitar/blob/master/MANIFEST.in "MANIFEST.in") |  |  |
+| [README.md](/aweimann/traitar/blob/master/README.md "README.md") | | [README.md](/aweimann/traitar/blob/master/README.md "README.md") |  |  |
+| [README.rst](/aweimann/traitar/blob/master/README.rst "README.rst") | | [README.rst](/aweimann/traitar/blob/master/README.rst "README.rst") |  |  |
+| [setup.py](/aweimann/traitar/blob/master/setup.py "setup.py") | | [setup.py](/aweimann/traitar/blob/master/setup.py "setup.py") |  |  |
+| [traits.tsv](/aweimann/traitar/blob/master/traits.tsv "traits.tsv") | | [traits.tsv](/aweimann/traitar/blob/master/traits.tsv "traits.tsv") |  |  |
+| [workflow.png](/aweimann/traitar/blob/master/workflow.png "workflow.png") | | [workflow.png](/aweimann/traitar/blob/master/workflow.png "workflow.png") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* GPL-3.0 license
+
+# Traitar – the microbial trait analyzer
+
+Traitar is a software for characterizing microbial samples from nucleotide or protein sequences. It can accurately phenotype [67 diverse traits](/aweimann/traitar/blob/master/traits.tsv).
+
+### Table of Contents
+
+[Installation](#installation)
+[Basic usage](#basic-usage)
+[Results](#results)
+[Docker](#docker)
+[Citing Traitar](#citing-traitar)
+
+# Installation
+
+Please see [INSTALL.md](/aweimann/traitar/blob/master/INSTALL.md) for installation instructions.
+
+# Basic usage
+
+`traitar phenotype <in dir> <sample file> from_nucleotides <out_dir>`
+
+will trigger the standard workflow of Traitar, which is to predict open reading frames with Prodigal, annotate the coding sequences provided as nucleotide FASTAs in the <in\_dir> for all samples in <sample\_file> with Pfam families using HMMer and finally predict phenotypes from the models for the 67 traits.
+
+[![Alt text](/aweimann/traitar/raw/master/workflow.png?raw=true "Optional Title")](/aweimann/traitar/blob/master/workflow.png?raw=true)
+
+The sample file has one column for the sample file names and one for the names as specified by the user. You can also specify a grouping of the samples in the third column, which will be shown in the generated plots. The template looks like following - The header row is mandatory; please also take a look at the sample file for the packaged example data:
+
+sample\_file\_name{tab}sample\_name{tab}category
+sample1\_file\_name{tab}sample1\_name[{tabl}sample\_category1]
+sample2\_file\_name{tab}sample2\_name[{tabl}sample\_category2]
+
+`traitar phenotype <in dir> <sample file> from_genes <out_dir>`
+
+assumes that gene prediction has been conducted already externally. In this case analysis will start with the Pfam annotation. If the output directory already exists, Traitar will offer to recompute or resume the individual analysis steps. This option is only available if the process is run interactively.
+
+### Parallel usage
+
+Traitar can benefit from parallel execution. The `-c` parameter sets the number of processes used e.g. `-c 2` for using two processes
+
+`traitar phenotype <in dir> <sample file> from_nucleotides out_dir -c 2`
+
+This requires installing GNU parallel as noted above.
+
+### Inspect phenotype classification models
+
+Traitar can be used to inspect the protein families in each phenotype model:
+
+`traitar show 'Glucose fermenter`
+
+will show the majority features i.e. the Pfam families that contribute to the assignment of the trait Glucose fermenter with *phypat* classifier to some genome sequence. Via --predictor the user may specify the classifier (phypat, phypat+PGL).
+
+### Run Traitar with packaged sample data
+
+`traitar phenotype <traitar_dir>/data/sample_data <traitar_dir>/data/sample_data/samples.txt from_genes <out_dir> -c 2` will trigger phenotyping of *Listeria grayi DSM\_20601* and *Listeria ivanovii WSLC3009*. Computation should be done within 5 minutes. You can find out `<traitar_dir>` by running
+
+```
+python
+>>> import traitar
+>>> traitar.__path__
+```
+
+# Results
+
+Traitar provides the gene prediction results in `<out_dir>/gene_prediction`, the Pfam annotation in `<out_dir>/pfam_annotation` and the phenotype prediction in`<out_dir>/phenotype prediction`.
+
+### Heatmaps
+
+The phenotype prediction is summarized in heatmaps individually for the phyletic pattern classifier in `heatmap_phypat.png`, for the phylogeny-aware classifier in `heatmap_phypat_ggl.png` and for both classifiers combined in `heatmap_comb.png` and provide hierarchical clustering dendrograms for phenotypes and the samples.
+
+[![Alt text](/aweimann/traitar/raw/master/traitar/data/sample_data/traitar_out/phenotype_prediction/heatmap_combined.png?raw=true "Optional Title")](/aweimann/traitar/blob/master/traitar/data/sample_data/traitar_out/phenotype_prediction/heatmap_combined.png?raw=true)
+
+### Phenotype prediction - Tables and flat files
+
+These heatmaps are based on tab separated text files e.g. `predictions_majority-vote_combined.txt`. A negative prediction is encoded as 0, a prediction made only by the pure phyletic classifier as 1, one made by the phylogeny-aware classifier by 2 and a prediction supported by both algorithms as 3. `predictions_flat_majority-votes_combined.txt` provides a flat version of this table with one prediction per row. The expert user might also want to access the individual results for each algorithm in the respective sub folders `phypat` and `phypat+PGL`.
+
+### Phenotype-relevant protein families and feature tracks
+
+Traitar will link the protein families and predicted phenotypes. The results can be found in `phypat/feat_gffs` and ``phypat+PGL/feat\_gffs`. If the user picked the 'from nucleotides' option, Traitar will also generate GFF files that link the genes called by Prodidgal with the important protein families. The phenotype-specific protein family annotations tracks can be visualized via GFF files in a genome browser of choice.
+
+#### Feature tracks with *from\_genes* option (experimental feature)
+
+If the *from\_genes* option is set, the user may specify gene GFF files via an additional column called gene\_gff in the sample file. As gene ids are not consistent across gene GFFs from different sources e.g. img, RefSeq or Prodigal the user needs to specify the origin of the gene gff file via the -g / --gene\_gff\_type parameter. Still there is no guarantee that this works currently. Using samples\_gene\_gff.txt as the sample file in the above example will generate phenotype-specific Pfam tracks for the two genomes.
+
+`traitar phenotype . samples_gene_gff.txt from_genes traitar_out -g refseq`
+
+# Docker
+
+There is a Docker container available for Traitar. Pull by
+
+`docker pull aweimann/traitar`
+
+To run traitar for the sample data execute
+
+`docker run -v <traitar_dir>/data/sample_data:/mnt 1445e6c01992 bash -c 'traitar phenotype /mnt/ /mnt/samples.txt from_nucleotides /mnt/traitar_out'`,
+
+which will take ~30 minutes. Note there is a problem with parallel usage so -c option is not guaranteed to work. The output will be owned by root. So currently you still need root access to your machine to inspect the traitar\_out folder.
+
+# Citing Traitar
+
+If you use Traitar in your research, please cite our paper:
+
+**From genomes to phenotypes: T

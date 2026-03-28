@@ -1,6 +1,6 @@
 ---
 name: svaba
-description: SvABA detects structural variants and indels by performing local assembly across the genome using a string graph assembler. Use when user asks to identify somatic or germline structural variants, detect complex genomic rearrangements, or perform targeted local assembly from BAM files.
+description: SvABA identifies structural variants and indels by performing genome-wide local assembly and realignment. Use when user asks to call somatic or germline structural variants, detect indels using local assembly, or convert breakpoint files to VCF format.
 homepage: https://github.com/walaj/svaba
 ---
 
@@ -8,66 +8,55 @@ homepage: https://github.com/walaj/svaba
 # svaba
 
 ## Overview
-SvABA is a specialized bioinformatic tool that detects structural variants and indels by performing local assembly across the genome. Unlike traditional split-read or discordant-pair mappers, SvABA uses a string graph assembler (SGA) to build contigs in 25kb windows, aligns these contigs to the reference using BWA-MEM, and then realigns reads to the contigs to score variants. This approach is particularly effective for identifying complex rearrangements and indels that are often missed by standard variant callers.
 
-## Core CLI Patterns
+SvABA (formerly Snowman) is a specialized tool for identifying structural variants and indels by performing genome-wide local assembly. Unlike traditional alignment-based callers, SvABA uses a custom implementation of the String Graph Assembler (SGA) and BWA-MEM to assemble contigs from discordant, clipped, and unmapped reads. It then realigns these contigs to the reference genome to pinpoint breakpoints with high accuracy. It is particularly effective for detecting complex rearrangements and indels that are often missed by standard mapping-based methods.
 
-### Somatic Variant Calling (Tumor/Normal)
-To identify somatic SVs and indels, provide both tumor and normal BAM files.
+## Common CLI Patterns
+
+### Somatic SV and Indel Detection
+To call somatic variants using a tumor/normal pair, use the `-t` (tumor) and `-n` (normal) flags.
 ```bash
-svaba run -t tumor.bam -n normal.bam -p <threads> -D dbsnp_indel.vcf -a <output_prefix> -G <ref.fa>
+svaba run -t tumor.bam -n normal.bam -G reference.fasta -a somatic_output
 ```
 
-### Germline Variant Calling
-For germline analysis, use the `-t` flag for the sample. It is recommended to use specific flags to reduce computational overhead from mapping artifacts.
+### Germline SV and Indel Detection
+For single-sample germline analysis, provide the sample with the `-t` flag.
 ```bash
-svaba run -t sample.bam -p <threads> -a <output_prefix> -G <ref.fa> -I -L 6
-```
-*   `-I`: Skips mate-region lookup if mates are on different chromosomes (reduces false positives in germline runs).
-*   `-L 6`: Requires 6+ clustered mate reads to trigger a mate lookup.
-
-### Targeted Assembly
-If you only need to analyze specific regions (e.g., exome or specific loci), use the `-k` or `-L` flags.
-```bash
-# Run on a specific chromosome
-svaba run -t tumor.bam -n normal.bam -k chr22 -G ref.fa -a output_id
-
-# Run on targeted regions (BED file)
-svaba run -t tumor.bam -n normal.bam -L targets.bed -G ref.fa -a output_id
+svaba run -t blood_sample.bam -G reference.fasta -a germline_output
 ```
 
-## Output Interpretation
-SvABA produces several key files. Understanding the difference between the raw output and the VCF is critical:
-
-*   **`*.bps.txt.gz`**: The raw, unfiltered breakpoint strings. This is the source for all VCF entries.
-*   **`*.svaba.somatic.sv.vcf`**: High-confidence somatic structural variants.
-*   **`*.svaba.germline.indel.vcf`**: High-confidence germline indels.
-*   **`*.contigs.bam`**: The assembled contigs aligned to the reference. **Note**: This file is unsorted; you must run `samtools sort` and `samtools index` before viewing in IGV.
-*   **`*.alignments.txt.gz`**: ASCII representations of contig-to-reference and read-to-contig alignments. Use this for manual curation of difficult calls.
-
-## Expert Tips & Best Practices
-
-### Filtering and Refiltering
-If the default VCF output is too stringent or too noisy, use the `refilter` command on the `bps.txt.gz` file rather than re-running the entire assembly.
+### Targeted (Exome) Detection
+When working with exome or targeted panels, provide a BED file of the target regions to focus the assembly.
 ```bash
-svaba refilter -i <prefix>.bps.txt.gz -b <original.bam> -a <new_prefix>
+svaba run -t tumor.bam -n normal.bam -G reference.fasta -L targets.bed -a exome_output
 ```
 
-### Scoring Metrics
-When evaluating variants in the VCF or `bps` file, pay attention to these specific SvABA metrics:
-*   **LOD (LO)**: Log of the odds that the variant is real vs. an artifact.
-*   **LR**: Log of the odds for somatic vs. germline classification (allelic fraction 0 vs >= 0.5).
-*   **SL (Scaled LOD)**: A heuristic score that adjusts the LOD based on mapping quality and mismatches (NM).
+### Performance Tuning
+Use the `-p` flag to specify the number of threads.
+```bash
+svaba run -p 8 -t tumor.bam -n normal.bam -G reference.fasta -a fast_run
+```
 
-### Debugging Variants
-To visually inspect a specific variant found in the VCF:
-1.  Identify the contig name from the VCF entry (look for the `SCTG` tag).
-2.  Extract the ASCII alignment for that contig:
-    ```bash
-    gunzip -c <prefix>.alignment.txt.gz | grep <contig_name> > debug_plot.txt
-    ```
-3.  View `debug_plot.txt` in a text editor with **line truncation turned OFF**.
+## Expert Tips and Best Practices
+
+- **Reference Indexing**: The reference genome (`-G`) must be indexed with BWA-MEM. SvABA relies on these indices for contig realignment.
+- **ASCII Alignment Inspection**: The `*.alignments.txt.gz` file contains ASCII representations of the contig-to-reference and read-to-contig alignments. This is the most powerful tool for manual validation. To inspect a specific variant, find the contig ID (SCTG) from the VCF and grep it:
+  `gunzip -c id.alignments.txt.gz | grep "contig_name" > inspection.txt`
+- **Contig Visualization**: The `*.contigs.bam` file contains the assembled contigs. To view them in IGV, you must sort and index the BAM:
+  `samtools sort id.contigs.bam -o id.contigs.sorted.bam && samtools index id.contigs.sorted.bam`
+- **Filtering and Refiltering**: The `*.bps.txt.gz` file contains raw, unfiltered breakpoints. If you need to adjust sensitivity or specificity after a run, use `svaba refilter` on this file rather than re-running the entire assembly.
+- **Memory Management**: Local assembly is memory-intensive. If the process crashes on high-coverage regions, consider using the `-L` flag to restrict analysis to specific chromosomes or regions of interest.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| refilter | Refilter SVABA results |
+| svaba run | SV and indel detection using rolling SGA assembly and BWA-MEM realignment |
+| tovcf | Convert a *bps.txt.gz file to a *vcf file |
 
 ## Reference documentation
-- [SvABA GitHub Repository](./references/github_com_walaj_svaba.md)
-- [Bioconda SvABA Package](./references/anaconda_org_channels_bioconda_packages_svaba_overview.md)
+- [SvABA README](./references/github_com_walaj_svaba_blob_master_README.md)
+- [SvABA Repository Overview](./references/github_com_walaj_svaba.md)

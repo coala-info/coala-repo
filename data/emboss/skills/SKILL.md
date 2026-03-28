@@ -1,6 +1,6 @@
 ---
 name: emboss
-description: EMBOSS is a comprehensive suite of bioinformatics tools for analyzing DNA and protein sequences, searching databases, and performing sequence alignments. Use when user asks to convert sequence formats, translate nucleic acids to proteins, process restriction enzyme data, or manipulate molecular biology data using a consistent command-line interface.
+description: EMBOSS is a comprehensive suite of bioinformatics tools used for sequence analysis, alignment, and format conversion. Use when user asks to retrieve sequences, perform global or local alignments, translate nucleic acids, or find open reading frames.
 homepage: http://emboss.open-bio.org/
 ---
 
@@ -8,57 +8,89 @@ homepage: http://emboss.open-bio.org/
 # emboss
 
 ## Overview
+EMBOSS (European Molecular Biology Open Software Suite) is a modular collection of open-source tools designed for the molecular biology community. It excels at handling diverse sequence formats and provides specialized applications for tasks ranging from simple sequence retrieval and translation to complex Smith-Waterman alignments and protein property calculations. This skill focuses on the native command-line interface (CLI) patterns and configuration logic required to execute EMBOSS tools efficiently.
 
-EMBOSS (European Molecular Biology Open Software Suite) is a comprehensive collection of over 200 bioinformatics tools designed to handle a wide array of molecular biology tasks. It provides a consistent command-line interface for analyzing DNA and protein sequences, searching databases, and performing complex alignments. Use this skill to leverage EMBOSS's robust handling of diverse file formats and its "Uniform Sequence Address" (USA) system, which allows for seamless data integration across different applications.
+## Core CLI Usage Patterns
 
-## Core CLI Usage
-
-Every EMBOSS application follows a consistent command-line structure:
-`application_name -parameter1 value1 -parameter2 value2 ...`
-
-### Uniform Sequence Address (USA)
-The USA is the standard way to specify sequence inputs. It avoids the need for manual file path management:
-- **File**: `filename` or `format::filename`
-- **Database entry**: `database:entry`
-- **Specific sequence in a file**: `file:entry`
-- **Standard input**: `stdin`
-
-### Essential Global Qualifiers
-These qualifiers work across almost all EMBOSS programs to control behavior:
-- `-auto`: Turns off interactive prompting; uses default values for any unspecified required parameters.
-- `-stdout`: Forces output to be written to the standard output stream.
-- `-filter`: Allows the program to act as a UNIX filter (reads from stdin, writes to stdout).
-- `-options`: Displays all parameters, including optional ones, when prompting.
-- `-help`: Displays a brief help text and exits.
-
-## Common Workflows
-
-### 1. Installation and Verification
-The most efficient way to install EMBOSS is via Bioconda:
+### Basic Command Structure
+Most EMBOSS tools follow a standard parameter pattern:
 ```bash
-conda install bioconda::emboss
-embossversion
+application_name -parameter1 value1 -parameter2 value2 -qualifier
 ```
 
-### 2. Data Preparation
-Many EMBOSS applications require external data files (like REBASE or PROSITE). Use the extraction tools to set these up:
-- `rebaseextract`: Process restriction enzyme data.
-- `prosextract`: Process PROSITE motif data.
-- `printsextract`: Process PRINTS fingerprint data.
+### Sequence Specification (USA)
+EMBOSS uses a Uniform Sequence Address (USA) to identify sequences.
+- **Database entry**: `database:entry` (e.g., `swissprot:p12345`)
+- **File entry**: `filename:entry` (e.g., `myseqs.fasta:seq1`)
+- **All entries in a file**: `filename:*`
+- **Standard Input**: `stdin`
 
-### 3. Sequence Manipulation
-- **Format Conversion**: Use `seqret` to read a sequence in one format and write it in another.
-  `seqret -sequence input.fasta -outseq output.gcg`
-- **Translation**: Use `transeq` to translate nucleic acid sequences to proteins.
-  `transeq -sequence dna.fasta -outseq protein.fasta`
+### Essential Global Qualifiers
+These qualifiers work across almost all EMBOSS applications:
+- `-auto`: Turns off interactive prompting; uses default values for any non-specified parameters.
+- `-stdout`: Directs the primary output to the terminal instead of a file.
+- `-filter`: Reads from standard input and writes to standard output.
+- `-options`: Prompts for all optional parameters.
+- `-debug`: Generates a `.dbg` file for troubleshooting.
+
+## High-Utility Applications
+
+### Sequence Retrieval and Conversion
+- **seqret**: The "Swiss Army knife" for sequences. Use it to change formats or extract specific entries.
+  ```bash
+  seqret embl:x65923 -outseq fasta::x65923.fasta
+  ```
+- **prophet**: Gapped alignment profiles.
+- **infoseq**: Displays basic information about sequences (length, type, etc.).
+
+### Alignment
+- **water**: Performs Smith-Waterman local alignment.
+- **needle**: Performs Needleman-Wunsch global alignment.
+- **stretcher**: Global alignment for very long sequences.
+- **matcher**: Local alignment for identifying similar regions.
+
+### Translation and Nucleic Acids
+- **transeq**: Translates nucleic acid sequences to proteins.
+- **showfeat**: Displays features of a sequence in a readable format.
+- **getorf**: Finds and extracts Open Reading Frames.
+
+## Configuration and Environment
+
+### The .embossrc File
+Users can define private databases and global settings in a `.embossrc` file located in their home directory.
+- **Database Definition Syntax**:
+  ```
+  DB embl [
+    type: N
+    method: direct
+    format: embl
+    dir: /path/to/data/
+    file: *.dat
+  ]
+  ```
+
+### Environment Variables
+- `EMBOSS_AUTO`: Set to `1` to make `-auto` the default behavior.
+- `EMBOSS_GRAPHICS`: Defines the default graphics device (e.g., `png`, `x11`, `pdf`).
+- `EMBOSS_DATA`: Path to the directory containing EMBOSS data files (REBASE, AAINDEX, etc.).
 
 ## Expert Tips
-- **ACD Files**: EMBOSS uses Ajax Command Definition (ACD) files to define parameters. If an application behaves unexpectedly, check the `.acd` file in the EMBOSS distribution to understand the validation logic.
-- **Environment Variables**: Set `EMBOSS_DATA` to point to the directory containing your data files if they are not in the default installation path.
-- **Memory Management**: EMBOSS has no arbitrary sequence length limits; it allocates memory dynamically based on the input size. If you encounter memory errors, ensure your system's swap space or RAM is sufficient for the specific dataset.
+- **Finding Tools**: Use `wossname` to search for applications by keyword (e.g., `wossname alignment`).
+- **Handling Short Sequences**: If a short protein sequence is misidentified as nucleic acid, use the `-type P` qualifier to force protein interpretation.
+- **Batch Processing**: Combine `seqret` with shell loops or the `-ossingle` qualifier to split a multi-sequence file into individual files.
+- **ACD Validation**: If developing new tools or wrappers, use `acvalid` to check the syntax of the Application Control Definition (ACD) file.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| printsextract | Extract fingerprints from PRINTS database |
+| transeq | Reads one or more nucleotide sequences and writes the corresponding protein translations. |
 
 ## Reference documentation
-- [EMBOSS Overview](./references/anaconda_org_channels_bioconda_packages_emboss_overview.md)
-- [Key Features](./references/emboss_open-bio_org_html_use_ch01s03.html.md)
-- [Post-installation and Data Setup](./references/emboss_open-bio_org_html_adm_ch01s06.html.md)
-- [EMBOSS Introduction](./references/emboss_open-bio_org_html_use_pr01s01.html.md)
+- [EMBOSS Frequently Asked Questions](./references/emboss_open-bio_org_html_adm_apb.html.md)
+- [Post-installation of EMBOSS](./references/emboss_open-bio_org_html_adm_ch01s06.html.md)
+- [Installation of CVS (Developers) Release](./references/emboss_open-bio_org_html_dev_ch01s02.html.md)
+- [EMBOSS Applications (release R6)](./references/emboss_open-bio_org_html_use_apbs04.html.md)

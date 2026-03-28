@@ -1,1 +1,390 @@
-Tags · mayneyao/eidos · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners View all resources Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} mayneyao / eidos Public Uh oh! There was an error while loading. Please reload this page . Notifications You must be signed in to change notification settings Fork 132 Star 3.1k Code Issues 45 Pull requests 1 Discussions Actions Projects 1 Security 1 Insights Additional navigation options Code Issues Pull requests Discussions Actions Projects Security Insights Tags: mayneyao/eidos Releases Tags Tags v0.28.0 Toggle v0.28.0&#39;s commit message chore: update pnpm-lock Feb 11, 2026 b0411d7 zip tar.gz Notes Downloads v0.28.0-beta.6 Toggle v0.28.0-beta.6&#39;s commit message docs: add table API reference and new how-to guides Feb 11, 2026 09802ba zip tar.gz Notes v0.28.0-beta.5 Toggle v0.28.0-beta.5&#39;s commit message fix(extension): use slug-based virtual path for better UX Feb 9, 2026 9a1c147 zip tar.gz Notes Downloads v0.28.0-beta.4 Toggle v0.28.0-beta.4&#39;s commit message feat(docs): restructure documentation sidebar with new top-level sect… …ions using `starlight-sidebar-topics` and add initial How-to guides. Feb 8, 2026 643278e zip tar.gz Notes Downloads v0.28.0-beta.3 Toggle v0.28.0-beta.3&#39;s commit message feat(docs): restructure documentation sidebar with new top-level sect… …ions using `starlight-sidebar-topics` and add initial How-to guides. Feb 8, 2026 ba350d1 zip tar.gz Notes Downloads v0.28.0-beta.2 Toggle v0.28.0-beta.2&#39;s commit message fix(ci): bump Node.js to 20.19.0 for rolldown compatibility Jan 31, 2026 061aeca zip tar.gz Notes Downloads v0.28.0-beta.1 Toggle v0.28.0-beta.1&#39;s commit message fix(extension): support virtual folder deletion and hierarchical slug… … paths Jan 31, 2026 682f845 zip tar.gz Notes v0.28.0-alpha.1 Toggle v0.28.0-alpha.1&#39;s commit message feat(tabs): implement VSCode-style split view for tabs Jan 18, 2026 0ba5cb0 zip tar.gz Notes Downloads v0.27.1 Toggle v0.27.1&#39;s commit message Update to version 0.27.1 Jan 14, 2026 961e8fa zip tar.gz Notes Downloads v0.27.0 Toggle v0.27.0&#39;s commit message fix(electron): pre-initialize DataSpace and ensure clean state during… … URL switching in desktop mode Jan 10, 2026 a368522 zip tar.gz Notes Downloads Previous Next Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fmayneyao%2Feidos%2Ftags)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fmayneyao%2Feidos%2Ftags)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Freleases%2Ftag_history&source=header-repo&source_repo=mayneyao%2Feidos)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[mayneyao](/mayneyao)
+/
+**[eidos](/mayneyao/eidos)**
+Public
+
+* ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* [Notifications](/login?return_to=%2Fmayneyao%2Feidos) You must be signed in to change notification settings
+* [Fork
+  132](/login?return_to=%2Fmayneyao%2Feidos)
+* [Star
+   3.1k](/login?return_to=%2Fmayneyao%2Feidos)
+
+* [Code](/mayneyao/eidos)
+* [Issues
+  24](/mayneyao/eidos/issues)
+* [Pull requests
+  1](/mayneyao/eidos/pulls)
+* [Discussions](/mayneyao/eidos/discussions)
+* [Actions](/mayneyao/eidos/actions)
+* [Projects](/mayneyao/eidos/projects)
+* [Security
+  1](/mayneyao/eidos/security)
+* [Insights](/mayneyao/eidos/pulse)
+
+Additional navigation options
+
+* [Code](/mayneyao/eidos)
+* [Issues](/mayneyao/eidos/issues)
+* [Pull requests](/mayneyao/eidos/pulls)
+* [Discussions](/mayneyao/eidos/discussions)
+* [Actions](/mayneyao/eidos/actions)
+* [Projects](/mayneyao/eidos/projects)
+* [Security](/mayneyao/eidos/security)
+* [Insights](/mayneyao/eidos/pulse)
+
+# Tags: mayneyao/eidos
+
+[Releases](/mayneyao/eidos/releases)
+[Tags](/mayneyao/eidos/tags)
+
+Tags
+
+## [v0.29.1](/mayneyao/eidos/releases/tag/v0.29.1)
+
+Toggle v0.29.1's commit message
+
+```
+Update to version 0.29.1
+```
+
+* Mar 26, 2026
+* [fca3d2a](/mayneyao/eidos/commit/fca3d2a84275c06b19e83adcd5ee094ea357d591)
+* [zip](/mayneyao/eidos/archive/refs/tags/v0.29.1.zip)
+* [tar.gz](/mayneyao/eidos/archive/refs/tags/v0.29.1.tar.gz)
+* [Notes](/mayneyao/eidos/releases/tag/v0.29.1)
+* [Downloads](/mayneyao/eidos/releases/tag/v0.29.1)
+
+## [v0.29.0](/mayneyao/eidos/releases/tag/v0.29.0)
+
+Toggle v0.29.0's commit message
+
+```
+fix: kanban creation duplication and file editor duplicate keys
+```
+
+* Mar 25, 2026
+* [baed8e1](/mayneyao/eidos/commit/baed8e1d775b0cfaa68af572f7ef744c42804508)
+* [zip](/mayneyao/eidos/archive/refs/tags/v0.29.0.zip)
+* [tar.gz](/mayneyao/eidos/archive/refs/tags/v0.29.0.tar.gz)
+* [Notes](/mayneyao/eidos/releases/tag/v0.29.0)
+* [Downloads](/mayneyao/eidos/releases/tag/v0.29.0)
+
+## [v0.29.0-beta.10](/mayneyao/eidos/releases/tag/v0.29.0-beta.10)
+
+Toggle v0.29.0-beta.10's commit message
+
+```
+chore: fix type error
+```
+
+* Mar 23, 2026
+* [ac2b1fb](/mayneyao/eidos/commit/ac2b1fb20376a2739f33e79cfab7666d0677a211)
+* [zip](/mayneyao/eidos/archive/refs/tags/v0.29.0-beta.10.zip)
+* [tar.gz](/mayneyao/eidos/archive/refs/tags/v0.29.0-beta.10.tar.gz)
+* [Notes](/mayneyao/eidos/releases/tag/v0.29.0-beta.10)
+* [Downloads](/mayneyao/eidos/releases/tag/v0.29.0-beta.10)
+
+## [v0.29.0-beta.9](/mayneyao/eidos/releases/tag/v0.29.0-beta.9)
+
+Toggle v0.29.0-beta.9's commit message
+
+```
+fix(web-app): fix document node narrowing after toggling full_width
+```
+
+* Mar 23, 2026
+* [6c17c42](/mayneyao/eidos/commit/6c17c429a4a81eaef6f8b4dfae9338e6aee743bf)
+* [zip](/mayneyao/eidos/archive/refs/tags/v0.29.0-beta.9.zip)
+* [tar.gz](/mayneyao/eidos/archive/refs/tags/v0.29.0-beta.9.tar.gz)
+* [Notes](/mayneyao/eidos/releases/tag/v0.29.0-beta.9)
+* [Downloads](/mayneyao/eidos/releases/tag/v0.29.0-beta.9)
+
+## [v0.29.0-beta.8](/mayneyao/eidos/releases/tag/v0.29.0-beta.8)
+
+Toggle v0.29.0-beta.8's commit message
+
+Verified
+
+# Verified
+
+This commit was created on GitHub.com and signed with GitHub’s **verified signature**.
+
+GPG key ID: B5690EEEBB952194
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits)
+
+```
+Merge pull request #299 from mayneyao/feat/cli
+
+Feat/cli
+```
+
+* Mar 20, 2026
+* [8f38597](/mayneyao/eidos/commit/8f385978a1398c1e2c9a779dd26c22ea1dcdf678)
+* [zip](/mayneyao/eidos/archive/refs/tags/v0.29.0-beta.8.zip)
+* [tar.gz](/mayneyao/eidos/archive/refs/tags/v0.29.0-beta.8.tar.gz)
+* [Notes](/mayneyao/eidos/releases/tag/v0.29.0-beta.8)
+* [Downloads](/mayneyao/eidos/releases/tag/v0.29.0-beta.8)
+
+## [v0.29.0-beta.7](/mayneyao/eidos/releases/tag/v0.29.0-beta.7)
+
+Toggle v0.29.0-beta.7's commit message
+
+```
+fix(table): fix field insertion order when inserting left/right
+
+When order_map is empty, the new field's position value (e.g., 2) is much
+smaller than the default value (233), causing the new field to appear at
+the beginning instead of the expected position.
+
+Fix: Before inserting a new field, if order_map is empty, initialize it
+based on the current showColumns order. This ensures the new field is
+inserted at the correct relative position.
+```
+
+* Mar 19, 2026
+* [1e6bbce](/mayneyao/eidos/commit/1e6bbce0bc3a658f790eb6ee41d798e1d9786fb8)
+* [zip](/mayneyao/eidos/archive/refs/tags/v0.29.0-beta.7.zip)
+* [tar.gz](/mayneyao/eidos/archive/refs/tags/v0.29.0-beta.7.tar.gz)
+* [Notes](/mayneyao/eidos/releases/tag/v0.29.0-beta.7)
+* [Downloads](/mayneyao/eidos/releases/tag/v0.29.0-beta.7)
+
+## [v0.29.0-beta.6](/mayneyao/eidos/releases/tag/v0.29.0-beta.6)
+
+Toggle v0.29.0-beta.6's commit message
+
+```
+fix: correct rust toolchain action name
+```
+
+* Mar 18, 2026
+* [b0cafac](/mayneyao/eidos/commit/b0cafacefeb56a91c301b691dea6e83f3c26751a)
+* [zip](/mayneyao/eidos/archive/refs/tags/v0.29.0-beta.6.zip)
+* [tar.gz](/mayneyao/eidos/archive/refs/tags/v0.29.0-beta.6.tar.gz)
+* [Notes](/mayneyao/eidos/releases/tag/v0.29.0-beta.6)
+* [Downloads](/mayneyao/eidos/releases/tag/v0.29.0-beta.6)
+
+## [v0.29.0-beta.5](/mayneyao/eidos/releases/tag/v0.29.0-beta.5)
+
+Toggle v0.29.0-beta.5's commit message
+
+```
+feat: integrate local CLI build into the desktop application.
+```
+
+* Mar 17, 2026
+* [2e9aaaa](/mayneyao/eidos/commit/2e9aaaa2bb59df4d4e0130f84a16920e72a31bde)
+* [zip](/mayneyao/eidos/archive/refs/tags/v0.29.0-beta.5.zip)
+* [tar.gz](/mayneyao/eidos/archive/refs/tags/v0.29.0-beta.5.tar.gz)
+
+## [v0.29.0-beta.4](/mayneyao/eidos/releases/tag/v0.29.0-beta.4)
+
+Toggle v0.29.0-beta.4's commit message
+
+```
+chore: add --no-error-on-unmatched-pattern to oxfmt to fix commit fai…
+
+…lures
+```
+
+* Mar 14, 2026
+* [f1faf70](/mayneyao/eidos/commit/f1faf7089c3dd0b09436e6d123b7770c0064264d)
+* [zip](/mayneyao/eidos/archive/refs/tags/v0.29.0-beta.4.zip)
+* [tar.gz](/mayneyao/eidos/archive/refs/tags/v0.29.0-beta.4.tar.gz)
+* [Notes](/mayneyao/eidos/releases/tag/v0.29.0-beta.4)
+* [Downloads](/mayneyao/eidos/releases/tag/v0.29.0-beta.4)
+
+## [v0.29.0-beta.3](/mayneyao/eidos/releases/tag/v0.29.0-beta.3)
+
+Toggle v0.29.0-beta.3's commit message
+
+```
+fix: support arm64 architecture for libsimple download
+
+The download-libsimple.cjs script was hardcoding x64 architecture for
+macOS and Windows, causing 'no such tokenizer: simple' errors on ARM
+builds (macos-arm64, windows-arm64).
+
+Changes:
+- Add architecture detection for darwin platform (osx-arm64)
+- Add architecture detection for win32 platform (windows-arm64)
+
+Fixes the issue where GitHub Actions ARM builds were downloading the
+wrong architecture binary.
+```
+
+* Mar 10, 2026
+* [6f96174](/mayneyao/eidos/commit/6f961741aeb0803a110666aed0d74fa56ac97101)
+* [zip](/mayneyao/eidos/archive/refs/tags/v0.29.0-beta.3.zip)
+* [tar.gz](/mayneyao/eidos/archive/refs/tags/v0.29.0-beta.3.tar.gz)
+* [Notes](/mayneyao/eidos/releases/tag/v0.29.0-beta.3)
+* [Downloads](/mayneyao/eidos/releases/tag/v0.29.0-beta.3)
+
+Previous[Next](/mayneyao/eidos/tags?after=v0.29.0-beta.3)
+
+## Footer
+
+© 2026 GitHub, Inc.
+
+### Footer navigation
+
+* [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+* [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+* [Security](https://github.com/security)
+* [Status](https://www.githubstatus.com/)
+* [Community](https://github.community/)
+* [Docs](https://docs.github.com/)
+* [Contact](https://support.github.com?tags=dotcom-footer)
+* Manage cookies
+* Do not share my personal information
+
+You can’t perform that action at this time.

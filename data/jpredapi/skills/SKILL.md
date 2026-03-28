@@ -1,87 +1,69 @@
 ---
 name: jpredapi
-description: "This tool submits protein sequences to the JPRED server for secondary structure prediction and retrieves the results. Use when user asks to predict protein secondary structure."
+description: The jpredapi tool provides a programmatic interface for submitting protein sequences to the JPred4 REST API for secondary structure prediction. Use when user asks to submit protein sequences or alignments for prediction, monitor job status, or download prediction results.
 homepage: https://github.com/MoseleyBioinformaticsLab/jpredapi
 ---
 
 
 # jpredapi
 
-Submits protein sequences to the JPRED server for secondary structure prediction and retrieves the results.
-  Use when you need to predict the secondary structure of a protein sequence using the JPRED web server.
-  This skill is suitable for both programmatic access via its Python library and command-line interface.
-body: |
-  ## Overview
-  The `jpredapi` tool provides a convenient way to interact with the JPRED (Protein Secondary Structure Prediction) server. It allows you to submit protein sequences and retrieve the predicted secondary structure information. This is particularly useful for bioinformatics tasks where understanding protein structure is crucial. The tool can be used as a Python library or directly via its command-line interface (CLI).
+## Overview
 
-  ## Usage Instructions
+The `jpredapi` tool is a Python-based interface for JPred, a widely used server for predicting protein secondary structure. It allows researchers to bypass the web interface by submitting sequences directly to the JPred4 REST API. This skill enables the programmatic submission of single sequences or multiple alignments, monitoring of job progress, and the downloading of prediction results (such as DSSP, Jnet, and solvent accessibility) once processing is complete.
 
-  The `jpredapi` tool can be installed via conda or pip.
+## Command Line Usage
 
-  **Installation:**
+The tool can be invoked using `jpredapi` or `python3 -m jpredapi`.
 
-  Using Conda:
+### Submitting Jobs
+Submit a protein sequence for prediction. JPred requires a valid email address for job tracking.
+
+```bash
+# Submit a single sequence in FASTA format
+jpredapi submit --seq <sequence_file.fasta> --user_email <email@example.com> --job_name <my_protein_job>
+
+# Submit a Multiple Sequence Alignment (MSA)
+jpredapi submit --msa <alignment_file.txt> --user_email <email@example.com>
+```
+
+### Monitoring and Retrieval
+Jobs on JPred are asynchronous. You must check the status before attempting to download results.
+
+```bash
+# Check the status of a specific job ID
+jpredapi status --jobid <job_id_string>
+
+# Download results once the status is 'finished'
+jpredapi get_results --jobid <job_id_string> --dir <output_directory>
+
+# Check the current version of the JPred REST API
+jpredapi check_rest_version
+```
+
+## Best Practices and Expert Tips
+
+- **Retry Logic**: JPred is a shared resource and may occasionally time out. Use the `--attempts` flag to specify how many times the tool should try to communicate with the server before failing.
   ```bash
-  conda install bioconda::jpredapi
-  ```
+  jpredapi status --jobid <id> --attempts=5
+```
+- **Job Naming**: Always provide a unique `--job_name` when submitting multiple sequences to easily distinguish between result folders.
+- **Email Requirements**: Ensure the email provided is valid; JPred uses this to prevent abuse and may send notifications for long-running jobs.
+- **Rate Limiting**: Avoid submitting hundreds of jobs simultaneously. JPred has server-side limits. For large-scale batches, implement a sleep delay between submissions.
+- **Result Formats**: The `get_results` command downloads a compressed archive. Common files inside include `.jnet` (Jnet predictions), `.concise` (summary), and `.pdf` (visual summary).
 
-  Using Pip:
-  ```bash
-  python3 -m pip install jpredapi
-  ```
-  or
-  ```bash
-  py -3 -m pip install jpredapi
-  ```
 
-  **Command-Line Interface (CLI) Usage:**
 
-  The primary command for using `jpredapi` is `jpredapi`.
+## Subcommands
 
-  **Submitting a job:**
+| Command | Description |
+|---------|-------------|
+| check_rest_version | Check the version of the REST API. |
+| get_results | Retrieves the results of a JPred API job. |
+| jpredapi | The JPred API allows users to submit jobs from the command-line. |
+| jpredapi | jpredapi command-line interface The JPred API allows users to submit jobs from the command-line. |
+| quota | Check your JPred API quota |
 
-  To submit a job, you typically provide the protein sequence directly or via a file.
+## Reference documentation
 
-  *   **Submitting a sequence directly:**
-      ```bash
-      jpredapi --sequence YOUR_PROTEIN_SEQUENCE
-      ```
-      Replace `YOUR_PROTEIN_SEQUENCE` with the actual amino acid sequence.
-
-  *   **Submitting a sequence from a file:**
-      ```bash
-      jpredapi --file path/to/your/sequence.fasta
-      ```
-      The input file should be in FASTA format.
-
-  **Retrieving results:**
-
-  After submitting a job, you will receive a job ID. You can use this job ID to retrieve the results.
-
-  *   **Retrieving results using job ID:**
-      ```bash
-      jpredapi --jobid YOUR_JOB_ID
-      ```
-      Replace `YOUR_JOB_ID` with the ID obtained from the submission.
-
-  **Advanced Options:**
-
-  *   **Silent mode:** To suppress output messages, use the `--silent` flag.
-      ```bash
-      jpredapi --sequence YOUR_SEQUENCE --silent
-      ```
-
-  **Python Library Usage:**
-
-  The `jpredapi` package can also be used as a Python library. Refer to the official documentation for detailed examples on programmatic usage.
-
-  ## Expert Tips
-
-  *   **FASTA Format:** Ensure your input sequence file is correctly formatted in FASTA. This typically includes a header line starting with '>' followed by the sequence on subsequent lines.
-  *   **Job ID Management:** Keep track of your job IDs, especially when submitting multiple sequences. This is essential for retrieving specific results later.
-  *   **Error Handling:** Be prepared to handle potential errors, such as invalid sequences or server issues. The tool's output or return codes can provide clues for debugging.
-  *   **Check Documentation:** For the most up-to-date information and advanced features, consult the official documentation on ReadTheDocs.
-
-  ## Reference documentation
-  - [jpredapi @ GitHub](./references/github_com_MoseleyBioinformaticsLab_jpredapi.md)
-  - [jpredapi Overview (Anaconda.org)](./references/anaconda_org_channels_bioconda_packages_jpredapi_overview.md)
+- [jpredapi GitHub README](./references/github_com_MoseleyBioinformaticsLab_jpredapi_blob_master_README.rst.md)
+- [jpredapi Changelog and Version History](./references/github_com_MoseleyBioinformaticsLab_jpredapi_blob_master_CHANGELOG.rst.md)

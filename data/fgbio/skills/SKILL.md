@@ -1,6 +1,6 @@
 ---
 name: fgbio
-description: fgbio is a suite of high-performance tools for processing genomic sequencing data, specializing in UMI-based consensus calling and BAM file manipulation. Use when user asks to collapse reads into consensus sequences, group reads by UMI, process duplex sequencing data, or perform quality control on BAM files.
+description: fgbio is a high-performance command-line suite designed for processing genomic data with a focus on Unique Molecular Identifiers and duplex sequencing. Use when user asks to process UMIs, generate consensus reads, demultiplex FASTQs, or perform BAM file manipulation and quality control.
 homepage: https://github.com/fulcrumgenomics/fgbio
 ---
 
@@ -8,73 +8,88 @@ homepage: https://github.com/fulcrumgenomics/fgbio
 # fgbio
 
 ## Overview
+fgbio is a high-performance command-line suite designed for the rigorous processing of Next-Generation Sequencing (NGS) data. It is particularly distinguished by its advanced handling of Unique Molecular Identifiers (UMIs) and duplex sequencing, allowing for the generation of high-fidelity consensus reads that reduce sequencing and PCR errors. Beyond UMI processing, it provides essential utilities for FASTQ-to-BAM conversion, adapter clipping, and genomic file metadata management.
 
-fgbio is a suite of high-performance tools designed to handle the complexities of modern sequencing workflows. It is particularly essential for high-sensitivity applications where UMIs are used to reduce sequencing noise and identify low-frequency variants. The toolkit provides a robust framework for transforming raw reads into high-fidelity consensus sequences, alongside utilities for BAM manipulation, quality control, and reference genome standardization.
+## Core Execution Patterns
 
-## Core Workflows and CLI Patterns
+### Running fgbio
+fgbio is a Java-based application. While it can be run via `java -jar fgbio.jar`, it is most commonly invoked as a standalone command when installed via Bioconda.
 
-### UMI Consensus Calling Pipeline
-The most common use case for fgbio is collapsing multiple reads from the same original DNA molecule into a single consensus read.
+**Recommended Java Options:**
+For memory-intensive tools (like consensus calling), provide sufficient heap space:
+```bash
+java -Xmx4g -XX:+AggressiveOpts -XX:+AggressiveHeap -jar fgbio.jar <ToolName> [args]
+```
 
-1.  **Convert FASTQ to BAM and Extract UMIs**:
-    Use `FastqToBam` to convert raw reads while extracting UMIs into BAM tags (usually the `RX` tag).
-    ```bash
-    fgbio FastqToBam \
-        --input r1.fq.gz r2.fq.gz \
-        --read-structures 5M145T 5M145T \
-        --sample sample01 \
-        --output unmapped.bam
-    ```
-    *Note: `5M145T` means 5bp of Molecular ID followed by 145bp of Template.*
+### Read Structures
+Many fgbio tools (e.g., `FastqToBam`, `DemuxFastqs`) use a "Read Structure" string to define how bases in a FASTQ should be interpreted.
+- `T`: Template bases (the actual genomic sequence)
+- `B`: Sample Barcode bases
+- `M`: Unique Molecular Index (UMI) bases
+- `S`: Skipped bases
+- `+`: All remaining bases (e.g., `150T` or `+T`)
 
-2.  **Group Reads by UMI**:
-    After alignment (e.g., via BWA) and sorting, group reads that share the same UMI and mapping position.
-    ```bash
-    fgbio GroupReadsByUmi \
-        --input aligned.sorted.bam \
-        --strategy adjacency \
-        --edits 1 \
-        --output grouped.bam
-    ```
+**Example:** `8M142T` means the first 8 bases are a UMI and the remaining 142 are template.
 
-3.  **Call Consensus Reads**:
-    Generate the consensus sequences from the grouped reads.
-    ```bash
-    fgbio CallMolecularConsensusReads \
-        --input grouped.bam \
-        --output consensus.unmapped.bam \
-        --min-reads 1
-    ```
+## Common Workflows
 
-4.  **Filter Consensus Reads**:
-    Filter the resulting consensus BAM based on quality and supporting evidence.
-    ```bash
-    fgbio FilterConsensusReads \
-        --input consensus.aligned.bam \
-        --ref human_g1k_v37.fasta \
-        --min-reads 3 \
-        --max-read-error-rate 0.05 \
-        --output filtered.consensus.bam
-    ```
+### 1. UMI-Aware Consensus Calling
+This is the primary use case for fgbio. The standard pipeline involves:
+1. **FastqToBam**: Convert FASTQs to unmapped BAM (uBAM) while extracting UMIs into tags.
+2. **GroupReadsByUmi**: Group reads that originated from the same molecule.
+3. **CallMolecularConsensusReads**: Generate a single consensus read from each group.
+4. **FilterConsensusReads**: Filter the resulting consensus reads based on quality and support.
 
-### Duplex Sequencing
-For ultra-high sensitivity, fgbio supports duplex sequencing where both strands of a double-stranded DNA molecule are sequenced.
-*   Use `CallDuplexConsensusReads` to identify and collapse reads from both the 'top' and 'bottom' strands.
-*   This significantly reduces technical artifacts as true variants must appear on both strands.
+```bash
+# Grouping reads by UMI (requires coordinate-sorted BAM)
+fgbio GroupReadsByUmi --input aligned.bam --output grouped.bam --strategy Adjacency --edits 1
 
-### BAM Manipulation and QC
-*   **ClipBam**: Useful for clipping adapter sequences or fixed-length segments from the ends of reads without re-aligning.
-*   **ZipperBams**: Merges unmapped BAMs (containing metadata/UMIs) with aligned BAMs to produce a tagged, aligned BAM.
-*   **ErrorRateByReadPosition**: Provides a detailed breakdown of substitution error rates across read cycles, essential for identifying sequencing quality issues.
+# Generating consensus
+fgbio CallMolecularConsensusReads --input grouped.bam --output consensus.bam --min-reads 3
+```
 
-## Expert Tips and Best Practices
+### 2. Demultiplexing FASTQs
+Use `DemuxFastqs` to split FASTQs based on sample barcodes. It supports complex read structures and provides metrics on barcode matching.
 
-*   **Read Structures**: Master the `--read-structures` syntax. It is the primary way fgbio understands where UMIs, cell barcodes, and templates are located within your raw reads.
-*   **Memory Management**: Since fgbio is Java-based, ensure you provide enough heap memory for large BAM files using JVM flags: `java -Xmx8g -jar fgbio.jar ...`.
-*   **Sorting Requirements**: Many fgbio tools (like `GroupReadsByUmi`) require the input BAM to be sorted by template-coordinate. Use `fgbio SortBam --sort-order TemplateCoordinate` if your aligner doesn't provide this.
-*   **CRAM Support**: For modern workflows, use `--cram-ref-fasta` to enable direct reading and writing of CRAM files, saving significant disk space.
-*   **Pipe Support**: fgbio tools generally support piping via `/dev/stdin` and `/dev/stdout` to avoid unnecessary intermediate disk I/O in complex pipelines.
+```bash
+fgbio DemuxFastqs \
+    --inputs r1.fq r2.fq \
+    --read-structures 8B+T 8B+T \
+    --metadata SampleSheet.csv \
+    --output output_folder/
+```
+
+### 3. BAM Manipulation and QC
+- **ClipBam**: Clips reads to remove adapter sequences or overlapping segments in pairs.
+- **ErrorRateByReadPosition**: Provides a detailed breakdown of substitution errors, useful for identifying sequencing artifacts.
+- **ZipperBams**: Merges an unmapped BAM (containing metadata/tags) with a mapped BAM (containing alignments).
+
+## Expert Tips
+- **Memory Management**: Tools like `SortBam` and `GroupReadsByUmi` are memory-intensive. Always monitor the `-Xmx` setting.
+- **Validation**: Before logging issues, validate your BAM files using Picard's `ValidateSamFile`, as fgbio expects strictly formatted inputs.
+- **Read Structure Validation**: Use the `+` operator for the last segment of a read structure to handle variable-length reads gracefully.
+- **Thread Scaling**: For `DemuxFastqs`, performance gains typically plateau after 2-4 threads; adding more may not significantly decrease runtime.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| CollectAlternateContigNames | Collates the alternate contig names from an NCBI assembly report. The input is to be the '*.assembly_report.txt' obtained from NCBI. The output will be a "sequence dictionary", which is a valid SAM file, containing the version header line and one line per contig. The primary contig name (i.e. '@SQ.SN') is specified with '--primary' option, while alternate names (i.e. aliases) are specified with the '--alternates' option. The 'Assigned-Molecule' column, if specified as an '--alternate', will only be used for sequences with 'Sequence-Role' 'assembled-molecule'. When updating an existing sequence dictionary with '--existing' the primary contig names must match. I.e. the contig name from the assembly report column specified by '--primary' must match the contig name in the existing sequence dictionary ('@SQ.SN'). All contigs in the existing sequence dictionary must be present in the assembly report. Furthermore, contigs in the assembly report not found in the sequence dictionary will be ignored. |
+| DemuxFastqs | Performs sample demultiplexing on FASTQs. |
+| ExtractBasecallingParamsForPicard | Extracts sample and library information from an sample sheet for a given lane. |
+| ExtractIlluminaRunInfo | Extracts information about an Illumina sequencing run from the RunInfo.xml. |
+| FastqToBam | Generates an unmapped BAM (or SAM or CRAM) file from fastq files. Takes in one or more fastq files (optionally gzipped), each representing a different sequencing read (e.g. R1, R2, I1 or I2) and can use a set of read structures to allocate bases in those reads to template reads, sample indices, unique molecular indices, cell barcodes, or to designate bases to be skipped over. |
+| HardMaskFasta | Converts soft-masked sequence to hard-masked in a FASTA file. All lower case bases are converted to Ns, all other bases are left unchanged. Line lengths are also standardized to allow easy indexing with 'samtools faidx' |
+| SortFastq | Sorts a FASTQ file. Sorts the records in a FASTQ file based on the lexicographic ordering of their read names. Input and output files can be either uncompressed or gzip-compressed. |
+| SortSequenceDictionary | Sorts a sequence dictionary file in the order of another sequence dictionary. |
+| TrimFastq | Trims reads in one or more line-matched fastq files to a specific read length. The individual fastq files are expected to have the same set of reads, as would be the case with an 'r1.fastq' and 'r2.fastq' file for the same sample. |
+| UpdateFastaContigNames | Updates the sequence names in a FASTA. |
+| UpdateIntervalListContigNames | Updates the sequence names in an Interval List file. |
 
 ## Reference documentation
-- [fgbio GitHub Repository](./references/github_com_fulcrumgenomics_fgbio.md)
-- [fgbio Wiki and Detailed Tool Guides](./references/github_com_fulcrumgenomics_fgbio_wiki.md)
+- [fgbio Tools Overview](./references/fulcrumgenomics_github_io_fgbio_tools_latest.md)
+- [DemuxFastqs Documentation](./references/fulcrumgenomics_github_io_fgbio_tools_latest_DemuxFastqs.html.md)
+- [fgbio Metrics Descriptions](./references/fulcrumgenomics_github_io_fgbio_metrics_latest.md)
+- [Read Structures Wiki](./references/github_com_fulcrumgenomics_fgbio_wiki_Read-Structures.md)

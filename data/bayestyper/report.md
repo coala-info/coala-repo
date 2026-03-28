@@ -56,3 +56,6 @@ Commands:
 	addAttributes		add variant, allele and/or trio attributes
 ```
 
+
+## Metadata
+- **Skill**: generated

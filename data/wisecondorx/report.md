@@ -169,3 +169,6 @@ options:
   --seed SEED           Seed for segmentation algorithm (default: None)
 ```
 
+
+## Metadata
+- **Skill**: generated

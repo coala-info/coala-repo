@@ -1,6 +1,6 @@
 ---
 name: artic
-description: The artic tool processes viral nanopore sequencing data from tiling amplicon protocols to generate consensus sequences and variant calls. Use when user asks to filter reads by length, perform primer trimming, generate consensus sequences from Nanopore data, or call variants using Medaka or Nanopolish.
+description: The ARTIC tool processes viral sequencing data from Oxford Nanopore devices to generate high-quality consensus genomes and validated variants. Use when user asks to filter reads by length, run the MinION pipeline for tiled amplicon data, or perform genomic surveillance for infectious disease outbreaks.
 homepage: https://github.com/artic-network/fieldbioinformatics
 ---
 
@@ -9,51 +9,60 @@ homepage: https://github.com/artic-network/fieldbioinformatics
 
 ## Overview
 
-The `artic` tool is a specialized bioinformatics suite designed for the analysis of viral genomes sequenced using Oxford Nanopore Technologies (ONT). It is optimized for data generated from tiling amplicon protocols, providing a standardized workflow to transform basecalled reads into high-quality consensus sequences and validated variant calls. It automates complex steps such as read length filtering, primer site stripping, and coverage normalization.
+The ARTIC (Anthropogenic Response to Infectious Diseases) skill provides a specialized workflow for processing viral sequencing data, primarily from Oxford Nanopore devices. It is designed to transform raw sequencing reads into high-quality consensus genomes and validated variants. This skill is essential for researchers and public health professionals working on outbreak response, allowing for rapid, field-deployable genomic surveillance using standardized "lab-in-a-suitcase" protocols.
 
-## Installation and Setup
+## Core CLI Workflows
 
-The recommended way to install the ARTIC pipeline is via Conda:
+The `artic` pipeline (fieldbioinformatics) is the primary tool for processing tiled amplicon data.
 
-```bash
-conda install -c bioconda -c conda-forge artic
-```
-
-Ensure you have the necessary primer schemes downloaded. The pipeline expects a scheme directory containing the reference FASTA and the primer BED file.
-
-## Common CLI Patterns
-
-### 1. Read Filtering (guppyplex)
-Before running the main pipeline, use `guppyplex` to filter reads by length (to remove fragments/chimeras) and quality.
+### 1. Read Filtering and Demultiplexing
+Before assembly, reads must be filtered by length to match the expected amplicon size (e.g., 400bp for many schemes).
 
 ```bash
-artic guppyplex --min-length 400 --max-length 700 --directory <path_to_fastq> --prefix <sample_name>
+# Filter reads by length and quality
+artic guppyplex --directory <path_to_fastq> --min-length 400 --max-length 700 --output filtered_reads.fastq
 ```
-*   **Tip**: Set the min/max length to approximately ±50-100bp of your expected amplicon size.
 
-### 2. The Main Pipeline (minion)
-The `minion` command is the primary entry point for Nanopore data. It handles alignment, signal-level or medaka-based polishing, and variant calling.
+### 2. The Main Pipeline (MinION)
+The `minion` command executes the full workflow: alignment, primer trimming, signal normalization, and variant calling.
 
 ```bash
-artic minion --medaka --optimised --threads 8 --scheme-directory ~/artic/schemes --read-file <filtered_fastq>.fastq <scheme_name> <sample_name>
+# Standard run using Medaka for variant calling
+artic minion --medaka --normalise 100 --threads 8 --scheme-directory ~/artic/schemes --read-file filtered_reads.fastq <scheme_name> <sample_id>
 ```
 
-*   **--medaka**: Uses Medaka for consensus correction (standard for newer ONT chemistry).
-*   **--nanopolish**: Use this if you have raw fast5 signal data and wish to use signal-level polishing.
-*   **--optimised**: Applies performance optimizations for the variant caller.
+**Key Parameters:**
+- `--medaka`: Recommended for Nanopore data to improve consensus accuracy.
+- `--normalise`: Limits maximum depth per amplicon (e.g., 100x) to speed up processing without losing sensitivity.
+- `--scheme-directory`: Path to the directory containing primer schemes and reference sequences.
 
-### 3. Handling Segmented Genomes
-For viruses with segmented genomes or multi-reference schemes (like Mpox), ensure you are using version 1.6.0+ which supports reference selection.
+### 3. Working with Primer Schemes
+ARTIC relies on specific primer schemes designed via `PrimalScheme`. Ensure your scheme directory follows the required structure:
+`[scheme_name]/[v1.0.0]/[scheme_name].reference.fasta` and `[scheme_name].scheme.bed`.
 
-## Expert Tips and Best Practices
+## Expert Tips & Best Practices
 
-*   **Scheme Matching**: The `<scheme_name>` must match the folder name in your `--scheme-directory`. Ensure the version (e.g., V3, V4.1) matches the physical primers used in the lab.
-*   **Variant Callers**: Recent versions (1.8.x) have improved support for **Clair3**. If using Clair3, ensure the model matches your flowcell and basecalling kit.
-*   **Primer Trimming**: The pipeline uses `align_trim` to remove primer sequences from the ends of reads. This is critical to prevent primer-derived sequences from being interpreted as biological variants.
-*   **Normalisation**: The pipeline automatically performs amplicon coverage normalisation to speed up processing and reduce bias in high-coverage regions.
-*   **Troubleshooting**: If the pipeline fails at the consensus stage, check the `make_depth_mask` output to see if low coverage in specific regions is preventing a complete sequence from being generated.
+- **Wastewater Surveillance**: When processing environmental samples (WBE), expect lower viral concentrations and higher background noise. Use the `artic-measles/400/v1.0.0` or similar broad-spectrum schemes to capture genetic variation across multiple serotypes.
+- **Metagenomics (SMART-9N)**: For untargeted viral surveillance, use the optimized SMART-9N protocol. This involves host depletion (DNase treatment) followed by magnetic bead extraction to enrich for both DNA and RNA viruses.
+- **Primer Trimming**: Always ensure the correct version of the primer scheme is specified. Incorrect schemes lead to "primer-derived" variants being incorrectly called in the final consensus.
+- **In-frame Deletions**: When reviewing variant outputs, verify that deletions are correctly identified as in-frame to maintain the viral open reading frame (ORF) in the consensus.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| artic export | Export artic results to various formats. |
+| artic filter | Filter FASTQ reads based on length. |
+| artic minion | ARTIC pipeline for MinION data |
+| artic rampart | RAMPART is a tool for the analysis of sequencing data from pathogen surveillance. |
+| artic_run | Run the artic pipeline |
+| guppyplex | Basecalled and demultiplexed (guppy) results directory |
 
 ## Reference documentation
-- [ARTIC Fieldbioinformatics GitHub](./references/github_com_artic-network_fieldbioinformatics.md)
-- [ARTIC Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_artic_overview.md)
-- [ARTIC Version Tags and Release Notes](./references/github_com_artic-network_fieldbioinformatics_tags.md)
+
+- [The ARTIC fieldbioinformatics pipeline](./references/github_com_artic-network_fieldbioinformatics.md)
+- [Optimisation of SMART-9N for viral metagenomics](./references/artic_network_2025-09-08-smart9n-optimisation.html.md)
+- [Applying the ARTIC approach to wastewater](./references/artic_network_2025-08-14-wastewater_based_epidemiology_AGD.html.md)
+- [Measles sequencing update and primer schemes](./references/artic_network_2025-08-11-artic-measles-v1.0.0-scheme.html.md)

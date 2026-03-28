@@ -411,3 +411,6 @@ Options:
   --dir, -d DIR         Storage directory (default: .)
 ```
 
+
+## Metadata
+- **Skill**: generated

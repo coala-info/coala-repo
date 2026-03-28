@@ -1,6 +1,6 @@
 ---
 name: gotree
-description: Gotree is a command-line toolkit for the manipulation, analysis, and visualization of phylogenetic trees. Use when user asks to reformat tree files, compute bootstrap support, prune specific tips, calculate tree statistics, or generate random tree models.
+description: "Gotree is a command-line toolkit for the rapid manipulation, analysis, and simulation of phylogenetic trees. Use when user asks to manipulate branch lengths, generate random trees, extract tree statistics, or reconstruct ancestral characters and sequences."
 homepage: https://github.com/fredericlemoine/gotree
 ---
 
@@ -8,36 +8,91 @@ homepage: https://github.com/fredericlemoine/gotree
 # gotree
 
 ## Overview
-The `gotree` skill provides a specialized interface for handling phylogenetic data through a modular, pipe-oriented CLI. It transforms Claude into a bioinformatics expert capable of performing complex tree operations—such as collapsing clades based on support values, comparing topologies, or downloading data directly from iTOL and TreeBase—without requiring manual script writing for standard tree manipulations.
+
+Gotree is a high-performance command-line toolkit designed for the rapid manipulation and analysis of phylogenetic trees. It follows the Unix philosophy, allowing users to pipe tree data between commands to build complex processing workflows. It supports a wide variety of input formats and can fetch trees directly from remote databases like iTOL and TreeBase. Use this skill to automate tree editing, generate random trees for simulations, or extract specific metadata from large phylogenetic datasets.
 
 ## Core CLI Patterns
-Gotree follows a "command subcommand" structure. Most commands read from stdin and write to stdout, allowing for powerful chaining.
 
 ### Input and Output
-- **Standard Input**: Use `-i` or pipe data into the command.
-- **Remote Files**: Gotree natively supports URLs.
-- **Format Conversion**: Use `gotree reformat [format]` (e.g., `newick`, `nexus`, `phyloxml`) to convert between types.
+Gotree commands typically read from a file or standard input and write to standard output.
+- **Local files**: `gotree <command> -i tree.nwk`
+- **Piping**: `cat tree.nwk | gotree <command>`
+- **Remote files**: 
+  - `gotree <command> -i http://example.com/tree.nwk`
+  - `gotree <command> -i itol://<ID>`
+  - `gotree <command> -i treebase://<ID>`
 
-### Common Workflows
-- **Visualization**: 
-  - Quick ASCII preview: `gotree draw text -i tree.nwk`
-  - High-quality render: `gotree draw png -i tree.nwk -o tree.png` (supports `--layout` radial or circular).
-- **Tree Statistics**: 
-  - Get node/tip counts and branch length sums: `gotree stats -i tree.nwk`
-- **Filtering and Pruning**:
-  - List all labels: `gotree labels -i tree.nwk`
-  - Remove specific tips: `gotree prune -i tree.nwk -l tip_name`
-- **Bootstrap Analysis**:
-  - Compute Transfer Bootstrap Expectation (TBE): `gotree compute support tbe -t ref.nwk -b boot.nwk`
-  - Compute Felsenstein Bootstrap (FBP): `gotree compute support fbp -t ref.nwk -b boot.nwk`
+### Visualization
+Quickly view tree structures in the terminal or export to vector formats.
+- **Text-based**: `gotree draw text -i tree.nwk --with-node-labels`
+- **SVG**: `gotree draw svg -i tree.nwk -o tree.svg`
+
+### Tree Statistics and Labels
+- **Summary stats**: `gotree stats -i tree.nwk` (provides nodes, tips, edges, branch length sums, etc.)
+- **List labels**: `gotree labels --tips --internal -i tree.nwk`
+
+### Branch Length Manipulation
+The `brlen` subcommand allows for deterministic or random modifications.
+- **Scale**: `gotree brlen scale -f 1.5 -i tree.nwk` (multiplies all lengths by 1.5)
+- **Round**: `gotree brlen round -p 3 -i tree.nwk` (rounds to 3 decimal places)
+- **Clear**: `gotree brlen clear -i tree.nwk` (removes all branch lengths)
+
+### Generation and Simulation
+Generate trees for testing or null model comparisons.
+- **Uniform trees**: `gotree generate uniformtree -l 100 -n 10` (generates 10 trees with 100 tips each)
 
 ## Expert Tips
-- **Chaining**: Combine commands to perform complex edits in one line. For example, to scale branch lengths and then collapse low-support nodes:
-  `gotree brlen scale -f 1.5 -i tree.nwk | gotree collapse clades --support-min 70`
-- **Internal Nodes**: When listing labels or annotating, use the `--internal` flag to include non-tip nodes.
-- **Random Trees**: Use `gotree generate` (e.g., `uniformtree`, `yuletree`) to create null models for topological comparisons.
-- **Gzipped Files**: Gotree automatically detects and handles `.gz` extensions for input files.
+
+- **Gzip Support**: Gotree natively handles `.gz` files. You do not need to decompress them before processing.
+- **Chaining Commands**: Since most commands output Newick by default, you can chain operations:
+  `gotree brlen scale -f 2 -i tree.nwk | gotree prune -l tip_list.txt | gotree stats`
+- **Internal Nodes**: When working with node labels or supports, use the `--internal` flag to ensure internal node data is processed or displayed.
+- **Ancestral Reconstruction**: Use `acr` for parsimonious ancestral character reconstruction and `asr` for ancestral sequence reconstruction when provided with an alignment.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| acr | Reconstructs most parsimonious ancestral characters. |
+| asr | Reconstructs most parsimonious ancestral sequences. |
+| brlen | Set a minimum branch length, or set random branch lengths, or multiply branch lengths by a factor. |
+| collapse | Collapse branches of input trees. |
+| comment | Modify branch/node comments |
+| completion | Generate the autocompletion script for gotree for the specified shell. |
+| compute | Computations such as consensus and supports. |
+| cut | Cut the tree |
+| draw | Draw trees |
+| generate | Generate random trees |
+| gotree compare | Compare full trees, edges, or tips. |
+| gotree download | Download trees or images from different servers (itol, ncbi taxonomy) |
+| gotree graft | Graft a tree t2 on a tree t1, at the position of a given tip. The root of t2 will replace the given tip of t2. |
+| gotree labels | Lists labels of all tree tips |
+| gotree prune | This tool removes tips of the input reference tree that : |
+| gotree rtt | Compute Root To Tip regression. |
+| gotree sample | Takes a subsample of the set of trees from the input file. |
+| gotree shuffletips | Shuffle tip names of an input tree. |
+| gotree unroot | Unroot input tree. |
+| gotree upload | Upload a tree to a given server |
+| gotree_annotate | Annotates internal branches of a tree with given data. |
+| gotree_divide | Divide an input tree file into several tree files |
+| gotree_merge | Merges two rooted trees by adding a new root connecting two former roots. |
+| gotree_rotate | Rotates children of internal nodes by different means. |
+| ltt | Compute Lineage Through Time data. |
+| matrix | Prints distance matrix associated to the input tree. |
+| nni | Perform Nearest Neighbor Interchange (NNI) rearrangement on a tree. |
+| reformat | Reformats an input tree file into different formats. |
+| rename | Rename nodes/tips of the input tree. |
+| repopulate | Re populate the tree with tips that have the same sequences. |
+| reroot | Reroot trees using an outgroup or at midpoint. |
+| resolve | Resolve multifurcations by adding 0 length branches. |
+| stats | Print statistics about the tree |
+| subtree | Select a subtree from the input tree whose root has the given name. |
+| support | Modify supports of branches from input trees |
+| version | Displays version of gotree. |
 
 ## Reference documentation
-- [GitHub Repository and README](./references/github_com_evolbioinfo_gotree.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_gotree_overview.md)
+
+- [Gotree GitHub README](./references/github_com_evolbioinfo_gotree_blob_master_README.md)
+- [Gotree Command Documentation](./references/github_com_evolbioinfo_gotree_tree_master_docs.md)

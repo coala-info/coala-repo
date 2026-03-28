@@ -1,6 +1,6 @@
 ---
 name: checkv
-description: "CheckV evaluates the quality of viral contigs by identifying host contamination, estimating genome completeness, and assigning quality tiers. Use when user asks to assess viral genome quality, remove host contamination from proviruses, or estimate the completeness of metagenomic viral sequences."
+description: CheckV assesses the quality of single-nucleus viral genomes by estimating completeness, identifying closed circular genomes, and detecting integrated prophages. Use when user asks to estimate viral genome completeness, identify host contamination in proviruses, or run the end-to-end viral quality assessment pipeline.
 homepage: https://bitbucket.org/berkeleylab/checkv
 ---
 
@@ -8,46 +8,45 @@ homepage: https://bitbucket.org/berkeleylab/checkv
 # checkv
 
 ## Overview
-CheckV is a comprehensive pipeline designed to evaluate the quality of viral contigs identified from metagenomes. It performs three primary functions: identifying and removing host contamination from proviruses, estimating the completeness of viral genomes based on a large database of reference HMMs and complete genomes, and classifying contigs into quality tiers. This tool is essential for ensuring that viral sequences recovered from environmental samples are high-quality and ready for downstream comparative genomics or ecological analysis.
+CheckV is a specialized command-line tool designed to assess the quality of single-nucleus viral genomes (UViGs). It provides essential metrics for viral ecology, including the estimation of genome completeness, the identification of closed circular genomes, and the detection of integrated prophages within host scaffolds. This skill assists in executing the CheckV pipeline and interpreting its multi-stage output.
 
-## Core Workflows
+## Core Workflow
+The standard CheckV pipeline is executed through the `end_to_end` command, which automates the identification of viral genes, estimation of completeness, and removal of host contamination.
 
-### Standard End-to-End Pipeline
-The most common way to run CheckV is using the `end_to_end` command, which executes the full suite of modules (contamination detection, completeness estimation, and quality classification).
-
+### Basic Execution
 ```bash
-checkv end_to_end input_file.fasta output_directory -t 16 --db /path/to/checkv_db
+# Run the full pipeline
+checkv end_to_end input_sequences.fasta output_directory -t 16
 ```
 
-### Modular Execution
-If you only need specific information or want to re-run parts of the analysis, you can call individual modules:
-
-- **Contamination Detection**: Identify and remove host regions from viral contigs.
-  ```bash
-  checkv contamination input.fasta output_dir --db /path/to/checkv_db
-  ```
-- **Completeness Estimation**: Calculate how much of the viral genome is present.
-  ```bash
-  checkv completeness input.fasta output_dir --db /path/to/checkv_db
-  ```
+### Key Sub-commands
+- `contamination`: Identifies and removes host sequences from integrated proviruses.
+- `completeness`: Estimates the percentage of the viral genome present based on a database of complete viral genomes.
+- `quality_summary`: Generates the primary summary file (`quality_summary.tsv`) containing the final quality tier (Complete, High-quality, Medium-quality, Low-quality, or Not-determined).
 
 ## Expert Tips and Best Practices
+- **Database Setup**: Ensure the `CHECKVDB` environment variable is set to the location of the CheckV reference database before running commands.
+- **Prophage Detection**: When working with integrated viruses, CheckV uses a combination of gene-based (HMM) and k-mer based approaches to find the virus-host boundary. Review the `contamination.tsv` file to see specific coordinates.
+- **Circular Contigs**: CheckV identifies circularity via terminal repeats. Contigs flagged as circular are automatically assigned 100% completeness.
+- **Resource Allocation**: Use the `-t` flag to specify CPU threads. The HMM search stage (prodigal and diamond) is the most computationally intensive part of the workflow.
+- **Interpreting Results**: 
+    - Focus on "High-quality" (>90% completeness) and "Complete" genomes for robust comparative genomics.
+    - "Not-determined" status often occurs for short contigs (<2kb) or those with no viral gene hits.
 
-- **Database Setup**: Before first use, ensure the CheckV database is downloaded and the environment variable `CHECKVDB` is set, or provide the path via the `--db` flag.
-- **Input Requirements**: Input FASTA files should contain sequences already identified as viral (e.g., by VIBRANT, VirSorter2, or DeepVirFinder). CheckV is designed to assess quality, not to perform initial viral discovery.
-- **Provirus Handling**: CheckV is particularly effective at identifying the boundaries of integrated proviruses. Check the `contamination.tsv` output to see the coordinates of the predicted viral region.
-- **Interpreting Quality Tiers**:
-    - **Complete**: High confidence the full genome is present (e.g., contains DTRs or ITRs).
-    - **High-quality**: >90% estimated completeness.
-    - **Medium-quality**: 50-90% estimated completeness.
-    - **Low-quality**: <50% estimated completeness.
-- **Resource Allocation**: Use the `-t` flag to specify threads. Completeness estimation is computationally intensive and benefits significantly from parallelization.
 
-## Key Output Files
-- `quality_summary.tsv`: The primary results file containing completeness, contamination, and quality tier for each contig.
-- `completeness.tsv`: Detailed breakdown of how completeness was calculated (HMM-based vs. AAI-based).
-- `contamination.tsv`: Coordinates of host vs. viral regions for proviruses.
-- `proviruses.fna`: FASTA file containing the extracted viral portions of host-contaminated contigs.
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| checkv contamination | Estimate host contamination for integrated proviruses |
+| checkv end_to_end | Run full pipeline to estimate completeness, contamination, and identify closed genomes |
+| checkv update_database | Update CheckV's database with your own complete genomes |
+| checkv_complete_genomes | Identify complete genomes based on terminal repeats and flanking host regions |
+| checkv_completeness | Estimate completeness for genome fragments |
+| checkv_download_database | Download the latest version of CheckV's database |
+| checkv_quality_summary | Summarize results across modules |
 
 ## Reference documentation
 - [CheckV Bitbucket Repository](./references/bitbucket_org_berkeleylab_checkv.md)
+- [Bioconda CheckV Overview](./references/anaconda_org_channels_bioconda_packages_checkv_overview.md)

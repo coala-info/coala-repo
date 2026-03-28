@@ -1,1 +1,79 @@
-Quick Start Guide Toggle navigation dDocent Why dDocent? Documentation Quick Start Guide Full User Guide Assembly Tutorial SNP Filtering Tutorial Citing dDocent Papers using dDocent Download Bioconda Download and Install Current Release and Manual Install Developmental Version Blog Help Quick Start Guide Who reads manuals? Disclaimer This is a work in progress Don’t rush this thing. Do it the right way! Read the User Guide ! Finish the Assembly Tutorial ! Finish the SNP Filtering Tutorial ! After properly demultiplexing and naming your data, run dDocent once with read trimming to test install. Create a new folder called RefOpt Place a subset of individuals of your total data set Less than 5 individuals per region or locality This only needs to capture the total variability present in your data set Include all .fq.gz files for each individual Run ReferenceOpt.sh Visualize data in kopt.data Plot values for each k1,k2 combination across similarity thresholds Pick a similarity threshold at the point of inflection on the curve * Here’s some R code to quickly plot this for you: library ( ggplot2 ) data.table &lt;- read.table ( "kopt.data" , header = FALSE , col.names = c ( "k1" , "k2" , "Similarity" , "Contigs" )) data.table $ K1K2 &lt;- paste ( data.table $ k1 , data.table $ k2 , sep = "," ) df = data.frame ( data.table ) df $ K1K2 &lt;- as.factor ( df $ K1K2 ) p &lt;- ggplot ( df , aes ( x = Similarity , y = Contigs , group = K1K2 )) + scale_x_continuous ( breaks = seq ( 0.8 , 0.98 , 0.01 )) + geom_line ( aes ( colour = K1K2 )) p Run RefMapOpt.sh using the similarity threshold picked from step 7. Note- You will need to have the trimmed reads files *.R1.fq.gz and *.R2.fq.gz included to run this script Pick optimal k1,k2 cutoffs. Ideally, you want to maximize properly paired mappings and coverage while minimizing mismatched reads. Run dDocent on this subset with the correct assembly parameters, skipping mapping and snp calling. Copy the reference.fasta file from this RefOpt directory to your main working directory. Run dDocent on your full data set, skipping trimming and assembly. Filter SNPs using what you’ve learned from SNP Filtering Tutorial , but also do your own exploring. Repeat. &copy; Jon Puritz &nbsp;&bull;&nbsp; 2025 "The "d" is silent, hillbilly" - Django Theme by beautiful-jekyll
+Toggle navigation
+
+[dDocent](https://jpuritz.github.io/dDocent/)
+
+* [Why dDocent?](/why)
+* Documentation
+
+  [Quick Start Guide](/quick)
+  [Full User Guide](/UserGuide)
+  [Assembly Tutorial](/assembly)
+  [SNP Filtering Tutorial](/filtering)
+  [Citing dDocent](/citing)
+  [Papers using dDocent](/using)
+* Download
+
+  [Bioconda Download and Install](/bioconda)
+  [Current Release and Manual Install](/downloads)
+  [Developmental Version](https://github.com/jpuritz/dDocent)
+* [Blog](/blog)
+* [Help](/help)
+
+[![](/dDocent.png)](https://jpuritz.github.io/dDocent/%20)
+
+# Quick Start Guide
+
+---
+
+Who reads manuals?
+
+**Disclaimer** This is a work in progress
+
+# Don’t rush this thing. Do it the right way!
+
+1. Read the [User Guide](/UserGuide)!
+2. Finish the [Assembly Tutorial](/assembly)!
+3. Finish the [SNP Filtering Tutorial](/filtering)!
+4. After properly demultiplexing and naming your data, run dDocent once with read trimming to test install.
+5. Create a new folder called `RefOpt`
+6. Place a subset of individuals of your total data set
+   * Less than 5 individuals per region or locality
+   * This only needs to capture the total variability present in your data set
+   * Include all `.fq.gz` files for each individual
+7. Run [ReferenceOpt.sh](https://github.com/jpuritz/dDocent/blob/master/scripts/ReferenceOpt.sh)
+   * Visualize data in `kopt.data`
+   * Plot values for each k1,k2 combination across similarity thresholds
+   * Pick a similarity threshold at the point of inflection on the curve
+     \* Here’s some R code to quickly plot this for you:
+
+```
+library(ggplot2)
+
+data.table <- read.table("kopt.data", header = FALSE, col.names= c("k1","k2","Similarity", "Contigs"))
+
+data.table$K1K2 <- paste(data.table$k1, data.table$k2, sep=",")
+
+df=data.frame(data.table)
+df$K1K2 <- as.factor(df$K1K2)
+
+p <- ggplot(df, aes(x=Similarity, y=Contigs, group=K1K2)) + scale_x_continuous(breaks=seq(0.8,0.98,0.01)) + geom_line(aes(colour = K1K2))
+p
+```
+
+1. Run [RefMapOpt.sh](https://github.com/jpuritz/dDocent/blob/master/scripts/RefMapOpt.sh) using the similarity threshold picked from step 7.
+   * **Note- You will need to have the trimmed reads files `*.R1.fq.gz` and `*.R2.fq.gz` included to run this script**
+   * Pick optimal k1,k2 cutoffs. Ideally, you want to maximize properly paired mappings and coverage while minimizing mismatched reads.
+2. Run dDocent on this subset with the correct assembly parameters, skipping mapping and snp calling.
+3. Copy the `reference.fasta` file from this `RefOpt` directory to your main working directory.
+4. Run dDocent on your full data set, skipping trimming and assembly.
+5. Filter SNPs using what you’ve learned from [SNP Filtering Tutorial](/filtering), but also do your own exploring.
+6. Repeat.
+
+© [Jon Puritz](http://MarineEvoEco.com)
+ •
+2025
+
+"The "d" is silent, hillbilly" - Django
+
+Theme by
+[beautiful-jekyll](http://deanattali.com/beautiful-jekyll/)

@@ -1,0 +1,189 @@
+[kPAL](index.html)
+
+latest
+
+* [Introduction](intro.html)
+* [Installation](install.html)
+* [Methodology](method.html)
+* [Tutorial](tutorial.html)
+* [Using the Python library](library.html)
+
+* [API reference](api.html)
+
+* [Development](development.html)
+* [*k*-mer profile file format](fileformat.html)
+* Changelog
+  + [Version 2.1.2](#version-2-1-2)
+  + [Version 2.1.1](#version-2-1-1)
+  + [Version 2.1.0](#version-2-1-0)
+  + [Version 2.0.1](#version-2-0-1)
+  + [Version 2.0.0](#version-2-0-0)
+  + [Version 1.0.1](#version-1-0-1)
+  + [Version 1.0.0](#version-1-0-0)
+    - [Support Python 3.3 and 3.4](#support-python-3-3-and-3-4)
+    - [Generalize custom function arguments](#generalize-custom-function-arguments)
+  + [Version 0.3.0](#version-0-3-0)
+  + [Version 0.2.0](#version-0-2-0)
+  + [Version 0.1.0](#version-0-1-0)
+* [Copyright](copyright.html)
+
+[kPAL](index.html)
+
+* [Docs](index.html) »
+* Changelog
+* [Edit on GitHub](https://github.com/LUMC/kPAL/blob/master/doc/changelog.rst)
+
+---
+
+# Changelog[¶](#changelog "Permalink to this headline")
+
+This is a record of changes made between each kMer release.
+
+## Version 2.1.2[¶](#version-2-1-2 "Permalink to this headline")
+
+Release date to be decided.
+
+## Version 2.1.1[¶](#version-2-1-1 "Permalink to this headline")
+
+Released on August 14th, 2015.
+
+* Option to create a *k*-mer profile per FASTA record instead of per FASTA
+  file (use `kpal count --by-record` on the command line or
+  kpal.klib.Profile.from\_fasta\_by\_record in the Python API).
+* GitHub project moved to [LUMC/kPAL](https://github.com/LUMC/kPAL).
+* Change default precision to 10 decimals.
+
+## Version 2.1.0[¶](#version-2-1-0 "Permalink to this headline")
+
+Released on November 21st, 2014.
+
+* Save profiles from several files to one file (`cat` subcommand).
+
+## Version 2.0.1[¶](#version-2-0-1 "Permalink to this headline")
+
+Released on November 21st, 2014.
+
+* Fixed a major bug that made the command line interface unable to start.
+
+## Version 2.0.0[¶](#version-2-0-0 "Permalink to this headline")
+
+Released on November 18th, 2014.
+
+* Rename from kMer to kPAL (k-mer profile analysis library). The Python
+  package is now kpal (was k\_mer). The command line interface is now
+  `kpal` (was `kMer`).
+
+## Version 1.0.1[¶](#version-1-0-1 "Permalink to this headline")
+
+Released on October 3rd, 2014.
+
+* Fix typo in setuptools trove classifier which made it impossible to push to
+  PyPI.
+
+## Version 1.0.0[¶](#version-1-0-0 "Permalink to this headline")
+
+Released on October 2nd, 2014.
+
+* Also count *k*-mers if *k* equals the length of the string.
+* Python 2.6 compatibility.
+* Added unit tests and a [tox](https://testrun.org/tox/) configuration.
+* Use a NumPy ndarray for storing *k*-mer counts.
+* New multi-profile HDF5 file format (see [k-mer profile file format](fileformat.html#fileformat)).
+* Fix splitting a profile for calculating balance. Palindromes were previously
+  not taken into account when splitting a profile. We now double all counts,
+  so palindrome counts can be evenly distributed over both sides (see [GitLab
+  #1](https://git.lumc.nl/j.f.j.laros/k-mer/issues/1)).
+* Our own implementation of a vector’s median contained two bugs. Better to
+  use a library for this.
+* Fix Euclidean distance between two vectors. Don’t add one to the sum of
+  squares. The distance between two empty vectors should be 0, not 1.
+* Rename k\_mer.klib.kMer to k\_mer.klib.Profile.
+* Support Python 3.3 and 3.4 ([see below](#v1-0-0-py3)).
+* Generalize custom function arguments ([see below](#v1-0-0-custom)).
+* [Travis CI](https://travis-ci.org/LUMC/kMer) configuration.
+* [Sphinx documentation](http://kmer.readthedocs.org/) including a user
+  guide and API reference.
+* Renamed the index command to count.
+* Renamed the diff command to distance and the builtin pairwise distance
+  functions from diff-prod and diff-sum to just prod and sum.
+
+### Support Python 3.3 and 3.4[¶](#support-python-3-3-and-3-4 "Permalink to this headline")
+
+*TL;DR:* kMer supports Python 2 and 3 and every module has the following line
+at the top:
+
+```
+>>> from __future__ import (absolute_import, division, print_function,
+                            unicode_literals)
+```
+
+We now support Python versions 2.6, 2.7, 3.3, and 3.4 in a single codebase
+without using 2to3. We don’t support Python 3.2 because BioPython does not.
+
+We use the [Python future](http://python-future.org/) package as a
+compatibility layer between Python 2 and Python 3. The goal is to use a
+single, clean Python 3.x-compatible codebase to support both Python 2 and
+Python 3 with minimal overhead.
+
+Most changes are quite straightforward (e.g., absolute imports, print
+statement, division operator). The main painpoint is of course the bytestring
+versus unicode story. We now [import unicode\_literals](http://python-future.org/imports.html#should-i-import-unicode-literals) in
+each module and maintain that all text in kMer is unicode (unicode in Python
+2, str in Python 3).
+
+### Generalize custom function arguments[¶](#generalize-custom-function-arguments "Permalink to this headline")
+
+Custom function arguments in the command line interface can now be either a
+Python expression or importable name. For example, all commands accepting a
+summary function argument, also except a custom summary function argument
+which should be one of:
+
+1. A Python expression over the NumPy ndarray values (e.g.,
+   `np.max(values)`).
+2. An importable name (e.g., `package.module.summary`) that can be called
+   with an ndarray as argument.
+
+Likewise for custom merger and pairwise functions (here the expression is over
+the two NumPy ndarrays left and right).
+
+## Version 0.3.0[¶](#version-0-3-0 "Permalink to this headline")
+
+Released on July 3rd, 2014.
+
+* Usage of the Euclidean distance is now handled differently, breaking
+  backwards compatibility.
+* Added Cosine similarity measure and generalised distance parameters.
+* Fixed broken setup script.
+* Added custom merging functionality.
+
+## Version 0.2.0[¶](#version-0-2-0 "Permalink to this headline")
+
+Released on March 23rd, 2014.
+
+* New command line interface, using positional arguments for required
+  parameters.
+* Added checking for existing files to prevent overwriting them.
+* Fixed a bug in the scale subcommand that prevented scaling.
+* Added a version parameter.
+* Updated the homepage.
+* Made code PEP 8 compliant.
+* Switched to Sphynx docstrings.
+* Added keyword selection for distance and smoothing functions.
+* Added support for custom distance and smoothing functions.
+* Added CHANGELOG and README.
+
+## Version 0.1.0[¶](#version-0-1-0 "Permalink to this headline")
+
+Released on September 24th, 2013.
+
+* Start of log.
+
+[Next](copyright.html "Copyright")
+ [Previous](fileformat.html "k-mer profile file format")
+
+---
+
+© [Copyright](copyright.html) 2013-2014, LUMC, Jeroen F.J. Laros, Martijn Vermaat.
+Revision `79b2ff97`.
+
+Built with [Sphinx](http://sphinx-doc.org/) using a [theme](https://github.com/snide/sphinx_rtd_theme) provided by [Read the Docs](https://readthedocs.org).

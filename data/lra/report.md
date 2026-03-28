@@ -142,3 +142,6 @@ Index global reference for aligning Nanopore reads: lra global -ONT ref.fa
 Index global reference for aligning contig: lra global -CONTIG ref.fa
 ```
 
+
+## Metadata
+- **Skill**: generated

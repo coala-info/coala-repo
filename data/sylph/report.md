@@ -319,3 +319,6 @@ OPTIONS:
     -o, --output-file <OUT_FILE_NAME>    Output to this file (YAML format). [default: stdout]
 ```
 
+
+## Metadata
+- **Skill**: generated

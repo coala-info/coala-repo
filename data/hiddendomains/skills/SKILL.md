@@ -1,6 +1,6 @@
 ---
 name: hiddendomains
-description: "hiddendomains uses a Hidden Markov Model to detect broad epigenetic domains from ChIP-seq data. Use when user asks to identify large-scale genomic domains, bin reads from BAM files, or convert domain calling results into BED format for visualization and analysis."
+description: hiddendomains uses a Hidden Markov Model to detect broad epigenetic marks and enriched genomic regions from sequencing data. Use when user asks to call broad peaks, identify large domains of enrichment, bin genomic reads, or convert HMM results into BED format.
 homepage: http://hiddendomains.sourceforge.net/
 ---
 
@@ -8,55 +8,62 @@ homepage: http://hiddendomains.sourceforge.net/
 # hiddendomains
 
 ## Overview
-The `hiddendomains` suite is designed for detecting broad epigenetic domains rather than narrow transcription factor peaks. It utilizes a Hidden Markov Model approach to analyze read distributions across genomic bins. This skill provides the necessary workflows to run the integrated pipeline or execute individual components for custom binning, domain calling, and BED file generation.
+The `hiddendomains` suite is designed for detecting broad epigenetic marks that span large genomic regions, where traditional peak-callers often fail. It utilizes a Hidden Markov Model (HMM) to distinguish between enriched and background states. The workflow typically involves binning raw reads, running the HMM analysis (ideally with a control/input sample to reduce false positives), and converting the statistical output into merged genomic intervals (BED format).
 
-## Core Workflow
-The primary entry point is the `hiddenDomains` wrapper script, which automates binning and HMM analysis.
+## Core Workflow Patterns
 
-### Integrated Analysis
-Run the full pipeline with a treatment and control (input) BAM file:
+### 1. The All-in-One Command
+For most standard analyses, use the wrapper script to execute the entire pipeline (binning, HMM, and BED generation) in one step.
+
 ```bash
 hiddenDomains -g ChromInfo.txt -b 200 -t treatment.bam -c control.bam -o output_prefix
 ```
-- `-g`: Tab-delimited file with chromosome names and sizes.
-- `-b`: Bin width (default 1000bp; use smaller values like 200 for higher resolution).
-- `-t`: Treatment ChIP-seq BAM file.
-- `-c`: Control/Input BAM file (highly recommended to reduce false positives).
-- `-o`: Prefix for output files (`_domains.txt`, `_vis.bed`, `_analysis.bed`).
+*   **-g**: Path to chromosome sizes (tab-delimited: `chr\tsize`).
+*   **-b**: Bin width (default 1000bp). Use smaller bins (e.g., 200) for higher resolution or larger for very broad domains.
+*   **-t / -c**: Treatment and Control BAM files.
 
-## Modular Components
-For granular control, run the underlying Perl and R scripts individually.
+### 2. Manual Step-by-Step Execution
+Use individual scripts for more granular control, such as analyzing specific chromosomes or adjusting MAPQ filters.
 
-### 1. Binning Reads
-Use `binReads.pl` to convert BAM files into binned read counts.
+**Step A: Binning Reads**
 ```bash
-binReads.pl -b 1000 -q 30 treatment.bam > treatment_bins.txt
+binReads.pl -q 30 -b 1000 treatment.bam > treatment_bins.txt
+binReads.pl -q 30 -b 1000 control.bam > control_bins.txt
 ```
-- `-q`: Minimum mapping quality (default 30).
-- `-B`: Use if input is in BED format instead of BAM.
-- `-c`: Specify a custom list of chromosomes (e.g., `"chr1 chr2"`).
+*   Use `-q` to set minimum mapping quality (default 30).
+*   Use `-B` if the input is in BED format instead of BAM.
 
-### 2. Generating BED Files
-After running the HMM analysis (which produces a `domainFile.txt`), convert the results to BED format for visualization or downstream analysis.
+**Step B: Running the HMM**
+The R-based engine (`hiddenDomains.R`) processes the binned files. (Note: Requires R packages `depmixS4` and `HiddenMarkov`).
 
-**For Visualization (Individual Bins):**
+**Step C: Generating BED Files**
+To create a visualization-ready file with posterior probabilities:
 ```bash
-domainsToBed.pl -b 1000 domainFile.txt > visualization.bed
+domainsToBed.pl -b 1000 -t -n "MyTrackName" output_domains.txt > visualization.bed
 ```
 
-**For Analysis (Merged Domains):**
+To create a merged file for analysis (merging consecutive enriched bins):
 ```bash
-domainsMergeToBed.pl -b 1000 -p 0.9 domainFile.txt > merged_domains.bed
+domainsMergeToBed.pl -b 1000 -p 0.9 output_domains.txt > analysis.bed
 ```
-- `-p`: Minimum posterior probability threshold (e.g., 0.9 for high confidence).
-- `-t`: Adds a track line for the UCSC Genome Browser.
+*   **-p**: Minimum posterior probability threshold for inclusion (default 0).
 
 ## Expert Tips
-- **ChromInfo Files**: Ensure the chromosome names in your `ChromInfo.txt` exactly match the headers in your BAM files (e.g., "chr1" vs "1").
-- **Control Samples**: Always use a control/input file when possible. Without it, the tool may flag regions of high mappability or copy number variation as false positive domains.
-- **Dependencies**: This tool requires `samtools` to be in your PATH and the R packages `depmixS4` and `HiddenMarkov` to be installed.
-- **Permissions**: If the wrapper fails to execute, ensure it is executable: `chmod +755 hiddenDomains`.
+*   **Control Samples**: Always use a control/input file (`-c`) if available. This prevents false positives in regions with high background noise or mapping artifacts.
+*   **Chromosome Info**: Ensure the chromosome names in your `ChromInfo.txt` exactly match the headers in your BAM files (e.g., "chr1" vs "1").
+*   **Memory/Speed**: For large genomes, the R analysis can be memory-intensive. If it fails, consider running the analysis on a per-chromosome basis using the `-c` option in `binReads.pl`.
+*   **Permissions**: If the wrapper fails to execute, ensure it is executable: `chmod +55 hiddenDomains`.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| binReads.pl | Binning reads. |
+| domainsMergeToBed.pl | This program merges all consecutive domains with posterior greater than a threshold (default is 0; all domains are merged) into a single domain. |
+| domainsToBed.pl | Converts a domain file generated by the hiddenDomains R function into a BED file. |
+| hiddenDomains | Call enriched domains from sequencing data. |
 
 ## Reference documentation
 - [hiddenDomains Manual and Tutorial](./references/hiddendomains_sourceforge_net_index.md)
-- [bioconda hiddendomains overview](./references/anaconda_org_channels_bioconda_packages_hiddendomains_overview.md)

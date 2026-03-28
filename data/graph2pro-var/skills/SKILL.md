@@ -1,6 +1,6 @@
 ---
 name: graph2pro-var
-description: graph2pro-var identifies peptides by integrating mass spectrometry data with genomic assembly graphs and sequencing reads. Use when user asks to identify peptides from meta-proteogenomic data, prepare protein databases from assembly graphs, or capture variants using unassembled sequencing reads.
+description: graph2pro-var is a meta-proteogenomic pipeline that identifies proteins and peptides by integrating assembly graphs and raw sequencing reads with mass spectrometry data. Use when user asks to identify peptides from assembly graphs, capture protein variants from unassembled reads, or perform meta-proteogenomic database searching.
 homepage: https://github.com/COL-IU/graph2pro-var
 ---
 
@@ -9,77 +9,69 @@ homepage: https://github.com/COL-IU/graph2pro-var
 
 ## Overview
 
-The `graph2pro-var` tool is a specialized suite for meta-proteogenomics that integrates mass spectrometry (MS) data with genomic/transcriptomic assembly graphs. It utilizes two primary algorithms: **graph2pro**, which identifies peptides based on the assembly graph, and **var2pep**, which leverages unassembled sequencing reads to improve identification sensitivity by capturing variants not present in the primary assembly. This skill provides guidance on configuring the pipeline, preparing assembly graphs, and managing the identification workflow.
+graph2pro-var is a meta-proteogenomic pipeline designed to improve protein and peptide identification by leveraging the information stored in assembly graphs and raw sequencing reads. Traditional methods often rely on assembled contigs, which can lose significant biological variation. This tool uses two primary algorithms: **graph2pro**, which identifies peptides by traversing the assembly graph, and **var2pep**, which utilizes unassembled reads to capture additional variants. The pipeline automates the process of database generation, MS/MS searching (via MSGF+), and result summarization.
 
-## Installation and Setup
+## Core Workflow
 
-Install the package via Bioconda for the most stable environment:
+### 1. Prepare the Assembly Graph
+The pipeline requires an assembly graph in `.fastg` format.
+- **Recommended Tool**: Use MegaHit to generate the graph.
+- **Conversion**: Use the `megahit_toolkit` to convert contigs to fastg:
+  `megahit_toolkit contig2fastg [kmer_size] intermediate_contigs/k[kmer_size].contigs.fa > assembly.fastg`
+- **Note**: The k-mer size used for the graph must be recorded for the parameter file.
+
+### 2. Configure the Parameter File (.par)
+Create a text file (e.g., `project.par`) containing the following key-value pairs. Ensure there are no spaces around the `=` sign.
+
+| Parameter | Requirement | Description |
+| :--- | :--- | :--- |
+| `id` | Required | Prefix for all output files. |
+| `kmer` | Required | K-mer size used for assembly graph generation. |
+| `fastg` | Required | Path to the assembly graph file. |
+| `ms` | Required | Path to the mass spectrometry spectral file (MGF). |
+| `reads` | Optional | Path to sequencing reads (required for var2pep step). |
+| `thread` | Optional | Number of threads (default: 8). |
+| `memory` | Optional | RAM allocation (default: 32g). Increase for large MGF files. |
+| `fdr` | Optional | False Discovery Rate threshold (default: 0.01). |
+| `cascaded` | Optional | Set to `yes` to only search unidentified spectra in the Var2Pep step. |
+
+### 3. Execute the Pipeline
+Run the wrapper script from within a dedicated working directory to manage the large volume of intermediate files.
 
 ```bash
-conda install bioconda::graph2pro-var
+# Standard execution
+sh /path/to/graph2pro-var/graph2pro-var.sh project.par
+
+# Background execution for large datasets
+nohup sh /path/to/graph2pro-var/graph2pro-var.sh project.par > project.log &
 ```
 
-If using the source version, run the provided installation script to compile the underlying components (MSGF+, FragGeneScan, etc.):
+### 4. Summarize Results
+After the pipeline completes, generate a report of identified spectra and unique peptides across the different approaches (contig-only, graph2pro, and var2pep).
 
 ```bash
-./install
-```
-
-## Core Workflow and CLI Usage
-
-The pipeline is controlled by a wrapper script, `graph2pro-var.sh`, which requires a parameter file (`.par`) to define the run configuration.
-
-### 1. Prepare the Parameter File
-Create a text file (e.g., `project.par`) with the following key-value pairs. Ensure there are no spaces around the `=` sign.
-
-**Mandatory Parameters:**
-- `id`: Prefix for all output files.
-- `kmer`: The k-mer size used during the metagenome assembly.
-- `fastg`: Path to the assembly graph file.
-- `ms`: Path to the mass spectrometry spectral file.
-
-**Optional Parameters:**
-- `reads`: Path to the sequencing reads (required for the `var2pep` step).
-- `thread`: Number of CPU threads (default: 8).
-- `memory`: RAM allocation (default: 32g; increase for large spectral files).
-- `fdr`: False Discovery Rate threshold (default: 0.01).
-- `cascaded`: Set to `yes` to perform a cascaded search (only unidentified spectra from graph2pro are passed to var2pep).
-
-### 2. Execute the Pipeline
-Run the wrapper script pointing to your parameter file. It is recommended to run this in a dedicated directory as the tool generates numerous intermediate files.
-
-```bash
-sh path/to/graph2pro-var.sh project.par
-```
-
-For long-running jobs on a cluster, use `nohup`:
-
-```bash
-nohup sh path/to/graph2pro-var.sh project.par > project.log &
+sh /path/to/graph2pro-var/summarize.sh project.par
 ```
 
 ## Expert Tips and Best Practices
 
-### Assembly Graph Preparation
-The quality of identification depends heavily on the `.fastg` file.
-- **MegaHit**: Run with a specific k-list (e.g., `--k-list 21,29,39,59,79,99`) and use `megahit_toolkit contig2fastg 99` to generate the graph.
-- **Consistency**: The `kmer` value in your `.par` file **must** match the k-mer size used to generate the `.fastg` file.
+- **Working Directory**: Always run the script from a fresh directory. The pipeline generates numerous intermediate files (e.g., `*.mzid`, `*.tsv`, `*.fasta`) in the current folder.
+- **Memory Management**: If the pipeline crashes during the MSGF+ search phase, increase the `memory` parameter in the `.par` file (e.g., `memory=64g`).
+- **Partial Runs**: If you only have assembly graphs and spectra but no raw reads, omit the `reads=` line in the parameter file. The pipeline will automatically stop after the `graph2pro` phase.
+- **Database Extraction**: If you only need to generate a protein database from a FASTG file without running the full MS search, use the standalone `DBGraph2Pro` tool:
+  `./Graph2Pro/DBGraph2Pro -s assembly.fastg -S -k [kmer] -o output.fasta`
+- **FDR Control**: The pipeline produces specific TSV files for different stages (e.g., `*.fgs.tsv.0.01.tsv` for contigs, `*.graph2pro.tsv.0.01.tsv` for the graph). Review these individually to compare the gain in identifications provided by the graph-based approach.
 
-### Database Generation Only
-If you only need to generate a protein database from an assembly graph without running the full MS search:
-```bash
-./Graph2Pro/DBGraph2Pro -s assembly_graph.fastg -S -k 49 -o output_database.fasta
-```
 
-### Interpreting Results
-- `*.final-peptide.txt`: The primary output listing identified peptides and their supporting spectra.
-- `*.graph2pro.fasta`: The database generated from the assembly graph.
-- `*.var2pro.fasta`: The database generated from variant-carrying reads.
-- `*.mzid`: Standard MSGF+ search results for downstream proteomics tools.
 
-### Resource Management
-Meta-proteogenomic searches are computationally intensive. If the pipeline fails during the MSGF+ search phase, check the `memory` parameter in the `.par` file. Large spectral files often require 64GB or more of RAM.
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| DBGraph2Pro | DBGraph2Pro version 0.1 |
+| install | Copy files and set attributes |
 
 ## Reference documentation
-- [graph2pro-var GitHub Repository](./references/github_com_COL-IU_graph2pro-var.md)
-- [graph2pro-var Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_graph2pro-var_overview.md)
+- [Main README](./references/github_com_COL-IU_graph2pro-var_blob_master_README.md)
+- [Wrapper Script Logic](./references/github_com_COL-IU_graph2pro-var_blob_master_graph2pro-var.sh.md)
+- [Result Summarization](./references/github_com_COL-IU_graph2pro-var_blob_master_summarize.sh.md)

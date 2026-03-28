@@ -311,3 +311,6 @@ function _picocli_eider_generatecompletion() {
 complete -F _complete_eider -o default eider eider.sh eider.bash
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -1,6 +1,6 @@
 ---
 name: repeatscout
-description: RepeatScout identifies and discovers de novo repeat families in large genomes by extending l-mer seeds into consensus sequences. Use when user asks to discover repeat families, build l-mer frequency tables, or filter low-complexity and tandem repeats from genomic sequences.
+description: RepeatScout performs de novo discovery of repetitive element families within DNA sequences to generate consensus libraries. Use when user asks to identify repetitive elements, build a repeat library, or find de novo repeats in a genome.
 homepage: https://github.com/Dfam-consortium/RepeatScout
 ---
 
@@ -8,53 +8,70 @@ homepage: https://github.com/Dfam-consortium/RepeatScout
 # repeatscout
 
 ## Overview
-RepeatScout is a specialized tool for discovering repeat families in large genomes without prior knowledge of the sequences. It identifies short exact matches (seeds) and extends them into consensus sequences using a "fit-preferred" alignment score. This skill guides you through the four-phase process of l-mer tabulation, repeat discovery, and the subsequent filtering steps required to remove low-complexity sequences and tandem repeats.
 
-## Core Workflow
+RepeatScout is a specialized tool for the *de novo* discovery of repetitive element families within DNA sequences. It operates by identifying short exact matches (seeds) and extending them into consensus sequences using a "fit-preferred" alignment score that accounts for partial repeat instances. The tool is designed to produce a FASTA file of repeat family consensuses which can then be used as a library for RepeatMasker. The workflow typically involves generating l-mer frequency tables, running the core discovery algorithm, and applying several filtering scripts to refine the output by removing tandem repeats, low-complexity regions, and non-mobile elements like segmental duplications.
 
-### 1. Build L-mer Frequency Table
-The first step tabulates the frequency of all l-mers in the target sequence.
+## Core Workflow and CLI Patterns
+
+The RepeatScout process is executed in four distinct phases.
+
+### Phase 1: Build l-mer Frequency Table
+Tabulate the frequency of all l-mers in the target sequence.
+
 ```bash
-build_lmer_table -sequence input.fa -freq input.freq
-```
-*   **Note**: The default l-mer length ($l$) is calculated as $ceil(\log_4(L)+1)$, where $L$ is the sequence length.
-
-### 2. Run RepeatScout
-Generate the initial consensus sequences using the frequency table.
-```bash
-RepeatScout -sequence input.fa -freq input.freq -output repeats_initial.fa
-```
-*   **Critical**: You must use the same `-l` value for both `build_lmer_table` and `RepeatScout` if you choose to override the default.
-
-### 3. Post-Processing and Filtering
-RepeatScout requires a multi-stage filtering process to refine the library.
-
-**Stage 1: Filter low-complexity and tandem elements**
-This script uses `dustmasker` (from NCBI BLAST+) and `trf` (Tandem Repeats Finder).
-```bash
-perl filter-stage-1.prl repeats_initial.fa > repeats_filtered_1.fa
+build_lmer_table -sequence genome.fa -freq genome.freq
 ```
 
-**Stage 2: Filter by occurrence frequency**
-After running RepeatMasker on your genome using the Stage 1 library, use this script to remove elements that appear fewer than a specific number of times (default is 10).
+*   **Note on `-l`**: By default, $l = \lceil \log_4(L) + 1 \rceil$ where $L$ is the sequence length. If you manually set `-l`, you **must** use the same value in Phase 2.
+
+### Phase 2: Discover Repeat Families
+Run the primary RepeatScout algorithm using the frequency table.
+
 ```bash
-perl filter-stage-2.prl --cat repeats_filtered_1.fa --thresh 10 > repeats_filtered_2.fa
+RepeatScout -sequence genome.fa -freq genome.freq -output repeats.fa
 ```
 
-**Stage 3: Genomic Context Filtering**
-Use `compare-out-to-gff.prl` to remove sequences that overlap with "uninteresting" regions like known exons or segmental duplications.
+*   **Sensitivity**: Use `-stopafter 500` to match the original paper's sensitivity (default is 100 for speed).
+*   **Tandem Distance**: Use `-tandem <dist>` (default 500) to set the minimum distance between countable instances of an l-mer, preventing consensus building for satellite repeats.
+
+### Phase 3: First Stage Filtering
+Remove low-complexity and tandem elements. This script requires `dustmasker` (NCBI BLAST+) and `trf` (Tandem Repeats Finder) to be in your PATH.
+
 ```bash
-perl compare-out-to-gff.prl --cat repeats_filtered_2.fa --gff annotations.gff > final_repeats.fa
+perl filter-stage-1.prl repeats.fa > repeats.filtered1.fa
 ```
+
+### Phase 4: Second Stage Filtering
+Filter out repeat elements that do not appear a minimum number of times (default is 10). This requires running RepeatMasker on your sequence using the filtered library from Phase 3 first.
+
+1.  **Run RepeatMasker**:
+    ```bash
+    RepeatMasker genome.fa -lib repeats.filtered1.fa
+    ```
+2.  **Filter by occurrence**:
+    ```bash
+    perl filter-stage-2.prl --cat genome.fa.out --list repeats.filtered1.fa --thresh 10 > repeats.filtered2.fa
+    ```
 
 ## Expert Tips and Best Practices
 
-*   **Search Sensitivity**: The `-stopafter` parameter determines how far the algorithm searches when the alignment score stops improving. The default is 100 for speed, but the original paper used 500 for higher sensitivity.
-*   **Memory Management**: RepeatScout is memory-intensive. For very large genomes, ensure you have sufficient RAM or process the genome in large chromosomal chunks.
-*   **Sequence Boundaries**: Modern versions of RepeatScout (v1.0.3+) honor sequence boundaries in FASTA files, preventing seeds from extending across different scaffolds or chromosomes.
-*   **Dependencies**: Ensure `dustmasker` and `trf` are in your system PATH before running the filtering scripts, as they are required for identifying simple repeats and tandem elements.
-*   **Seed Extension Data**: In version 1.0.7+, you can record extended sequence coordinates for each seed into a TSV file for downstream analysis by using the appropriate command-line flags.
+*   **Memory Management**: RepeatScout is memory-intensive. For whole genomes, it is often more practical to run it on individual chromosomes or large scaffolds rather than the entire assembly at once.
+*   **Sequence Boundaries**: The Dfam-maintained version of RepeatScout honors sequence boundaries (indicated by `>`) to prevent seeds from extending across different contigs/chromosomes.
+*   **Consensus Refinement**: The output of RepeatScout is a set of consensus sequences. If the tool discovers a family, it updates seed counts to prevent the same family from being rediscovered in the same run.
+*   **Integration with GFF**: Use `compare-out-to-gff.prl` to remove sequences that overlap with known "uninteresting" regions like exons or segmental duplications, ensuring your library focuses on mobile elements.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| RepeatScout | RepeatScout Version 1.0.7 |
+| build_lmer_table | Builds a table of lmers from a sequence. |
+| compare-out-to-gff.prl | Compares RepeatMasker output to a set of GFF feature files. |
+| filter-stage-1.prl | a first stage post-processing tool for RepeatScout output. |
+| filter-stage-2.prl | Filter a repeat library by number of occurrences |
 
 ## Reference documentation
-- [RepeatScout README](./references/github_com_Dfam-consortium_RepeatScout.md)
-- [Bioconda RepeatScout Overview](./references/anaconda_org_channels_bioconda_packages_repeatscout_overview.md)
+- [RepeatScout README](./references/github_com_Dfam-consortium_RepeatScout_blob_main_README.md)
+- [build_lmer_table Source](./references/github_com_Dfam-consortium_RepeatScout_blob_main_build_lmer_table.c.md)

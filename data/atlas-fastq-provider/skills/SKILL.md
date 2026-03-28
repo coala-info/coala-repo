@@ -1,6 +1,6 @@
 ---
 name: atlas-fastq-provider
-description: The atlas-fastq-provider utility retrieves raw sequencing data from various sources like ENA and HCA using a unified interface. Use when user asks to fetch FASTQ files, download ENA libraries, retrieve HCA data bundles, or validate data availability before running a pipeline.
+description: The atlas-fastq-provider is a suite of shell scripts designed to automate the retrieval and validation of genomic sequencing data from sources like ENA and the Human Cell Atlas. Use when user asks to download FASTQ files, validate remote file existence, fetch entire ENA libraries, or symlink local sequencing data into a project structure.
 homepage: https://github.com/ebi-gene-expression-group/atlas-fastq-provider
 ---
 
@@ -9,62 +9,55 @@ homepage: https://github.com/ebi-gene-expression-group/atlas-fastq-provider
 
 ## Overview
 
-The `atlas-fastq-provider` is a specialized utility designed to simplify the process of fetching raw sequencing data for bioinformatics pipelines. Rather than manually managing downloads, this tool provides a unified interface to retrieve files from various sources while handling protocol-specific logic (such as ENA's FTP/HTTP/SSH endpoints or HCA's Azul API). It ensures that files are placed in the correct target locations with consistent naming, and it can perform "dry-run" validations to confirm data availability before a workflow begins execution.
+The `atlas-fastq-provider` is a specialized suite of shell scripts designed to streamline the acquisition of genomic sequencing data for bioinformatics workflows. It acts as a robust abstraction layer for fetching FASTQ files, handling the complexities of ENA directory structures, protocol selection (FTP, HTTP, SSH), and retrieval from the Human Cell Atlas (HCA). Use this skill when you need to programmatically download sequencing data, validate the existence of remote files without downloading them, or symlink local data into a standardized project structure.
 
-## Core CLI Usage
+## Core CLI Patterns
 
-### Fetching Individual FASTQ Files
-The `fetchFastq.sh` script is the primary tool for single-file retrieval.
+### Fetching Individual Files
+The primary tool is `fetchFastq.sh`. It automatically detects the source type (e.g., ENA identifiers like SRR/ERR/DRR) and selects the best retrieval method.
 
-```bash
-# Basic download from a URI
-fetchFastq.sh -f ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR188/006/ERR1888646/ERR1888646_1.fastq.gz -t ERR1888646_1.fastq.gz
+*   **Basic Download (FTP):**
+    `fetchFastq.sh -f <URI_OR_ID> -t <TARGET_PATH>`
+*   **Validation Only:** Check if a file exists at the source without downloading (returns exit code 0 if found).
+    `fetchFastq.sh -v -f <URI_OR_ID>`
+*   **Specific Method:** Force a protocol (ftp, http, ssh, hca, or dir).
+    `fetchFastq.sh -m http -f ERR1888646_1.fastq.gz -t output.fastq.gz`
+*   **Local Symlinking:** Use a local directory as a source to create a symlink at the target.
+    `fetchFastq.sh -s /path/to/local/storage -f file.fastq.gz -t project_data/file.fastq.gz`
 
-# Fetch from ENA using an accession and specific method
-fetchFastq.sh -f ERR1888646_1.fastq.gz -t target_file.fastq.gz -m http
+### Fetching Entire Libraries
+Use `fetchEnaLibraryFastqs.sh` to retrieve all files associated with a specific ENA run or library.
 
-# Link from a local directory instead of downloading
-fetchFastq.sh -f ERR1888646_1.fastq.gz -t local_link.fastq.gz -s /path/to/local/storage
-```
-
-### Bulk Library Downloads
-To retrieve all FASTQ files associated with a specific ENA library/run accession:
-
-```bash
-fetchEnaLibraryFastqs.sh -l ERR1888646 -d /path/to/output_directory
-```
+*   **Download All Files:**
+    `fetchEnaLibraryFastqs.sh -l <LIBRARY_ID> -d <OUTPUT_DIR>`
+*   **Fetch and Unpack SRA:** Retrieve SRA files and convert/unpack them.
+    `fetchEnaLibraryFastqs.sh -l ERR1888646 -d output_dir -t srr`
+*   **Specify Layout:** Define if the library is SINGLE or PAIRED to guide deinterleaving.
+    `fetchEnaLibraryFastqs.sh -l SRR18315788 -d output_dir -n SINGLE`
 
 ### Human Cell Atlas (HCA) Retrieval
-The tool supports a pseudo-URI format for HCA bundles:
-
-```bash
-fetchFastq.sh -f hca://<bundle_uuid>/<file_name> -t output.fastq.gz
-```
+Retrieve files using HCA pseudo-URIs which are resolved via the Azul service.
+`fetchFastq.sh -f hca://<BUNDLE_UUID>/<FILE_NAME> -t <DEST_FILE>`
 
 ## Expert Tips and Best Practices
 
-### 1. Pre-flight Validation
-Use the `-v` flag to check if a file exists at the source without actually performing the download. This is highly recommended for pipeline "validation" steps to catch missing data early.
-```bash
-fetchFastq.sh -v -f <uri> -t <target>
-```
+*   **Protocol Probing:** When retrieval method is set to `auto` (default), the tool "probes" ENA endpoints (FTP, SSH, HTTP) to find the fastest available connection. This result is cached in a probe file to speed up subsequent requests.
+*   **SSH for EBI Internal Users:** If working within the EBI network, set the `ENA_SSH_USER` environment variable to use SSH for significantly faster data transfers compared to FTP.
+*   **Private Data:** For private ArrayExpress or ENA submissions, use the `-p private` flag and ensure `ENA_PRIVATE_SSH_ROOT_DIR` is configured.
+*   **Configuration Overrides:** Instead of modifying the global config, pass a custom configuration file using the `-c` flag to manage environment-specific settings (like temporary directories or retry counts).
+*   **Deinterleaving:** The tool includes `deinterleave_fastq.sh`. If a paired-end run is downloaded as a single interleaved file, `fetchEnaLibraryFastqs.sh` with `-n PAIRED` will attempt to split it into `_1` and `_2` files automatically.
 
-### 2. Optimization with "Auto" Method
-By default, the tool uses `-m auto`. This triggers a "probe" that tests FTP, SSH, and HTTP endpoints to determine the fastest available method. The results are cached in a probe file (defined by `PROBE_UPDATE_FREQ_MINS` in config) to speed up subsequent requests.
 
-### 3. Internal EBI Usage (SSH)
-For users within the EBI network with appropriate privileges, SSH is often the fastest retrieval method. Ensure the `ENA_SSH_USER` environment variable is set:
-```bash
-export ENA_SSH_USER=your_username
-fetchFastq.sh -f ERR1888646_1.fastq.gz -t output.fastq.gz -m ssh
-```
 
-### 4. Handling Interleaved Files
-If you encounter interleaved FASTQ files, the package includes a `deinterleave_fastq.sh` utility to split them into paired-end files.
+## Subcommands
 
-### 5. Configuration Overrides
-While the tool uses a default `atlas-fastq-provider-config.sh`, you can provide a custom configuration file using the `-c` flag to override variables like `ENA_RETRIES` or `FETCH_FREQ_MILLIS`.
+| Command | Description |
+|---------|-------------|
+| /usr/local/bin/fetchEnaLibraryFastqs.sh | Fetches ENA library FASTQ files. |
+| /usr/local/bin/fetchFastq.sh | Fetches FASTQ files from various sources. |
+| deinterleave_fastq.sh | Deinterleaves paired-end FASTQ files. |
 
 ## Reference documentation
-- [Main README and Usage Guide](./references/github_com_ebi-gene-expression-group_atlas-fastq-provider_blob_develop_README.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_atlas-fastq-provider_overview.md)
+- [Main README](./references/github_com_ebi-gene-expression-group_atlas-fastq-provider_blob_develop_README.md)
+- [Configuration Defaults](./references/github_com_ebi-gene-expression-group_atlas-fastq-provider_blob_develop_atlas-fastq-provider-config.sh.default.md)
+- [Post-Install Test Examples](./references/github_com_ebi-gene-expression-group_atlas-fastq-provider_blob_develop_atlas-fastq-provider-post-install-tests.sh.md)

@@ -1,6 +1,6 @@
 ---
 name: mantis_pfa
-description: Mantis_pfa performs automated functional profiling and consensus-driven annotation of protein sequences by aggregating data from multiple reference databases. Use when user asks to annotate protein sequences, perform functional profiling of genomes or metagenomes, or setup and verify protein annotation databases.
+description: MANTIS is a protein functional annotation tool that integrates multiple reference databases to provide high-quality consensus results for genomes and metagenomes. Use when user asks to annotate protein sequences, set up or manage reference databases, and execute functional annotation workflows for single or multiple samples.
 homepage: https://github.com/PedroMTQ/Mantis
 ---
 
@@ -8,41 +8,62 @@ homepage: https://github.com/PedroMTQ/Mantis
 # mantis_pfa
 
 ## Overview
-The mantis_pfa skill enables automated functional profiling of protein sequences. Unlike tools that rely on a single database, Mantis aggregates results from various sources to provide a consensus-driven annotation. It is particularly effective for high-throughput processing of assembled genomes and metagenomes where taxonomic resolution and domain-level detail are required.
+MANTIS is a standalone protein functional annotation tool that integrates multiple reference databases to provide high-quality consensus results. It is particularly useful for researchers who need to annotate assembled genomes or metagenomes by matching protein-coding regions against HMM or Diamond databases. This skill provides the necessary command-line workflows to set up the environment, manage reference databases, and execute annotation runs for single or multiple samples.
 
 ## Core Workflows
 
-### 1. Environment Initialization
-Before running annotations, the reference databases must be synchronized and the environment verified.
-- **Setup**: `mantis setup` (Downloads and organizes required HMM/Diamond databases).
-- **Verification**: `mantis check` and `mantis check_sql` to ensure all dependencies and metadata files are correctly indexed.
+### 1. Environment Setup and Initialization
+Before running annotations, the local environment and databases must be prepared.
+- **Installation**: Ensure the tool is available via bioconda: `conda install -c bioconda mantis_pfa`.
+- **Database Setup**: Download and index the required reference datasets:
+  ```bash
+  mantis setup
+  ```
+- **Verification**: Confirm the installation and SQL metadata integrity:
+  ```bash
+  mantis check
+  mantis check_sql
+  ```
 
-### 2. Single Sample Annotation
-For a single protein FASTA file, use the `run` command. Providing organism details improves taxonomic pruning.
-```bash
-mantis run -i sample.faa -o ./output_dir -od "Genus species"
-```
+### 2. Running Annotations
+MANTIS requires protein sequences in FASTA format (`.faa`). If you have raw reads, they must be assembled and genes predicted (e.g., via Prodigal) before using this tool.
 
-### 3. Batch Processing
-To process multiple samples efficiently, provide a TSV file containing paths to the input files.
-```bash
-mantis run -i samples_list.tsv -o ./batch_output
-```
+- **Single Sample**:
+  ```bash
+  mantis run -i target.faa -o output_folder -od "Organism Name"
+  ```
+- **Multiple Samples**: Use a TSV file containing paths to multiple FASTA files:
+  ```bash
+  mantis run -i samples_list.tsv -o output_folder
+  ```
 
-### 4. Customizing Search Parameters
-Fine-tune the sensitivity and specificity of the annotation using thresholds:
-- **E-value**: `-et 1e-5` (Default is usually sufficient, but can be tightened for higher confidence).
-- **Overlap**: `-ov 0.1` (Controls how much overlap is allowed between different domain hits on the same sequence).
-- **Custom Config**: `-mc custom_MANTIS.cfg` (Use this to point to specific local reference paths or weights).
+### 3. Customization and Configuration
+You can extend MANTIS by adding custom HMM or Diamond references.
+- **Custom References**: Add paths to `config/MANTIS.cfg` or place files in the `Mantis/References/Custom_references/` directory.
+- **Metadata**: For custom references to be fully integrated, include a `metadata.tsv` file within the specific reference folder.
 
-## Best Practices and Tips
-- **Input Preparation**: Mantis requires amino acid sequences. If starting with genomic DNA or metagenomic contigs, use a gene predictor like Prodigal to generate the `.faa` file first.
-- **Custom References**: You can add your own HMM or Diamond databases by placing them in the `Mantis/References/Custom_references/` directory or defining the `custom_ref` path in the configuration file. Each custom folder should include a `metadata.tsv` for proper integration.
-- **Output Selection**:
-    - Use `consensus_annotation.tsv` for a "one-line-per-query" summary (best for general profiling).
-    - Use `integrated_annotation.tsv` for deep dives into all possible hits and their associated metadata.
-- **Resource Management**: Mantis is designed to scale. When running on large metagenomes, ensure the system has sufficient RAM for loading HMMER/Diamond indices, especially if using multiple reference databases simultaneously.
+## Output Interpretation
+MANTIS generates three primary TSV files in the output directory:
+- `output_annotation.tsv`: Raw hits with coordinates and e-values.
+- `integrated_annotation.tsv`: Hits combined with their respective metadata.
+- `consensus_annotation.tsv`: The final "best-hit" consensus (one line per query sequence).
+
+## Expert Tips
+- **MacOS Compatibility**: If running on macOS, ensure you are using Python 3.7.
+- **Resource Management**: Use the `-et` (e-value threshold) and `-ov` (overlap value) flags to fine-tune the sensitivity and specificity of the annotation if the default consensus is too broad or too strict.
+- **Metagenomes**: MANTIS scales well for metagenomic data; ensure your input is a protein FASTA derived from your metagenome assembly.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| mantis | Mantis is a k-mer based sequence analysis tool. |
+| mantis | Mantis is a k-mer based sequence analysis tool. |
+| mantis | Mantis is a k-mer based sequence analysis tool. |
+| mantis | Mantis is a k-mer based sequence analysis tool. |
 
 ## Reference documentation
-- [Mantis GitHub README](./references/github_com_PedroMTQ_Mantis.md)
-- [Mantis Wiki](./references/github_com_PedroMTQ_Mantis_wiki.md)
+- [MANTIS GitHub Home](./references/github_com_PedroMTQ_Mantis.md)
+- [MANTIS Wiki](./references/github_com_PedroMTQ_Mantis_wiki.md)

@@ -1,6 +1,6 @@
 ---
 name: relion-bin-plusmpi-plusgui
-description: RELION is a software package for high-resolution reconstruction of macromolecules from cryo-electron microscopy images using Bayesian optimization and MPI parallelization. Use when user asks to launch the RELION GUI, perform 2D or 3D classification, refine macromolecular structures, or execute motion correction and CTF estimation.
+description: RELION is a software suite for cryo-electron microscopy structure determination that uses Bayesian optimization for 2D and 3D image processing. Use when user asks to perform movie alignment, estimate CTF, pick particles, perform 2D or 3D classification, or execute high-resolution 3D refinement.
 homepage: https://github.com/3dem/relion
 ---
 
@@ -8,60 +8,59 @@ homepage: https://github.com/3dem/relion
 # relion-bin-plusmpi-plusgui
 
 ## Overview
-RELION (REgularised LIkelihood OptimisatioN) is a specialized software package for the structural biology domain, specifically designed for the high-resolution reconstruction of macromolecules from cryo-electron microscopy images. It employs a Bayesian approach to account for noise and structural heterogeneity. This skill provides guidance on using the RELION binary suite, which supports high-performance computing (HPC) through MPI (Message Passing Interface) and GPU acceleration (CUDA).
 
-## Installation and Environment
-RELION 5.0+ requires a specific Python environment for advanced modules like ModelAngelo or Blush.
+RELION (REgularised LIkelihood OptimisatioN) is a specialized software suite for cryo-electron microscopy (cryo-EM) structure determination. It utilizes a Bayesian approach to refine 3D reconstructions and 2D class averages. This skill enables the execution of the full RELION pipeline—from initial movie alignment and CTF estimation to particle picking, classification, and high-resolution 3D refinement. It is optimized for environments requiring distributed-memory parallelization (MPI) and provides the necessary binaries for both command-line automation and GUI-based interaction.
 
-- **Conda Installation**: `conda install bioconda::relion`
-- **GPU Support**: Ensure CUDA drivers are compatible. RELION 5.0+ defaults to `--arch=sm_75` for newer CUDA versions.
-- **Python Dependencies**: Newer versions rely on PyTorch and NumPy. Use the provided `environment.yml` from the source if manual environment setup is required.
+## Common CLI Patterns
 
-## Core CLI Patterns
+RELION commands typically follow the pattern `relion_<module> [options]`. For parallel execution, use the `_mpi` version of the binary.
 
-### Launching the GUI
-To start the project management interface:
+### Parallel Execution with MPI
+To run a refinement or classification job across multiple CPU cores or nodes:
 ```bash
-relion &
+mpirun -np 5 relion_run_refine_mpi --i particles.star --ref reference.mrc --o output_dir --gpu "" --j 4
+```
+*   `-np`: Total number of MPI ranks.
+*   `--j`: Number of threads per MPI rank (useful for memory-intensive steps).
+
+### 2D Classification
+To perform 2D class averaging on a set of extracted particles:
+```bash
+relion_run_2d_class --i particles.star --o class2d/run1 --iter 25 --nr_classes 50 --tau2_fudge 2 --particle_diameter 250 --gpu
 ```
 
-### MPI Parallelization
-Most compute-intensive RELION programs have an `_mpi` suffix. Use `mpirun` or `srun` to execute them across multiple CPU cores or nodes.
+### 3D Auto-Refinement
+For high-resolution 3D reconstruction:
 ```bash
-mpirun -np [number_of_procs] relion_refine_mpi [options]
+mpirun -np 3 relion_run_refine_mpi --i particles.star --ref initial_model.mrc --o refine3d/run1 --auto_refine --split_random_halves --gpu
 ```
 
-### Common Command Modules
-- **Preprocessing**: `relion_preprocess` (extracting particles, normalization).
-- **Motion Correction**: `relion_motion_correction` (correcting beam-induced motion).
-- **CTF Estimation**: `relion_ctffind_wrapper` (estimating Contrast Transfer Function).
-- **Refinement**: `relion_refine` or `relion_refine_mpi` (2D/3D classification and high-resolution refinement).
-- **Post-processing**: `relion_postprocess` (masking and B-factor sharpening).
+### CTF Estimation
+To estimate the Contrast Transfer Function using CTFFIND4:
+```bash
+relion_run_ctffind --i micrographs.star --o ctf_estimation/ --ctffind_exe /path/to/ctffind4 --box 512 --min_res 30 --max_res 5
+```
 
 ## Expert Tips and Best Practices
 
-### STAR Files
-RELION uses `.star` files (Self-defining Text Archiving and Retrieval) for all metadata. Always ensure the input `--i` points to a valid STAR file.
+*   **Project Structure**: Always run RELION commands from the root of your project directory. RELION uses relative paths in `.star` files; moving the project root will break these links.
+*   **STAR Files**: These are the primary metadata files. Use `relion_star_printtable` or `relion_star_handler` to inspect or manipulate them via the command line.
+*   **Memory Management**: If you encounter "Out of Memory" (OOM) errors, decrease the number of MPI ranks (`-np`) and increase the number of threads per rank (`--j`).
+*   **GPU Acceleration**: Use the `--gpu` flag to specify which devices to use (e.g., `--gpu 0:1:2:3`). If no ID is provided, RELION will attempt to auto-allocate.
+*   **Symmetry**: When performing 3D refinement, always specify the point-group symmetry (e.g., `--sym C1`, `--sym D7`, or `--sym I`) to improve resolution and signal-to-noise ratio if the specimen's symmetry is known.
+*   **Fudge Factors**: In 2D and 3D classification, the `--tau2_fudge` parameter (default 1) can be increased (e.g., to 2 or 4) to drive the classification toward higher-resolution features, though this increases the risk of over-fitting.
 
-### GPU Allocation
-Specify GPUs using the `--gpu` flag followed by the device IDs (e.g., `0:1:2:3`).
-- For MPI jobs, RELION typically maps one MPI rank to one GPU.
-- Ensure the number of MPI ranks matches the number of available GPUs for optimal performance in refinement steps.
 
-### Memory Management
-- **Pre-reading images**: Use `--pre_read_images` to load particles into RAM if the system has sufficient memory, significantly speeding up iterations.
-- **Scratch Space**: Use `--scratch_dir /path/to/ssd` to copy large particle stacks to local fast storage (SSD) during processing.
 
-### Continuation Jobs
-To resume a job that was interrupted or to extend a refinement:
-```bash
-mpirun -np [procs] relion_refine_mpi --continue [alias_of_previous_job].star [additional_options]
-```
+## Subcommands
 
-### Symmetry Relaxation
-For particles with broken symmetry, use the `--relax_sym` flag in continuation jobs to allow for asymmetric refinements of symmetric starting models.
+| Command | Description |
+|---------|-------------|
+| relion_preprocess | Provide either --o or --operate_on |
+| relion_refine_mpi | RELION MPI setup |
 
 ## Reference documentation
-- [RELION Overview](./references/anaconda_org_channels_bioconda_packages_relion_overview.md)
-- [RELION GitHub Repository](./references/github_com_3dem_relion.md)
-- [RELION Issues and Bug Reports](./references/github_com_3dem_relion_issues.md)
+
+- [RELION 5.0 README](./references/github_com_3dem_relion_blob_master_README.md)
+- [RELION Documentation Home](./references/relion_readthedocs_io_en_latest.md)
+- [RELION Installation Guide](./references/relion_readthedocs_io_en_latest_Installation.html.md)

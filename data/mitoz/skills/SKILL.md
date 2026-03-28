@@ -1,6 +1,6 @@
 ---
 name: mitoz
-description: MitoZ is a comprehensive bioinformatic toolkit for the assembly, annotation, and visualization of animal mitochondrial genomes from sequencing reads. Use when user asks to perform end-to-end mitochondrial genome analysis, filter raw reads, assemble mitogenomes, identify mitochondrial scaffolds, or annotate and visualize genes.
+description: MitoZ is a specialized bioinformatic pipeline that performs de novo assembly and annotation of animal mitochondrial genomes from raw sequencing data. Use when user asks to assemble mitochondrial genomes, annotate mitochondrial genes, filter raw reads for mitogenomics, or identify mitochondrial scaffolds from whole genome assemblies.
 homepage: https://github.com/linzhi2013/MitoZ
 ---
 
@@ -8,47 +8,74 @@ homepage: https://github.com/linzhi2013/MitoZ
 # mitoz
 
 ## Overview
-MitoZ is a comprehensive bioinformatic toolkit designed specifically for animal mitochondrial genomics. It provides a "one-click" pipeline to transform raw sequencing reads into a circularized, annotated, and visualized mitochondrial genome. Beyond the end-to-end pipeline, it offers modular subcommands for read filtering, assembly, scaffold identification, and gene annotation (PCGs, tRNAs, and rRNAs).
+MitoZ is a specialized bioinformatic pipeline designed to transform raw genomic data into fully annotated animal mitochondrial genomes. It provides a "one-click" solution for the entire workflow—from read filtering and de novo assembly to gene annotation and circularity validation. It is particularly effective for researchers working with mitogenomics, phylogenetics, and biodiversity studies where high-quality mitochondrial assemblies are required from NGS data.
 
-## CLI Usage and Best Practices
+## Core Workflows
 
-### Core Subcommands
-- `mitoz all`: The primary entry point for end-to-end analysis (Filter -> Assemble -> Find -> Annotate -> Visualize).
-- `mitoz filter`: Pre-processes raw fastq reads.
-- `mitoz assemble`: Performs mitochondrial genome assembly.
-- `mitoz findmitoscaf`: Identifies mitochondrial sequences within a larger fasta file (e.g., from a nuclear genome assembly).
-- `mitoz annotate`: Annotates protein-coding genes (PCGs), tRNAs, and rRNAs.
-- `mitoz visualize`: Generates circular or linear maps from GenBank (.gb) files.
+### The "One-Click" Assembly and Annotation
+The `all` subcommand executes the entire pipeline (filter -> assemble -> findmitoscaf -> annotate -> visualize).
 
-### Optimization and Performance Tips
-- **Data Volume**: Using excessive raw data (e.g., >10 Gbp) can paradoxically lead to failed circularization. Start with a smaller subset (approx. 0.3 Gbp to 1.0 Gbp).
-- **Assembler Choice**: `megahit` is often more efficient than `spades` for mitochondrial data.
-- **Resource Management**: For a 0.3 Gbp dataset, 8 CPUs and 2GB of RAM are typically sufficient, with a runtime of approximately 10 minutes.
-- **Shell Environment**: Ensure your default shell is set to `bash`. Other shells (like `zsh` or `dash`) may cause failures in tRNA annotation modules.
-
-### Common Command Patterns
-
-**End-to-End Pipeline (One-click)**
 ```bash
-mitoz all --fq1 read_1.fastq.gz --fq2 read_2.fastq.gz --outprefix sample_name --thread 8 --clade Chordata --assembler megahit
+mitoz all --fq1 sample_1.fq.gz --fq2 sample_2.fq.gz \
+          --outprefix sample_id \
+          --thread_number 8 \
+          --clade Chordata \
+          --genetic_code 2 \
+          --assembler megahit
 ```
 
-**Searching for Mitochondrial Scaffolds in a Fasta File**
+### Targeted Subcommands
+If you already have an assembly or specific intermediate files, use the modular subcommands:
+- `filter`: Pre-process raw FastQ reads.
+- `assemble`: Perform de novo mitochondrial assembly.
+- `findmitoscaf`: Identify mitochondrial scaffolds from a larger assembly (e.g., a whole genome assembly).
+- `annotate`: Annotate Protein-Coding Genes (PCGs), tRNAs, and rRNAs on a FASTA file.
+- `visualize`: Generate circular maps from GenBank files.
+
+## Expert Tips and Best Practices
+
+### Data Volume Optimization
+A common pitfall is using too much raw data. Using excessive data (e.g., >12 Gbp) can lead to fragmented or non-circular assemblies.
+- **Recommendation**: Start with a subset of data (approx. 0.3 Gbp to 1.0 Gbp). This is often sufficient for mitochondrial genomes, runs significantly faster (approx. 10 mins), and increases the likelihood of obtaining a circularized result.
+
+### Assembler Selection
+MitoZ supports multiple assemblers via the `--assembler` flag:
+- `megahit`: Generally faster and memory-efficient.
+- `mitoassemble` (based on SOAPdenovo-Trans): The original default.
+- `spades`: Often provides high-quality results for complex datasets.
+
+### Environment Requirements
+- **Shell**: Ensure your default shell is `bash`. Using other shells (like `zsh` or `dash`) can cause failures in tRNA annotation modules (specifically `cmsearch`).
+- **Clade Specificity**: Always specify the correct `--clade` (e.g., Chordata, Arthropoda) and `--genetic_code` to ensure accurate gene prediction and HMM profile matching.
+
+### Batch Processing
+For multiple samples, you can automate the workflow using a simple loop. For the `annotate` subcommand specifically, you can pass multiple files directly:
 ```bash
-mitoz findmitoscaf --fasta assembly.fa --clade Arthropoda --outprefix search_results
+mitoz annotate --fastafiles sample1.fa sample2.fa --outprefix batch_run --clade Chordata
 ```
 
-**Annotating an Existing Assembly**
-```bash
-mitoz annotate --fasta mitogenome.fa --clade Mollusca --outprefix annotation_results
-```
+## Utility Tools (`mitoz tools`)
+MitoZ includes a suite of auxiliary commands for post-processing:
+- `circle_check`: Verify if the assembled sequence is circular.
+- `bold_identification`: Compare sequences against the BOLD database for taxonomic identification.
+- `gbseqextractor`: Extract specific gene sequences (PCGs, rRNA, tRNA) from GenBank files.
+- `msaconverter`: Convert between different Multiple Sequence Alignment formats.
 
-### Troubleshooting and Known Issues
-- **Missing tRNAs**: If tRNA annotation is missing, verify that `cmsearch` is correctly compiled for your architecture and that you are running in a `bash` environment.
-- **Circularization**: If the output is not circular, try reducing the input data volume or adjusting k-mer sizes (e.g., `--kmers_megahit 43 71 99`).
-- **Low Abundance**: If the tool reports low abundance (<10X), the mitochondrial content in your library may be insufficient for a de novo assembly.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| annotate | Annotate PCGs, tRNA and rRNA genes. |
+| mitoz all | Run all steps for mitochondrial genome anlysis from input fastq files. |
+| mitoz assemble | Mitochondrial genome assembly from input fastq files. |
+| mitoz_filter | Filter input fastq reads. |
+| mitoz_findmitoscaf | Search for mitochondrial sequences from input fasta file. |
+| visualize | Visualize input GenBank file. |
 
 ## Reference documentation
-- [MitoZ GitHub Repository](./references/github_com_linzhi2013_MitoZ.md)
 - [MitoZ Wiki Home](./references/github_com_linzhi2013_MitoZ_wiki.md)
-- [Bioconda MitoZ Overview](./references/anaconda_org_channels_bioconda_packages_mitoz_overview.md)
+- [The 'all' subcommand](./references/github_com_linzhi2013_MitoZ_wiki_The--all--subcommand.md)
+- [Batch processing guide](./references/github_com_linzhi2013_MitoZ_wiki_Batch-processing-of-many-samples.md)
+- [MitoZ Tools Overview](./references/github_com_linzhi2013_MitoZ_wiki_Overview_3A-The--mitoz-tools--command.md)

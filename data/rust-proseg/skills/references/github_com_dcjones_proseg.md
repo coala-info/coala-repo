@@ -1,1 +1,350 @@
-GitHub - dcjones/proseg: Probabilistic cell segmentation for in situ spatial transcriptomics Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} dcjones / proseg Public Notifications You must be signed in to change notification settings Fork 14 Star 151 Probabilistic cell segmentation for in situ spatial transcriptomics License View license 151 stars 14 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 69 Pull requests 0 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights dcjones/proseg main Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 532 Commits 532 Commits .github/ workflows .github/ workflows examples examples extra extra src src .gitignore .gitignore CHANGES.md CHANGES.md Cargo.toml Cargo.toml Dockerfile Dockerfile LICENSE.md LICENSE.md README.md README.md figure.png figure.png View all files Repository files navigation README License Proseg Proseg ( pro babilistic seg mentation) is a cell segmentation method for spatial transcriptomics. Xenium, CosMx, MERSCOPE, and Visium HD platforms are currently supported, but it can be easily adapted to others. Read the paper: 🗎 Jones, D.C., Elz, A.E., Hadadianpour, A. et al. Cell simulation as cell segmentation. Nat Methods (2025). https://doi.org/10.1038/s41592-025-02697-0 And the Research Brief: 🗎 Confronting the challenge of cell segmentation in spatial transcriptomics. Nat Methods (2025). https://doi.org/10.1038/s41592-025-02717-z Table of Contents Installing Migrating to Proseg 3 Usage Spatialdata output format General arguments Output arguments Model arguments Xenium Importing into Xenium Explorer CosMx MERSCOPE VisiumHD Initializing using Cellpose masks Getting help Installing Proseg can be built and installed with cargo by running. cargo install proseg The easiest way to install cargo for most is rustup . From source It can also be build manually from source, which is useful mainly if you want to try a specific revision or make changes git clone https://github.com/dcjones/proseg.git cd proseg cargo build --release Proseg can then be run with: target/release/proseg Limitations of the algorithm Proseg segments cells based on the observed spatial distribution of transcripts. This generally works well at reducing spurious coexpression and transcript misassignment, but has some limitations to be aware of: Cells with very few observed transcripts will tend to have unreliable boundaries. Proseg relies on prior (usually image-based) segmentation to determine the number and approximate location of cells. It doesn't introduce new cells, so if the prior segmentation missed many cells, Proseg is not able to correct for that error. In highly homogeneous regions consisting of cells with very similar expression profiles, boundaries between cells will be much less reliable. Migrating to Proseg 3 Proseg 3 has a few changes that users of earlier versions should be aware of. By default proseg will output a spatialdata zarr directory that can be read by the spatiadata package in python. There are many other output options still, but these are disabled by default. This is admittedly a little less convenience for R users. My recommendation would be to convert the AnnData part to h5ad in python like: import spatialdata sdata = spatialdata . read_zarr ( "proseg-output.zarr" ) sdata . tables [ "table" ]. write_h5ad ( "proseg-anndata.h5ad" ) then read this h5ad file into R with zellkonverter . * The proseg-to-baysor command now operates on these zarr directories. By default, count matrices generated by Proseg 3 are integer point estimates, not continuous expected counts, which should make some downstream analysis simpler. Some simplifications were made to the model and sampling procedure. Now the sampling schedule is controlled with these four arguments: --burnin-samples , --samples giving the number of iterations, and --burnin-voxel-size and --voxel-size giving the x/y size of the voxels in microns. The burn in voxel size must be an integer multiple of the final voxel size. The --nbglayers arguments has been removed. There is now just one --voxel-layers argument controlling how many voxels are stacked on the z-axis. The voxel morphology prior has been changed. Instead of --perimeter-bound and --perimeter-eta , there is one --cell-compactness argument, where smaller numbers lead to more compact (equivalently, more circular) cells. Usage Proseg is run on a table of transcript positions which in some form must include preliminary assignments of transcripts to nuclei or cells. Xenium, CosMx, and MERSCOPE all provide this out of the box in some form. Proseg is invoked from the command line like: proseg [arguments...] /path/to/transcripts.csv.gz The method is general purpose. There are command line arguments to tell it which columns in the csv file to use, and how they should be interpreted, but typically one of the presets --xenium , --cosmx , --merfish , or --visiumhd are used for common platforms. Proseg is a sampling method, and in its current form in non-deterministic. From run to run, results will vary slightly, but not in a way that would seriously affect the interpretation of the data. To see a list of command line arguments, run proseg --help Most of these can be disregarded. The most relevent ones will be described below: Spatialdata output format The spatialdata zarr output that proseg generates can be read with import spatialdata sdata = spatialdata . read_zarr ( "proseg-output.zarr" ) This object contains: Transcript positions and metadatai in sdata.points["transcripts"] . (This can use significant space, so can be excluded if not needed with --exclude-spatialdata-transcripts ). Cell polygons in sdata.shapes["cell_boundaries"] Cell level information in AnnData format in sdata.tables["table"] , which contains: Cell metadata in obs Gene metadata in var Sparse cell-by-gene count matrix in X Cell centroids in obsm["spatial"] Some information about the proseg run in uns["proseg_run] . General arguments --nthreads N sets the number of threads to parallelize across. By default proseg will use all available CPU cores, which may be a bad idea on a shared machine. --output-spatialdata output.zarr : Proseg will output a spatialdata zarr directory which can be read by the spatialdata python package and contains all metadata, count matrix, and cell geometry. --overwrite : An existing zarr directory will not be overwritten unless this argument is passed. --voxel-layers N : Number of layers on the z-axis to model 3D cells. --samples N : Run the sampler for this N iterations. --burnin-samples N : Run the sampler for a preliminary N samples at a lower resolution. --voxel-size S : Voxel size in microns on the x/y axis. --burnin-voxel-size S : Larger voxel size to use for the burn-in phase. (This must be an integer multiple of the final voxel size). Output arguments In addition to the spatialdata zarr output, results can be written to separate number of tables, which can be either gzipped csv files or parquet files, and GeoJSON files giving cell boundaries. --output-counts counts.mtx.gz : Output a cell-by-gene count matrix in gziped matrix market format . (Which can be read with e.g. mmread in scipy). --output-expected-counts expected-counts.mtx.gz : Output an expected count matrix, where the counts are non-integer estimates from taking the mean over multiple samples. --output-cell-metadata cell-metadata.csv.gz : Cell centroids, volume, and other information. --output-tr
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fdcjones%2Fproseg)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fdcjones%2Fproseg)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=dcjones%2Fproseg)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[dcjones](/dcjones)
+/
+**[proseg](/dcjones/proseg)**
+Public
+
+* [Notifications](/login?return_to=%2Fdcjones%2Fproseg) You must be signed in to change notification settings
+* [Fork
+  16](/login?return_to=%2Fdcjones%2Fproseg)
+* [Star
+   160](/login?return_to=%2Fdcjones%2Fproseg)
+
+* [Code](/dcjones/proseg)
+* [Issues
+  74](/dcjones/proseg/issues)
+* [Pull requests
+  0](/dcjones/proseg/pulls)
+* [Actions](/dcjones/proseg/actions)
+* [Projects](/dcjones/proseg/projects)
+* [Security
+  0](/dcjones/proseg/security)
+* [Insights](/dcjones/proseg/pulse)
+
+Additional navigation options
+
+* [Code](/dcjones/proseg)
+* [Issues](/dcjones/proseg/issues)
+* [Pull requests](/dcjones/proseg/pulls)
+* [Actions](/dcjones/proseg/actions)
+* [Projects](/dcjones/proseg/projects)
+* [Security](/dcjones/proseg/security)
+* [Insights](/dcjones/proseg/pulse)
+
+# dcjones/proseg
+
+main
+
+[Branches](/dcjones/proseg/branches)[Tags](/dcjones/proseg/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[540 Commits](/dcjones/proseg/commits/main/)   540 Commits | | |
+| [.github/workflows](/dcjones/proseg/tree/main/.github/workflows "This path skips through empty directories") | | [.github/workflows](/dcjones/proseg/tree/main/.github/workflows "This path skips through empty directories") |  |  |
+| [examples](/dcjones/proseg/tree/main/examples "examples") | | [examples](/dcjones/proseg/tree/main/examples "examples") |  |  |
+| [extra](/dcjones/proseg/tree/main/extra "extra") | | [extra](/dcjones/proseg/tree/main/extra "extra") |  |  |
+| [src](/dcjones/proseg/tree/main/src "src") | | [src](/dcjones/proseg/tree/main/src "src") |  |  |
+| [.gitignore](/dcjones/proseg/blob/main/.gitignore ".gitignore") | | [.gitignore](/dcjones/proseg/blob/main/.gitignore ".gitignore") |  |  |
+| [CHANGES.md](/dcjones/proseg/blob/main/CHANGES.md "CHANGES.md") | | [CHANGES.md](/dcjones/proseg/blob/main/CHANGES.md "CHANGES.md") |  |  |
+| [Cargo.toml](/dcjones/proseg/blob/main/Cargo.toml "Cargo.toml") | | [Cargo.toml](/dcjones/proseg/blob/main/Cargo.toml "Cargo.toml") |  |  |
+| [Dockerfile](/dcjones/proseg/blob/main/Dockerfile "Dockerfile") | | [Dockerfile](/dcjones/proseg/blob/main/Dockerfile "Dockerfile") |  |  |
+| [LICENSE.md](/dcjones/proseg/blob/main/LICENSE.md "LICENSE.md") | | [LICENSE.md](/dcjones/proseg/blob/main/LICENSE.md "LICENSE.md") |  |  |
+| [README.md](/dcjones/proseg/blob/main/README.md "README.md") | | [README.md](/dcjones/proseg/blob/main/README.md "README.md") |  |  |
+| [figure.png](/dcjones/proseg/blob/main/figure.png "figure.png") | | [figure.png](/dcjones/proseg/blob/main/figure.png "figure.png") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* License
+
+# Proseg
+
+Proseg (**pro**babilistic **seg**mentation) is a cell segmentation method for
+spatial transcriptomics. Xenium, CosMx, MERSCOPE, and Visium HD platforms are
+currently supported, but it can be easily adapted to others.
+
+[![](https://github.com/dcjones/proseg/raw/main/figure.png)](https://github.com/dcjones/proseg/blob/main/figure.png)
+
+[![Crates.io Version](https://camo.githubusercontent.com/a749546c320ae92f72904bd29494b928517b979d7e7d0cf242ba50a1a3443120/68747470733a2f2f696d672e736869656c64732e696f2f6372617465732f762f70726f736567)](https://camo.githubusercontent.com/a749546c320ae92f72904bd29494b928517b979d7e7d0cf242ba50a1a3443120/68747470733a2f2f696d672e736869656c64732e696f2f6372617465732f762f70726f736567)
+[![Conda](https://camo.githubusercontent.com/0e753ab8072ea0b8fae7136d3d0cd7f76dfce3b81fffb917ee2163c76d6d4e0b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f696e7374616c6c253230776974682d62696f636f6e64612d627269676874677265656e2e7376673f7374796c653d666c61742d737175617265266c6f676f3d616e61636f6e6461)](http://bioconda.github.io/recipes/rust-proseg/README.html)
+[![Docker](https://camo.githubusercontent.com/bdb5fa83bf2ada4412f1e0f6015dc8e2019117e5bbae90b152a28d86928c8ff8/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f696e7374616c6c253230776974682d646f636b65722d696d706f7274616e742e7376673f7374796c653d666c61742d737175617265266c6f676f3d646f636b6572)](https://quay.io/repository/biocontainers/rust-proseg)
+
+[![nf-core logo](https://raw.githubusercontent.com/nf-core/logos/master/nf-core-logos/nf-core-logo-lightbg.png)](https://nf-co.re/modules/proseg_proseg/)
+
+Read the paper:
+
+🗎 [Jones, D.C., Elz, A.E., Hadadianpour, A. et al. **Cell simulation as cell segmentation.** Nat Methods (2025). https://doi.org/10.1038/s41592-025-02697-0](https://doi.org/10.1038/s41592-025-02697-0)
+
+And the Research Brief:
+
+🗎 [**Confronting the challenge of cell segmentation in spatial transcriptomics.** Nat Methods (2025). https://doi.org/10.1038/s41592-025-02717-z](https://doi.org/10.1038/s41592-025-02717-z)
+
+# Table of Contents
+
+* [Installing](#installing)
+* [Migrating to Proseg 3](#migrating-to-proseg-3)
+* [Usage](#usage)
+  + [Spatialdata output format](#spatialdata-output-format)
+  + [General arguments](#general-arguments)
+  + [Output arguments](#output-arguments)
+  + [Model arguments](#model-arguments)
+  + [Xenium](#xenium)
+    - [Importing into Xenium Explorer](#importing-into-xenium-explorer)
+  + [CosMx](#cosmx)
+  + [MERSCOPE](#merscope)
+  + [VisiumHD](#visiumhd)
+  + [Initializing using Cellpose masks](#initializing-using-cellpose-masks)
+* [Getting help](#getting-help)
+
+# Installing
+
+Proseg can be built and installed with cargo by running.
+
+```
+cargo install proseg
+```
+
+The easiest way to install cargo for most is [rustup](https://rustup.rs/).
+
+## From source
+
+It can also be build manually from source, which is useful mainly if you want to try a specific revision or make changes
+
+```
+git clone https://github.com/dcjones/proseg.git
+cd proseg
+cargo build --release
+```
+
+Proseg can then be run with:
+
+```
+target/release/proseg
+```
+
+# Limitations of the algorithm
+
+Proseg segments cells based on the observed spatial distribution of transcripts. This
+generally works well at reducing spurious coexpression and transcript
+misassignment, but has some limitations to be aware of:
+
+* Cells with very few observed transcripts will tend to have unreliable boundaries.
+* Proseg relies on prior (usually image-based) segmentation to determine the number and
+  approximate location of cells. It doesn't introduce new cells, so if the prior segmentation
+  missed many cells, Proseg is not able to correct for that error.
+* In highly homogeneous regions consisting of cells with very similar expression
+  profiles, boundaries between cells will be much less reliable.
+
+# Migrating to Proseg 3
+
+Proseg 3 has a few changes that users of earlier versions should be aware of.
+
+1. By default proseg will output a
+   [spatialdata](https://spatialdata.scverse.org/en/stable/) zarr directory
+   that can be read by the spatiadata package in python. There are many other output
+   options still, but these are disabled by default.
+   * This is admittedly a little less convenience for R users. My recommendation would
+     be to convert the AnnData part to h5ad in python like:
+
+     ```
+     import spatialdata
+     sdata = spatialdata.read_zarr("proseg-output.zarr")
+     sdata.tables["table"].write_h5ad("proseg-anndata.h5ad")
+     ```
+
+     then read this h5ad file into R with [zellkonverter](https://github.com/theislab/zellkonverter).
+     \* The `proseg-to-baysor` command now operates on these zarr directories.
+2. By default, count matrices generated by Proseg 3 are integer point estimates,
+   not continuous expected counts, which should make some downstream analysis simpler.
+3. Some simplifications were made to the model and sampling procedure. Now the
+   sampling schedule is controlled with these four arguments:
+   `--burnin-samples`, `--samples` giving the number of iterations, and
+   `--burnin-voxel-size` and `--voxel-size` giving the x/y size of the voxels
+   in microns. The burn in voxel size must be an integer multiple of the final
+   voxel size.
+4. The `--nbglayers` arguments has been removed. There is now just one
+   `--voxel-layers` argument controlling how many voxels are stacked on the z-axis.
+5. The voxel morphology prior has been changed. Instead of `--perimeter-bound`
+   and `--perimeter-eta`, there is one `--cell-compactness` argument, where
+   smaller numbers lead to more compact (equivalently, more circular) cells.
+
+# Usage
+
+Proseg is run on a table of transcript positions which in some form must include
+preliminary assignments of transcripts to nuclei or cells. Xenium, CosMx, and MERSCOPE
+all provide this out of the box in some form.
+
+Proseg is invoked from the command line like:
+
+```
+proseg [arguments...] /path/to/transcripts.csv.gz
+```
+
+The method is general purpose. There are command line arguments to tell it which
+columns in the csv file to use, and how they should be interpreted, but
+typically one of the presets `--xenium`, `--cosmx`, `--merfish`, or `--visiumhd`
+are used for common platforms.
+
+Proseg is a sampling method, and in its current form in non-deterministic. From
+run to run, results will vary slightly, but not in a way that would seriously affect
+the interpretation of the data.
+
+To see a list of command line arguments, run
+
+```
+proseg --help
+```
+
+Most of these c

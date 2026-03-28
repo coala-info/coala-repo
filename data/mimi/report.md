@@ -134,3 +134,6 @@ options:
   -o, --output OUTPUT   Output file
 ```
 
+
+## Metadata
+- **Skill**: generated

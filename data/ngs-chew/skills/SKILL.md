@@ -1,6 +1,6 @@
 ---
 name: ngs-chew
-description: ngs-chew is a Python-based toolbox for validating germline NGS datasets by generating and comparing compact genetic fingerprints. Use when user asks to generate sample fingerprints, detect sample swaps, verify pedigrees, or check for DNA contamination.
+description: ngs-chew performs quality control and sample integrity checks on sequencing data by generating and comparing compact variant fingerprints. Use when user asks to identify sample swaps, detect cryptic relationships, estimate contamination, or verify biological sex from BAM or VCF files.
 homepage: https://github.com/bihealth/ngs-chew
 ---
 
@@ -9,52 +9,60 @@ homepage: https://github.com/bihealth/ngs-chew
 
 ## Overview
 
-`ngs-chew` is a specialized Python-based toolbox designed for the rapid validation of germline NGS datasets. It operates by generating compact "fingerprint" files—stored as compressed numpy arrays (.npz)—that represent the unique genetic signature of a sample. These fingerprints allow for highly efficient comparisons across large cohorts to ensure sample integrity, verify pedigrees, and detect contamination without the computational overhead of full sequence alignment comparisons.
+ngs-chew is a specialized toolbox for performing quality control and sanity checks on Next-Generation Sequencing (NGS) data. It functions by generating compact variant "fingerprints" (stored as compressed numpy arrays) from BAM or VCF/BCF files. These fingerprints allow for efficient large-scale comparisons to identify sample swaps, cryptic relationships, and contamination. It is particularly useful in clinical or large-scale research pipelines where sample tracking and data integrity are paramount.
 
-## Installation and Requirements
+## Core Workflows and CLI Patterns
 
-Before using `ngs-chew`, ensure the following dependencies are installed and available in your PATH:
-- **samtools**
-- **bcftools**
-
-The tool can be installed via bioconda:
-```bash
-conda install bioconda::ngs-chew
-```
-
-## Common CLI Patterns
-
-### Generating Sample Fingerprints
-The primary entry point for creating a genetic signature from an alignment file is the `fingerprint` command.
+### 1. Generating Fingerprints
+The primary entry point is creating a fingerprint from alignment data. This requires a reference FASTA and a genome release specification (e.g., GRCh37 or GRCh38).
 
 ```bash
 ngs-chew fingerprint \
-    --reference /path/to/reference.fasta \
-    --input-bam /path/to/sample.bam \
-    --output-fingerprint sample_id.npz \
-    --genome-release GRCh37
+    --reference /path/to/ref.fasta \
+    --genome-release GRCh37 \
+    --input-bam input.bam \
+    --output-fingerprint sample_id.npz
 ```
 
-**Key Arguments:**
-- `--reference`: Path to the FASTA reference genome used for alignment.
-- `--input-bam`: The BAM file to be fingerprinted.
-- `--output-fingerprint`: The destination path for the `.npz` file.
-- `--genome-release`: Specify the assembly (e.g., `GRCh37` or `GRCh38`).
+**Expert Tips:**
+* **Allele Balance:** Use flags to store allele balance information if you plan to perform downstream contamination detection.
+* **VCF Output:** You can optionally write out a VCF file during the fingerprinting process for manual inspection of the sites used.
 
-### Comparing Fingerprints
-Once fingerprints are generated, they can be compared to identify sample swaps or relatedness.
+### 2. Sample Comparison and Relationship Detection
+Once fingerprints (.npz files) are generated, they can be compared to detect relatedness or swaps.
 
-- **Sample Swap Detection**: Compare a new fingerprint against a database of known fingerprints to verify identity.
-- **Relatedness Analysis**: Detect cryptic relationships (e.g., parent-child, siblings) within a cohort.
-- **Contamination Checking**: Use balance-enhanced fingerprints (which store allele balance information) to detect if a sample is contaminated with DNA from another source.
+* **Relatedness:** Analyzes fingerprints to determine if samples are from the same individual, siblings, or unrelated.
+* **IBS0 Checks:** Specifically looks for "Identity By State 0" (where two samples share no alleles at a site) to flag potential swaps.
 
-## Expert Tips and Best Practices
+### 3. Quality Control and Visualization
+ngs-chew provides several plotting commands to visualize QC metrics:
 
-1. **Allele Balance**: When possible, enable allele balance storage during fingerprinting. This provides the necessary data for downstream contamination analysis, which is more sensitive than simple identity checks.
-2. **Reference Consistency**: Always ensure the `--genome-release` and the `--reference` file match the version used during the initial mapping/alignment phase to avoid coordinate mismatches.
-3. **Storage Efficiency**: Use `.npz` fingerprints for long-term QC auditing. They are significantly smaller than BAM or VCF files, making them ideal for maintaining a "genetic ID card" for every sample in a large-scale biobank or clinical pipeline.
-4. **Sanity Checking**: Use the tool as a "gatekeeper" in your pipeline. Run fingerprinting immediately after BAM generation to catch sample swaps before expensive downstream variant calling and interpretation occur.
+* **B-Allele Frequency:** Use `plot_aab` to visualize allele fractions from VCF files, which is helpful for detecting aneuploidy or contamination.
+* **Comparison Plots:** Use `plot_compare` to visualize the results of sample-to-sample comparisons.
+* **Heterozygosity:** Use `plot_var_het` to analyze variant heterozygosity patterns.
+
+### 4. Advanced Analysis
+* **Sex Identification:** The tool collects chrX SNP information and interprets `samtools idxstats` to verify the biological sex of a sample against metadata.
+* **ROH Calling:** Integrates with `bcftools roh` to call Runs of Homozygosity, useful for identifying consanguinity or uniparental disomy.
+* **Contamination Detection:** Uses balance-enhanced fingerprints to detect if a sample is contaminated with DNA from another source.
+
+## Best Practices
+* **Dependencies:** Ensure `samtools` and `bcftools` are in your PATH, as ngs-chew relies on them for data processing.
+* **Genome Release:** Always match the `--genome-release` to the reference used for alignment to ensure the correct SNP sites are queried.
+* **Efficiency:** Fingerprint files are stored as compressed `numpy` arrays (`.npz`), making them much faster to share and compare than raw BAM or VCF files.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| compare | Perform fingeprint comparison. |
+| fingerprint | Compute fingerprint to numpy .npz files. |
+| plot-compare | Plot result of 'ngs-chew compare'. |
+| plot-var-het | Plot var(het) metric from .npz files. |
+| stats | Compute statistics from fingerprint .npz files. |
 
 ## Reference documentation
-- [ngs-chew Overview](./references/anaconda_org_channels_bioconda_packages_ngs-chew_overview.md)
-- [ngs-chew GitHub Repository](./references/github_com_bihealth_ngs-chew.md)
+- [NGS Chew README](./references/github_com_bihealth_ngs-chew_blob_main_README.md)
+- [Changelog and Feature History](./references/github_com_bihealth_ngs-chew_blob_main_CHANGELOG.md)

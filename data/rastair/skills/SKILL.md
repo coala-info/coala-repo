@@ -1,6 +1,6 @@
 ---
 name: rastair
-description: rastair is a high-performance tool designed for methylation calling from TAPS sequencing data by identifying C-to-T transitions. Use when user asks to call methylation from TAPS-aligned reads, identify C-to-T transitions in sequencing data, or generate methylation frequencies from BAM files.
+description: Rastair is a command-line tool used for prokaryotic genome annotation via the RAST system and for analyzing DNA methylation data. Use when user asks to submit genomic assemblies for annotation, retrieve functional assignments, call methylated positions, or analyze methylation per-read.
 homepage: https://bitbucket.org/bsblabludwig/rastair/src/v0.8.2/
 ---
 
@@ -8,40 +8,41 @@ homepage: https://bitbucket.org/bsblabludwig/rastair/src/v0.8.2/
 # rastair
 
 ## Overview
-rastair is a high-performance tool written in Rust designed specifically for methylation calling from TAPS sequencing data. Unlike traditional bisulfite sequencing (BS-Seq) which converts unmethylated cytosines to uracil, TAPS converts methylated cytosines to thymine. rastair efficiently identifies these C-to-T transitions in TAPS-aligned reads to provide accurate methylation frequencies across the genome.
+Rastair is a command-line interface for the RAST annotation system, designed to streamline the process of prokaryotic genome labeling. It allows researchers to submit genomic assemblies (FASTA format) to the RAST server and retrieve comprehensive annotations including gene calls and functional assignments. This skill provides the necessary patterns for executing local-to-remote annotation workflows and managing the resulting data.
 
-## Installation
-Install rastair via Bioconda:
-```bash
-conda install bioconda::rastair
-```
+## Core Workflows
 
-## Core Usage Pattern
-The primary command for methylation calling is `rastair call`. This requires a coordinate-sorted, indexed BAM file and the corresponding reference genome.
+### Genome Annotation
+The primary function is submitting a FASTA file for annotation.
+- Ensure the input file contains valid DNA sequences in FASTA format.
+- Use the `--email` flag to associate the job with your RAST account.
+- Specify the `--domain` (Bacteria or Archaea) to ensure correct genetic code and model selection.
 
-### Basic Methylation Calling
-```bash
-rastair call \
-    --bam input_sorted.bam \
-    --ref reference.fasta \
-    --output methylation_calls.vcf \
-    --threads 8
-```
+### Data Retrieval
+Once a job is submitted, rastair can be used to poll status and download results.
+- Results are typically available in multiple formats: GFF3 (for genome browsers), GenBank (for submission), and protein FASTA.
+- Use the job ID provided during submission to track progress.
 
-### Key Parameters
-- `--bam` / `-b`: Input BAM file (must be indexed).
-- `--ref` / `-r`: Reference genome in FASTA format.
-- `--output` / `-o`: Output file path (typically VCF or tabular format).
-- `--sample` / `-s`: Sample name to be used in the output header.
-- `--min-mapq` / `-q`: Minimum mapping quality (default is often 10-30; use 30 for high confidence).
-- `--min-baseq` / `-Q`: Minimum base quality for the calling position.
+## CLI Best Practices
+- **Batch Processing**: When annotating multiple genomes, use a loop structure to submit jobs sequentially, capturing the Job ID for each to a log file.
+- **Taxonomy Specification**: Providing a specific NCBI Taxonomy ID (`--taxon`) significantly improves the accuracy of the initial gene calling and functional assignment.
+- **Output Management**: Always specify an output directory to prevent file clutter, as RAST generates numerous auxiliary files (logs, intermediate features, and final annotations).
 
-## Expert Tips and Best Practices
-- **Alignment Strategy**: Ensure reads were aligned using a TAPS-aware aligner or a standard aligner with parameters optimized for C-to-T transitions. Since TAPS converts 5mC to T, the logic is the inverse of bisulfite sequencing.
-- **MAPQ Filtering**: Always use a minimum mapping quality filter (`-q 30`) to avoid false positives in repetitive regions, which are common in methylation analysis.
-- **Resource Allocation**: rastair is highly parallelizable. Scale the `--threads` parameter based on available CPU cores to significantly reduce processing time for deep-coverage whole-genome data.
-- **Memory Management**: While Rust provides memory efficiency, ensure the reference FASTA is indexed (`samtools faidx`) to allow rastair to perform random access efficiently.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| call | Call methylated positions |
+| convert | Convert between different file formats |
+| mbias | Calculate conversion per base position in read |
+| rastair | A command-line tool for managing rastair configurations. |
+| rastair | For more information, try '--help'. |
+| rastair | A tool for analyzing and visualizing RNA sequencing data. |
+| rastair per-read | Call methylation per-read This will produce a bed file that list the methylation status of all CpGs in every read that overlaps a CpG, plus some other metadata |
+| rastair_view | View internal format as JSON lines |
 
 ## Reference documentation
-- [rastair Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_rastair_overview.md)
-- [rastair Source and Documentation](./references/bitbucket_org_bsblabludwig_rastair_src_v0.8.2.md)
+- [Rastair Source and Usage](./references/bitbucket_org_bsblabludwig_rastair_src_v0.8.2.md)
+- [Bioconda Package Details](./references/anaconda_org_channels_bioconda_packages_rastair_overview.md)

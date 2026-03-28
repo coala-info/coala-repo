@@ -1,71 +1,68 @@
 ---
 name: seidr
-description: Seidr is a toolkit for gene network inference, aggregation, and exploration using a consensus-based approach. Use when user asks to infer gene networks, aggregate multiple network predictions, calculate network statistics, or prune networks via backbone estimation.
+description: Seiðr is a toolkit for ensemble gene regulatory network inference that aggregates predictions from multiple independent algorithms to improve network robustness. Use when user asks to infer gene networks, aggregate multiple network predictions, extract top-ranked edges, or analyze scale-free topology.
 homepage: https://github.com/bschiffthaler/seidr
 ---
 
 
 # seidr
 
+# Seiðr
+
 ## Overview
-Seidr is a specialized toolkit for gene network inference and exploration. Its primary strength lies in the "wisdom of the crowd" approach, allowing users to aggregate multiple independent network predictions into a single, high-confidence consensus network. It provides a suite of tools for importing data from various inference methods, calculating network statistics, pruning networks via backbone estimation, and visualizing results.
+Seiðr is a specialized toolkit designed for "crowd" gene network inference. It enables the construction of ensemble networks by aggregating predictions from multiple independent algorithms—such as Random Forest (via Ranger), SVM, and Lasso (via GLMnet)—to improve the reliability and robustness of gene regulatory network (GRN) discovery.
 
-## Installation
-The package is available via Bioconda:
-```bash
-conda install -c bioconda seidr
-```
+## CLI Usage and Best Practices
 
-## Common CLI Patterns
+### Network Ranking and Filtering
+The `top` subcommand is the primary tool for extracting the most significant interactions from an inferred or aggregated network.
 
-### Data Import
-Convert external inference results (matrices or edge lists) into the seidr binary format:
-```bash
-# Import a matrix file
-seidr import --matrix <input_file> --output <output.sf>
-```
-*Note: If your matrix contains all zeros, ensure you are using version 0.13.1 or later to avoid potential segmentation faults.*
+*   **Extracting Top Edges**: Use `seidr top` to filter for the N most significant edges.
+*   **Handling Ties**: The tool is designed to handle score ties properly, ensuring that edges with identical weights are treated consistently during the ranking process.
+*   **Large N Values**: When requesting a large number of top edges, `seidr top` maintains performance even when encountering high-scoring edges early in the file.
 
-### Network Aggregation and Filtering
-Seidr is frequently used to filter and rank the most significant edges in a network:
-```bash
-# Get the top edges from a network
-seidr top --input <network.sf> --output <top_network.sf>
-```
-*Tip: Use `seidr top` to handle ties and priority queue filling for large-scale networks.*
+### Scale-Free Topology (SFT) Analysis
+Seiðr includes functionality to evaluate and enforce scale-free topology, a common characteristic of biological networks.
 
-### Network Statistics and Centrality
-Calculate node-level metrics such as centrality:
-```bash
-# Calculate network statistics
-seidr stats --input <network.sf> --output <stats.txt>
-```
-*   **Directionality**: Experimental support for directionality is available in `seidr stats`.
-*   **Scaling**: Scaling is enabled by default. Use the `--no-scale` flag if you wish to preserve raw values.
+*   **SFT Cutoff**: Use the `-c` flag to specify the SFT cutoff. 
+    *   *Note*: In versions 0.14.2 and later, `-c` is the correct short flag (replacing the older `-S` flag to avoid conflicts).
+*   **Scaling Control**: Use the `--no-scale` flag if you wish to prevent the tool from automatically scaling edge scores during processing.
 
-### Visualization and Inspection
-To view the contents of the binary `.sf` files in a human-readable format:
-```bash
-# View network data
-seidr view --input <network.sf>
+### Core Algorithms
+Seiðr integrates several high-performance libraries for network inference. When configuring workflows, consider the strengths of the bundled submodules:
+*   **Ranger**: Fast implementation of Random Forests for feature importance.
+*   **GLMnet**: Efficient Lasso and Elastic Net regression.
+*   **LibSVM/LibLinear**: Support Vector Machine approaches for classification or regression-based inference.
 
-# View centrality data in dense format
-seidr view --input <centrality.sf> --dense
-```
+### General Tips
+*   **Version Checking**: If the tools only output version information, ensure the logger is properly initialized or check for installation conflicts.
+*   **Help Pages**: Use the `--help` flag with any subcommand to view default values and parameter descriptions, which are updated to reflect current bugfixes in help display logic.
 
-### Network Pruning
-Use the backbone command to identify the most significant underlying structure of a network:
-```bash
-# Estimate the network backbone
-seidr backbone --input <network.sf> --output <backbone.sf>
-```
 
-## Expert Tips
-*   **SFT Cutoff**: When performing Scale-Free Topology (SFT) analysis, use the `-c` flag to specify the cutoff.
-*   **Memory Management**: For very large networks, ensure you are using the latest version (0.14.2+) which includes fixes for priority queue filling and tie-handling in the `top` command.
-*   **Output Handling**: Seidr tools are designed to flush output streams properly on exit, making them suitable for inclusion in automated bioinformatics pipelines.
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| aggregate | Aggregate multiple SeidrFiles. |
+| cluster-enrichment | Test whether clusters of two networks show significant overlap or extract clusters |
+| neighbours | Get the top N first-degree neighbours for each node or a list of nodes |
+| resolve | Resolve node indices in text file to node names. |
+| roc | Calculate ROC curves of predictions in SeidrFiles given true edges |
+| seidr backbone | Determine noisy network backbone scores. Optionally filter on these scores. |
+| seidr compare | Compare edges or nodes in two networks. |
+| seidr graphstats | Calculate graph level network statistics |
+| seidr index | Create index for SeidrFiles |
+| seidr sample | Sample edges from a SeidrFile |
+| seidr_adjacency | Transform a SeidrFile into an adjacency matrix |
+| seidr_convert | Convert different text based formats |
+| seidr_import | Convert various text based network representations to SeidrFiles |
+| seidr_reheader | Modify SeidrFile headers. Currently only drops disconnected nodes and resets stats. |
+| seidr_stats | Calculate network centrality statistics |
+| threshold | Pick hard network threshold according to topology |
+| view | View and filter contents of SeidrFiles |
 
 ## Reference documentation
 - [Seidr GitHub Repository](./references/github_com_bschiffthaler_seidr.md)
-- [Bioconda Seidr Overview](./references/anaconda_org_channels_bioconda_packages_seidr_overview.md)
-- [Seidr Commit History](./references/github_com_bschiffthaler_seidr_commits_master.md)
+- [Changelog and CLI Updates](./references/github_com_bschiffthaler_seidr_blob_master_CHANGES.md)
+- [Submodule Integrations](./references/github_com_bschiffthaler_seidr_blob_master_.gitmodules.md)

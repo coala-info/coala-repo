@@ -1,6 +1,6 @@
 ---
 name: taxonkit
-description: TaxonKit is a high-performance command-line toolkit for processing and manipulating NCBI taxonomy data. Use when user asks to retrieve taxonomic lineages, convert scientific names to TaxIDs, find the lowest common ancestor, or reformat and filter taxonomy strings.
+description: TaxonKit is a high-performance command-line tool for processing and manipulating NCBI taxonomy data. Use when user asks to retrieve taxonomic lineages, convert scientific names to TaxIds, reformat lineage strings, find the lowest common ancestor, or filter TaxIds by rank.
 homepage: https://github.com/shenwei356/taxonkit
 ---
 
@@ -8,56 +8,89 @@ homepage: https://github.com/shenwei356/taxonkit
 # taxonkit
 
 ## Overview
-TaxonKit is a high-performance command-line toolkit designed for processing NCBI taxonomy data. It is particularly useful for bioinformatics workflows that require mapping TaxIDs to full lineages, filtering datasets by taxonomic rank, or standardizing inconsistent taxonomy strings. It operates on local dump files from NCBI, ensuring speed and privacy without requiring constant API calls.
+TaxonKit is a high-performance command-line tool designed for processing NCBI taxonomy data. It is particularly useful for bioinformatics workflows that require mapping between TaxIds and scientific names, standardizing lineage formats (e.g., the 7-level superkingdom-to-species format), and navigating the taxonomic tree. It operates on the standard NCBI `taxdump` files and is optimized for speed and memory efficiency, making it suitable for large-scale metagenomic datasets.
 
-## Setup and Data Management
-TaxonKit requires the NCBI `taxdump` files to function.
-1.  **Download Data**: Obtain `taxdump.tar.gz` from NCBI FTP.
-2.  **Storage**: By default, TaxonKit looks in `$HOME/.taxonkit`. You can override this using the `TAXONKIT_DB` environment variable or the `--data-dir` flag.
-3.  **Required Files**: Ensure `names.dmp`, `nodes.dmp`, `delnodes.dmp`, and `merged.dmp` are present in the data directory.
+## Setup and Data
+TaxonKit requires the NCBI taxonomy database files.
+1. Download the data: `wget ftp://ftp.ncbi.nih.gov/pub/taxonomy/taxdump.tar.gz`
+2. Extract to the default location: `tar -zxvf taxdump.tar.gz -C $HOME/.taxonkit`
+3. Files needed: `names.dmp`, `nodes.dmp`, `delnodes.dmp`, and `merged.dmp`.
 
 ## Common CLI Patterns
 
-### Lineage Retrieval
-Retrieve the full taxonomic lineage for a list of TaxIDs.
+### Querying Lineages
+Retrieve the full taxonomic lineage for a list of TaxIds.
 ```bash
-# Input can be a file or stdin
-echo "9606" | taxonkit lineage
-```
-*   **Tip**: Use `--show-name` and `--show-rank` to include human-readable names and ranks alongside TaxIDs in the output.
+# From a file containing one TaxId per line
+taxonkit lineage taxids.txt
 
-### Standardizing Ranks (Reformatting)
-Convert raw lineages into a fixed 7-level format (Superkingdom, Phylum, Class, Order, Family, Genus, Species).
-```bash
-# Reformat lineage from column 2 of a file
-taxonkit lineage input.txt | taxonkit reformat -i 2
+# From STDIN
+echo -e "9606\n2" | taxonkit lineage
 ```
-*   **Missing Ranks**: Use `-f` to define a custom format string and `-r` to specify a placeholder for missing ranks (e.g., `Unclassified`).
 
-### Name to TaxID Conversion
-Convert scientific names to NCBI TaxIDs.
+### Reformating Lineage Strings
+Standardize lineages into specific ranks (e.g., for Kraken2 or QIIME2 compatibility). Use `reformat2` for more flexibility with recent NCBI rank changes.
 ```bash
+# Reformat to 7 canonical ranks: k,p,c,o,f,g,s
+taxonkit lineage taxids.txt | taxonkit reformat -f "{k};{p};{c};{o};{f};{g};{s}"
+
+# Handle missing ranks with a placeholder
+taxonkit lineage taxids.txt | taxonkit reformat -f "{k};{p};{g};{s}" -F -p
+```
+
+### Name to TaxId Conversion
+Convert scientific names to their corresponding NCBI TaxIds.
+```bash
+# Direct conversion
 echo "Homo sapiens" | taxonkit name2taxid
-```
 
-### Lowest Common Ancestor (LCA)
-Find the LCA for a set of TaxIDs.
-```bash
-echo "9606 9598" | taxonkit lca
+# Fuzzy matching for approximate names
+echo "Humo sapiens" | taxonkit name2taxid -f
 ```
 
 ### Filtering by Rank
-Filter a list of TaxIDs to keep only those within a specific rank range (e.g., at or below Genus).
+Filter a list of TaxIds to keep only those within a specific taxonomic range.
 ```bash
-taxonkit filter --lower-lineage-rank genus input_taxids.txt
+# Keep only TaxIds at or below the Genus rank
+taxonkit filter -L genus taxids.txt
+
+# Keep only specific ranks
+taxonkit filter -E species -E genus taxids.txt
+```
+
+### Lowest Common Ancestor (LCA)
+Find the LCA for a set of TaxIds.
+```bash
+# Compute LCA for a space-separated list of IDs
+echo "9606 9598" | taxonkit lca
 ```
 
 ## Expert Tips
-*   **Pipe Integration**: TaxonKit is designed for shell pipes. It reads from `stdin` by default if no file is provided.
-*   **Performance**: Use the `-j` or `--threads` flag to utilize multiple CPU cores for large datasets.
-*   **Custom Taxonomies**: TaxonKit supports creating NCBI-style taxdump files for custom taxonomies (like GTDB or ICTV) using the `create-taxdump` subcommand.
-*   **Handling Merged TaxIDs**: TaxonKit automatically handles merged TaxIDs using `merged.dmp`, ensuring that deprecated IDs are mapped to their current versions.
+- **Piping**: TaxonKit is designed for pipes. Most commands accept input from STDIN and append results as new columns to the input TSV data.
+- **Rank Compatibility**: If working with Viruses or new NCBI ranks (like "clade" or "no rank"), prefer `reformat2` over `reformat`.
+- **Performance**: For very large files, use the `--threads` flag to speed up processing.
+- **Custom Taxonomies**: Use `create-taxdump` to convert custom taxonomies (like GTDB or ICTV) into NCBI-style dump files so they can be used with the rest of the TaxonKit suite.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| cami-filter | Remove taxa of given TaxIds and their descendants in CAMI metagenomic profile |
+| create-taxdump | Create NCBI-style taxdump files for custom taxonomy, e.g., GTDB and ICTV |
+| filter | Filter TaxIds by taxonomic rank range |
+| genautocomplete | generate shell autocompletion script |
+| lca | Compute lowest common ancestor (LCA) for TaxIds |
+| list | List taxonomic subtrees of given TaxIds |
+| taxid-changelog | Create TaxId changelog from dump archives |
+| taxonkit lineage | Query taxonomic lineage of given TaxIds |
+| taxonkit name2taxid | Convert taxon names to TaxIds |
+| taxonkit profile2cami | Convert metagenomic profile table to CAMI format |
+| taxonkit reformat | Reformat lineage in canonical ranks |
+| taxonkit reformat2 | Reformat lineage in chosen ranks, allowing more ranks than 'reformat' |
+| version | Prints the version of taxonkit |
 
 ## Reference documentation
-- [TaxonKit GitHub Repository](./references/github_com_shenwei356_taxonkit.md)
-- [Bioconda TaxonKit Overview](./references/anaconda_org_channels_bioconda_packages_taxonkit_overview.md)
+- [TaxonKit GitHub README](./references/github_com_shenwei356_taxonkit_blob_master_README.md)
+- [TaxonKit Changelog and Version Updates](./references/github_com_shenwei356_taxonkit_blob_master_CHANGELOG.md)

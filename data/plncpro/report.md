@@ -120,3 +120,6 @@ Usage:
 predstoseq.py -f <input fastafile> -o <outputfile> -p <predictionfile> -l <required label default:0> -s <class_prob_cutoff[range 0-1], default:0> -m <min_length, default:0> <max_length, default:inf>
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -241,3 +241,6 @@ options:
   -q, --quiet  Do not output warnings to stderr
 ```
 
+
+## Metadata
+- **Skill**: generated

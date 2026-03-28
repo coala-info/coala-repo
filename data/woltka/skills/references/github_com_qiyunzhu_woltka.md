@@ -1,1 +1,280 @@
-GitHub - qiyunzhu/woltka: Woltka: a versatile meta&#39;omic data classifier Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} qiyunzhu / woltka Public Notifications You must be signed in to change notification settings Fork 25 Star 76 Woltka: a versatile meta'omic data classifier License BSD-3-Clause license 76 stars 25 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 48 Pull requests 0 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights qiyunzhu/woltka main Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 549 Commits 549 Commits .github/ workflows .github/ workflows doc doc woltka woltka .coveragerc .coveragerc .gitignore .gitignore CHANGELOG.md CHANGELOG.md LICENSE LICENSE README.md README.md environment.yml environment.yml pyproject.toml pyproject.toml View all files Repository files navigation README BSD-3-Clause license Woltka Woltka is a versatile program for determining the structure and functional capacity of microbiomes. It mainly works with shotgun metagenomic data. It bridges first-pass sequence aligners with advanced analytical platforms (such as QIIME 2). It takes full advantage of, and is not limited by, the WoL reference database. Its scope and highlights are: Woltka ships with a QIIME 2 plugin . See here for instructions . Contents Overview Installation Example usage Tutorials Working with WoL , The OGU analysis , Sequence alignment Main workflow Input files , Output files , Classification systems , Classification methods , "Coord-match" functional profiling , Stratification Table utilities Collapse , Coverage , Normalize , Filter , Merge For users of QIIME 2 , Qiita , Bowtie2 , SHOGUN , RefSeq , GTDB , MetaCyc , KEGG References Command-line interface , Test datasets , Computational efficiency FAQs Citation Contact Overview Where does Woltka fit in a pipeline Woltka is a classifier . It fits in between sequence alignment and microbiome analyses. What does Woltka do Woltka processes alignments -- the mappings of microbiome sequencing data against reference sequences (such as genomes or genes), and infers the best placement of the queries in a hierarchical classification system . One query could have simultaneous matches in multiple references. Woltka finds the most suitable classification unit(s) to describe the query accordingly the criteria specified by the user. Woltka generates profiles (feature tables) -- the abundances of classification units which describe the structure or function of microbial communities. What else does Woltka do Woltka provides several utilities for handling feature tables, including normalizing data, collapsing a table to higher-level features, calculating feature group coverage , filtering features based on per-sample abundance, and merging tables. What does Woltka not do Woltka does NOT align sequences. You need to align your sequencing data (FastQ, etc.) against a reference database (we recommend WoL ) using an aligner of your choice (e.g., Bowtie2 ). The resulting alignment files can be fed into Woltka. Woltka does NOT analyze profiles. We recommend using QIIME 2 for robust downstream analyses of the profiles to decode the relationships among microbial communities and with their environments. Flowchart of Woltka's main classification workflow: Installation Requirement: Python 3.6 or above. pip install woltka See more details about installation . Example usage Woltka provides several small test datasets under woltka/tests/data . To access them, download this GitHub repo, unzip, and navigate to this directory. One can execute the following commands to make sure that Woltka functions correctly, and to get an impression of the basic usage of Woltka. (Note: a more complete list of commands is provided here . Alternatively, you can skip this test dataset and check out the instruction for working with WoL.) 1. OGU (operational genomic unit) table generation ( details ): woltka classify -i align/bowtie2 -o ogu.biom The input path, align/bowtie2 , is a directory containing five Bowtie2 alignment files ( S01.sam.xz , S02.sam.xz ,... S05.sam.xz ) (SAM format, xzipped), each representing the mapping of metagenomic sequencing reads per sample against a reference genome database (here are guidlines for performing alignment). The output file, table.biom , is a feature table in BIOM format, which can then be analyzed using various bioformatics programs such as QIIME 2 . 2. Taxonomic profiling at the ranks of phylum, genus and species ( details ): woltka classify \ --input align/bowtie2 \ --map taxonomy/taxid.map \ --nodes taxonomy/nodes.dmp \ --names taxonomy/names.dmp \ --rank phylum,genus,species \ --output output_dir The mapping file ( taxid.map ) translates genome IDs to taxonomy IDs, which then allow Woltka to classify query sequences based on the NCBI taxonomy ( nodes.dmp and names.dmp ). The output directory ( output_dir ) will contain three feature tables: phylum.biom , genus.biom and species.biom , each representing a taxonomic profile at one of the three ranks. 3. Functional profiling by UniRef entries, then by GO molecular processes ( details ): woltka classify \ --input align/bowtie2 \ --coords function/coords.txt.xz \ --map function/uniref/uniref.map.xz \ --map function/go/process.tsv.xz \ --rank uniref,process \ --output output_dir Here, the input files are still read-to-genome alignments, rather than read-to-gene ones. Woltka matches reads with genes based on their coordinates on genomes using an efficient algorithm ( "coord-match" ). The gene coordinates are given by the database file coords.txt (see details ). The read coordinates are extracted from the alignment files. This ensures consistency between structural and functional analyses. Subsequently, Woltka is able to assign query sequences to functional units, as defined in mapping files ( uniref.map and process.tsv ). As you can see, compressed files are supported and auto-detected. Similarly, the output files are two functional profiles: uniref.biom and process.biom . 4. Combined taxonomic/functional profiling by GO molecular processes of individual genera of organisms ( details ). Two steps. First , perform taxonomic classification. The --outmap parameter writes a read-to-genus mapping file per sample to the directory genus_map/ . The --name-as-id flag replaces NCBI TaxIDs with real taxon names in the output. woltka classify \ --input align/bowtie2 \ --map taxonomy/taxid.map \ --nodes taxonomy/nodes.dmp \ --names taxonomy/names.dmp \ --name-as-id \ --rank genus \ --output genus.biom \ --outmap genus_map Second , perform functional classification. The --stratify parameter imports the genus mappings from the last analysis, and groups functional units (GO processes) by the genus of the source genome. woltka classify \ --input align/bowtie2 \ --stratify genus_map \ --coords function/coords.txt.xz \ --map function/uniref/uniref.map.xz \ --map function/go/process.tsv.xz \ --rank process \ --output genus_by_process.biom In the output profile (see below), each feature is a combination of taxonomy and function. This " stratified " profile lets the researcher explore the functional capacities of individual microbial components. Feature ID S01 S02 S03 S04 S05 Aeromonas|GO:0000917 4 20 3 0 7 Aeromonas|GO:0005975 0 12 5 2 0 Bacteroides|GO:0006260 105 0 0 0 0 Bacteroides|GO:0006281 10 6 2 0 3 Lactobacillus|GO:0045454 2 0 0 34 3 Lactobacillus|GO:0055085 0 0 7 0 0 ... Citation The first paper describi
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fqiyunzhu%2Fwoltka)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fqiyunzhu%2Fwoltka)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=qiyunzhu%2Fwoltka)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[qiyunzhu](/qiyunzhu)
+/
+**[woltka](/qiyunzhu/woltka)**
+Public
+
+* [Notifications](/login?return_to=%2Fqiyunzhu%2Fwoltka) You must be signed in to change notification settings
+* [Fork
+  25](/login?return_to=%2Fqiyunzhu%2Fwoltka)
+* [Star
+   77](/login?return_to=%2Fqiyunzhu%2Fwoltka)
+
+* [Code](/qiyunzhu/woltka)
+* [Issues
+  48](/qiyunzhu/woltka/issues)
+* [Pull requests
+  0](/qiyunzhu/woltka/pulls)
+* [Actions](/qiyunzhu/woltka/actions)
+* [Projects](/qiyunzhu/woltka/projects)
+* [Security
+  0](/qiyunzhu/woltka/security)
+* [Insights](/qiyunzhu/woltka/pulse)
+
+Additional navigation options
+
+* [Code](/qiyunzhu/woltka)
+* [Issues](/qiyunzhu/woltka/issues)
+* [Pull requests](/qiyunzhu/woltka/pulls)
+* [Actions](/qiyunzhu/woltka/actions)
+* [Projects](/qiyunzhu/woltka/projects)
+* [Security](/qiyunzhu/woltka/security)
+* [Insights](/qiyunzhu/woltka/pulse)
+
+# qiyunzhu/woltka
+
+main
+
+[Branches](/qiyunzhu/woltka/branches)[Tags](/qiyunzhu/woltka/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[549 Commits](/qiyunzhu/woltka/commits/main/)   549 Commits | | |
+| [.github/workflows](/qiyunzhu/woltka/tree/main/.github/workflows "This path skips through empty directories") | | [.github/workflows](/qiyunzhu/woltka/tree/main/.github/workflows "This path skips through empty directories") |  |  |
+| [doc](/qiyunzhu/woltka/tree/main/doc "doc") | | [doc](/qiyunzhu/woltka/tree/main/doc "doc") |  |  |
+| [woltka](/qiyunzhu/woltka/tree/main/woltka "woltka") | | [woltka](/qiyunzhu/woltka/tree/main/woltka "woltka") |  |  |
+| [.coveragerc](/qiyunzhu/woltka/blob/main/.coveragerc ".coveragerc") | | [.coveragerc](/qiyunzhu/woltka/blob/main/.coveragerc ".coveragerc") |  |  |
+| [.gitignore](/qiyunzhu/woltka/blob/main/.gitignore ".gitignore") | | [.gitignore](/qiyunzhu/woltka/blob/main/.gitignore ".gitignore") |  |  |
+| [CHANGELOG.md](/qiyunzhu/woltka/blob/main/CHANGELOG.md "CHANGELOG.md") | | [CHANGELOG.md](/qiyunzhu/woltka/blob/main/CHANGELOG.md "CHANGELOG.md") |  |  |
+| [LICENSE](/qiyunzhu/woltka/blob/main/LICENSE "LICENSE") | | [LICENSE](/qiyunzhu/woltka/blob/main/LICENSE "LICENSE") |  |  |
+| [README.md](/qiyunzhu/woltka/blob/main/README.md "README.md") | | [README.md](/qiyunzhu/woltka/blob/main/README.md "README.md") |  |  |
+| [environment.yml](/qiyunzhu/woltka/blob/main/environment.yml "environment.yml") | | [environment.yml](/qiyunzhu/woltka/blob/main/environment.yml "environment.yml") |  |  |
+| [pyproject.toml](/qiyunzhu/woltka/blob/main/pyproject.toml "pyproject.toml") | | [pyproject.toml](/qiyunzhu/woltka/blob/main/pyproject.toml "pyproject.toml") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* BSD-3-Clause license
+
+# Woltka
+
+[![License](https://camo.githubusercontent.com/b3775a2de17853a90995faa104f941eef3ad3c40cc89e34b8b1eaea014614d4e/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c6963656e73652d425344253230332d2d436c617573652d626c75652e737667)](https://opensource.org/licenses/BSD-3-Clause)
+[![CI Status](https://github.com/qiyunzhu/woltka/actions/workflows/main.yml/badge.svg)](https://github.com/qiyunzhu/woltka/actions)
+[![Coverage Status](https://camo.githubusercontent.com/d164ed8b4ac0c1df7d3351591857e427ef811136cc43e9b24a229775939176ed/68747470733a2f2f636f766572616c6c732e696f2f7265706f732f6769746875622f716979756e7a68752f776f6c746b612f62616467652e7376673f6272616e63683d6d61696e)](https://coveralls.io/github/qiyunzhu/woltka?branch=main)
+[![PyPI](https://camo.githubusercontent.com/7621a28420ec16b8a7d068f15b6d88f3f031133054e6d183d54010ececbb9490/68747470733a2f2f696d672e736869656c64732e696f2f707970692f762f776f6c746b61)](https://camo.githubusercontent.com/7621a28420ec16b8a7d068f15b6d88f3f031133054e6d183d54010ececbb9490/68747470733a2f2f696d672e736869656c64732e696f2f707970692f762f776f6c746b61)
+[![Conda (channel only)](https://camo.githubusercontent.com/c4be97e976180bb3b534a556ba853a42b0a2cf1b7d3aa4f4c505c88c092421eb/68747470733a2f2f696d672e736869656c64732e696f2f636f6e64612f766e2f62696f636f6e64612f776f6c746b61)](https://camo.githubusercontent.com/c4be97e976180bb3b534a556ba853a42b0a2cf1b7d3aa4f4c505c88c092421eb/68747470733a2f2f696d672e736869656c64732e696f2f636f6e64612f766e2f62696f636f6e64612f776f6c746b61)
+
+**Woltka** is a versatile program for determining the structure and functional capacity of microbiomes. It mainly works with shotgun metagenomic data. It bridges first-pass sequence aligners with advanced analytical platforms (such as QIIME 2). It takes full advantage of, and is not limited by, the [WoL](https://biocore.github.io/wol/) reference database. Its scope and highlights are:
+
+[![Woltka scope](/qiyunzhu/woltka/raw/main/doc/img/scope.png)](/qiyunzhu/woltka/blob/main/doc/img/scope.png)
+
+Woltka ships with a **QIIME 2 plugin**. [See here for instructions](/qiyunzhu/woltka/blob/main/woltka/q2).
+
+## Contents
+
+* [Overview](#overview)
+* [Installation](/qiyunzhu/woltka/blob/main/doc/install.md)
+* [Example usage](#example-usage)
+* Tutorials
+  + [Working with WoL](/qiyunzhu/woltka/blob/main/doc/wol.md), [The OGU analysis](/qiyunzhu/woltka/blob/main/doc/ogu.md), [Sequence alignment](/qiyunzhu/woltka/blob/main/doc/align.md)
+* Main workflow
+  + [Input files](/qiyunzhu/woltka/blob/main/doc/input.md), [Output files](/qiyunzhu/woltka/blob/main/doc/output.md), [Classification systems](/qiyunzhu/woltka/blob/main/doc/hierarchy.md), [Classification methods](/qiyunzhu/woltka/blob/main/doc/classify.md), ["Coord-match" functional profiling](/qiyunzhu/woltka/blob/main/doc/ordinal.md), [Stratification](/qiyunzhu/woltka/blob/main/doc/stratify.md)
+* Table utilities
+  + [Collapse](/qiyunzhu/woltka/blob/main/doc/collapse.md), [Coverage](/qiyunzhu/woltka/blob/main/doc/coverage.md), [Normalize](/qiyunzhu/woltka/blob/main/doc/normalize.md), [Filter](/qiyunzhu/woltka/blob/main/doc/filter.md), [Merge](/qiyunzhu/woltka/blob/main/doc/merge.md)
+* For users of
+  + [QIIME 2](/qiyunzhu/woltka/blob/main/woltka/q2), [Qiita](/qiyunzhu/woltka/blob/main/doc/qiita.md), [Bowtie2](/qiyunzhu/woltka/blob/main/doc/align.md#alignment-with-bowtie2), [SHOGUN](/qiyunzhu/woltka/blob/main/doc/align.md#the-shogun-protocol), [RefSeq](/qiyunzhu/woltka/blob/main/doc/refseq.md), [GTDB](/qiyunzhu/woltka/blob/main/doc/gtdb.md), [MetaCyc](/qiyunzhu/woltka/blob/main/doc/metacyc.md), [KEGG](/qiyunzhu/woltka/blob/main/doc/kegg.md)
+* References
+  + [Command-line interface](/qiyunzhu/woltka/blob/main/doc/cli.md), [Test datasets](/qiyunzhu/woltka/blob/main/woltka/tests/data), [Computational efficiency](/qiyunzhu/woltka/blob/main/doc/perform.md)
+* [FAQs](/qiyunzhu/woltka/blob/main/doc/faq.md)
+* [Citation](#citation)
+* [Contact](#contact)
+
+## Overview
+
+### Where does Woltka fit in a pipeline
+
+Woltka is a **classifier**. It fits in between sequence alignment and microbiome analyses.
+
+### What does Woltka do
+
+Woltka processes [**alignments**](/qiyunzhu/woltka/blob/main/doc/input.md) -- the mappings of microbiome sequencing data against reference sequences (such as genomes or genes), and [infers the best placement](/qiyunzhu/woltka/blob/main/doc/classify.md) of the queries in a hierarchical [classification system](/qiyunzhu/woltka/blob/main/doc/hierarchy.md). One query could have simultaneous matches in multiple references. Woltka finds the most suitable classification unit(s) to describe the query accordingly the criteria specified by the user. Woltka generates [**profiles**](/qiyunzhu/woltka/blob/main/doc/output.md) (feature tables) -- the abundances of classification units which describe the structure or function of microbial communities.
+
+### What else does Woltka do
+
+Woltka provides several utilities for handling feature tables, including [normalizing](/qiyunzhu/woltka/blob/main/doc/normalize.md) data, [collapsing](/qiyunzhu/woltka/blob/main/doc/collapse.md) a table to higher-level features, calculating feature group [coverage](/qiyunzhu/woltka/blob/main/doc/coverage.md), [filtering](/qiyunzhu/woltka/blob/main/doc/filter.md) features based on per-sample abundance, and [merging](/qiyunzhu/woltka/blob/main/doc/merge.md) tables.
+
+### What does Woltka not do
+
+Woltka does NOT **align** sequences. You need to align your sequencing data (FastQ, etc.) against a reference database (we recommend [WoL](/qiyunzhu/woltka/blob/main/wol.md)) using an aligner of your choice (e.g., [Bowtie2](/qiyunzhu/woltka/blob/main/doc/align.md#alignment-with-bowtie2)). The resulting alignment files can be fed into Woltka.
+
+Woltka does NOT **analyze** profiles. We recommend using [QIIME 2](https://qiime2.org/) for robust downstream analyses of the profiles to decode the relationships among microbial communities and with their environments.
+
+Flowchart of Woltka's main classification workflow:
+
+[![Woltka process](/qiyunzhu/woltka/raw/main/doc/img/process.png)](/qiyunzhu/woltka/blob/main/doc/img/process.png)
+
+## Installation
+
+Requirement: [Python](https://www.python.org/) 3.6 or above.
+
+```
+pip install woltka
+```
+
+See more details about [installation](/qiyunzhu/woltka/blob/main/doc/install.md).
+
+## Example usage
+
+Woltka provides several small test datasets under [woltka/tests/data](/qiyunzhu/woltka/blob/main/woltka/tests/data). To access them, [download](https://gi

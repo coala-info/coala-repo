@@ -1,6 +1,6 @@
 ---
 name: probeit
-description: "probeit generates specialized ligation and capture probe sets for pathogen detection and genotyping assays. Use when user asks to design probes for pathogen detection, identify sequences present in a target genome but absent in a background, or target specific nucleotide and amino acid mutations for genotyping."
+description: Probeit automates the design of dual-probe sets for pathogen detection and genotyping. Use when user asks to design probes for specific genomic targets, identify sequences present in a positive genome but absent in a negative background, or target specific nucleotide and amino acid mutations.
 homepage: https://github.com/steineggerlab/probeit
 ---
 
@@ -8,65 +8,67 @@ homepage: https://github.com/steineggerlab/probeit
 # probeit
 
 ## Overview
-`probeit` is a bioinformatics tool used to generate specialized probe sets for pathogen analysis, typically for use in assays like cRASL-seq. It produces two types of probes: **Probe1** (ligation probe, ~40nt) which covers the target pathogen pattern, and **Probe2** (capture probe, ~20nt) which is located near but does not overlap with Probe1. The tool supports two primary workflows: `posnegset` for broad detection and `snp` for fine-grained genotyping.
+Probeit is a specialized bioinformatics tool designed to automate the creation of dual-probe sets. It generates "Probe1" (typically 40nt, ligation probe) and "Probe2" (typically 20nt, capture probe) to identify specific pathogens or strains. It is particularly useful for researchers working on diagnostic assays where high specificity is required to distinguish between closely related genomic sequences or to detect specific functional mutations.
 
-## Installation
-The tool is available via Bioconda:
-```bash
-conda install -c bioconda probeit
-```
-
-## Core Workflows
+## Workflow Selection
 
 ### 1. Pathogen Detection (posnegset)
-Use this workflow to find sequences present in a target (positive) genome but absent in a background (negative) genome.
+Use this workflow to find sequences present in a target "positive" genome but absent in a "negative" background genome.
 
-**Command Pattern:**
+**Basic Command:**
 ```bash
-probeit posnegset -p positive.fa -n negative.fa -o output_directory
+probeit posnegset -p positive.fa -n negative.fa -o output_dir
 ```
 
-*   **-p / --positive**: FASTA file of the genome that must be covered.
-*   **-n / --negative**: FASTA file of the genome that must be excluded.
-*   **-o / --output**: Name of the output directory (created automatically by the tool).
+**Key Parameters:**
+- `-p/--positive`: The target genome(s) that probes must cover.
+- `-n/--negative`: The background genome(s) that probes must avoid.
+- `-o/--output`: The directory where results will be stored.
 
 ### 2. Pathogen Genotyping (snp)
-Use this workflow to design probes targeting specific mutations. It supports both nucleotide (nt) and amino acid (aa) substitutions.
+Use this workflow to design probes targeting specific known mutations. It supports both nucleotide-level and amino-acid-level SNP specifications.
 
-**Nucleotide SNPs:**
-Requires a reference genome, a strain genome, and a list of positions/mutations.
+**Nucleotide SNP Command:**
 ```bash
-probeit snp -r ref.fa -s strain.fa -p "10,20" -m "nt:A21716G,nt:T26766C" -o output_dir
+probeit snp -r ref.fa -s strain.fa -p "10,20" -m "nt:A21716G,nt:G23011A" -o output_dir
 ```
 
-**Amino Acid SNPs:**
-Requires a GFF annotation file in addition to the genomes.
+**Amino Acid SNP Command:**
 ```bash
-probeit snp -r ref.fa -s strain.fa -p "10,20" -m "aa:orf1ab:L4715F,aa:S:E484K" -a ref.gff -o output_dir
+probeit snp -r ref.fa -s strain.fa -a ref.gff -p "10,20" -m "aa:S:Q52R,aa:E:L21F" -o output_dir
 ```
 
-*   **-r / --reference**: Wild-type/reference FASTA.
-*   **-s / --strain**: Target strain FASTA.
-*   **-p / --positions**: Comma-separated list of integers indicating the SNP position within the first probe.
-*   **-m / --mutations**: Comma-separated array of SNPs (format: `nt:BasePosBase` or `aa:Gene:Mutation`).
-*   **-a / --annotation**: GFF file (required only for `aa` mutations).
+**Key Parameters:**
+- `-r/--reference`: The wild-type or reference genome.
+- `-s/--strain`: The genome containing the target SNPs.
+- `-a/--annotation`: Required only for `aa` (amino acid) mutations to map protein changes to genomic coordinates.
+- `-p/--positions`: Comma-separated integers defining the SNP position within the 1st probe.
+- `-m/--mutations`: Comma-separated list of mutations (prefix with `nt:` for nucleotide or `aa:gene:mutation` for amino acid).
 
-## Understanding Results
-The tool generates two primary FASTA files in the output directory:
+## Understanding Outputs
+Probeit generates two primary FASTA files in the output directory:
+- `sorted1.fa`: Contains **Probe1** sequences (ligation probes).
+- `sorted2.fa`: Contains **Probe2** sequences (capture probes).
 
-1.  **sorted1.fa (Probe1)**: Contains the primary detection/ligation probes (~40nt).
-    *   *posnegset headers*: `>Name | Coordinates` (e.g., `>p1_0 | NC_001:100:140`).
-    *   *snp headers*: `>Mutation;Position` (e.g., `>A21716G;10`).
-2.  **sorted2.fa (Probe2)**: Contains the capture probes (~20nt).
-    *   These are designed to be within 200nt of Probe1 without overlapping.
-    *   Headers indicate which Probe1 or SNP they are associated with.
+**Header Logic:**
+- In `posnegset`, headers link Probe2 to the specific Probe1 IDs they cover.
+- In `snp`, headers explicitly list the SNP and the relative position used during design.
 
-## Best Practices and Tips
-*   **Directory Management**: Do not create the output directory beforehand; `probeit` will fail if the directory already exists or will create it for you.
-*   **SNP Formatting**: When using the `snp` workflow, ensure the mutation string matches the expected prefix (`nt:` or `aa:`). For amino acids, the gene name in the `-m` string must match the ID/Name in the GFF file.
-*   **Probe Distance**: By default, Probe2 is designed to be close to Probe1 (within 200nt) to facilitate efficient capture in downstream molecular assays.
-*   **Validation**: Use `diff` to compare output files if running test samples from the `sample/` directory in the source repository to ensure the installation is functioning correctly.
+## Expert Tips
+- **Environment Setup**: Probeit relies on several heavy dependencies (mmseqs2, bedtools, primer3). Always ensure the `setcover` component is compiled via `bash install.sh` in the source directory before first use.
+- **Probe Spacing**: By default, Probe2 is designed to be within 200nt of Probe1 without overlapping. If your assay requires tighter or broader spacing, check for additional optional flags in the CLI help.
+- **SNP Positioning**: The `-p` parameter is critical for assay sensitivity. Placing the SNP at different offsets within the 40nt Probe1 can affect ligation efficiency; testing multiple positions (e.g., "10,11,12") is recommended.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| probeit | It generates a probe set with sequences included in the positive genome but not in the negative genome |
+| probeit_snp | It generates a probe set which detect input amino acid SNPs from strain genome. |
 
 ## Reference documentation
-- [Probeit GitHub Repository](./references/github_com_steineggerlab_probeit.md)
-- [Probeit Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_probeit_overview.md)
+- [Probeit GitHub README](./references/github_com_steineggerlab_probeit_blob_master_README.md)
+- [Probeit Installation Guide](./references/github_com_steineggerlab_probeit_blob_master_install.sh.md)
+- [Probeit Requirements](./references/github_com_steineggerlab_probeit_blob_master_requirements.md)

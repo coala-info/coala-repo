@@ -1,6 +1,6 @@
 ---
 name: salsa2
-description: SALSA2 scaffolds fragmented genome assemblies into chromosome-scale sequences using Hi-C proximity ligation data and assembly graphs. Use when user asks to scaffold contigs, upgrade assemblies to chromosome scale, or correct misassemblies using Hi-C data.
+description: "SALSA2 integrates Hi-C data with genome assemblies to produce chromosome-scale scaffolds. Use when user asks to scaffold assemblies using Hi-C data, correct misassemblies, or utilize assembly graphs to resolve contig orientations."
 homepage: https://github.com/marbl/SALSA
 ---
 
@@ -8,54 +8,62 @@ homepage: https://github.com/marbl/SALSA
 # salsa2
 
 ## Overview
-SALSA (Simple Assembly Line Scaffolder for Assemblies) is a specialized tool for upgrading fragmented long-read assemblies to chromosome-scale scaffolds using Hi-C proximity ligation data. It processes contig sequences alongside Hi-C alignments to determine the relative orientation and order of sequences. Unlike some other scaffolders, SALSA can utilize the underlying assembly graph to resolve ambiguities and can iteratively refine the assembly to minimize errors.
 
-## Pre-processing Requirements
-Before running the SALSA pipeline, input files must be formatted specifically:
+SALSA2 (Scaffolding Assemblies with Long-range Sequence Alignment) is a tool designed to integrate Hi-C data with genome assemblies to produce chromosome-scale scaffolds. It is particularly effective for long-read assemblies (e.g., PacBio or Oxford Nanopore) where it can utilize assembly graphs to resolve ambiguities. Use this skill to guide the preparation of Hi-C alignments, execute the scaffolding pipeline, and interpret the resulting iterative output.
 
-1.  **Contig Lengths**: Generate a `.fai` file from your assembly FASTA.
+## Prerequisites and Data Preparation
+
+Before running the SALSA2 pipeline, input files must be formatted specifically:
+
+1.  **Contig Lengths**: Generate a `.fai` file from your assembly.
     ```bash
     samtools faidx contigs.fasta
     ```
-2.  **Hi-C Alignments**: Map reads using BWA or Bowtie2. The resulting BAM must be converted to a BED file and **sorted by read name** (not coordinates).
+2.  **BED Alignments**: Hi-C reads must be mapped to the assembly (using BWA or Bowtie2). The resulting BAM must be converted to BED and **sorted by read name** (column 4), not by coordinate.
     ```bash
     bamToBed -i alignment.bam > alignment.bed
-    sort -k 4 alignment.bed > alignment_sorted.bed
+    sort -k 4 alignment.bed > tmp && mv tmp alignment.bed
     ```
+3.  **Restriction Enzyme**: Identify the cutting site sequence (e.g., `GATC` for MboI). For enzyme-free protocols like Omni-C, use `DNASE`.
 
-## Common CLI Patterns
+## Core Command Patterns
 
 ### Basic Scaffolding
-The most common usage requires the assembly, the lengths file, the sorted BED, and the restriction enzyme sequence.
+Use this for a standard run when you have contigs and a name-sorted BED file.
 ```bash
-python run_pipeline.py -a contigs.fasta -l contigs.fasta.fai -b alignment_sorted.bed -e GATC -o output_dir
+python run_pipeline.py -a contigs.fasta -l contigs.fasta.fai -b alignment.bed -e GATC -o output_dir
 ```
 
 ### Scaffolding with Misassembly Correction
-To allow SALSA to break contigs where Hi-C data suggests a misassembly, use the `-m` flag.
+Enable the `-m yes` flag to allow SALSA2 to identify and break misassembled contigs based on Hi-C coverage inconsistencies.
 ```bash
-python run_pipeline.py -a contigs.fasta -l contigs.fasta.fai -b alignment_sorted.bed -e GATC -m yes -o output_dir
+python run_pipeline.py -a contigs.fasta -l contigs.fasta.fai -b alignment.bed -e GATC -o output_dir -m yes
 ```
 
-### Integrating Assembly Graphs
-If your assembler produced a GFA file, providing it helps SALSA navigate repetitive regions and improves scaffolding logic.
+### Utilizing Assembly Graphs
+If your assembler provided a GFA file, include it to reduce scaffolding errors by constraining contig orientations.
 ```bash
-python run_pipeline.py -a contigs.fasta -l contigs.fasta.fai -b alignment_sorted.bed -e GATC -g assembly_graph.gfa -o output_dir
+python run_pipeline.py -a contigs.fasta -l contigs.fasta.fai -b alignment.bed -e GATC -g assembly_graph.gfa -o output_dir
 ```
 
-### Using DNAse or Omni-C Data
-For enzyme-free protocols like Omni-C, use the `DNASE` keyword for the enzyme parameter.
-```bash
-python run_pipeline.py -a contigs.fasta -l contigs.fasta.fai -b alignment_sorted.bed -e DNASE -o output_dir
-```
+## Expert Tips and Parameters
 
-## Expert Tips and Best Practices
-*   **Enzyme Sequences**: The `-e` flag requires the actual recognition sequence (e.g., `GATC` for MboI). If multiple enzymes were used, provide them as a comma-separated list without spaces: `-e GATC,AAGCTT`.
-*   **Contig Headers**: Ensure your FASTA headers do not contain colons (`:`), as this can interfere with SALSA's internal parsing.
-*   **Iteration Control**: By default, SALSA runs 3 iterations. For highly complex or fragmented genomes, you may want to increase this using `-i`, though returns usually diminish after 5-10 iterations.
-*   **Filtering**: If your BED file contains alignments to contigs not present in your FASTA file, use `-f yes` to filter the BED file automatically during the run.
-*   **Visualization**: SALSA can output files compatible with Juicebox for manual curation. Check the output directory for `.hic` conversion scripts or files if the `-p yes` option was used to preserve intermediate steps.
+*   **Iterative Refinement**: Use `-i` to set the number of iterations (default is 3). Increasing iterations can sometimes improve results for highly fragmented assemblies.
+*   **Contig Filtering**: Use `-c` to set the minimum contig length to be considered for scaffolding (default is 1000bp). For higher quality assemblies, increasing this to 5000 or 10000 can reduce noise.
+*   **Multiple Enzymes**: If a cocktail of enzymes was used, provide them as a comma-separated list: `-e GATC,AAGCTT`.
+*   **Output Interpretation**: The final results are stored in `scaffolds_FINAL.fasta` and `scaffolds_FINAL.agp`. Intermediate iterations are preserved in the output directory for troubleshooting.
+*   **Visualization**: SALSA2 supports converting scaffolds to `.hic` format for contact map visualization in Juicebox.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| python | Python interpreter |
+| sort | Sort lines of text |
 
 ## Reference documentation
-- [Salsa2 Overview](./references/anaconda_org_channels_bioconda_packages_salsa2_overview.md)
-- [SALSA GitHub Documentation](./references/github_com_marbl_SALSA.md)
+- [SALSA README](./references/github_com_marbl_SALSA_blob_master_README.md)
+- [SALSA Pipeline Script](./references/github_com_marbl_SALSA_blob_master_run_pipeline.py.md)
+- [Restriction Site Processing](./references/github_com_marbl_SALSA_blob_master_RE_sites.py.md)

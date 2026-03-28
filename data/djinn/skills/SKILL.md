@@ -1,6 +1,6 @@
 ---
 name: djinn
-description: "Djinn standardizes and converts between various linked-read sequencing formats and barcode styles. Use when user asks to convert linked-read FASTQs to BAM for NCBI submission, translate between platform-specific formats, or extract and sort records by barcode."
+description: Djinn is a bioinformatics utility for processing and managing linked-read sequencing data through barcode-aware operations. Use when user asks to convert linked-read formats, sort reads by barcode, extract unique barcodes, prepare unaligned BAM files for NCBI submission, or filter singleton reads.
 homepage: https://github.com/pdimens/djinn
 ---
 
@@ -8,36 +8,50 @@ homepage: https://github.com/pdimens/djinn
 # djinn
 
 ## Overview
-Djinn is a specialized utility for handling the discrepancies between various linked-read sequencing formats. It acts as a bridge between different platform-specific data structures, allowing you to standardize barcodes and file formats for downstream analysis or public repository submission. Use this skill to manage the complexities of linked-read metadata, specifically when working with 10X Genomics, haplotagging, stLFR, and TELLseq data.
 
-## Installation
-The tool is primarily distributed via Bioconda:
-```bash
-conda install bioconda::djinn
-```
+`djinn` is a specialized bioinformatics utility designed to handle the unique requirements of linked-read sequencing data. Unlike standard genomic tools that focus on read names or genomic coordinates, `djinn` prioritizes the molecular barcode, allowing for barcode-aware sorting, filtering, and format conversion. It is particularly useful for researchers needing to move data between proprietary formats (like 10X) and standard formats, or for those preparing unaligned BAM files for public repository submissions where sequence headers might otherwise be stripped.
 
-## Common CLI Patterns
+## Core Capabilities and CLI Usage
 
-### Format Conversion
-Djinn's primary utility is converting between FASTQ types and barcode styles.
-- **NCBI Submission**: Convert linked-read FASTQ data into unaligned BAM files. This preserves barcode information in the `BX` or `BC` tags, which is necessary because NCBI often strips custom sequence headers from FASTQ submissions.
-- **Platform Interoperability**: Convert between 10X, stLFR, and TELLseq formats using the `fastq` or `sam` subcommands.
+The tool is invoked via the `djinn` command. It utilizes a subcommand-based structure to perform specific linked-read tasks.
 
-### Barcode Management
-- **Extraction**: Use Djinn to pull all barcodes from input files to assess library complexity or prepare for demultiplexing.
-- **Sorting**: Sort records by barcode rather than genomic position or read name. This is often a prerequisite for tools that process linked reads in "barcode-aware" batches.
-- **Filtering**: Separate linked reads from singletons or remove reads with invalid/low-quality barcodes to clean up your dataset.
+### 1. Format Conversion
+`djinn` supports converting between several linked-read data types. This is essential when a downstream tool requires a specific barcode orientation or header format.
+*   **Supported Formats**: 10X, haplotagging, stLFR, TELLseq, and "standard" linked-read formats.
+*   **Usage Pattern**: Use the conversion subcommands to translate barcode information between FASTQ types or barcode styles.
 
-### Advanced Workflows
-- **Hi-C Spoofing (Experimental)**: Convert paired-end linked-read FASTQs into a format compatible with Hi-C pipelines by mix-matching R1s and R2s that share a common barcode.
-- **Metadata Assignment**: Use the `assign-mi` and `concat` subcommands (integrated from the Harpy toolkit) to manage Molecular Identifier (MI) tags in SAM/BAM files.
+### 2. Barcode Extraction and Sorting
+Standard tools often sort by coordinate or read name. `djinn` provides specialized sorting to group reads by their molecular tags.
+*   **Extraction**: Retrieve all unique barcodes from input FASTQ or BAM files.
+*   **Barcode Sorting**: Reorder records so that all reads sharing the same barcode are contiguous. This is a prerequisite for many linked-read assembly and scaffolding algorithms.
+
+### 3. Filtering and Quality Control
+*   **Singleton Separation**: Separate linked reads (where multiple reads share a barcode) from singletons (where a barcode appears only once).
+*   **Invalid Barcodes**: Omit reads containing barcodes that do not meet specific format requirements or quality thresholds.
+
+### 4. NCBI Submission Preparation
+NCBI often strips custom information from FASTQ headers. To preserve linked-read metadata:
+*   Convert FASTQ data into an **unaligned BAM (uBAM)**.
+*   `djinn` ensures the barcode is stored in the standard `BX` or `BC` tags, which are recognized by NCBI and preserved during the submission process.
+
+### 5. Experimental Hi-C Spoofing
+For advanced workflows, `djinn` can attempt to convert paired-end linked-read FASTQ files into a format that mimics Hi-C data. It achieves this by mix-matching R1 and R2 reads that share a barcode, allowing linked-read data to be processed by certain Hi-C-specific scaffolding tools.
 
 ## Expert Tips
-- **Header Preservation**: When preparing data for NCBI, always prefer the BAM conversion route. Standard FASTQ headers are unreliable for storing barcode metadata during the submission process.
-- **Interleaved Data**: When working with paired-end data, check if your input is interleaved; recent updates to Djinn include specific flags to handle interleaved FASTQ streams more efficiently.
-- **Parallel Compression**: For large datasets, ensure your environment supports parallel compression to speed up the writing of output FASTQ/BAM files.
+
+*   **uBAM over FASTQ**: When archiving data, always prefer the uBAM format generated by `djinn`. This ensures that the "linked" nature of the data (the barcodes) is stored in standardized BAM tags rather than fragile string-parsed headers.
+*   **Memory Management**: Barcode sorting can be memory-intensive. Ensure your environment has sufficient resources when processing large-scale 10X or stLFR libraries.
+*   **Dependency Check**: `djinn` relies on `samtools` and `pysam`. Ensure `samtools` is in your system PATH for the conversion functions to work correctly.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| djinn fastq | FASTQ file conversions and modifications |
+| djinn sam | SAM/BAM file conversions and modifications |
 
 ## Reference documentation
-- [Djinn Overview](./references/anaconda_org_channels_bioconda_packages_djinn_overview.md)
-- [Djinn GitHub Repository](./references/github_com_pdimens_djinn.md)
-- [Djinn Commits and Subcommands](./references/github_com_pdimens_djinn_commits_main.md)
+- [djinn README](./references/github_com_pdimens_djinn_blob_main_README.md)
+- [Project Configuration](./references/github_com_pdimens_djinn_blob_main_pyproject.toml.md)

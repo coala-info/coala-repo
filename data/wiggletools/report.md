@@ -1742,3 +1742,6 @@ No inputs — do not generate CWL.
 Could not open file --help.
 ```
 
+
+## Metadata
+- **Skill**: generated

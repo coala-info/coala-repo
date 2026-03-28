@@ -356,3 +356,6 @@ Options:
           Print help
 ```
 
+
+## Metadata
+- **Skill**: generated

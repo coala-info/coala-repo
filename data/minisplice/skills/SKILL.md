@@ -1,6 +1,6 @@
 ---
 name: minisplice
-description: "minisplice scores canonical splice sites using a convolutional neural network to improve the accuracy of spliced alignments. Use when user asks to predict splice site scores, train custom splice site models, or refine alignments for miniprot and minimap2."
+description: minisplice evaluates the probability of potential splice sites using a convolutional neural network to improve the accuracy of genomic alignments. Use when user asks to predict splice site scores, train custom splice signal models, or calibrate models for specific organisms.
 homepage: https://github.com/lh3/minisplice
 ---
 
@@ -8,73 +8,61 @@ homepage: https://github.com/lh3/minisplice
 # minisplice
 
 ## Overview
-minisplice is a specialized tool designed to improve the accuracy of spliced alignments by scoring canonical donor (GT) and acceptor (AG) splice sites. It employs a 1D convolutional neural network (1D-CNN) to estimate the odds-ratio scores of these sites. This is particularly valuable when working with distant homologs where standard alignment heuristics often fail to resolve ambiguous splice junctions. The tool is designed to work as a pre-processor for aligners like `miniprot` and `minimap2`.
 
-## Installation
-The easiest way to install minisplice is via Bioconda:
+minisplice is a specialized genomic utility designed to enhance the accuracy of protein-to-genome and RNA-to-genome alignments. By employing a 1D convolutional neural network (1D-CNN), it evaluates the probability of potential splice sites being biologically active. The tool outputs 2log2-scaled odds ratios, which represent the likelihood of a site being a real donor or acceptor relative to a null model. These scores are particularly valuable when working with distant homologs where standard splice signal models lose predictive power.
+
+## Core Workflows
+
+### Predicting Splice Scores
+To generate splice scores for a target genome using a pre-trained model (e.g., for vertebrates or insects):
+
 ```bash
-conda install bioconda::minisplice
+./minisplice predict -t 16 -c model.kan.cali model.kan genome.fa.gz > scores.tsv
 ```
 
-## Prediction with Pre-trained Models
-If your target genome is a vertebrate or insect, use the pre-trained models (e.g., `vi2-7k`) to save time.
+*   **-t**: Number of threads.
+*   **-c**: Path to the calibration file (translates raw model output to empirical probability).
+*   **Output**: A TSV containing contig, offset, strand, type (D/A), and the score.
 
-1. **Run Prediction**:
-   ```bash
-   minisplice predict -t 16 -c vi2-7k.kan.cali vi2-7k.kan genome.fa.gz > score.tsv
-   ```
-   *   `-t`: Number of threads.
-   *   `-c`: Calibration data file (translates model output to empirical probability).
-   *   `.kan`: The pre-trained model file.
+### Training a Custom Model
+If pre-trained models are unsuitable for your target organism, follow this sequence:
 
-2. **Output Format**:
-   The resulting TSV contains: `contig`, `offset`, `strand`, `type` (D for donor, A for acceptor), and the `score` (2log2-scaled odds ratio).
+1.  **Prepare Training Data**: Convert GTF/GFF3 to BED12 (using `minigff.js`) and generate training sequences.
+    ```bash
+    ./minisplice gentrain anno-long.bed.gz genome-odd.fa.gz | gzip > train.txt.gz
+    ```
+2.  **Train the CNN**:
+    ```bash
+    ./minisplice train -t 16 -o model.kan train.txt.gz
+    ```
+3.  **Calibrate the Model**: Use a separate set of chromosomes (e.g., even) to compute empirical odds-ratio scores.
+    ```bash
+    ./minisplice predict -t 16 -b anno-all.bed.gz model.kan genome-even.fa.gz > model.cali
+    ```
 
-## Integration with Aligners
-Once you have generated a `score.tsv`, pass it to your aligner to refine the results.
+### Integration with Aligners
+The generated `scores.tsv` can be passed directly to compatible aligners to resolve ambiguous junctions:
 
-### Using with miniprot (v0.16+)
-```bash
-miniprot -Iut16 --gff -j2 --spsc=score.tsv genome.fa.gz proteins.faa > align.gff
-```
+*   **miniprot**: `miniprot --spsc=scores.tsv genome.fa proteins.faa > align.gff`
+*   **minimap2**: `minimap2 -cxsplice:hq --spsc=scores.tsv genome.fa rna-seq.fq > align.paf`
 
-### Using with minimap2 (r1285+)
-```bash
-minimap2 -cxsplice:hq -t16 --spsc=score.tsv genome.fa.gz rna-seq.fq > align.paf
-```
+## Expert Tips and Best Practices
 
-## Custom Model Training Workflow
-If pre-trained models are unsuitable for your species, you can train a custom model using annotated data.
+*   **Model/Cali Pairing**: Ensure the `.kan` (model) and `.cali` (calibration) files match. Recent versions of minisplice attempt to load the `.cali` file automatically if it shares the same base name as the model file.
+*   **Data Partitioning**: For robust training, always train on one set of chromosomes (e.g., odd) and calibrate on another (e.g., even) to avoid over-fitting the splice scores.
+*   **Score Filtering**: minisplice (v0.4+) suppresses scores of -6 or lower by default. This significantly reduces file size (approx. 30%) without impacting the accuracy of downstream tools like miniprot.
+*   **Multi-Species Training**: You can combine training data from multiple distantly related species by concatenating `gentrain` outputs before running the `train` command. Use `script/merge-cali.js` to combine the resulting calibration files.
 
-1. **Prepare Training Data**:
-   Convert GFF3/GTF to BED12 (using `minigff`) and generate training sequences:
-   ```bash
-   minisplice gentrain anno-long.bed.gz genome-odd.fa.gz | gzip > train.txt.gz
-   ```
 
-2. **Train the Model**:
-   ```bash
-   minisplice train -t 16 -o model.kan train.txt.gz
-   ```
 
-3. **Calibrate the Model**:
-   Compute empirical odds-ratio scores using a separate set of chromosomes (e.g., even chromosomes):
-   ```bash
-   minisplice predict -t 16 -b anno-all.bed.gz model.kan genome-even.fa.gz > model.cali
-   ```
+## Subcommands
 
-4. **Final Prediction**:
-   Use the new model and calibration file on your target genome:
-   ```bash
-   minisplice predict -t 16 -c model.cali model.kan genome.fa.gz > score.tsv
-   ```
-
-## Expert Tips
-*   **Data Splitting**: For the most robust custom models, train on "odd" chromosomes and calibrate on "even" chromosomes to avoid overfitting.
-*   **Version Sensitivity**: Ensure you are using `miniprot` v0.16 or later; earlier versions supporting the `--spsc` flag may trigger assertion failures.
-*   **Multi-Species Training**: You can combine training data from multiple distantly related species by concatenating the `gentrain` outputs before running the `train` command.
-*   **Subsampling**: If training on multiple large genomes, subsample the training data to reduce computation time without significantly impacting model power.
+| Command | Description |
+|---------|-------------|
+| gentrain | Generate training data for minisplice |
+| minisplice predict | Predict splice sites |
+| minisplice_train | Train a model for minisplice |
 
 ## Reference documentation
-- [minisplice GitHub Repository](./references/github_com_lh3_minisplice.md)
-- [Bioconda minisplice Overview](./references/anaconda_org_channels_bioconda_packages_minisplice_overview.md)
+- [minisplice README](./references/github_com_lh3_minisplice_blob_master_README.md)
+- [minisplice NEWS](./references/github_com_lh3_minisplice_blob_master_NEWS.md)

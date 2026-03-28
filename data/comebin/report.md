@@ -74,3 +74,6 @@ Options:
   -b INT          batch size for training process (default=1024)
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -1,6 +1,6 @@
 ---
 name: ropebwt3
-description: "ropebwt3 constructs and searches Burrows-Wheeler Transform indices for large-scale, redundant genomic datasets. Use when user asks to build BWT indices, find maximal exact matches, or perform local and end-to-end sequence alignments."
+description: "Ropebwt3 transforms massive genomic datasets into a run-length encoded FM-index for efficient storage and sequence querying. Use when user asks to build a pangenome index, find exact matches or SMEMs, perform local alignments with BWA-SW, or estimate haplotype diversity."
 homepage: https://github.com/lh3/ropebwt3
 ---
 
@@ -9,47 +9,88 @@ homepage: https://github.com/lh3/ropebwt3
 
 ## Overview
 
-ropebwt3 is a high-performance bioinformatics tool designed for the construction and searching of the Burrows-Wheeler Transform (BWT) and FM-index. It is specifically optimized for "redundant" genomic data, where many sequences are nearly identical (e.g., hundreds of strains of the same bacteria). It can compress terabytes of raw DNA into small, searchable indices. Use this skill to guide the creation of indices, the discovery of exact matches, and the execution of local alignments using the BWA-SW algorithm.
+Ropebwt3 is a specialized tool designed for the efficient storage and querying of massive, redundant genomic datasets. It transforms DNA sequences into a run-length encoded FM-index, enabling significant compression (e.g., 7.3Tb of bacterial genomes into a 30GB index). It is particularly effective for pangenome analysis where traditional aligners struggle with redundancy. The tool provides high-speed exact match finding and a revised BWA-SW algorithm for local alignments that support mismatches and gaps.
 
-## Core Workflows
+## Core Workflows and CLI Patterns
 
-### 1. Index Construction (build)
-The `build` command creates the `.fmd` (run-length encoded BWT) file.
+### 1. Index Construction
+Building a full index is a multi-step process. It is recommended to use the `.fmr` (dynamic) format for construction and the `.fmd` (static) format for searching.
 
-*   **General usage**: `ropebwt3 build -t [threads] -bo [output.fmd] [input.fa]`
-*   **Incremental building**: To add new sequences to an existing index:
-    `ropebwt3 build -i [old.fmd] -bo [new.fmd] [new_sequences.fa]`
-*   **Memory management**: Use `-m [mem]` (e.g., `-m 2g`) to set the memory limit for the block-based construction.
-*   **Short reads**: For high-coverage short reads, apply the `-r` flag for RCLO (Run-length Conditional Line Ordering) optimization.
+**Build the BWT:**
+```bash
+# General construction from multiple FASTA files
+ropebwt3 build -t24 -bo index.fmr file1.fa file2.fa
 
-### 2. Finding Maximal Exact Matches (mem)
-Use `mem` to find exact matches between a query and the index.
+# Convert dynamic FMR to static FMD for faster searching
+ropebwt3 build -i index.fmr -do index.fmd
+```
 
-*   **Basic SMEM search**: `ropebwt3 mem -l [min_len] [index.fmd] [query.fa] > [output.bed]`
-*   **Reporting positions**: By default, `mem` only counts hits. Use `-p` to report the positions of matches.
-*   **Coverage analysis**: Use `--cov` to calculate the total length of regions covered by SMEMs of at least length `-l`.
+**Generate Sampled Suffix Array (SSA):**
+Required for reporting coordinates in PAF output.
+```bash
+# Store one SA value per 2^8 positions
+ropebwt3 ssa -o index.fmd.ssa -s8 -t32 index.fmd
+```
 
-### 3. Local and End-to-End Alignment (sw)
-The `sw` command implements a revised BWA-SW algorithm for alignment.
+**Prepare Sequence Lengths:**
+Required for full PAF metadata.
+```bash
+seqtk comp input.fa | cut -f1,2 | gzip > index.fmd.len.gz
+```
 
-*   **Local alignment**: `ropebwt3 sw -t [threads] [index.fmd] [query.fa] > [output.paf]`
-*   **End-to-end alignment**: Add the `-e` flag to force the query to align from start to finish. This is useful for retrieving similar haplotypes.
-*   **Accuracy vs. Speed**: Increase `-N` (bandwidth) for better accuracy or `-k` (seed length) for faster initial matching.
+### 2. Finding Exact Matches (MEMs/SMEMs)
+Use the `mem` command for rapid identification of exact matches. This is significantly faster than local alignment.
 
-### 4. Index Components for Full Output
-To get standard PAF output with coordinates and sequence names, you must have three files with the same base name:
-1.  `<base>.fmd`: The BWT (created by `build`).
-2.  `<base>.fmd.ssa`: Sampled Suffix Array (created by `ropebwt3 ssa <base>.fmd`).
-3.  `<base>.fmd.len.gz`: Sequence names and lengths (created via `seqtk comp input.fa | cut -f1,2 | gzip`).
+```bash
+# Find SMEMs with a minimum length of 31
+ropebwt3 mem -t4 -l31 index.fmd query.fa > matches.bed
 
-## Expert Tips
+# Output a subset of positions for the matches
+ropebwt3 mem -p -l31 index.fmd query.fa > matches_with_pos.bed
+```
 
-*   **Pangenome Advantage**: Unlike standard BWA, ropebwt3's performance improves or stays stable as redundancy increases, making it the preferred choice for pangenome indices.
-*   **Reverse Complements**: By default, `build` indexes both strands. If you only need the forward strand, use `-R`.
-*   **Large-scale Indexing**: For extremely large datasets (e.g., hundreds of human assemblies), consider using the `grlBWT` workflow (fa2line -> grlbwt-cli -> grl2plain -> plain2fmd) which can be faster and more memory-efficient than the standard `build` command.
-*   **Retrieving Sequences**: Use the `get` command to extract specific sequences from the index by their internal ID: `ropebwt3 get [index.fmd] [id]`.
+### 3. Local Alignment (BWA-SW)
+Use the `sw` command when you need to account for mismatches and gaps. Note that this is much slower than `mem`.
+
+```bash
+# Standard local alignment outputting PAF
+ropebwt3 sw -t4 -N25 -k11 index.fmd query.fa > aln.paf
+
+# End-to-end alignment mode to find similar haplotypes
+ropebwt3 sw -e -t4 index.fmd query.fa > haplotypes.paf
+```
+
+### 4. Haplotype Diversity
+The `hapdiv` command estimates diversity by sliding 101-mers across the query and counting matching alleles in the index.
+
+```bash
+ropebwt3 hapdiv index.fmd query.fa > diversity_stats.txt
+```
+
+## Expert Tips and Best Practices
+
+*   **Format Selection:** Always convert your final index to `.fmd` using `ropebwt3 build -do`. The FMD format is memory-mappable and faster to load for search operations.
+*   **Memory Management:** If the compiler supports OpenMP, use it for multi-threading. If memory is a bottleneck during construction, consider using the `grlBWT` workflow (fa2line -> grlbwt-cli -> grl2plain -> plain2fmd) which utilizes disk space to reduce RAM usage.
+*   **Minimum Match Length:** For the `mem` command, increasing the `-l` parameter (e.g., from 19 to 31 or higher) significantly improves performance on large indices by reducing the number of short, uninformative hits.
+*   **Coordinate Reporting:** If `sw` is not reporting contig names or positions correctly, ensure that the `.ssa` and `.len.gz` files are present in the same directory as the `.fmd` file and share the same base name.
+*   **Sequence Retrieval:** Use the `get` command to extract specific sequences from the index by their internal index ID (e.g., `ropebwt3 get index.fmd 0`).
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| build | Builds a BWT index for a FASTA file. |
+| fa2line | Convert FASTA file to line-based format |
+| kount | Count k-mers in FMD-index files. |
+| merge | Merge multiple FMR files into a single FMR file. |
+| ropebwt3 suffix | Build suffix array and BWT for a FASTA file. |
+| ropebwt3_get | Get sequences from an FMR index |
+| ropebwt3_plain2fmd | Convert plain text to FM-index |
+| ropebwt3_stat | Compute statistics for an FMD-index. |
+| ssa | Builds a suffix array for a FM-index. |
 
 ## Reference documentation
-
-- [GitHub README](./references/github_com_lh3_ropebwt3.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_ropebwt3_overview.md)
+- [Ropebwt3 Main README](./references/github_com_lh3_ropebwt3_blob_master_README.md)
+- [Ropebwt3 Release Notes and Version History](./references/github_com_lh3_ropebwt3_blob_master_NEWS.md)

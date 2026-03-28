@@ -1,6 +1,6 @@
 ---
 name: epicore
-description: The epicore tool identifies shared consensus epitopes from overlapping peptide sequences to map immunogenic hotspots across a proteome. Use when user asks to identify core epitopes from peptide evidence, generate consensus epitope sequences, or visualize protein coverage landscapes.
+description: Epicore identifies and visualizes shared consensus epitopes by grouping overlapping peptide sequences from evidence files against a reference proteome. Use when user asks to generate consensus epitopes, visualize protein landscapes, map immunogenic regions, or group overlapping peptides from peptide data.
 homepage: https://github.com/AG-Walz/epicore
 ---
 
@@ -9,65 +9,82 @@ homepage: https://github.com/AG-Walz/epicore
 
 ## Overview
 
-The epicore tool is a specialized bioinformatics utility designed to identify shared consensus epitopes from sets of overlapping peptides. It transforms raw peptide evidence—typically from mass spectrometry search engines—into a structured map of core epitopes by grouping sequences based on their genomic or proteomic coordinates. This skill enables the identification of immunogenic "hotspots" and provides the necessary commands to generate both tabular data (consensus sequences, start/end positions) and visual landscape plots of protein coverage.
+The epicore tool is a specialized bioinformatics utility designed to identify and visualize shared consensus epitopes from peptide data. It processes evidence files (from search engines) alongside a reference proteome to group overlapping peptides into consensus sequences. This is particularly useful for mapping immunogenic regions across different samples or conditions and understanding the "landscape" of protein coverage.
+
+## Installation
+
+Install epicore using pip or conda:
+
+```bash
+pip install epicore
+# OR
+conda install bioconda::epicore
+```
 
 ## Core Workflows
 
 ### 1. Generating Consensus Epitopes
-The primary command `generate-epicore-csv` processes an evidence file against a reference proteome to identify core epitopes.
 
+Use the `generate-epicore-csv` command to process your peptide evidence. This command requires mapping your input file columns to the tool's expected parameters.
+
+**Basic Pattern:**
 ```bash
-epicore --reference_proteome <PROTEOME_FASTA> \
-        --out_dir <OUTPUT_DIRECTORY> \
-        generate-epicore-csv \
-        --evidence_file <INPUT_FILE> \
-        --seq_column <SEQUENCE_COL> \
-        --protacc_column <ACCESSION_COL> \
-        --start_column <START_POS_COL> \
-        --end_column <END_POS_COL> \
-        --sample_column <SAMPLE_ID_COL> \
-        --condition_column <CONDITION_COL> \
-        --min_epi_length 8 \
-        --min_overlap 1 \
-        --max_step_size 5 \
-        --delimiter ","
+epicore --reference_proteome <PROTEOME.fasta> --out_dir <OUTPUT_DIR> generate-epicore-csv \
+  --evidence_file <INPUT_FILE> \
+  --seq_column <SEQUENCE_COL> \
+  --protacc_column <ACCESSION_COL> \
+  --start_column <START_COL> \
+  --end_column <END_COL> \
+  --sample_column <SAMPLE_ID_COL> \
+  --condition_column <CONDITION_COL> \
+  --min_epi_length 8 \
+  --min_overlap 7 \
+  --max_step_size 3 \
+  --delimiter ","
 ```
 
 ### 2. Visualizing Protein Landscapes
-Once the CSV results are generated, use `plot-landscape` to create visual representations of peptide distribution across specific proteins.
 
+After generating the results, use `plot-landscape` to create visualizations for specific proteins.
+
+**Basic Pattern:**
 ```bash
-epicore --reference_proteome <PROTEOME_FASTA> \
-        --out_dir <OUTPUT_DIRECTORY> \
-        plot-landscape \
-        --epicore_csv <PATH_TO_epicore_result.csv> \
-        --protacc <PROTEIN_ACCESSION_1,PROTEIN_ACCESSION_2>
+epicore --reference_proteome <PROTEOME.fasta> --out_dir <OUTPUT_DIR> plot-landscape \
+  --epicore_csv <OUTPUT_DIR>/epicore_result.csv \
+  --protacc <PROTEIN_ACCESSION>
 ```
 
-## Parameter Best Practices
+## Tool-Specific Best Practices
 
-### Grouping Logic
-*   **`--min_epi_length`**: Sets the minimum length for a peptide group to be considered an epitope.
-*   **`--min_overlap`**: Defines the minimum number of amino acids that must overlap between peptides to group them.
-*   **`--max_step_size`**: Controls the maximum distance allowed between peptides to maintain a group.
-*   **`--strict`**: Use this flag to ensure the defined minimal overlap is maintained between *all* peptides within a group, rather than just adjacent ones.
+### Handling Peptide Modifications
+If your sequences contain modification markers (e.g., `AAAPAIM/+15.99\SY`), use the `--mod_pattern` flag to define the delimiters.
+- Example: `--mod_pattern "/,\"` tells the tool that modifications start with `/` and end with `\`.
+- Note: Sequences inside `()` or `[]` are handled as modifications by default.
 
-### Handling Modifications
-If your peptide sequences contain modification markers (e.g., `AAAPAIM/+15.99\SY`), use the `mod_pattern` parameter to define the delimiters.
-*   Example: `--mod_pattern "/, \"` tells the tool that modifications start with `/` and end with `\`.
-*   Note: Content inside `()` or `[]` is handled as a modification by default.
+### Tuning Grouping Parameters
+The quality of consensus epitopes depends on three primary parameters:
+- `--min_epi_length`: The minimum length required for a sequence to be considered an epitope.
+- `--min_overlap`: The minimum number of overlapping amino acids required to group two peptides.
+- `--max_step_size`: The maximum distance allowed between peptides to maintain a group.
 
-### Input Requirements
-*   **Evidence File**: Supports `.csv`, `.tsv`, and `.xlsx`.
-*   **Proteome File**: Must be in FASTA format and contain all accessions listed in your evidence file.
-*   **Column Mapping**: You must explicitly define the headers for sequence, accession, start, end, sample, and condition columns as they appear in your input file.
+### High-Confidence Grouping
+Use the `--strict` flag to ensure that the defined minimal overlap is maintained between *all* peptides within a group, rather than just adjacent ones. This is recommended for high-stringency epitope discovery.
 
-## Key Outputs
-*   **`epitopes.csv`**: Contains the identified consensus sequences, their coordinates, and the list of contributing peptides.
-*   **`epicore_result.csv`**: A protein-centric summary mapping all peptides to their respective accessions.
-*   **`consensus_sequence_coverage.png`**: A visual summary of the average coverage across identified epitopes.
-*   **`pep_cores_mapping.tsv`**: A detailed mapping file linking individual input peptides to their resulting core epitopes.
+### Output Analysis
+Monitor the following files in your output directory:
+- `epitopes.csv`: Contains the identified consensus sequences and their contributing peptides.
+- `pep_cores_mapping.tsv`: Provides the direct mapping between input peptides and identified cores.
+- `epicore.log`: Check this file to see which peptides were removed (e.g., those not found in the reference proteome).
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| epicore | epicore |
+| epicore | Epicore is a tool for analyzing and visualizing genomic data. |
 
 ## Reference documentation
-- [epicore GitHub Repository](./references/github_com_AG-Walz_epicore.md)
-- [epicore Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_epicore_overview.md)
+- [Epicore README](./references/github_com_AG-Walz_epicore_blob_main_README.md)
+- [Epicore Changelog](./references/github_com_AG-Walz_epicore_blob_main_CHANGELOG.md)

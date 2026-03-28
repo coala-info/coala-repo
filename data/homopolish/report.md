@@ -190,3 +190,6 @@ options:
   --distance DISTANCE   Difference of structure (counted by ani). [5]
 ```
 
+
+## Metadata
+- **Skill**: generated

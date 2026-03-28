@@ -1,6 +1,6 @@
 ---
 name: ribocode
-description: RiboCode identifies actively translated regions and non-canonical open reading frames by analyzing the 3-nucleotide periodicity of ribosome-protected fragments. Use when user asks to detect translated ORFs, perform P-site calibration, or identify non-canonical translation products like uORFs from Ribo-seq data.
+description: RiboCode identifies translated open reading frames by analyzing the periodic patterns of ribosome-protected fragments in Ribo-seq data. Use when user asks to identify translated ORFs, determine P-site offsets, prepare transcriptome annotations, or quantify ribosome-protected fragments for predicted ORFs.
 homepage: https://github.com/xryanglab/RiboCode
 ---
 
@@ -8,56 +8,75 @@ homepage: https://github.com/xryanglab/RiboCode
 # ribocode
 
 ## Overview
-RiboCode is a computational framework designed to detect actively translated regions by analyzing the 3-nucleotide periodicity of ribosome-protected fragments (RPFs). This skill enables the identification of translation across the genome, covering both annotated coding sequences and non-canonical ORFs such as upstream ORFs (uORFs) and internal ORFs. It is used after initial read processing (trimming and rRNA removal) and alignment to the transcriptome.
+RiboCode is a computational framework designed to detect translated ORFs by analyzing the periodic patterns of ribosome-protected fragments (RPFs). It transforms raw sequencing alignments into high-confidence translation maps by identifying the specific P-site locations for different read lengths and applying statistical tests to distinguish true translation from background noise. It is particularly useful for discovering non-canonical ORFs, such as those in lncRNAs, uORFs, or alternative frames.
 
-## Workflow and CLI Usage
+## Core Workflow
 
 ### 1. Annotation Preparation
-Before running the analysis, you must prepare the transcript annotation files from a genome FASTA and a GTF file.
+Before analysis, convert genomic GTF and FASTA files into a RiboCode-optimized format.
 ```bash
-prepare_transcripts -g <annotation.gtf> -f <genome.fa> -o <output_dir>
+prepare_transcripts -g annotation.gtf -f genome.fa -o RiboCode_annot
 ```
-*   **Note**: The GTF file must include a three-level hierarchy (gene, transcript, and exon). If these are missing, use the `GTFupdate` command provided by the package.
+*Note: If your GTF lacks 'gene' or 'transcript' features (common in non-GENCODE/Ensembl files), use `GTFupdate original.gtf > updated.gtf` first.*
 
-### 2. P-site Calibration and Metaplots
-This step identifies the P-site offsets for different RPF read lengths and generates periodicity plots.
+### 2. Metaplot Analysis & P-site Identification
+Identify the P-site offset for each RPF read length. This step is critical for capturing the 3-nucleotide periodicity of the ribosome.
 ```bash
-metaplots -a <prepared_annot_dir> -r <transcriptome_aligned.bam>
+metaplots -a RiboCode_annot -r alignment.toTranscriptome.bam -o output_metaplots
 ```
-*   **Output**: This generates a PDF for visual inspection of periodicity and a `config.txt` file.
-*   **Multiple Samples**: If you have multiple BAM files, list them in a text file (one per line) and use the `-i` argument.
+*   **Input**: Must be a BAM file aligned to the **transcriptome**.
+*   **Output**: A config file (usually `config.txt`) containing the optimal read lengths and their corresponding P-site offsets.
 
 ### 3. ORF Detection
-The final step uses the calibrated P-site information to predict translated ORFs.
+Run the main engine to identify translated ORFs based on the periodicity of the P-sites.
 ```bash
-RiboCode -a <prepared_annot_dir> -c <config.txt> -l no -g -o <result_prefix>
+RiboCode -a RiboCode_annot -c config.txt -l long -o final_results
 ```
-*   **Arguments**:
-    *   `-l no`: Specifies that the library is not strand-specific (adjust if necessary).
-    *   `-g`: Outputs the results in GTF format.
-    *   `-b`: Outputs the results in BED format.
+*   **-l**: Use 'long' for the longest ORF strategy or 'all' to report all potential ORFs.
+*   **-p**: Set a p-value cutoff (default is 0.05).
 
-## Best Practices and Expert Tips
+### 4. One-Step Execution
+For standard pipelines, use the wrapper command to run the entire process (excluding annotation prep).
+```bash
+RiboCode_onestep -a RiboCode_annot -r alignment.bam -o output_dir
+```
 
-### Alignment Requirements
-RiboCode requires reads to be aligned to the **transcriptome**, not just the genome. When using STAR, ensure you use the following flags:
-*   `--quantMode TranscriptomeSAM`: To generate the required transcriptome-aligned BAM.
-*   `--outFilterMultimapNmax 1`: RiboCode typically performs best with uniquely mapped reads.
-*   `--alignEndsType EndToEnd`: Recommended for Ribo-seq data to ensure accurate P-site mapping.
+## Advanced CLI Patterns
 
-### Result Interpretation
-RiboCode produces two primary text outputs:
-1.  **`<name>.txt`**: Contains all predicted ORFs for every transcript isoform.
-2.  **`<name>_collapsed.txt`**: Merges ORFs sharing the same stop codon across different isoforms, retaining the most upstream in-frame ATG. This is generally the preferred file for downstream biological analysis.
+### Statistical Adjustments
+For more stringent ORF detection, especially in complex transcriptomes:
+*   `--pval_adj`: Apply multiple testing correction to p-values.
+*   `--stouffer_adj`: Adjust combined p-values to account for dependence between frame tests (F0 vs F1 and F0 vs F2).
+*   `--dependence_test`: Measure density dependence between frames to determine if p-value adjustment is necessary.
 
-### ORF Classification
-The tool categorizes ORFs based on their position relative to annotated CDS:
-*   **annotated**: Matches the annotated CDS stop codon.
-*   **uORF / dORF**: Upstream or downstream of the annotated CDS, non-overlapping.
-*   **Overlap_uORF / Overlap_dORF**: Overlapping the start or stop of the annotated CDS.
-*   **Internal**: Inside the annotated CDS but in a different reading frame.
-*   **novel**: Found on non-coding transcripts or genes.
+### Quantifying RPFs
+To count reads aligned to the predicted ORFs for downstream differential translation analysis:
+```bash
+ORFcount -a RiboCode_annot -c config.txt -r alignment.bam -f final_results.txt -o ORF_counts.txt
+```
+
+### Output Formats
+By default, results are tabular. Use the following to generate genome-browser compatible files:
+*   `--gtf`: Output predicted ORFs in GTF format.
+*   `--plot-annotated-orf`: Generate plots for specific annotated ORFs to visually inspect periodicity.
+
+## Expert Tips
+*   **Alignment Requirements**: Ensure Ribo-seq reads are aligned with `EndToEnd` mapping (no soft-clipping) and mapped to the transcriptome for `metaplots`. STAR is the recommended aligner.
+*   **rRNA Depletion**: Always perform an initial alignment to rRNA sequences (using Bowtie) before mapping to the genome to reduce noise.
+*   **Periodicity Check**: Review the PDF output from `metaplots`. If you do not see a clear peak at a specific offset for a given read length, exclude that length from the `config.txt` to improve signal-to-noise ratio.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| GTFupdate | This script is designed for preparing the appropriate GTF file from custom GTF file (or those not from ENSEMBL/GENCODE database) |
+| RiboCode | The main function designed for detecting ORF using ribosome-profiling data. |
+| metaplots | This script create aggregate plots of distances from the 5'end of reads to start or stop codons, which help determine the length range of the PRF reads that are most likely originated from the translating ribosomes and identify the P-site locations for each reads lengths. |
+| prepare_transcripts | This script is designed for preparing transcripts annotation files. |
 
 ## Reference documentation
-- [RiboCode GitHub Repository](./references/github_com_xryanglab_RiboCode.md)
-- [RiboCode Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_ribocode_overview.md)
+- [RiboCode GitHub README](./references/github_com_xryanglab_RiboCode_blob_master_README.rst.md)
+- [GTF Preparation Guide](./references/github_com_xryanglab_RiboCode_blob_master_data_GTF_update.rst.md)
+- [ChangeLog and Version History](./references/github_com_xryanglab_RiboCode_blob_master_ChangeLog.rst.md)

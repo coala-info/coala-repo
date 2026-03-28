@@ -137,3 +137,6 @@ USAGE: java -jar MendelScan.jar trio [VCF] OPTIONS
 	--output-denovo	Output file for possible de novo variants
 ```
 
+
+## Metadata
+- **Skill**: generated

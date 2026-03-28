@@ -1,6 +1,6 @@
 ---
 name: owl
-description: Owl detects microsatellite instability in high-fidelity long-read sequencing data by analyzing repeat length variation across haplotypes. Use when user asks to detect microsatellite instability, profile repeats from phased BAM files, or calculate MSI scores.
+description: Owl detects and quantifies microsatellite instability using high-fidelity long-read sequencing data. Use when user asks to profile microsatellite repeats, score microsatellite instability, or analyze MSI from HiFi reads.
 homepage: https://github.com/PacificBiosciences/owl
 ---
 
@@ -8,45 +8,56 @@ homepage: https://github.com/PacificBiosciences/owl
 # owl
 
 ## Overview
-`owl` is a specialized bioinformatics tool developed by Pacific Biosciences for detecting microsatellite instability (MSI) in high-fidelity (HiFi) long-read sequencing data. It analyzes the coefficient of variation (CV) in repeat lengths across haplotypes to determine stability. The tool is essential for cancer genomics workflows where MSI is a key biomarker.
 
-## Installation
-The tool is available via Bioconda:
+Owl is a specialized bioinformatics tool designed to detect and quantify Microsatellite Instability (MSI) specifically using high-fidelity (HiFi) long-read sequencing data. It leverages the accuracy of HiFi reads and phasing information to distinguish between true biological instability and sequencing noise. The tool operates in a two-step workflow: first profiling individual repeat loci to generate raw results, and then aggregating those results into a final sample-level MSI score.
+
+## Usage Guidelines
+
+### Prerequisites
+* **Phased Data**: For accurate results, HiFi reads should be phased (haplotagged) using tools like `HiPhase` or `WhatsHap`. While Owl will run on un-phased data, it will issue a warning and may produce falsely elevated MSI scores.
+* **Marker Bed**: A BED file containing the target microsatellite regions (e.g., `GRCh38_owl_markers.bed.gz`) is required for the profiling step.
+
+### Step 1: Profiling Repeats
+The `profile` command analyzes the BAM file at specific regions to determine the length distribution of microsatellites.
+
 ```bash
-conda install bioconda::owl
+owl profile \
+  --bam sample.haplotagged.bam \
+  --regions GRCh38_owl_markers.bed.gz \
+  --sample SampleName > sample.results.txt
 ```
 
-## Core Workflow
-The analysis consists of two primary steps: profiling the repeats and then scoring the results.
+### Step 2: Scoring and Summarization
+The `score` command processes the output from the profiling step to generate the final MSI metrics.
 
-### 1. Profile Repeats
-Generate a profile of microsatellite repeats from a phased BAM file.
 ```bash
-owl profile --bam input.haplotagged.bam --regions markers.bed.gz --sample sample_name > sample.results.txt
-```
-**Best Practice**: Ensure reads are phased (using tools like HiPhase or WhatsHap) before profiling. Un-phased data will lead to falsely elevated MSI levels.
-
-### 2. Summarize and Score
-Calculate the MSI score based on the profile generated in the previous step.
-```bash
-owl score --file sample.results.txt --prefix output_prefix
+owl score --file sample.results.txt --prefix SampleName
 ```
 
 ## Output Interpretation
+
 The scoring step produces two primary files:
-- `{prefix}.owl-scores.txt`: Contains the summary MSI score per sample.
-- `{prefix}.owl-motif-counts.txt`: Breaks down the scores by specific repeat motifs.
 
-### Key Metrics
-- **%high**: The proportion of loci with a high coefficient of variation. This is the primary MSI metric.
-- **%passing**: The percentage of sites with reliable measurements.
-- **qc**: A "pass" or "fail" label based on data completeness.
+1.  **`{prefix}.owl-scores.txt`**: Contains the summary MSI metrics.
+    *   **%high**: The primary MSI metric, representing the proportion of loci with a high coefficient of variation (CV).
+    *   **#passing / %passing**: Indicates data completeness.
+    *   **qc**: A "pass" or "fail" label based on the percentage of sites with reliable measurements.
+2.  **`{prefix}.owl-motif-counts.txt`**: Breaks down the instability metrics by specific repeat motifs (e.g., mono-nucleotide vs. di-nucleotide repeats).
 
-## Expert Tips
-- **Phasing Requirement**: While the tool will run on un-phased data, it will issue a warning. Always use phased data for publication-quality results.
-- **Marker Selection**: Use the standard markers provided in the `data/` directory of the repository (e.g., `GRCh38_owl_markers.bed.gz`) for human genomic analysis.
-- **Compressed Inputs**: The tool supports `bgzip` compressed BED files for the `--regions` parameter.
+## Best Practices
+* **Haplotype Awareness**: Owl uses the `HP` (haplotype) and `PS` (phase set) tags in the BAM file. Ensure your alignment pipeline preserves these tags.
+* **Batch Processing**: You can score multiple samples together by providing multiple result files to the `score` command to compare MSI levels across a cohort.
+* **QC Monitoring**: Always check the `qc` column in the scores file. A "fail" typically indicates insufficient coverage or poor phasing at the marker sites, which compromises the MSI call.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| owl_merge | Merge multiple profiles |
+| owl_profile | Profile a BAM file |
+| score | Score profiles |
 
 ## Reference documentation
-- [Owl GitHub Repository](./references/github_com_PacificBiosciences_owl.md)
-- [Bioconda Owl Overview](./references/anaconda_org_channels_bioconda_packages_owl_overview.md)
+- [Owl README](./references/github_com_PacificBiosciences_owl_blob_main_README.md)

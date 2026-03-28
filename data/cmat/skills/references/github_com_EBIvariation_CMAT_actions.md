@@ -1,1 +1,505 @@
-Workflow runs · EBIvariation/CMAT · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} EBIvariation / CMAT Public Notifications You must be signed in to change notification settings Fork 10 Star 20 Code Issues 55 Pull requests 0 Discussions Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Discussions Actions Projects Security Insights Actions: EBIvariation/CMAT Actions All workflows Workflows CMAT pipelines CMAT pipelines Dependabot Updates Dependabot Updates Show more workflows... Management Caches All workflows All workflows Actions Loading... Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page . will be ignored since log searching is not yet available Showing runs from all workflows will be ignored since log searching is not yet available 86 workflow runs 86 workflow runs Event Filter by Event Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching events. Status Filter by Status Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching statuses. Branch Filter by Branch Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching branches. Actor Filter by Actor Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching users. EVA-4017: SOP update for multiple mappings + cleaning up obsolete mappings CMAT pipelines #455: Pull request #495 synchronize by apriltuesday 12m 2s apriltuesday:EVA-4017 apriltuesday:EVA-4017 12m 2s View #495 View workflow file EVA-4017: SOP update for multiple mappings + cleaning up obsolete mappings CMAT pipelines #454: Pull request #495 opened by apriltuesday 11m 18s apriltuesday:EVA-4017 apriltuesday:EVA-4017 11m 18s View #495 View workflow file Make upload script executable and update SOP CMAT pipelines #453: Pull request #494 synchronize by apriltuesday 8m 54s apriltuesday:fixes-from-evidence apriltuesday:fixes-from-evidence 8m 54s View #494 View workflow file Make upload script executable and update SOP CMAT pipelines #452: Pull request #494 opened by apriltuesday 7m 36s apriltuesday:fixes-from-evidence apriltuesday:fixes-from-evidence 7m 36s View #494 View workflow file EVA-4047: Check regex in evidence string generation CMAT pipelines #451: Pull request #493 synchronize by apriltuesday 7m 40s apriltuesday:EVA-4047 apriltuesday:EVA-4047 7m 40s View #493 View workflow file EVA-4047: Check regex in evidence string generation CMAT pipelines #450: Pull request #493 synchronize by apriltuesday 8m 19s apriltuesday:EVA-4047 apriltuesday:EVA-4047 8m 19s View #493 View workflow file EVA-4047: Check regex in evidence string generation CMAT pipelines #449: Pull request #493 synchronize by apriltuesday 9m 43s apriltuesday:EVA-4047 apriltuesday:EVA-4047 9m 43s View #493 View workflow file EVA-4047: Check regex in evidence string generation CMAT pipelines #448: Pull request #493 opened by apriltuesday 6m 32s apriltuesday:EVA-4047 apriltuesday:EVA-4047 6m 32s View #493 View workflow file EVA-4033: Check latest mappings against OT regex CMAT pipelines #447: Pull request #491 synchronize by apriltuesday 17m 4s apriltuesday:EVA-4033 apriltuesday:EVA-4033 17m 4s View #491 View workflow file EVA-4033: Check latest mappings against OT regex CMAT pipelines #446: Pull request #491 synchronize by apriltuesday 17m 45s apriltuesday:EVA-4033 apriltuesday:EVA-4033 17m 45s View #491 View workflow file EVA-4033: Check latest mappings against OT regex CMAT pipelines #445: Pull request #491 opened by apriltuesday 12m 1s apriltuesday:EVA-4033 apriltuesday:EVA-4033 12m 1s View #491 View workflow file Fix bug in find_replacement_mapping CMAT pipelines #444: Pull request #488 synchronize by apriltuesday 9m 45s apriltuesday:fix-for-curation apriltuesday:fix-for-curation 9m 45s View #488 View workflow file Fix bug in find_replacement_mapping CMAT pipelines #443: Pull request #488 opened by apriltuesday 21m 28s apriltuesday:fix-for-curation apriltuesday:fix-for-curation 21m 28s View #488 View workflow file Issue 428: Mappings investigations CMAT pipelines #442: Pull request #486 synchronize by apriltuesday 8m 15s apriltuesday:mappings-investigations apriltuesday:mappings-investigations 8m 15s View #486 View workflow file Issue 428: Mappings investigations CMAT pipelines #441: Pull request #486 opened by apriltuesday 10m 9s apriltuesday:mappings-investigations apriltuesday:mappings-investigations 10m 9s View #486 View workflow file EVA-4009: Script to clean up mappings CMAT pipelines #440: Pull request #485 opened by apriltuesday 17m 32s apriltuesday:EVA-4009 apriltuesday:EVA-4009 17m 32s View #485 View workflow file EVA-3984: Add GCloud upload script and update SOP CMAT pipelines #439: Pull request #484 synchronize by apriltuesday 7m 21s apriltuesday:gcloud-upload apriltuesday:gcloud-upload 7m 21s View #484 View workflow file EVA-3984: Add GCloud upload script and update SOP CMAT pipelines #438: Pull request #484 synchronize by apriltuesday 8m 47s apriltuesday:gcloud-upload apriltuesday:gcloud-upload 8m 47s View #484 View workflow file EVA-3984: Add GCloud upload script and update SOP CMAT pipelines #437: Pull request #484 opened by apriltuesday 20m 5s apriltuesday:gcloud-upload apriltuesday:gcloud-upload 20m 5s View #484 View workflow file EVA-3922: Additional sankey diagrams and updated report text CMAT pipelines #436: Pull request #481 synchronize by apriltuesday 10m 19s apriltuesday:EVA-3922 apriltuesday:EVA-3922 10m 19s View #481 View workflow file EVA-3922: Additional sankey diagrams and updated report text CMAT pipelines #435: Pull request #481 synchronize by apriltuesday 18m 27s apriltuesday:EVA-3922 apriltuesday:EVA-3922 18m 27s View #481 View workflow file EVA-3922: Additional sankey diagrams and updated report text CMAT pipelines #434: Pull request #481 synchronize by apriltuesday 16m 54s apriltuesday:EVA-3922 apriltuesday:EVA-3922 16m 54s View #481 View workflow file EVA-3922: Additional sankey diagrams and updated report text CMAT pipelines #433: Pull request #481 synchronize by tcezard 18m 4s apriltuesday:EVA-3922 apriltuesday:EVA-3922 18m 4s View #481 View workflow file EVA-3922: Additional sankey diagrams and updated report text CMAT pipelines #432: Pull request #481 synchronize by tcezard 18m 37s apriltuesday:EVA-3922 apriltuesday:EVA-3922 18m 37s View #481 View workflow file EVA-3922: Additional sankey diagrams and updated report text CMAT pipelines #431: Pull request #481 synchronize by apriltuesday 13m 31s apriltuesday:EVA-3922 apriltuesday:EVA-3922 13m 31s View #481 View workflow file Previous 1 2 3 4 Next You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FEBIvariation%2FCMAT%2Factions)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FEBIvariation%2FCMAT%2Factions)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Factions%2Findex&source=header-repo&source_repo=EBIvariation%2FCMAT)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[EBIvariation](/EBIvariation)
+/
+**[CMAT](/EBIvariation/CMAT)**
+Public
+
+* [Notifications](/login?return_to=%2FEBIvariation%2FCMAT) You must be signed in to change notification settings
+* [Fork
+  10](/login?return_to=%2FEBIvariation%2FCMAT)
+* [Star
+   20](/login?return_to=%2FEBIvariation%2FCMAT)
+
+* [Code](/EBIvariation/CMAT)
+* [Issues
+  56](/EBIvariation/CMAT/issues)
+* [Pull requests
+  3](/EBIvariation/CMAT/pulls)
+* [Discussions](/EBIvariation/CMAT/discussions)
+* [Actions](/EBIvariation/CMAT/actions)
+* [Projects](/EBIvariation/CMAT/projects)
+* [Security
+  0](/EBIvariation/CMAT/security)
+* [Insights](/EBIvariation/CMAT/pulse)
+
+Additional navigation options
+
+* [Code](/EBIvariation/CMAT)
+* [Issues](/EBIvariation/CMAT/issues)
+* [Pull requests](/EBIvariation/CMAT/pulls)
+* [Discussions](/EBIvariation/CMAT/discussions)
+* [Actions](/EBIvariation/CMAT/actions)
+* [Projects](/EBIvariation/CMAT/projects)
+* [Security](/EBIvariation/CMAT/security)
+* [Insights](/EBIvariation/CMAT/pulse)
+
+# Actions: EBIvariation/CMAT
+
+## Actions
+
+## All workflows All workflows Actions Loading... Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page.
+
+will be ignored since log searching is not yet available
+
+Showing runs from all workflows
+
+will be ignored since log searching is not yet available
+
+**103 workflow runs**
+
+**103 workflow runs**
+
+Event
+
+# Filter by Event
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching events.
+
+Status
+
+# Filter by Status
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching statuses.
+
+Branch
+
+# Filter by Branch
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching branches.
+
+Actor
+
+# Filter by Actor
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching users.
+
+[Bump requests from 2.32.4 to 2.33.0](/EBIvariation/CMAT/actions/runs/23603103681)
+
+CMAT pipelines
+#473:
+Pull request [#501](/EBIvariation/CMAT/pull/501)
+opened
+by
+[dependabot](/apps/dependabot)
+bot
+
+4m 17s
+[dependabot/pip/requests-2.33.0](/EBIvariation/CMAT/tree/refs/heads/dependabot/pip/requests-2.33.0 "dependabot/pip/requests-2.33.0")
+
+[dependabot/pip/requests-2.33.0](/EBIvariation/CMAT/tree/refs/heads/dependabot/pip/requests-2.33.0 "dependabot/pip/requests-2.33.0")
+
+4m 17s
+
+* [View #501](/EBIvariation/CMAT/pull/501)
+* [View workflow file](/EBIvariation/CMAT/actions/runs/23603103681/workflow)
+
+[pip in /. for requests - Update #1294449889](/EBIvariation/CMAT/actions/runs/23603044734)
+
+Dependabot Updates
+#2:
+by
+[dependabot](/apps/dependabot)
+bot
+
+1m 5s
+[master](/EBIvariation/CMAT/tree/refs/heads/master "master")
+
+[master](/EBIvariation/CMAT/tree/refs/heads/master "master")
+
+1m 5s
+
+[EVA-4093: Make load\_ontology\_mappings more generic](/EBIvariation/CMAT/actions/runs/23600485917)
+
+CMAT pipelines
+#472:
+Pull request [#500](/EBIvariation/CMAT/pull/500)
+synchronize
+by
+[apriltuesday](/apriltuesday)
+
+4m 31s
+[apriltuesday:EVA-4093](/apriltuesday/CMAT/tree/refs/heads/EVA-4093 "apriltuesday:EVA-4093")
+
+[apriltuesday:EVA-4093](/apriltuesday/CMAT/tree/refs/heads/EVA-4093 "apriltuesday:EVA-4093")
+
+4m 31s
+
+* [View #500](/EBIvariation/CMAT/pull/500)
+* [View workflow file](/EBIvariation/CMAT/actions/runs/23600485917/workflow)
+
+[EVA-4093: Make load\_ontology\_mappings more generic](/EBIvariation/CMAT/actions/runs/23550603043)
+
+CMAT pipelines
+#471:
+Pull request [#500](/EBIvariation/CMAT/pull/500)
+synchronize
+by
+[apriltuesday](/apriltuesday)
+
+4m 31s
+[apriltuesday:EVA-4093](/apriltuesday/CMAT/tree/refs/heads/EVA-4093 "apriltuesday:EVA-4093")
+
+[apriltuesday:EVA-4093](/apriltuesday/CMAT/tree/refs/heads/EVA-4093 "apriltuesday:EVA-4093")
+
+4m 31s
+
+* [View #500](/EBIvariation/CMAT/pull/500)
+* [View workflow file](/EBIvariation/CMAT/actions/runs/23550603043/workflow)
+
+[EVA-4093: Make load\_ontology\_mappings more generic](/EBIvariation/CMAT/actions/runs/23546756379)
+
+CMAT pipelines
+#470:
+Pull request [#500](/EBIvariation/CMAT/pull/500)
+opened
+by
+[apriltuesday](/apriltuesday)
+
+2m 46s
+[apriltuesday:EVA-4093](/apriltuesday/CMAT/tree/refs/heads/EVA-4093 "apriltuesday:EVA-4093")
+
+[apriltuesday:EVA-4093](/apriltuesday/CMAT/tree/refs/heads/EVA-4093 "apriltuesday:EVA-4093")
+
+2m 46s
+
+* [View #500](/EBIvariation/CMAT/pull/500)
+* [View workflow file](/EBIvariation/CMAT/actions/runs/23546756379/workflow)
+
+[EVA-4094: Update curation SOP](/EBIvariation/CMAT/actions/runs/23197529307)
+
+CMAT pipelines
+#469:
+Pull request [#499](/EBIvariation/CMAT/pull/499)
+synchronize
+by
+[apriltuesday](/apriltuesday)
+
+6m 47s
+[apriltuesday:EVA-4094](/apriltuesday/CMAT/tree/refs/heads/EVA-4094 "apriltuesday:EVA-4094")
+
+[apriltuesday:EVA-4094](/apriltuesday/CMAT/tree/refs/heads/EVA-4094 "apriltuesday:EVA-4094")
+
+6m 47s
+
+* [View #499](/EBIvariation/CMAT/pull/499)
+* [View workflow file](/EBIvariation/CMAT/actions/runs/23197529307/workflow)
+
+[EVA-4094: Update curation SOP](/EBIvariation/CMAT/actions/runs/23192865575)
+
+CMAT pipelines
+#468:
+Pull request [#499](/EBIvariation/CMAT/pull/499)
+opened
+by
+[apriltuesday](/apriltuesday)
+
+5m 46s
+[apriltuesday:EVA-4094](/apriltuesday/CMAT/tree/refs/heads/EVA-4094 "apriltuesday:EVA-4094")
+
+[apriltuesday:EVA-4094](/apriltuesday/CMAT/tree/refs/heads/EVA-4094 "apriltuesday:EVA-4094")
+
+5m 46s
+
+* [View #499](/EBIvariation/CMAT/pull/499)
+* [View workflow file](/EBIvariation/CMAT/actions/runs/23192865575/workflow)
+
+[EVA-4081: Use previous mappings as source of truth and Zooma/OxO only for curation](/EBIvariation/CMAT/actions/runs/22758564384)
+
+CMAT pipelines
+#467:
+Pull request [#497](/EBIvariation/CMAT/pull/497)
+synchronize
+by
+[apriltuesday](/apriltuesday)
+
+8m 45s
+[apriltuesday:EVA-4081](/apriltuesday/CMAT/tree/refs/heads/EVA-4081 "apriltuesday:EVA-4081")
+
+[apriltuesday:EVA-4081](/apriltuesday/CMAT/tree/refs/heads/EVA-4081 "apriltuesday:EVA-4081")
+
+8m 45s
+
+* [View #497](/EBIvariation/CMAT/pull/497)
+* [View workflow file](/EBIvariation/CMAT/actions/runs/22758564384/workflow)
+
+[EVA-4081: Use previous mappings as source of truth and Zooma/OxO only for curation](/EBIvariation/CMAT/actions/runs/22757162902)
+
+CMAT pipelines
+#466:
+Pull request [#497](/EBIvariation/CMAT/pull/497)
+synchronize
+by
+[apriltuesday](/apriltuesday)
+
+14m 35s
+[apriltuesday:EVA-4081](/apriltuesday/CMAT/tree/refs/heads/EVA-4081 "apriltuesday:EVA-4081")
+
+[apriltuesday:EVA-4081](/apriltuesday/CMAT/tree/refs/heads/EVA-4081 "apriltuesday:EVA-4081")
+
+14m 35s
+
+* [View #497](/EBIvariation/CMAT/pull/497)
+* [View workflow file](/EBIvariation/CMAT/actions/runs/22757162902/workflow)
+
+[EVA-4081: Use previous mappings as source of truth and Zooma/OxO only for curation](/EBIvariation/CMAT/actions/runs/22664442891)
+
+CMAT pipelines
+#465:
+Pull request [#497](/EBIvariation/CMAT/pull/497)
+synchronize
+by
+[apriltuesday](/apriltuesday)
+
+8m 50s
+[apriltuesday:EVA-4081](/apriltuesday/CMAT/tree/refs/heads/EVA-4081 "apriltuesday:EVA-4081")
+
+[apriltuesday:EVA-4081](/apriltuesday/CMAT/tree/refs/heads/EVA-4081 "apriltuesday:EVA-4081")
+
+8m 50s
+
+* [View #497](/EBIvariation/CMAT/pull/497)
+* [View workflow file](/EBIvariation/CMAT/actions/runs/22664442891/workflow)
+
+[EVA-4081: Use previous mappings as source of truth and Zooma/OxO only for curation](/EBIvariation/CMAT/actions/runs/22631706942)
+
+CMAT pipelines
+#464:
+Pull request [#497](/EBIvariation/CMAT/pull/497)
+synchronize
+by
+[apriltuesday](/apriltuesday)
+
+13m 46s
+[apriltuesday:EVA-4081](/apriltuesday/CMAT/tree/refs/heads/EVA-4081 "apriltuesday:EVA-4081")
+
+[apriltuesday:EVA-4081](/apriltuesday/CMAT/tree/refs/heads/EVA-4081 "apriltuesday:EVA-4081")
+
+13m 46s
+
+* [View #497](/EBIvariation/CMAT/pull/497)
+* [View workflow file](/EBIvariation/CMAT/actions/runs/22631706942/workflow)
+
+[EVA-4081: Use previous mappings as source of truth and Zooma/OxO only for curation](/EBIvariation/CMAT/actions/runs/22631263022)
+
+CMAT pipelines
+#463:
+Pull request [#497](/EBIvariation/CMAT/pull/497)
+synchronize
+by
+[apriltuesday](/apriltuesday)
+
+8m 32s
+[apriltuesday:EVA-4081](/apriltuesday/CMAT/tree/refs/heads/EVA-4081 "apriltuesday:EVA-4081")
+
+[apriltuesday:EVA-4081](/apriltuesday/CMAT/tree/refs/heads/EVA-4081 "apriltuesday:EVA-4081")
+
+8m 32s
+
+* [View #497](/EBIvariation/CMAT/pull/497)
+* [View workflow file](/EBIvariation/CMAT/actions/runs/22631263022/workflow)
+
+[EVA-4081: Use previous mappings as source of truth and Zooma/OxO only for curation](/EBIvariation/CMAT/actions/runs/22581691267)
+
+CMAT pipelines
+#462:
+Pull request [#497](/EBIvariation/CMAT/pull/497)
+synchronize
+by
+[apriltuesday](/apriltuesday)
+
+10m 3s
+[apriltuesday:EVA-4081](/apriltuesday/CMAT/tree/refs/heads/EVA-4081 "apriltuesday:EVA-4081")
+
+[apriltuesday:EVA-4081](/apriltuesday/CMAT/tree/refs/heads/EVA-4081 "apriltuesday:EVA-4081")
+
+10m 3s
+
+* [View #497](/EBIvariation/CMAT/pull/497)
+* [View workflow file](/EBIvariation/CMAT/actions/runs/22581691267/workflow)
+
+[EVA-4081: Use previous mappings as source of truth and Zooma/OxO only for curation](/EBIvariation/CMAT/actions/runs/22495449032)
+
+CMAT pipelines
+#461:
+Pull request [#497](/EBIvariation/CMAT/pull/497)
+synchronize
+by
+[apriltuesday](/apriltuesday)
+
+11m 2s
+[apriltuesday:EVA-4081](/apriltuesday/CMAT/tree/refs/heads/EVA-4081 "apriltuesday:EVA-

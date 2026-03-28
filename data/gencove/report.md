@@ -144,3 +144,6 @@ Traceback (most recent call last):
 ImportError: cannot import name 'field_validator' from 'pydantic' (/usr/local/lib/python3.12/site-packages/pydantic/__init__.cpython-312-x86_64-linux-gnu.so). Did you mean: 'root_validator'?
 ```
 
+
+## Metadata
+- **Skill**: generated

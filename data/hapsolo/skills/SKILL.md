@@ -1,6 +1,6 @@
 ---
 name: hapsolo
-description: HapSolo identifies and removes redundant alternative haplotypes from diploid genome assemblies using a hill-climbing optimization algorithm to maximize completeness. Use when user asks to remove secondary haplotigs, streamline diploid assemblies, or optimize assembly completeness based on BUSCO scores.
+description: HapSolo is an optimization tool designed to refine diploid genome assemblies by identifying and removing redundant haplotigs. Use when user asks to remove assembly redundancies, maximize single-copy orthologs, or optimize diploid genome assemblies using BUSCO scores.
 homepage: https://github.com/esolares/HapSolo
 ---
 
@@ -8,56 +8,83 @@ homepage: https://github.com/esolares/HapSolo
 # hapsolo
 
 ## Overview
-
-HapSolo is a tool designed to streamline diploid genome assemblies by identifying and removing redundant alternative haplotypes. It employs a hill-climbing optimization algorithm to select a subset of contigs that maximizes assembly completeness (based on BUSCO scores) while minimizing unnecessary duplication. Use this tool after initial assembly but before Hi-C scaffolding to ensure the scaffolding process is not confounded by secondary haplotigs.
+HapSolo is an optimization tool designed to refine diploid genome assemblies by identifying and removing redundant haplotigs. In diploid organisms, assemblers often fail to collapse allelic regions, leading to an assembly size larger than the expected haploid genome and a high percentage of "duplicated" BUSCO genes. HapSolo uses a hill-climbing (gradient descent) or random walk approach to select a subset of contigs that maximizes the presence of single-copy orthologs while minimizing duplicates and fragments.
 
 ## Installation and Environment
+The tool is compatible with Python 2.7 (faster) and Python 3. It requires the `pandas` library.
 
-HapSolo is sensitive to its environment, particularly regarding BUSCO versions.
+**Singularity (Recommended):**
+```bash
+singularity pull library://esolares/default/hapsolo_busco3:0.01
+# Run commands by prefixing: singularity exec instance://hapsolo <command>
+```
 
-- **Recommended Method**: Use the Singularity image to avoid dependency conflicts between BUSCO and Augustus.
-  ```bash
-  singularity pull --arch amd64 library://esolares/default/hapsolo_busco3:0.01
-  ```
-- **Conda Installation**:
-  ```bash
-  conda install bioconda::hapsolo
-  ```
-- **Python Version**: While Python 3 is supported, Python 2.7 is recommended by the developers for faster execution. Ensure the `pandas` package is installed.
-- **Critical Dependency**: Use **BUSCO v3**. Newer versions of BUSCO may lead to misclassification of orthologs within the HapSolo workflow.
+**Conda Setup:**
+```bash
+conda create --name HapSolo python=2.7
+conda activate HapSolo
+conda install -c anaconda pandas
+```
 
-## Core Workflow
+## Workflow and CLI Usage
 
 ### 1. Preprocessing the FASTA
-Before running the optimization, clean the assembly and split it into individual contigs. This step removes special characters from headers that cause failures in BUSCO or MUMmer.
+Before running the main optimization, clean the headers and split the assembly into individual contigs. This step is required for the subsequent BUSCO analysis.
 
 ```bash
-preprocessfasta.py -i CONTIGASSEMBLY.fasta -m 10000000
+preprocessfasta.py -i assembly.fasta -m 10000000
 ```
-- `-i`: Input FASTA file.
-- `-m`: Max contig size in Mb (default is 10Mb).
+*   `-i`: Input FASTA file.
+*   `-m`: Max contig size in Mb (default 10Mb).
+*   **Output**: Creates a `contigs/` directory with individual files.
 
 ### 2. Generating Required Inputs
-HapSolo requires two primary data sources to evaluate contigs:
-- **BUSCO Results**: Run BUSCO v3 on the contigs. The tool expects a directory containing individual BUSCO outputs for each contig.
-- **Alignment File**: Generate a Blat alignment file in PSL format (can be gzipped).
+HapSolo requires two primary inputs alongside the FASTA:
+1.  **Self-Alignment File**: A PSL (BLAT) or PAF (Minimap2) file representing the assembly aligned against itself.
+2.  **BUSCO Results**: A directory containing the BUSCO output for every individual contig generated in the preprocessing step.
 
-### 3. Running HapSolo
-Execute the main optimization script using the preprocessed assembly, the PSL alignment, and the BUSCO results directory.
+### 3. Running HapSolo Optimization
+Execute the optimization script to generate a reduced assembly candidate.
 
 ```bash
-# Example execution via Singularity
-singularity exec instance://hapsolo hapsolo.py [arguments]
+hapsolo.py -i cleaned_assembly.fasta --psl alignment.psl -b ./busco_results_dir/ [OPTIONS]
 ```
 
-## Expert Tips and Best Practices
+**Key Arguments:**
+*   `-i`: The preprocessed assembly FASTA.
+*   `-p` or `--psl`: Path to the BLAT PSL file.
+*   `-a` or `--paf`: Path to the Minimap2 PAF file (experimental).
+*   `-b`: Directory containing the per-contig BUSCO results.
 
-- **Header Consistency**: Always use `preprocessfasta.py`. It ensures that the FASTA headers match across your alignment files and BUSCO results, preventing "mismatching contig sets" errors.
-- **Augustus Config**: If using Singularity, you must mount the Augustus 3.2.2 config directory to the instance. Set your `HOSTDIR` to your current working directory and mount it to a `MOUNTDIR` (e.g., `/data`) within the container.
-- **Memory Management**: For large assemblies, ensure your environment has sufficient RAM for the Pandas-based processing of alignment strings.
-- **Troubleshooting**: If you encounter an error stating "HapSolo has two separate set of contigs," it usually indicates a mismatch between the IDs in your BUSCO directory and the IDs in your PSL file. Re-run the preprocessing and ensure all downstream tools use the exact same cleaned FASTA.
+**Optimization Parameters:**
+*   `-n`: Number of iterations per gradient descent (default: 1000).
+*   `-t`: Number of threads (multiplies total iterations).
+*   `-B`: Number of best candidate assemblies to return (default: 1).
+*   `--mode`: Run mode (0: Random walking, 1: No optimization, 2: Optimized walking).
+
+**Scoring Weights (Thetas):**
+Adjust these to prioritize different BUSCO metrics in the cost function:
+*   `-S` (Single): Default 1.0
+*   `-D` (Duplicate): Default 1.0
+*   `-M` (Missing): Default 1.0
+*   `-F` (Fragmented): Default 0.0
+
+## Expert Tips
+*   **Header Consistency**: Ensure that the FASTA headers in your alignment file and BUSCO results exactly match the headers in the preprocessed FASTA. `preprocessfasta.py` removes special characters to prevent tool crashes.
+*   **Performance**: While Python 3 is supported, Python 2.7 is significantly faster for the heavy iterations performed during the optimization phase.
+*   **Memory Management**: For very large assemblies, ensure your system has enough RAM to load the alignment file into a pandas DataFrame.
+*   **Instance Management**: If using Singularity, remember to stop the instance when finished: `singularity instance stop hapsolo`.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| hapsolo.py | Process alignments and BUSCO"s for selecting reduced assembly candidates |
+| preprocessfasta.py | Preprocess FASTA file and outputs a clean FASTA and seperates contigs based on unique headers. Removes special chars |
 
 ## Reference documentation
-
-- [HapSolo Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_hapsolo_overview.md)
-- [HapSolo GitHub Repository](./references/github_com_esolares_HapSolo.md)
+- [HapSolo GitHub README](./references/github_com_esolares_HapSolo_blob_main_README.md)
+- [HapSolo Main Script Documentation](./references/github_com_esolares_HapSolo_blob_main_hapsolo.py.md)
+- [Preprocess Fasta Documentation](./references/github_com_esolares_HapSolo_blob_main_preprocessfasta.py.md)

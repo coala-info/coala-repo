@@ -1,6 +1,6 @@
 ---
 name: gtdbtk
-description: GTDB-Tk provides phylogenetically consistent and rank-normalized taxonomic assignments for microbial genomes by integrating marker gene identification, alignment, and phylogenetic placement. Use when user asks to classify genomes, assign taxonomy to metagenome-assembled genomes, or run the GTDB-Tk classification workflow.
+description: GTDB-Tk assigns taxonomic classifications to prokaryotic genomes by identifying marker genes and placing them into a reference phylogenetic tree. Use when user asks to assign taxonomy to bacterial or archaeal genomes, run the classify_wf pipeline, or perform phylogenetic placement and ANI validation.
 homepage: http://pypi.python.org/pypi/gtdbtk/
 ---
 
@@ -8,37 +8,88 @@ homepage: http://pypi.python.org/pypi/gtdbtk/
 # gtdbtk
 
 ## Overview
-GTDB-Tk is a standardized software toolkit designed to provide phylogenetically consistent and rank-normalized taxonomic assignments. It integrates marker gene identification, multiple sequence alignment, and phylogenetic placement (using pplacer) or Average Nucleotide Identity (ANI) comparisons (using skani) to classify genomes against the GTDB reference database. It is particularly effective for classifying Metagenome-Assembled Genomes (MAGs) and ensuring reproducibility in microbial ecology and genomics.
 
-## Core Workflows and CLI Patterns
+GTDB-Tk (Genome Database Taxonomy Toolkit) is the industry-standard software for assigning taxonomy to prokaryotic genomes. It works by identifying a set of domain-specific marker genes (120 for Bacteria, 53 for Archaea), aligning them to a reference manifold, and placing the query genomes into a massive reference phylogenetic tree using pplacer. The final classification is refined using Average Nucleotide Identity (ANI) against reference genomes.
 
-### The Standard Classification Workflow
-The most common entry point is the `classify_wf`, which runs the full pipeline (identify, align, and classify).
+This skill provides guidance on executing the standard classification workflows, managing high-memory requirements, and interpreting the resulting summary files.
+
+## Core Workflows
+
+### The Standard Classification Workflow (classify_wf)
+The most common use case is running the entire pipeline in one command. This handles identification, alignment, and classification.
 
 ```bash
-# Basic classification of a directory of FASTA files
 gtdbtk classify_wf --genome_dir <input_dir> --out_dir <output_dir> --extension fa --cpus 16
 ```
 
-### Optimization and Performance
-*   **ANI Screening**: By default, GTDB-Tk uses an ANI screen to rapidly classify genomes belonging to existing GTDB species clusters. This can reduce computation time by 25% to 60%.
-*   **Dense Genera**: In versions 2.6.0+, the limit on genomes compared in dense genera has been removed to improve accuracy. If you previously used `--skip-ani-screen` to avoid this limit, it is now generally recommended to let the default ANI screen run unless you have specific reasons to bypass it.
-*   **Memory Management**: The `pplacer` step is memory-intensive. Ensure your environment meets the hardware requirements (typically 100GB+ RAM for the full database).
+### Step-by-Step Execution
+For large datasets or troubleshooting, you can run the stages independently:
 
-### Common Command Flags
-*   `--genome_dir`: Path to the folder containing input genomes.
-*   `--out_dir`: Path for output files (directory will be created if it doesn't exist).
-*   `--extension`: Specify the file extension of your genomes (e.g., `fasta`, `fna`, `fa`).
-*   `--cpus`: Number of threads to use.
-*   `--skip-ani-screen`: Bypasses the initial ANI-based classification and forces all genomes through the phylogenetic placement pipeline. Use this if you suspect the ANI screen is missing specific assignments in highly novel lineages.
-*   `--scratch_dir`: Use a local scratch directory to improve I/O performance if working on a cluster.
+1.  **Identify**: Calls genes (Prodigal) and identifies markers (HMMER).
+    ```bash
+    gtdbtk identify --genome_dir <input_dir> --out_dir <identify_dir> --extension gz --cpus 16
+    ```
+2.  **Align**: Creates a Multiple Sequence Alignment (MSA) and filters low-quality genomes.
+    ```bash
+    gtdbtk align --identify_dir <identify_dir> --out_dir <align_dir> --cpus 16
+    ```
+3.  **Classify**: Performs phylogenetic placement and ANI validation.
+    ```bash
+    gtdbtk classify --genome_dir <input_dir> --align_dir <align_dir> --out_dir <classify_dir> --cpus 16
+    ```
 
 ## Expert Tips and Best Practices
-*   **Database Setup**: GTDB-Tk requires a specific reference database. Ensure the `GTDBTK_DATA_PATH` environment variable is set to the location of the unarchived GTDB data.
-*   **Reproducibility**: GTDB-Tk v2.6.0+ uses fixed versions of `skani` (v0.3.1) and `pplacer` (v1.1.alpha19). Always report the GTDB-Tk version and the database version (e.g., R220) in publications.
-*   **Input Quality**: Ensure input genomes are of sufficient quality. Low-completeness or high-contamination MAGs may result in "Unclassified" or unreliable assignments.
-*   **Parallelization**: For very large datasets (thousands of MAGs), consider splitting the input into batches or utilizing the `--cpus` flag to maximize throughput during the HMMER and alignment phases.
+
+### Memory Management
+GTDB-Tk is memory-intensive. Version 2.x uses a "divide-and-conquer" approach by default to reduce RAM usage.
+- **Default (Split-tree)**: Requires ~55GB RAM. It splits the bacterial tree into class-level subtrees.
+- **Full Tree**: Use `--full-tree` if you need placement against the entire reference tree, but be prepared for ~320GB RAM requirements.
+- **Pplacer Threads**: If memory is an issue, limit pplacer specifically using `--pplacer_cpus 1`.
+
+### ANI Screening
+Since v2.2, GTDB-Tk uses `skani` for rapid ANI pre-screening.
+- Use `--mash_db <path>` to provide or generate a sketch database for faster subsequent runs.
+- Use `--skip_ani_screen` to force phylogenetic placement for all genomes (slower but more thorough for novel taxa).
+
+### Input Handling
+- **Extensions**: Specify the file extension exactly (e.g., `-x fasta` or `-x fa.gz`).
+- **Proteins**: If you already have predicted proteins, use `--genes` to skip the Prodigal step. Note that this will skip ANI validation as ANI requires nucleotide sequences.
+
+### Interpreting Results
+The primary output is `gtdbtk.bac120.summary.tsv` (or `ar53`).
+- **classification**: The full GTDB taxonomy string.
+- **fastani_ani**: The ANI to the closest reference genome.
+- **status**: Look for "placed" or "assigned". Genomes that fail quality checks (e.g., too few markers) will be marked as "Unclassified".
+- **Warnings**: Check `gtdbtk.warnings.log` for genomes filtered out due to low marker count or poor alignment.
+
+## Common Troubleshooting
+- **Data Path**: Ensure the environment variable `GTDBTK_DATA_PATH` is set to the directory containing the unarchived GTDB reference data.
+- **Check Install**: Run `gtdbtk check_install` to verify that all third-party dependencies (HMMER, pplacer, skani, FastTree) are in your PATH and the reference data is valid.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| de_novo_wf | De novo workflow for GTDB-Tk |
+| export_msa | Export MSA from GTDB-Tk |
+| gtdbtk ani_rep | Calculate ANI scores between genomes and assign them to species clusters. |
+| gtdbtk classify | Classify genomes using GTDB-Tk |
+| gtdbtk classify_wf | Classify genomes using GTDB-Tk |
+| gtdbtk convert_to_itol | Convert GTDB-Tk trees to iTOL format |
+| gtdbtk convert_to_species | Convert a tree to a species-resolved tree. |
+| gtdbtk decorate | Decorate a tree with GTDB-Tk classifications and custom taxonomy. |
+| gtdbtk identify | Identify GTDB-Tk classifications for genomes. |
+| gtdbtk infer | Infer phylogenetic trees for GTDB-Tk |
+| gtdbtk infer_ranks | Root the input tree at the specified ingroup taxon and output the rooted tree. |
+| gtdbtk trim_msa | Trims an MSA based on a mask file or reference mask. |
+| gtdbtk_align | Aligns genomes to create a multiple sequence alignment. |
+| gtdbtk_root | Root a tree using a specified outgroup taxon. |
+| remove_labels | Removes labels from a GTDB-Tk tree. |
 
 ## Reference documentation
-- [GTDB-Tk Overview (Bioconda)](./references/anaconda_org_channels_bioconda_packages_gtdbtk_overview.md)
-- [GTDB-Tk Project Description (PyPI)](./references/pypi_org_project_gtdbtk.md)
+- [GTDB-Tk Commands Index](./references/ecogenomics_github_io_GTDBTk_commands_index.html.md)
+- [Classify Workflow Example](./references/ecogenomics_github_io_GTDBTk_examples_classify_wf.html.md)
+- [GTDB-Tk FAQ](./references/ecogenomics_github_io_GTDBTk_faq.html.md)
+- [Installation and Hardware Requirements](./references/ecogenomics_github_io_GTDBTk_installing_index.html.md)

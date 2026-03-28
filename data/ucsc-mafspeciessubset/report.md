@@ -30,7 +30,7 @@ Run 'docker run --help' for more information
 
 
 ## Metadata
-- **Skill**: generated
+- **Skill**: not generated
 
 ## ucsc-mafspeciessubset_mafSpeciesList
 

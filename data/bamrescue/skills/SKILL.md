@@ -1,6 +1,6 @@
 ---
 name: bamrescue
-description: bamrescue is a utility designed to check for corruption in BAM files and recover data from damaged BGZF blocks. Use when user asks to check the integrity of a BAM file, repair corrupted BAM files, or salvage reads from damaged genomic data.
+description: "bamrescue identifies and repairs data loss in corrupted BAM files by skipping damaged BGZF blocks and concatenating the valid ones. Use when user asks to check BAM file integrity, identify corruption in genomic data, or rescue readable data from corrupted BAM files."
 homepage: https://github.com/Arkanosis/bamrescue
 ---
 
@@ -9,37 +9,52 @@ homepage: https://github.com/Arkanosis/bamrescue
 
 ## Overview
 
-`bamrescue` is a specialized utility designed to recover data from damaged BAM files. While standard bioinformatics tools often abort entirely when encountering a corrupted byte, `bamrescue` leverages the BGZF (Blocked GNU Zip Format) structure to identify and skip only the specific corrupted blocks. By validating each block using CRC32 checksums, it can salvage nearly all non-corrupted reads from a file, making it an essential tool for data recovery after hardware failures, bad sectors, or interrupted file transfers.
+`bamrescue` is a high-performance command-line utility designed to identify and mitigate data loss in corrupted BAM files. Because BAM files are composed of concatenated BGZF (Blocked GNU Zip Format) blocks, a single corrupted byte often causes standard bioinformatics tools to abort processing, potentially losing 100% of the remaining data. `bamrescue` scans these blocks, verifies their CRC32 checksums, and can "rescue" the file by skipping only the specific corrupted blocks (typically ≤ 64 KiB) and concatenating the remaining valid data into a new, readable BAM file.
 
 ## Usage Instructions
 
 ### Checking for Corruption
-To perform a health check on a BAM file and see statistics regarding potential data loss:
+
+To perform a non-destructive integrity check on a BAM file:
 
 ```bash
-bamrescue check <bamfile>
+bamrescue check path/to/file.bam
 ```
 
-**Key Options:**
-- `-q, --quiet`: Stops at the first error found and suppresses statistics. Useful for quick integrity scripts.
-- `--threads=<n>`: Sets the number of threads. Use `0` (default) for auto-detection based on available CPU cores.
+**Best Practices for Checking:**
+*   **Multi-threading**: By default, the tool uses all available threads (`--threads=0`). For specific resource allocation, define the count: `bamrescue check --threads=4 file.bam`.
+*   **Automation**: Use the `--quiet` (or `-q`) flag in automated pipelines. This causes the tool to stop at the first error encountered and suppresses statistical output, making it faster for simple "pass/fail" logic.
 
 ### Rescuing Data
-To create a new, valid BAM file by excluding corrupted blocks:
+
+If corruption is found, use the `rescue` command to generate a repaired version of the file:
 
 ```bash
-bamrescue rescue <input.bam> <output.bam>
+bamrescue rescue corrupted.bam rescued_output.bam
 ```
 
-**Note:** The rescue process requires additional disk space equivalent to the size of the original file. The resulting output file is a standard BAM file that can be indexed and used by `samtools`, `picard`, or other downstream tools.
+**Expert Tips for Rescue:**
+*   **Disk Space**: Ensure you have enough disk space for the output file, as it will be approximately the same size as the original.
+*   **Validation**: The rescued file is composed of validated, non-corrupted blocks. While some reads (those in the corrupted blocks) are lost, the resulting file is a valid BAM file that can be indexed and queried by standard tools like `samtools`.
 
-## Expert Tips and Best Practices
+## Technical Considerations
 
-- **Performance Tuning**: `bamrescue` is highly parallelizable. On multi-core systems, ensure `--threads` is set to `0` or a high number to significantly decrease processing time compared to standard `gzip -t`.
-- **Validation vs. Compliance**: `bamrescue` checks the integrity of the BGZF containers (the "wrappers"), not the internal compliance of the BAM payload with the SAM specification. If the file was created by a non-compliant tool, `bamrescue` will not fix those logical errors.
-- **Data Loss Expectations**: Because BGZF blocks are at most 64 KiB, a single-byte corruption or a typical 512-byte bad sector usually results in the loss of only one block. This means you can often rescue >99.9% of your data even if the file is "unreadable" by other software.
-- **Post-Rescue Steps**: Always re-index the rescued BAM file using `samtools index <output.bam>` before proceeding with analysis, as the original index will no longer match the rescued file's block offsets.
+*   **Block-Level Integrity**: `bamrescue` validates the integrity of the BGZF/gzip containers. It does **not** validate whether the uncompressed BAM payload follows the SAM specification. If the file was created by a non-compliant tool, `bamrescue` will not fix logical formatting errors.
+*   **Performance**: The tool is optimized for speed and is generally faster than `gzip -t`. It is highly recommended for large-scale genomic data audits.
+*   **Data Loss**: A typical hard drive bad sector (512 bytes) usually results in the loss of only one or two BGZF blocks (approx. 46-128 KiB of payload), meaning >99.9% of data is usually recoverable.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| check | Check a BAM file for corruption or rescue data from a corrupted BAM file. |
+| check | Check a BAM file for corruption |
+| rescue | Rescue data from a corrupted BAM file |
+| rescue | Rescue data from a corrupted BAM file |
 
 ## Reference documentation
-- [bamrescue - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_bamrescue_overview.md)
-- [Arkanosis/bamrescue: Utility to check Binary Sequence Alignment / Map (BAM) files for corruption and repair them](./references/github_com_Arkanosis_bamrescue.md)
+
+- [bamrescue README](./references/github_com_Arkanosis_bamrescue_blob_master_README.md)
+- [bamrescue Homepage](./references/bamrescue_arkanosis_net_index.md)

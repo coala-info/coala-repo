@@ -186,3 +186,6 @@ elprep fasta-to-elfasta fasta-file elfasta-file
 [--log-path path]
 ```
 
+
+## Metadata
+- **Skill**: generated

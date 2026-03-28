@@ -959,3 +959,6 @@ Logging Options:
   --logColors BOOL      Enable or disable colored logging. Default: True
 ```
 
+
+## Metadata
+- **Skill**: generated

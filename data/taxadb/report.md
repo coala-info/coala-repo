@@ -128,3 +128,6 @@ available commands:
     query        query the database
 ```
 
+
+## Metadata
+- **Skill**: generated

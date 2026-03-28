@@ -1,0 +1,447 @@
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FSegataLab%2Fcmseq%2Freleases)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FSegataLab%2Fcmseq%2Freleases)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Freleases%2Findex&source=header-repo&source_repo=SegataLab%2Fcmseq)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[SegataLab](/SegataLab)
+/
+**[cmseq](/SegataLab/cmseq)**
+Public
+
+* [Notifications](/login?return_to=%2FSegataLab%2Fcmseq) You must be signed in to change notification settings
+* [Fork
+  8](/login?return_to=%2FSegataLab%2Fcmseq)
+* [Star
+   27](/login?return_to=%2FSegataLab%2Fcmseq)
+
+* [Code](/SegataLab/cmseq)
+* [Issues
+  3](/SegataLab/cmseq/issues)
+* [Pull requests
+  0](/SegataLab/cmseq/pulls)
+* [Actions](/SegataLab/cmseq/actions)
+* [Projects](/SegataLab/cmseq/projects)
+* [Security
+  0](/SegataLab/cmseq/security)
+* [Insights](/SegataLab/cmseq/pulse)
+
+Additional navigation options
+
+* [Code](/SegataLab/cmseq)
+* [Issues](/SegataLab/cmseq/issues)
+* [Pull requests](/SegataLab/cmseq/pulls)
+* [Actions](/SegataLab/cmseq/actions)
+* [Projects](/SegataLab/cmseq/projects)
+* [Security](/SegataLab/cmseq/security)
+* [Insights](/SegataLab/cmseq/pulse)
+
+# Releases: SegataLab/cmseq
+
+[Releases](/SegataLab/cmseq/releases)
+[Tags](/SegataLab/cmseq/tags)
+
+Releases · SegataLab/cmseq
+
+## 1.0.4
+
+24 Aug 04:50
+
+![@azufre451](https://avatars.githubusercontent.com/u/25253438?s=40&v=4)
+[azufre451](/azufre451)
+
+[1.0.4](/SegataLab/cmseq/tree/1.0.4)
+
+[`5369030`](/SegataLab/cmseq/commit/53690302f7e13e18ef573f5c1e6393bfd934741a)
+
+Compare
+
+# Choose a tag to compare
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## No results found
+
+[View all tags](/SegataLab/cmseq/tags)
+
+[1.0.4](/SegataLab/cmseq/releases/tag/1.0.4)
+
+[Latest](/SegataLab/cmseq/releases/latest)
+
+[Latest](/SegataLab/cmseq/releases/latest)
+
+Fixing issues with the parallel version of ref\_free\_consensus()
+
+Assets
+2
+
+Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## 1.0.3
+
+23 Sep 12:01
+
+![@azufre451](https://avatars.githubusercontent.com/u/25253438?s=40&v=4)
+[azufre451](/azufre451)
+
+[1.0.3](/SegataLab/cmseq/tree/1.0.3)
+
+[`a652987`](/SegataLab/cmseq/commit/a65298780fc18913939122333d28d85b07b5cbbf)
+
+Compare
+
+# Choose a tag to compare
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## No results found
+
+[View all tags](/SegataLab/cmseq/tags)
+
+[1.0.3](/SegataLab/cmseq/releases/tag/1.0.3)
+
+Support for Biopython 1.78. Biopython<=1.76 still needed for polymut.py.
+
+Assets
+2
+
+Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## test
+
+16 Sep 09:51
+
+![@fbeghini](https://avatars.githubusercontent.com/u/829609?s=40&v=4)
+[fbeghini](/fbeghini)
+
+[test](/SegataLab/cmseq/tree/test)
+
+[`88995a6`](/SegataLab/cmseq/commit/88995a6f3c1723912606248f0746792816e412ab)
+
+This commit was created on GitHub.com and signed with GitHub’s **verified signature**.
+The key has expired.
+
+GPG key ID: 4AEE18F83AFDEB23
+
+Expired
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits).
+
+Compare
+
+# Choose a tag to compare
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## No results found
+
+[View all tags](/SegataLab/cmseq/tags)
+
+[test](/SegataLab/cmseq/releases/tag/test)
+
+```
+Create python-publish.yml
+```
+
+Assets
+2
+
+Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+All reactions
+
+## 1.0.2
+
+09 Sep 16:40
+
+![@azufre451](https://avatars.githubusercontent.com/u/25253438?s=40&v=4)
+[azufre451](/azufre451)
+
+[1.0.2](/SegataLab/cmseq/tree/1.0.2)
+
+[`86144c0`](/SegataLab/cmseq/commit/86144c0d49a0792c38be5b8ea016d1945553ae4e)
+
+Compare
+
+# Choose a tag to compare
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## No results found
+
+[View all tags](/SegataLab/cmseq/tags)
+
+[1.0.2](/SegataLab/cmseq/releases/tag/1.0.2)
+
+```
+v1.0.2 fixing issue #5
+```
+
+Assets
+4
+
+Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+All reactions
+
+## 1.0
+
+25 Mar 13:50
+
+![@fbeghini](https://avatars.githubusercontent.com/u/829609?s=40&v=4)
+[fbeghini](/fbeghini)
+
+[1.0](/SegataLab/cmseq/tree/1.0)
+
+[`91b8ff4`](/SegataLab/cmseq/commit/91b8ff4bbead206bcca746929b3b7f4bf5263238)
+
+Compare
+
+# Choose a tag to compare
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## No results found
+
+[View all tags](/SegataLab/cmseq/tags)
+
+[1.0](/SegataLab/cmseq/releases/tag/1.0)
+
+```
+Updated imports
+```
+
+Assets
+2
+
+Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+All reactions
+
+## Footer
+
+© 2026 GitHub, Inc.
+
+### Footer navigation
+
+* [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+* [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+* [Security](https://github.com/security)
+* [Status](https://www.githubstatus.com/)
+* [Community](https://github.community/)
+* [Docs](https://docs.github.com/)
+* [Contact](https://support.github.com?tags=dotcom-footer)
+* Manage cookies
+* Do not share my personal information
+
+You can’t perform that action at this time.

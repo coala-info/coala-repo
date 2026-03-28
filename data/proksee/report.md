@@ -92,3 +92,6 @@ Traceback (most recent call last):
 FileNotFoundError: [Errno 2] No such file or directory: '/usr/local/lib/python3.7/site-packages/config.json'
 ```
 
+
+## Metadata
+- **Skill**: generated

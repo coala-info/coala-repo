@@ -1,6 +1,6 @@
 ---
 name: pacini_typing
-description: This tool detects genes and SNPs in bacterial genomes using BLAST for assemblies and KMA for raw sequencing reads. Use when user asks to identify genetic patterns, characterize isolates, detect point mutations, or generate genotyping reports from sequence data.
+description: Pacini-typing automates the detection of specific DNA sequences and Single Nucleotide Polymorphisms from raw sequencing reads or assembled genomes. Use when user asks to detect genes, identify SNPs, or perform genomic surveillance and pathogen characterization using FASTQ or FASTA files.
 homepage: https://github.com/RIVM-bioinformatics/Pacini-typing
 ---
 
@@ -8,51 +8,49 @@ homepage: https://github.com/RIVM-bioinformatics/Pacini-typing
 # pacini_typing
 
 ## Overview
+Pacini-typing is a bioinformatics tool developed by the RIVM for the automated detection of specific DNA sequences and Single Nucleotide Polymorphisms (SNPs). It bridges the gap between raw sequencing data (FASTQ) or assembled genomes (FASTA) and actionable typing reports. By utilizing BLAST for assemblies and KMA for raw reads, it provides a unified interface for genomic surveillance and pathogen characterization.
 
-The `pacini_typing` skill enables the automated detection of genes and SNPs within bacterial genomes. The tool functions as a wrapper for high-performance alignment engines—specifically BLAST for assembled sequences and KMA for raw sequencing reads. It is designed for high-throughput genotyping workflows where consistency is maintained through external configuration files that define genetic thresholds and reference databases. Use this skill to characterize isolates, identify pandemic-related genetic patterns, and generate genotyping reports from raw or assembled sequence data.
+## Core Workflows
 
-## Command Line Usage
+### 1. Basic Execution
+The tool requires a configuration file and input sequences. Use the `--search_mode` flag to define the scope of the analysis.
 
-The primary entry point is the `pacini_typing` command. It requires a configuration file, input sequence files, and a designated search mode.
+```bash
+pacini_typing --config path/to/config.yaml --input sample1.fastq sample2.fastq --search_mode SNPs
+```
 
-### Primary Search Modes
-- **genes**: Focuses on identifying the presence or absence of specific gene sequences.
-- **SNPs**: Identifies point mutations and variants relative to a reference.
-- **both**: Executes both gene and SNP detection in a single pass.
+### 2. Search Modes
+Select the mode based on the biological question:
+- **GENEs**: Detects presence/absence of specific gene sequences.
+- **SNPs**: Identifies specific point mutations or variants.
+- **Both**: Performs both gene and SNP detection simultaneously.
 
-### Common CLI Patterns
+### 3. Handling Different Input Types
+- **FASTQ (Raw Reads)**: Uses KMA (K-mer Alignment) to map reads directly against the reference database.
+- **FASTA (Assemblies)**: Uses BLASTN to identify hits within assembled contigs.
 
-**Analyzing Assembled Contigs (FASTA)**
-To search for genes in an assembly:
-`pacini_typing --config path_to_config.yaml --input sample_contigs.fasta --search_mode genes`
+## CLI Parameters & Best Practices
 
-**Analyzing Raw Reads (FASTQ)**
-To detect SNPs from paired-end raw data:
-`pacini_typing --config path_to_config.yaml --input forward_reads.fastq reverse_reads.fastq --search_mode SNPs`
+- **Input Specification**: You can provide multiple files to the `--input` flag. For paired-end FASTQ data, ensure files are correctly matched.
+- **Output Management**: Use `--output` to specify the destination directory. The tool generates a `report.csv` by default, which is optimized for downstream analysis and pipeline compatibility.
+- **Identity & Coverage**: While the tool uses defaults, pay attention to the identity thresholds in your configuration, as these significantly impact the sensitivity of SNP calling and gene detection.
+- **Database Preparation**: Ensure that `makeblastdb` and `kma_index` are in your system PATH, as Pacini-typing calls these subcommands to prepare reference databases.
 
-**Comprehensive Genotyping**
-To run a full analysis on an isolate:
-`pacini_typing --config path_to_config.yaml --input sample.fasta --search_mode both`
+## Expert Tips
+- **Species Flexibility**: Although validated on *Y. pestis* and *V. cholerae*, the tool is species-agnostic. You can adapt it to any organism by providing the appropriate reference sequences and SNP patterns in the configuration.
+- **SNP Pattern Validation**: When creating custom configurations, ensure the SNP patterns follow the tool's expected schema to avoid parsing errors during the validation phase.
+- **Snakemake Integration**: The tool is designed to be "Snakemake-friendly" by always producing a consistent `report.csv`, making it easy to wrap into larger automated workflows.
 
-### Database Management Subcommands
-- **makedatabase**: Used to manually initialize or update the gene reference database.
-- **query**: Allows for running manual, ad-hoc queries against an existing reference database without a full genotyping run.
 
-## Best Practices and Expert Tips
 
-### Environment and Dependencies
-- **Path Verification**: Ensure that `makeblastdb` (from BLAST+) and `kma_index` (from KMA) are available in your system PATH. The tool relies on these subcommands for indexing reference sequences on the fly.
-- **Conda Integration**: It is recommended to run the tool within its dedicated Conda environment to ensure version compatibility for `cgecore`, `pyyaml`, and alignment tools.
+## Subcommands
 
-### Input Handling
-- **File Extensions**: The tool accepts `.fa`, `.fasta`, `.fastq`, and `.fq` extensions. Ensure paired-end FASTQ files are provided together in the `--input` argument.
-- **Search Mode Selection**: Use `SNPs` mode when working with raw reads (FASTQ) for better accuracy via KMA mapping. Use `genes` mode for rapid screening of assemblies via BLAST.
-
-### Configuration Logic
-- **Metadata**: The configuration file should contain a metadata section (filename, ID, type, description) which is used to populate the final output report.
-- **Thresholds**: Genetic thresholds (identity and coverage) are defined within the configuration. If results are unexpectedly empty, verify that the thresholds in the config are not set too stringently for the quality of your input data.
-- **PointFinder Integration**: When using SNP mode, the tool can automatically install or reference PointFinder scripts if the path is specified in the configuration.
+| Command | Description |
+|---------|-------------|
+| Pacini-typing makedatabase | Builds a reference database for Pacini typing. |
+| Pacini-typing query | Query the Pacini database with sequencing reads. |
 
 ## Reference documentation
-- [Pacini-typing GitHub Repository](./references/github_com_RIVM-bioinformatics_Pacini-typing.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_pacini_typing_overview.md)
+- [Pacini-typing README](./references/github_com_RIVM-bioinformatics_Pacini-typing_blob_main_README.md)
+- [Pacini-typing Overview](./references/anaconda_org_channels_bioconda_packages_pacini_typing_overview.md)
+- [Changelog and Version History](./references/github_com_RIVM-bioinformatics_Pacini-typing_blob_main_CHANGELOG.md)

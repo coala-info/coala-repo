@@ -1,6 +1,6 @@
 ---
 name: hymet
-description: HYMET performs high-accuracy taxonomic identification and classification of metagenomic sequences using a multi-stage alignment and filtering pipeline. Use when user asks to classify long reads or assembled contigs, perform taxonomic identification in metagenomic datasets, or assign lineages to sequences using a weighted LCA resolver.
+description: HYMET is a bioinformatics pipeline designed for high-accuracy taxonomic classification of metagenomic data using a hybrid screening and alignment approach. Use when user asks to classify metagenomic sequences, perform taxonomic assignment, or identify candidate genomes in large datasets.
 homepage: https://github.com/inesbmartins02/HYMET
 ---
 
@@ -9,66 +9,83 @@ homepage: https://github.com/inesbmartins02/HYMET
 
 ## Overview
 
-HYMET (Hybrid Metagenomic Tool) is designed for high-accuracy taxonomic identification in metagenomic datasets. It utilizes a multi-stage pipeline: first, it uses Mash for rapid candidate filtering, followed by precise minimap2 alignment, and finally applies a weighted Lowest Common Ancestor (LCA) resolver to classify sequences. This tool is particularly useful for researchers needing to classify long reads or assembled contigs with a balance of computational efficiency and taxonomic precision.
+HYMET (Hybrid Metagenomic Tool) is a specialized bioinformatics pipeline designed for high-accuracy taxonomic classification of metagenomic data. It utilizes a multi-stage workflow: first screening sequences against large-scale databases (RefSeq, GTDB, and custom sets) using Mash to identify candidate genomes, and then performing precise alignment via Minimap2. This hybrid strategy allows for efficient processing of large datasets while maintaining the sensitivity required for detailed taxonomic assignment.
 
 ## Installation and Setup
 
-The most reliable way to use HYMET is via the Bioconda package, which provides the `hymet` and `hymet-config` wrappers.
+### Environment Preparation
+The most reliable way to deploy HYMET is via Bioconda or the provided Docker container to ensure all dependencies (Perl, Python 3.8, Mash, Minimap2, and BioPython) are correctly versioned.
 
 ```bash
-# Install via conda
+# Conda installation
 conda install -c bioconda hymet
+
+# Docker deployment
+docker build -t hymet .
+docker run -it hymet
 ```
 
-### Database Preparation
+### Database Configuration
+HYMET requires specific reference sketched databases that must be downloaded manually before the first run.
+1. Download `sketch1.msh.gz`, `sketch2.msh.gz`, and `sketch3.msh.gz` from the project's provided data repository.
+2. Place them in the `data/` directory.
+3. Decompress the files: `gunzip data/*.gz`.
+4. Run the configuration utility to fetch NCBI taxonomy files:
+   ```bash
+   hymet-config
+   ```
 
-HYMET requires specific reference Mash sketches and taxonomy files to function.
+## Usage Patterns
 
-1.  **Download Sketches**: Obtain the required Mash sketches (`sketch1.msh`, `sketch2.msh`, `sketch3.msh`) from the official repository links.
-2.  **Placement**: Place these files in a `data/` directory relative to your execution path.
-3.  **Decompression**: Ensure the sketches are unzipped:
-    ```bash
-    gunzip data/*.msh.gz
-    ```
-4.  **Taxonomy Configuration**: Run the configuration utility to prepare the taxonomy hierarchy:
-    ```bash
-    hymet-config
-    ```
-
-## Command Line Usage
-
-### Primary Classification
-
-Once configured, run the main classification pipeline on your FASTA input files.
+### Standard Execution
+HYMET typically operates in an interactive mode or via the main wrapper script. Ensure your input files are in FASTA format (`.fna` or `.fasta`).
 
 ```bash
-# Standard execution
+# Start the classification pipeline
 hymet
 ```
+When prompted, provide the full path to the directory containing your input sequences.
 
 ### Input Requirements
-
-*   **Format**: FASTA (`.fna` or `.fasta`).
-*   **Structure**: The tool expects input files to be located in the directory defined by the environment or internal configuration (defaulting to an `input_dir/` structure if running from source).
-*   **Headers**: Sequence IDs should be unique.
+* **Format**: FASTA (`>sequence_id`)
+* **Directory Structure**: All sample files should be grouped in a single input directory.
+* **Permissions**: If running from a cloned repository, ensure scripts are executable: `chmod +x main.pl config.pl scripts/*`.
 
 ### Output Interpretation
-
-The tool generates a `classified_sequences.tsv` file in the `output/` directory. Key columns include:
-
-*   **Query**: The original sequence identifier.
-*   **Lineage**: The full taxonomic path assigned to the sequence.
-*   **Taxonomic Level**: The specific rank (e.g., species, genus) of the classification.
-*   **Confidence**: A score between 0 and 1 indicating the reliability of the assignment.
+The primary output is `output/classified_sequences.tsv`, which includes:
+* **Query**: The original sequence identifier.
+* **Lineage**: The full taxonomic path.
+* **Taxonomic Level**: The specific rank assigned (e.g., species, genus).
+* **Confidence**: A score from 0 to 1 indicating classification reliability.
 
 ## Expert Tips and Best Practices
 
-*   **Hybrid Workflow**: HYMET is optimized for cases where Mash alone provides too many false positives and minimap2 alone is too computationally expensive for the entire database.
-*   **Manual Path Overrides**: If using the source version instead of the Conda package, ensure `config.pl` and `main.pl` have execution permissions (`chmod +x`) and that the `scripts/` subdirectory is intact, as the Perl wrappers call Python and Bash scripts internally.
-*   **Memory Management**: Since the tool involves Mash sketches and minimap2 alignments, ensure your environment has sufficient RAM to load the reference sketches into memory.
-*   **Custom Datasets**: For benchmarking or case studies, refer to the `testdataset` folder in the source repository, which contains scripts like `create_database.py` and `extractTaxonomy.py` to build custom reference sets.
+### Performance Tuning
+If running HYMET from the source code, you can optimize performance by editing `main.pl`:
+* **Parallelization**: Increase `$classification_processes` (default is 8) to match your system's available CPU cores.
+* **Sensitivity**: Adjust `$mash_threshold_refseq`, `$mash_threshold_gtdb`, or `$mash_threshold_custom` (default 0.90). Lowering these thresholds may increase sensitivity for novel or divergent sequences but may increase false positives and processing time.
+
+### Troubleshooting Data Issues
+* **Missing Taxonomy**: If classifications return empty lineages, ensure `hymet-config` completed successfully and that `data/taxonomy_hierarchy.tsv` exists.
+* **Memory Management**: For very large metagenomes, ensure the `data/downloaded_genomes` directory has sufficient disk space, as the tool downloads candidate reference genomes during Step 4 of the pipeline.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| hymet artifacts | Show commands without executing them |
+| hymet truth | Build Zymo mock community truth tables |
+| hymet_ablation | Ablate samples using HYMET |
+| hymet_bench | Run the HYMET benchmark pipeline. |
+| hymet_case | Run a case study with HYMET. |
+| hymet_init | Initialize hymet project |
+| hymet_run | Run HYMET with specified inputs and options. |
+| perl /usr/local/share/hymet/main.pl | HYMET now ships with a unified CLI (bin/hymet). For batch runs try:        bin/hymet run --contigs /path/to/sample.fna --out /path/to/out --threads 8        bin/hymet bench --manifest bench/cami_manifest.tsv |
 
 ## Reference documentation
-
-- [HYMET Overview - Bioconda](./references/anaconda_org_channels_bioconda_packages_hymet_overview.md)
-- [HYMET Repository and Usage Guide](./references/github_com_inesbmartins02_HYMET.md)
+- [HYMET README](./references/github_com_inesbmartins02_HYMET_blob_main_README.md)
+- [Main Pipeline Script](./references/github_com_inesbmartins02_HYMET_blob_main_main.pl.md)
+- [Configuration Script](./references/github_com_inesbmartins02_HYMET_blob_main_config.pl.md)
+- [Environment Specification](./references/github_com_inesbmartins02_HYMET_blob_main_environment.yml.md)

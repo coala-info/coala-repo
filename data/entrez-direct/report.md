@@ -1163,3 +1163,6 @@ NCBI Datasets POST Queries
   nquire -datasets virus genome download > pair.zip
 ```
 
+
+## Metadata
+- **Skill**: generated

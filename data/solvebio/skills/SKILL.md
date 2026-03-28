@@ -1,6 +1,6 @@
 ---
 name: solvebio
-description: The solvebio tool provides a command-line interface and Python client for managing genomic data, authenticating environments, and interacting with data vaults on the SolveBio platform. Use when user asks to login to SolveBio, configure API credentials, upload or download genomic datasets, and list resources within data vaults.
+description: SolveBio is a unified data platform for storing, indexing, and querying large-scale molecular and clinical life sciences data. Use when user asks to manage vaults and datasets, ingest genomic data, perform server-side aggregations, or harmonize entities across datasets.
 homepage: https://github.com/solvebio/solvebio-python
 ---
 
@@ -8,51 +8,91 @@ homepage: https://github.com/solvebio/solvebio-python
 # solvebio
 
 ## Overview
-The `solvebio` skill provides a streamlined interface for managing genomic data and workflows on the SolveBio platform. It allows for the setup of secure authentication, environment configuration, and direct interaction with SolveBio's data vaults. While the package is currently in a maintenance phase (with a planned transition to `quartzbio`), it remains the primary tool for legacy SolveBio environments and specific bioinformatics pipelines requiring native CLI access.
 
-## Installation and Setup
-To get started with the SolveBio Python client and CLI:
+SolveBio is a unified data platform designed for life sciences R&D. It provides a specialized infrastructure for storing, indexing, and querying large-scale molecular and clinical data. This skill enables the management of "Vaults" (hierarchical storage), "Datasets" (structured, indexed records), and "Beacons" (entity discovery endpoints). Use this skill to programmatically handle genomic data ingestion, schema definition, and high-performance data aggregation.
 
-```bash
-pip install solvebio
+## Core Workflows
+
+### 1. Dataset Management
+Datasets are the primary unit of structured data. They require a full path in the format `<domain>:<vault>:<path>` or `~/path` for personal vaults.
+
+*   **Creation**: Use `Dataset.get_or_create_by_full_path()` to initialize a dataset.
+*   **Capacity**: Set `capacity` ('small', 'medium', 'large') at creation. This cannot be changed later.
+*   **Fields**: Define schemas using `DatasetField`. While SolveBio detects types automatically, explicit templates prevent data type mismatches.
+
+```python
+from solvebio import Dataset
+# Create a dataset with a specific capacity
+dataset = Dataset.get_or_create_by_full_path('~/my_genomic_data', capacity='medium')
 ```
 
-For interactive environments, it is recommended to include `ipython` and `gnureadline` for an enhanced shell experience.
+### 2. Data Ingestion and Activity
+Operations like imports and migrations are asynchronous tasks.
 
-## Authentication
-The CLI uses a persistent credentials file. To authenticate your environment:
+*   **Importing**: Supports JSONL (preferred), CSV, TSV, and Excel.
+*   **Monitoring**: Always check the activity status to ensure tasks are complete before querying.
+*   **Waiting**: Use `follow=True` in the activity method to block until a dataset is idle.
 
-```bash
-solvebio login
+```python
+# Wait for all pending tasks to complete
+dataset.activity(follow=True, sleep_seconds=5)
 ```
-This command will prompt for your SolveBio credentials and store them locally (typically in `~/.solvebio/credentials.json`).
 
-## Configuration via Environment Variables
-You can override local credentials or configure client behavior using the following environment variables. This is particularly useful for CI/CD pipelines or headless environments:
+### 3. Querying and Aggregations (Facets)
+SolveBio uses "facets" to perform server-side statistics and summaries without downloading raw data.
 
-*   **SOLVEBIO_API_KEY**: Your API Key for authentication.
-*   **SOLVEBIO_ACCESS_TOKEN**: An OAuth2 access token.
-*   **SOLVEBIO_API_HOST**: The URL of the target API backend (if different from the default).
-*   **SOLVEBIO_LOGLEVEL**: Set the verbosity of logs (e.g., `INFO`, `DEBUG`, `WARN`).
-*   **SOLVEBIO_RETRY_ALL**: Set to a truthy value to enable aggressive retries for all request types, including non-idempotent operations like `POST`.
+*   **Terms**: Get the most common values (e.g., top mutated genes).
+*   **Stats**: Get min, max, avg, and sum for numeric fields.
+*   **Histograms**: Bin numeric data (e.g., quality scores or genomic positions).
+*   **Nested Aggregations**: Nest facets to see distributions within categories (e.g., age distribution per cancer type).
 
-**Credential Lookup Order:**
-1. Access Token
-2. API Key
-3. Local Credentials file
+```python
+query = dataset.query()
+# Get top 10 genes and their counts
+results = query.facets('gene_symbol', limit=10)
+```
 
-## Common CLI Patterns
-The `solvebio` CLI supports several commands for navigating and managing data:
+### 4. Entity Labeling
+Entities are special labels (e.g., `gene`, `variant`, `sample`, `literature`) that enable cross-dataset harmonization and specialized explorers.
 
-*   **List Resources**: Use `ls` to view files, datasets, and shortcuts within your vaults.
-*   **Data Upload**: Use the `upload` command to push local files to a SolveBio vault.
-*   **Data Download**: Use the `download` command to retrieve files or specific dataset commits.
+*   **Labeling**: Assign `entity_type` to a field to enable Beacon discovery and entity-specific filtering.
+*   **Harmonization**: Use `entity_ids` expressions to normalize identifiers across different sources.
+
+### 5. Data Migrations and Transformations
+Use migrations to move data between datasets or apply `expressions` for real-time transformation.
+
+*   **Expressions**: Powerful Python-like syntax for data cleaning during migration.
+*   **Transient Fields**: Use `is_transient=True` for intermediate calculation fields that shouldn't be stored permanently.
 
 ## Expert Tips
-*   **Deprecation Warning**: Be aware that `solvebio-python` is deprecated and scheduled for end-of-life after March 31, 2026. For new projects, prefer the `quartzbio` package.
-*   **Log Management**: If you need to audit CLI actions, set `SOLVEBIO_LOGFILE` to a specific path; otherwise, logs default to `~/.solvebio/solvebio.log`.
-*   **Windows Paths**: When using the `upload` command on Windows, ensure paths are properly escaped or quoted to handle backslashes correctly.
+
+*   **Storage Classes**: Use `Essential` for mission-critical pipeline data to prevent automatic archiving. Use `Temporary` for scratch data to ensure it archives after 48 hours of inactivity.
+*   **Flattening**: Be aware that CSV/Excel exports flatten list fields (e.g., `tags: ["a", "b"]` becomes `tags.0: "a", tags.1: "b"`).
+*   **Global Beacons**: For "have we seen this before" queries across the entire organization, use Global Beacons instead of querying individual datasets.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| queue | Show the status of tasks in the queue. |
+| solvebio create-dataset | Create a new dataset |
+| solvebio download | Downloads files from SolveBio. |
+| solvebio import | Import files into SolveBio datasets. |
+| solvebio login | Log in to SolveBio |
+| solvebio logout | Logs out of the SolveBio CLI. |
+| solvebio ls | List files and folders in the SolveBio vault |
+| solvebio shell | Interactive SolveBio shell |
+| solvebio tag | Apply tag updates to files, folders, or datasets. |
+| solvebio upload | Upload local files or directories to SolveBio. |
+| whoami | Show the current user and their permissions. |
 
 ## Reference documentation
-- [SolveBio Python Client README](./references/github_com_solvebio_solvebio-python.md)
-- [SolveBio Package Overview](./references/anaconda_org_channels_bioconda_packages_solvebio_overview.md)
+
+- [Datasets Overview](./references/docs_solvebio_com_datasets.md)
+- [Creating Datasets](./references/docs_solvebio_com_datasets_creating.md)
+- [Aggregating Datasets](./references/docs_solvebio_com_datasets_aggregating.md)
+- [Dataset Activity](./references/docs_solvebio_com_datasets_activity.md)
+- [Entities](./references/docs_solvebio_com_datasets_entities.md)
+- [Beacons](./references/docs_solvebio_com_datasets_beacons.md)

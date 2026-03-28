@@ -62,3 +62,6 @@ Options:
   -d, --debug           enable debug mode, keeping all intermediate files
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -1,6 +1,6 @@
 ---
 name: sambamba
-description: Sambamba is a high-performance toolset for the efficient manipulation, filtering, and analysis of SAM and BAM files. Use when user asks to view or filter reads, sort and index BAM files, mark or remove duplicates, calculate coverage depth, or merge and slice genomic data.
+description: Sambamba is a high-performance tool for parallelized processing, filtering, and manipulation of BAM and SAM files. Use when user asks to view, sort, mark duplicates, index, or calculate coverage depth for genomic sequencing data.
 homepage: https://github.com/biod/sambamba
 ---
 
@@ -9,61 +9,66 @@ homepage: https://github.com/biod/sambamba
 
 ## Overview
 
-Sambamba is a high-performance toolset designed for the efficient manipulation of SAM (Sequence Alignment/Map) and BAM (Binary Alignment/Map) files. Written in the D programming language, it excels in multi-core environments by parallelizing BAM reading and writing operations. It serves as a faster alternative to many samtools and Picard functions, making it particularly useful for large-scale genomic data processing where speed and resource efficiency are paramount.
+Sambamba is a high-performance alternative to samtools, written in the D programming language. It is specifically designed to exploit multi-core architectures for parallelized BAM reading, writing, and processing. This skill provides guidance on using its core subcommands to accelerate NGS (Next-Generation Sequencing) workflows, particularly for large-scale datasets where processing speed and efficient memory management are critical.
 
-## Core CLI Usage and Patterns
+## Core Subcommands and Usage
 
-### High-Performance Viewing and Filtering
-Use `sambamba view` to convert between formats or filter reads. It is significantly faster than samtools for large datasets.
+### 1. Viewing and Filtering (view)
+The `view` command is used for format conversion and complex filtering.
+- **Convert BAM to SAM**: `sambamba view -h input.bam > output.sam`
+- **Multithreaded Filtering**: Use `-t` to specify threads and `-F` for filter expressions.
+  - Example: `sambamba view -t 8 -f bam -F "mapping_quality >= 30 and not duplicate" input.bam -o filtered.bam`
+- **JSON Output**: Useful for downstream scripting.
+  - Example: `sambamba view -S input.sam --format=json`
 
-*   **Convert BAM to SAM (Parallel):**
-    `sambamba view -t 8 input.bam > output.sam`
-*   **Filter by Region (using index):**
-    `sambamba view input.bam chr1:100-200`
-*   **Filter using expressions:**
-    `sambamba view -F "mapping_quality >= 30 and not (unmapped or secondary_alignment)" input.bam`
-*   **Extract reads in a BED file:**
-    `sambamba view -L regions.bed input.bam` (Utilizes the index to skip unrelated chunks).
+### 2. Sorting (sort)
+Sambamba sort is highly efficient on machines with large RAM.
+- **Standard Sort**: `sambamba sort -t 8 -m 4G input.bam`
+- **Custom Temporary Directory**: Use `-l` or `--tmpdir` to avoid filling up `/tmp`.
+- **Automatic Indexing**: Sambamba can automatically create an index (`.bai`) while sorting.
 
-### Efficient Sorting
-`sambamba sort` is optimized for machines with large amounts of RAM.
+### 3. Marking Duplicates (markdup)
+A fast implementation of the Picard duplicate marking algorithm.
+- **Basic Usage**: `sambamba markdup -t 8 input.sorted.bam output.marked.bam`
+- **Remove Duplicates**: Add the `-r` flag to remove instead of just marking.
 
-*   **Standard Coordinate Sort:**
-    `sambamba sort -t 8 -m 4G -o sorted.bam input.bam`
-*   **Automatic Indexing:**
-    Sambamba automatically creates a `.bai` index when writing a coordinate-sorted file, saving a separate indexing step.
+### 4. Coverage Depth (depth)
+Calculates base, sliding window, or region coverages.
+- **Base-level depth**: `sambamba depth base input.bam`
+- **Region-specific**: `sambamba depth region -L regions.bed input.bam`
 
-### Marking Duplicates
-`sambamba markdup` provides a fast implementation of the Picard duplicate-marking algorithm.
-
-*   **Mark Duplicates (Parallel):**
-    `sambamba markdup -t 8 input.bam output.bam`
-*   **Remove Duplicates:**
-    `sambamba markdup -r input.bam output.bam`
-
-### Coverage Depth Analysis
-The `depth` tool allows for rapid calculation of coverage metrics.
-
-*   **Base-level coverage:**
-    `sambamba depth base input.bam`
-*   **Region-level coverage:**
-    `sambamba depth region -L regions.bed input.bam`
-
-### Slicing and Merging
-*   **Quick Extraction:**
-    `sambamba slice input.bam chr1:1000-2000` (Quickly extracts a region into a new file by tweaking only the boundary chunks).
-*   **Merging Files:**
-    `sambamba merge output.bam input1.bam input2.bam input3.bam`
+### 5. Indexing and Slicing
+- **Index**: `sambamba index -t 8 input.sorted.bam`
+- **Slice**: Quickly extract a specific genomic region without re-reading the whole file.
+  - Example: `sambamba slice input.bam chr1:100-200 > region.bam`
 
 ## Expert Tips and Best Practices
 
-*   **Thread Allocation:** Always specify the number of threads with `-t` or `--nthreads`. Sambamba scales well, but over-allocating threads beyond physical cores can lead to diminishing returns due to I/O bottlenecks.
-*   **Memory Management:** For `sort`, use the `-m` flag to allocate sufficient memory. On machines with 120GB+ RAM, Sambamba can be up to 2x faster than samtools.
-*   **Piping:** Sambamba supports standard Unix piping. Use `/dev/stdin` or `/dev/stdout` as filenames to integrate into complex command-line strings.
-*   **Filter Syntax:** Familiarize yourself with the filter expression syntax (e.g., `[XS] == ".."`, `cigar =~ /^100M/`). This allows for complex read filtering without writing custom scripts.
-*   **CRAM Support:** Note that as of version 0.8, CRAM support was removed. Use samtools for CRAM-to-BAM conversion before processing with Sambamba.
+- **Thread Allocation**: For most commands, `-t` (threads) significantly impacts performance. Match this to your available CPU cores.
+- **Filter Expressions**: Sambamba's `-F` filter syntax is more powerful than samtools. You can use field names like `read_name`, `sequence`, `cigar`, `mapping_quality`, and flag names like `unmapped`, `duplicate`, or `mate_is_unmapped`.
+- **Piping**: Most tools support piping using `/dev/stdin` and `/dev/stdout`.
+- **Memory Management**: When using `sort`, the `-m` flag sets the maximum memory per thread. Ensure `threads * memory_per_thread` does not exceed system limits.
+- **Index Utilization**: When using `-L <bed_file>` with `view`, sambamba utilizes the BAM index to skip unrelated chunks, making it significantly faster for targeted analysis.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| sambamba-depth | Calculate depth of coverage for BAM files. |
+| sambamba-flagstat | Outputs SAM/BAM/CRAM alignment statistics. |
+| sambamba-index | Creates index for a BAM, or FASTA file |
+| sambamba-markdup | Marks the duplicates without removing them |
+| sambamba-merge | Merge multiple BAM files into a single BAM file. |
+| sambamba-pileup | This subcommand relies on external tools and acts as a multi-core implementation of samtools and bcftools. |
+| sambamba-slice | Fast copy of a region from indexed BAM or FASTA file to a new file |
+| sambamba-sort | Sort BAM files. |
+| sambamba-view | View and convert SAM/BAM/CRAM files |
+| sambamba_subsample | Subsample BAM files |
 
 ## Reference documentation
-- [github_com_biod_sambamba.md](./references/github_com_biod_sambamba.md)
-- [github_com_biod_sambamba_wiki.md](./references/github_com_biod_sambamba_wiki.md)
-- [anaconda_org_channels_bioconda_packages_sambamba_overview.md](./references/anaconda_org_channels_bioconda_packages_sambamba_overview.md)
+
+- [Comparison with samtools](./references/github_com_biod_sambamba_wiki_Comparison-with-samtools.md)
+- [[sambamba view] Filter expression syntax](./references/github_com_biod_sambamba_wiki__5Bsambamba-view_5D-Filter-expression-syntax.md)
+- [Command line tools overview](./references/github_com_biod_sambamba_wiki_Command-line-tools.md)

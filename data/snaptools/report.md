@@ -491,3 +491,6 @@ required inputs:
                         (default: None)
 ```
 
+
+## Metadata
+- **Skill**: generated

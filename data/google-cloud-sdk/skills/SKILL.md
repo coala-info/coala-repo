@@ -1,6 +1,6 @@
 ---
 name: google-cloud-sdk
-description: The google-cloud-sdk provides a command-line interface for managing Google Cloud Platform resources and services. Use when user asks to authenticate accounts, configure project settings, manage compute instances, interact with cloud storage, or run local service emulators.
+description: The Google Cloud SDK provides a command-line interface and tools for managing Google Cloud Platform resources and services. Use when user asks to manage GCP resources, authenticate via gcloud, deploy applications, or use local service emulators.
 homepage: https://cloud.google.com/sdk/
 ---
 
@@ -8,41 +8,50 @@ homepage: https://cloud.google.com/sdk/
 # google-cloud-sdk
 
 ## Overview
-The `google-cloud-sdk` skill provides the necessary procedural knowledge to manage Google Cloud resources directly from the command line. It focuses on the `gcloud` CLI tool, which serves as the primary interface for authentication, configuration, and resource management across the GCP ecosystem. Use this skill to automate infrastructure tasks, script cloud workflows, and set up local emulators for services like Pub/Sub and Spanner.
+The Google Cloud SDK is the primary toolkit for managing GCP services. It includes the `gcloud` command-line interface, service emulators for local testing, and client libraries for various programming languages. This skill helps you navigate resource management, authentication, and automation workflows within the Google Cloud ecosystem.
 
 ## Core CLI Patterns
 
-### Authentication and Configuration
-Before interacting with GCP, you must initialize the environment and manage active accounts.
-- **Initialize SDK**: `gcloud init` (sets up default configuration, account, and project).
-- **Login**: `gcloud auth login` to authenticate a user account.
-- **Set Project**: `gcloud config set project [PROJECT_ID]` to switch the active project context.
-- **List Configurations**: `gcloud config configurations list` to see multiple environment setups.
+### Initialization and Auth
+- **Setup**: Run `gcloud init` to perform initial setup, including authentication and project selection.
+- **Auth**: Use `gcloud auth login` for user credentials or `gcloud auth activate-service-account` for automated environments.
+- **Application Default Credentials (ADC)**: Use `gcloud auth application-default login` to provide credentials for local development with client libraries.
 
 ### Resource Management
-Common patterns for managing core GCP services:
-- **Compute Engine**: 
+- **Compute Engine**:
   - Create VM: `gcloud compute instances create [INSTANCE_NAME] --zone=[ZONE] --machine-type=[TYPE]`
-  - List VMs: `gcloud compute instances list`
+  - SSH into VM: `gcloud compute ssh [INSTANCE_NAME] --zone=[ZONE]`
 - **Kubernetes Engine (GKE)**:
-  - Get Credentials: `gcloud container clusters get-credentials [CLUSTER_NAME] --zone=[ZONE]`
-- **Cloud Storage (gsutil)**:
-  - Upload: `gsutil cp [LOCAL_FILE] gs://[BUCKET_NAME]/`
-  - Sync: `gsutil rsync -r [LOCAL_DIR] gs://[BUCKET_NAME]/`
+  - Get credentials: `gcloud container clusters get-credentials [CLUSTER_NAME] --region=[REGION]`
+- **App Engine**:
+  - Deploy: `gcloud app deploy`
+  - View logs: `gcloud app logs tail -s default`
 
-### Local Development and Emulators
-Accelerate development without incurring cloud costs by using local emulators:
-- **Pub/Sub**: `gcloud beta emulators pubsub start --project=[PROJECT_ID]`
-- **Bigtable**: `gcloud beta emulators bigtable start`
+### Configuration and Filtering
+- **Project Switching**: `gcloud config set project [PROJECT_ID]`
+- **Output Formatting**: Use `--format` to transform output (e.g., `json`, `table`, `value(field_name)`).
+- **Filtering**: Use `--filter` to narrow results (e.g., `gcloud compute instances list --filter="status=RUNNING"`).
+
+## Local Development & Emulators
+Accelerate development without incurring costs by using local emulators:
+- **Pub/Sub**: `gcloud beta emulators pubsub start`
 - **Spanner**: `gcloud emulators spanner start`
+- **Bigtable**: `gcloud beta emulators bigtable start`
+- **Datastore**: `gcloud beta emulators datastore start`
 
 ## Expert Tips
-- **Filtering and Formatting**: Use the `--format` and `--filter` flags to parse output efficiently.
-  - Example: `gcloud compute instances list --filter="status=RUNNING" --format="table(name, zone, status)"`
-- **Quiet Mode**: Use `-q` or `--quiet` in scripts to disable interactive prompts.
-- **Component Management**: Keep your SDK updated with `gcloud components update` and install additional tools like `kubectl` via `gcloud components install kubectl`.
-- **Help Access**: Append `--help` to any command to see detailed flag documentation and examples.
+- **Beta/Alpha Commands**: Many new features are under `gcloud beta` or `gcloud alpha`. Install them via `gcloud components install beta`.
+- **Quiet Mode**: Use the `-q` or `--quiet` flag in scripts to disable interactive prompts.
+- **Cloud Shell**: For a pre-configured environment without local installation, use the browser-based Cloud Shell.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| gcloud | manage Google Cloud Platform resources and developer workflow |
+| gsutil | Google Cloud Storage utility |
 
 ## Reference documentation
-- [Cloud SDK - Libraries and Command Line Tools](./references/cloud_google_com_sdk.md)
-- [google-cloud-sdk - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_google-cloud-sdk_overview.md)
+- [Cloud SDK Overview](./references/cloud_google_com_sdk.md)

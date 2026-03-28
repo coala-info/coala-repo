@@ -63,3 +63,6 @@ StrainR normalizes mapping from reads using the output from PreProcessR
 		-h/--help			: Display this message
 ```
 
+
+## Metadata
+- **Skill**: generated

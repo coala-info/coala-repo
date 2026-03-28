@@ -203,3 +203,6 @@ Options:
 --help|-h: prints this help
 ```
 
+
+## Metadata
+- **Skill**: generated

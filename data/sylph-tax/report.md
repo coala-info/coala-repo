@@ -105,3 +105,6 @@ options:
                         $HOME or $SYLPH_TAXONOMY_CONFIG.
 ```
 
+
+## Metadata
+- **Skill**: generated

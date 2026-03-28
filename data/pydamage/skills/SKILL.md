@@ -1,6 +1,6 @@
 ---
 name: pydamage
-description: PyDamage is a bioinformatics tool that assesses ancient DNA authenticity by modeling C-to-T transition patterns and performing statistical significance testing. Use when user asks to estimate DNA damage parameters, filter ancient DNA contigs from modern contaminants, or perform likelihood ratio tests on alignment files.
+description: PyDamage automates the identification and estimation of DNA damage patterns in metagenomic contigs to authenticate ancient DNA. Use when user asks to analyze BAM files for DNA damage, estimate C-to-T transitions, or filter contigs based on damage model statistical significance.
 homepage: https://github.com/maxibor/pydamage
 ---
 
@@ -9,47 +9,62 @@ homepage: https://github.com/maxibor/pydamage
 
 ## Overview
 
-PyDamage is a specialized bioinformatics tool for assessing the authenticity of ancient DNA. It models the characteristic C-to-T transitions found at the ends of ancient DNA fragments and applies a likelihood ratio test to determine if the observed damage pattern is statistically significant. This helps researchers filter out modern contaminants from their datasets by providing a robust statistical framework for damage estimation at the contig level.
+PyDamage is a specialized bioinformatics tool designed to automate the identification and estimation of DNA damage in metagenomic contigs. It models ancient DNA damage patterns, specifically C-to-T transitions resulting from cytosine deamination, to provide a statistical framework for authentication. By using a likelihood ratio test, it helps researchers discriminate between sequences originating from ancient sources and those introduced by modern contamination.
 
 ## Installation
 
-The recommended way to install pydamage is via Conda:
+Install pydamage using one of the following methods:
 
-```bash
-conda install -c bioconda pydamage
-```
-
-Alternatively, it can be installed via pip:
-
-```bash
-pip install pydamage
-```
+- **Conda (Recommended)**: `conda install -c bioconda pydamage`
+- **Pip**: `pip install pydamage`
 
 ## Command Line Usage
 
-### Core Analysis
-The primary command for estimating damage parameters from an alignment file.
+### Core Workflow
 
-```bash
-pydamage --outdir <output_directory> analyze <aligned.bam>
-```
+The primary workflow involves analyzing an aligned BAM file to estimate damage parameters for each contig.
 
-### Filtering Results
-After running the analysis, use the filter subcommand to process the resulting CSV file based on statistical significance.
+1. **Analyze a BAM file**:
+   ```bash
+   pydamage analyze aligned.bam
+   ```
 
-```bash
-pydamage --outdir <output_directory> filter pydamage_results.csv
-```
+2. **Specify an output directory**:
+   Note that global options like `--outdir` must be placed **before** the subcommand.
+   ```bash
+   pydamage --outdir my_results analyze aligned.bam
+   ```
+
+3. **Filter results**:
+   After analysis, use the filter subcommand on the generated CSV to isolate high-confidence ancient contigs.
+   ```bash
+   pydamage --outdir filtered_results filter pydamage_results.csv
+   ```
+
+### CLI Reference
+
+- `pydamage --help`: Show the main help message and global options.
+- `pydamage analyze --help`: Show options specific to the analysis module.
+- `pydamage filter --help`: Show options specific to the filtering module.
 
 ## Expert Tips and Best Practices
 
-- **Argument Ordering**: A critical syntax requirement in pydamage is that global options, such as `--outdir`, must be specified **before** the subcommand (analyze or filter).
-- **Input Requirements**: Ensure your BAM files are properly aligned to a reference. PyDamage relies on the C-to-T transition patterns relative to the reference sequence.
-- **Likelihood Ratio Test (LRT)**: Use the LRT results provided in the output CSV to discriminate between truly ancient contigs and modern sequences. A higher likelihood ratio typically indicates a more confident ancient origin.
-- **Output Interpretation**: The tool generates a `pydamage_results.csv` file. Key columns include the damage estimates and the p-values from the likelihood ratio test.
-- **Visualization**: Recent versions of pydamage include features for generating bin damage plots to visualize the distribution of damage across contigs.
+- **Command Ordering**: Always place global flags (like `--outdir` or `--verbose`) before the subcommand (`analyze`, `filter`). Placing them after the subcommand may result in an error or the flag being ignored.
+- **Input Preparation**: Ensure your BAM file is sorted and indexed. PyDamage relies on the alignments to calculate the frequency of C-to-T transitions at the ends of reads.
+- **Interpreting Results**: The primary output is `pydamage_results.csv`. Focus on the `p-value` and `damage` estimates. A low p-value in the likelihood ratio test indicates that the ancient damage model fits the data significantly better than a null (modern) model.
+- **Metagenomics Context**: PyDamage is particularly powerful for de novo assembled metagenomes where traditional map-based authentication (which requires a reference genome) is not possible for all contigs.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| analyze | Analyze BAM files for DNA damage. |
+| binplot | Plot Damage patterns for a given bin fasta file |
+| filter | Filter PyDamage results on predicted accuracy and qvalue thresholds. |
 
 ## Reference documentation
 
-- [PyDamage GitHub Repository](./references/github_com_maxibor_pydamage.md)
-- [PyDamage Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_pydamage_overview.md)
+- [PyDamage GitHub Repository](./references/github_com_maxibor_pydamage_blob_master_README.md)
+- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_pydamage_overview.md)

@@ -1,6 +1,6 @@
 ---
 name: nullarbor
-description: Nullarbor is a reads-to-report pipeline that automates the analysis of bacterial NGS data for public health microbiology and outbreak investigations. Use when user asks to perform isolate identification, variant calling, annotation, and phylogenetic analysis to generate a centralized HTML report.
+description: Nullarbor is a bioinformatics pipeline that automates the analysis of bacterial genomic data for public health surveillance and outbreak investigation. Use when user asks to perform reads-to-report analysis, identify antimicrobial resistance profiles, or generate phylogenetic trees for bacterial isolates.
 homepage: https://github.com/tseemann/nullarbor
 ---
 
@@ -8,66 +8,71 @@ homepage: https://github.com/tseemann/nullarbor
 # nullarbor
 
 ## Overview
-
-Nullarbor is a "reads-to-report" pipeline designed for the rapid analysis of bacterial NGS data, specifically tailored for public health microbiology. It automates the complex orchestration of multiple bioinformatics tools—including Trimmomatic for cleaning, Kraken for identification, Prokka for annotation, and Snippy for variant calling—to produce a centralized HTML report. It is particularly effective for outbreak investigations where identifying genomic distances and strain relationships across a batch of isolates is the primary goal.
+Nullarbor is a "reads-to-report" pipeline designed for bacterial isolate surveillance and outbreak investigation. It orchestrates a suite of bioinformatics tools (such as Kraken, Prokka, Snippy, and Roary) to provide a unified analysis of genomic data. It is particularly effective for processing batches of isolates from suspected outbreaks to determine genomic relationships and resistome profiles.
 
 ## Core Workflow
 
 ### 1. Environment Validation
-Before starting a project, verify that all dependencies (Perl modules, binaries, and databases) are correctly installed and accessible.
+Before starting a run, verify that all required binaries, Perl modules, and genomic databases (Kraken, Centrifuge) are correctly installed and accessible.
 ```bash
 nullarbor.pl --check
 ```
 
 ### 2. Input Preparation
-Create a tab-separated `samples.tab` file. Each line represents one isolate with three columns: `ID`, `R1_fastq`, and `R2_fastq`.
+Nullarbor requires a tab-separated `samples.tab` file. Each line represents one isolate with three columns:
+- **ID**: Unique isolate name.
+- **R1**: Path to the first paired-end read file.
+- **R2**: Path to the second paired-end read file.
+
+Example `samples.tab`:
 ```text
-Isolate_01    /path/to/reads/01_R1.fq.gz    /path/to/reads/01_R2.fq.gz
-Isolate_02    /path/to/reads/02_R1.fq.gz    /path/to/reads/02_R2.fq.gz
+IsolateA    /path/to/A_R1.fq.gz    /path/to/A_R2.fq.gz
+IsolateB    /path/to/B_R1.fq.gz    /path/to/B_R2.fq.gz
 ```
 
 ### 3. Project Initialization
-Generate the analysis directory and the execution `Makefile`. You must provide a reference genome (FASTA or Genbank).
+Generate the analysis directory and Makefile. You must provide a reference genome (FASTA or Genbank format). Using a Genbank file allows nullarbor to use existing annotations for SNP reporting.
 ```bash
-nullarbor.pl --name PROJECT_NAME --ref reference.gbk --input samples.tab --outdir output_dir
+nullarbor.pl --name ProjectName --ref reference.gbk --input samples.tab --outdir output_dir
 ```
-*Tip: Using a Genbank file (.gbk) as a reference allows Nullarbor to use existing annotations for SNP effect prediction.*
 
 ### 4. Execution
-Nullarbor uses GNU Make to manage the workflow. Execute the pipeline using the generated Makefile in the output directory.
+Nullarbor generates a Makefile to manage the workflow. Execute the analysis using `make`. Use the `-j` flag to specify the number of CPU cores.
 ```bash
-# Run with 8 threads
 make -j 8 -C output_dir
 ```
 
-## Advanced CLI Patterns
+## Expert Patterns and Best Practices
 
-### Quick Outlier Detection
-Before committing to a full run (which includes time-consuming assembly and pan-genome analysis), use the preview mode to generate a "rough" phylogenetic tree.
-```bash
-make -C output_dir preview
-```
-If outliers are identified, remove them from the `samples.tab` file, then run:
-```bash
-make -C output_dir again
-make -C output_dir preview
-```
+### Outlier Detection with Preview Mode
+To avoid wasting time on a full run with contaminated or poor-quality isolates, use the "preview" mode to generate a quick, rough phylogenetic tree.
+1. Run `make preview -C output_dir`.
+2. Inspect the mini-report to identify outliers.
+3. Remove or comment out bad isolates in `samples.tab`.
+4. Run `make again -C output_dir` to reset, then proceed with the full `make`.
 
-### Prefilling Data
-To avoid re-computing assemblies or annotations for isolates used in previous runs, use the `--prefill` option in your `nullarbor.conf` to point to existing `contigs.fa` files.
+### Efficiency with Prefilling
+If you are running a new analysis that includes isolates processed in previous nullarbor runs, use the `--prefill` option in your `nullarbor.conf` to copy existing assembly files (`contigs.fa`) instead of re-assembling them.
 
-### Specific Genotyping
-If the species is known, specify the MLST scheme to ensure accurate genotyping:
-```bash
-nullarbor.pl --mlst saureus [other_options]
-```
+### Tool Selection
+Nullarbor allows swapping components via CLI flags during initialization:
+- **Assembler**: Choose between `--assembler skesa` (fast/conservative) or `spades` (standard).
+- **Taxonomy**: Use `--taxoner kraken2` for the most up-to-date species identification, provided the database is configured.
 
-## Expert Tips
-- **Resource Management**: Nullarbor runs on a single compute node. Use the `-j` flag with `make` to specify the number of CPU cores.
-- **Database Paths**: Ensure `KRAKEN_DEFAULT_DB` or `KRAKEN2_DEFAULT_DB` environment variables are set in your shell profile so Nullarbor can find the identification databases.
-- **Supported Data**: Nullarbor 2.x only supports Illumina paired-end data. Do not attempt to use single-end reads or Ion Torrent data.
-- **Cleaning Up**: If a run fails or needs to be restarted with different parameters, `make again` safely removes temporary files while keeping the core configuration.
+### Result Inspection
+The primary output is a self-contained HTML report located at `output_dir/report/index.html`. It includes:
+- QC metrics (coverage, contamination).
+- MLST and AMR profiles.
+- Interactive SNP phylogeny and distance matrices.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| make | GNU Make is a utility that determines which pieces of a large program need to be recompiled, and issues commands to recompile them. |
+| nullarbor.pl | Reads to reports for public health microbiology |
 
 ## Reference documentation
 - [Nullarbor GitHub Repository](./references/github_com_tseemann_nullarbor.md)
-- [Bioconda Nullarbor Overview](./references/anaconda_org_channels_bioconda_packages_nullarbor_overview.md)

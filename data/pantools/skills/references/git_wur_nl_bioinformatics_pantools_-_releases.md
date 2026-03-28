@@ -1,1 +1,8 @@
-Releases · bioinformatics / PanTools · GitLab Skip to content GitLab Explore Sign in
+[Skip to content](#content-body)
+
+GitLab
+[![](data:image/gif;base64...)](/ "Homepage")
+
+* [Explore](/explore)
+
+* [Sign in](/users/sign_in?redirect_to_referer=yes)

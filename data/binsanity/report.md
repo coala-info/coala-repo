@@ -441,3 +441,6 @@ Please indicate -c coverage file
 Please indicate -f directory containing your contigs
 ```
 
+
+## Metadata
+- **Skill**: generated

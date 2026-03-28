@@ -101,3 +101,6 @@ subcommands:
     metagenome          Run the simulator on metagenome mode
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -1,6 +1,6 @@
 ---
 name: bio
-description: The bio utility provides streamlined command-line tools for common bioinformatics workflows including data retrieval, sequence manipulation, and taxonomic queries. Use when user asks to fetch GenBank records, convert sequences to FASTA, extract genes or proteins, align sequences, look up ontology terms, or query taxonomic lineages.
+description: bio is a modular CLI toolkit designed to simplify common bioinformatics tasks like data retrieval, sequence manipulation, and alignment. Use when user asks to fetch GenBank records, convert sequences to FASTA or JSON, extract features, translate nucleotides, perform pairwise alignments, or query taxonomic and ontological data.
 homepage: https://github.com/ialbert/bio
 ---
 
@@ -8,61 +8,62 @@ homepage: https://github.com/ialbert/bio
 # bio
 
 ## Overview
-The `bio` utility is a collection of streamlined command-line tools designed to simplify common bioinformatics workflows. It treats biological data as modular components that can be easily piped together. Use this skill to automate the retrieval of GenBank records, slice sequences, extract coding sequences by gene name, and query taxonomic lineages or sequence ontologies without writing complex scripts.
 
-## Core CLI Patterns
+`bio` is a modular, stream-oriented CLI toolkit designed to simplify common bioinformatics tasks. It replaces complex multi-step scripts with intuitive commands that can be piped together. Use this skill to quickly extract features, translate sequences, perform alignments, and query biological databases without leaving the terminal. It is particularly effective for exploratory data analysis and teaching bioinformatics concepts.
+
+## Core Workflows
 
 ### Data Retrieval and Conversion
-*   **Fetch GenBank records**: Use `bio fetch` with accession numbers.
-    ```bash
-    bio fetch NC_045512 MN996532 > genomes.gb
-    ```
-*   **Convert to FASTA**: Convert GenBank or other formats to FASTA. Use `--end` or `--start` to slice the sequence.
-    ```bash
-    bio fasta genomes.gb --end 100
-    ```
-*   **Extract Genes/Proteins**: Target specific features by gene name.
-    ```bash
-    # Get the protein sequence for gene S
-    bio fasta genomes.gb --gene S --protein
-    ```
+*   **Fetch GenBank records**: Use `bio fetch [accession]` to download data directly from NCBI.
+*   **Convert to FASTA**: Pipe GenBank data into `bio fasta` to extract sequences. Use `--end [num]` or `--start [num]` for specific ranges.
+*   **JSON Transformation**: Use `bio json` or `bio json --lines` to convert biological records into machine-readable formats for downstream processing with tools like `jq`.
 
-### Analysis and Exploration
-*   **Sequence Alignment**: Pipe FASTA sequences directly into the aligner.
-    ```bash
-    bio fasta genomes.gb --gene S --protein | bio align
-    ```
-*   **GFF Extraction**: View specific genomic features in GFF format.
-    ```bash
-    bio gff genomes.gb --gene S
-    ```
-*   **Ontology Definitions**: Quickly look up Sequence Ontology (SO) or Gene Ontology (GO) terms.
-    ```bash
-    bio explain exon
-    bio explain "food vacuole"
-    ```
+### Sequence Manipulation
+*   **Feature Extraction**: Extract specific genes or features using `--gene [name]` or `--type [feature_type]`.
+*   **Translation**: Convert nucleotide sequences to protein sequences using the `--protein` or `--translate` flags.
+*   **Coordinate Filtering**: Use `--olap [coordinate]` to find features overlapping a specific genomic position.
+*   **Renaming**: Use `--rename {isolate}` or `--rename [file]` to clean up FASTA headers based on metadata.
 
-### Taxonomy and Metadata
-*   **Taxonomic Queries**: Explore the tree of life using TaxIDs.
-    ```bash
-    # Show descendants
-    bio taxon 117565
-    # Show full lineage
-    bio taxon 117565 --lineage
-    ```
-*   **Sample Metadata**: Retrieve metadata for viral or sequencing samples.
-    ```bash
-    bio meta 11138 -H
-    ```
+### Alignment and Variants
+*   **Quick Alignment**: Run `bio align [seq1] [seq2]` for immediate pairwise alignment.
+*   **Global vs. Local**: Specify alignment type with `--global` or `--local`.
+*   **VCF Generation**: Generate variant calls from an alignment using the `--vcf` flag.
+*   **Visual Diff**: Use `--diff` to see a color-coded comparison of sequences.
+
+### Taxonomy and Ontologies
+*   **Taxonomic Lookups**: Use `bio taxon [taxid]` to see descendants or `--lineage` to see the full path.
+*   **Metadata**: Retrieve viral sample metadata using `bio meta [id]`.
+*   **Definitions**: Use `bio explain [term]` to get definitions for Sequence Ontology (SO) or Gene Ontology (GO) terms like "exon" or "vacuole".
 
 ## Expert Tips
-*   **Stream Orientation**: `bio` is designed for piping. You can pass a list of accessions from a file into a full pipeline:
-    ```bash
-    cat accessions.txt | bio fetch | bio fasta --gene S | bio align --vcf
-    ```
-*   **VCF Generation**: When aligning, use the `--vcf` flag to output variants directly if the tool version supports it.
-*   **Search Functionality**: Use `bio search` to find SRR numbers or accessions when exploring public repositories.
+*   **Stream Chaining**: `bio` is designed for pipes. A common pattern is `bio fetch | bio fasta --gene X | bio align`.
+*   **Table Summaries**: Use `bio table` to generate a tab-delimited summary of features, which is easier to read than raw GFF for quick inspections.
+*   **Frame Shifts**: When translating, use `--frame [-3 to 3]` to handle specific reading frames.
+*   **Regex Matching**: Use `-m [pattern]` within `bio fasta` to filter sequences by matching descriptions.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| bio | Perform sequence alignment |
+| bio | A better 'comm' command. Prints elements common from columns from two files. |
+| bio | Runs the enrichr tool on a csv file where one column contains gene names and some column contains pvalues. |
+| bio | Search database by ontological name or GO/SO ids. |
+| bio | A tool for manipulating FASTA files. |
+| bio | Fetch biological data from various databases. |
+| bio | Parses and processes biological sequence files. |
+| bio | Parses and filters GFF files. |
+| bio | Runs the g:Profiler tool on a csv file where one column contains gene names and some column contains pvalues. |
+| bio | A tool for biological metadata operations. |
+| bio | Download gene information from NCBI Gene. |
+| bio | Search biological databases |
+| bio | Generates tabular output from data. |
+| bio | Taxonomic ID lookup and database management tool. |
+| bio | (No description) |
+| bio_code | Biostar Workflows: https://www.biostarhandbook.com/ |
 
 ## Reference documentation
-- [bio: making bioinformatics fun again](./references/github_com_ialbert_bio.md)
-- [bioconda bio overview](./references/anaconda_org_channels_bioconda_packages_bio_overview.md)
+- [bio: making bioinformatics fun again](./references/github_com_ialbert_bio_blob_master_README.md)
+- [bio usage examples and test patterns](./references/github_com_ialbert_bio_blob_master_src_biorun_data_usage.sh.md)

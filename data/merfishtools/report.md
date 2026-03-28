@@ -309,3 +309,6 @@ representing the position in the binary word, the 0-1 error rate and
 the 1-0 error rate.
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -1,6 +1,6 @@
 ---
 name: phold
-description: phold improves bacteriophage functional annotation by using protein structural information and language models to identify proteins. Use when user asks to annotate phage genomes, perform structural protein searches, or refine hypothetical protein assignments using Foldseek and ProstT5.
+description: phold uses protein language models and structural alignment to annotate phage genomes and characterize hypothetical proteins. Use when user asks to annotate phage proteins using structural homology, predict 3Di tokens from amino acid sequences, or identify functional "dark matter" in metagenomic data.
 homepage: https://github.com/gbouras13/phold
 ---
 
@@ -8,52 +8,56 @@ homepage: https://github.com/gbouras13/phold
 # phold
 
 ## Overview
+`phold` is a specialized bioinformatics tool designed to bridge the gap in phage genome annotation where sequence-based homology (like BLAST or HMMs) fails. It leverages the ProstT5 protein language model to convert amino acid sequences into 3Di structural tokens, which are then searched against a massive database of over 1.3 million phage protein structures using Foldseek. This structural approach is significantly more sensitive for characterizing "dark matter" in metagenomic phage data.
 
-phold is a specialized bioinformatics tool designed to improve the functional annotation of bacteriophages by leveraging protein structural information rather than just primary sequences. It uses the ProstT5 protein language model to convert amino acid sequences into 3Di tokens, which are then searched against a massive database of phage protein structures using Foldseek. This approach is significantly more sensitive than traditional HMM or BLAST-based methods, making it the preferred choice for analyzing metagenomic datasets or novel phage isolates.
+## Core Workflows
 
-## Installation and Database Setup
+### 1. Database Management
+Before running annotations, the structural database must be installed.
+- **Standard Install**: `phold install`
+- **Extended Database**: `phold install --extended_db` (Includes ~3.1M structures, useful for viral discovery but slower for functional annotation).
 
-Before running annotations, the structural databases must be initialized.
+### 2. Primary Annotation (The 'Run' Command)
+The `run` command is the standard end-to-end pipeline.
+- **From Pharokka Output**: `phold run -i pharokka.gbk -o output_dir -t 8`
+- **Annotate Hypotheticals Only**: `phold run -i input.gbk --hyps -o output_dir` (Saves time by only processing proteins previously labeled as hypothetical).
+- **GPU Acceleration**: Use `--foldseek_gpu` to speed up the Foldseek prefilter on NVIDIA hardware.
 
-*   **Standard Install**: `phold install -t <threads>`
-*   **GPU-Enabled Install**: If using an NVIDIA GPU, use `phold install -t 8 --foldseek_gpu` to ensure the GPU-compatible version of the Foldseek database is prepared.
-*   **Storage Requirement**: Ensure at least 8GB of free space is available for the uncompressed databases and models.
+### 3. Structural Prediction & Comparison
+If you already have structures or only need specific parts of the pipeline:
+- **Predict 3Di only**: `phold predict -i proteins.faa -o output_dir`
+- **Compare structures**: `phold compare -i input.gbk --structure_dir ./my_pdbs/ -o output_dir`
+- **Proteins-only prediction**: `phold proteins-predict -i proteins.faa -o output_dir`
 
-## Common CLI Patterns
+### 4. Optimization & Performance
+- **Batch Size**: Use `phold autotune` to detect the optimal `--batch_size` for your specific CPU/GPU hardware.
+- **Sensitivity**: Use `--ultra_sensitive` to disable Foldseek prefiltering (recommended for single genomes or small datasets).
+- **Masking**: By default, `phold` masks residues with a ProstT5 confidence score below 25. Adjust this with `--mask_threshold`.
 
-### Full Annotation Pipeline
-The `run` command executes both prediction (3Di translation) and comparison (structural search).
+## Expert Tips
+- **Integrated Pipeline**: For maximum annotation rates, combine `pharokka` (sequence-based), `phold` (structure-based), and `phynteny` (synteny-based).
+- **Input Validation**: Ensure FASTA/GenBank headers do not contain colons (":"), as `phold` uses this character as an internal delimiter.
+- **Confidence Heuristics**: Pay attention to the high, medium, and low confidence labels in the output; prioritize "low" hits for manual curation.
+- **Restarting Jobs**: For large comparative runs that get interrupted, use the `--restart` parameter.
 
-```bash
-phold run -i input_genome.gbk -o output_directory -t 8
-```
 
-*   **For CPU-only environments**: Add the `--cpu` flag.
-*   **For NVIDIA GPUs**: Add the `--foldseek_gpu` flag to accelerate the search phase.
 
-### Optimized Large-Scale Processing
-For large metagenomic datasets, use the `autotune` feature or the two-step workflow to manage resources efficiently.
+## Subcommands
 
-1.  **Autotune**: Automatically detect the optimal batch size for your hardware.
-    ```bash
-    phold run -i input.gbk -o output_dir --autotune
-    ```
-2.  **Split Workflow**: Run prediction on a GPU node and comparison on a standard compute node.
-    *   Step 1 (GPU): `phold predict -i input.gbk -o predictions_dir`
-    *   Step 2 (CPU): `phold compare -i predictions_dir -o final_output`
-
-### Updating Pharokka Annotations
-phold is designed to be complementary to Pharokka. If you have already run Pharokka, provide the GenBank output as input to phold to refine "hypothetical protein" assignments with structural hits.
-
-## Expert Tips and Best Practices
-
-*   **Input Format**: While phold can take FASTA files, using a GenBank file (from Pharokka or NCBI) is highly recommended as it preserves existing gene calls and metadata.
-*   **Hardware Acceleration**: The `predict` step (ProstT5) is computationally expensive on CPUs. Always prefer an NVIDIA GPU or Apple Silicon (M1/M2/M3/M4) when available.
-*   **Batch Size**: If you encounter Out-Of-Memory (OOM) errors on your GPU, manually reduce the `--batch_size` or use the `--autotune` flag.
-*   **Synteny Integration**: For maximum annotation depth, consider a "Pharokka -> phold -> Phynteny" workflow. phold provides the structural evidence, while Phynteny uses gene order to fill remaining gaps.
-*   **Visualization**: Use `phold plot` to generate genomic maps. For interactive exploration, the output GenBank file can be uploaded to the phold-plot-wasm-app.
+| Command | Description |
+|---------|-------------|
+| phold autotune | Determines optimal batch size for 3Di prediction with your hardware |
+| phold compare | Runs Foldseek vs phold db |
+| phold_createdb | Creates foldseek DB from AA FASTA and 3Di FASTA input files |
+| phold_install | Installs ProstT5 model and phold database |
+| phold_plot | Creates Phold Circular Genome Plots |
+| phold_proteins-compare | Runs Foldseek vs phold db on proteins input |
+| phold_proteins-predict | Runs ProstT5 on a multiFASTA input - GPU recommended |
+| phold_run | phold predict then comapare all in one - GPU recommended |
+| predict | Uses ProstT5 to predict 3Di tokens - GPU recommended |
+| remote | Uses Foldseek API to run ProstT5 then Foldseek locally |
 
 ## Reference documentation
-
-- [phold GitHub Repository](./references/github_com_gbouras13_phold.md)
-- [phold Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_phold_overview.md)
+- [phold GitHub README](./references/github_com_gbouras13_phold_blob_main_README.md)
+- [phold Version History and CLI Changes](./references/github_com_gbouras13_phold_blob_main_HISTORY.md)
+- [phold Contributing and Setup](./references/github_com_gbouras13_phold_blob_main_CONTRIBUTING.md)

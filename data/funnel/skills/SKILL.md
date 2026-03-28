@@ -1,6 +1,6 @@
 ---
 name: funnel
-description: Funnel is a toolkit for distributed task execution that runs sequences of Docker containers and manages remote file transfers. Use when user asks to create or list tasks, manage a local server, monitor task status, or construct JSON task definitions.
+description: Funnel is a distributed batch processing system that schedules and executes Docker-based tasks across various infrastructure. Use when user asks to create tasks, manage the task lifecycle, monitor task status, or run containerized commands on distributed resources.
 homepage: https://ohsu-comp-bio.github.io/funnel/
 ---
 
@@ -8,76 +8,93 @@ homepage: https://ohsu-comp-bio.github.io/funnel/
 # funnel
 
 ## Overview
+Funnel is a lightweight, standards-based system for distributed batch processing. It allows you to define a "Task"—which includes input data, a sequence of Docker-based commands (executors), and output locations—and handles the scheduling and execution of that task on a variety of infrastructure. This skill provides the necessary patterns for interacting with the Funnel CLI and API to manage the lifecycle of these tasks.
 
-Funnel is a toolkit for distributed task execution that implements the GA4GH Task Execution Schema (TES). It allows you to run a sequence of Docker containers as a single "task," handling the complexities of downloading input files from remote storage (like S3 or Google Storage), executing commands, and uploading results. This skill helps you navigate the Funnel CLI and construct the JSON task definitions required to orchestrate these workflows.
+## Task Definition Patterns
+Tasks are defined as JSON objects. A task consists of three primary components:
+- **Inputs**: Files or directories to be downloaded to the worker before execution.
+- **Executors**: A sequence of Docker images and commands to run.
+- **Outputs**: Files or directories to be uploaded to storage after execution.
 
-## CLI Usage Patterns
+### Basic Task Template
+```json
+{
+  "name": "Example Task",
+  "inputs": [
+    {
+      "url": "s3://bucket/input.txt",
+      "path": "/inputs/input.txt"
+    }
+  ],
+  "executors": [
+    {
+      "image": "alpine",
+      "command": ["cat", "/inputs/input.txt"],
+      "stdout": "/outputs/stdout.txt"
+    }
+  ],
+  "outputs": [
+    {
+      "url": "s3://bucket/output.txt",
+      "path": "/outputs/stdout.txt"
+    }
+  ]
+}
+```
+
+## CLI Usage Guide
 
 ### Server Management
-To start a local development server using the default BoltDB and local storage:
+Start a local development server (uses BoltDB and local Docker by default):
 ```bash
 funnel server run
 ```
-The server typically listens on `localhost:8000` (HTTP) and `localhost:9090` (gRPC).
 
 ### Task Lifecycle
-*   **Create a task**: Submit a JSON definition to the server.
-    ```bash
-    funnel task create my_task.json
-    ```
-*   **List tasks**: View all tasks. Use views to control output verbosity.
-    ```bash
-    funnel task list --view MINIMAL
-    ```
-*   **Get task details**: Retrieve the state and logs for a specific ID.
-    ```bash
-    funnel task get <task-id> --view FULL
-    ```
-*   **Cancel a task**: Stop a queued or running task.
-    ```bash
-    funnel task cancel <task-id>
-    ```
+- **Create**: `funnel task create task.json` (Returns the Task ID).
+- **Get Status**: `funnel task get <ID>` (Use `--view BASIC` or `--view FULL` for logs).
+- **List**: `funnel task list` (Supports pagination and views).
+- **Cancel**: `funnel task cancel <ID>`.
 
-### Quick Execution
-The `run` command is a shortcut for creating simple tasks without a full JSON file.
+### The "Run" Shortcut
+For simple one-liners, use the `run` command which generates the task JSON automatically:
 ```bash
-funnel run 'md5sum $src' --in src=file:///path/to/file.txt
-```
-Use the `--print` flag to see the generated JSON instead of executing it:
-```bash
-funnel run 'echo hello' --print
+funnel run 'md5sum $src' --in src=~/data.txt --print
 ```
 
-### Remote Connection
-To point the CLI at a remote Funnel instance, use the `-S` flag or set the environment variable:
-```bash
-export FUNNEL_SERVER="http://funnel.example.com"
-funnel task list
-```
+## Resource Requests
+To ensure tasks have sufficient hardware, include a `resources` object in the JSON:
+- `cpuCores`: Integer count.
+- `ramGb`: Float value.
+- `diskGb`: Float value.
+- `preemptible`: Boolean (for AWS Spot or GCP Preemptible instances).
 
-## Task Definition Best Practices
+## Best Practices
+- **Containerization**: Every executor must specify a Docker image. Ensure the image contains the tools required for the `command`.
+- **Path Mapping**: Always use absolute paths within the container for `path` fields in inputs and outputs.
+- **Sequential Execution**: Executors run in the order defined. If one fails (non-zero exit code), the task stops.
+- **Storage Backends**: Funnel supports S3, GS, FTP, HTTP, and local files. Ensure the Funnel server/worker is configured with the necessary credentials for remote storage.
+- **Task Views**: When querying large numbers of tasks, use `MINIMAL` view to save bandwidth. Use `FULL` only when you need to inspect `stdout` or `stderr` logs.
 
-### Task Structure (JSON)
-A standard task consists of four main components:
-1.  **Resources**: Define `cpuCores`, `ramGb`, and `diskGb`.
-2.  **Inputs**: Map a `url` (S3, GS, HTTP, FTP) to a container `path`.
-3.  **Executors**: A list of Docker `image` names and `command` arrays to run sequentially.
-4.  **Outputs**: Map a container `path` to a destination `url`.
 
-### Optimization Tips
-*   **Task Views**: When listing or getting tasks, use `--view MINIMAL` for IDs/States, `BASIC` for metadata/resources, and `FULL` only when you need to inspect `stdout` or `stderr` logs.
-*   **Sequential Execution**: Executors run in order. If any executor returns a non-zero exit code, the task stops and enters an `EXECUTOR_ERROR` state.
-*   **Storage Types**: For directories, ensure you set `"type": "DIRECTORY"` in the input/output definition to ensure the worker handles the recursive transfer correctly.
-*   **Embedded Scripts**: For small scripts, use the `content` field in an input instead of uploading a separate file to S3/GS.
 
-## Monitoring
-*   **Web Dashboard**: Access the visual interface at `http://localhost:8000`.
-*   **Terminal Dashboard**: Use the built-in CLI monitor:
-    ```bash
-    funnel dashboard
-    ```
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| dashboard | Start a Funnel dashboard in your terminal. |
+| full-hello | A simple hello world example that demonstrates the full CWL functionality. |
+| funnel aws | Development utilities for creating funnel resources on AWS |
+| funnel run | Run a task. |
+| funnel storage | Access storage via Funnel's client libraries. |
+| funnel worker | Funnel worker commands. |
+| funnel_completion | Generate shell completion code |
+| gce | Manage GCE resources for funnel |
+| node | Funnel node subcommands. |
+| server | Funnel server commands. |
+| task | Make API calls to a TES server. |
 
 ## Reference documentation
 - [Funnel Overview](./references/ohsu-comp-bio_github_io_funnel.md)
-- [Task API and Schema](./references/ohsu-comp-bio_github_io_funnel_docs_tasks.md)
-- [Installation and Quickstart](./references/ohsu-comp-bio_github_io_funnel_download.md)
+- [Task API Details](./references/ohsu-comp-bio_github_io_funnel_docs_tasks.md)
+- [Installation and Setup](./references/ohsu-comp-bio_github_io_funnel_download.md)

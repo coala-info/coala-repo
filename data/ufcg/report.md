@@ -527,3 +527,6 @@ List or download resources
  --developer    Activate developer mode (For testing or debugging)
 ```
 
+
+## Metadata
+- **Skill**: generated

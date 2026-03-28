@@ -1,6 +1,6 @@
 ---
 name: biopet
-description: Biopet is a framework for managing and executing complex bioinformatics workflows and pipelines. Use when user asks to run DNA or RNA sequencing pipelines, manage cluster job submissions, or execute bioinformatics tools like Shiva and Gentrap.
+description: Biopet is a Java-based framework for executing and managing high-throughput sequencing analysis pipelines and bioinformatics tools. Use when user asks to list available pipelines, execute complex workflows on a computing cluster, or configure pipeline parameters using JSON files.
 homepage: https://github.com/biopet/biopet
 ---
 
@@ -8,51 +8,55 @@ homepage: https://github.com/biopet/biopet
 # biopet
 
 ## Overview
-Biopet (Bio Pipeline Execution Toolkit) is a comprehensive framework for managing and executing bioinformatics workflows. It bundles a variety of specialized tools and multi-step pipelines into a single JAR-based interface. The toolkit is designed to handle the complexities of cluster job submission, providing standardized flags for configuration, retries, and parallel environments. It is particularly useful for processing high-throughput sequencing data through established pipelines like Shiva (DNA alignment/variant calling) or Gentrap (RNA-seq).
 
-## Command Line Usage
+Biopet (Bio Pipeline Execution Toolkit) is a Java-based framework developed by the LUMC Sequencing Analysis Support Core for high-throughput sequencing analysis. It streamlines the execution of complex bioinformatics workflows by providing a standardized command-line interface for a suite of in-house tools and pipelines. While optimized for the SHARK computing cluster using Grid Engine, it can be adapted for other environments. Use this skill to navigate the toolkit's command structure, manage cluster job submissions, and configure pipeline parameters via JSON.
 
-### Environment Setup
-On systems using environment modules (like the SHARK cluster), initialize the toolkit using:
+## CLI Usage and Patterns
+
+The primary way to interact with Biopet is through its JAR file, often aliased to `biopet` via environment modules.
+
+### Basic Commands
+- **List all components**: `biopet`
+- **List available pipelines**: `biopet pipeline`
+- **List available tools**: `biopet tool`
+- **Direct JAR execution**: `java -jar <path_to_biopet_jar> <command>`
+
+### Common Pipeline Execution Pattern
+Most pipelines follow a consistent flag structure for execution and cluster management:
+
 ```bash
-module load biopet/v0.4.0
+biopet pipeline <pipeline_name> \
+  -config <path/to/config.json> \
+  -qsub \
+  -jobParaEnv <environment_name> \
+  -retry <number>
 ```
-This provides the `biopet` alias, which maps to `java -jar <path_to_biopet.jar>`.
 
-### Tool and Pipeline Discovery
-To list all available components or filter by type:
-*   **List everything**: `biopet`
-*   **List pipelines only**: `biopet pipeline`
-*   **List tools only**: `biopet tool`
+### Key Arguments
+- `-config`: Path to a JSON file containing pipeline-specific parameters, sample information, and tool settings.
+- `-qsub`: Enables job submission to a cluster (Grid Engine). Without this, the pipeline may run locally or in dry-run mode depending on the version.
+- `-jobParaEnv`: Specifies the parallel environment for the cluster (e.g., `BWA` or `smp`).
+- `-retry`: Sets the maximum number of times a failed job should be automatically resubmitted.
 
-### Common Execution Pattern
-Most Biopet pipelines follow a consistent command structure:
+## Expert Tips and Best Practices
+
+### Validation and Dry Runs
+Before committing to a full production run, always perform a dry run. This validates the JSON configuration and ensures that input paths are accessible and the workflow logic is sound.
+- Check the output logs of the initial Biopet command to ensure all dependencies and tools are correctly located.
+
+### Environment Management
+On the SHARK cluster, use the module system to ensure the correct version and environment variables are set:
 ```bash
-biopet pipeline <pipeline_name> -config <config.json> [options]
+module load biopet/v0.8.0
 ```
+This sets up the necessary aliases so you can call `biopet` directly instead of managing the `java -jar` path manually.
 
-### Standard Flags
-*   `-config <file.json>`: Path to the required JSON configuration file defining samples and parameters.
-*   `-qsub`: Enables job submission to a cluster (Grid Engine).
-*   `-jobParaEnv <env>`: Specifies the parallel environment (e.g., `BWA`).
-*   `-retry <int>`: Sets the maximum number of times to retry a failing job.
-*   `-run`: Executes the pipeline. **If omitted, Biopet performs a dry run.**
-
-## Best Practices
-
-### The Dry Run Workflow
-Always execute your command without the `-run` flag first.
-1.  Run the command to validate the configuration and check for missing files.
-2.  Review the output for potential errors.
-3.  If the dry run succeeds, append `-run` to start the actual processing.
-
-### Long-Running Jobs
-Since pipelines can take hours or days, avoid running the main Biopet process directly in an interactive session that might disconnect. Use terminal multiplexers or background execution:
-*   **Screen/Tmux**: Start a session before running the command.
-*   **Nohup**: `nohup biopet pipeline <name> ... -run &`
-
-### Configuration Management
-Each pipeline requires a specific JSON layout. Ensure your `config.json` correctly defines the tool-specific parameters and sample paths required by the chosen pipeline (e.g., Shiva, Gentrap, or Flexiprep).
+### Configuration Strategy
+Biopet relies heavily on JSON for configuration. Ensure your JSON is valid and follows the schema expected by the specific pipeline (e.g., Shiva, Gentrap, or Flexiprep). Common sections in the config include:
+- **Samples**: Definitions of libraries and read groups.
+- **Reference**: Paths to FASTA files, indexes, and annotation files.
+- **Tools**: Specific parameters for underlying tools like BWA, GATK, or Picard.
 
 ## Reference documentation
 - [Welcome to Biopet](./references/github_com_biopet_biopet.md)
+- [Biopet Tools Package](./references/github_com_biopet_biopet_tree_develop_biopet-tools-package.md)

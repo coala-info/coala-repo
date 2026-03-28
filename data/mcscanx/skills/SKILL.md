@@ -1,6 +1,6 @@
 ---
 name: mcscanx
-description: MCScanX is a software suite designed to detect and analyze collinear blocks and syntenic regions within or between genomes. Use when user asks to identify syntenic blocks, classify duplicate genes, or visualize genomic alignments using BLAST and GFF data.
+description: MCScanX identifies collinear blocks and syntenic regions across multiple genomes to analyze gene order conservation and evolutionary relationships. Use when user asks to detect syntenic blocks, classify gene duplication origins, or generate dot plots and circle plots to visualize chromosomal relationships.
 homepage: https://github.com/wyp1125/MCScanX
 ---
 
@@ -8,82 +8,67 @@ homepage: https://github.com/wyp1125/MCScanX
 # mcscanx
 
 ## Overview
-MCScanX (Multiple Collinearity Scan toolkit X version) is a specialized suite for detecting and evolutionary analyzing collinear blocks in genomes. It is primarily used to identify syntenic regions between different species or within the same species to understand genome duplication events. The toolkit processes sequence similarity data (BLAST) and gene positional information to produce both tabular synteny data and visual representations of genomic alignments.
+MCScanX is a specialized toolkit for scanning multiple genomes or sub-genomes to identify collinear blocks—regions where gene order is conserved. It is a standard tool in comparative genomics for evolutionary analysis. Beyond identifying syntenic blocks, it provides utilities to categorize the origins of gene duplications and generate various plots (dot plots, dual synteny, circle, and bar plots) to visualize chromosomal relationships.
 
-## Input Requirements
-MCScanX requires two primary input files sharing the same prefix (e.g., `data.blast` and `data.gff`) located in the same directory.
+## Data Preparation
+MCScanX requires two primary input files with the same prefix (e.g., `xyz.blast` and `xyz.gff` or `xyz.bed`).
 
-### 1. BLAST File (`prefix.blast`)
-Must be in BLASTP "m8" format (tab-delimited).
-- **Generation**: `blastall -p blastp -m 8 -e 1e-10 -b 5 -v 5 -o prefix.blast`
-- **Tip**: Restrict BLAST hits to the top 5-10 matches per gene to reduce noise and improve processing speed.
+### 1. BLAST Input (`xyz.blast`)
+*   **Format**: BLASTP output in tabular format (`-m 8` or `-outfmt 6`).
+*   **Requirement**: Concatenate all inter-species and intra-species BLAST results into one file.
+*   **Best Practice**: Limit BLAST hits to the top 5–10 matches per gene to reduce noise and computational overhead.
+*   **Command Pattern**:
+    `blastp -query all_proteins.fasta -db all_proteins.fasta -out xyz.blast -evalue 1e-10 -outfmt 6 -max_target_seqs 5`
 
-### 2. Gene Location File (`prefix.gff`)
-A tab-delimited file with four columns:
-1. `chr#`: Chromosome name (use a two-letter species prefix, e.g., `at1` for Arabidopsis chromosome 1).
-2. `gene`: Gene identifier (must match the BLAST file).
-3. `starting_position`: Start coordinate.
-4. `ending_position`: End coordinate.
+### 2. Gene Location Input (`xyz.gff` or `xyz.bed`)
+*   **Format**: Tab-delimited file: `chromosome_id`, `gene_id`, `start_position`, `end_position`.
+*   **Naming Convention**: Use a two-letter species prefix for chromosome names (e.g., `at1` for Arabidopsis chromosome 1).
+*   **Constraint**: Gene IDs must match the BLAST file exactly. Duplicate gene entries are not allowed.
 
-*Note: Ensure no duplicate gene entries exist in the GFF file.*
-
-## Core CLI Usage
+## Core Command Usage
 
 ### Running the Main Algorithm
-To detect syntenic blocks and generate HTML visualizations:
-```bash
-./MCScanX path/to/prefix
-```
-- **Output**: `prefix.synteny` (text file of blocks) and `prefix.html` (directory for browser visualization).
+To detect syntenic blocks and generate alignment files:
+`./MCScanX prefix`
+*(Note: Do not include the file extension; if files are `data/my_genome.blast` and `data/my_genome.gff`, use `data/my_genome`)*
+
+### Common Options
+- `-s 5`: Minimum number of genes to call a syntenic block (default: 5). Increase for higher stringency.
+- `-e 1e-05`: E-value threshold for alignment significance.
+- `-m 25`: Maximum gaps allowed (intergenic distance units) between collinear genes.
+- `-b 1`: Patterns of blocks. `0`: intra- and inter-species (default); `1`: intra-species only; `2`: inter-species only.
 
 ### Duplicate Gene Classification
-To classify the origin of every gene in a genome:
-```bash
-./Duplicate_gene_classifier path/to/prefix
-```
-This categorizes genes into:
-1. **WGD/Segmental**: Collinear genes in syntenic blocks.
-2. **Tandem**: Consecutive duplicates on the same chromosome.
-3. **Proximal**: Near each other but not adjacent.
-4. **Transposed**: Duplicates not in the above categories.
-5. **Dispersed**: Other duplicates.
+To classify genes into WGD, tandem, proximal, or dispersed duplications:
+`./Duplicate_gene_classifier prefix`
+*   **Output**: A `.genomic_control` file containing the classification for every gene in the input.
 
-### Using Homology Files
-If you have pre-defined homologous pairs instead of raw BLAST data, use the homology-based version:
-```bash
-./MCScanX_h path/to/prefix
-```
-*Requires `prefix.homology` instead of `prefix.blast`.*
+## Downstream Analysis and Visualization
+MCScanX includes several Java and Perl utilities in the `downstream_analyses` folder.
 
-## Parameter Tuning
-Fine-tune detection by passing options to the `MCScanX` command:
+### Visualization Patterns
+Most visualizers require a `control` file specifying which chromosomes to display.
+- **Dot Plot**: `java dot_plotter -g xyz.gff -s xyz.synteny -c control.txt -o output.png`
+- **Circle Plot**: `java circle_plotter -g xyz.gff -s xyz.synteny -c control.txt -o output.png`
+- **Dual Synteny**: `java dual_synteny_plotter -g xyz.gff -s xyz.synteny -c control.txt -o output.png`
 
-| Option | Description | Default |
-| :--- | :--- | :--- |
-| `-s` | **Match Size**: Minimum number of genes to call a syntenic block. | 5 |
-| `-k` | **Match Score**: Score for a matching gene pair. | 50 |
-| `-g` | **Gap Penalty**: Penalty for gaps between collinear genes. | -1 |
-| `-m` | **Max Gaps**: Maximum gaps allowed (1 gap = 10,000bp by default). | 20 |
-| `-b` | **Pattern**: 0: All; 1: Intra-species only; 2: Inter-species only. | 0 |
-| `-a` | **Pairwise Only**: Only build `.synteny` file, skip HTML generation. | N/A |
-
-## Downstream Analysis Tools
-The `downstream_analyses` folder contains auxiliary scripts for specific tasks:
-
-- **Visualizations**:
-  - `dot_plotter.java`: Generates genome-wide dot plots.
-  - `dual_synteny_plotter.java`: Compares two specific chromosomes/regions.
-  - `circle_plotter.java`: Creates circular synteny diagrams.
-  - `bar_plotter.java`: Displays synteny as stacked bars.
-- **Calculations**:
-  - `add_ka_and_ks_to_synteny.pl`: Integrates evolutionary rates into synteny blocks.
-  - `detect_collinearity_within_gene_families.pl`: Focuses on specific gene families.
+### Statistical Tools
+- **Add Ka/Ks**: Use `add_ka_and_ks_to_synteny.pl` to incorporate evolutionary pressure data into the synteny blocks.
+- **Group Collinear Genes**: Use `group_collinear_genes.pl` to generate clusters of homologous genes across multiple species.
 
 ## Expert Tips
-- **Multi-Genome Analysis**: When comparing multiple species, concatenate all inter-species and intra-species BLAST results into one `.blast` file and all gene positions into one `.gff` file.
-- **Memory Management**: For very large genomes, use the `-a` flag to skip HTML generation if you only need the raw synteny data, as HTML generation can be resource-intensive.
-- **Naming Convention**: Always use the species prefix in the chromosome column (e.g., `os` for Oryza sativa, `at` for Arabidopsis thaliana) to prevent chromosome ID collisions during multi-species runs.
+- **Memory Management**: For very large plant genomes, ensure the BLAST file is filtered. Massive BLAST files can cause the `MCScanX` process to hang or crash due to memory limits.
+- **Homology Mode**: If you have high-confidence ortholog pairs from another source (not BLAST), use `MCScanX_h` with a `.homology` file instead of a `.blast` file.
+- **Chromosome Prefixes**: If the tool fails to find matches, verify that the chromosome names in the GFF/BED file use the required species prefix (e.g., `hs` for Homo sapiens) to distinguish between genomes in a multi-species run.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| MCScanX | MCScanX prefix_fn [options] |
+| MCScanX_h | MCScanX_h prefix_fn [options] |
 
 ## Reference documentation
-- [MCScanX GitHub README](./references/github_com_wyp1125_MCScanX.md)
-- [Bioconda MCScanX Overview](./references/anaconda_org_channels_bioconda_packages_mcscanx_overview.md)
+- [MCScanX GitHub Repository](./references/github_com_wyp1125_MCScanX.md)

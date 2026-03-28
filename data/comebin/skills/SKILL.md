@@ -1,6 +1,6 @@
 ---
 name: comebin
-description: COMEBin is a tool for binning metagenomic contigs using contrastive multi-view representation learning and deep learning embeddings. Use when user asks to bin metagenomic contigs, recover genomes from microbial communities, or generate low-dimensional embeddings for contig clustering.
+description: COMEBin is a deep learning framework that bins metagenomic contigs by integrating nucleotide composition and coverage profiles through contrastive multi-view representation learning. Use when user asks to bin metagenomic contigs, recover genomes from microbial communities, or generate genomic bins from assembly and coverage data.
 homepage: https://github.com/ziyewang/COMEBin
 ---
 
@@ -8,68 +8,81 @@ homepage: https://github.com/ziyewang/COMEBin
 # comebin
 
 ## Overview
-COMEBin is a specialized tool for the binning of metagenomic contigs. It leverages contrastive multi-view representation learning to integrate heterogeneous information, specifically nucleotide frequency (k-mer) and coverage features. By generating multiple augmented "views" of each contig and using a deep learning framework (including "Coverage" and "Combine" networks), it produces low-dimensional embeddings that are subsequently clustered using the Leiden community detection algorithm. This approach is particularly effective for recovering high-quality genomes from complex microbial communities.
+
+COMEBin is a deep learning-based framework designed for the effective binning of metagenomic contigs. It utilizes contrastive multi-view representation learning to integrate heterogeneous data types, specifically nucleotide composition (k-mer frequencies) and contig coverage profiles across samples. The tool works by augmenting data to create multiple "views" of each contig, training a neural network to produce robust low-dimensional embeddings, and finally clustering these embeddings using the Leiden community detection algorithm. This approach is particularly effective for recovering high-quality genomes from complex microbial communities.
 
 ## Installation and Environment
-The most reliable way to use COMEBin is via Bioconda.
+
+COMEBin is available via Bioconda. For optimal performance, a GPU-enabled environment is recommended.
 
 ```bash
-# Create and activate environment
-conda create -n comebin_env
-conda activate comebin_env
+# CPU-only installation
+conda create -n comebin_env comebin -c bioconda -c conda-forge
 
-# Install COMEBin
-conda install -c conda-forge -c bioconda comebin
-
-# Optional: Install GPU support for faster performance
-conda install pytorch pytorch-cuda=11.8 -c pytorch -c nvidia -c conda-forge
+# GPU-accelerated installation
+conda create -n comebin_env comebin pytorch pytorch-cuda=11.8 -c pytorch -c nvidia -c bioconda -c conda-forge
 ```
 
-## Preprocessing Workflow
-Before running the main binning algorithm, you must prepare your input data.
+## Preprocessing
+
+Before running the binning pipeline, ensure your contigs are filtered by length and you have generated the necessary coverage information.
 
 ### 1. Filter Short Contigs
-Binning performance degrades significantly with very short sequences. It is standard practice to filter out contigs shorter than 1000bp.
+Binning performance degrades with very short sequences. It is standard practice to filter out contigs shorter than 1000bp.
+
 ```bash
-python Filter_tooshort.py input_assembly.fasta 1000
+python Filter_tooshort.py final.contigs.fa 1000
 ```
 
-### 2. Generate Coverage Files
-COMEBin requires BAM files as input. If you only have raw sequencing reads, use the provided helper script to align them to your assembly.
-```bash
-bash gen_cov_file.sh -a contigs.fasta -o output_cov_dir -t 40 [reads_1.fastq reads_2.fastq ...]
-```
-*   **-a**: Metagenomic assembly file.
-*   **-o**: Output directory for coverage files.
-*   **-t**: Number of threads.
-*   **--single-end**: Use this flag for non-paired reads.
+### 2. Generate BAM Files
+If you only have raw reads, use the provided helper script to align reads to your assembly and generate BAM files.
 
-## Running COMEBin
-The primary execution script is `run_comebin.sh`.
-
-### Basic Command
 ```bash
-run_comebin.sh -a assembly.fasta -o output_dir -p path_to_bamfiles -t 40
+bash gen_cov_file.sh -a assembly.fasta -o output_bam_dir -t 40 [reads_1.fastq reads_2.fastq ...]
 ```
 
-### Key Parameters and Tuning
-*   **Temperature (-l)**: This is the most critical parameter for the loss function.
-    *   Use **0.07** (default) if your assembly is relatively contiguous (N50 > 10,000).
-    *   Use **0.15** if your assembly is fragmented (N50 < 10,000).
-*   **Views (-n)**: Number of augmented views for contrastive learning. Default is 6.
-*   **Embedding Sizes (-e, -c)**: Default is 2048 for both the combine and coverage networks. Adjust only if dealing with extremely large or small datasets.
-*   **GPU Acceleration**: If a GPU is available, ensure `CUDA_VISIBLE_DEVICES` is set correctly to speed up the training process.
+## Running the Binning Pipeline
+
+The primary entry point is the `run_comebin.sh` script.
+
+### Basic Usage
+```bash
+run_comebin.sh -a assembly.fasta -p path_to_bam_files -o output_dir -t 40
+```
+
+### Advanced Parameter Tuning
+- **Temperature (`-l`)**: This is a critical hyperparameter for the contrastive loss function.
+  - Use `0.07` (default) for high-quality assemblies where N50 > 10,000.
+  - Use `0.15` for more fragmented assemblies with lower N50.
+- **Multi-view Count (`-n`)**: Default is 6. Increasing this may improve representation robustness at the cost of computational time.
+- **Embedding Sizes (`-e`, `-c`)**: Default is 2048. For extremely large datasets, these can be adjusted to manage memory and model capacity.
+
+### GPU Execution
+To ensure the tool uses a specific GPU, prepend the command with the CUDA environment variable:
+```bash
+CUDA_VISIBLE_DEVICES=0 run_comebin.sh -a assembly.fasta -p bam_dir -o out_dir
+```
 
 ## Output Interpretation
-The results are stored in the specified output directory:
-*   `comebin_res/comebin_res_bins/`: Contains the final genomic bins in FASTA format.
-*   `comebin_res/comebin_res.tsv`: A summary file mapping each contig to its assigned bin.
+
+The pipeline produces two primary result files in the `comebin_res` subdirectory:
+- `comebin_res_bins/`: A directory containing the final genomic bins in FASTA format.
+- `comebin_res.tsv`: A tab-separated file mapping each contig ID to its assigned bin.
 
 ## Expert Tips
-*   **Memory Management**: For large metagenomes, ensure the system has sufficient RAM for in-memory operations during the contrastive learning phase.
-*   **BAM Pathing**: Ensure the `-p` flag points to a directory containing *only* the BAM files relevant to the assembly provided in `-a`.
-*   **Thread Usage**: While `-t` controls threads for the main script, the underlying clustering (Leiden) and data loading can be CPU-intensive; allocate at least 20-40 threads for complex samples.
+- **Memory Management**: If you encounter out-of-memory (OOM) errors during the training phase, reduce the batch size using the `-b` flag (default is 1024).
+- **Input Consistency**: Ensure that the BAM files provided in the `-p` directory were generated using the exact same assembly file provided with `-a`.
+- **Thread Allocation**: While `-t` controls CPU threads, the deep learning components benefit most from GPU acceleration. If running on a CPU, ensure `-t` matches your available physical cores for the clustering and augmentation steps.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| bash run_comebin.sh | COMEBin version: 1.0.4 |
+| gen_coverage_file.sh | Generates coverage files from reads and a metagenomic assembly. |
 
 ## Reference documentation
-- [COMEBin Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_comebin_overview.md)
-- [COMEBin GitHub Repository](./references/github_com_ziyewang_COMEBin.md)
+- [COMEBin README](./references/github_com_ziyewang_COMEBin_blob_master_README.md)
+- [COMEBin Environment Schema](./references/github_com_ziyewang_COMEBin_blob_master_comebin_env.yaml.md)

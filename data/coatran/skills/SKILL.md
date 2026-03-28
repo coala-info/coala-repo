@@ -1,6 +1,6 @@
 ---
 name: coatran
-description: CoaTran simulates evolutionary trees that are consistent with a specific transmission history and respect host bottleneck constraints. Use when user asks to simulate coalescent trees within a transmission network, generate phylogenies for epidemiological modeling, or model lineage evolution across transmission events.
+description: CoaTran simulates coalescent trees that are topologically and temporally constrained by a provided transmission network. Use when user asks to simulate viral phylogenies within a transmission history, generate trees with constant effective population sizes, or create transmission trees where coalescence occurs at infection times.
 homepage: https://github.com/niemasd/CoaTran
 ---
 
@@ -8,63 +8,73 @@ homepage: https://github.com/niemasd/CoaTran
 # coatran
 
 ## Overview
-CoaTran (Coalescent Transmission) is a high-performance tool designed to simulate evolutionary trees that are consistent with a specific transmission history. Unlike general coalescent simulators, CoaTran ensures that lineages only coalesce within the same host or at the moment of transmission between hosts. This is essential for epidemiological modeling where the phylogeny must respect the "bottleneck" constraints of transmission events.
+CoaTran (Coalescent-Transmission) is a high-performance tool designed to simulate coalescent trees that are topologically and temporally constrained by a provided transmission network. It is significantly faster than previous solutions like VirusTreeSimulator and is essential for researchers creating synthetic datasets where the underlying transmission history is known. It supports different models of effective population size ($N_e$) to reflect various within-host viral dynamics.
 
-## Installation and Setup
-The tool is available via Bioconda or can be compiled from source.
+## Command Line Usage
 
-```bash
-# Installation via Conda
-conda install bioconda::coatran
-
-# Manual compilation
-git clone https://github.com/niemasd/CoaTran.git
-cd CoaTran && make
-```
-
-## Core CLI Usage
-CoaTran provides different executables based on the desired population dynamics model. All modes require a transmission network and sample times in FAVITES format.
+CoaTran provides specialized executables based on the desired population growth model. All commands require a transmission network and sample times in FAVITES format.
 
 ### Constant Effective Population Size
-Use this for standard neutral simulations within hosts.
+Use `coatran_constant` when assuming a stable viral population within each host.
 ```bash
 coatran_constant <trans_network> <sample_times> <eff_pop_size>
 ```
+*   **eff_pop_size**: A constant value representing the within-host effective population size.
 
 ### Transmission Tree Mode
-Simulates a tree where coalescence happens exactly at the time of infection (the latest possible time).
+Use `coatran_transtree` to generate a phylogeny where coalescence occurs at the latest possible moment (the time of infection). This makes the phylogeny equivalent to the transmission tree.
 ```bash
 coatran_transtree <trans_network> <sample_times>
 ```
 
 ### Infection Time Mode
-Simulates a tree where coalescence happens at the time the infector was originally infected (the earliest possible time).
+Use `coatran_inftime` to force coalescence at the earliest possible moment (the time the infector was infected).
 ```bash
 coatran_inftime <trans_network> <sample_times>
+```
+
+### Exponential Growth (Experimental)
+Note: The `coatran_expgrowth` mode is currently flagged as non-functional in the source documentation. If attempted, the syntax is:
+```bash
+coatran_expgrowth <trans_network> <sample_times> <init_eff_pop_size> <eff_pop_growth>
 ```
 
 ## Expert Tips and Best Practices
 
 ### Reproducibility
-Always set the random seed via the environment variable to ensure simulations are deterministic and reproducible.
+To ensure deterministic results across different runs, set the random number generator seed via an environment variable before execution:
 ```bash
 export COATRAN_RNG_SEED=42
 ```
 
 ### Handling Unifurcations
-CoaTran outputs Newick strings containing unifurcations (nodes with a single child) to represent infection events. If your downstream analysis tools do not support unifurcations, use a Python script with `treeswift` to clean the output:
+CoaTran outputs Newick trees that include unifurcations (internal nodes with a single child) at the exact times of infection. While these provide valuable metadata about transmission events, many phylogenetic tools cannot parse them. 
 
+If your downstream tools fail, use a Python script with `TreeSwift` to clean the output:
 ```python
 from treeswift import read_tree_newick
+
 tree = read_tree_newick("coatran_output.nwk")
 tree.suppress_unifurcations()
 print(tree.newick())
 ```
 
-### Model Limitations
-*   **Exponential Growth**: Note that `coatran_expgrowth` is currently flagged as non-functional in the documentation. Stick to `coatran_constant` for population-based simulations.
-*   **Input Format**: Ensure your transmission network and sample times strictly follow the FAVITES specification, as the tool is optimized for speed and may not provide verbose error messages for malformed inputs.
+### Input Formats
+*   **Transmission Network**: Must be in FAVITES format (typically a list of transmission events: `Source Target Time`).
+*   **Sample Times**: Must be in FAVITES format (typically `NodeID Time`).
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| coatran_constant | CoaTran (constant effective population size) |
+| coatran_expgrowth | CoaTran (exponential effective population size growth) |
+| coatran_inftime | CoaTran v0.0.4 (time of infection) |
+| coatran_transtree | CoaTran (time of transmission) - tool for analyzing transmission networks and sample times |
 
 ## Reference documentation
-- [CoaTran GitHub Repository](./references/github_com_niemasd_CoaTran.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_coatran_overview.md)
+- [CoaTran GitHub Overview](./references/github_com_niemasd_CoaTran.md)
+- [Constant Effective Population Size Wiki](./references/github_com_niemasd_CoaTran_wiki_Constant-Effective-Population-Size.md)
+- [Constrained Coalescence Theory](./references/github_com_niemasd_CoaTran_wiki_Constrained-Coalescence.md)

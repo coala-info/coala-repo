@@ -1,0 +1,146 @@
+1. [Captus](/captus.docs/) >
+2. [Assembly](/captus.docs/assembly/) >
+3. [Extract](/captus.docs/assembly/extract/) >
+4. Input Preparation
+
+* + [*Reference target datasets formatting*](#reference-target-datasets-formatting)
+
+# Input Preparation
+
+At this point you should have *de novo* assemblies from your samples ready. However, `Captus` also gives you the flexibility of starting the analysis from this point by providing your own assemblies as FASTA files or complementing you newly aasembled samples with other assemblies (e.g. genomes or transcriptomes from GenBank). If you want to do so, please read the following note:
+
+How to rename your FASTA assemblies for Captus
+
+Note
+
+In order to add your own FASTA assembly files, a  **VERY IMPORTANT** step is to rename them so they are clearly identified throughout the rest of the analysis.
+
+In general, a good tip for renaming your samples is to think on how you want the names in your final phylogenetic tree.
+
+The only special characters that are safe to use in the sample name are `-`, and `_` (`_` is commonly used to replace spaces in many phylogenetic programs). Otherwise, do not use spaces other special characters (`` ! " # $ % & ( ) * + , . / : ; < = > ? @ [ \ ] ^ ` { | } ~ ``) or accented letters (like `á`, `è`, `ü`, `ç`, `ñ`), they are just guaranteed to give you headaches at some point.
+
+Also, please use this naming convention for your FASTA files:
+
+![Naming convention for FASTA files](/captus.docs/images/fasta.png?width=600)
+
+* **IMPORTANT:** Even though `_` is allowed for sample names, please **DO NOT** use more than **ONE** consecutive `_` in any case. We use internally `__` to separate several pieces of information during the processing.
+* Any text before the **extension** will become your **sample name** (`Mus_musculus_GRCm39` in this case).
+* Valid extension for assemblies are: `.fa`, `.fna`, `.fasta`, `.fa.gz`, `.fna.gz`, `.fasta.gz`.
+
+These are examples of **valid** FASTA filenames for marker extraction with `Captus`:
+
+* `Arabidopsis_arenosa.fna.gz`
+* `Mus_cervicolor_GY747683.fasta`
+* `ERI_Vaccinium_macrocarpon.fa.gz`
+* `Z.fa`
+
+And here, some examples or **invalid** FASTA filenames:
+
+* `ERR246535.fast` will be ignored because of the invalid extension `.fast`
+* `Octomeles_sp.8.fasta`, it is better to replace the `.` in the sample name by a `-` to get `Octomeles_sp-8.fasta`
+* `Malus_spontánea.fna.gz`, the sample name contains and accent `á`, it is better to change it to `Malus_spontanea.fna.gz`
+
+---
+
+### *Reference target datasets formatting*
+
+Most importantly, in order to extract markers, the sequences in your reference target datasets have to follow a simple naming convention if you want to take advantage of using multiple reference sequences per locus and our paralog filtering method. When multiple reference sequences per locus are found in the reference dataset, `Captus` will decide during the extraction which of those references matches your assembly best based on similarity and total recovered length percentage.
+
+Here is an example of a reference protein dataset that has **two loci** (called *accD* and *cemA*) with **five** reference sequences each (probably coming from different taxa to expand phylogenetic coverage). Coding sequences can be provided in either aminoacid or nucleotide. [Miscellaneous DNA markers](https://edgardomortiz.github.io/captus.docs/assembly/extract/options/#--dna_refs) references can only contain nucleotide sequences.
+
+```
+>AA-S46062.1-accD [cluster_size=80]
+MALQSLRGSMRSVVGKRICPLIEYAIFPPLPRIIVYASRRARMQRGNYSLIKKPKKVSTLRQYQSTKSPMYQSLQRICGVREWLNKYCMWKEVDEKDFG*
+>AAZ94660.1-accD [cluster_size=17]
+MEKRWLNSMLSKGELEYRCRLSKSINSLGPIESEGSIINNMNKNIPSHSDSYNSSYSTVDDLVGIRNFVSYDTFLVRDSNSSSYSIYLDIENQIFEIDN*
+>ABH88096.1-accD [cluster_size=3]
+MQKWRFNSMLLNRELEYGCEFKESLGPIENTSLNEEPKILSDIHKKINRWDDSDNSSYNSLDYLVGADNIQDFLSDKTFLVRDNKRNSYSIYLDIEKKT*
+>ABW20568.1-accD [cluster_size=7]
+MQNWINNSFQAEFEQESYFGSLGENSMNPRSGGDRYPEALIIRDITGETSAIYFDITDQILENDTHQTILASPIENDLWAEKDISIDIYRYINELIFYD*
+>ACU46588.1-accD [cluster_size=1]
+MAKYWFNLMLSYKMLSYNKLEHRCGLSKSMDNLNDLGHIGGNEELILNENDAKKNILGLENYNTHSINYLFDSRNIYNLIYNETFLVRNSNGYHYFVYF*
+>QNK04966.1-cemA [cluster_size=1]
+MKNKKAFIPLLHITFIVFLPWWIAFLFNKGLESWVINWWNTSKSEIFLNDIQEKNILEKFIELEELLLLDEMIKEYPET*
+>QNP0849-5.1-cemA [cluster_size=4]
+MTKKKAFTPIFYLSFLLFLPWWIDLLFNKCLRSWPTHWWNTRQSEMFLTTLQEKSLLEKFLELEEFLFLDKIIKKEFET*
+>QNP08626.1-cemA [cluster_size=2]
+MIKNKVFTPLFYLAFIVFLPWGIYFLLNKCMGSWTTNWWTTRESEILSTNINENSLLEKFIQFEEFLLLDEIIKKDTET*
+>QNQ64689.1-cemA [cluster_size=9]
+MAKNKICIPFISIVFLPWWISFLFKKDFESWVTNWWNTSKSEILLNDIQEKSILKTFIELEELFLLDEMLKEYPETRLQ*
+>QPZ48083.1-cemA [cluster_size=7]
+MAKKKAFISLIYLASIVFLPWWLSFTFNKSMESWVKNCWNTGPSENFLNDIEEKIIIKKFIELEELSLFDEILKDYTQD*
+```
+
+Let’s take a look at how the sequence names are formatted:
+
+![Naming convention for reference sequences](/captus.docs/images/multi_seq_per_locus.png?width=600)
+
+* The **sequence name** (any text found before the first space) can contain multiple **`-`** characters, but only the *last one* will become the **separator**.
+* Any text found before the **separator** will be considered as **sequence ID**.
+* Any text found after the the **separator** will become the **locus name**.
+* Any text found after the first space is considered the **description** and this text is optional.
+
+[`Angiosperms353`](https://github.com/mossmatters/Angiosperms353) and [`HybPiper`](https://github.com/mossmatters/HybPiper) use this format, therefore, in order to mantain compatibility, we also used it to build our reference datasets for plastome proteins `SeedPlantsPTD` and mitochondrial proteins `SeedPlantsMIT`. At the same time it is also compatible with the references needed by other pipelines (e.g. [`SeCaPr`](https://htmlpreview.github.io/?https://raw.githubusercontent.com/AntonelliLab/seqcap_processor/master/docs/documentation/subdocs/extract_contigs.html#Extracting-target-contigs)) which are only capable of dealing with a single sequence per locus.
+
+Warning
+
+When the **separator** is not present (even in a single sequence in the whole reference dataset), the entire **sequence name** will be used as the **locus name**. This is fine when your reference dataset only contains a single sequence per locus for example, but if you intend to use the “muti-sequence per locus” format, please ensure that every single sequence contains a **`-`** as **separator**.
+
+---
+
+Created by [Edgardo M. Ortiz](https://edgardomortiz.github.io/captus.docs/more/credits/#edgardo-m-ortiz) (06.08.2021)
+Last modified by [Edgardo M. Ortiz](https://edgardomortiz.github.io/captus.docs/more/credits/#edgardo-m-ortiz) (29.05.2021)
+
+[![](/captus.docs/images/logo.svg)](/)
+
+Search
+
+* [Home](/captus.docs/)
+
+* [ ] Submenu Basics[Basics](/captus.docs/basics/)
+  + [Overview](/captus.docs/basics/overview/)
+  + [Installation](/captus.docs/basics/installation/)
+  + [Parallelization](/captus.docs/basics/parallelization/)
+* [x] Submenu Assembly[Assembly](/captus.docs/assembly/)
+  + [x] Submenu Clean[**1.** Clean](/captus.docs/assembly/clean/)
+    - [Input Preparation](/captus.docs/assembly/clean/preparation/)
+    - [Options](/captus.docs/assembly/clean/options/)
+    - [Output Files](/captus.docs/assembly/clean/output/)
+    - [HTML Report](/captus.docs/assembly/clean/report/)
+  + [x] Submenu Assemble[**2.** Assemble](/captus.docs/assembly/assemble/)
+    - [Input Preparation](/captus.docs/assembly/assemble/preparation/)
+    - [Options](/captus.docs/assembly/assemble/options/)
+    - [Output Files](/captus.docs/assembly/assemble/output/)
+    - [HTML Report](/captus.docs/assembly/assemble/report/)
+  + [x] Submenu Extract[**3.** Extract](/captus.docs/assembly/extract/)
+    - [Input Preparation](/captus.docs/assembly/extract/preparation/)
+    - [Options](/captus.docs/assembly/extract/options/)
+    - [Output Files](/captus.docs/assembly/extract/output/)
+    - [HTML Report](/captus.docs/assembly/extract/report/)
+  + [x] Submenu Align[**4.** Align](/captus.docs/assembly/align/)
+    - [Options](/captus.docs/assembly/align/options/)
+    - [Output Files](/captus.docs/assembly/align/output/)
+    - [HTML Report](/captus.docs/assembly/align/report/)
+* [Design](/captus.docs/design/)
+* [ ] Submenu Tutorials[Tutorials](/captus.docs/tutorials/)
+  + [Basic](/captus.docs/tutorials/basic/)
+  + [Advanced](/captus.docs/tutorials/advanced/)
+
+More
+
+* [GitHub repo](https://github.com/edgardomortiz/Captus)
+* [Credits](/captus.docs/more/credits)
+
+---
+
+* Language
+* Theme
+
+  Green
+* Clear History
+
+[Download](https://github.com/edgardomortiz/Captus/archive/master.zip)
+[Star](https://github.com/edgardomortiz/Captus)
+[Fork](https://github.com/edgardomortiz/Captus/fork)
+
+Built with  by [Hugo](https://gohugo.io/)

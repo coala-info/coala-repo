@@ -209,3 +209,6 @@ You can customize these parameters by creating a YAML config file.
 See https://github.com/burstein-lab/famus for more information.
 ```
 
+
+## Metadata
+- **Skill**: generated

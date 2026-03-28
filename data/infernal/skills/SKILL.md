@@ -1,6 +1,6 @@
 ---
 name: infernal
-description: Infernal is a suite of tools for searching and aligning RNA sequences using covariance models that capture both sequence and secondary structure consensus. Use when user asks to build or calibrate covariance models, search RNA models against sequence databases, scan sequences against the Rfam database, or create structure-informed multiple sequence alignments.
+description: Infernal uses profile stochastic context-free grammars to identify and align RNA homologs by accounting for both sequence consensus and secondary structure. Use when user asks to build or calibrate covariance models, search sequence databases for RNA homologs, scan sequences against model libraries, or create structural RNA alignments.
 homepage: http://eddylab.org/infernal
 ---
 
@@ -8,53 +8,60 @@ homepage: http://eddylab.org/infernal
 # infernal
 
 ## Overview
-Infernal (INFERence of RNA ALignment) is a specialized suite of tools for RNA homology search and alignment. While standard tools like HMMER focus on primary sequence consensus, Infernal utilizes Covariance Models (CMs) to capture both sequence and secondary structure consensus. This makes it significantly more sensitive for identifying functional RNAs (such as tRNAs, rRNAs, and riboswitches) where the structural fold is the primary evolutionary constraint. It is the underlying engine for the Rfam database.
+Infernal (INFERence of RNA ALignment) implements profile stochastic context-free grammars, known as covariance models, to identify RNA homologs. Unlike standard sequence profiles, Infernal accounts for both sequence consensus and secondary structure, making it significantly more sensitive for identifying non-coding RNAs where structure is more conserved than primary sequence. This skill provides the core command-line workflows for the Infernal suite.
 
-## Core Workflow and CLI Patterns
+## Core Workflow
 
 ### 1. Building and Calibrating Models
-Before searching, you must build a model from a structural alignment and calibrate it to ensure statistically valid E-values.
+Before searching, you must build a model from a structural alignment and calibrate it to ensure statistically significant E-values.
 
-*   **Build a CM**: Create a model from a multiple sequence alignment (Stockholm format) that includes secondary structure annotation.
+*   **Build a CM**: Create a model from a Stockholm format alignment.
     ```bash
-    cmbuild my_model.cm my_alignment.stk
+    cmbuild my_model.cm input_alignment.stk
     ```
-*   **Calibrate the CM**: This step is mandatory for `cmsearch` and `cmscan` to provide E-values. It is computationally intensive.
-    ```bash
-    cmcalibrate --cpu 4 my_model.cm
-    ```
-    *Tip: Use the `--cpu` flag to utilize multiple cores. For very large models (e.g., SSU rRNA), use `--split` and `--merge` to parallelize across a cluster.*
+    *Tip: Use `--consrf` with `--hand` if your alignment has RF (reference) annotation you wish to preserve as the model's consensus.*
 
-### 2. Searching Databases
-*   **Search a CM against a sequence database**:
+*   **Calibrate the CM**: This step is **required** for `cmsearch` and `cmscan`. It fits exponential tails to the score distribution.
     ```bash
-    cmsearch --tblout results.tbl my_model.cm genome.fasta
+    cmcalibrate my_model.cm
     ```
-*   **Search a sequence against a CM database (e.g., Rfam)**:
+    *Note: This is computationally intensive. Use `--forecast` first to estimate time, or `--memreq` to check RAM needs.*
+
+### 2. Searching and Scanning
+*   **Search a Database**: Search a sequence database (FASTA) using a single CM.
     ```bash
-    # First, press the CM database
-    cmpress Rfam.cm
-    # Then scan
-    cmscan --tblout results.tbl Rfam.cm query.fasta
+    cmsearch my_model.cm database.fa > results.txt
+    ```
+*   **Scan Sequences**: Search a single sequence against a library of CMs (e.g., Rfam).
+    ```bash
+    cmscan Rfam.cm query_sequence.fa > results.txt
+    ```
+    *Tip: Use `--tblout <file>` to get a concise, machine-readable tabular summary of hits.*
+
+### 3. Alignment
+*   **Align Sequences**: Align new sequences to an existing CM to create a structural alignment.
+    ```bash
+    cmalign my_model.cm new_sequences.fa > output.stk
     ```
 
-### 3. Aligning Sequences
-*   **Align sequences to a CM**: Create a structural alignment of new sequences based on a representative model.
-    ```bash
-    cmalign my_model.cm new_sequences.fasta > new_alignment.stk
-    ```
+## Expert Tips & Performance
+*   **Parallelization**: Most tools support multi-threading. Use `--cpu <n>` to specify the number of cores. The default is 4 in version 1.1.5.
+*   **Memory Management**: For very large models (like SSU rRNA), `cmcalibrate` can be memory-hungry. Use `--cpu 0` to force single-threaded mode if you run out of RAM, as memory scales with the number of worker threads.
+*   **Truncated Hits**: If searching for fragments or in metagenomic data, use the `--anytrunc` option in `cmsearch` or `cmscan` to improve sensitivity for hits at sequence ends.
+*   **Fragmentary Data**: In `cmbuild`, terminal gaps in sequences annotated as fragments are now treated as missing data rather than deletions, improving model parameters for partial sequences.
 
-## Expert Tips and Best Practices
 
-*   **Handling Fragments**: In version 1.1.5+, `cmbuild` handles fragmentary sequences better. If your input alignment contains fragments, ensure they are annotated correctly so terminal gaps are treated as missing data rather than deletions.
-*   **Metagenomic/Truncated Searches**: When searching fragmented genomic data or metagenomes, use the `--anytrunc` option in `cmsearch` or `cmscan`. This improves sensitivity for hits that are truncated by the end of a sequence record.
-*   **Output Parsing**: Always use `--tblout <file>` to generate a space-delimited tabular summary. It is much easier to parse programmatically than the default human-readable output.
-*   **Performance Tuning**:
-    *   The default CPU count in v1.1.5 is 4. Adjust this with `--cpu <n>` based on your hardware.
-    *   If speed is more critical than sensitivity, consider using the HMM-only filters (enabled by default) or adjusting the acceleration pipeline heuristics (e.g., `--F1`, `--F2`, `--F3` thresholds).
-*   **Defining Consensus**: Use `--consrf` with `cmbuild --hand` to define the Reference (RF) annotation as the consensus sequence, which leads to cleaner downstream alignments in `cmalign`.
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| cmbuild | Build covariance models from annotated RNA multiple sequence alignments |
+| cmcalibrate | Fit exponential tails for covariance model E-value determination. Note: The provided text contains system error logs rather than help text; arguments are derived from standard tool documentation. |
+| cmpress | prepare a covariance model database for cmscan |
 
 ## Reference documentation
 - [Infernal README](./references/eddylab_org_infernal_README.md)
 - [Infernal 1.1.5 Release Notes](./references/eddylab_org_infernal_RELEASE-1.1.5.md)
-- [Infernal Overview](./references/eddylab_org_infernal.md)
+- [cmcalibrate Help and Optimization](./references/github_com_EddyRivasLab_infernal_wiki_cmcalibrate-help.md)
+- [Multi-processor Scaling Guide](./references/github_com_EddyRivasLab_infernal_wiki_How-Infernal-Programs-Scale-On-Multiple-Processors.md)

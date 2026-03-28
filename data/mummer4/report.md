@@ -473,3 +473,6 @@ require a 1-to-1 mapping. Finally, for mapping query contigs, or
 sequencing reads, to a reference genome, use -q.
 ```
 
+
+## Metadata
+- **Skill**: generated

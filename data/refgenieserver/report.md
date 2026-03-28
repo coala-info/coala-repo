@@ -74,3 +74,6 @@ options:
                         genome/asset:tag
 ```
 
+
+## Metadata
+- **Skill**: generated

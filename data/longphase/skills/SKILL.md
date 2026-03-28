@@ -1,6 +1,6 @@
 ---
 name: longphase
-description: LongPhase is a high-performance tool for the simultaneous phasing of SNPs, indels, structural variants, and DNA methylation patterns using long-read sequencing data. Use when user asks to phase multiple variant types, co-phase methylation modifications, or haplotag reads from Oxford Nanopore or PacBio platforms.
+description: LongPhase is an ultra-fast genomic phasing engine that integrates SNPs, structural variants, and methylation data into unified haplotypes using long-read sequencing. Use when user asks to phase variants, co-phase structural variants with SNPs, haplotag reads, or phase DNA modifications.
 homepage: https://github.com/twolinin/longphase
 ---
 
@@ -9,84 +9,101 @@ homepage: https://github.com/twolinin/longphase
 
 ## Overview
 
-LongPhase is a high-performance bioinformatics tool designed to handle the complexity of long-read sequencing data from Oxford Nanopore (ONT) and PacBio platforms. It enables the simultaneous phasing of multiple variant types—including single nucleotide polymorphisms, small insertions/deletions, and large structural variants—alongside DNA methylation patterns. By leveraging the length of ultra-long reads, it can produce nearly chromosome-scale haplotype blocks in a fraction of the time required by traditional phasing algorithms.
+LongPhase is an ultra-fast genomic phasing engine optimized for long-read technologies. It moves beyond simple SNP phasing by allowing the simultaneous integration of multiple variant types—including structural variants and methylation data—into a unified haplotype framework. It is particularly effective for Nanopore ultra-long reads, where it can produce nearly chromosome-level blocks in minutes. Use this skill to construct command-line workflows for variant phasing, read haplotagging, and modification calling.
 
-## Core Workflows
+## Core Workflows and CLI Patterns
 
-### 1. SNP and Indel Phasing
-To phase SNPs and small indels, provide a VCF containing both variant types and use the `--indels` flag.
+### 1. Basic SNP Phasing
+The primary command for phasing SNPs. You must specify the sequencing platform to apply the correct error model.
 
 ```bash
+# For Nanopore data
 longphase phase \
-  -s variants.vcf \
+  -s input_snps.vcf \
   -b alignment.bam \
   -r reference.fasta \
   -t 16 \
-  -o phased_output \
-  --indels \
-  --ont # Use --pb for PacBio HiFi
+  -o output_prefix \
+  --ont
+
+# For PacBio HiFi data
+longphase phase \
+  -s input_snps.vcf \
+  -b alignment.bam \
+  -r reference.fasta \
+  -t 16 \
+  -o output_prefix \
+  --pb
 ```
 
-### 2. Structural Variation (SV) Co-phasing
-LongPhase can integrate SVs into the phasing graph. Ensure your SV caller (Sniffles or CuteSV) is configured to output read names.
+### 2. Co-phasing SVs and Indels
+To improve haplotype block length and resolve structural variants, provide the SV VCF alongside the SNP VCF.
 
 ```bash
 longphase phase \
-  -s snp.vcf \
-  --sv-file sv_calls.vcf \
+  -s snps.vcf \
+  --sv-file structural_variants.vcf \
   -b alignment.bam \
   -r reference.fasta \
   --ont \
-  -o phased_sv_result
+  -o phased_variants
 ```
 
-### 3. Methylation (5mC) Phasing
-Phasing modifications requires a two-step process: calling modified loci and then co-phasing them with SNPs.
-
-**Step 1: Call modifications**
-```bash
-longphase modcall -s snp.vcf -b alignment.bam -r reference.fasta > modcall.vcf
-```
-
-**Step 2: Co-phase**
-```bash
-longphase phase \
-  -s snp.vcf \
-  --mod-file modcall.vcf \
-  -b alignment.bam \
-  -r reference.fasta \
-  --ont \
-  -o phased_mod_result
-```
-
-### 4. Haplotagging Reads
-After phasing, assign individual reads to specific haplotypes (H1 or H2) to create a tagged BAM file.
+### 3. Haplotagging Reads
+Once variants are phased, use the `haplotag` command to assign individual reads in a BAM/CRAM file to specific haplotypes (HP1 or HP2).
 
 ```bash
 longphase haplotag \
-  -s phased_result.vcf \
+  -s phased_snps.vcf \
+  --sv-file phased_svs.vcf \
   -b alignment.bam \
   -r reference.fasta \
+  -t 8 \
   -o tagged_reads
 ```
+*   **Tip**: Use `--cram` to output in CRAM format instead of the default BAM.
+*   **Tip**: Use `--qualityThreshold` (default 1) to skip tagging low-quality alignments.
 
-## Best Practices and Expert Tips
+### 4. Phasing DNA Modifications (5mC)
+This is a two-step process. First, call modifications, then phase them.
 
-- **Platform Specificity**: Always explicitly define the platform using `--ont` (Oxford Nanopore) or `--pb` (PacBio). The algorithm adjusts its error model and heuristic parameters based on this flag.
-- **Input Preparation**:
-    - Reference FASTA must be indexed (`samtools faidx`).
-    - BAM files must be sorted and indexed (`samtools index`).
-    - For SV phasing with Sniffles2, use the `--output-rnames` flag during SV calling to ensure LongPhase can link reads to variants.
-- **Performance Tuning**:
-    - Use the `-t` parameter to specify threads. LongPhase is highly optimized; a 30x human genome can often be phased in approximately one minute on modern hardware.
-    - If memory is a concern during `modcall`, process chromosomes individually.
-- **Filtering Parameters**:
-    - **Mapping Quality**: Use `-q` (default: 1) to filter out low-quality alignments. Increase this (e.g., `-q 20`) if working in repetitive regions.
-    - **Mismatch Rate**: Use `-x` (default: 3) to exclude reads with high divergence from the reference, which often represent chimeric reads or poor alignments.
-- **Phasing Connectivity**:
-    - The `-d` (distance) parameter controls the maximum distance between variants to be phased (default: 300,000 bp). Increase this if you have ultra-long reads (>100kb) to potentially bridge larger gaps.
-    - The `-a` (connectAdjacent) parameter defines how many adjacent SNPs to consider for edge creation (default: 35).
+```bash
+# Step 1: Call modifications
+longphase modcall \
+  -b alignment.bam \
+  -r reference.fasta \
+  -t 16 \
+  -o mod_calls
+
+# Step 2: Phase modifications with SNPs
+longphase phase \
+  -s snps.vcf \
+  --mod-file mod_calls.vcf \
+  -b alignment.bam \
+  -r reference.fasta \
+  --ont \
+  -o phased_modifications
+```
+
+## Expert Tips and Best Practices
+
+*   **Input Preparation**: Ensure your BAM/CRAM files are sorted and indexed (`samtools index`). The reference FASTA must also be indexed (`samtools faidx`).
+*   **Memory Management**: LongPhase is highly efficient, but for very high coverage or complex regions, ensure sufficient threads (`-t`) are allocated to maintain its "ultra-fast" performance.
+*   **Region Filtering**: If you only need to phase a specific chromosome or locus, use the `--region` parameter (e.g., `--region chr1:1000000-2000000`) to save time and resources.
+*   **Somatic Phasing**: For specialized somatic cases, note that there are sister projects: `longphase-s` (paired tumor/normal) and `longphase-to` (tumor-only).
+*   **Supplementary Alignments**: By default, `haplotag` may not tag supplementary alignments. Use `--tagSupplementary` if your analysis requires every alignment segment to be assigned a haplotype.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| haplotag | Tag alignments with haplotype information based on SNP and SV data. |
+| modcall | modcall |
+| phase | Phases genomic reads using SNP and optionally SV information. |
 
 ## Reference documentation
-- [LongPhase GitHub Repository](./references/github_com_twolinin_longphase.md)
-- [Bioconda LongPhase Overview](./references/anaconda_org_channels_bioconda_packages_longphase_overview.md)
+- [LongPhase Main Documentation](./references/github_com_twolinin_longphase.md)
+- [Haplotag Command Parameters](./references/github_com_twolinin_longphase_blob_main_Haplotag.cpp.md)
+- [Example Docker Workflow](./references/github_com_twolinin_longphase_blob_main_Dockerfile.md)

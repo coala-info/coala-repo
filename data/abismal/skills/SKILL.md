@@ -1,6 +1,6 @@
 ---
 name: abismal
-description: "Abismal aligns bisulfite-converted DNA sequences to a reference genome using a memory-efficient two-letter alphabet approach. Use when user asks to index a reference genome, map single-end or paired-end bisulfite reads, or process PBAT sequencing data."
+description: Abismal is a high-performance read mapper designed for aligning bisulfite-treated DNA sequencing data to a reference genome. Use when user asks to index a reference genome, map single-end or paired-end bisulfite reads, or simulate reads with bisulfite conversion.
 homepage: https://github.com/smithlabcode/abismal
 ---
 
@@ -9,12 +9,12 @@ homepage: https://github.com/smithlabcode/abismal
 
 ## Overview
 
-Abismal (Another Bisulfite Mapping Algorithm) is a specialized tool designed for the alignment of bisulfite-converted DNA sequences. It utilizes a two-letter alphabet approach to achieve high speed and low memory consumption while maintaining accuracy. This skill provides the necessary command-line patterns to process raw sequencing data into SAM/BAM formats, which are essential for downstream methylation analysis.
+Abismal (Another Bisulfite Mapping Algorithm) is a high-performance read mapper specifically engineered for bisulfite-treated DNA sequencing data. It addresses the reduced complexity of the genomic alphabet resulting from C-to-T conversions by employing a bisulfite-aware alignment strategy. Use this skill to streamline the transition from raw FASTQ files to aligned SAM/BAM files while maintaining high sensitivity and multi-threaded efficiency.
 
-## Core Workflows
+## Command Line Usage
 
 ### 1. Genome Indexing
-Before mapping, you must create an index from a FASTA reference genome.
+Before mapping, you must create an index for your reference genome.
 
 ```bash
 # Basic indexing
@@ -25,55 +25,62 @@ abismal idx -t 8 reference.fa reference.idx
 ```
 
 ### 2. Read Mapping
-Abismal supports various sequencing protocols and output formats.
+Abismal supports single-end and paired-end reads, with various output options.
 
-**Single-End Mapping**
+**Single-end mapping:**
 ```bash
-abismal map -i reference.idx -o output.sam reads.fq
+abismal map -i reference.idx -o aligned_reads.sam reads.fq
 ```
 
-**Paired-End Mapping**
+**Paired-end mapping:**
 ```bash
-abismal map -i reference.idx -o output.sam reads_1.fq reads_2.fq
+abismal map -i reference.idx -o aligned_reads.sam reads_1.fq reads_2.fq
 ```
 
-**On-the-fly Mapping**
-If you want to skip the explicit indexing step (useful for one-off runs):
+**Direct BAM output:**
+Use the `-B` flag to output directly to BAM format, saving disk space and skipping manual SAM-to-BAM conversion.
 ```bash
-abismal map -g reference.fa -o output.sam reads.fq
+abismal map -i reference.idx -B -o aligned_reads.bam reads.fq
 ```
 
-### 3. Specialized Protocols
-*   **PBAT (Post-Bisulfite Adapter Tagging):** Use `-P` for standard PBAT data.
-*   **Random PBAT:** Use `-R` for random-primed PBAT libraries.
-
+**On-the-fly indexing:**
+If you do not want to maintain a separate index file, you can map directly using the FASTA file.
 ```bash
-abismal map -i reference.idx -P -o output.sam reads.fq
+abismal map -g reference.fa -o aligned_reads.sam reads.fq
 ```
 
-## Output Management
+### 3. Specialized Library Types
+If your data was generated using Post-Bisulfite Adapter Tagging (PBAT), use the specific mode flags:
 
-### Format Selection
-By default, Abismal outputs SAM. Use the `-B` flag to generate BAM output directly.
+*   **Standard PBAT:** `-P`
+*   **Random PBAT:** `-R`
+
 ```bash
-abismal map -i reference.idx -B -o output.bam reads.fq
+abismal map -i reference.idx -P -o pbat_reads.sam reads.fq
 ```
 
-### Mapping Statistics
-To capture alignment metrics (e.g., mapping rate, read counts) in a structured YAML format:
-```bash
-abismal map -i reference.idx -s stats.yaml -o output.sam reads.fq
-```
+## Best Practices and Expert Tips
 
-## Expert Tips
+*   **Thread Scaling:** Abismal scales near-linearly with CPU cores. For large datasets (e.g., human hg38), always utilize the `-t` flag with the maximum available cores to significantly reduce processing time.
+*   **Mapping Statistics:** Use the `-s` flag to generate a YAML file containing detailed mapping statistics. This is essential for quality control and reporting.
+    ```bash
+    abismal map -i hg38.idx -s reads.stats.yaml -o reads.sam reads.fq
+    ```
+*   **Understanding Custom Tags:**
+    *   **NM tag:** Reports the edit distance (sum of mismatches, insertions, and deletions).
+    *   **CV tag:** Reports the assumed bisulfite base used for mapping. `CV:A:A` indicates A-rich mapping, while `CV:A:T` indicates T-rich mapping. This is independent of the mapped strand.
+*   **Memory Management:** While abismal is efficient, indexing large genomes requires significant RAM. Ensure your environment has sufficient memory relative to the genome size (e.g., ~3GB for human genome indexing).
 
-*   **Performance:** Abismal scales nearly linearly with CPU cores. Always use the `-t` flag with the maximum available cores for large datasets (e.g., `-t 64`).
-*   **Read Length:** The tool is optimized for reads between 50 and 1000 bases.
-*   **SAM Tags:** 
-    *   `NM`: Reports the edit distance (mismatches + indels).
-    *   `CV`: Reports the assumed bisulfite base. `CV:A:A` indicates A-rich mapping; `CV:A:T` indicates T-rich mapping.
-*   **Memory Efficiency:** Abismal is significantly more memory-efficient than many traditional bisulfite mappers, making it suitable for high-throughput environments with limited RAM.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| idx | build abismal index |
+| map | map bisulfite converted reads (v3.3.0) |
+| sim | Simulate reads from a reference genome with optional bisulfite conversion and mutations. |
 
 ## Reference documentation
+- [Abismal README](./references/github_com_smithlabcode_abismal_blob_master_README.md)
 - [Abismal GitHub Repository](./references/github_com_smithlabcode_abismal.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_abismal_overview.md)

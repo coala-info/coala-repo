@@ -1,6 +1,6 @@
 ---
 name: newmap
-description: Newmap determines the uniqueness of genomic sequences by identifying the shortest read length required for a sequence at any position to be unique within a genome. Use when user asks to index a reference genome, search for unique k-mer lengths, or generate mappability tracks in BED or BigWig formats.
+description: Newmap determines genome mappability by identifying the shortest unique k-mer at every genomic position to generate single-read and multi-read tracks. Use when user asks to index a genome, search for unique k-mer lengths, or generate mappability tracks in BED and WIG formats.
 homepage: https://github.com/hoffmangroup/newmap
 ---
 
@@ -8,46 +8,57 @@ homepage: https://github.com/hoffmangroup/newmap
 # newmap
 
 ## Overview
-Newmap is a high-performance tool for determining the uniqueness of genomic sequences. It identifies the shortest read length required for a sequence at any given position to be unique within the genome. This is essential for downstream bioinformatics tasks like peak calling, variant calling, and normalizing sequencing depth. Use this skill to guide the process of indexing a FASTA file, performing a binary search for unique k-mer lengths, and converting those results into standard genomic formats like BED or BigWig.
-
-## Installation and Prerequisites
-Newmap requires a Linux environment and a CPU supporting the **AVX2** instruction set.
-- **Conda**: `conda install bioconda::newmap`
-- **PyPI**: `pip install newmap`
+Newmap is a high-performance software package designed to determine genome mappability by identifying the shortest unique k-mer at every genomic position. It utilizes the AVX2 instruction set and the AvxWindowFMIndex library to efficiently output unique read lengths. These lengths are then used to generate single-read and multi-read mappability tracks (BED and WIG formats) for specific read lengths.
 
 ## Core Workflow
 
-### 1. Indexing the Genome
-Before searching, you must create an FM-index of the reference FASTA.
+### 1. Genome Indexing
+Generate a specialized index from a FASTA file. This is a prerequisite for all search operations.
+
 ```bash
 newmap index genome.fa
 ```
-*   **Output**: Creates a `genome.awfmi` file.
-*   **Tip**: For extremely small test genomes, use `--seed-length=1 --compression-ratio=1` to speed up the process; otherwise, stick to defaults.
+*   **Output**: Creates a `.awfmi` index file (default: `genome.awfmi`).
+*   **Optimization**: For very small test genomes, use `--seed-length=1` and `--compression-ratio=1` to accelerate index creation. For standard genomes, use default values.
 
-### 2. Searching for Unique Lengths
-This step identifies the minimum unique k-mer length for every position.
+### 2. Unique Length Search
+Identify the minimum unique k-mer lengths across the genome using a binary search method.
+
 ```bash
 newmap search --verbose --num-threads=20 --search-range=20:200 --output-directory=unique_lengths genome.fa
 ```
-*   **--search-range**: Defines the min:max k-mer lengths to check.
-*   **--num-threads**: Highly recommended for large genomes as this process is parallelizable.
-*   **Output**: Generates `.unique.uint8` files for each chromosome/sequence in the specified directory.
+*   **Parameters**:
+    *   `--num-threads`: Set based on available CPU cores for parallel processing.
+    *   `--search-range`: Define the continuous range (e.g., `min:max`) for the binary search.
+    *   `--output-directory`: Destination for the resulting `*.unique.uint8` files (one per sequence ID).
 
-### 3. Generating Mappability Tracks
-Convert the raw unique length data into usable tracks for a specific read length (e.g., 24bp).
+### 3. Mappability Track Generation
+Convert the intermediate unique length files into standard genomic formats for a specific read length.
+
 ```bash
-newmap track --single-read=24.bed --multi-read=24.wig 24 unique_lengths/*.unique.uint8
+newmap track --single-read=output.bed --multi-read=output.wig <read_length> unique_lengths/*.unique.uint8
 ```
-*   **Single-read mappability**: A BED file where a value of 1 indicates the position is uniquely mappable at the specified length.
-*   **Multi-read mappability**: A Wiggle (WIG) file representing the reciprocal of the number of matches for that read length.
+*   **Arguments**:
+    *   `<read_length>`: The specific integer read length (e.g., `24`) to calculate mappability for.
+    *   `--single-read`: Generates a BED file representing single-read mappability.
+    *   `--multi-read`: Generates a WIG file representing multi-read mappability.
 
-## Expert Tips
-- **Hardware Acceleration**: Ensure your environment supports AVX2. Without it, the underlying `AvxWindowFMIndex` library will fail.
-- **Memory Management**: For large genomes (e.g., Human T2T), ensure sufficient RAM is available for the index.
-- **Reverse Complement**: By default, Newmap considers both strands. If your specific application requires strand-specific uniqueness, check for the `--no-reverse-complement` option in recent versions.
-- **Help Access**: Use `newmap <subcommand> --help` for detailed parameter descriptions for `index`, `search`, or `track`.
+## Expert Tips and Best Practices
+*   **Hardware Requirements**: Newmap requires a CPU with **AVX2** support. It is currently optimized for Linux environments.
+*   **Parallelization**: Always specify `--num-threads` during the `search` phase to significantly reduce computation time, as this step is the most resource-intensive.
+*   **Memory Management**: The tool produces `uint8` files during the search phase to keep the intermediate storage footprint small while maintaining precision for read lengths up to 255 bp.
+*   **Help Command**: Use `newmap <command> --help` to view advanced parameters for specific sub-commands.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| newmap_index | Create an index for a FASTA file. |
+| newmap_track | Calculate mappability values based on read length and unique count files. |
+| search | Search for unique k-mers in a FASTA file. |
 
 ## Reference documentation
-- [Newmap GitHub Repository](./references/github_com_hoffmangroup_newmap.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_newmap_overview.md)
+- [Newmap README](./references/github_com_hoffmangroup_newmap_blob_master_README.md)
+- [Bioconda Newmap Overview](./references/anaconda_org_channels_bioconda_packages_newmap_overview.md)

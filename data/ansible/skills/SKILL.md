@@ -1,6 +1,6 @@
 ---
 name: ansible
-description: Ansible is an agentless IT automation engine used for cloud provisioning, configuration management, and application deployment. Use when user asks to manage collections and roles, view or validate configuration settings, run sanity and integration tests on modules, or perform pull-based deployments.
+description: Ansible is an agentless IT automation engine that automates system configuration, task execution, and software deployment via SSH. Use when user asks to execute ad-hoc tasks, manage remote systems, view module documentation, or run sanity and integration tests using ansible-test.
 homepage: https://github.com/ansible/ansible
 ---
 
@@ -8,43 +8,51 @@ homepage: https://github.com/ansible/ansible
 # ansible
 
 ## Overview
-Ansible is an agentless IT automation engine that automates cloud provisioning, configuration management, and application deployment. By leveraging SSH, it eliminates the need for remote agents, making it a lightweight solution for multi-node orchestration. This skill provides procedural guidance for the native command-line interface (CLI) tools used to manage the Ansible environment and its extensions.
+Ansible is an agentless IT automation engine that leverages SSH to manage remote systems without requiring custom agents or additional open ports. It is designed for simplicity, security, and auditability. This skill provides guidance on using the Ansible command-line interface for ad-hoc task execution, system configuration, and the specialized `ansible-test` framework used for maintaining and extending the Ansible ecosystem.
 
-## Installation and Environment
-Ansible is primarily distributed via Python packaging.
-- **Standard Installation**: Use `pip install ansible` for the full package or `pip install ansible-core` for a minimal installation.
-- **Development Version**: To run the latest features, clone the repository and run the `devel` branch directly. This is recommended for developers contributing to the project or testing upcoming fixes.
+## Command Line Best Practices
 
-## Command Line Toolset
+### Ad-Hoc Task Execution
+Use the `ansible` command for quick, one-off tasks across your inventory.
+- **Pattern**: `ansible <host-pattern> -m <module_name> -a "<module_arguments>"`
+- **Check Mode**: Append `-C` or `--check` to predict changes without applying them.
+- **Parallelism**: Use `-f <number>` to define the number of parallel processes (forks).
+- **Privilege Escalation**: Use `-b` or `--become` to run operations with root or another user's permissions.
 
-### ansible-galaxy
-Use this tool to manage Ansible Collections and Roles.
-- **Install Collections**: `ansible-galaxy collection install <namespace.collection_name>`
-- **Metadata Validation**: Ensure collection metadata and file system locations are aligned to avoid `KeyError` during installation.
+### Documentation and Discovery
+- **List Modules**: `ansible-doc -l` to see all available modules.
+- **Module Reference**: `ansible-doc <module_name>` to view parameters, returns, and examples for a specific tool.
+- **Configuration**: `ansible-config dump` to see the current active configuration and where settings are derived from.
 
-### ansible-config
-Use this tool to view, edit, and manage Ansible configuration.
-- **Validation**: Use `ansible-config validate` to check the integrity of configuration files.
-- **Inspection**: Use `ansible-config dump` to see the current active configuration and the source of each setting.
+### Development and Testing (`ansible-test`)
+When developing modules or plugins, use the `ansible-test` utility to ensure code quality and compatibility.
 
-### ansible-test
-The primary tool for testing Ansible modules and plugins.
-- **Sanity Tests**: Run `ansible-test sanity` to ensure code adheres to project standards (e.g., codespell, pylint).
-- **Integration Tests**: Run `ansible-test integration` to verify functional behavior across different platforms (e.g., Alpine, FreeBSD, BusyBox).
-- **Targeting**: Use specific targets to limit test scope, such as `ansible-test integration user` to test the user management module.
+#### Sanity Testing
+Sanity tests are static analysis tools (pylint, mypy, pep8) that ensure code adheres to project standards.
+- **Run all sanity tests**: `ansible-test sanity -v --docker default`
+- **Run specific test**: `ansible-test sanity -v --docker default --test <test_name>`
+- **Targeted file**: `ansible-test sanity -v --docker default <path/to/file.py>`
 
-### ansible-pull
-A tool for pull-based deployments where the remote machine pulls configuration from a VCS (like Git) instead of being pushed to by a controller.
-- **Verification**: Ensure the target file exists within the repository before execution to prevent runtime errors.
+#### Unit and Integration Testing
+- **Unit Tests**: `ansible-test units -v --docker default` (runs pytest-style functional tests).
+- **Integration Tests**: `ansible-test integration -v --docker <distro_container> <target_name>`.
+- **Container Selection**: Use `--docker default` for sanity/unit tests. For integration tests, use specific distribution containers (e.g., `ubuntu2404`) found in the project's completion data.
 
-## Expert Tips and Best Practices
-- **Agentless Execution**: Always ensure the SSH daemon is running on target machines; Ansible requires no other bootstrapping.
-- **Interpreter Discovery**: When using `delegate_to`, be aware that interpreter discovery caching may behave differently; verify the Python path on the delegated host.
-- **Module Defaults**: Use `module_defaults` to template common parameters for actions like `gather_facts`, `service`, or `package`.
-- **Check Mode and Diff**: Combine `--check` and `--diff` to validate changes in a repository without applying them, which is particularly useful for the `git` module.
-- **Temporary Paths**: If `make_tmp_path` errors occur, check the connection plugin's interaction with `become` plugins, especially on restricted shells like BusyBox.
+## Expert Tips
+- **Agentless Advantage**: Since Ansible is agentless, ensure the control node has SSH access and the managed nodes have Python installed.
+- **Testing Isolation**: Always prefer the `--docker` or `--podman` flags with `ansible-test` to ensure a clean, reproducible environment that is isolated from your host's Python configuration.
+- **Licensing Compliance**: When contributing to `ansible-core`, ensure code is GPLv3 compatible. Code in `module_utils` typically defaults to the BSD-2-Clause license.
+- **Editable Installs**: For development, use `pip install -e .` from the repository root to test changes in real-time.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| ansible-galaxy | Manage Ansible roles and collections. |
+| ansible-pull | Pulls playbooks from a VCS repo and executes them for the local host. |
 
 ## Reference documentation
-- [Ansible README](./references/github_com_ansible_ansible.md)
-- [Ansible Issues](./references/github_com_ansible_ansible_issues.md)
-- [Ansible Commits](./references/github_com_ansible_ansible_commits_devel.md)
+- [Ansible Agents Guide](./references/github_com_ansible_ansible_blob_devel_AGENTS.md)
+- [Ansible Project README](./references/github_com_ansible_ansible_blob_devel_README.md)

@@ -80,3 +80,6 @@ Options:
   -s, --sleuth               Run Sleuth
 ```
 
+
+## Metadata
+- **Skill**: generated

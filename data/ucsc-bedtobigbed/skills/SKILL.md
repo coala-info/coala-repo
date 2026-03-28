@@ -1,6 +1,6 @@
 ---
 name: ucsc-bedtobigbed
-description: The ucsc-bedtobigbed tool converts standard BED files into indexed bigBed files. Use when user asks to convert BED files to bigBed, define custom fields for bigBed, or create bigBed files searchable by name.
+description: This tool converts text-based BED files into binary BigBed format for high-performance genomic data visualization. Use when user asks to convert BED files to BigBed, handle chromosome sizes for file conversion, or create indexed genomic data files for the UCSC Genome Browser.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
 
@@ -8,49 +8,45 @@ homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 # ucsc-bedtobigbed
 
 ## Overview
-The `bedToBigBed` utility is a core tool from the UCSC Genome Browser "kent" suite. It converts standard BED files into bigBed files, which are binary, indexed, and support multi-resolution "zoom levels." This format is essential for handling large genomic datasets because it allows tools to fetch only the data needed for a specific genomic region without reading the entire file.
+The `bedToBigBed` utility is a core tool from the UCSC Genome Browser "kent" suite. It converts text-based BED files into binary BigBed files. BigBed files are essential for high-performance genomic data visualization because they allow browsers to fetch only the data needed for a specific genomic window without downloading the entire file. This skill provides the necessary CLI patterns to perform this conversion, including handling chromosome sizes and custom data schemas.
 
-## Usage Patterns
-
-### Basic Conversion
-The tool requires three primary inputs: the input BED file, a file containing chromosome sizes, and the output filename.
+## Basic Usage
+The tool requires three primary inputs: the source BED file, a file containing chromosome sizes, and the desired output filename.
 
 ```bash
 bedToBigBed input.bed chrom.sizes output.bb
 ```
 
-### Preparing Input Data
-`bedToBigBed` is strict about input formatting. Before running the tool, ensure your BED file is sorted by chromosome and then by start position.
+### Preparing Input Files
+1.  **Sort the BED file**: The input BED file **must** be sorted by chromosome and then by start position.
+    ```bash
+    bedSort input.bed sorted_input.bed
+    ```
+2.  **Chromosome Sizes**: This is a two-column tab-separated file (Chromosome Name, Size in BP). You can often fetch this using `fetchChromSizes` or from the UCSC hgdownload site.
 
-```bash
-# Sort BED file correctly for bedToBigBed
-sort -k1,1 -k2,2n input.unsorted.bed > input.sorted.bed
+## Common CLI Options
+- `-type=bedN[+P]`: Specify the BED format (e.g., `bed3`, `bed6`, `bed12`). The `+P` indicates extra non-standard columns.
+- `-as=file.as`: Provide an AutoSql (.as) definition file for custom columns.
+- `-extraIndex=columnList`: Create an index on specific extra columns (comma-separated) for fast searching.
+- `-blockSize=N`: Number of items to bundle in R-tree leaf nodes (default 256).
+- `-itemsPerSlot=N`: Number of items to bundle in data nodes (default 512).
+- `-unc`: Disable compression.
 
-# Generate chrom.sizes if not already available (example for hg38)
-fetchChromSizes hg38 > hg38.chrom.sizes
-```
+## Expert Tips & Best Practices
+- **Validation**: Always run `bedSort` before `bedToBigBed`. The tool will fail if the input is not strictly ordered.
+- **Custom Columns**: If your BED file has more than the standard 12 columns, you must use the `-as` option with an AutoSql schema and specify the `-type` correctly (e.g., `-type=bed12+4` for 12 standard and 4 extra columns).
+- **Memory Management**: For extremely large datasets, ensure you have sufficient disk space in your `/tmp` directory, as the tool creates temporary files during the B+ tree construction.
+- **BigBed Info**: After conversion, use `bigBedInfo output.bb` to verify the structure and `bigBedSummary` to extract data statistics.
 
-### Handling Custom BED Fields (AutoSQL)
-If your BED file has more than the standard 3 to 12 columns, you must provide an AutoSQL (.as) file to define the extra fields.
 
-```bash
-bedToBigBed -as=fields.as -type=bed12+4 input.bed chrom.sizes output.bb
-```
-*Note: The `-type` parameter should match the number of standard BED columns plus the number of extra columns (e.g., `bed3+1`).*
 
-### Common Options
-- `-blockSize=N`: Sets the number of items to bundle in R-tree nodes. Default is 256.
-- `-itemsPerSlot=N`: Sets the number of data points bundled at lowest level. Default is 512.
-- `-unc`: Disable compression (useful for debugging or very small files).
-- `-tab`: Use if your input BED file is tab-separated (standard BED is tab-separated, but some variants use spaces).
+## Subcommands
 
-## Expert Tips
-1. **Validation First**: Use `bedToBigBed` with the `-extraIndex` option if you need to search for items by name (column 4) in the resulting bigBed file.
-2. **Memory Management**: For extremely large datasets, ensure your system has enough temporary disk space, as the tool creates temporary files during the indexing process.
-3. **Chromosome Naming**: Ensure the chromosome names in your `input.bed` exactly match those in your `chrom.sizes` file (e.g., "chr1" vs "1").
-4. **BigBed to BED**: If you need to reverse the process, use the companion tool `bigBedToBed`.
+| Command | Description |
+|---------|-------------|
+| bedToBigBed | Convert a BED file to a bigBed file. The input BED file must be sorted by chromosome and start position. |
+| fetchChromSizes | Fetch chromosome sizes for a specific genome assembly from the UCSC Genome Browser. |
 
 ## Reference documentation
-- [ucsc-bedtobigbed Overview](./references/anaconda_org_channels_bioconda_packages_ucsc-bedtobigbed_overview.md)
-- [UCSC Admin Executables Directory](./references/hgdownload_cse_ucsc_edu_admin_exe.md)
-- [Linux x86_64 Binaries List](./references/hgdownload_cse_ucsc_edu_admin_exe_linux.x86_64.md)
+- [UCSC Genome Browser Kent Wiki](./references/github_com_ucscGenomeBrowser_kent_wiki.md)
+- [UCSC Admin Executables Index](./references/hgdownload_cse_ucsc_edu_admin_exe_linux.x86_64.md)

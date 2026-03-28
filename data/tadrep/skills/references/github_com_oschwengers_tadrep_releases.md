@@ -1,0 +1,398 @@
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Foschwengers%2Ftadrep%2Freleases)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Foschwengers%2Ftadrep%2Freleases)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Freleases%2Findex&source=header-repo&source_repo=oschwengers%2Ftadrep)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[oschwengers](/oschwengers)
+/
+**[tadrep](/oschwengers/tadrep)**
+Public
+
+* [Notifications](/login?return_to=%2Foschwengers%2Ftadrep) You must be signed in to change notification settings
+* [Fork
+  1](/login?return_to=%2Foschwengers%2Ftadrep)
+* [Star
+   22](/login?return_to=%2Foschwengers%2Ftadrep)
+
+* [Code](/oschwengers/tadrep)
+* [Issues
+  3](/oschwengers/tadrep/issues)
+* [Pull requests
+  0](/oschwengers/tadrep/pulls)
+* [Actions](/oschwengers/tadrep/actions)
+* [Projects](/oschwengers/tadrep/projects)
+* [Security
+  0](/oschwengers/tadrep/security)
+* [Insights](/oschwengers/tadrep/pulse)
+
+Additional navigation options
+
+* [Code](/oschwengers/tadrep)
+* [Issues](/oschwengers/tadrep/issues)
+* [Pull requests](/oschwengers/tadrep/pulls)
+* [Actions](/oschwengers/tadrep/actions)
+* [Projects](/oschwengers/tadrep/projects)
+* [Security](/oschwengers/tadrep/security)
+* [Insights](/oschwengers/tadrep/pulse)
+
+# Releases: oschwengers/tadrep
+
+[Releases](/oschwengers/tadrep/releases)
+[Tags](/oschwengers/tadrep/tags)
+
+Releases · oschwengers/tadrep
+
+## v0.9.2
+
+07 May 07:19
+
+![@oschwengers](https://avatars.githubusercontent.com/u/10071818?s=40&v=4)
+[oschwengers](/oschwengers)
+
+[v0.9.2](/oschwengers/tadrep/tree/v0.9.2)
+
+[`c67e87f`](/oschwengers/tadrep/commit/c67e87fc0b3963c928cd9a9d7b3d5cb5bd3813bf)
+
+Compare
+
+# Choose a tag to compare
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## No results found
+
+[View all tags](/oschwengers/tadrep/tags)
+
+[v0.9.2](/oschwengers/tadrep/releases/tag/v0.9.2)
+
+[Latest](/oschwengers/tadrep/releases/latest)
+
+[Latest](/oschwengers/tadrep/releases/latest)
+
+This is the 2nd v0.9 patch release (v0.9.2) fixing an CLI error regarding max sequence clustering lengths.
+
+* Fixed clustering sequence length threshold: [06b4847](https://github.com/oschwengers/tadrep/commit/06b48476b2ff78a087bacd8fbb56a305541ea686)
+
+Assets
+2
+
+Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## v0.9.1
+
+21 Aug 13:08
+
+![@oschwengers](https://avatars.githubusercontent.com/u/10071818?s=40&v=4)
+[oschwengers](/oschwengers)
+
+[v0.9.1](/oschwengers/tadrep/tree/v0.9.1)
+
+[`7a40409`](/oschwengers/tadrep/commit/7a40409d6553bb8bcec8e65462078df1cd217461)
+
+Compare
+
+# Choose a tag to compare
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## No results found
+
+[View all tags](/oschwengers/tadrep/tags)
+
+[v0.9.1](/oschwengers/tadrep/releases/tag/v0.9.1)
+
+This is the first v0.9 patch release (v0.9.1) fixing an import error of the `database` module.
+
+Assets
+2
+
+Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+1 person reacted
+
+## v0.9
+
+14 Aug 14:53
+
+![@oschwengers](https://avatars.githubusercontent.com/u/10071818?s=40&v=4)
+[oschwengers](/oschwengers)
+
+[v0.9](/oschwengers/tadrep/tree/v0.9)
+
+[`6b91081`](/oschwengers/tadrep/commit/6b910814ea222e02f3c683374aed7858c6910c13)
+
+Compare
+
+# Choose a tag to compare
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## No results found
+
+[View all tags](/oschwengers/tadrep/tags)
+
+[v0.9](/oschwengers/tadrep/releases/tag/v0.9)
+
+This is the first release providing the new module-based UI.
+
+With this release, TaDReP is executed as a multi-step workflow - one module and subcommand for each step:
+
+* local setup
+* Database creation from public databases
+* Database creation from local plasmid sequences
+* Characterization of plasmids
+* Clustering of plasmids
+* Detection & reconstruction of plasmids within draft genomes
+* Visualization of detected & reconstructed plasmids
+
+Assets
+2
+
+Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+All reactions
+
+## v0.4.0
+
+27 Jun 13:22
+
+![@oschwengers](https://avatars.githubusercontent.com/u/10071818?s=40&v=4)
+[oschwengers](/oschwengers)
+
+[v0.4.0](/oschwengers/tadrep/tree/v0.4.0)
+
+[`67becc2`](/oschwengers/tadrep/commit/67becc2d85e6c50eb14d15e15731510360ccd560)
+
+Compare
+
+# Choose a tag to compare
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## No results found
+
+[View all tags](/oschwengers/tadrep/tags)
+
+[v0.4.0](/oschwengers/tadrep/releases/tag/v0.4.0)
+
+This is a last `alpha` release before a larger re-write of the entire workflow.
+
+Assets
+2
+
+Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+All reactions
+
+## Footer
+
+© 2026 GitHub, Inc.
+
+### Footer navigation
+
+* [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+* [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+* [Security](https://github.com/security)
+* [Status](https://www.githubstatus.com/)
+* [Community](https://github.community/)
+* [Docs](https://docs.github.com/)
+* [Contact](https://support.github.com?tags=dotcom-footer)
+* Manage cookies
+* Do not share my personal information
+
+You can’t perform that action at this time.

@@ -1,1 +1,70 @@
-dDocent a bash pipeline for ddRAD sequencing https://jpuritz.github.io/dDocent/ 8,000 downloads on Bioconda! In less than six months, dDocent has doubled 4,000 downloads to reach 8,000 downloads on Bioconda! That is amazying. Thank you for downloading (and hopefully using) the pipeline! Fri, 01 Feb 2019 00:00:00 +0000 https://jpuritz.github.io/dDocent//2019-02-01-8000/ https://jpuritz.github.io/dDocent//2019-02-01-8000/ OS X With version 2.6.0 dDocent is now compabitible with machines running newer versions of OS X. OS X compatiblity is only availble through the Bioconda package manager. Fri, 20 Jul 2018 00:00:00 +0000 https://jpuritz.github.io/dDocent//2018-07-20-OS-X/ https://jpuritz.github.io/dDocent//2018-07-20-OS-X/ Let&apos;s call this a beta Welcome to the revamped dDocent webpage and user guide. Please let me know what you think! Mon, 12 Dec 2016 00:00:00 +0000 https://jpuritz.github.io/dDocent//2016-12-12-first-post/ https://jpuritz.github.io/dDocent//2016-12-12-first-post/ More Assembly Options Version 2.1 dDocent can now assemble data from PE RADseq libraries that use random sheering Tue, 21 Jul 2015 00:00:00 +0000 https://jpuritz.github.io/dDocent//2015-07-21-RANDOM/ https://jpuritz.github.io/dDocent//2015-07-21-RANDOM/ dDocent Version 2 dDocent version 2.0 has arrived with major updates: The pipeline now employs a two-step cutoff for data to be included in assembly. Assembly accuracy has been improved by replacing the sparse seed clustering of rainbow with alignment based clustering in CD-hit dDocent can now natively handle single-end data and paired-end... Fri, 19 Jun 2015 00:00:00 +0000 https://jpuritz.github.io/dDocent//2015-06-19-Version2/ https://jpuritz.github.io/dDocent//2015-06-19-Version2/ New Version of Pipeline **Important note for all previous versions** A never version of the pipeline is now up at the repository. This version helps with OS X compatibility and provides a workaround for a newly discovered bug in FreeBayes. The reference contigs now have a single N placed on both 5’ and 3’ ends of the contig. The current... Sat, 24 May 2014 00:00:00 +0000 https://jpuritz.github.io/dDocent//2014-05-24-NewVersion/ https://jpuritz.github.io/dDocent//2014-05-24-NewVersion/ VCFtools Version The current version of VCFtools has removed some key filtering options. I recommend installing version 1.11 (LINK). Thu, 01 May 2014 00:00:00 +0000 https://jpuritz.github.io/dDocent//2014-05-01-VCFTOOLS/ https://jpuritz.github.io/dDocent//2014-05-01-VCFTOOLS/ New Version of Pipeline After months of brooding over code and results, I’m releasing a new version of the dDocent pipeline (dDocent.FB). dDocent.FB removes almost all BAM processing steps and now uses FreeBayes to call variants, instead of GATK. The change over was largely inspired by an excellent blog post by Brad Chapman. His... Wed, 19 Feb 2014 00:00:00 +0000 https://jpuritz.github.io/dDocent//2014-02-19-NewV/ https://jpuritz.github.io/dDocent//2014-02-19-NewV/ Beta Today marks the first official BETA release of dDocent. A very basic User Guide is now online and will be constantly updated. Scripts are updated on the GitHub repository page. Tue, 08 Oct 2013 00:00:00 +0000 https://jpuritz.github.io/dDocent//2013-10-08-Beta/ https://jpuritz.github.io/dDocent//2013-10-08-Beta/
+xml version="1.0" encoding="UTF-8"?
+
+dDocent
+a bash pipeline for ddRAD sequencing
+https://jpuritz.github.io/dDocent/
+
+8,000 downloads on Bioconda!
+
+In less than six months, dDocent has doubled 4,000 downloads to reach 8,000 downloads on Bioconda!
+That is amazying. Thank you for downloading (and hopefully using) the pipeline!
+Fri, 01 Feb 2019 00:00:00 +0000
+https://jpuritz.github.io/dDocent//2019-02-01-8000/
+https://jpuritz.github.io/dDocent//2019-02-01-8000/
+
+OS X
+
+With version 2.6.0 dDocent is now compabitible with machines running newer versions of OS X. OS X compatiblity is only availble through the Bioconda package manager.
+Fri, 20 Jul 2018 00:00:00 +0000
+https://jpuritz.github.io/dDocent//2018-07-20-OS-X/
+https://jpuritz.github.io/dDocent//2018-07-20-OS-X/
+
+Let's call this a beta
+
+Welcome to the revamped dDocent webpage and user guide. Please let me know what you think!
+Mon, 12 Dec 2016 00:00:00 +0000
+https://jpuritz.github.io/dDocent//2016-12-12-first-post/
+https://jpuritz.github.io/dDocent//2016-12-12-first-post/
+
+More Assembly Options
+
+Version 2.1
+dDocent can now assemble data from PE RADseq libraries that use random sheering
+Tue, 21 Jul 2015 00:00:00 +0000
+https://jpuritz.github.io/dDocent//2015-07-21-RANDOM/
+https://jpuritz.github.io/dDocent//2015-07-21-RANDOM/
+
+dDocent Version 2
+
+dDocent version 2.0 has arrived with major updates: The pipeline now employs a two-step cutoff for data to be included in assembly. Assembly accuracy has been improved by replacing the sparse seed clustering of rainbow with alignment based clustering in CD-hit dDocent can now natively handle single-end data and paired-end...
+Fri, 19 Jun 2015 00:00:00 +0000
+https://jpuritz.github.io/dDocent//2015-06-19-Version2/
+https://jpuritz.github.io/dDocent//2015-06-19-Version2/
+
+New Version of Pipeline \*\*Important note for all previous versions\*\*
+
+A never version of the pipeline is now up at the repository. This version helps with OS X compatibility and provides a workaround for a newly discovered bug in FreeBayes. The reference contigs now have a single N placed on both 5’ and 3’ ends of the contig. The current...
+Sat, 24 May 2014 00:00:00 +0000
+https://jpuritz.github.io/dDocent//2014-05-24-NewVersion/
+https://jpuritz.github.io/dDocent//2014-05-24-NewVersion/
+
+VCFtools Version
+
+The current version of VCFtools has removed some key filtering options. I recommend installing version 1.11 (LINK).
+Thu, 01 May 2014 00:00:00 +0000
+https://jpuritz.github.io/dDocent//2014-05-01-VCFTOOLS/
+https://jpuritz.github.io/dDocent//2014-05-01-VCFTOOLS/
+
+New Version of Pipeline
+
+After months of brooding over code and results, I’m releasing a new version of the dDocent pipeline (dDocent.FB). dDocent.FB removes almost all BAM processing steps and now uses FreeBayes to call variants, instead of GATK. The change over was largely inspired by an excellent blog post by Brad Chapman. His...
+Wed, 19 Feb 2014 00:00:00 +0000
+https://jpuritz.github.io/dDocent//2014-02-19-NewV/
+https://jpuritz.github.io/dDocent//2014-02-19-NewV/
+
+Beta
+
+Today marks the first official BETA release of dDocent. A very basic User Guide is now online and will be constantly updated. Scripts are updated on the GitHub repository page.
+Tue, 08 Oct 2013 00:00:00 +0000
+https://jpuritz.github.io/dDocent//2013-10-08-Beta/
+https://jpuritz.github.io/dDocent//2013-10-08-Beta/

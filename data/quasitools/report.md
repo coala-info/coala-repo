@@ -360,3 +360,6 @@ Options:
   --help                        Show this message and exit.
 ```
 
+
+## Metadata
+- **Skill**: generated

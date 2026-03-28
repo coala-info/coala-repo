@@ -88,3 +88,6 @@ Welcome to
 Please enter your Galaxy's URL:
 ```
 
+
+## Metadata
+- **Skill**: generated

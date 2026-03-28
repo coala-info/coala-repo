@@ -287,3 +287,6 @@ mrs password:
   -h [ --help ]         Display help message
 ```
 
+
+## Metadata
+- **Skill**: generated

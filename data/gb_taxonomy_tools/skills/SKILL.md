@@ -1,6 +1,6 @@
 ---
 name: gb_taxonomy_tools
-description: The gb_taxonomy_tools suite transforms GenBank IDs into structured NCBI taxonomic hierarchies and visualizations. Use when user asks to map GenBank IDs to taxonomy IDs, expand TaxIDs into full lineages, generate Newick trees, or render taxonomic trees as PostScript images.
+description: This tool maps biological sequence identifiers to the NCBI taxonomic hierarchy and generates structured classifications, summaries, and tree visualizations. Use when user asks to map GenBank IDs to TaxIDs, expand TaxIDs into full taxonomic rankings, generate Newick tree files, or visualize taxonomy in PostScript format.
 homepage: https://github.com/spond/gb_taxonomy_tools
 ---
 
@@ -8,47 +8,70 @@ homepage: https://github.com/spond/gb_taxonomy_tools
 # gb_taxonomy_tools
 
 ## Overview
+The `gb_taxonomy_tools` suite provides a high-performance pipeline for mapping biological sequence identifiers to the NCBI taxonomic hierarchy. It is designed to handle large-scale datasets, transforming raw GenBank IDs into structured 22-level taxonomic classifications, summaries, and visual tree representations.
 
-The `gb_taxonomy_tools` suite provides a specialized workflow for bioinformaticians to transform raw GenBank IDs (GIDs) into structured, hierarchical taxonomic data. It bridges the gap between sequence identifiers and the NCBI classification system, allowing for the generation of machine-readable Newick trees and publication-ready PostScript visualizations. This skill is particularly useful for summarizing the taxonomic composition of large sequence datasets.
+## Installation and Setup
+To build the tools from source, use CMake:
+```bash
+cmake ./
+make install
+```
+By default, binaries are installed to `/usr/local/bin`.
 
 ## Core Workflow and CLI Usage
 
-The tools are designed to be used sequentially, often involving large NCBI reference files.
+### 1. Convert GID to TaxID
+Use `gid-taxid` to map GenBank IDs to their corresponding NCBI Taxonomy IDs. This tool requires the NCBI mapping file (e.g., `gi_taxid_nucl.dmp`).
 
-### 1. Map GIDs to Taxonomy IDs (gid-taxid)
-Converts a list of GenBank IDs and counts into GID-TaxID-Count triplets.
-- **Requirement**: Access to the NCBI mapping file `gi_taxid_nucl.dmp`.
-- **Command**: `gid-taxid <input_gid_file> <path_to_gi_taxid_nucl.dmp>`
-- **Input Format**: Space-separated lines (e.g., `160338813 160`).
+**Command:**
+`gid-taxid <input_gid_file> <mapping_file>`
 
-### 2. Expand Taxonomy (taxonomy-reader)
-Converts TaxID triplets into a fully expanded 22-level NCBI taxonomy.
-- **Requirement**: `names.dmp` and `nodes.dmp` from the NCBI `taxdump`.
-- **Command**: `cat <input.taxid> | taxonomy-reader <names.dmp> <nodes.dmp> > <output.taxonomy>`
-- **Note**: This tool typically reads from standard input.
+**Example:**
+`gid-taxid tests/data/test.gid path/to/gi_taxid_nucl.dmp > output.taxid`
 
-### 3. Generate Trees and Summaries (taxonomy2tree)
-Transforms expanded taxonomy files into Newick format and text summaries.
-- **Command**: `taxonomy2tree <input.taxonomy> <mode> <output.tree> <output_summary.txt> <count_mode>`
-- **Parameters**:
-    - `mode`: Usually `0`.
-    - `count_mode`: `0` to ignore counts, `1` to include them.
+### 2. Expand TaxIDs to Full Rankings
+Use `taxonomy-reader` to transform TaxID triplets into a 22-level expanded taxonomy. This requires `names.dmp` and `nodes.dmp` from the NCBI taxdump.
 
-### 4. Visualize Trees (tree2ps)
-Renders a Newick tree as a PostScript image.
-- **Command**: `tree2ps <tree_file> <output.ps> <max_depth> <font_size> <max_leaves> <color_mode>`
-- **Parameters**:
-    - `max_depth`: Maximum steps from root (use `0` for all).
-    - `max_leaves`: Display limit for tree density.
-    - `color_mode`: `0` counts leaves; `1` counts duplicate TaxIDs for coloring.
+**Command (Piped):**
+`cat output.taxid | taxonomy-reader <names.dmp> <nodes.dmp> > output.taxonomy`
+
+### 3. Generate Trees and Summaries
+Use `taxonomy2tree` to convert the expanded taxonomy into a Newick tree file and a tabular summary.
+
+**Command:**
+`taxonomy2tree <input.taxonomy> <mode> <output.tree> <output_summary.txt> <root_id>`
+
+*   **mode**: Usually set to `0`.
+*   **root_id**: The TaxID to use as the root (e.g., `0` for the absolute root).
+
+### 4. Visualize Taxonomy
+Use `tree2ps` to render the Newick tree into a PostScript image.
+
+**Command:**
+`tree2ps <tree_file> <output.ps> <max_depth> <font_size> <max_leaves> <color_mode>`
+
+**Parameters:**
+*   **max_depth**: Maximum steps from root (use `0` for all levels).
+*   **font_size**: Size in points.
+*   **max_leaves**: Display limit for tree width.
+*   **color_mode**: Set to `1` to color by duplicate TaxID counts; `0` to count unique leaves only.
 
 ## Expert Tips and Best Practices
+*   **Data Requirements**: Ensure you have downloaded the latest `taxdump.tar.gz` and `gi_taxid_nucl.dmp.gz` from the NCBI FTP server (`ftp://ftp.ncbi.nih.gov/pub/taxonomy/`), as these tools rely on local access to these large mapping files.
+*   **Stream Processing**: `taxonomy-reader` is designed to read from `stdin`. Always pipe the output of `gid-taxid` or `cat` your taxid files directly into it to avoid creating unnecessary intermediate files.
+*   **Tree Pruning**: When using `tree2ps` on large datasets, start with a `max_depth` of `5` or `8` to avoid creating unreadable, overly dense PostScript files.
+*   **Memory Efficiency**: The tools use buffered reads to accelerate I/O. When processing millions of IDs, ensure the host system has sufficient RAM to handle the loaded taxonomy nodes.
 
-- **Data Preparation**: Ensure your input GID files are clean and match the format expected by `gid-taxid`. The mapping files (`gi_taxid_nucl.dmp`) are extremely large; ensure sufficient disk space and memory are available before execution.
-- **Piping Strategy**: For efficient processing, pipe the output of `gid-taxid` directly into `taxonomy-reader` to avoid creating large intermediate files.
-- **Visualization Tuning**: When using `tree2ps`, start with a `max_depth` of `5` or `8` to avoid overcrowded PostScript files if your dataset is taxonomically diverse.
-- **Reference Updates**: NCBI taxonomy is updated frequently. Always use the latest `taxdump.tar.gz` and mapping files to ensure accurate classification.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| gid-taxid | Maps GenBank IDs to TaxIDs using a provided mapping file. |
+| taxonomy-reader | Reads GenBank taxonomic information from provided map and hierarchy files. |
+| taxonomy2tree | Converts a taxonomy dump file into a tree structure and a summary. |
+| tree2ps | Converts a Newick tree file to a PostScript file. |
 
 ## Reference documentation
 - [GenBank taxonomy processing tools](./references/github_com_spond_gb_taxonomy_tools.md)
-- [gb_taxonomy_tools - bioconda](./references/anaconda_org_channels_bioconda_packages_gb_taxonomy_tools_overview.md)

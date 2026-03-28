@@ -127,3 +127,6 @@ required
   -h, --help              Show help message
 ```
 
+
+## Metadata
+- **Skill**: generated

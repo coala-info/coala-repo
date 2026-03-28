@@ -131,3 +131,6 @@ Options:
 See `man ./minimap2.1' for detailed description of these and other advanced command-line options.
 ```
 
+
+## Metadata
+- **Skill**: generated

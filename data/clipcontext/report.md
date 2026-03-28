@@ -296,3 +296,6 @@ required arguments:
                    --in folder context sequences (e.g. --motif '[AC]UGCUAA')
 ```
 
+
+## Metadata
+- **Skill**: generated

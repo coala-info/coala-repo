@@ -1802,3 +1802,6 @@ options:
                                             aviary configure --conda-prefix ~/.conda --gtdb-path ~/gtdbtk/release207/ --temp-dir /path/to/new/temp
 ```
 
+
+## Metadata
+- **Skill**: generated

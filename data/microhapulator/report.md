@@ -211,3 +211,6 @@ usage: mhpl8r [-h] [-v] subcmd ...
 mhpl8r: error: argument subcmd: invalid choice: 'contribution' (choose from 'contain', 'contrib', 'convert', 'diff', 'dist', 'filter', 'getrefr', 'hetbalance', 'locbalance', 'mappingqc', 'mix', 'repetitive', 'pipe', 'prob', 'seq', 'sim', 'type', 'unite')
 ```
 
+
+## Metadata
+- **Skill**: generated

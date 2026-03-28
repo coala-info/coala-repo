@@ -1,6 +1,6 @@
 ---
 name: chromosomer
-description: Chromosomer is a bioinformatics tool used to create chromosome-level genome assemblies by ordering and orienting genomic fragments based on alignments to a reference genome. Use when user asks to assemble contigs into chromosomes, map genomic fragments to a reference, or transfer annotations to a new assembly coordinate system.
+description: Chromosomer organizes fragmented genomic sequences into chromosome-level assemblies using a related reference genome as a guide. Use when user asks to organize scaffolds into chromosomes, map fragments to a reference genome, or transfer annotations to a new assembly.
 homepage: https://github.com/gtamazian/chromosomer
 ---
 
@@ -8,55 +8,68 @@ homepage: https://github.com/gtamazian/chromosomer
 # chromosomer
 
 ## Overview
-Chromosomer is a bioinformatics utility designed to produce draft chromosome-level assemblies by leveraging a closely related reference genome. It provides a structured workflow to order and orient genomic fragments (contigs or scaffolds) based on their alignments to a reference. This tool is particularly effective for improving the contiguity of draft genomes when a high-quality reference of a related species is available.
+
+Chromosomer is a bioinformatics utility designed to organize fragmented genomic sequences into chromosome-level assemblies by using a related reference genome as a guide. It facilitates the transition from unordered scaffolds to structured chromosomes by determining fragment orientation and placement based on alignment data. This tool is particularly useful in the final stages of a genome project where a high-quality reference of a related species is available.
 
 ## Core Workflow
 
-A standard assembly with `chromosomer` follows a three-step process:
+The standard assembly process follows a four-step procedure:
 
-1.  **Prepare Fragment Lengths**: Before mapping, you must calculate the lengths of your input sequences.
-    ```bash
-    chromosomer fastalength fragments.fasta > fragment_lengths.txt
-    ```
+1.  **Calculate Fragment Lengths**: Generate a length file for your input fragments.
+    `chromosomer fastalength fragments.fa fragments.length`
 
-2.  **Generate Fragment Map**: Create a map file that defines the order and orientation of fragments based on their alignments (e.g., BLAST tabular output) to the reference.
-    ```bash
-    chromosomer fragmentmap alignment_file gap_size fragment_lengths.txt output_map
-    ```
-    *   `alignment_file`: Typically a tabular alignment file (like BLAST `-outfmt 6`).
-    *   `gap_size`: The number of 'N' characters to insert between fragments.
+2.  **Align Fragments**: Align your fragments to the reference genome using BLAST+ (required format: tabular outfmt 6).
+    `blastn -query fragments.fa -db reference_db -outfmt 6 -out alignments.txt`
 
-3.  **Assemble Sequences**: Construct the final FASTA file using the fragment map and the original fragment sequences.
-    ```bash
-    chromosomer assemble output_map fragments.fasta assembled_chromosomes.fasta
-    ```
+3.  **Create Fragment Map**: Map the fragments to the reference chromosomes.
+    `chromosomer fragmentmap alignments.txt <gap_size> fragments.length fragment_map.txt`
 
-## Utility Commands
+4.  **Assemble Sequences**: Produce the final FASTA file of reconstructed chromosomes.
+    `chromosomer assemble fragment_map.txt fragments.fa assembled_chromosomes.fa`
 
-### Annotation Transfer
-If you have existing annotations (GFF/GTF) for your fragments, you can migrate them to the new coordinate system of the assembled chromosomes:
-```bash
-chromosomer transfer map original_annotations.gff output_annotations.gff
-```
+## Command Reference
 
-### Map Analysis and Conversion
-To validate or visualize the assembly plan before generating the FASTA:
-*   **Summary Statistics**: Get a report on how many fragments were localized and the total length of the assembly.
-    ```bash
-    chromosomer fragmentmapstat output_map
-    ```
-*   **BED Conversion**: Convert the fragment map to BED format for viewing in genome browsers (like IGV or UCSC) to verify fragment placement against the reference.
-    ```bash
-    chromosomer fragmentmapbed output_map > output_map.bed
-    ```
+### fragmentmap
+Produces a map of fragments based on alignments.
+- **Arguments**: `alignment_file`, `gap_size`, `fragment_lengths`, `output_map`
+- **Tip**: Set `gap_size` to the maximum insert size of your mate-pair library to represent the minimum physical distance likely separating scaffolds.
+
+### assemble
+Obtains FASTA sequences of the reconstructed chromosomes.
+- **Arguments**: `map_file`, `fragment_fasta`, `output_fasta`
+- **Note**: The output headers will match the chromosome names in the reference genome.
+
+### transfer
+Moves annotated regions (GFF/BED) from original fragments to the new assembled chromosomes.
+- **Arguments**: `map_file`, `annotation_file`, `output_file`
+- **Format Support**: Supports common annotation formats; use the `--format` flag to specify if not automatically detected.
+
+### fragmentmapstat
+Provides a summary of the mapping results, including the number of mapped, unlocalized, and unplaced fragments.
+- **Usage**: `chromosomer fragmentmapstat fragment_map.txt`
 
 ## Expert Tips and Best Practices
 
-*   **Alignment Quality**: The quality of the `fragmentmap` depends entirely on the input alignments. Filter your BLAST/alignment files for high-confidence hits (e.g., minimum identity or alignment length) before running `fragmentmap` to avoid spurious placements.
-*   **Gap Sizes**: Use a standard gap size (e.g., 100 or 1000) that is consistent with your downstream annotation pipelines. Some tools have specific requirements for minimum gap lengths to recognize scaffold boundaries.
-*   **Soft-Masking**: If your input fragments contain soft-masked repeats, `chromosomer` can preserve this masking in the final assembly.
-*   **Unlocalized Fragments**: Check the `fragmentmapstat` output to identify fragments that failed to map. These "unplaced" fragments are often saved separately or excluded; ensure you account for them if you need a complete genome representation.
+- **Repeat Masking**: Always mask interspersed and low-complexity repeats in both the reference genome and the fragments before running BLAST. Unmasked repeats lead to non-specific alignments and incorrect fragment placement.
+- **Alignment Filtering**: When running `blastn`, use parameters like `-perc_identity` or `-evalue` to ensure only high-quality alignments are used for the mapping step.
+- **Unplaced Fragments**: Use `fragmentmapstat` to check the total length of unplaced fragments. If a large portion of your assembly is unplaced, consider lowering the alignment stringency or checking for significant evolutionary divergence between your sample and the reference.
+- **Soft-masking**: If your input fragments are soft-masked, `chromosomer assemble` can preserve this masking in the output chromosomes.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| agp2map | Convert an AGP file to the fragment map format. |
+| chromosomer assemble | Get the FASTA file of assembled chromosomes. |
+| chromosomer fragmentmap | Construct a fragment map from fragment alignments to reference chromosomes. |
+| chromosomer fragmentmapbed | Convert a fragment map to the BED format. |
+| chromosomer fragmentmapstat | Show statistics on a fragment map. |
+| chromosomer simulator | Simulate fragments and test assembly for testing purposes. |
+| chromosomer_fastalength | Get lengths of sequences in the specified FASTA file (required to build a fragment map). |
+| chromosomer_transfer | Transfer annotated genomic features from fragments to their assembly. |
 
 ## Reference documentation
-- [GitHub Repository Overview](./references/github_com_gtamazian_chromosomer.md)
-- [Anaconda/Bioconda Package Details](./references/anaconda_org_channels_bioconda_packages_chromosomer_overview.md)
+- [Chromosomer Main Repository](./references/github_com_gtamazian_chromosomer.md)
+- [Brief guide to Chromosomer assembly process](./references/github_com_gtamazian_chromosomer_wiki_Brief-guide-to-Chromosomer-assembly-process.md)

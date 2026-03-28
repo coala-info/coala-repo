@@ -122,3 +122,6 @@ Permute the order of sequences in a FASTA file.
 sshash permute --help
 ```
 
+
+## Metadata
+- **Skill**: generated

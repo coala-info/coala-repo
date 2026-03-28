@@ -125,3 +125,6 @@ dist is also now a synonym for cmp, but this may be removed.
 [src/main.cpp:int main(int, char**)70] Invalid subcommand Produces provided.
 ```
 
+
+## Metadata
+- **Skill**: generated

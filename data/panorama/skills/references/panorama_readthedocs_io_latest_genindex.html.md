@@ -1,0 +1,75 @@
+[Skip to main content](#main-content)
+
+Back to top
+
+`Ctrl`+`K`
+
+PANORAMA just released!
+
+[![PANORAMA documentation - Home](https://labgem.genoscope.cns.fr/wp-content/uploads/2021/06/GENOSCOPE-LABGeM.jpg)
+![PANORAMA documentation - Home](https://labgem.genoscope.cns.fr/wp-content/uploads/2021/06/GENOSCOPE-LABGeM.jpg)
+
+PANORAMA](index.html)
+
+* [User Documentation](user/user_guide.html)
+* [Modeler Documentation](modeler/modeler_guide.html)
+* [Developer documentation](developer/developer_guide.html)
+* [API Reference](api/api_ref.html)
+* More
+  + [PANORAMA](https://github.com/labgem/PANORAMA)
+  + [PPanGGOLiN](https://github.com/labgem/PPanGGOLiN)
+  + [LABGeM](https://labgem.genoscope.cns.fr/)
+
+Search
+`Ctrl`+`K`
+
+* [GitHub](https://github.com/labgem/PANORAMA "GitHub")
+
+Search
+`Ctrl`+`K`
+
+* [User Documentation](user/user_guide.html)
+* [Modeler Documentation](modeler/modeler_guide.html)
+* [Developer documentation](developer/developer_guide.html)
+* [API Reference](api/api_ref.html)
+* [PANORAMA](https://github.com/labgem/PANORAMA)
+* [PPanGGOLiN](https://github.com/labgem/PPanGGOLiN)
+* [LABGeM](https://labgem.genoscope.cns.fr/)
+
+* [GitHub](https://github.com/labgem/PANORAMA "GitHub")
+
+Indices
+
+* General Index
+* [Python Module Index](py-modindex.html)
+
+# Index
+
+[**\_**](#_)
+| [**A**](#A)
+| [**B**](#B)
+| [**C**](#C)
+| [**D**](#D)
+| [**E**](#E)
+| [**F**](#F)
+| [**G**](#G)
+| [**H**](#H)
+| [**I**](#I)
+| [**K**](#K)
+| [**L**](#L)
+| [**M**](#M)
+| [**N**](#N)
+| [**O**](#O)
+| [**P**](#P)
+| [**R**](#R)
+| [**S**](#S)
+| [**T**](#T)
+| [**U**](#U)
+| [**V**](#V)
+| [**W**](#W)
+
+## \_
+
+|  |  |
+| --- | --- |
+| * [\_\_delitem\_\_() (panorama.systems.system.System method)](api/panorama.systems.html#panorama.systems.system.System.__delitem__) * [\_\_eq\_\_() (panorama.geneFamily.GeneFamily method)](api/panorama.html#panorama.geneFamily.GeneFamily.__eq__)   + [(panorama.systems.system.System method)](api/panorama.systems.html#panorama.systems.system.System.__eq__)   + [(panorama.systems.system.SystemUnit method)](api/panorama.systems.html#panorama.systems.system.SystemUnit.__eq__) * [\_\_getitem\_\_() (panorama.geneFamily.Akin method)](api/panorama.html#panorama.geneFamily.Akin.__getitem__)   + [(panorama.systems.system.ClusterSystems method)](api/panorama.systems.html#panorama.systems.system.ClusterSystems.__getitem__)   + [(panorama.systems.system.System method)](api/panorama.systems.html#panorama.systems.system.System.__getitem__)   + [(panorama.systems.system.SystemUnit method)](api/panorama.systems.html#panorama.systems.system.SystemUnit.__getitem__) * [\_\_hash\_\_() (panorama.geneFamily.GeneFamily method)](api/panorama.html#panorama.geneFamily.GeneFamily.__hash__)   + [(panorama.systems.system.System method)](api/panorama.systems.html#panorama.systems.system.System.__hash__)   + [(panorama.systems.system.SystemUnit method)](api/panorama.systems.html#panorama.systems.system.SystemUnit.__hash__) * [\_\_init\_\_() (panorama.geneFamily.Akin method)](api/panorama.html#panorama.geneFamily.Akin.__init__)   + [(panorama.geneFamily.GeneFamily method)](api/panorama.html#panorama.geneFamily.GeneFamily.__init__)   + [(panorama.info.info.HTMLExporter method)](api/panorama.info.html#panorama.info.info.HTMLExporter.__init__)   + [(panorama.info.info.PangenomeInfoExtractor method)](api/panorama.info.html#panorama.info.info.PangenomeInfoExtractor.__init__)   + [(panorama.pangenomes.Pangenome method)](api/panorama.html#panorama.pangenomes.Pangenome.__init__)   + [(panorama.pangenomes.Pangenomes method)](api/panorama.html#panorama.pangenomes.Pangenomes.__init__)   + [(panorama.region.ConservedSpots method)](api/panorama.html#panorama.region.ConservedSpots.__init__)   + [(panorama.region.GeneContext method)](api/panorama.html#panorama.region.GeneContext.__init__)   + [(panorama.region.Module method)](api/panorama.html#panorama.region.Module.__init__)   + [(panorama.region.Region method)](api/panorama.html#panorama.region.Region.__init__)   + [(panorama.region.Spot method)](api/panorama.html#panorama.region.Spot.__init__)   + [(panorama.systems.models.\_BasicFeatures method)](api/panorama.systems.html#panorama.systems.models._BasicFeatures.__init__)   + [(panorama.systems.models.\_FuFamFeatures method)](api/panorama.systems.html#panorama.systems.models._FuFamFeatures.__init__)   + [(panorama.systems.models.\_ModFuFeatures method)](api/panorama.systems.html#panorama.systems.models._ModFuFeatures.__init__)   + [(panorama.systems.models.Family method)](api/panorama.systems.html#panorama.systems.models.Family.__init__)   + [(panorama.systems.models.FuncUnit method)](api/panorama.systems.html#panorama.systems.models.FuncUnit.__init__)   + [(panorama.systems.models.Model method)](api/panorama.systems.html#panorama.systems.models.Model.__init__)   + [(panorama.systems.models.Models method)](api/panorama.systems.html#panorama.systems.models.Models.__init__)   + [(panorama.systems.system.ClusterSystems method)](api/panorama.systems.html#panorama.systems.system.ClusterSystems.__init__)   + [(panorama.systems.system.System method)](api/panorama.systems.html#panorama.systems.system.System.__init__)   + [(panorama.systems.system.SystemUnit method)](api/panorama.systems.html#panorama.systems.system.SystemUnit.__init__)   + [(panorama.systems.systems\_association.AssociationVisualizationBuilder method)](api/panorama.systems.html#panorama.systems.systems_association.AssociationVisualizationBuilder.__init__)   + [(panorama.systems.systems\_partitions.SystemsPartitionVisualizer method)](api/panorama.systems.html#panorama.systems.systems_partitions.SystemsPartitionVisualizer.__init__)   + [(panorama.systems.utils.VisualizationBuilder method)](api/panorama.systems.html#panorama.systems.utils.VisualizationBuilder.__init__) * [\_\_iter\_\_() (panorama.pangenomes.Pangenomes method)](api/panorama.html#panorama.pangenomes.Pangenomes.__iter__)   + [(panorama.systems.models.Models method)](api/panorama.systems.html#panorama.systems.models.Models.__iter__) * [\_\_len\_\_() (panorama.pangenomes.Pangenomes method)](api/panorama.html#panorama.pangenomes.Pangenomes.__len__)   + [(panorama.systems.system.System method)](api/panorama.systems.html#panorama.systems.system.System.__len__)   + [(panorama.systems.system.SystemUnit method)](api/panorama.systems.html#panorama.systems.system.SystemUnit.__len__) * [\_\_ne\_\_() (panorama.geneFamily.GeneFamily method)](api/panorama.html#panorama.geneFamily.GeneFamily.__ne__) * [\_\_repr\_\_() (panorama.geneFamily.GeneFamily method)](api/panorama.html#panorama.geneFamily.GeneFamily.__repr__)   + [(panorama.systems.models.\_BasicFeatures method)](api/panorama.systems.html#panorama.systems.models._BasicFeatures.__repr__)   + [(panorama.systems.system.System method)](api/panorama.systems.html#panorama.systems.system.System.__repr__)   + [(panorama.systems.system.SystemUnit method)](api/panorama.systems.html#panorama.systems.system.SystemUnit.__repr__) * [\_\_setitem\_\_() (panorama.geneFamily.Akin method)](api/panorama.html#panorama.geneFamily.Akin.__setitem__)   + [(panorama.systems.system.ClusterSystems method)](api/panorama.systems.html#panorama.systems.system.ClusterSystems.__setitem__)   + [(panorama.systems.system.System method)](api/panorama.systems.html#panorama.systems.system.System.__setitem__)   + [(panorama.systems.system.SystemUnit method)](api/panorama.systems.html#panorama.systems.system.SystemUnit.__setitem__) * [\_\_str\_\_() (panorama.systems.models.\_BasicFeatures method)](api/panorama.systems.html#panorama.systems.models._BasicFeatures.__str__) * [\_add\_families\_to\_functional\_unit() (in module panorama.utility.translate.padloc\_translator)](api/panorama.utility.translate.html#panorama.utility.translate.padloc_translator._add_families_to_functional_unit) * [\_akin (panorama.geneFamily.GeneFamily attribute)](api/panorama.html#panorama.geneFamily.GeneFamily._akin) * [\_asso\_modules() (panorama.systems.system.SystemUnit method)](api/panorama.systems.html#panorama.systems.system.SystemUnit._asso_modules) * [\_BasicFeatures (class in panorama.systems.models)](api/panorama.systems.html#panorama.systems.models._BasicFeatures) | * [\_calculate\_max\_lengths\_for\_system() (in module panorama.format.write\_binaries)](api/panorama.format.html#panorama.format.write_binaries._calculate_max_lengths_for_system) * [\_check() (panorama.systems.models.\_ModFuFeatures method)](api/panorama.systems.html#panorama.systems.models._ModFuFeatures._check) * [\_child\_names() (panorama.systems.models.\_ModFuFeatures method)](api/panorama.systems.html#panorama.systems.models._ModFuFeatures._child_names) * [\_configure\_bar\_plot\_style() (panorama.systems.utils.VisualizationBuilder static method)](api/panorama.systems.html#panorama.systems.utils.VisualizationBuilder._configure_bar_plot_style) * [\_configure\_minimal\_plot() (panorama.systems.utils.VisualizationBuilder static method)](api/panorama.systems.html#panorama.systems.utils.VisualizationBuilder._configure_minimal_plot) * [\_configure\_plot\_style() (panorama.systems.systems\_association.AssociationVisualizationBuilder method)](api/panorama.systems.html#panorama.systems.systems_association.AssociationVisualizationBuilder._configure_plot_style)   + [(panorama.systems.utils.VisualizationBuilder method)](api/panorama.systems.html#panorama.systems.utils.VisualizationBuilder._configure_plot_style) * [\_create\_boolean\_filters() (panorama.info.info.HTMLExporter static method)](api/panorama.info.html#panorama.info.info.HTMLExporter._create_boolean_filters) * [\_create\_column\_visibility\_control() (panorama.info.info.HTMLExporter method)](api/panorama.info.html#panorama.info.info.HTMLExporter._create_column_visibility_control) * [\_create\_download\_button() (panorama.info.info.HTMLExporter method)](api/panorama.info.html#panorama.info.info.HTMLExporter._create_download_button) * [\_create\_filter\_button() (panorama.info.info.HTMLExporter method)](api/panorama.info.html#panorama.info.info.HTMLExporter._create_filter_button) * [\_create\_gene\_family() (panorama.pangenomes.Pangenome method)](api/panorama.html#panorama.pangenomes.Pangenome._create_gene_family) * [\_create\_main\_figure() (panorama.systems.utils.VisualizationBuilder method)](api/panorama.systems.html#panorama.systems.utils.VisualizationBuilder._create_main_figure) * [\_create\_metric\_plot() (panorama.systems.systems\_association.AssociationVisualizationBuilder method)](api/panorama.systems.html#panorama.systems.systems_association.AssociationVisualizationBuilder._create_metric_plot) * [\_create\_range\_sliders() (panorama.info.info.HTMLExporter method)](api/panorama.info.html#panorama.info.info.HTMLExporter._create_range_sliders) * [\_custom\_agg() (in module panorama.systems.systems\_projection)](api/panorama.systems.html#panorama.systems.systems_projection._custom_agg) * [\_duplicate() (panorama.systems.models.\_ModFuFeatures method)](api/panorama.systems.html#panorama.systems.models._ModFuFeatures._duplicate) * [\_execute\_alignment() (in module panorama.alignment.align)](api/panorama.alignment.html#panorama.alignment.align._execute_alignment) * [\_execute\_cluster() (in module panorama.alignment.cluster)](api/panorama.alignment.html#panorama.alignment.cluster._execute_cluster) * [\_execute\_clustering\_command() (in module panorama.alignment.cluster)](api/panorama.alignment.html#panorama.alignment.cluster._execute_clustering_command) * [\_execute\_linclust() (in module panorama.alignment.cluster)](api/panorama.alignment.html#panorama.alignment.cluster._execute_linclust) * [\_extract\_content() (panorama.info.info.PangenomeInfoExtractor static method)](api/panorama.info.html#panorama.info.info.PangenomeInfoExtractor._extract_content) * [\_extract\_metadata() (panorama.info.info.PangenomeInfoExtractor static method)](api/panorama.info.html#panorama.info.info.PangenomeInfoExtractor._extract_metadata) * [\_extract\_parameters() (panorama.info.info.PangenomeInfoExtractor static method)](api/panorama.info.html#panorama.info.info.PangenomeInfoExtractor._extract_parameters) * [\_extract\_status() (panorama.info.info.PangenomeInfoExtractor static method)](api/panorama.info.html#panorama.info.info.PangenomeInfoExtractor._extract_status) * [\_families (panorama.geneFamily.Akin attribute)](api/panorama.html#panorama.geneFamily.Akin._families) * [\_FuFamFeatures (class in panorama.systems.models)](api/panorama.systems.html#panorama.systems.models._FuFamFeatures) * [\_get\_element\_frequency() (in module panorama.systems.systems\_association)](api/panorama.systems.html#panorama.systems.systems_association._get_element_frequency) * [\_get\_model\_families() (panorama.systems.system.SystemUnit method)](api/panorama.systems.html#panorama.systems.system.SystemUnit._get_model_families) * [\_get\_region\_frequency() (in module panorama.systems.systems\_association)](api/panorama.systems.html#panorama.systems.systems_association._get_region_frequency) * [\_getattr\_from\_ppanggolin() (panorama.geneFamily.GeneFamily method)](api/panorama.html#panorama.geneFamily.GeneFamily._getattr_from_ppanggolin) * [\_hmm (panorama.geneFamily.GeneFamily attribute)](api/panorama.html#panorama.geneFamily.GeneFamily._hmm) * [\_layout\_content\_components() (panorama.info.info.HTMLExporter static method)](api/panorama.info.html#panorama.info.info.HTMLExporter._layout_content_components) * [\_load\_js\_file() (panorama.info.info.HTMLExporter method)](api/panorama.info.html#panorama.info.info.HTMLExporter._load_js_file) * [\_make\_spot\_getter() (panorama.systems.system.SystemUnit method)](api/panorama.systems.html#panorama.systems.system.SystemUnit._make_spot_getter) * [\_mk\_child\_getter() (panorama.systems.models.\_ModFuFeatures method)](api/panorama.systems.html#panorama.systems.models._ModFuFeatures._mk_child_getter) * [\_mk\_fam2unit() (panorama.systems.system.System method)](api/panorama.systems.html#panorama.systems.system.System._mk_fam2unit) * [\_ModFuFeatures (class in panorama.systems.models)](api/panorama.systems.html#panorama.systems.models._ModFuFeatures) * [\_prepare\_mmseqs2\_options() (in module panorama.alignment.cluster)](api/panorama.alignment.html#panorama.alignment.cluster._prepare_mmseqs2_options) * [\_rename\_content\_columns() (panorama.info.info.HTMLExporter static method)](api/panorama.info.html#panorama.info.info.HTMLExporter._rename_content_columns) * [\_reorder\_content\_columns() (panorama.info.info.HTMLExporter static method)](api/panorama.info.html#panorama.info.info.HTMLExporter._reorder_content_columns) * [\_save\_figure() (panorama.systems.utils.VisualizationBuilder method)](api/panorama.systems.html#panorama.systems.utils.VisualizationBuilder._save_figure) * [\_save\_html() (panorama.info.info.HTMLExporter method)](api/panorama.info.html#panorama.info.info.HTMLExporter._save_html) * [\_setup\_slider\_callbacks() (panorama.info.info.HTMLExporter method)](api/panorama.info.html#panorama.info.info.HTMLExporter._setup_slider_callbacks) * [\_sy

@@ -51,3 +51,6 @@ Options:
   -m <int>       Minimum kmer count regarded as novo kmers [3]
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -1,6 +1,6 @@
 ---
 name: traitar
-description: Traitar predicts microbial metabolic and physiological traits from genomic content. Use when user asks to predict microbial traits, phenotype microorganisms from genomic data, annotate protein families, or inspect trait models.
+description: Traitar predicts microbial phenotypes and metabolic traits from genomic sequences using machine learning models and protein family annotations. Use when user asks to predict phenotypes from nucleotide or protein sequences, identify protein families within a genome, or inspect the features contributing to specific trait predictions.
 homepage: http://github.com/aweimann/traitar
 ---
 
@@ -8,82 +8,81 @@ homepage: http://github.com/aweimann/traitar
 # traitar
 
 ## Overview
+Traitar (the microbial trait analyzer) is a computational framework designed to bridge the gap between genomic data and microbial ecology. It automates the process of phenotyping microbes by identifying protein families (Pfams) within a genome and applying pre-trained machine learning models to predict the presence or absence of specific biological traits. It is particularly useful for researchers working with newly sequenced isolates or metagenome-assembled genomes (MAGs) who need to understand the metabolic capabilities and environmental preferences of their samples.
 
-Traitar (the microbial trait analyzer) is a specialized tool for predicting the metabolic and physiological traits of microorganisms based on their genomic content. It automates a complex pipeline—including gene prediction via Prodigal, protein family annotation via HMMer/Pfam, and phenotype classification using two distinct models (phyletic pattern and phylogeny-aware). Use this skill to transform raw sequence data into structured phenotypic profiles, allowing for the characterization of microbial samples without the need for traditional laboratory assays.
+## Core Workflows
 
-## Installation
-
-Install Traitar via Bioconda:
-
-```bash
-conda install bioconda::traitar
-```
-
-## Core CLI Workflows
-
-### Standard Phenotyping (From Nucleotides)
-Use this command when starting with raw nucleotide FASTA files. Traitar will predict open reading frames (ORFs) before annotating.
+### Phenotype Prediction from Nucleotides
+Use this command for raw genomic sequences (FASTA). It runs the full pipeline: ORF prediction (Prodigal), Pfam annotation (HMMER), and phenotype classification.
 
 ```bash
-traitar phenotype <input_directory> <sample_file> from_nucleotides <output_directory>
+traitar phenotype <in_dir> <sample_file> from_nucleotides <out_dir> -c <threads>
 ```
 
-### Phenotyping from Pre-predicted Genes
-Use this command if you have already performed gene prediction and want to start directly with Pfam annotation.
+### Phenotype Prediction from Genes
+Use this if you have already performed gene prediction and have protein sequences available.
 
 ```bash
-traitar phenotype <input_directory> <sample_file> from_genes <output_directory>
+traitar phenotype <in_dir> <sample_file> from_genes <out_dir> -c <threads>
 ```
 
-### Parallel Execution
-Traitar supports parallel processing to speed up HMMer searches. This requires GNU Parallel to be installed.
+### Model Inspection
+To understand which protein families contribute to a specific trait prediction, use the `show` command.
 
 ```bash
-# Use 4 CPU cores
-traitar phenotype <in_dir> <sample_file> from_nucleotides <out_dir> -c 4
+traitar show '<Trait Name>' --predictor <phypat|phypat+PGL>
 ```
-
-### Inspecting Trait Models
-To understand which Pfam families contribute to a specific trait prediction:
-
-```bash
-traitar show 'Glucose fermenter'
-```
-*Note: Use `--predictor` to switch between `phypat` and `phypat+PGL` classifiers.*
+*Example:* `traitar show 'Glucose fermenter'`
 
 ## Input Requirements
 
 ### Sample File Format
-The `<sample_file>` must be a tab-separated file with a mandatory header.
+The `<sample_file>` must be a tab-separated file with a mandatory header row.
+```text
+sample_file_name	sample_name	category
+genome1.fasta	Staph_aureus	Pathogen
+genome2.fasta	B_subtilis	Soil
+```
 
-| sample_file_name | sample_name | category |
-| :--- | :--- | :--- |
-| genome1.fasta | E_coli_K12 | Enterobacteriaceae |
-| genome2.fasta | B_subtilis | Bacillaceae |
+### Pfam Models
+Traitar requires Pfam 27.0 HMM models. If they are not present, initialize them:
+```bash
+# Download and extract automatically
+traitar pfam <path_to_download_folder>
 
-*   **sample_file_name**: The filename located in the `<input_directory>`.
-*   **sample_name**: The label used in output tables and plots.
-*   **category**: (Optional) Used for grouping and color-coding in generated heatmaps.
+# Or point to a local manual download
+traitar pfam --local <path_to_pfam_folder>
+```
 
-## Interpreting Results
+## Best Practices and Tips
 
-Traitar produces several key outputs in the `<output_directory>`:
+- **Parallelization**: Always use the `-c` flag (e.g., `-c 8`) to enable parallel processing via GNU Parallel, as Pfam annotation is computationally expensive.
+- **Resuming Jobs**: If a run is interrupted, Traitar can resume from the last successful step if pointed to the same `<out_dir>` in interactive mode.
+- **Feature Tracks**: If using `from_nucleotides`, Traitar generates GFF files in the output directory. These can be loaded into a genome browser (like IGV or JBrowse) to visualize exactly where trait-relevant genes are located on the contigs.
+- **Classifier Selection**: 
+    - `phypat`: Pure phyletic pattern classifier.
+    - `phypat+PGL`: Phylogeny-aware classifier (often more accurate as it accounts for evolutionary relationships).
+- **Output Interpretation**:
+    - `0`: Negative prediction.
+    - `1`: Predicted by `phypat` only.
+    - `2`: Predicted by `phypat+PGL` only.
+    - `3`: Supported by both algorithms (highest confidence).
 
-1.  **Heatmaps**: `heatmap_comb.png` provides a visual summary of all predicted traits across samples.
-2.  **Prediction Tables**: `predictions_majority-vote_combined.txt` uses a numerical encoding for confidence:
-    *   `0`: Negative prediction (trait absent).
-    *   `1`: Predicted by the phyletic pattern classifier only.
-    *   `2`: Predicted by the phylogeny-aware classifier only.
-    *   `3`: Predicted by both algorithms (highest confidence).
-3.  **Feature Tracks**: GFF files in `phypat/feat_gffs` allow you to visualize trait-relevant protein families in a genome browser.
 
-## Expert Tips
 
-*   **Resuming Runs**: If a process is interrupted, running the same command pointing to the existing output directory will prompt Traitar to resume from the last successful step (interactive mode only).
-*   **Filename Limits**: Avoid filenames longer than 40 characters to prevent potential processing errors in certain environments.
-*   **GFF Integration**: When using `from_genes`, you can provide an additional `gene_gff` column in your sample file and specify the source (e.g., `-g refseq`) to generate phenotype-specific Pfam tracks.
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| phenotype | Annotate genomes and then run phenotyping |
+| traitar annotate | Annotate genomes |
+| traitar new | create new phenotype model archive |
+| traitar pfam | Download and uncompress pfam files. The files are required for gene annotation. |
+| traitar_evaluate | compare Traitar predictions against a given standard of truth |
+| traitar_remove | remove phenotypes from a given phenotype archive |
+| traitar_show | show features important for classification |
 
 ## Reference documentation
-
-- [Traitar GitHub Repository](./references/github_com_aweimann_traitar.md)
-- [Traitar Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_traitar_overview.md)
+- [Traitar README](./references/github_com_aweimann_traitar_blob_master_README.md)
+- [Installation Guide](./references/github_com_aweimann_traitar_blob_master_INSTALL.md)
+- [Trait List](./references/github_com_aweimann_traitar_blob_master_traits.tsv.md)

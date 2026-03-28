@@ -83,6 +83,7 @@ Appearance settings
     - [Security Lab](https://securitylab.github.com)
     - [Maintainer Community](https://maintainers.github.com)
     - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
     - [Archive Program](https://archiveprogram.github.com)
   + REPOSITORIES
     - [Topics](https://github.com/topics)
@@ -156,7 +157,7 @@ Public
 * [Issues
   214](/broadinstitute/picard/issues)
 * [Pull requests
-  22](/broadinstitute/picard/pulls)
+  23](/broadinstitute/picard/pulls)
 * [Actions](/broadinstitute/picard/actions)
 * [Projects](/broadinstitute/picard/projects)
 * [Wiki](/broadinstitute/picard/wiki)

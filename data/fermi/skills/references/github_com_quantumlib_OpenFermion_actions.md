@@ -1,1 +1,437 @@
-Workflow runs · quantumlib/OpenFermion · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} quantumlib / OpenFermion Public Notifications You must be signed in to change notification settings Fork 411 Star 1.7k Code Issues 44 Pull requests 21 Actions Security 0 Insights Additional navigation options Code Issues Pull requests Actions Security Insights Actions: quantumlib/OpenFermion Actions All workflows Workflows CodeQL CodeQL Continuous integration checks Continuous integration checks Dependabot Updates Dependabot Updates Nightly tests Nightly tests Nightly tests &amp; scans – Pytest matrix Nightly tests &amp; scans – Pytest matrix Scorecard analysis Scorecard analysis Show more workflows... Management Caches All workflows All workflows Actions Loading... Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page . will be ignored since log searching is not yet available Showing runs from all workflows will be ignored since log searching is not yet available 2,653 workflow runs 2,653 workflow runs Event Filter by Event Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching events. Status Filter by Status Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching statuses. Branch Filter by Branch Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching branches. Actor Filter by Actor Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching users. Run nightly tests and code scans Nightly tests #356: Scheduled 8m 47s main main 8m 47s View workflow file CI checks for pull_request by dependabot[bot] Continuous integration checks #450: Pull request #1200 opened by dependabot bot 16s dependabot/pip/dev_tools/requirements/envs/pillow-12.1.1 dependabot/pip/dev_tools/requirements/envs/pillow-12.1.1 16s View #1200 View workflow file Run Scorecard scanner for security best practices Scorecard analysis #219: Pull request #1200 opened by dependabot bot 38s dependabot/pip/dev_tools/requirements/envs/pillow-12.1.1 dependabot/pip/dev_tools/requirements/envs/pillow-12.1.1 38s View #1200 View workflow file pip in /dev_tools/requirements/envs for pillow - Update #1241047395 Dependabot Updates #218: by dependabot bot 49s main main 49s Run nightly tests and code scans Nightly tests #355: Scheduled 8m 9s main main 8m 9s View workflow file Run nightly tests and code scans Nightly tests #354: Scheduled 7m 32s main main 7m 32s View workflow file CI checks for pull_request by dependabot[bot] Continuous integration checks #449: Pull request #1199 opened by dependabot bot 15s dependabot/pip/dev_tools/requirements/deps/pylint-approx-eq-4.0 dependabot/pip/dev_tools/requirements/deps/pylint-approx-eq-4.0 15s View #1199 View workflow file Run Scorecard scanner for security best practices Scorecard analysis #218: Pull request #1199 opened by dependabot bot 32s dependabot/pip/dev_tools/requirements/deps/pylint-approx-eq-4.0 dependabot/pip/dev_tools/requirements/deps/pylint-approx-eq-4.0 32s View #1199 View workflow file CI checks for pull_request by dependabot[bot] Continuous integration checks #448: Pull request #1198 opened by dependabot bot 40s dependabot/github_actions/actions/setup-python-6.2.0 dependabot/github_actions/actions/setup-python-6.2.0 40s View #1198 View workflow file Run Scorecard scanner for security best practices Scorecard analysis #217: Pull request #1198 opened by dependabot bot 26s dependabot/github_actions/actions/setup-python-6.2.0 dependabot/github_actions/actions/setup-python-6.2.0 26s View #1198 View workflow file github_actions in /. - Update #1238635987 Dependabot Updates #217: by dependabot bot 47s main main 47s docker in /dev_tools/requirements, /docker - Update #1238635974 Dependabot Updates #216: by dependabot bot 41s main main 41s pip in /dev_tools/requirements/deps, /docs/tutorials - Update #1238635977 Dependabot Updates #215: by dependabot bot 1m 20s main main 1m 20s Run nightly tests and code scans Nightly tests #353: Scheduled 9m 23s main main 9m 23s View workflow file Code Quality: Scheduled CodeQL #353: by github-advanced-security bot 1m 29s main main 1m 29s Run nightly tests and code scans Nightly tests #352: Scheduled 9m 37s main main 9m 37s View workflow file Run Scorecard scanner for security best practices Scorecard analysis #216: Scheduled 49s main main 49s View workflow file pip in /dev_tools/requirements/envs for urllib3 - Update #1236720937 Dependabot Updates #214: by dependabot bot 46s main main 46s Code Quality: Push on main CodeQL #352: by github-merge-queue bot 1m 29s main main 1m 29s CI checks for merge_group by mhucka Continuous integration checks #447: Merge group checks requested 7m 55s 7m 55s View workflow file CI checks for merge_group by mhucka Continuous integration checks #446: Merge group checks requested 7m 46s 7m 46s View workflow file CI checks for merge_group by mhucka Continuous integration checks #445: Merge group checks requested 7m 41s 7m 41s View workflow file CI checks for merge_group by mhucka Continuous integration checks #444: Merge group checks requested 7m 42s 7m 42s View workflow file Code Quality: Push on main CodeQL #351: by github-merge-queue bot 1m 25s main main 1m 25s CI checks for merge_group by mhucka Continuous integration checks #443: Merge group checks requested 7m 49s 7m 49s View workflow file Previous 1 2 3 4 5 &hellip; 106 107 Next You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fquantumlib%2FOpenFermion%2Factions)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fquantumlib%2FOpenFermion%2Factions)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Factions%2Findex&source=header-repo&source_repo=quantumlib%2FOpenFermion)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[quantumlib](/quantumlib)
+/
+**[OpenFermion](/quantumlib/OpenFermion)**
+Public
+
+* [Notifications](/login?return_to=%2Fquantumlib%2FOpenFermion) You must be signed in to change notification settings
+* [Fork
+  412](/login?return_to=%2Fquantumlib%2FOpenFermion)
+* [Star
+   1.7k](/login?return_to=%2Fquantumlib%2FOpenFermion)
+
+* [Code](/quantumlib/OpenFermion)
+* [Issues
+  39](/quantumlib/OpenFermion/issues)
+* [Pull requests
+  8](/quantumlib/OpenFermion/pulls)
+* [Actions](/quantumlib/OpenFermion/actions)
+* [Security
+  0](/quantumlib/OpenFermion/security)
+* [Insights](/quantumlib/OpenFermion/pulse)
+
+Additional navigation options
+
+* [Code](/quantumlib/OpenFermion)
+* [Issues](/quantumlib/OpenFermion/issues)
+* [Pull requests](/quantumlib/OpenFermion/pulls)
+* [Actions](/quantumlib/OpenFermion/actions)
+* [Security](/quantumlib/OpenFermion/security)
+* [Insights](/quantumlib/OpenFermion/pulse)
+
+# Actions: quantumlib/OpenFermion
+
+## Actions
+
+## All workflows All workflows Actions Loading... Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page.
+
+will be ignored since log searching is not yet available
+
+Showing runs from all workflows
+
+will be ignored since log searching is not yet available
+
+**3,070 workflow runs**
+
+**3,070 workflow runs**
+
+Event
+
+# Filter by Event
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching events.
+
+Status
+
+# Filter by Status
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching statuses.
+
+Branch
+
+# Filter by Branch
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching branches.
+
+Actor
+
+# Filter by Actor
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching users.
+
+[CI checks for pull\_request by mhucka](/quantumlib/OpenFermion/actions/runs/23632741019)
+
+Continuous integration checks
+#591:
+Pull request [#1241](/quantumlib/OpenFermion/pull/1241)
+synchronize
+by
+[mhucka](/mhucka)
+
+7m 37s
+[mhucka:improve-rdm-mapping-tests-17490794947821494422](/mhucka/OpenFermion/tree/refs/heads/improve-rdm-mapping-tests-17490794947821494422 "mhucka:improve-rdm-mapping-tests-17490794947821494422")
+
+[mhucka:improve-rdm-mapping-tests-17490794947821494422](/mhucka/OpenFermion/tree/refs/heads/improve-rdm-mapping-tests-17490794947821494422 "mhucka:improve-rdm-mapping-tests-17490794947821494422")
+
+7m 37s
+
+* [View #1241](/quantumlib/OpenFermion/pull/1241)
+* [View workflow file](/quantumlib/OpenFermion/actions/runs/23632741019/workflow)
+
+[Run Scorecard scanner for security best practices](/quantumlib/OpenFermion/actions/runs/23632740999)
+
+Scorecard analysis
+#350:
+Pull request [#1241](/quantumlib/OpenFermion/pull/1241)
+synchronize
+by
+[mhucka](/mhucka)
+
+31s
+[mhucka:improve-rdm-mapping-tests-17490794947821494422](/mhucka/OpenFermion/tree/refs/heads/improve-rdm-mapping-tests-17490794947821494422 "mhucka:improve-rdm-mapping-tests-17490794947821494422")
+
+[mhucka:improve-rdm-mapping-tests-17490794947821494422](/mhucka/OpenFermion/tree/refs/heads/improve-rdm-mapping-tests-17490794947821494422 "mhucka:improve-rdm-mapping-tests-17490794947821494422")
+
+31s
+
+* [View #1241](/quantumlib/OpenFermion/pull/1241)
+* [View workflow file](/quantumlib/OpenFermion/actions/runs/23632740999/workflow)
+
+[CI checks for pull\_request by mhucka](/quantumlib/OpenFermion/actions/runs/23632516633)
+
+Continuous integration checks
+#590:
+Pull request [#1241](/quantumlib/OpenFermion/pull/1241)
+synchronize
+by
+[mhucka](/mhucka)
+
+7m 42s
+[mhucka:improve-rdm-mapping-tests-17490794947821494422](/mhucka/OpenFermion/tree/refs/heads/improve-rdm-mapping-tests-17490794947821494422 "mhucka:improve-rdm-mapping-tests-17490794947821494422")
+
+[mhucka:improve-rdm-mapping-tests-17490794947821494422](/mhucka/OpenFermion/tree/refs/heads/improve-rdm-mapping-tests-17490794947821494422 "mhucka:improve-rdm-mapping-tests-17490794947821494422")
+
+7m 42s
+
+* [View #1241](/quantumlib/OpenFermion/pull/1241)
+* [View workflow file](/quantumlib/OpenFermion/actions/runs/23632516633/workflow)
+
+[Run Scorecard scanner for security best practices](/quantumlib/OpenFermion/actions/runs/23632516614)
+
+Scorecard analysis
+#349:
+Pull request [#1241](/quantumlib/OpenFermion/pull/1241)
+synchronize
+by
+[mhucka](/mhucka)
+
+36s
+[mhucka:improve-rdm-mapping-tests-17490794947821494422](/mhucka/OpenFermion/tree/refs/heads/improve-rdm-mapping-tests-17490794947821494422 "mhucka:improve-rdm-mapping-tests-17490794947821494422")
+
+[mhucka:improve-rdm-mapping-tests-17490794947821494422](/mhucka/OpenFermion/tree/refs/heads/improve-rdm-mapping-tests-17490794947821494422 "mhucka:improve-rdm-mapping-tests-17490794947821494422")
+
+36s
+
+* [View #1241](/quantumlib/OpenFermion/pull/1241)
+* [View workflow file](/quantumlib/OpenFermion/actions/runs/23632516614/workflow)
+
+[CI checks for pull\_request by mhucka](/quantumlib/OpenFermion/actions/runs/23632514278)
+
+Continuous integration checks
+#589:
+Pull request [#1241](/quantumlib/OpenFermion/pull/1241)
+opened
+by
+[mhucka](/mhucka)
+
+8s
+[mhucka:improve-rdm-mapping-tests-17490794947821494422](/mhucka/OpenFermion/tree/refs/heads/improve-rdm-mapping-tests-17490794947821494422 "mhucka:improve-rdm-mapping-tests-17490794947821494422")
+
+[mhucka:improve-rdm-mapping-tests-17490794947821494422](/mhucka/OpenFermion/tree/refs/heads/improve-rdm-mapping-tests-17490794947821494422 "mhucka:improve-rdm-mapping-tests-17490794947821494422")
+
+8s
+
+* [View #1241](/quantumlib/OpenFermion/pull/1241)
+* [View workflow file](/quantumlib/OpenFermion/actions/runs/23632514278/workflow)
+
+[Run Scorecard scanner for security best practices](/quantumlib/OpenFermion/actions/runs/23632514271)
+
+Scorecard analysis
+#348:
+Pull request [#1241](/quantumlib/OpenFermion/pull/1241)
+opened
+by
+[mhucka](/mhucka)
+
+8s
+[mhucka:improve-rdm-mapping-tests-17490794947821494422](/mhucka/OpenFermion/tree/refs/heads/improve-rdm-mapping-tests-17490794947821494422 "mhucka:improve-rdm-mapping-tests-17490794947821494422")
+
+[mhucka:improve-rdm-mapping-tests-17490794947821494422](/mhucka/OpenFermion/tree/refs/heads/improve-rdm-mapping-tests-17490794947821494422 "mhucka:improve-rdm-mapping-tests-17490794947821494422")
+
+8s
+
+* [View #1241](/quantumlib/OpenFermion/pull/1241)
+* [View workflow file](/quantumlib/OpenFermion/actions/runs/23632514271/workflow)
+
+[Run Scorecard scanner for security best practices](/quantumlib/OpenFermion/actions/runs/23631871707)
+
+Scorecard analysis
+#347:
+Pull request [#1240](/quantumlib/OpenFermion/pull/1240)
+synchronize
+by
+[mhucka](/mhucka)
+
+29s
+[mhucka:fix-bksf-code-health-3650992452040884433](/mhucka/OpenFermion/tree/refs/heads/fix-bksf-code-health-3650992452040884433 "mhucka:fix-bksf-code-health-3650992452040884433")
+
+[mhucka:fix-bksf-code-health-3650992452040884433](/mhucka/OpenFermion/tree/refs/heads/fix-bksf-code-health-3650992452040884433 "mhucka:fix-bksf-code-health-3650992452040884433")
+
+29s
+
+* [View #1240](/quantumlib/OpenFermion/pull/1240)
+* [View workflow file](/quantumlib/OpenFermion/actions/runs/23631871707/workflow)
+
+[CI checks for pull\_request by mhucka](/quantumlib/OpenFermion/actions/runs/23631871692)
+
+Continuous integration checks
+#588:
+Pull request [#1240](/quantumlib/OpenFermion/pull/1240)
+synchronize
+by
+[mhucka](/mhucka)
+
+7m 44s
+[mhucka:fix-bksf-code-health-3650992452040884433](/mhucka/OpenFermion/tree/refs/heads/fix-bksf-code-health-3650992452040884433 "mhucka:fix-bksf-code-health-3650992452040884433")
+
+[mhucka:fix-bksf-code-health-3650992452040884433](/mhucka/OpenFermion/tree/refs/heads/fix-bksf-code-health-3650992452040884433 "mhucka:fix-bksf-code-health-3650992452040884433")
+
+7m 44s
+
+* [View #1240](/quantumlib/OpenFermion/pull/1240)
+* [View workflow file](/quantumlib/OpenFermion/actions/runs/23631871692/workflow)
+
+[CI checks for pull\_request by mhucka](/quantumlib/OpenFermion/actions/runs/23631869256)
+
+Continuous integration checks
+#587:
+Pull request [#1240](/quantumlib/OpenFermion/pull/1240)
+opened
+by
+[mhucka](/mhucka)
+
+10s
+[mhucka:fix-bksf-code-health-3650992452040884433](/mhucka/OpenFermion/tree/refs/heads/fix-bksf-code-health-3650992452040884433 "mhucka:fix-bksf-code-health-3650992452040884433")
+
+[mhucka:fix-bksf-code-health-3650992452040884433](/mhucka/OpenFermion/tree/refs/heads/fix-bksf-code-health-3650992452040884433 "mhucka:fix-bksf-code-health-3650992452040884433")
+
+10s
+
+* [View #1240](/quantumlib/OpenFermion/pull/1240)
+* [View workflow file](/quantumlib/OpenFermion/actions/runs/23631869256/workflow)
+
+[Run Scorecard scanner for security best practices](/quantumlib/OpenFermion/actions/runs/23631869245)
+
+Scorecard analysis
+#346:
+Pull request [#1240](/quantumlib/OpenFermion/pull/1240)
+opened
+by
+[mhucka](/mhucka)
+
+9s
+[mhucka:fix-bksf-code-health-3650992452040884433](/mhucka/OpenFermion/tree/refs/heads/fix-bksf-code-health-3650992452040884433 "mhucka:fix-bksf-code-health-3650992452040884433")
+
+[mhucka:fix-bksf-code-health-3650992452040884433](/mhucka/OpenFermion/tree/refs/heads/fix-bksf-code-health-3650992452040884433 "mhucka:fix-bksf-code-health-3650992452040884433")
+
+9s
+
+* [View #1240](/quantumlib/OpenFermion/pull/1240)
+* [View workflow file](/quantumlib/OpenFermion/actions/runs/23631869245/workflow)
+
+[

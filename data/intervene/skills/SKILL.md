@@ -1,6 +1,6 @@
 ---
 name: intervene
-description: Intervene automates the identification of overlaps between genomic datasets and generates publication-quality visualizations such as Venn diagrams, UpSet plots, and pairwise heatmaps. Use when user asks to find intersections between genomic regions, compare multiple gene sets, or visualize overlaps across several experimental conditions.
+description: Intervene automates the intersection and visualization of genomic interval data and gene lists to generate publication-quality figures. Use when user asks to create Venn diagrams, generate UpSet plots, or perform pairwise intersection heatmaps for genomic features and gene sets.
 homepage: https://github.com/asntech/intervene
 ---
 
@@ -9,56 +9,50 @@ homepage: https://github.com/asntech/intervene
 
 ## Overview
 
-Intervene is a computational tool that automates the process of finding overlaps between genomic datasets and generating publication-quality visualizations. It acts as a high-level wrapper around BedTools for interval logic and R for graphical output. Use this skill to quickly compare ChIP-seq peaks, differentially expressed gene sets, or any interval-based genomic data to identify unique and shared elements across multiple experimental conditions.
+Intervene is a specialized bioinformatics tool designed to automate the intersection and visualization of genomic interval data and gene lists. It bridges the gap between raw intersection data (calculated via BedTools) and publication-quality figures (generated via R). Use this skill to compare ChIP-seq peaks, differentially expressed gene sets, or any other genomic features where understanding the overlap between multiple conditions or replicates is critical.
 
-## Command Line Usage
+## Core Workflows
 
-Intervene is organized into three primary subcommands based on the desired visualization and the number of input sets.
+### 1. Venn Diagrams (Up to 6-way)
+Use the `venn` subcommand for a classic visualization of overlaps between 2 to 6 sets.
 
-### 1. Venn Diagrams (`venn`)
-Use this for 2 to 6 sets. Beyond 6 sets, the intersections become too complex for a Venn representation.
+*   **Basic Usage**: `intervene venn -i path/to/files/*.bed`
+*   **Custom Labels**: Use `--names` to provide clear labels for the plot.
+    *   `intervene venn -i file1.bed file2.bed file3.bed --names Treatment,Control,WildType`
+*   **Output Control**: Specify a directory with `--output`.
 
-```bash
-# Basic 3-way Venn diagram for BED files
-intervene venn -i path/to/file1.bed path/to/file2.bed path/to/file3.bed
+### 2. UpSet Plots
+Use the `upset` subcommand when dealing with more than 3-4 sets, as Venn diagrams become difficult to read. UpSet plots provide a scalable matrix-based visualization of intersections.
 
-# Using wildcards and custom labels
-intervene venn -i *.bed --names=A,B,C,D --output results_venn
-```
+*   **Basic Usage**: `intervene upset -i path/to/files/*.bed`
+*   **Project Naming**: Use `--project` to prefix output files.
+*   **Gene Lists**: If working with text files containing gene IDs instead of genomic regions, Intervene handles them automatically based on file extension or content.
 
-### 2. UpSet Plots (`upset`)
-Use this for more than 6 sets or when you need to see the frequency of specific intersection combinations clearly.
+### 3. Pairwise Intersections and Heatmaps
+Use the `pairwise` subcommand to perform an "all-vs-all" comparison of N genomic region sets. This generates a heatmap showing the degree of overlap.
 
-```bash
-# Generate an UpSet plot for a large number of sets
-intervene upset -i data/*.bed --save-overlaps
-```
+*   **Basic Usage**: `intervene pairwise -i path/to/files/*.bed`
+*   **Metric Selection**: Use `--type` to choose the intersection metric (e.g., `count`, `frac`, `jaccard`).
+    *   `intervene pairwise -i *.bed --type jaccard`
 
-### 3. Pairwise Heatmaps (`pairwise`)
-Use this to compare a large number of datasets (N vs N) to identify clusters of similarity.
+## Expert Tips and Best Practices
 
-```bash
-# Compute pairwise intersections and show a heatmap
-intervene pairwise -i data/*.bed --htype jaccard
-```
+*   **Verification**: Always run `intervene --test` (or `intervene venn --test`, etc.) after installation to ensure that Python dependencies, BedTools, and R packages (UpSetR, corrplot) are correctly configured in your environment.
+*   **Input Formats**: While BED is standard, Intervene supports GTF and GFF. Ensure your files are tab-delimited and follow standard genomic coordinate formats.
+*   **Labeling**: If your filenames are long or cryptic, always use the `--names` flag with a comma-separated list to ensure the resulting figures are interpretable.
+*   **Plot Quality**: Intervene uses the Cairo R package by default to generate high-quality vector (PDF) and bitmap (PNG) figures. If you only need the raw intersection data without the plots, use the `--scriptonly` flag to generate the R scripts without executing them.
+*   **Genomic vs. List**: If your input files are simple lists of IDs (one per line), Intervene treats them as "list sets." If they have at least three columns (Chr, Start, End), it treats them as "genomic regions."
 
-## Key Parameters and Best Practices
 
-*   **Input Types**: By default, Intervene assumes genomic regions. If you are comparing simple text lists (e.g., gene symbols), you must specify `--type list`.
-*   **Naming Sets**: Use the `--names` flag to provide comma-separated labels. If omitted, Intervene uses the filenames, which can clutter the plots.
-*   **Saving Data**: Always use the `--save-overlaps` flag if you need to extract the actual genomic coordinates or gene names belonging to specific intersection groups for downstream analysis.
-*   **Heatmap Metrics**: In `pairwise` mode, use `--htype` to switch between different similarity metrics:
-    *   `count`: Number of overlapping regions.
-    *   `jaccard`: Jaccard statistic (intersection over union).
-    *   `frac`: Fraction of overlap.
-*   **Testing**: If you are unsure about the installation or environment, run `intervene <subcommand> --test` to generate example plots using built-in data.
 
-## Expert Tips
+## Subcommands
 
-*   **BedTools Dependency**: Intervene requires `bedtools` to be in your system PATH. If intersections fail, verify the installation with `bedtools --version`.
-*   **R Dependencies**: Visualizations are generated via R. Ensure the `UpSetR`, `corrplot`, and `Cairo` packages are installed in your R environment to avoid plotting errors.
-*   **Large Datasets**: For `pairwise` mode with hundreds of files, the process can be memory-intensive. Consider filtering your BED files to include only high-confidence peaks before running Intervene.
+| Command | Description |
+|---------|-------------|
+| intervene upset | Create UpSet diagram after intersection of genomic regions in (BED/GTF/GFF) or list sets. |
+| pairwise | Pairwise intersection and heatmap of N genomic region sets in (BED/GTF/GFF) format or list/name sets. |
+| venn | Create Venn diagram upto 6-way after intersection of genomic regions in (BED/GTF/GFF) format or list sets. |
 
 ## Reference documentation
-- [Intervene GitHub Repository](./references/github_com_asntech_intervene.md)
-- [Bioconda Intervene Overview](./references/anaconda_org_channels_bioconda_packages_intervene_overview.md)
+- [Intervene GitHub README](./references/github_com_asntech_intervene_blob_master_README.rst.md)
+- [Intervene Documentation - How to Use](./references/intervene_readthedocs_io_en_latest_how_to_use.html.md)

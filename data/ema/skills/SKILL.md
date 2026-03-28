@@ -1,6 +1,6 @@
 ---
 name: ema
-description: EMA is a specialized aligner that leverages barcode information to accurately map barcoded sequencing data to a reference genome. Use when user asks to align barcoded reads, preprocess FASTQ files by barcode, or resolve mapping ambiguities using barcode clouds.
+description: EMA is a specialized alignment tool that leverages shared barcode information to resolve mapping ambiguities in linked-read sequencing data. Use when user asks to count barcodes, preprocess binned reads, or align barcoded FASTQ files to a reference genome using a latent variable model.
 homepage: http://ema.csail.mit.edu/
 ---
 
@@ -8,35 +8,56 @@ homepage: http://ema.csail.mit.edu/
 # ema
 
 ## Overview
-The `ema` (EMA) tool is a specialized aligner for barcoded sequencing data. Unlike general-purpose aligners, EMA leverages the barcode information to resolve ambiguities in read mapping. It works by grouping reads by barcode and using the local context of the barcode "cloud" to place reads more accurately, particularly in genomic regions that are difficult to map with standard short-read technologies.
+EMA (EMerAld) is a specialized alignment tool designed for "linked-read" sequencing data. Unlike standard aligners that treat every read pair independently, EMA leverages the shared barcode information to resolve mapping ambiguities in repetitive regions of the genome. It uses a latent variable model to calculate per-alignment probabilities, resulting in higher accuracy for structural variant calling and haplotyping. Use this tool when you have FASTQ files containing barcodes and need to produce a high-quality SAM/BAM file that accounts for the long-range information provided by those barcodes.
 
-## Usage Patterns
+## Workflow and CLI Patterns
 
-### Core Workflow
-The standard EMA pipeline typically involves three main stages: preprocessing, alignment, and post-processing.
+### 1. Barcode Counting (`count`)
+The first step identifies which barcodes are present and their frequency.
+- **Input**: Interleaved FASTQ via stdin.
+- **Requirement**: A barcode whitelist file.
+- **Pattern**:
+  ```bash
+  pigz -cd reads.fastq.gz | ema count -w whitelist.txt -o sample_prefix
+  ```
+- **Tip**: If your files are not interleaved, use `paste` and `tr` to interleave R1 and R2 on the fly before piping to `ema count`.
 
-1.  **Preprocessing (Count and Bin):**
-    Reads must be preprocessed to count barcode frequencies and bin them for parallel processing.
-    ```bash
-    ema count -w whitelist.txt fastq_R1.fastq.gz fastq_R2.fastq.gz
-    ```
+### 2. Preprocessing (`preproc`)
+This stage bins the reads into "buckets" based on their barcodes to allow for parallel alignment.
+- **Pattern**:
+  ```bash
+  pigz -cd reads.fastq.gz | ema preproc -w whitelist.txt -n 500 -t 8 -o output_dir sample_prefix.ema-ncnt
+  ```
+- **Key Options**:
+  - `-n`: Number of buckets (default 500). Increase for very large datasets to keep bucket sizes manageable.
+  - `-h`: Enable Hamming-2 correction for barcodes (recommended for 10x data).
 
-2.  **Alignment:**
-    EMA uses a modified version of BWA-MEM for the actual alignment step. It is often run in a "map-only" mode or a full alignment mode depending on the specific library type.
-    ```bash
-    ema align -r reference.fa -1 fastq_R1.fastq.gz -2 fastq_R2.fastq.gz -w whitelist.txt -p 8 > aligned.sam
-    ```
+### 3. Alignment (`align`)
+The final stage performs the actual alignment using the latent variable model.
+- **Pattern**:
+  ```bash
+  ema align -t 4 -d -r reference.fa -s output_dir/ema-bin-000 > bin_000.sam
+  ```
+- **Expert Tips**:
+  - **Density Optimization**: Always use `-d` (fragment read density optimization) for 10x Genomics data to improve accuracy.
+  - **Platform Selection**: Use `-p` to specify the technology (e.g., `10x`, `tellseq`, `tru`, `cpt`).
+  - **Parallelization**: Use GNU Parallel to process multiple bins simultaneously. A common optimal strategy is 10 jobs with 4 threads each (`-j10` in parallel and `-t 4` in EMA).
+  - **No-Barcode Reads**: Reads without valid barcodes (found in `ema-nobc`) should be aligned using standard `bwa mem` and then merged with the EMA results.
 
-### Key CLI Commands
-- `ema count`: Generates barcode frequency statistics.
-- `ema preproc`: Prepares FASTQ files by organizing reads by barcode.
-- `ema align`: The primary alignment engine that incorporates barcode information into the mapping algorithm.
-- `ema select`: Filters alignments based on barcode-aware probability scores.
+### 4. Post-processing
+EMA performs internal duplicate marking. After alignment:
+1. Sort the resulting SAM/BAM files.
+2. Merge the binned BAMs and the `ema-nobc` BAM into a single final file using `samtools` or `sambamba`.
 
-### Expert Tips
-- **Whitelist Importance:** Always use the correct barcode whitelist corresponding to the specific 10x Genomics kit used (e.g., Long Ranger whitelist for Linked-Reads).
-- **Memory Management:** EMA can be memory-intensive during the binning phase. Ensure your environment has sufficient RAM relative to the number of unique barcodes in your library.
-- **Output Handling:** EMA typically outputs SAM format. It is best practice to pipe this directly into `samtools view -bS` to save disk space and generate BAM files for downstream analysis.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| align | choose best alignments based on barcodes |
+| ema | EMA is a tool for processing and aligning barcoded sequencing data. |
 
 ## Reference documentation
-- [ema - bioconda Overview](./references/anaconda_org_channels_bioconda_packages_ema_overview.md)
+- [EMA GitHub Repository](./references/github_com_arshajii_ema_blob_master_README.md)
+- [EMA Overview and MIT Lab Info](./references/cb_csail_mit_edu_ema.md)

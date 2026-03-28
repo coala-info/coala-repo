@@ -1,6 +1,6 @@
 ---
 name: amdirt
-description: The AncientMetagenomeDir Toolkit is a Python utility for interacting with the AncientMetagenomeDir repository to manage ancient metagenomic metadata and sequencing data. Use when user asks to download ancient metagenomic data, validate metadata submissions, or generate samplesheets for bioinformatic pipelines.
+description: The amdirt toolkit manages ancient DNA metadata by facilitating the download, validation, and conversion of AncientMetagenomeDir datasets into pipeline-ready formats. Use when user asks to download metadata tables, validate new submissions against schemas, autofill tables from ENA accessions, or convert metadata into samplesheets for nf-core/eager, nf-core/taxprofiler, and aMeta.
 homepage: https://github.com/SPAAM-community/AMDirT
 ---
 
@@ -8,42 +8,53 @@ homepage: https://github.com/SPAAM-community/AMDirT
 # amdirt
 
 ## Overview
-The AncientMetagenomeDir Toolkit (`amdirt`) is a specialized Python-based utility designed for researchers working with ancient DNA (aDNA) and metagenomics. It serves as the primary interface for the AncientMetagenomeDir repository, a community-curated collection of metadata for ancient metagenomic samples. This skill enables the automated retrieval of sequencing data, ensures metadata compliance through validation tools, and streamlines the transition from metadata discovery to computational analysis by generating pipeline-ready samplesheets.
 
-## Installation and Setup
-The tool is available via Bioconda or PyPI. It is recommended to use a dedicated environment to avoid dependency conflicts.
+The `amdirt` (AncientMetagenomeDir Toolkit) skill provides a specialized workflow for managing ancient DNA (aDNA) metadata. It allows users to programmatically access the AncientMetagenomeDir repository to find sequencing data, download specific metadata tables, and validate new submissions against standardized schemas. Crucially, it automates the conversion of complex metadata into pipeline-ready samplesheets, reducing manual formatting errors in paleogenomic workflows.
 
-```bash
-# Installation via Conda (Recommended)
-conda create -n amdirt -c bioconda amdirt
-conda activate amdirt
+## Core Workflows
 
-# Installation via Pip
-pip install amdirt
-```
+### 1. Data Acquisition
+Use the `download` command to retrieve the latest or specific versions of metadata tables.
+- **Download samples table**: `amdirt download -t ancientmetagenome-hostassociated -y samples`
+- **Download libraries table**: `amdirt download -t ancientmetagenome-hostassociated -y libraries`
+- **Specific release**: Use `-r` (e.g., `-r v24.06.0`) to ensure reproducibility by pinning a specific dataset version.
 
-## Core Functionalities
-While specific subcommand flags vary by version, the toolkit follows a standard CLI pattern for the following tasks:
+### 2. Metadata Exploration and Filtering
+- **Interactive Viewer**: Run `amdirt viewer` to launch a Streamlit-based GUI for filtering datasets.
+- **Autofill from ENA**: If you have ENA project accessions (e.g., PRJNA123), use `amdirt autofill ACCESSION` to automatically pull metadata and populate library/sample tables.
 
-### 1. Metadata Exploration and Download
-Use `amdirt` to query the repository and fetch raw sequencing data (FASTQ files) based on specific project IDs or sample metadata.
-- **Best Practice**: Always verify the available disk space before initiating downloads, as ancient metagenomic datasets can be extremely large.
-- **Tip**: Use the tool to filter for specific types of ancient data (e.g., host-associated vs. environmental) before committing to a full download.
+### 3. Pipeline Preparation (Conversion)
+Convert filtered AncientMetagenomeDir TSV files into specific formats for bioinformatic pipelines:
+- **nf-core/eager**: `amdirt convert SAMPLES.tsv TABLE_NAME --eager`
+- **nf-core/taxprofiler**: `amdirt convert SAMPLES.tsv TABLE_NAME --taxprofiler`
+- **aMeta**: `amdirt convert SAMPLES.tsv TABLE_NAME --ameta`
+- **Download Scripts**: Generate bash scripts for bulk data retrieval using `--curl`, `--aspera`, or `--sratoolkit`.
 
-### 2. Submission Validation
-For researchers contributing to the AncientMetagenomeDir project, the toolkit provides validation scripts to ensure that new metadata entries meet the community's schema requirements.
-- **Workflow**: Run the validation command on your local metadata files before submitting a Pull Request to the SPAAM-community repository.
-
-### 3. Samplesheet Generation
-One of the most powerful features of `amdirt` is its ability to transform repository metadata into formatted samplesheets for downstream bioinformatic pipelines (such as nf-core/eager).
-- **Expert Tip**: Ensure your local file paths are correctly mapped if you have already downloaded data manually; otherwise, let `amdirt` handle the pathing during the generation process.
+### 4. Validation and Merging
+Before submitting new data to AncientMetagenomeDir, validate the format:
+- **Schema Check**: `amdirt validate DATASET.tsv SCHEMA.json --schema_check`
+- **Check for Duplicates**: Use `-d` (line duplicates) and `-i` (DOI duplicates).
+- **ENA Validation**: Use `-a` to verify that accessions exist in the European Nucleotide Archive.
+- **Merging**: Use `amdirt merge DATASET.tsv -n TABLE_NAME -t table_type` to integrate new data with existing local tables.
 
 ## Expert Tips
-- **Development Version**: If you require the latest features or bug fixes not yet in the stable release, install directly from the development branch:
-  `pip install --upgrade git+https://github.com/SPAAM-community/amdirt.git@dev`
-- **Documentation Access**: For detailed subcommand help, use the standard `--help` flag at any level of the CLI:
-  `amdirt --help` or `amdirt [subcommand] --help`
+- **Table Names**: Common table names include `ancientmetagenome-hostassociated`, `ancientmetagenome-environmental`, and `ancientsinglegenome-hostassociated`.
+- **Output Management**: Always specify an output directory with `-o` to avoid cluttering the working directory, especially during `convert` operations which may generate multiple files (samplesheets, bibliographies, and scripts).
+- **Bibliography Generation**: Use the `--bibliography` flag during conversion to automatically generate a BibTeX file for all studies included in your filtered dataset.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| autofill | Autofills library and/or sample table(s) using ENA API and accession numbers |
+| convert | Converts filtered samples and libraries tables to eager, ameta, taxprofiler, and fetchNGS input tables |
+| download | Download a table from the amdirt repository |
+| merge | Merges new dataset with existing table |
+| validate | Run validity check of AncientMetagenomeDir datasets |
 
 ## Reference documentation
-- [AncientMetagenomeDir Toolkit Overview](./references/github_com_SPAAM-community_amdirt.md)
-- [Bioconda Package Details](./references/anaconda_org_channels_bioconda_packages_amdirt_overview.md)
+- [Quick Reference](./references/amdirt_readthedocs_io_en_master_reference.html.md)
+- [Python API](./references/amdirt_readthedocs_io_en_master_API.html.md)
+- [Installation and Overview](./references/github_com_SPAAM-community_amdirt_blob_master_README.md)

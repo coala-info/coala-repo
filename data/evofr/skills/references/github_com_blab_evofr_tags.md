@@ -1,1 +1,363 @@
-Tags · blab/evofr · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} blab / evofr Public Notifications You must be signed in to change notification settings Fork 1 Star 14 Code Issues 16 Pull requests 1 Actions Security 0 Insights Additional navigation options Code Issues Pull requests Actions Security Insights Tags: blab/evofr Releases Tags Tags 0.2.0 Toggle 0.2.0&#39;s commit message Verified Verified This commit was created on GitHub.com and signed with GitHub’s verified signature . GPG key ID: B5690EEEBB952194 Verified Learn about vigilant mode Merge pull request #65 from blab/support-alternate-point-estimate-fun… …ctions Support alternate point estimate functions Feb 9, 2026 9594b11 zip tar.gz Notes 0.1.27 Toggle 0.1.27&#39;s commit message Verified Verified This commit was created on GitHub.com and signed with GitHub’s verified signature . GPG key ID: B5690EEEBB952194 Verified Learn about vigilant mode Merge pull request #54 from blab/fix-forecast-dates Infer date interval for forecast dates May 22, 2025 c0375df zip tar.gz 0.1.26 Toggle 0.1.26&#39;s commit message Bumping version Dec 17, 2024 e883784 zip tar.gz 0.1.25 Toggle 0.1.25&#39;s commit message Group before aggregate Bumping version Nov 8, 2024 2c91dd8 zip tar.gz 0.1.24 Toggle 0.1.24&#39;s commit message Nov 8, 2024 ed301ff zip tar.gz 0.1.23 Toggle 0.1.23&#39;s commit message Bumping version Jun 3, 2024 f5dfee4 zip tar.gz 0.1.22 Toggle 0.1.22&#39;s commit message Bumping version Feb 9, 2024 19b5b81 zip tar.gz 0.1.21 Toggle 0.1.21&#39;s commit message Bumping version Sep 26, 2023 fa04238 zip tar.gz 0.1.20 Toggle 0.1.20&#39;s commit message Bumping verions (fix) Jul 6, 2023 24f8bdb zip tar.gz 0.1.19 Toggle 0.1.19&#39;s commit message Bumping version to 0.1.19 Jun 5, 2023 3aa0723 zip tar.gz Previous Next Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fblab%2Fevofr%2Ftags)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fblab%2Fevofr%2Ftags)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Freleases%2Ftag_history&source=header-repo&source_repo=blab%2Fevofr)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[blab](/blab)
+/
+**[evofr](/blab/evofr)**
+Public
+
+* [Notifications](/login?return_to=%2Fblab%2Fevofr) You must be signed in to change notification settings
+* [Fork
+  1](/login?return_to=%2Fblab%2Fevofr)
+* [Star
+   14](/login?return_to=%2Fblab%2Fevofr)
+
+* [Code](/blab/evofr)
+* [Issues
+  16](/blab/evofr/issues)
+* [Pull requests
+  1](/blab/evofr/pulls)
+* [Actions](/blab/evofr/actions)
+* [Security
+  0](/blab/evofr/security)
+* [Insights](/blab/evofr/pulse)
+
+Additional navigation options
+
+* [Code](/blab/evofr)
+* [Issues](/blab/evofr/issues)
+* [Pull requests](/blab/evofr/pulls)
+* [Actions](/blab/evofr/actions)
+* [Security](/blab/evofr/security)
+* [Insights](/blab/evofr/pulse)
+
+# Tags: blab/evofr
+
+[Releases](/blab/evofr/releases)
+[Tags](/blab/evofr/tags)
+
+Tags
+
+## [0.2.0](/blab/evofr/releases/tag/0.2.0)
+
+Toggle 0.2.0's commit message
+
+Verified
+
+# Verified
+
+This commit was created on GitHub.com and signed with GitHub’s **verified signature**.
+
+GPG key ID: B5690EEEBB952194
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits)
+
+```
+Merge pull request #65 from blab/support-alternate-point-estimate-fun…
+
+…ctions
+
+Support alternate point estimate functions
+```
+
+* Feb 9, 2026
+* [9594b11](/blab/evofr/commit/9594b118abe3e55b5cd1d75da7a4b7863305460d)
+* [zip](/blab/evofr/archive/refs/tags/0.2.0.zip)
+* [tar.gz](/blab/evofr/archive/refs/tags/0.2.0.tar.gz)
+* [Notes](/blab/evofr/releases/tag/0.2.0)
+
+## [0.1.27](/blab/evofr/releases/tag/0.1.27)
+
+Toggle 0.1.27's commit message
+
+Verified
+
+# Verified
+
+This commit was created on GitHub.com and signed with GitHub’s **verified signature**.
+
+GPG key ID: B5690EEEBB952194
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits)
+
+```
+Merge pull request #54 from blab/fix-forecast-dates
+
+Infer date interval for forecast dates
+```
+
+* May 22, 2025
+* [c0375df](/blab/evofr/commit/c0375df2788dc830db0249c233d82daf8755b660)
+* [zip](/blab/evofr/archive/refs/tags/0.1.27.zip)
+* [tar.gz](/blab/evofr/archive/refs/tags/0.1.27.tar.gz)
+
+## [0.1.26](/blab/evofr/releases/tag/0.1.26)
+
+Toggle 0.1.26's commit message
+
+```
+Bumping version
+```
+
+* Dec 17, 2024
+* [e883784](/blab/evofr/commit/e883784dc397805c50bbcd56b083f4f232b03e17)
+* [zip](/blab/evofr/archive/refs/tags/0.1.26.zip)
+* [tar.gz](/blab/evofr/archive/refs/tags/0.1.26.tar.gz)
+
+## [0.1.25](/blab/evofr/releases/tag/0.1.25)
+
+Toggle 0.1.25's commit message
+
+```
+Group before aggregate
+
+Bumping version
+```
+
+* Nov 8, 2024
+* [2c91dd8](/blab/evofr/commit/2c91dd89e68d48adc24c90ba5fd7450dbe213bfa)
+* [zip](/blab/evofr/archive/refs/tags/0.1.25.zip)
+* [tar.gz](/blab/evofr/archive/refs/tags/0.1.25.tar.gz)
+
+## [0.1.24](/blab/evofr/releases/tag/0.1.24)
+
+Toggle 0.1.24's commit message
+
+```
+
+```
+
+* Nov 8, 2024
+* [ed301ff](/blab/evofr/commit/ed301ff759a96a61bda5de606e19c7a8d7948c09)
+* [zip](/blab/evofr/archive/refs/tags/0.1.24.zip)
+* [tar.gz](/blab/evofr/archive/refs/tags/0.1.24.tar.gz)
+
+## [0.1.23](/blab/evofr/releases/tag/0.1.23)
+
+Toggle 0.1.23's commit message
+
+```
+Bumping version
+```
+
+* Jun 3, 2024
+* [f5dfee4](/blab/evofr/commit/f5dfee4875f23f72839e93f3ad50ac42980460ac)
+* [zip](/blab/evofr/archive/refs/tags/0.1.23.zip)
+* [tar.gz](/blab/evofr/archive/refs/tags/0.1.23.tar.gz)
+
+## [0.1.22](/blab/evofr/releases/tag/0.1.22)
+
+Toggle 0.1.22's commit message
+
+```
+Bumping version
+```
+
+* Feb 9, 2024
+* [19b5b81](/blab/evofr/commit/19b5b81ea753bc7d233028d9881d717d6cf06088)
+* [zip](/blab/evofr/archive/refs/tags/0.1.22.zip)
+* [tar.gz](/blab/evofr/archive/refs/tags/0.1.22.tar.gz)
+
+## [0.1.21](/blab/evofr/releases/tag/0.1.21)
+
+Toggle 0.1.21's commit message
+
+```
+Bumping version
+```
+
+* Sep 26, 2023
+* [fa04238](/blab/evofr/commit/fa042389da267a7723f33dfaece9dd12f29dcaae)
+* [zip](/blab/evofr/archive/refs/tags/0.1.21.zip)
+* [tar.gz](/blab/evofr/archive/refs/tags/0.1.21.tar.gz)
+
+## [0.1.20](/blab/evofr/releases/tag/0.1.20)
+
+Toggle 0.1.20's commit message
+
+```
+Bumping verions (fix)
+```
+
+* Jul 6, 2023
+* [24f8bdb](/blab/evofr/commit/24f8bdb17d593e2e9dc1c63ed61b0dbba236f749)
+* [zip](/blab/evofr/archive/refs/tags/0.1.20.zip)
+* [tar.gz](/blab/evofr/archive/refs/tags/0.1.20.tar.gz)
+
+## [0.1.19](/blab/evofr/releases/tag/0.1.19)
+
+Toggle 0.1.19's commit message
+
+```
+Bumping version to 0.1.19
+```
+
+* Jun 5, 2023
+* [3aa0723](/blab/evofr/commit/3aa07238dfd0c0aaeba891c76a389d25f2876d04)
+* [zip](/blab/evofr/archive/refs/tags/0.1.19.zip)
+* [tar.gz](/blab/evofr/archive/refs/tags/0.1.19.tar.gz)
+
+Previous[Next](/blab/evofr/tags?after=0.1.19)
+
+## Footer
+
+© 2026 GitHub, Inc.
+
+### Footer navigation
+
+* [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+* [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+* [Security](https://github.com/security)
+* [Status](https://www.githubstatus.com/)
+* [Community](https://github.community/)
+* [Docs](https://docs.github.com/)
+* [Contact](https://support.github.com?tags=dotcom-footer)
+* Manage cookies
+* Do not share my personal information
+
+You can’t perform that action at this time.

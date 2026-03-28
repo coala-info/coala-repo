@@ -1,6 +1,6 @@
 ---
 name: scmap-cli
-description: "scmap-cli projects single-cell RNA-seq data across experiments by mapping query cells to reference clusters or individual cells. Use when user asks to preprocess SingleCellExperiment objects, select informative features, create reference indices, or project query datasets onto reference clusters and cells."
+description: scmap-cli projects single-cell RNA-seq datasets across different experiments to perform automated cell-type annotation. Use when user asks to preprocess single-cell data, select informative features, index reference datasets by cluster or cell, and map query cells to a reference for annotation.
 homepage: https://github.com/ebi-gene-expression-group/scmap-cli
 ---
 
@@ -9,83 +9,104 @@ homepage: https://github.com/ebi-gene-expression-group/scmap-cli
 
 ## Overview
 
-The `scmap-cli` toolset provides a command-line interface for the `scmap` Bioconductor package, enabling the projection of single-cell RNA-seq data across different experiments. This skill should be used to automate workflows that map "query" cells to "reference" clusters or individual cells without requiring direct R programming. The tool operates primarily on serialized R objects (`.rds` files) containing `SingleCellExperiment` (SCE) objects.
+The `scmap-cli` toolset provides a command-line interface for the `scmap` Bioconductor package, enabling the projection of single-cell RNA-seq datasets across different experiments or technologies. It is particularly useful for automated cell-type annotation by mapping "query" cells to a well-characterized "reference" dataset. The workflow typically involves preprocessing data into the SingleCellExperiment format, selecting highly informative genes, indexing the reference (either by cluster centroids or individual cells), and finally performing the projection.
 
-## Core Workflow
+## Core Workflow and Commands
 
-The standard `scmap` pipeline follows a linear progression: Preprocessing -> Feature Selection -> Indexing -> Projection.
+### 1. Data Preparation
+Before indexing or projection, the input SingleCellExperiment (`.rds`) object must be normalized and transformed.
 
-### 1. Preprocessing
-Before analysis, the SCE object must be normalized and "un-sparsed."
 ```bash
-scmap-preprocess-sce.R --input-object input.rds --output-sce-object preprocessed.rds
+scmap-preprocess-sce.R \
+    --input-object <input.rds> \
+    --output-sce-object <processed.rds>
 ```
 
 ### 2. Feature Selection
-Identify the most informative genes (features) for the projection.
+Identify the most informative genes to use for the projection. This reduces noise and improves mapping accuracy.
+
 ```bash
 scmap-select-features.R \
-  --input-object-file preprocessed.rds \
-  --n-features 500 \
-  --output-object-file features.rds \
-  --output-plot-file selection_plot.png
+    --input-object-file <processed.rds> \
+    --n-features 500 \
+    --output-object-file <selected_features.rds> \
+    --output-plot-file <feature_plot.png>
 ```
-*   **Tip**: Always generate the plot to verify the relationship between dropout rate and median expression.
 
-### 3. Indexing (Reference Dataset)
-You must create an index for your reference dataset. You can index by **Cluster** (centroids) or by **Cell** (approximate nearest neighbors).
+### 3. Reference Indexing
+You can index a reference dataset in two ways: by cluster (faster, uses centroids) or by cell (more granular, uses k-nearest neighbors).
 
-**Cluster Indexing:**
+**Cluster-based Indexing:**
 ```bash
 scmap-index-cluster.R \
-  --input-object-file features.rds \
-  --cluster-col cell_type1 \
-  --output-object-file cluster_index.rds
+    --input-object-file <selected_features.rds> \
+    --cluster-col <metadata_column_name> \
+    --output-object-file <cluster_index.rds>
 ```
 
-**Cell Indexing:**
+**Cell-based Indexing:**
 ```bash
 scmap-index-cell.R \
-  --input-object-file features.rds \
-  --number-chunks 10 \
-  --output-object-file cell_index.rds
+    --input-object-file <selected_features.rds> \
+    --number-chunks 10 \
+    --number-clusters 100 \
+    --output-object-file <cell_index.rds>
 ```
 
-### 4. Projection (Query Dataset)
-Map your query dataset against the created index.
+### 4. Projection and Mapping
+Map your query dataset against the generated index.
 
-**Projecting to Clusters:**
+**Mapping to Clusters:**
 ```bash
 scmap-scmap-cluster.R \
-  -i cluster_index.rds \
-  -p query.rds \
-  --threshold 0.7 \
-  --output-text-file results.csv
+    -i <cluster_index.rds> \
+    -p <query_processed.rds> \
+    --threshold 0.7 \
+    --output-text-file <results.csv>
 ```
 
-**Projecting to Cells:**
+**Mapping to Cells:**
 ```bash
 scmap-scmap-cell.R \
-  -i cell_index.rds \
-  -p query.rds \
-  --number-nearest-neighbours 10 \
-  --closest-cells-text-file neighbors.csv
+    -i <cell_index.rds> \
+    -p <query_processed.rds> \
+    --number-nearest-neighbours 10 \
+    --output-object-file <projection_output.rds> \
+    --closest-cells-text-file <neighbors.csv>
 ```
 
-## Best Practices and Expert Tips
+### 5. Standardizing Output
+Convert tool-specific outputs into a standardized table for downstream analysis.
 
-- **Memory Management**: Use the `--remove-mat` flag during indexing steps (`scmap-index-cluster.R` or `scmap-index-cell.R`) to remove the raw expression matrix from the output index object. This significantly reduces file size and memory usage during projection.
-- **Reproducibility**: When using `scmap-cell`, the underlying k-means clustering involves randomness. Ensure consistent results by setting a seed if the environment allows, or note that small variations may occur between runs.
-- **Threshold Tuning**: In `scmap-cluster`, the `--threshold` parameter (default 0.7) determines the similarity required to assign a cell to a cluster. If too many cells are labeled "unassigned," consider lowering this threshold.
-- **Standardizing Output**: Use `scmap_get_std_output.R` to convert tool-specific outputs into a unified format suitable for downstream multi-tool pipelines.
-  ```bash
-  scmap_get_std_output.R \
-    --predictions-file results.csv \
-    --tool scmap-cluster \
-    --output-table final_results.tsv
-  ```
-- **Input Validation**: Ensure your query and reference datasets use the same gene identifiers (e.g., Gene Symbols or Ensembl IDs). `scmap` matches features by row names.
+```bash
+scmap_get_std_output.R \
+    --predictions-file <results.csv> \
+    --output-table <final_annotation.txt> \
+    --tool <scmap-cell|scmap-cluster> \
+    --include-scores TRUE
+```
+
+## Expert Tips and Best Practices
+
+- **Threshold Tuning**: The `--threshold` parameter in `scmap-cluster` (default 0.7) determines the minimum cosine similarity required for an assignment. If too many cells are labeled "unassigned," consider lowering the threshold slightly, but be wary of false positives.
+- **Feature Consistency**: Ensure that the gene identifiers (e.g., Gene Symbols or Ensembl IDs) used in the query dataset match those used to build the reference index.
+- **Memory Management**: For very large reference datasets, use `scmap-index-cell.R` with the `--remove-mat` flag set to `TRUE` to reduce the size of the resulting index object by removing the raw expression matrix.
+- **Visualization**: Always generate the `--output-plot-file` during feature selection to verify that the selected genes follow the expected dropout-vs-intensity curve.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| /usr/local/bin/scmap-index-cluster.R | Index clustering information for scmap |
+| /usr/local/bin/scmap-preprocess-sce.R | Preprocesses a SingleCellExperiment object for scmap. |
+| /usr/local/bin/scmap_get_std_output.R | Get standard output from scmap predictions |
+| scmap-index-cell.R | Index cell data for scmap |
+| scmap-scmap-cell.R | Annotates cells of a projection dataset using labels of a reference dataset. |
+| scmap-scmap-cluster.R | Assigns cell types to cells in a SingleCellExperiment object using pre-computed cluster assignments. |
+| scmap-select-features.R | Selects features based on expression and dropout distributions. |
 
 ## Reference documentation
-- [scmap-cli GitHub Repository](./references/github_com_ebi-gene-expression-group_scmap-cli.md)
-- [scmap-cli Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_scmap-cli_overview.md)
+- [scmap-scripts README](./references/github_com_ebi-gene-expression-group_scmap-cli_blob_develop_README.md)
+- [Post-install test examples](./references/github_com_ebi-gene-expression-group_scmap-cli_blob_develop_scmap-cli-post-install-tests.sh.md)

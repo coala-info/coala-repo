@@ -1,6 +1,6 @@
 ---
 name: lusstr
-description: lusstr converts raw NGS sequence data into standardized forensic allele designations and prepares input files for probabilistic genotyping platforms. Use when user asks to analyze STR or SNP data, convert sequence strings to allele designations, apply forensic filters like stutter identification, or generate input files for STRmix and other genotyping software.
+description: lusSTR converts raw forensic NGS sequence data into standardized allele designations and filtered outputs for human identification. Use when user asks to process STR or SNP data, generate configuration files for forensic panels, or format genetic data for probabilistic genotyping software.
 homepage: https://www.github.com/bioforensics/lusSTR
 ---
 
@@ -8,54 +8,58 @@ homepage: https://www.github.com/bioforensics/lusSTR
 # lusstr
 
 ## Overview
-lusstr is a specialized forensic bioinformatics tool that bridges the gap between raw NGS sequence strings and the structured allele designations required for downstream analysis. It automates the conversion of sequence data into multiple annotation styles and applies forensic-specific filters (such as stutter identification) to generate input files for major probabilistic genotyping platforms. It is essential for forensic analysts working with ForenSeq (Signature Prep or Kintelligence) and PowerSeq panels who need to standardize sequence representations or prepare evidence/reference profiles.
+lusSTR is a specialized forensic bioinformatics tool designed to bridge the gap between raw NGS sequence data and downstream forensic genetic analysis. It automates the conversion of complex sequence strings into standardized representations and designations used in human identification. Beyond conversion, it provides essential filtering and stutter identification capabilities, specifically tailored for major forensic panels including Verogen ForenSeq (Signature Prep and Kintelligence) and Promega PowerSeq.
 
-## Command Line Usage
+## Core Workflows
 
-### Initialization and Configuration
-Before running workflows, generate a configuration file to define your environment and analysis parameters.
-```bash
-# Create default config in current directory
-lusstr config
+### 1. Initialization and Configuration
+Before running an analysis, generate a configuration file to define your environment and parameters.
+- **Generate default config**: `lusstr config`
+- **Key parameters to verify in the config**:
+    - `analysis_software`: Set to `uas`, `straitrazor`, or `genemarker`.
+    - `samp_input`: Path to your input directory or specific files.
+    - `kit`: Specify `forenseq` (default) or `powerseq`.
 
-# Create config in a specific working directory
-lusstr config -w /path/to/workdir/
-```
+### 2. STR Analysis Pipeline
+Process STR loci to generate allele designations and filtered outputs.
+- **Standard run**: `lusstr strs`
+- **Include sex chromosomes**: `lusstr strs --sex`
+- **PowerSeq specific run**: `lusstr strs --powerseq`
+- **Custom sequence ranges**: Use the `--custom` flag if you have modified `str_markers.json`.
 
-### STR Analysis Workflow
-The STR pipeline handles formatting, sequence conversion, and filtering for autosomal and sex-chromosome loci.
-```bash
-# Run the full STR workflow
-lusstr strs
+### 3. SNP Data Processing
+Process identity, ancestry, or phenotype SNPs for use in software like EuroForMix (EFM).
+- **Standard run**: `lusstr snps`
+- **Reference file creation**: Use the `--reference` flag when processing known reference samples rather than evidence.
 
-# Common flags for 'lusstr config' to customize the STR workflow:
-# --input <path>      Path to UAS reports, STRait Razor files, or GeneMarker CSVs
-# --powerseq          Use if processing Promega PowerSeq data (default is ForenSeq)
-# --sex               Include X and Y chromosome STRs
-# --software <type>   Target output: strmix, efm, or mpsproto
-# --str-type <type>   Data representation: ngs, ce, or lusplus
-# --reference         Generate reference profiles instead of evidence profiles
-```
+### 4. Probabilistic Genotyping Preparation
+lusSTR can format data specifically for different software packages using the `--software` flag:
+- **STRmix**: `lusstr strs --software strmix`
+- **EuroForMix**: `lusstr strs --software efm`
+- **MPSproto**: `lusstr strs --software mpsproto`
 
-### SNP Analysis Workflow
-For processing identity, phenotype, or ancestry SNPs (including Kintelligence panel data).
-```bash
-# Run the SNP analysis workflow
-lusstr snps
-```
+## Input Format Requirements
+Ensure your input data matches one of the supported formats:
+- **UAS**: .xlsx files (Sample Details, Sample Report, or Phenotype Report).
+- **STRait Razor v3**: Individual sample files (ensure config versions `ForenSeqv1.27` or `PowerSeqv2.31` were used).
+- **GeneMarker v2.6**: `*_strresults_filtered.csv` files.
+- **Custom CSV**: Must contain columns: `Locus`, `NumReads`, `Sequence`, `SampleID`.
 
-### Graphical Interface
-For interactive plotting and manual sequence type editing.
-```bash
-lusstr gui
-```
+## Expert Tips
+- **GUI Mode**: If you need to interactively view marker plots or manually edit sequence types, launch the interface with `lusstr gui`.
+- **Stutter Identification**: lusSTR can identify stutter using CE alleles, LUS+ alleles, or bracketed forms. Specify your preference using the `--str-type` flag (options: `ce`, `ngs`, `lusplus`).
+- **Combining Sequences**: When using STRait Razor data, identical sequences are combined by default. Use `--nocombine` if you need to maintain sequence separation for specific research purposes.
 
-## Expert Tips and Best Practices
-- **Input Compatibility**: If using **STRait Razor v3**, ensure you use the specific configuration versions required by lusstr (ForenSeq v1.27 or PowerSeq v2.31) to ensure sequence regions align correctly with UAS standards.
-- **Output for STRmix**: When preparing data for STRmix NGS, use the `--strand` flag to specify whether sequences should be reported in `uas` or `forward` orientation.
-- **Batch Processing**: Point the `samp_input` in your config to a directory rather than a single file to process multiple samples in a single Snakemake execution.
-- **Filtering**: Use the `--nofilters` flag if you need to generate output files for genotyping software but want to bypass lusstr's internal stutter and threshold filtering logic.
-- **Custom Ranges**: If your lab uses non-standard sequence boundaries, set `custom: True` in the config and modify the `str_markers.json` file to define specific sequence ranges.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| lusstr config | Create config file for running STR pipeline |
+| lusstr snps | Running the SNP pipeline |
+| lusstr_strs | Running the STR pipeline |
 
 ## Reference documentation
-- [lusSTR GitHub Repository](./references/github_com_bioforensics_lusSTR.md)
+- [lusSTR README](./references/github_com_bioforensics_lusSTR_blob_master_README.md)
+- [lusSTR Overview](./references/anaconda_org_channels_bioconda_packages_lusstr_overview.md)

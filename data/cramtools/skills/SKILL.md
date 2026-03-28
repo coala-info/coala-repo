@@ -1,6 +1,6 @@
 ---
 name: cramtools
-description: cramtools is a Java-based suite used for the compression, conversion, and manipulation of genomic sequence data between BAM and CRAM formats. Use when user asks to convert BAM to CRAM, restore CRAM to BAM, index genomic files, merge sequence data, or apply lossy quality score compression models.
+description: CRAMTools is a Java suite designed for the efficient compression, conversion, and manipulation of genomic sequence read data using the CRAM format. Use when user asks to convert BAM to CRAM, transcode CRAM to BAM, index CRAM files, merge sequence data, or apply lossy quality score compression.
 homepage: https://github.com/enasequence/cramtools
 ---
 
@@ -8,70 +8,81 @@ homepage: https://github.com/enasequence/cramtools
 # cramtools
 
 ## Overview
+CRAMTools is a specialized Java suite designed for the efficient compression and manipulation of sequence read data using the CRAM format. It is particularly useful for researchers working with large-scale genomic datasets who need to reduce storage footprints while maintaining data integrity. The tool leverages reference-based compression, allowing it to achieve significantly higher compression ratios than the standard BAM format by only storing differences against a known reference sequence.
 
-cramtools is a Java-based suite designed for the efficient compression and manipulation of genomic sequence read data. It serves as a bridge between the standard BAM format and the highly compressed CRAM format. You should use this skill to reduce the storage footprint of sequencing data by leveraging reference-based compression and customizable lossy models for quality scores. While the project is archived in favor of htslib/samtools, it remains a specific requirement for legacy pipelines and Java-based environments requiring direct CRAM 3.0 support.
+## Core Workflows
 
-## Core CLI Usage
+### BAM and CRAM Conversion
+The primary use case for cramtools is transcoding between formats.
 
-All commands are executed via the runnable JAR file.
-
-### BAM to CRAM Conversion
-To convert a BAM file to CRAM, you must provide a reference fasta file.
+**Convert BAM to CRAM:**
+Requires a reference fasta and its `.fai` index.
 ```bash
 java -jar cramtools-3.0.jar cram \
   --input-bam-file <input.bam> \
-  --reference-fasta-file <reference.fasta> \
+  --reference-fasta-file <ref.fa> \
   --output-cram-file <output.cram>
 ```
 
-### CRAM to BAM Conversion
-To restore a BAM file from a CRAM archive:
+**Convert CRAM to BAM:**
 ```bash
 java -jar cramtools-3.0.jar bam \
   --input-cram-file <input.cram> \
-  --reference-fasta-file <reference.fasta> \
+  --reference-fasta-file <ref.fa> \
   --output-bam-file <output.bam>
 ```
 
 ### Indexing and Utilities
-*   **Index**: Generate a `.crai` or `.bai` index for a CRAM file.
+*   **Index:** Generate `.crai` or `.bai` indexes for CRAM files.
     `java -jar cramtools-3.0.jar index --input-file <file.cram>`
-*   **Merge**: Combine multiple SAM/BAM/CRAM files.
-    `java -jar cramtools-3.0.jar merge --input-file <file1> --input-file <file2> --output-file <merged.cram>`
-*   **Fastq**: Dump reads into FASTQ format.
-    `java -jar cramtools-3.0.jar fastq --input-cram-file <file.cram>`
-*   **QStat**: Generate quality score statistics.
-    `java -jar cramtools-3.0.jar qstat --input-cram-file <file.cram>`
+*   **Merge:** Combine multiple SAM/BAM/CRAM files.
+    `java -jar cramtools-3.0.jar merge --input-file <f1.cram> --input-file <f2.cram> --output-file <merged.cram>`
+*   **Fix Header:** Update reference sequence MD5 checksums in the CRAM header.
+    `java -jar cramtools-3.0.jar fixheader --input-cram-file <file.cram> --reference-fasta-file <ref.fa>`
 
 ## Lossy Compression Models
+CRAMTools allows for "lossy" quality score storage to further reduce file size. This is controlled via the `--lossy-model` flag using specific selectors:
 
-cramtools allows for significant space savings by selectively degrading quality scores using the `--lossy-model` flag. The model string uses selectors and quality treatments (binning or full precision).
+*   **Selectors:** `*` (all), `R` (matches reference), `N` (mismatches), `U` (unmapped), `D` (flanking deletions), `Mn` (MapQ > n).
+*   **Treatment:** `40` (full precision), `8` (Illumina 8-binning).
 
-### Selector Keys
-*   `R`: Bases matching the reference.
-*   `N`: Mismatched bases.
-*   `U`: Unmapped reads.
-*   `D`: Positions flanking a deletion.
-*   `Mn`: Mapping quality higher than *n*.
-*   `mn`: Mapping quality lower than *n*.
-*   `*`: All bases/reads.
+**Common Patterns:**
+*   `*8`: Bin all quality scores into 8 bins.
+*   `N40-D8`: Preserve mismatches at full precision, bin scores flanking deletions.
+*   `m5`: Preserve quality scores only for reads with Mapping Quality < 5.
 
-### Treatment Keys
-*   `40`: Preserve full precision (40 values).
-*   `8`: Apply Illumina 8-binning scheme.
+## Reference Management
+CRAMTools can automatically discover reference sequences in three ways:
+1.  **Local File:** Provided via `-R` or `--reference-fasta-file`.
+2.  **ENA Registry:** Automatically downloads sequences from the European Nucleotide Archive using MD5 checksums in the SAM header.
+3.  **Local Cache:** Uses `REF_CACHE` or `REF_PATH` environment variables (compatible with samtools/htslib).
 
-### Common Patterns
-*   **Preserve mismatches, bin others**: `N40-*8` (Full precision for mismatches, 8-binning for everything else).
-*   **Preserve low mapping quality**: `m5` (Keep full quality for reads with MapQ < 5).
-*   **Bin all**: `*8` (Apply 8-binning to every quality score in the file).
+To pre-download all references required by a CRAM file:
+```bash
+java -jar cramtools-3.0.jar getref --input-cram-file <file.cram>
+```
 
-## Expert Tips and Best Practices
+## Expert Tips
+*   **Java Version:** Ensure Java 1.7 or higher is installed.
+*   **Sorting:** Input BAM files must be sorted by reference coordinates before conversion to CRAM.
+*   **Memory:** For large files, increase the JVM heap size (e.g., `java -Xmx4G -jar cramtools-3.0.jar ...`).
+*   **Legacy Note:** While CRAMTools 3.0 supports CRAM v3, the project is in maintenance mode. For new pipelines, consider `samtools` for CRAM operations as it is the current industry standard.
 
-*   **Reference Integrity**: Ensure your reference fasta has a corresponding `.fai` index (created via `samtools faidx`). cramtools relies heavily on the reference for coordinate-sorted data.
-*   **Reference Discovery**: If the local reference path is not provided, cramtools attempts to download sequences from the ENA reference registry using MD5 checksums found in the SAM header.
-*   **Environment Variables**: Use `REF_PATH` and `REF_CACHE` to manage local reference caches, similar to htslib behavior, to avoid redundant downloads.
-*   **Header Fixes**: If a CRAM file has incorrect MD5 checksums in the header, use the `fixheader` command to resolve reference alignment issues without re-compressing the entire file.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| cramtools bam | A tool to process CRAM files, including conversion to BAM, decryption, and tag calculation. |
+| cramtools cram | CRAM compression tool for converting BAM/SAM to CRAM |
+| cramtools fastq | Uncompress CRAM files into FASTQ format. |
+| cramtools index | Index a BAM or CRAM file using cramtools. |
+| fixheader | Fix headers in CRAM files, including MD5 calculation and URI injection for reference sequences. |
+| getref | A list of MD5 checksums for which the sequences should be downloaded. |
+| merge | The paths to the CRAM or BAM files to uncompress. |
+| qstat | Quality statistics for CRAM or BAM files |
 
 ## Reference documentation
-- [cramtools Main Documentation](./references/github_com_enasequence_cramtools.md)
-- [Known Issues and Troubleshooting](./references/github_com_enasequence_cramtools_issues.md)
+- [CRAMTools GitHub Repository](./references/github_com_enasequence_cramtools.md)
+- [ENA Programmatic Access Guide](./references/ena-docs_readthedocs_io_en_latest_retrieval_programmatic-access.html.md)

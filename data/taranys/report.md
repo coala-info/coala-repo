@@ -136,3 +136,6 @@ Try 'taranys --help' for help.
 Error: No such command 'view'.
 ```
 
+
+## Metadata
+- **Skill**: generated

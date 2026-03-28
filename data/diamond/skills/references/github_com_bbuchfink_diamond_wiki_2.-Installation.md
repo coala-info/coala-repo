@@ -83,6 +83,7 @@ Appearance settings
     - [Security Lab](https://securitylab.github.com)
     - [Maintainer Community](https://maintainers.github.com)
     - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
     - [Archive Program](https://archiveprogram.github.com)
   + REPOSITORIES
     - [Topics](https://github.com/topics)
@@ -157,7 +158,7 @@ Public
 
 * [Code](/bbuchfink/diamond)
 * [Issues
-  207](/bbuchfink/diamond/issues)
+  211](/bbuchfink/diamond/issues)
 * [Pull requests
   0](/bbuchfink/diamond/pulls)
 * [Discussions](/bbuchfink/diamond/discussions)
@@ -415,6 +416,4 @@ Please ask users of your tool to cite DIAMOND along with your own paper.
   There was an error while loading. Please reload this page.
 * Loading
 
-  [Advanced options](/bbuchfink/diamond/wiki/Advanced-options)
-
-  ###
+  [Advanced options](/

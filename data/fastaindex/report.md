@@ -58,3 +58,6 @@ Author: l.p.pryszcz+git@gmail.com
 Mizerow/Bratislava, 26/08/2014
 ```
 
+
+## Metadata
+- **Skill**: generated

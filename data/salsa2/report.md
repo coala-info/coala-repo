@@ -104,3 +104,6 @@ PYTHONHASHSEED: if this variable is set to 'random', the effect is the same
    in the range [0,4294967295] to get hash values with a predictable seed.
 ```
 
+
+## Metadata
+- **Skill**: generated

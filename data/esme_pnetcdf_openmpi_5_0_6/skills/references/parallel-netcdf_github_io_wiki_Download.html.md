@@ -1,1 +1,54 @@
-PnetCDF Source Code Downloads PnetCDF Source Code Downloads We encourage PnetCDF users to use the latest released version. If for some reason you would like to try out older versions, below is a table of (most of) our historical releases and their release notes. Release Date Release Note Source tar ball Size SHA-1 Checksum October 27, 2025 1.15.0-alpha pnetcdf-1.15.0-alpha.tar.gz 2.6 MB f1391c4b20f9811bcd8af4a510e75bba49477689 July 31, 2025 1.14.1 pnetcdf-1.14.1.tar.gz 2.4 MB 48fe2ec23e09a8b16e5af4ce0fb0f2caa46b427d November 11, 2024 1.14.0 pnetcdf-1.14.0.tar.gz 2.4 MB 5b8febccf7955e178d8d1e179be275fc607a4976 March 29, 2024 1.13.0 pnetcdf-1.13.0.tar.gz 2.3 MB b108c9794702836396459f89d93515a3d856d703 February 21, 2022 1.12.3 pnetcdf-1.12.3.tar.gz 2.3 MB 097041f8f102c7c55d703750b576ae48460aa3a3 January 15, 2021 1.12.2 pnetcdf-1.12.2.tar.gz 2.3 MB 3ab82ea878e321f6c0fd9afb44c8707949485d09 December 9, 2019 1.12.1 pnetcdf-1.12.1.tar.gz 2.3 MB e92580824534f2563c6cad6e128e43c89519e03d September 30, 2019 1.12.0 pnetcdf-1.12.0.tar.gz 2.3 MB 0b815d623a7a63631d6466d8df67be433e78cb7b May 13, 2019 1.11.2 pnetcdf-1.11.2.tar.gz 2.2 MB cf310a037846a5722c05525b0a77273bea8059a0 April 12, 2019 1.11.1 pnetcdf-1.11.1.tar.gz 2.2 MB 579697e5e1455ce8c2a14ee7e10a9f36c49c225f December 19, 2018 1.11.0 pnetcdf-1.11.0.tar.gz 2.1 MB a13fd24953abce1f3fd7aa94fd66f1b9895182de July 2, 2018 1.10.0 parallel-netcdf-1.10.0.tar.gz 2.0 MB 9ac144f305e14ae6306f5e51af1b4329bfb86480 December 19, 2017 1.9.0 parallel-netcdf-1.9.0.tar.gz 1.9 MB 0978ae5cdaba925e73ced2b550fc02a132b2c5ed January 28, 2017 1.8.1 parallel-netcdf-1.8.1.tar.gz 1.2 MB 2a8179158731f3fa24c9b183b4b1442e8853d229 December 19, 2016 1.8.0 parallel-netcdf-1.8.0.tar.gz 1.2 MB 825825481aa629eb82f21ca37afff1609b8eeb07 March 3, 2016 1.7.0 parallel-netcdf-1.7.0.tar.gz 1.1 MB 267eab7b6f9dc78c4d0e6def2def3aea4bc7c9f0 June 1, 2015 1.6.1 parallel-netcdf-1.6.1.tar.gz 2.7 MB 62a094eb952f9d1e15f07d56e535052604f1ac34 February 2, 2015 1.6.0 parallel-netcdf-1.6.0.tar.gz 2.7 MB 191087f01232252dda62c12425dd8f39aee09aff July 8, 2014 1.5.0 parallel-netcdf-1.5.0.tar.gz 2.6 MB 27586a39fef85a46cf0732a2c0f72dcbb1537189 December 23, 2013 1.4.1 parallel-netcdf-1.4.1.tar.gz 2.5 MB f2e57b9af78675f9c2a80a64ffb8522c47ea375a November 17, 2013 1.4.0 parallel-netcdf-1.4.0.tar.gz 2.5 MB fa734e62af819cb5ee9f85be61818163f8345a77 September 24, 2012 1.3.1 parallel-netcdf-1.3.1.tar.gz 2.5 MB f9860d174a4741e7f80a71e29fabbe170402f535 June 26, 2012 1.3.0 parallel-netcdf-1.3.0.tar.gz 2.5 MB b767de94e7b5d69a2a3a429a3a0b06b519392bc1 August 19, 2010 1.2.0 parallel-netcdf-1.2.0.tar.gz 17 MB acdeb28de266926aa99eb566fed4dca3f8f80749 January 27, 2010 1.1.1 parallel-netcdf-1.1.1.tar.gz 13 MB 6fef942fc2802c3852245cf327ea028f9c8db60a November 2, 2009 1.1.0 parallel-netcdf-1.1.0.tar.gz 13 MB 383da14e33fc98d3e04b5906af862db7b1341851 December 12, 2008 1.0.3 parallel-netcdf-1.0.3.tar.gz 13 MB cf96f613c942ac2c17ac1b22717b7044600fec3d July 27, 2005 1.0.0 parallel-netcdf-1.0.0.tar.gz 13 MB 13448825c2044a0f90d732249cae10dca9d9f566 * command to verify a SHA1 checksum: "/usr/bin/openssl sha1 filename" Accessing Developing Source Codes at Github The command to "clone" the source codes is git clone https://github.com/Parallel-NetCDF/PnetCDF.git For more information about the repository can be found in the README.md. Return to PnetCDF Home
+## PnetCDF Source Code Downloads
+
+We encourage PnetCDF users to use the latest released version. If for some
+reason you would like to try out older versions, below is a table of (most of)
+our historical releases and their release notes.
+
+| Release Date | Release Note | Source tar ball | Size | SHA-1 Checksum |
+| --- | --- | --- | --- | --- |
+| October 27, 2025 | [1.15.0-alpha](https://github.com/Parallel-NetCDF/Parallel-NetCDF.github.io/blob/master/Release_notes/1.15.0-alpha.md) | [pnetcdf-1.15.0-alpha.tar.gz](../Release/pnetcdf-1.15.0-alpha.tar.gz) | 2.6 MB | f1391c4b20f9811bcd8af4a510e75bba49477689 |
+| July 31, 2025 | [1.14.1](https://github.com/Parallel-NetCDF/Parallel-NetCDF.github.io/blob/master/Release_notes/1.14.1.md) | [pnetcdf-1.14.1.tar.gz](../Release/pnetcdf-1.14.1.tar.gz) | 2.4 MB | 48fe2ec23e09a8b16e5af4ce0fb0f2caa46b427d |
+| November 11, 2024 | [1.14.0](https://github.com/Parallel-NetCDF/Parallel-NetCDF.github.io/blob/master/Release_notes/1.14.0.md) | [pnetcdf-1.14.0.tar.gz](../Release/pnetcdf-1.14.0.tar.gz) | 2.4 MB | 5b8febccf7955e178d8d1e179be275fc607a4976 |
+| March 29, 2024 | [1.13.0](https://github.com/Parallel-NetCDF/Parallel-NetCDF.github.io/blob/master/Release_notes/1.13.0.md) | [pnetcdf-1.13.0.tar.gz](../Release/pnetcdf-1.13.0.tar.gz) | 2.3 MB | b108c9794702836396459f89d93515a3d856d703 |
+| February 21, 2022 | [1.12.3](https://github.com/Parallel-NetCDF/Parallel-NetCDF.github.io/blob/master/Release_notes/1.12.3.md) | [pnetcdf-1.12.3.tar.gz](../Release/pnetcdf-1.12.3.tar.gz) | 2.3 MB | 097041f8f102c7c55d703750b576ae48460aa3a3 |
+| January 15, 2021 | [1.12.2](https://github.com/Parallel-NetCDF/Parallel-NetCDF.github.io/blob/master/Release_notes/1.12.2.md) | [pnetcdf-1.12.2.tar.gz](../Release/pnetcdf-1.12.2.tar.gz) | 2.3 MB | 3ab82ea878e321f6c0fd9afb44c8707949485d09 |
+| December 9, 2019 | [1.12.1](https://github.com/Parallel-NetCDF/Parallel-NetCDF.github.io/blob/master/Release_notes/1.12.1.md) | [pnetcdf-1.12.1.tar.gz](../Release/pnetcdf-1.12.1.tar.gz) | 2.3 MB | e92580824534f2563c6cad6e128e43c89519e03d |
+| September 30, 2019 | [1.12.0](https://github.com/Parallel-NetCDF/Parallel-NetCDF.github.io/blob/master/Release_notes/1.12.0.md) | [pnetcdf-1.12.0.tar.gz](../Release/pnetcdf-1.12.0.tar.gz) | 2.3 MB | 0b815d623a7a63631d6466d8df67be433e78cb7b |
+| May 13, 2019 | [1.11.2](https://github.com/Parallel-NetCDF/Parallel-NetCDF.github.io/blob/master/Release_notes/1.11.2.md) | [pnetcdf-1.11.2.tar.gz](../Release/pnetcdf-1.11.2.tar.gz) | 2.2 MB | cf310a037846a5722c05525b0a77273bea8059a0 |
+| April 12, 2019 | [1.11.1](https://github.com/Parallel-NetCDF/Parallel-NetCDF.github.io/blob/master/Release_notes/1.11.1.md) | [pnetcdf-1.11.1.tar.gz](../Release/pnetcdf-1.11.1.tar.gz) | 2.2 MB | 579697e5e1455ce8c2a14ee7e10a9f36c49c225f |
+| December 19, 2018 | [1.11.0](https://github.com/Parallel-NetCDF/Parallel-NetCDF.github.io/blob/master/Release_notes/1.11.0.md) | [pnetcdf-1.11.0.tar.gz](../Release/pnetcdf-1.11.0.tar.gz) | 2.1 MB | a13fd24953abce1f3fd7aa94fd66f1b9895182de |
+| July 2, 2018 | [1.10.0](https://github.com/Parallel-NetCDF/Parallel-NetCDF.github.io/blob/master/Release_notes/1.10.0.md) | [parallel-netcdf-1.10.0.tar.gz](../Release/parallel-netcdf-1.10.0.tar.gz) | 2.0 MB | 9ac144f305e14ae6306f5e51af1b4329bfb86480 |
+| December 19, 2017 | [1.9.0](../Release_notes/1.9.0.html) | [parallel-netcdf-1.9.0.tar.gz](../Release/parallel-netcdf-1.9.0.tar.gz) | 1.9 MB | 0978ae5cdaba925e73ced2b550fc02a132b2c5ed |
+| January 28, 2017 | [1.8.1](../Release_notes/1.8.1.html) | [parallel-netcdf-1.8.1.tar.gz](../Release/parallel-netcdf-1.8.1.tar.gz) | 1.2 MB | 2a8179158731f3fa24c9b183b4b1442e8853d229 |
+| December 19, 2016 | [1.8.0](../Release_notes/1.8.0.html) | [parallel-netcdf-1.8.0.tar.gz](../Release/parallel-netcdf-1.8.0.tar.gz) | 1.2 MB | 825825481aa629eb82f21ca37afff1609b8eeb07 |
+| March 3, 2016 | [1.7.0](../Release_notes/1.7.0.html) | [parallel-netcdf-1.7.0.tar.gz](../Release/parallel-netcdf-1.7.0.tar.gz) | 1.1 MB | 267eab7b6f9dc78c4d0e6def2def3aea4bc7c9f0 |
+| June 1, 2015 | [1.6.1](../Release_notes/1.6.1.html) | [parallel-netcdf-1.6.1.tar.gz](../Release/parallel-netcdf-1.6.1.tar.gz) | 2.7 MB | 62a094eb952f9d1e15f07d56e535052604f1ac34 |
+| February 2, 2015 | [1.6.0](../Release_notes/1.6.0.html) | [parallel-netcdf-1.6.0.tar.gz](../Release/parallel-netcdf-1.6.0.tar.gz) | 2.7 MB | 191087f01232252dda62c12425dd8f39aee09aff |
+| July 8, 2014 | [1.5.0](../Release_notes/1.5.0.html) | [parallel-netcdf-1.5.0.tar.gz](../Release/parallel-netcdf-1.5.0.tar.gz) | 2.6 MB | 27586a39fef85a46cf0732a2c0f72dcbb1537189 |
+| December 23, 2013 | [1.4.1](../Release_notes/1.4.1.html) | [parallel-netcdf-1.4.1.tar.gz](../Release/parallel-netcdf-1.4.1.tar.gz) | 2.5 MB | f2e57b9af78675f9c2a80a64ffb8522c47ea375a |
+| November 17, 2013 | [1.4.0](../Release_notes/1.4.0.html) | [parallel-netcdf-1.4.0.tar.gz](../Release/parallel-netcdf-1.4.0.tar.gz) | 2.5 MB | fa734e62af819cb5ee9f85be61818163f8345a77 |
+| September 24, 2012 | [1.3.1](../Release_notes/1.3.1.html) | [parallel-netcdf-1.3.1.tar.gz](../Release/parallel-netcdf-1.3.1.tar.gz) | 2.5 MB | f9860d174a4741e7f80a71e29fabbe170402f535 |
+| June 26, 2012 | [1.3.0](../Release_notes/1.3.0.html) | [parallel-netcdf-1.3.0.tar.gz](../Release/parallel-netcdf-1.3.0.tar.gz) | 2.5 MB | b767de94e7b5d69a2a3a429a3a0b06b519392bc1 |
+| August 19, 2010 | [1.2.0](../Release_notes/1.2.0.html) | [parallel-netcdf-1.2.0.tar.gz](../Release/parallel-netcdf-1.2.0.tar.gz) | 17 MB | acdeb28de266926aa99eb566fed4dca3f8f80749 |
+| January 27, 2010 | [1.1.1](../Release_notes/1.1.1.html) | [parallel-netcdf-1.1.1.tar.gz](../Release/parallel-netcdf-1.1.1.tar.gz) | 13 MB | 6fef942fc2802c3852245cf327ea028f9c8db60a |
+| November 2, 2009 | [1.1.0](../Release_notes/1.1.0.html) | [parallel-netcdf-1.1.0.tar.gz](../Release/parallel-netcdf-1.1.0.tar.gz) | 13 MB | 383da14e33fc98d3e04b5906af862db7b1341851 |
+| December 12, 2008 | [1.0.3](../Release_notes/1.0.3.html) | [parallel-netcdf-1.0.3.tar.gz](../Release/parallel-netcdf-1.0.3.tar.gz) | 13 MB | cf96f613c942ac2c17ac1b22717b7044600fec3d |
+| July 27, 2005 | [1.0.0](../Release_notes/1.0.0.html) | [parallel-netcdf-1.0.0.tar.gz](../Release/parallel-netcdf-1.0.0.tar.gz) | 13 MB | 13448825c2044a0f90d732249cae10dca9d9f566 |
+
+\* command to verify a SHA1 checksum: "/usr/bin/openssl sha1 filename"
+
+## Accessing Developing Source Codes at Github
+
+The command to "clone" the source codes is
+
+```
+git clone https://github.com/Parallel-NetCDF/PnetCDF.git
+```
+
+For more information about the
+[repository](https://github.com/Parallel-NetCDF/PnetCDF)
+can be found in the README.md.
+
+---
+
+Return to [PnetCDF Home](https://parallel-netcdf.github.io)

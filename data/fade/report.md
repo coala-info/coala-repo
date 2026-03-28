@@ -135,3 +135,6 @@ usage: ./fade extract [options] <annotated BAM/SAM>
 -h    --help This help information.
 ```
 
+
+## Metadata
+- **Skill**: generated

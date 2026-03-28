@@ -1,6 +1,6 @@
 ---
 name: atlas-data-import
-description: This tool fetches standardized expression matrices, metadata, and cell-type classifiers directly from the Single Cell Expression Atlas. Use when user asks to download experiment data, retrieve marker genes, or import pre-trained classification models and performance metrics.
+description: This tool retrieves single-cell RNA-seq expression data, experimental metadata, and pre-trained cell type classifiers from the EBI Gene Expression Group. Use when user asks to download experiment matrices, fetch metadata files, retrieve marker gene sets, or import machine learning classifiers for cell type annotation.
 homepage: https://github.com/ebi-gene-expression-group/atlas-data-import
 ---
 
@@ -8,59 +8,60 @@ homepage: https://github.com/ebi-gene-expression-group/atlas-data-import
 # atlas-data-import
 
 ## Overview
-The `atlas-data-import` tool provides a suite of R scripts designed to interface with the Single Cell Expression Atlas. It allows researchers to bypass manual downloads by fetching standardized expression matrices and experimental metadata directly via the command line. It is particularly useful for large-scale meta-analyses or when building automated pipelines that require specific versions of experiment data or cell-type classifiers.
+The `atlas-data-import` skill provides a specialized workflow for interacting with the EBI Gene Expression Group's data retrieval scripts. It enables the automated fetching of single-cell RNA-seq data, including raw or normalized counts (CPM/TPM), experimental design files, and marker gene sets. Additionally, it supports the bulk import of pre-trained machine learning classifiers used for cell type annotation across various species.
 
-## Installation
-Install the package via Bioconda. It is recommended to use a dedicated environment to avoid dependency conflicts:
-```bash
-conda create -n atlas-import
-conda activate atlas-import
-conda install -c bioconda atlas-data-import
-```
-
-## Core Workflows
+## Core Commands and Usage
 
 ### 1. Fetching Experiment Data
-Use `get_experiment_data.R` to download specific components of a dataset.
+Use `get_experiment_data.R` to download specific study components. You must provide an accession code (e.g., E-MTAB-6912) and a matrix type.
 
-**Basic usage (Expression + Metadata):**
+**Basic Pattern:**
 ```bash
-get_experiment_data.R --accession-code E-MTAB-5061 \
-                      --get-expression-data TRUE \
-                      --get-sdrf TRUE \
-                      --output-dir-name ./data_output
+get_experiment_data.R \
+    --accession-code <ACCESSION> \
+    --matrix-type <raw|filtered|TPM|CPM> \
+    --get-expression-data \
+    --output-dir-name <DIR_NAME>
 ```
 
-**Advanced Data Retrieval:**
-*   **Marker Genes:** Set `--get-marker-genes TRUE` and specify the grouping type with `--markers-cell-grouping` (e.g., 'inferred_cell_type_-_ontology_labels').
-*   **Matrix Types:** Use `--matrix-type` to specify the format (e.g., 'raw' or 'filtered').
-*   **Naming:** Use `--use-default-names TRUE` to keep the original Atlas filenames, or `--use-full-names TRUE` for descriptive non-expression filenames.
+**High-Utility Options:**
+- **Metadata Only**: Omit `--get-expression-data` and use `--get-sdrf`, `--get-condensed-sdrf`, or `--get-idf` to fetch only the experimental design and sample attributes.
+- **Marker Genes**: Use `--get-marker-genes` combined with `--markers-cell-grouping` (default is "inferred_cell_type_-_ontology_labels") to retrieve cluster-specific markers.
+- **10x Compatibility**: By default, expression data is stored in a `10x_data` subdirectory. Use `--exp-data-dir` to change this or `--use-default-expr-names` to avoid 10x-style naming conventions.
 
 ### 2. Importing Classifiers
-Use `import_classification_data.R` to retrieve pre-trained cell-type classifiers and performance tables.
+Use `import_classification_data.R` to retrieve pre-trained models for cell type prediction.
 
-**Download classifiers for specific studies:**
+**Basic Pattern:**
 ```bash
-import_classification_data.R --accession-code E-MTAB-5061,E-GEOD-81608 \
-                             --tool scpred \
-                             --species "Homo sapiens" \
-                             --classifiers-output-dir ./classifiers
+import_classification_data.R \
+    --tool <TOOL_NAME> \
+    --species <SPECIES_NAME> \
+    --classifiers-output-dir <DIR_NAME>
 ```
 
-**Retrieve Performance Metrics:**
-To evaluate the reliability of the imported classifiers, include the performance table flag:
-```bash
-import_classification_data.R --accession-code E-MTAB-5061 \
-                             --get-tool-perf-table TRUE \
-                             --tool-perf-table-output-path ./metrics.txt
-```
+**Expert Tips:**
+- **Tool Selection**: Common tools supported include `scpred`.
+- **Species Format**: Use underscores for species names (e.g., `mus_musculus`, `homo_sapiens`).
+- **Bulk Import**: If `--accession-code` is omitted, the script attempts to download all available classifiers for the specified tool and species from the EBI FTP server.
+- **Performance Metrics**: Include `--get-tool-perf-table` to download the associated p-value/performance tables for the classifiers.
 
-## Expert Tips & Best Practices
-*   **Accession Codes:** Always verify the accession code on the [SCXA website](https://www.ebi.ac.uk/gxa/sc/home) before running scripts to ensure the dataset is public and available.
-*   **Condensed SDRF:** When fetching metadata, prefer `--get-condensed-sdrf TRUE` if you only need the experimental variables and cell attributes, as the full SDRF can be significantly larger and contains technical processing metadata.
-*   **Directory Management:** The scripts will not error if a directory already exists, but they may overwrite files. Always specify a unique `--output-dir-name` for different experiments to prevent data mixing.
-*   **Species Formatting:** When using `import_classification_data.R`, ensure the `--species` string matches the scientific name used in the Atlas (e.g., "Mus musculus" instead of "mouse").
+## Best Practices
+- **Environment Isolation**: Always run these scripts within a dedicated Conda environment to manage R dependencies like `optparse` and `workflowscriptscommon`.
+- **Accession Formatting**: When requesting multiple datasets in `import_classification_data.R`, provide them as a comma-separated string without spaces.
+- **Retry Logic**: The scripts include built-in retry mechanisms for downloads. If working on a restricted network, ensure the URL prefixes (defaulting to `ftp.ebi.ac.uk`) are whitelisted.
+- **Row Decoration**: Use `--decorated-rows` if you require gene symbols/names instead of just Ensembl IDs in the matrix row files.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| /usr/local/bin/get_experiment_data.R | Downloads data from the ArrayExpress database. |
+| /usr/local/bin/import_classification_data.R | Imports classifiers for specified dataset accession codes, tools, or species. |
 
 ## Reference documentation
-- [atlas-data-import GitHub Repository](./references/github_com_ebi-gene-expression-group_atlas-data-import.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_atlas-data-import_overview.md)
+- [Main README](./references/github_com_ebi-gene-expression-group_atlas-data-import_blob_develop_README.md)
+- [Experiment Data Script Reference](./references/github_com_ebi-gene-expression-group_atlas-data-import_blob_develop_get_experiment_data.R.md)
+- [Classification Data Script Reference](./references/github_com_ebi-gene-expression-group_atlas-data-import_blob_develop_import_classification_data.R.md)

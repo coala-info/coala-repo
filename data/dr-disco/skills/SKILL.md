@@ -1,6 +1,6 @@
 ---
 name: dr-disco
-description: Dr. Disco identifies genomic breakpoints of fusion transcripts, including exon-to-exon and intron-to-intron junctions, using RNA-seq data. Use when user asks to detect gene fusions, identify genomic breakpoints in RNA-seq data, or find novel splice junctions and fusions to non-gene regions.
+description: dr-disco identifies fusion genes and genomic breakpoints from RNA-sequencing data by analyzing both exonic and intronic reads. Use when user asks to identify fusion genes, pinpoint genomic breakpoints, detect fusions from RNA-seq data, or classify and annotate transcriptomic structural variations.
 homepage: https://github.com/yhoogstrate/dr-disco
 ---
 
@@ -9,63 +9,72 @@ homepage: https://github.com/yhoogstrate/dr-disco
 
 ## Overview
 
-Dr. Disco (Detection of Genomic Breakpoints of Fusion Transcripts) is a computational method designed to identify both exon-to-exon and intron-to-intron breakpoints using RNA-seq data. While standard RNA-seq analysis often misses the exact location of DNA breaks due to the lack of intronic coverage in poly-A selected libraries, Dr. Disco excels with rRNA-depleted, random-hexamer primed data. It uses a graph-based approach to separate exonic and intronic data, allowing for the detection of fusions to non-gene regions and novel splice junctions without being restricted by existing gene annotations.
+dr-disco is a computational framework designed to identify fusion genes and their underlying genomic breakpoints using RNA-sequencing data. Unlike standard fusion callers that focus primarily on exonic splice junctions, dr-disco utilizes intronic reads (often present in rRNA-depleted libraries) to pinpoint the exact location of DNA breaks. It employs a graph-based analysis to handle sequencing fragments, multiple exon boundaries, and fusions to non-annotated regions, making it highly effective for discovering complex structural variations from transcriptomic data alone.
 
-## Installation and Setup
+## Workflow and CLI Usage
 
-The recommended way to install Dr. Disco is via Bioconda, though manual installation from source is preferred if you need the most up-to-date blacklist files.
+The dr-disco pipeline follows a specific five-step sequence. Ensure you have STAR and samtools installed in your environment.
 
+### 1. Initial Alignment (STAR)
+Generate chimeric reads using STAR in fusion mode. Recommended parameters for compatibility:
+- `--chimSegmentMin 12`
+- `--chimJunctionOverhangMin 12`
+- `--outSAMstrandField intronMotif`
+
+### 2. Fix Chimeric SAM
+Prepare the STAR output for analysis. This step standardizes the chimeric SAM/BAM file.
 ```bash
-# Conda installation
-conda install -c bioconda dr-disco
+# Convert SAM to BAM if necessary
+samtools view -bhS Chimeric.out.sam > Chimeric.out.bam
 
-# Source installation (for latest updates and blacklists)
-git clone https://github.com/yhoogstrate/dr-disco.git
-cd dr-disco
-pip install -r requirements.txt
-python3 setup.py install --user
+# Run the fix command
+dr-disco fix Chimeric.out.bam Chimeric.fixed.bam
 ```
 
-## Core Workflow
-
-### 1. Pre-alignment Preparation
-Before running the pipeline, ensure your data meets the following criteria:
-- **Mate Pair Orientation**: STAR requires the default FR orientation (_R1: forward, _R2: reverse). If your library is different (e.g., Forward/Forward), use `fastx_reverse_complement` to adjust the reads before alignment.
-- **NextSeq Data**: If using Illumina NextSeq, clean poly-G suffixes using a tool like `fastp` to prevent discordant reads in poly-G regions.
-
-### 2. STAR Alignment
-Dr. Disco relies on specific chimeric output from the STAR aligner. Use the following parameters (optimized for STAR ~2.4.2):
-
+### 3. Detect Fusion Events
+Identify potential fusion junctions and merge similar transcripts.
 ```bash
-STAR --genomeDir ${star_index_dir} \
-     --readFilesIn ${left_fq} ${right_fq} \
-     --outSAMtype BAM SortedByCoordinate \
-     --outFilterIntronMotifs None \
-     --alignIntronMax 200000 \
-     --alignMatesGapMax 200000 \
-     --alignSJDBoverhangMin 10 \
-     --alignEndsType Local \
-     --chimSegmentMin 12 \
-     --chimJunctionOverhangMin 12 \
-     --twopassMode Basic
+dr-disco detect --input Chimeric.fixed.bam --output junctions.bed
 ```
-This produces the required `<prefix>.Chimeric.out.sam` file.
 
-### 3. Dr. Disco Pipeline Execution
-The pipeline typically follows these functional steps (executed via the `dr-disco` CLI):
+### 4. Classify and Filter
+Apply statistical filters and reference-specific blacklists to remove artifacts and false positives.
+```bash
+dr-disco classify --input junctions.bed --output junctions.classified.txt --blacklist blacklist_folder/
+```
+*Tip: Use the `--ffpe` flag if working with FFPE samples to adjust mismatch stringency.*
 
-1.  **Fix**: Prepare the Chimeric SAM file for analysis.
-2.  **Detect**: Identify fusion events and merge junctions representing similar transcripts.
-3.  **Classify**: Filter events based on statistical parameters and genome-specific blacklists.
-4.  **Integrate**: Consolidate results from the same genomic event and apply gene name annotations.
+### 5. Integrate and Annotate
+Merge results from the same genomic event and annotate with gene names using a GTF file.
+```bash
+dr-disco integrate --input junctions.classified.txt --gtf genes.gtf --fasta reference.fa --output final_fusions.txt
+```
 
-## CLI Best Practices
+## Expert Tips and Best Practices
 
-- **Single Sample Processing**: The tool is designed for single-sample analysis. To scale across a cohort, use `GNU Parallel` to wrap the `dr-disco` commands.
-- **GTF Handling**: When running `dr-disco integrate`, ensure your GTF file is well-formatted. Note that some versions may read the GTF file twice; ensure sufficient I/O overhead.
-- **Strict Mode**: When using `bam-extract`, consider using the `--strict` mode (available in v0.18.2+) for more rigorous read extraction.
-- **Blacklists**: If installed via Conda, manually verify the presence of blacklist files in the `share` directory, as they may not always ship with the pre-compiled package.
+- **Mate Pair Orientation**: STAR requires `FR` orientation (_R1: forward, _R2: reverse). If your data is different, use `fastx_reverse_complement` to adjust the strands before running STAR.
+- **NextSeq Data**: Illumina NextSeq platforms often produce poly-G artifacts. Pre-clean your FASTQ files with `fastp` to remove poly-G suffixes, as these can cause false discordant alignments.
+- **Intronic Coverage**: This tool is most powerful when used with rRNA-depleted (ribo-minus) RNA-seq data, as this library type contains pre-mRNA that covers intronic regions where most DNA breaks occur.
+- **Blacklist Sensitivity**: Ensure your blacklist files match your reference genome's 'chr' prefixing (e.g., "chr1" vs "1"). Recent versions of dr-disco are prefix-insensitive, but consistency is recommended.
+- **Visualization**: The `fix` command resolves issues with `SA:Z:` tags that previously caused panels to disappear in older versions of IGV.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| bam-extract | Extracts reads from BAM files that overlap with specified regions. |
+| dr-disco | Command-line tool for disco identification and analysis. |
+| dr-disco classify | Classify junctions based on alignment data. |
+| dr-disco detect | Detects potential discoidin domains in BAM input files. |
+| dr-disco integrate | Integrates gene annotation and reference sequences for fusion gene estimation and classification. |
+| fix | Fixes an alignment file by removing duplicate reads. |
+| is-blacklisted | When only a single position is given, only matches with blacklisted regions from blacklist_regions will be reported. |
+| logo-sequence | Generate logo sequences for regions. |
+| subtract | Subtracts alignments from another alignment file. |
+| unfix | Unfixes alignment files. |
 
 ## Reference documentation
-- [Dr. Disco GitHub Repository](./references/github_com_yhoogstrate_dr-disco.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_dr-disco_overview.md)
+- [Dr. Disco README](./references/github_com_yhoogstrate_dr-disco_blob_master_README.md)
+- [Dr. Disco Changelog](./references/github_com_yhoogstrate_dr-disco_blob_master_Changelog.md)

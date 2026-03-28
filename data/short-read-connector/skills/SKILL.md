@@ -1,6 +1,6 @@
 ---
 name: short-read-connector
-description: Short Read Connector is a resource-frugal tool designed for the rapid comparison of large sequencing datasets using k-mer indexing. Use when user asks to compare metagenomic datasets, identify shared sequences between samples, or filter reads based on k-mer presence in a reference bank.
+description: Short Read Connector compares large sets of sequencing reads by indexing k-mers to identify overlaps without full sequence alignment. Use when user asks to count k-mer frequencies between datasets, link reads sharing significant k-mer overlaps, or filter reads based on a reference bank.
 homepage: https://github.com/GATB/short_read_connector
 ---
 
@@ -8,49 +8,64 @@ homepage: https://github.com/GATB/short_read_connector
 # short-read-connector
 
 ## Overview
-Short Read Connector (SRC) is a resource-frugal tool designed for the rapid comparison of large sequencing datasets. It operates in two primary modes: **Counter**, which provides quantitative data on how many times k-mers from a query set appear in a reference bank, and **Linker**, which identifies specific read-to-read relationships based on shared k-mer content. This tool is particularly useful for metagenomic comparisons, identifying common sequences between samples, or filtering reads based on presence/absence in a reference dataset.
+Short Read Connector (SRC) is a high-performance bioinformatics tool designed to compare large sets of sequencing reads without the overhead of full sequence alignment. It operates by indexing a "Bank" (B) dataset and then processing a "Query" (Q) dataset against that index. The tool provides two primary functionalities: counting k-mer frequencies and linking reads that share significant k-mer overlaps. This is particularly useful for dataset cross-referencing, read filtering, and identifying common sequences across different sequencing runs.
 
-## Core Workflow
-The tool follows a two-step process: indexing a "Bank" (B) and then querying a "Query" set (Q) against that index.
+## Core Workflows
 
-### 1. Indexing the Bank
-Before querying, you must create a probabilistic index of the reference read set.
+### 1. K-mer Counting (short_read_connector_counter)
+Use this mode to determine how many k-mers from each query read are present in the reference bank.
+
+**Step 1: Index the Bank**
 ```bash
-# For Counter mode
-sh short_read_connector_counter.sh index -b bank_reads.fasta.gz -i bank_index.dumped
-
-# For Linker mode
-sh short_read_connector_linker.sh index -b bank_reads.fasta.gz -i bank_index.dumped
+sh short_read_connector_counter.sh index -b bank_reads.fasta.gz -i bank_index.dumped -k 31 -a 2
 ```
-**Key Indexing Options:**
-- `-k <int>`: K-mer length (Default: 31, Maximum: 31).
-- `-a <int>`: Minimum k-mer abundance. K-mers appearing fewer than this many times in the bank are ignored (Default: 2).
-- `-f <int>`: Fingerprint size. Increasing this reduces false positives but increases memory usage (Default: 12).
+*   `-b`: Input bank file (FASTA/FASTQ, supports .gz).
+*   `-i`: Name of the index file to create.
+*   `-k`: K-mer length (default 31, max 32).
+*   `-a`: Minimum k-mer abundance in bank to be indexed (default 2).
 
-### 2. Querying the Index
-Queries require a "File of Files" (FOF) containing the paths to the query read sets.
+**Step 2: Query the Index**
 ```bash
-# Create the FOF
-ls query_reads.fastq.gz > query_list.fof
+# Create a 'file of files' (fof) for the query
+ls query_reads.fasta.gz > query_list.fof
 
-# Run the query
 sh short_read_connector_counter.sh query -i bank_index.dumped -q query_list.fof
 ```
-**Key Query Options:**
-- `-w <int>`: Window size. If set to 0 (default), the full read is considered.
-- `-s <int>`: K-mer threshold. The minimal percentage of shared k-mer span required to report a match.
-- `-t <int>`: Number of threads (Default: 0, uses all available).
-- `-p <string>`: Output file prefix (Default: "short_read_connector_res").
+*   `-q`: A text file containing paths to query read files (one per line).
+*   Output: `short_read_connector_res.txt` containing k-mer counts per read.
+
+### 2. Read Linking (short_read_connector_linker)
+Use this mode to find specific reads in the bank that share k-mers with the query reads.
+
+**Step 1: Index the Bank**
+```bash
+sh short_read_connector_linker.sh index -b bank_reads.fasta.gz -i linker_index.dumped
+```
+
+**Step 2: Query the Index**
+```bash
+sh short_read_connector_linker.sh query -i linker_index.dumped -q query_list.fof -s 50
+```
+*   `-s`: Similarity threshold. Minimal percentage of shared k-mers required to link reads.
 
 ## Expert Tips and Best Practices
-- **Memory Efficiency**: SRC uses a Minimal Perfect Hash Function (MPHF). If you encounter memory issues during indexing, ensure you aren't indexing unique k-mers (singletons) by keeping `-a` at 2 or higher.
-- **Input Formats**: The tool supports FASTA and FASTQ formats, including gzipped files.
-- **Low Complexity Regions**: By default, low complexity regions are filtered. Use the `-l` flag in both indexing and querying if your analysis requires keeping these regions (e.g., repetitive elements).
-- **Understanding the Counter Output**:
-  - The output includes `mean`, `median`, `min`, and `max` occurrences of the query read's k-mers in the bank.
-  - `percentage_shared_positions` refers to the best window within the read. A value of 100% means every base in that window is covered by at least one k-mer found in the bank.
-- **Linker vs. Counter**: Use **Counter** when you need statistics on k-mer frequency (e.g., digital normalization or abundance estimation). Use **Linker** when you need to extract the actual reads from the bank that overlap with your query.
+
+*   **Input Handling**: The query command (`query`) requires a "File of Files" (fof). Even if you have only one query file, you must list its path in a text file and pass that text file to the `-q` parameter.
+*   **Performance**: Use the `-t` flag during both indexing and querying to specify the number of threads. Setting `-t 0` (default) will utilize all available cores.
+*   **Memory Efficiency**: If dealing with highly repetitive or low-complexity data, the `-l` flag can be used during indexing to keep low-complexity regions, though this increases index size.
+*   **K-mer Selection**: The default k-mer size is 31. If you need a different size, ensure it is set during the indexing phase; the query phase must match the index's k-mer size.
+*   **Abundance Filtering**: Use the `-a` parameter to filter out sequencing errors in the bank. Setting `-a 2` or higher ensures that only k-mers appearing multiple times in the bank are indexed, significantly reducing noise and memory usage.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| short_read_connector_counter.sh | Compare reads from two read sets (distinct or not) |
+| short_read_connector_linker.sh | Compare reads from two read sets (distinct or not) |
 
 ## Reference documentation
-- [Short Read Connector GitHub Repository](./references/github_com_GATB_short_read_connector.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_short-read-connector_overview.md)
+- [Short Read Connector README](./references/github_com_GATB_short_read_connector_blob_master_README.md)
+- [Counter Script Documentation](./references/github_com_GATB_short_read_connector_blob_master_short_read_connector_counter.sh.md)
+- [Linker Script Documentation](./references/github_com_GATB_short_read_connector_blob_master_short_read_connector_linker.sh.md)

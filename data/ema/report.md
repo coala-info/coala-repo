@@ -221,3 +221,6 @@ align: choose best alignments based on barcodes
 help: print this help message
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -222,3 +222,6 @@ Traceback (most recent call last):
 ImportError: cannot import name 'packaging' from 'pkg_resources' (/usr/local/lib/python3.12/site-packages/pkg_resources/__init__.py)
 ```
 
+
+## Metadata
+- **Skill**: generated

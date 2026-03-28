@@ -123,3 +123,6 @@ Options:
      --man            Print the detailed manual
 ```
 
+
+## Metadata
+- **Skill**: generated

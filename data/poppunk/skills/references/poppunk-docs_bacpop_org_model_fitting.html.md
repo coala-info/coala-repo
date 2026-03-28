@@ -1,0 +1,360 @@
+Contents
+
+Menu
+
+Expand
+
+Light mode
+
+Dark mode
+
+Auto light/dark, in light mode
+
+Auto light/dark, in dark mode
+
+[ ]
+[ ]
+
+[Skip to content](#furo-main-content)
+
+[PopPUNK 2.7.0 documentation](index.html)
+
+[![Logo](_static/poppunk_v2.png)
+
+PopPUNK 2.7.0 documentation](index.html)
+
+Contents:
+
+* [PopPUNK documentation](index.html)
+* [Installation](installation.html)
+* [Overview](overview.html)
+* [Sketching (`--create-db`)](sketching.html)
+* [Data quality control (`--qc-db`)](qc.html)
+* Fitting new models (`--fit-model`)
+* [Distributing PopPUNK models](model_distribution.html)
+* [Query assignment (`poppunk_assign`)](query_assignment.html)
+* [Creating visualisations](visualisation.html)
+* [Minimum spanning trees](mst.html)
+* [Subclustering with PopPIPE](subclustering.html)
+* [Using GPUs](gpu.html)
+* [Troubleshooting](troubleshooting.html)
+* [Scripts](scripts.html)
+* [Iterative PopPUNK](poppunk_iterate.html)
+* [Citing PopPUNK](citing.html)
+* [Reference documentation](api.html)
+* [Roadmap](roadmap.html)
+* [Miscellaneous](miscellaneous.html)
+
+Back to top
+
+[View this page](_sources/model_fitting.rst.txt "View this page")
+
+# Fitting new models (`--fit-model`)[¶](#fitting-new-models-fit-model "Link to this heading")
+
+If you cannot find an existing model for your species in the
+[list](https://www.bacpop.org/poppunk-databases/) you will want to fit your own.
+This process is flexible, and there are five different models you can use depending
+on the population structure of your dataset.
+
+Note
+
+After fitting a model to a new species we would like to share it on our website,
+so others can use it for assigning queries. If you are open to this, please read
+[Distributing PopPUNK models](model_distribution.html) after this page.
+
+## Overview[¶](#overview "Link to this heading")
+
+First, use `poppunk --create-db` to sketch your input data and calculate distances
+between all samples. This is detailed in [Sketching (--create-db)](sketching.html).
+
+Then, use `poppunk --fit-model <model_name>` with one of the following model names:
+
+* `bgmm` – Bayesian Gaussian Mixture Model. Best for small sample collections
+  with strain-structure. Works best when distance distribution components are clearly
+  separated.
+* `dbscan` – HDBSCAN. A good general method for larger sample collections with
+  strain-structure. Some points will always be designated as noise, so a subsequent run
+  of model refinement may help improve the fit.
+* `refine` – Model refinement. Requires a model already fitted with `bgmm` or `dbscan`
+  and attempts to improve it by maximising the network score. Particularly useful when
+  components overlap significantly (often due to recombination), or when the strain boundary
+  is thought to lie somewhere within a component.
+* `threshold` – Apply a given core or accessory distance threshold to define VLKCs. Useful if
+  a cutoff threshold is already known/calculated, is estimated from a plot, or to compare a threshold
+  between datasets or species.
+* `lineage` – Lineage clustering. To find lineages within a strain (subclustering), or
+  find clusters in a population without strain structure. Uses a simple nearest neighbour approach
+  so is more of a heuristic. Network scores are not meaningful in this mode.
+
+The most useful guide to deciding which model to use is the `_distanceDistribution.png` file
+showing the core and accessory distances. More details on each of these models is given
+further down this page.
+
+A completed fit will consist of:
+
+* A `_clusters.csv` file, which gives the VLKC (strain) for each sample in the database.
+* A `_unword_clusters.csv` file, which gives an English-pronounceable name instead of a number
+  to each VLKC.
+* `_fit.npz` and `_fit.pkl` files, which contain numeric data and metadata for the fit.
+* A `_graph.gt` file, which is the network defining the fit in graph-tool format.
+* Some plots of the fit, which depend on the specific model used.
+* A `.refs` file, which lists the samples kept as ‘references’ for assigning
+  future samples (see [Distributing PopPUNK models](model_distribution.html) for more details).
+
+This page will use 128 *Listeria* *monocytogenes* genomes from [Kremer et al](https://doi.org/10.1016/j.cmi.2016.12.008),
+which can be downloaded from [figshare](https://doi.org/10.6084/m9.figshare.7083389). The distribution of
+core and accessory distances from the `--create-db` step is as follows:
+
+![Core and accessory distances for the example data](_images/listeria_dists.png)
+
+We also show some examples with 616 *Streptococcus* *pneumoniae* genomes, which are more complex.
+These genomes were collected from Massachusetts,
+first reported [here](https://www.nature.com/articles/ng.2625) and can be accessed
+[here](https://www.nature.com/articles/sdata201558).
+
+## Common arguments[¶](#common-arguments "Link to this heading")
+
+* `--ref-db`: the output prefix used with `--create-db` i.e. the directory where the .h5 file is located
+* `--output`: where to save the model. If not specified this defaults to `ref-db`.
+* `--overwrite`: overwrite any existing files in the output directory.
+* `--external-clustering`: any additional labels to add to the cluster output.
+* `--graph-weights`: save the edges weights in the network as their Euclidean core-accessory
+  distances, rather than as 0 or 1 (useful for visualising the network).
+
+External clusters may be other cluster names, such as serotype, sequence type, cgMLST etc.
+VLKCs are mapped as one-to-many, so that each strain is labelled with all of
+the clusters any of its members is assigned to in this file. This input file must
+be comma separated, one sample per line, with the sample name as the first column, and
+other clusters as subsequent columns. A header line with ‘sample’ and the names of other cluster
+types is required. Output is to `output/output_external_clusters.csv`.
+
+## How good is my fit?[¶](#how-good-is-my-fit "Link to this heading")
+
+We have found the best way to assess this is to use [Creating visualisations](visualisation.html) on your output
+and look at your assigned VLKCs against a tree, to determine whether they have
+the specificity required.
+
+You can also compare models with their network score, and
+whether the output plots look as expected. Typically the key thing is that
+**your spatial component nearest the origin is accurate**. More detail is given for each model below.
+
+### Interpreting the network summary[¶](#interpreting-the-network-summary "Link to this heading")
+
+All fits will output a network summary which looks similar to this:
+
+```
+Network summary:
+    Components                              59
+    Density                                 0.0531
+    Transitivity                            0.9966
+    Mean betweenness                        0.0331
+    Weighted-mean betweenness               0.0454
+    Score                                   0.9438
+    Score (w/ betweenness)                  0.9126
+    Score (w/ weighted-betweenness)         0.9009
+```
+
+* Components are the number of VLKCs (strains) found using this model.
+* Density is the proportion of distances assigned as ‘within-strain’. Generally
+  smaller is better as this gives more specific clusters, but too close to zero
+  may be an over-specific model.
+* Transitivity measures whether every member of each strain is connected to every
+  other member. Closer to 1 is better, but this can be achieved with very loose fits.
+* Score synthesises the above as \((1 - \mathrm{density}) \* \mathrm{transitivity}\),
+  which gives a single number between 0 (bad) and 1 (good) which in many cases is
+  at a maximum when it accurately describes strains in the data.
+* Two further scores for larger networks. See [Alternative network scores](#alt-scores) for more information
+  on these.
+
+## bgmm[¶](#bgmm "Link to this heading")
+
+This mode fits a [Bayesian Gaussian mixture model](https://scikit-learn.org/stable/modules/generated/sklearn.mixture.BayesianGaussianMixture.html)
+to the core and accessory distances. With few points, methods such as DBSCAN may struggle to find
+clusters due to the sparsity, whereas a BGMM can often find a good fit. A further advantage
+is that the equation for the posterior is known, so all points will have an assignment and a non-linear
+boundary found exactly.
+
+However, when there are a very large number of points the likelihood has a tendency
+to totally override the prior in the estimated posterior, meaning many overlapping components
+may be fitted, which may give poor clusters, and is less robust to adding more data. It is possible
+for this mode to fail to converge, but it is more likely to produce a bad fit in difficult cases.
+
+The key parameter to specify is the maximum number of components `--K`. You should
+choose a number based on the number of components you can see on your distance plot. This
+may be automatically reduced if there is insufficent evidence for this many components. As a rule of thumb,
+if you have under 150 samples or under 1000 samples and clear components then this mode should give
+a good fit.
+
+A better network score is evidence of a better fit, but the output files should also be used to
+judge this. With the test dataset, four components are visible:
+
+```
+poppunk --fit-model bgmm --ref-db listeria --K 4
+PopPUNK (POPulation Partitioning Using Nucleotide Kmers)
+    (with backend: sketchlib v1.6.0
+    sketchlib: /Users/jlees/miniconda3/envs/pp-py38/lib/python3.8/site-packages/pp_sketchlib.cpython-38-darwin.so)
+
+Graph-tools OpenMP parallelisation enabled: with 1 threads
+Mode: Fitting bgmm model to reference database
+
+Fit summary:
+    Avg. entropy of assignment      0.0042
+    Number of components used       4
+
+Scaled component means:
+    [0.9415286  0.90320047]
+    [0.11542755 0.24570244]
+    [0.20966101 0.37694884]
+    [0.00527421 0.07043826]
+
+Network summary:
+    Components      31
+    Density 0.0897
+    Transitivity    1.0000
+    Score   0.9103
+Removing 97 sequences
+
+Done
+```
+
+In the output to the terminal:
+
+* The average entropy of assignment is a measure of the certainty of assignment
+  of each point. Lower is better. Higher values may indicate overlapping components,
+  perhaps due to high amounts of recombination between strains.
+* Number of components used is how many components from `K` were actually used
+  in the spatial fit. This is usually equal to `K`, but may be reduced in small datasets.
+* Scaled component means are the centres of the fitted components in the model, where
+  the core and accessory distances have been rescaled between 0 and 1. These can be
+  used with [Using fit refinement when mixture model totally fails](#manual-start).
+
+The fit actually just uses the component closest to the origin – any distances
+assigned to this component are within-strain. This is the most important part of the
+fit in this mode.
+
+You can see that this gives a good network score, and fits the data well:
+
+![BGMM fit with K = 4](_images/bgmm_k4_fit.png)
+
+The position of the boundary is also produced (in red), along with contours of
+the fitted mixture components:
+
+![BGMM fit with K = 4](_images/bgmm_k4_boundary.png)
+
+If you make K too low, some components will be merged, resulting in a less-specific
+fit with fewer clusters, that do not fully delineate all of the strains (in this
+case just finding the two main lineages of *Listeria* in this data):
+
+```
+poppunk --fit-model bgmm --ref-db listeria --K 2
+PopPUNK (POPulation Partitioning Using Nucleotide Kmers)
+    (with backend: sketchlib v1.6.0
+    sketchlib: /Users/jlees/miniconda3/envs/pp-py38/lib/python3.8/site-packages/pp_sketchlib.cpython-38-darwin.so)
+
+Graph-tools OpenMP parallelisation enabled: with 1 threads
+Mode: Fitting bgmm model to reference database
+
+Fit summary:
+    Avg. entropy of assignment      0.0007
+    Number of components used       2
+
+Scaled component means:
+    [0.11627304 0.2432584 ]
+    [0.9415286  0.90320047]
+
+Network summary:
+    Components      2
+    Density 0.5405
+    Transitivity    1.0000
+    Score   0.4595
+Removing 126 sequences
+
+Done
+```
+
+![BGMM fit with K = 2](_images/bgmm_k2_fit.png)
+
+Too many components in a small dataset are automatically reduced to an
+appropriate number, obtaining the same good fit as above:
+
+```
+poppunk --fit-model bgmm --ref-db listeria --K 10
+PopPUNK (POPulation Partitioning Using Nucleotide Kmers)
+    (with backend: sketchlib v1.6.0
+     sketchlib: /Users/jlees/miniconda3/envs/pp-py38/lib/python3.8/site-packages/pp_sketchlib.cpython-38-darwin.so)
+
+Graph-tools OpenMP parallelisation enabled: with 1 threads
+Mode: Fitting bgmm model to reference database
+
+Fit summary:
+    Avg. entropy of assignment      0.3195
+    Number of components used       4
+
+Scaled component means:
+    [0.9415286  0.90320047]
+    [3.72458739e-07 4.73196248e-07]
+    [0.00527421 0.07043826]
+    [0.20966682 0.37695524]
+    [0.11542849 0.2457043 ]
+    [1.68940242e-11 2.14632815e-11]
+    [7.66987488e-16 9.74431443e-16]
+    [3.48211781e-20 4.42391191e-20]
+    [1.58087904e-24 2.00845290e-24]
+    [7.17717973e-29 9.11836205e-29]
+
+Network summary:
+    Components      31
+    Density 0.0897
+    Transitivity    1.0000
+    Score   0.9103
+Removing 97 sequences
+
+Done
+```
+
+In a dataset with more points, and less clear components, too many components can lead to
+a bad fit:
+
+![BGMM fit with K = 10](_images/bgmm_fit_K10.png)
+
+This is clearly a poor fit. The real issue is that the component whose mean is nearest
+the origin is unclear, and doesn’t include all of the smallest distances.
+
+## dbscan[¶](#dbscan "Link to this heading")
+
+This mode uses [HDBSCAN](https://hdbscan.readthedocs.io/en/latest/) to find clusters
+in the core and accessory distances. This is a versatile clustering algorithm capable of
+finding non-linear structure in the data, and can represent irregularly shaped components
+well. Possible drawbacks are that a fit cannot always be found (this can happen
+for small datasets with sparse points, or for datasets without much structure in the core
+and accessory), and that some points are classified as ‘noise’ so not all of their
+edges are included in the network (these are the small black points).
+
+Warning
+
+HDBSCAN models are not backwards compatible from sklearn v1.0 onwards. We
+would recommend using at least this version. Even better would be to then run
+model refinement ([refine](#refine-models)) to get a simpler and faster model
+for onward query assignment.
+
+dbscan usually needs little modification to run:
+
+```
+poppunk --fit-model dbscan --ref-db listeria
+PopPUNK (POPulation Partitioning Using Nucleotide Kmers)
+    (with backend: sketchlib v1.6.0
+     sketchlib: /Users/jlees/miniconda3/envs/pp-py38/lib/python3.8/site-packages/pp_sketchlib.cpython-38-darwin.so)
+
+Graph-tools OpenMP parallelisation enabled: with 1 threads
+Mode: Fitting dbscan model to reference database
+
+Fit summary:
+    Number of clusters      5
+    Number of datapoints    8128
+    Number of assignments   7804
+
+Scaled component means
+    [0.94155383 0.90322459]
+    [0.00527493 0.07044794]
+    [0.20945986 0.37491995]
+    [0.1287607

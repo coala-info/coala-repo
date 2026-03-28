@@ -167,3 +167,6 @@ Scan a protein sequence with a profile library:
  Version 3.2.12 built on Oct 13 2025 at 21:47:49.
 ```
 
+
+## Metadata
+- **Skill**: generated

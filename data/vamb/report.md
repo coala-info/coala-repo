@@ -153,3 +153,6 @@ Taxonomy input:
   --no_predictor    Do not complete input taxonomy with Taxometer [False]
 ```
 
+
+## Metadata
+- **Skill**: generated

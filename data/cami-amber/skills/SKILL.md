@@ -1,6 +1,6 @@
 ---
 name: cami-amber
-description: AMBER evaluates and benchmarks metagenome binning results by comparing them against a gold standard using metrics like completeness, purity, and Adjusted Rand Index. Use when user asks to assess binning performance, compare multiple binners, calculate taxonomic binning metrics, or convert FASTA bins to Bioboxes format.
+description: "AMBER benchmarks metagenomic binning tools by comparing predictions against a gold standard to evaluate performance. Use when user asks to evaluate genome or taxonomic binning results, calculate completeness and contamination metrics, or generate comparative benchmarking reports for metagenomic binners."
 homepage: https://github.com/CAMI-challenge/AMBER
 ---
 
@@ -8,43 +8,60 @@ homepage: https://github.com/CAMI-challenge/AMBER
 # cami-amber
 
 ## Overview
-AMBER (Assessment of Metagenome BinnERs) provides a standardized framework for evaluating genome reconstructions from metagenomic data. It transforms raw binning outputs into actionable insights by measuring how closely they match a known gold standard. This skill assists in executing the `amber.py` tool, managing input formats, and interpreting the resulting metrics like the Adjusted Rand Index and UniFrac distances.
+AMBER (Assessment of Metagenome BinnERs) is a specialized tool designed to benchmark metagenomic binning tools. It compares one or more binning predictions against a "gold standard" ground truth. It is particularly useful for researchers developing new binning algorithms or those needing to select the best-performing tool for a specific dataset. AMBER handles both genome binning (grouping sequences into bins representing single genomes) and taxonomic binning (assigning sequences to specific taxonomic ranks).
 
-## Core CLI Usage
-The primary entry point is the `amber.py` script.
+## Core Workflow
 
-### Basic Evaluation
-To evaluate one or more binning results against a gold standard:
-`amber.py -g gold_standard.binning -l "Tool_A, Tool_B" tool_a_results.binning tool_b_results.binning -o output_directory/`
+### 1. Input Preparation
+AMBER requires files in the **CAMI binning Bioboxes format** (tab-separated).
+*   **Gold Standard (-g):** Must include `@@SEQUENCEID`, `BINID`, `TAXID`, and `LENGTH`.
+*   **Binning Files:** One or more files from different programs. Must include `@@SEQUENCEID` and `BINID` (or `TAXID` for taxonomic binning).
+*   **SampleID:** The `@SampleID` header tag must match between the gold standard and prediction files.
 
-### Key Arguments
-- `-g, --gold_standard_file`: Path to the ground truth mapping file (Bioboxes format).
-- `-l, --labels`: Comma-separated names for the programs being evaluated (must match the order of positional bin files).
-- `-o, --output_dir`: Directory where HTML reports and metrics will be saved.
-- `-p, --filter`: Filter out the [X]% smallest genome bins (e.g., `-p 1` to filter the smallest 1%).
-- `-n, --min_length`: Minimum length of sequences to consider.
-- `-x, --min_completeness`: Comma-separated list of thresholds (default: 50, 70, 90).
-- `-y, --max_contamination`: Comma-separated list of thresholds (default: 10, 5).
+### 2. Basic Execution
+To evaluate multiple binning results and generate an HTML report:
+```bash
+amber.py -g gold_standard.binning \
+         -l "Tool_A,Tool_B" \
+         -o output_directory/ \
+         tool_a_results.binning tool_b_results.binning
+```
 
-## Taxonomic Binning
-When assessing taxonomic assignments, AMBER requires the NCBI taxonomy database.
-`amber.py -g gold_standard.binning --ncbi_dir /path/to/ncbi_taxonomy/ bin_files -o output_dir/`
-*Note: The NCBI directory must contain `nodes.dmp`, `merged.dmp`, and `names.dmp`.*
+### 3. Common CLI Patterns
 
-## Data Preparation Tips
-- **Input Format**: All input files must follow the CAMI binning Bioboxes format.
-- **Adding Lengths**: The gold standard requires a `LENGTH` column. If missing, use the utility script:
-  `python3 src/utils/add_length_column.py -g input.binning -f sequences.fasta > gold_standard.binning`
-- **FASTA to Biobox**: If your bins are currently separate FASTA files, convert them using:
-  `python3 src/utils/convert_fasta_bins_to_biobox_format.py bin_*.fasta > predicted_bins.binning`
-- **Multi-sample Datasets**: For datasets with multiple samples, concatenate the binnings of different samples into a single file per program. Ensure the `@SampleID` header tag uniquely identifies each sample and matches between the gold standard and predictions.
+**Filtering Small Bins**
+Filter out the smallest genome bins (e.g., bottom 1%) to reduce noise in metrics:
+```bash
+amber.py -p 1 -g gsa.binning -o output/ predictions.binning
+```
 
-## Expert Best Practices
-- **Filtering Noise**: Use the `-p` flag to remove very small bins that can skew purity and completeness metrics, especially in high-complexity datasets.
-- **Removing Specific Genomes**: Use the `-r` flag with a list of genomes to exclude specific organisms (e.g., contaminants or common elements) from the evaluation.
-- **Silent Mode**: Use `--silent` when running AMBER in automated pipelines to suppress non-essential output.
-- **Visualization**: The tool generates an `index.html` file in the output directory. This is the most effective way to view results rankings and comparative visualizations.
+**Setting Quality Thresholds**
+Define custom completeness and contamination levels for "recovered genomes" (default is 50, 70, 90 for completeness and 10, 5 for contamination):
+```bash
+amber.py -x 50,70,90 -y 10,5 -g gsa.binning -o output/ predictions.binning
+```
+
+**Taxonomic Binning Assessment**
+Requires the NCBI `nodes.dmp` file to calculate UniFrac metrics:
+```bash
+amber.py --ncbi_dir /path/to/ncbi_taxdump/ -g gsa.binning -o output/ predictions.binning
+```
+
+### 4. Expert Tips
+*   **Sequence Lengths:** If your gold standard is missing the `LENGTH` column, use the utility script `src/utils/add_length_column.py` to add it, as many metrics are length-weighted.
+*   **FASTA Conversion:** If your binning output is a collection of FASTA files (one per bin), use `src/utils/convert_fasta_bins_to_biobox_format.py` to create the required Biobox input file.
+*   **Multi-sample Datasets:** For datasets with multiple samples, concatenate the binnings of different samples into a single file per program. Ensure the `@SampleID` tags are correctly maintained for each segment within the file.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| AMBER | AMBER: Assessment of Metagenome BinnERs |
+| add_length_column.py | Add length column _LENGTH to gold standard mapping and print mapping on the standard output |
+| convert_fasta_bins_to_biobox_format.py | Convert bins in FASTA files to CAMI tsv format |
 
 ## Reference documentation
-- [AMBER GitHub Repository](./references/github_com_CAMI-challenge_AMBER.md)
-- [Bioconda AMBER Overview](./references/anaconda_org_channels_bioconda_packages_cami-amber_overview.md)
+- [AMBER GitHub README](./references/github_com_CAMI-challenge_AMBER_blob_master_README.md)
+- [AMBER CLI Reference (amber.py)](./references/github_com_CAMI-challenge_AMBER_blob_master_amber.py.md)

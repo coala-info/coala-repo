@@ -68,3 +68,6 @@ Generalized fold change for ranking differentially expressed genes from RNA-seq 
                gfold diff -s1 sample1 -s2 sample2 -suf .read_cnt -o sample1VSsample2.diff
 ```
 
+
+## Metadata
+- **Skill**: generated

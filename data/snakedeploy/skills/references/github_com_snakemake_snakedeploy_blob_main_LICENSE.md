@@ -1,1 +1,1126 @@
-snakedeploy/LICENSE at main · snakemake/snakedeploy · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} snakemake / snakedeploy Public Notifications You must be signed in to change notification settings Fork 13 Star 24 Code Issues 14 Pull requests 4 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fsnakemake%2Fsnakedeploy%2Fblob%2Fmain%2FLICENSE)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fsnakemake%2Fsnakedeploy%2Fblob%2Fmain%2FLICENSE)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Fblob%2Fshow&source=header-repo&source_repo=snakemake%2Fsnakedeploy)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[snakemake](/snakemake)
+/
+**[snakedeploy](/snakemake/snakedeploy)**
+Public
+
+* [Notifications](/login?return_to=%2Fsnakemake%2Fsnakedeploy) You must be signed in to change notification settings
+* [Fork
+  14](/login?return_to=%2Fsnakemake%2Fsnakedeploy)
+* [Star
+   25](/login?return_to=%2Fsnakemake%2Fsnakedeploy)
+
+* [Code](/snakemake/snakedeploy)
+* [Issues
+  14](/snakemake/snakedeploy/issues)
+* [Pull requests
+  7](/snakemake/snakedeploy/pulls)
+* [Actions](/snakemake/snakedeploy/actions)
+* [Projects](/snakemake/snakedeploy/projects)
+* [Security
+  0](/snakemake/snakedeploy/security)
+* [Insights](/snakemake/snakedeploy/pulse)
+
+Additional navigation options
+
+* [Code](/snakemake/snakedeploy)
+* [Issues](/snakemake/snakedeploy/issues)
+* [Pull requests](/snakemake/snakedeploy/pulls)
+* [Actions](/snakemake/snakedeploy/actions)
+* [Projects](/snakemake/snakedeploy/projects)
+* [Security](/snakemake/snakedeploy/security)
+* [Insights](/snakemake/snakedeploy/pulse)
+
+## FilesExpand file tree
+
+main
+
+## Breadcrumbs
+
+1. [snakedeploy](/snakemake/snakedeploy/tree/main)
+
+/
+
+# LICENSE
+
+Copy path
+
+BlameMore file actions
+
+BlameMore file actions
+
+## Latest commit
+
+## History
+
+[History](/snakemake/snakedeploy/commits/main/LICENSE)
+
+History
+
+328 lines (262 loc) · 15.5 KB
+
+main
+
+## Breadcrumbs
+
+1. [snakedeploy](/snakemake/snakedeploy/tree/main)
+
+/
+
+# LICENSE
+
+Top
+
+## File metadata and controls
+
+* Code
+* Blame
+
+328 lines (262 loc) · 15.5 KB
+
+[Raw](https://github.com/snakemake/snakedeploy/raw/refs/heads/main/LICENSE)
+
+Copy raw file
+
+Download raw file
+
+Open symbols panel
+
+Edit and raw actions
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+10
+
+11
+
+12
+
+13
+
+14
+
+15
+
+16
+
+17
+
+18
+
+19
+
+20
+
+21
+
+22
+
+23
+
+24
+
+25
+
+26
+
+27
+
+28
+
+29
+
+30
+
+31
+
+32
+
+33
+
+34
+
+35
+
+36
+
+37
+
+38
+
+39
+
+40
+
+41
+
+42
+
+43
+
+44
+
+45
+
+46
+
+47
+
+48
+
+49
+
+50
+
+51
+
+52
+
+53
+
+54
+
+55
+
+56
+
+57
+
+58
+
+59
+
+60
+
+61
+
+62
+
+63
+
+64
+
+65
+
+66
+
+67
+
+68
+
+69
+
+70
+
+71
+
+72
+
+73
+
+74
+
+75
+
+76
+
+77
+
+78
+
+79
+
+80
+
+81
+
+82
+
+83
+
+84
+
+85
+
+86
+
+87
+
+88
+
+89
+
+90
+
+91
+
+92
+
+93
+
+94
+
+95
+
+96
+
+97
+
+98
+
+99
+
+100
+
+101
+
+102
+
+103
+
+104
+
+105
+
+106
+
+107
+
+108
+
+109
+
+110
+
+111
+
+112
+
+113
+
+114
+
+115
+
+116
+
+117
+
+118
+
+119
+
+120
+
+121
+
+122
+
+123
+
+124
+
+125
+
+126
+
+127
+
+128
+
+129
+
+130
+
+131
+
+132
+
+133
+
+134
+
+135
+
+136
+
+137
+
+138
+
+139
+
+140
+
+141
+
+142
+
+143
+
+144
+
+145
+
+146
+
+147
+
+148
+
+149
+
+150
+
+151
+
+152
+
+153
+
+154
+
+155
+
+156
+
+157
+
+158
+
+159
+
+160
+
+161
+
+162
+
+163
+
+164
+
+165
+
+166
+
+167
+
+168
+
+169
+
+170
+
+171
+
+172
+
+173
+
+174
+
+175
+
+176
+
+177
+
+178
+
+179
+
+180
+
+181
+
+182
+
+183
+
+184
+
+185
+
+186
+
+187
+
+188
+
+189
+
+190
+
+191
+
+192
+
+193
+
+194
+
+195
+
+196
+
+197
+
+198
+
+199
+
+200
+
+201
+
+202
+
+203
+
+204
+
+205
+
+206
+
+207
+
+208
+
+209
+
+210
+
+211
+
+212
+
+213
+
+214
+
+215
+
+216
+
+217
+
+218
+
+219
+
+220
+
+221
+
+222
+
+223
+
+224
+
+225
+
+226
+
+227
+
+228
+
+229
+
+230
+
+231
+
+232
+
+233
+
+234
+
+235
+
+236
+
+237
+
+238
+
+239
+
+240
+
+241
+
+242
+
+243
+
+244
+
+245
+
+246
+
+247
+
+248
+
+249
+
+250
+
+251
+
+252
+
+253
+
+254
+
+255
+
+256
+
+257
+
+258
+
+259
+
+260
+
+261
+
+262
+
+263
+
+264
+
+265
+
+266
+
+267
+
+268
+
+269
+
+270
+
+271
+
+272
+
+273
+
+274
+
+275
+
+276
+
+277
+
+278
+
+279
+
+280
+
+281
+
+282
+
+283
+
+284
+
+285
+
+286
+
+287
+
+288
+
+289
+
+290
+
+291
+
+292
+
+293
+
+294
+
+295
+
+296
+
+297
+
+298
+
+299
+
+300
+
+301
+
+302
+
+303
+
+304
+
+305
+
+306
+
+307
+
+308
+
+309
+
+310
+
+311
+
+312
+
+313
+
+314
+
+315
+
+316
+
+317
+
+318
+
+319
+
+320
+
+321
+
+322
+
+323
+
+324
+
+325
+
+326
+
+327
+
+328
+
+Mozilla Public License, version 2.0
+
+1. Definitions
+
+1.1. “Contributor”
+
+means each individual or legal entity that creates, contributes to the
+
+creation of, or owns Covered Software.
+
+1.2. “Contributor Version”
+
+means the combination of the Contributions of others (if any) used by a
+
+Contributor and that particular Contributor’s Contribution.
+
+1.3. “Contribution”
+
+means Covered Software of a particular Contributor.
+
+1.4. “Covered Software”
+
+means Source Code Form to which the initial Contributor has attached the
+
+notice in Exhibit A, the Executable Form of such Source Code Form,
+
+and Modifications of such Source Code Form, in each case
+
+including portions thereof.
+
+1.5. “Incompatible With Secondary Licenses”
+
+means
+
+a. that the initial Contributor has attached the notice described
+
+in Exhibit B to the Covered Software; or
+
+b. that the Covered Software was made available under the terms of
+
+version 1.1 or earlier of the License, but not also under the terms
+
+of a Secondary License.
+
+1.6. “Executable Form”
+
+means any form of the work other than Source Code Form.
+
+1.7. “Larger Work”
+
+means a work that combines Covered Software with other material,
+
+in a separate file or files, that is not Covered Software.
+
+1.8. “License”
+
+means this document.
+
+1.9. “Licensable”
+
+means having the right to grant, to the maximum extent possible,
+
+whether at the time of the initial grant or subsequently,
+
+any and all of the rights conveyed by this License.
+
+1.10. “Modifications”
+
+means any of the following:
+
+a. any file in Source Code Form that results from an addition to,
+
+deletion from, or modification of the contents of Covered Software; or
+
+b. any new file in Source Code Form that contains any Covered Software.
+
+1.11. “Patent Claims” of a Contributor
+
+means any patent claim(s), including without limitation, method, process,
+
+and apparatus claims, in any patent Licensable by such Contributor that
+
+would be infringed, but for the grant of the License, by the making,
+
+using, selling, offering for sale, having made, import, or transfer of
+
+either its Contributions or its Contributor Version.
+
+1.12. “Secondary License”
+
+means either the GNU General Public License, Version 2.0, the
+
+GNU Lesser General Public License, Version 2.1, the GNU Affero General
+
+Public License, Version 3.0, or any later versions of those licenses.
+
+1.13. “Source Code Form”
+
+means the form of the work preferred for making modifications.
+
+1.14. “You” (or “Your”)
+
+means an individual or a legal entity exercising rights under this License.
+
+For legal entities, “You” includes any entity that controls,
+
+is controlled by, or is under common control with You. For purposes of
+
+this definition, “control” means (a) the power, direct or indirect,
+
+to cause the direction or management of such entity, whether by contract
+
+or otherwise, or (b) ownership of more than fifty percent (50%) of the
+
+outstanding shares or beneficial ownership of such entity.
+
+2. License Grants and Conditions
+
+2.1. Grants
+
+Each Contributor hereby grants You a world-wide, royalty-free,
+
+non-exclusive license:
+
+a. under intellectual property rights (other than patent or trademark)
+
+Licensable by such Contributor to use, reproduce, make available,
+
+modify, display, perform, distribute, and otherwise exploit its
+
+Contributions, either on an unmodified basis, with Modifications,
+
+or as part of a Larger Work; and
+
+b. under Patent Claims of such Contributor to make, use, sell,
+
+offer for sale, have made, import, and otherwise transfer either
+
+its Contributions or its Contributor Version.
+
+2.2. Effective Date
+
+The licenses granted in Section 2.1 with respect to any Contribution
+
+become effective for each Contribution on the date the Contributor
+
+first distributes such Contribution.
+
+2.3. Limitations on Grant Scope
+
+The licenses granted in this Section 2 are the only rights granted
+
+under this License. No additional rights or licenses will be implied
+
+from the distribution or licensing of Covered Software under this License.
+
+Notwithstanding Section 2.1(b) above, no patent license is granted
+
+by a Contributor:
+
+a. for any code that a Contributor has removed from
+
+Covered Software; or
+
+b. for infringements caused by: (i) Your and any other third party’s
+
+modifications of Covered Software, or (ii) the combination of its
+
+Contributions with other software (except as part of its
+
+Contributor Version); or
+
+c. under Patent Claims infringed by Covered Software in the
+
+absence of its Contributions.
+
+This License does not grant any rights in the trademarks, service marks,
+
+or logos of any Contributor (except as may be necessary to comply with
+
+the notice requirements in Section 3.4).
+
+2.4. Subsequent Licenses
+
+No Contributor makes additional grants as a result of Your choice to
+
+distribute the Covered Software under a subsequent version of this
+
+License (see Section 10.2) or under the terms of a Secondary License
+
+(if permitted under the terms of Section 3.3).
+
+2.5. Representation
+
+Each Contributor represents that the Contributor believes its
+
+Contributions are its original creation(s) or it has sufficient rights
+
+to grant the rights to its Contributions conveyed by this License.
+
+2.6. Fair Use
+
+This License is not intended to limit any rights You have under
+
+applicable copyright doctrines of fair use, fair dealing,
+
+or other equivalents.
+
+2.7. Conditions
+
+Sections 3.1, 3.2, 3.3, and 3.4 are conditions of the
+
+licenses granted in Section 2.1.
+
+3. Responsibilities
+
+3.1. Distribution of Source Form
+
+All distribution of Covered Software in Source Code Form, including
+
+any Modifications that You create or to which You contribute, must be
+
+under the terms of this License. You must inform recipients that the
+
+Source Code Form of the Covered Software is governed by the terms
+
+of this License, and how they can obtain a copy of this License.
+
+You may not attempt to alter or restrict the recipients’ rights
+
+in the Source Code Form.
+
+3.2. Distribution of Executable Form
+
+If You distribute Covered Software in Executable Form then:
+
+a. such Covered Software must also be made avail

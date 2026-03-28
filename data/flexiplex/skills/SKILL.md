@@ -1,6 +1,6 @@
 ---
 name: flexiplex
-description: Flexiplex is a high-performance tool for the flexible demultiplexing and error-tolerant searching of sequencing reads. Use when user asks to demultiplex reads using known chemistries, discover unknown barcodes via flanking sequences, or search for specific sequences with allowed mismatches in long-read data.
+description: Flexiplex is a high-performance tool designed for error-tolerant demultiplexing and sequence searching in long-read sequencing data. Use when user asks to identify cell barcodes and UMIs in single-cell workflows, demultiplex reads using a whitelist, or perform error-tolerant searches for specific sequences.
 homepage: https://github.com/DavidsonGroup/flexiplex/
 ---
 
@@ -9,43 +9,52 @@ homepage: https://github.com/DavidsonGroup/flexiplex/
 
 ## Overview
 
-Flexiplex is a high-performance, multithreaded C++ tool designed for the flexible demultiplexing and searching of sequencing reads. It bridges the gap between general-purpose search tools and specialized single-cell demultiplexers by supporting both known barcode sets and "discovery mode," where only the flanking regions of a sequence of interest are known. It is highly error-tolerant, making it suitable for noisy long-read data or custom sequencing chemistries where standard pipelines might fail.
+Flexiplex is a high-performance, multithreaded C++ tool designed to handle the inherent error rates of long-read sequencing (like Oxford Nanopore) during demultiplexing. It uses the `edlib` library to perform fuzzy matching of flanking sequences (primers, polyT tails) and barcodes. It is particularly effective for single-cell workflows where you need to identify cell barcodes and UMIs, even when the exact positions or sequences contain sequencing errors. Beyond single-cell data, it serves as a versatile "error-tolerant grep" for any large-scale sequence search task.
 
-## Common CLI Patterns
+## Core CLI Patterns
 
-### 1. Standard Demultiplexing (Known Chemistry)
-Assign reads to cellular barcodes using a predefined chemistry (e.g., 10x Chromium v3) and a known whitelist.
+### 1. Single-Cell Barcode Discovery (Unknown Barcodes)
+When the list of expected barcodes is unknown, run Flexiplex in discovery mode to generate a frequency table.
 ```bash
-flexiplex -d 10x3v3 -k barcode_list.txt reads.fastq > demultiplexed_reads.fastq
+# Use -f 0 for strict flanking sequence matching to ensure high-quality discovery
+flexiplex -d 10x3v3 -f 0 reads.fastq > discovery_output.fastq
+```
+*Key Output:* Generates `flexiplex_barcodes_counts.txt`, which is used for knee-plot analysis.
+
+### 2. Demultiplexing with a Known Whitelist
+Assign reads to a specific list of barcodes (e.g., from Cell Ranger or a discovery pass).
+```bash
+flexiplex -d 10x3v3 -k barcode_whitelist.txt reads.fastq > demultiplexed.fastq
 ```
 
-### 2. Barcode Discovery Mode
-Use this when the exact barcodes are unknown but the flanking sequences are defined. Setting `-f 0` initiates discovery.
+### 3. Error-Tolerant Sequence Search (Grep Mode)
+Search for a specific sequence with a defined maximum edit distance.
 ```bash
-flexiplex -f 0 reads.fastq
-```
-
-### 3. Error-Tolerant Sequence Search (Grep-like)
-Search for a specific sequence within a FASTA/FASTQ file with a defined number of allowed mismatches/indels (e.g., 3 errors).
-```bash
+# Search for a 22bp sequence allowing up to 3 mismatches/indels
 flexiplex -x "CACTCTTGCCTACGCCACTAGC" -d grep -f 3 reads.fasta
 ```
 
-### 4. Filtering and Inflection Point Analysis
-After running flexiplex in discovery mode, use `flexiplex-filter` to remove empty droplets and filter against a whitelist.
+### 4. Custom Barcode/UMI Structures
+For non-standard chemistries, define the structure manually. The order of `-x`, `-b`, and `-u` flags defines the search pattern.
 ```bash
-flexiplex-filter --whitelist 3M-february-2018.txt --outfile filtered.txt flexiplex_barcodes_counts.txt
+# Pattern: [Left Flank] - [10bp UMI] - [Constant] - [16bp Barcode] - [Right Flank]
+flexiplex -x GCTCTTC -u "??????????" -x GAAA -b "????????????????" -x TTTTTTT -k barcodes.txt reads.fastq
 ```
 
 ## Expert Tips and Best Practices
 
-- **Preset Selection**: Always check if your chemistry is supported via the `-d` flag (e.g., `10x3v2`, `10x3v3`, `Visium`). This automatically configures the barcode and UMI positions.
-- **Handling Long Reads**: Flexiplex is optimized for long-read data where barcodes may appear at varying positions or contain significant sequencing errors.
-- **Output Redirection**: By default, `flexiplex` often outputs the modified FASTQ to `stdout`. Ensure you redirect to a file or pipe into downstream tools to avoid flooding the terminal.
-- **Installation**: For the most stable environment, install via Bioconda: `conda install -c bioconda flexiplex`.
-- **Filtering Workflow**: The demultiplexing process is often a two-step workflow: first run `flexiplex` to generate count statistics, then run `flexiplex-filter` to perform the actual cell calling/filtering.
+*   **Chimeric Read Handling**: Flexiplex automatically detects chimeric reads (multiple barcodes in one read) by masking found sequences and re-searching. Use `-c true` to add a `_C` suffix to these read IDs for easier downstream filtering.
+*   **Performance Optimization**:
+    *   Use `-p N` to specify the number of threads (default is 1).
+    *   Pipe gzipped input directly to avoid disk I/O overhead: `gunzip -c reads.fastq.gz | flexiplex [options]`.
+*   **Edit Distance Tuning**:
+    *   `-e`: Maximum edit distance for the **barcode** (default 2).
+    *   `-f`: Maximum edit distance for the **flanking sequences** (default 8).
+    *   For 16bp barcodes, `-e 2` is standard. For ~30bp total flanking sequences, `-f 8` is recommended.
+*   **Read ID Modification**: By default (`-i true`), Flexiplex replaces the read ID with the found Barcode and UMI (e.g., `@BC_UMI#OriginalID`). This is essential for downstream tools like `oarfish` or `nailpolish` that expect CB/UB tags or specific ID formats.
+*   **Filtering Discovery Results**: Always use the companion `flexiplex-filter` script on the `flexiplex_barcodes_counts.txt` file to identify the "knee" or inflection point, which separates real cells from empty droplets or ambient RNA.
 
 ## Reference documentation
-
-- [flexiplex - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_flexiplex_overview.md)
-- [GitHub - DavidsonGroup/flexiplex: The Flexible Demultiplexer](./references/github_com_DavidsonGroup_flexiplex.md)
+- [Flexiplex Documentation Home](./references/davidsongroup_github_io_flexiplex.md)
+- [Long-read Single-cell Tutorial](./references/davidsongroup_github_io_flexiplex_tutorial.html.md)
+- [Flexiplex GitHub README](./references/github_com_DavidsonGroup_flexiplex_blob_main_README.md)

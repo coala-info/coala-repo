@@ -189,3 +189,6 @@ Converts a VCF format 1 SNP report to a reverse complement sequence.
 ## For example: vcfformat1_to_revcom.pl my_snp_report.vcf 248956422
 ```
 
+
+## Metadata
+- **Skill**: generated

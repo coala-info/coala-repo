@@ -1,78 +1,82 @@
 ---
 name: spacedust
-description: Spacedust is a modular toolkit for the de novo discovery of conserved gene clusters across different genomes using sequence or structural homology. Use when user asks to identify conserved gene neighborhoods, perform structure-based gene cluster searches, or find homologous gene groups across multiple genomes.
+description: Spacedust discovers and identifies conserved gene clusters and homologous gene neighborhoods across multiple microbial genomes using sequence or structural homology. Use when user asks to analyze microbial genomes for conserved synteny, identify homologous gene blocks, or perform large-scale comparative genomics using MMseqs2 or Foldseek.
 homepage: https://github.com/soedinglab/spacedust
 ---
 
 
 # spacedust
 
+thinkname: spacedust
+description: Discovery and identification of conserved gene clusters across multiple genomes. Use this skill when you need to analyze microbial genomes for homologous gene neighborhoods, identify conserved synteny, or perform large-scale comparative genomics using sequence (MMseqs2) or structural (Foldseek) homology.
+
 ## Overview
 
-Spacedust is a modular toolkit for the de novo discovery of conserved gene clusters. It identifies groups of genes that appear together across different genomes by combining fast homology searches with an agglomerative hierarchical clustering algorithm that accounts for gene neighborhood. It supports both traditional sequence-based comparison and advanced structure-based comparison by integrating with Foldseek and MMseqs2.
+Spacedust is a specialized toolkit designed to find "gene blocks" or clusters that are preserved across different organisms. Unlike simple homology searches that look at individual genes, Spacedust identifies groups of genes that stay together in the same neighborhood across multiple genomes. It leverages MMseqs2 for fast sequence comparison and Foldseek for structure-based comparison, making it highly effective for discovering functionally related gene clusters even when sequence identity is low.
 
 ## Core Workflow
 
-### 1. Database Initialization
-Before searching, input genomes must be converted into a Spacedust database format (`setDB`).
+### 1. Database Creation
+Before searching, you must convert your genomic data into a Spacedust `setDB`.
 
-**For Nucleotide Input (.fna + .gff3):**
-Requires GFF3 files to provide genomic coordinates.
+**From Nucleotide FASTA + GFF3:**
+Use this for prokaryotic genomes where you have contigs and coordinate annotations.
 ```bash
-spacedust createsetdb genome1.fna genome2.fna setDB tmpFolder --gff-dir gff_directory/ --gff-type CDS
+# Create a list of GFF files
+ls *.gff3 > gff_list.txt
+
+# Initialize the database
+spacedust createsetdb genome1.fna [genome2.fna ...] setDB tmp --gff-dir gff_list.txt --gff-type CDS
 ```
 
-**For Protein Input (.faa):**
-Requires protein headers in Prodigal format to extract coordinates.
+**From Protein FASTA (Prodigal format):**
+If your protein headers already contain genomic coordinates (standard Prodigal output), you can skip the GFF requirement.
 ```bash
-spacedust createsetdb proteins1.faa proteins2.faa setDB tmpFolder
+spacedust createsetdb proteins.faa setDB tmp
 ```
 
-### 2. Enhancing with Structural Data (Optional)
-To use structural comparison (Search Mode 1), you must map sequences to a structure database or use a language model.
+### 2. Searching for Conserved Clusters
+The `clustersearch` module is the primary engine for identifying conserved neighborhoods.
 
-**Mapping to AlphaFoldDB/UniProt:**
+**Basic Sequence Search:**
 ```bash
-spacedust aa2foldseek setDB path/to/refFoldseekDB tmpFolder
+spacedust clustersearch querySetDB targetSetDB resultDB tmp
 ```
 
-**Predicting structures with ProstT5:**
+**Structural Homology Search (High Sensitivity):**
+Use this when looking for distantly related clusters where sequence identity is low but structure is conserved. Requires Foldseek.
 ```bash
-# Create DB with ProstT5 embeddings first
-foldseek createdb input.faa DB --prostt5-model weights
-spacedust createsetdb DB setDB tmpFolder
+spacedust clustersearch querySetDB targetSetDB resultDB tmp --search-mode 1 --foldseek-path /path/to/foldseek
 ```
 
-### 3. Searching for Conserved Clusters
-The `clustersearch` module performs the all-against-all comparison and identifies conserved neighborhoods.
+## Expert Tips and Parameters
 
-**Standard Sequence Search (MMseqs2):**
-```bash
-spacedust clustersearch querySetDB targetSetDB result.tsv tmpFolder --search-mode 0
-```
+### Tuning Cluster Detection
+*   **`--cluster-size`**: Default is 2. Increase this (e.g., 3 or 4) to reduce noise and find larger, more robust operons or biosynthetic gene clusters (BGCs).
+*   **`--max-gene-gap`**: Default is 3. If your genomes are highly fragmented or have frequent insertions, increase this to allow Spacedust to "jump" over non-conserved genes within a cluster.
+*   **`--num-iterations`**: For sensitive profile-based searches (similar to PSI-BLAST), set this to 2 or 3.
 
-**Structural Search (Foldseek):**
-```bash
-spacedust clustersearch querySetDB targetSetDB result.tsv tmpFolder --search-mode 1 --foldseek-path /path/to/bin/
-```
+### Search Modes
+| Mode | Engine | Best Use Case |
+| :--- | :--- | :--- |
+| `0` | MMseqs2 | Fast, standard sequence-based conservation. |
+| `1` | Foldseek | Detecting remote homologs via 3D structure. |
+| `2` | Foldseek + ProstT5 | Maximum sensitivity using protein language models. |
 
-## Key Parameters and Tuning
+### Self-Match Filtering
+When searching a database against itself to find internal duplications or paralogous clusters, use `--filter-self-match` to remove trivial hits between identical genomic locations.
 
-| Parameter | Default | Description |
-|-----------|---------|-------------|
-| `--search-mode` | 0 | 0: Sequence (MMseqs2), 1: Structure (Foldseek), 2: Foldseek + ProstT5 |
-| `--num-iterations` | 1 | Increase for sensitive iterative profile searches (PSI-BLAST style) |
-| `--max-gene-gap` | 3 | Max number of intervening non-homologous genes allowed within a cluster |
-| `--cluster-size` | 2 | Minimum number of homologous gene pairs required to define a cluster |
-| `--filter-self-match` | N/A | Use when searching a database against itself to remove redundant hits |
 
-## Expert Tips
 
-- **Foldseek Integration**: If `foldseek` is not in your system PATH, ensure the binary is in the same directory as `spacedust` or explicitly provide the path using `--foldseek-path`.
-- **Sensitivity vs. Speed**: For highly divergent clusters, use `--search-mode 1` with `--num-iterations 2` or higher. Structural comparison often finds conservation that sequence-only methods miss.
-- **Handling Large Datasets**: Spacedust is optimized for multi-core execution. Ensure your environment has sufficient threads available, as the underlying MMseqs2/Foldseek engines will scale to use them.
-- **GFF Filtering**: When using `createsetdb` with GFF files, always specify `--gff-type CDS` (or the specific feature type used in your annotation) to avoid including non-coding features in the neighborhood analysis.
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| aa2foldseek | By Ruoshi Zhang <ruoshi.zhang@mpinat.mpg.de> & Milot Mirdita <milot@mirdita.de> |
+| clusterdb | By Ruoshi Zhang <ruoshi.zhang@mpinat.mpg.de> & Milot Mirdita <milot@mirdita.de> |
+| clustersearch | By Ruoshi Zhang <ruoshi.zhang@mpinat.mpg.de> & Milot Mirdita <milot@mirdita.de> |
+| spacedust_createsetdb | Creates a database for spacedust. |
 
 ## Reference documentation
-- [Spacedust GitHub Repository](./references/github_com_soedinglab_spacedust.md)
-- [Bioconda Spacedust Package](./references/anaconda_org_channels_bioconda_packages_spacedust_overview.md)
+- [Spacedust GitHub README](./references/github_com_soedinglab_spacedust_blob_master_README.md)
+- [Spacedust Main Repository Overview](./references/github_com_soedinglab_spacedust.md)

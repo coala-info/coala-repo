@@ -1,6 +1,6 @@
 ---
 name: phyling
-description: Phyling is a tool for fast and scalable phylogenomic inference that identifies single-copy orthologs and constructs species trees from annotated genomes. Use when user asks to download HMM marker sets, align sequences to identify orthologs, or build phylogenetic trees using concatenation or consensus methods.
+description: Phyling reconstructs species phylogenies from protein-encoded genomic data using HMM marker sets to identify and align single-copy orthologs. Use when user asks to download BUSCO marker sets, align genomic samples to markers, filter multiple sequence alignments, or generate a species tree.
 homepage: https://github.com/stajichlab/Phyling
 ---
 
@@ -9,39 +9,59 @@ homepage: https://github.com/stajichlab/Phyling
 
 ## Overview
 
-Phyling is a specialized tool designed for fast and scalable phylogenomic inference. It streamlines the process of moving from annotated genomes to a species tree by identifying single-copy orthologs through Hidden Markov Model (HMM) searches against standardized marker sets. The tool is modular, allowing for flexible workflows that include marker acquisition, sequence alignment, quality filtering, and final tree reconstruction.
+Phyling is a specialized bioinformatics tool designed for reconstructing species phylogenies directly from protein-encoded genomic data. It streamlines the phylogenomic workflow by leveraging Hidden Markov Model (HMM) marker sets from the BUSCO database to identify single-copy orthologs. The tool is particularly effective for large-scale genomic datasets where speed and scalability are required. It supports both peptide and DNA coding sequences (CDS) as input, providing automated translation and back-translation for high-accuracy estimation of closely related species.
 
 ## Core Workflow
 
-### 1. Marker Set Management
-Before aligning sequences, you must obtain a relevant HMM marker set (typically from BUSCO).
+The Phyling process follows a four-step modular approach:
 
-- **List available sets**: Use `phyling download list` to see both online and locally cached datasets.
-- **Download a set**: Use `phyling download [markerset_name]` (e.g., `fungi_odb10`).
-- **Update markers**: Rerun the download command for a specific set to check for and install updates.
+1.  **Download**: Retrieve HMM marker sets (e.g., from BUSCO v5).
+2.  **Align**: Search genomic samples against markers and perform multiple sequence alignment.
+3.  **Filter**: Refine MSA results to improve phylogenetic signal.
+4.  **Tree**: Generate the final species phylogeny.
 
-### 2. Ortholog Identification and Alignment
-The `align` module performs HMM searches to find orthologs and then aligns them.
+### 1. Managing HMM Markers
+Before processing samples, you must obtain a marker set.
+- **List available sets**: `phyling download list`
+- **Download a specific set**: `phyling download <markerset_name>` (e.g., `fungi_odb10`)
+- **Storage**: Markers are saved to `~/.phyling` or the path defined in `$PHYLING_DB`.
 
-- **Basic alignment**: `phyling align -I [input_directory] -m [markerset_directory] -o [output_name]`
-- **Input types**: Provide peptide sequences (.aa) or DNA coding sequences (.cds). If DNA is provided, Phyling translates to protein for alignment and back-translates for the final result.
-- **Alignment methods**: The default is `hmmalign`. Use `-M muscle` if you prefer the MUSCLE algorithm.
-- **Performance**: Use `-t [threads]` to parallelize. For more than 8 threads, use multiples of 4 to optimize the `pyhmmer` search performance.
+### 2. Running Alignments
+The `align` module identifies orthologs and aligns them.
+- **Basic usage**: `phyling align -m <markerset_dir> -i <input_dir>`
+- **Input types**: Accepts `.fasta`, `.faa`, or `.fna` files. Supports bgzipped files.
+- **DNA/CDS Input**: When using DNA sequences, Phyling automatically translates them to peptides for HMM searching and alignment, then back-translates the final MSA to DNA.
+- **Optimization**: Use `-t <threads>` to speed up the search and alignment process.
 
-### 3. Tree Construction
-Once alignments are generated, use the `tree` module to build the phylogeny.
+### 3. Filtering Results
+Use the `filter` module to remove low-quality alignments or uninformative sites before tree building.
+- **Basic usage**: `phyling filter -i <alignment_dir>`
 
-- **Concatenation**: Combines all markers into a single supermatrix to build one tree.
-- **Consensus**: Builds individual trees for each marker and then generates a consensus species tree.
+### 4. Phylogenetic Reconstruction
+The `tree` module builds the final phylogeny from the filtered alignments.
+- **Concatenation**: Combines all markers into a single supermatrix.
+- **Consensus**: Builds individual gene trees and generates a consensus species tree.
+- **Basic usage**: `phyling tree -i <filtered_alignments_dir>`
 
 ## Expert Tips and Best Practices
 
-- **Sample Minimum**: Ensure you have at least 4 samples; this is the hard minimum required by Phyling to generate a valid tree.
-- **Closely Related Species**: When working with very closely related taxa, provide DNA coding sequences (CDS) as input. The back-translation feature preserves nucleotide-level signal which may be lost in pure protein alignments.
-- **Bitscore Cutoffs**: Phyling looks for a bitscore cutoff file within the HMM folder. If missing, it defaults to an E-value threshold (default 1e-10). You can adjust this with `-E [float]`.
-- **Filtering**: Use the `filter` module before tree building to remove low-quality alignments based on treeness or RCV (Relative Composition Variability) scores.
-- **Storage**: By default, markers are saved to `~/.phyling`. You can override this by setting the `$PHYLING_DB` environment variable.
+- **Marker Selection**: Choose the most specific BUSCO lineage available for your taxa to maximize the number of single-copy orthologs identified.
+- **Thread Management**: For large datasets, ensure the number of threads does not exceed 4x the number of samples to maintain efficiency in the alignment pipeline.
+- **Closely Related Species**: Always use DNA coding sequences (`cds`) as input for closely related taxa to capture synonymous substitutions that peptide sequences might miss.
+- **Environment Variables**: Set `PHYLING_DB` in your `.bashrc` or `.zshrc` to point to a shared database location if working in a multi-user environment or on a cluster with limited home directory space.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| phyling align | Perform multiple sequence alignment (MSA) on orthologous sequences that match the hmm markers across samples. |
+| phyling download | Help to download/update BUSCO v5 markerset to a local folder. |
+| phyling filter | Filter the multiple sequence alignment (MSA) results for tree module. |
+| phyling_tree | Construct a phylogenetic tree by the selected multiple sequence alignment (MSA) results. |
 
 ## Reference documentation
-- [Phyling GitHub Repository](./references/github_com_stajichlab_Phyling.md)
-- [Phyling Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_phyling_overview.md)
+
+- [Phyling Tool README](./references/github_com_stajichlab_Phyling_blob_main_README.md)
+- [Phyling Overview](./references/anaconda_org_channels_bioconda_packages_phyling_overview.md)

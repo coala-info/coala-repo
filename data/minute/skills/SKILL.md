@@ -1,51 +1,57 @@
 ---
 name: minute
-description: This tool automates the primary analysis of MINUTE-ChIP datasets. Use when user asks to process MINUTE-ChIP data, from raw reads to analyzed results, including quality control, alignment, and peak calling.
+description: The minute tool automates the processing of MINUTE-ChIP data from raw sequencing reads to normalized genomic tracks. Use when user asks to initialize a project, run the bioinformatics pipeline, demultiplex reads, or generate scaled bigWig files.
 homepage: https://github.com/NBISweden/minute/
 ---
 
 
 # minute
 
-minute/SKILL.md
-```yaml
-name: minute
-description: Automates the primary analysis steps for MINUTE-ChIP datasets using a Snakemake workflow. Use when Claude needs to process MINUTE-ChIP data, from raw reads to analyzed results, including quality control, alignment, and peak calling.
-```
 ## Overview
-The `minute` skill is a Snakemake-based workflow designed for the primary analysis of MINUTE-ChIP datasets. It streamlines the process from raw sequencing reads through to generating analyzed results, encompassing essential steps like quality control, read alignment, and peak calling. This skill is ideal when you need to process and analyze MINUTE-ChIP data efficiently.
 
-## Usage Instructions
+The minute tool is a specialized bioinformatics pipeline designed to handle the unique requirements of MINUTE-ChIP data. It automates the transition from raw sequencing reads to normalized genomic tracks by performing demultiplexing, adapter trimming, alignment, and scaling. By leveraging Snakemake, it ensures reproducible results and allows users to skip specific steps (like scaling) or focus on pooled replicates through various target rules.
 
-The `minute` workflow is executed via the command line. It relies on a configuration file to define input parameters and sample information.
+## Core CLI Commands
 
-### Installation
+### Project Initialization
+Use the `init` command to set up the required directory structure and template configuration files.
+- Initialize a standard run: `minute init --input <path_to_fastqs> --barcodes <path_to_barcodes_csv>`
+- Initialize using an existing configuration: `minute init --config <path_to_minute.yaml>`
 
-To install `minute`, use Conda:
+### Executing the Workflow
+Run the pipeline from within the initialized project directory.
+- Execute the default workflow: `minute run`
+- Execute with a specific number of cores (via Snakemake): `minute run --cores <number>`
 
-```bash
-conda install bioconda::minute
-```
+## Workflow Target Rules
 
-### Basic Workflow Execution
+Select specific rules to modify the pipeline behavior based on analysis needs:
 
-1.  **Prepare Input Data**: Ensure your MINUTE-ChIP sequencing reads are organized.
-2.  **Create Configuration File**: A configuration file (typically `config.yaml`) is required to specify input files, sample names, and analysis parameters. Refer to the `minute` documentation for the exact structure and required parameters.
-3.  **Run the Workflow**: Execute the `minute` workflow using Snakemake. The general command structure is:
+- **no_scaling**: Skips the scaling process entirely. Use this to generate unscaled bigWig files and a MultiQC report containing only non-scaling metrics.
+- **quick**: Produces a minimal set of bigWig tracks. It generates scaled tracks for treatment samples and unscaled tracks for controls.
+- **pooled_only**: Skips the generation of individual replicate tracks and only produces bigWig files for replicate pools.
+- **pooled_only_minimal**: Generates scaled replicate pools for treatments and unscaled pools for controls.
+- **mapq_bigwigs**: Generates additional bigWig files filtered by a specific mapping quality threshold (defined in the configuration).
 
-    ```bash
-    minute --configfile path/to/your/config.yaml
-    ```
+## Expert Tips and Best Practices
 
-    *   Replace `path/to/your/config.yaml` with the actual path to your configuration file.
-    *   The `minute` command itself is a wrapper that likely invokes Snakemake with the appropriate rules and configurations.
+- **Aligner Selection**: While Bowtie2 is the default, you can switch to `strobealign` in the configuration for significantly faster alignment speeds.
+- **Quality Filtering**: Use the `mapping_quality` parameter to filter out low-confidence reads. By default, this is set to 0 (keeping all reads).
+- **Handling Dropouts**: Check the `stats_summary.txt` file or the MultiQC report to identify barcode dropouts. The pipeline is designed to handle zero-value barcodes without failing the entire run.
+- **Resource Management**: Since the workflow is Snakemake-based, you can pass standard Snakemake arguments through the `minute run` command to manage cluster execution or local resource limits.
+- **Scaling Verification**: Review the "Scaling info" in the final MultiQC report to see the calculated scale factors applied to the summary bar plots.
 
-### Key Considerations and Expert Tips
 
-*   **Configuration is Crucial**: The `config.yaml` file is central to the `minute` workflow. Pay close attention to sample naming, input file paths, and any specific parameters for alignment, peak calling, or downstream analysis.
-*   **Resource Management**: For larger datasets, consider using Snakemake's resource management options (e.g., `--cores`, `--resources`) to optimize execution on your computing environment.
-*   **Documentation**: Always refer to the official `minute` documentation for the most up-to-date information on configuration options, parameters, and advanced usage. The documentation is available at [minute.readthedocs.io](https://minute.readthedocs.io/en/latest).
-*   **Troubleshooting**: If you encounter errors, check your `config.yaml` for typos or incorrect paths. Review the Snakemake output logs for specific error messages.
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| download | Downloads libraries from a TSV file. |
+| minute init | Create and initialize a new pipeline directory |
+| run | Run the Minute pipeline |
 
 ## Reference documentation
-- [MINUTE-ChIP data analysis workflow](https://minute.readthedocs.io/en/latest)
+- [minute Changelog](./references/github_com_elsasserlab_minute_blob_main_CHANGES.md)
+- [Minute README](./references/github_com_elsasserlab_minute_blob_main_README.md)
+- [Environment Specification](./references/github_com_elsasserlab_minute_blob_main_environment.yml.md)

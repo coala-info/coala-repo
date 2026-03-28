@@ -362,3 +362,6 @@ Commands:
   share   Configure the nomadic share command.
 ```
 
+
+## Metadata
+- **Skill**: generated

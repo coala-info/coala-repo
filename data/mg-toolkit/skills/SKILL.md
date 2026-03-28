@@ -1,6 +1,6 @@
 ---
 name: mg-toolkit
-description: The mg-toolkit is a command-line interface and Python library for interacting with the MGnify platform to retrieve metagenomic datasets and analysis results. Use when user asks to download original sample metadata, perform bulk downloads of functional or taxonomic analysis files, or search non-redundant protein databases.
+description: The mg-toolkit is a command-line utility for fetching metadata, searching protein databases, and performing bulk downloads of analysis results from the MGnify repository. Use when user asks to extract sample metadata into CSV formats, search non-redundant protein databases with HMMER, or perform bulk downloads of specific analysis result groups for entire studies.
 homepage: https://github.com/EBI-metagenomics/emg-toolkit
 ---
 
@@ -8,64 +8,61 @@ homepage: https://github.com/EBI-metagenomics/emg-toolkit
 # mg-toolkit
 
 ## Overview
-The `mg-toolkit` is a specialized command-line interface and Python library for interacting with the MGnify platform. It streamlines the process of fetching large-scale metagenomic datasets, allowing users to download original sample metadata, search non-redundant protein databases, and retrieve specific analysis result groups (like functional or taxonomic analyses) across entire studies.
+The `mg-toolkit` is a specialized command-line utility designed for bioinformaticians and metagenomics researchers. It streamlines the process of fetching large-scale data from the MGnify repository. Its primary utility lies in three areas: programmatically extracting original sample metadata into portable CSV formats, searching non-redundant protein databases with HMMER to find matches within MGnify datasets, and performing bulk downloads of specific analysis result groups (like SSU rRNA or functional annotations) for entire studies.
 
-## Core CLI Commands
+## Core CLI Patterns
 
-### 1. Metadata Retrieval
-To download the original metadata for a specific study or sequence accession into a CSV file:
+### Metadata Extraction
+To download all sample metadata associated with a specific study or project accession:
 ```bash
 mg-toolkit original_metadata -a <ACCESSION>
 ```
 *Example:* `mg-toolkit original_metadata -a ERP001736`
 
-### 2. Bulk Downloading Results
-The `bulk_download` command is the most powerful feature for retrieving analysis files for an entire study.
-
-**Basic bulk download:**
+### Sequence Searching
+Search the MGnify non-redundant protein database using HMMER. This command requires a query FASTA file and produces a CSV with metadata for the matches.
 ```bash
-mg-toolkit bulk_download -a <ACCESSION> -o <OUTPUT_PATH>
+mg-toolkit sequence_search -seq <input.fasta> -out <results.csv> -db <db_type> [evalue -incE <threshold>]
 ```
-
-**Filtering by Pipeline Version:**
-MGnify studies are often analyzed with multiple pipeline versions. Use the `-p` flag to specify a version (e.g., 1.0, 4.1, 5.0).
-```bash
-mg-toolkit bulk_download -a ERP009703 -p 4.0
-```
-
-**Filtering by Result Group:**
-Use the `-g` flag to download only specific types of data. Note that some groups are version-dependent:
-- `statistics`: All versions.
-- `functional_analysis`: All versions.
-- `taxonomic_analysis_ssu_rrna`: Pipeline >= 4.0.
-- `pathways_and_systems`: Pipeline >= 5.0.
-
-*Example (Functional analysis only):*
-```bash
-mg-toolkit bulk_download -a ERP009703 -g functional_analysis
-```
-
-### 3. Sequence Searching
-Search MGnify's non-redundant protein database using HMMER:
-```bash
-mg-toolkit sequence_search -seq <INPUT_FASTA> -out <OUTPUT_CSV> -db <DATABASE>
-```
-**Available Databases:**
-- `full`: Full length sequences (default).
+**Database Options (`-db`):**
+- `full`: Full-length sequences (default).
 - `all`: All sequences.
 - `partial`: Partial sequences.
 
-## Best Practices and Tips
-- **Debug Mode:** Use the `-d` flag before the positional command to print debugging information if a download or search fails.
-- **Metadata Persistence:** The bulk downloader automatically stores a `.tsv` file containing all metadata for every file it downloads, ensuring provenance is maintained.
-- **Accession Formats:** Ensure accessions are publicly available in MGnify (e.g., ERP001736, SRP000319).
-- **Python Integration:** While primarily a CLI tool, you can use the underlying modules for custom scripts, though the API is subject to change.
-  ```python
-  from mg_toolkit.metadata import OriginalMetadata
-  meta = OriginalMetadata('ERP001736')
-  meta.fetch_metadata()
-  ```
+### Bulk Result Downloads
+Download analysis files for an entire study. This is the most efficient way to gather raw or processed results for local analysis.
+```bash
+mg-toolkit bulk_download -a <ACCESSION> -o <output_directory> -p <pipeline_version> -g <result_group>
+```
+
+## Expert Tips and Best Practices
+
+### 1. Filter by Pipeline Version
+MGnify often re-analyzes studies as new pipelines are released. To ensure consistency in your local dataset, always specify the pipeline version using the `-p` flag (e.g., `4.1` or `5.0`). If omitted, the tool may download results from all available versions, leading to redundant data and confusion.
+
+### 2. Target Specific Result Groups
+Metagenomics datasets are massive. Use the `-g` flag to download only the specific data types you need. Common groups include:
+- `functional_analysis`: For GO terms, InterPro, and pathway data.
+- `taxonomic_analysis_ssu_rrna`: For 16S/18S rRNA based classifications (Pipeline >= 4.0).
+- `sequence_data`: For processed reads or contigs.
+- `statistics`: For summary metrics of the analysis.
+
+### 3. Accession Formatting
+Ensure you use the project or study accession (starting with ERP, SRP, or PRJ) rather than individual sample or analysis accessions when using `bulk_download` or `original_metadata`.
+
+### 4. Debugging Connections
+If a download fails or returns no results for a known public study, use the `-d` or `--debug` flag to inspect the API requests being made to the MGnify backend.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| bulk_download | Bulk download study or project data from MGnify. |
+| original_metadata | Retrieve original metadata for given study accessions using mg-toolkit. |
+| sequence_search | Search non-redundant protein database using HMMER. |
 
 ## Reference documentation
-- [MGnify API toolkit](./references/github_com_EBI-Metagenomics_emg-toolkit.md)
-- [mg-toolkit Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_mg-toolkit_overview.md)
+- [MG-Toolkit README](./references/github_com_EBI-Metagenomics_emg-toolkit_blob_master_README.md)
+- [MG-Toolkit Overview](./references/anaconda_org_channels_bioconda_packages_mg-toolkit_overview.md)

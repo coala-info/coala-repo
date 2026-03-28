@@ -1,6 +1,6 @@
 ---
 name: rnanorm
-description: rnanorm provides Python-native implementations of RNA-seq normalization methods to convert raw sequencing counts into units like CPM, TPM, and TMM. Use when user asks to normalize RNA-seq data, calculate transcripts per million, or perform TMM and CPM scaling.
+description: rnanorm performs standard RNA-seq normalization techniques including CPM, TPM, FPKM, TMM, and UQ using a pure-Python implementation. Use when user asks to normalize RNA-seq count matrices, adjust for library size or gene length, or account for composition bias using TMM or Upper Quartile methods.
 homepage: https://github.com/genialis/RNAnorm
 ---
 
@@ -8,62 +8,86 @@ homepage: https://github.com/genialis/RNAnorm
 # rnanorm
 
 ## Overview
-The `rnanorm` tool provides a robust, Python-native implementation of common RNA-seq normalization techniques. It is designed to handle the conversion of raw sequencing counts into units that account for sequencing depth, gene length, or composition biases. Unlike many bioinformatics tools that require R environments (e.g., edgeR), `rnanorm` offers a standalone CLI and a scikit-learn compatible API, making it ideal for Python-based data science workflows.
+`rnanorm` is a pure-Python implementation of standard RNA-seq normalization techniques. It eliminates the need for R-based environments when performing routine tasks like library size adjustment or gene length normalization. The tool supports several key methods:
+- **Library size adjustment**: CPM (Counts Per Million).
+- **Gene length & library size adjustment**: TPM (Transcripts Per Million) and FPKM (Fragments Per Kilobase Million).
+- **Composition bias adjustment**: TMM (Trimmed Mean of M-values) and UQ (Upper Quartile).
+- **Factor-adjusted counts**: CTF (Counts adjusted with TMM) and CUF (Counts adjusted with UQ).
 
 ## Installation
-Install via pip or conda:
+Install the package using pip:
 ```bash
 pip install rnanorm
-# OR
-conda install bioconda::rnanorm
 ```
 
 ## Command Line Interface (CLI)
-The CLI follows a standard pattern: `rnanorm <method> <input_file> [options]`.
+The CLI is the fastest way to process expression matrices stored in CSV or TSV files.
 
-### Input Requirements
-- **Format**: Comma-separated (CSV).
-- **Orientation**: Genes must be in **columns** and samples in **rows**.
-- **Values**: Raw integer counts.
+### Basic Usage
+Normalize a count matrix using CPM:
+```bash
+rnanorm cpm raw_counts.csv --out normalized_cpm.csv
+```
 
-### Common CLI Patterns
-- **CPM (Counts Per Million)**:
-  `rnanorm cpm counts.csv --out counts_cpm.csv`
-- **TPM (Transcripts Per Million)**:
-  Requires gene lengths via GTF or a specific lengths file.
-  `rnanorm tpm counts.csv --gtf annotations.gtf --out counts_tpm.csv`
-  `rnanorm tpm counts.csv --gene-lengths lengths.csv > counts_tpm.csv`
-- **TMM (Trimmed Mean of M-values)**:
-  `rnanorm tmm counts.csv --out counts_tmm.csv`
+### Handling Gene Lengths (TPM/FPKM)
+Methods that account for gene length require either a GTF annotation file or a dedicated gene lengths file.
+```bash
+# Using a GTF file
+rnanorm tpm counts.csv --gtf annotations.gtf > tpm_output.csv
 
-### CLI Tips
-- **Piping**: Use standard input/output for streaming: `cat counts.csv | rnanorm cpm > output.csv`.
-- **Overwriting**: The tool fails if the output file exists. Use `--force` to overwrite.
-- **Gene Lengths File**: If not using a GTF, provide a two-column CSV: `gene_id,gene_length`.
+# Using a custom gene lengths file (two columns: gene_id, gene_length)
+rnanorm tpm counts.csv --gene-lengths lengths.csv --out tpm_output.csv
+```
+
+### Advanced CLI Patterns
+- **Piping**: Use standard input and output for integration into shell pipelines.
+  ```bash
+  cat counts.csv | rnanorm tmm > tmm_output.csv
+  ```
+- **Overwriting**: By default, the tool will not overwrite existing files. Use the `--force` flag if necessary.
+  ```bash
+  rnanorm uq counts.csv --force --out existing_file.csv
+  ```
 
 ## Python API Usage
-`rnanorm` classes are compatible with scikit-learn's `fit_transform` pattern.
+`rnanorm` is compatible with Scikit-learn, making it easy to integrate into machine learning pipelines.
 
+### Implementation Example
 ```python
 from rnanorm import TPM
 import pandas as pd
 
-# Load your expression data (Samples as rows, Genes as columns)
-exp_df = pd.read_csv("counts.csv", index_index=0)
+# Load your data (Genes must be in columns, Samples in rows)
+df = pd.read_csv("counts.csv", index_col=0)
 
 # Initialize and transform
-# Use set_output(transform="pandas") to maintain DataFrame structure
-tpm_transformer = TPM(gtf_path="annotations.gtf").set_output(transform="pandas")
-normalized_df = tpm_transformer.fit_transform(exp_df)
+# Note: TPM and FPKM require gene length info via GTF or gene_lengths dictionary
+tpm_transformer = TPM(gtf_path="path/to/annotations.gtf")
+normalized_df = tpm_transformer.fit_transform(df)
 ```
 
-## Expert Tips
-- **Method Selection**: 
-    - Use **TPM** or **FPKM** when you need to compare different genes within the same sample (accounts for gene length).
-    - Use **TMM** or **Upper Quartile (UQ)** for differential expression analysis or cross-sample comparisons (accounts for library composition).
-- **Data Orientation**: If your data has genes in rows (common in many genomic formats), you must transpose it before passing it to `rnanorm`.
-- **Validation**: The TMM and UQ implementations are validated against `edgeR` to ensure scientific consistency with industry-standard R packages.
+## Expert Tips and Best Practices
+- **Matrix Orientation**: Ensure your input matrix has **genes in columns** and **samples in rows**. This is the inverse of many R-based tools but is the standard for Scikit-learn compatibility.
+- **Raw Counts Only**: Always provide raw, non-normalized integer counts as input.
+- **Gene Length Calculation**: When providing a custom gene lengths file, ensure lengths are calculated using the "union exon model" for consistency with standard bioinformatics practices.
+- **Method Selection**:
+    - Use **TPM** for within-sample comparisons (comparing expression of Gene A vs Gene B).
+    - Use **TMM** or **UQ** when performing between-sample comparisons to account for composition bias.
+    - Use **CTF** or **CUF** if you need normalized counts that maintain the original scale of the data.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| cpm | Calculate counts per million (CPM) for RNA-Seq data. |
+| ctf | Convert count data to TPM format. |
+| cuf | Normalize RNA-Seq count data using the CUF method. |
+| fpkm | Calculate FPKM values from gene expression data. |
+| tmm | Apply TMM normalization to an expression matrix. |
+| tpm | Compute TPM. |
+| uq | Performs Upper Quartile Normalization on expression data. |
 
 ## Reference documentation
-- [RNAnorm GitHub Repository](./references/github_com_genialis_RNAnorm.md)
-- [RNAnorm Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_rnanorm_overview.md)
+- [RNAnorm GitHub README](./references/github_com_genialis_RNAnorm_blob_main_README.rst.md)

@@ -54,3 +54,6 @@ Commands:
   correlate  Compute correlation
 ```
 
+
+## Metadata
+- **Skill**: generated

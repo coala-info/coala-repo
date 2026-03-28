@@ -517,3 +517,6 @@ Other general options:
                         print longer help message in ROFF (manpage) format
 ```
 
+
+## Metadata
+- **Skill**: generated

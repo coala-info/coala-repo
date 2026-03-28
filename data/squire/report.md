@@ -178,3 +178,6 @@ usage: squire [-h] [--version]
 squire: error: invalid choice: 'seek' (choose from 'Build', 'Fetch', 'Clean', 'Map', 'Count', 'Call', 'Draw', 'Seek')
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -1,6 +1,6 @@
 ---
 name: advntr
-description: "advntr genotypes Variable Number Tandem Repeats from sequencing data using Hidden Markov Models and neural networks. Use when user asks to genotype VNTRs, identify repeat counts in Illumina or PacBio reads, or detect frameshifts in tandem repeat regions."
+description: adVNTR is a bioinformatics tool designed to genotype Variable Number Tandem Repeats and identify mutations within repetitive genomic regions using Hidden Markov Models. Use when user asks to genotype predefined VNTRs, identify frameshifts in protein-coding regions, or add custom VNTR models to the database.
 homepage: https://github.com/mehrdadbakhtiari/adVNTR
 ---
 
@@ -8,48 +8,69 @@ homepage: https://github.com/mehrdadbakhtiari/adVNTR
 # advntr
 
 ## Overview
-advntr is a specialized tool for resolving Variable Number Tandem Repeats, which are often challenging for standard variant callers. It utilizes Hidden Markov Models (HMM) and neural networks to genotype VNTRs from mapped or unmapped reads. The tool is particularly useful for clinical and population genetics research involving disease-linked tandem repeats, providing diploid repeat counts and identifying small indel variants within motifs.
+adVNTR is a specialized bioinformatics tool designed to genotype Variable Number Tandem Repeats (VNTRs). Unlike standard variant callers that struggle with repetitive regions, adVNTR uses Hidden Markov Models (HMMs) to find diploid repeating counts and identify mutations within these complex loci. It is particularly effective for studying disease-linked VNTRs (e.g., CSTB, PER3, MUC1) and supports both short-read and long-read sequencing technologies.
 
-## Installation and Setup
-The tool is primarily distributed via Bioconda.
+## Core Workflows
+
+### 1. Genotyping Predefined VNTRs
+To genotype a specific locus already present in the adVNTR database, use the `genotype` command with a VNTR ID.
+
 ```bash
-conda install -c conda-forge -c bioconda advntr
-```
-**Critical Requirement**: You must download and extract pre-trained models (databases) for your reference genome (hg19 or GRCh38) into the project directory before running genotypes. Without these models (e.g., `vntr_data_recommended_loci.zip`), the tool cannot identify specific loci.
+# Basic genotyping for Illumina data
+advntr genotype --vntr_id <ID> --alignment_file <input.bam> --working_directory <dir>
 
-## Common CLI Patterns
+# Genotyping for PacBio data
+advntr genotype --vntr_id <ID> --alignment_file <input.bam> --pacbio --working_directory <dir>
 
-### Genotyping Illumina Short-Reads
-Standard usage for Illumina HiSeq data:
-```bash
-advntr genotype --alignment_file input.bam --working_directory ./output_dir/
-```
-
-### Genotyping PacBio Long-Reads
-When working with SMRT sequencing data, the `--pacbio` flag is required to adjust the model for higher error rates and longer read lengths:
-```bash
-advntr genotype --alignment_file pacbio_aligned.bam --working_directory ./output_dir/ --pacbio
+# Output results to a specific format (text, bed, or vcf)
+advntr genotype --vntr_id <ID> --alignment_file <input.bam> --outfmt bed --outfile results.bed
 ```
 
-### Targeted Genotyping
-To save time and resources, genotype a specific locus using its unique ID (found in the tool's database or wiki):
+### 2. Identifying Frameshifts
+If the goal is to detect protein-coding changes rather than just copy number, use the `--frameshift` flag.
+
 ```bash
-advntr genotype --alignment_file input.bam --vntr_id 1234 --working_directory ./output_dir/
+advntr genotype --vntr_id <ID> --alignment_file <input.bam> --frameshift
 ```
 
-### Detecting Frameshifts
-For VNTRs in coding regions where repeat expansions or contractions might break the reading frame:
+### 3. Adding Custom VNTR Models
+If a locus is not in the recommended set, you must train a model using a reference genome.
+
 ```bash
-advntr genotype --alignment_file input.bam --frameshift --working_directory ./output_dir/
+advntr addmodel -r <ref.fa> -c <chrom> -p <motif_pattern> -s <start_pos> -e <end_pos>
 ```
+*   `-p`: The repeating unit pattern (e.g., `CGCGGGGCGGGG`).
+*   `-s`/`-e`: The genomic coordinates of the repeat region.
+
+### 4. Managing the Database
+*   **View Models**: Check existing VNTR structures in the database.
+    ```bash
+    advntr viewmodel
+    ```
+*   **Delete Model**: Remove a custom or existing model.
+    ```bash
+    advntr delmodel --vntr_id <ID>
+    ```
 
 ## Expert Tips and Best Practices
-- **Reference Consistency**: Ensure the pre-trained model version matches your BAM file's reference (e.g., do not use hg19 models on GRCh38 alignments).
-- **Speed Optimization**: For large-scale datasets, use the `adVNTR-NN` (Neural Network) models which significantly decrease processing time compared to the standard HMM approach.
-- **Memory Management**: If processing many loci at once, ensure the `--working_directory` is on a disk with sufficient space for temporary log files and intermediate HMM states.
-- **Coding Regions**: For high-precision indel detection within coding motifs, consider using the `code-adVNTR` variant of the tool if the standard genotype command yields ambiguous results.
+
+*   **Data Requirements**: Always ensure you have downloaded the pre-trained models (`vntr_data_recommended_loci.zip`) for your specific reference assembly (hg19 or GRCh38). Place these in the project directory or specify the path using `-m`.
+*   **Working Directory**: Always specify a `--working_directory`. adVNTR generates temporary files during the HMM alignment process; using a fast local SSD can improve performance.
+*   **Haploid Organisms**: If working with non-human or haploid data, use the `--haploid` flag to prevent the tool from forcing a diploid genotype call.
+*   **Model Updates**: Use the `--update` flag during genotyping to iteratively refine the HMM model based on the real sequencing data in your sample, which can improve accuracy for divergent alleles.
+*   **Memory/Threads**: For large-scale genotyping (multiple IDs), use the `-t` flag to specify the number of threads (default is 4).
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| addmodel | Add a new VNTR model to the database |
+| genotype | Genotype VNTRs from sequencing data |
 
 ## Reference documentation
-- [adVNTR Main Repository](./references/github_com_mehrdadbakhtiari_adVNTR.md)
-- [adVNTR Wiki and Disease-Linked Loci](./references/github_com_mehrdadbakhtiari_adVNTR_wiki.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_advntr_overview.md)
+- [adVNTR Tutorial](./references/advntr_readthedocs_io_en_latest_tutorial.html.md)
+- [Quick Start Guide](./references/advntr_readthedocs_io_en_latest_quickstart.html.md)
+- [Installation and Data Requirements](./references/advntr_readthedocs_io_en_latest_installation.html.md)
+- [Disease-linked VNTRs Wiki](./references/github_com_mehrdadbakhtiari_adVNTR_wiki_Disease-linked-VNTRs.md)

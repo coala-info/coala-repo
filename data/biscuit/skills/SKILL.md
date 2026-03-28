@@ -1,6 +1,6 @@
 ---
 name: biscuit
-description: Biscuit processes epigenetic sequencing data to perform alignment, methylation calling, and genetic variant analysis. Use when user asks to align bisulfite-treated reads, extract DNA methylation information, or generate quality control reports for epigenetic data.
+description: BISCUIT is a high-performance tool suite for the simultaneous inference of genetic and epigenetic information from bisulfite sequencing data. Use when user asks to index a reference genome, align bisulfite-treated reads, perform quality control, call methylation and mutations, or convert VCF outputs to BED format.
 homepage: https://github.com/huishenlab/biscuit
 ---
 
@@ -8,42 +8,88 @@ homepage: https://github.com/huishenlab/biscuit
 # biscuit
 
 ## Overview
-The `biscuit` (BISulfite-seq CUI Toolkit) skill provides a specialized workflow for processing epigenetic sequencing data. It streamlines the transition from raw reads to methylation calls and genetic variants by combining alignment, duplicate marking, and pileup procedures into a standards-compliant pipeline. This skill is particularly useful for handling bulk and single-cell bisulfite data while maintaining high efficiency and accuracy in simultaneous genetic and epigenetic inference.
 
-## Installation and Dependencies
-Ensure the environment is configured with the necessary tools for the full pipeline:
-- **Core Tool**: `conda install bioconda::biscuit`
-- **Required Utilities**: `samtools`, `bedtools`, `bgzip`, `tabix`, and `GNU awk`.
-- **Recommended Add-on**: `dupsifter` is highly recommended for marking duplicate reads during the alignment phase to ensure accurate methylation levels.
+BISCUIT (BISulfite-seq CUI Toolkit) is a high-performance tool suite designed for the simultaneous inference of genetic and epigenetic information from bisulfite sequencing data. It excels at handling both bulk and single-cell studies by providing a standards-compliant workflow that covers the entire pipeline from raw read alignment to downstream methylation and mutation analysis. Use this skill to guide users through efficient CLI-based workflows for processing DNA methylation data while maintaining high accuracy for both C-to-T transitions and underlying genetic variants.
 
-## Common CLI Patterns
+## Core CLI Workflows
 
-### 1. Alignment and Processing
-The primary entry point for raw data is the alignment phase. It is best practice to pipe the output directly to sorting and duplicate marking to save disk space and I/O.
-- Use `biscuit align` to map bisulfite-treated reads to a reference genome.
-- Integrate `dupsifter` immediately after alignment to handle PCR duplicates.
+### 1. Genome Alignment
+BISCUIT uses a modified BWA-mem algorithm optimized for bisulfite-converted reads.
 
-### 2. Methylation and Variant Calling
-Once aligned and sorted, use the following subcommands for data extraction:
-- **`pileup`**: The standard method for extracting DNA methylation and genetic information from the BAM file.
-- **`epiread`**: Used for extracting methylation information at the read level, useful for allele-specific analysis or methylation heterogeneity studies.
-- **`cinread`**: A specialized command for specific read-level analysis (refer to the latest command-line help for specific flag updates).
+```bash
+# Index the reference genome (required once)
+biscuit index reference.fa
 
-### 3. Quality Control (QC)
-Quality control is critical in bisulfite sequencing to ensure high conversion efficiency and library complexity.
-- **`QC.sh`**: The primary wrapper script for generating comprehensive QC reports. It utilizes `qc_coverage` to assess depth and breadth of coverage across the genome.
-- **`qc_coverage`**: Can be run independently to generate detailed coverage statistics.
-- **`build_biscuit_QC_assets.pl`**: Used to prepare the necessary reference assets for the QC pipeline.
+# Align paired-end reads
+biscuit align reference.fa read1.fastq.gz read2.fastq.gz | samtools view -bS - > aligned.bam
+```
 
-### 4. Data Manipulation
-- **`bsconv`**: Useful for conversion-related tasks. When using tab-printing modes, ensure you check if the BAM header is required; recent updates allow for suppressing headers in specific output formats.
-- **`flip_pbat_strands.sh`**: Specifically for PBAT (Post-Bisulfite Adapter Tagging) libraries to correct strand orientation.
+### 2. Quality Control
+Use the provided helper scripts to generate comprehensive QC metrics.
 
-## Expert Tips
-- **Memory Management**: For large datasets, monitor memory usage during the `pileup` phase. Ensure your environment has sufficient overhead for high-depth regions.
-- **Speed Optimization**: If `htslib` is compiled with `libdeflate`, `biscuit` will see significant performance improvements in reading and writing compressed files.
-- **Reference Consistency**: Always ensure the SAM header chromosome order matches your reference genome exactly to avoid downstream processing errors in tools like `samtools` or `bedtools`.
+```bash
+# Run the standard QC pipeline
+./scripts/QC.sh aligned.bam reference.fa output_prefix
+```
+
+### 3. Methylation and Mutation Calling
+The `pileup` command is the primary tool for extracting methylation information and identifying SNPs.
+
+```bash
+# Generate a VCF containing both methylation and genetic variants
+biscuit pileup -v reference.fa aligned.bam > output.vcf
+
+# Filter for specific regions using a BED file
+biscuit pileup -l regions.bed reference.fa aligned.bam > filtered_output.vcf
+```
+
+### 4. Post-Processing and Extraction
+Convert VCF outputs to more manageable formats or merge CpG sites.
+
+```bash
+# Convert VCF to BED format for methylation visualization
+biscuit vcf2bed -t cg output.vcf > methylation.bed
+
+# Merge symmetric CpG sites to increase coverage
+biscuit mergecg reference.fa output.vcf > merged.vcf
+```
+
+## Expert Tips and Best Practices
+
+- **Duplicate Marking**: It is highly recommended to have `dupsifter` installed and in your PATH. BISCUIT can use it during the alignment phase to mark duplicates on the fly, saving significant I/O time.
+- **Performance**: If building from source, ensure `libdeflate` is available. This significantly improves the speed of `htslib` operations within BISCUIT.
+- **Memory Management**: For large genomes (like human), ensure the system has at least 30GB of RAM for the indexing and alignment steps.
+- **PBAT Data**: If working with PBAT (Post-Bisulfite Adapter Tagging) libraries, use the `flip_pbat_strands.sh` script to correct strand orientation before downstream analysis.
+- **Single-Cell Analysis**: BISCUIT is standards-compliant and produces standard BAM/VCF files, making it compatible with most single-cell methylation downstream tools.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| QC.sh | BISCUIT quality control script for aligned BAM files |
+| align | Align bisulfite-treated sequencing reads to a reference genome |
+| asm | BISCUIT assembly subcommand for processing epiread files |
+| bc | Extract barcodes from FASTQ files and append to read names. Adds an artificial UMI (AAAAAAAA) for compatibility. |
+| biscuit | BISulfite-seq CUI Toolkit (BISCUIT) for bisulfite-seq data analysis, including mapping, BAM operations, base summary, and epiread manipulation. |
+| bsconv | Filter and convert bisulfite sequencing reads based on CpH retention and other criteria. |
+| bsstrand | Correct or append bisulfite strand information in BAM files |
+| build_biscuit_QC_assets.pl | Build biscuit QC assets from a reference genome. |
+| cinread | Extract cytosine information from a BAM file based on a reference genome. |
+| epiread | Extract epiread information from a BAM file using a reference genome. |
+| flip_pbat_strands.sh | Flip PBAT strands in a BAM file, optionally for a specific region. |
+| index | Index a reference genome for BISCUIT alignment |
+| mergecg | Merge CpG sites from a position-sorted BED file with beta values and coverages. Typically used with output from biscuit vcf2bed. |
+| pileup | Pileup tool for DNA methylation and genetic variant calling from bisulfite sequencing data. |
+| qc | Produces a subset of QC metrics for BISCUIT alignments. |
+| qc_coverage | BISCUIT QC coverage tool for calculating coverage statistics from BAM files. |
+| rectangle | Process epiread files against a reference genome to generate a rectangle format output. |
+| tview | Text-based alignment viewer for BISCUIT |
+| vcf2bed | Extract methylation or SNP information from a VCF file into BED format. |
 
 ## Reference documentation
-- [biscuit GitHub Repository](./references/github_com_huishenlab_biscuit.md)
-- [Bioconda biscuit Overview](./references/anaconda_org_channels_bioconda_packages_biscuit_overview.md)
+
+- [BISCUIT Repository Overview](./references/github_com_huishenlab_biscuit.md)
+- [BISCUIT README and Dependencies](./references/github_com_huishenlab_biscuit_blob_master_README.md)
+- [Source Code and Tool Definitions](./references/github_com_huishenlab_biscuit_blob_master_LICENSE.md)

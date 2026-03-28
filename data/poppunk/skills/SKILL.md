@@ -1,6 +1,6 @@
 ---
 name: poppunk
-description: PopPUNK performs rapid bacterial population clustering and genomic divergence estimation using k-mer based distances. Use when user asks to assign new samples to existing species databases, create new genomic models for uncharacterized species, or visualize population structures.
+description: PopPUNK performs rapid analysis of bacterial populations by using k-mer comparisons to distinguish between core and accessory genomic variation. Use when user asks to create genomic databases, fit models to define strain boundaries, assign new query sequences to clusters, or generate visualization files for population structure.
 homepage: https://github.com/johnlees/PopPUNK
 ---
 
@@ -9,72 +9,74 @@ homepage: https://github.com/johnlees/PopPUNK
 
 ## Overview
 
-PopPUNK (POPulation Partitioning Using Nucleotide Kmers) is a high-performance tool designed for bacterial population genetics. It utilizes k-mer based distances to estimate core and accessory genomic divergence between pairs of isolates, allowing for rapid clustering without the computational overhead of full-genome alignments. This skill provides guidance on the two primary workflows: assigning new samples to existing species databases and building new models for uncharacterized species.
+PopPUNK (Population Partitioning Using Nucleotide K-mers) is a tool designed for the rapid analysis of bacterial populations. It bypasses the need for a reference genome or sequence alignment by using variable-length k-mer comparisons to distinguish between divergence in shared sequences (core) and gene content (accessory). 
 
-## Installation
-
-The recommended method for installation is via Conda:
-
-```bash
-conda install bioconda::poppunk
-```
+Use this skill to:
+- Create genomic databases from assemblies or reads.
+- Fit models to define strain boundaries (BGMM, DBSCAN, or Refine).
+- Assign new query sequences to established clusters/lineages.
+- Generate visualization files for Microreact, Phandango, and Cytoscape.
 
 ## Core Workflows
 
-### 1. Assigning Samples to an Existing Database
-Use this workflow when you have a supported species with a pre-calculated database.
+### 1. Database Creation and Sketching
+The first step is to create a database of k-mer sketches from your input sequences.
 
-*   **Basic Assignment**:
-    ```bash
-    poppunk_assign --db <database_directory> --query <input_list.txt> --output <output_dir>
-    ```
-*   **Stable Nomenclature**: To ensure new samples are assigned to their nearest neighbor without merging existing clusters (mimicking schemes like LIN), use the `--stable` flag:
-    ```bash
-    poppunk_assign --db <db> --query <queries> --output <out> --stable
-    ```
-*   **Database Updates**: To add the query samples to the reference database after assignment:
-    ```bash
-    poppunk_assign --db <db> --query <queries> --output <out> --update-db
-    ```
-    *Note: In PopPUNK v2.7.0+, the large `<db_name>.dists.npy` file is no longer required or written during assignment, saving significant disk space.*
+```bash
+# Create a database from a list of files
+poppunk --create-db --output my_db --r-files file_list.txt --threads 8
+```
+*Note: `file_list.txt` should be a tab-separated file with sample names and paths to fasta/fastq files.*
 
-### 2. Creating a New Species Database
-Use this workflow when starting with a new set of genomes.
+### 2. Model Fitting
+After sketching, you must fit a model to define the boundary between "within-strain" and "between-strain" distances.
 
-1.  **Sketching**: Generate k-mer sketches for your sequences.
-    ```bash
-    poppunk_sketch --r-file <reference_list.txt> --output <db_name> --cpus 8
-    ```
-2.  **Model Building**: Create the initial population partition.
-    ```bash
-    poppunk --create-db --r-file <reference_list.txt> --output <db_name>
-    ```
+```bash
+# Fit a Bayesian Gaussian Mixture Model (BGMM)
+poppunk --fit-model bgmm --distances my_db/my_db.dists --output my_db --K 2
 
-## Common CLI Patterns and Tools
+# Refine a model to optimize the boundary
+poppunk --refine-model --distances my_db/my_db.dists --output my_db --db my_db
+```
 
-*   **Visualization**: Generate files for Microreact, Phandango, or Cytoscape.
-    ```bash
-    poppunk_visualise --db <db_dir> --output <out_dir> --microreact
-    ```
-*   **Information Retrieval**: Check the contents and model type of an existing database.
-    ```bash
-    poppunk_info --db <db_dir>
-    ```
-*   **Tree Generation**: Create a neighbor-joining or maximum likelihood tree from the distances.
-    ```bash
-    poppunk_mst --db <db_dir> --out <out_dir>
-    ```
+### 3. Query Assignment
+To add new samples to an existing database without re-running the entire analysis:
 
-## Expert Tips and Troubleshooting
+```bash
+poppunk_assign --db my_db --query query_list.txt --output query_results --threads 8
+```
 
-*   **Citations**: Run any command with the `--citation` flag to generate a list of relevant papers and a suggested methods paragraph for your publication.
-*   **Model Compatibility**: If you encounter errors loading HDBSCAN models, it is likely due to a `scikit-learn` version mismatch (v1.0.0 changed the API). Resolve this by:
-    1.  Refitting the model in your current environment.
-    2.  Running model refinement to convert it into a boundary model.
-*   **Memory Management**: For very large datasets, avoid using `--update-db` unless necessary, as the `.dists.pkl` file must still be managed.
-*   **GPU Acceleration**: If `pp-sketchlib` is compiled with CUDA support, PopPUNK can significantly speed up distance calculations on compatible hardware.
+### 4. Visualization
+Generate files for interactive exploration of the population structure.
+
+```bash
+# Generate Microreact and Cytoscape files
+poppunk_visualise --db my_db --output viz_output --microreact --cytoscape
+```
+
+## Expert Tips and Best Practices
+
+- **Quality Control**: Always use `--qc-filter` during database creation to exclude poor-quality assemblies that can skew distance calculations.
+- **K-mer Range**: The default k-mer range (15-29 with step 3) is generally robust for most bacteria. For very small genomes or specific viruses, you may need to adjust `--min-k` and `--max-k`.
+- **Model Verification**: Always check the `--plot-fit` output. If the core and accessory distributions overlap significantly, the model may need refinement using `--refine-model`.
+- **GPU Acceleration**: If available, use `--gpu-dist` and `--gpu-sketch` to significantly speed up the calculation of distance matrices for large datasets.
+- **Lineage Assignment**: For long-term surveillance, use the `--lineage` flag to maintain stable nomenclature across different versions of your database.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| poppunk | PopPUNK (POPulation Partitioning Using Nucleotide Kmers) |
+| poppunk | PopPUNK (POPulation Partitioning Using Nucleotide Kmers) |
+| poppunk | PopPUNK (POPulation Partitioning Using Nucleotide Kmers) |
+| poppunk | PopPUNK (POPulation Partitioning Using Nucleotide Kmers) |
 
 ## Reference documentation
-
 - [PopPUNK GitHub Repository](./references/github_com_bacpop_PopPUNK.md)
-- [PopPUNK Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_poppunk_overview.md)
+- [PopPUNK Documentation Index](./references/poppunk-docs_bacpop_org_index.md)
+- [Sketching and Database Creation](./references/poppunk-docs_bacpop_org_sketching.html.md)
+- [Model Fitting Guide](./references/poppunk-docs_bacpop_org_model_fitting.html.md)
+- [Query Assignment](./references/poppunk-docs_bacpop_org_query_assignment.html.md)
+- [Visualization Options](./references/poppunk-docs_bacpop_org_visualisation.html.md)

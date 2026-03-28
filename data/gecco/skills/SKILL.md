@@ -1,6 +1,6 @@
 ---
 name: gecco
-description: GECCO is a machine learning tool used to identify and predict biosynthetic gene clusters in genomic and metagenomic data. Use when user asks to predict biosynthetic gene clusters, annotate protein domains, convert cluster coordinates to different formats, or train custom CRF models.
+description: GECCO is a bioinformatics tool that uses conditional random fields to identify biosynthetic gene clusters in genomic and metagenomic data. Use when user asks to predict biosynthetic gene clusters, annotate protein domains, train custom prediction models, or convert cluster coordinates into formats like AntiSMASH sideloads and GFF3.
 homepage: https://gecco.embl.de/
 ---
 
@@ -9,73 +9,77 @@ homepage: https://gecco.embl.de/
 
 ## Overview
 
-GECCO (Gene Cluster prediction with Conditional Random Fields) is a high-performance bioinformatics tool designed to identify secondary metabolite biosynthetic gene clusters in genomic data. Unlike traditional rule-based systems, GECCO uses a machine learning approach to detect putative novel BGCs with high speed and scalability. Use this skill to process DNA sequences (FASTA or GenBank), extract gene coordinates, annotate protein domains, and predict biosynthetic types.
+GECCO (Biosynthetic Gene Cluster prediction with Conditional Random Fields) is a high-performance bioinformatics tool designed for the de novo identification of BGCs. Unlike traditional rule-based systems that rely on rigid cluster definitions, GECCO uses a probabilistic CRF model to identify clusters based on protein domain composition and genomic context. It is particularly effective for discovering novel clusters in large-scale metagenomic datasets where speed and sensitivity are paramount.
 
 ## Core Workflows
 
-### Running BGC Predictions
-
-The primary command for identifying clusters in a genome or metagenome.
+### Standard BGC Prediction
+The most common use case is running a full prediction pipeline on a genome or metagenome file.
 
 ```bash
-# Basic prediction on a FASTA file with verbose output
-gecco -v run --genome sequence.fna
+# Run prediction on a FASTA file
+gecco -v run --genome sequence.fna -o ./output_dir
 
-# Run prediction and generate a sideload file for the AntiSMASH viewer
-gecco run --genome sequence.gbk --antismash-sideload --output-dir ./results
-
-# Adjust the probability threshold (default is 0.3) to increase sensitivity
-gecco run --genome sequence.fna --threshold 0.2
+# Run prediction using a specific HMM database and custom threshold
+gecco run --genome sequence.gbk --hmm Pfam35.hmm.gz --threshold 0.8
 ```
 
 ### Annotation and Feature Extraction
-
-Use these commands to generate intermediate tables or prepare data for training.
-
-```bash
-# Annotate a genome using a specific HMM database (e.g., Pfam)
-gecco annotate --genome sequences.fna --hmm Pfam35.hmm.gz -o ./annotations
-
-# Predict BGCs from an already annotated genome (requires gene/feature tables)
-gecco predict --genes sequences.genes.tsv --features sequences.features.tsv
-```
-
-### Format Conversion
-
-Convert GECCO output into formats compatible with other bioinformatics suites.
+If you only need to identify genes and domains without running the BGC prediction model:
 
 ```bash
-# Convert cluster coordinates to GFF format for genome browsers
-gecco convert clusters -i ./output_dir --format gff
-
-# Convert GenBank outputs to BiG-SLiCE compatible format
-gecco convert gbk -i ./output_dir --format bigslice
+gecco annotate --genome sequences.fna --hmm Pfam35.hmm.gz -o ./annotation_results
 ```
 
 ### Training Custom Models
-
-Train the CRF on specific datasets if the default model is not suitable for your target organisms.
+GECCO allows training on specialized datasets (e.g., specific types of clusters or non-standard organisms).
 
 ```bash
-# Fit a new CRF model and type classifier
-gecco -vv train --genes genes.tsv --features features.tsv --clusters clusters.tsv -o custom_model
-
-# Train with feature selection to keep only the top 30% most informative domains
-gecco train --features features.tsv --clusters clusters.tsv -o custom_model --select 0.3
+gecco train --genes genes.tsv --features features.tsv --clusters clusters.tsv -o ./custom_model --select 0.3
 ```
+*   **Tip**: Use `--select` to perform feature selection based on Fisher p-values, which reduces the domain set to the most informative features.
+
+## Integration and Conversion
+
+GECCO outputs can be converted for use in common visualization and analysis platforms:
+
+*   **AntiSMASH**: Generate a sideload JSON to view GECCO clusters within the AntiSMASH interface.
+    ```bash
+    gecco run --genome sequence.gbk --antismash-sideload
+    ```
+*   **GFF3**: Convert cluster coordinates for genome browsers.
+    ```bash
+    gecco convert clusters -i ./output_dir --format gff
+    ```
+*   **BiG-SLiCE**: Prepare GECCO clusters for biosynthetic diversity analysis.
+    ```bash
+    gecco convert gbk -i ./output_dir --format bigslice
+    ```
 
 ## Expert Tips and Best Practices
 
-- **Input Formats**: GECCO uses Biopython for sequence loading; it supports FASTA, GenBank, and EMBL formats. For best results with `gecco convert`, use GenBank files that include full taxonomic metadata.
-- **Performance**: For very large metagenomes, split the input FASTA into smaller chunks and run `gecco annotate` in parallel across nodes, then merge the resulting TSV tables before running `gecco predict`.
-- **Threshold Tuning**: The default probability threshold of 0.3 is optimized for general BGC discovery. Lowering it (e.g., 0.15) may help find highly novel or fragmented clusters but will increase false positives.
-- **Feature Selection**: When training, always use the `--select` flag. Reducing the feature set not only improves accuracy by removing non-informative domains but also significantly speeds up the HMM annotation step during subsequent `run` commands.
-- **Visualization**: GECCO-produced GenBank files include color qualifiers (red for biosynthetic, blue for transporters, green for regulatory). These are natively supported by tools like SnapGene, Benchling, and Artemis.
+1.  **Parallelization**: For massive metagenomic files, split the input FASTA into smaller chunks and run `gecco annotate` in parallel. You can then concatenate the resulting `.genes.tsv` and `.features.tsv` files before running `gecco predict`.
+2.  **Verbosity**: Always use `-v` or `-vv` when running long jobs to monitor progress, especially during the HMM annotation phase which is the most computationally expensive step.
+3.  **Compressed Inputs**: GECCO natively supports compressed input files (`.gz`, `.bz2`, `.xz`, `.lz4`), saving disk space and I/O time.
+4.  **Feature Coloring**: GECCO automatically adds color qualifiers to output GenBank files based on predicted molecular function, which are compatible with viewers like SnapGene, Benchling, and EasyFig.
+5.  **Regularization**: When training, if the model is overfitting, adjust the L1 (`--c1`) and L2 (`--c2`) regularization weights. The default is 0.15 for both, but 0.4 for C1 is often preferred for BGC discovery.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| cv | Cross-validation for gecco |
+| gecco annotate | Annotate genomic sequences with genes and protein domains. |
+| gecco convert | Convert the GenBank records to a different format. |
+| gecco predict | Predicts gene clusters and domain annotations. |
+| gecco run | Run gecco gene calling and cluster detection |
+| gecco_train | Train a CRF model for domain annotation. |
 
 ## Reference documentation
 
 - [GECCO Overview](./references/gecco_embl_de_index.md)
-- [Installation Guide](./references/gecco_embl_de_install.html.md)
-- [Downstream Integrations](./references/gecco_embl_de_integrations.html.md)
-- [Training and Annotation](./references/gecco_embl_de_training.html.md)
+- [Training GECCO](./references/gecco_embl_de_training.md)
+- [Integrations (AntiSMASH, BiG-SLiCE)](./references/gecco_embl_de_integrations.html.md)
 - [API Reference](./references/gecco_embl_de_api_index.html.md)

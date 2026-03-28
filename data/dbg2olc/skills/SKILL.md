@@ -1,6 +1,6 @@
 ---
 name: dbg2olc
-description: DBG2OLC is a hybrid assembly framework that combines short-read contigs with long, error-prone reads to produce high-quality genome assemblies. Use when user asks to perform hybrid genome assembly, align long reads to NGS contigs, or generate a backbone for consensus calling.
+description: DBG2OLC is a hybrid assembly framework that combines short-read contigs with long, noisy reads to efficiently assemble large genomes. Use when user asks to perform hybrid genome assembly, bridge short-read and long-read sequencing data, or generate a consensus backbone from de Bruijn graph contigs and long reads.
 homepage: https://github.com/yechengxi/DBG2OLC
 ---
 
@@ -8,64 +8,68 @@ homepage: https://github.com/yechengxi/DBG2OLC
 # dbg2olc
 
 ## Overview
-DBG2OLC (De Bruijn Graph to Overlap-Layout-Consensus) is a hybrid assembly framework designed to overcome the high error rates of third-generation sequencing (3GS) technologies. It works by first assembling short, accurate reads into contigs and then using these contigs to "anchor" and organize long, erroneous reads. This approach significantly reduces the computational resources required for large genome assembly compared to pure long-read OLC methods.
+DBG2OLC (De Bruijn Graph to Overlap-Layout-Consensus) is a hybrid assembly framework that bridges the gap between short-read and long-read sequencing technologies. Instead of using raw short reads directly, it utilizes pre-assembled contigs from a de Bruijn Graph (DBG) assembler as "anchors" to organize and layout long, noisy reads. This approach significantly reduces the computational complexity and time required for large genome assemblies compared to pure long-read OLC methods.
 
-## Core Workflow and CLI Patterns
+## Core Workflow
 
-The standard pipeline consists of three primary stages: NGS contig assembly, hybrid overlap/layout, and consensus calling.
-
-### 1. NGS Contig Assembly (SparseAssembler)
-Before running DBG2OLC, you must generate raw contigs from short reads. It is critical to use raw de Bruijn graph (DBG) contigs without heuristics like gap closing or scaffolding, as these can introduce errors that propagate through the hybrid assembly.
-
-```bash
-# Basic SparseAssembler command
-SparseAssembler LD 0 k 51 g 15 NodeCovTh 1 EdgeCovTh 0 GS <genome_size> f <short_reads.fastq>
-```
-
-*   **LD 0**: Start a new assembly (use `LD 1` to load existing k-mer data for fine-tuning).
-*   **k**: K-mer size (e.g., 51).
-*   **g**: Skip size (e.g., 15).
-*   **NodeCovTh/EdgeCovTh**: Coverage thresholds for cleaning the graph. For ~50x coverage, use `NodeCovTh 1` and `EdgeCovTh 0`.
-
-### 2. Hybrid Overlap and Layout (DBG2OLC)
-This is the core step where long reads are aligned to the NGS contigs (typically `Contigs.txt` from SparseAssembler).
+### Step 1: Generate Initial Contigs
+Before running DBG2OLC, you must generate accurate, raw contigs using a DBG assembler like `SparseAssembler`.
+**Critical:** Do not use gap-closing or scaffolding features in the DBG step, as heuristics can introduce errors that propagate through the hybrid pipeline.
 
 ```bash
-# Basic DBG2OLC command
-DBG2OLC k 17 AdaptiveTh 0.0001 KmerCovTh 2 MinOverlap 20 RemoveChimera 1 Contigs Contigs.txt f <long_reads.fasta>
+# Example using SparseAssembler
+./SparseAssembler k 51 g 15 NodeCovTh 1 EdgeCovTh 0 GS 12000000 f short_reads.fastq
 ```
 
-*   **k**: K-mer size for matching (17 is generally recommended).
-*   **AdaptiveTh**: The adaptive k-mer matching threshold. A contig is used as an anchor only if matched k-mers > `AdaptiveTh * Contig_Length`.
-*   **KmerCovTh**: Fixed k-mer matching threshold.
-*   **MinOverlap**: Minimum overlap score between long reads.
-*   **RemoveChimera**: Set to 1 to filter chimeric reads (recommended if coverage > 10x).
-
-### 3. Consensus Calling (Sparc)
-After DBG2OLC produces the `backbone_raw.fasta` and `DBG2OLC_Consensus_info.txt`, use a consensus tool like Sparc to generate the final polished sequence.
+### Step 2: Overlap and Layout (DBG2OLC)
+Feed the resulting `Contigs.txt` and your long reads into DBG2OLC.
 
 ```bash
-# Sparc requires the backbone and the original reads/contigs
-Sparc b backbone_raw.fasta c Contigs.txt f long_reads.fasta i DBG2OLC_Consensus_info.txt k 1 -g 1 -o final_assembly
+./DBG2OLC k 17 AdaptiveTh 0.0001 KmerCovTh 2 MinOverlap 20 RemoveChimera 1 Contigs Contigs.txt f long_reads.fasta
 ```
 
-## Parameter Tuning for 3GS Coverage
+### Step 3: Consensus Calling
+The output `backbone_raw.fasta` requires consensus polishing. Use tools like `Sparc` or `pbdagcon` along with `blasr` to generate the final assembly.
 
-Assembly quality is highly sensitive to the relationship between NGS contig length and 3GS coverage.
+## Parameter Tuning Guide
 
-| Coverage | KmerCovTh | MinOverlap | AdaptiveTh |
+The quality of the assembly (N50) is highly sensitive to three primary parameters:
+
+| Parameter | Description | Suggested Range (10x-20x) | Suggested Range (50x-100x) |
 | :--- | :--- | :--- | :--- |
-| **10x - 20x** | 2 - 5 | 10 - 30 | 0.001 - 0.01 |
-| **50x - 100x** | 2 - 10 | 50 - 150 | 0.01 - 0.02 |
+| `KmerCovTh` | Fixed k-mer matching threshold for anchors. | 2 - 5 | 2 - 10 |
+| `MinOverlap` | Minimum overlap score between long read pairs. | 10 - 30 | 50 - 150 |
+| `AdaptiveTh` | Adaptive matching threshold (M < AdaptiveTh * Length). | 0.001 - 0.01 | 0.01 - 0.02 |
 
-**High Coverage (>100x) Adjustments:**
-*   Set `ChimeraTh 2` and `ContigTh 2` to apply more stringent filtering during multiple alignment.
+### Expert Tips
+- **K-mer Size (`k`)**: A value of 17 is generally optimal for most datasets.
+- **Chimeras**: Always set `RemoveChimera 1` if your long-read coverage is >10x.
+- **High Coverage (>100x)**: Increase `ChimeraTh` and `ContigTh` to 2 to apply more stringent filtering during multiple alignment.
+- **Iterative Loading**: Use `LD 1` to load previously computed compressed/anchored reads to save time while fine-tuning parameters.
 
-## Best Practices
-*   **Read Selection**: If the dataset is extremely large, use the `SelectLongestReads` utility to subset the longest reads for the assembly to save time without sacrificing N50.
-*   **Avoid Scaffolding**: Never use "finished" or "scaffolded" NGS contigs as input. DBG2OLC relies on the simplicity of raw DBG contigs to accurately anchor long reads.
-*   **Validation**: Check the `backbone_raw.fasta` N50 before proceeding to the consensus step. If the N50 is low, iterate on the `MinOverlap` and `AdaptiveTh` parameters in Step 2.
+## Common CLI Patterns
+
+**For Low Coverage PacBio (10x-20x):**
+```bash
+./DBG2OLC k 17 AdaptiveTh 0.001 KmerCovTh 2 MinOverlap 20 RemoveChimera 1 Contigs Contigs.txt f reads.fasta
+```
+
+**For High Coverage PacBio (50x+):**
+```bash
+./DBG2OLC k 17 AdaptiveTh 0.01 KmerCovTh 5 MinOverlap 100 RemoveChimera 1 ChimeraTh 2 ContigTh 2 Contigs Contigs.txt f reads.fasta
+```
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| DBG2OLC | DBG2OLC is a tool for correcting long reads using a de Bruijn graph. |
+| Sparc | dbg2olc_Sparc tool for generating consensus sequences. |
+| dbg2olc_SelectLongestReads | Selects the longest reads from a FASTA/FASTQ file based on total length. |
+| dbg2olc_SparseAssembler | Sparse assembler for long reads. |
 
 ## Reference documentation
-- [DBG2OLC GitHub Repository](./references/github_com_yechengxi_DBG2OLC.md)
-- [Bioconda dbg2olc Package Overview](./references/anaconda_org_channels_bioconda_packages_dbg2olc_overview.md)
+- [GitHub Repository Overview](./references/github_com_yechengxi_DBG2OLC.md)
+- [Anaconda Bioconda Package](./references/anaconda_org_channels_bioconda_packages_dbg2olc_overview.md)

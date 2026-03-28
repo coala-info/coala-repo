@@ -1,6 +1,6 @@
 ---
 name: mrs
-description: The MRS UAV System provides a framework for the control, state estimation, and simulation of multi-rotor helicopters. Use when user asks to install the MRS environment, configure catkin workspaces, launch Gazebo simulations, or develop new UAV behaviors using the MRS ecosystem.
+description: The MRS UAV System provides a ROS-based ecosystem for developing, simulating, and deploying autonomous multi-rotor helicopter software. Use when user asks to install the MRS environment, initialize catkin workspaces with specific build profiles, or manage multi-drone Gazebo simulation sessions.
 homepage: https://github.com/ctu-mrs/mrs_uav_system
 ---
 
@@ -9,82 +9,87 @@ homepage: https://github.com/ctu-mrs/mrs_uav_system
 
 ## Overview
 
-The MRS UAV System is a specialized robotics framework developed by the Multi-robot Systems Group at CTU in Prague. It provides a robust pipeline for control, state estimation, mapping, and planning specifically for multi-rotor helicopters. This skill enables the management of the MRS environment, allowing for the transition between high-fidelity Gazebo simulations and real-world experimental validation. Use this skill to handle system installation, workspace configuration, and the boilerplate tasks required to develop new UAV behaviors within the MRS ecosystem.
+The MRS UAV System is a specialized ROS-based ecosystem designed for the development and testing of autonomous multi-rotor helicopters. It bridges the gap between high-fidelity simulations and real-world deployment by providing standardized pipelines for control, state estimation, and multi-robot coordination. This skill assists in setting up the environment, managing build profiles, and executing simulation sessions.
 
-## Installation and Environment Setup
+## Installation and Setup
 
-The MRS system is primarily built for ROS Noetic on Ubuntu.
-
-### 1. Add Repositories and Install
-To install the full MRS system natively, use the stable PPA:
+### Repository Configuration
+To install the system on a native Ubuntu (Noetic) environment, first add the stable PPA:
 
 ```bash
-# Add ROS Noetic PPA
-curl https://ctu-mrs.github.io/ppa-stable/add_ros_ppa.sh | bash
-sudo apt install ros-noetic-desktop-full
-
-# Add MRS Stable PPA
 curl https://ctu-mrs.github.io/ppa-stable/add_ppa.sh | bash
-
-# Install the full system
+sudo apt update
 sudo apt install ros-noetic-mrs-uav-system-full
 ```
 
-### 2. Initialize Catkin Workspace
-The MRS system relies on specific catkin profiles for optimal performance.
+For developers requiring the latest features, the unstable PPA can be used, though it may be inconsistent:
+`curl https://ctu-mrs.github.io/ppa-unstable/add_ppa.sh | bash`
+
+### Workspace Initialization
+The MRS system requires specific compiler flags and build profiles for optimal performance. Use the following pattern to initialize a catkin workspace:
 
 ```bash
 source /opt/ros/noetic/setup.bash
-mkdir -p ~/workspace/src && cd ~/workspace
-catkin init -w ~/workspace
+mkdir -p ~/mrs_workspace/src && cd ~/mrs_workspace
+catkin init
 
-# Configure Release with Debug Info (Recommended for development)
-catkin config --profile reldeb --cmake-args -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_CXX_FLAGS='-std=c++17'
+# Configure build profiles (Debug, Release, RelWithDebInfo)
+catkin config --profile debug --cmake-args -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS='-std=c++17 -Og'
+catkin config --profile release --cmake-args -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS='-std=c++17'
+catkin config --profile reldeb --cmake-args -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_CXX_FLAGS='-std=c++17'
+
+# Set active profile
 catkin profile set reldeb
 ```
 
-## Simulation and Testing
+## Simulation Management
 
-The MRS system uses `tmux` to manage multiple ROS nodes and Gazebo simulation components simultaneously.
+### Starting Gazebo Sessions
+MRS simulations typically rely on `tmux` to manage multiple ROS nodes and drone instances simultaneously.
 
-### Launching a Basic Simulation
-To start a pre-configured simulation session with a single drone:
+1. Navigate to the simulation directory:
+   `roscd mrs_uav_gazebo_simulation/tmux/one_drone`
+2. Execute the startup script:
+   `./start.sh`
 
-```bash
-roscd mrs_uav_gazebo_simulation/tmux/one_drone
-./start.sh
-```
+### Common CLI Operations
+- **roscd**: Use this to quickly jump to MRS package directories (e.g., `roscd mrs_uav_manager`).
+- **tmuxinator**: Many MRS examples use tmuxinator configs. If a session fails to start, check the `session.yml` in the local directory.
 
-### Common Simulation Tasks
-- **State Estimation**: The system supports various estimators (e.g., `mrs_point_lio`). Ensure the `EstimationManager` is active before attempting takeoff.
-- **Takeoff**: Most MRS simulation sessions include a `tmux` pane for the "Control Visualizer" or a terminal where you can trigger automatic takeoff services.
+## Expert Tips and Best Practices
 
-## Developing New Packages
+### Altitude and Positioning
+- **RTK Altitude**: When using RTK state estimators, the system defaults to the WGS84 ellipsoid model. Note that this may differ from Geoid models (EGM96/2008) used by standard Pixhawk GNSS by tens of meters.
+- **TF Frames**: Ensure the `fcu -> rtk_antenna` transform is provided in your tmux session if using RTK, as it is drone-specific and no longer published by default launch files.
 
-The most efficient way to create a new MRS-compatible package is to repurpose an existing example.
+### Hardware API
+The system is simulator-agnostic. If switching from Gazebo to a different simulator (like FlightForge or CoppeliaSim), you must provide the appropriate `mrs_uav_hw_api` plugin implementation.
 
-### Repurposing an Example
-1. Clone the examples repository:
-   `git clone https://github.com/ctu-mrs/mrs_core_examples.git ~/git/mrs_core_examples`
-2. Copy a template (e.g., `waypoint_flier`):
-   `cp -r ~/git/mrs_core_examples/cpp/waypoint_flier ~/git/my_new_package`
-3. Run the repurposing script:
-   ```bash
-   cd ~/git/my_new_package
-   cp ~/git/mrs_core_examples/repurpose_package.sh .
-   ./repurpose_package.sh example_waypoint_flier my_new_package --camel-case
-   ```
-4. Link and build:
-   ```bash
-   ln -s ~/git/my_new_package ~/workspace/src
-   cd ~/workspace && catkin build my_new_package
-   ```
+### Versioning
+- **ROS1 (Noetic)**: Use the `master` branch and documentation version 1.5.0.
+- **ROS2**: Use the `ros2` branch and documentation version 2.0.0. API calls and package names differ significantly between these versions.
 
-## Expert Tips
-- **Unstable PPA**: For the latest features (at the risk of bugs), use `add_ppa.sh` from the `ppa-unstable` path instead of `ppa-stable`.
-- **Shell Integration**: Always add `source ~/workspace/devel/setup.bash` to your `~.bashrc` to ensure your custom packages are visible to `roscd` and `roslaunch`.
-- **Apptainer/Docker**: If native installation is not possible, the MRS system provides Apptainer (formerly Singularity) and Docker containers to maintain environment consistency.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| mrs build | Build a databank |
+| mrs dump | Dump mrs data |
+| mrs validate | Validate MRS data |
+| mrs_blast | Perform BLAST search |
+| mrs_entry | Display entry information |
+| mrs_fetch | Fetch data from a databank. |
+| mrs_info | Display information about mrs tool |
+| mrs_password | Modify user password information |
+| mrs_query | Query the MRS databank |
+| mrs_server | (No description) |
+| mrs_update | Update the mrs databank. |
+| mrs_vacuum | mrs vacuum |
 
 ## Reference documentation
-- [MRS UAV System Main Repository](./references/github_com_ctu-mrs_mrs_uav_system.md)
-- [MRS Community Discussions](./references/github_com_orgs_ctu-mrs_discussions.md)
+- [MRS UAV System README](./references/github_com_ctu-mrs_mrs_uav_system_blob_master_README.md)
+- [Installation Guide](./references/ctu-mrs_github_io_docs_installation.md)
+- [MRS API Overview](./references/ctu-mrs_github_io_docs_api.md)
+- [Simulation Documentation](./references/ctu-mrs_github_io_docs_simulations.md)

@@ -1,1 +1,295 @@
-GitHub - stajichlab/Phyling: Phyling: phylogenetic inference from annotated genomes Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} stajichlab / Phyling Public Notifications You must be signed in to change notification settings Fork 5 Star 30 Phyling: phylogenetic inference from annotated genomes License MIT license 30 stars 5 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 3 Pull requests 0 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights stajichlab/Phyling main Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 395 Commits 395 Commits .github .github example example misc misc src/ phyling src/ phyling tests tests .coveragerc .coveragerc .gitattributes .gitattributes .gitignore .gitignore .pre-commit-config.yaml .pre-commit-config.yaml CHANGELOG.md CHANGELOG.md CITATION.cff CITATION.cff LICENSE LICENSE README.md README.md codecov.yml codecov.yml dev_environment.yml dev_environment.yml pyproject.toml pyproject.toml View all files Repository files navigation README MIT license Phyling tool Phyling is a fast, scalable, and user-friendly tool supporting phylogenomic reconstruction of species phylogenies directly from protein-encoded genomic data. It identifies orthologous genes by searching a sample's protein sequences against a Hidden Markov Models marker set, containing single-copy orthologs, retrieved from the BUSCO database . In the final step, users can choose between consensus and concatenation strategies to construct the species tree from the aligned orthologs. Flow chart Usage First of all, install the package following the instruction below. Phyling is a package to extract phylogenomic markers and build a phylogenetic tree upon them. It comprises 4 modules - download, align, filter and tree. Use phyling --help to see more details. Modules: {download,align,filter,tree} download Download HMM markers align Run multiple sequence alignments against orthologs found among samples filter Filter the multiple sequence alignment results tree Build a phylogenetic tree based on selected multiple sequence alignment results Options: -h, --help show this help message and exit -V, --version show program's version number and exit To test run on the example files, please cd into the folder example . cd example In general, Phyling takes fasta as input. The bgzipped fasta is also valid. The folder example/pep includes 5 example peptide fasta which can be used for test run. In addition to the peptide sequences, Phyling can also takes DNA coding sequences as inputs to more accurately estimate the phylogeny of closely related species. When taking DNA coding sequences as inputs, DNA sequences will be translated into peptide sequences and all the hmmsearch/align are done on the peptide version. The final MSA results will be back-translated into DNA at the final stage. The example DNA sequences are placed under the folder example/cds . Download HMM marker sets The download module is used to download HMM marker sets from BUSCO website. (Currently is updated to v5 ) See all options with phyling download --help . positional arguments: HMM markerset or "list" Name of the HMM markerset Options: -v, --verbose Verbose mode for debug -h, --help show this help message and exit Firstly, use download list to show the available BUSCO marker sets. phyling download list By default the downloaded marker sets will be saved to the ~/.phyling or the first path in $PHYLING_DB (if have been set) if it is writable. The Datasets available online section lists all marker sets that are available on the BUSCO website. And the Datasets available on local section lists all marker sets that have already been downloaded. To download the marker set, copy the name from the list and paste it to the download module directly. Here we use fungi_odb10 as example. phyling download fungi_odb10 The download module will automatically check for updates to marker sets online each time it runs. Local marker sets which have available updates online will be marked as [Outdated] . You can rerun phyling download [marker set] to update the local files. Find the orthologs and align them The align module identify the orthologs among all the samples using hmmsearch . HMM profiles that have matches on more than 4 samples are considered orthologs . Before conducting hmmsearch , the module will first search for the bitscore cutoff file within the root HMM folder. If the cutoff file is not found, the reporting threshold for hmmsearch will be determined based on the -E/-evalue (default is 1e-10). Once the orthologs are identified, the sequences extracted from each sample undergo multiple sequence alignment. By default, the alignment is performed using the hmmalign method. However, users have the option to switch to muscle by specifying the -M/--method muscle flag. Finally, each alignment result is output separately. You can decide whether you want to filter it with treeness/RCV score or use them all for tree building. Please check out the filter command through phyling filter --help Required arguments: -i file [files ...], --inputs file [files ...] Query pepetide/cds fasta or gzipped fasta -I directory, --input_dir directory Directory containing query pepetide/cds fasta or gzipped fasta -m directory, --markerset directory Directory of the HMM markerset Options: -o directory, --output directory Output directory of the alignment results (default: phyling-align-[YYYYMMDD-HHMMSS] (UTC timestamp)) --seqtype {dna,pep,AUTO} Input data sequence type (default: AUTO) -E float, --evalue float Hmmsearch reporting threshold (default: 1e-10, only being used when bitscore cutoff file is not available) -M {hmmalign,muscle}, --method {hmmalign,muscle} Program used for multiple sequence alignment (default: hmmalign) --non_trim Report non-trimmed alignment results -t THREADS, --threads THREADS Threads for hmmsearch and the number of parallelized jobs in MSA step. Better be multiple of 4 if using more than 8 threads (default: 8) -v, --verbose Verbose mode for debug -h, --help show this help message and exit Run the align module with all the fasta files under folder pep . phyling align -I pep -o align -m fungi_odb10 An equivalent way to send inputs. phyling align -i pep/ * .fasta.gz -o align -m fungi_odb10 Or if you're just interested in part of the fasta, you can specify the inputs one-by-one. phyling align -i pep/Pilobolus_umbonatus_NRRL_6349.aa.fasta.gz \ pep/Rhizopus_homothallicus_CBS_336.62.aa.fasta.gz \ pep/Rhizopus_rhizopodiformis_NRRL_2570.aa.fasta.gz \ pep/Zygorhynchus_heterogamous_NRRL_1489.aa.fasta.gz \ -o align \ -m fungi_odb10 Note: Required at least 4 samples to build a tree! Accelerate by using 16 cpus. phyling align -I pep -o align -m fungi_odb10 -t 16 Multithreading strategy According to pyhmmer benchmark , the acceleration benefits from multithreading drop significantly as more CPUs are utilized. When less then 8 cpus are given, the hmmsearch step will run on single-thread manner and all cpus will be used for each round of hmmsearch. When 8 or more cpus are given, the hmmsearch step will use 4 cpus for each parallel job. In the example above, 4 hmmsearch jobs will run parallelly and each job utilize 4 cpus. For the alignment step, 16 parallel jobs will be launched and each parallel job is running on single-thread manner. In addition to the hmmsearch step, the assigned cpus will also be used to accelerate the alignment steps. Highly recommended to enable the mult
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fstajichlab%2FPhyling)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fstajichlab%2FPhyling)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=stajichlab%2FPhyling)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[stajichlab](/stajichlab)
+/
+**[Phyling](/stajichlab/Phyling)**
+Public
+
+* [Notifications](/login?return_to=%2Fstajichlab%2FPhyling) You must be signed in to change notification settings
+* [Fork
+  5](/login?return_to=%2Fstajichlab%2FPhyling)
+* [Star
+   32](/login?return_to=%2Fstajichlab%2FPhyling)
+
+* [Code](/stajichlab/Phyling)
+* [Issues
+  3](/stajichlab/Phyling/issues)
+* [Pull requests
+  2](/stajichlab/Phyling/pulls)
+* [Actions](/stajichlab/Phyling/actions)
+* [Projects](/stajichlab/Phyling/projects)
+* [Security
+  0](/stajichlab/Phyling/security)
+* [Insights](/stajichlab/Phyling/pulse)
+
+Additional navigation options
+
+* [Code](/stajichlab/Phyling)
+* [Issues](/stajichlab/Phyling/issues)
+* [Pull requests](/stajichlab/Phyling/pulls)
+* [Actions](/stajichlab/Phyling/actions)
+* [Projects](/stajichlab/Phyling/projects)
+* [Security](/stajichlab/Phyling/security)
+* [Insights](/stajichlab/Phyling/pulse)
+
+# stajichlab/Phyling
+
+main
+
+[Branches](/stajichlab/Phyling/branches)[Tags](/stajichlab/Phyling/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[402 Commits](/stajichlab/Phyling/commits/main/)   402 Commits | | |
+| [.github](/stajichlab/Phyling/tree/main/.github ".github") | | [.github](/stajichlab/Phyling/tree/main/.github ".github") |  |  |
+| [example](/stajichlab/Phyling/tree/main/example "example") | | [example](/stajichlab/Phyling/tree/main/example "example") |  |  |
+| [misc](/stajichlab/Phyling/tree/main/misc "misc") | | [misc](/stajichlab/Phyling/tree/main/misc "misc") |  |  |
+| [src/phyling](/stajichlab/Phyling/tree/main/src/phyling "This path skips through empty directories") | | [src/phyling](/stajichlab/Phyling/tree/main/src/phyling "This path skips through empty directories") |  |  |
+| [tests](/stajichlab/Phyling/tree/main/tests "tests") | | [tests](/stajichlab/Phyling/tree/main/tests "tests") |  |  |
+| [.gitattributes](/stajichlab/Phyling/blob/main/.gitattributes ".gitattributes") | | [.gitattributes](/stajichlab/Phyling/blob/main/.gitattributes ".gitattributes") |  |  |
+| [.gitignore](/stajichlab/Phyling/blob/main/.gitignore ".gitignore") | | [.gitignore](/stajichlab/Phyling/blob/main/.gitignore ".gitignore") |  |  |
+| [.pre-commit-config.yaml](/stajichlab/Phyling/blob/main/.pre-commit-config.yaml ".pre-commit-config.yaml") | | [.pre-commit-config.yaml](/stajichlab/Phyling/blob/main/.pre-commit-config.yaml ".pre-commit-config.yaml") |  |  |
+| [CHANGELOG.md](/stajichlab/Phyling/blob/main/CHANGELOG.md "CHANGELOG.md") | | [CHANGELOG.md](/stajichlab/Phyling/blob/main/CHANGELOG.md "CHANGELOG.md") |  |  |
+| [CITATION.cff](/stajichlab/Phyling/blob/main/CITATION.cff "CITATION.cff") | | [CITATION.cff](/stajichlab/Phyling/blob/main/CITATION.cff "CITATION.cff") |  |  |
+| [LICENSE](/stajichlab/Phyling/blob/main/LICENSE "LICENSE") | | [LICENSE](/stajichlab/Phyling/blob/main/LICENSE "LICENSE") |  |  |
+| [README.md](/stajichlab/Phyling/blob/main/README.md "README.md") | | [README.md](/stajichlab/Phyling/blob/main/README.md "README.md") |  |  |
+| [codecov.yml](/stajichlab/Phyling/blob/main/codecov.yml "codecov.yml") | | [codecov.yml](/stajichlab/Phyling/blob/main/codecov.yml "codecov.yml") |  |  |
+| [dev\_environment.yml](/stajichlab/Phyling/blob/main/dev_environment.yml "dev_environment.yml") | | [dev\_environment.yml](/stajichlab/Phyling/blob/main/dev_environment.yml "dev_environment.yml") |  |  |
+| [pyproject.toml](/stajichlab/Phyling/blob/main/pyproject.toml "pyproject.toml") | | [pyproject.toml](/stajichlab/Phyling/blob/main/pyproject.toml "pyproject.toml") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* MIT license
+
+[![CI/build and test](https://github.com/stajichlab/Phyling/actions/workflows/build_and_test.yml/badge.svg)](https://github.com/stajichlab/Phyling/actions/workflows/build_and_test.yml)
+[![CI/Conda build and test](https://github.com/stajichlab/Phyling/actions/workflows/conda_build_and_test.yml/badge.svg?branch=main)](https://github.com/stajichlab/Phyling/actions/workflows/conda_build_and_test.yml)
+[![Python](https://camo.githubusercontent.com/1a5b0640050cc9e63d4d474e0892b8b9f89c208a0dc68140a5e0a25716d18d6d/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f707974686f6e2d332e395f2537435f332e31305f2537435f332e31315f2537435f332e31325f2537435f332e31332d626c75653f6c6f676f3d707974686f6e)](https://github.com/stajichlab/Phyling/actions/workflows/build_and_test.yml)
+[![codecov](https://camo.githubusercontent.com/c6fc979cf5a0a3ddab2d3395f9ae83a1a2ce033572c62c5d931f7a437f0f9633/68747470733a2f2f636f6465636f762e696f2f67682f7374616a6963686c61622f5068796c696e672f67726170682f62616467652e7376673f746f6b656e3d5a4835474251594b5a36)](https://codecov.io/gh/stajichlab/Phyling)
+[![License](https://camo.githubusercontent.com/b0b6fa6299ffa68dbe1a6dfcd83d9c352cd63fffda343042e9795bdd55f92bf6/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f7374616a6963686c61622f5068796c696e673f6c6162656c3d6c6963656e7365)](https://github.com/stajichlab/Phyling/blob/main/LICENSE)
+[![Conda](https://camo.githubusercontent.com/da4e5a91bfe01e8974655d97f68806af6b6e316588d8dc353ac3972756ddb5f5/68747470733a2f2f616e61636f6e64612e6f72672f62696f636f6e64612f7068796c696e672f6261646765732f76657273696f6e2e737667)](https://anaconda.org/bioconda/phyling)
+[![Last updated](https://camo.githubusercontent.com/067d65eac13341a9b2636160dcc1fc2513abf8b7e73b888ad0e89f936d67e12a/68747470733a2f2f616e61636f6e64612e6f72672f62696f636f6e64612f7068796c696e672f6261646765732f6c61746573745f72656c656173655f646174652e737667)](https://anaconda.org/bioconda/phyling)
+[![DOI](https://camo.githubusercontent.com/0706562201b0d65253b8327de088af4b944a7fdc101521009ee238acbb7314fe/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f444f492d31302e31313031253246323032352e30372e33302e3636363932312d626c7565)](https://www.biorxiv.org/content/10.1101/2025.07.30.666921)
+
+# Phyling tool
+
+Phyling is a fast, scalable, and user-friendly tool supporting phylogenomic reconstruction of species phylogenies directly from
+protein-encoded genomic data. It identifies orthologous genes by searching a sample's protein sequences against a Hidden Markov
+Models marker set, containing single-copy orthologs, retrieved from the [BUSCO database](https://busco-data.ezlab.org/v5/data/lineages/). In the final step, users can
+choose between consensus and concatenation strategies to construct the species tree from the aligned orthologs.
+
+### Flow chart
+
+[![Phyling flowchart](/stajichlab/Phyling/raw/main/misc/phyling_flowchart-light.svg#gh-light-mode-only)](/stajichlab/Phyling/blob/main/misc/phyling_flowchart-light.svg#gh-light-mode-only)
+
+[![Phyling flowchart](/stajichlab/Phyling/raw/main/misc/phyling_flowchart-dark.svg#gh-dark-mode-only)](/stajichlab/Phyling/blob/main/misc/phyling_flowchart-dark.svg#gh-dark-mode-only)
+
+## Usage
+
+First of all, install the package following the [instruction](#install) below.
+
+Phyling is a package to extract phylogenomic markers and build a phylogenetic tree upon them. It comprises 4 modules - download,
+align, filter and tree. Use `phyling --help` to see more details.
+
+```
+Modules:
+  {download,align,filter,tree}
+    download            Download HMM markers
+    align               Run multiple sequence alignments against orthologs found among samples
+    filter              Filter the multiple sequence alignment results
+    tree                Build a phylogenetic tree based on selected multiple sequence alignment results
+
+Options:
+  -h, --help            show this help message and exit
+  -V, --version         show program's version number and exit
+```
+
+To test run on the example files, please `cd` into the folder `example`.
+
+```
+cd example
+```
+
+In general, Phyling takes fasta as input. The bgzipped fasta is also valid.
+
+The folder `example/pep` includes 5 example peptide fasta which can be used for test run.
+
+In addition to the peptide sequences, Phyling can also takes DNA coding sequences as inputs to more accurately estimate the
+phylogeny of closely related species. When taking DNA coding sequences as inputs, DNA sequences will be translated into peptide
+sequences and all the hmmsearch/align are done on the peptide version. The final MSA results will be back-translated into DNA at
+the final stage. The example DNA sequences are placed under the folder `example/cds`.
+
+### Download HMM marker sets
+
+The download module is used to download HMM marker sets from BUSCO website. (Currently is updated to [v5](https://busco-data.ezlab.org/v5/data/lineages/)) See all options
+with `phyling download --help`.
+
+```
+positional arguments:
+  HMM markerset or "list"
+                        Name of the HMM markerset
+
+Options:
+  -v, --verbose         Verbose mode for debug
+  -h, --help            show this help message and exit
+```
+
+Firstly, use `download list` to show the available BUSCO marker sets.
+
+```
+phyling download list
+```
+
+By default the downloaded marker sets will be saved to the `~/.phyling` or the first path in `$PHYLING_DB` (if have been set) if
+it is writable. The **Datasets available online** section lists all marker sets that are available on the [BUSCO](https://busco-data.ezlab.org

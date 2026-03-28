@@ -231,3 +231,6 @@ Please specify which sub-program you want to use: one of [build, layout, prepare
 [Error] You misspelled the subcommand! Please specify which sub-program you want to use: one of [build, layout, prepare, search, upgrade]. Use -h/--help for more information.
 ```
 
+
+## Metadata
+- **Skill**: generated

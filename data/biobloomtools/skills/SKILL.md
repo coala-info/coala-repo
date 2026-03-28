@@ -1,6 +1,6 @@
 ---
 name: biobloomtools
-description: BioBloom Tools provides a high-performance workflow for sequence classification and filtering using Bloom filters. Use when user asks to create Bloom filters from reference genomes, classify sequencing reads, filter host DNA from metagenomic samples, or identify contaminants in datasets.
+description: BioBloomTools is a bioinformatics suite that uses Bloom filters for rapid sequence categorization and reference genome classification. Use when user asks to build Bloom filters from reference files, categorize reads against specific genomes, or screen samples for matches to multiple targets.
 homepage: https://github.com/bcgsc/biobloom
 ---
 
@@ -8,58 +8,54 @@ homepage: https://github.com/bcgsc/biobloom
 # biobloomtools
 
 ## Overview
+BioBloomTools (BBT) is a high-performance bioinformatics suite designed for rapid sequence categorization. By using Bloom filters—a probabilistic data structure—it can determine if a sequence belongs to a specific reference genome with high accuracy and minimal memory usage. This skill provides the procedural knowledge to build filters using `biobloommaker` and classify reads using `biobloomcategorizer`.
 
-BioBloom Tools (BBT) provides a high-performance workflow for sequence classification using Bloom filters. By representing reference genomes as probabilistic data structures, it allows for extremely fast k-mer based lookups. This approach is significantly faster than traditional alignment-based methods, making it an excellent choice for filtering out host DNA from metagenomic samples or identifying specific contaminants in large sequencing datasets.
+## Generating Bloom Filters
+Use `biobloommaker` to convert reference FastA files into binary Bloom filter (.bf) files.
 
-## Core Workflows
+- **Basic Creation**:
+  `biobloommaker -p <prefix> <reference.fasta>`
+- **Adjusting False Positive Rate (FPR)**:
+  The default FPR is 0.075. Lowering this increases memory usage but improves precision.
+  `biobloommaker -f 0.02 -p <prefix> <reference.fasta>`
+- **K-mer Size**:
+  The default k-mer size is 25. Adjust based on the complexity of the reference.
+  `biobloommaker -k 31 -p <prefix> <reference.fasta>`
 
-### 1. Generating Bloom Filters (biobloommaker)
+**Note**: Every `.bf` file is accompanied by a `.txt` info file. Both must remain in the same directory for the categorizer to function.
 
-Before categorizing reads, you must create a Bloom filter from your reference sequences (FastA).
+## Categorizing Sequences
+Use `biobloomcategorizer` to screen your samples against one or more filters.
 
-```bash
-biobloommaker -p <filter_id> <reference1.fasta> <reference2.fasta>
-```
+- **Single-End Screening**:
+  `biobloomcategorizer --fa -p <output_prefix> -f "filter1.bf filter2.bf" input.fastq`
+- **Paired-End Mode**:
+  Use `-e` to require both reads in a pair to match the same filter.
+  `biobloomcategorizer -e -p <output_prefix> -f "filter.bf" R1.fq R2.fq`
+- **Inclusive Paired-End**:
+  Use `-i` with `-e` to categorize a pair if at least one read matches.
+  `biobloomcategorizer -e -i -p <output_prefix> -f "filter.bf" R1.fq R2.fq`
 
-- **-p**: Sets the prefix/ID for the generated files.
-- **Output**: Creates a binary filter file (`.bf`) and a metadata information file (`.txt`).
-- **Note**: The `.txt` file must always remain in the same directory as the `.bf` file for the categorizer to function.
+## Output Interpretation
+- **summary.tsv**: Provides a high-level count of reads assigned to each filter, "no match," or "multi-match" (if using multiple filters).
+- **readStatus.tsv**: A per-read breakdown of classification results.
+- **Categorized Files**: FastA/FastQ files containing the actual sequences sorted by their respective filters.
 
-### 2. Categorizing Sequences (biobloomcategorizer)
-
-Use the generated filters to classify your input reads (FastA/FastQ).
-
-```bash
-biobloomcategorizer --fa -p <output_prefix> -f "filter1.bf filter2.bf" <input_reads.fastq>
-```
-
-- **--fa / --fq**: Specifies the output format for categorized reads.
-- **-f**: A space-separated list of filters to check against.
-- **-p**: The directory/prefix for output files.
-- **Output**: Generates a `summary.tsv` (classification statistics) and separate sequence files for reads matching each filter.
-
-### 3. Handling Paired-End Data
-
-For paired-end reads, use the `-e` flag to ensure consistency between pairs.
-
-```bash
-biobloomcategorizer -e -p <output_prefix> -f "filter.bf" <reads_1.fq> <reads_2.fq>
-```
-
-- **-e (--paired)**: Requires both reads in a pair to match the filter to be categorized as a match.
-- **-i (--inclusive)**: Use in conjunction with `-e` if you want to count the pair as a match even if only one of the two reads matches the filter.
-
-## Expert Tips and Best Practices
-
-- **Version Compatibility**: Bloom filters are sensitive to version changes. A filter created with version 2.1.x may not work with version 2.2.x. Always regenerate filters if you upgrade the tool to a version where the second digit has changed.
-- **Memory Management**: The memory usage of the categorizer is determined by the size of the Bloom filters loaded. Ensure your system has enough RAM to hold all specified `.bf` files simultaneously.
+## Expert Tips
+- **Version Compatibility**: Bloom filters are sensitive to version changes. A filter created with version 2.0.x may not work with 2.1.x. Always ensure the maker and categorizer versions match.
 - **Piping Compressed Input**: For `.gz` or `.bz2` files, use process substitution to avoid manual decompression:
-  ```bash
-  biobloomcategorizer -f "ref.bf" <(zcat reads.fq.gz)
-  ```
-- **False Positive Rates**: The default false positive rate is 0.075. While sufficient for most QC tasks, you can adjust this during the `biobloommaker` step if your application requires higher precision, though this will increase the filter's memory footprint.
+  `biobloomcategorizer -f "ref.bf" <(zcat input.fastq.gz)`
+- **Multi-Target Classification**: When classifying against >100 targets, consult the "Multi-index Bloom filters" section of the manual for optimized performance.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| biobloomcategorizer | Categorize Sequences. The input format may be FASTA, FASTQ, and compressed gz. |
+| biobloommaker | Creates a bf and txt file from a list of fasta files. The input sequences are cut into a k-mers with a sliding window and their hash signatures are inserted into a bloom filter. |
 
 ## Reference documentation
-
-- [BioBloom Tools Overview](./references/anaconda_org_channels_bioconda_packages_biobloomtools_overview.md)
-- [BioBloom Tools GitHub Repository](./references/github_com_bcgsc_biobloom.md)
+- [BioBloomTools Manual](./references/github_com_bcgsc_biobloom.md)
+- [BioBloomTools Overview](./references/www_bcgsc_ca_resources_software_biobloomtools.md)

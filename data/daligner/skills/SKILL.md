@@ -1,6 +1,6 @@
 ---
 name: daligner
-description: The daligner tool finds all significant local alignments between long-read sequences in a Dazzler database. Use when user asks to find overlaps between long reads, manage memory during alignment via k-mer suppression, or sort and merge alignment files.
+description: daligner identifies local alignments and overlaps between long-read sequencing datasets with high error rates. Use when user asks to find overlaps between reads, perform self-comparison of database blocks, or generate local alignment files for long-read assembly pipelines.
 homepage: https://github.com/thegenemyers/DALIGNER
 ---
 
@@ -9,48 +9,79 @@ homepage: https://github.com/thegenemyers/DALIGNER
 
 ## Overview
 
-The `daligner` tool is the core "overlap" module of the Dazzler suite. It is specifically designed to handle the high error rates (up to 15%) associated with long-read sequencing technologies. Instead of recording full alignments, it produces parsimonious `.las` files containing "trace points" every ~100bp, allowing for efficient reconstruction of alignments. This skill provides guidance on executing the primary aligner, managing memory via k-mer suppression, and utilizing the utility programs for sorting and merging alignment data.
+daligner (the Dazzler Overlap Module) is a specialized tool for identifying local alignments in long-read sequencing datasets characterized by high error rates (up to 15%). It operates by comparing blocks of reads within a Dazzler database (.db or .dam). Instead of storing full alignments, it records "trace points" at regular intervals, allowing for efficient reconstruction of alignments while minimizing disk space. It is a core component of many long-read assembly pipelines, such as FALCON.
 
-## Core Workflow
+## Core Command Patterns
 
-### 1. Initial Alignment
-The `daligner` command compares a subject database block against one or more target blocks.
+### Basic Alignment
+To compare a subject block against one or more target blocks:
+`daligner [options] <subject:db> <target:db> ...`
 
-```bash
-daligner [-vaAI] [-k<int>] [-w<int>] [-h<int>] [-t<int>] [-M<int>] [-e<double>] [-l<int>] [-s<int>] [-T<int>] <subject:db|dam> <target:db|dam> ...
-```
+### Self-Comparison
+When comparing a block against itself (e.g., for finding overlaps within a single dataset), use the `-A` (asymmetric) flag to avoid redundant computations:
+`daligner -v -A raw_reads.1 raw_reads.1`
 
-*   **Basic Overlap**: `daligner -v -T8 DB.1 DB.1` (Compares block 1 against itself using 8 threads).
-*   **Asymmetric Comparison**: Use `-A` to report only $X \to Y$ overlaps (useful for parallelizing large all-to-all jobs).
-*   **Sensitivity Tuning**:
-    *   `-k`: K-mer size (default 16, max 32).
-    *   `-e`: Average correlation rate (default 0.70). Increase for higher stringency.
-    *   `-l`: Minimum alignment length (default 1000bp).
-    *   `-s`: Trace point spacing (default 100bp).
+### Block Range Syntax
+daligner supports a special `@` syntax to handle multiple database blocks efficiently:
+- `db.@` : Matches all blocks (1, 2, 3...).
+- `db.@5` : Starts the sequence at block 5.
+- `db.@1-10` : Processes blocks 1 through 10 inclusive.
 
-### 2. Memory Management & K-mer Suppression
-High-frequency k-mers (e.g., homopolymer runs) can cause memory overflows.
-*   **Automatic**: Use `-M<int>` to specify a memory limit in Gb. `daligner` will automatically calculate a suppression threshold `t`.
-*   **Manual**: Use `-t<int>` to ignore any k-mer appearing more than `t` times.
-*   **Masking**: Use `-m<track>` to ignore regions defined by a specific track (e.g., a "dust" track for low-complexity DNA).
+## Key Parameters and Optimization
 
-### 3. Processing Results (.las files)
-After running `daligner`, you must organize the resulting alignment files.
+### Filtration and Sensitivity
+- `-k<int>`: K-mer size (default 16). Maximum is 32.
+- `-w<int>`: Diagonal band width (default 64).
+- `-h<int>`: Hit threshold; requires k-mer hits to cover at least this many bases (default 50).
+- `-e<double>`: Average correlation rate (default 0.70 or 70%). Increase for higher stringency; decrease for noisier data.
+- `-l<int>`: Minimum alignment length (default 1000bp).
 
-*   **Sorting**: `LAsort [-v] <align:las> ...`
-    *   Orders alignments by read index. Required before merging.
-*   **Merging**: `LAmerge [-v] <dest:las> <src1:las> <src2:las> ...`
-    *   Combines multiple sorted `.las` files into a single coherent file.
-*   **Viewing**: `LAshow [-v] <db:db> <align:las> [reads:range]`
-    *   Converts the sparse trace-point encoding into a human-readable alignment display.
+### Memory and Performance
+- `-M<int>`: Memory limit in Gb. daligner will automatically adjust k-mer suppression (`-t`) to fit within this limit. This is the recommended way to handle over-represented k-mers (e.g., homopolymer runs).
+- `-t<int>`: Explicitly suppress k-mers occurring more than `t` times.
+- `-T<int>`: Number of threads (default 4).
+
+### Output Control
+- `-s<int>`: Trace point spacing (default 100bp). Smaller values increase alignment reconstruction precision but result in larger `.las` files.
+- `-I`: Include identity overlaps (overlaps between different parts of the same read).
+- `-a`: Pass-through flag to `LAsort` to produce sorted output immediately.
+
+## Processing Output (.las files)
+
+daligner produces `.las` (local alignment) files. These must typically be sorted and merged before downstream use.
+
+### Sorting and Merging
+1. **LAsort**: Sorts alignment records.
+   `LAsort -v raw_reads.1.raw_reads.1.las`
+2. **LAmerge**: Merges multiple sorted `.las` files.
+   `LAmerge total.las block1.las block2.las ...`
+
+### Viewing Alignments
+Use **LAshow** to convert the binary `.las` format into human-readable text:
+`LAshow raw_reads.db overlaps.las | less`
+
+**Output Format Guide:**
+- `a_read b_read`: Indices of the overlapping reads.
+- `flag`: `n` for normal, `c` for reverse-complement.
+- `[start..end]`: The interval of the alignment. Angle brackets `< >` indicate the alignment reaches the start or end of the read.
+- `diffs`: Number of differing bases.
+- `trace pts`: Number of trace points used for the record.
 
 ## Expert Tips
+- **K-mer Suppression**: If daligner is crashing due to memory exhaustion, check for highly repetitive sequences. Use the `-M` flag to let the tool self-limit, or run `DBdust` beforehand to mask low-complexity regions.
+- **Asymmetric Comparisons**: Always use `-A` when comparing a block to itself or when running a grid of comparisons (X vs Y) to ensure you only compute the upper triangle of the comparison matrix.
+- **Disk I/O**: daligner is I/O intensive. If running on a cluster, try to use local `/tmp` space for intermediate files via the `-P` option.
 
-*   **Block Naming Convention**: Use the `@` symbol to process sequences of blocks. For example, `daligner DB @1-10` compares the subject against blocks 1 through 10.
-*   **Identity Overlaps**: By default, `daligner` ignores a read's alignment to itself. Use `-I` if you specifically need to find internal repeats within reads.
-*   **Disk Space**: `.las` files can become very large. Ensure the directory specified by `-P` (default `/tmp`) has sufficient space for temporary files during the alignment process.
-*   **Integration**: `daligner` expects reads to be encoded in a Dazzler database (`.db` or `.dam`). Ensure you have run `DBinit` and `DBsplit` before attempting alignment.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| DBinit | Initialize a new database for the DAZZ_DB / daligner suite. |
+| LAshow | Display local alignments produced by daligner in a human-readable format. |
 
 ## Reference documentation
-- [Daligner README](./references/github_com_thegenemyers_DALIGNER.md)
-- [Bioconda Daligner Overview](./references/anaconda_org_channels_bioconda_packages_daligner_overview.md)
+- [DALIGNER README](./references/github_com_thegenemyers_DALIGNER.md)
+- [DAshow Wiki](./references/github_com_thegenemyers_DALIGNER_wiki_DAshow.md)
+- [daligner Executable Wiki](./references/github_com_thegenemyers_DALIGNER_wiki_daligner-executable.md)

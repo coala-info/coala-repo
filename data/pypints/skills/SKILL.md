@@ -1,6 +1,6 @@
 ---
 name: pypints
-description: pypints identifies Transcriptional Regulatory Elements by pinpointing Transcription Start Sites at high resolution from nascent transcript sequencing data. Use when user asks to identify Transcription Start Sites, call peaks from BAM or bigWig files, distinguish between divergent and unidirectional transcription, or generate visualization tracks for genome browsers.
+description: pypints is a bioinformatics tool designed to identify nascent transcription start sites and active regulatory elements from high-resolution RNA sequencing data. Use when user asks to call peaks from bigWig or BAM files, identify divergent or bidirectional transcription signatures, or annotate transcription start sites with epigenomic data.
 homepage: https://pints.yulab.org
 ---
 
@@ -8,88 +8,67 @@ homepage: https://pints.yulab.org
 # pypints
 
 ## Overview
+pypints (Peak Identifier for Nascent Transcript Starts) is a specialized bioinformatics tool designed to pinpoint the exact locations where nascent transcription begins. Unlike standard ChIP-seq peak callers, pypints is optimized for the high-resolution nature of nascent RNA sequencing, allowing for the discovery of active enhancers and promoters by identifying divergent or bidirectional transcription signatures. It supports a wide array of experimental protocols and provides automated merging of replicates and epigenomic annotation for human (hg38) datasets.
 
-pypints (Peak Identifier for Nascent Transcripts Starts) is a bioinformatics tool designed to identify Transcriptional Regulatory Elements (TREs) by pinpointing Transcription Start Sites (TSSs) at high resolution. It is specifically optimized for nascent transcript sequencing assays where the 5' end of the read corresponds to the TSS. The tool allows users to distinguish between divergent (bidirectional) transcription—often associated with active enhancers—and unidirectional transcription, typically associated with canonical promoters.
+## Core CLI Patterns
 
-## Installation
-
-Install via Bioconda or pip:
-
+### Peak Calling from bigWig Files
+Use this when you have pre-processed strand-specific signal files.
 ```bash
-conda install bioconda::pypints
-# OR
-pip install pyPINTS
+pints_caller --bw-pl forward_strand.bw \
+             --bw-mn reverse_strand.bw \
+             --save-to ./results \
+             --file-prefix experiment_name \
+             --thread 16
 ```
 
-## Core Workflows
-
-### 1. Peak Calling from BAM Files
-The primary command for identifying TREs. PINTS automatically handles TSS extraction based on the experiment type.
-
+### Peak Calling from BAM Files
+When starting from alignments, you must specify the experiment type to help the tool identify the relevant RNA ends.
 ```bash
-pints_caller --bam-file input.sorted.bam \
-             --exp-type GROcap \
-             --file-prefix sample_name \
-             --thread 16 \
-             --save-to ./output_dir
-```
-
-**Supported Experiment Types (`--exp-type`):**
-- `GROcap` (also for single-end PRO-cap)
-- `CoPRO` (also for paired-end PRO-cap)
-- `csRNAseq`
-- `NETCAGE`
-- `CAGE`
-- `RAMPAGE`
-- `STRIPEseq`
-
-### 2. Peak Calling from bigWig Files
-If you already have strand-specific signal tracks, you can provide them directly.
-
-```bash
-pints_caller --bw-pl signal_plus.bw \
-             --bw-mn signal_minus.bw \
-             --file-prefix sample_name \
+pints_caller --bam-file input.bam \
+             --exp-type PROcap \
+             --save-to ./output \
              --thread 8
 ```
 
-### 3. Generating Visualization Tracks
-Use `pints_visualizer` to create strand-specific bigWig files for genome browsers like IGV.
+### Handling Different Experimental Protocols
+If your assay is not a standard "cap" protocol, use the `--exp-type` flag to define which read end represents the TSS:
+- `R_5` / `R_3`: 5' or 3' of single-end reads.
+- `R1_5` / `R1_3`: 5' or 3' of Read 1 (paired-end).
+- `R2_5` / `R2_3`: 5' or 3' of Read 2 (paired-end).
+- **Note**: Use `--reverse-complement` for libraries like PRO-seq where the read is the reverse complement of the original RNA.
 
-```bash
-pints_visualizer -b input.sorted.bam \
-                 -e GROcap \
-                 --mapq-threshold 255 \
-                 --chromosome-start-with chr \
-                 -o output_prefix
-```
+### Advanced Annotation and Replicates
+- **Epigenomic Annotation**: For hg38, use `--epig-annotation <biosample>` (e.g., `K562`) to pull regulatory data from the PINTS server.
+- **Replicate Merging**: By default, PINTS merges multiple BAM files provided to `--bam-file`. To process them individually, add the `--dont-merge-reps` flag.
+- **FDR Control**: Adjust sensitivity using `--relaxed-fdr-target` when using epigenomic annotations to recover marginal peaks that overlap known regulatory regions.
 
-## Expert Tips and Best Practices
+## Output Interpretation
+PINTS generates three primary BED files:
+1. `_divergent_peaks.bed`: High-confidence divergent TREs.
+2. `_bidirectional_peaks.bed`: Combined divergent and convergent transcription.
+3. `_unidirectional_peaks.bed`: Single-strand peaks, often representing e-lncRNAs or distal TSSs.
 
-### Filtering and Quality Control
-- **Uniquely Mapped Reads**: When using STAR for alignment, use `--mapq-threshold 255` in the visualizer or pre-filter your BAM with `samtools view -q 255` to ensure only unique alignments are used.
-- **Contig Filtering**: Use the `--filters` flag in `pints_caller` to exclude problematic regions like mitochondria (`chrM`) or unplaced scaffolds.
-- **Reverse Complement**: If your library chemistry results in reads that are the reverse complement of the RNA (e.g., certain PRO-seq protocols), add the `--reverse-complement` flag.
+**Column 4 (Confidence)** in divergent/bidirectional outputs:
+- `Stringent(qval)`: Both strands are statistically significant.
+- `Stringent(pval)`: One strand is significant by q-value, the other by p-value.
+- `Relaxed`: Only one strand in the pair is significant.
+- `Marginal`: Peak passes a relaxed FDR and overlaps an epigenomic annotation.
 
-### Classifying Enhancers vs. Promoters
-PINTS outputs all TREs, but identifying distal enhancers requires post-processing with `bedtools` and a reference promoter annotation:
+## Expert Tips
+- **Resource Management**: Always specify `--thread` to utilize multi-core environments, as peak calling on large BAM files is computationally intensive.
+- **Control Samples**: If you have an "Input" or "Control" library, provide it via `--ct-bam` or `--ct-bw-pl`/`--ct-bw-mn` to reduce false positives from background noise.
+- **TSS Resolution**: The output BED files for divergent TREs include specific columns (5 and 6) for Major TSS positions on both strands, which are more precise than the broad peak boundaries.
 
-1.  **Extract Distal TREs (Enhancer Candidates)**:
-    ```bash
-    bedtools intersect -a sample_bidirectional_peaks.bed -b promoters.bed -v > distal_enhancers.bed
-    ```
-2.  **Filter Exonic Signals**: For CAGE-like assays, it is often helpful to remove TREs overlapping known exons (excluding the first exon):
-    ```bash
-    bedtools intersect -a sample_bidirectional_peaks.bed -b exons.bed -f 0.6 -v > non_exonic_TREs.bed
-    ```
 
-### Output File Interpretation
-PINTS generates several BED files per run:
-- `*_bidirectional_peaks.bed`: Combined divergent and convergent TREs.
-- `*_divergent_peaks.bed`: Specifically divergent TREs (high-confidence enhancers/promoters).
-- `*_unidirectional_peaks.bed`: TREs with signal on only one strand.
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| pints_caller | Peak Identifier for Nascent Transcripts Starts |
+| pints_visualizer | Visualize BAM files with PINTs. |
 
 ## Reference documentation
-- [TRE calling guide](./references/pints_yulab_org_tre_calling.md)
-- [PINTS FAQ and TRE-BED format](./references/pints_yulab_org_faq.md)
-- [Bioconda pypints overview](./references/anaconda_org_channels_bioconda_packages_pypints_overview.md)
+- [PINTS: Peak Identifier for Nascent Transcript Starts](./references/github_com_hyulab_PINTS_blob_main_README.md)
+- [pypints setup and scripts](./references/github_com_hyulab_PINTS_blob_main_setup.py.md)

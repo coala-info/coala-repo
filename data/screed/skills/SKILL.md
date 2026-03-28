@@ -1,92 +1,72 @@
 ---
 name: screed
-description: "Screed parses, stores, and retrieves biological sequences from FASTA and FASTQ files. Use when user asks to parse biological sequences, read sequence files, or create a screed database."
+description: Screed provides a lightweight database layer for FASTA and FASTQ files to enable rapid random access and efficient sequence parsing. Use when user asks to create sequence databases, convert between FASTA and FASTQ formats, or perform memory-efficient iteration and lookups of sequencing data.
 homepage: http://github.com/dib-lab/screed/
 ---
 
 
 # screed
 
-yaml
-name: screed
-description: |
-  Parses, stores, and retrieves biological sequences (DNA and protein).
-  Use when dealing with biological sequence data in FASTA or FASTQ formats,
-  especially for tasks involving sequence manipulation, analysis, or database
-  creation from sequence files.
-```
 ## Overview
-Screed is a Python library designed for efficient parsing, storage, and retrieval of biological sequences, particularly DNA and protein sequences. It excels at handling large sequence files in formats like FASTA and FASTQ, making it a valuable tool for bioinformatics workflows that require quick access to and manipulation of sequence data.
+Screed is a specialized utility designed for handling high-throughput sequencing data. It provides a lightweight, read-only database layer for FASTA and FASTQ files, allowing for rapid random access to sequences without loading entire files into memory. This skill enables efficient sequence parsing, database generation, and format conversion workflows essential for bioinformatics pipelines.
 
-## Usage
+## Command Line Usage
+The `screed` CLI provides tools for database management and file conversion.
 
-Screed is primarily used as a Python library. While it doesn't expose a direct command-line interface for general sequence processing, its core functionality is accessible through Python scripting.
+### Database Creation
+Create a screed database from a sequence file to enable fast lookups:
+```bash
+screed make_db <input_file.fa/fq>
+```
+This generates a `.screed` file in the same directory.
 
-### Core Functionality
+### Format Conversion
+Convert between common sequence formats:
+*   **FASTA to FASTQ**: `screed fa_to_fq <input.fa> <output.fq>`
+*   **FASTQ to FASTA**: `screed fq_to_fa <input.fq> <output.fa>`
 
-The main purpose of screed is to read sequence files and provide an iterable interface to their records. Each record typically contains the sequence identifier, the sequence itself, and potentially other metadata.
+## Python API Integration
+Screed is most powerful when used within Python scripts for custom sequence processing.
 
-### Reading Sequence Files
-
-The `screed.open()` function is the primary entry point for reading sequence files. It automatically detects the file format (FASTA or FASTQ) and returns an iterator over sequence records.
-
+### Iterating Through Sequences
+The `screed.open` function automatically detects the file type (FASTA or FASTQ) and provides an iterable of record objects.
 ```python
 import screed
 
-# Example: Reading a FASTA file
-for record in screed.open('sequences.fasta'):
-    print(f"ID: {record.name}")
-    print(f"Sequence: {record.sequence[:50]}...") # Print first 50 chars
-    # Access other potential fields if available, e.g., record.description
-
-# Example: Reading a FASTQ file
-for record in screed.open('reads.fastq'):
-    print(f"ID: {record.name}")
-    print(f"Sequence: {record.sequence[:50]}...")
-    print(f"Quality: {record.quality[:50]}...")
+with screed.open('sequences.fastq') as seqfile:
+    for record in seqfile:
+        name = record.name
+        sequence = record.sequence
+        accuracy = record.quality # Only for FASTQ
+        print(f"Processing {name}...")
 ```
 
-### Creating a Screed Database
-
-Screed can be used to create a simple, read-only database from a collection of sequences. This is useful for fast lookups.
-
+### Random Access via Database
+Once a database is created, you can access specific records by their name (key) instantly:
 ```python
 import screed
 
-# Assuming you have a list of sequence records (e.g., from reading a file)
-sequences_to_db = [
-    screed.Record(name='seq1', sequence='AGCTAGCTAGCT'),
-    screed.Record(name='seq2', sequence='TTTTCCCCGGGG'),
-]
-
-# Create a screed database file
-screed.write_fasta(sequences_to_db, 'my_sequences.fasta.screed')
+db = screed.ScreedDB('sequences.fa')
+record = db['sequence_id_123']
+print(record.sequence)
 ```
 
-### Iterating and Filtering
+## Expert Tips
+*   **Memory Efficiency**: Always use `screed.open` for large files to stream records one by one rather than loading them into a list.
+*   **Database Persistence**: The `make_db` command is a one-time cost. Once the `.screed` file exists, random access lookups are nearly instantaneous regardless of the original file size.
+*   **Attribute Access**: Record objects behave like dictionaries but also support attribute access (e.g., `record['sequence']` is the same as `record.sequence`).
 
-You can iterate through the records and apply custom filtering or processing logic within your Python scripts.
 
-```python
-import screed
 
-# Filter sequences longer than a certain length
-min_length = 1000
-long_sequences = []
-for record in screed.open('all_sequences.fasta'):
-    if len(record.sequence) > min_length:
-        long_sequences.append(record)
+## Subcommands
 
-print(f"Found {len(long_sequences)} sequences longer than {min_length} bp.")
-```
-
-### Expert Tips
-
-*   **Format Detection**: `screed.open()` is intelligent enough to detect FASTA and FASTQ formats automatically.
-*   **Memory Efficiency**: For very large files, `screed.open()` provides an iterator, processing records one by one, which is memory-efficient.
-*   **Custom Records**: You can create `screed.Record` objects manually for programmatic generation of sequence data.
-*   **Integration**: Screed is often used as a foundational component within larger bioinformatics pipelines, where its sequence parsing capabilities are leveraged by other Python scripts or tools.
+| Command | Description |
+|---------|-------------|
+| screed | Available commands: db, dump_fasta, dump_fastq |
+| screed | A shell interface to the screed database writing function |
+| screed | Convert a screed database to a FASTA file |
+| screed | Convert a screed database to a FASTA file |
 
 ## Reference documentation
-- [Screed Overview](https://bioconda.github.io/recipes/screed/README.html)
-- [Screed GitHub Repository](https://github.com/dib-lab/screed)
+- [screed GitHub README](./references/github_com_dib-lab_screed_blob_main_README.md)
+- [screed Change Log](./references/github_com_dib-lab_screed_blob_main_CHANGELOG.md)

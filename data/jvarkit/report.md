@@ -617,3 +617,6 @@ Usage: bammatrix [options] Files
       print version and exit
 ```
 
+
+## Metadata
+- **Skill**: generated

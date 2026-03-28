@@ -1,0 +1,250 @@
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Ffriend1ws%2Fnanomonsv%2Fwiki%2FOn-classification-of-inserted-sequences)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Ffriend1ws%2Fnanomonsv%2Fwiki%2FOn-classification-of-inserted-sequences)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Fwiki%2Fshow&source=header-repo&source_repo=friend1ws%2Fnanomonsv)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[friend1ws](/friend1ws)
+/
+**[nanomonsv](/friend1ws/nanomonsv)**
+Public
+
+* [Notifications](/login?return_to=%2Ffriend1ws%2Fnanomonsv) You must be signed in to change notification settings
+* [Fork
+  12](/login?return_to=%2Ffriend1ws%2Fnanomonsv)
+* [Star
+   97](/login?return_to=%2Ffriend1ws%2Fnanomonsv)
+
+* [Code](/friend1ws/nanomonsv)
+* [Issues
+  24](/friend1ws/nanomonsv/issues)
+* [Pull requests
+  0](/friend1ws/nanomonsv/pulls)
+* [Actions](/friend1ws/nanomonsv/actions)
+* [Projects](/friend1ws/nanomonsv/projects)
+* [Wiki](/friend1ws/nanomonsv/wiki)
+* [Security
+  0](/friend1ws/nanomonsv/security)
+* [Insights](/friend1ws/nanomonsv/pulse)
+
+Additional navigation options
+
+* [Code](/friend1ws/nanomonsv)
+* [Issues](/friend1ws/nanomonsv/issues)
+* [Pull requests](/friend1ws/nanomonsv/pulls)
+* [Actions](/friend1ws/nanomonsv/actions)
+* [Projects](/friend1ws/nanomonsv/projects)
+* [Wiki](/friend1ws/nanomonsv/wiki)
+* [Security](/friend1ws/nanomonsv/security)
+* [Insights](/friend1ws/nanomonsv/pulse)
+
+# On classification of inserted sequences
+
+[Jump to bottom](#wiki-pages-box)
+
+Yuichi Shiraishi edited this page Apr 6, 2024
+·
+[2 revisions](/friend1ws/nanomonsv/wiki/On-classification-of-inserted-sequences/_history)
+
+There are many possible types of such as:
+
+* Tandem duplications
+* Mobile element insertions (MEIs)
+* Viral sequence integrations
+* Processed pseudogenes.
+
+To systematically characterize the inserted sequences with a particular focus on MEIs (because of personal interest!), we have developed a pipeline. This pipeline classifies the inserted sequences by comparing them with the transcriptome, annotating them with repeat sequence information, and re-aligning them to the reference genome. The overview of the classification pipeline is depicted below. Please refer to the [nanomonsv paper](https://academic.oup.com/nar/article/51/14/e74/7201946) for the details.
+
+![Insert_classification](https://private-user-images.githubusercontent.com/2521979/320173713-7fe221e5-9071-4e56-8eb7-7bde6781a002.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzQ2NTc3ODksIm5iZiI6MTc3NDY1NzQ4OSwicGF0aCI6Ii8yNTIxOTc5LzMyMDE3MzcxMy03ZmUyMjFlNS05MDcxLTRlNTYtOGViNy03YmRlNjc4MWEwMDIucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI2MDMyOCUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNjAzMjhUMDAyNDQ5WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9NWRmYWVhY2E0MTc0Y2ZlNjI3YmMxZmRlMGU5ZTI1M2M5ZTMwNGNlMGQxNmE5NTg5ODIzOTliZmRkNmNkMWVhOSZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QifQ.ckKfvRPW6cKI2qRHgMlhMp4oX2Wf910SdPpEu4JIQkE)
+
+## Toggle table of contents Pages 5
+
+* Loading
+
+  [Home](/friend1ws/nanomonsv/wiki)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [How to understand nanomonsv result filtering](/friend1ws/nanomonsv/wiki/How-to-understand-nanomonsv-result-filtering)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [On classification of inserted sequences](/friend1ws/nanomonsv/wiki/On-classification-of-inserted-sequences)
+* Loading
+
+  [Single breakend SV](/friend1ws/nanomonsv/wiki/Single-breakend-SV)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [Tutorial](/friend1ws/nanomonsv/wiki/Tutorial)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+
+### Clone this wiki locally
+
+## Footer
+
+© 2026 GitHub, Inc.
+
+### Footer navigation
+
+* [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+* [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+* [Security](https://github.com/security)
+* [Status](https://www.githubstatus.com/)
+* [Community](https://github.community/)
+* [Docs](https://docs.github.com/)
+* [Contact](https://support.github.com?tags=dotcom-footer)
+* Manage cookies
+* Do not share my personal information
+
+You can’t perform that action at this time.

@@ -1,6 +1,6 @@
 ---
 name: qimba
-description: Qimba is a modular bioinformatics toolkit for processing raw sequencing data into amplicon sets for metabarcoding workflows. Use when user asks to generate sample sheets, merge paired-end reads, dereplicate sequences, split DADA2 output, or validate TSV files.
+description: Qimba is a bioinformatics toolkit for managing and processing metabarcoding sequencing workflows. Use when user asks to generate sample mapping files, merge paired-end reads, dereplicate sequences, or convert DADA2 outputs.
 homepage: https://github.com/quadram-institute-bioscience/qimba
 ---
 
@@ -8,47 +8,61 @@ homepage: https://github.com/quadram-institute-bioscience/qimba
 # qimba
 
 ## Overview
-Qimba (Quadram Institute MetaBarcoding Analysis) is a modular bioinformatics toolkit designed to streamline the transition from raw sequencing data to processed amplicon sets. It provides a standardized command-line interface for common tasks in metabarcoding workflows, including quality control, sequence merging, and data management. Use this skill to execute precise bioinformatics operations without manually constructing complex shell pipelines.
+Qimba is a specialized bioinformatics toolkit developed by the Quadram Institute for managing metabarcoding workflows. It provides a modular command-line interface to handle the transition from raw sequencing data to processed, analysis-ready formats. The tool is particularly effective for researchers needing to automate the creation of sample sheets, perform quality control through read merging, and manage sequence redundancy via dereplication.
 
-## Core CLI Workflows
+## Command Line Usage
 
-### 1. Sample Management
-Before processing sequences, use Qimba to organize your dataset.
+### Sample Management
+The foundation of a Qimba workflow is the mapping file, which tracks Sample IDs and their associated read files.
 
-*   **Generate a sample sheet**: Automatically scan a directory for FASTQ files and create a mapping file.
+*   **Generate a mapping file**: Automatically scan a directory for FASTQ files to create a sample sheet.
     `qimba make-mapping <data_directory> -o mapping.tsv`
-*   **Inspect samples**: Verify the contents of an existing mapping file.
+*   **Inspect samples**: Verify the contents and structure of an existing mapping file.
     `qimba show-samples -i mapping.tsv`
 
-### 2. Sequence Processing
-Qimba handles the heavy lifting of read manipulation.
-
-*   **Merge paired-end reads**: Use the mapping file to merge R1 and R2 reads.
+### Sequence Processing
+*   **Merge paired-end reads**: Combine forward and reverse reads based on the mapping file.
     `qimba merge -i mapping.tsv -o merged.fastq --threads 8`
-*   **Dereplicate sequences**: Reduce computational load by collapsing identical sequences while maintaining abundance information.
+*   **Dereplicate sequences**: Reduce data size by collapsing identical sequences while maintaining abundance information.
     `qimba derep -i merged.fasta -o unique.fasta`
 
-### 3. Format Conversion and Validation
-Ensure your data is compatible with downstream tools like DADA2 or custom R scripts.
-
-*   **DADA2 Integration**: Split DADA2 output into a FASTA file of sequences and a simplified TSV table.
+### Format Conversions and Validation
+*   **DADA2 Integration**: Convert DADA2-formatted outputs into standard FASTA and simplified TSV files for downstream tools.
     `qimba dada2-split -i dada2_output.rds -o output_prefix`
-*   **Validate TSV files**: Check the structural integrity of tab-separated files to prevent pipeline failures.
-    `qimba check-tab -i data.tsv`
+*   **Validate TSV files**: Ensure metadata or mapping files are correctly formatted.
+    `qimba check-tab -i file.tsv`
 
-## Configuration and Best Practices
+## Best Practices and Configuration
 
-### Global Options
-Most commands support the following global flags:
-*   `--threads <int>`: Set the number of CPU cores (default is 4).
-*   `--config <file>`: Use a custom configuration file instead of the default `~/.config/qimba.ini`.
+### Global Configuration
+Qimba looks for a configuration file at `~/.config/qimba.ini`. You can set persistent defaults here to simplify CLI commands:
+```ini
+[qimba]
+default_output_dir = .
+threads = 4
+```
+To override these settings for a specific run, use the `--config` flag:
+`qimba --config custom_settings.ini [command]`
 
-### Expert Tips
-*   **Persistent Settings**: Edit `~/.config/qimba.ini` to set a `default_output_dir` and standard thread count to avoid repetitive typing in long-running projects.
-*   **Workflow Order**: Always run `qimba check-tab` on manually edited mapping files before starting a `merge` or `derep` operation to catch formatting errors early.
-*   **Resource Management**: When working on high-performance computing (HPC) clusters, explicitly set `--threads` to match your job allocation to ensure optimal performance.
+### Workflow Optimization
+*   **Threading**: Always specify `--threads` for `merge` and `derep` operations to significantly reduce processing time on multi-core systems.
+*   **Mapping Files**: Ensure your mapping files contain the required columns: `Sample ID`, `Forward`, and `Reverse`. Qimba uses these as the primary keys for all batch processing.
+*   **Validation**: Run `check-tab` before starting long-running merge or dereplication jobs to catch formatting errors in your sample sheets early.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| check-tab | Check TSV files for their dimensions and consistency. |
+| dada2-split | Split DADA2 TSV file into FASTA and simplified TSV. |
+| make-mapping | Generate a sample mapping file from a directory of sequence files. |
+| merge | Merge paired end into a single file using USEARCH |
+| qimba_derep | Dereplicate FASTA sequences using USEARCH. |
+| show-samples | Display sample information from a mapping file. |
 
 ## Reference documentation
-- [Qimba GitHub Repository](./references/github_com_quadram-institute-bioscience_qimba.md)
-- [Qimba Wiki](./references/github_com_quadram-institute-bioscience_qimba_wiki.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_qimba_overview.md)
+- [Qimba Main Repository](./references/github_com_quadram-institute-bioscience_qimba.md)
+- [CLI Concepts and Structure](./references/github_com_quadram-institute-bioscience_qimba_wiki_CLI_concepts.md)
+- [Common Functions and Core Components](./references/github_com_quadram-institute-bioscience_qimba_wiki_Common_functions.md)

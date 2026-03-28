@@ -88,3 +88,6 @@ Usage: necat.pl correct|assemble|bridge|config cfg_fname
     config:      generate default config file
 ```
 
+
+## Metadata
+- **Skill**: generated

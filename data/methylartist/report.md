@@ -992,3 +992,6 @@ options:
   --svg
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -298,3 +298,6 @@ Convert KCF to Genotype Table
       --score_n=<scoreN>   Score value for missing data (default = 30.0)
 ```
 
+
+## Metadata
+- **Skill**: generated

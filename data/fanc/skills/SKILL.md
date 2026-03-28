@@ -1,6 +1,6 @@
 ---
 name: fanc
-description: FAN-C is a specialized toolset for processing, analyzing, and visualizing Hi-C data to identify genomic features like TADs and chromatin loops. Use when user asks to process mapped reads into contact matrices, perform matrix normalization, call TADs or compartments, detect loops, and generate multi-track genomic plots.
+description: "FAN-C is a modular Python framework for the complete processing, analysis, and visualization of Hi-C data. Use when user asks to process mapped reads into contact matrices, normalize Hi-C data, call genomic features like TADs and compartments, or generate genomic plots."
 homepage: https://github.com/vaquerizaslab/fanc
 ---
 
@@ -8,37 +8,71 @@ homepage: https://github.com/vaquerizaslab/fanc
 # fanc
 
 ## Overview
-FAN-C (Framework for the ANalysis of C-data) is a specialized toolset for processing and interpreting Hi-C data. It is designed to handle the transition from mapped paired-end sequencing reads to high-level genomic features like chromatin loops and topologically associating domains (TADs). Use this skill to execute standard Hi-C workflows, perform matrix comparisons, and generate complex genomic plots using the `fancplot` utility.
 
-## Core CLI Workflows
+FAN-C (Framework for the ANalysis of C-like data) is a modular and feature-rich Python framework designed for the complete processing and analysis of Hi-C data. It manages the transition from mapped paired-end sequencing reads to normalized contact matrices and provides specialized tools for identifying genomic architecture, such as Topologically Associating Domains (TADs), loops, and A/B compartments. It is highly interoperable, supporting native FAN-C formats alongside industry standards like Cooler and Juicer.
 
-### Matrix Generation and Manipulation
-FAN-C uses a specialized HDF5-based format for storing contact matrices.
-*   **Generating Pairs**: Use `fanc pairs` to process mapped reads into a valid pairs format.
-*   **Creating Matrices**: Use `fanc matrix` to bin pairs into contact maps at specific resolutions (e.g., 10kb, 50kb, 1mb).
-*   **Normalization**: Apply matrix balancing (like ICE or KR) to remove experimental biases.
-*   **Format Conversion**: Use `fanc to-juicer` to export data for use in the Juicer/Straw ecosystem or `fanc to-cool` for the Cooler ecosystem.
+## Core CLI Patterns
 
-### Structural Analysis
-*   **TAD Calling**: Use `fanc insulation` to calculate insulation scores across the genome. This is the primary method in FAN-C for identifying domain boundaries.
-*   **Compartment Analysis**: Use `fanc compartments` to perform eigenvector decomposition for A/B compartment calling.
-*   **Loop Detection**: Use `fanc loops` to identify point interactions. For aggregate analysis, use `fanc apa` (Aggregate Peak Analysis) to validate loop strengths.
-*   **Comparison**: Use `fanc compare` to calculate log2 ratios or differences between two Hi-C matrices. Note that matrices should be normalized and scaled before comparison.
+### Automated Pipeline
+Use `fanc auto` to run the standard pipeline from mapped reads to a normalized Hi-C matrix.
+```bash
+fanc auto <input_pairs_or_bam> <output_hic> -g <genome_fasta> -r <restriction_enzyme_or_binsize>
+```
 
-### Visualization with fancplot
-`fancplot` is a powerful command-line tool for generating multi-track genomic plots.
-*   **Basic Plotting**: `fancplot -o output.png chr1:10mb-20mb -p matrix sample.fanc`
-*   **Adding Tracks**: You can stack multiple tracks including matrices, insulation scores, and external BED/BigWig files.
-*   **Gene Annotation**: Use the `-p gene` parameter with a BED file to display gene models.
-*   **Customization**: Use `-vmin` and `-vmax` to manually set the color scale for matrices to ensure comparability between different plots.
+### Matrix Normalization
+FAN-C supports several normalization methods. Iterative Correction (ICE) is the default.
+- **ICE**: `fanc hic -n <input.hic> <output.hic>`
+- **VC/SQRT_VC**: Use `--norm-method vc` or `--norm-method sqrt_vc`.
+- **Juicer compatibility**: Use the `@` notation to specify Juicer-specific normalization (e.g., `matrix.hic@KR`).
 
-## Expert Tips and Best Practices
-*   **Resolution Selection**: Always start with a coarse resolution (e.g., 1mb or 500kb) to verify data quality before proceeding to high-resolution (10kb or 5kb) analysis, which is computationally expensive.
-*   **Memory Management**: For large genomes or high-resolution matrices, ensure you have sufficient swap space or use the `fanc` split-processing capabilities if available in your environment.
-*   **Scaling in Comparisons**: When using `fanc compare`, ensure both input matrices are scaled to the same total number of reads or normalized using a consistent method to avoid artifacts in the fold-change calculation.
-*   **Insulation Window**: When calling TADs, the choice of the insulation window size significantly impacts the number of boundaries called. It is often useful to run multiple window sizes to find the one that best matches the expected domain scale for your cell type.
+### Feature Calling
+- **TADs (Insulation Score)**: Use `fanc insulation` to calculate scores and call boundaries.
+  ```bash
+  fanc insulation <input.hic> <output.boundaries.bed> -w <window_sizes>
+  ```
+- **Compartments (PCA)**: Use `fanc pca` to identify A/B compartments.
+  ```bash
+  fanc pca <input.hic> <output.ab.bed>
+  ```
+- **Expected Values**: Calculate distance-decay curves.
+  ```bash
+  fanc expected <input.hic> <output.expected>
+  ```
+
+### Visualization
+The `fancplot` (or `fanc plot`) command is used to create multi-panel genomic plots.
+- **Basic Matrix Plot**: `fancplot -o plot.pdf chr18:10mb-20mb <input.hic>`
+- **Virtual 4C**: Use `Virtual4CPlot` to visualize interactions from a specific viewpoint.
+- **Aggregate Plots**: Create saddle plots or aggregate peak/TAD analyses via the Python API or CLI extensions.
+
+### Format Conversion
+FAN-C provides dedicated utilities for interoperability:
+- **To FAN-C**: `to-fanc <input_file> <output.hic>`
+- **From Cooler**: `fanc hic <input.cooler> <output.hic>`
+- **To Juicer**: `to-juicer <input.hic> <output.hic.juicer>`
+
+## Expert Tips
+
+- **Memory Management**: When working with large datasets or high resolutions, use the `-t` (threads) parameter in `fanc map` and `fanc auto` to distribute the load.
+- **Sparse Matrices**: For highly sparse data, ensure you use the `--impute` flag during insulation score calculation to avoid NaN results.
+- **Quality Control**: Always check the mapping statistics generated by `fanc map`. You can merge pairs files while preserving filtering stats using `fanc pairs merge`.
+- **Resolution Selection**: If a specific restriction enzyme was not used, provide a bin size (e.g., `50kb`) to the `-r` parameter.
+- **Plotting Text**: To keep PDF outputs editable in vector graphics software, use the configuration option to export text as actual text rather than paths.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| fanc | fanc processing tool for Hi-C data. This configuration focuses on the global email and logging options. |
+| fanc | fanc processing tool for Hi-C data |
+| fanc | fanc processing tool for Hi-C data |
+| fanc | fanc processing tool for Hi-C data |
+| fanc | fanc processing tool for Hi-C data |
+| fanc | fanc processing tool for Hi-C data |
+| fancplot | fancplot plotting tool for fanc |
 
 ## Reference documentation
-- [fanc Overview](./references/anaconda_org_channels_bioconda_packages_fanc_overview.md)
-- [fanc GitHub Repository](./references/github_com_vaquerizaslab_fanc.md)
-- [fanc Issues and Troubleshooting](./references/github_com_vaquerizaslab_fanc_issues.md)
+- [FAN-C README](./references/github_com_vaquerizaslab_fanc_blob_main_README.md)
+- [FAN-C Changelog](./references/github_com_vaquerizaslab_fanc_blob_main_CHANGELOG.md)

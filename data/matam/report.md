@@ -201,3 +201,6 @@ options:
                         Output a comparaison table (taxonomy vs samples)
 ```
 
+
+## Metadata
+- **Skill**: generated

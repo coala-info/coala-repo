@@ -1,6 +1,6 @@
 ---
 name: paplot
-description: Paplot transforms genomic analysis text data into interactive HTML reports for visualizing cancer genomics datasets. Use when user asks to generate QC reports, visualize chromosomal aberrations, create mutation matrices, or display mutational signatures.
+description: "Paplot converts genomic data text files into interactive, browser-based visualization reports. Use when user asks to generate mutation reports, visualize structural variants, create quality control charts, or analyze mutational signatures."
 homepage: https://github.com/Genomon-Project/paplot.git
 ---
 
@@ -8,42 +8,55 @@ homepage: https://github.com/Genomon-Project/paplot.git
 # paplot
 
 ## Overview
-The `paplot` tool transforms raw genomic analysis text data into interactive HTML reports. It is particularly effective for visualizing complex cancer genomics datasets, allowing researchers to explore mutations and structural variations through a web browser. Use this skill to construct the correct CLI commands for different report types and to understand the required input formats and output structures.
 
-## Core Command Patterns
+Paplot (Post Analysis PLOT) is a specialized visualization tool for genomic data that converts static text files into interactive, browser-based graphs. Use this skill to automate the creation of comprehensive reports for sequencing projects. It is particularly effective for identifying trends in sample quality, mapping structural variants across chromosomes, and analyzing mutational profiles across large cohorts.
 
-The basic syntax for all `paplot` report generation is:
-`paplot <subcommand> <input> <output_dir> <project_name> [options]`
+## Command Line Usage
 
-### Report Types and Subcommands
+The basic syntax for paplot follows a standard pattern:
+`paplot <subcommand> <input_path> <output_dir> <project_name> [options]`
 
-- **QC Report (`qc`)**: Visualizes sequencing quality metrics.
-  - *Input*: CSV file containing QC metrics.
-  - *Example*: `paplot qc data.csv ./results my_project`
+#
 
-- **Chromosomal Aberration (`ca`)**: Displays structural variations and rearrangements.
-  - *Input*: CSV file with chromosomal break points.
-  - *Example*: `paplot ca ca_data.csv ./results my_project`
+## Configuration and Customization
 
-- **Mutation Matrix (`mutation`)**: Creates a grid view of mutations across samples and genes.
-  - *Input*: CSV file of mutation calls.
-  - *Example*: `paplot mutation mut_data.csv ./results my_project`
+Paplot relies on a configuration file (`paplot.cfg`) to map input columns to plot elements and customize visual styles.
 
-- **Mutational Signature (`signature`)**: Visualizes mutational processes.
-  - *Input*: JSON files (supports wildcards for multiple files).
-  - *Example*: `paplot signature "path/to/data/*.json" ./results my_project`
+### Key Configuration Sections
 
-- **pmsignature (`pmsignature`)**: Specifically for reports generated via the `pmsignature` R/Python package.
-  - *Input*: JSON files.
-  - *Example*: `paplot pmsignature "pmsig_data/*.json" ./results my_project`
+- **[style]**: Define global paths and remarks.
+- **[result_format_x]**: Map CSV column headers to paplot variables (e.g., `col_gene = Gene_Symbol`).
+- **[qc_chart_x]**: Define specific stacks, colors, and titles for QC graphs.
+- **[mutation]**: Set gene limits, group colors, and tooltip formats.
 
-## Expert Tips & Best Practices
+### Customizing Tooltips
 
-- **Wildcard Handling**: When passing multiple JSON files to `signature` or `pmsignature` commands, always wrap the input path in quotes (e.g., `"data/*.json"`) to ensure the shell passes the pattern correctly to the tool.
-- **Configuration Customization**: Use the `--config_file` flag to point to a custom `paplot.cfg`. This is essential for changing colors, thresholds, or specific plot behaviors without modifying the source code.
-- **Report Metadata**: Enhance the generated reports by using the `--title`, `--overview`, and `--remarks` flags. This information is embedded directly into the HTML header and index page, which is critical for long-term project tracking.
-- **Output Navigation**: `paplot` creates a directory structure. To view the results, always look for the `index.html` file in the root of the specified `<output_dir>`.
-- **Environment**: Ensure Python 2.7+ is available. While the tool generates HTML, the generation process itself requires a Python environment where `paplot` is installed via conda or source.
+Use the `tooltip_format` options in the config file to display specific metadata when hovering over plot elements.
+- Example: `tooltip_format = [{chr1}] {break1:,}; [{chr2}] {break2:,} {type}`
+- Supported placeholders include `{id}`, `{gene}`, `{group}`, and coordinate values like `{start}` or `{break1}`.
+
+## Expert Tips
+
+- **Custom Configs**: Always use the `-c` or `--config_file` flag to point to a project-specific configuration if your CSV headers do not match the defaults.
+- **Project Organization**: Use a consistent `project_name` across different subcommands to ensure all reports are indexed together in the output directory.
+- **Wildcard Inputs**: When processing signatures or pmsignatures, wrap the input path in quotes if using wildcards (e.g., `"data/*.json"`) to ensure the shell passes the pattern correctly to paplot.
+- **Browser Compatibility**: Reports are optimized for modern browsers (Firefox, Chrome). If a report fails to render, check the console for path errors related to the generated Javascript files.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| ca | paplot ca tool for generating reports |
+| index | Generate index for paplot output |
+| mutation | Generate mutation reports using paplot |
+| pmsignature | paplot pmsignature tool for generating reports |
+| qc | Quality control reporting tool for paplot |
+| signature | paplot signature tool for generating mutational signature reports |
 
 ## Reference documentation
-- [GitHub - Genomon-Project/paplot](./references/github_com_Genomon-Project_paplot.md)
+
+- [Main README and Usage Guide](./references/github_com_Genomon-Project_paplot_blob_master_README.md)
+- [CLI Argument Specifications](./references/github_com_Genomon-Project_paplot_blob_master_paplot.md)
+- [Configuration File Template and Parameters](./references/github_com_Genomon-Project_paplot_blob_master_paplot.cfg.md)

@@ -1,6 +1,6 @@
 ---
 name: intarna
-description: IntaRNA predicts the interaction between two RNA molecules by calculating the energy balance between intermolecular base pairing and the cost of site accessibility. Use when user asks to predict sRNA-target interactions, calculate RNA hybridization energy with accessibility constraints, or identify seed-based binding sites between RNA sequences.
+description: IntaRNA predicts the hybridization and interaction sites between two RNA molecules by accounting for sequence complementarity and structural accessibility. Use when user asks to predict RNA-RNA interactions, identify sRNA targets, calculate energy of disclosure, or find suboptimal binding sites.
 homepage: https://github.com/BackofenLab/IntaRNA
 ---
 
@@ -8,52 +8,64 @@ homepage: https://github.com/BackofenLab/IntaRNA
 # intarna
 
 ## Overview
+IntaRNA (Interaction of RNA) is a specialized tool for predicting how two RNA molecules will hybridize. It stands out by calculating the "energy of disclosure" (the energy needed to open local structures in both RNAs) and enforcing a "seed" region to ensure biological relevance. It offers several specialized execution modes (personalities) to emulate other tools or optimize for specific tasks like sRNA target prediction.
 
-IntaRNA is a specialized bioinformatics tool designed to predict the interaction between two RNA molecules, such as a small regulatory RNA (sRNA) and its target mRNA. It distinguishes itself from basic hybridization tools by calculating the energy balance between the gain of intermolecular base pairing and the energy "cost" required to make the interaction sites accessible (unpaired). This approach, combined with user-definable seed requirements, provides high accuracy for identifying functional regulatory sites in bacterial genomes.
+## Common CLI Patterns
 
-## CLI Usage and Personalities
-
-IntaRNA provides several "personalities"—specialized binaries or execution modes optimized for specific tasks.
-
-### Common Binaries
-- `IntaRNA`: The standard, fast heuristic prediction tool.
-- `IntaRNAsTar`: Optimized specifically for sRNA-target prediction.
-- `IntaRNAexact`: Performs exact predictions similar to `RNAup`.
-- `IntaRNAhelix`: Composes interactions from stable intermolecular helices.
-- `IntaRNAduplex`: Focuses on hybrid-only optimization, similar to `RNAduplex`.
-- `IntaRNAseed`: Identifies and reports only the seed interactions.
-- `IntaRNAens`: Computes partition functions and ensemble-based predictions.
-
-### Basic Command Pattern
+### Basic Interaction Prediction
+To predict the interaction between a target (e.g., mRNA) and a query (e.g., sRNA) using default heuristic settings:
 ```bash
-# Basic interaction prediction between a query and a target
-IntaRNA --query <query_sequence.fa> --target <target_sequence.fa>
-
-# Direct sequence input via command line
-IntaRNA -q "GGCUUAU..." -t "AAUUCGG..."
+IntaRNA -t target.fasta -q query.fasta
 ```
 
-## Expert Tips and Best Practices
+### Using Specialized Personalities
+IntaRNA provides several "personalities" that adjust internal parameters for specific use cases:
+- **IntaRNAsTar**: Optimized specifically for bacterial sRNA-target prediction.
+- **IntaRNAhelix**: Focuses on stable inter-molecular helices.
+- **IntaRNAexact**: Performs exact predictions similar to `RNAup`.
+- **IntaRNAduplex**: Performs hybrid-only optimization similar to `RNAduplex`.
+- **IntaRNAens**: Used for ensemble-based prediction and partition function computation.
 
-### 1. Managing Accessibility
-Accessibility is the probability that a region remains unpaired and available for interaction.
-- **SHAPE Data**: Use `--shapeQuery` and `--shapeTarget` to incorporate experimental probing data, which significantly improves prediction accuracy by grounding accessibility in real-world measurements.
-- **Window-based Prediction**: For long target sequences (e.g., whole mRNAs), use window-based accessibility computation to limit memory consumption.
+Example using the sRNA-target optimized mode:
+```bash
+IntaRNAsTar -t target.fasta -q query.fasta
+```
 
-### 2. Seed Constraints
-Seeds are short, highly complementary regions that initiate the interaction.
-- **Define Seed**: Use `--seedBP` to set the number of base pairs required in the seed (default is often 7).
-- **Explicit Seeds**: If you have experimental evidence of a specific binding site, provide it via `--seedQueryPos` and `--seedTargetPos` to force the prediction to center on that region.
+### Managing Accessibility Data
+Calculating accessibility (unpaired probabilities) can be computationally expensive. You can precompute and reuse this data:
+- **Save accessibility**: `IntaRNA -t target.fasta -q query.fasta --accFromFile false --outFiles acc.txt` (Note: specific flag usage may vary by version; check `--help` for exact output stream flags).
+- **Load accessibility**: Use `--accFromFile` to read precomputed unpaired probabilities from a file to speed up repeated searches.
 
-### 3. Output Optimization
-- **CSV Output**: For large-scale genomic screens, use `--outMode C` to generate comma-separated values, which are easier to parse with Python or R scripts.
-- **Suboptimal Interactions**: Use `--outNumber <N>` to report more than just the Minimum Free Energy (MFE) interaction. This is useful for RNAs that might have multiple binding modes.
-- **Visualization**: Use the auxiliary R or Python scripts provided in the `perl/`, `python/`, and `R/` directories of the source distribution to visualize energy profiles and interaction spots.
+### Handling Large Sequences
+For long sequences where partition function overflows might occur, use sequence-specific scaling:
+```bash
+IntaRNA -t target.fasta -q query.fasta --tPfScale 1.05 --qPfScale 1.05
+```
 
-### 4. Performance Tuning
-- **Multi-threading**: Use `--threads <N>` to parallelize the computation across multiple CPU cores.
-- **Parameter Files**: For complex runs with many constraints, load arguments from a file using `--parameterFile <file.txt>` to keep the command line clean and reproducible.
+### Constraining the Interaction
+- **Seed Constraints**: Define a specific seed interaction to force the prediction to include a known binding nucleus.
+- **Suboptimal Interactions**: To see more than just the Minimum Free Energy (MFE) interaction, use the `--subopts` flag to report multiple potential binding sites.
+
+## Expert Tips
+- **Parallelization**: IntaRNA supports OpenMP. Ensure your environment has `OMP_NUM_THREADS` set correctly to utilize multiple cores during genome-wide searches.
+- **Window-based Prediction**: For very long target sequences (like full genomes), use window-based prediction modes to limit memory consumption.
+- **SHAPE Integration**: If experimental SHAPE reactivity data is available, it can be incorporated to improve the accuracy of the accessibility (ED) calculations.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| intarna_IntaRNA | IntaRNA predicts RNA-RNA interactions. |
+| intarna_IntaRNAduplex | IntaRNA predicts RNA-RNA interactions. |
+| intarna_IntaRNAens | IntaRNA predicts RNA-RNA interactions. |
+| intarna_IntaRNAexact | IntaRNA predicts RNA-RNA interactions. |
+| intarna_IntaRNAhelix | IntaRNA predicts RNA-RNA interactions. |
+| intarna_IntaRNAsTar | IntaRNA predicts RNA-RNA interactions. |
+| intarna_IntaRNAseed | IntaRNA predicts RNA-RNA interactions. |
 
 ## Reference documentation
-- [GitHub - BackofenLab/IntaRNA](./references/github_com_BackofenLab_IntaRNA.md)
-- [intarna - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_intarna_overview.md)
+- [IntaRNA Main Documentation](./references/github_com_BackofenLab_IntaRNA.md)
+- [IntaRNA README and Overview](./references/github_com_BackofenLab_IntaRNA_blob_master_README.md)
+- [IntaRNA ChangeLog (Flag Updates)](./references/github_com_BackofenLab_IntaRNA_blob_master_ChangeLog.md)

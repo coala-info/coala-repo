@@ -1,6 +1,6 @@
 ---
 name: ete3
-description: ETE3 is a toolkit for the manipulation, analysis, and visualization of phylogenetic trees and hierarchical data. Use when user asks to load or prune trees, visualize alignments with tree structures, query NCBI taxonomy, or perform phylogenomic analyses like calculating Robinson-Foulds distances.
+description: The ETE Toolkit is a Python framework and command-line suite for the analysis, manipulation, and visualization of phylogenetic trees. Use when user asks to visualize trees, prune taxa, root trees, annotate nodes with NCBI taxonomy, or perform evolutionary analysis.
 homepage: http://etetoolkit.org/
 ---
 
@@ -8,35 +8,89 @@ homepage: http://etetoolkit.org/
 # ete3
 
 ## Overview
-The ETE (Evolutionary Tree Explorer) Toolkit provides a comprehensive environment for handling hierarchical tree data. It is particularly useful for bioinformaticians working with phylogenomic data who need to automate tree annotation, prune specific clades, or visualize alignments alongside phylogenetic trees. This skill focuses on leveraging the ETE3 Python API and its specialized tools for evolutionary analysis.
+The ETE (Environment for Tree Exploration) Toolkit is a specialized Python framework and CLI suite designed for phylogenomics. It excels at handling hierarchical data structures, particularly biological trees. You should use this skill to automate repetitive tree-handling tasks, such as pruning specific taxa, rooting trees, or generating customized visual reports that combine phylogenetic trees with multiple sequence alignments (MSA).
 
-## Core Functionality
+## Core CLI Operations
+The `ete3` command-line interface provides several sub-tools for common workflows:
 
-### Tree Loading and Manipulation
-- **Loading**: Use `Tree("newick_string")` or `Tree("file.nwk")`. ETE3 supports multiple Newick formats (0-9) depending on whether internal node names or support values are present.
-- **Traversal**: Use `tree.traverse()` for iterative processing or `tree.get_children()`, `tree.get_leaves()`, and `tree.get_common_ancestor()` for specific node retrieval.
-- **Pruning**: Use `tree.prune(["leaf_a", "leaf_b"])` to reduce a tree to a specific subset of taxa.
+### Visualization and Annotation
+*   **Quick View**: Use `ete3 view -t tree.nw` to launch the interactive GUI.
+*   **Image Rendering**: Generate publication-ready figures:
+    ```bash
+    ete3 view -t tree.nw --out my_tree.pdf --width 200
+    ```
+*   **Taxonomy Annotation**: Automatically link nodes to NCBI TaxIDs:
+    ```bash
+    ete3 annotate -t tree.nw --ncbi
+    ```
 
-### Visualization Best Practices
-- **TreeStyle**: Always define a `TreeStyle()` object to control global parameters like `show_leaf_names`, `show_branch_support`, or `rotation`.
-- **NodeStyle**: Customize individual nodes (colors, shapes, sizes) by creating `NodeStyle()` objects and applying them to `node.set_style()`.
-- **Layout Functions**: Use a layout function to dynamically add faces (text, images, charts) to nodes during the rendering process.
-- **Rendering**: Use `tree.render("output.png", tree_style=ts)` for static images. For interactive exploration in Jupyter, simply calling the tree object or using `tree.explore()` is preferred.
+### Tree Manipulation (`ete3 mod`)
+*   **Pruning**: Keep only a specific subset of leaf names:
+    ```bash
+    ete3 mod -t tree.nw --prune leaf_A leaf_B leaf_C
+    ```
+*   **Rooting**: Root the tree by a specific outgroup or midpoint:
+    ```bash
+    ete3 mod -t tree.nw --root leaf_X
+    ```
 
-### Taxonomic Integration
-- **NCBI Taxonomy**: Use the `NCBITaxa` class to query the NCBI database.
-- **Annotation**: Automatically annotate trees with scientific names or lineage information using `ncbi.annotate_tree(tree, taxid_attr="name")`.
-- **Conversion**: Convert lists of TaxIDs into a phylogenetic tree structure using `ncbi.get_topology([taxid1, taxid2])`.
+### Comparative Genomics
+*   **Tree Comparison**: Calculate Robinson-Foulds distances between a reference and a test tree:
+    ```bash
+    ete3 compare -r reference.nw -t test.nw
+    ```
+*   **Evolutionary Analysis (`ete3 evol`)**: Run CodeML/PAML models to test for site or branch-specific selection.
 
-### Phylogenomic Tools
-- **Tree Comparison**: Use `ete3 compare` via CLI or the `robinson_foulds` method in the API to calculate distances between topologies.
-- **Evolutionary Analysis**: The `ete3 evol` tool allows for running CodeML/PAML workflows directly on trees to test for positive selection.
+## Python API Best Practices
+When using the Python library (`from ete3 import Tree`), follow these patterns for efficiency:
+
+### Tree Loading Formats
+ETE uses a `format` argument (0-100) to handle various Newick flavors.
+*   **Format 0 (Default)**: Flexible, supports distances and support values.
+*   **Format 1**: Internal node names.
+*   **Format 8**: All names (internal and leaves), no distances.
+*   **Format 9**: Leaf names only.
+
+### Efficient Traversal
+Avoid converting to lists if only iterating. Use the built-in generators:
+```python
+from ete3 import Tree
+t = Tree("((A,B),C);")
+
+# Find specific nodes
+target = t.search_nodes(name="A")[0]
+
+# Fast traversal
+for node in t.traverse("postorder"):
+    if node.is_leaf():
+        print(node.name)
+```
+
+### Programmatic Drawing
+Customizing tree images requires `TreeStyle`, `NodeStyle`, and `Face` objects:
+1.  **TreeStyle**: Global settings (circular vs. rectangular, scale).
+2.  **NodeStyle**: Individual node aesthetics (colors, sizes).
+3.  **Faces**: Adding external data (text, heatmaps, charts) to nodes.
 
 ## Expert Tips
-- **Memory Management**: When dealing with massive trees (100k+ leaves), avoid GUI-based rendering and use the `tree.traverse()` generator to minimize memory overhead.
-- **Format Detection**: If a Newick file fails to load, try specifying `format=1` (flexible) or `format=5` (internal nodes as support values).
-- **Detached Nodes**: When pruning or moving nodes, remember that `node.detach()` removes the node from its current parent but keeps the subtree intact in memory.
+*   **NCBI Database**: The first time you use NCBI features, ETE will download a local sqlite copy of the taxonomy database. Use `ete3 ncbiquery --update` to refresh it.
+*   **Large Trees**: For trees with >10,000 leaves, use `tree.resolve_polytomy()` to handle multifurcations before certain analytical steps.
+*   **Detaching vs. Deleting**: Use `node.detach()` to remove a subtree while keeping it in memory; use `node.delete()` to remove a node and connect its children to its parent (collapsing the node).
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| annotate | Annotates a tree with information from external files. |
+| ete3_split | Splits a tree file into several smaller tree files, one for each tree in the original file. |
+| expand | Expand a tree with new sequences |
+| ncbiquery | Query NCBI databases for sequences and retrieve them in Newick format. |
 
 ## Reference documentation
-- [ETE Toolkit Overview](./references/etetoolkit_org_index.md)
-- [Bioconda ETE3 Package](./references/anaconda_org_channels_bioconda_packages_ete3_overview.md)
+- [ETE's Reference Guide](./references/etetoolkit_org_docs_latest_reference_index.html.md)
+- [The ETE tutorial](./references/etetoolkit_org_docs_latest_tutorial_index.html.md)
+- [Working With Tree Data Structures](./references/etetoolkit_org_docs_latest_tutorial_tutorial_trees.html.md)
+- [The Programmable Tree Drawing Engine](./references/etetoolkit_org_docs_latest_tutorial_tutorial_drawing.html.md)
+- [Phylogenomic Tools Index](./references/etetoolkit_org_documentation_tools.md)

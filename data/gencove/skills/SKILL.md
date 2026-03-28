@@ -1,6 +1,6 @@
 ---
 name: gencove
-description: Gencove manages high-throughput genomic data workflows by automating file uploads, tracking sample processing, and retrieving analysis deliverables. Use when user asks to upload sequencing reads, track sample status, list projects, or download analysis results.
+description: The Gencove tool manages low-pass sequencing analysis workflows and genomic data on the Gencove Base platform. Use when user asks to upload sequencing files, manage projects and pipelines, list samples, or download genomic deliverables and metadata.
 homepage: https://docs.gencove.com
 ---
 
@@ -8,70 +8,62 @@ homepage: https://docs.gencove.com
 # gencove
 
 ## Overview
+The Gencove skill enables seamless integration with Gencove Base, a platform designed for low-pass sequencing analysis. It provides a structured workflow for genomic data management, allowing users to move from raw sequencing files to processed genotypes and reports. This skill is particularly useful for automating bioinformatics pipelines, managing large-scale genomic projects, and retrieving standardized deliverables.
 
-The Gencove skill provides a streamlined interface for managing high-throughput genomic data workflows. It enables the automation of file uploads to Gencove's low-pass sequencing pipeline, tracking of sample processing status, and retrieval of analysis deliverables. This skill is essential for bioinformaticians and researchers who need to integrate Gencove's cost-effective sequencing services into their local or cloud-based data pipelines.
-
-## Installation and Setup
-
-The Gencove CLI requires Python 3.8+.
-
-### Installation
+## Quick Start
+Install the CLI and perform a basic upload:
 ```bash
-# Standard installation
 pip install gencove
-
-# Alternative using uv (no environment setup required)
-uvx gencove upload <local-directory-path>
-
-# Bioconda installation
-conda install bioconda::gencove
+# Upload a directory of sequencing files
+gencove upload <local-directory-path>
 ```
-
-### Authentication
-Configure credentials via environment variables to avoid interactive prompts:
-
+Alternatively, use `uvx` for a zero-install execution:
 ```bash
-# Option A: API Key (Recommended)
-export GENCOVE_API_KEY='your-api-key'
-
-# Option B: Email and Password
-export GENCOVE_EMAIL='your-email'
-export GENCOVE_PASSWORD='your-password'
+uvx gencove upload <local-directory-path>
 ```
-*Note: Do not use both methods simultaneously. API keys bypass MFA requirements.*
 
-## Common CLI Patterns
+## Authentication
+Configure credentials using environment variables to avoid interactive prompts:
+- `GENCOVE_API_KEY`: Recommended for automated environments and bypassing MFA.
+- `GENCOVE_EMAIL` and `GENCOVE_PASSWORD`: Use for standard login (will trigger MFA if enabled).
 
-### Regional Host Configuration
-Gencove operates in multiple geographical regions. If your web dashboard URL is `web.eu1.gencove.com`, you must specify the corresponding API host:
+*Note: Do not set both API Key and Email/Password simultaneously.*
 
+## Core CLI Workflows
+
+### Project Management
+Data is organized into projects. Use these commands to navigate your environment:
+- **List Projects**: `gencove projects list`
+- **Create Project**: `gencove projects create <project-name> <pipeline-uuid>`
+- **List Pipelines**: `gencove pipelines list` (to find available analysis configurations)
+
+### Sample Operations
+Samples are the primary unit of analysis within projects:
+- **List Samples**: `gencove samples list <project-id>`
+- **Download Results**: `gencove samples download-deliverables <sample-id> --destination <path>`
+- **Metadata**: `gencove samples get-metadata <sample-id>`
+
+### Regional Configuration
+If your data resides in a specific geographical region (e.g., European Union), you must specify the host:
 ```bash
 gencove <command> --host https://api.eu1.gencove.com
 ```
 
-### Data Uploads
-Upload a directory of sequencing reads (FASTQs or CRAMs) to a specific project:
+## Expert Tips & Best Practices
+- **Virtual Environments**: Always install the CLI in a dedicated virtual environment (`venv`) to avoid dependency conflicts with other bioinformatics tools.
+- **API Keys**: Prefer API keys over passwords for production scripts to ensure stability and security.
+- **Batch Downloads**: For large projects, use the `samples list` command to iterate through IDs and automate the `download-deliverables` process.
+- **Host Consistency**: If the Web UI URL is `web.eu1.gencove.com`, ensure your CLI host is set to `api.eu1.gencove.com`.
 
-```bash
-# Basic upload
-gencove upload /path/to/reads --project-id <uuid>
 
-# Upload with specific host and API key
-gencove upload /path/to/reads --host https://api.eu1.gencove.com --api-key $GENCOVE_API_KEY
-```
 
-### Project and Sample Management
-*   **List Projects**: View available projects and their IDs.
-*   **List Samples**: Check the status of samples within a project.
-*   **Download Results**: Retrieve VCFs, reports, and other deliverables once analysis is complete.
+## Subcommands
 
-## Expert Tips
-
-*   **Mac OS Installation**: Install using `pip install --user gencove` and ensure `~/bin` is in your `$PATH` to avoid system Python conflicts.
-*   **Automation**: Use API keys for headless environments (CI/CD, HPC clusters) to ensure scripts do not hang on MFA prompts.
-*   **Environment Check**: Always verify your `--host` parameter matches the region where your project was created, as data is not shared across regional silos.
+| Command | Description |
+|---------|-------------|
+| autoimport_list | List BaseSpace autoimports. |
+| autoimport_list | List BaseSpace autoimports |
 
 ## Reference documentation
-
-- [Gencove Getting Started](./references/docs_gencove_com_base_getting-started.md)
-- [Gencove Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_gencove_overview.md)
+- [Gencove Base Getting Started](./references/docs_gencove_com_base_getting-started.md)
+- [Gencove CLI GitHub README](./references/github_com_gncv_gencove-cli_blob_master_README.md)

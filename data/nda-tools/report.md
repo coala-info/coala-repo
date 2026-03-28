@@ -256,3 +256,6 @@ options:
   --log-dir LOG_DIR     Customize the file directory of logs. If this value is not provided or the provided directory does not exist, logs will be saved to NDA/nda-tools/downloadcmd/logs inside your root folder.
 ```
 
+
+## Metadata
+- **Skill**: generated

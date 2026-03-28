@@ -108,3 +108,6 @@ No inputs — do not generate CWL.
 [31;1m[CRITICAL:02/24/2026 04:19:58 AM] It seems that /usr/local/lib/python3.14/site-packages/abritamr/db/update_vars.json does not exist. Please check your installation and try again.[0m
 ```
 
+
+## Metadata
+- **Skill**: generated

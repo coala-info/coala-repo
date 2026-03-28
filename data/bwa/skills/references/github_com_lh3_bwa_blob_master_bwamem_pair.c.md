@@ -83,6 +83,7 @@ Appearance settings
     - [Security Lab](https://securitylab.github.com)
     - [Maintainer Community](https://maintainers.github.com)
     - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
     - [Archive Program](https://archiveprogram.github.com)
   + REPOSITORIES
     - [Topics](https://github.com/topics)
@@ -148,7 +149,7 @@ Public
 
 * [Notifications](/login?return_to=%2Flh3%2Fbwa) You must be signed in to change notification settings
 * [Fork
-  575](/login?return_to=%2Flh3%2Fbwa)
+  576](/login?return_to=%2Flh3%2Fbwa)
 * [Star
    1.7k](/login?return_to=%2Flh3%2Fbwa)
 
@@ -1320,4 +1321,4 @@ int mem\_matesw(const mem\_opt\_t \*opt, const bntseq\_t \*bns, const uint8\_t \
 
 {
 
-extern int mem\_sort\_dedup\_patch(const mem\_opt\_t \*opt, const bntseq\_t \*bns, const uint8\_t \*pac, uint8\_t \*query, int n,
+extern int mem\_sort\_dedup\_patch(const mem\_opt\_t \*opt, const bntseq\_t \*bns,

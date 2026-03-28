@@ -1,6 +1,6 @@
 ---
 name: pypgx
-description: PyPGx is a bioinformatics platform for pharmacogenomics analysis that translates genomic data into star-allele nomenclature and predicts clinical phenotypes. Use when user asks to call star alleles, detect structural variations in pharmacogenes, or predict metabolic phenotypes from genomic data.
+description: PyPGx automates the translation of genomic variants into pharmacogenomic star alleles and functional phenotypes while detecting structural variations. Use when user asks to call star alleles, predict metabolizer phenotypes, detect gene deletions or duplications, and process NGS or SNP array data for pharmacogenomics.
 homepage: https://github.com/sbslee/pypgx
 ---
 
@@ -9,50 +9,91 @@ homepage: https://github.com/sbslee/pypgx
 
 ## Overview
 
-PyPGx is a specialized bioinformatics platform designed to provide a unified environment for pharmacogenomics analysis. It translates genomic data into standardized star-allele nomenclature (e.g., *4/*5) and predicts clinical phenotypes (e.g., Poor Metabolizer). The tool is particularly powerful for its ability to detect complex structural variations—such as gene deletions, duplications, and hybrids—using a machine learning-based approach (SVM). It supports 88 pharmacogenes and is compatible with both GRCh37 (hg19) and GRCh38 (hg38) reference builds.
+PyPGx is a comprehensive Python-based platform designed to automate the translation of genomic variants into pharmacogenomic (PGx) nomenclature. It specializes in calling "star alleles" (e.g., *1, *4, *5) and predicting functional phenotypes (e.g., "Extensive Metabolizer" or "Poor Metabolizer"). 
 
-## Essential Setup and Resource Management
+The tool is unique in its ability to handle structural variations (SVs)—such as gene deletions, duplications, and hybrids—using machine learning classifiers. It supports both GRCh37 (hg19) and GRCh38 (hg38) assemblies and provides standardized pipelines for different data types, making it an essential tool for clinical PGx implementation and large-scale cohort studies.
 
-The most critical aspect of using pypgx is the requirement of a separate resource bundle containing reference haplotype panels and structural variant classifiers.
+## Core Workflows and CLI Patterns
 
-### 1. Installation
-Conda is the recommended installation method because it automatically handles the OpenJDK dependency required for the Beagle phasing software.
-
-```bash
-conda install -c bioconda pypgx
-```
-
-### 2. Mandatory Resource Bundle
-The core pypgx package is small (<1 MB) because the large genomic reference files are hosted in a separate repository. You must clone the bundle version that matches your pypgx version.
+### 1. NGS Data Analysis
+For Next-Generation Sequencing data (WGS or targeted panels), use the `run-ngs-pipeline`. This command automates SNV/Indel calling, statistical phasing, and SV detection.
 
 ```bash
-# Replace x.x.x with your pypgx version (e.g., 0.26.0)
-cd ~
-git clone --branch x.x.x --depth 1 https://github.com/sbslee/pypgx-bundle
+pypgx run-ngs-pipeline \
+    --gene CYP2D6 \
+    --assembly GRCh38 \
+    --vcf input.vcf.gz \
+    --bam input.bam \
+    --out-dir output_folder
 ```
 
-### 3. Configuring the Bundle Path
-By default, pypgx looks for the bundle in your home directory. If you store it elsewhere, you must set the `PYPGX_BUNDLE` environment variable.
+### 2. SNP Array Analysis
+For genotype data from SNP arrays, use the `run-chip-pipeline`. Note that SV detection is generally not supported for array data unless specific copy number probes are available.
 
 ```bash
-export PYPGX_BUNDLE=/path/to/pypgx-bundle
+pypgx run-chip-pipeline \
+    --gene SLCO1B1 \
+    --assembly GRCh37 \
+    --vcf array_data.vcf.gz \
+    --out-dir output_folder
 ```
+
+### 3. Structural Variation (SV) Detection
+If you need to perform standalone copy number analysis or train custom SV callers:
+* **Compute Copy Number**: `pypgx compute-copy-number`
+* **Train/Test Callers**: `pypgx train-cnv-caller` and `pypgx test-cnv-caller`
+
+### 4. Utility Commands
+* **Compare Results**: Use `pypgx compare-genotypes` to validate calls against a truth set (e.g., GeT-RM samples).
+* **Resource Management**: Use `sdk.utils.get_bundle_path` in Python scripts to manage the essential resource bundle location.
 
 ## Expert Tips and Best Practices
 
-### Structural Variation (SV) Detection
-*   **SVM Classifiers**: pypgx uses a support vector machine (SVM) multiclass classifier for each gene. This is necessary because sequence homology (e.g., between CYP2D6 and CYP2D7) often causes read misalignment.
-*   **Gene Specificity**: SV detection is not universal; it is trained for specific genes. Check the "Genes" documentation to verify if SV detection is supported for your target gene.
+* **Resource Bundle Requirement**: PyPGx requires a separate resource bundle (containing haplotype panels and SV classifiers) to function. Ensure the `pypgx-bundle` directory is correctly placed in the user's home directory or specified via environment variables.
+* **Java Dependency**: Statistical phasing is performed using Beagle. Ensure `openjdk` is installed and available in your environment, as the tool calls a bundled `.jar` file.
+* **G6PD Handling**: For the G6PD gene (located on the X chromosome), PyPGx automatically "diploidizes" haploid male calls to ensure consistency in downstream analysis.
+* **Sample Naming**: When using Beagle for phasing, avoid sample names that overlap with the reference panel (e.g., 1000 Genomes Project IDs) unless you are using version 0.19.0 or later, which handles temporary renaming automatically.
+* **Coordinate Accuracy**: Always verify your assembly version. While PyPGx supports both GRCh37 and GRCh38, mixing coordinates will lead to incorrect allele calls.
+* **Visual Validation**: When running the NGS pipeline, use the allele fraction plots (generated by default) to manually inspect suspicious SV calls or unexpected genotype results.
 
-### Data Compatibility
-*   **NGS Data**: Best for SV detection and star-allele calling.
-*   **SNP Arrays**: Supported for genotype prediction but may have limited SV detection capabilities compared to sequencing.
-*   **Long-read Sequencing**: Supported for phased haplotype resolution.
 
-### Haplotype Phasing
-*   pypgx uses **Beagle** for phasing SNVs and indels.
-*   The software (beagle.jar) is bundled within the pypgx installation, so no separate download is required, but a Java Runtime Environment (JRE) must be present in your path.
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| call-phenotypes | Call phenotypes for target gene. |
+| compute-control-statistics | Compute summary statistics for control gene from BAM files. |
+| compute-target-depth | Compute read depth for target gene from BAM files. |
+| create-consolidated-vcf | Create a consolidated VCF file. |
+| create-input-vcf | Call SNVs/indels from BAM files for all target genes. |
+| filter-samples | Filter Archive file for specified samples. |
+| import-read-depth | Import read depth data for target gene. |
+| import-variants | Import SNV/indel data for target gene. |
+| plot-vcf-allele-fraction | Plot allele fraction profile from VcfFrame[Imported]. |
+| prepare-depth-of-coverage | Prepare a depth of coverage file for all target genes with SV from BAM files. |
+| pypgx call-genotypes | Call genotypes for target gene. |
+| pypgx compare-genotypes | Calculate concordance between two genotype results. |
+| pypgx compute-copy-number | Compute copy number from read depth for target gene. |
+| pypgx create-regions-bed | Create a BED file which contains all regions used by PyPGx. |
+| pypgx estimate-phase-beagle | Estimate haplotype phase of observed variants with the Beagle program. |
+| pypgx plot-bam-copy-number | Plot copy number profile from CovFrame[CopyNumber]. |
+| pypgx plot-bam-read-depth | Plot read depth profile with BAM data. |
+| pypgx plot-cn-af | Plot both copy number profile and allele fraction profile in one figure. |
+| pypgx plot-vcf-read-depth | Plot read depth profile with VCF data. |
+| pypgx predict-alleles | Predict candidate star alleles based on observed variants. |
+| pypgx predict-cnv | Predict CNV from copy number data for target gene. |
+| pypgx print-data | Print the main data of specified archive. |
+| pypgx print-metadata | Print the metadata of specified archive. |
+| pypgx slice-bam | Slice BAM file for all genes used by PyPGx. |
+| pypgx_combine-results | Combine various results for target gene. |
+| run-chip-pipeline | Run genotyping pipeline for chip data. |
+| run-long-read-pipeline | Run genotyping pipeline for long-read sequencing data. |
+| run-ngs-pipeline | Run genotyping pipeline for NGS data. |
+| test-cnv-caller | Test CNV caller for target gene. |
+| train-cnv-caller | Train CNV caller for target gene. |
 
 ## Reference documentation
-- [pypgx GitHub Repository](./references/github_com_sbslee_pypgx.md)
-- [pypgx Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_pypgx_overview.md)
+
+- [PyPGx GitHub README](./references/github_com_sbslee_pypgx_blob_master_README.rst.md)
+- [PyPGx Changelog and Command History](./references/github_com_sbslee_pypgx_blob_master_CHANGELOG.rst.md)

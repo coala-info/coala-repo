@@ -1,6 +1,6 @@
 ---
 name: viloca
-description: VILOCA analyzes next-generation sequencing data from viral populations to call mutations and reconstruct local haplotypes. Use when user asks to analyze viral NGS data, call mutations, reconstruct local haplotypes, estimate variant frequencies, or call insertions.
+description: VILOCA is a bioinformatics tool designed for viral local haplotype reconstruction and mutation calling from sequencing data. Use when user asks to reconstruct viral haplotypes, call low-frequency mutations, or analyze genetic diversity within viral quasispecies.
 homepage: https://github.com/cbg-ethz/VILOCA
 ---
 
@@ -9,64 +9,59 @@ homepage: https://github.com/cbg-ethz/VILOCA
 
 ## Overview
 
-VILOCA (VIral LOcal haplotype reconstruction and mutation CAlling) is a bioinformatics tool designed to analyze next-generation sequencing (NGS) data from viral populations. It excels at processing genetically diverse samples to provide high-resolution mutation calls and local haplotype reconstructions. By taking aligned reads and a reference genome, VILOCA estimates the frequency of different genetic variants and applies error correction models to distinguish true biological variation from sequencing artifacts.
+VILOCA (VIral LOcal haplotype reconstruction and mutation CAlling) is a specialized bioinformatics tool for resolving the genetic diversity within viral quasispecies. Unlike standard variant callers that focus on consensus sequences, VILOCA reconstructs the specific combinations of mutations (haplotypes) present in a sample. It supports both short-read and long-read technologies and offers sophisticated error-handling modes, including the ability to incorporate sequencing quality scores or learn error parameters directly from the data.
 
-## Installation
+## Core Workflows
 
-The recommended way to install VILOCA is via Conda:
+### Standard Analysis (Recommended)
+For most datasets where sequencing quality scores (Phred scores) are reliable, use the `use_quality_scores` mode. This is the most robust approach for distinguishing true low-frequency variants from sequencing artifacts.
 
 ```bash
-conda create --name env_viloca --channel conda-forge --channel bioconda viloca
-conda activate env_viloca
+viloca run -b alignment.bam -f reference.fasta --mode use_quality_scores
 ```
 
-## Core CLI Usage
+### Amplicon Sequencing Data
+If the data was generated using an amplicon-based strategy (e.g., ARTIC protocol for SARS-CoV-2), providing the insert regions is critical for accurate segmentation.
 
-The primary command is `viloca run`. It requires a sorted BAM file and a reference FASTA file.
-
-### Standard Execution
-For most datasets where sequencing quality scores are reliable:
 ```bash
-viloca run -b alignments.bam -f reference.fasta --mode use_quality_scores
+viloca run -f reference.fasta -b reads.bam -z scheme.insert.bed --mode use_quality_scores
 ```
 
-### Amplicon Sequencing
-If the sequencing strategy used amplicons, provide the insert BED file to define local regions:
+### Shotgun Sequencing Data
+When no amplicon scheme is available, VILOCA tiles the genome into uniform regions. Set the window size (`-w`) to approximately the average length of your reads.
+
 ```bash
-viloca run -b reads.bam -f reference.fasta -z scheme.insert.bed --mode use_quality_scores
+viloca run -f reference.fasta -b reads.bam -w 150 --mode use_quality_scores
 ```
 
-### Shotgun Sequencing with Custom Windowing
-When no amplicon scheme is available, VILOCA tiles the genome into uniform regions. The window size should roughly match the read length:
-```bash
-viloca run -b reads.bam -f reference.fasta -w 150 --mode use_quality_scores
-```
+## Parameter Tuning and Best Practices
 
-## Expert Tips and Best Practices
+### Input Requirements
+*   **Primary Alignments Only**: Ensure your BAM file contains only primary alignments. Secondary and supplementary alignments should be filtered out during preprocessing (e.g., using `samtools view -F 2308`) to prevent false haplotype reconstruction.
+*   **Sorted and Indexed**: The input BAM must be coordinate-sorted and indexed.
 
-### Input Preparation
-*   **Primary Alignments Only**: VILOCA requires the input BAM file to contain only primary alignments. Filter your BAM file to remove secondary and supplementary alignments before running the tool to avoid errors or biased results.
-*   **Sorted BAM**: Ensure the BAM file is indexed and sorted by coordinate.
+### Handling Sequencing Errors
+*   **Unreliable Quality Scores**: If you suspect the Phred scores in your BAM are inaccurate or missing, use `--mode learn_error_params` to estimate the error rate from the data itself.
+*   **Frequency Filtering**: Use `--exclude_non_var_pos_threshold` to ignore noise. For example, setting it to `0.01` will treat any position with less than 1% variation as the reference base.
 
-### Mode Selection
-*   **use_quality_scores**: The recommended default. It incorporates the quality scores provided in the BAM file into the model.
-*   **learn_error_params**: Use this if you suspect the sequencing quality scores are untrustworthy or if you are working with a platform where error profiles are not well-captured by standard quality strings.
-*   **shorah**: Invokes the ShoRAH tool logic for haplotype reconstruction.
+### Advanced Calling Options
+*   **Posterior Threshold**: The `-p` parameter (default 0.9) controls the confidence level for calling variants from reconstructed haplotypes. Increase this value for higher precision or decrease it for higher sensitivity.
+*   **Insertions**: By default, VILOCA focuses on SNPs and deletions. To enable insertion calling, add the `--extended_window_mode` flag.
+*   **Window Overlap**: The `--win_min_ext` parameter (default 0.85) defines how much of a read must overlap a window to be included. If you have very short reads relative to your window size, you may need to lower this value.
 
-### Parameter Tuning
-*   **Calling Insertions**: By default, insertion calling is disabled. Use the `--extended_window_mode` flag to enable it.
-*   **Variant Thresholds**: 
-    *   Use `-p` to set the posterior threshold for calling variants from haplotypes (default is 0.9).
-    *   Use `--exclude_non_var_pos_threshold` to ignore positions where the variation frequency is below a specific percentage, treating them as reference bases.
-*   **Overlap Requirements**: The `--win_min_ext` parameter (default 0.85) controls the minimum percentage of a read that must overlap a local region to be included. Reads failing this are excluded or padded with Ns.
+## Output Interpretation
+*   **haplotypes/**: A directory containing FASTA files for each local region. These represent the reconstructed viral variants.
+*   **cooccurring_mutations.csv**: A key file for linkage analysis, showing which mutations appear together on the same physical reads/haplotypes.
+*   **coverage.txt**: Provides the read depth for each analyzed window, useful for identifying regions with insufficient data for confident reconstruction.
 
-## Output Files
 
-VILOCA generates several key output files in the working directory:
-*   **haplotypes/**: A directory containing reconstructed local haplotypes as separate FASTA files for each genomic region.
-*   **coverage.txt**: A summary of each local region, including start/end positions and the number of reads processed.
-*   **cooccurring_mutations.csv**: A detailed mapping of mutations found within specific haplotypes. Note that the posterior threshold (`-p`) is typically not applied to this specific file.
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| run | Run VILOCA |
+| snv | Call SNVs from BAM files |
 
 ## Reference documentation
-- [VILOCA GitHub Repository](./references/github_com_cbg-ethz_VILOCA.md)
-- [VILOCA Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_viloca_overview.md)
+- [VILOCA README](./references/github_com_cbg-ethz_VILOCA_blob_master_README.md)

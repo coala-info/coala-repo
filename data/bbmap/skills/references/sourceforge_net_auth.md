@@ -103,6 +103,4 @@ Your Opt-Out Rights
 
 ![Retool Logo](https://a.fsdn.com/con/img/retool.png)
 
-![Retool Logo](https://a.fsdn.com/con/img/retool.png)
-
 ![](https://analytics.slashdotmedia.com/index.php?idsite=39)

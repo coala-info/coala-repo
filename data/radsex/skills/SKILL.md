@@ -1,6 +1,6 @@
 ---
 name: radsex
-description: "radsex identifies sex-determination signals and genomic markers associated with binary traits from RAD-Sequencing data. Use when user asks to generate marker depth tables, analyze marker distribution between groups, or identify significant sex-linked markers."
+description: RADSex identifies genomic regions associated with sex determination by analyzing the presence and depth of RAD-seq markers across individuals. Use when user asks to process raw RAD-seq reads into marker depth tables, compute marker distribution between phenotypic groups, map markers to a reference genome, or extract statistically significant sex-biased markers.
 homepage: https://github.com/RomainFeron/RadSex
 ---
 
@@ -8,44 +8,58 @@ homepage: https://github.com/RomainFeron/RadSex
 # radsex
 
 ## Overview
+RADSex is a high-performance computational tool designed to identify genomic regions associated with sex determination. It operates by analyzing the presence and depth of RAD-seq markers across individuals in a population. The tool follows a modular workflow: first, it aggregates raw demultiplexed reads into a unified marker depths table; second, it performs statistical comparisons between defined groups (e.g., males vs. females) to find markers that are significantly biased toward one group. While optimized for sex-determination research, its underlying logic is applicable to any study comparing two distinct phenotypic groups using RAD-seq data.
 
-radsex is a specialized computational tool designed to identify sex-determination signals from RAD-Sequencing data. It functions by analyzing the presence and depth of genomic markers across individuals to differentiate between heterogametic systems (like XX/XY or ZZ/ZW). The tool follows a modular workflow: first generating a comprehensive marker depth table from raw reads, and then performing statistical analyses to find markers significantly associated with a specific group. While optimized for sex-determination, it can be used to compare any two groups for a binary trait.
+## Core Workflow and CLI Patterns
 
-## Core Workflow
+### 1. Generating the Marker Depths Table
+The `process` command is the entry point. it scans demultiplexed FASTQ files and creates a table containing the depth of every marker found in the dataset.
 
-### 1. Data Preparation
-Before using radsex, ensure you have:
-- **Demultiplexed reads**: FastQ files named by individual (e.g., `indiv1.fq.gz`).
-- **Popmap**: A tab-separated file with two columns: `Individual_ID` and `Group` (e.g., M/F or Case/Control).
-
-### 2. Generate Marker Depths (process)
-The first step creates a master table of all markers found in the dataset.
 ```bash
-radsex process --input-dir ./reads --output-file markers_table.tsv --threads 16 --min-depth 1
+radsex process --input-dir ./samples --output-file markers_table.tsv --threads 16 --min-depth 1
 ```
-*   **Expert Tip**: Always use `--min-depth 1` during the `process` stage. This preserves all data in the master table, allowing you to experiment with more stringent depth filters in downstream steps without re-processing the raw reads.
+*   **Best Practice**: Set `--min-depth` to 1 during this initial step. This ensures no data is lost early; you can apply more stringent filters during downstream analysis commands.
+*   **Requirement**: Individual IDs in your population map must match the filenames in the input directory (e.g., `sample_01` for `sample_01.fq.gz`).
 
-### 3. Analyze Marker Distribution (distrib)
-Compute how markers are distributed between the two groups to visualize the sex-determination system.
+### 2. Computing Marker Distribution
+The `distrib` command calculates how markers are distributed between the two groups defined in your population map.
+
 ```bash
-radsex distrib --markers-table markers_table.tsv --output-file distribution.tsv --popmap popmap.tsv --min-depth 5 --groups M,F
+radsex distrib --markers-table markers_table.tsv --output-file distribution.tsv --popmap popmap.tsv --groups M,F --min-depth 5
 ```
-*   **Note**: The `--groups` parameter must match the labels used in your popmap exactly.
+*   **Groups**: Use the `--groups` flag to explicitly define the two categories found in your popmap.
+*   **Filtering**: The `--min-depth` here is functional; markers with depth below this threshold in a specific individual are treated as "absent" for that individual in the distribution count.
 
-### 4. Extract Significant Markers (signif)
-Identify markers that are statistically associated with one sex.
+### 3. Mapping Markers to a Genome
+To identify the genomic location of sex-biased markers, use the `map` command to align them to a reference FASTA.
+
 ```bash
-radsex signif --markers-table markers_table.tsv --output-file sex_linked_markers.tsv --popmap popmap.tsv --min-depth 5 --groups M,F --output-fasta
+radsex map --markers-table markers_table.tsv --output-file mapped_markers.tsv --genome genome.fasta --min-depth 5 --popmap popmap.tsv --groups M,F
 ```
-*   **Expert Tip**: Use the `--output-fasta` flag to generate a FASTA file of the significant markers. This is essential if you plan to align these markers to a reference genome or perform BLAST searches.
+*   **Visualization Tip**: If using the companion R package `sgtr` for visualization, ensure your scaffold names in the FASTA start with `LG`, `CHR`, or `NC` for automatic linkage group inference.
 
-## Best Practices and Tips
+### 4. Extracting Significant Markers
+Use the `signif` command to filter the markers table for sequences that show statistically significant association with a group based on a probability threshold.
 
-- **Memory Management**: The `process` command is the most resource-intensive. Ensure your system has sufficient RAM to hold the marker table structure, especially for large populations or high-coverage data.
-- **Filtering Strategy**: If your results are noisy, increase the `--min-depth` parameter in the `distrib` or `signif` commands (e.g., to 5 or 10) to filter out sequencing errors or low-confidence markers.
-- **Genome Alignment**: If a reference genome is available, use the `map` command (if available in your version) or align the FASTA output from `signif` using BWA or Bowtie2 to identify the genomic location of sex-determining regions.
-- **Visualization**: The output files from `distrib` and `signif` are designed to be compatible with the `sgtr` R package for generating tile plots and Manhattan plots.
+```bash
+radsex signif --markers-table markers_table.tsv --output-file significant_markers.tsv --popmap popmap.tsv --groups M,F --min-depth 5 --max-p 0.05
+```
+
+## Expert Tips and Best Practices
+*   **Memory Management**: The `process` command can be memory-intensive for very large datasets. Ensure your system has sufficient RAM or process samples in batches if necessary.
+*   **Popmap Format**: The population map must be a simple tab-separated file. Column 1: Individual ID; Column 2: Group/Sex.
+*   **Binary Traits**: Although named "radsex", you can use this for any binary comparison (e.g., "Resistant" vs "Susceptible") by simply labeling your popmap groups accordingly.
+*   **Thread Optimization**: Always utilize the `--threads` parameter during the `process` and `map` stages, as these steps are highly parallelizable.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| map | Map markers to a reference genome. This command aligns marker sequences from a table generated by 'radsex process' to a reference genome and computes mapping statistics. |
+| process | Process raw fastq files and generate a table of marker depths. |
 
 ## Reference documentation
-- [RADSex GitHub Repository](./references/github_com_SexGenomicsToolkit_radsex.md)
-- [Bioconda radsex Overview](./references/anaconda_org_channels_bioconda_packages_radsex_overview.md)
+- [RADSex GitHub README](./references/github_com_SexGenomicsToolkit_radsex_blob_master_README.md)
+- [RADSex Introduction and Walkthrough](./references/sexgenomicstoolkit_github_io_html_radsex_introduction.html.md)

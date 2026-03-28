@@ -1,6 +1,6 @@
 ---
 name: sra-tools
-description: The SRA Toolkit provides a suite of utilities for downloading and converting sequence data from the International Nucleotide Sequence Database Collaboration archives. Use when user asks to download SRA accessions, convert SRA files to FASTQ or SAM formats, configure NCBI cloud data access, or validate the integrity of downloaded sequencing runs.
+description: The SRA Toolkit provides a suite of utilities for downloading and converting sequence data from the NCBI Sequence Read Archive into standard bioinformatics formats. Use when user asks to download SRA accessions, convert SRA files to FASTQ or SAM formats, configure cloud data access, or validate the integrity of downloaded sequence data.
 homepage: https://github.com/ncbi/sra-tools
 ---
 
@@ -9,42 +9,74 @@ homepage: https://github.com/ncbi/sra-tools
 
 ## Overview
 
-The SRA Toolkit is the standard suite of utilities for interacting with the International Nucleotide Sequence Database Collaboration (INSDC) Sequence Read Archives. It allows researchers to download compressed sequence data and convert it into usable formats like FASTQ, SAM, or SRA-lite. This skill should be used when an agent needs to perform bioinformatic data retrieval, verify the integrity of downloaded runs, or troubleshoot configuration issues related to NCBI data access.
+The SRA Toolkit is the essential suite of utilities for interacting with the National Center for Biotechnology Information (NCBI) Sequence Read Archive. This skill should be used to navigate the transition from the SRA's specialized, compressed data format into standard bioinformatics formats like FASTQ and SAM. It covers the modern "prefetch and dump" workflow, which is significantly more reliable and faster than legacy on-the-fly streaming methods.
 
-## Core CLI Workflows
+## Core Workflow: Prefetch and Dump
 
-### 1. Configuration
-Before using the toolkit, ensure the environment is configured, especially for cloud data access (AWS/GCP) or specific download directories.
-- **Interactive Configuration**: `vdb-config -i`
-- **Report Cloud Identity**: `vdb-config --cloud-report` (useful for verifying AWS/GCP credentials)
-- **Set Default Download Path**: Use the interactive menu to set the "Public Repository" path.
+The recommended way to process SRA data is a two-step process. This avoids network-related crashes during the conversion phase.
 
-### 2. Downloading Data (prefetch)
-Always use `prefetch` before attempting to extract data. It is more robust than downloading on-the-fly during extraction.
-- **Basic Download**: `prefetch SRR1234567`
-- **Download a List**: `prefetch --option-file accessions.txt`
-- **SRA Lite**: Use `prefetch --eliminate-quals` to download smaller SRA Lite files when full quality scores are not required.
+### 1. Downloading Data with `prefetch`
+Always download the SRA object to local storage first. This tool handles downloads from NCBI, AWS, and GCP.
 
-### 3. Extracting FASTQ (fasterq-dump)
-`fasterq-dump` is the modern, multi-threaded replacement for the older `fastq-dump`.
-- **Standard Extraction**: `fasterq-dump SRR1234567`
-- **Paired-end Data**: `fasterq-dump --split-files SRR1234567` (produces `_1.fastq` and `_2.fastq`)
-- **Include Technical Reads**: `fasterq-dump --include-technical SRR1234567` (automatically switches to `--split-files` mode)
-- **Specify Threads**: `fasterq-dump -e 8 SRR1234567` (uses 8 threads)
+```bash
+# Download a single accession
+prefetch SRR1234567
 
-### 4. Validation and Statistics
-- **Check Integrity**: `vdb-validate SRR1234567` (reports if data or checksums are missing)
-- **View Metadata/Stats**: `sra-stat --xml SRR1234567`
+# Download a list of accessions from a file
+prefetch --option-file accessions.txt
+
+# Download SRA Lite (smaller files, no base quality scores)
+prefetch --eliminate-quals SRR1234567
+```
+
+### 2. Converting to FASTQ with `fasterq-dump`
+`fasterq-dump` is the high-performance successor to `fastq-dump`. It uses temporary disk space and multiple threads to speed up conversion.
+
+```bash
+# Standard conversion for paired-end data
+fasterq-dump --split-files SRR1234567
+
+# Specify output directory and thread count
+fasterq-dump --outdir ./fastq_out --threads 8 SRR1234567
+
+# Include technical reads (often needed for single-cell data)
+fasterq-dump --include-technical SRR1234567
+```
+
+## Configuration and Environment
+
+Before first use, or when moving to a new environment (like an HPC cluster), configure the toolkit.
+
+- **Interactive Configuration**: Run `vdb-config -i`.
+- **Cloud Access**: If working on AWS or GCP, ensure "Report cloud instance identity" is enabled in the configuration to access data stored in the cloud providers' buckets.
+- **Cache Location**: Use `vdb-config` to set the "Public Repository" path to a drive with sufficient space (SRA files can be hundreds of GBs).
 
 ## Expert Tips and Best Practices
 
-- **Avoid fastq-dump**: Unless specifically required for legacy reasons, always prefer `fasterq-dump` for significantly better performance and disk I/O handling.
-- **Disk Space**: `fasterq-dump` requires significant temporary disk space (roughly 3x the size of the final FASTQ). Use the `-t` or `--temp` flag to point to a high-capacity scratch directory if the default `/tmp` is too small.
-- **Cloud Access**: If working on AWS or GCP, ensure `vdb-config` is set to allow cloud access to avoid egress charges and utilize internal network speeds.
-- **Network Errors**: If `prefetch` fails with HTTP errors, check the `phid` (Process Hierarchy ID) in the error message; this is required for NCBI help desk diagnostics.
-- **Long Reads**: Version 3.3.0+ supports reads longer than 65K in `fasterq-dump`, making it suitable for modern PacBio and Oxford Nanopore datasets.
+- **Avoid `fastq-dump`**: Unless you have a very specific legacy requirement, always use `fasterq-dump`. It is orders of magnitude faster.
+- **Disk Space**: `fasterq-dump` requires significant temporary disk space (roughly 3x the size of the final FASTQ). Use the `-t` or `--temp` flag to point to a high-capacity scratch directory if your `/tmp` is small.
+- **Validation**: If a file seems corrupted, use `vdb-validate <accession>` to check the integrity of the downloaded SRA object.
+- **Streaming**: If you absolutely cannot store the SRA file locally, `sam-dump` can be used to stream data directly into a pipeline, though this is sensitive to network instability.
+- **dbGaP Data**: For protected data, you must use an `.ngc` credential file:
+  ```bash
+  prefetch --ngc /path/to/project.ngc SRR1234567
+  ```
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| fasterq-dump | Dump SRA data in FASTQ format |
+| prefetch | Download SRA files and their dependencies |
+| sra-stat | Display table statistics |
+| vdb-validate | Examine directories, files and VDB objects, reporting any problems that can be detected. |
 
 ## Reference documentation
-- [SRA Tools GitHub Overview](./references/github_com_ncbi_sra-tools.md)
-- [SRA Tools Wiki Home](./references/github_com_ncbi_sra-tools_wiki.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_sra-tools_overview.md)
+
+- [Home](./references/github_com_ncbi_sra-tools_wiki.md)
+- [prefetch and fasterq dump](./references/github_com_ncbi_sra-tools_wiki_08.-prefetch-and-fasterq-dump.md)
+- [Toolkit Configuration](./references/github_com_ncbi_sra-tools_wiki_05.-Toolkit-Configuration.md)
+- [HowTo: fasterq dump](./references/github_com_ncbi_sra-tools_wiki_HowTo_-fasterq-dump.md)
+- [Installing SRA Toolkit](./references/github_com_ncbi_sra-tools_wiki_02.-Installing-SRA-Toolkit.md)

@@ -1,6 +1,6 @@
 ---
 name: plasclass
-description: PlasClass classifies DNA sequences as either plasmid or chromosomal based on k-mer frequencies across multiple length scales. Use when user asks to distinguish between plasmid and chromosomal sequences, classify metagenomic fragments, or calculate plasmid probability scores for FASTA files.
+description: PlasClass is a machine learning tool that classifies DNA sequences as either plasmid or chromosomal in origin. Use when user asks to distinguish between plasmid and chromosomal DNA, classify metagenomic contigs, or assign plasmid probability scores to FASTA sequences.
 homepage: https://github.com/Shamir-Lab/PlasClass
 ---
 
@@ -8,80 +8,69 @@ homepage: https://github.com/Shamir-Lab/PlasClass
 # plasclass
 
 ## Overview
-
-PlasClass is a classification tool that distinguishes between plasmid and chromosomal sequences. It utilizes a set of logistic regression classifiers trained on k-mer frequencies at multiple sequence length scales. This multi-scale approach allows it to effectively classify sequences of varying lengths, which is common in fragmented metagenomic assemblies. The tool provides a plasmid probability score for each input sequence, where scores closer to 1.0 indicate a high likelihood of plasmid origin.
-
-## Installation
-
-The most efficient way to install PlasClass is via Bioconda:
-
-```bash
-conda install bioconda::plasclass
-```
-
-Alternatively, it can be installed from source using the `setup.py` script provided in the repository.
+PlasClass is a machine learning-based tool designed to distinguish between plasmid and chromosomal DNA sequences. It is particularly effective for classifying contigs in metagenomic assemblies where the origin of a sequence is unknown. The tool utilizes multiple logistic regression classifiers trained on different sequence length scales and k-mer frequencies (typically k=3 to 7) to assign a plasmid probability score to each input sequence.
 
 ## Command Line Usage
 
 The primary interface for classification is the `classify_fasta.py` script.
 
 ### Basic Classification
-To classify sequences in a FASTA file and save the results:
+To classify sequences in a FASTA file using default settings:
 ```bash
 python classify_fasta.py -f input.fasta -o output_scores.tsv
 ```
 
 ### Performance Optimization
-For large datasets, use the `-p` flag to specify the number of parallel processes (default is 8):
+By default, the tool uses 8 processes. Adjust this based on your available CPU cores to speed up the k-mer counting and classification steps:
 ```bash
 python classify_fasta.py -f input.fasta -p 16
 ```
 
 ### Output Format
-The output is a tab-separated file containing:
-1. The sequence header from the FASTA file.
-2. The plasmid probability score (0.0 to 1.0).
+The output is a tab-separated values (TSV) file where:
+- Column 1: Sequence header from the FASTA file.
+- Column 2: Plasmid score (0.0 to 1.0).
+- **Interpretation**: Scores closer to 1.0 indicate a high probability of plasmid origin, while scores closer to 0.0 indicate chromosomal origin.
 
 ## Python API Integration
 
-PlasClass can be integrated directly into Python workflows for programmatic classification.
+For integration into custom bioinformatics pipelines, use the `plasclass` module directly.
 
 ```python
 from plasclass import plasclass
 
-# Initialize the classifier
-# n_procs: number of processes (default 1)
-my_classifier = plasclass.plasclass(n_procs=4)
+# Initialize the classifier (n_procs sets parallelization)
+c = plasclass.plasclass(n_procs=4)
 
-# Classify a list of sequences (must be uppercase strings)
+# Classify a list of uppercase DNA strings
 sequences = ["ATGC...", "GCTA..."]
-scores = my_classifier.classify(sequences)
+probabilities = c.classify(sequences)
 
-for seq, score in zip(sequences, scores):
-    print(f"Sequence Score: {score}")
+for seq, prob in zip(sequences, probabilities):
+    print(f"Sequence probability: {prob}")
 ```
 
 ## Training Custom Models
-
-If the default models are not suitable for your specific biological context, use `train.py` to build new ones.
-
+If the default models are not suitable for your specific taxonomic niche, use `train.py` to build a new model:
 ```bash
-python train.py -p plasmid_refs.fasta -c chromosome_refs.fasta -o ./my_models_dir/ -n 16
+python train.py -p plasmids.fasta -c chromosomes.fasta -o ./my_model_dir -n 16
 ```
+*Note: If you use custom k-mer lengths (-k) or sequence scales (-l) during training, you must pass these same arrays to the `plasclass()` constructor when loading the model.*
 
-**Parameters for Training:**
-- `-k`: Comma-separated k-mer sizes (default: 3,4,5,6,7).
-- `-l`: Comma-separated sequence length scales (default: 1000, 10000, 100000, 500000).
+## Expert Tips
+- **Sequence Case**: The underlying classification engine requires uppercase sequences. While the CLI script automatically converts sequences and issues a warning, ensure your input strings are uppercase when using the Python API to avoid errors.
+- **Length Sensitivity**: PlasClass uses different models for different sequence lengths (1kb, 10kb, 100kb, 500kb). It is most accurate when sequences fall within or near these trained scales.
+- **Metagenomic Assemblies**: When processing large metagenomic assemblies, it is often more efficient to filter out very short contigs (e.g., <1000bp) before classification, as k-mer signatures in very short fragments can be noisy.
 
-*Note: If you use custom k-mer or length parameters during training, you must pass these same arrays to the `plasclass()` constructor in Python when using the model.*
 
-## Expert Tips and Best Practices
 
-- **Sequence Pre-processing**: Ensure sequences are in uppercase. While some versions may handle case conversion, providing uppercase strings prevents potential runtime errors or warnings.
-- **Length Considerations**: PlasClass is designed to handle sequences across a wide range of lengths. If your assembly contains very short fragments (under 1kb), the classification may be less reliable as it falls below the smallest default training scale.
-- **Score Interpretation**: A common threshold for plasmid identification is 0.5, but for high-confidence sets, users often use a threshold of 0.7 or 0.8.
-- **Memory Management**: When using high values for `-p` (processes), ensure the system has sufficient RAM to handle multiple instances of the k-mer frequency matrices, especially for higher k-mer values (k=7).
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| classify_fasta.py | Classify fasta sequences as plasmid or chromosomal. |
+| plasclass_train.py | Train the PlasClass classifier using plasmid and chromosome sequences. |
 
 ## Reference documentation
-- [PlasClass GitHub Repository](./references/github_com_Shamir-Lab_PlasClass.md)
-- [Bioconda PlasClass Overview](./references/anaconda_org_channels_bioconda_packages_plasclass_overview.md)
+- [PlasClass README](./references/github_com_Shamir-Lab_PlasClass_blob_master_README.md)
+- [Classification Script Details](./references/github_com_Shamir-Lab_PlasClass_blob_master_classify_fasta.py.md)

@@ -1,6 +1,6 @@
 ---
 name: guide-counter
-description: The guide-counter tool quantifies guide RNAs in CRISPR screen sequencing data to generate count matrices and quality control statistics. Use when user asks to quantify sgRNAs, process CRISPR sequencing FASTQ files, generate count matrices for mageck, or perform quality control on CRISPR screens.
+description: "guide-counter quantifies sgRNA sequences from CRISPR screen FASTQ files to produce a count matrix for downstream analysis. Use when user asks to count CRISPR guides, quantify sgRNA abundance, or generate a count table from sequencing data."
 homepage: https://github.com/fulcrumgenomics/guide-counter
 ---
 
@@ -8,51 +8,60 @@ homepage: https://github.com/fulcrumgenomics/guide-counter
 # guide-counter
 
 ## Overview
-The `guide-counter` tool is a high-performance utility designed to quantify guide RNAs (sgRNAs) in CRISPR screen sequencing data. It serves as a faster and more sensitive alternative to `mageck count`, capable of recovering more data by automatically detecting guide offsets within reads and allowing for mismatches. Use this skill to prepare raw sequencing data for downstream analysis (like `mageck test`) by generating raw count matrices and quality control statistics.
 
-## Core Command: guide-counter count
-The primary workflow involves the `count` command. It processes one or more FASTQ files against a library of expected guide sequences.
+`guide-counter` is a specialized bioinformatics tool designed for the rapid and accurate quantification of sgRNA (single guide RNA) sequences from CRISPR screen experiments. It serves as a drop-in replacement for the `mageck count` command, offering significantly faster runtimes and improved data recovery. By default, the tool identifies guides with up to one mismatch, ensuring that sequencing errors do not lead to a non-trivial loss of data. It produces a count matrix that is fully compatible with downstream statistical analysis tools like `mageck test`.
 
-### Basic Usage
+## Command Line Usage
+
+The primary command for this tool is `guide-counter count`.
+
+### Basic Syntax
 ```bash
 guide-counter count \
   --input sample1.fq.gz sample2.fq.gz \
-  --library library.txt \
-  --output experiment_results
+  --library library_file.txt \
+  --output output_prefix
 ```
 
 ### Key Arguments
-- `--input`: One or more FASTQ files (can be gzipped).
-- `--library`: A tab-delimited file containing guide information.
-- `--samples`: (Optional) Custom names for samples, matched positionally to the input FASTQs.
-- `--exact-match`: Disable the default 1-mismatch allowance to require perfect matches.
+- `--input`: One or more FASTQ files (gzipped or uncompressed).
+- `--library`: A tab-delimited file containing the guide library.
+- `--output`: The prefix for the generated output files (e.g., `output_prefix.counts.txt`).
+- `--samples`: (Optional) Custom names for the samples, matched positionally to the input FASTQs. If omitted, filenames are used.
+- `--control-pattern`: (Optional) A string pattern to identify control guides within the library.
+- `--essential-genes`: (Optional) A file containing known essential genes to compute coverage metrics.
+- `--nonessential-genes`: (Optional) A file containing known non-essential genes for QC purposes.
 
-## Advanced Configuration
-To improve the quality of the output and generate detailed statistics, provide gene sets and control patterns.
+## Best Practices and Expert Tips
 
-### Annotating Guide Types
-You can categorize guides into Essential, Nonessential, or Control groups to generate an extended counts file:
-- `--essential-genes`: File containing known essential gene names.
-- `--nonessential-genes`: File containing known non-essential gene names.
-- `--control-guides`: File containing specific guide IDs to be treated as controls.
-- `--control-pattern`: A regex (e.g., `control`) applied to guide IDs and gene names to flag controls.
+### 1. Data Recovery Optimization
+Unlike some older tools that require exact matches, `guide-counter` allows for 1 mismatch by default. This typically results in higher read counts per sample, especially in datasets with lower sequencing quality. If your experiment requires absolute precision, ensure you check if the specific version supports an exact-match flag, though the default mismatch handling is generally preferred for biological discovery.
 
-### Offset Detection
-`guide-counter` automatically determines where the guide sequence starts in the read. You can tune this behavior:
-- `--offset-sample-size`: Number of reads to check for offset detection (default is usually sufficient).
-- `--offset-min-fraction`: The minimum frequency a specific offset must appear in the sample to be considered valid.
+### 2. Downstream Integration
+The output format is designed to be a seamless transition into the MAGeCK pipeline. After generating your counts, you can immediately run:
+```bash
+mageck test \
+  --count-table output_prefix.counts.txt \
+  --control-id ControlSample \
+  --treatment-id TreatmentSample \
+  --output-prefix results
+```
 
-## Output Files
-The tool produces three main files based on the `--output` prefix:
-1. `{output}.counts.txt`: Standard matrix (Guide ID, Gene, and raw counts per sample). Compatible with `mageck`.
-2. `{output}.extended-counts.txt`: Includes a `guide_type` column based on provided gene/control lists.
-3. `{output}.stats.txt`: QC metrics including total reads, mapped reads, and mean reads per guide category.
+### 3. Performance Tuning
+`guide-counter` is written in Rust and is highly optimized for single-core performance. When processing very large datasets (hundreds of millions of reads), it significantly outperforms Python-based alternatives. Ensure your environment has sufficient I/O throughput, as the tool is often limited by disk read speeds rather than CPU.
 
-## Best Practices
-- **Performance**: `guide-counter` is optimized for speed. Use it over `mageck count` for large datasets or when processing time is a bottleneck.
-- **Downstream Analysis**: The `{output}.counts.txt` file is designed as a drop-in replacement for `mageck`. You can immediately pipe the results into `mageck test`.
-- **Quality Control**: Always check the `frac_mapped` column in the `.stats.txt` file. A low fraction (e.g., < 60%) may indicate issues with the library file, sequencing quality, or unexpected guide offsets.
+### 4. Metadata Preparation
+For the best QC results, provide the `--essential-genes` and `--nonessential-genes` files. These files can be simple text files with one gene name per line or tab-delimited files where the gene name is in the first column. This allows the tool to calculate mean coverage for these specific subsets, providing an immediate check on the screen's biological signal.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| count | Counts the guides observed in a CRISPR screen, starting from one or more FASTQs. FASTQs are one per sample and currently only single-end FASTQ inputs are supported. |
+| guide-counter | A tool for counting guide RNAs in FASTQ files. |
 
 ## Reference documentation
-- [GitHub Repository Overview](./references/github_com_fulcrumgenomics_guide-counter.md)
-- [Bioconda Package Details](./references/anaconda_org_channels_bioconda_packages_guide-counter_overview.md)
+- [guide-counter README](./references/github_com_fulcrumgenomics_guide-counter_blob_main_README.md)
+- [guide-counter Repository Overview](./references/github_com_fulcrumgenomics_guide-counter.md)

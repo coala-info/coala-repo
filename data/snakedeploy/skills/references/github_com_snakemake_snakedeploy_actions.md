@@ -1,1 +1,561 @@
-Workflow runs · snakemake/snakedeploy · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} snakemake / snakedeploy Public Notifications You must be signed in to change notification settings Fork 13 Star 24 Code Issues 14 Pull requests 4 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights Actions: snakemake/snakedeploy Actions All workflows Workflows Announce Release on Mastodon Announce Release on Mastodon CI CI PR PR release-please release-please Show more workflows... Management Caches All workflows All workflows Actions Loading... Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page . will be ignored since log searching is not yet available Showing runs from all workflows will be ignored since log searching is not yet available 284 workflow runs 284 workflow runs Event Filter by Event Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching events. Status Filter by Status Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching statuses. Branch Filter by Branch Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching branches. Actor Filter by Actor Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching users. chore(main): release 0.16.0 (#113) CI #305: Commit f482e35 pushed by johanneskoester 1m 44s main main 1m 44s View workflow file chore(main): release 0.16.0 (#113) release-please #79: Commit f482e35 pushed by johanneskoester 1m 6s main main 1m 6s View workflow file chore(main): release 0.16.0 (#113) Announce Release on Mastodon #1: Commit f482e35 pushed by johanneskoester 54s main main 54s View workflow file docs: add info on profiles/ deployment to workflow_deployment.rst (… CI #304: Commit 7a45aff pushed by johanneskoester 1m 42s main main 1m 42s View workflow file docs: add info on profiles/ deployment to workflow_deployment.rst (… release-please #78: Commit 7a45aff pushed by johanneskoester 26s main main 26s View workflow file feat: expose subcommand for collecting files into tabular structure, … release-please #77: Commit 8794901 pushed by johanneskoester 24s main main 24s View workflow file feat: expose subcommand for collecting files into tabular structure, … CI #303: Commit 8794901 pushed by johanneskoester 1m 40s main main 1m 40s View workflow file feat: expose subcommand for collecting files into tabular structure, improved output PR #233: Pull request #115 edited by coderabbitai bot 9s 9s View #115 View workflow file feat: expose subcommand for collecting files into tabular structure, improved output PR #232: Pull request #115 edited by johanneskoester 10s 10s View #115 View workflow file feat: expose subcommand for collecting files into tabular structure, improved output CI #302: Pull request #115 opened by johanneskoester 1m 49s feat/collect-files feat/collect-files 1m 49s View #115 View workflow file feat: expose subcommand for collecting files into tabular structure, improved output PR #231: Pull request #115 opened by johanneskoester 10s 10s View #115 View workflow file docs: add info on profiles/ deployment to workflow_deployment.rst PR #230: Pull request #114 edited by coderabbitai bot 10s 10s View #114 View workflow file docs: add info on profiles/ deployment to workflow_deployment.rst CI #301: Pull request #114 synchronize by dlaehnemann 1m 42s docs/add-info-on-profile-deployment docs/add-info-on-profile-deployment 1m 42s View #114 View workflow file docs: add info on profiles/ deployment to workflow_deployment.rst PR #229: Pull request #114 synchronize by dlaehnemann 7s 7s View #114 View workflow file docs: add info on profiles/ deployment to workflow_deployment.rst CI #300: Pull request #114 synchronize by dlaehnemann 1m 44s docs/add-info-on-profile-deployment docs/add-info-on-profile-deployment 1m 44s View #114 View workflow file docs: add info on profiles/ deployment to workflow_deployment.rst PR #228: Pull request #114 synchronize by dlaehnemann 7s 7s View #114 View workflow file docs: add info on profiles/ deployment to workflow_deployment.rst PR #227: Pull request #114 edited by coderabbitai bot 7s 7s View #114 View workflow file docs: add info on profiles/ deployment to workflow_deployment.rst CI #299: Pull request #114 opened by dlaehnemann 1m 36s docs/add-info-on-profile-deployment docs/add-info-on-profile-deployment 1m 36s View #114 View workflow file docs: add info on profiles/ deployment to workflow_deployment.rst PR #226: Pull request #114 opened by dlaehnemann 8s 8s View #114 View workflow file feat: added announcement robot (#109) CI #298: Commit 3cb9b56 pushed by cmeesters 1m 51s main main 1m 51s View workflow file feat: added announcement robot (#109) release-please #76: Commit 3cb9b56 pushed by cmeesters 27s main main 27s View workflow file feat: added announcement robot PR #225: Pull request #109 edited by coderabbitai bot 7s 7s View #109 View workflow file feat: added announcement robot CI #297: Pull request #109 synchronize by johanneskoester 1m 35s feat/announcement_robot feat/announcement_robot 1m 35s View #109 View workflow file feat: added announcement robot PR #224: Pull request #109 synchronize by johanneskoester 8s 8s View #109 View workflow file feat: added announcement robot PR #223: Pull request #109 edited by coderabbitai bot 6s 6s View #109 View workflow file Previous 1 2 3 4 5 &hellip; 11 12 Next You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fsnakemake%2Fsnakedeploy%2Factions)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fsnakemake%2Fsnakedeploy%2Factions)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Factions%2Findex&source=header-repo&source_repo=snakemake%2Fsnakedeploy)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[snakemake](/snakemake)
+/
+**[snakedeploy](/snakemake/snakedeploy)**
+Public
+
+* [Notifications](/login?return_to=%2Fsnakemake%2Fsnakedeploy) You must be signed in to change notification settings
+* [Fork
+  14](/login?return_to=%2Fsnakemake%2Fsnakedeploy)
+* [Star
+   25](/login?return_to=%2Fsnakemake%2Fsnakedeploy)
+
+* [Code](/snakemake/snakedeploy)
+* [Issues
+  14](/snakemake/snakedeploy/issues)
+* [Pull requests
+  7](/snakemake/snakedeploy/pulls)
+* [Actions](/snakemake/snakedeploy/actions)
+* [Projects](/snakemake/snakedeploy/projects)
+* [Security
+  0](/snakemake/snakedeploy/security)
+* [Insights](/snakemake/snakedeploy/pulse)
+
+Additional navigation options
+
+* [Code](/snakemake/snakedeploy)
+* [Issues](/snakemake/snakedeploy/issues)
+* [Pull requests](/snakemake/snakedeploy/pulls)
+* [Actions](/snakemake/snakedeploy/actions)
+* [Projects](/snakemake/snakedeploy/projects)
+* [Security](/snakemake/snakedeploy/security)
+* [Insights](/snakemake/snakedeploy/pulse)
+
+# Actions: snakemake/snakedeploy
+
+## Actions
+
+## All workflows All workflows Actions Loading... Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page.
+
+will be ignored since log searching is not yet available
+
+Showing runs from all workflows
+
+will be ignored since log searching is not yet available
+
+**329 workflow runs**
+
+**329 workflow runs**
+
+Event
+
+# Filter by Event
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching events.
+
+Status
+
+# Filter by Status
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching statuses.
+
+Branch
+
+# Filter by Branch
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching branches.
+
+Actor
+
+# Filter by Actor
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching users.
+
+[fix: add files to PR and switch reretry with tenacity](/snakemake/snakedeploy/actions/runs/23334788949)
+
+PR
+#261:
+Pull request [#119](/snakemake/snakedeploy/pull/119)
+edited
+by
+[coderabbitai](/apps/coderabbitai)
+bot
+
+8s
+
+8s
+
+* [View #119](/snakemake/snakedeploy/pull/119)
+* [View workflow file](/snakemake/snakedeploy/actions/runs/23334788949/workflow)
+
+[fix: add files to PR and switch reretry with tenacity](/snakemake/snakedeploy/actions/runs/23334735012)
+
+CI
+#322:
+Pull request [#119](/snakemake/snakedeploy/pull/119)
+synchronize
+by
+[fgvieira](/fgvieira)
+
+1m 26s
+[fgvieira:deps](/fgvieira/snakedeploy/tree/refs/heads/deps "fgvieira:deps")
+
+[fgvieira:deps](/fgvieira/snakedeploy/tree/refs/heads/deps "fgvieira:deps")
+
+1m 26s
+
+* [View #119](/snakemake/snakedeploy/pull/119)
+* [View workflow file](/snakemake/snakedeploy/actions/runs/23334735012/workflow)
+
+[fix: add files to PR and switch reretry with tenacity](/snakemake/snakedeploy/actions/runs/23334734516)
+
+PR
+#260:
+Pull request [#119](/snakemake/snakedeploy/pull/119)
+synchronize
+by
+[fgvieira](/fgvieira)
+
+7s
+
+7s
+
+* [View #119](/snakemake/snakedeploy/pull/119)
+* [View workflow file](/snakemake/snakedeploy/actions/runs/23334734516/workflow)
+
+[fix: add files to PR and switch reretry with tenacity](/snakemake/snakedeploy/actions/runs/23292859922)
+
+CI
+#321:
+Pull request [#119](/snakemake/snakedeploy/pull/119)
+synchronize
+by
+[fgvieira](/fgvieira)
+
+18s
+[fgvieira:deps](/fgvieira/snakedeploy/tree/refs/heads/deps "fgvieira:deps")
+
+[fgvieira:deps](/fgvieira/snakedeploy/tree/refs/heads/deps "fgvieira:deps")
+
+18s
+
+* [View #119](/snakemake/snakedeploy/pull/119)
+* [View workflow file](/snakemake/snakedeploy/actions/runs/23292859922/workflow)
+
+[fix: add files to PR and switch reretry with tenacity](/snakemake/snakedeploy/actions/runs/23292859322)
+
+PR
+#259:
+Pull request [#119](/snakemake/snakedeploy/pull/119)
+synchronize
+by
+[fgvieira](/fgvieira)
+
+9s
+
+9s
+
+* [View #119](/snakemake/snakedeploy/pull/119)
+* [View workflow file](/snakemake/snakedeploy/actions/runs/23292859322/workflow)
+
+[fix: add files to PR and switch reretry with tenacity](/snakemake/snakedeploy/actions/runs/23286465949)
+
+PR
+#258:
+Pull request [#119](/snakemake/snakedeploy/pull/119)
+edited
+by
+[coderabbitai](/apps/coderabbitai)
+bot
+
+7s
+
+7s
+
+* [View #119](/snakemake/snakedeploy/pull/119)
+* [View workflow file](/snakemake/snakedeploy/actions/runs/23286465949/workflow)
+
+[fix: add files to PR and switch reretry with tenacity](/snakemake/snakedeploy/actions/runs/23286403352)
+
+CI
+#320:
+Pull request [#119](/snakemake/snakedeploy/pull/119)
+synchronize
+by
+[fgvieira](/fgvieira)
+
+17s
+[fgvieira:deps](/fgvieira/snakedeploy/tree/refs/heads/deps "fgvieira:deps")
+
+[fgvieira:deps](/fgvieira/snakedeploy/tree/refs/heads/deps "fgvieira:deps")
+
+17s
+
+* [View #119](/snakemake/snakedeploy/pull/119)
+* [View workflow file](/snakemake/snakedeploy/actions/runs/23286403352/workflow)
+
+[fix: add files to PR and switch reretry with tenacity](/snakemake/snakedeploy/actions/runs/23286402885)
+
+PR
+#257:
+Pull request [#119](/snakemake/snakedeploy/pull/119)
+synchronize
+by
+[fgvieira](/fgvieira)
+
+9s
+
+9s
+
+* [View #119](/snakemake/snakedeploy/pull/119)
+* [View workflow file](/snakemake/snakedeploy/actions/runs/23286402885/workflow)
+
+[fix: add files to PR and switch reretry with tenacity](/snakemake/snakedeploy/actions/runs/23053404843)
+
+PR
+#256:
+Pull request [#119](/snakemake/snakedeploy/pull/119)
+edited
+by
+[fgvieira](/fgvieira)
+
+7s
+
+7s
+
+* [View #119](/snakemake/snakedeploy/pull/119)
+* [View workflow file](/snakemake/snakedeploy/actions/runs/23053404843/workflow)
+
+[fix: add files to PR and switch reretry with tenacity](/snakemake/snakedeploy/actions/runs/23053379840)
+
+CI
+#319:
+Pull request [#119](/snakemake/snakedeploy/pull/119)
+synchronize
+by
+[fgvieira](/fgvieira)
+
+1m 47s
+[fgvieira:deps](/fgvieira/snakedeploy/tree/refs/heads/deps "fgvieira:deps")
+
+[fgvieira:deps](/fgvieira/snakedeploy/tree/refs/heads/deps "fgvieira:deps")
+
+1m 47s
+
+* [View #119](/snakemake/snakedeploy/pull/119)
+* [View workflow file](/snakemake/snakedeploy/actions/runs/23053379840/workflow)
+
+[fix: add files to PR and switch reretry with tenacity](/snakemake/snakedeploy/actions/runs/23053379255)
+
+PR
+#255:
+Pull request [#119](/snakemake/snakedeploy/pull/119)
+synchronize
+by
+[fgvieira](/fgvieira)
+
+7s
+
+7s
+
+* [View #119](/snakemake/snakedeploy/pull/119)
+* [View workflow file](/snakemake/snakedeploy/actions/runs/23053379255/workflow)
+
+[fix: add files to PR and switch reretry with tenacity](/snakemake/snakedeploy/actions/runs/23053310604)
+
+CI
+#318:
+Pull request [#119](/snakemake/snakedeploy/pull/119)
+synchronize
+by
+[fgvieira](/fgvieira)
+
+26s
+[fgvieira:deps](/fgvieira/snakedeploy/tree/refs/heads/deps "fgvieira:deps")
+
+[fgvieira:deps](/fgvieira/snakedeploy/tree/refs/heads/deps "fgvieira:deps")
+
+26s
+
+* [View #119](/snakemake/snakedeploy/pull/119)
+* [View workflow file](/snakemake/snakedeploy/actions/runs/23053310604/workflow)
+
+[fix: add files to PR and switch reretry with tenacity](/snakemake/snakedeploy/actions/runs/23053310220)
+
+PR
+#254:
+Pull request [#119](/snakemake/snakedeploy/pull/119)
+synchronize
+by
+[fgvieira](/fgvieira)
+
+9s
+
+9s
+
+* [View #119](/snakemake/snakedeploy/pull/119)
+* [View workflow file](/snakemake/snakedeploy/actions/runs/23053310220/workflow)
+
+[fix: add files to PR and switch reretry with tenacity](/snakemake/snakedeploy/actions/runs/23052109346)
+
+CI
+#317:
+Pull request [#119](/snakemake/snakedeploy/pull/119)
+synchronize
+by
+[fgvieira](/fgvieira)
+
+1m 47s
+[fgvieira:deps](/fgvieira/snakedeploy/tree/refs/heads/deps "fgvieira:deps")
+
+[fgvieira:deps](/fgvieira/snakedeploy/tree/refs/heads/deps "fgvieira:deps")
+
+1m 47s
+
+* [View #119](/snakemake/snakedeploy/pull/119)
+* [View workflow file](/snakemake/snakedeploy/actions/runs/23052109346/workflow)
+
+[fix: add files to PR and switch reretry with tenacity](/snakemake/snakedeploy/actions/runs/23052108870)
+
+PR
+#253:
+Pull request [#119](/snakemake/snakedeploy/pull/119)
+synchronize
+by
+[fgvieira](/fgvieira)
+
+8s
+
+8s
+
+* [View #119](/snakemake/snakedeploy/pull/119)
+* [View workflow file](/snakemake/snakedeploy/actions/runs/23052108870/workflow)
+
+[fix: add files to PR and switch reretry with tenacity](/snakemake/snakedeploy/actions/runs/23051786905)
+
+PR
+#252:
+Pull request [#119](/snakemake/snakedeploy/pull/119)
+edited
+by
+[coderabbitai](/apps/coderabbitai)
+bot
+
+19s
+
+19s
+
+* [View #119](/snakemake/snakedeploy/pull/119)
+* [View workflow file](/snakemake/snakedeploy/actions/runs/23051786905/workflow)
+
+[fix: add files to PR and switch reretry with tenacity](/snakemake/snakedeploy/actions/runs/23051754568)
+
+CI
+#316:
+Pull request [#119](/snakemake/snakedeploy/pull/119)
+synchronize
+by
+[fgvieira](/fgvieira)
+
+51s
+[fgvieira:deps](/fgvieira/snakedeploy/tree/refs/heads/deps "fgvieira:deps")
+
+[fgvieira:deps](/fgvieira/snakedeploy/tree/refs/heads/deps "fgvieira:deps")
+
+51s
+
+* [View #119](/snakemake/snakedeploy/pull/119)
+* [View workflow file](/snakemake/snakedeploy/actions/runs/23051754568/workflow)
+
+[fix: add files to PR and switch reretry with tenacity](/snakemake/snakedeploy/actions/runs/23051753913)
+
+PR
+#251:
+Pull request [#119](/snakemake/snakedeploy/pull/119)
+synchronize
+by
+[fgvieira](/fgvieira)
+
+53s
+
+53s
+
+* [View #119](/snakemake/snakedeploy/pull/119)
+* [View workflow file](/snakemake/snakedeploy/actions/runs/23051753913/workflow)
+
+[fix: add

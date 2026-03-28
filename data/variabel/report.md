@@ -27,7 +27,7 @@ FATAL:   Unable to handle docker://quay.io/biocontainers/variabel:1.0.0--hdfd78a
 
 
 ## Metadata
-- **Skill**: generated
+- **Skill**: not generated
 
 ## variabel_variabel.py
 

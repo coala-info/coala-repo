@@ -1,6 +1,6 @@
 ---
 name: wg-blimp
-description: `wg-blimp` processes Whole Genome Bisulfite Sequencing (WGBS) data to produce annotated methylation profiles. Use when user asks to process WGBS data, run the analysis pipeline, create or execute from a configuration, run on a cluster, or visualize results.
+description: wg-blimp is an automated Snakemake-based pipeline for the comprehensive analysis of whole genome bisulfite sequencing data. Use when user asks to align WGBS reads, call differentially methylated regions, segment methylomes, or perform genomic annotation.
 homepage: https://github.com/MarWoes/wg-blimp
 ---
 
@@ -8,62 +8,65 @@ homepage: https://github.com/MarWoes/wg-blimp
 # wg-blimp
 
 ## Overview
-`wg-blimp` is a comprehensive bioinformatics pipeline designed to streamline the processing of Whole Genome Bisulfite Sequencing (WGBS) data. It functions as a command-line wrapper for a Snakemake workflow, integrating a suite of specialized tools to transform raw FASTQ files into annotated methylation profiles. The tool is essential for researchers needing a reproducible, automated path through alignment, QC, and downstream epigenetic analysis.
 
-## Installation and Setup
-The recommended installation method is via Bioconda into a dedicated environment to avoid dependency conflicts.
+wg-blimp (Whole Genome BisuLfIte sequencing Methylation analysis Pipeline) is a specialized bioinformatics tool designed to automate the complex multi-step workflow required for WGBS data. It abstracts a Snakemake-based pipeline into a simplified command-line interface, handling everything from initial read alignment and quality control to advanced downstream tasks like DMR calling, methylome segmentation (UMRs/LMRs/PMDs), and genomic annotation. It is the preferred tool when a standardized, reproducible, and scalable pipeline is needed for comparative methylome analysis.
 
-- **Standard Installation**: `conda create -n wg-blimp wg-blimp r-base==4.1.1`
-- **Cluster Support**: If using SLURM or other clusters, `mamba` is required within the environment: `conda create -n wg-blimp wg-blimp r-base==4.1.1 mamba`
+## Installation and Environment Setup
 
-## Primary Command Line Operations
+To ensure stability and avoid dependency conflicts, always install wg-blimp in a dedicated environment.
 
-### Running the Pipeline
-The most direct way to execute the analysis is using the `run-snakemake` command.
+*   **Standard Installation**: Use Bioconda to create a fresh environment.
+    `conda create -n wg-blimp wg-blimp r-base==4.1.1`
+*   **Cluster Requirements**: If running on HPC clusters (e.g., SLURM), mamba must be included in the environment.
+    `conda create -n wg-blimp wg-blimp r-base==4.1.1 mamba`
+*   **Activation**: Always activate the environment before execution.
+    `conda activate wg-blimp`
 
-`wg-blimp run-snakemake [fastq_folder] [reference_fasta] [group1_samples] [group2_samples] [output_folder] --cores [N] --genome-build [build]`
+## Core CLI Workflows
 
-- **Arguments**:
-  - `group1_samples` / `group2_samples`: Comma-separated lists of sample names (e.g., `control1,control2`).
-  - `--cores`: Total CPU cores available to Snakemake.
-  - `--aligner`: Specify `gemBS` (default) or `bwa-meth`.
+### Rapid Execution
+Run the entire pipeline with default parameters using a single command. This requires a directory of FASTQ files, a reference genome, and defined sample groups.
 
-### Configuration Management
-For complex runs, use the configuration utilities to prepare and execute the workflow.
+`wg-blimp run-snakemake --cores <N> <fastq_dir> <reference_fasta> <group1_samples> <group2_samples> <output_dir>`
 
-- **Generate Configuration**: `wg-blimp create-config`
-- **Run from Configuration**: `wg-blimp run-snakemake-from-config [options] config.yaml`
+*   **Example**: `wg-blimp run-snakemake --cores 8 fastq/ hg38.fa tumor1,tumor2 normal1,normal2 results`
 
-### High-Performance Computing (HPC)
-To run on a cluster (e.g., SLURM), use the `--cluster` and `--nodes` flags.
+### Configuration-Based Workflow
+For complex projects requiring custom parameters (e.g., specific aligners or memory limits), use the two-step configuration approach.
 
-`wg-blimp run-snakemake-from-config --cores 32 --nodes 2 --cluster "sbatch --partition normal --nodes=1 --ntasks-per-node 32 --time 01:00:00" config.yaml`
+1.  **Generate Configuration**: Create a template based on your data.
+    `wg-blimp create-config --cores-per-job=4 <fastq_dir> <reference_fasta> <group1> <group2> <output_dir> <config_filename>.yaml`
+2.  **Execute from Configuration**: Run the pipeline using the modified file.
+    `wg-blimp run-snakemake-from-config --cores <N> <config_filename>.yaml`
 
-### Interactive Visualization
-Launch the Shiny-based graphical interface to inspect results and configurations.
+### HPC Cluster Execution
+Utilize Snakemake's cluster mode for distributed computing.
 
-`wg-blimp run-shiny`
+`wg-blimp run-snakemake-from-config --cores <total_cores> --nodes <N> --cluster "sbatch --partition <name> --ntasks-per-node <N> --time <HH:MM:SS>" <config>.yaml`
 
-## Expert Tips and Best Practices
+## Best Practices and Expert Tips
 
-### File Naming Conventions
-By default, `wg-blimp` expects Illumina naming patterns to automatically associate FASTQ files with samples:
-`[SampleName]_L[Lane]_R[Read]_[Chunk].fastq.gz`
-Example: `test1_L001_R1_001.fastq.gz`
+*   **Dry Runs**: Always perform a dry run before starting heavy computations to validate paths and logic.
+    `wg-blimp run-snakemake [ARGS] --dry-run`
+*   **File Naming**: wg-blimp expects Illumina naming conventions (e.g., `sample_L001_R1_001.fastq.gz`). If your files use a different pattern, you must adjust the `rawsuffixregex` in the configuration.
+*   **Aligner Selection**: Choose between `gemBS` (high performance) and `bwa-meth` using the `--aligner` flag.
+*   **Memory Management**: For large samples, increase the Java heap space via the `java_memory_gb` parameter in the configuration to prevent crashes during Picard or Qualimap steps.
+*   **Result Visualization**: After the pipeline completes, launch the interactive Shiny interface to explore DMRs and QC metrics.
+    `wg-blimp run-shiny <output_dir>/config.yaml`
+*   **Cleanup**: Use `wg-blimp delete-all-output` to safely remove generated files if a restart is required.
 
-If your files use a different naming scheme, you must provide an explicit mapping using a CSV file with the `--use-sample-files` flag. The CSV must contain columns: `sample`, `forward`, and `reverse`.
 
-### Resource Allocation
-- **Java Memory**: For large samples, increase the memory allocation for Java-based tools using the `java_memory_gb` parameter in your configuration to prevent crashes during methylation calling.
-- **IO Threads**: Use the `io_threads` setting to limit the number of concurrent IO-intensive tasks, which prevents file system bottlenecks on shared infrastructure.
 
-### Aligner Selection
-- **gemBS**: Generally faster and highly integrated for bisulfite data.
-- **bwa-meth**: A robust alternative that maps reads to a "bisulfite-converted" reference genome.
+## Subcommands
 
-### Output Verification
-Always check the `raw/` directory in the output folder. This directory contains text files describing exactly which FASTQ files were associated with each sample. If the associations are incorrect, the downstream DMR calling will be invalid.
+| Command | Description |
+|---------|-------------|
+| create-config | Create a config YAML file for running the Snakemake pipeline. Sample names are either passed as comma seperated lists or are read from text files if --use-sample-files parameter is set. Annotation files are automatically downloaded if necessary. |
+| delete-all-output | Remove all files generated by the pipeline. This includes reference genome   indices, as well. Use with care! |
+| run-shiny | Start shiny GUI using configuration files for completed pipeline runs. |
+| run-snakemake | Run the Snakemake pipeline from command line. Sample names are either passed as comma seperated lists or are read from text files if --use-sample-files parameter is set. Annotation files are automatically downloaded if necessary. |
+| wg-blimp run-snakemake-from-config | Run the snakemake pipeline using a config file. |
 
 ## Reference documentation
-- [Main Repository Documentation](./references/github_com_MarWoes_wg-blimp.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_wg-blimp_overview.md)
+- [Main Repository README](./references/github_com_MarWoes_wg-blimp.md)
+- [Step-by-Step Tutorial](./references/github_com_MarWoes_wg-blimp_wiki_Tutorial.md)

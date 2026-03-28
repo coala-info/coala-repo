@@ -1,75 +1,67 @@
 ---
 name: tag
-description: This tool processes, analyzes, and manages genome annotation data, particularly in GFF3 format. Use when user asks to extract specific features, count elements within genes, or cross-reference genomic information.
+description: The Toolkit for Annotating Genomes (tag) provides a Python API and command-line interface for processing, transforming, and managing GFF3 genomic annotation files. Use when user asks to collapse overlapping features into loci, merge GFF3 files, extract specific feature types, or map protein coordinates to nucleotide coordinates.
 homepage: https://github.com/standage/tag/
 ---
 
 
 # tag
 
-yaml
-name: tag
-description: A Python package for genome annotation data analysis and management. Use when Claude needs to process, analyze, or manipulate genomic annotation data, particularly in GFF3 format. This includes tasks like extracting specific features, counting elements within genes, or cross-referencing genomic information.
-```
 ## Overview
-The `tag` tool is a Python library designed for the analysis and management of genome annotation data. It is particularly useful for working with formats like GFF3, enabling tasks such as extracting gene features, counting elements like exons per gene, and performing various data manipulations on genomic annotations.
+The Toolkit for Annotating Genomes (`tag`) is a specialized utility designed to handle the complexities of genomic text formatting and feature management. While many bioinformatic tools are cumbersome, `tag` provides a streamlined Python API and a set of CLI subcommands to perform common operations like feature collapsing, summary generation, and coordinate mapping. It is particularly useful for researchers who need to programmatically interact with GFF3 files or perform quick transformations on the command line.
 
-## Usage
+## CLI Usage and Patterns
 
-The `tag` library is primarily used programmatically within Python scripts. Here are some common patterns and expert tips for its usage:
+The `tag` package installs a command-line interface that provides several subcommands for rapid data processing.
 
-### Reading and Selecting Features
+#
 
-The core of `tag`'s functionality involves reading annotation files and selecting specific features.
+## Python API Best Practices
 
-*   **Reading GFF3 files:**
-    Use `tag.GFF3Reader` to parse GFF3 files. It can handle gzipped files directly.
+For more complex workflows, use the `tag` Python module directly.
 
-    ```python
-    import tag
+### Reading and Filtering Features
+The core of the API is the `GFF3Reader`. You can iterate through features and use the `select` module to filter for specific types.
 
-    reader = tag.GFF3Reader(infilename='/path/to/your/annotation.gff3.gz')
-    ```
+```python
+import tag
 
-*   **Selecting features by type:**
-    You can iterate through features and filter them by their `type` attribute.
+# Initialize the reader for a GFF3 file
+reader = tag.GFF3Reader(infilename='annotations.gff3')
 
-    ```python
-    for gene in tag.select.features(reader, type='gene'):
-        # Process gene features
-        pass
-    ```
+# Select only 'gene' features and iterate
+for gene in tag.select.features(reader, type='gene'):
+    # Access sub-features (like exons) directly from the gene object
+    exons = [feat for feat in gene if feat.type == 'exon']
+    print(f'Gene {gene.id} has {len(exons)} exons')
+```
 
-*   **Accessing sub-features:**
-    Features can contain other features (e.g., genes contain exons). You can iterate over a feature to access its children.
+### Feature Management
+- **Coordinate Handling**: `tag` handles 1-based GFF3 coordinates internally. When performing arithmetic on positions, ensure you are accounting for the inclusive nature of GFF3 boundaries.
+- **Attribute Access**: Genomic attributes (like ID, Parent, Name) are accessible as properties on the feature objects.
+- **Parent-Child Relationships**: The library automatically handles the hierarchical structure of GFF3 files, allowing you to traverse from genes to mRNAs to exons/CDSes easily.
 
-    ```python
-    for gene in tag.select.features(reader, type='gene'):
-        exons = [feat for feat in gene if feat.type == 'exon']
-        print(f"Gene has {len(exons)} exons.")
-    ```
+## Expert Tips
+- **Large Files**: For very large GFF3 files, ensure they are sorted by coordinate and indexed. `tag` includes a named index data structure for efficient querying of specific genomic regions.
+- **Validation**: Use the built-in validation logic to check for common GFF3 errors, such as mismatched Parent IDs or features that extend beyond the boundaries of their parents.
+- **ID Preservation**: When writing modified GFF3 files back to disk, use the `retainids` mode if you need to keep the original ID attributes exactly as they were in the input.
 
-### Advanced Operations and Tips
 
-*   **Feature attributes:**
-    Access feature attributes using dot notation or dictionary-like access.
 
-    ```python
-    for gene in tag.select.features(reader, type='gene'):
-        gene_id = gene.id
-        gene_name = gene.name
-        print(f"Processing gene: {gene_id} ({gene_name})")
-    ```
+## Subcommands
 
-*   **Cross-referencing and ID handling:**
-    `tag` is designed to help with ID cross-referencing. Pay attention to how IDs are parsed and used, especially when dealing with complex annotation files. The library aims to simplify the process of linking related genomic features.
-
-*   **Performance:**
-    For very large annotation files, consider using `tag.GFF3Reader` with gzipped files, as it can be more memory-efficient. The `tag.select` module is optimized for efficient feature retrieval.
-
-*   **Customization:**
-    While `tag` provides a robust set of tools, you can extend its functionality by writing custom Python code that leverages the `tag` objects and readers.
+| Command | Description |
+|---------|-------------|
+| bae | Group features in GFF3 files into loci. |
+| tag bcollapse | Collapse overlapping features in GFF3 files into loci. |
+| tag gff3 | Processes GFF3 files. |
+| tag merge | Merges multiple GFF3 files into a single GFF3 file. |
+| tag occ | Extracts features of a given type from a GFF3 file. |
+| tag pep2nuc | Converts protein-coordinate GFF3 features to their corresponding nucleotide coordinates in a genome-coordinate GFF3 file. |
+| tag pmrna | Parses and processes a GFF3 file for pmRNA analysis. |
+| tag_locuspocus | Group features into loci based on overlap and proximity. |
+| tag_sum | Briefly summarize a GFF3 file |
 
 ## Reference documentation
-- [GitHub Repository](https://github.com/standage/tag)
-- [tag.readthedocs.io](https://tag.readthedocs.io/)
+- [tag: Toolkit for Annotating Genomes](./references/github_com_standage_tag.md)
+- [tag CLI and Module Commits](./references/github_com_standage_tag_commits_master.md)

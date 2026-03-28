@@ -1,6 +1,6 @@
 ---
 name: pytrf
-description: "pytrf detects perfect and imperfect tandem repeats within genomic sequences using a fast Python C extension. Use when user asks to find microsatellites, identify generic or approximate tandem repeats, or extract repeat sequences with flanking regions."
+description: pytrf is a high-performance Python extension for identifying exact and approximate tandem repeats within genomic sequences. Use when user asks to find short tandem repeats, identify generic or approximate tandem repeats, or extract repeat sequences with flanking regions from FASTA or FASTQ files.
 homepage: https://github.com/lmdu/pytrf
 ---
 
@@ -8,57 +8,82 @@ homepage: https://github.com/lmdu/pytrf
 # pytrf
 
 ## Overview
-The `pytrf` skill enables the rapid detection of tandem repeats within genomic sequences. Unlike the original TRF tool, `pytrf` is a lightweight Python C extension designed for speed and ease of integration into bioinformatics pipelines. It supports the identification of Simple Sequence Repeats (SSRs), generic tandem repeats with motifs up to 100 bp, and imperfect (approximate) repeats. Use this skill when you need to perform microsatellite discovery, characterize repetitive regions in a genome, or extract flanking sequences for primer design.
 
-## Command Line Interface (CLI)
-The `pytrf` CLI provides several subcommands for different repeat discovery tasks.
+pytrf is a high-performance Python C extension designed for the rapid identification of tandem repeats (TRs) within genomic sequences. Unlike the original TRF tool, pytrf is a native Python library that provides both a command-line interface and a Python API. It is particularly effective for large-scale genomic datasets where speed is critical. It supports three primary types of searches: Short Tandem Repeats (STRs/SSRs), Generic Tandem Repeats (GTRs) with arbitrary motif lengths, and Approximate Tandem Repeats (ATRs) which allow for mismatches and indels.
 
-### Finding Perfect Short Tandem Repeats (SSRs)
-Use `findstr` for standard microsatellite discovery where motifs are short and repeats are exact.
+## CLI Usage Patterns
+
+The `pytrf` command-line tool operates on FASTA or FASTQ files.
+
+### Finding Exact Repeats
+Use `findstr` for standard microsatellites (short motifs) and `findgtr` for longer motifs.
+
 ```bash
-pytrf findstr input.fasta > output.tsv
+# Find exact short tandem repeats (SSRs)
+pytrf findstr input.fasta > ssr_results.txt
+
+# Find generic tandem repeats (motifs up to 100bp)
+pytrf findgtr input.fasta > gtr_results.txt
 ```
 
-### Finding Generic Tandem Repeats
-Use `findgtr` for repeats with longer motifs (up to 100 bp).
+### Finding Approximate Repeats
+Use `findatr` to identify imperfect repeats that contain mutations or sequencing errors.
+
 ```bash
-pytrf findgtr input.fasta --min-motif 7 --max-motif 100 > output.tsv
+# Find approximate tandem repeats
+pytrf findatr input.fasta > atr_results.txt
 ```
 
-### Finding Imperfect Tandem Repeats
-Use `findatr` to identify approximate tandem repeats that may contain substitutions or indels.
+### Sequence Extraction
+The `extract` command is used to pull the actual repeat sequences and their surrounding context.
+
 ```bash
-pytrf findatr input.fasta > output.tsv
+# Extract repeat sequences and 50bp flanking regions
+pytrf extract --flank 50 input.fasta repeat_locations.txt > sequences.fasta
 ```
 
-### Extracting Sequences
-Use `extract` to retrieve the repeat sequence along with its flanking regions, which is essential for downstream applications like PCR primer design.
-```bash
-pytrf extract input.fasta repeats.tsv --flank 50 > sequences_with_flanks.tsv
-```
+## Python API Integration
 
-## Python API Usage
-For custom workflows, `pytrf` can be used directly within Python scripts. It is highly recommended to use `pyfastx` for efficient sequence parsing.
+For custom workflows, use the Python API. Note that `pytrf` works best when paired with `pyfastx` for sequence parsing.
 
 ```python
 import pytrf
 import pyfastx
 
-# Load genomic sequences
+# Load sequences
 fa = pyfastx.Fastx('genome.fa', uppercase=True)
 
 for name, seq in fa:
     # Find Short Tandem Repeats
     for ssr in pytrf.STRFinder(name, seq):
         print(ssr.as_string())
+        
+    # Find Approximate Tandem Repeats with custom thresholds
+    # Parameters: motif_size, min_seed_repeat, min_seed_length, max_error, min_identity
+    for atr in pytrf.ATRFinder(name, seq, max_motif_size=6, min_identity=0.8):
+        print(atr.as_string())
 ```
 
-## Best Practices and Tips
-- **Input Normalization**: Ensure sequences are in uppercase if your parser doesn't handle case sensitivity automatically, as repeat detection is often case-sensitive in C extensions.
-- **Performance**: For large-scale genomic data, the CLI is generally faster for bulk processing, while the Python API is better for interactive filtering or complex logic.
-- **Output Handling**: The tool typically outputs tab-delimited data. Redirect output to `.tsv` or `.bed` files for compatibility with other bioinformatics tools like Bedtools.
-- **Motif Lengths**: Use `findstr` for motifs 1-6 bp (microsatellites) and `findgtr` for motifs >6 bp (minisatellites/VNTRs).
+## Expert Tips and Best Practices
+
+- **Pre-processing**: Always ensure sequences are uppercase if your search is case-sensitive. Use `pyfastx.Fastx(..., uppercase=True)` to handle this during parsing.
+- **Performance**: For whole-genome scans, the CLI is generally faster due to reduced overhead. Redirect output to a file rather than printing to the terminal.
+- **Memory Efficiency**: `pytrf` processes sequences efficiently, but when using the Python API, iterate through sequences one by one rather than loading an entire multi-FASTA file into memory.
+- **ATR Tuning**: When searching for approximate repeats (`findatr`), the `min_identity` parameter is the most impactful for sensitivity. Lowering it below 0.7 may significantly increase false positives and computation time.
+- **Motif Lengths**: Use `findstr` for motifs of 1-6bp. Use `findgtr` for motifs larger than 6bp (up to 100bp).
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| pytrf_extract | Extracts sequences from fasta or fastq files based on repeat information. |
+| pytrf_findatr | Finds tandem repeats in a FASTA or FASTQ file. |
+| pytrf_findgtr | Finds tandem repeats in a fasta or fastq file. |
+| pytrf_findstr | Finds simple tandem repeats in fasta or fastq files. |
 
 ## Reference documentation
-- [pytrf GitHub Repository](./references/github_com_lmdu_pytrf.md)
-- [pytrf Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_pytrf_overview.md)
+- [Pytrf GitHub Repository](./references/github_com_lmdu_pytrf.md)
+- [Pytrf README](./references/github_com_lmdu_pytrf_blob_master_README.rst.md)
+- [ATR Finder Implementation Details](./references/github_com_lmdu_pytrf_blob_master_atrfinder.py.md)

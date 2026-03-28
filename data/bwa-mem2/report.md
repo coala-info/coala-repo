@@ -91,3 +91,6 @@ Input/output options:
 Note: Please read the man page for detailed description of the command line and options.
 ```
 
+
+## Metadata
+- **Skill**: generated

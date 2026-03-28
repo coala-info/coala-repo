@@ -1,6 +1,6 @@
 ---
 name: pymochi
-description: pymochi models the non-linear relationship between mutational data and underlying biophysical traits using neural networks. Use when user asks to infer free energy changes from deep mutational scanning experiments, model complex phenotypes as a function of multiple traits, or decompose genetic interactions into energetic couplings.
+description: Pymochi infers latent biophysical traits from deep mutational scanning datasets using neural network models of global epistasis. Use when user asks to infer additive traits like folding or binding free energies, model the relationship between protein variants and fitness, or perform thermodynamic analysis of mutational data.
 homepage: https://github.com/lehner-lab/MoCHI
 ---
 
@@ -8,103 +8,71 @@ homepage: https://github.com/lehner-lab/MoCHI
 # pymochi
 
 ## Overview
+The pymochi skill enables the analysis of deep mutational scanning datasets by inferring underlying additive traits (such as folding or binding free energies) from observed phenotypes. It uses a neural network architecture to model the global epistatic relationship between these latent biophysical traits and the measured fitness values. This tool is essential for researchers looking to move beyond simple fitness scores to a mechanistic understanding of protein stability and molecular interactions.
 
-MoCHI (Molecular Characterization of Heterogeneous Interactions) is a specialized tool designed to bridge the gap between high-throughput mutational data and biophysical reality. It uses neural networks to model "global epistasis"—the non-linear relationship between a protein's underlying physical properties (additive traits) and the observed experimental phenotype (e.g., fluorescence, growth rate, or binding enrichment). 
+## Model Design Requirements
+Before running pymochi, you must prepare a tab-separated model design file. This file defines the architecture of the biophysical model.
 
-Use this skill to:
-1. Infer free energy changes ($\Delta\Delta G$) from DMS experiments.
-2. Model complex phenotypes as a function of multiple underlying traits (e.g., binding affinity that depends on both folding and interaction energy).
-3. Decompose genetic interactions into specific energetic couplings.
+**Required Columns:**
+- `trait`: Names of one or more additive traits (e.g., Folding, Binding).
+- `transformation`: The mathematical shape of the global epistatic trend. Supported options:
+    - `Linear`, `ReLU`, `SiLU`, `Sigmoid`, `SumOfSigmoids`
+    - `TwoStateFractionFolded` (Common for abundance data)
+    - `ThreeStateFractionBound` (Common for binding data)
+- `phenotype`: A unique name for the measured experimental phenotype (e.g., Abundance, KinaseActivity).
+- `file`: Path to the input data (DiMSum .RData or plain text fitness files).
 
-## Native Command Line Usage
-
+## Command Line Usage
 The primary interface for standard workflows is the `run_mochi.py` script.
 
-### Standard Execution
-To run a model fit, you must provide a model design file:
+### Basic Execution
+To run a model fit using a design file:
 ```bash
 run_mochi.py --model_design path/to/model_design.txt
 ```
 
-### Testing the Installation
-Verify the environment and tool functionality using the built-in demo (approx. 10-minute runtime):
-```bash
-demo_mochi.py
-```
+### Common CLI Arguments
+- `--project_name`: Specify a name for the output directory.
+- `--k_folds`: Set the number of cross-validation groups (default is often 10).
+- `--batch_size`: Adjust the number of variants processed per training step.
+- `--epochs`: Define the maximum number of training iterations.
+- `--learn_rate`: Set the initial learning rate for the optimizer.
 
-### Help and Parameters
-Access all available command-line arguments, including hyperparameter overrides and hardware settings:
-```bash
-run_mochi.py -h
-```
+## Python API Integration
+For custom workflows, use the `pymochi` package components directly.
 
-## Model Design Configuration
-
-MoCHI requires a **tab-separated** plain text file (not YAML) to define the model architecture. This file maps experimental measurements to biophysical traits.
-
-### Required Columns
-1.  **trait**: One or more additive trait names (e.g., `Folding` or `Binding`).
-2.  **transformation**: The mathematical shape of the global epistatic trend.
-3.  **phenotype**: A unique name for the measured experimental value (e.g., `Abundance`).
-4.  **file**: Path to the input data (DiMSum `.RData` or plain text fitness/error estimates).
-
-### Available Transformations
-*   **Linear**: No non-linear transformation.
-*   **ReLU / SiLU / Sigmoid**: Standard neural network activation functions.
-*   **TwoStateFractionFolded**: Specifically for protein abundance/stability data.
-*   **ThreeStateFractionBound**: For binding data where the protein must be folded to bind.
-*   **SumOfSigmoids**: For complex, multi-state transitions.
-
-## Python API Workflow
-
-For custom analyses, use the `pymochi` package directly in Python.
-
-### 1. Data Initialization
-Load data and define cross-validation groups (typically 10-fold).
 ```python
 from pymochi.data import MochiData
 from pymochi.models import MochiTask
 
-mochi_task = MochiTask(
+# Initialize data object
+data = MochiData(model_design = my_pd_dataframe)
+
+# Define and run task
+task = MochiTask(
     directory = 'output_dir',
-    data = MochiData(
-        model_design = my_model_design_df,
-        k_folds = 10)
+    data = data,
+    batch_size = 1024
 )
+task.run()
 ```
 
-### 2. Optimization and Fitting
-Perform a grid search to find optimal hyperparameters before fitting the final model.
-```python
-# Find best hyperparameters
-mochi_task.grid_search()
+## Best Practices
+- **Data Formatting**: Ensure fitness files contain variant sequences (nucleotide or amino acid) along with fitness and error estimates.
+- **Transformation Selection**: Use `TwoStateFractionFolded` when modeling protein stability from abundance-seq data, as it correctly represents the thermodynamic relationship between $\Delta G$ and the fraction of folded protein.
+- **Cross-Validation**: Always use k-fold cross-validation (typically $k=10$) to ensure the inferred energies generalize well to unseen mutations.
+- **Hardware**: For large DMS datasets, ensure a compatible GPU environment is available to accelerate the neural network training process.
 
-# Fit the model for each fold
-for i in range(10):
-    mochi_task.fit_best(fold = i + 1)
-```
 
-### 3. Extracting Biophysical Energies
-Convert model weights into physical energy units using the gas constant ($R$) and temperature ($T$).
-```python
-from pymochi.report import MochiReport
 
-# RT calculation for 30 degrees Celsius
-RT = (273 + 30) * 0.001987 
+## Subcommands
 
-# Generate reports and extract energies
-mochi_report = MochiReport(task = mochi_task, RT = RT)
-energies = mochi_task.get_additive_trait_weights(RT = RT)
-mochi_task.save()
-```
-
-## Expert Tips
-
-*   **Input Formats**: MoCHI accepts nucleotide or amino acid sequences. Ensure your input files include both fitness estimates and associated error (standard deviation) for proper weighting during training.
-*   **Temperature Calibration**: Always specify the correct temperature used in the original DMS experiment when extracting weights to ensure $\Delta G$ values are physically accurate.
-*   **Output Structure**: After execution, check the `report/` subfolder for diagnostic plots, `predictions/` for variant-level model fits, and `weights/` for the inferred biophysical parameters.
-*   **Hardware**: For large DMS datasets (e.g., >100,000 variants), ensure you are running in an environment with sufficient RAM, as one-hot encoding of sequences can be memory-intensive.
+| Command | Description |
+|---------|-------------|
+| demo_mochi.py | MoCHI Command Line tool. |
+| run_mochi.py | MoCHI Command Line tool. |
 
 ## Reference documentation
 - [MoCHI GitHub Repository](./references/github_com_lehner-lab_MoCHI.md)
-- [pymochi Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_pymochi_overview.md)
+- [MoCHI README](./references/github_com_lehner-lab_MoCHI_blob_master_README.md)
+- [Model Design Example](./references/github_com_lehner-lab_MoCHI_blob_master_pymochi_data_model_design_example.txt.md)

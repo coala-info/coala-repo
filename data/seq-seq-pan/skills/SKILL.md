@@ -1,6 +1,6 @@
 ---
 name: seq-seq-pan
-description: seq-seq-pan is a bioinformatics workflow designed for the sequential alignment of genomic sequences to build a pangenome iteratively. Use when user asks to perform whole-genome alignment, split a pangenome by chromosomes, extract specific genomic subregions, or map coordinates between a consensus sequence and individual genomes.
+description: seq-seq-pan is a bioinformatics workflow for sequential whole-genome alignment and the construction of pan-genome data structures. Use when user asks to perform whole-genome alignment, split pangenome alignments, extract specific genomic subregions, or map coordinates and annotations across genomes.
 homepage: https://gitlab.com/chrjan/seq-seq-pan
 ---
 
@@ -8,43 +8,77 @@ homepage: https://gitlab.com/chrjan/seq-seq-pan
 # seq-seq-pan
 
 ## Overview
-seq-seq-pan is a specialized bioinformatics workflow designed for the sequential alignment of genomic sequences. Unlike traditional multiple sequence aligners that process all inputs simultaneously, seq-seq-pan builds a pangenome iteratively. This approach is particularly effective for closely related species or strains where a unified coordinate system (the pangenome) is required to analyze variations, extract specific loci across all samples, or map annotations from a reference to a collective consensus.
 
-## Core Workflows and CLI Patterns
+seq-seq-pan is a bioinformatics workflow designed for the sequential alignment of genomic sequences to construct a pan-genome data structure. It facilitates whole-genome alignment (WGA) by adding sequences one-by-one, internally utilizing tools like progressiveMauve. The tool is particularly effective for comparative genomics tasks, such as creating a consensus sequence from multiple related genomes, mapping annotations across different coordinate spaces, and extracting specific loci from complex alignments.
 
-### Whole-Genome Alignment (WGA)
+## Core Command Patterns
+
+### Whole Genome Alignment (WGA)
 The primary entry point for building the pangenome.
-- **Basic Usage**: `seq-seq-pan wga [options]`
-- **Key Output**: Generates an `.xmfa` alignment file and a `xxx_genomedescription.txt` file. The genome description file is critical for all downstream "extract" and "split" operations.
+```bash
+seq-seq-pan wga -f <input_fasta_list> -o <output_directory>
+```
+*   **Note**: This process generates a critical `xxx_genomedescription.txt` file required for most downstream subcommands.
 
 ### Splitting the Pangenome
-Use the `split` command to organize the pangenome by chromosomes or specific contigs.
-- **Requirement**: Requires a genome description file (`-g`).
-- **Genome ID Logic**: The first column in the description file must be an integer representing the order in which genomes were added during the WGA process.
-- **Example Description Format (Tab-separated)**:
-  ```text
-  1    chr1    23000
-  1    chr2    31000
-  2    contig1 9000
-  ```
+Used to divide the pangenome alignment, typically by chromosome or contig.
+```bash
+seq-seq-pan split -x <alignment.xmfa> -g <genome_description.txt> -o <output_dir>
+```
+*   **Genome Description Format**: A tab-separated file containing: `Genome_ID`, `Sequence_Name`, and `Length`.
+*   **Expert Tip**: The `Genome_ID` is an integer representing the order in which the genome was added during the WGA step (1, 2, 3...).
 
 ### Extracting Subregions
-To extract a specific genomic interval from the alignment (including the consensus):
-- **Pattern**: `seq-seq-pan extract -x <alignment.xmfa> -g <description.txt> -p <out_path> -n <name> -e <sequence_id>:<start>-<end>`
-- **Expert Tip**: Ensure the `<sequence_id>` matches the name used in the original FASTA headers.
+Extract specific genomic intervals from the alignment (including the consensus).
+```bash
+seq-seq-pan extract -x <alignment.xmfa> -g <genome_description.txt> -p <output_path> -n <output_name> -e <sequence_id>:<start>-<end>
+```
+*   **Example**: `-e Herato1001:4600000-4750000`
 
 ### Coordinate Mapping
-Map coordinates from the consensus sequence back to individual genomes or vice versa.
-- **Map All**: Use `seq-seq-pan mapall` to map all coordinates of the consensus sequence to selected genomes.
-- **Single Map**: `seq-seq-pan map -c <consensus.fasta> -p <out_path> -n <output_name> -i <index_file>`
+Map coordinates or annotations from a specific genome to the consensus coordinate space.
+```bash
+# Map specific coordinates
+seq-seq-pan map -c <consensus.fasta> -p <output_path> -n <output_name> -i <consensus.fasta.idx>
 
-## Expert Tips and Best Practices
-- **Sequence Naming**: Internally, the tool (via progressiveMauve) may rename sequences to integers (1, 2, 3). Always keep the `xxx_genomedescription.txt` file generated during the WGA step, as it serves as the Rosetta Stone for mapping these integers back to your original chromosome/contig names.
-- **Input Validation**: Ensure FASTA files are not empty before starting the WGA. The underlying alignment engine may hang indefinitely on empty files without throwing an error.
-- **Consensus Handling**: If the consensus sequence is not split into expected Locally Collinear Blocks (LCBs), verify the chromosome annotations in the genome description file used during the `split` or `consensus` phase.
-- **Handling 'X' Bases**: The tool is designed to handle 'X' bases specifically when building consensus sequences, making it suitable for draft genomes with masked regions.
+# Map all coordinates of the consensus to selected genomes
+seq-seq-pan mapall -c <consensus.fasta> -g <genome_list> -o <output_dir>
+```
+
+## Best Practices and Troubleshooting
+
+*   **Input Validation**: Always verify that input FASTA files are not empty before starting the `wga` process. `progressiveMauve` (used internally) may hang indefinitely when encountering empty files.
+*   **Sequence Naming**: Internally, the tool may rename sequences to integers (1, 2, 3) in the XMFA file. Always refer to the `genomedescription.txt` to map these IDs back to your original chromosome or contig names.
+*   **Consensus Generation**: Use `seq-seq-pan-consensus` to generate a fasta sequence representing the combined pangenome. Note that the consensus is a combination of all sequences; if sequences do not overlap at the borders, the consensus may not be split into Locally Collinear Blocks (LCBs) unless the `split` function is applied.
+*   **Visualization**: Alignments produced in XMFA format can be visualized using standard comparative genomics viewers like Mauve.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| blockcountsplit | Split XMFA of 2 genomes into 3 XMFA files: blocks with both genomes and genome-specific blocks for each genome. |
+| extract | Extract sequence for whole genome or genomic interval. |
+| join | Join LCBs from 2 XMFA files, assigning genome_ids as in first XMFA file (-x). |
+| maf | Write MAF file from XMFA file. |
+| map | Map positions/coordinates from consensus to sequences, between sequences, ... |
+| mapall | Map all positions/coordinates from consensus to sequences |
+| merge | Add small LCBs to end or beginning of surrounding LCBs. Can only be used with two aligned sequences. |
+| realign | Realign sequences of LCBs around consecutive gaps. Can only be used with two aligned sequences. |
+| reconstruct | Build alignment of all genomes from .XMFA file with new genome aligned to consensus sequence. |
+| remove | Remove a genome from all LCBs in alignment. |
+| resolve | Resolve LCBs stretching over delimiter sequences. |
+| separate | Separate small multi-sequence LCBs to form genome specific entries. |
+| seqseqpan.py | A tool for pan-genome analysis and sequence manipulation. |
+| seqseqpan.py | A tool for pan-genome analysis and sequence alignment manipulation. |
+| seqseqpan.py | A tool for pan-genome analysis and sequence processing. |
+| seqseqpan.py | A tool for pan-genome analysis. Note: 'only' is not a valid subcommand; valid subcommands include blockcountsplit, extract, join, maf, map, mapall, merge, realign, reconstruct, remove, resolve, separate, split, and xmfa. |
+| seqseqpan.py | A tool for pangenome analysis and sequence manipulation. |
+| split | Split LCBs according to chromosome annotation. |
+| xmfa | Write XMFA file from XMFA file (for reordering or checking validity). |
 
 ## Reference documentation
-- [seq-seq-pan GitLab Activity](./references/gitlab_com_chrjan_seq-seq-pan.atom.md)
-- [seq-seq-pan Overview](./references/anaconda_org_channels_bioconda_packages_seq-seq-pan_overview.md)
-- [seq-seq-pan Releases and Features](./references/gitlab_com_chrjan_seq-seq-pan_-_releases.md)
+- [Main Project Page](./references/gitlab_com_chrjan_seq-seq-pan.md)
+- [README and Usage](./references/gitlab_com_chrjan_seq-seq-pan_-_blob_master_README.md)
+- [Release Notes and Feature Updates](./references/gitlab_com_chrjan_seq-seq-pan_-_releases.md)

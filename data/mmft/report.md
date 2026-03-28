@@ -347,3 +347,6 @@ Options:
   -V, --version          Print version
 ```
 
+
+## Metadata
+- **Skill**: generated

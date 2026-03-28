@@ -1,1 +1,441 @@
-ctu-mrs · Discussions · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings ctu-mrs Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} Multi-robot Systems (MRS) group at Czech Technical University in Prague Overview Repositories Discussions Projects Packages People More Overview Repositories Discussions Projects Packages People ctu-mrs mrs_uav_system Discussions Pinned Discussions 👋 Welcome to MRS system Discussions! 💬 General · spurnvoj Search all discussions Clear Sort by: Latest activity Latest activity Date created Top: Past day Top: Past week Top: Past month Top: Past year Top: All Label Filter by label Sorry, something went wrong. Filter Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page . No labels found. Sorry about that. Use alt + click/return to exclude labels. Filter: Open Open Closed Locked Unlocked Answered Unanswered Verified All Categories View all discussions 💬 General 💡 Ideas 🗳️ Polls 🙏 Q&amp;A 🙌 Show and tell Loading Uh oh! There was an error while loading. Please reload this page . Community guidelines ctu-mrs.github.io Discussions 2 You must be logged in to vote 🙏 How To Increase IMU simulation rate for Lidar Odometry compatibility lucasfroes232 asked Feb 12, 2026 in Q&amp;A · Unanswered 0 1 You must be logged in to vote 🙏 What's the message format for mrs_msgs/ReferenceStamped? andrews-quest asked Feb 12, 2026 in Q&amp;A · Unanswered 0 1 You must be logged in to vote 🙏 UAV instability during trajectory tracking using CTU-MRS with mrs_point_lio state estimator MJavadZallaghi asked Nov 6, 2025 in Q&amp;A · Unanswered 8 1 You must be logged in to vote 🙏 The PX4ros package that comes with MRS conflicts with the native PX4 software package simulation yuan99993 asked Jan 25, 2026 in Q&amp;A · Unanswered 1 1 You must be logged in to vote 💡 GPU simulator bconvens started Nov 6, 2023 in Ideas 5 0 You must be logged in to vote 🙏 EstimationManager stuck at FALSE after adding cameras to custom drone (ROS 2 Jazzy) rasufsj asked Nov 26, 2025 in Q&amp;A · Unanswered 3 1 You must be logged in to vote 🙏 Model name uav1 already exists andrews-quest asked Nov 12, 2025 in Q&amp;A · Answered 1 1 You must be logged in to vote 🙏 Inconsitent Gazebo sim startup behaviour gbg-ivi asked Nov 11, 2025 in Q&amp;A · Unanswered 5 1 You must be logged in to vote 🙏 Can this project support fixed-wing aircraft? sdjtcn asked Nov 6, 2025 in Q&amp;A · Unanswered 0 2 You must be logged in to vote 🙏 UAV with MRS performs different behavior with the same MRS software and hardware in different indoor test sites MJavadZallaghi asked Oct 30, 2025 in Q&amp;A · Unanswered 2 1 You must be logged in to vote 🙏 Can't generate path for Gazebo Simulator on ROS2 Sujjay02 asked Oct 11, 2025 in Q&amp;A · Unanswered 2 1 You must be logged in to vote 🙏 I can't spawn a drone in mrs_uav_gazebo_simulato rasufsj asked Sep 22, 2025 in Q&amp;A · Answered 3 1 You must be logged in to vote 🙏 Heatsink and cage for Livox MID 360 LiDAR proper for UAVs MJavadZallaghi asked Sep 26, 2025 in Q&amp;A · Unanswered 0 1 You must be logged in to vote 🙏 Offboard goes to manual in midair immediately after automatic takeoff by MRS MJavadZallaghi asked Sep 5, 2025 in Q&amp;A · Unanswered 21 1 You must be logged in to vote 🙏 MRS in confined spaces aasignacion asked Sep 1, 2025 in Q&amp;A · Unanswered 0 1 You must be logged in to vote 🙏 Collision Avoidance for multiple UAVs when not using world_origin frame for odometry migsdigs asked Jul 28, 2025 in Q&amp;A · Answered 2 2 You must be logged in to vote 🙏 How to download RAPID ALittleConfused asked Jul 10, 2025 in Q&amp;A · Unanswered 1 1 You must be logged in to vote 🙏 Ending a Gazebo simulation session properly andrews-quest asked Jul 2, 2025 in Q&amp;A · Answered 9 1 You must be logged in to vote 🙏 How to define sensors of an aerial robot for Gazebo simulation? MJavadZallaghi asked Apr 15, 2025 in Q&amp;A · Answered 3 1 You must be logged in to vote 🙏 Estimation manager vs mrs_uav_odometry and mrs_mins_core migsdigs asked Jun 25, 2025 in Q&amp;A · Answered 2 1 You must be logged in to vote 🙏 Low simulated RealSense sensor publish rate in MRS Simulation MJavadZallaghi asked Jun 10, 2025 in Q&amp;A · Answered 1 1 You must be logged in to vote 🙏 Creation of Global Map for multi-robot localization when using Point-LIO migsdigs asked Jun 12, 2025 in Q&amp;A · Unanswered 0 2 You must be logged in to vote 🙏 Is MRS UAV system software compatible with Pixhawk 6x flight controller? MJavadZallaghi asked Mar 31, 2025 in Q&amp;A · Unanswered 2 2 You must be logged in to vote 🙏 LiDARs for MRS SLAMs (A-LOAM, LIO-SAM, Octomap): What are MRS-compatible and budget-friendly options? MJavadZallaghi asked Apr 15, 2025 in Q&amp;A · Unanswered 5 1 You must be logged in to vote 🙏 Pixhawk 6c mini compatibility bconvens asked May 7, 2025 in Q&amp;A · Unanswered 0 Previous 1 2 3 4 Next 👍 1 reacted with thumbs up emoji 👎 1 reacted with thumbs down emoji 😄 1 reacted with laugh emoji 🎉 1 reacted with hooray emoji 😕 1 reacted with confused emoji ❤️ 1 reacted with heart emoji 🚀 1 reacted with rocket emoji 👀 1 reacted with eyes emoji Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Forgs%2Fctu-mrs%2Fdiscussions)
+
+Appearance settings
+
+[ctu-mrs](/ctu-mrs)
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Forgs%2Fctu-mrs%2Fdiscussions)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Forgs%2Fdiscussions%2Findex&source=header-repo&source_repo=ctu-mrs%2Fmrs_uav_system)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+# [![@ctu-mrs](https://avatars.githubusercontent.com/u/45172578?s=60&v=4) Multi-robot Systems (MRS) group at Czech Technical University in Prague](/ctu-mrs)
+
+* [Overview](/ctu-mrs)
+* [Repositories](/orgs/ctu-mrs/repositories)
+* [Discussions](/orgs/ctu-mrs/discussions)
+* [Projects](/orgs/ctu-mrs/projects)
+* [Packages](/orgs/ctu-mrs/packages)
+* [People](/orgs/ctu-mrs/people)
+
+More
+
+* [Overview](/ctu-mrs)
+* [Repositories](/orgs/ctu-mrs/repositories)
+* [Discussions](/orgs/ctu-mrs/discussions)
+* [Projects](/orgs/ctu-mrs/projects)
+* [Packages](/orgs/ctu-mrs/packages)
+* [People](/orgs/ctu-mrs/people)
+
+# ctu-mrs mrs\_uav\_system Discussions
+
+## Pinned Discussions
+
+* ![spurnvoj](https://avatars.githubusercontent.com/u/7849128?s=32&v=4)
+
+  ### [👋 Welcome to MRS system Discussions!](/orgs/ctu-mrs/discussions/61)
+
+   [💬
+  General](/orgs/ctu-mrs/discussions?discussions_q=category%3A%22General%22)
+  ·
+   [spurnvoj](/spurnvoj)
+
+Search all discussions
+
+Clear
+
+Sort by:
+Latest activity
+
+[Latest activity](/orgs/ctu-mrs/discussions?discussions_q=is%3Aopen)
+[Date created](/orgs/ctu-mrs/discussions?discussions_q=is%3Aopen+sort%3Adate_created)
+[Top: Past day](/orgs/ctu-mrs/discussions?discussions_q=is%3Aopen+sort%3Atop+created%3A%3E%3D2026-03-26)
+[Top: Past week](/orgs/ctu-mrs/discussions?discussions_q=is%3Aopen+sort%3Atop+created%3A%3E%3D2026-03-20)
+[Top: Past month](/orgs/ctu-mrs/discussions?discussions_q=is%3Aopen+sort%3Atop+created%3A%3E%3D2026-02-25)
+[Top: Past year](/orgs/ctu-mrs/discussions?discussions_q=is%3Aopen+sort%3Atop+created%3A%3E%3D2025-03-27)
+[Top: All](/orgs/ctu-mrs/discussions?discussions_q=is%3Aopen+sort%3Atop)
+
+Label
+
+# Filter by label
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## No labels found. Sorry about that.
+
+Use `alt` + `click/return` to exclude labels.
+
+Filter: Open
+
+* [Open](/orgs/ctu-mrs/discussions)
+* [Closed](/orgs/ctu-mrs/discussions?discussions_q=is%3Aclosed)
+* [Locked](/orgs/ctu-mrs/discussions?discussions_q=is%3Aopen+is%3Alocked)
+* [Unlocked](/orgs/ctu-mrs/discussions?discussions_q=is%3Aopen+is%3Aunlocked)
+* [Answered](/orgs/ctu-mrs/discussions?discussions_q=is%3Aopen+is%3Aanswered)
+* [Unanswered](/orgs/ctu-mrs/discussions?discussions_q=is%3Aopen+is%3Aunanswered)
+* [Verified](/orgs/ctu-mrs/discussions?discussions_q=is%3Aopen+is%3Averified)
+* [All](/orgs/ctu-mrs/discussions?discussions_q=)
+
+## Categories
+
+* [View all discussions](/orgs/ctu-mrs/discussions)
+* [💬
+
+  General](/orgs/ctu-mrs/discussions/categories/general)
+* [💡
+
+  Ideas](/orgs/ctu-mrs/discussions/categories/ideas)
+* [🗳️
+
+  Polls](/orgs/ctu-mrs/discussions/categories/polls)
+* [🙏
+
+  Q&A](/orgs/ctu-mrs/discussions/categories/q-a)
+* [🙌
+
+  Show and tell](/orgs/ctu-mrs/discussions/categories/show-and-tell)
+
+Loading
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+* [Community guidelines](https://docs.github.com/articles/github-community-guidelines)
+* [ctu-mrs.github.io](https://ctu-mrs.github.io/)
+
+## Discussions
+
+* 1
+   You must be logged in to vote
+
+  🙏
+
+  ### [Error loading transform\_manager node: rcl node's context is invalid](/orgs/ctu-mrs/discussions/234)
+
+  [rasufsj](/rasufsj)
+  asked
+  Feb 28, 2026
+   in
+  [Q&A](/orgs/ctu-mrs/discussions/categories/q-a?discussions_q=is%3Aopen+category%3AQ%26A)
+
+  · Unanswered
+
+  [![@rasufsj](https://avatars.githubusercontent.com/u/185408279?s=60&v=4)](/rasufsj)
+  [![@DavidCapek](https://avatars.githubusercontent.com/u/24654345?s=60&v=4)](/DavidCapek)
+
+  [![@rasufsj](https://avatars.githubusercontent.com/u/185408279?s=60&v=4)](/rasufsj)
+  [![@DavidCapek](https://avatars.githubusercontent.com/u/24654345?s=60&v=4)](/DavidCapek)
+
+  [1](/orgs/ctu-mrs/discussions/234)
+* 1
+   You must be logged in to vote
+
+  🙏
+
+  ### [UAV instability during trajectory tracking using CTU-MRS with mrs\_point\_lio state estimator](/orgs/ctu-mrs/discussions/225)
+
+  [MJavadZallaghi](/MJavadZallaghi)
+  asked
+  Nov 6, 2025
+   in
+  [Q&A](/orgs/ctu-mrs/discussions/categories/q-a?discussions_q=is%3Aopen+category%3AQ%26A)
+
+  · Unanswered
+
+  [![@MJavadZallaghi](https://avatars.githubusercontent.com/u/30407833?s=60&v=4)](/MJavadZallaghi)
+  [![@matemat13](https://avatars.githubusercontent.com/u/5741774?s=60&v=4)](/matemat13)
+
+  [![@MJavadZallaghi](https://avatars.githubusercontent.com/u/30407833?s=60&v=4)](/MJavadZallaghi)
+  [![@matemat13](https://avatars.githubusercontent.com/u/5741774?s=60&v=4)](/matemat13)
+
+  [10](/orgs/ctu-mrs/discussions/225)
+* 2
+   You must be logged in to vote
+
+  🙏
+
+  ### [What's the message format for mrs\_msgs/ReferenceStamped?](/orgs/ctu-mrs/discussions/232)
+
+  [andrews-quest](/andrews-quest)
+  asked
+  Feb 12, 2026
+   in
+  [Q&A](/orgs/ctu-mrs/discussions/categories/q-a?discussions_q=is%3Aopen+category%3AQ%26A)
+
+  · Answered
+
+  [![@andrews-quest](https://avatars.githubusercontent.com/u/36561904?s=60&v=4)](/andrews-quest)
+  [![@klaxalk](https://avatars.githubusercontent.com/u/1611176?s=60&v=4)](/klaxalk)
+
+  [![@andrews-quest](https://avatars.githubusercontent.com/u/36561904?s=60&v=4)](/andrews-quest)
+  [![@klaxalk](https://avatars.githubusercontent.com/u/1611176?s=60&v=4)](/klaxalk)
+
+  [4](/orgs/ctu-mrs/discussions/232)
+* 1
+   You must be logged in to vote
+
+  🙏
+
+  ### [The PX4ros package that comes with MRS conflicts with the native PX4 software package simulation](/orgs/ctu-mrs/discussions/231)
+
+  [yuan99993](/yuan99993)
+  asked
+  Jan 25, 2026
+   in
+  [Q&A](/orgs/ctu-mrs/discussions/categories/q-a?discussions_q=is%3Aopen+category%3AQ%26A)
+
+  · Unanswered
+
+  [![@yuan99993](https://avatars.githubusercontent.com/u/134768391?s=60&v=4)](/yuan99993)
+  [![@klaxalk](https://avatars.githubusercontent.com/u/1611176?s=60&v=4)](/klaxalk)
+
+  [![@yuan99993](https://avatars.githubusercontent.com/u/134768391?s=60&v=4)](/yuan99993)
+  [![@klaxalk](https://avatars.githubusercontent.com/u/1611176?s=60&v=4)](/klaxalk)
+
+  [1](/orgs/ctu-mrs/discussions/231)
+* 1
+   You must be logged in to vote
+
+  💡
+
+  ### [GPU simulator](/orgs/ctu-mrs/discussions/170)
+
+  [bconvens](/bconvens)
+  started
+  Nov 6, 2023
+   in
+  [Ideas](/orgs/ctu-mrs/discussions/categories/ideas?discussions_q=is%3Aopen+category%3AIdeas)
+
+  [![@bconvens](https://avatars.githubusercontent.com/u/12151591?s=60&v=4)](/bconvens)
+  [![@klaxalk](https://avatars.githubusercontent.com/u/1611176?s=60&v=4)](/klaxalk)[![@dederomagnolo](https://avatars.githubusercontent.com/u/30395276?s=60&v=4)](/dederomagnolo)
+
+  [![@bconvens](https://avatars.githubusercontent.com/u/12151591?s=60&v=4)](/bconvens)
+  [![@klaxalk](https://avatars.githubusercontent.com/u/1611176?s=60&v=4)](/klaxalk)[![@dederomagnolo](https://avatars.githubusercontent.com/u/30395276?s=60&v=4)](/dederomagnolo)
+
+  [5](/orgs/ctu-mrs/discussions/170)
+* 0
+   You must be logged in to vote
+
+  🙏
+
+  ### [EstimationManager stuck at FALSE after adding cameras to custom drone (ROS 2 Jazzy)](/orgs/ctu-mrs/discussions/228)
+
+  [rasufsj](/rasufsj)
+  asked
+  Nov 26, 2025
+   in
+  [Q&A](/orgs/ctu-mrs/discussions/categories/q-a?discussions_q=is%3Aopen+category%3AQ%26A)
+
+  · Unanswered
+
+  [![@rasufsj](https://avatars.githubusercontent.com/u/185408279?s=60&v=4)](/rasufsj)
+  [![@spurnvoj](https://avatars.githubusercontent.com/u/7849128?s=60&v=4)](/spurnvoj)
+
+  [![@rasufsj](https://avatars.githubusercontent.com/u/185408279?s=60&v=4)](/rasufsj)
+  [![@spurnvoj](https://avatars.githubusercontent.com/u/7849128?s=60&v=4)](/spurnvoj)
+
+  [3](/orgs/ctu-mrs/discussions/228)
+* 1
+   You must be logged in to vote
+
+  🙏
+
+  ### [Model name uav1 already exists](/orgs/ctu-mrs/discussions/227)
+
+  [andrews-quest](/andrews-quest)
+  asked
+  Nov 12, 2025
+   in
+  [Q&A](/orgs/ctu-mrs/discussions/categories/q-a?discussions_q=is%3Aopen+category%3AQ%26A)
+
+  · Answered
+
+  [![@andrews-quest](https://avatars.githubusercontent.com/u/36561904?s=60&v=4)](/andrews-quest)
+
+  [![@andrews-quest](https://avatars.githubusercontent.com/u/36561904?s=60&v=4)](/andrews-quest)
+
+  [1](/orgs/ctu-mrs/discussions/227)
+* 2
+   You must be logged in to vote
+
+  🙏
+
+  ### [Inconsitent Gazebo sim startup behaviour](/orgs/ctu-mrs/discussions/226)
+
+  [gbg-ivi](/gbg-ivi)
+  asked
+  Nov 11, 2025
+   in
+  [Q&A](/orgs/ctu-mrs/discussions/categories/q-a?discussions_q=is%3Aopen+category%3AQ%26A)
+
+  · Unanswered
+
+  [![@gbg-ivi](https://avatars.githubusercontent.com/u/243339851?s=60&v=4)](/gbg-ivi)
+  [![@matemat13](https://avatars.githubusercontent.com/u/5741774?s=60&v=4)](/matemat13)[![@spurnvoj](https://avatars.githubusercontent.com/u/7849128?s=60&v=4)](/spurnvoj)
+
+  [![@gbg-ivi](https://avatars.githubusercontent.com/u/243339851?s=60&v=4)](/gbg-ivi)
+  [![@matemat13](https://avatars.githubusercontent.com/u/5741774?s=60&v=4)](/matemat13)[![@spurnvoj](https://avatars.githubusercontent.com/u/7849128?s=60&v=4)](/spurnvoj)
+
+  [5](/orgs/ctu-mrs/discussions/226)
+* 1
+   You must be logged in to vote
+
+  🙏
+
+  ### [Can this project support fixed-wing aircraft?](/orgs/ctu-mrs/discussions/224)
+
+  [sdjtcn](/sdjtcn)
+  asked
+  Nov 6, 2025
+   in
+  [Q&A](/orgs/ctu-mrs/discussions/categories/q-a?discussions_q=is%3Aopen+category%3AQ%26A)
+
+  · Unanswered
+
+  [![@sdjtcn](https://avatars.githubusercontent.com

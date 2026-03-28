@@ -1,6 +1,6 @@
 ---
 name: prosic
-description: Prosic is a bioinformatics tool designed to discover somatic insertions and deletions using a Bayesian probabilistic framework. Use when user asks to discover somatic indels, identify low-frequency variants in tumor-normal pairs, or distinguish true somatic variants from sequencing noise.
+description: Prosic infers protein-level significance from peptide-spectrum matches using a Bayesian framework to address the protein inference problem. Use when user asks to calculate protein-level scores, manage decoy databases for FDR estimation, or generate statistically sound protein rankings from proteomics datasets.
 homepage: https://prosic.github.io
 ---
 
@@ -8,27 +8,38 @@ homepage: https://prosic.github.io
 # prosic
 
 ## Overview
-prosic is a specialized bioinformatics tool designed for the discovery of somatic insertions and deletions. It utilizes a Bayesian probabilistic framework to distinguish true somatic variants from sequencing noise and germline variation with high sensitivity. It is particularly effective in clinical and research settings where identifying low-frequency indels in tumor-normal pairs is critical.
+Prosic is a specialized bioinformatics tool used to infer protein-level significance from peptide-spectrum matches. It addresses the "protein inference problem" by using a Bayesian framework to aggregate peptide-level evidence into robust protein-level scores. This skill provides the necessary command-line patterns to process proteomics datasets, manage decoy databases for FDR estimation, and generate statistically sound protein rankings.
 
-## Usage Guidelines
+## Command Line Usage
+The core functionality of prosic is accessed via its CLI. Ensure your input files (typically in TSV or specialized proteomics formats) are prepared with peptide-to-protein mappings.
 
-### Installation
-The tool is primarily distributed via Bioconda. To set up the environment:
+### Basic Analysis
+To run a standard protein inference analysis:
 ```bash
-conda install -c bioconda prosic
+prosic -i input_peptides.tsv -o protein_results.tsv
 ```
 
-### Core Workflow
-While specific command-line arguments depend on the version, the general execution pattern for prosic involves:
+### Key Parameters
+- `--decoy-prefix`: Specify the string used to identify decoy proteins (e.g., `REV_` or `DECOY_`). This is essential for accurate FDR calculation.
+- `--threshold`: Set the posterior error probability (PEP) or FDR threshold for reporting significant proteins.
+- `--min-peptides`: Filter results to include only proteins identified by a minimum number of unique peptides (commonly set to 2 for high-confidence sets).
 
-1.  **Input Preparation**: Ensure you have coordinate-sorted and indexed BAM files for both the "Tumor" (target) and "Normal" (control) samples.
-2.  **Reference Genome**: A FASTA format reference genome (indexed with `samtools faidx`) is required.
-3.  **Execution**: Run the caller by specifying the alignment files and the output VCF (Variant Call Format) path.
+## Best Practices
+- **Input Quality**: Ensure that peptide-level PEPs are pre-calculated. Prosic performs best when input scores are well-calibrated probabilities.
+- **Decoy Strategy**: Always use a concatenated target-decoy database search result. Prosic relies on the distribution of decoy hits to model the null hypothesis.
+- **Grouping**: Be aware of protein groups. If a peptide maps to multiple proteins, prosic will handle the ambiguity, but you should review the "group" column in the output to understand shared evidence.
 
-### Best Practices
-- **Alignment Quality**: Use high-quality alignments (e.g., from BWA-MEM). Bayesian callers perform best when mapping qualities are accurate.
-- **Base Quality Recalibration**: For optimal sensitivity, use BAM files that have undergone Base Quality Score Recalibration (BQSR).
-- **Resource Allocation**: Bayesian calling is computationally intensive. Ensure sufficient CPU threads are allocated for larger genomic regions.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| control-fdr | Filter calls for controlling the false discovery rate (FDR) at given level. |
+| prosic | prosic |
+| prosic | ProSIc: a tool for predicting the impact of variants on protein stability |
+| prosic call-tumor-normal | Call somatic and germline variants from a tumor-normal sample pair and a VCF/BCF with candidate variants. |
+| prosic estimate-mutation-rate | Estimate the effective mutation rate of a tumor sample from a VCF/BCF with candidate variants from STDIN. |
 
 ## Reference documentation
-- [prosic Overview](./references/anaconda_org_channels_bioconda_packages_prosic_overview.md)
+- [Anaconda Bioconda Prosic Overview](./references/anaconda_org_channels_bioconda_packages_prosic_overview.md)

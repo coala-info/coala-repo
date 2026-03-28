@@ -122,3 +122,6 @@ options:
   -l , --flank-length   flanking sequence length (default: 100)
 ```
 
+
+## Metadata
+- **Skill**: generated

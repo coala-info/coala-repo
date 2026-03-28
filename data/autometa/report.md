@@ -530,3 +530,6 @@ options:
   -C, --citation  Print autometa citation (APA and BibTex)
 ```
 
+
+## Metadata
+- **Skill**: generated

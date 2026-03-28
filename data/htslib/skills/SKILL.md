@@ -1,6 +1,6 @@
 ---
 name: htslib
-description: HTSlib provides essential utilities for compressing, indexing, and identifying high-throughput sequencing data files. Use when user asks to compress files with bgzip, index tab-delimited genomic files with tabix, query specific genomic regions, or identify file formats.
+description: HTSlib provides essential utilities for compressing, indexing, and identifying high-throughput sequencing data formats. Use when user asks to compress files with bgzip, index genomic files with tabix, query specific genomic intervals, or identify and check the integrity of bioinformatics file formats.
 homepage: https://github.com/samtools/htslib
 ---
 
@@ -8,46 +8,49 @@ homepage: https://github.com/samtools/htslib
 # htslib
 
 ## Overview
-HTSlib is the foundational C library used by Samtools and Bcftools for processing high-throughput sequencing data. While it is primarily a developer library, it provides several critical command-line utilities that are essential for genomic data management. This skill focuses on the practical application of these utilities to compress, index, and identify genomic files efficiently.
+HTSlib is the foundational engine powering major bioinformatics tools like Samtools and Bcftools. While primarily a developer library, it provides essential standalone utilities for managing large-scale genomic datasets. This skill focuses on the practical application of its core binaries: `bgzip` for blocked-gzip compression (allowing random access), `tabix` for indexing TAB-delimited files, and `htsfile` for identifying and checking the integrity of sequencing files.
 
-## Core Utilities and CLI Patterns
+## Core Utilities and Best Practices
 
-### bgzip: Block Compression
-Unlike standard gzip, `bgzip` compresses data in blocks, allowing for random access when used with an index.
+### bgzip: Blocked GNU Zip
+Unlike standard gzip, `bgzip` compresses data in blocks, enabling tools to jump to specific locations without decompressing the entire file.
+
 - **Compress a file**: `bgzip file.vcf` (creates `file.vcf.gz`)
-- **Decompress a file**: `bgzip -d file.vcf.gz`
-- **Write to stdout**: `bgzip -c file.vcf > file.vcf.gz`
-- **Recompress with specific threads**: `bgzip -@ 4 file.vcf`
+- **Decompress to stdout**: `bgzip -dc file.vcf.gz`
+- **Recompress/Refresh**: Use `bgzip -@ [threads]` to utilize multiple CPU cores for faster compression.
+- **Offset extraction**: `bgzip -b [offset] -s [size] file.gz` allows for extracting specific chunks if the virtual offsets are known.
 
-### tabix: Generic Indexer
-Tabix is used to index TAB-delimited genomic files (VCF, GFF, BED, etc.) that have been compressed with `bgzip`.
-- **Index a VCF file**: `tabix -p vcf file.vcf.gz`
-- **Index a BED file**: `tabix -p bed file.bed.gz`
-- **Query a specific region**: `tabix file.vcf.gz chr1:10,000-20,000`
-- **List sequence names**: `tabix -l file.vcf.gz`
+### tabix: Generic Indexer for TAB-delimited Files
+Tabix is used to index position-sorted files (VCF, BED, GFF, SAM) for fast retrieval of genomic intervals.
+
+- **Index a VCF**: `tabix -p vcf file.vcf.gz`
+- **Index a BED**: `tabix -p bed file.bed.gz`
+- **Query a region**: `tabix file.vcf.gz chr1:10,000-20,000`
+- **CSI Indexing**: For very long chromosomes (e.g., exceeding 512Mbp), use the Coordinate Sorted Index format: `tabix --csi file.vcf.gz`.
+- **Skip Headers**: Use `-c` to specify a comment character (default is `#`) to ensure headers are ignored during indexing but preserved in the file.
 
 ### htsfile: File Identification
-Use `htsfile` to identify the format and compression of a sequencing file.
-- **Identify file type**: `htsfile sample.bam`
-- **Check if a file is a specific format**: `htsfile -c bam sample.bam` (returns exit code 0 if true)
+Use `htsfile` to diagnose file format issues or verify if a file is truncated.
 
-## Expert Tips and Best Practices
+- **Identify format**: `htsfile data.bin` (returns e.g., "CRAM sequence data version 3.1")
+- **Check integrity**: `htsfile -c data.bam` will check for a valid EOF (End Of File) marker, which is critical for verifying that a BAM file was not cut short during a transfer or crash.
 
-### Indexing Large Chromosomes
-Standard `.tbi` indexes (Tabix) cannot handle coordinates larger than 512Mbp (2^29). For large genomes (e.g., some plants or specific human assemblies):
-- Use the Coordinate-Sorted Index (CSI) format: `tabix --csi file.vcf.gz`
-- Adjust the min_shift if necessary (default is 14): `tabix --csi --min-shift 14 file.vcf.gz`
+## Expert Tips
+- **Always BGZIP before Tabix**: Tabix requires the input file to be compressed with `bgzip`, not standard `gzip`. If you receive a "file is not bgzipped" error, decompress and re-compress using `bgzip`.
+- **Sorting is Mandatory**: Files must be sorted by chromosome and then by start position before indexing. Tabix will fail or produce incorrect results on unsorted data.
+- **Thread Management**: When working with large CRAM or BAM files, always leverage the `-@` flag in supported utilities to reduce wall-clock time significantly.
+- **Remote Access**: HTSlib supports transparent access to S3, GCS, and HTTP/HTTPS. You can often pass a URL directly to these utilities if your environment is configured with the necessary credentials (e.g., `AWS_ACCESS_KEY_ID`).
 
-### Stream Processing
-HTSlib utilities are designed to work in pipes. Always use `bgzip -c` when piping output to ensure the stream remains compatible with downstream indexing tools.
 
-### Threading Performance
-For large-scale compression tasks, always utilize the `-@` or `--threads` flag. HTSlib scales well with multiple cores, significantly reducing the time required for `bgzip` operations.
 
-### Handling Comments
-When using `tabix`, you can skip comment lines using the `-c` flag. By default, many tools expect comments at the start of the file, but `tabix` can be configured to skip them wherever they occur.
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| bgzip | Block compression/decompression utility |
+| htsfile | Identify file formats and check hashes of genomic data files. |
+| tabix | Generic indexer for TAB-delimited genome position files |
 
 ## Reference documentation
 - [HTSlib GitHub Repository](./references/github_com_samtools_htslib.md)
-- [HTSlib Release Tags and NEWS](./references/github_com_samtools_htslib_tags.md)
-- [Bioconda HTSlib Package](./references/anaconda_org_channels_bioconda_packages_htslib_overview.md)
+- [HTSlib Release Tags and Version History](./references/github_com_samtools_htslib_tags.md)

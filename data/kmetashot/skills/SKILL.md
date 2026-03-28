@@ -1,6 +1,6 @@
 ---
 name: kmetashot
-description: kMetaShot performs rapid taxonomic assignment of microbial genomes and metagenome-assembled bins using an alignment-free minimizer approach. Use when user asks to classify microbial bins, assign taxonomy to metagenome-assembled genomes, or perform rapid taxonomic profiling of genomic datasets.
+description: kMetaShot is a high-performance taxonomic classifier that uses k-mer and minimizer counting to profile Metagenome-Assembled Genomes. Use when user asks to classify MAGs, perform taxonomic profiling of microbial communities, or assign taxonomy to genomic bins from superkingdom to strain level.
 homepage: https://github.com/gdefazio/kMetaShot
 ---
 
@@ -9,58 +9,71 @@ homepage: https://github.com/gdefazio/kMetaShot
 
 ## Overview
 
-kMetaShot is a specialized tool designed for the rapid taxonomic assignment of microbial genomes recovered from metagenomic datasets. By utilizing an alignment-free approach based on minimizers, it provides a computationally efficient alternative to traditional alignment-based classifiers. It is optimized for classifying bins or MAGs rather than raw reads, making it a key component of post-binning metagenomic workflows.
+kMetaShot is a high-performance taxonomic classifier designed specifically for Metagenome-Assembled Genomes (MAGs). It bypasses traditional sequence alignment in favor of a k-mer and minimizer counting strategy, comparing query sequences against a comprehensive HDF5-formatted reference database derived from RefSeq prokaryotic genomes. This approach allows for rapid and reliable profiling of microbial communities, providing assignments from superkingdom down to the strain level.
 
 ## Installation and Setup
 
-The tool is primarily distributed via Bioconda. It requires a significant amount of memory and a specific reference database.
+kMetaShot is primarily distributed via Bioconda.
 
-### Environment Setup
 ```bash
-conda create --name kmetashot -c bioconda kmetashot=2.0
+# Create environment and install
+conda create --name kmetashot kmetashot -c bioconda
 conda activate kmetashot
 ```
 
 ### Reference Database
-kMetaShot requires an HDF5 reference file (representing prokaryotic RefSeq genomes), which typically requires ~22GB of storage. Ensure you have downloaded the latest release (e.g., RefSeq 2025/05/22) before running the classifier.
+The tool requires a specific HDF5 reference file (approx. 22GB). You must download the latest release from Zenodo or HuggingFace before running classifications.
+- **2025 Release**: `kMetaShot_bacteria_archaea_2025-05-22.h5`
+- **2022 Release**: `kMetaShot_reference.h5`
 
-### Verification
-Before processing real data, verify the installation and reference integrity:
+## Command Line Usage
+
+The primary classification script is `kMetaShot_classifier_NV.py`.
+
+### Basic Classification
+To classify a directory of bins:
+```bash
+kMetaShot_classifier_NV.py -b ./my_bins/ -r ./path/to/reference.h5 -p 8 -o ./results
+```
+
+### Key Arguments
+- `-b, --bins_dir`: Path to a directory containing `.fa`, `.fasta`, or `.fna` files (supports `.gz`). Alternatively, a single multi-fasta file where each header represents a bin.
+- `-r, --reference`: Path to the downloaded HDF5 reference file.
+- `-p, --processes`: Number of parallel processes. **Warning**: Increasing parallelism significantly increases RAM usage as the reference is loaded into shared memory.
+- `-a, --ass2ref`: A float between 0 and 1 (default 0). This filters assignments based on the ratio of MAG minimizers to the reference strain's minimizers. Higher values increase precision but may reduce sensitivity.
+- `-o, --out_dir`: Directory where results and intermediate CSV files will be stored.
+
+## Expert Tips and Best Practices
+
+### Memory Management
+kMetaShot utilizes shared memory to handle the large reference database. 
+- **Docker Users**: You must run the container with `--shm-size=22g` (or higher) to prevent crashes during reference loading.
+- **Resource Planning**: Ensure the host system has at least 32GB of RAM available to accommodate the reference and the overhead of multiple processes.
+
+### Validation
+Always verify your installation and reference path using the provided test script before starting large-scale production runs:
 ```bash
 kMetaShot_test.py -r /path/to/kMetaShot_reference.h5
 ```
 
-## Classification Workflow
+### Interpreting Results
+The tool generates several files in the output directory:
+- `kMetaShot_classification_resume.csv`: The primary summary of taxonomic assignments.
+- `all_ass2ref.csv`: Detailed statistics for all potential matches.
+- `ass2ref.csv`: Specific ratios used for the final strain-level assignment.
 
-The primary command for classification is `kMetaShot_classifier_NV.py`.
+### Input Flexibility
+If you have a single large file containing multiple MAGs, kMetaShot treats each entry (header) as an individual bin. This is useful for processing output from binning refinement tools that concatenate results.
 
-### Basic Usage
-```bash
-kMetaShot_classifier_NV.py -b <bins_directory> -r <reference.h5> -o <output_dir>
-```
 
-### Common CLI Patterns
 
-**High-Performance Execution:**
-To speed up classification on multi-core systems, use the `-p` flag. Note that increasing parallelism significantly increases RAM consumption.
-```bash
-kMetaShot_classifier_NV.py -b ./my_bins/ -r ./ref.h5 -p 16 -o ./results/
-```
+## Subcommands
 
-**Stringent Filtering:**
-Use the `-a` (ass2ref) parameter to filter results. This represents the ratio between the number of MAG minimizers and the reference minimizers related to the assigned strain.
-```bash
-# Set a threshold of 0.1 for higher confidence assignments
-kMetaShot_classifier_NV.py -b ./bins/ -r ./ref.h5 -a 0.1 -o ./filtered_results/
-```
-
-## Expert Tips and Best Practices
-
-*   **Input Formats:** The tool accepts `.fa`, `.fasta`, `.fna` files, as well as their gzipped versions (`.gz`). You can provide a directory of files or a single multi-fasta file where each header represents a bin.
-*   **Memory Management:** If running in a Docker container, you must specify `--shm-size=22g` (or higher) to accommodate the reference database in shared memory.
-*   **Resource Planning:** Because the tool loads the reference into memory, ensure the host system has at least 32GB of RAM available, especially when using multiple processes (`-p`).
-*   **Output Interpretation:** The output directory will contain taxonomic assignments for each bin provided in the input.
+| Command | Description |
+|---------|-------------|
+| kMetaShot_classifier_NV.py | kMetaShot is able to taxonomically classiy bins/MAGs and long reads by using an alignment free and k-mer/minimizer based approach. |
+| kmetashot_kMetaShot_test.py | kMetaShot installation test |
 
 ## Reference documentation
-- [kMetaShot GitHub Repository](./references/github_com_gdefazio_kMetaShot.md)
-- [kMetaShot Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_kmetashot_overview.md)
+- [kMetaShot README](./references/github_com_gdefazio_kMetaShot_blob_master_README.md)
+- [Classifier Script Documentation](./references/github_com_gdefazio_kMetaShot_blob_master_kMetaShot_classifier_NV.py.md)

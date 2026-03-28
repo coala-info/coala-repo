@@ -1,1 +1,258 @@
-GitHub - lh3/bwa: Burrow-Wheeler Aligner for short-read alignment (see minimap2 for long-read alignment) Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} lh3 / bwa Public Notifications You must be signed in to change notification settings Fork 574 Star 1.7k Burrow-Wheeler Aligner for short-read alignment (see minimap2 for long-read alignment) License GPL-3.0 license 1.7k stars 574 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 72 Pull requests 25 Actions Security 0 Insights Additional navigation options Code Issues Pull requests Actions Security Insights lh3/bwa master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 996 Commits 996 Commits .github/ workflows .github/ workflows bwakit bwakit .gitignore .gitignore COPYING COPYING ChangeLog ChangeLog Makefile Makefile NEWS.md NEWS.md QSufSort.c QSufSort.c QSufSort.h QSufSort.h README-alt.md README-alt.md README.md README.md bamlite.c bamlite.c bamlite.h bamlite.h bntseq.c bntseq.c bntseq.h bntseq.h bwa.1 bwa.1 bwa.c bwa.c bwa.h bwa.h bwamem.c bwamem.c bwamem.h bwamem.h bwamem_extra.c bwamem_extra.c bwamem_pair.c bwamem_pair.c bwape.c bwape.c bwase.c bwase.c bwase.h bwase.h bwaseqio.c bwaseqio.c bwashm.c bwashm.c bwt.c bwt.c bwt.h bwt.h bwt_gen.c bwt_gen.c bwt_lite.c bwt_lite.c bwt_lite.h bwt_lite.h bwtaln.c bwtaln.c bwtaln.h bwtaln.h bwtgap.c bwtgap.c bwtgap.h bwtgap.h bwtindex.c bwtindex.c bwtsw2.h bwtsw2.h bwtsw2_aux.c bwtsw2_aux.c bwtsw2_chain.c bwtsw2_chain.c bwtsw2_core.c bwtsw2_core.c bwtsw2_main.c bwtsw2_main.c bwtsw2_pair.c bwtsw2_pair.c code_of_conduct.md code_of_conduct.md example.c example.c fastmap.c fastmap.c is.c is.c kbtree.h kbtree.h khash.h khash.h kopen.c kopen.c kseq.h kseq.h ksort.h ksort.h kstring.c kstring.c kstring.h kstring.h ksw.c ksw.c ksw.h ksw.h kthread.c kthread.c kvec.h kvec.h main.c main.c malloc_wrap.c malloc_wrap.c malloc_wrap.h malloc_wrap.h maxk.c maxk.c neon_sse.h neon_sse.h pemerge.c pemerge.c qualfa2fq.pl qualfa2fq.pl rle.c rle.c rle.h rle.h rope.c rope.c rope.h rope.h scalar_sse.h scalar_sse.h utils.c utils.c utils.h utils.h xa2multi.pl xa2multi.pl View all files Repository files navigation README Code of conduct GPL-3.0 license Note: minimap2 has replaced BWA-MEM for PacBio and Nanopore read alignment. It retains all major BWA-MEM features, but is ~50 times as fast, more versatile, more accurate and produces better base-level alignment. BWA-MEM2 is 50-100% faster than BWA-MEM and outputs identical alignments. Getting started git clone https://github.com/lh3/bwa.git cd bwa; make ./bwa index ref.fa ./bwa mem ref.fa read-se.fq.gz | gzip -3 &gt; aln-se.sam.gz ./bwa mem ref.fa read1.fq read2.fq | gzip -3 &gt; aln-pe.sam.gz Introduction BWA is a software package for mapping DNA sequences against a large reference genome, such as the human genome. It consists of three algorithms: BWA-backtrack, BWA-SW and BWA-MEM. The first algorithm is designed for Illumina sequence reads up to 100bp, while the rest two for longer sequences ranged from 70bp to a few megabases. BWA-MEM and BWA-SW share similar features such as the support of long reads and chimeric alignment, but BWA-MEM, which is the latest, is generally recommended as it is faster and more accurate. BWA-MEM also has better performance than BWA-backtrack for 70-100bp Illumina reads. For all the algorithms, BWA first needs to construct the FM-index for the reference genome (the index command). Alignment algorithms are invoked with different sub-commands: aln/samse/sampe for BWA-backtrack, bwasw for BWA-SW and mem for the BWA-MEM algorithm. Availability BWA is released under GPLv3 . The latest source code is freely available at github . Released packages can be downloaded at SourceForge. After you acquire the source code, simply use make to compile and copy the single executable bwa to the destination you want. The only dependency required to build BWA is zlib . Since 0.7.11, precompiled binary for x86_64-linux is available in bwakit . In addition to BWA, this self-consistent package also comes with bwa-associated and 3rd-party tools for proper BAM-to-FASTQ conversion, mapping to ALT contigs, adapter triming, duplicate marking, HLA typing and associated data files. Seeking help The detailed usage is described in the man page available together with the source code. You can use man ./bwa.1 to view the man page in a terminal. The HTML version of the man page can be found at the BWA website . If you have questions about BWA, you may sign up the mailing list and then send the questions to bio-bwa-help@sourceforge.net . You may also ask questions in forums such as BioStar and SEQanswers . Citing BWA Li H. and Durbin R. (2009) Fast and accurate short read alignment with Burrows-Wheeler transform. Bioinformatics , 25 , 1754-1760. [PMID: 19451168 ]. (if you use the BWA-backtrack algorithm) Li H. and Durbin R. (2010) Fast and accurate long-read alignment with Burrows-Wheeler transform. Bioinformatics , 26 , 589-595. [PMID: 20080505 ]. (if you use the BWA-SW algorithm) Li H. (2013) Aligning sequence reads, clone sequences and assembly contigs with BWA-MEM. arXiv:1303.3997v2 [q-bio.GN]. (if you use the BWA-MEM algorithm or the fastmap command, or want to cite the whole BWA package) Please note that the last reference is a preprint hosted at arXiv.org . I do not have plan to submit it to a peer-reviewed journal in the near future. Frequently asked questions (FAQs) What types of data does BWA work with? Why does a read appear multiple times in the output SAM? Does BWA work on reference sequences longer than 4GB in total? Why can one read in a pair has high mapping quality but the other has zero? How can a BWA-backtrack alignment stands out of the end of a chromosome? Does BWA work with ALT contigs in the GRCh38 release? Can I just run BWA-MEM against GRCh38+ALT without post-processing? Why does BWA use a lot of memory? 1. What types of data does BWA work with? BWA works with a variety types of DNA sequence data, though the optimal algorithm and setting may vary. The following list gives the recommended settings: Illumina/454/IonTorrent single-end reads longer than ~70bp or assembly contigs up to a few megabases mapped to a closely related reference genome: bwa mem ref.fa reads.fq &gt; aln.sam Illumina single-end reads shorter than ~70bp: bwa aln ref.fa reads.fq &gt; reads.sai; bwa samse ref.fa reads.sai reads.fq &gt; aln-se.sam Illumina/454/IonTorrent paired-end reads longer than ~70bp: bwa mem ref.fa read1.fq read2.fq &gt; aln-pe.sam Illumina paired-end reads shorter than ~70bp: bwa aln ref.fa read1.fq &gt; read1.sai; bwa aln ref.fa read2.fq &gt; read2.sai bwa sampe ref.fa read1.sai read2.sai read1.fq read2.fq &gt; aln-pe.sam PacBio subreads or Oxford Nanopore reads to a reference genome: bwa mem -x pacbio ref.fa reads.fq &gt; aln.sam bwa mem -x ont2d ref.fa reads.fq &gt; aln.sam BWA-MEM is recommended for query sequences longer than ~70bp for a variety of error rates (or sequence divergence). Generally, BWA-MEM is more tolerant with errors given longer query sequences as the chance of missing all seeds is small. As is shown above, with non-default settings, BWA-MEM works with Oxford Nanopore reads with a sequencing error rate over 20%. 2. Why does a read appear multiple times in the output SAM? BWA-SW and BWA-MEM perform local alignments. If there is a translocation, a gene fusion or a long deletion, a read bridging the break point may have two hits, occupying two lines in the SAM output. With the default setting of BWA-MEM, one and only one 
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Flh3%2Fbwa)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Flh3%2Fbwa)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=lh3%2Fbwa)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[lh3](/lh3)
+/
+**[bwa](/lh3/bwa)**
+Public
+
+* [Notifications](/login?return_to=%2Flh3%2Fbwa) You must be signed in to change notification settings
+* [Fork
+  577](/login?return_to=%2Flh3%2Fbwa)
+* [Star
+   1.7k](/login?return_to=%2Flh3%2Fbwa)
+
+* [Code](/lh3/bwa)
+* [Issues
+  72](/lh3/bwa/issues)
+* [Pull requests
+  25](/lh3/bwa/pulls)
+* [Actions](/lh3/bwa/actions)
+* [Security
+  0](/lh3/bwa/security)
+* [Insights](/lh3/bwa/pulse)
+
+Additional navigation options
+
+* [Code](/lh3/bwa)
+* [Issues](/lh3/bwa/issues)
+* [Pull requests](/lh3/bwa/pulls)
+* [Actions](/lh3/bwa/actions)
+* [Security](/lh3/bwa/security)
+* [Insights](/lh3/bwa/pulse)
+
+# lh3/bwa
+
+master
+
+[Branches](/lh3/bwa/branches)[Tags](/lh3/bwa/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[996 Commits](/lh3/bwa/commits/master/)   996 Commits | | |
+| [.github/workflows](/lh3/bwa/tree/master/.github/workflows "This path skips through empty directories") | | [.github/workflows](/lh3/bwa/tree/master/.github/workflows "This path skips through empty directories") |  |  |
+| [bwakit](/lh3/bwa/tree/master/bwakit "bwakit") | | [bwakit](/lh3/bwa/tree/master/bwakit "bwakit") |  |  |
+| [.gitignore](/lh3/bwa/blob/master/.gitignore ".gitignore") | | [.gitignore](/lh3/bwa/blob/master/.gitignore ".gitignore") |  |  |
+| [COPYING](/lh3/bwa/blob/master/COPYING "COPYING") | | [COPYING](/lh3/bwa/blob/master/COPYING "COPYING") |  |  |
+| [ChangeLog](/lh3/bwa/blob/master/ChangeLog "ChangeLog") | | [ChangeLog](/lh3/bwa/blob/master/ChangeLog "ChangeLog") |  |  |
+| [Makefile](/lh3/bwa/blob/master/Makefile "Makefile") | | [Makefile](/lh3/bwa/blob/master/Makefile "Makefile") |  |  |
+| [NEWS.md](/lh3/bwa/blob/master/NEWS.md "NEWS.md") | | [NEWS.md](/lh3/bwa/blob/master/NEWS.md "NEWS.md") |  |  |
+| [QSufSort.c](/lh3/bwa/blob/master/QSufSort.c "QSufSort.c") | | [QSufSort.c](/lh3/bwa/blob/master/QSufSort.c "QSufSort.c") |  |  |
+| [QSufSort.h](/lh3/bwa/blob/master/QSufSort.h "QSufSort.h") | | [QSufSort.h](/lh3/bwa/blob/master/QSufSort.h "QSufSort.h") |  |  |
+| [README-alt.md](/lh3/bwa/blob/master/README-alt.md "README-alt.md") | | [README-alt.md](/lh3/bwa/blob/master/README-alt.md "README-alt.md") |  |  |
+| [README.md](/lh3/bwa/blob/master/README.md "README.md") | | [README.md](/lh3/bwa/blob/master/README.md "README.md") |  |  |
+| [bamlite.c](/lh3/bwa/blob/master/bamlite.c "bamlite.c") | | [bamlite.c](/lh3/bwa/blob/master/bamlite.c "bamlite.c") |  |  |
+| [bamlite.h](/lh3/bwa/blob/master/bamlite.h "bamlite.h") | | [bamlite.h](/lh3/bwa/blob/master/bamlite.h "bamlite.h") |  |  |
+| [bntseq.c](/lh3/bwa/blob/master/bntseq.c "bntseq.c") | | [bntseq.c](/lh3/bwa/blob/master/bntseq.c "bntseq.c") |  |  |
+| [bntseq.h](/lh3/bwa/blob/master/bntseq.h "bntseq.h") | | [bntseq.h](/lh3/bwa/blob/master/bntseq.h "bntseq.h") |  |  |
+| [bwa.1](/lh3/bwa/blob/master/bwa.1 "bwa.1") | | [bwa.1](/lh3/bwa/blob/master/bwa.1 "bwa.1") |  |  |
+| [bwa.c](/lh3/bwa/blob/master/bwa.c "bwa.c") | | [bwa.c](/lh3/bwa/blob/master/bwa.c "bwa.c") |  |  |
+| [bwa.h](/lh3/bwa/blob/master/bwa.h "bwa.h") | | [bwa.h](/lh3/bwa/blob/master/bwa.h "bwa.h") |  |  |
+| [bwamem.c](/lh3/bwa/blob/master/bwamem.c "bwamem.c") | | [bwamem.c](/lh3/bwa/blob/master/bwamem.c "bwamem.c") |  |  |
+| [bwamem.h](/lh3/bwa/blob/master/bwamem.h "bwamem.h") | | [bwamem.h](/lh3/bwa/blob/master/bwamem.h "bwamem.h") |  |  |
+| [bwamem\_extra.c](/lh3/bwa/blob/master/bwamem_extra.c "bwamem_extra.c") | | [bwamem\_extra.c](/lh3/bwa/blob/master/bwamem_extra.c "bwamem_extra.c") |  |  |
+| [bwamem\_pair.c](/lh3/bwa/blob/master/bwamem_pair.c "bwamem_pair.c") | | [bwamem\_pair.c](/lh3/bwa/blob/master/bwamem_pair.c "bwamem_pair.c") |  |  |
+| [bwape.c](/lh3/bwa/blob/master/bwape.c "bwape.c") | | [bwape.c](/lh3/bwa/blob/master/bwape.c "bwape.c") |  |  |
+| [bwase.c](/lh3/bwa/blob/master/bwase.c "bwase.c") | | [bwase.c](/lh3/bwa/blob/master/bwase.c "bwase.c") |  |  |
+| [bwase.h](/lh3/bwa/blob/master/bwase.h "bwase.h") | | [bwase.h](/lh3/bwa/blob/master/bwase.h "bwase.h") |  |  |
+| [bwaseqio.c](/lh3/bwa/blob/master/bwaseqio.c "bwaseqio.c") | | [bwaseqio.c](/lh3/bwa/blob/master/bwaseqio.c "bwaseqio.c") |  |  |
+| [bwashm.c](/lh3/bwa/blob/master/bwashm.c "bwashm.c") | | [bwashm.c](/lh3/bwa/blob/master/bwashm.c "bwashm.c") |  |  |
+| [bwt.c](/lh3/bwa/blob/master/bwt.c "bwt.c") | | [bwt.c](/lh3/bwa/blob/master/bwt.c "bwt.c") |  |  |
+| [bwt.h](/lh3/bwa/blob/master/bwt.h "bwt.h") | | [bwt.h](/lh3/bwa/blob/master/bwt.h "bwt.h") |  |  |
+| [bwt\_gen.c](/lh3/bwa/blob/master/bwt_gen.c "bwt_gen.c") | | [bwt\_gen.c](/lh3/bwa/blob/master/bwt_gen.c "bwt_gen.c") |  |  |
+| [bwt\_lite.c](/lh3/bwa/blob/master/bwt_lite.c "bwt_lite.c") | | [bwt\_lite.c](/lh3/bwa/blob/master/bwt_lite.c "bwt_lite.c") |  |  |
+| [bwt\_lite.h](/lh3/bwa/blob/master/bwt_lite.h "bwt_lite.h") | | [bwt\_lite.h](/lh3/bwa/blob/master/bwt_lite.h "bwt_lite.h") |  |  |
+| [bwtaln.c](/lh3/bwa/blob/master/bwtaln.c "bwtaln.c") | | [bwtaln.c](/lh3/bwa/blob/master/bwtaln.c "bwtaln.c") |  |  |
+| [bwtaln.h](/lh3/bwa/blob/master/bwtaln.h "bwtaln.h") | | [bwtaln.h](/lh3/bwa/blob/master/bwtaln.h "bwtaln.h") |  |  |
+| [bwtgap.c](/lh3/bwa/blob/master/bwtgap.c "bwtgap.c") | | [bwtgap.c](/lh3/bwa/blob/master/bwtgap.c "bwtgap.c") |  |  |
+| [bwtgap.h](/lh3/bwa/blob/master/bwtgap.h "bwtgap.h") | | [bwtgap.h](/lh3/bwa/blob/master/bwtgap.h "bwtgap.h") |  |  |
+| [bwtindex.c](/lh3/bwa/blob/master/bwtindex.c "bwtindex.c") | | [bwtindex.c](/lh3/bwa/blob/master/bwtindex.c "bwtindex.c") |  |  |
+| [bwtsw2.h](/lh3/bwa/blob/master/bwtsw2.h "bwtsw2.h") | | [bwtsw2.h](/lh3/bwa/blob/master/bwtsw2.h "bwtsw2.h") |  |  |
+| [bwtsw2\_aux.c](/lh3/bwa/blob/master/bwtsw2_aux.c "bwtsw2_aux.c") | | [bwtsw2\_aux.c](/lh3/bwa/blob/master/bwtsw2_aux.c "bwtsw2_aux.c") |  |  |
+| [bwtsw2\_chain.c](/lh3/bwa/blob/master/bwtsw2_chain.c "bwtsw2_chain.c") | | [bwtsw2\_chain.c](/lh3/bwa/blob/master/bwtsw2_chain.c "bwtsw2_chain.c") |  |  |
+| [bwtsw2\_core.c](/lh3/bwa/blob/master/bwtsw2_core.c "bwtsw2_core.c") | | [bwtsw2\_core.c](/lh3/bwa/blob/master/bwtsw2_core.c "bwtsw2_core.c") |  |  |
+| [bwtsw2\_main.c](/lh3/bwa/blob/master/bwtsw2_main.c "bwtsw2_main.c") | | [bwtsw2\_main.c](/lh3/bwa/blob/master/bwtsw2_main.c "bwtsw2_main.c") |  |  |
+| [bwtsw2\_pair.c](/lh3/bwa/blob/master/bwtsw2_pair.c "bwtsw2_pair.c") | | [bwtsw2\_pair.c](/lh3/bwa/blob/master/bwtsw2_pair.c "bwtsw2_pair.c") |  |  |
+| [code\_of\_conduct.md](/lh3/bwa/blob/master/code_of_conduct.md "code_of_conduct.md") | | [code\_of\_conduct.md](/lh3/bwa/blob/master/code_of_conduct.md "code_of_conduct.md") |  |  |
+| [example.c](/lh3/bwa/blob/master/example.c "example.c") | | [example.c](/lh3/bwa/blob/master/example.c "example.c") |  |  |
+| [fastmap.c](/lh3/bwa/blob/master/fastmap.c "fastmap.c") | | [fastmap.c](/lh3/bwa/blob/master/fastmap.c "fastmap.c") |  |  |
+| [is.c](/lh3/bwa/blob/master/is.c "is.c") | | [is.c](/lh3/bwa/blob/master/is.c "is.c") |  |  |
+| [kbtree.h](/lh3/bwa/blob/master/kbtree.h "kbtree.h") | | [kbtree.h](/lh3/bwa/blob/master/kbtree.h "kbtree.h") |  |  |
+| [khash.h](/lh3/bwa/blob/master/khash.h "khash.h") | | [khash.h](/lh3/bwa/blob/master/khash.h "khash.h") |  |  |
+| [kopen.c](/lh3/bwa/blob/master/kopen.c "kopen.c") | | [kopen.c](/lh3/bwa/blob/master/kopen.c "kopen.c") |  |  |
+| [kseq.h](/lh3/bwa/blob/master/kseq.h "kseq.h") | | [kseq.h](/lh3/bwa/blob/master/kseq.h "kseq.h") |  |  |
+| [ksort.h](/lh3/bwa/blob/master/ksort.h "ksort.h") | | [ksort.h](/lh3/bwa/blob/master/ksort.h "ksort.h") |  |  |
+| [kstring.c](/lh3/bwa/blob/master/kstring.c "kstring.c") | | [kstring.c](/lh3/bwa/blob/master/kstring.c "kstring.c") |  |  |
+| [kstring.h](/lh3/bwa/blob/master/kstring.h "kstring.h") | | [kstring.h](/lh3/bwa/blob/master/kstring.h "kstring.h") |  |  |
+| [ksw.c](/lh3/bwa/blob/master/ksw.c "ksw.c") | | [ksw.c](/lh3/bwa/blob/master/ksw.c "ksw.c") |  |  |
+| [ksw.h](/lh3/bwa/blob/master/ksw.h "ksw.h") | | [ksw.h](/lh3/bwa/blob/master/ksw.h "ksw.h") |  |  |
+| [kthread.c](/lh3/bwa/blob/master/kthread.c "kthread.c") | | [kthread.c](/lh3/bwa/blob/master/kthread.c "kthread.c") |  |  |
+| [kvec.h](/lh3/bwa/blob/master/kvec.h "kvec.h") | | [kvec.h](/lh3/bwa/blob/master/kvec.h "kvec.h") |  |  |
+| [main.c](/lh3/bwa/blob/master/main.c "main.c") | | [main.c](/lh3/bwa/blob/master/main.c "main.c") |  |  |
+| [malloc\_wrap.c](/lh3/bwa/blob/master/malloc_wrap.c "malloc_wrap.c") | | [malloc\_wrap.c](/lh3/bwa/blob/master/malloc_wrap.c "malloc_wrap.c") |  |  |
+| [malloc\_wrap.h](/lh3/bwa/blob/master/malloc_wrap.h "malloc_wrap.h") | | [malloc\_wrap.h](/lh3/bwa/blob/master/malloc_wrap.h "malloc_wrap.h") |  |  |
+| [maxk.c](/lh3/bwa/blob/master/maxk.c "maxk.c") | | [maxk.c](/lh3/bwa/blob/master/maxk.c "maxk.c") |  |  |
+| [neon\_sse.h](/lh3/bwa/blob/master/neon_sse.h "neon_sse.h") | | [neon\_sse.h](/lh3/bwa/blob/master/neon_sse.h "neon_sse.h") |  |  |
+| [pemerge.c](/lh3/bwa/blob/master/pemerge.c "pemerge.c") | | [pemerge.c](/lh3/bwa/blob/master/pemerge.c "pemerge.c") |  |  |
+| [qualfa2fq.pl](/lh3/bwa/blob/master/qualfa2fq.pl "qualfa2fq.pl") | | [qualfa2fq.pl](/lh3/bwa/blob/master/qualfa2fq.pl "qualfa2fq.pl") |  |  |
+| [rle.c](/lh3/bwa/blob/master/rle.c "rle.c") | | [rle.c](/lh3/bwa/blob/master/rle.c "rle.c") |  |  |
+| [rle.h](/lh3/bwa/blob/mast

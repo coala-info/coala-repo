@@ -1,1 +1,507 @@
-Workflow runs · gear-genomics/tracy · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} gear-genomics / tracy Public Notifications You must be signed in to change notification settings Fork 23 Star 121 Code Issues 7 Pull requests 2 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights Actions: gear-genomics/tracy Actions All workflows Workflows C/C++ CI C/C++ CI Dependabot Updates Dependabot Updates Docker CI Docker CI MacOS CI MacOS CI npm CI npm CI Publish Docker image Publish Docker image Show more workflows... Management Caches All workflows All workflows Actions Loading... Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page . will be ignored since log searching is not yet available Showing runs from all workflows will be ignored since log searching is not yet available 212 workflow runs 212 workflow runs Event Filter by Event Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching events. Status Filter by Status Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching statuses. Branch Filter by Branch Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching branches. Actor Filter by Actor Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching users. Merge pull request #109 from gear-genomics/dependabot/npm_and_yarn/do… MacOS CI #33: Commit f7c9565 pushed by tobiasrausch 3m 26s main main 3m 26s View workflow file Merge pull request #109 from gear-genomics/dependabot/npm_and_yarn/do… C/C++ CI #163: Commit f7c9565 pushed by tobiasrausch 10m 30s main main 10m 30s View workflow file Merge pull request #109 from gear-genomics/dependabot/npm_and_yarn/do… Docker CI #109: Commit f7c9565 pushed by tobiasrausch 9m 47s main main 9m 47s View workflow file Merge pull request #109 from gear-genomics/dependabot/npm_and_yarn/do… npm CI #19: Commit f7c9565 pushed by tobiasrausch 20s main main 20s View workflow file Bump mdast-util-to-hast from 13.2.0 to 13.2.1 in /docs MacOS CI #32: Pull request #109 opened by dependabot bot 4m 2s dependabot/npm_and_yarn/docs/mdast-util-to-hast-13.2.1 dependabot/npm_and_yarn/docs/mdast-util-to-hast-13.2.1 4m 2s View #109 View workflow file Bump mdast-util-to-hast from 13.2.0 to 13.2.1 in /docs npm CI #18: Pull request #109 opened by dependabot bot 21s dependabot/npm_and_yarn/docs/mdast-util-to-hast-13.2.1 dependabot/npm_and_yarn/docs/mdast-util-to-hast-13.2.1 21s View #109 View workflow file Bump mdast-util-to-hast from 13.2.0 to 13.2.1 in /docs C/C++ CI #162: Pull request #109 opened by dependabot bot 10m 7s dependabot/npm_and_yarn/docs/mdast-util-to-hast-13.2.1 dependabot/npm_and_yarn/docs/mdast-util-to-hast-13.2.1 10m 7s View #109 View workflow file npm_and_yarn in /docs for mdast-util-to-hast - Update #1171342724 Dependabot Updates #160: by dependabot bot 1m 8s main main 1m 8s Merge pull request #108 from gear-genomics/dependabot/npm_and_yarn/do… C/C++ CI #161: Commit c586a6b pushed by tobiasrausch 9m 58s main main 9m 58s View workflow file Merge pull request #108 from gear-genomics/dependabot/npm_and_yarn/do… npm CI #17: Commit c586a6b pushed by tobiasrausch 21s main main 21s View workflow file Merge pull request #108 from gear-genomics/dependabot/npm_and_yarn/do… MacOS CI #31: Commit c586a6b pushed by tobiasrausch 5m 46s main main 5m 46s View workflow file Merge pull request #108 from gear-genomics/dependabot/npm_and_yarn/do… Docker CI #108: Commit c586a6b pushed by tobiasrausch 9m 50s main main 9m 50s View workflow file Bump js-yaml from 3.14.1 to 3.14.2 in /docs C/C++ CI #160: Pull request #108 opened by dependabot bot 9m 56s dependabot/npm_and_yarn/docs/js-yaml-3.14.2 dependabot/npm_and_yarn/docs/js-yaml-3.14.2 9m 56s View #108 View workflow file Bump js-yaml from 3.14.1 to 3.14.2 in /docs MacOS CI #30: Pull request #108 opened by dependabot bot 5m 31s dependabot/npm_and_yarn/docs/js-yaml-3.14.2 dependabot/npm_and_yarn/docs/js-yaml-3.14.2 5m 31s View #108 View workflow file Bump js-yaml from 3.14.1 to 3.14.2 in /docs npm CI #16: Pull request #108 opened by dependabot bot 17s dependabot/npm_and_yarn/docs/js-yaml-3.14.2 dependabot/npm_and_yarn/docs/js-yaml-3.14.2 17s View #108 View workflow file npm_and_yarn in /docs for js-yaml - Update #1154930242 Dependabot Updates #159: by dependabot bot 1m 6s main main 1m 6s npm_and_yarn in /docs for js-yaml - Update #1154930242 Dependabot Updates #158: by dependabot bot 33s main main 33s npm_and_yarn in /docs for js-yaml - Update #1152053404 Dependabot Updates #157: by dependabot bot 1m 0s main main 1m 0s Merge pull request #106 from gear-genomics/dependabot/npm_and_yarn/do… C/C++ CI #158: Commit 355fa60 pushed by tobiasrausch 11m 27s main main 11m 27s View workflow file Merge pull request #106 from gear-genomics/dependabot/npm_and_yarn/do… npm CI #14: Commit 355fa60 pushed by tobiasrausch 35s main main 35s View workflow file Merge pull request #106 from gear-genomics/dependabot/npm_and_yarn/do… MacOS CI #28: Commit 355fa60 pushed by tobiasrausch 3m 47s main main 3m 47s View workflow file Merge pull request #106 from gear-genomics/dependabot/npm_and_yarn/do… Docker CI #107: Commit 355fa60 pushed by tobiasrausch 9m 44s main main 9m 44s View workflow file Bump vite in /docs MacOS CI #27: Pull request #106 opened by dependabot bot 4m 59s dependabot/npm_and_yarn/docs/multi-5509942389 dependabot/npm_and_yarn/docs/multi-5509942389 4m 59s View #106 View workflow file Bump vite in /docs C/C++ CI #157: Pull request #106 opened by dependabot bot 9m 48s dependabot/npm_and_yarn/docs/multi-5509942389 dependabot/npm_and_yarn/docs/multi-5509942389 9m 48s View #106 View workflow file Bump vite in /docs npm CI #13: Pull request #106 opened by dependabot bot 28s dependabot/npm_and_yarn/docs/multi-5509942389 dependabot/npm_and_yarn/docs/multi-5509942389 28s View #106 View workflow file Previous 1 2 3 4 5 &hellip; 8 9 Next You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fgear-genomics%2Ftracy%2Factions)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fgear-genomics%2Ftracy%2Factions)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Factions%2Findex&source=header-repo&source_repo=gear-genomics%2Ftracy)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[gear-genomics](/gear-genomics)
+/
+**[tracy](/gear-genomics/tracy)**
+Public
+
+* [Notifications](/login?return_to=%2Fgear-genomics%2Ftracy) You must be signed in to change notification settings
+* [Fork
+  24](/login?return_to=%2Fgear-genomics%2Ftracy)
+* [Star
+   122](/login?return_to=%2Fgear-genomics%2Ftracy)
+
+* [Code](/gear-genomics/tracy)
+* [Issues
+  7](/gear-genomics/tracy/issues)
+* [Pull requests
+  1](/gear-genomics/tracy/pulls)
+* [Actions](/gear-genomics/tracy/actions)
+* [Projects](/gear-genomics/tracy/projects)
+* [Security
+  0](/gear-genomics/tracy/security)
+* [Insights](/gear-genomics/tracy/pulse)
+
+Additional navigation options
+
+* [Code](/gear-genomics/tracy)
+* [Issues](/gear-genomics/tracy/issues)
+* [Pull requests](/gear-genomics/tracy/pulls)
+* [Actions](/gear-genomics/tracy/actions)
+* [Projects](/gear-genomics/tracy/projects)
+* [Security](/gear-genomics/tracy/security)
+* [Insights](/gear-genomics/tracy/pulse)
+
+# Actions: gear-genomics/tracy
+
+## Actions
+
+## All workflows All workflows Actions Loading... Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page.
+
+will be ignored since log searching is not yet available
+
+Showing runs from all workflows
+
+will be ignored since log searching is not yet available
+
+**344 workflow runs**
+
+**344 workflow runs**
+
+Event
+
+# Filter by Event
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching events.
+
+Status
+
+# Filter by Status
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching statuses.
+
+Branch
+
+# Filter by Branch
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching branches.
+
+Actor
+
+# Filter by Actor
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching users.
+
+[Merge pull request #114 from gear-genomics/dependabot/npm\_and\_yarn/do…](/gear-genomics/tracy/actions/runs/23585535968)
+
+Docker CI
+#128:
+Commit [5a54237](/gear-genomics/tracy/commit/5a54237a80c438387ccdc5c56a11f17c4e7e6042)
+pushed
+by
+[tobiasrausch](/tobiasrausch)
+
+9m 16s
+[main](/gear-genomics/tracy/tree/refs/heads/main "main")
+
+[main](/gear-genomics/tracy/tree/refs/heads/main "main")
+
+9m 16s
+
+* [View workflow file](/gear-genomics/tracy/actions/runs/23585535968/workflow)
+
+[Merge pull request #114 from gear-genomics/dependabot/npm\_and\_yarn/do…](/gear-genomics/tracy/actions/runs/23585535964)
+
+C/C++ CI
+#187:
+Commit [5a54237](/gear-genomics/tracy/commit/5a54237a80c438387ccdc5c56a11f17c4e7e6042)
+pushed
+by
+[tobiasrausch](/tobiasrausch)
+
+9m 44s
+[main](/gear-genomics/tracy/tree/refs/heads/main "main")
+
+[main](/gear-genomics/tracy/tree/refs/heads/main "main")
+
+9m 44s
+
+* [View workflow file](/gear-genomics/tracy/actions/runs/23585535964/workflow)
+
+[Merge pull request #114 from gear-genomics/dependabot/npm\_and\_yarn/do…](/gear-genomics/tracy/actions/runs/23585535941)
+
+MacOS CI
+#57:
+Commit [5a54237](/gear-genomics/tracy/commit/5a54237a80c438387ccdc5c56a11f17c4e7e6042)
+pushed
+by
+[tobiasrausch](/tobiasrausch)
+
+3m 59s
+[main](/gear-genomics/tracy/tree/refs/heads/main "main")
+
+[main](/gear-genomics/tracy/tree/refs/heads/main "main")
+
+3m 59s
+
+* [View workflow file](/gear-genomics/tracy/actions/runs/23585535941/workflow)
+
+[Merge pull request #114 from gear-genomics/dependabot/npm\_and\_yarn/do…](/gear-genomics/tracy/actions/runs/23585535932)
+
+npm CI
+#43:
+Commit [5a54237](/gear-genomics/tracy/commit/5a54237a80c438387ccdc5c56a11f17c4e7e6042)
+pushed
+by
+[tobiasrausch](/tobiasrausch)
+
+20s
+[main](/gear-genomics/tracy/tree/refs/heads/main "main")
+
+[main](/gear-genomics/tracy/tree/refs/heads/main "main")
+
+20s
+
+* [View workflow file](/gear-genomics/tracy/actions/runs/23585535932/workflow)
+
+[Merge pull request #114 from gear-genomics/dependabot/npm\_and\_yarn/do…](/gear-genomics/tracy/actions/runs/23585535922)
+
+Windows CI
+#30:
+Commit [5a54237](/gear-genomics/tracy/commit/5a54237a80c438387ccdc5c56a11f17c4e7e6042)
+pushed
+by
+[tobiasrausch](/tobiasrausch)
+
+5m 9s
+[main](/gear-genomics/tracy/tree/refs/heads/main "main")
+
+[main](/gear-genomics/tracy/tree/refs/heads/main "main")
+
+5m 9s
+
+* [View workflow file](/gear-genomics/tracy/actions/runs/23585535922/workflow)
+
+[npm\_and\_yarn in /docs for picomatch - Update #1293434607](/gear-genomics/tracy/actions/runs/23581990314)
+
+Dependabot Updates
+#167:
+by
+[dependabot](/apps/dependabot)
+bot
+
+56s
+[main](/gear-genomics/tracy/tree/refs/heads/main "main")
+
+[main](/gear-genomics/tracy/tree/refs/heads/main "main")
+
+56s
+
+[Bump picomatch in /docs](/gear-genomics/tracy/actions/runs/23569261917)
+
+C/C++ CI
+#186:
+Pull request [#114](/gear-genomics/tracy/pull/114)
+opened
+by
+[dependabot](/apps/dependabot)
+bot
+
+9m 35s
+[dependabot/npm\_and\_yarn/docs/multi-bf05dc1ecf](/gear-genomics/tracy/tree/refs/heads/dependabot/npm_and_yarn/docs/multi-bf05dc1ecf "dependabot/npm_and_yarn/docs/multi-bf05dc1ecf")
+
+[dependabot/npm\_and\_yarn/docs/multi-bf05dc1ecf](/gear-genomics/tracy/tree/refs/heads/dependabot/npm_and_yarn/docs/multi-bf05dc1ecf "dependabot/npm_and_yarn/docs/multi-bf05dc1ecf")
+
+9m 35s
+
+* [View #114](/gear-genomics/tracy/pull/114)
+* [View workflow file](/gear-genomics/tracy/actions/runs/23569261917/workflow)
+
+[Bump picomatch in /docs](/gear-genomics/tracy/actions/runs/23569261898)
+
+MacOS CI
+#56:
+Pull request [#114](/gear-genomics/tracy/pull/114)
+opened
+by
+[dependabot](/apps/dependabot)
+bot
+
+3m 36s
+[dependabot/npm\_and\_yarn/docs/multi-bf05dc1ecf](/gear-genomics/tracy/tree/refs/heads/dependabot/npm_and_yarn/docs/multi-bf05dc1ecf "dependabot/npm_and_yarn/docs/multi-bf05dc1ecf")
+
+[dependabot/npm\_and\_yarn/docs/multi-bf05dc1ecf](/gear-genomics/tracy/tree/refs/heads/dependabot/npm_and_yarn/docs/multi-bf05dc1ecf "dependabot/npm_and_yarn/docs/multi-bf05dc1ecf")
+
+3m 36s
+
+* [View #114](/gear-genomics/tracy/pull/114)
+* [View workflow file](/gear-genomics/tracy/actions/runs/23569261898/workflow)
+
+[Bump picomatch in /docs](/gear-genomics/tracy/actions/runs/23569261888)
+
+npm CI
+#42:
+Pull request [#114](/gear-genomics/tracy/pull/114)
+opened
+by
+[dependabot](/apps/dependabot)
+bot
+
+20s
+[dependabot/npm\_and\_yarn/docs/multi-bf05dc1ecf](/gear-genomics/tracy/tree/refs/heads/dependabot/npm_and_yarn/docs/multi-bf05dc1ecf "dependabot/npm_and_yarn/docs/multi-bf05dc1ecf")
+
+[dependabot/npm\_and\_yarn/docs/multi-bf05dc1ecf](/gear-genomics/tracy/tree/refs/heads/dependabot/npm_and_yarn/docs/multi-bf05dc1ecf "dependabot/npm_and_yarn/docs/multi-bf05dc1ecf")
+
+20s
+
+* [View #114](/gear-genomics/tracy/pull/114)
+* [View workflow file](/gear-genomics/tracy/actions/runs/23569261888/workflow)
+
+[Bump picomatch in /docs](/gear-genomics/tracy/actions/runs/23569261885)
+
+Windows CI
+#29:
+Pull request [#114](/gear-genomics/tracy/pull/114)
+opened
+by
+[dependabot](/apps/dependabot)
+bot
+
+5m 38s
+[dependabot/npm\_and\_yarn/docs/multi-bf05dc1ecf](/gear-genomics/tracy/tree/refs/heads/dependabot/npm_and_yarn/docs/multi-bf05dc1ecf "dependabot/npm_and_yarn/docs/multi-bf05dc1ecf")
+
+[dependabot/npm\_and\_yarn/docs/multi-bf05dc1ecf](/gear-genomics/tracy/tree/refs/heads/dependabot/npm_and_yarn/docs/multi-bf05dc1ecf "dependabot/npm_and_yarn/docs/multi-bf05dc1ecf")
+
+5m 38s
+
+* [View #114](/gear-genomics/tracy/pull/114)
+* [View workflow file](/gear-genomics/tracy/actions/runs/23569261885/workflow)
+
+[npm\_and\_yarn in /docs for picomatch - Update #1292708954](/gear-genomics/tracy/actions/runs/23569222502)
+
+Dependabot Updates
+#166:
+by
+[dependabot](/apps/dependabot)
+bot
+
+1m 12s
+[main](/gear-genomics/tracy/tree/refs/heads/main "main")
+
+[main](/gear-genomics/tracy/tree/refs/heads/main "main")
+
+1m 12s
+
+[Merge pull request #113 from gear-genomics/dependabot/npm\_and\_yarn/do…](/gear-genomics/tracy/actions/runs/23133728315)
+
+C/C++ CI
+#185:
+Commit [562cd77](/gear-genomics/tracy/commit/562cd77cc1f12606c4a5609b83074ccdafe40374)
+pushed
+by
+[tobiasrausch](/tobiasrausch)
+
+9m 44s
+[main](/gear-genomics/tracy/tree/refs/heads/main "main")
+
+[main](/gear-genomics/tracy/tree/refs/heads/main "main")
+
+9m 44s
+
+* [View workflow file](/gear-genomics/tracy/actions/runs/23133728315/workflow)
+
+[Merge pull request #113 from gear-genomics/dependabot/npm\_and\_yarn/do…](/gear-genomics/tracy/actions/runs/23133728309)
+
+Windows CI
+#28:
+Commit [562cd77](/gear-genomics/tracy/commit/562cd77cc1f12606c4a5609b83074ccdafe40374)
+pushed
+by
+[tobiasrausch](/tobiasrausch)
+
+6m 25s
+[main](/gear-genomics/tracy/tree/refs/heads/main "main")
+
+[main](/gear-genomics/tracy/tree/refs/heads/main "main")
+
+6m 25s
+
+* [View workflow file](/gear-genomics/tracy/actions/runs/23133728309/workflow)
+
+[Merge pull request #113 from gear-genomics/dependabot/npm\_and\_yarn/do…](/gear-genomics/tracy/actions/runs/23133728308)
+
+Docker CI
+#127:
+Commit [562cd77](/gear-genomics/tracy/commit/562cd77cc1f12606c4a5609b83074ccdafe40374)
+pushed
+by
+[tobiasrausch](/tobiasrausch)
+
+10m 22s
+[main](/gear-genomics/tracy/tree/refs/heads/main "main")
+
+[main](/gear-genomics/tracy/tree/refs/heads/main "main")
+
+10m 22s
+
+* [View workflow file](/gear-genomics/tracy/actions/runs/23133728308/workflow)
+
+[Merge pull request #113 from gear-genomics/dependabot/npm\_and\_yarn/do…](/gear-genomics/tracy/actions/runs/23133728306)
+
+MacOS CI
+#55:
+Commit [562cd77](/gear-genomics/tracy/commit/562cd77cc1

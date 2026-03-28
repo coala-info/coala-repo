@@ -1,6 +1,6 @@
 ---
 name: sbol-utilities
-description: The sbol-utilities tool provides a suite of utilities for managing, converting, and analyzing SBOL biological design data. Use when user asks to convert between SBOL and other formats like GenBank or FASTA, visualize design trees, compare document differences, calculate sequence complexity, or expand combinatorial designs.
+description: "sbol-utilities provides a toolkit for manipulating, converting, and analyzing SBOL 3 synthetic biology data. Use when user asks to convert between SBOL and other formats, visualize object trees, expand combinatorial designs, calculate sequences, or compare SBOL files."
 homepage: https://github.com/SynBioDex/SBOL-utilities
 ---
 
@@ -9,56 +9,99 @@ homepage: https://github.com/SynBioDex/SBOL-utilities
 
 ## Overview
 
-The sbol-utilities skill provides a suite of tools for managing biological design data. It bridges the gap between high-level design specifications (like Excel templates) and standard bioinformatic formats. Use this skill to automate the processing of SBOL documents, perform structural comparisons between designs, and validate the synthesizability of DNA sequences through external API integrations.
+The `sbol-utilities` package is a specialized toolkit for manipulating and analyzing SBOL 3 data. It provides both a Python API and a set of command-line utilities designed to streamline synthetic biology workflows. Use this skill to transform genetic design data between various standards, visualize object trees, and automate the generation of specific genetic constructs from combinatorial templates.
 
 ## Installation and Dependencies
 
-Before using the command-line tools, ensure the package is installed:
+Ensure the package is installed via pip:
 ```bash
-pip3 install sbol-utilities
+pip install sbol-utilities
 ```
 
 **External Dependencies:**
-- **graph-sbol**: Requires `Graphviz` installed on the system to render PDF diagrams.
-- **sbol-converter**: Requires `node.js` to execute the underlying conversion logic.
+- **Graphviz**: Required for `graph-sbol` to render PDF/PNG diagrams.
+- **Node.js**: Required for `sbol-converter` to execute local JavaScript-based conversion logic.
 
 ## Common CLI Patterns
 
 ### Format Conversion
-The `sbol-converter` is the primary tool for moving between SBOL3, SBOL2, GenBank, and FASTA.
+The utility supports bidirectional conversion between SBOL3 and several common formats.
 
-- **General Conversion**:
-  `sbol-converter -i input_file.gb -o output_file.nt`
-- **Specific Macros**:
-  - `sbol-to-genbank -i design.nt -o design.gb`
-  - `sbol3-to-sbol2 -i sbol3_doc.nt -o sbol2_doc.xml`
-  - `fasta-to-sbol -i sequence.fasta -o design.nt`
+- **General Converter:**
+  ```bash
+  sbol-converter -i input_file.nt -o output_file.gb
+  ```
+- **Specific Format Macros:**
+  - `sbol2-to-sbol3`: Convert legacy SBOL2 files to the SBOL3 standard.
+  - `sbol-to-genbank` / `genbank-to-sbol`: Move between SBOL3 and GenBank.
+  - `sbol-to-fasta` / `fasta-to-sbol`: Move between SBOL3 and FASTA.
 
-### Visualization and Analysis
-- **Graphing**: Generate a visual object tree of an SBOL document.
-  `graph-sbol -i my_design.ttl`
-- **Structural Diff**: Compare two SBOL3 documents to identify differences in components or attributes.
-  `sbol-diff document1.nt document2.nt`
-- **Complexity Scoring**: Calculate the synthesis complexity of sequences using the IDT gBlock API (requires an IDT account).
-  `sbol-calculate-complexity -i library.nt`
+### Visualization
+Generate a visual representation of the SBOL object tree:
+```bash
+graph-sbol -i design.ttl
+```
+*Tip: This produces Graphviz source files and a PDF by default.*
 
-### Design Expansion
-- **Combinatorial Expansion**: Search for `CombinatorialDerivation` objects and generate all possible specific genetic constructs.
-  `sbol-expand-derivations -i template.nt -o expanded_library.nt`
-- **Sequence Calculation**: Automatically populate the sequences of parent components based on the sequences of their sub-components.
-  `sbol-calculate-sequences -i design_nodes.nt`
+### Design Expansion and Calculation
+- **Expand Combinatorial Designs**: Generate all possible physical instances from a `CombinatorialDerivation` template.
+  ```bash
+  sbol-expand-derivations -i template.ttl
+  ```
+- **Sequence Calculation**: Compute the full DNA sequence for hierarchical components based on their sub-parts.
+  ```bash
+  sbol-calculate-sequences -i design_no_seq.ttl
+  ```
+- **Complexity Scoring**: Evaluate the structural complexity of a design.
+  ```bash
+  sbol-calculate-complexity -i design.ttl
+  ```
 
-### Excel Integration
-- **Template Conversion**: Convert a standardized Excel library (based on `sbol_library_template.xlsx`) into an SBOL3 document.
-  `excel-to-sbol -i parts_list.xlsx -o library.nt`
+### Comparison
+Compare two SBOL files to identify differences in their object trees:
+```bash
+sbol-diff file1.ttl file2.ttl
+```
+
+## Python API Usage
+
+For integration into automated scripts, use the module-level functions:
+
+```python
+import sbol3
+from sbol_utilities.graph_sbol import graph_sbol
+from sbol_utilities.conversion import sbol2to3
+
+# Load a document
+doc = sbol3.Document()
+doc.read('my_design.nt')
+
+# Visualize
+graph_sbol(doc)
+
+# Convert SBOL2 to SBOL3
+sbol3_doc = sbol2to3('legacy_file.xml')
+```
 
 ## Expert Tips
 
-- **File Formats**: While SBOL3 often uses `.nt` (N-Triples) or `.ttl` (Turtle), the utilities generally detect the format based on the file content or extension.
-- **Namespace Management**: When converting from Excel or FASTA, ensure your environment or input parameters specify the desired URI namespace to avoid default or conflicting identifiers.
-- **Complexity Limits**: The `sbol-calculate-complexity` tool is optimized for sequences between 125 and 3000 bp. Sequences outside this range will return a score of 0. A score $\ge 10$ typically indicates the sequence is not synthesizable by standard services.
-- **Python Integration**: For complex workflows, these utilities can be imported as Python modules. For example, use `from sbol_utilities.graph_sbol import graph_sbol` to integrate visualization directly into a script.
+1. **Excel Integration**: Use the `excel-to-sbol` utility to ingest libraries of parts defined in the standard `sbol_library_template.xlsx`. This is often the fastest way to move from manual lab notes to structured data.
+2. **File Formats**: While SBOL3 often uses `.ttl` (Turtle) or `.nt` (N-Triples), the utilities are generally format-agnostic regarding the underlying RDF serialization.
+3. **Validation**: Always run `sbol-calculate-sequences` after manually assembling components in a script to ensure the top-level sequence correctly reflects the child components' coordinates.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| excel-to-sbol | Converts an Excel file to SBOL format. |
+| graph-sbol | Reads an SBOL file and outputs a graph representation. |
+| sbol-calculate-sequences | Calculates sequences for components in an SBOL file. |
+| sbol-converter | Converts genetic design files between various formats. |
+| sbol-diff | Compares two SBOL files and reports differences. |
+| sbol-expand-derivations | Expand derivations in an SBOL file. |
 
 ## Reference documentation
-- [SBOL-utilities GitHub Overview](./references/github_com_SynBioDex_SBOL-utilities.md)
-- [Bioconda Package Details](./references/anaconda_org_channels_bioconda_packages_sbol-utilities_overview.md)
+- [SBOL-utilities GitHub Repository](./references/github_com_SynBioDex_SBOL-utilities.md)
+- [SBOL-utilities README](./references/github_com_SynBioDex_SBOL-utilities_blob_develop_README.md)

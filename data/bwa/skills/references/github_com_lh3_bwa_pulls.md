@@ -83,6 +83,7 @@ Appearance settings
     - [Security Lab](https://securitylab.github.com)
     - [Maintainer Community](https://maintainers.github.com)
     - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
     - [Archive Program](https://archiveprogram.github.com)
   + REPOSITORIES
     - [Topics](https://github.com/topics)
@@ -148,7 +149,7 @@ Public
 
 * [Notifications](/login?return_to=%2Flh3%2Fbwa) You must be signed in to change notification settings
 * [Fork
-  575](/login?return_to=%2Flh3%2Fbwa)
+  576](/login?return_to=%2Flh3%2Fbwa)
 * [Star
    1.7k](/login?return_to=%2Flh3%2Fbwa)
 
@@ -185,10 +186,10 @@ Additional navigation options
 New](/lh3/bwa/compare)
 
 [25 Open](/lh3/bwa/pulls?q=is%3Aopen+is%3Apr)
-[105 Closed](/lh3/bwa/pulls?q=is%3Apr+is%3Aclosed)
+[107 Closed](/lh3/bwa/pulls?q=is%3Apr+is%3Aclosed)
 
 [25 Open](/lh3/bwa/pulls?q=is%3Aopen+is%3Apr)
-[105 Closed](/lh3/bwa/pulls?q=is%3Apr+is%3Aclosed)
+[107 Closed](/lh3/bwa/pulls?q=is%3Apr+is%3Aclosed)
 
 Author
 
@@ -499,7 +500,7 @@ Loading…
 [3](/lh3/bwa/pull/12)
 
 **ProTip!**
-Type `g` `i` on any issue or pull request to go back to the issue listing page.
+Mix and match filters to narrow down what you’re looking for.
 
 ## Footer
 
@@ -510,4 +511,3 @@ Type `g` `i` on any issue or pull request to go back to the issue listing page.
 * [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
 * [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
 * [Security](https://github.com/security)
-* [Status](https://www.github

@@ -133,3 +133,6 @@ Alignment output options:
 Supported alignment output formats are: phylip, clustal, msf, nexus, mega, codon
 ```
 
+
+## Metadata
+- **Skill**: not generated

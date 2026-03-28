@@ -472,3 +472,6 @@ Options:
   --no-markup      Disable the console markup (default: True)
 ```
 
+
+## Metadata
+- **Skill**: generated

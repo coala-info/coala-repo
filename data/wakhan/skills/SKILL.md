@@ -1,28 +1,22 @@
 ---
 name: wakhan
-description: Wakhan profiles somatic copy numbers using long-read alignments and phased heterozygous variants. Use when user asks to profile somatic copy numbers, estimate purity and ploidy, correct phase-switch errors, integrate phased structural variants, or visualize the genomic landscape.
+description: "Wakhan performs haplotype-specific copy number analysis on long-read genomic data from cancer samples. Use when user asks to resolve haplotype-specific copy number changes, identify large-scale chromosomal alterations, or perform phase-switch correction in tumor samples."
 homepage: https://github.com/KolmogorovLab/Wakhan
 ---
 
 
 # wakhan
 
-# Wakhan
-
 ## Overview
-Wakhan is a specialized tool for somatic copy number profiling using long-read alignments and phased heterozygous variants. It distinguishes itself by using copy number differences between haplotypes to extend phased blocks and correct phase-switch errors. The tool provides a comprehensive analysis of the genomic landscape, including purity/ploidy estimation and interactive visualization, making it essential for cancer genomics workflows utilizing ONT or PacBio data.
+Wakhan is a specialized bioinformatics tool designed for long-read genomic analysis of cancer samples. It leverages the unique advantages of long reads to resolve haplotype-specific copy number changes. By using phased heterozygous variants, Wakhan can extend phased blocks and correct errors by analyzing the copy number differences between maternal and paternal haplotypes. It is particularly effective for identifying large-scale chromosomal alterations and aneuploidy that might be missed by short-read technologies.
 
-## Installation and Setup
-The most reliable way to install Wakhan is via Bioconda:
-```bash
-conda create -n wakhan_env wakhan
-conda activate wakhan_env
-```
+## Usage Guidelines
 
-## Core CLI Patterns
+### Core Workflows
+Wakhan typically operates in two primary modes: `all` (standalone) or modular steps (`hapcorrect` and `cna`).
 
-### 1. Standalone Mode (Tumor-Normal)
-Use this when you have a tumor BAM and a phased germline VCF from a matched normal sample.
+#### 1. Standalone Execution (Tumor-Normal)
+Use this for a standard analysis when a matched normal sample's phased VCF is available.
 ```bash
 python wakhan.py all \
     --threads 24 \
@@ -30,56 +24,53 @@ python wakhan.py all \
     --target-bam tumor.bam \
     --normal-phased-vcf normal_phased.vcf.gz \
     --genome-name "Sample_ID" \
-    --out-dir-plots ./output_dir \
-    --breakpoints severus_somatic_svs.vcf
+    --out-dir-plots ./output \
+    --breakpoints somatic_svs.vcf
 ```
 
-### 2. Standalone Mode (Tumor-Only)
-Use this when a matched normal is unavailable. Requires a phased VCF derived from the tumor sample.
+#### 2. Tumor-Only Mode
+Use this when a matched normal is unavailable. You must provide a phased VCF derived from the tumor itself.
 ```bash
 python wakhan.py all \
-    --threads 24 \
-    --reference ref.fa \
     --target-bam tumor.bam \
     --tumor-phased-vcf tumor_phased.vcf.gz \
-    --genome-name "Sample_ID" \
-    --out-dir-plots ./output_dir \
-    --breakpoints severus_somatic_svs.vcf
+    --out-dir-plots ./output
 ```
 
-### 3. Advanced Phased SV Pipeline
-For higher precision, Wakhan can be run in two stages (hapcorrect and cna) to integrate with phased structural variants (e.g., from Severus).
-
-**Step A: Phase Correction**
-```bash
-python wakhan.py hapcorrect \
-    --threads 16 \
-    --reference ref.fa \
-    --target-bam tumor.bam \
-    --normal-phased-vcf input.vcf.gz \
-    --genome-name "Sample_ID"
-```
-
-**Step B: Copy Number Analysis (after SV phasing)**
-After running an SV caller like Severus on the rephased data, run the CNA module:
+#### 3. Advanced Phased SV Pipeline
+For maximum precision in segmenting copy number boundaries, use the two-step process with Severus-derived phased breakpoints.
+1. **Phase Correction**: `python wakhan.py hapcorrect ...` to generate `rephased.vcf.gz`.
+2. **Haplotagging**: Use `whatshap` to tag the BAM with the rephased VCF.
+3. **CNA Analysis**:
 ```bash
 python wakhan.py cna \
-    --threads 16 \
-    --reference ref.fa \
-    --target-bam tumor.bam \
+    --target-bam tumor.haplotagged.bam \
     --normal-phased-vcf rephased.vcf.gz \
-    --breakpoints severus_phased_svs.vcf \
+    --breakpoints severus_somatic.vcf \
     --use-sv-haplotypes
 ```
 
-## Expert Tips and Best Practices
+### Parameter Best Practices
+- **Breakpoints**: Always provide somatic SV calls via `--breakpoints` if available. This significantly improves segmentation accuracy.
+- **Contig Handling**: By default, Wakhan looks for `chr1-22,chrX`. If your reference uses numerical names (1, 2, X), you must specify `--contigs 1-22,X`.
+- **Annotations**: Ensure the centromere BED file matches your reference version. Use the `_nochr.bed` variants in `src/annotations` if your BAM/VCF files lack the "chr" prefix.
+- **Low Heterozygosity**: For mouse models or samples with low heterozygosity, run in unphased mode.
 
-- **Breakpoint Integration**: Always provide a VCF to the `--breakpoints` parameter (ideally from Severus). This significantly improves the accuracy of segmentation boundaries compared to coverage-only analysis.
-- **Chromosome Naming**: Ensure your `--contigs` match your reference. If your BAM/VCF uses "1" instead of "chr1", specify `--contigs 1-22,X,Y`.
-- **Unphased Mode**: If working with organisms with low heterozygosity (e.g., specific mouse models), use the unphased input mode to avoid errors related to insufficient phased blocks.
-- **Memory Management**: For large human genomes, ensure at least 16-24 threads are allocated to handle the pileup and optimization steps efficiently.
-- **Output Interpretation**: The interactive plots generated in the output directory are the primary way to validate purity and ploidy estimates. Check the `phasing_output/rephased.vcf.gz` if you need to use the corrected phases for downstream haplotagging.
+### Expert Tips
+- **Interactive Plots**: The default output includes interactive HTML plots. Use `--pdf-enable` if you require static versions for publications.
+- **Memory Management**: Long-read pileups can be memory-intensive. Adjust `--threads` based on available RAM; 16-24 threads is usually the sweet spot for standard human genomes.
+- **Phase-Switch Correction**: If your input VCF has many small phase blocks, Wakhan's `hapcorrect` module is essential to merge them based on copy number evidence before proceeding to CNA estimation.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| wakhan | Wakhan plots coverage and copy number profiles from a bam and phased VCF files |
+| wakhan | Wakhan plots coverage and copy number profiles from a bam and phased VCF files |
+| wakhan | Wakhan plots coverage and copy number profiles from a bam and phased VCF files |
 
 ## Reference documentation
-- [Wakhan GitHub Repository](./references/github_com_KolmogorovLab_Wakhan.md)
-- [Bioconda Wakhan Package](./references/anaconda_org_channels_bioconda_packages_wakhan_overview.md)
+- [Wakhan README](./references/github_com_KolmogorovLab_Wakhan_blob_main_README.md)
+- [Environment and Dependencies](./references/github_com_KolmogorovLab_Wakhan_blob_main_environment.yml.md)

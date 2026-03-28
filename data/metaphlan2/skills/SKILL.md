@@ -1,6 +1,6 @@
 ---
 name: metaphlan2
-description: MetaPhlAn2 profiles the relative abundance of microbial populations from metagenomic samples using clade-specific marker genes. Use when user asks to generate taxonomic profiles, identify microbial strains, or perform comparative metagenomics.
+description: MetaPhlAn2 performs taxonomic profiling of microbial communities from metagenomic shotgun sequencing data. Use when user asks to profile metagenomic samples, generate taxonomic abundance tables, or merge multiple profiling results into a single matrix.
 homepage: https://bitbucket.org/biobakery/metaphlan2
 ---
 
@@ -8,37 +8,49 @@ homepage: https://bitbucket.org/biobakery/metaphlan2
 # metaphlan2
 
 ## Overview
-MetaPhlAn2 is a computational pipeline for profiling the relative abundance of microbial populations from metagenomic samples. It utilizes a set of clade-specific marker genes to provide fast and accurate taxonomic assignments. This skill helps in configuring the tool for standard profiling, strain identification, and comparative metagenomics.
+MetaPhlAn2 (Metagenomic Phylogenetic Analysis) is a computational tool designed to profile the composition of microbial communities from metagenomic samples. It maps DNA reads against a pre-computed database of unique marker genes to provide fast, accurate, and species-level taxonomic quantification. This skill provides the necessary command-line patterns to process raw sequencing files into abundance tables.
 
 ## Common CLI Patterns
 
 ### Basic Taxonomic Profiling
-To generate a taxonomic profile from a single metagenomic fastq file:
+To profile a single metagenomic sample (fastq or fastq.gz):
 ```bash
-metaphlan2.py input.fastq --input_type fastq > abundance_profile.txt
+metaphlan2.py input_file.fastq --input_type fastq > abundance_table.txt
 ```
 
 ### Processing Multiple Samples
-For faster processing of multiple files, use the bowtie2 output to avoid re-mapping:
+For paired-end reads, it is recommended to concatenate them or provide them as a comma-separated list:
 ```bash
-# Step 1: Generate bowtie2 output
-metaphlan2.py sample.fastq --input_type fastq --bowtie2out sample.bowtie2.bz2 --nproc 4 > abundance_profile.txt
-
-# Step 2: Re-run profiling using the intermediate file (much faster)
-metaphlan2.py sample.bowtie2.bz2 --input_type bowtie2out > abundance_profile_refined.txt
+metaphlan2.py forward.fastq,reverse.fastq --input_type fastq --nproc 4 > merged_abundance.txt
 ```
 
-### Strain Tracking and Marker Analysis
-To output the presence/absence of specific markers for strain-level analysis:
+### Generating Bowtie2 Outputs
+To save the intermediate mapping file for re-analysis or different formatting:
 ```bash
-metaphlan2.py input.fastq --input_type fastq --sample_id MySample -t marker_pres_table > marker_presence.txt
+metaphlan2.py input.fastq --bowtie2out sample.bowtie2.bz2 --nproc 8 > abundance.txt
 ```
 
-## Expert Tips
-- **Database Management**: Ensure the `mpa_dir` points to the directory containing the MetaPhlAn2 database files if they are not in the default path.
-- **Merged Abundance**: When comparing multiple samples, use the `merge_metaphlan_tables.py` utility script to combine individual output files into a single matrix for downstream statistical analysis.
-- **Sensitivity**: Use the `--stat_q` parameter to adjust the quantile value for the confidence of the abundance estimation (default is 0.1).
-- **Read Length**: MetaPhlAn2 is optimized for reads >70bp. For shorter reads, false positive rates may increase.
+### Profiling from Pre-computed Bowtie2 Results
+If you already have the `.bowtie2.bz2` file, you can regenerate the abundance table quickly without re-mapping:
+```bash
+metaphlan2.py sample.bowtie2.bz2 --input_type bowtie2out > abundance.txt
+```
+
+## Expert Tips & Best Practices
+
+- **Taxonomic Resolution**: By default, MetaPhlAn2 provides all taxonomic levels. Use the `-t` or `--analysis_type` flag to specify a different output (e.g., `rel_ab` for relative abundance, `clade_profiles` for marker-level details).
+- **Merging Results**: When processing multiple samples in a project, use the utility script `merge_metaphlan_tables.py` to combine individual output files into a single large matrix for downstream statistical analysis.
+- **Sensitivity**: If dealing with low-biomass samples or looking for rare taxa, consider adjusting the `--stat_q` parameter (default is 0.1) to change the quantile used for the clade-level abundance calculation.
+- **Database Path**: Ensure the `--bt2_ps` parameter points to the correct location of the MetaPhlAn2 marker database if it is not in the default system path.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| merge_metaphlan_tables.py | Performs a table join on one or more metaphlan output files. |
+| metaphlan2.py | METAgenomic PHyLogenetic ANalysis for metagenomic taxonomic profiling. |
 
 ## Reference documentation
-- [Metaphlan2 Overview](./references/anaconda_org_channels_bioconda_packages_metaphlan2_overview.md)
+- [MetaPhlAn2 Overview](./references/anaconda_org_channels_bioconda_packages_metaphlan2_overview.md)

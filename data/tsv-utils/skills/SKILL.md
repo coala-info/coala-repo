@@ -1,6 +1,6 @@
 ---
 name: tsv-utils
-description: tsv-utils provides high-performance command-line tools for manipulating large tabular datasets. Use when user asks to filter data, select or reorder columns, calculate summary statistics, join files, or sample and randomize data.
+description: tsv-utils is a suite of high-performance command-line utilities designed for rapid processing, filtering, and manipulation of large tabular datasets. Use when user asks to select columns, filter rows, join files, generate summary statistics, or convert CSV files to TSV format.
 homepage: https://github.com/eBay/tsv-utils
 ---
 
@@ -9,58 +9,63 @@ homepage: https://github.com/eBay/tsv-utils
 
 ## Overview
 
-The `tsv-utils` toolkit is a suite of high-performance, header-aware command-line tools designed for manipulating large tabular datasets. These utilities are optimized for speed and memory efficiency, often outperforming standard Unix tools like `awk`, `cut`, and `grep`. They are particularly effective for data preparation, exploratory analysis, and processing files with millions of rows where Unicode support and field-based operations are required.
+tsv-utils is a suite of specialized command-line utilities designed for the rapid processing of large tabular datasets. Developed by eBay, these tools are optimized for speed and memory efficiency, often significantly outperforming standard Unix utilities. They are particularly effective in machine learning and data mining workflows where datasets exceed several gigabytes. The toolkit provides a robust alternative to complex awk scripts or slow Python/R processing for common data manipulation tasks like column selection, filtering, joining, and statistical summarization.
 
-## Core Toolset and Usage Patterns
+## Core Tool Usage and Patterns
 
-### 1. Filtering Data (`tsv-filter`)
-Use `tsv-filter` for complex numeric, string, or regular expression comparisons.
-- **Header awareness**: Use `-H` to treat the first line as a header.
-- **Named fields**: Reference columns by name instead of index.
-- **Multiple tests**: Combine conditions (AND logic by default).
+### 1. Column Selection (tsv-select)
+Use `tsv-select` to extract specific columns by index or name.
+- **By index**: `tsv-select -f 1,3,5 data.tsv`
+- **By name (requires header)**: `tsv-select -H --fields "Date,User,Action" data.tsv`
+- **Exclude columns**: `tsv-select -e 2,4 data.tsv`
 
-```bash
-# Find rows where 'color' is red AND 'year' is between 1850 and 1950
-tsv-filter -H --str-eq color:red --ge year:1850 --lt year:1950 data.tsv
-```
+### 2. Advanced Filtering (tsv-filter)
+`tsv-filter` is the primary tool for row selection based on column values.
+- **Numeric comparisons**: `tsv-filter --ge 3:100 --lt 3:500 data.tsv` (Column 3 is between 100 and 500).
+- **String matching**: `tsv-filter --str-eq 1:active data.tsv`
+- **Regex**: `tsv-filter --regex 2:'^ID_[0-9]+$' data.tsv`
+- **Multiple criteria (AND)**: `tsv-filter --ge 3:10 --str-ne 4:pending data.tsv`
 
-### 2. Selecting and Reordering Columns (`tsv-select`)
-A more powerful version of `cut` that supports reordering and field exclusion.
-- **Reorder**: `tsv-select -H -f color,id,count data.tsv`
-- **Exclude**: `tsv-select -H -e year data.tsv` (keeps everything except 'year')
+### 3. Joining Files (tsv-join)
+Join a "data" file with a "reference" file based on a common key.
+- **Basic join**: `tsv-join --filter-file ref.tsv --key-fields 1 --data-fields 2 data.tsv`
+- **Append columns from ref**: `tsv-join --filter-file ref.tsv --key-fields 1 --data-fields 1 --append-fields 2,3 data.tsv`
 
-### 3. Summary Statistics (`tsv-summarize`)
-Calculate aggregates across the whole file or grouped by specific keys.
-- **Common operators**: `sum`, `min`, `max`, `mean`, `median`, `stdev`, `count`, `unique-count`.
+### 4. Aggregation and Statistics (tsv-summarize)
+Generate summary statistics for grouped data.
+- **Global stats**: `tsv-summarize --sum 2 --mean 2 --max 2 data.tsv`
+- **Grouped stats**: `tsv-summarize -H --group-by "Category" --sum "Amount" --count data.tsv`
 
-```bash
-# Calculate total count and average year grouped by color
-tsv-summarize -H --group-by color --sum count --mean year data.tsv
-```
-
-### 4. Joining Files (`tsv-join`)
-Join a "data file" with a "filter file" based on a common key.
-- **Filter-only**: Use `--filter-file` to keep only rows in the data file that have a match in the filter file.
-- **Append fields**: Use `--append-fields` to pull columns from the filter file into the data file.
-
-```bash
-# Join data.tsv with lookup.tsv on the 'id' field, appending the 'name' column
-tsv-join -H --filter-file lookup.tsv --key-fields id --append-fields name data.tsv
-```
-
-### 5. Sampling and Randomization (`tsv-sample`)
-Efficiently sample lines without loading the entire file into memory.
-- **Randomize order**: `tsv-sample data.tsv`
-- **Fixed size sample**: `tsv-sample -n 100 data.tsv`
+### 5. Format Conversion (csv2tsv)
+Always convert CSVs to TSV before processing with other tools to ensure maximum performance and correct handling of delimiters.
+- **Standard conversion**: `csv2tsv data.csv > data.tsv`
+- **Custom delimiter**: `csv2tsv -d '|' data.txt > data.tsv`
 
 ## Expert Tips and Best Practices
 
-- **CSV to TSV First**: The toolkit is optimized for TSV. If starting with CSV, use `csv2tsv` first to convert the data, as subsequent TSV operations will be significantly faster.
-- **Piping for Performance**: These tools follow Unix philosophy. Pipe them together to build complex pipelines (e.g., `tsv-filter ... | tsv-summarize ... | tsv-pretty`).
-- **Field Identification**: While named fields (via `-H`) are more readable, you can always use 1-based indices (e.g., `--eq 3:2008`) for files without headers or for quicker typing.
-- **Visual Inspection**: Use `tsv-pretty` at the end of a pipeline to view results in an aligned, readable format on the terminal.
-- **Header Preservation**: When concatenating multiple files with headers, use `tsv-append -H` to ensure only one header remains in the output and to optionally track the source file.
+- **Header Handling**: Most tools support the `-H` or `--header` flag. Use it to keep headers intact during operations or to reference columns by name rather than index.
+- **Performance Optimization**:
+    - Use `tsv-filter` instead of `awk` for simple column-based logic; it is significantly faster.
+    - When joining, ensure the `--filter-file` (the one loaded into memory) is the smaller of the two files.
+- **Piping**: Chain tools together for complex transformations:
+  `csv2tsv data.csv | tsv-select -f 1,3 | tsv-filter --gt 2:10 | tsv-summarize --group-by 1 --count`
+- **Sampling**: Use `tsv-sample` for large files when you need a representative subset without loading the entire file into memory.
+- **Pretty Printing**: Use `tsv-pretty` at the end of a pipeline to view results in a human-readable aligned format, but never use it in the middle of a pipeline as it breaks the TSV format.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| csv2tsv | Convert CSV (comma separated values) to TSV (tab separated values). |
+| tsv-append | Concatenate TSV files, maintaining the header of the first file and optionally tracking the source of each row. (Note: The provided help text contained system error logs rather than tool usage; arguments list is based on standard tsv-append functionality). |
+| tsv-filter | A tool for filtering TSV files based on field content using various operators (equality, numeric comparison, regular expressions, etc.). |
+| tsv-join | Joins lines from files based on a common key. It is similar to the Unix 'join' tool, but works on TSV files and supports multiple fields and non-sorted input. |
 
 ## Reference documentation
-- [eBay's TSV Utilities Overview](./references/github_com_eBay_tsv-utils.md)
-- [tsv-utils Bioconda Package](./references/anaconda_org_channels_bioconda_packages_tsv-utils_overview.md)
+- [Tools Reference](./references/opensource_ebay_com_tsv-utils_docs_ToolReference.html.md)
+- [Tips and Tricks](./references/opensource_ebay_com_tsv-utils_docs_TipsAndTricks.html.md)
+- [Comparing TSV and CSV](./references/opensource_ebay_com_tsv-utils_docs_comparing-tsv-and-csv.html.md)
+- [tsv-filter Reference](./references/opensource_ebay_com_tsv-utils_docs_tool_reference_tsv-filter.html.md)
+- [tsv-summarize Reference](./references/opensource_ebay_com_tsv-utils_docs_tool_reference_tsv-summarize.html.md)

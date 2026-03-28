@@ -1,6 +1,6 @@
 ---
 name: bcbio-rnaseq
-description: bcbio-rnaseq processes bcbio-nextgen pipeline outputs into Bioconductor-compatible objects for downstream analysis in R. Use when user asks to load bcbio upload directories, construct a bcbioRNASeq object, or prepare RNA-seq data for differential expression analysis with DESeq2 or edgeR.
+description: "bcbioRNASeq processes and validates output from the bcbio-nextgen bioinformatics pipeline for downstream analysis in R. Use when user asks to import bcbio RNA-seq data, perform quality control visualization, or convert pipeline results into DESeq2 and edgeR objects."
 homepage: https://github.com/hbc/bcbioRNASeq
 ---
 
@@ -8,72 +8,91 @@ homepage: https://github.com/hbc/bcbioRNASeq
 # bcbio-rnaseq
 
 ## Overview
-bcbioRNASeq is an R package specifically designed to interface with the output of the bcbio-nextgen bioinformatics pipeline. It streamlines the transition from raw pipeline output (quantifications and metadata) into a Bioconductor-compatible `RangedSummarizedExperiment` object. Use this skill to automate the loading of "final" upload directories from bcbio, ensure metadata consistency, and prepare data for downstream statistical modeling.
 
-## Installation
-The package can be installed via BiocManager within R or through Conda for environment management.
+The bcbioRNASeq package provides a specialized interface for handling the output of the bcbio-nextgen bioinformatics pipeline. It automates the import of transcript-level and gene-level counts, sample metadata, and alignment metrics into a single RangedSummarizedExperiment object. This skill facilitates the transition from raw pipeline output to downstream statistical analysis, offering robust tools for data validation, quality assessment, and format conversion for Bioconductor-standard differential expression workflows.
 
-**R Method:**
-```r
+## Installation and Setup
+
+Install the package using the Acid Genomics repository to ensure all dependencies are resolved:
+
+```R
 if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")
-install.packages(pkgs = "bcbioRNASeq", repos = c("https://r.acidgenomics.com", BiocManager::repositories()), dependencies = TRUE)
+install.packages("bcbioRNASeq", repos = c("https://r.acidgenomics.com", BiocManager::repositories()))
 ```
 
-**Conda Method:**
-```bash
-conda create --name=r-bcbiornaseq r-bcbiornaseq
-conda activate r-bcbiornaseq
-```
+## Data Import Patterns
 
-## Data Loading and Object Construction
 The primary entry point is the `bcbioRNASeq()` constructor. It requires the path to the bcbio "final" upload directory.
 
-**Basic Pattern:**
-```r
+### Standard Import
+```R
 library(bcbioRNASeq)
 object <- bcbioRNASeq(
-    uploadDir = "path/to/bcbio/final",
+    uploadDir = "bcbio_output/final",
     interestingGroups = c("genotype", "treatment"),
     organism = "Homo sapiens"
 )
 ```
 
-**Key Parameters:**
-- `uploadDir`: Path to the directory containing the `project-summary.yaml` and quantification files.
-- `interestingGroups`: Character vector specifying the metadata columns used for grouping and visualization.
-- `sampleMetadataFile`: (Optional) Path to a CSV or Excel file if you wish to override the metadata found in the bcbio YAML.
+### Custom Metadata
+If the `project-summary.yaml` in the upload directory contains errors or lacks specific experimental factors, provide an external metadata file. The `description` column must match the bcbio sample names.
 
-## Metadata Requirements
-- The package automatically maps samples using the `description` column.
-- Values in the `description` column must be unique.
-- These values are sanitized into syntactically valid names for R (column names), while original values are preserved in the `sampleName` column of `colData()`.
+```R
+object <- bcbioRNASeq(
+    uploadDir = "bcbio_output/final",
+    sampleMetadataFile = "metadata.csv",
+    organism = "Mus musculus"
+)
+```
+
+## Quality Control and Visualization
+
+Use these functions to assess the technical quality of the run before proceeding to differential expression.
+
+- **Global QC Summary**: `plotQC(object)` generates a comprehensive suite of plots.
+- **Sample Clustering**: `plotPCA(object, label = TRUE)` or `plotCorrelationHeatmap(object)` to identify outliers or batch effects.
+- **Mapping Metrics**:
+    - `plotMappingRate(object)`: Overall alignment quality.
+    - `plotExonicMappingRate(object)`: Check for genomic DNA contamination.
+    - `plotRrnaMappingRate(object)`: Verify rRNA depletion efficiency.
+- **Quantitation Metrics**:
+    - `plotGenesDetected(object)`: Sensitivity check.
+    - `plotCountsPerGene(object)`: Distribution of counts across samples.
 
 ## Differential Expression Handoff
-bcbioRNASeq objects are designed to be easily coerced into formats required by popular differential expression tools.
 
-**For DESeq2:**
-```r
+bcbioRNASeq objects are designed to be easily coerced into formats required by major statistical packages.
+
+### DESeq2
+```R
 dds <- as.DESeqDataSet(object)
+# Proceed with standard DESeq2 workflow
 ```
 
-**For edgeR or limma-voom:**
-```r
+### edgeR or limma-voom
+```R
 dge <- as.DGEList(object)
+# Proceed with edgeR or limma-voom workflow
 ```
 
-## Maintenance and Troubleshooting
-If working with objects saved from older versions of the package, you must update the object container to ensure compatibility with current plotting and analysis functions.
+## Expert Tips
 
-**Updating Legacy Objects:**
-```r
-object <- updateObject(object)
-validObject(object)
-```
+- **Legacy Data**: If loading an object saved with an older version of the package, always run `object <- updateObject(object)` to ensure compatibility with current plotting and analysis functions.
+- **Gene Symbol Mapping**: The package handles Ensembl ID to Gene Symbol mapping automatically if the `organism` is correctly specified during import.
+- **Reporting**: Use `prepareRNASeqTemplate()` to generate a boilerplate R Markdown file that includes standard QC and differential expression code blocks.
+- **Sanitization**: Sample names are automatically sanitized into syntactically valid R names. The original names are preserved in the `sampleName` column of the metadata.
 
-## Best Practices
-- **Metadata Cleanup**: If typos are discovered in sample metadata after the bcbio run, edit the `project-summary.yaml` in the upload directory before calling the R constructor, or provide an external metadata file.
-- **RStudio Templates**: Utilize the built-in R Markdown templates for standardized QC and DE reports. Access these via `File -> New File -> R Markdown... -> From Template`.
-- **Organism Specification**: Always provide the full Latin name for the `organism` parameter (e.g., "Mus musculus") to ensure correct functional annotation and gene symbol mapping.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| bcbio-rnaseq simulate | Simulate RNA-Seq data |
+| bcbio-rnaseq summarize | Summarize RNA-Seq analysis results from a bcbio project. |
+| compare | Compare RNA-seq experiments |
 
 ## Reference documentation
-- [bcbioRNASeq README](./references/github_com_hbc_bcbioRNASeq.md)
+- [bcbioRNASeq README](./references/github_com_hbc_bcbioRNASeq_blob_master_README.md)
+- [Package Description and Dependencies](./references/github_com_hbc_bcbioRNASeq_blob_master_DESCRIPTION.md)
+- [Exported Functions and Methods](./references/github_com_hbc_bcbioRNASeq_blob_master_NAMESPACE.md)

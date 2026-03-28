@@ -100,3 +100,6 @@ Unknown tool [merge].
 -Example: "./karect -correct"
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -1,6 +1,6 @@
 ---
 name: mapping-iterative-assembler
-description: The Mapping Iterative Assembler performs reference-assisted assembly by iteratively aligning sequencing reads to a consensus sequence until convergence. Use when user asks to assemble ancient DNA, reconstruct mitochondrial genomes, or account for post-mortem chemical damage using substitution matrices.
+description: The Mapping Iterative Assembler performs reference-assisted assembly of ancient mitochondrial genomes through iterative alignment and consensus calling. Use when user asks to assemble ancient DNA fragments, perform iterative mapping to a reference sequence, or account for chemical damage in ancient samples using substitution matrices.
 homepage: https://github.com/mpieva/mapping-iterative-assembler
 ---
 
@@ -8,32 +8,44 @@ homepage: https://github.com/mpieva/mapping-iterative-assembler
 # mapping-iterative-assembler
 
 ## Overview
-The Mapping Iterative Assembler (MIA) is a specialized tool for "reference-assisted assembly." Unlike standard mappers, MIA operates iteratively: it aligns sequencing reads to a reference, calls a consensus sequence, and then uses that consensus as the reference for the next round of alignment. This process repeats until the sequence converges. It is highly optimized for ancient DNA (aDNA) research because it can incorporate substitution matrices that account for common post-mortem chemical damages (like deamination), leading to more accurate mitochondrial reconstructions.
 
-## CLI Usage and Best Practices
+The Mapping Iterative Assembler (MIA) is designed for "reference assisted assembly," primarily focusing on ancient mitochondrial genomes. It operates on a feedback loop: DNA fragments are aligned to a reference to call a consensus sequence, which then serves as the reference for the next iteration. This process repeats until the sequence converges. MIA is uniquely suited for ancient DNA because it utilizes position-specific substitution matrices to account for the chemical damage (deamination) typical of ancient samples, improving both alignment accuracy and consensus reliability.
 
-### Core Workflow
-The tool typically involves an iterative loop. While the specific binary names are often `mia` and `ma`, the workflow follows this logic:
-1.  **Initial Alignment**: Align shotgun or targeted reads to a starting reference (e.g., a related species or a standard mitochondrial reference).
-2.  **Consensus Calling**: Generate a new consensus from the alignment.
-3.  **Iteration**: Use the new consensus as the reference for the next mapping step.
-4.  **Convergence**: Stop when the consensus sequence no longer changes between iterations.
+## Core Workflow
 
-### Key Functional Features
-- **Ancient DNA Substitution Matrices**: Use the matrix support to improve alignment accuracy for damaged DNA. This is critical for aDNA to prevent the "reference bias" where damaged reads fail to map to a pristine reference.
-- **Mitochondrial Assembly**: Best suited for small, high-coverage targets like the mitogenome. It is not intended for large-scale nuclear genome assembly.
-- **Contamination Checking**: Use the companion `contamination-checker` program post-assembly. It compares the called consensus against a panel of known human mitochondria to identify reads that may be modern contaminants rather than endogenous ancient DNA.
+1.  **Initial Alignment**: Align sequencing fragments (shotgun or targeted) to a starting reference sequence (e.g., a related species or a modern mitochondrial genome).
+2.  **Consensus Calling**: Generate a consensus sequence from the alignment.
+3.  **Iterative Refinement**: Use the newly generated consensus as the reference for the next round of mapping.
+4.  **Convergence**: Repeat the cycle until the reference sequence remains stable between iterations.
+5.  **Contamination Assessment**: Run the `contamination-checker` on the final output to distinguish between endogenous ancient DNA and potential modern human contamination.
 
-### Common CLI Patterns & Tips
-- **Substitution Matrices**: Ensure you are utilizing the `-M` flag (which is often the default in later versions) to enable the use of substitution matrices.
-- **Circular References**: When assembling mitochondria, be aware of the "edge effect" at the start/end of the linear fasta reference. Some versions or related scripts (like `easy-consensus`) may help manage the circular nature of the genome.
-- **The `--foot` Option**: Use this option for more precise control over the alignment parameters during the mapping phase.
-- **The `-c` Option**: This flag is used during the consensus calling phase; ensure it is correctly configured to handle the depth and quality of your specific aDNA library.
+## Command Line Usage and Best Practices
 
-### Troubleshooting
-- **Compilation**: If building from source, the tool requires a standard GNU build environment (Gcc, Make, Autotools). Note that certain Haskell-based components (like `mia_consensus.hc`) may require specific older versions of the Glasgow Haskell Compiler (GHC) to compile correctly.
-- **Input Formats**: While primarily designed for older formats, ensure your Fastq data is properly pre-processed (adapters trimmed) before starting the iterative loop.
+### Assembly with `mia`
+*   **Iterative Mapping**: Ensure the output consensus of one run is fed back as the input reference for the next.
+*   **Substitution Matrices**: Use the `-M` flag to enable position-specific substitution matrices. This is the default behavior in recent versions and is critical for ancient DNA to correctly handle C-to-T and G-to-A transitions.
+*   **Refining Alignments**: Use the `--foot` option for more precise documentation of alignment parameters during the assembly process.
+*   **Consensus Parameters**: Pay attention to the `-c` option when calling the consensus, as it influences how the program handles ambiguous bases or low-coverage regions.
+
+### Post-Assembly: `contamination-checker`
+*   **Purpose**: Use this tool to validate the purity of the assembled mitochondrion.
+*   **Mechanism**: It compares the called consensus against a panel of known human mitochondria.
+*   **Classification**: The tool classifies individual reads as either belonging to the sample (endogenous) or being a putative contaminant based on diagnostic positions.
+
+### Performance and Limitations
+*   **Target Regions**: MIA is optimized for mitochondrial genomes and small nuclear regions.
+*   **Scaling**: Do not attempt to use MIA for genome-wide analysis, as the iterative mapping approach does not scale efficiently to large nuclear genomes.
+*   **Ancient DNA Damage**: Always leverage the substitution matrix features when working with Neandertal or early modern human samples to prevent damage-induced errors in the final assembly.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| ma | Reports information from a maln assembly file as generated by mia. How the assembly calls each base can be determined by the consensus code. |
+| mia | A tool for creating short read assemblies. |
 
 ## Reference documentation
-- [GitHub Repository Overview](./references/github_com_mpieva_mapping-iterative-assembler.md)
-- [Bioconda Package Details](./references/anaconda_org_channels_bioconda_packages_mapping-iterative-assembler_overview.md)
+- [Main README and Tool Overview](./references/github_com_mpieva_mapping-iterative-assembler.md)
+- [Commit History and Flag Updates](./references/github_com_mpieva_mapping-iterative-assembler_commits_master.md)

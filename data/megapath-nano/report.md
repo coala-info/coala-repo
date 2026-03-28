@@ -512,3 +512,6 @@ Usage: /usr/local/bin/runMegaPath-Nano-Amplicon.sh -r <read.fq> [options]
     -d  database directory [/usr/local/MegaPath-Nano/bin/db]
 ```
 
+
+## Metadata
+- **Skill**: generated

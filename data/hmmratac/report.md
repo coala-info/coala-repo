@@ -138,3 +138,6 @@ Usage: awk [OPTIONS] [AWK_PROGRAM] [FILE]...
 	-e AWK_PROGRAM
 ```
 
+
+## Metadata
+- **Skill**: generated

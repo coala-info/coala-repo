@@ -1,6 +1,6 @@
 ---
 name: snp2cell
-description: snp2cell identifies trait-linked gene regulatory programs by integrating GWAS scores with single-cell data and regulatory networks. Use when user asks to map GWAS scores to gene regulatory networks, identify trait-cell type associations, or visualize trait-associated regulation.
+description: snp2cell maps GWAS results onto cell-type-specific regulatory landscapes using network propagation to identify gene programs driving specific traits. Use when user asks to map genetic variants to cellular functions, interpret the functional impact of non-coding variants, or run network propagation on gene regulatory networks.
 homepage: https://github.com/Teichlab/snp2cell
 ---
 
@@ -8,92 +8,75 @@ homepage: https://github.com/Teichlab/snp2cell
 # snp2cell
 
 ## Overview
+`snp2cell` is a bioinformatics tool designed to bridge the gap between genetic variants (SNPs) and cellular function. It maps GWAS (Genome-Wide Association Study) results onto cell-type-specific regulatory landscapes. By utilizing network propagation on a base gene regulatory network, the tool identifies which gene programs are most likely driving a specific trait within a particular cell population. This is particularly useful for interpreting the functional impact of non-coding variants discovered in GWAS.
 
-snp2cell is a specialized bioinformatics tool designed to bridge the gap between genetic association studies (GWAS) and functional single-cell biology. It identifies gene regulatory programs linked to specific traits on a per-cell-type basis. The tool functions by mapping GWAS scores onto a gene regulatory network and using network propagation to overlap these with single-cell data. It is particularly effective for researchers looking to move from "variant-to-gene" to "variant-to-network" in specific cellular contexts.
+## Core Workflow
+The standard `snp2cell` workflow involves three primary data inputs:
+1.  **GWAS Summary Statistics**: Typically processed into scores (e.g., fGWAS scores).
+2.  **Single-Cell Data**: Gene expression profiles or differential expression groups.
+3.  **Base GRN**: A networkx-compatible graph representing known gene interactions.
 
-## Installation and Environment
+### CLI Usage Patterns
+The command line interface provides a streamlined way to execute the integration pipeline.
 
-The package requires Python >= 3.5 and < 3.12.
-
+**Basic Help and Setup**
 ```bash
-# Recommended installation via Conda/Mamba
-mamba create -n snp2cell "python<3.12"
-mamba activate snp2cell
-conda install bioconda::snp2cell
-
-# Alternative installation from source
-git clone https://github.com/Teichlab/snp2cell.git
-cd snp2cell
-pip install .
-```
-
-## Command Line Interface (CLI)
-
-While the Python API offers the most flexibility, the CLI provides quick access to core functionality.
-
-```bash
-# View all available commands and options
+# View all available options and subcommands
 snp2cell --help
 
-# Enable shell autocompletion (e.g., for bash)
+# Enable shell autocompletion (Bash example)
 snp2cell --install-completion bash
 source ~/.bashrc
 ```
 
-## Python API Workflow
+**Running the Analysis**
+While the CLI is available, the tool is frequently used as a Python module for maximum flexibility. When using the CLI or Python API, ensure your GWAS scores are properly formatted (often requiring log-scale transformation for better propagation results).
 
-The primary way to use snp2cell is through its Python module, which integrates with the `scanpy` and `networkx` ecosystems.
-
-### 1. Initialization and Data Loading
-Initialize the `SNP2CELL` class and load your GWAS/fGWAS scores.
+### Python API Best Practices
+For complex analyses, importing `snp2cell` as a module is recommended:
 
 ```python
 import snp2cell
+import scanpy as sc
+import networkx as nx
 
-# Initialize the main class
+# Initialize the SNP2CELL object
+# Note: Ensure de_groups are stored as copies to prevent unintended modifications
 s2c = snp2cell.SNP2CELL(
-    gex_data=adata,        # Scanpy AnnData object
-    network=grn_graph,     # NetworkX graph object
-    de_groups=de_results   # Differential expression groups
+    adata=my_adata, 
+    grn=my_networkx_graph,
+    gwas_scores=my_scores
 )
 
 # Load fGWAS scores
-s2c.load_fgwas_scores(
-    scores_path="path/to/scores.txt",
-    rbf_table_path="path/to/rbf.table", # Optional
-    use_log_scale=True
-)
+# The rbf_table_path is optional in newer versions (v0.3.0+)
+s2c.load_fgwas_scores(scores_path="path/to/scores.txt", use_log_scale=True)
+
+# Run network propagation and permutation testing
+s2c.run_propagation(n_permutations=1000)
 ```
 
-### 2. Network Propagation and Analysis
-The tool uses network propagation to integrate scores across the regulatory network.
+### Expert Tips
+*   **Memory Management**: Ensure your system has enough RAM to hold the single-cell AnnData object and the networkx graph simultaneously.
+*   **Parallelization**: `snp2cell` can utilize multiple CPUs. When running permutations, specify the number of cores to significantly reduce computation time.
+*   **Score Ordering**: When plotting results, use the optional parameters for score ordering to highlight the most significant trait-cell type associations.
+*   **Logging**: If debugging, check the logs. Recent versions (v0.3.0+) have refactored logging where detailed information is moved to the `DEBUG` level to keep the standard output clean.
 
-*   **Parallelization**: Use the `loop_parallel` parameter in methods to speed up computations across multiple CPUs.
-*   **Significance**: Significance is evaluated through random permutations of scores.
-*   **Transformations**: The tool supports `asinh` and `log modulus` transformations for handling score distributions.
 
-### 3. Visualization
-snp2cell provides several specialized plotting methods to inspect trait-associated regulation.
 
-```python
-# Generate a summary plot of trait-cell type associations
-s2c.plot_group_summary()
+## Subcommands
 
-# Create a heatmap of integrated scores across cell types
-s2c.plot_group_heatmap(robust=True) # Uses robust z-score by default
-
-# Visualize the regulatory network for a specific trait/cell type
-s2c.plot_network(group="CellType_A", trait="Height")
-```
-
-## Expert Tips and Best Practices
-
-*   **Plotting Defaults**: The tool defaults to `robust zscore` for plotting. This is generally preferred to minimize the impact of outliers in network scores.
-*   **Memory Management**: Ensure your system has enough RAM to hold the single-cell AnnData and the NetworkX graph simultaneously. For large datasets, subset the AnnData to highly variable genes or specific clusters of interest before initialization.
-*   **Debugging**: If propagation results seem unexpected, enable the `debug` flag in `loop_parallel` or set the logging level to `DEBUG` to trace the score integration process.
-*   **Output**: The final output is a `networkx` graph object. You can export this to standard formats (like GraphML) for further inspection in tools like Cytoscape.
+| Command | Description |
+|---------|-------------|
+| add-score | Add scores for network nodes to the s2c object and propagate the scores across the network. |
+| combine-scores | Assuming that both a SNP score and DE scores have been added to the s2c object, combine SNP score with DE scores and compute statistics. |
+| snp2cell contrast-scores | Add a new score that is a contrast of two scores, propagate it across the network and calculate statistics based on random permutations. |
+| snp2cell export-locations | Save the genomic locations of network nodes in the s2c object to a tsv file. |
+| snp2cell score-de | Add an anndata object to the s2c object, find differentially expressed genes and propagate the gene scores across the network. Then the DE scores and previously computed SNP scores are combined and statistics are computed based on random permutations. |
+| snp2cell score-snp | Add fGWAS scores for network nodes based on GWAS summary statistics. Then propagate the scores across the network and calculate statistics based on random permutations. All calculated information will be saved in the s2c object. |
+| snp2cell_create-gene2pos-mapping | Create a gene to genomic position mapping. |
 
 ## Reference documentation
-
-- [snp2cell Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_snp2cell_overview.md)
-- [snp2cell GitHub Repository](./references/github_com_Teichlab_snp2cell.md)
+- [snp2cell README](./references/github_com_Teichlab_snp2cell_blob_main_README.md)
+- [fGWAS Scores Notebook](./references/github_com_Teichlab_snp2cell_blob_main_docs_source_snp2cell_fgwas_scores.ipynb.md)
+- [Toy Example Notebook](./references/github_com_Teichlab_snp2cell_blob_main_docs_source_toy_example.ipynb.md)

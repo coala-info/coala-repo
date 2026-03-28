@@ -99,3 +99,6 @@ options:
   --max-rcvs MAX_RCVS   Maximal number of RCV records to process.
 ```
 
+
+## Metadata
+- **Skill**: generated

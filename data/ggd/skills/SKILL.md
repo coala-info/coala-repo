@@ -1,6 +1,6 @@
 ---
 name: ggd
-description: GGD is a package manager for genomic data that automates the discovery, installation, and management of processed genomic files. Use when user asks to search for genomic data recipes, install reference genomes or annotations into environments, manage data environment variables, or uninstall genomic data packages.
+description: The ggd tool simplifies the acquisition of genomic data by providing a standardized interface for searching and installing pre-processed data recipes. Use when user asks to search for genomic datasets, install pre-processed data packages, or manage installed genomic files and environment variables.
 homepage: https://github.com/gogetdata/ggd-cli
 ---
 
@@ -8,12 +8,10 @@ homepage: https://github.com/gogetdata/ggd-cli
 # ggd
 
 ## Overview
+The `ggd` (Go Get Data) ecosystem simplifies the acquisition of genomic data by providing a standardized interface for searching and installing pre-processed data recipes. It eliminates the manual overhead of finding, downloading, and formatting genomic datasets by leveraging Conda's package management system. This skill provides the necessary procedural knowledge to navigate the ggd repository, install datasets into specific environments, and access the resulting files for downstream bioinformatics analysis.
 
-GGD (GoGetData) acts as a package manager specifically for genomic data, functioning similarly to how Conda manages software. It eliminates the manual burden of finding, downloading, and processing standard genomic files (like reference genomes, annotations, and VCFs). Use this skill to discover curated data recipes, install them into specific environments, and access the resulting files through standardized environment variables. This ensures that data used in bioinformatics pipelines is versioned, reproducible, and easily shared across different compute environments.
-
-## Environment Setup
-
-Before using GGD, ensure the required Conda channels are configured in the following order:
+## Setup and Configuration
+Before using `ggd`, ensure your Conda environment is configured with the necessary channels in the following priority order:
 
 ```bash
 conda config --add channels defaults
@@ -24,41 +22,50 @@ conda config --add channels conda-forge
 
 ## Core CLI Workflows
 
-### Searching for Data
-Search for specific organisms, builds, or data types using keywords.
+### Finding Data
+Use `ggd search` to locate specific genomes, annotations, or data types.
+- **Basic search**: `ggd search reference genome`
+- **Filtered search**: Use specific keywords like species (e.g., `human`), build (e.g., `hg19`), or source (e.g., `ensembl`).
 
-*   **General search**: `ggd search reference genome`
-*   **Specific build search**: `ggd search hg38`
-*   **Filter results**: Use `ggd search` with additional keywords to narrow down the repository of available recipes.
+### Installing Packages
+Installation handles the download and any necessary processing (sorting, indexing) automatically.
+- **Command**: `ggd install <package-name>`
+- **Example**: `ggd install grch38-reference-genome-ensembl-v1`
 
-### Installing and Accessing Data
-GGD installs data into your active Conda environment and creates environment variables for easy access.
+### Accessing Installed Data
+GGD uses environment variables to make data access seamless in scripts.
+- **Environment Variables**: After installation, ggd creates a variable named after the package (e.g., `$ggd_grch38_reference_genome_ensembl_v1`).
+- **Locating Files**: Use `ggd get-files <package-name>` to get the absolute path to the data files.
+- **Check Environment**: Use `ggd show-env` to see all currently available ggd data variables.
 
-*   **Install a package**: `ggd install <package-name>`
-*   **Locate installed files**: `ggd get-files <package-name>`
-*   **View environment variables**: `ggd show-env`
-    *   GGD creates variables following the pattern `$ggd_<package_name>_dir`. Use these in scripts to maintain portability.
-*   **Check package metadata**: `ggd pkg-info <package-name>`
+### Managing Local Data
+- **List installed data**: `ggd list`
+- **View package metadata**: `ggd pkg-info <package-name>`
+- **Uninstalling**: Always use `ggd uninstall <package-name>` rather than manual deletion to ensure the local database and Conda environment remain synchronized.
 
-### Managing Environments
-GGD allows you to manage data in environments other than your current one.
+## Expert Tips and Best Practices
+- **Data Integrity**: Never move the original files installed by ggd. If you need the data elsewhere, create a copy. Moving files breaks ggd's ability to manage or uninstall the package.
+- **Environment Isolation**: Install ggd data packages into specific Conda environments dedicated to a project to avoid version conflicts between different genomic builds.
+- **Verification**: After installation, run `ggd list` to verify the package is correctly registered in the local ggd database.
 
-*   **Cross-environment installation**: `ggd install <package-name> --prefix /path/to/other/env`
-*   **List data in specific env**: `ggd list --prefix /path/to/other/env`
-*   **Access data without activation**: Use the `--prefix` flag with `get-files` to retrieve paths from a central data environment.
 
-### Uninstalling Data
-Always use the GGD tool to uninstall packages to ensure that environment variables and metadata are cleaned up correctly.
 
-*   **Proper removal**: `ggd uninstall <package-name>`
-*   **Warning**: Do not manually delete files from the installation directory, as this breaks GGD's internal tracking.
+## Subcommands
 
-## Expert Tips
-
-*   **Avoid Redundancy**: Use a dedicated Conda environment for all GGD data and use the `--prefix` flag to access that data from your various analysis environments. This prevents duplicating large genomic files across your system.
-*   **Scripting Integration**: Always use the environment variables (e.g., `cd $ggd_grch38_reference_genome_ensembl_v1_dir`) in your bash scripts or Nextflow/Snakemake workflows instead of hardcoded paths.
-*   **Recipe Requests**: If a specific dataset is missing, GGD provides a `make-recipe` command to help generate a new data package from a bash script.
+| Command | Description |
+|---------|-------------|
+| ggd check-recipe | Convert a ggd recipe created from `ggd make-recipe` into a data package. Test both ggd data recipe and data package |
+| ggd install | Install a ggd data package into the current or specified conda environment |
+| ggd list | Get a list of ggd data packages installed in the current or specified conda prefix/environment. |
+| ggd make-meta-recipe | Make a ggd data meta-recipe |
+| ggd make-recipe | Make a ggd data recipe from a bash script |
+| ggd pkg-info | Get the information for a specific ggd data package installed in the current conda environment |
+| ggd predict-path | Get a predicted install file path for a data package before it is installed. (Use for workflows, such as Snakemake) |
+| ggd search | Search for available ggd data packages. Results are filtered by match score from high to low. (Only 5 results will be reported unless the -dn flag is changed) |
+| ggd uninstall | Use ggd to uninstall a ggd data package installed in the current conda environment |
+| ggd_get-files | Get a list of file(s) for a specific installed ggd package |
+| show-env | Display the environment variables for data packages installed in the current conda environment |
 
 ## Reference documentation
-- [GGD CLI Overview](./references/github_com_gogetdata_ggd-cli.md)
-- [Anaconda GGD Package Details](./references/anaconda_org_channels_bioconda_packages_ggd_overview.md)
+- [ggd-cli README](./references/github_com_gogetdata_ggd-cli_blob_master_README.md)
+- [ggd-cli Overview](./references/github_com_gogetdata_ggd-cli.md)

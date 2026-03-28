@@ -1,6 +1,6 @@
 ---
 name: massiveqc
-description: MassiveQC is a Python-based pipeline that automates quality control, alignment, and outlier detection for large-scale RNA-seq datasets. Use when user asks to process thousands of RNA-seq samples, identify outlier samples using Isolation Forests, or perform automated trimming, screening, and quantification.
+description: MassiveQC is a Python-based pipeline that automates RNA-seq quality control, alignment, and outlier detection for large-scale transcriptomic datasets. Use when user asks to download SRA data, perform parallel read alignment and quantification, or identify outlier samples using Isolation Forests.
 homepage: https://github.com/shimw6828/MassiveQC
 ---
 
@@ -9,57 +9,69 @@ homepage: https://github.com/shimw6828/MassiveQC
 
 ## Overview
 
-MassiveQC is a specialized Python-based pipeline designed to handle the computational challenges of processing thousands of RNA-seq samples simultaneously. It streamlines the workflow from raw data acquisition to quality assessment by integrating trimming (Atropos), multi-genome screening (FastQ Screen), alignment (HISAT2), and quantification (featureCounts). A key feature is its use of Isolation Forests to identify outlier samples based on extracted features, ensuring data integrity in massive transcriptomic studies.
+MassiveQC is a specialized Python-based pipeline designed to handle the heavy lifting of RNA-seq quality control. It streamlines the transition from raw SRA identifiers to analyzed sample features. The tool is particularly effective for researchers working with hundreds or thousands of samples, providing automated workflows for data retrieval via Aspera, read trimming with Atropos, multi-genome screening, HISAT2 alignment, and feature quantification. Its standout feature is the use of Isolation Forests to statistically identify outlier samples that may compromise downstream biological meta-analyses.
 
-## CLI Usage Patterns
+## Core Workflows
 
-### Parallel Processing (Local)
-Use `MultiQC` for automated parallel processing on a single machine.
+### Parallel Local Processing (MultiQC)
 
+Use `MultiQC` for automated, parallel execution on a single powerful workstation.
+
+**Required Input Format:**
+A two-column text file containing `srx` and `srr` identifiers.
+
+**Common CLI Pattern:**
 ```bash
 MultiQC -i input.txt \
+        -a ~/.aspera/connect/etc/asperaweb_id_dsa.openssh \
         -f fastq_screen.conf \
-        -g genes.gtf \
+        -g genome.gtf \
         -x hisat2_index_prefix \
         -p picard.jar \
-        -r genes.refFlat \
+        -r genome.refflat \
         -o ./results \
         -w 4 -t 8
 ```
 
-### Single Sample Processing (Cluster)
-Use `SingleQC` when submitting jobs to a cluster (PBS/Slurm) to process samples individually.
+### Cluster-Based Processing (SingleQC)
+
+For HPC environments (Slurm/PBS), use `SingleQC` to process individual samples within batch scripts.
 
 ```bash
 SingleQC -s SRR1234567 \
          -f fastq_screen.conf \
-         -g genes.gtf \
+         -g genome.gtf \
          -x hisat2_index_prefix \
          -p picard.jar \
-         -r genes.refFlat \
-         -o ./results
+         -r genome.refflat \
+         -o ./output_dir
 ```
 
-## Essential Reference Preparation
+### Outlier Detection (IsoDetect)
 
-MassiveQC requires specific reference formats that may need to be generated manually:
-
-1.  **refFlat File**: Generate this from your GTF using `gtfToGenePred` (from UCSC tools):
-    ```bash
-    gtfToGenePred -genePredExt input.gtf -ignoreGroupsWithoutExons /dev/stdout | \
-    awk 'BEGIN { OFS="\t"} {print $12, $1, $2, $3, $4, $5, $6, $7, $8, $9, $10}' > output.refflat
-    ```
-2.  **FastQ Screen Config**: Obtain the standard configuration using `fastq_screen --get_genomes`.
-3.  **Input File**: For `MultiQC`, provide a two-column tab-delimited file containing `srx` and `srr` identifiers.
+After processing, use `IsoDetect` to identify problematic samples using machine learning. This tool applies an Isolation Forest to the features extracted during the alignment and quantification phases.
 
 ## Expert Tips and Best Practices
 
-*   **Resource Allocation**: In `MultiQC`, the `-w` (workers) flag controls simultaneous tasks, while `-t` (threads) controls threads per task (e.g., for HISAT2). Ensure `workers * threads` does not exceed your system's total CPU cores.
-*   **Storage Management**: RNA-seq processing generates massive intermediate files. Use `--remove_fastq` and `--remove_bam` to delete intermediate files after feature extraction to save disk space.
-*   **Download Control**: If you already have the sequencing files, use `--skip_download` and point to them with `-d`. Conversely, use `--only_download` to stage data before starting the heavy compute phase.
-*   **Configuration Files**: Instead of long CLI strings, use `-c config.txt` to pass parameters. The config file should follow a simple `key: value` format.
-*   **Outlier Detection**: After running the QC pipeline, use the `IsoDetect` module (if available in your installation) to perform the Isolation Forest analysis on the generated feature tables.
+*   **Resource Management**: Use the `--remove_fastq` and `--remove_bam` flags to save significant disk space when processing "massive" data, as these intermediate files are often the primary bottleneck.
+*   **Configuration Files**: Instead of long CLI strings, use the `-c` flag to point to a configuration file containing your paths to reference genomes and tool binaries.
+*   **Reference Preparation**: MassiveQC requires a `.refflat` file. If you only have a GTF, generate it using `gtfToGenePred`:
+    ```bash
+    gtfToGenePred -genePredExt input.gtf /dev/stdout | awk 'BEGIN { OFS="\t"} {print $12, $1, $2, $3, $4, $5, $6, $7, $8, $9, $10}' > output.refflat
+    ```
+*   **Download Only**: If you only need to retrieve the data without running the full pipeline, use the `--only_download` flag. Conversely, use `--skip_download` if you already have the fastq files locally.
+*   **Aspera Speed**: Ensure the Aspera key (`-a`) is correctly pointed to your local installation to maximize download speeds from NCBI/EBI.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| MultiQC | MultiQC is a modular tool to run multiple                       bioinformatics tools and aggregate their                       results into a single, interactive HTML report. |
+| SingleQC | Single-cell RNA-seq quality control tool |
+| fastq_screen | FastQ Screen is intended to be used as part of a QC pipeline. It allows you to take a sequence dataset and search it against a set of bowtie databases. It will then generate both a text and a graphical summary of the results to see if the sequence dataset contains the kind of sequences you expect. |
 
 ## Reference documentation
-- [MassiveQC GitHub Repository](./references/github_com_shimw6828_MassiveQC.md)
-- [MassiveQC Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_massiveqc_overview.md)
+- [MassiveQC README](./references/github_com_shimw6828_MassiveQC_blob_main_README.md)
+- [MassiveQC Setup and Entry Points](./references/github_com_shimw6828_MassiveQC_blob_main_setup.py.md)

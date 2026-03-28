@@ -32,7 +32,7 @@ FATAL:   "arb-bio": executable file not found in $PATH
 
 
 ## Metadata
-- **Skill**: generated
+- **Skill**: not generated
 
 ## arb-bio_arb
 

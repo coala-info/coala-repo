@@ -109,3 +109,6 @@ required arguments:
                         diffmod directory path, the output from xpore-diffmod.
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -61,3 +61,6 @@ Generate FASTQ from FASTA and BED files.
 Usage: gen-fq [-m maxLbl] <in.fa> <in.bed>
 ```
 
+
+## Metadata
+- **Skill**: generated

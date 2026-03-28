@@ -108,3 +108,6 @@ Usage: minimac4 [opts ...] <reference.msav> <target.{sav,bcf,vcf.gz}>
      --slope-unit          Parameter for unique haplotype compression heuristic (default: 10)
 ```
 
+
+## Metadata
+- **Skill**: generated

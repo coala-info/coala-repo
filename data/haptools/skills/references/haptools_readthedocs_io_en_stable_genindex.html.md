@@ -1,0 +1,75 @@
+[haptools](index.html)
+
+Overview
+
+* [Installation](project_info/installation.html)
+* [Example files](project_info/example_files.html)
+* [Contributing](project_info/contributing.html)
+
+File Formats
+
+* [Genotypes](formats/genotypes.html)
+* [Haplotypes](formats/haplotypes.html)
+* [Phenotypes and Covariates](formats/phenotypes.html)
+* [Linkage disequilibrium](formats/ld.html)
+* [Summary Statistics](formats/linear.html)
+* [Causal SNPs](formats/snplist.html)
+* [Breakpoints](formats/breakpoints.html)
+* [Sample Info](formats/sample_info.html)
+* [Models](formats/models.html)
+* [Maps](formats/maps.html)
+
+Commands
+
+* [simgenotype](commands/simgenotype.html)
+* [simphenotype](commands/simphenotype.html)
+* [karyogram](commands/karyogram.html)
+* [transform](commands/transform.html)
+* [index](commands/index.html)
+* [clump](commands/clump.html)
+* [ld](commands/ld.html)
+
+API
+
+* [data](api/data.html)
+* [haptools](api/modules.html)
+* [examples](api/examples.html)
+
+[haptools](index.html)
+
+* Index
+* [Edit on GitHub](https://github.com/CAST-genomics/haptools/blob/main/docs/genindex)
+
+---
+
+# Index
+
+[**Symbols**](#Symbols)
+| [**\_**](#_)
+| [**A**](#A)
+| [**B**](#B)
+| [**C**](#C)
+| [**D**](#D)
+| [**E**](#E)
+| [**F**](#F)
+| [**G**](#G)
+| [**H**](#H)
+| [**I**](#I)
+| [**L**](#L)
+| [**M**](#M)
+| [**N**](#N)
+| [**O**](#O)
+| [**P**](#P)
+| [**Q**](#Q)
+| [**R**](#R)
+| [**S**](#S)
+| [**T**](#T)
+| [**U**](#U)
+| [**V**](#V)
+| [**W**](#W)
+
+## Symbols
+
+|  |  |
+| --- | --- |
+| * --ancestry   + [haptools-transform command line option](api/haptools.html#cmdoption-haptools-transform-ancestry), [[1]](commands/transform.html#cmdoption-haptools-transform-ancestry) * --bp   + [haptools-karyogram command line option](api/haptools.html#cmdoption-haptools-karyogram-bp), [[1]](commands/karyogram.html#cmdoption-haptools-karyogram-bp) * --centromeres   + [haptools-karyogram command line option](api/haptools.html#cmdoption-haptools-karyogram-centromeres), [[1]](commands/karyogram.html#cmdoption-haptools-karyogram-centromeres) * --chroms   + [haptools-simgenotype command line option](api/haptools.html#cmdoption-haptools-simgenotype-chroms), [[1]](commands/simgenotype.html#cmdoption-haptools-simgenotype-chroms) * --chunk-size   + [haptools-ld command line option](api/haptools.html#cmdoption-haptools-ld-c), [[1]](commands/ld.html#cmdoption-haptools-ld-c)   + [haptools-simgenotype command line option](api/haptools.html#cmdoption-haptools-simgenotype-c), [[1]](commands/simgenotype.html#cmdoption-haptools-simgenotype-c)   + [haptools-simphenotype command line option](api/haptools.html#cmdoption-haptools-simphenotype-c), [[1]](commands/simphenotype.html#cmdoption-haptools-simphenotype-c)   + [haptools-transform command line option](api/haptools.html#cmdoption-haptools-transform-c), [[1]](commands/transform.html#cmdoption-haptools-transform-c) * --clump-chrom-field   + [haptools-clump command line option](api/haptools.html#cmdoption-haptools-clump-clump-chrom-field), [[1]](commands/clump.html#cmdoption-haptools-clump-clump-chrom-field) * --clump-field   + [haptools-clump command line option](api/haptools.html#cmdoption-haptools-clump-clump-field), [[1]](commands/clump.html#cmdoption-haptools-clump-clump-field) * --clump-id-field   + [haptools-clump command line option](api/haptools.html#cmdoption-haptools-clump-clump-id-field), [[1]](commands/clump.html#cmdoption-haptools-clump-clump-id-field) * --clump-kb   + [haptools-clump command line option](api/haptools.html#cmdoption-haptools-clump-clump-kb), [[1]](commands/clump.html#cmdoption-haptools-clump-clump-kb) * --clump-p1   + [haptools-clump command line option](api/haptools.html#cmdoption-haptools-clump-clump-p1), [[1]](commands/clump.html#cmdoption-haptools-clump-clump-p1) * --clump-p2   + [haptools-clump command line option](api/haptools.html#cmdoption-haptools-clump-clump-p2), [[1]](commands/clump.html#cmdoption-haptools-clump-clump-p2) * --clump-pos-field   + [haptools-clump command line option](api/haptools.html#cmdoption-haptools-clump-clump-pos-field), [[1]](commands/clump.html#cmdoption-haptools-clump-clump-pos-field) * --clump-r2   + [haptools-clump command line option](api/haptools.html#cmdoption-haptools-clump-clump-r2), [[1]](commands/clump.html#cmdoption-haptools-clump-clump-r2) * --colors   + [haptools-karyogram command line option](api/haptools.html#cmdoption-haptools-karyogram-colors), [[1]](commands/karyogram.html#cmdoption-haptools-karyogram-colors) * --discard-missing   + [haptools-ld command line option](api/haptools.html#cmdoption-haptools-ld-discard-missing), [[1]](commands/ld.html#cmdoption-haptools-ld-discard-missing)   + [haptools-transform command line option](api/haptools.html#cmdoption-haptools-transform-discard-missing), [[1]](commands/transform.html#cmdoption-haptools-transform-discard-missing) * --environment   + [haptools-simphenotype command line option](api/haptools.html#cmdoption-haptools-simphenotype-environment), [[1]](commands/simphenotype.html#cmdoption-haptools-simphenotype-environment) * --from-gts   + [haptools-ld command line option](api/haptools.html#cmdoption-haptools-ld-from-gts), [[1]](commands/ld.html#cmdoption-haptools-ld-from-gts) * --gts-snps   + [haptools-clump command line option](api/haptools.html#cmdoption-haptools-clump-gts-snps), [[1]](commands/clump.html#cmdoption-haptools-clump-gts-snps) * --gts-strs   + [haptools-clump command line option](api/haptools.html#cmdoption-haptools-clump-gts-strs), [[1]](commands/clump.html#cmdoption-haptools-clump-gts-strs) * --heritability   + [haptools-simphenotype command line option](api/haptools.html#cmdoption-haptools-simphenotype-h), [[1]](commands/simphenotype.html#cmdoption-haptools-simphenotype-h) * --id   + [haptools-ld command line option](api/haptools.html#cmdoption-haptools-ld-i), [[1]](commands/ld.html#cmdoption-haptools-ld-i)   + [haptools-simphenotype command line option](api/haptools.html#cmdoption-haptools-simphenotype-i), [[1]](commands/simphenotype.html#cmdoption-haptools-simphenotype-i)   + [haptools-transform command line option](api/haptools.html#cmdoption-haptools-transform-i), [[1]](commands/transform.html#cmdoption-haptools-transform-i) * --ids-file   + [haptools-ld command line option](api/haptools.html#cmdoption-haptools-ld-I), [[1]](commands/ld.html#cmdoption-haptools-ld-I)   + [haptools-simphenotype command line option](api/haptools.html#cmdoption-haptools-simphenotype-I), [[1]](commands/simphenotype.html#cmdoption-haptools-simphenotype-I)   + [haptools-transform command line option](api/haptools.html#cmdoption-haptools-transform-I), [[1]](commands/transform.html#cmdoption-haptools-transform-I) * --ld   + [haptools-clump command line option](api/haptools.html#cmdoption-haptools-clump-ld), [[1]](commands/clump.html#cmdoption-haptools-clump-ld) * --maf   + [haptools-transform command line option](api/haptools.html#cmdoption-haptools-transform-maf), [[1]](commands/transform.html#cmdoption-haptools-transform-maf) * --mapdir   + [haptools-simgenotype command line option](api/haptools.html#cmdoption-haptools-simgenotype-mapdir), [[1]](commands/simgenotype.html#cmdoption-haptools-simgenotype-mapdir) * --model   + [haptools-simgenotype command line option](api/haptools.html#cmdoption-haptools-simgenotype-model), [[1]](commands/simgenotype.html#cmdoption-haptools-simgenotype-model) * --no-normalize   + [haptools-simphenotype command line option](api/haptools.html#cmdoption-haptools-simphenotype-normalize), [[1]](commands/simphenotype.html#cmdoption-haptools-simphenotype-normalize) * --no-sort   + [haptools-index command line option](api/haptools.html#cmdoption-haptools-index-sort), [[1]](commands/index.html#cmdoption-haptools-index-sort) * --no\_replacement   + [haptools-simgenotype command line option](api/haptools.html#cmdoption-haptools-simgenotype-no_replacement), [[1]](commands/simgenotype.html#cmdoption-haptools-simgenotype-no_replacement) * --normalize   + [haptools-simphenotype command line option](api/haptools.html#cmdoption-haptools-simphenotype-normalize), [[1]](commands/simphenotype.html#cmdoption-haptools-simphenotype-normalize) * --only\_breakpoint   + [haptools-simgenotype command line option](api/haptools.html#cmdoption-haptools-simgenotype-only_breakpoint), [[1]](commands/simgenotype.html#cmdoption-haptools-simgenotype-only_breakpoint) * --out   + [haptools-clump command line option](api/haptools.html#cmdoption-haptools-clump-out), [[1]](commands/clump.html#cmdoption-haptools-clump-out)   + [haptools-karyogram command line option](api/haptools.html#cmdoption-haptools-karyogram-out), [[1]](commands/karyogram.html#cmdoption-haptools-karyogram-out)   + [haptools-simgenotype command line option](api/haptools.html#cmdoption-haptools-simgenotype-out), [[1]](commands/simgenotype.html#cmdoption-haptools-simgenotype-out) * --output   + [haptools-index command line option](api/haptools.html#cmdoption-haptools-index-o), [[1]](commands/index.html#cmdoption-haptools-index-o)   + [haptools-ld command line option](api/haptools.html#cmdoption-haptools-ld-o), [[1]](commands/ld.html#cmdoption-haptools-ld-o)   + [haptools-simphenotype command line option](api/haptools.html#cmdoption-haptools-simphenotype-o), [[1]](commands/simphenotype.html#cmdoption-haptools-simphenotype-o)   + [haptools-transform command line option](api/haptools.html#cmdoption-haptools-transform-o), [[1]](commands/transform.html#cmdoption-haptools-transform-o) * --pop\_field   + [haptools-simgenotype command line option](api/haptools.html#cmdoption-haptools-simgenotype-pop_field), [[1]](commands/simgenotype.html#cmdoption-haptools-simgenotype-pop_field) * --prevalence   + [haptools-simphenotype command line option](api/haptools.html#cmdoption-haptools-simphenotype-p), [[1]](commands/simphenotype.html#cmdoption-haptools-simphenotype-p) * --ref\_vcf   + [haptools-simgenotype command line option](api/haptools.html#cmdoption-haptools-simgenotype-ref_vcf), [[1]](commands/simgenotype.html#cmdoption-haptools-simgenotype-ref_vcf) | * --region   + [haptools-ld command line option](api/haptools.html#cmdoption-haptools-ld-region), [[1]](commands/ld.html#cmdoption-haptools-ld-region)   + [haptools-simgenotype command line option](api/haptools.html#cmdoption-haptools-simgenotype-region), [[1]](commands/simgenotype.html#cmdoption-haptools-simgenotype-region)   + [haptools-simphenotype command line option](api/haptools.html#cmdoption-haptools-simphenotype-region), [[1]](commands/simphenotype.html#cmdoption-haptools-simphenotype-region)   + [haptools-transform command line option](api/haptools.html#cmdoption-haptools-transform-region), [[1]](commands/transform.html#cmdoption-haptools-transform-region) * --repeats   + [haptools-simphenotype command line option](api/haptools.html#cmdoption-haptools-simphenotype-repeats), [[1]](commands/simphenotype.html#cmdoption-haptools-simphenotype-repeats) * --replications   + [haptools-simphenotype command line option](api/haptools.html#cmdoption-haptools-simphenotype-r), [[1]](commands/simphenotype.html#cmdoption-haptools-simphenotype-r) * --sample   + [haptools-karyogram command line option](api/haptools.html#cmdoption-haptools-karyogram-sample), [[1]](commands/karyogram.html#cmdoption-haptools-karyogram-sample)   + [haptools-ld command line option](api/haptools.html#cmdoption-haptools-ld-s), [[1]](commands/ld.html#cmdoption-haptools-ld-s)   + [haptools-simphenotype command line option](api/haptools.html#cmdoption-haptools-simphenotype-s), [[1]](commands/simphenotype.html#cmdoption-haptools-simphenotype-s)   + [haptools-transform command line option](api/haptools.html#cmdoption-haptools-transform-s), [[1]](commands/transform.html#cmdoption-haptools-transform-s) * --sample\_field   + [haptools-simgenotype command line option](api/haptools.html#cmdoption-haptools-simgenotype-sample_field), [[1]](commands/simgenotype.html#cmdoption-haptools-simgenotype-sample_field) * --sample\_info   + [haptools-simgenotype command line option](api/haptools.html#cmdoption-haptools-simgenotype-sample_info), [[1]](commands/simgenotype.html#cmdoption-haptools-simgenotype-sample_info) * --samples-file   + [haptools-ld command line option](api/haptools.html#cmdoption-haptools-ld-S), [[1]](commands/ld.html#cmdoption-haptools-ld-S)   + [haptools-simphenotype command line option](api/haptools.html#cmdoption-haptools-simphenotype-S), [[1]](commands/simphenotype.html#cmdoption-haptools-simphenotype-S)   + [haptools-transform command line option](api/haptools.html#cmdoption-haptools-transform-S), [[1]](commands/transform.html#cmdoption-haptools-transform-S) * --seed   + [haptools-simgenotype command line option](api/haptools.html#cmdoption-haptools-simgenotype-seed), [[1]](commands/simgenotype.html#cmdoption-haptools-simgenotype-seed)   + [haptools-simphenotype command line option](api/haptools.html#cmdoption-haptools-simphenotype-seed), [[1]](commands/simphenotype.html#cmdoption-haptools-simphenotype-seed) * --sort   + [haptools-index command line option](api/haptools.html#cmdoption-haptools-index-sort), [[1]](commands/index.html#cmdoption-haptools-index-sort) * --summstats-snps   + [haptools-clump command line option](api/haptools.html#cmdoption-haptools-clump-summstats-snps), [[1]](commands/clump.html#cmdoption-haptools-clump-summstats-snps) * --summstats-strs   + [haptools-clump command line option](api/haptools.html#cmdoption-haptools-clump-summstats-strs), [[1]](commands/clump.html#cmdoption-haptools-clump-summstats-strs) * --title   + [haptools-karyogram command line option](api/haptools.html#cmdoption-haptools-karyogram-title), [[1]](commands/karyogram.html#cmdoption-haptools-karyogram-title) * --verbosity   + [haptools-clump command line option](api/haptools.html#cmdoption-haptools-clump-v), [[1]](commands/clump.html#cmdoption-haptools-clump-v)   + [haptools-index command line option](api/haptools.html#cmdoption-haptools-index-v), [[1]](commands/index.html#cmdoption-haptools-index-v)   + [haptools-karyogram command line option](api/haptools.html#cmdoption-haptools-karyogram-v), [[1]](commands/karyogram.html#cmdoption-haptools-karyogram-v)   + [haptools-ld command line option](api/haptools.html#cmdoption-haptools-ld-v), [[1]](commands/ld.html#cmdoption-haptools-ld-v)   + [haptools-simgenotype command line option](api/haptools.html#cmdoption-haptools-simgenotype-v), [[1]](commands/simgenotype.html#cmdoption-haptools-simgenotype-v)   + [haptools-simphenotype command line option](api/haptools.html#cmdoption-haptools-simphenotype-v), [[1]](commands/simphenotype.html#cmdoption-haptools-simphenotype-v)   + [haptools-transform command line option](api/haptools.html#cmdoption-haptools-transform-v), [[1]](commands/transform.html#cmdoption-haptools-transform-v) * --version   + [haptools command line option](api/haptools.html#cmdoption-haptools-version), [[1]](commands/clump.html#cmdoption-haptools-version), [[2]](commands/index.html#cmdoption-haptools-version), [[3]](commands/karyogram.html#cmdoption-haptools-version), [[4]](commands/ld.html#cmdoption-h

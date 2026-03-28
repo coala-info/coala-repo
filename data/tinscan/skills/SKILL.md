@@ -1,62 +1,68 @@
 ---
 name: tinscan
-description: The `tinscan` tool identifies transposon insertion sites by detecting specific alignment signatures where two contiguous segments in a query genome are separated by a gap in the target genome. Use when user asks to identify transposon insertion sites, locate structural variations, prepare genomes for alignment, align genomes, find insertion events, or identify Target Site Duplications.
+description: tinscan scans whole-genome alignments to identify transposable element insertions by comparing a query genome against a target genome. Use when user asks to prepare genomic data for alignment, perform pairwise LASTZ alignments between scaffolds, or scan alignment blocks to detect and annotate insertion signatures in GFF3 format.
 homepage: https://github.com/Adamtaranto/TE-insertion-scanner
 ---
-
 
 
 # tinscan
 
 ## Overview
-The `tinscan` tool identifies transposon insertion sites by detecting specific alignment signatures where two contiguous segments in a query genome are separated by a gap in the target genome. It automates the workflow from genome preparation and alignment (using LASTZ) to the final identification of insertion candidates and Target Site Duplications (TSDs). Use this skill when you need to perform comparative genomics to locate structural variations caused by mobile genetic elements.
 
-## Core Workflow
+The `tinscan` (TE-Insertion-Scanner) tool is a specialized suite for scanning whole-genome alignments to find signatures of transposable element (TE) insertions. It operates by comparing a "Query" genome (B) against a "Target" genome (A). It identifies instances where two segments are contiguous in the query but separated by a gap (the insertion) in the target. The tool automates the preparation of genomic data, the execution of LASTZ alignments, and the final scanning of alignment blocks to produce GFF3 annotations of candidate insertions.
+
+## Usage Instructions
+
+The `tinscan` workflow consists of three primary stages: preparation, alignment, and detection.
 
 ### 1. Prepare Input Genomes
-Before alignment, genomes must be split into individual scaffolds. Ensure sequence names are unique across both genomes.
+Before alignment, genomes must be split into individual scaffolds. Use `tinscan-prep` to organize these into directories.
 
 ```bash
 tinscan-prep --adir data/A_target_split --bdir data/B_query_split \
-             -A data/A_target_genome.fasta -B data/B_query_genome.fasta
+-A data/A_target_genome.fasta -B data/B_query_genome.fasta
 ```
 
 ### 2. Align Genomes
-Align the split scaffolds. This step requires `LASTZ` to be installed in the environment.
+The `tinscan-align` command wraps LASTZ to perform pairwise alignments between all scaffolds in the target and query directories.
 
 ```bash
 tinscan-align --adir data/A_target_split --bdir data/B_query_split \
-              --outdir A_Inserts --outfile A_Inserts_vs_B.tab \
-              --minIdt 60 --minLen 100 --hspthresh 3000
+--outdir A_Inserts --outfile A_Inserts_vs_B.tab \
+--minIdt 60 --minLen 100 --hspthresh 3000
 ```
 
-*   **Expert Tip**: If you know homologous chromosome pairs, use the `--pairs` option with a tab-delimited file to significantly reduce computation time by avoiding all-vs-all comparisons.
+**Expert Tip: Chromosome Pairing**
+If homologous relationships between scaffolds are known (e.g., Chr1 in A corresponds to Chr1 in B), use the `--pairs` option with a tab-delimited file to significantly reduce computation time by avoiding unnecessary all-vs-all comparisons.
 
 ### 3. Find Insertions
-Scan the generated alignment table for insertion events and output results in GFF3 format.
+The final step scans the generated alignment table for specific insertion signatures and outputs results in GFF3 format.
 
 ```bash
 tinscan-find --infile A_Inserts/A_Inserts_vs_B.tab \
-             --outdir A_Inserts --gffOut A_Inserts_vs_B_results.gff3 \
-             --maxInsert 50000 --minIdent 80 --maxIdentDiff 20
+--outdir A_Inserts --gffOut A_Inserts_vs_B_results.gff3 \
+--maxInsert 50000 --minIdent 80 --maxIdentDiff 20
 ```
 
-## Parameter Best Practices
+## Key Parameters and Best Practices
 
-| Parameter | Recommendation |
-| :--- | :--- |
-| `--minIdt` | Set to at least 60% during `tinscan-align` to capture divergent TE flanks. |
-| `--minIdent` | Use a higher threshold (e.g., 80%) in `tinscan-find` to ensure high-confidence flanking alignments. |
-| `--maxInsert` | Adjust based on the expected size of the TEs in your organism (default is often 50kb). |
-| `--qGap` | Maximum allowable gap in the query genome B to consider segments contiguous (default is 0). |
+- **Insertion Size**: Adjust `--maxInsert` (default is often 50kb) based on the biology of the TEs you expect to find.
+- **Identity Thresholds**: 
+    - Use `--minIdent` in `tinscan-find` to ensure flanking alignments are high quality.
+    - Use `--maxIdentDiff` to ensure that the alignments on both sides of the candidate insertion are of similar quality, which helps filter out spurious alignments.
+- **TSD Inference**: The tool automatically attempts to infer Target Site Duplications (TSDs) by looking for internal overlaps of flanking alignments in the query genome.
+- **Gap Tolerance**: Use `--qGap` to define the maximum allowable distance between two segments in the query genome for them to still be considered "contiguous."
 
-## Algorithm Logic for Troubleshooting
-If `tinscan` is not reporting expected insertions, verify that your data meets these internal criteria:
-1.  Segments are contiguous in Query B (within `--qGap` distance).
-2.  Segments are separated by an insertion in Target A within the `--minInsert` to `--maxInsert` range.
-3.  At least one flanking alignment meets the `--minIdent` threshold.
-4.  The identity difference between the two flanking mates is within `--maxIdentDiff`.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| tinscan-align | Align B genome (query) sequences onto A genome (target) using LASTZ. |
+| tinscan-find | Parse whole genome alignments for signatures of transposon insertion. |
+| tinscan_tinscan-prep | Split multifasta genome files into directories for A and B genomes. |
 
 ## Reference documentation
-- [Tinscan GitHub Repository](./references/github_com_Adamtaranto_TE-insertion-scanner.md)
-- [Tinscan Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_tinscan_overview.md)
+- [Tinscan README](./references/github_com_Adamtaranto_TE-insertion-scanner_blob_main_README.md)
+- [Project Metadata](./references/github_com_Adamtaranto_TE-insertion-scanner_blob_main_pyproject.toml.md)

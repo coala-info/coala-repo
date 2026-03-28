@@ -1,6 +1,6 @@
 ---
 name: rdfextras
-description: The rdfextras package provides a suite of legacy tools and a SPARQL 1.1 implementation to extend the functionality of RDFLib version 3.x. Use when user asks to perform SPARQL queries on legacy RDF stores, convert CSV files to RDF, generate Graphviz visualizations from RDF data, or translate between different RDF serializations.
+description: "rdfextras provides supplemental utilities and a SPARQL implementation for RDFLib to facilitate RDF data transformation and visualization. Use when user asks to convert CSV files to RDF, visualize RDF graphs as DOT files, parse or serialize RDF data using rdfpipe, or execute SPARQL queries in legacy RDFLib environments."
 homepage: https://github.com/RDFLib/rdfextras
 ---
 
@@ -8,56 +8,50 @@ homepage: https://github.com/RDFLib/rdfextras
 # rdfextras
 
 ## Overview
+The `rdfextras` package is a supplemental library for RDFLib, primarily used to provide a pure-Python SPARQL implementation for in-memory stores and a suite of command-line tools. While most of its functionality was merged into RDFLib core starting with version 4.0, this skill is essential for maintaining legacy systems or utilizing specific standalone utilities like `csv2rdf` and `rdf2dot` that facilitate rapid data transformation and visualization.
 
-The `rdfextras` package is a legacy suite of tools designed to extend the functionality of RDFLib version 3.x. While modern versions of RDFLib (4.0+) have integrated these features into their core, `rdfextras` remains essential for maintaining older semantic web pipelines. It provides a pure-Python SPARQL 1.1 implementation for in-memory stores and a set of command-line utilities for data transformation and visualization.
-
-Use this skill when you need to:
-- Perform SPARQL queries on RDFLib 3.x stores.
-- Convert CSV files into RDF triples.
-- Generate Graphviz DOT files from RDF or RDFS schemas for visualization.
-- Pipe and translate RDF data between different serializations (XML, Turtle, N-Triples).
-
-## CLI Usage Patterns
-
-### csv2rdf
-Converts tabular CSV data into RDF. This is useful for bootstrapping knowledge graphs from spreadsheets.
-```bash
-csv2rdf --base http://example.org/ --prop http://example.org/prop/ input.csv > output.ttl
-```
+## Command-Line Utilities
 
 ### rdfpipe
-A versatile tool for parsing and serializing RDF data. It can fetch remote RDF or read local files and output them in a different format.
-```bash
-# Convert RDF/XML to Turtle
-rdfpipe -i xml -o turtle input.rdf > output.ttl
+Use `rdfpipe` to parse RDF data from various sources and serialize it into different formats. It is particularly useful for validating RDF syntax or converting between formats (e.g., XML to Turtle).
 
-# Parse multiple files and merge them into N-Triples
-rdfpipe file1.ttl file2.rdf -o nt > merged.nt
-```
+*   **Basic Conversion**: `rdfpipe -o turtle input.rdf > output.ttl`
+*   **Multiple Inputs**: `rdfpipe input1.ttl input2.nt > combined.xml`
+
+### csv2rdf
+This tool converts tabular CSV data into RDF triples. It is a high-utility tool for bootstrapping linked data from spreadsheets.
+
+*   **Standard Usage**: `csv2rdf -o output.n3 input.csv`
+*   **Defining Base URI**: Use the `-b` flag to specify the base namespace for the generated resources.
 
 ### rdf2dot and rdfs2dot
-These tools generate Graphviz-compatible DOT files. `rdf2dot` is for instance data, while `rdfs2dot` is optimized for schema hierarchies.
-```bash
-# Generate a visualization of an RDF graph
-rdf2dot input.ttl | dot -Tpng -o graph.png
+These utilities generate Graphviz DOT files from RDF graphs or RDFS schemas, allowing for visual inspection of ontologies and data relationships.
 
-# Visualize an RDFS schema
-rdfs2dot schema.rdf | dot -Tpdf -o schema.pdf
-```
+*   **Generate Visualization**: `rdf2dot input.ttl | dot -Tpng -o graph.png`
+*   **Schema Visualization**: `rdfs2dot schema.rdf | dot -Tpdf -o ontology.pdf`
 
-### Graph Isomorphism Tester
-Used to check if two RDF graphs are structurally identical regardless of blank node identifiers.
-```bash
-python -m rdfextras.tools.isomorphism file1.ttl file2.ttl
-```
+## SPARQL Implementation
+When using RDFLib 3.x, `rdfextras` must be installed to execute SPARQL queries against in-memory graphs.
 
-## Expert Tips
+*   **Plugin Registration**: Ensure `rdfextras` is installed in the environment; it automatically registers itself as a SPARQL plugin for RDFLib.
+*   **Querying**: Use the `.query()` method on an RDFLib Graph object.
 
-- **Version Constraint**: Always verify the environment is using RDFLib < 4.0. If the environment is newer, advise the user to use the built-in `rdflib.tools` or the core SPARQL engine instead of `rdfextras`.
-- **SPARQL Implementation**: The SPARQL engine in `rdfextras` is pure Python. For very large datasets in legacy environments, performance may be a bottleneck compared to store-native SPARQL (like those found in Virtuoso or Fuseki).
-- **Visualization**: When using `rdf2dot`, the output can become unreadable for large graphs. Filter the RDF data using `rdfpipe` or a SPARQL CONSTRUCT query before passing it to the visualization tool.
-- **Dependencies**: Ensure `pyparsing` is installed, as it is a required dependency for the SPARQL parser in this package.
+## Best Practices
+*   **Version Check**: Always verify the RDFLib version. If using RDFLib >= 4.0, prefer the built-in `rdflib.tools` and core SPARQL engine over `rdfextras`.
+*   **Dependency Management**: Ensure `pyparsing` is installed, as it is a strict requirement for the SPARQL parser within `rdfextras`.
+*   **Piping**: Leverage Unix pipes with `rdf2dot` to avoid creating intermediate `.dot` files when generating images.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| csv2rdf.py | Reads csv files from stdin or given files if -d is given, use this delimiter if -s is given, skips N lines at the start Creates a URI from the columns given to -i, or automatically by numbering if none is given Outputs RDFS labels from the columns given to -l if -c is given adds a type triple with the given classname if -C is given, the class is defined as rdfs:Class Outputs one RDF triple per column in each row. Output is in n3 format. Output is stdout, unless -o is specified |
+| rdf2dot | Converts RDF graphs to the DOT graph description language. |
+| rdfpipe | A commandline tool for parsing RDF in different formats and serializing the resulting graph to a chosen format. Reads file system paths, URLs or from stdin if '-' is given. The result is serialized to stdout. |
+| rdfs2dot | Converts an RDFS graph to a DOT graph. |
 
 ## Reference documentation
-- [RDFExtras README](./references/github_com_RDFLib_rdfextras.md)
-- [Project Commits (Tooling details)](./references/github_com_RDFLib_rdfextras_commits_master.md)
+- [github_com_RDFLib_rdfextras_blob_master_README.md](./references/github_com_RDFLib_rdfextras_blob_master_README.md)
+- [anaconda_org_channels_bioconda_packages_rdfextras_overview.md](./references/anaconda_org_channels_bioconda_packages_rdfextras_overview.md)

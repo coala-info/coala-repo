@@ -59,3 +59,6 @@ optional arguments:
   --debug               Whether or not to enable debugging.
 ```
 
+
+## Metadata
+- **Skill**: generated

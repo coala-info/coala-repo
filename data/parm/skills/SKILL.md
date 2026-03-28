@@ -1,6 +1,6 @@
 ---
 name: parm
-description: PARM is a convolutional neural network that predicts cell-type-specific promoter activity and identifies transcription factor binding sites from DNA sequences. Use when user asks to predict promoter activity from FASTA files, perform in-silico mutagenesis, visualize motif hits, or train custom models on MPRA data.
+description: PARM is a deep learning framework that predicts cell-type-specific promoter activity and identifies regulatory motifs through in-silico mutagenesis. Use when user asks to predict promoter activity from DNA sequences, perform in-silico mutagenesis to identify transcription factor binding sites, visualize mutation effect matrices, or train custom models on MPRA data.
 homepage: https://github.com/vansteensellab/PARM
 ---
 
@@ -8,75 +8,77 @@ homepage: https://github.com/vansteensellab/PARM
 # parm
 
 ## Overview
+PARM (Promoter Activity Regulatory Model) is a deep learning framework designed to predict cell-type-specific promoter activity directly from DNA sequences. It utilizes a convolutional neural network (CNN) architecture trained on MPRA data to provide lightweight, high-throughput predictions. Beyond simple activity scoring, PARM enables "in-silico mutagenesis," which simulates the effect of every possible single-nucleotide mutation across a sequence. This allows researchers to identify critical regulatory motifs and the specific transcription factors (TFs) likely to bind and regulate a given promoter.
 
-PARM (Promoter Activity Regulatory Model) is a lightweight convolutional neural network designed to predict cell-type-specific promoter activity directly from DNA sequences. It is primarily used to analyze Massively Parallel Reporter Assay (MPRA) data, allowing researchers to estimate the regulatory potential of sequences and identify specific transcription factor (TF) binding sites through in-silico mutagenesis. The tool supports several human cell lines and provides utilities for training new models on custom experimental data.
+## Core Workflows
 
-## Installation
-
-Install PARM via bioconda:
-
-```bash
-conda create -n parm_env -c conda-forge -c bioconda -c pytorch parm
-conda activate parm_env
-```
-
-## Core CLI Usage
-
-### Predicting Promoter Activity
-Predict the activity of sequences in a FASTA file for a specific cell type.
+### 1. Predicting Promoter Activity
+Use `parm predict` to estimate the activity of sequences provided in a FASTA file.
 
 ```bash
 parm predict \
   --input sequences.fasta \
   --output predictions.txt \
-  --model path/to/pre_trained_models/K562/
+  --model path/to/pretrained_model/
 ```
 
-**Note**: The `--model` argument must point to a directory containing the five fold files (`.parm`), as PARM averages predictions across these folds.
+*   **Model Selection**: Ensure the model path points to a directory containing the five `.parm` fold files for the specific cell type (e.g., AGS, HAP1, K562).
+*   **Output**: A tab-separated file containing the sequence, header, and the predicted activity score.
 
-### In-silico Mutagenesis
-Compute the predicted effect of every possible single-nucleotide mutation for sequences in a FASTA file.
+### 2. In-Silico Mutagenesis
+Use `parm mutagenesis` to generate a mutation effect matrix and scan for TF binding sites.
 
 ```bash
 parm mutagenesis \
   --input sequences.fasta \
   --output mutagenesis_results_dir \
-  --model path/to/pre_trained_models/K562/ \
-  --motif_database HOCOOMOCOv11_core_HUMAN_mono_hocomoco_format.motif
+  --model path/to/pretrained_model/ \
+  --motif_database HOCOMOCOv11_core_HUMAN_mono_happe_format.pwms
 ```
 
-This command generates:
-1. A mutagenesis matrix (`mutagenesis_*.txt.gz`) for each sequence.
-2. A list of scanned TF motif hits (`hits_*.txt.gz`).
+*   **Mechanism**: For every base in the input, PARM predicts the effect of changing it to A, C, G, or T.
+*   **TF Scanning**: By default, it uses HOCOMOCOv11 to identify which TF motifs are disrupted or created by mutations.
 
-### Visualizing Results
-Generate a PDF plot showing the mutagenesis matrix and associated TF motif hits.
+### 3. Visualizing Results
+Use `parm plot` to create a visual representation of the mutagenesis matrix and TF hits.
 
 ```bash
-parm plot --input mutagenesis_results_dir/sequence_header_id/
+parm plot \
+  --input mutagenesis_results_dir/sequence_id/
 ```
 
-### Training Custom Models
-Train a new PARM model using processed MPRA data (HDF5 format). PARM requires training five independent folds for a complete model.
+*   **Output**: Generates a PDF (by default) showing the sequence logo, the mutation effect heat map, and overlapping TF motifs.
+
+### 4. Training Custom Models
+If you have your own MPRA data, you can train a new PARM model. This requires five-fold cross-validation.
 
 ```bash
-# Example for Fold 0
+# Example for training Fold 0
 parm train \
-  --input data/fold1.hdf5 data/fold2.hdf5 data/fold3.hdf5 data/fold4.hdf5 \
-  --validation data/fold0.hdf5 \
+  --input training_data/fold[1234].hdf5 \
+  --validation training_data/fold0.hdf5 \
   --output model_fold0 \
   --cell_type MY_CELL_LINE
 ```
 
-## Expert Tips and Best Practices
+*   **Best Practice**: After training all five folds (0-4), move all `.parm` files into a single directory to use them with the `predict` or `mutagenesis` commands.
 
-- **Model Directory Structure**: Never rename the `.parm` files within a model directory. The `predict` and `mutagenesis` tools expect a specific naming convention to load all five folds correctly.
-- **Batch Processing**: For large FASTA files, use the `--n_seqs_per_batch` parameter in `parm predict` to optimize memory usage and speed.
-- **Motif Filtering**: When plotting, use `--min_relative_attribution` to filter out low-confidence motif hits by defining a minimum percentage threshold relative to the highest attribution score.
-- **Training Data**: Ensure MPRA counts are pre-processed into one-hot encoded HDF5 files using the official pre-processing pipeline before attempting `parm train`.
-- **Cell Type Support**: Pre-trained models are available for AGS, HAP1, HCT116, HEK116, HepG2, K562, LNCaP, MCF7, and U2OS.
+## Expert Tips
+*   **Cell-Type Specificity**: PARM predictions are highly specific to the training data. Always use the model corresponding to the cell line most relevant to your biological context.
+*   **Input Formatting**: Input FASTA headers should be unique and descriptive, as they are used to name output directories in mutagenesis workflows.
+*   **Resource Management**: While lightweight, running mutagenesis on very long sequences or large FASTA files can be computationally intensive due to the $4 \times L$ predictions required per sequence.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| parm plot | Promoter Activity Regulatory Model |
+| parm predict | Promoter Activity Regulatory Model |
+| parm train | Promoter Activity Regulatory Model |
+| parm_mutagenesis | Promoter Activity Regulatory Model |
 
 ## Reference documentation
-
-- [PARM GitHub Repository](./references/github_com_vansteensellab_PARM.md)
-- [Bioconda PARM Package](./references/anaconda_org_channels_bioconda_packages_parm_overview.md)
+- [PARM Main Documentation](./references/github_com_vansteensellab_PARM_blob_main_README.md)
+- [PARM Setup and Dependencies](./references/github_com_vansteensellab_PARM_blob_main_setup.py.md)

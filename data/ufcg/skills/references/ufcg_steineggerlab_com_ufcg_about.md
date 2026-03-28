@@ -1,1 +1,142 @@
-UFCG - About What is UFCG? UFCG stands for Universal Fungal Core Genes , which is a combined suite of the fungal marker gene database and the bioinformatic pipeline tool, developed to provide an accessible and credible software suite for the phylogenetic study of fungi. UFCG project features: Pre-defined marker gene database , along with the downloadable sequences and HMMs Reference fungal species database , providing taxonomic information and pre-extracted genetic markers Pipeline tool and manual to analyze your own biological sequences Gene set database UFCG gene database is a combination of canonical genes and core genes of fungi. The canonical genes were first defined and included by literature search, which have been frequently used and accepted by fungal taxonomists. In addition, the novel set of genes were also included using the concept of core gene : the most widely used methodology for the genome-based phylogenetic tree reconstruction. Core genes can be defined as: Genes that are present in a majority of species Genes that are proven to be orthologous as a single copy We prepared the organized list of the genes including their annotations, visualized MSAs and downloadable resources. Species database UFCG species database contains a list of 1,587 reference species that have been used to define the novel markers. You can navigate through the list by sorting or searching their taxonomic names. For each species, you have an access to: Link to the NCBI Assembly database with their accession number Downloadable ITS, UFCG, and BUSCO sequences in JSON format, pre-extracted with UFCG pipeline In addition, we provide downloadable archives of the resources from 10,984 assemblies, encompassing both taxonomically representative and redundant entries. Bioinformatics pipeline We designed the pipeline for the users who wish to analyze hundreds of whole-genome assemblies. The core modules of the pipeline are briefed here to help you understand and maximize the utility of our pipeline. profile module extracts previously described core genes , using the corresponding HMM profiles. In addition, ITS nucleotide marker and BUSCO sequences can also be extracted as an option. Extracted UFCG profiles from each genome are stored in a single .ucg formatted file . See below for more information about this file format. tree module carries out phylogenetic analysis using a set of .ucg files from different species. Specifically, tree module features: Multiple alignment and concatenation of the genes Phylogenetic analysis using core gene profiles Calculation and embedding of GSI List of modules in the pipeline Module Input Output Description profile .fa .ucg Extracts UFCG profile from Fungal whole genome sequences profile-rna .fq .ucg Extracts UFCG profile from Fungal RNA-seq reads train .fa .fa .hmm Trains and generates sequence model of fungal markers align .ucg .fa Aligns genes and provides multiple sequence alignments from UFCG profiles tree .ucg .nwk .trm Reconstructs the phylogenetic relationship with UFCG profiles prune .trm .nwk Fixes UFCG tree labels or gets a single gene tree File formats used in the pipeline Format Input Output Desciption .fa .fna .fasta profile train train align Standard FASTA file format for genome sequences or MSAs. .fq .fastq profile-rna - Standard FASTQ file format for sequence reads .ucg align tree profile profile-rna JSON -formatted profile containing extracted sequences of core genes, along with the metadata of the genome. These files can also be read and edited via any text editor. .nwk - tree prune Standard Newick format file for phylogenetic trees. .trm prune tree JSON-formatted file containing Newick-formatted trees and the metadata of individual gene trees and concatenated UFCG tree. &nbsp; Contributors Dongwook Kim 1 Cameron Gilchrist 2 Jon Jongsik Chun 1,2,3, Martin Steinegger 1,2,3,4, 1 Interdisciplinary Program in Bioinformatics, Seoul National University, Seoul, Korea 2 School of Biological Sciences, Seoul National University, Seoul, Korea 3 Institute of Molecular Biology and Genetics, Seoul National University, Seoul, Korea 4 Artificial Intelligence Institute, Seoul National University, Seoul, Korea Corresponding authors &nbsp;GSI (Gene support index) GSI indicates how many gene trees support each branch in the tree inferred from the concatenated sequence. UFCG pipeline automatically calculates GSI values and create the tree that embeds the values by replacing the bootstrap values. Got it &nbsp;Set of core genes and the scope of a taxon The number of core genes may vary, depending on the scope of a target taxon. e.g. If you construct a core gene set in the scope of a single species, the set may consist of up to thousands of genes. To cover the entire domain of wide taxonomic range, core genes should be restricted to those with highly conserved domains. Got it UFCG Home About Database Genes Species Pipeline Manual Tutorial Download Links GitHub Steinegger Lab License Cite us
+![](image/UFCG_banner_marv.svg)
+
+# What is UFCG?
+
+---
+
+UFCG stands for **Universal Fungal Core Genes**, which is a combined suite of the fungal marker gene database and the bioinformatic pipeline tool, developed to provide an accessible and credible software suite for the phylogenetic study of fungi.
+
+UFCG project features:
+
+* **Pre-defined marker gene database**, along with the downloadable sequences and HMMs
+* **Reference fungal species database**, providing taxonomic information and pre-extracted genetic markers
+* **Pipeline tool and manual** to analyze your own biological sequences
+
+## Gene set database
+
+---
+
+UFCG gene database is a combination of **canonical genes** and **core genes** of fungi.
+
+The canonical genes were first defined and included by literature search, which have been frequently used and accepted by fungal taxonomists.
+
+In addition, the novel set of genes were also included using the concept of **core gene**: the most widely used methodology for the genome-based phylogenetic tree reconstruction. Core genes can be defined as:
+
+* Genes that are present in a **majority of species**
+* Genes that are proven to be **orthologous as a single copy**
+
+We prepared the organized list of the genes including their annotations, visualized MSAs and downloadable resources.
+
+## Species database
+
+---
+
+UFCG species database contains a list of 1,587 reference species that have been used to define the novel markers.
+
+You can navigate through the list by sorting or searching their taxonomic names.
+
+For each species, you have an access to:
+
+* Link to the NCBI Assembly database with their accession number
+* Downloadable ITS, UFCG, and BUSCO sequences in JSON format, pre-extracted with UFCG pipeline
+
+In addition, we provide downloadable archives of the resources from 10,984 assemblies, encompassing both taxonomically representative and redundant entries.
+
+## Bioinformatics pipeline
+
+---
+
+We designed the pipeline for the users who wish to analyze hundreds of whole-genome assemblies. The core modules of the pipeline are briefed here to help you understand and maximize the utility of our pipeline.
+
+* `profile` module extracts previously described **core genes**, using the corresponding HMM profiles.
+  + In addition, ITS nucleotide marker and BUSCO sequences can also be extracted as an option.
+* Extracted UFCG profiles from each genome are stored in a **single .ucg formatted file**. See below for more information about this file format.
+* `tree` module carries out **phylogenetic analysis** using a set of .ucg files from different species. Specifically, `tree` module features:
+  + **Multiple alignment** and concatenation of the genes
+  + **Phylogenetic analysis** using core gene profiles
+  + Calculation and embedding of **GSI**
+
+## List of modules in the pipeline
+
+| Module | Input | Output | Description |
+| --- | --- | --- | --- |
+| `profile` | .fa | .ucg | Extracts UFCG profile from Fungal whole genome sequences |
+| `profile-rna` | .fq | .ucg | Extracts UFCG profile from Fungal RNA-seq reads |
+| `train` | .fa | .fa .hmm | Trains and generates sequence model of fungal markers |
+| `align` | .ucg | .fa | Aligns genes and provides multiple sequence alignments from UFCG profiles |
+| `tree` | .ucg | .nwk .trm | Reconstructs the phylogenetic relationship with UFCG profiles |
+| `prune` | .trm | .nwk | Fixes UFCG tree labels or gets a single gene tree |
+
+## File formats used in the pipeline
+
+| Format | Input | Output | Desciption |
+| --- | --- | --- | --- |
+| .fa .fna .fasta | `profile` `train` | `train` `align` | Standard [FASTA](http://en.wikipedia.org/wiki/FASTA_format) file format for genome sequences or MSAs. |
+| .fq .fastq | `profile-rna` | - | Standard [FASTQ](http://en.wikipedia.org/wiki/FASTQ_format) file format for sequence reads |
+| .ucg | `align` `tree` | `profile` `profile-rna` | [JSON](https://www.json.org/json-en)-formatted profile containing extracted sequences of core genes, along with the metadata of the genome. These files can also be read and edited via any text editor. |
+| .nwk | - | `tree` `prune` | Standard [Newick](http://en.wikipedia.org/wiki/Newick_format) format file for phylogenetic trees. |
+| .trm | `prune` | `tree` | JSON-formatted file containing Newick-formatted trees and the metadata of individual gene trees and concatenated UFCG tree. |
+
+## Contributors
+
+![](image/team/dwkim.jpg)
+
+##### Dongwook Kim1
+
+![](image/team/cam.jpg)
+
+##### Cameron Gilchrist2
+
+![](image/team/jon.jpg)
+
+##### Jon Jongsik Chun1,2,3,
+
+![](image/team/martin.png)
+
+##### Martin Steinegger1,2,3,4,
+
+1 Interdisciplinary Program in Bioinformatics, Seoul National University, Seoul, Korea
+
+2 School of Biological Sciences, Seoul National University, Seoul, Korea
+
+3 Institute of Molecular Biology and Genetics, Seoul National University, Seoul, Korea
+
+4 Artificial Intelligence Institute, Seoul National University, Seoul, Korea
+
+Corresponding authors
+
+##### GSI (Gene support index)
+
+GSI indicates **how many gene trees support each branch** in the tree inferred from the concatenated sequence.
+
+UFCG pipeline automatically calculates GSI values and create the tree that embeds the values by replacing the bootstrap values.
+
+Got it
+
+##### Set of core genes and the scope of a taxon
+
+The number of core genes may vary, depending on the scope of a target taxon. *e.g.* If you construct a core gene set in the scope of a single species, the set may consist of up to thousands of genes.
+
+To cover the entire domain of wide taxonomic range, core genes should be restricted to those with highly conserved domains.
+
+Got it
+
+[![](image/fmarv_icon.png) UFCG](../ufcg)
+
+* [Home](../ufcg)
+* [About](ufcg/about)
+* [Database](ufcg/database)
+
+  [Genes](genes)
+  [Species](species)
+* [Pipeline](ufcg/pipeline)
+
+  [Manual](manual)
+  [Tutorial](tutorial)
+  [Download](download)
+* [Links](ufcg/links)
+
+  [GitHub](https://github.com/endixk/ufcg)
+   [Steinegger Lab](https://steineggerlab.com)
+   [License](https://creativecommons.org/licenses/by-sa/4.0/)
+* [Cite us](citation)

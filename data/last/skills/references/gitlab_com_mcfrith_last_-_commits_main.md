@@ -7,7 +7,7 @@
 1. Jan 26, 2026
 2. * [![Martin Frith's avatar](https://secure.gravatar.com/avatar/a3d3b98d35ca14d2decab89078401483824e395926e0df21289d88c94dcd4b54?s=128&d=identicon "Martin Frith")](/mcfrith)
 
-     [lastal: add frame to BlastTab+ format (fixes #42)](/mcfrith/last/-/commit/d20367432f5e3924689444fab263a0d731417801)
+     [lastal: add frame to BlastTab+ format (fixes](/mcfrith/last/-/commit/d20367432f5e3924689444fab263a0d731417801) [#42](/mcfrith/last/-/work_items/42 "Protein frame translation distinction")[)](/mcfrith/last/-/commit/d20367432f5e3924689444fab263a0d731417801)
 
      ·
      d2036743
@@ -109,7 +109,7 @@
       a0c4224b
     * [![Martin Frith's avatar](https://secure.gravatar.com/avatar/a3d3b98d35ca14d2decab89078401483824e395926e0df21289d88c94dcd4b54?s=128&d=identicon "Martin Frith")](/mcfrith)
 
-      [maf-convert: add newlines after chains (fixes](/mcfrith/last/-/commit/e08340acc9c07c0e4b93d97b3b1b0d7314818b85) [#41](/mcfrith/last/-/work_items/41 "absence of empty lines between entries in the chain output of maf-convert")[)](/mcfrith/last/-/commit/e08340acc9c07c0e4b93d97b3b1b0d7314818b85)
+      [maf-convert: add newlines after chains (fixes #41)](/mcfrith/last/-/commit/e08340acc9c07c0e4b93d97b3b1b0d7314818b85)
 
       ·
       e08340ac
@@ -405,4 +405,4 @@
 
       aa74c340
 25. Mar 13, 2025
-26. * [![Martin Frith's avatar](https://secure.gravatar.com/avatar/a3d3b98d35ca14d2decab89078401483
+26. * [![Martin Frith's avatar](https://secure.gravatar.com/avatar/a3d3b98d35ca14d2decab89078401483824e395926e0df21289d88c94dcd4b54?s=1

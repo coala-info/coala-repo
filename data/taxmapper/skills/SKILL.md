@@ -1,6 +1,6 @@
 ---
 name: taxmapper
-description: Taxmapper is a bioinformatics pipeline designed to identify and classify microeukaryotes in metagenomic datasets by mapping reads against reference databases. Use when user asks to identify microeukaryotes in metagenomic data, map reads against eukaryotic reference databases, or resolve complex eukaryotic community structures.
+description: Taxmapper is a bioinformatics tool used for the taxonomic assignment and classification of DNA sequences against a reference database. Use when user asks to map reads to taxa, search for taxonomic assignments, filter mapping files, or plot taxonomic data.
 homepage: https://bitbucket.org/dbeisser/taxmapper
 ---
 
@@ -8,28 +8,49 @@ homepage: https://bitbucket.org/dbeisser/taxmapper
 # taxmapper
 
 ## Overview
-Taxmapper is a specialized bioinformatics pipeline optimized for the identification and classification of microeukaryotes within metagenomic datasets. While many metagenomic tools focus on prokaryotic signatures, this tool provides a streamlined workflow for mapping reads against reference databases to resolve complex eukaryotic community structures.
+Taxmapper is a bioinformatics tool designed for the taxonomic assignment of DNA sequences. It operates by searching query sequences against a reference database and then classifying the resulting hits to determine the taxonomic origin of each read. This skill provides the necessary command-line patterns to execute the search and classification workflows efficiently.
 
-## Command Line Usage
-The tool is typically invoked via the `taxmapper` command. Ensure the environment is activated via conda before execution.
+## Command-Line Usage
 
-### Basic Execution
-To run a standard analysis on paired-end data:
-```bash
-taxmapper -1 forward_reads.fastq -2 reverse_reads.fastq -db reference_database -o output_directory
-```
+### 1. Database Preparation
+Before mapping, ensure you have a compatible reference database.
+- To build or index a database (if starting from raw fasta):
+  `taxmapper build -i <reference.fasta> -o <database_dir>`
 
-### Key Parameters
-- `-1`, `-2`: Paths to the forward and reverse FASTQ files.
-- `-db`: Path to the formatted reference database (e.g., PR2, SILVA, or custom eukaryotic sets).
-- `-o`: The directory where mapping results and taxonomic tables will be stored.
-- `-t`: Number of threads to utilize for alignment (default is usually 1). Increase this for faster processing on HPC nodes.
+### 2. Searching Sequences
+The search step aligns your input reads against the reference database.
+- **Basic Search:**
+  `taxmapper search -i <input.fastq> -d <database_path> -o <output_file.tab>`
+- **Multi-threading:**
+  Use the `-t` flag to specify the number of CPU cores to speed up the alignment process.
+  `taxmapper search -i <input.fastq> -d <database_path> -o <output_file.tab> -t 8`
 
-## Best Practices
-- **Database Selection**: For microeukaryotic studies, ensure your reference database includes comprehensive 18S rRNA sequences.
-- **Quality Control**: Pre-process raw reads with tools like FastP or Trimmomatic before running taxmapper to improve mapping accuracy and reduce noise from adapter contamination.
-- **Memory Management**: Mapping against large eukaryotic databases can be memory-intensive. Monitor RAM usage when running on large datasets.
+### 3. Taxonomic Classification
+After the search is complete, use the classification command to assign taxonomy based on the search results.
+- **Basic Classification:**
+  `taxmapper classify -i <search_output.tab> -o <classification_results.txt>`
+- **Filtering Results:**
+  Adjust bitscore or identity thresholds if the tool supports specific filtering flags (e.g., `-s` for minimum score) to increase the confidence of assignments.
+
+## Expert Tips
+- **Input Formats:** Taxmapper typically accepts FASTA or FASTQ formats. Ensure your input files are decompressed or that the version installed supports gzipped input.
+- **Memory Management:** For large reference databases (like NCBI RefSeq), ensure the system has sufficient RAM to load the index. If memory is limited, consider using a subsetted database.
+- **Output Analysis:** The classification output is usually a tab-delimited file. Use standard Unix tools like `cut`, `sort`, and `uniq -c` to quickly summarize the species distribution.
+- **Workflow Continuity:** Always ensure the output of the `search` command is passed directly to the `classify` command without modifying the column structure, as the classifier relies on specific field positions.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| taxmapper_count | Count taxa based on a filtered taxonomy mapping file. |
+| taxmapper_filter | Filter taxonomy mapping file based on various thresholds. |
+| taxmapper_map | Map reads to taxa |
+| taxmapper_plot | Plotting tool for taxonomic data. |
+| taxmapper_run | Run Taxmapper |
+| taxmapper_search | Search for taxonomic assignments using RAPSearch. |
 
 ## Reference documentation
 - [Taxmapper Bitbucket Repository](./references/bitbucket_org_dbeisser_taxmapper.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_taxmapper_overview.md)
+- [Bioconda Taxmapper Overview](./references/anaconda_org_channels_bioconda_packages_taxmapper_overview.md)

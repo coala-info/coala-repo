@@ -1,1 +1,335 @@
-GitHub - gifford-lab/deepaccess-package: Methods for training and interpretation of an ensemble of neural networks for multi-task functional prediction of accessibility or histone modifications from DNA sequence. Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} gifford-lab / deepaccess-package Public Notifications You must be signed in to change notification settings Fork 0 Star 6 Methods for training and interpretation of an ensemble of neural networks for multi-task functional prediction of accessibility or histone modifications from DNA sequence. License MIT license 6 stars 0 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 0 Pull requests 0 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights gifford-lab/deepaccess-package main Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 84 Commits 84 Commits data data deepaccess deepaccess default default env env .gitignore .gitignore LICENSE LICENSE README.md README.md pyproject.toml pyproject.toml run_ASCL1vsCTCF_DeepAccess.sh run_ASCL1vsCTCF_DeepAccess.sh setup.cfg setup.cfg setup.py setup.py View all files Repository files navigation README MIT license deepaccess-package This is the code for training and interpretation of an ensemble of convolutional neural networks for multi-task classification. Instructions for downloading and getting started with the current release are available at https://cgs.csail.mit.edu/deepaccess-package/ . deepaccess is available via pip and bioconda . The DeepAccess model trained on ATAC-seq data from 10 mouse cell types is available as a zenodo record . Dependencies bedtools (v2.29.2) To run DeepAccess with regions (bedfile format) you must install bedtools and add it to your path. Bedtools binaries are available here . After installation, you can add bedtools to your path via the terminal or modifying your ~/.bashrc export PATH="/path/to/bedtools:$PATH" Installation deepaccess is available on the Python Package Index (PyPI) and can be installed with pip: pip install deepaccess and via bioconda: conda install -c bioconda deepaccess Training To train a DeepAccess model for a new task usage: deepaccess train [-h] -l LABELS [LABELS ...] -out OUT [-ref REFFASTA] [-g GENOME] [-beds BEDFILES [BEDFILES ...]] [-fa FASTA] [-fasta_labels FASTA_LABELS] [-f FRAC_RANDOM] [-nepochs NEPOCHS] [-ho HOLDOUT] [-seed SEED] [-verbose] optional arguments: -h, --help show this help message and exit -l LABELS [LABELS ...], --labels LABELS [LABELS ...] -out OUT, --out OUT -ref REFFASTA, --refFasta REFFASTA -g GENOME, --genome GENOME genome chrom.sizes file -beds BEDFILES [BEDFILES ...], --bedfiles BEDFILES [BEDFILES ...] -fa FASTA, --fasta FASTA -fasta_labels FASTA_LABELS, --fasta_labels FASTA_LABELS -f FRAC_RANDOM, --frac_random FRAC_RANDOM -nepochs NEPOCHS, --nepochs NEPOCHS -ho HOLDOUT, --holdout HOLDOUT chromosome to holdout -seed SEED, --seed SEED -verbose, --verbose Print training progress Arguments Argument Description Example -h, --help show this help message and exit NA -l --labels list of labels for each bed file C1 C2 C3 -out --out output folder name myoutput -ref --ref reference fasta; required with bed input mm10.fa -g --genome genome chromosome sizes; required with bed input default/mm10.chrom.sizes -beds --bedfiles list of bed files; one of beds or fa input required C1.bed C2.bed C3.bed -fa --fasta fasta file; one of beds or fa input required C1C2C3.fa -fasta_labels --fasta_labels text file containing tab delimited labels (0 or 1) for each fasta line with one column for each class C1C2C3.txt -f --frac_random for bed file input fraction of random outgroup regions to add to training 0.1 -nepochs --nepochs number of training iterations 1 -ho --holdout chromosome name to hold out (only with bed input) chr19 -verbose --verbose print training and evaluation progress NA -seed --seed set tensorflow seed 2021 Interpretation To run interpretation of a DeepAccess model usage: deepaccess interpret [-h] -trainDir TRAINDIR [-fastas FASTAS [FASTAS ...]] [-l LABELS [LABELS ...]] [ -c COMPARISONS [COMPARISONS ...]] [-evalMotifs EVALMOTIFS] [-evalPatterns EVALPATTERNS] [-p POSITION] [-saliency] [-subtract] [-bg BACKGROUND] [-vis] optional arguments: -h, --help show this help message and exit -trainDir TRAINDIR, --trainDir TRAINDIR -fastas FASTAS [FASTAS ...], --fastas FASTAS [FASTAS ...] -l LABELS [LABELS ...], --labels LABELS [LABELS ...] -c COMPARISONS [COMPARISONS ...], --comparisons COMPARISONS [COMPARISONS ...] -evalMotifs EVALMOTIFS, --evalMotifs EVALMOTIFS -evalPatterns EVALPATTERNS, --evalPatterns EVALPATTERNS -p POSITION, --position POSITION -saliency, --saliency -subtract, --subtract -bg BACKGROUND, --background BACKGROUND -vis, --makeVis Arguments Argument Description Example -h, --help show this help message and exit NA -trainDir --trainDir directory containing trained DeepAccess model test/ASCL1vsCTCF -fastas --fastas list of fasta files to evaulate test/ASCL1vsCTCF/test.fa -l --labels list of labels for each bed file C1 C2 C3 -c --comparisons list of comparisons between different labels ASCL1vsCTCF ASCL1vsNone runs differential EPE between ASCL1 and CTCF and EPE on ASCL1; C1,C2vsC3 runs differential EPE for (C1 and C2) vs C3 -evalMotifs --evalMotifs PWM or PCM data base of DNA sequence motifs default/HMv11_MOUSE.txt -evalPatterns --evalPatterns fasta file containing DNA sequence patterns data/ASCL1_space.fa -bg --bg fasta file containning background sequences default/backgrounds.fa -saliency --saliency calculate per base nucleotide importance NA -subtract --subtract use subtraction instead of ratio for EPE / DEPE False -vis --makeVis to be used with saliency to make plot visualizing results NA About Methods for training and interpretation of an ensemble of neural networks for multi-task functional prediction of accessibility or histone modifications from DNA sequence. Topics deep-learning genomics bioconda interpretation epigenomics pypi-package Resources Readme License MIT license Uh oh! There was an error while loading. Please reload this page . Activity Custom properties Stars 6 stars Watchers 1 watching Forks 0 forks Report repository Releases 1 deepaccess version 0.1.2 Latest Jun 11, 2021 Packages 0 No packages published Uh oh! There was an error while loading. Please reload this page . Languages Python 95.8% Shell 4.2% Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fgifford-lab%2Fdeepaccess-package)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fgifford-lab%2Fdeepaccess-package)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=gifford-lab%2Fdeepaccess-package)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[gifford-lab](/gifford-lab)
+/
+**[deepaccess-package](/gifford-lab/deepaccess-package)**
+Public
+
+* [Notifications](/login?return_to=%2Fgifford-lab%2Fdeepaccess-package) You must be signed in to change notification settings
+* [Fork
+  0](/login?return_to=%2Fgifford-lab%2Fdeepaccess-package)
+* [Star
+   6](/login?return_to=%2Fgifford-lab%2Fdeepaccess-package)
+
+* [Code](/gifford-lab/deepaccess-package)
+* [Issues
+  0](/gifford-lab/deepaccess-package/issues)
+* [Pull requests
+  0](/gifford-lab/deepaccess-package/pulls)
+* [Actions](/gifford-lab/deepaccess-package/actions)
+* [Projects](/gifford-lab/deepaccess-package/projects)
+* [Security
+  0](/gifford-lab/deepaccess-package/security)
+* [Insights](/gifford-lab/deepaccess-package/pulse)
+
+Additional navigation options
+
+* [Code](/gifford-lab/deepaccess-package)
+* [Issues](/gifford-lab/deepaccess-package/issues)
+* [Pull requests](/gifford-lab/deepaccess-package/pulls)
+* [Actions](/gifford-lab/deepaccess-package/actions)
+* [Projects](/gifford-lab/deepaccess-package/projects)
+* [Security](/gifford-lab/deepaccess-package/security)
+* [Insights](/gifford-lab/deepaccess-package/pulse)
+
+# gifford-lab/deepaccess-package
+
+main
+
+[Branches](/gifford-lab/deepaccess-package/branches)[Tags](/gifford-lab/deepaccess-package/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[84 Commits](/gifford-lab/deepaccess-package/commits/main/)   84 Commits | | |
+| [data](/gifford-lab/deepaccess-package/tree/main/data "data") | | [data](/gifford-lab/deepaccess-package/tree/main/data "data") |  |  |
+| [deepaccess](/gifford-lab/deepaccess-package/tree/main/deepaccess "deepaccess") | | [deepaccess](/gifford-lab/deepaccess-package/tree/main/deepaccess "deepaccess") |  |  |
+| [default](/gifford-lab/deepaccess-package/tree/main/default "default") | | [default](/gifford-lab/deepaccess-package/tree/main/default "default") |  |  |
+| [env](/gifford-lab/deepaccess-package/tree/main/env "env") | | [env](/gifford-lab/deepaccess-package/tree/main/env "env") |  |  |
+| [.gitignore](/gifford-lab/deepaccess-package/blob/main/.gitignore ".gitignore") | | [.gitignore](/gifford-lab/deepaccess-package/blob/main/.gitignore ".gitignore") |  |  |
+| [LICENSE](/gifford-lab/deepaccess-package/blob/main/LICENSE "LICENSE") | | [LICENSE](/gifford-lab/deepaccess-package/blob/main/LICENSE "LICENSE") |  |  |
+| [README.md](/gifford-lab/deepaccess-package/blob/main/README.md "README.md") | | [README.md](/gifford-lab/deepaccess-package/blob/main/README.md "README.md") |  |  |
+| [pyproject.toml](/gifford-lab/deepaccess-package/blob/main/pyproject.toml "pyproject.toml") | | [pyproject.toml](/gifford-lab/deepaccess-package/blob/main/pyproject.toml "pyproject.toml") |  |  |
+| [run\_ASCL1vsCTCF\_DeepAccess.sh](/gifford-lab/deepaccess-package/blob/main/run_ASCL1vsCTCF_DeepAccess.sh "run_ASCL1vsCTCF_DeepAccess.sh") | | [run\_ASCL1vsCTCF\_DeepAccess.sh](/gifford-lab/deepaccess-package/blob/main/run_ASCL1vsCTCF_DeepAccess.sh "run_ASCL1vsCTCF_DeepAccess.sh") |  |  |
+| [setup.cfg](/gifford-lab/deepaccess-package/blob/main/setup.cfg "setup.cfg") | | [setup.cfg](/gifford-lab/deepaccess-package/blob/main/setup.cfg "setup.cfg") |  |  |
+| [setup.py](/gifford-lab/deepaccess-package/blob/main/setup.py "setup.py") | | [setup.py](/gifford-lab/deepaccess-package/blob/main/setup.py "setup.py") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* MIT license
+
+# deepaccess-package
+
+[![PyPI version](https://camo.githubusercontent.com/4bb456fb56e2c870781264660e3b2183350bc4fe89658518db0c8a8ca9d65711/68747470733a2f2f62616467652e667572792e696f2f70792f646565706163636573732e737667)](https://badge.fury.io/py/deepaccess)
+[![Anaconda-Server Badge](https://camo.githubusercontent.com/023290b117b1f2982daada77cc58b63776d9bb7baaf100c968b14cbf62e0e9b2/68747470733a2f2f616e61636f6e64612e6f72672f62696f636f6e64612f646565706163636573732f6261646765732f696e7374616c6c65722f636f6e64612e737667)](https://conda.anaconda.org/bioconda)
+
+This is the code for training and interpretation of an ensemble of convolutional neural networks for multi-task classification. Instructions for downloading and getting started with the current release are available at <https://cgs.csail.mit.edu/deepaccess-package/>. deepaccess is available via [pip](https://pypi.org/project/pip/) and [bioconda](https://bioconda.github.io/). The DeepAccess model trained on ATAC-seq data from 10 mouse cell types is available as a [zenodo record](https://zenodo.org/record/4908895#.YL6YpR0pDfY).
+
+## Dependencies
+
+* [bedtools](https://bedtools.readthedocs.io/en/latest/) (v2.29.2)
+
+To run DeepAccess with regions (bedfile format) you must install bedtools and add it to your path. Bedtools binaries are available [here](https://github.com/arq5x/bedtools2/releases).
+
+After installation, you can add bedtools to your path via the terminal or modifying your ~/.bashrc
+
+```
+export PATH="/path/to/bedtools:$PATH"
+```
+
+## Installation
+
+deepaccess is available on the Python Package Index (PyPI) and can be installed with pip:
+
+```
+pip install deepaccess
+```
+
+and via bioconda:
+
+```
+conda install -c bioconda deepaccess
+```
+
+## Training
+
+To train a DeepAccess model for a new task
+
+```
+usage: deepaccess train [-h] -l LABELS [LABELS ...]
+       		  -out OUT [-ref REFFASTA]
+		  [-g GENOME] [-beds BEDFILES [BEDFILES ...]]
+		  [-fa FASTA] [-fasta_labels FASTA_LABELS]
+                  [-f FRAC_RANDOM] [-nepochs NEPOCHS]
+		  [-ho HOLDOUT] [-seed SEED] [-verbose]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -l LABELS [LABELS ...], --labels LABELS [LABELS ...]
+  -out OUT, --out OUT
+  -ref REFFASTA, --refFasta REFFASTA
+  -g GENOME, --genome GENOME
+                        genome chrom.sizes file
+  -beds BEDFILES [BEDFILES ...], --bedfiles BEDFILES [BEDFILES ...]
+  -fa FASTA, --fasta FASTA
+  -fasta_labels FASTA_LABELS, --fasta_labels FASTA_LABELS
+  -f FRAC_RANDOM, --frac_random FRAC_RANDOM
+  -nepochs NEPOCHS, --nepochs NEPOCHS
+  -ho HOLDOUT, --holdout HOLDOUT
+                        chromosome to holdout
+  -seed SEED, --seed SEED
+  -verbose, --verbose   Print training progress
+```
+
+### Arguments
+
+| Argument | Description | Example |
+| --- | --- | --- |
+| -h, --help | show this help message and exit | NA |
+| -l --labels | list of labels for each bed file | C1 C2 C3 |
+| -out --out | output folder name | myoutput |
+| -ref --ref | reference fasta; required with bed input | mm10.fa |
+| -g --genome | genome chromosome sizes; required with bed input | default/mm10.chrom.sizes |
+| -beds --bedfiles | list of bed files; one of beds or fa input required | C1.bed C2.bed C3.bed |
+| -fa --fasta | fasta file; one of beds or fa input required | C1C2C3.fa |
+| -fasta\_labels --fasta\_labels | text file containing tab delimited labels (0 or 1) for each fasta line with one column for each class | C1C2C3.txt |
+| -f --frac\_random | for bed file input fraction of random outgroup regions to add to training | 0.1 |
+| -nepochs --nepochs | number of training iterations | 1 |
+| -ho --holdout | chromosome name to hold out (only with bed input) | chr19 |
+| -verbose --verbose | print training and evaluation progress | NA |
+| -seed --seed | set tensorflow seed | 2021 |
+
+## Interpretation
+
+To run interpretation of a DeepAccess model
+
+```
+usage: deepaccess interpret [-h] -trainDir TRAINDIR
+       		  [-fastas FASTAS [FASTAS ...]]
+		  [-l LABELS [LABELS ...]] [
+		  -c COMPARISONS [COMPARISONS ...]]
+		  [-evalMotifs EVALMOTIFS]
+                  [-evalPatterns EVALPATTERNS]
+		  [-p POSITION] [-saliency]
+		  [-subtract] [-bg BACKGROUND] [-vis]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -trainDir TRAINDIR, --trainDir TRAINDIR
+  -fastas FASTAS [FASTAS ...], --fastas FASTAS [FASTAS ...]
+  -l LABELS [LABELS ...], --labels LABELS [LABELS ...]
+  -c COMPARISONS [COMPARISONS ...], --comparisons COMPARISONS [COMPARISONS ...]
+  -evalMotifs EVALMOTIFS, --evalMotifs EVALMOTIFS
+  -evalPatterns EVALPATTERNS, --evalPatterns EVALPATTERNS
+  -p POSITION, --position POSITION
+  -saliency, --saliency
+  -subtract, --subtract
+  -bg BACKGROUND, --background BACKGROUND
+  -vis, --makeVis
+```
+
+### Arguments
+
+| Argument | Description | Example |
+| --- | --- | --- |
+| -h, --help | show this help message and exit | NA |
+| -trainDir --trainDir | directory containing trained DeepAccess model | test/ASCL1vsCTCF |
+| -fastas --fastas | list of fasta files to evaulate | test/ASCL1vsCTCF/test.fa |
+| -l --labels | list of labels for each bed file | C1 C2 C3 |
+| -c --comparisons | list of comparisons between different labels | ASCL1vsCTCF ASCL1vsNone runs differential EPE between ASCL1 and CTCF and EPE on ASCL1; C1,C2vsC3 runs differential EPE for (C1 and C2) vs C3 |
+| -evalMotifs --evalMotifs | PWM or PCM data base of DNA sequence motifs | default/HMv11\_MOUSE.txt |
+| -evalPatterns --evalPatterns | fasta file containing DNA sequence patterns | data/ASCL1\_space.fa |
+| -bg --bg | fasta file containning background sequences | default/backgrounds.fa |
+| -saliency --saliency | calculate per base nucleotide importance | NA |
+| -subtract --subtract | use s

@@ -1,6 +1,6 @@
 ---
 name: evofold2
-description: Evofold2 predicts RNA secondary structures by analyzing multiple sequence alignments for evolutionary conservation and compensatory mutations. Use when user asks to predict RNA structures, evaluate alignments using SCFG models, or train models for RNA structure identification.
+description: evofold2 identifies conserved functional elements like RNA secondary structures by combining phylogenetic models with stochastic context-free grammars. Use when user asks to train directed factor graphs using expectation-maximization, evaluate posterior distributions of hidden variables, or perform evolutionary analysis on genomic sequences.
 homepage: https://github.com/jakob-skou-pedersen/phy
 ---
 
@@ -8,29 +8,54 @@ homepage: https://github.com/jakob-skou-pedersen/phy
 # evofold2
 
 ## Overview
-The `evofold2` tool is a comparative method for predicting RNA secondary structures by combining Stochastic Context-Free Grammars (SCFGs) with phylogenetic models. It analyzes multiple sequence alignments to detect patterns of evolutionary conservation and compensatory mutations that signal functional RNA elements. This skill provides guidance on using the tool within the `phy` library ecosystem to evaluate and train models for RNA structure identification.
+The evofold2 toolset, built upon the `phy` C++ library, is designed for the evolutionary analysis of genomic sequences. It specializes in identifying conserved functional elements, such as RNA secondary structures, by combining phylogenetic models with Stochastic Context-Free Grammars (SCFGs). Use this skill to configure Directed Factor Graphs (DFGs), train models using Expectation-Maximization (EM), and evaluate posterior distributions of hidden variables across comparative genomic data.
 
-## Usage Guidelines
+## Core Workflows
 
-### Core Functionality
-`evofold2` operates on the principle that functional RNA structures maintain their base-pairing through evolution. It evaluates the likelihood of an alignment folding into a specific structure versus a background null model.
+### Model Training with dfgTrain
+Use `dfgTrain` to estimate model parameters from observed data.
 
-### Common CLI Patterns
-While `evofold2` is the primary application, it relies on the underlying `phy` library tools for model evaluation and training:
+*   **Perform EM Training**: Execute training on a dataset to recover distribution parameters (e.g., Alpha and Beta values for Beta distributions).
+    `dfgTrain --emTrain input_data.tab --writeInfo`
+*   **Verify Parameter Recovery**: Check the output for the `ALPHAS` and `BETAS` blocks to ensure the model has converged on expected evolutionary rates or state distributions.
 
-*   **Evaluating Alignments**: Use `dfgEval` to calculate the likelihood of a specific DFG (Directed Factor Graph) or SCFG model given an alignment.
-    ```bash
-    dfgEval --dfgSpecPrefix=/path/to/models/ --ncFile=- alignment_data.tab
-    ```
-*   **Training Models**: Use `dfgTrain` to optimize model parameters based on known structural alignments.
-*   **Input Formats**: The tool typically expects multiple sequence alignments. Ensure your alignments are clean and properly formatted (often in `.tab` or standard MSA formats supported by the `phy` library).
+### Model Evaluation with dfgEval
+Use `dfgEval` to perform inference and calculate likelihoods or posterior probabilities.
 
-### Expert Tips
-*   **Phylogenetic Context**: Since the tool uses phylogenetic models, the quality of the input tree and the evolutionary distance between sequences significantly impact prediction accuracy. Use alignments with a diverse but related set of species.
-*   **Model Specification**: The `--dfgSpecPrefix` flag is critical as it points to the directory containing the model specifications (DFGs/SCFGs) that define the RNA structural motifs you are searching for.
-*   **Handling Continuous Data**: If working with continuous state maps or mixtures (e.g., Beta or Normal mixtures), ensure your state map parsers are correctly configured as per the `phy` library's PIMPL implementation for StateMaps.
+*   **Basic Evaluation**: Run evaluation against a specific model specification directory.
+    `dfgEval input_data.tab -s model_spec_dir/`
+*   **Handle Sample-Specific Observations**: Use subscription factors when variables like trial counts (N) and successes (X) vary by sample.
+    `dfgEval input_data.tab -m - --subVarFile supplemental_data.tab -s model_spec_dir/`
+
+## Configuration Patterns
+
+### Defining Factor Potentials
+Define the statistical distributions in a `factorPotentials.txt` file.
+
+*   **Beta Distribution**: Specify `DIST: BETA` with `MIN: 0` and `MAX: 1`.
+*   **Subscription Mapping**: Map internal model variables to columns in your data file using the `N:` and `X:` keys within the potential definition.
+
+### Defining the Factor Graph
+Map the relationship between hidden variables and potentials in `factorGraph.txt`.
+
+*   **Node Assignment**: Use `NB1`, `NB2`, etc., to define the neighbors (variables) of a specific potential.
+*   **Potential Linking**: Reference the `NAME` defined in your potentials file using the `POT:` key.
+
+## Expert Tips
+*   **Subscription Factors**: When modeling uncertainty in observed fractions, use subscription factors to allow the model to "subscribe" to specific variable names in a separate data file.
+*   **Memory Efficiency**: For large-scale genomic scans, ensure your state maps are optimized; use `BINS` for continuous data to discretize the search space effectively.
+*   **Windows Compatibility**: If working on Windows, manually resolve any symlinks in the `test/data` directories, as the `phy` library relies on specific directory structures for integration tests.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| dfgEval | dfgEval allows implementation of discrete factor graphs and evaluates the probability of data sets under these models. |
+| dfgTrain | dfgTrain allows implementation of discrete factor graphs and evaluates the probability of data sets under these models. |
 
 ## Reference documentation
-- [evofold2 - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_evofold2_overview.md)
-- [jakob-skou-pedersen/phy GitHub Repository](./references/github_com_jakob-skou-pedersen_phy.md)
-- [phy Wiki - Model Distributions](./references/github_com_jakob-skou-pedersen_phy_wiki.md)
+- [Phy Library Overview](./references/github_com_jakob-skou-pedersen_phy.md)
+- [Beta Distribution Training](./references/github_com_jakob-skou-pedersen_phy_wiki_Beta-distribution.md)
+- [Posterior Binomial Specification](./references/github_com_jakob-skou-pedersen_phy_wiki_Posterior-p-in-binomial.md)

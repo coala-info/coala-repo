@@ -1,6 +1,6 @@
 ---
 name: ismapper
-description: ISMapper identifies the locations and orientations of insertion sequences within bacterial genomes using paired-end Illumina reads and a reference genome. Use when user asks to map insertion sequences, identify IS element coordinates, or track mobile genetic elements in bacterial populations.
+description: ISMapper identifies the locations and genomic contexts of insertion sequences within a genome by mapping short reads to query sequences and a reference. Use when user asks to map insertion sequences, identify novel or known IS positions, or determine the flanking regions of mobile genetic elements.
 homepage: https://github.com/jhawkey/IS_mapper/
 ---
 
@@ -8,55 +8,54 @@ homepage: https://github.com/jhawkey/IS_mapper/
 # ismapper
 
 ## Overview
-ISMapper is a specialized mapping-based tool designed to pinpoint where specific insertion sequences are located within a bacterial genome. By utilizing paired-end Illumina reads and a reference GenBank file, it identifies the flanking regions of IS elements to determine their exact coordinates and orientation. This tool is essential for researchers tracking mobile genetic elements, investigating outbreaks, or analyzing genomic plasticity in bacterial populations.
+ISMapper is a specialized bioinformatics tool designed to pinpoint where specific mobile genetic elements (Insertion Sequences) are located within a genome. By mapping short reads to both an IS query and a reference genome, it identifies "flanking" sequences that indicate the exact coordinates of the IS. This allows for the detection of "known" hits (IS positions already in the reference) and "novel" hits (IS positions present in the isolate but not the reference).
 
-## Usage Patterns
-
-### Basic Command
-The core command for ISMapper is `ismap`. You must provide paired-end reads, at least one IS query sequence, and a reference genome.
+## Basic Usage
+The primary command for ISMapper is `ismap`. It requires three core inputs: paired-end reads, a reference genome in GenBank format, and one or more IS query sequences in FASTA format.
 
 ```bash
 ismap --reads isolate_R1.fastq.gz isolate_R2.fastq.gz \
       --queries IS_element.fasta \
       --reference reference_genome.gbk \
-      --output_dir ./output_results
+      --output_dir results_folder
 ```
 
-### Processing Multiple Isolates
-ISMapper can handle multiple read sets in a single command. It automatically pairs files belonging to the same isolate based on naming conventions.
-
-```bash
-ismap --reads /path/to/reads/*.fastq.gz \
-      --queries IS_collection.fasta \
-      --reference ref.gbk \
-      --output_dir ./batch_results
-```
-
-### Advanced Mapping Parameters
-Fine-tune hit detection based on your data quality:
-- `--cutoff`: Minimum depth for a mapped region to be considered (default: 6). Increase this for high-coverage data to reduce noise.
-- `--novel_gap_size`: Distance (bp) between left and right flanks to call a novel hit (default: 15).
-- `--min_range` / `--max_range`: Percent size of the gap to be called a known hit (default: 0.9 to 1.1).
+### Handling Multiple Inputs
+*   **Reads**: You can provide multiple read sets using wildcards (e.g., `--reads path/to/*.fastq.gz`). ISMapper automatically pairs files belonging to the same isolate.
+*   **Queries**: Multiple IS queries can be provided as separate files or a single multi-FASTA file.
+*   **References**: Multiple reference genomes are supported, either as separate files or a multi-entry GenBank file.
 
 ## Expert Tips and Best Practices
+*   **Locus Tag Requirement**: Every CDS, tRNA, and rRNA feature in your reference GenBank file **must** have a `locus_tag` qualifier. If these are missing, ISMapper will fail to report the genomic context of the hits.
+*   **Refining Hit Detection**:
+    *   **Depth**: If you have low-coverage data, consider lowering the `--cutoff` (default: 6) to identify potential hits, though this may increase false positives.
+    *   **Novel Hits**: The `--novel_gap_size` (default: 15bp) determines the maximum distance between left and right flanks for a hit to be considered a single novel insertion.
+    *   **Known Hits**: Use `--min_range` (default: 0.9) and `--max_range` (default: 1.1) to define the expected size of the IS element in the reference genome.
+*   **Performance**: Always specify the number of threads for the BWA mapping step using `--t` to speed up processing.
+*   **Debugging**: By default, ISMapper deletes intermediate files. Use the `--temp` flag to keep the temporary directory and `--bam` to keep the final BAM files if you need to manually inspect the mappings in a genome browser like IGV.
+*   **Annotation Qualifiers**: If your GenBank file uses a qualifier other than `product` to describe genes, specify it using the `--cds`, `--trna`, or `--rrna` flags.
 
-### Reference Requirements
-- **Locus Tags**: Every CDS, tRNA, or rRNA feature in your reference GenBank file **must** have a `locus_tag`. ISMapper uses these for reporting the genomic context of insertions.
-- **Multi-entry Files**: You can provide multiple reference genomes as separate files or as a single multi-entry GenBank file.
+## Common CLI Patterns
+**Running a batch of isolates against a single IS query:**
+```bash
+ismap --reads data/*.fastq.gz --queries IS26.fasta --reference ref.gbk --output_dir is26_mapping --t 8
+```
 
-### Performance Optimization
-- **Threading**: Use the `--t` flag to specify the number of threads for BWA mapping.
-- **Logging**: Use `--log` to specify a custom prefix for log files to keep track of large batch runs.
+**Summarizing results:**
+After running `ismap`, use the `compiled_table.py` script (usually included in the installation) to aggregate results from multiple isolates into a single summary table.
 
-### Troubleshooting and Validation
-- **Keep Intermediate Files**: If you need to manually validate a hit in a genome browser (like IGV), use the `--bam` flag to prevent ISMapper from deleting the final BAM files.
-- **Temporary Files**: Use `--temp` to keep the temporary directory if a run fails and you need to inspect the mapping stages.
-- **Gene Information**: If your GenBank uses a qualifier other than `product` for gene descriptions, specify it using `--cds`, `--trna`, or `--rrna`.
+```bash
+compiled_table.py --input_dir results_folder --output_file summary_table.csv
+```
 
-### Output Interpretation
-ISMapper creates a subdirectory for each isolate, and further subdirectories for each IS query.
-- **Table Files**: These contain the coordinates, orientation, and nearby genes for each identified IS site.
-- **Compiled Tables**: Use the `compiled_table.py` script (included with the installation) to merge results from multiple isolates into a single summary table.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| compiled_table.py | Create a table of IS hits in all isolates for ISMapper |
+| ismap | Basic ISMapper options: |
 
 ## Reference documentation
 - [ISMapper GitHub Repository](./references/github_com_jhawkey_IS_mapper.md)

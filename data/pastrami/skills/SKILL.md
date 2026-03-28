@@ -1,6 +1,6 @@
 ---
 name: pastrami
-description: Pastrami is a scalable computational algorithm designed for rapid human ancestry estimation using exact haplotype matching and non-negative least square optimization. Use when user asks to estimate human ancestry, analyze query genotypes against reference populations, or generate co-ancestry matrices from large-scale genomic datasets.
+description: Pastrami is a scalable computational framework for high-throughput ancestry estimation using haplotype matching and optimization. Use when user asks to estimate ancestral proportions, build reference copying matrices, or perform haplotype-based population structure analysis.
 homepage: https://github.com/healthdisparities/pastrami
 ---
 
@@ -9,69 +9,69 @@ homepage: https://github.com/healthdisparities/pastrami
 
 ## Overview
 
-Pastrami is a scalable computational algorithm designed for rapid human ancestry estimation. It utilizes exact haplotype matching and non-negative least square (NNLS) optimization to provide ancestry insights across various granularities. The tool is optimized for speed and can handle large-scale genomic datasets that might be computationally prohibitive for traditional methods. It is primarily used in bioinformatics workflows to analyze query genotypes against established reference populations.
+Pastrami is a scalable computational framework designed for high-throughput ancestry estimation. It operates by matching haplotypes between query individuals and a reference database, then applying optimization techniques to determine the most likely ancestral proportions. It is particularly useful for analyzing large-scale genomic datasets where traditional model-based approaches might be computationally prohibitive.
 
-## Installation and Environment
+## Core Workflow
 
-The most reliable way to install pastrami is via Bioconda:
+The tool follows a five-step process that can be executed via the `all` subcommand for a consolidated run or through individual subcommands for granular control.
 
-```bash
-conda install bioconda::pastrami
-```
-
-**Key Dependencies:**
-- **Plink2**: Must be accessible in your `$PATH`. If only `plink2` is available, create a symbolic link named `plink` as the script may look for that specific name.
-- **Python 3.8+**: Requires `pathos`, `numpy`, `scipy`, and `pandas`.
-- **R**: Required for the `outsourcedOptimizer.R` component used during the aggregation stage.
-
-## Data Preparation
-
-Pastrami requires input in **TPED/TFAM** format. If your data is in VCF format, convert it using Plink:
-
+### 1. Data Preparation
+Pastrami requires genotype data in Plink **TPED/TFAM** format. If starting with VCF files, convert them using Plink:
 ```bash
 plink --vcf input.vcf.gz --recode transpose --out output_prefix
 ```
 
-## Core Workflows
-
-### The Consolidated Workflow
-For most use cases, the `all` subcommand handles the entire pipeline from haplotype creation to ancestry estimation.
-
+### 2. Consolidated Analysis
+For a standard one-off ancestry estimation, use the `all` command:
 ```bash
 ./pastrami.py all \
-  --reference-prefix [REF_FILES] \
-  --query-prefix [QUERY_FILES] \
-  --pop-group pop2group.txt \
-  --haplotypes chrom.hap \
-  --out-prefix results_run \
-  --threads 20 \
-  -v
+    --reference-prefix [REF_FILES] \
+    --query-prefix [QUERY_FILES] \
+    --pop-group pop2group.txt \
+    --haplotypes chrom.hap \
+    --out-prefix results_run \
+    --threads 20 \
+    -v
 ```
 
-### Modular Subcommands
-If you need to run specific stages or resume a failed run, use the individual subcommands:
+### 3. Modular Subcommands
+If the pipeline needs to be broken down (e.g., for debugging or reusing a built reference):
+- `hapmake`: Generates the haplotype map file.
+- `build`: Constructs the reference database from reference genotypes.
+- `query`: Compares query genotypes against the built reference.
+- `coanc`: Generates the copying fraction matrix (pairwise comparisons).
+- `aggregate`: Performs the final ancestry fraction estimation and grouping.
 
-1.  **hapmake**: Generates the haplotype map file.
-2.  **build**: Creates a database from the reference genotype files.
-3.  **query**: Compares the query genotype against the reference database.
-4.  **coanc**: Generates the pairwise individual copying fraction matrix.
-5.  **aggregate**: Performs the final ancestry fraction estimation and grouping.
+## Expert Tips and CLI Patterns
 
-## Required Input Files
+### Optimization Parameters
+- **SNP Density**: Control the resolution of haplotype blocks using `--min-snps` (default: 7) and `--max-snps`.
+- **Genetic Maps**: Use `--map-dir` to point to a directory containing chromosome-specific genetic maps (`chr1.map`, `chr2.map`, etc.) to improve accuracy.
+- **Population Mapping**: The `--pop-group` file is critical for aggregating fine-grained results into broader sub-continental categories (e.g., mapping specific tribes to a geographic region).
 
-- **--reference-prefix**: The prefix for your reference `.tped` and `.tfam` files.
-- **--query-prefix**: The prefix for your query `.tped` and `.tfam` files.
-- **--haplotypes**: A TSV file defining haplotype positions.
-- **--pop-group**: A mapping file (e.g., `pop2group.txt`) that assigns specific populations or tribes to broader regional groups.
+### Output Interpretation
+The tool generates several `.Q` files:
+- `<prefix>_estimates.Q`: Primary ancestry estimates.
+- `<prefix>_fine_grain_estimates.Q`: Detailed population-level breakdowns.
+- `<prefix>_paintings.Q`: Haplotype-level ancestry assignments.
 
-## Expert Tips and Best Practices
+### Performance
+Always utilize the `--threads` flag to leverage multi-core processing, as the `coanc` and `query` steps are computationally intensive.
 
-- **Thread Management**: Always specify `--threads` for the `all` or `coanc` commands. Ancestry estimation is computationally intensive, and the tool is designed to scale across multiple cores.
-- **Memory Considerations**: When working with very large reference sets, ensure your environment has sufficient RAM for the NNLS optimization phase, which occurs during the `aggregate` step.
-- **Haplotype Tuning**: Use the `--min-snps` (default: 7) and `--max-snps` flags to fine-tune the granularity of the haplotype blocks if the default settings do not yield sufficient resolution for your specific population.
-- **Output Interpretation**: The tool produces several `.Q` files. The `_fine_grain_estimates.Q` file provides the most detailed ancestry breakdown, while `_estimates.Q` typically provides the broader continental/sub-continental view.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| aggregate | Aggregate Pastrami ancestry estimates based on population groupings |
+| all | PASTRAMI tool for haplotype-based population structure analysis |
+| build | Build reference copying matrices and pickle files for PASTRAMI |
+| coanc | Calculate copying matrices for reference and query haplotypes |
+| hapmake | Generate haplotype blocks based on genetic maps and SNP constraints |
+| query | Query a reference pickle with TPED/TFAM input files to generate copying matrices. |
 
 ## Reference documentation
-
-- [Pastrami GitHub README](./references/github_com_healthdisparities_pastrami.md)
-- [Bioconda Pastrami Overview](./references/anaconda_org_channels_bioconda_packages_pastrami_overview.md)
+- [Pastrami README](./references/github_com_healthdisparities_pastrami_blob_master_README.md)
+- [Pastrami Main Script](./references/github_com_healthdisparities_pastrami_blob_master_pastrami.py.md)
+- [R Optimizer Details](./references/github_com_healthdisparities_pastrami_blob_master_outsourcedOptimizer.R.md)

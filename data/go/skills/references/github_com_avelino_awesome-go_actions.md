@@ -1,1 +1,556 @@
-Workflow runs · avelino/awesome-go · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} avelino / awesome-go Public Uh oh! There was an error while loading. Please reload this page . Notifications You must be signed in to change notification settings Fork 13k Star 165k Code Issues 12 Pull requests 170 Discussions Actions Security 0 Insights Additional navigation options Code Issues Pull requests Discussions Actions Security Insights Actions: avelino/awesome-go Actions All workflows Workflows Check For Stale Repositories Check For Stale Repositories Copilot code review Copilot code review Dependabot Updates Dependabot Updates Issues spammy check Issues spammy check PR Quality Checks PR Quality Checks site-deploy site-deploy tests tests Show more workflows... Management Caches Deployments All workflows All workflows Actions Loading... Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page . will be ignored since log searching is not yet available Showing runs from all workflows will be ignored since log searching is not yet available 2,573 workflow runs 2,573 workflow runs Event Filter by Event Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching events. Status Filter by Status Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching statuses. Branch Filter by Branch Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching branches. Actor Filter by Actor Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching users. Add GoooQo to ORM section tests #3366: Pull request #6040 opened by f0rb 45s f0rb:main f0rb:main 45s View #6040 View workflow file Add GoooQo to ORM section PR Quality Checks #1064: Pull request #6040 opened by f0rb 4m 37s 4m 37s View #6040 View workflow file Github link added to the techyons tests #3365: Pull request #6039 opened by saranyakathiravan-techyonsadharagarwal 41s saranyakathiravan-techyonsadharagarwal:main saranyakathiravan-techyonsadharagarwal:main 41s View #6039 View workflow file Github link added to the techyons PR Quality Checks #1063: Pull request #6039 opened by saranyakathiravan-techyonsadharagarwal 13s 13s View #6039 View workflow file Add Techyons to other Software section tests #3364: Pull request #6038 synchronize by saranyakathiravan-techyonsadharagarwal 41s saranyakathiravan-techyonsadharagarwal:main saranyakathiravan-techyonsadharagarwal:main 41s View #6038 View workflow file Add Techyons to other Software section PR Quality Checks #1062: Pull request #6038 synchronize by saranyakathiravan-techyonsadharagarwal 17s 17s View #6038 View workflow file Add Techyons to other Software section tests #3363: Pull request #6038 synchronize by saranyakathiravan-techyonsadharagarwal 44s saranyakathiravan-techyonsadharagarwal:main saranyakathiravan-techyonsadharagarwal:main 44s View #6038 View workflow file Add Techyons to other Software section PR Quality Checks #1061: Pull request #6038 synchronize by saranyakathiravan-techyonsadharagarwal 12s 12s View #6038 View workflow file Add Techyons to other Software section tests #3362: Pull request #6038 opened by saranyakathiravan-techyonsadharagarwal 44s saranyakathiravan-techyonsadharagarwal:main saranyakathiravan-techyonsadharagarwal:main 44s View #6038 View workflow file Add Techyons to other Software section PR Quality Checks #1060: Pull request #6038 opened by saranyakathiravan-techyonsadharagarwal 14s 14s View #6038 View workflow file chore(readme): update box-cli-maker link and desc PR Quality Checks #1059: Pull request #6037 edited by Delta456 4m 56s 4m 56s View #6037 View workflow file chore(readme): update box-cli-maker link and desc tests #3361: Pull request #6037 opened by Delta456 41s Delta456:Delta456-patch-1 Delta456:Delta456-patch-1 41s View #6037 View workflow file chore(readme): update box-cli-maker link and desc PR Quality Checks #1058: Pull request #6037 opened by Delta456 11s 11s View #6037 View workflow file P.j.S Adrian SKY covaci 18.12.1984 Issues spammy check #195: Issue #6036 opened by acovaci870-code 20s 20s View workflow file Add ClawShield to Security section tests #3360: Pull request #6035 opened by lennystepn-hue 42s lennystepn-hue:main lennystepn-hue:main 42s View #6035 View workflow file Add ClawShield to Security section PR Quality Checks #1057: Pull request #6035 opened by lennystepn-hue 13s 13s View #6035 View workflow file Add project log tests #3359: Pull request #6034 opened by matheusandre1 42s matheusandre1:logcarlos matheusandre1:logcarlos 42s View #6034 View workflow file Add project log PR Quality Checks #1056: Pull request #6034 opened by matheusandre1 4m 53s 4m 53s View #6034 View workflow file Add lingti-bot to Bot Building PR Quality Checks #1055: Pull request #6033 edited by zhcalvin 5m 0s 5m 0s View #6033 View workflow file Add lingti-bot to Bot Building tests #3358: Pull request #6033 opened by zhcalvin 41s zhcalvin:main zhcalvin:main 41s View #6033 View workflow file Add lingti-bot to Bot Building PR Quality Checks #1054: Pull request #6033 opened by zhcalvin 12s 12s View #6033 View workflow file Add kreuzberg tests #3357: Pull request #6032 opened by Goldziher 40s Goldziher:add-kreuzberg Goldziher:add-kreuzberg 40s View #6032 View workflow file Add kreuzberg PR Quality Checks #1053: Pull request #6032 opened by Goldziher 4m 54s 4m 54s View #6032 View workflow file Add Project Colima tests #3356: Pull request #6031 opened by matheusandre1 37s matheusandre1:issue5563part3 matheusandre1:issue5563part3 37s View #6031 View workflow file Add Project Colima PR Quality Checks #1052: Pull request #6031 opened by matheusandre1 4m 59s 4m 59s View #6031 View workflow file Previous 1 2 3 4 5 &hellip; 102 103 Next You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Favelino%2Fawesome-go%2Factions)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Favelino%2Fawesome-go%2Factions)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Factions%2Findex&source=header-repo&source_repo=avelino%2Fawesome-go)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[avelino](/avelino)
+/
+**[awesome-go](/avelino/awesome-go)**
+Public
+
+* ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* [Notifications](/login?return_to=%2Favelino%2Fawesome-go) You must be signed in to change notification settings
+* [Fork
+  13.1k](/login?return_to=%2Favelino%2Fawesome-go)
+* [Star
+   168k](/login?return_to=%2Favelino%2Fawesome-go)
+
+* [Code](/avelino/awesome-go)
+* [Issues
+  12](/avelino/awesome-go/issues)
+* [Pull requests
+  158](/avelino/awesome-go/pulls)
+* [Discussions](/avelino/awesome-go/discussions)
+* [Actions](/avelino/awesome-go/actions)
+* [Security
+  0](/avelino/awesome-go/security)
+* [Insights](/avelino/awesome-go/pulse)
+
+Additional navigation options
+
+* [Code](/avelino/awesome-go)
+* [Issues](/avelino/awesome-go/issues)
+* [Pull requests](/avelino/awesome-go/pulls)
+* [Discussions](/avelino/awesome-go/discussions)
+* [Actions](/avelino/awesome-go/actions)
+* [Security](/avelino/awesome-go/security)
+* [Insights](/avelino/awesome-go/pulse)
+
+# Actions: avelino/awesome-go
+
+## Actions
+
+## All workflows All workflows Actions Loading... Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page.
+
+will be ignored since log searching is not yet available
+
+Showing runs from all workflows
+
+will be ignored since log searching is not yet available
+
+**3,142 workflow runs**
+
+**3,142 workflow runs**
+
+Event
+
+# Filter by Event
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching events.
+
+Status
+
+# Filter by Status
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching statuses.
+
+Branch
+
+# Filter by Branch
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching branches.
+
+Actor
+
+# Filter by Actor
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching users.
+
+[Phishing](/avelino/awesome-go/actions/runs/23649112890)
+
+Issues spammy check
+#206:
+Issue [#6162](/avelino/awesome-go/issues/6162)
+opened
+by
+[meshachdiyo22-pixel](/meshachdiyo22-pixel)
+
+19s
+
+19s
+
+* [View workflow file](/avelino/awesome-go/actions/runs/23649112890/workflow)
+
+[Add datatrax to Machine Learning section](/avelino/awesome-go/actions/runs/23615524825)
+
+PR Quality Checks
+#1520:
+Pull request [#6161](/avelino/awesome-go/pull/6161)
+edited
+by
+[rbmuller](/rbmuller)
+
+1m 8s
+
+1m 8s
+
+* [View #6161](/avelino/awesome-go/pull/6161)
+* [View workflow file](/avelino/awesome-go/actions/runs/23615524825/workflow)
+
+[Add datatrax to Machine Learning section](/avelino/awesome-go/actions/runs/23615430732)
+
+tests
+#3710:
+Pull request [#6161](/avelino/awesome-go/pull/6161)
+opened
+by
+[rbmuller](/rbmuller)
+
+48s
+[rbmuller:add-datatrax](/rbmuller/awesome-go/tree/refs/heads/add-datatrax "rbmuller:add-datatrax")
+
+[rbmuller:add-datatrax](/rbmuller/awesome-go/tree/refs/heads/add-datatrax "rbmuller:add-datatrax")
+
+48s
+
+* [View #6161](/avelino/awesome-go/pull/6161)
+* [View workflow file](/avelino/awesome-go/actions/runs/23615430732/workflow)
+
+[Add datatrax to Machine Learning section](/avelino/awesome-go/actions/runs/23615430714)
+
+PR Quality Checks
+#1519:
+Pull request [#6161](/avelino/awesome-go/pull/6161)
+opened
+by
+[rbmuller](/rbmuller)
+
+1m 0s
+
+1m 0s
+
+* [View #6161](/avelino/awesome-go/pull/6161)
+* [View workflow file](/avelino/awesome-go/actions/runs/23615430714/workflow)
+
+[Add coinpaprika-api-go-client to Financial](/avelino/awesome-go/actions/runs/23592470826)
+
+PR Quality Checks
+#1518:
+Pull request [#6125](/avelino/awesome-go/pull/6125)
+edited
+by
+[donbagger](/donbagger)
+
+1m 1s
+
+1m 1s
+
+* [View #6125](/avelino/awesome-go/pull/6125)
+* [View workflow file](/avelino/awesome-go/actions/runs/23592470826/workflow)
+
+[Add coinpaprika-api-go-client to Financial](/avelino/awesome-go/actions/runs/23592349325)
+
+PR Quality Checks
+#1517:
+Pull request [#6125](/avelino/awesome-go/pull/6125)
+edited
+by
+[donbagger](/donbagger)
+
+1m 6s
+
+1m 6s
+
+* [View #6125](/avelino/awesome-go/pull/6125)
+* [View workflow file](/avelino/awesome-go/actions/runs/23592349325/workflow)
+
+[Add coinpaprika-api-go-client to Financial](/avelino/awesome-go/actions/runs/23592011267)
+
+tests
+#3709:
+Pull request [#6125](/avelino/awesome-go/pull/6125)
+synchronize
+by
+[donbagger](/donbagger)
+
+41s
+[donbagger:add-go-coinpaprika](/donbagger/awesome-go/tree/refs/heads/add-go-coinpaprika "donbagger:add-go-coinpaprika")
+
+[donbagger:add-go-coinpaprika](/donbagger/awesome-go/tree/refs/heads/add-go-coinpaprika "donbagger:add-go-coinpaprika")
+
+41s
+
+* [View #6125](/avelino/awesome-go/pull/6125)
+* [View workflow file](/avelino/awesome-go/actions/runs/23592011267/workflow)
+
+[Add coinpaprika-api-go-client to Financial](/avelino/awesome-go/actions/runs/23592010629)
+
+PR Quality Checks
+#1516:
+Pull request [#6125](/avelino/awesome-go/pull/6125)
+synchronize
+by
+[donbagger](/donbagger)
+
+54s
+
+54s
+
+* [View #6125](/avelino/awesome-go/pull/6125)
+* [View workflow file](/avelino/awesome-go/actions/runs/23592010629/workflow)
+
+[fix: pin 5 unpinned action(s) (#6157)](/avelino/awesome-go/actions/runs/23585788510)
+
+tests
+#3708:
+Commit [910b91e](/avelino/awesome-go/commit/910b91e74e2596b6094fef7fac20c2607168df5b)
+pushed
+by
+[phanirithvij](/phanirithvij)
+
+42s
+[main](/avelino/awesome-go/tree/refs/heads/main "main")
+
+[main](/avelino/awesome-go/tree/refs/heads/main "main")
+
+42s
+
+* [View workflow file](/avelino/awesome-go/actions/runs/23585788510/workflow)
+
+[fix: pin 5 unpinned action(s) (#6157)](/avelino/awesome-go/actions/runs/23585788479)
+
+site-deploy
+#1074:
+Commit [910b91e](/avelino/awesome-go/commit/910b91e74e2596b6094fef7fac20c2607168df5b)
+pushed
+by
+[phanirithvij](/phanirithvij)
+
+11m 53s
+[main](/avelino/awesome-go/tree/refs/heads/main "main")
+
+[main](/avelino/awesome-go/tree/refs/heads/main "main")
+
+11m 53s
+
+* [View workflow file](/avelino/awesome-go/actions/runs/23585788479/workflow)
+
+[fix: pin 5 unpinned action(s)](/avelino/awesome-go/actions/runs/23585765821)
+
+PR Quality Checks
+#1515:
+Pull request [#6157](/avelino/awesome-go/pull/6157)
+synchronize
+by
+[phanirithvij](/phanirithvij)
+
+14s
+
+14s
+
+* [View #6157](/avelino/awesome-go/pull/6157)
+* [View workflow file](/avelino/awesome-go/actions/runs/23585765821/workflow)
+
+[fix: pin 5 unpinned action(s)](/avelino/awesome-go/actions/runs/23585765803)
+
+tests
+#3707:
+Pull request [#6157](/avelino/awesome-go/pull/6157)
+synchronize
+by
+[phanirithvij](/phanirithvij)
+
+42s
+[dagecko:runner-guard/fix-ci-security](/dagecko/awesome-go/tree/refs/heads/runner-guard/fix-ci-security "dagecko:runner-guard/fix-ci-security")
+
+[dagecko:runner-guard/fix-ci-security](/dagecko/awesome-go/tree/refs/heads/runner-guard/fix-ci-security "dagecko:runner-guard/fix-ci-security")
+
+42s
+
+* [View #6157](/avelino/awesome-go/pull/6157)
+* [View workflow file](/avelino/awesome-go/actions/runs/23585765803/workflow)
+
+[Add ai to Artificial Intelligence](/avelino/awesome-go/actions/runs/23583000462)
+
+tests
+#3706:
+Pull request [#6159](/avelino/awesome-go/pull/6159)
+opened
+by
+[JoakimCarlsson](/JoakimCarlsson)
+
+39s
+[JoakimCarlsson:add-ai](/JoakimCarlsson/awesome-go/tree/refs/heads/add-ai "JoakimCarlsson:add-ai")
+
+[JoakimCarlsson:add-ai](/JoakimCarlsson/awesome-go/tree/refs/heads/add-ai "JoakimCarlsson:add-ai")
+
+39s
+
+* [View #6159](/avelino/awesome-go/pull/6159)
+* [View workflow file](/avelino/awesome-go/actions/runs/23583000462/workflow)
+
+[Add ai to Artificial Intelligence](/avelino/awesome-go/actions/runs/23583000458)
+
+PR Quality Checks
+#1514:
+Pull request [#6159](/avelino/awesome-go/pull/6159)
+opened
+by
+[JoakimCarlsson](/JoakimCarlsson)
+
+1m 8s
+
+1m 8s
+
+* [View #6159](/avelino/awesome-go/pull/6159)
+* [View workflow file](/avelino/awesome-go/actions/runs/23583000458/workflow)
+
+[fix: pin 5 unpinned action(s)](/avelino/awesome-go/actions/runs/23580384987)
+
+tests
+#3705:
+Pull request [#6157](/avelino/awesome-go/pull/6157)
+opened
+by
+[dagecko](/dagecko)
+
+50s
+[dagecko:runner-guard/fix-ci-security](/dagecko/awesome-go/tree/refs/heads/runner-guard/fix-ci-security "dagecko:runner-guard/fix-ci-security")
+
+[dagecko:runner-guard/fix-ci-security](/dagecko/awesome-go/tree/refs/heads/runner-guard/fix-ci-security "dagecko:runner-guard/fix-ci-security")
+
+50s
+
+* [View #6157](/avelino/awesome-go/pull/6157)
+* [View workflow file](/avelino/awesome-go/actions/runs/23580384987/workflow)
+
+[fix: pin 5 unpinned action(s)](/avelino/awesome-go/actions/runs/23580384956)
+
+PR Quality Checks
+#1513:
+Pull request [#6157](/avelino/awesome-go/pull/6157)
+opened
+by
+[dagecko](/dagecko)
+
+14s
+
+14s
+
+* [View #6157](/avelino/awesome-go/pull/6157)
+* [View workflow file](/avelino/awesome-go/actions/runs/23580384956/workflow)
+
+[Add Den to DevOps Tools](/avelino/awesome-go/actions/runs/23567613308)
+
+PR Quality Checks
+#1512:
+Pull request [#6155](/avelino/awesome-go/pull/6155)
+edited
+by
+[us](/us)
+
+1m 4s
+
+1m 4s
+
+* [View #6155](/avelino/awesome-go/pull/6155)
+* [View workflow file](/avelino/awesome-go/actions/runs/23567613308/workflow)
+
+[Add Den to DevOps Tools](/avelino/awesome-go/actions/runs/23567284955)
+
+PR Quality Checks
+#1511:
+Pull request [#6155](/avelino/awesome-go/pull/6155)
+edited
+by
+[us](/us)
+
+58s
+
+58s
+
+* [View #6155](/avelino/awesome-go/pull/6155)
+* [View workflow file](/avelino/awesome-go/actions/runs/23567284

@@ -337,3 +337,6 @@ Example:
 $> wtmsa -i wt.lay -o wt.lay.cns.fa 2>log.msa
 ```
 
+
+## Metadata
+- **Skill**: generated

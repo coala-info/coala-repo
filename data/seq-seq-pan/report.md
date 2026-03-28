@@ -696,3 +696,6 @@ required arguments:
                         XMFA input file
 ```
 
+
+## Metadata
+- **Skill**: generated

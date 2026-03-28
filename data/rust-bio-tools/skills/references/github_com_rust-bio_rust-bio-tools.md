@@ -1,1 +1,337 @@
-GitHub - rust-bio/rust-bio-tools: A set of command line utilities based on Rust-Bio. Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} rust-bio / rust-bio-tools Public Notifications You must be signed in to change notification settings Fork 20 Star 205 A set of command line utilities based on Rust-Bio. License MIT license 205 stars 20 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 8 Pull requests 6 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights rust-bio/rust-bio-tools master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 610 Commits 610 Commits .cargo .cargo .github .github src src tests tests .gitignore .gitignore .gitpod.yml .gitpod.yml .pre-commit-config.yaml .pre-commit-config.yaml CHANGELOG.md CHANGELOG.md Cargo.toml Cargo.toml Dockerfile Dockerfile LICENSE.md LICENSE.md README.md README.md View all files Repository files navigation README MIT license Rust-Bio-Tools A set of ultra fast and robust command line utilities for bioinformatics tasks based on Rust-Bio. Rust-Bio-Tools provides a command rbt , which currently supports the following operations: a linear time implementation for fuzzy matching of two vcf/bcf files ( rbt vcf-match ) a vcf/bcf to txt converter, that flexibly allows to select tags and properly handles multiallelic sites ( rbt vcf-to-txt ) a linear time round-robin FASTQ splitter that splits a given FASTQ files into a given number of chunks ( rbt fastq-split ) a linear time extraction of depth information from BAMs at given loci ( rbt bam-depth ) a utility to quickly filter records from a FASTQ file ( rbt fastq-filter ) a tool to merge BAM or FASTQ reads using marked duplicates respectively unique molecular identifiers (UMIs) ( rbt collapse-reads-to-fragments bam|fastq ) a tool to generate interactive HTML based reports that offer multiple plots visualizing the provided genomics data in VCF and BAM format ( rbt vcf-report ) a tool to generate an interactive HTML based report from a csv file including visualizations ( rbt csv-report ) a tool for splitting VCF/BCF files into N equal chunks, including BND support ( rbt vcf-split ) a tool to generate visualizations for a specific region of one or multiple BAM files with a given reference contained in a single HTML file ( rbt plot-bam ) Further functionality is added as it is needed by the authors. Check out the Contributing section if you want contribute anything yourself. For a list of changes, take a look at the CHANGELOG . Installation Requirements Rust-Bio-Tools depends rgsl which needs GSL to be installed: Ubuntu: sudo apt-get install libgsl-dev Arch: sudo pacman -S gsl OSX: brew install gsl Bioconda Rust-Bio-Tools is available via Bioconda . With Bioconda set up, installation is as easy as conda install rust-bio-tools Cargo If the Rust compiler and associated Cargo are installed, Rust-Bio-Tools may be installed via cargo install rust-bio-tools Source Download the source code and within the root directory of source run cargo install Usage and Documentation Rust-Bio-Tools installs a command line utility rbt . Issue rbt --help for a summary of all options and tools. Contributing Any contributions are highly welcome. If you plan to contribute we suggest installing pre-commit hooks. To do so: Install pre-commit as explained here Run pre-commit install in the rust-bio-tools base directory This should format, check and lint your code when committing. Authors Johannes Köster ( https://koesterlab.github.io ) Felix Mölder Henning Timm Felix Wiegand About A set of command line utilities based on Rust-Bio. Resources Readme License MIT license Uh oh! There was an error while loading. Please reload this page . Activity Custom properties Stars 205 stars Watchers 22 watching Forks 20 forks Report repository Releases 81 rust-bio-tools v0.42.2 Latest Apr 10, 2024 + 80 releases Packages 0 No packages published Uh oh! There was an error while loading. Please reload this page . Contributors 18 Uh oh! There was an error while loading. Please reload this page . + 4 contributors Languages Rust 77.0% HTML 19.3% JavaScript 3.4% Other 0.3% Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Frust-bio%2Frust-bio-tools)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Frust-bio%2Frust-bio-tools)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=rust-bio%2Frust-bio-tools)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[rust-bio](/rust-bio)
+/
+**[rust-bio-tools](/rust-bio/rust-bio-tools)**
+Public
+
+* [Notifications](/login?return_to=%2Frust-bio%2Frust-bio-tools) You must be signed in to change notification settings
+* [Fork
+  20](/login?return_to=%2Frust-bio%2Frust-bio-tools)
+* [Star
+   205](/login?return_to=%2Frust-bio%2Frust-bio-tools)
+
+* [Code](/rust-bio/rust-bio-tools)
+* [Issues
+  7](/rust-bio/rust-bio-tools/issues)
+* [Pull requests
+  6](/rust-bio/rust-bio-tools/pulls)
+* [Actions](/rust-bio/rust-bio-tools/actions)
+* [Projects](/rust-bio/rust-bio-tools/projects)
+* [Security
+  0](/rust-bio/rust-bio-tools/security)
+* [Insights](/rust-bio/rust-bio-tools/pulse)
+
+Additional navigation options
+
+* [Code](/rust-bio/rust-bio-tools)
+* [Issues](/rust-bio/rust-bio-tools/issues)
+* [Pull requests](/rust-bio/rust-bio-tools/pulls)
+* [Actions](/rust-bio/rust-bio-tools/actions)
+* [Projects](/rust-bio/rust-bio-tools/projects)
+* [Security](/rust-bio/rust-bio-tools/security)
+* [Insights](/rust-bio/rust-bio-tools/pulse)
+
+# rust-bio/rust-bio-tools
+
+master
+
+[Branches](/rust-bio/rust-bio-tools/branches)[Tags](/rust-bio/rust-bio-tools/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[610 Commits](/rust-bio/rust-bio-tools/commits/master/)   610 Commits | | |
+| [.cargo](/rust-bio/rust-bio-tools/tree/master/.cargo ".cargo") | | [.cargo](/rust-bio/rust-bio-tools/tree/master/.cargo ".cargo") |  |  |
+| [.github](/rust-bio/rust-bio-tools/tree/master/.github ".github") | | [.github](/rust-bio/rust-bio-tools/tree/master/.github ".github") |  |  |
+| [src](/rust-bio/rust-bio-tools/tree/master/src "src") | | [src](/rust-bio/rust-bio-tools/tree/master/src "src") |  |  |
+| [tests](/rust-bio/rust-bio-tools/tree/master/tests "tests") | | [tests](/rust-bio/rust-bio-tools/tree/master/tests "tests") |  |  |
+| [.gitignore](/rust-bio/rust-bio-tools/blob/master/.gitignore ".gitignore") | | [.gitignore](/rust-bio/rust-bio-tools/blob/master/.gitignore ".gitignore") |  |  |
+| [.gitpod.yml](/rust-bio/rust-bio-tools/blob/master/.gitpod.yml ".gitpod.yml") | | [.gitpod.yml](/rust-bio/rust-bio-tools/blob/master/.gitpod.yml ".gitpod.yml") |  |  |
+| [.pre-commit-config.yaml](/rust-bio/rust-bio-tools/blob/master/.pre-commit-config.yaml ".pre-commit-config.yaml") | | [.pre-commit-config.yaml](/rust-bio/rust-bio-tools/blob/master/.pre-commit-config.yaml ".pre-commit-config.yaml") |  |  |
+| [CHANGELOG.md](/rust-bio/rust-bio-tools/blob/master/CHANGELOG.md "CHANGELOG.md") | | [CHANGELOG.md](/rust-bio/rust-bio-tools/blob/master/CHANGELOG.md "CHANGELOG.md") |  |  |
+| [Cargo.toml](/rust-bio/rust-bio-tools/blob/master/Cargo.toml "Cargo.toml") | | [Cargo.toml](/rust-bio/rust-bio-tools/blob/master/Cargo.toml "Cargo.toml") |  |  |
+| [Dockerfile](/rust-bio/rust-bio-tools/blob/master/Dockerfile "Dockerfile") | | [Dockerfile](/rust-bio/rust-bio-tools/blob/master/Dockerfile "Dockerfile") |  |  |
+| [LICENSE.md](/rust-bio/rust-bio-tools/blob/master/LICENSE.md "LICENSE.md") | | [LICENSE.md](/rust-bio/rust-bio-tools/blob/master/LICENSE.md "LICENSE.md") |  |  |
+| [README.md](/rust-bio/rust-bio-tools/blob/master/README.md "README.md") | | [README.md](/rust-bio/rust-bio-tools/blob/master/README.md "README.md") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* MIT license
+
+[![Gitpod Ready-to-Code](https://camo.githubusercontent.com/c01324668ea00cd2b02dc9fbf541676fb30543b69ef99a070d62a110917126d0/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f476974706f642d72656164792d2d746f2d2d636f64652d626c75653f6c6f676f3d676974706f64)](https://gitpod.io/#https://github.com/rust-bio/rust-bio-tools)
+[![Bioconda downloads](https://camo.githubusercontent.com/bb4aadca7366f3fc88dc330037df0a262a8626ac0b008f5840e9bba046955d86/68747470733a2f2f696d672e736869656c64732e696f2f636f6e64612f646e2f62696f636f6e64612f727573742d62696f2d746f6f6c732e7376673f7374796c653d666c6174)](http://bioconda.github.io/recipes/rust-bio-tools/README.html)
+[![Bioconda version](https://camo.githubusercontent.com/a71dabc29f7061af4d1f45b27497ac25c8bcf91348737461461dc35111657889/68747470733a2f2f696d672e736869656c64732e696f2f636f6e64612f766e2f62696f636f6e64612f727573742d62696f2d746f6f6c732e7376673f7374796c653d666c6174)](http://bioconda.github.io/recipes/rust-bio-tools/README.html)
+[![install with bioconda](https://camo.githubusercontent.com/9940610b859f8e4dd2daade6d2f4fb4c45d56afedc37ae98d8617daf79c1f836/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f696e7374616c6c253230776974682d62696f636f6e64612d627269676874677265656e2e7376673f7374796c653d666c6174)](http://bioconda.github.io/recipes/rust-bio-tools/README.html)
+[![Licence](https://camo.githubusercontent.com/9dbcbf5bdb3ac04dae0063666e28c9d7060f48975069018c1298eedb66740fc7/68747470733a2f2f696d672e736869656c64732e696f2f636f6e64612f6c2f62696f636f6e64612f727573742d62696f2d746f6f6c732e7376673f7374796c653d666c6174)](http://bioconda.github.io/recipes/rust-bio-tools/README.html)
+[![GitHub Workflow Status](https://camo.githubusercontent.com/62b5672b6ff10c4ea2055ad1859b48b0c6fcf67b902f2a7c7e12c20463245d98/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f776f726b666c6f772f7374617475732f727573742d62696f2f727573742d62696f2d746f6f6c732f4349)](https://github.com/rust-bio/rust-bio-tools/actions)
+
+# Rust-Bio-Tools
+
+A set of ultra fast and robust command line utilities for bioinformatics tasks based on Rust-Bio.
+Rust-Bio-Tools provides a command `rbt`, which currently supports the following operations:
+
+* a linear time implementation for fuzzy matching of two vcf/bcf files (`rbt vcf-match`)
+* a vcf/bcf to txt converter, that flexibly allows to select tags and properly handles multiallelic sites (`rbt vcf-to-txt`)
+* a linear time round-robin FASTQ splitter that splits a given FASTQ files into a given number of chunks (`rbt fastq-split`)
+* a linear time extraction of depth information from BAMs at given loci (`rbt bam-depth`)
+* a utility to quickly filter records from a FASTQ file (`rbt fastq-filter`)
+* a tool to merge BAM or FASTQ reads using marked duplicates respectively unique molecular identifiers (UMIs) (`rbt collapse-reads-to-fragments bam|fastq`)
+* a tool to generate interactive HTML based reports that offer multiple plots visualizing the provided genomics data in VCF and BAM format (`rbt vcf-report`)
+* a tool to generate an interactive HTML based report from a csv file including visualizations (`rbt csv-report`)
+* a tool for splitting VCF/BCF files into N equal chunks, including BND support (`rbt vcf-split`)
+* a tool to generate visualizations for a specific region of one or multiple BAM files with a given reference contained in a single HTML file (`rbt plot-bam`)
+
+Further functionality is added as it is needed by the authors. Check out the [Contributing](#Contributing) section if you want contribute anything yourself.
+For a list of changes, take a look at the [CHANGELOG](/rust-bio/rust-bio-tools/blob/master/CHANGELOG.md).
+
+## Installation
+
+### Requirements
+
+Rust-Bio-Tools depends [rgsl](https://docs.rs/GSL/%2A/rgsl/) which needs [GSL](https://www.gnu.org/software/gsl/) to be installed:
+
+* Ubuntu: `sudo apt-get install libgsl-dev`
+* Arch: `sudo pacman -S gsl`
+* OSX: `brew install gsl`
+
+### Bioconda
+
+Rust-Bio-Tools is available via [Bioconda](https://bioconda.github.io).
+With Bioconda set up, installation is as easy as
+
+```
+conda install rust-bio-tools
+```
+
+### Cargo
+
+If the [Rust](https://www.rust-lang.org/tools/install) compiler and associated [Cargo](https://github.com/rust-lang/cargo/) are installed, Rust-Bio-Tools may be installed via
+
+```
+cargo install rust-bio-tools
+```
+
+### Source
+
+Download the source code and within the root directory of source run
+
+```
+cargo install
+```
+
+## Usage and Documentation
+
+Rust-Bio-Tools installs a command line utility `rbt`. Issue
+
+```
+rbt --help
+```
+
+for a summary of all options and tools.
+
+## Contributing
+
+Any contributions are highly welcome. If you plan to contribute we suggest installing pre-commit hooks. To do so:
+
+1. Install `pre-commit` as explained [here](https://pre-commit.com/#installation)
+2. Run `pre-commit install` in the rust-bio-tools base directory
+
+This should format, check and lint your code when committing.
+
+## Authors
+
+* [Johannes Köster](https://github.com/johanneskoester) (<https://koesterlab.github.io>)
+* [Felix Mölder](https://github.com/FelixMoelder)
+* [Henning Timm](https://github.com/HenningTimm)
+* [Felix Wiegand](https://github.com/fxwiegand)
+
+## About
+
+A set of command line utilities based on Rust-Bio.
+
+### Resources
+
+[Readme](#readme-ov-file)
+
+### License
+
+[MIT license](#MIT-1-ov-file)
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+[Activity](/rust-bio/rust-bio-tools/activity)
+
+[Custom properties](/rust-bio/rust-bio-tools/custom-properties)
+
+### Stars
+
+[**205**
+stars](/rust-bio/rust-bio-tools/stargazers)
+
+### Watchers
+
+[**22**
+watching](/rust-bio/rust-bio-tools/watchers)
+
+### Forks
+
+[**20**
+forks](/rust-bio/rust-bio-tools/forks)
+
+[Report repository](/contact/report-content?content_url=https%3A%2F%2Fgithub.com%2Frust-bio%2Frust-bio-tools&report=rust-bio+%28user%29)
+
+## [Releases 81](/rust-bio/rust-bio-too

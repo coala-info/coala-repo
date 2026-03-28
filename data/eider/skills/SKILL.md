@@ -1,6 +1,6 @@
 ---
 name: eider
-description: eider is a command-line interface for DuckDB that enables high-performance SQL query execution and data processing on files or persistent databases. Use when user asks to execute SQL queries on Parquet or CSV files, run parameterized SQL templates, or manage DuckDB databases from the terminal.
+description: Eider is a command-line utility for executing SQL queries against DuckDB using inline strings, standard input, or external files. Use when user asks to run SQL queries from the terminal, execute templated SQL scripts with parameters, or interact with DuckDB database files and Parquet data.
 homepage: https://github.com/heuermh/eider
 ---
 
@@ -9,52 +9,64 @@ homepage: https://github.com/heuermh/eider
 
 ## Overview
 
-eider is a specialized command-line interface for DuckDB that facilitates high-performance data processing within a terminal environment. It allows users to execute SQL queries directly against files (such as Parquet or CSV) or persistent DuckDB databases. By supporting SQL templates with runtime parameters, eider enables the creation of reusable data transformation scripts that can be easily integrated into larger bioinformatics workflows.
+Eider is a specialized command-line utility designed to interface with DuckDB. It provides a streamlined way to execute SQL queries directly from the terminal, supporting inline strings, standard input, or external files. Its primary strength lies in its support for `${key}`-style template parameters, allowing you to create reusable SQL scripts where variables like table names, column identifiers, or filter criteria can be injected at runtime.
 
-## Command Line Usage
+## CLI Usage Patterns
 
-### Basic Query Execution
-Execute SQL directly from the command line using the `-q` or `--query` flag. By default, eider uses an in-memory DuckDB instance.
+### Executing Queries
+Eider supports three primary methods for providing SQL:
 
-```bash
-eider -q "SELECT * FROM 'data.parquet' LIMIT 5"
+1.  **Inline Query**: Use the `-q` or `--query` flag for quick, one-off commands.
+    ```bash
+    eider -q "SELECT * FROM 'data.parquet' LIMIT 10"
+    ```
+2.  **Standard Input (Pipe)**: Useful for chaining eider with other CLI tools.
+    ```bash
+    echo "SELECT count(*) FROM read_csv_auto('logs.csv')" | eider
+    ```
+3.  **Query File**: Use the `-i` or `--query-path` flag to execute complex SQL scripts.
+    ```bash
+    eider -i analysis_script.sql
+    ```
+
+### Using Template Parameters
+Eider allows for dynamic SQL generation using placeholders. Placeholders must follow the `${key}` format within your SQL file.
+
+**Template (template.sql):**
+```sql
+SELECT ${column} FROM ${table} WHERE status = '${status_val}';
 ```
 
-### Working with SQL Files
-For complex queries, store the SQL in a file and reference it with `-i` or `--query-path`.
-
+**Execution:**
 ```bash
-eider -i analysis.sql
+eider -i template.sql -p column=user_id -p table=users -p status_val=active
 ```
 
-Alternatively, pipe queries into eider via stdin:
-
+### Connection Management
+By default, eider connects to an in-memory DuckDB instance (`jdbc:duckdb:`). To work with a persistent database file, specify the JDBC URL:
 ```bash
-echo "SELECT count(*) FROM 'samples.parquet'" | eider
+eider -u "jdbc:duckdb:my_database.db" -q "SELECT * FROM my_table"
 ```
 
-### SQL Templating with Parameters
-eider supports `${key}` style placeholders in SQL files. Use the `-p` or `--parameters` flag to inject values at runtime. This is highly effective for creating generic scripts for different datasets.
+## Expert Tips and Best Practices
 
-```bash
-# template.sql: SELECT * FROM ${table} WHERE quality > ${min_q}
-eider -i template.sql -p table=variants.parquet -p min_q=30
-```
+*   **Sensitive Data**: Use the `--skip-history` flag when executing queries containing passwords, tokens, or PII to prevent them from being saved to `~/.eider_history`.
+*   **Formatting**: If your SQL relies on specific formatting or you are debugging complex joins, use `--preserve-whitespace` to ensure the query is passed to the engine exactly as written.
+*   **Debugging**: Enable `--verbose` to see additional logging messages, which is helpful for troubleshooting JDBC connection issues or parameter replacement errors.
+*   **Parquet Integration**: Since DuckDB is highly optimized for Parquet, use eider as a fast inspector for Parquet files without needing to write a full Python or R script.
+    ```bash
+    eider -q "SELECT * FROM 'file.parquet' WHERE 1=0" # Quick schema check
+    ```
 
-### Persistent Databases
-To work with a local DuckDB database file instead of an in-memory instance, specify the JDBC connection URL.
 
-```bash
-eider -u "jdbc:duckdb:my_bio_data.db" -q "SELECT * FROM gene_expressions"
-```
 
-## Best Practices and Tips
+## Subcommands
 
-- **Query History**: eider saves queries to `~/.eider_history`. If you are working with sensitive data or want to keep your history clean during automated loops, use the `--skip-history` flag.
-- **Whitespace Preservation**: If your SQL relies on specific formatting or you are debugging complex nested queries, use `--preserve-whitespace` to ensure the query is passed exactly as written.
-- **Bioinformatics Integration**: Since eider is available via Bioconda, it is best used as a "glue" tool to query the output of other bioinformatics tools (like Parquet files generated from VCFs or BAMs) within a shell script.
-- **Logging**: Use `--verbose` when debugging connection issues or parameter injection to see additional logging messages.
+| Command | Description |
+|---------|-------------|
+| eider | Bash completion support for the `eider` command |
+| eider | Eider is a command-line tool for interacting with databases using SQL queries. |
 
 ## Reference documentation
 - [eider GitHub Repository](./references/github_com_heuermh_eider.md)
-- [eider Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_eider_overview.md)
+- [eider README](./references/github_com_heuermh_eider_blob_main_README.md)

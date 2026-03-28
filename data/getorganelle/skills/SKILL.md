@@ -1,6 +1,6 @@
 ---
 name: getorganelle
-description: GetOrganelle is a toolkit designed to extract and assemble organelle genomes from total genomic skimming data. Use when user asks to assemble chloroplast or mitochondrial genomes, extract organelle sequences from sequencing reads, or initialize organelle databases.
+description: GetOrganelle is a toolkit designed to assemble organelle genomes from Illumina sequencing data using a seed-and-extend algorithm. Use when user asks to assemble chloroplast genomes, plant or animal mitochondria, or nuclear ribosomal DNA from genomic reads.
 homepage: http://github.com/Kinggerm/GetOrganelle
 ---
 
@@ -9,59 +9,81 @@ homepage: http://github.com/Kinggerm/GetOrganelle
 
 ## Overview
 
-GetOrganelle is a specialized toolkit designed to extract and assemble organelle genomes from total genomic "skimming" data. It utilizes a "seed-and-extend" strategy: it starts with a seed sequence (provided or default), recruits target reads through multiple rounds of extension, performs de novo assembly using SPAdes, and then slims and disentangles the resulting assembly graph to produce final organelle sequences. It is highly regarded for its ability to produce circularized plastomes and mitogenomes with minimal manual intervention.
+GetOrganelle is a versatile toolkit designed to accurately assemble organelle genomes from Illumina sequencing data. It works by using a "seed-and-extend" algorithm: it identifies target-related reads using a seed database, extends those reads into a larger pool, and then performs de novo assembly and graph disentanglement to produce circular or linear organelle genomes. It is particularly effective for plant plastomes (chloroplasts), plant mitochondria, and animal/fungal mitogenomes.
 
-## Configuration and Database Setup
+## Core Workflow
 
-Before running assemblies, you must initialize the local database for the specific organelle types you are targeting.
+### 1. Database Initialization
+Before first use, you must download the reference databases for your target organelle type.
 
 ```bash
-# Initialize for embryophyte chloroplast (plastome) and mitochondria
+# Initialize chloroplast and plant mitochondria databases
 get_organelle_config.py --add embplant_pt,embplant_mt
-
-# Other available types: embplant_nr, fungus_mt, fungus_nr, animal_mt, other_pt
 ```
 
-## Primary Workflow: Assembly from Reads
+**Supported Types (`-F`):**
+- `embplant_pt`: Embryophyte plant plastome (chloroplast)
+- `embplant_mt`: Embryophyte plant mitochondria
+- `embplant_nr`: Embryophyte plant nuclear ribosomal DNA
+- `animal_mt`: Animal mitochondria
+- `fungus_mt`: Fungus mitochondria
+- `other_pt`: Other plant plastomes
 
-The most common entry point is `get_organelle_from_reads.py`.
+### 2. Assembly from Reads
+The primary command for assembly is `get_organelle_from_reads.py`.
 
-### Basic Command Pattern
 ```bash
-get_organelle_from_reads.py -1 forward_reads.fq.gz -2 reverse_reads.fq.gz \
-    -o output_directory \
-    -F embplant_pt \
-    -t 8 \
-    -R 15
+# Standard paired-end assembly
+get_organelle_from_reads.py -1 forward.fq.gz -2 reverse.fq.gz -o output_dir -F embplant_pt -R 15 -t 4
 ```
 
-### Key Parameters
-- `-1`, `-2`: Input paired-end reads (fastq or fastq.gz).
+**Key Parameters:**
+- `-1`, `-2`: Forward and reverse fastq files (can be `.gz`).
 - `-o`: Output directory.
-- `-F`: Target organelle type (e.g., `embplant_pt`, `animal_mt`, `fungus_mt`).
-- `-R`: Maximum rounds of extension (default is 15; increase for low-coverage or difficult samples).
-- `-k`: K-mer sizes for SPAdes (e.g., `-k 21,45,65,85,105`). A wide range helps resolve repeats.
-- `-w`: Word size for seed searching. Usually auto-estimated, but can be manually set if auto-estimation fails.
-- `-s`: Path to a custom seed (fasta). Using a related species' genome as a seed can significantly improve results for degraded or highly divergent samples.
+- `-F`: Target organelle type (see list above).
+- `-R`: Maximum extension rounds. Increase (e.g., 20-30) if the assembly is incomplete.
+- `-k`: K-mer gradient for SPAdes (default: 21,45,65,85,105).
+- `-w`: Word size for seed searching. Usually automatically estimated.
 
-## Expert Tips and Best Practices
+### 3. Using Custom Seeds
+If the default seeds fail to recruit enough reads, provide a related species' genome as a seed.
 
-### Input Data Quality
-- **Trim Adapters**: Always use adapter-trimmed reads.
-- **Quality Control**: While GetOrganelle is robust, extremely aggressive quality filtering can sometimes remove low-abundance organelle reads. Standard trimming is usually sufficient.
-- **Data Volume**: For most angiosperms, 1-2 GB of data per end is sufficient for plastomes. Mitochondria may require 5 GB or more.
-
-### Handling Assembly Failures
-- **Non-Circular Results**: If the assembly does not circularize, try increasing the number of extension rounds (`-R`) or providing a more closely related seed sequence (`-s`).
-- **Memory Issues**: If SPAdes runs out of memory, you can limit the number of reads used with `--max-reads` or `--reduce-reads-for-coverage`.
-- **Animal Mitogenomes**: Auto-estimated word sizes (`-w`) can sometimes be inaccurate for animal data. If recruitment is low, try manually setting a smaller word size (e.g., `-w 15`).
-
-### Post-Assembly Utilities
-If you already have a completed assembly graph (GFA) and want to re-extract the organelle:
 ```bash
-get_organelle_from_assembly.py -g assembly_graph.gfa -F embplant_pt -o output_dir
+get_organelle_from_reads.py -1 R1.fq -2 R2.fq -s related_genome.fasta -o output_dir -F embplant_pt
 ```
+
+## Expert Tips & Troubleshooting
+
+### Handling Non-Circular Results
+If the assembly does not result in a circular genome (check `get_org.log.txt` or look for `*path_sequence.fasta` files):
+- **Increase `-R`**: Allow more rounds of read recruitment.
+- **Adjust K-mers**: If the graph is too complex, try adding a larger k-mer (e.g., `-k 21,45,65,85,105,121`).
+- **Reduce Data**: If coverage is too high (causing assembly "noise"), use `--reduce-reads-for-coverage 100` to downsample.
+
+### Assembly from Existing Graphs
+If you have already run an assembly and want to re-disentangle the graph with different parameters without re-running the recruitment/SPAdes steps:
+
+```bash
+get_organelle_from_assembly.py -g assembly_graph.fastg -F embplant_pt -o new_disentanglement
+```
+
+### Memory Management
+For large datasets (especially plant mitochondria), GetOrganelle can be memory-intensive.
+- Use `-t` to limit threads.
+- Ensure `psutil` is installed for better memory monitoring in logs.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| get_organelle_config.py | is used for setting up default GetOrganelle database. |
+| get_organelle_from_assembly.py | isolates organelle genomes from assembly graph. |
+| get_organelle_from_reads.py | GetOrganelle v1.7.7.1 get_organelle_from_reads.py assembles organelle genomes from genome skimming data. |
 
 ## Reference documentation
-- [GetOrganelle Main Repository](./references/github_com_Kinggerm_GetOrganelle.md)
-- [GetOrganelle Wiki and Usage Guide](./references/github_com_Kinggerm_GetOrganelle_wiki.md)
+- [GetOrganelle Usage Guide](./references/github_com_Kinggerm_GetOrganelle_wiki_Usage.md)
+- [Database Initialization](./references/github_com_Kinggerm_GetOrganelle_wiki_Initialization.md)
+- [Frequently Asked Questions](./references/github_com_Kinggerm_GetOrganelle_wiki_FAQ.md)
+- [Example 1: Plastome Assembly](./references/github_com_Kinggerm_GetOrganelle_wiki_Example-1.md)

@@ -1,6 +1,6 @@
 ---
 name: haphpipe
-description: HAPHPIPE is a bioinformatics toolset designed to process raw viral NGS data into consensus sequences and haplotype reconstructions. Use when user asks to process raw reads, perform de novo or reference-based assembly, refine consensus sequences, or call variants in viral genomics datasets.
+description: HAPHPIPE is a bioinformatics framework for processing viral genomics data into consensus sequences and haplotypes. Use when user asks to process raw reads, assemble viral genomes, align reads to a reference, call variants, or generate consensus sequences.
 homepage: https://github.com/gwcbi/haphpipe
 ---
 
@@ -8,58 +8,93 @@ homepage: https://github.com/gwcbi/haphpipe
 # haphpipe
 
 ## Overview
-HAPHPIPE is a specialized bioinformatics toolset designed for viral genomics. It streamlines the transition from raw Next-Generation Sequencing (NGS) data to refined consensus sequences and haplotype reconstructions. It is particularly useful for researchers working with highly diverse viral populations where standard assembly tools might struggle with intra-host variation. The tool is organized into modular stages (reads, assembly, haplotype, description, and phylodynamics) that can be run as standalone commands or as part of integrated pipelines.
+
+HAPHPIPE (HAplotype and PHylodynamics PIPEline) is a specialized bioinformatics framework designed for viral genomics. It streamlines the transition from raw FASTQ reads to refined consensus sequences and reconstructed haplotypes. The tool is particularly effective for analyzing high-diversity viral populations, offering both automated pipelines for standard workflows and modular stages for custom analysis. It integrates several industry-standard tools like SPAdes, Trimmomatic, Bowtie2, and GATK into a unified command-line interface.
 
 ## Installation and Setup
-HAPHPIPE is primarily distributed via Bioconda. A critical post-installation step is the manual registration of GATK, which is required for variant calling.
 
-1. **Install via Conda**:
-   `conda install -c bioconda haphpipe`
+Before running HAPHPIPE, ensure the environment is correctly configured, specifically regarding GATK which requires manual registration due to licensing.
 
-2. **Register GATK (Required)**:
-   HAPHPIPE requires GATK version 3.8-0. After downloading the licensed copy from the Broad Institute, register it within your environment:
-   `gatk3-register /path/to/GenomeAnalysisTK-3.8-0-ge9d806836.tar.bz2`
+1.  **Environment Activation**: `conda activate haphpipe`
+2.  **GATK Registration**: HAPHPIPE requires GATK 3.8.
+    ```bash
+    gatk3-register /path/to/GenomeAnalysisTK-3.8-0-ge9d806836.tar.bz2
+    ```
+3.  **Verification**: Run the demo to ensure all dependencies are functional.
+    ```bash
+    hp_demo --outdir test_run
+    ```
 
-3. **Verify Installation**:
-   Run the built-in demo to ensure all dependencies are correctly configured:
-   `hp_demo --outdir test_run`
+## Core Workflows
 
-## Common CLI Patterns
+### Automated Pipelines
+For standard amplicon assembly, use the high-level pipeline scripts:
+*   **De novo approach**: `haphpipe_assemble_01` (Uses error-corrected reads and up to 5 refinement steps).
+*   **Reference-based approach**: `haphpipe_assemble_02` (Maps reads to a reference and iteratively refines).
 
-### Read Processing (hp_reads)
-Before assembly, use these modules to clean and prepare your raw FASTQ data.
+### Modular Stages
+HAPHPIPE commands follow the pattern: `haphpipe <stage_name> [options]`
 
-*   **Subsampling**: Reduce dataset size for testing or to normalize coverage.
-    `haphpipe sample_reads --fq1 read_1.fastq --fq2 read_2.fastq --nreads 1000 --seed 1234`
-*   **Trimming**: Remove adapters and low-quality bases using Trimmomatic.
-    `haphpipe trim_reads --fq1 read_1.fastq --fq2 read_2.fastq`
-*   **Error Correction**: Use SPAdes to correct sequencing errors in reads.
-    `haphpipe ec_reads --fq1 trimmed_1.fastq --fq2 trimmed_2.fastq`
+#### 1. Read Processing (hp_reads)
+*   **Subsampling**: `haphpipe sample_reads --fq1 r1.fq --fq2 r2.fq --nreads 1000 --seed 1234`
+*   **Trimming**: `haphpipe trim_reads --fq1 r1.fq --fq2 r2.fq`
+*   **Error Correction**: `haphpipe ec_reads --fq1 trimmed_1.fq --fq2 trimmed_2.fq` (Uses SPAdes).
 
-### Assembly and Refinement (hp_assemble)
-HAPHPIPE supports both de novo and reference-based assembly.
+#### 2. Assembly and Alignment (hp_assemble)
+*   **De novo Assembly**: 
+    ```bash
+    haphpipe assemble_denovo --fq1 c1.fq --fq2 c2.fq --outdir denovo_out --no_error_correction TRUE
+    ```
+*   **Scaffolding**: `haphpipe assemble_scaffold --contigs_fa contigs.fa --ref_fa ref.fa`
+*   **Reference Mapping**: `haphpipe align_reads --fq1 c1.fq --fq2 c2.fq --ref_fa ref.fa`
+*   **Refinement**: Iteratively update an assembly by mapping reads back to it.
+    ```bash
+    haphpipe refine_assembly --fq1 c1.fq --fq2 c2.fq --ref_fa initial_assembly.fna
+    ```
 
-*   **De Novo Assembly**:
-    `haphpipe assemble_denovo --fq1 corrected_1.fastq --fq2 corrected_2.fastq --outdir denovo_assembly`
-*   **Reference-Based Alignment**:
-    `haphpipe align_reads --fq1 corrected_1.fastq --fq2 corrected_2.fastq --ref_fa reference.fasta`
-*   **Iterative Refinement**: Map reads back to a draft assembly to improve the consensus.
-    `haphpipe refine_assembly --fq_1 corrected_1.fastq --fq2 corrected_2.fastq --ref_fa draft.fasta`
-*   **Finalization**: Generate the final consensus, BAM alignment, and VCF file.
-    `haphpipe finalize_assembly --fq_1 corrected_1.fastq --fq2 corrected_2.fastq --ref_fa refined.fna`
+#### 3. Variant Calling and Consensus
+*   **Call Variants**: `haphpipe call_variants --aln_bam alignment.bam --ref_fa ref.fa` (Outputs VCF).
+*   **Consensus Generation**: `haphpipe vcf_to_consensus --vcf variants.vcf`
+*   **Finalization**: Performs final consensus generation, mapping, and variant calling in one step.
+    ```bash
+    haphpipe finalize_assembly --fq1 c1.fq --fq2 c2.fq --ref_fa refined.fna
+    ```
 
-### Variant Calling
-*   **Call Variants**: Generate a VCF from an alignment.
-    `haphpipe call_variants --aln_bam alignment.bam --ref_fa reference.fasta`
-*   **Consensus Generation**: Create a FASTA consensus from a VCF.
-    `haphpipe vcf_to_consensus --vcf variants.vcf`
+## Best Practices
 
-## Expert Tips and Best Practices
-*   **Pipeline Selection**: Use `haphpipe_assemble_01` for amplicon data where no close reference exists (de novo approach). Use `haphpipe_assemble_02` when a reliable reference sequence is available.
-*   **Memory Management**: For `assemble_denovo`, HAPHPIPE uses SPAdes. Ensure your environment has sufficient RAM for the k-mer sizes being explored.
-*   **Reference Files**: If you only need the internal HIV reference files provided by the tool, use `hp_demo --refonly` to extract them without running the full demo.
-*   **Module Independence**: Every stage in HAPHPIPE is designed to be modular. If a specific pipeline step fails, you can manually run the individual stage (e.g., `haphpipe sample_reads`) with modified parameters to troubleshoot.
+*   **Error Correction**: Always perform error correction (`ec_reads`) before de novo assembly to improve contig length and accuracy, especially for viral populations with high minor-variant frequency.
+*   **Refinement Steps**: The automated pipelines default to 5 refinement steps. If the consensus sequence is still changing significantly between steps 4 and 5, consider running `refine_assembly` manually for additional iterations.
+*   **Reference Selection**: For `assemble_scaffold` or `align_reads`, use a reference sequence as phylogenetically close to the sample as possible to minimize mapping bias.
+*   **Memory Management**: Stages like `assemble_denovo` (SPAdes) are memory-intensive. Ensure your environment has sufficient RAM allocated for large FASTQ files.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| haphpipe align_reads | Align reads to a reference genome using Bowtie2. |
+| haphpipe assemble_amplicons | Assemble amplicons using HAPHPipe. |
+| haphpipe assemble_denovo | De novo assembly using Haphpipe |
+| haphpipe assemble_scaffold | Assemble and scaffold contigs using a reference genome. |
+| haphpipe build_tree_NG | Build phylogenetic trees using RAxML-NG |
+| haphpipe call_variants | Call variants using HaplotypeCaller. |
+| haphpipe cliquesnv | Haphpipe tool for CliqueSNV analysis. |
+| haphpipe extract_pairwise | Extract pairwise alignment information from a JSON file. |
+| haphpipe finalize_assembly | Finalize assembly by mapping reads to consensus and fixing consensus. |
+| haphpipe join_reads | Joins paired-end reads using FLASH. |
+| haphpipe model_test | ModelTest-NG wrapper for HAPHpipe |
+| haphpipe multiple_align | Aligns multiple sequences using MAFFT. |
+| haphpipe pairwise_align | Perform pairwise alignment of assembled amplicons to a reference genome. |
+| haphpipe ph_parser | Parses the output of PredictHaplo to create a FASTA file of haplotypes. |
+| haphpipe sample_reads | Sample reads from fastq files. |
+| haphpipe summary_stats | Calculate summary statistics for Haplotype Pipeline results. |
+| haphpipe trim_reads | Trims adapter sequences and low-quality bases from FASTQ files. |
+| haphpipe_demo | Runs a demo of HAPHPipe. |
+| haphpipe_ec_reads | Extracts reads from FASTQ files based on various criteria. |
+| predict_haplo | Predict haplotypes for a given region. |
+| vcf_to_consensus | Convert VCF to consensus sequence. |
 
 ## Reference documentation
-- [HAPHPIPE GitHub Repository](./references/github_com_gwcbi_haphpipe.md)
-- [Bioconda HAPHPIPE Overview](./references/anaconda_org_channels_bioconda_packages_haphpipe_overview.md)
+- [HAPHPIPE Main Repository](./references/github_com_gwcbi_haphpipe.md)
+- [HAPHPIPE Wiki](./references/github_com_gwcbi_haphpipe_wiki.md)

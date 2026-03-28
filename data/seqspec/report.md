@@ -598,3 +598,6 @@ options:
   -o OUT, --output OUT  Path to output file
 ```
 
+
+## Metadata
+- **Skill**: generated

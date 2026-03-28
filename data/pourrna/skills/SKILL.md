@@ -1,63 +1,52 @@
 ---
 name: pourrna
-description: pourRNA maps the energy landscape of an RNA sequence by identifying local minima and calculating transition rates between structures. Use when user asks to map RNA energy landscapes, identify representative structures, calculate thermodynamic equilibrium densities, or generate transition rate matrices for kinetic simulations.
-homepage: https://github.com/ViennaRNA/pourRNA
+description: pourrna maps RNA energy landscapes by identifying gradient basins and calculating transition rates between local minima. Use when user asks to explore RNA folding pathways, identify local minima, calculate transition rates between basins, or analyze RNA kinetic behavior.
+homepage: https://github.com/ViennaRNA/pourRNA/
 ---
 
 
 # pourrna
 
 ## Overview
+The `pourrna` tool is designed for the detailed exploration of RNA energy landscapes. While standard tools often focus solely on the single Minimum Free Energy (MFE) structure, `pourrna` uses a "flooding" algorithm to map out the various peaks and valleys (local minima) of the landscape. It identifies gradient basins—sets of structures that fold into the same local minimum—and calculates the transition rates between these basins. This is essential for understanding RNA switches, folding pathways, and the kinetic behavior of RNA molecules over time.
 
-The `pourRNA` tool is a specialized utility within the ViennaRNA ecosystem designed to map the energy landscape of a given RNA sequence. Unlike exhaustive state-space explorers, it utilizes efficient local flooding techniques and heuristics to identify representative structures (local minima) and the transition rates between them. It is particularly useful for researchers needing to understand the dynamic folding behavior of RNA or to calculate thermodynamic equilibrium densities without simulating every possible configuration.
+## Usage Guidelines
 
-## Basic Usage
+### Core Command Line Patterns
+The tool is typically invoked via the `pourRNA` executable. It relies on the ViennaRNA library for underlying energy evaluations.
 
-The tool accepts RNA sequences via standard input or direct command-line arguments.
+*   **Basic Landscape Exploration**:
+    Run the tool with default parameters to identify the primary basins and transition rates for a given sequence.
+*   **Controlling Flooding Depth**:
+    Use energy thresholds to limit the search space and prevent computational explosion on long sequences.
+    *   `--deltaE <value>`: Sets the maximum energy height to flood above each local minimum.
+    *   `--maxEnergy <value>`: Sets an absolute energy threshold for the flooding process.
+*   **Heuristic Optimization**:
+    *   `--dynamicBestK`: Enables a heuristic that automatically adjusts the neighborhood search size (K-value) if the global MFE structure has not yet been discovered in the explored basins.
+    *   `--dynamicMaxToHash`: Prevents system memory exhaustion (swapping) by estimating and limiting the hash table size based on sequence length.
 
-### Input Methods
-- **FASTA Input**:
-  `cat rna.fasta | pourRNA`
-- **Direct Sequence**:
-  `pourRNA --sequence="CUAGUUAGGAACGGAAUUAAUUAGGAAAAAGCUGAUUAG"`
+### Advanced Analysis Features
+*   **Partition Functions**: Use the `partitionFunctions` parameter to write basin-specific partition functions to a file. This data is useful for downstream clustering or calculating the equilibrium probability of being in a specific basin.
+*   **Dot Plot Generation**: The tool can generate base pair probability dot plots for specific basins, which can be visualized using standard ViennaRNA tools like `ghostview` or `EPS` viewers.
+*   **Temperature Settings**: 
+    *   `--boltzmann-temperature`: Specifically sets the temperature used for Boltzmann weight and probability calculations.
+    *   Ensure this matches your general energy model temperature for consistency.
 
-### Core Parameters
-- `--max-threads=N`: Distributes the flooding of basins across multiple CPU cores to speed up computation.
-- `--max-energy=VALUE`: Sets an absolute energy threshold for exploration.
-- `--help`: Displays all available parameters, including micro-state filters.
+### Expert Tips
+*   **Turner Model Selection**: Be cautious with the `turner2004` parameter in older versions of ViennaRNA (e.g., 2.1.9), as it may contain inaccuracies. Defaulting to the standard parameters is often safer unless specific version compatibility is confirmed.
+*   **Targeted Exploration**: If you are interested in a specific structural state, use the "final structure" parameter to stop the exploration once that specific basin has been fully processed.
+*   **Rate Normalization**: When analyzing transition rates, ensure your temperature and dangling ends parameters (`-d0`, `-d1`, `-d2`) are explicitly set to match the experimental conditions you are simulating.
 
-## Common CLI Patterns
 
-### Extracting Thermodynamic Equilibrium
-If you only require the final equilibrium state of the Markov process:
-`cat rna.fasta | pourRNA | grep "Equilibrium Densities:" -A1`
 
-### Generating Barriers-Compatible Output
-To use downstream tools like `treekin` for kinetic simulations, you must generate output in the "barriers" format:
-`cat rna.fasta | pourRNA --barriers-like-output=output_prefix`
+## Subcommands
 
-This command generates:
-- `output_prefix_states.out`: List of local minima and their energies.
-- `output_prefix_rates.out`: Transition rate matrix.
-
-### Kinetic Folding Workflow
-To visualize the folding process over time:
-1. **Generate rates**: `cat rna.fasta | pourRNA --barriers-like-output=rna_barriers`
-2. **Identify start state**: Find the index of the open chain or specific structure in `rna_barriers_states.out`.
-3. **Run treekin**: `cat rna_barriers_rates.out | treekin -m I --bar=rna_barriers_states.out --p0 <index>=1.0 > treekin.out`
-4. **Visualize**: Use `gracebat` or the provided R scripts in the `scripts/` directory to plot the population densities.
-
-## Expert Tips
-
-### Comparison with 'barriers'
-To ensure `pourRNA` results match the classic `barriers` tool:
-- Set `--minh 0` in `barriers`.
-- Use `--max-energy` in `pourRNA` (absolute value) and `-e` in `RNAsubopt` (relative value) to cover the same state space.
-- Note that `pourRNA` and `barriers` may calculate the diagonal of the rate matrix differently; however, tools like `treekin` typically recompute the diagonal automatically.
-
-### Performance Tuning
-For long sequences, the state space grows exponentially. Use `--max-basins` (formerly dynamic minh) to limit the number of explored gradient basins and prevent memory exhaustion while maintaining a representative view of the landscape.
+| Command | Description |
+|---------|-------------|
+| RNAsubopt | calculate suboptimal secondary structures of RNAs |
+| pourrna | Explore RNA energy landscapes |
 
 ## Reference documentation
-- [pourRNA README](./references/github_com_ViennaRNA_pourRNA.md)
-- [Commit History (Feature Updates)](./references/github_com_ViennaRNA_pourRNA_commits_master.md)
+- [pourRNA README](./references/github_com_ViennaRNA_pourRNA_blob_master_README.md)
+- [pourRNA ChangeLog (Parameter Details)](./references/github_com_ViennaRNA_pourRNA_blob_master_ChangeLog.md)
+- [Bioconda pourrna Overview](./references/anaconda_org_channels_bioconda_packages_pourrna_overview.md)

@@ -1,6 +1,6 @@
 ---
 name: phava
-description: PhaVa identifies and quantifies genomic invertons by analyzing long-read sequencing data against a reference genome. Use when user asks to identify phase variation, locate inverted repeats, or calculate the frequency of genomic inversions.
+description: PhaVa is a bioinformatics tool that detects and quantifies invertible DNA segments using long-read sequencing data. Use when user asks to identify phase-variable regions, locate inverted repeats, or calculate the ratio of inverted reads in a reference genome.
 homepage: https://github.com/patrickwest/PhaVa
 ---
 
@@ -8,63 +8,64 @@ homepage: https://github.com/patrickwest/PhaVa
 # phava
 
 ## Overview
-PhaVa (Phase Variation) is a specialized bioinformatics tool designed to identify "invertons"—genomic segments flanked by inverted repeats that can flip their orientation. This process, known as phase variation, is common in bacterial genomes for regulating gene expression. The tool works by identifying potential inverted repeats in a reference genome and then using long-read sequencing data (e.g., Oxford Nanopore or PacBio) to quantify the frequency of the inverted state relative to the original reference.
 
-## Installation and Testing
-Install PhaVa via bioconda:
-```bash
-conda install phava -c bioconda -c conda-forge
-```
-
-Verify the installation with the built-in test suite:
-```bash
-phava test
-```
+PhaVa (Phase Variation) is a bioinformatics tool designed to detect invertible DNA segments using long-read sequencing data (e.g., Oxford Nanopore or PacBio). It works by identifying inverted repeats (IRs) in a reference genome and then quantifying the ratio of reads that align in the "inverted" orientation compared to the reference. This allows for the discovery of phase-variable regions that may be missed by traditional short-read assemblies.
 
 ## Core Workflows
 
-### The Three-Step Manual Workflow
-For maximum control or when processing multiple read sets against the same reference, use the modular commands. All steps must share the same output directory (`-d`).
+### 1. Complete Variation Workflow
+For most users, the `variation_wf` command is the most efficient way to run the entire pipeline (locate, create, and ratio) in a single step.
 
-1.  **Locate**: Identify potential inverted repeats (IRs) in the reference.
+```bash
+phava variation_wf -i reference.fasta -r long_reads.fastq -d output_directory
+```
+
+### 2. Step-by-Step Analysis
+Use the modular commands if you have multiple read sets for the same reference, as the first two steps only need to be performed once.
+
+1.  **Locate**: Find Inverted Repeats (IRs) in the reference.
     ```bash
     phava locate -i reference.fasta -d output_dir
     ```
-2.  **Create**: Generate the inverted versions of the identified regions.
+2.  **Create**: Generate the inverted reference sequences.
     ```bash
-    phava create -i reference.fasta -d output_dir
+    phava create -d output_dir
     ```
-3.  **Ratio**: Map long reads to the original and inverted references to calculate inversion frequency.
+3.  **Ratio**: Map reads and calculate inversion frequencies.
     ```bash
-    phava ratio -r reads.fastq -d output_dir
+    phava ratio -r sample_reads.fastq -d output_dir
     ```
 
-### The Automated Workflow
-To run the entire pipeline (locate, create, and ratio) in a single command:
+### 3. Incorporating Gene Annotations
+To determine if inversions affect specific genes (e.g., promoter flipping or intragenic inversions), provide a GFF file during the `create` or `variation_wf` step.
+
 ```bash
-phava variation_wf -i reference.fasta -r reads.fastq -d output_dir
+phava variation_wf -i ref.fa -r reads.fq --genesFormat gff --genes annotation.gff -d output_dir
 ```
 
 ## Expert Tips and Best Practices
 
-### Gene Annotation Integration
-To determine if an inversion affects specific genes, provide a gene annotation file (GFF format) during the `create` or `variation_wf` step. It is recommended to use Prodigal for generating these annotations.
-```bash
-# Example using Prodigal and PhaVa
-prodigal -i genome.fasta -f gff -o genome.gff
-phava create -i genome.fasta --genes genome.gff --genesFormat gff -d output_dir
-```
+*   **Filtering Results**: PhaVa reports any region with at least 1 inverted read. For high-confidence calls, manually filter the output TSV for regions with at least **3 reverse reads** and a **minimum of 3% reverse orientation**.
+*   **Output Directory**: Always use the same `-d` directory for a single project. PhaVa relies on the internal structure of this directory to pass data between steps.
+*   **Intragenic Inversions**: If a gene annotation is provided, PhaVa (v0.2.2+) can predict the functional effect of inversions occurring within gene boundaries.
+*   **Clustering**: If the output contains many redundant IRs, use the `cluster` command to group them based on flanking and internal sequence similarity.
+*   **Verification**: Use `phava test` after installation to ensure all dependencies (EMBOSS, minimap2, mmseqs2) are correctly configured in your environment.
 
-### Recommended Filtering
-PhaVa identifies any inverton with at least one reverse-oriented read. For high-confidence results, apply the following filters to the output TSV files:
-*   **Minimum Reverse Read Count**: $\ge 3$ reads.
-*   **Minimum Inversion Percentage**: $\ge 3\%$ of total reads.
 
-### Efficiency for Multiple Samples
-The `locate` and `create` steps are reference-dependent but read-independent. If you have multiple sequencing datasets for the same organism:
-1.  Run `locate` and `create` once.
-2.  Run `ratio` separately for each `.fastq` file using the same `-d` directory.
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| phava cluster | Cluster PhaVa database |
+| phava create | Create PhaVa data structures |
+| phava ratio | Run the pipeline with short reads instead of long reads |
+| phava summarize | Directory where data and output are stored |
+| phava variation_wf | PhaVa variation workflow |
+| phava_locate | Directory where data and output are stored *** USE THE SAME WORK DIRECTORY FOR ALL PHAVA OPERATIONS *** |
+| phava_test | PhaVa tool for locating, creating, and analyzing inverted repeats. |
 
 ## Reference documentation
-- [PhaVa GitHub Repository](./references/github_com_patrickwest_PhaVa.md)
-- [Bioconda PhaVa Overview](./references/anaconda_org_channels_bioconda_packages_phava_overview.md)
+
+- [PhaVa GitHub Repository](./references/github_com_patrickwest_PhaVa_blob_main_README.md)
+- [PhaVa Changelog and Version History](./references/github_com_patrickwest_PhaVa_blob_main_changelog.txt.md)

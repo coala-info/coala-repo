@@ -1,6 +1,6 @@
 ---
 name: thermorawfileparser
-description: ThermoRawFileParser converts proprietary Thermo mass spectrometry RAW files into standardized formats like mzML, MGF, or Parquet. Use when user asks to convert RAW files to mzML or MGF, extract instrument metadata, retrieve specific spectra via scan numbers, or generate extracted ion chromatograms.
+description: ThermoRawFileParser converts proprietary Thermo Fisher Scientific mass spectrometry RAW files into open-source formats like mzML, MGF, and Parquet. Use when user asks to convert RAW files to mzML or MGF, extract metadata, generate extracted ion chromatograms, or query scan information.
 homepage: https://github.com/compomics/ThermoRawFileParser
 ---
 
@@ -8,90 +8,59 @@ homepage: https://github.com/compomics/ThermoRawFileParser
 # thermorawfileparser
 
 ## Overview
-The `thermorawfileparser` is a cross-platform utility designed to liberate proprietary mass spectrometry data from Thermo RAW files. It enables researchers to convert raw instrument data into standardized formats like mzML (for general proteomics workflows), MGF (for database searching), or Apache Parquet (for big data analytics). Beyond simple conversion, it provides subcommands for targeted data retrieval, such as extracting Extracted Ion Chromatograms (XIC) or querying specific spectra via scan numbers.
 
-## Core CLI Usage
+ThermoRawFileParser is a specialized utility designed to bridge the gap between proprietary Thermo RAW data and open-source bioinformatics pipelines. It enables the conversion of mass spectrometry data into formats like mzML (indexed or plain), MGF, and Parquet without requiring a Windows-only environment (via .NET 8 or Mono). Beyond simple conversion, it provides subcommands for targeted data retrieval, such as PROXI-compliant spectra queries and Extracted Ion Chromatogram (XIC) generation, making it a versatile tool for both large-scale data conversion and specific data mining tasks.
 
-### Basic Conversion
-The most common use case is converting a single RAW file or a directory of files to indexed mzML (the default format).
+## Command Line Usage
 
-```bash
-# Convert a single file to indexed mzML (default)
-ThermoRawFileParser -i=/path/to/input.raw -o=/path/to/output/
+The tool is executed via `ThermoRawFileParser.exe` (on Windows/Mono) or `dotnet ThermoRawFileParser.dll` (framework-based).
 
-# Convert a directory of RAW files
-ThermoRawFileParser -d=/path/to/raw_directory/ -o=/path/to/output/
-```
+### Basic Conversion Patterns
 
-### Format Selection
-Use the `-f` (or `--format`) flag to specify the output. You can use either the numeric ID or the string name.
+*   **Convert a single file to indexed mzML (Default):**
+    `ThermoRawFileParser -i=/path/to/data.raw -o=/path/to/output/`
+*   **Convert a directory of files to MGF:**
+    `ThermoRawFileParser -d=/input/dir -o=/output/dir -f=0`
+*   **Convert to Gzipped mzML:**
+    `ThermoRawFileParser -i=data.raw -g -f=1`
+*   **Extract Metadata only (JSON format):**
+    `ThermoRawFileParser -i=data.raw -m=0 -f=4`
 
-| Format | Numeric ID | String Value |
-| :--- | :--- | :--- |
-| MGF | 0 | mgf |
-| mzML | 1 | mzml |
-| Indexed mzML | 2 | indexedmzml |
-| Parquet | 3 | parquet |
-| None | 4 | none |
+### Advanced Filtering and Processing
 
-```bash
-# Convert to MGF for database searching
-ThermoRawFileParser -i=data.raw -f=0
+*   **Filter by MS Level:**
+    Use `-L` to specify levels (e.g., only MS1 and MS2):
+    `ThermoRawFileParser -i=data.raw -L=1,2`
+*   **Disable Native Peak Picking:**
+    Use `-p` to output profile data instead of centroided peaks:
+    `ThermoRawFileParser -i=data.raw -p`
+*   **Include Noise and Charge Data:**
+    For high-resolution data in mzML:
+    `ThermoRawFileParser -i=data.raw -N -C`
+*   **Standard Output (STDOUT):**
+    Useful for piping to other tools (implies silent logging):
+    `ThermoRawFileParser -i=data.raw -s -f=1`
 
-# Convert to gzipped mzML
-ThermoRawFileParser -i=data.raw -f=mzml -g
-```
+#
 
-### Metadata Extraction
-To extract instrument metadata without converting the full spectral data, set the format to `none` and specify a metadata format.
+## Expert Tips and Best Practices
 
-```bash
-# Extract metadata as JSON
-ThermoRawFileParser -i=data.raw -f=4 -m=0
+*   **Format Selection:** Use `indexed mzML` (`-f=2`) for large files to allow downstream software to access spectra randomly without reading the entire file.
+*   **Performance:** When processing files where only specific MS levels are needed, using the `-L` flag significantly speeds up execution in versions 1.4.4+.
+*   **Memory/Environment:** On Linux/macOS, ensure the .NET 8 runtime is installed. For older versions (<2.0.0), `mono-complete` is required.
+*   **Error Handling:** Use `-w` (warningsAreErrors) in automated pipelines to ensure that any data inconsistencies result in a non-zero exit code.
+*   **S3 Integration:** The tool supports direct upload to S3 buckets using the `-u`, `-k`, `-t`, and `-n` flags, which is ideal for cloud-based processing workflows.
 
-# Extract metadata as TXT
-ThermoRawFileParser -i=data.raw -f=4 -m=1
-```
 
-## Advanced Operations
 
-### Peak Picking and Filtering
-By default, the tool uses native Thermo peak picking. You can disable this or filter by MS level.
+## Subcommands
 
-```bash
-# Disable native peak picking
-ThermoRawFileParser -i=data.raw -p
-
-# Disable peak picking only for MS2 and MS3
-ThermoRawFileParser -i=data.raw -p=2,3
-
-# Only include MS1 and MS2 scans in the output
-ThermoRawFileParser -i=data.raw -L=1,2
-```
-
-### Querying Specific Scans
-Use the `query` subcommand to retrieve specific spectra in PROXI JSON format.
-
-```bash
-# Extract scans 1 through 5 and scan 20
-ThermoRawFileParser query -i=data.raw -n="1-5, 20" -o=output.json
-```
-
-### XIC Extraction
-The `xic` subcommand extracts chromatogram data based on a JSON input filter.
-
-```bash
-# Extract XIC based on a filter file
-ThermoRawFileParser xic -i=data.raw -f=filter.json
-```
-
-## Expert Tips
-- **Performance**: When processing large batches, use the `-d` directory input rather than calling the tool repeatedly for individual files to reduce overhead.
-- **STDOUT**: Use `-s` to pipe output directly to another tool. This automatically disables indexing for mzML to ensure compatibility with streaming.
-- **S3 Integration**: The tool natively supports writing to S3 buckets using the `-u` (URL), `-k` (Access Key), and `-t` (Secret Key) flags.
-- **Error Handling**: Use `-w` (warningsAreErrors) in CI/CD pipelines to ensure that any data inconsistencies result in a non-zero exit code.
-- **Memory/Runtime**: For .NET 8 versions (v2.0.0+), the `mono` prefix is no longer required. Use `dotnet ThermoRawFileParser.dll` or the self-contained executable.
+| Command | Description |
+|---------|-------------|
+| thermorawfileparser_query | Parses Thermo raw files and queries scan information. |
+| thermorawfileparser_xic | Parses Thermo Fisher Scientific raw files to extract XIC data. |
 
 ## Reference documentation
+
 - [ThermoRawFileParser Main Documentation](./references/github_com_compomics_ThermoRawFileParser.md)
-- [Release Notes and Version History](./references/github_com_compomics_ThermoRawFileParser_wiki_ReleaseNotes.md)
+- [ThermoRawFileParser Release Notes](./references/github_com_compomics_ThermoRawFileParser_wiki_ReleaseNotes.md)

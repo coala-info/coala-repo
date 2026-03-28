@@ -1,6 +1,6 @@
 ---
 name: bronko
-description: bronko is a kmer-based bioinformatic tool used for rapid, alignment-free viral variant calling and iSNV detection from raw sequencing reads. Use when user asks to detect viral variants, identify intrahost single nucleotide variants, or generate VCF files without performing traditional read alignment.
+description: bronko is a k-mer based bioinformatics tool designed for high-speed viral variant detection and reference mapping. Use when user asks to build a reference database, perform viral variant calling, generate consensus sequences, or detect minor variants.
 homepage: https://github.com/treangenlab/bronko
 ---
 
@@ -8,60 +8,63 @@ homepage: https://github.com/treangenlab/bronko
 # bronko
 
 ## Overview
-bronko is a specialized bioinformatic tool designed for the rapid detection of viral variants without the computational overhead of traditional read alignment. By utilizing a kmer-based approach with small edit distances, it generates a "mapping-free" pileup to produce VCF files directly from raw reads and reference genomes. It is particularly effective for identifying intrahost single nucleotide variants (iSNVs) and handling datasets with high sequencing depth or numerous samples.
 
-## Installation and Requirements
-The most reliable way to install bronko is via Bioconda. It requires KMC3 as a dependency, which is automatically handled by the conda installation.
-
-```bash
-conda create -n bronko bioconda::bronko
-conda activate bronko
-```
+bronko is a specialized bioinformatics tool designed for high-speed viral variant detection. Unlike traditional pipelines that rely on computationally expensive read mapping (e.g., BWA, Bowtie2) followed by variant calling (e.g., iVar, LoFreq), bronko uses a k-mer based approach to map reads directly to a pileup. This allows it to process hundreds of samples against diverse reference genomes significantly faster than standard methods while maintaining comparable precision for SNPs and minor variants.
 
 ## Core Workflows
 
 ### 1. Building a Reference Database
-If you are working with multiple strains or want to allow bronko to automatically select the most appropriate reference for each sample, you should first build a database.
+Use `bronko build` to create a searchable index (`.bkdb`) from one or more viral genomes. This is essential for multi-strain analysis where bronko automatically selects the best reference for each sample.
 
 ```bash
-# Build a database from multiple FASTA files
-bronko build -g /path/to/references/*.fa -o viral_db
+# Build from a directory of fasta files
+bronko build -g /path/to/genomes/*.fa -o viral_db
+
+# Build using a text file containing paths to genomes
+bronko build --file-input genomes_list.txt -o viral_db
 ```
-*   **Expert Tip**: Use the `-k` parameter to adjust kmer size if dealing with highly divergent or extremely conserved regions (default is usually sufficient for most viral applications).
-*   **Batch Input**: For large numbers of genomes, use `--file-input` with a text file containing paths to your FASTA files.
 
 ### 2. Variant Calling
-You can perform variant calling using a pre-built database or by providing a single reference genome directly.
+Use `bronko call` to perform mapping and variant calling. You can provide a pre-built database (`-d`) or raw fasta files (`-g`).
 
-**Using a Database (Recommended for speed/accuracy):**
 ```bash
-# Paired-end reads
-bronko call -d viral_db.bkdb -1 sample_R1.fastq -2 sample_R2.fastq -o output_dir
+# Paired-end reads with a pre-built database
+bronko call -d viral_db.bkdb -1 sample_R1.fq -2 sample_R2.fq -o output_dir
 
-# Single-end reads
-bronko call -d viral_db.bkdb -r sample.fastq -o output_dir
+# Single-end reads with consensus and pileup generation
+bronko call -d viral_db.bkdb -r sample.fq --consensus --pileup -o output_dir
 ```
 
-**Using a Direct Genome (No pre-built index):**
-```bash
-bronko call -g reference.fasta -1 sample_R1.fastq -2 sample_R2.fastq -o output_dir
-```
+## Expert Tips and Best Practices
 
-## Best Practices and Constraints
+### Input Quality Control
+* **Remove Primers**: Always trim primer sequences before running bronko. K-mer based mapping is highly sensitive to primer contamination, which can lead to false variant calls.
+* **Base Quality**: Use a high base quality threshold (>25 or >30) during preprocessing. bronko does not natively incorporate Phred scores into its k-mer transformation.
 
-### Pre-processing Requirements
-*   **Primer Removal**: You must remove primer sequences before running bronko. Because it is kmer-based, primer contamination will significantly bias variant calls and depth calculations.
-*   **Quality Trimming**: Ensure base quality scores are high (Q > 25 or 30). bronko does not incorporate base quality scores during the kmer transformation process, so low-quality input will lead to false positive calls.
+### Tuning for Sensitivity vs. Precision
+* **Minor Variants (iSNVs)**: To detect low-frequency variants, lower the `--min-af` (e.g., `0.005` for 0.5%). Keep `--n-fixed` at the default (2) to minimize false positives in these low-frequency ranges.
+* **High Depth Data**: For datasets with >10,000x depth, increase `--min-kmers` (e.g., to `10`) to speed up processing and filter out sequencing noise.
+* **Mutation-Dense Regions**: If you suspect many variants within a short window, use `--use-full-kmer`. This disables the fixed-end constraint, increasing sensitivity at the cost of a potential slight increase in false positives.
 
-### Functional Limitations
-*   **Indels**: Current versions of bronko do not report novel insertions or deletions. It is strictly optimized for SNPs and iSNVs.
-*   **iSNV Interpretation**: While bronko is precise in identifying putative intrahost variants, users should manually validate biological relevance, as library preparation and PCR biases can affect kmer-based calling.
+### Parameter Heuristics
+* **K-mer Size (`-k`)**: The default is 21. Use smaller values (15-19) for higher sensitivity in highly divergent samples, or larger values (23-25) to avoid spurious matches in genomes with repetitive regions.
+* **Noise Filtering**: Adjust `--noise-multiplier` (default 1.5) to control stringency. Values closer to 1.2 increase sensitivity; values closer to 2.0 increase precision.
 
-### Performance Optimization
-*   **Thread Allocation**: bronko is highly parallelizable. Use the `-t` flag (if available in your version) or ensure your environment allows multi-threading to take advantage of its 10-1000x speed increase over traditional pipelines.
-*   **Reference Selection**: When dealing with historical or evolving viral data, include multiple reference genomes in your `.bkdb`. bronko will automatically select the genome with the highest identity for each specific sample.
+## Interpreting Outputs
+* **bronko_overview.tsv**: Check `breadth_coverage`. For amplicon sequencing, aim for 95-99%. Low breadth suggests the reference genome in your database is not a good match for the sample.
+* **VCF Files**: Standard VCFv4.5. The `SOR` (Strand Odds Ratio) is the primary filter for strand bias; if you have extremely unbalanced library prep, you may need to use `--no-strand-filter`.
+* **.mfa Files**: These are "masked" alignments containing only polymorphic positions. They are ready for direct input into phylogenetic tools like IQ-TREE or RAxML.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| build | Create an bronko index of existing viral references for a given species |
+| call | Perform rapid viral variant calling of viral sequencing data |
 
 ## Reference documentation
-- [Main Repository and Usage](./references/github_com_treangenlab_bronko.md)
-- [Installation and Versioning](./references/anaconda_org_channels_bioconda_packages_bronko_overview.md)
-- [Wiki and Parameter Details](./references/github_com_treangenlab_bronko_wiki.md)
+- [Command Parameters](./references/github_com_treangenlab_bronko_wiki_Command-Parameters.md)
+- [Description of Outputs](./references/github_com_treangenlab_bronko_wiki_Description-of-Outputs.md)
+- [Tips and Tricks](./references/github_com_treangenlab_bronko_wiki_Tips-and-Tricks.md)

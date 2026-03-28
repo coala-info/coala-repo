@@ -1,1 +1,293 @@
-GitHub - BackofenLab/IntaRNA: Efficient target prediction incorporating accessibility of interaction sites Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} BackofenLab / IntaRNA Public Notifications You must be signed in to change notification settings Fork 28 Star 49 Efficient target prediction incorporating accessibility of interaction sites backofenlab.github.io/IntaRNA/ License Unknown, Unknown licenses found Licenses found Unknown LICENSE Unknown COPYING 49 stars 28 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 30 Pull requests 2 Actions Security 0 Insights Additional navigation options Code Issues Pull requests Actions Security Insights BackofenLab/IntaRNA master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 1,107 Commits 1,107 Commits .github/ workflows .github/ workflows R R doc doc m4 m4 perl perl python python src src tests tests .gitignore .gitignore AUTHORS AUTHORS COPYING COPYING ChangeLog ChangeLog INSTALL INSTALL IntaRNA.pc.in IntaRNA.pc.in LICENSE LICENSE Makefile.am Makefile.am NEWS NEWS README README README.md README.md _config.yml _config.yml autotools-init.sh autotools-init.sh conda-build-env.yml conda-build-env.yml configure.ac configure.ac View all files Repository files navigation README License License IntaRNA Efficient RNA-RNA interaction prediction incorporating accessibility and seeding of interaction sites During the last few years, several new small regulatory RNAs (sRNAs) have been discovered in bacteria. Most of them act as post-transcriptional regulators by base pairing to a target mRNA, causing translational repressionex or activation, or mRNA degradation. Numerous sRNAs have already been identified, but the number of experimentally verified targets is considerably lower. Consequently, computational target prediction is in great demand. Many existing target prediction programs neglect the accessibility of target sites and the existence of a seed, while other approaches are either specialized to certain types of RNAs or too slow for genome-wide searches. IntaRNA, developed by Prof. Backofen's bioinformatics group at Freiburg University , is a general and fast approach to the prediction of RNA-RNA interactions incorporating both the accessibility of interacting sites as well as the existence of a user-definable seed interaction. We successfully applied IntaRNA to the prediction of bacterial sRNA targets and determined the exact locations of the interactions with a higher accuracy than competing programs. For testing or ad hoc use of IntaRNA, you can use its webinterface at the ==&gt; Freiburg RNA tools IntaRNA webserver &lt;== Contribution Feel free to contribute to this project by writing Issues with feature requests, bug reports, or just contact messages. Citation If you use IntaRNA, please cite our respective articles Method IntaRNA 2.0: enhanced and customizable prediction of RNA-RNA interactions Martin Mann, Patrick R. Wright, and Rolf Backofen, Nucleic Acids Research, 45 (W1), W435–W439, 2017, DOI: 10.1093/nar/gkx279 . IntaRNA: efficient prediction of bacterial sRNA targets incorporating target site accessibility and seed regions Anke Busch, Andreas S. Richter, and Rolf Backofen, Bioinformatics, 24 no. 24 pp. 2849-56, 2008, DOI: 10.1093/bioinformatics/btn544 . Features and Application Integration of accessibility data from structure probing into RNA–RNA interaction prediction Milad Miladi, Soheila Montaseri, Rolf Backofen, Martin Raden, Bioinformatics, 2019, DOI: 10.1093/bioinformatics/bty1029 . IntaRNAhelix - Composing RNA-RNA interactions from stable inter-molecular helices boosts bacterial sRNA target prediction Rick Gelhausen, Sebastian Will, Ivo L. Hofacker, Rolf Backofen, and Martin Raden, Journal of Bioinformatics and Computational Biology, 2019, 17(5), 1940009, DOI: 10.1142/S0219720019400092 . CopraRNA and IntaRNA: predicting small RNA targets, networks and interaction domains Patrick R. Wright, Jens Georg, Martin Mann, Dragos A. Sorescu, Andreas S. Richter, Steffen Lott, Robert Kleinkauf, Wolfgang R. Hess, and Rolf Backofen, Nucleic Acids Research, 42 (W1), W119-W123, 2014, DOI: 10.1093/nar/gku359 . Documentation Overview The following topics are covered by this documentation: Installation IntaRNA via conda IntaRNA docker container Dependencies Cloning from github Source code distribution Microsoft Windows installation OS X installation with homebrew Usage and Parameters Just run ... Multi-threading and parallelized computation Load arguments from file General things you should know Interaction Model Single-site, loop-based RNA-RNA interaction Single-site, ensemble-based RNA-RNA interaction Single-site, helix-based RNA-RNA interaction Prediction modes Emulating other RNA-RNA interaction prediction tools Limiting memory consumption - window-based prediction IntaRNA's multiple personalities IntaRNA - fast, heuristic RNA-RNA interaction prediction IntaRNAhelix - helix-based predictions IntaRNAexact - exact predictions like RNAup IntaRNAduplex - hybrid-only optimization like RNAduplex IntaRNAsTar - optimized for sRNA-target prediction IntaRNAseed - identifys and reports seed interactions only IntaRNAens - ensemble-based prediction and partition function computation How to constrain predicted interactions Interaction restrictions Seed constraints Explicit seed input Helix constraints SHAPE reactivity data to enhance accessibility computation Output Setup Output modes Pairwise vs. all-vs-all Sequence indexing Suboptimal RNA-RNA interaction prediction and output restrictions Energy parameters and temperature Additional output files Minimal energy profiles Minimal energy for all intermolecular index pairs Spot probability profiles using partition functions Interaction probabilities for interaction spots of interest Accessibility and unpaired probabilities Local versus global unpaired probabilities Constrain regions to be accessible or blocked Scaling factors for partition function computation for accessibility estimation Read/write accessibility from/to file or stream Library for integration in external tools Auxiliary R scripts for output visualization etc. Auxiliary python scripts for IntaRNA-based pipelines Installation IntaRNA via conda (bioconda channel) The most easy way to locally install IntaRNA is via conda using the bioconda channel (linux only). This way, you will install a pre-built IntaRNA binary along with all dependencies. Follow to get detailed information or run the following command to install it to the currently activated environment. conda install -c conda-forge -c bioconda intarna Note : Conda is available for Windows, MacOs and Linux. We recommend the Miniconda installation Note further : Windows user without Powershell or Commandline experience might consider to first install a Linux App via WSL and use and install conda therein since most related scripts will be tailored for Linux BASH shells or similar systems. back to overview IntaRNA docker container (via QUAY.IO) An IntaRNA docker container ( ? ) is provided from the bioconda package via Quay.io . This gives you with an encapsulated IntaRNA installation. Note The biocontainer builds do not support the latest tag, such that you have to specify a version to download! So best open the quay.io IntaRNA tag page identify the tag of the container version you want to install, e.g. 3.4.1--pl5321h077b44d_3 use this tag in your container pull command as an appendix, e.g. podman pull quay.io/biocontainers/intarna:3.4.1--pl5321h077b44d_3 or docker pull qu
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FBackofenLab%2FIntaRNA)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FBackofenLab%2FIntaRNA)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=BackofenLab%2FIntaRNA)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[BackofenLab](/BackofenLab)
+/
+**[IntaRNA](/BackofenLab/IntaRNA)**
+Public
+
+* [Notifications](/login?return_to=%2FBackofenLab%2FIntaRNA) You must be signed in to change notification settings
+* [Fork
+  28](/login?return_to=%2FBackofenLab%2FIntaRNA)
+* [Star
+   51](/login?return_to=%2FBackofenLab%2FIntaRNA)
+
+* [Code](/BackofenLab/IntaRNA)
+* [Issues
+  30](/BackofenLab/IntaRNA/issues)
+* [Pull requests
+  2](/BackofenLab/IntaRNA/pulls)
+* [Actions](/BackofenLab/IntaRNA/actions)
+* [Security
+  0](/BackofenLab/IntaRNA/security)
+* [Insights](/BackofenLab/IntaRNA/pulse)
+
+Additional navigation options
+
+* [Code](/BackofenLab/IntaRNA)
+* [Issues](/BackofenLab/IntaRNA/issues)
+* [Pull requests](/BackofenLab/IntaRNA/pulls)
+* [Actions](/BackofenLab/IntaRNA/actions)
+* [Security](/BackofenLab/IntaRNA/security)
+* [Insights](/BackofenLab/IntaRNA/pulse)
+
+# BackofenLab/IntaRNA
+
+master
+
+[Branches](/BackofenLab/IntaRNA/branches)[Tags](/BackofenLab/IntaRNA/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[1,108 Commits](/BackofenLab/IntaRNA/commits/master/)   1,108 Commits | | |
+| [.github/workflows](/BackofenLab/IntaRNA/tree/master/.github/workflows "This path skips through empty directories") | | [.github/workflows](/BackofenLab/IntaRNA/tree/master/.github/workflows "This path skips through empty directories") |  |  |
+| [R](/BackofenLab/IntaRNA/tree/master/R "R") | | [R](/BackofenLab/IntaRNA/tree/master/R "R") |  |  |
+| [doc](/BackofenLab/IntaRNA/tree/master/doc "doc") | | [doc](/BackofenLab/IntaRNA/tree/master/doc "doc") |  |  |
+| [m4](/BackofenLab/IntaRNA/tree/master/m4 "m4") | | [m4](/BackofenLab/IntaRNA/tree/master/m4 "m4") |  |  |
+| [perl](/BackofenLab/IntaRNA/tree/master/perl "perl") | | [perl](/BackofenLab/IntaRNA/tree/master/perl "perl") |  |  |
+| [python](/BackofenLab/IntaRNA/tree/master/python "python") | | [python](/BackofenLab/IntaRNA/tree/master/python "python") |  |  |
+| [src](/BackofenLab/IntaRNA/tree/master/src "src") | | [src](/BackofenLab/IntaRNA/tree/master/src "src") |  |  |
+| [tests](/BackofenLab/IntaRNA/tree/master/tests "tests") | | [tests](/BackofenLab/IntaRNA/tree/master/tests "tests") |  |  |
+| [.gitignore](/BackofenLab/IntaRNA/blob/master/.gitignore ".gitignore") | | [.gitignore](/BackofenLab/IntaRNA/blob/master/.gitignore ".gitignore") |  |  |
+| [AUTHORS](/BackofenLab/IntaRNA/blob/master/AUTHORS "AUTHORS") | | [AUTHORS](/BackofenLab/IntaRNA/blob/master/AUTHORS "AUTHORS") |  |  |
+| [COPYING](/BackofenLab/IntaRNA/blob/master/COPYING "COPYING") | | [COPYING](/BackofenLab/IntaRNA/blob/master/COPYING "COPYING") |  |  |
+| [ChangeLog](/BackofenLab/IntaRNA/blob/master/ChangeLog "ChangeLog") | | [ChangeLog](/BackofenLab/IntaRNA/blob/master/ChangeLog "ChangeLog") |  |  |
+| [INSTALL](/BackofenLab/IntaRNA/blob/master/INSTALL "INSTALL") | | [INSTALL](/BackofenLab/IntaRNA/blob/master/INSTALL "INSTALL") |  |  |
+| [IntaRNA.pc.in](/BackofenLab/IntaRNA/blob/master/IntaRNA.pc.in "IntaRNA.pc.in") | | [IntaRNA.pc.in](/BackofenLab/IntaRNA/blob/master/IntaRNA.pc.in "IntaRNA.pc.in") |  |  |
+| [LICENSE](/BackofenLab/IntaRNA/blob/master/LICENSE "LICENSE") | | [LICENSE](/BackofenLab/IntaRNA/blob/master/LICENSE "LICENSE") |  |  |
+| [Makefile.am](/BackofenLab/IntaRNA/blob/master/Makefile.am "Makefile.am") | | [Makefile.am](/BackofenLab/IntaRNA/blob/master/Makefile.am "Makefile.am") |  |  |
+| [NEWS](/BackofenLab/IntaRNA/blob/master/NEWS "NEWS") | | [NEWS](/BackofenLab/IntaRNA/blob/master/NEWS "NEWS") |  |  |
+| [README](/BackofenLab/IntaRNA/blob/master/README "README") | | [README](/BackofenLab/IntaRNA/blob/master/README "README") |  |  |
+| [README.md](/BackofenLab/IntaRNA/blob/master/README.md "README.md") | | [README.md](/BackofenLab/IntaRNA/blob/master/README.md "README.md") |  |  |
+| [\_config.yml](/BackofenLab/IntaRNA/blob/master/_config.yml "_config.yml") | | [\_config.yml](/BackofenLab/IntaRNA/blob/master/_config.yml "_config.yml") |  |  |
+| [autotools-init.sh](/BackofenLab/IntaRNA/blob/master/autotools-init.sh "autotools-init.sh") | | [autotools-init.sh](/BackofenLab/IntaRNA/blob/master/autotools-init.sh "autotools-init.sh") |  |  |
+| [conda-build-env.yml](/BackofenLab/IntaRNA/blob/master/conda-build-env.yml "conda-build-env.yml") | | [conda-build-env.yml](/BackofenLab/IntaRNA/blob/master/conda-build-env.yml "conda-build-env.yml") |  |  |
+| [configure.ac](/BackofenLab/IntaRNA/blob/master/configure.ac "configure.ac") | | [configure.ac](/BackofenLab/IntaRNA/blob/master/configure.ac "configure.ac") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* License
+* License
+
+# IntaRNA [![releases](https://camo.githubusercontent.com/55d50fb9e35af66d120107328329c2717a70654c427d6e9a3f636e0c9a90d7db/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f7461672f4261636b6f66656e4c61622f496e7461524e412e737667)](https://github.com/BackofenLab/IntaRNA/releases) [![Bioconda](https://camo.githubusercontent.com/da7d30ea0be61401a308333e78d6538469ca382f0904142964bb85b3702ce91c/68747470733a2f2f616e61636f6e64612e6f72672f62696f636f6e64612f696e7461726e612f6261646765732f76657273696f6e2e737667)](https://anaconda.org/bioconda/intarna)
+
+**Efficient RNA-RNA interaction prediction incorporating accessibility and
+seeding of interaction sites**
+
+During the last few years, several new small regulatory RNAs
+(sRNAs) have been discovered in bacteria. Most of them act as post-transcriptional
+regulators by base pairing to a target mRNA, causing translational repressionex
+or activation, or mRNA degradation. Numerous sRNAs have already been identified,
+but the number of experimentally verified targets is considerably lower.
+Consequently, computational target prediction is in great demand. Many existing
+target prediction programs neglect the accessibility of target sites and the
+existence of a seed, while other approaches are either specialized to certain
+types of RNAs or too slow for genome-wide searches.
+
+IntaRNA, developed by
+[Prof. Backofen's bioinformatics group at Freiburg University](http://www.bioinf.uni-freiburg.de),
+is a general and fast approach to the
+prediction of RNA-RNA interactions incorporating both the accessibility of
+interacting sites
+as well as the existence of a user-definable seed interaction. We successfully applied
+IntaRNA to the prediction of bacterial sRNA targets and determined the exact
+locations of the interactions with a higher accuracy than competing programs.
+
+For testing or ad hoc use of IntaRNA, you can use its webinterface at the
+
+**==> [Freiburg RNA tools IntaRNA webserver](http://rna.informatik.uni-freiburg.de/IntaRNA/) <==**
+
+## Contribution
+
+Feel free to contribute to this project by writing
+[Issues](https://github.com/BackofenLab/IntaRNA/issues)
+with feature requests, bug reports, or just contact messages.
+
+## Citation
+
+If you use IntaRNA, please cite our respective articles
+
+#### Method
+
+* [IntaRNA 2.0: enhanced and customizable prediction of RNA-RNA interactions](https://doi.org/10.1093/nar/gkx279)
+  Martin Mann, Patrick R. Wright, and Rolf Backofen,
+  Nucleic Acids Research, 45 (W1), W435–W439, 2017, DOI:[10.1093/nar/gkx279](https://doi.org/10.1093/nar/gkx279).
+* [IntaRNA: efficient prediction of bacterial sRNA targets incorporating target site accessibility and seed regions](https://doi.org/10.1093/bioinformatics/btn544)
+  Anke Busch, Andreas S. Richter, and Rolf Backofen,
+  Bioinformatics, 24 no. 24 pp. 2849-56, 2008, DOI:[10.1093/bioinformatics/btn544](https://doi.org/10.1093/bioinformatics/btn544).
+
+#### Features and Application
+
+* [Integration of accessibility data from structure probing into RNA–RNA interaction prediction](https://doi.org/10.1093/bioinformatics/bty1029)
+  Milad Miladi, Soheila Montaseri, Rolf Backofen, Martin Raden,
+  Bioinformatics, 2019, DOI:[10.1093/bioinformatics/bty1029](https://doi.org/10.1093/bioinformatics/bty1029).
+* [IntaRNAhelix - Composing RNA-RNA interactions from stable inter-molecular helices boosts bacterial sRNA target prediction](https://doi.org/10.1142/S0219720019400092)
+  Rick Gelhausen, Sebastian Will, Ivo L. Hofacker, Rolf Backofen, and Martin Raden,
+  Journal of Bioinformatics and Computational Biology, 2019, 17(5), 1940009, DOI:[10.1142/S0219720019400092](https://doi.org/10.1142/S0219720019400092).
+* [CopraRNA and IntaRNA: predicting small RNA targets, networks and interaction domains](https://doi.org/10.1093/nar/gku359)
+  Patrick R. Wright, Jens Georg, Martin Mann, Dragos A. Sorescu, Andreas S. Richter, Steffen Lott, Robert Kleinkauf, Wolfgang R. Hess, and Rolf Backofen,
+  Nucleic Acids Research, 42 (W1), W119-W123, 2014, DOI:[10.1093/nar/gku359](https://doi.org/10.1093/nar/gku359).
+* [The impact of various seed, accessibility and interaction constraints on sRNA target prediction- a systematic assessment](https://doi.org/10.1186/s12859-019-3143-4).
+  Martin Raden, Teresa Müller, Stefan Mautner, Rick Gelhausen, and Rolf Backofen,
+  BMC Bioinformatics, 21 (15), 2020, DOI:[10.1186/s12859-019-3143-4](https://doi.org/10.1186/s12859-019-3143-4).
+
+# Documentation
+
+## Overview
+
+The following topics are covered by this documentation:
+
+* [Installation](#install)
+  + [IntaRNA via conda](#instconda)
+  + [IntaRNA

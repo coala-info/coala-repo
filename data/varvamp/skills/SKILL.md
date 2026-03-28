@@ -1,6 +1,6 @@
 ---
 name: varvamp
-description: varVAMP designs primers for highly diverse viral populations to enable downstream sequencing. Use when user asks to design primers for whole-genome sequencing of viruses, perform viral PCR screening or diagnostics, or design primers for viral qPCR.
+description: varVAMP designs degenerate primers and probes for diverse viral populations by incorporating ambiguous characters to ensure broad reactivity. Use when user asks to design tiled whole-genome sequencing primers, create single amplicons for PCR screening, or develop qPCR assays with optimized TaqMan probes.
 homepage: https://github.com/jonas-fuchs/varVAMP
 ---
 
@@ -8,39 +8,67 @@ homepage: https://github.com/jonas-fuchs/varVAMP
 # varvamp
 
 ## Overview
-varVAMP (Variable Virus AMPlicons) is a specialized primer design tool tailored for the extreme genetic diversity found in viral populations. While standard tools often fail on highly variable alignments, varVAMP introduces ambiguous (degenerate) characters into primer sequences and minimizes mismatches at the critical 3' end. It is the primary tool for generating ARTIC-style tiled primer schemes for viruses, ensuring that the majority of variants in an alignment are successfully amplified for downstream sequencing on platforms like Oxford Nanopore or Illumina.
 
-## Usage Modes
-The tool operates in three distinct "flavors" depending on the experimental goal:
+varVAMP (variable Virus AMplicons) is a specialized bioinformatics tool designed to solve the challenge of primer design for rapidly evolving or highly diverse viral populations. Unlike standard primer design tools, varVAMP introduces ambiguous (IUPAC) characters into primer sequences to ensure broad reactivity across a provided alignment while minimizing mismatches at the critical 3' end. It is particularly effective for generating "pan-specific" primers that can recognize the majority of sequences in a diverse dataset.
 
-- **TILED**: Uses a graph-based approach to design overlapping amplicons that cover the entire viral genome. This is the standard mode for whole-genome sequencing (WGS).
-- **SINGLE**: Identifies the highest-quality non-overlapping amplicons. Best for PCR-based screening or diagnostic applications where full coverage is not required.
-- **QPCR**: Designs small amplicons with optimized internal TaqMan probes. It balances melting temperatures (Tm) between primers and probes while checking for secondary structures.
+## Core Workflows
 
-## Command Line Patterns
-The basic syntax follows a sub-command structure:
+### 1. Tiled Whole-Genome Sequencing
+Use the `tiled` mode to generate overlapping amplicons that cover the entire viral genome. This is the standard approach for Oxford Nanopore or Illumina sequencing.
+
 ```bash
-varvamp [MODE] -i <input_alignment.fasta> [OPTIONS]
+varvamp tiled -i alignment.fasta -o output_directory --num_ambiguous 2
 ```
 
-### Common Options and Flags
-- `-i, --input`: Path to the input viral sequence alignment (FASTA format).
-- `--name`: Specify a prefix for the output files and primer names.
-- `-a`: Used in qPCR mode to define specific constraints (e.g., setting to 0 can trigger specific behaviors in older versions).
-- `--n_to_test`: Defines the number of primer candidates to evaluate during the optimization phase.
+### 2. PCR Screening (Single Amplicons)
+Use the `single` mode to find the highest-quality, non-overlapping amplicons. This is ideal for diagnostic screening or detection assays where full coverage is not required.
 
-## Best Practices and Expert Tips
-- **Alignment Quality**: The quality of your input alignment is the single most important factor. Ensure sequences are properly aligned; varVAMP will report extensively gapped sequences that might interfere with design.
-- **Degeneracy Management**: varVAMP automatically introduces ambiguous characters. If the diversity is too high, the degeneracy might become too great for synthesis. Monitor the logs for the number of variants covered by each primer.
-- **ARTIC Compatibility**: varVAMP outputs primer BED files in ARTICv3 format. These are directly compatible with many NGS pipelines (like the ARTIC field bioinformatics pipeline) for primer clipping.
-- **Off-Target Checking**: The tool integrates with BLAST to check for off-target binding. Amplicons with potential off-target hits are reported in the `off_target_amplicons` column of the output TSV files.
-- **Tiled Overlaps**: In `TILED` mode, the tool enforces overlaps between amplicon inserts to ensure no "blind spots" exist in the final consensus sequence.
-- **Output Interpretation**:
-    - **TSV files**: Contain detailed metrics for every primer pair, including penalty scores and BLAST hits.
-    - **BED files**: Provide the coordinates and pool assignments for the primer scheme.
-    - **Consensus files**: Differentiate between majority consensus and "ambi" (ambiguous) consensus sequences.
+```bash
+varvamp single -i alignment.fasta -o output_directory
+```
+
+### 3. qPCR Assay Design
+Use the `qpcr` mode to design small amplicons with optimized internal TaqMan probes. This mode minimizes temperature differences between primers and probes and checks for secondary structures.
+
+```bash
+varvamp qpcr -i alignment.fasta -o output_directory
+```
+
+## Expert Tips and Best Practices
+
+### Optimization Strategy
+If the initial output is poor (too few primers), follow this hierarchy:
+1. **Increase Ambiguity**: Increase the number of allowed ambiguous bases (`-a` or `--num_ambiguous`).
+2. **Lower Threshold**: If ambiguity is already at your lab's limit, lower the consensus threshold (`-t` or `--threshold`).
+3. **Automatic Optimization**: If you provide the ambiguity limit but omit the threshold, varVAMP will automatically estimate the best threshold to meet your amplicon constraints.
+
+### Off-Target Checking
+Always validate your designs against host or environmental genomes using a local BLAST database to ensure specificity.
+```bash
+varvamp tiled -i alignment.fasta -o output -db /path/to/local/blast_db
+```
+
+### Handling Primer Dimers
+In `tiled` mode, varVAMP uses a graph-based Dijkstra algorithm to minimize penalties. If it reports unsolvable dimers:
+* Check the reported melting temperature ($T_m$). If it is significantly lower than your annealing temperature, a hot-start polymerase may still work.
+* Consider splitting the scheme into a third pool if the dimer is unavoidable but the amplicon is critical.
+
+### Alignment Preparation
+* **Clean Gaps**: varVAMP automatically masks large insertions with "N" to prevent designing primers across unstable regions.
+* **RNA to DNA**: The tool automatically handles RNA-to-DNA conversion.
+* **Reference Mapping**: The output BED file is relative to the varVAMP consensus. If mapping to a specific reference (e.g., NC_045512.2), you must lift over the coordinates.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| varvamp qpcr | Performs qPCR primer and probe design. |
+| varvamp_single | Performs primer design and amplicon prediction for a single input alignment. |
+| varvamp_tiled | Performs primer design and amplicon tiling for variant calling. |
 
 ## Reference documentation
-- [varVAMP GitHub Overview](./references/github_com_jonas-fuchs_varVAMP.md)
-- [varVAMP Bioconda Package](./references/anaconda_org_channels_bioconda_packages_varvamp_overview.md)
-- [Version 1.2.0 Release Notes (Algorithmic Details)](./references/github_com_jonas-fuchs_varVAMP_tags.md)
+- [varVAMP README](./references/github_com_jonas-fuchs_varVAMP_blob_master_README.md)
+- [How varVAMP Works](./references/github_com_jonas-fuchs_varVAMP_blob_master_docs_how_varvamp_works.md)
+- [varVAMP FAQ](./references/github_com_jonas-fuchs_varVAMP_blob_master_docs_FAQ.md)

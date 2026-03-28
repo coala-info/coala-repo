@@ -1070,3 +1070,6 @@ Usage: snp2cell combine-scores [OPTIONS] S2C_OBJ [GROUPBY] [SNP_SCORE_KEY]
 ╰──────────────────────────────────────────────────────────────────────────────╯
 ```
 
+
+## Metadata
+- **Skill**: generated

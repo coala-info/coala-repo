@@ -200,3 +200,6 @@ usage: skmer [-h] [--debug] {reference,subsample,correct,distance,query} ...
 skmer: error: argument {commands}: invalid choice: 'Run' (choose from 'reference', 'subsample', 'correct', 'distance', 'query')
 ```
 
+
+## Metadata
+- **Skill**: generated

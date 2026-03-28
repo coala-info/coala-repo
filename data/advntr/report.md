@@ -195,3 +195,6 @@ Command: genotype	find RU counts and mutations in VNTRs
          delmodel	remove a model from database delmodel: error: argument -h/--help: ignored explicit argument 'elp'
 ```
 
+
+## Metadata
+- **Skill**: generated

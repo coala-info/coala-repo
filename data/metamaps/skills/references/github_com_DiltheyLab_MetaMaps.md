@@ -1,1 +1,245 @@
-GitHub - DiltheyLab/MetaMaps: Long-read metagenomic analysis Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} DiltheyLab / MetaMaps Public Notifications You must be signed in to change notification settings Fork 23 Star 110 Long-read metagenomic analysis License View license 110 stars 23 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 26 Pull requests 1 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights DiltheyLab/MetaMaps master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 219 Commits 219 Commits paperPlots paperPlots perlLib perlLib src src tmp tmp util util Commands.txt Commands.txt Commands_experiments.txt Commands_experiments.txt DBinfo.pl DBinfo.pl INSTALL.txt INSTALL.txt LICENSE.txt LICENSE.txt Makefile Makefile Makefile.in Makefile.in MetaMaps_example_output.zip MetaMaps_example_output.zip README.md README.md annotateRefSeqSequencesWithUniqueTaxonIDs.pl annotateRefSeqSequencesWithUniqueTaxonIDs.pl benchmarkInference.pl benchmarkInference.pl bootstrap.sh bootstrap.sh buildDB.pl buildDB.pl callCentrifugeOnConvertedDB.pl callCentrifugeOnConvertedDB.pl callKraken2OnConvertedDB.pl callKraken2OnConvertedDB.pl callKrakenOnConvertedDB.pl callKrakenOnConvertedDB.pl combineAndAnnotateReferences.pl combineAndAnnotateReferences.pl configure.ac configure.ac convertMetaMapsToCentrifuge.pl convertMetaMapsToCentrifuge.pl convertMetaMapsToKraken.pl convertMetaMapsToKraken.pl convertMetaMapsToMash.pl convertMetaMapsToMash.pl doPlots.R doPlots.R downloadRefSeq.pl downloadRefSeq.pl estimateSelfSimilarity.pl estimateSelfSimilarity.pl firstQuartileScore.pl firstQuartileScore.pl fixSimulationStore.pl fixSimulationStore.pl geneLevelAnalysis.pl geneLevelAnalysis.pl plotIdentities_EM.R plotIdentities_EM.R plotUnknownResults.R plotUnknownResults.R shortenContigIDs.pl shortenContigIDs.pl simulate.pl simulate.pl test2.pl test2.pl validateDB.pl validateDB.pl View all files Repository files navigation README License MetaMaps MetaMaps is tool specifically developed for the analysis of long-read (PacBio/Oxford Nanopore) metagenomic datasets. It simultaenously carries out read assignment and sample composition estimation. It is faster than classical exact alignment-based approaches, and its output is more information-rich than that of kmer-spectra-based methods. For example, each MetaMaps alignment comes with an approximate alignment location, an estimated alignment identity and a mapping quality. The approximate mapping algorithm employed by MetaMaps is based on MashMap . MetaMaps adds a mapping quality model and EM-based estimation of sample composition. News (28 August 2018) We're adding more flexible tools to construct your own databases - see here for details. Feedback welcome! Installation Follow INSTALL.txt to compile and install MetaMaps. Then download a database, e.g. miniSeq+H (~8G compressed, microbial genomes and the human reference genome). Extract the downloaded database into the databases/ directory. Usage Analysis of a dataset with MetaMaps consists of two steps: mapping and classification: ./metamaps mapDirectly --all -r databases/miniSeq+H/DB.fa -q input.fastq -o classification_results ./metamaps classify --mappings classification_results --DB databases/miniSeq+H Memory-efficient mapping You can use the '--maxmemory' parameter to specify a target for maximum memory consumption (in gigabytes). Note that this feature is implemented heuristically; actual memory usage will fluctuate and execeed the target. We recommend using around 70% of the available memory as a target amount (for example, 20G when you have a 32G machine). Example: ./metamaps mapDirectly --all -r databases/miniSeq+H/DB.fa -q input.fastq -o classification_results --maxmemory 20 ./metamaps classify --mappings classification_results --DB databases/miniSeq+H Multithreading You can use the parameter -t to speed up mapping and classification. Example: ./metamaps mapDirectly -t 5 --all -r databases/miniSeq+H/DB.fa -q input.fastq -o classification_results ./metamaps classify -t 5 --mappings classification_results --DB databases/miniSeq+H Important: if you encounter problems with multithreading efficiency, try unset MALLOC_ARENA_MAX immediately before calling MetaMaps. Output MetaMaps outputs both an overall compositional assignment and per-read taxonomic assignments. Specifically, it will (for -o classification_results ) produce the following files: classification_results.EM.WIMP : Sample composition at different taxonomic levels (WIMP = "What's in my pot"). The level "definedGenomes" represents strain-level resolution (i.e., the defined genomes in the classification database). The EM algorithm is carried out at this level. Output columns: Absolute specifies the number of reads assigned (by their maximum likelihood mapping estimate) to the taxonomic entity; EMFrequency specifies the estimated frequency of the taxonomic entity prior to taking into account unmapped reads; PotFrequency specifies the estimated final frequency of the taxonomic entity (i.e. after correcting for unmapped reads). classification_results.EM.reads2Taxon : One line per read, and each line consists of the read ID and the taxon ID of the genome that the read was assigned to. Taxon IDs beginning with an 'x' represent MetaMaps-internal taxon IDs that disambiguate between source genomes attached to the same 'species' node. These can be interpreted using the extended database taxonomy (sub-directory taxonomy in the directory of the utilized database). classification_results.EM.reads2Taxon.krona : Like classification_results.EM.reads2Taxon , but in Krona format. Each line has an additional quality value, and only taxon IDs from the standard NCBI taxonomy are used. classification_results.EM.contigCoverage : Read coverage for contigs that appear in the final set of maximum-likelihood mappings. Contigs are split into windows of 1000 base pairs. Each line represents one window and specifies the MetaMaps taxonID of the contig ( taxonID ), a species/strain label ( equalCoverageUnitLabel ), the ID of the contig in the classification database FASTA file ( contigID ), start and stop coordinates of the window ( start and stop ), the number of read bases overlapping the window ( nBases ), and the number of read bases overlapping the window divided by window length, i.e. coverage ( readCoverage ). classification_results.EM.lengthAndIdentitiesPerMappingUnit : Read length and estimated identity for all reads, sorted by the contig they are mapped to. Each line represents one read and has the fields AnalysisLevel , which is always equal to EqualCoverageUnit ; ID , which is the ID of the contig in the classification database FASTA file; readI , which is a simple numerical read ID; Identity , which is the estimated alignment identity; and Length , specifying the length of the read. classification_results.EM : The final and complete set of approximate read mappings. Each line represents one mapping in a simple space-delimited format. Fields: read ID, read length, beginning of the mapping in the read, end of the mapping in the read, strand, contig ID, contig length, beginning of the mapping in the contig, end of the mapping in the contig, estimated alignment identity using a Poisson model, MinHash intersection size, MinHash union size, estimated alignment identity using a binomial approximation, mapping quality. The mapping qualities of all mappings for one read sum up to 1. classificat
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FDiltheyLab%2FMetaMaps)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FDiltheyLab%2FMetaMaps)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=DiltheyLab%2FMetaMaps)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[DiltheyLab](/DiltheyLab)
+/
+**[MetaMaps](/DiltheyLab/MetaMaps)**
+Public
+
+* [Notifications](/login?return_to=%2FDiltheyLab%2FMetaMaps) You must be signed in to change notification settings
+* [Fork
+  23](/login?return_to=%2FDiltheyLab%2FMetaMaps)
+* [Star
+   110](/login?return_to=%2FDiltheyLab%2FMetaMaps)
+
+* [Code](/DiltheyLab/MetaMaps)
+* [Issues
+  26](/DiltheyLab/MetaMaps/issues)
+* [Pull requests
+  1](/DiltheyLab/MetaMaps/pulls)
+* [Actions](/DiltheyLab/MetaMaps/actions)
+* [Projects](/DiltheyLab/MetaMaps/projects)
+* [Security
+  0](/DiltheyLab/MetaMaps/security)
+* [Insights](/DiltheyLab/MetaMaps/pulse)
+
+Additional navigation options
+
+* [Code](/DiltheyLab/MetaMaps)
+* [Issues](/DiltheyLab/MetaMaps/issues)
+* [Pull requests](/DiltheyLab/MetaMaps/pulls)
+* [Actions](/DiltheyLab/MetaMaps/actions)
+* [Projects](/DiltheyLab/MetaMaps/projects)
+* [Security](/DiltheyLab/MetaMaps/security)
+* [Insights](/DiltheyLab/MetaMaps/pulse)
+
+# DiltheyLab/MetaMaps
+
+master
+
+[Branches](/DiltheyLab/MetaMaps/branches)[Tags](/DiltheyLab/MetaMaps/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[219 Commits](/DiltheyLab/MetaMaps/commits/master/)   219 Commits | | |
+| [paperPlots](/DiltheyLab/MetaMaps/tree/master/paperPlots "paperPlots") | | [paperPlots](/DiltheyLab/MetaMaps/tree/master/paperPlots "paperPlots") |  |  |
+| [perlLib](/DiltheyLab/MetaMaps/tree/master/perlLib "perlLib") | | [perlLib](/DiltheyLab/MetaMaps/tree/master/perlLib "perlLib") |  |  |
+| [src](/DiltheyLab/MetaMaps/tree/master/src "src") | | [src](/DiltheyLab/MetaMaps/tree/master/src "src") |  |  |
+| [tmp](/DiltheyLab/MetaMaps/tree/master/tmp "tmp") | | [tmp](/DiltheyLab/MetaMaps/tree/master/tmp "tmp") |  |  |
+| [util](/DiltheyLab/MetaMaps/tree/master/util "util") | | [util](/DiltheyLab/MetaMaps/tree/master/util "util") |  |  |
+| [Commands.txt](/DiltheyLab/MetaMaps/blob/master/Commands.txt "Commands.txt") | | [Commands.txt](/DiltheyLab/MetaMaps/blob/master/Commands.txt "Commands.txt") |  |  |
+| [Commands\_experiments.txt](/DiltheyLab/MetaMaps/blob/master/Commands_experiments.txt "Commands_experiments.txt") | | [Commands\_experiments.txt](/DiltheyLab/MetaMaps/blob/master/Commands_experiments.txt "Commands_experiments.txt") |  |  |
+| [DBinfo.pl](/DiltheyLab/MetaMaps/blob/master/DBinfo.pl "DBinfo.pl") | | [DBinfo.pl](/DiltheyLab/MetaMaps/blob/master/DBinfo.pl "DBinfo.pl") |  |  |
+| [INSTALL.txt](/DiltheyLab/MetaMaps/blob/master/INSTALL.txt "INSTALL.txt") | | [INSTALL.txt](/DiltheyLab/MetaMaps/blob/master/INSTALL.txt "INSTALL.txt") |  |  |
+| [LICENSE.txt](/DiltheyLab/MetaMaps/blob/master/LICENSE.txt "LICENSE.txt") | | [LICENSE.txt](/DiltheyLab/MetaMaps/blob/master/LICENSE.txt "LICENSE.txt") |  |  |
+| [Makefile](/DiltheyLab/MetaMaps/blob/master/Makefile "Makefile") | | [Makefile](/DiltheyLab/MetaMaps/blob/master/Makefile "Makefile") |  |  |
+| [Makefile.in](/DiltheyLab/MetaMaps/blob/master/Makefile.in "Makefile.in") | | [Makefile.in](/DiltheyLab/MetaMaps/blob/master/Makefile.in "Makefile.in") |  |  |
+| [MetaMaps\_example\_output.zip](/DiltheyLab/MetaMaps/blob/master/MetaMaps_example_output.zip "MetaMaps_example_output.zip") | | [MetaMaps\_example\_output.zip](/DiltheyLab/MetaMaps/blob/master/MetaMaps_example_output.zip "MetaMaps_example_output.zip") |  |  |
+| [README.md](/DiltheyLab/MetaMaps/blob/master/README.md "README.md") | | [README.md](/DiltheyLab/MetaMaps/blob/master/README.md "README.md") |  |  |
+| [annotateRefSeqSequencesWithUniqueTaxonIDs.pl](/DiltheyLab/MetaMaps/blob/master/annotateRefSeqSequencesWithUniqueTaxonIDs.pl "annotateRefSeqSequencesWithUniqueTaxonIDs.pl") | | [annotateRefSeqSequencesWithUniqueTaxonIDs.pl](/DiltheyLab/MetaMaps/blob/master/annotateRefSeqSequencesWithUniqueTaxonIDs.pl "annotateRefSeqSequencesWithUniqueTaxonIDs.pl") |  |  |
+| [benchmarkInference.pl](/DiltheyLab/MetaMaps/blob/master/benchmarkInference.pl "benchmarkInference.pl") | | [benchmarkInference.pl](/DiltheyLab/MetaMaps/blob/master/benchmarkInference.pl "benchmarkInference.pl") |  |  |
+| [bootstrap.sh](/DiltheyLab/MetaMaps/blob/master/bootstrap.sh "bootstrap.sh") | | [bootstrap.sh](/DiltheyLab/MetaMaps/blob/master/bootstrap.sh "bootstrap.sh") |  |  |
+| [buildDB.pl](/DiltheyLab/MetaMaps/blob/master/buildDB.pl "buildDB.pl") | | [buildDB.pl](/DiltheyLab/MetaMaps/blob/master/buildDB.pl "buildDB.pl") |  |  |
+| [callCentrifugeOnConvertedDB.pl](/DiltheyLab/MetaMaps/blob/master/callCentrifugeOnConvertedDB.pl "callCentrifugeOnConvertedDB.pl") | | [callCentrifugeOnConvertedDB.pl](/DiltheyLab/MetaMaps/blob/master/callCentrifugeOnConvertedDB.pl "callCentrifugeOnConvertedDB.pl") |  |  |
+| [callKraken2OnConvertedDB.pl](/DiltheyLab/MetaMaps/blob/master/callKraken2OnConvertedDB.pl "callKraken2OnConvertedDB.pl") | | [callKraken2OnConvertedDB.pl](/DiltheyLab/MetaMaps/blob/master/callKraken2OnConvertedDB.pl "callKraken2OnConvertedDB.pl") |  |  |
+| [callKrakenOnConvertedDB.pl](/DiltheyLab/MetaMaps/blob/master/callKrakenOnConvertedDB.pl "callKrakenOnConvertedDB.pl") | | [callKrakenOnConvertedDB.pl](/DiltheyLab/MetaMaps/blob/master/callKrakenOnConvertedDB.pl "callKrakenOnConvertedDB.pl") |  |  |
+| [combineAndAnnotateReferences.pl](/DiltheyLab/MetaMaps/blob/master/combineAndAnnotateReferences.pl "combineAndAnnotateReferences.pl") | | [combineAndAnnotateReferences.pl](/DiltheyLab/MetaMaps/blob/master/combineAndAnnotateReferences.pl "combineAndAnnotateReferences.pl") |  |  |
+| [configure.ac](/DiltheyLab/MetaMaps/blob/master/configure.ac "configure.ac") | | [configure.ac](/DiltheyLab/MetaMaps/blob/master/configure.ac "configure.ac") |  |  |
+| [convertMetaMapsToCentrifuge.pl](/DiltheyLab/MetaMaps/blob/master/convertMetaMapsToCentrifuge.pl "convertMetaMapsToCentrifuge.pl") | | [convertMetaMapsToCentrifuge.pl](/DiltheyLab/MetaMaps/blob/master/convertMetaMapsToCentrifuge.pl "convertMetaMapsToCentrifuge.pl") |  |  |
+| [convertMetaMapsToKraken.pl](/DiltheyLab/MetaMaps/blob/master/convertMetaMapsToKraken.pl "convertMetaMapsToKraken.pl") | | [convertMetaMapsToKraken.pl](/DiltheyLab/MetaMaps/blob/master/convertMetaMapsToKraken.pl "convertMetaMapsToKraken.pl") |  |  |
+| [convertMetaMapsToMash.pl](/DiltheyLab/MetaMaps/blob/master/convertMetaMapsToMash.pl "convertMetaMapsToMash.pl") | | [convertMetaMapsToMash.pl](/DiltheyLab/MetaMaps/blob/master/convertMetaMapsToMash.pl "convertMetaMapsToMash.pl") |  |  |
+| [doPlots.R](/DiltheyLab/MetaMaps/blob/master/doPlots.R "doPlots.R") | | [doPlots.R](/DiltheyLab/MetaMaps/blob/master/doPlots.R "doPlots.R") |  |  |
+| [downloadRefSeq.pl](/DiltheyLab/MetaMaps/blob/master/downloadRefSeq.pl "downloadRefSeq.pl") | | [downloadRefSeq.pl](/DiltheyLab/MetaMaps/blob/master/downloadRefSeq.pl "downloadRefSeq.pl") |  |  |
+| [estimateSelfSimilarity.pl](/DiltheyLab/MetaMaps/blob/master/estimateSelfSimilarity.pl "estimateSelfSimilarity.pl") | | [estimateSelfSimilarity.pl](/DiltheyLab/MetaMaps/blob/master/estimateSelfSimilarity.pl "estimateSelfSimilarity.pl") |  |  |
+| [firstQuartileScore.pl](/DiltheyLab/MetaMaps/blob/master/firstQuartileScore.pl "firstQuartileScore.pl") | | [firstQuartileScore.pl](/DiltheyLab/MetaMaps/blob/master/firstQuartileScore.pl "firstQuartileScore.pl") |  |  |
+| [fixSimulationStore.pl](/DiltheyLab/MetaMaps/blob/master/fixSimulationStore.pl "fixSimulationStore.pl") | | [fixSimulationStore.pl](/DiltheyLab/MetaMaps/blob/master/fixSimulationStore.pl "fixSimulationStore.pl") |  |  |
+| [geneLevelAnalysis.pl](/DiltheyLab/MetaMaps/blob/master/geneLevelAnalysis.pl "geneLevelAnalysis.pl") | | [geneLevelAnalysis.pl](/DiltheyLab/MetaMaps/blob/master/geneLevelAnalysis.pl "geneLevelAnalysis.pl") |  |  |
+| [plotIdentities\_EM.R](/DiltheyLab/MetaMaps/blob/master/plotIdentities_EM.R "plotIdentities_EM.R") | | [plotIdentities\_EM.R](/DiltheyLab/MetaMaps/blob/master/plotIdentities_EM.R "plotIdentities_EM.R") |  |  |
+| [plotUnknownResults.R](/DiltheyLab/MetaMaps/blob/master/plotUnknownResults.R "plotUnknownResults.R") | | [plotUnknownResults.R](/DiltheyLab/MetaMaps/blob/master/plotUnknownResults.R "plotUnknownResults.R") |  |  |
+| [shortenContigIDs.pl](/DiltheyLab/MetaMaps/blob/master/shortenContigIDs.pl "shortenContigIDs.pl") | | [shortenContigIDs.pl](/DiltheyLab/MetaMaps/blob/master/shortenContigIDs.pl "shortenContigIDs.pl") |  |  |
+| [simulate.pl](/DiltheyLab/MetaMaps/blob/master/simulate.pl "simulate.pl") | | [simulate.pl](/DiltheyLab/MetaMaps/blob/master/simulate.pl "simulate.pl") |  |  |
+| [test2.pl](/DiltheyLab/MetaMaps/blob/master/test2.pl "test2.pl") | | [test2.pl](/DiltheyLab/MetaMaps/blob/master/test2.pl "test2.pl") |  |  |
+| [validateDB.pl](/DiltheyLab/MetaMaps/blob/master/validateDB.pl "validateDB.pl") | | [validateDB.pl](/DiltheyLab/MetaMaps/blob/master/validateDB.pl "validateDB.pl") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* License
+
+# MetaMaps
+
+MetaMaps is tool specifically developed for the analysis of long-read (PacBio/Oxford Nanopore) metagenomic datasets.
+
+It simultaenously carries out read assignment and sample composition estimation.
+
+It is faster than classical exact alignment-based approaches, and its output is more information-rich than that of kmer-spectra-based methods. For example, each M

@@ -1,6 +1,6 @@
 ---
 name: pyfba
-description: PyFBA is a Python platform that transforms genomic annotations into functional metabolic models using the ModelSEED biochemistry database. Use when user asks to convert functional roles into biochemical reactions, gapfill metabolic models to simulate growth on specific media, or run flux balance analysis from SBML files.
+description: PyFBA is a Python-based platform for flux balance analysis that converts genome annotations into functional metabolic models. Use when user asks to convert functional roles into biochemical reactions, gap-fill metabolic models for specific media, or run flux balance analysis to predict growth phenotypes.
 homepage: https://linsalrob.github.io/PyFBA/
 ---
 
@@ -8,51 +8,72 @@ homepage: https://linsalrob.github.io/PyFBA/
 # pyfba
 
 ## Overview
-PyFBA is a Python-based platform designed to transform genomic annotations into functional metabolic models. It leverages the ModelSEED biochemistry database to map functional roles to reactions, allowing for the construction of stoichiometric matrices. The tool is primarily used to identify metabolic gaps in a genome and determine the minimum set of reactions required for a model to simulate growth on specific media.
 
-## Environment Setup
-PyFBA requires specific environment variables to locate its biochemistry tables and media definitions. Ensure these are set before running scripts:
-
-- `ModelSEEDDatabase`: Path to the cloned ModelSEEDDatabase repository.
-- `PYFBA_MEDIA_DIR`: (Optional) Path to the directory containing media definition files.
+PyFBA is a Python-based platform for flux balance analysis that allows researchers to move from a genome sequence to a functional metabolic model. It integrates closely with the ModelSEED biochemistry database and RAST/PATRIC annotations. Use this skill to automate the process of converting functional roles into biochemical reactions, identifying metabolic gaps that prevent growth in simulations, and calculating the flux through a metabolic network to predict growth phenotypes.
 
 ## Core Workflows
 
 ### 1. Converting Genome Annotations to Reactions
-The first step in building a model is converting functional roles (e.g., from RAST or other annotations) into a list of biochemical reactions.
+The first step in building a model is converting functional annotations (from RAST or PATRIC) into a list of biochemical reactions.
 
-**From an assigned functions file (PEG and Role):**
-```bash
-python example_code/assigned_functions_to_reactions.py -a assigned_functions > reactions.list
-```
+*   **From an assigned functions file** (format: `peg_id [tab] functional_role`):
+    ```bash
+    python example_code/assigned_functions_to_reactions.py -a assigned_functions > reactions.list
+    ```
+*   **From a raw list of functional roles** (one per line):
+    ```bash
+    python example_code/assigned_functions_to_reactions.py -r functional_roles.txt > reactions.list
+    ```
 
-**From a simple list of functional roles (one per line):**
-```bash
-python example_code/assigned_functions_to_reactions.py -r functional_roles > reactions.list
-```
-
-### 2. Gapfilling the Model
-Most initial models will not "grow" (produce biomass) because of missing reactions in pathways. Gapfilling identifies the necessary reactions to complete these pathways based on a specific growth medium.
-
-```bash
-python scripts/gapfill_from_reactions.py -r reactions.list -m <media_file.txt> > gapfilled_model.txt
-```
-*Tip: Use the media files provided in the PyFBA distribution or define custom media in the `PYFBA_MEDIA_DIR`.*
-
-### 3. Running FBA from SBML
-If you already have a model in SBML format (e.g., exported from RAST/ModelSEED), you can run the flux analysis directly.
+### 2. Gap-filling the Model
+Most initial models will not "grow" (produce biomass) because of missing reactions in the annotation. Gap-filling identifies the minimum set of reactions needed to complete the pathways for a specific media.
 
 ```bash
-python scripts/run_fba_sbml.py <model_file.sbml>
+python scripts/gapfill_from_reactions.py -r reactions.list -m media_file.txt > gapfilled_model.txt
 ```
+*   **Media Files**: These should define the chemical environment (e.g., `MOPS_NoC_Alpha-D-Glucose.txt`).
+*   **Tip**: Gap-filling is media-specific. A model gap-filled for one carbon source may not grow on another.
+
+### 3. Running Flux Balance Analysis
+Once you have a complete reaction set or an SBML model, you can run FBA to calculate growth rates and reaction fluxes.
+
+*   **Using an SBML file**:
+    ```bash
+    python example_code/run_fba_sbml.py -s model.sbml -m media_file.txt
+    ```
+*   **Using a reaction list**:
+    ```bash
+    python example_code/sbml_to_fba.py -r reactions.list -m media_file.txt
+    ```
 
 ## Expert Tips and Best Practices
-- **Solver Consistency**: PyFBA typically uses the GLPK solver. Note that results may vary slightly from the ModelSEED online interface, which often uses commercial solvers like CPLEX or Gurobi.
-- **Biochemistry Updates**: Since PyFBA relies on the ModelSEEDDatabase, ensure your local clone of that repository is up to date to include the latest reaction and compound schemas.
-- **Media Definitions**: Media files are tab-separated text files. Ensure compound names match the ModelSEED nomenclature (e.g., `D-Glucose` vs `Alpha-D-Glucose`) to avoid uptake errors.
-- **API Extensibility**: For complex simulations, use the `PyFBA.metabolism` classes (`Enzyme`, `Reaction`, `Compound`) within a Python script to manually manipulate the model before running the FBA module.
+
+*   **Annotation Quality**: PyFBA relies heavily on the SEED functional role nomenclature. For best results, annotate your genome using the PATRIC or RAST pipeline before starting.
+*   **Solver Selection**: PyFBA typically uses GLPK as the linear programming solver. If results differ slightly from ModelSEED online, it is often due to differences between GLPK and commercial solvers like CPLEX or Gurobi.
+*   **Biomass Equation**: Ensure your reaction list includes a proper biomass objective function. PyFBA uses the ModelSEED biomass template by default.
+*   **Flux Analysis**: After running FBA, use the `PyFBA.fba.fluxes` module in Python scripts to extract specific flux values for subsystems to understand which pathways are active.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| pyfba | Import a list of reactions and then compare growth on two media conditions to identify essential/non-essential media |
+| pyfba | Import a list of reactions and then iterate through testing eachreaction to see if the model can still grow |
+| pyfba | Run Flux Balance Analysis and calculate reaction fluxes |
+| pyfba | Run Flux Balance Analysis and calculate reaction fluxes |
+| pyfba | Run Flux Balance Analysis on a set of gapfilled functional roles |
+| pyfba | Import a list of reactions and then iterate through our gapfilling steps to see when we get growth. You can specify a single --growth & --nogrowth media conditions |
+| pyfba | List the compounds in a media formulation |
+| pyfba | Import a list of reactions and then iterate through our gapfilling steps to see when we get growth. You can specify multiple --positive & --negative media conditions |
+| pyfba | Get the roles associated with a file of reactions |
+| pyfba | Get the roles associated with a file of reactions |
+| pyfba | Convert a set of functions or roles to a list of reactions |
+| pyfba_media | List of media components for pyfba |
 
 ## Reference documentation
-- [Getting started with PyFBA](./references/linsalrob_github_io_PyFBA_getting_started.html.md)
-- [INSTALLING PyFBA](./references/linsalrob_github_io_PyFBA_installation.html.md)
-- [PyFBA API Index](./references/linsalrob_github_io_PyFBA_genindex.html.md)
+
+- [Getting Started with PyFBA](./references/github_com_linsalrob_PyFBA_blob_master_GETTING_STARTED.md)
+- [PyFBA README](./references/github_com_linsalrob_PyFBA_blob_master_README.md)
+- [Installation Guide](./references/github_com_linsalrob_PyFBA_blob_master_INSTALLATION.md)

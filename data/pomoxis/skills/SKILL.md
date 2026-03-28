@@ -1,6 +1,6 @@
 ---
 name: pomoxis
-description: Pomoxis is a suite of bioinformatics tools designed to streamline assembly, alignment, and error analysis for Oxford Nanopore sequencing data. Use when user asks to generate rapid assemblies, align reads to a reference, calculate BAM statistics, or assess assembly quality and error rates.
+description: Pomoxis is a suite of bioinformatics utilities designed to streamline the analysis, assembly, and quality assessment of Oxford Nanopore sequencing data. Use when user asks to align reads to a reference, generate draft assemblies, filter or subsample BAM files, and assess assembly accuracy or error profiles.
 homepage: https://github.com/nanoporetech/pomoxis
 ---
 
@@ -8,36 +8,71 @@ homepage: https://github.com/nanoporetech/pomoxis
 # pomoxis
 
 ## Overview
-Pomoxis is a suite of bioinformatics tools developed by Oxford Nanopore Technologies Research to streamline common analysis chains for nanopore sequencing data. It acts primarily as a high-level wrapper around established third-party tools like minimap2, miniasm, and racon, providing "known-good" default parameters optimized for ONT reads. Use this skill to execute rapid assembly-to-consensus workflows and to perform detailed statistical analysis of alignment and assembly errors.
 
-## Common CLI Patterns
+Pomoxis is a suite of bioinformatic utilities developed by Oxford Nanopore Technologies to streamline the analysis of nanopore sequencing data. It acts as a wrapper for high-performance third-party tools (like minimap2, racon, and samtools) while providing its own specialized scripts for downstream analysis. You should use this skill to perform common tasks such as creating consensus assemblies, filtering alignments by quality or length, and generating detailed error reports (homopolymers, substitutions, etc.) to evaluate sequencing performance or assembly accuracy.
 
-### Assembly and Alignment
-*   **Rapid Assembly**: Use `mini_assemble` to generate a draft assembly from raw ONT reads. This tool automates the overlap-layout-consensus (OLC) process using `miniasm` and `racon`.
-*   **Optimized Alignment**: Use `mini_align` to map reads to a reference. It wraps `minimap2` and handles index generation and sorting automatically.
-    *   *Tip*: `mini_align` can accept BAM files as input in addition to FASTX formats.
-    *   *Tip*: Use the option to copy FASTX comments to BAM tags to preserve metadata during alignment.
+## Core CLI Workflows
 
-### BAM Processing and Statistics
-*   **Extracting Stats**: Use `stats_from_bam` to generate summary statistics. Recent versions include read mean Q-scores and alignment flags in the output.
-*   **Filtering Reads**: Use `filter_bam` to clean up alignments. 
-    *   *Performance*: Assign multiple threads to improve BAM I/O speed.
-    *   *Flexibility*: You can choose to keep unmapped reads if needed for downstream analysis.
-*   **Subsampling**: Use `subsample_bam` for downsampling datasets. 
-    *   *Note*: Use the `--primary_only` flag instead of the deprecated `--ignore_secondary` to focus on primary alignments.
+### Alignment and Assembly
+Pomoxis provides high-level wrappers that bundle standard parameters for nanopore data.
 
-### Assembly Evaluation
-*   **Quality Assessment**: Use `assess_assembly` to compare a draft assembly against a known reference to determine identity and error rates.
-*   **Error Analysis**: 
-    *   Use `cat_errors` to categorize different types of assembly errors (mismatches, insertions, deletions).
-    *   Use `intersect_assembly_errors` to find common errors across multiple assembly attempts.
+*   **Align reads to a reference**:
+    `mini_align -r reference.fa -i reads.fastq -p output_prefix -t 8`
+    *   Use `-y` to include supplementary alignments.
+    *   Use `-d` to specify minimap2 presets (e.g., `map-ont`, `asm5`).
+    *   Use `-C` to copy FASTX comments into BAM tags.
+*   **Generate a draft assembly**:
+    `mini_assemble -i reads.fastq -o assembly_dir -t 8`
+    *   This wraps `miniasm` and `racon` for rapid assembly and polishing.
+
+### BAM Manipulation and Filtering
+Use these tools to prepare datasets for specific coverage depths or quality thresholds.
+
+*   **Subsample a BAM file**:
+    `subsample_bam -i input.bam -p output.bam -c 50`
+    *   Targets a specific coverage (e.g., 50x).
+    *   Use `--quality` to filter by mean error probability.
+    *   Use `--force_low_coverage` to keep contigs that don't meet the target depth.
+*   **General BAM filtering**:
+    `filter_bam -i input.bam -o filtered.bam --min_length 1000 --min_qual 10`
+    *   Supports multithreaded I/O and can retain unmapped reads that pass non-alignment filters.
+
+### Quality Assessment and Statistics
+These tools are essential for benchmarking assemblies or evaluating run quality.
+
+*   **Generate alignment statistics**:
+    `stats_from_bam input.bam > stats.tsv`
+    *   Provides read-level metrics including mean Q-score, alignment flags, and mapping quality.
+*   **Assess assembly accuracy**:
+    `assess_assembly -r reference.fa -i assembly.fa -t 8`
+    *   Calculates identity, indels, and mismatches.
+    *   Use `-a` to accumulate errors over multiple chunks for more robust statistics.
+*   **Analyze homopolymer errors**:
+    `assess_homopolymers -r reference.fa -i assembly.fa -t 8`
+    *   Specifically targets common nanopore systematic errors in homopolymer runs.
 
 ## Expert Tips
-*   **Environment Management**: Pomoxis is best managed via Bioconda. If installing via pip, ensure that `minimap2`, `miniasm`, `racon`, `samtools`, `bcftools`, and `seqkit` are manually added to your PATH.
-*   **Memory and CPU**: Since many pomoxis tools wrap `minimap2` and `racon`, ensure your environment has sufficient RAM for large genome assemblies. Use multithreading flags where available (especially in `filter_bam` and `mini_align`) to reduce wall-clock time.
-*   **Handling Large Files**: When working with very large BAM files, use `subsample_bam` to create smaller test sets before running computationally expensive error analysis tools like `intersect_assembly_errors`.
+
+*   **Memory Management**: If `catalogue_errors` is consuming too much memory, ensure you are using the latest version, as memory optimizations were introduced in v0.3.9.
+*   **Coverage Analysis**: Use `coverage_from_bam` with the `--one_file` option for a simplified output format when calculating depth across a reference.
+*   **Fast Conversion**: Use `fast_convert qa` to quickly convert files to FASTA format while maintaining quality-aware headers.
+*   **Handling LRA**: Pomoxis handles LRA (Long Read Aligner) BAMs where the `NM` tag represents matches rather than edit distance.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| assess_assembly | Calculate accuracy statistics for an assembly. |
+| filter_bam | Filter a bam |
+| intersect_assembly_errors | Assess errors which occur in the same reference position accross multiple assemblies. |
+| mini_align | Align fastq/a or bam formatted reads to a genome using minimap2. |
+| mini_assemble | Assemble fastq/fasta formatted reads and perform POA consensus. |
+| stats_from_bam | Parse a bamfile (from a stream) and output summary stats for each read. |
+| subsample_bam | Subsample a bam to uniform or proportional depth |
 
 ## Reference documentation
-- [Pomoxis GitHub Repository](./references/github_com_nanoporetech_pomoxis.md)
-- [Pomoxis Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_pomoxis_overview.md)
-- [Pomoxis Commit History (Feature Updates)](./references/github_com_nanoporetech_pomoxis_commits_master.md)
+
+- [Pomoxis GitHub README](./references/github_com_nanoporetech_pomoxis_blob_master_README.md)
+- [Pomoxis Changelog](./references/github_com_nanoporetech_pomoxis_blob_master_CHANGELOG.md)

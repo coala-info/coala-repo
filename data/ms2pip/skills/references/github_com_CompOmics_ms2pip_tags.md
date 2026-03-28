@@ -1,0 +1,391 @@
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FCompOmics%2Fms2pip%2Ftags)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FCompOmics%2Fms2pip%2Ftags)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Freleases%2Ftag_history&source=header-repo&source_repo=CompOmics%2Fms2pip)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[CompOmics](/CompOmics)
+/
+**[ms2pip](/CompOmics/ms2pip)**
+Public
+
+* [Notifications](/login?return_to=%2FCompOmics%2Fms2pip) You must be signed in to change notification settings
+* [Fork
+  19](/login?return_to=%2FCompOmics%2Fms2pip)
+* [Star
+   49](/login?return_to=%2FCompOmics%2Fms2pip)
+
+* [Code](/CompOmics/ms2pip)
+* [Issues
+  7](/CompOmics/ms2pip/issues)
+* [Pull requests
+  3](/CompOmics/ms2pip/pulls)
+* [Actions](/CompOmics/ms2pip/actions)
+* [Security
+  0](/CompOmics/ms2pip/security)
+* [Insights](/CompOmics/ms2pip/pulse)
+
+Additional navigation options
+
+* [Code](/CompOmics/ms2pip)
+* [Issues](/CompOmics/ms2pip/issues)
+* [Pull requests](/CompOmics/ms2pip/pulls)
+* [Actions](/CompOmics/ms2pip/actions)
+* [Security](/CompOmics/ms2pip/security)
+* [Insights](/CompOmics/ms2pip/pulse)
+
+# Tags: CompOmics/ms2pip
+
+[Releases](/CompOmics/ms2pip/releases)
+[Tags](/CompOmics/ms2pip/tags)
+
+Tags
+
+## [v4.2.0-alpha.0](/CompOmics/ms2pip/releases/tag/v4.2.0-alpha.0)
+
+Toggle v4.2.0-alpha.0's commit message
+
+Verified
+
+# Verified
+
+This commit was created on GitHub.com and signed with GitHub’s **verified signature**.
+
+GPG key ID: B5690EEEBB952194
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits)
+
+```
+Merge pull request #257 from paretje/hotfix/logging
+
+fix logging for spectral library prediction
+```
+
+* Feb 10, 2026
+* [0aca6b3](/CompOmics/ms2pip/commit/0aca6b32b86f34a0c7bbb116056a6a43676796aa)
+* [zip](/CompOmics/ms2pip/archive/refs/tags/v4.2.0-alpha.0.zip)
+* [tar.gz](/CompOmics/ms2pip/archive/refs/tags/v4.2.0-alpha.0.tar.gz)
+* [Notes](/CompOmics/ms2pip/releases/tag/v4.2.0-alpha.0)
+
+## [v4.1.2](/CompOmics/ms2pip/releases/tag/v4.1.2)
+
+Toggle v4.1.2's commit message
+
+Verified
+
+# Verified
+
+This commit was created on GitHub.com and signed with GitHub’s **verified signature**.
+
+GPG key ID: B5690EEEBB952194
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits)
+
+```
+Merge pull request #257 from paretje/hotfix/logging
+
+fix logging for spectral library prediction
+```
+
+* Feb 10, 2026
+* [0aca6b3](/CompOmics/ms2pip/commit/0aca6b32b86f34a0c7bbb116056a6a43676796aa)
+* [zip](/CompOmics/ms2pip/archive/refs/tags/v4.1.2.zip)
+* [tar.gz](/CompOmics/ms2pip/archive/refs/tags/v4.1.2.tar.gz)
+* [Notes](/CompOmics/ms2pip/releases/tag/v4.1.2)
+
+## [v4.1.1](/CompOmics/ms2pip/releases/tag/v4.1.1)
+
+Toggle v4.1.1's commit message
+
+Verified
+
+# Verified
+
+This commit was created on GitHub.com and signed with GitHub’s **verified signature**.
+
+GPG key ID: B5690EEEBB952194
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits)
+
+```
+Merge pull request #252 from CompOmics/fix/ci-use-wheel-only
+
+CI: Don't build dependencies like pyarrow from source
+```
+
+* Jan 7, 2026
+* [4edc867](/CompOmics/ms2pip/commit/4edc867eff8d3f56e4cc9018f9d266129c5bca88)
+* [zip](/CompOmics/ms2pip/archive/refs/tags/v4.1.1.zip)
+* [tar.gz](/CompOmics/ms2pip/archive/refs/tags/v4.1.1.tar.gz)
+* [Notes](/CompOmics/ms2pip/releases/tag/v4.1.1)
+
+## [v4.1.0](/CompOmics/ms2pip/releases/tag/v4.1.0)
+
+Toggle v4.1.0's commit message
+
+Verified
+
+# Verified
+
+This commit was created on GitHub.com and signed with GitHub’s **verified signature**.
+
+GPG key ID: B5690EEEBB952194
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits)
+
+```
+Add Python 3.13 support (testing and builds); update dependency versi…
+
+…ons; bump version (#240)
+```
+
+* Jan 20, 2025
+* [c69d78d](/CompOmics/ms2pip/commit/c69d78d827d380a51acb9c4607297f72ed14c2dc)
+* [zip](/CompOmics/ms2pip/archive/refs/tags/v4.1.0.zip)
+* [tar.gz](/CompOmics/ms2pip/archive/refs/tags/v4.1.0.tar.gz)
+* [Notes](/CompOmics/ms2pip/releases/tag/v4.1.0)
+
+## [v4.0.0](/CompOmics/ms2pip/releases/tag/v4.0.0)
+
+Toggle v4.0.0's commit message
+
+```
+Move wheels before uploading to PyPI
+```
+
+* Jul 17, 2024
+* [d2a4281](/CompOmics/ms2pip/commit/d2a42819e24546db44f2d91eb9b7f47ed702a43e)
+* [zip](/CompOmics/ms2pip/archive/refs/tags/v4.0.0.zip)
+* [tar.gz](/CompOmics/ms2pip/archive/refs/tags/v4.0.0.tar.gz)
+* [Notes](/CompOmics/ms2pip/releases/tag/v4.0.0)
+
+## [v4.0.0-dev14](/CompOmics/ms2pip/releases/tag/v4.0.0-dev14)
+
+Toggle v4.0.0-dev14's commit message
+
+```
+Version bump; attempt to fix build workflow
+```
+
+* Jul 9, 2024
+* [14fd732](/CompOmics/ms2pip/commit/14fd732efb2d670d5693ce53644bc2ebc2af49d9)
+* [zip](/CompOmics/ms2pip/archive/refs/tags/v4.0.0-dev14.zip)
+* [tar.gz](/CompOmics/ms2pip/archive/refs/tags/v4.0.0-dev14.tar.gz)
+
+## [v4.0.0-dev13](/CompOmics/ms2pip/releases/tag/v4.0.0-dev13)
+
+Toggle v4.0.0-dev13's commit message
+
+```
+Revert fasta assignment
+```
+
+* May 9, 2024
+* [fd34319](/CompOmics/ms2pip/commit/fd34319d97e2448e9cb38f243ab21542cb691929)
+* [zip](/CompOmics/ms2pip/archive/refs/tags/v4.0.0-dev13.zip)
+* [tar.gz](/CompOmics/ms2pip/archive/refs/tags/v4.0.0-dev13.tar.gz)
+
+## [v4.0.0-dev12](/CompOmics/ms2pip/releases/tag/v4.0.0-dev12)
+
+Toggle v4.0.0-dev12's commit message
+
+```
+Add macosx_arm64 to build roster
+```
+
+* May 2, 2024
+* [5ccac9d](/CompOmics/ms2pip/commit/5ccac9d3e764c48de003b5f0d7cea86de4c8ec33)
+* [zip](/CompOmics/ms2pip/archive/refs/tags/v4.0.0-dev12.zip)
+* [tar.gz](/CompOmics/ms2pip/archive/refs/tags/v4.0.0-dev12.tar.gz)
+
+## [v4.0.0-dev11](/CompOmics/ms2pip/releases/tag/v4.0.0-dev11)
+
+Toggle v4.0.0-dev11's commit message
+
+```
+Version bump
+```
+
+* Apr 17, 2024
+* [faebaf0](/CompOmics/ms2pip/commit/faebaf07a15ef8611acb710621a8402d8b0ea84c)
+* [zip](/CompOmics/ms2pip/archive/refs/tags/v4.0.0-dev11.zip)
+* [tar.gz](/CompOmics/ms2pip/archive/refs/tags/v4.0.0-dev11.tar.gz)
+
+## [v4.0.0-dev10](/CompOmics/ms2pip/releases/tag/v4.0.0-dev10)
+
+Toggle v4.0.0-dev10's commit message
+
+```
+Update dependencies; version bump
+```
+
+* Apr 8, 2024
+* [dcce1ac](/CompOmics/ms2pip/commit/dcce1ac603127e9c5dbe784a75217722d839c184)
+* [zip](/CompOmics/ms2pip/archive/refs/tags/v4.0.0-dev10.zip)
+* [tar.gz](/CompOmics/ms2pip/archive/refs/tags/v4.0.0-dev10.tar.gz)
+
+Previous[Next](/CompOmics/ms2pip/tags?after=v4.0.0-dev10)
+
+## Footer
+
+© 2026 GitHub, Inc.
+
+### Footer navigation
+
+* [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+* [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+* [Security](https://github.com/security)
+* [Status](https://www.githubstatus.com/)
+* [Community](https://github.community/)
+* [Docs](https://docs.github.com/)
+* [Contact](https://support.github.com?tags=dotcom-footer)
+* Manage cookies
+* Do not share my personal information
+
+You can’t perform that action at this time.

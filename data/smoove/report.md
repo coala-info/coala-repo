@@ -242,3 +242,6 @@ Options:
   --help, -h             display this help and exit
 ```
 
+
+## Metadata
+- **Skill**: generated

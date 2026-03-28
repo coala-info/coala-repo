@@ -1,6 +1,6 @@
 ---
 name: crux
-description: Crux is a Rust framework that centralizes application business logic in a platform-agnostic core while delegating side effects to native shells. Use when user asks to share business logic across mobile and web platforms, implement a unidirectional data flow in Rust, or separate pure application logic from platform-specific side effects.
+description: Crux is a framework for building cross-platform applications with a shared Rust core and native UI shells. Use when user asks to implement shared business logic in Rust, generate foreign language bindings for mobile or web, or manage side effects using a functional architecture.
 homepage: https://github.com/redbadger/crux
 ---
 
@@ -8,77 +8,146 @@ homepage: https://github.com/redbadger/crux
 # crux
 
 ## Overview
-
-Crux is a framework designed to centralize application business logic and behavior in a single, side-effect-free Rust "Core." By strictly separating pure logic from platform-specific side effects, Crux allows developers to write complex behavior once and project it onto thin, native "Shells" (SwiftUI, Jetpack Compose, React). The architecture follows a unidirectional data flow where the Core processes events, updates state, and requests effects that the Shell executes.
+Crux enables a "Shared Core, Thin Shell" architecture. You implement your application's state management and business logic once in Rust and project it into platform-native UIs (SwiftUI, Jetpack Compose, React). The core is side-effect free; it receives events and emits "Effects" (requests for actions like HTTP calls or disk I/O) which the platform-specific shell executes and returns as "Responses".
 
 ## Core Implementation Patterns
 
-### Defining the Component Types
+### Defining the Core
+Every Crux core requires four main components defined in the `shared` crate:
+1.  **Model**: The state of your application.
+2.  **Event**: Actions that can happen (User interactions or Effect responses).
+3.  **Effect**: Side effects the shell must perform.
+4.  **Update**: A function that takes an `Event` and `Model`, updates the `Model`, and potentially emits `Effect`s.
 
-Every Crux application requires four primary types to define its state machine:
-
-1.  **Event**: An enum representing all possible user interactions or external notifications.
-2.  **Model**: A struct representing the internal state of the application.
-3.  **Effect**: An enum describing the side-effects the Core needs the Shell to perform.
-4.  **ViewModel**: A simplified representation of the state optimized for the UI to display.
-
-### The Update Function
-
-The `update` function is the heart of the logic. It must remain pure and side-effect-free.
-
+### Implementing the App Trait
 ```rust
-fn update(&self, msg: Event, model: &mut Model) -> Command<Effect, Event> {
-    match msg {
-        Event::Increment => {
-            model.count += 1;
-            Command::done()
+impl App for MyApp {
+    type Model = Model;
+    type Event = Event;
+    type ViewModel = ViewModel;
+    type Capabilities = Capabilities;
+
+    fn update(&self, event: Event, model: &mut Model, caps: &Capabilities) {
+        match event {
+            Event::TriggerAction => {
+                caps.http.get("https://api.example.com").expect_json().send(Event::Response);
+            }
+            Event::Response(Ok(data)) => {
+                model.data = data;
+            }
+            // ...
         }
-        Event::FetchData => {
-            // Request a side effect via a Capability
-            self.http.get("https://api.example.com").expect_json().handle(Event::DataReceived)
-        }
-        // ... other events
+    }
+
+    fn view(&self, model: &Model) -> ViewModel {
+        ViewModel { /* project state to UI-friendly format */ }
     }
 }
 ```
 
-## Managed Effects and Capabilities
+## CLI and Workflow Patterns
 
-Crux uses "Capabilities" to provide ergonomic APIs for side effects. The Core requests an effect, and the Shell performs the actual work.
+### Type Generation
+Crux uses a dedicated crate (usually `shared_types`) to generate foreign language bindings. This is the primary CLI interaction point.
+- **Generate all types**: `cargo run -p shared_types`
+- This command typically generates:
+    - **Swift**: For iOS shells.
+    - **Kotlin**: For Android shells.
+    - **TypeScript**: For Web shells.
 
-*   **Render**: Built-in to `crux_core`. Use it to tell the Shell to refresh the UI after a state change.
-*   **Http**: Full HTTP implementation (based on Surf API). Supports request/response cycles.
-*   **KeyValue**: Basic persistent storage (Get/Set).
-*   **Time**: Accessing current time or setting durations/instants.
-*   **Platform**: Querying information about the host environment.
+### Project Structure
+Maintain the standard Crux directory layout for seamless integration:
+- `shared/`: The Rust core logic.
+- `shared_types/`: The type generation binary.
+- `iOS/`: SwiftUI project.
+- `Android/`: Jetpack Compose project.
+- `web/`: React/Vue/TypeScript project.
 
-### Custom Capabilities
+### Testing the Core
+Because the core is side-effect free, you can test complex user journeys in pure Rust without mocks:
+- Use `crux_core::testing::Tester` to simulate events and assert on model changes or emitted effects.
+- Run tests: `cargo test -p shared`
 
-If a specific side effect is not covered, you can implement custom capabilities for streaming (e.g., SSE) or specialized hardware access. These should always return an `Effect` to be handled by the Shell.
+## Managed Capabilities
+Instead of calling APIs directly, use Crux Capabilities to request actions:
+- **HTTP**: `crux_http` for web requests.
+- **Key-Value**: `crux_kv` for persistent storage.
+- **Time**: `crux_time` for getting the current time or setting timers.
+- **Platform**: `crux_platform` for device-specific information.
 
-## FFI and Type Generation
+## Expert Tips
+- **Keep the Shell Thin**: The shell should only handle UI rendering and executing effects. If you find yourself writing logic in Swift or Kotlin, move it to the Rust `update` function.
+- **ViewModel Projection**: Use the `view` function to transform your complex `Model` into a simple `ViewModel` that the UI can render directly without further processing.
+- **Effect Composition**: Use `compose` patterns when one event triggers multiple capabilities (e.g., fetching data and logging the time simultaneously).
 
-Crux relies on static type checking across the language boundary.
 
-1.  **Type Generation**: Use `serde-generate` to create types and serialization code for Swift, Kotlin, and TypeScript.
-2.  **Mobile (iOS/Android)**: Uses Mozilla's UniFFI to create the bridge.
-3.  **Web**: Uses `wasm-pack` to compile the core to WebAssembly.
 
-### The Core API Interface
+## Subcommands
 
-The Shell interacts with the Core through three primary functions:
-*   `process_event(Event) -> Vec<Request>`: Sends a user action to the Core.
-*   `handle_response(uuid, Response) -> Vec<Request>`: Sends the result of a side-effect back to the Core.
-*   `view() -> ViewModel`: Retrieves the current state for rendering.
-
-## Best Practices
-
-*   **Keep Shells Thin**: The Shell should contain zero business logic. If you find yourself writing `if` statements in the Shell, move that logic into the Core's `update` function or `ViewModel` projection.
-*   **Test the Core**: Since the Core is pure Rust and side-effect-free, you can run high-level user journey tests in milliseconds using standard `cargo test` without mocks or stubs.
-*   **Managed Effects**: Always use the `Command` API for complex workflows. It allows for fire-and-forget, request/response, and streaming semantics.
-*   **Serialization**: Ensure all types passed across the FFI boundary implement `Serialize` and `Deserialize`.
+| Command | Description |
+|---------|-------------|
+| bullseye | Bullseye will search for PPIDs in these spectra. Bullseye will assign high-resolution precursor masses to these spectra. |
+| crux | Supports a variety of primary and utility commands for mass spectrometry data analysis. |
+| crux | crux supports the following primary commands: |
+| crux | Crux supports the following primary commands and utility commands. |
+| crux | Crux supports the following primary commands and utility commands. |
+| crux | Supports a variety of commands for mass spectrometry data analysis. |
+| crux | Crux is a suite of tools for analyzing tandem mass spectrometry data. |
+| crux | Supports a variety of commands for mass spectrometry data analysis. |
+| crux | Crux is a suite of tools for analyzing tandem mass spectrometry data. |
+| crux | Crux is a suite of tools for analyzing tandem mass spectrometry data. |
+| crux | Crux is a suite of tools for analyzing tandem mass spectrometry data. |
+| crux | Crux is a suite of tools for analyzing tandem mass spectrometry data. |
+| crux | Supports a variety of commands for mass spectrometry data analysis. |
+| crux | Supports a variety of commands for mass spectrometry data analysis. |
+| crux | Crux is a suite of tools for analyzing tandem mass spectrometry data. |
+| crux | Supports a variety of commands for mass spectrometry data analysis. |
+| crux | Crux supports the following primary commands and utility commands. |
+| crux | Crux is a suite of tools for analyzing tandem mass spectrometry data. |
+| crux | Crux is a suite of tools for analyzing mass spectrometry data. |
+| crux | Crux is a suite of tools for analyzing tandem mass spectrometry data. |
+| crux | Crux is a suite of tools for analyzing mass spectrometry proteomics data. |
+| crux | Crux is a suite of tools for analyzing mass spectrometry proteomics data. |
+| crux | A suite of tools for analyzing mass spectrometry data in proteomics. |
+| crux | Crux supports the following primary commands and utility commands. |
+| crux | Crux is a suite of tools for analyzing mass spectrometry proteomics data. |
+| crux | Crux is a suite of tools for analyzing mass spectrometry data. |
+| crux | Crux is a suite of tools for analyzing mass spectrometry proteomics data. |
+| crux | Crux is a suite of tools for analyzing mass spectrometry proteomics data. |
+| crux | crux supports the following primary commands: |
+| crux | crux supports the following primary commands: |
+| crux | Crux is a suite of tools for analyzing mass spectrometry data. |
+| crux | Crux is a suite of tools for analyzing tandem mass spectrometry data. |
+| crux | Crux is a suite of tools for analyzing mass spectrometry data. |
+| crux assign-confidence | Assign confidence estimates to peptide-spectrum matches (PSMs). |
+| crux barista | Barista is a tool for identifying peptides from tandem mass spectra. |
+| crux cascade-search | Searches spectra against a series of databases in a cascade. |
+| crux comet | Comet is a widely used open-source tandem mass spectrometry search algorithm. |
+| crux extract-columns | Extracts specified columns from a tab-delimited file. |
+| crux extract-rows | Extract rows from a TSV file based on a column value. |
+| crux generate-peptides | Generate peptides from a protein FASTA file. |
+| crux get-ms2-spectrum | Parse fragmentation spectra from MS2 files. |
+| crux localize-modification | Localize modifications in PSM files. |
+| crux make-pin | Creates a pin file from one or more input files containing peptide-spectrum matches (PSMs). |
+| crux param-medic | Parse fragmentation spectra to estimate measurement error. |
+| crux pipeline | Run the Crux pipeline for peptide identification. |
+| crux predict-peptide-ions | Predict theoretical peptide ions. |
+| crux print-processed-spectra | Parse fragmentation spectra from MS2 files and write processed spectra to an output file. |
+| crux q-ranker | Rank fragmentation spectra using search results. |
+| crux stat-column | Extracts a column from a tab-delimited file. |
+| crux subtract-index | A new peptide index containing all peptides that occur in the first index but not the second. |
+| crux tide-index | Create a peptide index for the tide search engine. |
+| crux tide-search | Search for peptides in mass spectrometry data using the Tide algorithm. |
+| crux xlink-assign-ions | Assigns cross-linked peptides to MS/MS spectra. |
+| crux xlink-score-spectrum | Score cross-linked peptides based on their mass spectrum. |
+| hardklor | Parses high-resolution spectra from a file. |
+| percolator | Percolator is a widely used tool for the statistical validation and rescoring of peptide identification results from mass spectrometry. |
+| psm-convert | Convert PSM files to different formats. |
+| search-for-xlinks | Search for cross-linked peptides in MS2 and FASTA files. |
+| sort-by-column | Sorts a tab-delimited file by the values in a specified column. |
+| spectral-counts | Calculate spectral counts for PSMs. |
 
 ## Reference documentation
-
-- [Crux GitHub Repository](./references/github_com_redbadger_crux.md)
-- [Crux Documentation/Book](./references/github_com_redbadger_crux_tree_master_docs.md)
+- [README.md](./references/github_com_redbadger_crux.md)
+- [Getting Started](./references/redbadger_github_io_crux_getting_started_core.html.md)
+- [Capabilities Guide](./references/redbadger_github_io_crux_guide_capabilities.html.md)

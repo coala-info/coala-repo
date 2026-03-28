@@ -159,3 +159,6 @@ OPTIONS:
     -s, --sketch-size <sketch-size>    Sketch size [default: 1000]
 ```
 
+
+## Metadata
+- **Skill**: generated

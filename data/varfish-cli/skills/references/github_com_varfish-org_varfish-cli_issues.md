@@ -1,0 +1,289 @@
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fvarfish-org%2Fvarfish-cli%2Fissues)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fvarfish-org%2Fvarfish-cli%2Fissues)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Fissues%2Findex&source=header-repo&source_repo=varfish-org%2Fvarfish-cli)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[varfish-org](/varfish-org)
+/
+**[varfish-cli](/varfish-org/varfish-cli)**
+Public
+
+* [Notifications](/login?return_to=%2Fvarfish-org%2Fvarfish-cli) You must be signed in to change notification settings
+* [Fork
+  2](/login?return_to=%2Fvarfish-org%2Fvarfish-cli)
+* [Star
+   2](/login?return_to=%2Fvarfish-org%2Fvarfish-cli)
+
+* [Code](/varfish-org/varfish-cli)
+* [Issues
+  8](/varfish-org/varfish-cli/issues)
+* [Pull requests
+  5](/varfish-org/varfish-cli/pulls)
+* [Actions](/varfish-org/varfish-cli/actions)
+* [Security
+  0](/varfish-org/varfish-cli/security)
+* [Insights](/varfish-org/varfish-cli/pulse)
+
+Additional navigation options
+
+* [Code](/varfish-org/varfish-cli)
+* [Issues](/varfish-org/varfish-cli/issues)
+* [Pull requests](/varfish-org/varfish-cli/pulls)
+* [Actions](/varfish-org/varfish-cli/actions)
+* [Security](/varfish-org/varfish-cli/security)
+* [Insights](/varfish-org/varfish-cli/pulse)
+
+# Issues
+
+Search Issues
+
+is:issue state:open
+
+is:issue state:open
+
+Search
+
+[Labels](/varfish-org/varfish-cli/labels)[Milestones](/varfish-org/varfish-cli/milestones)[New issue](/login?return_to=https://github.com/varfish-org/varfish-cli/issues)
+
+## Search results
+
+OpenClosed
+
+* ### [Only return exit code 0 on successful case import](/varfish-org/varfish-cli/issues/138)
+
+  Status: Open.
+
+  #138 In varfish-org/varfish-cli;
+
+  · [Nicolai-vKuegelgen](/varfish-org/varfish-cli/issues?q=is%3Aissue%20state%3Aopen%20author%3ANicolai-vKuegelgen)  opened on May 2, 2025
+
+* ### [extend for new case\_import rest api](/varfish-org/varfish-cli/issues/130)
+
+  [enhancementNew feature or request](/varfish-org/varfish-cli/issues?q=is%3Aissue%20state%3Aopen%20label%3Aenhancement)New feature or request
+
+  Status: Open.
+
+  #130 In varfish-org/varfish-cli;
+
+  · [stolpeo](/varfish-org/varfish-cli/issues?q=is%3Aissue%20state%3Aopen%20author%3Astolpeo)  opened on Sep 2, 2024
+
+* ### [Extend phenopacket YAML bootstrapping](/varfish-org/varfish-cli/issues/73)
+
+  [enhancementNew feature or request](/varfish-org/varfish-cli/issues?q=is%3Aissue%20state%3Aopen%20label%3Aenhancement)New feature or request
+
+  Status: Open.
+
+  #73 In varfish-org/varfish-cli;
+
+  · [holtgrewe](/varfish-org/varfish-cli/issues?q=is%3Aissue%20state%3Aopen%20author%3Aholtgrewe)  opened on Nov 3, 2023
+
+* ### [Adjust varfish-server manual for updates in CLI interface](/varfish-org/varfish-cli/issues/71)
+
+  [enhancementNew feature or request](/varfish-org/varfish-cli/issues?q=is%3Aissue%20state%3Aopen%20label%3Aenhancement)New feature or request
+
+  Status: Open.
+
+  #71 In varfish-org/varfish-cli;
+
+  · [holtgrewe](/varfish-org/varfish-cli/issues?q=is%3Aissue%20state%3Aopen%20author%3Aholtgrewe)  opened on Nov 1, 2023
+
+   · [0.6.0](https://github.com/varfish-org/varfish-cli/milestone/1)
+
+* ### [Implement support for new-style imports](/varfish-org/varfish-cli/issues/70)
+
+  [enhancementNew feature or request](/varfish-org/varfish-cli/issues?q=is%3Aissue%20state%3Aopen%20label%3Aenhancement)New feature or request
+
+  Status: Open.
+
+  #70 In varfish-org/varfish-cli;
+
+  · [holtgrewe](/varfish-org/varfish-cli/issues?q=is%3Aissue%20state%3Aopen%20author%3Aholtgrewe)  opened on Nov 1, 2023
+
+   · [0.6.0](https://github.com/varfish-org/varfish-cli/milestone/1)
+
+* ### [Implement API versioning in varfish-cli](/varfish-org/varfish-cli/issues/6)
+
+  [enhancementNew feature or request](/varfish-org/varfish-cli/issues?q=is%3Aissue%20state%3Aopen%20label%3Aenhancement)New feature or request
+
+  Status: Open.
+
+  #6 In varfish-org/varfish-cli;
+
+  · [holtgrewe](/varfish-org/varfish-cli/issues?q=is%3Aissue%20state%3Aopen%20author%3Aholtgrewe)  opened on Feb 4, 2022
+
+* ### [Add support for project manipulation](/varfish-org/varfish-cli/issues/3)
+
+  [enhancementNew feature or request](/varfish-org/varfish-cli/issues?q=is%3Aissue%20state%3Aopen%20label%3Aenhancement)New feature or request
+
+  Status: Open.
+
+  #3 In varfish-org/varfish-cli;
+
+  · [holtgrewe](/varfish-org/varfish-cli/issues?q=is%3Aissue%20state%3Aopen%20author%3Aholtgrewe)  opened on May 4, 2021
+
+* ### [Add documentation](/varfish-org/varfish-cli/issues/2)
+
+  [documentationImprovements or additions to documentation](/varfish-org/varfish-cli/issues?q=is%3Aissue%20state%3Aopen%20label%3Adocumentation)Improvements or additions to documentation
+
+  Status: Open.
+
+  #2 In varfish-org/varfish-cli;
+
+  · [holtgrewe](/varfish-org/varfish-cli/issues?q=is%3Aissue%20state%3Aopen%20author%3Aholtgrewe)  opened on Feb 16, 2021
+
+## Footer
+
+© 2026 GitHub, Inc.
+
+### Footer navigation
+
+* [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+* [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+* [Security](https://github.com/security)
+* [Status](https://www.githubstatus.com/)
+* [Community](https://github.community/)
+* [Docs](https://docs.github.com/)
+* [Contact](https://support.github.com?tags=dotcom-footer)
+* Manage cookies
+* Do not share my personal information
+
+You can’t perform that action at this time.

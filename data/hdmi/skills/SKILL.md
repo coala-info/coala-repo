@@ -1,6 +1,6 @@
 ---
 name: hdmi
-description: HDMI identifies and validates horizontal gene transfer events between microbial species within metagenomic samples using read-spanning analysis. Use when user asks to detect HGT candidates, index HGT sequences, validate transfer events with read profiling, or summarize and filter HGT results.
+description: HDMI is a bioinformatics pipeline designed to identify and validate horizontal gene transfer events within metagenomic datasets using read-spanning evidence. Use when user asks to detect HGT events, profile HGT candidates using metagenomic reads, or analyze gene movement between species in MAGs.
 homepage: https://github.com/HaoranPeng21/HDMI
 ---
 
@@ -9,64 +9,70 @@ homepage: https://github.com/HaoranPeng21/HDMI
 
 ## Overview
 
-HDMI (HGT Detection from MAGs in Individual) is a specialized bioinformatics pipeline for identifying genetic material exchange between microbial species within metagenomic samples. Unlike simple similarity searches, HDMI validates HGT candidates by analyzing read-spanning data, ensuring that the detected events are supported by the actual sequencing reads of the sample. Use this skill to guide users through the end-to-end process of HGT identification, from raw MAGs to a filtered table of validated transfer events.
+HDMI (HGT Detection from MAGs in Individual) is a bioinformatics pipeline designed to identify horizontal gene transfer events within metagenomic datasets. It moves beyond simple sequence similarity by incorporating read-spanning validation, ensuring that detected HGT events are supported by physical evidence in the sequencing data. This skill should be used when analyzing microbial evolution, antibiotic resistance spread, or functional gene movement between species in a metagenomic context.
 
 ## Core Workflow
 
-The HDMI pipeline is executed in four sequential steps. All steps require a mapping file (group info) that links MAGs to their respective species.
+The HDMI pipeline follows a strict four-step sequence. Each step depends on the output of the previous one.
 
-### 1. Candidate Detection
-Identifies potential HGT events using BLAST-based similarity searches between genomes.
-
-```bash
-HDMI detect -i <genome_folder> -o <output_dir> -m <mapping_file> -t <threads>
-```
-
-*   **Expert Tip**: Always run with `--count-only` first. This estimates the number of genome pairs and total runtime without performing the heavy BLAST computation.
-*   **Input**: A directory of MAGs in FASTA format.
-*   **Requirement**: Use high-quality MAGs (e.g., those passing GUNC or CheckM quality control) to reduce false positives.
-
-### 2. Indexing
-Extracts HGT sequences and builds Bowtie2 indices for the identified regions.
+### 1. Candidate Detection (`detect`)
+Identifies potential HGT events using BLAST-based similarity searches between MAGs.
 
 ```bash
-HDMI index -g <genome_folder> -m <mapping_file> -o <output_dir> -t <threads>
+HDMI detect -i <genome_folder> -o <output_dir> -m <group_info.txt> -t <threads>
 ```
 
-*   **Note**: This step prepares the reference for read mapping in the next phase. It generates `elements_info_raw.csv`.
+*   **Best Practice**: Always run with `--count-only` first to estimate the number of genome pairs and projected runtime.
+*   **Parallelization**: For large datasets, use `-n <batch_number>` and `--total <total_batches>` to split the workload across multiple nodes or sessions.
 
-### 3. Read Profiling and Validation
-Validates HGT candidates by mapping raw metagenomic reads to the HGT regions.
+### 2. Indexing (`index`)
+Builds Bowtie2 indices for the contigs identified as containing HGT candidates.
 
 ```bash
-HDMI profile -r1 <R1.fq.gz> -r2 <R2.fq.gz> -o <output_dir> -g <genome_folder> -m <mapping_file> -t <threads>
+HDMI index -g <genome_folder> -m <group_info.txt> -o <output_dir> -t <threads>
 ```
 
-*   **Validation Logic**: This step uses "read spanning" analysis. If reads map across the junction of the HGT element and the flanking genomic sequence, the event is considered validated.
-*   **Parameter**: Adjust `--sth` (span threshold, default: 2) to change the stringency of read validation.
-
-### 4. Summary and Filtering
-Merges results across multiple samples and applies final abundance filters.
+### 3. Event Profiling (`profile`)
+Validates HGT events by mapping raw metagenomic reads to the HGT regions. This step confirms the event exists in the specific sample.
 
 ```bash
-HDMI summary -o <output_dir> -group <mapping_file> --threshold <abundance_val>
+HDMI profile -r1 <sample_R1.fq.gz> -r2 <sample_R2.fq.gz> -o <output_dir> -g <genome_folder> -m <group_info.txt> -t <threads>
 ```
 
-*   **Output**: The primary result is `HGT_events.csv`, which contains the filtered and validated HGT events.
-*   **Threshold**: The `--threshold` parameter (default: 1.0) sets the species abundance requirement for presence.
+*   **Validation Threshold**: Use `--sth` (default: 2) to adjust the required number of spanning reads for an event to be considered valid.
 
-## Input File Formats
+### 4. Result Summary (`summary`)
+Merges results across multiple samples and generates the final HGT element table.
 
-*   **Genome Folder**: A directory containing `.fa` or `.fasta` files for each MAG.
-*   **Mapping File**: A tab-separated or space-separated file mapping MAG filenames to species names.
-*   **Reads**: Standard paired-end FASTQ files (can be gzipped).
+```bash
+HDMI summary -o <output_dir> -group <group_info.txt>
+```
 
-## Performance and Resource Management
+## Input Requirements
 
-*   **Memory**: Ensure at least 16GB of RAM is available; 32GB is recommended for large datasets or high thread counts.
-*   **Storage**: HDMI generates significant intermediate data. Ensure disk space is 2-3x the size of the input FASTQ data.
-*   **Parallelization**: For very large datasets, use the `-n` (batch number) and `--total` (total batches) flags in the `detect` step to split the workload across different nodes or runs.
+*   **Genome Folder**: A directory containing MAGs in FASTA format.
+*   **Group Info File**: A tab-separated or space-separated file mapping MAG filenames to species/group IDs.
+    *   *Example format*: `bin.1.fa 1`
+*   **Quality Control**: It is highly recommended to use high-quality MAGs (e.g., those passing GUNC quality control) to avoid false positives caused by contamination.
+
+## Expert Tips
+
+*   **Resource Management**: Step 1 (detect) is CPU-intensive due to BLAST. Step 3 (profile) is I/O and CPU intensive. Ensure at least 16GB of RAM is available, though 32GB is recommended for large-scale metagenomic samples.
+*   **Storage**: Intermediate files (indices and temporary BLAST results) can take 2-3x the size of your input data. Monitor disk space in the `<output_dir>`.
+*   **Batch Processing**: If processing hundreds of MAGs, the number of pairs grows quadratically. Use the batching parameters (`-n` and `--total`) to prevent single-process bottlenecks.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| HDMI index | Index a genome for HDMI analysis. |
+| hdmi_detect | Directory containing genome FASTA files |
+| hdmi_profile | Profile HDMI sequencing data |
+| hdmi_summary | Generates a summary of HDMI validation results. |
 
 ## Reference documentation
-- [HDMI GitHub Repository](./references/github_com_HaoranPeng21_HDMI.md)
-- [HDMI Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_hdmi_overview.md)
+- [HDMI GitHub README](./references/github_com_HaoranPeng21_HDMI_blob_main_README.md)
+- [HDMI Environment Configuration](./references/github_com_HaoranPeng21_HDMI_blob_main_environment.yml.md)
+- [Group Info Example](./references/github_com_HaoranPeng21_HDMI_blob_main_Group_info_test.txt.md)

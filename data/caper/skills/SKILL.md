@@ -1,6 +1,6 @@
 ---
 name: caper
-description: Caper is a Python-based wrapper for the Cromwell engine that automates the execution and management of WDL workflows across various storage providers and computing backends. Use when user asks to initialize pipeline configurations, run or submit WDL workflows to local or cloud environments, manage HPC leader jobs, or resume failed workflows using call caching.
+description: Caper is a Python-based wrapper for the Cromwell engine that simplifies running and managing WDL pipelines across various computing backends. Use when user asks to initialize a workflow environment, run or submit WDL pipelines, manage HPC leader jobs, or handle file localization between local and cloud storage.
 homepage: https://github.com/ENCODE-DCC/caper
 ---
 
@@ -8,54 +8,87 @@ homepage: https://github.com/ENCODE-DCC/caper
 # caper
 
 ## Overview
-Caper (Cromwell Assisted Pipeline ExecutoR) is a Python-based wrapper for the Cromwell engine. It streamlines the process of running WDL workflows by automating the composition of input files, handling file localization across different storage providers (S3, GS, HTTP, Local), and managing execution environments. It is the standard tool for running ENCODE pipelines and is designed to abstract away the complexity of backend-specific configurations.
 
-## Core CLI Patterns
+Caper (Cromwell Assisted Pipeline ExecutoR) is a Python-based wrapper for the Cromwell workflow engine. It simplifies the process of running WDL (Workflow Description Language) pipelines by automatically handling backend configuration, input file composition, and data localization. It allows users to seamlessly move files between local storage, S3, Google Storage, and HTTP URLs while executing tasks in Docker, Singularity, or Conda environments.
 
-### Initialization
-Before running pipelines, initialize the configuration for your specific infrastructure.
-- **Command**: `caper init [BACKEND]`
-- **Supported Backends**: `local`, `slurm`, `sge`, `pbs`, `lsf`, `gcp`, `aws`.
-- **Configuration**: This creates `~/.caper/default.conf`. You must edit this file to define required parameters (e.g., project IDs, buckets, or cluster partitions) before the tool will function correctly.
+## Core Workflows
 
-### Running Workflows
-Caper supports different execution modes depending on the environment:
+### 1. Initialization
+Before running pipelines, initialize Caper for your specific environment to generate the default configuration file (`~/.caper/default.conf`) and download required Cromwell/Womtool JARs.
 
-1.  **Local Run**: For small tests or powerful single nodes.
-    `caper run workflow.wdl -i inputs.json`
-2.  **Server Submission**: Requires a running Caper/Cromwell server.
-    `caper submit workflow.wdl -i inputs.json`
-3.  **HPC Submission**: Submits a "leader job" to the cluster which then manages child jobs.
-    `caper hpc submit workflow.wdl -i inputs.json --leader-job-name my_experiment`
+```bash
+# Supported backends: local, slurm, sge, pbs, lsf, gcp, aws
+caper init <backend>
+```
 
-### Environment Management
-Caper can force workflows to run inside specific containers or environments. Note that task-level `runtime` definitions in the WDL will override these CLI flags.
-- **Docker**: `caper run ... --docker` (uses default image in WDL) or `--docker [IMAGE_URL]`
-- **Singularity**: `caper run ... --singularity` or `--singularity docker://[IMAGE_URL]`
-- **Conda**: `caper run ... --conda [ENV_NAME]`
+### 2. Running Workflows
+There are two primary ways to execute a WDL:
+
+**Run Mode (Single Workflow):**
+Best for testing or one-off runs.
+```bash
+caper run workflow.wdl -i inputs.json --docker
+```
+
+**Server Mode (Production/Multiple Workflows):**
+Start a persistent server and submit jobs to it.
+```bash
+# Start the server in one session
+caper server
+
+# Submit jobs in another session
+caper submit workflow.wdl -i inputs.json -s "my_experiment_label"
+```
+
+### 3. HPC Submission (Leader Job Pattern)
+On clusters (SLURM, SGE, etc.), use the `hpc` subcommand to submit Caper as a "leader job" that manages child task submissions.
+
+```bash
+caper hpc submit workflow.wdl -i inputs.json --singularity --leader-job-name experiment_v1
+```
 
 ## Expert Tips and Best Practices
 
-### Call Caching and Restarts
-To restart a failed workflow without re-running successful steps, use a metadata database.
-- **Flag**: `--file-db [PATH_TO_DB]`
-- **Usage**: If a workflow fails, run the exact same command with the same `--file-db` path. Caper will collect and soft-link previous outputs to resume progress.
+### File Localization and Deepcopy
+Caper automatically transfers remote URIs (gs://, s3://, http://) to the target backend's temporary directory.
+- **Deepcopy**: Enabled by default. It recursively copies all files defined in `.json`, `.tsv`, and `.csv` inputs to the remote storage.
+- **Disable Deepcopy**: Use `--no-deepcopy` if you want to prevent automatic transfers.
 
-### URI Handling
-Caper automatically localizes files. You can mix URIs in your input JSON:
-- Supported: `gs://`, `s3://`, `http(s)://`, and absolute local paths.
-- **Cloud-to-Cloud**: If running on GCP but inputs are on S3, Caper handles the transfer to a temporary `gs://` bucket automatically.
+### Environment Management
+- **Singularity on HPC**: Most HPCs do not allow Docker. Use `--singularity` to run tasks in containers.
+- **Conda**: Use `--conda <env_name>`. Caper runs `conda run -n` internally, so you do not need to activate the environment manually.
+- **Precedence**: Environments defined in the WDL task's `runtime` section will always override CLI flags like `--docker` or `--singularity`.
 
-### HPC Job Management
-When using `caper hpc submit`:
-- **Listing Jobs**: Use `caper hpc list` to see active leader jobs.
-- **Aborting**: Use `caper hpc abort [JOB_ID]`. 
-- **Warning**: Do not use native cluster commands (like `scancel` or `qdel`) on the leader job alone, as this may leave orphaned child jobs running on the cluster.
+### Call-Caching and Resuming
+To reuse outputs from previous successful runs and resume failed workflows:
+- Use a persistent database: `--file-db <path_to_db_file>`.
+- If you encounter connection errors with multiple runs, ensure you are using a `caper server` or specify unique `--file-db` paths per run.
 
-### Troubleshooting
-- **Command Not Found**: If `caper` is not in your PATH after pip installation, add `export PATH=$PATH:~/.local/bin` to your `~/.bashrc`.
-- **Java Requirement**: Ensure Java 11 or higher is installed, as Caper is a wrapper for the Java-based Cromwell engine.
+### Monitoring and Troubleshooting
+- **Labeling**: Always use `-s` or `--str-label` when submitting. This allows you to search and manage workflows by a human-readable string instead of a long UUID.
+- **Listing**: `caper list <label_or_uuid>` (supports wildcards like `*`).
+- **Debugging**: If a workflow fails, use the debug command to parse metadata and identify the specific task failure.
+  ```bash
+  caper debug <uuid_or_label>
+  ```
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| caper abort | List of workflow IDs to find matching workflows to commit a specified action (list, metadata and abort). Wildcards (* and ?) are allowed. |
+| caper list | List workflows, metadata, and abort workflows. |
+| caper metadata | List of workflow IDs to find matching workflows to commit a specified action (list, metadata and abort). |
+| caper run | Run a WDL script with Caper |
+| caper server | Start Caper server |
+| caper submit | Submit a WDL workflow to Caper. |
+| caper troubleshoot | List of workflow IDs to find matching workflows to commit a specified action (list, metadata and abort). Wildcards (* and ?) are allowed. |
+| caper_init | Initialize Caper for a given platform. |
+| debug | Debug workflows |
+| unhold | List of workflow IDs to find matching workflows to commit a specified action (list, metadata and abort). Wildcards (* and ?) are allowed. |
 
 ## Reference documentation
-- [Caper GitHub Repository](./references/github_com_ENCODE-DCC_caper.md)
-- [Caper Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_caper_overview.md)
+- [Caper README](./references/github_com_ENCODE-DCC_caper_blob_master_README.md)
+- [Caper Detailed Usage](./references/github_com_ENCODE-DCC_caper_blob_master_DETAILS.md)

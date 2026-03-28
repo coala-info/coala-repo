@@ -219,3 +219,6 @@ Assigns reads to genomic features.
 telescope assign /usr/local/lib/python3.6/site-packages/telescope/data/alignment.bam /usr/local/lib/python3.6/site-packages/telescope/data/annotation.gtf
 ```
 
+
+## Metadata
+- **Skill**: generated

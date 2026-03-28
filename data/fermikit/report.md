@@ -157,3 +157,6 @@ Command: samview      SAM<->BAM conversion
          peovlp       merge overlapping ends and trim adapters
 ```
 
+
+## Metadata
+- **Skill**: generated

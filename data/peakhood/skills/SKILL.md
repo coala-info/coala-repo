@@ -1,6 +1,6 @@
 ---
 name: peakhood
-description: Peakhood resolves the ambiguity of CLIP-seq peak locations by determining whether binding occurred on spliced transcripts or genomic DNA. Use when user asks to extract site contexts, resolve exon-intron boundary ambiguity, or merge transcript-context binding sites.
+description: Peakhood identifies the most probable sequence context for CLIP-seq binding sites by distinguishing between genomic and transcriptomic evidence. Use when user asks to assign binding sites to genomic or transcript contexts, extract site-specific sequence information, or merge transcript context datasets.
 homepage: https://github.com/BackofenLab/Peakhood
 ---
 
@@ -8,54 +8,51 @@ homepage: https://github.com/BackofenLab/Peakhood
 # peakhood
 
 ## Overview
-Peakhood is a specialized bioinformatics tool designed to resolve the ambiguity of CLIP-seq peak locations. While many peaks are clearly intronic or exonic, those at exon-intron boundaries or within exons require careful analysis of read distributions to determine if the binding occurred on a spliced transcript or genomic DNA. Peakhood automates this decision-making process by evaluating exon-intron coverage ratios and identifying intron-spanning reads to provide a more accurate representation of the RBP binding site context.
 
-## Installation
-The recommended way to install Peakhood is via Bioconda:
-```bash
-conda install bioconda::peakhood
-```
+Peakhood is a bioinformatics tool designed to refine the interpretation of CLIP-seq data by identifying the most probable sequence context for each binding site. While genomic context (containing introns) is standard for intronic or intergenic regions, exonic sites are often ambiguous, potentially representing binding to either pre-mRNA or mature, spliced mRNA. Peakhood resolves this by analyzing experimental evidence from BAM files—specifically looking for high exon-intron read coverage ratios and the presence of intron-spanning reads—to decide between genomic and transcript contexts for every peak individually.
 
-## Core Command Patterns
+## Core Workflows
 
 ### Site Context Extraction
-The primary workflow involves taking genomic peaks and determining their most likely context using gene annotations and experimental read data.
+The primary function of Peakhood is to process genomic CLIP-seq peaks and assign them to a context.
 
-```bash
-peakhood extract -p peaks.bed -g annotations.gtf -b alignment.bam -o output_dir
-```
-*   **-p**: CLIP-seq peak regions in BED format.
-*   **-g**: Gene annotations in GTF format (standard or custom).
-*   **-b**: Mapped reads from the CLIP-seq experiment in BAM format.
+*   **Transcript Context**: Assigned when read evidence shows substantial coverage drops at exon borders and the presence of junction-spanning reads.
+*   **Genomic Context**: Assigned when reads overlap exon borders significantly or map consistently into neighboring intronic regions (typical for splicing factors like U2AF2).
 
-### Merging Results
-After extraction, use the merge mode to consolidate transcript context datasets into unified site collections. This is particularly useful for joining exon-border sites that are biologically part of the same binding event but split by splicing.
+### Command Line Usage Patterns
 
-```bash
-peakhood merge -i extraction_results/ -o merged_sites.bed
-```
+The tool operates primarily through two modes: `extract` and `merge`.
 
-### Batch Processing
-For projects involving multiple datasets, the batch mode streamlines the extraction and merging process in a single execution.
+#### 1. Extracting Contexts
+Use `peakhood extract` to perform the initial context assignment. This requires:
+*   A set of CLIP-seq peak regions (BED format).
+*   Read alignment data (BAM format).
+*   Gene annotations (GTF format).
 
-```bash
-peakhood batch -i input_config_folder/ -o batch_output/
-```
+#### 2. Merging Results
+Use `peakhood merge` to consolidate transcript context datasets into unified site collections. This is particularly useful when dealing with multiple replicates or related datasets to create a comprehensive binding map.
 
 ## Expert Tips and Best Practices
 
-### 1. Handling Ambiguous Contexts
-Peakhood uses the ratio of exon-to-intron read coverage to decide context. If you are working with an RBP known to have dual roles (e.g., a splicing factor that also binds mature mRNA in the cytoplasm), pay close attention to sites assigned to "both" contexts.
+*   **Isoform Selection**: When a site is assigned to a transcript context, Peakhood automatically selects the most likely transcript isoform. If cell-type or condition-specific RNA-seq data is available, always use a **custom GTF file** to improve the accuracy of this selection.
+*   **Handling Exon Borders**: Peakhood identifies "exon border sites"—peaks that appear separate in genomic coordinates but are connected by intron-spanning reads. The tool merges these into single binding events to prevent over-counting and misinterpretation of the binding architecture.
+*   **RBP-Specific Logic**: 
+    *   For RBPs known to bind predominantly spliced RNA (e.g., PUM2), expect high transcript context assignments.
+    *   For splicing factors or nuclear-retained RBPs (e.g., U2AF2), expect higher genomic context assignments even within exonic regions.
+*   **Thresholding**: In cases where an RBP has dual roles (cytoplasmic and nuclear), sites may show evidence for both contexts. Review the exon-intron coverage ratios if results seem ambiguous for specific peaks.
 
-### 2. Custom GTF Files
-For the most accurate transcript selection, use a custom GTF file derived from cell-type-specific or condition-specific RNA-seq data. This ensures Peakhood evaluates the binding sites against the isoforms actually expressed in your experimental system.
 
-### 3. Intron-Spanning Reads
-The tool relies heavily on intron-spanning reads to connect neighboring exons. Ensure your BAM files are generated using a splice-aware aligner (like STAR or HISAT2) to provide the necessary evidence for transcript-context binding.
 
-### 4. Peak Merging Logic
-Peakhood automatically merges exon-border sites connected by intron-spanning reads. This prevents the over-counting of binding events that appear as separate peaks in genomic coordinates but represent a single continuous binding site on a spliced RNA molecule.
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| batch | Batch processing for peakhood to extract transcript context and genomic context for sites using BAM, BED, GTF, and genomic sequence files. |
+| extract | Extract transcript and genomic context for CLIP-seq peak regions using BAM coverage and GTF annotations. |
+| merge | Merge peakhood results |
+| motif | Search for motifs or regular expressions in genomic or transcript sequences based on peakhood extract output, BED files, or transcript lists. |
 
 ## Reference documentation
-- [Peakhood GitHub Repository](./references/github_com_BackofenLab_Peakhood.md)
-- [Bioconda Peakhood Package](./references/anaconda_org_channels_bioconda_packages_peakhood_overview.md)
+
+- [Peakhood Main Documentation](./references/github_com_BackofenLab_Peakhood_blob_main_README.md)
+- [Peakhood Workflow Visual](./references/github_com_BackofenLab_Peakhood_blob_main_docs_peakhood_workflow.png.md)

@@ -1,6 +1,6 @@
 ---
 name: dicey
-description: Dicey simulates molecular biology assays and performs high-speed sequence searching to validate primers and design probes. Use when user asks to index a reference genome, search for specific nucleotide sequences, perform in-silico PCR, or design padlock probes for mRNA imaging.
+description: Dicey is a bioinformatics tool used for simulating PCR reactions, designing molecular probes, and performing rapid sequence searches against indexed reference genomes. Use when user asks to simulate in-silico PCR, design padlock probes for mRNA imaging, search for specific nucleotide sequences, or predict off-target primer binding.
 homepage: https://github.com/gear-genomics/dicey
 ---
 
@@ -8,52 +8,57 @@ homepage: https://github.com/gear-genomics/dicey
 # dicey
 
 ## Overview
-The `dicey` skill provides a specialized workflow for simulating molecular biology assays computationally. It allows for high-speed sequence searching within indexed reference genomes, enabling researchers to validate primer specificity and design complex probes. Key capabilities include calculating PCR melting temperatures, identifying amplicon sequences, and generating padlock probes for mRNA imaging based on gene identifiers and transcript data.
+
+Dicey is a high-performance bioinformatics tool used for simulating PCR reactions and designing molecular probes. It allows for rapid sequence searching within large, indexed reference genomes at specific edit or Hamming distances. By modeling primer melting temperatures and binding kinetics, it predicts both intended amplicons and unintended off-target products. Additionally, it supports specialized workflows like padlock probe design for in-situ sequencing and mRNA imaging.
 
 ## Command Line Usage
 
 ### Genome Indexing
-Before searching large genomes, you must create a FM-index. This step is only required once per reference.
-```bash
-# Index a bgzip compressed genome
-dicey index -o reference.fa.fm9 reference.fa.gz
-
-# Ensure the fasta is also indexed with samtools
-samtools faidx reference.fa.gz
-```
+Searching large genomes requires a pre-built index. This step is performed once per reference.
+- **Requirement**: The genome must be bgzip compressed.
+- **Command**: `dicey index -o <output.fm9> <reference.fa.gz>`
+- **Note**: Ensure you also have a FAI index (`samtools faidx reference.fa.gz`) in the same directory.
 
 ### Sequence Searching (Hunt)
-Use `hunt` to find specific nucleotide sequences at a defined edit or hamming distance.
-```bash
-# Search for a sequence and convert JSON output to text
-dicey hunt -g reference.fa.gz TCTCTGCACACACGTTGT | python scripts/json2txt.py
+Use the `hunt` command to find specific nucleotide sequences.
+- **Basic Search**: `dicey hunt -g <reference.fa.gz> <sequence>`
+- **Output Handling**: Dicey outputs JSON by default. Use the provided helper script for human-readable text:
+  `dicey hunt -g <reference.fa.gz> <sequence> | python scripts/json2txt.py`
 
-# Save raw JSON output to a compressed file
-dicey hunt -g reference.fa.gz -o results.json.gz TCTCTGCACACACGTTGT
-```
-
-### In-silico PCR (Search)
-The `search` command identifies PCR amplicons and off-target products for a set of primers.
-```bash
-# Run PCR simulation with a specific annealing temperature (e.g., 45°C)
-dicey search -c 45 -g reference.fa.gz primers.fa | python scripts/json2txt.py
-```
+### In-Silico PCR (Search)
+Simulate PCR for a pair or set of primers to find amplicons and off-targets.
+- **Input**: A FASTA file containing primer sequences.
+- **Command**: `dicey search -c 45 -g <reference.fa.gz> <primers.fa>`
+- **Parameters**:
+  - `-c`: Specifies the annealing temperature (e.g., 45°C).
+  - `-i`: If the tool cannot find the primer3 configuration, point it to the source directory: `-i dicey/src/primer3_config/`.
 
 ### Padlock Probe Design
-Design probes for imaging mRNA in single cells. This requires an indexed genome and a matching GTF file.
-```bash
-# Design probes for a specific Ensembl Gene ID
-dicey padlock -g reference.fa.gz -t transcripts.gtf.gz -b barcodes.fa.gz ENSG00000136997
-```
+Design probes for imaging mRNA in single cells.
+- **Requirements**: An indexed reference genome, a matching GTF annotation file, and a barcode FASTA file.
+- **Command**: `dicey padlock -g <reference.fa.gz> -t <annotation.gtf.gz> -b <barcodes.fa.gz> <GENE_ID>`
 
 ## Expert Tips and Best Practices
 
-- **Primer3 Configuration**: If `dicey` fails to find the `primer3_config` directory, explicitly provide the path using the `-i` flag:
-  `dicey search -i path/to/dicey/src/primer3_config/ -g genome.fa.gz primers.fa`
-- **Output Processing**: `dicey` outputs data in JSON format by default. Always keep the `scripts/json2txt.py` utility from the source repository handy to transform results into a human-readable table.
-- **Input Formatting**: For the `search` command, the input `primers.fa` should be a standard FASTA file containing your forward and reverse primer sequences.
-- **Memory Efficiency**: Using the pre-built FM-index (`.fm9`) is significantly faster and more memory-efficient than searching unindexed sequences for large-scale genomic queries.
+- **Compression**: Always use `.fa.gz` (bgzip) files. Standard gzip may work for some operations but bgzip is required for efficient random access during indexing and searching.
+- **Memory Management**: For very large genomes (like Human GRCh38), ensure the system has sufficient RAM to load the `.fm9` index.
+- **Off-Target Analysis**: When running `search`, always check the JSON output for "off-target" hits. These are binding sites that do not result in a clean amplicon but may interfere with reaction efficiency.
+- **JSON Processing**: Since the native output is JSON, you can use `jq` for complex filtering of results (e.g., filtering amplicons by a specific size range or melting temperature).
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| blacklist | Generates a blacklist file for a given genome. |
+| chop | Generic options: |
+| dicey search | Generic options: |
+| dicey_padlock | Probes for one gene, one transcript, a set of genes, or custom FASTA input. |
+| hunt | Finds matches of a given sequence in a genome file. |
+| index | Index a genome FASTA file |
+| mappability2 | Calculate mappability of a BAM file |
 
 ## Reference documentation
-- [dicey GitHub Repository](./references/github_com_gear-genomics_dicey.md)
-- [dicey Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_dicey_overview.md)
+- [Dicey GitHub README](./references/github_com_gear-genomics_dicey_blob_main_README.md)
+- [Dicey Project Overview](./references/github_com_gear-genomics_dicey.md)

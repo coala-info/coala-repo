@@ -172,3 +172,6 @@ options:
                         highlight adjacencies in visualization
 ```
 
+
+## Metadata
+- **Skill**: generated

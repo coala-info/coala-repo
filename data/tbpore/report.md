@@ -116,3 +116,6 @@ Options:
                                   /root/.cache]
 ```
 
+
+## Metadata
+- **Skill**: generated

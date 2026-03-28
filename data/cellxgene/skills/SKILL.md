@@ -1,6 +1,6 @@
 ---
 name: cellxgene
-description: cellxgene is an interactive, web-based data explorer for visualizing and analyzing large-scale single-cell transcriptomics datasets. Use when user asks to launch the explorer, visualize cell clusters, explore gene expression patterns, or manage h5ad data files.
+description: cellxgene is an interactive explorer for visualizing and analyzing single-cell genomic data through a web-based interface. Use when user asks to launch a data viewer, perform dimensionality reduction visualization, identify marker genes through differential expression, or prepare AnnData files for exploration.
 homepage: https://chanzuckerberg.github.io/cellxgene/
 ---
 
@@ -8,43 +8,53 @@ homepage: https://chanzuckerberg.github.io/cellxgene/
 # cellxgene
 
 ## Overview
-cellxgene is an interactive, web-based data explorer designed for large-scale single-cell transcriptomics. It allows researchers to visualize cell clusters, gene expression patterns, and metadata annotations in real-time. This skill provides the necessary CLI commands to launch the viewer and manage data files, enabling seamless transition from raw data processing to interactive discovery.
+This skill provides guidance for using `cellxgene`, an open-source explorer for single-cell genomic data. It allows users to perform dimensionality reduction visualization (UMAP/t-SNE), differential expression analysis, and metadata exploration directly in a browser. It is particularly useful for validating clusters, identifying marker genes, and sharing processed datasets with collaborators without requiring them to write code.
 
-## Installation
-Install cellxgene via conda or pip:
+## Installation and Setup
+Install via conda or pip:
 ```bash
 conda install -c bioconda cellxgene
 # OR
 pip install cellxgene
 ```
 
-## Core Usage Patterns
+## Core CLI Usage
+The primary command is `launch`, which starts a local web server to host the dataset.
 
-### Launching the Explorer
-The primary command to start the web application is `launch`. Point it to a processed `.h5ad` (AnnData) file.
+### Launching a Dataset
 ```bash
 cellxgene launch dataset.h5ad --open
 ```
 - `--open`: Automatically opens the browser window.
-- `--port <number>`: Specify a custom port (default is 5005).
-- `--host <address>`: Set the host address (e.g., `0.0.0.0` for remote access).
+- `--port`: Specify a custom port (default is 5005).
+- `--host`: Set the interface to bind to (e.g., `0.0.0.0` for remote access).
 
-### Data Preparation
-Before launching, ensure the dataset is in the correct format. cellxgene requires `.h5ad` files.
-- **Embedding**: Ensure the file contains at least one embedding (e.g., `X_umap` or `X_tsne`) in `adata.obsm`.
-- **Expression Data**: Raw or normalized counts should be in `adata.X` or `adata.raw.X`.
-- **Metadata**: Categorical and numerical metadata should be stored in `adata.obs`.
-
-### Performance Optimization
-For very large datasets, use the following flags to improve responsiveness:
-- `--disable-diffexp`: Disables on-the-fly differential expression calculations to save memory.
-- `--max-category-items <number>`: Limits the number of categories displayed in the sidebar to prevent UI lag.
+### Preparing Data
+Data must be in `.h5ad` (AnnData) or `.loom` format. For optimal performance:
+- Ensure the file contains a dimensionality reduction (e.g., `X_umap` or `X_tsne`).
+- Ensure `X` contains normalized/log-transformed counts for visualization.
+- Use the `prepare` command to optimize a raw file (requires `scipy` and `pandas`):
+```bash
+cellxgene prepare raw_data.h5ad --output=processed_data.h5ad
+```
 
 ## Expert Tips
-- **Private Hosting**: When running on a remote server, use SSH tunneling to access the UI: `ssh -L 5005:localhost:5005 user@remote_host`.
-- **Data Validation**: Use the `cellxgene-schema` tool (if installed separately) to ensure your h5ad file meets the CZ CELLxGENE Discover requirements for public sharing.
-- **Sparse Matrices**: Ensure `adata.X` is stored as a CSR sparse matrix for faster loading and lower memory footprint.
+- **Memory Management**: For very large datasets, ensure the server has sufficient RAM as `cellxgene` loads the data into memory.
+- **Metadata**: Categorical metadata in the AnnData `obs` slot will automatically appear as colorable groups in the sidebar.
+- **Differential Expression**: You can select two sets of cells in the UI and trigger a "Differential Expression" calculation to find top markers between them in real-time.
+- **Embedding Selection**: If multiple embeddings exist (e.g., UMAP and PCA), use the dropdown in the UI to toggle between them.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| annotate | Add predicted annotations to an H5AD file. Run `cellxgene annotate --help` for more information. |
+| cellxgene | Command-line interface for cellxgene |
+| cellxgene launch | Launch the cellxgene data viewer. This web app lets you explore single-cell expression data. Data must be in a format that cellxgene expects. Read the "getting started" guide to learn more: https://github.com/chanzuckerberg/cellxgene- documentation/blob/main/README.md |
+| cellxgene prepare | Preprocess data for use with cellxgene. This tool runs a series of scanpy routines for preparing a dataset for use with cellxgene. It loads data from different formats (h5ad, loom, or a 10x directory), runs dimensionality reduction, computes nearest neighbors, computes an embedding, performs clustering, and saves the results. Includes additional options for naming annotations, ensuring sparsity, and plotting results. |
 
 ## Reference documentation
 - [cellxgene Overview](./references/chanzuckerberg_github_io_cellxgene.md)
-- [Bioconda Package Details](./references/anaconda_org_channels_bioconda_packages_cellxgene_overview.md)
+- [Bioconda cellxgene Package](./references/anaconda_org_channels_bioconda_packages_cellxgene_overview.md)

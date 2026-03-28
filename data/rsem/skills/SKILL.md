@@ -1,6 +1,6 @@
 ---
 name: rsem
-description: RSEM quantifies transcript abundances from RNA-Seq data by using an expectation-maximization algorithm to accurately assign multi-mapping reads. Use when user asks to build a reference index, calculate gene or isoform expression levels, or prepare a count matrix for differential expression analysis.
+description: RSEM quantifies transcript abundance from RNA-Seq data by using an Expectation-Maximization algorithm to handle multi-mapping reads. Use when user asks to prepare a reference index, calculate expression levels from FASTQ or BAM files, or estimate isoform-level abundance.
 homepage: https://deweylab.github.io/RSEM/
 ---
 
@@ -8,48 +8,79 @@ homepage: https://deweylab.github.io/RSEM/
 # rsem
 
 ## Overview
-RSEM (RNA-Seq by Expectation-Maximization) is a specialized tool for quantifying transcript abundances from RNA-Seq data without requiring a reference genome, though it can leverage one. It is particularly effective at handling multi-mapping reads by using an EM algorithm to assign reads to isoforms. This skill guides the user through the two-step workflow of indexing a reference and quantifying reads, including integration with popular aligners like Bowtie2 and STAR.
+RSEM (RNA-Seq by Expectation-Maximization) is a specialized tool for quantifying transcript abundance without a required reference genome, though it performs best when one is provided. It handles multi-mapping reads by using an Expectation-Maximization algorithm to assign them to the most likely isoform. This skill provides the necessary command patterns for the two-step RSEM workflow: preparing a reference and calculating expression.
 
 ## Reference Preparation
-Before quantification, you must build a reference index. RSEM requires both a genomic FASTA and an annotation file (GTF/GFF3).
+Before quantification, you must build RSEM-specific indices. This step extracts transcript sequences from the genome using an annotation file.
 
-- **Standard GTF (Ensembl/GENCODE):**
-  `rsem-prepare-reference --gtf annotation.gtf --bowtie2 genome.fa ref/index_name`
-- **GFF3 (RefSeq):**
-  `rsem-prepare-reference --gff3 annotation.gff3 --bowtie2 genome.fa ref/index_name`
-- **Handling "Untypical" Organisms:**
-  If the annotation only contains gene features without explicit transcript/exon structures (common in viral genomes), use:
-  `--gff3-genes-as-transcripts`
-- **Adding Poly(A) Tails:**
-  Use `--polyA` to add virtual poly(A) tails to transcripts, which can improve mapping for 3'-end focused libraries.
+### Standard Genome + GTF/GFF3
+```bash
+# Using GTF (Ensembl/GENCODE)
+rsem-prepare-reference --gtf annotation.gtf \
+                       --bowtie2 \
+                       genome.fa \
+                       ref/index_name
 
-## Calculating Expression
-The primary command for quantification is `rsem-calculate-expression`.
+# Using GFF3 (RefSeq)
+rsem-prepare-reference --gff3 annotation.gff3 \
+                       --bowtie2 \
+                       genome.fa \
+                       ref/index_name
+```
 
-- **Paired-end reads with Bowtie2:**
-  `rsem-calculate-expression --bowtie2 --paired-end read1.fq read2.fq ref/index_name sample_out`
-- **Single-end reads:**
-  Requires fragment length distribution parameters for accuracy:
-  `rsem-calculate-expression --bowtie2 --fragment-length-mean 200 --fragment-length-sd 35 read.fq ref/index_name sample_out`
-- **Strandedness:**
-  Specify library type using `--strandedness <none|forward|reverse>`.
-- **Using STAR Aligner:**
-  `rsem-calculate-expression --star --star-path /path/to/STAR [reads] ref/index_name sample_out`
+### Expert Tips for Reference Building
+- **Aligner Choice**: Always specify the aligner during preparation (e.g., `--bowtie2`, `--star`, or `--hisat2-hca`) to ensure the indices are compatible with the calculation step.
+- **RefSeq GFF3**: When using RefSeq, use `--trusted-sources BestRefSeq,Curated\ Genomic` to filter for high-quality annotations.
+- **Untypical Organisms**: If your GFF3 only contains gene boundaries without explicit transcript/mRNA lines, use `--gff3-genes-as-transcripts`.
+- **Primary Assembly**: Always use the primary assembly of the genome (no patches/haplotypes) to avoid artificial multi-mapping.
 
-## Expert Tips and Best Practices
-- **Alignment Requirements:** If providing your own BAM file via `--alignments`, the file must be transcript-coordinate aligned (not genomic) and sorted by read name. Use `rsem-sam-validator` to verify compatibility.
-- **Interpretation of Results:**
-  - `.genes.results`: Gene-level quantification.
-  - `.isoforms.results`: Transcript/Isoform-level quantification.
-  - **TPM (Transcripts Per Million)** is generally preferred for across-sample comparisons, while **Expected Counts** are required for differential expression tools like DESeq2 or EBSeq.
-- **Memory and Threads:** Use `-p <int>` to enable parallel computation during the EM step.
-- **Interpretation of Multi-mapping:** RSEM excels at "isoform-level" multi-mapping. If a read maps to multiple isoforms of the same gene, RSEM uses the EM algorithm to statistically distribute the "count" based on the maximum likelihood.
+## Expression Calculation
+This step aligns reads (if FASTQ is provided) and runs the EM algorithm.
 
-## Downstream Analysis
-To prepare data for differential expression (DE) analysis across multiple samples:
-`rsem-generate-data-matrix sample1.genes.results sample2.genes.results > count_matrix.txt`
+### From FASTQ (Automated Alignment)
+```bash
+# Paired-end with Bowtie2
+rsem-calculate-expression --paired-end \
+                          --bowtie2 \
+                          --append-names \
+                          reads_1.fq reads_2.fq \
+                          ref/index_name \
+                          output_prefix
+```
+
+### From BAM (Pre-aligned)
+If you aligned reads externally, the BAM must be in **transcript coordinates**.
+```bash
+rsem-calculate-expression --alignments \
+                          --paired-end \
+                          input.bam \
+                          ref/index_name \
+                          output_prefix
+```
+
+### Critical Parameters
+- `--append-names`: Highly recommended. It adds gene/transcript names to the results files alongside IDs, making them human-readable.
+- `--strandedness <none|forward|reverse>`: Essential for accurate quantification if using stranded libraries.
+- `--calc-ci`: Use this if you require 95% credibility intervals (note: increases runtime significantly).
+- `--estimate-rspd`: Use for 3'-biased data (like some single-cell protocols) to estimate the read start position distribution.
+
+## Visualization and Post-processing
+RSEM produces results in transcript coordinates. Use these tools to convert them for standard genome browsers.
+
+- **Genome BAM**: Use `--output-genome-bam` in `rsem-calculate-expression` to automatically generate a genome-coordinate BAM.
+- **Wiggle Files**: Run `rsem-bam2wig` on the sorted BAM to create tracks for UCSC or IGV.
+- **Diagnostics**: Use `rsem-plot-model output_prefix diagnostic.pdf` to visualize the learned model parameters (fragment length distribution, etc.).
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| rsem-calculate-expression | Estimate gene and isoform expression from RNA-Seq data. |
+| rsem-generate-data-matrix | All result files should have the same file type. The 'expected_count' columns of every result file are extracted to form the data matrix. |
+| rsem-prepare-reference | Prepare transcript references for RSEM and optionally build BOWTIE/BOWTIE2/STAR/HISAT2(transcriptome) indices. |
 
 ## Reference documentation
-- [RSEM README](./references/deweylab_github_io_RSEM_README.html.md)
-- [RSEM Updates and Version History](./references/deweylab_github_io_RSEM_updates.html.md)
-- [RSEM Homepage Overview](./references/deweylab_github_io_RSEM.md)
+- [README for RSEM](./references/deweylab_github_io_RSEM_README.html.md)
+- [RSEM Homepage](./references/deweylab_github_io_RSEM.md)

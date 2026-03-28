@@ -1,6 +1,6 @@
 ---
 name: agfusion
-description: AGFusion annotates gene fusion events by predicting their functional impact, protein sequences, and domain preservation. Use when user asks to annotate gene fusions, predict fusion protein sequences, visualize protein domain structures, or batch process outputs from fusion-calling algorithms.
+description: AGFusion annotates and visualizes gene fusion events to predict their functional impact on protein structure. Use when user asks to annotate specific gene fusion junctions, batch process results from fusion-calling algorithms, or generate domain maps for chimeric proteins.
 homepage: https://github.com/murphycj/AGFusion
 ---
 
@@ -9,21 +9,26 @@ homepage: https://github.com/murphycj/AGFusion
 
 ## Overview
 
-AGFusion (Annotate Gene Fusion) is a bioinformatics tool designed to provide functional context to gene fusion events. While many tools detect fusions, AGFusion specializes in the downstream analysis: determining if a fusion is in-frame or out-of-frame, predicting the resulting protein sequence, and visualizing how protein domains are preserved or lost. It supports Ensembl-based annotation for human (GRCh37/38) and mouse (GRCm38) genomes.
+AGFusion is a specialized bioinformatics tool designed to provide comprehensive annotation for gene fusion events. It bridges the gap between identifying a fusion junction and understanding its biological consequences. By integrating Ensembl data, it predicts whether a fusion is in-frame or out-of-frame and generates visual representations of the resulting chimeric protein compared to wild-type partners. This skill enables the automated processing of single fusion pairs or batch processing of results from common fusion-calling pipelines.
 
 ## Installation and Database Setup
 
-Before running annotations, you must install the package and download the necessary genomic and AGFusion-specific databases.
+Before annotation, the environment must have both the `pyensembl` and `agfusion` databases initialized for the specific genome build.
 
-1. **Install AGFusion**: `pip install agfusion`
-2. **Install PyEnsembl dependency**: `pyensembl install --species homo_sapiens --release 95`
-3. **Download AGFusion Database**: `agfusion download -g hg38`
-   * Use `agfusion download -a` to see all available species and releases.
+```bash
+# 1. Install pyensembl genome (e.g., Human GRCh38)
+pyensembl install --species homo_sapiens --release 95
+
+# 2. Download AGFusion database
+agfusion download -g hg38
+```
+
+Available genome flags: `hg38`, `hg19`, `mm10`. Use `agfusion download -a` to see all supported Ensembl releases.
 
 ## Common CLI Patterns
 
-### Annotating a Single Fusion
-The `annotate` command is the primary interface for individual fusion events. You must provide the 5' and 3' gene partners and their respective genomic junction coordinates.
+### Single Fusion Annotation
+Annotate a specific fusion by providing the 5' and 3' gene partners and their respective genomic junction coordinates.
 
 ```bash
 agfusion annotate \
@@ -35,32 +40,49 @@ agfusion annotate \
   -o DLG1-BRAF_output
 ```
 
-### Batch Processing from Fusion Finders
-AGFusion can directly parse output files from common fusion-calling algorithms using the `batch` command.
+### Batch Processing from Callers
+AGFusion supports direct input from various fusion-finding algorithms (e.g., STAR-Fusion, FusionCatcher, Arriba).
 
 ```bash
 agfusion batch \
   -f final-list_candidate-fusion-genes.txt \
   -a fusioncatcher \
   -db agfusion.homo_sapiens.95.db \
-  -o batch_output
+  -o batch_results
 ```
-*Supported algorithms include: Arriba, STAR-Fusion, FusionCatcher, EricScript, JAFFA, deFuse, and others.*
+
+Supported algorithms include: `arriba`, `defuse`, `fusioncatcher`, `starfusion`, `jaffa`, `longgf`, `ericscript`, and `tophatfusion`.
 
 ## Expert Tips and Customization
 
-### Visualization Enhancements
-* **Wild-Type Comparison**: Use the `--WT` flag to generate plots of the normal (wild-type) protein and exon structures alongside the fusion for comparison.
-* **Non-canonical Isoforms**: By default, AGFusion only processes canonical isoforms. Use `--noncanonical` to include all isoform combinations.
-* **Publication Quality**:
-  * **Recolor Domains**: `--recolor "Domain_Name;red"`
-  * **Rename Domains**: `--rename "Long_Domain_Name;ShortName"`
-  * **Consistent Scaling**: Use `--scale [integer]` (e.g., 2000) across multiple runs to ensure that different fusion proteins are drawn with appropriate relative lengths.
+### Handling Isoforms
+*   **Canonical Only (Default):** AGFusion defaults to the canonical isoform to reduce noise.
+*   **Non-canonical:** Use the `--noncanonical` flag to analyze all possible transcript combinations, which is critical if the fusion involves a specific tissue-expressed variant.
 
-### Troubleshooting
-* **Missing cDNA Warnings**: If you see warnings about missing sequences, ensure your `pyensembl` version is up to date and the database is correctly installed.
-* **SSL Errors on macOS**: If `agfusion download` fails with a certificate error, run the "Install Certificates.command" found in your Python application folder.
+### Visualization Tweaks
+*   **Wild-type Comparison:** Use `--WT` to generate plots for the original, non-fused genes alongside the fusion for structural comparison.
+*   **Recoloring Domains:** Highlight specific domains of interest (e.g., Kinase domains) for publication-quality figures.
+    ```bash
+    --recolor "Pkinase_Tyr;red" --rename "Pkinase_Tyr;Kinase"
+    ```
+
+### Output Files
+AGFusion produces a structured output directory:
+*   `*.fasta`: Sequences for the fusion transcript.
+*   `*.png/pdf`: High-resolution domain and exon maps.
+*   `*.csv/tsv`: Coordinates for protein features and exons.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| annotate | Annotate and visualize gene fusion events using the AGFusion database. |
+| batch | AGFusion batch processing for fusion-finding algorithm outputs to visualize and analyze gene fusions. |
+| build | Build the AGFusion database for a specific species and Ensembl release. |
+| download | Download the AGFusion database for specific genomes, species, and releases. |
 
 ## Reference documentation
-- [AGFusion GitHub Repository](./references/github_com_murphycj_AGFusion.md)
-- [Bioconda AGFusion Overview](./references/anaconda_org_channels_bioconda_packages_agfusion_overview.md)
+
+- [Annotate Gene Fusion (AGFusion) README](./references/github_com_murphycj_AGFusion_blob_master_README.md)

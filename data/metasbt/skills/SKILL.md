@@ -1,6 +1,6 @@
 ---
 name: metasbt
-description: MetaSBT is a scalable bioinformatics framework for indexing microbial genomes and characterizing metagenome-assembled genomes using Sequence Bloom Trees. Use when user asks to manage genomic databases, sketch and index sequences, profile query genomes for taxonomic identity, or retrieve reference data from NCBI.
+description: "MetaSBT indexes large-scale microbial genomes into Sequence Bloom Trees for rapid taxonomic assignment and database management. Use when user asks to list or download public databases, index reference genomes, profile unknown sequences, update existing databases with new MAGs, or export data for Kraken2 integration."
 homepage: https://github.com/cumbof/MetaSBT
 ---
 
@@ -9,65 +9,91 @@ homepage: https://github.com/cumbof/MetaSBT
 
 ## Overview
 
-MetaSBT is a scalable bioinformatics framework designed to index microbial genomes and characterize metagenome-assembled genomes (MAGs) using Sequence Bloom Trees (SBTs). It allows researchers to handle massive genomic datasets efficiently by representing sequences as Bloom filters organized in a tree structure. This skill assists in navigating the MetaSBT command-line interface for database management, indexing, and taxonomic profiling.
+MetaSBT is a Python-based framework designed to handle the "microbial dark matter" at scale. It automates the process of indexing thousands of genomes into Sequence Bloom Trees, allowing for rapid taxonomic assignment and characterization of unknown genomes. You should use this skill to build reference baselines, update existing databases with new MAGs, or profile input sequences against established microbial databases.
 
-## Installation and Setup
-
-Install MetaSBT via Conda from the bioconda channel:
-
-```bash
-conda install -c bioconda metasbt
-```
-
-## Core CLI Commands
-
-MetaSBT uses a sub-command structure. The primary entry point is `metasbt`.
+## Core CLI Patterns
 
 ### Database Management
-*   **List available databases**: Use `db` to see public databases hosted by the MetaSBT team.
-    ```bash
-    metasbt db --list
-    ```
-*   **Install a database**: Use `unpack` to download and set up a specific database.
-    ```bash
-    metasbt unpack --db <database_name> --out <destination_folder>
-    ```
-*   **Summarize content**: Check the taxonomic composition of a database.
-    ```bash
-    metasbt summarize --db <database_path>
-    ```
+List and download pre-built public databases from the MetaSBT-DBs repository.
 
-### Indexing and Sketching
-*   **Sketching**: Convert raw genomes into Bloom filters. This is a prerequisite for indexing.
-    ```bash
-    metasbt sketch --input <genomes_dir> --extension .fna --output <sketches_dir>
-    ```
-*   **Indexing**: Build the Sequence Bloom Tree from sketches.
-    ```bash
-    metasbt index --input <sketches_dir> --output <index_dir> --taxonomy <taxonomy_file>
-    ```
+```bash
+# List available public databases
+metasbt db --list
+
+# Download a specific database (e.g., Viruses) to a local folder
+metasbt db --download Viruses --folder ~/my_databases/
+```
+
+### Indexing and Baseline Creation
+Create a new database from a set of reference genomes. This requires a tab-separated file (`references.tsv`) where the first column is the file path and the second is the full taxonomic label (e.g., `k__Bacteria|p__...|s__...`).
+
+```bash
+metasbt index --workdir ~/project_dir \
+              --database MyMicrobeDB \
+              --references references.tsv \
+              --dereplicate 0.01 \
+              --completeness 50.0 \
+              --contamination 5.0 \
+              --nproc 16
+```
 
 ### Profiling and Characterization
-*   **Profile genomes**: Compare a query genome or MAG against an indexed database to determine its taxonomic identity.
-    ```bash
-    metasbt profile --input <query.fna> --db <index_dir> --output <results_dir>
-    ```
+Identify the closest taxonomic cluster for an unknown input genome.
 
-### Data Retrieval
-*   **NCBI Genomes**: MetaSBT includes a specialized script for fetching reference data.
-    ```bash
-    python scripts/get_ncbi_genomes.py --domain Bacteria --group "Proteobacteria" --out <download_dir>
-    ```
+```bash
+metasbt profile --workdir ~/project_dir \
+                --database MyMicrobeDB \
+                --input query_genome.fna \
+                --nproc 8
+```
 
-## Expert Tips and Best Practices
+### Updating Databases
+Add new metagenome-assembled genomes (MAGs) to an existing MetaSBT index.
 
-*   **Incremental Updates**: Instead of rebuilding an index from scratch, use the `update` command to add new genomes to an existing SBT. This saves significant computational time.
-*   **Memory Management**: When sketching, pay attention to the Bloom filter size (`-f` or `--filter-size`). Larger filters reduce false positives but increase memory usage and disk space.
-*   **Taxonomy Awareness**: Ensure your taxonomy file follows the expected MetaSBT format (typically a tab-separated file mapping genome IDs to full taxonomic paths) to enable accurate "taxonomy-aware" searches.
-*   **Kraken Integration**: If you prefer k-mer based classification, use `metasbt kraken` to build a custom Kraken2-compatible database directly from your MetaSBT index.
-*   **Compression**: Use `metasbt pack` to create portable, compressed versions of your custom databases for sharing or archiving.
+```bash
+metasbt update --workdir ~/project_dir \
+               --database MyMicrobeDB \
+               --input new_mags_folder/ \
+               --extension .fasta
+```
+
+### Kraken2 Integration
+Export the MetaSBT database structure into a format compatible with Kraken2 for read-level profiling.
+
+```bash
+metasbt kraken --workdir ~/project_dir \
+               --database MyMicrobeDB \
+               --genomes genomes_list.txt \
+               --ncbi-names names.dmp \
+               --ncbi-nodes nodes.dmp
+```
+
+## Expert Tips
+
+- **Filter Size Estimation**: If you plan to update your database frequently with new genomes, always use `--increase-filter-size 50.0` (or higher) during the `index` phase to prevent the Bloom filters from becoming saturated.
+- **Quality Control**: Use the `--completeness` and `--contamination` flags during indexing to ensure only high-quality MAGs form your reference baseline.
+- **Parallelization**: MetaSBT is resource-intensive. Always specify `--nproc` to match your available CPU cores to significantly speed up k-mer sketching and tree construction.
+- **Dependencies**: Ensure `howdesbt` is compiled with the full Makefile (advanced sub-commands) if you are not using the Conda installation, as MetaSBT relies on non-standard SBT operations.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| db | List and retrieve public MetaSBT databases. |
+| index | Index a set of reference genomes. This is used to build a first baseline of a MetaSBT database. Genomes must be known with a fully defined taxonomic label, from the kingdom up to the species level. |
+| kraken | Export a MetaSBT database into a custom kraken database. |
+| pack | Pack a MetaSBT database into a compressed tarball. |
+| profile | Profile a set of genomes. This is used to report the closest kingdom, phylum, class, order, family, genus, species, and the closest genome in a specific database. |
+| sketch | Sketch the input genomes. |
+| summarize | Summarize the content of a MetaSBT database. |
+| test | Check for software dependencies and run unit tests. |
+| unpack | Unack a local MetaSBT tarball database. |
+| update | Update a MetaSBT database with new genomes. |
 
 ## Reference documentation
-- [MetaSBT GitHub README](./references/github_com_cumbof_MetaSBT.md)
-- [MetaSBT Wiki Home](./references/github_com_cumbof_MetaSBT_wiki.md)
-- [Bioconda MetaSBT Overview](./references/anaconda_org_channels_bioconda_packages_metasbt_overview.md)
+
+- [Available features](./references/github_com_cumbof_MetaSBT_wiki_Available-features.md)
+- [Getting started](./references/github_com_cumbof_MetaSBT_wiki_Getting-started.md)
+- [Retrieving genomes from NCBI GenBank](./references/github_com_cumbof_MetaSBT_wiki_Retrieving-genomes-from-NCBI-GenBank.md)

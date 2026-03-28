@@ -1,6 +1,6 @@
 ---
 name: biobambam
-description: Biobambam is a suite of tools designed for the efficient processing, sorting, and duplicate marking of biological alignment files in BAM and SAM formats. Use when user asks to mark or remove duplicates, sort alignment files by coordinate or tag, convert between BAM and FASTQ formats, or validate the integrity of BAM files.
+description: Biobambam is a suite of high-performance tools designed for the efficient manipulation, sorting, and duplicate marking of biological alignment files. Use when user asks to mark or remove duplicates, sort BAM files, convert between BAM and FastQ formats, or validate and repair alignment files.
 homepage: https://gitlab.com/german.tischler/biobambam2
 ---
 
@@ -8,47 +8,61 @@ homepage: https://gitlab.com/german.tischler/biobambam2
 # biobambam
 
 ## Overview
-Biobambam2 is a specialized suite of tools designed for the efficient processing of biological alignment files, primarily in BAM and SAM formats. This skill enables the management of common post-alignment tasks such as duplicate marking, coordinate or tag-based sorting, and format interconversion. It is optimized for speed and low memory footprints, making it a standard choice for high-throughput sequencing workflows where early-stage data hygiene is critical.
 
-## Core CLI Patterns and Tools
+biobambam2 is a suite of high-performance tools designed for the efficient manipulation of biological alignment files. It is primarily used in Next-Generation Sequencing (NGS) pipelines for tasks that occur immediately after alignment, such as marking PCR and optical duplicates, sorting reads by various criteria, and converting between BAM and FastQ formats. The suite is optimized for speed and memory efficiency, often providing faster alternatives to similar functions in Picard or Samtools.
+
+## Core Tools and Usage Patterns
+
+Biobambam tools typically use a `Key=Value` command-line syntax rather than standard POSIX flags.
 
 ### Duplicate Marking
-Biobambam2 provides several tools for duplicate marking, with `bammarkduplicatesopt` being the most advanced for handling both PCR and optical duplicates.
+- **bammarkduplicatesopt**: The standard tool for marking or removing duplicates.
+  - `I=input.bam`: Input file.
+  - `O=output.bam`: Output file.
+  - `rmdup=1`: Set to 1 to remove duplicate reads from the output; 0 to only mark them in the BAM flags.
+  - `optminpixeldif=100`: Minimum pixel distance for optical duplicate detection.
+- **bamsormadup**: Performs sorting and duplicate marking in a single pass, which is more IO-efficient for raw alignments.
 
-*   **bammarkduplicatesopt**: Use this for marking or removing duplicates with optical duplicate detection.
-    *   `bammarkduplicatesopt I=input.bam O=output.bam rmdup=1`
-    *   **Optical Duplicates**: Control the pixel distance for optical duplicate detection using `optminpixeldif` (default is often 100).
-*   **bamsormadup**: Use this to perform sorting and duplicate marking in a single pass, which is more IO-efficient than running them separately.
-    *   `bamsormadup I=input.bam O=output.bam`
+### Sorting
+- **bamsort**: Used for sorting BAM files.
+  - `index=1`: Create a BAM index during sorting.
+  - `level=9`: Set output compression level (0-9).
+  - `sort=tagonly`: A specialized sort option for sorting by specific tags.
 
 ### Format Conversion
-*   **bamtofastq**: Converts BAM files back to FASTQ format.
-    *   `bamtofastq I=input.bam F=output_R1.fastq F2=output_R2.fastq`
-*   **fastqtobam2**: Converts FASTQ files to BAM format.
-    *   `fastqtobam2 I=input_R1.fastq I2=input_R2.fastq O=output.bam`
-    *   **Key Flags**: Use `clipslashid=1` to handle read IDs ending in `/1` or `/2` and `patchne=1` for specific metadata adjustments.
+- **bamtofastq**: Extracts sequences from BAM files into FastQ format.
+  - Useful for re-aligning data to a different reference genome.
+- **fastqtobam2**: Converts FastQ files to unaligned BAM.
+  - `clipslashid=1`: Clips `/1` or `/2` suffixes from read IDs.
+  - `patchne=1`: Applies specific patches for read name encoding.
 
-### Sorting and Validation
-*   **bamsort**: High-performance sorting of BAM files.
-    *   `bamsort I=input.bam O=output.bam sort=coordinate`
-    *   **Tag Sorting**: Use `tagonly=1` if you need to sort specifically by tags rather than coordinates or names.
-*   **bamvalidate**: Checks the integrity of a BAM file.
-    *   `bamvalidate I=input.bam`
-    *   If a file is corrupt, it will report the last valid alignment line to help locate the error.
+### Validation and Utility
+- **bamvalidate**: Checks the integrity of a BAM file. It reports the last valid alignment line in case of failure.
+- **bamadapterhistogram**: Counts the names of detected adapters in a BAM file.
+- **bamsalvage**: Attempts to recover data from corrupted BAM files.
+- **bamfastcat**: Efficiently concatenates multiple BAM files. Use `O=output.bam` to specify the destination.
 
-### Utility Tools
-*   **bamadapterhistogram**: Generates a histogram of detected adapter sequences.
-*   **bamauxmerge**: Merges auxiliary information from one BAM file into another, useful when merging mapped reads with their original unmapped metadata.
-*   **bamaddne**: Adds or modifies metadata tags in an existing BAM file.
-*   **bamsalvage**: Attempts to recover data from corrupted BAM files.
+## Expert Tips
 
-## Best Practices
-*   **Memory Management**: Biobambam tools are generally memory-efficient, but for very large datasets, monitor the `MemUsage` reports in the standard error output.
-*   **Input/Output Syntax**: Most tools use the `I=input` and `O=output` syntax rather than standard Unix redirection or positional arguments.
-*   **Compression**: You can control output compression levels using the `level` parameter (e.g., `level=9` for maximum compression).
-*   **Piping**: Biobambam tools can often read from standard input or write to standard output by omitting the `I` or `O` parameters or setting them to `/dev/stdin` or `/dev/stdout`, facilitating tool chaining.
+- **Compression**: When storage space is a concern or for final archival, always use `level=9` in tools like `bamsort` or `bammarkduplicatesopt`.
+- **Memory Management**: Biobambam tools are designed to be memory-efficient, but for very large datasets, monitor the `MemUsage` reports in the standard error output to ensure the system is not swapping.
+- **Piping**: Many biobambam tools support input from stdin and output to stdout using `/dev/stdin` and `/dev/stdout` or specific tool-defined defaults, allowing them to be chained without intermediate file writes.
+- **Optical Duplicates**: If working with patterned flowcells (e.g., NovaSeq), ensure `optminpixeldif` is tuned to the specific platform's recommendations to avoid over-calling optical duplicates.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| bamauxmerge | Merges BAM files. |
+| biobambam2 | Mark duplicates in BAM files. |
+| biobambam2 | Validate BAM/CRAM files and perform conversions. |
+| biobambam_bamsormadup | Sorts and marks duplicate reads in BAM files. |
+| biobambam_bamsort | Sorts BAM/SAM/CRAM files. |
+| biobambam_bamtofastq | Convert BAM/SAM/CRAM to FASTQ format. |
 
 ## Reference documentation
-- [biobambam Overview](./references/anaconda_org_channels_bioconda_packages_biobambam_overview.md)
-- [biobambam2 GitLab Repository](./references/gitlab_com_german.tischler_biobambam2.md)
+- [biobambam2 Project Overview](./references/gitlab_com_german.tischler_biobambam2.md)
+- [biobambam2 README](./references/gitlab_com_german.tischler_biobambam2_-_blob_master_README.md)
 - [biobambam2 ChangeLog](./references/gitlab_com_german.tischler_biobambam2_-_blob_master_ChangeLog.md)

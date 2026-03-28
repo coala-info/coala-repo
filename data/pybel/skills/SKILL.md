@@ -1,6 +1,6 @@
 ---
 name: pybel
-description: PyBEL is a Python framework for parsing, validating, and managing biological networks encoded in Biological Expression Language. Use when user asks to compile BEL scripts, convert networks to formats like JSON or TSV, manage local network databases, or perform graph-based analysis and filtering.
+description: PyBEL parses, validates, and manages Biological Expression Language (BEL) content to create structured biological network graphs. Use when user asks to parse BEL scripts, normalize biological entity identifiers, manipulate biological knowledge graphs, or export networks for machine learning applications.
 homepage: https://pybel.readthedocs.io
 ---
 
@@ -8,105 +8,86 @@ homepage: https://pybel.readthedocs.io
 # pybel
 
 ## Overview
+PyBEL is a specialized Python framework designed to handle the full lifecycle of Biological Expression Language (BEL) content. It transforms BEL scripts into structured network graphs (using NetworkX), allowing for sophisticated biological data integration. It is particularly useful for researchers needing to validate biological statements, normalize entity identifiers across different namespaces (like GO, ChEBI, or HGNC), and prepare biological knowledge for downstream applications like pathway analysis or knowledge graph embedding.
 
-PyBEL is the primary Python framework for handling biological networks encoded in Biological Expression Language (BEL). It transforms human-readable BEL scripts into computable directed multi-graphs (`BELGraph`), enabling the integration of complex molecular relationships with their specific biological contexts. Use this skill to automate the curation of biological knowledge, validate the syntax and semantics of BEL documents, and facilitate data interchange between bioinformatics tools and graph databases.
+## Core Workflows
 
-## Core CLI Usage
-
-The PyBEL command line interface provides tools for compiling, converting, and managing BEL content.
-
-### Compiling and Validating
-To parse a BEL script and check for semantic errors:
-```bash
-pybel compile path/to/script.bel
-```
-*   **--allow-naked-names**: Use if names are not qualified by namespaces (not recommended for production).
-*   **--no-identifier-validation**: Skips checking if identifiers exist in the specified namespaces.
-
-### Exporting Networks
-To convert a BEL script into a specific data format:
-```bash
-pybel serialize path/to/script.bel --nodelink output.json
-pybel serialize path/to/script.bel --tsv output.tsv
-pybel serialize path/to/script.bel --sif output.sif
-```
-
-### Database Management
-PyBEL uses a local SQL database to cache namespaces and store networks.
-*   **List networks**: `pybel manage networks ls`
-*   **Drop a network**: `pybel manage networks drop <network-id>`
-*   **Clear cache**: `pybel manage drop` (Useful if namespace definitions become corrupted).
-
-### Neo4J Integration
-If the `[neo4j]` extra is installed, you can upload graphs directly:
-```bash
-pybel neo --connection http://localhost:7474/db/data --password your_password
-```
-
-## Python API Best Practices
-
-### Working with BELGraph
-The `BELGraph` object is the core data structure, subclassing `networkx.MultiDiGraph`.
+### Parsing and Validation
+To parse a BEL script and create a `BELGraph` object:
 
 ```python
 import pybel
 
-# Loading a graph
-graph = pybel.from_bel_script('example.bel')
+# Parse a BEL script from a file or URL
+graph = pybel.from_path('example.bel')
 
-# Basic Graph Operations
-print(graph.summary())
-print(graph.count.functions())
-
-# Joining Graphs
-# Use '+' for a full join (union)
-# Use '&' for an outer join (only overlapping components)
-combined_graph = graph1 + graph2
+# Check for parsing warnings/errors
+for line_number, line, exception, annotations in graph.warnings:
+    print(f"Line {line_number}: {exception}")
 ```
 
-### Using Constants
-Avoid hard-coding strings for functions or relations. Use `pybel.constants`.
+### Entity Grounding and Normalization
+Use the grounding module to ensure identifiers are consistent and mapped to controlled vocabularies:
 
 ```python
-from pybel.constants import FUNCTION, PROTEIN, INCREASES
+from pybel.grounding import ground
 
-# Accessing node data safely
-for node, data in graph.nodes(data=True):
-    if data[FUNCTION] == PROTEIN:
-        print(node.name)
+# Normalizes namespaces and maps legacy identifiers
+grounded_graph = ground(graph)
 ```
 
-### Filtering and Pipelines
-PyBEL uses a functional approach to filter nodes and edges.
+### Graph Manipulation and Filtering
+PyBEL provides a DSL (Domain Specific Language) to programmatically build or modify graphs:
 
 ```python
-from pybel.struct.filters import get_nodes_by_function
-from pybel.constants import PATHOLOGY
+from pybel.dsl import Protein, Gene, Abundance
 
-# Get all pathology nodes
-pathologies = get_nodes_by_function(graph, PATHOLOGY)
-
-# Building a transformation pipeline
-from pybel import Pipeline
-from pybel.struct.mutation import remove_associations
-
-pipeline = Pipeline()
-pipeline.append(remove_associations)
-new_graph = pipeline.run(graph)
+# Create nodes
+akt1 = Protein(namespace='hgnc', name='AKT1')
+# Add edges
+graph.add_directly_regulates(akt1, some_other_node, citation='123456', evidence='...')
 ```
+
+### Exporting for Machine Learning
+Convert biological networks into triples for use in knowledge graph embedding models (e.g., PyKEEN):
+
+```python
+import pybel
+
+# Export to a triples file (TSV)
+pybel.to_triples_file(graph, 'output_triples.tsv')
+
+# Direct export to numpy array for ML pipelines
+triples_array = pybel.to_triples(graph)
+```
+
+## Common CLI Patterns
+PyBEL includes a command-line interface for quick operations:
+
+- **Validate a BEL script**: `pybel compile path/to/file.bel`
+- **Convert formats**: `pybel convert --path path/to/file.bel --json output.json`
+- **Summarize a graph**: `pybel summary --path path/to/file.bel`
 
 ## Expert Tips
+- **Pickling**: For large graphs, use `pybel.to_pickle(graph, 'file.bel.pickle.gz')` to save and load graphs significantly faster than re-parsing BEL scripts.
+- **Jupyter Integration**: Use `pybel.to_jupyter(graph)` for interactive visualization within notebooks.
+- **Namespace Management**: PyBEL uses the Bioregistry for prefix normalization. Ensure your environment has network access or a local cache of the Bioregistry for the best results during grounding.
 
-1.  **Provenance Requirement**: PyBEL strictly enforces that all statements must have a Citation and Evidence (SupportingText). Statements lacking these are excluded during parsing to maintain data integrity.
-2.  **Namespace Patterns**: For large namespaces like dbSNP, use the `PATTERN` syntax in your BEL script: `DEFINE NAMESPACE dbSNP AS PATTERN "rs[0-9]+"`.
-3.  **Extras**: Install specific dependencies for advanced features:
-    *   `pip install pybel[neo4j]` for graph database support.
-    *   `pip install pybel[indra]` for BioPAX/SBML conversion.
-    *   `pip install pybel[jupyter]` for inline visualization in notebooks.
-4.  **Memory Management**: When handling very large BEL documents, use `pybel.from_bel_script_url` or stream the file to avoid loading the entire raw text into memory before parsing.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| compile | Compile a BEL script to a graph. |
+| manage | Manage the database. |
+| pybel insert | Insert molecules into a database. |
+| pybel neo | Upload to neo4j. |
+| pybel post | Upload a graph to BEL Commons. |
+| pybel_serialize | Serialize a graph to a file. |
+| summarize | Summarize a chemical file. |
 
 ## Reference documentation
-- [PyBEL Overview](./references/pybel_readthedocs_io_en_latest_introduction_overview.html.md)
-- [Data Model Reference](./references/pybel_readthedocs_io_en_latest_reference_struct_datamodel.html.md)
-- [Installation and Extras](./references/pybel_readthedocs_io_en_latest_introduction_installation.html.md)
-- [Filter and Predicate API](./references/pybel_readthedocs_io_en_latest_reference_struct_filters.html.md)
+- [PyBEL GitHub Repository](./references/github_com_pybel_pybel.md)
+- [PyBEL Changelog and Version History](./references/github_com_pybel_pybel_blob_master_CHANGELOG.rst.md)
+- [PyBEL ReadTheDocs Index](./references/pybel_readthedocs_io_en_latest_index.html.md)

@@ -95,3 +95,6 @@ Available threads: 20
 hocort: error: argument -h/--help: ignored explicit argument 'elp'
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -70,3 +70,6 @@ Options:
   -s STR          Dataset scale; eg. small,large,huge
 ```
 
+
+## Metadata
+- **Skill**: generated

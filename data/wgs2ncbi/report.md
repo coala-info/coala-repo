@@ -412,3 +412,6 @@ DESCRIPTION
     Packs the ASN.1 files into a .tar.gz archive for upload to NCBI.
 ```
 
+
+## Metadata
+- **Skill**: generated

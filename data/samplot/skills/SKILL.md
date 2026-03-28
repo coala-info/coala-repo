@@ -1,6 +1,6 @@
 ---
 name: samplot
-description: Samplot creates visual representations of genomic alignment data to highlight evidence for structural variants across multiple sequencing technologies. Use when user asks to plot structural variants, visualize genomic evidence from BAM or CRAM files, compare variants across multiple samples, or overlay gene annotations on alignment plots.
+description: Samplot creates visual representations of genomic structural variants by plotting alignment data and coverage depth from multiple sequencing technologies. Use when user asks to visualize structural variants, plot BAM or CRAM files, or generate images of genomic regions from a VCF file.
 homepage: https://github.com/ryanlayer/samplot
 ---
 
@@ -8,74 +8,75 @@ homepage: https://github.com/ryanlayer/samplot
 # samplot
 
 ## Overview
+Samplot is a specialized visualization tool designed to provide clear, multi-sample evidence for structural variants. By plotting alignment data (reads, split-reads, and discordantly mapped pairs) alongside coverage depth, it allows researchers to visually confirm or reject SV candidates. It supports diverse sequencing technologies, including Illumina short-reads, Oxford Nanopore (ONT), Pacific Biosciences (PacBio), and 10X Genomics.
 
-Samplot is a command-line utility that transforms complex genomic alignment data into intuitive visual representations of structural variants. While general-purpose genome browsers show all data, Samplot focuses specifically on the evidence supporting an SV, such as changes in coverage or anomalous library inserts. It is highly effective for rapid manual curation of variant calls and supports a wide range of sequencing technologies, including Illumina short-reads, linked-reads (10X Genomics), and long-reads (Oxford Nanopore and PacBio).
+## Core CLI Usage
 
-## Command Line Usage and Patterns
-
-### Basic Structural Variant Plotting
-The core command is `samplot plot`. You must provide the genomic coordinates, the variant type, and at least one alignment file.
-
+### Basic Plotting
+To visualize a specific genomic region across multiple samples:
 ```bash
 samplot plot \
-    --chrom chr4 \
-    --start 115928726 \
-    --end 115931880 \
-    --sv_type DEL \
-    --bams sample.bam \
-    --output_file deletion_plot.png
+    -n Sample1 Sample2 \
+    -b sample1.bam sample2.bam \
+    -c chr4 -s 115928726 -e 115931880 \
+    -t DEL \
+    -o output_deletion.png
 ```
-
-### Multi-Sample Comparison (Trios/Cohorts)
-To compare multiple samples, provide a space-delimited list of BAM files and corresponding titles. This is essential for identifying de novo variants or checking inheritance patterns.
-
-```bash
-samplot plot \
-    -n Proband Mother Father \
-    -b proband.bam mother.bam father.bam \
-    -c chr1 -s 10000 -e 20000 -t DEL \
-    -o trio_comparison.png
-```
+*   `-c`, `-s`, `-e`: Chromosome, start, and end coordinates.
+*   `-b`: Space-delimited list of BAM/CRAM files.
+*   `-t`: SV type (e.g., DEL, DUP, INV, BND).
 
 ### Working with CRAM Files
-When using CRAM files, you must specify the reference genome used for alignment to allow for decompression.
-
+CRAM files require the reference genome for decompression:
 ```bash
-samplot plot -c chr1 -s 5000 -e 6000 -t DUP \
-    -b sample.cram \
-    -r reference.fasta \
-    -o plot.png
+samplot plot -r reference.fasta -b sample.cram -c chr1 -s 1000 -e 2000 -o plot.png
 ```
 
-### Visualizing Long-Read Data (ONT/PacBio)
-For long-read data, use the `--long_read` flag to adjust how Samplot handles alignments (default threshold is 1000bp).
-
+### Visualizing from a VCF
+To automate plotting for many variants found in a VCF file:
 ```bash
-samplot plot -c chr2 -s 20000 -e 25000 -t INV \
-    -b long_read_sample.bam \
-    --long_read 1000 \
-    -o long_read_inversion.png
+samplot vcf \
+    --vcf input.vcf \
+    -b sample1.bam sample2.bam \
+    -o output_directory
 ```
 
-### Adding Context with Annotations and Transcripts
-You can overlay gene models (GFF3) or genomic features (BED) to see if an SV overlaps with exons or known repeats.
+## Advanced Visualization Tips
 
+### Handling Large Variants (Zoom)
+For variants over 1Mb, use `--zoom` to focus on the breakpoints while maintaining a connection between them. This prevents the plot from becoming unreadable due to scale.
 ```bash
-samplot plot -c chr1 -s 1000 -e 5000 -t DEL -b sample.bam \
-    --transcript_file genes.gff3 \
-    --annotation_files repeats.bed.gz \
-    --annotation_filenames "Repeats"
+samplot plot --zoom 1000 -c chr1 -s 1000000 -e 2000000 -b sample.bam -o zoomed.png
 ```
 
-## Expert Tips and Best Practices
+### Adding Genomic Context
+*   **Transcripts**: Use `-T` with a GFF3/GTF file to show gene models at the bottom of the plot.
+*   **Annotations**: Use `-A` with tabixed BED files (e.g., repeats, mappability) to identify if a variant falls in a repetitive region.
+```bash
+samplot plot -T genes.gff3 -A repeats.bed.gz ...
+```
 
-- **Manage Plot Clutter**: In high-depth regions, individual reads can make the plot unreadable. Use `--coverage_only` to hide reads and only show the depth profile, or use `-d` (max_depth) to downsample the number of normal reads plotted.
-- **Breakpoint Focus**: For very large SVs, use `--zoom` (default 500bp) to show only the regions immediately surrounding the start and end coordinates. This saves time and makes the evidence at the breakpoints clearer.
-- **Publication Quality**: Increase the resolution for papers using `--dpi` (e.g., `--dpi 300`). You can also change the output format by changing the extension of the `-o` flag (e.g., `.pdf` or `.svg` for vector graphics).
-- **Translocations (BND)**: For interchromosomal events or translocations, you can provide multiple chromosomes, starts, and ends.
-- **Automated Batching**: If you have a VCF file of calls, use the `samplot vcf` command to generate plots for every variant in the file automatically.
-- **MAPQ Filtering**: Use `-q` to set a minimum mapping quality. This is helpful for filtering out reads in repetitive regions that might obscure true SV signals.
+### Long-Read Optimization
+When using ONT or PacBio data, samplot automatically handles long-read CIGAR strings. You can adjust the threshold for what is considered a "long read" or a "significant event" within a read:
+*   `--long_read`: Minimum length to treat as long-read (default 1000).
+*   `--min_event_size`: Minimum CIGAR event size to plot (default 100).
+
+### Depth and Quality Control
+*   **Downsampling**: Use `-d` to limit the number of "normal" (concordant) reads plotted, which speeds up rendering and reduces file size without losing the SV signal.
+*   **Mapping Quality**: Use `-q` to filter out low-quality alignments (default is 1).
+*   **Coverage Scales**: Use `--same_yaxis_scales` when comparing multiple samples to ensure the coverage tracks are visually comparable.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| samplot_plot | Plot BAM/CRAM files |
+| samplot_vcf | Plots structural variants from VCF and BAM/CRAM files. |
 
 ## Reference documentation
-- [Samplot GitHub README](./references/github_com_ryanlayer_samplot.md)
-- [Samplot Wiki](./references/github_com_ryanlayer_samplot_wiki.md)
+- [Basic Options](./references/github_com_ryanlayer_samplot_wiki_Basic-Options.md)
+- [Advanced Options](./references/github_com_ryanlayer_samplot_wiki_Advanced-Options.md)
+- [Plotting ONT, PacBio, and 10X Data](./references/github_com_ryanlayer_samplot_wiki_Plotting-ONT_-PacBio_-and-10X-Data.md)
+- [Plotting Variants from a VCF](./references/github_com_ryanlayer_samplot_wiki_Plotting-Variants-from-a-VCF.md)

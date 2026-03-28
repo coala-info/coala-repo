@@ -168,3 +168,6 @@ Usage: snk edit [OPTIONS] WORKFLOW_NAME
 ╰──────────────────────────────────────────────────────────────────────────────╯
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -1,1 +1,366 @@
-GitHub - DavidsonGroup/flexiplex: The Flexible Demultiplexer Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} DavidsonGroup / flexiplex Public Notifications You must be signed in to change notification settings Fork 4 Star 39 The Flexible Demultiplexer davidsongroup.github.io/flexiplex/ License View license 39 stars 4 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 13 Pull requests 3 Discussions Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Discussions Actions Projects Security Insights DavidsonGroup/flexiplex main Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 162 Commits 162 Commits .github/ workflows .github/ workflows conda-recipe conda-recipe edlib-1.2.7 edlib-1.2.7 scripts scripts tests tests .gitignore .gitignore LICENSE LICENSE Makefile Makefile README.md README.md flexiplex.c++ flexiplex.c++ View all files Repository files navigation README License Flexiplex A versatile demultiplexer and search tool for omics data Flexiplex is a fast, multithreaded, and user-configurable demultiplexer. Given a set of reads as either FASTQ or FASTA, it will demultiplex and/or identify a sequence of interest, reporting matching reads and read-barcode assignment. Flexiplex works in two modes: (i) when one or more sequences of interest are known, such as barcodes, and (ii) discovery mode—when only the sequence which flanks the region of interest is known. For a detailed description of how Flexiplex works and compares against other tools, please see our paper . Usage Below are a few things that Flexiplex can do, but we recommend you check out the documentation for a more detailed guide or try the 10x single-cell long-read RNA-Seq tutorial . Assign reads - short reads or single-cell long reads - to cellular barcodes Presets for various chemistries, including 10x Chromium and Visium, are available in the docs . flexiplex -d 10x3v3 -k barcode_list.txt reads.fastq &gt; new_reads.fastq Barcode discovery directly from long reads Flexiplex can search for barcodes, filter against a whitelist, and remove empty droplets using an inflection point method. flexiplex -f 0 reads.fastq flexiplex-filter --whitelist 3M-february-2018.txt --outfile filtered.txt flexiplex_barcodes_counts.txt Error-tolerant search Flexiplex can perform an error-tolerant grep-like search for a single sequence. flexiplex -x " CACTCTTGCCTACGCCACTAGC " -d grep -f 3 reads.fasta And more! For documentation visit https://davidsongroup.github.io/flexiplex/ . For usage information type flexiplex -h and flexiplex-filter -h . Installation Precompiled binaries for Flexiplex are located in the Releases section. You can also install Flexiplex using Anaconda: conda install -c bioconda -c conda-forge flexiplex flexiplex-filter can be installed locally using Make, but we recommend using the uv package manager , which will automatically manage dependencies in a temporary virtualenv. Just invoke flexiplex-filter using uvx --from git+https://github.com/davidsongroup/flexiplex.git#subdirectory=scripts \ flexiplex-filter --help Compiling from source To compile flexiplex, ensure that gcc is installed, then run: make To install flexiplex-filter and binaries into /usr/local/bin, ensure that python3.9 , and python-pip are installed, then run: make install To uninstall, run: make uninstall About The Flexible Demultiplexer davidsongroup.github.io/flexiplex/ Resources Readme License View license Uh oh! There was an error while loading. Please reload this page . Activity Custom properties Stars 39 stars Watchers 3 watching Forks 4 forks Report repository Releases 6 Version-1.02.5 Latest Aug 14, 2025 + 5 releases Packages 0 No packages published Uh oh! There was an error while loading. Please reload this page . Contributors 6 Uh oh! There was an error while loading. Please reload this page . Languages C++ 79.1% Python 11.9% C 8.4% Other 0.6% Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FDavidsonGroup%2Fflexiplex)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FDavidsonGroup%2Fflexiplex)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=DavidsonGroup%2Fflexiplex)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[DavidsonGroup](/DavidsonGroup)
+/
+**[flexiplex](/DavidsonGroup/flexiplex)**
+Public
+
+* [Notifications](/login?return_to=%2FDavidsonGroup%2Fflexiplex) You must be signed in to change notification settings
+* [Fork
+  4](/login?return_to=%2FDavidsonGroup%2Fflexiplex)
+* [Star
+   41](/login?return_to=%2FDavidsonGroup%2Fflexiplex)
+
+* [Code](/DavidsonGroup/flexiplex)
+* [Issues
+  9](/DavidsonGroup/flexiplex/issues)
+* [Pull requests
+  2](/DavidsonGroup/flexiplex/pulls)
+* [Discussions](/DavidsonGroup/flexiplex/discussions)
+* [Actions](/DavidsonGroup/flexiplex/actions)
+* [Projects](/DavidsonGroup/flexiplex/projects)
+* [Security
+  0](/DavidsonGroup/flexiplex/security)
+* [Insights](/DavidsonGroup/flexiplex/pulse)
+
+Additional navigation options
+
+* [Code](/DavidsonGroup/flexiplex)
+* [Issues](/DavidsonGroup/flexiplex/issues)
+* [Pull requests](/DavidsonGroup/flexiplex/pulls)
+* [Discussions](/DavidsonGroup/flexiplex/discussions)
+* [Actions](/DavidsonGroup/flexiplex/actions)
+* [Projects](/DavidsonGroup/flexiplex/projects)
+* [Security](/DavidsonGroup/flexiplex/security)
+* [Insights](/DavidsonGroup/flexiplex/pulse)
+
+# DavidsonGroup/flexiplex
+
+main
+
+[Branches](/DavidsonGroup/flexiplex/branches)[Tags](/DavidsonGroup/flexiplex/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[167 Commits](/DavidsonGroup/flexiplex/commits/main/)   167 Commits | | |
+| [.github/workflows](/DavidsonGroup/flexiplex/tree/main/.github/workflows "This path skips through empty directories") | | [.github/workflows](/DavidsonGroup/flexiplex/tree/main/.github/workflows "This path skips through empty directories") |  |  |
+| [conda-recipe](/DavidsonGroup/flexiplex/tree/main/conda-recipe "conda-recipe") | | [conda-recipe](/DavidsonGroup/flexiplex/tree/main/conda-recipe "conda-recipe") |  |  |
+| [edlib-1.2.7](/DavidsonGroup/flexiplex/tree/main/edlib-1.2.7 "edlib-1.2.7") | | [edlib-1.2.7](/DavidsonGroup/flexiplex/tree/main/edlib-1.2.7 "edlib-1.2.7") |  |  |
+| [scripts](/DavidsonGroup/flexiplex/tree/main/scripts "scripts") | | [scripts](/DavidsonGroup/flexiplex/tree/main/scripts "scripts") |  |  |
+| [tests](/DavidsonGroup/flexiplex/tree/main/tests "tests") | | [tests](/DavidsonGroup/flexiplex/tree/main/tests "tests") |  |  |
+| [.gitignore](/DavidsonGroup/flexiplex/blob/main/.gitignore ".gitignore") | | [.gitignore](/DavidsonGroup/flexiplex/blob/main/.gitignore ".gitignore") |  |  |
+| [LICENSE](/DavidsonGroup/flexiplex/blob/main/LICENSE "LICENSE") | | [LICENSE](/DavidsonGroup/flexiplex/blob/main/LICENSE "LICENSE") |  |  |
+| [Makefile](/DavidsonGroup/flexiplex/blob/main/Makefile "Makefile") | | [Makefile](/DavidsonGroup/flexiplex/blob/main/Makefile "Makefile") |  |  |
+| [README.md](/DavidsonGroup/flexiplex/blob/main/README.md "README.md") | | [README.md](/DavidsonGroup/flexiplex/blob/main/README.md "README.md") |  |  |
+| [flexiplex.c++](/DavidsonGroup/flexiplex/blob/main/flexiplex.c%2B%2B "flexiplex.c++") | | [flexiplex.c++](/DavidsonGroup/flexiplex/blob/main/flexiplex.c%2B%2B "flexiplex.c++") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* License
+
+# Flexiplex
+
+**A versatile demultiplexer and search tool for omics data**
+
+Flexiplex is a fast, multithreaded, and user-configurable demultiplexer. Given a set of reads as either FASTQ or FASTA, it will demultiplex and/or identify a sequence of interest, reporting matching reads and read-barcode assignment. Flexiplex works in two modes: (i) when one or more sequences of interest are known, such as barcodes, and (ii) discovery mode—when only the sequence which flanks the region of interest is known.
+
+For a detailed description of how Flexiplex works and compares against other tools, please see our [paper](https://academic.oup.com/bioinformatics/article/40/3/btae102/7611801).
+
+## Usage
+
+Below are a few things that Flexiplex can do, but we recommend you [**check out the documentation for a more detailed guide**](https://davidsongroup.github.io/flexiplex/) or [**try the 10x single-cell long-read RNA-Seq tutorial**](https://davidsongroup.github.io/flexiplex/tutorial.html).
+
+**Assign reads - short reads or single-cell long reads - to cellular barcodes**
+Presets for various chemistries, including 10x Chromium and Visium, are [available in the docs](https://davidsongroup.github.io/flexiplex/#assigning-long-reads-to-10x-barcodes-when-barcodes-are-known).
+
+```
+flexiplex -d 10x3v3 -k barcode_list.txt reads.fastq > new_reads.fastq
+```
+
+**Barcode discovery directly from long reads**
+Flexiplex can search for barcodes, filter against a whitelist, and remove empty droplets using an inflection point method.
+
+```
+flexiplex -f 0 reads.fastq
+flexiplex-filter --whitelist 3M-february-2018.txt --outfile filtered.txt flexiplex_barcodes_counts.txt
+```
+
+**Error-tolerant search**
+Flexiplex can perform an error-tolerant grep-like search for a single sequence.
+
+```
+flexiplex -x "CACTCTTGCCTACGCCACTAGC" -d grep -f 3 reads.fasta
+```
+
+**And more!**
+For documentation visit <https://davidsongroup.github.io/flexiplex/>.
+
+For usage information type `flexiplex -h` and `flexiplex-filter -h`.
+
+## Installation
+
+Precompiled binaries for Flexiplex are located in the [Releases](https://github.com/DavidsonGroup/flexiplex/releases) section. You can also install Flexiplex using Anaconda: `conda install -c bioconda -c conda-forge flexiplex`
+
+flexiplex-filter can be installed locally using Make, but we recommend using the [`uv` package manager](https://docs.astral.sh/uv/getting-started/installation/), which will automatically manage dependencies in a temporary virtualenv. Just invoke flexiplex-filter using
+
+```
+uvx --from git+https://github.com/davidsongroup/flexiplex.git#subdirectory=scripts \
+    flexiplex-filter --help
+```
+
+### Compiling from source
+
+To compile flexiplex, ensure that gcc is installed, then run:
+`make`
+
+To install flexiplex-filter and binaries into /usr/local/bin, ensure that `python3.9`, and `python-pip` are installed, then run:
+`make install`
+
+To uninstall, run:
+`make uninstall`
+
+## About
+
+The Flexible Demultiplexer
+
+[davidsongroup.github.io/flexiplex/](https://davidsongroup.github.io/flexiplex/ "https://davidsongroup.github.io/flexiplex/")
+
+### Resources
+
+[Readme](#readme-ov-file)
+
+### License
+
+[View license](#License-1-ov-file)
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+[Activity](/DavidsonGroup/flexiplex/activity)
+
+[Custom properties](/DavidsonGroup/flexiplex/custom-properties)
+
+### Stars
+
+[**41**
+stars](/DavidsonGroup/flexiplex/stargazers)
+
+### Watchers
+
+[**3**
+watching](/DavidsonGroup/flexiplex/watchers)
+
+### Forks
+
+[**4**
+forks](/DavidsonGroup/flexiplex/forks)
+
+[Report repository](/contact/report-content?content_url=https%3A%2F%2Fgithub.com%2FDavidsonGroup%2Fflexiplex&report=DavidsonGroup+%28user%29)
+
+## [Releases 6](/DavidsonGroup/flexiplex/releases)
+
+[Version-1.02.5
+
+Latest
+
+Aug 14, 2025](/DavidsonGroup/flexiplex/releases/tag/v1.02.5)
+
+[+ 5 releases](/DavidsonGroup/flexiplex/releases)
+
+## [Packages 0](/orgs/DavidsonGroup/packages?repo_name=flexiplex)
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## [Contributors](/DavidsonGroup/flexiplex/graphs/contributors)
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## Languages
+
+* [C++
+  78.8%](/DavidsonGroup/flexiplex/search?l=c%2B%2B)
+* [Python
+  11.8%](/DavidsonGroup/flexiplex/search?l=python)
+* [C
+  8.4%](/DavidsonGroup/flexiplex/search?l=c)
+* Other
+  1.0%
+
+## Footer
+
+© 2026 GitHub, Inc.
+
+### Footer navigation
+
+* [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+* [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+* [Security](https://github.com/security)
+* [Status](https://www.githubstatus.com/)
+* [Community](https://github.community/)
+* [Docs](https://docs.github.com/)
+* [Contact](https://support.github.com?tags=dotcom-footer)
+* Manage cookies
+* Do not share my personal information
+
+You can’t perform that action at this time.

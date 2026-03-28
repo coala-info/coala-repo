@@ -1,6 +1,6 @@
 ---
 name: smalt
-description: Smalt is a lightweight template engine that replaces environment variable placeholders in configuration files while providing regex-based scoping to avoid accidental substitutions. Use when user asks to generate configuration files from templates, substitute environment variables in files, or apply scoped variable replacement for container environments.
+description: Smalt is a minimalist template engine that renders environment variables into configuration files for containerized environments. Use when user asks to render templates, inject environment variables into config files, or scope variables using regex to avoid accidental collisions.
 homepage: https://github.com/roquie/smalte
 ---
 
@@ -9,42 +9,86 @@ homepage: https://github.com/roquie/smalte
 
 ## Overview
 
-Smalt (smalte) is a lightweight, high-performance template engine designed to bridge the gap between static configuration files and dynamic container environments. It allows you to define templates with standard environment variable placeholders and generate the final configuration at runtime. Unlike traditional tools like envsubst, smalte does not require awkward escaping of dollar signs in files that naturally use them (like Nginx or shell scripts) and provides granular control over which environment variables are processed through regex-based scoping.
+Smalte is a minimalist template engine written in Nim, designed specifically for containerized environments. It solves the problem of "static configuration" by allowing you to define templates with environment variable placeholders (e.g., `$PORT` or `$DB_HOST`) and rendering them into final configuration files during the container startup process. Unlike standard tools like `envsubst`, Smalte provides regex-based variable scoping and avoids the need for ugly escaping hacks for variables that should remain literal (like `$uri` in Nginx).
 
 ## CLI Usage and Patterns
 
-The primary command for the tool is `smalte build`.
+### Basic Template Rendering
+The primary command is `build`, which uses a `source:destination` syntax.
 
-### Basic Substitution
-To replace environment variables in a template and output a new file:
-`smalte build path/to/template.conf.tmpl:path/to/output.conf`
+```bash
+smalte build /etc/nginx/nginx.conf.tmpl:/etc/nginx/nginx.conf
+```
 
-### Multiple File Processing
-You can process multiple templates in a single command execution:
-`smalte build template1.tmpl:config1.conf template2.tmpl:config2.conf`
+### Processing Multiple Files
+You can process multiple templates in a single execution by appending more pairs.
 
-### Scoped Variable Replacement
-To prevent accidental substitution of variables not intended for the configuration, use the `--scope` flag. This limits smalte to only replace variables matching a specific prefix or regex:
-`smalte build --scope NGINX_.* nginx.conf.tmpl:/etc/nginx/nginx.conf`
+```bash
+smalte build \
+    config/app.tmpl:config/app.conf \
+    config/db.tmpl:config/db.conf
+```
 
-You can provide multiple scopes to include different sets of variables:
-`smalte build --scope APP_ --scope DB_ template.tmpl:config.conf`
+### Scoping Environment Variables
+To prevent accidental collisions or to limit which variables are injected, use the `--scope` flag. This supports regular expressions.
+
+*   **Single Prefix**: Only inject variables starting with `APP_`.
+    ```bash
+    smalte build --scope "APP_.*" template.tmpl:config.conf
+    ```
+*   **Multiple Scopes**: Include specific prefixes or exact matches.
+    ```bash
+    smalte build --scope "NGINX_.*" --scope "PORT" --scope "DB_HOST" \
+        nginx.tmpl:nginx.conf
+    ```
 
 ## Best Practices
 
-### Template Naming
-While not strictly required by the binary, use the `.tmpl` extension for your source files (e.g., `server.xml.tmpl`). This clearly distinguishes source templates from generated configuration files within your repository and Docker images.
+### Docker Entrypoint Integration
+The most effective way to use Smalte is within a `start.sh` or `entrypoint.sh` script. Define your defaults using shell parameter expansion before calling Smalte.
 
-### Docker Integration
-The most effective way to use smalte is within a container's entrypoint script. This ensures configurations are generated fresh every time a container starts, allowing for runtime adjustments via environment variables.
+```bash
+#!/usr/bin/env sh
+# Set defaults if not provided by docker run -e
+export PORT=${PORT:=8080}
+export WORKERS=${WORKERS:=4}
 
-Example entrypoint pattern:
-1. Define default values using shell syntax: `export PORT=${PORT:=8080}`
-2. Run smalte to generate the config: `smalte build config.tmpl:config.out`
-3. Execute the main application process.
+# Build the config
+smalte build --scope "PORT" --scope "WORKERS" \
+    /templates/service.conf.tmpl:/etc/service/service.conf
 
-### Handling Special Characters
-Unlike `envsubst`, smalte is designed to be "quiet" regarding variables it doesn't recognize or that aren't in scope. If a variable like `$uri` (common in Nginx) is present in the template but not defined in the system environment or included in the `--scope`, smalte will leave it untouched. This eliminates the need for workarounds like `${DOLLAR}uri`.
+# Execute the main process
+exec service-binary
+```
+
+### Handling Nginx and System Variables
+One of Smalte's main advantages over `envsubst` is that it doesn't require escaping system variables like `$uri` or `$host` if they aren't in your defined scope. 
+*   If you do **not** include `uri` in your `--scope`, Smalte will leave `$uri` untouched in your Nginx config.
+*   This eliminates the need for `${DOLLAR}uri` workarounds.
+
+### Binary Installation in Docker
+To keep images slim, use a multi-stage build or copy the binary directly from the official image.
+
+```dockerfile
+# Copy from the official alpine-based image
+COPY --from=roquie/smalte:latest-alpine /app/smalte /usr/local/bin/smalte
+```
+
+## Expert Tips
+*   **Binary Size**: The compiled binary is extremely small (~200kb), making it faster to load and more secure (smaller attack surface) than installing heavy template engines like Jinja2 or Gomplate in a minimal container.
+*   **Missing Variables**: By default, Smalte is safer than `envsubst`. If a variable is referenced in a template but not found in the environment (and not filtered out by scope), Smalte typically leaves the placeholder as-is rather than replacing it with an empty string, preventing broken configurations.
+*   **Regex Precision**: When using `--scope`, remember to escape dots if you want literal matches (e.g., `API\.KEY\..*`).
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| smalt_index | Index a reference genome for SMALT alignment. |
+| smalt_map | Map reads to an index |
+| smalt_sample | Sample reads from query files based on an index. |
 
 ## Reference documentation
-- [roquie/smalte](./references/github_com_roquie_smalte.md)
+- [Smalte README](./references/github_com_roquie_smalte_blob_master_README.md)
+- [Makefile Build Patterns](./references/github_com_roquie_smalte_blob_master_Makefile.md)

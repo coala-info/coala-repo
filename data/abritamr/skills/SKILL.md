@@ -1,6 +1,6 @@
 ---
 name: abritamr
-description: abritamr is a bioinformatics pipeline that screens bacterial isolates for antimicrobial resistance mechanisms by binning AMRFinderPlus results into drug classes. Use when user asks to screen assemblies for resistance genes, detect species-specific point mutations, or generate standardized reports for clinical accreditation.
+description: abritamr is a bioinformatics pipeline that identifies antimicrobial resistance genes and point mutations from genomic contigs by wrapping and collating results from AMRFinderPlus. Use when user asks to identify AMR genes, detect chromosomal point mutations in specific species, or generate structured resistome reports from assembly files.
 homepage: https://github.com/MDU-PHL/abritamr
 ---
 
@@ -8,56 +8,56 @@ homepage: https://github.com/MDU-PHL/abritamr
 # abritamr
 
 ## Overview
+abritamr is a specialized bioinformatics pipeline designed to streamline the identification of AMR genes from genomic contigs. It acts as a wrapper and collator for NCBI's AMRFinderPlus, transforming raw search results into structured, functionally-grouped tables. This tool is essential for researchers and clinicians who need to move beyond simple gene presence/absence to understand the functional implications of a resistome, including the detection of point mutations in specific species and the identification of partial gene matches that may indicate assembly breaks.
 
-abritamr is a specialized bioinformatics pipeline that simplifies the process of screening bacterial isolates for resistance mechanisms. While it relies on the NCBI AMRFinderPlus engine, its primary value lies in its ability to "tame" the complex output by binning genes into drug classes and providing clear distinctions between full matches, partial matches, and virulence factors. It is particularly useful for high-throughput labs requiring standardized reporting, as it includes a dedicated reporting mode that generates spreadsheets compatible with clinical accreditation standards (e.g., NATA).
-
-## Usage Guidelines
+## Command Line Usage and Best Practices
 
 ### Core Execution Patterns
-
 The primary command is `abritamr run`. You can process a single assembly or a batch of isolates.
 
-**1. Single Sample Analysis**
-To run a single assembly, provide the path to the contigs and a prefix for the output directory.
+**Single Sample Run:**
 ```bash
-abritamr run --contigs path/to/assembly.fasta --prefix MySample
+abritamr run --contigs sample.fasta --prefix MySample --species Staphylococcus_aureus
+```
+*   **Tip**: Always provide the `--species` flag if you want to detect chromosomal point mutations. Without it, only acquired genes are reported.
+
+**Batch Processing:**
+Create a tab-delimited file (e.g., `isolates.txt`) where column 1 is the Sample ID and column 2 is the path to the assembly file.
+```bash
+abritamr run --contigs isolates.txt --jobs 8
+```
+*   **Tip**: Adjust `--jobs` based on your CPU availability to parallelize the underlying AMRFinderPlus tasks.
+
+### Reporting and Collation
+If you have existing abritamr outputs and need to generate a standardized report (e.g., for NATA/MDU standards):
+```bash
+abritamr report --qc qc_results.csv --matches summary_matches.txt --partials summary_partials.txt --sop general
+```
+*   **SOP Options**: Use `general` for standard reporting or `plus` for inferred AST (Antimicrobial Susceptibility Testing) based on validated logic.
+
+### Expert Tips for Interpretation
+*   **Identity and Coverage**: By default, abritamr uses a 90% identity and 90% coverage threshold for "matches."
+*   **The Asterisk (*)**: Genes marked with `*` in the output indicate a match that meets the thresholds (>90%) but is not a 100% identical match to the reference allele.
+*   **The Caret (^)**: Genes marked with `^` indicate partial matches (50-90% coverage). These often represent genes split across contig boundaries and may require manual assembly inspection.
+*   **Point Mutations**: These are reported in the format `gene_AAchange` (e.g., `gyrA_S83L`). Ensure the `--species` name matches the supported list (e.g., `Klebsiella`, `Salmonella`, `Acinetobacter_baumannii`).
+
+### Database Management
+abritamr comes with a packaged version of the AMRFinder DB. To use a custom or updated version:
+```bash
+abritamr run --contigs isolates.txt --amrfinder_db /path/to/external/db
 ```
 
-**2. Batch Processing**
-For multiple samples, create a tab-delimited file (e.g., `isolates.txt`) where column 1 is the Sample ID and column 2 is the path to the assembly file.
-```bash
-abritamr run --contigs isolates.txt --jobs 16
-```
 
-**3. Detecting Point Mutations**
-Point mutation detection is not automatic; you must specify the species. If the species is not in the supported list, only acquired genes will be reported.
-```bash
-abritamr run --contigs sample.fasta --species Salmonella --prefix Sal_Results
-```
-*Supported species include: Neisseria, Clostridioides_difficile, Acinetobacter_baumannii, Campylobacter, Enterococcus_faecalis, Enterococcus_faecium, Escherichia, Klebsiella, Salmonella, Staphylococcus_aureus, Staphylococcus_pseudintermedius, Streptococcus_agalactiae, Streptococcus_pneumoniae, and Streptococcus_pyogenes.*
 
-### Generating Reports
+## Subcommands
 
-The `report` sub-command transforms the raw collation into a formatted Excel spreadsheet. This requires a quality control (QC) file.
-
-```bash
-abritamr report --qc mdu_qc_file.csv --runid RUN_001 --matches summary_matches.txt --partials summary_partials.txt
-```
-*   **--sop**: Choose `general` for standard reporting or `plus` for inferred AST based on MDU validation.
-
-## Expert Tips and Best Practices
-
-*   **Database Versions**: abritamr comes with a specific version of the AMRFinder DB for consistency. To use a newer or custom database, use the `-d` or `--amrfinder_db` flag to point to the directory containing the NCBI data.
-*   **Interpreting Symbols**:
-    *   `*` (Asterisk): Indicates a match with >90% coverage and >90% identity, but less than 100% identity.
-    *   `^` (Caret): Found in virulence and partial files, indicating 50-90% coverage.
-    *   No symbol: Indicates a 100% identity and 100% coverage match.
-*   **Partial Matches**: Always check `summary_partials.txt`. These are genes with 50-90% coverage. In short-read assemblies, resistance genes often fall on contig boundaries; a partial match may indicate a functional gene split across two contigs.
-*   **Identity Thresholds**: The default identity threshold is 0.9 (90%). You can tighten this using the `-i` flag (e.g., `-i 0.95`) if you require higher stringency for specific surveillance tasks.
-*   **Resource Management**: Use the `--jobs` flag to utilize multiple cores, especially when processing large batches of isolates, as AMRFinderPlus can be computationally intensive.
+| Command | Description |
+|---------|-------------|
+| report | Generate reports for abritamr results |
+| run | Run AMR detection using abritamr and amrfinderplus |
 
 ## Reference documentation
-
-- [Main Usage and CLI Reference](./references/github_com_MDU-PHL_abritamr.md)
-- [Interpretation and Logic Guide](./references/github_com_MDU-PHL_abritamr_wiki.md)
-- [Package Overview](./references/anaconda_org_channels_bioconda_packages_abritamr_overview.md)
+- [abritamr Wiki - Home](./references/github_com_MDU-PHL_abritamr_wiki.md)
+- [abritamr Wiki - Running](./references/github_com_MDU-PHL_abritamr_wiki_Running.md)
+- [abritamr Wiki - Interpretation](./references/github_com_MDU-PHL_abritamr_wiki_Interpretation.md)
+- [abritamr GitHub README](./references/github_com_MDU-PHL_abritamr.md)

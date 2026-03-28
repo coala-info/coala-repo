@@ -1,6 +1,6 @@
 ---
 name: lumpy-sv-minimal
-description: LUMPY discovers structural variants in sequencing data by integrating multiple evidence types through a probabilistic framework. Use when user asks to identify structural variants, run lumpyexpress for automated SV discovery, or perform joint multi-sample variant calling.
+description: LUMPY is a structural variant discovery tool that integrates discordant read pairs and split-read alignments into a probabilistic framework to identify genomic rearrangements. Use when user asks to detect structural variants, run automated lumpyexpress workflows, or perform manual breakpoint detection using BWA-MEM aligned genomic data.
 homepage: https://github.com/arq5x/lumpy-sv
 ---
 
@@ -9,72 +9,83 @@ homepage: https://github.com/arq5x/lumpy-sv
 
 ## Overview
 
-LUMPY is a comprehensive discovery framework that utilizes a probabilistic approach to identify structural variants by integrating various evidence types from high-throughput sequencing data. This skill focuses on the core executables provided in the minimal package, primarily `lumpy` and `lumpyexpress`. While `lumpyexpress` serves as an automated wrapper that follows best practices for standard analyses, the traditional `lumpy` command allows for granular control over probability curves and evidence weights, making it suitable for complex experimental designs or non-standard library preparations.
+LUMPY is a structural variant discovery tool that integrates multiple signals—including discordant read pairs and split-read alignments—into a single probabilistic framework. This skill focuses on the native command-line interface for LUMPY, specifically the `lumpyexpress` wrapper for automated workflows and the core `lumpy` tool for advanced, customizable breakpoint detection. It is designed for bioinformaticians processing genomic data aligned with BWA-MEM to identify complex genomic rearrangements.
 
 ## Core Workflows
 
 ### 1. Automated Analysis with lumpyexpress
-For most standard SV discovery tasks, use `lumpyexpress`. It automates the extraction of signals and the generation of probability curves.
 
-**Basic Usage:**
+For standard analyses, use `lumpyexpress`. It automates the extraction of discordant and split reads and runs the LUMPY algorithm with best-practice parameters.
+
+**Single Sample (Basic):**
 ```bash
 lumpyexpress \
-    -B input.bam \
-    -S input.splitters.bam \
-    -D input.discordants.bam \
-    -o output.vcf
+    -B sample.bam \
+    -S sample.splitters.bam \
+    -D sample.discordants.bam \
+    -o sample.vcf
 ```
 
-**Joint Multi-Sample Analysis:**
-To call variants across multiple samples simultaneously, provide comma-separated lists:
+**Joint Analysis (Multi-sample):**
+Supply comma-separated lists for each input type.
 ```bash
 lumpyexpress \
-    -B sample1.bam,sample2.bam \
-    -S sample1.splitters.bam,sample2.splitters.bam \
-    -D sample1.discordants.bam,sample2.discordants.bam \
-    -o cohort_output.vcf
+    -B s1.bam,s2.bam \
+    -S s1.splitters.bam,s2.splitters.bam \
+    -D s1.discordants.bam,s2.discordants.bam \
+    -o multi_sample.vcf
 ```
 
-### 2. Traditional LUMPY Usage
-Use the traditional CLI when you need to manually define library parameters or work with specific read groups.
+### 2. Manual Pre-processing
 
-**Key Parameters:**
-- `-pe`: Define paired-end library parameters (mean, stdev, read_length, etc.).
-- `-sr`: Define split-read parameters.
-- `-g`: Genome file (defines chromosome order).
-- `-x`: BED file of regions to exclude (e.g., high-coverage or centromeric regions).
+If not using the automated extraction in `lumpyexpress`, you must manually prepare the evidence files using `samtools` and `samblaster`.
 
-**Example Command:**
+**Extract Discordants:**
+```bash
+samtools view -b -F 1294 sample.bam > sample.discordants.unsorted.bam
+```
+
+**Extract Split-reads:**
+```bash
+samtools view -h sample.bam | extractSplitReads_BwaMem -i stdin | samtools view -Sb - > sample.splitters.unsorted.bam
+```
+
+**Sort Evidence:**
+```bash
+samtools sort sample.discordants.unsorted.bam -o sample.discordants.bam
+samtools sort sample.splitters.unsorted.bam -o sample.splitters.bam
+```
+
+### 3. Traditional LUMPY Usage
+
+For advanced users requiring specific weights or window sizes.
+
 ```bash
 lumpy \
     -mw 4 \
     -tt 0 \
-    -pe id:sample_id,bam_file:sample.discordants.bam,histo_file:sample.lib1.histo,mean:300,stdev:50,read_length:101,min_non_overlap:101,discordant_z:3,back_distance:10,weight:1 \
-    -sr id:sample_id,bam_file:sample.splitters.bam,back_distance:10,weight:1 \
-    > output.vcf
+    -pe bam_file:sample.discordants.bam,id:sample,histo_file:sample.lib1.histo,mean:300,stdev:50,read_length:101,min_non_overlap:101,discordant_z:3,back_distance:10,weight:1 \
+    -sr bam_file:sample.splitters.bam,id:sample,back_distance:10,weight:1 \
+    > sample.lumpy.vcf
 ```
 
 ## Expert Tips and Best Practices
 
-### Pre-processing Requirements
-- **Alignment**: LUMPY expects BWA-MEM aligned files.
-- **Sorting**: All input BAM files must be coordinate-sorted.
-- **Extraction**: If not using `lumpyexpress` to handle extraction, use `samblaster` or `samtools` to pre-extract discordant and split-reads.
-  - Discordants: `samtools view -b -F 1294 sample.bam`
-  - Splitters: Use the `extractSplitReads_BwaMem` script provided in the LUMPY repository.
+- **Input Requirements**: LUMPY expects BWA-MEM aligned BAM files. Ensure your BAM files have proper `@RG` (Read Group) tags, as `lumpyexpress` uses these to parse sample and library information.
+- **Exclusion Regions**: Use the `-x` flag with a BED file to exclude telomeres, centromeres, or high-signal regions (e.g., ENCODE blacklisted regions) to reduce false positives and improve runtime.
+- **CRAM Support**: While `lumpyexpress` can accept CRAM files as the main input (`-B`), the splitters (`-S`) and discordants (`-D`) must currently be in BAM format.
+- **Library Statistics**: When using traditional `lumpy`, the `-pe` (paired-end) parameter requires library statistics (mean and stdev of insert size). Use the `pairend_distro.py` script provided in the LUMPY repository to generate the required `.histo` file and statistics.
+- **Minimum Weight**: The `-m` (in `lumpyexpress`) or `-mw` (in `lumpy`) flag controls the minimum evidence weight required to call a variant. The default is 4; increasing this can reduce false positives in high-coverage data.
 
-### CRAM Support
-- `lumpyexpress` can accept CRAM files for the main alignment input (`-B`).
-- **Limitation**: The splitters (`-S`) and discordants (`-D`) must still be in BAM format, as the core LUMPY engine does not natively support CRAM for these specific evidence streams.
 
-### Optimization
-- **Exclude Regions**: Always use an exclude file (`-x`) for human data (e.g., ENCODE blacklist) to reduce false positives and significantly decrease runtime.
-- **Smoove**: For production environments, consider using `smoove`, which wraps LUMPY and handles many of these best practices (extraction, genotyping, and filtering) automatically.
 
-### Troubleshooting
-- **Config File**: `lumpyexpress` relies on `lumpyexpress.config`. Ensure this file is in the same directory as the executable or specify it manually with `-K`.
-- **Temp Directory**: SV discovery generates large temporary files. Use `-T` to point to a high-capacity scratch disk if the default `/tmp` is limited.
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| lumpy-sv-minimal_lumpy | Find structural variations in various signals. |
+| lumpyexpress | Sourcing executables from /usr/local/bin/lumpyexpress.config ... |
 
 ## Reference documentation
-- [LUMPY GitHub Repository](./references/github_com_arq5x_lumpy-sv.md)
-- [Bioconda lumpy-sv-minimal Overview](./references/anaconda_org_channels_bioconda_packages_lumpy-sv-minimal_overview.md)
+
+- [LUMPY: a general probabilistic framework for structural variant discovery](./references/github_com_arq5x_lumpy-sv.md)

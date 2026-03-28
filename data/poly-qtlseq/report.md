@@ -220,3 +220,6 @@ Commands:
      version        detailed version information
 ```
 
+
+## Metadata
+- **Skill**: not generated

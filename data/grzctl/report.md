@@ -480,3 +480,6 @@ Commands:
   quarterly  Generate the tables for the quarterly report.
 ```
 
+
+## Metadata
+- **Skill**: not generated

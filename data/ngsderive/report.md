@@ -234,3 +234,6 @@ options:
   --no-split-by-rg
 ```
 
+
+## Metadata
+- **Skill**: generated

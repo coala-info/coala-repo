@@ -1,6 +1,6 @@
 ---
 name: sourmash
-description: "sourmash performs fast genomic data searching, comparison, and taxonomic profiling using k-mer based sketching. Use when user asks to sketch sequences into signatures, compare genomic datasets, perform metagenomic profiling with gather, or manage and filter signature files."
+description: Sourmash performs fast genomic sketching and comparison using MinHash algorithms to create representative signatures of DNA or RNA sequences. Use when user asks to create genomic signatures, calculate similarity between datasets, search databases for matches, or perform taxonomic classification of metagenomic samples.
 homepage: https://github.com/sourmash-bio/sourmash
 ---
 
@@ -8,65 +8,79 @@ homepage: https://github.com/sourmash-bio/sourmash
 # sourmash
 
 ## Overview
-
-sourmash is a versatile bioinformatics tool for searching, comparing, and analyzing genomic data through k-mer based MinHash and FracMinHash sketching. It transforms large sequence files (FASTA/FASTQ) into compact, mathematical representations called signatures. These signatures allow for extremely fast comparisons that are memory-efficient and scale to millions of sequences. It is the preferred tool for estimating similarity between datasets of different sizes and performing combinatorial k-mer searches to profile complex environmental samples.
+Sourmash is a command-line tool and Python library used for "genomic sketching." It implements the MinHash and FracMinHash algorithms to reduce large DNA/RNA sequences into small, representative "signatures." These signatures allow for extremely fast and memory-efficient comparisons between datasets, enabling tasks like searching large databases for matches, calculating similarity between genomes, and identifying the microbial components of complex environmental samples.
 
 ## Core CLI Workflows
 
-### 1. Sketching Sequences
-The first step is always creating a signature from your raw data. Use `dna` for nucleotide sequences.
+### 1. Creating Signatures (Sketching)
+Before analysis, sequences must be converted into `.sig` files.
+- **For Genomes:** Use `scaled=1000` (default) and `k=21,31,51`.
+  ```bash
+  sourmash sketch dna genome.fna.gz -p k=21,k=31,scaled=1000 --name-from-first
+  ```
+- **For Metagenomes:** Use a higher scaled value (e.g., 2000-5000) to save space if the sample is very large.
+  ```bash
+  sourmash sketch dna reads.fastq.gz -p k=31,scaled=2000 -o sample.sig
+  ```
 
-*   **Basic Sketching:**
-    `sourmash sketch dna sample.fastq.gz`
-*   **Recommended Parameters (FracMinHash):**
-    Use `scaled` to enable comparisons between datasets of different sizes (e.g., a single genome vs. a metagenome).
-    `sourmash sketch dna *.fq.gz -p k=21,k=31,scaled=1000 --name-from-first`
-    *   `k=21`: Good for genus-level sensitivity.
-    *   `k=31`: Standard for species-level identification.
-    *   `scaled=1000`: Keeps 1 out of every 1000 k-mers.
+### 2. Comparing Signatures
+Calculate the Jaccard similarity or containment between multiple signatures.
+- **Compare and Plot:**
+  ```bash
+  sourmash compare *.sig -o cmp.dist
+  sourmash plot cmp.dist --labels
+  ```
 
-### 2. Comparing Datasets
-Once signatures are created, you can calculate the similarity between them.
+### 3. Searching Databases
+Find which known genomes are present in your signature.
+- **Search:** Returns genomes with high Jaccard similarity.
+  ```bash
+  sourmash search query.sig genbank-k31.zip
+  ```
+- **Gather:** The preferred method for metagenomes. It performs a "greedy" decomposition to identify the minimum set of genomes that account for all k-mers in the sample.
+  ```bash
+  sourmash gather sample.sig genbank-k31.zip
+  ```
 
-*   **Compare multiple signatures:**
-    `sourmash compare *.sig -o comparison_results.cmp`
-*   **Generate a distance matrix (CSV):**
-    `sourmash compare *.sig --csv distances.csv`
-*   **Visualize results:**
-    `sourmash plot comparison_results.cmp`
+### 4. Taxonomic Classification
+Assign taxonomy to `gather` results using a Least Common Ancestor (LCA) database.
+```bash
+sourmash gather sample.sig genbank-k31.zip -o gather_results.csv
+sourmash tax annotate -g gather_results.csv -t taxonomy_db.csv
+```
 
-### 3. Metagenomic Profiling (Gather)
-The `gather` command is the "special sauce" of sourmash. It identifies the minimum set of genomes that explain the k-mers in a metagenomic sample.
+## Expert Tips & Best Practices
+- **Scaled Parameter:** The `scaled` value determines the compression (1/scaled k-mers are kept). A `scaled=1000` means 1 out of every 1000 k-mers is stored. Ensure all signatures being compared use the same `scaled` value.
+- **K-mer Sizes:** 
+  - `k=21`: Genus/Species level sensitivity.
+  - `k=31`: Species/Strain level sensitivity (Standard).
+  - `k=51`: High specificity for strain-level matching.
+- **Abundance Tracking:** Use `--abundance` during sketching if you want to track the frequency of k-mers, which is essential for metagenomic differential abundance analysis.
+- **Signature Manipulation:** Use `sourmash sig consume`, `sourmash sig merge`, and `sourmash sig extract` to manage large collections of signatures without re-sketching the original fasta files.
+- **Zip Databases:** Always use the `.zip` format for large databases (like GTDB or GenBank) as it is optimized for fast internal lookups.
 
-*   **Search a query against a database:**
-    `sourmash gather query.sig database.sbt.zip`
-*   **Output results to CSV:**
-    `sourmash gather query.sig database.zip -o results.csv`
 
-### 4. Signature Management (sig)
-Use the `sig` subcommands to inspect, manipulate, and filter signature files.
 
-*   **Inspect signature metadata:**
-    `sourmash sig describe sample.sig`
-*   **Merge multiple signatures into one:**
-    `sourmash sig merge *.sig -o merged.sig`
-*   **Filter signatures by k-size:**
-    `sourmash sig filter -k 31 sample.sig -o filtered.sig`
-*   **Extract specific signatures by name/pattern:**
-    `sourmash sig grep "Staphylococcus" database.sig > staph.sig`
+## Subcommands
 
-## Expert Tips and Best Practices
-
-*   **Scaled vs. Num:** Always prefer `scaled` (FracMinHash) over `num` (MinHash) for genomic data. `scaled` allows you to compare a small query against a large database accurately, whereas `num` is only reliable for datasets of similar size.
-*   **K-mer Sizes:** 
-    *   Use **k=21** for broad taxonomic searches.
-    *   Use **k=31** for specific species identification.
-    *   Use **k=51** for strain-level differentiation.
-*   **Database Formats:** sourmash supports `.zip` and `.sbt.zip` formats for databases. Using indexed databases (SBT or LCA) significantly speeds up searches against large collections like GenBank or GTDB.
-*   **Memory Efficiency:** If you are running out of memory during `compare`, increase the `scaled` value (e.g., `scaled=2000`) to reduce the number of k-mers stored in the signatures.
-*   **ANI Estimation:** sourmash can estimate Average Nucleotide Identity (ANI) from k-mer containment. This is much faster than traditional alignment-based methods for large-scale screening.
+| Command | Description |
+|---------|-------------|
+| compare | Compares one or more signatures (created with `sketch`) using estimated Jaccard index [1] or (if signatures are created with `-p abund`) the angular similarity [2]). |
+| plot | Generate plots from sourmash compare output. |
+| prefetch | Search for query signatures within specified databases. |
+| search | Searches a collection of signatures or SBTs for matches to the query signature. It can search for matches with either high Jaccard similarity or containment; the default is to use Jaccard similarity, unless --containment is specified. -o/--output will create a CSV file containing the matches. |
+| sig | Manipulate signature files |
+| sig | Manipulate signature files |
+| sourmash compute | Create MinHash sketches at k-mer sizes of 21, 31 and 51, for all FASTA and FASTQ files in the current directory, and save them in signature files ending in '.sig'. You can rapidly compare these files with `compare` and query them with `search`, among other operations; see the full documentation at http://sourmash.rtfd.io/. The key options for compute are: |
+| sourmash gather | Selects the best reference genomes to use for a metagenome analysis, by finding the smallest set of non-overlapping matches to the query in a database. This is specifically meant for metagenome and genome bin analysis. |
+| sourmash index | Create an on-disk database of signatures that can be searched quickly & in low memory. All signatures must be scaled, and must be the same k-mer size and molecule type; the standard signature selectors (-k/--ksize, --scaled, --dna/--protein) choose which signatures to be added. |
+| sourmash sketch | Create signatures |
+| sourmash_lca | Taxonomic utilities |
+| sourmash_storage | Storage utilities |
+| sourmash_tax | Integrate taxonomy information based on 'gather' results |
 
 ## Reference documentation
-
-- [sourmash GitHub Repository](./references/github_com_sourmash-bio_sourmash.md)
-- [sourmash Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_sourmash_overview.md)
+- [Sourmash Command Line Reference](./references/sourmash_readthedocs_io_en_latest_command-line.html.md)
+- [Basic Tutorial](./references/sourmash_readthedocs_io_en_latest_tutorial-basic.html.md)
+- [Metagenome Analysis (Gather)](./references/sourmash_readthedocs_io_en_latest_sourmash-examples.html.md)
+- [Taxonomic Classification](./references/sourmash_readthedocs_io_en_latest_classifying-signatures.html.md)

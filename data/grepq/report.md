@@ -4820,3 +4820,6 @@ FASTQ files by matching sequences to a set of regular expressions. bioRxiv, doi:
 <https://doi.org/10.1101/2025.01.09.632104>
 ```
 
+
+## Metadata
+- **Skill**: generated

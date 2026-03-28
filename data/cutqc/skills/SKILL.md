@@ -1,6 +1,6 @@
 ---
 name: cutqc
-description: Cutqc automates adapter trimming and quality assessment for FASTQ files to generate comprehensive visual reports. Use when user asks to trim adapters from paired-end reads, perform quality control on sequencing data, or generate visual reports for FASTQ files.
+description: cutqc automates adapter trimming and quality control for NGS data while generating interactive reports to compare metrics before and after processing. Use when user asks to trim adapter sequences, evaluate read quality with FastQC, or generate a comparative quality control report for paired-end or single-end sequencing data.
 homepage: https://github.com/obenno/cutqc
 ---
 
@@ -8,39 +8,50 @@ homepage: https://github.com/obenno/cutqc
 # cutqc
 
 ## Overview
-The `cutqc` tool is a Shell-based wrapper designed to simplify the preprocessing of FASTQ files. It automates the workflow of trimming adapters (via `cutadapt`) and assessing read quality (via `fastqc`), then uses RMarkdown and Plotly to generate a comprehensive visual report. This skill should be used when you need to process raw sequencing reads and require a consolidated view of quality metrics to verify the effectiveness of the trimming process.
 
-## Command Line Usage
+`cutqc` is a bioinformatics utility designed to streamline the initial stages of NGS data processing. It automates the execution of `cutadapt` for removing adapter sequences and `FastQC` for evaluating read quality. Its primary value lies in its ability to generate a comprehensive, interactive HTML report (using RMarkdown and Plotly) that compares data quality metrics before and after the trimming process. This allows researchers to quickly verify the effectiveness of their trimming parameters and the overall health of their sequencing data.
 
-The tool is invoked via the `cutqc.sh` script and supports two primary subcommands: `cutqc` for paired-end processing and `qc_only` for single-file quality checks.
+## CLI Usage Patterns
 
-### Paired-End Trimming and QC
-Use the `cutqc` subcommand to process paired-end reads. This performs trimming and runs FastQC on both the raw and trimmed data.
+The tool is invoked via the `cutqc.sh` script and supports two primary subcommands: `cutqc` (for paired-end data) and `qc_only` (for single-file assessment).
+
+### Paired-End Processing (cutqc)
+This is the core workflow which performs FastQC on raw reads, runs cutadapt, and then performs FastQC on the trimmed results.
 
 ```bash
-cutqc.sh cutqc <in_read1.fq.gz> <in_read2.fq.gz> <out_report.html> [cutadapt_options]
+cutqc.sh cutqc <in_R1.fq.gz> <in_R2.fq.gz> <out_report.html> [cutadapt_options]
 ```
 
-*   **Mandatory Arguments**: The first three arguments (Read 1, Read 2, and the output HTML filename) are positional and required.
-*   **Passing Options**: Any arguments provided after the output HTML are passed directly to `cutadapt`. Use this to specify adapter sequences (e.g., `-a`, `-g`, `-A`, `-G`).
+*   **Mandatory Arguments**: The first three positional arguments must be the Forward Read (R1), Reverse Read (R2), and the desired name for the output HTML report.
+*   **Passing Options**: Any arguments provided after the output filename are passed directly to `cutadapt`.
+*   **Constraint**: Do not pass `-o` or `-p` manually, as the wrapper manages output file naming automatically.
 
-### Single-File Quality Control
-Use the `qc_only` subcommand to generate a quality report for a single FASTQ file without performing trimming.
+### Single-End Quality Control (qc_only)
+Use this when you only need a quality report for a single FASTQ file without performing any trimming.
 
 ```bash
 cutqc.sh qc_only <in_read.fq.gz> [output_report.html]
 ```
 
-## Best Practices and Expert Tips
+## Expert Tips and Best Practices
 
-*   **Gzipped Inputs Only**: `cutqc` strictly requires gzipped input files (`.fq.gz` or `.fastq.gz`). Ensure files are compressed before running the tool.
-*   **Avoid Output Flags**: When providing additional `cutadapt` options, **do not** include `-o` or `-p`. The `cutqc.sh` script manages output file paths internally; adding these flags will cause conflicts or errors.
-*   **Interactive Reports**: The resulting HTML report uses Plotly, allowing you to zoom and hover over data points to inspect specific quality scores or sequence distributions.
-*   **Conda Installation**: The most reliable way to ensure all dependencies (R, RMarkdown, Cutadapt, FastQC) are present is to install via Bioconda:
-    ```bash
-    conda install -c bioconda cutqc
-    ```
+*   **Input Format**: `cutqc` strictly requires gzipped input files (`.fq.gz` or `.fastq.gz`). Ensure your data is compressed before running.
+*   **Adapter Trimming**: Since `cutqc` passes extra arguments to `cutadapt`, you should specify your adapter sequences using standard `cutadapt` flags (e.g., `-a ADAPTER_FWD -A ADAPTER_REV`).
+*   **Resource Management**: The script is hardcoded to use 2 threads (`-t 2`) for FastQC. If running on a high-performance cluster, ensure your resource request matches this or modify the script if higher parallelism is required.
+*   **Output Files**: When running the `cutqc` subcommand, the tool generates intermediate trimmed files named `<filename>.trimmed.fq.gz` in the working directory. Ensure you have sufficient disk space for these temporary files.
+*   **Environment Requirements**: To function correctly, the environment must have `cutadapt`, `fastqc`, `Rscript`, and the R packages `rmarkdown`, `tidyverse`, `plotly`, and `scales` installed.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| cutqc.sh | Performs quality control on sequencing reads, optionally with adapter trimming. |
+| fastqc | FastQC reads a set of sequence files and produces from each one a quality control report consisting of a number of different modules, each one of which will help to identify a different potential type of problem in your data. |
 
 ## Reference documentation
-- [cutqc - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_cutqc_overview.md)
-- [GitHub - obenno/cutqc: A simple wrapper for cutadapt and fastqc](./references/github_com_obenno_cutqc.md)
+
+- [Cutqc GitHub README](./references/github_com_obenno_cutqc_blob_main_README.md)
+- [Cutqc Shell Script Source](./references/github_com_obenno_cutqc_blob_main_cutqc.sh.md)
+- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_cutqc_overview.md)

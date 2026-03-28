@@ -162,3 +162,6 @@ Usage: FEELnc_pipeline.sh --candidate=<TRANSCRIPT_MODEL_GTF> --reference=<REFERE
 These options are mandatories
 ```
 
+
+## Metadata
+- **Skill**: generated

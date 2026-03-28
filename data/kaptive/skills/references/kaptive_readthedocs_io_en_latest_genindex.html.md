@@ -1,1 +1,29 @@
-Index &#8212; Kaptive 3.1.0 documentation Skip to main content Back to top Ctrl + K Introducing Kaptive 3 Installation Usage Method Outputs Interpreting the results Databases Legacy Database Information FAQs Index By Tom Stanton © Copyright 2025, Tom Stanton, Ryan Wick, Kathryn Holt, Kelly Wyres.
+[Skip to main content](#main-content)
+
+Back to top
+[ ]
+
+[ ]
+
+`Ctrl`+`K`
+
+[![Kaptive 3.1.0 documentation - Home](https://github.com/klebgenomics/Kaptive/blob/master/extras/kaptive_logo.png?raw=true)](index.html)
+
+* [Introducing Kaptive 3](index.html)
+
+* [Installation](Installation.html)
+* [Usage](Usage.html)
+* [Method](Method.html)
+* [Outputs](Outputs.html)
+* [Interpreting the results](Interpreting-the-results.html)
+* [Databases](Databases.html)
+* [Legacy Database Information](Legacy.html)
+* [FAQs](FAQs.html)
+
+#
+
+# Index
+
+By Tom Stanton
+
+© Copyright 2025, Tom Stanton, Ryan Wick, Kathryn Holt, Kelly Wyres.

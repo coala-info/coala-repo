@@ -1,6 +1,6 @@
 ---
 name: locityper
-description: Locityper resolves genotypes for highly polymorphic genomic regions using whole genome sequencing data. Use when user asks to prepare target regions, recruit relevant reads, align reads to locus-specific references, genotype complex loci, or prune redundant haplotypes.
+description: Locityper resolves genotypes in highly polymorphic and structurally complex genomic regions using short-read or long-read data. Use when user asks to prepare target loci, recruit reads from BAM or CRAM files, align reads to candidate haplotypes, prune haplotype databases, or perform final genotyping.
 homepage: https://github.com/tprodanov/locityper
 ---
 
@@ -8,56 +8,63 @@ homepage: https://github.com/tprodanov/locityper
 # locityper
 
 ## Overview
-Locityper is a specialized bioinformatics tool designed to resolve genotypes for highly polymorphic genomic regions that are typically difficult to analyze with standard pipelines. It is particularly effective for genes with high structural variation or sequence divergence. The tool provides a modular workflow to recruit relevant reads from whole genome sequencing (WGS) datasets—supporting both Illumina short-reads and PacBio/Oxford Nanopore long-reads—and performs targeted alignment and genotyping against a local pangenome or reference set.
 
-## Installation
-Locityper is available via Bioconda:
-```bash
-conda install bioconda::locityper
-```
+Locityper is a specialized bioinformatics tool designed to resolve genotypes in highly polymorphic and structurally complex regions of the genome. Unlike general-purpose variant callers, it focuses on specific loci, leveraging both short-read (Illumina) and long-read (PacBio/Oxford Nanopore) data to provide accurate haplotype-level calls. It is particularly useful for medical and population genetics research involving the immune system or other hyper-variable gene families where standard mapping often fails due to high sequence divergence.
 
-## Core CLI Subcommands
-The tool operates through several functional modules:
+## Core Workflow and CLI Usage
 
 ### 1. Target Preparation
-Prepare the genomic regions of interest.
-- **Subcommand**: `locityper target`
-- **Key Feature**: Supports multiple boundary expansions to capture flanking sequences necessary for accurate recruitment.
+Define the genomic regions of interest and prepare the reference environment.
+- Use `locityper target` to specify loci.
+- Support for multiple boundary expansions allows for better recruitment in flanking regions.
+- **Pattern**: `locityper target -t <targets.bed> -r <reference.fasta> -o <output_dir>`
 
 ### 2. Read Recruitment
-Extract reads relevant to the target loci from the global WGS data.
-- **Subcommand**: `locityper recruit`
-- **Common Flags**:
-  - `--distinct`: Refines recruitment logic for specific alleles.
-  - Can be configured to output a single consolidated file for downstream steps.
+Extract reads that potentially belong to the target loci from WGS BAM/CRAM files.
+- Use the `--distinct` argument to ensure unique read capture when dealing with overlapping or highly similar regions.
+- Provide the index file as a second input to `-a` or `-I` when required.
+- **Pattern**: `locityper recruit -i <input.bam> -t <target_dir> -o <recruited.bam>`
 
-### 3. Alignment
-Align the recruited reads to the locus-specific reference.
-- **Subcommand**: `locityper align`
-- **Expert Tip**: Use the `--ordered` argument to ensure the alignment output is sorted, which is often required for the genotyping stage.
+### 3. Haplotype Alignment
+Align recruited reads against a database of known candidate haplotypes.
+- **Best Practice**: Always use the `--ordered` flag to ensure the output is sorted, which is required for downstream genotyping.
+- Locityper is optimized for speed; recent updates significantly improve alignment throughput.
+- **Pattern**: `locityper align -i <recruited.bam> -r <haplotypes.fasta> -o <aligned.bam> --ordered`
 
-### 4. Genotyping
-The final step to determine the sample's genotype at the target loci.
-- **Subcommand**: `locityper genotype`
-- **Common Flags**:
-  - `--recr-alt-len`: Adjusts parameters for alternative allele lengths.
-  - It is recommended to explicitly specify recruitment regions during this step to improve accuracy.
+### 4. Haplotype Pruning
+Reduce the complexity of the search space by clustering and pruning similar haplotypes.
+- Use `--n-clusters` to define the granularity of the pruning process.
+- Pruning can be performed even if some values are missing in the distance matrix.
+- **Pattern**: `locityper prune -i <distances.bin> --n-clusters <int> -o <pruned_haplotypes.fasta>`
 
-### 5. Haplotype Pruning
-Optimize the search space by clustering or removing redundant haplotypes.
-- **Subcommand**: `locityper prune`
-- **Common Flags**:
-  - `--n-clusters`: Defines the number of clusters for pruning.
-  - This module generates a `distances.bin` file for the pruned data.
+### 5. Genotyping
+Perform the final genotype call based on alignment likelihoods.
+- Use `--recr-alt-len` to account for recruitment regions during the genotyping phase.
+- The output is typically a JSON file containing the most likely haplotype pairs and their associated quality scores.
+- **Pattern**: `locityper genotype -i <aligned.bam> -g <gene_name> -o <output.json>`
 
-## Best Practices and Troubleshooting
-- **VCF Handling**: Always provide input variant files in compressed format (`.vcf.gz`). Using uncompressed `.vcf` files can lead to segmentation faults.
-- **Read Types**: The tool is compatible with both short-read and long-read data; ensure your recruitment parameters match the expected read lengths of your platform.
-- **Memory**: When processing a high volume of targets simultaneously, monitor memory usage during the recruitment phase.
-- **Progress Tracking**: The `align` subcommand provides a progress bar to monitor long-running alignment tasks.
+## Expert Tips and Best Practices
+
+- **Read Length Handling**: Locityper is designed to handle both short and long reads. Ensure your recruitment parameters (like fragment size for short reads) match your library preparation.
+- **Memory Management**: When working with large haplotype databases (e.g., full HLA IMGT/HLA sets), use the `prune` command to prevent memory exhaustion and reduce false positive alignments.
+- **Progress Monitoring**: Recent versions show alignment progress; monitor this to estimate completion time for large cohorts.
+- **Error Messages**: If the tool fails, check for specific error messages regarding missing values in pruning or recruitment region mismatches, as these are common points of failure in complex loci.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| locityper | Align medium-size sequence to each other. |
+| locityper | Remove similar target haplotypes. |
+| locityper_genotype | Genotype complex loci. |
+| locityper_target | Adds target locus/loci to the database. |
+| preproc | Preprocess WGS dataset. |
+| recruit | Recruit reads to one/multiple loci. |
 
 ## Reference documentation
-- [Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_locityper_overview.md)
-- [GitHub Repository](./references/github_com_tprodanov_locityper.md)
-- [Development History and Subcommands](./references/github_com_tprodanov_locityper_commits_main.md)
-- [Known Issues and Parameters](./references/github_com_tprodanov_locityper_issues.md)
+
+- [Locityper README](./references/github_com_tprodanov_locityper_blob_main_README.md)
+- [Command Reference](./references/locityper_vercel_app_commands.md)
+- [Recent Updates and Flags](./references/github_com_tprodanov_locityper_commits_main.md)

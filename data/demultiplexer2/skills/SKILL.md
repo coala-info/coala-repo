@@ -1,6 +1,6 @@
 ---
 name: demultiplexer2
-description: demultiplexer2 sorts Illumina sequencing reads based on internal barcode sequences using Excel-based configuration files. Use when user asks to initialize primer sets, create tagging schemes, or demultiplex FASTQ files using inline tags.
+description: This tool sorts raw Illumina sequencing data into individual sample files by identifying inline barcode sequences using Excel-based configuration files. Use when user asks to create a primer set, define a tagging scheme, or demultiplex sequencing reads based on tags.
 homepage: https://github.com/DominikBuchner/demultiplexer2
 ---
 
@@ -8,50 +8,61 @@ homepage: https://github.com/DominikBuchner/demultiplexer2
 # demultiplexer2
 
 ## Overview
-The `demultiplexer2` tool is designed for bioinformatics workflows where Illumina reads must be sorted based on internal barcode sequences (inline tags) rather than standard Illumina indices. It utilizes a three-step process involving the creation and population of Excel-based configuration files to manage primer sequences, tag combinations, and sample metadata. This skill helps navigate the CLI commands required to initialize these templates and run the final demultiplexing engine.
 
-## Installation
-Install the tool via pip or conda:
-```bash
-pip install demultiplexer2
-# OR
-conda install bioconda::demultiplexer2
-```
+The demultiplexer2 skill enables the efficient sorting of raw Illumina sequencing data into individual sample files based on inline barcode sequences. Unlike tools that rely solely on header-based demultiplexing, this tool identifies tags within the reads themselves. The workflow is uniquely centered around Excel-based configuration files, allowing researchers to manage complex primer and tagging metadata in a familiar spreadsheet format before running the high-performance Python-based demultiplexing engine.
 
 ## Core Workflow
 
 ### 1. Initialize the Primer Set
-Generate the template Excel file that defines your primers and tag sequences.
-```bash
-demultiplexer2 create_primerset --name MyProject_Primers --n_primers 2
-```
-**Expert Tips:**
-* The resulting Excel file contains three sheets: **General Information**, **Forward Tags**, and **Reverse Tags**.
-* You must manually fill these sheets with your specific sequences before proceeding.
-* Ensure tag sequences are entered accurately, as the tool uses exact matches to sort reads.
+The first step generates an Excel template to define your laboratory setup.
 
-### 2. Generate the Tagging Scheme
-Create a mapping file that links your raw input FASTQ files to specific sample names.
 ```bash
-demultiplexer2 create_tagging_scheme --name MyStudy_Scheme --data_dir ./raw_data --primerset_path ./MyProject_Primers.xlsx
+demultiplexer2 create_primerset --name [PrimersetName] --n_primers [Count]
 ```
+
 **Expert Tips:**
-* `--data_dir` should point to the directory containing your gzipped FASTQ files.
-* Open the generated tagging scheme Excel file and enter the desired **Sample Names** for each file/tag combination.
-* This file acts as the final bridge between raw data and organized output.
+* **Excel Structure:** The generated file contains three sheets: *General Information*, *Forward Tags*, and *Reverse Tags*.
+* **Data Entry:** You must manually fill in the tag names and sequences in the Excel file before proceeding.
+* **Storage:** The tool automatically saves a copy in its internal data directory for future reference.
+
+### 2. Define the Tagging Scheme
+This step links your raw sequencing files to the specific samples defined in your primer set.
+
+```bash
+demultiplexer2 create_tagging_scheme --name [SchemeName] --data_dir [InputPath] --primerset_path [PathToExcel]
+```
+
+**Expert Tips:**
+* **Input Directory:** Ensure the `data_dir` contains all the gzipped FASTQ files (`.fastq.gz`) you intend to process.
+* **Sample Mapping:** Open the resulting Excel file and map the input file pairs to your desired sample names. This mapping is critical for the final output filenames.
 
 ### 3. Execute Demultiplexing
-Run the algorithm to sort reads into the output directory.
+Run the final algorithm to sort the reads.
+
 ```bash
-demultiplexer2 demultiplex --primerset_path ./MyProject_Primers.xlsx --tagging_scheme_path ./MyStudy_Scheme.xlsx --output_dir ./demultiplexed_results
+demultiplexer2 demultiplex --primerset_path [PathToExcel] --tagging_scheme_path [PathToSchemeExcel] --output_dir [OutputPath]
 ```
 
-## Best Practices and Constraints
-* **Input Format**: The tool specifically expects gzipped FASTQ files (`.fastq.gz`).
-* **Read Handling**: Reads that do not match the provided tag sequences in the Excel configuration are discarded automatically.
-* **Output**: The tool generates gzipped FASTQ files for each sample defined in your tagging scheme.
-* **Statistics**: Upon completion, the tool provides a summary of the percentage of reads successfully assigned to tags (e.g., "16865 of 100000 sequences matched"). Low match percentages often indicate errors in the tag sequences provided in the Excel sheets.
+**Expert Tips:**
+* **Output Format:** The tool produces gzipped FASTQ files for each sample identified in the tagging scheme.
+* **Read Filtering:** Reads that do not match the provided tag sequences are automatically discarded.
+* **Monitoring:** The CLI provides real-time statistics showing the percentage of reads successfully assigned to tags (e.g., "16.86 % sequences matched").
+
+## Best Practices
+* **Sequence Accuracy:** Double-check tag sequences in the Excel sheets for typos or orientation issues (Forward vs. Reverse) as the tool relies on exact matches.
+* **File Naming:** Ensure your raw FASTQ files follow standard Illumina naming conventions (e.g., `_r1` and `_r2`) to help the tagging scheme generator pair them correctly.
+* **Updates:** If the tool behavior seems inconsistent, ensure you are on the latest version using `pip install --upgrade demultiplexer2`.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| create_primerset | Create a primerset |
+| create_tagging_scheme | Create a tagging scheme for demultiplexing. |
+| demultiplex | Demultiplexes sequencing reads based on primer and tagging schemes. |
 
 ## Reference documentation
-- [demultiplexer2 GitHub README](./references/github_com_DominikBuchner_demultiplexer2.md)
-- [demultiplexer2 Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_demultiplexer2_overview.md)
+- [Demultiplexer2 README](./references/github_com_DominikBuchner_demultiplexer2_blob_main_README.md)
+- [Tool Metadata and Dependencies](./references/github_com_DominikBuchner_demultiplexer2_blob_main_setup.py.md)

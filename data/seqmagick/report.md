@@ -583,3 +583,6 @@ options:
                         Action to take on an ambiguous codon [default: fail]
 ```
 
+
+## Metadata
+- **Skill**: generated

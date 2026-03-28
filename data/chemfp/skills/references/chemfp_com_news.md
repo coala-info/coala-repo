@@ -1,1 +1,371 @@
-chemfp chemfp Features Download Datasets License News Contact High Performance Search FPS Format FPB Format FPC Format • Datasets Multiple Toolkit Support Documentation: • Command-line Tools • Python API • Example Programs chemfp 5.0 is released Tue 23 September 2025 By Andrew Dalke After over a year of development, chemfp 5.0 is now available. It has improved support for datasets with 1-10 billion fingerprints, initial support for sparse count fingerprints, a new tool for histogram generation, and implementation of the Klekota-Roth fingerprints. A summary is listed below. For full details see the What's new in chemfp 5.0 page. FPB format Up until now, a limit in the FPB format meant it could only store about 260 million fingerprints. This has been fixed. The FPB format should handle up to 4 billion fingerprints, though it's only been tested up to 977 million. shardsearch Sometimes it's better to break a dataset into several parts (called a "shard"), search each part individually, and merge the results. This might be because the dataset is too large to manage easily, or because you want more fine-grained control of which subsets to process. Unlike the "simsearch" command, which searches a single target file, the new " chemfp shardsearch " command searches one or more target shards. It was designed to handle fingerprint datasets which are too large to fit into memory, and which are likely stored on a network file server where network bandwidth becomes the limiting factor. By decomposing the search into a query batches and compressed target shards, shardsearch lets you search billion-fingerprint datasets on even desktop hardware. sparse count fingerprints After 16 years of focus on binary fingerprints, chemfp has made its first steps into supporting sparse count fingerprints. It introduces the new FPC exchange format for sparse fingerprints, and the "chemfp rdkit2fpc" command to use RDKit to generate FPC files using RDKit's Morgan, RDK (Daylight-like), torsion, and atom pair sparse fingerprint generators. Chemfp 5.0 does not yet support direct similarity search of sparse count fingerprints. Instead, the chemfp fpc2fps tool implements several methods to convert sparse count fingerprints to binary fingerprints for use with the other chemfp components. In particular, the novel " superimpose " method creates binary fingerprints where the pairwise Tanimoto score between near neighbors appears more consisistently aligned with the count Tanimoto score than methods like folding or RDKit's count simulation. similarity histogram A historgram of the Tanimoto similarity scores gives a rough feel for the diversity in a set of fingerprints, or between two fingerprint sets. The new "simhistogram", available on the command-line and the Python API , generates these histograms either by evaluating all possible pairs, or by sampling a subset. (Sampling gives a constant-time way to estimate bulk similarity even for 1 billion fingerprint datasets.) Klekota-Roth fingerprint implementations Chemfp 5.0 adds fast implementations of the 4860-bit Klekota-Roth binary fingerprints using the RDKit and OpenEye toolkits, available as rdkit2fps --KlekotaRoth and oe2fps --KlekotaRoth , respectively. (CDK has built-in support for this fingerprint type, available in chemfp as cdk2fps --KlekotaRoth .) In 2008 Klekota and Roth used a decision tree to identify 4860 "chemical substructures that enrich for biological activity" across a few dozen assays, defined as SMARTS patterns. While the approach looks interesting, few papers cite it. One stumbing block seems to be its poor performance, eg, an RDKit implementation takes about 6 hours per million molecules compared to 5.5 minutes for Morgan3 fingerprints. I developed a new method which is about 17x faster, or only about 25% slower than the MACCS keys. This should make the Klekota-Roth fingerprints approachable even for multi-million compound datasets. If you have slow fingerprint type defined by a large number of SMARTS, contact me to see if my method can help! Other articles chemfp 5.0b2 available for beta testing Wed 20 August 2025 By Andrew Dalke Chemfp 5.0b2 is available for beta testing. Source licensee should have received a download link by email. Binary licensees and those who want to evaluate this release can install it with: python -m pip install chemfp==5.0b2 -i https://chemfp.com/packages/ UPDATE Beta accesss was removed with … read more FPC format Fri 15 August 2025 By Andrew Dalke The upcoming chemfp 5.0 release will include support for sparse count fingerprint using the newly published FPC format definition. The FPC format is almost identical to the FPS format, with the hex-encoded byte fingerprints replaced with a text-encoded sparse count fingerprint representation. A sparse count fingerprint contains 0 or … read more chemfp 5.0b1 available for beta testing Fri 04 July 2025 By Andrew Dalke Chemfp 5.0b1 is available for beta testing. Source licensee should have received a download link by email. Binary licensees and those who want to evaluate this release can install it with: python -m pip install chemfp==5.0b1 -i https://chemfp.com/packages/ UPDATE Beta accesss was removed with … read more chemfp 4.2 is available Wed 10 July 2024 By Andrew Dalke After over a year of development, I'm pleased to announce the release of chemfp 4.2. Here are highlights. For full details read What’s new in chemfp 4.2 from the documentation. simarray The biggest addition is " simarray ", which computes the entire comparison matrix as a NumPy array. By … read more ChEMBL 34 fingerprints in FPB format Tue 30 April 2024 By Andrew Dalke ChEMBL distributes precomputed RDKit-Morgan fingerprints in FPS format . I've reformatted the ChEMBL 34 fingerprints into FPB format along with an embedded chemfp license key to enable the full range of chemfp functionality when working with that data set. I've also removed the ChEMBL 31 dataset. If you need it, please … read more chemfp 4.1 is available Wed 17 May 2023 By Andrew Dalke After over a year of development, I'm pleased to announce the release of chemfp 4.1. For full details read What’s new in chemfp 4.1 from the documentation. Here are some of the highlights. CXSMILES is now the default for SMILES input, across all of the supported toolkits … read more chemfp 4.0 is available Sun 13 February 2022 By Andrew Dalke I'm pleased to announce the release of chemfp 4.0. The two themes of this release are diversity selection and improving the user-interface for interactive use. Diversity selection Chemfp 4.0 adds implementations of the MaxMin, heapsweep, and sphere exclusion algorithms for diversity selection. MaxMin is an approximate iterative method … read more chemfp 4.0b2 is available Sat 15 January 2022 By Andrew Dalke I've just released a preview release of chemfp, version 4.0b2. It includes a new "chemfp" command, diversity selection, a "high-level" API, pandas integration, progress bars, new output formats, and more. It is ready for production use. What remains is to improve test coverage and update the documentation. To install … read more Licensed FPB files Mon 08 February 2021 By Andrew Dalke The newly released chemfp 3.5.1 adds support for licensed FPB files. These are cheminformatics fingerprint datasets which can be used under the terms of chemfp's base license agreement even without a chemfp license key or source code distribution. As the first (and so far only) data set, I've … read more chemfp 3.5 is available Wed 27 January 2021 By Andrew Dalke I've just released chemfp 3.5, which is the latest version of the commercial chemfp development track. To install it on Linux-based OSes do the following: python -m pip install chemfp -i https://chemfp.com/packages/ These are available at no cost under the Chemfp Base License Agreement . This license … read more chemfp 3.5b1 is available Tue 19 January 2021 By Andrew Dalke I've just released chemfp 3.5b1, which is the latest version of the commercial chemfp development track. This is a beta version meant primarily as a way to get feedback about the new CDK support. See the previous posting for examples of the new features. Because it is a beta … read more Experimental support for CDK Fri 20 November 2020 By Andrew Dalke I've just released chemfp 3.5a1, which is an EXPERIMENTAL version with support for CDK. I'm looking for friendly users to try it out. It depends on JPype for the Python/Java interface. To install them, for Python 3.7 or later, on Linux-based OSes, do: python -m pip install … read more chemfp 3.4.1 is available Thu 27 August 2020 By Andrew Dalke I've just released chemfp 3.4.1, which is the latest version of the commercial chemfp development track. Use the following to download pre-compiled packages for most Linux-based operating systems: python -m pip install chemfp -i https://chemp.com/packages/ These are available at no cost under the Chemfp Base … read more chemfp 1.6.1 is available Fri 21 August 2020 By Andrew Dalke I've just released chemfp 1.6.1, which is the latest version of the no-cost/open source chemfp development track. You can download it from PyPI using: python -m pip install chemfp This minor release added specialized POPCNT implementations for all 8-byte-multiple fingerprint lengths up to 1024 bytes, plus a … read more chemfp 3.4 is available Thu 25 June 2020 By Andrew Dalke I've just released chemfp 3.4, which is the latest version of the commercial chemfp development track. Use the following to download pre-compiled packages for most Linux-based operating systems: python -m pip install chemfp -i https://chemp.com/packages/ These are available at no cost under the Chemfp Base License … read more chemfp 1.6 is available Thu 25 June 2020 By Andrew Dalke I've just released chemfp 1.6, which is the latest version of the no-cost/open source chemfp development track. You can download it from PyPI using: python -m pip install chemfp The main goal of this release was to improve the no-cost/f
+# [chemfp](https://chemfp.com/index.html)
+
+* [Features](https://chemfp.com/features/)
+* [Download](https://chemfp.com/download/)
+* [Datasets](https://chemfp.com/datasets/)
+* [License](https://chemfp.com/license/)
+* [News](https://chemfp.com/news/)
+* [Contact](https://chemfp.com/contact/)
+
+* [High Performance Search](/performance/)
+* [FPS Format](/fps_format/)
+* [FPB Format](/fpb_format/)
+* [FPC Format](/fpc_format/)
+* [• Datasets](/datasets/)
+* [Multiple Toolkit Support](/toolkits/)
+* [Documentation:](/docs/)
+* [• Command-line Tools](/docs/tools.html)
+* [• Python API](/docs/chemfp_api.html)
+* [• Example Programs](https://hg.sr.ht/~dalke/chemfp_examples)
+
+## [chemfp 5.0 is released](https://chemfp.com/chemfp-50-is-released.html)
+
+Tue 23 September 2025
+
+By [Andrew Dalke](https://chemfp.com/author/andrew-dalke.html)
+
+After over a year of development, chemfp 5.0 is now available. It has
+improved support for datasets with 1-10 billion fingerprints, initial
+support for sparse count fingerprints, a new tool for histogram generation,
+and implementation of the Klekota-Roth fingerprints.
+
+A summary is listed below. For full details see the [What's new in
+chemfp 5.0](https://chemfp.com/docs/whats_new_in_50.html) page.
+
+## FPB format
+
+Up until now, a limit in the [FPB
+format](https://chemfp.com/fpb_format/) meant it could only store
+about 260 million fingerprints. This has been fixed. The FPB format
+should handle up to 4 billion fingerprints, though it's only been
+tested up to 977 million.
+
+## shardsearch
+
+Sometimes it's better to break a dataset into several parts (called a
+"shard"), search each part individually, and merge the results. This
+might be because the dataset is too large to manage easily, or because
+you want more fine-grained control of which subsets to process.
+
+Unlike the "simsearch" command, which searches a single target file,
+the new "[chemfp
+shardsearch](https://chemfp.com/docs/chemfp_shardsearch_command.html)"
+command searches one or more target shards. It was designed to handle
+fingerprint datasets which are too large to fit into memory, and which
+are likely stored on a network file server where network bandwidth
+becomes the limiting factor. By decomposing the search into a query
+batches and compressed target shards, shardsearch lets you search
+billion-fingerprint datasets on even desktop hardware.
+
+## sparse count fingerprints
+
+After 16 years of focus on binary fingerprints, chemfp has made its
+first steps into supporting sparse count fingerprints. It introduces
+the new [FPC](https://chemfp.com/fpc_format/) exchange format for
+sparse fingerprints, and the "chemfp rdkit2fpc" command to use RDKit
+to generate FPC files using RDKit's Morgan, RDK (Daylight-like),
+torsion, and atom pair sparse fingerprint generators.
+
+Chemfp 5.0 does not yet support direct similarity search of sparse
+count fingerprints. Instead, the [chemfp
+fpc2fps](https://chemfp.com/docs/chemfp_fpc2fps_command.html) tool
+implements several methods to convert sparse count fingerprints to
+binary fingerprints for use with the other chemfp components.
+
+In particular, the novel
+"[superimpose](https://chemfp.com/docs/count_tools.html#fpc2fps-superimpose-method)"
+method creates binary fingerprints where the pairwise Tanimoto score
+between near neighbors appears more consisistently aligned with the
+count Tanimoto score than methods like folding or RDKit's count
+simulation.
+
+## similarity histogram
+
+A historgram of the Tanimoto similarity scores gives a rough feel for
+the diversity in a set of fingerprints, or between two fingerprint
+sets. The new "simhistogram", available on the
+[command-line](https://chemfp.com/docs/chemfp_simhistogram_command.html)
+and the [Python
+API](chemfp.com/docs/chemfp_toplevel.html#chemfp.simhistogram),
+generates these histograms either by evaluating all possible pairs, or
+by sampling a subset. (Sampling gives a constant-time way to estimate
+bulk similarity even for 1 billion fingerprint datasets.)
+
+## Klekota-Roth fingerprint implementations
+
+Chemfp 5.0 adds fast implementations of the 4860-bit Klekota-Roth
+binary fingerprints using the RDKit and OpenEye toolkits, available as
+[rdkit2fps
+--KlekotaRoth](https://chemfp.com/docs/rdkit2fps_command.html#rdkit2fps-help)
+and [oe2fps
+--KlekotaRoth](https://chemfp.com/docs/oe2fps_command.html#oe2fps-help),
+respectively. (CDK has [built-in
+support](https://cdk.github.io/cdk/latest/docs/api/org/openscience/cdk/fingerprint/KlekotaRothFingerprinter.html)
+for this fingerprint type, available in chemfp as [cdk2fps
+--KlekotaRoth](https://chemfp.com/docs/cdk2fps_command.html#cdk2fps-help).)
+
+In 2008 [Klekota and
+Roth](https://academic.oup.com/bioinformatics/article/24/21/2518/192573)
+used a decision tree to identify 4860 "chemical substructures that
+enrich for biological activity" across a few dozen assays, defined as
+SMARTS patterns. While the approach looks interesting, few papers cite
+it. One stumbing block seems to be its poor performance, eg, an RDKit
+implementation takes about 6 hours per million molecules compared to
+5.5 minutes for Morgan3 fingerprints.
+
+I developed a new method which is about 17x faster, or only about 25%
+slower than the MACCS keys. This should make the Klekota-Roth
+fingerprints approachable even for multi-million compound datasets.
+
+If you have slow fingerprint type defined by a large number of SMARTS,
+contact me to see if my method can help!
+
+## Other articles
+
+---
+
+1. ## [chemfp 5.0b2 available for beta testing](https://chemfp.com/chemfp-50b2-available-for-beta-testing.html "Permalink to chemfp 5.0b2 available for beta testing")
+
+   Wed 20 August 2025
+
+   By [Andrew Dalke](https://chemfp.com/author/andrew-dalke.html)
+
+   Chemfp 5.0b2 is available for beta testing. Source licensee should
+   have received a download link by email. Binary licensees and those who
+   want to evaluate this release can install it with:
+
+   ```
+   python -m pip install chemfp==5.0b2 -i https://chemfp.com/packages/
+   ```
+
+   > **UPDATE** Beta accesss was removed with …
+
+   [read more](https://chemfp.com/chemfp-50b2-available-for-beta-testing.html)
+2. ## [FPC format](https://chemfp.com/fpc-format.html "Permalink to FPC format")
+
+   Fri 15 August 2025
+
+   By [Andrew Dalke](https://chemfp.com/author/andrew-dalke.html)
+
+   The upcoming chemfp 5.0 release will include support for sparse count
+   fingerprint using the newly published [FPC format](/fpc_format/)
+   definition.
+
+   The FPC format is almost identical to the FPS format, with the
+   hex-encoded byte fingerprints replaced with a text-encoded sparse
+   count fingerprint representation.
+
+   A sparse count fingerprint contains 0 or …
+
+   [read more](https://chemfp.com/fpc-format.html)
+3. ## [chemfp 5.0b1 available for beta testing](https://chemfp.com/chemfp-50b1-available-for-beta-testing.html "Permalink to chemfp 5.0b1 available for beta testing")
+
+   Fri 04 July 2025
+
+   By [Andrew Dalke](https://chemfp.com/author/andrew-dalke.html)
+
+   Chemfp 5.0b1 is available for beta testing. Source licensee should
+   have received a download link by email. Binary licensees and those who
+   want to evaluate this release can install it with:
+
+   ```
+   python -m pip install chemfp==5.0b1 -i https://chemfp.com/packages/
+   ```
+
+   > **UPDATE** Beta accesss was removed with …
+
+   [read more](https://chemfp.com/chemfp-50b1-available-for-beta-testing.html)
+4. ## [chemfp 4.2 is available](https://chemfp.com/chemfp-42-is-available.html "Permalink to chemfp 4.2 is available")
+
+   Wed 10 July 2024
+
+   By [Andrew Dalke](https://chemfp.com/author/andrew-dalke.html)
+
+   After over a year of development, I'm pleased to announce the release
+   of chemfp 4.2. Here are highlights. For full details read [What’s new
+   in chemfp 4.2](/docs/whats_new_in_42.html) from the documentation.
+
+   ## simarray
+
+   The biggest addition is
+   "[simarray](/docs/tools.html#chemfp-simarray-intro)", which computes
+   the entire comparison matrix as a NumPy array.
+
+   By …
+
+   [read more](https://chemfp.com/chemfp-42-is-available.html)
+5. ## [ChEMBL 34 fingerprints in FPB format](https://chemfp.com/chembl-34-fingerprints-in-fpb-format.html "Permalink to ChEMBL 34 fingerprints in FPB format")
+
+   Tue 30 April 2024
+
+   By [Andrew Dalke](https://chemfp.com/author/andrew-dalke.html)
+
+   ChEMBL distributes precomputed RDKit-Morgan fingerprints in [FPS
+   format](/fps_format). I've reformatted the [ChEMBL
+   34](https://doi.org/10.6019/CHEMBL.database.34) fingerprints into FPB
+   format along with an embedded chemfp license key to enable the full
+   range of chemfp functionality when working with that data set.
+
+   I've also removed the ChEMBL 31 dataset. If you need it, please …
+
+   [read more](https://chemfp.com/chembl-34-fingerprints-in-fpb-format.html)
+6. ## [chemfp 4.1 is available](https://chemfp.com/chemfp-41-is-available.html "Permalink to chemfp 4.1 is available")
+
+   Wed 17 May 2023
+
+   By [Andrew Dalke](https://chemfp.com/author/andrew-dalke.html)
+
+   After over a year of development, I'm pleased to announce the release
+   of chemfp 4.1. For full details read [What’s new in chemfp
+   4.1](https://web.archive.org/web/20230605122222/https%3A//chemfp.readthedocs.io/en/latest/whats_new_in_41.html)
+   from the documentation.
+
+   Here are some of the highlights.
+
+   * [CXSMILES](https://docs.chemaxon.com/display/docs/chemaxon-extended-smiles-and-smarts-cxsmiles-and-cxsmarts.md)
+     is now the default for SMILES input, across all of the supported
+     toolkits …[read more](https://chemfp.com/chemfp-41-is-available.html)
+7. ## [chemfp 4.0 is available](https://chemfp.com/chemfp-40-is-available.html "Permalink to chemfp 4.0 is available")
+
+   Sun 13 February 2022
+
+   By [Andrew Dalke](https://chemfp.com/author/andrew-dalke.html)
+
+   I'm pleased to announce the release of chemfp 4.0.
+
+   The two themes of this release are diversity selection and improving
+   the user-interface for interactive use.
+
+   # Diversity selection
+
+   Chemfp 4.0 adds implementations of the MaxMin, heapsweep, and sphere
+   exclusion algorithms for diversity selection.
+
+   MaxMin is an *approximate* iterative method …
+
+   [read more](https://chemfp.com/chemfp-40-is-available.html)
+8. ## [chemfp 4.0b2 is available](https://chemfp.com/chemfp-40b2-is-available.html "Permalink to chemfp 4.0b2 is available")
+
+   Sat 15 January 2022
+
+   By [Andrew Dalke](https://chemfp.com/author/andrew-dalke.html)
+
+   I've just released a preview release of chemfp, version 4.0b2. It
+   includes a new "chemfp" command, diversity selection, a "high-level"
+   API, pandas integration, progress bars, new output formats, and more.
+
+   It is ready for production use. What remains is to improve test
+   coverage and update the documentation.
+
+   To install …
+
+   [read more](https://chemfp.com/chemfp-40b2-is-available.html)
+9. ## [Licensed FPB files](https://chemfp.com/licensed-fpb-files.html "Permalink to Licensed FPB files")
+
+   Mon 08 February 2021
+
+   By [Andrew Dalke](https://chemfp.com/author/andrew-dalke.html)
+
+   The newly released [chemfp](/) 3.5.1 adds support for licensed FPB
+   files. These are cheminformatics fingerprint datasets which can be
+   used under the terms of chemfp's
+   [base license agreement](/BaseLicense.txt) even without a chemfp
+   license key or source code distribution.
+
+   As the first (and so far only) data set, I've …
+
+   [read more](https://chemfp.com/licensed-fpb-files.html)
+10. ## [chemfp 3.5 is available](https://chemfp.com/chemfp-35-is-available.html "Permalink to chemfp 3.5 is available")
+
+    Wed 27 January 2021
+
+    By [Andrew Dalke](https://chemfp.com/author/andrew-dalke.html)
+
+    I've just released chemfp 3.5, which is the latest version of the
+    commercial chemfp development track. To install it on Linux-based OSes
+    do the following:
+
+    ```
+    python -m pip install chemfp -i https://chemfp.com/packages/
+    ```
+
+    These are available at no cost under the
+    [Chemfp Base License Agreement](/BaseLicense.txt). This license …
+
+    [read more](https://chemfp.com/chemfp-35-is-available.html)
+11. ## [chemfp 3.5b1 is available](https://chemfp.com/chemfp-35b1-is-available.html "Permalink to chemfp 3.5b1 is available")
+
+    Tue 19 January 2021
+
+    By [Andrew Dalke](https://chemfp.com/author/andrew-dalke.html)
+
+    I've just released chemfp 3.5b1, which is the latest version of the
+    commercial chemfp development track. This is a beta version meant
+    primarily as a way to get feedback about the new
+    [CDK](https://cdk.github.io/index.html) support. See [the previous
+    posting](/experimental-support-for-cdk.html) for examples of the new
+    features.
+
+    Because it is a beta …
+
+    [read more](https://chemfp.com/chemfp-35b1-is-available.html)
+12. ## [Experimental support for CDK](https://chemfp.com/experimental-support-for-cdk.html "Permalink to Experimental support for CDK")
+
+    Fri 20 November 2020
+
+    By [Andrew Dalke](https://chemfp.com/author/andrew-dalke.html)
+
+    I've just released chemfp 3.5a1, which is an *EXPERIMENTAL* version
+    with support for CDK. I'm looking for friendly users to try it out. It
+    depends on JPype for the Python/Java interface. To install them, for
+    Python 3.7 or later, on Linux-based OSes, do:
+
+    ```
+    python -m pip install …
+    ```
+
+    [read more](https://chemfp.com/experimental-support-for-cdk.html)
+13. ## [chemfp 3.4.1 is available](https://chemfp.com/chemfp-341-is-available.html "Permalink to chemfp 3.4.1 is available")
+
+    Thu 27 August 2020
+
+    By [Andrew Dalke](https://chemfp.com/author/andrew-dalke.html)
+
+    I've just released chemfp 3.4.1, which is the latest version of the
+    commercial chemfp development track. Use the following to download
+    pre-compiled packages for most Linux-based operating systems:
+
+    ```
+    python -m pip install chemfp -i https://chemp.com/packages/
+    ```
+
+    These are available at no cost under the
+    [Chemfp Base …](/BaseLicense.txt)
+
+    [read more](https://chemfp.com/chemfp-341-is-available.html)
+14. ## [chemfp 1.6.1 is available](https://chemfp.com/chemfp-161-is-available.html "Permalink to chemfp 1.6.1 is available")
+
+    Fri 21 August 2020
+
+    By [Andrew Dalke](https://chemfp.com/author/andrew-dalke.html)
+
+    I've just released chemfp 1.6.1, which is the latest version of the
+    no-cost/open source chemfp development track. You can download it from
+    PyPI using:
+
+    ```
+    python -m pip install chemfp
+    ```
+
+    This minor release added specialized POPCNT implementations for all 8-byte-multiple fingerprint lengths up to 1024 bytes, plus a …
+
+    [read more](https://chemfp.com/chemfp-161-is-available.html)
+15. ## [chemfp 3.4 is available](https://chemfp.com/chemfp-34-is-available.html "Permalink to chemfp 3.4 is available")
+
+    Thu 25 June 2020
+
+    By [Andrew Dalke](https://chemfp.com/author/andrew-dalke.html)
+
+    I've just released chemfp 3.4, which is the latest version of the
+    commercial chemfp development track. Use the following to download
+    pre-compiled packages 

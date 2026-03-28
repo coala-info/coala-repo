@@ -2522,3 +2522,6 @@ arguments:
    -o, --output-sample-file [class java.io.File]  output sample file, default stdout [optional]
 ```
 
+
+## Metadata
+- **Skill**: generated

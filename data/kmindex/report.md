@@ -425,3 +425,6 @@ OPTIONS
     -v --verbose - Verbosity level [debug|info|warning|error]. {info}
 ```
 
+
+## Metadata
+- **Skill**: generated

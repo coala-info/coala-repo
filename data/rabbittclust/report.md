@@ -81,3 +81,6 @@ Options:
                               append genome file or file list with the pre-generated sketch or MST files
 ```
 
+
+## Metadata
+- **Skill**: generated

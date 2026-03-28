@@ -1,1 +1,293 @@
-GitHub - mourisl/T1K: T1K is a versatile methods to genotype highly polymorphic genes (e.g. KIR, HLA) with bulk or single-cell RNA-seq, WGS or WES data. Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} mourisl / T1K Public Notifications You must be signed in to change notification settings Fork 13 Star 98 T1K is a versatile methods to genotype highly polymorphic genes (e.g. KIR, HLA) with bulk or single-cell RNA-seq, WGS or WES data. License MIT license 98 stars 13 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 2 Pull requests 0 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights mourisl/T1K master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 251 Commits 251 Commits CFTR CFTR example example hprc_database hprc_database samtools-0.1.19 samtools-0.1.19 scripts scripts vcf_database vcf_database .gitignore .gitignore AddGeneCoord.pl AddGeneCoord.pl AlignAlgo.hpp AlignAlgo.hpp Analyzer.cpp Analyzer.cpp BamExtractor.cpp BamExtractor.cpp BarcodeCorrector.hpp BarcodeCorrector.hpp BarcodeSummary.hpp BarcodeSummary.hpp ExtractBamHits.pl ExtractBamHits.pl FastqExtractor.cpp FastqExtractor.cpp GeneAssigner.cpp GeneAssigner.cpp Genotyper.cpp Genotyper.cpp Genotyper.hpp Genotyper.hpp KmerCode.hpp KmerCode.hpp KmerCount.hpp KmerCount.hpp KmerIndex.hpp KmerIndex.hpp LICENSE LICENSE Makefile Makefile ParseDatFile.pl ParseDatFile.pl README.md README.md ReadFiles.hpp ReadFiles.hpp SeqSet.hpp SeqSet.hpp SimpleVector.hpp SimpleVector.hpp VariantCaller.hpp VariantCaller.hpp alignments.hpp alignments.hpp defs.h defs.h kseq.h kseq.h run-t1k run-t1k t1k-build.pl t1k-build.pl t1k-copynumber.py t1k-copynumber.py t1k-merge.py t1k-merge.py t1k-smartseq.pl t1k-smartseq.pl View all files Repository files navigation README MIT license T1K Described in: Song, L., et al. Efficient and accurate KIR and HLA genotyping with massively parallel sequencing data. Genome Res. 2023 May 11;gr.277585.122. doi: 10.1101/gr.277585.122. Copyright (c) 2021 Li Song, Bo Li, Heng Li Includes portions copyright from: samtools - Copyright (C) 2008-, Genome Research Ltd, Heng Li What is T1K? T1K (The ONE genotyper for Kir and HLA) is a computational tool to infer the alleles for the polymorphic genes such as KIR and HLA. T1K calculates the allele abundances based on the RNA-seq/WES/WGS read alignments on the provided allele reference sequences. The abundances are used to pick the true alleles for each gene. T1K provides the post-analysis steps, including novel SNP detection and single-cell representation. T1K supports both single-end and paired-end sequencing data with any read length. Install Clone the GitHub repo , e.g. with git clone https://github.com/mourisl/T1K.git Run make in the repo directory Generate the allele reference sequences of IPD-IMGT/HLA and IPD-KIR databases: perl t1k-build.pl -o hlaidx --download IPD-IMGT/HLA perl t1k-build.pl -o kiridx --download IPD-KIR You will find the executable files in the downloaded directory. If you want to run T1K without specifying the directory, you can either add the directory of T1K to the environment variable PATH or create a soft link ("ln -s") of the file "run-t1k" to a directory in PATH. T1K depends on pthreads and samtools depends on zlib . T1K is also available from Bioconda . You can install T1K with conda install -c bioconda t1k . Usage Usage: ./run-t1k [OPTIONS] Required: -1 STRING -2 STRING: path to paired-end read files or -u STRING: path to single-end read file or -i STRING: path to interleaved read file or -b STRING: path to BAM file -f STRING: path to the reference sequence file Optional: -c STRING: path to the gene coordinate file (required when -b input) -o STRING: prefix of output files. (default: inferred from file prefix) --od STRING: the directory for output files. (default: ./) -t INT: number of threads (default: 1) -s FLOAT: minimum alignment similarity (default: 0.8) --frac FLOAT: filter if abundance is less than the frac of dominant allele (default: 0.15) --cov FLOAT: filter genes with average coverage less than the specified value (default: 1.0) --crossGeneRate FLOAT: the effect from other gene's expression (0.04) --alleleDigitUnits INT: the number of units in genotyping result. (default: automatic) --alleleDelimiter CHR: the delimiter character for digit unit. (default: automatic) --alleleWhitelist STRING: only consider read aligned to the listed allele sereies. (default: not used) --barcode STRING: if -b, BAM field for barcode; if -1 -2/-u, file containing barcodes (default: not used) --barcodeRange INT INT CHAR: start, end(-1 for length-1), strand in a barcode is the true barcode (default: 0 -1 +) --barcodeWhitelist STRING: path to the barcode whitelist (default: not used) --read1Range INT INT: start, end(-1 for length-1) in -1/-u files for genomic sequence (default: 0 -1) --read2Range INT INT: start, end(-1 for length-1) in -2 files for genomic sequence (default: 0 -1) --mateIdSuffixLen INT: the suffix length in read id for mate. (default: not used) --abnormalUnmapFlag: the flag in BAM for the unmapped read-pair is nonconcordant (default: not set) --relaxIntronAlign: allow one more mismatch in intronic alignment (default: false) --preset STRING: preset parameters for cases requiring non-default settings: hla: HLA genotyping in general hla-wgs: HLA genotyping on WGS data kir-wgs: KIR genotyping on WGS data kir-wes: KIR genotyping on WES data --noExtraction: directly use the files from provided -1 -2/-u for genotyping (default: extraction first) --skipPostAnalysis: only conduct genotyping. (default: do the post-analysis) --stage INT: start genotyping on specified stage (default: 0): 0: start from beginning (candidate read extraction) 1: start from genotype with candidate reads 2: start from post-analysis Parameters for post-analysis: --post-varMaxGroup INT: the maximum variant group size to call novel variant. -1 for no limitation (default: 8) User cases # Genotyping HLA on RNA-seq data ./t1k -1 read_1.fq -2 read_2.fq --preset hla -f hlaidx/hlaidx_rna_seq.fa # Genotyping KIR on whole genome sequencing data ./t1k -1 read_1.fq -2 read_2.fq --preset kir-wgs -f kiridx/kiridx_dna_seq.fa Input/Output The primary input to T1K is the raw RNA-seq files in fasta/fastq format (-1/-2 for paired; -u for single-end; -i for interleaved), and the allele reference sequences (-f). For RNA-seq data, the user shall pick the "rna" reference file, e.g.: kiridx/kiridx_rna_seq.fa, for the -f option. For WES and WGS data, the user shall select the "dna" reference file for -f. The alternative input to T1K is the alignment BAM file (-b), which requires -f and the gene coordinate file (-c). To create the file for -c command, you can run command like "perl t1k-build.pl -o kiridx -d kiridx/kir.dat -g gencode.gtf" to create "_{dna,rna}_coord.fa" file. T1K outputs several files. t1k_genotype.tsv is the main output file holding the genotyping result, where the allele for each gene is on its own line with format: gene_name num_diff_alleles allele_1 abundance_1 quality_1 allele_2 abundance_2 quality_2 secondary_alleles In the case of missing alleles or homozygous alleles, the triple (allele, abundance, quality) will be ". 0 -1" as place holders. We recommend to ignore alleles with quality less or equal to 0 . The last column is the secondary alleles, that meet the abundance filtering critera but filtered by the tie breaking procedure. The secondary alleles is "|" separated fields, and each fi
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fmourisl%2FT1K)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fmourisl%2FT1K)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=mourisl%2FT1K)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[mourisl](/mourisl)
+/
+**[T1K](/mourisl/T1K)**
+Public
+
+* [Notifications](/login?return_to=%2Fmourisl%2FT1K) You must be signed in to change notification settings
+* [Fork
+  13](/login?return_to=%2Fmourisl%2FT1K)
+* [Star
+   98](/login?return_to=%2Fmourisl%2FT1K)
+
+* [Code](/mourisl/T1K)
+* [Issues
+  2](/mourisl/T1K/issues)
+* [Pull requests
+  0](/mourisl/T1K/pulls)
+* [Actions](/mourisl/T1K/actions)
+* [Projects](/mourisl/T1K/projects)
+* [Security
+  0](/mourisl/T1K/security)
+* [Insights](/mourisl/T1K/pulse)
+
+Additional navigation options
+
+* [Code](/mourisl/T1K)
+* [Issues](/mourisl/T1K/issues)
+* [Pull requests](/mourisl/T1K/pulls)
+* [Actions](/mourisl/T1K/actions)
+* [Projects](/mourisl/T1K/projects)
+* [Security](/mourisl/T1K/security)
+* [Insights](/mourisl/T1K/pulse)
+
+# mourisl/T1K
+
+master
+
+[Branches](/mourisl/T1K/branches)[Tags](/mourisl/T1K/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[251 Commits](/mourisl/T1K/commits/master/)   251 Commits | | |
+| [CFTR](/mourisl/T1K/tree/master/CFTR "CFTR") | | [CFTR](/mourisl/T1K/tree/master/CFTR "CFTR") |  |  |
+| [example](/mourisl/T1K/tree/master/example "example") | | [example](/mourisl/T1K/tree/master/example "example") |  |  |
+| [hprc\_database](/mourisl/T1K/tree/master/hprc_database "hprc_database") | | [hprc\_database](/mourisl/T1K/tree/master/hprc_database "hprc_database") |  |  |
+| [samtools-0.1.19](/mourisl/T1K/tree/master/samtools-0.1.19 "samtools-0.1.19") | | [samtools-0.1.19](/mourisl/T1K/tree/master/samtools-0.1.19 "samtools-0.1.19") |  |  |
+| [scripts](/mourisl/T1K/tree/master/scripts "scripts") | | [scripts](/mourisl/T1K/tree/master/scripts "scripts") |  |  |
+| [vcf\_database](/mourisl/T1K/tree/master/vcf_database "vcf_database") | | [vcf\_database](/mourisl/T1K/tree/master/vcf_database "vcf_database") |  |  |
+| [.gitignore](/mourisl/T1K/blob/master/.gitignore ".gitignore") | | [.gitignore](/mourisl/T1K/blob/master/.gitignore ".gitignore") |  |  |
+| [AddGeneCoord.pl](/mourisl/T1K/blob/master/AddGeneCoord.pl "AddGeneCoord.pl") | | [AddGeneCoord.pl](/mourisl/T1K/blob/master/AddGeneCoord.pl "AddGeneCoord.pl") |  |  |
+| [AlignAlgo.hpp](/mourisl/T1K/blob/master/AlignAlgo.hpp "AlignAlgo.hpp") | | [AlignAlgo.hpp](/mourisl/T1K/blob/master/AlignAlgo.hpp "AlignAlgo.hpp") |  |  |
+| [Analyzer.cpp](/mourisl/T1K/blob/master/Analyzer.cpp "Analyzer.cpp") | | [Analyzer.cpp](/mourisl/T1K/blob/master/Analyzer.cpp "Analyzer.cpp") |  |  |
+| [BamExtractor.cpp](/mourisl/T1K/blob/master/BamExtractor.cpp "BamExtractor.cpp") | | [BamExtractor.cpp](/mourisl/T1K/blob/master/BamExtractor.cpp "BamExtractor.cpp") |  |  |
+| [BarcodeCorrector.hpp](/mourisl/T1K/blob/master/BarcodeCorrector.hpp "BarcodeCorrector.hpp") | | [BarcodeCorrector.hpp](/mourisl/T1K/blob/master/BarcodeCorrector.hpp "BarcodeCorrector.hpp") |  |  |
+| [BarcodeSummary.hpp](/mourisl/T1K/blob/master/BarcodeSummary.hpp "BarcodeSummary.hpp") | | [BarcodeSummary.hpp](/mourisl/T1K/blob/master/BarcodeSummary.hpp "BarcodeSummary.hpp") |  |  |
+| [ExtractBamHits.pl](/mourisl/T1K/blob/master/ExtractBamHits.pl "ExtractBamHits.pl") | | [ExtractBamHits.pl](/mourisl/T1K/blob/master/ExtractBamHits.pl "ExtractBamHits.pl") |  |  |
+| [FastqExtractor.cpp](/mourisl/T1K/blob/master/FastqExtractor.cpp "FastqExtractor.cpp") | | [FastqExtractor.cpp](/mourisl/T1K/blob/master/FastqExtractor.cpp "FastqExtractor.cpp") |  |  |
+| [GeneAssigner.cpp](/mourisl/T1K/blob/master/GeneAssigner.cpp "GeneAssigner.cpp") | | [GeneAssigner.cpp](/mourisl/T1K/blob/master/GeneAssigner.cpp "GeneAssigner.cpp") |  |  |
+| [Genotyper.cpp](/mourisl/T1K/blob/master/Genotyper.cpp "Genotyper.cpp") | | [Genotyper.cpp](/mourisl/T1K/blob/master/Genotyper.cpp "Genotyper.cpp") |  |  |
+| [Genotyper.hpp](/mourisl/T1K/blob/master/Genotyper.hpp "Genotyper.hpp") | | [Genotyper.hpp](/mourisl/T1K/blob/master/Genotyper.hpp "Genotyper.hpp") |  |  |
+| [KmerCode.hpp](/mourisl/T1K/blob/master/KmerCode.hpp "KmerCode.hpp") | | [KmerCode.hpp](/mourisl/T1K/blob/master/KmerCode.hpp "KmerCode.hpp") |  |  |
+| [KmerCount.hpp](/mourisl/T1K/blob/master/KmerCount.hpp "KmerCount.hpp") | | [KmerCount.hpp](/mourisl/T1K/blob/master/KmerCount.hpp "KmerCount.hpp") |  |  |
+| [KmerIndex.hpp](/mourisl/T1K/blob/master/KmerIndex.hpp "KmerIndex.hpp") | | [KmerIndex.hpp](/mourisl/T1K/blob/master/KmerIndex.hpp "KmerIndex.hpp") |  |  |
+| [LICENSE](/mourisl/T1K/blob/master/LICENSE "LICENSE") | | [LICENSE](/mourisl/T1K/blob/master/LICENSE "LICENSE") |  |  |
+| [Makefile](/mourisl/T1K/blob/master/Makefile "Makefile") | | [Makefile](/mourisl/T1K/blob/master/Makefile "Makefile") |  |  |
+| [ParseDatFile.pl](/mourisl/T1K/blob/master/ParseDatFile.pl "ParseDatFile.pl") | | [ParseDatFile.pl](/mourisl/T1K/blob/master/ParseDatFile.pl "ParseDatFile.pl") |  |  |
+| [README.md](/mourisl/T1K/blob/master/README.md "README.md") | | [README.md](/mourisl/T1K/blob/master/README.md "README.md") |  |  |
+| [ReadFiles.hpp](/mourisl/T1K/blob/master/ReadFiles.hpp "ReadFiles.hpp") | | [ReadFiles.hpp](/mourisl/T1K/blob/master/ReadFiles.hpp "ReadFiles.hpp") |  |  |
+| [SeqSet.hpp](/mourisl/T1K/blob/master/SeqSet.hpp "SeqSet.hpp") | | [SeqSet.hpp](/mourisl/T1K/blob/master/SeqSet.hpp "SeqSet.hpp") |  |  |
+| [SimpleVector.hpp](/mourisl/T1K/blob/master/SimpleVector.hpp "SimpleVector.hpp") | | [SimpleVector.hpp](/mourisl/T1K/blob/master/SimpleVector.hpp "SimpleVector.hpp") |  |  |
+| [VariantCaller.hpp](/mourisl/T1K/blob/master/VariantCaller.hpp "VariantCaller.hpp") | | [VariantCaller.hpp](/mourisl/T1K/blob/master/VariantCaller.hpp "VariantCaller.hpp") |  |  |
+| [alignments.hpp](/mourisl/T1K/blob/master/alignments.hpp "alignments.hpp") | | [alignments.hpp](/mourisl/T1K/blob/master/alignments.hpp "alignments.hpp") |  |  |
+| [defs.h](/mourisl/T1K/blob/master/defs.h "defs.h") | | [defs.h](/mourisl/T1K/blob/master/defs.h "defs.h") |  |  |
+| [kseq.h](/mourisl/T1K/blob/master/kseq.h "kseq.h") | | [kseq.h](/mourisl/T1K/blob/master/kseq.h "kseq.h") |  |  |
+| [run-t1k](/mourisl/T1K/blob/master/run-t1k "run-t1k") | | [run-t1k](/mourisl/T1K/blob/master/run-t1k "run-t1k") |  |  |
+| [t1k-build.pl](/mourisl/T1K/blob/master/t1k-build.pl "t1k-build.pl") | | [t1k-build.pl](/mourisl/T1K/blob/master/t1k-build.pl "t1k-build.pl") |  |  |
+| [t1k-copynumber.py](/mourisl/T1K/blob/master/t1k-copynumber.py "t1k-copynumber.py") | | [t1k-copynumber.py](/mourisl/T1K/blob/master/t1k-copynumber.py "t1k-copynumber.py") |  |  |
+| [t1k-merge.py](/mourisl/T1K/blob/master/t1k-merge.py "t1k-merge.py") | | [t1k-merge.py](/mourisl/T1K/blob/master/t1k-merge.py "t1k-merge.py") |  |  |
+| [t1k-smartseq.pl](/mourisl/T1K/blob/master/t1k-smartseq.pl "t1k-smartseq.pl") | | [t1k-smartseq.pl](/mourisl/T1K/blob/master/t1k-smartseq.pl "t1k-smartseq.pl") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* MIT license
+
+# T1K
+
+Described in:
+
+Song, L., et al. Efficient and accurate KIR and HLA genotyping with massively parallel sequencing data. Genome Res. 2023 May 11;gr.277585.122. doi: 10.1101/gr.277585.122.
+
+```
+Copyright (c) 2021 Li Song, Bo Li, Heng Li
+```
+
+Includes portions copyright from:
+
+```
+samtools - Copyright (C) 2008-, Genome Research Ltd, Heng Li
+```
+
+### What is T1K?
+
+T1K (The ONE genotyper for Kir and HLA) is a computational tool to infer the alleles for the polymorphic genes such as KIR and HLA. T1K calculates the allele abundances based on the RNA-seq/WES/WGS read alignments on the provided allele reference sequences. The abundances are used to pick the true alleles for each gene. T1K provides the post-analysis steps, including novel SNP detection and single-cell representation. T1K supports both single-end and paired-end sequencing data with any read length.
+
+### Install
+
+1. Clone the [GitHub repo](https://github.com/mourisl/T1K), e.g. with `git clone https://github.com/mourisl/T1K.git`
+2. Run `make` in the repo directory
+3. Generate the allele reference sequences of IPD-IMGT/HLA and IPD-KIR databases:
+
+```
+	perl t1k-build.pl -o hlaidx --download IPD-IMGT/HLA
+	perl t1k-build.pl -o kiridx --download IPD-KIR
+```
+
+You will find the executable files in the downloaded directory. If you want to run T1K without specifying the directory, you can either add the directory of T1K to the environment variable PATH or create a soft link ("ln -s") of the file "run-t1k" to a directory in PATH.
+
+T1K depends on [pthreads](http://en.wikipedia.org/wiki/POSIX_Threads) and samtools depends on [zlib](http://en.wikipedia.org/wiki/Zlib).
+
+T1K is also available from [Bioconda](https://bioconda.github.io/recipes/t1k/README.html?highlight=t1k). You can install T1K with `conda install -c bioconda t1k`.
+
+### Usage
+
+```
+Usage: ./run-t1k [OPTIONS]
+Required:
+	-1 STRING -2 STRING: path to paired-end read files
+		or
+	-u STRING: path to single-end read file
+		or
+	-i STRING: path to interleaved read file
+		or
+	-b STRING: path to BAM file
+	-f STRING: path to the reference sequence file
+Optional:
+	-c STRING: path to the gene coordinate file (required when -b input)
+	-o STRING: prefix of output files. (default: inferred from file prefix)
+	--od STRING: the directory for output files. (default: ./)
+	-t INT: number of threads (default: 1)
+	-s FLOAT: minimum alignment similarity

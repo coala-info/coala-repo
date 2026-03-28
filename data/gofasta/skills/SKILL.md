@@ -1,6 +1,6 @@
 ---
 name: gofasta
-description: gofasta is a high-performance command-line utility designed for the rapid processing, conversion, and analysis of short genome alignments. Use when user asks to convert SAM files to multiple sequence alignments, find closest neighbors by genetic distance, or list variants and mutations relative to a reference.
+description: gofasta is a high-performance command-line utility for genomic epidemiology that converts SAM alignments to FASTA formats and calculates genetic distances for large-scale sequence datasets. Use when user asks to convert SAM files to multiple sequence alignments, generate pairwise alignments, find closest genetic neighbors, or list mutations relative to a reference.
 homepage: https://github.com/cov-ert/gofasta
 ---
 
@@ -8,52 +8,66 @@ homepage: https://github.com/cov-ert/gofasta
 # gofasta
 
 ## Overview
-gofasta is a high-performance command-line utility designed for the rapid processing of short genome alignments. While optimized for SARS-CoV-2, it is a general-purpose tool for any microbial pathogen. It excels at bridging the gap between alignment tools (like minimap2) and downstream analysis by providing efficient conversion, clipping, and distance-based neighbor searching. Use this skill to streamline bioinformatics pipelines where memory efficiency and speed are required for datasets containing millions of sequences.
+gofasta is a high-performance command-line utility designed for genomic epidemiology, particularly for handling large-scale SARS-CoV-2 datasets. It excels at transforming pairwise alignments from SAM format into multiple sequence alignments (MSA) or individual pairwise FASTA files. It also provides optimized routines for calculating evolutionary distances and identifying genetically similar sequences by streaming data from disk, making it suitable for datasets containing millions of sequences.
 
-## Common CLI Patterns
+## Common Workflows and CLI Patterns
 
-### Alignment Conversion (SAM to FASTA)
-gofasta is most frequently used to convert pairwise SAM output from minimap2 into a Multiple Sequence Alignment (MSA) format where all sequences are the same length as the reference.
+### SAM to FASTA Conversion
+gofasta is frequently used in conjunction with minimap2 to generate alignments.
 
-**Create a padded Multi-Alignment:**
+**Generate a Multiple Sequence Alignment (MSA):**
+Use `toMultiAlign` (alias `toma`) to create a single alignment file where all sequences are the same length as the reference.
 ```bash
-minimap2 -a -x asm20 --score-N=0 reference.fa query.fa | gofasta sam toMultiAlign --start 266 --end 29674 --pad -o aligned.fasta
+minimap2 -a -x asm20 --score-N=0 reference.fa queries.fa | gofasta sam toma -t 4 --start 266 --end 29674 --pad -o aligned.fasta
 ```
+*   `--start` / `--end`: 1-based inclusive coordinates in reference space.
 *   `--pad`: Replaces trimmed regions with 'N's to maintain reference length.
-*   `--start`/`--end`: 1-based inclusive coordinates.
+*   **Note**: Insertions relative to the reference are discarded in this mode.
 
-**Create Pairwise Alignments (including insertions):**
+**Generate Pairwise Alignments (Including Insertions):**
+Use `toPairAlign` (alias `topa`) to create individual FASTA files for each query, preserving insertions relative to the reference.
 ```bash
-minimap2 -a -x asm20 --score-N=0 reference.fa query.fa | gofasta sam toPairAlign -r reference.fa -o output_dir
-```
-*   Unlike `toMultiAlign`, `toPairAlign` preserves insertions relative to the reference.
-
-### Genetic Distance & Neighbor Searching
-Use the `closest` command to find sequences in a large target file that are most similar to your query sequences.
-
-**Find the 5 closest neighbors by SNP count:**
-```bash
-gofasta closest --query queries.fasta --target database.fasta -m snp -n 5 --table -o neighbors.csv
+minimap2 -a -x asm20 --score-N=0 reference.fa queries.fa | gofasta sam topa -r reference.fa -o output_directory
 ```
 
-**Distance Measures (`-m`):**
-*   `raw`: Nucleotide differences per site (default).
-*   `snp`: Total count of nucleotide differences.
-*   `tn93`: Tamura-Nei 93 distance.
+### Genetic Distance and Neighbor Searching
+gofasta can find the closest matches for query sequences within a large target database.
 
-### Variant & Mutation Listing
-Generate summaries of SNPs and ambiguities relative to a reference.
+**Find Closest Neighbors:**
+```bash
+gofasta closest --query queries.fasta --target database.fasta -m tn93 -n 5 --table -o neighbors.csv
+```
+*   `-m`: Distance measure (`raw` for differences per site, `snp` for total count, or `tn93` for Tamura-Nei 93).
+*   `-n`: Number of closest sequences to return.
+*   `--table`: Outputs a long-form table instead of a list.
 
+### Mutation Analysis
+**Generate Mutation Lists:**
+Use `updown list` to create a CSV of SNPs and ambiguities relative to a reference.
 ```bash
 gofasta updown list -r reference.fasta -q alignment.fasta -o mutations.csv
 ```
-*   The output includes a pipe-delimited (`|`) list of SNPs and ambiguity ranges.
+*   The output includes a pipe-delimited list of SNPs and 1-based inclusive ranges of ambiguities.
 
-## Expert Tips
-*   **Streaming for Efficiency**: gofasta is designed to work with pipes. Avoid writing large intermediate SAM files to disk by piping directly from `minimap2` into `gofasta sam toma`.
-*   **Threading**: Use the `-t` flag to specify CPU cores. For piped commands, give `minimap2` more threads than `gofasta` as the alignment step is more computationally intensive.
+## Expert Tips and Best Practices
+*   **Pipe for Speed**: Avoid writing massive intermediate SAM files to disk by piping directly from minimap2 to gofasta.
+*   **Threading**: Use the `-t` or `--threads` flag to leverage multiple CPUs, especially for the `closest` and `sam` commands.
+*   **Memory Efficiency**: The `closest` command loads queries into memory but streams targets from disk, allowing you to search against target files that exceed available RAM.
 *   **Coordinate System**: Always remember that `--start` and `--end` flags use 1-based inclusive reference coordinates.
-*   **Memory Management**: For `closest` searches, queries are loaded into memory while targets are streamed. If you have many queries, consider batching them.
+*   **Handling Ambiguities**: When using `updown list`, note that any nucleotide that is not A, T, G, or C is treated as an ambiguity.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| closest | Find the closest sequence(s) to a query by genetic distance |
+| completion | Generate the autocompletion script for gofasta for the specified shell. |
+| gofasta sam | Do things with sam files |
+| snps | Find snps relative to a reference. |
+| updown | Get pseudo-tree-aware catchments for query sequences from alignments |
+| variants | Annotate mutations relative to a reference from a multiple sequence alignment in fasta format |
 
 ## Reference documentation
-- [gofasta GitHub Repository](./references/github_com_virus-evolution_gofasta.md)
+- [gofasta README](./references/github_com_virus-evolution_gofasta_blob_master_README.md)

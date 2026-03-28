@@ -1,6 +1,6 @@
 ---
 name: kgwasflow
-description: kGWASflow is a modular Snakemake workflow that performs k-mer-based genome-wide association studies to identify genetic variants underlying phenotypic variation. Use when user asks to initialize a GWAS project, run k-mer counting and association testing, or generate reports for k-mer-based GWAS results.
+description: kgwasflow is a bioinformatics pipeline for performing k-mer based genome-wide association studies to identify genetic variants without requiring a reference genome. Use when user asks to perform k-mer GWAS, identify genetic variants associated with phenotypic variation, count k-mers, or assemble significant k-mers into contigs.
 homepage: https://github.com/akcorut/kGWASflow
 ---
 
@@ -8,44 +8,71 @@ homepage: https://github.com/akcorut/kGWASflow
 # kgwasflow
 
 ## Overview
-kGWASflow is a modular and reproducible Snakemake workflow designed for k-mer-based GWAS. It implements the kmersGWAS method to identify genetic variants underlying phenotypic variation, which is particularly effective for species lacking high-quality reference genomes. The pipeline automates the entire lifecycle of a GWAS project, including raw read preprocessing (trimming and QC), k-mer counting, association testing, and downstream interpretation through k-mer mapping and contig assembly.
 
-## Core CLI Operations
+kgwasflow is a specialized bioinformatics pipeline designed to identify genetic variants associated with phenotypic variation without requiring a complete reference genome. It automates the method developed by Voichek et al. (2020), providing a reproducible path from raw sequencing reads to associated k-mer sequences. The workflow is particularly useful for species with complex genomes or those lacking high-quality reference assemblies. It handles the entire lifecycle of a k-mer GWAS: trimming reads, counting k-mers, running the association model, and performing downstream analysis such as mapping significant k-mers to available references or assembling them into longer contigs for functional annotation.
 
-### Initialization
-Before running the workflow, initialize a working directory to generate the necessary configuration templates.
-- `kgwasflow init --work-dir <path/to/work_dir>`: Creates the directory structure and default configuration files.
-- If already in the desired directory, simply use `kgwasflow init`.
+## Core Workflow Commands
 
-### Execution Patterns
-The `run` command is the primary interface for executing the Snakemake pipeline.
-- `kgwasflow run -t 16`: Executes the workflow using 16 threads and default configurations.
-- `kgwasflow run -t 16 -n`: Performs a dry run to validate the execution plan without running the actual tasks.
-- `kgwasflow run -t 16 -c <custom_config.yaml>`: Runs the pipeline using a specific configuration file.
-- `kgwasflow run -t 16 --generate-report`: Produces a comprehensive HTML report of the results upon completion.
+### 1. Environment Setup
+Always ensure the environment is active before executing commands.
+```bash
+conda activate kgwasflow
+```
 
-### Testing and Validation
-Verify the installation and environment setup using the built-in E. coli test dataset.
-- `kgwasflow test -t 8`: Runs a full test suite.
-- `kgwasflow test -t 8 -n`: Dry run of the test suite.
+### 2. Project Initialization
+Initialize a new working directory to generate the required configuration templates.
+```bash
+kgwasflow init --work-dir <path/to/project>
+```
+This creates a `config/` directory containing:
+- `config.yaml`: Main workflow parameters.
+- `samples.tsv`: Metadata and paths for sequencing reads.
+- `phenos.tsv`: Phenotypic data for association testing.
 
-## Workflow Best Practices
+### 3. Execution Patterns
+Run the workflow using the `run` command. Use `-n` for a dry run to validate the configuration before processing.
 
-### Environment Management
-- **Conda Frontend**: Use Mamba for faster dependency resolution by adding the flag `--conda-frontend mamba` to your run command.
-- **Isolation**: Always activate the `kgwasflow` environment before running commands to ensure all dependencies (Snakemake, kmersGWAS, etc.) are available.
+**Standard Execution:**
+```bash
+# Run with 16 threads using default settings
+kgwasflow run -t 16 --snake-default
+```
 
-### Configuration Management
-The `kgwasflow init` command creates a `config/` directory containing three essential files that must be populated before execution:
-1. **config.yaml**: Main workflow parameters (k-mer length, filtering thresholds, etc.).
-2. **samples.tsv**: Mapping of sample IDs to their respective sequence files.
-3. **phenos.tsv**: Phenotypic data for the association study.
+**Custom Configuration:**
+```bash
+# Point to a specific configuration file
+kgwasflow run -t 16 -c config/custom_config.yaml
+```
 
-### Execution Tips
-- **Thread Allocation**: Ensure the `-t` parameter matches the available CPU cores on your system or HPC allocation for optimal performance.
-- **Working Directory**: Use the `--work-dir` flag to keep your raw data separate from the workflow outputs.
-- **Cluster Execution**: For large-scale studies on HPC clusters, kGWASflow supports standard Snakemake cluster execution profiles.
+**Advanced Options:**
+- `--generate-report`: Creates an HTML Snakemake report summarizing the run.
+- `--conda-frontend mamba`: Uses mamba for faster dependency resolution during the run.
+- `--work-dir <path>`: Specifies the directory where the analysis should be performed.
+
+### 4. Testing
+Validate the installation and environment using the built-in E. coli test dataset.
+```bash
+kgwasflow test -t 8
+```
+
+## Best Practices
+
+- **Resource Management**: Always specify threads with `-t`. k-mer counting and assembly are memory-intensive; ensure your environment has sufficient RAM (typically 4GB+ per thread depending on genome size).
+- **Input Validation**: Ensure `samples.tsv` contains absolute paths to FASTQ files to avoid path resolution errors during the Snakemake execution.
+- **Dry Runs**: Always perform a dry run (`kgwasflow run -n`) after modifying `config.yaml` to ensure the DAG (Directed Acyclic Graph) is valid.
+- **Post-GWAS Analysis**: If a reference genome is available, enable the mapping steps in `config.yaml` to automatically place significant k-mers into a genomic context.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| snakemake | kGWASflow: A Snakemake Workflow for k-mers Based GWAS |
+| snakemake | kGWASflow: A Snakemake Workflow for k-mers Based GWAS |
 
 ## Reference documentation
-- [kGWASflow Main Repository](./references/github_com_akcorut_kGWASflow.md)
-- [kGWASflow Wiki](./references/github_com_akcorut_kGWASflow_wiki.md)
+- [GitHub Repository Overview](./references/github_com_akcorut_kGWASflow.md)
+- [Installation Guide](./references/github_com_akcorut_kGWASflow_wiki_Installing-kGWASflow.md)
+- [Running kGWASflow](./references/github_com_akcorut_kGWASflow_wiki_Running-kGWASflow.md)
+- [Configuration Details](./references/github_com_akcorut_kGWASflow_wiki_kGWASflow-Configuration.md)

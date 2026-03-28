@@ -141,4 +141,4 @@ Usage: bgt bcfidx [-s minShift] <in.bcf>
 
 
 ## Metadata
-- **Skill**: generated
+- **Skill**: not generated

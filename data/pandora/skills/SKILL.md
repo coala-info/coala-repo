@@ -1,6 +1,6 @@
 ---
 name: pandora
-description: Pandora is a tool for bacterial genomics that uses reference graphs to identify genetic diversity and variation within orthologous regions. Use when user asks to index reference graphs, map reads to infer gene content, call variants, or perform multi-sample pangenome comparisons.
+description: Pandora performs nucleotide-resolution bacterial pangenomics by mapping reads to a pangenome reference graph to identify loci and call variants. Use when user asks to index a pangenome reference graph, map long or short reads to a graph, compare multiple samples to generate a pangenome matrix, or discover novel variants.
 homepage: https://github.com/rmcolq/pandora
 ---
 
@@ -8,45 +8,66 @@ homepage: https://github.com/rmcolq/pandora
 # pandora
 
 ## Overview
-Pandora is a specialized tool for bacterial genomics that utilizes reference graphs to represent genetic diversity. Unlike linear reference mappers, it allows for the identification of mosaic sequences and variation within orthologous regions (loci) defined in a PanRG. Use this skill to index reference graphs, map single-sample reads to infer gene content, or perform multi-sample comparisons to generate pangenome matrices and multisample VCFs.
+
+Pandora is a specialized bioinformatics tool designed for nucleotide-resolution bacterial pangenomics. Unlike traditional mappers that align reads to a single linear reference, Pandora uses a Pangenome Reference Graph (PanRG)—a collection of local graphs representing orthologous regions (genes, intergenic regions, etc.). This approach mitigates reference bias and allows for more accurate genotyping in highly diverse bacterial populations.
 
 ## Core Workflows
 
 ### 1. Indexing the PanRG
-Before mapping, you must index the fasta-like PanRG file. This process generates (w,k)-minimizers.
+Before mapping, you must index the PanRG file (typically a fasta-like file containing graph markers).
 ```bash
 pandora index -t <threads> <panrg.fa>
 ```
-*   **Default Parameters**: Window size (`-w`) is 14, K-mer size (`-k`) is 15.
-*   **Output**: Creates a `.idx` file and a directory of GFA files in the same location as the input.
+*Note: This generates a `.zip` index and a directory of GFA files in the same location as the input.*
 
-### 2. Single Sample Mapping (map)
-Use this to determine which genes are present in a sample and to call variants.
+### 2. Single Sample Analysis (map)
+Use `map` to identify which loci are present and infer their sequences.
 ```bash
-pandora map --genotype --outdir <output_dir> <indexed_panrg.fa> <reads.fastq>
+# For Nanopore reads
+pandora map <panidx.zip> <reads.fq.gz>
+
+# For Illumina reads (genotyping enabled)
+pandora map --genotype --illumina <panidx.zip> <reads.fq.gz>
 ```
-*   **Long Reads (Nanopore)**: Default settings are optimized for high error rates (~11%).
-*   **Short Reads (Illumina)**: Always use the `-I` or `--illumina` flag to adjust error rate and k-mer coverage models.
-*   **Genotyping**: Include `--genotype` to perform variant calling. Use `--snps` if you only require SNP calls.
 
 ### 3. Multi-sample Comparison (compare)
-Use this to generate a pangenome matrix (presence/absence) and a multisample VCF.
+Use `compare` to generate a pangenome matrix and a multisample VCF.
 ```bash
-pandora compare --genotype --outdir <output_dir> <indexed_panrg.fa> <sample_index.tab>
+# Requires a tab-delimited read_index.tab (SampleID\tPathToReads)
+pandora compare --genotype --illumina --max-covg 30 <panidx.zip> <read_index.tab>
 ```
-*   **Sample Index Format**: A tab-delimited file where each line is: `SampleID /path/to/reads.fq`.
-*   **Coverage Control**: Use `--max-covg 30` (or similar) to cap coverage, which can significantly speed up processing for deep datasets without losing sensitivity.
+
+### 4. Novel Variant Discovery (discover)
+Use `discover` to find variation not present in the initial PanRG by using Racon to polish inferred sequences.
+```bash
+pandora discover <panidx.zip> <reads.fq.gz>
+```
 
 ## Expert Tips and Best Practices
-*   **Reference Selection**: When calling variants, Pandora uses the most informative recombinant path. If you need calls against a specific known sequence, provide it via `--vcf-refs`.
-*   **Memory and Performance**:
-    *   Increase threads (`-t`) for both indexing and mapping.
-    *   For very large PanRGs, ensure the window size (`-w`) and k-mer size (`-k`) used during `map` or `compare` match those used during `index`.
-*   **Novel Variation**: Use the `pandora discover` subcommand if the primary goal is finding variation not currently represented in the PanRG.
-*   **Output Inspection**:
-    *   `pandora_multisample.vcf`: The primary file for population-level variation.
-    *   `pangenome_matrix.csv`: Useful for rapid gene content analysis across strains.
+
+- **Input Preparation**: Pandora does not have a native paired-end mode for Illumina. Concatenate `R1` and `R2` files into a single fastq before processing.
+- **Coverage Limits**: Pandora stops reading input files once a global coverage threshold is reached (default 300X). If your fastq is sorted by genomic position, this may result in missing data at the end of the genome. Ensure reads are randomized or adjust `--max-covg`.
+- **VCF Reference**: The VCF output is relative to an "inferred" reference path through the graph (found in `*_multisample.vcf_ref.fa`) designed to minimize the distance to your samples. Do not assume it matches a standard NCBI reference.
+- **GAPS Field**: In Pandora VCFs, the `GAPS` field indicates the fraction of kmers covering an allele that had zero coverage. High GAPS values suggest the called allele may be incorrect or absent.
+- **Memory/Performance**: Use the `-t` flag to specify threads during indexing and mapping. For large pangenomes, ensure sufficient RAM is available for the graph structures.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| compare | Quasi-map reads from multiple samples to an indexed PRG, infer the sequence of present loci in each sample, and call variants between the samples. |
+| discover | Quasi-map reads to an indexed PRG, infer the sequence of present loci in the sample and discover novel variants. |
+| get_vcf_ref | Outputs a fasta suitable for use as the VCF reference using input sequences |
+| index | Index population reference graph (PRG) sequences. |
+| map | Quasi-map reads to an indexed PRG, infer the sequence of present loci in the sample, and optionally genotype variants. |
+| merge_index | Allows multiple indices to be merged (no compatibility check) |
+| random | Outputs a fasta of random paths through the PRGs |
+| seq2path | For each sequence, return the path through the PRG |
+| walk | Outputs a path through the nodes in a PRG corresponding to the either an input sequence (if it exists) or the top/bottom path |
 
 ## Reference documentation
-- [Pandora Wiki Usage](./references/github_com_iqbal-lab-org_pandora_wiki_Usage.md)
-- [Pandora GitHub Overview](./references/github_com_iqbal-lab-org_pandora.md)
+- [Usage Guide](./references/github_com_iqbal-lab-org_pandora_wiki_Usage.md)
+- [FAQ](./references/github_com_iqbal-lab-org_pandora_wiki_FAQ.md)
+- [Exploring Output Files](./references/github_com_iqbal-lab-org_pandora_wiki_Exploring-pandora-extra-files.md)

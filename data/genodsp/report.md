@@ -123,3 +123,6 @@ No inputs — do not generate CWL.
 (expected "chromosome:length" or "chromosome:start:end")
 ```
 
+
+## Metadata
+- **Skill**: generated

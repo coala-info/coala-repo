@@ -1,6 +1,6 @@
 ---
 name: ucsc-bedintersect
-description: This tool identifies genomic regions in a primary BED file that overlap with regions in a secondary BED file. Use when user asks to find intersections between genomic intervals, filter SNPs by functional regions, or identify overlaps between ChIP-seq peaks and promoters.
+description: "ucsc-bedintersect identifies and extracts genomic regions from one BED file that overlap with regions in another BED file. Use when user asks to find overlapping genomic intervals, filter BED records based on a mask, or perform binary overlap intersections between two datasets."
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
 
@@ -8,35 +8,56 @@ homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 # ucsc-bedintersect
 
 ## Overview
-The `bedIntersect` utility is a specialized tool from the UCSC Genome Browser "Kent" suite designed for rapid interval intersection. It identifies genomic regions in a primary BED file that share coordinates with regions in a secondary BED file. This is a fundamental operation in bioinformatics for tasks such as filtering SNPs by functional regions, finding overlaps between ChIP-seq peaks and promoters, or subsetting genomic annotations based on specific regions of interest.
+`bedIntersect` is a specialized command-line utility from the UCSC Genome Browser "Kent" source tree designed for efficient genomic interval arithmetic. Its primary function is to compare two BED files and output the regions from the first file that overlap with the second. It is favored in bioinformatics pipelines for its speed and simplicity when performing binary overlap filters (e.g., "keep only these regions if they hit a specific mask").
 
-## Usage Patterns
+## Usage Instructions
 
-### Basic Intersection
-The tool requires two BED files as input. By default, it outputs the entries from the first file that overlap with the second.
-
+### Basic Syntax
+The standard usage requires two input BED files and a destination for the output:
 ```bash
-bedIntersect fileA.bed fileB.bed output.bed
+bedIntersect [options] fileA.bed fileB.bed out.bed
+```
+*   **fileA.bed**: The "target" file. The output will consist of records from this file.
+*   **fileB.bed**: The "query" or "mask" file used to determine overlaps.
+*   **out.bed**: The resulting file containing records from `fileA` that met the overlap criteria.
+
+### Common CLI Patterns
+
+**1. Simple Intersection (Any Overlap)**
+To keep all records in `fileA` that have at least 1 base pair of overlap with any record in `fileB`:
+```bash
+bedIntersect fileA.bed fileB.bed out.bed
 ```
 
-### Common CLI Options
-While specific flags can vary by version, the standard UCSC utility pattern for `bedIntersect` includes:
+**2. Minimum Overlap Threshold**
+To require a specific number of overlapping bases (e.g., at least 50 bases):
+```bash
+bedIntersect -minOverlap=50 fileA.bed fileB.bed out.bed
+```
 
-*   **-a**: Use the first file as the reference (default behavior).
-*   **-b**: Use the second file as the reference.
-*   **-u**: Write the original A entry once if any overlap is found (unique).
-*   **-v**: Write the original A entry only if there is NO overlap with B (subtraction/exclusion).
+**3. Filtering by Fraction (Percentage)**
+While some tools use decimals, UCSC utilities often use integer-based logic or specific flags. If using the standard Kent version, ensure your BED files are properly sorted for optimal performance.
 
 ### Expert Tips
-1.  **Sorting Requirement**: Like most UCSC BED tools, performance is significantly improved, and errors are avoided, if input files are sorted by chromosome and then by start position. Use `bedSort` before intersecting.
+
+*   **Sorting Requirement**: Like most UCSC utilities, `bedIntersect` performs best (and sometimes requires) that input files are sorted by chromosome and then by start position. Use `bedSort` if the order is unknown.
+*   **Memory Efficiency**: `bedIntersect` is highly efficient for large datasets because it processes overlaps without the overhead of the more complex feature-joining found in tools like `bedtools`.
+*   **Standard Input/Output**: You can often use `/dev/stdin` or `/dev/stdout` to pipe `bedIntersect` into other Kent tools like `bedClip` or `bedToBigBed`.
+*   **Permission Errors**: If running a freshly downloaded binary from the UCSC server, remember to set execution permissions:
     ```bash
-    bedSort input.bed sorted.bed
+    chmod +x ./bedIntersect
     ```
-2.  **Standard Streams**: The tool typically supports standard input/output, allowing it to be piped with other Kent utilities like `featureBits` or `bedClip`.
-3.  **Chromosome Naming**: Ensure that both BED files use the same chromosome naming convention (e.g., both using "chr1" or both using "1"). The tool will not find overlaps if the naming schemes differ.
-4.  **BED Format Strictness**: Ensure your files are tab-separated. UCSC tools are sensitive to whitespace and expect the first three columns to be `chrom`, `chromStart`, and `chromEnd`.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| bedClip | Remove lines from bed file that refer to nucleotides outside of a chromosome. |
+| bedSort | Sort a BED file. The input and output can be the same file. |
 
 ## Reference documentation
-- [ucsc-bedintersect - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_ucsc-bedintersect_overview.md)
-- [Index of /admin/exe/linux.x86_64](./references/hgdownload_cse_ucsc_edu_admin_exe_linux.x86_64.md)
-- [GitHub - ucscGenomeBrowser/kent: UCSC Genome Browser source](./references/github_com_ucscGenomeBrowser_kent.md)
+- [UCSC Genome Browser Kent Source](./references/github_com_ucscGenomeBrowser_kent.md)
+- [UCSC Binary Downloads (Aarch64)](./references/hgdownload_cse_ucsc_edu_admin_exe_linux.aarch64.v492.md)
+- [UCSC Utility License (MIT)](./references/github_com_ucscGenomeBrowser_kent_blob_master_LICENSE.md)

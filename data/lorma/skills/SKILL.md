@@ -1,6 +1,6 @@
 ---
 name: lorma
-description: LoRMA corrects errors in long-read sequencing data using iterative de Bruijn graphs and multiple sequence alignment. Use when user asks to correct long-read sequencing data, improve read accuracy, or execute the LoRMA correction pipeline.
+description: LoRMA improves the accuracy of long-read sequencing data using iterative LoRDEC steps and a self-correction algorithm based on multiple alignments. Use when user asks to correct long-read sequences, run the lorma.sh wrapper script, or configure k-mer sizes for read error correction.
 homepage: https://www.cs.helsinki.fi/u/lmsalmel/LoRMA/
 ---
 
@@ -8,44 +8,54 @@ homepage: https://www.cs.helsinki.fi/u/lmsalmel/LoRMA/
 # lorma
 
 ## Overview
-LoRMA (Long Read Multiple Alignment) is a specialized tool designed to improve the accuracy of long-read sequencing data. It employs a hybrid approach that combines iterative de Bruijn graph-based correction (via LoRDEC) with multiple sequence alignment to produce high-quality corrected reads. This skill provides the necessary command-line patterns and parameter configurations to execute the correction pipeline effectively.
+LoRMA is a specialized tool designed to improve the accuracy of long-read sequencing data. It employs a hybrid approach: first, it uses LoRDEC iteratively with increasing k-mer sizes to perform initial corrections, and then it applies a unique self-correction algorithm based on multiple alignments and de Bruijn graphs. This skill helps you navigate the installation requirements, the primary `lorma.sh` wrapper script, and the underlying `LoRMA` executable parameters.
 
 ## Installation and Setup
-LoRMA is available via Bioconda or source compilation.
-- **Conda**: `conda install bioconda::lorma`
-- **Source**: Requires GCC 4.5+ and CMake. Build using `mkdir build; cd build; cmake ..; make`.
-- **Dependency**: Ensure LoRDEC (version 0.6+ for strict mode) is installed and the `LORDECDIR` variable in `lorma.sh` is updated to point to the LoRDEC installation path.
+LoRMA requires a Linux X86_64 environment, GCC (4.5+), and CMake. It depends on the GATB library (included) and LoRDEC (version 0.6+ recommended).
 
-## Usage Patterns
+1.  **Compile**:
+    ```bash
+    mkdir build; cd build; cmake ..; make
+    ```
+2.  **Configure**: You must edit the `LORDECDIR` variable within the `lorma.sh` script to point to your local LoRDEC installation directory before running the pipeline.
 
-### Standard Pipeline (Recommended)
-The `lorma.sh` script is the primary entry point. It automates the iterative LoRDEC steps, trimming, splitting, and the final LoRMA alignment phase.
+## Recommended Workflow: lorma.sh
+The `lorma.sh` script is the standard entry point. It automates the multi-step process of running LoRDEC, trimming/splitting reads, and finally executing the LoRMA correction.
 
+### Basic Usage
 ```bash
-lorma.sh [parameters] reads.fasta
+lorma.sh [parameters] <input.fasta>
 ```
 
-### Key Parameters for lorma.sh
-- `-start`: Initial k-mer size for LoRDEC (default: 19).
-- `-end`: Maximum k-mer size for LoRDEC (default: 61).
-- `-step`: Increment value for k between LoRDEC iterations (default: 21).
-- `-k`: K-mer size specifically for the final LoRMA phase (default: 19).
-- `-threads`: Number of threads for the LoRMA phase (default: 6).
-- `-n`: Skip the LoRDEC iterations if reads are already pre-corrected.
-- `-s`: Save intermediate sequence data from LoRDEC steps.
+### Key Parameters
+- `-start <int>`: Initial k-mer size for the first LoRDEC step (default: 19).
+- `-end <int>`: Maximum k-mer size for LoRDEC iterations (default: 61).
+- `-step <int>`: The increment value for k between LoRDEC steps (default: 21).
+- `-k <int>`: The k-mer size used specifically for the final LoRMA self-correction phase (default: 19).
+- `-threads <int>`: Number of threads. **Caution**: LoRMA has high memory consumption per thread.
+- `-s`: Use this flag to save intermediate sequence data from LoRDEC steps for debugging or manual inspection.
 
-### Direct LoRMA Execution
-Use the binary directly only if you have already processed reads and wish to run the alignment-based correction specifically.
+## Advanced LoRMA Executable Usage
+While `lorma.sh` is preferred, the `LoRMA` binary can be called directly for the final correction phase if you have already pre-processed your reads.
 
 ```bash
-LoRMA -reads input.fasta -output corrected.fasta -discarded rejected.fasta [options]
+LoRMA -reads <input.fasta> -output <corrected.fasta> -discarded <low_quality.fasta> [options]
 ```
 
-### Optimization and Best Practices
-- **Memory Management**: LoRMA consumes significant memory per thread. Monitor system resources closely when increasing the `-threads` or `-nb-cores` parameters.
-- **LoRDEC Integration**: For optimal results, ensure LoRDEC is run in "strict mode."
-- **Friend Selection**: The `-friends` parameter (default: 7) controls the number of reads used in multiple alignments. Increasing this can improve accuracy but significantly increases computational cost.
+### Expert Tips
+- **Memory Management**: If the process crashes or the system becomes unresponsive, reduce the `-threads` count. The multiple alignment phase is memory-intensive.
+- **Friend Selection**: The `-friends` parameter (default: 7) controls the number of reads used in multiple alignments. Increasing this may improve accuracy but significantly increases computational cost.
+- **LoRDEC Mode**: For optimal results, ensure LoRDEC is running in "strict mode" (available in LoRDEC 0.6 and later).
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| /usr/local/bin/lorma_lorma.sh | Processes FASTA files with LoRDEC steps. |
+| lorma_LoRMA | LoRMA options |
 
 ## Reference documentation
 - [LoRMA README](./references/www_cs_helsinki_fi_u_lmsalmel_LoRMA_README.txt.md)
-- [LoRMA Homepage](./references/www_cs_helsinki_fi_u_lmsalmel_LoRMA.md)
+- [LoRMA Overview](./references/www_cs_helsinki_fi_u_lmsalmel_LoRMA.md)

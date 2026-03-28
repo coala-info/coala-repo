@@ -1,6 +1,6 @@
 ---
 name: cvbio
-description: cvbio is a suite of bioinformatics tools for multi-species read disambiguation, remote control of the Integrative Genomics Viewer, and genomic file contig renaming. Use when user asks to disambiguate reads from multiple species, control IGV from the command line, or update contig names in genomic data files.
+description: cvbio provides specialized bioinformatics utilities for processing genomic data, including multi-species alignment disambiguation and automated IGV session control. Use when user asks to disambiguate reads mapped to multiple references, control IGV from the command line, fetch Ensembl GTF files, or update contig names in delimited data.
 homepage: https://github.com/clintval/cvbio
 ---
 
@@ -9,64 +9,54 @@ homepage: https://github.com/clintval/cvbio
 
 ## Overview
 
-cvbio is a suite of Scala-based bioinformatics tools designed to streamline specific genomic workflows. Its primary strengths lie in multi-species read disambiguation—essential for analyzing sequencing data from transduction, transfection, or patient-derived xenograft (PDX) experiments—and providing a programmatic interface to the Integrative Genomics Viewer (IGV). It also includes utilities for standardizing contig naming conventions across different genomic data formats.
+The `cvbio` toolset provides specialized bioinformatics utilities designed for high-performance genomic data processing. Its primary strengths lie in "Disambiguate," which resolves the true origin of reads in multi-species alignment scenarios (like Xenografts), and "IgvBoss," which automates the Integrative Genomics Viewer (IGV) for rapid locus inspection. It is particularly useful for researchers working with complex experimental designs where standard alignment pipelines may produce ambiguous results across different reference genomes.
 
-## Installation
+## Command Line Usage
 
-Install via Bioconda:
-```bash
-conda install bioconda::cvbio
-```
+### Disambiguating Multi-Reference Alignments
 
-## Tool-Specific Guidance
+Use the `Disambiguate` tool when you have sequencing data (BWA or STAR produced) aligned to two or more different references and need to determine the most likely source for each template.
 
-### 1. Disambiguate Reads
-Use this tool to separate reads that have been mapped to multiple reference genomes (e.g., Human and Mouse). It compares alignment scores across primary, secondary, and supplementary alignments to assign a template to the most likely source.
+*   **Basic Pattern**:
+    `cvbio Disambiguate -i <bam1> <bam2> -p <output_prefix>`
 
-*   **Supported Aligners**: Currently supports BAM files produced by `bwa` or `STAR`.
-*   **Input Requirements**: Accepts BAMs in any sort order, but queryname-sorted input avoids an internal sort step.
-*   **Command Pattern**:
-    ```bash
-    cvbio Disambiguate \
-      -i sample.human.bam sample.mouse.bam \
-      -p results/sample_output \
-      -n hg38 mm10
-    ```
-*   **Expert Tip**: Use the `-n` (names) flag to provide clear labels for your references. This determines the naming of the output BAM files (e.g., `sample_output.hg38.bam`).
+*   **Naming References**:
+    Use the `-n` flag to provide human-readable names for the output files corresponding to each input BAM.
+    `cvbio Disambiguate -i sample.human.bam sample.mouse.bam -p results/sample -n hg38 mm10`
 
-### 2. IgvBoss (IGV Remote Control)
-Use this to control an IGV session directly from the terminal. This is highly effective for rapid visualization of specific loci across multiple samples.
+*   **Output Structure**:
+    The tool generates:
+    1.  Reference-specific BAMs (e.g., `sample.hg38.bam`).
+    2.  An `ambiguous-alignments/` directory containing reads that could not be confidently assigned to a single source.
 
-*   **Prerequisite**: In IGV, go to `Preferences > Advanced` and ensure "Enable remote control" is checked.
-*   **Command Pattern**:
-    ```bash
-    cvbio IgvBoss \
-      -g hg38 \
-      -i alignments.bam targets.bed \
-      -l chr1:1000-2000 chr2:5000-6000
-    ```
-*   **Key Features**:
-    *   **Locus Navigation**: Provide multiple loci to trigger a split-window view.
-    *   **Auto-Start**: If IGV isn't running, IgvBoss will attempt to find and launch the IGV executable or JAR.
-    *   **Cleanup**: Use `--close-on-exit` to shut down the IGV application once your investigation is finished.
-
-### 3. UpdateContigNames
-Use this to relabel chromosome names (e.g., converting Ensembl `1` to UCSC `chr1`) in delimited files like GTF, GFF, or BED.
-
-*   **Command Pattern**:
-    ```bash
-    cvbio UpdateContigNames \
-      -i input.gtf.gz \
-      -o output.ucsc.gtf.gz \
-      -m mapping_table.txt \
-      --columns 0 \
-      --comment-chars '#'
-    ```
 *   **Best Practices**:
-    *   **Mapping Tables**: Use standard mapping files (e.g., from the `ChromosomeMappings` repository).
-    *   **Column Selection**: Use `--columns` to specify which zero-indexed columns contain the contig names (e.g., column `0` for GTF/BED).
-    *   **Handling Missing**: Set `--skip-missing true` if you want to drop rows where the chromosome name is not found in your mapping file.
+    *   **Sort Order**: While the tool accepts any sort order, it performs an internal sort to `queryname`. Providing queryname-sorted BAMs initially will improve performance.
+    *   **Input Types**: Paired-end data provides the highest discriminatory power, but the tool also supports fragment and mixed pairing data.
+
+### Controlling IGV with IgvBoss
+
+`IgvBoss` allows you to manipulate an IGV session directly from the terminal, which is ideal for scripted inspections or high-throughput visualization workflows.
+
+*   **Prerequisites**:
+    Enable "Remote Control" in IGV (Preferences > Advanced > Allow HTTPS connections).
+
+*   **Common Operations**:
+    *   **Navigate to Loci**: Provide one or more locus identifiers. Multiple identifiers trigger a split-window view.
+    *   **Startup Logic**: IgvBoss attempts to connect to a running instance first. If none exists, it searches for an IGV JAR, a Mac Application, or an `igv` executable on the system path.
+    *   **Automatic Teardown**: Use `--close-on-exit` to shut down the IGV application once your command or script finishes.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| Disambiguate | Disambiguate reads that were mapped to multiple references. |
+| FetchEnsemblGtf | Fetch a GTF file from the Ensembl web server. |
+| IgvBoss | Take control of your IGV session from end-to-end. |
+| UpdateContigNames | Update contig names in delimited data using a name mapping table. |
 
 ## Reference documentation
-- [cvbio Overview](./references/anaconda_org_channels_bioconda_packages_cvbio_overview.md)
-- [cvbio GitHub Documentation](./references/github_com_clintval_cvbio.md)
+
+- [cvbio Overview and Disambiguate Documentation](./references/github_com_clintval_cvbio_blob_master_README.md)
+- [IgvBoss and Tool Features](./references/github_com_clintval_cvbio.md)

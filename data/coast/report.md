@@ -42,4 +42,4 @@ coast: error: argument {search,report,retrieve,compare}: invalid choice: 'additi
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

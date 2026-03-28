@@ -1,6 +1,6 @@
 ---
 name: amplify
-description: AMPlify is an attentive deep learning model used to identify and predict antimicrobial peptides from genomic and transcriptomic sequences. Use when user asks to predict antimicrobial peptide probability, scan large sequence databases for novel peptides, or train custom models using specific datasets.
+description: AMPlify discovers and classifies antimicrobial peptides from protein sequences using an attentive deep learning architecture. Use when user asks to predict antimicrobial activity, perform genome mining for peptides, or train custom models for peptide classification.
 homepage: https://github.com/bcgsc/AMPlify
 ---
 
@@ -9,11 +9,11 @@ homepage: https://github.com/bcgsc/AMPlify
 
 ## Overview
 
-AMPlify is an attentive deep learning model designed to identify antimicrobial peptides (AMPs) with high precision. It is specifically optimized for genomic and transcriptomic mining, allowing researchers to scan large sequence databases for novel peptides that may have antimicrobial properties. This skill provides the necessary command-line patterns to run predictions on FASTA files and train custom models using specific datasets.
+AMPlify is a specialized tool designed to discover and classify antimicrobial peptides (AMPs) using an attentive deep learning architecture. It is highly effective for bioinformatics workflows involving genome mining, transcriptomic analysis, or peptide drug discovery. The tool provides pre-trained models optimized for different data distributions (balanced vs. imbalanced) and allows for the extraction of attention scores to understand which parts of a sequence contribute most to its predicted activity.
 
-## Installation
+## Installation and Environment
 
-The tool is available via Bioconda. It is recommended to use a dedicated environment due to specific dependency requirements (Python 3.6, TensorFlow 1.12).
+AMPlify requires a specific legacy environment. Always ensure the environment is active before execution.
 
 ```bash
 conda create -n amplify python=3.6
@@ -21,48 +21,66 @@ conda activate amplify
 conda install -c bioconda amplify
 ```
 
-## Prediction (AMPlify)
+## Prediction Workflow
 
-The `AMPlify` command is used to predict the probability that a given sequence is an antimicrobial peptide.
+Use the `AMPlify` command to perform inference on peptide sequences.
 
-### Model Selection
-*   **Balanced Model (`-m balanced`)**: Default. Best for curated candidate sets where sequences have already been filtered by length, charge, or homology.
-*   **Imbalanced Model (`-m imbalanced`)**: Best for large, uncurated databases (e.g., whole transcriptomes) where the number of non-AMPs significantly outweighs potential AMPs.
+### Model Selection Logic
+*   **Balanced Model (Default)**: Use for curated candidate sets that have already been filtered by length, charge, or homology.
+*   **Imbalanced Model**: Use for large, uncurated datasets (e.g., whole transcriptomes) where the number of non-AMPs significantly outweighs potential AMPs.
 
-### Common CLI Patterns
-*   **Basic Prediction**:
-    `AMPlify -s input_sequences.fa`
-*   **High-Throughput Mining (TSV output)**:
-    `AMPlify -m imbalanced -s transcriptome.fa -of tsv -od ./results`
-*   **Interpretability (Attention Scores)**:
-    `AMPlify -s candidates.fa -att on`
+### Common Prediction Patterns
 
-### Interpreting Results
-*   **Probability Score**: Raw model output (0 to 1).
-*   **AMPlify Score**: A log-scaled score calculated as `-10 * log10(1 - Probability)`.
-*   **Classification**: By default, sequences with an AMPlify score **> 3.01** (Probability > 0.5) are classified as AMPs.
-
-## Training (train_amplify)
-
-Use `train_amplify` to build custom models if you have specific positive and negative training sets.
-
-### Basic Training Command
+**Basic Prediction (TSV output)**:
 ```bash
-train_amplify -amp_tr positive_samples.fa -non_amp_tr negative_samples.fa -out_dir ./my_models -model_name custom_amp_model
+AMPlify -s sequences.fa -of tsv -od ./results
 ```
 
-### Training Parameters
-*   `-sample_ratio`: Set to `balanced` (default) or `imbalanced` depending on your training data distribution.
-*   `-amp_te` / `-non_amp_te`: Optional paths to test sets to evaluate performance immediately after training.
+**Large-scale Mining (Imbalanced Model)**:
+```bash
+AMPlify -m imbalanced -s transcriptomics_data.fa -od ./mining_results
+```
 
-## Expert Tips
+**Interpretability (Attention Scores)**:
+To see which amino acids the model is "focusing" on, enable attention scores.
+```bash
+AMPlify -s candidates.fa -att on -sub on
+```
 
-*   **Sequence Constraints**: AMPlify only accepts the 20 standard amino acids.
-*   **Stop Codons**: If a sequence ends with an asterisk (`*`), AMPlify will automatically ignore the last character and process the rest of the peptide.
-*   **Invalid Sequences**: Any sequences containing non-standard amino acids (other than the terminal stop codon) will result in `NA` values in the output.
-*   **Resource Management**: For very large FASTA files, ensure you have sufficient memory for the TensorFlow backend, as the attention mechanism can be memory-intensive for long sequences.
+### Interpreting Results
+*   **Probability Score**: Raw model output (0.0 to 1.0).
+*   **AMPlify Score**: Log-scaled score calculated as `-10 * log10(1 - Probability)`.
+*   **Classification Threshold**: By default, sequences with an **AMPlify score > 3.01** (Probability > 0.5) are classified as AMPs.
+
+## Training Workflow
+
+Use `train_amplify` to create custom models if the pre-trained weights are not suitable for your specific peptide domain.
+
+**Basic Training Command**:
+```bash
+train_amplify -amp_tr positive_samples.fa \
+              -non_amp_tr negative_samples.fa \
+              -sample_ratio balanced \
+              -out_dir ./my_models \
+              -model_name custom_amp_model
+```
+
+## Expert Tips and Constraints
+
+*   **Sequence Requirements**: AMPlify only accepts the 20 standard amino acids.
+*   **Stop Codons**: If a sequence ends with an asterisk (`*`), AMPlify automatically ignores that last character, allowing the rest of the peptide to be processed.
+*   **Invalid Sequences**: Any sequence containing non-standard characters (other than the trailing `*`) will result in `NA` values in the output.
+*   **Performance Tuning**: When running on massive datasets, use the `-of tsv` format for easier downstream parsing with tools like `pandas` or `awk`.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| AMPlify.py | Predict whether a sequence is AMP or not. Input sequences should be in fasta format. Sequences should be shorter than 201 amino acids long, and should not contain amino acids other than the 20 standard ones. |
+| train_amplify.py | AMPlify v2.0.0 training. Given training sets with two labels: AMP and non-AMP, train the AMP prediction model. |
 
 ## Reference documentation
-
-- [AMPlify GitHub Repository](./references/github_com_bcgsc_AMPlify.md)
-- [Bioconda AMPlify Package Overview](./references/anaconda_org_channels_bioconda_packages_amplify_overview.md)
+- [AMPlify GitHub Repository](./references/github_com_BirolLab_AMPlify_blob_master_README.md)
+- [AMPlify Conda Package Overview](./references/anaconda_org_channels_bioconda_packages_amplify_overview.md)

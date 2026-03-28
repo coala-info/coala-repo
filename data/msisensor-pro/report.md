@@ -295,3 +295,6 @@ Commands:
     If you have any questions, please open an issue on GitHub (https://github.com/xjtu-omics/msisensor-pro) or contact with Peng Jia (pengjia@xjtu.edu.cn) or Kai Ye (kaiye@xjtu.edu.cn) .
 ```
 
+
+## Metadata
+- **Skill**: generated

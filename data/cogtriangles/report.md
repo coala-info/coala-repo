@@ -34,7 +34,7 @@ FAIL to generate CWL: cogtriangles not found in Singularity image. The image may
 
 
 ## Metadata
-- **Skill**: generated
+- **Skill**: not generated
 
 ## cogtriangles_COGmakehash
 

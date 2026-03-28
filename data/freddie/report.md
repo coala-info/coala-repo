@@ -173,3 +173,6 @@ options:
                         Path to output file. Default: freddie_isoforms.gtf
 ```
 
+
+## Metadata
+- **Skill**: generated

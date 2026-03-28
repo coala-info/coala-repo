@@ -1,6 +1,6 @@
 ---
 name: groot
-description: "GROOT identifies and quantifies antibiotic resistance genes in metagenomic samples using variation graphs and locality sensitive hashing. Use when user asks to profile the resistome, index antibiotic resistance gene databases, or align metagenomic reads to variation graphs."
+description: groot identifies and quantifies antibiotic resistance genes in metagenomic samples using variation graphs. Use when user asks to download ARG databases, index reference sequences into variation graphs, or align reads to generate resistome reports.
 homepage: https://github.com/will-rowe/groot
 ---
 
@@ -8,54 +8,66 @@ homepage: https://github.com/will-rowe/groot
 # groot
 
 ## Overview
-
-GROOT (Graphing Resistance Out Of meTagenomes) is a bioinformatics tool specifically designed for "resistome profiling"—the identification and quantification of antibiotic resistance genes within a metagenomic sample. It distinguishes itself by using variation graphs to represent gene sets rather than simple linear sequences. This approach, combined with Locality Sensitive Hashing (LSH), allows for fast and accurate classification of reads even when they contain significant variation. The tool is ideal for researchers needing to reconstruct full-length ARG sequences from short-read metagenomic data.
+groot (Graphing Resistance Out Of meTagenomes) is a bioinformatics tool specifically designed to identify and quantify antibiotic resistance genes within metagenomic samples. It distinguishes itself from traditional alignment tools by using variation graphs to represent gene sets, which allows for more accurate typing of genetic variants. By combining Locality-Sensitive Hashing (LSH) for fast read seeding with hierarchical local alignment, groot can efficiently reconstruct full-length ARG sequences from short-read data.
 
 ## Core Workflow
 
-The standard GROOT workflow consists of three primary stages: database acquisition, indexing, and alignment/reporting.
+The standard groot pipeline consists of three primary stages: database preparation, indexing, and alignment/reporting.
 
 ### 1. Database Acquisition
-Use the `get` subcommand to download pre-clustered ARG databases.
+Before indexing, you must obtain a clustered ARG database. groot provides a built-in command to fetch common datasets.
+
 ```bash
+# Download a pre-clustered ARG database (e.g., arg-annot)
 groot get -d arg-annot
 ```
 
-### 2. Indexing
-The `index` command creates the variation graphs and the LSH index.
+### 2. Indexing the Variation Graphs
+The indexing step converts the gene sequences into variation graphs and builds an LSH index for fast lookup.
+
 ```bash
+# Create graphs and index
+# -m: the clustered database file
+# -i: the name for the output index directory
+# -w: window size (crucial parameter)
 groot index -m arg-annot.90 -i grootIndex -w 100
 ```
-*   **-m**: The clustered database directory.
-*   **-i**: The name for the output index directory.
-*   **-w**: The window size.
 
-### 3. Alignment and Reporting
-Align your metagenomic reads to the index and pipe the output directly into the report generator.
+**Expert Tip:** Always set the window size (`-w`) to be approximately equal to your maximum expected read length. For 100bp Illumina reads, use `-w 100`.
+
+### 3. Alignment and Resistome Reporting
+The alignment process classifies reads against the index and generates a BAM file. This is typically piped directly into the report command to produce the final resistome profile.
+
 ```bash
+# Align reads and generate a report
 groot align -i grootIndex -f reads.fq | groot report
 ```
-*   **-i**: The index directory created in the previous step.
-*   **-f**: The input FASTQ file (supports multiple files).
 
-## Expert Tips and Best Practices
+## Advanced Usage and Best Practices
 
-### Window Size Optimization
-The most critical parameter for accuracy is the window size (`-w`) during the indexing phase. 
-*   **Rule of Thumb**: Set the window size to be approximately equal to your maximum expected read length (e.g., for 100bp reads, use `-w 100`).
-*   If your reads are significantly shorter than the window size, seeding may fail.
+### Visualizing Alignments
+Since version 0.4, groot outputs variation graphs in GFA format for graphs that had reads aligned.
+- Use the GFA output to visualize alignments in tools like **Bandage**.
+- This helps determine which specific variants of an ARG type are dominant in your sample.
 
-### Handling Output Formats
-*   **BAM Files**: `groot align` produces alignments in BAM format. These contain the graph traversals possible for each query read.
-*   **GFA Files**: Since version 0.4, GROOT outputs variation graphs in GFA format. These can be loaded into visualization tools like **Bandage** to inspect which variants of an ARG are dominant in your sample.
+### Handling Different Read Formats
+groot supports standard FASTQ inputs. Ensure your input files are quality-trimmed before alignment to improve the accuracy of the LSH seeding.
 
-### Performance Considerations
-*   GROOT uses an LSH Ensemble library for containment search, which is highly efficient for read seeding.
-*   If you are working with very large metagenomes, ensure you have sufficient RAM for the LSH index, though the tool is optimized for modern dev environments.
+### Performance Optimization
+- **Memory Usage:** groot is written in Go and is generally efficient, but indexing very large, highly diverse databases may require significant RAM.
+- **Containment Search:** Version 1.0.0+ uses the LSH Ensemble library, which improves the sensitivity of read seeding through containment search.
 
-### Version Compatibility
-If you are upgrading from a version prior to 1.0.0, note that the CLI has changed significantly due to a partial re-write of the indexing scheme. Always verify your command flags using `groot --help`.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| groot align | Sketch sequences, align to references and weight variation graphs |
+| groot get | Download a pre-clustered ARG database |
+| groot index | Convert a set of clustered reference sequences to variation graphs and then index them |
+| groot report | Generate a report from the output of groot align. |
 
 ## Reference documentation
-- [groot - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_groot_overview.md)
-- [GitHub - will-rowe/groot: A resistome profiler for Graphing Resistance Out Of meTagenomes](./references/github_com_will-rowe_groot.md)
+- [github_com_will-rowe_groot_blob_master_README.md](./references/github_com_will-rowe_groot_blob_master_README.md)
+- [github_com_will-rowe_groot.md](./references/github_com_will-rowe_groot.md)

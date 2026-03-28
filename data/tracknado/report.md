@@ -128,4 +128,4 @@ Usage: tracknado validate [OPTIONS] HUB_PATH
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

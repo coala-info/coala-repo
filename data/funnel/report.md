@@ -544,3 +544,6 @@ Flags:
 Use "funnel worker [command] --help" for more information about a command.
 ```
 
+
+## Metadata
+- **Skill**: generated

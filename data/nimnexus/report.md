@@ -69,3 +69,6 @@ Example:
   nimnexus dedup -t 10 file.bam | samtools view -b > file.dedup.bam
 ```
 
+
+## Metadata
+- **Skill**: generated

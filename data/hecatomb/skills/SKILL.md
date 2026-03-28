@@ -1,6 +1,6 @@
 ---
 name: hecatomb
-description: Hecatomb is an end-to-end bioinformatic platform designed to extract and classify viral signals from complex metagenomic datasets. Use when user asks to identify viral contigs, perform viral taxonomic classification, or run a viral metagenomics pipeline on short-read or long-read data.
+description: Hecatomb is a bioinformatic pipeline designed to identify and extract viral sequences from complex metagenomic datasets. Use when user asks to install viral databases, process short or long reads for viral discovery, or configure metagenomic analysis for high-performance computing environments.
 homepage: https://github.com/shandley/hecatomb
 ---
 
@@ -9,62 +9,77 @@ homepage: https://github.com/shandley/hecatomb
 
 ## Overview
 
-Hecatomb is an end-to-end bioinformatic platform specifically engineered for viral metagenomics. It streamlines the process of extracting viral signals from complex metagenomic backgrounds by prioritizing the removal of false positives (the "sacrifice") to enrich for high-confidence viral contigs and reads. The tool manages the entire workflow from raw read trimming and host depletion to assembly and taxonomic classification. It is particularly useful for researchers looking for a standardized, reproducible pipeline that handles both short-read and long-read technologies within a Snakemake-powered environment.
+Hecatomb is a specialized bioinformatic pipeline designed to extract viral signals from complex metagenomic data. It addresses the primary challenges of viral discovery: high host contamination, distant evolutionary relationships, and the need to distinguish true viral sequences from false positives. The tool automates a multi-step process including rigorous quality control, assembly, and taxonomic assignment against curated viral databases. Use this skill to guide the installation of necessary resources, manage sample inputs, and optimize execution for both local and high-performance computing (HPC) environments.
 
 ## Installation and Setup
 
-Before running analysis, the environment must be initialized and databases must be populated.
+Before running analysis, the software and its associated databases must be initialized.
 
-- **Install via Conda**: `conda create -n hecatomb -c conda-forge -c bioconda hecatomb`
-- **Database Initialization**: Download the required viral and taxonomic databases. Use multiple threads to accelerate the download.
-  `hecatomb install --threads 8`
-- **Environment Pre-building**: If working on an HPC cluster where compute nodes lack internet access, pre-build the required software environments on a login node first.
-  `hecatomb test build_envs`
+- **Install Hecatomb**: Use `pip install hecatomb` or `conda install -c bioconda hecatomb`.
+- **Database Installation**: Download the required viral and taxonomic databases.
+  - Command: `hecatomb install --threads <number>`
+  - Tip: Use multiple threads (e.g., 8) to speed up the concurrent download of database components.
+- **Environment Pre-building**: If working on an HPC cluster without internet access on compute nodes, pre-build the software environments.
+  - Command: `hecatomb test build_envs`
 
-## Core CLI Patterns
+## Execution Patterns
 
-### Running Analysis
-The primary execution involves specifying the input reads and the computational resources.
+Hecatomb uses a Snakemake-based architecture. The primary way to trigger an analysis is by providing a read source.
 
-- **Basic Run (Local)**:
-  `hecatomb run --reads path/to/reads --threads 32`
-- **Long-read Analysis**: Explicitly flag the use of long-read data (e.g., Oxford Nanopore).
-  `hecatomb run --reads path/to/reads --longreads --threads 32`
+### Basic Run
+To process a directory of Illumina reads:
+`hecatomb --reads path/to/reads/ --threads 32`
 
-### Input Specifications
-Hecatomb is flexible with how it consumes sequence data via the `--reads` argument.
+### Input Methods
+- **Directory**: Hecatomb automatically infers sample names and R1/R2 pairs from filenames.
+- **TSV File**: For complex naming or specific groupings, provide a 2 or 3-column TSV (SampleName, R1_Path, [R2_Path]).
+  - Command: `hecatomb --reads samples.tsv`
 
-- **Directory Input**: Point to a folder containing FASTQ files. Hecatomb automatically pairs R1 and R2 files based on common naming conventions.
-- **TSV Input**: For complex datasets or specific sample naming, provide a Tab-Separated Values file.
-  - Column 1: Sample Name
-  - Column 2: Forward Reads (R1)
-  - Column 3: Reverse Reads (R2) (Optional for single-end)
+### Long-read Support
+For Nanopore or PacBio data, explicitly enable the long-read flag.
+- Command: `hecatomb --reads path/to/longreads/ --longreads`
 
-### Library Preprocessing
-Control how reads are cleaned using the `--trim` flag. Supported methods include:
-- `fastp` (Default for short reads)
-- `prinseq`
-- `filtlong` (Optimized for long reads)
-- `notrim` (Use if reads are already QC'd and host-filtered)
+### Trimming Options
+Hecatomb uses the Trimnami module. You can specify the method using `--trim`.
+- **fastp**: Default for short reads.
+- **prinseq**: Alternative for short reads.
+- **filtlong**: Recommended for long reads.
+- **notrim**: Skip the trimming step if data is already pre-processed.
 
-## HPC and Cluster Execution
+## Configuration and Optimization
 
-Hecatomb leverages Snakemake profiles to manage job submissions on clusters (Slurm, SGE, etc.).
+### Customizing Parameters
+To modify internal thresholds or tool settings, generate and edit a local config file.
+1. Generate config: `hecatomb config`
+2. Edit the file: `hecatomb.out/hecatomb.config.yaml` (Note: While the file is YAML, users should interact with it via text editors to change values like bitscore thresholds or assembly parameters).
 
-- **Using a Profile**:
-  `hecatomb run --reads path/to/reads --profile slurm`
-- **Note on Snakemake Versions**: Hecatomb is optimized for Snakemake v7. If using Snakemake v8 or higher, ensure your profiles are compatible with the updated CLI syntax, as breaking changes in Snakemake may affect cluster job submission.
+### HPC and Cluster Usage
+Hecatomb supports Snakemake profiles for job scheduling (e.g., Slurm).
+- Command: `hecatomb --reads path/to/reads/ --profile slurm`
+- Note: Hecatomb currently targets Snakemake version 7. Profiles designed for Snakemake v8+ may require adjustments to remain compatible with the Hecatomb CLI.
 
-## Expert Tips and Best Practices
+## Troubleshooting and Validation
 
-- **Validation**: Always run the internal test suite after a new installation to ensure the pipeline and databases are correctly configured.
-  `hecatomb test --threads 8`
-- **Resource Management**: Viral assembly is memory-intensive. If the pipeline fails during the assembly stage, check the configuration to ensure at least 64GB of RAM is available for standard datasets.
-- **Host Removal**: By default, Hecatomb filters against common host genomes. If working with non-standard hosts, you may need to modify the configuration to include specific host genomes for depletion.
-- **Config Customization**: To tweak advanced parameters (e.g., assembly k-mers or alignment identity thresholds), generate a local config file:
-  `hecatomb config .`
-  Then edit the resulting `hecatomb.out/hecatomb.config.yaml` before running the pipeline.
+- **Check Installation**: Run `hecatomb --help` to verify the CLI is responsive.
+- **Verify Workflow**: Run the built-in test dataset to ensure the pipeline completes successfully in your environment.
+  - Command: `hecatomb test --threads 8`
+- **Empty Files**: If the test generates empty files, verify that the database installation (`hecatomb install`) completed without errors and that your system has sufficient RAM (64GB recommended for the full pipeline).
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| add-host | Add a new host genome to use with Hecatomb |
+| combine | Combine multiple Hecatomb runs |
+| config | Copy the system default config file |
+| list-hosts | List the available host genomes |
+| run | Run hecatomb |
+| snakemake | Snakemake is a Python based language and execution environment for GNU Make-like workflows. |
+| snakemake | Snakemake is a Python based language and execution environment for GNU Make-like workflows. |
 
 ## Reference documentation
-- [Hecatomb GitHub Repository](./references/github_com_shandley_hecatomb.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_hecatomb_overview.md)
+- [Hecatomb Main README](./references/github_com_shandley_hecatomb.md)
+- [Hecatomb Wiki Home](./references/github_com_shandley_hecatomb_wiki.md)
+- [Running hecatomb on a cluster](./references/github_com_shandley_hecatomb_wiki_Running-hecatomb-on-a-cluster.md)

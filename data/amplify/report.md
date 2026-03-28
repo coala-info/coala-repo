@@ -86,3 +86,6 @@ optional arguments:
                         File name of trained model weights
 ```
 
+
+## Metadata
+- **Skill**: generated

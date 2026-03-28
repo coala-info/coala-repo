@@ -1,6 +1,6 @@
 ---
 name: pyscenic
-description: pySCENIC is a Python implementation of the SCENIC pipeline for inferring gene regulatory networks and cell-type-specific regulon activity from single-cell RNA-seq data. Use when user asks to infer transcription factor modules, prune modules for direct targets using cis-regulatory motifs, or score regulon activity in individual cells.
+description: pySCENIC is a Python implementation of the SCENIC pipeline used to infer gene regulatory networks and score their activity in single-cell RNA-seq data. Use when user asks to infer transcription factor regulons, prune co-expression modules using motif enrichment, or calculate cellular activity scores for regulatory networks.
 homepage: https://github.com/aertslab/pySCENIC
 ---
 
@@ -9,58 +9,65 @@ homepage: https://github.com/aertslab/pySCENIC
 
 ## Overview
 
-pySCENIC is a high-performance Python implementation of the Single-Cell Regulatory Network Inference and Clustering (SCENIC) pipeline. It enables the discovery of gene regulatory programs by identifying transcription factors (TFs) and their target genes. The workflow consists of three primary phases: inferring potential TF-target modules based on co-expression, pruning these modules to retain only direct targets with supporting cis-regulatory motifs, and scoring the activity of these "regulons" in individual cells to facilitate clustering and cell-type identification.
+pySCENIC is a high-performance Python implementation of the Single-Cell rEgulatory Network Inference and Clustering (SCENIC) pipeline. It is designed to identify stable gene regulatory networks (regulons) and score their activity in individual cells. Use this skill to navigate the command-line interface (CLI) for processing large-scale scRNA-seq datasets, moving from a gene expression matrix to a regulon-based cellular representation.
 
-## Core Workflow and CLI Patterns
+## Core Workflow
 
-### 1. Gene Regulatory Network (GRN) Inference
-The first step identifies co-expression modules between TFs and potential targets.
+The pySCENIC pipeline consists of three primary stages executed via the CLI.
+
+### 1. Gene Regulatory Network Inference (GRN)
+Infers co-expression modules between transcription factors (TFs) and potential target genes.
 
 ```bash
-# Basic GRN inference using GRNBoost2 (faster than GENIE3)
 pyscenic grn [EXPRESSION_MTX] [TF_LIST] -o adjacencies.tsv --method grnboost2
-
-# For large datasets, use the --sparse flag if the input is a sparse matrix
-pyscenic grn [EXPRESSION_MTX] [TF_LIST] -o adjacencies.tsv --sparse
 ```
+- **Input**: A gene expression matrix (e.g., `.loom`, `.h5ad`, or `.csv`) and a list of TFs.
+- **Method**: `grnboost2` is the default and recommended lightning-fast algorithm.
+- **Tip**: For very large datasets, ensure you are using the multiprocessing version which is now the default in recent versions.
 
-### 2. Calculate Correlation (Optional)
-Adding correlation information helps distinguish between activating and repressive regulations.
+### 2. Regulon Prediction (ctx)
+Prunes co-expression modules by identifying enriched transcription factor motifs to retain only direct targets.
 
 ```bash
-pyscenic add_cor adjacencies.tsv [EXPRESSION_MTX] --output adjacencies_with_cor.tsv
-```
-
-### 3. Regulon Pruning (cisTarget)
-Refine modules by removing indirect targets that lack motif enrichment for the specific TF. This step requires cisTarget databases (Feather v2 format).
-
-```bash
-pyscenic ctx adjacencies.tsv [RANKING_DB_1] [RANKING_DB_2] \
+pyscenic ctx adjacencies.tsv [MOTIF_DB] \
     --annotations_fname [MOTIF_ANNOTATIONS] \
     --expression_mtx_fname [EXPRESSION_MTX] \
-    --mode "dask_multiprocessing" \
+    --mode "expression_masking" \
     --output regulons.csv
 ```
+- **Databases**: Requires Feather v2 format databases (`*.genes_vs_motifs.rankings.feather`).
+- **Annotations**: Requires a motif-to-TF annotation file.
+- **Output**: A CSV file containing the inferred regulons and their target genes.
 
-### 4. Cellular Scoring (AUCell)
-Quantify the activity of the discovered regulons in each cell.
+### 3. Cellular Scoring (AUCell)
+Scores the activity of the inferred regulons in each individual cell.
 
 ```bash
-pyscenic aucell [EXPRESSION_MTX] regulons.csv -o auc_matrix.loom
+pyscenic aucell [EXPRESSION_MTX] regulons.csv -o auc_output.loom
 ```
+- **Output**: A `.loom` or `.h5ad` file containing the Area Under the Curve (AUC) scores for each regulon per cell.
+- **Usage**: These scores can be used for downstream clustering and visualization (e.g., t-SNE/UMAP) to identify cell states based on regulatory activity.
 
-## Best Practices and Expert Tips
+## Expert Tips and Best Practices
 
-- **Database Compatibility**: Ensure you use Feather v2 databases (`*.genes_vs_motifs.rankings.feather`). Older formats are deprecated in versions 0.12.0+.
-- **Input Formats**: While CSV/TSV are supported, Loom and AnnData (.h5ad) are preferred for large-scale single-cell data to manage memory efficiently.
-- **Parallelization**: 
-    - By default, pySCENIC uses custom multiprocessing. 
-    - For multi-node clusters, leverage the Dask framework.
-    - In the `ctx` step, use `--mode "dask_multiprocessing"` for optimal performance on a single machine with multiple cores.
-- **Memory Management**: If encountering memory errors during the GRN step, ensure the input expression matrix is processed as a sparse matrix and use the `--sparse` flag.
-- **TF Lists**: Use a curated list of transcription factors specific to the species (e.g., Human, Mouse, or Fruit Fly) being analyzed.
+- **Database Compatibility**: Only use Feather v2 databases. Older formats are deprecated and may cause errors with modern `pyarrow` versions.
+- **Memory Management**: pySCENIC uses `ravel` instead of `flatten` in the AUCell step to avoid unnecessary memory copies, which is critical when handling datasets with hundreds of thousands of cells.
+- **Parallelization**: While `dask` was previously the primary engine, recent versions prefer custom multiprocessing. Use the `--num_workers` flag to scale across CPU cores.
+- **Input Formats**: When using `.loom` files, ensure the gene attributes and cell attributes are correctly named (typically `Gene` and `CellID`).
+- **Masking**: Use the `--mode "expression_masking"` in the `ctx` step to improve the specificity of the regulon discovery by filtering out genes not expressed in the dataset.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| grn | Infer gene regulatory networks |
+| pyscenic add_cor | Add correlation information to GRN adjacencies. |
+| pyscenic_aucell | Calculate AUC for each cell and each gene signature. |
+| pyscenic_ctx | Enrich motifs in modules and generate regulons. |
 
 ## Reference documentation
-
 - [pySCENIC GitHub Repository](./references/github_com_aertslab_pySCENIC.md)
-- [pySCENIC Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_pyscenic_overview.md)
+- [pySCENIC README](./references/github_com_aertslab_pySCENIC_blob_master_README.rst.md)
+- [SCENIC Suite Overview](./references/scenic_aertslab_org_index.md)

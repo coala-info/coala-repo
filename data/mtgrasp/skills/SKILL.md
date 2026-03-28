@@ -1,6 +1,6 @@
 ---
 name: mtgrasp
-description: mtGrasp automates the assembly and annotation of animal mitochondrial genomes from raw paired-end sequencing reads. Use when user asks to assemble mitochondrial genomes, annotate mitochondrial DNA, or generate standardized circular assemblies from sequencing data.
+description: mtGrasp automates the assembly and standardization of high-quality mitochondrial genomes from Illumina paired-end sequencing data. Use when user asks to generate reference-grade mitogenome assemblies, annotate mitochondrial sequences using MITOS, or optimize de novo assembly parameters for mitochondrial DNA.
 homepage: https://github.com/bcgsc/mtGrasp
 ---
 
@@ -8,70 +8,60 @@ homepage: https://github.com/bcgsc/mtGrasp
 # mtgrasp
 
 ## Overview
-mtGrasp (Mitochondrial Genome Reference-grade Assembly and Standardization Pipeline) is a specialized utility designed to automate the assembly of animal mitochondrial genomes. It streamlines the process from raw paired-end sequencing reads to a standardized, annotated circular assembly. The tool is particularly effective because it combines de novo assembly (via ABySS) with reference-based filtering and gap filling, ensuring high-quality results even for non-model organisms.
 
-## Installation and Setup
-The most reliable way to install mtGrasp and its numerous dependencies (ABySS, Snakemake, BLAST, etc.) is via Conda:
-```bash
-conda install -c conda-forge -c bioconda mtgrasp
-```
-Always verify the installation before starting a real run:
-```bash
-mtgrasp.py -test
-```
+mtGrasp (Mitochondrial Genome Reference-grade Assembly and Standardization Pipeline) is a high-throughput bioinformatics utility designed to generate high-quality mitochondrial genome assemblies from Illumina paired-end reads. It automates a complex workflow involving de novo assembly with ABySS, mitochondrial sequence filtering via BLAST, gap filling with Sealer, and final standardization. It is particularly useful for researchers who need to move from raw sequencing data to a finalized, annotated mitogenome with minimal manual intervention.
 
-## Core Usage Pattern
-A standard mtGrasp run requires full paths for all file inputs.
-
-```bash
-mtgrasp.py \
-  -r1 /path/to/forward_reads.fastq.gz \
-  -r2 /path/to/reverse_reads.fastq.gz \
-  -r /path/to/reference_database.fasta \
-  -m 5 \
-  -o ./output_directory
-```
+## Core Usage Patterns
 
 ### Required Parameters
-- `-r1` / `-r2`: Forward and reverse paired-end reads.
-- `-r`: A FASTA file containing reference sequences. These are used to build a BLAST database to filter mitochondrial contigs.
-- `-m`: The NCBI translation table code (e.g., 2 for Vertebrates, 5 for Invertebrates).
-- `-o`: The directory where results will be stored.
+To run a standard assembly, you must provide full paths for the input reads and the reference database:
+
+```bash
+mtgrasp.py -r1 /full/path/to/R1.fastq.gz -r2 /full/path/to/R2.fastq.gz -o output_dir -m [code] -r /full/path/to/ref_database.fa
+```
+
+*   `-m`: The mitochondrial genetic code (translation table). Common codes include `2` (Vertebrate), `5` (Invertebrate), or `13` (Ascidian).
+*   `-r`: A FASTA file containing reference mitogenomes from related species to guide the filtering process.
+
+### Common CLI Workflows
+
+**1. Assembly with Annotation**
+To perform the assembly and automatically run gene annotation using MITOS:
+```bash
+mtgrasp.py -r1 $R1 -r2 $R2 -o out_dir -m 2 -r $REFS -an
+```
+
+**2. Processing Full Datasets**
+By default, mtGrasp subsamples 2,000,000 read pairs to speed up assembly. To use the entire dataset:
+```bash
+mtgrasp.py -r1 $R1 -r2 $R2 -o out_dir -m 2 -r $REFS -nsub
+```
+
+**3. Optimizing Assembly Parameters**
+If the default k-mer size (91) or coverage cutoff (3) is not ideal for your data:
+```bash
+mtgrasp.py -r1 $R1 -r2 $R2 -o out_dir -m 2 -r $REFS -k 75 -c 2 -t 16
+```
 
 ## Expert Tips and Best Practices
 
-### Reference Selection
-The quality of the assembly depends on the filtering database provided via `-r`.
-- If the exact species reference is unavailable, use sequences from the same genus or family.
-- You can include multiple sequences in the reference FASTA to increase the likelihood of a match.
-- **Caution**: Avoid adding too many sequences or duplicates, as this significantly increases memory usage and runtime without improving assembly quality.
+*   **Reference Selection**: The reference database (`-r`) does not need to be an exact match. Using scaffolds or mitogenomes from the same family or genus is usually sufficient for the BLAST-based filtering step.
+*   **Path Requirements**: mtGrasp is strict about file paths. Always use absolute (full) paths for `-r1`, `-r2`, and `-r` to avoid Snakemake execution errors.
+*   **Genetic Code**: Verify the correct translation table for your target taxon via the NCBI Taxonomy Browser before starting the run.
+*   **Handling Locks**: If a previous run was interrupted, the directory may be locked by Snakemake. Use the `-u` or `--unlock` flag to clear the lock.
+*   **Resource Management**: Use the `-d` flag to delete intermediate subdirectories and files upon successful completion to save disk space.
+*   **MITOS Path**: If `runmitos.py` is not in your system PATH, specify its location explicitly using `-mp /path/to/mitos/bin`.
 
-### Handling Large Datasets
-By default, mtGrasp subsamples 2,000,000 read pairs to speed up assembly.
-- To use the full dataset: Use the `-nsub` flag.
-- To change the subsampling depth: Use `-sub <N>` (e.g., `-sub 5000000`).
 
-### Optimization for ABySS
-If the default assembly fails or produces fragmented contigs, adjust the de Bruijn graph parameters:
-- `-k`: K-mer size (default is 91).
-- `-c`: K-mer minimum coverage multiplicity cutoff (default is 3).
 
-### Annotation and Cleanup
-- **Annotation**: Use `-an` to trigger gene annotation using MITOS. If `runmitos.py` is not in your PATH, specify it with `-mp /path/to/mitos/bin`.
-- **Storage**: Use `-d` to automatically delete intermediate subdirectories and files upon successful completion to save disk space.
+## Subcommands
 
-## Common CLI Patterns
-
-**High-sensitivity run for complex samples:**
-```bash
-mtgrasp.py -r1 $(pwd)/R1.fq.gz -r2 $(pwd)/R2.fq.gz -r $(pwd)/refs.fa -m 2 -o sensitive_mt -t 16 -k 75 -c 2
-```
-
-**Quick annotation of an existing dataset:**
-```bash
-mtgrasp.py -r1 $(pwd)/R1.fq.gz -r2 $(pwd)/R2.fq.gz -r $(pwd)/refs.fa -m 5 -o annotated_mt -an -mp /opt/mitos/bin
-```
+| Command | Description |
+|---------|-------------|
+| mtgrasp.py | de novo assembly of reference-grade animal mitochondrial genomes |
+| runmitos.py | (No description) |
 
 ## Reference documentation
-- [mtGrasp GitHub Repository](./references/github_com_bcgsc_mtGrasp.md)
-- [mtGrasp Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_mtgrasp_overview.md)
+- [mtGrasp README](./references/github_com_BirolLab_mtGrasp_blob_master_README.md)
+- [mtGrasp Wrapper Script Documentation](./references/github_com_BirolLab_mtGrasp_blob_master_mtgrasp.py.md)
+- [mtGrasp Snakemake Workflow](./references/github_com_BirolLab_mtGrasp_blob_master_mtgrasp.smk.md)

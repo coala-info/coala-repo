@@ -216,3 +216,6 @@ Usage: gal2adf.pl -i <input gal file>
                   -h <this help text>
 ```
 
+
+## Metadata
+- **Skill**: generated

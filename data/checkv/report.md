@@ -229,3 +229,6 @@ options:
   --threads INT  Number of threads for prodigal-gv and DIAMOND
 ```
 
+
+## Metadata
+- **Skill**: generated

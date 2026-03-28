@@ -478,3 +478,6 @@ Commands:
         copernicusmarine subset -i cmems_mod_ibi_phy_my_0.083deg-3D_P1D-m -v thetao -v so -t 2021-01-01 -T 2021-01-03 -x 0.0 -X 0.1 -y 28.0 -Y 28.1 -z 1 -Z 2
 ```
 
+
+## Metadata
+- **Skill**: generated

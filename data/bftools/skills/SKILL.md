@@ -1,6 +1,6 @@
 ---
 name: bftools
-description: This tool provides command-line utilities for converting, inspecting, and validating biological imaging data across various proprietary formats. Use when user asks to convert image formats, extract metadata, validate OME-XML schemas, or inspect biological imaging files.
+description: bftools provides command-line utilities for inspecting, converting, and validating over 150 proprietary microscopy image formats. Use when user asks to convert image formats, extract metadata, validate OME-XML files, or inspect image file structures.
 homepage: https://docs.openmicroscopy.org/bio-formats/5.7.1/users/comlinetools/index.html
 ---
 
@@ -8,38 +8,53 @@ homepage: https://docs.openmicroscopy.org/bio-formats/5.7.1/users/comlinetools/i
 # bftools
 
 ## Overview
-This skill provides guidance on using the Bio-Formats command-line utilities to bridge the gap between proprietary imaging formats and open standards. It enables automated metadata extraction, format conversion, and validation of biological imaging data without requiring a full GUI environment like ImageJ or OMERO.
 
-## Core Tools and Usage Patterns
+This skill provides guidance for using the Bio-Formats command-line utilities (bftools) to handle over 150 proprietary microscopy image formats. It enables automated image processing workflows, metadata extraction, and format standardization without requiring a graphical user interface like ImageJ or OMERO.
+
+## Core Tools and Usage
 
 ### Metadata Inspection (`showinf`)
-Use `showinf` to probe image files for dimensions, pixel types, and metadata.
-- **Basic metadata**: `showinf image.czi`
-- **Metadata only (no pixels)**: `showinf -nopix image.nd2`
-- **Full OME-XML output**: `showinf -omexml image.lif`
-- **Suppress version check**: Always use `-no-upgrade` to prevent network-related hangs in restricted environments.
+Use `showinf` to probe file structures and metadata without loading full pixel data.
+- **Basic Metadata**: `showinf image.czi`
+- **No Pixels (Fast)**: `showinf -nopix image.nd2` (Use this to quickly check dimensions/metadata).
+- **OME-XML Output**: `showinf -omexml image.lif` (Dumps the full OME-XML metadata block).
+- **Version Check**: `showinf -version`
 
-### Format Conversion (`bfconvert`)
-Use `bfconvert` to transform images between formats, most commonly to OME-TIFF.
-- **Standard conversion**: `bfconvert input.vsi output.ome.tif`
-- **Compression**: `bfconvert -compression LZW input.czi output.ome.tif`
-- **Specify series**: For multi-series files (e.g., slide scans), use `-series X` (where X is the index).
-- **BigTIFF support**: For files >4GB, use `-bigtiff`.
+### Image Conversion (`bfconvert`)
+The primary tool for converting proprietary formats to open standards like OME-TIFF.
+- **Standard Conversion**: `bfconvert input.czi output.ome.tif`
+- **Compression**: `bfconvert -compression LZW input.nd2 output.ome.tif`
+- **BigTIFF Support**: `bfconvert -bigtiff input.lif output.ome.tif` (Required for files >4GB).
+- **Crop/Subset**: `bfconvert -x 0 -y 0 -w 512 -h 512 input.czi crop.ome.tif`
 
-### XML and Validation
-- **Extract OME-XML**: `tiffcomment image.ome.tif` dumps the XML block from a TIFF.
-- **Validate Schema**: `xmlvalid metadata.xml` checks for compliance with OME-XML schemas.
-- **Prettify XML**: `xmlindent broken.xml` fixes indentation even if the XML has minor syntax errors.
+### XML and TIFF Utilities
+- **tiffcomment**: Extract the OME-XML header from an OME-TIFF file.
+  - `tiffcomment image.ome.tif > metadata.xml`
+- **xmlvalid**: Validate an OME-XML file against the official schema.
+  - `xmlvalid metadata.xml`
+- **xmlindent**: Clean up and format messy or minified XML.
+  - `xmlindent input.xml > formatted.xml`
 
-### Utility Commands
-- **List formats**: `formatlist` shows all supported file extensions and their capabilities (read/write).
-- **Domain search**: `domainlist` groups formats by imaging modality (e.g., "Medical-Imaging", "High-Content-Screening").
+## Expert Tips and Best Practices
 
-## Expert Tips
-- **Memory Management**: If processing large files, set the `JAVA_OPTS` environment variable (e.g., `export JAVA_OPTS="-Xmx4g"`) to increase the heap size.
-- **Headless Execution**: When running on a server without a display, avoid tools that attempt to launch the Bio-Formats viewer (like `showinf` without `-nopix`).
-- **Performance Profiling**: If a conversion is slow, use `BF_PROFILE=true bfconvert ...` to generate heap and CPU usage data for debugging.
+- **Avoid Update Checks**: In firewalled or HPC environments, use the `-no-upgrade` flag to prevent the tool from hanging while trying to check for updates.
+  - Example: `bfconvert -no-upgrade input.czi output.ome.tif`
+- **Memory Management**: If you encounter `java.lang.OutOfMemoryError`, increase the JVM heap size by setting the `BF_MAX_MEM` environment variable (e.g., `export BF_MAX_MEM=4g`).
+- **Batch Processing**: Use `formatlist` to check if a specific format is supported for writing before starting a large batch job.
+- **Testing Metadata**: Use `mkfake` to generate mock High-Content Screening (HCS) datasets to test your analysis pipelines without using large raw data files.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| bfconvert | To convert a file between formats, run: |
+| bftools_formatlist | List supported image formats |
+| bftools_xmlvalid | Validates an XML file against a schema. |
+| showinf | To test read a file in any format, run: |
+| tiffcomment | This tool requires an ImageDescription tag to be present in the TIFF file. |
 
 ## Reference documentation
-- [Bio-Formats Command Line Tools Introduction](./references/docs_openmicroscopy_org_bio-formats_5.7.1_users_comlinetools_index.html.md)
-- [Bftools Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_bftools_overview.md)
+
+- [Command line tools introduction](./references/docs_openmicroscopy_org_bio-formats_5.7.1_users_comlinetools_index.html.md)

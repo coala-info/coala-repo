@@ -238,3 +238,6 @@ Additional output options:
  --pathThres [INT]            Reports all matches in additional TSV file for nodes with a number of paths less or equal to the threshold set (default: all paths)
 ```
 
+
+## Metadata
+- **Skill**: generated

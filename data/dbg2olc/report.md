@@ -145,3 +145,6 @@ Command:  ProgramFile sum total_length longest 0 o outfile f fa/fq_file f fa/fq_
 Total bases: 0
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -125,3 +125,6 @@ options:
                       packages/antismash/databases).
 ```
 
+
+## Metadata
+- **Skill**: generated

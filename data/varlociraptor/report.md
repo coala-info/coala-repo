@@ -250,3 +250,6 @@ SUBCOMMANDS:
                 piping into 'varlociraptor call variants generic').
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -1,6 +1,6 @@
 ---
 name: bioconvert
-description: Bioconvert converts bioinformatics data between various file formats while optimizing for performance and handling compression automatically. Use when user asks to convert file formats, change compression types, list available conversion methods, or optimize data transformation using specific underlying tools.
+description: Bioconvert is a utility that converts bioinformatics data between various file formats by wrapping existing high-performance tools and native Python implementations. Use when user asks to convert genomic file formats, transform data between formats like BAM and FASTQ, or benchmark different conversion methods for performance.
 homepage: http://bioconvert.readthedocs.io/
 ---
 
@@ -8,70 +8,174 @@ homepage: http://bioconvert.readthedocs.io/
 # bioconvert
 
 ## Overview
-Bioconvert is a specialized tool designed to handle the complex landscape of bioinformatics file formats. It acts as a wrapper and optimizer for numerous underlying conversion utilities, ensuring that data is transformed correctly while handling compression (gzip, bz2) and parallelization automatically. Use this skill to identify the correct conversion command, select specific methods (e.g., using `sambamba` instead of `samtools` for BAM to SAM), and execute high-performance data transformations.
+
+Bioconvert is a collaborative utility designed to simplify the often-complex task of format conversion in life sciences. It serves as a common interface that wraps existing high-performance tools (such as samtools, bedtools, and UCSC utilities) while providing native Python implementations for other formats. This skill allows for efficient data transformation within genomic pipelines, supporting transparent decompression/compression and performance benchmarking across different conversion methods.
 
 ## Command Line Usage
 
 ### Basic Conversion
-The standard syntax follows a `format2format` pattern. Bioconvert can often infer the conversion if the file extensions are standard.
+Bioconvert supports both explicit and implicit conversion modes.
 
+**Explicit mode:**
+Specify the conversion direction using the `<input_format>2<output_format>` syntax.
 ```bash
-# Explicit conversion
 bioconvert fastq2fasta input.fastq output.fasta
-
-# Implicit conversion (based on extensions)
-bioconvert input.bam output.sam
 ```
 
-### Managing Methods
-Many conversions support multiple underlying tools (methods). You can list and select them to optimize for speed or specific tool requirements.
-
+**Implicit mode:**
+If the file extensions are standard, Bioconvert can infer the conversion.
 ```bash
-# List available methods for a specific conversion
-bioconvert fastq2fasta --show-methods
-
-# Force a specific method
-bioconvert bam2sam input.bam output.sam --method sambamba
+bioconvert input.fastq output.fasta
 ```
 
 ### Handling Compression
-Bioconvert handles compressed inputs and outputs transparently. It can also convert between compression formats directly.
-
+Bioconvert handles compressed files transparently. You can change the compression format during conversion by changing the output extension.
 ```bash
-# Convert and compress on the fly
-bioconvert input.fastq output.fasta.gz
-
-# Convert between compression formats
-bioconvert input.fastq.gz output.fastq.bz2
+# Convert and change compression from gzip to bzip2
+bioconvert fastq2fasta input.fq.gz output.fasta.bz2
 ```
 
-### Performance Optimization
-For large datasets, use the `--threads` flag to enable parallel processing where supported by the underlying method.
-
+### Optimization and Threading
+For large-scale data, use the `--threads` (or `-t`) option to parallelize the process where the underlying method supports it.
 ```bash
-bioconvert fastq2fasta input.fastq output.fasta --threads 4
+bioconvert bam2fastq input.bam output.fastq --threads 8
 ```
-
-## Common Conversion Patterns
-
-| Task | Command | Primary Method |
-| :--- | :--- | :--- |
-| **Alignment** | `bioconvert bam2sam` | SAMBAMBA / SAMTOOLS |
-| **Sequencing** | `bioconvert fastq2fasta` | BIOCONVERT / SEQKIT |
-| **Genotyping** | `bioconvert vcf2bed` | BIOCONVERT |
-| **Annotation** | `bioconvert gff32gtf` | BIOCONVERT |
-| **Phylogeny** | `bioconvert nexus2fasta` | BIOPYTHON |
-| **Coverage** | `bioconvert bam2bigwig` | DEEPTOOLS |
 
 ## Expert Tips
-- **Check Dependencies**: While `bioconvert` is the interface, many conversions require external tools (like `samtools` or `bedtools`). If a conversion fails, verify the underlying tool is installed in the environment.
-- **In-place Compression**: You can use `bioconvert` simply to change compression formats (e.g., `gz2bz2`) without changing the underlying data format.
-- **Python API**: For complex workflows, `bioconvert` can be imported as a Python module:
-  ```python
-  from bioconvert.fastq2fasta import FASTQ2FASTA
-  convert = FASTQ2FASTA("input.fastq", "output.fasta")
-  convert()
-  ```
+
+### Selecting Conversion Methods
+Many conversions offer multiple "methods" (e.g., using a pure Python library vs. a compiled tool like `awk` or `samtools`).
+- **List available methods:** `bioconvert fastq2fasta --show-methods`
+- **Force a specific method:** `bioconvert fastq2fasta input.fastq output.fasta --method awk`
+
+### Benchmarking
+If you are processing massive datasets and want to find the fastest engine for your specific environment:
+```bash
+bioconvert fastq2fasta input.fastq output.fasta --benchmark
+```
+This will run the available methods and report performance statistics.
+
+### Common Converters Reference
+| Input | Output | Default Method |
+|-------|--------|----------------|
+| BAM   | SAM    | SAMBAMBA       |
+| BAM   | FASTQ  | SAMTOOLS       |
+| SAM   | BAM    | SAMTOOLS       |
+| VCF   | BED    | BIOCONVERT     |
+| FASTQ | FASTA  | BIOCONVERT     |
+| ABI   | FASTQ  | BIOPYTHON      |
+
+## Python API Usage
+For integration into Python scripts, you can call converters directly:
+```python
+from bioconvert.fastq2fasta import FASTQ2FASTA
+
+convert = FASTQ2FASTA("input.fastq", "output.fasta")
+convert()
+```
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| bcf2vcf | Convert file from '('BCF',)' to '('VCF',)' format. See bioconvert.readthedocs.io for details |
+| bcf2wiggle | Convert file from '('BCF',)' to '('WIGGLE',)' format. See bioconvert.readthedocs.io for details |
+| bedgraph2wiggle | Convert file from ('BEDGRAPH',) to ('WIGGLE',) format. See bioconvert.readthedocs.io for details |
+| bigbed2bed | Convert file from ('BIGBED',) to ('BED',) format. See bioconvert.readthedocs.io for details |
+| bigbed2wiggle | Convert file from '('BIGBED',)' to '('WIGGLE',)' format. See bioconvert.readthedocs.io for details |
+| bigwig2bedgraph | Convert file from '('BIGWIG',)' to '('BEDGRAPH',)' format. See bioconvert.readthedocs.io for details |
+| bigwig2wiggle | Convert file from '('BIGWIG',)' to '('WIGGLE',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert abi2fasta | Convert file from (ABI,) to (FASTA,) format. See bioconvert.readthedocs.io for details |
+| bioconvert abi2fastq | Convert file from '('ABI',)' to '('FASTQ',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert abi2qual | Convert file from '('ABI',)' to '('QUAL',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert bam2bedgraph | Convert file from '('BAM',)' to '('BEDGRAPH',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert bam2bigwig | Convert file from ('BAM',) to ('BIGWIG',) format. See bioconvert.readthedocs.io for details |
+| bioconvert bam2cov | Convert file from '('BAM',)' to '('COV',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert bam2cram | Convert file from '('BAM',)' to '('CRAM',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert bam2fasta | Convert file from ('BAM',) to ('FASTA',) format. See bioconvert.readthedocs.io for details |
+| bioconvert bam2fastq | Convert file from '('BAM',)' to '('FASTQ',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert bam2json | Convert file from '('BAM',)' to '('JSON',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert bam2sam | Convert file from '('BAM',)' to '('SAM',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert bam2tsv | Convert file from ('BAM',) to ('TSV',) format. See bioconvert.readthedocs.io for details |
+| bioconvert bam2wiggle | Convert file from '('BAM',)' to '('WIGGLE',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert bed2wiggle | Convert file from '('BED',)' to '('WIGGLE',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert bedgraph2bigwig | Convert file from '('BEDGRAPH',)' to '('BIGWIG',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert bedgraph2cov | Convert file from ('BEDGRAPH',) to ('COV',) format. See bioconvert.readthedocs.io for details |
+| bioconvert clustal2phylip | Convert file from '('CLUSTAL',)' to '('PHYLIP',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert cram2bam | Convert file from '('CRAM',)' to '('BAM',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert cram2fasta | Convert file from '('CRAM',)' to '('FASTA',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert cram2fastq | Convert file from '('CRAM',)' to '('FASTQ',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert cram2sam | Convert file from '('CRAM',)' to '('SAM',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert csv2tsv | Convert file from '('CSV',)' to '('TSV',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert csv2xls | Convert file from '('CSV',)' to '('XLS',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert fasta2fastq | Convert file from '('FASTA',)' to '('FASTQ',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert fastq2fasta | Convert file from (FASTQ,) to (FASTA,) format. See bioconvert.readthedocs.io for details |
+| bioconvert gz2bz2 | Convert file from '('GZ',)' to '('BZ2',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert gz2dsrc | Convert file from '('GZ',)' to '('DSRC',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert nexus2clustal | Convert file from '(NEXUS,)' to '(CLUSTAL,)' format. See bioconvert.readthedocs.io for details |
+| bioconvert nexus2fasta | Convert file from '('NEXUS',)' to '('FASTA',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert nexus2newick | Convert file from '('NEXUS',)' to '('NEWICK',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert nexus2phylip | Convert file from (NEXUS,) to (PHYLIP,) format. See bioconvert.readthedocs.io for details |
+| bioconvert pdb2faa | Convert file from '('PDB',)' to '('FAA',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert wig2bed | Convert file from '('WIG',)' to '('BED',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert xls2csv | Convert file from '('XLS',)' to '('CSV',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert_maf2sam | Convert file from '('MAF',)' to '('SAM',)' format. See bioconvert.readthedocs.io for details |
+| bplink2plink | Convert file from '('BPLINK',)' to '('PLINK',)' format. See bioconvert.readthedocs.io for details |
+| bplink2vcf | Convert file from '('BPLINK',)' to '('VCF',)' format. See bioconvert.readthedocs.io for details |
+| bz22gz | Convert file from '('BZ2',)' to '('GZ',)' format. See bioconvert.readthedocs.io for details |
+| clustal2stockholm | Convert file from '('CLUSTAL',)' to '('STOCKHOLM',)' format. See bioconvert.readthedocs.io for details |
+| dsrc2gz | Convert file from '('DSRC',)' to '('GZ',)' format. See bioconvert.readthedocs.io for details |
+| embl2fasta | Convert file from '('EMBL',)' to '('FASTA',)' format. See bioconvert.readthedocs.io for details |
+| embl2genbank | Convert file from ('EMBL',) to ('GENBANK',) format. See bioconvert.readthedocs.io for details |
+| fast52pod5 | Convert file from '('FAST5',)' to '('POD5',)' format. See bioconvert.readthedocs.io for details |
+| fasta2clustal | Convert file from '('FASTA',)' to '('CLUSTAL',)' format. See bioconvert.readthedocs.io for details |
+| fasta2faa | Convert file from '('FASTA',)' to '('FAA',)' format. See bioconvert.readthedocs.io for details |
+| fasta2fasta_agp | Convert file from '('FASTA',)' to '('FASTA', 'AGP')' format. See bioconvert.readthedocs.io for details |
+| fasta2genbank | Convert file from '('FASTA',)' to '('GENBANK',)' format. See bioconvert.readthedocs.io for details |
+| fasta2nexus | Convert file from '('FASTA',)' to '('NEXUS',)' format. See bioconvert.readthedocs.io for details |
+| fasta2phylip | Convert file from '('FASTA',)' to '('PHYLIP',)' format. See bioconvert.readthedocs.io for details |
+| fasta2twobit | Convert file from '('FASTA',)' to '('TWOBIT',)' format. See bioconvert.readthedocs.io for details |
+| fasta_qual2fastq | Convert file from '(FASTA', 'QUAL')' to '(FASTQ',)' format. See bioconvert.readthedocs.io for details |
+| fastq2fasta_qual | Convert file from '('FASTQ',)' to '('FASTA', 'QUAL')' format. See bioconvert.readthedocs.io for details |
+| genbank2embl | Convert file from '('GENBANK',)' to '('EMBL',)' format. See bioconvert.readthedocs.io for details |
+| gff32gff2 | Convert file from '('GFF3',)' to '('GFF2',)' format. See bioconvert.readthedocs.io for details |
+| gff32gtf | Convert file from ('GFF3',) to ('GTF',) format. See bioconvert.readthedocs.io for details |
+| json2yaml | Convert file from '('JSON',)' to '('YAML',)' format. See bioconvert.readthedocs.io for details |
+| newick2nexus | Convert file from '('NEWICK',)' to '('NEXUS',)' format. See bioconvert.readthedocs.io for details |
+| newick2phyloxml | Convert file from '('NEWICK',)' to '('PHYLOXML',)' format. See bioconvert.readthedocs.io for details |
+| nexus2phyloxml | Convert file from '('NEXUS',)' to '('PHYLOXML',)' format. See bioconvert.readthedocs.io for details |
+| ods2csv | Convert file from '('ODS',)' to '('CSV',)' format. See bioconvert.readthedocs.io for details |
+| phylip2clustal | Convert file from '('PHYLIP',)' to '('CLUSTAL',)' format. See bioconvert.readthedocs.io for details |
+| phylip2fasta | Convert file from '('PHYLIP',)' to '('FASTA',)' format. See bioconvert.readthedocs.io for details |
+| phylip2nexus | Convert file from '('PHYLIP',)' to '('NEXUS',)' format. See bioconvert.readthedocs.io for details |
+| phylip2stockholm | Convert file from '('PHYLIP',)' to '('STOCKHOLM',)' format. See bioconvert.readthedocs.io for details |
+| phylip2xmfa | Convert file from '('PHYLIP',)' to '('XMFA',)' format. See bioconvert.readthedocs.io for details |
+| phyloxml2newick | Convert file from '('PHYLOXML',)' to '('NEWICK',)' format. See bioconvert.readthedocs.io for details |
+| phyloxml2nexus | Convert file from '('PHYLOXML',)' to '('NEXUS',)' format. See bioconvert.readthedocs.io for details |
+| plink2bplink | Convert file from '('PLINK',)' to '('BPLINK',)' format. See bioconvert.readthedocs.io for details |
+| plink2vcf | Convert file from '('PLINK',)' to '('VCF',)' format. See bioconvert.readthedocs.io for details |
+| sam2bam | Convert file from '('SAM',)' to '('BAM',)' format. See bioconvert.readthedocs.io for details |
+| sam2cram | Convert file from '('SAM',)' to '('CRAM',)' format. See bioconvert.readthedocs.io for details |
+| sam2paf | Convert file from '('SAM',)' to '('PAF',)' format. See bioconvert.readthedocs.io for details |
+| scf2fasta | Convert file from '('SCF',)' to '('FASTA',)' format. See bioconvert.readthedocs.io for details |
+| scf2fastq | Convert file from '('SCF',)' to '('FASTQ',)' format. See bioconvert.readthedocs.io for details |
+| sra2fastq | Convert file from '('SRA',)' to '('FASTQ',)' format. See bioconvert.readthedocs.io for details |
+| stockholm2clustal | Convert file from '(STOCKHOLM,)' to '(CLUSTAL,)' format. See bioconvert.readthedocs.io for details |
+| stockholm2phylip | Convert file from '(STOCKHOLM,)' to '(PHYLIP,)' format. See bioconvert.readthedocs.io for details |
+| tsv2csv | Convert file from '('TSV',)' to '('CSV',)' format. See bioconvert.readthedocs.io for details |
+| twobit2fasta | Convert file from '('TWOBIT',)' to '('FASTA',)' format. See bioconvert.readthedocs.io for details |
+| vcf2bcf | Convert file from '('VCF',)' to '('BCF',)' format. See bioconvert.readthedocs.io for details |
+| vcf2bed | Convert file from '('VCF',)' to '('BED',)' format. See bioconvert.readthedocs.io for details |
+| vcf2bplink | Convert file from '('VCF',)' to '('BPLINK',)' format. See bioconvert.readthedocs.io for details |
+| vcf2plink | Convert file from '('VCF',)' to '('PLINK',)' format. See bioconvert.readthedocs.io for details |
+| vcf2wiggle | Convert file from '('VCF',)' to '('WIGGLE',)' format. See bioconvert.readthedocs.io for details |
+| xlsx2csv | Convert file from '('XLSX',)' to '('CSV',)' format. See bioconvert.readthedocs.io for details |
+| xmfa2phylip | Convert file from '('XMFA',)' to '('PHYLIP',)' format. See bioconvert.readthedocs.io for details |
 
 ## Reference documentation
-- [Bioconvert User Guide](./references/bioconvert_readthedocs_io_en_dev.md)
+- [Bioconvert Main Documentation](./references/bioconvert_readthedocs_io_en_main.md)
+- [User Guide](./references/bioconvert_readthedocs_io_en_main_user_guide.html.md)
+- [Supported Formats](./references/bioconvert_readthedocs_io_en_main_formats.html.md)
+- [Available Converters Reference](./references/bioconvert_readthedocs_io_en_main_ref_converters.html.md)

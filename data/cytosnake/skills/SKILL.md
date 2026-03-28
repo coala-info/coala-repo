@@ -1,6 +1,6 @@
 ---
 name: cytosnake
-description: CytoSnake is a command-line tool that orchestrates reproducible Snakemake workflows for processing high-dimensional cell morphology data. Use when user asks to initialize morphology projects, link plate-based metadata, or execute standardized workflows like feature annotation and aggregation.
+description: CytoSnake is a command-line tool that manages and executes reproducible image-based profiling pipelines for single-cell morphology data. Use when user asks to initialize a profiling project, run CellProfiler or DeepProfiler workflows, or benchmark memory usage during data processing.
 homepage: https://github.com/WayScience/CytoSnake
 ---
 
@@ -8,39 +8,53 @@ homepage: https://github.com/WayScience/CytoSnake
 # cytosnake
 
 ## Overview
-CytoSnake is a specialized command-line interface (CLI) tool designed to streamline the processing of high-dimensional cell morphology data. It acts as an orchestrator for Snakemake workflows, ensuring that the transition from raw feature extraction to refined data profiles is reproducible, scalable, and modular. Use this skill to navigate the setup of morphology pipelines, handle plate-based metadata, and execute standard analytical workflows like feature annotation and aggregation.
+CytoSnake is a command-line interface designed to manage and execute reproducible image-based profiling pipelines. It acts as an orchestrator for Snakemake workflows, allowing researchers to transform raw single-cell morphology features into analyzed datasets through standardized steps like annotation and aggregation. By using a structured project environment and symlinking data, it ensures that high-dimensional microscopy data remains organized, scalable, and easy to process across different computational environments.
 
-## Installation and Setup
-To get started with CytoSnake, ensure it is installed via the bioconda channel. Using `mamba` is recommended for faster dependency resolution.
+## Project Initialization
+Before running any analysis, you must initialize a project directory. CytoSnake creates a `.cytosnake` directory to track project states and a `data/` directory containing symlinks to your input files to preserve storage.
 
-- **Install**: `conda install -c bioconda cytosnake`
-- **Verify**: `cytosnake help`
+- **Standard Initialization**: Use `cytosnake init` with data and metadata paths.
+  `cytosnake init -d <FILES_OR_DIR> -m <METADATA_DIR>`
+- **Handling Multiple Platemaps**: If your experiment involves multiple platemaps, you must provide a barcode file using the `-b` flag.
+  `cytosnake init -d <DATA> -m <METADATA> -b <BARCODE_FILE>`
+- **Data Compatibility**: CytoSnake is optimized for features extracted via CellProfiler or DeepProfiler.
 
-## Core Workflow Execution
-The CytoSnake workflow follows a two-step process: initialization and execution.
+## Executing Workflows
+Workflows are the primary method for data processing. Once a project is initialized, use the `run` command to trigger the Snakemake-backed pipelines.
 
-### 1. Project Initialization
-The `init` command sets up the necessary directory structure and links your data and metadata.
+- **Run a Workflow**: `cytosnake run <WORKFLOW_NAME>`
+- **Primary Workflows**:
+  - `cp_process`: Standard pipeline for CellProfiler data (includes annotation and aggregation).
+  - `dp_process`: Standard pipeline for DeepProfiler data.
+- **Execution Flags**:
+  - Use `n_cores` to define the maximum number of CPU cores for parallel processing.
+  - Use `force_run` to ignore existing outputs and restart the workflow from the beginning.
+  - Use `allow_unlock` to clear directory locks if a previous run was unexpectedly interrupted.
 
-- **Basic Command**: `cytosnake init -d <DATA_FILES> -m <METADATA_DIR>`
-- **Handling Multiple Platemaps**: If your dataset contains multiple platemap files, use the `-b` flag to specify the barcode logic: `cytosnake init -d <FILES> -m <METADATA_DIR> -b <BARCODE>`
-- **Input Data**: Typically consists of single-cell feature files (e.g., from CellProfiler or DeepProfiler).
+## Performance Benchmarking
+CytoSnake uses `Memray` to monitor memory usage and identify bottlenecks or leaks within the profiling scripts.
 
-### 2. Running Workflows
-Once initialized, you can trigger specific workflows. CytoSnake currently supports several standard pipelines:
+1. **Enable Profiling**: Modify the `config/configurational.yaml` file within your project and set the profiling parameter to `True`.
+2. **Execution**: Run your desired workflow (e.g., `cytosnake run cp_process`). Benchmarking data is collected automatically during the run.
+3. **Accessing Results**: Benchmark files are saved in the `benchmarks/` folder of your project directory.
+4. **Analysis**: Use the `memray stats` command to convert the binary benchmark files into readable JSON format for detailed inspection.
 
-- **Execute Workflow**: `cytosnake run <WORKFLOW_NAME>`
-- **Common Workflows**:
-    - `cp_process`: Standard processing for CellProfiler-derived features.
-    - `cp_process_singlecells`: Specialized workflow for single-cell level analysis.
-    - `dp_process`: Processing for DeepProfiler-derived features.
+## Expert Tips and Best Practices
+- **Symlink Awareness**: Since CytoSnake uses symlinks in the `data/` folder, ensure the source data files are not moved or deleted after initialization, or the workflow will fail.
+- **Workflow Customization**: While default parameters are provided, users can fine-tune analytical steps (like aggregation operations or metadata joining) by editing the specific workflow configuration files generated in the project directory.
+- **Conda Integration**: Always run CytoSnake within a dedicated Conda environment to ensure Snakemake and its dependencies (like Memray) are correctly mapped to the CLI.
+- **Verification**: Use `cytosnake help` to verify the installation and view the full list of available subcommands and arguments.
 
-## CLI Best Practices
-- **Directory Management**: Always run `cytosnake init` from the root of your intended project directory. CytoSnake creates internal configurations that expect a consistent relative pathing.
-- **Metadata Alignment**: Ensure your metadata directory contains the necessary `.csv` or `.txt` files that map wells to treatments. The `annotate` step within workflows relies on these mappings.
-- **Workflow Inspection**: Before running a full pipeline, use `cytosnake help` to view available subcommands and ensure your environment is correctly configured.
-- **Resource Allocation**: Since CytoSnake is powered by Snakemake, it inherits Snakemake's ability to handle local or cluster-based execution. Ensure your environment has sufficient memory for high-dimensional data aggregation.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| cytosnake_align | Aligns sequencing reads to a reference genome. |
+| cytosnake_makedb | Builds a database for cytosnake. |
 
 ## Reference documentation
-- [CytoSnake GitHub Repository](./references/github_com_WayScience_CytoSnake.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_cytosnake_overview.md)
+- [CytoSnake Tutorial](./references/cytosnake_readthedocs_io_en_latest_tutorial.html.md)
+- [Benchmarking Workflows](./references/cytosnake_readthedocs_io_en_latest_benchmarking.html.md)
+- [CytoSnake Workflows](./references/cytosnake_readthedocs_io_en_latest_workflows.html.md)

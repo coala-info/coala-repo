@@ -1,6 +1,6 @@
 ---
 name: fuc
-description: The fuc package provides a suite of command-line tools for streamlining bioinformatics tasks such as genomic data manipulation, file format conversion, and end-to-end NGS pipeline execution. Use when user asks to manipulate VCF or BAM files, visualize MAF data, run germline or somatic variant discovery pipelines, and perform table operations.
+description: The fuc package is a comprehensive bioinformatics suite for genomic data processing, variant analysis, and visualization. Use when user asks to manipulate VCF or BAM files, run NGS pipelines from FASTQ to BAM, discover variants, or generate genomic visualizations like oncoplots.
 homepage: https://github.com/sbslee/fuc
 ---
 
@@ -8,53 +8,90 @@ homepage: https://github.com/sbslee/fuc
 # fuc
 
 ## Overview
-The `fuc` (Frequently Used Commands) package is a Python-based suite designed to consolidate disparate bioinformatics tasks into a streamlined command-line interface. It eliminates the need for writing custom scripts for routine data manipulation by providing robust wrappers for analyzing, summarizing, and transforming genomic data. Use this skill to handle complex file formats like VCF and BAM, perform table operations, and run end-to-end pipelines for germline or somatic variant discovery.
+
+The `fuc` (Frequently Used Commands) package is a comprehensive bioinformatics suite designed to consolidate disparate genomic processing tasks into a single, unified interface. It provides both a Command Line Interface (CLI) and a Python API to handle the heavy lifting of sequence alignment manipulation, variant call processing, and data visualization. You should use this skill to efficiently execute multi-step bioinformatics workflows—such as converting FASTQ files to analysis-ready BAMs or generating oncoplots from MAF files—without needing to write custom scripts for standard data transformations.
 
 ## CLI Usage and Best Practices
 
-### General Command Structure
-All `fuc` operations follow a consistent sub-command pattern:
-```bash
-fuc <command> [arguments]
-```
-To see all available modules, use `fuc -h`. For specific command help, use `fuc <command> -h`.
+The `fuc` tool uses a subcommand-based structure: `fuc [COMMAND] [ARGUMENTS]`.
 
-### Working with VCF Files
-`fuc` provides powerful utilities for variant data that often replace complex `bcftools` or `awk` one-liners.
-- **Merging**: Combine multiple VCFs into one: `fuc vcf-merge in1.vcf in2.vcf > out.vcf`
-- **Slicing**: Extract specific regions: `fuc vcf-slice in.vcf --region chr1:100-200`
-- **Filtering**: Apply filters based on VEP annotations: `fuc vcf-vep in.vcf --filter "Consequence == 'missense_variant'"`
-- **Conversion**: Quickly move to BED format: `fuc vcf-vcf2bed in.vcf > out.bed`
+### Core File Manipulation Patterns
 
-### BAM/CRAM Manipulation
-- **Depth Analysis**: Calculate per-base read depth: `fuc bam-depth in.bam > depth.txt`
-- **Allelic Depth**: Compute depth for specific alleles: `fuc bam-aldepth in.bam`
-- **Header Inspection**: Quickly view headers: `fuc bam-head in.bam`
-- **Sample Renaming**: Update SM tags without full re-processing: `fuc bam-rename in.bam new_name`
+*   **VCF Operations**: Use `vcf-merge` to combine multiple VCF files and `vcf-slice` to extract specific genomic regions. For individual-level analysis, `vcf-split` can separate a multi-sample VCF into single-sample files.
+*   **BAM/SAM Processing**: Use `bam-depth` for per-base read depth and `bam-slice` for region extraction. Always ensure files are indexed using `bam-index` or `tabix-index` before slicing.
+*   **Table Merging**: Use `tbl-merge` to join two table files (CSV/TSV), which is highly effective for integrating metadata with genomic results.
 
-### Mutation Annotation Format (MAF) Visualization
-`fuc` excels at generating publication-ready plots from MAF files.
-- **Oncoplots**: Create a matrix of mutations across samples: `fuc maf-oncoplt in.maf`
-- **Summary Plots**: Visualize TMB and variant classifications: `fuc maf-sumplt in.maf`
-- **Conversion**: Convert MAF to VCF for downstream analysis: `fuc maf-maf2vcf in.maf > out.vcf`
+### NGS Pipeline Commands
 
-### NGS Pipelines
-The `ngs-` prefix denotes end-to-end workflows. These commands typically require a configuration or specific input structure.
-- **Germline Discovery**: `fuc ngs-hc` (wraps GATK HaplotypeCaller logic).
-- **Somatic Discovery**: `fuc ngs-m2` (wraps Mutect2 logic).
-- **RNAseq Quant**: `fuc ngs-quant` (utilizes Kallisto).
-- **Trimming**: `fuc ngs-trim` for adapter removal.
+`fuc` includes pre-built pipelines that wrap standard tools (GATK, BWA, etc.):
 
-### Utility Commands
-- **File Discovery**: Use `fuc-find` to retrieve absolute paths matching patterns recursively: `fuc-find . "*.vcf"`
-- **Table Merging**: Join two delimiter-separated files: `fuc tbl-merge file1.csv file2.csv --on ID`
-- **Compression**: Use `fuc-bgzip` for BGZF compression compatible with tabix.
+*   **FASTQ to BAM**: `ngs-fq2bam` automates the path from raw reads to analysis-ready alignments.
+*   **Variant Discovery**: Use `ngs-hc` for germline short variant discovery (HaplotypeCaller) and `ngs-m2` for somatic discovery (Mutect2).
+*   **RNA-seq**: `ngs-quant` provides a streamlined pipeline for transcript quantification using Kallisto.
 
-## Expert Tips
-- **Piping**: Many `fuc` commands support stdout, allowing you to chain operations with standard Unix tools or other bioinformatics suites.
-- **Validation**: Use `fuc-exist` to verify the presence of multiple required files before starting long-running pipelines.
-- **Demultiplexing**: If working with Illumina data, `fuc-demux` and `fuc-undetm` are highly efficient for parsing `bcl2fastq` reports and identifying index hopping or unknown barcodes.
+### Visualization and Summarization
+
+*   **Mutation Annotation Format (MAF)**: Generate sophisticated visualizations using `maf-oncoplt` (oncoplots) or `maf-sumplt` (summary plots).
+*   **Quick Summaries**: Use `fq-sum` for FASTQ files, `bed-sum` for BED files, and `tbl-sum` for general tabular data to get immediate statistics on your datasets.
+
+### Expert Tips
+
+*   **Recursive Search**: Use `fuc-find` to retrieve absolute paths of files matching a pattern across nested directories. This is often more reliable than standard `find` for building input lists for other `fuc` commands.
+*   **'chr' Prefix Handling**: Many `fuc` commands (like `vcf-merge` and `pycov` methods) are designed to automatically handle the presence or absence of the 'chr' string in contig names, reducing errors when mixing datasets from different reference builds.
+*   **VEP Integration**: Use `vcf-vep` to filter VCF files specifically by annotations produced by the Ensembl Variant Effect Predictor.
+*   **Allelic Depth**: Use `bam-aldepth` to compute allelic depth directly from BAM files, which is essential for manual verification of low-frequency variants.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| bam-depth | Compute per-base read depth from BAM files. |
+| bam-head | Print the header of a BAM file. |
+| bam-index | Index a BAM file. |
+| bam-rename | Rename the sample in a BAM file. |
+| bam-slice | Slice a BAM file. |
+| bed-intxn | Find the intersection of BED files. |
+| fq-count | Count sequence reads in FASTQ files. |
+| fq-sum | Summarize a FASTQ file. |
+| fuc fa-filter | Filter sequence records in a FASTA file. |
+| fuc maf-vcf2maf | Convert a VCF file to a MAF file. |
+| fuc ngs-bam2fq | Pipeline for converting BAM files to FASTQ files. |
+| fuc ngs-fq2bam | Pipeline for converting FASTQ files to analysis-ready BAM files. |
+| fuc ngs-m2 | Pipeline for somatic short variant discovery. |
+| fuc ngs-pon | Pipeline for constructing a panel of normals (PoN). |
+| fuc ngs-quant | Pipeline for running RNAseq quantification from FASTQ files with Kallisto. |
+| fuc-bgzip | Write a BGZF compressed file. |
+| fuc-compf | Compare the contents of two files. |
+| fuc-demux | Parse the Reports directory from bcl2fastq. |
+| fuc-exist | Check whether certain files exist. |
+| fuc-find | Retrieve absolute paths of files whose name matches a specified pattern, optionally recursively. |
+| fuc-undetm | Compute top unknown barcodes using undertermined FASTQ from bcl2fastq. |
+| fuc_bam-aldepth | Count allelic depth from a BAM file. |
+| fuc_bed-sum | Summarize a BED file. |
+| fuc_cov-concat | Concatenate depth of coverage files. |
+| fuc_cov-rename | Rename the samples in a depth of coverage file. |
+| maf-maf2vcf | Convert a MAF file to a VCF file. |
+| maf-oncoplt | Create an oncoplot with a MAF file. The format of output image (PDF/PNG/JPEG/SVG) will be automatically determined by the output file's extension. |
+| maf-sumplt | Create a summary plot with a MAF file. |
+| ngs-hc | Pipeline for germline short variant discovery. |
+| ngs-trim | Pipeline for trimming adapters from FASTQ files. |
+| tabix-index | Index a GFF/BED/SAM/VCF file with Tabix. |
+| tabix-slice | Slice a GFF/BED/SAM/VCF file with Tabix. |
+| tbl-merge | Merge two table files. |
+| tbl-sum | Summarize a table file. |
+| vcf-call | Call SNVs and indels from BAM files. |
+| vcf-filter | Filter a VCF file. |
+| vcf-index | Index a VCF file. |
+| vcf-merge | Merge two or more VCF files. |
+| vcf-rename | Rename the samples in a VCF file. |
+| vcf-slice | Slice a VCF file for specified regions. |
+| vcf-split | Split a VCF file by individual. |
+| vcf-vcf2bed | Convert a VCF file to a BED file. |
+| vcf-vep | Filter a VCF file by annotations from Ensembl VEP. |
 
 ## Reference documentation
-- [fuc GitHub Repository](./references/github_com_sbslee_fuc.md)
-- [fuc Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_fuc_overview.md)
+
+- [fuc GitHub README](./references/github_com_sbslee_fuc_blob_main_README.rst.md)
+- [fuc Changelog and Version History](./references/github_com_sbslee_fuc_blob_main_CHANGELOG.rst.md)

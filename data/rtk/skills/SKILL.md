@@ -1,6 +1,6 @@
 ---
 name: rtk
-description: The Rarefaction Toolkit (rtk) rarefies large count tables and calculates diversity measures for ecological and microbiome research. Use when user asks to rarefy OTU or ASV tables, calculate alpha diversity metrics, or estimate rarefaction depth using column sums.
+description: RTK performs rarefaction on large-scale count matrices to normalize sampling depth and calculate diversity statistics. Use when user asks to estimate sampling depths, perform rarefaction, generate rarefied count tables, or calculate alpha diversity measures.
 homepage: https://github.com/hildebra/Rarefaction/
 ---
 
@@ -8,56 +8,64 @@ homepage: https://github.com/hildebra/Rarefaction/
 # rtk
 
 ## Overview
+The Rarefaction Tool Kit (RTK) is a C++11 based utility optimized for processing large-scale count matrices. It allows researchers to normalize sampling depth across different samples to ensure fair comparisons of diversity. This skill provides the necessary command-line patterns to estimate sampling depths, perform rarefaction, and generate diversity statistics.
 
-The Rarefaction Toolkit (RTK) is a high-performance tool designed to rarefy large count tables (such as OTU or ASV tables) and calculate diversity measures. It is particularly useful for ecological and microbiome research where sequencing depth varies across samples. RTK provides multiple modes to balance speed and memory usage, allowing for the processing of datasets that might otherwise exceed system RAM.
+## Core Workflows
 
-## Core CLI Usage
-
-RTK requires a mode specification followed by input/output parameters.
-
-### Primary Modes
-- **memory**: Faster execution; loads the dataset into RAM. Use this for standard datasets.
-- **swap**: Uses temporary files to reduce memory footprint. Use this for extremely large datasets that exceed available RAM.
-- **colsums**: A utility mode to calculate and report column sums. Use this first to determine an appropriate rarefaction depth.
-
-### Common Command Patterns
-
-**1. Estimate Rarefaction Depth**
-Before rarefying, check the sample sums to choose a depth that balances data retention with sample inclusion.
+### 1. Estimating Rarefaction Depth
+Before rarefying, determine the column sums to identify the minimum library size.
 ```bash
-rtk colsums -i input.tsv -o depth_check/
+rtk colsums -i input.csv -o output_dir/
+```
+*   **Tip**: Check the `sums.txt` file in the output directory. A common practice is to rarefy to ~95% of the minimum column sum or a specific biological threshold (e.g., 1000 counts).
+
+### 2. Performing Rarefaction
+Choose a mode based on your hardware constraints:
+*   **memory**: Faster, but requires enough RAM to hold the dataset.
+*   **swap**: Uses temporary files; slower but handles datasets larger than available RAM.
+
+**Basic Rarefaction:**
+```bash
+rtk swap -i input.csv -o output_dir/ -d 1000 -r 100
+```
+*   `-d`: Depth to rarefy to (can be a comma-separated list for multiple depths).
+*   `-r`: Number of iterations (repeats) to calculate diversity measures (default is 10).
+
+**Generating Rarefied Tables:**
+By default, RTK only outputs diversity measures. To write the actual rarefied count matrices to disk, use the `-w` flag:
+```bash
+rtk memory -i input.csv -o output_dir/ -d 1000 -w 1
+```
+*   `-w`: Number of rarefied tables to export.
+*   `-ns`: Use this flag with `-w` to prevent the creation of temporary swap files during table writing if RAM is sufficient.
+
+### 3. Multithreading
+For large datasets, always specify the number of threads to significantly reduce processing time:
+```bash
+rtk swap -i input.csv -o output_dir/ -t 8
 ```
 
-**2. Standard Rarefaction and Diversity Calculation**
-Rarefy to a specific depth (e.g., 10,000) with 100 iterations for diversity measures.
-```bash
-rtk memory -i input.tsv -o results/ -d 10000 -r 100
-```
+## Input Data Requirements
+*   **Format**: `.csv` or `.tsv` count tables.
+*   **Structure**: Rows must be taxa (OTUs/Features) and columns must be Samples.
+*   **Uniqueness**: Row and column names must be unique.
+*   **Orientation**: Rarefaction is performed on **columns**. If your samples are in rows, you must transpose the data before using RTK.
 
-**3. Generating Rarefied Matrices**
-To output the actual downsampled tables (not just diversity metrics), use the `-w` flag.
-```bash
-rtk memory -i input.tsv -o rarefied_tables/ -d 5000 -w 5
-```
+## Output Files
+*   `median_alpha_diversity.tsv`: The primary output containing median diversity measures across all repeats.
+*   `richness.tsv`, `evenness.tsv`, etc.: Detailed tables containing results for every individual repeat.
+*   `global_diversity.tsv`: Contains ACE, ICE, and Chao2 estimators.
+*   `rarefied_to_X_n_Y.tsv`: The actual rarefied matrix (only if `-w > 0`).
 
-## Expert Tips and Best Practices
 
-### Input Requirements
-- **Format**: RTK expects `.csv` or `.tsv` files.
-- **Orientation**: Rarefaction is performed on **columns**. Ensure your samples are columns and your features (OTUs/taxa) are rows.
-- **Transposing**: If your data is sample-per-row, transpose it before running RTK. On Linux/macOS, you can use `awk` or a simple Python script to swap axes.
 
-### Parameter Optimization
-- **Depth (`-d`)**: You can provide a comma-separated list (e.g., `-d 1000,5000,10000`) to rarefy to multiple depths in a single pass.
-- **Threads (`-t`)**: RTK is multi-threaded. Increase `-t` to match your CPU cores for significant speedups on large tables.
-- **Reproducibility (`-s`)**: Always provide a seed (e.g., `-s 42`) if you need to generate the exact same rarefied tables in future runs.
-- **Disk I/O (`-ns`)**: When writing many rarefied tables (`-w > 0`), use the `-ns` (no swap) flag to prevent the creation of intermediate binary files if you have sufficient RAM, as this reduces disk wear and can improve speed.
+## Subcommands
 
-### Output Interpretation
-- **median_alpha_diversity.tsv**: The most commonly used file; contains the median values across all iterations.
-- **richness/evenness.tsv**: Contains the raw values for every repeat, useful for calculating your own statistics or confidence intervals.
-- **global_diversity.tsv**: Provides ACE, ICE, and Chao2 estimates for the entire table.
+| Command | Description |
+|---------|-------------|
+| rtk | Reports the column sums of all columns in form of a sorted and an unsorted file. |
+| rtk | rarefaction tool kit (rtk) |
 
 ## Reference documentation
-- [Rarefaction tool kit - RTK](./references/github_com_hildebra_Rarefaction.md)
-- [rtk - rarefaction toolkit for OTU tables](./references/anaconda_org_channels_bioconda_packages_rtk_overview.md)
+- [Rarefaction Tool Kit Overview](./references/github_com_hildebra_Rarefaction.md)
+- [RTK Tutorial and Examples](./references/github_com_hildebra_Rarefaction_wiki_RTK-Tutorial.md)

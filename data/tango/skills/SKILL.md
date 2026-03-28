@@ -1,6 +1,6 @@
 ---
 name: tango
-description: "tango assigns taxonomic identities to metagenomic sequences by querying contig nucleotide sequences against a protein database. Use when user asks to assign taxonomy to contigs, perform metagenomic classification, or search sequences against a protein database using DIAMOND."
+description: tango assigns taxonomic classifications to metagenomic contigs by querying nucleotide sequences against protein databases using rank-specific thresholds. Use when user asks to download taxonomy data, format protein databases, build Diamond indices, or assign taxonomy to assembly sequences.
 homepage: https://github.com/johnne/tango
 ---
 
@@ -8,56 +8,61 @@ homepage: https://github.com/johnne/tango
 # tango
 
 ## Overview
-tango (executed via the `contigtax` command) is a specialized tool for assigning taxonomic identities to metagenomic sequences. It operates by querying contig nucleotide sequences against a protein database using the DIAMOND aligner and subsequently parsing the results through a filtering logic that applies specific identity thresholds for different taxonomic ranks (e.g., species, genus, family). This approach, based on established metagenomic binning and classification methodologies, allows for more sensitive detection of distant homologs compared to traditional nucleotide-only searches.
 
-## Installation and Setup
-The tool is primarily distributed via Bioconda.
-```bash
-conda install -c bioconda contigtax
-```
+tango (based on the contigtax framework) is a specialized tool for assigning taxonomy to metagenomic sequences. It operates by querying contig nucleotide sequences against protein databases using Diamond blastx/blastp. Unlike simple best-hit approaches, it utilizes rank-specific thresholds to improve classification accuracy. The workflow is modular, covering everything from raw database acquisition to final taxonomic assignment in tab-separated formats.
 
 ## Core Workflow
 
 ### 1. Database Preparation
-Before classification, you must prepare the reference databases. This involves downloading the protein sequences and the NCBI taxonomy mapping.
+Before processing contigs, you must prepare the reference environment.
 
-```bash
-# Download reference protein data (e.g., uniref100)
-contigtax download uniref100
+*   **Download Taxonomy**: Required for all operations.
+    `tango download taxonomy`
+*   **Download Protein DB**: Choose between UniRef (50, 90, 100) or NCBI NR.
+    `tango download uniref100`
+*   **Format Fasta**: Reformat the database to handle Diamond's 14-character ID limit and map protein IDs to TaxIDs.
+    `tango format uniref100/uniref100.fasta.gz uniref100/uniref100.reformat.fasta.gz`
+*   **Build Index**: Create the Diamond database.
+    `tango build uniref100/uniref100.reformat.fasta.gz uniref100/prot.accession2taxid.gz taxonomy/nodes.dmp`
 
-# Download NCBI taxonomy files
-contigtax download taxonomy
+### 2. Sequence Classification
+Once the database is built, process your assembly files.
 
-# Reformat the fasta and create a taxon map
-contigtax format uniref100/uniref100.fasta.gz uniref100/uniref100.reformat.fasta.gz
-
-# Build the DIAMOND database
-contigtax build uniref100/uniref100.reformat.fasta.gz uniref100/prot.accession2taxid.gz taxonomy/nodes.dmp
-```
-
-### 2. Taxonomic Search
-Perform the alignment of your assembled contigs against the prepared DIAMOND database. Use the `-p` flag to specify CPU threads for performance.
-
-```bash
-# Search assembled contigs (assembly.fa)
-contigtax search -p 8 assembly.fa uniref100/diamond.dmnd assembly.tsv.gz
-```
-
-### 3. Taxonomy Assignment
-The final step parses the search hits and applies rank-specific thresholds to produce the final taxonomy table.
-
-```bash
-# Assign taxonomy based on search results
-contigtax assign -p 8 assembly.tsv.gz assembly.taxonomy.tsv
-```
+*   **Search**: Run the Diamond search against your assembly.
+    `tango search -p 8 assembly.fa uniref100/diamond.dmnd assembly.tsv.gz`
+*   **Assign**: Parse the search hits into final taxonomic assignments.
+    `tango assign -p 8 assembly.tsv.gz assembly.taxonomy.tsv`
 
 ## Expert Tips and Best Practices
-- **Database Selection**: While UniRef100 provides the highest resolution, UniRef90 or UniRef50 can be used for faster searches or when looking for broader conservation.
-- **Resource Management**: The `search` and `assign` commands are computationally intensive. Always utilize the `-p` parameter to match the available cores on your system.
-- **Docker Usage**: If running in a containerized environment, use the official image `nbisweden/contigtax` and mount your current working directory to `/work`.
-  - Example: `docker run --rm -v $(pwd):/work nbisweden/contigtax search -p 4 query.fa db.dmnd out.tsv.gz`
-- **Input Formats**: The tool natively handles gzipped files (`.gz`), which is recommended for managing large metagenomic datasets and reference databases.
+
+*   **Thread Optimization**: Always use the `-p` flag in both `search` and `assign` steps to utilize multi-core processing, as Diamond and pandas-based parsing are resource-intensive.
+*   **ID Length Limits**: Diamond has a hardcoded limit of 14 characters for protein IDs. If using custom databases, always run the `format` command to ensure IDs are truncated or remapped correctly to avoid build failures.
+*   **Temporary Directories**: When working on clusters or systems with limited home space, use `--tmpdir` during the `download` and `format` steps to point to high-speed local scratch space.
+*   **Memory Management**: The `assign` step uses `pandas` and can be memory-intensive for very large search results. Ensure your environment has sufficient RAM relative to the size of your `assembly.tsv.gz`.
+
+## Troubleshooting Common Issues
+
+*   **ETE3 SQLite Errors**: If you encounter `sqlite3.IntegrityError` during taxonomy downloads, it is usually due to a known bug in the `ete3` package regarding duplicate synonyms. You may need to manually patch `ncbiquery.py` to use `INSERT OR IGNORE` instead of `REPLACE`.
+*   **Ambiguous Rank Entries**: If `tango assign` fails with a `ValueError` regarding truth values, check if your database contains taxa with multiple entries for the same rank (e.g., multiple "class" definitions for a single TaxID). This typically requires cleaning the input taxonomy mapping.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| tango | Tango is a tool for mapping and analyzing genomic data. |
+| tango | tango: error: invalid choice: 'valid' (choose from 'download', 'format', 'update', 'build', 'search', 'assign', 'transfer') |
+| tango assign | Assigns taxonomy to Diamond blastx results. |
+| tango build | Builds the Tango database. |
+| tango download | Download databases for tango. |
+| tango format | Reformat protein fasta files. |
+| tango search | Search for query sequences in a Diamond database. |
+| tango transfer | Transfer taxonomy from ORFs to contigs. |
+| tango update | Updates a prot.accession2taxid.gz file based on a mapping of sequence IDs. |
 
 ## Reference documentation
-- [NBISweden/contigtax GitHub Repository](./references/github_com_NBISweden_contigtax.md)
-- [contigtax Wiki](./references/github_com_NBISweden_contigtax_wiki.md)
+
+- [Contigtax Main Documentation](./references/github_com_NBISweden_contigtax.md)
+- [Preparing the Database](./references/github_com_NBISweden_contigtax_wiki_Preparing-the-database.md)
+- [Frequently Asked Questions](./references/github_com_NBISweden_contigtax_wiki_Frequently-Asked-Questions.md)

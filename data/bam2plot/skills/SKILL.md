@@ -1,6 +1,6 @@
 ---
 name: bam2plot
-description: The bam2plot tool visualizes sequencing depth and coverage by transforming BAM or FastQ files into PNG or SVG plots. Use when user asks to visualize genomic coverage, identify sequencing gaps, analyze GC content, or inspect alignment quality.
+description: "bam2plot generates publication-quality depth visualizations and HTML reports from sequence alignment data or raw reads. Use when user asks to visualize BAM coverage, generate coverage plots from FASTQ files, or analyze reference GC content."
 homepage: https://github.com/willros/bam2plot
 ---
 
@@ -8,57 +8,59 @@ homepage: https://github.com/willros/bam2plot
 # bam2plot
 
 ## Overview
-The `bam2plot` tool is a specialized utility for bioinformaticians to visualize sequencing depth and coverage. It transforms alignment data (BAM) or raw reads (FastQ) into interpretable PNG or SVG plots. It is designed to handle large-scale genomic data efficiently by leveraging `mosdepth` for coverage calculation and `polars` for data processing. Use this skill when you need to inspect the quality of an alignment, identify gaps in sequencing, or analyze the GC distribution of a reference genome.
 
-## Command Line Usage
+bam2plot is a high-performance bioinformatics tool designed to transform sequence alignment data into intuitive, publication-quality visualizations. Unlike general-purpose tools, it specializes in "three-color" depth visualization—highlighting regions with zero coverage, low coverage (below a user-defined threshold), and sufficient coverage. It provides a standalone HTML report that aggregates global and per-reference statistics, making it an ideal choice for rapid QC of whole-genome or targeted sequencing runs.
 
-### Plotting from BAM Files
-The `from_bam` subcommand is the primary method for visualizing existing alignments.
+## Core Workflows
 
-```bash
-# Basic coverage plot for a BAM file
-bam2plot from_bam --bam input.bam --outpath ./plots --sort_and_index
+### 1. Generating Plots from BAM Files
+The `from_bam` command is the primary entry point for existing alignments. It automatically handles depth computation using a parallel sweep-line algorithm.
 
-# Generate cumulative plots and highlight regions below 5x coverage
-bam2plot from_bam -b input.bam -o ./output -t 5 --highlight --cum_plot
-```
+*   **Basic Usage**:
+    `bam2plot from_bam -b input.bam -o output_dir -s`
+    *   Use `-s` to automatically sort and index the BAM file if not already done.
+*   **Customizing Thresholds**:
+    `bam2plot from_bam -b input.bam -o output_dir -t 20 -c`
+    *   `-t 20`: Sets the "sufficient coverage" threshold to 20X (visualized in blue).
+    *   `-c`: Generates cumulative coverage plots.
+*   **Regional Zooming**:
+    `bam2plot from_bam -b input.bam -o output_dir -z '1000 5000'`
+    *   Focuses the visualization on a specific coordinate range.
 
-**Key Parameters:**
-- `-w, --whitelist`: Provide a list of specific chromosomes/references to plot (e.g., "chr1 chr2").
-- `-r, --rolling_window`: Adjust the smoothness of the plot. Larger values reduce noise.
-- `-z, --zoom`: Focus on a specific genomic range. Format: `-z='start end'`.
-- `-n, --number_of_refs`: Limit the number of chromosomes plotted to the top N references.
+### 2. Direct Alignment and Plotting
+If you have raw FASTQ files and a reference, `from_reads` bypasses the need for manual alignment steps by using an internal minimap2-based aligner.
 
-### Plotting from Raw Reads
-The `from_reads` subcommand automates the alignment process before plotting.
+*   **Long Reads or Single-End**:
+    `bam2plot from_reads -r1 reads.fastq -ref reference.fasta -o output_dir`
+*   **Paired-End Short Reads**:
+    `bam2plot from_reads -r1 R1.fastq -r2 R2.fastq -ref reference.fasta -o output_dir`
+*   **GC Content Overlay**:
+    `bam2plot from_reads -r1 reads.fastq -ref reference.fasta -o output_dir -gc`
 
-```bash
-# Align reads to a reference and plot coverage with GC content
-bam2plot from_reads -r1 forward.fastq.gz -r2 reverse.fastq.gz -ref genome.fasta -o ./results --guci
-```
+### 3. Reference GC Analysis
+Use the `guci` command to analyze the GC composition of a reference genome independently of any sequencing data.
 
-### GC Content Analysis
-The `guci` subcommand plots the GC content of a reference FASTA independently of alignment data.
+*   `bam2plot guci -ref reference.fasta -w 1000 -o output_dir`
+    *   `-w 1000`: Sets the rolling window size to 1kb for smoothing the GC curve.
 
-```bash
-bam2plot guci -ref genome.fasta -w 100 -o ./gc_plots -p both
-```
+## Expert Tips and Best Practices
 
-## Best Practices and Expert Tips
+*   **Performance Optimization**: For large BAM files, ensure the file is indexed (`.bai`). bam2plot will automatically use multiple threads (up to 4) to process references in parallel when an index is present.
+*   **Reference Filtering**: If your BAM contains many small contigs (e.g., unplaced scaffolds), use `-n` to limit the plot to the top $N$ references or `-w` to whitelist specific chromosomes (e.g., `-w chr1,chr2,chrX`).
+*   **Smoothing Data**: Adjust the `-r` (rolling window) parameter based on your library type. Use a larger window (e.g., 500-1000) for low-depth WGS to reduce noise, or a smaller window (e.g., 50) for high-depth amplicon sequencing.
+*   **Interpreting Uniformity**: Pay close attention to the Lorenz curves in the HTML report. A Gini coefficient closer to 0 indicates perfectly uniform coverage, while values approaching 1 suggest significant capture bias or mapping issues.
+*   **Output Formats**: By default, plots are PNG. Use `-p both` to generate both PNG and SVG files if you need vector graphics for publication.
 
-### Performance Optimization
-- **Pre-processing**: Use the `-s` (`--sort_and_index`) flag if your BAM file is not already prepared. If it is already sorted and indexed, use `-i` (`--index`) or omit these flags to save time.
-- **Window Selection**: For large genomes (e.g., human), increase the `--rolling_window` (default is often too granular) to 500 or 1000 to produce cleaner, more readable plots.
 
-### Visualization Strategy
-- **Format Selection**: Use `-p svg` for publication-quality figures that require scaling, or `-p both` if you need quick previews (PNG) alongside vector graphics.
-- **Low Coverage Identification**: Always set a `--threshold` and use the `--highlight` flag when performing quality control. This visually flags "problem areas" where sequencing depth fails to meet your project's requirements.
-- **Cumulative Plots**: Use the `-c` flag to get a global view of coverage distribution across all chromosomes, which is helpful for detecting large-scale biases or aneuploidy.
 
-### Troubleshooting
-- **Dependencies**: Ensure `mosdepth` is installed in your environment, as `bam2plot` relies on it for high-speed coverage calculations.
-- **Memory Management**: If processing many chromosomes, use `--whitelist` or `--number_of_refs` to prevent the tool from generating hundreds of unnecessary image files.
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| bam2plot | Plot your bam files! |
+| bam2plot | Align your reads and plot the coverage! |
+| bam2plot | Plot GC content of your reference fasta! |
 
 ## Reference documentation
-- [bam2plot GitHub README](./references/github_com_willros_bam2plot.md)
-- [Bioconda bam2plot Overview](./references/anaconda_org_channels_bioconda_packages_bam2plot_overview.md)
+- [github_com_willros_bam2plot_blob_main_README.md](./references/github_com_willros_bam2plot_blob_main_README.md)
+- [github_com_willros_bam2plot_blob_main_BENCHMARKS.md](./references/github_com_willros_bam2plot_blob_main_BENCHMARKS.md)

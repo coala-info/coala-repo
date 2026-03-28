@@ -1,55 +1,54 @@
 ---
 name: pling
-description: Pling computes the rearrangement distance between plasmids and clusters them based on this distance. Use when user asks to analyze plasmid relationships, identify evolutionary distances, or cluster similar plasmids.
+description: Pling quantifies the evolutionary distance between plasmids by accounting for structural rearrangements and shared content. Use when user asks to calculate plasmid distances, cluster related plasmids, or identify structural evolution between plasmid sequences.
 homepage: https://github.com/iqbal-lab-org/pling
 ---
 
 
 # pling
 
-yaml
-name: pling
-description: Computes the rearrangement distance between plasmids and clusters them based on this distance. Use when analyzing plasmid relationships, identifying evolutionary distances, or clustering similar plasmids using the DCJ-Indel distance.
-```
 ## Overview
-Pling is a bioinformatics tool designed for analyzing plasmid relationships. It calculates the Double Cut and Join Indel (DCJ-Indel) distance between plasmids, which quantifies their evolutionary distance in terms of structural rearrangements. By combining this with containment distance (shared content), pling can effectively cluster related plasmids and identify mobile elements that might otherwise obscure these relationships.
+Pling is a specialized bioinformatics workflow designed to quantify the evolutionary distance between plasmids. Unlike simple sequence identity metrics, Pling uses the Double Cut and Join Indel (DCJ-indel) distance to account for structural rearrangements. It intelligently combines containment distance (shared content) with these rearrangement metrics and filters out common mobile elements that might otherwise obscure true phylogenetic relationships. This results in more accurate clustering of related plasmids based on their structural evolution.
 
-## Usage
+## Usage Guidelines
 
-Pling is a command-line tool. The primary function involves calculating distances and clustering.
+### Core Workflow
+Pling typically operates as a Snakemake-based pipeline. The primary entry point is the `pling` command, which manages several sub-processes:
+1. **Alignment**: Uses `mummer` (NUCmer) to identify syntenic blocks between plasmid pairs.
+2. **Distance Calculation**: Computes Jaccard-like containment distances and DCJ-indel distances.
+3. **Clustering**: Infers clusters of related plasmids based on the combined distance metrics.
 
-### Basic Usage: Calculating Distances and Clustering
-
-The core functionality of pling involves providing a set of plasmids and then performing analysis.
-
-```bash
-pling <input_files> [options]
-```
-
-**Input Files:**
-Pling typically accepts one or more input files containing plasmid sequences or representations. The exact format will depend on the specific analysis being performed, but common formats include FASTA or specialized formats for genomic data.
-
-**Key Options:**
-
-*   **`--output_dir`**: Specifies the directory where output files will be saved.
-*   **`--cluster_threshold`**: Defines the threshold for clustering. Plasmids with a distance below this threshold will be grouped together.
-*   **`--containment_threshold`**: Sets the threshold for considering plasmids as having significant shared content.
-*   **`--dcj_indel_threshold`**: Sets the threshold for the DCJ-Indel distance.
-
-**Example:**
-
-To compute distances and cluster plasmids from `plasmid1.fasta` and `plasmid2.fasta` with a clustering threshold of 0.5 and a containment threshold of 0.8, saving output to a directory named `results`:
+### Common CLI Patterns
+The tool is executed via the `pling` command (defined in `setup.py` and `pyproject.toml`).
 
 ```bash
-pling plasmid1.fasta plasmid2.fasta --output_dir results --cluster_threshold 0.5 --containment_threshold 0.8
+# Basic execution (typical pattern for Snakemake-based tools)
+pling --input <plasmids.fasta> --output <output_directory>
 ```
 
-### Advanced Usage and Tips:
+### Environment and Dependencies
+Pling relies on a specific bioconda environment. If you are troubleshooting execution, ensure the following dependencies are available:
+- **Python**: 3.10 (as specified in `env.yaml`)
+- **Snakemake**: 7.32.4
+- **Alignment**: `mummer` (3.23)
+- **Distance/Network**: `plasnet` (0.6.0), `sourmash`, `glpk`
+- **Logic**: `dingII` (for DCJ-indel calculations)
 
-*   **Understanding Input Formats**: Refer to the project's documentation for the precise format requirements of input plasmid data. Incorrect formatting is a common source of errors.
-*   **Interpreting Output**: The output directory will typically contain files detailing pairwise distances, cluster assignments, and potentially visualizations. Pay close attention to the README or documentation for a full explanation of each output file.
-*   **Parameter Tuning**: The `cluster_threshold`, `containment_threshold`, and `dcj_indel_threshold` parameters are crucial for obtaining meaningful results. Experiment with different values based on your biological understanding of the plasmids you are analyzing. Small changes in these thresholds can significantly alter clustering outcomes.
-*   **Error Handling**: If pling encounters issues, check the error messages carefully. Common problems include incorrect file paths, unsupported input formats, or insufficient memory for large datasets. The GitHub issues page can be a valuable resource for troubleshooting.
+### Expert Tips
+- **Mobile Elements**: Pling is specifically designed to prevent shared mobile elements from "clouding" the analysis. If your results show unexpected clusters, verify if the plasmids share high-frequency insertion sequences that Pling is attempting to filter.
+- **Input Preparation**: Ensure your input FASTA headers are unique and contain no special characters that might break the Snakemake wildcards used in the internal `Snakefile` logic.
+- **Resource Management**: Since Pling uses `glpk` (GNU Linear Programming Kit) for distance optimization and `mummer` for all-vs-all alignments, it can be computationally intensive for large datasets. Use the `--threads` or `--cores` flag if available to parallelize the Snakemake tasks.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| pling | pling is a tool for reconstructing plasmid relationships from genome assemblies. |
+| pling | Integerisation method: "align" for alignment, "skip" to skip integerisation altogether. Make sure to input a unimog file if skipping integerisation. |
 
 ## Reference documentation
-- [Pling Overview](https://github.com/iqbal-lab-org/pling)
+- [Pling GitHub Repository](./references/github_com_iqbal-lab-org_pling.md)
+- [Environment Dependencies](./references/github_com_iqbal-lab-org_pling_blob_main_env.yaml.md)
+- [Project Configuration](./references/github_com_iqbal-lab-org_pling_blob_main_pyproject.toml.md)

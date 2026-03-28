@@ -1,6 +1,6 @@
 ---
 name: naibr-plus
-description: naibr-plus detects structural variants by analyzing spatial information and barcode overlaps from linked-read sequencing data. Use when user asks to identify novel adjacencies, call structural variants from 10X Genomics data, or score candidate genomic rearrangements.
+description: naibr-plus identifies structural variants in linked-read whole genome sequencing data by analyzing barcode overlaps and discordant read pairs. Use when user asks to identify structural variants in 10X Genomics data, convert BEDPE files to VCF format, or score specific genomic rearrangement candidates.
 homepage: https://github.com/pontushojer/NAIBR
 ---
 
@@ -8,48 +8,54 @@ homepage: https://github.com/pontushojer/NAIBR
 # naibr-plus
 
 ## Overview
-naibr-plus (Novel Adjacency Identification with Barcoded Reads) is a specialized tool designed to detect structural variants by leveraging the spatial information provided by barcoded linked-reads. It identifies "novel adjacencies" that differ from the reference genome, providing a statistical likelihood score for each event. It is particularly effective for analyzing 10X Genomics data processed through the Long Ranger pipeline, allowing for high-precision SV calling and haplotyping.
-
-## Installation
-The tool is available via Bioconda:
-`conda install bioconda::naibr-plus`
+The naibr-plus skill enables the identification of structural variants by leveraging the barcode information in linked-read WGS data. It is a refactored, more user-friendly version of the original NAIBR tool. It analyzes barcode overlaps and discordant read pairs to score and predict genomic rearrangements. Use this skill when you need to perform SV calling on 10X Genomics data, convert specialized BEDPE outputs to standard VCF files, or optimize SV detection parameters for linked-read datasets.
 
 ## Configuration and Execution
-naibr-plus is executed by passing a configuration file to the main command:
-`naibr <configfile>`
+The tool primarily runs via a configuration file. You must define the paths and thresholds before execution.
 
-### Configuration Parameters
-The configuration file should be a plain text file using a `parameter : value` format. Key parameters include:
+### 1. Create a Configuration File
+Create a text file (e.g., `naibr.config`) with the following key parameters:
+- `bam_file`: Path to the input BAM (must have `BX` tags; `HP` tags required for haplotyping).
+- `blacklist`: Path to a BED file of regions to exclude (e.g., high-coverage or repetitive regions).
+- `outdir`: Directory for output files.
+- `threads`: Number of CPU cores to utilize.
+- `min_mapq`: Minimum mapping quality (default is 40).
+- `k`: Minimum number of barcode overlaps required to support a candidate (default is 3).
+- `d`: Maximum distance (bp) between reads to be considered part of the same linked-read (default is 10000).
 
-- **bam_file**: Path to the input BAM. Reads must have barcode tags (`BX`). For haplotyped SVs, reads should be phased with `HP` tags.
-- **min_mapq**: Minimum mapping quality (default: 40). High values reduce false positives.
-- **outdir**: Output directory path.
-- **prefix**: String prefix for output files (default: `NAIBR_SVs`).
-- **d**: Maximum distance in basepairs between reads within a single linked-read molecule (default: 10000).
-- **k**: Minimum number of barcode overlaps required to support a candidate SV (default: 3).
-- **min_sv**: Minimum size of SV to detect (default is the 95th percentile of the insert size distribution).
-- **threads**: Number of threads for parallel processing.
-- **blacklist**: (Optional) BED file containing regions to exclude from analysis.
+### 2. Run the Analysis
+Execute the tool by passing the config file:
+```bash
+naibr naibr.config
+```
 
-## Output Interpretation
-The tool produces three main output files:
+## Working with Outputs
+The tool generates three primary files in the specified `outdir`:
+- `<prefix>.bedpe`: The raw results containing breakpoint positions, split molecule counts, orientation, and log-likelihood scores.
+- `<prefix>.reformat.bedpe`: A version compatible with IGV for visual inspection.
+- `<prefix>.vcf`: Standard VCF format for downstream analysis with tools like truvari.
 
-1. **<prefix>.bedpe**: A custom format containing breakpoint coordinates, split molecule counts, discordant read counts, and the log-likelihood score.
-2. **<prefix>.reformat.bedpe**: A standard 10X Genomics BEDPE format optimized for visualization in IGV.
-3. **<prefix>.vcf**: The results translated into VCF format for compatibility with benchmarking tools like Truvari.
+## Converting Formats
+If you have an existing NAIBR BEDPE file and need to generate a VCF manually, use the included utility script:
+```bash
+bedpe_to_vcf.py --input NAIBR_SVs.bedpe --output NAIBR_SVs.vcf
+```
 
-### Orientation Codes
-The "Orientation" column in the output indicates the type of structural variant:
-- **+-**: Suggests a Deletion (DEL).
-- **++** or **--**: Suggests an Inversion (INV).
-- **-+**: Suggests a Duplication (DUP).
+## Expert Tips and Best Practices
+- **Phasing Requirement**: While `naibr-plus` can run on unphased data, providing a phased BAM (with `HP` tags) is highly recommended to identify haplotyped SVs and improve accuracy.
+- **Distance Parameter (`d`)**: If your library has particularly long or short molecules, adjust the `d` parameter. Setting this too high can lead to false barcode overlaps, while setting it too low may fragment single molecules.
+- **Candidate Scoring**: If you have a specific set of SVs you wish to validate, use the `candidates` parameter in the config file to provide a BEDPE of specific regions. This bypasses automatic discovery and focuses the tool on scoring your provided regions.
+- **Filtering**: Pay attention to the `Score` column in the output. Higher log-likelihood scores indicate higher confidence. The "PASS/FAIL" filter is a helpful baseline, but manual inspection of scores near the threshold is recommended for complex samples.
 
-## Expert Tips
-- **Filtering**: Focus on entries marked as "PASS" in the final column. These have met the internal likelihood threshold.
-- **VCF Conversion**: If you have an existing NAIBR BEDPE file and need to regenerate the VCF, use the utility script: `bedpe_to_vcf.py`.
-- **Performance**: For deep coverage WGS data, ensure `threads` is set appropriately to manage the computational load of barcode overlap analysis.
-- **Candidate Scoring**: If you have a list of known SVs you wish to score specifically, use the `candidates` parameter in the config file to point to a BEDPE file of those regions.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| bedpe_to_vcf.py | Convert NAIBR BEDPE files to VCF |
+| naibr | NAIBR identifies novel adjacencies created by structural variation events such as deletions, duplications, inversions, and complex rearrangements using linked-read whole-genome sequencing data as produced by 10X Genomics. Please refer to the publication for details about the method. |
 
 ## Reference documentation
-- [Bioconda naibr-plus Overview](./references/anaconda_org_channels_bioconda_packages_naibr-plus_overview.md)
-- [NAIBR GitHub Repository](./references/github_com_pontushojer_NAIBR.md)
+- [NAIBR - Novel Adjacency Identification with Barcoded Reads](./references/github_com_pontushojer_NAIBR_blob_main_README.md)
+- [naibr-plus Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_naibr-plus_overview.md)

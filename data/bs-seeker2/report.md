@@ -229,3 +229,6 @@ Options:
   -v, --version         show version of BS-Seeker2
 ```
 
+
+## Metadata
+- **Skill**: not generated

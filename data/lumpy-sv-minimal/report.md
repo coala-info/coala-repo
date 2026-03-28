@@ -106,3 +106,6 @@ Options:
 		weight:<sample weight>
 ```
 
+
+## Metadata
+- **Skill**: generated

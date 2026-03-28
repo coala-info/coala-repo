@@ -118,3 +118,6 @@ lordec-build-SR-graph [-T <number of threads>] [-O <GATB graph creation temporar
          reads the <FASTA/Q file(s)> of short reads, then builds and save their de Bruijn graph for k-mers of length <k-mer size> and occurring at least <abundance threshold> time; the graph is saved in an external file named <out graph file>
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -148,3 +148,6 @@ Adds random transformations to FASTA files.
 /usr/local/bin/noisify.py: line 8: `def random_transform_fasta(input_file, output_dir, reverse, transformation_log):'
 ```
 
+
+## Metadata
+- **Skill**: generated

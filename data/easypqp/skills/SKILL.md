@@ -1,6 +1,6 @@
 ---
 name: easypqp
-description: EasyPQP generates and calibrates high-quality peptide query parameter libraries for OpenSWATH workflows using search engine outputs or in-silico deep learning predictions. Use when user asks to generate spectral libraries, convert search engine results, perform retention time calibration, or create in-silico libraries from FASTA files.
+description: EasyPQP generates and calibrates peptide query parameters and spectral libraries for targeted proteomics analysis. Use when user asks to generate libraries from search results, convert Sage or pepXML files, create in-silico libraries from FASTA files, or prepare assays and decoys for OpenSWATH.
 homepage: https://github.com/grosenberger/easypqp
 ---
 
@@ -8,42 +8,66 @@ homepage: https://github.com/grosenberger/easypqp
 # easypqp
 
 ## Overview
-EasyPQP is a specialized tool for generating peptide query parameter libraries used in OpenSWATH workflows. It processes search engine outputs (pepXML, idXML, TSV) and applies statistical validation (via PyProphet) and calibration (RT and Ion Mobility) to produce high-quality spectral libraries. It also supports in-silico library generation using deep learning models for RT and fragment intensity prediction.
+EasyPQP is a specialized tool designed to simplify and accelerate the generation of peptide query parameters for OpenSWATH. It acts as a bridge between database search engines (like MSFragger or Sage) and targeted proteomics analysis. The tool handles the conversion of various identification formats (pepXML, idXML, TSV), performs statistical validation via PyProphet or PeptideProphet, and calibrates retention times (RT) and ion mobilities (IM). It is particularly useful for creating both cumulative and run-specific libraries required for non-linear RT alignment.
 
-## Command Line Interface
-EasyPQP provides several subcommands for different stages of the library generation pipeline.
+## Common CLI Patterns
 
-### Core Commands
-- `easypqp convert`: Converts search engine results (e.g., pepXML) into the internal format.
-- `easypqp library`: Generates a spectral library from converted files, including RT calibration.
-- `easypqp insilico-library`: Generates a library directly from a FASTA file using deep learning predictors.
-- `easypqp convertsage`: Specifically handles Sage search engine TSV outputs.
-- `easypqp convertpsm`: Converts Peptide-Spectrum Matches (PSMs).
-
-### In-Silico Library Generation
-To generate a library from a FASTA file, use the `insilico-library` command. This requires the `easypqp[all]` or `easypqp[rust]` installation.
-
+### Library Generation
+The primary workflow involves generating a library from search results.
 ```bash
-easypqp insilico-library --fasta your_proteome.fasta --output_file insilico_library.tsv
+# Generate a library from pepXML and mzXML files
+easypqp library --psm results.pepXML --spectra data.mzXML --output_file library.pqp
 ```
 
-**Note on Models:** If specific feature generators are not defined in a configuration, EasyPQP automatically downloads and uses:
-- **RT:** `rt_cnn_tf` (CNN-Transformer)
-- **CCS:** `ccs_cnn_tf` (CNN-Transformer)
-- **MS2:** `ms2_bert` (BERT-based)
+### Sage Integration
+For Sage search results, use the dedicated parser which supports memory-efficient streaming for large datasets.
+```bash
+# Convert Sage results to EasyPQP format
+easypqp convertsage --psm results.sage.tsv --report results.json --output_file converted.tsv
+
+# Use streaming for large files (>2GB)
+easypqp convertsage --psm large_results.sage.tsv --streaming
+```
+
+### In-Silico Library Generation
+Generate predicted libraries directly from FASTA files using deep learning models for RT, CCS, and MS2 intensity.
+```bash
+# Generate in-silico library from FASTA
+easypqp insilico-library --fasta proteome.fasta --output_file predicted.tsv
+```
 
 ### Utility Commands
-- `easypqp reduce`: Reduces the size of a library.
-- `easypqp filter-unimod`: Restricts the UniMod database for specific modifications and site-specificities.
-- `easypqp openswath-assay-generator`: Generates assays specifically formatted for OpenSWATH.
-- `easypqp openswath-decoy-generator`: Generates decoy sequences for FDR estimation.
+EasyPQP includes several sub-commands for downstream OpenSWATH preparation:
+- `openswath-assay-generator`: Create assays from a PQP library.
+- `openswath-decoy-generator`: Generate decoys for the library.
+- `filter-unimod`: Restrict PTMs based on UniMod specifications.
+- `reduce`: Downsample or filter libraries.
 
-## Best Practices
-- **Installation:** Always install in a Python virtual environment. Use `pip install easypqp[all]` to ensure all optional features like `easypqp_rs` (for in-silico generation) and `pyprophet` (for validation) are available.
-- **Calibration:** Ensure you provide internal or external standards for retention time and ion mobility calibration to ensure consistency across runs.
-- **PTM Handling:** When working with Post-Translational Modifications, use `filter-unimod` to restrict the search space to modifications of interest, which improves search speed and reduces false positives.
-- **Run-Specific Libraries:** In addition to cumulative libraries, generate run-specific libraries to facilitate non-linear RT alignment within OpenSWATH.
+## Expert Tips and Best Practices
+
+- **Full Installation**: Always install with the `[all]` extra (`pip install easypqp[all]`) to ensure `easypqp_rs` and `pyprophet` are available for in-silico generation and statistical validation.
+- **Calibration**: When generating libraries, ensure you provide internal or external standards for RT and IM calibration to improve OpenSWATH alignment performance.
+- **In-Silico Models**: If no specific models are provided in a config file for `insilico-library`, EasyPQP automatically downloads pretrained CNN-Transformer models (RT/CCS) and BERT-based models (MS2).
+- **Deterministic Testing**: If using EasyPQP in a CI/CD pipeline, note that the `convertsage` command can have timestamps removed from output for deterministic validation.
+- **Path Handling**: For in-silico tasks, use absolute paths for configuration files to avoid resolution errors during model loading.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| convert | Convert pepXML files for EasyPQP |
+| convertpsm | Convert psm.tsv files for EasyPQP |
+| easypqp openswath-assay-generator | Generates filtered and optimized assays for OpenSwathWorflow |
+| easypqp_convertsage | Convert Sage Search results for EasyPQP |
+| easypqp_filter-unimod | Filter unimodified peptides from a PQP file. |
+| easypqp_insilico-library | Generate In-Silico Predicted Library |
+| easypqp_reduce | Reduce PQP files for OpenSWATH linear and non-linear alignment |
+| easypqp_targeted-file-converter | Convert different spectral libraries / transition files for targeted proteomics and metabolomics analysis. |
+| library | Generate EasyPQP library |
+| openswath-decoy-generator | Generate decoys for spectral libraries / transition files for targeted proteomics and metabolomics analysis. |
 
 ## Reference documentation
-- [EasyPQP GitHub Repository](./references/github_com_grosenberger_easypqp.md)
-- [EasyPQP Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_easypqp_overview.md)
+- [EasyPQP: Simple library generation for OpenSWATH](./references/github_com_grosenberger_easypqp_blob_master_README.md)
+- [EasyPQP Changelog and Version History](./references/github_com_grosenberger_easypqp_blob_master_CHANGELOG.md)

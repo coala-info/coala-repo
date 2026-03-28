@@ -1,6 +1,6 @@
 ---
 name: axiome
-description: Axiome provides a marketplace infrastructure for AI agents to discover and execute specialized tools, datasets, and APIs through semantic search. Use when user asks to search for specialized AI tools, discover RAG systems or datasets, and execute marketplace products for specific tasks.
+description: Axiome provides a unified API gateway and marketplace that translates natural language requests into executable calls across various services. Use when user asks to search for specific API capabilities, execute tasks through integrated agents, export tool schemas for LLMs, or run multi-step workflows.
 homepage: https://github.com/ujjwalredd/Axiomeer
 ---
 
@@ -8,39 +8,76 @@ homepage: https://github.com/ujjwalredd/Axiomeer
 # axiome
 
 ## Overview
-Axiomeer acts as a universal marketplace for AI agents, providing a production-ready infrastructure to discover and execute specialized tools. Instead of hardcoding integrations, agents can use this skill to semantically search for the best-fit RAG systems, datasets, or APIs based on a specific task description. It streamlines the transition from a general-purpose agent to a specialized one by providing on-demand access to processed knowledge bases and external service integrations.
+Axiomeer serves as a universal marketplace and unified API gateway for over 91 different services, including weather, finance, search, and translation. It leverages semantic search (FAISS) to translate plain-English requests into executable API calls. The system handles the complexity of provider ranking, retry logic, and cost tracking, allowing agents to perform complex tasks with minimal code.
 
-## Core Workflows
+## Core Usage Patterns
 
-### Authentication and Setup
-Before interacting with the marketplace, you must establish a secure session and generate an agent-specific API key.
+### Semantic Discovery
+To find the right API for a specific task, use the semantic search endpoint. This returns ranked recommendations based on capability, relevance, trust, and latency.
 
-1.  **Sign Up**: Register a new agent account.
-    `curl -X POST http://localhost:8000/auth/signup -H "Content-Type: application/json" -d '{"email": "agent@example.com", "username": "agent_01", "password": "password"}'`
-2.  **Login**: Obtain a JWT access token.
-    `curl -X POST http://localhost:8000/auth/login -H "Content-Type: application/json" -d '{"email": "agent@example.com", "password": "password"}'`
-3.  **Generate API Key**: Use the JWT to create a persistent `axm_` key for the agent.
-    `curl -X POST http://localhost:8000/auth/api-keys -H "Authorization: Bearer <token>" -d '{"name": "Production Key"}'`
+```bash
+# Search for an API using natural language
+curl -X POST http://localhost:8000/v1/shop \
+  -H "Content-Type: application/json" \
+  -d '{"task": "translate text to Spanish"}'
+```
 
-### Intelligent Product Discovery
-Use the `/shop` endpoint to find tools matching a natural language requirement. Axiomeer uses FAISS semantic search and LLM-based capability extraction to rank results.
+### Executing Tasks
+Once an API is identified (e.g., `realtime_weather_agent`), execute it by providing the task and necessary input parameters.
 
-*   **Pattern**: Send a task description to receive ranked recommendations.
-*   **Command**:
-    `curl -X POST http://localhost:8000/shop -H "X-API-Key: <axm_key>" -H "Content-Type: application/json" -d '{"task": "I need to analyze customer sentiment from social media", "auto_extract_capabilities": true, "max_results": 3}'`
+```bash
+# Execute a specific agent capability
+curl -X POST http://localhost:8000/execute \
+  -H "Content-Type: application/json" \
+  -d '{
+    "app_id": "realtime_weather_agent",
+    "task": "weather in NYC",
+    "inputs": {"lat": 40.7, "lon": -74.0}
+  }'
+```
 
-### Executing Marketplace Products
-Once a product (`app_id`) is discovered, execute it directly through the marketplace gateway.
+### LLM Integration (Function Calling)
+Axiomeer can export its entire catalog of 91+ APIs as structured tool schemas compatible with major LLM providers.
 
-*   **Pattern**: Provide the `app_id` and the specific task parameters.
-*   **Command**:
-    `curl -X POST http://localhost:8000/execute -H "X-API-Key: <axm_key>" -H "Content-Type: application/json" -d '{"app_id": "wikipedia_search", "task": "Find information about artificial intelligence", "inputs": {}, "require_citations": true}'`
+```bash
+# Export schemas for OpenAI function calling
+curl "http://localhost:8000/v1/tools/schemas?format=openai"
 
-## Expert Tips
-*   **Health Checks**: Always verify the marketplace status before initiating discovery: `curl http://localhost:8000/health`.
-*   **Semantic Precision**: When using the `/shop` endpoint, be specific about the *output* you need (e.g., "JSON formatted financial data") to improve the FAISS embedding match.
-*   **Capability Extraction**: Set `auto_extract_capabilities: true` to allow the internal LLM (phi3.5) to parse complex requests into discrete technical requirements.
-*   **Result Limits**: Use `max_results` to limit context window bloat when the agent is processing multiple potential tool matches.
+# Export schemas for Anthropic tool use
+curl "http://localhost:8000/v1/tools/schemas?format=anthropic"
+```
+
+### Workflow Chaining
+For complex operations requiring multiple steps, use the workflow endpoint to pass data between sequential API calls.
+
+```bash
+# Execute a multi-step workflow
+curl -X POST http://localhost:8000/execute/workflow \
+  -H "Content-Type: application/json" \
+  -d '{
+    "steps": [
+      {"app_id": "search_agent", "task": "find latest news on AI"},
+      {"app_id": "translate_agent", "task": "translate results to French"}
+    ]
+  }'
+```
+
+## Best Practices
+- **Health Checks**: Always verify the service status at `GET /health` before initiating heavy workflows, as the semantic search model may take time to load on initial startup.
+- **Provider Fallback**: Axiomeer automatically handles provider failures. If a primary provider fails, the system retries with the next-ranked provider in the marketplace.
+- **Streaming**: For long-running tasks or multi-step chains, use `POST /execute/stream` to receive real-time progress events via Server-Sent Events (SSE).
+- **Cost Management**: Monitor the `cost_est_usd` field in execution logs to track real-time API expenditure across different providers.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| process | Axiome process command for data processing |
+| utility | Generates a file mapping template or copies AXIOME sample data into the current directory |
 
 ## Reference documentation
-- [Axiomeer Main Repository](./references/github_com_ujjwalredd_Axiomeer.md)
+- [Axiomeer README](./references/github_com_ujjwalredd_Axiomeer_blob_main_README.md)
+- [Environment Configuration](./references/github_com_ujjwalredd_Axiomeer_blob_main_.env.example.md)
+- [Docker Deployment](./references/github_com_ujjwalredd_Axiomeer_blob_main_Dockerfile.md)

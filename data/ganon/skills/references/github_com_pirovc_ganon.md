@@ -1,1 +1,331 @@
-GitHub - pirovc/ganon: ganon2 classifies genomic sequences against large sets of references efficiently, with integrated download and update of databases (refseq/genbank), taxonomic profiling (ncbi/gtdb), binning and hierarchical classification, customized reporting and more Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} pirovc / ganon Public Notifications You must be signed in to change notification settings Fork 13 Star 103 ganon2 classifies genomic sequences against large sets of references efficiently, with integrated download and update of databases (refseq/genbank), taxonomic profiling (ncbi/gtdb), binning and hierarchical classification, customized reporting and more pirovc.github.io/ganon/ License MIT license 103 stars 13 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 1 Pull requests 0 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights pirovc/ganon master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 705 Commits 705 Commits docs docs libs libs scripts scripts src src tests tests .clang-format .clang-format .codecov.yml .codecov.yml .gitattributes .gitattributes .gitignore .gitignore .gitmodules .gitmodules .travis.yml .travis.yml CMakeLists.txt CMakeLists.txt LICENSE LICENSE README.md README.md VERSION.txt VERSION.txt ganon ganon mkdocs.yml mkdocs.yml pre-commit.sh pre-commit.sh pyproject.toml pyproject.toml View all files Repository files navigation README MIT license ganon ganon2 classifies DNA sequences against large sets of genomic reference sequences efficiently. It features: integrated download and build of any subset from RefSeq/Genbank/GTDB with incremental updates NCBI and GTDB native support for taxonomic classification, custom taxonomy or no taxonomy at all customizable database build for local or non-standard sequence files optimized taxonomic binning and classification configurations build and classify at various taxonomic levels, strain, assembly, file, sequence or custom specialization hierarchical classification using several databases in one or more levels in just one run EM and/or LCA algorithms to solve multiple-matching reads reporting of multiple and unique matches for every read reporting of sequence, taxonomic or multi-match abundances with optional genome size correction advanced tree-like reports with several filter options generation of contingency tables with several filters for multi-sample studies Find out more information in the user manual: https://pirovc.github.io/ganon/ Quick install and usage # Install conda install -c bioconda -c conda-forge ganon # Download and Build (Archaea - complete genomes - NCBI RefSeq) ganon build --db-prefix arc_cg_rs --source refseq --organism-group archaea --complete-genomes --threads 24 # Classify ganon classify --db-prefix arc_cg_rs --output-prefix classify_results --paired-reads my_reads.1.fq.gz my_reads.2.fq.gz --threads 24 For further examples, database build guides, installation from source and more: https://pirovc.github.io/ganon/ About ganon2 classifies genomic sequences against large sets of references efficiently, with integrated download and update of databases (refseq/genbank), taxonomic profiling (ncbi/gtdb), binning and hierarchical classification, customized reporting and more pirovc.github.io/ganon/ Topics bioinformatics taxonomy bloom-filter metagenomics genbank microbiome k-mer ncbi refseq minimizers gtdb Resources Readme License MIT license Uh oh! There was an error while loading. Please reload this page . Activity Stars 103 stars Watchers 4 watching Forks 13 forks Report repository Releases 34 ganon version 2.2.0 Latest Feb 5, 2026 + 33 releases Uh oh! There was an error while loading. Please reload this page . Contributors 2 &nbsp; &nbsp; Uh oh! There was an error while loading. Please reload this page . Languages Python 59.9% C++ 34.9% Shell 3.7% CMake 1.5% Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fpirovc%2Fganon)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fpirovc%2Fganon)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=pirovc%2Fganon)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[pirovc](/pirovc)
+/
+**[ganon](/pirovc/ganon)**
+Public
+
+* [Notifications](/login?return_to=%2Fpirovc%2Fganon) You must be signed in to change notification settings
+* [Fork
+  13](/login?return_to=%2Fpirovc%2Fganon)
+* [Star
+   104](/login?return_to=%2Fpirovc%2Fganon)
+
+* [Code](/pirovc/ganon)
+* [Issues
+  3](/pirovc/ganon/issues)
+* [Pull requests
+  0](/pirovc/ganon/pulls)
+* [Actions](/pirovc/ganon/actions)
+* [Projects](/pirovc/ganon/projects)
+* [Security
+  0](/pirovc/ganon/security)
+* [Insights](/pirovc/ganon/pulse)
+
+Additional navigation options
+
+* [Code](/pirovc/ganon)
+* [Issues](/pirovc/ganon/issues)
+* [Pull requests](/pirovc/ganon/pulls)
+* [Actions](/pirovc/ganon/actions)
+* [Projects](/pirovc/ganon/projects)
+* [Security](/pirovc/ganon/security)
+* [Insights](/pirovc/ganon/pulse)
+
+# pirovc/ganon
+
+main
+
+[Branches](/pirovc/ganon/branches)[Tags](/pirovc/ganon/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[712 Commits](/pirovc/ganon/commits/main/)   712 Commits | | |
+| [docs](/pirovc/ganon/tree/main/docs "docs") | | [docs](/pirovc/ganon/tree/main/docs "docs") |  |  |
+| [libs](/pirovc/ganon/tree/main/libs "libs") | | [libs](/pirovc/ganon/tree/main/libs "libs") |  |  |
+| [scripts](/pirovc/ganon/tree/main/scripts "scripts") | | [scripts](/pirovc/ganon/tree/main/scripts "scripts") |  |  |
+| [src](/pirovc/ganon/tree/main/src "src") | | [src](/pirovc/ganon/tree/main/src "src") |  |  |
+| [tests](/pirovc/ganon/tree/main/tests "tests") | | [tests](/pirovc/ganon/tree/main/tests "tests") |  |  |
+| [.clang-format](/pirovc/ganon/blob/main/.clang-format ".clang-format") | | [.clang-format](/pirovc/ganon/blob/main/.clang-format ".clang-format") |  |  |
+| [.codecov.yml](/pirovc/ganon/blob/main/.codecov.yml ".codecov.yml") | | [.codecov.yml](/pirovc/ganon/blob/main/.codecov.yml ".codecov.yml") |  |  |
+| [.gitattributes](/pirovc/ganon/blob/main/.gitattributes ".gitattributes") | | [.gitattributes](/pirovc/ganon/blob/main/.gitattributes ".gitattributes") |  |  |
+| [.gitignore](/pirovc/ganon/blob/main/.gitignore ".gitignore") | | [.gitignore](/pirovc/ganon/blob/main/.gitignore ".gitignore") |  |  |
+| [.gitmodules](/pirovc/ganon/blob/main/.gitmodules ".gitmodules") | | [.gitmodules](/pirovc/ganon/blob/main/.gitmodules ".gitmodules") |  |  |
+| [.travis.yml](/pirovc/ganon/blob/main/.travis.yml ".travis.yml") | | [.travis.yml](/pirovc/ganon/blob/main/.travis.yml ".travis.yml") |  |  |
+| [CMakeLists.txt](/pirovc/ganon/blob/main/CMakeLists.txt "CMakeLists.txt") | | [CMakeLists.txt](/pirovc/ganon/blob/main/CMakeLists.txt "CMakeLists.txt") |  |  |
+| [LICENSE](/pirovc/ganon/blob/main/LICENSE "LICENSE") | | [LICENSE](/pirovc/ganon/blob/main/LICENSE "LICENSE") |  |  |
+| [README.md](/pirovc/ganon/blob/main/README.md "README.md") | | [README.md](/pirovc/ganon/blob/main/README.md "README.md") |  |  |
+| [VERSION.txt](/pirovc/ganon/blob/main/VERSION.txt "VERSION.txt") | | [VERSION.txt](/pirovc/ganon/blob/main/VERSION.txt "VERSION.txt") |  |  |
+| [ganon](/pirovc/ganon/blob/main/ganon "ganon") | | [ganon](/pirovc/ganon/blob/main/ganon "ganon") |  |  |
+| [mkdocs.yml](/pirovc/ganon/blob/main/mkdocs.yml "mkdocs.yml") | | [mkdocs.yml](/pirovc/ganon/blob/main/mkdocs.yml "mkdocs.yml") |  |  |
+| [pre-commit.sh](/pirovc/ganon/blob/main/pre-commit.sh "pre-commit.sh") | | [pre-commit.sh](/pirovc/ganon/blob/main/pre-commit.sh "pre-commit.sh") |  |  |
+| [pyproject.toml](/pirovc/ganon/blob/main/pyproject.toml "pyproject.toml") | | [pyproject.toml](/pirovc/ganon/blob/main/pyproject.toml "pyproject.toml") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* MIT license
+
+# ganon [![GitHub release (latest by date)](https://camo.githubusercontent.com/737b4ee8f22990530730c49dc9b3dbd8aadebf233280b72cc393eb84538a165b/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f762f72656c656173652f7069726f76632f67616e6f6e)](https://github.com/pirovc/ganon)
+
+[![Build Status](https://camo.githubusercontent.com/cf9151f1824f49bde538906ac81d08613ed3471e304173053598f7c706dbb3b7/68747470733a2f2f6170702e7472617669732d63692e636f6d2f7069726f76632f67616e6f6e2e7376673f746f6b656e3d71364e667838704c486838685633684c7a335071266272616e63683d6d6173746572)](https://app.travis-ci.com/pirovc/ganon) [![codecov](https://camo.githubusercontent.com/49c49828d1e794526e685657f2e80b42d43c4ee2899dd7d81db0f3770a675279/68747470733a2f2f636f6465636f762e696f2f67682f7069726f76632f67616e6f6e2f6272616e63682f6d61737465722f67726170682f62616467652e737667)](https://codecov.io/gh/pirovc/ganon) [![Anaconda-Server Badge](https://camo.githubusercontent.com/f38174056c4db22e71f86b749c268e0d5320d3464eb68b510b9c29f4245b3f76/68747470733a2f2f616e61636f6e64612e6f72672f62696f636f6e64612f67616e6f6e2f6261646765732f646f776e6c6f6164732e737667)](https://anaconda.org/bioconda/ganon) [![Anaconda-Server Badge](https://camo.githubusercontent.com/c0ae7c2e0383b885baa8c9d9f36cdceab30e72598700601b1a3fe6c5619d6fc7/68747470733a2f2f616e61636f6e64612e6f72672f62696f636f6e64612f67616e6f6e2f6261646765732f706c6174666f726d732e737667)](https://anaconda.org/bioconda/ganon) [![install with bioconda](https://camo.githubusercontent.com/9940610b859f8e4dd2daade6d2f4fb4c45d56afedc37ae98d8617daf79c1f836/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f696e7374616c6c253230776974682d62696f636f6e64612d627269676874677265656e2e7376673f7374796c653d666c6174)](http://bioconda.github.io/recipes/ganon/README.html) [![Publication](https://camo.githubusercontent.com/aa3e2970ff384125f48f42d6558a27fdfd8aa877de12b4d8130a6735f0edde74/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f444f492d31302e313039332f6e61726761622f6c7161663039342d626c7565)](https://dx.doi.org/10.1093/nargab/lqaf094)
+
+ganon2 classifies DNA sequences against large sets of genomic reference sequences efficiently. It features:
+
+* integrated download and build of any subset from RefSeq/Genbank/GTDB with incremental updates
+* NCBI and GTDB native support for taxonomic classification, custom taxonomy or no taxonomy at all
+* customizable database build for local or non-standard sequence files
+* optimized taxonomic binning and classification configurations
+* build and classify at various taxonomic levels, strain, assembly, file, sequence or custom specialization
+* hierarchical classification using several databases in one or more levels in just one run
+* EM and/or LCA algorithms to solve multiple-matching reads
+* reporting of multiple and unique matches for every read
+* reporting of sequence, taxonomic or multi-match abundances with optional genome size correction
+* advanced tree-like reports with several filter options
+* generation of contingency tables with several filters for multi-sample studies
+
+Find out more information in the user manual: <https://pirovc.github.io/ganon/>
+
+## Quick install and usage
+
+```
+# Install
+conda install -c conda-forge -c bioconda ganon
+# Download and Build (Archaea - complete genomes - NCBI RefSeq)
+ganon build --db-prefix arc_cg_rs --source refseq --organism-group archaea --complete-genomes --threads 24
+# Classify
+ganon classify --db-prefix arc_cg_rs --output-prefix classify_results --paired-reads my_reads.1.fq.gz my_reads.2.fq.gz --threads 24
+```
+
+For further examples, database build guides, installation from source and more: <https://pirovc.github.io/ganon/>
+
+## About
+
+ganon2 classifies genomic sequences against large sets of references efficiently, with integrated download and update of databases (refseq/genbank), taxonomic profiling (ncbi/gtdb), binning and hierarchical classification, customized reporting and more
+
+[pirovc.github.io/ganon/](https://pirovc.github.io/ganon/ "https://pirovc.github.io/ganon/")
+
+### Topics
+
+[bioinformatics](/topics/bioinformatics "Topic: bioinformatics")
+[taxonomy](/topics/taxonomy "Topic: taxonomy")
+[bloom-filter](/topics/bloom-filter "Topic: bloom-filter")
+[metagenomics](/topics/metagenomics "Topic: metagenomics")
+[genbank](/topics/genbank "Topic: genbank")
+[microbiome](/topics/microbiome "Topic: microbiome")
+[k-mer](/topics/k-mer "Topic: k-mer")
+[ncbi](/topics/ncbi "Topic: ncbi")
+[refseq](/topics/refseq "Topic: refseq")
+[minimizers](/topics/minimizers "Topic: minimizers")
+[gtdb](/topics/gtdb "Topic: gtdb")
+
+### Resources
+
+[Readme](#readme-ov-file)
+
+### License
+
+[MIT license](#MIT-1-ov-file)
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+[Activity](/pirovc/ganon/activity)
+
+### Stars
+
+[**104**
+stars](/pirovc/ganon/stargazers)
+
+### Watchers
+
+[**4**
+watching](/pirovc/ganon/watchers)
+
+### Forks
+
+[**13**
+forks](/pirovc/ganon/forks)
+
+[Report repository](/contact/report-content?content_url=https%3A%2F%2Fgithub.com%2Fpirovc%2Fganon&report=pirovc+%28user%29)
+
+## [Releases 35](/pirovc/ganon/releases)
+
+[ganon v2.3.0
+
+Latest
+
+Mar 16, 2026](/pirovc/ganon/releases/tag/v2.3.0)
+
+[+ 34 releases](/pirovc/ganon/releases)
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## [Contributors](/pirovc/ganon/graphs/contributors)
+
+### Uh oh!
+
+There was an error while loading. Please reload this page.
+
+## Languages
+
+* [Python
+  58.5%](/pirovc/ganon/search?l=python)
+* [C++
+  36.5%](/pirovc/ganon/search?l=c%2B%2B)
+* [Shell
+  3.6%](/pirovc/ganon/se

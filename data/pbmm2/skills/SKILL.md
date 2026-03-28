@@ -1,6 +1,6 @@
 ---
 name: pbmm2
-description: "pbmm2 is a Pacific Biosciences wrapper for minimap2 designed to align long-read sequences to a reference genome. Use when user asks to align PacBio subreads or HiFi reads, index a reference genome, or generate coordinate-sorted BAM files for downstream analysis."
+description: "pbmm2 is a high-performance wrapper for minimap2 designed to align Pacific Biosciences reads to a reference genome. Use when user asks to align PacBio subreads or HiFi data, index a reference genome, or generate sorted and indexed BAM files for downstream analysis."
 homepage: https://github.com/PacificBiosciences/pbmm2
 ---
 
@@ -9,75 +9,70 @@ homepage: https://github.com/PacificBiosciences/pbmm2
 
 ## Overview
 
-`pbmm2` is the official Pacific Biosciences wrapper for `minimap2`, serving as the modern replacement for BLASR. It is designed to handle native PacBio data formats (BAM and XML datasets) as both input and output. The tool simplifies the alignment process by providing curated parameter presets that optimize `minimap2` for specific PacBio library types, ensuring high-quality mapping for long-read data. It also supports integrated on-the-fly sorting and indexing, making the output immediately ready for polishing and variant calling.
+pbmm2 is a high-performance C++ wrapper for the minimap2 library, specifically engineered for the Pacific Biosciences ecosystem. It simplifies the alignment process by providing pre-defined "presets" that encapsulate recommended mapping parameters for different PacBio library types. Unlike generic aligners, pbmm2 natively handles PacBio-specific metadata, supports SMRT Analysis datasets (XML), and can generate sorted, indexed BAM files on-the-fly that are ready for downstream polishing tools like GenomicConsensus.
 
 ## Core Workflows
 
-### 1. Reference Indexing
-While optional, indexing is recommended if a reference will be used multiple times with the same preset. Note that parameters like k-mer size (`-k`) cannot be overridden during alignment if using a pre-built index.
-
+### 1. Indexing a Reference
+While pbmm2 can align directly to a FASTA file, creating a `.mmi` index is recommended for large genomes or repetitive use.
 ```bash
-pbmm2 index reference.fasta reference.mmi --preset [PRESET]
+pbmm2 index reference.fasta reference.mmi --preset <PRESET>
+```
+*Note: Indexing parameters like k-mer size (-k) cannot be overridden during the alignment step if using a pre-built index.*
+
+### 2. Standard Alignment
+Align reads and produce a BAM file. The tool automatically handles PacBio BAM tags.
+```bash
+pbmm2 align reference.mmi reads.subreads.bam output.bam --preset SUBREAD
 ```
 
-### 2. Basic Alignment
-Align reads using a reference (FASTA or MMI) and input (BAM, XML, FASTA, or FASTQ).
-
+### 3. Optimized HiFi/CCS Alignment with Sorting
+For HiFi data, use the `CCS` or `HIFI` preset and enable on-the-fly sorting to generate a BAI index automatically.
 ```bash
-pbmm2 align reference.fasta input.subreads.bam output.aligned.bam --preset SUBREAD
+pbmm2 align ref.fasta movie.ccs.bam out.aligned.bam --preset HIFI --sort -j 12 -J 4
 ```
 
-### 3. Optimized Sorting and Threading
-For most production workflows, use `--sort` to generate a coordinate-sorted BAM.
+## Command Line Patterns & Best Practices
 
-*   **Thread Allocation**: Use `-j` for alignment threads and `-J` for sort threads.
-*   **Memory**: Use `-m` to define memory per sort thread (e.g., `4G`).
-*   **Recommendation**: Use 4 to 8 sort threads to avoid disk I/O bottlenecks.
+### Preset Selection
+Choosing the correct `--preset` is critical for alignment quality:
+- `SUBREAD`: For standard continuous long reads (CLR).
+- `CCS` or `HIFI`: For highly accurate circular consensus reads (Default).
+- `ISOSEQ`: For full-length transcript data (cDNA).
+- `UNROLLED`: For specialized workflows requiring unrolled subreads.
 
-```bash
-pbmm2 align ref.fasta movie.subreads.bam out.bam --preset SUBREAD --sort -j 12 -J 4 -m 4G
-```
+### Performance Tuning
+- **Threading (-j):** Defines alignment threads. If not specified, pbmm2 uses all available cores minus those reserved for I/O and sorting.
+- **Sort Threads (-J):** When using `--sort`, dedicate specific threads to sorting. A common ratio is 1 sort thread per 3-4 alignment threads (max 8 sort threads).
+- **Memory (-m):** Use `-m 4G` to define memory per sort thread. Increasing this reduces disk I/O pressure during large-scale sorts.
 
-## Presets and Data Types
+### Input Flexibility
+- **FOFN (File Of File Names):** Process multiple movies by passing a `.fofn` file.
+- **FASTA/FASTQ:** When using non-BAM input, you must provide read group information:
+  ```bash
+  pbmm2 align ref.fa reads.fastq out.bam --rg '@RG\tID:movie1\tSM:sampleA'
+  ```
+- **Streaming:** Omit the output filename to stream BAM data to stdout for piping into samtools.
 
-Always select the preset that matches your input data:
+### Sorting and Indexing
+- Use `--sort` to generate a coordinate-sorted BAM.
+- By default, a `.bai` index is created. For very large genomes (e.g., some plants), use `--bam-index CSI`.
+- To skip index generation entirely, use `--bam-index NONE`.
 
-| Preset | Application |
-| :--- | :--- |
-| `SUBREAD` | Standard subreads (default for many PacBio workflows) |
-| `CCS` or `HIFI` | Highly accurate circular consensus sequences |
-| `ISOSEQ` | Full-length transcript data |
-| `UNROLLED` | Mapping of unrolled polymerase reads |
+## Expert Tips
+- **Homopolymer Compression:** The `-H` (homopolymer-compressed k-mer) setting is active by default for `SUBREAD` and `UNROLLED` presets. Disable it with `-u` if necessary for specific biological contexts.
+- **Polishing Compatibility:** If you intend to use the output for polishing with GenomicConsensus, you must use BAM input and ensure the `--sort` flag is used.
+- **Temporary Files:** Sorting creates temporary files in the current directory. Use the `TMPDIR` environment variable to redirect these to high-speed scratch space.
 
-## Expert Tips and CLI Patterns
 
-### Handling FASTA/FASTQ Input
-When using non-BAM input (FASTA/FASTQ), you must manually provide Read Group information using the `--rg` flag to ensure downstream compatibility.
 
-```bash
-pbmm2 align ref.fasta reads.fastq out.bam --preset HIFI --rg '@RG\tID:myid\tSM:mysample'
-```
+## Subcommands
 
-### Streaming Output
-To avoid large intermediate files or to pipe into other tools like `samtools`, omit the output filename to stream BAM to stdout.
-
-```bash
-pbmm2 align ref.mmi movie.subreads.bam --preset SUBREAD | samtools sort > sorted.bam
-```
-
-### Dataset XML Support
-If the input is a PacBio Dataset XML (e.g., `.subreadset.xml`), `pbmm2` can output an `.alignmentset.xml`. This automatically triggers the generation of a `.pbi` (PacBio Index) file.
-
-```bash
-pbmm2 align ref.fasta input.subreadset.xml output.alignmentset.xml --preset SUBREAD --sort
-```
-
-### Overriding Parameters
-If the presets are insufficient, you can manually tune the alignment:
-*   `-k`: k-mer size (max 28).
-*   `-u`: Disable homopolymer-compressed k-mer (active by default for `SUBREAD` and `UNROLLED`).
-*   `-A`, `-B`: Match score and mismatch penalty.
-*   `-o`, `-e`: Gap open and extension penalties.
+| Command | Description |
+|---------|-------------|
+| align | Align PacBio reads to reference sequences |
+| index | Index reference and store as .mmi file |
 
 ## Reference documentation
-- [PacificBiosciences/pbmm2 Main Documentation](./references/github_com_PacificBiosciences_pbmm2.md)
+- [github_com_PacificBiosciences_pbmm2_blob_develop_README.md](./references/github_com_PacificBiosciences_pbmm2_blob_develop_README.md)
+- [anaconda_org_channels_bioconda_packages_pbmm2_overview.md](./references/anaconda_org_channels_bioconda_packages_pbmm2_overview.md)

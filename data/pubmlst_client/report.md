@@ -66,3 +66,6 @@ optional arguments:
                         https://bigsdb.pasteur.fr/api/db
 ```
 
+
+## Metadata
+- **Skill**: generated

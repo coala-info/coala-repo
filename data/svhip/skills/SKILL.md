@@ -1,6 +1,6 @@
 ---
 name: svhip
-description: svhip is a machine learning pipeline designed to detect conserved RNA secondary structures within genomic alignments. Use when user asks to generate training features from sequences, train structural classifiers, slice alignments into overlapping windows, or predict functional non-coding RNAs.
+description: SVHIP identifies functional RNA elements in genomic data by analyzing secondary structure conservation and sequence features using machine learning. Use when user asks to generate training data from alignments, train classification models, slice alignments into windows, or predict functional RNA regions in genomic sequences.
 homepage: https://github.com/chrisBioInf/Svhip
 ---
 
@@ -8,51 +8,54 @@ homepage: https://github.com/chrisBioInf/Svhip
 # svhip
 
 ## Overview
-svhip is a machine learning pipeline designed to detect conserved RNA secondary structures across genomes. It is particularly useful for researchers looking to distinguish between functional non-coding RNAs and protein-coding regions within genomic alignments. The tool operates through a modular workflow: preparing training features from known sequences, training a classifier, preprocessing target alignments into overlapping windows, and finally performing classification.
+SVHIP (Secondary Structure Conservation-based High-throughput Identification Pipeline) is a specialized tool for identifying functional RNA elements within genomic data. It leverages machine learning to distinguish between coding, non-coding, and other genomic regions by analyzing multiple sequence alignments. The pipeline is modular, allowing users to either use pre-trained models or build custom classifiers tailored to specific organisms or genomic contexts.
 
 ## Core Workflows
 
-### 1. Generating Training Data (`data`)
-Use this task to create a feature set (TSV) from known coding and non-coding sequences.
-- **Requirement**: Requires Clustal Omega (`clustalo`) for alignment.
-- **Negative Sets**: By default, it uses SISSIz. If SISSIz is not installed, use `--shuffle-control` to fall back to column-based shuffling.
-- **Key Pattern**:
-  ```bash
-  python svhip.py data --coding ./coding_seqs/ --noncoding ./nc_seqs/ -o features.tsv -n 100 -l 120 -w 40
-  ```
-- **Tip**: Use `--max-id 0.95` to remove highly redundant sequences that might bias the model.
+### 1. Data Generation (`data`)
+Prepares the feature matrix required for training. It aligns input sequences using Clustal Omega and calculates structural features.
+- **Requirement**: Must provide either `--coding` or `--noncoding` directories containing FASTA files.
+- **Negative Control**: By default, it attempts to use SISSIz. Use `--shuffle-control` to fallback to simple column shuffling if SISSIz is unavailable.
+- **Example**: `python svhip.py data --coding ./cds --noncoding ./ncrna -o features.tsv -n 100 -l 120`
 
-### 2. Training the Model (`train`)
-Train a Random Forest (RF), Support Vector Machine (SVM), or Logistic Regression (LR) classifier.
-- **Optimization**: Always enable `--optimize-hyperparameters` for better performance, especially with SVMs.
-- **Strategy**: Use `--optimizer randomwalk` for a faster search than `gridsearch`.
-- **Key Pattern**:
-  ```bash
-  python svhip.py train -i features.tsv -o my_model -M RF --optimize-hyperparameters
-  ```
+### 2. Model Training (`train`)
+Trains a classifier based on the TSV generated in the data step.
+- **Model Types**: RF (Random Forest - default), SVM (Support Vector Machine), or LR (Logistic Regression).
+- **Optimization**: Use `--optimize-hyperparameters` with `--optimizer randomwalk` for a faster alternative to grid search.
+- **Example**: `python svhip.py train -i features.tsv -o my_model -M RF --optimize-hyperparameters`
 
-### 3. Preparing Alignments (`windows`)
-Before prediction, slice long alignments into manageable, overlapping windows.
-- **Identity Filtering**: Use `--min-id` and `--max-id` to ensure the windows contain enough sequence variation for structural signal detection without being too divergent to align reliably.
-- **Key Pattern**:
-  ```bash
-  python svhip.py windows -i input.aln -o windows.aln -l 120 -s 80 --opt-id 0.8 -n 6
-  ```
+### 3. Alignment Windowing (`windows`)
+Slices large alignments into smaller, overlapping windows suitable for prediction.
+- **Identity Filtering**: Use `--min-id` and `--max-id` to filter out windows with too little or too much sequence conservation.
+- **Example**: `python svhip.py windows -i genome_aln.clustal -o windows.aln -l 120 -s 80 --opt-id 0.8`
 
-### 4. Running Predictions (`predict`)
-Classify windows as coding, non-coding, or other.
-- **MAF Support**: If using `.maf` files, svhip preserves genomic coordinates.
-- **Strand Sensitivity**: The tool can scan both strands of the alignment.
-- **Key Pattern**:
-  ```bash
-  python svhip.py predict -i windows.aln -m my_model.pkl -H hexamer_models/Human_hexamer.tsv -o results.tsv
-  ```
+### 4. Prediction (`predict`)
+Applies a trained model to alignment windows to classify them.
+- **Genomic Coordinates**: Use MAF input and the `--bed` flag to generate a BED file with merged overlapping annotations.
+- **Strand Analysis**: Use `--both-strands` to ensure comprehensive scanning of the alignment.
+- **Example**: `python svhip.py predict -i query.maf -o results.tsv -M my_model.model -H hexamer_models/Human_hexamer.tsv --bed --both-strands`
 
 ## Expert Tips
-- **Thread Management**: svhip defaults to `CPU_COUNT - 1`. For high-throughput genomic scans, ensure your environment has sufficient memory as structural feature calculation is memory-intensive.
-- **Hexamer Models**: Use the `hexcalibrate` task to create species-specific hexamer frequency models if the provided human/model organism defaults are not taxonomically appropriate for your data.
-- **Structural Filtering**: If you are getting too many "other" (intergenic/random) hits, ensure `--no-structural-filter` is NOT set to True, as the statistical significance of the structure is a primary filter for functional RNA.
+- **Hexamer Models**: Always specify a relevant hexamer model via `-H`. If working with non-human data, use `hexcalibrate` to generate a species-specific model first.
+- **Structural Filtering**: By default, SVHIP filters windows by statistical significance of structure. If your data is expected to have weak structural signals, consider disabling this with `-S True`.
+- **Thread Management**: SVHIP defaults to `CPU_COUNT - 1`. For high-throughput genomic scans, ensure your environment has `viennarna` and `clustalo` in the PATH, as these are external dependencies called by the script.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| svhip.py | Calculates codon conservation scores for SVHIP analysis. |
+| svhip.py | Combine feature vectors from multiple files. |
+| svhip.py | Processes input data for svhip, potentially generating control datasets and optimizing alignments. |
+| svhip.py | Evaluate SVHIP models or make predictions. |
+| svhip.py | Calculate features for SVHIP. |
+| svhip.py | Options: |
+| svhip.py | Index SVHIP data |
+| svhip.py | Predicts structural variations using a trained model. |
+| svhip.py | svhip.py |
 
 ## Reference documentation
-- [svhip GitHub Repository](./references/github_com_chrisBioInf_svhip.md)
-- [Bioconda svhip Overview](./references/anaconda_org_channels_bioconda_packages_svhip_overview.md)
+- [SVHIP README](./references/github_com_chrisBioInf_svhip_blob_main_README.md)
+- [SVHIP Main Script](./references/github_com_chrisBioInf_svhip_blob_main_svhip.py.md)

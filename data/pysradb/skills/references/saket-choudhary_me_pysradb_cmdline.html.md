@@ -1,0 +1,407 @@
+Contents
+
+Menu
+
+Expand
+
+Light mode
+
+Dark mode
+
+Auto light/dark, in light mode
+
+Auto light/dark, in dark mode
+
+[ ]
+[ ]
+
+[Skip to content](#furo-main-content)
+
+[pysradb 3.0.0.dev0 documentation](index.html)
+
+[![Logo](_static/pysradb_v3.png)
+
+pysradb 3.0.0.dev0 documentation](index.html)
+
+* [Installation](installation.html)
+* [Quickstart](quickstart.html)
+* CLI
+* [Python API](python-api-usage.html)
+* [Case Studies](case_studies.html)
+* [Tutorials & Notebooks](notebooks.html)
+* [API Documentation](commands.html)
+* [Contributing](contributing.html)
+* [Credits](authors.html)
+* [History](history.html)
+* [pysradb](modules.html)[ ]
+
+Back to top
+
+[View this page](_sources/cmdline.md.txt "View this page")
+
+# CLI[¶](#cli "Link to this heading")
+
+```
+$ pysradb
+usage: pysradb [-h] [--version] [--citation]
+               {metadata,download,search,gse-to-gsm,gse-to-srp,gsm-to-gse,gsm-to-srp,gsm-to-srr,gsm-to-srs,gsm-to-srx,srp-to-gse,srp-to-srr,srp-to-srs,srp-to-srx,srr-to-gsm,srr-to-srp,srr-to-srs,srr-to-srx,srs-to-gsm,srs-to-srx,srx-to-srp,srx-to-srr,srx-to-srs,geo-matrix,srp-to-pmid,gse-to-pmid,pmid-to-gse,pmid-to-srp,pmc-to-identifiers,pmid-to-identifiers,doi-to-gse,doi-to-srp,doi-to-identifiers}
+               ...
+
+pysradb: Query NGS metadata and data from NCBI Sequence Read Archive.
+Citation: 10.12688/f1000research.18676.1
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  --citation            how to cite
+
+subcommands:
+  {metadata,download,search,gse-to-gsm,gse-to-srp,gsm-to-gse,gsm-to-srp,gsm-to-srr,gsm-to-srs,gsm-to-srx,srp-to-gse,srp-to-srr,srp-to-srs,srp-to-srx,srr-to-gsm,srr-to-srp,srr-to-srs,srr-to-srx,srs-to-gsm,srs-to-srx,srx-to-srp,srx-to-srr,srx-to-srs,geo-matrix,srp-to-pmid,gse-to-pmid,pmid-to-gse,pmid-to-srp,pmc-to-identifiers,pmid-to-identifiers,doi-to-gse,doi-to-srp,doi-to-identifiers}
+    metadata            Fetch metadata for SRA project (SRPnnnn)
+    download            Download SRA project (SRPnnnn)
+    search              Search SRA/ENA for matching text
+    gse-to-gsm          Get GSM for a GSE
+    gse-to-srp          Get SRP for a GSE
+    gsm-to-gse          Get GSE for a GSM
+    gsm-to-srp          Get SRP for a GSM
+    gsm-to-srr          Get SRR for a GSM
+    gsm-to-srs          Get SRS for a GSM
+    gsm-to-srx          Get SRX for a GSM
+    srp-to-gse          Get GSE for a SRP
+    srp-to-srr          Get SRR for a SRP
+    srp-to-srs          Get SRS for a SRP
+    srp-to-srx          Get SRX for a SRP
+    srr-to-gsm          Get GSM for a SRR
+    srr-to-srp          Get SRP for a SRR
+    srr-to-srs          Get SRS for a SRR
+    srr-to-srx          Get SRX for a SRR
+    srs-to-gsm          Get GSM for a SRS
+    srs-to-srx          Get SRX for a SRS
+    srx-to-srp          Get SRP for a SRX
+    srx-to-srr          Get SRR for a SRX
+    srx-to-srs          Get SRS for a SRX
+    geo-matrix          Download and parse GEO Matrix files
+    srp-to-pmid         Get PMIDs for SRP accessions
+    gse-to-pmid         Get PMIDs for GSE accessions
+    pmid-to-gse         Get GSE accessions from PMIDs
+    pmid-to-srp         Get SRP accessions from PMIDs
+    pmc-to-identifiers  Extract database identifiers from PMC articles
+    pmid-to-identifiers Extract database identifiers from PubMed articles
+    doi-to-gse          Get GSE accessions from DOIs
+    doi-to-srp          Get SRP accessions from DOIs
+    doi-to-identifiers  Extract database identifiers from articles via DOI
+```
+
+## Enriching metadata[¶](#enriching-metadata "Link to this heading")
+
+Extract standardized biological metadata from SRA/GEO datasets using LLMs.
+
+### Quickstart[¶](#quickstart "Link to this heading")
+
+```
+from pysradb import SRAweb
+
+client = SRAweb()
+
+df = client.metadata("GSE286254", detailed=True, enrich=True)
+
+# Returns original + 9 enriched columns (might not always be complete):
+# guessed_organ, guessed_tissue, guessed_anatomical_system,
+# guessed_cell_type, guessed_disease, guessed_sex,
+# guessed_development_stage, guessed_assay, guessed_organism
+```
+
+### Prerequisites[¶](#prerequisites "Link to this heading")
+
+Install Ollama: <https://ollama.ai>
+
+```
+ollama pull phi3
+```
+
+### Advanced Usage[¶](#advanced-usage "Link to this heading")
+
+```
+# Use different model
+df = client.metadata("GSE286254", detailed=True, enrich=True,
+                enrich_backend="ollama/llama3.2")
+
+# Manual enrichment with custom settings
+from pysradb.metadata_enrichment import create_metadata_extractor, load_ontology_reference
+
+# LLM-based extraction
+extractor_llm = create_metadata_extractor(method="llm", backend="ollama/phi3")
+df_enriched = extractor_llm.enrich_dataframe(df, prefix="guessed_")
+
+# Embedding-based extraction (faster, offline)
+ontology_ref = load_ontology_reference()
+extractor_emb = create_metadata_extractor(
+    method="embedding",
+    model="FremyCompany/BioLORD-2023",
+    reference_categories=ontology_ref
+)
+df_enriched = extractor_emb.enrich_dataframe(df, prefix="guessed_")
+```
+
+See [Notebook 09](https://github.com/saketkc/pysradb/blob/develop/notebooks/09.Metadata_Enrichment_with_LLMs.ipynb) for detailed examples.
+
+## Getting metadata for a SRA project (SRP)[¶](#getting-metadata-for-a-sra-project-srp "Link to this heading")
+
+The most basic information associated with any SRA project is its list
+of experiments and run accessions.
+
+```
+$ pysradb metadata SRP098789
+
+ study_accession experiment_accession sample_accession run_accession
+ SRP098789       SRX2536403           SRS1956353       SRR5227288
+ SRP098789       SRX2536404           SRS1956354       SRR5227289
+ SRP098789       SRX2536405           SRS1956355       SRR5227290
+ SRP098789       SRX2536406           SRS1956356       SRR5227291
+ SRP098789       SRX2536407           SRS1956357       SRR5227292
+ SRP098789       SRX2536408           SRS1956358       SRR5227293
+ SRP098789       SRX2536409           SRS1956359       SRR5227294
+```
+
+Listing SRX and SRRs for a SRP is often not useful. We might want to
+take a quick look at the metadata associated with the samples:
+
+```
+$ pysradb metadata SRP098789
+
+ study_accession experiment_accession sample_accession run_accession sample_attribute
+ SRP098789       SRX2536403           SRS1956353       SRR5227288    source_name: Huh7_1.5 Ã‚ÂµM PF-067446846_10 min_ribo-seq || cell line: Huh7 || treatment time: 10 min || library type: ribo-seq
+ SRP098789       SRX2536404           SRS1956354       SRR5227289    source_name: Huh7_1.5 Ã‚ÂµM PF-067446846_10 min_ribo-seq || cell line: Huh7 || treatment time: 10 min || library type: ribo-seq
+ SRP098789       SRX2536405           SRS1956355       SRR5227290    source_name: Huh7_1.5 Ã‚ÂµM PF-067446846_10 min_ribo-seq || cell line: Huh7 || treatment time: 10 min || library type: ribo-seq
+ SRP098789       SRX2536406           SRS1956356       SRR5227291    source_name: Huh7_0.3 Ã‚ÂµM PF-067446846_10 min_ribo-seq || cell line: Huh7 || treatment time: 10 min || library type: ribo-seq
+ SRP098789       SRX2536407           SRS1956357       SRR5227292    source_name: Huh7_0.3 Ã‚ÂµM PF-067446846_10 min_ribo-seq || cell line: Huh7 || treatment time: 10 min || library type: ribo-seq
+ SRP098789       SRX2536408           SRS1956358       SRR5227293    source_name: Huh7_0.3 Ã‚ÂµM PF-067446846_10 min_ribo-seq || cell line: Huh7 || treatment time: 10 min || library type: ribo-seq
+```
+
+The example here came from a Ribosome profiling study and consists of a
+collection of both Ribo-seq and RNA-seq samples. We can filter out only
+the RNA-seq samples:
+
+```
+$ pysradb metadata SRP098789 --detailed | grep 'study|RNA-Seq'
+
+SRP098789       SRX2536422           SRR5227307    RNA-Seq          SINGLE -
+SRP098789       SRX2536424           SRR5227309    RNA-Seq          SINGLE -
+SRP098789       SRX2536426           SRR5227311    RNA-Seq          SINGLE -
+SRP098789       SRX2536428           SRR5227313    RNA-Seq          SINGLE -
+```
+
+A more complicated example will consist of multiple assays. For example
+`SRP000941`:
+
+```
+$ pysradb metadata SRP000941 --detailed  | tr -s '  ' | cut -f5 -d ' ' | sort | uniq -c
+999 Bisulfite-Seq
+768 ChIP-Seq
+  1 library_strategy
+121 OTHER
+353 RNA-Seq
+ 28 WGS
+```
+
+## Enriching metadata[¶](#id1 "Link to this heading")
+
+You can enrich metadata with standardized biological attributes using biomedical-specialized LLMs through the `--enrich` flag:
+
+### Basic enrichment (using default backend)[¶](#basic-enrichment-using-default-backend "Link to this heading")
+
+```
+$ pysradb metadata GSE286254 --detailed --enrich
+```
+
+The default uses **Meditron** (7B parameters, trained on medical literature and guidelines), which is optimized for biomedical text understanding.
+
+This returns the original metadata plus 9 enriched columns:
+
+* `guessed_organ`
+* `guessed_tissue`
+* `guessed_anatomical_system`
+* `guessed_cell_type`
+* `guessed_disease`
+* `guessed_sex`
+* `guessed_development_stage`
+* `guessed_assay`
+* `guessed_organism`
+
+### Using alternative biomedical backends[¶](#using-alternative-biomedical-backends "Link to this heading")
+
+```
+$ pysradb metadata GSE286254 --detailed --enrich --enrich-backend ollama/openbiollm-8b
+```
+
+Available biomedical backends:
+
+* `ollama/meditron` (default, 7B - optimized for medical text)
+* `ollama/openbiollm-8b` (8B - trained on 500k+ biomedical entries, superior biomedical performance)
+
+Both models are specialized for biomedical and clinical text understanding, making them ideal for SRA metadata enrichment.
+
+For more details on enrichment features and prerequisites, see the [Enriching metadata](#enriching-metadata) section above.
+
+## Experiment accessions for a project (SRP => SRX)[¶](#experiment-accessions-for-a-project-srp-srx "Link to this heading")
+
+A frequently encountered task involves getting all the experiments (SRX)
+for a particular study accession (SRP). Consider project `SRP048759`:
+
+```
+$ pysradb srp-to-srx SRP048759
+```
+
+## Sample accessions for a project (SRP => SRS)[¶](#sample-accessions-for-a-project-srp-srs "Link to this heading")
+
+Each experiment involves one or multiple biological samples (SRS), that
+are put through different experiments (SRX).
+
+```
+$ pysradb srp-to-srs --detailed SRP048759
+
+study_accession sample_accession
+SRP048759       SRS718878
+SRP048759       SRS718879
+SRP048759       SRS718880
+SRP048759       SRS718881
+SRP048759       SRS718882
+SRP048759       SRS718883
+SRP048759       SRS718884
+SRP048759       SRS718885
+SRP048759       SRS718886
+```
+
+This is very limited information. It can again be detailed out using the
+[–detailed]{.title-ref} flag:
+
+```
+$ pysradb srp-to-srs --detailed SRP048759
+
+study_accession sample_accession        experiment_accession    run_accession   study_alias     sample_alias    experiment_alias        run_alias
+SRP048759       SRS718878       SRX729552       SRR1608490      GSE62190        GSM1521543      GSM1521543      GSM1521543_r1
+SRP048759       SRS718878       SRX729552       SRR1608491      GSE62190        GSM1521543      GSM1521543      GSM1521543_r2
+SRP048759       SRS718878       SRX729552       SRR1608492      GSE62190        GSM1521543      GSM1521543      GSM1521543_r3
+SRP048759       SRS718878       SRX729552       SRR1608493      GSE62190        GSM1521543      GSM1521543      GSM1521543_r4
+SRP048759       SRS718879       SRX729553       SRR1608494      GSE62190        GSM1521544      GSM1521544      GSM1521544_r1
+SRP048759       SRS718879       SRX729553       SRR1608495      GSE62190        GSM1521544      GSM1521544      GSM1521544_r2
+```
+
+## Run accessions for experiments (SRX => SRR)[¶](#run-accessions-for-experiments-srx-srr "Link to this heading")
+
+Another frequently encountered task involves fetching the run accessions
+(SRR) for a particular experiment (SRX). Consider experiments
+[SRX217956]{.title-ref} and [SRX2536403]{.title-ref}. We want to be able
+to resolve the run accessions for these experiments:
+
+```
+$ pysradb srx-to-srr SRX217956  SRX2536403 --detailed
+
+experiment_accession run_accession study_accession sample_attribute
+SRX217956            SRR649752     SRP017942       source_name: 3T3 cells || treatment: control || cell line: 3T3 cells || assay type: Riboseq
+SRX2536403           SRR5227288    SRP098789       source_name: Huh7_1.5 Ã‚ÂµM PF-067446846_10 min_ribo-seq || cell line: Huh7 || treatment time: 10 min || library type: ribo-seq
+```
+
+## Experiment accessions for runs (SRR => SRX)[¶](#experiment-accessions-for-runs-srr-srx "Link to this heading")
+
+For fetching experiment accessions (SRX) for one or multiple run
+accessions (SRR):
+
+```
+$ pysradb srr-to-srx SRR5227288 SRR649752 --detailed
+run_accession study_accession experiment_accession sample_attribute
+SRR649752     SRP017942       SRX217956            source_name: 3T3 cells || treatment: control || cell line: 3T3 cells || assay type: Riboseq
+SRR5227288    SRP098789       SRX2536403           source_name: Huh7_1.5 Ã‚ÂµM PF-067446846_10 min_ribo-seq || cell line: Huh7 || treatment time: 10 min || library type: ribo-seq
+```
+
+## Downaloading entire project[¶](#downaloading-entire-project "Link to this heading")
+
+```
+$ pysradb metadata --detailed SRP098789 | pysradb download
+```
+
+## GEO accessions for studies (SRP => GSE)[¶](#geo-accessions-for-studies-srp-gse "Link to this heading")
+
+```
+$ pysradb srp-to-gse SRP090415
+
+study_accession study_alias
+SRP090415       GSE87328
+```
+
+But not all SRPs will have an associated GEO id (GSE):
+
+```
+$ pysradb srp-to-gse SRP029589
+
+study_accession study_alias
+SRP029589       PRJNA218051
+```
+
+## Converting GSM to SRP[¶](#converting-gsm-to-srp "Link to this heading")
+
+```
+$ pysradb gsm-to-srp GSM2177186
+
+experiment_alias study_accession
+GSM2177186       SRP075720
+```
+
+## Converting GSM to GSE[¶](#converting-gsm-to-gse "Link to this heading")
+
+```
+$ pysradb gsm-to-gse GSM2177186
+
+experiment_alias study_alias
+GSM2177186       GSE81903
+```
+
+## Converting GSM to SRX[¶](#converting-gsm-to-srx "Link to this heading")
+
+```
+$ pysradb gsm-to-srx GSM2177186
+
+experiment_alias experiment_accession
+GSM2177186       SRX1800089
+```
+
+## Converting GSM to SRR[¶](#converting-gsm-to-srr "Link to this heading")
+
+```
+$ pysradb gsm-to-srr GSM2177186
+
+experiment_alias run_accession
+GSM2177186       SRR3587529
+```
+
+## SRA accessions for GEO studies (GSE => SRP)[¶](#sra-accessions-for-geo-studies-gse-srp "Link to this heading")
+
+```
+$ pysradb gse-to-srp GSE87328i
+
+study_alias study_accession
+GSE87328    SRP090415
+```
+
+## Converting SRP to PMID[¶](#converting-srp-to-pmid "Link to this heading")
+
+```
+$ pysradb srp-to-pmid SRP045778
+
+srp_accession bioproject pmid
+SRP045778     PRJNA257197 27373336
+```
+
+## Converting GSE to PMID[¶](#converting-gse-to-pmid "Link to this heading")
+
+```
+$ pysradb gse-to-pmid GSE253406
+
+gse_accession pmid
+GSE253406     39528918
+```
+
+## Extracting identifiers from PMC/DOI[¶](#extracting-identifiers-from-pmc-doi "Link to this heading")
+
+Extract database identifiers (GSE, PRJNA, SRP, etc.) from PubMed Central articles or DOIs.
+

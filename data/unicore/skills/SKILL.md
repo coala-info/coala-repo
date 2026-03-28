@@ -1,6 +1,6 @@
 ---
 name: unicore
-description: Unicore is a phylogenetic tool that reconstructs evolutionary relationships by identifying structural core genes. Use when user asks to build a phylogenetic tree, identify core genes, create a structural protein database, cluster protein sequences, or generate structure-aware alignments.
+description: Unicore performs high-throughput phylogenetic inference by utilizing protein structural information and 3Di alphabets to reconstruct evolutionary relationships. Use when user asks to infer phylogenetic trees from protein structures, identify structural core genes across taxa, or convert amino acid sequences into structural databases.
 homepage: https://github.com/steineggerlab/unicore
 ---
 
@@ -8,80 +8,70 @@ homepage: https://github.com/steineggerlab/unicore
 # unicore
 
 ## Overview
+Unicore is a specialized tool for high-throughput phylogenetic inference that utilizes protein structural information rather than just primary sequences. By converting amino acid sequences into 3Di structural alphabets using ProstT5 and Foldseek, it identifies "structural core genes" shared across taxa to reconstruct evolutionary relationships. This approach is particularly effective for divergent species where sequence identity is low but structural architecture remains conserved.
 
-Unicore is a specialized phylogenetic tool that reconstructs evolutionary relationships by identifying "structural core genes." It moves beyond traditional sequence-based methods by using the ProstT5 protein language model to predict structural features (3Di structural alphabets) and Foldseek for efficient clustering. This approach is particularly robust for divergent species where primary sequences have drifted significantly but protein structures remain conserved. The tool provides both an automated end-to-end workflow and modular components for fine-grained control over database creation, clustering, and tree inference.
-
-## Installation and Setup
-
-Install via Bioconda:
-```bash
-conda install -c bioconda unicore
-```
-
-Before running the workflow, you must download the ProstT5 weights required for structural prediction:
-```bash
-foldseek databases ProstT5 weights_dir tmp_dir
-```
-
-## Core Workflows
-
-### The Automated Pipeline
-The `easy-core` module handles the entire process from raw proteomes to a final Newick tree.
+## Core Workflow: easy-core
+The `easy-core` module is the recommended entry point. It automates the entire pipeline from raw FASTA files to a final Newick tree.
 
 ```bash
-unicore easy-core <INPUT_DIR> <OUTPUT_DIR> <WEIGHTS_PATH> <TMP_DIR>
-```
-*   **Input**: A directory containing proteome files in `.fasta` format.
-*   **Output**: Includes the final tree (`tree/iqtree.treefile`), clusters, and identified core genes.
+# Basic usage
+unicore easy-core <INPUT_DIR> <OUTPUT_DIR> <PROSTT5_WEIGHTS> <TMP_DIR>
 
-### GPU Acceleration
-Structural prediction with ProstT5 is computationally intensive. Use the `--gpu` flag to significantly speed up the `easy-core` or `createdb` modules.
-
-```bash
-unicore easy-core --gpu data/ results/ weights/ tmp/
-```
-To specify specific GPUs, use the environment variable:
-```bash
-CUDA_VISIBLE_DEVICES=0,1 unicore easy-core --gpu data/ results/ weights/ tmp/
+# With GPU acceleration (highly recommended for ProstT5)
+unicore easy-core --gpu <INPUT_DIR> <OUTPUT_DIR> <PROSTT5_WEIGHTS> <TMP_DIR>
 ```
 
-## Modular Usage and Best Practices
+### Input Requirements
+- **Format**: Proteomes must be in `.fasta` format.
+- **Structure**: Place all proteome files (e.g., `Species1.fasta`, `Species2.fasta`) into a single input directory.
 
-### 1. Database Creation (`createdb`)
-Converts amino acid sequences into 3Di structural alphabets.
-```bash
-unicore createdb <DATA_DIR> <DB_PATH> <WEIGHTS_PATH>
-```
+## Modular Operations
+For fine-grained control, Unicore can be run in discrete steps:
 
-### 2. Clustering (`cluster`)
-Groups sequences into families. By default, it uses 80% bidirectional coverage.
-*   **Customizing Sensitivity**: Use `--cluster-options` to pass specific parameters to the underlying Foldseek engine.
-```bash
-unicore cluster <DB_PATH> <OUT_DIR> <TMP_DIR> --cluster-options "-c 0.9 --min-seq-id 0.3"
-```
+1. **createdb**: Generates the 3Di structural alphabet database.
+   ```bash
+   unicore createdb <INPUT_DIR> <DB_PATH> <PROSTT5_WEIGHTS>
+   ```
+2. **cluster**: Performs Foldseek clustering on the database.
+   ```bash
+   unicore cluster <DB_PATH> <CLUSTER_OUT> <TMP_DIR>
+   ```
+   *Tip: Use `--cluster-options "-c 0.8"` to adjust bidirectional coverage (default is 0.8).*
+3. **profile**: Identifies core genes based on taxonomic presence.
+   ```bash
+   unicore profile <DB_PATH> <CLUSTER_OUT> -t 0.8
+   ```
+   *Tip: The `-t` flag sets the threshold for genes present in a percentage of species (default 0.8).*
+4. **tree**: Infers the phylogenetic tree from identified core genes.
+   ```bash
+   unicore tree <PROFILE_DIR> <TREE_OUT>
+   ```
 
-### 3. Core Gene Identification (`profile`)
-Defines which clusters are "core" based on their prevalence across the input taxa.
-*   **Thresholding**: Use `-t` to set the percentage of species a gene must be present in to be considered "core" (default is 80%).
-```bash
-unicore profile -t 90 <DB_PATH> <CLUSTER_TSV> <RESULT_DIR>
-```
+## Expert Tips and Best Practices
+- **GPU Acceleration**: ProstT5 prediction is computationally intensive. Always use the `--gpu` flag if an NVIDIA GPU (Turing or newer) is available.
+- **Weight Management**: Download ProstT5 weights once before running workflows to save time:
+  `foldseek databases ProstT5 weights tmp`
+- **Resource Allocation**: For multi-GPU systems, use the environment variable `CUDA_VISIBLE_DEVICES=0,1` to specify which cards Unicore should utilize.
+- **Output Interpretation**:
+  - `tree/iqtree.treefile`: The final concatenated structural core gene tree in Newick format.
+  - `tree/fasta/`: Contains subfolders for each core gene with both amino acid (`aa.fasta`) and 3Di (`3di.fasta`) representations.
+- **Handling Large Datasets**: If the number of taxa is very high, consider increasing the `-t` threshold in the `profile` module to focus on a more strictly conserved set of core genes, which can speed up the `tree` inference stage.
 
-### 4. Tree Inference (`tree`)
-Generates alignments and builds the phylogeny.
-*   **Alignment**: Uses `foldmason` for structure-aware alignment.
-*   **Inference**: Uses `iqtree` by default.
-*   **Alignment Only**: If you want the core gene alignments but wish to use a different tree builder manually, use the `--no-inference` flag.
-```bash
-unicore tree --no-inference <DB_PATH> <PROFILE_RESULT> <TREE_DIR>
-```
 
-## Expert Tips
 
-*   **Memory Management**: For very large datasets, ensure the `<TMP_DIR>` is located on a fast disk (SSD) with ample space, as Foldseek generates significant intermediate data.
-*   **Input Formatting**: Ensure proteome files are named clearly, as these filenames are used as the leaf labels in the resulting Newick tree.
-*   **Low Core Gene Warnings**: If a species has a low core gene recovery rate, it may be due to poor assembly quality or extreme divergence. Check the `profile/` output to identify if specific taxa are outliers before finalizing the tree.
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| cluster | Cluster Foldseek database |
+| profile | Create core structures from Foldseek database |
+| tree | Infer phylogenetic tree from core structures |
+| unicore createdb | Create Foldseek database from amino acid sequences |
+| unicore easy-core | Easy core gene phylogeny workflow, from fasta files to phylogenetic tree |
+| unicore gene-tree | Infer phylogenetic tree of each core structures |
+| unicore_config | Runtime environment configuration |
+| unicore_search | Search Foldseek database against reference database |
 
 ## Reference documentation
 - [Unicore GitHub Repository](./references/github_com_steineggerlab_unicore.md)
-- [Unicore Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_unicore_overview.md)
+- [Unicore README](./references/github_com_steineggerlab_unicore_blob_main_README.md)

@@ -1,6 +1,6 @@
 ---
 name: snakesee
-description: snakesee is a passive monitoring tool that provides a real-time dashboard and time estimation for Snakemake workflows. Use when user asks to monitor workflow progress, check job status, estimate completion time, or manage timing profiles.
+description: snakesee is a passive monitoring tool and terminal dashboard that tracks Snakemake workflow progress by reading local metadata. Use when user asks to monitor Snakemake workflows in real-time, view execution status snapshots, or estimate completion times using historical data.
 homepage: https://github.com/nh13/snakesee
 ---
 
@@ -8,47 +8,56 @@ homepage: https://github.com/nh13/snakesee
 # snakesee
 
 ## Overview
-`snakesee` is a passive monitoring tool that provides a rich dashboard for Snakemake workflows. It functions by reading metadata directly from the `.snakemake/` directory, meaning it requires no special flags or configuration during the actual workflow execution. It is particularly useful for long-running bioinformatics pipelines where real-time progress tracking and time estimation are critical.
+
+snakesee is a passive monitoring tool and terminal dashboard for Snakemake workflows. Unlike active monitors that require specific logger plugins or server configurations, snakesee functions by directly reading the `.snakemake/` directory and its associated metadata. This allows for zero-configuration monitoring of any existing workflow, providing real-time progress tracking, historical execution browsing, and data-driven time estimation.
 
 ## Core Commands
 
 ### Real-Time Monitoring
-The primary mode of operation is the live dashboard.
-- **Watch current directory**: `snakesee watch`
-- **Watch specific path**: `snakesee watch /path/to/workflow`
-- **Adjust refresh rate**: `snakesee watch --refresh 5.0` (Default is 2.0s)
+The primary way to use snakesee is the `watch` command, which opens the interactive TUI.
+- `snakesee watch`: Monitor the workflow in the current directory.
+- `snakesee watch /path/to/workflow`: Monitor a workflow at a specific location.
+- `snakesee watch --refresh 5.0`: Adjust the TUI refresh interval (default is 2.0 seconds).
 
-### Status Snapshots
-For a quick one-time summary of the workflow state without entering the TUI:
-- **Check status**: `snakesee status`
-- **Disable ETA**: `snakesee status --no-estimate` (Useful if historical data is irrelevant or missing)
+### Static Status Snapshots
+For a quick summary without entering the interactive TUI, use the `status` command.
+- `snakesee status`: Print a one-time snapshot of the current workflow progress to the terminal.
+- `snakesee status --no-estimate`: View status without calculating the estimated time of arrival (ETA).
 
-## Advanced Usage and Optimization
+## Interactive TUI Features
 
-### Time Estimation Strategies
-`snakesee` uses historical data in `.snakemake/metadata/` to predict remaining time. You can tune this behavior based on your environment:
-- **Index-Based (Default)**: Best for active development. Weights the most recent runs higher.
-  `snakesee watch --weighting-strategy index --half-life-logs 10`
-- **Time-Based**: Best for stable production pipelines. Weights runs based on wall-clock age.
-  `snakesee watch --weighting-strategy time --half-life-days 7`
-- **Wildcard Conditioning**: Use when different inputs (e.g., different sample sizes) have vastly different runtimes.
-  `snakesee watch --wildcard-timing` (or press `w` in the TUI)
+When using `snakesee watch`, the interface supports several navigation and display modes:
+- **Vim-style Controls**: Use standard movement keys for navigating job lists and historical records.
+- **Layout Modes**: Toggle between Full, Compact, and Minimal display modes to suit your terminal size and information density needs.
+- **Historical Browsing**: Navigate through past workflow executions stored in the Snakemake metadata to compare performance or check previous failure points.
 
-### Portable Timing Profiles
-You can share timing data across different machines or environments to "seed" the estimator for new runs.
-- **Export data**: `snakesee profile-export --output timing.json`
-- **Import/Use profile**: `snakesee watch --profile timing.json`
-- **Show profile contents**: `snakesee profile-show .snakesee-profile.json`
+## Time Estimation Logic
 
-## TUI Navigation and Shortcuts
-- **Vim-style keys**: Use `j`/`k` for navigation and `g`/`G` for top/bottom.
-- **Filtering**: Use `/` to filter jobs or rules.
-- **Layouts**: Toggle between Full, Compact, and Minimal modes to fit your terminal size.
-- **Wildcards**: Press `w` to toggle wildcard-specific timing.
+snakesee provides ETAs by analyzing historical execution data found in `.snakemake/metadata/`. It employs three primary strategies:
+1. **Weighted**: Used when significant historical data exists for specific rules (High confidence).
+2. **Simple**: Used when no history exists but some jobs in the current run have completed (Medium confidence).
+3. **Bootstrap**: Used at the very start of a workflow with no prior data (Low confidence).
 
-## Custom Progress Plugins
-If using specific tools (like BWA, STAR, or samtools), `snakesee` can parse their logs for internal job progress. You can add custom parsers by placing Python scripts in `~/.config/snakesee/plugins/`. A plugin must inherit from `ToolProgressPlugin` and implement `can_parse` and `parse_progress` methods.
+To disable this feature if it is producing inaccurate results due to highly variable job environments, use the `--no-estimate` flag.
+
+## Best Practices
+
+- **Passive Integration**: Always prefer snakesee when you cannot or do not want to modify the `snakemake` execution command, as it requires no `--logger` or `--wms-monitor` flags.
+- **Resource Management**: In environments with slow file systems (like some network-attached storage), increase the `--refresh` interval to reduce I/O overhead.
+- **Troubleshooting**: Use the `status` command in shell scripts or cron jobs to log workflow progress to a file without the overhead of a TUI.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| snakesee profile-export | Export timing profile from workflow metadata. |
+| snakesee profile-show | Display contents of a timing profile. |
+| snakesee status | Show a one-time status snapshot (non-interactive). |
+| snakesee watch | Watch a Snakemake workflow in real-time with a TUI dashboard. |
 
 ## Reference documentation
-- [GitHub Repository Overview](./references/github_com_nh13_snakesee.md)
-- [Bioconda Package Details](./references/anaconda_org_channels_bioconda_packages_snakesee_overview.md)
+- [snakesee README](./references/github_com_nh13_snakesee_blob_main_README.md)
+- [snakesee Usage Guide](./references/snakesee_readthedocs_io_en_latest_usage.html.md)
+- [snakesee CLI Reference](./references/snakesee_readthedocs_io_en_latest_reference_snakesee_cli.html.md)

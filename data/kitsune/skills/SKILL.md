@@ -1,6 +1,6 @@
 ---
 name: kitsune
-description: Kitsune identifies the optimal k-mer length for alignment-free genomic analysis and calculates distance matrices for phylogenomics. Use when user asks to determine the most informative k-mer size, calculate cumulative relative entropy, or generate distance matrices using various metrics.
+description: KITSUNE selects optimal k-mer lengths for alignment-free genomic analysis by evaluating information content and feature distribution. Use when user asks to find the optimal k-mer size, calculate k-mer entropy or common features, and generate distance matrices for phylogenomic trees.
 homepage: https://github.com/natapol/kitsune
 ---
 
@@ -8,42 +8,71 @@ homepage: https://github.com/natapol/kitsune
 # kitsune
 
 ## Overview
-Kitsune (K-mer-length Iterative Selection for UNbiased Ecophylogenomics) is a specialized toolkit designed to solve the "k-mer selection problem" in alignment-free genomics. Instead of choosing a k-mer length arbitrarily, Kitsune provides a systematic framework to calculate Cumulative Relative Entropy (CRE), Average number of Common Features (ACF), and Observed Common Features (OCF) to identify the most informative k-mer size for a specific dataset. It also supports the generation of distance matrices using over 20 different metrics, including MASH and Jensen-Shannon distances, which are essential for building phylogenetic trees or identifying species.
 
-## Core Workflow
+KITSUNE (K-mer-length Iterative Selection for UNbiased Ecophylogenomics) provides a systematic framework for selecting k-mer lengths that capture the most relevant biological information for a given set of sequences. Instead of using arbitrary k-mer sizes, KITSUNE evaluates Cumulative Relative Entropy (CRE), Average number of Common Features (ACF), and Observed Common Features (OCF) to find an empirical optimum. This ensures that subsequent alignment-free analyses, such as distance estimation and tree building, are based on high-quality information content.
 
-### 1. Determining Optimal K-mer Length
-The primary use case is finding the "sweet spot" for k-mer length where information content is maximized without excessive noise.
+## Installation Requirements
 
-*   **Calculate CRE (Cumulative Relative Entropy):** Identifies the k-mer length where the distribution of k-mers stabilizes.
-    `kitsune cre --filename genome.fna -kf 4 -ke 15 -o cre_results.txt`
-*   **Calculate ACF (Average Common Features):** Measures how many k-mers are shared between genomes.
-    `kitsune acf --filenames genome1.fna genome2.fna -k 5 7 9 11 -o acf_results.txt`
-*   **Calculate OFC (Observed Feature Frequencies):**
-    `kitsune ofc --filenames genome_folder/*.fna -k 11 -o ofc_results.txt`
-*   **Automated Optimization:** Use the `kopt` command to get a recommended k-mer choice within a range based on the three metrics.
-    `kitsune kopt --filenames genomes/*.fna -kf 4 -ke 20`
+KITSUNE requires **Jellyfish** to be installed and available in your PATH for k-mer counting.
+- **Python**: >= 3.5
+- **Dependencies**: scipy, numpy, tqdm
 
-### 2. Generating Distance Matrices
-Once the optimal k-mer length is determined, generate a distance matrix for downstream analysis.
+## Core Commands and Workflows
 
-`kitsune dmatrix --filenames genomes/*.fna -k 11 -d mash -o distance_matrix.txt`
+### 1. Finding the Optimal K-mer Length
+The `kopt` command is the primary entry point for the three-step optimization process. It evaluates a range of k-mer lengths to suggest the best choice.
 
-**Commonly Used Distance Metrics:**
-- `mash`, `jsmash` (MASH-based)
-- `jaccard`, `jaccarddistp`
-- `euclidean`, `euclidean_of_frequency`
-- `braycurtis`, `canberra`, `cosine`
+```bash
+kitsune kopt --filenames genome1.fna genome2.fna -kf 5 -ke 15 -t 4 -o optimal_k.txt
+```
 
-## Expert Tips & Best Practices
+### 2. Calculating Individual Metrics
+If you need to inspect specific properties of the k-mer distribution:
 
-*   **Performance:** Always use the `--fast` flag to enable Jellyfish one-pass calculation. This significantly reduces processing time, especially for large eukaryotic genomes.
-*   **Strand Sensitivity:** Use the `--canonical` flag when working with double-stranded DNA. This ensures k-mers and their reverse complements are counted together as a single feature.
-*   **Parallelization:** Utilize the `-t` (threads) parameter to speed up k-mer counting and matrix calculations on multi-core systems.
-*   **Input Handling:** For commands accepting multiple files (`dmatrix`, `acf`, `ofc`), you can use shell wildcards (e.g., `data/*.fna`) to process entire directories at once.
-*   **Distance Transformation:** Use the `--transformed` flag with `dmatrix` to apply distance transformations proposed by Fan et al., which can improve the biological relevance of the resulting phylogenetic relationships.
-*   **External Dependency:** Ensure `Jellyfish` is installed and available in the system PATH, as Kitsune relies on it for the underlying k-mer counting operations.
+*   **CRE (Cumulative Relative Entropy):** Measures the information gain as k-mer length increases.
+    ```bash
+    kitsune cre --filename genome.fna -kf 4 -ke 20 --fast
+    ```
+*   **ACF (Average number of Common Features):** Calculates how many k-mers are shared between a reference and other genomes.
+    ```bash
+    kitsune acf --filenames g1.fna g2.fna g3.fna -k 11 13 15
+    ```
+*   **OFC (Observed Feature Frequencies):** Computes the frequency of k-mers across the dataset.
+    ```bash
+    kitsune ofc --filenames genome_dir/*.fasta -k 13
+    ```
+
+### 3. Generating Distance Matrices
+Once an optimal $k$ is determined, use `dmatrix` to generate a distance matrix for phylogenomic analysis.
+
+```bash
+kitsune dmatrix --filenames *.fna -k 13 -m jensenshannon -o distance_matrix.txt
+```
+
+**Common Distance Methods (`-m`):**
+- `jensenshannon`: Jensen-Shannon distance (standard for frequency vectors).
+- `mash`: MASH distance estimation.
+- `braycurtis`: Bray-Curtis dissimilarity.
+- `euclidean`: Standard Euclidean distance.
+- `jaccard`: Jaccard-Needham dissimilarity.
+
+## Expert Tips and Best Practices
+
+*   **Performance Optimization:** Always use the `--fast` flag to enable Jellyfish one-pass calculation, which significantly reduces processing time for large datasets.
+*   **Strand Sensitivity:** Use the `--canonical` flag when working with double-stranded DNA to ensure that k-mers and their reverse complements are treated as the same feature.
+*   **Parallelization:** Use the `-t` (threads) argument to speed up k-mer counting and matrix calculations, especially when processing many genomes.
+*   **K-mer Range:** When using `cre`, start from a low value (e.g., `-kf 4`) and end at a value where the entropy begins to plateau. For most bacterial genomes, an end value (`-ke`) between 15 and 25 is sufficient.
+*   **Memory Management:** For very large datasets or high $k$ values, ensure your system has enough RAM, as k-mer frequency vectors can become sparse and large.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| kitsune dmatrix | Create a dmatrix for XGBoost |
+| kopt | Kopt is a tool for optimizing K-mer counts. |
 
 ## Reference documentation
-- [Kitsune GitHub Repository](./references/github_com_natapol_kitsune.md)
-- [Bioconda Kitsune Package](./references/anaconda_org_channels_bioconda_packages_kitsune_overview.md)
+- [KITSUNE GitHub Repository](./references/github_com_natapol_kitsune.md)
+- [KITSUNE README](./references/github_com_natapol_kitsune_blob_master_README.md)

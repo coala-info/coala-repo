@@ -1,1 +1,398 @@
-Stargazers · czc/nb_distribution · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} czc / nb_distribution Public Notifications You must be signed in to change notification settings Fork 6 Star 25 Code Issues 3 Pull requests 0 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights Stargazers All 25 You know mhanbioinfo Joined on Jan 25, 2022 Follow wongwsw Joined on Sep 17, 2016 Follow edceeyuchen Joined on Sep 22, 2022 Follow yuweibao15 Works for Tulane University Tulane University Follow suyanan Is from Beijing Beijing Follow ZhangQiuxue Joined on Jul 12, 2012 Follow venyao Works for Henan Agricultural University Henan Agricultural University Follow JiantaoShi Works for Shanghai Institute of Biochemistry and Cell Biology Shanghai Institute of Biochemistry and Cell Biology Follow FlyPythons Joined on Apr 15, 2017 Follow wt12318 Works for ShanghaiTech Unviersity ShanghaiTech Unviersity Follow ThymeLy Joined on Apr 13, 2018 Follow xiongxu Joined on Feb 8, 2013 Follow GangyuSun Works for shanghaitech shanghaitech Follow davidroberson Works for @promptable-inc @promptable-inc Follow mfoll Works for International Agency for Research on Cancer International Agency for Research on Cancer Follow evanbiederstedt Joined on Mar 16, 2014 Follow kcleal Works for Cardiff University Cardiff University Follow xyw1 Works for Southeast University Southeast University Follow ShixiangWang Works for Central South University Central South University Follow baozg Works for Max Planck Institue for Biology Tübingen Max Planck Institue for Biology Tübingen Follow yanlinlin82 Works for Bioinformatics Assistance Tech Co Ltd Bioinformatics Assistance Tech Co Ltd Follow wwping2018 Joined on Jun 4, 2018 Follow songofbin Works for BGI Research BGI Research Follow kwuiee Is from Tianjin Tianjin Follow Previous Next Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fczc%2Fnb_distribution%2Fstargazers)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fczc%2Fnb_distribution%2Fstargazers)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Frepositories%2Fstargazers&source=header-repo&source_repo=czc%2Fnb_distribution)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[czc](/czc)
+/
+**[nb\_distribution](/czc/nb_distribution)**
+Public
+
+* [Notifications](/login?return_to=%2Fczc%2Fnb_distribution) You must be signed in to change notification settings
+* [Fork
+  6](/login?return_to=%2Fczc%2Fnb_distribution)
+* [Star
+   25](/login?return_to=%2Fczc%2Fnb_distribution)
+
+* [Code](/czc/nb_distribution)
+* [Issues
+  3](/czc/nb_distribution/issues)
+* [Pull requests
+  0](/czc/nb_distribution/pulls)
+* [Actions](/czc/nb_distribution/actions)
+* [Projects](/czc/nb_distribution/projects)
+* [Security
+  0](/czc/nb_distribution/security)
+* [Insights](/czc/nb_distribution/pulse)
+
+Additional navigation options
+
+* [Code](/czc/nb_distribution)
+* [Issues](/czc/nb_distribution/issues)
+* [Pull requests](/czc/nb_distribution/pulls)
+* [Actions](/czc/nb_distribution/actions)
+* [Projects](/czc/nb_distribution/projects)
+* [Security](/czc/nb_distribution/security)
+* [Insights](/czc/nb_distribution/pulse)
+
+# Stargazers
+
+[All 25](/czc/nb_distribution/stargazers) [You know](/czc/nb_distribution/stargazers/you_know)
+
+1. [![@mhanbioinfo](https://avatars.githubusercontent.com/u/98410560?s=96&v=4)](/mhanbioinfo)
+
+   ## [mhanbioinfo](/mhanbioinfo)
+
+   Joined on Jan 25, 2022
+
+   [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fczc%2Fnb_distribution%2Fstargazers)
+2. [![@wongwsw](https://avatars.githubusercontent.com/u/22254459?s=96&v=4)](/wongwsw)
+
+   ## [wongwsw](/wongwsw)
+
+   Joined on Sep 17, 2016
+
+   [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fczc%2Fnb_distribution%2Fstargazers)
+3. [![@edceeyuchen](https://avatars.githubusercontent.com/u/114143754?s=96&v=4)](/edceeyuchen)
+
+   ## [edceeyuchen](/edceeyuchen)
+
+   Joined on Sep 22, 2022
+
+   [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fczc%2Fnb_distribution%2Fstargazers)
+4. [![@yuweibao15](https://avatars.githubusercontent.com/u/89409924?s=96&v=4)](/yuweibao15)
+
+   ## [yuweibao15](/yuweibao15)
+
+   Works for Tulane University
+
+   Tulane University
+
+   [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fczc%2Fnb_distribution%2Fstargazers)
+5. [![@suyanan](https://avatars.githubusercontent.com/u/16696416?s=96&v=4)](/suyanan)
+
+   ## [suyanan](/suyanan)
+
+   Is from Beijing
+
+   Beijing
+
+   [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fczc%2Fnb_distribution%2Fstargazers)
+6. [![@ZhangQiuxue](https://avatars.githubusercontent.com/u/1960594?s=96&v=4)](/ZhangQiuxue)
+
+   ## [ZhangQiuxue](/ZhangQiuxue)
+
+   Joined on Jul 12, 2012
+
+   [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fczc%2Fnb_distribution%2Fstargazers)
+7. [![@venyao](https://avatars.githubusercontent.com/u/5529672?s=96&v=4)](/venyao)
+
+   ## [venyao](/venyao)
+
+   Works for Henan Agricultural University
+
+   Henan Agricultural University
+
+   [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fczc%2Fnb_distribution%2Fstargazers)
+8. [![@JiantaoShi](https://avatars.githubusercontent.com/u/5055792?s=96&v=4)](/JiantaoShi)
+
+   ## [JiantaoShi](/JiantaoShi)
+
+   Works for Shanghai Institute of Biochemistry and Cell Biology
+
+   Shanghai Institute of Biochemistry and Cell Biology
+
+   [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fczc%2Fnb_distribution%2Fstargazers)
+9. [![@FlyPythons](https://avatars.githubusercontent.com/u/27529039?s=96&v=4)](/FlyPythons)
+
+   ## [FlyPythons](/FlyPythons)
+
+   Joined on Apr 15, 2017
+
+   [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fczc%2Fnb_distribution%2Fstargazers)
+10. [![@wt12318](https://avatars.githubusercontent.com/u/39486023?s=96&v=4)](/wt12318)
+
+    ## [wt12318](/wt12318)
+
+    Works for ShanghaiTech Unviersity
+
+    ShanghaiTech Unviersity
+
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fczc%2Fnb_distribution%2Fstargazers)
+11. [![@ThymeLy](https://avatars.githubusercontent.com/u/38356458?s=96&v=4)](/ThymeLy)
+
+    ## [ThymeLy](/ThymeLy)
+
+    Joined on Apr 13, 2018
+
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fczc%2Fnb_distribution%2Fstargazers)
+12. [![@xiongxu](https://avatars.githubusercontent.com/u/3506891?s=96&v=4)](/xiongxu)
+
+    ## [xiongxu](/xiongxu)
+
+    Joined on Feb 8, 2013
+
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fczc%2Fnb_distribution%2Fstargazers)
+13. [![@GangyuSun](https://avatars.githubusercontent.com/u/30685110?s=96&v=4)](/GangyuSun)
+
+    ## [GangyuSun](/GangyuSun)
+
+    Works for shanghaitech
+
+    shanghaitech
+
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fczc%2Fnb_distribution%2Fstargazers)
+14. [![@davidroberson](https://avatars.githubusercontent.com/u/7877261?s=96&v=4)](/davidroberson)
+
+    ## [davidroberson](/davidroberson)
+
+    Works for @promptable-inc
+
+    @promptable-inc
+
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fczc%2Fnb_distribution%2Fstargazers)
+15. [![@mfoll](https://avatars.githubusercontent.com/u/3366818?s=96&v=4)](/mfoll)
+
+    ## [mfoll](/mfoll)
+
+    Works for International Agency for Research on Cancer
+
+    International Agency for Research on Cancer
+
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fczc%2Fnb_distribution%2Fstargazers)
+16. [![@evanbiederstedt](https://avatars.githubusercontent.com/u/6968193?s=96&v=4)](/evanbiederstedt)
+
+    ## [evanbiederstedt](/evanbiederstedt)
+
+    Joined on Mar 16, 2014
+
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fczc%2Fnb_distribution%2Fstargazers)
+17. [![@kcleal](https://avatars.githubusercontent.com/u/42997789?s=96&v=4)](/kcleal)
+
+    ## [kcleal](/kcleal)
+
+    Works for Cardiff University
+
+    Cardiff University
+
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fczc%2Fnb_distribution%2Fstargazers)
+18. [![@xyw1](https://avatars.githubusercontent.com/u/28685819?s=96&v=4)](/xyw1)
+
+    ## [xyw1](/xyw1)
+
+    Works for Southeast University
+
+    Southeast University
+
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fczc%2Fnb_distribution%2Fstargazers)
+19. [![@ShixiangWang](https://avatars.githubusercontent.com/u/25057508?s=96&v=4)](/ShixiangWang)
+
+    ## [ShixiangWang](/ShixiangWang)
+
+    Works for Central South University
+
+    Central South University
+
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fczc%2Fnb_distribution%2Fstargazers)
+20. [![@baozg](https://avatars.githubusercontent.com/u/20680150?s=96&v=4)](/baozg)
+
+    ## [baozg](/baozg)
+
+    Works for Max Planck Institue for Biology Tübingen
+
+    Max Planck Institue for Biology Tübingen
+
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fczc%2Fnb_distribution%2Fstargazers)
+21. [![@yanlinlin82](https://avatars.githubusercontent.com/u/2879428?s=96&v=4)](/yanlinlin82)
+
+    ## [yanlinlin82](/yanlinlin82)
+
+    Works for Bioinformatics Assistance Tech Co Ltd
+
+    Bioinformatics Assistance Tech Co Ltd
+
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fczc%2Fnb_distribution%2Fstargazers)
+22. [![@wwping2018](https://avatars.githubusercontent.com/u/39901972?s=96&v=4)](/wwping2018)
+
+    ## [wwping2018](/wwping2018)
+
+    Joined on Jun 4, 2018
+
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fczc%2Fnb_distribution%2Fstargazers)
+23. [![@songofbin](https://avatars.githubusercontent.com/u/5512193?s=96&v=4)](/songofbin)
+
+    ## [songofbin](/songofbin)
+
+    Works for BGI Research
+
+    BGI Research
+
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fczc%2Fnb_distribution%2Fstargazers)
+24. [![@kwuiee](https://avatars.githubusercontent.com/u/23001268?s=96&v=4)](/kwuiee)
+
+    ## [kwuiee](/kwuiee)
+
+    Is from Tianjin
+
+    Tianjin
+
+    [Follow](/login?return_to=https%3A%2F%2Fgithub.com%2Fczc%2Fnb_distribution%2Fstargazers)
+
+Previous[Next](https://github.com/czc/nb_distribution/stargazers?page=2)
+
+## Footer
+
+© 2026 GitHub, Inc.
+
+### Footer navigation
+
+* [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+* [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+* [Security](https://github.com/security)
+* [Status](https://www.githubstatus.com/)
+* [Community](https://github.community/)
+* [Docs](https://docs.github.com/)
+* [Contact](https://support.github.com?tags=dotcom-footer)
+* Manage cookies
+* Do not share my personal information
+
+You can’t perform that action at this time.

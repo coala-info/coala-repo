@@ -1,6 +1,6 @@
 ---
 name: bacpage
-description: bacpage is a Snakemake-based bioinformatics pipeline for the assembly and analysis of bacterial genomes. Use when user asks to assemble bacterial genomes, perform variant calling, conduct phylogenetic inference, or identify antimicrobial resistance genes and virulence factors.
+description: bacpage is a modular bioinformatics pipeline that automates the assembly and analysis of bacterial genomes from raw sequencing reads. Use when user asks to initialize genomic projects, execute reference-based or de novo assemblies, generate quality control reports, or reconstruct phylogenetic trees.
 homepage: https://github.com/CholGen/bacpage
 ---
 
@@ -8,49 +8,56 @@ homepage: https://github.com/CholGen/bacpage
 # bacpage
 
 ## Overview
-bacpage is a Snakemake-based bioinformatics pipeline designed to streamline the assembly and analysis of bacterial genomes. It bridges the gap between raw sequencing data (Illumina paired-end or ONT long-reads) and actionable genomic insights. By encapsulating tools for quality control, variant calling, and phylogenetic inference, it provides a standardized workflow that is accessible to researchers while remaining modular enough for advanced configuration.
 
-## Installation and Environment
-To ensure all dependencies are correctly managed, bacpage should be installed and run within a dedicated Conda environment.
+bacpage is a modular bioinformatics pipeline designed to automate the assembly and analysis of bacterial genomes. It simplifies the transition from raw sequencing reads to high-quality genomic data by wrapping tools like Snakemake, bcftools, and iqtree into a streamlined command-line interface. Use this skill to guide the setup of genomic projects, execute reference-based or de novo assemblies, and generate comprehensive quality control reports and phylogenetic trees.
 
-- **Conda Installation**: `conda install bioconda::bacpage`
-- **Environment Activation**: Always activate the environment before running commands: `mamba activate bacpage` or `conda activate bacpage`.
+## Command Line Usage
 
-## Core Workflow Patterns
+The bacpage tool follows a project-based workflow. You must initialize a project directory before running analysis.
 
-### 1. Project Initialization
-Every analysis begins with the creation of a project directory structure. This ensures the pipeline knows where to look for inputs and where to store results.
+### Project Initialization
+To start a new analysis batch, create a dedicated project directory:
 ```bash
-bacpage setup [your-project-directory-name]
+bacpage setup [project-name]
 ```
-This command creates a standardized directory structure, including an `input/` folder.
+This creates a standardized folder structure. You must place your paired-end sequencing reads (FASTQ files) into the `input/` directory within this new project folder.
 
-### 2. Data Preparation
-Place your raw sequencing reads (paired-end Illumina or ONT long-reads) directly into the `input/` directory created during the setup phase.
-
-### 3. Executing the Assembly
-The primary command for generating consensus sequences and performing initial analysis is the `assemble` command.
+### Executing Assembly
+Once reads are in the `input/` folder, run the assembly pipeline:
 ```bash
-bacpage assemble [your-project-directory-name]
+bacpage assemble [project-name]
 ```
-**Key Outputs:**
-- **Consensus Sequences**: Located at `<project>/results/consensus_sequences/<sample>.masked.fasta`.
-- **QC Report**: An HTML summary of alignment and quality metrics found at `<project>/results/reports/qc_report.html`.
+This command triggers the reference-based assembly workflow, which includes:
+1. Read alignment to a reference genome.
+2. Variant calling and filtering.
+3. Generation of masked consensus sequences.
 
-## Functional Capabilities
-While `assemble` is the primary entry point, the pipeline is designed to support the following specialized tasks:
-- **Reference-based Assembly**: Best for Illumina paired-end reads when a high-quality reference genome is available.
-- **De novo Assembly**: Supports both Illumina paired-end and ONT long-read data.
-- **Phylogenetic Inference**: Uses `iqtree` for maximum-likelihood tree construction from processed samples.
-- **Genomic Profiling**: Detects MLST profiles, antimicrobial resistance (AMR) genes, virulence factors, and plasmids.
-- **Variant Calling**: Utilizes `bcftools` for robust SNP and indel detection.
+### Quality Control and Results
+After running the assembly, results are organized in the project directory:
+- **Consensus Sequences**: Found in `[project-name]/results/consensus_sequences/` as `<sample>.masked.fasta`.
+- **QC Reports**: An interactive HTML report is generated at `[project-name]/results/reports/qc_report.html`.
 
 ## Expert Tips and Best Practices
-- **Pathogen Specificity**: Currently, the pipeline is optimized for *Vibrio Cholerae*. When working with other pathogens, verify that the default reference parameters align with your target organism's characteristics.
-- **Resource Management**: Since bacpage is built on Snakemake, it inherits robust task management. If a run is interrupted, re-running the same command will typically resume from the last successful step.
-- **Testing Installations**: After installation or updates, verify the CLI is responsive by running `bacpage -h` and `bacpage version`.
-- **Updates**: To update a local git installation, run `git pull` followed by `mamba env update -f environment.yaml` and `pip install .` to ensure the CLI entry point is refreshed.
+
+- **Environment Management**: Always ensure the conda environment is active before running commands: `mamba activate bacpage`.
+- **Input Naming**: Ensure Illumina reads are properly paired (e.g., `_R1.fastq.gz` and `_R2.fastq.gz`) to allow the pipeline to correctly identify sample pairs in the `input/` directory.
+- **Pathogen Specificity**: While the tool is moving toward being pathogen-agnostic, its current defaults and internal logic are optimized for *Vibrio cholerae*. When working with other species, verify that the reference genome configuration matches your target organism.
+- **Phylogenetic Inference**: The pipeline can construct maximum-likelihood trees using `iqtree`. This is typically part of the broader analysis workflow beyond the initial assembly.
+- **Updating the Tool**: If the pipeline behavior seems outdated, navigate to the source directory and run `git pull` followed by `pip install .` to ensure the CLI is linked to the latest logic.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| bacpage phylogeny | Reconstructs maximum likelihood phylogeny from consensus sequences. |
+| bacpage utilities | Available utilities:   One of the following utilities must be specified: |
+| bacpage_assemble | Assembles consensus sequence from raw sequencing reads. |
+| bacpage_profile | Reconstructs maximum likelihood phylogeny from consensus sequences. |
+| identify_files | Generate a valid sample_data.csv from a directory of FASTQs. |
+| setup | Set up project directory for analysis. |
 
 ## Reference documentation
-- [bacpage GitHub Repository](./references/github_com_CholGen_bacpage.md)
-- [bacpage Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_bacpage_overview.md)
+- [bacpage README](./references/github_com_CholGen_bacpage_blob_master_README.md)
+- [bacpage Overview](./references/anaconda_org_channels_bioconda_packages_bacpage_overview.md)

@@ -318,3 +318,6 @@ basic options:
   -o [ --output ] arg         Output quantification file.
 ```
 
+
+## Metadata
+- **Skill**: generated

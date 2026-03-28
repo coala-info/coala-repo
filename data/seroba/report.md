@@ -170,3 +170,6 @@ usage: seroba <command> <options>
 seroba: error: argument : invalid choice: 'results' (choose from 'getPneumocat', 'createDBs', 'runSerotyping', 'summary', 'version')
 ```
 
+
+## Metadata
+- **Skill**: generated

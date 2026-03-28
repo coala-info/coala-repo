@@ -75,7 +75,7 @@ Usage:  msisensor msi [options]
 
 
 ## Metadata
-- **Skill**: generated
+- **Skill**: not generated
 
 ## msisensor
 

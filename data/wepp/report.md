@@ -94,3 +94,6 @@ Arguments:
   -h [ --help ]                        Print help messages
 ```
 
+
+## Metadata
+- **Skill**: generated

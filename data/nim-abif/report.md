@@ -118,3 +118,6 @@ Examples:
   abichromatogram input.ab1 -s 500 -e 1000 --width 1600
 ```
 
+
+## Metadata
+- **Skill**: generated

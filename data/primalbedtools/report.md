@@ -264,3 +264,6 @@ options:
   --use-header-aliases  Should header aliases be used.
 ```
 
+
+## Metadata
+- **Skill**: generated

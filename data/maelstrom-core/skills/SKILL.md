@@ -1,64 +1,42 @@
 ---
 name: maelstrom-core
-description: maelstrom-core provides Rust utilities for high-performance Next-Generation Sequencing (NGS) data processing. Use when user asks to process NGS data, align reads to a reference, call variants, or perform genome assembly.
+description: "maelstrom-core extracts and normalizes depth-of-coverage data from alignment files for structural variant analysis. Use when user asks to collect depth of coverage from BAM files, normalize coverage data, or process large genomic cohorts efficiently."
 homepage: https://github.com/bihealth/maelstrom-core
 ---
 
 
 # maelstrom-core
 
-Provides Rust utilities for Next-Generation Sequencing (NGS) data processing, focusing on
-  heavy-lifting tasks that benefit from efficient, compiled code. Use when Claude needs to
-  perform complex bioinformatics analyses on NGS data, particularly when performance is critical
-  or when specific Rust-based tools are required for tasks such as:
-  - Sequence alignment and manipulation (e.g., BAM file processing)
-  - Variant calling and analysis
-  - Genome assembly and annotation
-  - Other computationally intensive bioinformatics workflows.
-  This skill is suitable for users familiar with command-line interfaces and bioinformatics tools.
----
 ## Overview
+maelstrom-core is the high-performance Rust component of the Maelstrom structural variant analysis pipeline. It is designed to handle computationally intensive tasks that are inefficient in Python, specifically focusing on the extraction and normalization of coverage data from alignment files. Use this tool when you need to process "oceans of genomes" where speed and memory efficiency are critical for depth-of-coverage calculations.
 
-The `maelstrom-core` skill provides access to a suite of Rust-based command-line utilities designed for high-performance Next-Generation Sequencing (NGS) data processing. It is particularly useful for computationally intensive bioinformatics tasks where efficiency and speed are paramount. This skill enables Claude to leverage these specialized tools for operations like sequence alignment, variant analysis, and other core NGS data manipulation workflows.
+## Command Line Usage
 
-## Usage Instructions
+The primary entry point is the `maelstrom-core` binary. It utilizes a subcommand-based interface.
 
-`maelstrom-core` is a command-line tool. Its specific subcommands and options will depend on the installed version and its compiled features. The primary way to interact with `maelstrom-core` is by invoking its executable followed by subcommands and arguments.
+### Core Command: bam-collect-doc
+The `bam-collect-doc` command is the primary utility for coverage analysis.
 
-### General Usage Pattern
+*   **Purpose**: Scans BAM files to collect depth of coverage (DOC) data.
+*   **Normalization**: It includes functionality to compute normalized coverage, which is essential for comparing samples across different sequencing runs or depths.
+*   **Region Support**: Supports targeted analysis of specific genomic regions.
 
-The general pattern for using `maelstrom-core` is:
+### Common CLI Patterns
+Since the tool is built with the Rust `clap` library, it follows standard GNU-style argument patterns:
 
-```bash
-maelstrom-core <subcommand> [options] <input_files>
-```
+*   **Help**: Access command-specific flags and arguments using:
+    `maelstrom-core bam-collect-doc --help`
+*   **Verbosity**: Control logging output using the verbosity flag (e.g., `-v`, `-vv`).
+*   **Execution**: Ensure the environment has access to the necessary HTS libraries, as the tool depends on `rust-htslib`.
 
-### Common Subcommands and Operations (Based on available information)
+## Best Practices and Expert Tips
 
-While the exact subcommands can vary, based on the project's description and commit history, common operations likely involve processing BAM files and performing variant analysis.
-
-*   **BAM File Processing**: Tools for manipulating and analyzing Binary Alignment Map (BAM) files are a likely component. This could include:
-    *   Collecting statistics (e.g., coverage, read counts).
-    *   Filtering or manipulating alignment data.
-
-    **Example (Hypothetical, based on commit `feat(bam-collect-doc): compute normalized coverage`):**
-    ```bash
-    maelstrom-core bam-collect-doc --input alignment.bam --output coverage_stats.tsv
-    ```
-    *   **Tip**: Always check the specific subcommand's help (`maelstrom-core <subcommand> --help`) for detailed options and expected input/output formats.
-
-*   **Variant Analysis**: Tools for variant calling or analysis are also indicated.
-
-    **Example (Hypothetical, based on commit `feat: add bam-collect-doc command`):**
-    This suggests a command that might collect documentation or statistics related to BAM files, potentially for variant calling pipelines.
-
-### Expert Tips
-
-*   **Consult Help Pages**: For any `maelstrom-core` command, always use the `--help` flag to understand its specific arguments, options, and expected input/output. For example: `maelstrom-core <subcommand> --help`.
-*   **Input/Output Redirection**: Leverage standard input (`<`) and standard output (`>`) redirection for piping data between `maelstrom-core` commands or with other command-line tools.
-*   **Version Specificity**: If you encounter issues, ensure you are aware of the `maelstrom-core` version being used, as functionality and options can change between releases. The latest release is v0.1.1.
-*   **Performance**: `maelstrom-core` is designed for performance. For very large datasets, consider running it on systems with sufficient CPU and memory resources.
+*   **Performance**: Use `maelstrom-core` instead of Python-based alternatives when processing large cohorts or high-depth whole-genome sequencing (WGS) data.
+*   **Input Requirements**: Ensure BAM files are properly sorted and indexed. The underlying `rust-htslib` requires indices (`.bai`) for efficient region-based coverage collection.
+*   **Error Handling**: If the tool crashes during region-specific collection, ensure you are using version 0.1.1 or later, as early versions had known issues with region-based processing.
+*   **Memory Management**: As a Rust-based tool, it is highly efficient with memory; however, when processing many samples in parallel, monitor system resources as HTSlib can still allocate significant buffers for decompression.
 
 ## Reference documentation
-- [GitHub - bihealth/maelstrom-core: Rust utilities for NGS data processing](./references/github_com_bihealth_maelstrom-core.md)
-- [Anaconda.org | bioconda | maelstrom-core](./references/anaconda_org_channels_bioconda_packages_maelstrom-core_overview.md)
+- [Maelstrom Core README](./references/github_com_bihealth_maelstrom-core_blob_main_README.md)
+- [Maelstrom Core Changelog](./references/github_com_bihealth_maelstrom-core_blob_main_CHANGELOG.md)
+- [Project Configuration (Cargo.toml)](./references/github_com_bihealth_maelstrom-core_blob_main_Cargo.toml.md)

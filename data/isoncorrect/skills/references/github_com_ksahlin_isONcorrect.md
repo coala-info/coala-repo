@@ -1,1 +1,314 @@
-GitHub - ksahlin/isONcorrect: Error correction of ONT transcript reads Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} ksahlin / isONcorrect Public Notifications You must be signed in to change notification settings Fork 9 Star 58 Error correction of ONT transcript reads License GPL-3.0 license 58 stars 9 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 3 Pull requests 0 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights ksahlin/isONcorrect master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 615 Commits 615 Commits cemetary cemetary data data evaluation evaluation evaluation_sim evaluation_sim evaluation_sirv evaluation_sirv evaluation_sirv_iso_cov evaluation_sirv_iso_cov isoncorrect_cpp isoncorrect_cpp ont_error_rates ont_error_rates scripts scripts src/ isoncorrect src/ isoncorrect test_data test_data .gitignore .gitignore .travis.yml .travis.yml LICENSE.txt LICENSE.txt MANIFEST.in MANIFEST.in README.md README.md pyproject.toml pyproject.toml requirements.txt requirements.txt setup.py setup.py View all files Repository files navigation README GPL-3.0 license isONcorrect isONcorrect is a tool for error-correcting Oxford Nanopore cDNA reads. It is designed to handle highly variable coverage and exon variation within reads and achieves about a 0.5-1% median error rate after correction. It leverages regions shared between reads from different isoforms achieve low error rates even for low abundant transcripts. See paper for details. Update: Since v0.0.8, isONcorrect uses different default parameters compared to what was used in the paper . The new parameters make isONcorrect 2-3 times faster and use 3-8 times less memory with only a small cost of increased median post-correction error rate. With the new parameter setting the correction accuracy is 98.5-99.3% instead of 98.9–99.6% on the data used in the paper. Current default uses --k 9 --w 20 --max_seqs 2000 . To invoke settings used in paper, set parameters --k 9 --w 10 --max_seqs 1000 . Processing and error correction of full-length ONT cDNA reads is achieved by the pipeline of running pychopper --&gt; isONclust --&gt; isONcorrect . All these steps can be run in one go with this script . See below for installation and usage. isONcorrect is distributed as a python package supported on Linux / OSX with python v&gt;=3.4. . Table of Contents INSTALLATION Using conda Using pip Downloading source from GitHub Dependencies Testing installation USAGE Running Output Parallelization across nodes CREDITS LICENCE INSTALLATION Typical install time on a desktop computer is about 5 minutes with conda for this software. Using conda Conda is the preferred way to install isONcorrect. Create and activate a new environment called isoncorrect conda create -n isoncorrect python=3.9 pip conda activate isoncorrect Install isONcorrect and its dependency spoa . pip install isONcorrect conda install -c bioconda spoa You should now have 'isONcorrect' installed; try it: isONcorrect --help Upon start/login to your server/computer you need to activate the conda environment "isonclust" to run isONcorrect as: conda activate isoncorrect You probably want to install pychopper and isONclust in the isoncorrect environmment as well to run the complete correction pipeline if you haven't already. This can be done with: pip install isONclust conda install -c bioconda "hmmer&gt;=3.0" conda install -c bioconda "pychopper&gt;=2.0" You are now set to run the correction_pipeline . See USAGE . Dependencies isONcorrect has the following dependencies (the three first are automatically installed with pip ) edlib NumPy parasail spoa Testing installation You can verify successul installation by running isONcorrect on these two small datasets of 100 reads. Download the two datasets and put in a folder test_data run, e.g, isONcorrect --fastq test_data/0.fastq \ --outfolder [output path] Expected runtime for this test data is about 15 seconds. The output will be found in [output path]/corrected_reads.fastq where the 100 reads have the same headers as in the original file, but with corrected sequence. Testing the paralleized version (by separate clusters) of isONcorrect can be done by running ./run_isoncorrect --t 3 --fastq_folder test_data/ \ --outfolder [output path] This will perform correction on 0.fastq and 1.fastq in parallel. Expected runtime for this test data is about 15 seconds. The output will be found in [output path]/0/corrected_reads.fastq and [output path]/1/corrected_reads.fastq where the 100 reads in each separate cluster have the same headers as in the respective original files, but with corrected sequence. USAGE Running Using correction_pipeline.sh You can simply run ./correction_pipeline.sh &lt;raw_reads.fq&gt; &lt;outfolder&gt; &lt;num_cores&gt; which will perform the steps 1-5 below for you. The correction_pipeline.sh script is available in this repository here . Simply download the reposotory or the individual correction_pipeline.sh file . For a fastq file with raw ONT cDNA reads, the following pipeline is recommended: Produce full-length reads (with pychopper (a.k.a. cdna_classifier )) Cluster the full length reads into genes/gene-families ( isONclust ) Make fastq files of each cluster ( isONclust write_fastq command) Correct individual clusters ( isONcorrect ) Join reads back to a single fastq file (This is of course optional) Manually The contents of the correction_pipeline.sh is (roughly) provided below. If you want more individual control over the steps than what the correction_pipeline.sh can do for you (such as different parameters in each step), you can modify/remove arguments as needed in correction_pipeline.sh or in the below script. #!/bin/bash # Pipeline to get high-quality full-length reads from ONT cDNA sequencing # Set path to output and number of cores root_out="outfolder" cores=20 mkdir -p $root_out cdna_classifier.py raw_reads.fq $root_out/full_length.fq -t $cores isONclust --t $cores --ont --fastq $root_out/full_length.fq \ --outfolder $root_out/clustering isONclust write_fastq --N 1 --clusters $root_out/clustering/final_clusters.tsv \ --fastq $root_out/full_length.fq --outfolder $root_out/clustering/fastq_files run_isoncorrect --t $cores --fastq_folder $root_out/clustering/fastq_files --outfolder $root_out/correction/ # OPTIONAL BELOW TO MERGE ALL CORRECTED READS INTO ONE FILE touch $root_out/all_corrected_reads.fq OUTFILES=$root_out"/correction/"*"/corrected_reads.fastq" for f in $OUTFILES do cat $f &gt;&gt; $outfolder/all_corrected_reads.fq done isONcorrect does not need ONT reads to be full-length (i.e., produced by pychopper ), but unless you have specific other goals, it is advised to run pychopper for any kind of downstream analysis to guarantee full-length reads. Output The output of run_isoncorrect is one file per cluster with identical headers to the original reads. Few large clusters For some datasets, e.g. targeted data, isONclust can produce highly uneven clusters, i.e., a few very large clusters and some/many small ones. In such cases, runtime can be reduced if the argument --split_wrt_batches is specified to run_isoncorrect . Parallelization across nodes isONcorrect currently supports parallelization across cores on a node (parameter --t ), but not across several nodes. There is a way to overcome this limitation if you have access to multiple nodes as follows. The run_isoncorrect step can be parallilized across n nodes by (in bash
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fksahlin%2FisONcorrect)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fksahlin%2FisONcorrect)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=ksahlin%2FisONcorrect)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[ksahlin](/ksahlin)
+/
+**[isONcorrect](/ksahlin/isONcorrect)**
+Public
+
+* [Notifications](/login?return_to=%2Fksahlin%2FisONcorrect) You must be signed in to change notification settings
+* [Fork
+  9](/login?return_to=%2Fksahlin%2FisONcorrect)
+* [Star
+   58](/login?return_to=%2Fksahlin%2FisONcorrect)
+
+* [Code](/ksahlin/isONcorrect)
+* [Issues
+  3](/ksahlin/isONcorrect/issues)
+* [Pull requests
+  0](/ksahlin/isONcorrect/pulls)
+* [Actions](/ksahlin/isONcorrect/actions)
+* [Projects](/ksahlin/isONcorrect/projects)
+* [Security
+  0](/ksahlin/isONcorrect/security)
+* [Insights](/ksahlin/isONcorrect/pulse)
+
+Additional navigation options
+
+* [Code](/ksahlin/isONcorrect)
+* [Issues](/ksahlin/isONcorrect/issues)
+* [Pull requests](/ksahlin/isONcorrect/pulls)
+* [Actions](/ksahlin/isONcorrect/actions)
+* [Projects](/ksahlin/isONcorrect/projects)
+* [Security](/ksahlin/isONcorrect/security)
+* [Insights](/ksahlin/isONcorrect/pulse)
+
+# ksahlin/isONcorrect
+
+master
+
+[Branches](/ksahlin/isONcorrect/branches)[Tags](/ksahlin/isONcorrect/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[615 Commits](/ksahlin/isONcorrect/commits/master/)   615 Commits | | |
+| [cemetary](/ksahlin/isONcorrect/tree/master/cemetary "cemetary") | | [cemetary](/ksahlin/isONcorrect/tree/master/cemetary "cemetary") |  |  |
+| [data](/ksahlin/isONcorrect/tree/master/data "data") | | [data](/ksahlin/isONcorrect/tree/master/data "data") |  |  |
+| [evaluation](/ksahlin/isONcorrect/tree/master/evaluation "evaluation") | | [evaluation](/ksahlin/isONcorrect/tree/master/evaluation "evaluation") |  |  |
+| [evaluation\_sim](/ksahlin/isONcorrect/tree/master/evaluation_sim "evaluation_sim") | | [evaluation\_sim](/ksahlin/isONcorrect/tree/master/evaluation_sim "evaluation_sim") |  |  |
+| [evaluation\_sirv](/ksahlin/isONcorrect/tree/master/evaluation_sirv "evaluation_sirv") | | [evaluation\_sirv](/ksahlin/isONcorrect/tree/master/evaluation_sirv "evaluation_sirv") |  |  |
+| [evaluation\_sirv\_iso\_cov](/ksahlin/isONcorrect/tree/master/evaluation_sirv_iso_cov "evaluation_sirv_iso_cov") | | [evaluation\_sirv\_iso\_cov](/ksahlin/isONcorrect/tree/master/evaluation_sirv_iso_cov "evaluation_sirv_iso_cov") |  |  |
+| [isoncorrect\_cpp](/ksahlin/isONcorrect/tree/master/isoncorrect_cpp "isoncorrect_cpp") | | [isoncorrect\_cpp](/ksahlin/isONcorrect/tree/master/isoncorrect_cpp "isoncorrect_cpp") |  |  |
+| [ont\_error\_rates](/ksahlin/isONcorrect/tree/master/ont_error_rates "ont_error_rates") | | [ont\_error\_rates](/ksahlin/isONcorrect/tree/master/ont_error_rates "ont_error_rates") |  |  |
+| [scripts](/ksahlin/isONcorrect/tree/master/scripts "scripts") | | [scripts](/ksahlin/isONcorrect/tree/master/scripts "scripts") |  |  |
+| [src/isoncorrect](/ksahlin/isONcorrect/tree/master/src/isoncorrect "This path skips through empty directories") | | [src/isoncorrect](/ksahlin/isONcorrect/tree/master/src/isoncorrect "This path skips through empty directories") |  |  |
+| [test\_data](/ksahlin/isONcorrect/tree/master/test_data "test_data") | | [test\_data](/ksahlin/isONcorrect/tree/master/test_data "test_data") |  |  |
+| [.gitignore](/ksahlin/isONcorrect/blob/master/.gitignore ".gitignore") | | [.gitignore](/ksahlin/isONcorrect/blob/master/.gitignore ".gitignore") |  |  |
+| [.travis.yml](/ksahlin/isONcorrect/blob/master/.travis.yml ".travis.yml") | | [.travis.yml](/ksahlin/isONcorrect/blob/master/.travis.yml ".travis.yml") |  |  |
+| [LICENSE.txt](/ksahlin/isONcorrect/blob/master/LICENSE.txt "LICENSE.txt") | | [LICENSE.txt](/ksahlin/isONcorrect/blob/master/LICENSE.txt "LICENSE.txt") |  |  |
+| [MANIFEST.in](/ksahlin/isONcorrect/blob/master/MANIFEST.in "MANIFEST.in") | | [MANIFEST.in](/ksahlin/isONcorrect/blob/master/MANIFEST.in "MANIFEST.in") |  |  |
+| [README.md](/ksahlin/isONcorrect/blob/master/README.md "README.md") | | [README.md](/ksahlin/isONcorrect/blob/master/README.md "README.md") |  |  |
+| [pyproject.toml](/ksahlin/isONcorrect/blob/master/pyproject.toml "pyproject.toml") | | [pyproject.toml](/ksahlin/isONcorrect/blob/master/pyproject.toml "pyproject.toml") |  |  |
+| [requirements.txt](/ksahlin/isONcorrect/blob/master/requirements.txt "requirements.txt") | | [requirements.txt](/ksahlin/isONcorrect/blob/master/requirements.txt "requirements.txt") |  |  |
+| [setup.py](/ksahlin/isONcorrect/blob/master/setup.py "setup.py") | | [setup.py](/ksahlin/isONcorrect/blob/master/setup.py "setup.py") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* GPL-3.0 license
+
+# isONcorrect
+
+isONcorrect is a tool for error-correcting Oxford Nanopore cDNA reads. It is designed to handle highly variable coverage and exon variation within reads and achieves about a 0.5-1% median error rate after correction. It leverages regions shared between reads from different isoforms achieve low error rates even for low abundant transcripts. See [paper](https://www.nature.com/articles/s41467-020-20340-8) for details.
+
+**Update:** Since v0.0.8, isONcorrect uses different default parameters compared to what was used in the [paper](https://www.nature.com/articles/s41467-020-20340-8). The new parameters make isONcorrect 2-3 times faster and use 3-8 times less memory with only a small cost of increased median post-correction error rate. With the new parameter setting the correction accuracy is 98.5-99.3% instead of 98.9–99.6% on the data used in the paper. Current default uses `--k 9 --w 20 --max_seqs 2000`. To invoke settings used in paper, set parameters `--k 9 --w 10 --max_seqs 1000`.
+
+Processing and error correction of full-length ONT cDNA reads is achieved by the pipeline of running [pychopper](https://github.com/nanoporetech/pychopper) --> [isONclust](https://github.com/ksahlin/isONclust) --> [isONcorrect](https://github.com/ksahlin/isONcorrect). All these steps can be run in one go with [this script](https://github.com/ksahlin/isONcorrect/blob/master/scripts/correction_pipeline.sh). See below for installation and usage.
+
+isONcorrect is distributed as a python package supported on Linux / OSX with python v>=3.4. [![Build Status](https://camo.githubusercontent.com/28c3fdcc3d9f8bdf8cdc8c9dcd285813f3a911e0a75577cad54a9bb775337b90/68747470733a2f2f7472617669732d63692e6f72672f6b7361686c696e2f69734f4e636f72726563742e7376673f6272616e63683d6d6173746572)](https://travis-ci.com/ksahlin/isONcorrect).
+
+# Table of Contents
+
+* [INSTALLATION](#INSTALLATION)
+  + [Using conda](#Using-conda)
+  + [Using pip](#Using-pip)
+  + [Downloading source from GitHub](#Downloading-source-from-github)
+  + [Dependencies](#Dependencies)
+  + [Testing installation](#testing-installation)
+* [USAGE](#USAGE)
+  + [Running](#Running)
+  + [Output](#Output)
+  + [Parallelization across nodes](#Parallelization-across-nodes)
+* [CREDITS](#CREDITS)
+* [LICENCE](#LICENCE)
+
+# INSTALLATION
+
+Typical install time on a desktop computer is about 5 minutes with conda for this software.
+
+## Using conda
+
+Conda is the preferred way to install isONcorrect.
+
+1. Create and activate a new environment called isoncorrect
+
+```
+conda create -n isoncorrect python=3.9 pip
+conda activate isoncorrect
+```
+
+2. Install isONcorrect and its dependency `spoa`.
+
+```
+pip install isONcorrect
+conda install -c bioconda spoa
+```
+
+3. You should now have 'isONcorrect' installed; try it:
+
+```
+isONcorrect --help
+```
+
+Upon start/login to your server/computer you need to activate the conda environment "isonclust" to run isONcorrect as:
+
+```
+conda activate isoncorrect
+```
+
+4. You probably want to install `pychopper` and `isONclust` in the isoncorrect environmment as well to run the complete correction pipeline if you haven't already. This can be done with:
+
+```
+pip install isONclust
+conda install -c bioconda "hmmer>=3.0"
+conda install -c bioconda "pychopper>=2.0"
+```
+
+You are now set to run the [correction\_pipeline](https://github.com/ksahlin/isONcorrect/blob/master/scripts/correction_pipeline.sh). See [USAGE](https://github.com/ksahlin/isONcorrect#usage).
+
+### Dependencies
+
+isONcorrect has the following dependencies (the three first are automatically installed with `pip`)
+
+* [edlib](https://github.com/Martinsos/edlib/tree/master/bindings/python)
+* [NumPy](https://numpy.org/)
+* [parasail](https://github.com/jeffdaily/parasail-python)
+* [spoa](https://github.com/rvaser/spoa)
+
+## Testing installation
+
+You can verify successul installation by running isONcorrect on [these](https://github.com/ksahlin/isONcorrect/tree/master/test_data/isoncorrect/) two small datasets of 100 reads. Download the two datasets and put in a folder `test_data` run, e.g,
+
+```
+isONcorrect --fastq test_data/0.fastq \
+            --outfolder [output path]
+```
+
+Expected runtime for this test data is about 15 seconds. The output will be found in `[output path]/corrected_reads.fastq` where the 100 reads have the same headers as in the original file, but with corrected sequence. Testing the paralleized version (by separate clusters) of isONcorrect can be done by running
+
+```
+./run_isoncorrect --t 3 --fastq_folder test_data/ \
+                  --outfolder [output path]
+```
+
+This will perform correction on `0.fastq` and `1.fastq` in parallel. Expected runtime for this test data i

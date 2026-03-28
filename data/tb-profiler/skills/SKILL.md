@@ -1,6 +1,6 @@
 ---
 name: tb-profiler
-description: tb-profiler automates read alignment and variant calling to identify strain types and drug resistance in Mycobacterium tuberculosis samples. Use when user asks to profile drug resistance, determine strain types, or perform whole-genome variant calling for tuberculosis genomics.
+description: tb-profiler profiles Mycobacterium tuberculosis from whole genome sequencing data to determine lineages and predict drug resistance. Use when user asks to profile TB samples, predict phenotypic resistance, determine lineages, or update the resistance database.
 homepage: https://github.com/jodyphelan/TBProfiler
 ---
 
@@ -8,60 +8,65 @@ homepage: https://github.com/jodyphelan/TBProfiler
 # tb-profiler
 
 ## Overview
-tb-profiler is a command-line tool designed specifically for Mycobacterium tuberculosis genomics. It automates a complex bioinformatics workflow—including read alignment, variant calling, and database comparison—to provide rapid insights into a sample's strain type and its resistance to anti-tubercular drugs. It supports data from multiple platforms, including Illumina and Oxford Nanopore (minION), and allows for both targeted resistance gene analysis and whole-genome variant calling.
+
+tb-profiler is a specialized bioinformatics pipeline designed to automate the profiling of Mycobacterium tuberculosis from Whole Genome Sequencing (WGS) data. It streamlines the process of aligning raw reads to the H37Rv reference genome, calling variants, and comparing those variants against a curated drug-resistance database. The tool is essential for researchers and clinicians needing to determine TB lineages and predict phenotypic resistance to first- and second-line drugs from genomic data.
 
 ## Core Workflows
 
-### Initial Setup
-Before running analyses, ensure the drug resistance database is up to date. The tool and the database are developed independently.
+### Database Initialization
+Before running any analysis, ensure the resistance database is up to date. The tool and the database are developed independently.
 ```bash
 tb-profiler update_tbdb
 ```
 
-### Standard Profiling (Illumina)
-To run the full pipeline on paired-end reads, use the `profile` command. This performs alignment, variant calling, and resistance profiling.
+### Standard Profiling (Illumina Paired-End)
+The most common use case involves paired FASTQ files. Use the `-p` flag to set a prefix for all output files (BAM, VCF, and results).
 ```bash
-tb-profiler profile -1 reads_1.fastq.gz -2 reads_2.fastq.gz -p sample_prefix -t 4
-```
-- `-p`: Sets the prefix for all output files (BAM, VCF, and results).
-- `-t`: Specifies the number of threads to use.
-
-### Analyzing Nanopore (minION) Data
-The pipeline automatically handles long-read data, typically using minimap2 for alignment. Note that hetero-resistance prediction is currently not applicable for minION data.
-```bash
-tb-profiler profile -1 nanopore_reads.fastq.gz -p sample_prefix
+tb-profiler profile -1 reads_1.fastq.gz -2 reads_2.fastq.gz -p sample_name --txt
 ```
 
-### Using Existing Alignments
-If you already have a BAM file, you can skip the alignment step. 
-**Warning:** The BAM must be aligned to the H37Rv reference genome (length 4,411,532 bp) used by the database.
+### Processing Nanopore (minION) Data
+tb-profiler supports long-read data. Note that hetero-resistance prediction is generally not applicable for minION data.
 ```bash
-tb-profiler profile -a sample.bam -p sample_prefix
+tb-profiler profile --read1 nanopore_reads.fastq.gz --platform nanopore -p sample_name
 ```
 
-## Advanced Options and Best Practices
+## CLI Best Practices and Tips
 
-### Output Formats
-By default, results are saved in JSON format in the `results/` directory. Use flags to generate human-readable reports:
-- `--txt`: Tab-separated summary.
-- `--csv`: Comma-separated summary.
-- `--docx`: Generates a Word document report (requires a template).
-
-### Whole Genome Analysis
-By default, the tool only looks at known drug-resistance candidate genes. To call variants across the entire genome:
+### Performance Optimization
+Use the `-t` or `--threads` option to speed up the alignment and variant calling stages, especially when processing large batches.
 ```bash
-tb-profiler profile -1 r1.fq.gz -2 r2.fq.gz -p sample --call_whole_genome
+tb-profiler profile -1 R1.fq.gz -2 R2.fq.gz -p sample_id -t 8
 ```
 
-### Experimental Features
-- **SNP Distance**: When `--call_whole_genome` is active, use `--snp_dist` to find samples in your local library that are closely related to the current sample.
-- **Spoligotyping**: Add `--spoligotype` to the command to perform in silico spoligotyping.
+### Output Management
+*   **Default Output**: Results are stored in `results/sample_name.results.json`.
+*   **Human-Readable Formats**: Always include `--txt` or `--csv` if you need to manually inspect results or share them with non-computational collaborators.
+*   **Intermediate Files**: The pipeline produces `.bam` and `.vcf` files in their respective directories. These are useful for manual inspection in tools like IGV.
 
-### Expert Tips
-- **Version Tracking**: Always report both the `tb-profiler` version and the database version in publications, as they are updated on different cycles.
-- **Hetero-resistance**: The tool predicts the number of reads supporting a variant. This is crucial for identifying sub-populations of resistant bacteria within a single sample.
-- **M1/M2 Macs**: If running on ARM-based macOS, ensure the terminal is running under Rosetta, as many underlying dependencies (like bowtie2 or BWA) are optimized for x86 architecture.
+### Reproducibility
+When reporting results, always document both the version of the `tb-profiler` software and the version of the database used, as resistance nomenclature and associations evolve.
+
+### Alignment Options
+While the tool defaults to sensible aligners, you can specify different mappers (bowtie2, bwa, or minimap2) depending on your specific requirements or read characteristics.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| load_library | Load a library into the tb-profiler database. |
+| reformat | Sample prefix |
+| tb-profiler batch | Run tb-profiler on multiple samples defined in a CSV file. |
+| tb-profiler create_db | Create a database for tb-profiler |
+| tb-profiler lineage | Lineage profiling for Mycobacterium tuberculosis |
+| tb-profiler list_db | List available databases |
+| tb-profiler profile | Profile TB samples |
+| tb-profiler spoligotype | Spoligotyping analysis for TBProfiler |
+| tb-profiler_collate | Collate results from TBProfiler runs. |
+| update_tbdb | Update the TB-Profiler database |
 
 ## Reference documentation
-- [TB-Profiler GitHub Repository](./references/github_com_jodyphelan_TBProfiler.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_tb-profiler_overview.md)
+- [Main README and Usage Guide](./references/github_com_jodyphelan_TBProfiler_blob_master_README.md)
+- [Installation and Conda Overview](./references/anaconda_org_channels_bioconda_packages_tb-profiler_overview.md)

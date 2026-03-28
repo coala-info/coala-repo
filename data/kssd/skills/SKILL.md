@@ -1,6 +1,6 @@
 ---
 name: kssd
-description: kssd performs rapid genomic distance estimation and sequence resemblance analysis by reducing the dimensionality of k-mer substring spaces. Use when user asks to estimate genomic distances, sketch sequences for comparison, calculate Jaccard coefficients, or perform set operations on sequence sketches.
+description: kssd performs rapid genomic sequence analysis and evolutionary distance estimation using k-mer substring space sampling to create dimensionality-reduced sketches. Use when user asks to estimate evolutionary distances, create sequence sketches, build reference databases, or perform set operations on genomic datasets.
 homepage: https://github.com/yhg926/public_kssd
 ---
 
@@ -8,65 +8,72 @@ homepage: https://github.com/yhg926/public_kssd
 # kssd
 
 ## Overview
-kssd (K-mer Substring Space Decomposition) is a specialized tool for genomic distance estimation and sequence resemblance analysis. It operates by sampling and shuffling k-mer substring spaces to reduce dimensionality, allowing for rapid comparison of massive datasets. It is particularly effective for bacterial genomes, metagenomics, and large-scale sequence searches where traditional alignment is computationally prohibitive.
+kssd (K-mer substring space sampling/shuffling Decomposition) is a high-performance tool designed for the rapid analysis of massive genomic datasets. It utilizes a unique dimensionality-reduction approach based on k-mer substring space shuffling to create "sketches" of sequences. These sketches allow for the estimation of evolutionary distances and containment metrics without the computational overhead of full sequence alignment. It is particularly effective for building reference databases and searching queries against them at scale.
 
 ## Core Workflows
 
-### 1. Dimensionality Reduction (Shuffling)
-Before sketching, you must define the k-mer space. While `dist` can generate this automatically, using `shuffle` allows for precise control.
+### 1. K-mer Substring Space Shuffling
+Before sketching, you must define the k-mer space. You can either provide a dimensionality-reduction level directly to the `dist` command or pre-generate a `.shuf` file.
 
 ```bash
-kssd shuffle -k <half_k> -s <half_sub> -l <level> -o <output.shuf>
+# Generate a custom shuffled space file
+kssd shuffle -k <half_kmer_len> -s <half_sub_len> -l <level> -o <output.shuf>
 ```
-*   **-k**: Half-length of k-mer (e.g., `-k 8` results in 16-mers).
-*   **-s**: Half-length of k-mer substring (default is 6; usually no need to change).
-*   **-l**: Dimensionality reduction level ($16^x$).
+*   **-k**: Half-length of k-mer (Total length = 2x). Use 8 for bacteria (k=16), 10 for mammals (k=20).
+*   **-l**: Reduction level. Expected rate is $16^x$. Use 3 for bacteria, 4-5 for mammals.
+*   **-s**: Half-length of substring. Default is 6; rarely needs changing.
 
-### 2. Sketching Sequences
-To compare sequences, they must first be converted into sketches.
+### 2. Sketching and Indexing
+To compare sequences, you must first decompose them into sketches.
 
 **Sketching References:**
 ```bash
-kssd dist -r <fasta_dir> -L <level_or_shuf_file> -k <half_k> -o <ref_outdir>
+kssd dist -r <fasta_dir> -L <level_or_shuf_file> -k <half_kmer_len> -o <ref_outdir>
 ```
+*   This creates a reference database in the output directory.
 
 **Sketching Queries:**
-Queries **must** use the same `.shuf` file used for the references to ensure compatibility.
+Queries must use the **exact same** `.shuf` file used for the references to ensure compatibility.
 ```bash
-kssd dist -o <qry_outdir> -L <ref_outdir/default.shuf> <query_fasta_dir>
+kssd dist -L <ref_outdir/default.shuf> -o <qry_outdir> <query_fasta_dir>
 ```
 
 ### 3. Distance Estimation
-Once sketched, calculate the resemblance or containment.
+Once sketches are created, perform the comparison:
 
-**Search Queries against References:**
 ```bash
+# Search queries against reference database
 kssd dist -r <ref_outdir/ref> -o <output_dir> <qry_outdir/qry>
-```
 
-**Pairwise Reference Distance:**
-```bash
+# Pairwise distance of all references
 kssd dist -r <ref_outdir/ref> -o <output_dir> <ref_outdir/ref>
 ```
 
-## Parameter Recommendations
-Choose parameters based on the target organism's genome size:
+### 4. Set Operations
+Manipulate sketches to find shared or unique genomic content.
 
-| Organism Type | -k (Half-length) | -L/-l (Level) |
-| :--- | :--- | :--- |
-| Bacteria | 8 (16-mer) | 3 |
-| Mammals | 10 (20-mer) | 4 or 5 |
-| Metagenomics | 10 (20-mer) | 4 or 5 |
-| Intermediate | 9 (18-mer) | 3 or 4 |
+*   **Union**: `kssd set -u -o <union_out> <sketches_dir>`
+*   **Intersection**: `kssd set -i <union_dir> -o <intersect_out> <sketches_dir>`
+*   **Subtraction**: `kssd set -s <union_dir> -o <subtract_out> <sketches_dir>`
 
 ## Expert Tips and Best Practices
-*   **Streaming Data**: Use the `--pipecmd` flag to sketch directly from tools like `fastq-dump` without saving intermediate files.
-    *   Example: `kssd dist -L my.shuf -o out --pipecmd "fastq-dump -Z" ERR000001`
-*   **Set Operations**: Use `kssd set` to perform union (`-u`), intersection (`-i`), or subtraction (`-s`) on existing sketches. This is useful for creating composite metagenomic references.
-*   **Output Interpretation**: The primary output `distance.out` includes Jaccard coefficients, Mash distance, and Containment measurements. For highly divergent sequences, focus on `AafD` (AAF distance); for subset analysis, focus on `ContainmentM`.
-*   **OS Limitation**: kssd is natively built for Linux. It does not officially support macOS or Windows.
-*   **Input Flexibility**: The tool handles both FASTA and FASTQ formats and automatically detects gzipped files (`.gz`).
+*   **Data Streaming**: Use the `--pipecmd` flag to sketch directly from SRA or other streams without saving intermediate FASTQ files (e.g., `--pipecmd "fastq-dump -Z" ERR000001`).
+*   **Memory Management**: For large mammalian genomes, ensure you increase the dimensionality-reduction level (`-L 4` or `5`) to keep sketch sizes manageable.
+*   **Output Interpretation**: The `distance.out` file provides multiple metrics. Use `MashD` for evolutionary distance and `ContainmentM` for identifying if a small sequence (like a plasmid or virus) is present within a larger metagenomic sample.
+*   **Gzipped Files**: kssd natively handles `.gz` files; do not decompress them beforehand to save disk I/O.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| kssd composite | The composite doc prefix. |
+| kssd dist | The dist doc prefix. |
+| kssd shuffle | The shuffle doc prefix. |
+| kssd_reverse | The reverse doc prefix. |
+| set | The set doc prefix. |
 
 ## Reference documentation
-- [kssd - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_kssd_overview.md)
-- [GitHub - yhg926/public_kssd: K-mer substring space decomposition](./references/github_com_yhg926_public_kssd.md)
+- [Kssd GitHub README](./references/github_com_yhg926_public_kssd_blob_master_README.md)
+- [Kssd Main Repository Overview](./references/github_com_yhg926_public_kssd.md)

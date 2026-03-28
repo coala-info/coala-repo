@@ -1,6 +1,6 @@
 ---
 name: consent
-description: CONSENT performs self-correction of long-read sequencing data and assembly polishing using a combination of multiple sequence alignment and local de Bruijn graphs. Use when user asks to correct errors in PacBio or Oxford Nanopore reads, improve the base-level accuracy of draft assemblies, or perform assembly polishing.
+description: CONSENT performs self-correction and assembly polishing for long-read sequencing data using multiple sequence alignment and local de Bruijn graphs. Use when user asks to perform self-correction on raw long reads or refine a draft assembly using long reads.
 homepage: https://github.com/morispi/CONSENT
 ---
 
@@ -8,55 +8,56 @@ homepage: https://github.com/morispi/CONSENT
 # consent
 
 ## Overview
-CONSENT (Scalable long read self-correction and assembly polishing) is a tool designed to handle the high error rates associated with long-read sequencing technologies. It functions by computing overlaps between reads to create alignment piles, which are then processed in independent windows. The tool uses a two-step correction strategy: first, it computes a consensus sequence using multiple sequence alignment (MSA), and then it refines that consensus using a local de Bruijn graph to eliminate remaining errors. Use this skill to prepare high-quality reads for downstream assembly or to improve the base-level accuracy of existing contigs.
 
-## Installation and Environment
-CONSENT is available via Bioconda or manual compilation.
-*   **Conda**: `conda install bioconda::consent`
-*   **Manual**: Requires Python 3, g++ (>= 5.5.0), CMake (>= 2.8.2), and Minimap2.
-*   **Path**: Ensure `minimap2` is available in your system PATH, as CONSENT relies on it for overlap computation.
+CONSENT (Scalable long read self-correction and assembly polishing with multiple sequence alignment) is a tool designed to handle the high error rates associated with long-read sequencing technologies. It functions by computing overlaps between reads to define alignment piles, which are then partitioned into windows. Each window is corrected independently using a two-step strategy: first, a multiple alignment strategy computes a consensus, and second, this consensus is polished using a local de Bruijn graph to eliminate remaining errors.
 
-## Self-Correction Workflow
-To correct raw long reads, use the `CONSENT-correct` command.
+## Command Line Usage
 
-### Basic Usage
+### Self-Correction
+Use `CONSENT-correct` to perform self-correction on raw long reads.
+
 ```bash
-./CONSENT-correct --in longReads.fasta --out correctedReads.fasta --type [PB|ONT]
-```
-*   `--type PB`: Use for PacBio reads.
-*   `--type ONT`: Use for Oxford Nanopore reads.
-
-### Performance Tuning
-*   **Parallelization**: Use `--nproc` (or `-j`) to specify the number of threads. It defaults to the number of available cores.
-*   **Memory Management**: If running on a machine with limited RAM, use `--minimapIndex` (default 500M) to control the size of the Minimap2 index splits.
-*   **Temporary Storage**: CONSENT generates large overlap files. Use `--tmpdir` (or `-t`) to point to a high-capacity scratch disk to avoid filling up the working directory.
-
-## Assembly Polishing Workflow
-To improve a draft assembly using raw long reads, use the `CONSENT-polish` command.
-
-### Basic Usage
-```bash
-./CONSENT-polish --contigs draft_assembly.fasta --reads raw_reads.fasta --out polished_assembly.fasta
+./CONSENT-correct --in <reads.fasta|fastq> --out <corrected.fasta> --type <PB|ONT> [options]
 ```
 
-## Advanced Parameter Optimization
-Adjust these parameters to balance sensitivity and execution time:
+*   **--type**: Must be specified as `PB` (PacBio) or `ONT` (Oxford Nanopore) to set appropriate alignment parameters.
+*   **--nproc, -j**: Number of threads to use (defaults to all available cores).
 
-*   **Window Configuration**:
-    *   `--windowSize` (default: 500): Smaller windows may increase sensitivity in highly divergent regions but increase overhead.
-    *   `--windowOverlap` (default: 50): Ensures continuity between processed windows.
-*   **Support Thresholds**:
-    *   `--minSupport` (default: 4): Minimum number of overlapping reads required to attempt correction on a window.
-    *   `--maxSupport` (default: 150): Caps the number of overlaps in a pile to prevent bottlenecks in high-coverage regions.
-*   **Polishing Logic**:
-    *   `--merSize` (default: 9): The k-mer size used for the local de Bruijn graph.
-    *   `--solid` (default: 4): The minimum frequency for a k-mer to be considered "solid" during the graph-based polishing phase.
+### Assembly Polishing
+Use `CONSENT-polish` to refine a draft assembly using long reads.
 
-## Expert Tips
-*   **Input Formats**: CONSENT accepts both FASTA and FASTQ formats for input reads and contigs.
-*   **Resource Estimation**: For a standard 10x coverage dataset, correction typically requires ~750 MB of RAM and takes a few minutes. Scale your resource requests linearly with coverage and genome size.
-*   **Cleanup**: If a run fails, check the `--tmpdir` for leftover `.paf` files which can consume significant disk space.
+```bash
+./CONSENT-polish --contigs <draft.fasta> --reads <long_reads.fasta|fastq> --out <polished.fasta> [options]
+```
+
+## Optimization and Expert Tips
+
+### Performance and Resource Management
+*   **Memory Control**: If running on a machine with limited RAM, use `--minimapIndex` (e.g., `-m 500M`) to split the minimap2 index into smaller chunks.
+*   **Temporary Files**: CONSENT generates large intermediate alignment files. Use `--tmpdir` to point to a high-speed disk or a specific directory to avoid cluttering the working directory.
+
+### Tuning Correction Sensitivity
+*   **Window Size**: The default window size is 500bp (`-l 500`). For extremely noisy data, decreasing this might improve MSA stability, though it increases computational overhead.
+*   **Support Thresholds**: 
+    *   `--minSupport` (default 3 for correction, 1 for polishing): Increase this value if you have very high coverage and want to ensure only high-confidence overlaps are used.
+    *   `--maxSupport` (default 150): Limits the number of sequences in an alignment pile to prevent bottlenecks in the MSA step.
+*   **K-mer Polishing**: The `--merSize` (default 9) and `--solid` (default 4) parameters control the local de Bruijn graph polishing. If coverage is low, you may need to decrease the `--solid` threshold to consider k-mers as valid.
+
+### Troubleshooting
+*   **Path Requirements**: Ensure `minimap2` is in your system PATH, as CONSENT relies on it for the initial overlapping/alignment phase.
+*   **Input Formats**: While the output is always FASTA, the input can be either FASTA or FASTQ.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| /usr/local/bin/CONSENT-correct | Indicate whether the long reads are from PacBio (--type PB) or Oxford Nanopore (--type ONT) |
+| /usr/local/bin/CONSENT-polish | Polishes contigs using long reads. |
 
 ## Reference documentation
-- [CONSENT GitHub Repository](./references/github_com_morispi_CONSENT.md)
-- [Bioconda CONSENT Package](./references/anaconda_org_channels_bioconda_packages_consent_overview.md)
+- [CONSENT Main Repository](./references/github_com_morispi_CONSENT.md)
+- [CONSENT README](./references/github_com_morispi_CONSENT_blob_master_README.md)
+- [CONSENT-correct Script](./references/github_com_morispi_CONSENT_blob_master_CONSENT-correct.md)
+- [CONSENT-polish Script](./references/github_com_morispi_CONSENT_blob_master_CONSENT-polish.md)

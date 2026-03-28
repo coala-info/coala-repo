@@ -204,3 +204,6 @@ Commands:
 ERROR: No such option: --h Did you mean --help?
 ```
 
+
+## Metadata
+- **Skill**: not generated

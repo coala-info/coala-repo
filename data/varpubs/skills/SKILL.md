@@ -1,6 +1,6 @@
 ---
 name: varpubs
-description: `varpubs` finds PubMed evidence for genetic variants and generates role-specific summaries. Use when user asks to deploy a local database for variants, generate literature summaries for genetic variants, update caches, prioritize articles, or change summary perspective.
+description: varpubs is a command-line utility that queries PubMed and uses large language models to generate clinical literature summaries for genomic variants. Use when user asks to deploy a variant database, summarize PubMed articles for specific mutations, or manage a local literature cache.
 homepage: https://github.com/koesterlab/varpubs
 ---
 
@@ -9,24 +9,12 @@ homepage: https://github.com/koesterlab/varpubs
 
 ## Overview
 
-`varpubs` is a command-line utility designed to streamline the process of finding PubMed evidence for genetic variants. It addresses the challenge of reviewing large volumes of literature by querying variant-linked publications and generating three-sentence summaries tailored to specific professional roles (e.g., physicians). The tool supports relevance scoring through LLM-based "judges" and maintains a local database and cache to ensure efficiency and reproducibility in clinical workflows.
+varpubs is a command-line utility that bridges the gap between genomic variant data (VCF) and clinical literature. It streamlines the variant interpretation process by automatically querying PubMed/PubGator, caching results in a DuckDB database, and using Large Language Models (LLMs) to generate concise, three-sentence summaries. It is particularly useful for Molecular Tumor Boards or clinical dashboards where rapid, evidence-based decision-making is required for rare or poorly characterized mutations.
 
-## Installation
+## Core Workflow
 
-Install `varpubs` using Pixi or Bioconda:
-
-```bash
-# Using Pixi
-pixi global install varpubs
-
-# Using Bioconda
-conda install -c bioconda varpubs
-```
-
-## Core Workflow and CLI Patterns
-
-### 1. Initialize the Variant Database
-Before summarizing, you must deploy a local database that maps your variants of interest to the literature.
+### 1. Database Initialization
+Before summarizing, you must create a local database populated with variant information from your VCF files.
 
 ```bash
 varpubs deploy-db \
@@ -34,38 +22,51 @@ varpubs deploy-db \
   --vcf-paths variants.vcf.gz
 ```
 
-### 2. Generate Variant Summaries
-This is the primary command for literature synthesis. It requires an LLM endpoint (e.g., Hugging Face, OpenAI-compatible APIs) and a specific model.
+### 2. Literature Summarization
+This is the primary command for generating evidence. It requires an OpenAI-compatible API endpoint.
 
 ```bash
 varpubs summarize-variants \
   --db-path pubmed.duckdb \
   --vcf-path variants_annotated.vcf.gz \
   --llm-url https://your-llm-endpoint \
-  --api-key $API_TOKEN \
+  --api-key $YOUR_API_KEY \
   --model medgemma-27b-it \
   --role physician \
-  --cache cache.duckdb \
   --output summaries.tsv
 ```
 
-### 3. Manage and Update Caches
-To save time and API costs, use the caching system to store previously generated summaries. You can merge temporary caches into a primary cache.
+### 3. Cache Management
+To save time and API costs in repetitive analyses, always utilize the caching system.
+
+*   **Use a cache during summarization**: Include `--cache existing_cache.duckdb` and `--output-cache new_results.duckdb`.
+*   **Merge caches**: Use the `update-cache` command to consolidate findings.
 
 ```bash
 varpubs update-cache \
   --cache tmp_cache.duckdb \
-  --output cache.duckdb
+  --output main_cache.duckdb
 ```
 
 ## Expert Tips and Best Practices
 
-- **Role-Based Summarization**: Use the `--role` parameter to change the perspective of the summary. For example, use `physician` for clinical relevance or `researcher` for mechanistic details.
-- **Relevance Scoring**: Utilize the LLM "judge" feature to prioritize articles based on specific terms like "therapy relevance" or "prognostic significance." This helps filter out noise in well-studied genes.
-- **Database Persistence**: Always point to a persistent `--db-path`. The underlying DuckDB format allows for fast querying even with large VCF files.
-- **Environment Variables**: Store your LLM API keys in environment variables (e.g., `$HF_TOKEN`) rather than hardcoding them into scripts to maintain security.
-- **Output Integration**: The resulting TSV file is designed for direct import into clinical reporting tools or molecular tumor board dashboards.
+*   **Role-Based Summaries**: Use the `--role` parameter (e.g., `physician`, `researcher`) to adjust the tone and focus of the generated three-sentence summaries.
+*   **Relevance Judging**: Enable the optional LLM "judge" to score articles on a scale of 1-4. This helps prioritize papers discussing therapy relevance or clinical outcomes over purely functional studies.
+*   **Environment Variables**: Store your API keys in environment variables (e.g., `export HF_TOKEN=your_key`) rather than passing them as plain text in the command line.
+*   **Input Preparation**: Ensure your VCF is properly annotated (e.g., with HGVS.p notation), as varpubs relies on these annotations to build effective PubMed search queries.
+*   **Database Choice**: varpubs uses DuckDB for its backend, which allows for high-performance local querying. You can inspect the `pubmed.duckdb` file using standard SQL tools if you need to verify the retrieved abstracts.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| update-cache | UpdateCacheArgs ['args']: Arguments for updating the cache. |
+| var pubs deploy-db | DeployDBArgs ['args']: Command-line arguments for deploying the PubMed variant database. |
+| var pubs summarize-variants | SummarizeArgs ['args']: Command-line arguments for summarizing PubMed articles related to variants. |
 
 ## Reference documentation
-- [varpubs GitHub Repository](./references/github_com_koesterlab_varpubs.md)
-- [varpubs Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_varpubs_overview.md)
+- [varpubs README](./references/github_com_koesterlab_varpubs_blob_main_README.md)
+- [Project Metadata and Dependencies](./references/github_com_koesterlab_varpubs_blob_main_pyproject.toml.md)
+- [Changelog and Feature History](./references/github_com_koesterlab_varpubs_blob_main_CHANGELOG.md)

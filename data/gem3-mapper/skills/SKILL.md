@@ -1,6 +1,6 @@
 ---
 name: gem3-mapper
-description: gem3-mapper performs fast and sensitive genomic read mapping by aligning sequences against large reference genomes using a custom FM-Index. Use when user asks to index a reference genome, map single-end or paired-end reads, or perform high-throughput sequence alignment with GPU acceleration.
+description: gem3-mapper is a high-throughput tool designed to align single-end or paired-end sequenced reads against large reference genomes. Use when user asks to index a reference genome, map reads to a reference, or perform sensitive sequence alignment.
 homepage: https://github.com/smarco/gem3-mapper
 ---
 
@@ -8,62 +8,71 @@ homepage: https://github.com/smarco/gem3-mapper
 # gem3-mapper
 
 ## Overview
-The gem3-mapper skill provides procedural knowledge for using the GEM3 suite to perform fast and sensitive genomic read mapping. It excels at aligning sequences up to 1K bases long against large reference genomes. The tool utilizes a custom FM-Index and supports various alignment models, including global and local alignment with gap-affine penalties. It is particularly useful for researchers requiring high-throughput processing with support for multithreading and GPU acceleration.
+
+GEM3 is a high-throughput mapping tool designed for aligning sequenced reads against large reference genomes. It is particularly effective for reads up to 1000 bases long. Unlike many heuristic mappers, GEM3 can perform "complete" searches, ensuring no valid matches are missed based on user-defined criteria. It supports single-end and paired-end data, global and local alignment models, and various error models including Hamming, Edit, and Gap-affine.
 
 ## Core Workflows
 
 ### 1. Indexing a Reference Genome
-Before mapping, you must create a GEM index from a multi-FASTA reference file.
+Before mapping, you must create a custom FM-Index from a Multi-FASTA file.
 
 ```bash
 # Basic indexing
-gem-indexer -i reference.fa -o reference_index
+gem-indexer -i reference.fa -o index_prefix
 
 # Indexing for bisulfite sequencing (epigenetics)
-gem-indexer -i reference.fa -o reference_bisulfite -b
+gem-indexer -i reference.fa -o index_prefix -b
 ```
 
-### 2. Single-End Mapping
-Map single-end reads to a pre-built index. The default output is SAM format.
+### 2. Mapping Single-End Reads
+Align a single FASTQ file against the generated index.
 
 ```bash
-# Standard single-end mapping
-gem-mapper -I reference_index.gem -i reads.fastq -o output.sam
+# Standard mapping (outputting to SAM)
+gem-mapper -I index_prefix.gem -i reads.fastq -o alignments.sam
 
-# High-sensitivity mode with specific error rate (e.g., 10%)
-gem-mapper -I reference_index.gem -i reads.fastq --mapping-mode sensitive -e 0.10 -o output.sam
+# Using sensitive mode for higher accuracy
+gem-mapper -I index_prefix.gem -i reads.fastq --mapping-mode sensitive -o alignments.sam
 ```
 
-### 3. Paired-End Mapping
-GEM3 supports both interleaved and separate FASTQ files for paired-end data.
+### 3. Mapping Paired-End Reads
+GEM3 supports both interleaved and split file formats.
 
 ```bash
-# Separate files (End 1 and End 2)
-gem-mapper -I reference_index.gem -1 reads_1.fastq -2 reads_2.fastq -o output.sam
+# Split files (Read 1 and Read 2)
+gem-mapper -I index_prefix.gem -1 reads_1.fastq -2 reads_2.fastq -o alignments.sam
 
-# Interleaved file (requires -p flag)
-gem-mapper -I reference_index.gem -i interleaved_reads.fastq -p -o output.sam
+# Interleaved file (use -p flag)
+gem-mapper -I index_prefix.gem -i interleaved.fastq -p -o alignments.sam
 ```
 
 ## Expert Tips and Best Practices
 
 ### Performance Optimization
-*   **Threading**: By default, GEM3 uses all available logical cores. Use `-t <N>` to restrict CPU usage in shared environments.
-*   **GPU Acceleration**: If the hardware supports it, add the `--gpu` flag to `gem-mapper` to significantly speed up the alignment process.
-*   **Compressed I/O**: Use `-z` for gzip-compressed input or `-j` for bzip-compressed input to save disk space and reduce I/O overhead.
+*   **Multithreading**: Use `-t` to specify the number of cores. By default, GEM3 attempts to use all logical cores.
+*   **Compressed I/O**: GEM3 can handle compressed files directly to save disk space and I/O time.
+    *   Input: Use `-z` for gzip or `-j` for bzip2.
+    *   Output: Use `--gzip-output` or `--bzip-output`.
 
 ### Alignment Tuning
-*   **Mapping Modes**: 
-    *   `fast`: Optimized for speed (default).
-    *   `sensitive`: Higher accuracy, slower execution.
-    *   `customed`: Allows manual override of internal heuristics.
-*   **Local Alignment**: If global alignment fails, you can trigger local alignment using `--alignment-local if-unmapped`.
-*   **Reporting**: Control the number of reported matches per read with `-M <N>`. Use `-M all` for complete search results, though this increases output size significantly.
+*   **Error Rates**: The default maximum divergency is 12% (`-e 0.12`). Adjust this based on your expected sequencing error profile.
+*   **Local Alignment**: By default, GEM3 attempts local alignment only if no global alignment is found (`--alignment-local if-unmapped`). Change to `never` to force global-only mapping.
+*   **Template Length**: For paired-end data, use `-L` to set the maximum expected insert size (template length) to filter out discordant mappings.
 
-### Output Formatting
-*   **SAM Compatibility**: Use `--sam-compact true` (default) to include alternative hits in the `XA` tag, keeping the SAM file manageable.
-*   **Read Groups**: Always define read group headers for downstream GATK/Picard compatibility using `-r '@RG\tID:ID_STR\tSM:SAMPLE_NAME'`.
+### Search Strategies
+*   **Mapping Modes**:
+    *   `fast`: Optimized for speed (default).
+    *   `sensitive`: Slower but explores more of the search space.
+    *   `customed`: Allows manual override of internal heuristics.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| ./gem-indexer | Index a genome for GEM mapper |
+| ./gem-mapper | GEM3 mapper |
 
 ## Reference documentation
-- [GEM-Mapper v3 README](./references/github_com_smarco_gem3-mapper.md)
-- [Bioconda gem3-mapper Package](./references/anaconda_org_channels_bioconda_packages_gem3-mapper_overview.md)
+- [GEM-Mapper (Version 3) README](./references/github_com_smarco_gem3-mapper_blob_master_README.md)

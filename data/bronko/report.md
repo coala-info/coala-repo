@@ -121,3 +121,6 @@ EXTRA OUTPUT FILES:
       --consensus       Return consensus sequences for each virus (.fasta format)
 ```
 
+
+## Metadata
+- **Skill**: generated

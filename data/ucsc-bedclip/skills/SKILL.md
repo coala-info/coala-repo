@@ -1,6 +1,6 @@
 ---
 name: ucsc-bedclip
-description: ucsc-bedclip validates and corrects genomic coordinates in BED files by clipping or removing entries that exceed chromosome boundaries. Use when user asks to validate BED file coordinates, correct invalid genomic coordinates, prepare BED files for BigBed conversion, or ensure genomic data integrity.
+description: This tool removes or truncates BED file features that extend beyond defined chromosome boundaries. Use when user asks to clip genomic coordinates, remove out-of-bounds features, or prepare BED files for conversion to bigBed or bigWig formats.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
 
@@ -8,49 +8,58 @@ homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 # ucsc-bedclip
 
 ## Overview
-The `ucsc-bedclip` utility is a specialized tool from the UCSC Genome Browser "Kent" suite used to ensure genomic data integrity. In bioinformatics workflows, BED files may occasionally contain entries with coordinates that are technically invalid—such as start positions less than zero or end positions that exceed the known length of a chromosome. This tool compares a BED file against a specific genome's chromosome sizes and "clips" the data to fit, either by removing the offending lines or truncating the coordinates to the maximum allowable boundary.
+The `bedClip` utility is a specialized tool from the UCSC Genome Browser "kent" suite designed to ensure genomic data integrity. It compares the coordinates in a BED file against a provided list of chromosome sizes and "clips" or removes any features that fall outside those valid ranges. You should use this tool whenever you encounter "out of bounds" errors during track hub creation or when working with assembly-specific data where features might inadvertently overlap the ends of chromosomes.
 
-## Usage Instructions
+## Command Line Usage
 
-### Basic Command Line Syntax
-The tool requires three positional arguments: the input BED file, a chromosome sizes file, and the destination for the clipped output.
+The basic syntax for `bedClip` requires an input BED file, a chromosome sizes file, and a destination for the clipped output.
 
 ```bash
 bedClip input.bed chrom.sizes output.bed
 ```
 
-### Preparing the chrom.sizes File
-The `chrom.sizes` file is a two-column, tab-separated text file where the first column is the chromosome name (e.g., `chr1`) and the second column is the size in base pairs. You can generate this for UCSC assemblies using the `fetchChromSizes` utility:
+### Input Requirements
+- **BED File**: A standard tab-separated BED file (3-column minimum).
+- **Chromosome Sizes**: A two-column text file containing `chromName` and `chromSize` (e.g., `chr1 248956422`). You can generate this using `fetchChromSizes` or by querying a database.
 
+## Best Practices and Expert Tips
+
+### Pre-conversion Workflow
+Always run `bedClip` before using `bedGraphToBigWig` or `bedToBigBed`. These conversion tools will fail if a single record exceeds the chromosome length.
 ```bash
-# Example for Human GRCh38/hg38
-fetchChromSizes hg38 > hg38.chrom.sizes
+# Recommended pipeline
+bedSort input.bedGraph sorted.bedGraph
+bedClip sorted.bedGraph hg38.chrom.sizes clipped.bedGraph
+bedGraphToBigWig clipped.bedGraph hg38.chrom.sizes output.bw
 ```
 
-## Expert Tips and Best Practices
-
-### Prerequisite for BigBed Conversion
-The most common use case for `bedClip` is as a mandatory step before running `bedToBigBed`. The BigBed conversion tool will fail with an error if any feature extends beyond the chromosome limits defined in the sizes file. Always pipe or sequence your commands as follows:
-1. `bedSort` (to order the file)
-2. `bedClip` (to validate boundaries)
-3. `bedToBigBed` (to create the binary index)
-
-### Handling Truncation vs. Removal
-By default, `bedClip` is designed to keep the data valid. If a feature starts at -10 and ends at 50, it will be clipped to start at 0. If a feature is entirely outside the range (e.g., starts at 5000 on a chromosome only 4000 bp long), it will be removed.
-
-### Integration with Pipes
-To save disk space and avoid intermediate files, `bedClip` can be used in a command pipeline. Use `stdin` or `stdout` notation if supported, though standard Kent tools often prefer explicit file paths. If using a shell that supports process substitution:
+### Handling Standard Input/Output
+Like most UCSC utilities, `bedClip` supports `stdin` and `stdout` using the hyphen (`-`) character, allowing it to be integrated into pipes without creating intermediate files.
 ```bash
-bedSort input.bed stdout | bedClip stdin hg38.chrom.sizes output.clipped.bed
+cat data.bed | bedClip - hg38.chrom.sizes stdout | next_tool
 ```
 
-### Verification
-After clipping, you can verify the coordinate range of your file using `awk` to ensure no negative starts remain:
+### Coordinate Validation
+`bedClip` specifically handles two types of boundary issues:
+1. **End-clipping**: If a feature starts within a chromosome but ends after the chromosome's length, the end coordinate is truncated to the maximum chromosome size.
+2. **Removal**: If a feature starts and ends entirely outside the chromosome boundaries (e.g., a negative start coordinate or a start coordinate greater than the chromosome length), the entry is removed entirely.
+
+### Troubleshooting "Permission Denied"
+If you have just downloaded the binary from the UCSC server, you must set the execution bit before it will run:
 ```bash
-awk '$2 < 0' output.bed
+chmod +x ./bedClip
 ```
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| bedSort | Sort a BED file. The input and output can be the same file. |
+| bedToBigBed | Convert a BED file to a bigBed file. The input BED file must be sorted by chromosome and start position. |
+| fetchChromSizes | Fetch chromosome sizes for a specified UCSC genome database (e.g., hg38, mm10). The output is sent to stdout. |
 
 ## Reference documentation
-- [ucsc-bedclip Overview](./references/anaconda_org_channels_bioconda_packages_ucsc-bedclip_overview.md)
-- [UCSC Admin Executables Directory](./references/hgdownload_cse_ucsc_edu_admin_exe.md)
-- [Linux x86_64 Tool List](./references/hgdownload_cse_ucsc_edu_admin_exe_linux.x86_64.md)
+- [UCSC Genome Browser Kent Utility Directory](./references/hgdownload_cse_ucsc_edu_admin_exe_linux.x86_64.md)
+- [UCSC Kent Wiki](./references/github_com_ucscGenomeBrowser_kent_wiki.md)

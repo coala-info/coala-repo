@@ -357,3 +357,6 @@ List Fields:
 Example: pod5 view input.pod5
 ```
 
+
+## Metadata
+- **Skill**: generated

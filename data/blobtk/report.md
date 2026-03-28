@@ -298,3 +298,6 @@ Options:
           Print help (see a summary with '-h')
 ```
 
+
+## Metadata
+- **Skill**: generated

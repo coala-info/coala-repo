@@ -555,3 +555,6 @@ Then, execute:
   polap init
 ```
 
+
+## Metadata
+- **Skill**: generated

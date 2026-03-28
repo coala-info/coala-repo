@@ -1,1 +1,503 @@
-Tags · KwanLab/Autometa · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} KwanLab / Autometa Public Notifications You must be signed in to change notification settings Fork 16 Star 45 Code Issues 39 Pull requests 1 Discussions Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Discussions Actions Projects Security Insights Tags: KwanLab/Autometa Releases Tags Tags 2.2.3 Toggle 2.2.3&#39;s commit message Verified Verified This commit was created on GitHub.com and signed with GitHub’s verified signature . GPG key ID: B5690EEEBB952194 Verified Learn about vigilant mode Fix NA issues after Pandas update ( #361 ) * 🐛 fixes recursive_dbscan/pandas NA * Fix hdbscan binning * Update version --------- Co-authored-by: Siddharth Uppal &lt;suppal3@wisc.edu&gt; Jun 14, 2024 0d9028c zip tar.gz Notes 2.2.2 Toggle 2.2.2&#39;s commit message Verified Verified This commit was created on GitHub.com and signed with GitHub’s verified signature . GPG key ID: B5690EEEBB952194 Verified Learn about vigilant mode Release 2.2.2 ( #359 ) * 🎨 Add snakefile * 🔥 remove status-sacct.sh * Fix Issue#350 ( #353 ) * Fix pandas version * :up-arrow: Update pandas to 1.5 🎨 Chage line_terminator to lineterminator in `summary.py` * Fix biopython error * Update bioython version * Fix ncbi_is_connected error ( #352 ) * Update metagenome.py * Update metagenome.py * Update version * Remove snakemake workflow * Remove space May 31, 2024 695c09c zip tar.gz Notes 2.2.1 Toggle 2.2.1&#39;s commit message Verified Verified This commit was created on GitHub.com and signed with GitHub’s verified signature . The key has expired. GPG key ID: 4AEE18F83AFDEB23 Expired Verified Learn about vigilant mode Merge pull request #344 from KwanLab/release-2.2.1 Release 2.2.1 Aug 24, 2023 afd1abe zip tar.gz Notes 2.2.0 Toggle 2.2.0&#39;s commit message Verified Verified This commit was created on GitHub.com and signed with GitHub’s verified signature . The key has expired. GPG key ID: 4AEE18F83AFDEB23 Expired Verified Learn about vigilant mode Merge pull request #300 from KwanLab/release-2.2.0 Release 2.2.0 Dec 16, 2022 52fd5b0 zip tar.gz Notes 2.1.0 Toggle 2.1.0&#39;s commit message Verified Verified This commit was created on GitHub.com and signed with GitHub’s verified signature . The key has expired. GPG key ID: 4AEE18F83AFDEB23 Expired Verified Learn about vigilant mode Merge pull request #273 from KwanLab/release-2.1.0 Release 2.1.0 May 12, 2022 f514de8 zip tar.gz Notes 2.0.3 Toggle 2.0.3&#39;s commit message ⬆️ Bump VERSION and manifest.version to version 2.0.3 Apr 7, 2022 b41802c zip tar.gz Notes 2.0.2 Toggle 2.0.2&#39;s commit message Verified Verified This commit was created on GitHub.com and signed with GitHub’s verified signature . The key has expired. GPG key ID: 4AEE18F83AFDEB23 Expired Verified Learn about vigilant mode Merge pull request #247 from chtsai0105/main 🐛 Fix the NoneType error during initating the LCA object ( #246 ) Mar 15, 2022 3e581b9 zip tar.gz Notes 2.0.1 Toggle 2.0.1&#39;s commit message Verified Verified This commit was created on GitHub.com and signed with GitHub’s verified signature . The key has expired. GPG key ID: 4AEE18F83AFDEB23 Expired Verified Learn about vigilant mode Merge pull request #243 from KwanLab/hotfix 🐛🔥 Fix bedtools coverage calculation bug Feb 24, 2022 ad0364a zip tar.gz Notes 2.0.0 Toggle 2.0.0&#39;s commit message Verified Verified This commit was created on GitHub.com and signed with GitHub’s verified signature . The key has expired. GPG key ID: 4AEE18F83AFDEB23 Expired Verified Learn about vigilant mode Update link for codecov badge Feb 8, 2022 b1ec370 zip tar.gz Notes 2.0 Toggle 2.0&#39;s commit message Verified Verified This commit was created on GitHub.com and signed with GitHub’s verified signature . The key has expired. GPG key ID: 4AEE18F83AFDEB23 Expired Verified Learn about vigilant mode release 2.0 ( #225 ) * init autometa 2 * added template classes from autometa class diagram discussion * autometa 1.0 refactored. New cli and beginnings of User API. markers cutoffs reformatted. configurations added to handle executable and database dependencies. k-mer counting (multiprocessing capable), normalization and embedding (multiple methods via TSNE and UMAP). external dependencies handled in external directory. utilities for archiving, unzipping, etc added in common directory. metagenome and mag classes to handle respective data. binning directory for multiple binning algorithms. docs directory containing jupyter notebooks with information about autometa as well as template python script for writing new modules ot plug in to autometa. Added projects folder as default location where autometa will place metagenome binning jobs. Added taxonomy folder for taxon assignment algorithms/utilities. * updated markers links and link to test_metagenome.config * removed unneeded class diagram doc and edit test config to display required options. updates to database handling and added timeit to main function calls. * bugfix to get_kingdoms assigning self.taxonomy using self.assign_taxonomy() and changed logger for diamond to debug. utilities timeit now is INFO level logging. some 'f' string formatting for kmers and diamond logs (added comma thousand separators). * updates to suppress parallel warnings when running prodigal. updated noparallel arg to parallel so does GNU parallel disabled by default. updated config sections to reflect parameter change * added coverage calculation handling for reads,sam,bam and bed files. Updated coverage.py args and metagenome.py and autometa.py to reflect new args. added respective files under [files] section in default.config and metagenome.config files. * updated logger to DEBUG for majority_vote.py updated argparse help for --out in coverage.py and moved return statement in taxon assignment in metagenome.py to reduce redundancy. * updates to autometa configuration. Added kingdom arg to tune for only binning respective to selected kingdom. Choices are bacteria and archaea. bugfix where environs were being placed under database section in config. added samtools and bedtools to environ checks (used in coverage calculations). Updated default config files respective to coverage calculations * suppressed parallel warnings when running hmmscan * bugfix to parallel warning supression for hmmscan * bugfix to orf calling in metagenome.py * upadted default config to handle coverage calculation files * update files in default.config * Add django-related files, clean up structure * Update ignore, force recache of un-ignored files * Update ignore, force recache of un-ignored files * Add vscode ignorance * Add vscode ignorance * Begin django website dev * Begin django website dev * Restart website, add first app * Restart website, add first app * Make startpage * Make startpage * Delete website; confusing naming * Delete website; confusing naming * Start new django website * Start new django website * Create startpage * Create startpage * bugfix to hmmer marker filtering (filepath handling). minor logging edits to lca and majority vote. removed unneccessary comment in metagenome. Comment in kmers to silence UMAP warnings. * Add startpage * Add startpage * Add template, css, bootstrap * Add template, css, bootstrap * Fix links, add nav-bar, css * Fix links, add nav-bar, css * Change blog template to autometa related terms * Change blog template to autometa related terms * Add Projects and Jobs as Models This is a temporary setup and could change later. For now, each user (class User read here: https://docs.djangoproject.com/en/3.0/ref/contrib/auth/) has projects (
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FKwanLab%2FAutometa%2Ftags)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FKwanLab%2FAutometa%2Ftags)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Freleases%2Ftag_history&source=header-repo&source_repo=KwanLab%2FAutometa)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[KwanLab](/KwanLab)
+/
+**[Autometa](/KwanLab/Autometa)**
+Public
+
+* [Notifications](/login?return_to=%2FKwanLab%2FAutometa) You must be signed in to change notification settings
+* [Fork
+  16](/login?return_to=%2FKwanLab%2FAutometa)
+* [Star
+   45](/login?return_to=%2FKwanLab%2FAutometa)
+
+* [Code](/KwanLab/Autometa)
+* [Issues
+  39](/KwanLab/Autometa/issues)
+* [Pull requests
+  1](/KwanLab/Autometa/pulls)
+* [Discussions](/KwanLab/Autometa/discussions)
+* [Actions](/KwanLab/Autometa/actions)
+* [Projects](/KwanLab/Autometa/projects)
+* [Security
+  0](/KwanLab/Autometa/security)
+* [Insights](/KwanLab/Autometa/pulse)
+
+Additional navigation options
+
+* [Code](/KwanLab/Autometa)
+* [Issues](/KwanLab/Autometa/issues)
+* [Pull requests](/KwanLab/Autometa/pulls)
+* [Discussions](/KwanLab/Autometa/discussions)
+* [Actions](/KwanLab/Autometa/actions)
+* [Projects](/KwanLab/Autometa/projects)
+* [Security](/KwanLab/Autometa/security)
+* [Insights](/KwanLab/Autometa/pulse)
+
+# Tags: KwanLab/Autometa
+
+[Releases](/KwanLab/Autometa/releases)
+[Tags](/KwanLab/Autometa/tags)
+
+Tags
+
+## [2.2.3](/KwanLab/Autometa/releases/tag/2.2.3)
+
+Toggle 2.2.3's commit message
+
+Verified
+
+# Verified
+
+This commit was created on GitHub.com and signed with GitHub’s **verified signature**.
+
+GPG key ID: B5690EEEBB952194
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits)
+
+```
+Fix NA issues after Pandas update (#361)
+
+* 🐛 fixes recursive_dbscan/pandas NA
+
+* Fix hdbscan binning
+
+* Update version
+
+---------
+
+Co-authored-by: Siddharth Uppal <suppal3@wisc.edu>
+```
+
+* Jun 14, 2024
+* [0d9028c](/KwanLab/Autometa/commit/0d9028cf7bad20d6e28667aaba9d3889a15ace09)
+* [zip](/KwanLab/Autometa/archive/refs/tags/2.2.3.zip)
+* [tar.gz](/KwanLab/Autometa/archive/refs/tags/2.2.3.tar.gz)
+* [Notes](/KwanLab/Autometa/releases/tag/2.2.3)
+
+## [2.2.2](/KwanLab/Autometa/releases/tag/2.2.2)
+
+Toggle 2.2.2's commit message
+
+Verified
+
+# Verified
+
+This commit was created on GitHub.com and signed with GitHub’s **verified signature**.
+
+GPG key ID: B5690EEEBB952194
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits)
+
+```
+Release 2.2.2 (#359)
+
+* 🎨 Add snakefile
+
+* 🔥 remove status-sacct.sh
+
+* Fix Issue#350 (#353)
+
+* Fix pandas version
+
+* :up-arrow: Update pandas to 1.5
+🎨 Chage line_terminator to lineterminator in `summary.py`
+
+* Fix biopython error
+
+* Update bioython version
+
+* Fix ncbi_is_connected error (#352)
+
+* Update metagenome.py
+
+* Update metagenome.py
+
+* Update version
+
+* Remove snakemake workflow
+
+* Remove space
+```
+
+* May 31, 2024
+* [695c09c](/KwanLab/Autometa/commit/695c09cd6be20105c2bc365bf22d0650b7a9cfd4)
+* [zip](/KwanLab/Autometa/archive/refs/tags/2.2.2.zip)
+* [tar.gz](/KwanLab/Autometa/archive/refs/tags/2.2.2.tar.gz)
+* [Notes](/KwanLab/Autometa/releases/tag/2.2.2)
+
+## [2.2.1](/KwanLab/Autometa/releases/tag/2.2.1)
+
+Toggle 2.2.1's commit message
+
+Verified
+
+# Verified
+
+This commit was created on GitHub.com and signed with GitHub’s **verified signature**.
+The key has expired.
+
+GPG key ID: 4AEE18F83AFDEB23
+
+Expired
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits)
+
+```
+Merge pull request #344 from KwanLab/release-2.2.1
+
+Release 2.2.1
+```
+
+* Aug 24, 2023
+* [afd1abe](/KwanLab/Autometa/commit/afd1abe5aba7d9623f7f331e0ec62d1b9b775956)
+* [zip](/KwanLab/Autometa/archive/refs/tags/2.2.1.zip)
+* [tar.gz](/KwanLab/Autometa/archive/refs/tags/2.2.1.tar.gz)
+* [Notes](/KwanLab/Autometa/releases/tag/2.2.1)
+
+## [2.2.0](/KwanLab/Autometa/releases/tag/2.2.0)
+
+Toggle 2.2.0's commit message
+
+Verified
+
+# Verified
+
+This commit was created on GitHub.com and signed with GitHub’s **verified signature**.
+The key has expired.
+
+GPG key ID: 4AEE18F83AFDEB23
+
+Expired
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits)
+
+```
+Merge pull request #300 from KwanLab/release-2.2.0
+
+Release 2.2.0
+```
+
+* Dec 16, 2022
+* [52fd5b0](/KwanLab/Autometa/commit/52fd5b0586b4b8bdf71f7b5fa34201f8735b5fa6)
+* [zip](/KwanLab/Autometa/archive/refs/tags/2.2.0.zip)
+* [tar.gz](/KwanLab/Autometa/archive/refs/tags/2.2.0.tar.gz)
+* [Notes](/KwanLab/Autometa/releases/tag/2.2.0)
+
+## [2.1.0](/KwanLab/Autometa/releases/tag/2.1.0)
+
+Toggle 2.1.0's commit message
+
+Verified
+
+# Verified
+
+This commit was created on GitHub.com and signed with GitHub’s **verified signature**.
+The key has expired.
+
+GPG key ID: 4AEE18F83AFDEB23
+
+Expired
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits)
+
+```
+Merge pull request #273 from KwanLab/release-2.1.0
+
+Release 2.1.0
+```
+
+* May 12, 2022
+* [f514de8](/KwanLab/Autometa/commit/f514de820ff457d6f0cff1cfe5fcbf9c7d9a3ebb)
+* [zip](/KwanLab/Autometa/archive/refs/tags/2.1.0.zip)
+* [tar.gz](/KwanLab/Autometa/archive/refs/tags/2.1.0.tar.gz)
+* [Notes](/KwanLab/Autometa/releases/tag/2.1.0)
+
+## [2.0.3](/KwanLab/Autometa/releases/tag/2.0.3)
+
+Toggle 2.0.3's commit message
+
+```
+⬆️ Bump VERSION and manifest.version to version 2.0.3
+```
+
+* Apr 7, 2022
+* [b41802c](/KwanLab/Autometa/commit/b41802c65fb6a5a9983d518bb76235a7ba107793)
+* [zip](/KwanLab/Autometa/archive/refs/tags/2.0.3.zip)
+* [tar.gz](/KwanLab/Autometa/archive/refs/tags/2.0.3.tar.gz)
+* [Notes](/KwanLab/Autometa/releases/tag/2.0.3)
+
+## [2.0.2](/KwanLab/Autometa/releases/tag/2.0.2)
+
+Toggle 2.0.2's commit message
+
+Verified
+
+# Verified
+
+This commit was created on GitHub.com and signed with GitHub’s **verified signature**.
+The key has expired.
+
+GPG key ID: 4AEE18F83AFDEB23
+
+Expired
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits)
+
+```
+Merge pull request #247 from chtsai0105/main
+
+🐛 Fix the NoneType error during initating the LCA object (#246)
+```
+
+* Mar 15, 2022
+* [3e581b9](/KwanLab/Autometa/commit/3e581b9ea88ca0cae11e9d84424394415dd17eee)
+* [zip](/KwanLab/Autometa/archive/refs/tags/2.0.2.zip)
+* [tar.gz](/KwanLab/Autometa/archive/refs/tags/2.0.2.tar.gz)
+* [Notes](/KwanLab/Autometa/releases/tag/2.0.2)
+
+## [2.0.1](/KwanLab/Autometa/releases/tag/2.0.1)
+
+Toggle 2.0.1's commit message
+
+Verified
+
+# Verified
+
+This commit was created on GitHub.com and signed with GitHub’s **verified signature**.
+The key has expired.
+
+GPG key ID: 4AEE18F83AFDEB23
+
+Expired
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits)
+
+```
+Merge pull request #243 from KwanLab/hotfix
+
+🐛🔥 Fix bedtools coverage calculation bug
+```
+
+* Feb 24, 2022
+* [ad0364a](/KwanLab/Autometa/commit/ad0364a505bb188a3bbcd9139ecf09895572127c)
+* [zip](/KwanLab/Autometa/archive/refs/tags/2.0.1.zip)
+* [tar.gz](/KwanLab/Autometa/archive/refs/tags/2.0.1.tar.gz)
+* [Notes](/KwanLab/Autometa/releases/tag/2.0.1)
+
+## [2.0.0](/KwanLab/Autometa/releases/tag/2.0.0)
+
+Toggle 2.0.0's commit message
+
+Verified
+
+# Verified
+
+This commit was created on GitHub.com and signed with GitHub’s **verified signature**.
+The key has expired.
+
+GPG key ID: 4AEE18F83AFDEB23
+
+Expired
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits)
+
+```
+Update link for codecov badge
+```
+
+* Feb 8, 2022
+* [b1ec370](/KwanLab/Autometa/commit/b1ec370c44e7accfc917aaad1a685133537fd915)
+* [zip](/KwanLab/Autometa/archive/refs/tags/2.0.0.zip)
+* [tar.gz](/KwanLab/Autometa/archive/refs/tags/2.0.0.tar.gz)
+* [Notes](/KwanLab/Autometa/releases/tag/2.0.0)
+
+## [2.0](/KwanLab/Autometa/releases/tag/2.0)
+
+Toggle 2.0's commit message
+
+Verified
+
+# Verified
+
+This commit was created on GitHub.com and signed with GitHub’s **verified signature**.
+The key has expired.
+
+GPG key ID: 4AEE18F83AFDEB23
+
+Expired
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits)
+
+```
+release 2.0 (#225)
+
+* init autometa 2
+
+* added template classes from autometa class diagram discussion
+
+* autometa 1.0 refactored. New cli and beginnings of User API. markers cutoffs reformatted. configurations added to handle executable and database dependencies. k-mer counting (multiprocessing capable), normalization and embedding (multiple methods via TSNE and UMAP). external dependencies handled in external directory. utilities for archiving, unzipping, etc added in common directory. metagenome and mag classes to handle respective data. binning directory for multiple binning algorithms. docs directory containing jupyter notebooks with information about autometa as well as template python script for writing new modules ot plug in to autometa. Added projects folder as default location where autometa will place metagenome binning jobs. Added taxonomy folder for taxon assignment algorithms/utilities.
+
+* updated markers links and link to test_metagenome.config
+
+* removed unneeded class diagram doc and edit test config to d

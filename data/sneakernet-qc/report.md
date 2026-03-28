@@ -64,3 +64,6 @@ SneakerNetPlugins.pl: runs all SneakerNet plugins on a run directory
    at /usr/local/bin/SneakerNetPlugins.pl line 36.
 ```
 
+
+## Metadata
+- **Skill**: generated

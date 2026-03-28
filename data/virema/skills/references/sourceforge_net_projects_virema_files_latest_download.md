@@ -1,1 +1,577 @@
-Download ViReMa Join/Login Business Software Open Source Software For Vendors Blog About More Articles Create SourceForge Podcast Site Documentation Subscribe to our Newsletter Support Request For Vendors Help Create Join Login Business Software Open Source Software SourceForge Podcast Resources Articles Case Studies Blog Menu Help Create Join Login Home Open Source Software Scientific/Engineering Bio-Informatics ViReMa ViReMa Viral Recombination Mapper Brought to you by: andrewrouthseq Get an email when there's a new version of ViReMa Next Your download will start shortly... Share This &times; Problems Downloading? ViReMa_0.25.zip Scanned for malware ✔ Mirror Provided by Learn more about SourceForge Other Useful Business Software MongoDB Atlas runs apps anywhere Deploy in 115+ regions with the modern database for every enterprise. MongoDB Atlas gives you the freedom to build and run modern applications anywhere—across AWS, Azure, and Google Cloud. With global availability in over 115 regions, Atlas lets you deploy close to your users, meet compliance needs, and scale with confidence across any geography. Start Free Enterprise-grade ITSM, for every business Give your IT, operations, and business teams the ability to deliver exceptional services—without the complexity. Freshservice is an intuitive, AI-powered platform that helps IT, operations, and business teams deliver exceptional service without the usual complexity. Automate repetitive tasks, resolve issues faster, and provide seamless support across the organization. From managing incidents and assets to driving smarter decisions, Freshservice makes it easy to stay efficient and scale with confidence. Try it Free AI-generated apps that pass security review Stop waiting on engineering. Build production-ready internal tools with AI—on your company data, in your cloud. Retool lets you generate dashboards, admin panels, and workflows directly on your data. Type something like “Build me a revenue dashboard on my Stripe data” and get a working app with security, permissions, and compliance built in from day one. Whether on our cloud or self-hosted, create the internal software your team needs without compromising enterprise standards or control. Try Retool free Our Free Plans just got better! | Auth0 With up to 25k MAUs and unlimited Okta connections, our Free Plan lets you focus on what you do best—building great apps. You asked, we delivered! Auth0 is excited to expand our Free and Paid plans to include more options so you can focus on building, deploying, and scaling applications without having to worry about your security. Auth0 now, thank yourself later. Try free now Find Hidden Risks in Windows Task Scheduler Free diagnostic script reveals configuration issues, error patterns, and security risks. Instant HTML report. Windows Task Scheduler might be hiding critical failures. Download the free JAMS diagnostic tool to uncover problems before they impact production—get a color-coded risk report with clear remediation steps in minutes. Download Free Tool ViReMa Overview Viral Recombination Mapper ViReMa (Viral Recombination Mapper) detects and reports recombination or fusion events in virus genomes using deep sequencing datasets. Feb 2014 - Our paper (Open Access) is available at Nucleic Acids Research: &#34;Discovery of functional genomic motifs in viruses with ViReMa–a Virus Recombination Mapper–for analysis of next-generation sequencing data&#34; http://nar.oxfordjournals.org/content/42/2/e11 This is an on-going project and updates will be regularly posted. Please get in touch with any questions, problems or suggestions. Additional Details for ViReMa Intended Audience Science/Research Programming Language Python Registered 2013-06-18 Last Updated 2023-11-27 Categories Bio-Informatics Maintainers andrewrouthseq Recommended Projects LDhelmet NOTE: This project has migrated to GitHub: https://github.com/popgenmethods/LDhelmet LDhelmet performs statistical inference for fine-scale variable recombination rate estimation. The source code and the recombination maps for two populations of Drosophila melanogaster are available for download. Reference: Andrew H. Chan, Paul A. Jenkins, Yun S. Song (2012). Genome-Wide Fine-Scale Recombination Rate Variation in Drosophila melanogaster. PLoS Genet 8(12): e1003090. doi:10.1371/journal.pgen.1003090 Downloads: 2 This Week Last Update: 2021-06-23 See Project hrefinder This software detects homologous recombination events (HREs) from SNP data. Based on SNP alleles calls and locations, it breaks the genomes into locally colinear blocks, and looks for cases where SNPs do not agree with the vertical pattern of inheritance in a phylogeny. It applies a dynamic programming algorithm to model whether changes within a block are likely a result of mutations, sequencing errors, or HRE. We use information from the nearby SNPs, so that if 1-2 alleles in a series of SNPs differs from the ancestral allele, it may be better explained as a mutation or sequencing error. But if a series of SNP alleles differ from the ancestral pattern, then it may be more likely that an HRE has occurred, particularly if the allele pattern matches that from another part of the tree better than that of the ancestral node. Downloads: 1 This Week Last Update: 2013-06-21 See Project CoVaMa CoVaMa (Co-Variation Mapper) (python) detects correlated patterns of mutations in a viral quasi-species. CoVaMa takes NGS alignment data (SAM) and populates large matrices of contingency tables that correspond to every possible pairwise interaction of nucleotides or amino acids in the viral genome. These tables are then analysed for evidence linkage disequilibrium. CoVaMa requires python version 2.7 and Numpy. Downloads: 1 This Week Last Update: 2018-07-27 See Project ViralFusionSeq [VFS] VFS was fullly tested under Ubuntu/Debian system. ** Announcement 1**: VFS is superior to Virus-Clip. https://sourceforge.net/projects/viralfusionseq/files/VFS.vs.Virus-Clip.pdf/download As of 2016, VFS is the only viral integration tool available at NIH HPC system. https://hpc.nih.gov/apps/ViralFusionSeq/ ViralFusionSeq (VFS) is a versatile high-throughput sequencing (HTS) tool for discovering viral integration events and reconstruct fusion transcripts at single-base resolution. VFS combines soft-clipping information, read-pair analysis, and targeted de novo assembly to discover and annotate viral-human fusion events. A simple yet effective empirical statistical model is used to evaluate the quality of fusion breakpoints. Minimal user defined parameters are required. Source code with user manual and installation guide of VFS is available at sourceforge&#39;s &#34;Files&#34; section. Citation: http://www.ncbi.nlm.nih.gov/pubmed/ 1 Review Downloads: 2 This Week Last Update: 2017-02-19 See Project smalt SMALT aligns DNA sequencing reads with genomic reference sequences. It employs hashing combined with dynamic programming. Downloads: 59 This Week Last Update: 2016-11-29 See Project Top 3 Projects in Bio-Informatics PyRx - Virtual Screening Tool PyRx is a Virtual Screening software for Computational Drug Discovery that can be used to screen libraries of compounds against potential drug targets. PyRx enables Medicinal Chemists to run Virtual Screening from any platform and helps users in every step of this process - from data preparation to job submission and analysis of the results. While it is true that there is no magic button in the drug discovery process, PyRx includes docking wizard with easy-to-use user interface which makes it a valuable tool for Computer-Aided Drug Design. PyRx also includes chemical spreadsheet-like functionality and powerful visualization engine that are essential for Rational Drug Design. Please visits PyRx home page to learn more about PyRx and watch videos on how to use it. 3 Reviews Downloads: 1,688 This Week Last Update: 2025-06-21 See Project Gwyddion A data visualization and processing tool for scanning probe microscopy (SPM, i.e. AFM, STM, MFM, SNOM/NSOM, ...) and profilometry data, useful also for general image and 2D data analysis. 13 Reviews Downloads: 1,451 This Week Last Update: 5 hours ago See Project Jmol Over 1,000,000 page views per month. Jmol/JSmol is a molecular viewer for 3D chemical structures that runs in four independent modes: an HTML5-only web application utilizing jQuery, a Java applet, a stand-alone Java program (Jmol.jar), and a &#34;headless&#34; server-side component (JmolData.jar). Jmol can read many file types, including PDB, CIF, SDF, MOL, PyMOL PSE files, and Spartan files, as well as output from Gaussian, GAMESS, MOPAC, VASP, CRYSTAL, CASTEP, QuantumEspresso, VMD, and many other quantum chemistry programs. Files can be transferred directly from several databases, including RCSB, EDS, NCI, PubChem, and MaterialsProject. Multiple files can be loaded and compared. A rich scripting language and a well-developed web API allow easy customization of the user interface. Features include interactive animation and linear morphing. Jmol interfaces well with JSpecView for spectroscopy, JSME for 2D-&gt;3D conversion, POV-Ray for images, and CAD programs for 3D printing (VRML export). 36 Reviews Downloads: 821 This Week Last Update: 3 days ago See Project Keep Me Updated! Get notified by email when ViReMa releases a new version. Country Afghanistan Aland Islands Albania Algeria American Samoa Andorra Angola Anguilla Antarctica Antigua and Barbuda Argentina Armenia Aruba Australia Austria Azerbaijan Bahamas Bahrain Bangladesh Barbados Belarus Belgium Belize Benin Bermuda Bhutan Bolivia Bonaire, Sint Eustatius and Saba Bosnia and Herzegovina Botswana Bouvet Island Brazil British Indian Ocean Territory Brunei Darussalam Bulgaria Burkina Faso Burundi Cambodia Cameroon Canada Cape Verde Cayman Islands Central African Republic Chad Chile China Christmas Island Cocos (Keeling) Islands Colombia Comoros Congo Congo, The Democratic Republic of the Cook Islands
+* [Join/Login](https://sourceforge.net/auth/)
+* [Business Software](/software/)
+* [Open Source Software](/directory/)
+* [For Vendors](/software/vendors/ "For Vendors")
+* [Blog](/blog/ "Blog")
+* [About](/about)
+* More
+* + [Articles](/articles/)
+  + [Create](/create)
+  + [SourceForge Podcast](https://sourceforge.net/articles/category/sourceforge-podcast/)
+  + [Site Documentation](https://sourceforge.net/p/forge/documentation/Docs%20Home/)
+  + [Subscribe to our Newsletter](/user/newsletters)
+  + [Support Request](/support)
+
+[![SourceForge logo](//a.fsdn.com/con/images/sandiego/sf-logo-full.svg)](/ "Home")
+
+[For Vendors](/software/vendors/ "For Vendors")
+[Help](/support "Help")
+[Create](/create/ "Create")
+[Join](/user/registration "Join")
+[Login](https://sourceforge.net/auth/ "Login")
+
+[![SourceForge logo](//a.fsdn.com/con/images/sandiego/sf-logo-full.svg)](/ "Home")
+
+[Business Software](/software/)
+
+[Open Source Software](/directory/ "Browse")
+
+[SourceForge Podcast](https://sourceforge.net/articles/category/sourceforge-podcast/)
+
+Resources
+
+* [Articles](/articles/)
+* [Case Studies](/software/case-studies/)
+* [Blog](/blog/)
+
+Menu
+
+* [Help](/support)
+* [Create](/create)
+* [Join](/user/registration/ "Join")
+* [Login](https://sourceforge.net/auth/ "Login")
+
+* [Home](/)
+* [Open Source Software](/directory/)
+* [Scientific/Engineering](/directory/scientific-engineering/)
+* [Bio-Informatics](/directory/bio-informatics/)
+* ViReMa
+
+# [ViReMa](/projects/virema/)
+
+## Viral Recombination Mapper
+
+Brought to you by:
+[andrewrouthseq](/u/andrewrouthseq/profile/)
+
+![Email in envelope](//a.fsdn.com/con/images/sandiego/sf_email_icon.svg)
+
+#### Get an email when there's a new version of ViReMa
+
+Next
+
+Your download will start shortly...
+
+Share This
+
+×
+
+[Problems Downloading?](/settings/mirror_choices?projectname=virema&filename=ViReMa_0.25/ViReMa_0.25.zip&selected=master)
+
+ViReMa\_0.25.zip
+
+Scanned for malware ✔
+
+Mirror Provided by
+
+[![SourceForge](https://a.fsdn.com/mirrorimages/master-xlarge.png)](https://sourceforge.net/ "SourceForge")
+
+[Learn more about SourceForge](https://sourceforge.net/ "SourceForge")
+
+Other Useful Business Software
+
+![Gemini 3 and 200+ AI Models on One Platform Icon](//a.fsdn.com/con/app/nel_img/20550)
+
+Gemini 3 and 200+ AI Models on One Platform
+
+Access Google's best plus Claude, Llama, and Gemma. Fine-tune and deploy from one console.
+
+Build generative AI apps with Vertex AI. Switch between models without switching platforms.
+
+Start Free
+
+![Try Google Cloud Risk-Free With $300 in Credit Icon](//a.fsdn.com/con/app/nel_img/20646)
+
+Try Google Cloud Risk-Free With $300 in Credit
+
+No hidden charges. No surprise bills. Cancel anytime.
+
+Use your credit across every product. Compute, storage, AI, analytics. When it runs out, 20+ products stay free. You only pay when you choose to.
+
+Start Free
+
+![MongoDB Atlas runs apps anywhere Icon](//a.fsdn.com/con/app/nel_img/20452)
+
+MongoDB Atlas runs apps anywhere
+
+Deploy in 115+ regions with the modern database for every enterprise.
+
+MongoDB Atlas gives you the freedom to build and run modern applications anywhere—across AWS, Azure, and Google Cloud. With global availability in over 115 regions, Atlas lets you deploy close to your users, meet compliance needs, and scale with confidence across any geography.
+
+Start Free
+
+![8 Monitoring Tools in One APM. Install in 5 Minutes. Icon](//a.fsdn.com/con/app/nel_img/20641)
+
+8 Monitoring Tools in One APM. Install in 5 Minutes.
+
+Errors, performance, logs, uptime, hosts, anomalies, dashboards, and check-ins. One interface.
+
+AppSignal works out of the box for Ruby, Elixir, Node.js, Python, and more. 30-day free trial, no credit card required.
+
+Start Free
+
+![Full-stack observability with actually useful AI | Grafana Cloud Icon](//a.fsdn.com/con/app/nel_img/20612)
+
+Full-stack observability with actually useful AI | Grafana Cloud
+
+Our generous forever free tier includes the full platform, including the AI Assistant, for 3 users with 10k metrics, 50GB logs, and 50GB traces.
+
+Built on open standards like Prometheus and OpenTelemetry, Grafana Cloud includes Kubernetes Monitoring, Application Observability, Incident Response, plus the AI-powered Grafana Assistant. Get started with our generous free tier today.
+
+Create free account
+
+### ViReMa Overview
+
+Viral Recombination Mapper
+
+ViReMa (Viral Recombination Mapper) detects and reports recombination or fusion events in virus genomes using deep sequencing datasets.
+
+Feb 2014 - Our paper (Open Access) is available at Nucleic Acids Research:
+"Discovery of functional genomic motifs in viruses with ViReMa–a Virus Recombination Mapper–for analysis of next-generation sequencing data"
+<http://nar.oxfordjournals.org/content/42/2/e11>
+
+This is an on-going project and updates will be regularly posted. Please get in touch with any questions, problems or suggestions.
+
+## Additional Details for ViReMa
+
+### Intended Audience
+
+Science/Research
+
+### Programming Language
+
+[Python](/directory/python/)
+
+#### Registered
+
+2013-06-18
+
+### Last Updated
+
+2023-11-27
+
+### Categories
+
+[Bio-Informatics](/directory/bio-informatics/)
+
+### Maintainers
+
+[andrewrouthseq](https://sourceforge.net/u/andrewrouthseq/)
+
+Recommended Projects
+
+* ![ViralFusionSeq [VFS]](//a.fsdn.com/allura/p/viralfusionseq/icon?1442224493 "ViralFusionSeq [VFS]")
+
+  [**ViralFusionSeq [VFS]**](/projects/viralfusionseq/ "Find out more about ViralFusionSeq [VFS]")
+  [VFS was fullly tested under Ubuntu/Debian system.
+  \*\* Announcement 1\*\*: VFS is superior to Virus-Clip. https://sourceforge.net/projects/viralfusionseq/files/VFS.vs.Virus-Clip.pdf/download
+  As of 2016, VFS is the only viral integration tool available at NIH HPC system.
+  https://hpc.nih.gov/apps/ViralFusionSeq/
+  ViralFusionSeq (VFS) is a versatile high-throughput sequencing (HTS) tool for discovering viral integration events and reconstruct fusion transcripts at single-base resolution.
+  VFS combines soft-clipping information, read-pair analysis, and targeted de novo assembly to discover and annotate viral-human fusion events.
+  A simple yet effective empirical statistical model is used to evaluate the quality of fusion breakpoints.
+  Minimal user defined parameters are required.
+  Source code with user manual and installation guide of VFS is available at sourceforge's "Files" section.
+  Citation: http://www.ncbi.nlm.nih.gov/pubmed/](/projects/viralfusionseq/ "Find out more about ViralFusionSeq [VFS]")
+
+  [1 Review](/projects/viralfusionseq/reviews/ "ViralFusionSeq [VFS] Reviews")
+
+  ****Downloads:**
+  2 This Week**
+  ****Last Update:**
+  2017-02-19**
+
+  [See Project](/projects/viralfusionseq/ "Find out more about ViralFusionSeq [VFS]")
+* ![genomemap](//a.fsdn.com/allura/p/genomemap/icon?1349811064 "genomemap")
+
+  [**genomemap**](/projects/genomemap/ "Find out more about genomemap")
+  [A software framework to build maps for Neurospora crassa genome based on probabilistic models of meiotic recombination. A netbeans platform application is built to incorporate the computations.
+  Project issues are mainatined at https://freecode4susant.atlassian.net/browse/GENOMEMAP](/projects/genomemap/ "Find out more about genomemap")
+
+  ****Downloads:**
+  3 This Week**
+  ****Last Update:**
+  2013-05-23**
+
+  [See Project](/projects/genomemap/ "Find out more about genomemap")
+* [**smalt**](/projects/smalt/ "Find out more about smalt")
+  [SMALT aligns DNA sequencing reads with genomic reference sequences. It employs hashing combined with dynamic programming.](/projects/smalt/ "Find out more about smalt")
+
+  ****Downloads:**
+  43 This Week**
+  ****Last Update:**
+  2016-11-29**
+
+  [See Project](/projects/smalt/ "Find out more about smalt")
+* ![Pendisk Cleaner](//a.fsdn.com/allura/p/pendiskcleaner/icon?1404465402 "Pendisk Cleaner")
+
+  [**Pendisk Cleaner**](/projects/pendiskcleaner/ "Find out more about Pendisk Cleaner")
+  [remove viruses found on pendrives like the shortcut virus udaravideo.exe and other viruses that anti virus softwares does not detect...](/projects/pendiskcleaner/ "Find out more about Pendisk Cleaner")
+
+  ****Downloads:**
+  1 This Week**
+  ****Last Update:**
+  2014-07-04**
+
+  [See Project](/projects/pendiskcleaner/ "Find out more about Pendisk Cleaner")
+* [**GEM library**](/projects/gemlibrary/ "Find out more about GEM library")
+  [A set of very optimized tools for indexing/querying huge genomes/files. Provided so far: a very fast exact mapper, and an unconstrained split-mapper](/projects/gemlibrary/ "Find out more about GEM library")
+
+  ****Downloads:**
+  4 This Week**
+  ****Last Update:**
+  2013-05-29**
+
+  [See Project](/projects/gemlibrary/ "Find out more about GEM library")
+
+---
+
+Top 3 Projects in Bio-Informatics
+
+* [**Subread**](/projects/subread/ "Find out more about Subread")
+  [The Subread software package is a tool kit for processing next-gen sequencing data. It includes Subread aligner, Subjunc exon-exon junction detector and featureCounts read summarization program.
+  Subread aligner can be used to align both gDNA-seq and RNA-seq reads. Subjunc aligner was specified designed for the detection of exon-exon junction. For the mapping of RNA-seq reads, Subread performs local alignments and Subjunc performs global alignments. Subread and Subjunc were published in the following paper: Yang Liao, Gordon K Smyth and Wei Shi. "The Subread aligner: fast, accurate and scalable read mapping by seed-and-vote", Nucleic Acids Research, 2013, 41(10):e108](/projects/subread/ "Find out more about Subread")
+
+  ****Downloads:**
+  4,442 This Week**
+  ****Last Update:**
+  2025-04-27**
+
+  [See Project](/projects/subread/ "Find out more about Subread")
+* ![PyRx - Virtual Screening Tool](//a.fsdn.com/allura/p/pyrx/icon?1744293382?&w=48 "PyRx - Virtual Screening Tool")
+
+  [**PyRx - Virtual Screening Tool**](/projects/pyrx/ "Find out more about PyRx - Virtual Screening Tool")
+  [PyRx is a Virtual Screening software for Computational Drug Discovery that can be used to screen libraries of compounds against potential drug targets. PyRx enables Medicinal Chemists to run Virtual Screening from any platform and helps users in every step of this process - from data preparation to job submission and analysis of the results. While it is true that there is no magic button in the drug discovery process, PyRx includes docking wizard with easy-to-use user interface which makes it a valuable tool for Computer-Aided Drug Design. PyRx also includes chemical spreadsheet-like functionality and powerful visualization engine that are essential for Rational Drug Design. Please visits PyRx home page to learn more about PyRx and watch videos on how to use it.](/projects/pyrx/ "Find out more about PyRx - Virtual Screening Tool")
+
+  [3 Reviews](/projects/pyrx/reviews/ "PyRx - Virtual Screening Tool Reviews")
+
+  ****Downloads:**
+  1,865 This Week**
+  ****Last Update:**
+  2025-06-21**
+
+  [See Project](/projects/pyrx/ "Find out more about PyRx - Virtual Screening Tool")
+* ![Gwyddion](//a.fsdn.com/allura/p/gwyddion/icon?1742890944 "Gwyddion")
+
+  [**Gwyddion**](/projects/gwyddion/ "Find out more about Gwyddion")
+  [A data visualization and processing tool for scanning probe microscopy (SPM, i.e. AFM, STM, MFM, SNOM/NSOM, ...) and profilometry data, useful also for general image and 2D data analysis.](/projects/gwyddion/ "Find out more about Gwyddion")
+
+  [13 Reviews](/projects/gwyddion/reviews/ "Gwyddion Reviews")
+
+  ****Downloads:**
+  1,647 This Week**
+  ****Last Update:**
+  9 hours ago**
+
+  [See Project](/projects/gwyddion/ "Find out more about Gwyddion")
+
+### Keep Me Updated!
+
+Get notified by email when ViReMa releases a new version.
+
+Country
+
+Afghanistan
+Aland Islands
+Albania
+Algeria
+American Samoa
+Andorra
+Angola
+Anguilla
+Antarctica
+Antigua and Barbuda
+Argentina
+Armenia
+Aruba
+Australia
+Austria
+Azerbaijan
+Bahamas
+Bahrain
+Bangladesh
+Barbados
+Belarus
+Belgium
+Belize
+Benin
+Bermuda
+Bhutan
+Bolivia
+Bonaire, Sint Eustatius and Saba
+Bosnia and Herzegovina
+Botswana
+Bouvet Island
+Brazil
+British Indian Ocean Territory
+Brunei Darussalam
+Bulgaria
+Burkina Faso
+Burundi
+Cambodia
+Cameroon
+Canada
+Cape Verde
+Cayman Islands
+Central African Republic
+Chad
+Chile
+China
+Christmas Island
+Cocos (Keeling) Islands
+Colombia
+Comoros
+Congo
+Congo, The Democratic Republic of the
+Cook Islands
+Costa Rica
+Cote D'Ivoire
+Croatia
+Cuba
+Cyprus
+Czech Republic
+Denmark
+Djibouti
+Dominica
+Dominican Republic
+Ecuador
+Egypt
+El Salvador
+Equatorial Guinea
+Eritrea
+Estonia
+Ethiopia
+Falkland Islands (Malvinas)
+Faroe Islands
+Fiji
+Finland
+France
+French Guiana
+French Polynesia
+French Southern Territories
+Gabon
+Gambia
+Georgia
+Germany
+Ghana
+Gibraltar
+Greece
+Greenland
+Grenada
+Guadeloupe
+Guam
+Guatemala
+Guernsey
+Guinea
+Guinea-Bissau
+Guyana
+Haiti
+Heard Island and McDonald Islands
+Holy See (Vatican City State)
+Honduras
+Hong Kong
+Hungary
+Iceland
+India
+Indonesia
+Iran, Islamic Republic of
+Iraq
+Ireland
+Isle of Man
+Israel
+Italy
+Jamaica
+Japan
+Jersey
+Jordan
+Kazakhstan
+Kenya
+Kiribati
+Korea, Democratic People's Republic of
+Korea, Republic of
+Kosovo
+Kuwait
+Kyrgyzstan
+Lao People's Democratic Republic
+Latvia
+Lebanon
+Lesotho
+Liberia
+Libyan Arab Jamahiriya
+Liechtenstein
+Lithuania
+Luxembourg
+Macau
+Macedonia
+Madagascar
+Malawi
+Malaysia
+Maldives
+Mali
+Malta
+Marshall Islands
+Martinique
+Mauritania
+Mauritius
+Mayotte
+Mexico
+Micronesia, Federated States of
+Moldova, Republic of
+Monaco
+Mongolia
+Montenegro
+Montserrat
+Morocco
+Mozambique
+Myanmar
+Namibia
+Nauru
+Nepal
+Netherlands
+Netherlands Antilles
+New Caledonia
+New Zealand
+Nicaragua
+Niger
+Nigeria
+Niue
+Norfolk Island
+Northern Mariana Islands
+Norway
+Oman
+Pakistan
+Palau
+Palestinian Territory
+Panama
+Papua New Guinea
+Paraguay
+Peru
+Philippines
+Pitcairn Islands
+Poland
+Portugal
+Puerto Rico
+Qatar
+Reunion
+Romania
+Russian Federation
+Rwanda
+Saint Barthelemy
+Saint Helena
+Saint Kitts and Nevis
+Saint Lucia
+Saint Martin
+Saint Pierre and Miquelon
+Saint Vincent and the Grenadines
+Samoa
+San Marino
+Sao Tome and Principe
+Saudi Arabia
+Senegal
+Serbia
+Seychelles
+Sierra Leone
+Singapore
+Sint Maarten
+Slovakia
+Slovenia
+Solomon Islands
+Somalia
+South Africa
+South Georgia and the South Sandwich Islands
+South Sudan
+Spain
+Sri Lanka
+Sudan
+Suriname
+Svalbard and Jan Mayen
+Swaziland
+Sweden
+Switzerland
+Syrian Arab Republic
+Taiwan
+Tajikistan
+Tanzania, United Republic of
+Thailand
+Timor-Leste
+Togo
+Tokelau
+Tonga
+Trinidad and Tobago
+Tunisia
+Turkey
+Turkmenistan
+Turks and Caicos Islands
+Tuvalu
+Uganda
+Ukraine
+United Arab Emirates
+United Kingdom
+United States
+United States Minor Outlying Islands
+Uruguay
+Uzbekistan
+Vanuatu
+Venezuela
+Vietnam
+Virgin Islands, British
+Virgin Islands, U.S.
+Wallis and Futuna
+Western Sahara
+Yemen
+Zambia
+Zimbabwe
+
+State
+
+Alabama
+Alaska
+Arizona
+Arkansas
+California
+Colorado
+Connecticut
+Delaware
+District of Columbia
+Florida
+Georgia
+Hawaii
+Idaho
+Illinois
+Indiana
+Iowa
+Kansas
+Kentucky
+Louisiana
+Maine
+Maryland
+Massachusetts
+Michigan
+Minnesota
+Mississippi
+Missouri
+Montana
+Nebraska
+Nevada
+New Hampshire
+New Jersey
+New Mexico
+New York
+North Carolina
+North Dakota
+Ohio
+Oklahoma
+Oregon
+Pennsylvania
+Puerto Rico
+Rho

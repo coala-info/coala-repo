@@ -1,6 +1,6 @@
 ---
 name: nim-abif
-description: "nim-abif processes Applied Biosystems Information Format (ABIF) files to extract, trim, and visualize Sanger sequencing data. Use when user asks to convert AB1 files to FASTQ, perform quality-based trimming, merge forward and reverse reads into a consensus sequence, or generate chromatogram visualizations."
+description: nim-abif is a high-performance suite of utilities for processing, converting, and visualizing Applied Biosystems Information Format (ABIF) Sanger sequencing trace files. Use when user asks to convert ABI files to FASTQ or FASTA, perform quality trimming, merge overlapping forward and reverse reads, extract or edit metadata tags, or generate SVG chromatograms.
 homepage: https://github.com/quadram-institute-bioscience/nim-abif
 ---
 
@@ -8,45 +8,60 @@ homepage: https://github.com/quadram-institute-bioscience/nim-abif
 # nim-abif
 
 ## Overview
-The `nim-abif` skill enables the handling of Applied Biosystems Information Format (ABIF) files, which are the standard output for Sanger capillary sequencing. This skill is essential when you need to extract high-quality genomic sequences from raw trace files, perform quality-based trimming to remove unreliable base calls at the ends of reads, or visualize the underlying chromatogram peaks to verify specific mutations or sequencing artifacts. It also supports merging forward and reverse reads into a single consensus sequence using local alignment.
+The `nim-abif` suite provides high-performance utilities for handling Applied Biosystems Information Format (ABIF) files. It is particularly useful for bioinformatics workflows involving Sanger capillary sequencing. The toolset allows for sophisticated quality trimming, metadata extraction, and Smith-Waterman based merging of overlapping trace files.
 
-## CLI Usage Patterns
+## Core CLI Tools
 
-### FASTQ Conversion and Quality Trimming
-Use `abi2fq` to convert raw `.ab1` files into FASTQ format. By default, it performs quality trimming to ensure downstream analysis uses reliable data.
+### 1. abi2fq: Conversion and Trimming
+Use `abi2fq` to transform binary trace files into standard sequence formats. It supports a sliding window approach for quality trimming.
 
-*   **Standard conversion (output to STDOUT):**
-    `abi2fq trace.ab1 > output.fq`
-*   **Aggressive quality trimming:**
-    Use a sliding window to trim where quality drops.
-    `abi2fq --window=20 --quality=30 trace.ab1`
-*   **Raw extraction (no trimming):**
-    `abi2fq --no-trim trace.ab1`
+*   **Basic Conversion**: `abi2fq input.ab1 output.fq`
+*   **Quality Trimming**: Use `--window` (default 10) and `--quality` (default 20) to remove low-quality ends.
+    *   Example: `abi2fq --window=15 --quality=25 trace.ab1 output.fq`
+*   **FASTA Output**: Use `--fasta` to skip quality scores.
+*   **Ambiguous Bases**: Use `--split` to handle IUPAC ambiguity codes by generating two separate sequences.
 
-### Merging Paired Sanger Reads
-Use `abimerge` to combine forward and reverse reads from the same template. This tool uses Smith-Waterman alignment to find the optimal overlap.
+### 2. abimerge: Paired-End Merging
+Use `abimerge` to combine forward and reverse reads. It uses local alignment to find the optimal overlap.
 
-*   **Basic merge:**
-    `abimerge forward.ab1 reverse.ab1 > merged.fq`
-*   **Strict overlap requirements:**
-    Ensure at least 50bp overlap with 95% identity.
-    `abimerge --min-overlap=50 --pct-id=95 fwd.ab1 rev.ab1`
-*   **Handling non-overlapping reads:**
-    If reads don't overlap, join them with a string of Ns (e.g., 10 Ns).
-    `abimerge --join=10 fwd.ab1 rev.ab1`
+*   **Standard Merge**: `abimerge forward.ab1 reverse.ab1 merged.fq`
+*   **Strict Overlap**: Increase requirements for high-confidence merges.
+    *   Example: `abimerge --min-overlap=30 --pct-id=90 fwd.ab1 rev.ab1`
+*   **Gap Handling**: If no overlap is found, use `-j [N]` to join sequences with a specific number of 'N' bases.
+    *   Example: `abimerge -j 10 fwd.ab1 rev.ab1`
 
-### Visualizing Chromatograms
-Use `abichromatogram` to generate SVG representations of the sequencing traces.
+### 3. abimetadata: Metadata Management
+Use `abimetadata` to inspect or modify the internal tags of an ABIF file.
 
-*   **Render a specific region:**
-    Useful for inspecting a specific mutation site (e.g., bases 200 to 300).
-    `abichromatogram input.ab1 -o trace.svg -s 200 -e 300 --width 1200`
+*   **List All Tags**: `abimetadata input.ab1`
+*   **View Specific Tag**: `abimetadata input.ab1 -t SMPL1`
+*   **Edit Tag Value**: Currently supports modifying string-type tags.
+    *   Example: `abimetadata input.ab1 -t SMPL1 -v "New_Sample_ID" -o modified.ab1`
 
-## Expert Tips
-*   **Quality Control:** When converting to FASTQ, use `--verbose` with `abi2fq` to see statistics on how many bases were trimmed. Sanger reads typically have low quality at the beginning (first 30-50bp) and end (after 700-800bp).
-*   **Alignment Tuning:** If `abimerge` fails to find an overlap in high-quality regions, try adjusting the scoring parameters: `--score-match`, `--score-mismatch`, and `--score-gap`.
-*   **Raw Data Access:** For custom analysis, the tool can extract specific ABIF tags. For example, `PBAS2` contains the base calls and `DATA1-4` contain the raw fluorescent channel data.
+### 4. abichromatogram: Visualization
+Render the trace data into a visual format.
+
+*   **SVG Export**: `abichromatogram input.ab1 -o trace.svg`
+*   **Sub-region Rendering**: Use `-s` (start) and `-e` (end) to focus on specific base positions.
+    *   Example: `abichromatogram input.ab1 -s 500 -e 1000 --width 1600`
+
+## Expert Tips & Best Practices
+*   **Quality Control**: When converting to FASTQ, always prefer trimming (`--window` and `--quality`) unless you intend to perform downstream trimming with a specialized tool like Trimmomatic.
+*   **Tag Reference**: Common ABIF tags include `PBAS2` (Base calls), `PQCV1` (Quality values), and `SMPL1` (Sample name). Use `abimetadata` to verify these if automated parsers fail.
+*   **Alignment Tuning**: If `abimerge` fails to find an overlap in known overlapping reads, try lowering `--min-score` or adjusting the penalty scores (`--score-mismatch`, `--score-gap`).
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| abi2fq | Convert ABI files to FASTQ with quality trimming |
+| abichromatogram | Generates an SVG chromatogram from an ABIF trace file, displaying the four fluorescence channels with base calls. |
+| abimerge | Merge forward and reverse AB1 trace files |
 
 ## Reference documentation
-- [nim-abif GitHub Repository](./references/github_com_quadram-institute-bioscience_nim-abif.md)
-- [nim-abif Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_nim-abif_overview.md)
+- [abi2fq Tool Details](./references/corebio_info_nim-abif_abi2fq.html.md)
+- [abimerge Tool Details](./references/corebio_info_nim-abif_abimerge.html.md)
+- [abimetadata Tool Details](./references/corebio_info_nim-abif_abimetadata.html.md)
+- [Library Overview and Tags](./references/github_com_quadram-institute-bioscience_nim-abif_blob_main_README.md)

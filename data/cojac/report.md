@@ -338,3 +338,6 @@ Options:
   This tool queries LAPIS, see https://lapis-docs.readthedocs.io/en/latest/
 ```
 
+
+## Metadata
+- **Skill**: generated

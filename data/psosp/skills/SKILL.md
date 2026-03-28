@@ -1,6 +1,6 @@
 ---
 name: psosp
-description: PSOSP classifies prophages into SOS-dependent, SOS-independent, or SOS-uncertain categories by identifying LexA binding sites and calculating heterology indices. Use when user asks to predict prophage induction mechanisms, identify SOS-dependent phages, or determine appropriate induction agents for Gammaproteobacteria.
+description: PSOSP classifies prophages as SOS-dependent, SOS-independent, or SOS-uncertain by analyzing LexA protein binding sites and their Heterology Index. Use when user asks to predict prophage induction mechanisms, identify SOS boxes in bacterial genomes, or determine if a prophage requires the SOS response for induction.
 homepage: https://github.com/mujiezhang/PSOSP
 ---
 
@@ -8,63 +8,40 @@ homepage: https://github.com/mujiezhang/PSOSP
 # psosp
 
 ## Overview
+PSOSP (Prophage SOS-dependency Predictor) is a bioinformatics tool designed to classify prophages based on their induction mechanisms. By analyzing the Heterology Index (HI) of LexA protein binding sites within prophage promoter regions, the tool determines whether a prophage is SOS-dependent (SdP), SOS-independent (SiP), or SOS-uncertain (SuP). This is particularly useful for researchers studying phage-host interactions, lysogeny maintenance, and the triggers for the viral lytic cycle.
 
-PSOSP (Prophage SOS-dependency Predictor) is a specialized bioinformatics tool used to classify prophages into three categories: SOS-dependent (SdPs), SOS-independent (SiPs), and SOS-uncertain (SuP). It functions by identifying LexA protein binding sites and calculating a Heterology Index (HI) for potential SOS boxes within prophage promoter regions. This classification helps researchers choose the correct experimental induction agents—such as Mitomycin C (MMC) or UV for SOS-dependent phages, versus physical factors or specific chemical inducers for SOS-independent phages.
+## Usage Guidelines
 
-## Installation and Setup
+### Core Workflow
+The tool operates through a four-step automated process:
+1. **LexA Identification**: Scans the host genome for the LexA protein and canonical SOS boxes (CSBs) upstream of the *lexA* gene.
+2. **HI Calculation**: Identifies potential SOS boxes (PSBs) across the bacterial genome and calculates their Heterology Index to establish classification thresholds.
+3. **Prophage Scanning**: Searches for PSBs specifically within the promoter regions of the prophage.
+4. **Categorization**: Compares the minimum HI found in the prophage (*HImin*) against the calculated thresholds (*HIc1* and *HIc2*).
 
-The most reliable way to install PSOSP is via Conda:
+### Classification Logic
+*   **SdP (SOS-dependent)**: *HImin* ≤ *HIc1*. Indicates strong LexA binding; induction requires the SOS response.
+*   **SiP (SOS-independent)**: *HImin* ≥ *HIc2*. Indicates weak or no LexA binding; induction occurs via other mechanisms.
+*   **SuP (SOS-uncertain)**: *HIc1* < *HImin* < *HIc2*.
 
-```bash
-conda create -n psosp psosp
-conda activate psosp
-```
+### Installation and Environment
+PSOSP is available via Bioconda and requires a Python environment. It relies on `find_packages` and `include_package_data` for its internal data files (including `.dmnd` and `.txt` reference files).
 
-If you require prophage quality assessment, you must also download the CheckV database:
-```bash
-checkv download_database ./
-```
+### Best Practices
+*   **Input Quality**: Ensure host genomes are provided in standard FASTA/FNA format.
+*   **Prophage Coordinates**: For accurate promoter scanning, ensure prophage regions are correctly identified within the host genome or provided as distinct sequences with known promoter locations.
+*   **Thresholding**: Allow the tool to calculate dynamic thresholds (*HIc1*/*HIc2*) based on the specific host's LexA binding profile for higher accuracy.
 
-## Command Line Usage
 
-### Basic Prediction
-To run a standard analysis, provide the host genome and the phage genome(s):
 
-```bash
-psosp -hf host_genome.fasta -vf phage_genome.fasta -wd output_directory
-```
+## Subcommands
 
-### Parameters
-- `-hf`: Path to the host genome in FASTA format.
-- `-vf`: Path to the phage genome(s) in FASTA format.
-- `-wd`: Working directory for result files.
-- `-faa`: (Optional) Path to host protein sequences if already predicted.
-- `-db`: (Optional) Path to the CheckV reference database for completeness assessment.
-
-### Testing the Installation
-Verify the tool is working correctly using the built-in test command:
-```bash
-psosp test
-```
-
-## Best Practices and Expert Tips
-
-### Host and Phage Requirements
-- **Taxonomic Scope**: PSOSP is optimized for **Gammaproteobacteria** (e.g., *Vibrio, Pseudomonas, Escherichia, Salmonella, Shigella, Klebsiella*). Results for hosts outside this class may be less reliable.
-- **Genome Quality**: Use host genomes with >90% completeness (verified by CheckM2). Low-quality assemblies may miss the LexA protein, leading to false negatives.
-- **Phage Completeness**: Predictions are most accurate for prophages with >=90% completeness according to CheckV.
-- **Multi-Contig Hosts**: If the host genome is fragmented, ensure all contigs are provided in a single multi-contig FASTA file.
-
-### Interpreting Results
-The tool categorizes prophages based on the minimum Heterology Index ($HI_{min}$) found in the promoter regions:
-- **SdP ($HI_{min} \leq HI_{c1}$)**: SOS-dependent. Use conventional agents like Mitomycin C or UV light for induction.
-- **SiP ($HI_{min} \geq HI_{c2}$)**: SOS-independent. Consider alternative inducers such as EDTA, salinity changes, temperature shifts, or pH variations.
-- **SuP ($HI_{c1} < HI_{min} < HI_{c2}$)**: SOS-uncertain. These require experimental screening with both SOS-dependent and independent methods.
-
-### Workflow Optimization
-- If you have already performed gene prediction on the host, providing the `-faa` file can significantly speed up the LexA identification step.
-- Ensure the phage sequences provided are actually associated with the host; predicting regulatory relationships for mismatched pairs will yield meaningless results.
+| Command | Description |
+|---------|-------------|
+| predict | Predict virus-host interactions using psosp |
+| psosp | A tool for host-virus sequence analysis (psosp) |
 
 ## Reference documentation
-- [PSOSP Overview](./references/anaconda_org_channels_bioconda_packages_psosp_overview.md)
-- [PSOSP GitHub Documentation](./references/github_com_mujiezhang_PSOSP.md)
+- [PSOSP: Prophage SOS-dependency Predictor](./references/github_com_mujiezhang_PSOSP_blob_main_README.md)
+- [PSOSP: 原噬菌体SOS依赖性预测器 (Chinese Tutorial)](./references/github_com_mujiezhang_PSOSP_blob_main_README-Chinese.md)
+- [PSOSP Package Setup](./references/github_com_mujiezhang_PSOSP_blob_main_setup.py.md)

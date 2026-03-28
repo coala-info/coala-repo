@@ -150,3 +150,6 @@ gene2xml 1.5   arguments:
     default = F
 ```
 
+
+## Metadata
+- **Skill**: not generated

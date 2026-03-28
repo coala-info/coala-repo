@@ -1,6 +1,6 @@
 ---
 name: sfs
-description: The sfs tool is a high-performance utility for manipulating and analyzing Site Frequency Spectra to generate population genetics summaries. Use when user asks to view or fold spectra, calculate population genetics statistics like Tajima's D, or perform formal tests of admixture such as f3 and f4.
+description: sfs is a high-performance utility for creating, transforming, and analyzing Site Frequency Spectra in population genomics workflows. Use when user asks to view SFS files, normalize spectra, mask monomorphic sites, calculate nucleotide divergence, or perform Fu and Li's D neutrality tests.
 homepage: https://github.com/malthesr/sfs
 ---
 
@@ -8,33 +8,59 @@ homepage: https://github.com/malthesr/sfs
 # sfs
 
 ## Overview
-The `sfs` tool is a high-performance Rust-based command-line utility designed for the manipulation and analysis of Site Frequency Spectra. It allows researchers to transform raw genomic frequency data into meaningful population genetics summaries. The tool is particularly useful for workflows involving demographic inference, selection detection, and formal tests of admixture.
 
-## Core CLI Commands
+`sfs` is a high-performance Rust-based command-line utility designed for population genomics workflows. It provides a specialized interface for creating and working with Site Frequency Spectra, which are essential for inferring demographic history and identifying the footprints of natural selection. The tool supports the calculation of standard population genetic summary statistics and provides utilities for transforming and inspecting SFS data.
 
-The `sfs` tool follows a standard subcommand structure: `sfs <subcommand> [options]`.
+## CLI Usage and Best Practices
 
-### Inspecting and Transforming Spectra
-*   **view**: Use this to read and display SFS files.
-    *   `--normalize`: Scales the spectra so the sum of entries equals 1, useful for comparing datasets with different total site counts.
-    *   `--mask-monomorphic`: Excludes the 0-frequency (and potentially fixed) bins from the output to focus on polymorphic variation.
-*   **fold**: Converts an unfolded SFS (where ancestral/derived states are known) into a folded SFS (based on minor allele frequencies). This is essential when an outgroup is unavailable or polarization is unreliable.
+### Core Subcommands
+
+The tool is structured around subcommands. Based on the implementation history, the following patterns are central to the workflow:
+
+*   **Viewing and Inspection**: Use the `view` subcommand to output the contents of an SFS file in a human-readable format.
+*   **Data Transformation**: When inspecting spectra, use the following flags to clean or scale the data:
+    *   `--normalize`: Scales the SFS components so they sum to 1, useful for comparing shapes of spectra across different sample sizes or populations.
+    *   `--mask-monomorphic`: Excludes the 0 and $n$ bins (sites where all samples share the same allele), focusing the analysis strictly on polymorphic sites.
 
 ### Calculating Statistics
-*   **stat**: Calculates standard population genetics summary statistics from the SFS.
-    *   Includes support for **Thetas** (e.g., Watterson's theta, $\pi$).
-    *   Includes **Neutrality Tests** like Tajima's D and Fu/Li's D.
-*   **pi_xy / Dxy**: Calculates the absolute genetic differentiation between two populations. Note that `pi_xy` is often used as an alias for `Dxy` within the tool.
-*   **f3 / f4**: Performs formal tests of migration and tree topology.
-    *   Use `f3` for 3-population tests to detect admixture in a target population.
-    *   Use `f4` for 4-population tests to evaluate treeness and gene flow between clades.
 
-## Best Practices and Tips
-*   **Installation**: For the most stable experience, install via Bioconda (`conda install -c bioconda sfs`). If you need experimental features mentioned in recent commits, build from source using `cargo install --git https://github.com/malthesr/sfs`.
-*   **Data Integrity**: When calculating statistics like Tajima's D, ensure your input SFS correctly accounts for missing data or "masked" sites, as the tool's builders rely on the provided site counts to determine the denominator for frequency calculations.
-*   **Performance**: Since the tool is written in Rust, it is optimized for large genomic datasets. For very large spectra, prefer the binary SFS formats if supported by your upstream pipeline to reduce I/O overhead compared to text-based formats.
+`sfs` supports several key population genetic metrics directly from the frequency spectra:
+
+*   **Divergence Metrics**: Use the `pi_xy` (aliased as `Dxy`) functionality to calculate the average number of nucleotide substitutions per site between two populations.
+*   **Neutrality Tests**: The tool implements **Fu and Li's D** statistic, which is used to test the neutral theory of molecular evolution by comparing different estimates of population genetic diversity.
+
+### Installation and Environment
+
+For optimal performance in bioinformatics pipelines, `sfs` can be managed via several environments:
+
+*   **Conda**: Available on the `bioconda` channel (`conda install -c bioconda sfs`).
+*   **Docker**: Use the BioContainers image (`quay.io/biocontainers/sfs`) for reproducible execution in containerized environments.
+*   **Source**: If experimental features are required, install directly via Cargo:
+    `cargo install --git https://github.com/malthesr/sfs`
+
+## Expert Tips
+
+*   **Workspace Structure**: The project is split into `core` (logic) and `cli` (interface). If you are developing custom scripts to wrap `sfs`, refer to the `core` crate for the underlying data structures.
+*   **Performance**: As a Rust tool, `sfs` is designed for memory efficiency. It is preferred over Python-based SFS scripts when processing large-scale genomic datasets or high-dimensional folded spectra.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| sfs | Command-line tool for sfs operations. |
+| sfs | For more information, try '--help'. |
+| sfs | Command-line tool for sequence similarity analysis. |
+| sfs | For more information, try '--help'. |
+| sfs | For more information, try '--help'. |
+| sfs_create | Tools for working with site frequency spectra |
+| sfs_fold | Tools for working with site frequency spectra |
+| sfs_stat | Tools for working with site frequency spectra |
+| sfs_view | Format, marginalize, project, and convert SFS. |
 
 ## Reference documentation
-- [github_com_malthesr_sfs.md](./references/github_com_malthesr_sfs.md)
-- [github_com_malthesr_sfs_commits_main.md](./references/github_com_malthesr_sfs_commits_main.md)
-- [anaconda_org_channels_bioconda_packages_sfs_overview.md](./references/anaconda_org_channels_bioconda_packages_sfs_overview.md)
+
+- [GitHub Repository Overview](./references/github_com_malthesr_sfs.md)
+- [Installation and README](./references/github_com_malthesr_sfs_blob_main_README.md)
+- [Bioconda Package Details](./references/anaconda_org_channels_bioconda_packages_sfs_overview.md)

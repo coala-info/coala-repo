@@ -1,6 +1,6 @@
 ---
 name: kmerstream
-description: "KmerStream estimates k-mer frequency distributions and genomic parameters using a memory-efficient streaming approach. Use when user asks to estimate genome size, determine sequencing depth, assess library error rates, or calculate k-mer statistics from FASTQ or BAM files."
+description: KmerStream estimates k-mer frequency distributions and genomic parameters from raw sequencing data using a streaming algorithm. Use when user asks to estimate genome size, determine sequencing depth, calculate error rates, or perform multi-k analysis on large sequencing datasets.
 homepage: https://github.com/pmelsted/KmerStream
 ---
 
@@ -8,9 +8,9 @@ homepage: https://github.com/pmelsted/KmerStream
 # kmerstream
 
 ## Overview
-KmerStream is a specialized tool for calculating k-mer frequency distributions without the massive memory requirements of traditional k-mer counters. It uses a streaming approach to provide rapid estimates of essential genomic parameters. It is ideal for pre-assembly QC, estimating genome size (G), determining sequencing depth (lambda), and assessing the error rate (e) of a library.
+KmerStream is a specialized tool designed for the rapid analysis of raw sequencing data. Unlike traditional k-mer counters that store every unique k-mer, KmerStream uses a streaming algorithm to provide statistical estimates of k-mer frequency distributions. This makes it ideal for initial data quality control, estimating the total size of a genome (G), determining sequencing depth (lambda), and calculating the underlying error rate (e) of a library. It is particularly effective for processing massive datasets where memory constraints prevent the use of exact counters.
 
-## Core CLI Usage
+## Core Workflows
 
 ### Basic K-mer Statistics
 To estimate k-mer occurrences for a specific k-mer size:
@@ -19,55 +19,59 @@ KmerStream -k 31 -o output_prefix sample.fastq
 ```
 
 ### Multi-K Analysis
-KmerStream can process multiple k-mer sizes in a single pass, which is useful for determining the optimal k-mer for assembly:
+You can estimate statistics for multiple k-mer sizes in a single pass, which is useful for finding the optimal k-mer size for assembly:
 ```bash
-KmerStream -k 31,47,63,79 -o multi_k_results sample.fastq
+KmerStream -k 31,47,63,79 -t 8 -o multi_k_results sample.fastq.gz
 ```
+
+### Quality Filtering
+To improve estimates by ignoring k-mers containing low-quality bases (PHRED score):
+```bash
+KmerStream -k 31 -q 20 -o filtered_results sample.fastq
+```
+*Note: Use `--q64` if your data uses older Illumina PHRED+64 encoding.*
 
 ### Genome Size and Coverage Estimation
-To get human-readable estimates for genome size and coverage, you must generate a TSV file and then process it with the included Python script:
-```bash
-# 1. Generate the TSV statistics
-KmerStream -k 31 --tsv -o stats.tsv sample.fastq
-
-# 2. Run the estimator script
-python KmerStreamEstimate.py stats.tsv
-```
-
-### Processing BAM Files
-If your data is already aligned or stored in BAM format:
-```bash
-KmerStream -b -k 31 -o bam_stats input.bam
-```
-
-## Distributed and Incremental Processing
-For very large datasets or distributed environments, use the binary output and join functionality.
-
-1. **Generate binary chunks:**
+After running KmerStream with the `--tsv` flag, use the companion Python script to derive biological estimates:
+1. Generate the TSV:
    ```bash
-   KmerStream --binary -k 31 -o part1 sample_R1.fastq
-   KmerStream --binary -k 31 -o part2 sample_R2.fastq
+   KmerStream -k 31 --tsv -o results.tsv sample.fastq
    ```
-   *Note: This creates files with suffixes like `_Q_0_k_31`.*
-
-2. **Merge results:**
+2. Run the estimator:
    ```bash
-   KmerStreamJoin -o merged_output part1_Q_0_k_31 part2_Q_0_k_31
+   python KmerStreamEstimate.py results.tsv
    ```
 
-3. **View merged results:**
+### Distributed Processing and Merging
+For very large projects or distributed environments, process files individually and join the results:
+1. Generate binary outputs for each sample:
+   ```bash
+   KmerStream -k 31 --binary -o sample1 sample1.fastq
+   KmerStream -k 31 --binary -o sample2 sample2.fastq
+   ```
+2. Merge the estimates:
+   ```bash
+   KmerStreamJoin -o merged_output sample1_Q_0_k_31 sample2_Q_0_k_31
+   ```
+3. View the merged results:
    ```bash
    KmerStreamJoin merged_output
    ```
 
-## Expert Tips and Best Practices
+## Expert Tips
+- **Memory vs. Accuracy**: The `-e` (error rate) parameter defaults to 0.01 (1%). If you have limited RAM and can tolerate less precision, increase this value. To get higher precision for small genomes, decrease it (e.g., `-e 0.001`), but be aware this increases memory usage.
+- **Input Formats**: KmerStream natively supports BAM files using the `-b` flag. It also handles gzipped FASTQ/FASTA files if the system has `zlib` support.
+- **K-mer Selection**: Prefer odd values for `-k` to avoid palindromic k-mer complications.
+- **Online Mode**: Use `--online` to see estimates every 100,000 reads. This is extremely useful for "stopping" a download or a run once sufficient coverage for a specific genome size estimate has been reached.
 
-- **K-mer Selection:** Always prefer odd values for `-k` (e.g., 31, 55) to avoid palindromic k-mer complications.
-- **Quality Filtering:** Use `-q` (e.g., `-q 20`) to ignore k-mers containing low-quality bases. This significantly improves the accuracy of genome size and error rate estimates by filtering out sequencing noise.
-- **Memory vs. Accuracy:** The `-e` parameter (default 0.01) controls the error rate of the estimator. If you need higher precision, lower this value (e.g., `-e 0.001`), but be aware that memory usage will increase.
-- **Real-time Monitoring:** Use the `--online` flag to see estimates every 100,000 reads. This is particularly useful when piping data directly from a download or a sequencer to decide if you have enough coverage.
-- **PHRED Encoding:** If working with older Illumina data (Pipeline < 1.8), use the `--q64` flag for PHRED+64 quality scores. The default is PHRED+33.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| KmerStream | Estimates occurrences of k-mers in fastq or fasta files and saves results |
+| KmerStreamJoin | Creates union of many stream estimates |
 
 ## Reference documentation
-- [KmerStream Overview](./references/anaconda_org_channels_bioconda_packages_kmerstream_overview.md)
-- [KmerStream GitHub Documentation](./references/github_com_pmelsted_KmerStream.md)
+- [KmerStream GitHub Repository](./references/github_com_pmelsted_KmerStream.md)

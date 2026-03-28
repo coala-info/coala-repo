@@ -1,6 +1,6 @@
 ---
 name: dx-cwl
-description: The dx-cwl tool compiles Common Workflow Language definitions into native DNAnexus workflow objects for execution on the platform. Use when user asks to compile CWL workflows into DNAnexus objects or run compiled CWL workflows on the cloud.
+description: "dx-cwl compiles Common Workflow Language definitions into DNAnexus-native objects and executes them on the platform. Use when user asks to compile CWL tools or workflows into DNAnexus applets and run CWL workflows on the DNAnexus cloud."
 homepage: https://github.com/dnanexus/dx-cwl
 ---
 
@@ -8,35 +8,42 @@ homepage: https://github.com/dnanexus/dx-cwl
 # dx-cwl
 
 ## Overview
-The `dx-cwl` tool acts as a bridge between the Common Workflow Language (CWL) standard and the DNAnexus platform. It compiles CWL workflow definitions into native DNAnexus workflow objects, allowing bioinformaticians to leverage platform features like secure cloud execution, resource management, and data provenance while maintaining workflow portability.
+`dx-cwl` is a command-line utility designed to bridge the gap between the Common Workflow Language (CWL) standard and the DNAnexus cloud platform. It functions by compiling CWL workflow definitions into DNAnexus-native workflow objects, allowing users to leverage platform-specific features—such as secure execution, cloud scaling, and data management—while maintaining the portability of the CWL specification. This tool is essential for bioinformaticians migrating standardized pipelines to a cloud environment.
 
 ## CLI Usage Patterns
 
-### Compilation
-To transform a local CWL workflow into a DNAnexus workflow, use the `compile-workflow` command. This requires an active DNAnexus API token and a target project.
+### Workflow Compilation
+To transform a local CWL definition into a DNAnexus workflow, use the `compile-workflow` command. This requires an active API token and a target project ID where the workflow assets will be stored.
 
 ```bash
-python dx-cwl compile-workflow <path_to_local_cwl> --token $TOKEN --project $PROJECT
+python dx-cwl compile-workflow <path_to_cwl_file> --token $DX_API_TOKEN --project $DX_PROJECT_ID
 ```
 
-- The tool creates a directory in the target project named after the workflow.
-- This directory contains the compiled workflow and the necessary applets/resources for execution.
-
-### Execution
-To run a compiled workflow on the platform, use the `run-workflow` command. This assumes the workflow has already been compiled and the input data has been uploaded to DNAnexus.
+### Workflow Execution
+After compilation, the workflow can be executed on the platform using the `run-workflow` command. This requires the platform path to the compiled workflow and a JSON file mapping the required inputs.
 
 ```bash
-python dx-cwl run-workflow <compiled_workflow_path> <input_json_path>
+python dx-cwl run-workflow <compiled_workflow_path> <input_json_file>
 ```
 
-- **compiled_workflow_path**: The path to the workflow object on the DNAnexus platform (e.g., `workflow_name/workflow_name`).
-- **input_json_path**: The path to the JSON file on the DNAnexus platform containing the input parameters and file links.
+## Expert Tips and Best Practices
 
-## Best Practices
-- **Environment Setup**: Ensure `dx-toolkit`, `cwltool`, and `PyYAML` are installed. Use the provided `get-cwltool.sh` script from the repository to ensure compatibility with DNAnexus-specific requirements.
-- **Data Locality**: Before running `run-workflow`, ensure all data files referenced in your input JSON are already uploaded to the DNAnexus project.
-- **Project Selection**: Always verify your current DNAnexus project context or explicitly provide the `--project` ID during compilation to avoid deploying workflows to the wrong environment.
-- **Alpha Status Awareness**: As this tool is in an alpha phase, verify complex workflows with small test datasets before full-scale production runs.
+- **Prerequisite Initialization**: Before the first run, execute the `./get-cwltool.sh` script included in the repository. This ensures the environment has the specific version of `cwltool` required for DNAnexus applet compatibility.
+- **Token Management**: Ensure your DNAnexus API token is stored in an environment variable (e.g., `$TOKEN`) for secure and easy access during compilation.
+- **Project Scoping**: Always verify your project context. The `--project` flag is critical during compilation to ensure all generated applets and resources are bundled within the correct DNAnexus project container.
+- **Output Handling**: Compiled workflows generate a directory on the platform containing the workflow object and its dependency applets. Use the `run-workflow` command pointing to the specific workflow object within that generated directory.
+- **Tool Dependencies**: Ensure `dx-toolkit`, `cwltool`, and `PyYAML` are installed in your local Python environment before attempting to run the `dx-cwl` script.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| dx-cwl compile-tool | Compile a CWL tool definition file into a DNAnexus applet. |
+| dx-cwl compile-workflow | Compile a CWL workflow to a DNAnexus workflow. |
+| dx-cwl run-workflow | Runs a CWL workflow on the DNAnexus platform. |
 
 ## Reference documentation
-- [GitHub Repository Overview](./references/github_com_dnanexus-archive_dx-cwl.md)
+- [Main README](./references/github_com_dnanexus-archive_dx-cwl_blob_master_README.md)
+- [dx-cwl CLI Entry Point](./references/github_com_dnanexus-archive_dx-cwl_blob_master_dx-cwl.md)

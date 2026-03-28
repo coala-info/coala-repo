@@ -1,0 +1,456 @@
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fmcfrith%2Fseg-suite%2Fblob%2Fmaster%2FREADME.rst)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fmcfrith%2Fseg-suite%2Fblob%2Fmaster%2FREADME.rst)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Fblob%2Fshow&source=header-repo&source_repo=mcfrith%2Fseg-suite)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[mcfrith](/mcfrith)
+/
+**[seg-suite](/mcfrith/seg-suite)**
+Public
+
+* [Notifications](/login?return_to=%2Fmcfrith%2Fseg-suite) You must be signed in to change notification settings
+* [Fork
+  0](/login?return_to=%2Fmcfrith%2Fseg-suite)
+* [Star
+   1](/login?return_to=%2Fmcfrith%2Fseg-suite)
+
+* [Code](/mcfrith/seg-suite)
+* [Issues
+  0](/mcfrith/seg-suite/issues)
+* [Pull requests
+  0](/mcfrith/seg-suite/pulls)
+* [Actions](/mcfrith/seg-suite/actions)
+* [Projects](/mcfrith/seg-suite/projects)
+* [Security
+  0](/mcfrith/seg-suite/security)
+* [Insights](/mcfrith/seg-suite/pulse)
+
+Additional navigation options
+
+* [Code](/mcfrith/seg-suite)
+* [Issues](/mcfrith/seg-suite/issues)
+* [Pull requests](/mcfrith/seg-suite/pulls)
+* [Actions](/mcfrith/seg-suite/actions)
+* [Projects](/mcfrith/seg-suite/projects)
+* [Security](/mcfrith/seg-suite/security)
+* [Insights](/mcfrith/seg-suite/pulse)
+
+## FilesExpand file tree
+
+master
+
+## Breadcrumbs
+
+1. [seg-suite](/mcfrith/seg-suite/tree/master)
+
+/
+
+# README.rst
+
+Copy path
+
+BlameMore file actions
+
+BlameMore file actions
+
+## Latest commit
+
+## History
+
+[History](/mcfrith/seg-suite/commits/master/README.rst)
+
+History
+
+363 lines (238 loc) · 10.7 KB
+
+master
+
+## Breadcrumbs
+
+1. [seg-suite](/mcfrith/seg-suite/tree/master)
+
+/
+
+# README.rst
+
+Top
+
+## File metadata and controls
+
+* Preview
+* Code
+* Blame
+
+363 lines (238 loc) · 10.7 KB
+
+[Raw](https://github.com/mcfrith/seg-suite/raw/refs/heads/master/README.rst)
+
+Copy raw file
+
+Download raw file
+
+Outline
+
+Edit and raw actions
+
+# seg-suite
+
+The seg suite provides tools for manipulating segments, alignments,
+and annotations of sequences.
+
+The main thing it does is compose alignments. For example, if you
+have some alignments of human DNA to elf DNA, and of elf DNA to dwarf
+DNA, you can compose them to get human-elf-dwarf alignments.
+
+Annotations (e.g. of genes) can be regarded as alignments (of genes to
+chromosomes). So seg-suite can manipulate them too. For example, if
+you have annotations for the human genome, and alignments between the
+human and elf genomes, seg-suite can transfer the annotations to the
+elf genome.
+
+## Installation
+
+Please download the highest version number from
+<https://github.com/mcfrith/seg-suite/tags>. Using the command line, go
+into the downloaded directory and type:
+
+```
+make
+```
+
+This assumes you have a C++ compiler. On Linux, you might need to
+install a package called "g++". On Mac, you might need to install
+command-line developer tools. On Windows, you might need to install
+Cygwin.
+
+The programs are in the `bin` directory. Optionally, you can copy
+them to a standard bin directory: `sudo make install`, or copy them
+to your personal `~/bin` directory: `make install prefix=~`.
+
+## seg format
+
+The seg suite uses a format called "seg". The simplest version looks
+like this:
+
+```
+7       chrX    12
+5       chrY    1761
+```
+
+Each line describes a segment. The columns indicate: the segment
+length, the name of the sequence containing the segment, and the start
+coordinate. The next-simplest version looks like this:
+
+```
+7       chrM    123     chr1    862
+99      chrY    9988    myseq   0
+```
+
+Each line describes a segment-pair, i.e. a gapless alignment. The
+columns indicate: the length, first sequence name, first sequence
+start, second sequence name, and second sequence start. You can add
+more columns to describe segment-triples, segment-quadruples, etc.
+
+Gapped alignments are described simply by listing their gapless parts,
+one per line.
+
+The start coordinates are zero-based, which means that a segment
+starting right at the beginning of a sequence has coordinate zero.
+
+Reverse strands are indicated by negative start coordinates. For
+example, the Os in this sketch show a reverse-strand segment:
+
+```
+        0 1 2 3 4 5 6 7 8 9
+        | | | | | | | | | |
+(5'-end) x x x x x x x x x (3'-end)
+(3'-end) x O O O O O O x x (5'-end)
+```
+
+This segment would be described as follows:
+
+```
+6       myseq   -7
+```
+
+Notice that the start coordinate always indicates the 5'-end of the
+segment.
+
+The columns may be separated by any run of whitespace, but the
+seg-suite programs use single tabs in their output (except for
+seg-sort, which keeps whatever was in the input).
+
+## seg-import
+
+This program converts segments or alignments from various formats to
+seg. To see what formats it can read, run it without any input. To
+perform a conversion, run it like this:
+
+```
+seg-import maf myAlignments.maf > myAlignments.seg
+```
+
+Many of the input formats are described at
+<http://genome.ucsc.edu/FAQ/FAQformat.html>.
+
+Details:
+
+* The format name (first argument to seg-import) is not case
+  sensitive.
+* For genePred format: versions of this format with or without an
+  extra first column are both OK. The extended version is also OK
+  (and the extended information is not used).
+* For rmsk format: you can give it either RepeatMasker .out format, or
+  UCSC's rmsk format. The query sequence coordinates, and strand, are
+  correctly imported, but the repeat coordinates are not preserved
+  (because that's impossible without alignment-gap data).
+
+These options are available:
+
+|  |  |
+| --- | --- |
+| `-f N` | Make the Nth segment in each seg line forward-stranded. If it would be reverse-stranded by default, then flip the strand of each segment in that line. The default is: if the input has absolute strands then keep them, else if the input has relative strands make the first segment forward-stranded. |
+| `-a` | Add an extra segment to the end of each seg line, showing the alignment number and position in the alignment. This may be useful for knowing which seg lines came from the same alignment. Currently, this option only affects lastTab, maf, and psl formats. |
+
+The next options affect bed, genePred and gtf formats only. For these
+formats, the default is to get the exons.
+
+|  |  |
+| --- | --- |
+| `-c` | Get coding regions (CDS). For gtf format, this includes start and stop codons. |
+| `-5` | Get 5' untranslated regions (UTRs). |
+| `-3` | Get 3' untranslated regions (UTRs). |
+| `-i` | Get introns. |
+| `-p` | Get primary transcripts (exons plus introns). |
+
+## seg-join
+
+This program joins two files of segment-tuples. It finds all
+intersections between lines in file 1 and lines in file 2, where they
+overlap in their first sequence.
+
+### Example 1
+
+If we have two files of segments, x.seg:
+
+```
+200     chr5    500
+```
+
+and y.seg:
+
+```
+200     chr5    600
+```
+
+we can join them:
+
+```
+seg-join x.seg y.seg > intersections.seg
+```
+
+to get the intersections:
+
+```
+100     chr5    600
+```
+
+### Example 2
+
+If we have two segment-pair files, ab.seg:
+
+```
+200     human.chr5   500     elf.chr3   800
+```
+
+and ac.seg:
+
+```
+200     human.chr5   600     geneA      50
+```
+
+we can join (a.k.a. compose) them:
+
+```
+seg-join ab.seg ac.seg > abc.seg
+```
+
+to get segment-triples:
+
+```
+100     human.chr5   600     elf.chr3   900     geneA   50
+```
+
+### Details
+
+Both files must be in the order produced by seg-sort, else it will
+complain.
+
+The following options are available.
+
+|  |  |
+| --- | --- |
+| `-c FILENUM` | This option tells seg-join to only output joins that include whole segment-tuples from one of the input files. FILENUM should be either 1 or 2, indicating the first or second file. For example, this will find all segments in x.seg that are wholly contained in any segment of y.seg:   ``` seg-join -c1 x.seg y.seg > inside.seg ```   It is possible to specify both files, by using this option twice. |
+| `-f FILENUM` | This option tells seg-join to output whole segment-tuples from one of the input files, that overlap anything in the other file:   ``` seg-join -f1 x.seg y.seg > some-of-x.seg ``` |
+| `-n PERCENT` | This tells seg-join to output each segment-tuple from file 2, if at least PERCENT of it is covered by file 1:   ``` seg-join -n30 x.seg y.seg > some-of-y.seg ```   You can also use a fraction, such as `-n1/3`. |
+| `-x PERCENT` | This tells seg-join to output each segment-tuple from file 2, if at most PERCENT of it is covered by file 1:   ``` seg-join -x10 x.seg y.seg > some-of-y.seg ```   You can also use a fraction, such as `-x1/3`. |
+| `-v FILENUM` | This option makes seg-join output unjoinable parts of one of the input files. For example, this will get the parts of segments in x.seg that do not overlap any segment in y.seg:   ``` seg-join -v1 x.seg y.seg > difference.seg ```   And this will find whole segments in x.seg that do not overlap anything in y.seg:   ``` seg-join -v1 -c1 x.seg y.seg > outside.seg ``` |
+| `-w` | This option makes it join based on identical coordinates in all sequences, not just the first sequence. For example, this will find all intersections between segment-pairs in ab.seg and cd.seg:   ``` seg-join -w ab.seg cd.seg > ef.seg ``` |
+
+## seg-mask
+
+This program "masks" segments in sequences. The usage is:
+
+```
+seg-mask segments.seg sequences.fasta > masked.fasta
+```
+
+This writes a copy of the sequences, with the segments in lowercase,
+and non-segments in uppercase. The segments are taken from the first
+3 columns of the seg file. The sequences may be in either fasta or
+fastq format.
+
+These options are available:
+
+|  |  |
+| --- | --- |
+| `-x X` | Convert letters in segments to this lett

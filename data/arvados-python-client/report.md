@@ -31,7 +31,7 @@ FATAL ERROR: Failed to write to output filesystem
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated
 
 ## arvados-python-client_arv-put
 

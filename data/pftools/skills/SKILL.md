@@ -1,6 +1,6 @@
 ---
 name: pftools
-description: pftools provides algorithms for constructing and searching generalized sequence profiles against protein or DNA databases. Use when user asks to search a profile against a sequence database, scan a sequence against a profile library, or build profiles from multiple sequence alignments.
+description: pftools is a suite of programs for sensitive protein and nucleic acid sequence motif discovery and analysis using generalized profiles. Use when user asks to search sequence databases for motifs, scan sequences against profile libraries, or calibrate profile scores for statistical significance.
 homepage: https://web.expasy.org/pftools/
 ---
 
@@ -8,40 +8,68 @@ homepage: https://web.expasy.org/pftools/
 # pftools
 
 ## Overview
-The pftools suite provides specialized algorithms for sequence interpretation using generalized profiles. Unlike standard HMMs, these profiles offer a flexible syntax for representing complex biomolecular motifs. This skill enables the construction of profiles from multiple sequence alignments and the subsequent searching of these profiles against sequence databases (or vice versa) using high-performance tools like `pfsearchV3` and `pfscanV3`.
+
+The `pftools` package is a specialized suite of programs designed for sensitive protein and nucleic acid sequence motif discovery and analysis. It implements the "generalized profile" method, which allows for position-specific scoring of amino acids or nucleotides, including sophisticated gap penalties. 
+
+Use this skill to:
+- Search large sequence databases for specific motifs using `pfsearchV3`.
+- Scan a single sequence against a library of profiles using `pfscanV3`.
+- Calibrate profile scores to provide statistical significance (E-values) using `pfcalibrateV3`.
+- Convert between different motif formats and manage profile-based bioinformatics pipelines.
 
 ## Core CLI Patterns
 
-### Searching Sequences with Profiles
-The primary tools for searching are `pfsearchV3` (search a profile against a library) and `pfscanV3` (search a sequence against a profile library).
+### Searching Databases (pfsearchV3)
+Use `pfsearchV3` when you have a profile and want to find all occurrences in a database (e.g., UniProt).
 
-*   **Search a profile against a FASTA database:**
-    ```bash
-    pfsearchV3 [options] <profile_file> <fasta_file>
-    ```
-*   **Scan a sequence against a profile database:**
-    ```bash
-    pfscanV3 [options] <sequence_file> <profile_library>
-    ```
+```bash
+# Basic search with a profile against a FASTA database
+pfsearchV3 -f profile.txt database.fasta > results.txt
 
-### Common Options and Heuristics
-*   **Heuristic Search:** Use `-h` to enable the heuristic score, which significantly accelerates searches in version 3.
-*   **Output Formats:** Version 3 supports modern bioinformatics formats.
-    *   Use `-f` for FASTQ support.
-    *   Use `-s` for SAM format output.
-*   **Scoring:** Profiles use normalized scores. Refer to the profile header for specific cutoff values (CUT_OFF) defined during profile construction.
+# Search using a specific cutoff value
+pfsearchV3 -f profile.txt -C 8.5 database.fasta
 
-### Profile Construction and Management
-The suite includes legacy Fortran-based tools and modern C implementations for profile generation.
-*   **Testing Installation:** Use the provided test script to verify the environment:
-    ```bash
-    bash share/examples/test_V3.sh
-    ```
+# Use multiple threads for faster processing
+pfsearchV3 -t 8 -f profile.txt database.fasta
+```
+
+### Scanning Sequences (pfscanV3)
+Use `pfscanV3` when you have a sequence and want to identify which motifs from a profile library (e.g., PROSITE) are present.
+
+```bash
+# Scan a sequence against a profile library
+pfscanV3 -f sequence.fasta profile_library.txt
+
+# Output results in a specific format (e.g., PSA format)
+pfscanV3 -f sequence.fasta -out format=psa profile_library.txt
+```
+
+### Profile Calibration (pfcalibrateV3)
+Before using a profile for production searches, it should be calibrated to ensure scores are statistically meaningful.
+
+```bash
+# Calibrate a profile using a random sequence database
+pfcalibrateV3 profile.txt
+```
 
 ## Expert Tips
-*   **Generalized Syntax:** pftools profiles are more flexible than standard profile HMMs; they can explicitly define position-specific gap penalties and complex transition rules.
-*   **DNA Analysis:** While many profile tools focus on proteins, pftools has native support for DNA sequence motifs and can handle large-scale genomic data.
-*   **Normalization:** Always check if a profile has been calibrated. Normalized scores allow for a probabilistic interpretation of the alignment quality, making it easier to distinguish true hits from background noise.
+
+- **Version Selection**: Prefer the `V3` versions of tools (e.g., `pfsearchV3` instead of `pfsearch`) as they are optimized for modern 64-bit architectures and support multi-threading via OpenMP.
+- **Score Interpretation**: Generalized profiles use normalized scores. Always check if your profile has been calibrated; if not, raw scores may not be comparable across different motifs.
+- **Memory Management**: When working with extremely large profile libraries in `pfscanV3`, ensure your system has sufficient RAM, as the library is typically loaded into memory for speed.
+- **Regular Expressions**: If `pftools` was compiled with PCRE2 support, you can leverage advanced pattern matching within your profile definitions.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| pfscanV3 | Scan a protein sequence with a profile library |
+| pfsearchV3 | Scan a protein sequence library for profile matches |
 
 ## Reference documentation
-- [pftools3 GitHub Repository](./references/github_com_sib-swiss_pftools3.md)
+
+- [github_com_sib-swiss_pftools3.md](./references/github_com_sib-swiss_pftools3.md)
+- [github_com_sib-swiss_pftools3_blob_main_README.md](./references/github_com_sib-swiss_pftools3_blob_main_README.md)
+- [github_com_sib-swiss_pftools3_blob_main_INSTALL.md](./references/github_com_sib-swiss_pftools3_blob_main_INSTALL.md)

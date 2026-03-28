@@ -1,1 +1,579 @@
-Workflow runs · BonsonW/slow5curl · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} BonsonW / slow5curl Public generated from hasindu2008/slow5-template Notifications You must be signed in to change notification settings Fork 0 Star 24 Code Issues 1 Pull requests 0 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights Actions: BonsonW/slow5curl Actions All workflows Workflows C/C++ CI C/C++ CI pages-build-deployment pages-build-deployment Release simulation Release simulation tagged-release tagged-release Show more workflows... Management Caches Deployments All workflows All workflows Actions Loading... Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page . will be ignored since log searching is not yet available Showing runs from all workflows will be ignored since log searching is not yet available 62 workflow runs 62 workflow runs Event Filter by Event Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching events. Status Filter by Status Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching statuses. Branch Filter by Branch Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching branches. Actor Filter by Actor Sorry, something went wrong. Filter Loading Sorry, something went wrong. No matching users. add docs for ex-zd C/C++ CI #388: Commit 5be2b18 pushed by BonsonW 6m 3s dev dev 6m 3s View workflow file add docs for ex-zd Release simulation #73: Commit 5be2b18 pushed by BonsonW 1m 23s dev dev 1m 23s View workflow file fix workflow Release simulation #72: Commit b76de9d pushed by BonsonW 1m 45s dev dev 1m 45s View workflow file fix workflow C/C++ CI #387: Commit b76de9d pushed by BonsonW 5m 44s dev dev 5m 44s View workflow file install zstd osx Release simulation #71: Commit 68cbd9e pushed by BonsonW 1m 49s dev dev 1m 49s View workflow file install zstd osx C/C++ CI #386: Commit 68cbd9e pushed by BonsonW 5m 38s dev dev 5m 38s View workflow file cleanup tests Release simulation #70: Commit 2b9ed53 pushed by BonsonW 1m 47s dev dev 1m 47s View workflow file cleanup tests C/C++ CI #385: Commit 2b9ed53 pushed by BonsonW 5m 59s dev dev 5m 59s View workflow file fix workflow Release simulation #69: Commit f6dbc01 pushed by BonsonW 1m 14s dev dev 1m 14s View workflow file fix workflow C/C++ CI #384: Commit f6dbc01 pushed by BonsonW 1m 32s dev dev 1m 32s View workflow file add exzd write support and fix workflow C/C++ CI #383: Commit 4b581ed pushed by BonsonW 1m 16s dev dev 1m 16s View workflow file add exzd write support and fix workflow Release simulation #68: Commit 4b581ed pushed by BonsonW 1m 12s dev dev 1m 12s View workflow file fix zstd file Release simulation #67: Commit cac0fb4 pushed by BonsonW 1m 11s dev dev 1m 11s View workflow file fix zstd file C/C++ CI #382: Commit cac0fb4 pushed by BonsonW 1m 10s dev dev 1m 10s View workflow file added missing files and exzd Release simulation #66: Commit b86f9cc pushed by BonsonW 1m 9s dev dev 1m 9s View workflow file added missing files and exzd C/C++ CI #381: Commit b86f9cc pushed by BonsonW 1m 5s dev dev 1m 5s View workflow file add tests for zstd compression C/C++ CI #380: Commit d23debb pushed by BonsonW 1m 6s dev dev 1m 6s View workflow file add tests for zstd compression Release simulation #65: Commit d23debb pushed by BonsonW 1m 16s dev dev 1m 16s View workflow file add zstd tests C/C++ CI #379: Commit 25a00b4 pushed by BonsonW 1m 7s dev dev 1m 7s View workflow file add zstd tests Release simulation #64: Commit 25a00b4 pushed by BonsonW 1m 9s dev dev 1m 9s View workflow file cleanup C/C++ CI #378: Commit dbb7dd0 pushed by BonsonW 5m 39s dev dev 5m 39s View workflow file cleanup Release simulation #63: Commit dbb7dd0 pushed by BonsonW 1m 43s dev dev 1m 43s View workflow file new tests for custom indexes C/C++ CI #377: Commit 5752e8c pushed by BonsonW 5m 29s dev dev 5m 29s View workflow file new tests for custom indexes Release simulation #62: Commit 5752e8c pushed by BonsonW 1m 23s dev dev 1m 23s View workflow file patch custom remote index url Release simulation #61: Commit 6906687 pushed by BonsonW 1m 42s dev dev 1m 42s View workflow file Previous 1 2 3 Next You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FBonsonW%2Fslow5curl%2Factions)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FBonsonW%2Fslow5curl%2Factions)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Factions%2Findex&source=header-repo&source_repo=BonsonW%2Fslow5curl)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[BonsonW](/BonsonW)
+/
+**[slow5curl](/BonsonW/slow5curl)**
+Public
+
+generated from [hasindu2008/slow5-template](/hasindu2008/slow5-template)
+
+* [Notifications](/login?return_to=%2FBonsonW%2Fslow5curl) You must be signed in to change notification settings
+* [Fork
+  0](/login?return_to=%2FBonsonW%2Fslow5curl)
+* [Star
+   24](/login?return_to=%2FBonsonW%2Fslow5curl)
+
+* [Code](/BonsonW/slow5curl)
+* [Issues
+  1](/BonsonW/slow5curl/issues)
+* [Pull requests
+  0](/BonsonW/slow5curl/pulls)
+* [Actions](/BonsonW/slow5curl/actions)
+* [Projects](/BonsonW/slow5curl/projects)
+* [Security
+  0](/BonsonW/slow5curl/security)
+* [Insights](/BonsonW/slow5curl/pulse)
+
+Additional navigation options
+
+* [Code](/BonsonW/slow5curl)
+* [Issues](/BonsonW/slow5curl/issues)
+* [Pull requests](/BonsonW/slow5curl/pulls)
+* [Actions](/BonsonW/slow5curl/actions)
+* [Projects](/BonsonW/slow5curl/projects)
+* [Security](/BonsonW/slow5curl/security)
+* [Insights](/BonsonW/slow5curl/pulse)
+
+# Actions: BonsonW/slow5curl
+
+## Actions
+
+## All workflows All workflows Actions Loading... Loading Sorry, something went wrong. Uh oh! There was an error while loading. Please reload this page.
+
+will be ignored since log searching is not yet available
+
+Showing runs from all workflows
+
+will be ignored since log searching is not yet available
+
+**62 workflow runs**
+
+**62 workflow runs**
+
+Event
+
+# Filter by Event
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching events.
+
+Status
+
+# Filter by Status
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching statuses.
+
+Branch
+
+# Filter by Branch
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching branches.
+
+Actor
+
+# Filter by Actor
+
+## Sorry, something went wrong.
+
+Filter
+
+Loading
+
+## Sorry, something went wrong.
+
+## No matching users.
+
+[add docs for ex-zd](/BonsonW/slow5curl/actions/runs/21699053574)
+
+C/C++ CI
+#388:
+Commit [5be2b18](/BonsonW/slow5curl/commit/5be2b181f5caab673fe04aaf686b8fd85632a554)
+pushed
+by
+[BonsonW](/BonsonW)
+
+6m 3s
+[dev](/BonsonW/slow5curl/tree/refs/heads/dev "dev")
+
+[dev](/BonsonW/slow5curl/tree/refs/heads/dev "dev")
+
+6m 3s
+
+* [View workflow file](/BonsonW/slow5curl/actions/runs/21699053574/workflow)
+
+[add docs for ex-zd](/BonsonW/slow5curl/actions/runs/21699053563)
+
+Release simulation
+#73:
+Commit [5be2b18](/BonsonW/slow5curl/commit/5be2b181f5caab673fe04aaf686b8fd85632a554)
+pushed
+by
+[BonsonW](/BonsonW)
+
+1m 23s
+[dev](/BonsonW/slow5curl/tree/refs/heads/dev "dev")
+
+[dev](/BonsonW/slow5curl/tree/refs/heads/dev "dev")
+
+1m 23s
+
+* [View workflow file](/BonsonW/slow5curl/actions/runs/21699053563/workflow)
+
+[fix workflow](/BonsonW/slow5curl/actions/runs/21576121417)
+
+Release simulation
+#72:
+Commit [b76de9d](/BonsonW/slow5curl/commit/b76de9d32050c84b744bab42fb57fc79cd281339)
+pushed
+by
+[BonsonW](/BonsonW)
+
+1m 45s
+[dev](/BonsonW/slow5curl/tree/refs/heads/dev "dev")
+
+[dev](/BonsonW/slow5curl/tree/refs/heads/dev "dev")
+
+1m 45s
+
+* [View workflow file](/BonsonW/slow5curl/actions/runs/21576121417/workflow)
+
+[fix workflow](/BonsonW/slow5curl/actions/runs/21576121415)
+
+C/C++ CI
+#387:
+Commit [b76de9d](/BonsonW/slow5curl/commit/b76de9d32050c84b744bab42fb57fc79cd281339)
+pushed
+by
+[BonsonW](/BonsonW)
+
+5m 44s
+[dev](/BonsonW/slow5curl/tree/refs/heads/dev "dev")
+
+[dev](/BonsonW/slow5curl/tree/refs/heads/dev "dev")
+
+5m 44s
+
+* [View workflow file](/BonsonW/slow5curl/actions/runs/21576121415/workflow)
+
+[install zstd osx](/BonsonW/slow5curl/actions/runs/21576070593)
+
+Release simulation
+#71:
+Commit [68cbd9e](/BonsonW/slow5curl/commit/68cbd9e97199e4a6ce9410e887c3745d5a651d85)
+pushed
+by
+[BonsonW](/BonsonW)
+
+1m 49s
+[dev](/BonsonW/slow5curl/tree/refs/heads/dev "dev")
+
+[dev](/BonsonW/slow5curl/tree/refs/heads/dev "dev")
+
+1m 49s
+
+* [View workflow file](/BonsonW/slow5curl/actions/runs/21576070593/workflow)
+
+[install zstd osx](/BonsonW/slow5curl/actions/runs/21576070592)
+
+C/C++ CI
+#386:
+Commit [68cbd9e](/BonsonW/slow5curl/commit/68cbd9e97199e4a6ce9410e887c3745d5a651d85)
+pushed
+by
+[BonsonW](/BonsonW)
+
+5m 38s
+[dev](/BonsonW/slow5curl/tree/refs/heads/dev "dev")
+
+[dev](/BonsonW/slow5curl/tree/refs/heads/dev "dev")
+
+5m 38s
+
+* [View workflow file](/BonsonW/slow5curl/actions/runs/21576070592/workflow)
+
+[cleanup tests](/BonsonW/slow5curl/actions/runs/21576023973)
+
+Release simulation
+#70:
+Commit [2b9ed53](/BonsonW/slow5curl/commit/2b9ed53fb459d49585e7f54297ad9731ba038e6d)
+pushed
+by
+[BonsonW](/BonsonW)
+
+1m 47s
+[dev](/BonsonW/slow5curl/tree/refs/heads/dev "dev")
+
+[dev](/BonsonW/slow5curl/tree/refs/heads/dev "dev")
+
+1m 47s
+
+* [View workflow file](/BonsonW/slow5curl/actions/runs/21576023973/workflow)
+
+[cleanup tests](/BonsonW/slow5curl/actions/runs/21576023969)
+
+C/C++ CI
+#385:
+Commit [2b9ed53](/BonsonW/slow5curl/commit/2b9ed53fb459d49585e7f54297ad9731ba038e6d)
+pushed
+by
+[BonsonW](/BonsonW)
+
+5m 59s
+[dev](/BonsonW/slow5curl/tree/refs/heads/dev "dev")
+
+[dev](/BonsonW/slow5curl/tree/refs/heads/dev "dev")
+
+5m 59s
+
+* [View workflow file](/BonsonW/slow5curl/actions/runs/21576023969/workflow)
+
+[fix workflow](/BonsonW/slow5curl/actions/runs/21575780113)
+
+Release simulation
+#69:
+Commit [f6dbc01](/BonsonW/slow5curl/commit/f6dbc01ec6da872f883e0a29b221762c3fec09e5)
+pushed
+by
+[BonsonW](/BonsonW)
+
+1m 14s
+[dev](/BonsonW/slow5curl/tree/refs/heads/dev "dev")
+
+[dev](/BonsonW/slow5curl/tree/refs/heads/dev "dev")
+
+1m 14s
+
+* [View workflow file](/BonsonW/slow5curl/actions/runs/21575780113/workflow)
+
+[fix workflow](/BonsonW/slow5curl/actions/runs/21575780103)
+
+C/C++ CI
+#384:
+Commit [f6dbc01](/BonsonW/slow5curl/commit/f6dbc01ec6da872f883e0a29b221762c3fec09e5)
+pushed
+by
+[BonsonW](/BonsonW)
+
+1m 32s
+[dev](/BonsonW/slow5curl/tree/refs/heads/dev "dev")
+
+[dev](/BonsonW/slow5curl/tree/refs/heads/dev "dev")
+
+1m 32s
+
+* [View workflow file](/BonsonW/slow5curl/actions/runs/21575780103/workflow)
+
+[add exzd write support and fix workflow](/BonsonW/slow5curl/actions/runs/21575746989)
+
+C/C++ CI
+#383:
+Commit [4b581ed](/BonsonW/slow5curl/commit/4b581edd66a5c8bf52da56f429e64f5ebe942e21)
+pushed
+by
+[BonsonW](/BonsonW)
+
+1m 16s
+[dev](/BonsonW/slow5curl/tree/refs/heads/dev "dev")
+
+[dev](/BonsonW/slow5curl/tree/refs/heads/dev "dev")
+
+1m 16s
+
+* [View workflow file](/BonsonW/slow5curl/actions/runs/21575746989/workflow)
+
+[add exzd write support and fix workflow](/BonsonW/slow5curl/actions/runs/21575746988)
+
+Release simulation
+#68:
+Commit [4b581ed](/BonsonW/slow5curl/commit/4b581edd66a5c8bf52da56f429e64f5ebe942e21)
+pushed
+by
+[BonsonW](/BonsonW)
+
+1m 12s
+[dev](/BonsonW/slow5curl/tree/refs/heads/dev "dev")
+
+[dev](/BonsonW/slow5curl/tree/refs/heads/dev "dev")
+
+1m 12s
+
+* [View workflow file](/BonsonW/slow5curl/actions/runs/21575746988/workflow)
+
+[fix zstd file](/BonsonW/slow5curl/actions/runs/21575430988)
+
+Release simulation
+#67:
+Commit [cac0fb4](/BonsonW/slow5curl/commit/cac0fb4af16d1532abf28ffc8ceabd57d7a7de41)
+pushed
+by
+[BonsonW](/BonsonW)
+
+1m 11s
+[dev](/BonsonW/slow5curl/tree/refs/heads/dev "dev")
+
+[dev](/BonsonW/slow5curl/tree/refs/heads/dev "dev")
+
+1m 11s
+
+* [View workflow file](/BonsonW/slow5curl/actions/runs/21575430988/workflow)
+
+[fix zstd file](/BonsonW/slow5curl/actions/runs/21575430977)
+
+C/C++ CI
+#382:
+Commit [cac0fb4](/BonsonW/slow5curl/commit/cac0fb4af16d1532abf28ffc8ceabd57d7a7de41)
+pushed
+by
+[BonsonW](/BonsonW)
+
+1m 10s
+[dev](/BonsonW/slow5curl/tree/refs/heads/dev "dev")
+
+[dev](/BonsonW/slow5curl/tree/refs/heads/dev "dev")
+
+1m 10s
+
+* [View workflow file](/BonsonW/slow5curl/actions/runs/21575430977/workflow)
+
+[added missing files and exzd](/BonsonW/slow5curl/actions/runs/21575383988)
+
+Release simulation
+#66:
+Commit [b86f9cc](/BonsonW/slow5curl/commit/b86f9cced1d8500ec71d26e3597fc616aa8e8a46)
+pushed
+by
+[BonsonW](/BonsonW)
+
+1m 9s
+[dev](/BonsonW/slow5curl/tree/refs/heads/dev "dev")
+
+[dev](/BonsonW/slow5curl/tree/refs/heads/dev "dev")
+
+1m 9s
+
+* [View workflow file](/BonsonW/slow5curl/actions/runs/21575383988/workflow)
+
+[added missing files and exzd](/BonsonW/slow5curl/actions/runs/21575383987)
+
+C/C++ CI
+#381:
+Commit [b86f9cc](/BonsonW/slow5curl/commit/b86f9cced1d8500ec71d26e3597fc616aa8e8a46)
+pushed
+by
+[BonsonW](/BonsonW)
+
+1m 5s
+[dev](/BonsonW/slow5curl/tree/refs/heads/dev "dev")
+
+[dev](/BonsonW/slow5curl/tree/refs/heads/dev "dev")
+
+1m 5s
+
+* [View workflow file](/BonsonW/slow5curl/actions/runs/21575383987/workflow)
+
+[add tests for zstd compression](/BonsonW/slow5curl/actions/runs/21575264692)
+
+C/C++ CI
+#380:
+Commit [d23debb](/BonsonW/slow5curl/commit/d23debbcf4f482f232221f3c55bd053fc43d7fc8)
+pushed
+by
+[BonsonW](/BonsonW)
+
+1m 6s
+[dev](/BonsonW/slow5curl/tree/refs/heads/dev "dev")
+
+[dev](/BonsonW/slow5curl/tree/refs/heads/dev "dev")
+
+1m 6s
+
+* [View workflow file](/BonsonW/slow5curl/actions/runs/21575264692/workflow)
+
+[add tests for zstd compression](/BonsonW/slow5curl/actions/runs/21575264689)
+
+Release simulation
+#65:
+Commit [d23debb](/BonsonW/slow5curl/commit/d23debbcf4f482f232221f3c55bd053fc43d7fc8)
+pushed
+by
+[BonsonW](/BonsonW)
+
+1m 16s
+[dev](/BonsonW/slow5curl/tree/refs/heads/dev "dev")
+
+[dev](/BonsonW/slow5curl/tree/refs/heads/dev "dev")
+
+1m 16s
+
+* [View workflow file](/BonsonW/slow5curl/actions/runs/21575264689/workflow)
+
+[add zstd tests](/BonsonW/slow5curl/actions/runs/21575166727)
+
+C/C++ CI
+#379:
+Commit [25

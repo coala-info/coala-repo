@@ -1,6 +1,6 @@
 ---
 name: varifier
-description: Varifier evaluates the accuracy of variant calls by comparing predicted variants against a truth genome. Use when user asks to evaluate variant call accuracy, compare variant calls to a truth assembly, or calculate variant call metrics.
+description: Varifier assesses the accuracy of variant calls by comparing a query VCF against a truth FASTA sequence using probe mapping and sequence alignment. Use when user asks to evaluate VCF precision and recall, compare variant calls to a truth assembly, or calculate fractional and edit-distance-based accuracy statistics.
 homepage: https://github.com/iqbal-lab-org/varifier
 ---
 
@@ -9,50 +9,54 @@ homepage: https://github.com/iqbal-lab-org/varifier
 
 ## Overview
 
-`varifier` is a specialized bioinformatics tool used to evaluate the accuracy of variant calls. It works by taking a set of predicted variants (VCF), a reference genome, and a "truth" genome (a high-quality assembly of the same sample). Instead of simply comparing VCF coordinates, which can be ambiguous due to different representations of the same variant, `varifier` maps the variants to the truth genome to determine if the predicted sequence change actually exists in the truth.
+The `varifier` tool provides a robust framework for assessing the accuracy of variant calls by comparing a query VCF against a "truth" FASTA sequence. Instead of comparing VCF records directly, which can be confounded by different ways of representing the same indel, `varifier` uses probe mapping and sequence alignment to determine if the called alleles exist in the truth genome. It produces detailed statistics including binary, fractional, and edit-distance-based precision and recall.
 
-## Core Workflow: VCF Evaluation
+## Core Workflow
 
-The primary command for assessing variant call quality is `vcf_eval`. This command compares a test VCF against a truth assembly.
+To evaluate a VCF file, you must provide the truth assembly, the reference assembly used for calling, and the VCF itself.
 
-### Basic Usage
-
+### Basic Evaluation
+Run the standard evaluation pipeline:
 ```bash
-varifier vcf_eval <truth.fasta> <ref.fasta> <test.vcf> <out_dir>
+varifier vcf_eval truth.fasta ref.fasta test.vcf out_dir
 ```
 
-*   **truth.fasta**: The gold-standard assembly of the sample being tested.
-*   **ref.fasta**: The reference genome used to generate the `test.vcf`.
-*   **test.vcf**: The VCF file containing the variant calls you want to verify.
-*   **out_dir**: The directory where results will be stored.
-
 ### Key Outputs
+The results are stored in the specified `out_dir`. The most critical file is `summary_stats.json`, which contains:
+- **Precision/Recall**: Binary (all or nothing), Fractional (proportion of allele match), and Edit Distance (penalizes based on sequence difference).
+- **Excluded_record_counts**: Breakdown of records skipped due to being heterozygous, having no genotype, or failing filters.
 
-The most important file generated in the `out_dir` is `summary_stats.json`. This file contains metrics including:
-*   **TP (True Positives)**: Variants in the VCF that are confirmed in the truth genome.
-*   **FP (False Positives)**: Variants in the VCF that are not found in the truth genome.
-*   **FN (False Negatives)**: Variants present in the truth genome that were missed by the VCF.
-*   **Precision and Recall**: Calculated based on the above counts.
+## Command Line Options and Best Practices
 
-## Expert Tips and Best Practices
+### Filtering and Genotypes
+- **Heterozygous Calls**: Note that `varifier` automatically ignores heterozygous calls and records without a genotype (`GT`). It is designed for haploid or consensus-style verification.
+- **Filter PASS**: Use `--filter_pass` to only evaluate variants marked as "PASS" in the VCF.
+- **Reference Calls**: Use `--use_ref_calls` if you want to include `0/0` calls in the evaluation.
 
-### Handling Complex Alignments
-`varifier` relies on `mummer` and `minimap2` (via `paftools.js`) for alignments. For more accurate verification in complex regions or when dealing with larger indels, ensure `mafft` is installed and use the `--use_mafft` flag if available in your version (v0.4.0+).
+### Alignment and Normalization
+- **Global Alignment**: For complex regions, use `--use_mafft` to enable global alignment via MAFFT, which can improve accuracy for larger indels.
+- **Indel Handling**: Adjust `--indel_max_fix_length` to control the maximum size of indels that the tool attempts to normalize or fix during alignment.
+- **Homopolymers**: Use `--hp_min_fix_length` to specifically address and fix potential errors in homopolymer runs.
 
-### Filtering and Normalization
-While `varifier` handles many representation issues, it is often good practice to normalize your VCF (e.g., using `bcftools norm -m -any`) before running evaluation to ensure multi-allelic sites are handled consistently.
+### Verification Logic
+- **Binary Measure**: The allele must be 100% correct to count as a True Positive (TP).
+- **Fractional Measure**: Provides a score between 0 and 1 based on the matching proportion of the allele.
+- **Edit Distance Measure**: Calculates a score based on the edit distance between the called allele, the reference, and the truth, focusing only on the divergent parts of the sequence.
 
-### Resource Management
-For large genomes or VCFs with a very high density of variants, `varifier` can be memory-intensive. Monitor RAM usage if the process fails without a clear error message.
+## Expert Tips
+- **Reference Consistency**: Ensure that the `ref.fasta` provided is the exact same file used to generate the `test.vcf`. If the `REF` column in the VCF does not match the sequence in `ref.fasta`, those records will be excluded.
+- **Memory Management**: For very large VCFs or highly fragmented assemblies, monitor memory usage as the probe mapping step can be resource-intensive.
+- **Non-ACGT Characters**: If your sequences contain ambiguous bases (N, R, Y, etc.), ensure you are using a version of `varifier` (v0.3.0+) that supports `--use_non_acgt`.
 
-### Troubleshooting Dependencies
-`varifier` requires several external tools to be in your `$PATH`:
-*   `mummer` (specifically `nucmer` and `show-coords`)
-*   `k8` (Javascript runtime for `paftools.js`)
-*   `minimap2` (specifically the `paftools.js` script)
 
-If you encounter "command not found" errors, verify these are accessible in your environment.
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| make_truth_vcf | Make truth VCF file |
+| vcf_eval | Evaluate VCF file |
 
 ## Reference documentation
-- [varifier GitHub Repository](./references/github_com_iqbal-lab-org_varifier.md)
-- [Bioconda varifier Package](./references/anaconda_org_channels_bioconda_packages_varifier_overview.md)
+- [Main Usage and Installation](./references/github_com_iqbal-lab-org_varifier.md)
+- [Summary Stats JSON Details](./references/github_com_iqbal-lab-org_varifier_wiki_Summary-stats-JSON-file.md)

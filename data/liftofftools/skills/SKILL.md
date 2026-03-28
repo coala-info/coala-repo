@@ -1,6 +1,6 @@
 ---
 name: liftofftools
-description: LiftoffTools evaluates and compares gene annotations between reference and target genome assemblies to identify sequence variants, synteny changes, and gene copy number variations. Use when user asks to identify variant effects on protein-coding genes, compare gene order between assemblies, or group genes into clusters to find paralogs.
+description: "LiftoffTools evaluates the quality and functional changes of gene annotations transferred between genome assemblies. Use when user asks to identify variant effects in protein-coding genes, compare gene synteny, cluster paralogs to find copy number variations, or perform a comprehensive annotation quality analysis."
 homepage: https://github.com/agshumate/LiftoffTools
 ---
 
@@ -8,62 +8,54 @@ homepage: https://github.com/agshumate/LiftoffTools
 # liftofftools
 
 ## Overview
-LiftoffTools is a specialized bioinformatics toolkit designed to evaluate and compare gene annotations between a reference and a target genome assembly. While optimized for use with the Liftoff tool, it is compatible with any lift-over method (such as UCSC liftOver) provided the feature IDs remain consistent across datasets. It provides three primary analytical modules—variants, synteny, and clusters—to help researchers understand the biological consequences of genome evolution or assembly differences on gene structure and organization.
 
-## Installation
-The recommended method for installation is via Bioconda:
-```bash
-conda install -c bioconda liftofftools
-```
-Note: The `clusters` module requires `MMSeqs2` to be installed and available in your system PATH.
+LiftoffTools is a specialized bioinformatics toolkit used to evaluate the quality and changes in gene annotations when they are transferred from a reference genome to a target genome assembly. It provides a comparative framework to understand how genomic differences—such as mutations, structural variations, or assembly errors—affect the resulting gene models. This skill assists in executing the four primary modules: variant analysis, synteny comparison, paralog clustering, and a comprehensive "all" mode.
 
 ## Core Modules and Usage
 
-### 1. Comprehensive Analysis
-To run all modules (variants, synteny, and clusters) simultaneously:
-```bash
-liftofftools all -r reference.fa -t target.fa -rg reference.gff3 -tg target.gff3
-```
+### 1. Variant Analysis (`variants`)
+Identifies mutations in protein-coding genes and classifies their functional effects.
+- **Command**: `liftofftools variants -r <ref.fa> -t <target.fa> -rg <ref.gff> -tg <target.gff>`
+- **Key Outputs**: A `variant_effects` file detailing DNA/Protein sequence identity and the most severe variant effect (e.g., frameshift, stop codon gain, synonymous).
 
-### 2. Variants Module
-Identifies sequence identity and the most severe variant effect (e.g., frameshift, stop codon gain, nonsynonymous mutation) for protein-coding genes.
-```bash
-liftofftools variants -r reference.fa -t target.fa -rg reference.gff3 -tg target.gff3
-```
-*   **Key Output**: `variant_effects` (TSV) containing DNA/AA identity and the classified variant effect.
+### 2. Synteny Comparison (`synteny`)
+Evaluates the conservation of gene order between assemblies.
+- **Command**: `liftofftools synteny -r <ref.fa> -t <target.fa> -rg <ref.gff> -tg <target.gff>`
+- **Advanced Options**:
+    - Use `-edit-distance` to quantify the number of genes in a different order.
+    - Use `-r-sort` and `-t-sort` with text files containing chromosome names to control the axis ordering in the generated dot plot.
+- **Key Outputs**: `gene_order_plot.pdf` (dot plot) and `gene_order` (tab-separated file).
 
-### 3. Synteny Module
-Compares gene order between assemblies and generates visualization.
-```bash
-liftofftools synteny -r reference.fa -t target.fa -rg reference.gff3 -tg target.gff3 -edit-distance
-```
-*   **Key Output**: `gene_order_plot.pdf` (Dot plot) and `gene_order` (TSV).
-*   **Expert Tip**: Use `-edit-distance` to get a quantitative estimate of how many genes have changed order between the reference and target.
-
-### 4. Clusters Module
+### 3. Paralog Clustering (`clusters`)
 Groups genes into paralogs to identify gene copy number gains or losses.
-```bash
-liftofftools clusters -r reference.fa -t target.fa -rg reference.gff3 -tg target.gff3
-```
-*   **Expert Tip**: You can pass custom MMSeqs2 parameters using `-mmseqs_params`. Default is `"--min-seq-id 0.9 -c 0.9"`.
+- **Command**: `liftofftools clusters -r <ref.fa> -t <target.fa> -rg <ref.gff> -tg <target.gff>`
+- **Requirement**: Requires `MMSeqs2` to be installed and in the system PATH.
+- **Parameters**: Customize clustering stringency using `-mmseqs_params` (e.g., `"-mmseqs_params '--min-seq-id 0.8 -c 0.8'"`).
 
-## Common CLI Patterns and Best Practices
+### 4. Comprehensive Analysis (`all`)
+Runs all three modules (variants, synteny, and clusters) in a single execution.
+- **Command**: `liftofftools all -r <ref.fa> -t <target.fa> -rg <ref.gff> -tg <target.gff>`
 
-### Handling Output
-*   **Directory Control**: Use `-dir <name>` to specify an output directory. By default, it uses `liftofftools_output`.
-*   **Overwriting**: LiftoffTools will not overwrite existing files by default. Use the `-force` flag to overwrite previous runs in the same directory.
+## Expert Tips and Best Practices
 
-### Filtering and Optimization
-*   **Protein-Coding Only**: Use the `-c` flag to restrict analysis to protein-coding gene clusters only, which significantly speeds up processing if non-coding features are not required.
-*   **Custom Features**: If you need to analyze features beyond standard "gene" types, provide a text file with the feature names using the `-f` flag.
-*   **Gene Inference**: Use `-infer-genes` if your GFF/GTF file lacks explicit gene features but contains transcripts/exons.
+- **Database Reuse**: If you have already run Liftoff or LiftoffTools, you can provide the generated `.db` file (gffutils database) to the `-rg` or `-tg` arguments instead of the raw GFF/GTF file to speed up initialization.
+- **Handling Non-Gene Features**: By default, the tool focuses on genes. Use the `-f` flag followed by a text file listing additional feature types (e.g., pseudogenes, ncRNA) if you need to analyze more than just standard protein-coding genes.
+- **Output Management**: Use the `-dir` flag to specify a custom output directory. If you need to re-run an analysis in an existing directory, you must use the `-force` flag, as the tool will not overwrite existing files by default.
+- **Protein-Coding Focus**: Use the `-c` flag to restrict the analysis specifically to protein-coding gene clusters, which is often useful for reducing noise in large-scale comparative genomics.
 
-### Sorting Synteny Plots
-To control the order of chromosomes on the synteny dot plot axes, provide text files containing the desired order:
-```bash
-liftofftools synteny -r ref.fa -t tar.fa -rg ref.gff -tg tar.gff -r-sort ref_chroms.txt -t-sort tar_chroms.txt
-```
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| liftofftools | liftofftools: error: argument subcommand: invalid choice: 'and' (choose from 'clusters', 'variants', 'synteny', 'all') |
+| liftofftools | liftofftools: error: argument subcommand: invalid choice: 'be' (choose from 'clusters', 'variants', 'synteny', 'all') |
+| liftofftools | liftofftools: error: argument subcommand: invalid choice: 'format' (choose from 'clusters', 'variants', 'synteny', 'all') |
+| liftofftools | liftofftools: error: argument subcommand: invalid choice: 'liftoff' (choose from 'clusters', 'variants', 'synteny', 'all') |
+| liftofftools | liftofftools: error: argument subcommand: invalid choice: 'mmseqs' (choose from 'clusters', 'variants', 'synteny', 'all') |
+| liftofftools | liftofftools: error: argument subcommand: invalid choice: 'to' (choose from 'clusters', 'variants', 'synteny', 'all') |
 
 ## Reference documentation
-- [LiftoffTools GitHub Repository](./references/github_com_agshumate_LiftoffTools.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_liftofftools_overview.md)
+- [LiftoffTools README](./references/github_com_agshumate_LiftoffTools_blob_master_README.md)
+- [LiftoffTools Overview](./references/github_com_agshumate_LiftoffTools.md)

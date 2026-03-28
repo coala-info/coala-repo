@@ -1,6 +1,6 @@
 ---
 name: ntm-profiler
-description: ntm-profiler identifies Non-Tuberculous Mycobacteria species and predicts drug resistance from genomic data. Use when user asks to identify NTM species, predict drug resistance from reads or assemblies, or collate multiple profiling results into a summary.
+description: "NTM-Profiler identifies Non-Tuberculous Mycobacteria species and detects drug resistance mutations from genomic data. Use when user asks to identify NTM species, detect drug resistance mutations, profile genomic sequences, or collate results from multiple samples."
 homepage: https://github.com/jodyphelan/NTM-Profiler
 ---
 
@@ -9,57 +9,95 @@ homepage: https://github.com/jodyphelan/NTM-Profiler
 
 ## Overview
 
-The ntm-profiler tool is a specialized bioinformatic pipeline designed to characterize Non-Tuberculous Mycobacteria from genomic data. It performs two primary functions: species identification using a k-mer based approach (falling back to mash/GTDB if needed) and drug resistance prediction by mapping reads against species-specific databases. It is particularly useful for clinical microbiology and genomic surveillance workflows involving NTM species like *M. abscessus* and *M. leprae*.
+NTM-Profiler is a specialized bioinformatics pipeline designed to characterize Non-Tuberculous Mycobacteria from genomic data. It utilizes a kmer-based approach for rapid species identification and an alignment-based workflow for detecting drug resistance mutations. The tool is particularly effective for identifying members of the *Mycobacteroides abscessus* complex and *Mycobacterium leprae*. It supports multiple input formats and provides utilities for collating results across large cohorts.
 
-## Core Workflows
+## Installation and Database Setup
 
-### 1. Database Initialization
-Before running any analysis, ensure the species and resistance databases are downloaded and up to date.
+Before running analysis, ensure the environment is ready and the latest species/resistance databases are downloaded.
+
 ```bash
+# Install via conda/mamba
+mamba install bioconda::ntm-profiler
+
+# Download or update the required databases (Required before first run)
 ntm-profiler update_db
 ```
 
-### 2. Profiling Samples
-The `profile` command is the primary entry point. It automatically detects the species and, if a corresponding resistance database exists, identifies resistance-associated variants.
+## Common CLI Patterns
 
-**From Raw Reads (Fastq):**
+### Species and Resistance Profiling
+
+The `profile` command is the primary entry point. It accepts various input types and requires a sample prefix (`-p`).
+
+**1. Raw Sequencing Reads (Fastq)**
 ```bash
-ntm-profiler profile -1 reads_R1.fastq.gz -2 reads_R2.fastq.gz -p sample_name --threads 4
+ntm-profiler profile -1 reads_1.fastq.gz -2 reads_2.fastq.gz -p sample_id --threads 8 --txt
 ```
 
-**From Assemblies (Fasta):**
+**2. Aligned Data (BAM/CRAM)**
+Note: Chromosome names in the alignment must match the NTM-Profiler reference.
 ```bash
-ntm-profiler profile -f assembly.fasta -p sample_name
+ntm-profiler profile -a alignment.bam -p sample_id
 ```
 
-**From Alignments (BAM/CRAM):**
-*Note: The alignment must use the same reference genome and chromosome names as the ntm-profiler database.*
+**3. Assembled Genomes (Fasta)**
 ```bash
-ntm-profiler profile -a alignment.bam -p sample_name
+ntm-profiler profile -f assembly.fasta -p sample_id
 ```
 
-**From Variant Calls (VCF):**
+**4. Variant Calls (VCF)**
 ```bash
-ntm-profiler profile --vcf variants.vcf -p sample_name
+ntm-profiler profile --vcf variants.vcf -p sample_id
 ```
 
-### 3. Summarizing Multiple Results
-To aggregate results from multiple individual runs into a single summary table, use the `collate` command within the directory containing the result files.
+### Summarizing Multiple Runs
+
+To aggregate results from a directory containing multiple individual run outputs into a single table:
+
 ```bash
+# Collate all results in the current directory
 ntm-profiler collate --prefix study_summary
+
+# Collate a specific subset of samples
+ntm-profiler collate --samples sample_list.txt --prefix subset_summary
 ```
 
 ## Expert Tips and Best Practices
 
-- **Platform Specification**: If using Nanopore data, explicitly set the platform to ensure the underlying mapping parameters are optimized.
-  ```bash
-  ntm-profiler profile -1 reads.fq.gz -p sample_name --platform nanopore
-  ```
-- **Output Formats**: By default, the tool produces JSON output. Use the `--txt` flag to generate a human-readable text report alongside the JSON.
-- **Species-Specific Resistance**: Resistance prediction is currently most robust for *M. leprae* and the *M. abscessus* complex (subsp. *abscessus*, *bolletii*, and *massiliense*). For other species, the tool may only provide species identification.
-- **Thread Management**: Use the `--threads` option to speed up the alignment phase, especially when processing large Fastq files.
-- **Custom Databases**: If working with novel species or specific local variants, you can create custom databases using `create_species_db` and `create_resistance_db`. Always use the `--load` flag to make these databases immediately available to the `profile` command.
+- **Performance**: Always specify `--threads` to utilize multi-core processing, especially during the alignment phase of resistance prediction.
+- **Platform Specification**: If using Nanopore data, specify `--platform nanopore` (default is `illumina`).
+- **Output Formats**: By default, the tool produces JSON. Use the `--txt` flag to generate a human-readable text report alongside the JSON.
+- **Resistance Support**: Currently, full resistance prediction is available for *M. leprae* and the *M. abscessus* complex (subsp. *abscessus*, *bolletii*, and *massiliense*). For other species, the tool will primarily provide identification.
+- **Database Synchronization**: If you are using BAM or VCF files generated outside of NTM-Profiler, ensure the reference genome used for the initial alignment matches the one in the NTM-Profiler database to avoid coordinate mismatches.
+
+## Custom Database Management
+
+You can extend the tool with custom species kmers or resistance mutations.
+
+**Create Species Database:**
+```bash
+ntm-profiler create_species_db --kmers species_kmers.txt --prefix ntmdb --load
+```
+
+**Create Resistance Database:**
+Requires a reference genome (`genome.fasta`), annotation (`genome.gff`), and a mutation CSV.
+```bash
+ntm-profiler create_resistance_db --csv mutations.csv --prefix species_name --load
+```
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| create_resistance_db | Create a resistance database for ntm-profiler. |
+| ntm-profiler collate | Collate results from ntm-profiler runs. |
+| ntm-profiler create_species_db | Create a species database for ntm-profiler. |
+| ntm-profiler list_db | List available databases |
+| ntm-profiler profile | Profile NTM samples |
+| update_db | Update the ntm-profiler database. |
 
 ## Reference documentation
-- [ntm-profiler Overview](./references/anaconda_org_channels_bioconda_packages_ntm-profiler_overview.md)
-- [NTM-Profiler GitHub Documentation](./references/github_com_jody_phelan_NTM-Profiler.md)
+- [NTM-Profiler Main Documentation](./references/github_com_jodyphelan_NTM-Profiler_blob_main_README.md)
+- [Environment and Dependencies](./references/github_com_jodyphelan_NTM-Profiler_blob_main_env.yml.md)

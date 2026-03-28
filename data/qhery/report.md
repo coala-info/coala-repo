@@ -103,3 +103,6 @@ options:
   --bam BAM, -b BAM     bam file
 ```
 
+
+## Metadata
+- **Skill**: generated

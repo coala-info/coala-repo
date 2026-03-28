@@ -122,3 +122,6 @@ Common flags:
   -q --quiet                Quiet verbosity
 ```
 
+
+## Metadata
+- **Skill**: generated

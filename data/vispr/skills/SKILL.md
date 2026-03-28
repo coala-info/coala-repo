@@ -1,6 +1,6 @@
 ---
 name: vispr
-description: VISPR provides an interactive framework for visualizing and exploring CRISPR/Cas9 screening data, generating quality control reports and gene-level visualizations. Use when user asks to visualize CRISPR/Cas9 screening data, explore CRISPR screen results, generate quality control reports, assess library representation, evaluate sample clustering, or identify top-ranked hits.
+description: VISPR is a web-based visualization framework for interactively exploring and quality-controlling CRISPR-Cas9 genetic screen results. Use when user asks to start a visualization server, perform quality assessment of experimental replicates, or identify top-ranking gene hits through interactive plots.
 homepage: https://bitbucket.org/liulab/vispr
 ---
 
@@ -8,40 +8,41 @@ homepage: https://bitbucket.org/liulab/vispr
 # vispr
 
 ## Overview
-VISPR (VIsualization of CRISPR screens) provides a specialized framework for the interactive exploration of CRISPR/Cas9 screening data. It acts as a companion to the MAGeCK pipeline, transforming raw statistical outputs into comprehensive quality control reports and gene-level visualizations. Use this tool to assess library representation, evaluate sample clustering, and identify top-ranked hits through an automated analysis workflow.
+VISPR (Visual Interactive Screening Result) is a specialized web-based visualization framework tailored for CRISPR-Cas9 genetic screens. It serves as the front-end for the MAGeCK-VISPR workflow, transforming complex statistical outputs into interactive plots. Use this skill to guide the setup of the visualization server, perform quality assessment across experimental replicates, and identify top-ranking gene hits through visual data exploration.
 
-## Core Workflow and CLI Usage
+## Core CLI Usage
+The primary command for VISPR is used to initialize the web server and load the results from a MAGeCK-VISPR analysis.
 
-### Initializing a Project
-To begin a VISPR analysis, you must first create a configuration file that defines your experimental design, including samples, controls, and MAGeCK result paths.
+- **Start the visualization server**:
+  `vispr server results.yaml`
+  *Note: While the configuration is defined in a YAML file, the focus here is on the execution of the server to host the interactive dashboard.*
 
-```bash
-vispr init my_experiment
-```
-This command generates a template configuration file (usually `config.yaml`) which must be edited to point to your fastq files or MAGeCK count/mle/test outputs.
+- **Specify a custom port**:
+  `vispr server --port 5000 results.yaml`
 
-### Running the Pipeline
-Once the configuration is defined, execute the workflow to generate the visualization database.
+## Best Practices for Quality Control
+When using the VISPR interface, focus on these key diagnostic areas:
+- **Sequence Quality**: Check the "FastQC" or "Mapping" tabs to ensure high alignment rates of sgRNAs to the library.
+- **Gini Index**: Monitor the Gini Index plot to detect library skewness; a high index in late-stage samples compared to the initial library indicates strong selection pressure.
+- **Sample Clustering**: Use the PCA or Hierarchical Clustering views to verify that biological replicates cluster together and that experimental conditions are clearly separated.
 
-```bash
-vispr run config.yaml
-```
-*   **Tip**: Ensure `mageck` is in your PATH, as VISPR calls it internally if starting from raw counts.
-*   **Resource Management**: For large screens, use the `--cores` flag to parallelize the MAGeCK processing steps.
+## Expert Tips
+- **Gene Selection**: Use the interactive "Gene Selection" table to filter for genes with high -log(FDR) and significant log-fold changes.
+- **sgRNA Consistency**: Always inspect the individual sgRNA plots for a gene hit. A robust hit should show consistent trends across multiple sgRNAs targeting the same gene.
+- **Data Export**: Use the built-in export functions within the browser interface to save publication-quality SVG or PNG versions of the plots.
 
-### Launching the Visualization Server
-After the run completes, start the interactive web interface to explore the results.
 
-```bash
-vispr server results.db
-```
-By default, the server runs on `http://127.0.0.1:5000`. You can specify a different port using `--port`.
 
-## Best Practices for CRISPR Analysis
-*   **Input Validation**: Before running `vispr run`, verify that your sample names in the config file match the column headers in your MAGeCK count tables exactly.
-*   **Quality Control Focus**: Use the "Sample Statistics" and "Individual sgRNA" views in the server to identify samples with low Gini indices or high zero-count rates, which may indicate poor library preparation.
-*   **Gene Selection**: When exploring hits, prioritize genes that show consistency across multiple sgRNAs. VISPR’s visualization helps distinguish between a single high-performing guide and a true biological hit where all guides shift in the same direction.
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| test | Run vispr tests |
+| vispr archive | Create a compressed archive for easy distribution of a given config file with all referenced files. |
+| vispr plot | Plotting tool for vispr |
+| vispr_config | Example VISPR config. Save this config to a file and edit according to your needs. |
+| vispr_server | Start the VISPR server. |
 
 ## Reference documentation
-- [VISPR Project Overview](./references/anaconda_org_channels_bioconda_packages_vispr_overview.md)
+- [VISPR Overview and Installation](./references/anaconda_org_channels_bioconda_packages_vispr_overview.md)
 - [VISPR Source and Documentation](./references/bitbucket_org_liulab_vispr.md)

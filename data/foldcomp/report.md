@@ -239,3 +239,6 @@ Usage: foldcomp compress <pdb|cif> [<fcz>]
  --use-cache              use cached index for database input [default=false]
 ```
 
+
+## Metadata
+- **Skill**: generated

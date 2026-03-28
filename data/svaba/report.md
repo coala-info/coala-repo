@@ -152,3 +152,6 @@ Usage: svaba tovcf [OPTION] -i bps.txt.gz -b <bam>
   -b, --bam                            BAM file used to grab header from
 ```
 
+
+## Metadata
+- **Skill**: generated

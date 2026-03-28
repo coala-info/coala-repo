@@ -1,1 +1,301 @@
-Add new study | PINTS web portal | Transcription-centric enhancer compendium PINTS web portal Home TRE calling Element matrix Analysis Analyze new dataset &raquo; FAQ Upload Verify Analyze E-mail address Element Not classified Proximal Distal Source K562 GM12878 Human (generic) A549 IMR-90 HepG2 HeLa-S3 H1 GM23338 Jurkat, Clone E6-1 SK-N-SH Panc1 MCF-7 GM23248 BE2C BJ AG04450 neuronal stem cell mesendoderm trophoblast cell endodermal cell cardiac muscle cell mesenchymal stem cell hepatocyte keratinocyte foreskin keratinocyte foreskin fibroblast fibroblast of lung endothelial cell of umbilical vein mammary epithelial cell skeletal muscle myoblast foreskin melanocyte natural killer cell CD14-positive monocyte astrocyte T-cell CD8-positive, alpha-beta T cell CD4-positive, alpha-beta T cell B cell common myeloid progenitor, CD34-positive psoas muscle right cardiac atrium placenta pancreas ovary testis stomach thymus urinary bladder spleen sigmoid colon small intestine spinal cord heart left ventricle chorion heart heart right ventricle kidney cerebellum adrenal gland aorta brain lung muscle of leg muscle of trunk liver large intestine left lung H9 HCT116 A172 Caki2 Daoy G401 H4 H7 HT-29 HT1080 HUES64 Karpas-422 LHCN-M2 M059J MG63 NCI-H460 OCI-LY7 PC-3 Peyer&#x27;s patch RPMI7951 SJCRH30 SJSA1 SK-MEL-5 SK-N-DZ UCSF-4 adipose tissue amnion ascending aorta body of pancreas breast epithelium bronchial epithelial cell chorionic villus colonic mucosa dermis blood vessel endothelial cell dermis microvascular lymphatic vessel endothelial cell ectodermal cell endocrine pancreas epithelial cell of proximal tubule esophagus esophagus muscularis mucosa esophagus squamous epithelium fibroblast of breast fibroblast of dermis fibroblast of skin of abdomen fibroblast of the aortic adventitia fibroblast of villous mesenchyme forelimb muscle gastrocnemius medialis gastroesophageal sphincter germinal matrix glomerular endothelial cell hematopoietic multipotent progenitor cell hindlimb muscle kidney epithelial cell layer of hippocampus left cardiac atrium left kidney left renal cortex interstitium left renal pelvis lower leg skin lung microvascular endothelial cell mesodermal cell mononuclear cell muscle of arm muscle of back myocyte myoepithelial cell of mammary gland myotube neural cell neural progenitor cell neurosphere omental fat pad osteoblast peripheral blood mononuclear cell placental basal plate prostate gland pulmonary artery endothelial cell renal cortex interstitium renal cortical epithelial cell renal pelvis right atrium auricular region right lobe of liver right lung right renal cortex interstitium right renal pelvis skeletal muscle satellite cell skeletal muscle tissue smooth muscle cell subcutaneous adipose tissue suprapubic skin temporal lobe thoracic aorta thyroid gland tibial nerve tongue transverse colon trophoblast umbilical cord upper lobe of left lung uterus vagina mammary microvascular endothelial cell cardiac ventricle fibroblast hair follicular keratinocyte metanephros myometrial cell diencephalon camera-type eye pericardium fibroblast mesangial cell occipital lobe endometrial microvascular endothelial cells frontal cortex bronchus fibroblast of lung epithelial cell of alveolus of lung airway epithelial cell skin of body A375 parietal lobe cardiac atrium fibroblast subcutaneous preadipocyte placental pericyte hair follicle dermal papilla cell mesenchymal stem cell of adipose mesenchymal stem cell of the bone marrow placental epithelial cell melanocyte of skin mesenchymal stem cell of Wharton&#x27;s jelly thoracic aorta endothelial cell vein endothelial cell GM18507 GM19238 MCF 10A Caco-2 A673 LNCaP Calu3 Upload TRE bed file File needs to be in TRE-bed format ( example input , convert script ), details about this format can be located at the FAQ page. Max size: 3MB . Supported genome assembly: hg38. I would like to contribute my dataset to the portal. Pubmed ID Provide a valid Pubmed ID, the platform will fetch details about the paper automatically. Assay GRO/PRO-cap CoPRO csRNA-seq NET-CAGE CAGE RAMPAGE STRIPE-seq Caller PINTS dREG dREG.HD Tfit HOMER FivePrime (paraclu) TSScall GROcapTSSHMM Continue Help us improve PINTS web server &times; If notice that there's a new peak caller or method, and it's not included/supported by our web server, please let us know! The new tools/assays reporting system listens to our mailbox automatically, so please follow the instruction below: Subject: `New tool` or `New assay` Body: The PubMed ID for the corresponding study. Send it to: We sincerely appreciate your help! Close Save changes PINTS: P eak I dentifier for N ascent T ranscript S tarts. All data in this portal is currently mapped to Genome Assembly GRCh38. Content on this site is licensed under CC BY 4.0 . &copy; Yu Lab and Lis Lab 2019-2026. Design and implemented by Li Yao . DB ver: 2022v1 . Report a problem
+[PINTS web portal](/)
+
+* [Home](/)
+* [TRE calling](/tre_calling)
+* [Element matrix](/summary_stats)
+* Analysis
+
+  [Analyze new dataset](/new_job)
+
+  »
+* [FAQ](/faq)
+
+* Upload
+* Verify
+* Analyze
+
+E-mail address
+
+Element
+
+Not classified
+Proximal
+Distal
+
+Source
+
+K562
+GM12878
+Human (generic)
+A549
+IMR-90
+HepG2
+HeLa-S3
+H1
+GM23338
+Jurkat, Clone E6-1
+SK-N-SH
+Panc1
+MCF-7
+GM23248
+BE2C
+BJ
+AG04450
+neuronal stem cell
+mesendoderm
+trophoblast cell
+endodermal cell
+cardiac muscle cell
+mesenchymal stem cell
+hepatocyte
+keratinocyte
+foreskin keratinocyte
+foreskin fibroblast
+fibroblast of lung
+endothelial cell of umbilical vein
+mammary epithelial cell
+skeletal muscle myoblast
+foreskin melanocyte
+natural killer cell
+CD14-positive monocyte
+astrocyte
+T-cell
+CD8-positive, alpha-beta T cell
+CD4-positive, alpha-beta T cell
+B cell
+common myeloid progenitor, CD34-positive
+psoas muscle
+right cardiac atrium
+placenta
+pancreas
+ovary
+testis
+stomach
+thymus
+urinary bladder
+spleen
+sigmoid colon
+small intestine
+spinal cord
+heart left ventricle
+chorion
+heart
+heart right ventricle
+kidney
+cerebellum
+adrenal gland
+aorta
+brain
+lung
+muscle of leg
+muscle of trunk
+liver
+large intestine
+left lung
+H9
+HCT116
+A172
+Caki2
+Daoy
+G401
+H4
+H7
+HT-29
+HT1080
+HUES64
+Karpas-422
+LHCN-M2
+M059J
+MG63
+NCI-H460
+OCI-LY7
+PC-3
+Peyer's patch
+RPMI7951
+SJCRH30
+SJSA1
+SK-MEL-5
+SK-N-DZ
+UCSF-4
+adipose tissue
+amnion
+ascending aorta
+body of pancreas
+breast epithelium
+bronchial epithelial cell
+chorionic villus
+colonic mucosa
+dermis blood vessel endothelial cell
+dermis microvascular lymphatic vessel endothelial cell
+ectodermal cell
+endocrine pancreas
+epithelial cell of proximal tubule
+esophagus
+esophagus muscularis mucosa
+esophagus squamous epithelium
+fibroblast of breast
+fibroblast of dermis
+fibroblast of skin of abdomen
+fibroblast of the aortic adventitia
+fibroblast of villous mesenchyme
+forelimb muscle
+gastrocnemius medialis
+gastroesophageal sphincter
+germinal matrix
+glomerular endothelial cell
+hematopoietic multipotent progenitor cell
+hindlimb muscle
+kidney epithelial cell
+layer of hippocampus
+left cardiac atrium
+left kidney
+left renal cortex interstitium
+left renal pelvis
+lower leg skin
+lung microvascular endothelial cell
+mesodermal cell
+mononuclear cell
+muscle of arm
+muscle of back
+myocyte
+myoepithelial cell of mammary gland
+myotube
+neural cell
+neural progenitor cell
+neurosphere
+omental fat pad
+osteoblast
+peripheral blood mononuclear cell
+placental basal plate
+prostate gland
+pulmonary artery endothelial cell
+renal cortex interstitium
+renal cortical epithelial cell
+renal pelvis
+right atrium auricular region
+right lobe of liver
+right lung
+right renal cortex interstitium
+right renal pelvis
+skeletal muscle satellite cell
+skeletal muscle tissue
+smooth muscle cell
+subcutaneous adipose tissue
+suprapubic skin
+temporal lobe
+thoracic aorta
+thyroid gland
+tibial nerve
+tongue
+transverse colon
+trophoblast
+umbilical cord
+upper lobe of left lung
+uterus
+vagina
+mammary microvascular endothelial cell
+cardiac ventricle fibroblast
+hair follicular keratinocyte
+metanephros
+myometrial cell
+diencephalon
+camera-type eye
+pericardium fibroblast
+mesangial cell
+occipital lobe
+endometrial microvascular endothelial cells
+frontal cortex
+bronchus fibroblast of lung
+epithelial cell of alveolus of lung
+airway epithelial cell
+skin of body
+A375
+parietal lobe
+cardiac atrium fibroblast
+subcutaneous preadipocyte
+placental pericyte
+hair follicle dermal papilla cell
+mesenchymal stem cell of adipose
+mesenchymal stem cell of the bone marrow
+placental epithelial cell
+melanocyte of skin
+mesenchymal stem cell of Wharton's jelly
+thoracic aorta endothelial cell
+vein endothelial cell
+GM18507
+GM19238
+MCF 10A
+Caco-2
+A673
+LNCaP
+Calu3
+
+Upload TRE bed file
+
+File needs to be in TRE-bed format ([example input](/ref/examples/example.dtrebed), [convert script](/ref/examples/bed2tssbed.py "If you have divergent TRE calls (bed) and signal tracks in bigwig format, you can use this script to generate TRE-bed files.")), details about this format can be
+located at the [FAQ](/faq) page. Max size:
+3MB
+. Supported genome assembly: hg38.
+
+[ ]
+I would like to contribute my dataset to the
+portal.
+
+Pubmed ID
+
+Provide a valid Pubmed ID, the platform
+will fetch details about the paper automatically.
+
+Assay
+
+GRO/PRO-cap
+CoPRO
+csRNA-seq
+NET-CAGE
+CAGE
+RAMPAGE
+STRIPE-seq
+
+Caller
+
+PINTS
+dREG
+dREG.HD
+Tfit
+HOMER
+FivePrime (paraclu)
+TSScall
+GROcapTSSHMM
+
+Continue
+
+##### Help us improve PINTS web server
+
+×
+
+If notice that there's a new peak caller or method, and it's not included/supported by our web
+server, please let us know!
+
+The new tools/assays reporting system listens to our mailbox automatically, so please follow the
+instruction below:
+
+* Subject: `New tool` or `New assay`
+* Body: The PubMed ID for the corresponding study.
+* Send it to:![](data:image/png;base64...)
+
+We sincerely appreciate your help!
+
+Close
+Save changes
+
+---
+
+PINTS: Peak Identifier for Nascent Transcript Starts.
+
+All data in this portal is currently mapped to Genome Assembly GRCh38.
+
+Content on this site is licensed under [CC BY 4.0](//creativecommons.org/licenses/by/4.0/). © Yu Lab and Lis Lab 2019-2026.
+
+Design and implemented by [Li Yao](https://www.yaobio.com).
+
+DB ver: [2022v1](/release). [Report a problem](https://github.com/hyulab/pints/issues/new?assignees=&labels=web+portal&template=website_issue.md&title=%5BPortal+bug%5D)

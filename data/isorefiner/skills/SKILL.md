@@ -1,6 +1,6 @@
 ---
 name: isorefiner
-description: IsoRefiner improves the accuracy of transcript isoform identification by integrating long-read data with reference genomes and annotations. Use when user asks to refine transcript isoforms, reconcile outputs from multiple identification algorithms, or run an end-to-end workflow for Oxford Nanopore cDNA reads.
+description: IsoRefiner improves the accuracy of transcript isoform identification by reconciling and filtering outputs from multiple long-read sequencing tools. Use when user asks to refine transcript models, merge results from different isoform identification tools, or filter structural errors from long-read GTF datasets.
 homepage: https://github.com/rkajitani/IsoRefiner
 ---
 
@@ -8,55 +8,88 @@ homepage: https://github.com/rkajitani/IsoRefiner
 # isorefiner
 
 ## Overview
-IsoRefiner is a bioinformatics tool designed to improve the accuracy of transcript isoform identification. By integrating long-read data with reference genomes and annotations, it reconciles outputs from various identification algorithms (such as Bambu, StringTie2, and IsoQuant) to produce a high-quality, refined GTF dataset. It is optimized for Oxford Nanopore cDNA reads but is compatible with other long-read technologies.
 
-## Command Line Usage
+IsoRefiner is a specialized bioinformatics suite designed to improve the accuracy of transcript isoform identification. By leveraging long-read sequencing data, it reconciles outputs from multiple transcript-identification tools (such as Bambu, StringTie, and IsoQuant) and de novo assemblers (like RNA-Bloom). The tool applies specific filtering logic to remove structural errors and merges high-confidence results into a final, refined GTF dataset. It is optimized for Oxford Nanopore cDNA reads but is compatible with other long-read technologies.
 
-### End-to-End Workflow
-The most efficient way to use IsoRefiner is through the `trans_struct_wf` subcommand, which automates trimming, mapping, and multi-tool integration.
+## Installation and Setup
+
+IsoRefiner is best managed via Conda or Docker to handle its extensive dependencies (Minimap2, Samtools, Bedtools, etc.).
+
+**Bioconda (Recommended):**
+```bash
+conda create -y -c conda-forge -c bioconda -n isorefiner_env python=3.12.8 isorefiner
+conda activate isorefiner_env
+```
+
+**Docker:**
+```bash
+docker pull rkajitani/isorefiner
+# Run interactively
+docker run -it -v $(pwd):/work -w /work rkajitani/isorefiner /bin/bash
+```
+
+## Core Workflows
+
+### Automated End-to-End Refinement
+The `trans_struct_wf` command is the most efficient way to run the full pipeline, including trimming, mapping, multi-tool execution, filtering, and merging.
 
 ```bash
 isorefiner trans_struct_wf \
-  -r reads.fastq \
+  -r reads.fastq.gz \
   -g genome.fasta \
-  -a ref_annot.gtf \
-  -t 32 \
-  -o isorefiner_refined.gtf
+  -a reference.gtf \
+  -o refined_output.gtf \
+  -t 32
 ```
 
-### Step-by-Step Execution
-For granular control over specific stages, use individual subcommands. This is recommended when you need to pass specific flags to underlying tools like Minimap2 or Porechop_ABI.
+### Manual Step-by-Step Execution
+For greater control over specific tool parameters, execute the subcommands individually.
 
-1.  **Trim Adapters**:
+1.  **Preprocessing:**
+    *   **Trim:** `isorefiner trim -r reads.fastq -t 8` (Uses Porechop_ABI)
+    *   **Map:** `isorefiner map -r trimmed.fastq -g genome.fasta -t 16` (Uses Minimap2)
+
+2.  **Tool-Specific Identification:**
+    Run mapping-based tools using the generated BAM:
+    *   `isorefiner run_bambu -b mapped.bam -g genome.fasta -a reference.gtf`
+    *   `isorefiner run_stringtie -b mapped.bam -g genome.fasta -a reference.gtf`
+    *   `isorefiner run_isoquant -b mapped.bam -g genome.fasta -a reference.gtf`
+
+3.  **Filtering and Refining:**
+    Filter the output of each tool to remove low-quality structures:
     ```bash
-    isorefiner trim -r reads.fastq -t 8 -p "--check_reads 1000"
+    isorefiner filter -i tool_output.gtf -r trimmed.fastq -g genome.fasta -o filtered_tool.gtf
     ```
-2.  **Map Reads**:
+    Merge all filtered results into the final dataset:
     ```bash
-    isorefiner map -r trimmed.fastq -g genome.fasta -t 16 -m "-x splice -ub"
+    isorefiner refine -i filtered_*.gtf -r trimmed.fastq -g genome.fasta -a reference.gtf
     ```
-3.  **Run Identification Tools**:
-    Execute specific tools supported by IsoRefiner:
-    - `run_bambu`: Mapping-based identification.
-    - `run_isoquant`: High-precision isoform quantification.
-    - `run_stringtie`: Transcript assembly.
-    - `run_espresso`: Error-corrected isoform identification.
-    - `run_rnabloom`: Assembly-based identification.
 
-### Handling Multiple Input Files
-When working with multiple sequencing runs or samples, provide them as a space-delimited string within quotes:
-```bash
-isorefiner trans_struct_wf -r "sample1.fq sample2.fq sample3.fq" -g genome.fasta -a ref.gtf
-```
+## Expert Tips and Best Practices
 
-## Best Practices and Expert Tips
+*   **Input Handling:** If you have multiple read files, provide them as a space-delimited string within quotes: `-r "sample1.fq sample2.fq"`.
+*   **Resource Management:** Use the `-t` (threads) option across all subcommands to maximize performance, especially during the `map` and `run_rnabloom` steps.
+*   **Intermediate Files:** By default, IsoRefiner creates directories named `isorefiner_{command}_work`. Use the `-d` flag to specify a custom working directory if running multiple iterations to avoid overwriting logs and intermediate BAMs.
+*   **Tool Selection:** While the workflow runs multiple tools, you can prioritize specific ones (e.g., `bambu` for quantification-heavy tasks or `rnabloom` for novel isoform discovery) by running them manually and passing only their filtered GTFs to the `refine` step.
 
-- **Thread Allocation**: Use the `-t` flag across all subcommands to maximize parallelization, especially during the `map` and `trans_struct_wf` stages.
-- **Memory Management**: When running the `map` subcommand, use the `-s` option to pass memory limits to `samtools sort` (e.g., `-s "-m 4G"`) to prevent OOM (Out of Memory) errors on large datasets.
-- **Tool Customization**: Use the `-m` (Minimap2 options) and `-p` (Porechop_ABI options) flags to pass tool-specific parameters that are not exposed directly by the IsoRefiner CLI.
-- **Working Directories**: By default, IsoRefiner creates directories named `isorefiner_{command}_work`. Use the `-d` flag to specify a custom directory to keep your workspace organized when running multiple iterations.
-- **Input Formats**: IsoRefiner accepts FASTQ or FASTA files, and they can be gzipped (`.gz`).
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| isorefiner filter | Filter transcript structures based on read alignments. |
+| isorefiner run_bambu | Run Bambu for isoform refinement |
+| isorefiner run_espresso | Run ESPRESSO for transcript assembly and quantification. |
+| isorefiner run_isoquant | Run isoquant |
+| isorefiner run_stringtie | Run StringTie to assemble transcripts |
+| isorefiner trans_struct_wf | This tool refines transcript structures based on reads and reference annotation. |
+| isorefiner_map | Map reads to a reference genome using minimap2 and sort the output. |
+| isorefiner_refine | Refine transcript isoform structures based on reads and reference annotation. |
+| isorefiner_trim | Trim reads using Porechop_ABI |
+| run_rnabloom | Run RNA-Bloom for transcript assembly and quantification. |
 
 ## Reference documentation
-- [IsoRefiner GitHub Repository](./references/github_com_rkajitani_IsoRefiner.md)
-- [IsoRefiner Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_isorefiner_overview.md)
+- [IsoRefiner GitHub README](./references/github_com_rkajitani_IsoRefiner_blob_main_README.md)
+- [Step-by-Step Test Script](./references/github_com_rkajitani_IsoRefiner_blob_main_test_isorefiner_step_by_step.sh.md)
+- [Conda Dependencies](./references/github_com_rkajitani_IsoRefiner_blob_main_conda.yml.md)

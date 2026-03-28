@@ -1,6 +1,6 @@
 ---
 name: phables
-description: Phables resolves bacteriophage genomes from fragmented metagenomic assembly graphs by modeling phage bubbles as flow networks. Use when user asks to reconstruct complete phage genomes, resolve viral sequences from assembly graphs, or identify phage components in metagenomic data.
+description: Phables resolves complete bacteriophage genomes from fragmented metagenomic assembly graphs using flow networks and integer linear programming. Use when user asks to resolve phage paths from assembly graphs, identify phage-like components in metagenomes, or reconstruct viral genomes from unitig coverage and GFA files.
 homepage: https://github.com/Vini2/phables
 ---
 
@@ -9,63 +9,83 @@ homepage: https://github.com/Vini2/phables
 
 ## Overview
 
-Phables is a specialized bioinformatics tool designed to resolve bacteriophage genomes from fragmented metagenomic data. While standard assemblers often produce disconnected contigs for viral sequences, Phables analyzes the assembly graph to identify "phage bubbles"—components that represent potential phage genomes. By modeling these components as flow networks and solving a minimum flow decomposition problem, Phables can reconstruct complete or near-complete genomic paths, even for variant phages within a complex community.
+Phables is a specialized bioinformatics tool designed to bridge the gap between fragmented metagenomic assemblies and complete bacteriophage genomes. While standard assemblers often struggle with repetitive regions or closely related viral strains, Phables uses the underlying assembly graph structure to identify phage-like components. It treats these components as flow networks, applying Integer Linear Programming (ILP) to find the most likely genomic paths. This approach is particularly effective for resolving complex viral communities where traditional binning or scaffolding might fail.
 
 ## Installation and Setup
 
-Phables relies on the Gurobi optimizer for its linear programming steps.
+Phables is best managed via Conda to handle its dependencies, including the MFD-ILP solver.
 
-1.  **Environment Setup**: It is recommended to use Conda for installation.
-    ```bash
-    conda create -n phables -c conda-forge -c anaconda -c bioconda phables
-    conda activate phables
-    ```
-2.  **Solver Configuration**: Install the Gurobi solver and its Python interface.
-    ```bash
-    conda install -c gurobi gurobi
-    pip install gurobipy
-    ```
-3.  **License Activation**: To handle large assembly models without size restrictions, you must activate a Gurobi license (academic licenses are available).
-    ```bash
-    grbgetkey <YOUR_GUROBI_LICENSE_KEY>
-    ```
-4.  **Database Initialization**: Run the one-time setup to download required databases.
-    ```bash
-    phables install
-    ```
+```bash
+# Create and activate environment
+conda create -n phables -c bioconda -c conda-forge phables
+conda activate phables
+
+# Verify installation
+phables --version
+phables --help
+```
+
+## Core Workflow
+
+The standard Phables workflow requires an assembly graph and the corresponding read mapping information.
+
+### 1. Prepare Input Data
+Ensure you have the following files ready:
+- **Assembly Graph**: A `.gfa` file (typically from MetaSPAdes or Megahit).
+- **Read Mappings**: `.bam` files of your metagenomic reads mapped back to the assembly unitigs.
+- **Unitig Coverage**: A CSV file containing coverage information (often generated during the mapping step).
+
+### 2. Run Phables
+Execute the main pipeline to resolve phage paths:
+
+```bash
+phables run --graph assembly_graph.gfa --coverage coverage.csv --bams mapping_folder/ --outdir phables_output
+```
+
+### 3. Key Parameters
+- `--minlength`: Minimum length of a resolved phage genome (default is often 5000bp).
+- `--maxlength`: Maximum length for the flow decomposition.
+- `--threads`: Number of CPU cores to utilize for the ILP solver and processing.
 
 ## Common CLI Patterns
 
-### Standard Execution
-The primary command is `phables run`. You must provide the assembly graph and the directory containing your sequencing reads.
-
-```bash
-phables run --input assembly_graph.gfa --reads path/to/fastq_dir/ --threads 8
-```
-
-### Working with Long Reads
-If you have long-read data (e.g., Oxford Nanopore or PacBio), use the `--longreads` flag to improve path resolution.
-
-```bash
-phables run --input assembly_graph.gfa --reads path/to/fastq_dir/ --threads 16 --longreads
-```
-
-### Testing the Pipeline
-To verify the installation and solver configuration using provided test data:
-
+### Testing the Installation
+Always run the built-in test suite to ensure the ILP solver and environment are configured correctly:
 ```bash
 phables test
 ```
 
-## Expert Tips and Best Practices
+### Generating Graph Statistics
+To understand the complexity of your assembly before running the full resolution:
+```bash
+phables graph-stats --graph assembly_graph.gfa --outdir stats_output
+```
 
--   **Input Requirements**: Phables specifically requires the assembly graph in GFA format. If your assembler produced a different format (like FASTG), you must convert it to GFA first.
--   **Gurobi Limitations**: Without a valid license key, Gurobi operates in a restricted mode that may fail on complex metagenomic assembly graphs. Always ensure `grbgetkey` has been successfully executed in your environment.
--   **Read Mapping**: Phables uses the reads to determine flow values (coverage) across the graph edges. Ensure your `--reads` directory contains all relevant FASTQ files for the sample associated with the GFA.
--   **Visualization**: Use Bandage to visualize your `assembly_graph.gfa` before and after running Phables to understand the complexity of the phage components being resolved.
--   **Co-assemblies**: While Phables can be used on co-assemblies, performance is often better on per-sample assemblies where the graph complexity is lower and strain variation is more manageable.
+### Post-Processing
+Phables outputs resolved paths in FASTA format. You should evaluate these using quality control tools:
+- Check `phables_output/resolved_paths.fasta` for the final sequences.
+- Review `phables_output/phables.log` for details on which components were successfully decomposed.
+
+## Expert Tips
+
+- **Graph Quality**: Phables performs best on MetaSPAdes graphs. If using Megahit, ensure you convert the output to a compatible GFA format.
+- **Coverage Consistency**: The accuracy of the flow model depends heavily on accurate unitig coverage. Ensure your read mapping is performed with high sensitivity.
+- **Component Filtering**: Phables automatically identifies "phage-like" components based on graph topology. If you have specific viral markers (e.g., from CheckV or VIBRANT), you can use them to cross-reference Phables' output.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| phables config | Copy system default config to phables.out/config.yaml |
+| run | Run Phables |
+| snakemake | Snakemake is a Python based language and execution environment for GNU Make-like workflows. |
+| snakemake | Snakemake is a Python based language and execution environment for GNU Make-like workflows. |
 
 ## Reference documentation
 
 - [Phables GitHub Repository](./references/github_com_Vini2_phables.md)
-- [Phables Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_phables_overview.md)
+- [Phables Usage Guide](./references/phables_readthedocs_io_en_latest_usage.md)
+- [Installation Instructions](./references/phables_readthedocs_io_en_latest_install.md)
+- [Contributing Guidelines](./references/github_com_Vini2_phables_blob_develop_CONTRIBUTING.md)

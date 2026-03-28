@@ -1,6 +1,6 @@
 ---
 name: ppanggolin
-description: PPanGGOLiN is a suite of tools that uses a statistical approach and genomic context to model and partition microbial pangenomes. Use when user asks to build a partitioned pangenome graph, predict regions of genomic plasticity, identify conserved modules, or analyze large-scale datasets including metagenomic assembled genomes.
+description: PPanGGOLiN is a suite of tools that models microbial species diversity by creating partitioned pangenome graphs using gene presence/absence and genomic neighborhood information. Use when user asks to perform pangenome analysis, annotate and cluster genomes, partition gene families into core or accessory genomes, predict genomic islands and modules, or align sequences to a pangenome.
 homepage: https://github.com/labgem/PPanGGOLiN
 ---
 
@@ -8,65 +8,103 @@ homepage: https://github.com/labgem/PPanGGOLiN
 # ppanggolin
 
 ## Overview
-PPanGGOLiN (Partitioned PanGenome Graph of Linked Neighbors) is a suite of tools designed to model microbial species diversity. Unlike traditional methods that use fixed sequence identity thresholds, PPanGGOLiN uses a statistical approach and genomic context (neighborhood) to partition the pangenome. This makes it exceptionally robust for large-scale datasets and low-quality data such as Metagenomic Assembled Genomes (MAGs) or Single-cell Amplified Genomes (SAGs).
+PPanGGOLiN (Partitioned PanGenome Graph Of Linked Neighbors) is a suite of tools designed to model the diversity of microbial species. Unlike traditional methods that use fixed frequency thresholds to define core and accessory genomes, PPanGGOLiN uses a graphical model and statistical partitioning. This allows it to handle low-quality data like Metagenomic Assembled Genomes (MAGs) and Single-cell Amplified Genomes (SAGs) effectively. It integrates gene presence/absence with genomic neighborhood information to create a Partitioned Pangenome Graph (PPG).
 
 ## Core Workflows
 
-### 1. Complete Analysis
-The `all` subcommand is the standard entry point. It performs annotation (if needed), clustering, graph construction, partitioning, and prediction of RGPs and modules in a single execution.
+### 1. Complete Pangenome Analysis
+The `all` subcommand is the most efficient way to run a standard pipeline (annotation, clustering, graph construction, partitioning, and RGP/module prediction).
 
 ```bash
-# Using FASTA files
-ppanggolin all --fasta genomes_list.tsv
-
-# Using existing annotations (GFF/GBK)
-ppanggolin all --anno annotations_list.tsv
+ppanggolin all --fasta genomes_list.txt --cpu 8
 ```
 
-### 2. Specialized Workflows
-If you do not need the full suite of predictions, use more targeted commands to save time:
-*   `ppanggolin workflow`: Builds the partitioned pangenome graph only.
-*   `ppanggolin panrgp`: Builds the graph and predicts RGPs and insertion spots.
-*   `ppanggolin panmodule`: Builds the graph and predicts conserved modules.
+### 2. Input File Preparation
+The input file (e.g., `genomes_list.txt`) must be a tab-separated file (TSV) with the following structure:
+- **Column 1**: Unique genome name (no spaces).
+- **Column 2**: Absolute or relative path to the FASTA file.
+- **Optional Columns**: Circular contig identifiers.
 
-## Input Preparation
-PPanGGOLiN requires a tab-separated values (TSV) file to define the input genomes.
+If you already have annotations (e.g., from Bakta or Prokka), use `--anno`:
+```bash
+ppanggolin all --anno annotations_list.txt
+```
 
-**FASTA List Format (`--fasta`):**
-`Genome_Name    /path/to/genome.fasta`
+### 3. Step-by-Step Analysis
+For large datasets or custom parameter tuning, run subcommands individually. All steps update a central HDF5 file (`pangenome.h5`).
 
-**Annotation List Format (`--anno`):**
-`Genome_Name    /path/to/genome.gff` (or .gbk/.gbff)
+1. **Annotate**: `ppanggolin annotate --fasta genomes_list.txt`
+2. **Cluster**: `ppanggolin cluster -p pangenome.h5`
+3. **Graph**: `ppanggolin graph -p pangenome.h5`
+4. **Partition**: `ppanggolin partition -p pangenome.h5`
+5. **RGP Prediction**: `ppanggolin rgp -p pangenome.h5`
 
-*Note: Genome names must be unique and contain no spaces.*
+## Specialized Analyses
 
-## Best Practices and Expert Tips
+### Aligning Sequences to a Pangenome
+To identify which gene families or partitions a set of external sequences (proteins or nucleotides) belongs to:
+```bash
+ppanggolin align -p pangenome.h5 --sequences interest.fasta --getinfo
+```
 
-### Genome Selection
-*   **Minimum Count**: While the tool runs with 5 genomes, use at least **15 genomes** with genomic variation to ensure the statistical partitioning approach is robust.
-*   **Diversity**: Ensure the dataset contains actual genomic variation rather than just SNPs for meaningful pangenome partitioning.
-
-### Iterative Analysis with HDF5
-The primary output is `pangenome.h5`. This file stores the state of the pangenome and should be used as input for downstream subcommands to avoid recomputing previous steps.
+### Predicting Genomic Islands (RGPs) and Modules
+- **RGPs**: Clusters of variable genes (shell/cloud) that often represent horizontal gene transfer.
+- **Spots**: Conserved insertion sites for RGPs across different genomes.
+- **Modules**: Groups of co-occurring and colocalized genes within variable regions.
 
 ```bash
-# Example: Generating a rarefaction curve from an existing pangenome
-ppanggolin rarefaction -p pangenome.h5
+# Predict modules on an existing pangenome
+ppanggolin module -p pangenome.h5
 ```
 
-### Handling MAGs and SAGs
-Because PPanGGOLiN integrates genomic neighborhood information, it can accurately classify genes even when the assembly is fragmented. If working with highly fragmented MAGs, the statistical model often outperforms traditional presence/absence matrices.
+## Expert Tips and Best Practices
 
-### Integration with Annotation Tools
-PPanGGOLiN works best with high-quality annotations. It is highly compatible with outputs from:
-*   **Bakta**: Recommended for modern, fast, and feature-rich annotation.
-*   **Prokka**: The traditional standard for rapid prokaryotic annotation.
+- **Genome Count**: While PPanGGOLiN can run on as few as 5 genomes, at least **15 genomes** are recommended for the statistical partitioning to be robust.
+- **HDF5 Management**: The `pangenome.h5` file is the single source of truth. You can rerun specific steps (like `partition`) with different parameters without restarting the entire pipeline.
+- **Memory and CPU**: Use the `--cpu` flag to scale. For very large datasets (thousands of genomes), ensure the temporary directory (default `/tmp`) has sufficient space, or redirect it using `--tmpdir`.
+- **Visualization**: Use the `draw` subcommand to generate figures.
+  - `ppanggolin draw --pangenome -p pangenome.h5`: Draws the global pangenome graph.
+  - `ppanggolin draw --spots -p pangenome.h5`: Visualizes insertion spots.
+- **Data Extraction**: Use `ppanggolin write` to export results into human-readable formats (TSV, GFF, FASTA).
+  - `ppanggolin write --borders -p pangenome.h5`: Exports genes flanking RGPs.
 
-## Common Subcommands for Downstream Analysis
-*   `ppanggolin write`: Export pangenome data to various formats (TSV, GEXF for Gephi, etc.).
-*   `ppanggolin draw`: Generate visualizations like rarefaction curves or tile plots.
-*   `ppanggolin info`: Get summary statistics of the pangenome (number of families per partition, etc.).
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| metadata | PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM team, and distributed under the CeCILL Free Software License Agreement. |
+| msa | compute Multiple Sequence Alignment of the gene families in the given partition |
+| panrgp | PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM team, and distributed under the CeCILL Free Software License Agreement. |
+| partition | PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM team, and distributed under the CeCILL Free Software License Agreement. |
+| ppanggolin | ppanggolin: error: argument : invalid choice: 'ppanggolin' (choose from 'annotate', 'cluster', 'graph', 'partition', 'rarefaction', 'workflow', 'panrgp', 'panmodule', 'all', 'draw', 'write_pangenome', 'write_genomes', 'write_metadata', 'fasta', 'msa', 'metrics', 'align', 'rgp', 'spot', 'module', 'context', 'projection', 'rgp_cluster', 'metadata', 'info', 'utils') |
+| ppanggolin align | Align sequences (nucleotides or amino acids) on the pangenome gene families. |
+| ppanggolin all | PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM team, and distributed under the CeCILL Free Software License Agreement. |
+| ppanggolin annotate | PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM team, and distributed under the CeCILL Free Software License Agreement. |
+| ppanggolin cluster | PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM team, and distributed under the CeCILL Free Software License Agreement. |
+| ppanggolin context | PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM team, and distributed under the CeCILL Free Software License Agreement. |
+| ppanggolin draw | PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM team, and distributed under the CeCILL Free Software License Agreement. |
+| ppanggolin fasta | PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM team, and distributed under the CeCILL Free Software License Agreement. |
+| ppanggolin graph | PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM team, and distributed under the CeCILL Free Software License Agreement. |
+| ppanggolin metrics | PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM team, and distributed under the CeCILL Free Software License Agreement. |
+| ppanggolin module | PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM team, and distributed under the CeCILL Free Software License Agreement. |
+| ppanggolin panmodule | PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM team, and distributed under the CeCILL Free Software License Agreement. |
+| ppanggolin projection | Project pangenome annotations onto input genomes. |
+| ppanggolin rgp_cluster | Cluster RGPs based on gene repertoire relatedness. |
+| ppanggolin spot | PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM team, and distributed under the CeCILL Free Software License Agreement. |
+| ppanggolin workflow | PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM team, and distributed under the CeCILL Free Software License Agreement. |
+| ppanggolin write_genomes | Write genomes from a pangenome analysis. |
+| ppanggolin write_pangenome | Write pangenome data to various formats. |
+| ppanggolin_info | Show information about a pangenome. |
+| rarefaction | Compute the rarefaction curve of the pangenome |
+| rgp | For genomic islands and spots of insertion detection, please cite: Bazin A et al. (2020) panRGP: a pangenome-based method to predict genomic islands and explore their diversity. Bioinformatics, Volume 36, Issue Supplement_2, Pages i651–i658, https://doi.org/10.1093/bioinformatics/btaa792 |
+| utils | Generate a config file with default values for the given subcommand. |
+| write_metadata | Write metadata for pangenome elements. |
 
 ## Reference documentation
-- [PPanGGOLiN GitHub Repository](./references/github_com_labgem_PPanGGOLiN.md)
-- [PPanGGOLiN Wiki](./references/github_com_labgem_PPanGGOLiN_wiki.md)
+- [PPanGGOLiN GitHub Home](./references/github_com_labgem_PPanGGOLiN.md)
+- [Quick Usage Guide](./references/github_com_labgem_PPanGGOLiN_wiki_Basic-usage-and-practical-information.md)
+- [Step-by-Step Analysis](./references/github_com_labgem_PPanGGOLiN_wiki_PPanGGOLiN---step-by-step-pangenome-analysis.md)
+- [Aligning Sequences](./references/github_com_labgem_PPanGGOLiN_wiki_Align.md)
+- [Output Formats](./references/github_com_labgem_PPanGGOLiN_wiki_Outputs.md)

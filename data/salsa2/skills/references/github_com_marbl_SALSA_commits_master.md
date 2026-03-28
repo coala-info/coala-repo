@@ -1,1 +1,466 @@
-Commits · marbl/SALSA · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} marbl / SALSA Public Notifications You must be signed in to change notification settings Fork 48 Star 188 Code Issues 23 Pull requests 2 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights Commits Branch selector master User selector All users All time Commit History Commits on May 17, 2024 Merge pull request #181 from skoren/master Show description for 0a9a1ee Sergey Koren authored 0a9a1ee Copy full SHA for 0a9a1ee update AGP Sergey Koren committed 2466a5a Copy full SHA for 2466a5a Merge pull request #178 from skoren/master Show description for 743938c Sergey Koren authored 743938c Copy full SHA for 743938c Commits on Feb 21, 2024 fix IUPAC Sergey Koren committed e401f7a Copy full SHA for e401f7a Commits on Apr 8, 2022 Merge pull request #161 from pickettbd/master Show description for ed76685 Sergey Koren authored ed76685 Copy full SHA for ed76685 added -O for original coordinates agp Show description for 7385b27 pickettbd committed 7385b27 Copy full SHA for 7385b27 Commits on Jul 15, 2021 Update README.md Sergey Koren authored cf0fa8e Copy full SHA for cf0fa8e Commits on May 19, 2021 Merge pull request #130 from EdHarry/patch-1 Show description for 1b76bf6 Sergey Koren authored 1b76bf6 Copy full SHA for 1b76bf6 Commits on May 13, 2021 Merge pull request #139 from c-zhou/master Show description for 4c80ac1 ghuryejay authored 4c80ac1 Copy full SHA for 4c80ac1 Commits on May 10, 2021 fix bugs related to converting alignment coordinates on contigs to those Show description for e407e61 Chenxi Zhou committed e407e61 Copy full SHA for e407e61 Commits on Mar 29, 2021 Fix layout_unitigs Show description for e6e3c77 EdHarry authored e6e3c77 Copy full SHA for e6e3c77 Commits on Mar 28, 2021 Merge pull request #113 from feedmewifi/patch-1 Show description for 8b1e2dc ghuryejay authored 8b1e2dc Copy full SHA for 8b1e2dc Merge pull request #115 from VarIr/shebang Show description for aa4f1bf ghuryejay authored aa4f1bf Copy full SHA for aa4f1bf Merge pull request #126 from stajichlab/stajichlab_UCR_fixes Show description for c297934 ghuryejay authored c297934 Copy full SHA for c297934 Commits on Jan 15, 2021 change execute bit hyphaltip committed c21871b Copy full SHA for c21871b fix C++ code to remove warnings for unsigned and unused variables hyphaltip committed c6b537b Copy full SHA for c6b537b Commits on Jan 14, 2021 the min-length cutoff for the scaffolds parameter needs to be in before the redirect hyphaltip committed 4a35b56 Copy full SHA for 4a35b56 force python2 for all scripts and steps hyphaltip committed 856f26c Copy full SHA for 856f26c Commits on Nov 5, 2020 add Python2 shebang Show description for 216bb63 VarIr authored 216bb63 Copy full SHA for 216bb63 Commits on Nov 2, 2020 corrected spelling mistake in README.md feedmewifi authored c6e1dd0 Copy full SHA for c6e1dd0 Commits on Oct 1, 2019 prints warning if not enough links are present, instead of terminating Jay Ghurye committed 974589f Copy full SHA for 974589f Commits on Aug 22, 2019 Check both for file exists and non-empty Show description for 22d5382 Sergey Koren committed 22d5382 Copy full SHA for 22d5382 Add check for proper restriction sites, update README Sergey Koren committed f9cfff7 Copy full SHA for f9cfff7 Commits on Jul 8, 2019 Merge pull request #78 from arangrhie/patch-1 Show description for 8296b28 ghuryejay authored 8296b28 Copy full SHA for 8296b28 add the missing `/` arangrhie authored 2c5fcea Copy full SHA for 2c5fcea Commits on Jun 4, 2019 Merge pull request #74 from pickettbd/master Show description for e6d70b3 ghuryejay authored e6d70b3 Copy full SHA for e6d70b3 added write permissions to scaffold_length_iteration_1 after copying from lengths file pickettbd committed 1789762 Copy full SHA for 1789762 Commits on May 29, 2019 Update README.md ghuryejay authored 02018dc Copy full SHA for 02018dc DNAse support added Jay Ghurye authored and Jay Ghurye committed 5b50f2e Copy full SHA for 5b50f2e Commits on Mar 14, 2019 Update README.md ghuryejay authored 67fe937 Copy full SHA for 67fe937 Update README.md ghuryejay authored 14c1327 Copy full SHA for 14c1327 Merge branch &#x27;master&#x27; of ssh://github.com/machinegun/SALSA machinegun committed 1b4bdf1 Copy full SHA for 1b4bdf1 support to convert salsa output to .hic added machinegun committed ce04802 Copy full SHA for ce04802 Commits on Oct 29, 2018 Update layout_unitigs.py ghuryejay authored 68a65b4 Copy full SHA for 68a65b4 Commits on Oct 25, 2018 stringency reduced machinegun committed e729193 Copy full SHA for e729193 Pagination Previous Next Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fmarbl%2FSALSA%2Fcommits%2Fmaster%2F)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fmarbl%2FSALSA%2Fcommits%2Fmaster%2F)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Fcommits%2Fshow&source=header-repo&source_repo=marbl%2FSALSA)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[marbl](/marbl)
+/
+**[SALSA](/marbl/SALSA)**
+Public
+
+* [Notifications](/login?return_to=%2Fmarbl%2FSALSA) You must be signed in to change notification settings
+* [Fork
+  48](/login?return_to=%2Fmarbl%2FSALSA)
+* [Star
+   188](/login?return_to=%2Fmarbl%2FSALSA)
+
+* [Code](/marbl/SALSA)
+* [Issues
+  23](/marbl/SALSA/issues)
+* [Pull requests
+  2](/marbl/SALSA/pulls)
+* [Actions](/marbl/SALSA/actions)
+* [Projects](/marbl/SALSA/projects)
+* [Security
+  0](/marbl/SALSA/security)
+* [Insights](/marbl/SALSA/pulse)
+
+Additional navigation options
+
+* [Code](/marbl/SALSA)
+* [Issues](/marbl/SALSA/issues)
+* [Pull requests](/marbl/SALSA/pulls)
+* [Actions](/marbl/SALSA/actions)
+* [Projects](/marbl/SALSA/projects)
+* [Security](/marbl/SALSA/security)
+* [Insights](/marbl/SALSA/pulse)
+
+# Commits
+
+## Branch selector
+
+master
+
+## User selector
+
+All users
+
+All time
+
+## Commit History
+
+### Commits on May 17, 2024
+
+* #### [Merge pull request #181 from skoren/master](/marbl/SALSA/commit/0a9a1ee824145f106c30de1907379cd92024746b)
+
+  Show description for 0a9a1ee
+
+  ![author](https://github.githubassets.com/images/gravatars/gravatar-user-420.png?size=32)
+
+  Sergey Koren
+
+  authored
+
+  [0a9a1ee](/marbl/SALSA/commit/0a9a1ee824145f106c30de1907379cd92024746b)
+
+  Copy full SHA for 0a9a1ee
+* #### [update AGP](/marbl/SALSA/commit/2466a5a55565523f5b02e0056795fffb490e9029)
+
+  ![author](https://github.githubassets.com/images/gravatars/gravatar-user-420.png?size=32)
+
+  Sergey Koren
+
+  committed
+
+  [2466a5a](/marbl/SALSA/commit/2466a5a55565523f5b02e0056795fffb490e9029)
+
+  Copy full SHA for 2466a5a
+* #### [Merge pull request #178 from skoren/master](/marbl/SALSA/commit/743938c9e382a32050228e5317c430cad20ce1af)
+
+  Show description for 743938c
+
+  ![author](https://github.githubassets.com/images/gravatars/gravatar-user-420.png?size=32)
+
+  Sergey Koren
+
+  authored
+
+  [743938c](/marbl/SALSA/commit/743938c9e382a32050228e5317c430cad20ce1af)
+
+  Copy full SHA for 743938c
+
+### Commits on Feb 21, 2024
+
+* #### [fix IUPAC](/marbl/SALSA/commit/e401f7aa131820dbc130d3c2ad651a8af0b4d270)
+
+  ![author](https://github.githubassets.com/images/gravatars/gravatar-user-420.png?size=32)
+
+  Sergey Koren
+
+  committed
+
+  [e401f7a](/marbl/SALSA/commit/e401f7aa131820dbc130d3c2ad651a8af0b4d270)
+
+  Copy full SHA for e401f7a
+
+### Commits on Apr 8, 2022
+
+* #### [Merge pull request #161 from pickettbd/master](/marbl/SALSA/commit/ed76685fce050b778dae6867487ed8e3859cb609)
+
+  Show description for ed76685
+
+  ![author](https://github.githubassets.com/images/gravatars/gravatar-user-420.png?size=32)
+
+  Sergey Koren
+
+  authored
+
+  [ed76685](/marbl/SALSA/commit/ed76685fce050b778dae6867487ed8e3859cb609)
+
+  Copy full SHA for ed76685
+* #### [added -O for original coordinates agp](/marbl/SALSA/commit/7385b2799221c880c5cd07e7c75b1eae69b4a472)
+
+  Show description for 7385b27
+
+  [![pickettbd](https://avatars.githubusercontent.com/u/7318579?v=4&size=32)](/pickettbd)[pickettbd](/marbl/SALSA/commits?author=pickettbd)
+
+  committed
+
+  [7385b27](/marbl/SALSA/commit/7385b2799221c880c5cd07e7c75b1eae69b4a472)
+
+  Copy full SHA for 7385b27
+
+### Commits on Jul 15, 2021
+
+* #### [Update README.md](/marbl/SALSA/commit/cf0fa8e20dd47a5b75e21d7860145d55525e9399)
+
+  ![author](https://github.githubassets.com/images/gravatars/gravatar-user-420.png?size=32)
+
+  Sergey Koren
+
+  authored
+
+  [cf0fa8e](/marbl/SALSA/commit/cf0fa8e20dd47a5b75e21d7860145d55525e9399)
+
+  Copy full SHA for cf0fa8e
+
+### Commits on May 19, 2021
+
+* #### [Merge pull request #130 from EdHarry/patch-1](/marbl/SALSA/commit/1b76bf63efb973583647a1eb95863d33ee6e09ad)
+
+  Show description for 1b76bf6
+
+  ![author](https://github.githubassets.com/images/gravatars/gravatar-user-420.png?size=32)
+
+  Sergey Koren
+
+  authored
+
+  [1b76bf6](/marbl/SALSA/commit/1b76bf63efb973583647a1eb95863d33ee6e09ad)
+
+  Copy full SHA for 1b76bf6
+
+### Commits on May 13, 2021
+
+* #### [Merge pull request #139 from c-zhou/master](/marbl/SALSA/commit/4c80ac12bc89b008b199fc8d33ba6ee17516196b)
+
+  Show description for 4c80ac1
+
+  [![ghuryejay](https://avatars.githubusercontent.com/u/986664?v=4&size=32)](/ghuryejay)[ghuryejay](/marbl/SALSA/commits?author=ghuryejay)
+
+  authored
+
+  [4c80ac1](/marbl/SALSA/commit/4c80ac12bc89b008b199fc8d33ba6ee17516196b)
+
+  Copy full SHA for 4c80ac1
+
+### Commits on May 10, 2021
+
+* #### [fix bugs related to converting alignment coordinates on contigs to those](/marbl/SALSA/commit/e407e61ba3d9fe0a2e6160d3e29b176e874aafaa)
+
+  Show description for e407e61
+
+  ![author](https://github.githubassets.com/images/gravatars/gravatar-user-420.png?size=32)
+
+  Chenxi Zhou
+
+  committed
+
+  [e407e61](/marbl/SALSA/commit/e407e61ba3d9fe0a2e6160d3e29b176e874aafaa)
+
+  Copy full SHA for e407e61
+
+### Commits on Mar 29, 2021
+
+* #### [Fix layout\_unitigs](/marbl/SALSA/commit/e6e3c77e128ab8a81fb43e35ab8470efd995cbc9)
+
+  Show description for e6e3c77
+
+  [![EdHarry](https://avatars.githubusercontent.com/u/30314401?v=4&size=32)](/EdHarry)[EdHarry](/marbl/SALSA/commits?author=EdHarry)
+
+  authored
+
+  [e6e3c77](/marbl/SALSA/commit/e6e3c77e128ab8a81fb43e35ab8470efd995cbc9)
+
+  Copy full SHA for e6e3c77
+
+### Commits on Mar 28, 2021
+
+* #### [Merge pull request #113 from feedmewifi/patch-1](/marbl/SALSA/commit/8b1e2dc37624d4f8e62369a2899e8ba5d67e2ff4)
+
+  Show description for 8b1e2dc
+
+  [![ghuryejay](https://avatars.githubusercontent.com/u/986664?v=4&size=32)](/ghuryejay)[ghuryejay](/marbl/SALSA/commits?author=ghuryejay)
+
+  authored
+
+  [8b1e2dc](/marbl/SALSA/commit/8b1e2dc37624d4f8e62369a2899e8ba5d67e2ff4)
+
+  Copy full SHA for 8b1e2dc
+* #### [Merge pull request #115 from VarIr/shebang](/marbl/SALSA/commit/aa4f1bfda938db166455a2d22faaa5927d747df1)
+
+  Show description for aa4f1bf
+
+  [![ghuryejay](https://avatars.githubusercontent.com/u/986664?v=4&size=32)](/ghuryejay)[ghuryejay](/marbl/SALSA/commits?author=ghuryejay)
+
+  authored
+
+  [aa4f1bf](/marbl/SALSA/commit/aa4f1bfda938db166455a2d22faaa5927d747df1)
+
+  Copy full SHA for aa4f1bf
+* #### [Merge pull request #126 from stajichlab/stajichlab\_UCR\_fixes](/marbl/SALSA/commit/c297934f9ffeca8a89cdbb8dff3ffdd26e9f58ea)
+
+  Show description for c297934
+
+  [![ghuryejay](https://avatars.githubusercontent.com/u/986664?v=4&size=32)](/ghuryejay)[ghuryejay](/marbl/SALSA/commits?author=ghuryejay)
+
+  authored
+
+  [c297934](/marbl/SALSA/commit/c297934f9ffeca8a89cdbb8dff3ffdd26e9f58ea)
+
+  Copy full SHA for c297934
+
+### Commits on Jan 15, 2021
+
+* #### [change execute bit](/marbl/SALSA/commit/c21871ba2c36fdeb8a4d6ce064bf921831f4148d)
+
+  [![hyphaltip](https://avatars.githubusercontent.com/u/48827?v=4&size=32)](/hyphaltip)[hyphaltip](/marbl/SALSA/commits?author=hyphaltip)
+
+  committed
+
+  [c21871b](/marbl/SALSA/commit/c21871ba2c36fdeb8a4d6ce064bf921831f4148d)
+
+  Copy full SHA for c21871b
+* #### [fix C++ code to remove warnings for unsigned and unused variables](/marbl/SALSA/commit/c6b537bf51b8fd8ac4fb2e8573ad1e14ef7a8ee0)
+
+  [![hyphaltip](https://avatars.githubusercontent.com/u/48827?v=4&size=32)](/hyphaltip)[hyphaltip](/marbl/SALSA/commits?author=hyphaltip)
+
+  committed
+
+  [c6b537b](/marbl/SALSA/commit/c6b537bf51b8fd8ac4fb2e8573ad1e14ef7a8ee0)
+
+  Copy full SHA for c6b537b
+
+### Commits on Jan 14, 2021
+
+* #### [the min-length cutoff for the scaffolds parameter needs to be in before the redirect](/marbl/SALSA/commit/4a35b560f4042d868d4f642c88a9abd3d57b0e3a)
+
+  [![hyphaltip](https://avatars.githubusercontent.com/u/48827?v=4&size=32)](/hyphaltip)[hyphaltip](/marbl/SALSA/commits?author=hyphaltip)
+
+  committed
+
+  [4a35b56](/marbl/SALSA/commit/4a35b560f4042d868d4f642c88a9abd3d57b0e3a)
+
+  Copy full SHA for 4a35b56
+* #### [force python2 for all scripts and steps](/marbl/SALSA/commit/856f26c739d8e8dc9959cccbb7b2ceaf84ca3d8c)
+
+  [![hyphaltip](https://avatars.githubusercontent.com/u/48827?v=4&size=32)](/hyphaltip)[hyphaltip](/marbl/SALSA/commits?author=hyphaltip)
+
+  committed
+
+  [856f26c](/marbl/SALSA/commit/856f26c739d8e8dc9959cccbb7b2ceaf84ca3d8c)
+
+  Copy full SHA for 856f26c
+
+### Commits on Nov 5, 2020
+
+* #### [add Python2 shebang](/marbl/SALSA/commit/216bb63e06241b95b0af56d9d40fb892a579bcdb)
+
+  Show description for 216bb63
+
+  [![VarIr](https://avatars.githubusercontent.com/u/9104721?v=4&size=32)](/VarIr)[VarIr](/marbl/SALSA/commits?author=VarIr)
+
+  authored
+
+  [216bb63](/marbl/SALSA/commit/216bb63e06241b95b0af56d9d40fb892a579bcdb)
+
+  Copy full SHA for 216bb63
+
+### Commits on Nov 2, 2020
+
+* #### [corrected spelling mistake in README.md](/marbl/SALSA/commit/c6e1dd0b733a9bcbea53382a8c5a9d498c1f155f)
+
+  [![feedmewifi](https://avatars.githubusercontent.com/u/12159515?v=4&size=32)](/feedmewifi)[feedmewifi](/marbl/SALSA/commits?author=feedmewifi)
+
+  authored
+
+  [c6e1dd0](/marbl/SALSA/commit/c6e1dd0b733a9bcbea53382a8c5a9d498c1f155f)
+
+  Copy full SHA for c6e1dd0
+
+### Commits on Oct 1, 2019
+
+* #### [prints warning if not enough links are present, instead of terminating](/marbl/SALSA/commit/974589f3302b773dcf0f20c3332fe9daf009fb93)
+
+  ![author](https://github.githubassets.com/images/gravatars/gravatar-user-420.png?size=32)
+
+  Jay Ghurye
+
+  committed
+
+  [974589f](/marbl/SALSA/commit/974589f3302b773dcf0f20c3332fe9daf009fb93)
+
+  Copy full SHA for 974589f
+
+### Commits on Aug 22, 2019
+
+* #### [Check both for file exists and non-empty](/marbl/SALSA/commit

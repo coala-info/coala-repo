@@ -52,3 +52,6 @@ options:
   --quiet               Disable alignment console output
 ```
 
+
+## Metadata
+- **Skill**: generated

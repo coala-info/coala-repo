@@ -1,0 +1,466 @@
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fbigbio%2Fpgatk%2Ftags)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fbigbio%2Fpgatk%2Ftags)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Freleases%2Ftag_history&source=header-repo&source_repo=bigbio%2Fpgatk)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[bigbio](/bigbio)
+/
+**[pgatk](/bigbio/pgatk)**
+Public
+
+* [Notifications](/login?return_to=%2Fbigbio%2Fpgatk) You must be signed in to change notification settings
+* [Fork
+  13](/login?return_to=%2Fbigbio%2Fpgatk)
+* [Star
+   15](/login?return_to=%2Fbigbio%2Fpgatk)
+
+* [Code](/bigbio/pgatk)
+* [Issues
+  2](/bigbio/pgatk/issues)
+* [Pull requests
+  0](/bigbio/pgatk/pulls)
+* [Actions](/bigbio/pgatk/actions)
+* [Security
+  0](/bigbio/pgatk/security)
+* [Insights](/bigbio/pgatk/pulse)
+
+Additional navigation options
+
+* [Code](/bigbio/pgatk)
+* [Issues](/bigbio/pgatk/issues)
+* [Pull requests](/bigbio/pgatk/pulls)
+* [Actions](/bigbio/pgatk/actions)
+* [Security](/bigbio/pgatk/security)
+* [Insights](/bigbio/pgatk/pulse)
+
+# Tags: bigbio/pgatk
+
+[Releases](/bigbio/pgatk/releases)
+[Tags](/bigbio/pgatk/tags)
+
+Tags
+
+## [v0.0.24](/bigbio/pgatk/releases/tag/v0.0.24)
+
+Toggle v0.0.24's commit message
+
+Verified
+
+# Verified
+
+This commit was created on GitHub.com and signed with GitHub’s **verified signature**.
+
+GPG key ID: B5690EEEBB952194
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits)
+
+```
+Merge pull request #77 from bigbio/spectrumAI
+
+spectrumAI into py-pgatk
+```
+
+* Apr 19, 2024
+* [6faf53c](/bigbio/pgatk/commit/6faf53c1375670b0f24d17df5bcab4a8b60bf024)
+* [zip](/bigbio/pgatk/archive/refs/tags/v0.0.24.zip)
+* [tar.gz](/bigbio/pgatk/archive/refs/tags/v0.0.24.tar.gz)
+* [Notes](/bigbio/pgatk/releases/tag/v0.0.24)
+
+## [v0.0.23](/bigbio/pgatk/releases/tag/v0.0.23)
+
+Toggle v0.0.23's commit message
+
+Verified
+
+# Verified
+
+This commit was created on GitHub.com and signed with GitHub’s **verified signature**.
+The key has expired.
+
+GPG key ID: 4AEE18F83AFDEB23
+
+Expired
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits)
+
+```
+Merge pull request #64 from bigbio/dev
+
+Major changes fixing issues in reading params from configs files
+```
+
+* Jul 7, 2022
+* [6d0b2b9](/bigbio/pgatk/commit/6d0b2b9a1f281c46f23696e69950a2220af02b86)
+* [zip](/bigbio/pgatk/archive/refs/tags/v0.0.23.zip)
+* [tar.gz](/bigbio/pgatk/archive/refs/tags/v0.0.23.tar.gz)
+* [Notes](/bigbio/pgatk/releases/tag/v0.0.23)
+
+## [v0.0.22](/bigbio/pgatk/releases/tag/v0.0.22)
+
+Toggle v0.0.22's commit message
+
+Verified
+
+# Verified
+
+This commit was created on GitHub.com and signed with GitHub’s **verified signature**.
+The key has expired.
+
+GPG key ID: 4AEE18F83AFDEB23
+
+Expired
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits)
+
+```
+Merge pull request #62 from bigbio/class-fdr
+
+changes in the generation for msrescore
+```
+
+* Jun 21, 2022
+* [a445fe8](/bigbio/pgatk/commit/a445fe84e5cf2dd755bf3a4b020be881212bdfdc)
+* [zip](/bigbio/pgatk/archive/refs/tags/v0.0.22.zip)
+* [tar.gz](/bigbio/pgatk/archive/refs/tags/v0.0.22.tar.gz)
+
+## [v0.0.21](/bigbio/pgatk/releases/tag/v0.0.21)
+
+Toggle v0.0.21's commit message
+
+Verified
+
+# Verified
+
+This commit was created on GitHub.com and signed with GitHub’s **verified signature**.
+The key has expired.
+
+GPG key ID: 4AEE18F83AFDEB23
+
+Expired
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits)
+
+```
+Merge pull request #60 from bigbio/class-fdr
+
+changes to fix problem with config files
+```
+
+* Jun 17, 2022
+* [6ce6e05](/bigbio/pgatk/commit/6ce6e05b7dd1eeec09d19b079ea1e92d6a2a9fb1)
+* [zip](/bigbio/pgatk/archive/refs/tags/v0.0.21.zip)
+* [tar.gz](/bigbio/pgatk/archive/refs/tags/v0.0.21.tar.gz)
+* [Notes](/bigbio/pgatk/releases/tag/v0.0.21)
+
+## [v0.0.20](/bigbio/pgatk/releases/tag/v0.0.20)
+
+Toggle v0.0.20's commit message
+
+```
+Added flag to specify separator in transcript description
+```
+
+* May 10, 2022
+* [7e7461b](/bigbio/pgatk/commit/7e7461ba6adc609134d13590d7f5976a26594435)
+* [zip](/bigbio/pgatk/archive/refs/tags/v0.0.20.zip)
+* [tar.gz](/bigbio/pgatk/archive/refs/tags/v0.0.20.tar.gz)
+* [Notes](/bigbio/pgatk/releases/tag/v0.0.20)
+
+## [v0.0.19](/bigbio/pgatk/releases/tag/v0.0.19)
+
+Toggle v0.0.19's commit message
+
+Verified
+
+# Verified
+
+This commit was created on GitHub.com and signed with GitHub’s **verified signature**.
+The key has expired.
+
+GPG key ID: 4AEE18F83AFDEB23
+
+Expired
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits)
+
+```
+Merge pull request #45 from bigbio/dev
+```
+
+* Mar 31, 2021
+* [03288b7](/bigbio/pgatk/commit/03288b710f5f28b2da0db0731c34ba58b86316e8)
+* [zip](/bigbio/pgatk/archive/refs/tags/v0.0.19.zip)
+* [tar.gz](/bigbio/pgatk/archive/refs/tags/v0.0.19.tar.gz)
+* [Notes](/bigbio/pgatk/releases/tag/v0.0.19)
+
+## [v0.0.18](/bigbio/pgatk/releases/tag/v0.0.18)
+
+Toggle v0.0.18's commit message
+
+Verified
+
+# Verified
+
+This commit was created on GitHub.com and signed with GitHub’s **verified signature**.
+The key has expired.
+
+GPG key ID: 4AEE18F83AFDEB23
+
+Expired
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits)
+
+```
+Merge pull request #44 from bigbio/dev
+
+decompress gzip files
+```
+
+* Mar 30, 2021
+* [aba65a9](/bigbio/pgatk/commit/aba65a957e2b9a2e47257d3829005e3ecf7afe85)
+* [zip](/bigbio/pgatk/archive/refs/tags/v0.0.18.zip)
+* [tar.gz](/bigbio/pgatk/archive/refs/tags/v0.0.18.tar.gz)
+* [Notes](/bigbio/pgatk/releases/tag/v0.0.18)
+
+## [v0.0.17](/bigbio/pgatk/releases/tag/v0.0.17)
+
+Toggle v0.0.17's commit message
+
+```
+Updated version to 0.017
+```
+
+* Mar 12, 2021
+* [9b15b1a](/bigbio/pgatk/commit/9b15b1a0fe52ed523c72102a5ab04bcea1ef973b)
+* [zip](/bigbio/pgatk/archive/refs/tags/v0.0.17.zip)
+* [tar.gz](/bigbio/pgatk/archive/refs/tags/v0.0.17.tar.gz)
+* [Notes](/bigbio/pgatk/releases/tag/v0.0.17)
+
+## [v0.0.16](/bigbio/pgatk/releases/tag/v0.0.16)
+
+Toggle v0.0.16's commit message
+
+Verified
+
+# Verified
+
+This commit was created on GitHub.com and signed with GitHub’s **verified signature**.
+The key has expired.
+
+GPG key ID: 4AEE18F83AFDEB23
+
+Expired
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits)
+
+```
+Update setup.py
+```
+
+* Mar 6, 2021
+* [2814aae](/bigbio/pgatk/commit/2814aae034b86adab57adadb12c54414247e2d37)
+* [zip](/bigbio/pgatk/archive/refs/tags/v0.0.16.zip)
+* [tar.gz](/bigbio/pgatk/archive/refs/tags/v0.0.16.tar.gz)
+
+## [v0.0.15](/bigbio/pgatk/releases/tag/v0.0.15)
+
+Toggle v0.0.15's commit message
+
+Verified
+
+# Verified
+
+This commit was created on GitHub.com and signed with GitHub’s **verified signature**.
+The key has expired.
+
+GPG key ID: 4AEE18F83AFDEB23
+
+Expired
+
+Verified
+
+[Learn about vigilant mode](https://docs.github.com/github/authenticating-to-github/displaying-verification-statuses-for-all-of-your-commits)
+
+```
+Merge pull request #39 from bigbio/dev
+
+Dev
+```
+
+* Feb 17, 2021
+* [2ae2432](/bigbio/pgatk/commit/2ae2432acca6c681427ab390af3f1f415cd65468)
+* [zip](/bigbio/pgatk/archive/refs/tags/v0.0.15.zip)
+* [tar.gz](/bigbio/pgatk/archive/refs/tags/v0.0.15.tar.gz)
+
+Previous[Next](/bigbio/pgatk/tags?after=v0.0.15)
+
+## Footer
+
+© 2026 GitHub, Inc.
+
+### Footer navigation
+
+* [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+* [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+* [Security](https://github.com/security)
+* [Status](https://www.githubstatus.com/)
+* [Community](https://github.community/)
+* [Docs](https://docs.github.com/)
+* [Contact](https://support.github.com?tags=dotcom-footer)
+* Manage cookies
+* Do not share my personal information
+
+You can’t perform that action at this time.

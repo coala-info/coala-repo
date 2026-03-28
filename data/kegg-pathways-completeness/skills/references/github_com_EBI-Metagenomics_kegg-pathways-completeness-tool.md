@@ -1,1 +1,350 @@
-GitHub - EBI-Metagenomics/kegg-pathways-completeness-tool: This tool estimates the completeness of KEGG pathway modules from the presence or absence of KEGG orthologues (KOs) Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} EBI-Metagenomics / kegg-pathways-completeness-tool Public Notifications You must be signed in to change notification settings Fork 6 Star 30 This tool estimates the completeness of KEGG pathway modules from the presence or absence of KEGG orthologues (KOs) License Apache-2.0 license 30 stars 6 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 0 Pull requests 0 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights EBI-Metagenomics/kegg-pathways-completeness-tool master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 150 Commits 150 Commits .github/ workflows .github/ workflows docs docs img img kegg_pathways_completeness kegg_pathways_completeness scripts scripts tests tests .gitignore .gitignore .pre-commit-config.yaml .pre-commit-config.yaml LICENSE LICENSE README.md README.md pyproject.toml pyproject.toml update_summary.md update_summary.md View all files Repository files navigation README Apache-2.0 license kegg-pathways-completeness tool This tool computes the completeness of KEGG pathway modules for a given set of KEGG Orthologues (KOs) based on their presence/absence. The current version includes 570 KEGG modules (updated 19/01/2026). Please, read the Theory &amp; Background section for a detailed explanation. Table of Contents Installation Prerequisites Quick Start Detailed Usage give_completeness plot_modules_graphs Module Data Files Output Files Theory &amp; Background Updating Module Data Complete Workflow Citation Installation The tool is available via PyPI, Bioconda, and Docker. Install with pip pip install kegg-pathways-completeness Install with bioconda conda install -c bioconda kegg-pathways-completeness See bioconda recipe for details. Docker docker pull quay.io/biocontainers/kegg-pathways-completeness Install from source (for development) git clone https://github.com/EBI-Metagenomics/kegg-pathways-completeness-tool.git cd kegg-pathways-completeness-tool pip install -e . Prerequisites Python : 3.8 or higher graphviz : Required for pathway visualization (install via system package manager) HMMER (optional): For annotating protein sequences with KOs Quick Start Tool uses pre-generated files modules_table.tsv and graphs.pkl described in Module Data Files . Option 1: From a list of KOs Input format ( example ): File with KO identifiers K00001,K00002,K00003 command: give_completeness \ --input-list kos_list.txt \ --list-separator ' , ' \ --outprefix my_analysis Option 2: From per-contig KO annotations Input format ( example ): Tab-separated file with contig names and KOs contig_1 K00001 K00002 K00003 contig_2 K00004 K00005 command: give_completeness \ --input ko_annotations.tsv \ --outprefix my_analysis Detailed Usage give_completeness Calculate KEGG pathway module completeness from KO annotations. Required Arguments Input (choose one): -i, --input &lt;FILE&gt; : Tab-separated file with contig names and KOs ( example ) -l, --input-list &lt;FILE&gt; : List of KOs, separated by delimiter ( example ) Module data : -t, --modules-table &lt;FILE&gt; : Module information in TSV format (columns: module, definition, name, class) Default: Uses packaged kegg_pathways_completeness/pathways_data/modules_table.tsv -g, --graphs &lt;FILE&gt; : Custom graphs file (default: uses packaged kegg_pathways_completeness/pathways_data/graphs.pkl ) Optional Arguments -s, --list-separator &lt;CHAR&gt; : Separator for --input-list (default: , ) -o, --outdir &lt;DIR&gt; : Output directory (default: current directory) -r, --outprefix &lt;PREFIX&gt; : Prefix for output files (default: summary.kegg ) -m, --add-per-contig : Generate per-contig completeness table -w, --include-weights : Include KO weights in output (e.g., K00942(0.25) ) -p, --plot-pathways : Generate pathway visualization plots -v, --verbose : Enable verbose logging Examples # Basic usage with KO list give_completeness \ --input-list kos.txt \ --modules-table kegg_pathways_completeness/pathways_data/modules_table.tsv \ --graphs kegg_pathways_completeness/pathways_data/graphs.pkl \ --outprefix sample1 # Full analysis with per-contig results, weights, and plots give_completeness \ --input ko_annotations.tsv \ --outprefix sample1 \ --add-per-contig \ --include-weights \ --plot-pathways \ --outdir results/ # Using custom module data give_completeness \ --input ko_annotations.tsv \ --modules-table custom_modules.tsv \ --graphs custom_graphs.pkl \ --outdir custom_analysis plot_modules_graphs Generate pathway visualization with KOs highlighted. Note : Requires graphviz to be installed. Required Arguments Input (choose one): -i, --input-completeness &lt;FILE&gt; : Completeness output from give_completeness -m, --modules &lt;ID&gt; [&lt;ID&gt; ...] : Module IDs to plot (can be specified multiple times) -l, --modules-file &lt;FILE&gt; : File containing module IDs (one per line) Graphs : -g, --graphs &lt;FILE&gt; : Graphs pickle file (default: pathways_data/graphs.pkl ) Optional Arguments -s, --file-separator &lt;CHAR&gt; : Separator in modules file (default: newline) -o, --outdir &lt;DIR&gt; : Output directory (default: pathways_plots ) --use-pydot : Use pydot instead of graphviz backend Examples # Plot from completeness results plot_modules_graphs \ -i sample1_pathways.tsv \ -g kegg_pathways_completeness/pathways_data/graphs.pkl \ -o pathway_plots # Plot specific modules plot_modules_graphs \ -m M00001 M00002 M00050 \ -g kegg_pathways_completeness/pathways_data/graphs.pkl # Plot modules from file plot_modules_graphs \ -l modules_of_interest.txt \ -g kegg_pathways_completeness/pathways_data/graphs.pkl # Use pydot backend plot_modules_graphs \ -i sample1_pathways.tsv \ -g kegg_pathways_completeness/pathways_data/graphs.pkl \ --use-pydot Output : PNG images with pathways (present KOs in red) DOT source files (when using --use-pydot ) More visualization examples: test output plots Module Data Files The package includes pre-generated data files in pathways_data/ : modules_table.tsv Unified TSV file with all module information. Columns : module : Module ID (e.g., M00001) definition : KEGG module definition in KO notation name : Module name/description class : Module classification/category File : modules_table.tsv graphs.pkl Pre-parsed NetworkX directed graphs for all modules. Each pathway definition has been converted to a graph structure for completeness calculation. File : graphs.pkl Output Files Pathway completeness table ( *_pathways.tsv ) Main output with completeness scores for all detected pathways. Columns : module_accession : Module ID completeness : Completeness percentage (0-100) pathway_name : Module name pathway_class : Module classification matching_ko : KOs found in the pathway missing_ko : KOs required but not found Example : test_kos_pathways.tsv Per-contig completeness ( *_contigs.tsv ) Generated with -m/--add-per-contig flag. Same format as above but with contig name as first column. Example : test_pathway_contigs.tsv Weighted output ( *.with_weights.tsv ) Generated with -w/--include-weights flag. Includes weight values for each KO in parentheses (e.g., K00942(0.25) means weight = 0.25). Example : test_weights_pathways.with_weights.tsv Pathway plots ( pathways_plots/ ) Generated with -p/--plot-pathways flag. Contains: P
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FEBI-Metagenomics%2Fkegg-pathways-completeness-tool)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FEBI-Metagenomics%2Fkegg-pathways-completeness-tool)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=EBI-Metagenomics%2Fkegg-pathways-completeness-tool)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[EBI-Metagenomics](/EBI-Metagenomics)
+/
+**[kegg-pathways-completeness-tool](/EBI-Metagenomics/kegg-pathways-completeness-tool)**
+Public
+
+* [Notifications](/login?return_to=%2FEBI-Metagenomics%2Fkegg-pathways-completeness-tool) You must be signed in to change notification settings
+* [Fork
+  6](/login?return_to=%2FEBI-Metagenomics%2Fkegg-pathways-completeness-tool)
+* [Star
+   34](/login?return_to=%2FEBI-Metagenomics%2Fkegg-pathways-completeness-tool)
+
+* [Code](/EBI-Metagenomics/kegg-pathways-completeness-tool)
+* [Issues
+  0](/EBI-Metagenomics/kegg-pathways-completeness-tool/issues)
+* [Pull requests
+  0](/EBI-Metagenomics/kegg-pathways-completeness-tool/pulls)
+* [Actions](/EBI-Metagenomics/kegg-pathways-completeness-tool/actions)
+* [Projects](/EBI-Metagenomics/kegg-pathways-completeness-tool/projects)
+* [Security
+  0](/EBI-Metagenomics/kegg-pathways-completeness-tool/security)
+* [Insights](/EBI-Metagenomics/kegg-pathways-completeness-tool/pulse)
+
+Additional navigation options
+
+* [Code](/EBI-Metagenomics/kegg-pathways-completeness-tool)
+* [Issues](/EBI-Metagenomics/kegg-pathways-completeness-tool/issues)
+* [Pull requests](/EBI-Metagenomics/kegg-pathways-completeness-tool/pulls)
+* [Actions](/EBI-Metagenomics/kegg-pathways-completeness-tool/actions)
+* [Projects](/EBI-Metagenomics/kegg-pathways-completeness-tool/projects)
+* [Security](/EBI-Metagenomics/kegg-pathways-completeness-tool/security)
+* [Insights](/EBI-Metagenomics/kegg-pathways-completeness-tool/pulse)
+
+# EBI-Metagenomics/kegg-pathways-completeness-tool
+
+master
+
+[Branches](/EBI-Metagenomics/kegg-pathways-completeness-tool/branches)[Tags](/EBI-Metagenomics/kegg-pathways-completeness-tool/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[150 Commits](/EBI-Metagenomics/kegg-pathways-completeness-tool/commits/master/)   150 Commits | | |
+| [.github/workflows](/EBI-Metagenomics/kegg-pathways-completeness-tool/tree/master/.github/workflows "This path skips through empty directories") | | [.github/workflows](/EBI-Metagenomics/kegg-pathways-completeness-tool/tree/master/.github/workflows "This path skips through empty directories") |  |  |
+| [docs](/EBI-Metagenomics/kegg-pathways-completeness-tool/tree/master/docs "docs") | | [docs](/EBI-Metagenomics/kegg-pathways-completeness-tool/tree/master/docs "docs") |  |  |
+| [img](/EBI-Metagenomics/kegg-pathways-completeness-tool/tree/master/img "img") | | [img](/EBI-Metagenomics/kegg-pathways-completeness-tool/tree/master/img "img") |  |  |
+| [kegg\_pathways\_completeness](/EBI-Metagenomics/kegg-pathways-completeness-tool/tree/master/kegg_pathways_completeness "kegg_pathways_completeness") | | [kegg\_pathways\_completeness](/EBI-Metagenomics/kegg-pathways-completeness-tool/tree/master/kegg_pathways_completeness "kegg_pathways_completeness") |  |  |
+| [scripts](/EBI-Metagenomics/kegg-pathways-completeness-tool/tree/master/scripts "scripts") | | [scripts](/EBI-Metagenomics/kegg-pathways-completeness-tool/tree/master/scripts "scripts") |  |  |
+| [tests](/EBI-Metagenomics/kegg-pathways-completeness-tool/tree/master/tests "tests") | | [tests](/EBI-Metagenomics/kegg-pathways-completeness-tool/tree/master/tests "tests") |  |  |
+| [.gitignore](/EBI-Metagenomics/kegg-pathways-completeness-tool/blob/master/.gitignore ".gitignore") | | [.gitignore](/EBI-Metagenomics/kegg-pathways-completeness-tool/blob/master/.gitignore ".gitignore") |  |  |
+| [.pre-commit-config.yaml](/EBI-Metagenomics/kegg-pathways-completeness-tool/blob/master/.pre-commit-config.yaml ".pre-commit-config.yaml") | | [.pre-commit-config.yaml](/EBI-Metagenomics/kegg-pathways-completeness-tool/blob/master/.pre-commit-config.yaml ".pre-commit-config.yaml") |  |  |
+| [LICENSE](/EBI-Metagenomics/kegg-pathways-completeness-tool/blob/master/LICENSE "LICENSE") | | [LICENSE](/EBI-Metagenomics/kegg-pathways-completeness-tool/blob/master/LICENSE "LICENSE") |  |  |
+| [README.md](/EBI-Metagenomics/kegg-pathways-completeness-tool/blob/master/README.md "README.md") | | [README.md](/EBI-Metagenomics/kegg-pathways-completeness-tool/blob/master/README.md "README.md") |  |  |
+| [pyproject.toml](/EBI-Metagenomics/kegg-pathways-completeness-tool/blob/master/pyproject.toml "pyproject.toml") | | [pyproject.toml](/EBI-Metagenomics/kegg-pathways-completeness-tool/blob/master/pyproject.toml "pyproject.toml") |  |  |
+| [update\_summary.md](/EBI-Metagenomics/kegg-pathways-completeness-tool/blob/master/update_summary.md "update_summary.md") | | [update\_summary.md](/EBI-Metagenomics/kegg-pathways-completeness-tool/blob/master/update_summary.md "update_summary.md") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* Apache-2.0 license
+
+# kegg-pathways-completeness tool
+
+This tool computes the completeness of [KEGG pathway modules](https://www.genome.jp/kegg/module.html) for a given set of [KEGG Orthologues (KOs)](https://www.genome.jp/kegg/ko.html) based on their presence/absence.
+
+The current version includes **570** KEGG modules (updated 19/01/2026).
+
+Please, read the [Theory & Background](#theory--background) section for a detailed explanation.
+
+## Table of Contents
+
+[![](/EBI-Metagenomics/kegg-pathways-completeness-tool/raw/master/img/ex0.png)](/EBI-Metagenomics/kegg-pathways-completeness-tool/blob/master/img/ex0.png)
+
+* [Installation](#installation)
+* [Prerequisites](#prerequisites)
+* [Quick Start](#quick-start)
+* [Detailed Usage](#detailed-usage)
+  + [give\_completeness](#give_completeness)
+  + [plot\_modules\_graphs](#plot_modules_graphs)
+* [Module Data Files](#module-data-files)
+* [Output Files](#output-files)
+* [Theory & Background](#theory--background)
+* [Updating Module Data](#updating-module-data)
+* [Complete Workflow](#complete-workflow)
+* [Citation](#citation)
+
+## Installation
+
+The tool is available via PyPI, Bioconda, and Docker.
+
+### Install with pip
+
+```
+pip install kegg-pathways-completeness
+```
+
+### Install with bioconda
+
+```
+conda install -c bioconda kegg-pathways-completeness
+```
+
+See [bioconda recipe](https://bioconda.github.io/recipes/kegg-pathways-completeness/README.html) for details.
+
+### Docker
+
+```
+docker pull quay.io/biocontainers/kegg-pathways-completeness
+```
+
+### Install from source (for development)
+
+```
+git clone https://github.com/EBI-Metagenomics/kegg-pathways-completeness-tool.git
+cd kegg-pathways-completeness-tool
+pip install -e .
+```
+
+## Prerequisites
+
+* **Python**: 3.8 or higher
+* **graphviz**: Required for pathway visualization (install via system package manager)
+* **[HMMER](http://hmmer.org/)** (optional): For annotating protein sequences with KOs
+
+## Quick Start
+
+Tool uses pre-generated files `modules_table.tsv` and `graphs.pkl` described in [Module Data Files](#module-data-files).
+
+### Option 1: From a list of KOs
+
+**Input format** ([example](/EBI-Metagenomics/kegg-pathways-completeness-tool/blob/master/tests/fixtures/give_completeness/test_kos.txt)): File with KO identifiers
+
+```
+K00001,K00002,K00003
+```
+
+command:
+
+```
+give_completeness \
+  --input-list kos_list.txt \
+  --list-separator ',' \
+  --outprefix my_analysis
+```
+
+### Option 2: From per-contig KO annotations
+
+**Input format** ([example](/EBI-Metagenomics/kegg-pathways-completeness-tool/blob/master/tests/fixtures/give_completeness/test_pathway.txt)): Tab-separated file with contig names and KOs
+
+```
+contig_1	K00001	K00002	K00003
+contig_2	K00004	K00005
+```
+
+command:
+
+```
+give_completeness \
+  --input ko_annotations.tsv \
+  --outprefix my_analysis
+```
+
+## Detailed Usage
+
+### give\_completeness
+
+Calculate KEGG pathway module completeness from KO annotations.
+
+#### Required Arguments
+
+**Input** (choose one):
+
+* `-i, --input <FILE>`: Tab-separated file with contig names and KOs ([example](/EBI-Metagenomics/kegg-pathways-completeness-tool/blob/master/tests/fixtures/give_completeness/test_pathway.txt))
+* `-l, --input-list <FILE>`: List of KOs, separated by delimiter ([example](/EBI-Metagenomics/kegg-pathways-completeness-tool/blob/master/tests/fixtures/give_completeness/test_kos.txt))
+
+**Module data**:
+
+* `-t, --modules-table <FILE>`: Module information in TSV format (columns: module, definition, name, class)
+  + Default: Uses packaged `kegg_pathways_completeness/pathways_data/modules_table.tsv`
+* `-g, --graphs <FILE>`: Custom graphs file (default: uses packaged `kegg_pathways_completeness/pathways_data/graphs.pkl`)
+
+#### Optional Arguments
+
+* `-s, --list-separator <CHAR>`: Separator for `--input-list` (default: `,`)
+* `-o, --outdir <DIR>`: Output directory (default: current directory)
+* `-r, --outprefix <PREFIX>`: Prefix for output files (default: `summary.kegg`)
+* `-m, --add-per-contig`: Generate per-contig completeness table
+* `-w, --include-weights`: Include KO weights in output (e.g., `K00942(0.25)`)
+* `-p, --plot-pathways`: Generate pathway visualization plots
+* `-v, --verbose`: Enable verbose logging
+
+#### Examples
+
+```
+# Basic usage with KO list
+give_completeness \
+  --input-list kos.txt \
+  --modules-table kegg_pathways_completeness/pathways_data/modules_table.tsv \
+  --graphs kegg_pathways_completeness/pathways_data/graphs

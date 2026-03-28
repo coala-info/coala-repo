@@ -64,3 +64,6 @@ Options:
   -V, --version      output version information and exit
 ```
 
+
+## Metadata
+- **Skill**: not generated

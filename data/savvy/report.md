@@ -241,3 +241,6 @@ Usage: sav sort [opts ...] <in.sav>
  -p, --point       Specifies which allele position to sort by (beg, mid or end; default: beg)
 ```
 
+
+## Metadata
+- **Skill**: generated

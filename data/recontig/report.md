@@ -122,3 +122,6 @@ usage: recontig make-mapping [-o output] <from.fa> <to.fa>
 -h               --help This help information.
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -1,6 +1,6 @@
 ---
 name: wgs2ncbi
-description: wgs2ncbi converts genome assemblies and gene predictions into a valid NCBI submission package. Use when user asks to submit a genome to NCBI, prepare a genome assembly for NCBI submission, convert GFF3 and FASTA to NCBI submission format, or generate NCBI SeqIn files.
+description: The wgs2ncbi toolkit prepares genomic assemblies and GFF3 annotations for submission to the NCBI by generating compliant .sqn files. Use when user asks to configure submission metadata, clean annotation data, or generate Whole Genome Shotgun submission files.
 homepage: https://github.com/naturalis/wgs2ncbi
 ---
 
@@ -9,54 +9,77 @@ homepage: https://github.com/naturalis/wgs2ncbi
 
 ## Overview
 
-The `wgs2ncbi` toolkit is designed to streamline the transition from a scaffolded assembly (FASTA) and gene predictions (GFF3) to a valid NCBI submission. While NCBI's `tbl2asn` tool is the standard for creating submission files, it requires specific input formats that are often difficult to generate for "boutique" genome projects with thousands of scaffolds. This skill provides the procedural knowledge to configure and execute the `wgs2ncbi` pipeline, which manages sequence chunking, feature table generation, and metadata integration.
+The `wgs2ncbi` toolkit is designed to bridge the gap between raw genomic outputs (scaffolded FASTA assemblies and GFF3 annotations) and the strict submission requirements of the NCBI. While NCBI's `tbl2asn` is the standard for creating submission files, it requires specific input formats and adheres to rigorous naming conventions that most assembly pipelines do not produce natively. This skill provides the procedural knowledge to configure the toolkit, clean annotation data, and execute the multi-step workflow required to generate a valid `.sqn` file for Whole Genome Shotgun (WGS) submissions.
 
-## Core Workflow
+## Configuration Essentials
 
-The submission process is divided into four primary functional steps, all of which rely on a central configuration file (`wgs2ncbi.ini`).
+The tool relies on four primary `.ini` files and a submission template. Proper setup of these files is critical for a successful run.
 
-### 1. Preparation
-Pre-process the annotation file to enable rapid access for subsequent steps.
+### 1. wgs2ncbi.ini (Main Configuration)
+This file defines the environment. Key parameters include:
+- **Input/Output**: Paths to your assembly FASTA and GFF3 files.
+- **Identifiers**: Prefixes for locus tags and general feature IDs.
+- **Filtering**: Parameters to exclude short scaffolds or low-quality annotations.
+
+### 2. info.ini (Metadata)
+Contains key/value pairs for FASTA headers. Ensure these match your NCBI BioSample/BioProject records:
+- `organism`, `strain`, `isolate`
+- `sex`, `tissue-type`, `dev-stage`
+
+### 3. adaptors.ini (Sequence Masking)
+Used to blank out sequence fragments flagged by NCBI as contaminants or adaptors. 
+- **Tip**: Start with an empty file. Populate it only after NCBI's initial screening provides specific coordinates for removal.
+
+### 4. products.ini (Product Name Mapping)
+Maps internal gene/product names to NCBI-compliant nomenclature.
+- **Tip**: Use this to resolve "illegal" characters or prohibited terms (e.g., "hypothetical protein" is allowed, but names containing molecular weights or database IDs are often rejected).
+
+## Command Line Workflow
+
+Execute the submission preparation in the following sequence:
+
+### Step 1: Prepare
+Pre-processes the GFF3 annotation file to create an index for rapid access.
 ```bash
 wgs2ncbi prepare -conf wgs2ncbi.ini
 ```
 
-### 2. Processing
-Convert the genome FASTA and GFF3 annotations into FASTA chunks and NCBI-compliant feature tables (.tbl).
+### Step 2: Process
+Converts the genome FASTA and the prepared annotations into FASTA chunks and NCBI feature tables (.tbl).
 ```bash
 wgs2ncbi process -conf wgs2ncbi.ini
 ```
 
-### 3. Conversion
-Invoke NCBI's `tbl2asn` program to transform the generated chunks and tables into SeqIn (.sqn) files.
+### Step 3: Convert
+Invokes the NCBI `tbl2asn` utility to generate the `.sqn` files from the chunks created in the previous step.
 ```bash
 wgs2ncbi convert -conf wgs2ncbi.ini
 ```
 
-### 4. Compression
-Collate the resulting SeqIn files into a single archive ready for upload to the NCBI submission portal.
+### Step 4: Compress
+Collates all generated SeqIn files into a single archive ready for upload to the NCBI submission portal.
 ```bash
 wgs2ncbi compress -conf wgs2ncbi.ini
 ```
 
-## Configuration Management
+## Expert Tips for Submission
 
-The tool relies on four specific `.ini` files to handle metadata and cleaning. Success with `wgs2ncbi` depends on the accuracy of these files.
+- **Iterative Refinement**: NCBI submission is rarely a single-pass process. Expect to run the `process` and `convert` steps multiple times as you update `products.ini` and `adaptors.ini` based on validation reports.
+- **Validation Errors**: If `tbl2asn` (Step 3) produces `.val` files with "Error" or "Fatal" messages, you must correct the source GFF3 or update your `.ini` mappings before re-running.
+- **Locus Tags**: Ensure the locus tag prefix used in `wgs2ncbi.ini` has been registered and approved by NCBI for your specific BioProject.
 
-| File | Purpose | Key Details |
-| :--- | :--- | :--- |
-| `wgs2ncbi.ini` | Main Configuration | Define input/output paths, identifier prefixes, and filtering parameters. |
-| `info.ini` | Metadata | Key/value pairs for FASTA headers (e.g., organism, strain, sex, tissue, dev_stage). |
-| `adaptors.ini` | Sequence Masking | Coordinates of fragments to be blanked out (e.g., sequencing adaptors or contaminants identified by NCBI). |
-| `products.ini` | Name Mapping | Maps internal gene/product names to NCBI-accepted nomenclature (e.g., removing database IDs or molecular weights). |
 
-## Expert Tips and Best Practices
 
-- **Iterative Refinement**: NCBI submission is rarely successful on the first pass. Use the `adaptors.ini` and `products.ini` files to address specific feedback from NCBI's validation reports without needing to modify your primary assembly or annotation files.
-- **Locus Tag Consistency**: Ensure the `locus_tag` prefix defined in `wgs2ncbi.ini` matches the prefix registered with your NCBI BioProject.
-- **Dependency Check**: `wgs2ncbi` acts as a wrapper for `tbl2asn`. Ensure `tbl2asn` is installed and available in your system's PATH before running the `convert` subcommand.
-- **Template Creation**: You must provide a `template.sbt` file (created via the NCBI Submission Template Tool). This file contains author and institution metadata and is referenced in the `wgs2ncbi.ini`.
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| prune | Based on a validation file from NCBI, makes pruned versions of feature tables that omit features within regions identified by NCBI. |
+| wgs2ncbi | prepares whole genome sequencing projects for submission to NCBI |
+| wgs2ncbi | prepares whole genome sequencing projects for submission to NCBI |
+| wgs2ncbi | prepares whole genome sequencing projects for submission to NCBI |
+| wgs2ncbi | prepares whole genome sequencing projects for submission to NCBI |
+| wgs2ncbi | prepares whole genome sequencing projects for submission to NCBI |
 
 ## Reference documentation
-- [wgs2ncbi Overview](./references/anaconda_org_channels_bioconda_packages_wgs2ncbi_overview.md)
-- [wgs2ncbi GitHub Repository](./references/github_com_naturalis_wgs2ncbi.md)
+- [WGS2NCBI Main Documentation](./references/github_com_naturalis_wgs2ncbi.md)

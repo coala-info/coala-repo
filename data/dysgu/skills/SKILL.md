@@ -1,6 +1,6 @@
 ---
 name: dysgu
-description: Dysgu is a high-performance toolkit designed for the detection and characterization of structural variants from short and long-read sequencing data. Use when user asks to call structural variants, identify somatic rearrangements, or analyze genomic variants from PacBio and Oxford Nanopore reads.
+description: Dysgu detects and analyzes structural variants in genomic sequencing data using short-read or long-read technologies. Use when user asks to call structural variants, identify deletions or insertions, analyze somatic or tumor samples, or merge and filter VCF files.
 homepage: https://github.com/kcleal/dysgu
 ---
 
@@ -8,53 +8,66 @@ homepage: https://github.com/kcleal/dysgu
 # dysgu
 
 ## Overview
-Dysgu is a high-performance toolkit designed for the detection and characterization of structural variants. It operates by analyzing split-reads, discordant pairs, and soft-clipped alignments to identify genomic rearrangements with high precision. The tool is optimized for efficiency, typically processing a 30X human genome in approximately one hour with low memory overhead. It is particularly effective for researchers working with diverse sequencing platforms who require a unified framework for both germline and complex somatic variant analysis.
 
-## Core Workflows
+Dysgu is a command-line suite designed for the detection and analysis of structural variants (SVs) in genomic sequencing data. It identifies deletions, insertions, inversions, and translocations by analyzing split reads, discordant pairs, and soft-clipped alignments. The tool is optimized for both short-read (paired-end) and long-read (PacBio/ONT) technologies, providing specialized models for diploid germline samples and non-diploid somatic or tumor samples.
 
-### Paired-End (Short-Read) Calling
-For standard Illumina data, use the `run` command, which automates the `fetch` and `call` stages.
+## Command Line Usage
+
+### Core Workflow
+The `run` command is the recommended entry point as it automates the `fetch` (read extraction) and `call` (variant identification) stages.
+
 ```bash
-# Standard execution with 4 threads
-dysgu run -p 4 reference.fa temp_dir input.bam > output.vcf
+# Standard paired-end run
+dysgu run reference.fa temp_dir input.bam > svs.vcf
 
-# Recommended: Use --ibam to improve insert size metrics for paired-end data
-dysgu run --ibam input.bam reference.fa temp_dir input.bam > output.vcf
+# Multiprocessing (e.g., 4 cores)
+dysgu run -p4 reference.fa temp_dir input.bam > svs.vcf
+
+# Clean up temporary files automatically
+dysgu run --clean reference.fa temp_dir input.bam > svs.vcf
 ```
 
-### Long-Read Calling
-Use the `call` command with the appropriate `--mode` preset for your platform.
-```bash
-# PacBio Revio
-dysgu call --mode pacbio-revio reference.fa temp_dir input.bam > output.vcf
+### Long-Read Presets
+Use the `--mode` flag to apply optimized parameters for specific long-read platforms:
 
-# Oxford Nanopore R10
-dysgu call --mode nanopore-r10 reference.fa temp_dir input.bam > output.vcf
+*   **PacBio**: `pacbio-sequel2`, `pacbio-revio`
+*   **Oxford Nanopore**: `nanopore-r9`, `nanopore-r10`
+
+```bash
+dysgu call --mode pacbio-revio reference.fa temp_dir input.bam > svs.vcf
 ```
 
-### Somatic and Tumor-Normal Analysis
-To identify somatic variants, use the `filter` command to compare a tumor VCF against a normal sample or a panel of normals.
-```bash
-# Filter tumor calls against a matched normal
-dysgu filter --normal-vcf normal.vcf tumor_input.vcf > somatic_output.vcf
-```
+### Somatic and Low-Support Calling
+*   **Somatic/Tumor Samples**: Use `--diploid False` to enable the non-diploid model, which is better at capturing low allelic fraction events caused by polyploidy or sub-clonality.
+*   **Maximum Sensitivity**: Use `--contigs False` to disable sequence-related metrics and rely solely on read-support information.
+*   **Noisy Reads**: If read accuracy is uncertain, use `--divergence auto` to let dysgu infer the appropriate sequence divergence threshold.
 
-## Expert Tips and Parameters
+### Post-Processing
+*   **Merging**: Combine VCFs from multiple samples or technologies.
+    `dysgu merge sample1.vcf sample2.vcf > merged.vcf`
+*   **Filtering**: Remove low-quality calls or identify somatic variants by filtering against a normal sample or Panel of Normals (PoN).
+    `dysgu filter input.vcf > filtered.vcf`
 
-- **Model Selection**: 
-  - Use the default **diploid** model for germline samples to maximize precision.
-  - Set `--diploid False` for somatic samples, tumors, or polyploid organisms where allelic fractions may be low or non-standard.
-  - Use `--contigs False` as a fallback if specific SVs are not being picked up; this uses a simpler model based only on read support.
-- **Read Accuracy**: For long reads with higher error rates or unknown accuracy, set `--divergence auto` to allow Dysgu to infer the optimal stringency.
-- **Phasing**: If your input BAM/CRAM contains `HP` and `PS` tags (from tools like HiPhase or WhatsHap), Dysgu will automatically produce phased output calls.
-- **Resource Management**: 
-  - Dysgu generates large temporary files (often >5GB). Use the `--clean` flag to automatically delete these files upon completion.
-  - Ensure the `temp_dir` is on a fast disk (SSD) to improve performance during the `fetch` stage.
-- **Input Handling**: Dysgu supports streaming from stdin, which is useful for processing specific genomic regions.
-  ```bash
-  samtools view -bh input.bam chr21 | dysgu run --clean reference.fa temp_dir - > chr21_svs.vcf
-  ```
+## Expert Tips and Best Practices
+
+*   **Insert Size Metrics**: For paired-end data, always provide the original alignment file via `--ibam` during the `call` phase if running steps separately. This allows dysgu to accurately infer insert size metrics.
+*   **Phasing Support**: If your input BAM/CRAM contains `HP` and `PS` tags (from tools like HiPhase or WhatsHap), dysgu will automatically produce phased output calls.
+*   **Disk Space Management**: The `fetch` stage generates a temporary BAM file containing SV-associated reads. This file can exceed 5GB for a standard 30X genome; ensure the `temp_dir` has sufficient capacity.
+*   **Input Requirements**: Ensure the reference genome is indexed (`.fai`) and the input BAM/CRAM is sorted and indexed (`.bai`/`.crai`).
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| call | Call structural variants from bam alignment file/stdin |
+| dysgu fetch | Filters input bam/cram for read-pairs that are discordant or have a soft-clip of length > '--clip-length', saves bam file in WORKING_DIRECTORY |
+| filter | Filter a vcf generated by dysgu. Unique SVs can be found in the input_vcf by supplying a --normal-vcf (single or multi-sample), and normal bam files. Bam/vcf samples with the same name as the input_vcf will be ignored |
+| merge | Merge vcf/csv variant files |
+| run | Run the dysgu pipeline. Important parameters are --mode, --diploid, --min-support, --min-size, --max-cov |
+| test | Run dysgu tests |
 
 ## Reference documentation
-- [Dysgu GitHub Repository](./references/github_com_kcleal_dysgu.md)
-- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_dysgu_overview.md)
+- [Dysgu GitHub README](./references/github_com_kcleal_dysgu_blob_master_README.rst.md)
+- [Dysgu Repository Overview](./references/github_com_kcleal_dysgu.md)

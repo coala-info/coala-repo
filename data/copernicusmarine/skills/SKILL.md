@@ -1,6 +1,6 @@
 ---
 name: copernicusmarine
-description: The copernicusmarine tool provides a streamlined interface for accessing, subsetting, and visualizing oceanographic data from the Copernicus Marine Service repository. Use when user asks to download marine datasets, subset data by spatial or temporal constraints, list native files, or integrate marine layers into interactive maps.
+description: The copernicusmarine tool provides a streamlined workflow for discovering, authenticating, and retrieving authoritative marine data from Copernicus services. Use when user asks to search the ocean product catalogue, download native data files, or retrieve spatial and temporal subsets of marine datasets.
 homepage: https://github.com/pepijn-devries/CopernicusMarine
 ---
 
@@ -8,73 +8,79 @@ homepage: https://github.com/pepijn-devries/CopernicusMarine
 # copernicusmarine
 
 ## Overview
-The `copernicusmarine` skill provides a streamlined interface for accessing the Copernicus Marine Service (CMEMS) data repository without the need for external Python dependencies. It enables R users to programmatically discover products, subset data based on spatial and temporal constraints, and integrate marine layers into interactive maps. This skill is essential for oceanographic research, environmental monitoring, and marine spatial planning tasks that rely on authoritative EU marine data.
+
+The `copernicusmarine` skill provides a streamlined workflow for accessing authoritative marine data. It facilitates the discovery of ocean products, authentication with Copernicus services, and the retrieval of datasets. Unlike the official Python CLI, this R-based approach allows for direct integration into data science pipelines, supporting both full "native" downloads and precise spatial/temporal subsetting to minimize bandwidth and storage requirements.
 
 ## Installation and Setup
-To use the package in an R environment:
+
+The package is available on CRAN and requires GDAL (>= 3.11) with BLOSC support for certain compressed data formats.
+
 ```r
+# Install from CRAN
 install.packages("CopernicusMarine")
+
+# Authentication (requires a Copernicus Marine account)
 library(CopernicusMarine)
+cms_login(username = "your_username", password = "your_password")
 ```
-*Note: Accessing most services requires a Copernicus Marine account.*
 
-## Common Usage Patterns
+## Data Discovery
 
-### Subsetting Data to Memory
-Use `cms_download_subset()` to fetch specific variables for a defined area and time directly into a `stars` object. This is the most efficient way to work with data without downloading massive files.
+Before downloading, use these functions to explore available products and their specific layers.
+
+- **List Products**: Use `cms_products_list()` to search the catalogue.
+- **Get Details**: Use `cms_product_details("product_id")` to see available layers, variables, and services (e.g., OPeNDAP, WMS).
+- **Metadata**: Use `cms_product_metadata("product_id")` for technical specifications.
+
+## Data Retrieval Patterns
+
+### Subsetting Data
+Subsetting is the most efficient way to retrieve data. You can define spatial bounds, time ranges, and specific variables.
 
 ```r
-# Define region: c(xmin, ymin, xmax, ymax)
-my_data <- cms_download_subset(
-  product = "GLOBAL_ANALYSISFORECAST_PHY_001_024",
-  layer = "cmems_mod_glo_phy-cur_anfc_0.083deg_P1D-m",
-  variable = c("uo", "vo"),
-  region = c(-1, 50, 10, 55),
-  timerange = c("2025-01-01", "2025-01-02"),
-  verticalrange = c(0, -0.5)
+# Example: Subset sea surface temperature
+data <- cms_download_subset(
+  destination        = "sst_subset.nc",
+  product            = "SST_GLO_SST_L4_NRT_OBSERVATIONS_010_001",
+  layer              = "METOFFICE-GLO-SST-L4-NRT-GBL-OSTIA-SST-v2",
+  variable           = "analysed_sst",
+  longitude          = c(-10, 5),
+  latitude           = c(45, 60),
+  time               = c("2023-01-01", "2023-01-05")
 )
 ```
 
-### Downloading Native Files
-If you require the full dataset in its original format (e.g., NetCDF), use the native file functions.
-
-1. **List available files:**
-   ```r
-   files <- cms_list_native_files(
-     product = "GLOBAL_ANALYSISFORECAST_PHY_001_024",
-     layer = "cmems_mod_glo_phy-cur_anfc_0.083deg_P1D-m"
-   )
-   ```
-
-2. **Download specific files:**
-   ```r
-   cms_download_native(
-     destination = "./data",
-     product = "GLOBAL_ANALYSISFORECAST_PHY_001_024",
-     layer = "cmems_mod_glo_phy_anfc_0.083deg_PT1H-m",
-     pattern = "m_20220630" # Use regex to match specific dates/files
-   )
-   ```
-
-### Visualizing with WMTS
-For quick inspection or presentation, use Web Map Tile Services (WMTS) within a `leaflet` map.
+### Native Downloads
+Use `cms_download_native()` when you require the original, un-subsetted files as provided by the data producer.
 
 ```r
-library(leaflet)
-leaflet() %>%
-  addProviderTiles("Esri.WorldImagery") %>%
-  addCmsWMTSTiles(
-    product = "GLOBAL_ANALYSISFORECAST_PHY_001_024",
-    layer = "cmems_mod_glo_phy-thetao_anfc_0.083deg_P1D-m",
-    variable = "thetao"
-  )
+cms_download_native(
+  product     = "product_id",
+  destination = "./data_folder"
+)
 ```
 
-## Expert Tips and Best Practices
-- **Memory Management**: Always prefer `cms_download_subset()` over full downloads when working with high-resolution global models to avoid hitting local memory limits.
-- **Coordinate Order**: Ensure the `region` argument follows the `xmin, ymin, xmax, ymax` (Longitude/Latitude) order.
-- **Citations**: Copernicus data requires proper attribution. Use `cms_cite_product("PRODUCT_ID")` to retrieve the correct DOI and citation string for your publications or reports.
-- **Progress Tracking**: For large downloads, keep `progress = TRUE` (default) to monitor the transfer status.
+## Expert Tips
+
+- **Coordinate Systems**: Always verify the coordinate range of the product (e.g., 0 to 360 vs -180 to 180) before defining your subset bounds.
+- **Service Selection**: If a product supports multiple services, `cms_download_subset` will attempt to use the most efficient one available.
+- **Citation**: Use `cms_cite_product("product_id")` to generate the correct citation for your research or reports.
+- **Visualization**: Use `cms_wmts()` to integrate Copernicus layers into interactive maps (e.g., using the `leaflet` package).
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| copernicusmarine describe | Retrieve and parse the metadata information from the Copernicus Marine catalogue. |
+| copernicusmarine_get | Download originally produced data files. |
+| login | Create a configuration file with your Copernicus Marine credentials under the ``$HOME/.copernicusmarine`` directory. |
+| subset | Extract a subset of data from a specified dataset using given parameters. |
 
 ## Reference documentation
-- [CopernicusMarine R Package Overview](./references/github_com_pepijn-devries_CopernicusMarine.md)
+
+- [Main Repository and README](./references/github_com_pepijn-devries_CopernicusMarine_blob_master_README.md)
+- [Package Index and Overview](./references/pepijn-devries_github_io_CopernicusMarine_index.html.md)
+- [Subsetting Reference](./references/pepijn-devries_github_io_CopernicusMarine_reference_cms_download_subset.html.md)
+- [Native Download Reference](./references/pepijn-devries_github_io_CopernicusMarine_reference_cms_download_native.html.md)

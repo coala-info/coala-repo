@@ -91,3 +91,6 @@ options:
                         Sample name. Default: SAMPLE
 ```
 
+
+## Metadata
+- **Skill**: generated

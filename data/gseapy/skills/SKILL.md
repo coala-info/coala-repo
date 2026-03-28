@@ -1,6 +1,6 @@
 ---
 name: gseapy
-description: GSEApy is a Python library for performing biological pathway enrichment analysis including GSEA, ssGSEA, and Enrichr API integration. Use when user asks to perform gene set enrichment analysis, run preranked GSEA, calculate single-sample enrichment scores, or access the Enrichr database.
+description: GSEApy performs gene set enrichment analysis and functional annotation to identify overrepresented biological pathways in genomic data. Use when user asks to perform GSEA, run preranked analysis, calculate single-sample enrichment scores, or access the Enrichr API for gene list annotation.
 homepage: https://github.com/zqfang/gseapy
 ---
 
@@ -8,67 +8,55 @@ homepage: https://github.com/zqfang/gseapy
 # gseapy
 
 ## Overview
-GSEApy is a high-performance Python library with a Rust-powered core designed for biological pathway analysis. It serves as a native Python implementation of the GSEA desktop tool and a wrapper for the Enrichr API. This skill allows for the seamless integration of enrichment workflows into Python-based bioinformatics pipelines, enabling users to move from expression matrices (Pandas DataFrames) to publication-quality figures and statistical reports without leaving the Python environment or switching to R.
 
-## Core Sub-commands and Usage
+GSEApy is a high-performance Python/Rust implementation of Gene Set Enrichment Analysis (GSEA) tools. It serves as a versatile bridge between genomic data (like differential expression results) and biological knowledge bases. You should use this skill to identify overrepresented biological pathways in gene lists, calculate single-sample enrichment scores, or programmatically access the Enrichr web service for rapid functional annotation.
 
-GSEApy provides seven primary modules accessible via both CLI and Python API:
+## Core Workflows
 
-1.  **gsea**: Standard GSEA for comparing two groups. Requires an expression file (.txt/FPKM/TPM), a phenotype labeling file (.cls), and a gene set file (.gmt).
-2.  **prerank**: GSEA using a pre-ranked list of genes. Requires a ranked list (.rnk) and a gene set file (.gmt).
-3.  **ssgsea**: Single-sample GSEA. Calculates enrichment scores for each sample independently.
-4.  **gsva**: Gene Set Variation Analysis. An alternative to ssGSEA for calculating sample-wise enrichment.
-5.  **enrichr**: Interface for the Enrichr API. Performs enrichment on a simple list of gene symbols against online libraries (e.g., KEGG, GO).
-6.  **replot**: Reproduces figures from GSEA Desktop version output.
-7.  **biomart**: Utility for converting gene IDs and mapping genomic coordinates.
+### 1. GSEA (Standard)
+Use when you have a full expression matrix and two distinct biological groups (e.g., Control vs. Treatment).
+- **Input**: Expression matrix (.txt/CSV), Phenotype labels (.cls), and Gene sets (.gmt).
+- **Command**: `gseapy gsea -d data.txt -c test.cls -g gene_sets.gmt -o output_dir`
 
-## CLI Patterns
+### 2. Prerank
+Use when you have a pre-calculated list of genes ranked by a statistic (e.g., fold change, p-value, or signal-to-noise ratio). This is the most common entry point for RNA-seq workflows.
+- **Input**: Ranked gene list (.rnk) and Gene sets (.gmt).
+- **Command**: `gseapy prerank -r genes.rnk -g KEGG_2016 -o output_dir`
 
-### Standard GSEA
-```bash
-gseapy gsea -d expression.txt -c test.cls -g gene_sets.gmt -o output_dir
-```
+### 3. Single-Sample Analysis (ssGSEA & GSVA)
+Use to calculate enrichment scores for each individual sample in a dataset, transforming a gene-level matrix into a pathway-level matrix.
+- **ssGSEA**: `gseapy ssgsea -d expression.txt -g gene_sets.gmt -o output_dir`
+- **GSVA**: `gseapy gsva -d expression.txt -g gene_sets.gmt -o output_dir`
 
-### Preranked Analysis
-```bash
-gseapy prerank -r gene_list.rnk -g gene_sets.gmt -o output_dir
-```
+### 4. Enrichr API
+Use for quick enrichment analysis of a simple gene list (e.g., "top 100 up-regulated genes") without needing a background expression matrix.
+- **Command**: `gseapy enrichr -i gene_list.txt -g GO_Biological_Process_2021 -o output_dir`
 
-### Enrichr API Call
-```bash
-gseapy enrichr -i gene_list.txt -g KEGG_2021_Human -o output_dir
-```
+## Expert Tips & Best Practices
 
-## Python API Best Practices
+- **Gene Set Libraries**: Instead of providing a local `.gmt` file, you can often use Enrichr library names directly (e.g., `KEGG_2021_Human`, `MSigDB_Transcript_Hallmark_Info_V7.4`).
+- **ID Conversion**: Use the `biomart` module to convert gene IDs (e.g., Ensembl to Gene Symbol) before running enrichment, as most gene sets use Gene Symbols.
+- **Plotting**: GSEApy automatically generates publication-quality GSEA plots and dot plots. Use the `replot` module to recreate figures from GSEA Desktop output.
+- **Performance**: For large datasets, ensure the Rust compiler is installed during setup, as GSEApy uses a Rust backend for significant speed improvements in permutation testing.
+- **Input Formatting**: 
+    - `.rnk` files should be tab-separated with two columns: Gene Symbol and Rank Statistic.
+    - `.cls` files must follow the standard Broad Institute format (3 lines defining sample count, group names, and sample assignments).
 
-### Working with Pandas
-GSEApy is optimized for Pandas. You can pass DataFrames directly to avoid writing intermediate files:
 
-```python
-import gseapy as gp
-import pandas as pd
 
-# For GSEA
-gs_res = gp.gsea(data=df, gene_sets='KEGG_2016', cls=sample_groups, outdir='test')
+## Subcommands
 
-# For Prerank
-pre_res = gp.prerank(rnk=ranked_df, gene_sets='GO_Biological_Process_2021', outdir='test')
-```
-
-### Finding Gene Set Libraries
-To see available libraries for the `enrichr` module:
-```python
-# List all available Enrichr libraries
-names = gp.get_library_name()
-```
-
-## Expert Tips
-
-*   **Rust Dependency**: For versions > 0.11.0, a Rust compiler is required for installation via pip. If installation fails, ensure `rustc` is in your PATH or use the Bioconda distribution.
-*   **File Formats**: GSEApy maintains strict compatibility with GSEA Desktop formats. Ensure `.cls` files follow the specific three-line format (sample count, group names, and sample assignments).
-*   **Memory Efficiency**: When running `ssgsea` or `gsva` on large datasets, use the Python API with DataFrames to minimize I/O overhead.
-*   **Visualization**: GSEApy generates `.png` or `.pdf` figures by default. Use the `format` parameter in the API to specify the output type for publication-quality vector graphics.
+| Command | Description |
+|---------|-------------|
+| biomart | Query Ensembl biomart database. |
+| gsea | Run Gene Set Enrichment Analysis |
+| gseapy enrichr | Enrichr uses a list of gene names as input. |
+| gseapy replot | Reproduce GSEA figures from GSEA desktop results directory. |
+| gsva | Performs Gene Set Variation Analysis (GSVA) |
+| prerank | GSEA prerank module |
+| ssgsea | Single Sample GSEA |
 
 ## Reference documentation
+
 - [GSEApy GitHub Repository](./references/github_com_zqfang_gseapy.md)
-- [GSEApy Overview and Installation](./references/anaconda_org_channels_bioconda_packages_gseapy_overview.md)
+- [GSEApy Documentation Overview](./references/github_com_zqfang_gseapy_tree_master_docs.md)

@@ -1,6 +1,6 @@
 ---
 name: pacu_snp
-description: PACU is a bioinformatics workflow that performs read mapping, variant calling, and SNP-based phylogenetic tree construction for prokaryotic genomes. Use when user asks to map sequencing reads to a reference, identify genomic variations, filter SNPs, mask recombinant regions, or construct high-resolution phylogenetic trees for bacterial isolates.
+description: PACU is a bioinformatics pipeline for generating phylogenetic trees from Illumina and ONT sequencing data through variant calling and filtering. Use when user asks to map reads to a reference genome, call and filter SNPs, mask recombination regions, or infer phylogenetic relationships.
 homepage: https://github.com/BioinformaticsPlatformWIV-ISP/PACU
 ---
 
@@ -8,69 +8,66 @@ homepage: https://github.com/BioinformaticsPlatformWIV-ISP/PACU
 # pacu_snp
 
 ## Overview
-PACU (Prokaryotic Awesome variant Calling Utility) is a specialized bioinformatics workflow that streamlines the transition from raw sequencing reads to phylogenetic analysis. It handles read mapping, variant calling, SNP filtering, and tree construction. This skill is particularly useful when you need to compare bacterial isolates, identify genomic variations across samples, or construct high-resolution phylogenetic trees using standardized SNP-based methods.
+PACU (Prokaryotic Awesome variant Calling Utility) is a comprehensive bioinformatics workflow for generating phylogenies from raw or mapped sequencing data. It excels at handling multi-platform datasets, allowing users to combine Illumina and ONT reads in a single analysis. The tool automates the complex process of variant calling, filtering out low-quality SNPs, masking recombination events, and inferring phylogenetic relationships using established engines like IQ-TREE or MEGA.
 
-## Core Workflows
+## Installation and Setup
+PACU is best managed via Conda or Pixi to handle its extensive dependency list (bcftools, samtools, iqtree, gubbins, etc.).
+
+```bash
+# Recommended installation via Pixi
+pixi add pacu_snp
+
+# Or via Conda
+conda install -c bioconda -c conda-forge pacu_snp
+```
+
+## Core CLI Patterns
 
 ### 1. Read Mapping (PACU_map)
-Before running the main phylogeny workflow, raw FASTQ reads must be mapped to a reference genome to produce BAM files.
+Before running the SNP workflow, reads must be mapped to a reference genome. PACU provides a helper script for this.
 
 **Illumina (Paired-end):**
 ```bash
-PACU_map \
-  --ref-fasta reference.fasta \
-  --read-type illumina \
-  --fastq-illumina sample_R1.fastq.gz sample_R2.fastq.gz \
-  --output mapped_sample.bam \
-  --threads 8 \
-  --trim
+PACU_map --ref-fasta reference.fasta --read-type illumina --fastq-illumina R1.fastq.gz R2.fastq.gz --output sample_mapped.bam --threads 8
 ```
 
-**Oxford Nanopore (ONT):**
+**ONT (Long-reads):**
 ```bash
-PACU_map \
-  --ref-fasta reference.fasta \
-  --read-type ont \
-  --fastq-ont sample_ont.fastq.gz \
-  --output mapped_sample.bam \
-  --threads 8
+PACU_map --ref-fasta reference.fasta --read-type ont --fastq-ont reads.fastq.gz --output sample_ont_mapped.bam --threads 8
 ```
 
-### 2. Phylogeny Workflow (PACU)
-The main command processes directories containing BAM files. You can provide Illumina BAMs, ONT BAMs, or both.
+### 2. Phylogenetic Workflow (PACU)
+Once BAM files are organized into directories, run the main pipeline.
 
-**Basic Multi-platform Run:**
 ```bash
-PACU \
-  --ilmn-in path/to/illumina_bams/ \
-  --ont-in path/to/ont_bams/ \
-  --ref-fasta reference.fasta \
-  --output results_dir/ \
-  --dir-working work_dir/ \
-  --threads 16
+PACU --ilmn-in ./bam_illumina/ --ont-in ./bam_ont/ --ref-fasta reference.fasta --output ./results/ --threads 16
 ```
 
 ## Expert Tips and Best Practices
 
-### Handling Recombination
-By default, PACU uses **Gubbins** to identify and mask recombinant regions, which is critical for accurate prokaryotic phylogeny. 
-- If your dataset is known to have low recombination or you want to speed up the process, use `--skip-gubbins`.
-- Note: Gubbins requires a single-sequence reference. If your reference has multiple contigs and you need Gubbins, you must concatenate them or disable Gubbins using `--skip-gubbins`.
+### Improving Tree Accuracy
+*   **Phage Masking:** Use the `--ref-bed` option to provide a BED file of known phage regions or repetitive elements. PACU will exclude these from the SNP analysis, reducing "noise" caused by horizontal gene transfer.
+*   **Recombination Filtering:** By default, PACU runs Gubbins to detect and mask recombinant regions. If you are analyzing extremely divergent samples where recombination detection is not applicable, use `--skip-gubbins`.
+*   **Reference Inclusion:** Use `--include-ref` to see exactly where the reference genome sits on the tree relative to your isolates.
 
-### Filtering and Quality Control
-Fine-tune your SNP calling using these parameters to reduce false positives:
-- **Allele Frequency:** Use `--min-snp-af` (default is usually 0.9 for haploid bacteria) to ensure high-confidence calls.
-- **Depth Requirements:** Use `--min-global-depth` to ensure a position is only included in the SNP matrix if all samples meet the minimum coverage threshold.
-- **Phage Masking:** If you have a BED file of prophage regions, provide it via `--ref-bed` to exclude these highly variable regions from the phylogeny.
+### Variant Filtering Heuristics
+*   **Allele Frequency:** The default `--min-snp-af` is usually sufficient, but for samples with potential contamination or mixed populations, increasing this value (e.g., to 0.9) ensures only fixed mutations are used.
+*   **Global Depth:** Use `--min-global-depth` to ensure that a position is only considered if *all* samples have sufficient coverage there. This prevents false-positive SNP calls in low-coverage regions.
+*   **SNP Density:** If you notice clusters of SNPs that might indicate poorly mapped regions, increase `--min-snp-dist` (default is often 0) to filter out SNPs that are too close to each other.
 
-### Tree Construction
-- **IQ-TREE:** The default and recommended tool for maximum likelihood phylogeny.
-- **MEGA:** If you specifically require MEGA for tree construction, use the `--use-mega` flag (ensure MEGA is manually installed as it is often not available via Conda).
-- **Reference Inclusion:** Use `--include-ref` to include the reference genome as a leaf node in the final tree, which is helpful for rooting and context.
+### Performance and Output
+*   **Phylogeny Engine:** IQ-TREE is the default and generally recommended for its speed and accuracy. Only use `--use-mega` if you have a specific requirement for MEGA10 and have it manually installed in your PATH.
+*   **Visualization:** The workflow generates an HTML report (`--output-html`). This is the fastest way to perform initial QA on mapping statistics and tree topology.
 
-### Resource Management
-- **Temporary Files:** PACU can generate large intermediate files. Set the `TMPDIR` environment variable to a high-capacity disk if your default `/tmp` is small.
-- **Parallelization:** Use the `--threads` flag to scale across available CPU cores, especially during the mapping and IQ-TREE phases.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| PACU | PACU SNP analysis pipeline |
+| PACU_map | Map sequencing reads to a reference genome. |
 
 ## Reference documentation
-- [PACU GitHub Repository](./references/github_com_BioinformaticsPlatformWIV-ISP_PACU.md)
+- [PACU README](./references/github_com_BioinformaticsPlatformWIV-ISP_PACU_blob_main_README.md)
+- [PACU Project Configuration](./references/github_com_BioinformaticsPlatformWIV-ISP_PACU_blob_main_pyproject.toml.md)

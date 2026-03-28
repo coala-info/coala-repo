@@ -1,6 +1,6 @@
 ---
 name: mavis
-description: MAVIS post-processes structural variant calls through validation, functional annotation, and visualization. Use when user asks to cluster structural variants, validate breakpoints, annotate gene fusions, or generate summary reports.
+description: MAVIS refines, clusters, and annotates structural variant calls from multiple sources to identify high-confidence genomic rearrangements and gene fusions. Use when user asks to merge structural variant calls, validate breakpoints through local assembly, or annotate the functional impact of variants on protein domains.
 homepage: https://github.com/bcgsc/mavis.git
 ---
 
@@ -8,46 +8,60 @@ homepage: https://github.com/bcgsc/mavis.git
 # mavis
 
 ## Overview
+MAVIS (Merging, Annotation, Validation, and Illustration of Structural variants) is a specialized bioinformatics pipeline designed to refine raw structural variant calls. It transforms disparate outputs from various SV callers into a unified, high-confidence set of annotated variants. The tool is particularly effective for identifying gene fusions, determining the functional impact of rearrangements on protein domains, and providing visual evidence for complex genomic events.
 
-MAVIS (Merging, Annotation, Validation, and Illustration of Structural variants) is a specialized bioinformatics suite for the post-processing of structural variant calls. It is designed to take raw SV predictions and refine them through a multi-stage pipeline that includes breakpoint validation, functional annotation (such as gene fusion detection), and visualization. Use this skill to navigate the command-line interface and execute the standard MAVIS workflow.
-
-## Pipeline Stages
-
-The MAVIS workflow consists of six primary stages. Each stage can be accessed as a sub-command of the main `mavis` entry point:
-
-1.  **convert**: Standardizes input SV calls from various callers into a unified format.
-2.  **cluster**: Groups overlapping or similar SV calls to reduce redundancy and identify consensus events.
-3.  **validate**: Re-examines the evidence for breakpoints using the original sequence data (BAM files) to confirm variant existence.
-4.  **annotate**: Determines the functional impact of the SVs, such as identifying affected genes or potential fusion products.
-5.  **pairing**: Links related variants, such as reciprocal translocations.
-6.  **summary**: Aggregates all findings into a final report with illustrations.
+## Core Pipeline Stages
+The MAVIS workflow typically follows these sequential steps:
+1. **Convert**: Standardize outputs from different SV callers into the MAVIS format.
+2. **Cluster**: Merge overlapping calls from different libraries or tools into unique events.
+3. **Validate**: Perform local de novo assembly of reads to refine breakpoint coordinates.
+4. **Annotate**: Determine the effect of the SV on genes, transcripts, and protein domains.
+5. **Pairing**: Match events across different libraries (e.g., Tumor vs. Normal or DNA vs. RNA).
+6. **Summary**: Consolidate all information into a final prioritized output.
 
 ## Command Line Usage
+All operations are accessed via the main `mavis` entry point.
 
 ### Getting Help
-Access the main help menu or specific sub-command documentation:
-- View all available stages: `mavis -h`
-- View options for a specific stage: `mavis <stage> -h` (e.g., `mavis cluster -h`)
+- View main options: `mavis -h`
+- View specific step options: `mavis <step> -h` (e.g., `mavis cluster -h`)
 
-### Standard Execution Pattern
-While individual stages can be run manually, the recommended way to execute the full pipeline is via Snakemake. This ensures all dependencies and intermediate steps are managed correctly.
+### Standard Input Format
+If using an unsupported tool, format your input as a tab-delimited file with these required columns:
+- `break1_chromosome`, `break1_position_start`, `break1_position_end`
+- `break2_chromosome`, `break2_position_start`, `break2_position_end`
 
-1.  **Initialize Configuration**: Install the configuration utility to prepare the environment.
-    ```bash
-    pip install mavis_config
-    ```
+### Running via Snakemake (Recommended)
+For large-scale processing, use the provided Snakemake workflow:
+```bash
+pip install mavis_config
+snakemake -j <MAX_JOBS> --configfile <YOUR_CONFIG> --use-singularity -s Snakefile
+```
 
-2.  **Run the Pipeline**: Execute the workflow using the MAVIS Snakefile. It is highly recommended to use Singularity to handle external tool dependencies (like aligners).
-    ```bash
-    snakemake -j <MAX_JOBS> --configfile <YOUR_CONFIG_FILE> --use-singularity -s Snakefile
-    ```
+## Expert Tips & Best Practices
+- **Reference Files**: Ensure `MAVIS_REFERENCE_GENOME` and `MAVIS_ANNOTATIONS` (JSON format) are set in your environment to avoid repetitive CLI arguments.
+- **Breakpoint Normalization**: MAVIS aligns deletions to the end of a repeat span (HGVS standard). If your IGV view differs from MAVIS output, check if the event is in a repeat region.
+- **Evidence Tracking**: Use the `tracking_id` column to follow specific SV calls through the pipeline, as clustering may collapse or expand original calls.
+- **Zero Spanning Reads**: If a call shows 0 spanning reads, check the `call_method`. If the event was called by contig assembly, look at `contig_remapped_reads` for the primary evidence instead.
+- **Memory Management**: When using annotation files that include non-coding RNAs, increase the memory allocation for the `annotate` step (e.g., from 12GB to 18GB).
+- **Local Execution**: To run without a cluster scheduler, execute scripts in order: `validate` -> `annotate` -> `pairing` -> `summary`. Set `MAVIS_MAX_FILES=1` to prevent the creation of excessive small job files.
 
-## Best Practices
 
-- **Containerization**: Always prefer running MAVIS via Singularity or Docker. The tool relies on specific versions of aligners and external libraries that are pre-configured in the official containers.
-- **Resource Management**: Use the `-j` flag in Snakemake to specify the number of concurrent threads/jobs, as the `validate` and `annotate` stages can be computationally intensive.
-- **Input Validation**: Ensure that input BAM files are indexed and that the reference genome matches the one used for the initial SV calling.
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| mavis overlay | Draws a gene and its surrounding genomic context, including read depth plots and markers. |
+| mavis_annotate | Annotates variants with MAVIS. |
+| mavis_cluster | Cluster MAVIS results |
+| mavis_convert | Convert structural variant calls from various callers into a common format. |
+| mavis_pairing | Mavis pairing tool |
+| mavis_setup | Setup Mavis |
+| mavis_summary | Summarize MAVIS results. |
+| mavis_validate | Validate MAVIS inputs and outputs. |
 
 ## Reference documentation
-- [MAVIS Overview](./references/anaconda_org_channels_bioconda_packages_mavis_overview.md)
-- [MAVIS GitHub Repository and Usage](./references/github_com_bcgsc_mavis.md)
+- [MAVIS Input Requirements](./references/mavis_bcgsc_ca_docs_latest_mavis_input.html.md)
+- [Help and Frequently Asked Questions](./references/github_com_bcgsc_mavis_wiki_Help-and-Frequently-Asked-Questions.md)
+- [MAVIS GitHub Repository](./references/github_com_bcgsc_mavis.md)

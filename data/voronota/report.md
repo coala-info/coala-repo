@@ -459,3 +459,6 @@ stdin   <-  any text containing atom descriptors
 stdout  ->  text with each atom descriptor expanded to 'chainID resSeq iCode serial altLoc resName name'
 ```
 
+
+## Metadata
+- **Skill**: generated

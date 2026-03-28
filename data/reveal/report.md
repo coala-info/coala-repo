@@ -403,3 +403,6 @@ optional arguments:
   -o OUTPREFIX  Prefix of the file to which merged graph is written.
 ```
 
+
+## Metadata
+- **Skill**: generated

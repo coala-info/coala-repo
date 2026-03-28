@@ -1,6 +1,6 @@
 ---
 name: naf
-description: The Nucleotide Archival Format (NAF) provides high-speed, high-ratio compression and decompression for biological sequence data using the ennaf and unnaf tools. Use when user asks to compress FASTA or FASTQ files, decompress NAF archives for downstream analysis, or manage multi-file genomic datasets.
+description: The Nucleotide Archival Format tool provides efficient, reference-free binary compression and decompression for FASTA and FASTQ biological sequences. Use when user asks to compress genomic data into NAF format, decompress NAF files, or perform partial extraction of sequences and headers.
 homepage: https://github.com/KirillKryukov/naf
 ---
 
@@ -8,63 +8,57 @@ homepage: https://github.com/KirillKryukov/naf
 # naf
 
 ## Overview
-The Nucleotide Archival Format (NAF) is a specialized binary format designed for the efficient storage of biological sequences. Built on the Zstandard (zstd) compression algorithm, it provides a superior alternative to standard gzip for genomic data by offering higher compression ratios and significantly faster decompression. This skill enables the use of the `ennaf` (encoder) and `unnaf` (decoder) command-line tools to manage sequence archives, handle multi-file datasets, and integrate NAF into bioinformatics pipelines via Unix pipes.
-
-## Installation
-The recommended method for installing NAF is via Bioconda:
-```bash
-conda install bioconda::naf
-```
+The Nucleotide Archival Format (NAF) is a specialized binary format designed for the efficient storage of biological sequences. It excels in scenarios where storage space is limited or rapid data access is required. Unlike many other genomic compressors, NAF is reference-free, meaning it does not require a specific genome assembly to function. It supports FASTA and FASTQ formats, preserves IUPAC ambiguity codes, maintains sequence masking (case sensitivity), and handles quality scores. The toolset consists of two primary utilities: `ennaf` for encoding and `unnaf` for decoding.
 
 ## Core CLI Usage
 
 ### Compression (ennaf)
-To compress a FASTA or FASTQ file into NAF format:
-```bash
-ennaf input.fa -o output.naf
-```
+The encoder converts FASTA/FASTQ files into `.naf` archives.
 
-**Expert Tips for ennaf:**
-- **Compression Level**: Use `-1` to `-22` to adjust the compression intensity (default is usually sufficient, but `-22` provides maximum space savings).
-- **Long Distance Matching**: Use the `--long` option for very large files or datasets with long-range repetitions to improve compression ratios.
-- **Text Mode**: Use `--text` if you are compressing non-sequence text data or want to treat the input as a generic stream.
-- **Piping**: `ennaf` can read from stdin, allowing integration with other tools:
-  ```bash
-  cat sequence.fa | ennaf -o sequence.naf
-  ```
+*   **Basic Compression:**
+    `ennaf input.fasta -o output.naf`
+*   **Set Compression Level:**
+    Use levels 1 (fastest) to 22 (most compact).
+    `ennaf -22 input.fastq -o output.naf`
+*   **Specify Sequence Type:**
+    Explicitly setting the type improves performance and validation.
+    `ennaf --dna input.fa -o output.naf`
+    `ennaf --rna input.fa -o output.naf`
+    `ennaf --protein input.fa -o output.naf`
+*   **Text Mode:**
+    Use for non-standard characters or general text sequences.
+    `ennaf --text input.txt -o output.naf`
 
 ### Decompression (unnaf)
-To decompress a NAF file back to its original format:
-```bash
-unnaf input.naf -o output.fa
-```
+The decoder restores NAF files to their original format.
 
-**Expert Tips for unnaf:**
-- **Streaming to Tools**: Decompress directly to stdout to pipe into aligners or other analysis tools without writing large intermediate files to disk:
-  ```bash
-  unnaf sequence.naf | bwa mem index -
-  ```
-- **Sequence Selection**: Use `--sequences` to extract specific sequences if the archive supports indexed access.
+*   **Basic Decompression:**
+    `unnaf input.naf -o output.fasta`
+*   **Partial Decompression:**
+    NAF allows decompressing only specific parts of the archive for increased speed.
+    `unnaf --sequence input.naf` (Extracts only the sequences)
+    `unnaf --names input.naf` (Extracts only the sequence headers)
 
-## Working with Multiple Files
-NAF natively handles single files. To archive multiple files (e.g., a directory of genomes), use the `mumu.pl` script (Multi-Multi-FASTA) as an intermediate step.
+## Expert Tips and Best Practices
 
-**Compressing a directory:**
-```bash
-mumu.pl --dir 'my_genomes/' '*' | ennaf --text -o genomes.nafnaf
-```
+*   **Prefer --dna/--rna over --text:** For nucleotide data, the `--dna` and `--rna` modes are significantly faster and more compact because they use a 4-bit representation before passing data to the Zstd engine.
+*   **Piping for Pipelines:** NAF tools support Unix pipes, allowing them to be integrated into bioinformatics workflows without writing intermediate files to disk.
+    `cat data.fa | ennaf --dna -o data.naf`
+    `unnaf data.naf | some_analysis_tool`
+*   **Handling Large Files:** For extremely large files, use the `--long` option with `ennaf` to enable Zstd's long-distance matching, which can further improve compression ratios on repetitive genomic data.
+*   **Multi-file Archives:** While NAF is typically a single-file format, you can archive multiple files by using the `mumu.pl` script (included in the NAF distribution) to create a Multi-Multi-FASTA intermediate. Use the `.nafnaf` extension for these archives.
+*   **Lossless Verification:** NAF is lossless by design. To verify integrity, you can compare the MD5 hash of the original FASTA/FASTQ with the output of `unnaf`.
 
-**Decompressing and unpacking:**
-```bash
-unnaf genomes.nafnaf | mumu.pl --unpack --dir 'extracted_genomes/'
-```
-*Note: Use the `.nafnaf` extension for multi-file archives to distinguish them from single-file `.naf` archives.*
 
-## Best Practices
-- **Lossless Compression**: NAF is lossless for sequence data and qualities. However, ensure you check if specific non-standard headers in your FASTA/FASTQ files need to be preserved, as NAF focuses on the biological data.
-- **Pipe Integration**: Always prefer piping `unnaf` output to the next tool in your pipeline rather than decompressing to disk, as NAF's primary advantage is its high-speed decompression which often exceeds disk I/O speeds.
-- **Memory Management**: For extremely large files, monitor memory usage when using high compression levels (e.g., `-22`) or the `--long` window.
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| ennaf | ennaf |
+| unnaf | Decompress NAF files |
 
 ## Reference documentation
+- [Nucleotide Archival Format (NAF) Overview](./references/kirill-kryukov_com_study_naf.md)
 - [NAF GitHub Repository](./references/github_com_KirillKryukov_naf.md)
-- [Bioconda NAF Package Overview](./references/anaconda_org_channels_bioconda_packages_naf_overview.md)
+- [Text vs DNA Mode Benchmark](./references/kirill-kryukov_com_study_naf_benchmark-text-vs-dna-Spur.html.md)

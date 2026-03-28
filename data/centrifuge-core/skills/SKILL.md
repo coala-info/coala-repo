@@ -1,6 +1,6 @@
 ---
 name: centrifuge-core
-description: Centrifuge-core is a metagenomic classifier that performs rapid taxonomic assignment of high-throughput sequencing reads using a memory-efficient indexing scheme. Use when user asks to build genomic indices, classify single-end or paired-end reads, download NCBI reference data, or generate taxonomic reports.
+description: Centrifuge is a high-performance microbial classification engine that performs rapid taxonomic labeling and abundance estimation for metagenomic DNA reads. Use when user asks to download reference genomes, build compressed taxonomic indexes, classify sequencing reads, or generate summary reports for microbial identification.
 homepage: https://github.com/infphilo/centrifuge
 ---
 
@@ -8,61 +8,77 @@ homepage: https://github.com/infphilo/centrifuge
 # centrifuge-core
 
 ## Overview
-Centrifuge is a specialized metagenomic classifier designed for speed and memory efficiency. It uses a novel indexing scheme based on the Burrows-Wheeler transform (BWT) and the Ferragina-Manzini (FM) index, allowing it to store massive genomic databases (like all complete bacterial and viral genomes) in a relatively small footprint. This skill provides guidance on building indices, classifying high-throughput sequencing reads, and converting raw results into human-readable taxonomic reports.
+
+Centrifuge is a high-performance microbial classification engine designed to process millions of DNA reads in minutes. It utilizes a memory-efficient indexing strategy based on the Burrows-Wheeler Transform (BWT) and Ferragina-Manzini (FM) index, specifically tuned for metagenomic data. This skill assists in navigating the end-to-end workflow of Centrifuge, from acquiring reference genomes and building compressed taxonomic indexes to performing sensitive read labeling and abundance estimation on standard desktop hardware.
 
 ## Core Workflows and CLI Patterns
 
-### 1. Index Generation
-Before classification, you must build an index from reference sequences.
+### 1. Database Preparation
+Centrifuge requires a taxonomic tree and a mapping of sequence IDs to taxonomy IDs.
 
-*   **Standard Build**:
+*   **Download Standard Databases**: Use `centrifuge-download` to fetch genomes from RefSeq or GenBank.
     ```bash
-    centrifuge-build -p <threads> --conversion-table <taxid_map> \
-                     --taxonomy-tree <nodes.dmp> --name-table <names.dmp> \
-                     input_sequences.fa <index_base>
+    # Download all complete archaeal, bacterial, and viral genomes
+    centrifuge-download -o taxonomy taxonomy
+    centrifuge-download -o library -m -d "archaea,bacteria,viral" refseq > seqid2taxid.map
     ```
-*   **Using Pre-configured Recipes**: The source repository includes a Makefile in the `indices/` directory for common targets:
-    *   `make p+h+v`: Builds an index for all complete bacterial, human, and viral genomes.
-    *   `make p_compressed`: Builds an index with bacterial genomes compressed at the species level to save space.
+*   **Required Taxonomy Files**: Ensure you have `nodes.dmp` (tree structure) and `names.dmp` (taxid to name mapping) from the NCBI taxonomy dump.
 
-### 2. Sequence Classification
-The primary `centrifuge` executable performs the alignment and classification.
+### 2. Building the Index
+The `centrifuge-build` command creates the FM-index used for classification.
 
-*   **Paired-end Reads**:
+*   **Basic Index Build**:
     ```bash
-    centrifuge -x <index_base> -1 <reads_1.fq> -2 <reads_2.fq> -S <output.results>
+    centrifuge-build -p 8 --conversion-table seqid2taxid.map \
+                     --taxonomy-tree taxonomy/nodes.dmp \
+                     --name-table taxonomy/names.dmp \
+                     input_sequences.fna index_basename
     ```
-*   **Single-end Reads**:
+*   **Expert Tip**: Building indexes for large datasets (like the BLAST `nt` database) requires significant RAM. Use the `-p` flag to parallelize the build process.
+
+### 3. Classification and Quantification
+The main `centrifuge` executable performs the alignment and classification.
+
+*   **Classifying Paired-End Reads**:
     ```bash
-    centrifuge -x <index_base> -U <reads.fq> -S <output.results>
+    centrifuge -x index_basename -1 reads_1.fq -2 reads_2.fq -S classification_results.tsv
     ```
-*   **Key Options**:
-    *   `-p <int>`: Number of threads to use.
-    *   `-k <int>`: Report up to `<int>` assignments per read (default is 1).
-    *   `--report-file <file>`: Output a summary report containing classification statistics.
+*   **Generating a Summary Report**: Use the `--report-file` option to get a summary of the classification.
+    ```bash
+    centrifuge -x index_basename -U single_reads.fq --report-file summary.tsv -S results.tsv
+    ```
 
-### 3. Taxonomic Reporting
-Raw output from `centrifuge` is often difficult to interpret. Use `centrifuge-kreport` to generate a Kraken-style report.
-
+### 4. Inspecting Indexes
+Use `centrifuge-inspect` to extract information or reference sequences from an existing index.
 ```bash
-centrifuge-kreport -x <index_base> <output.results> > <human_readable_report.txt>
+# List all sequence names in the index
+centrifuge-inspect --names index_basename
+
+# Extract the reference sequences
+centrifuge-inspect index_basename > reference_sequences.fa
 ```
 
-### 4. Data Acquisition
-Use the `centrifuge-download` script to fetch standard NCBI datasets.
+## Best Practices and Expert Tips
 
-```bash
-# Download bacterial genomes
-centrifuge-download -o taxonomy taxonomy
-centrifuge-download -o library -m -d "bacteria" refseq > seqid2taxid.map
-```
+*   **Memory Efficiency**: A complete index of all bacterial and viral genomes plus the human genome typically fits within 6 GB of RAM, making it suitable for desktop analysis.
+*   **64-bit Advantage**: Always prefer 64-bit builds of the binaries for large-scale metagenomic problems to avoid memory addressing limits.
+*   **SRA Integration**: If compiled with SRA support (`USE_SRA=1`), Centrifuge can directly access NCBI Sequence Read Archive data using the `-s` flag.
+*   **Path Configuration**: Ensure all executables (`centrifuge`, `centrifuge-build`, `centrifuge-class`, `centrifuge-download`, `centrifuge-inspect`) are in your `PATH` to allow the wrapper scripts to call the binary engines correctly.
+*   **Taxonomic Consistency**: Always use the `nodes.dmp` and `names.dmp` files that correspond to the version of the genomes used during the index build to prevent taxonomic ID mismatches.
 
-## Expert Tips and Best Practices
-*   **Memory Management**: A complete bacterial, viral, and human index typically requires ~4.7 GB of RAM. If working on a machine with limited resources, use the "compressed" index versions which group sequences at the species level.
-*   **Input Formats**: Centrifuge supports FASTA and FASTQ files. It can also handle compressed files (e.g., `.gz`) if specified or piped.
-*   **Sensitivity vs. Speed**: Centrifuge is optimized for classification. For very short reads or highly divergent species, ensure your index includes a broad enough taxonomic representation to avoid false negatives.
-*   **Filtering**: Use the provided utility scripts like `centrifuge-RemoveN.pl` to clean input sequences before building an index to improve index quality and reduce size.
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| centrifuge | Centrifuge version 1.0.4 by the Centrifuge developer team (centrifuge.metagenomics@gmail.com) |
+| centrifuge-RemoveN.pl | Removes Ns from sequences in a FASTA file. |
+| centrifuge-build | Builds a Centrifuge index from reference sequences. |
+| centrifuge-download | Download sequence databases for Centrifuge. |
+| centrifuge-kreport | centrifuge-kreport creates Kraken-style reports from centrifuge out files. |
 
 ## Reference documentation
-- [Centrifuge GitHub Repository](./references/github_com_infphilo_centrifuge.md)
-- [Bioconda Centrifuge-core Overview](./references/anaconda_org_channels_bioconda_packages_centrifuge-core_overview.md)
+- [Centrifuge Manual](./references/github_com_infphilo_centrifuge_blob_master_MANUAL.markdown.md)
+- [Centrifuge README](./references/github_com_infphilo_centrifuge_blob_master_README.md)
+- [Centrifuge Tutorial](./references/github_com_infphilo_centrifuge_blob_master_TUTORIAL.md)

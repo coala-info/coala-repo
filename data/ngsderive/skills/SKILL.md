@@ -1,6 +1,6 @@
 ---
 name: ngsderive
-description: ngsderive infers experimental parameters and technical attributes from sequencing files by analyzing raw data. Use when user asks to infer sequencing instrument, determine RNA-Seq strandedness, compute read length distributions, identify PHRED quality encoding, or annotate splice junctions.
+description: ngsderive is a forensic tool used to infer missing or unverified metadata and library parameters from next-generation sequencing data. Use when user asks to infer RNA-seq strandedness, identify Illumina instruments, determine PHRED quality encoding, annotate splice junctions, or estimate read length and endedness.
 homepage: https://github.com/claymcleod/ngsderive
 ---
 
@@ -9,40 +9,61 @@ homepage: https://github.com/claymcleod/ngsderive
 
 ## Overview
 
-`ngsderive` is a specialized bioinformatics utility designed for "backwards" derivation of experimental parameters from sequencing files. It is particularly useful for forensic analysis of legacy datasets, verifying metadata consistency, or filling in missing information in NGS pipelines. The tool analyzes the raw data (BAM, SAM, or FASTQ) to provide "best guess" estimates for technical attributes that are often not explicitly labeled in the data files themselves.
+ngsderive is a specialized forensic tool used to "back-compute" missing or unverified metadata from NGS data. It is particularly valuable when working with public datasets or legacy files where the original experimental protocol is unknown. By analyzing the internal patterns of sequencing reads and alignments, it provides "best guess" estimations for library preparation and sequencing parameters, as well as concrete annotations for splice junctions.
 
-## Tool Usage and Subcommands
+## Core Workflows
 
-The tool follows a standard subcommand-based CLI structure: `ngsderive <subcommand> [options] <input_file>`.
+### Inferring RNA-Seq Strandedness
+Use this to determine if a library is Stranded-Forward, Stranded-Reverse, or Unstranded.
+- **Command**: `ngsderive strandedness <bam_file>`
+- **Best Practice**: If the results are ambiguous, increase the number of genes sampled using `-g` or `--n-genes` (default is 1000).
+- **Note**: In version 4.0.0+, `--split-by-rg` is enabled by default, providing an "overall" summary and per-read-group breakdowns.
 
-### Core Subcommands
+### Identifying Illumina Instruments
+Infers the specific Illumina model used based on read name and flowcell naming conventions.
+- **Command**: `ngsderive instrument <bam_or_fastq>`
+- **Expert Tip**: This command provides a confidence score. If the read names have been renamed or stripped of original Illumina headers, the tool may fail or provide low-confidence guesses.
 
-*   **`instrument`**: Infers the Illumina instrument used by matching read headers and flowcell naming patterns against a known database. It provides a confidence score for each guess.
-*   **`strandedness`**: Analyzes RNA-Seq data to determine if the library protocol was Stranded-Forward, Stranded-Reverse, or Unstranded.
-*   **`read-length`**: Computes the distribution of read lengths and attempts to identify the original (pre-trimmed) read length of the experiment.
-*   **`encoding`**: Identifies the PHRED quality score encoding scheme (e.g., Sanger/Illumina 1.8+ vs. older Illumina formats) used to store ASCII quality characters.
-*   **`junction-annotation`**: The most deterministic tool in the suite. It compares splice junctions found in the data against a reference gene model to classify them as known, novel, or partially novel.
+### Determining PHRED Encoding
+Identifies whether quality scores are encoded in Sanger (ASCII+33) or older Illumina/Solexa formats.
+- **Command**: `ngsderive encoding <bam_or_fastq>`
+- **Parameter**: Use `-n` or `--n-reads` to specify how many reads to sample (default is all reads in the file).
 
-### Installation
+### Splice Junction Annotation
+Categorizes junctions as known, novel, or partially novel against a reference gene model.
+- **Command**: `ngsderive junction-annotation --gene-model <reference.gtf> <bam_file>`
+- **Best Practice**: By default, unannotated contigs are discarded. Use the appropriate flags if you wish to include them in the summary as "novel."
 
-The tool can be installed via Python Package Index or Bioconda:
+### Estimating Read Length and Endedness
+- **Read Length**: `ngsderive readlen <bam_or_fastq>` computes the distribution and guesses the original pre-trimmed length.
+- **Endedness**: `ngsderive endedness <bam_file>` determines if the data is single-end or paired-end.
 
-```bash
-# Via pip
-pip install ngsderive
+## Expert Tips and Best Practices
 
-# Via conda
-conda install -c bioconda ngsderive
-```
+- **Output Format**: All results are returned as TSV (Tab-Separated Values). Since version 4.0.0, all headers use **PascalCase** (e.g., `ReadGroup`, `PredictedStrandedness`).
+- **Read Group Awareness**: Always check for discrepancies between the BAM header read groups and the sequences actually found in the file. `ngsderive` logs errors if discrepancies are found.
+- **Sampling vs. Full Scan**: For large files, commands like `encoding` and `strandedness` allow for sampling (`--n-reads` or `--n-genes`) to speed up execution without significantly sacrificing accuracy.
+- **Forensic Nature**: Remember that most subcommands (except `junction-annotation`) provide a "best guess." Always validate these results against known experimental records when possible.
 
-## Best Practices and Expert Tips
 
-*   **Interpretive Caution**: Most `ngsderive` outputs (except for junction annotation) are probabilistic "best guesses." Always review the confidence scores provided in the output before making downstream pipeline decisions.
-*   **Reference Requirements**: For `junction-annotation`, ensure you provide a high-quality reference gene model (GTF/GFF) that matches the organism and assembly version of your input data.
-*   **Forensic Verification**: Use `ngsderive` as a validation step in automated workflows to ensure that the claimed metadata (e.g., "this is a stranded-reverse library") matches the actual evidence in the sequencing files.
-*   **Development and Testing**: If modifying the tool or running custom checks, the project uses `poetry` for environment management and `pytest` for testing.
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| ngsderive encoding | Encodes sequencing files. |
+| ngsderive endedness | Derive the endedness of Next-Generation Sequencing files. |
+| ngsderive instrument | Process Next-generation sequencing files (BAM or FASTQ) to derive instrument information. |
+| ngsderive junction-annotation | Annotate junctions from NGS files based on a gene model. |
+| ngsderive readlen | Derives read length distribution from sequencing files. |
+| ngsderive strandedness | Derive strandedness from NGS files. |
 
 ## Reference documentation
 
-- [ngsderive GitHub Repository](./references/github_com_stjudecloud_ngsderive.md)
-- [ngsderive Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_ngsderive_overview.md)
+- [ngsderive README](./references/github_com_stjudecloud_ngsderive_blob_master_README.md)
+- [Strandedness Subcommand](./references/stjudecloud_github_io_ngsderive_subcommands_strandedness.md)
+- [Instrument Subcommand](./references/stjudecloud_github_io_ngsderive_subcommands_instrument.md)
+- [Junction Annotation Subcommand](./references/stjudecloud_github_io_ngsderive_subcommands_junction_annotation.md)
+- [Encoding Subcommand](./references/stjudecloud_github_io_ngsderive_subcommands_encoding.md)
+- [Read Length Subcommand](./references/stjudecloud_github_io_ngsderive_subcommands_readlen.md)
+- [Changelog and Version 4.0.0 Changes](./references/github_com_stjudecloud_ngsderive_blob_master_CHANGELOG.md)

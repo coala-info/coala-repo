@@ -1,6 +1,6 @@
 ---
 name: merlin
-description: Merlin performs genetic analysis on pedigree data to calculate linkage and association statistics. Use when user asks to calculate LOD scores, identify genotyping errors, estimate IBD states, perform haplotyping, or conduct variance component analysis.
+description: Merlin performs multipoint linkage analysis, error detection, and haplotyping for dense genetic maps in pedigrees. Use when user asks to perform non-parametric or parametric linkage analysis, estimate identity-by-descent sharing, detect genotype errors, or generate most likely haplotypes.
 homepage: http://csg.sph.umich.edu/abecasis/merlin
 ---
 
@@ -8,40 +8,112 @@ homepage: http://csg.sph.umich.edu/abecasis/merlin
 # merlin
 
 ## Overview
-The `merlin` skill provides a specialized workflow for analyzing genetic data within pedigrees. It excels at handling dense marker maps by using sparse inheritance trees to represent gene flow efficiently. You should use this skill to perform complex genetic computations including LOD score calculation (parametric and non-parametric), identifying genotyping errors, estimating kinship and Identity By Descent (IBD) states, and performing association analysis. It also includes `minx` for X-linked analysis and `merlin-regress` for population-based regression of quantitative traits.
+Merlin (Multipoint Engine for Rapid Likelihood INference) is a high-performance software package designed for the analysis of dense genetic maps in pedigrees. It uses sparse gene flow trees to represent inheritance patterns efficiently, making it suitable for large-scale genomic studies. This skill provides guidance on executing core Merlin workflows, managing input files, and interpreting statistical outputs for both discrete and quantitative traits.
 
-## Core CLI Usage
-The standard execution pattern requires three primary input files: a data file (`-d`), a pedigree file (`-p`), and a map file (`-m`).
+## Core Workflow and Input Files
+Merlin requires three primary input files to run. Ensure these are formatted correctly before execution:
+- **Pedigree File (`.ped`)**: Contains family structure, individual IDs, parental information, sex, and phenotypes/genotypes.
+- **Data File (`.dat`)**: Describes the contents of the pedigree file (e.g., `M` for marker, `T` for trait, `C` for covariate).
+- **Map File (`.map`)**: Specifies the chromosome, marker name, and genetic position (in centiMorgans).
 
+### Basic Execution
 ```bash
 merlin -d [datafile] -p [pedfile] -m [mapfile] [options]
 ```
 
-### Common Analysis Commands
-- **Non-Parametric Analysis**: Use `--npl` for discrete traits or `--qtl` for quantitative traits.
-- **Variance Components**: Use `--vc` to estimate heritability and linkage for normally distributed quantitative traits.
-- **Haplotyping**: Use `--best` to estimate the most likely haplotype configuration or `--all` to sample all possible configurations.
-- **IBD Estimation**: Use `--ibd` to generate files containing estimated IBD sharing between all pairs of individuals.
-- **Error Detection**: Use `--error` to identify unlikely genotypes that may represent laboratory errors or mutations.
-- **Simulation**: Use `--simulate` to generate random marker data through gene dropping based on the provided pedigree and map.
+## Common Analysis Patterns
 
-## Input File Management
-- **Data File (.dat)**: Describes the contents of the pedigree file. Use `M` for markers, `T` for traits, `C` for covariates, and `S` to skip a column.
-- **Pedigree File (.ped)**: Contains family structure and genotypes. Format: FamilyID, IndividualID, PaternalID, MaternalID, Sex, Phenotypes, Genotypes.
-- **Map File (.map)**: Contains marker locations. Format: Chromosome, MarkerName, Position (in centiMorgans).
+### Linkage Analysis
+- **Non-Parametric (NPL)**: Use `--npl` for discrete traits to identify allele sharing among affected individuals.
+- **Quantitative Traits**: 
+  - `--vc`: Variance components analysis for unselected, normally distributed traits.
+  - `--qtl` or `--deviates`: Non-parametric sharing analysis for traits in the tails of the distribution.
+- **Parametric**: Use `--parametric` to specify a specific inheritance model (requires a model file).
+
+### Data Quality and Error Detection
+- **Error Checking**: Use `--error` to identify unlikely genotypes or "impossible" recombination patterns.
+- **IBD Estimation**: Use `--ibd` to estimate Identity-By-Descent sharing between relative pairs.
+- **Haplotyping**: Use `--best` to generate the most likely haplotype configuration for each individual.
+
+### Simulation
+- **Gene Dropping**: Use `--simulate` to generate random marker data under the null hypothesis of no linkage, useful for determining empirical p-values.
 
 ## Expert Tips and Best Practices
-- **Handling Zero Likelihood**: If you see "SKIPPED: Requires impossible recombination pattern," check for markers at the exact same map position. Ensure every marker has a unique position in the `.map` file.
-- **X-Chromosome Analysis**: Use the `minx` executable instead of `merlin` for any analysis involving the X chromosome.
-- **Output Redirection**: For large analyses, use the `--quiet` flag and redirect output to a file: `merlin -d dat -p ped -m map --quiet > results.out`.
-- **Quantitative Traits**: 
-    - For unselected, normal distributions: Use `--vc`.
-    - For selected samples (e.g., only extreme tails): Use `merlin-regress`.
-    - For non-normal distributions: Use `--qtl` or `--deviates` (non-parametric).
-- **Memory Management**: If pedigrees are too large, use the `--bits: [n]` option to limit the complexity of the inheritance tree, though this may result in approximate rather than exact solutions.
-- **Filtering Data**: You can disable markers or traits without editing the `.ped` file by changing the label in the `.dat` file to `S` (Skip).
+- **Handling Large Pedigrees**: If a pedigree is too large for exact analysis, Merlin will provide an approximation. Use the `--bits:n` option to increase the complexity limit if memory allows.
+- **Skipping Markers/Traits**: Instead of regenerating files, edit the `.dat` file. Change `M` to `S2` to skip a marker, or `T`/`C` to `S` to skip a trait or covariate.
+- **Output Management**: Use `> filename` to redirect output to a file. Add `--quiet` to suppress screen output for faster processing during large runs.
+- **X-Chromosome**: For X-linked analysis, use the `minx` (Merlin in X) executable instead of the standard `merlin` command.
+- **Map Positions**: Ensure every marker has a unique map position. Identical positions for markers with obligate recombinants will trigger "Requires impossible recombination pattern" errors.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
+| merlin | MERLIN 1.1.2 - (c) 2000-2007 Goncalo Abecasis |
 
 ## Reference documentation
-- [MERLIN Frequently Asked Questions](./references/csg_sph_umich_edu_abecasis_merlin_FAQ.html.md)
-- [MERLIN Tutorial and Input Formats](./references/csg_sph_umich_edu_abecasis_merlin_tour.md)
-- [MERLIN Reference Guide](./references/csg_sph_umich_edu_abecasis_merlin_reference.md)
+- [Merlin FAQ](./references/csg_sph_umich_edu_abecasis_merlin_FAQ.html.md)
+- [Merlin Tutorial](./references/csg_sph_umich_edu_abecasis_merlin_tour.md)
+- [Merlin Reference Topics](./references/csg_sph_umich_edu_abecasis_merlin_reference.md)

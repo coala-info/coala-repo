@@ -66,27 +66,17 @@ Share This
 
 ×
 
-[Problems Downloading?](/settings/mirror_choices?projectname=bbmap&filename=BBMap_39.80.tar.gz&selected=pilotfiber)
+[Problems Downloading?](/settings/mirror_choices?projectname=bbmap&filename=BBMap_39.80.tar.gz&selected=gigenet)
 
 BBMap\_39.80.tar.gz
 
 Mirror Provided by
 
-[![Pilotfiber](https://a.fsdn.com/mirrorimages/pilotfiber-xlarge.png)](https://www.pilotfiber.com/ "Pilotfiber")
+[![Gigenet](https://a.fsdn.com/mirrorimages/gigenet-xlarge.png)](https://gigenet.com/ "Gigenet")
 
-[Learn more about Pilotfiber](https://www.pilotfiber.com/ "Pilotfiber")
+[Learn more about Gigenet](https://gigenet.com/ "Gigenet")
 
 Other Useful Business Software
-
-![AI-generated apps that pass security review Icon](//a.fsdn.com/con/app/nel_img/20387)
-
-AI-generated apps that pass security review
-
-Stop waiting on engineering. Build production-ready internal tools with AI—on your company data, in your cloud.
-
-Retool lets you generate dashboards, admin panels, and workflows directly on your data. Type something like “Build me a revenue dashboard on my Stripe data” and get a working app with security, permissions, and compliance built in from day one. Whether on our cloud or self-hosted, create the internal software your team needs without compromising enterprise standards or control.
-
-Try Retool free
 
 ![Gemini 3 and 200+ AI Models on One Platform Icon](//a.fsdn.com/con/app/nel_img/20491)
 
@@ -98,7 +88,7 @@ Build generative AI apps with Vertex AI. Switch between models without switching
 
 Start Free
 
-![Try Google Cloud Risk-Free With $300 in Credit Icon](//a.fsdn.com/con/app/nel_img/20542)
+![Try Google Cloud Risk-Free With $300 in Credit Icon](//a.fsdn.com/con/app/nel_img/20647)
 
 Try Google Cloud Risk-Free With $300 in Credit
 
@@ -107,16 +97,6 @@ No hidden charges. No surprise bills. Cancel anytime.
 Use your credit across every product. Compute, storage, AI, analytics. When it runs out, 20+ products stay free. You only pay when you choose to.
 
 Start Free
-
-![Catch Bugs Before Your Customers Do Icon](//a.fsdn.com/con/app/nel_img/20465)
-
-Catch Bugs Before Your Customers Do
-
-Real-time error alerts, performance insights, and anomaly detection across your full stack. Free 30-day trial.
-
-Move from alert to fix before users notice. AppSignal monitors errors, performance bottlenecks, host health, and uptime—all from one dashboard. Instant notifications on deployments, anomaly triggers for memory spikes or error surges, and seamless log management. Works out of the box with Rails, Django, Express, Phoenix, Next.js, and dozens more. Starts at $23/month with no hidden fees.
-
-Try AppSignal Free
 
 ![MongoDB Atlas runs apps anywhere Icon](//a.fsdn.com/con/app/nel_img/20452)
 
@@ -127,6 +107,26 @@ Deploy in 115+ regions with the modern database for every enterprise.
 MongoDB Atlas gives you the freedom to build and run modern applications anywhere—across AWS, Azure, and Google Cloud. With global availability in over 115 regions, Atlas lets you deploy close to your users, meet compliance needs, and scale with confidence across any geography.
 
 Start Free
+
+![Application Monitoring That Won't Slow Your App Down Icon](//a.fsdn.com/con/app/nel_img/20640)
+
+Application Monitoring That Won't Slow Your App Down
+
+AppSignal's Rust-based agent is lightweight and stable. Already running in thousands of production apps.
+
+Full APM with errors, performance, logs, and uptime monitoring. 99.999% uptime SLA on the platform itself.
+
+Start Free
+
+![Forever Free Full-Stack Observability | Grafana Cloud Icon](//a.fsdn.com/con/app/nel_img/20613)
+
+Forever Free Full-Stack Observability | Grafana Cloud
+
+Our generous forever free tier includes the full platform, including the AI Assistant, for 3 users with 10k metrics, 50GB logs, and 50GB traces.
+
+Built on open standards like Prometheus and OpenTelemetry, Grafana Cloud includes Kubernetes Monitoring, Application Observability, Incident Response, plus the AI-powered Grafana Assistant. Get started with our generous free tier today.
+
+Create free account
 
 ### BBMap Overview
 
@@ -174,7 +174,7 @@ Console/Terminal
 
 ### Last Updated
 
-4 days ago
+2026-03-10
 
 ### Categories
 
@@ -186,31 +186,22 @@ Console/Terminal
 
 Recommended Projects
 
-* [**CUSHAW3: Accurate Short-read Alignment**](/projects/cushaw3/ "Find out more about CUSHAW3: Accurate Short-read Alignment")
-  [CUSHAW3 is an open-source parallelized, sensitive and accurate short-read aligner. This aligner proposes a general approach to properly aligning both easy and hard reads to large genomes such as the human genome. Perform evaluation on alignment quality reals that CUSHAW3 consistently outperforms CUSHAW2, BWA-MEM, Bowtie2 and GEM in terms of single-end and paired-end alignment. Furthermore, our aligner has demonstrated better paired-end alignment performance than Novalign3 for short-reads with high error rates.](/projects/cushaw3/ "Find out more about CUSHAW3: Accurate Short-read Alignment")
+* [**Phusion2**](/projects/phusion2/ "Find out more about Phusion2")
+  [Phusion2 is a pipeline for de novo genome assembly using NGS data. It is based upon a strategy called read clustering. Starting with kmer frequency analysis, this allows for a reasonable selection of the kmer sizes. K-tuples from raw reads are merged and sorted into a table so that multiple occurring kmer words shared by different reads can be linked.  A relation matrix is used to record the shared kmer words among all the reads. Setting a minimum threshold of shared k-tuples, the whole set of reads can then be clustered into groups using kmer sharing information in the relational matrix. After obtaining small read clusters with a controllable size, a local assembler can be used to produce contigs.](/projects/phusion2/ "Find out more about Phusion2")
 
   ****Downloads:**
   1 This Week**
   ****Last Update:**
-  2016-05-13**
+  2019-04-02**
 
-  [See Project](/projects/cushaw3/ "Find out more about CUSHAW3: Accurate Short-read Alignment")
-* [**JFASTA**](/projects/jfasta/ "Find out more about JFASTA")
-  [JFASTA is a lightweight framework for handling FASTA files. It supports reading, writing and parsing of single- or multi-FASTA files. Files may be read/ written at once, or stream-based (memory efficient). It's stable, very intuitive and good integrated with Java 1.5 SDK and later.](/projects/jfasta/ "Find out more about JFASTA")
-
-  ****Downloads:**
-  4 This Week**
-  ****Last Update:**
-  2016-03-19**
-
-  [See Project](/projects/jfasta/ "Find out more about JFASTA")
+  [See Project](/projects/phusion2/ "Find out more about Phusion2")
 * [**Bowtie**](/projects/bowtie-bio/ "Find out more about Bowtie")
   [Bowtie, an ultrafast, memory-efficient short read aligner for short DNA sequences (reads) from next-gen sequencers. Please cite: Langmead B, et al. Ultrafast and memory-efficient alignment of short DNA sequences to the human genome. Genome Biol 10:R25.](/projects/bowtie-bio/ "Find out more about Bowtie")
 
   [27 Reviews](/projects/bowtie-bio/reviews/ "Bowtie Reviews")
 
   ****Downloads:**
-  460 This Week**
+  1,102 This Week**
   ****Last Update:**
   2026-03-07**
 
@@ -220,31 +211,50 @@ Recommended Projects
   Subread aligner can be used to align both gDNA-seq and RNA-seq reads. Subjunc aligner was specified designed for the detection of exon-exon junction. For the mapping of RNA-seq reads, Subread performs local alignments and Subjunc performs global alignments. Subread and Subjunc were published in the following paper: Yang Liao, Gordon K Smyth and Wei Shi. "The Subread aligner: fast, accurate and scalable read mapping by seed-and-vote", Nucleic Acids Research, 2013, 41(10):e108](/projects/subread/ "Find out more about Subread")
 
   ****Downloads:**
-  320 This Week**
+  4,442 This Week**
   ****Last Update:**
   2025-04-27**
 
   [See Project](/projects/subread/ "Find out more about Subread")
-* [**lemonade\_assemble**](/projects/lemonade-assemble/ "Find out more about lemonade_assemble")
-  [Assorted tools for:
-  1. Assembly of pooled BACs from PacBIO reads.
-  2. Polymorphic genome assembly
-  3. Processing of Trinity transcriptomes
-  4. Modified versions of other people's code used in any of the above.
-  5. Fasta processing and miscellaneous programs and scripts.
-  Documentation is rudimentary or nonexistant.](/projects/lemonade-assemble/ "Find out more about lemonade_assemble")
+* ![KimBlast](//a.fsdn.com/allura/p/lp-csic-uab/kimblast3/icon?1594670852 "KimBlast")
+
+  [**KimBlast**](/projects/kimblast3.lp-csic-uab.p/ "Find out more about KimBlast")
+  [KimBlast GUI formats and indexes Fasta databases for Blast, performs Blast searches and analyzes results. Python 3.x version.
+  For more information, you can have a look at the README.md file in the source code tree:
+  https://sourceforge.net/p/lp-csic-uab/kimblast3/code/ci/default/tree/README.md](/projects/kimblast3.lp-csic-uab.p/ "Find out more about KimBlast")
+
+  ****Downloads:**
+  2 This Week**
+  ****Last Update:**
+  2021-10-25**
+
+  [See Project](/projects/kimblast3.lp-csic-uab.p/ "Find out more about KimBlast")
+* [**GapFiller**](/projects/gapfiller/ "Find out more about GapFiller")
+  [GapFiller is a seed-and-extend local assembler to fill the gap within paired reads.
+  It can be used for both DNA and RNA and it has been tested on Illumina data.
+  GapFiller can be used whenever a sequence is to be assembled starting from reads lying on its ends, provided a loose estimate of sequence length.](/projects/gapfiller/ "Find out more about GapFiller")
 
   ****Downloads:**
   1 This Week**
   ****Last Update:**
-  2019-04-10**
+  2020-08-18**
 
-  [See Project](/projects/lemonade-assemble/ "Find out more about lemonade_assemble")
+  [See Project](/projects/gapfiller/ "Find out more about GapFiller")
 
 ---
 
 Top 3 Projects in Bio-Informatics
 
+* [**Subread**](/projects/subread/ "Find out more about Subread")
+  [The Subread software package is a tool kit for processing next-gen sequencing data. It includes Subread aligner, Subjunc exon-exon junction detector and featureCounts read summarization program.
+  Subread aligner can be used to align both gDNA-seq and RNA-seq reads. Subjunc aligner was specified designed for the detection of exon-exon junction. For the mapping of RNA-seq reads, Subread performs local alignments and Subjunc performs global alignments. Subread and Subjunc were published in the following paper: Yang Liao, Gordon K Smyth and Wei Shi. "The Subread aligner: fast, accurate and scalable read mapping by seed-and-vote", Nucleic Acids Research, 2013, 41(10):e108](/projects/subread/ "Find out more about Subread")
+
+  ****Downloads:**
+  4,442 This Week**
+  ****Last Update:**
+  2025-04-27**
+
+  [See Project](/projects/subread/ "Find out more about Subread")
 * ![PyRx - Virtual Screening Tool](//a.fsdn.com/allura/p/pyrx/icon?1744293382?&w=48 "PyRx - Virtual Screening Tool")
 
   [**PyRx - Virtual Screening Tool**](/projects/pyrx/ "Find out more about PyRx - Virtual Screening Tool")
@@ -253,7 +263,7 @@ Top 3 Projects in Bio-Informatics
   [3 Reviews](/projects/pyrx/reviews/ "PyRx - Virtual Screening Tool Reviews")
 
   ****Downloads:**
-  2,489 This Week**
+  1,865 This Week**
   ****Last Update:**
   2025-06-21**
 
@@ -266,24 +276,11 @@ Top 3 Projects in Bio-Informatics
   [13 Reviews](/projects/gwyddion/reviews/ "Gwyddion Reviews")
 
   ****Downloads:**
-  2,133 This Week**
+  1,647 This Week**
   ****Last Update:**
-  1 day ago**
+  1 hour ago**
 
   [See Project](/projects/gwyddion/ "Find out more about Gwyddion")
-* ![Jmol](//a.fsdn.com/allura/p/jmol/icon?1738323154?&w=48 "Jmol")
-
-  [**Jmol**](/projects/jmol/ "Find out more about Jmol")
-  [Over 1,000,000 page views per month. Jmol/JSmol is a molecular viewer for 3D chemical structures that runs in four independent modes: an HTML5-only web application utilizing jQuery, a Java applet, a stand-alone Java program (Jmol.jar), and a "headless" server-side component (JmolData.jar). Jmol can read many file types, including PDB, CIF, SDF, MOL, PyMOL PSE files, and Spartan files, as well as output from Gaussian, GAMESS, MOPAC, VASP, CRYSTAL, CASTEP, QuantumEspresso, VMD, and many other quantum chemistry programs. Files can be transferred directly from several databases, including RCSB, EDS, NCI, PubChem, and MaterialsProject. Multiple files can be loaded and compared. A rich scripting language and a well-developed web API allow easy customization of the user interface. Features include interactive animation and linear morphing. Jmol interfaces well with JSpecView for spectroscopy, JSME for 2D->3D conversion, POV-Ray for images, and CAD programs for 3D printing (VRML export).](/projects/jmol/ "Find out more about Jmol")
-
-  [36 Reviews](/projects/jmol/reviews/ "Jmol Reviews")
-
-  ****Downloads:**
-  798 This Week**
-  ****Last Update:**
-  2 days ago**
-
-  [See Project](/projects/jmol/ "Find out more about Jmol")
 
 ### Keep Me Updated!
 
@@ -451,4 +448,54 @@ Netherlands
 Netherlands Antilles
 New Caledonia
 New Zealand
-Nica
+Nicaragua
+Niger
+Nigeria
+Niue
+Norfolk Island
+Northern Mariana Islands
+Norway
+Oman
+Pakistan
+Palau
+Palestinian Territory
+Panama
+Papua New Guinea
+Paraguay
+Peru
+Philippines
+Pitcairn Islands
+Poland
+Portugal
+Puerto Rico
+Qatar
+Reunion
+Romania
+Russian Federation
+Rwanda
+Saint Barthelemy
+Saint Helena
+Saint Kitts and Nevis
+Saint Lucia
+Saint Martin
+Saint Pierre and Miquelon
+Saint Vincent and the Grenadines
+Samoa
+San Marino
+Sao Tome and Principe
+Saudi Arabia
+Senegal
+Serbia
+Seychelles
+Sierra Leone
+Singapore
+Sint Maarten
+Slovakia
+Slovenia
+Solomon Islands
+Somalia
+South Africa
+South Georgia and the South Sandwich Islands
+South Sudan
+Spain
+Sri 

@@ -143,3 +143,6 @@ output arguments:
   --verbose, -v         Print additional information to standard error
 ```
 
+
+## Metadata
+- **Skill**: generated

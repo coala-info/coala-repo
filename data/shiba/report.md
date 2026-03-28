@@ -87,3 +87,6 @@ options:
   -v, --verbose         Verbose mode
 ```
 
+
+## Metadata
+- **Skill**: generated

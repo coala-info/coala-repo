@@ -51,3 +51,6 @@ Converts fragment files to alignment files.
    usage:  /usr/local/bin/frags2align.sh fragsFILE.frags/.csv fastaX fastaY alignments.txt
 ```
 
+
+## Metadata
+- **Skill**: generated

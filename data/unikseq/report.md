@@ -54,3 +54,6 @@ Usage: /usr/local/bin/writeBloom.pl
 -k  k-mer value (default -k 25, optional)
 ```
 
+
+## Metadata
+- **Skill**: generated

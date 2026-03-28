@@ -1,1 +1,402 @@
-Forks · jakevdp/PythonDataScienceHandbook · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} jakevdp / PythonDataScienceHandbook Public Notifications You must be signed in to change notification settings Fork 18.7k Star 46.7k Code Issues 128 Pull requests 102 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights Insights: jakevdp/PythonDataScienceHandbook Pulse Contributors Community standards Commits Code frequency Dependency graph Network Forks Switch to tree view Forks Period: 2 years Filter by period 1 month 6 months 1 year 2 years 5 years Nothing to show Any repository that has not been created or updated during this period will be excluded. Repository type: Active Filter by repository type Active Repositories with push activity Inactive Repositories with no push activity Network Forks of other forks Archived Archived repositories Starred Repositories with at least 1 star Nothing to show Sort: Most starred Sort by Most starred Recently updated Open issues Open pull requests Nothing to show mo-karbalaee / PythonDataScienceHandbook 5 0 0 0 Created October 22, 2022 17:11 Updated October 23, 2025 09:06 wizardforcel / PythonDataScienceHandbook 5 0 0 0 Created September 14, 2024 05:50 Updated September 14, 2024 05:53 halilkkaya / PythonDataScienceHandbook 4 0 0 0 Created July 25, 2024 01:58 Updated July 25, 2024 01:59 NazarPolishchuk7 / PythonDataScienceHandbook 2 0 0 0 Created March 9, 2023 14:35 Updated September 27, 2024 06:41 trenton3983 / PythonDataScienceHandbook 2 0 0 0 Created May 2, 2018 04:21 Updated April 1, 2025 17:42 VeryFatBoy / PythonDataScienceHandbook 2 0 0 0 Created December 10, 2016 03:24 Updated October 18, 2024 06:02 Stekosan / PythonDataScienceHandbook 1 0 0 0 Created March 14, 2024 18:20 Updated April 19, 2024 01:13 bjoernbuth / PythonDataScienceHandbook 1 0 0 0 Created October 17, 2022 20:46 Updated March 27, 2025 13:56 nitya / PythonDataScienceHandbook 1 0 0 0 Created March 24, 2024 14:44 Updated March 25, 2024 04:35 bertramwooster / PythonDataScienceHandbook 1 0 0 0 Created September 25, 2025 18:00 Updated February 1, 2026 11:33 narenp12 / PythonDataScienceHandbook 1 0 0 0 Created January 10, 2025 20:54 Updated January 15, 2025 08:27 somnath113 / PythonDataScienceHandbook 1 0 0 0 Created March 23, 2020 04:52 Updated March 26, 2025 14:41 MrMoonKr / python-data-science-handbook-2nd 1 0 0 0 Created September 11, 2025 07:03 Updated November 27, 2025 10:28 rafilla85-code / PythonDataScienceHandbook 1 0 0 0 Created January 16, 2026 12:22 Updated February 5, 2026 08:02 amit1rrr / PythonDataScienceHandbook 1 0 0 50 Created July 14, 2018 11:48 Updated January 19, 2026 10:34 just4jc / PythonDataScienceHandbook 1 0 0 47 Created April 24, 2018 07:20 Updated February 3, 2026 14:12 doubravap / PythonDataScienceHandbook 1 0 0 0 Created April 11, 2019 07:00 Updated October 2, 2024 17:48 fengwanwan / PythonDataScienceHandbook 1 0 0 0 Created August 30, 2018 04:43 Updated March 2, 2024 03:42 aakinlalu / PythonDataScienceHandbook 1 0 0 1 Created July 30, 2017 09:17 Updated April 3, 2024 15:28 duyet / PythonDataScienceHandbook 1 0 0 1 Created March 5, 2019 07:20 Updated June 4, 2024 20:32 rwcitek / PythonDataScienceHandbook 1 0 0 0 Created June 13, 2025 04:21 Updated July 30, 2025 18:09 y1ngyang / PythonDataScienceHandbook 1 0 0 74 Created February 21, 2018 05:09 Updated February 2, 2026 08:50 rochanaro / PythonDataScienceHandbook 1 0 0 0 Created July 3, 2021 21:03 Updated June 17, 2025 21:30 yaoqi / PythonDataScienceHandbook 1 0 0 0 Created March 14, 2019 00:36 Updated January 14, 2025 02:27 rosfeber / PythonDataScienceHandbook 0 0 0 0 Created February 3, 2017 21:42 Updated December 16, 2024 13:14 Previous 1 2 3 4 5 &hellip; 9 10 Next Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fjakevdp%2FPythonDataScienceHandbook%2Fforks)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fjakevdp%2FPythonDataScienceHandbook%2Fforks)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Fforks%2Fforks%2Findex&source=header-repo&source_repo=jakevdp%2FPythonDataScienceHandbook)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[jakevdp](/jakevdp)
+/
+**[PythonDataScienceHandbook](/jakevdp/PythonDataScienceHandbook)**
+Public
+
+* [Notifications](/login?return_to=%2Fjakevdp%2FPythonDataScienceHandbook) You must be signed in to change notification settings
+* [Fork
+  18.8k](/login?return_to=%2Fjakevdp%2FPythonDataScienceHandbook)
+* [Star
+   47.1k](/login?return_to=%2Fjakevdp%2FPythonDataScienceHandbook)
+
+* [Code](/jakevdp/PythonDataScienceHandbook)
+* [Issues
+  129](/jakevdp/PythonDataScienceHandbook/issues)
+* [Pull requests
+  101](/jakevdp/PythonDataScienceHandbook/pulls)
+* [Actions](/jakevdp/PythonDataScienceHandbook/actions)
+* [Projects](/jakevdp/PythonDataScienceHandbook/projects)
+* [Security
+  0](/jakevdp/PythonDataScienceHandbook/security)
+* [Insights](/jakevdp/PythonDataScienceHandbook/pulse)
+
+Additional navigation options
+
+* [Code](/jakevdp/PythonDataScienceHandbook)
+* [Issues](/jakevdp/PythonDataScienceHandbook/issues)
+* [Pull requests](/jakevdp/PythonDataScienceHandbook/pulls)
+* [Actions](/jakevdp/PythonDataScienceHandbook/actions)
+* [Projects](/jakevdp/PythonDataScienceHandbook/projects)
+* [Security](/jakevdp/PythonDataScienceHandbook/security)
+* [Insights](/jakevdp/PythonDataScienceHandbook/pulse)
+
+# Insights: jakevdp/PythonDataScienceHandbook
+
+[Pulse](/jakevdp/PythonDataScienceHandbook/pulse)
+[Contributors](/jakevdp/PythonDataScienceHandbook/graphs/contributors)
+[Community standards](/jakevdp/PythonDataScienceHandbook/community)
+[Commits](/jakevdp/PythonDataScienceHandbook/graphs/commit-activity)
+[Code frequency](/jakevdp/PythonDataScienceHandbook/graphs/code-frequency)
+[Dependency graph](/jakevdp/PythonDataScienceHandbook/network/dependencies)
+[Network](/jakevdp/PythonDataScienceHandbook/network)
+[Forks](/jakevdp/PythonDataScienceHandbook/forks)
+
+[Switch to tree view](/jakevdp/PythonDataScienceHandbook/network/members)
+
+# Forks
+
+Period:
+ 2 years
+
+## Filter by period
+
+[1 month](/jakevdp/PythonDataScienceHandbook/forks?include=active&page=1&period=1mo&sort_by=stargazer_counts)
+[6 months](/jakevdp/PythonDataScienceHandbook/forks?include=active&page=1&period=6mo&sort_by=stargazer_counts)
+[1 year](/jakevdp/PythonDataScienceHandbook/forks?include=active&page=1&period=1y&sort_by=stargazer_counts)
+[2 years](/jakevdp/PythonDataScienceHandbook/forks?include=active&page=1&period=2y&sort_by=stargazer_counts)
+[5 years](/jakevdp/PythonDataScienceHandbook/forks?include=active&page=1&period=5y&sort_by=stargazer_counts)
+
+Nothing to show
+
+ Any repository that has not been created or
+updated during this period will be excluded.
+
+Repository type:
+
+Active
+
+## Filter by repository type
+
+[Active
+Repositories with push activity](/jakevdp/PythonDataScienceHandbook/forks?include=&page=1&period=2y&sort_by=stargazer_counts)
+[Inactive
+Repositories with no push activity](/jakevdp/PythonDataScienceHandbook/forks?include=active%2Cinactive&page=1&period=2y&sort_by=stargazer_counts)
+[Network
+Forks of other forks](/jakevdp/PythonDataScienceHandbook/forks?include=active%2Cnetwork&page=1&period=2y&sort_by=stargazer_counts)
+[Archived
+Archived repositories](/jakevdp/PythonDataScienceHandbook/forks?include=active%2Carchived&page=1&period=2y&sort_by=stargazer_counts)
+[Starred
+Repositories with at least 1 star](/jakevdp/PythonDataScienceHandbook/forks?include=active%2Cstarred&page=1&period=2y&sort_by=stargazer_counts)
+
+Nothing to show
+
+Sort:
+ Most starred
+
+## Sort by
+
+[Most starred](/jakevdp/PythonDataScienceHandbook/forks?include=active&page=1&period=2y&sort_by=stargazer_counts)
+[Recently updated](/jakevdp/PythonDataScienceHandbook/forks?include=active&page=1&period=2y&sort_by=last_updated)
+[Open issues](/jakevdp/PythonDataScienceHandbook/forks?include=active&page=1&period=2y&sort_by=open_issue_counts)
+[Open pull requests](/jakevdp/PythonDataScienceHandbook/forks?include=active&page=1&period=2y&sort_by=open_pull_request_counts)
+
+Nothing to show
+
+* ## [![@wizardforcel](https://avatars.githubusercontent.com/u/5080126?s=32&v=4) wizardforcel](/wizardforcel) / [PythonDataScienceHandbook](/wizardforcel/PythonDataScienceHandbook)
+
+  [5](/wizardforcel/PythonDataScienceHandbook/stargazers)
+
+  [0](/wizardforcel/PythonDataScienceHandbook/forks)
+
+  [0](/wizardforcel/PythonDataScienceHandbook/issues?state=open)
+
+  [0](/wizardforcel/PythonDataScienceHandbook/pulls?state=open)
+
+  Created
+  September 14, 2024 05:50
+
+  Updated
+  September 14, 2024 05:53
+* ## [![@mo-karbalaee](https://avatars.githubusercontent.com/u/77221151?s=32&v=4) mo-karbalaee](/mo-karbalaee) / [PythonDataScienceHandbook](/mo-karbalaee/PythonDataScienceHandbook)
+
+  [5](/mo-karbalaee/PythonDataScienceHandbook/stargazers)
+
+  [0](/mo-karbalaee/PythonDataScienceHandbook/forks)
+
+  [0](/mo-karbalaee/PythonDataScienceHandbook/issues?state=open)
+
+  [0](/mo-karbalaee/PythonDataScienceHandbook/pulls?state=open)
+
+  Created
+  October 22, 2022 17:11
+
+  Updated
+  October 23, 2025 09:06
+* ## [![@halilkkaya](https://avatars.githubusercontent.com/u/64750076?s=32&v=4) halilkkaya](/halilkkaya) / [PythonDataScienceHandbook](/halilkkaya/PythonDataScienceHandbook)
+
+  [4](/halilkkaya/PythonDataScienceHandbook/stargazers)
+
+  [0](/halilkkaya/PythonDataScienceHandbook/forks)
+
+  [0](/halilkkaya/PythonDataScienceHandbook/issues?state=open)
+
+  [0](/halilkkaya/PythonDataScienceHandbook/pulls?state=open)
+
+  Created
+  July 25, 2024 01:58
+
+  Updated
+  July 25, 2024 01:59
+* ## [![@VeryFatBoy](https://avatars.githubusercontent.com/u/11927397?s=32&v=4) VeryFatBoy](/VeryFatBoy) / [PythonDataScienceHandbook](/VeryFatBoy/PythonDataScienceHandbook)
+
+  [2](/VeryFatBoy/PythonDataScienceHandbook/stargazers)
+
+  [0](/VeryFatBoy/PythonDataScienceHandbook/forks)
+
+  [0](/VeryFatBoy/PythonDataScienceHandbook/issues?state=open)
+
+  [0](/VeryFatBoy/PythonDataScienceHandbook/pulls?state=open)
+
+  Created
+  December 10, 2016 03:24
+
+  Updated
+  October 18, 2024 06:02
+* ## [![@trenton3983](https://avatars.githubusercontent.com/u/12875240?s=32&v=4) trenton3983](/trenton3983) / [PythonDataScienceHandbook](/trenton3983/PythonDataScienceHandbook)
+
+  [2](/trenton3983/PythonDataScienceHandbook/stargazers)
+
+  [0](/trenton3983/PythonDataScienceHandbook/forks)
+
+  [0](/trenton3983/PythonDataScienceHandbook/issues?state=open)
+
+  [0](/trenton3983/PythonDataScienceHandbook/pulls?state=open)
+
+  Created
+  May 2, 2018 04:21
+
+  Updated
+  April 1, 2025 17:42
+* ## [![@NazarPolishchuk7](https://avatars.githubusercontent.com/u/94799684?s=32&v=4) NazarPolishchuk7](/NazarPolishchuk7) / [PythonDataScienceHandbook](/NazarPolishchuk7/PythonDataScienceHandbook)
+
+  [2](/NazarPolishchuk7/PythonDataScienceHandbook/stargazers)
+
+  [0](/NazarPolishchuk7/PythonDataScienceHandbook/forks)
+
+  [0](/NazarPolishchuk7/PythonDataScienceHandbook/issues?state=open)
+
+  [0](/NazarPolishchuk7/PythonDataScienceHandbook/pulls?state=open)
+
+  Created
+  March 9, 2023 14:35
+
+  Updated
+  September 27, 2024 06:41
+* ## [![@somnath113](https://avatars.githubusercontent.com/u/13301328?s=32&v=4) somnath113](/somnath113) / [PythonDataScienceHandbook](/somnath113/PythonDataScienceHandbook)
+
+  [1](/somnath113/PythonDataScienceHandbook/stargazers)
+
+  [0](/somnath113/PythonDataScienceHandbook/forks)
+
+  [0](/somnath113/PythonDataScienceHandbook/issues?state=open)
+
+  [0](/somnath113/PythonDataScienceHandbook/pulls?state=open)
+
+  Created
+  March 23, 2020 04:52
+
+  Updated
+  March 26, 2025 14:41
+* ## [![@bjoernbuth](https://avatars.githubusercontent.com/u/16170139?s=32&v=4) bjoernbuth](/bjoernbuth) / [PythonDataScienceHandbook](/bjoernbuth/PythonDataScienceHandbook)
+
+  [1](/bjoernbuth/PythonDataScienceHandbook/stargazers)
+
+  [0](/bjoernbuth/PythonDataScienceHandbook/forks)
+
+  [0](/bjoernbuth/PythonDataScienceHandbook/issues?state=open)
+
+  [0](/bjoernbuth/PythonDataScienceHandbook/pulls?state=open)
+
+  Created
+  October 17, 2022 20:46
+
+  Updated
+  March 27, 2025 13:56
+* ## [![@jtentor](https://avatars.githubusercontent.com/u/8408375?s=32&v=4) jtentor](/jtentor) / [PythonDataScienceHandbook](/jtentor/PythonDataScienceHandbook)
+
+  [1](/jtentor/PythonDataScienceHandbook/stargazers)
+
+  [0](/jtentor/PythonDataScienceHandbook/forks)
+
+  [0](/jtentor/PythonDataScienceHandbook/issues?state=open)
+
+  [0](/jtentor/PythonDataScienceHandbook/pulls?state=open)
+
+  Created
+  April 24, 2022 21:44
+
+  Updated
+  March 19, 2026 10:47
+* ## [![@just4jc](https://avatars.githubusercontent.com/u/9564757?s=32&v=4) just4jc](/just4jc) / [PythonDataScienceHandbook](/just4jc/PythonDataScienceHandbook)
+
+  [1](/just4jc/PythonDataScienceHandbook/stargazers)
+
+  [0](/just4jc/PythonDataScienceHandbook/forks)
+
+  [0](/just4jc/PythonDataScienceHandbook/issues?state=open)
+
+  [47](/just4jc/PythonDataScienceHandbook/pulls?state=open)
+
+  Created
+  April 24, 2018 07:20
+
+  Updated
+  February 3, 2026 14:12
+* ## [![@bertramwooster](https://avatars.githubusercontent.com/u/36262799?s=32&v=4) bertramwooster](/bertramwooster) / [PythonDataScienceHandbook](/bertramwooster/PythonDataScienceHandbook)
+
+  [1](/bertramwooster/PythonDataScienceHandbook/stargazers)
+
+  [0](/bertramwooster/PythonDataScienceHandbook/forks)
+
+  [0](/bertramwooster/PythonDataScienceHandbook/issues?state=open)
+
+  [0](/bertramwooster/PythonDataScienceHandbook/pulls?state=open)
+
+  Created
+  September 25, 2025 18:00
+
+  Up

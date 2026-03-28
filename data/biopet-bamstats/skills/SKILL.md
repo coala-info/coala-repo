@@ -1,6 +1,6 @@
 ---
 name: biopet-bamstats
-description: Biopet-bamstats extracts and aggregates detailed alignment metrics from BAM files while maintaining a hierarchical structure of samples, libraries, and readgroups. Use when user asks to profile alignment data, generate clipping and mapping quality statistics, merge multiple QC reports, or validate the integrity of bamstats files.
+description: "Biopet BamStats generates and manages detailed quality control metrics for BAM files organized by sample, library, and readgroup. Use when user asks to generate sequencing statistics from BAM files, merge multiple stats files for cohort analysis, or validate the integrity of existing stats files."
 homepage: https://github.com/biopet/bamstats
 ---
 
@@ -8,52 +8,58 @@ homepage: https://github.com/biopet/bamstats
 # biopet-bamstats
 
 ## Overview
-biopet-bamstats is a utility within the BIOPET tool suite used to profile alignment data. It extracts detailed metrics such as clipping statistics, mapping quality, and insert sizes from BAM files. The tool's primary strength is its hierarchical output structure, which preserves the relationship between samples, libraries, and readgroups. This makes it a powerful tool for aggregating QC data across large cohorts while maintaining the ability to drill down into specific sequencing runs.
+Biopet BamStats is a specialized tool for high-throughput sequencing quality control. It processes BAM files to produce detailed metrics organized by a hierarchical sample-library-readgroup structure. This allows for granular QC analysis across different levels of a sequencing project. The tool operates in three primary modes: generating new statistics, merging existing stats files for cohort-level analysis, and validating the integrity of stats files to ensure data consistency.
 
 ## Command Line Usage
 
-### Generate Statistics
-The `generate` mode creates a report from a single BAM file.
+### Generate Mode
+Use this mode to process a BAM file and produce a statistics report.
 
 ```bash
 # Basic generation (outputs JSON by default)
-bamstats generate -b input.bam -o output.json
+biopet-bamstats generate -b input.bam -o output.json
 
 # Generate both JSON and TSV formats
-bamstats generate -b input.bam -o output.json --tsv
+biopet-bamstats generate -b input.bam -o output.json --tsvOutputs
 ```
 
-### Merge Statistics
-The `merge` mode combines multiple bamstats JSON files into a single aggregate file.
+**Requirements:**
+*   The input BAM file must have readgroups annotated with **SM** (Sample) and **LB** (Library) tags.
+*   If these tags are missing, use `samtools addreplacerg` or Picard `AddOrReplaceReadGroups` before running BamStats.
+
+### Merge Mode
+Use this mode to combine multiple BamStats JSON files into a single aggregate file. This is useful for project-level reporting.
 
 ```bash
-# Merge multiple files
-bamstats merge -i sample1.json -i sample2.json -o cohort_stats.json
+# Merge multiple stats files
+biopet-bamstats merge -i sample1.json -i sample2.json -o combined_stats.json
 ```
 
-### Validate Statistics
-The `validate` mode ensures the integrity of a bamstats file, checking if the aggregated values match the underlying data.
+### Validate Mode
+Use this mode to verify that a BamStats file is not corrupt. It attempts to regenerate aggregation values to ensure the file hasn't been improperly edited.
 
 ```bash
-bamstats validate -i stats.json
+biopet-bamstats validate -i stats.json
 ```
 
-## Best Practices and Expert Tips
+## Expert Tips and Best Practices
 
-### 1. Mandatory Readgroup Tags
-biopet-bamstats requires every readgroup in the BAM file to have both Sample (`SM`) and Library (`LB`) tags. If these are missing, the tool will throw an error.
-*   **Fixing missing tags:** Use `samtools addreplacerg` or Picard's `AddOrReplaceReadGroups` to annotate your BAM files before running bamstats.
+*   **Metadata Integrity**: BamStats will throw an error if it encounters readgroups without sample or library metadata. Always validate your BAM headers (`samtools view -H`) before starting a large-scale run.
+*   **Output Formats**: While JSON is the primary format for programmatic use and merging, the `--tsvOutputs` flag is highly recommended for manual inspection or for use with spreadsheet software.
+*   **Resource Management**: When running via Java directly (if not using the Bioconda wrapper), ensure you allocate sufficient memory for large BAM files using JVM flags (e.g., `java -Xmx4G -jar BamStats.jar ...`).
+*   **Validation Workflow**: Always run the `validate` mode after manually editing a JSON stats file or if a transfer process was interrupted, as the tool relies on internal consistency for accurate merging.
 
-### 2. Output Formats
-*   **JSON (Default):** Best for automated pipelines and programmatic analysis. It maintains the full hierarchical tree structure.
-*   **TSV:** Use the `--tsv` flag when you need to perform quick manual inspections or import data into spreadsheet software.
 
-### 3. Data Integrity
-Always run the `validate` mode if a JSON file has been manually edited or transferred across systems where corruption is suspected. The tool considers a file corrupt if the internal aggregation values cannot be recalculated from the raw counts.
 
-### 4. Merging Logic
-When merging, values for identical readgroups across different files are added together. Ensure that readgroup IDs are unique across different libraries unless they truly represent the same sequencing event.
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| generate | Generate statistics for a BAM file, including information about mapping quality, clipping, and region-specific stats. |
+| merge | Merge bamstats files into a single file. |
+| validate | Validate a BamStats file schema. |
 
 ## Reference documentation
-- [biopet-bamstats - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_biopet-bamstats_overview.md)
-- [GitHub - biopet/bamstats](./references/github_com_biopet_bamstats.md)
+- [BamStats GitHub Repository](./references/github_com_biopet_bamstats.md)
+- [BamStats README](./references/github_com_biopet_bamstats_blob_develop_README.md)
+- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_biopet-bamstats_overview.md)

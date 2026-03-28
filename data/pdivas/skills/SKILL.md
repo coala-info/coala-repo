@@ -1,6 +1,6 @@
 ---
 name: pdivas
-description: PDIVAS predicts the pathogenicity of deep-intronic variants that may cause aberrant splicing using a random forest machine-learning algorithm. Use when user asks to predict the impact of deep-intronic variants, identify pathogenic pseudoexons, or score variants for potential splicing defects.
+description: PDIVAS is a machine learning tool designed to predict the pathogenicity of deep-intronic variants that cause aberrant splicing. Use when user asks to predict the impact of deep-intronic mutations, calculate pathogenicity scores for splicing variants, or convert PDIVAS VCF outputs into TSV format.
 homepage: https://github.com/shiro-kur/PDIVAS
 ---
 
@@ -8,65 +8,83 @@ homepage: https://github.com/shiro-kur/PDIVAS
 # pdivas
 
 ## Overview
-PDIVAS (Pathogenicity predictor of Deep-Intronic Variants causing Aberrant Splicing) is a machine-learning tool based on a random forest algorithm. It identifies variants deep within introns that may lead to the creation of pathogenic pseudoexons or the extension of existing exons. The tool integrates features from multiple splicing predictors, including SpliceAI, MaxEntScan, and ConSplice, to provide a pathogenicity score between 0.000 and 1.000.
 
-## Installation
-The tool is available via Bioconda. It is recommended to use a dedicated environment due to specific dependencies like TensorFlow.
+PDIVAS (Pathogenicity Predictor for Deep-Intronic Variants causing Aberrant Splicing) is a specialized machine learning tool designed to identify deleterious variants located deep within introns. While most variant effect predictors focus on coding regions or canonical splice sites, PDIVAS uses a random forest algorithm to evaluate the likelihood that a deep-intronic mutation will disrupt normal gene expression via aberrant splicing. It integrates scores from SpliceAI, MaxEntScan, and ConSplice to provide a unified pathogenicity metric.
 
-```bash
-conda create -n PDIVAS -c bioconda -c conda-forge pdivas spliceai tensorflow==2.6.2 bcftools vcfanno
-conda activate PDIVAS
-```
+## Installation and Environment Setup
 
-## Core CLI Usage
+PDIVAS requires a specific environment due to its dependencies on older versions of scikit-learn and specialized splicing predictors.
 
-### Pathogenicity Prediction
-The primary command for scoring variants in a VCF file.
+1. **Create the Environment**:
+   ```bash
+   conda create -n PDIVAS -c bioconda -c conda-forge spliceai tensorflow==2.6.2 pdivas bcftools vcfanno
+   ```
 
-```bash
-pdivas predict -I input.vcf -O output.vcf -F off
-```
+2. **Custom SpliceAI Requirement**: PDIVAS requires a customized version of SpliceAI's output module to function correctly. If running the full pipeline, you must replace the default SpliceAI files with the customized versions found in the PDIVAS repository.
 
-**Parameters:**
-- `-I`: Input VCF file (supports `.vcf` or `.vcf.gz`).
-- `-O`: Output VCF file containing `GENE_ID|PDIVAS_score` in the INFO field.
-- `-F`: Filtering function. 
-    - `off` (default): Outputs all variants.
-    - `on`: Outputs only deep-intronic variants that received a PDIVAS score.
+## Core Workflows
 
-### Format Conversion
-To convert the annotated VCF into a tab-separated format (one gene annotation per line) for easier downstream analysis:
+### 1. Fast Annotation (Precomputed Scores)
+For variants in known Mendelian disease genes (approx. 4,500 genes), use the precomputed score files to avoid heavy computational overhead.
 
 ```bash
-pdivas vcf2tsv -I annotated_output.vcf.gz -O final_results.tsv
+# Use vcfanno with a configuration file pointing to the precomputed PDIVAS VCF
+vcfanno -lua custom.lua conf.toml input.vcf > annotated_output.vcf
 ```
 
-## Workflow Best Practices
+### 2. Full Prediction Pipeline
+When analyzing variants not covered by precomputed files, follow this sequence:
 
-### 1. VCF Preprocessing
-PDIVAS requires biallelic sites. Always normalize multi-allelic VCFs before running the prediction pipeline:
-
+**Step A: Preprocessing**
+Ensure the VCF is biallelic.
 ```bash
 bcftools norm -m - multi_allelic.vcf > biallelic.vcf
 ```
 
-### 2. Feature Annotation Requirements
-For a full prediction (Option 2 in the documentation), variants must be pre-annotated with specific features. The standard pipeline involves:
-1. **VEP**: Add `ConSplice`, `MaxEntScan` (SWA and NCSS), and gene symbols.
-2. **Customized SpliceAI**: Use the PDIVAS-specific customized SpliceAI output module to generate required features.
+**Step B: Feature Generation**
+Run VEP with the MaxEntScan and ConSplice plugins, followed by the customized SpliceAI.
+```bash
+# SpliceAI command for PDIVAS features
+spliceai -I vep_annotated.vcf -O features_ready.vcf -R hg38.fa -A grch38 -D 300 -M 1
+```
 
-### 3. Interpreting Results
-The `PDIVAS` INFO field in the output VCF contains the following patterns:
-- **Float (0.000 - 1.000)**: The pathogenicity score; higher values indicate a higher likelihood of being deleterious.
-- **wo_annots**: The variant lacks required VEP or SpliceAI annotations.
-- **out_of_scope**: The variant is outside the supported scope (e.g., Y chromosome, non-coding genes, or non-deep-intronic regions).
-- **no_gene_match**: No matching gene was found for the variant.
+**Step C: PDIVAS Prediction**
+```bash
+pdivas predict -I features_ready.vcf -O final_predictions.vcf.gz -F off
+```
+
+## CLI Reference and Best Practices
+
+### pdivas predict
+The primary command for calculating pathogenicity scores.
+- `-I`: Input VCF (must contain SpliceAI, MaxEntScan, and ConSplice annotations).
+- `-O`: Output VCF.
+- `-F`: Filtering mode. 
+    - `off` (default): Outputs all variants.
+    - `on`: Outputs only deep-intronic variants that received a PDIVAS score.
+
+### pdivas vcf2tsv
+Converts the VCF output into a readable TSV format, which is essential for downstream manual review as it handles multi-gene annotations by creating one line per gene.
+```bash
+pdivas vcf2tsv -I final_predictions.vcf.gz -O final_report.tsv
+```
 
 ## Expert Tips
-- **Quick Implementation**: If working with rare SNVs or short indels (1-4nt) in known Mendelian disease genes, use the precomputed score files with `vcfanno` to bypass the heavy annotation pipeline.
-- **Memory Management**: When running the full pipeline with SpliceAI, ensure sufficient GPU/CPU resources are available, as SpliceAI is computationally intensive.
-- **Genome Build**: Ensure your reference FASTA and annotation files (GENCODE/Ensembl) match the assembly of your VCF (GRCh38 is the primary supported assembly for the latest versions).
+- **Score Interpretation**: PDIVAS scores range from 0.000 to 1.000. Higher values indicate a higher probability of pathogenicity.
+- **Scope Limitations**: PDIVAS is optimized for protein-coding genes on autosomes and the X chromosome. Variants on the Y chromosome or in non-coding RNA genes may return `out_of_scope`.
+- **Handling Exceptions**: 
+    - `wo_annots`: Indicates the variant lacked the required input features (SpliceAI/MaxEntScan/ConSplice) for a prediction.
+    - `out_of_scope`: Indicates the variant is outside the genomic regions PDIVAS was trained to evaluate.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| predict | Add PDIVAS annotation to a VCF file and predict deep-intronic variants. |
+| vcf2tsv | Convert PDIVAS annotated VCF files to TSV format |
 
 ## Reference documentation
-- [PDIVAS GitHub Repository](./references/github_com_shiro-kur_PDIVAS.md)
-- [Bioconda PDIVAS Overview](./references/anaconda_org_channels_bioconda_packages_pdivas_overview.md)
+- [PDIVAS Main Documentation](./references/github_com_shiro-kur_PDIVAS.md)
+- [PDIVAS README and Usage](./references/github_com_shiro-kur_PDIVAS_blob_main_README.md)

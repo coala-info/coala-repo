@@ -1,92 +1,54 @@
 ---
 name: mosca
-description: "MOSCA is a pipeline for integrated metagenomics, metatranscriptomics, and metaproteomics data analysis. Use when user asks to perform meta-omics analyses, including data preprocessing, assembly, gene calling, annotation, expression quantification, and differential expression analysis."
+description: MOSCA is an automated pipeline that integrates metagenomic, metatranscriptomic, and metaproteomic data to characterize the taxonomy and functional pathways of microbial communities. Use when user asks to perform multi-omics integration, assemble and bin microbial reads, annotate genes using UniProt, or visualize metabolic pathways.
 homepage: https://github.com/iquasere/MOSCA
 ---
 
 
 # mosca
 
-MOSCA (Meta-Omics Software for Community Analysis) is a pipeline for integrated metagenomics, metatranscriptomics, and metaproteomics data analysis.
-  Use this skill when Claude needs to perform complex meta-omics analyses, including data preprocessing, assembly, gene calling, annotation, expression quantification, and differential expression analysis.
-  This skill is specifically for users who need to run the MOSCA pipeline from the command line.
-body: |
-  ## Overview
-  MOSCA is a comprehensive bioinformatics pipeline designed for the integrated analysis of meta-omics data, encompassing metagenomics (MG), metatranscriptomics (MT), and metaproteomics (MP). It automates a multi-step workflow, starting from raw sequencing data and progressing through assembly, gene prediction, functional annotation, and differential expression analysis. This skill focuses on providing guidance for the command-line usage of the MOSCA pipeline.
+## Overview
 
-  ## Usage Instructions
+MOSCA (Meta-Omics Software for Community Analysis) is an automated pipeline designed to integrate multiple "omics" data types to characterize microbial communities. It streamlines the path from raw sequencing reads (DNA/RNA) or mass spectrometry spectra (Proteins) to functional insights. The tool handles complex bioinformatic tasks including quality control, iterative co-assembly, taxonomic binning, functional annotation via UniProt and reCOGnizer, and metabolic pathway visualization using KEGGCharter.
 
-  MOSCA is typically run using a workflow management system like Snakemake. The primary interaction will involve configuring and executing the pipeline via its command-line interface.
+## Workflow Configuration
 
-  ### Core Workflow Steps:
+MOSCA relies on a JSON configuration file to define the execution environment and experimental design.
 
-  1.  **Data Preprocessing**: Removal of adapters and quality trimming of raw sequencing reads.
-  2.  **Metagenomics (MG)**:
-      *   Assembly of reads into contigs.
-      *   Gene calling on contigs.
-      *   Homology-based annotation (UniProt) and domain-based annotation (COG).
-  3.  **Metatranscriptomics (MT)**:
-      *   Alignment of MT reads to the generated ORFs for gene expression quantification.
-  4.  **Metaproteomics (MP)**:
-      *   Peptide-to-Spectrum Matching (PSM) using annotated ORFs as a reference.
-  5.  **Downstream Analysis**:
-      *   Differential expression analysis for MT and MP.
-      *   Metabolic pathway analysis (KEGG Pathways).
+### Defining Experiments
+The `experiments` object is the core of the configuration. Each entry must specify:
+- **Files**: Path to input data. For paired-end short reads, use a comma-separated string (e.g., `"file_R1.fastq.gz,file_R2.fastq.gz"`).
+- **Data type**: Use `dna` for metagenomics, `mrna` for metatranscriptomics, or `protein` for metaproteomics.
+- **Sample**: Datasets sharing the same "Sample" value are co-assembled and binned together. Use this to group replicates or related time-points to improve assembly quality.
+- **Condition**: Used for differential expression analysis (DESeq2). Replicates should share the same condition string.
 
-  ### Command-Line Execution (General Pattern):
+### Essential Performance Parameters
+- **threads**: Set the maximum number of CPU cores available.
+- **max_memory**: Set the memory limit in Gb (e.g., `64`).
+- **resources_directory**: Specify a persistent folder to store large databases (UniProt, CDD) to avoid re-downloading in future runs.
 
-  MOSCA is typically executed via Snakemake. The exact command will depend on your configuration and the specific analysis you wish to perform. A general pattern might look like this:
+## Tool-Specific Best Practices
 
-  ```bash
-  snakemake --snakefile /path/to/MOSCA/workflow/Snakefile --configfile /path/to/your/config.yaml [target_rule]
-  ```
+### Assembly and Binning
+- **Assembler Selection**: Use `metaspades` for most community samples; `megahit` is preferred for very large datasets or memory-constrained environments.
+- **Error Models**: When calling genes with FragGeneScan without assembly, match the `error_model` to your technology (e.g., `illumina_10` for Illumina reads with a 10% expected error rate). Set to `complete` if assembly was performed.
+- **Markerset**: Use `107` for Bacteria-only studies or `40` if Archaea are expected to be significant members of the community.
 
-  *   `--snakefile`: Specifies the path to the main Snakemake workflow file within the MOSCA installation.
-  *   `--configfile`: Points to your custom configuration file where input data, parameters, and output directories are defined.
-  *   `[target_rule]`: Optionally, you can specify a particular rule (e.g., `all`, `annotate`, `differential_expression`) to execute only that part of the pipeline.
+### Functional Annotation
+- **UniProt Integration**: Set `upimapi_check_db` to `true` on the first run to download the UniProtKB database. Subsequent runs should set this to `false` to save time.
+- **Taxonomy IDs**: Provide a comma-separated list of Tax IDs in `upimapi_taxids` to restrict the search space and improve annotation speed if the community composition is partially known.
+- **Disk Space**: If running out of space during DIAMOND searches, increase the `split_gene_calling` integer to process the data in smaller chunks.
 
-  ### Configuration File (`config.yaml`):
+### Metaproteomics (MP) Optimization
+- **Reference Proteomes**: Set `metaproteomics_add_reference_proteomes` to `true` to automatically augment your search database with sequences from identified taxa.
+- **Contaminants**: Always keep `use_crap` as `true` to filter common laboratory contaminants (keratins, trypsin) from your results.
 
-  The `config.yaml` file is crucial for defining your analysis. It typically includes:
+## Execution Tips
+- **Dry Runs**: Since MOSCA is Snakemake-based, ensure your JSON is valid before execution.
+- **Output Management**: MOSCA creates an `output` directory. If a run is interrupted, MOSCA can typically resume from the last successful checkpoint if the output directory is preserved.
+- **Visualization**: To get metabolic maps, ensure `keggcharter_maps` contains a list of valid KEGG map IDs (e.g., `["00010", "00020"]`).
 
-  *   Paths to input raw sequencing data (FASTQ files).
-  *   Paths to reference databases (e.g., UniProt, COG, KEGG).
-  *   Parameters for various tools used within the pipeline (e.g., assembly parameters, annotation thresholds).
-  *   Output directory for results.
-
-  **Example Snippet (Illustrative - consult MOSCA documentation for exact structure):**
-
-  ```yaml
-  input_dir: "/path/to/your/raw_data"
-  output_dir: "/path/to/your/results"
-  databases:
-    uniprot: "/path/to/uniprot_database"
-    cog: "/path/to/cog_database"
-    kegg: "/path/to/kegg_pathways"
-
-  # Metagenomics parameters
-  assembly:
-    assembler: "megahit" # or "spades"
-    min_contig_length: 200
-
-  # Metatranscriptomics parameters
-  expression_quantification:
-    method: "kallisto" # or "salmon"
-
-  # Metaproteomics parameters
-  psm:
-    database: "uniprot"
-  ```
-
-  ### Expert Tips:
-
-  *   **Consult the Wiki**: The official MOSCA wiki (`https://github.com/iquasere/MOSCA/wiki`) is the definitive resource for detailed installation, configuration, and usage instructions. Always refer to it for the most up-to-date information.
-  *   **Parameter Tuning**: MOSCA integrates many bioinformatics tools. Understanding the parameters of these underlying tools (e.g., assemblers like MEGAHIT or SPAdes, annotators) can significantly impact the quality and relevance of your results.
-  *   **Resource Management**: Meta-omics analyses are computationally intensive. Ensure you have adequate CPU, memory, and disk space. Snakemake allows for specifying resources per job, which is highly recommended for efficient execution on clusters.
-  *   **Database Management**: Keep your reference databases (UniProt, COG, KEGG) up-to-date for the most accurate annotations.
-  *   **Reproducibility**: Use specific versions of MOSCA and its dependencies (e.g., via Conda environments) to ensure your analyses are reproducible. The Bioconda package is a good starting point for environment setup.
-  *   **Debugging**: If you encounter errors, examine the Snakemake logs carefully. They often provide detailed information about which underlying tool failed and why. The `[target_rule]` can be useful for running specific parts of the pipeline to isolate issues.
-
-  ## Reference documentation
-  - [MOSCA Wiki](https://github.com/iquasere/MOSCA/wiki)
-  - [MOSCA GitHub Repository](https://github.com/iquasere/MOSCA)
+## Reference documentation
+- [Configure and run MOSCA](./references/github_com_iquasere_MOSCA_wiki_Configure-and-run-MOSCA.md)
+- [The MOSCA project](./references/github_com_iquasere_MOSCA_wiki_The-MOSCA-project.md)
+- [Access MOSCA online](./references/github_com_iquasere_MOSCA_wiki_Access-MOSCA-online-_F0_9F_8C_90.md)

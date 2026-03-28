@@ -932,3 +932,6 @@ Global Flags:
 unknown shorthand flag: 'e' in -elp
 ```
 
+
+## Metadata
+- **Skill**: generated

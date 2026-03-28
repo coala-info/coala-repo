@@ -122,3 +122,6 @@ Top notch description of this tool
       -1, --haploid                     run MALVA in haploid mode (default: false)
 ```
 
+
+## Metadata
+- **Skill**: generated

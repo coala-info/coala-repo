@@ -165,3 +165,6 @@ options:
   -cc, --comment_char COMMENT_CHAR
 ```
 
+
+## Metadata
+- **Skill**: generated

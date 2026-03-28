@@ -66,16 +66,16 @@ Brought to you by:
 
 * ### Downloads
 
-  **5,671**
-  2025-12-15 to 2026-03-15
+  **6,148**
+  2025-12-27 to 2026-03-27
 * [### Countries
 
   Top:
-  **US**, at 50%](/projects/bbmap/files/stats/map)
+  **US**, at 52%](/projects/bbmap/files/stats/map)
 * [### Operating Systems
 
   Top:
-  **Other**, at 77%](/projects/bbmap/files/stats/os)
+  **Other**, at 78%](/projects/bbmap/files/stats/os)
 
 ## Download Statistics
 
@@ -93,7 +93,7 @@ Monthly
 
 View DataDownload as CSV
 
-Last Updated: **< 5 hours ago**.
+Last Updated: **< 6 hours ago**.
 [Download Stats API](//sourceforge.net/p/forge/documentation/Download%20Stats%20API/)
 
 SourceForge
@@ -130,8 +130,6 @@ Your Opt-Out Rights
 [Terms](https://slashdotmedia.com/terms-of-use "Terms")
 [Privacy](https://slashdotmedia.com/privacy-statement/ "Privacy")
 [Advertise](https://slashdotmedia.com/contact/ "Advertise")
-
-![Retool Logo](//a.fsdn.com/con/img/retool.png)
 
 ![Retool Logo](https://a.fsdn.com/con/img/retool.png)
 

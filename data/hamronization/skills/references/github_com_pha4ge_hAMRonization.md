@@ -1,1 +1,286 @@
-GitHub - pha4ge/hAMRonization: Parse multiple Antimicrobial Resistance Analysis Reports into a common data structure Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} pha4ge / hAMRonization Public Notifications You must be signed in to change notification settings Fork 34 Star 173 Parse multiple Antimicrobial Resistance Analysis Reports into a common data structure License LGPL-3.0 license 173 stars 34 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 4 Pull requests 1 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights pha4ge/hAMRonization master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 375 Commits 375 Commits .github .github docs docs hAMRonization hAMRonization schema schema test test .gitignore .gitignore Dockerfile Dockerfile LICENSE.txt LICENSE.txt README.md README.md setup.cfg setup.cfg setup.py setup.py View all files Repository files navigation README LGPL-3.0 license hAMRonization This repo contains the hAMRonization module and CLI parser tools combine the outputs of 17 disparate antimicrobial resistance gene detection tools into a single unified format. This is an implementation of the hAMRonization AMR detection specification scheme which supports gene presence/absence resistance and mutational resistance (if supported by the underlying tool). This supports a variety of summary options including an interactive summary . Installation This tool requires python&gt;=3.7 and pandas and the latest release can be installed directly from pip, conda, docker, this repository, or from the galaxy toolshed: pip install hAMRonization Or conda create --name hamronization --channel conda-forge --channel bioconda --channel defaults hamronization Or to install using docker: docker pull finlaymaguire/hamronization:latest Or to install the latest development version: git clone https://github.com/pha4ge/hAMRonization pip install hAMRonization Alternatively, hAMRonization can also be installed and used in galaxy via the galaxy toolshed . Usage NOTE : Only the output format used in the "last updated" version of the AMR prediction tool has been tested for accuracy. Older tool versions or updates which lead to a change in output format may not work. In theory, this should only be a problem with major version changes but not all tools follow semantic versioning. If you encounter any issues with newer tool versions then please create an issue in this repository. usage: hamronize &lt;tool&gt; &lt;options&gt; Convert AMR gene detection tool output(s) to hAMRonization specification format options: -h, --help show this help message and exit -v, --version show program's version number and exit Tools with hAMRonizable reports: {abricate,amrfinderplus,amrplusplus,ariba,csstar,deeparg,fargene,groot,kmerresistance,resfams,resfinder,mykrobe,rgi,srax,srst2,staramr,tbprofiler,summarize} abricate hAMRonize abricate's output report i.e., OUTPUT.tsv amrfinderplus hAMRonize amrfinderplus's output report i.e., OUTPUT.tsv amrplusplus hAMRonize amrplusplus's output report i.e., gene.tsv ariba hAMRonize ariba's output report i.e., OUTDIR/OUTPUT.tsv csstar hAMRonize csstar's output report i.e., OUTPUT.tsv deeparg hAMRonize deeparg's output report i.e., OUTDIR/OUTPUT.mapping.ARG fargene hAMRonize fargene's output report i.e., retrieved- genes-*-hmmsearched.out groot hAMRonize groot's output report i.e., OUTPUT.tsv (from `groot report`) kmerresistance hAMRonize kmerresistance's output report i.e., OUTPUT.res resfams hAMRonize resfams's output report i.e., resfams.tblout resfinder hAMRonize resfinder's JSON output report (use -j to produce) mykrobe hAMRonize mykrobe's output report i.e., OUTPUT.json rgi hAMRonize rgi's output report i.e., OUTPUT.txt or OUTPUT_bwtoutput.gene_mapping_data.txt srax hAMRonize srax's output report i.e., sraX_detected_ARGs.tsv srst2 hAMRonize srst2's output report i.e., OUTPUT_srst2_report.tsv staramr hAMRonize staramr's output report i.e., resfinder.tsv tbprofiler hAMRonize tbprofiler's output report i.e., OUTPUT.results.json summarize Provide a list of paths to the reports you wish to summarize To look at a specific tool e.g. abricate : &gt;hamronize abricate -h usage: hamronize abricate &lt;options&gt; Applies hAMRonization specification to output from abricate (OUTPUT.tsv) positional arguments: report Path to tool report optional arguments: -h, --help show this help message and exit --format FORMAT Output format (tsv or json) --output OUTPUT Output location --analysis_software_version ANALYSIS_SOFTWARE_VERSION Input string containing the analysis_software_version for abricate --reference_database_version REFERENCE_DATABASE_VERSION Input string containing the reference_database_version for abricate Therefore, hAMRonizing abricates output: hamronize abricate ../test/data/raw_outputs/abricate/report.tsv --reference_database_version 3.2.5 --analysis_software_version 1.0.0 --format json To parse multiple reports from the same tool at once just give a list of reports as the argument, and they will be concatenated appropriately (i.e. only one header for tsv) hamronize rgi --input_file_name rgi_report --analysis_software_version 6.0.0 --reference_database_version 3.2.5 test/data/raw_outputs/rgi/rgi.txt test/data/raw_outputs/rgibwt/Kp11_bwtoutput.gene_mapping_data.txt You can summarize hAMRonized reports regardless of format using the 'summarize' function: &gt; hamronize summarize -h usage: hamronize summarize &lt;options&gt; &lt;list of reports&gt; Concatenate and summarize AMR detection reports positional arguments: hamronized_reports list of hAMRonized reports optional arguments: -h, --help show this help message and exit -t {tsv,json,interactive}, --summary_type {tsv,json,interactive} Which summary report format to generate -o OUTPUT, --output OUTPUT Output file path for summary This will take a list of report and create single sorted report in the specified format just containing the unique entries across input reports. This can handle mixed json and tsv hamronized report formats. hamronize summarize -o combined_report.tsv -t tsv abricate.json ariba.tsv The interactive summary option will produce an html file that can be opened within the browser for navigable data exploration (feature developed with @alexmanuele). Using within scripts Alternatively, hAMRonization can be used within scripts (the metadata must contain the mandatory metadata that is not included in that tool's output, this can be checked by looking at the CLI flags in hamronize &lt;tool&gt; --help ): import hAMRonization metadata = {"analysis_software_version": "1.0.1", "reference_database_version": "2019-Jul-28"} parsed_report = hAMRonization.parse("abricate_report.tsv", metadata, "abricate") The parsed_report is then a generator that yields hAMRonized result objects from the parsed report: for result in parsed_report: print(result) Alternatively, you can use the .write attribute to export all results left in the generator to a file (if a filepath isn't provided, this will write to stdout). parsed_report.write('hAMRonized_abricate_report.tsv') You can also output a json formatted hAMRonized report: parsed_report.write('all_hAMRonized_abricate_report.json', output_format='json') If you want to write multiple reports to one file, this .write method can accept append_mode=True to append rather than overwrite the output file and not include the header (in tsv format). parsed_report.write('all_hAMRonized_abricate_report.tsv', appe
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fpha4ge%2FhAMRonization)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fpha4ge%2FhAMRonization)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=pha4ge%2FhAMRonization)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[pha4ge](/pha4ge)
+/
+**[hAMRonization](/pha4ge/hAMRonization)**
+Public
+
+* [Notifications](/login?return_to=%2Fpha4ge%2FhAMRonization) You must be signed in to change notification settings
+* [Fork
+  35](/login?return_to=%2Fpha4ge%2FhAMRonization)
+* [Star
+   176](/login?return_to=%2Fpha4ge%2FhAMRonization)
+
+* [Code](/pha4ge/hAMRonization)
+* [Issues
+  4](/pha4ge/hAMRonization/issues)
+* [Pull requests
+  1](/pha4ge/hAMRonization/pulls)
+* [Actions](/pha4ge/hAMRonization/actions)
+* [Projects](/pha4ge/hAMRonization/projects)
+* [Security
+  0](/pha4ge/hAMRonization/security)
+* [Insights](/pha4ge/hAMRonization/pulse)
+
+Additional navigation options
+
+* [Code](/pha4ge/hAMRonization)
+* [Issues](/pha4ge/hAMRonization/issues)
+* [Pull requests](/pha4ge/hAMRonization/pulls)
+* [Actions](/pha4ge/hAMRonization/actions)
+* [Projects](/pha4ge/hAMRonization/projects)
+* [Security](/pha4ge/hAMRonization/security)
+* [Insights](/pha4ge/hAMRonization/pulse)
+
+# pha4ge/hAMRonization
+
+master
+
+[Branches](/pha4ge/hAMRonization/branches)[Tags](/pha4ge/hAMRonization/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[384 Commits](/pha4ge/hAMRonization/commits/master/)   384 Commits | | |
+| [.github](/pha4ge/hAMRonization/tree/master/.github ".github") | | [.github](/pha4ge/hAMRonization/tree/master/.github ".github") |  |  |
+| [docs](/pha4ge/hAMRonization/tree/master/docs "docs") | | [docs](/pha4ge/hAMRonization/tree/master/docs "docs") |  |  |
+| [hAMRonization](/pha4ge/hAMRonization/tree/master/hAMRonization "hAMRonization") | | [hAMRonization](/pha4ge/hAMRonization/tree/master/hAMRonization "hAMRonization") |  |  |
+| [schema](/pha4ge/hAMRonization/tree/master/schema "schema") | | [schema](/pha4ge/hAMRonization/tree/master/schema "schema") |  |  |
+| [test](/pha4ge/hAMRonization/tree/master/test "test") | | [test](/pha4ge/hAMRonization/tree/master/test "test") |  |  |
+| [.dockerignore](/pha4ge/hAMRonization/blob/master/.dockerignore ".dockerignore") | | [.dockerignore](/pha4ge/hAMRonization/blob/master/.dockerignore ".dockerignore") |  |  |
+| [.gitignore](/pha4ge/hAMRonization/blob/master/.gitignore ".gitignore") | | [.gitignore](/pha4ge/hAMRonization/blob/master/.gitignore ".gitignore") |  |  |
+| [Dockerfile](/pha4ge/hAMRonization/blob/master/Dockerfile "Dockerfile") | | [Dockerfile](/pha4ge/hAMRonization/blob/master/Dockerfile "Dockerfile") |  |  |
+| [LICENSE.txt](/pha4ge/hAMRonization/blob/master/LICENSE.txt "LICENSE.txt") | | [LICENSE.txt](/pha4ge/hAMRonization/blob/master/LICENSE.txt "LICENSE.txt") |  |  |
+| [README.md](/pha4ge/hAMRonization/blob/master/README.md "README.md") | | [README.md](/pha4ge/hAMRonization/blob/master/README.md "README.md") |  |  |
+| [setup.cfg](/pha4ge/hAMRonization/blob/master/setup.cfg "setup.cfg") | | [setup.cfg](/pha4ge/hAMRonization/blob/master/setup.cfg "setup.cfg") |  |  |
+| [setup.py](/pha4ge/hAMRonization/blob/master/setup.py "setup.py") | | [setup.py](/pha4ge/hAMRonization/blob/master/setup.py "setup.py") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* LGPL-3.0 license
+
+[![Python package](https://github.com/pha4ge/hAMRonization/workflows/test_package/badge.svg)](https://github.com/pha4ge/hAMRonization/workflows/test_package/badge.svg)
+[![Preprint](https://camo.githubusercontent.com/3c27fa42e6a221ea711b2c048e3d2d8478fad79c9fcb61cb1539633329023f3b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5072657072696e742d31302e313130312f323032342e30332e30372e3538333935302d626c7565)](https://doi.org/10.1101/2024.03.07.583950)
+[![DOI](https://camo.githubusercontent.com/4f4d0b6dad4247143f5c8532fdaa93f522f61ab03bb342e56cdba577aaf774b8/68747470733a2f2f7a656e6f646f2e6f72672f62616467652f3234383034303636322e737667)](https://zenodo.org/badge/latestdoi/248040662)
+[![Docs English](https://camo.githubusercontent.com/8a5ad9c0857676b0a0bd862374f27b48498698770821265783294bede506c258/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f446f63756d656e746174696f6e2d456e676c6973682d626c7565)](https://github.com/pha4ge/hAMRonization/blob/master/docs/subgrant/PHA4GE_AMR_SubGrant_Documentation.pdf)
+[![Docs English](https://camo.githubusercontent.com/b39beeb26726e03b06685b7fed1cea7f7da9a79e6bf101e29a0e29338e47612a/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f446f63756d656e746174696f6e2d457370616e2543432538336f6c2d626c7565)](https://github.com/pha4ge/hAMRonization/blob/master/docs/subgrant/PHA4GE_hAMRonization_espan%CC%83ol.pdf)
+
+# hAMRonization
+
+This repo contains the hAMRonization module and CLI parser tools combine the outputs of
+17 disparate antimicrobial resistance gene detection tools into a single unified format.
+
+This is an implementation of the [hAMRonization AMR detection specification scheme](/pha4ge/hAMRonization/blob/master/docs/hAMRonization_specification_details.csv) which supports gene presence/absence resistance and mutational resistance (if supported by the underlying tool).
+
+This supports a variety of summary options including an [interactive summary](https://finlaymagui.re/assets/interactive_report_demo.html).
+
+[![hAMRonization overview](https://github.com/pha4ge/hAMRonization/raw/master/docs/overview_figure.png?raw=true)](https://github.com/pha4ge/hAMRonization/blob/master/docs/overview_figure.png?raw=true)
+
+## Installation
+
+This tool requires python>=3.9 and [pandas](https://pandas.pydata.org/)
+and the latest release can be installed directly from pip, conda, docker, this repository, or from the galaxy toolshed:
+
+```
+pip install hAMRonization
+```
+
+[![PyPI version](https://camo.githubusercontent.com/22260fa94710c8b6054849bdba8f8588968340e29b1040639322d729d2db6cad/68747470733a2f2f62616467652e667572792e696f2f70792f68616d726f6e697a6174696f6e2e737667)](https://badge.fury.io/py/hamronization)
+[![PyPI downloads](https://camo.githubusercontent.com/39f96f6860e8f6a0c7a5063d1ab1398460674e20662ec8c2db86166ac38c2991/68747470733a2f2f696d672e736869656c64732e696f2f707970692f646d2f68414d526f6e697a6174696f6e2e737667)](https://img.shields.io/pypi/dm/hAMRonization)
+
+Or
+
+```
+conda create --name hamronization --channel conda-forge --channel bioconda hamronization
+```
+
+[![version-on-conda](https://camo.githubusercontent.com/84729d6b748d03b6cbe372353c9562ca67066d68a21db8ecc422c5414fdf614d/68747470733a2f2f616e61636f6e64612e6f72672f62696f636f6e64612f68616d726f6e697a6174696f6e2f6261646765732f76657273696f6e2e737667)](https://camo.githubusercontent.com/84729d6b748d03b6cbe372353c9562ca67066d68a21db8ecc422c5414fdf614d/68747470733a2f2f616e61636f6e64612e6f72672f62696f636f6e64612f68616d726f6e697a6174696f6e2f6261646765732f76657273696f6e2e737667)
+[![conda-download](https://camo.githubusercontent.com/edcf4cc5d222f5c0147f593a19704728584fe1869b513305f37ea31271828311/68747470733a2f2f616e61636f6e64612e6f72672f62696f636f6e64612f68616d726f6e697a6174696f6e2f6261646765732f646f776e6c6f6164732e737667)](https://camo.githubusercontent.com/edcf4cc5d222f5c0147f593a19704728584fe1869b513305f37ea31271828311/68747470733a2f2f616e61636f6e64612e6f72672f62696f636f6e64612f68616d726f6e697a6174696f6e2f6261646765732f646f776e6c6f6164732e737667)
+[![last-update-on-conda](https://camo.githubusercontent.com/9d49cf8c5864683ec1789b95d8458126c281d152ba8da5316ba0755799f89421/68747470733a2f2f616e61636f6e64612e6f72672f62696f636f6e64612f68616d726f6e697a6174696f6e2f6261646765732f6c61746573745f72656c656173655f646174652e737667)](https://camo.githubusercontent.com/9d49cf8c5864683ec1789b95d8458126c281d152ba8da5316ba0755799f89421/68747470733a2f2f616e61636f6e64612e6f72672f62696f636f6e64612f68616d726f6e697a6174696f6e2f6261646765732f6c61746573745f72656c656173655f646174652e737667)
+
+Or to install and run using docker, podman, singularity:
+
+```
+docker pull docker.io/finlaymaguire/hamronization:latest
+docker run --rm docker.io/finlaymaguire/hamronization:latest hamronize --help
+```
+
+Or to install the latest development version:
+
+```
+git clone https://github.com/pha4ge/hAMRonization
+pip install hAMRonization
+```
+
+Alternatively, hAMRonization can also be installed and used in [galaxy](https://galaxyproject.org/) via the [galaxy toolshed](https://toolshed.g2.bx.psu.edu/view/iuc/suite_hamronization/904ab154f8f4).
+
+## Usage
+
+**NOTE**: Only the output format used in the "last updated" version of the AMR prediction tool has been tested for accuracy. Older tool versions or updates which lead to a change in output format may not work.
+In theory, this should only be a problem with major version changes but not all tools follow semantic versioning.
+If you encounter any issues with newer tool versions then please create an issue in this repository.
+
+```
+usage: hamronize <tool> <options>
+
+Convert AMR gene detection tool output(s) to hAMRonization specification format
+
+options:
+  -h, --help            show this help message and exit
+  -v, --version         show program's version number and exit
+
+Tools with hAMRonizable reports:
+  {abricate,amrfinderplus,amrplusplus,ariba,csstar,deeparg,fargene,groot,kmerresistance,resfams,resfinder,mykrobe,rgi,srax,srst2,staramr,tbprofiler,summarize}
+    abricate            hAMRonize abricate's output report i.e., OUTPUT.tsv
+    amrfinderplus       hAMRonize amrfinderplus's

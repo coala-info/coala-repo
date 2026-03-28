@@ -344,3 +344,6 @@ Notes:
 * The output is writted to STDOUT
 ```
 
+
+## Metadata
+- **Skill**: generated

@@ -567,3 +567,6 @@ Set an e-mail address:
  $ cblaster config --email "foo@bar.com"
 ```
 
+
+## Metadata
+- **Skill**: generated

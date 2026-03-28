@@ -1,6 +1,6 @@
 ---
 name: dnaapler
-description: "dnaapler reorients circular microbial sequences to a standardized starting point based on specific target genes. Use when user asks to reorient bacterial chromosomes, plasmids, or phages, standardize the start position of circular contigs, or rotate sequences to a specific gene."
+description: "dnaapler reorients circular microbial genome assemblies to begin at a conserved marker gene. Use when user asks to reorient circular contigs, fix arbitrary start points in assemblies, or rotate sequences to start at a specific gene like dnaA."
 homepage: https://github.com/gbouras13/dnaapler
 ---
 
@@ -9,49 +9,60 @@ homepage: https://github.com/gbouras13/dnaapler
 
 ## Overview
 
-dnaapler is a bioinformatics utility designed to standardize the starting point of circular microbial sequences. While genome assemblers often produce circular contigs with arbitrary breakpoints, dnaapler uses MMseqs2 to identify specific target genes and rotates the sequence so the start codon of the selected gene is positioned at the beginning of the file on the forward strand. It supports bacterial chromosomes, plasmids, and phages, and can process both FASTA and GFA formats.
+dnaapler is a bioinformatics tool designed to solve the "arbitrary start point" problem in circular microbial genome assemblies. While bacterial chromosomes and plasmids are circular, assemblers must output them as linear sequences, often breaking the circle at a random location. dnaapler identifies conserved marker genes—most commonly *dnaA* for chromosomes—and reorients the sequence so that the chosen gene begins at the first coordinate. It supports both FASTA and GFA formats and can handle complex cases where the target gene spans the artificial break in the assembly.
 
-## Core Commands and Usage
+## Common CLI Patterns
 
-### Standard Workflow
-For most users with a mixed assembly (containing both chromosomes and plasmids), use the `all` command. This automatically detects the appropriate reference genes for different contig types.
-
+### Standard Reorientation
+The most common use case is reorienting all circular contigs in an assembly based on the default database.
 ```bash
-dnaapler all -i input.fasta -o output_dir -p sample_name -t 8
+dnaapler all -i assembly.fasta -o output_dir -p sample_name -t 8
 ```
 
-### Specialized Subcommands
-If you know the specific type of sequence you are reorienting, you can use targeted subcommands:
-- `chromosome`: Reorients bacterial chromosomes to the *dnaA* gene.
-- `plasmid`: Reorients plasmids using a database of common plasmid replication genes.
-- `phage`: Reorients phage genomes to the *terL* gene.
-- `custom`: Allows you to provide your own amino acid sequence to use as the reorientation target.
-- `bulk`: Processes multiple files or multi-FASTA files in a single run.
-
 ### Working with GFA Files
-dnaapler supports GFA files (e.g., from Flye or Autocycler). If a GFA is provided as input, the tool will output a reoriented GFA. Note that only contigs marked as circular in the GFA will be reoriented.
-
+When using GFA files (from assemblers like Flye, Unicycler, or Autocycler), dnaapler will output a reoriented GFA file. Note that only contigs explicitly marked as circular in the GFA header/tags will be processed.
 ```bash
 dnaapler all -i assembly.gfa -o output_dir -p sample_name
 ```
 
+### Ignoring Specific Contigs
+If you have a mixed assembly and wish to skip certain sequences (e.g., known linear contigs or specific plasmids), use the `--ignore` flag.
+```bash
+# Using a comma-separated list
+dnaapler all -i input.fasta -o out -p test --ignore contig_1,contig_5
+
+# Using a file containing names (one per line)
+dnaapler all -i input.fasta -o out -p test --ignore exclude_list.txt
+```
+
 ## Expert Tips and Best Practices
 
-### Handling Mixed Contigs
-If your input contains contigs you wish to skip (e.g., small fragments or linear artifacts), use the `--ignore` parameter. It accepts:
-- A comma-separated list: `--ignore contig1,contig2`
-- A file path (one name per line): `--ignore to_skip.txt`
-- Stdin: `cat list.txt | dnaapler all ... --ignore -`
+- **Gene-Spanning Detection**: dnaapler handles genes that span the contig ends by rotating the input by half its length and running MMseqs2 on both versions. It selects the hit with the highest bitscore, ensuring that even "split" genes are correctly identified as the start point.
+- **Mixed Assemblies**: Use the `all` subcommand when dealing with assemblies containing both chromosomes and plasmids. It is more robust than running individual gene-specific subcommands.
+- **Dependency Management**: Ensure `MMseqs2` (version >= 13.45111), `BLAST+`, and `Prodigal` (or `Pyrodigal`) are available in your environment. dnaapler relies on these for gene prediction and homology searching.
+- **Apple Silicon Support**: If installing via Conda on M1/M2/M3/M4 Macs, use the `osx-64` platform override to ensure compatibility with all underlying bioinformatics dependencies.
+- **Output Verification**: Always check the `dnaapler.log` in the output directory to verify which contigs were successfully reoriented and which genes were used as the new anchor point.
 
-### Genes Spanning Contig Ends
-dnaapler (v1.1.0+) automatically handles cases where the target gene (like *dnaA*) is split across the arbitrary breakpoint of the assembly. It does this by rotating the input by half the genome length and running searches on both versions to find the highest bitscore hit.
 
-### Performance
-Version 1.0+ uses MMseqs2 instead of BLAST, making it significantly faster. For a standard bacterial genome, reorientation typically takes only a few seconds. Always specify threads with `-t` to maximize performance on multi-core systems.
 
-### Troubleshooting Start Codons
-If dnaapler finds a hit but fails to reorient, it is often because it cannot find a valid start codon (M, V, or L) at the beginning of the MMseqs2 alignment. Ensure your assembly is of high quality and that the sequence is actually circular.
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| dnaapler | A tool for analyzing and annotating archaeal genomes. |
+| dnaapler | A tool for analyzing DNA sequences. |
+| dnaapler | A tool for analyzing DNA sequences. |
+| dnaapler all | Run dnaapler on all contigs in the input file. |
+| dnaapler archaea | Run dnaapler on archaea genomes |
+| dnaapler bulk | Reorient sequences in bulk |
+| dnaapler chromosome | This command is part of the dnaapler tool and is used for processing chromosome-related data. |
+| dnaapler largest | Finds the largest contig in a FASTA or GFA file. |
+| dnaapler mystery | Mystery tool for dnaapler |
+| dnaapler nearest | Find the nearest reference genome for each input sequence. |
+| dnaapler plasmid | Runs the plasmid detection pipeline. |
+| dnaapler_custom | Custom reorientation of sequences using a custom MMseqs2 database. |
+| phage | Run dnaapler on phage genomes |
 
 ## Reference documentation
-- [dnaapler GitHub Repository](./references/github_com_gbouras13_dnaapler.md)
-- [dnaapler Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_dnaapler_overview.md)
+- [github_com_gbouras13_dnaapler_blob_main_README.md](./references/github_com_gbouras13_dnaapler_blob_main_README.md)
+- [github_com_gbouras13_dnaapler_blob_main_HISTORY.md](./references/github_com_gbouras13_dnaapler_blob_main_HISTORY.md)

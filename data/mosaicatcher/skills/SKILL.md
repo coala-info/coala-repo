@@ -1,6 +1,6 @@
 ---
 name: mosaicatcher
-description: Mosaicatcher processes single-cell Strand-seq data to count reads in genomic bins and classify chromosomal strand states. Use when user asks to count reads in fixed or predefined bins, classify strand states using Hidden Markov Models, or simulate binned Strand-seq counts.
+description: Mosaicatcher analyzes Strand-seq genomic data to generate binned count tables and determine chromosome strand inheritance patterns. Use when user asks to count reads from Strand-seq BAM files, classify strand states, or simulate synthetic Strand-seq data for benchmarking.
 homepage: https://github.com/friendsofstrandseq/mosaicatcher/
 ---
 
@@ -8,76 +8,78 @@ homepage: https://github.com/friendsofstrandseq/mosaicatcher/
 # mosaicatcher
 
 ## Overview
+Mosaicatcher is a specialized bioinformatic tool designed for the analysis of Strand-seq genomic data. It functions as a critical upstream component in structural variant (SV) calling pipelines. The tool processes raw sequencing reads from single cells to generate binned count tables and determine the strand inheritance patterns (strand states) of chromosomes. It also includes robust simulation capabilities to generate synthetic Strand-seq data for benchmarking SV detection algorithms.
 
-Mosaicatcher is a computational tool designed for the processing of single-cell Strand-seq sequencing data. It performs two primary functions: counting reads within genomic bins and classifying the strand state (e.g., Watson-Watson, Watson-Crick, or Crick-Crick) of each chromosome in every cell. By utilizing a Hidden Markov Model, it provides a robust framework for interpreting the directional information inherent in Strand-seq, which is essential for downstream structural variant discovery and genomic assembly.
+## Command Line Usage
 
-## Installation and Setup
-
-The most efficient way to install mosaicatcher is via Bioconda:
-
-```bash
-conda install -c bioconda mosaicatcher
-```
-
-If building from source, ensure you have `boost >= 1.50` and `HTSlib >= 1.3.1` installed.
-
-## Data Input Requirements
-
-Before running mosaicatcher, ensure your input data meets these criteria:
-- **Format**: One BAM file per single cell.
-- **Metadata**: Each BAM must contain a single read group (`@RG`).
-- **Grouping**: Cells are grouped into samples using the `SM` tag within the BAM header.
-- **Preparation**: BAM files must be coordinate-sorted and indexed (`.bai`).
-
-## Common CLI Patterns
-
-### 1. Counting Reads with Fixed-Width Bins
-Use the `count` command with the `-w` flag to define a fixed bin size (e.g., 200kb).
+### Read Counting and Strand State Classification
+The `count` command is the primary entry point for processing BAM files. It bins reads and applies an HMM to classify strand states.
 
 ```bash
-mosaic count \
+# Count reads using fixed-width bins (e.g., 200kb)
+./mosaic count \
     -o counts.txt.gz \
     -i counts.info \
-    -x references/exclude_list.exclude \
+    -x data/exclude/GRCh38.exclude \
     -w 200000 \
     cell1.bam cell2.bam cell3.bam
 ```
 
-### 2. Counting Reads with Predefined Bins
-If you have specific genomic windows (e.g., based on mappability or GC content), use the `-b` flag.
+**Key Arguments:**
+- `-o`: Output compressed count table.
+- `-i`: Output information file containing metadata.
+- `-x`: Path to a file defining genomic regions to exclude (e.g., HLA, decoys).
+- `-w`: Bin width in base pairs (mutually exclusive with `-b`).
+- `-b`: Path to a file defining predefined variable-sized bins.
+
+### Data Simulation
+Generate synthetic Strand-seq data based on a structural variant configuration file.
 
 ```bash
-mosaic count \
-    -o counts.txt.gz \
-    -i counts.info \
-    -b predefined_bins.bed \
-    cell*.bam
+# Simulate counts based on an SV config
+./mosaic simulate -o simulated_counts.txt.gz sv_config.txt
 ```
 
-### 3. Generating Quality Control Plots
-After counting, use the provided R script to visualize the data and assess library quality.
+### Quality Control and Visualization
+Mosaicatcher includes R scripts to visualize the output of the counting and simulation steps.
 
 ```bash
-Rscript R/qc.R counts.txt.gz counts.info counts_qc.pdf
-```
+# Generate QC plots
+Rscript R/qc.R counts.txt.gz counts.info counts.pdf
 
-### 4. Simulating Strand-seq Data
-To test pipelines or validate SV callers, you can simulate binned counts based on a configuration file.
-
-```bash
-mosaic simulate \
-    -o simulated_counts.txt.gz \
-    sv_config.txt
+# Plot counts for a specific chromosome including segments
+Rscript R/chrom.R counts.txt.gz counts.pdf
 ```
 
 ## Expert Tips and Best Practices
 
-- **Exclusion Lists**: Always provide an exclusion file (`-x`) to mask centromeres, assembly gaps, or problematic regions (e.g., "decoy" sequences in GRCh38) to prevent HMM artifacts.
-- **Bin Selection**: For standard human Strand-seq libraries, 100kb to 200kb bins are typically recommended. Smaller bins may be used for higher coverage data but can increase noise in strand state classification.
-- **Version Compatibility**: For optimal integration with the larger Strand-seq SV calling pipeline (v1.0), use version `0.3.1-dev`.
-- **Memory Management**: When processing hundreds of cells simultaneously, ensure your system has sufficient file descriptors open, as mosaicatcher reads multiple BAM files in parallel.
+### Input BAM Requirements
+- **Single Cell per File**: Each BAM file must represent exactly one single cell.
+- **Read Groups**: Every BAM must contain a single `@RG` header.
+- **Sample Grouping**: Use the `SM` tag within the read group to group cells into samples.
+- **Indexing**: All input BAM files must be coordinate-sorted and indexed (`.bai`).
+
+### Normalization and Filtering
+- **Normalization**: Use `R/norm.R` to scale count tables or apply blacklists to problematic bins.
+- **None Bins**: In version 0.3+, the segmentation process penalizes or removes "None" bins (regions with no data) to improve SV calling accuracy.
+- **Segment Constraints**: Avoid segments that are too small by using the penalty features in the cost matrix during the `segment` command.
+
+### Simulation Reproducibility
+- Use the random generator seed option in `simulate` to ensure reproducible synthetic datasets.
+- Simulations can output phased reads for more complex benchmarking scenarios.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| count | Count reads from Strand-seq BAM files. |
+| makebins | Specify whole genome sequencing data (or a set of Strand-seq cells merged into a single file) which were sequenced under equal conditions. This tool will create bins of variable width but which contian the same number of reads. This way we hope to overcome mappability issues. |
+| segment | Find a segmentation across multiple cells. |
+| simulate | Simulate binned Strand-seq data. |
+| states | Call Sister chromatid exchange events (SCEs). |
 
 ## Reference documentation
-
-- [Bioconda mosaicatcher Overview](./references/anaconda_org_channels_bioconda_packages_mosaicatcher_overview.md)
-- [Mosaicatcher GitHub Repository](./references/github_com_friendsofstrandseq_mosaicatcher.md)
+- [Mosaicatcher README](./references/github_com_friendsofstrandseq_mosaicatcher_blob_master_README.md)
+- [Mosaicatcher Changelog](./references/github_com_friendsofstrandseq_mosaicatcher_blob_master_CHANGELOG.md)

@@ -1,6 +1,6 @@
 ---
 name: pbaa
-description: The PacBio Amplicon Analysis tool processes HiFi amplicon data to separate complex sequence mixtures into high-quality consensus alleles. Use when user asks to cluster amplicon reads, resolve alleles in polymorphic regions, or visualize clustering results with BAM painting.
+description: The pbaa tool performs reference-aided clustering and consensus generation for PacBio HiFi amplicon data to resolve complex mixtures of alleles. Use when user asks to cluster HiFi reads using guide sequences, generate consensus sequences for amplicons, or visualize read assignments in a BAM file.
 homepage: https://github.com/PacificBiosciences/pbAA
 ---
 
@@ -8,54 +8,54 @@ homepage: https://github.com/PacificBiosciences/pbAA
 # pbaa
 
 ## Overview
+The `pbaa` tool is a reference-aided (pseudo de-novo) clustering application specifically designed for PacBio HiFi data (>QV20). It excels at resolving complex mixtures of amplicons in samples with unknown copy numbers. By using guide sequences to group reads, it performs error correction and k-means clustering to produce accurate consensus sequences for each allele present in the sample.
 
-The PacBio Amplicon Analysis (pbaa) tool is a specialized suite for processing HiFi (High Fidelity) amplicon data. It employs a reference-aided, pseudo de-novo approach to separate complex mixtures of sequences. By clustering reads based on shared variants and generating consensus sequences, pbaa can resolve alleles with single-nucleotide variants (SNVs) or large indels. This tool is essential for researchers working with highly polymorphic regions where traditional assembly or variant calling might fail to distinguish between closely related alleles.
+## Core Workflows
 
-## Core CLI Usage
-
-### 1. Clustering and Consensus
-The primary command is `pbaa cluster`. It requires indexed guide sequences and indexed HiFi reads.
+### 1. Clustering and Consensus Generation
+The primary command `pbaa cluster` processes HiFi reads against a set of guide sequences.
 
 ```bash
 pbaa cluster [options] <guide.fasta> <reads.fastq> <output_prefix>
 ```
 
-**Required Inputs:**
-- **Guide Input**: Reference sequences in FASTA format. Must be indexed with `samtools faidx`.
-- **Read Input**: De-multiplexed HiFi reads in FASTQ format. Must be indexed with `samtools fqidx`.
-- **Prefix**: String used for naming the three output files: `{prefix}_passed_cluster_sequences.fasta`, `{prefix}_failed_cluster_sequences.fasta`, and `{prefix}_read_info.txt`.
+**Key Requirements:**
+*   **HiFi Only:** Do not use with CLR data.
+*   **Indexing:** Both the guide FASTA and the read FASTQ must be indexed using `samtools faidx` and `samtools fqidx` (v1.9+) respectively.
+*   **Guide Selection:** Use representative sequences (90-95% similarity) rather than exhaustive databases to maintain performance.
 
 ### 2. Visualizing Clusters (BAM Painting)
-To visualize results in IGV, use `bampaint` to add color tags to an existing BAM file based on the pbaa clustering results.
+To visualize how reads were clustered in a genome browser like IGV, use `bampaint` to add `HP` (grouping) and `YC` (color) tags.
 
 ```bash
-pbaa bampaint <read_info.txt> <input.bam> <output.bam>
+pbaa bampaint <prefix>_read_info.txt <input.bam> <output_tagged.bam>
 ```
-This adds `HP` (grouping) and `YC` (coloring) tags to the BAM records.
 
 ## Expert Tips and Best Practices
 
-### Guide Sequence Selection
-- **Avoid Whole Chromosomes**: Do not use large genomic regions or chromosomes as guides. Guides should contain the amplified region and minimal flanking sequence.
-- **Locus Grouping**: Use the naming convention `AlleleName|LocusName` in your guide FASTA. pbaa will group all reads assigned to any allele with the same `LocusName` into a single clustering pool.
-- **Divergence**: Ensure guide sequences are sufficiently divergent. If guides are too similar, the number of un-placed reads will increase due to a lack of informative k-mers.
-
-### Input Preparation
-- **HiFi Only**: pbaa is strictly for HiFi data (>QV20). It will not work on CLR (Continuous Long Read) data.
-- **Indexing**: Always run `samtools faidx guide.fasta` and `samtools fqidx reads.fastq` before starting.
-- **Batching**: For multiple samples, you can provide a FOFN (File Of File Names) containing the full paths to your input files instead of a single file path.
+### Guide Sequence Optimization
+*   **Locus Grouping:** Use the pipe symbol in FASTA headers to group divergent alleles into a single locus for clustering: `>AlleleName|LocusName`.
+*   **Avoid Chromosomes:** Never use a full chromosome as a guide; it will cause placement failures. Guides should only contain the amplified region and immediate flanking sequences.
+*   **Pseudogenes:** Include known closely related pseudogenes in your guide file to prevent "off-target" reads from being incorrectly forced into your primary target clusters.
 
 ### Parameter Tuning
-- **--min-read-qv**: Default is 20. If you have extremely high-quality data, increasing this can reduce noise, but may lower yield.
-- **--max-amplicon-size**: Default is 15000. Ensure this is set higher than your longest expected fragment.
-- **--min-cluster-frequency**: Default is 0.1. For detecting rare alleles or minor variants in a population, lower this value (e.g., 0.01 or 0.02), but be prepared for more potential noise.
-- **--max-uchime-score**: Default is 1. This filters chimeric sequences. If you suspect valid alleles are being filtered as chimeras, check the `{prefix}_failed_cluster_sequences.fasta` file.
+*   **Filtering Chimeras:** The `uchime_score` in the output header indicates the likelihood of a sequence being chimeric. If you see high-quality but unexpected alleles, check the `failed_cluster_sequences.fasta` and adjust `--max-uchime-score` (default 1.0).
+*   **Low Frequency Variants:** If looking for minor variants, lower `--min-cluster-frequency` (default 0.1) and `--min-cluster-read-count` (default 5).
+*   **Performance:** Use `-j 0` for automatic thread detection to maximize CPU utilization during the k-means iterations.
 
-### Interpreting Results
-- **uchime_score**: Higher scores indicate a higher probability of a chimera.
-- **cluster_freq**: Represents the fraction of reads in the locus assigned to that specific cluster.
-- **diversity**: Indicates the internal variation within the cluster; high diversity might suggest the cluster should have been split further or contains significant noise.
+### Interpreting Output
+*   **Passed vs. Failed:** `pbaa` automatically segregates results. Always check the `filters:` field in the FASTA headers of the `failed` file to understand why a cluster was rejected (e.g., `fail-low-frequency`, `fail-high-diversity`).
+*   **Read Info:** The `_read_info.txt` file is the source of truth for which specific HiFi read was assigned to which cluster.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| bampaint | Add color tags to BAM records, based on pbaa clusters. |
+| cluster | Run clustering tool for HiFi reads using guide sequences. |
 
 ## Reference documentation
-- [pbaa README](./references/github_com_PacificBiosciences_pbAA_blob_main_README.md)
-- [Guide Reference Documentation](./references/github_com_PacificBiosciences_pbAA_blob_main_guide_reference.md)
+- [PacBio Amplicon Analysis Overview](./references/github_com_PacificBiosciences_pbAA_blob_main_README.md)
+- [Guide Sequence Curation Protocol](./references/github_com_PacificBiosciences_pbAA_blob_main_guide_reference.md)

@@ -1,1 +1,38 @@
-LightStringGraph by AlgoLab LightStringGraph Lightweight String Graph Construction View the Project on GitHub AlgoLab/LightStringGraph Download ZIP File Download TAR Ball View On GitHub LightStringGraph Lightweight String Graph Construction This software is in its initial stage of development. Please contact Marco Previtali for any questions or use the issue tracker for reporting bugs. Building and running LightStringGraph The software is composed of three different tools: lsg (light (string) overlap graph), redbuild (string graph build), and graph2asqg (native graph format to ASQG). To build all the tools simply move in the root directory of the project and run make all . If you want to try out the software on some (simulated or real) reads follow these steps: given a FASTA file a.fa containing n reads produce another FASTA file b.fa containing 2n reads s.t. reads between position 1 and n are the same as those in a.fa and reads between position n+1 and 2n are their reverse and complement (for 1 &lt;= i &lt;= n , read in position n+i should be the reverse complement of read in position i ) download and compile BEETL ( please note that this is not the original repository ) compile LightStringGraph cd &lt;LSGPATH&gt; &amp;&amp; make all build the BWT of b.fa with beetl-bwt -i b.fa -o &lt;BWTPrefix&gt; --output-format=ASCII --generate-lcp --generate-end-pos-file run LightStringGraph &lt;LSGPATH&gt;/bin/lsg -B &lt;BWTPrefix&gt; -T &lt;Tau&gt; -C &lt;CycNum&gt; where &lt;Tau&gt; is the minimum overlap between reads and &lt;CycNum&gt; &gt;= &lt;reads length&gt; - &lt;Tau&gt; run redbuild &lt;LSGPATH&gt;/bin/redbuild -b &lt;BWTPrefix&gt; -r b.fa -m &lt;CycNum&gt;+1 optionally run graph2asqg &lt;LSGPATH&gt;/bin/graph2asqg -b &lt;BWTPrefix&gt; -r b.fa -l &lt;readsLength&gt; and redirect STDOUT (the string graph in the ASQG format ) to a file (you can compress it on the fly). If lsg crashes and produces a logic error try to raise the limit on the maximum number of open file descriptors for the user running that command (for example, with the bash built-in ulimit -n ) and delete all the *.tmplsg.* files before running lsg again. This project is maintained by AlgoLab Hosted on GitHub Pages &mdash; Theme by orderedlist
+# LightStringGraph
+
+Lightweight String Graph Construction
+
+[View the Project on GitHub AlgoLab/LightStringGraph](https://github.com/AlgoLab/LightStringGraph)
+
+* [Download **ZIP File**](https://github.com/AlgoLab/LightStringGraph/zipball/master)
+* [Download **TAR Ball**](https://github.com/AlgoLab/LightStringGraph/tarball/master)
+* [View On **GitHub**](https://github.com/AlgoLab/LightStringGraph)
+
+# LightStringGraph
+
+Lightweight String Graph Construction
+
+This software is in its initial stage of development.
+Please contact [Marco Previtali](http://algolab.eu/people/previtali/) for any questions or use the [issue tracker](https://github.com/AlgoLab/LightStringGraph/issues) for reporting bugs.
+
+### Building and running LightStringGraph
+
+The software is composed of three different tools: `lsg` (light (string) overlap graph), `redbuild` (string graph build), and `graph2asqg` (native graph format to ASQG).
+
+To build all the tools simply move in the root directory of the project and run `make all`.
+
+If you want to try out the software on some (simulated or real) reads follow these steps:
+
+1. given a FASTA file `a.fa` containing `n` reads produce another FASTA file `b.fa` containing `2n` reads s.t. reads between position `1` and `n` are the same as those in `a.fa` and reads between position `n+1` and `2n` are their reverse and complement (for `1 <= i <= n`, read in position `n+i` should be the reverse complement of read in position `i`)
+2. download and compile [BEETL](https://github.com/AlgoLab/BEETL) (**please note that this is not the original repository**)
+3. compile LightStringGraph `cd <LSGPATH> && make all`
+4. build the BWT of `b.fa` with `beetl-bwt -i b.fa -o <BWTPrefix> --output-format=ASCII --generate-lcp --generate-end-pos-file`
+5. run LightStringGraph `<LSGPATH>/bin/lsg -B <BWTPrefix> -T <Tau> -C <CycNum>` where `<Tau>` is the minimum overlap between reads and `<CycNum> >= <reads length> - <Tau>`
+6. run redbuild `<LSGPATH>/bin/redbuild -b <BWTPrefix> -r b.fa -m <CycNum>+1`
+7. optionally run graph2asqg `<LSGPATH>/bin/graph2asqg -b <BWTPrefix> -r b.fa -l <readsLength>` and redirect STDOUT (the string graph in the [ASQG format](https://github.com/jts/sga/wiki/ASQG-Format)) to a file (you can compress it on the fly).
+
+**If `lsg` crashes and produces a logic error try to raise the limit on the maximum number of open file descriptors for the user running that command (for example, with the `bash` built-in `ulimit -n`) and delete all the `*.tmplsg.*` files before running `lsg` again.**
+
+This project is maintained by [AlgoLab](https://github.com/AlgoLab)
+
+Hosted on GitHub Pages — Theme by [orderedlist](https://github.com/orderedlist)

@@ -261,3 +261,6 @@ usage: lrtk version 2.0
 lrtk: error: argument {MKFQ,FQCONVER,ALIGN,RLF,SNV,SV,PHASE,ASSEMBLY,WGS,MWGS}: invalid choice: 'mwgs' (choose from 'MKFQ', 'FQCONVER', 'ALIGN', 'RLF', 'SNV', 'SV', 'PHASE', 'ASSEMBLY', 'WGS', 'MWGS')
 ```
 
+
+## Metadata
+- **Skill**: generated

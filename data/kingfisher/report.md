@@ -189,3 +189,6 @@ usage: kingfisher [-h] {get,extract,annotate} ...
 kingfisher: error: argument subparser_name: invalid choice: 'sequenced' (choose from 'get', 'extract', 'annotate')
 ```
 
+
+## Metadata
+- **Skill**: generated

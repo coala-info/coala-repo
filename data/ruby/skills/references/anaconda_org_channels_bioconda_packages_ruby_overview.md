@@ -1,1 +1,1 @@
-ruby - bioconda | Anaconda.org CMD + K Sign In Sign Up bioconda / ruby ruby Community Overview Files 19 Labels 2 Badges Versions 2.2.3 Installation To install this package, run one of the following: Conda $ conda install bioconda::ruby Usage Tracking Monthly Downloads Updates Version 2.2.3 2.2.2 2.1.7 2.0.0 1.9.3 5 / 8 versions selected Downloads (Last 6 months): 0 About Last Updated Nov 12, 2016 at 15:22 License BSD Total Downloads 60.9K Version Downloads 22.1K Supported Platforms linux-64 macOS-64
+Anaconda.org

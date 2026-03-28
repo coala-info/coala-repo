@@ -1,53 +1,72 @@
 ---
 name: met4j
-description: Met4j is a Java library for the structural analysis of metabolic networks. Use when user asks to perform structural analysis of metabolic networks, explore pathways, or manipulate biological network data.
+description: Met4j is a Java library for metabolic network analysis that enables processing, topological analysis, and conversion of SBML models. Use when user asks to convert SBML models to graphs, perform choke-point analysis, calculate metabolic scope, or extract sub-networks based on specific biological criteria.
 homepage: https://forgemia.inra.fr/metexplore/met4j/-/blob/master/met4j-toolbox/README.md
 ---
 
 
 # met4j
 
-yaml
-name: met4j
-description: |
-  A Java library for the structural analysis of metabolic networks. Use when Claude needs to perform tasks related to metabolic network analysis, such as structural analysis, pathway exploration, or data manipulation related to biological networks. This skill is particularly useful for researchers and bioinformaticians working with metabolic data.
----
 ## Overview
+Met4j is a comprehensive Java library designed for metabolic network analysis. It offers a modular toolbox for processing SBML models, enabling users to perform complex topological analyses, convert between metabolic formats, and compute structural properties of metabolic networks. This skill assists in selecting the correct Met4j module for specific biological questions and provides the necessary command-line patterns to execute these tasks efficiently.
 
-Met4J is an open-source Java library designed for the structural analysis of metabolic networks. It provides functionalities to explore, analyze, and manipulate biological network data. This skill is intended for users who need to perform in-depth analysis of metabolic pathways and network structures.
+## Core Workflows and CLI Patterns
 
-## Usage Instructions
+### Model Manipulation and Conversion
+Met4j provides utilities to clean and standardize SBML models before analysis.
+- **SBML to Graph**: Convert metabolic models into various graph representations (bipartite, compound, or reaction graphs).
+- **Attribute Management**: Add or remove annotations, SBO terms, and chemical identifiers.
+- **Filtering**: Extract sub-networks based on pathways, compartments, or specific lists of reactions/compounds.
 
-Met4J is primarily used as a Java library. To leverage its capabilities, you will typically interact with it through Java code or by executing its command-line tools if available.
+### Topological Analysis
+Use these modules to understand the structural characteristics of the network:
+- **Choke-point Analysis**: Identify reactions whose removal disconnects the network, suggesting potential essentiality.
+- **Scope Calculation**: Determine the set of metabolites reachable from a given seed set of precursors.
+- **Precursor Sets**: Identify the minimal sets of nutrients required to produce a specific target metabolite.
+- **Distance Metrics**: Calculate shortest paths and diameters within the metabolic graph.
 
-### Core Functionalities
+### Best Practices
+- **Input Validation**: Always validate SBML files using the `CheckSBML` module before running complex topological analyses to ensure compatibility with the parser.
+- **Side Compounds**: When creating graphs, use the `SideCompound` removal tools to exclude ubiquitous metabolites (like H2O, ATP, CO2) that create biologically irrelevant shortcuts in the network.
+- **Memory Management**: For large-scale models (e.g., community models), ensure the Java Heap Space is sufficiently allocated using `-Xmx` flags when calling the JAR.
 
-Met4J focuses on the structural analysis of metabolic networks. This includes:
+## Common Command Patterns
+Met4j is typically invoked via a launcher or by calling specific class files within the toolbox JAR:
+- `java -cp met4j-toolbox.jar fr.inrae.toulouse.metexplore.met4j_toolbox.[ModuleGroup].[ModuleName] -input <file.sbml> [options]`
 
-*   **Network Representation**: Loading and representing metabolic networks in memory.
-*   **Structural Analysis**: Performing analyses like identifying network motifs, calculating centrality measures, and analyzing network topology.
-*   **Pathway Exploration**: Tools to explore and understand metabolic pathways within the network.
 
-### Expert Tips for Usage
 
-*   **Data Input**: Ensure your metabolic network data is in a compatible format. While specific input formats are not detailed in the provided documentation, common formats for metabolic networks include SBML (Systems Biology Markup Language) or custom graph formats. Refer to the Met4J project's documentation for supported input types.
-*   **Java Environment**: As Met4J is a Java library, you will need a Java Development Kit (JDK) installed to compile and run any Java code that utilizes Met4J.
-*   **Dependency Management**: If you are integrating Met4J into a larger Java project, use a build tool like Maven or Gradle to manage its dependencies. This ensures you have the correct versions of Met4J and its required libraries.
-*   **Command-Line Tools**: If Met4J provides standalone command-line executables (often packaged with the library), familiarize yourself with their options and arguments. These tools can be powerful for batch processing or quick analyses. Look for documentation on how to invoke these tools and their parameters.
+## Subcommands
 
-### Common CLI Patterns (if applicable)
-
-While the provided documentation does not detail specific command-line interface (CLI) commands for Met4J, typical patterns for such bioinformatics tools include:
-
-*   **Input/Output Specification**: Commands often require specifying input network files and output file paths.
-    *   Example (hypothetical): `met4j analyze --input network.xml --output analysis_results.txt`
-*   **Analysis Type Selection**: Different analysis types might be selected via subcommands or flags.
-    *   Example (hypothetical): `met4j structural --network network.xml --type centrality`
-*   **Parameter Tuning**: Options to adjust parameters for specific analyses.
-    *   Example (hypothetical): `met4j explore --pathway P00001 --depth 5`
-
-**Note**: The specific CLI commands and their arguments would need to be consulted from the official Met4J documentation or by running the tool with a `--help` flag if available.
+| Command | Description |
+|---------|-------------|
+| bigg.GetBiggModelProteome | Get proteome in fasta format of a model present in the BIGG database |
+| convert.Sbml2CarbonSkeletonNet | Create a carbon skeleton graph representation of a SBML file content, using GSAM atom-mapping file (see https://forgemia.inra.fr/metexplore/gsam) |
+| convert.Sbml2CompoundGraph | Advanced creation of a compound graph representation of a SBML file content |
+| convert.Sbml2Graph | Create a graph representation of a SBML file content, and export it in graph file format. |
+| met4j | Extract databases' references from SBML annotations or notes. |
+| met4j | Extract pathway(s) from a SBML file and create a sub-network SBML file |
+| met4j | Met4j-Toolbox: Applications classified by package. |
+| met4j | Met4j-Toolbox: Applications classified by package. |
+| met4j | Met4j-Toolbox: Applications classified by package. |
+| met4j | Get gene lists from a list of reactions and a SBML file. |
+| met4j | The applications are classified by package. The complete class name must be provided (e.g. fr.inrae.toulouse.metexplore.met4j_toolbox.attributes.SbmlSetChargesFromFile) to launch the app Launch the application with the -h parameter to get the list of the parameters and a complete description. |
+| met4j | Get reactant lists from a list of reactions and a SBML file. |
+| met4j | The applications are classified by package. The complete class name must be provided (e.g. fr.inrae.toulouse.metexplore.met4j_toolbox.attributes.SbmlSetChargesFromFile) to launch the app Launch the application with the -h parameter to get the list of the parameters and a complete description. |
+| met4j | Build a SBML file from KEGG organism-specific pathways. Uses Kegg API. |
+| met4j | Met4j-Toolbox: Applications classified by package. |
+| met4j | The applications are classified by package. The complete class name must be provided (e.g. fr.inrae.toulouse.metexplore.met4j_toolbox.attributes.SbmlSetChargesFromFile) to launch the app Launch the application with the -h parameter to get the list of the parameters and a complete description. |
+| met4j | Create a tabulated file listing reaction attributes from a SBML file |
+| met4j | Met4j-Toolbox: Applications classified by package. |
+| met4j | Met4j-Toolbox: Applications classified by package. |
+| met4j | Set Formula to network metabolites from a tabulated file containing the metabolite ids and the formulas |
+| met4j | Met4j-Toolbox: Applications classified by package. |
+| met4j | Met4j-Toolbox: Applications classified by package. |
+| met4j | Met4j-Toolbox: Applications classified by package. |
+| met4j | Met4j-Toolbox: Applications classified by package. |
+| met4j | Met4j-Toolbox: Applications classified by package. |
+| met4j | Met4j-Toolbox: Applications classified by package. The complete class name must be provided (e.g. fr.inrae.toulouse.metexplore.met4j_toolbox.attributes.SbmlSetChargesFromFile) to launch the app. Launch the application with the -h parameter to get the list of the parameters and a complete description. |
+| met4j | The applications are classified by package. The complete class name must be provided (e.g. fr.inrae.toulouse.metexplore.met4j_toolbox.attributes.SbmlSetChargesFromFile) to launch the app Launch the application with the -h parameter to get the list of the parameters and a complete description. |
 
 ## Reference documentation
-
-- [Met4J README](https://forge.inrae.fr/metexplore/met4j/-/blob/master/met4j-toolbox/README.md)
+- [Met4j Toolbox README](./references/forge_inrae_fr_metexplore_met4j_-_blob_master_met4j-toolbox_README.md)

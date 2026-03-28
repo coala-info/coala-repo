@@ -1,1 +1,243 @@
-GitHub - AmpliconSuite/AmpliconSuite-pipeline: A quickstart tool for AmpliconArchitect. Enables all steps (alignment, CNV calling, seed interval detection) prior to running AmpliconArchitect, and invokes AmpliconClassifier Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} AmpliconSuite / AmpliconSuite-pipeline Public Notifications You must be signed in to change notification settings Fork 31 Star 77 A quickstart tool for AmpliconArchitect. Enables all steps (alignment, CNV calling, seed interval detection) prior to running AmpliconArchitect, and invokes AmpliconClassifier License Unknown, Unknown licenses found Licenses found Unknown LICENSE Unknown LICENSE-AA 77 stars 31 forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 34 Pull requests 0 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights AmpliconSuite/AmpliconSuite-pipeline master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 692 Commits 692 Commits conda-recipe conda-recipe docker docker documentation documentation images images paalib paalib scripts scripts singularity singularity test_outputs test_outputs .gitignore .gitignore AmpliconSuite-pipeline.py AmpliconSuite-pipeline.py CITATIONS.md CITATIONS.md GroupedAnalysisAmpSuite.py GroupedAnalysisAmpSuite.py LICENSE LICENSE LICENSE-AA LICENSE-AA MANIFEST.in MANIFEST.in README.md README.md install.sh install.sh setup.py setup.py View all files Repository files navigation README License License A multithread-enabled end-to-end wrapper for AmpliconArchitect and AmpliconClassifier to enable analysis of focal copy number amplifications such as ecDNA or BFBs from paired-end whole genome sequencing data. AmpliconSuite-pipeline can be invoked to begin at any intermediate stage of the data preparation process and can itself invoke both AmpliconArchitect and the downstream tool AmpliconClassifier. AmpliconSuite-pipeline was formerly called "PrepareAA". We recommend browsing our detailed guide to learn about best practices and to see some FAQs. AmpliconSuite-pipeline supports hg19, GRCh37, GRCh38 (hg38), and mouse genome mm10 (GRCm38). It also supports analysis with a human-viral hybrid reference genome we provide, "GRCh38_viral", which can be used to detect oncoviral hybrid focal amplifications in oncoviral cancers. Licenses The modules wrapped in AmpliconSuite-pipeline use the following licenses. Please note that the AmpliconArchitect license specifies that AmpliconArchitect is for research use and does not give license for commerical for-profit use. AmpliconSuite-pipeline license (BSD 2-Clause) AmpliconArchitect license (University of California software license) AmpliconClassifier license (BSD 2-Clause) Other dependencies used by these modules (e.g. Mosek, samtools, etc.) have their own set of licensing requirements which users should make themselves aware of as needed. The Mosek license requires that users obtain a copy (which is free for academic use) from the Mosek website. More information is available in the installation section. Installation Option A: Installation-free platforms GenePattern : AmpliconSuite-pipeline can be run using the web interface at GenePattern Web Interface . Search the module list for AmpliconSuite . Constructed in collaboration with members of the GenePattern team (Edwin Huang, Ted Liefeld, Michael Reich). The most convenient option, but not suitable for analysis of large collections of samples or protected health information (PHI), and may not support more advanced command-line options. An excellent option for most users with small numbers of non-PHI samples. Nextflow : AmpliconSuite-pipeline can also be run through Nextflow, using the nf-core/circdna pipeline constructed by Daniel Schreyer . Option B: Conda or Mamba conda create -n ampsuite &amp;&amp; conda activate ampsuite conda install -c bioconda -c conda-forge ampliconsuite conda install -c mosek mosek # then run the installer script to finalize the locations of the data repo and mosek license wget https://raw.githubusercontent.com/AmpliconSuite/AmpliconSuite-pipeline/master/install.sh chmod +x install.sh ./install.sh --finalize_only # -h to see options Then obtain the Mosek license (free for academic use) and place it in $HOME/mosek/ . AA will not work without it. If Conda fails to solve the environment, Mamba seems to function robustly for installing AmpliconSuite. These steps also function on macOS. # alternate instructions using Mamba (solves dependencies more effectively on some setups) mamba create -n ampsuite python=3.10 &amp;&amp; mamba activate ampsuite mamba install -c conda-forge -c bioconda -c mosek ampliconsuite mosek wget https://raw.githubusercontent.com/AmpliconSuite/AmpliconSuite-pipeline/master/install.sh chmod +x install.sh ./install.sh --finalize_only Option C: Standalone installation using the installer script Can be used on recent Unix systems (e.g. Ubuntu 18.04+, CentOS 7+, macOS). Requires python&gt;=3.7 . Pull source code and run install script ( skip if installed via Conda ): # first install some dependencies (BWA, R, samtools) if you don't already have them # for ubuntu: sudo apt install bedtools bwa curl git r-base samtools # or for macOS: brew install bedtools bwa curl git r samtools git clone https://github.com/AmpliconSuite/AmpliconSuite-pipeline cd AmpliconSuite-pipeline # To see install options, consider first doing # ./install -h # The install.sh script will install python dependencies using 'python3 -m pip install' ./install.sh Mac users will need to perform one additional installation step: brew install coreutils Obtain the Mosek license (free for academic use) and place it in $HOME/mosek/ . AA will not work without it. (Optional) If you want the Arial font in your AA figures (helpful for publication-quality fonts), but do not have Arial on your Linux system, please see these instructions for making it available to Matplotlib. Option D: Singularity &amp; Docker images Containerized versions of AmpliconSuite-pipeline are available for Singularity and Docker. Obtain the AmpliconSuite-pipeline image from the options below: Singularity : Singularity installation: https://docs.sylabs.io/guides/3.0/user-guide/installation.html Must have Singularity version 3.6 or later. Pull the singularity image: singularity pull library://jluebeck/ampliconsuite-pipeline/ampliconsuite-pipeline Docker : Docker installation: https://docs.docker.com/install/ Pull the docker image: docker pull jluebeck/ampliconsuite-pipeline (Optional): Add user to the docker group: sudo usermod -a -G docker $USER (log out and back in after performing). Obtain the execution script and configure the data repo location git clone https://github.com/AmpliconSuite/AmpliconSuite-pipeline cd AmpliconSuite-pipeline # Can use ./install.sh -h to see help before installing ./install.sh --finalize_only License for Mosek dependency: Obtain Mosek license file mosek.lic . The license is free for academic use. Place the file in $HOME/mosek/ (the mosek/ folder that now exists in your home directory). If you are not able to place the license in the default location, you can set a custom location by exporting the bash variable MOSEKLM_LICENSE_FILE=/custom/path/ . (Recommended) Pre-download AA data repositories and set environment variable AA_DATA_REPO: See the instructions in the section below on obtaining required reference annotations. If you do not do this process, the container runscript will attempt to download the files in
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FAmpliconSuite%2FAmpliconSuite-pipeline)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2FAmpliconSuite%2FAmpliconSuite-pipeline)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=AmpliconSuite%2FAmpliconSuite-pipeline)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[AmpliconSuite](/AmpliconSuite)
+/
+**[AmpliconSuite-pipeline](/AmpliconSuite/AmpliconSuite-pipeline)**
+Public
+
+* [Notifications](/login?return_to=%2FAmpliconSuite%2FAmpliconSuite-pipeline) You must be signed in to change notification settings
+* [Fork
+  31](/login?return_to=%2FAmpliconSuite%2FAmpliconSuite-pipeline)
+* [Star
+   79](/login?return_to=%2FAmpliconSuite%2FAmpliconSuite-pipeline)
+
+* [Code](/AmpliconSuite/AmpliconSuite-pipeline)
+* [Issues
+  34](/AmpliconSuite/AmpliconSuite-pipeline/issues)
+* [Pull requests
+  0](/AmpliconSuite/AmpliconSuite-pipeline/pulls)
+* [Actions](/AmpliconSuite/AmpliconSuite-pipeline/actions)
+* [Projects](/AmpliconSuite/AmpliconSuite-pipeline/projects)
+* [Security
+  0](/AmpliconSuite/AmpliconSuite-pipeline/security)
+* [Insights](/AmpliconSuite/AmpliconSuite-pipeline/pulse)
+
+Additional navigation options
+
+* [Code](/AmpliconSuite/AmpliconSuite-pipeline)
+* [Issues](/AmpliconSuite/AmpliconSuite-pipeline/issues)
+* [Pull requests](/AmpliconSuite/AmpliconSuite-pipeline/pulls)
+* [Actions](/AmpliconSuite/AmpliconSuite-pipeline/actions)
+* [Projects](/AmpliconSuite/AmpliconSuite-pipeline/projects)
+* [Security](/AmpliconSuite/AmpliconSuite-pipeline/security)
+* [Insights](/AmpliconSuite/AmpliconSuite-pipeline/pulse)
+
+# AmpliconSuite/AmpliconSuite-pipeline
+
+master
+
+[Branches](/AmpliconSuite/AmpliconSuite-pipeline/branches)[Tags](/AmpliconSuite/AmpliconSuite-pipeline/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[718 Commits](/AmpliconSuite/AmpliconSuite-pipeline/commits/master/)   718 Commits | | |
+| [conda-recipe](/AmpliconSuite/AmpliconSuite-pipeline/tree/master/conda-recipe "conda-recipe") | | [conda-recipe](/AmpliconSuite/AmpliconSuite-pipeline/tree/master/conda-recipe "conda-recipe") |  |  |
+| [docker](/AmpliconSuite/AmpliconSuite-pipeline/tree/master/docker "docker") | | [docker](/AmpliconSuite/AmpliconSuite-pipeline/tree/master/docker "docker") |  |  |
+| [documentation](/AmpliconSuite/AmpliconSuite-pipeline/tree/master/documentation "documentation") | | [documentation](/AmpliconSuite/AmpliconSuite-pipeline/tree/master/documentation "documentation") |  |  |
+| [images](/AmpliconSuite/AmpliconSuite-pipeline/tree/master/images "images") | | [images](/AmpliconSuite/AmpliconSuite-pipeline/tree/master/images "images") |  |  |
+| [paalib](/AmpliconSuite/AmpliconSuite-pipeline/tree/master/paalib "paalib") | | [paalib](/AmpliconSuite/AmpliconSuite-pipeline/tree/master/paalib "paalib") |  |  |
+| [scripts](/AmpliconSuite/AmpliconSuite-pipeline/tree/master/scripts "scripts") | | [scripts](/AmpliconSuite/AmpliconSuite-pipeline/tree/master/scripts "scripts") |  |  |
+| [singularity](/AmpliconSuite/AmpliconSuite-pipeline/tree/master/singularity "singularity") | | [singularity](/AmpliconSuite/AmpliconSuite-pipeline/tree/master/singularity "singularity") |  |  |
+| [test\_outputs](/AmpliconSuite/AmpliconSuite-pipeline/tree/master/test_outputs "test_outputs") | | [test\_outputs](/AmpliconSuite/AmpliconSuite-pipeline/tree/master/test_outputs "test_outputs") |  |  |
+| [.gitignore](/AmpliconSuite/AmpliconSuite-pipeline/blob/master/.gitignore ".gitignore") | | [.gitignore](/AmpliconSuite/AmpliconSuite-pipeline/blob/master/.gitignore ".gitignore") |  |  |
+| [AmpliconSuite-pipeline.py](/AmpliconSuite/AmpliconSuite-pipeline/blob/master/AmpliconSuite-pipeline.py "AmpliconSuite-pipeline.py") | | [AmpliconSuite-pipeline.py](/AmpliconSuite/AmpliconSuite-pipeline/blob/master/AmpliconSuite-pipeline.py "AmpliconSuite-pipeline.py") |  |  |
+| [CITATIONS.md](/AmpliconSuite/AmpliconSuite-pipeline/blob/master/CITATIONS.md "CITATIONS.md") | | [CITATIONS.md](/AmpliconSuite/AmpliconSuite-pipeline/blob/master/CITATIONS.md "CITATIONS.md") |  |  |
+| [GroupedAnalysisAmpSuite.py](/AmpliconSuite/AmpliconSuite-pipeline/blob/master/GroupedAnalysisAmpSuite.py "GroupedAnalysisAmpSuite.py") | | [GroupedAnalysisAmpSuite.py](/AmpliconSuite/AmpliconSuite-pipeline/blob/master/GroupedAnalysisAmpSuite.py "GroupedAnalysisAmpSuite.py") |  |  |
+| [LICENSE](/AmpliconSuite/AmpliconSuite-pipeline/blob/master/LICENSE "LICENSE") | | [LICENSE](/AmpliconSuite/AmpliconSuite-pipeline/blob/master/LICENSE "LICENSE") |  |  |
+| [LICENSE-AA](/AmpliconSuite/AmpliconSuite-pipeline/blob/master/LICENSE-AA "LICENSE-AA") | | [LICENSE-AA](/AmpliconSuite/AmpliconSuite-pipeline/blob/master/LICENSE-AA "LICENSE-AA") |  |  |
+| [MANIFEST.in](/AmpliconSuite/AmpliconSuite-pipeline/blob/master/MANIFEST.in "MANIFEST.in") | | [MANIFEST.in](/AmpliconSuite/AmpliconSuite-pipeline/blob/master/MANIFEST.in "MANIFEST.in") |  |  |
+| [README.md](/AmpliconSuite/AmpliconSuite-pipeline/blob/master/README.md "README.md") | | [README.md](/AmpliconSuite/AmpliconSuite-pipeline/blob/master/README.md "README.md") |  |  |
+| [install.sh](/AmpliconSuite/AmpliconSuite-pipeline/blob/master/install.sh "install.sh") | | [install.sh](/AmpliconSuite/AmpliconSuite-pipeline/blob/master/install.sh "install.sh") |  |  |
+| [setup.py](/AmpliconSuite/AmpliconSuite-pipeline/blob/master/setup.py "setup.py") | | [setup.py](/AmpliconSuite/AmpliconSuite-pipeline/blob/master/setup.py "setup.py") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* License
+* License
+
+[![AmpliconSuite-pipeline logo](https://github.com/AmpliconSuite/AmpliconSuite-pipeline/raw/master/images/AmpliconSuite-pipeline.png)](https://github.com/AmpliconSuite/AmpliconSuite-pipeline/blob/master/images/AmpliconSuite-pipeline.png)
+[![GitHub release (latest by date)](https://camo.githubusercontent.com/62338418fead99e8be2ed88cc5cee7011ae3adc465bedf0646ccf48347142f6c/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f762f72656c656173652f416d706c69636f6e53756974652f416d706c69636f6e53756974652d706970656c696e65)](https://camo.githubusercontent.com/62338418fead99e8be2ed88cc5cee7011ae3adc465bedf0646ccf48347142f6c/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f762f72656c656173652f416d706c69636f6e53756974652f416d706c69636f6e53756974652d706970656c696e65)
+[![Docker Image Version (latest by date)](https://camo.githubusercontent.com/c1c1a2676e260e9b7460138b67d7005ec41795cbba8fa5c639e2640ee09b0676/68747470733a2f2f696d672e736869656c64732e696f2f646f636b65722f762f6a6c75656265636b2f616d706c69636f6e73756974652d706970656c696e653f6c6f676f3d646f636b6572)](https://hub.docker.com/r/jluebeck/ampliconsuite-pipeline)
+[![Docker pulls](https://camo.githubusercontent.com/9975b6b633a95238de55f66f7efe4cf959d9e3bbcd1a8b8ff9da078049dad96e/68747470733a2f2f696d672e736869656c64732e696f2f646f636b65722f70756c6c732f6a6c75656265636b2f616d706c69636f6e73756974652d706970656c696e653f6c6f676f3d646f636b6572)](https://camo.githubusercontent.com/9975b6b633a95238de55f66f7efe4cf959d9e3bbcd1a8b8ff9da078049dad96e/68747470733a2f2f696d672e736869656c64732e696f2f646f636b65722f70756c6c732f6a6c75656265636b2f616d706c69636f6e73756974652d706970656c696e653f6c6f676f3d646f636b6572)
+[![Singularity](https://camo.githubusercontent.com/073e0a91f51b29d4badb2d6f17a79732506f609a5fa69ad20a78770cb152820d/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f73696e67756c61726974792d617661696c61626c652d626c7565)](https://cloud.sylabs.io/library/jluebeck/ampliconsuite-pipeline/ampliconsuite-pipeline)
+[![Conda](https://camo.githubusercontent.com/b1d86765cea46301502cda4bc61605bb09a36921f5cce61c8a94670b71f214b7/68747470733a2f2f696d672e736869656c64732e696f2f636f6e64612f646e2f62696f636f6e64612f616d706c69636f6e73756974653f6c6f676f3d416e61636f6e6461)](https://anaconda.org/bioconda/ampliconsuite)
+
+An end-to-end wrapper for [AmpliconArchitect](https://github.com/jluebeck/AmpliconArchitect) and AmpliconClassifier to enable analysis of focal copy number amplifications such as ecDNA or BFBs from paired-end whole genome sequencing data.
+
+AmpliconSuite-pipeline can be invoked to begin at any intermediate stage of the data preparation process and can itself invoke both AmpliconArchitect and the downstream tool AmpliconClassifier.
+
+Before working with this tool, we recommend heading over to our [**detailed guide**](https://github.com/AmpliconSuite/AmpliconSuite-pipeline/blob/master/documentation/GUIDE.md) to learn about best practices and to see FAQs.
+
+AmpliconSuite-pipeline supports hg19, GRCh37, GRCh38 (hg38), and mouse genome mm10 (GRCm38). It also supports analysis with a human-viral hybrid reference genome we provide, `GRCh38_viral`, which can be used to detect oncoviral hybrid focal amplifications in oncoviral cancers.
+
+## Licenses
+
+The modules wrapped in AmpliconSuite-pipeline use the following licenses. Please note that the AmpliconArchitect license specifies that AmpliconArchitect is for research use and does not give license for commerical for-profit use.
+
+* [AmpliconSuite-pipeline license](https://github.com/AmpliconSuite/AmpliconSuite-pipeline/blob/master/LICENSE) (BSD 2-Clause)
+* [AmpliconArchitect license](https://github.com/AmpliconSuite/AmpliconArchitect) (University of California software license)
+* [AmpliconClassifier license](https://github.com/AmpliconSuite/AmpliconClassifier/blob/main/LICENSE) (BSD 2-Clause)
+
+Other dependencies used by these modules (e.g. Mosek, sam

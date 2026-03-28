@@ -1,99 +1,71 @@
 ---
 name: telr
-description: "Detects non-reference transposable elements from long read sequencing data. Use when user asks to identify novel transposable element insertions."
+description: TELR identifies transposable element insertions in long-read sequencing data that are absent from a reference genome. Use when user asks to detect non-reference transposable elements, perform local reassembly of insertion loci, or estimate allele frequencies from PacBio and Oxford Nanopore reads.
 homepage: https://github.com/bergmanlab/telr
 ---
 
 
 # telr
 
-telr/SKILL.md
----
-name: telr
-description: |
-  Detects non-reference transposable elements (TEs) from long read sequencing data (PacBio or Oxford Nanopore).
-  Use when analyzing genomic data to identify and characterize novel TE insertions that are not present in a reference genome.
-  This skill is particularly useful for researchers studying genome evolution, mobile genetic elements, and structural variations.
----
-
 ## Overview
+TELR (pronounced "Teller") is a specialized computational pipeline designed to identify transposable element insertions that are present in long-read sequencing data but absent from the reference genome. It is particularly effective for PacBio and Oxford Nanopore technologies. The tool automates a complex four-stage workflow: initial structural variation (SV) detection, local reassembly of candidate loci, precise coordinate mapping of TE-flank boundaries, and estimation of allele frequency within the sample.
 
-TELR is a powerful tool designed to identify transposable elements (TEs) that are not present in a reference genome, using long-read sequencing data. It works by mapping long reads to a reference genome, detecting structural variations (SVs) that appear to be insertions, and then using user-provided TE consensus sequences to confirm and characterize these insertions. TELR performs local assembly of the insertion regions, annotates the TE sequences, and determines the precise insertion coordinates and allele frequencies. This makes it invaluable for discovering novel TE insertions and understanding their impact on genome structure and variation.
-
-## Usage Instructions
-
-TELR is a command-line tool written in Python 3. It requires several input files and parameters to run effectively.
-
-### Installation
-
-Install TELR via Conda:
-```bash
-conda install bioconda::telr
-```
-
-### Core Workflow and Parameters
-
-The general workflow involves aligning long reads, detecting SVs, and then using TELR to identify and characterize TE insertions.
-
-**Key Commands and Parameters:**
-
-The primary command for running TELR is `telr`. It requires the following essential arguments:
-
-*   `--bam`: Path to the BAM file containing long reads aligned to the reference genome.
-*   `--ref`: Path to the reference genome FASTA file.
-*   `--te`: Path to a FASTA file containing TE consensus sequences.
-*   `--outdir`: Directory to save the output files.
-
-**Example Command:**
+## Installation and Environment Setup
+The most reliable way to run TELR is within a dedicated Conda environment to manage its numerous bioinformatic dependencies (Sniffles, RepeatMasker, minimap2, etc.).
 
 ```bash
-telr --bam aligned_reads.bam --ref reference.fasta --te te_consensus.fasta --outdir telr_results
+# Create and activate the environment
+mamba create -n TELR --channel bioconda telr
+conda activate TELR
 ```
 
-### Pipeline Stages and Associated Tools
+## Core CLI Usage
+TELR requires three primary inputs: your long reads, a reference genome, and a TE consensus library.
 
-TELR integrates several other bioinformatics tools in its pipeline. Understanding these can help in troubleshooting and optimizing the process.
+### Basic Command Pattern
+```bash
+telr -i reads.fq -r reference.fa -l te_library.fa -o output_dir -t 8
+```
 
-1.  **Structural Variation (SV) Detection:**
-    *   **Alignment:** Long reads are aligned to the reference genome using `NGMLR`.
-        ```bash
-        ngmlr -t <threads> -r <reference.fasta> -q <long_reads.fastq> -o aligned_reads.bam
-        ```
-    *   **SV Calling:** `Sniffles` is used to detect structural variations from the aligned reads.
-        ```bash
-        sniffles -m aligned_reads.bam -v sv_calls.vcf -t <threads>
-        ```
-    *   **TE Candidate Filtering:** TELR filters SVs reported by Sniffles based on:
-        *   SV type being an insertion.
-        *   Presence of insertion sequence.
-        *   Insertion sequences matching user-provided TE consensus libraries (using `RepeatMasker`).
+### Input Formats
+- **Reads (`-i`)**: Supports FASTA, FASTQ, or BAM files. If providing BAM, ensure it was generated using compatible aligners like Minimap2 (with Cigar/MD strings) or NGMLR.
+- **Reference (`-r`)**: FASTA format. Must match the assembly used for initial read mapping.
+- **Library (`-l`)**: FASTA format containing TE consensus sequences.
 
-2.  **Local Reassembly and Polishing:**
-    *   Reads supporting TE insertion candidates are used for local assembly.
-    *   Assemblers like `wtdbg2` or `Flye` can be used.
-    *   `minimap2` is used for re-aligning reads to the assembled contigs for polishing.
+## Expert Configuration and Best Practices
 
-3.  **TE Insertion Coordinate Identification:**
-    *   TE consensus sequences are aligned to assembled contigs using `minimap2`.
-    *   TE-flank boundaries are defined.
-    *   Flanking sequences are re-aligned to the reference genome using `minimap2` to determine precise insertion coordinates and target site duplications (TSDs).
+### Technology Presets
+Always specify the sequencing technology to optimize internal parameters:
+- For PacBio: `-x pacbio` (default)
+- For Oxford Nanopore: `-x ont`
 
-4.  **Allele Frequency Estimation:**
-    *   Reads are extracted around insertion breakpoints.
-    *   Reads are aligned to the assembled contig to identify reads supporting TE insertions and reference alleles.
-    *   Intra-sample TE insertion allele frequency is estimated.
+### Tool Selection (Aligners, Assemblers, and Polishers)
+TELR allows swapping components based on your data quality and computational resources:
+- **Aligner**: `--aligner nglmr` (default, better for SVs) or `--aligner minimap2` (faster).
+- **Assembler**: `--assembler wtdbg2` (default, fast) or `--assembler flye` (often more robust for complex TEs).
+- **Polisher**: `--polisher wtdbg2` or `--polisher flye`. Match the polisher to the assembler for best results.
 
-### Important Considerations and Tips
+### Performance Tuning
+- **Threading**: Use `-t` to specify CPU cores. Local assembly is parallelized per candidate locus.
+- **Polishing Iterations**: Increase `-p` (e.g., `-p 2` or `-p 3`) if working with high-error raw reads to improve insertion sequence accuracy.
+- **Intermediate Files**: Use `-k` or `--keep_files` during troubleshooting to inspect local assemblies and RepeatMasker logs.
 
-*   **Input Data Quality:** The quality of long reads and the accuracy of the reference genome are crucial for TELR's performance.
-*   **TE Consensus Library:** A comprehensive and accurate TE consensus library (`--te` argument) is essential for correctly identifying and classifying TEs. Ensure your library is curated for the species or group you are studying.
-*   **Computational Resources:** TELR and its associated tools can be computationally intensive, especially for large datasets. Ensure sufficient CPU threads and memory are available.
-*   **Output Files:** TELR generates several output files in the specified `--outdir`, including VCF files with TE insertion calls, assembled TE sequences, and allele frequency estimates. Familiarize yourself with these outputs for downstream analysis.
-*   **Parameter Tuning:** For specific datasets or research questions, you may need to explore additional parameters for `NGMLR`, `Sniffles`, `wtdbg2`, `Flye`, and `minimap2` to optimize performance. Consult the documentation for these individual tools.
+### Refining Insertion Detection
+- **Gap/Overlap**: If you find TEs are being missed or coordinates are slightly off, adjust `-g` (max gap) and `-v` (max overlap) for flanking sequence alignments.
+- **Annotation**: Use `--minimap2_family` if you want to bypass RepeatMasker for TE family annotation, which can be significantly faster for large datasets.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| minimap2 | Minimap2 is a versatile tool for sequence alignment. It can be used for various tasks including indexing reference genomes, mapping long reads (PacBio, Nanopore), short reads, and performing overlap detection for assembly. |
+| ngmlr | ngmlr 0.2.7 (build: Feb 21 2022 18:53:53, start: 2026-02-25.22:02:43) |
+| sniffles | Structural Variant Caller |
 
 ## Reference documentation
-
-- [TELR README](./references/github_com_bergmanlab_TELR.md)
-- [TELR Overview on Anaconda.org](./references/anaconda_org_channels_bioconda_packages_telr_overview.md)
-- [TELR GitHub Repository Structure](./references/github_com_bergmanlab_telr_tree_master_docs.md)
----
+- [TELR Usage Guide](./references/github_com_bergmanlab_TELR_blob_master_docs_02_Usage.md)
+- [Installation Instructions](./references/github_com_bergmanlab_TELR_blob_master_docs_01_Installation.md)
+- [Output File Descriptions](./references/github_com_bergmanlab_TELR_blob_master_docs_03_Output_Files.md)
+- [TELR README](./references/github_com_bergmanlab_TELR_blob_master_README.md)

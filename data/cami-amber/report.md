@@ -126,3 +126,6 @@ options:
                         Output file
 ```
 
+
+## Metadata
+- **Skill**: generated

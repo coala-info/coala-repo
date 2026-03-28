@@ -1,6 +1,6 @@
 ---
 name: chips
-description: ChIPs is a toolkit designed for the simulation of ChIP-sequencing and other enrichment-based sequencing experiments. Use when user asks to simulate ChIP-seq reads, learn empirical parameters from existing datasets, or generate synthetic whole cell extract control data.
+description: ChIPs is a toolkit designed to model and simulate realistic ChIP-sequencing data based on experimental parameters. Use when user asks to learn model parameters from existing datasets or generate synthetic reads from a reference genome.
 homepage: https://github.com/gymreklab/chips
 ---
 
@@ -9,58 +9,55 @@ homepage: https://github.com/gymreklab/chips
 
 ## Overview
 
-ChIPs is a specialized toolkit designed for the simulation of ChIP-sequencing and other enrichment-based sequencing experiments. It allows researchers to bridge the gap between theoretical binding sites and raw sequencing data. The tool operates through two primary modules: `learn`, which extracts empirical parameters from existing datasets to ensure simulations are realistic, and `simreads`, which generates synthetic FASTQ files based on those parameters. This skill is essential for benchmarking bioinformatics pipelines, testing peak callers, or generating synthetic control data (WCE).
+ChIPs is a specialized toolkit designed to model and simulate ChIP-sequencing data. It enables the creation of realistic synthetic datasets by capturing the nuances of real experiments, such as fragment length distributions, PCR duplication rates, and signal-to-noise ratios (SPOT scores). The tool operates through two primary modules: `learn`, which extracts parameters from existing datasets to create a model, and `simreads`, which uses those models to generate simulated reads from a reference genome.
 
-## Installation
+## Command Line Usage
 
-The most efficient way to install ChIPs is via Bioconda:
+The `chips` tool is executed as a single binary with subcommands for learning and simulation.
+
+### Learning Model Parameters
+
+Use the `learn` module to analyze existing data and generate a JSON model file.
 
 ```bash
-conda install bioconda::chips
+chips learn -b <reads.bam> -p <peaks.bed> -t bed -c <score_column> -o <output_prefix>
 ```
 
-## Core Workflows
+**Key Considerations:**
+- **Input Requirements**: The BAM file must be sorted and indexed. To accurately estimate PCR duplication rates, duplicates should be flagged (e.g., using Picard).
+- **Peak Scoring**: Use `-c` to specify the 1-based index of the column in your BED/Homer file that contains peak scores.
+- **Outlier Handling**: Use `--scale-outliers` when working with real data to set peaks with scores >3x the median to a binding probability of 1, preventing extreme values from skewing the model.
+- **Single-End Data**: If using single-end reads, use `--est <int>` to provide a loose upper-bound estimate of fragment length to guide the inference process.
 
-### 1. Learning Parameters from Real Data
-Use the `learn` module to create a model based on an existing experiment. This produces a `.json` file containing learned parameters.
+### Simulating Reads
 
-**Basic Command:**
+Use the `simreads` module to generate FASTQ files based on a peak set and a model.
+
 ```bash
-chips learn -b <reads.bam> -p <peaks.bed> -t bed -c 5 -o <output_prefix>
+chips simreads -p <peaks.bed> -f <ref.fa> -t bed --model <model.json> -o <output_prefix>
 ```
 
-**Key Parameters & Best Practices:**
-- **Input BAM:** Ensure the BAM file is sorted and indexed. To accurately estimate PCR duplicate rates, duplicates should be flagged (e.g., using Picard).
-- **Peak Scoring:** Use `-c` to specify the column in your BED/Homer file that contains the peak score (e.g., column 5 for standard BED).
-- **Outlier Handling:** Use `--scale-outliers` when working with real data to set peaks with scores >3x the median to a binding probability of 1.
-- **Fragment Length:** For single-end data, use `--est <int>` to provide a rough upper-bound guess for fragment length to guide the inference.
+**Common Patterns:**
+- **Paired-End Simulation**: Add the `--paired` flag to generate `_1.fastq` and `_2.fastq` files.
+- **Control Data (WCE)**: To simulate Whole Cell Extract control data, use `-t wce` and omit the peaks input file.
+- **Adjusting Depth**: Control the output volume using `--numreads <int>` (total reads/pairs) and `--numcopies <int>` (number of genome copies to simulate).
+- **Parameter Overrides**: You can override specific JSON model parameters directly via the CLI using flags like `--spot <float>` (fraction of reads in peaks) or `--readlen <int>`.
 
-### 2. Simulating ChIP-seq Reads
-Use the `simreads` module to generate raw FASTQ files.
+## Expert Tips and Best Practices
 
-**Basic Command:**
-```bash
-chips simreads -p <peaks.bed> -f <ref.fa> -t bed -o <output_prefix> --model <learned_model.json>
-```
+- **Fragment Lengths**: For single-end data, the `--est` parameter is critical for robust estimation. Set this to the expected maximum fragment size (e.g., 300-500bp).
+- **Binding Probability**: If your input BED file already contains binding probabilities (0 to 1) rather than raw scores, use the `--noscale` flag.
+- **Genome Consistency**: When using a model learned from one dataset to simulate another with a different peak set, always include `--recomputeF` to ensure the "fraction of genome bound" parameter is updated for the new peaks.
+- **Reference Indexing**: Ensure the reference FASTA file is indexed using `samtools faidx` before running `simreads`.
 
-**Simulation Controls:**
-- **Read Depth:** Control the output volume using `--numreads <int>` (default is 1,000,000).
-- **Library Type:** Use `--paired` to generate paired-end FASTQ files (`_1.fastq` and `_2.fastq`).
-- **Genome Copies:** Use `--numcopies <int>` to set the number of simulation rounds (default 100).
 
-### 3. Simulating Whole Cell Extract (WCE)
-To simulate a control/input sample without specific enrichment:
-```bash
-chips simreads -t wce -f <ref.fa> -o <output_prefix> --numreads 1000000
-```
 
-## Expert Tips
+## Subcommands
 
-- **Model Overrides:** You can provide a learned JSON model via `--model` but override specific parameters manually on the CLI (e.g., adding `--spot 0.25` to increase the fraction of reads in peaks).
-- **Recomputing Fraction Bound:** When using a model learned on a different peak set, always use `--recomputeF`. This ensures the `--frac` parameter (fraction of genome bound) is updated based on your current input peaks.
-- **Regional Simulation:** If you only need to simulate or learn from a specific genomic area, use the `--region chrom:start-end` flag to save time and computational resources.
-- **Binding Probabilities:** If your input BED file already contains pre-calculated binding probabilities (0 to 1) rather than raw scores, use the `--noscale` flag.
+| Command | Description |
+|---------|-------------|
+| chips learn | Learn parameters from a ChIP dataset. |
+| chips simreads | Simulate ChIP-seq reads for a set of peaks. |
 
 ## Reference documentation
-- [ChIPs Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_chips_overview.md)
-- [ChIPs GitHub Repository](./references/github_com_gymreklab_chips.md)
+- [ChIPs Main Documentation](./references/github_com_gymreklab_chips.md)

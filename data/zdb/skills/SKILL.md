@@ -1,6 +1,6 @@
 ---
 name: zdb
-description: zDB is an integrated platform for bacterial comparative genomics that streamlines the process of analyzing multiple genomes and visualizing the results. Use when user asks to initialize reference databases, run comparative genomic analyses, visualize results, list available runs, export results, or import results.
+description: zDB automates comparative genomic analysis by identifying orthologous groups, reconstructing phylogenies, and providing interactive web-based visualizations. Use when user asks to process bacterial genomes, identify orthologous groups, perform functional annotations, or launch a web application to visualize comparative genomic data.
 homepage: https://github.com/metagenlab/zDB/
 ---
 
@@ -8,50 +8,70 @@ homepage: https://github.com/metagenlab/zDB/
 # zdb
 
 ## Overview
-zDB is an integrated platform for bacterial comparative genomics that streamlines the process of analyzing multiple genomes and visualizing the results. It handles complex workflows like orthology inference, functional profiling, and phylogenetic tree construction, storing results in a SQLite database for interactive exploration through a built-in Django web interface.
 
-## Installation and Environment
-Install zDB via Bioconda:
-`conda install bioconda::zdb`
+zDB is a specialized suite designed to bridge the gap between comparative genomic analysis and data visualization. It automates the processing of multiple bacterial genomes to identify orthologous groups, reconstruct phylogenies, and annotate functional categories (like AMR genes and metabolic pathways). The tool operates in two primary phases: a Nextflow-based computational pipeline that populates a SQLite database, and a Django-powered web application that provides interactive visualizations of the results.
 
-**Execution Modes:**
-zDB runs tasks in isolated environments. Specify your preference using:
-- `--docker`: Recommended for consistency and MacOS users.
-- `--singularity`: (or Apptainer) Recommended for Linux/HPC environments.
-- `--conda`: Use as a fallback; note that some environments may fail on ARM (M1/M2 Mac) architectures.
+## Core CLI Patterns
 
-*Note: If using ete3 rendering for trees in a headless environment, ensure `Xvfb` is installed or use Apptainer containers.*
+### 1. Environment Initialization
+zDB relies on external containerization or environment managers. It is highly recommended to use Docker or Apptainer (Singularity) over native Conda for better stability.
 
-## Core Workflow
+*   **Using Apptainer (Recommended for Linux):**
+    `zdb run --input=input.csv --name=analysis_name --singularity`
+*   **Using Docker:**
+    `zdb run --input=input.csv --name=analysis_name --docker`
+*   **Using Conda (Fallback):**
+    `zdb run --input=input.csv --name=analysis_name --conda`
 
-### 1. Database Setup
-Before running analyses, you must initialize the reference databases. This is a one-time requirement for the base skeleton, but specific annotations require additional flags.
-- **Minimal setup**: `zdb setup --setup_base_db`
-- **Full annotation support**: `zdb setup --setup_base_db --pfam --cog --ko`
+### 2. Database Setup
+Before running analyses, reference databases must be prepared. This is a one-time task per installation.
 
-### 2. Running the Pipeline
-Execute the comparative analysis by providing a CSV input file.
-`zdb run --input=genomes.csv --name=experiment_v1 --conda --cog --pfam`
+*   **Minimal Setup:**
+    `zdb setup --setup_base_db`
+*   **Full Functional Annotation Setup:**
+    `zdb setup --setup_base_db --pfam --cog --ko`
 
-**Key Arguments:**
-- `--input`: Path to a CSV file defining the genomes to compare.
-- `--name`: A unique identifier for the run.
-- `--cpu`: Specify the number of processors (e.g., Diamond search defaults to 8).
+### 3. Running the Analysis Pipeline
+The `run` command requires an input CSV/TSV file containing two columns: a unique identifier for each genome and the path to the corresponding `.gbk` file.
 
-### 3. Visualizing Results
-Launch the Django web application to browse the results of a specific run.
-`zdb webapp --name=experiment_v1`
+*   **Standard Run:**
+    `zdb run --input=genomes.csv --name=project_v1`
+*   **Run with Specific Annotations:**
+    `zdb run --input=genomes.csv --name=project_v1 --cog --pfam --ko`
 
-## Data Management
-- **List available runs**: `zdb list_runs`
-- **Export results**: `zdb export --name=experiment_v1` (creates a portable archive).
-- **Import results**: `zdb import --archive=data.tar.gz` (allows viewing results from another machine).
+### 4. Web Application Management
+Once the pipeline completes, use the `webapp` command to explore the data.
 
-## Expert Tips
-- **RefSeq Homologs**: While supported, searching against RefSeq significantly increases computation time and requires manual database preparation for Diamond.
-- **Performance**: If using Conda, ensure you have a recent version with the Libmamba solver to speed up the creation of the numerous required environments.
-- **Source Installation**: For developers needing to modify the Nextflow configuration, clone the repository and add the `bin` directory to your `PATH`.
+*   **Launch Web Server:**
+    `zdb webapp --name=project_v1`
+*   **List Available Runs:**
+    `zdb list_runs`
+*   **Export/Import Results:**
+    Use these to move processed data between machines without re-running the pipeline.
+    `zdb export --name=project_v1`
+    `zdb import --archive=project_v1.tar.gz`
+
+## Expert Tips and Best Practices
+
+*   **Input Formatting:** zDB strictly requires the `.gbk` extension. If you have NCBI `.gbff` files, rename them to `.gbk` before creating your input CSV.
+*   **Headless Rendering:** The ete3 engine used for tree rendering requires an X server. If running on a headless server without Apptainer, ensure `Xvfb` is installed and configured.
+*   **Resource Management:** For large datasets (50+ genomes), prefer the `--singularity` or `--docker` flags to ensure the webapp environment remains isolated and consistent.
+*   **Database Updates:** If you need to add RefSeq homologs, you must manually download and prepare the Diamond database, as the standard `setup` script focuses on COG, PFAM, and KEGG.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| zdb_export | Exports the results of a given run name into an archive to make sharing easier |
+| zdb_import | Unpack an archive that was prepared by the export command You can alternatively manually unpack it. |
+| zdb_run | Run the analysis pipeline (some analysis may not be available depending on which reference databases were setup) |
+| zdb_setup | Downloads and sets up the reference database used by the analysis pipeline, as well as the zDB base database. |
+| zdb_webapp | This script starts the web application, using by default the database that was generated by the latest run of analysis |
 
 ## Reference documentation
-- [zDB GitHub Repository](./references/github_com_metagenlab_zDB.md)
-- [Bioconda zDB Package Overview](./references/anaconda_org_channels_bioconda_packages_zdb_overview.md)
+
+- [zDB README: Overview and Installation](./references/github_com_metagenlab_zDB_blob_master_README.md)
+- [zDB FAQ: Pipeline and Biological Analysis Details](./references/github_com_metagenlab_zDB_blob_master_FAQ.txt.md)
+- [zDB Changelog: Version History and Feature Updates](./references/github_com_metagenlab_zDB_blob_master_CHANGELOG.md)

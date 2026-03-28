@@ -1,1 +1,253 @@
-GitHub - jlevy/the-art-of-command-line: Master the command line, in one page Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} jlevy / the-art-of-command-line Public Notifications You must be signed in to change notification settings Fork 14.8k Star 160k Master the command line, in one page 160k stars 14.8k forks Branches Tags Activity Star Notifications You must be signed in to change notification settings Code Issues 122 Pull requests 129 Actions Projects 0 Security 0 Insights Additional navigation options Code Issues Pull requests Actions Projects Security Insights jlevy/the-art-of-command-line master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 1,218 Commits 1,218 Commits admin admin .gitignore .gitignore AUTHORS.md AUTHORS.md CONTRIBUTING.md CONTRIBUTING.md README-cs.md README-cs.md README-de.md README-de.md README-el.md README-el.md README-es.md README-es.md README-fr.md README-fr.md README-id.md README-id.md README-it.md README-it.md README-ja.md README-ja.md README-ko.md README-ko.md README-pl.md README-pl.md README-pt.md README-pt.md README-ro.md README-ro.md README-ru.md README-ru.md README-sl.md README-sl.md README-uk.md README-uk.md README-zh-Hant.md README-zh-Hant.md README-zh.md README-zh.md README.md README.md cowsay.png cowsay.png View all files Repository files navigation README Contributing 🌍 Čeština ∙ Deutsch ∙ Ελληνικά ∙ English ∙ Español ∙ Français ∙ Indonesia ∙ Italiano ∙ 日本語 ∙ 한국어 ∙ polski ∙ Português ∙ Română ∙ Русский ∙ Slovenščina ∙ Українська ∙ 简体中文 ∙ 繁體中文 The Art of Command Line Note: I'm planning to revise this and looking for a new co-author to help with expanding this into a more comprehensive guide. While it's very popular, it could be broader and a bit deeper. If you like to write and are close to being an expert on this material and willing to consider helping, please drop me a note at josh (0x40) holloway.com. – jlevy , Holloway . Thank you! Meta Basics Everyday use Processing files and data System debugging One-liners Obscure but useful macOS only Windows only More resources Disclaimer Fluency on the command line is a skill often neglected or considered arcane, but it improves your flexibility and productivity as an engineer in both obvious and subtle ways. This is a selection of notes and tips on using the command-line that we've found useful when working on Linux. Some tips are elementary, and some are fairly specific, sophisticated, or obscure. This page is not long, but if you can use and recall all the items here, you know a lot. This work is the result of many authors and translators . Some of this originally appeared on Quora , but it has since moved to GitHub, where people more talented than the original author have made numerous improvements. Please submit a question if you have a question related to the command line. Please contribute if you see an error or something that could be better! Meta Scope: This guide is for both beginners and experienced users. The goals are breadth (everything important), specificity (give concrete examples of the most common case), and brevity (avoid things that aren't essential or digressions you can easily look up elsewhere). Every tip is essential in some situation or significantly saves time over alternatives. This is written for Linux, with the exception of the " macOS only " and " Windows only " sections. Many of the other items apply or can be installed on other Unices or macOS (or even Cygwin). The focus is on interactive Bash, though many tips apply to other shells and to general Bash scripting. It includes both "standard" Unix commands as well as ones that require special package installs -- so long as they are important enough to merit inclusion. Notes: To keep this to one page, content is implicitly included by reference. You're smart enough to look up more detail elsewhere once you know the idea or command to Google. Use apt , yum , dnf , pacman , pip or brew (as appropriate) to install new programs. Use Explainshell to get a helpful breakdown of what commands, options, pipes etc. do. Basics Learn basic Bash. Actually, type man bash and at least skim the whole thing; it's pretty easy to follow and not that long. Alternate shells can be nice, but Bash is powerful and always available (learning only zsh, fish, etc., while tempting on your own laptop, restricts you in many situations, such as using existing servers). Learn at least one text-based editor well. The nano editor is one of the simplest for basic editing (opening, editing, saving, searching). However, for the power user in a text terminal, there is no substitute for Vim ( vi ), the hard-to-learn but venerable, fast, and full-featured editor. Many people also use the classic Emacs, particularly for larger editing tasks. (Of course, any modern software developer working on an extensive project is unlikely to use only a pure text-based editor and should also be familiar with modern graphical IDEs and tools.) Finding documentation: Know how to read official documentation with man (for the inquisitive, man man lists the section numbers, e.g. 1 is "regular" commands, 5 is files/conventions, and 8 are for administration). Find man pages with apropos . Know that some commands are not executables, but Bash builtins, and that you can get help on them with help and help -d . You can find out whether a command is an executable, shell builtin or an alias by using type command . curl cheat.sh/command will give a brief "cheat sheet" with common examples of how to use a shell command. Learn about redirection of output and input using &gt; and &lt; and pipes using | . Know &gt; overwrites the output file and &gt;&gt; appends. Learn about stdout and stderr. Learn about file glob expansion with * (and perhaps ? and [ ... ] ) and quoting and the difference between double " and single ' quotes. (See more on variable expansion below.) Be familiar with Bash job management: &amp; , ctrl-z , ctrl-c , jobs , fg , bg , kill , etc. Know ssh , and the basics of passwordless authentication, via ssh-agent , ssh-add , etc. Basic file management: ls and ls -l (in particular, learn what every column in ls -l means), less , head , tail and tail -f (or even better, less +F ), ln and ln -s (learn the differences and advantages of hard versus soft links), chown , chmod , du (for a quick summary of disk usage: du -hs * ). For filesystem management, df , mount , fdisk , mkfs , lsblk . Learn what an inode is ( ls -i or df -i ). Basic network management: ip or ifconfig , dig , traceroute , route . Learn and use a version control management system, such as git . Know regular expressions well, and the various flags to grep / egrep . The -i , -o , -v , -A , -B , and -C options are worth knowing. Learn to use apt-get , yum , dnf or pacman (depending on distro) to find and install packages. And make sure you have pip to install Python-based command-line tools (a few below are easiest to install via pip ). Everyday use In Bash, use Tab to complete arguments or list all available commands and ctrl-r to search through command history (after pressing, type to search, press ctrl-r repeatedly to cycle through more matches, press Enter to execute the found command, or hit the right arrow to put the result in the current line to allow editing). In Bash, use ctrl-w to delete the last word, and ctrl-u to delete the content from current cursor back to the start of the line. Use alt-b and alt-f to move by word, ctrl-a to move cursor to beginning of line, ctrl-e to move cursor to end of line, ctrl-k to kill to the end of the line, ctrl-l
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fjlevy%2Fthe-art-of-command-line)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [GitHub Stars](https://stars.github.com)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fjlevy%2Fthe-art-of-command-line)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=jlevy%2Fthe-art-of-command-line)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[jlevy](/jlevy)
+/
+**[the-art-of-command-line](/jlevy/the-art-of-command-line)**
+Public
+
+* [Notifications](/login?return_to=%2Fjlevy%2Fthe-art-of-command-line) You must be signed in to change notification settings
+* [Fork
+  14.8k](/login?return_to=%2Fjlevy%2Fthe-art-of-command-line)
+* [Star
+   161k](/login?return_to=%2Fjlevy%2Fthe-art-of-command-line)
+
+* [Code](/jlevy/the-art-of-command-line)
+* [Issues
+  126](/jlevy/the-art-of-command-line/issues)
+* [Pull requests
+  130](/jlevy/the-art-of-command-line/pulls)
+* [Actions](/jlevy/the-art-of-command-line/actions)
+* [Projects](/jlevy/the-art-of-command-line/projects)
+* [Security
+  0](/jlevy/the-art-of-command-line/security)
+* [Insights](/jlevy/the-art-of-command-line/pulse)
+
+Additional navigation options
+
+* [Code](/jlevy/the-art-of-command-line)
+* [Issues](/jlevy/the-art-of-command-line/issues)
+* [Pull requests](/jlevy/the-art-of-command-line/pulls)
+* [Actions](/jlevy/the-art-of-command-line/actions)
+* [Projects](/jlevy/the-art-of-command-line/projects)
+* [Security](/jlevy/the-art-of-command-line/security)
+* [Insights](/jlevy/the-art-of-command-line/pulse)
+
+# jlevy/the-art-of-command-line
+
+master
+
+[Branches](/jlevy/the-art-of-command-line/branches)[Tags](/jlevy/the-art-of-command-line/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| Latest commit   History[1,218 Commits](/jlevy/the-art-of-command-line/commits/master/)   1,218 Commits | | |
+| [admin](/jlevy/the-art-of-command-line/tree/master/admin "admin") | | [admin](/jlevy/the-art-of-command-line/tree/master/admin "admin") |  |  |
+| [.gitignore](/jlevy/the-art-of-command-line/blob/master/.gitignore ".gitignore") | | [.gitignore](/jlevy/the-art-of-command-line/blob/master/.gitignore ".gitignore") |  |  |
+| [AUTHORS.md](/jlevy/the-art-of-command-line/blob/master/AUTHORS.md "AUTHORS.md") | | [AUTHORS.md](/jlevy/the-art-of-command-line/blob/master/AUTHORS.md "AUTHORS.md") |  |  |
+| [CONTRIBUTING.md](/jlevy/the-art-of-command-line/blob/master/CONTRIBUTING.md "CONTRIBUTING.md") | | [CONTRIBUTING.md](/jlevy/the-art-of-command-line/blob/master/CONTRIBUTING.md "CONTRIBUTING.md") |  |  |
+| [README-cs.md](/jlevy/the-art-of-command-line/blob/master/README-cs.md "README-cs.md") | | [README-cs.md](/jlevy/the-art-of-command-line/blob/master/README-cs.md "README-cs.md") |  |  |
+| [README-de.md](/jlevy/the-art-of-command-line/blob/master/README-de.md "README-de.md") | | [README-de.md](/jlevy/the-art-of-command-line/blob/master/README-de.md "README-de.md") |  |  |
+| [README-el.md](/jlevy/the-art-of-command-line/blob/master/README-el.md "README-el.md") | | [README-el.md](/jlevy/the-art-of-command-line/blob/master/README-el.md "README-el.md") |  |  |
+| [README-es.md](/jlevy/the-art-of-command-line/blob/master/README-es.md "README-es.md") | | [README-es.md](/jlevy/the-art-of-command-line/blob/master/README-es.md "README-es.md") |  |  |
+| [README-fr.md](/jlevy/the-art-of-command-line/blob/master/README-fr.md "README-fr.md") | | [README-fr.md](/jlevy/the-art-of-command-line/blob/master/README-fr.md "README-fr.md") |  |  |
+| [README-id.md](/jlevy/the-art-of-command-line/blob/master/README-id.md "README-id.md") | | [README-id.md](/jlevy/the-art-of-command-line/blob/master/README-id.md "README-id.md") |  |  |
+| [README-it.md](/jlevy/the-art-of-command-line/blob/master/README-it.md "README-it.md") | | [README-it.md](/jlevy/the-art-of-command-line/blob/master/README-it.md "README-it.md") |  |  |
+| [README-ja.md](/jlevy/the-art-of-command-line/blob/master/README-ja.md "README-ja.md") | | [README-ja.md](/jlevy/the-art-of-command-line/blob/master/README-ja.md "README-ja.md") |  |  |
+| [README-ko.md](/jlevy/the-art-of-command-line/blob/master/README-ko.md "README-ko.md") | | [README-ko.md](/jlevy/the-art-of-command-line/blob/master/README-ko.md "README-ko.md") |  |  |
+| [README-pl.md](/jlevy/the-art-of-command-line/blob/master/README-pl.md "README-pl.md") | | [README-pl.md](/jlevy/the-art-of-command-line/blob/master/README-pl.md "README-pl.md") |  |  |
+| [README-pt.md](/jlevy/the-art-of-command-line/blob/master/README-pt.md "README-pt.md") | | [README-pt.md](/jlevy/the-art-of-command-line/blob/master/README-pt.md "README-pt.md") |  |  |
+| [README-ro.md](/jlevy/the-art-of-command-line/blob/master/README-ro.md "README-ro.md") | | [README-ro.md](/jlevy/the-art-of-command-line/blob/master/README-ro.md "README-ro.md") |  |  |
+| [README-ru.md](/jlevy/the-art-of-command-line/blob/master/README-ru.md "README-ru.md") | | [README-ru.md](/jlevy/the-art-of-command-line/blob/master/README-ru.md "README-ru.md") |  |  |
+| [README-sl.md](/jlevy/the-art-of-command-line/blob/master/README-sl.md "README-sl.md") | | [README-sl.md](/jlevy/the-art-of-command-line/blob/master/README-sl.md "README-sl.md") |  |  |
+| [README-uk.md](/jlevy/the-art-of-command-line/blob/master/README-uk.md "README-uk.md") | | [README-uk.md](/jlevy/the-art-of-command-line/blob/master/README-uk.md "README-uk.md") |  |  |
+| [README-zh-Hant.md](/jlevy/the-art-of-command-line/blob/master/README-zh-Hant.md "README-zh-Hant.md") | | [README-zh-Hant.md](/jlevy/the-art-of-command-line/blob/master/README-zh-Hant.md "README-zh-Hant.md") |  |  |
+| [README-zh.md](/jlevy/the-art-of-command-line/blob/master/README-zh.md "README-zh.md") | | [README-zh.md](/jlevy/the-art-of-command-line/blob/master/README-zh.md "README-zh.md") |  |  |
+| [README.md](/jlevy/the-art-of-command-line/blob/master/README.md "README.md") | | [README.md](/jlevy/the-art-of-command-line/blob/master/README.md "README.md") |  |  |
+| [cowsay.png](/jlevy/the-art-of-command-line/blob/master/cowsay.png "cowsay.png") | | [cowsay.png](/jlevy/the-art-of-command-line/blob/master/cowsay.png "cowsay.png") |  |  |
+| View all files | | |
+
+## Repository files navigation
+
+* README
+* Contributing
+
+🌍
+*[Čeština](/jlevy/the-art-of-command-line/blob/master/README-cs.md) ∙ [Deutsch](/jlevy/the-art-of-command-line/blob/master/README-de.md) ∙ [Ελληνικά](/jlevy/the-art-of-command-line/blob/master/README-el.md) ∙ [English](/jlevy/the-art-of-command-line/blob/master/README.md) ∙ [Español](/jlevy/the-art-of-command-line/blob/master/README-es.md) ∙ [Français](/jlevy/the-art-of-command-line/blob/master/README-fr.md) ∙ [Indonesia](/jlevy/the-art-of-command-line/blob/master/README-id.md) ∙ [Italiano](/jlevy/the-art-of-command-line/blob/master/README-it.md) ∙ [日本語](/jlevy/the-art-of-command-line/blob/master/README-ja.md) ∙ [한국어](/jlevy/the-art-of-command-line/blob/master/README-ko.md) ∙ [polski](/jlevy/the-art-of-command-line/blob/master/README-pl.md) ∙ [Português](/jlevy/the-art-of-command-line/blob/master/README-pt.md) ∙ [Română](/jlevy/the-art-of-command-line/blob/master/README-ro.md) ∙ [Русский](/jlevy/the-art-of-command-line/blob/master/README-ru.md) ∙ [Slovenščina](/jlevy/the-art-of-command-line/blob/master/README-sl.md) ∙ [Українська](/jlevy/the-art-of-command-line/blob/master/README-uk.md) ∙ [简体中文](/jlevy/the-art-of-command-line/blob/master/README-zh.md) ∙ [繁體中文](/jlevy/the-art-of-command-line/blob/master/README-zh-Hant.md)*
+
+# The Art of Command Line
+
+*Note: I'm planning to revise this and looking for a new co-author to help with expanding this into a more comprehensive guide. While it's very popular, it could be broader and a bit deeper. If you like to write and are close to being an expert on this material and willing to consider helping, please drop me a note at josh (0x40) holloway.com. –[jlevy](https://github.com/jlevy), [Holloway](https://www.holloway.com). Thank you!*
+
+* [Meta](#meta)
+* [Basics](#basics)
+* [Everyday use](#everyday-use)
+* [Processing files and data](#processing-files-and-data)
+* [System debugging](#system-debugging)
+* [One-liners](#one-liners)
+* [Obscure but useful](#obscure-but-useful)
+* [macOS only](#macos-only)
+* [Windows only](#windows-only)
+* [More resources](#more-resources)
+* [Disclaimer](#disclaimer)
+
+[![curl -s 'https://raw.githubusercontent.com/jlevy/the-art-of-command-line/master/README.md' | egrep -o '\w+' | tr -d '`' | cowsay -W50](/jlevy/the-art-of-command-line/raw/master/cowsay.png)](/jlevy/the-art-of-command-line/blob/master/cowsay.png)
+
+Fluency on the command line is a skill often neglected or considered arcane, but it improves your flexibility and productivity as an engineer in both obvious and subtle ways. This is a selection of notes and tips on using the command-line that we've found useful when working on Linux. Some tips are elementary, and some are fairly specific, sophisticated, or obscure. This page is not long, but if you can use and recall all the items here, you know a lot.
+
+This work is the result of [many authors and translators](/jlevy/the-art-of-command-line/blob/master/AUTHORS.md).
+Some of this
+[originally](http://www.quora.com/What-are-some-lesser-known-but-useful-Unix-commands)
+[appeared](http://www.quora.com/What-are-the-most-useful-Swiss-army-knife-one-liners-on-Unix)
+on [Quora](http://www.quora.com/What-are-some-time-saving-tips-that-every-Linux-user-should-know),
+but it has since moved to GitHub, where people more talented than the original author have made numerous improvements.
+[**Please submit a question**](https://airtable.com

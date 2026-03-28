@@ -1,6 +1,6 @@
 ---
 name: gbdraw
-description: "gbdraw creates customizable circular or linear diagrams for the visual representation of microbial and organellar genomes. Use when user asks to generate genomic maps from GenBank or GFF3 files, visualize GC content and skew, or create comparative genomics diagrams using BLAST results."
+description: gbdraw visualizes genomic data by creating circular and linear diagrams that incorporate feature maps, statistical tracks, and synteny comparisons. Use when user asks to generate publication-ready genome maps, plot GC content and skew, or visualize BLAST-based comparisons between multiple sequences.
 homepage: https://github.com/satoshikawato/gbdraw
 ---
 
@@ -8,44 +8,68 @@ homepage: https://github.com/satoshikawato/gbdraw
 # gbdraw
 
 ## Overview
-gbdraw is a specialized tool for the visual representation of microbial and organellar genomes. It transforms genomic annotation files into customizable circular or linear diagrams. Beyond simple feature mapping, it supports the integration of comparative genomics data (BLAST) and sequence composition metrics (GC content and skew). It is particularly useful for researchers needing to generate vector-based graphics (SVG, PDF, EPS) or raster images (PNG) for publications, with advanced control over label placement and feature styling.
+gbdraw is a specialized bioinformatics visualization tool designed to transform genomic data into clear, publication-ready diagrams. It excels at representing microbial genomes and organelles in both circular and linear formats. Beyond simple feature mapping, it integrates statistical tracks like GC content and skew, and provides a powerful linear comparison mode to visualize synteny and similarity between multiple genomes using BLAST results.
 
-## Core Capabilities
-- **Input Formats**: Supports standard GenBank/DDBJ files and GFF3 + FASTA pairs.
-- **Diagram Modes**: 
-    - **Circular**: Ideal for whole-genome overviews of bacteria, viruses, and organelles.
-    - **Linear**: Best for specific genomic regions, operons, or comparative alignments.
-- **Comparative Genomics**: Can visualize sequence similarity between multiple genomes by incorporating BLAST results.
-- **Compositional Tracks**: Supports dedicated tracks for GC content and GC skew.
-- **Label Management**: Features a priority-based system for label placement, including the ability to use blacklists and whitelists to manage crowded regions.
+## Core CLI Usage
 
-## Usage Guidelines and Best Practices
-
-### Installation
-The tool is primarily distributed via Bioconda:
+### Circular Diagrams
+Used for whole-genome visualization of bacteria, archaea, or organelles.
 ```bash
-conda install bioconda::gbdraw
+# Basic circular plot from a GenBank file
+gbdraw circular --gbk genome.gb -o output_prefix
+
+# Include GC content and GC skew tracks
+gbdraw circular --gbk genome.gb --gc --skew -o genome_map
+
+# Specify output format (SVG, PNG, PDF, EPS, PS)
+gbdraw circular --gbk genome.gb -o map --format pdf
 ```
 
-### Workflow Patterns
-1. **Basic Visualization**: Provide a GenBank or GFF3+FASTA pair to generate a standard map.
-2. **Comparative Mapping**: When comparing genomes, ensure you have the BLAST results ready to be passed to the tool to draw similarity links between tracks.
-3. **Track Customization**:
-    - Use the `above` and `below` options in linear mode to organize features relative to the main track.
-    - Adjust the `Interval` parameter for linear canvases to control the spacing and scale of the genomic region.
-4. **Output Optimization**:
-    - For publications, prefer vector formats like **SVG** or **PDF** to maintain resolution.
-    - If using **PNG**, specify the resolution (DPI) to ensure clarity for digital presentations.
-5. **Label Refinement**:
-    - If labels overlap in dense regions, utilize the priority rules or the whitelist/blacklist feature to highlight only essential genes.
-    - The tool uses kerning-aware font measurements, so labels are generally well-placed, but manual adjustment of label angles or canvas dimensions may be necessary for very large genomes.
+### Linear Diagrams
+Ideal for gene clusters, operons, or comparing multiple genomic regions.
+```bash
+# Basic linear plot
+gbdraw linear --gbk genome.gb -o linear_map
 
-### Expert Tips
-- **Dark Mode Aesthetics**: When features are assigned dark colors, ensure embedded labels are set to white for readability.
-- **Relative Positioning**: Position ticks, labels, and GC tracks relative to the primary feature tracks to maintain a clean visual hierarchy.
-- **Comparative Layouts**: In linear mode, use the comparative features to align multiple genomes, which is essential for visualizing synteny or horizontal gene transfer events.
+# Comparative genomics: Plot two genomes with BLAST results showing similarity
+gbdraw linear --gbk ref.gb query.gb --blast blast_results.txt -o comparison
+```
+
+## Expert Tips & Best Practices
+
+### Input Handling
+*   **GFF3 Support**: If GenBank files are unavailable, use GFF3 and FASTA pairs: `gbdraw circular --gff genome.gff --fasta genome.fasta`.
+*   **Multi-Record Files**: gbdraw can handle GenBank files containing multiple records; use the `--record_id` flag if you need to isolate a specific chromosome or plasmid.
+
+### Visualization Tuning
+*   **Track Layouts**: For circular diagrams, use `--track_layout` with options:
+    *   `spreadout`: Maximizes space between tracks.
+    *   `middle`: Standard balanced view.
+    *   `tuckin`: Compact view for high-density information.
+*   **Label Filtering**: Prevent diagram clutter by using label filters. You can exclude specific keywords or only show labels for high-priority features.
+*   **Color Palettes**: Use `--palette` to apply predefined color schemes from the built-in `color_palettes.toml`.
+
+### Advanced Comparison
+*   **BLAST Integration**: When using `linear` mode with `--blast`, ensure the BLAST output is in tabular format (`-outfmt 6` or `7`).
+*   **Window/Step Sizes**: For GC tracks, gbdraw auto-adjusts window sizes based on genome length (<1M, 1-10M, >10M bp), but these can be manually overridden for specific resolution needs.
+
+## Common Workflow: Comparative Synteny
+1.  Perform a BLAST search between two genomes: `blastn -query g1.fasta -subject g2.fasta -outfmt 6 > match.tsv`
+2.  Generate the comparison diagram:
+    ```bash
+    gbdraw linear --gbk g1.gbk g2.gbk --blast match.tsv --gc -o synteny_plot
+    ```
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| gbdraw | Generate genome diagrams in PNG/PDF/SVG/PS/EPS. Diagrams for multiple entries are saved separately. |
+| gbdraw | Generate plot in PNG/PDF/SVG/PS/EPS. |
 
 ## Reference documentation
-- [gbdraw GitHub Repository](./references/github_com_satoshikawato_gbdraw.md)
-- [gbdraw Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_gbdraw_overview.md)
-- [gbdraw Issue Tracker (Feature Requests)](./references/github_com_satoshikawato_gbdraw_issues.md)
+- [Project Overview and Architecture](./references/github_com_satoshikawato_gbdraw_blob_main_CLAUDE.md)
+- [Command Line Interface Details](./references/github_com_satoshikawato_gbdraw_blob_main_README.md)
+- [Agent Guidance and Structure](./references/github_com_satoshikawato_gbdraw_blob_main_AGENTS.md)

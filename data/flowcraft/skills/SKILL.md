@@ -1,6 +1,6 @@
 ---
 name: flowcraft
-description: FlowCraft automates the assembly of Nextflow genomics pipelines by chaining together pre-defined bioinformatics modules. Use when user asks to build a Nextflow pipeline, chain bioinformatics components, or inspect the status of a running pipeline.
+description: FlowCraft is a pipeline composer that builds reproducible genomics workflows by stitching together bioinformatics components into Nextflow files. Use when user asks to build a sequencing pipeline, generate a Nextflow workflow from specific tools, or inspect and report on active genomic analysis runs.
 homepage: https://github.com/assemblerflow/flowcraft
 ---
 
@@ -8,64 +8,46 @@ homepage: https://github.com/assemblerflow/flowcraft
 # flowcraft
 
 ## Overview
+FlowCraft is a specialized pipeline composer designed for omics analysis. It allows you to build complex, reproducible genomics workflows by stitching together pre-defined components (like Trimmomatic, SPAdes, or FastQC) into a single Nextflow pipeline. This skill provides the necessary CLI patterns to transition from a list of desired bioinformatics tools to a fully functional, containerized pipeline ready for local or cluster execution.
 
-FlowCraft is a specialized tool for genomics that automates the assembly of Nextflow pipelines. Instead of writing complex Nextflow DSL from scratch, you can use FlowCraft to chain together pre-defined bioinformatics modules. It handles the "plumbing" of the pipeline—ensuring that the output of one tool matches the input requirements of the next—and automatically generates the necessary configuration files for containerized execution (Docker/Singularity).
-
-## Core CLI Workflows
+## Core Workflows
 
 ### Building a Pipeline
-The primary command is `flowcraft build`. You define the pipeline logic by passing a string of components to the `-t` (template) flag.
+The primary function of FlowCraft is the `build` mode. It takes a string of components and generates a `.nf` Nextflow file.
 
-```bash
-# Basic assembly pipeline
-flowcraft build -t "trimmomatic fastqc spades abricate" -o assembly_pipe.nf -n "MyAssembly"
-```
-
-**Key Rules for Building:**
-*   **Component Order**: Components must be compatible. For example, a component requiring FastQ files (like Trimmomatic) must come before an assembler.
-*   **Output File**: Always specify the `-o` flag to name your main Nextflow executable.
-*   **Naming**: Use `-n` to give your pipeline a descriptive internal name.
+- **Basic Assembly**: `flowcraft build -t "component1 component2 component3" -o pipeline_name.nf`
+- **Named Pipelines**: Use `-n "Project Name"` to add a custom header to the generated pipeline.
+- **Component Selection**: Ensure the output type of one component matches the input type of the next (e.g., FastQ -> Assembly -> Annotation).
 
 ### Running the Generated Pipeline
-Once built, you execute the pipeline using the `nextflow` command, not `flowcraft`.
+Once built, the pipeline is executed via Nextflow. FlowCraft pipelines are designed to use Docker or Singularity by default.
 
-```bash
-# Run locally with Singularity
-nextflow run assembly_pipe.nf --fastq "data/*_{1,2}.fastq.gz" -profile singularity
+- **Local Execution**: `nextflow run my_pipeline.nf --fastq "path/to/reads/*_{1,2}.*"`
+- **Cluster Execution (SLURM)**: `nextflow run my_pipeline.nf --fastq "path/to/reads/*_{1,2}.*" -profile slurm_sing`
+- **Input Patterns**: Always provide the path expression for paired-end files using the `{1,2}` glob pattern to ensure correct sample pairing.
 
-# Run on a SLURM cluster
-nextflow run assembly_pipe.nf --fastq "data/*_{1,2}.fastq.gz" -profile slurm_sing
-```
+### Inspection and Reporting
+FlowCraft provides built-in tools to monitor and visualize results without manually parsing log files.
 
-### Inspecting Progress
-To monitor a running pipeline's status in the terminal:
-```bash
-flowcraft inspect
-```
-*Note: Run this command within the directory where the pipeline was launched.*
+- **Real-time Inspection**: Run `flowcraft inspect` in the directory where a pipeline is currently running to view a terminal-based progress dashboard.
+- **Generating Reports**: Use the `report` mode to compile component-specific results into a visual format compatible with the FlowCraft web app.
 
-## Component Parameters and Configuration
+## Expert Tips and Best Practices
 
-FlowCraft dynamically generates help documentation for every pipeline you build. Because components can be used multiple times, parameters are indexed based on their position in the chain (e.g., `_1_1`, `_1_2`).
+- **Parameter Discovery**: Every generated pipeline has a dynamic help menu. Run `nextflow run my_pipeline.nf --help` to see the specific flags for every component in your string (e.g., `--trimMinLength_1_2` for a Trimmomatic component at position 1.2).
+- **Dependency Management**: Avoid installing individual bioinformatics tools. FlowCraft leverages Bioconda and containers; ensure either Docker or Singularity is installed and accessible in your environment.
+- **Resource Control**: For large-scale runs, use the `clearInput` parameter (if available in your version) to remove temporary files between process steps and save disk space.
 
-### Discovering Parameters
-Always check the specific help for your generated file:
-```bash
-nextflow run my_pipeline.nf --help
-```
 
-### Common Parameter Patterns
-*   **Input Data**: Use `--fastq` for paired-end reads. The default pattern is usually `fastq/*_{1,2}.*`.
-*   **Component-Specific Flags**: If you have `trimmomatic` as the second component, its parameters will likely look like `--trimLeading_1_2`.
-*   **Genome Size**: Many assembly components require `--genomeSize_X_X` (in Mb) to estimate coverage.
 
-## Expert Tips
+## Subcommands
 
-*   **Container Engines**: FlowCraft pipelines are designed to be portable. Always use a profile (e.g., `-profile docker` or `-profile singularity`) to ensure all software dependencies are handled via containers.
-*   **Resource Management**: When running on clusters, the `slurm` profiles automatically handle the translation of Nextflow directives to sbatch submissions.
-*   **Integrity Checks**: Include the `integrity_coverage` component at the start of your templates to validate input file quality and depth before proceeding to computationally expensive steps.
-*   **Reports and Results**: By default, FlowCraft organizes outputs into `./reports` and `./results` directories. Check these folders continuously during execution as FlowCraft updates them in real-time.
+| Command | Description |
+|---------|-------------|
+| flowcraft build | Build a pipeline using flowcraft. |
+| flowcraft inspect | Inspect Nextflow runs |
+| flowcraft_report | Generate a report from pipeline execution data. |
 
 ## Reference documentation
-- [FlowCraft GitHub Repository](./references/github_com_assemblerflow_flowcraft.md)
-- [FlowCraft Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_flowcraft_overview.md)
+- [FlowCraft GitHub Overview](./references/github_com_assemblerflow_flowcraft.md)
+- [FlowCraft Roadmap and Features](./references/github_com_assemblerflow_flowcraft_wiki_Roadmap.md)

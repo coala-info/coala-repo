@@ -140,3 +140,6 @@ Available options
     output prefix for index
 ```
 
+
+## Metadata
+- **Skill**: generated

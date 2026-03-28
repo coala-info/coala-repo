@@ -64,3 +64,6 @@ options:
   --pivot PIVOT         Optional variant pivot override
 ```
 
+
+## Metadata
+- **Skill**: generated

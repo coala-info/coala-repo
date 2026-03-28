@@ -1,6 +1,6 @@
 ---
 name: kmer-db
-description: kmer-db is a high-performance utility for indexing genomic or proteomic data and calculating similarity metrics between massive sets of k-mers. Use when user asks to build k-mer databases, perform all-to-all comparisons, or calculate Jaccard distances to estimate evolutionary relationships.
+description: kmer-db is a high-performance bioinformatics tool for estimating genomic similarities and distances using k-mer counting and MinHash-based dimensionality reduction. Use when user asks to build a k-mer database, compare genomic sequences without alignment, or calculate Jaccard similarity indices between large datasets.
 homepage: https://github.com/refresh-bio/kmer-db
 ---
 
@@ -8,47 +8,69 @@ homepage: https://github.com/refresh-bio/kmer-db
 # kmer-db
 
 ## Overview
-
-kmer-db is a high-performance utility designed for processing massive sets of k-mers with minimal memory overhead. It excels at indexing genomic or proteomic data and calculating similarity metrics between samples. Use this skill to guide the construction of k-mer databases, perform all-to-all comparisons, or query individual sequences against a reference database to estimate evolutionary relationships via Jaccard distances.
+kmer-db is a high-performance bioinformatics utility designed to handle massive genomic datasets by representing them as sets of k-mers. It is particularly effective for estimating similarities between thousands of genomes without the need for traditional sequence alignment. The tool leverages SIMD extensions (AVX2/NEON) to accelerate the counting of common k-mers and supports MinHash-based dimensionality reduction to reduce memory footprints while maintaining high accuracy in distance estimations.
 
 ## Core CLI Patterns
 
-### 1. Building a Database
-The `build` mode is the prerequisite for most analyses. It processes FASTA files into a compact database format.
+### Database Construction
+Building a database is the first step for any analysis. You can create a new database or extend an existing one.
 
-*   **Standard Nucleotide Build**:
-    `kmer-db build -k 18 -t 16 input_list.txt output.db`
-*   **Protein/Amino Acid Build**:
-    `kmer-db build -alphabet aa -k 10 input.fasta output.db`
-*   **From Multi-sample FASTA**:
-    Use `-multisample-fasta` if a single FASTA file contains multiple distinct samples (e.g., different genomes).
-    `kmer-db build -multisample-fasta all_genomes.fasta output.db`
+- **Standard Build**:
+  `kmer-db build <input_list> <output_db>`
+  *Note: `<input_list>` should be a text file containing paths to FASTA/FASTQ files.*
 
-### 2. Comparing Sequences
-Once a database is built, use these modes to find common k-mers.
+- **Custom K-mer Size and Sampling**:
+  `kmer-db build -k 25 -f 0.1 -t 16 <input_list> <output_db>`
+  *`-k`: K-mer length (default 18).*
+  *`-f`: Fraction of k-mers to retain (0.1 = 10% sampling via MinHash).*
+  *`-t`: Number of threads.*
 
-*   **New vs. Database (`new2all`)**: Compare a set of new sequences against an existing database.
-    `kmer-db new2all reference.db query_list.txt results.csv`
-*   **Single vs. Database (`one2all`)**: Compare one specific FASTA against the database.
-    `kmer-db one2all reference.db query.fasta results.csv`
-*   **All-to-All (`all2all`)**: Compare every sample within a database against every other sample.
-    `kmer-db all2all reference.db results.csv`
+- **Updating a Database**:
+  `kmer-db build -extend <new_sequences_list> <existing_db>`
 
-### 3. Calculating Distances
-Transform the raw common k-mer counts into biological distance metrics.
+### Sequence Comparison
+Once a database is built, you can compare new sequences against it or perform internal comparisons.
 
-*   **Jaccard Index**:
-    `kmer-db distance jaccard results.csv distances.jaccard`
+- **New Sequences vs. Database (new2all)**:
+  `kmer-db new2all <database> <query_list> <output_csv>`
+  *Outputs a matrix of common k-mer counts between query sequences and database entries.*
 
-## Expert Tips and Best Practices
+- **Internal Database Comparison (all2all)**:
+  `kmer-db all2all <database> <output_csv>`
+  *Computes common k-mer counts for every pair within the database.*
 
-*   **Memory Optimization (MinHash)**: For extremely large datasets, use the `-f <fraction>` flag during `build` to accept only a fraction of k-mers (e.g., `-f 0.01` for 1%). This implements a MinHash-like sketch that significantly reduces database size while maintaining distance estimation accuracy.
-*   **Sparse Computation**: When dealing with thousands of samples where most pairs share few k-mers, use `all2all-sp` or `all2all-parts` for sparse matrix computation to save time and disk space.
-*   **Database Extension**: Use the `-extend` flag in `build` mode to add new samples to an existing `.db` file without rebuilding from scratch.
-*   **Input Lists**: For large batches, create a text file containing paths to your FASTA files (one per line) and pass that as the input argument.
-*   **Thread Management**: Always specify `-t` to match your available CPU cores, as kmer-db is highly parallelized.
-*   **Alphabet Selection**: Beyond `nt` and `aa`, kmer-db supports reduced amino acid alphabets like `aa12_mmseqs` and `aa11_diamond` for sensitive protein searches.
+- **Single Sequence Query (one2all)**:
+  `kmer-db one2all <database> <query_fasta> <output_csv>`
+
+### Distance and Similarity Estimation
+Convert raw k-mer counts into biological metrics.
+
+- **Jaccard Index**:
+  `kmer-db distance jaccard <counts_csv> <output_jaccard>`
+  *Calculates the Jaccard similarity coefficient ($J = \frac{|A \cap B|}{|A \cup B|}$).*
+
+## Expert Tips
+- **Memory Management**: For extremely large datasets, use the `-f` parameter (MinHash) during the `build` step. A fraction of 0.01 to 0.1 is often sufficient for accurate Jaccard estimation while significantly reducing RAM usage.
+- **Sparse Mode**: When dealing with many partial databases, use `all2all-parts` with a list of database files to trigger sparse computation mode, which is more efficient for non-overlapping datasets.
+- **Input Formatting**: Ensure your `.list` files contain absolute paths or paths relative to the execution directory to avoid "file not found" errors during the build process.
+- **Alphabet Support**: As of v2.3.1, the tool supports amino acid alphabets for protein-level k-mer analysis.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| build | Building a database |
+| kmer-db all2all | Counting common k-mers for all the samples in the database |
+| kmer-db all2all-parts | Counting common k-mers for all the samples in the database parts (sparse computation) |
+| kmer-db all2all-sp | Counting common k-mers for all the samples in the database (sparse computation) |
+| kmer-db distance | Calculating similarities/distances on the basis of common k-mers |
+| kmer-db one2all | Counting common kmers between single sample and all the samples in the database |
+| kmer-db_new2all | Counting common kmers between set of new samples and all the samples in the database |
+| minhash | Storing minhashed k-mers |
 
 ## Reference documentation
-- [kmer-db GitHub Repository](./references/github_com_refresh-bio_kmer-db.md)
-- [kmer-db Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_kmer-db_overview.md)
+- [Kmer-db GitHub README](./references/github_com_refresh-bio_kmer-db_blob_master_README.md)
+- [Kmer-db Quick Start Guide](./references/github_com_refresh-bio_kmer-db_blob_master_quick-start.sh.md)
+- [Bioconda Package Overview](./references/anaconda_org_channels_bioconda_packages_kmer-db_overview.md)

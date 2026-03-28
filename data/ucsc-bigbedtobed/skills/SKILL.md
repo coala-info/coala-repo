@@ -1,6 +1,6 @@
 ---
 name: ucsc-bigbedtobed
-description: The ucsc-bigbedtobed tool converts binary bigBed files into standard tab-delimited BED format. Use when user asks to convert bigBed files to BED format, extract specific regions, include headers in the output, convert remote bigBed files, or pipe bigBed content to another tool.
+description: This tool converts binary BigBed files into text-based BED format. Use when user asks to convert BigBed to BED, extract genomic regions from a BigBed file, or stream remote BigBed data to standard output.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
 
@@ -8,32 +8,59 @@ homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 # ucsc-bigbedtobed
 
 ## Overview
-The `bigBedToBed` utility is a specialized tool from the UCSC Genome Browser "Kent" suite designed to reverse the bigBed creation process. While bigBed files are optimized for high-performance visualization and remote access, they are binary and cannot be read by standard text editors or tools like `awk` and `grep`. This skill provides the procedural knowledge to decompress these files back into standard tab-delimited BED format, including support for coordinate-based sub-setting and remote file handling.
+`bigBedToBed` is a specialized utility from the UCSC Genome Browser "Kent" toolset designed to decompress and convert BigBed files back into their original BED format. BigBed files are the indexed, binary version of BED files, optimized for fast remote access and large datasets. This tool allows you to recover the text data or extract specific subsets of features based on genomic regions (chromosome, start, and end positions) without needing to process the entire file.
 
-## Command Line Usage
+## Common CLI Patterns
 
-The basic syntax for the tool is:
-`bigBedToBed input.bb output.bed`
+### Basic Conversion
+To convert an entire BigBed file to a standard BED file:
+```bash
+bigBedToBed input.bb output.bed
+```
 
-### Common Patterns and Options
+### Extracting Specific Regions
+One of the most efficient uses of `bigBedToBed` is extracting data from a specific genomic window. This is significantly faster than converting the whole file and then using `grep` or `awk`.
+```bash
+bigBedToBed -chrom=chr1 -start=100000 -end=200000 input.bb output.bed
+```
 
-*   **Extract Specific Regions**: To avoid converting a massive file when you only need a specific locus, use coordinate flags:
-    `bigBedToBed -chrom=chr1 -start=1000 -end=5000 input.bb output.bed`
-*   **Include Column Headers**: If the bigBed file contains an autoSql schema or specific field names, use the header flag to make the output more interpretable:
-    `bigBedToBed -header input.bb output.bed`
-*   **Remote Access**: The tool natively supports HTTP, HTTPS, and FTP URLs. You do not need to download the file first:
-    `bigBedToBed https://path.to/data/file.bb output.bed`
+### Working with Remote Files
+UCSC utilities natively support HTTP, HTTPS, and FTP URLs. You can stream data from a remote server (like the UCSC Genome Browser's hgdownload) directly to a local BED file:
+```bash
+bigBedToBed https://hgdownload.soe.ucsc.edu/gbdb/hg38/bbi/clinvar/clinvarMain.bb output.bed
+```
+
+### Limiting Output
+If you only need a sample of the data or want to prevent creating an excessively large file, use the `-maxItems` flag:
+```bash
+bigBedToBed -maxItems=100 input.bb output.bed
+```
 
 ## Expert Tips and Best Practices
 
-*   **Permission Errors**: If using the standalone binary downloaded from the UCSC server, ensure it is executable:
-    `chmod +x bigBedToBed`
-*   **Memory Efficiency**: `bigBedToBed` is highly memory-efficient because it uses the internal B+ tree index of the bigBed file to fetch only the required data blocks. When working with large datasets, always prefer using the `-chrom`, `-start`, and `-end` flags to minimize I/O.
-*   **Pipe Integration**: While the tool requires an output filename, you can often use `/dev/stdout` on Unix-like systems to pipe the results directly into another tool:
-    `bigBedToBed input.bb /dev/stdout | grep "target_motif" > filtered.bed`
-*   **Schema Inspection**: If you are unsure of the extra columns (beyond the standard BED3 or BED6) in a bigBed file, use the `bigBedInfo` tool (often bundled with this package) to see the field definitions before conversion.
+### Performance and Caching
+When working with remote files repeatedly, use the `-udcDir` option to specify a local cache directory. This prevents redundant network requests for the same file headers and indices.
+```bash
+bigBedToBed -udcDir=/tmp/ucsc_cache http://url/to/file.bb output.bed
+```
+
+### Permission Errors
+If you have downloaded the binary directly from the UCSC servers, you must ensure it has execution permissions before running:
+```bash
+chmod +x bigBedToBed
+./bigBedToBed input.bb output.bed
+```
+
+### Identifying BigBed Metadata
+Before conversion, if you are unsure about the contents or the number of fields in the BigBed file, use the companion tool `bigBedInfo` to view the file's schema and summary statistics.
+
+### Pipe to Standard Output
+To stream the BED output directly into another tool (like `head` or a custom script) without creating an intermediate file, use `stdout` as the output filename:
+```bash
+bigBedToBed input.bb stdout | head -n 20
+```
 
 ## Reference documentation
-- [ucsc-bigbedtobed Overview](./references/anaconda_org_channels_bioconda_packages_ucsc-bigbedtobed_overview.md)
+- [UCSC Genome Browser Kent Wiki](./references/github_com_ucscGenomeBrowser_kent_wiki.md)
 - [UCSC Admin Executables Directory](./references/hgdownload_cse_ucsc_edu_admin_exe.md)
-- [Linux x86_64 Binary Listing](./references/hgdownload_cse_ucsc_edu_admin_exe_linux.x86_64.md)
+- [Linux x86_64 Binaries List](./references/hgdownload_cse_ucsc_edu_admin_exe_linux.x86_64.md)

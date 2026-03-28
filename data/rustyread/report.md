@@ -120,3 +120,6 @@ OPTIONS:
             Adapter parameters for read starts [default: AATGTACTTCGTTCAGTTACGTATTGCT]
 ```
 
+
+## Metadata
+- **Skill**: generated

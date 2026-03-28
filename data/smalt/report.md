@@ -135,3 +135,6 @@ OPTIONS:
   -u [INT] Map only every <nreads>-th read pair (default 100).
 ```
 
+
+## Metadata
+- **Skill**: generated

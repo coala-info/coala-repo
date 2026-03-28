@@ -1,6 +1,6 @@
 ---
 name: raptor
-description: Raptor is a high-performance bioinformatics tool that uses compressed index structures to query nucleotide sequences against large collections of reference data. Use when user asks to build a Hierarchical Interleaved Bloom Filter index, search query sequences against reference bins, or perform fast approximate membership queries across thousands of genomes.
+description: Raptor is a bioinformatics tool that performs large-scale genomic sequence searches against indexed datasets using k-mer content. Use when user asks to prepare sequence data, layout hierarchical structures, build Interleaved Bloom Filter indexes, or search queries against genomic bins.
 homepage: https://github.com/seqan/raptor
 ---
 
@@ -8,50 +8,63 @@ homepage: https://github.com/seqan/raptor
 # raptor
 
 ## Overview
-Raptor is a high-performance bioinformatics tool designed to handle the "needle in a haystack" problem for genomic data. It allows users to query nucleotide sequences against vast collections of reference data by using a compressed index structure. Use this skill to guide the indexing of reference genomes and the subsequent searching of query sequences to determine which reference bins contain potential matches. It is particularly effective when dealing with thousands of genomes where traditional alignment is too slow.
+Raptor is a specialized bioinformatics tool designed to handle the "needle in a haystack" problem for genomic sequences. It allows users to determine which "bins" (samples, references, or genomes) contain a specific query sequence based on k-mer content. It is particularly effective for large-scale datasets where traditional alignment is too slow. The tool operates through a multi-step pipeline: optionally preprocessing data, defining a layout for hierarchical indexing, building the index, and finally searching against it.
 
-## Installation
-The most straightforward way to install Raptor is via Bioconda:
+## Core Workflows
 
-```bash
-conda install -c bioconda -c conda-forge raptor
-```
+### HIBF Workflow (Recommended)
+The Hierarchical Interleaved Bloom Filter is the preferred index type for most datasets, especially those with unevenly sized bins.
+1. **Prepare**: `raptor prepare --input <files.txt> --output <dir>` (Optional: filters k-mers by abundance).
+2. **Layout**: `raptor layout --input <minimiser.list> --output layout.txt` (Determines the hierarchical structure).
+3. **Build**: `raptor build --input layout.txt --output index.hibf`.
+4. **Search**: `raptor search --index index.hibf --query <query.fasta> --output search.out`.
 
-For maximum performance, consider compiling from source on the target machine to allow for host-specific optimizations (e.g., SIMD instructions).
+### IBF Workflow
+Use the standard Interleaved Bloom Filter for small numbers of bins (≤ 128) or evenly sized datasets.
+1. **Build**: `raptor build --input <files.txt> --output index.ibf`.
+2. **Search**: `raptor search --index index.ibf --query <query.fasta> --output search.out`.
 
-## Core Workflow
+## Command Reference & Best Practices
 
-Raptor operates in two primary stages: building an index and searching against it.
+### 1. Data Preparation (`raptor prepare`)
+*   **Input Format**: A text file where each line contains paths to sequence data. Multiple paths on one line (separated by whitespace) are treated as a single bin.
+*   **K-mer Cutoffs**: Use `--use-filesize-dependent-cutoff` to automatically apply Mantis-based filtering (e.g., 10x for 1GiB files) to remove sequencing errors.
+*   **Persistence**: If a run crashes, rerunning the same command skips already processed files.
 
-### 1. Building the Index
-The `build` command creates a Hierarchical Interleaved Bloom Filter (HIBF) from your reference sequences.
+### 2. Index Layout (`raptor layout`)
+*   **Tmax**: The maximum number of technical bins. A good default is approximately the square root of the number of samples, rounded to the next multiple of 64.
+*   **Optimization**: Use `--determine-best-tmax` to let Raptor calculate the most efficient layout for your specific data distribution.
 
-*   **Input Preparation**: Organize your reference sequences into "bins" (e.g., one bin per species or per genome).
-*   **Command Structure**:
-    ```bash
-    raptor build --input <ref_list.txt> --output <index_name.hibf>
-    ```
-*   **Expert Tip**: Since version 1.1.0, Raptor can accept a file containing paths to the bins. This is much more manageable than passing thousands of file paths directly to the CLI.
+### 3. Index Building (`raptor build`)
+*   **K-mer vs. Minimisers**: 
+    *   Use `(w,k)` minimisers (default recommendation: `w-k=4`) for significantly smaller index sizes and faster runtimes.
+    *   Use `(k,k)` canonical k-mers for exact thresholding when searching with a specific number of errors.
+*   **False Positive Rate**: The default `--fpr 0.05` is balanced. Lowering this reduces false positives but increases the index size on disk.
 
-### 2. Searching the Index
-Once the index is created, use the `search` command to query your sequences.
+### 4. Searching (`raptor search`)
+*   **Thresholding**:
+    *   `--error <N>`: Search allowing a specific number of errors (mutually exclusive with `--threshold`).
+    *   `--threshold <0.0-1.0>`: Search requiring a specific ratio of k-mers to be present (e.g., `0.7` for 70%).
+*   **Performance**: Use `--cache-thresholds` to save computed thresholds to disk, speeding up subsequent searches against the same index.
+*   **Query Length**: If your queries have high variance in length, provide `--query_length` to ensure accurate threshold calculations.
 
-*   **Command Structure**:
-    ```bash
-    raptor search --index <index_name.hibf> --query <queries.fastq> --output <results.txt>
-    ```
-*   **Approximate Search**: Raptor is designed for approximate membership queries. It identifies which bins likely contain the query based on k-mer counts and thresholds.
+## Expert Tips
+*   **Memory Management**: If `raptor prepare` fails due to RAM limits, reduce the `--threads` count.
+*   **HIBF vs IBF**: While IBF is simpler, HIBF is almost always superior in real-world scenarios where bin sizes vary significantly.
+*   **K-mer Lemma**: When allowing errors (`e`), ensure `k` is small enough that `|query| - k + 1 - (k * e)` is still positive. For 100bp reads and 2 errors, `k=20` is a safe maximum.
 
-## Command Line Best Practices
 
-*   **Help Discovery**: Raptor uses a nested help system. Use `raptor --help` for general commands, and `raptor build --help` or `raptor search --help` for specific parameter details.
-*   **Memory Management**: HIBFs are space-efficient, but very large indices can still consume significant RAM. If you encounter large index issues, verify your binning strategy or adjust the false positive rate (FPR) if the version allows.
-*   **Input/Output**: Always specify explicit `--input` and `--output` paths to avoid confusion, especially when working with complex directory structures in bioinformatics pipelines.
 
-## Troubleshooting and Performance
-*   **Large Indices**: If the HIBF index is unexpectedly large, check the number of unique k-mers across your bins. High redundancy across bins is handled well by HIBF, but unique noise can bloat the filter.
-*   **Optimization**: Use minimizers (if supported by the specific version's build parameters) to reduce the index size and speed up the search process without significantly sacrificing sensitivity.
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| raptor build | Constructs a Raptor index. |
+| raptor_subcommand | Please specify which sub-program you want to use: one of [build, layout, prepare, search, upgrade]. |
 
 ## Reference documentation
-- [GitHub Repository Overview](./references/github_com_seqan_raptor.md)
-- [Bioconda Package Details](./references/anaconda_org_channels_bioconda_packages_raptor_overview.md)
+- [Quickstart Guide](./references/docs_seqan_de_raptor_main_usage_quickstart.html.md)
+- [Raptor Prepare](./references/docs_seqan_de_raptor_main_usage_prepare.html.md)
+- [Raptor Layout](./references/docs_seqan_de_raptor_main_usage_layout.html.md)
+- [Raptor Build](./references/docs_seqan_de_raptor_main_usage_build.html.md)
+- [Raptor Search](./references/docs_seqan_de_raptor_main_usage_search.html.md)

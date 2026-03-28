@@ -1,6 +1,6 @@
 ---
 name: vcf2maf
-description: vcf2maf converts Variant Call Format (VCF) files into standardized Mutation Annotation Format (MAF) files, selecting a single effect per variant. Use when user asks to convert VCF files to MAF, re-annotate existing MAF files, map sample IDs, or perform VCF to MAF conversion with or without VEP annotation.
+description: vcf2maf converts Variant Call Format files into standardized Mutation Annotation Format files using Ensembl's Variant Effect Predictor. Use when user asks to convert VCF to MAF, reannotate existing MAF files, or standardize variant functional effects across multiple transcripts.
 homepage: https://github.com/mskcc/vcf2maf
 ---
 
@@ -8,53 +8,82 @@ homepage: https://github.com/mskcc/vcf2maf
 # vcf2maf
 
 ## Overview
-`vcf2maf` is a specialized utility designed to standardize the conversion of Variant Call Format (VCF) files into Mutation Annotation Format (MAF). In genomic analysis, a single variant can often be mapped to multiple gene transcripts or isoforms; `vcf2maf` addresses this by selecting a single effect per variant based on prioritized criteria (often leveraging Ensembl VEP). It is particularly effective at handling "non-standard" or poorly formatted VCF/MAF files encountered in bioinformatics workflows, ensuring that the resulting output is compatible with downstream tools like MuSiC or cBioPortal.
 
-## Usage Instructions
+vcf2maf is a specialized toolset designed to transform Variant Call Format (VCF) files into Mutation Annotation Format (MAF). Its primary purpose is to address the ambiguity in variant annotation—where a single mutation might affect multiple transcripts—by standardizing the selection of a single functional effect per variant. It relies heavily on Ensembl's Variant Effect Predictor (VEP) for high-quality, CLIA-compliant HGVS annotations. Beyond simple conversion, it provides robust support for parsing inconsistent or "crappy" bioinformatic formats often encountered in the field.
 
-### Basic VCF to MAF Conversion
-The primary script is `vcf2maf.pl`. It requires an input VCF and produces a MAF.
+## Core Workflows
+
+### Converting VCF to MAF
+The primary script is `vcf2maf.pl`. It requires an input VCF and produces an annotated MAF.
+
+**Basic conversion:**
 ```bash
 perl vcf2maf.pl --input-vcf input.vcf --output-maf output.maf
 ```
 
-### Handling Sample IDs and Genotypes
-VCFs often use generic headers like `TUMOR` and `NORMAL`. Use these flags to map them to specific barcodes in the output MAF:
-- `--tumor-id`: The barcode to write in the MAF `Tumor_Sample_Barcode` column.
-- `--normal-id`: The barcode to write in the MAF `Matched_Norm_Sample_Barcode` column.
-- `--vcf-tumor-id`: The actual column name in the input VCF representing the tumor sample.
-- `--vcf-normal-id`: The actual column name in the input VCF representing the normal sample.
-
-Example for VarScan VCFs:
+**With Sample ID Mapping:**
+Use these flags to ensure the MAF columns 16 and 17 (Tumor_Sample_Barcode and Matched_Norm_Sample_Barcode) are correctly populated, especially when the VCF uses generic headers like "TUMOR" or "NORMAL".
 ```bash
-perl vcf2maf.pl --input-vcf tests/test_varscan.vcf --output-maf output.maf --tumor-id Patient1-T --normal-id Patient1-N --vcf-tumor-id TUMOR --vcf-normal-id NORMAL
+perl vcf2maf.pl \
+  --input-vcf input.vcf \
+  --output-maf output.maf \
+  --tumor-id REAL_TUMOR_ID \
+  --normal-id REAL_NORMAL_ID \
+  --vcf-tumor-id TUMOR \
+  --vcf-normal-id NORMAL
 ```
 
-### Re-annotating Existing MAFs
-Use `maf2maf.pl` to update or re-annotate an existing MAF file. This script internally converts the MAF to VCF, runs VEP, and converts it back to a standardized MAF.
+### Reannotating Existing MAFs
+If you have a MAF file that needs updated annotations or a different reference isoform selection, use `maf2maf.pl`. This script internally converts the MAF to a temporary VCF and then runs the standard `vcf2maf` pipeline.
+
 ```bash
-perl maf2maf.pl --input-maf input.maf --output-maf reannotated.maf
+perl maf2maf.pl --input-maf old.maf --output-maf reannotated.maf
 ```
 
-### VEP Integration
-`vcf2maf` is a wrapper for Ensembl VEP. If VEP is not in your PATH or uses a specific cache directory, specify them:
-- `--vep-path`: Path to the directory containing the `vep` executable.
-- `--vep-data`: Path to the VEP cache directory.
-- `--ref-fasta`: Path to the reference genome FASTA file (must match the VCF build).
+### Minimalist Conversion (No VEP)
+If you do not have VEP installed or only need to reformat the VCF data into a MAF-like structure without functional annotation, use the `--inhibit-vep` flag.
+*Note: This is generally discouraged for production pipelines as it bypasses the standardization benefits of the tool.*
 
-### Minimalist Conversion
-If you do not have VEP installed or only need a quick conversion of the VCF coordinates and basic info without functional annotation:
 ```bash
 perl vcf2maf.pl --input-vcf input.vcf --output-maf output.maf --inhibit-vep
 ```
-*Note: This is discouraged for production pipelines as it skips standardized isoform selection.*
 
 ## Expert Tips and Best Practices
-- **Isoform Selection**: By default, the tool uses VEP's "canonical" flag. You can override this by providing a custom list of isoforms to the script if your project requires specific transcript prioritization.
-- **Reference Mismatches**: When using `maf2maf`, any variants where the reference allele does not match the provided `--ref-fasta` are moved to a separate `.errors.tsv` file for debugging. Always check this file to ensure data integrity.
-- **Zygosity Detection**: If your input lacks explicit genotype columns, `maf2maf` can attempt to calculate zygosity from Allele Fractions. Ensure you set `--tum-vad-col` (variant depth) and `--tum-depth-col` (total depth) to the correct column names in your input file.
-- **VEP Versioning**: Ensure your VEP version and cache version match. `vcf2maf` is sensitive to VEP's command-line argument changes across versions (e.g., version 105+ splice effects).
+
+### Handling VEP Dependencies
+vcf2maf is a wrapper; it does not perform the biological annotation itself. You must provide paths to the VEP executable and its cache if they are not in your default environment:
+- `--vep-path`: Path to the directory containing the `vep` executable.
+- `--vep-data`: Path to the VEP cache directory (e.g., `~/.vep`).
+- `--ref-fasta`: Path to the reference genome fasta file (required for VEP and `maf2vcf`).
+
+### Performance Optimization
+For large VCFs, use the `--vep-forks` parameter to enable multi-threading in VEP:
+```bash
+perl vcf2maf.pl --input-vcf large.vcf --output-maf output.maf --vep-forks 4
+```
+
+### Dealing with "MAF-like" Files
+`maf2maf.pl` is highly tolerant of formatting errors. To successfully process a custom tab-delimited file as a MAF, ensure it contains these minimum columns:
+- `Chromosome`
+- `Start_Position`
+- `Reference_Allele`
+- `Tumor_Seq_Allele2`
+- `Tumor_Sample_Barcode`
+
+### Custom Isoform Selection
+By default, vcf2maf uses VEP's "canonical" transcript. You can override this by providing a custom list of preferred Entrez Gene IDs and their corresponding Ensembl Transcript IDs (ENST) using the `--custom-enst` flag.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| perl maf2maf.pl | Converts MAF files to a VEP-annotated MAF. |
+| perl vcf2maf_vcf2maf.pl | Converts VCF files to MAF format. |
 
 ## Reference documentation
-- [vcf2maf GitHub Repository](./references/github_com_mskcc_vcf2maf.md)
-- [vcf2maf Bioconda Overview](./references/anaconda_org_channels_bioconda_packages_vcf2maf_overview.md)
+- [vcf2maf Main Documentation](./references/github_com_mskcc_vcf2maf_blob_main_README.md)
+- [vcf2maf.pl Script Details](./references/github_com_mskcc_vcf2maf_blob_main_vcf2maf.pl.md)
+- [maf2maf.pl Script Details](./references/github_com_mskcc_vcf2maf_blob_main_maf2maf.pl.md)
+- [maf2vcf.pl Script Details](./references/github_com_mskcc_vcf2maf_blob_main_maf2vcf.pl.md)

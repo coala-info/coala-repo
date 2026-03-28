@@ -4,7 +4,6 @@ description: HTSeq is a Python-based framework used to quantify gene expression 
 homepage: https://github.com/htseq/htseq
 ---
 
-
 # htseq
 
 ## Overview

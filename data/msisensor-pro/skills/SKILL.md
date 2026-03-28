@@ -4,7 +4,6 @@ description: MSIsensor-pro quantifies microsatellite instability by analyzing po
 homepage: https://github.com/xjtu-omics/msisensor-pro
 ---
 
-
 # msisensor-pro
 
 ## Overview
@@ -67,13 +66,13 @@ To perform tumor-only analysis effectively, build a baseline using a collection 
 
 | Command | Description |
 |---------|-------------|
-| baseline | This module build baseline for MSI detection with pro module using only tumor sequencing data. To achieve it, you need sequencing data from normal samples(-i). |
-| msi | This module evaluate MSI using the difference between normal and tumor length distribution of microsatellites. You need to input (-d) microsatellites file and two bam files (-t, -n). |
 | msisensor-pro | Microsatellite Instability (MSI) detection using high-throughput sequencing data. (Support tumor-normal paired samples and tumor-only samples) |
 | msisensor-pro | Microsatellite Instability (MSI) detection using high-throughput sequencing data. (Support tumor-normal paired samples and tumor-only samples) |
 | msisensor-pro | Microsatellite Instability (MSI) detection using high-throughput sequencing data. (Support tumor-normal paired samples and tumor-only samples) |
-| pro | This module evaluate MSI using single (tumor) sample. You need to input (-d) microsatellites file and a bam files (-t) . |
-| scan | This module scan the reference genome to get microsatellites information. You need to input (-d) a reference file (*.fa or *.fasta), and you will get a microsatellites file (-o) for following analysis. If you use GRCh38.d1.vd1 , you can download the file on out github directly. |
+| msisensor-pro baseline | This module build baseline for MSI detection with pro module using only tumor sequencing data. To achieve it, you need sequencing data from normal samples(-i). |
+| msisensor-pro msi | This module evaluate MSI using the difference between normal and tumor length distribution of microsatellites. You need to input (-d) microsatellites file and two bam files (-t, -n). |
+| msisensor-pro pro | This module evaluate MSI using single (tumor) sample. You need to input (-d) microsatellites file and a bam files (-t) . |
+| msisensor-pro scan | This module scan the reference genome to get microsatellites information. You need to input (-d) a reference file (*.fa or *.fasta), and you will get a microsatellites file (-o) for following analysis. If you use GRCh38.d1.vd1 , you can download the file on out github directly. |
 
 ## Reference documentation
 

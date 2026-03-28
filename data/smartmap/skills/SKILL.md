@@ -4,7 +4,6 @@ description: SmartMap provides a probabilistic approach to reweight and assign m
 homepage: http://shah-rohan.github.io/SmartMap
 ---
 
-
 # smartmap
 
 ## Overview

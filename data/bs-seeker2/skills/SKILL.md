@@ -4,7 +4,6 @@ description: BS Seeker 2 is a bioinformatics pipeline for aligning bisulfite-con
 homepage: http://pellegrini.mcdb.ucla.edu/BS_Seeker2/
 ---
 
-
 # bs-seeker2
 
 ## Overview
@@ -44,6 +43,16 @@ python bs_seeker2-call_methylation.py -i output.bam -o methylation_results -g hg
 - **Memory Management**: Genome indexing is memory-intensive. Ensure the environment has sufficient RAM relative to the genome size (e.g., ~3GB for human genome using Bowtie2).
 - **Library Type**: If using a non-directional library, specify `--un-directional` during the alignment step to ensure all four possible bisulfite strands are considered.
 - **Filtering**: Use the `-r` flag in the alignment step to remove PCR duplicates, which is critical for accurate quantification of methylation levels.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| bs_seeker2-align.py | Aligns reads to a reference genome for bisulfite sequencing analysis. |
+| bs_seeker2-call_methylation.py | Call methylation status from BAM files. |
+| bs_seeker2_bs_seeker2-build.py | Build index for BS-Seeker2 |
 
 ## Reference documentation
 - [BS Seeker 2 Overview](./references/anaconda_org_channels_bioconda_packages_bs-seeker2_overview.md)

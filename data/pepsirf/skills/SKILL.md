@@ -4,7 +4,6 @@ description: PepSIRF processes raw sequencing data from peptide-based assays to 
 homepage: https://github.com/LadnerLab/PepSIRF
 ---
 
-
 # pepsirf
 
 ## Overview
@@ -58,15 +57,15 @@ Used for filtering, merging, or subsetting score matrices.
 
 | Command | Description |
 |---------|-------------|
-| bin | The bin module is used to create groups of peptides with similar starting abundances (i.e. bins), based on the normalized read counts for >= 1 negative controls. These bins can be provided as an input for zscore calculations using the zscore module. |
-| deconv | The deconv module converts a list of enriched peptides into a parsimony-based list of likely taxa to which the assayed individual has likely been exposed. It supports both batch and singular modes. |
-| demux | Peptide-based Serological Immune Response Framework demultiplexing module. This module takes parameters and outputs counts for each reference sequence (i.e. probe/peptide) for each sample. |
-| enrich | The enrich module determines which peptides are enriched in samples that have been assayed in n-replicate, as determined by user-specified thresholds. |
-| info | This module is used to gather information about a score matrix. By default, the number of samples and peptides in the matrix will be output. Additional flags may be provided to extract different types of information. Each of these flags should be accompanied by an output file name, to which the information be written. |
-| link | The link module is used to create the "--linked" input file for the deconv module. The output file from this module defines linkages between taxonomic groups (or other groups of interest) and peptides based on shared kmers. |
-| norm | Peptide-based Serological Immune Response Framework score normalization module. The norm module is used to normalize raw count data to allow for meaningful comparison among samples. |
-| subjoin | The subjoin module is used to manipulate matrix files. This module can create a subset of an existing matrix, can combine multiple matrices together or perform a combination of these two functions. |
-| zscore | The zscore module is used to calculate Z scores for each peptide in each sample. These Z scores represent the number of standard deviations away from the mean, with the mean and standard deviation both calculated separately for each bin of peptides. |
+| pepsirf bin | The bin module is used to create groups of peptides with similar starting abundances (i.e. bins), based on the normalized read counts for >= 1 negative controls. These bins can be provided as an input for zscore calculations using the zscore module. |
+| pepsirf deconv | The deconv module converts a list of enriched peptides into a parsimony-based list of likely taxa to which the assayed individual has likely been exposed. It supports both batch and singular modes. |
+| pepsirf demux | Peptide-based Serological Immune Response Framework demultiplexing module. This module takes parameters and outputs counts for each reference sequence (i.e. probe/peptide) for each sample. |
+| pepsirf enrich | The enrich module determines which peptides are enriched in samples that have been assayed in n-replicate, as determined by user-specified thresholds. |
+| pepsirf info | This module is used to gather information about a score matrix. By default, the number of samples and peptides in the matrix will be output. Additional flags may be provided to extract different types of information. Each of these flags should be accompanied by an output file name, to which the information be written. |
+| pepsirf link | The link module is used to create the "--linked" input file for the deconv module. The output file from this module defines linkages between taxonomic groups (or other groups of interest) and peptides based on shared kmers. |
+| pepsirf norm | Peptide-based Serological Immune Response Framework score normalization module. The norm module is used to normalize raw count data to allow for meaningful comparison among samples. |
+| pepsirf subjoin | The subjoin module is used to manipulate matrix files. This module can create a subset of an existing matrix, can combine multiple matrices together or perform a combination of these two functions. |
+| pepsirf zscore | The zscore module is used to calculate Z scores for each peptide in each sample. These Z scores represent the number of standard deviations away from the mean, with the mean and standard deviation both calculated separately for each bin of peptides. |
 
 ## Reference documentation
 - [PepSIRF Changelog](./references/github_com_LadnerLab_PepSIRF_blob_master_CHANGELOG.md)

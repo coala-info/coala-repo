@@ -4,7 +4,6 @@ description: "FAN-C is a modular Python framework for the complete processing, a
 homepage: https://github.com/vaquerizaslab/fanc
 ---
 
-
 # fanc
 
 ## Overview

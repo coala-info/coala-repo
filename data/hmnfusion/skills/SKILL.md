@@ -4,7 +4,6 @@ description: HmnFusion is a bioinformatics tool that aggregates structural varia
 homepage: https://github.com/guillaume-gricourt/HmnFusion
 ---
 
-
 # hmnfusion
 
 ## Overview
@@ -71,14 +70,14 @@ hmnfusion mmej-fusion \
 
 | Command | Description |
 |---------|-------------|
-| download-zenodo | Download files from a Zenodo repository |
-| extractfusion | Extract fusion information from Genefuse and Lumpy results |
-| mmej-deletion | Analyze MMEJ-mediated deletions using VCF files and a reference genome |
-| mmej-fusion | Analyze MMEJ (Microhomology-Mediated End Joining) fusions from HmnFusion results |
-| quantification | Quantification of fusions using hmnfusion |
-| workflow-align | Hmnfusion workflow for alignment of fastq files |
-| workflow-fusion | HmnFusion workflow for fusion detection |
-| workflow-hmnfusion | HmnFusion workflow for processing Lumpy and Genefuse results |
+| hmnfusion download-zenodo | Download files from a Zenodo repository |
+| hmnfusion extractfusion | Extract fusion information from Genefuse and Lumpy results |
+| hmnfusion mmej-deletion | Analyze MMEJ-mediated deletions using VCF files and a reference genome |
+| hmnfusion mmej-fusion | Analyze MMEJ (Microhomology-Mediated End Joining) fusions from HmnFusion results |
+| hmnfusion quantification | Quantification of fusions using hmnfusion |
+| hmnfusion workflow-align | Hmnfusion workflow for alignment of fastq files |
+| hmnfusion workflow-fusion | HmnFusion workflow for fusion detection |
+| hmnfusion workflow-hmnfusion | HmnFusion workflow for processing Lumpy and Genefuse results |
 
 ## Reference documentation
 - [HmnFusion GitHub Repository](./references/github_com_guillaume-gricourt_HmnFusion.md)

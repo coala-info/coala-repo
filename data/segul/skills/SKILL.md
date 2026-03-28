@@ -4,7 +4,6 @@ description: segul is a high-performance tool designed for the efficient manipul
 homepage: https://github.com/hhandika/segul
 ---
 
-
 # segul
 
 ## Overview
@@ -55,12 +54,12 @@ Generate detailed reports on your data:
 
 | Command | Description |
 |---------|-------------|
-| align | Alignment analyses |
-| contig | Contiguous sequence analyses |
-| maf | Multi alignment format (MAF) analyses and conversion of genomic files to other formats |
-| partition | Alignment partition conversion |
-| read | Sequence read analyses |
-| sequence | Sequence analyses |
+| segul align | Alignment analyses |
+| segul contig | Contiguous sequence analyses |
+| segul maf | Multi alignment format (MAF) analyses and conversion of genomic files to other formats |
+| segul partition | Alignment partition conversion |
+| segul read | Sequence read analyses |
+| segul sequence | Sequence analyses |
 
 ## Reference documentation
 - [SEGUL README](./references/github_com_hhandika_segul_blob_main_README.md)

@@ -4,7 +4,6 @@ description: pyfastx provides fast random access and indexing for plain or gzipp
 homepage: https://github.com/lmdu/pyfastx
 ---
 
-
 # pyfastx
 
 ## Overview

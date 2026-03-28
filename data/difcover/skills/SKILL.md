@@ -4,7 +4,6 @@ description: DifCover identifies genomic regions with significant read coverage 
 homepage: https://github.com/timnat/DifCover
 ---
 
-
 # difcover
 
 ---

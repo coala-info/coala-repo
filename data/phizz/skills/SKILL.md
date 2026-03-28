@@ -4,7 +4,6 @@ description: Phizz queries the Human Phenotype Ontology (HPO) database to retrie
 homepage: https://github.com/moonso/phizz
 ---
 
-
 # phizz
 
 ## Overview
@@ -62,9 +61,9 @@ for entry in results:
 
 | Command | Description |
 |---------|-------------|
-| build-genes | Create a gene database. |
+| phizz build-genes | Create a gene database. |
+| phizz query | Query the hpo database.   Print the result in csv format as default. |
 | phizz_delete | Deletes the phizz database. |
-| query | Query the hpo database.   Print the result in csv format as default. |
 
 ## Reference documentation
 - [GitHub Repository Overview](./references/github_com_moonso_phizz.md)

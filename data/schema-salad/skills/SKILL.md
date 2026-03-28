@@ -4,7 +4,6 @@ description: Schema Salad is a schema language and toolset used to validate, pro
 homepage: https://github.com/common-workflow-language/schema_salad
 ---
 
-
 # schema-salad
 
 ## Overview

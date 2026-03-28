@@ -4,7 +4,6 @@ description: Clade-o-matic partitions genomic sequences into hierarchical clades
 homepage: https://github.com/phac-nml/cladeomatic
 ---
 
-
 # cladeomatic
 
 ## Overview
@@ -82,7 +81,7 @@ cladeomatic genotype \
 | cladeomatic | Clade-O-Matic: Benchmarking Genotyping scheme development v. 0.1.1 |
 | cladeomatic | Clade-O-Matic: Genotyping scheme development v. 0.1.1 |
 | cladeomatic | Clade-O-Matic: Genotyping scheme genotype namer v. 0.1.1 |
-| create | Create a clade from a phylogenetic tree and a set of sequences. |
+| cladeomatic create | Create a clade from a phylogenetic tree and a set of sequences. |
 
 ## Reference documentation
 - [Clade-o-matic GitHub README](./references/github_com_phac-nml_cladeomatic_blob_main_README.md)

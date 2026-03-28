@@ -4,7 +4,6 @@ description: NextPolish2 improves the consensus accuracy of genome assemblies by
 homepage: https://github.com/Nextomics/NextPolish2
 ---
 
-
 # nextpolish2
 
 ## Overview

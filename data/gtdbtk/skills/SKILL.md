@@ -4,7 +4,6 @@ description: GTDB-Tk assigns taxonomic classifications to prokaryotic genomes by
 homepage: http://pypi.python.org/pypi/gtdbtk/
 ---
 
-
 # gtdbtk
 
 ## Overview
@@ -72,21 +71,21 @@ The primary output is `gtdbtk.bac120.summary.tsv` (or `ar53`).
 
 | Command | Description |
 |---------|-------------|
-| de_novo_wf | De novo workflow for GTDB-Tk |
-| export_msa | Export MSA from GTDB-Tk |
 | gtdbtk ani_rep | Calculate ANI scores between genomes and assign them to species clusters. |
 | gtdbtk classify | Classify genomes using GTDB-Tk |
 | gtdbtk classify_wf | Classify genomes using GTDB-Tk |
 | gtdbtk convert_to_itol | Convert GTDB-Tk trees to iTOL format |
 | gtdbtk convert_to_species | Convert a tree to a species-resolved tree. |
+| gtdbtk de_novo_wf | De novo workflow for GTDB-Tk |
 | gtdbtk decorate | Decorate a tree with GTDB-Tk classifications and custom taxonomy. |
+| gtdbtk export_msa | Export MSA from GTDB-Tk |
 | gtdbtk identify | Identify GTDB-Tk classifications for genomes. |
 | gtdbtk infer | Infer phylogenetic trees for GTDB-Tk |
 | gtdbtk infer_ranks | Root the input tree at the specified ingroup taxon and output the rooted tree. |
+| gtdbtk remove_labels | Removes labels from a GTDB-Tk tree. |
 | gtdbtk trim_msa | Trims an MSA based on a mask file or reference mask. |
 | gtdbtk_align | Aligns genomes to create a multiple sequence alignment. |
 | gtdbtk_root | Root a tree using a specified outgroup taxon. |
-| remove_labels | Removes labels from a GTDB-Tk tree. |
 
 ## Reference documentation
 - [GTDB-Tk Commands Index](./references/ecogenomics_github_io_GTDBTk_commands_index.html.md)

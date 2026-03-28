@@ -4,7 +4,6 @@ description: Savvy is a high-performance toolset for converting, querying, and m
 homepage: https://github.com/statgen/savvy
 ---
 
-
 # savvy
 
 ## Overview
@@ -59,15 +58,15 @@ The `export` command converts SAV back to VCF/BCF or filters the data.
 
 | Command | Description |
 |---------|-------------|
-| concat | Concatenates SAV files. |
-| export | Export SAV data to VCF, VCF.GZ, or SAV format. |
-| head | Print headers or sample IDs from a Savvy file |
-| import | Import data into SAV format |
-| rehead | Replace headers in a SAV file. |
 | sav | Missing sub-command |
-| sort | Sorts a SAV file. |
-| stat | Too few arguments |
-| stat-index | Index a SAV file for fast random access. |
+| sav concat | Concatenates SAV files. |
+| sav head | Print headers or sample IDs from a Savvy file |
+| sav import | Import data into SAV format |
+| sav rehead | Replace headers in a SAV file. |
+| sav stat | Too few arguments |
+| savvy export | Export SAV data to VCF, VCF.GZ, or SAV format. |
+| savvy sav sort | Sorts a SAV file. |
+| savvy sav stat-index | Index a SAV file for fast random access. |
 
 ## Reference documentation
 - [Savvy Library Overview](./references/github_com_statgen_savvy_blob_master_README.md)

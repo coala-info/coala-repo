@@ -4,7 +4,6 @@ description: "SALSA2 integrates Hi-C data with genome assemblies to produce chro
 homepage: https://github.com/marbl/SALSA
 ---
 
-
 # salsa2
 
 ## Overview

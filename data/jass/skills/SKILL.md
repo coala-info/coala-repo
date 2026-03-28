@@ -4,7 +4,6 @@ description: JASS performs joint analysis of GWAS summary statistics to identify
 homepage: http://statistical-genetics.pages.pasteur.fr/jass/
 ---
 
-
 # jass
 
 ## Overview
@@ -87,16 +86,16 @@ If you already have a worktable, you can generate plots individually:
 
 | Command | Description |
 |---------|-------------|
-| add-gene-annotation | Add gene annotation to an initial table. |
-| clean-project-data | Cleans project data by removing files that have not been accessed for a specified number of days. |
+| jass add-gene-annotation | Add gene annotation to an initial table. |
+| jass clean-project-data | Cleans project data by removing files that have not been accessed for a specified number of days. |
 | jass create-inittable | Creates an initial table for JASS based on input data and configuration. |
 | jass create-project-data | Create project data for JASS |
 | jass create-worktable | Create a worktable for JASS analysis. |
 | jass extract-tsv | Extracts data from an HDF5 table to a TSV file. |
+| jass list-phenotypes | List available phenotypes |
+| jass plot-manhattan | Generates a Manhattan plot from a JASS worktable. |
 | jass plot-quadrant | Generates a quadrant plot from a worktable. |
-| list-phenotypes | List available phenotypes |
-| plot-manhattan | Generates a Manhattan plot from a JASS worktable. |
-| qq-plot | Generates a QQ plot from a worktable. |
+| jass qq-plot | Generates a QQ plot from a worktable. |
 
 ## Reference documentation
 - [Command line reference](./references/statistical-genetics_pages_pasteur_fr_jass_command_line_usage.html.md)

@@ -4,7 +4,6 @@ description: Plasnet is a genomic analysis toolset that transforms plasmid evolu
 homepage: https://github.com/leoisl/plasnet
 ---
 
-
 # plasnet
 
 ## Overview
@@ -55,9 +54,9 @@ plasnet add-sample-hits [TYPE_PICKLE] [SAMPLE_HITS_TSV] [OUTPUT_DIR]
 
 | Command | Description |
 |---------|-------------|
-| add-sample-hits | Add sample hits annotations on top of previously identified subcommunities or types |
-| split | Creates and split a plasmid graph into communities |
-| type | Type the communities of a previously split plasmid graph into subcommunities or types |
+| plasnet add-sample-hits | Add sample hits annotations on top of previously identified subcommunities or types |
+| plasnet split | Creates and split a plasmid graph into communities |
+| plasnet type | Type the communities of a previously split plasmid graph into subcommunities or types |
 
 ## Reference documentation
 - [GitHub Repository README](./references/github_com_leoisl_plasnet_blob_main_README.md)

@@ -4,7 +4,6 @@ description: The sample-sheet library provides a Pythonic interface for reading,
 homepage: https://github.com/clintval/sample-sheet
 ---
 
-
 # sample-sheet
 
 ## Overview
@@ -35,6 +34,15 @@ The library can load sample sheets from a file path, a file-like object, or a st
 - **Handling Non-Standard Sections**: While the library is designed for standard Illumina formats, use the `add_attr` method to handle custom application settings or data sections that may be required by specific sequencing centers.
 - **Smart Open**: The library is compatible with `smart_open`, allowing you to read sample sheets directly from S3 buckets or other cloud storage providers if the environment is configured.
 - **Unicode Support**: When dealing with international characters or special symbols in sample names, ensure your file handles are opened with `utf-8` encoding to prevent parsing failures.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| sample-sheet tojson | Convert a sample sheet to JSON format. |
+| sample-sheet totable | Pretty print a sample sheet to terminal |
 
 ## Reference documentation
 - [sample-sheet Overview](./references/anaconda_org_channels_bioconda_packages_sample-sheet_overview.md)

@@ -4,7 +4,6 @@ description: The 10x_bamtofastq utility reconstructs original FASTQ files from 1
 homepage: https://github.com/10XGenomics/bamtofastq
 ---
 
-
 # 10x_bamtofastq
 
 ## Overview
@@ -44,6 +43,14 @@ The tool relies on specific `@CO` (comment) lines in the BAM header that describ
 
 ### Performance
 `bamtofastq` is written in Rust and is highly efficient. For maximum throughput, ensure you are using the pre-compiled release binary rather than a debug build, and point the output directory to a high-performance scratch filesystem (like Lustre or GPFS) to handle the high I/O volume of FASTQ generation.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| bamtofastq | 10x Genomics BAM to FASTQ converter. Tool for converting 10x BAMs produced by Cell Ranger or Long Ranger back to FASTQ files that can be used as inputs to re-run analysis. The FASTQs will be emitted into a directory structure that is compatible with the directories created by the 'mkfastq' tool. |
 
 ## Reference documentation
 - [10x BAM to FASTQ converter README](./references/github_com_10XGenomics_bamtofastq.md)

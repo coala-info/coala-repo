@@ -10,6 +10,7 @@ Manage bohra dependencies.
 - **Homepage**: https://github.com/kristyhoran/bohra
 - **Package**: https://anaconda.org/channels/bioconda/packages/bohra/overview
 - **Validation**: PASS
+- **usage**: https://mdu-phl.github.io/bohra/usage/overview/
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bohra/overview
 - **Total Downloads**: 88.0K
@@ -206,4 +207,4 @@ ERROR: No such option: --h Did you mean --help?
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

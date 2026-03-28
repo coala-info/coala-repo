@@ -4,7 +4,6 @@ description: Taxpasta standardises and merges taxonomic profiles from various me
 homepage: https://github.com/taxprofiler/taxpasta
 ---
 
-
 # taxpasta
 
 ## Overview
@@ -65,8 +64,8 @@ taxpasta standardise -p kraken2 -o /dev/null sample.report
 
 | Command | Description |
 |---------|-------------|
-| standardise | Standardise a taxonomic profile (alias: 'standardize') |
 | taxpasta merge | Standardise and merge two or more taxonomic profiles. |
+| taxpasta standardise | Standardise a taxonomic profile (alias: 'standardize') |
 
 ## Reference documentation
 - [Taxpasta Commands Overview](./references/taxpasta_readthedocs_io_en_latest_commands.md)

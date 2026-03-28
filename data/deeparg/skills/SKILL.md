@@ -4,7 +4,6 @@ description: DeepARG uses deep learning to identify and quantify antibiotic resi
 homepage: https://bitbucket.org/gusphdproj/deeparg-ss/
 ---
 
-
 # deeparg
 
 ## Overview
@@ -59,9 +58,9 @@ deeparg predict \
 
 | Command | Description |
 |---------|-------------|
+| deeparg download_data | Download data for deeparg |
 | deeparg predict | Predicts antimicrobial resistance genes from sequence data. |
 | deeparg short_reads_pipeline | Pipeline for short reads to predict ARGs and 16S rRNA genes. |
-| download_data | Download data for deeparg |
 
 ## Reference documentation
 - [DeepARG Bitbucket Repository](./references/bitbucket_org_gusphdproj_deeparg-ss.md)

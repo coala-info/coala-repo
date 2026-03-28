@@ -4,7 +4,6 @@ description: MHCflurry predicts the binding affinity and presentation scores of 
 homepage: https://github.com/hammerlab/mhcflurry
 ---
 
-
 # mhcflurry
 
 ## Overview

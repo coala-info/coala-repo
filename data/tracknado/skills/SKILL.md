@@ -4,7 +4,6 @@ description: Tracknado automates the creation of UCSC Genome Browser track hubs 
 homepage: https://pypi.org/project/tracknado/
 ---
 
-
 # tracknado
 
 ## Overview
@@ -43,9 +42,9 @@ Tracknado automatically recognizes and categorizes the following formats:
 
 | Command | Description |
 |---------|-------------|
-| create | Create a UCSC track hub from a set of files. |
-| merge | Merge tracknado configurations or data |
-| validate | Validate a local hub directory or hub.txt file. Performs structural checks and uses the UCSC 'hubCheck' tool if available to ensure the hub is correctly formatted and accessible. |
+| tracknado create | Create a UCSC track hub from a set of files. |
+| tracknado merge | Merge tracknado configurations or data |
+| tracknado validate | Validate a local hub directory or hub.txt file. Performs structural checks and uses the UCSC 'hubCheck' tool if available to ensure the hub is correctly formatted and accessible. |
 
 ## Reference documentation
 - [Tracknado on PyPI](./references/pypi_org_project_tracknado.md)

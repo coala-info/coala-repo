@@ -4,7 +4,6 @@ description: Gappa is a command-line toolset designed for the downstream analysi
 homepage: https://github.com/lczech/gappa
 ---
 
-
 # gappa
 
 ## Overview
@@ -92,7 +91,7 @@ Use the `prepare` module to format reference data.
 | gappa analyze | Commands for analyzing and comparing placement data, that is, finding differences and patterns. |
 | gappa edit | Commands for editing and manipulating files like jplace, fasta or newick. |
 | gappa examine | Commands for examining, visualizing, and tabulating information in placement data. |
-| tools | Auxiliary commands of gappa. |
+| gappa tools | Auxiliary commands of gappa. |
 
 ## Reference documentation
 - [Gappa Wiki Home](./references/github_com_lczech_gappa_wiki.md)

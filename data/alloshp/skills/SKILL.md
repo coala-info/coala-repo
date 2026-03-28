@@ -4,7 +4,6 @@ description: AlloSHP identifies homeologous polymorphisms in allopolyploid speci
 homepage: https://github.com/eead-csic-compbio/AlloSHP
 ---
 
-
 # alloshp
 
 ## Overview

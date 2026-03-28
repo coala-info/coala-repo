@@ -4,7 +4,6 @@ description: The umis toolset processes UMI-tagged RNA-Seq data to extract barco
 homepage: https://github.com/vals/umis
 ---
 
-
 # umis
 
 ## Overview
@@ -54,21 +53,21 @@ For users preferring the Kallisto-specific quantification pipeline, `umis` provi
 
 | Command | Description |
 |---------|-------------|
-| add_uid | Adds UID:[samplebc cellbc umi] to readname for umi-tools deduplication   Expects formatted fastq files with correct sample and cell barcodes. |
-| bamtag | Convert a BAM/SAM with fastqtransformed read names to have UMI and cellular barcode tags |
-| cb_filter | Filters reads with non-matching barcodes Expects formatted fastq files. |
-| cb_histogram | Counts the number of reads for each cellular barcode |
-| demultiplex_samples | Demultiplex a fastqtransformed FASTQ file into a FASTQ file for each sample. |
-| fastqtransform | Transform input reads to the tagcounts compatible read layout using regular expressions as defined in a transform file. Outputs new format to stdout. |
-| fasttagcount | Count up evidence for tagged molecules, this implementation assumes the   alignment file is coordinate sorted |
-| kallisto | Convert fastqtransformed file to output format compatible with kallisto. |
-| mb_filter | Filters umis with non-ACGT bases Expects formatted fastq files. |
-| sb_filter | Filters reads with non-matching sample barcodes Expects formatted fastq files. |
-| subset_bamfile | Subset a SAM/BAM file, keeping only alignments from given cellular barcodes |
-| tagcount | Count up evidence for tagged molecules |
-| umi_histogram | Counts the number of reads for each UMI |
+| umis add_uid | Adds UID:[samplebc cellbc umi] to readname for umi-tools deduplication   Expects formatted fastq files with correct sample and cell barcodes. |
+| umis bamtag | Convert a BAM/SAM with fastqtransformed read names to have UMI and cellular barcode tags |
+| umis cb_filter | Filters reads with non-matching barcodes Expects formatted fastq files. |
+| umis cb_histogram | Counts the number of reads for each cellular barcode |
 | umis demultiplex_cells | Demultiplex a fastqtransformed FASTQ file into a FASTQ file for each cell. |
+| umis demultiplex_samples | Demultiplex a fastqtransformed FASTQ file into a FASTQ file for each sample. |
+| umis fastqtransform | Transform input reads to the tagcounts compatible read layout using regular expressions as defined in a transform file. Outputs new format to stdout. |
+| umis fasttagcount | Count up evidence for tagged molecules, this implementation assumes the   alignment file is coordinate sorted |
+| umis kallisto | Convert fastqtransformed file to output format compatible with kallisto. |
+| umis mb_filter | Filters umis with non-ACGT bases Expects formatted fastq files. |
+| umis sb_filter | Filters reads with non-matching sample barcodes Expects formatted fastq files. |
 | umis sparse | Convert a CSV file to a sparse matrix with rows and column names saved as companion files. |
+| umis subset_bamfile | Subset a SAM/BAM file, keeping only alignments from given cellular barcodes |
+| umis tagcount | Count up evidence for tagged molecules |
+| umis umi_histogram | Counts the number of reads for each UMI |
 
 ## Reference documentation
 - [GitHub Repository Overview](./references/github_com_vals_umis.md)

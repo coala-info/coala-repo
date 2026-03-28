@@ -4,7 +4,6 @@ description: Telescope resolves the ambiguity of multi-mapping reads to provide 
 homepage: https://github.com/mlbendall/telescope
 ---
 
-
 # telescope
 
 ## Overview

@@ -4,7 +4,6 @@ description: PathoScope is a modular framework that transforms raw metagenomic s
 homepage: https://github.com/PathoScope/PathoScope
 ---
 
-
 # pathoscope
 
 ## Overview
@@ -66,10 +65,10 @@ Generates the final human-readable and machine-parseable reports.
 
 | Command | Description |
 |---------|-------------|
-| LIB | PathoScope LIB module for creating reference libraries and mapping gi to taxonomy ids. |
-| MAP | PathoScope MAP module for mapping reads to target and filter reference genomes using Bowtie2 |
-| REP | PathoScope REP module for generating reports from SAM alignment files, including optional MySQL database integration for taxonomy mapping. |
-| id | PathoScope ID: Identification and quantification of microbes from sequencing data |
+| pathoscope LIB | PathoScope LIB module for creating reference libraries and mapping gi to taxonomy ids. |
+| pathoscope MAP | PathoScope MAP module for mapping reads to target and filter reference genomes using Bowtie2 |
+| pathoscope REP | PathoScope REP module for generating reports from SAM alignment files, including optional MySQL database integration for taxonomy mapping. |
+| pathoscope id | PathoScope ID: Identification and quantification of microbes from sequencing data |
 
 ## Reference documentation
 - [PathoScope Wiki Home](./references/github_com_PathoScope_PathoScope_wiki.md)

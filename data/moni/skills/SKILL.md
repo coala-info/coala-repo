@@ -4,7 +4,6 @@ description: MONI is a pangenomic indexing tool that efficiently finds maximal e
 homepage: https://github.com/maxrossi91/moni
 ---
 
-
 # moni
 
 ---

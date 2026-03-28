@@ -4,7 +4,6 @@ description: "Fairy provides fast, alignment-free estimation of contig coverage 
 homepage: https://github.com/bluenote-1577/fairy
 ---
 
-
 # fairy
 
 ## Overview
@@ -86,8 +85,8 @@ Use the MaxBin format to remove variance and length columns not used by MaxBin2.
 
 | Command | Description |
 |---------|-------------|
-| coverage | Extremely fast species-level coverage calculation by k-mer sketching |
-| sketch | Sketch (index) reads. Each sample.fq -> sample.bcsp |
+| fairy coverage | Extremely fast species-level coverage calculation by k-mer sketching |
+| fairy sketch | Sketch (index) reads. Each sample.fq -> sample.bcsp |
 
 ## Reference documentation
 

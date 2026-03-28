@@ -4,7 +4,6 @@ description: FAMLI identifies protein-coding sequences from metagenomic data by 
 homepage: https://github.com/FredHutch/FAMLI
 ---
 
-
 # famli
 
 ## Overview

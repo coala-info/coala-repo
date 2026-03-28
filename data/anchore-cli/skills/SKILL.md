@@ -4,7 +4,6 @@ description: anchore-cli is a command-line interface for managing, inspecting, a
 homepage: https://github.com/anchore/anchore-cli
 ---
 
-
 # anchore-cli
 
 ## Overview
@@ -63,17 +62,17 @@ Use these commands to audit the specific software bill of materials (SBOM) withi
 
 | Command | Description |
 |---------|-------------|
-| account | Account management operations for Anchore CLI, including adding, deleting, and managing account status and users. |
-| analysis-archive | Manage the analysis archive in Anchore Engine, allowing for archiving and restoring image analysis data. |
-| evaluate | Evaluate images against policies using anchore-cli |
-| event | Anchore CLI event management commands |
-| image | Manage images within Anchore CLI, including adding, analyzing, and retrieving vulnerability data. |
-| policy | Manage and interact with Anchore policies |
-| query | Query system for images based on packages or vulnerabilities |
-| registry | Registry management commands for anchore-cli |
-| repo | Manage repositories in Anchore Engine, including adding, deleting, listing, and controlling watch status. |
-| subscription | Manage subscriptions for image analysis and policy updates in Anchore Engine. |
-| system | Anchore engine system operations including status checks, feed management, and service deletion. |
+| anchore-cli account | Account management operations for Anchore CLI, including adding, deleting, and managing account status and users. |
+| anchore-cli analysis-archive | Manage the analysis archive in Anchore Engine, allowing for archiving and restoring image analysis data. |
+| anchore-cli evaluate | Evaluate images against policies using anchore-cli |
+| anchore-cli event | Anchore CLI event management commands |
+| anchore-cli image | Manage images within Anchore CLI, including adding, analyzing, and retrieving vulnerability data. |
+| anchore-cli policy | Manage and interact with Anchore policies |
+| anchore-cli query | Query system for images based on packages or vulnerabilities |
+| anchore-cli registry | Registry management commands for anchore-cli |
+| anchore-cli repo | Manage repositories in Anchore Engine, including adding, deleting, listing, and controlling watch status. |
+| anchore-cli subscription | Manage subscriptions for image analysis and policy updates in Anchore Engine. |
+| anchore-cli system | Anchore engine system operations including status checks, feed management, and service deletion. |
 
 ## Reference documentation
 - [Anchore CLI Overview and Usage](./references/github_com_anchore_anchore-cli.md)

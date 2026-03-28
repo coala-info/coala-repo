@@ -4,7 +4,6 @@ description: LoRDEC is a hybrid error-correction tool that uses accurate short-r
 homepage: http://www.atgc-montpellier.fr/lordec/
 ---
 
-
 # lordec
 
 ## Overview

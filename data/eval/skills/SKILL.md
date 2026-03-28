@@ -4,7 +4,6 @@ description: The eval package quantitatively assesses genome annotations by comp
 homepage: http://mblab.wustl.edu/software.html
 ---
 
-
 # eval
 
 ## Overview
@@ -38,6 +37,16 @@ To understand the characteristics of an annotation set (regardless of accuracy):
 - **GTF Compatibility**: `eval` expects standard GTF format. Ensure your 9th column (attributes) contains `gene_id` and `transcript_id`.
 - **Coordinate Systems**: Always verify that your reference and prediction files use the same chromosome naming convention (e.g., "chr1" vs "1") to avoid zero-match results.
 - **Pseudogene Handling**: If your predictions include many false positives, consider using the companion `PPFINDER` logic to identify and mask processed pseudogenes which often confound gene-structure evaluators.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| evaluate_gtf.pl | Run the evaluation code in text mode for GTF annotations and predictions. |
+| get_distribution.pl | Takes the maximum value to report in the distribution, the size of bins to report data in, and one of more gtf sets and creates outputs the distribution to standard out. |
+| validate_gtf.pl | Validates a GTF file against a chromosome sequence to identify genes with in-frame stops, reading frame changes, and other incorrectible problems, generating a 'badlist' of genes to be removed. |
 
 ## Reference documentation
 - [Eval Software Overview](./references/mblab_wustl_edu_software.html.md)

@@ -4,7 +4,6 @@ description: CapCruncher is a bioinformatics toolset for processing and analyzin
 homepage: https://github.com/sims-lab/CapCruncher.git
 ---
 
-
 # capcruncher
 
 ## Overview
@@ -70,10 +69,10 @@ For fine-grained control or custom workflows, you can call individual processing
 |---------|-------------|
 | capcruncher | Command-line interface for capcruncher utilities. |
 | capcruncher alignments | Alignment annotation, identification and deduplication. |
-| fastq | Fastq splitting, deduplication and digestion. |
-| genome | Genome wide methods digestion. |
-| interactions | Reporter counting, storing, comparison and pileups |
-| plot | Generates plots for the outputs produced by CapCruncher |
+| capcruncher fastq | Fastq splitting, deduplication and digestion. |
+| capcruncher genome | Genome wide methods digestion. |
+| capcruncher interactions | Reporter counting, storing, comparison and pileups |
+| capcruncher plot | Generates plots for the outputs produced by CapCruncher |
 | snakemake | Snakemake is a Python based language and execution environment for GNU Make-like workflows. |
 
 ## Reference documentation

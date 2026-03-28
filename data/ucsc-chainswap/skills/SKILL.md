@@ -4,7 +4,6 @@ description: The ucsc-chainswap utility reverses the target and query roles with
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
 
-
 # ucsc-chainswap
 
 ## Overview
@@ -46,6 +45,15 @@ After swapping, you can use `checkChain` (another UCSC utility) to ensure the in
 ```bash
 checkChain swapped.chain
 ```
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| chainSwap | Swap target and query in a chain file. |
+| netChainSubset | Create a chain file from a net file and the original chains. This tool subsets a chain file based on the alignments that were kept in a corresponding net file. |
 
 ## Reference documentation
 - [UCSC Genome Browser Source](./references/github_com_ucscGenomeBrowser_kent.md)

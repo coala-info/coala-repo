@@ -4,7 +4,6 @@ description: RNAProt is a computational framework that models the binding prefer
 homepage: https://github.com/BackofenLab/RNAProt
 ---
 
-
 # rnaprot
 
 ## Overview
@@ -61,6 +60,18 @@ rnaprot train -p binding_sites.bed -n non_binding_sites.bed -g genome.2bit -a an
 *   **Input Formats**: While FASTA is simpler for transcript-level analysis, BED format is preferred for genomic-scale studies as it allows RNAProt to handle genomic context and annotations automatically.
 *   **Feature Selection**: RNAProt can incorporate additional features beyond raw sequence. If your data includes structural information or specific genomic landmarks, ensure these are formatted correctly according to the documentation in the `docs/` folder of the repository.
 *   **Memory Management**: For large-scale predictions or training with high-resolution genomic data, ensure the system has at least 8 GB of RAM.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| rnaprot eval | Evaluation of trained models |
+| rnaprot gp | Predicts RBP binding sites using a trained model. |
+| rnaprot gt | Generate training data for RNA binding protein motif discovery. |
+| rnaprot predict | Predict binding sites on longer sequences using moving window predictions |
+| rnaprot_train | Model training |
 
 ## Reference documentation
 - [RNAProt GitHub Repository](./references/github_com_BackofenLab_RNAProt.md)

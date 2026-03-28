@@ -4,7 +4,6 @@ description: hmnqc is a bioinformatics utility that generates quality reports an
 homepage: https://github.com/guillaume-gricourt/HmnQc
 ---
 
-
 # hmnqc
 
 ## Overview
@@ -85,11 +84,11 @@ hmnqc extractvcf \
 
 | Command | Description |
 |---------|-------------|
-| depthmin | Calculate minimal depth coverage for QC reporting |
-| depthtarget | Calculate depth on target regions for BAM files using a BED file |
-| extractvcf | Extract VAF or SNP information from VCF files into an Excel output |
-| infersexe | Infer sex based on coverage of autosomes and sex chromosomes from BAM files. |
-| quality | Quality analysis of fastq, bam, and vcf files |
+| hmnqc depthmin | Calculate minimal depth coverage for QC reporting |
+| hmnqc depthtarget | Calculate depth on target regions for BAM files using a BED file |
+| hmnqc extractvcf | Extract VAF or SNP information from VCF files into an Excel output |
+| hmnqc infersexe | Infer sex based on coverage of autosomes and sex chromosomes from BAM files. |
+| hmnqc quality | Quality analysis of fastq, bam, and vcf files |
 
 ## Reference documentation
 - [HmnQc README](./references/github_com_guillaume-gricourt_HmnQc_blob_main_README.md)

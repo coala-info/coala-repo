@@ -4,7 +4,6 @@ description: srf-n-trf identifies and filters satellite DNA monomers and regions
 homepage: https://github.com/koisland/srf-n-trf
 ---
 
-
 # srf-n-trf
 
 ## Overview
@@ -66,7 +65,7 @@ srf-n-trf regions \
 
 | Command | Description |
 |---------|-------------|
-| monomers | Parses TRF output to identify tandem repeats within SRF-elongated motifs. |
+| srf-n-trf monomers | Parses TRF output to identify tandem repeats within SRF-elongated motifs. |
 | srf-n-trf motifs | Fasta file of srf detected motifs |
 | srf-n-trf_regions | Generates regions based on TRF output, merging and filtering based on monomer composition and distance. |
 

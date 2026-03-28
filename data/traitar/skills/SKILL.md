@@ -4,7 +4,6 @@ description: Traitar predicts microbial phenotypes and metabolic traits from gen
 homepage: http://github.com/aweimann/traitar
 ---
 
-
 # traitar
 
 ## Overview
@@ -74,10 +73,10 @@ traitar pfam --local <path_to_pfam_folder>
 
 | Command | Description |
 |---------|-------------|
-| phenotype | Annotate genomes and then run phenotyping |
 | traitar annotate | Annotate genomes |
 | traitar new | create new phenotype model archive |
 | traitar pfam | Download and uncompress pfam files. The files are required for gene annotation. |
+| traitar phenotype | Annotate genomes and then run phenotyping |
 | traitar_evaluate | compare Traitar predictions against a given standard of truth |
 | traitar_remove | remove phenotypes from a given phenotype archive |
 | traitar_show | show features important for classification |

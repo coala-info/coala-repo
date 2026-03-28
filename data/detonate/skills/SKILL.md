@@ -4,7 +4,6 @@ description: DETONATE evaluates de novo transcriptome assemblies using probabili
 homepage: https://github.com/deweylab/detonate
 ---
 
-
 # detonate
 
 ## Overview

@@ -4,7 +4,6 @@ description: "bustools processes BUS files to transform raw pseudoalignment outp
 homepage: https://github.com/BUStools/bustools
 ---
 
-
 # bustools
 
 ## Overview
@@ -68,18 +67,18 @@ bustools text -o output.txt input.bus
 
 | Command | Description |
 |---------|-------------|
-| allowlist | Generates an allowlist (on-list) of barcodes from a sorted BUS file based on a frequency threshold. |
-| capture | Capture records from a BUS file based on a list of transcripts, UMIs, barcodes, or flags. |
-| compress | Compress a BUS file, which should be sorted by barcode-umi-ec. |
-| correct | Correct barcodes in BUS files using an on-list |
-| count | Count gene matrix files from sorted BUS files |
-| decompress | Decompress or inflate a compressed BUS file |
-| extract | Extract reads from FASTQ files based on a sorted BUS file. Note: BUS file should be sorted by flag using bustools sort --flag. |
-| fromtext | Convert text files to BUS format |
-| inspect | Inspects a sorted BUS file and provides statistics |
-| sort | Sort BUS files by barcode, UMI, ec, and flag. |
-| text | Convert BUS files to text format |
-| umicorrect | Correct UMIs in sorted BUS files |
+| bustools allowlist | Generates an allowlist (on-list) of barcodes from a sorted BUS file based on a frequency threshold. |
+| bustools capture | Capture records from a BUS file based on a list of transcripts, UMIs, barcodes, or flags. |
+| bustools compress | Compress a BUS file, which should be sorted by barcode-umi-ec. |
+| bustools correct | Correct barcodes in BUS files using an on-list |
+| bustools count | Count gene matrix files from sorted BUS files |
+| bustools decompress | Decompress or inflate a compressed BUS file |
+| bustools extract | Extract reads from FASTQ files based on a sorted BUS file. Note: BUS file should be sorted by flag using bustools sort --flag. |
+| bustools fromtext | Convert text files to BUS format |
+| bustools inspect | Inspects a sorted BUS file and provides statistics |
+| bustools sort | Sort BUS files by barcode, UMI, ec, and flag. |
+| bustools text | Convert BUS files to text format |
+| bustools umicorrect | Correct UMIs in sorted BUS files |
 
 ## Reference documentation
 - [github_com_BUStools_bustools.md](./references/github_com_BUStools_bustools.md)

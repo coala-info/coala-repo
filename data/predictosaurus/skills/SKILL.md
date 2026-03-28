@@ -4,7 +4,6 @@ description: Predictosaurus is a haplotype-based bioinformatics tool that constr
 homepage: https://github.com/fxwiegand/predictosaurus
 ---
 
-
 # predictosaurus
 
 ## Overview
@@ -85,7 +84,7 @@ predictosaurus plot --input scores.duckdb --output scores.tsv
 | predictosaurus build | Build a full variant graph out of VCF files and store it |
 | predictosaurus peptides | Output all distinct peptides from the given features to a fastq file per given CDS in the feature file |
 | predictosaurus plot | Create visualizations and output HTML, TSV, or Vega specs |
-| process | Retrieve subgraphs for individual features from the given GFF file |
+| predictosaurus process | Retrieve subgraphs for individual features from the given GFF file |
 
 ## Reference documentation
 - [Predictosaurus GitHub README](./references/github_com_fxwiegand_predictosaurus_blob_main_README.md)

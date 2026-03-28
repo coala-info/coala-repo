@@ -4,7 +4,6 @@ description: Pandora performs nucleotide-resolution bacterial pangenomics by map
 homepage: https://github.com/rmcolq/pandora
 ---
 
-
 # pandora
 
 ## Overview
@@ -57,15 +56,15 @@ pandora discover <panidx.zip> <reads.fq.gz>
 
 | Command | Description |
 |---------|-------------|
-| compare | Quasi-map reads from multiple samples to an indexed PRG, infer the sequence of present loci in each sample, and call variants between the samples. |
-| discover | Quasi-map reads to an indexed PRG, infer the sequence of present loci in the sample and discover novel variants. |
-| get_vcf_ref | Outputs a fasta suitable for use as the VCF reference using input sequences |
-| index | Index population reference graph (PRG) sequences. |
-| map | Quasi-map reads to an indexed PRG, infer the sequence of present loci in the sample, and optionally genotype variants. |
-| merge_index | Allows multiple indices to be merged (no compatibility check) |
-| random | Outputs a fasta of random paths through the PRGs |
-| seq2path | For each sequence, return the path through the PRG |
-| walk | Outputs a path through the nodes in a PRG corresponding to the either an input sequence (if it exists) or the top/bottom path |
+| /usr/local/bin/pandora compare | Quasi-map reads from multiple samples to an indexed PRG, infer the sequence of present loci in each sample, and call variants between the samples. |
+| /usr/local/bin/pandora discover | Quasi-map reads to an indexed PRG, infer the sequence of present loci in the sample and discover novel variants. |
+| /usr/local/bin/pandora random | Outputs a fasta of random paths through the PRGs |
+| /usr/local/bin/pandora walk | Outputs a path through the nodes in a PRG corresponding to the either an input sequence (if it exists) or the top/bottom path |
+| pandora get_vcf_ref | Outputs a fasta suitable for use as the VCF reference using input sequences |
+| pandora index | Index population reference graph (PRG) sequences. |
+| pandora map | Quasi-map reads to an indexed PRG, infer the sequence of present loci in the sample, and optionally genotype variants. |
+| pandora merge_index | Allows multiple indices to be merged (no compatibility check) |
+| pandora seq2path | For each sequence, return the path through the PRG |
 
 ## Reference documentation
 - [Usage Guide](./references/github_com_iqbal-lab-org_pandora_wiki_Usage.md)

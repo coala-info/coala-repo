@@ -4,7 +4,6 @@ description: LUMPY is a structural variant discovery tool that integrates discor
 homepage: https://github.com/arq5x/lumpy-sv
 ---
 
-
 # lumpy-sv-minimal
 
 ## Overview

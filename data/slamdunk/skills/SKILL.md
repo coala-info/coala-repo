@@ -4,7 +4,6 @@ description: Slamdunk is a high-sensitivity pipeline designed to analyze SLAM-se
 homepage: http://t-neumann.github.io/slamdunk
 ---
 
-
 # slamdunk
 
 ## Overview

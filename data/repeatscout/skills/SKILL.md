@@ -4,7 +4,6 @@ description: RepeatScout performs de novo discovery of repetitive element famili
 homepage: https://github.com/Dfam-consortium/RepeatScout
 ---
 
-
 # repeatscout
 
 ## Overview

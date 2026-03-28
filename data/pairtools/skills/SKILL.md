@@ -4,7 +4,6 @@ description: pairtools processes paired-end sequence alignments from Hi-C experi
 homepage: https://github.com/mirnylab/pairtools
 ---
 
-
 # pairtools
 
 ## Overview
@@ -75,22 +74,22 @@ pairtools stats -o library_stats.txt input.pairs.gz
 
 | Command | Description |
 |---------|-------------|
-| filterbycov | Remove pairs from regions of high coverage. |
-| flip | Flip pairs to get an upper-triangular matrix. |
-| header | Manipulate the .pairs/.pairsam header |
-| merge | Merge .pairs/.pairsam files. By default, assumes that the files are sorted and maintains the sorting. |
 | pairtools dedup | Find and remove PCR/optical duplicates. |
+| pairtools filterbycov | Remove pairs from regions of high coverage. |
+| pairtools flip | Flip pairs to get an upper-triangular matrix. |
+| pairtools header | Manipulate the .pairs/.pairsam header |
+| pairtools merge | Merge .pairs/.pairsam files. By default, assumes that the files are sorted and maintains the sorting. |
 | pairtools parse | Find ligation pairs in .sam data, make .pairs. SAM_PATH : an input .sam/.bam file with paired-end sequence alignments of Hi-C molecules. If the path ends with .bam, the input is decompressed from bam with samtools. By default, the input is read from stdin. |
+| pairtools restrict | Assign restriction fragments to pairs. |
 | pairtools sample | Select a random subset of pairs in a pairs file. |
+| pairtools scaling | Calculate pairs scalings. |
+| pairtools select | Select pairs according to some condition. |
+| pairtools split | Split a .pairsam file into .pairs and .sam. |
+| pairtools stats | Calculate pairs statistics. |
 | pairtools_markasdup | Tag all pairs in the input file as duplicates. |
 | pairtools_parse2 | Extracts pairs from .sam/.bam data with complex walks, make .pairs. SAM_PATH : an input .sam/.bam file with paired-end or single-end sequence alignments of Hi-C (or Hi-C-like) molecules. If the path ends with .bam, the input is decompressed from bam with samtools. By default, the input is read from stdin. |
 | pairtools_phase | Phase pairs mapped to a diploid genome. Diploid genome is the genome with two set of the chromosome variants, where each chromosome has one of two suffixes (phase-suffixes) corresponding to the genome version (phase- suffixes). |
 | pairtools_sort | Sort a .pairs/.pairsam file. |
-| restrict | Assign restriction fragments to pairs. |
-| scaling | Calculate pairs scalings. |
-| select | Select pairs according to some condition. |
-| split | Split a .pairsam file into .pairs and .sam. |
-| stats | Calculate pairs statistics. |
 
 ## Reference documentation
 - [pairtools README](./references/github_com_open2c_pairtools_blob_master_README.md)

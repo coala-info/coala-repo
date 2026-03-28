@@ -4,7 +4,6 @@ description: Eukfinder is a modular bioinformatics pipeline designed to identify
 homepage: https://github.com/RogerLab/Eukfinder
 ---
 
-
 # eukfinder
 
 ## Overview
@@ -59,7 +58,7 @@ Eukfinder long_seqs -i assembly.fasta -o euk_contigs -n 16 \
 
 | Command | Description |
 |---------|-------------|
-| download_db | Download EukFinder databases |
+| eukfinder download_db | Download EukFinder databases |
 | eukfinder long_seqs | Finds long sequences in a given file and searches them against a database. |
 | eukfinder read_prep | Description |
 | eukfinder read_prep_env | Prepare environment for eukfinder |

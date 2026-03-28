@@ -4,7 +4,6 @@ description: Connectome Workbench is a neuroimaging analysis suite for processin
 homepage: https://www.humanconnectome.org/software/connectome-workbench
 ---
 
-
 # connectome-workbench
 
 ## Overview
@@ -27,6 +26,15 @@ Most commands follow a verbose but descriptive syntax:
 - **Memory Management**: CIFTI files (especially dense connectomes) can be extremely large. Ensure your environment has sufficient RAM when running correlation or covariance commands.
 - **Workbench View (wb_view)**: While `wb_command` handles processing, use `wb_view` to generate "scene" files (.scene). These files can then be used with `wb_command -show-scene` to automate high-resolution image rendering for publications.
 - **HCP Compatibility**: Always ensure your surface files (GIFTI) and data files (CIFTI) match in vertex count. The standard HCP "fsaverage_LR" mesh is the default for most workbench operations.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| wb_command | Connectome Workbench command-line interface |
+| wb_view | Display usage text, set graphics region size, logging level, disable splash screens, load scenes, change window style, load spec files, set window size and position. |
 
 ## Reference documentation
 - [Connectome Workbench Overview](./references/www_humanconnectome_org_software_connectome-workbench.md)

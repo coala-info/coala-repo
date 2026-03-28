@@ -4,7 +4,6 @@ description: Refgenie is a reference genome manager that standardizes the storag
 homepage: http://refgenie.databio.org
 ---
 
-
 # refgenie
 
 ## Overview
@@ -63,7 +62,6 @@ Refgenie uses a standardized string format: `genome/asset.seek_key:tag`.
 
 | Command | Description |
 |---------|-------------|
-| populater | Populate registry paths with remote paths. |
 | refgenie | refgenie - reference genome asset manager |
 | refgenie build | Build genome assets. |
 | refgenie compare | Compare two genomes. |
@@ -71,6 +69,7 @@ Refgenie uses a standardized string format: `genome/asset.seek_key:tag`.
 | refgenie init | Initialize a genome configuration. |
 | refgenie list | List available local assets. |
 | refgenie populate | Populate registry paths with local paths. |
+| refgenie populater | Populate registry paths with remote paths. |
 | refgenie pull | Download assets. |
 | refgenie remove | Remove a local asset. |
 | refgenie seek | Get the path to a local asset. |

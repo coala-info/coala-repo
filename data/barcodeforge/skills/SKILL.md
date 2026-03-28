@@ -4,7 +4,6 @@ description: BarcodeForge automates the extraction of lineage-defining mutations
 homepage: https://github.com/andersen-lab/BarcodeForge
 ---
 
-
 # barcodeforge
 
 ## Overview
@@ -53,7 +52,7 @@ Upon successful completion, the tool generates:
 | Command | Description |
 |---------|-------------|
 | barcodeforge barcode | Process barcode data, including VCF generation, tree formatting, USHER placement, matUtils annotation, and matUtils extraction. |
-| extract-auspice-data | Extract metadata and tree from an Auspice JSON file. Inspired by Dr. John Huddleston's Gist on processing Auspice JSON files. Source: https://gist.github.com/huddlej/5d7bd023d3807c698bd18c706974f2db |
+| barcodeforge extract-auspice-data | Extract metadata and tree from an Auspice JSON file. Inspired by Dr. John Huddleston's Gist on processing Auspice JSON files. Source: https://gist.github.com/huddlej/5d7bd023d3807c698bd18c706974f2db |
 
 ## Reference documentation
 - [Creating custom barcodes](./references/andersen-lab_github_io_Freyja_src_wiki_custom_barcodes.html.md)

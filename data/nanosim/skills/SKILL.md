@@ -4,7 +4,6 @@ description: NanoSim simulates realistic Oxford Nanopore sequencing reads by lea
 homepage: https://github.com/bcgsc/NanoSim
 ---
 
-
 # nanosim
 
 ## Overview

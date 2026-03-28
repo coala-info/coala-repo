@@ -4,7 +4,6 @@ description: Triti-Map is a bioinformatics pipeline designed to identify trait-a
 homepage: https://github.com/fei0810/Triti-Map
 ---
 
-
 # tritimap
 
 ## Overview
@@ -68,8 +67,8 @@ tritimap run -j 30 only_assembly
 
 | Command | Description |
 |---------|-------------|
-| init | Generate snakemake configuration file and other needed file. The command will generate three configuration files(config.yaml, sample.csv and region.csv) in the running directory. |
-| run | Triti-Map main command. The pipeline supports three execute modules: all, only_mapping and only_assembly. First, you need to fill in the configuration file correctly. |
+| tritimap init | Generate snakemake configuration file and other needed file. The command will generate three configuration files(config.yaml, sample.csv and region.csv) in the running directory. |
+| tritimap run | Triti-Map main command. The pipeline supports three execute modules: all, only_mapping and only_assembly. First, you need to fill in the configuration file correctly. |
 
 ## Reference documentation
 - [Triti-Map Main Repository](./references/github_com_fei0810_Triti-Map.md)

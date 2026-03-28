@@ -4,7 +4,6 @@ description: MAVIS refines, clusters, and annotates structural variant calls fro
 homepage: https://github.com/bcgsc/mavis.git
 ---
 
-
 # mavis
 
 ## Overview

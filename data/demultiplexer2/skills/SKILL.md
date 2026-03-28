@@ -4,7 +4,6 @@ description: This tool sorts raw Illumina sequencing data into individual sample
 homepage: https://github.com/DominikBuchner/demultiplexer2
 ---
 
-
 # demultiplexer2
 
 ## Overview
@@ -59,9 +58,9 @@ demultiplexer2 demultiplex --primerset_path [PathToExcel] --tagging_scheme_path 
 
 | Command | Description |
 |---------|-------------|
-| create_primerset | Create a primerset |
-| create_tagging_scheme | Create a tagging scheme for demultiplexing. |
-| demultiplex | Demultiplexes sequencing reads based on primer and tagging schemes. |
+| demultiplexer2 create_primerset | Create a primerset |
+| demultiplexer2 create_tagging_scheme | Create a tagging scheme for demultiplexing. |
+| demultiplexer2 demultiplex | Demultiplexes sequencing reads based on primer and tagging schemes. |
 
 ## Reference documentation
 - [Demultiplexer2 README](./references/github_com_DominikBuchner_demultiplexer2_blob_main_README.md)

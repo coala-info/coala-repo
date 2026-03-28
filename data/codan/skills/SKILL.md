@@ -4,7 +4,6 @@ description: CodAn identifies protein-coding regions and untranslated regions wi
 homepage: https://github.com/pedronachtigall/CodAn
 ---
 
-
 # codan
 
 ## Overview

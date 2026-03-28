@@ -4,7 +4,6 @@ description: kmtricks is a bioinformatics suite designed to construct and compar
 homepage: https://github.com/tlemane/kmtricks
 ---
 
-
 # kmtricks
 
 ## Overview
@@ -68,9 +67,9 @@ kmtricks aggregate --matrix kmer --format text --cpr-in --run-dir ./output > fin
 | kmtricks dump | Dump kmtricks's files in human readable format. |
 | kmtricks filter | Filter existing matrix with a new sample. |
 | kmtricks pipeline | run all the steps, repart -> superk -> count -> merge |
+| kmtricks superk | Compute super-k-mers. |
 | kmtricks_merge | Merge partitions. |
 | kmtricks_repart | Compute minimizer repartition. |
-| superk | Compute super-k-mers. |
 
 ## Reference documentation
 - [kmtricks GitHub Home](./references/github_com_tlemane_kmtricks.md)

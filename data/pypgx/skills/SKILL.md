@@ -4,7 +4,6 @@ description: PyPGx automates the translation of genomic variants into pharmacoge
 homepage: https://github.com/sbslee/pypgx
 ---
 
-
 # pypgx
 
 ## Overview
@@ -62,36 +61,36 @@ If you need to perform standalone copy number analysis or train custom SV caller
 
 | Command | Description |
 |---------|-------------|
-| call-phenotypes | Call phenotypes for target gene. |
-| compute-control-statistics | Compute summary statistics for control gene from BAM files. |
-| compute-target-depth | Compute read depth for target gene from BAM files. |
-| create-consolidated-vcf | Create a consolidated VCF file. |
-| create-input-vcf | Call SNVs/indels from BAM files for all target genes. |
-| filter-samples | Filter Archive file for specified samples. |
-| import-read-depth | Import read depth data for target gene. |
-| import-variants | Import SNV/indel data for target gene. |
-| plot-vcf-allele-fraction | Plot allele fraction profile from VcfFrame[Imported]. |
-| prepare-depth-of-coverage | Prepare a depth of coverage file for all target genes with SV from BAM files. |
 | pypgx call-genotypes | Call genotypes for target gene. |
+| pypgx call-phenotypes | Call phenotypes for target gene. |
 | pypgx compare-genotypes | Calculate concordance between two genotype results. |
+| pypgx compute-control-statistics | Compute summary statistics for control gene from BAM files. |
 | pypgx compute-copy-number | Compute copy number from read depth for target gene. |
+| pypgx compute-target-depth | Compute read depth for target gene from BAM files. |
+| pypgx create-consolidated-vcf | Create a consolidated VCF file. |
+| pypgx create-input-vcf | Call SNVs/indels from BAM files for all target genes. |
 | pypgx create-regions-bed | Create a BED file which contains all regions used by PyPGx. |
 | pypgx estimate-phase-beagle | Estimate haplotype phase of observed variants with the Beagle program. |
+| pypgx filter-samples | Filter Archive file for specified samples. |
+| pypgx import-read-depth | Import read depth data for target gene. |
+| pypgx import-variants | Import SNV/indel data for target gene. |
 | pypgx plot-bam-copy-number | Plot copy number profile from CovFrame[CopyNumber]. |
 | pypgx plot-bam-read-depth | Plot read depth profile with BAM data. |
 | pypgx plot-cn-af | Plot both copy number profile and allele fraction profile in one figure. |
+| pypgx plot-vcf-allele-fraction | Plot allele fraction profile from VcfFrame[Imported]. |
 | pypgx plot-vcf-read-depth | Plot read depth profile with VCF data. |
 | pypgx predict-alleles | Predict candidate star alleles based on observed variants. |
 | pypgx predict-cnv | Predict CNV from copy number data for target gene. |
+| pypgx prepare-depth-of-coverage | Prepare a depth of coverage file for all target genes with SV from BAM files. |
 | pypgx print-data | Print the main data of specified archive. |
 | pypgx print-metadata | Print the metadata of specified archive. |
+| pypgx run-chip-pipeline | Run genotyping pipeline for chip data. |
+| pypgx run-long-read-pipeline | Run genotyping pipeline for long-read sequencing data. |
+| pypgx run-ngs-pipeline | Run genotyping pipeline for NGS data. |
 | pypgx slice-bam | Slice BAM file for all genes used by PyPGx. |
+| pypgx test-cnv-caller | Test CNV caller for target gene. |
+| pypgx train-cnv-caller | Train CNV caller for target gene. |
 | pypgx_combine-results | Combine various results for target gene. |
-| run-chip-pipeline | Run genotyping pipeline for chip data. |
-| run-long-read-pipeline | Run genotyping pipeline for long-read sequencing data. |
-| run-ngs-pipeline | Run genotyping pipeline for NGS data. |
-| test-cnv-caller | Test CNV caller for target gene. |
-| train-cnv-caller | Train CNV caller for target gene. |
 
 ## Reference documentation
 

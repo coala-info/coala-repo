@@ -4,7 +4,6 @@ description: Earl Grey is a fully automated pipeline for the comprehensive annot
 homepage: https://github.com/TobyBaril/EarlGrey
 ---
 
-
 # earlgrey
 
 ## Overview

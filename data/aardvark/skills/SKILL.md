@@ -4,7 +4,6 @@ description: Aardvark is a high-performance tool that compares and merges genomi
 homepage: https://github.com/PacificBiosciences/aardvark
 ---
 
-
 # aardvark
 
 ## Overview
@@ -62,8 +61,8 @@ aardvark merge \
 
 | Command | Description |
 |---------|-------------|
-| compare | Core function for measuring a query VCF relative to a truth VCF |
-| merge | Compares and merges variants from different VCF files |
+| aardvark compare | Core function for measuring a query VCF relative to a truth VCF |
+| aardvark merge | Compares and merges variants from different VCF files |
 
 ## Reference documentation
 - [Aardvark README](./references/github_com_PacificBiosciences_aardvark_blob_main_README.md)

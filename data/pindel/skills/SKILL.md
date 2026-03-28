@@ -4,7 +4,6 @@ description: Pindel detects structural genomic variations such as deletions, ins
 homepage: http://gmt.genome.wustl.edu/packages/pindel/index.html
 ---
 
-
 # pindel
 
 ## Overview
@@ -55,6 +54,15 @@ pindel2vcf -p output_prefix_D -r reference.fa -R hg19 -d 20101123 -v output.vcf
 - **Memory Management:** Pindel can be memory-intensive. If processing large genomes, run chromosomes in parallel across different jobs to reduce the memory footprint per process.
 - **Insert Size:** Accuracy depends heavily on the correct expected insert size provided in the configuration file. Use tools like `Picard CollectInsertSizeMetrics` to determine this value before running Pindel.
 - **Filtering:** Raw Pindel output often contains many candidates. Always convert to VCF and apply quality filters (e.g., read depth, mapping quality) before downstream analysis.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| pindel | Detection of indels and structural variations |
+| pindel2vcf | conversion of Pindel output to VCF format |
 
 ## Reference documentation
 - [Pindel Overview](./references/gmt_genome_wustl_edu_packages_pindel_index.html.md)

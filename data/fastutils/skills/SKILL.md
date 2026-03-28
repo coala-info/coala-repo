@@ -4,7 +4,6 @@ description: fastutils is a lightweight C++ toolkit for the rapid processing, an
 homepage: https://github.com/haghshenas/fastutils
 ---
 
-
 # fastutils
 
 ## Overview
@@ -83,14 +82,14 @@ fastutils interleave -1 reads_R1.fastq -2 reads_R2.fastq -q > interleaved.fastq
 
 | Command | Description |
 |---------|-------------|
-| cutN | Cut Ns from fastx sequences |
+| fastutils cutN | Cut Ns from fastx sequences |
+| fastutils interleave | Interleaves paired-end sequencing reads. |
 | fastutils length | Calculates length statistics for sequences in FASTA/FASTQ files. |
+| fastutils subsample | Subsamples reads from an input file based on coverage depth and genome size. |
+| fastutils subseq | Extract subsequences from FASTX files. |
 | fastutils_format | Format FASTA/FASTQ files |
 | fastutils_revcomp | Reverse complement sequences in FASTA/Q format. |
 | fastutils_stat | Compute statistics for fasta/q files. |
-| interleave | Interleaves paired-end sequencing reads. |
-| subsample | Subsamples reads from an input file based on coverage depth and genome size. |
-| subseq | Extract subsequences from FASTX files. |
 
 ## Reference documentation
 - [fastutils README](./references/github_com_haghshenas_fastutils_blob_master_README.md)

@@ -4,7 +4,6 @@ description: This tool extracts specific alignment records from a PSL file based
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
 
-
 # ucsc-pslsomerecords
 
 ## Overview
@@ -33,6 +32,15 @@ While the tool is designed for simplicity, the following flags are often availab
 *   **Performance**: `pslSomeRecords` is significantly more memory-efficient and faster than using `grep -f` on large PSL files because it is optimized for the tabular structure of the Kent source formats.
 *   **Pipeline Integration**: You can use `/dev/stdin` or `/dev/stdout` to pipe data through `pslSomeRecords` in complex bioinformatics workflows.
 *   **Validation**: After extraction, it is good practice to run `pslCheck` on the output file to ensure the resulting PSL structure remains valid, especially if the output is intended for loading into a UCSC Genome Browser track.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| pslCheck | Check PSL files for consistency. |
+| pslSomeRecords | Extract PSL records from a file that match a list of names. |
 
 ## Reference documentation
 - [Bioconda ucsc-pslsomerecords Overview](./references/anaconda_org_channels_bioconda_packages_ucsc-pslsomerecords_overview.md)

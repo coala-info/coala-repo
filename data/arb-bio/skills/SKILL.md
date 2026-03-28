@@ -4,7 +4,6 @@ description: ARB is a graphical software suite for the integrated management and
 homepage: http://www.arb-home.de
 ---
 
-
 # arb-bio
 
 ## Overview
@@ -37,6 +36,15 @@ ARB operates as a suite of cooperating tools rather than a single monolithic com
 - **Installation Script**: If not using Conda, always use the `arb_install.sh` script provided in the source tarball rather than manually uncompressing the `.tgz` file to ensure proper environment configuration.
 - **Phylogenetic Methods**: Utilize the integrated distance matrix, maximum parsimony, and maximum likelihood tools. For very large datasets (>20,000 entries), use the specialized maximum parsimony approach for tree optimization.
 - **Probe Design**: Use the "Probe Design" and "Probe Match" functions in conjunction with a running PT Server to evaluate oligonucleotide accessibility against the full database background.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| arb_edit4 | Edit ARB database or connect to arb-database-server |
+| arb_ntree | Main ARB database and phylogeny tool for starting ARB, merging databases, or importing files. |
 
 ## Reference documentation
 - [ARB Overview and Bioconda Details](./references/anaconda_org_channels_bioconda_packages_arb-bio_overview.md)

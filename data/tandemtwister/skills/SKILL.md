@@ -4,7 +4,6 @@ description: TandemTwister genotypes tandem repeats by leveraging long-read sequ
 homepage: https://github.com/Lionward/tandemtwister
 ---
 
-
 # tandemtwister
 
 ## Overview
@@ -76,9 +75,9 @@ tandemtwister germline -b ont_data.bam -r hg38.fa -m tr_catalog.bed -rt ONT --co
 
 | Command | Description |
 |---------|-------------|
-| assembly | Genotyping tandem repeats from aligned genome input. |
-| germline | Genotyping tandem repeats from long-read alignments. |
-| somatic | Somatic expansion profiling using long-read alignments. |
+| tandemtwister assembly | Genotyping tandem repeats from aligned genome input. |
+| tandemtwister germline | Genotyping tandem repeats from long-read alignments. |
+| tandemtwister somatic | Somatic expansion profiling using long-read alignments. |
 
 ## Reference documentation
 - [TandemTwister README](./references/github_com_Lionward_tandemtwister_blob_main_README.md)

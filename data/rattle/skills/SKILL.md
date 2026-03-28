@@ -4,7 +4,6 @@ description: RATTLE performs reference-free reconstruction and quantification of
 homepage: https://github.com/comprna/RATTLE
 ---
 
-
 # rattle
 
 ## Overview

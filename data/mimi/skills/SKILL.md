@@ -4,7 +4,6 @@ description: MIMI identifies chemical formulas in metabolomics data by matching 
 homepage: https://github.com/NYUAD-Core-Bioinformatics/MIMI
 ---
 
-
 # mimi
 
 ## Overview

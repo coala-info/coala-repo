@@ -312,7 +312,7 @@ opened Jun 21, 2022 by
 bot
 
 **ProTip!**
-Type `g` `i` on any issue or pull request to go back to the issue listing page.
+Mix and match filters to narrow down what you’re looking for.
 
 ## Footer
 

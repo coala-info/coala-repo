@@ -4,7 +4,6 @@ description: "odgi is a suite of tools designed to manipulate, analyze, and visu
 homepage: https://github.com/vgteam/odgi
 ---
 
-
 # odgi
 
 ## Overview
@@ -90,6 +89,7 @@ odgi similarity -i graph.og -p path_list.txt > similarity.tsv
 | odgi panpos | Get the pangenome position of a given path and nucleotide position (1-based). |
 | odgi pathindex | Create a path index for a given graph. |
 | odgi paths | Interrogate the embedded paths of a graph. Does not print anything to stdout by default! |
+| odgi pav | Presence/absence variants (PAVs). It prints to stdout a TSV table with the 'PAV ratios'. For a given path range 'PR' and path 'P', the 'PAV ratio' is the ratio between the sum of the lengths of the nodes in 'PR' that are crossed by 'P' divided by the sum of the lengths of all the nodes in 'PR'. Each node is considered only once. |
 | odgi priv | Differentially private sampling of graph subpaths. Apply the exponential mechanism to randomly sample shared sub-haplotypes with a given ε, target coverage, and minimum length. |
 | odgi procbed | Intersect and adjust BED interval into PanSN-defined path subranges. Lift BED files into graphs produced by odgi extract. Uses path range information in the path names. |
 | odgi prune | Remove parts of the graph. |
@@ -98,7 +98,10 @@ odgi similarity -i graph.og -p path_list.txt > similarity.tsv
 | odgi sort | Apply different kind of sorting algorithms to a graph. The most prominent one is the PG-SGD sorting algorithm. |
 | odgi squeeze | Squeezes multiple graphs in ODGI format into the same file in ODGI format. |
 | odgi stepindex | Generate a step index from a given graph. If no output file is provided via *-o, --out*, the index will be directly written to *INPUT_GRAPH.stpidx*. |
+| odgi unchop | Merge unitigs into a single node preserving the node order. |
 | odgi unitig | Output unitigs of the graph. |
+| odgi untangle | Project paths into reference-relative BEDPE (optionally PAF), to decompose paralogy relationships. |
+| odgi validate | Validate a graph checking if the paths are consistent with the graph topology. |
 | odgi view | Project a graph into other formats. |
 | odgi viz | Visualize a variation graph in 1D. |
 | odgi_chop | Divide nodes into smaller pieces preserving node topology and order. |
@@ -113,10 +116,6 @@ odgi similarity -i graph.og -p path_list.txt > similarity.tsv
 | odgi_stats | Metrics describing a variation graph and its path relationship. |
 | odgi_tension | evaluate the tension of a graph helping to locate structural variants and abnormalities |
 | odgi_tips | Identifying break point positions relative to given query (reference) path(s) of all the tips in the graph or of tips of given path(s). Prints BED records to stdout. |
-| pav | Presence/absence variants (PAVs). It prints to stdout a TSV table with the 'PAV ratios'. For a given path range 'PR' and path 'P', the 'PAV ratio' is the ratio between the sum of the lengths of the nodes in 'PR' that are crossed by 'P' divided by the sum of the lengths of all the nodes in 'PR'. Each node is considered only once. |
-| unchop | Merge unitigs into a single node preserving the node order. |
-| untangle | Project paths into reference-relative BEDPE (optionally PAF), to decompose paralogy relationships. |
-| validate | Validate a graph checking if the paths are consistent with the graph topology. |
 
 ## Reference documentation
 - [Optimized Dynamic Genome/Graph Implementation (odgi)](./references/github_com_pangenome_odgi_blob_master_README.md)

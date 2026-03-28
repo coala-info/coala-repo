@@ -4,7 +4,6 @@ description: Prosic infers protein-level significance from peptide-spectrum matc
 homepage: https://prosic.github.io
 ---
 
-
 # prosic
 
 ## Overview
@@ -35,10 +34,10 @@ prosic -i input_peptides.tsv -o protein_results.tsv
 
 | Command | Description |
 |---------|-------------|
-| control-fdr | Filter calls for controlling the false discovery rate (FDR) at given level. |
 | prosic | prosic |
 | prosic | ProSIc: a tool for predicting the impact of variants on protein stability |
 | prosic call-tumor-normal | Call somatic and germline variants from a tumor-normal sample pair and a VCF/BCF with candidate variants. |
+| prosic control-fdr | Filter calls for controlling the false discovery rate (FDR) at given level. |
 | prosic estimate-mutation-rate | Estimate the effective mutation rate of a tumor sample from a VCF/BCF with candidate variants from STDIN. |
 
 ## Reference documentation

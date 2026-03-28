@@ -4,7 +4,6 @@ description: shiver is a bioinformatic pipeline that assembles accurate viral ge
 homepage: https://github.com/ChrisHIV/shiver
 ---
 
-
 # shiver
 
 ## Overview

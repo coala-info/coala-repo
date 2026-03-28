@@ -4,7 +4,6 @@ description: PhyloToAST is a suite of Python scripts that augments the QIIME wor
 homepage: https://github.com/smdabdoub/phylotoast
 ---
 
-
 # phylotoast
 
 ## Overview

@@ -4,7 +4,6 @@ description: The ARTIC tool processes viral sequencing data from Oxford Nanopore
 homepage: https://github.com/artic-network/fieldbioinformatics
 ---
 
-
 # artic
 
 ## Overview
@@ -55,10 +54,10 @@ ARTIC relies on specific primer schemes designed via `PrimalScheme`. Ensure your
 |---------|-------------|
 | artic export | Export artic results to various formats. |
 | artic filter | Filter FASTQ reads based on length. |
+| artic guppyplex | Basecalled and demultiplexed (guppy) results directory |
 | artic minion | ARTIC pipeline for MinION data |
 | artic rampart | RAMPART is a tool for the analysis of sequencing data from pathogen surveillance. |
 | artic_run | Run the artic pipeline |
-| guppyplex | Basecalled and demultiplexed (guppy) results directory |
 
 ## Reference documentation
 

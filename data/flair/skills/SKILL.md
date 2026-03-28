@@ -4,7 +4,6 @@ description: FLAIR is a computational suite that processes long-read RNA-seq dat
 homepage: https://github.com/BrooksLabUCSC/flair
 ---
 
-
 # flair
 
 ## Overview
@@ -63,15 +62,15 @@ A modern module that combines `correct` and `collapse` into a single step.
 
 | Command | Description |
 |---------|-------------|
-| align | FLAIR align outputs an unfiltered bam file and a filtered bed file for use in the downstream pipeline |
-| collapse | take bed file of corrected reads and generate confident collapsed isoform models |
-| combine | Combine transcriptomes from multiple samples based on a manifest file. |
-| correct | take bed file of long RNA-seq reads and filter out those with anomalous splice junctions correct remaining to nearest orthogonally supported splice site |
-| diffexp | Differential expression analysis of isoforms using flair. It performs parallel DRIMSeq and filters isoforms based on expression thresholds. |
 | diffsplice | Differential splicing analysis using DRIMSeq, taking isoforms and count matrices as input. |
-| fusion | FLAIR fusion detection module for identifying gene fusions from transcriptomic data. |
+| flair align | FLAIR align outputs an unfiltered bam file and a filtered bed file for use in the downstream pipeline |
+| flair collapse | take bed file of corrected reads and generate confident collapsed isoform models |
+| flair combine | Combine transcriptomes from multiple samples based on a manifest file. |
+| flair correct | take bed file of long RNA-seq reads and filter out those with anomalous splice junctions correct remaining to nearest orthogonally supported splice site |
+| flair diffexp | Differential expression analysis of isoforms using flair. It performs parallel DRIMSeq and filters isoforms based on expression thresholds. |
+| flair fusion | FLAIR fusion detection module for identifying gene fusions from transcriptomic data. |
+| flair transcriptome | Defines isoforms from genomic alignments and optional short-read junction support. |
 | quantify | takes in many long-read RNA-seq reads files and quantifies them against a single transcriptome. A stringent, full-read-match-based approach |
-| transcriptome | Defines isoforms from genomic alignments and optional short-read junction support. |
 | variants | FLAIR variants module for calling variants from isoform data. |
 
 ## Reference documentation

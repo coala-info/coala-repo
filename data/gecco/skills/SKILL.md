@@ -4,7 +4,6 @@ description: GECCO is a bioinformatics tool that uses conditional random fields 
 homepage: https://gecco.embl.de/
 ---
 
-
 # gecco
 
 ## Overview
@@ -70,9 +69,9 @@ GECCO outputs can be converted for use in common visualization and analysis plat
 
 | Command | Description |
 |---------|-------------|
-| cv | Cross-validation for gecco |
 | gecco annotate | Annotate genomic sequences with genes and protein domains. |
 | gecco convert | Convert the GenBank records to a different format. |
+| gecco cv | Cross-validation for gecco |
 | gecco predict | Predicts gene clusters and domain annotations. |
 | gecco run | Run gecco gene calling and cluster detection |
 | gecco_train | Train a CRF model for domain annotation. |

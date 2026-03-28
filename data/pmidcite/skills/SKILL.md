@@ -4,7 +4,6 @@ description: "pmidcite retrieves citation counts, reference lists, and NIH impac
 homepage: http://github.com/dvklopfenstein/pmidcite
 ---
 
-
 # pmidcite
 
 ## Overview

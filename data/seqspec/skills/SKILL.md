@@ -4,7 +4,6 @@ description: Seqspec manages and validates machine-readable genomics assay speci
 homepage: https://github.com/sbooeshaghi/seqspec
 ---
 
-
 # seqspec
 
 ## Overview
@@ -46,22 +45,22 @@ homepage: https://github.com/sbooeshaghi/seqspec
 
 | Command | Description |
 |---------|-------------|
-| onlist | Get onlist file for specific region. Onlist is a list of permissible sequences for a region. |
 | seqspec build | Generate a complete seqspec with natural language. |
 | seqspec file | List files present in seqspec file. |
 | seqspec format | Automatically fill in missing fields in the spec. |
 | seqspec index | Identify the position of elements in a spec for use in downstream tools. |
 | seqspec init | Generate a new *empty* seqspec draft (meta-Regions only). |
 | seqspec methods | Convert seqspec file into methods section. |
+| seqspec onlist | Get onlist file for specific region. Onlist is a list of permissible sequences for a region. |
 | seqspec split | Split seqspec file into one file per modality. |
 | seqspec upgrade | Upgrade seqspec file from older versions to the current version. |
+| seqspec version | Get seqspec version and seqspec file version. |
 | seqspec_check | Validate seqspec file against the specification schema. |
 | seqspec_find | Find objects in the spec. |
 | seqspec_info | Get information about spec. |
 | seqspec_insert | Draft spec to modify |
 | seqspec_modify | Modify attributes of various elements in a seqspec file using JSON objects. |
 | seqspec_print | Print sequence and/or library structure as ascii, png, or html. |
-| version | Get seqspec version and seqspec file version. |
 
 ## Reference documentation
 - [seqspec README](./references/github_com_pachterlab_seqspec_blob_main_README.md)

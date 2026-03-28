@@ -4,7 +4,6 @@ description: bx-python is a high-performance library and suite of scripts design
 homepage: https://github.com/bxlab/bx-python
 ---
 
-
 # bx-python
 
 ## Overview
@@ -55,6 +54,15 @@ The library is frequently used to project coordinates between different alignmen
     - Use **MAF** for multiple species alignments.
     - Use **AXT** for pairwise alignments.
     - Use **LAV** for raw alignment output from tools like Blastz.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| maf_build_index.py | Build an index file for a set of MAF alignment blocks. |
+| maf_extract_ranges_indexed.py | Extract ranges from MAF files. |
 
 ## Reference documentation
 - [bx-python GitHub Repository](./references/github_com_bxlab_bx-python.md)

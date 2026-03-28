@@ -4,7 +4,6 @@ description: The wgs2ncbi toolkit prepares genomic assemblies and GFF3 annotatio
 homepage: https://github.com/naturalis/wgs2ncbi
 ---
 
-
 # wgs2ncbi
 
 ## Overview
@@ -74,12 +73,12 @@ wgs2ncbi compress -conf wgs2ncbi.ini
 
 | Command | Description |
 |---------|-------------|
-| prune | Based on a validation file from NCBI, makes pruned versions of feature tables that omit features within regions identified by NCBI. |
 | wgs2ncbi | prepares whole genome sequencing projects for submission to NCBI |
 | wgs2ncbi | prepares whole genome sequencing projects for submission to NCBI |
 | wgs2ncbi | prepares whole genome sequencing projects for submission to NCBI |
 | wgs2ncbi | prepares whole genome sequencing projects for submission to NCBI |
 | wgs2ncbi | prepares whole genome sequencing projects for submission to NCBI |
+| wgs2ncbi prune | Based on a validation file from NCBI, makes pruned versions of feature tables that omit features within regions identified by NCBI. |
 
 ## Reference documentation
 - [WGS2NCBI Main Documentation](./references/github_com_naturalis_wgs2ncbi.md)

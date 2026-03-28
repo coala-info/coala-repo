@@ -4,7 +4,6 @@ description: Trycycler is a consensus long-read meta-assembler that reconciles m
 homepage: https://github.com/rrwick/Trycycler
 ---
 
-
 # trycycler
 
 ## Overview
@@ -76,8 +75,8 @@ If `trycycler cluster` produces dozens of small clusters or a "hideous" tree, do
 
 | Command | Description |
 |---------|-------------|
-| dotplot | draw pairwise dotplots for a cluster |
 | trycycler cluster | cluster contigs by similarity |
+| trycycler dotplot | draw pairwise dotplots for a cluster |
 | trycycler msa | multiple sequence alignment |
 | trycycler partition | partition reads by cluster |
 | trycycler reconcile | reconcile contig sequences |

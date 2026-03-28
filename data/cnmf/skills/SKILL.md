@@ -4,7 +4,6 @@ description: Consensus Non-negative Matrix Factorization decomposes single-cell 
 homepage: https://github.com/dylkot/cNMF
 ---
 
-
 # cnmf
 
 ## Overview
@@ -78,11 +77,11 @@ p = Preprocess()
 
 | Command | Description |
 |---------|-------------|
-| combine | Combine NMF iterations into a single file as part of the cNMF pipeline. |
-| consensus | Consensus clustering and analysis for cNMF |
-| factorize | Factorize the counts matrix into gene expression programs using NMF as part of the cNMF pipeline. |
-| k_selection_plot | Generate k-selection plots for cNMF analysis to help determine the optimal number of components. |
-| prepare | Prepare data for cNMF analysis, including specifying input counts, components, and iterations. |
+| cnmf combine | Combine NMF iterations into a single file as part of the cNMF pipeline. |
+| cnmf consensus | Consensus clustering and analysis for cNMF |
+| cnmf factorize | Factorize the counts matrix into gene expression programs using NMF as part of the cNMF pipeline. |
+| cnmf k_selection_plot | Generate k-selection plots for cNMF analysis to help determine the optimal number of components. |
+| cnmf prepare | Prepare data for cNMF analysis, including specifying input counts, components, and iterations. |
 
 ## Reference documentation
 - [Consensus NMF (cNMF) README](./references/github_com_dylkot_cNMF_blob_main_README.md)

@@ -4,7 +4,6 @@ description: ThermoRawFileParser converts proprietary Thermo Fisher Scientific m
 homepage: https://github.com/compomics/ThermoRawFileParser
 ---
 
-
 # thermorawfileparser
 
 ## Overview

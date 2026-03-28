@@ -4,7 +4,6 @@ description: Ensemblcov links genomic variants in a parallel and threaded manner
 homepage: https://github.com/IBCHgenomic/ensemlcov
 ---
 
-
 # ensemblcov
 
 yaml
@@ -51,6 +50,20 @@ ensemlcov [options] --input <input_file1> [--input <input_file2> ...] --output <
 *   **Test with Small Datasets:** Before running on large datasets, test your command with a small subset of your data to ensure the syntax is correct and the output is as expected.
 *   **Monitor Resource Usage:** For large runs, monitor CPU and memory usage to ensure optimal performance and to identify potential bottlenecks.
 *   **Consult GitHub Repository:** For the most up-to-date information, advanced usage patterns, and troubleshooting, refer to the official GitHub repository: [https://github.com/IBCHgenomic/ensemblcov](https://github.com/IBCHgenomic/ensemblcov)
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| ensemblcov auto-generate | autogenerate the ensemble gene conversion |
+| ensemblcov countconvert | Convert counts from one format to another. |
+| ensemblcov differentialexpression | id convert from differential expression |
+| ensemblcov exon-ensembl | Generates exon-ensembl coverage data. |
+| ensemblcov gene-ensembl | For more information, try '--help'. |
+| ensemblcov threaded-auto | threaded version of ensembl auto gene conversion |
+| ensemblcov_gtf-annotate-generate | Generate annotations from GTF files. |
 
 ## Reference documentation
 - [Overview](./references/anaconda_org_channels_bioconda_packages_ensemblcov_overview.md)

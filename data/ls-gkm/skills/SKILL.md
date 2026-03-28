@@ -4,7 +4,6 @@ description: LS-GKM is a gapped k-mer support vector machine tool used to predic
 homepage: https://github.com/Dongwon-Lee/lsgkm
 ---
 
-
 # ls-gkm
 
 ## Overview

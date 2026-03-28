@@ -4,7 +4,6 @@ description: tb-profiler profiles Mycobacterium tuberculosis from whole genome s
 homepage: https://github.com/jodyphelan/TBProfiler
 ---
 
-
 # tb-profiler
 
 ## Overview
@@ -56,16 +55,16 @@ While the tool defaults to sensible aligners, you can specify different mappers 
 
 | Command | Description |
 |---------|-------------|
-| load_library | Load a library into the tb-profiler database. |
-| reformat | Sample prefix |
 | tb-profiler batch | Run tb-profiler on multiple samples defined in a CSV file. |
 | tb-profiler create_db | Create a database for tb-profiler |
 | tb-profiler lineage | Lineage profiling for Mycobacterium tuberculosis |
 | tb-profiler list_db | List available databases |
+| tb-profiler load_library | Load a library into the tb-profiler database. |
 | tb-profiler profile | Profile TB samples |
+| tb-profiler reformat | Sample prefix |
 | tb-profiler spoligotype | Spoligotyping analysis for TBProfiler |
+| tb-profiler update_tbdb | Update the TB-Profiler database |
 | tb-profiler_collate | Collate results from TBProfiler runs. |
-| update_tbdb | Update the TB-Profiler database |
 
 ## Reference documentation
 - [Main README and Usage Guide](./references/github_com_jodyphelan_TBProfiler_blob_master_README.md)

@@ -4,7 +4,6 @@ description: AdmixTools is a bioinformatics toolkit used to detect and quantify 
 homepage: https://github.com/DReichLab/AdmixTools
 ---
 
-
 # admixtools
 
 ## Overview

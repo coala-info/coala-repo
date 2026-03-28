@@ -4,7 +4,6 @@ description: impg is a high-performance tool that projects genomic ranges throug
 homepage: https://github.com/pangenome/impg
 ---
 
-
 # impg
 
 ## Overview
@@ -83,12 +82,12 @@ impg query -a alignments.paf -r chr1:1000-2000 -o fasta --sequence-files genomes
 | Command | Description |
 |---------|-------------|
 | impg index | Create an IMPG index |
+| impg partition | Partition the alignment |
 | impg query | Query overlaps in the alignment |
 | impg similarity | Compute pairwise similarity between sequences in a region |
 | impg_lace | Lace files together (graphs or VCFs) |
 | impg_refine | Refine loci to maximize the number of samples that span both ends of the region |
 | impg_stats | Print alignment statistics |
-| partition | Partition the alignment |
 
 ## Reference documentation
 - [impg: implicit pangenome graph](./references/github_com_pangenome_impg.md)

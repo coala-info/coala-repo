@@ -4,7 +4,6 @@ description: "bam2plot generates publication-quality depth visualizations and HT
 homepage: https://github.com/willros/bam2plot
 ---
 
-
 # bam2plot
 
 ## Overview

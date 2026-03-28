@@ -4,7 +4,6 @@ description: Augur is a modular bioinformatics toolkit designed for analyzing pa
 homepage: https://github.com/nextstrain/augur
 ---
 
-
 # augur
 
 ## Overview
@@ -64,16 +63,19 @@ Before analysis, data must be cleaned and subsampled to manage computational loa
 |---------|-------------|
 | augur align | Align multiple nucleotide sequences from FASTA. The "N" character is treated as missing or ambiguous sites, so aligning amino acid sequences is not supported. |
 | augur ancestral | Infer ancestral sequences based on a tree. The ancestral sequences are inferred using TreeTime. Each internal node gets assigned a nucleotide sequence that maximizes a likelihood on the tree given its descendants and its parent node. Each node then gets assigned a list of nucleotide mutations for any position that has a mismatch between its own sequence and its parent's sequence. The node sequences and mutations are output to a node-data JSON file. If amino acid options are provided, the ancestral amino acid sequences for each requested gene are inferred with the same method as the nucleotide sequences described above. The inferred amino acid mutations will be included in the output node-data JSON file, with the format equivalent to the output of augur translate. The nucleotide and amino acid sequences are inferred separately in this command, which can potentially result in mismatches between the nucleotide and amino acid mutations. If you want amino acid mutations based on the inferred nucleotide sequences, please use augur translate. .. note:: The mutation positions in the node-data JSON are one-based. |
+| augur clades | Assign clades to nodes in a tree based on amino-acid or nucleotide signatures. Nodes which are members of a clade are stored via <OUTPUT_NODE_DATA> → nodes → <node_name> → clade_membership and if this file is used in `augur export v2` these will automatically become a coloring. The basal nodes of each clade are also given a branch label which is stored via <OUTPUT_NODE_DATA> → branches → <node_name> → labels → clade. The keys "clade_membership" and "clade" are customisable via command line arguments. |
 | augur curate | A suite of commands to help with data curation. |
 | augur export | Export JSON files suitable for visualization with auspice. |
 | augur filter | Filter and subsample a sequence set. SeqKit is used behind the scenes to handle FASTA files, but this should be considered an implementation detail that may change in the future. The CLI program seqkit must be available. If it's not on PATH (or you want to use a version different from what's on PATH), set the SEQKIT environment variable to path of the desired seqkit executable. VCFtools is used behind the scenes to handle VCF files, but this should be considered an implementation detail that may change in the future. The CLI program vcftools must be available on PATH. |
 | augur frequencies | infer frequencies of mutations or clades |
 | augur import | Import analyses into augur pipeline from other systems |
 | augur index | Count occurrence of bases in a set of sequences. |
+| augur lbi | Calculate LBI for a given tree and one or more sets of parameters. |
 | augur merge | Merge two or more datasets into one. Datasets can consist of metadata and/or sequence files. If both are provided, the order and file contents are used independently. |
 | augur reconstruct-sequences | Reconstruct alignments from mutations inferred on the tree |
 | augur refine | Refine an initial tree using sequence metadata. |
 | augur sequence-traits | Annotate sequences based on amino-acid or nucleotide signatures. |
+| augur subsample | Subsample sequences from an input dataset. The input dataset can consist of a metadata file, a sequences file, or both. See documentation page for details on configuration. |
 | augur translate | Translate gene regions from nucleotides to amino acids. Translates nucleotide sequences of nodes in a tree to amino acids for gene regions of the annotated features of the provided reference sequence. Each node then gets assigned a list of amino acid mutations for any position that has a mismatch between its own amino acid sequence and its parent's sequence. The reference amino acid sequences, genome annotations, and node amino acid mutations are output to a node-data JSON file. .. note:: The mutation positions in the node-data JSON are one-based. |
 | augur tree | Build a tree using a variety of methods. IQ-TREE specific: Strain names with spaces are modified to remove all characters after (and including) the first space. |
 | augur write-file | Writes data to a file. |
@@ -84,9 +86,6 @@ Before analysis, data must be cleaned and subsampled to manage computational loa
 | augur_read-file | Read one or more files like Augur, with transparent optimized decompression and universal newlines. Supported compression formats: gzip (.gz), bzip2 (.bz2), xz (.xz), zstandard (.zst). Input is read from each given file path, as the compression format detection requires a seekable stream. A path may be "-" to explicitly read from stdin, but no decompression will be done. Output from each file is concatenated together and written to stdout. Universal newline translation is always performed, so \n, \r\n, and \r in the input are all translated to the system's native newlines (e.g. \n on Unix, \r\n on Windows) in the output. Additionally, each file is standardized to have trailing newlines. |
 | augur_titers | Annotate a tree with actual and inferred titer measurements. |
 | augur_traits | Infer ancestral traits based on a tree. |
-| clades | Assign clades to nodes in a tree based on amino-acid or nucleotide signatures. Nodes which are members of a clade are stored via <OUTPUT_NODE_DATA> → nodes → <node_name> → clade_membership and if this file is used in `augur export v2` these will automatically become a coloring. The basal nodes of each clade are also given a branch label which is stored via <OUTPUT_NODE_DATA> → branches → <node_name> → labels → clade. The keys "clade_membership" and "clade" are customisable via command line arguments. |
-| lbi | Calculate LBI for a given tree and one or more sets of parameters. |
-| subsample | Subsample sequences from an input dataset. The input dataset can consist of a metadata file, a sequences file, or both. See documentation page for details on configuration. |
 
 ## Reference documentation
 

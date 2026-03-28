@@ -4,7 +4,6 @@ description: SECAPR is a comprehensive toolkit that processes raw Illumina fastq
 homepage: https://github.com/AntonelliLab/seqcap_processor
 ---
 
-
 # secapr
 
 ## Overview
@@ -76,18 +75,18 @@ secapr phase_reads --input /path/to/selected_loci --output /path/to/phased_data
 
 | Command | Description |
 |---------|-------------|
-| add_missing_sequences | This script will add dummy sequences '?' for missing taxa in each alignments, making sure that all alignments in the input folder contain the same taxa (as required for e.g. *BEAST) |
-| concatenate_alignments | Concatenate mutliple alignments (MSAs) into one supermatrix |
-| paralogs_to_ref | Align paralogous contigs with reference sequence |
-| quality_check | This script runs a fastqc test on all fastq samples in a user-provided folder and creates an overview plot |
+| secapr add_missing_sequences | This script will add dummy sequences '?' for missing taxa in each alignments, making sure that all alignments in the input folder contain the same taxa (as required for e.g. *BEAST) |
 | secapr align_sequences | Create multiple sequence alignments from sequence collections |
 | secapr assemble_reads | Assemble trimmed Illumina read files (fastq) |
 | secapr automate_all | This script automates the complete secapr pipeline, producing MSAs (allele, contig and BAM-consensus) from FASTQ files |
 | secapr clean_reads | Clean and trim raw Illumina read files |
+| secapr concatenate_alignments | Concatenate mutliple alignments (MSAs) into one supermatrix |
 | secapr find_target_contigs | Extract the contigs that match the reference database |
 | secapr join_exons | Join exon-alignment files belonging to the same gene |
 | secapr locus_selection | Extract the n loci with the best read-coverage from you reference-based assembly (bam-files) |
+| secapr paralogs_to_ref | Align paralogous contigs with reference sequence |
 | secapr plot_sequence_yield | Plot overview of extracted sequences |
+| secapr quality_check | This script runs a fastqc test on all fastq samples in a user-provided folder and creates an overview plot |
 | secapr reference_assembly | Create new reference library and map raw reads against the library (reference-based assembly) |
 | secapr_phase_alleles | Phase remapped reads form reference-based assembly into two separate alleles. Then produce consensus sequence for each allele. |
 

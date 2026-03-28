@@ -4,7 +4,6 @@ description: LevioSAM2 is a toolkit designed to migrate genomic alignment data a
 homepage: https://github.com/milkschen/leviosam2
 ---
 
-
 # leviosam2
 
 ## Overview
@@ -54,10 +53,10 @@ leviosam2 lift -C source_to_target.clft -b input.bed -p lifted_output
 
 | Command | Description |
 |---------|-------------|
-| bed | Lift over a BED file |
-| collate | Collate alignments to make sure reads are paired |
 | leviosam2 | lift over alignments using a chain file |
-| reconcile | Reconcile alignments to select the one with higher confidence |
+| leviosam2 bed | Lift over a BED file |
+| leviosam2 collate | Collate alignments to make sure reads are paired |
+| leviosam2 reconcile | Reconcile alignments to select the one with higher confidence |
 
 ## Reference documentation
 - [LevioSAM2 README](./references/github_com_milkschen_leviosam2_blob_main_README.md)

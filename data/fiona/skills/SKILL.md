@@ -4,7 +4,6 @@ description: "Fiona is a Python library and CLI tool for reading, writing, and f
 homepage: https://github.com/Toblerity/Fiona
 ---
 
-
 # fiona
 
 ## Overview
@@ -66,10 +65,10 @@ If the `calc` extra is installed, use `fio map` and `fio reduce` for inline tran
 
 | Command | Description |
 |---------|-------------|
-| cat | Concatenate and print the features of input datasets as a sequence of GeoJSON features. |
 | fio | Fiona command line interface. |
-| info | Print information about a dataset. |
-| load | Load features from JSON to a file in another format. |
+| fio info | Print information about a dataset. |
+| fio load | Load features from JSON to a file in another format. |
+| fiona fio cat | Concatenate and print the features of input datasets as a sequence of GeoJSON features. |
 
 ## Reference documentation
 - [Fiona User Manual](./references/fiona_readthedocs_io_en_stable_manual.html.md)

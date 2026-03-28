@@ -4,7 +4,6 @@ description: sylph-tax maps metagenomic profiling results from sylph to standard
 homepage: https://github.com/bluenote-1577/sylph-tax
 ---
 
-
 # sylph-tax
 
 ## Overview

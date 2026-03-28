@@ -4,7 +4,6 @@ description: TaxonKit is a high-performance command-line tool for processing and
 homepage: https://github.com/shenwei356/taxonkit
 ---
 
-
 # taxonkit
 
 ## Overview
@@ -77,19 +76,19 @@ echo "9606 9598" | taxonkit lca
 
 | Command | Description |
 |---------|-------------|
-| cami-filter | Remove taxa of given TaxIds and their descendants in CAMI metagenomic profile |
-| create-taxdump | Create NCBI-style taxdump files for custom taxonomy, e.g., GTDB and ICTV |
-| filter | Filter TaxIds by taxonomic rank range |
-| genautocomplete | generate shell autocompletion script |
-| lca | Compute lowest common ancestor (LCA) for TaxIds |
-| list | List taxonomic subtrees of given TaxIds |
-| taxid-changelog | Create TaxId changelog from dump archives |
+| taxonkit cami-filter | Remove taxa of given TaxIds and their descendants in CAMI metagenomic profile |
+| taxonkit create-taxdump | Create NCBI-style taxdump files for custom taxonomy, e.g., GTDB and ICTV |
+| taxonkit filter | Filter TaxIds by taxonomic rank range |
+| taxonkit genautocomplete | generate shell autocompletion script |
+| taxonkit lca | Compute lowest common ancestor (LCA) for TaxIds |
 | taxonkit lineage | Query taxonomic lineage of given TaxIds |
+| taxonkit list | List taxonomic subtrees of given TaxIds |
 | taxonkit name2taxid | Convert taxon names to TaxIds |
 | taxonkit profile2cami | Convert metagenomic profile table to CAMI format |
 | taxonkit reformat | Reformat lineage in canonical ranks |
 | taxonkit reformat2 | Reformat lineage in chosen ranks, allowing more ranks than 'reformat' |
-| version | Prints the version of taxonkit |
+| taxonkit taxid-changelog | Create TaxId changelog from dump archives |
+| taxonkit version | Prints the version of taxonkit |
 
 ## Reference documentation
 - [TaxonKit GitHub README](./references/github_com_shenwei356_taxonkit_blob_master_README.md)

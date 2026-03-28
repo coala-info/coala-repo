@@ -4,7 +4,6 @@ description: CytoSnake is a command-line tool that manages and executes reproduc
 homepage: https://github.com/WayScience/CytoSnake
 ---
 
-
 # cytosnake
 
 ## Overview

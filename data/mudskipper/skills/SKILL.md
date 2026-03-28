@@ -4,7 +4,6 @@ description: "Mudskipper projects genomic alignments onto transcriptomic coordin
 homepage: https://github.com/OceanGenomics/mudskipper
 ---
 
-
 # mudskipper
 
 ## Overview

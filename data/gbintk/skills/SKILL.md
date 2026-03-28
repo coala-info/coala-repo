@@ -4,7 +4,6 @@ description: GraphBin-Tk is a graph-based binning toolkit that integrates MetaCo
 homepage: https://github.com/metagentools/gbintk
 ---
 
-
 # gbintk
 
 ## Overview
@@ -68,7 +67,7 @@ gbintk evaluate --binned results.csv --groundtruth ground_truth.csv --output eva
 |---------|-------------|
 | gbintk evaluate | Evaluate the binning results given a ground truth |
 | gbintk prepare | Format the initial binning result from an existing binning tool |
-| visualise | Visualise binning and refinement results |
+| gbintk visualise | Visualise binning and refinement results |
 
 ## Reference documentation
 - [GraphBin-Tk Overview](./references/gbintk_readthedocs_io_en_latest.md)

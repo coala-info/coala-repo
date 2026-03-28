@@ -4,7 +4,6 @@ description: Carpedeam is a specialized metagenomic assembler designed to recons
 homepage: https://github.com/LouisPwr/CarpeDeam
 ---
 
-
 # carpedeam
 
 ## Overview
@@ -56,9 +55,9 @@ sed -E 's/[[:space:]]+/\t/g; s/\t$//' input.prof > fixed_input.prof
 
 | Command | Description |
 |---------|-------------|
-| ancient_correction | By Louis Kraft <lokraf@dtu.dk> |
 | carpedeam ancient_assemble | By Louis Kraft <lokraf@dtu.dk> |
-| nuclassemble | By Louis Kraft <lokraf@dtu.dk> and Annika Jochheim <annika.jochheim@mpinat.mpg.de> |
+| carpedeam ancient_correction | By Louis Kraft <lokraf@dtu.dk> |
+| carpedeam nuclassemble | By Louis Kraft <lokraf@dtu.dk> and Annika Jochheim <annika.jochheim@mpinat.mpg.de> |
 
 ## Reference documentation
 

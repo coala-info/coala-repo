@@ -4,7 +4,6 @@ description: The minute tool automates the processing of MINUTE-ChIP data from r
 homepage: https://github.com/NBISweden/minute/
 ---
 
-
 # minute
 
 ## Overview
@@ -47,9 +46,9 @@ Select specific rules to modify the pipeline behavior based on analysis needs:
 
 | Command | Description |
 |---------|-------------|
-| download | Downloads libraries from a TSV file. |
+| minute download | Downloads libraries from a TSV file. |
 | minute init | Create and initialize a new pipeline directory |
-| run | Run the Minute pipeline |
+| minute run | Run the Minute pipeline |
 
 ## Reference documentation
 - [minute Changelog](./references/github_com_elsasserlab_minute_blob_main_CHANGES.md)

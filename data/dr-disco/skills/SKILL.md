@@ -4,7 +4,6 @@ description: dr-disco identifies fusion genes and genomic breakpoints from RNA-s
 homepage: https://github.com/yhoogstrate/dr-disco
 ---
 
-
 # dr-disco
 
 ## Overview
@@ -64,16 +63,16 @@ dr-disco integrate --input junctions.classified.txt --gtf genes.gtf --fasta refe
 
 | Command | Description |
 |---------|-------------|
-| bam-extract | Extracts reads from BAM files that overlap with specified regions. |
 | dr-disco | Command-line tool for disco identification and analysis. |
+| dr-disco bam-extract | Extracts reads from BAM files that overlap with specified regions. |
 | dr-disco classify | Classify junctions based on alignment data. |
 | dr-disco detect | Detects potential discoidin domains in BAM input files. |
+| dr-disco fix | Fixes an alignment file by removing duplicate reads. |
 | dr-disco integrate | Integrates gene annotation and reference sequences for fusion gene estimation and classification. |
-| fix | Fixes an alignment file by removing duplicate reads. |
-| is-blacklisted | When only a single position is given, only matches with blacklisted regions from blacklist_regions will be reported. |
-| logo-sequence | Generate logo sequences for regions. |
-| subtract | Subtracts alignments from another alignment file. |
-| unfix | Unfixes alignment files. |
+| dr-disco is-blacklisted | When only a single position is given, only matches with blacklisted regions from blacklist_regions will be reported. |
+| dr-disco logo-sequence | Generate logo sequences for regions. |
+| dr-disco subtract | Subtracts alignments from another alignment file. |
+| dr-disco unfix | Unfixes alignment files. |
 
 ## Reference documentation
 - [Dr. Disco README](./references/github_com_yhoogstrate_dr-disco_blob_master_README.md)

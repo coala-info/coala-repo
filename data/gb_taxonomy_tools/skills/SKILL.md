@@ -4,7 +4,6 @@ description: This tool maps biological sequence identifiers to the NCBI taxonomi
 homepage: https://github.com/spond/gb_taxonomy_tools
 ---
 
-
 # gb_taxonomy_tools
 
 ## Overview

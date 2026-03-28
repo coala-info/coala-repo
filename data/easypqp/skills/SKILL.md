@@ -4,7 +4,6 @@ description: EasyPQP generates and calibrates peptide query parameters and spect
 homepage: https://github.com/grosenberger/easypqp
 ---
 
-
 # easypqp
 
 ## Overview
@@ -57,16 +56,16 @@ EasyPQP includes several sub-commands for downstream OpenSWATH preparation:
 
 | Command | Description |
 |---------|-------------|
-| convert | Convert pepXML files for EasyPQP |
-| convertpsm | Convert psm.tsv files for EasyPQP |
+| easypqp convert | Convert pepXML files for EasyPQP |
+| easypqp convertpsm | Convert psm.tsv files for EasyPQP |
+| easypqp library | Generate EasyPQP library |
 | easypqp openswath-assay-generator | Generates filtered and optimized assays for OpenSwathWorflow |
+| easypqp openswath-decoy-generator | Generate decoys for spectral libraries / transition files for targeted proteomics and metabolomics analysis. |
 | easypqp_convertsage | Convert Sage Search results for EasyPQP |
 | easypqp_filter-unimod | Filter unimodified peptides from a PQP file. |
 | easypqp_insilico-library | Generate In-Silico Predicted Library |
 | easypqp_reduce | Reduce PQP files for OpenSWATH linear and non-linear alignment |
 | easypqp_targeted-file-converter | Convert different spectral libraries / transition files for targeted proteomics and metabolomics analysis. |
-| library | Generate EasyPQP library |
-| openswath-decoy-generator | Generate decoys for spectral libraries / transition files for targeted proteomics and metabolomics analysis. |
 
 ## Reference documentation
 - [EasyPQP: Simple library generation for OpenSWATH](./references/github_com_grosenberger_easypqp_blob_master_README.md)

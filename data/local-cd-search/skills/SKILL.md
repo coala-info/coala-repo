@@ -4,7 +4,6 @@ description: This tool performs high-throughput protein functional annotation by
 homepage: https://github.com/apcamargo/local-cd-search
 ---
 
-
 # local-cd-search
 
 ## Overview
@@ -57,8 +56,8 @@ The output TSV includes several critical columns for quality control:
 
 | Command | Description |
 |---------|-------------|
-| annotate | Run the annotation pipeline. |
-| download | Download one or more PSSM databases and CDD metadata into DB_DIR. |
+| local-cd-search annotate | Run the annotation pipeline. |
+| local-cd-search download | Download one or more PSSM databases and CDD metadata into DB_DIR. |
 
 ## Reference documentation
 

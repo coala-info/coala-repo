@@ -4,7 +4,6 @@ description: PopPUNK performs rapid analysis of bacterial populations by using k
 homepage: https://github.com/johnlees/PopPUNK
 ---
 
-
 # poppunk
 
 ## Overview

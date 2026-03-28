@@ -4,7 +4,6 @@ description: The centreseq tool is a bioinformatics pipeline designed to rapidly
 homepage: https://github.com/bfssi-forest-dussault/centreseq
 ---
 
-
 # centreseq
 
 ## Overview

@@ -4,7 +4,6 @@ description: FastKit is a utility for formatting and validating biological seque
 homepage: https://github.com/neoformit/fastkit
 ---
 
-
 # fastkit
 
 ## Overview

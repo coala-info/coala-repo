@@ -4,7 +4,6 @@ description: bacpage is a modular bioinformatics pipeline that automates the ass
 homepage: https://github.com/CholGen/bacpage
 ---
 
-
 # bacpage
 
 ## Overview
@@ -51,12 +50,12 @@ After running the assembly, results are organized in the project directory:
 
 | Command | Description |
 |---------|-------------|
+| bacpage identify_files | Generate a valid sample_data.csv from a directory of FASTQs. |
 | bacpage phylogeny | Reconstructs maximum likelihood phylogeny from consensus sequences. |
+| bacpage setup | Set up project directory for analysis. |
 | bacpage utilities | Available utilities:   One of the following utilities must be specified: |
 | bacpage_assemble | Assembles consensus sequence from raw sequencing reads. |
 | bacpage_profile | Reconstructs maximum likelihood phylogeny from consensus sequences. |
-| identify_files | Generate a valid sample_data.csv from a directory of FASTQs. |
-| setup | Set up project directory for analysis. |
 
 ## Reference documentation
 - [bacpage README](./references/github_com_CholGen_bacpage_blob_master_README.md)

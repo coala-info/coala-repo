@@ -4,7 +4,6 @@ description: Methylpy is a high-performance pipeline for the end-to-end analysis
 homepage: https://github.com/yupenghe/methylpy
 ---
 
-
 # methylpy
 
 ## Overview
@@ -70,18 +69,18 @@ methylpy DMRfind \
 
 | Command | Description |
 |---------|-------------|
-| DMRfind | Find differentially methylated regions (DMRs) from ALLC files. |
-| add-methylation-level | Add methylation level information to genomic intervals in a TSV file using ALLC files. |
-| allc-to-bigwig | Convert allc file to bigwig format |
-| bam-quality-filter | Filter BAM files based on mapping quality and mCH levels. |
-| build-reference | Build reference files for methylpy using specified aligners. |
-| call-methylation-state | Call methylation state from BAM files containing mapped bisulfite sequencing reads. |
-| filter-allc | Filter allc files based on coverage, mismatch, and sequence context. |
-| index-allc | Index ALLC files for faster access. |
-| merge-allc | Merge multiple allc files into a single allc file. |
-| paired-end-pipeline | Methylpy pipeline for processing paired-end bisulfite sequencing data, including alignment and methylation calling. |
-| single-end-pipeline | Methylpy pipeline for single-end bisulfite sequencing data, including read alignment and methylation calling. |
-| test-allc | Test allc file for significant methylation sites, estimating non-conversion rates from controls. |
+| methylpy DMRfind | Find differentially methylated regions (DMRs) from ALLC files. |
+| methylpy add-methylation-level | Add methylation level information to genomic intervals in a TSV file using ALLC files. |
+| methylpy allc-to-bigwig | Convert allc file to bigwig format |
+| methylpy bam-quality-filter | Filter BAM files based on mapping quality and mCH levels. |
+| methylpy build-reference | Build reference files for methylpy using specified aligners. |
+| methylpy call-methylation-state | Call methylation state from BAM files containing mapped bisulfite sequencing reads. |
+| methylpy filter-allc | Filter allc files based on coverage, mismatch, and sequence context. |
+| methylpy index-allc | Index ALLC files for faster access. |
+| methylpy merge-allc | Merge multiple allc files into a single allc file. |
+| methylpy paired-end-pipeline | Methylpy pipeline for processing paired-end bisulfite sequencing data, including alignment and methylation calling. |
+| methylpy single-end-pipeline | Methylpy pipeline for single-end bisulfite sequencing data, including read alignment and methylation calling. |
+| methylpy test-allc | Test allc file for significant methylation sites, estimating non-conversion rates from controls. |
 
 ## Reference documentation
 - [Methylpy GitHub Repository](./references/github_com_yupenghe_methylpy.md)

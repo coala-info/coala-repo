@@ -4,7 +4,6 @@ description: Primalbedtools is a bioinformatic tool for processing, validating, 
 homepage: https://github.com/ChrisgKent/primalbedtools
 ---
 
-
 # primalbedtools
 
 ## Overview
@@ -70,12 +69,12 @@ csv_output = scheme.to_delim_str(use_header_aliases=True)
 | primalbedtools downgrade | Downgrades a BED file to a simpler format. |
 | primalbedtools fasta | Convert BED file to FASTA format |
 | primalbedtools format | Format a BED file. |
+| primalbedtools remap | Remap IDs in a BED file based on an MSA. |
 | primalbedtools update | Update BED file |
 | primalbedtools validate | Validate a BED file against a reference FASTA file. |
+| primalbedtools validate_bedfile | Validate a BED file |
 | primalbedtools_merge | Merge overlapping intervals in a BED file. |
 | primalbedtools_sort | Sort a BED file |
-| remap | Remap IDs in a BED file based on an MSA. |
-| validate_bedfile | Validate a BED file |
 
 ## Reference documentation
 - [Primalbedtools CLI Guide](./references/chrisgkent_github_io_primalbedtools_cli.md)

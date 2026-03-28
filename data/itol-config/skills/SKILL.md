@@ -4,7 +4,6 @@ description: This tool converts CSV datasets into configuration files for iTOL p
 homepage: https://github.com/jodyphelan/itol-config
 ---
 
-
 # itol-config
 
 ## Overview
@@ -80,10 +79,10 @@ writer.write("itol_annotation_layer.txt")
 
 | Command | Description |
 |---------|-------------|
-| colour_strip | Generates an iTOL configuration file for colouring tree branches based on sequence metadata. |
 | itol_config | Configuration tool for ITOL |
 | itol_config | Configuration tool for ITOL |
 | itol_config binary_data | Generates an iTOL configuration file for binary data from a CSV input. |
+| itol_config colour_strip | Generates an iTOL configuration file for colouring tree branches based on sequence metadata. |
 | itol_config text_label | Generates an iTOL text label configuration file from a CSV file. |
 
 ## Reference documentation

@@ -10,6 +10,7 @@ converts BAM to a number of other formats.
 - **Homepage**: https://github.com/pezmaster31/bamtools
 - **Package**: https://anaconda.org/channels/bioconda/packages/bamtools/overview
 - **Validation**: PASS
+- **manual**: https://github.com/pezmaster31/bamtools/wiki/Tutorial_Toolkit_BamTools-1.0.pdf
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bamtools/overview
 - **Total Downloads**: 574.2K
@@ -587,4 +588,4 @@ Help:
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

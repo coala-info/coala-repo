@@ -4,7 +4,6 @@ description: vSNP is a bioinformatics pipeline that transforms raw sequencing da
 homepage: https://github.com/USDA-VS/vSNP
 ---
 
-
 # vsnp
 
 ## Overview

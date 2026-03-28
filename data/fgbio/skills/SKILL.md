@@ -4,7 +4,6 @@ description: fgbio is a high-performance command-line suite designed for process
 homepage: https://github.com/fulcrumgenomics/fgbio
 ---
 
-
 # fgbio
 
 ## Overview
@@ -76,17 +75,17 @@ fgbio DemuxFastqs \
 
 | Command | Description |
 |---------|-------------|
-| CollectAlternateContigNames | Collates the alternate contig names from an NCBI assembly report. The input is to be the '*.assembly_report.txt' obtained from NCBI. The output will be a "sequence dictionary", which is a valid SAM file, containing the version header line and one line per contig. The primary contig name (i.e. '@SQ.SN') is specified with '--primary' option, while alternate names (i.e. aliases) are specified with the '--alternates' option. The 'Assigned-Molecule' column, if specified as an '--alternate', will only be used for sequences with 'Sequence-Role' 'assembled-molecule'. When updating an existing sequence dictionary with '--existing' the primary contig names must match. I.e. the contig name from the assembly report column specified by '--primary' must match the contig name in the existing sequence dictionary ('@SQ.SN'). All contigs in the existing sequence dictionary must be present in the assembly report. Furthermore, contigs in the assembly report not found in the sequence dictionary will be ignored. |
-| DemuxFastqs | Performs sample demultiplexing on FASTQs. |
-| ExtractBasecallingParamsForPicard | Extracts sample and library information from an sample sheet for a given lane. |
-| ExtractIlluminaRunInfo | Extracts information about an Illumina sequencing run from the RunInfo.xml. |
-| FastqToBam | Generates an unmapped BAM (or SAM or CRAM) file from fastq files. Takes in one or more fastq files (optionally gzipped), each representing a different sequencing read (e.g. R1, R2, I1 or I2) and can use a set of read structures to allocate bases in those reads to template reads, sample indices, unique molecular indices, cell barcodes, or to designate bases to be skipped over. |
-| HardMaskFasta | Converts soft-masked sequence to hard-masked in a FASTA file. All lower case bases are converted to Ns, all other bases are left unchanged. Line lengths are also standardized to allow easy indexing with 'samtools faidx' |
-| SortFastq | Sorts a FASTQ file. Sorts the records in a FASTQ file based on the lexicographic ordering of their read names. Input and output files can be either uncompressed or gzip-compressed. |
-| SortSequenceDictionary | Sorts a sequence dictionary file in the order of another sequence dictionary. |
-| TrimFastq | Trims reads in one or more line-matched fastq files to a specific read length. The individual fastq files are expected to have the same set of reads, as would be the case with an 'r1.fastq' and 'r2.fastq' file for the same sample. |
-| UpdateFastaContigNames | Updates the sequence names in a FASTA. |
-| UpdateIntervalListContigNames | Updates the sequence names in an Interval List file. |
+| fgbio CollectAlternateContigNames | Collates the alternate contig names from an NCBI assembly report. The input is to be the '*.assembly_report.txt' obtained from NCBI. The output will be a "sequence dictionary", which is a valid SAM file, containing the version header line and one line per contig. The primary contig name (i.e. '@SQ.SN') is specified with '--primary' option, while alternate names (i.e. aliases) are specified with the '--alternates' option. The 'Assigned-Molecule' column, if specified as an '--alternate', will only be used for sequences with 'Sequence-Role' 'assembled-molecule'. When updating an existing sequence dictionary with '--existing' the primary contig names must match. I.e. the contig name from the assembly report column specified by '--primary' must match the contig name in the existing sequence dictionary ('@SQ.SN'). All contigs in the existing sequence dictionary must be present in the assembly report. Furthermore, contigs in the assembly report not found in the sequence dictionary will be ignored. |
+| fgbio DemuxFastqs | Performs sample demultiplexing on FASTQs. |
+| fgbio ExtractBasecallingParamsForPicard | Extracts sample and library information from an sample sheet for a given lane. |
+| fgbio ExtractIlluminaRunInfo | Extracts information about an Illumina sequencing run from the RunInfo.xml. |
+| fgbio FastqToBam | Generates an unmapped BAM (or SAM or CRAM) file from fastq files. Takes in one or more fastq files (optionally gzipped), each representing a different sequencing read (e.g. R1, R2, I1 or I2) and can use a set of read structures to allocate bases in those reads to template reads, sample indices, unique molecular indices, cell barcodes, or to designate bases to be skipped over. |
+| fgbio HardMaskFasta | Converts soft-masked sequence to hard-masked in a FASTA file. All lower case bases are converted to Ns, all other bases are left unchanged. Line lengths are also standardized to allow easy indexing with 'samtools faidx' |
+| fgbio SortFastq | Sorts a FASTQ file. Sorts the records in a FASTQ file based on the lexicographic ordering of their read names. Input and output files can be either uncompressed or gzip-compressed. |
+| fgbio SortSequenceDictionary | Sorts a sequence dictionary file in the order of another sequence dictionary. |
+| fgbio TrimFastq | Trims reads in one or more line-matched fastq files to a specific read length. The individual fastq files are expected to have the same set of reads, as would be the case with an 'r1.fastq' and 'r2.fastq' file for the same sample. |
+| fgbio UpdateFastaContigNames | Updates the sequence names in a FASTA. |
+| fgbio UpdateIntervalListContigNames | Updates the sequence names in an Interval List file. |
 
 ## Reference documentation
 - [fgbio Tools Overview](./references/fulcrumgenomics_github_io_fgbio_tools_latest.md)

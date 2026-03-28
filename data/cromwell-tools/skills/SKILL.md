@@ -4,7 +4,6 @@ description: Cromwell-tools provides a Python library and command-line interface
 homepage: http://github.com/broadinstitute/cromwell-tools
 ---
 
-
 # cromwell-tools
 
 ## Overview
@@ -101,11 +100,11 @@ response = api.query(query_dict=query_dict, auth=auth)
 | cromwell-tools health | Check that cromwell is running and that provided authentication is valid. |
 | cromwell-tools metadata | Retrieve the workflow and call-level metadata for a specified workflow by UUID. |
 | cromwell-tools query | Query for workflows. |
+| cromwell-tools release_hold | Request Cromwell to release the hold on a workflow. |
 | cromwell-tools status | Get the status of one or more workflows. |
 | cromwell-tools submit | Submit a WDL workflow on Cromwell. |
 | cromwell-tools task_runtime | Output tsv breakdown of task runtimes by execution event categories |
 | cromwell-tools wait | Wait for one or more running workflow to finish. |
-| release_hold | Request Cromwell to release the hold on a workflow. |
 
 ## Reference documentation
 - [Cromwell-tools Python API Quickstart](./references/cromwell-tools_readthedocs_io_en_latest_Tutorials_Quickstart_api_quickstart.html.md)

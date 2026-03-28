@@ -4,7 +4,6 @@ description: Nebulizer is a command-line suite for performing administrative tas
 homepage: https://github.com/pjbriggs/nebulizer
 ---
 
-
 # nebulizer
 
 ## Overview
@@ -61,32 +60,32 @@ Nebulizer requires a Galaxy URL and an API key (or user credentials) for all ope
 
 | Command | Description |
 |---------|-------------|
-| add_key | Store new Galaxy URL and API key. |
-| add_library_datasets | Add datasets to a data library. |
-| config | Report the Galaxy configuration. |
-| create_batch_users | Create multiple Galaxy users from a template. |
-| create_library | Create new data library. |
-| create_library_folder | Create new folder in a data library. |
-| create_user | Create new Galaxy user. |
-| create_users_from_file | Create multiple Galaxy users from a file. |
-| delete_user | Delete a user account from a Galaxy instance |
-| install_tool | Install tool(s) from toolshed. |
-| list_libraries | List data libraries and contents. |
-| list_tool_panel | List tool panel contents. |
-| list_users | List users in Galaxy instance. |
+| nebulizer add_key | Store new Galaxy URL and API key. |
+| nebulizer add_library_datasets | Add datasets to a data library. |
+| nebulizer config | Report the Galaxy configuration. |
+| nebulizer create_batch_users | Create multiple Galaxy users from a template. |
+| nebulizer create_library | Create new data library. |
+| nebulizer create_library_folder | Create new folder in a data library. |
+| nebulizer create_user | Create new Galaxy user. |
+| nebulizer create_users_from_file | Create multiple Galaxy users from a file. |
+| nebulizer delete_user | Delete a user account from a Galaxy instance |
+| nebulizer install_tool | Install tool(s) from toolshed. |
+| nebulizer list_libraries | List data libraries and contents. |
+| nebulizer list_tool_panel | List tool panel contents. |
 | nebulizer list_tools | List information about tools and installed tool repositories. |
+| nebulizer list_users | List users in Galaxy instance. |
+| nebulizer ping | Sends a request to GALAXY and reports the status of the response and the time taken. |
+| nebulizer quota_add | Create new quota. |
+| nebulizer quota_del | Deletes QUOTA from GALAXY. |
+| nebulizer quota_mod | Modify an existing quota. |
+| nebulizer quotas | List quotas in Galaxy instance. |
+| nebulizer remove_key | Remove stored Galaxy API key. |
+| nebulizer search_toolshed | Search for repositories on a Galaxy toolshed. |
+| nebulizer uninstall_tool | Uninstall previously installed tool. |
+| nebulizer update_key | Update stored Galaxy API key. |
+| nebulizer update_tool | Update tool installed from toolshed. |
+| nebulizer whoami | Print user details associated with API key. |
 | nebulizer_list_keys | List stored Galaxy API key aliases. |
-| ping | Sends a request to GALAXY and reports the status of the response and the time taken. |
-| quota_add | Create new quota. |
-| quota_del | Deletes QUOTA from GALAXY. |
-| quota_mod | Modify an existing quota. |
-| quotas | List quotas in Galaxy instance. |
-| remove_key | Remove stored Galaxy API key. |
-| search_toolshed | Search for repositories on a Galaxy toolshed. |
-| uninstall_tool | Uninstall previously installed tool. |
-| update_key | Update stored Galaxy API key. |
-| update_tool | Update tool installed from toolshed. |
-| whoami | Print user details associated with API key. |
 
 ## Reference documentation
 - [Nebulizer GitHub Overview](./references/github_com_pjbriggs_nebulizer.md)

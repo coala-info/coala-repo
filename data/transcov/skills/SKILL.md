@@ -4,7 +4,6 @@ description: transcov analyzes read depth distribution relative to transcription
 homepage: https://github.com/hogfeldt/transcov
 ---
 
-
 # transcov
 
 ## Overview
@@ -52,15 +51,15 @@ transcov collapse <matrix1.npy> <matrix2.npy> ... --output-file <collapsed_matri
 
 | Command | Description |
 |---------|-------------|
-| cut-tails | Cut tails of coverage profiles. |
-| generate-coverage | Generate coverage tracks from BAM files based on BED regions. |
-| generate-length | Generate transcript lengths from BAM and BED files. |
-| generate-read-ends | Generate read ends from BAM and BED files. |
-| pick-subset | Picks a subset of samples from a transcov index. |
-| plot-coverage-dist | Plot coverage distribution from a coverage matrix. |
-| plot-tensor-dist | Plot distance distribution for tensors. |
 | transcov collapse | (No description) |
+| transcov cut-tails | Cut tails of coverage profiles. |
+| transcov generate-coverage | Generate coverage tracks from BAM files based on BED regions. |
 | transcov generate-end-length | Generate end-length distributions from BAM and BED files. |
+| transcov generate-length | Generate transcript lengths from BAM and BED files. |
+| transcov generate-read-ends | Generate read ends from BAM and BED files. |
+| transcov pick-subset | Picks a subset of samples from a transcov index. |
+| transcov plot-coverage-dist | Plot coverage distribution from a coverage matrix. |
+| transcov plot-tensor-dist | Plot distance distribution for tensors. |
 | transcov_preprocess | Preprocess annotation file for TransCov |
 
 ## Reference documentation

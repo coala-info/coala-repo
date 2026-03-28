@@ -4,7 +4,6 @@ description: The Prokaryotic Genomics and Comparative Genomics Analysis Pipeline
 homepage: https://github.com/liaochenlanruo/pgcgap/blob/master/README.md
 ---
 
-
 # pgcgap
 
 ## Overview
@@ -30,6 +29,19 @@ The pipeline automates the following tasks in a single run:
 - **Input Preparation:** Ensure your input reads are properly formatted. The pipeline is optimized for pair-end reads but supports long-read technologies (ONT/PacBio) for hybrid or long-read-only assemblies.
 - **Computational Resources:** Because the pipeline performs intensive tasks like pan-genome construction and phylogenetic tree building, ensure the execution environment has sufficient CPU cores and RAM, especially for large datasets.
 - **One-Line Execution:** The primary advantage of pgcgap is its "one line of commands" philosophy. Users should aim to provide all necessary input paths and parameters in the initial call to allow the pipeline to handle the intermediate file transitions.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| pgcgap | The prokaryotic genomics and comparative genomics analysis pipeline |
+| pgcgap | The prokaryotic genomics and comparative genomics analysis pipeline |
+| pgcgap | The prokaryotic genomics and comparative genomics analysis pipeline |
+| pgcgap | The prokaryotic genomics and comparative genomics analysis pipeline |
+| pgcgap | The prokaryotic genomics and comparative genomics analysis pipeline |
+| pgcgap | The prokaryotic genomics and comparative genomics analysis pipeline |
 
 ## Reference documentation
 - [pgcgap Overview](./references/anaconda_org_channels_bioconda_packages_pgcgap_overview.md)

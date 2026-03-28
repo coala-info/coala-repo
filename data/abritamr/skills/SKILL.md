@@ -4,7 +4,6 @@ description: abritamr is a bioinformatics pipeline that identifies antimicrobial
 homepage: https://github.com/MDU-PHL/abritamr
 ---
 
-
 # abritamr
 
 ## Overview
@@ -53,8 +52,8 @@ abritamr run --contigs isolates.txt --amrfinder_db /path/to/external/db
 
 | Command | Description |
 |---------|-------------|
-| report | Generate reports for abritamr results |
-| run | Run AMR detection using abritamr and amrfinderplus |
+| abritamr report | Generate reports for abritamr results |
+| abritamr run | Run AMR detection using abritamr and amrfinderplus |
 
 ## Reference documentation
 - [abritamr Wiki - Home](./references/github_com_MDU-PHL_abritamr_wiki.md)

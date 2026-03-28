@@ -4,7 +4,6 @@ description: Cameo is a computer-aided metabolic engineering and optimization to
 homepage: http://cameo.bio
 ---
 
-
 # cameo
 
 cameo/
@@ -87,6 +86,15 @@ Cameo provides tools to analyze and optimize specific pathways.
 *   **Reaction IDs**: Pay close attention to reaction and metabolite IDs. They are case-sensitive and must match exactly within the model.
 *   **Objective Function**: Clearly define the objective function for FBA. This is crucial for meaningful optimization results. Common objectives include biomass production or the production of a specific metabolite.
 *   **Documentation**: Refer to the official cameo documentation for detailed command syntax and advanced options, as the CLI can be extensive.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| cameo design | Compute strain designs for desired product. |
+| cameo search | Search for available products. |
 
 ## Reference documentation
 - [Cameo Overview on Anaconda.org](https://anaconda.org/bioconda/cameo)

@@ -4,7 +4,6 @@ description: grenedalf is a high-performance command-line toolkit for the statis
 homepage: https://github.com/lczech/grenedalf
 ---
 
-
 # grenedalf
 
 ## Overview
@@ -69,14 +68,14 @@ Pool-seq data is sensitive to sequencing errors and mapping biases.
 
 | Command | Description |
 |---------|-------------|
-| cathedral-plot | Create a cathedral plot, using the pre-computated cathedral data. |
-| citation | Print references to be cited when using grenedalf. |
-| fst-cathedral | Compute the data for an FST cathedral plot. |
+| grenedalf cathedral-plot | Create a cathedral plot, using the pre-computated cathedral data. |
+| grenedalf citation | Print references to be cited when using grenedalf. |
 | grenedalf diversity | Compute pool-sequencing corrected diversity measures Theta Pi, Theta Watterson, and Tajima's D. |
 | grenedalf frequency | Create a table with per-sample and/or total base counts and/or frequencies at positions in the genome. |
 | grenedalf fst | Compute pool-sequencing corrected measures of FST. |
+| grenedalf fst-cathedral | Compute the data for an FST cathedral plot. |
+| grenedalf simulate | Create a file with simulated random frequency data. |
 | grenedalf sync | Create a sync file that lists per-sample base counts at each position in the genome. |
-| simulate | Create a file with simulated random frequency data. |
 
 ## Reference documentation
 

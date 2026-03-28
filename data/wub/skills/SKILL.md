@@ -4,7 +4,6 @@ description: wub is a bioinformatics tool suite for analyzing and simulating nan
 homepage: https://github.com/nanoporetech/wub
 ---
 
-
 # wub
 
 ## Overview
@@ -36,6 +35,16 @@ Use these tools to extract metrics from aligned nanopore reads:
 - **Virtual Environments**: Always run `wub` within a dedicated virtual environment to avoid conflicts with Biopython or other dependencies.
 - **Data Merging**: Use the provided tab-separated file merging utility for consolidating outputs from parallelized runs across multiple flow cells.
 - **Developer Mode**: If modifying the source code or adding custom scripts, install in developer mode using `python setup.py develop` to ensure changes are reflected immediately in the CLI tools.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| bam_accuracy.py | Produce accuracy statistics of the input BAM file. Calculates global accuracy and identity and various per-read statistics. The input BAM file must be sorted by coordinates and indexed. |
+| bam_cov.py | Produce refrence coverage table. |
+| bam_frag_coverage.py | Produce aggregated and individual plots of fragment coverage. |
 
 ## Reference documentation
 - [wub Overview](./references/anaconda_org_channels_bioconda_packages_wub_overview.md)

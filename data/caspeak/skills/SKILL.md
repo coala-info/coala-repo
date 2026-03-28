@@ -4,7 +4,6 @@ description: CasPeak identifies mobile element insertions from targeted Nanopore
 homepage: https://github.com/Rye-lxy/CasPeak
 ---
 
-
 # caspeak
 
 ## Overview
@@ -69,11 +68,11 @@ caspeak plot --maf result/validate.maf
 | Command | Description |
 |---------|-------------|
 | caspeak | caspeak: error: argument {align,peak,valid,exec,plot}: invalid choice: 'sequence' (choose from align, peak, valid, exec, plot) |
+| caspeak exec | Execute the CASpeak pipeline for detecting mobile element insertions. |
 | caspeak_align | Aligns reads to a reference genome, considering MEI insertions. |
 | caspeak_peak | Detects peaks of mobile element insertions in sequencing data. |
 | caspeak_plot | Plot MAF files |
 | caspeak_valid | Validate peaks |
-| exec | Execute the CASpeak pipeline for detecting mobile element insertions. |
 
 ## Reference documentation
 - [CasPeak README](./references/github_com_Rye-lxy_CasPeak_blob_master_README.md)

@@ -4,7 +4,6 @@ description: T1K genotypes highly polymorphic gene families like HLA and KIR by 
 homepage: https://github.com/mourisl/T1K
 ---
 
-
 # t1k
 
 ## Overview

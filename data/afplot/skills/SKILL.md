@@ -4,7 +4,6 @@ description: afplot visualizes allele frequency distributions from VCF files to 
 homepage: https://github.com/sndrtj/afplot
 ---
 
-
 # afplot
 
 ## Overview
@@ -67,8 +66,8 @@ afplot whole-genome histogram -v input.vcf.gz -e '.*random.*|.*Un.*' -o filtered
 
 | Command | Description |
 |---------|-------------|
-| regions | Create plots for regions of interest for one VCF. Plots will be colored on call type (het/hom_alt/hom_ref). Your VCF file MUST contain an AD column in the FORMAT field, have contig names and lengths in the header, and be indexed with tabix. |
-| whole-genome | Create whole-genome plots for one or multiple VCFs. If only one VCF is supplied, plots will be colored on call type (het/hom_ref/hom_alt). If multiple VCF files are supplied, plots will be colored per file/label. Only one sample per VCF file can be plotted. |
+| afplot regions | Create plots for regions of interest for one VCF. Plots will be colored on call type (het/hom_alt/hom_ref). Your VCF file MUST contain an AD column in the FORMAT field, have contig names and lengths in the header, and be indexed with tabix. |
+| afplot whole-genome | Create whole-genome plots for one or multiple VCFs. If only one VCF is supplied, plots will be colored on call type (het/hom_ref/hom_alt). If multiple VCF files are supplied, plots will be colored per file/label. Only one sample per VCF file can be plotted. |
 
 ## Reference documentation
 - [afplot GitHub Repository](./references/github_com_sndrtj_afplot_blob_master_README.md)

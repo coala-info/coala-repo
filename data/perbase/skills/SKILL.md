@@ -4,7 +4,6 @@ description: Perbase is a high-performance bioinformatics utility designed to ca
 homepage: https://github.com/sstadick/perbase
 ---
 
-
 # perbase
 
 ## Overview
@@ -56,8 +55,8 @@ perbase base-depth input.bam --ref reference.fasta
 
 | Command | Description |
 |---------|-------------|
-| base-depth | Calculate the depth at each base, per-nucleotide |
-| only-depth | Calculate the only the depth at each base |
+| perbase base-depth | Calculate the depth at each base, per-nucleotide |
+| perbase only-depth | Calculate the only the depth at each base |
 
 ## Reference documentation
 - [Perbase GitHub Repository](./references/github_com_sstadick_perbase.md)

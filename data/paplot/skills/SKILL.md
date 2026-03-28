@@ -4,7 +4,6 @@ description: "Paplot converts genomic data text files into interactive, browser-
 homepage: https://github.com/Genomon-Project/paplot.git
 ---
 
-
 # paplot
 
 ## Overview
@@ -48,12 +47,12 @@ Use the `tooltip_format` options in the config file to display specific metadata
 
 | Command | Description |
 |---------|-------------|
-| ca | paplot ca tool for generating reports |
-| index | Generate index for paplot output |
-| mutation | Generate mutation reports using paplot |
-| pmsignature | paplot pmsignature tool for generating reports |
-| qc | Quality control reporting tool for paplot |
-| signature | paplot signature tool for generating mutational signature reports |
+| paplot ca | paplot ca tool for generating reports |
+| paplot index | Generate index for paplot output |
+| paplot mutation | Generate mutation reports using paplot |
+| paplot pmsignature | paplot pmsignature tool for generating reports |
+| paplot qc | Quality control reporting tool for paplot |
+| paplot signature | paplot signature tool for generating mutational signature reports |
 
 ## Reference documentation
 

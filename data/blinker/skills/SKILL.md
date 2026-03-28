@@ -4,7 +4,6 @@ description: Blink Shell is a professional-grade terminal emulator for iOS and i
 homepage: https://github.com/blinksh/blink
 ---
 
-
 # blinker
 
 ## Overview

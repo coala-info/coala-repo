@@ -4,7 +4,6 @@ description: Velvet is a genomic de novo assembler optimized for short-read sequ
 homepage: https://github.com/dzerbino/velvet
 ---
 
-
 # velvet
 
 ## Overview

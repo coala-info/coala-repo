@@ -4,7 +4,6 @@ description: Segway is a genomic segmentation tool that uses Dynamic Bayesian Ne
 homepage: http://segway.hoffmanlab.org/
 ---
 
-
 # segway
 
 ## Overview
@@ -70,9 +69,9 @@ segway posterior <input.genomedata> <traindir> <posteriordir>
 
 | Command | Description |
 |---------|-------------|
-| annotate | Annotates genomic data using a trained model. |
+| segway annotate | Annotates genomic data using a trained model. |
 | segway posterior | Compute posterior probabilities for Segway segmentation. |
-| train | Train a Segway model. |
+| segway train | Train a Segway model. |
 
 ## Reference documentation
 - [Quickstart Guide](./references/segway_hoffmanlab_org_doc_3.0.4_quick.html.md)

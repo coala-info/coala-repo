@@ -4,7 +4,6 @@ description: Samtools is a suite of utilities for processing and manipulating hi
 homepage: https://github.com/samtools/samtools
 ---
 
-
 # samtools
 
 ## Overview
@@ -59,46 +58,46 @@ Most downstream tools require coordinate-sorted files and an index.
 
 | Command | Description |
 |---------|-------------|
-| addreplacerg | Adds or replaces read group tags in a SAM, BAM, or CRAM file. |
-| ampliconclip | Soft clips read alignments where they match BED file defined regions. Default clipping is only on the 5' end. |
-| ampliconstats | Produce statistics from amplicon sequencing alignment files |
-| bedcov | Calculate read depth per BED region |
-| calmd | Generate the MD tag and optionally compute BAQ (Base Alignment Quality) |
-| cat | Concatenate BAM or CRAM files, first those in <bamlist.fofn>, then those on the command line. |
-| checksum | Generate checksums for SAM/BAM/CRAM files or merge existing checksum outputs. |
-| collate | Shuffles and groups reads together by name |
-| consensus | Generate consensus sequence from a BAM file |
-| coverage | Produces a histogram or tabular summary of coverage for input BAM files. |
-| cram-size | Calculate the size of CRAM files |
-| depad | Convert a padded BAM/SAM file to an unpadded BAM/SAM file |
-| depth | Compute the depth of coverage for one or more BAM/SAM/CRAM files. |
-| dict | Create a sequence dictionary file from a fasta file |
-| faidx | Index or extract regions from FASTA/FASTQ files |
-| fasta | Converts a SAM, BAM or CRAM to FASTA format. |
-| fastq | Converts a SAM, BAM or CRAM to FASTQ format. |
-| fixmate | Fill in mate coordinates, ISIZE and mate related flags from a name-sorted alignment file. |
-| flags | Convert between textual and numeric flag representation |
-| flagstat | Counts the number of alignments for each FLAG type |
-| fqidx | Index and retrieve sequences from FASTQ files |
-| head | Display header and/or alignment record lines from a SAM, BAM, or CRAM file. |
-| idxstats | Reports alignment statistics from a BAM index file, including sequence names, sequence lengths, number of mapped reads, and number of unmapped reads. |
-| import | Import FASTQ files into SAM/BAM/CRAM format |
-| index | Generate an index for BAM/CRAM files |
-| markdup | Mark duplicate alignments from a coordinate-sorted file that has gone through fixmates. The input file must be coordinate sorted and must have gone through fixmates with the mate scoring option on. |
-| merge | Merge multiple sorted alignment files into one. |
-| mpileup | Generate text pileup from BAM files |
-| phase | Call and phase heterozygous SNPs |
-| quickcheck | Quickly check if SAM/BAM/CRAM files are intact and have proper headers. |
-| reference | Extract the reference sequence from a CRAM file |
-| reheader | Replace the header in a SAM/BAM/CRAM file with a new header. |
-| reset | Reset a SAM/BAM/CRAM file, removing or retaining specific tags and metadata. |
-| samples | List samples from BAM/CRAM files, optionally checking for indices and associating with reference fasta files. |
-| sort | Sort alignment files by coordinates or name |
-| split | Splits a file by read group or tag value into multiple output files. |
-| stats | The program collects statistics from BAM files. The output can be visualized using plot-bamstats. |
-| targetcut | Targetcut identifies and cuts target regions from a BAM file, often used for processing Fosmid pool sequencing data. |
-| tview | Text alignment viewer |
-| view | View and convert SAM/BAM/CRAM files |
+| samtools addreplacerg | Adds or replaces read group tags in a SAM, BAM, or CRAM file. |
+| samtools ampliconclip | Soft clips read alignments where they match BED file defined regions. Default clipping is only on the 5' end. |
+| samtools ampliconstats | Produce statistics from amplicon sequencing alignment files |
+| samtools bedcov | Calculate read depth per BED region |
+| samtools calmd | Generate the MD tag and optionally compute BAQ (Base Alignment Quality) |
+| samtools cat | Concatenate BAM or CRAM files, first those in <bamlist.fofn>, then those on the command line. |
+| samtools checksum | Generate checksums for SAM/BAM/CRAM files or merge existing checksum outputs. |
+| samtools collate | Shuffles and groups reads together by name |
+| samtools consensus | Generate consensus sequence from a BAM file |
+| samtools coverage | Produces a histogram or tabular summary of coverage for input BAM files. |
+| samtools cram-size | Calculate the size of CRAM files |
+| samtools depad | Convert a padded BAM/SAM file to an unpadded BAM/SAM file |
+| samtools depth | Compute the depth of coverage for one or more BAM/SAM/CRAM files. |
+| samtools dict | Create a sequence dictionary file from a fasta file |
+| samtools faidx | Index or extract regions from FASTA/FASTQ files |
+| samtools fasta | Converts a SAM, BAM or CRAM to FASTA format. |
+| samtools fastq | Converts a SAM, BAM or CRAM to FASTQ format. |
+| samtools fixmate | Fill in mate coordinates, ISIZE and mate related flags from a name-sorted alignment file. |
+| samtools flags | Convert between textual and numeric flag representation |
+| samtools flagstat | Counts the number of alignments for each FLAG type |
+| samtools fqidx | Index and retrieve sequences from FASTQ files |
+| samtools head | Display header and/or alignment record lines from a SAM, BAM, or CRAM file. |
+| samtools idxstats | Reports alignment statistics from a BAM index file, including sequence names, sequence lengths, number of mapped reads, and number of unmapped reads. |
+| samtools import | Import FASTQ files into SAM/BAM/CRAM format |
+| samtools index | Generate an index for BAM/CRAM files |
+| samtools markdup | Mark duplicate alignments from a coordinate-sorted file that has gone through fixmates. The input file must be coordinate sorted and must have gone through fixmates with the mate scoring option on. |
+| samtools merge | Merge multiple sorted alignment files into one. |
+| samtools mpileup | Generate text pileup from BAM files |
+| samtools phase | Call and phase heterozygous SNPs |
+| samtools quickcheck | Quickly check if SAM/BAM/CRAM files are intact and have proper headers. |
+| samtools reference | Extract the reference sequence from a CRAM file |
+| samtools reheader | Replace the header in a SAM/BAM/CRAM file with a new header. |
+| samtools reset | Reset a SAM/BAM/CRAM file, removing or retaining specific tags and metadata. |
+| samtools samples | List samples from BAM/CRAM files, optionally checking for indices and associating with reference fasta files. |
+| samtools sort | Sort alignment files by coordinates or name |
+| samtools split | Splits a file by read group or tag value into multiple output files. |
+| samtools stats | The program collects statistics from BAM files. The output can be visualized using plot-bamstats. |
+| samtools targetcut | Targetcut identifies and cuts target regions from a BAM file, often used for processing Fosmid pool sequencing data. |
+| samtools tview | Text alignment viewer |
+| samtools view | View and convert SAM/BAM/CRAM files |
 
 ## Reference documentation
 - [Samtools GitHub Repository](./references/github_com_samtools_samtools.md)

@@ -4,7 +4,6 @@ description: kssd performs rapid genomic sequence analysis and evolutionary dist
 homepage: https://github.com/yhg926/public_kssd
 ---
 
-
 # kssd
 
 ## Overview
@@ -70,9 +69,9 @@ Manipulate sketches to find shared or unique genomic content.
 |---------|-------------|
 | kssd composite | The composite doc prefix. |
 | kssd dist | The dist doc prefix. |
+| kssd set | The set doc prefix. |
 | kssd shuffle | The shuffle doc prefix. |
 | kssd_reverse | The reverse doc prefix. |
-| set | The set doc prefix. |
 
 ## Reference documentation
 - [Kssd GitHub README](./references/github_com_yhg926_public_kssd_blob_master_README.md)

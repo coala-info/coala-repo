@@ -4,7 +4,6 @@ description: Reveal.js is an HTML framework for creating professional, interacti
 homepage: https://github.com/hakimel/reveal.js
 ---
 
-
 # reveal
 
 ## Overview

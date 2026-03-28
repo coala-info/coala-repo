@@ -4,7 +4,6 @@ description: Viguno integrates clinical phenotypes with genomic data by providin
 homepage: https://github.com/bihealth/viguno
 ---
 
-
 # viguno
 
 ## Overview
@@ -52,10 +51,10 @@ viguno server run \
 
 | Command | Description |
 |---------|-------------|
-| convert | Convert HPO text files to binary format |
-| server | Clap sub command below "server" |
 | viguno | A tool for processing and analyzing biological sequences. |
+| viguno convert | Convert HPO text files to binary format |
 | viguno query | Prepare values for `query` |
+| viguno server | Clap sub command below "server" |
 
 ## Reference documentation
 - [Viguno README](./references/github_com_varfish-org_viguno_blob_main_README.md)

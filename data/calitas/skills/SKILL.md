@@ -4,7 +4,6 @@ description: CALITAS identifies potential CRISPR off-target sites by performing 
 homepage: https://github.com/editasmedicine/calitas
 ---
 
-
 # calitas
 
 ## Overview
@@ -65,10 +64,10 @@ Then pass the prepared VCF to `SearchReference` using the `-v` flag to find off-
 
 | Command | Description |
 |---------|-------------|
-| AlignToReference | Performs glocal alignment of query sequence to a window on the reference. Input should be a tab-delimited file with the following columns (with headers): |
-| PairwiseAlignSequences | Performs pairwise alignment of sequences. Input is a file with two sequences per line, separated by whitespace. Sequences may be composed of DNA and RNA bases and ambiguity codes. No headers are required or expected. |
-| PrepareVcf | Prepares a VCF for optimal use by SearchReference. Does the following: |
-| SearchReference | Searches a reference sequence for alignments of a guide+PAM. |
+| calitas AlignToReference | Performs glocal alignment of query sequence to a window on the reference. Input should be a tab-delimited file with the following columns (with headers): |
+| calitas PairwiseAlignSequences | Performs pairwise alignment of sequences. Input is a file with two sequences per line, separated by whitespace. Sequences may be composed of DNA and RNA bases and ambiguity codes. No headers are required or expected. |
+| calitas PrepareVcf | Prepares a VCF for optimal use by SearchReference. Does the following: |
+| calitas SearchReference | Searches a reference sequence for alignments of a guide+PAM. |
 
 ## Reference documentation
 - [CALITAS README](./references/github_com_editasmedicine_calitas_blob_master_README.md)

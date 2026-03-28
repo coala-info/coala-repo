@@ -4,7 +4,6 @@ description: MoDLE is a high-performance stochastic simulator that models the fo
 homepage: https://github.com/paulsengroup/MoDLE
 ---
 
-
 # modle
 
 ## Overview
@@ -71,8 +70,8 @@ MoDLE produces several files:
 
 | Command | Description |
 |---------|-------------|
-| simulate | Simulate loop extrusion and write resulting molecular contacts in a .cool file. |
-| simulate | Simulate loop extrusion and write resulting molecular contacts in a .cool file. |
+| modle simulate | Simulate loop extrusion and write resulting molecular contacts in a .cool file. |
+| modle simulate | Simulate loop extrusion and write resulting molecular contacts in a .cool file. |
 
 ## Reference documentation
 - [MoDLE GitHub Repository](./references/github_com_paulsengroup_MoDLE.md)

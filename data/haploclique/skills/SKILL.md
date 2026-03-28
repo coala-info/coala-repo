@@ -4,7 +4,6 @@ description: "HaploClique reconstructs viral quasispecies from NGS data. Use whe
 homepage: https://github.com/cbg-ethz/haploclique
 ---
 
-
 # haploclique
 
 Installs and utilizes the haploclique tool for viral quasispecies assembly.
@@ -50,6 +49,15 @@ haploclique <input_reads_file> [options]
 *   **Maximal Clique Finding:** The core of haploclique relies on finding maximal cliques in a graph constructed from sequence reads. Understanding this underlying principle can help in interpreting results and troubleshooting.
 *   **Viral Quasispecies:** Be aware of the biological context of viral quasispecies, which are populations of closely related but distinct viral genomes. Haploclique is specifically designed to handle this complexity.
 *   **Large Insertions/Deletions:** The tool's ability to detect large structural variations is a key feature. This can be crucial for understanding viral evolution and adaptation.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| haploclique | predicts haplotypes from NGS reads. |
+| haploclique | predicts haplotypes from NGS reads. |
 
 ## Reference documentation
 

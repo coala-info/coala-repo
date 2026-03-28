@@ -4,7 +4,6 @@ description: BLAST compares primary biological sequence information to identify 
 homepage: https://blast.ncbi.nlm.nih.gov/doc/blast-help/
 ---
 
-
 # blast
 
 ## Overview
@@ -65,8 +64,14 @@ Adjust these parameters to refine search sensitivity and speed:
 | Command | Description |
 |---------|-------------|
 | blast_formatter | Stand-alone BLAST formatter client, version 2.17.0+ |
-| segmasker | Application to create BLAST databases |
-| windowmasker | Application to create BLAST databases |
+| blastn | Nucleotide-Nucleotide BLAST 2.17.0+ |
+| blastp | Protein-Protein BLAST 2.17.0+ |
+| blastx | Translated Query-Protein Subject BLAST 2.17.0+ |
+| makeblastdb | Application to create BLAST databases, version 2.17.0+ |
+| makeblastdb segmasker | Application to create BLAST databases |
+| makeblastdb windowmasker | Application to create BLAST databases |
+| tblastn | Protein Query-Translated Subject BLAST 2.17.0+ |
+| tblastx | Translated Query-Translated Subject BLAST 2.17.0+ |
 
 ## Reference documentation
 - [BLAST Help FAQ](./references/blast_ncbi_nlm_nih_gov_doc_blast-help_FAQ.html.md)

@@ -4,7 +4,6 @@ description: Mehari is a high-performance tool for the functional annotation of 
 homepage: https://github.com/bihealth/mehari
 ---
 
-
 # mehari
 
 ## Overview
@@ -63,10 +62,10 @@ mehari server run --db-path path/to/combined_dbs
 
 | Command | Description |
 |---------|-------------|
-| annotate | Annotation related commands |
+| mehari annotate | Annotation related commands |
 | mehari db | Database-related commands |
-| server | Server related commands |
-| verify | Verification related commands |
+| mehari server | Server related commands |
+| mehari verify | Verification related commands |
 
 ## Reference documentation
 - [Mehari README](./references/github_com_varfish-org_mehari_blob_main_README.md)

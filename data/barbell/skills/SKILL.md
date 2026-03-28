@@ -4,7 +4,6 @@ description: Barbell is a pattern-aware demultiplexer designed to resolve trimmi
 homepage: https://github.com/rickbeeloo/barbell
 ---
 
-
 # barbell
 
 ## Overview
@@ -53,11 +52,11 @@ barbell trim -i reads.fastq -a annotations.tsv -o trimmed_reads/
 
 | Command | Description |
 |---------|-------------|
-| annotate | Annotate FASTQ files with barcode information |
-| filter | Filter annotation files based on pattern |
-| inspect | View most common patterns in annotation |
-| kit | Run a preset |
-| trim | Trim and sort reads based on filtered annotations |
+| barbell annotate | Annotate FASTQ files with barcode information |
+| barbell filter | Filter annotation files based on pattern |
+| barbell inspect | View most common patterns in annotation |
+| barbell kit | Run a preset |
+| barbell trim | Trim and sort reads based on filtered annotations |
 
 ## Reference documentation
 - [Barbell README](./references/github_com_rickbeeloo_barbell_blob_master_README.md)

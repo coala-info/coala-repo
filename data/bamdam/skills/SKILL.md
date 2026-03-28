@@ -4,7 +4,6 @@ description: bamdam processes ancient DNA BAM files to reduce their size and aut
 homepage: https://github.com/bdesanctis/bamdam
 ---
 
-
 # bamdam
 
 ## Overview
@@ -68,13 +67,13 @@ bamdam compute \
 
 | Command | Description |
 |---------|-------------|
+| bamdam plotbaminfo | Generate plots from BAM file information. |
 | bamdam shrink | Shrinks an LCA file and its corresponding BAM file by filtering nodes and alignments. |
 | bamdam_combine | Combine multiple bamdam compute output TSV files into a single file. |
 | bamdam_compute | Compute statistics from BAM and LCA files. |
 | bamdam_extract | Extracts reads from a BAM file based on taxonomic information. |
 | bamdam_krona | Generate Krona plots from BAM data. |
 | bamdam_plotdamage | Plot damage patterns from substitution files. |
-| plotbaminfo | Generate plots from BAM file information. |
 
 ## Reference documentation
 - [bamdam GitHub Repository](./references/github_com_bdesanctis_bamdam.md)

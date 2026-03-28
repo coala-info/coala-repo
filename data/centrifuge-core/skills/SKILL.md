@@ -4,7 +4,6 @@ description: Centrifuge is a high-performance microbial classification engine th
 homepage: https://github.com/infphilo/centrifuge
 ---
 
-
 # centrifuge-core
 
 ## Overview

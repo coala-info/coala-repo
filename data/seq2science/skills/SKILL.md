@@ -4,7 +4,6 @@ description: seq2science is a command-line toolset that streamlines functional g
 homepage: https://vanheeringen-lab.github.io/seq2science
 ---
 
-
 # seq2science
 
 ## Overview
@@ -54,9 +53,9 @@ To see a detailed description of what a specific workflow does, including the to
 
 | Command | Description |
 |---------|-------------|
-| explain | Explains what has/will be done for the workflow. This prints a string which can serve as a skeleton for your material & methods section. Supported workflows: scrna-seq, download-fastq, rna-seq, alignment, atac-seq, scatac-seq, chip-seq |
-| init | Initialises a default configuration and samples file for a specific workflow. Supported workflows: scrna-seq, download-fastq, rna-seq, alignment, atac-seq, scatac-seq, chip-seq. |
-| run | Run a complete workflow. This requires that a config and samples file are either present in the current directory, or passed as an argument. Supported workflows: scrna-seq, download-fastq, rna-seq, alignment, atac-seq, scatac-seq, chip-seq |
+| seq2science explain | Explains what has/will be done for the workflow. This prints a string which can serve as a skeleton for your material & methods section. Supported workflows: scrna-seq, download-fastq, rna-seq, alignment, atac-seq, scatac-seq, chip-seq |
+| seq2science init | Initialises a default configuration and samples file for a specific workflow. Supported workflows: scrna-seq, download-fastq, rna-seq, alignment, atac-seq, scatac-seq, chip-seq. |
+| seq2science run | Run a complete workflow. This requires that a config and samples file are either present in the current directory, or passed as an argument. Supported workflows: scrna-seq, download-fastq, rna-seq, alignment, atac-seq, scatac-seq, chip-seq |
 
 ## Reference documentation
 

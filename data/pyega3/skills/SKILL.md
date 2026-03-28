@@ -4,7 +4,6 @@ description: pyEGA3 is a Python client for securely accessing and downloading au
 homepage: https://github.com/EGA-archive/ega-download-client
 ---
 
-
 # pyega3
 
 ## Overview
@@ -65,11 +64,11 @@ For large genomic files, use these flags to improve throughput:
 
 | Command | Description |
 |---------|-------------|
-| files | List files in a dataset |
 | pyega3 | pyega3: error: argument subcommand: invalid choice: 'Download' (choose from 'datasets', 'files', 'fetch') |
 | pyega3 | pyega3: error: argument subcommand: invalid choice: 'JSON' (choose from 'datasets', 'files', 'fetch') |
 | pyega3 | pyega3: error: argument subcommand: invalid choice: 'this' (choose from 'datasets', 'files', 'fetch') |
 | pyega3 fetch | Fetch data from EGA. |
+| pyega3 files | List files in a dataset |
 
 ## Reference documentation
 - [EGA Download Client README](./references/github_com_EGA-archive_ega-download-client_blob_master_README.md)

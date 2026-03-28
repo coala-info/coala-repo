@@ -4,7 +4,6 @@ description: Short Read Connector compares large sets of sequencing reads by ind
 homepage: https://github.com/GATB/short_read_connector
 ---
 
-
 # short-read-connector
 
 ## Overview

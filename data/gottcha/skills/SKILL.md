@@ -4,7 +4,6 @@ description: GOTTCHA is a signature-based metagenomic tool used for taxonomic pr
 homepage: https://github.com/poeli/GOTTCHA
 ---
 
-
 # gottcha
 
 ## Overview

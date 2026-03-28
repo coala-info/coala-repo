@@ -4,7 +4,6 @@ description: snakeSV is a Snakemake-based framework for comprehensive structural
 homepage: https://github.com/RajLabMSSM/snakeSV/
 ---
 
-
 # snakesv
 
 ## Overview

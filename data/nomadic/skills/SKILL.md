@@ -4,7 +4,6 @@ description: Nomadic processes nanopore sequencing data in real-time to perform 
 homepage: https://jasonahendry.github.io/nomadic/
 ---
 
-
 # nomadic
 
 ## Overview
@@ -55,14 +54,14 @@ python scripts/simulate_sequencing.py
 
 | Command | Description |
 |---------|-------------|
-| backup | Backup entire nomadic workspace and associated minknow data to a different folder e.g. on a local hard disk drive. |
-| configure | Configure different nomadics functionality. This mostly sets standard   options in '.config.yaml' that can be overwritten from the command line. |
-| dashboard | Launch the dashboard without performing real-time analysis, used to view results of a previous experiment. |
+| nomadic backup | Backup entire nomadic workspace and associated minknow data to a different folder e.g. on a local hard disk drive. |
+| nomadic configure | Configure different nomadics functionality. This mostly sets standard   options in '.config.yaml' that can be overwritten from the command line. |
+| nomadic dashboard | Launch the dashboard without performing real-time analysis, used to view results of a previous experiment. |
 | nomadic download | Download target reference genome by specifying a `reference_name`, or download all available genomes with the `--all` flag |
-| process | (Re)Process data that was produced by MinKNOW |
-| realtime | Analyse data being produced by MinKNOW while sequencing is ongoing |
-| share | Share summary nomadic workspace and associated minknow data to another folder e.g. a cloud synchronised folder for sharing. |
-| start | Get started with nomadic. |
+| nomadic process | (Re)Process data that was produced by MinKNOW |
+| nomadic realtime | Analyse data being produced by MinKNOW while sequencing is ongoing |
+| nomadic share | Share summary nomadic workspace and associated minknow data to another folder e.g. a cloud synchronised folder for sharing. |
+| nomadic start | Get started with nomadic. |
 
 ## Reference documentation
 - [Nomadic GitHub README](./references/github_com_JasonAHendry_nomadic_blob_main_README.md)

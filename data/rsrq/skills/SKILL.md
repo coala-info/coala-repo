@@ -4,7 +4,6 @@ description: rsrq is a lightweight, high-performance job queueing system that us
 homepage: https://github.com/aaronmussig/rsrq
 ---
 
-
 # rsrq
 
 ## Overview
@@ -97,7 +96,7 @@ rsrq provides native support for Snakemake, allowing it to act as a cluster-like
 
 | Command | Description |
 |---------|-------------|
-| enqueue | Enqueue a batch of commands to be run |
+| rsrq enqueue | Enqueue a batch of commands to be run |
 | rsrq purge | Removes all data from Redis |
 | rsrq snakemake | Commands that can be issued by Snakemake for cluster execution |
 | rsrq status | Check the status of all objects in the Redis database |

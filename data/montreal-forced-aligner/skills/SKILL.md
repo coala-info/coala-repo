@@ -4,7 +4,6 @@ description: The Montreal Forced Aligner synchronizes audio files with text tran
 homepage: https://github.com/MontrealCorpusTools/Montreal-Forced-Aligner
 ---
 
-
 # montreal-forced-aligner
 
 ## Overview
@@ -50,8 +49,8 @@ Generate pronunciation dictionaries for words not found in your existing diction
 | Command | Description |
 |---------|-------------|
 | mfa | Download an acoustic model for Montreal Forced Aligner. |
+| montreal-forced-aligner mfa train_acoustic | Train an acoustic model. |
 | montreal-forced-aligner_mfa | Validate the alignment files for a corpus. |
-| train_acoustic | Train an acoustic model. |
 
 ## Reference documentation
 - [Montreal Forced Aligner README](./references/github_com_MontrealCorpusTools_Montreal-Forced-Aligner_blob_main_README.md)

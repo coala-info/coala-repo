@@ -4,7 +4,6 @@ description: "MALVA performs mapping-free genotyping of known variants using k-m
 homepage: https://algolab.github.io/malva/
 ---
 
-
 # malva
 
 ## Overview

@@ -4,7 +4,6 @@ description: ymp is a flexible omics pipeline manager that streamlines the proce
 homepage: https://ymp.readthedocs.io
 ---
 
-
 # ymp
 
 ## Overview
@@ -61,11 +60,11 @@ ymp automatically manages software environments. If a stage requires a specific 
 
 | Command | Description |
 |---------|-------------|
-| env | Manipulate conda software environments |
-| init | Initialize YMP workspace |
-| make | Build target(s) locally |
-| scan | Scan folders for YMP files |
-| stage | Manipulate YMP stages |
+| ymp env | Manipulate conda software environments |
+| ymp init | Initialize YMP workspace |
+| ymp make | Build target(s) locally |
+| ymp scan | Scan folders for YMP files |
+| ymp stage | Manipulate YMP stages |
 | ymp submit | Build target(s) on cluster |
 | ymp_show | Show configuration properties |
 

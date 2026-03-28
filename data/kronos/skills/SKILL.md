@@ -4,7 +4,6 @@ description: Kronos is a workflow assembler and manager that orchestrates comple
 homepage: https://github.com/jtaghiyar/kronos
 ---
 
-
 # kronos
 
 ## Overview
@@ -58,11 +57,11 @@ To process genomic data in parallel chunks, utilize interval files.
 
 | Command | Description |
 |---------|-------------|
+| kronos make_component | make a template component |
+| kronos make_config | make a template config file |
 | kronos run | run kronos-made pipelines with optional initialization |
+| kronos update_config | update the fields of a config file based on the ones from another one |
 | kronos_init | initialize a pipeline from a given config file |
-| make_component | make a template component |
-| make_config | make a template config file |
-| update_config | update the fields of a config file based on the ones from another one |
 
 ## Reference documentation
 - [Kronos README](./references/github_com_jtaghiyar_kronos_blob_master_README.md)

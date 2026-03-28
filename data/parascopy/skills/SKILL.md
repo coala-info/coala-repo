@@ -4,7 +4,6 @@ description: Parascopy is a bioinformatics suite designed to analyze duplicated 
 homepage: https://github.com/tprodanov/parascopy
 ---
 
-
 # parascopy
 
 ## Overview
@@ -75,22 +74,22 @@ parascopy cn-using previous_analysis/model -I new_samples.list -t table.bed.gz -
 
 | Command | Description |
 |---------|-------------|
-| call | Call variants in duplicated regions. |
-| cn | Find aggregate and paralog-specific copy number for given unique and duplicated regions. |
-| cn-using | Find aggregate and paralog-specific copy number for given unique and duplicated regions. |
-| depth | Calculate read depth and variance in given genomic windows. |
-| examine | Split input regions by reference copy number. |
-| msa | Visualize multiple sequence alignment of homologous regions. |
 | parascopy | A tool for analyzing paralogous sequence copies. Valid commands include help, version, cite, pretable, table, depth, cn, cn-using, pool, view, msa, psvs, examine, call. |
 | parascopy | A tool for analyzing paralogous sequence copies. Valid commands include help, version, cite, pretable, table, depth, cn, cn-using, pool, view, msa, psvs, examine, call. |
 | parascopy | A tool for analyzing paralogous sequence copies. Valid commands include help, version, cite, pretable, table, depth, cn, cn-using, pool, view, msa, psvs, examine, and call. |
 | parascopy | A tool for analyzing paralogous genes and their copy number variations. Valid commands include help, version, cite, pretable, table, depth, cn, cn-using, pool, view, msa, psvs, examine, and call. |
 | parascopy | A tool for analyzing paralogous sequence copies. Valid commands include help, version, cite, pretable, table, depth, cn, cn-using, pool, view, msa, psvs, examine, call. |
-| pool | Pool reads from various copies of a duplication. |
-| pretable | Create homology pre-table. This command aligns genomic regions back to the genome to find homologous regions. |
-| psvs | Output PSVs (paralogous-sequence variants) between homologous regions. |
-| table | Convert homology pre-table into homology table. This command combines overlapping homologous regions into longer duplications. |
-| view | View and filter homology table. |
+| parascopy call | Call variants in duplicated regions. |
+| parascopy cn | Find aggregate and paralog-specific copy number for given unique and duplicated regions. |
+| parascopy cn-using | Find aggregate and paralog-specific copy number for given unique and duplicated regions. |
+| parascopy depth | Calculate read depth and variance in given genomic windows. |
+| parascopy examine | Split input regions by reference copy number. |
+| parascopy msa | Visualize multiple sequence alignment of homologous regions. |
+| parascopy pool | Pool reads from various copies of a duplication. |
+| parascopy pretable | Create homology pre-table. This command aligns genomic regions back to the genome to find homologous regions. |
+| parascopy psvs | Output PSVs (paralogous-sequence variants) between homologous regions. |
+| parascopy table | Convert homology pre-table into homology table. This command combines overlapping homologous regions into longer duplications. |
+| parascopy view | View and filter homology table. |
 
 ## Reference documentation
 - [Main README](./references/github_com_tprodanov_parascopy_blob_main_README.md)

@@ -4,7 +4,6 @@ description: bio2zarr converts bioinformatics file formats like VCF, PLINK, and 
 homepage: https://sgkit-dev.github.io/bio2zarr/
 ---
 
-
 # bio2zarr
 
 ## Overview

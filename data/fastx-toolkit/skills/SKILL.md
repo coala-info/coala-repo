@@ -4,7 +4,6 @@ description: The FASTX-Toolkit is a collection of command-line utilities used fo
 homepage: https://github.com/agordon/fastx_toolkit
 ---
 
-
 # fastx-toolkit
 
 ## Overview

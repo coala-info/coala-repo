@@ -4,7 +4,6 @@ description: MentaLiST is a k-mer based tool designed for rapid bacterial genoty
 homepage: https://github.com/WGS-TB/MentaLiST
 ---
 
-
 # mentalist
 
 ## Overview
@@ -67,17 +66,17 @@ mentalist call --db db_name -f reads.fastq.gz -o results.csv --novel_alleles nov
 
 | Command | Description |
 |---------|-------------|
-| build_db | Build a kmer database for MLST profiling. |
-| download_enterobase | Download scheme data from Enterobase. |
-| list_cgmlst | List available cgMLST schemes. |
-| list_pubmlst | List available schemes from PubMLST |
 | mentalist | A command-line tool for analyzing microbial genomic data. |
 | mentalist | A tool for MLST analysis. |
 | mentalist | A command-line tool for k-mer analysis and database operations. |
+| mentalist build_db | Build a kmer database for MLST profiling. |
 | mentalist call | Calls alleles on a given MLST database. You can create a custom DB with 'create_db' or other MentaLiST functions that download schemes from pubmlst, cgmlst.org or Enterobase. |
 | mentalist db_info | MentaLiST kmer database information |
 | mentalist download_cgmlst | Download a cgMLST scheme from the cgMLST finder database. |
+| mentalist download_enterobase | Download scheme data from Enterobase. |
 | mentalist download_pubmlst | Download a scheme from PubMLST and create a kmer database. |
+| mentalist list_cgmlst | List available cgMLST schemes. |
+| mentalist list_pubmlst | List available schemes from PubMLST |
 
 ## Reference documentation
 - [MentaLiST README](./references/github_com_WGS-TB_MentaLiST_blob_master_README.md)

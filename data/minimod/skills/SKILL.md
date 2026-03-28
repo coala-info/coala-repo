@@ -4,7 +4,6 @@ description: Minimod extracts and analyzes DNA and RNA base modification probabi
 homepage: https://github.com/warp9seq/minimod
 ---
 
-
 # minimod
 
 ## Overview
@@ -61,8 +60,8 @@ minimod freq -c m[CG],h[CG] -m 0.8,0.7 ref.fa reads.bam > multi_mods.tsv
 
 | Command | Description |
 |---------|-------------|
-| freq | Calculate modification frequencies from reads aligned to a reference |
-| view | View modifications in reads using a reference genome and BAM file |
+| minimod freq | Calculate modification frequencies from reads aligned to a reference |
+| minimod view | View modifications in reads using a reference genome and BAM file |
 
 ## Reference documentation
 - [Minimod README](./references/github_com_warp9seq_minimod_blob_main_README.md)

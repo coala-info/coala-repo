@@ -4,7 +4,6 @@ description: gargammel-slim simulates ancient DNA sequences by modeling fragment
 homepage: https://github.com/grenaud/gargammel
 ---
 
-
 # gargammel-slim
 
 ## Overview

@@ -4,7 +4,6 @@ description: PhyloBayes-MPI is a Bayesian MCMC sampler used for phylogenetic inf
 homepage: https://github.com/bayesiancook/pbmpi
 ---
 
-
 # phylobayes-mpi
 
 ## Overview

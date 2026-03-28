@@ -4,7 +4,6 @@ description: ngs-bits is a collection of bioinformatics tools for analyzing sequ
 homepage: https://github.com/imgag/ngs-bits
 ---
 
-
 # ngs-bits
 
 ## Overview

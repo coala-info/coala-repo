@@ -4,7 +4,6 @@ description: DIAMOND is a high-performance sequence aligner designed for large-s
 homepage: https://github.com/bbuchfink/diamond
 ---
 
-
 # diamond
 
 ## Overview
@@ -70,20 +69,20 @@ For long-read analysis (like Nanopore or PacBio) where frameshifts are common, u
 
 | Command | Description |
 |---------|-------------|
-| blastp | DIAMOND is a sequence aligner for protein and translated DNA searches, designed for high performance analysis of big sequence data. |
-| blastx | DIAMOND is a sequence aligner for protein and translated DNA searches, designed for high performance analysis of big sequence data. |
-| cluster | Clustering sequences using the DIAMOND algorithm |
-| dbinfo | Display information about a DIAMOND database file |
-| getseq | Retrieve sequences from a DIAMOND database file. |
-| greedy-vertex-cover | Greedy vertex cover clustering using DIAMOND |
-| linclust | Clustering of protein sequences using the DIAMOND linclust algorithm. |
-| makedb | Build a DIAMOND database from a FASTA file |
-| makeidx | Create an index for a DIAMOND database |
-| merge-daa | Merge DAA files into a single file |
-| realign | Realign sequences using the DIAMOND engine |
-| reassign | Reassign sequences to closest representatives in clustering |
-| recluster | Recluster sequences using the DIAMOND algorithm |
-| view | View and convert DIAMOND alignment archive (DAA) files |
+| diamond blastp | DIAMOND is a sequence aligner for protein and translated DNA searches, designed for high performance analysis of big sequence data. |
+| diamond blastx | DIAMOND is a sequence aligner for protein and translated DNA searches, designed for high performance analysis of big sequence data. |
+| diamond cluster | Clustering sequences using the DIAMOND algorithm |
+| diamond dbinfo | Display information about a DIAMOND database file |
+| diamond getseq | Retrieve sequences from a DIAMOND database file. |
+| diamond greedy-vertex-cover | Greedy vertex cover clustering using DIAMOND |
+| diamond linclust | Clustering of protein sequences using the DIAMOND linclust algorithm. |
+| diamond makedb | Build a DIAMOND database from a FASTA file |
+| diamond makeidx | Create an index for a DIAMOND database |
+| diamond merge-daa | Merge DAA files into a single file |
+| diamond realign | Realign sequences using the DIAMOND engine |
+| diamond reassign | Reassign sequences to closest representatives in clustering |
+| diamond recluster | Recluster sequences using the DIAMOND algorithm |
+| diamond view | View and convert DIAMOND alignment archive (DAA) files |
 
 ## Reference documentation
 - [DIAMOND Wiki Home](./references/bbuchfink_diamond_wiki.md)

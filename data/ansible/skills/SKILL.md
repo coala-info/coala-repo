@@ -4,7 +4,6 @@ description: Ansible is an agentless IT automation engine that automates system 
 homepage: https://github.com/ansible/ansible
 ---
 
-
 # ansible
 
 ## Overview
@@ -50,6 +49,7 @@ Sanity tests are static analysis tools (pylint, mypy, pep8) that ensure code adh
 
 | Command | Description |
 |---------|-------------|
+| ansible | Ansible is an IT automation tool that can configure systems, deploy software, and orchestrate more advanced IT tasks such as continuous deployments or zero downtime rolling updates. |
 | ansible-galaxy | Manage Ansible roles and collections. |
 | ansible-pull | Pulls playbooks from a VCS repo and executes them for the local host. |
 

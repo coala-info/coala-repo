@@ -4,7 +4,6 @@ description: "GAMBIT rapidly classifies bacterial isolates by comparing genomic 
 homepage: https://github.com/jlumpe/gambit
 ---
 
-
 # gambit
 
 ## Overview
@@ -54,9 +53,9 @@ Signatures are the k-mer representations of genomes used for distance calculatio
 
 | Command | Description |
 |---------|-------------|
-| dist | Calculate the GAMBIT distances between a set of query geneomes and a set of reference genomes. |
-| query | Predict taxonomy of microbial samples from genome sequences. |
-| tree | Estimate a relatedness tree for a set of genomes and output in Newick format. |
+| gambit dist | Calculate the GAMBIT distances between a set of query geneomes and a set of reference genomes. |
+| gambit query | Predict taxonomy of microbial samples from genome sequences. |
+| gambit tree | Estimate a relatedness tree for a set of genomes and output in Newick format. |
 
 ## Reference documentation
 - [GAMBIT README](./references/github_com_jlumpe_gambit_blob_master_README.md)

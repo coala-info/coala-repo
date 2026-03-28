@@ -4,7 +4,6 @@ description: MicroHapulator is a forensic bioinformatics toolset for calling, fi
 homepage: https://github.com/bioforensics/MicroHapulator/
 ---
 
-
 # microhapulator
 
 ## Overview
@@ -58,8 +57,8 @@ For a complete analysis from FASTQ to HTML report, use the automated pipeline:
 | mhpl8r | Microhaplotype analysis tool |
 | mhpl8r | Invoke `mhpl8r <subcmd> --help` and replace `<subcmd>` with one of the subcommands listed below to see instructions for that operation. |
 | mhpl8r filter | Apply static and/or dynamic thresholds to distinguish true and false haplotypes. Thresholds are applied to the haplotype read counts of a raw typing result. Static integer thresholds are commonly used as detection thresholds, below which any haplotype count is considered noise. Dynamic thresholds are commonly used as analytical thresholds and represent a percentage of the total read count at the marker, after any haplotypes failing a static threshold are discarded. |
+| mhpl8r pipe | Perform a complete end-to-end microhap analysis pipeline |
 | mhpl8r seq | Simulate paired-end Illumina MiSeq sequencing of the given profile(s) |
-| pipe | Perform a complete end-to-end microhap analysis pipeline |
 
 ## Reference documentation
 

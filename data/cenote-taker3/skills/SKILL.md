@@ -4,7 +4,6 @@ description: Cenote-Taker 3 is a virus bioinformatics pipeline that identifies a
 homepage: https://github.com/mtisza1/Cenote-Taker3
 ---
 
-
 # cenote-taker3
 
 ## Overview

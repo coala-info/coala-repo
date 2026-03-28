@@ -4,7 +4,6 @@ description: YAME is a toolkit for the efficient storage, compression, and manip
 homepage: https://github.com/zhou-lab/YAME
 ---
 
-
 # yame
 
 ## Overview
@@ -45,20 +44,20 @@ conda install yame -c bioconda
 
 | Command | Description |
 |---------|-------------|
-| binarize | Convert per-site M/U counts (format 3) into a packed binary-with-universe track (format 6). |
-| chunk | Chunk a .cx file into smaller pieces. |
-| chunkchar | Chunk a text file into characters. |
-| dsample | Downsample methylation data for format 3 or 6.   - For format 3, downsampling masks by setting M=U=0.   - For format 6, downsampling masks by clearing the universe bit. |
-| hprint | Print data transposed / horizontally. |
-| index | The index file name default to <in.cx>.idx |
-| info | Report information about a YAME file. |
-| mask | Masking tool for CG files |
-| rowop | Perform row-wise operations across multiple records (samples) in a CX file.   Depending on the operation, output is either a new CX file or plain text. |
-| rowsub | Subset (slice) rows from each dataset (record) in a CX stream. Output is always written to stdout. |
-| split | Split a cx file into multiple files based on sample names. |
-| subset | Subset a multi-sample .cx by sample names (requires an index), or (with -s) convert a format-2 state track into one binary track per state. |
-| summary | Summarize a query feature set (or per-state composition) and optionally its overlap/enrichment against one or more masks. |
+| yame binarize | Convert per-site M/U counts (format 3) into a packed binary-with-universe track (format 6). |
+| yame chunk | Chunk a .cx file into smaller pieces. |
+| yame chunkchar | Chunk a text file into characters. |
+| yame dsample | Downsample methylation data for format 3 or 6.   - For format 3, downsampling masks by setting M=U=0.   - For format 6, downsampling masks by clearing the universe bit. |
+| yame hprint | Print data transposed / horizontally. |
+| yame index | The index file name default to <in.cx>.idx |
+| yame info | Report information about a YAME file. |
+| yame mask | Masking tool for CG files |
 | yame pairwise | Compute a per-site differential-methylation set between two format-3 (M/U) samples, and output it as a single format-6 track (set + universe). |
+| yame rowop | Perform row-wise operations across multiple records (samples) in a CX file.   Depending on the operation, output is either a new CX file or plain text. |
+| yame rowsub | Subset (slice) rows from each dataset (record) in a CX stream. Output is always written to stdout. |
+| yame split | Split a cx file into multiple files based on sample names. |
+| yame subset | Subset a multi-sample .cx by sample names (requires an index), or (with -s) convert a format-2 state track into one binary track per state. |
+| yame summary | Summarize a query feature set (or per-state composition) and optionally its overlap/enrichment against one or more masks. |
 | yame_pack | Pack tab-delimited text into a compressed cx file. |
 | yame_unpack | Print selected records from a .cx file as a tab-delimited table. Each output row is a genomic row index; each output column is a selected sample/record. |
 

@@ -4,7 +4,6 @@ description: Vamos characterizes tandem repeat variation by encoding VNTR sequen
 homepage: https://github.com/ChaissonLab/vamos
 ---
 
-
 # vamos
 
 ## Overview

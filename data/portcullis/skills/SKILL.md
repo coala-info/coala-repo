@@ -4,7 +4,6 @@ description: Portcullis filters unreliable splice junctions from pre-aligned RNA
 homepage: https://github.com/maplesond/portcullis
 ---
 
-
 # portcullis
 
 ## Overview
@@ -65,9 +64,9 @@ Portcullis includes a companion suite called `junctools` for converting and comp
 
 | Command | Description |
 |---------|-------------|
-| bamfilt | Removes alignments associated with bad junctions from BAM file |
-| filter | Filters out junctions that are unlikely to be genuine or that have too little supporting evidence. The user can control three stages of the filtering process. First the user can perform filtering based on a random forest model self-trained on the provided data, alternatively the user can provide a pre-trained model. Second the user can specify a configuration file describing a set of filtering rules to apply. Third, the user can directly through the command line filter based on junction (intron) length, or the canonical label. |
-| full | Runs prep, junc, filter, and optionally bamfilt, as a complete pipeline. Assumes that the self-trained machine learning approach for filtering is to be used. |
+| portcullis bamfilt | Removes alignments associated with bad junctions from BAM file |
+| portcullis filter | Filters out junctions that are unlikely to be genuine or that have too little supporting evidence. The user can control three stages of the filtering process. First the user can perform filtering based on a random forest model self-trained on the provided data, alternatively the user can provide a pre-trained model. Second the user can specify a configuration file describing a set of filtering rules to apply. Third, the user can directly through the command line filter based on junction (intron) length, or the canonical label. |
+| portcullis full | Runs prep, junc, filter, and optionally bamfilt, as a complete pipeline. Assumes that the self-trained machine learning approach for filtering is to be used. |
 | portcullis prep | Prepares a genome and bam file(s) ready for junction analysis. This involves ensuring the bam file is sorted and indexed and the genome file is indexed. |
 | portcullis_junc | Analyses all potential junctions found in the input BAM file. |
 

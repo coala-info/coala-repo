@@ -4,7 +4,6 @@ description: "sketchlib is a high-performance genomic sketching tool used for ra
 homepage: https://github.com/bacpop/sketchlib.rust
 ---
 
-
 # sketchlib
 
 ## Overview
@@ -51,6 +50,19 @@ The primary workflow involves comparing two datasets or a dataset against itself
 *   **File Stability:** As of v0.2.0, the `.skm` file format is stable. Libraries created with this version or later do not need to be rebuilt for future updates.
 *   **Parallelization:** The tool is designed for high concurrency. Ensure your environment allows for multi-threading to take full advantage of the Rust implementation's speed.
 *   **Memory Mapping:** sketchlib often uses memory mapping for large `.skm` files; ensure your system has sufficient virtual memory address space when working with millions of sketches.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| sketchlib dist | Calculate pairwise distances using sketches |
+| sketchlib info | Print information about a .skm file |
+| sketchlib merge | Merge two sketch files (.skm and .skd pair) |
+| sketchlib sketch | Create sketches from input data |
+| sketchlib_append | Append new genomes to be sketched to an existing sketch database |
+| sketchlib_inverted | Building and querying with inverted indices (.ski) |
 
 ## Reference documentation
 - [github_com_bacpop_sketchlib.rust.md](./references/github_com_bacpop_sketchlib.rust.md)

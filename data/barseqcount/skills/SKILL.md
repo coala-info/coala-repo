@@ -4,7 +4,6 @@ description: This tool analyzes DNA barcode sequencing experiments. Use when use
 homepage: https://github.com/damienmarsic/barseqcount
 ---
 
-
 # barseqcount
 
 Analyzes DNA barcode sequencing experiments. Use when Claude needs to perform sequence counting and analysis for DNA barcoding data.
@@ -63,6 +62,16 @@ This subcommand is used for analyzing the counted sequences. It likely takes the
     barseqcount -v
     ```
 *   **Environment**: It is recommended to run `barseqcount` within a conda environment (Linux, Mac, or Windows).
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| barseqcount.py | Analysis of DNA barcode sequencing experiments. For full documentation, visit: https://barseqcount.readthedocs.io |
+| barseqcount.py analyze | Analyze barseqcount results |
+| barseqcount_count | Counts barcodes in sequencing data. |
 
 ## Reference documentation
 - [barseqcount Overview](references/anaconda_org_channels_bioconda_packages_barseqcount_overview.md)

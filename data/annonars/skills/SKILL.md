@@ -4,7 +4,6 @@ description: annonars is a high-performance genome annotation toolset that trans
 homepage: https://github.com/bihealth/annona-rs
 ---
 
-
 # annonars
 
 ## Overview
@@ -85,22 +84,22 @@ annonars tsv import \
 
 | Command | Description |
 |---------|-------------|
-| clinvar-genes | clinvar-genes sub commands |
-| clinvar-minimal | clinvar-minimal sub commands |
-| clinvar-sv | clinvar-sv sub commands |
-| cons | "cons" sub commands |
-| db-utils | "db-utils" sub commands |
-| dbsnp | dbsnp sub commands |
-| freqs | "freqs" sub commands |
-| functional | "functional" sub commands |
-| gene | "genes" sub commands |
-| gnomad-mtdna | gnomad-mtdna sub commands |
-| gnomad-nuclear | gnomad-nuclear sub commands |
-| gnomad-sv | gnomad-sv sub commands for annonars |
-| helixmtdb | "helixmtdb" sub commands |
-| regions | "regions" sub commands |
-| server | "server" sub command |
-| tsv | annonars tsv subcommands for importing and querying TSV data |
+| annonars clinvar-genes | clinvar-genes sub commands |
+| annonars clinvar-minimal | clinvar-minimal sub commands |
+| annonars clinvar-sv | clinvar-sv sub commands |
+| annonars cons | "cons" sub commands |
+| annonars db-utils | "db-utils" sub commands |
+| annonars dbsnp | dbsnp sub commands |
+| annonars freqs | "freqs" sub commands |
+| annonars functional | "functional" sub commands |
+| annonars gene | "genes" sub commands |
+| annonars gnomad-mtdna | gnomad-mtdna sub commands |
+| annonars gnomad-nuclear | gnomad-nuclear sub commands |
+| annonars gnomad-sv | gnomad-sv sub commands for annonars |
+| annonars helixmtdb | "helixmtdb" sub commands |
+| annonars regions | "regions" sub commands |
+| annonars server | "server" sub command |
+| annonars tsv | annonars tsv subcommands for importing and querying TSV data |
 
 ## Reference documentation
 - [Annonars README](./references/github_com_varfish-org_annonars_blob_main_README.md)

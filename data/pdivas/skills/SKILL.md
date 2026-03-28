@@ -4,7 +4,6 @@ description: PDIVAS is a machine learning tool designed to predict the pathogeni
 homepage: https://github.com/shiro-kur/PDIVAS
 ---
 
-
 # pdivas
 
 ## Overview
@@ -82,8 +81,8 @@ pdivas vcf2tsv -I final_predictions.vcf.gz -O final_report.tsv
 
 | Command | Description |
 |---------|-------------|
-| predict | Add PDIVAS annotation to a VCF file and predict deep-intronic variants. |
-| vcf2tsv | Convert PDIVAS annotated VCF files to TSV format |
+| pdivas predict | Add PDIVAS annotation to a VCF file and predict deep-intronic variants. |
+| pdivas vcf2tsv | Convert PDIVAS annotated VCF files to TSV format |
 
 ## Reference documentation
 - [PDIVAS Main Documentation](./references/github_com_shiro-kur_PDIVAS.md)

@@ -4,7 +4,6 @@ description: pauvre is a suite of plotting tools designed to visualize the lengt
 homepage: https://github.com/conchoecia/gloTK
 ---
 
-
 # pauvre
 
 ## Overview
@@ -48,6 +47,19 @@ pauvre marginplot --fastq run1.fastq run2.fastq --plotname comparison_plot
 - **Resource Management**: Long-read datasets can be massive. If the tool hangs, consider subsampling your FASTQ file before plotting, as the visual representation of the distribution usually stabilizes after a few hundred thousand reads.
 - **Plot Customization**: Use the `--plotname` flag consistently to organize outputs, as the tool generates multiple files (e.g., .png, .pdf, and stats summaries) for each run.
 - **Quality Scores**: pauvre typically uses the standard Phred scale. If your data uses a different encoding, verify the quality score distribution in the resulting stats file.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| pauvre browser | A tool for plotting genomic tracks and reference sequences. |
+| pauvre custommargin | Generate custom margin plots from tab-separated data files. |
+| pauvre marginplot | Generate a margin plot of read length versus quality from FASTQ files. |
+| pauvre redwood | Plot long reads and RNA-seq data in a circular 'redwood' plot, often used for mitochondrial genomes. |
+| pauvre stats | Generate statistics and optionally a histogram from FASTQ files. |
+| pauvre synplot | Generate synteny plots from GFF annotations and alignments. |
 
 ## Reference documentation
 - [pauvre - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_pauvre_overview.md)

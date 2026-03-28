@@ -4,7 +4,6 @@ description: singlecellnet-cli constructs and applies random forest classifiers 
 homepage: https://github.com/ebi-gene-expression-group/singlecellnet-cli
 ---
 
-
 # singlecellnet-cli
 
 ## Overview

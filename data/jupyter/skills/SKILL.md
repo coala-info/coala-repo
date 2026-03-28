@@ -4,7 +4,6 @@ description: Jupyter provides an interactive computing environment for integrati
 homepage: https://github.com/jakevdp/PythonDataScienceHandbook
 ---
 
-
 # jupyter
 
 ## Overview

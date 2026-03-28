@@ -4,7 +4,6 @@ description: The cath-tools suite provides high-performance C++ implementations 
 homepage: https://github.com/UCLOrengoGroup/cath-tools
 ---
 
-
 # cath-tools
 
 ## Overview

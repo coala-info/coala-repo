@@ -4,7 +4,6 @@ description: DeepAccess is a deep learning framework for predicting chromatin ac
 homepage: https://github.com/gifford-lab/deepaccess-package
 ---
 
-
 # deepaccess
 
 ## Overview

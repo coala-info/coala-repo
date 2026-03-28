@@ -4,7 +4,6 @@ description: votuderep is a command-line tool designed to curate viral metagenom
 homepage: https://github.com/quadram-institute-bioscience/votuderep
 ---
 
-
 # votuderep
 
 ## Overview
@@ -59,10 +58,10 @@ votuderep filter input.fasta checkv_output.tsv \
 
 | Command | Description |
 |---------|-------------|
-| derep | Dereplicate vOTUs using BLAST and ANI clustering. This command: 1. Creates a BLAST database from input sequences 2. Performs all-vs-all BLAST comparison 3. Calculates ANI and coverage for sequence pairs 4. Clusters sequences by ANI using greedy algorithm 5. Outputs cluster representatives (longest sequences) The algorithm selects the longest sequence from each cluster as the representative, effectively removing shorter redundant sequences. |
-| getdbs | Download geNomad, CheckV, and PHROGs databases. Downloads and extracts viral classification and quality control databases required for viral metagenomics analysis. The command is resumable: if interrupted, it will skip already downloaded and extracted files when re-run. |
-| tabulate | Generate CSV file from a directory containing sequencing reads. Scans INPUT_DIR for paired-end sequencing reads and generates a CSV table mapping sample names to their R1 and R2 file paths. The command identifies read pairs by looking for forward/reverse tags in filenames, extracts sample names, and outputs a table suitable for downstream analysis tools. |
+| votuderep derep | Dereplicate vOTUs using BLAST and ANI clustering. This command: 1. Creates a BLAST database from input sequences 2. Performs all-vs-all BLAST comparison 3. Calculates ANI and coverage for sequence pairs 4. Clusters sequences by ANI using greedy algorithm 5. Outputs cluster representatives (longest sequences) The algorithm selects the longest sequence from each cluster as the representative, effectively removing shorter redundant sequences. |
 | votuderep filter | Filter FASTA file using CheckV quality metrics. |
+| votuderep getdbs | Download geNomad, CheckV, and PHROGs databases. Downloads and extracts viral classification and quality control databases required for viral metagenomics analysis. The command is resumable: if interrupted, it will skip already downloaded and extracted files when re-run. |
+| votuderep tabulate | Generate CSV file from a directory containing sequencing reads. Scans INPUT_DIR for paired-end sequencing reads and generates a CSV table mapping sample names to their R1 and R2 file paths. The command identifies read pairs by looking for forward/reverse tags in filenames, extracts sample names, and outputs a table suitable for downstream analysis tools. |
 | votuderep trainingdata | Download training dataset from the internet. Uses a registry (DATASETS) of named datasets, each containing a set of {url, path} items. Adds new datasets by extending the DATASETS dict. |
 
 ## Reference documentation

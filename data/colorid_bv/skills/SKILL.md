@@ -4,7 +4,6 @@ description: colorid_bv manages and queries large-scale genomic datasets using a
 homepage: https://github.com/hcdenbakker/colorid_bv
 ---
 
-
 # colorid_bv
 
 ## Overview
@@ -47,13 +46,13 @@ Identify the taxonomic origin of individual reads.
 
 | Command | Description |
 |---------|-------------|
-| batch_id | classifies batch of samples reads |
-| build | builds a bigsi |
-| info | dumps index parameters and accessions |
-| merge | merges (concatenates) indices |
-| read_filter | filters reads |
-| read_id | id's reads |
-| search | does a bigsi search on one or more fasta/fastq.gz files |
+| colorid_bv batch_id | classifies batch of samples reads |
+| colorid_bv build | builds a bigsi |
+| colorid_bv info | dumps index parameters and accessions |
+| colorid_bv merge | merges (concatenates) indices |
+| colorid_bv read_filter | filters reads |
+| colorid_bv read_id | id's reads |
+| colorid_bv search | does a bigsi search on one or more fasta/fastq.gz files |
 
 ## Reference documentation
 - [colorid_bv README](./references/github_com_hcdenbakker_colorid_bv_blob_master_README.md)

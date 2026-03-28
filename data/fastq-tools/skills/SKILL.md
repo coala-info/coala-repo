@@ -4,7 +4,6 @@ description: fastq-tools is a collection of high-speed utilities for processing,
 homepage: http://homes.cs.washington.edu/~dcjones/fastq-tools/
 ---
 
-
 # fastq-tools
 
 ## Overview
@@ -53,6 +52,15 @@ fastq-sort input.fastq > sorted.fastq
   - *Example*: `fastq-qual-filter -q 20 input.fastq | fastq-trim -3 10 > clean.fastq`
 - **Compressed Data**: Most tools in this suite can handle gzipped input directly or via process substitution (e.g., `<(zcat file.fastq.gz)`).
 - **Validation**: Always run `fastq-stats` before and after filtering to quantify how many reads were discarded and ensure the quality distribution has improved as expected.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| fastq-sample | Sample random reads from a FASTQ file. |
+| fastq-sort | Concatenate and sort FASTQ files and write to standard output. |
 
 ## Reference documentation
 

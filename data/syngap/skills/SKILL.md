@@ -4,7 +4,6 @@ description: SynGAP refines gene structure annotations and identifies homologous
 homepage: https://github.com/yanyew/SynGAP
 ---
 
-
 # syngap
 
 ## Overview
@@ -60,10 +59,10 @@ Use these modules to analyze gene expression across species boundaries.
 
 | Command | Description |
 |---------|-------------|
-| genepair | Compares gene pairs between two species. |
 | syngap custom | Custom synteny analysis between two species. |
 | syngap dual | Compare two species' genomes and annotations. |
 | syngap evi | Calculate EVI (Expression Variation Index) for gene pairs. |
+| syngap genepair | Compares gene pairs between two species. |
 | syngap initdb | Initialize a new syngap database by importing a masterdb. |
 | syngap master | This tool appears to be a master script for processing genomic data, likely involving species comparison and annotation. |
 | syngap triple | Compare three species genomes and their annotations. |

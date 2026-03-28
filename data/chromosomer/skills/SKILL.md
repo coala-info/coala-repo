@@ -4,7 +4,6 @@ description: Chromosomer organizes fragmented genomic sequences into chromosome-
 homepage: https://github.com/gtamazian/chromosomer
 ---
 
-
 # chromosomer
 
 ## Overview
@@ -61,7 +60,7 @@ Provides a summary of the mapping results, including the number of mapped, unloc
 
 | Command | Description |
 |---------|-------------|
-| agp2map | Convert an AGP file to the fragment map format. |
+| chromosomer agp2map | Convert an AGP file to the fragment map format. |
 | chromosomer assemble | Get the FASTA file of assembled chromosomes. |
 | chromosomer fragmentmap | Construct a fragment map from fragment alignments to reference chromosomes. |
 | chromosomer fragmentmapbed | Convert a fragment map to the BED format. |

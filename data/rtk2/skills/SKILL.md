@@ -4,7 +4,6 @@ description: rtk2 is a high-performance C++ tool designed for efficient matrix m
 homepage: https://github.com/hildebra/rtk2/
 ---
 
-
 # rtk2
 
 ## Overview

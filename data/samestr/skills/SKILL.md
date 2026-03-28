@@ -4,7 +4,6 @@ description: SameStr detects and compares microbial strains across metagenomic d
 homepage: https://github.com/danielpodlesny/samestr/
 ---
 
-
 # samestr
 
 ## Overview
@@ -74,12 +73,12 @@ Determine the similarity between samples and identify shared strains.
 |---------|-------------|
 | samestr compare | Compare SNV profiles between samples. |
 | samestr convert | Convert MetaPhlAn or mOTUs marker alignments to a standardized format. |
+| samestr summarize | Summarize pairwise alignment comparisons to identify shared strains. |
 | samestr_db | Database check arguments: |
 | samestr_extract | Extracts marker sequences from input FASTA files based on a specified clade and database. |
 | samestr_filter | Filter SNV profiles based on various criteria. |
 | samestr_merge | Merge SNV profiles from multiple samples. |
 | samestr_stats | Report statistics on SNV profiles. |
-| summarize | Summarize pairwise alignment comparisons to identify shared strains. |
 
 ## Reference documentation
 

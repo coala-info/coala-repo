@@ -4,7 +4,6 @@ description: metaWRAP is a comprehensive wrapper suite that streamlines metageno
 homepage: https://github.com/bxlab/metaWRAP
 ---
 
-
 # metawrap
 
 ## Overview
@@ -71,16 +70,16 @@ metawrap reassemble_bins -o REASSEMBLED_DIR -1 reads_1.fastq -2 reads_2.fastq -t
 
 | Command | Description |
 |---------|-------------|
-| bin_refinement | Refine metagenomic bins from multiple sources. |
-| binning | Binning module for metagenomic assemblies |
-| kraken | Run on any number of fasta assembly files and/or or paired-end reads. |
 | metawrap annotate_bins | Annotates metagenomic bins. |
 | metawrap assembly | Assemble reads into contigs |
+| metawrap bin_refinement | Refine metagenomic bins from multiple sources. |
+| metawrap binning | Binning module for metagenomic assemblies |
 | metawrap blobology | Run blobology on assembly and reads |
 | metawrap classify_bins | Classify bins |
+| metawrap kraken | Run on any number of fasta assembly files and/or or paired-end reads. |
 | metawrap quant_bins | Quantify abundance of bins in metagenomic datasets |
-| read_qc | Performs quality control on raw sequencing reads. |
-| reassemble_bins | Reassemble metagenomic bins using provided reads. |
+| metawrap read_qc | Performs quality control on raw sequencing reads. |
+| metawrap reassemble_bins | Reassemble metagenomic bins using provided reads. |
 
 ## Reference documentation
 - [MetaWRAP Module Descriptions](./references/github_com_bxlab_metaWRAP_blob_master_Module_descriptions.md)

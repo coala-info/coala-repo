@@ -4,7 +4,6 @@ description: BISCUIT is a high-performance tool suite for the simultaneous infer
 homepage: https://github.com/huishenlab/biscuit
 ---
 
-
 # biscuit
 
 ## Overview
@@ -69,24 +68,24 @@ biscuit mergecg reference.fa output.vcf > merged.vcf
 | Command | Description |
 |---------|-------------|
 | QC.sh | BISCUIT quality control script for aligned BAM files |
-| align | Align bisulfite-treated sequencing reads to a reference genome |
-| asm | BISCUIT assembly subcommand for processing epiread files |
-| bc | Extract barcodes from FASTQ files and append to read names. Adds an artificial UMI (AAAAAAAA) for compatibility. |
 | biscuit | BISulfite-seq CUI Toolkit (BISCUIT) for bisulfite-seq data analysis, including mapping, BAM operations, base summary, and epiread manipulation. |
-| bsconv | Filter and convert bisulfite sequencing reads based on CpH retention and other criteria. |
-| bsstrand | Correct or append bisulfite strand information in BAM files |
-| build_biscuit_QC_assets.pl | Build biscuit QC assets from a reference genome. |
-| cinread | Extract cytosine information from a BAM file based on a reference genome. |
-| epiread | Extract epiread information from a BAM file using a reference genome. |
+| biscuit align | Align bisulfite-treated sequencing reads to a reference genome |
+| biscuit asm | BISCUIT assembly subcommand for processing epiread files |
+| biscuit bc | Extract barcodes from FASTQ files and append to read names. Adds an artificial UMI (AAAAAAAA) for compatibility. |
+| biscuit bsconv | Filter and convert bisulfite sequencing reads based on CpH retention and other criteria. |
+| biscuit bsstrand | Correct or append bisulfite strand information in BAM files |
+| biscuit cinread | Extract cytosine information from a BAM file based on a reference genome. |
+| biscuit epiread | Extract epiread information from a BAM file using a reference genome. |
+| biscuit index | Index a reference genome for BISCUIT alignment |
+| biscuit mergecg | Merge CpG sites from a position-sorted BED file with beta values and coverages. Typically used with output from biscuit vcf2bed. |
+| biscuit pileup | Pileup tool for DNA methylation and genetic variant calling from bisulfite sequencing data. |
+| biscuit qc | Produces a subset of QC metrics for BISCUIT alignments. |
+| biscuit qc_coverage | BISCUIT QC coverage tool for calculating coverage statistics from BAM files. |
+| biscuit rectangle | Process epiread files against a reference genome to generate a rectangle format output. |
+| biscuit tview | Text-based alignment viewer for BISCUIT |
+| biscuit vcf2bed | Extract methylation or SNP information from a VCF file into BED format. |
 | flip_pbat_strands.sh | Flip PBAT strands in a BAM file, optionally for a specific region. |
-| index | Index a reference genome for BISCUIT alignment |
-| mergecg | Merge CpG sites from a position-sorted BED file with beta values and coverages. Typically used with output from biscuit vcf2bed. |
-| pileup | Pileup tool for DNA methylation and genetic variant calling from bisulfite sequencing data. |
-| qc | Produces a subset of QC metrics for BISCUIT alignments. |
-| qc_coverage | BISCUIT QC coverage tool for calculating coverage statistics from BAM files. |
-| rectangle | Process epiread files against a reference genome to generate a rectangle format output. |
-| tview | Text-based alignment viewer for BISCUIT |
-| vcf2bed | Extract methylation or SNP information from a VCF file into BED format. |
+| perl build_biscuit_QC_assets.pl | Build biscuit QC assets from a reference genome. |
 
 ## Reference documentation
 

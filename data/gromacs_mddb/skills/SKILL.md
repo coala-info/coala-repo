@@ -4,7 +4,6 @@ description: gromacs_mddb is a molecular dynamics suite that simulates biochemic
 homepage: https://www.gromacs.org/
 ---
 
-
 # gromacs_mddb
 
 ## Overview
@@ -48,6 +47,18 @@ Since `gromacs_mddb` is built on GROMACS 2025, use the standard `gmx` wrapper fo
 *   **Metadata Validation**: Before submitting to a data bank, use the JSON export to verify that the `.mdp` parameters (like cut-offs, ensemble types, and force field versions) were correctly compiled into the `.tpr`.
 *   **Hardware Endianness**: Like standard GROMACS, the `.tpr` and trajectory files produced by `gromacs_mddb` are hardware-independent. You can generate the JSON export on a different architecture than the one used for the simulation.
 *   **Lossy Compression**: When preparing data for MDDB, use `gmx trjconv` with the `-ndec` flag to select the appropriate decimal precision for coordinate storage to balance file size and accuracy.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| gmx | GROMACS command-line tool |
+| gmx dump | Reads a run input file (.tpr), a trajectory (.trr/.xtc/tng), an energy file (.edr), a checkpoint file (.cpt) or topology file (.top) and prints that to standard output in a readable format. This program is essential for checking your run input file in case of problems. |
+| gmx grompp | reads a molecular topology file, checks the validity of the file, expands the topology from a molecular description to an atomic description. The topology file contains information about molecule types and the number of molecules, the preprocessor copies each molecule as needed. There is no limitation on the number of molecule types. Bonds and bond-angles can be converted into constraints, separately for hydrogens and heavy atoms. Then a coordinate file is read and velocities can be generated from a Maxwellian distribution if requested. gmx grompp also reads parameters for gmx mdrun (eg. number of MD steps, time step, cut-off). Eventually a binary file is produced that can serve as the sole input file for the MD program. |
+| gmx mdrun | gmx mdrun is the main computational chemistry engine within GROMACS. Obviously, it performs Molecular Dynamics simulations, but it can also perform Stochastic Dynamics, Energy Minimization, test particle insertion or (re)calculation of energies. Normal mode analysis is another option. In this case mdrun builds a Hessian matrix from single conformation. For usual Normal Modes-like calculations, make sure that the structure provided is properly energy-minimized. The generated matrix can be diagonalized by gmx nmeig. |
+| gmx trjconv | gmx trjconv can convert trajectory files in many ways: |
 
 ## Reference documentation
 - [anaconda_org_channels_bioconda_packages_gromacs_mddb_overview.md](./references/anaconda_org_channels_bioconda_packages_gromacs_mddb_overview.md)

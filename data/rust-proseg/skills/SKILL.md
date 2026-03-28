@@ -4,7 +4,6 @@ description: rust-proseg is a high-performance tool that uses probabilistic samp
 homepage: https://github.com/dcjones/proseg
 ---
 
-
 # rust-proseg
 
 ## Overview

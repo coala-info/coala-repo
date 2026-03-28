@@ -4,7 +4,6 @@ description: Macrel identifies and classifies antimicrobial peptides within geno
 homepage: https://github.com/BigDataBiology/macrel
 ---
 
-
 # macrel
 
 ## Overview

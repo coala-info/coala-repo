@@ -4,7 +4,6 @@ description: cmseq extracts high-resolution coverage statistics, identifies poly
 homepage: https://github.com/SegataLab/cmseq
 ---
 
-
 # cmseq
 
 ## Overview

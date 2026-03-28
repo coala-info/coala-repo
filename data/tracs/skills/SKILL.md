@@ -4,7 +4,6 @@ description: TRACS infers transmission links and genetic distances between bacte
 homepage: https://github.com/gtonkinhill/tracs
 ---
 
-
 # tracs
 
 ## Overview
@@ -75,8 +74,8 @@ For a streamlined workflow from raw data to results.
 
 | Command | Description |
 |---------|-------------|
-| build-db | Builds a database for tracs |
-| pipe | A script to run the full TRACS pipeline. |
+| tracs build-db | Builds a database for tracs |
+| tracs pipe | A script to run the full TRACS pipeline. |
 | tracs_align | Uses sourmash to identify reference genomes within a read set and then aligns reads to each reference using minimap2 |
 | tracs_cluster | Groups samples into putative transmission clusters using single linkage clustering |
 | tracs_combine | Combine runs of TRACS'm align ready for distance estimation |

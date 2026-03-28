@@ -4,7 +4,6 @@ description: mVIRs identifies the genomic coordinates of inducible prophages by 
 homepage: https://github.com/SushiLab/mVIRs
 ---
 
-
 # mvirs
 
 ## Overview
@@ -56,11 +55,11 @@ The tool generates several files using the specified `-o` prefix:
 
 | Command | Description |
 |---------|-------------|
-| index | Localisation of inducible prophages using NGS data |
 | mvirs | Localisation of inducible prophages using NGS data |
 | mvirs | Localisation of inducible prophages using NGS data |
 | mvirs | Localisation of inducible prophages using NGS data |
-| oprs | Localisation of inducible prophages using NGS data |
+| mvirs index | Localisation of inducible prophages using NGS data |
+| mvirs oprs | Localisation of inducible prophages using NGS data |
 
 ## Reference documentation
 

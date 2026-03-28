@@ -4,7 +4,6 @@ description: PolyploidQtlSeq identifies genomic regions associated with specific
 homepage: https://github.com/TatsumiMizubayashi/PolyploidQtlSeq
 ---
 
-
 # poly-qtlseq
 
 ## Overview
@@ -77,6 +76,16 @@ polyQtlseq -r reference.fa \
 - **Skipping Mapping**: If you already have BAM files for your samples, place them in the respective sample directories. The pipeline will detect existing BAM files and skip the mapping step to save time.
 - **SnpEff Integration**: To include variant annotation in your results, ensure a SnpEff database is prepared for your reference genome.
 - **Memory Management**: When working with large polyploid genomes, ensure the environment has sufficient RAM for BWA mapping and the subsequent simulation-based threshold calculations.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| PolyploidQtlSeq | Run the Polyploid QTL-seq pipeline. |
+| bwa | alignment via Burrows-Wheeler transformation |
+| samtools | Tools for alignments in the SAM format |
 
 ## Reference documentation
 - [PolyploidQtlSeq GitHub Repository](./references/github_com_TatsumiMizubayashi_PolyploidQtlSeq.md)

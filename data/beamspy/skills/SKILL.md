@@ -4,7 +4,6 @@ description: BEAMSpy is a Python toolkit for the putative annotation of metaboli
 homepage: https://github.com/computational-metabolomics/beamspy
 ---
 
-
 # beamspy
 
 ## Overview
@@ -40,6 +39,18 @@ beamspy start-gui
 - **Adduct and Isotope Handling**: Ensure your input parameters account for expected adducts (e.g., [M+H]+, [M+Na]+) and isotopes to reduce redundancy in your feature list and improve MSI level 2/3 confidence.
 - **Neutral Losses**: When working with complex fragmentation patterns, utilize the neutral loss modules to identify related metabolic features.
 - **Memory Management**: BEAMSpy utilizes SQLite in-memory databases for compound annotation to speed up processing; ensure your environment has sufficient RAM when working with exceptionally large peak lists or extensive custom databases.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| beamspy annotate-compounds | Annotate compounds using a peaklist and a database. |
+| beamspy annotate-mf | Annotate molecular formulas for peaks. |
+| beamspy annotate-peak-patterns | Annotate peaks with adducts, isotopes, oligomers, and neutral losses. |
+| beamspy group-features | Groups features based on correlation and retention time. |
+| beamspy summary-results | Generates a summary of BEAMSpy results. |
 
 ## Reference documentation
 - [BEAMSpy Overview](./references/anaconda_org_channels_bioconda_packages_beamspy_overview.md)

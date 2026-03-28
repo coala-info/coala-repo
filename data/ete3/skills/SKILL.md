@@ -4,7 +4,6 @@ description: The ETE Toolkit is a Python framework and command-line suite for th
 homepage: http://etetoolkit.org/
 ---
 
-
 # ete3
 
 ## Overview
@@ -83,10 +82,10 @@ Customizing tree images requires `TreeStyle`, `NodeStyle`, and `Face` objects:
 
 | Command | Description |
 |---------|-------------|
-| annotate | Annotates a tree with information from external files. |
+| ete3 annotate | Annotates a tree with information from external files. |
+| ete3 expand | Expand a tree with new sequences |
+| ete3 ncbiquery | Query NCBI databases for sequences and retrieve them in Newick format. |
 | ete3_split | Splits a tree file into several smaller tree files, one for each tree in the original file. |
-| expand | Expand a tree with new sequences |
-| ncbiquery | Query NCBI databases for sequences and retrieve them in Newick format. |
 
 ## Reference documentation
 - [ETE's Reference Guide](./references/etetoolkit_org_docs_latest_reference_index.html.md)

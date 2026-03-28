@@ -4,7 +4,6 @@ description: "ngs-smap processes stack-based NGS data to define genomic loci and
 homepage: https://gitlab.com/truttink/smap
 ---
 
-
 # ngs-smap
 
 ## Overview

@@ -4,7 +4,6 @@ description: The upd tool identifies genomic regions where a proband has inherit
 homepage: https://github.com/bjhall/upd
 ---
 
-
 # upd
 
 ## Overview

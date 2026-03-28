@@ -4,7 +4,6 @@ description: vcf-pg-loader automates the ingestion of VCF genomic data into Post
 homepage: https://github.com/Zacharyr41/vcf-pg-loader
 ---
 
-
 # vcf-pg-loader
 
 ## Overview
@@ -48,14 +47,14 @@ While specific flags depend on the version, the tool generally follows these fun
 
 | Command | Description |
 |---------|-------------|
-| annotate | Annotate loaded variants using reference databases. |
-| annotation-query | Execute an ad-hoc SQL query against annotation tables. |
-| benchmark | Run performance benchmarks on VCF parsing and loading. |
-| init-db | Initialize database schema. |
-| list-annotations | List all loaded annotation sources. |
-| load | Load a VCF file into PostgreSQL. |
-| load-annotation | Load an annotation VCF file as a reference database. The annotation source can then be used to annotate query VCFs via SQL JOINs. |
-| validate | Validate a completed load. |
+| vcf-pg-loader annotate | Annotate loaded variants using reference databases. |
+| vcf-pg-loader annotation-query | Execute an ad-hoc SQL query against annotation tables. |
+| vcf-pg-loader benchmark | Run performance benchmarks on VCF parsing and loading. |
+| vcf-pg-loader init-db | Initialize database schema. |
+| vcf-pg-loader list-annotations | List all loaded annotation sources. |
+| vcf-pg-loader load | Load a VCF file into PostgreSQL. |
+| vcf-pg-loader load-annotation | Load an annotation VCF file as a reference database. The annotation source can then be used to annotate query VCFs via SQL JOINs. |
+| vcf-pg-loader validate | Validate a completed load. |
 
 ## Reference documentation
 - [Main Repository Overview](./references/github_com_Zacharyr41_vcf-pg-loader.md)

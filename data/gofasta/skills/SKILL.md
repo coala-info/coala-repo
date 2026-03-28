@@ -4,7 +4,6 @@ description: gofasta is a high-performance command-line utility for genomic epid
 homepage: https://github.com/cov-ert/gofasta
 ---
 
-
 # gofasta
 
 ## Overview
@@ -62,12 +61,12 @@ gofasta updown list -r reference.fasta -q alignment.fasta -o mutations.csv
 
 | Command | Description |
 |---------|-------------|
-| closest | Find the closest sequence(s) to a query by genetic distance |
-| completion | Generate the autocompletion script for gofasta for the specified shell. |
+| gofasta closest | Find the closest sequence(s) to a query by genetic distance |
+| gofasta completion | Generate the autocompletion script for gofasta for the specified shell. |
 | gofasta sam | Do things with sam files |
-| snps | Find snps relative to a reference. |
-| updown | Get pseudo-tree-aware catchments for query sequences from alignments |
-| variants | Annotate mutations relative to a reference from a multiple sequence alignment in fasta format |
+| gofasta snps | Find snps relative to a reference. |
+| gofasta updown | Get pseudo-tree-aware catchments for query sequences from alignments |
+| gofasta variants | Annotate mutations relative to a reference from a multiple sequence alignment in fasta format |
 
 ## Reference documentation
 - [gofasta README](./references/github_com_virus-evolution_gofasta_blob_master_README.md)

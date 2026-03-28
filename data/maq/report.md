@@ -7,14 +7,14 @@ N/A
 
 ### Metadata
 - **Docker Image**: biocontainers/maq:v0.7.1-8-deb_cv1
-- **Homepage**: https://github.com/maqetta/maqetta
+- **Homepage**: https://maq.sourceforge.net/maq-man.shtml
 - **Package**: Not found
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/maq/overview
 - **Total Downloads**: N/A
 - **Last updated**: N/A
-- **GitHub**: https://github.com/maqetta/maqetta
+- **GitHub**: https://maq.sourceforge.net/maq-man.shtml
 - **Stars**: N/A
 ### Original Help Text
 ```text
@@ -582,4 +582,4 @@ maq: simulate.c:473: maq_simustat: Assertion `fp' failed.
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

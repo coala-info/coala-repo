@@ -4,7 +4,6 @@ description: Somalier is a high-performance tool used to verify sample identity,
 homepage: https://github.com/brentp/somalier
 ---
 
-
 # somalier
 
 ## Overview
@@ -59,7 +58,7 @@ somalier ancestry --labels labels.tsv ref/*.somalier ++ query/*.somalier
 
 | Command | Description |
 |---------|-------------|
-| pca | dimensionality reduction |
+| somalier pca | dimensionality reduction |
 | somalier_extract | extract genotype-like information for a single-sample at selected sites |
 | somalier_find-sites | Finds sites from a VCF file based on various criteria. |
 | somalier_pedrel | report pairwise relationships from pedigree file |

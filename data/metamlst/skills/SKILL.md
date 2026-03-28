@@ -4,7 +4,6 @@ description: MetaMLST performs in-silico reconstruction of Multi-Locus Sequence 
 homepage: https://github.com/SegataLab/metamlst
 ---
 
-
 # metamlst
 
 ## Overview

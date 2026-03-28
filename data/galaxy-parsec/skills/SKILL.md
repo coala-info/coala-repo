@@ -4,7 +4,6 @@ description: Galaxy-parsec provides command-line wrappers for BioBlend functions
 homepage: https://github.com/galaxy-iuc/parsec
 ---
 
-
 # galaxy-parsec
 
 ## Overview

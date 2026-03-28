@@ -4,7 +4,6 @@ description: The b2b-utils package provides a suite of lightweight command-line 
 homepage: https://github.com/jvolkening/b2b-utils
 ---
 
-
 # b2b-utils
 
 ## Overview

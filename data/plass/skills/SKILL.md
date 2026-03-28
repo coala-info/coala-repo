@@ -4,7 +4,6 @@ description: PLASS is a specialized tool that assembles protein sequences direct
 homepage: https://github.com/soedinglab/plass
 ---
 
-
 # plass
 
 ## Overview
@@ -57,8 +56,8 @@ penguin guided_nuclassemble reads_1.fastq.gz reads_2.fastq.gz assembly.fas tmp
 
 | Command | Description |
 |---------|-------------|
-| assemble | Protein-level assembly of metagenomic samples |
 | penguin | protein-guided nucleotide assembler. Assemble nucleotide sequences by iterative greedy overlap assembly using protein and nucleotide information. |
+| plass assemble | Protein-level assembly of metagenomic samples |
 
 ## Reference documentation
 - [PLASS and PenguiN README](./references/github_com_soedinglab_plass_blob_master_README.md)

@@ -4,7 +4,6 @@ description: FastGA is a high-performance toolset for aligning genomes using a s
 homepage: https://github.com/thegenemyers/FASTGA
 ---
 
-
 # fastga
 
 ## Overview

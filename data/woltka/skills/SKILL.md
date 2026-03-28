@@ -4,7 +4,6 @@ description: Woltka transforms sequence alignments into taxonomic and functional
 homepage: https://github.com/qiyunzhu/woltka
 ---
 
-
 # woltka
 
 ## Overview
@@ -73,7 +72,7 @@ woltka normalize -i table.biom -c gene_coords.txt -o rpk_table.biom
 
 | Command | Description |
 |---------|-------------|
-| collapse | Collapse a profile by feature mapping and/or hierarchy. |
+| woltka collapse | Collapse a profile by feature mapping and/or hierarchy. |
 | woltka filter | Filter a profile by per-sample abundance. |
 | woltka normalize | Normalize a profile to fractions and/or by feature sizes. |
 | woltka_coverage | Calculate per-sample coverage of feature groups. |

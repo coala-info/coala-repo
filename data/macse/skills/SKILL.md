@@ -4,7 +4,6 @@ description: "MACSE aligns coding nucleotide sequences by using their amino acid
 homepage: https://bioweb.supagro.inra.fr/macse/
 ---
 
-
 # macse
 
 ## Overview

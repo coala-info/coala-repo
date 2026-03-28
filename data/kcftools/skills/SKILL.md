@@ -4,7 +4,6 @@ description: kcftools identifies genomic variations by analyzing k-mer presence 
 homepage: https://github.com/sivasubramanics/kcftools
 ---
 
-
 # kcftools
 
 ## Overview
@@ -73,9 +72,9 @@ Where:
 
 | Command | Description |
 |---------|-------------|
-| kcf2gt | Convert KCF to Genotype Table |
-| kcf2plink | Convert KCF windows to PED format |
 | kcftools getVariations | Screen for reference kmers that are not present in the KMC database, and detect variation |
+| kcftools kcf2gt | Convert KCF to Genotype Table |
+| kcftools kcf2plink | Convert KCF windows to PED format |
 | kcftools kcf2tsv | Convert KCF file to TSV file (IBSpy like) |
 | kcftools_cohort | Create a cohort of samples kcf files |
 | kcftools_findIBS | Find IBS windows in a KCF file |

@@ -4,7 +4,6 @@ description: Baktfold identifies the functions of hypothetical proteins by perfo
 homepage: https://github.com/gbouras13/baktfold
 ---
 
-
 # baktfold
 
 ## Overview
@@ -71,9 +70,9 @@ If your starting point is a Prokka GenBank file or a eukaryotic GenBank file, yo
 | baktfold compare | Runs Foldseek vs baktfold db |
 | baktfold install | Installs ProstT5 model and baktfold database |
 | baktfold predict | Uses ProstT5 to predict 3Di tokens - GPU recommended |
+| baktfold proteins | baktfold proteins-predict then comapare all in one - GPU recommended |
 | baktfold proteins-compare | Runs Foldseek vs baktfold db on proteins input |
 | baktfold run | baktfold predict then comapare all in one - GPU recommended |
-| proteins | baktfold proteins-predict then comapare all in one - GPU recommended |
 
 ## Reference documentation
 - [Baktfold GitHub Repository](./references/github_com_gbouras13_baktfold_blob_main_README.md)

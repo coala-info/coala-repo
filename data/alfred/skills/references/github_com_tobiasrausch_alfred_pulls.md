@@ -294,7 +294,7 @@ Most reactions
 You could search [all of GitHub](/search) or try an [advanced search](/search/advanced).
 
 **ProTip!**
-Exclude everything labeled `bug` with [-label:bug](/tobiasrausch/alfred/issues?q=is%3Apr+is%3Aopen+-label%3Abug).
+Updated in the last three days: [updated:>2026-03-25](/tobiasrausch/alfred/issues?q=is%3Apr+is%3Aopen+updated%3A%3E2026-03-25).
 
 ## Footer
 

@@ -4,7 +4,6 @@ description: RAISS predicts missing SNP Z-scores in GWAS datasets by leveraging 
 homepage: http://statistical-genetics.pages.pasteur.fr/raiss/
 ---
 
-
 # raiss
 
 ## Overview
@@ -85,7 +84,7 @@ raiss sanity-check \
 | Command | Description |
 |---------|-------------|
 | raiss performance-grid-search | Performs a grid search for RAISS performance tuning. |
-| sanity-check | Sanity check for RAISS imputation. |
+| raiss sanity-check | Sanity check for RAISS imputation. |
 
 ## Reference documentation
 - [RAISS Main Documentation](./references/statistical-genetics_pages_pasteur_fr_raiss.md)

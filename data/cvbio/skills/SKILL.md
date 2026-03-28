@@ -4,7 +4,6 @@ description: cvbio provides specialized bioinformatics utilities for processing 
 homepage: https://github.com/clintval/cvbio
 ---
 
-
 # cvbio
 
 ## Overview
@@ -51,10 +50,10 @@ Use the `Disambiguate` tool when you have sequencing data (BWA or STAR produced)
 
 | Command | Description |
 |---------|-------------|
-| Disambiguate | Disambiguate reads that were mapped to multiple references. |
-| FetchEnsemblGtf | Fetch a GTF file from the Ensembl web server. |
-| IgvBoss | Take control of your IGV session from end-to-end. |
-| UpdateContigNames | Update contig names in delimited data using a name mapping table. |
+| cvbio Disambiguate | Disambiguate reads that were mapped to multiple references. |
+| cvbio FetchEnsemblGtf | Fetch a GTF file from the Ensembl web server. |
+| cvbio IgvBoss | Take control of your IGV session from end-to-end. |
+| cvbio UpdateContigNames | Update contig names in delimited data using a name mapping table. |
 
 ## Reference documentation
 

@@ -4,7 +4,6 @@ description: Bioconvert is a utility that converts bioinformatics data between v
 homepage: http://bioconvert.readthedocs.io/
 ---
 
-
 # bioconvert
 
 ## Overview
@@ -80,13 +79,6 @@ convert()
 
 | Command | Description |
 |---------|-------------|
-| bcf2vcf | Convert file from '('BCF',)' to '('VCF',)' format. See bioconvert.readthedocs.io for details |
-| bcf2wiggle | Convert file from '('BCF',)' to '('WIGGLE',)' format. See bioconvert.readthedocs.io for details |
-| bedgraph2wiggle | Convert file from ('BEDGRAPH',) to ('WIGGLE',) format. See bioconvert.readthedocs.io for details |
-| bigbed2bed | Convert file from ('BIGBED',) to ('BED',) format. See bioconvert.readthedocs.io for details |
-| bigbed2wiggle | Convert file from '('BIGBED',)' to '('WIGGLE',)' format. See bioconvert.readthedocs.io for details |
-| bigwig2bedgraph | Convert file from '('BIGWIG',)' to '('BEDGRAPH',)' format. See bioconvert.readthedocs.io for details |
-| bigwig2wiggle | Convert file from '('BIGWIG',)' to '('WIGGLE',)' format. See bioconvert.readthedocs.io for details |
 | bioconvert abi2fasta | Convert file from (ABI,) to (FASTA,) format. See bioconvert.readthedocs.io for details |
 | bioconvert abi2fastq | Convert file from '('ABI',)' to '('FASTQ',)' format. See bioconvert.readthedocs.io for details |
 | bioconvert abi2qual | Convert file from '('ABI',)' to '('QUAL',)' format. See bioconvert.readthedocs.io for details |
@@ -100,79 +92,86 @@ convert()
 | bioconvert bam2sam | Convert file from '('BAM',)' to '('SAM',)' format. See bioconvert.readthedocs.io for details |
 | bioconvert bam2tsv | Convert file from ('BAM',) to ('TSV',) format. See bioconvert.readthedocs.io for details |
 | bioconvert bam2wiggle | Convert file from '('BAM',)' to '('WIGGLE',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert bcf2vcf | Convert file from '('BCF',)' to '('VCF',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert bcf2wiggle | Convert file from '('BCF',)' to '('WIGGLE',)' format. See bioconvert.readthedocs.io for details |
 | bioconvert bed2wiggle | Convert file from '('BED',)' to '('WIGGLE',)' format. See bioconvert.readthedocs.io for details |
 | bioconvert bedgraph2bigwig | Convert file from '('BEDGRAPH',)' to '('BIGWIG',)' format. See bioconvert.readthedocs.io for details |
 | bioconvert bedgraph2cov | Convert file from ('BEDGRAPH',) to ('COV',) format. See bioconvert.readthedocs.io for details |
+| bioconvert bedgraph2wiggle | Convert file from ('BEDGRAPH',) to ('WIGGLE',) format. See bioconvert.readthedocs.io for details |
+| bioconvert bigbed2bed | Convert file from ('BIGBED',) to ('BED',) format. See bioconvert.readthedocs.io for details |
+| bioconvert bigbed2wiggle | Convert file from '('BIGBED',)' to '('WIGGLE',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert bigwig2bedgraph | Convert file from '('BIGWIG',)' to '('BEDGRAPH',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert bigwig2wiggle | Convert file from '('BIGWIG',)' to '('WIGGLE',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert bplink2plink | Convert file from '('BPLINK',)' to '('PLINK',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert bplink2vcf | Convert file from '('BPLINK',)' to '('VCF',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert bz22gz | Convert file from '('BZ2',)' to '('GZ',)' format. See bioconvert.readthedocs.io for details |
 | bioconvert clustal2phylip | Convert file from '('CLUSTAL',)' to '('PHYLIP',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert clustal2stockholm | Convert file from '('CLUSTAL',)' to '('STOCKHOLM',)' format. See bioconvert.readthedocs.io for details |
 | bioconvert cram2bam | Convert file from '('CRAM',)' to '('BAM',)' format. See bioconvert.readthedocs.io for details |
 | bioconvert cram2fasta | Convert file from '('CRAM',)' to '('FASTA',)' format. See bioconvert.readthedocs.io for details |
 | bioconvert cram2fastq | Convert file from '('CRAM',)' to '('FASTQ',)' format. See bioconvert.readthedocs.io for details |
 | bioconvert cram2sam | Convert file from '('CRAM',)' to '('SAM',)' format. See bioconvert.readthedocs.io for details |
 | bioconvert csv2tsv | Convert file from '('CSV',)' to '('TSV',)' format. See bioconvert.readthedocs.io for details |
 | bioconvert csv2xls | Convert file from '('CSV',)' to '('XLS',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert dsrc2gz | Convert file from '('DSRC',)' to '('GZ',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert embl2fasta | Convert file from '('EMBL',)' to '('FASTA',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert embl2genbank | Convert file from ('EMBL',) to ('GENBANK',) format. See bioconvert.readthedocs.io for details |
+| bioconvert fast52pod5 | Convert file from '('FAST5',)' to '('POD5',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert fasta2clustal | Convert file from '('FASTA',)' to '('CLUSTAL',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert fasta2faa | Convert file from '('FASTA',)' to '('FAA',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert fasta2fasta_agp | Convert file from '('FASTA',)' to '('FASTA', 'AGP')' format. See bioconvert.readthedocs.io for details |
 | bioconvert fasta2fastq | Convert file from '('FASTA',)' to '('FASTQ',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert fasta2genbank | Convert file from '('FASTA',)' to '('GENBANK',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert fasta2nexus | Convert file from '('FASTA',)' to '('NEXUS',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert fasta2phylip | Convert file from '('FASTA',)' to '('PHYLIP',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert fasta2twobit | Convert file from '('FASTA',)' to '('TWOBIT',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert fasta_qual2fastq | Convert file from '(FASTA', 'QUAL')' to '(FASTQ',)' format. See bioconvert.readthedocs.io for details |
 | bioconvert fastq2fasta | Convert file from (FASTQ,) to (FASTA,) format. See bioconvert.readthedocs.io for details |
+| bioconvert fastq2fasta_qual | Convert file from '('FASTQ',)' to '('FASTA', 'QUAL')' format. See bioconvert.readthedocs.io for details |
+| bioconvert genbank2embl | Convert file from '('GENBANK',)' to '('EMBL',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert gff32gff2 | Convert file from '('GFF3',)' to '('GFF2',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert gff32gtf | Convert file from ('GFF3',) to ('GTF',) format. See bioconvert.readthedocs.io for details |
 | bioconvert gz2bz2 | Convert file from '('GZ',)' to '('BZ2',)' format. See bioconvert.readthedocs.io for details |
 | bioconvert gz2dsrc | Convert file from '('GZ',)' to '('DSRC',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert json2yaml | Convert file from '('JSON',)' to '('YAML',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert newick2nexus | Convert file from '('NEWICK',)' to '('NEXUS',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert newick2phyloxml | Convert file from '('NEWICK',)' to '('PHYLOXML',)' format. See bioconvert.readthedocs.io for details |
 | bioconvert nexus2clustal | Convert file from '(NEXUS,)' to '(CLUSTAL,)' format. See bioconvert.readthedocs.io for details |
 | bioconvert nexus2fasta | Convert file from '('NEXUS',)' to '('FASTA',)' format. See bioconvert.readthedocs.io for details |
 | bioconvert nexus2newick | Convert file from '('NEXUS',)' to '('NEWICK',)' format. See bioconvert.readthedocs.io for details |
 | bioconvert nexus2phylip | Convert file from (NEXUS,) to (PHYLIP,) format. See bioconvert.readthedocs.io for details |
+| bioconvert nexus2phyloxml | Convert file from '('NEXUS',)' to '('PHYLOXML',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert ods2csv | Convert file from '('ODS',)' to '('CSV',)' format. See bioconvert.readthedocs.io for details |
 | bioconvert pdb2faa | Convert file from '('PDB',)' to '('FAA',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert phylip2clustal | Convert file from '('PHYLIP',)' to '('CLUSTAL',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert phylip2fasta | Convert file from '('PHYLIP',)' to '('FASTA',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert phylip2nexus | Convert file from '('PHYLIP',)' to '('NEXUS',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert phylip2stockholm | Convert file from '('PHYLIP',)' to '('STOCKHOLM',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert phylip2xmfa | Convert file from '('PHYLIP',)' to '('XMFA',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert phyloxml2newick | Convert file from '('PHYLOXML',)' to '('NEWICK',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert phyloxml2nexus | Convert file from '('PHYLOXML',)' to '('NEXUS',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert plink2bplink | Convert file from '('PLINK',)' to '('BPLINK',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert plink2vcf | Convert file from '('PLINK',)' to '('VCF',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert sam2bam | Convert file from '('SAM',)' to '('BAM',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert sam2cram | Convert file from '('SAM',)' to '('CRAM',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert sam2paf | Convert file from '('SAM',)' to '('PAF',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert scf2fasta | Convert file from '('SCF',)' to '('FASTA',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert scf2fastq | Convert file from '('SCF',)' to '('FASTQ',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert sra2fastq | Convert file from '('SRA',)' to '('FASTQ',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert stockholm2clustal | Convert file from '(STOCKHOLM,)' to '(CLUSTAL,)' format. See bioconvert.readthedocs.io for details |
+| bioconvert stockholm2phylip | Convert file from '(STOCKHOLM,)' to '(PHYLIP,)' format. See bioconvert.readthedocs.io for details |
+| bioconvert tsv2csv | Convert file from '('TSV',)' to '('CSV',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert twobit2fasta | Convert file from '('TWOBIT',)' to '('FASTA',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert vcf2bcf | Convert file from '('VCF',)' to '('BCF',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert vcf2bed | Convert file from '('VCF',)' to '('BED',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert vcf2bplink | Convert file from '('VCF',)' to '('BPLINK',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert vcf2plink | Convert file from '('VCF',)' to '('PLINK',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert vcf2wiggle | Convert file from '('VCF',)' to '('WIGGLE',)' format. See bioconvert.readthedocs.io for details |
 | bioconvert wig2bed | Convert file from '('WIG',)' to '('BED',)' format. See bioconvert.readthedocs.io for details |
 | bioconvert xls2csv | Convert file from '('XLS',)' to '('CSV',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert xlsx2csv | Convert file from '('XLSX',)' to '('CSV',)' format. See bioconvert.readthedocs.io for details |
+| bioconvert xmfa2phylip | Convert file from '('XMFA',)' to '('PHYLIP',)' format. See bioconvert.readthedocs.io for details |
 | bioconvert_maf2sam | Convert file from '('MAF',)' to '('SAM',)' format. See bioconvert.readthedocs.io for details |
-| bplink2plink | Convert file from '('BPLINK',)' to '('PLINK',)' format. See bioconvert.readthedocs.io for details |
-| bplink2vcf | Convert file from '('BPLINK',)' to '('VCF',)' format. See bioconvert.readthedocs.io for details |
-| bz22gz | Convert file from '('BZ2',)' to '('GZ',)' format. See bioconvert.readthedocs.io for details |
-| clustal2stockholm | Convert file from '('CLUSTAL',)' to '('STOCKHOLM',)' format. See bioconvert.readthedocs.io for details |
-| dsrc2gz | Convert file from '('DSRC',)' to '('GZ',)' format. See bioconvert.readthedocs.io for details |
-| embl2fasta | Convert file from '('EMBL',)' to '('FASTA',)' format. See bioconvert.readthedocs.io for details |
-| embl2genbank | Convert file from ('EMBL',) to ('GENBANK',) format. See bioconvert.readthedocs.io for details |
-| fast52pod5 | Convert file from '('FAST5',)' to '('POD5',)' format. See bioconvert.readthedocs.io for details |
-| fasta2clustal | Convert file from '('FASTA',)' to '('CLUSTAL',)' format. See bioconvert.readthedocs.io for details |
-| fasta2faa | Convert file from '('FASTA',)' to '('FAA',)' format. See bioconvert.readthedocs.io for details |
-| fasta2fasta_agp | Convert file from '('FASTA',)' to '('FASTA', 'AGP')' format. See bioconvert.readthedocs.io for details |
-| fasta2genbank | Convert file from '('FASTA',)' to '('GENBANK',)' format. See bioconvert.readthedocs.io for details |
-| fasta2nexus | Convert file from '('FASTA',)' to '('NEXUS',)' format. See bioconvert.readthedocs.io for details |
-| fasta2phylip | Convert file from '('FASTA',)' to '('PHYLIP',)' format. See bioconvert.readthedocs.io for details |
-| fasta2twobit | Convert file from '('FASTA',)' to '('TWOBIT',)' format. See bioconvert.readthedocs.io for details |
-| fasta_qual2fastq | Convert file from '(FASTA', 'QUAL')' to '(FASTQ',)' format. See bioconvert.readthedocs.io for details |
-| fastq2fasta_qual | Convert file from '('FASTQ',)' to '('FASTA', 'QUAL')' format. See bioconvert.readthedocs.io for details |
-| genbank2embl | Convert file from '('GENBANK',)' to '('EMBL',)' format. See bioconvert.readthedocs.io for details |
-| gff32gff2 | Convert file from '('GFF3',)' to '('GFF2',)' format. See bioconvert.readthedocs.io for details |
-| gff32gtf | Convert file from ('GFF3',) to ('GTF',) format. See bioconvert.readthedocs.io for details |
-| json2yaml | Convert file from '('JSON',)' to '('YAML',)' format. See bioconvert.readthedocs.io for details |
-| newick2nexus | Convert file from '('NEWICK',)' to '('NEXUS',)' format. See bioconvert.readthedocs.io for details |
-| newick2phyloxml | Convert file from '('NEWICK',)' to '('PHYLOXML',)' format. See bioconvert.readthedocs.io for details |
-| nexus2phyloxml | Convert file from '('NEXUS',)' to '('PHYLOXML',)' format. See bioconvert.readthedocs.io for details |
-| ods2csv | Convert file from '('ODS',)' to '('CSV',)' format. See bioconvert.readthedocs.io for details |
-| phylip2clustal | Convert file from '('PHYLIP',)' to '('CLUSTAL',)' format. See bioconvert.readthedocs.io for details |
-| phylip2fasta | Convert file from '('PHYLIP',)' to '('FASTA',)' format. See bioconvert.readthedocs.io for details |
-| phylip2nexus | Convert file from '('PHYLIP',)' to '('NEXUS',)' format. See bioconvert.readthedocs.io for details |
-| phylip2stockholm | Convert file from '('PHYLIP',)' to '('STOCKHOLM',)' format. See bioconvert.readthedocs.io for details |
-| phylip2xmfa | Convert file from '('PHYLIP',)' to '('XMFA',)' format. See bioconvert.readthedocs.io for details |
-| phyloxml2newick | Convert file from '('PHYLOXML',)' to '('NEWICK',)' format. See bioconvert.readthedocs.io for details |
-| phyloxml2nexus | Convert file from '('PHYLOXML',)' to '('NEXUS',)' format. See bioconvert.readthedocs.io for details |
-| plink2bplink | Convert file from '('PLINK',)' to '('BPLINK',)' format. See bioconvert.readthedocs.io for details |
-| plink2vcf | Convert file from '('PLINK',)' to '('VCF',)' format. See bioconvert.readthedocs.io for details |
-| sam2bam | Convert file from '('SAM',)' to '('BAM',)' format. See bioconvert.readthedocs.io for details |
-| sam2cram | Convert file from '('SAM',)' to '('CRAM',)' format. See bioconvert.readthedocs.io for details |
-| sam2paf | Convert file from '('SAM',)' to '('PAF',)' format. See bioconvert.readthedocs.io for details |
-| scf2fasta | Convert file from '('SCF',)' to '('FASTA',)' format. See bioconvert.readthedocs.io for details |
-| scf2fastq | Convert file from '('SCF',)' to '('FASTQ',)' format. See bioconvert.readthedocs.io for details |
-| sra2fastq | Convert file from '('SRA',)' to '('FASTQ',)' format. See bioconvert.readthedocs.io for details |
-| stockholm2clustal | Convert file from '(STOCKHOLM,)' to '(CLUSTAL,)' format. See bioconvert.readthedocs.io for details |
-| stockholm2phylip | Convert file from '(STOCKHOLM,)' to '(PHYLIP,)' format. See bioconvert.readthedocs.io for details |
-| tsv2csv | Convert file from '('TSV',)' to '('CSV',)' format. See bioconvert.readthedocs.io for details |
-| twobit2fasta | Convert file from '('TWOBIT',)' to '('FASTA',)' format. See bioconvert.readthedocs.io for details |
-| vcf2bcf | Convert file from '('VCF',)' to '('BCF',)' format. See bioconvert.readthedocs.io for details |
-| vcf2bed | Convert file from '('VCF',)' to '('BED',)' format. See bioconvert.readthedocs.io for details |
-| vcf2bplink | Convert file from '('VCF',)' to '('BPLINK',)' format. See bioconvert.readthedocs.io for details |
-| vcf2plink | Convert file from '('VCF',)' to '('PLINK',)' format. See bioconvert.readthedocs.io for details |
-| vcf2wiggle | Convert file from '('VCF',)' to '('WIGGLE',)' format. See bioconvert.readthedocs.io for details |
-| xlsx2csv | Convert file from '('XLSX',)' to '('CSV',)' format. See bioconvert.readthedocs.io for details |
-| xmfa2phylip | Convert file from '('XMFA',)' to '('PHYLIP',)' format. See bioconvert.readthedocs.io for details |
 
 ## Reference documentation
 - [Bioconvert Main Documentation](./references/bioconvert_readthedocs_io_en_main.md)

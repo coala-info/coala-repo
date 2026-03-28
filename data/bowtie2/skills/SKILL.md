@@ -4,7 +4,6 @@ description: "Bowtie 2 is an ultrafast and memory-efficient tool for aligning se
 homepage: https://bowtie-bio.sourceforge.net/bowtie2/index.shtml
 ---
 
-
 # bowtie2
 
 ## Overview
@@ -67,6 +66,15 @@ bowtie2-inspect <index_base>
 ```
 *   Use `-s` to see summary information about the index.
 *   Use `-o <file>` to save the reconstructed FASTA to a specific file.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| bowtie2 | An ultrafast and memory-efficient tool for aligning sequencing reads to long reference sequences. |
+| bowtie2-build | Builds a Bowtie 2 index from a set of DNA sequences. |
 
 ## Reference documentation
 - [Bowtie 2 Home](./references/bowtie-bio_sourceforge_net_bowtie2_index.shtml.md)

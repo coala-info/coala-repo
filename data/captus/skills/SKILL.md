@@ -4,7 +4,6 @@ description: Captus is a phylogenomics pipeline that processes raw high-throughp
 homepage: https://github.com/edgardomortiz/Captus
 ---
 
-
 # captus
 
 ## Overview
@@ -57,8 +56,8 @@ Collects markers, aligns them, filters paralogs, and trims the results.
 |---------|-------------|
 | captus align | Captus-assembly: Align; collect, align, and curate aligned markers |
 | captus assemble | Assemble; perform de novo assembly using MEGAHIT |
+| captus clean | Clean; remove adaptors and quality-filter reads with BBTools |
 | captus extract | Captus-assembly: Extract; recover markers from FASTA assemblies |
-| clean | Clean; remove adaptors and quality-filter reads with BBTools |
 
 ## Reference documentation
 - [Captus Assembly Overview](./references/edgardomortiz_github_io_captus.docs_assembly.md)

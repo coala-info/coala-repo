@@ -4,7 +4,6 @@ description: "bamrescue identifies and repairs data loss in corrupted BAM files 
 homepage: https://github.com/Arkanosis/bamrescue
 ---
 
-
 # bamrescue
 
 ## Overview
@@ -49,10 +48,10 @@ bamrescue rescue corrupted.bam rescued_output.bam
 
 | Command | Description |
 |---------|-------------|
-| check | Check a BAM file for corruption or rescue data from a corrupted BAM file. |
-| check | Check a BAM file for corruption |
-| rescue | Rescue data from a corrupted BAM file |
-| rescue | Rescue data from a corrupted BAM file |
+| bamrescue check | Check a BAM file for corruption or rescue data from a corrupted BAM file. |
+| bamrescue check | Check a BAM file for corruption |
+| bamrescue rescue | Rescue data from a corrupted BAM file |
+| bamrescue rescue | Rescue data from a corrupted BAM file |
 
 ## Reference documentation
 

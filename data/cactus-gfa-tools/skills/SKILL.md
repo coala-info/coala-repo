@@ -4,7 +4,6 @@ description: cactus-gfa-tools is a suite of C++ utilities designed to manipulate
 homepage: https://github.com/ComparativeGenomicsToolkit/cactus-gfa-tools
 ---
 
-
 # cactus-gfa-tools
 
 ## Overview

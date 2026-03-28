@@ -4,7 +4,6 @@ description: RTK performs rarefaction on large-scale count matrices to normalize
 homepage: https://github.com/hildebra/Rarefaction/
 ---
 
-
 # rtk
 
 ## Overview

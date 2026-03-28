@@ -4,7 +4,6 @@ description: LexicMap performs base-level nucleotide alignment of sequences agai
 homepage: https://github.com/shenwei356/LexicMap
 ---
 
-
 # lexicmap
 
 ## Overview
@@ -79,7 +78,7 @@ Search queries against the generated index.
 | lexicmap | Generate shell autocompletion scripts |
 | lexicmap index | Generate an index from FASTA/Q sequences |
 | lexicmap search | Search sequences against an index |
-| utils | Some utilities |
+| lexicmap utils | Some utilities |
 
 ## Reference documentation
 - [LexicMap Introduction](./references/bioinf_shenwei_me_LexicMap_introduction.md)

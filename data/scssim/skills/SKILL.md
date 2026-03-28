@@ -4,7 +4,6 @@ description: SCSsim is a bioinformatics suite that simulates realistic single-ce
 homepage: https://github.com/qasimyu/scssim
 ---
 
-
 # scssim
 
 ## Overview
@@ -65,9 +64,9 @@ scssim genreads -i <simulated.fa> -r <mutation_rate> -m <platform.profile> -t <t
 
 | Command | Description |
 |---------|-------------|
-| genreads | Generate reads from a sequence file using MALBAC and read simulation models |
-| learn | Learn parameters from a normal BAM file for single-cell sequencing simulation |
-| simuvars | Simulate genomic variations and SNPs on a reference sequence to generate new sequences. |
+| scssim genreads | Generate reads from a sequence file using MALBAC and read simulation models |
+| scssim learn | Learn parameters from a normal BAM file for single-cell sequencing simulation |
+| scssim simuvars | Simulate genomic variations and SNPs on a reference sequence to generate new sequences. |
 
 ## Reference documentation
 - [SCSsim GitHub Repository](./references/github_com_qasimyu_scssim.md)

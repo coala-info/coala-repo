@@ -4,7 +4,6 @@ description: SvABA identifies structural variants and indels by performing genom
 homepage: https://github.com/walaj/svaba
 ---
 
-
 # svaba
 
 ## Overview
@@ -53,9 +52,9 @@ svaba run -p 8 -t tumor.bam -n normal.bam -G reference.fasta -a fast_run
 
 | Command | Description |
 |---------|-------------|
-| refilter | Refilter SVABA results |
+| svaba refilter | Refilter SVABA results |
 | svaba run | SV and indel detection using rolling SGA assembly and BWA-MEM realignment |
-| tovcf | Convert a *bps.txt.gz file to a *vcf file |
+| svaba tovcf | Convert a *bps.txt.gz file to a *vcf file |
 
 ## Reference documentation
 - [SvABA README](./references/github_com_walaj_svaba_blob_master_README.md)

@@ -4,7 +4,6 @@ description: SVIM identifies and classifies structural variants from long-read s
 homepage: https://github.com/eldariont/svim
 ---
 
-
 # svim
 
 ## Overview

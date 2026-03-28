@@ -4,7 +4,6 @@ description: csvtk is a high-performance, header-aware toolkit for manipulating,
 homepage: https://github.com/shenwei356/csvtk
 ---
 
-
 # csvtk
 
 ## Overview
@@ -90,43 +89,43 @@ csvtk summary -f price:sum,price:mean -g category data.csv
 
 | Command | Description |
 |---------|-------------|
-| add-header | add column names |
-| comb | compute combinations of items at every row |
-| concat | concatenate CSV/TSV files by rows. Note that the second and later files are concatenated to the first one, so only columns match that of the first files kept. |
-| corr | calculate Pearson correlation between two columns |
-| csv2json | convert CSV to JSON format |
-| csv2md | convert CSV to markdown format. csv2md treats the first row as header line and requires them to be unique |
-| csv2rst | convert CSV to readable aligned table |
-| csv2tab | convert CSV to tabular format |
-| csv2xlsx | convert CSV/TSV files to XLSX file. Multiple CSV/TSV files are saved as separated sheets in .xlsx file. All input files should all be CSV or TSV. First rows are freezed unless given '-H/--no-header-row'. |
-| cut | select and arrange fields |
-| del-header | delete column names. It deletes the first lines of all input files. |
-| del-quotes | remove extra double quotes added by 'fix-quotes' |
-| dim | dimensions of CSV file |
-| filter | filter rows by values of selected fields with arithmetic expression |
-| filter2 | filter rows by awk-like arithmetic/string expressions |
-| fix | fix CSV/TSV with different numbers of columns in rows by appending empty cells to rows with fewer columns |
-| fix-quotes | fix malformed CSV/TSV caused by double-quotes to meet the RFC4180 specification |
-| fmtdate | format date of selected fields |
-| freq | frequencies of selected fields |
-| grep | grep data by selected fields with patterns/regular expressions |
-| head | print first N records |
-| headers | print headers |
-| inter | intersection of multiple files. Fields in all files should be the same. |
-| join | join files by selected fields (inner, left and outer join). |
-| mutate | create new column from selected fields by regular expression |
-| ncol | print number of columns |
-| nrow | print number of records |
-| pretty | convert CSV to a readable aligned table |
-| sample | sampling by proportion |
-| space2tab | convert space delimited format to TSV |
-| split | split CSV/TSV into multiple files according to column values |
-| splitxlsx | split XLSX sheet into multiple sheets according to column values |
-| summary | summary statistics of selected numeric or text fields (groupby group fields) |
-| tab2csv | convert tabular format to CSV |
-| uniq | unique data without sorting |
-| watch | monitor the specified fields |
-| xlsx2csv | convert XLSX to CSV format |
+| csvtk add-header | add column names |
+| csvtk comb | compute combinations of items at every row |
+| csvtk concat | concatenate CSV/TSV files by rows. Note that the second and later files are concatenated to the first one, so only columns match that of the first files kept. |
+| csvtk corr | calculate Pearson correlation between two columns |
+| csvtk csv2json | convert CSV to JSON format |
+| csvtk csv2md | convert CSV to markdown format. csv2md treats the first row as header line and requires them to be unique |
+| csvtk csv2rst | convert CSV to readable aligned table |
+| csvtk csv2tab | convert CSV to tabular format |
+| csvtk csv2xlsx | convert CSV/TSV files to XLSX file. Multiple CSV/TSV files are saved as separated sheets in .xlsx file. All input files should all be CSV or TSV. First rows are freezed unless given '-H/--no-header-row'. |
+| csvtk cut | select and arrange fields |
+| csvtk del-header | delete column names. It deletes the first lines of all input files. |
+| csvtk del-quotes | remove extra double quotes added by 'fix-quotes' |
+| csvtk dim | dimensions of CSV file |
+| csvtk filter | filter rows by values of selected fields with arithmetic expression |
+| csvtk filter2 | filter rows by awk-like arithmetic/string expressions |
+| csvtk fix | fix CSV/TSV with different numbers of columns in rows by appending empty cells to rows with fewer columns |
+| csvtk fix-quotes | fix malformed CSV/TSV caused by double-quotes to meet the RFC4180 specification |
+| csvtk fmtdate | format date of selected fields |
+| csvtk freq | frequencies of selected fields |
+| csvtk grep | grep data by selected fields with patterns/regular expressions |
+| csvtk head | print first N records |
+| csvtk headers | print headers |
+| csvtk inter | intersection of multiple files. Fields in all files should be the same. |
+| csvtk join | join files by selected fields (inner, left and outer join). |
+| csvtk mutate | create new column from selected fields by regular expression |
+| csvtk ncol | print number of columns |
+| csvtk nrow | print number of records |
+| csvtk pretty | convert CSV to a readable aligned table |
+| csvtk sample | sampling by proportion |
+| csvtk space2tab | convert space delimited format to TSV |
+| csvtk split | split CSV/TSV into multiple files according to column values |
+| csvtk splitxlsx | split XLSX sheet into multiple sheets according to column values |
+| csvtk summary | summary statistics of selected numeric or text fields (groupby group fields) |
+| csvtk tab2csv | convert tabular format to CSV |
+| csvtk uniq | unique data without sorting |
+| csvtk watch | monitor the specified fields |
+| csvtk xlsx2csv | convert XLSX to CSV format |
 
 ## Reference documentation
 - [Usage and Examples](./references/bioinf_shenwei_me_csvtk_usage.md)

@@ -4,7 +4,6 @@ description: PlasmidID is a mapping-based and assembly-assisted tool designed to
 homepage: https://github.com/BU-ISCIII/plasmidID
 ---
 
-
 # plasmidid
 
 ## Overview

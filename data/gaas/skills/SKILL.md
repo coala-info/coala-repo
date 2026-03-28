@@ -4,7 +4,6 @@ description: GAAS is a suite of utilities designed to standardize genome project
 homepage: https://github.com/NBISweden/GAAS
 ---
 
-
 # gaas
 
 ## Overview
@@ -48,6 +47,15 @@ gaas_refresh_bin.sh
 - **Workflow Standardization**: Always initialize new service tasks using `gaas_create_annotation_project.pl`. This ensures that file paths remain predictable for automated scripts and collaborators.
 - **Assembly Validation**: Run `gaas_fasta_statistics.pl` both before and after assembly filtering (e.g., removing short contigs) to document the impact on assembly continuity metrics.
 - **Dependency Check**: If running from source, use `perl Makefile.PL` to verify that all required Perl modules (like `Graph::Directed` and `Bio::DB::EUtilities`) are present in your environment.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| gaas_fasta_statistics.pl | Get some basic statistics about a nucleotide fasta file. e.g Number of     sequence, Number of nucleotide, N50, GC-content, etc. It can also create     R plots about contig size distribution. The plots are performed only if     an output is given. This script is not designed for AA/Protein     sequences. |
+| perl /usr/local/bin/gaas_create_annotation_project.pl | A fasta file for genome assembly must be provided (-g) |
 
 ## Reference documentation
 - [GAAS GitHub Repository](./references/github_com_NBISweden_GAAS.md)

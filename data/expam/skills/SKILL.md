@@ -4,7 +4,6 @@ description: expam performs taxonomic and phylogenetic characterization of metag
 homepage: https://github.com/seansolari/expam
 ---
 
-
 # expam
 
 ## Overview
@@ -72,21 +71,21 @@ If you encounter `ImportError: cannot import name 'NodeStyle'`, it is usually a 
 
 | Command | Description |
 |---------|-------------|
-| add | Add sequence to the database. |
-| build | Start building database. |
-| create | Initialise database. |
-| cutoff | Apply cutoff to some set of already processed classifications. THIS WILL OVERWRITE OLD RESULTS! |
-| download_taxonomy | Download taxonomic information for reference sequences. |
-| draw_tree | Draw the reference tree. |
-| make_reads | Uniformly sample reads of length l from some input sequence. This is for testing purposes only, and is not a replacement for actual read generating software. |
-| mashtree | Create mashtree from current sequences and add to database. |
-| phylotree | Draw results on phylotree. |
-| print | Print current database parameters. |
-| quickrun | Initialise, set parameters and start building db (assumes sequences all lie in the same folder). |
-| remove | Remove sequence from database (only impacts future db builds). |
-| run | Run reads against database. |
-| set | Set database build parameters. |
-| to_taxonomy | Convert results to taxonomic setting. |
+| expam add | Add sequence to the database. |
+| expam build | Start building database. |
+| expam create | Initialise database. |
+| expam cutoff | Apply cutoff to some set of already processed classifications. THIS WILL OVERWRITE OLD RESULTS! |
+| expam download_taxonomy | Download taxonomic information for reference sequences. |
+| expam draw_tree | Draw the reference tree. |
+| expam make_reads | Uniformly sample reads of length l from some input sequence. This is for testing purposes only, and is not a replacement for actual read generating software. |
+| expam mashtree | Create mashtree from current sequences and add to database. |
+| expam phylotree | Draw results on phylotree. |
+| expam print | Print current database parameters. |
+| expam quickrun | Initialise, set parameters and start building db (assumes sequences all lie in the same folder). |
+| expam remove | Remove sequence from database (only impacts future db builds). |
+| expam run | Run reads against database. |
+| expam set | Set database build parameters. |
+| expam to_taxonomy | Convert results to taxonomic setting. |
 
 ## Reference documentation
 - [expam GitHub README](./references/github_com_seansolari_expam_blob_main_README.md)

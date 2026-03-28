@@ -4,7 +4,6 @@ description: sam2lca identifies the lowest common ancestor for reads that align 
 homepage: https://github.com/maxibor/sam2lca
 ---
 
-
 # sam2lca
 
 ## Overview
@@ -52,8 +51,8 @@ sam2lca can modify the alignment files themselves to include taxonomic metadata.
 
 | Command | Description |
 |---------|-------------|
-| analyze | Run the sam2lca analysis |
-| update-db | Download/prepare acc2tax and taxonomy databases |
+| sam2lca analyze | Run the sam2lca analysis |
+| sam2lca update-db | Download/prepare acc2tax and taxonomy databases |
 
 ## Reference documentation
 - [sam2lca README](./references/github_com_maxibor_sam2lca_blob_master_README.md)

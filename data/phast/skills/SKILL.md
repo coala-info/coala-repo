@@ -4,7 +4,6 @@ description: PHAST is a collection of command-line utilities designed for compar
 homepage: http://compgen.cshl.edu/phast/
 ---
 
-
 # phast
 
 ## Overview

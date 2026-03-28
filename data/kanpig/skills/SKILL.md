@@ -4,7 +4,6 @@ description: kanpig genotypes structural variants by building local variant grap
 homepage: https://github.com/ACEnglish/kanpig
 ---
 
-
 # kanpig
 
 ## Overview
@@ -74,8 +73,8 @@ The `FT` field in the output VCF provides quality metadata. Common flags include
 |---------|-------------|
 | kanpig gt | Germline SV Genotyping |
 | kanpig mosaic | Mosaic SV Genotyping |
+| kanpig plup | BAM/CRAM to Pileup Index |
 | kanpig trio | Trio SV Genotyping |
-| plup | BAM/CRAM to Pileup Index |
 
 ## Reference documentation
 - [kanpig Main Documentation](./references/github_com_ACEnglish_kanpig.md)

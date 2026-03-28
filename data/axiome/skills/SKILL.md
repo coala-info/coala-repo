@@ -4,7 +4,6 @@ description: Axiome provides a unified API gateway and marketplace that translat
 homepage: https://github.com/ujjwalredd/Axiomeer
 ---
 
-
 # axiome
 
 ## Overview
@@ -74,8 +73,8 @@ curl -X POST http://localhost:8000/execute/workflow \
 
 | Command | Description |
 |---------|-------------|
-| process | Axiome process command for data processing |
-| utility | Generates a file mapping template or copies AXIOME sample data into the current directory |
+| axiome process | Axiome process command for data processing |
+| axiome utility | Generates a file mapping template or copies AXIOME sample data into the current directory |
 
 ## Reference documentation
 - [Axiomeer README](./references/github_com_ujjwalredd_Axiomeer_blob_main_README.md)

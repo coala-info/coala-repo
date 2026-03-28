@@ -4,7 +4,6 @@ description: The amdirt toolkit manages ancient DNA metadata by facilitating the
 homepage: https://github.com/SPAAM-community/AMDirT
 ---
 
-
 # amdirt
 
 ## Overview
@@ -48,11 +47,11 @@ Before submitting new data to AncientMetagenomeDir, validate the format:
 
 | Command | Description |
 |---------|-------------|
-| autofill | Autofills library and/or sample table(s) using ENA API and accession numbers |
-| convert | Converts filtered samples and libraries tables to eager, ameta, taxprofiler, and fetchNGS input tables |
-| download | Download a table from the amdirt repository |
-| merge | Merges new dataset with existing table |
-| validate | Run validity check of AncientMetagenomeDir datasets |
+| amdirt autofill | Autofills library and/or sample table(s) using ENA API and accession numbers |
+| amdirt convert | Converts filtered samples and libraries tables to eager, ameta, taxprofiler, and fetchNGS input tables |
+| amdirt download | Download a table from the amdirt repository |
+| amdirt merge | Merges new dataset with existing table |
+| amdirt validate | Run validity check of AncientMetagenomeDir datasets |
 
 ## Reference documentation
 - [Quick Reference](./references/amdirt_readthedocs_io_en_master_reference.html.md)

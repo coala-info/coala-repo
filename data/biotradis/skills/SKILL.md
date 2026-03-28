@@ -4,7 +4,6 @@ description: Bio-Tradis is a toolkit for processing and interpreting transposon 
 homepage: https://github.com/sanger-pathogens/Bio-Tradis
 ---
 
-
 # biotradis
 
 ## Overview

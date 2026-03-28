@@ -4,7 +4,6 @@ description: MegaGTA is a metagenomic gene-targeted assembler that uses Hidden M
 homepage: https://github.com/HKU-BAL/MegaGTA
 ---
 
-
 # megagta
 
 ## Overview
@@ -58,8 +57,8 @@ bin/post_proc.sh -g gene_resources_dir -d output_dir/contigs -m 16G -c 0.01
 | buildlib | Build a library from read files. |
 | denovo | no succinct de Bruijn graph name! |
 | megagta_findstart | Find the start of the first exon in a gene. |
-| read2sdbg | Builds a de Bruijn graph from sequencing reads. |
 | readstat | Reads FASTQ files from standard input. |
+| sdbg_builder read2sdbg | Builds a de Bruijn graph from sequencing reads. |
 | search | Search for genes in a de Bruijn graph. |
 
 ## Reference documentation

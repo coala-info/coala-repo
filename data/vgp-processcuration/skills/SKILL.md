@@ -4,7 +4,6 @@ description: The vgp-processcuration toolkit automates the final processing of c
 homepage: https://github.com/vgl-hub/vgl-curation
 ---
 
-
 # vgp-processcuration
 
 ## Overview

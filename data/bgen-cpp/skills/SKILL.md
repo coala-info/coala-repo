@@ -4,7 +4,6 @@ description: This tool manages and manipulates BGEN files for large-scale geneti
 homepage: https://enkre.net/cgi-bin/code/bgen/
 ---
 
-
 # bgen-cpp
 
 ## Overview

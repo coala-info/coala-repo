@@ -4,7 +4,6 @@ description: Poretools is a toolkit for manipulating, extracting, and visualizin
 homepage: https://github.com/arq5x/poretools
 ---
 
-
 # poretools
 
 ## Overview
@@ -54,15 +53,16 @@ The general syntax for `poretools` follows a subcommand structure:
 
 | Command | Description |
 |---------|-------------|
-| fasta | Extract FASTA sequences from FAST5 files. |
-| fastq | Extract FASTQ data from FAST5 files. |
-| nucdist | Calculate nucleotide distribution from FAST5 files. |
+| poretools fasta | Extract FASTA sequences from FAST5 files. |
+| poretools fastq | Extract FASTQ data from FAST5 files. |
 | poretools index | Index FAST5 files for faster access. |
 | poretools metadata | Report metadata from FAST5 files. |
+| poretools nucdist | Calculate nucleotide distribution from FAST5 files. |
 | poretools qualpos | Analyze read quality and position in FAST5 files. |
 | poretools readstats | Calculate and display read statistics from FAST5 files. |
 | poretools times | Extract timing information from FAST5 files. |
 | poretools winner | Reports the winner read from each FAST5 file. |
+| poretools yield_plot | Generates a plot of yield per read from FAST5 files. |
 | poretools_combine | Combine FAST5 files into a TAR archive. |
 | poretools_events | Report pre-basecalled events |
 | poretools_hist | Generate histograms of read lengths from FAST5 files. |
@@ -72,7 +72,6 @@ The general syntax for `poretools` follows a subcommand structure:
 | poretools_squiggle | Generate squiggle plots from FAST5 files. |
 | poretools_stats | Calculate and report statistics from FAST5 files. |
 | poretools_tabular | Report FASTA entries from FAST5 files. |
-| yield_plot | Generates a plot of yield per read from FAST5 files. |
 
 ## Reference documentation
 - [poretools: a toolkit for working with Oxford nanopore data](./references/github_com_arq5x_poretools.md)

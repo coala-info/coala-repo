@@ -4,7 +4,6 @@ description: Trinotate is a functional annotation suite that integrates transcri
 homepage: https://trinotate.github.io/
 ---
 
-
 # trinotate
 
 ## Overview

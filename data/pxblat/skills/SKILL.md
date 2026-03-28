@@ -4,7 +4,6 @@ description: PxBLAT is a Python binding library for the Blast-Like Alignment Too
 homepage: https://pypi.org/project/pxblat/
 ---
 
-
 # pxblat
 
 ## Overview
@@ -36,10 +35,10 @@ While PxBLAT is primarily a Python binding, it includes utility scripts for envi
 
 | Command | Description |
 |---------|-------------|
-| client | A client for the genomic finding program that produces a .psl file. |
-| fatotwobit | Convert DNA from fasta to 2bit format. |
-| server | Make a server to quickly find where DNA occurs in genome |
-| twobittofa | Convert all or part of .2bit file to fasta. |
+| pxblat client | A client for the genomic finding program that produces a .psl file. |
+| pxblat fatotwobit | Convert DNA from fasta to 2bit format. |
+| pxblat server | Make a server to quickly find where DNA occurs in genome |
+| pxblat twobittofa | Convert all or part of .2bit file to fasta. |
 
 ## Reference documentation
 - [PxBLAT README](./references/github_com_ylab-hi_pxblat_blob_main_README.md)

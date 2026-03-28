@@ -4,7 +4,6 @@ description: minc-tools provides a suite of command-line utilities for the analy
 homepage: https://github.com/BIC-MNI/minc
 ---
 
-
 # minc-tools
 
 ## Overview

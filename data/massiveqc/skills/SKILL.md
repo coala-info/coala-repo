@@ -4,7 +4,6 @@ description: MassiveQC is a Python-based pipeline that automates RNA-seq quality
 homepage: https://github.com/shimw6828/MassiveQC
 ---
 
-
 # massiveqc
 
 ## Overview

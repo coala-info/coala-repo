@@ -4,7 +4,6 @@ description: The Vizgen Post-processing Tool provides a command-line utility for
 homepage: https://github.com/Vizgen/vizgen-postprocessing
 ---
 
-
 # vpt
 
 ## Overview
@@ -43,19 +42,6 @@ After defining new cell boundaries, you must update the associated biological da
 
 | Command | Description |
 |---------|-------------|
-| compile-tile-segmentation | Combines the per-tile segmentation outputs into a single, internally-consistent parquet file containing all of the segmentation boundaries found in the experiment. |
-| convert-geometry | Converts entity boundaries produced by a different tool into a vpt compatible parquet file. In the process, each of the input entities is checked for geometric validity, overlap with other geometries, and assigned a globally-unique EntityID to facilitate other processing steps. |
-| convert-to-ome | Transforms the large 16-bit mosaic tiff images produced by the MERSCOPE into a OME pyramidal tiff. |
-| convert-to-rgb-ome | Converts up to three flat tiff images into a rgb OME-tiff pyramidal images. If a rgb channel input isn’t specified, the channel will be dark (all 0’s). |
-| derive-entity-metadata | Uses the segmentation boundaries to calculate the geometric attributes of each Entity. These attributes include the position, volume, and morphological features. |
-| extract-image-patch | Extracts a patch of specified coordinates and channels from the 16-bit mosaic tiff images produced by the MERSCOPE as an 8-bit RGB PNG file |
-| generate-segmentation-metrics | Computes a number of segmentation metrics and figures to assess the quality of cell segmentation |
-| partition-transcripts | Uses the segmentation boundaries to determine which Entity, if any, contains each detected transcript. Outputs an Entity by gene matrix, and may optionally output a detected transcript csv with an additional column indicating the containing Entity. |
-| prepare-segmentation | Generates a segmentation specification json file to be used for cell segmentation tasks. The segmentation specification json includes specification for the algorithm to run, the paths for all images for each stain for each z index, the micron to mosaic pixel transformation matrix, the number of tiles, and the window coordinates for each tile. |
-| run-segmentation | Top-level interface for this CLI which invokes the segmentation functionality of the tool. It is intended for users who would like to run the program with minimal additional configuration. Specifically, it executes: prepare-segmentation, run-segmentation-on-tile, and compile-tile-segmentation. |
-| run-segmentation-on-tile | Executes the segmentation algorithm on a specific tile of the mosaic images. This functionality is intended both for visualizing a preview of the segmentation (run only one tile), and for distributing jobs using an orchestration tool such as Nextflow. |
-| sum-signals | Uses the segmentation boundaries to find the intensity of each mosaic image in each Entity. Outputs both the summed intensity of the raw images and the summed intensity of high-pass filtered images (reduces the effect of background fluorescence). |
-| update-vzg | Updates an existing .vzg file with new segmentation boundaries and the corresponding expression matrix. NOTE: This functionality requires enough disk space to unpack the existing .vzg file. |
 | vpt | vpt: error: argument : invalid choice: 'AWS' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics') |
 | vpt | vpt: error: argument : invalid choice: 'Combines' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics') |
 | vpt | vpt: error: argument : invalid choice: 'Computes' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics') |
@@ -100,6 +86,19 @@ After defining new cell boundaries, you must update the associated biological da
 | vpt | vpt: error: argument : invalid choice: 'transformation' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics') |
 | vpt | vpt: error: argument : invalid choice: 'used' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics') |
 | vpt | vpt: error: argument : invalid choice: 'written' (choose from 'run-segmentation', 'prepare-segmentation', 'run-segmentation-on-tile', 'compile-tile-segmentation', 'derive-entity-metadata', 'partition-transcripts', 'sum-signals', 'update-vzg', 'convert-geometry', 'convert-to-ome', 'convert-to-rgb-ome', 'extract-image-patch', 'generate-segmentation-metrics') |
+| vpt compile-tile-segmentation | Combines the per-tile segmentation outputs into a single, internally-consistent parquet file containing all of the segmentation boundaries found in the experiment. |
+| vpt convert-geometry | Converts entity boundaries produced by a different tool into a vpt compatible parquet file. In the process, each of the input entities is checked for geometric validity, overlap with other geometries, and assigned a globally-unique EntityID to facilitate other processing steps. |
+| vpt convert-to-ome | Transforms the large 16-bit mosaic tiff images produced by the MERSCOPE into a OME pyramidal tiff. |
+| vpt convert-to-rgb-ome | Converts up to three flat tiff images into a rgb OME-tiff pyramidal images. If a rgb channel input isn’t specified, the channel will be dark (all 0’s). |
+| vpt derive-entity-metadata | Uses the segmentation boundaries to calculate the geometric attributes of each Entity. These attributes include the position, volume, and morphological features. |
+| vpt extract-image-patch | Extracts a patch of specified coordinates and channels from the 16-bit mosaic tiff images produced by the MERSCOPE as an 8-bit RGB PNG file |
+| vpt generate-segmentation-metrics | Computes a number of segmentation metrics and figures to assess the quality of cell segmentation |
+| vpt partition-transcripts | Uses the segmentation boundaries to determine which Entity, if any, contains each detected transcript. Outputs an Entity by gene matrix, and may optionally output a detected transcript csv with an additional column indicating the containing Entity. |
+| vpt prepare-segmentation | Generates a segmentation specification json file to be used for cell segmentation tasks. The segmentation specification json includes specification for the algorithm to run, the paths for all images for each stain for each z index, the micron to mosaic pixel transformation matrix, the number of tiles, and the window coordinates for each tile. |
+| vpt run-segmentation | Top-level interface for this CLI which invokes the segmentation functionality of the tool. It is intended for users who would like to run the program with minimal additional configuration. Specifically, it executes: prepare-segmentation, run-segmentation-on-tile, and compile-tile-segmentation. |
+| vpt run-segmentation-on-tile | Executes the segmentation algorithm on a specific tile of the mosaic images. This functionality is intended both for visualizing a preview of the segmentation (run only one tile), and for distributing jobs using an orchestration tool such as Nextflow. |
+| vpt sum-signals | Uses the segmentation boundaries to find the intensity of each mosaic image in each Entity. Outputs both the summed intensity of the raw images and the summed intensity of high-pass filtered images (reduces the effect of background fluorescence). |
+| vpt update-vzg | Updates an existing .vzg file with new segmentation boundaries and the corresponding expression matrix. NOTE: This functionality requires enough disk space to unpack the existing .vzg file. |
 
 ## Reference documentation
 - [Vizgen Post-processing Tool README](./references/github_com_Vizgen_vizgen-postprocessing_blob_develop_README.md)

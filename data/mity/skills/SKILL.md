@@ -4,7 +4,6 @@ description: mity is a bioinformatics pipeline designed to call, normalize, and 
 homepage: https://github.com/KCCG/mity
 ---
 
-
 # mity
 
 ---
@@ -74,11 +73,11 @@ When reviewing the `mity report` Excel output, prioritize variants using this hi
 
 | Command | Description |
 |---------|-------------|
+| mity normalise | Normalises VCF files from mity. |
 | mity report | Create a report from mity VCF files. |
 | mity runall | Run the MITY pipeline on a list of BAM/CRAM files. |
 | mity_call | BAM / CRAM files to run the analysis on. If --bam-file-list is included, this argument is the file containing the list of bam/cram files. |
 | mity_merge | Merge MITY and nuclear VCF files. |
-| normalise | Normalises VCF files from mity. |
 
 ## Reference documentation
 - [Mity README](./references/github_com_KCCG_mity_blob_master_README.md)

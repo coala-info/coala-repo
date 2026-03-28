@@ -4,7 +4,6 @@ description: pypgatk is a proteogenomics toolkit used to generate customized pro
 homepage: http://github.com/bigbio/py-pgatk
 ---
 
-
 # pypgatk
 
 ## Overview
@@ -94,19 +93,19 @@ pgatk map-peptide2genome \
 
 | Command | Description |
 |---------|-------------|
-| cbioportal-downloader | Download data from cBioPortal |
-| cbioportal-to-proteindb | Configuration for cbioportal to proteindb tool |
-| cosmic-downloader | Download mutation data from COSMIC |
-| ensembl-check | Perform Ensembl database check |
-| ensembl-downloader | This tool enables to download from enseml ftp the FASTA and GTF files |
 | pgatk generate-decoy | Generate decoy protein sequences for a target protein database. |
 | pypgatk blast_get_position | Get the position of peptides in a reference database. |
+| pypgatk cbioportal-downloader | Download data from cBioPortal |
+| pypgatk cbioportal-to-proteindb | Configuration for cbioportal to proteindb tool |
+| pypgatk cosmic-downloader | Download mutation data from COSMIC |
 | pypgatk cosmic-to-proteindb | Convert COSMIC mutation data to a protein database. |
 | pypgatk dnaseq-to-proteindb | Configuration to perform conversion between ENSEMBL Files |
+| pypgatk ensembl-check | Perform Ensembl database check |
+| pypgatk ensembl-downloader | This tool enables to download from enseml ftp the FASTA and GTF files |
 | pypgatk peptide-class-fdr | The peptide_class_fdr allows to filter the peptide psm files (IdXML files) using two different FDR threshold types: - Global FDR - Global FDR + Peptide Class FDR The peptide classes can be defined in two ways as simple class: - "altorf,pseudo,ncRNA,COSMIC,cbiomut,var_mut,var_rs" where each class represent only one kind of peptide source pseudo gene, ncRNA, etc. The second for of representing peptide classes is using groups of classes: - "{ non_canonical:[altorf,pseudo,ncRNA];mutations:[COSMIC,cbiomut];variants:[var _mut,var_rs]}" in this case a class is a group of peptide sources for example: mutations with two difference sources as COSMIC and cbiomut (CBioportal mutation) . |
 | pypgatk validate_peptides | Validate peptides using the pypgatk pipeline. |
+| pypgatk vcf-to-proteindb | Configuration to perform conversion between ENSEMBL Files |
 | pypgatk_mztab_class_fdr | Filter peptides by global-fdr and class-fdr |
-| vcf-to-proteindb | Configuration to perform conversion between ENSEMBL Files |
 
 ## Reference documentation
 - [pgatk -- ProteoGenomics Analysis Toolkit](./references/github_com_bigbio_pgatk_blob_master_README.md)

@@ -4,7 +4,6 @@ description: Spapros is a Python-based pipeline for selecting optimal gene sets 
 homepage: https://github.com/theislab/spapros
 ---
 
-
 # spapros
 
 ## Overview
@@ -37,6 +36,15 @@ Before finalizing a gene set, use the probe design component (integrated with `o
 *   Lack sufficient unique probe sequences.
 *   Violate GC-content or melting temperature (Tm) requirements.
 *   Have overlapping binding locations that prevent optimal probe density.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| spapros evaluation | Create a selection of probesets for an h5ad file. |
+| spapros selection | Create a selection of probesets for an h5ad file. |
 
 ## Reference documentation
 - [spapros GitHub Repository](./references/github_com_theislab_spapros.md)

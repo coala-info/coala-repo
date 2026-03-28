@@ -4,7 +4,6 @@ description: OpenStructure is a modular framework for structural bioinformatics 
 homepage: https://openstructure.org
 ---
 
-
 # openstructure
 
 ## Overview

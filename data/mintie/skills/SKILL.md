@@ -4,7 +4,6 @@ description: MINTIE is a bioinformatics pipeline that identifies rare transcript
 homepage: https://github.com/Oshlack/MINTIE
 ---
 
-
 # mintie
 
 ## Overview
@@ -95,9 +94,9 @@ If a known variant is missing from the results:
 | bpipe | bpipe is a build and deployment tool for bioinformatics pipelines. |
 | bpipe | Manage and execute bpipe pipelines. |
 | bpipe | Manage and execute pipelines |
-| cleanup | Cleanup internal files |
-| diagrameditor | Diagram editor for a bpipe pipeline |
-| remake | Remake files |
+| bpipe cleanup | Cleanup internal files |
+| bpipe diagrameditor | Diagram editor for a bpipe pipeline |
+| bpipe remake | Remake files |
 
 ## Reference documentation
 - [MINTIE Wiki Home](./references/github_com_Oshlack_MINTIE_wiki.md)

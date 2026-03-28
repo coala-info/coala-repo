@@ -4,7 +4,6 @@ description: sierrapy is a Python-based command-line interface for the Stanford 
 homepage: https://github.com/hivdb/sierra-client/tree/master/python
 ---
 
-
 # sierrapy
 
 ## Overview
@@ -51,10 +50,10 @@ While HIV-1 is the default, the client supports multiple pathogens:
 
 | Command | Description |
 |---------|-------------|
-| fasta | Run alignment, drug resistance and other analysis for one or more FASTA-format files contained DNA sequences. |
-| mutations | Run drug resistance and other analysis for PR, RT and/or IN mutations. |
-| recipe | Post process Sierra web service output. |
-| seqreads | Run alignment, drug resistance and other analysis for one or more tab-delimited text files contained codon reads of HIV-1 pol DNA sequences. |
+| sierrapy fasta | Run alignment, drug resistance and other analysis for one or more FASTA-format files contained DNA sequences. |
+| sierrapy mutations | Run drug resistance and other analysis for PR, RT and/or IN mutations. |
+| sierrapy recipe | Post process Sierra web service output. |
+| sierrapy seqreads | Run alignment, drug resistance and other analysis for one or more tab-delimited text files contained codon reads of HIV-1 pol DNA sequences. |
 | sierrapy_patterns | Run drug resistance and other analysis for one or more files contains lines of PR, RT and/or IN mutations based on HIV-1 type B consensus. Each line is treated as a unique pattern. |
 
 ## Reference documentation

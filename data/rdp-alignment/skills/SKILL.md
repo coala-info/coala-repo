@@ -4,7 +4,6 @@ description: This tool classifies 16S rRNA gene sequences using the Ribosomal Da
 homepage: https://github.com/AlbertoMartinPerez/Sequence_Analyzer_automations
 ---
 
-
 # rdp-alignment
 
 ## Overview
@@ -54,6 +53,18 @@ The primary function of `rdp-alignment` is to classify query sequences against t
 *   **Parallel Processing:** For large datasets, investigate if `rdp-alignment` supports parallel processing or if you can run multiple instances concurrently on different subsets of your data to speed up analysis.
 *   **Understanding Output:** Familiarize yourself with the output columns. Key information typically includes the query sequence ID, assigned taxonomy (often in a hierarchical format), and a confidence score.
 *   **Error Handling:** Pay close attention to any warnings or errors reported by the tool. These can indicate issues with input sequences, database integrity, or parameter settings.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| AlignNucleotideToProtein | Aligns nucleotide sequences to a protein alignment. |
+| CompareErrorType | Compare error types in alignments |
+| PairwiseKNN | Pairwise alignment tool using k-nearest neighbors |
+| java AlignmentMerger | This program reads in all the files from the input directory and merges the alignment into one single file |
+| rdp-alignment_rm-partialseq | Performs alignment of sequences, marking partial sequences based on gap count. |
 
 ## Reference documentation
 - [Overview of rdp-alignment on Anaconda.org](./references/anaconda_org_channels_bioconda_packages_rdp-alignment_overview.md)

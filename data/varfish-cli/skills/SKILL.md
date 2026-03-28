@@ -4,7 +4,6 @@ description: The varfish-cli tool automates the upload of genomic variant data a
 homepage: https://github.com/bihealth/varfish-cli
 ---
 
-
 # varfish-cli
 
 ## Overview

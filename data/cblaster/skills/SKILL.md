@@ -4,7 +4,6 @@ description: cblaster identifies co-located clusters of homologous sequences by 
 homepage: https://github.com/gamcil/cblaster
 ---
 
-
 # cblaster
 
 ## Overview
@@ -64,12 +63,12 @@ cblaster search -qf query.fasta -id 50 -cv 80 -ev 1e-10
 |---------|-------------|
 | cblaster | A tool for finding homologous sequences in a database using BLAST. |
 | cblaster extract | Extract information from session files |
+| cblaster extract_clusters | Extract clusters from a session file |
 | cblaster gne | Gene neighbourhood estimation. Repeatedly recomputes homologue clusters with different --gap values. |
+| cblaster plot_clusters | Plot clusters using clinker |
+| cblaster search | Remote/local cblaster searches. |
 | cblaster_config | Configure cblaster (e.g. for setting NCBI e-mail addresses or API keys) |
 | cblaster_makedb | Generate local databases from genome files |
-| extract_clusters | Extract clusters from a session file |
-| plot_clusters | Plot clusters using clinker |
-| search | Remote/local cblaster searches. |
 
 ## Reference documentation
 - [cblaster README](./references/github_com_gamcil_cblaster_blob_master_README.md)

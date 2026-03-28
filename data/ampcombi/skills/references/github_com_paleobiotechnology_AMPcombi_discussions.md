@@ -187,10 +187,10 @@ Latest activity
 
 [Latest activity](/paleobiotechnology/AMPcombi/discussions?discussions_q=is%3Aopen)
 [Date created](/paleobiotechnology/AMPcombi/discussions?discussions_q=is%3Aopen+sort%3Adate_created)
-[Top: Past day](/paleobiotechnology/AMPcombi/discussions?discussions_q=is%3Aopen+sort%3Atop+created%3A%3E%3D2026-03-26)
-[Top: Past week](/paleobiotechnology/AMPcombi/discussions?discussions_q=is%3Aopen+sort%3Atop+created%3A%3E%3D2026-03-20)
-[Top: Past month](/paleobiotechnology/AMPcombi/discussions?discussions_q=is%3Aopen+sort%3Atop+created%3A%3E%3D2026-02-25)
-[Top: Past year](/paleobiotechnology/AMPcombi/discussions?discussions_q=is%3Aopen+sort%3Atop+created%3A%3E%3D2025-03-27)
+[Top: Past day](/paleobiotechnology/AMPcombi/discussions?discussions_q=is%3Aopen+sort%3Atop+created%3A%3E%3D2026-03-27)
+[Top: Past week](/paleobiotechnology/AMPcombi/discussions?discussions_q=is%3Aopen+sort%3Atop+created%3A%3E%3D2026-03-21)
+[Top: Past month](/paleobiotechnology/AMPcombi/discussions?discussions_q=is%3Aopen+sort%3Atop+created%3A%3E%3D2026-02-26)
+[Top: Past year](/paleobiotechnology/AMPcombi/discussions?discussions_q=is%3Aopen+sort%3Atop+created%3A%3E%3D2025-03-28)
 [Top: All](/paleobiotechnology/AMPcombi/discussions?discussions_q=is%3Aopen+sort%3Atop)
 
 Label

@@ -4,7 +4,6 @@ description: msamtools is a suite of tools designed to filter and profile large-
 homepage: https://github.com/arumugamlab/msamtools
 ---
 
-
 # msamtools
 
 ## Overview

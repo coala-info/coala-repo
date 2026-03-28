@@ -4,7 +4,6 @@ description: igvtools is a suite of command-line utilities used to preprocess an
 homepage: http://www.broadinstitute.org/igv/
 ---
 
-
 # igvtools
 
 ## Overview
@@ -54,12 +53,12 @@ Creates an index file for rapid data retrieval. IGV requires these indices to lo
 
 | Command | Description |
 |---------|-------------|
-| count | The count command computes alignment coverage of an alignment file. The output is a .tdf file, which can be loaded into IGV for viewing. |
-| formatexp | Formats an expression data file for use in IGV. |
 | igvtools | IGV Tools is a set of utilities for preprocessing and manipulating genomic data files. |
-| index | Creates an index for an alignment or feature file (e.g., BED, GFF, or VCF). |
-| sort | Sorts an alignment file by start position. The input file must be a .sam, .bam, .aligned, or .vcf file. |
-| toTDF | The toTDF command converts a sorted data file to a binary tiled data file (TDF). Supported input formats are: .wig, .bed, .gff, .map, .psl, .sam, and .bam. |
+| igvtools count | The count command computes alignment coverage of an alignment file. The output is a .tdf file, which can be loaded into IGV for viewing. |
+| igvtools formatexp | Formats an expression data file for use in IGV. |
+| igvtools index | Creates an index for an alignment or feature file (e.g., BED, GFF, or VCF). |
+| igvtools sort | Sorts an alignment file by start position. The input file must be a .sam, .bam, .aligned, or .vcf file. |
+| igvtools toTDF | The toTDF command converts a sorted data file to a binary tiled data file (TDF). Supported input formats are: .wig, .bed, .gff, .map, .psl, .sam, and .bam. |
 
 ## Reference documentation
 - [igvtools UI and Commands](./references/igv_org_doc_desktop_UserGuide_tools_igvtools_ui.md)

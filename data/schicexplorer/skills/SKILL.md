@@ -4,7 +4,6 @@ description: scHiCExplorer is a comprehensive suite of tools for processing, nor
 homepage: https://github.com/joachimwolff/scHiCExplorer
 ---
 
-
 # schicexplorer
 
 ## Overview

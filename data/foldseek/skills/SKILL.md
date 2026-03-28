@@ -4,7 +4,6 @@ description: Foldseek performs fast and sensitive structural alignments by encod
 homepage: https://github.com/steineggerlab/foldseek
 ---
 
-
 # foldseek
 
 ## Overview

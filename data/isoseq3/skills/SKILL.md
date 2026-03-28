@@ -4,7 +4,6 @@ description: isoseq3 transforms PacBio HiFi reads into high-quality, full-length
 homepage: https://github.com/PacificBiosciences/IsoSeq3
 ---
 
-
 # isoseq3
 
 ## Overview
@@ -72,12 +71,12 @@ isoseq dedup output.fltnc.bam deduped.bam
 
 | Command | Description |
 |---------|-------------|
-| bcstats | Generates stats for group barcodes and (optionally) molecular barcodes |
-| correct | Correct group barcodes given a barcode truth set |
-| dedup | Deduplicate PCR artifacts (FLTNC to DEDUP) |
+| isoseq bcstats | Generates stats for group barcodes and (optionally) molecular barcodes |
 | isoseq cluster | Cluster FLNC reads and generate transcripts (FLNC to TRANSCRIPTS) |
 | isoseq cluster2 | Cluster FLNC reads and generate transcripts, much faster than "cluster" (FLNC to TRANSCRIPTS) |
 | isoseq collapse | Collapse transcripts based on genomic mapping |
+| isoseq correct | Correct group barcodes given a barcode truth set |
+| isoseq dedup | Deduplicate PCR artifacts (FLTNC to DEDUP) |
 | isoseq refine | Remove polyA and concatemers from FL reads and generate FLNC transcripts (FL to FLNC) |
 | isoseq summarize | Create barcode overview from transcripts (TRANSCRIPTS to CSV) |
 | isoseq tag | Remove cell barcodes and UMIs from FL reads and generate tagged FL transcripts (FL to FLT) |

@@ -4,7 +4,6 @@ description: Bpipe is a tool for defining and running modular, large-scale compu
 homepage: http://docs.bpipe.org/
 ---
 
-
 # bpipe
 
 ## Overview
@@ -92,13 +91,13 @@ check_output = {
 | bpipe | Bpipe Version 0.9.13   Built on Fri Aug 23 09:45:10 GMT 2024 |
 | bpipe | Bpipe Version 0.9.13   Built on Fri Aug 23 09:45:10 GMT 2024 |
 | bpipe | Bpipe Version 0.9.13   Built on Fri Aug 23 09:45:10 GMT 2024 |
+| bpipe diagram | Generate a diagram of a Bpipe pipeline |
+| bpipe jobs | List and manage Bpipe jobs |
 | bpipe override | Override specified check to force it to pass |
 | bpipe register | Register a pipeline with Bpipe |
 | bpipe_archive | Archiving to computed file path |
 | bpipe_checks | Check Report |
 | bpipe_log | Show log output from bpipe jobs |
-| diagram | Generate a diagram of a Bpipe pipeline |
-| jobs | List and manage Bpipe jobs |
 
 ## Reference documentation
 - [The exec statement](./references/docs_bpipe_org_Language_Exec.md)

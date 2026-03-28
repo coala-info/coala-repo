@@ -4,7 +4,6 @@ description: VarGeno is a high-speed bioinformatics tool designed for genotyping
 homepage: https://github.com/medvedevgroup/vargeno
 ---
 
-
 # vargeno
 
 ## Overview

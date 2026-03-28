@@ -4,7 +4,6 @@ description: bxtools is a suite of command-line utilities designed for low-level
 homepage: https://github.com/walaj/bxtools
 ---
 
-
 # bxtools
 
 ## Overview
@@ -97,12 +96,12 @@ Standard BAM files are sorted by coordinate or query name. The `convert` command
 
 | Command | Description |
 |---------|-------------|
-| convert | Convert a BAM to a BX sorted BAM by switching BX and chromosome |
-| mol | Return span of molecules from 10X data (using MI tag) |
-| relabel | Move BX barcodes from BX tag to qname |
-| split | Split / count a BAM into multiple BAMs, one BAM per unique BX tag |
-| stat | Gather BX-level statistics |
-| tile | Gather BX counts on tiled ranges |
+| bxtools convert | Convert a BAM to a BX sorted BAM by switching BX and chromosome |
+| bxtools mol | Return span of molecules from 10X data (using MI tag) |
+| bxtools relabel | Move BX barcodes from BX tag to qname |
+| bxtools split | Split / count a BAM into multiple BAMs, one BAM per unique BX tag |
+| bxtools stat | Gather BX-level statistics |
+| bxtools tile | Gather BX counts on tiled ranges |
 
 ## Reference documentation
 - [bxtools README](./references/github_com_walaj_bxtools_blob_master_README.md)

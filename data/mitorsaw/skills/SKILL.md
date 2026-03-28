@@ -4,7 +4,6 @@ description: Mitorsaw analyzes PacBio HiFi data to perform mitochondrial genome 
 homepage: https://github.com/PacificBiosciences/mitorsaw
 ---
 
-
 # mitorsaw
 
 ## Overview
@@ -58,6 +57,7 @@ Use the `--output-debug {FOLDER}` flag to generate auxiliary files. This is high
 
 | Command | Description |
 |---------|-------------|
+| mitorsaw | a tool for haplotyping mitochondria from HiFi data. Select a subcommand to see more usage information: |
 | mitorsaw_build | Download and build the mitochondria database |
 | mitorsaw_haplotype | Run the haplotyper on a dataset |
 

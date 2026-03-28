@@ -4,7 +4,6 @@ description: Neurodocker automates the creation of Docker and Singularity contai
 homepage: https://github.com/kaczmarj/neurodocker
 ---
 
-
 # neurodocker
 
 ## Overview

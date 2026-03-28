@@ -4,7 +4,6 @@ description: BamM is a high-performance toolkit designed for mapping reads, calc
 homepage: https://github.com/Ecogenomics/BamM
 ---
 
-
 # bamm
 
 ## Overview

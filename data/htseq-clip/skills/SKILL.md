@@ -4,7 +4,6 @@ description: htseq-clip processes eCLIP/iCLIP sequencing data to generate files 
 homepage: https://github.com/EMBL-Hentze-group/htseq-clip
 ---
 
-
 # htseq-clip
 
 A toolset for the analysis of eCLIP/iCLIP datasets. Use when Claude needs to process and analyze eCLIP/iCLIP data, particularly for generating files compatible with the DEWSeq R/Bioconductor package. This tool is designed for command-line usage.
@@ -49,6 +48,21 @@ htseq-clip --input reads.bam --annotation genes.gtf --output counts.tsv --strand
 *   **Output Format:** Understand the format of the output files (e.g., TSV, BEDGraph) as it will dictate how you can use them with other tools like DEWSeq.
 
 **Note:** The `htseq-clip` project is noted as no longer actively maintained, with a recommendation to use "Shoji" instead. For current projects, consider migrating to Shoji if possible.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| htseq-clip | htseq-clip: error: argument subparser: invalid choice: 'createmaxcountmatrix' (choose from 'annotation', 'createSlidingWindows', 'mapToId', 'extract', 'count', 'createMatrix', 'createMaxCountMatrix', 'trimAnnotation') |
+| htseq-clip | htseq-clip: error: argument subparser: invalid choice: 'createmtrix' (choose from 'annotation', 'createSlidingWindows', 'mapToId', 'extract', 'count', 'createMatrix', 'createMaxCountMatrix', 'trimAnnotation') |
+| htseq-clip | htseq-clip: error: argument subparser: invalid choice: 'createslidingwindows' (choose from 'annotation', 'createSlidingWindows', 'mapToId', 'extract', 'count', 'createMatrix', 'createMaxCountMatrix', 'trimAnnotation') |
+| htseq-clip | htseq-clip: error: argument subparser: invalid choice: 'maptold' (choose from 'annotation', 'createSlidingWindows', 'mapToId', 'extract', 'count', 'createMatrix', 'createMaxCountMatrix', 'trimAnnotation') |
+| htseq-clip | htseq-clip: error: argument subparser: invalid choice: 'trimannotation' (choose from 'annotation', 'createSlidingWindows', 'mapToId', 'extract', 'count', 'createMatrix', 'createMaxCountMatrix', 'trimAnnotation') |
+| htseq-clip annotation | annotation: flattens (to BED format) the given annotation file (in GFF format) |
+| htseq-clip count | counts the number of crosslink/deletion/insertion sites |
+| htseq-clip extract | extracts crosslink sites, insertions or deletions |
 
 ## Reference documentation
 - [htseq-clip: a toolset for the analysis of eCLIP/iCLIP datasets](./references/anaconda_org_channels_bioconda_packages_htseq-clip_overview.md)

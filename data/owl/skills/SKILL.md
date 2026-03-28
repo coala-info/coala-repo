@@ -4,7 +4,6 @@ description: Owl detects and quantifies microsatellite instability using high-fi
 homepage: https://github.com/PacificBiosciences/owl
 ---
 
-
 # owl
 
 ## Overview
@@ -55,9 +54,9 @@ The scoring step produces two primary files:
 
 | Command | Description |
 |---------|-------------|
+| owl score | Score profiles |
 | owl_merge | Merge multiple profiles |
 | owl_profile | Profile a BAM file |
-| score | Score profiles |
 
 ## Reference documentation
 - [Owl README](./references/github_com_PacificBiosciences_owl_blob_main_README.md)

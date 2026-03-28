@@ -4,7 +4,6 @@ description: This tool identifies primer sets that uniquely amplify target seque
 homepage: https://github.com/widdowquinn/find_differential_primers
 ---
 
-
 # find_differential_primers
 
 ## Overview

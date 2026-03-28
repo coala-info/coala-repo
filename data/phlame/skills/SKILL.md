@@ -4,7 +4,6 @@ description: PHLAME is a bioinformatics pipeline designed to characterize strain
 homepage: https://github.com/quevan/phlame
 ---
 
-
 # phlame
 
 ## Overview
@@ -59,7 +58,7 @@ Once a classifier is built, use it to profile metagenomic samples.
 
 | Command | Description |
 |---------|-------------|
-| cmt | This tool is part of the phlame suite and is used for processing count data. |
+| phlame cmt | This tool is part of the phlame suite and is used for processing count data. |
 | phlame makedb | Build a phlame classifier database. |
 | phlame tree | Builds a phylogenetic tree from mutation data. |
 | phlame_classify | Classify lineages from bam files. |

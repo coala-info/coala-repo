@@ -4,7 +4,6 @@ description: HTSlib provides essential utilities for compressing, indexing, and 
 homepage: https://github.com/samtools/htslib
 ---
 
-
 # htslib
 
 ## Overview

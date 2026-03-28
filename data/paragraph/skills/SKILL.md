@@ -4,7 +4,6 @@ description: Paragraph is a graph-based structural variant genotyper that realig
 homepage: https://github.com/Illumina/paragraph
 ---
 
-
 # paragraph
 
 ## Overview
@@ -57,6 +56,7 @@ python3 bin/multigrmpy.py \
 |---------|-------------|
 | Multigrmpy.py | A tool for graph-based genotyping of variants using a manifest of samples and a reference genome. |
 | grmpy | Graph-based read mapping and genotyping for structural variants. |
+| paragraph | Graph-based structural variant caller and sequence aligner. |
 | paragraph_idxdepth | Estimate coverage depth from BAM/CRAM files using index information. |
 
 ## Reference documentation

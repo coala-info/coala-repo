@@ -4,7 +4,6 @@ description: Lassensus is a bioinformatics pipeline that generates consensus seq
 homepage: https://github.com/DaanJansen94/lassensus
 ---
 
-
 # lassensus
 
 ## Overview

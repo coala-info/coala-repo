@@ -4,7 +4,6 @@ description: Turbocor corrects and refines phylogenetic trees by resolving struc
 homepage: https://github.com/dcjones/turbocor
 ---
 
-
 # turbocor
 
 ## Overview
@@ -39,8 +38,8 @@ turbocor [options] -i <input_tree> -o <output_tree>
 
 | Command | Description |
 |---------|-------------|
-| topk | Print the top-k correlations in a correlation matrix generated with the `compute` command |
 | turbocor compute | Compute entries of a thresholded correlation matrix. Output to an HDF5 file. |
+| turbocor topk | Print the top-k correlations in a correlation matrix generated with the `compute` command |
 
 ## Reference documentation
 - [Turbocor Overview](./references/anaconda_org_channels_bioconda_packages_turbocor_overview.md)

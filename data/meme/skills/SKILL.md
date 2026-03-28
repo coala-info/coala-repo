@@ -4,7 +4,6 @@ description: MEME discovers and analyzes recurring sequence motifs in biological
 homepage: https://meme-suite.org
 ---
 
-
 # meme
 
 ## Overview
@@ -66,6 +65,7 @@ Use these tools to locate known motifs or determine if a motif is statistically 
 | fimo | Find Individual Motif Occurrences (FIMO) searches a sequence database for occurrences of known motifs. |
 | glam2 | Gapped Local Alignment of Motifs (GLAM2) finds motifs in sequences, allowing for insertions and deletions. |
 | mast | Motif Alignment and Search Tool (MAST) - searches for motifs in sequence databases. |
+| meme | Motif-based sequence analysis tool for discovering motifs in a set of sequences. |
 | sea | Simple Enrichment Analysis (SEA) for motifs in sequences. |
 | streme | STREME (Sensitive, Thorough, Rapid, Enriched Motif Elicitation) discovers motifs in a set of sequences. |
 | tomtom | Compare a query motif database against one or more target motif databases. |

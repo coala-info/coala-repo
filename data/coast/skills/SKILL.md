@@ -4,7 +4,6 @@ description: The coast tool identifies and quantifies sequence conservation acro
 homepage: https://gitlab.com/coast_tool/COAST
 ---
 
-
 # coast
 
 ## Overview

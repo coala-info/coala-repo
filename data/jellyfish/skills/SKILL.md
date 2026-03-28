@@ -4,7 +4,6 @@ description: "Jellyfish is a bioinformatics tool used for fast and memory-effici
 homepage: http://www.genome.umd.edu/jellyfish.html
 ---
 
-
 # jellyfish
 
 ## Overview
@@ -52,6 +51,23 @@ To convert the binary jellyfish format back into a human-readable fasta format:
 - **Memory Management**: The `-s` parameter is critical. If set too low, Jellyfish will create multiple intermediate files on disk. Aim for a hash size that accommodates the estimated number of unique k-mers in your sample.
 - **Canonical K-mers**: Always use the `-C` flag for genomic DNA sequencing data unless your analysis specifically requires strand-specific k-mer counts.
 - **Input Formats**: Jellyfish natively handles both `.fasta` and `.fastq` formats. It can also handle gzipped files directly if the system supports transparent decompression.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| jellyfish bc | Create a bloom filter from the input k-mers |
+| jellyfish count | Count k-mers in fasta or fastq files |
+| jellyfish dump | Dump k-mer counts |
+| jellyfish info | Display information about a jellyfish file |
+| jellyfish mem | Give memory usage information |
+| jellyfish merge | Merge jellyfish databases |
+| jellyfish query | Query a Jellyfish database |
+| jellyfish stats | Display some statistics about the k-mers in the hash: |
+| jellyfish_histo | Create an histogram of k-mer occurrences |
+| jellyfish_jf | Count k-mers in DNA, RNA or protein sequences. |
 
 ## Reference documentation
 - [Jellyfish Overview](./references/anaconda_org_channels_bioconda_packages_jellyfish_overview.md)

@@ -4,7 +4,6 @@ description: The vcf-validator suite verifies that VCF files adhere to official 
 homepage: https://github.com/EBIVariation/vcf-validator
 ---
 
-
 # vcf-validator
 
 ## Overview

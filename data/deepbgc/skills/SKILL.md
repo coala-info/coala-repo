@@ -4,7 +4,6 @@ description: DeepBGC uses deep learning to identify and classify biosynthetic ge
 homepage: https://github.com/Merck/DeepBGC
 ---
 
-
 # deepbgc
 
 ## Overview
@@ -66,10 +65,10 @@ deepbgc prepare --protein my_proteins.faa --output pfam_table.tsv
 
 | Command | Description |
 |---------|-------------|
+| deepbgc pipeline | Run DeepBGC pipeline: Preparation, BGC detection, BGC classification and generate the report directory. |
 | deepbgc prepare | Prepare genomic sequence by annotating proteins and Pfam domains. |
 | deepbgc train | Train a BGC detector/classifier on a set of BGC samples. |
 | deepbgc_download | Download trained models and other file dependencies to the DeepBGC downloads directory. |
-| pipeline | Run DeepBGC pipeline: Preparation, BGC detection, BGC classification and generate the report directory. |
 
 ## Reference documentation
 - [DeepBGC GitHub Repository](./references/github_com_Merck_deepbgc.md)

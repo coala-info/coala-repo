@@ -4,7 +4,6 @@ description: Olivar automates the design of tiled amplicon schemes for multiplex
 homepage: https://gitlab.com/treangenlab/olivar
 ---
 
-
 # olivar
 
 ## Overview
@@ -59,10 +58,10 @@ olivar specificity --primer_pool design.csv --pool 1 -d path/to/human_blast_db -
 | olivar | olivar: error: argument subparser_name: invalid choice: 'Olivar' (choose from build, tiling, save, specificity, sensitivity) |
 | olivar | olivar: error: argument subparser_name: invalid choice: 'an' (choose from build, tiling, save, specificity, sensitivity) |
 | olivar save | Saves an Olivar design to a file. |
+| olivar tiling | Primer design for tiling experiments. |
 | olivar_build | Build an Olivar reference file from a FASTA sequence and/or an MSA. |
 | olivar_sensitivity | Check the sensitivity of existing primer pools against an MSA of target sequences, and visualize the MSA and primer alignments. |
 | olivar_specificity | Calculate primer specificity using BLAST. |
-| tiling | Primer design for tiling experiments. |
 
 ## Reference documentation
 - [GitHub Repository: treangenlab/Olivar](./references/github_com_treangenlab_Olivar.md)

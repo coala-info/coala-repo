@@ -4,7 +4,6 @@ description: This tool compares files and directories to identify differences in
 homepage: https://github.com/uutils/diffutils
 ---
 
-
 # diffutils
 
 ## Overview

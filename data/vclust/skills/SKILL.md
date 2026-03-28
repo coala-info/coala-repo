@@ -4,7 +4,6 @@ description: vclust is a high-performance alignment-based tool optimized for clu
 homepage: https://github.com/refresh-bio/vclust
 ---
 
-
 # vclust
 
 ## Overview
@@ -68,7 +67,7 @@ vclust cluster -i ani.tsv --ids ani.ids.tsv --metric tani --ani 0.70 -o genera.t
 
 | Command | Description |
 |---------|-------------|
-| deduplicate | Output FASTA file with unique, nonredundant sequences, removing duplicates and their reverse complements |
+| vclust deduplicate | Output FASTA file with unique, nonredundant sequences, removing duplicates and their reverse complements |
 | vclust prefilter | vclust prefilter |
 | vclust_align | Align genome pairs |
 | vclust_cluster | Cluster genomes based on ANI metrics. |

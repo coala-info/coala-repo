@@ -4,7 +4,6 @@ description: SomaticSeq is an ensemble framework that combines outputs from mult
 homepage: http://bioinform.github.io/somaticseq/
 ---
 
-
 # somaticseq
 
 ## Overview
@@ -67,7 +66,7 @@ To move beyond simple consensus voting, use the training or prediction flags **b
 
 | Command | Description |
 |---------|-------------|
-| paired | Run somatic variant callers in paired mode |
+| somaticseq paired | Run somatic variant callers in paired mode |
 | somaticseq_single | SomaticSeq single mode |
 
 ## Reference documentation

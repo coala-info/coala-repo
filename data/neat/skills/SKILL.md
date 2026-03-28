@@ -4,7 +4,6 @@ description: NEAT is a high-fidelity read simulator that generates genomic data 
 homepage: https://github.com/ncsa/NEAT/
 ---
 
-
 # neat
 
 ## Overview

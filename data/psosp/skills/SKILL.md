@@ -4,7 +4,6 @@ description: PSOSP classifies prophages as SOS-dependent, SOS-independent, or SO
 homepage: https://github.com/mujiezhang/PSOSP
 ---
 
-
 # psosp
 
 ## Overview
@@ -38,8 +37,8 @@ PSOSP is available via Bioconda and requires a Python environment. It relies on 
 
 | Command | Description |
 |---------|-------------|
-| predict | Predict virus-host interactions using psosp |
 | psosp | A tool for host-virus sequence analysis (psosp) |
+| psosp predict | Predict virus-host interactions using psosp |
 
 ## Reference documentation
 - [PSOSP: Prophage SOS-dependency Predictor](./references/github_com_mujiezhang_PSOSP_blob_main_README.md)

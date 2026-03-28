@@ -4,7 +4,6 @@ description: The Structural Variation Toolkit (svtk) provides a suite of utiliti
 homepage: https://github.com/talkowski-lab/svtk
 ---
 
-
 # svtk
 
 ## Overview
@@ -46,18 +45,18 @@ The toolkit includes specialized modules for validating SVs using orthogonal evi
 
 | Command | Description |
 |---------|-------------|
-| bincov | Calculates non-duplicate primary-aligned binned coverage of a chromosome from an input BAM file |
-| sr-test | Calculate enrichment of clipped reads at SV breakpoints. |
 | svtk | Annotate resolved SV with genic effects and noncoding hits. |
 | svtk | Convert a VCF to a BED. |
+| svtk bincov | Calculates non-duplicate primary-aligned binned coverage of a chromosome from an input BAM file |
 | svtk collect-pesr | Collect split read and discordant pair data from a bam alignment. |
 | svtk pe-test | Calculate enrichment of discordant pairs at SV breakpoints. |
 | svtk resolve | Resolve complex SV from inversion/translocation breakpoints and CNV intervals. |
+| svtk sr-test | Calculate enrichment of clipped reads at SV breakpoints. |
 | svtk standardize | Standardize a VCF of SV calls. |
+| svtk vcfcluster | Intersect SV called by PE/SR-based algorithms. |
 | svtk_bedcluster | Cluster a bed of structural variants based on reciprocal overlap. |
 | svtk_count-svtypes | Count the instances of each SVTYPE observed in each sample in a VCF. |
 | svtk_rdtest2vcf | Convert an RdTest-formatted bed to the standard VCF format. |
-| vcfcluster | Intersect SV called by PE/SR-based algorithms. |
 
 ## Reference documentation
 

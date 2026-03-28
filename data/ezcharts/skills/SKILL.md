@@ -4,7 +4,6 @@ description: ezcharts is a Python library for creating interactive web-based vis
 homepage: https://github.com/epi2me-labs/ezcharts
 ---
 
-
 # ezcharts
 
 ## Overview

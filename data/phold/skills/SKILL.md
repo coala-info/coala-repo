@@ -4,7 +4,6 @@ description: phold uses protein language models and structural alignment to anno
 homepage: https://github.com/gbouras13/phold
 ---
 
-
 # phold
 
 ## Overview
@@ -48,14 +47,14 @@ If you already have structures or only need specific parts of the pipeline:
 |---------|-------------|
 | phold autotune | Determines optimal batch size for 3Di prediction with your hardware |
 | phold compare | Runs Foldseek vs phold db |
+| phold predict | Uses ProstT5 to predict 3Di tokens - GPU recommended |
+| phold remote | Uses Foldseek API to run ProstT5 then Foldseek locally |
 | phold_createdb | Creates foldseek DB from AA FASTA and 3Di FASTA input files |
 | phold_install | Installs ProstT5 model and phold database |
 | phold_plot | Creates Phold Circular Genome Plots |
 | phold_proteins-compare | Runs Foldseek vs phold db on proteins input |
 | phold_proteins-predict | Runs ProstT5 on a multiFASTA input - GPU recommended |
 | phold_run | phold predict then comapare all in one - GPU recommended |
-| predict | Uses ProstT5 to predict 3Di tokens - GPU recommended |
-| remote | Uses Foldseek API to run ProstT5 then Foldseek locally |
 
 ## Reference documentation
 - [phold GitHub README](./references/github_com_gbouras13_phold_blob_main_README.md)

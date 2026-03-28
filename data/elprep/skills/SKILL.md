@@ -4,7 +4,6 @@ description: elprep is a high-performance tool for processing SAM and BAM files 
 homepage: https://github.com/ExaScience/elprep
 ---
 
-
 # elprep
 
 ## Overview
@@ -55,11 +54,11 @@ The `sfm` command is the primary entry point for processing. It allows you to ch
 
 | Command | Description |
 |---------|-------------|
-| bed-to-elsites | Convert BED file to ELSIngleSite format. |
+| elprep bed-to-elsites | Convert BED file to ELSIngleSite format. |
+| elprep fasta-to-elfasta | Converts a FASTA file to an elFASTA file. |
 | elprep filter | Filter SAM/BAM/CRAM files. |
-| fasta-to-elfasta | Converts a FASTA file to an elFASTA file. |
-| sfm | sfm parameters: |
-| vcf-to-elsites | Converts a VCF file to an ELSIF sites file. |
+| elprep sfm | sfm parameters: |
+| elprep vcf-to-elsites | Converts a VCF file to an ELSIF sites file. |
 
 ## Reference documentation
 - [elPrep GitHub Repository](./references/github_com_ExaScience_elprep.md)

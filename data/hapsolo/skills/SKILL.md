@@ -4,7 +4,6 @@ description: HapSolo is an optimization tool designed to refine diploid genome a
 homepage: https://github.com/esolares/HapSolo
 ---
 
-
 # hapsolo
 
 ## Overview

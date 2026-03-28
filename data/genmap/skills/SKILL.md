@@ -4,7 +4,6 @@ description: "GenMap computes (k, e)-mappability to identify unique and repetiti
 homepage: https://github.com/cpockrandt/genmap
 ---
 
-
 # genmap
 
 ## Overview

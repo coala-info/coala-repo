@@ -4,7 +4,6 @@ description: Aquila performs diploid genome assembly and comprehensive variant d
 homepage: https://github.com/maiziex/Aquila
 ---
 
-
 # aquila
 
 ## Overview

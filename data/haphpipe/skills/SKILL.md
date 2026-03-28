@@ -4,7 +4,6 @@ description: HAPHPIPE is a bioinformatics framework for processing viral genomic
 homepage: https://github.com/gwcbi/haphpipe
 ---
 
-
 # haphpipe
 
 ## Overview
@@ -87,13 +86,13 @@ HAPHPIPE commands follow the pattern: `haphpipe <stage_name> [options]`
 | haphpipe multiple_align | Aligns multiple sequences using MAFFT. |
 | haphpipe pairwise_align | Perform pairwise alignment of assembled amplicons to a reference genome. |
 | haphpipe ph_parser | Parses the output of PredictHaplo to create a FASTA file of haplotypes. |
+| haphpipe predict_haplo | Predict haplotypes for a given region. |
 | haphpipe sample_reads | Sample reads from fastq files. |
 | haphpipe summary_stats | Calculate summary statistics for Haplotype Pipeline results. |
 | haphpipe trim_reads | Trims adapter sequences and low-quality bases from FASTQ files. |
+| haphpipe vcf_to_consensus | Convert VCF to consensus sequence. |
 | haphpipe_demo | Runs a demo of HAPHPipe. |
 | haphpipe_ec_reads | Extracts reads from FASTQ files based on various criteria. |
-| predict_haplo | Predict haplotypes for a given region. |
-| vcf_to_consensus | Convert VCF to consensus sequence. |
 
 ## Reference documentation
 - [HAPHPIPE Main Repository](./references/github_com_gwcbi_haphpipe.md)

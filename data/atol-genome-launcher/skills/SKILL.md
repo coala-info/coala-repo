@@ -4,7 +4,6 @@ description: The atol-genome-launcher automates the lifecycle of genomic assembl
 homepage: https://github.com/TomHarrop/atol-genome-launcher
 ---
 
-
 # atol-genome-launcher
 
 ## Overview

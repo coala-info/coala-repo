@@ -4,7 +4,6 @@ description: "Gempipe reconstructs, refines, and analyzes genome-scale metabolic
 homepage: https://github.com/lazzarigioele/gempipe
 ---
 
-
 # gempipe
 
 ## Overview
@@ -50,6 +49,17 @@ gempipe reconstruct --genome <path_to_genome_fasta> --annotations <path_to_annot
 *   **Consult Documentation:** For detailed command options, parameters, and advanced workflows, always refer to the official gempipe documentation. The GitHub repository and Read the Docs page are excellent resources.
 *   **Iterative Curation:** Metabolic model reconstruction is often an iterative process. Expect to perform multiple rounds of reconstruction and curation to achieve a high-quality model.
 *   **Strain Specificity:** Pay close attention to parameters that define strain-specific characteristics, as this is a core strength of gempipe.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| gempipe | gempipe v1.38.5. Full documentation available at https://gempipe.readthedocs.io/en/latest/index.html. Please cite: "Lazzari G., Felis G. E., Salvetti E., Calgaro M., Di Cesare F., Teusink B., Vitulo N. Gempipe: a tool for drafting, curating, and analyzing pan and multi-strain genome-scale metabolic models. mSystems. December 2025. https://doi.org/10.1128/msystems.01007-25". |
+| gempipe autopilot | gempipe v1.38.5. Full documentation available at https://gempipe.readthedocs.io/en/latest/index.html. Please cite: "Lazzari G., Felis G. E., Salvetti E., Calgaro M., Di Cesare F., Teusink B., Vitulo N. Gempipe: a tool for drafting, curating, and analyzing pan and multi-strain genome-scale metabolic models. mSystems. December 2025. https://doi.org/10.1128/msystems.01007-25". |
+| gempipe derive | gempipe v1.38.5. Full documentation available at https://gempipe.readthedocs.io/en/latest/index.html. Please cite: "Lazzari G., Felis G. E., Salvetti E., Calgaro M., Di Cesare F., Teusink B., Vitulo N. Gempipe: a tool for drafting, curating, and analyzing pan and multi-strain genome-scale metabolic models. mSystems. December 2025. https://doi.org/10.1128/msystems.01007-25". |
+| gempipe recon | gempipe v1.38.5. Full documentation available at https://gempipe.readthedocs.io/en/latest/index.html. Please cite: "Lazzari G., Felis G. E., Salvetti E., Calgaro M., Di Cesare F., Teusink B., Vitulo N. Gempipe: a tool for drafting, curating, and analyzing pan and multi-strain genome-scale metabolic models. mSystems. December 2025. https://doi.org/10.1128/msystems.01007-25". |
 
 ## Reference documentation
 

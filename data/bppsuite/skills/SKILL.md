@@ -4,7 +4,6 @@ description: bppsuite is a modular collection of command-line tools for phylogen
 homepage: https://github.com/BioPP/bppsuite
 ---
 
-
 # bppsuite
 
 ## Overview

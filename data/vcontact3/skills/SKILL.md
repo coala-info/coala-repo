@@ -4,7 +4,6 @@ description: vContact3 is a computational tool used for the systematic classific
 homepage: https://bitbucket.org/MAVERICLab/vcontact3
 ---
 
-
 # vcontact3
 
 ## Overview
@@ -50,8 +49,8 @@ vContact3 generates several output files in the specified directory:
 
 | Command | Description |
 |---------|-------------|
-| prepare_databases | Prepare vContact2 databases |
-| run | vcontact3 run |
+| vcontact3 prepare_databases | Prepare vContact2 databases |
+| vcontact3 run | vcontact3 run |
 
 ## Reference documentation
 - [vContact3 Bitbucket Repository](./references/bitbucket_org_MAVERICLab_vcontact3.md)

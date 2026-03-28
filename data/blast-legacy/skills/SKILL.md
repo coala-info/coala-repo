@@ -4,7 +4,6 @@ description: The blast-legacy tool provides guidance for using the original suit
 homepage: http://blast.ncbi.nlm.nih.gov
 ---
 
-
 # blast-legacy
 
 ## Overview

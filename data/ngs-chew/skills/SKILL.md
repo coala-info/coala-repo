@@ -4,7 +4,6 @@ description: ngs-chew performs quality control and sample integrity checks on se
 homepage: https://github.com/bihealth/ngs-chew
 ---
 
-
 # ngs-chew
 
 ## Overview
@@ -57,11 +56,11 @@ ngs-chew provides several plotting commands to visualize QC metrics:
 
 | Command | Description |
 |---------|-------------|
-| compare | Perform fingeprint comparison. |
-| fingerprint | Compute fingerprint to numpy .npz files. |
-| plot-compare | Plot result of 'ngs-chew compare'. |
-| plot-var-het | Plot var(het) metric from .npz files. |
-| stats | Compute statistics from fingerprint .npz files. |
+| ngs-chew compare | Perform fingeprint comparison. |
+| ngs-chew fingerprint | Compute fingerprint to numpy .npz files. |
+| ngs-chew plot-compare | Plot result of 'ngs-chew compare'. |
+| ngs-chew plot-var-het | Plot var(het) metric from .npz files. |
+| ngs-chew stats | Compute statistics from fingerprint .npz files. |
 
 ## Reference documentation
 - [NGS Chew README](./references/github_com_bihealth_ngs-chew_blob_main_README.md)

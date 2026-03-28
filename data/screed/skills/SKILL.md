@@ -4,7 +4,6 @@ description: Screed provides a lightweight database layer for FASTA and FASTQ fi
 homepage: http://github.com/dib-lab/screed/
 ---
 
-
 # screed
 
 ## Overview

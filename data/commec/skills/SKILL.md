@@ -4,7 +4,6 @@ description: Commec is a bioinformatics suite that screens DNA sequences to iden
 homepage: https://github.com/ibbis-screening/common-mechanism
 ---
 
-
 # commec
 
 ## Overview
@@ -56,9 +55,9 @@ After running `screen` on multiple files, use `flag` to aggregate the `.output.j
 | Command | Description |
 |---------|-------------|
 | commec flag | Parse all .screen, or .json files in a directory and create CSVs of flags raised |
+| commec screen | Run Common Mechanism screening on an input FASTA. |
 | commec_setup | This script will help download the mandatory databases required for using Commec Screen, and requires a stable internet connection, wget, and update_blastdb.pl. This setup is split over 3 steps: 1. Specify download location. 2. Choose which databases to download. 3. Confirm and start downloads. |
 | commec_split | Split a multi-record FASTA file into individual files, one for each record |
-| screen | Run Common Mechanism screening on an input FASTA. |
 
 ## Reference documentation
 - [Command Line Usage](./references/github_com_ibbis-bio_common-mechanism_wiki_Command-Line-Usage.md)

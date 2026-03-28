@@ -4,7 +4,6 @@ description: miRTrace is a bioinformatics utility for quality control and taxono
 homepage: https://github.com/friedlanderlab/mirtrace
 ---
 
-
 # mirtrace
 
 ## Overview

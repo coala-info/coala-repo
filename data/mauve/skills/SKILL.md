@@ -4,7 +4,6 @@ description: Mauve is a bioinformatics tool designed for the global alignment of
 homepage: http://darlinglab.org/mauve/
 ---
 
-
 # mauve
 
 ## Overview
@@ -33,6 +32,15 @@ progressiveMauve --output=my_alignment.xmfa genome1.gbk genome2.gbk genome3.fast
 - **Seed Weight**: If aligning very divergent genomes, you can manually adjust the `--seed-weight` parameter. Lowering the weight can increase sensitivity but will significantly increase computation time and noise.
 - **Consistency**: When comparing multiple strains of the same species, use a consistent reference genome as the first input file to simplify the interpretation of the resulting LCB coordinates.
 - **Visualization**: While the CLI performs the computation, the resulting `.xmfa` file is best inspected using the Mauve GUI viewer to identify specific inversion breakpoints and insertions.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| mauveAligner | Aligns sequences using Mauve. |
+| progressiveMauve | Aligns multiple sequences to find conserved regions and rearrangements. |
 
 ## Reference documentation
 - [Mauve Overview](./references/anaconda_org_channels_bioconda_packages_mauve_overview.md)

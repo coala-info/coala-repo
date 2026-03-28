@@ -4,7 +4,6 @@ description: "GGCAT constructs and queries compacted and colored de Bruijn graph
 homepage: https://github.com/algbio/ggcat
 ---
 
-
 # ggcat
 
 ## Overview
@@ -79,10 +78,10 @@ GGCAT supports specialized unitig representations to reduce storage or facilitat
 
 | Command | Description |
 |---------|-------------|
-| build | Builds a k-mer graph from input files. |
-| dump-colors | Dumps the colors from a colormap file. |
-| matches | ggcat-matches 2.0.0 |
-| query | Query a graph with k-mers |
+| ggcat build | Builds a k-mer graph from input files. |
+| ggcat dump-colors | Dumps the colors from a colormap file. |
+| ggcat matches | ggcat-matches 2.0.0 |
+| ggcat query | Query a graph with k-mers |
 
 ## Reference Documentation
 - [GGCAT GitHub README](./references/github_com_algbio_ggcat_blob_main_README.md)

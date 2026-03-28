@@ -4,7 +4,6 @@ description: MCScanX identifies collinear blocks and syntenic regions across mul
 homepage: https://github.com/wyp1125/MCScanX
 ---
 
-
 # mcscanx
 
 ## Overview

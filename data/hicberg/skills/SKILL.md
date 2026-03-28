@@ -4,7 +4,6 @@ description: hicberg transforms raw sequencing reads into high-quality genomic c
 homepage: https://github.com/sebgra/hicberg
 ---
 
-
 # hicberg
 
 ## Overview
@@ -57,6 +56,26 @@ hicberg pipeline [options] <genome.fa> <forward_reads.fq> <reverse_reads.fq>
 *   **Stage Management:** Use `--start-stage` and `--exit-stage` to resume interrupted runs or to perform only specific parts of the pipeline (e.g., stopping after alignment to inspect BAM files).
 *   **Resource Allocation:** Always specify `--cpus` to match your environment; the alignment phase is the most computationally intensive part of the workflow.
 *   **Blacklisting:** For organisms with known assembly issues or highly repetitive regions that cause artifacts, provide a BED file to the `--blacklist` argument to improve reconstruction quality.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| hicberg alignment | Perform alignment of Hi-C reads. |
+| hicberg benchmark | Perform benchmarking of the statistical model (this can be time consuming). |
+| hicberg build-matrix | Create matrix (.cool) from pairs files. |
+| hicberg build-pairs | Create pair files from a pair of alignment files. |
+| hicberg chunk | Chunk provided inputs in a desired number of pieces. |
+| hicberg classify | Perform classification of Hi-C reads (pairs). 3 groups wil be defined and 2 alignment files (.bam) will be created per group: |
+| hicberg create-folder | Create a folder to save results. Folder will be set as <output>/<name>. |
+| hicberg pipeline | Hi-C pipeline to generate enhanced contact matrix from fastq files. |
+| hicberg plot | Plot results from analysis. |
+| hicberg rescue | Reallocate ambiguous reads to the most plausible position according to   model. |
+| hicberg statistics | Extract statistics from non ambiguous Hi-C data. |
+| hicberg tidy | Tidy output folder. |
+| hicberg_get-tables | Create tables for the genome length detail and the bins. |
 
 ## Reference documentation
 - [hicberg - bioconda | Anaconda.org](./references/anaconda_org_channels_bioconda_packages_hicberg_overview.md)

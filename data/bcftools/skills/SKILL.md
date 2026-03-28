@@ -4,7 +4,6 @@ description: bcftools is a comprehensive suite of utilities for manipulating, fi
 homepage: https://github.com/samtools/bcftools
 ---
 
-
 # bcftools
 
 ## Overview
@@ -53,29 +52,29 @@ Filtering is performed using expressions with `-i` (include) or `-e` (exclude).
 
 | Command | Description |
 |---------|-------------|
-| annotate | Annotate and edit VCF/BCF files. |
-| call | SNP/indel variant calling from VCF/BCF. To be used in conjunction with  bcftools mpileup. This command replaces the former 'bcftools view' caller. |
-| cnv | Copy number variation caller, requires Illumina's B-allele frequency (BAF) and Log R Ratio intensity (LRR). The HMM considers the following copy number states: CN 2 (normal), 1 (single-copy loss), 0 (complete loss), 3 (single-copy gain) |
-| concat | Concatenate or combine VCF/BCF files. All source files must have the same sample columns appearing in the same order. The input files must be sorted by chr and position. |
-| consensus | Create consensus sequence by applying VCF variants to a reference fasta  file. By default, the program will apply all ALT variants. Using the --samples (and, optionally, --haplotype) option will apply genotype (or haplotype) calls from FORMAT/GT. |
-| convert | Converts VCF/BCF to other formats and back. |
-| csq | Haplotype-aware consequence caller. |
-| filter | Apply fixed-threshold filters. |
-| gtcheck | Check sample identity. With no -g BCF given, multi-sample cross-check is performed. |
-| head | Displays VCF/BCF headers and optionally the first few variant records |
-| index | Index VCF or BCF files for random access. |
-| isec | Create intersections, unions and complements of VCF files. |
-| merge | Merge multiple VCF/BCF files from non-overlapping sample sets to create one multi-sample file. Note that only records from different files can be merged,  never from the same file. |
-| mpileup | Generate VCF or BCF containing genotype likelihoods for one or multiple BAM files |
-| norm | Left-align and normalize indels; check if REF alleles match the reference;  split multiallelic sites into multiple rows; recover multiallelics from  multiple rows. |
-| plugin | Run user defined plugin |
-| polysomy | Detect number of chromosomal copies from Illumina's B-allele frequency (BAF) |
-| query | Extracts fields from VCF/BCF file and prints them in user-defined format |
-| reheader | Modify header of VCF/BCF files, change sample names. |
-| roh | HMM model for detecting runs of autozygosity. |
-| sort | Sort VCF/BCF file. |
-| stats | Parses VCF or BCF and produces stats which can be plotted using plot-vcfstats. When two files are given, the program generates separate stats for intersection and the complements. |
-| view | VCF/BCF conversion, view, subset and filter VCF/BCF files. |
+| bcftools annotate | Annotate and edit VCF/BCF files. |
+| bcftools call | SNP/indel variant calling from VCF/BCF. To be used in conjunction with  bcftools mpileup. This command replaces the former 'bcftools view' caller. |
+| bcftools cnv | Copy number variation caller, requires Illumina's B-allele frequency (BAF) and Log R Ratio intensity (LRR). The HMM considers the following copy number states: CN 2 (normal), 1 (single-copy loss), 0 (complete loss), 3 (single-copy gain) |
+| bcftools concat | Concatenate or combine VCF/BCF files. All source files must have the same sample columns appearing in the same order. The input files must be sorted by chr and position. |
+| bcftools consensus | Create consensus sequence by applying VCF variants to a reference fasta  file. By default, the program will apply all ALT variants. Using the --samples (and, optionally, --haplotype) option will apply genotype (or haplotype) calls from FORMAT/GT. |
+| bcftools convert | Converts VCF/BCF to other formats and back. |
+| bcftools csq | Haplotype-aware consequence caller. |
+| bcftools filter | Apply fixed-threshold filters. |
+| bcftools gtcheck | Check sample identity. With no -g BCF given, multi-sample cross-check is performed. |
+| bcftools head | Displays VCF/BCF headers and optionally the first few variant records |
+| bcftools index | Index VCF or BCF files for random access. |
+| bcftools isec | Create intersections, unions and complements of VCF files. |
+| bcftools merge | Merge multiple VCF/BCF files from non-overlapping sample sets to create one multi-sample file. Note that only records from different files can be merged,  never from the same file. |
+| bcftools mpileup | Generate VCF or BCF containing genotype likelihoods for one or multiple BAM files |
+| bcftools norm | Left-align and normalize indels; check if REF alleles match the reference;  split multiallelic sites into multiple rows; recover multiallelics from  multiple rows. |
+| bcftools plugin | Run user defined plugin |
+| bcftools polysomy | Detect number of chromosomal copies from Illumina's B-allele frequency (BAF) |
+| bcftools query | Extracts fields from VCF/BCF file and prints them in user-defined format |
+| bcftools reheader | Modify header of VCF/BCF files, change sample names. |
+| bcftools roh | HMM model for detecting runs of autozygosity. |
+| bcftools sort | Sort VCF/BCF file. |
+| bcftools stats | Parses VCF or BCF and produces stats which can be plotted using plot-vcfstats. When two files are given, the program generates separate stats for intersection and the complements. |
+| bcftools view | VCF/BCF conversion, view, subset and filter VCF/BCF files. |
 
 ## Reference documentation
 

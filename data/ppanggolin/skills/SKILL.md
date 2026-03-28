@@ -4,7 +4,6 @@ description: PPanGGOLiN is a suite of tools that models microbial species divers
 homepage: https://github.com/labgem/PPanGGOLiN
 ---
 
-
 # ppanggolin
 
 ## Overview
@@ -74,10 +73,6 @@ ppanggolin module -p pangenome.h5
 
 | Command | Description |
 |---------|-------------|
-| metadata | PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM team, and distributed under the CeCILL Free Software License Agreement. |
-| msa | compute Multiple Sequence Alignment of the gene families in the given partition |
-| panrgp | PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM team, and distributed under the CeCILL Free Software License Agreement. |
-| partition | PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM team, and distributed under the CeCILL Free Software License Agreement. |
 | ppanggolin | ppanggolin: error: argument : invalid choice: 'ppanggolin' (choose from 'annotate', 'cluster', 'graph', 'partition', 'rarefaction', 'workflow', 'panrgp', 'panmodule', 'all', 'draw', 'write_pangenome', 'write_genomes', 'write_metadata', 'fasta', 'msa', 'metrics', 'align', 'rgp', 'spot', 'module', 'context', 'projection', 'rgp_cluster', 'metadata', 'info', 'utils') |
 | ppanggolin align | Align sequences (nucleotides or amino acids) on the pangenome gene families. |
 | ppanggolin all | PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM team, and distributed under the CeCILL Free Software License Agreement. |
@@ -87,20 +82,24 @@ ppanggolin module -p pangenome.h5
 | ppanggolin draw | PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM team, and distributed under the CeCILL Free Software License Agreement. |
 | ppanggolin fasta | PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM team, and distributed under the CeCILL Free Software License Agreement. |
 | ppanggolin graph | PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM team, and distributed under the CeCILL Free Software License Agreement. |
+| ppanggolin metadata | PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM team, and distributed under the CeCILL Free Software License Agreement. |
 | ppanggolin metrics | PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM team, and distributed under the CeCILL Free Software License Agreement. |
 | ppanggolin module | PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM team, and distributed under the CeCILL Free Software License Agreement. |
+| ppanggolin msa | compute Multiple Sequence Alignment of the gene families in the given partition |
 | ppanggolin panmodule | PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM team, and distributed under the CeCILL Free Software License Agreement. |
+| ppanggolin panrgp | PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM team, and distributed under the CeCILL Free Software License Agreement. |
+| ppanggolin partition | PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM team, and distributed under the CeCILL Free Software License Agreement. |
 | ppanggolin projection | Project pangenome annotations onto input genomes. |
+| ppanggolin rarefaction | Compute the rarefaction curve of the pangenome |
+| ppanggolin rgp | For genomic islands and spots of insertion detection, please cite: Bazin A et al. (2020) panRGP: a pangenome-based method to predict genomic islands and explore their diversity. Bioinformatics, Volume 36, Issue Supplement_2, Pages i651–i658, https://doi.org/10.1093/bioinformatics/btaa792 |
 | ppanggolin rgp_cluster | Cluster RGPs based on gene repertoire relatedness. |
 | ppanggolin spot | PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM team, and distributed under the CeCILL Free Software License Agreement. |
+| ppanggolin utils | Generate a config file with default values for the given subcommand. |
 | ppanggolin workflow | PPanGGOLiN (2.2.6) is an open-source bioinformatics tool developed by the LABGeM team, and distributed under the CeCILL Free Software License Agreement. |
 | ppanggolin write_genomes | Write genomes from a pangenome analysis. |
+| ppanggolin write_metadata | Write metadata for pangenome elements. |
 | ppanggolin write_pangenome | Write pangenome data to various formats. |
 | ppanggolin_info | Show information about a pangenome. |
-| rarefaction | Compute the rarefaction curve of the pangenome |
-| rgp | For genomic islands and spots of insertion detection, please cite: Bazin A et al. (2020) panRGP: a pangenome-based method to predict genomic islands and explore their diversity. Bioinformatics, Volume 36, Issue Supplement_2, Pages i651–i658, https://doi.org/10.1093/bioinformatics/btaa792 |
-| utils | Generate a config file with default values for the given subcommand. |
-| write_metadata | Write metadata for pangenome elements. |
 
 ## Reference documentation
 - [PPanGGOLiN GitHub Home](./references/github_com_labgem_PPanGGOLiN.md)

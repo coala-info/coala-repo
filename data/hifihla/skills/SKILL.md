@@ -4,7 +4,6 @@ description: HiFiHLA performs high-resolution HLA star-calling by mapping PacBio
 homepage: https://github.com/PacificBiosciences/hifihla
 ---
 
-
 # hifihla
 
 ## Overview
@@ -46,6 +45,7 @@ hifihla call-consensus --consensus input.fasta --out-prefix sample_name
 
 | Command | Description |
 |---------|-------------|
+| hifihla | Call HLA loci from an aligned BAM of HiFi reads |
 | hifihla align-imgt | Align queries to IMGT/HLA genomic accession sequences |
 | hifihla call-consensus | Call HLA Star (*) alleles from consensus sequences |
 | hifihla call-contigs | Extract HLA loci from assembled MHC contigs & call star alleles on extracted sequences |

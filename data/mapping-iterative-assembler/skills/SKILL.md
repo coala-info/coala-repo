@@ -4,7 +4,6 @@ description: The Mapping Iterative Assembler performs reference-assisted assembl
 homepage: https://github.com/mpieva/mapping-iterative-assembler
 ---
 
-
 # mapping-iterative-assembler
 
 ## Overview

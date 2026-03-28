@@ -4,7 +4,6 @@ description: MiModD is a bioinformatics suite designed for identifying mutations
 homepage: http://sourceforge.net/projects/mimodd
 ---
 
-
 # mimodd
 
 ## Overview

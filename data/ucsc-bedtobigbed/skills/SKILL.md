@@ -4,7 +4,6 @@ description: This tool converts text-based BED files into binary BigBed format f
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
 
-
 # ucsc-bedtobigbed
 
 ## Overview
@@ -44,6 +43,7 @@ bedToBigBed input.bed chrom.sizes output.bb
 
 | Command | Description |
 |---------|-------------|
+| bedToBigBed | Convert a BED file to a bigBed file. |
 | bedToBigBed | Convert a BED file to a bigBed file. The input BED file must be sorted by chromosome and start position. |
 | fetchChromSizes | Fetch chromosome sizes for a specific genome assembly from the UCSC Genome Browser. |
 

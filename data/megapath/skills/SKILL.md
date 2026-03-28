@@ -4,7 +4,6 @@ description: MegaPath is a high-performance bioinformatics suite designed to det
 homepage: https://github.com/edwwlui/MegaPath
 ---
 
-
 # megapath
 
 ## Overview

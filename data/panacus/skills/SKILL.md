@@ -4,7 +4,6 @@ description: Panacus performs statistical analysis and calculates growth metrics
 homepage: https://github.com/marschall-lab/panacus
 ---
 
-
 # panacus
 
 ## Overview
@@ -45,18 +44,18 @@ Panacus is a high-performance tool designed for the statistical analysis of pang
 
 | Command | Description |
 |---------|-------------|
-| hist | Calculate coverage histogram |
-| node-distribution | Return the list of bins with there coverages, log10-lengths and log10-sizes. Due to this being the values for the centers of the hexagons shown in the html plot and not real values, some values might be negative. |
-| ordered-histgrowth | Calculate growth curve based on group file order (if order is unspecified, use path order in GFA) |
 | panacus | For more information, try '--help'. |
 | panacus | For more information, try '--help'. |
 | panacus | Panacus is a tool for analyzing and visualizing genomic data. |
+| panacus hist | Calculate coverage histogram |
+| panacus node-distribution | Return the list of bins with there coverages, log10-lengths and log10-sizes. Due to this being the values for the centers of the hexagons shown in the html plot and not real values, some values might be negative. |
+| panacus ordered-histgrowth | Calculate growth curve based on group file order (if order is unspecified, use path order in GFA) |
 | panacus render | Render an html report from one or more JSON result files |
+| panacus report | Create an html report from a YAML config file |
+| panacus similarity | Compute coverage table for count type |
+| panacus table | Compute coverage table for count type |
 | panacus_growth | Calculate growth curve from coverage histogram |
 | panacus_info | Return general graph and paths info |
-| report | Create an html report from a YAML config file |
-| similarity | Compute coverage table for count type |
-| table | Compute coverage table for count type |
 
 ## Reference documentation
 - [Panacus GitHub Repository](./references/github_com_codialab_panacus.md)

@@ -4,7 +4,6 @@ description: Canu is a hierarchical assembly pipeline that corrects, trims, and 
 homepage: https://github.com/marbl/canu
 ---
 
-
 # canu
 
 ## Overview

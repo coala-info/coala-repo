@@ -4,7 +4,6 @@ description: PyLOH analyzes next-generation sequencing data from tumor-normal pa
 homepage: https://github.com/uci-cbcl/PyLOH
 ---
 
-
 # pyloh
 
 ## Overview
@@ -70,9 +69,9 @@ PyLOH.py BAF_heatmap BASENAME
 
 | Command | Description |
 |---------|-------------|
-| BAF_heatmap | Generates a BAF heatmap from preprocessed files. |
 | PyLOH preprocess | Preprocesses BAM files for PyLOH analysis. |
-| run_model | Run the PyLOH model training. |
+| pyloh_PyLOH.py BAF_heatmap | Generates a BAF heatmap from preprocessed files. |
+| pyloh_PyLOH.py run_model | Run the PyLOH model training. |
 
 ## Reference documentation
 - [PyLOH README](./references/github_com_uci-cbcl_PyLOH.md)

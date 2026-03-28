@@ -4,7 +4,6 @@ description: gaftools is a suite of utilities for processing pangenome graph ali
 homepage: https://github.com/marschall-lab/gaftools
 ---
 
-
 # gaftools
 
 ## Overview
@@ -68,15 +67,15 @@ Once the graph is ordered, you can perform advanced alignment manipulations.
 
 | Command | Description |
 |---------|-------------|
-| find_path | Find the genomic sequence of a given connected GFA path. |
+| gaftools find_path | Find the genomic sequence of a given connected GFA path. |
+| gaftools gfa2rgfa | Converting a GFA file to rGFA format using the W-lines and the acyclic reference path. (e.g., minigraph-based graphs) |
+| gaftools order_gfa | Order bubbles in the GFA by adding BO and NO tags. |
+| gaftools realign | Realign a GAF file using wavefront alignment algorithm (WFA). |
 | gaftools_index | Index a GAF file for the view functionality. |
 | gaftools_phase | Add phasing information to the GAF file from a haplotag TSV file. |
 | gaftools_sort | Sort the GAF alignments using BO and NO tags of the corresponding graph. |
 | gaftools_stat | Calculate statistics of the given GAF file. |
 | gaftools_view | View, subset or convert a GAF file (GAF file should be indexed first, using gaftools index). |
-| gfa2rgfa | Converting a GFA file to rGFA format using the W-lines and the acyclic reference path. (e.g., minigraph-based graphs) |
-| order_gfa | Order bubbles in the GFA by adding BO and NO tags. |
-| realign | Realign a GAF file using wavefront alignment algorithm (WFA). |
 
 ## Reference documentation
 - [gaftools User Guide](./references/gaftools_readthedocs_io_en_latest_guide.html.md)

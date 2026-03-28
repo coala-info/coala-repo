@@ -4,7 +4,6 @@ description: This tool manages the Awesome Python ecosystem by maintaining the R
 homepage: https://github.com/vinta/awesome-python
 ---
 
-
 # python
 
 ## Overview
@@ -50,6 +49,7 @@ Before adding a project, verify it meets the following:
 |---------|-------------|
 | chmod | Change file mode bits |
 | pip | Manage the Python package index. |
+| python | Execute Python scripts or modules. |
 | python3 | Execute Python scripts or modules. |
 
 ## Reference documentation

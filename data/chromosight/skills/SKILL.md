@@ -4,7 +4,6 @@ description: Chromosight identifies spatial patterns such as loops and boundarie
 homepage: https://github.com/koszullab/chromosight
 ---
 
-
 # chromosight
 
 ## Overview
@@ -60,7 +59,7 @@ If the built-in kernels (loops, borders, centromeres, hairpins) are insufficient
 | chromosight | Explore and detect patterns (loops, borders, centromeres, etc.) in Hi-C contact maps with pattern matching. |
 | chromosight | Explore and detect patterns (loops, borders, centromeres, etc.) in Hi-C contact maps with pattern matching. |
 | chromosight detect | Explore and detect patterns (loops, borders, centromeres, etc.) in Hi-C contact maps with pattern matching. |
-| quantify | Given a list of pairs of positions and a contact map, computes the correlation coefficients between those positions and the kernel of the selected pattern. |
+| chromosight quantify | Given a list of pairs of positions and a contact map, computes the correlation coefficients between those positions and the kernel of the selected pattern. |
 
 ## Reference documentation
 - [Chromosight Main Repository](./references/github_com_koszullab_chromosight_blob_master_README.md)

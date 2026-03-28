@@ -4,7 +4,6 @@ description: "taxadb creates and queries a local mirror of the NCBI taxonomy dat
 homepage: https://github.com/HadrienG/taxadb
 ---
 
-
 # taxadb
 
 ## Overview

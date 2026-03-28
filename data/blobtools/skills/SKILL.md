@@ -4,7 +4,6 @@ description: BlobTools is a suite for screening genome assemblies to identify an
 homepage: https://blobtools.readme.io/docs/what-is-blobtools
 ---
 
-
 # blobtools
 
 ## Overview
@@ -49,15 +48,15 @@ The standard BlobTools pipeline follows a "Create -> Add -> View/Plot" logic:
 
 | Command | Description |
 |---------|-------------|
-| bamfilter | Filter BAM files based on contig inclusion/exclusion lists and mapping status. |
+| blobtools bamfilter | Filter BAM files based on contig inclusion/exclusion lists and mapping status. |
+| blobtools covplot | Create coverage plots from BlobDB and coverage files. |
 | blobtools create | Create a BlobDB from FASTA and associated data files. |
 | blobtools seqfilter | Filter sequences from a FASTA file based on a list of headers. |
+| blobtools taxify | Assigns taxonomic IDs to sequences based on similarity search results and a taxid mapping file. |
+| blobtools view | View and filter a BlobDB database. |
 | blobtools_map2cov | Map BAM/CAS files to a FASTA assembly to calculate coverage. |
 | blobtools_nodesdb | NCBI nodes.dmp and names.dmp files are required to build the database. |
 | blobtools_plot | Plotting tool for BlobDB files. |
-| covplot | Create coverage plots from BlobDB and coverage files. |
-| taxify | Assigns taxonomic IDs to sequences based on similarity search results and a taxid mapping file. |
-| view | View and filter a BlobDB database. |
 
 ## Reference documentation
 - [BlobTools Overview](./references/blobtools_readme_io_docs_what-is-blobtools.md)

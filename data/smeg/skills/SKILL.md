@@ -4,7 +4,6 @@ description: SMEG is a bioinformatics pipeline that estimates strain-level growt
 homepage: https://github.com/ohlab/SMEG
 ---
 
-
 # smeg
 
 ## Overview

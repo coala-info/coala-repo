@@ -4,7 +4,6 @@ description: SVPG is a computational framework that identifies structural variat
 homepage: https://github.com/coopsor/SVPG
 ---
 
-
 # svpg
 
 ## Overview

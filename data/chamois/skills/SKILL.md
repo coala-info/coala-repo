@@ -4,7 +4,6 @@ description: CHAMOIS predicts chemical classes and features of metabolites produ
 homepage: https://chamois.readthedocs.io/
 ---
 
-
 # chamois
 
 ## Overview

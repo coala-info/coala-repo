@@ -4,7 +4,6 @@ description: Deblur is a greedy deconvolution algorithm that denoises amplicon s
 homepage: https://github.com/biocore/deblur
 ---
 
-
 # deblur
 
 ## Overview
@@ -50,15 +49,15 @@ The output directory contains several key files:
 
 | Command | Description |
 |---------|-------------|
-| build-biom-table | Generate a BIOM table from a directory of chimera removed fasta files |
-| build-db-index | Preapare the artifacts database |
-| deblur-seqs | Clean read errors from Illumina reads |
-| dereplicate | Dereplicate FASTA sequences. |
-| multiple-seq-alignment | Multiple sequence alignment |
-| remove-artifacts | Filter artifacts from input sequences based on database(s) provided with the   --ref-fp (raw FASTA file) or --ref-db-fp (indexed database) options. |
-| remove-chimeras-denovo | Remove chimeras de novo using UCHIME (VSEARCH implementation) |
-| trim | Trim FASTA sequences |
-| workflow | Launch deblur workflow |
+| deblur build-biom-table | Generate a BIOM table from a directory of chimera removed fasta files |
+| deblur build-db-index | Preapare the artifacts database |
+| deblur deblur-seqs | Clean read errors from Illumina reads |
+| deblur dereplicate | Dereplicate FASTA sequences. |
+| deblur multiple-seq-alignment | Multiple sequence alignment |
+| deblur remove-artifacts | Filter artifacts from input sequences based on database(s) provided with the   --ref-fp (raw FASTA file) or --ref-db-fp (indexed database) options. |
+| deblur remove-chimeras-denovo | Remove chimeras de novo using UCHIME (VSEARCH implementation) |
+| deblur trim | Trim FASTA sequences |
+| deblur workflow | Launch deblur workflow |
 
 ## Reference documentation
 - [Deblur GitHub Repository](./references/github_com_biocore_deblur.md)

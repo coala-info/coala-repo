@@ -4,7 +4,6 @@ description: hybracter is a Snakemake-based pipeline for the automated long-read
 homepage: https://github.com/gbouras13/hybracter
 ---
 
-
 # hybracter
 
 ## Overview
@@ -75,11 +74,11 @@ The results are organized in the specified output directory:
 
 | Command | Description |
 |---------|-------------|
+| hybracter hybrid | Run hybracter with hybrid long and paired end short reads |
 | hybracter hybrid-single | Run hybracter hybrid on 1 isolate |
+| hybracter long | Run hybracter with only long reads |
+| hybracter long-single | Run hybracter long on 1 isolate |
 | hybracter_config | Copy the system default config file |
-| hybrid | Run hybracter with hybrid long and paired end short reads |
-| long | Run hybracter with only long reads |
-| long-single | Run hybracter long on 1 isolate |
 | snakemake | Snakemake is a Python based language and execution environment for GNU Make-like workflows. |
 | snakemake | Snakemake is a Python based language and execution environment for GNU Make-like workflows. |
 | snakemake | Snakemake is a Python based language and execution environment for GNU Make-like workflows. |

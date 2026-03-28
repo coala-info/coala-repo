@@ -4,7 +4,6 @@ description: PACU is a bioinformatics pipeline for generating phylogenetic trees
 homepage: https://github.com/BioinformaticsPlatformWIV-ISP/PACU
 ---
 
-
 # pacu_snp
 
 ## Overview

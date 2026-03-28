@@ -4,7 +4,6 @@ description: PANORAMA is a bioinformatics suite for large-scale comparison of pa
 homepage: https://github.com/labgem/panorama
 ---
 
-
 # panorama
 
 ## Overview
@@ -91,12 +90,12 @@ panorama cluster \
 | panorama cluster | Perform gene family clustering across multiple pangenomes using MMseqs2 with support for both fast (linclust) and sensitive (cluster) clustering methods. |
 | panorama compare_spots | Compare and identify conserved spots across multiple pangenomes. This analysis identifies genomic regions that are conserved across different pangenomes based on gene family similarity and optionally analyzes systems relationships within these regions. |
 | panorama compare_systems | Compare genomic systems among pangenomes using GFRR metrics |
+| panorama pansystems | PANORAMA (0.6.0) is an opensource bioinformatic tools under CeCILL FREE SOFTWARE LICENSE AGREEMENT |
 | panorama systems | PANORAMA (0.6.0) is an opensource bioinformatic tools under CeCILL FREE SOFTWARE LICENSE AGREEMENT |
+| panorama utils | Create input files used by PANORAMA |
 | panorama write | Write annotation/metadata assigned to gene families in pangenomes |
+| panorama write_systems | Write systems from pangenomes |
 | panorama_info | Extract status, content, parameters, and metadata information from pangenome HDF5 files and export as interactive HTML reports. |
-| pansystems | PANORAMA (0.6.0) is an opensource bioinformatic tools under CeCILL FREE SOFTWARE LICENSE AGREEMENT |
-| utils | Create input files used by PANORAMA |
-| write_systems | Write systems from pangenomes |
 
 ## Reference documentation
 - [PANORAMA GitHub README](./references/github_com_labgem_PANORAMA_blob_main_README.md)

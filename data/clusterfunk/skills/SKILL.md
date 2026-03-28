@@ -4,7 +4,6 @@ description: Clusterfunk provides a suite of subcommands for manipulating phylog
 homepage: https://github.com/cov-ert/clusterfunk
 ---
 
-
 # clusterfunk
 
 ## Overview
@@ -78,10 +77,6 @@ One of the most common tasks is mapping CSV/TSV metadata onto tree tips.
 
 | Command | Description |
 |---------|-------------|
-| ancestral_reconstruction | Reconstruct ancestral states on a phylogenetic tree using ACCTRAN or DELTRAN rules. |
-| annotate | Annotate tips and nodes in a phylogenetic tree using taxon labels, metadata files, or MRCA rules. |
-| annotate_tips_from_nodes | Annotate tips of a tree from its nodes based on specified traits. |
-| at | A tool for annotating and manipulating phylogenetic trees. Note: The provided help text indicates 'at' is an invalid subcommand choice. |
 | clusterfunk | A suite of tools for manipulating and annotating phylogenetic trees. |
 | clusterfunk | A tool for manipulating and annotating phylogenetic trees. |
 | clusterfunk | A tool for phylogenetic tree manipulation and annotation. The provided help text indicates an invalid subcommand choice and lists available subcommands. |
@@ -94,12 +89,16 @@ One of the most common tasks is mapping CSV/TSV metadata onto tree tips.
 | clusterfunk | A suite of tools for manipulating and annotating phylogenetic trees. |
 | clusterfunk | A tool for phylogenetic tree manipulation and annotation. |
 | clusterfunk | A tool for phylogenetic tree manipulation and annotation. It provides various subcommands to process, prune, graft, and annotate trees. |
-| extract_annotations | Extract tip annotations from a phylogenetic tree file into a CSV. |
-| get_taxa | Extract taxa from a tree file. |
-| graft | Graft incoming trees onto an input guide tree. |
-| label_transitions | Label transitions of a trait on a phylogenetic tree and optionally output exploded trees for each transition. |
-| phylotype | Assign phylotypes to a tree based on branch length thresholds. |
-| prune | Prune or extract subtrees from a phylogenetic tree based on taxa sets, metadata, or traits. |
+| clusterfunk ancestral_reconstruction | Reconstruct ancestral states on a phylogenetic tree using ACCTRAN or DELTRAN rules. |
+| clusterfunk annotate | Annotate tips and nodes in a phylogenetic tree using taxon labels, metadata files, or MRCA rules. |
+| clusterfunk annotate_tips_from_nodes | Annotate tips of a tree from its nodes based on specified traits. |
+| clusterfunk at | A tool for annotating and manipulating phylogenetic trees. Note: The provided help text indicates 'at' is an invalid subcommand choice. |
+| clusterfunk extract_annotations | Extract tip annotations from a phylogenetic tree file into a CSV. |
+| clusterfunk get_taxa | Extract taxa from a tree file. |
+| clusterfunk graft | Graft incoming trees onto an input guide tree. |
+| clusterfunk label_transitions | Label transitions of a trait on a phylogenetic tree and optionally output exploded trees for each transition. |
+| clusterfunk phylotype | Assign phylotypes to a tree based on branch length thresholds. |
+| clusterfunk prune | Prune or extract subtrees from a phylogenetic tree based on taxa sets, metadata, or traits. |
 
 ## Reference documentation
 - [Clusterfunk README](./references/github_com_snake-flu_clusterfunk_blob_master_README.md)

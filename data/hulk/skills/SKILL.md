@@ -4,7 +4,6 @@ description: "HULK creates compact histosketched representations of metagenomic 
 homepage: https://github.com/will-rowe/hulk
 ---
 
-
 # hulk
 
 ## Overview
@@ -53,8 +52,8 @@ The `smash` command compares multiple sketches to generate a similarity matrix.
 
 | Command | Description |
 |---------|-------------|
-| sketch | Create a sketch from a set of reads. The sketch subcommand can be used to create a histosketch, minhash or count min sketch. |
-| smash | Smash a bunch of sketches and return a distance matrix. This subcommand performs pairwise comparisons of sketches and then writes a distance matrix. |
+| hulk sketch | Create a sketch from a set of reads. The sketch subcommand can be used to create a histosketch, minhash or count min sketch. |
+| hulk smash | Smash a bunch of sketches and return a distance matrix. This subcommand performs pairwise comparisons of sketches and then writes a distance matrix. |
 
 ## Reference documentation
 - [github_com_will-rowe_hulk_blob_master_README.md](./references/github_com_will-rowe_hulk_blob_master_README.md)

@@ -4,7 +4,6 @@ description: "bcbioRNASeq processes and validates output from the bcbio-nextgen 
 homepage: https://github.com/hbc/bcbioRNASeq
 ---
 
-
 # bcbio-rnaseq
 
 ## Overview
@@ -88,9 +87,9 @@ dge <- as.DGEList(object)
 
 | Command | Description |
 |---------|-------------|
+| bcbio-rnaseq compare | Compare RNA-seq experiments |
 | bcbio-rnaseq simulate | Simulate RNA-Seq data |
 | bcbio-rnaseq summarize | Summarize RNA-Seq analysis results from a bcbio project. |
-| compare | Compare RNA-seq experiments |
 
 ## Reference documentation
 - [bcbioRNASeq README](./references/github_com_hbc_bcbioRNASeq_blob_master_README.md)

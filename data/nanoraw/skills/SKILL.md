@@ -4,7 +4,6 @@ description: Nanoraw processes FAST5 files to align raw nanopore electrical sign
 homepage: https://github.com/marcus1487/nanoraw
 ---
 
-
 # nanoraw
 
 ## Overview
@@ -70,9 +69,9 @@ nanoraw write_wiggles --fast5-search-dir /path/to/fast5s/ --output-filename my_e
 | nanoraw plot_most_significant | Plot regions with significant differences in signal level between two sets of FAST5 files. |
 | nanoraw plot_motif_centered | Plot motif centered regions and statistic distributions at each genomic base in the region. |
 | nanoraw plot_multi_correction | Plot signal at specified genomic locations. |
+| nanoraw write_most_significant_fasta | Write the most significant regions to a FASTA file. |
 | nanoraw_plot_motif_with_stats | Plot motif statistics |
 | nanoraw_write_wiggles | Write wiggle files for Nanopore data. |
-| write_most_significant_fasta | Write the most significant regions to a FASTA file. |
 
 ## Reference documentation
 

@@ -4,7 +4,6 @@ description: dammit is a de novo transcriptome annotator that automates function
 homepage: http://dib-lab.github.io/dammit/
 ---
 
-
 # dammit
 
 ## Overview

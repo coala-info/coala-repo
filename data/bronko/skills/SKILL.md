@@ -4,7 +4,6 @@ description: bronko is a k-mer based bioinformatics tool designed for high-speed
 homepage: https://github.com/treangenlab/bronko
 ---
 
-
 # bronko
 
 ## Overview
@@ -61,8 +60,8 @@ bronko call -d viral_db.bkdb -r sample.fq --consensus --pileup -o output_dir
 
 | Command | Description |
 |---------|-------------|
-| build | Create an bronko index of existing viral references for a given species |
-| call | Perform rapid viral variant calling of viral sequencing data |
+| bronko build | Create an bronko index of existing viral references for a given species |
+| bronko call | Perform rapid viral variant calling of viral sequencing data |
 
 ## Reference documentation
 - [Command Parameters](./references/github_com_treangenlab_bronko_wiki_Command-Parameters.md)

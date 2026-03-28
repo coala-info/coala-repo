@@ -4,7 +4,6 @@ description: MendelScan prioritizes disease-causing variants in Mendelian disord
 homepage: https://github.com/genome/mendelscan
 ---
 
-
 # mendelscan
 
 ## Overview
@@ -60,10 +59,10 @@ java -jar MendelScan.jar score variants.vcf \
 
 | Command | Description |
 |---------|-------------|
-| rhro | MendelScan RHRO analysis |
-| score | Score variants using MendelScan. |
-| sibd | Calculates IBD segments for sibling pairs. |
-| trio | MendelScan trio analysis |
+| java -jar MendelScan.jar rhro | MendelScan RHRO analysis |
+| java -jar MendelScan.jar score | Score variants using MendelScan. |
+| java -jar MendelScan.jar sibd | Calculates IBD segments for sibling pairs. |
+| java -jar MendelScan.jar trio | MendelScan trio analysis |
 
 ## Reference documentation
 - [MendelScan README](./references/github_com_genome_mendelscan_blob_master_README.md)

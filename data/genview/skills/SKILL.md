@@ -4,7 +4,6 @@ description: GEnView automates the extraction of genomic flanking sequences and 
 homepage: https://github.com/EbmeyerSt/GEnView.git
 ---
 
-
 # genview
 
 ## Overview

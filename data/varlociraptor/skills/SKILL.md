@@ -4,7 +4,6 @@ description: Varlociraptor is a genomic variant caller that uses a latent variab
 homepage: https://varlociraptor.github.io
 ---
 
-
 # varlociraptor
 
 ## Overview

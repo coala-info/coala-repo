@@ -4,7 +4,6 @@ description: LightStringGraph constructs memory-efficient string graphs from seq
 homepage: http://lsg.algolab.eu
 ---
 
-
 # lightstringgraph
 
 ## Overview

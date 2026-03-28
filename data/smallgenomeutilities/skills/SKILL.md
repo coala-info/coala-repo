@@ -4,7 +4,6 @@ description: smallgenomeutilities provides a suite of command-line tools for vir
 homepage: https://github.com/cbg-ethz/smallgenomeutilities
 ---
 
-
 # smallgenomeutilities
 
 ## Overview

@@ -4,7 +4,6 @@ description: MetaBAT2 reconstructs individual microbial genomes from metagenomic
 homepage: https://bitbucket.org/berkeleylab/metabat
 ---
 
-
 # metabat2
 
 ## Overview
@@ -42,6 +41,15 @@ metabat2 -i assembly.fasta -a depth.txt -o bins/bin
 ### Common File Handling
 - Ensure your BAM files are sorted and indexed before calculating depth.
 - The output prefix (e.g., `-o bins/bin`) will create files named `bin.1.fa`, `bin.2.fa`, etc., inside the specified directory.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| jgi_summarize_bam_contig_depths | Summarize BAM contig depths for MetaBAT2 binning. |
+| metabat2 | MetaBAT: Metagenome Binning based on Abundance and Tetranucleotide frequency. |
 
 ## Reference documentation
 - [MetaBAT Bitbucket Repository](./references/bitbucket_org_berkeleylab_metabat.md)

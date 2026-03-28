@@ -4,7 +4,6 @@ description: The coptr tool estimates microbial growth dynamics from metagenomic
 homepage: https://github.com/tyjo/coptr
 ---
 
-
 # coptr
 
 ## Overview
@@ -54,6 +53,21 @@ coptr estimate --reads path/to/your/reads.fastq --output results.tsv
 *   **Filtering Criteria**: Pay attention to filtering options. Adjusting criteria can help to refine the analysis and remove noise from the data. For instance, the commit history mentions "relaxed filtering criteria for CoPTR-Contig," suggesting that such options exist and can be tuned.
 *   **Plotting**: If `coptr` supports plotting (as suggested by a commit message mentioning `--plot`), utilize this feature to visualize growth dynamics, which can greatly aid interpretation.
 *   **Version Updates**: Keep track of `coptr` versions. Updates often include bug fixes and performance improvements. For example, version 1.1.4 is available on bioconda.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| coptr | CoPTR (v1.1.4): Compute PTRs from complete reference genomes and assemblies. |
+| coptr rabun | Computes the PTR table from coverage maps. |
+| coptr_count | Computes the PTR table from coverage maps. |
+| coptr_estimate | Estimate PTR table from coverage maps. |
+| coptr_extract | Extract coverage maps from BAM files. |
+| coptr_index | Index a reference FASTA file for use with coptr. |
+| coptr_map | Map reads to a database index. |
+| coptr_merge | Merges multiple BAM files into a single BAM file. |
 
 ## Reference documentation
 - [Overview](./references/anaconda_org_channels_bioconda_packages_coptr_overview.md)

@@ -4,7 +4,6 @@ description: VILOCA is a bioinformatics tool designed for viral local haplotype 
 homepage: https://github.com/cbg-ethz/VILOCA
 ---
 
-
 # viloca
 
 ## Overview
@@ -60,8 +59,8 @@ viloca run -f reference.fasta -b reads.bam -w 150 --mode use_quality_scores
 
 | Command | Description |
 |---------|-------------|
-| run | Run VILOCA |
-| snv | Call SNVs from BAM files |
+| viloca run | Run VILOCA |
+| viloca snv | Call SNVs from BAM files |
 
 ## Reference documentation
 - [VILOCA README](./references/github_com_cbg-ethz_VILOCA_blob_master_README.md)

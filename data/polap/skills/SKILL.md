@@ -4,7 +4,6 @@ description: Polap is a bioinformatics pipeline designed for the de novo assembl
 homepage: https://github.com/goshng/polap
 ---
 
-
 # polap
 
 ## Overview
@@ -62,7 +61,6 @@ To achieve high consensus accuracy, especially with Nanopore data, perform polis
 
 | Command | Description |
 |---------|-------------|
-| disassemble | Disassemble a polap file. |
 | polap | Plant organelle DNA long-read assembly pipeline. |
 | polap | Plant organelle DNA long-read assembly pipeline. |
 | polap | Plant organelle DNA long-read assembly pipeline. |
@@ -74,6 +72,7 @@ To achieve high consensus accuracy, especially with Nanopore data, perform polis
 | polap | Plant organelle DNA long-read assembly pipeline. |
 | polap | Plant organelle DNA long-read assembly pipeline. |
 | polap | Plant organelle DNA long-read assembly pipeline. |
+| polap disassemble | Disassemble a polap file. |
 
 ## Reference documentation
 - [Polap Main Documentation](./references/github_com_goshng_polap_blob_main_README.md)

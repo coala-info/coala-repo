@@ -4,7 +4,6 @@ description: callingcardstools is a suite of command-line utilities and a Python
 homepage: https://github.com/cmatKhan/callingCardsTools
 ---
 
-
 # callingcardstools
 
 ## Overview
@@ -58,6 +57,24 @@ Used to analyze the relationship between transcription factor binding and gene e
 - **Containerization**: If local installation fails due to dependency conflicts (e.g., with `pyranges` or `poetry`), use the official Docker or Singularity containers hosted on Galaxyhub or Quay.io.
 - **QC Outputs**: When running yeast QC, look for the "equivalence class" output to understand the complexity and potential biases in your sequencing library.
 - **BAM Integration**: While the tool primarily works with qBED and Fastq, ongoing development (see Issue #14) suggests a transition toward BAM-based parsing for better integration with standard bioinformatics workflows.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| barcode_table_to_json | Converts a barcode table to JSON format. |
+| callingcardstools legacy_makeccf | Converts alignment files to calling card format. |
+| chipexo_promoter_sig | Compare CHIPEXO and promoter data to find significant regions. |
+| legacy_split_fastq | Splits paired-end FASTQ files based on barcodes. |
+| mammals_combine_qc | Combines QC data from multiple Qbed and BarcodeQcCounter objects. |
+| process_mammals_bam | Processes BAM files for calling cards analysis in mammals. |
+| process_yeast_bam | Processes yeast BAM files. |
+| split_fastq | Splits fastq files based on barcode details. |
+| split_fastq | Splits BarcodeQcCounter objects into separate files based on barcode details. |
+| yeast_call_peaks | Call peaks for yeast calling cards data. |
+| yeast_rank_response | Rank response of yeast genes based on calling cards data. |
 
 ## Reference documentation
 - [GitHub Repository Overview](./references/github_com_cmatKhan_callingCardsTools.md)

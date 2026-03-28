@@ -4,7 +4,6 @@ description: sqt is a private BitTorrent tracker platform for managing content-a
 homepage: https://github.com/tdjsnelling/sqtracker
 ---
 
-
 # sqt
 
 ## Overview
@@ -56,6 +55,25 @@ To add a new language to the tracker interface:
 - **Performance**: For high-traffic trackers, ensure the VPS has sufficient resources to handle concurrent BitTorrent announces, as the API service implements the tracker spec directly.
 - **Search Discovery**: If you want the tracker to be discoverable by search engines, enable the option to browse torrents without logging in within the `envs` configuration.
 - **Bonus System**: Configure the bonus point system early to encourage seeding; points can be used by members to purchase invites or upload credit.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| sqt align | Compare two strings |
+| sqt bam2fastq | Extract all reads from a BAM file that map to a certain location, but try hard to extract them even if hard clipping is used. |
+| sqt bameof | Check whether the EOF marker is present in BAM files. If it's not, this may be a sign that the BAM file was corrupted. |
+| sqt chars | Print the number of characters in a string. |
+| sqt cutvect | Remove vector sequence |
+| sqt fastagrep | Search for a IUPAC string in the sequences of a FASTA file. |
+| sqt fastxmod | Modify FASTA and FASTQ files by picking subsets and modifying individual entries. |
+| sqt qgramfreq | Print q-gram (also called k-mer) frequencies in a FASTA or FASTQ file. |
+| sqt readcov | Print a report for individual reads in a SAM/BAM file. |
+| sqt readlen histo | Print and optionally plot a read length histogram of one or more FASTA or FASTQ files. If more than one file is given, a total is also printed. |
+| sqt samsetop | Perform set operation on two SAM/BAM files. |
+| sqt_randomseq | Generate random sequences in FASTA format |
 
 ## Reference documentation
 - [sqtracker Main Documentation](./references/github_com_tdjsnelling_sqtracker.md)

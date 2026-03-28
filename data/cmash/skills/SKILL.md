@@ -4,7 +4,6 @@ description: CMash uses containment min hashing to estimate the presence and pro
 homepage: https://github.com/dkoslicki/CMash
 ---
 
-
 # cmash
 
 ## Overview

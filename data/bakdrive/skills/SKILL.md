@@ -4,7 +4,6 @@ description: "Bakdrive identifies a minimal set of driver species from metagenom
 homepage: https://gitlab.com/treangenlab/bakdrive
 ---
 
-
 # bakdrive
 
 yaml
@@ -40,6 +39,19 @@ Bakdrive's main purpose is to identify a minimal set of driver species from meta
 *   **Data Preparation:** Ensure your input metagenomic data is clean and properly formatted. Consult the Bakdrive project repository or associated publications for specific data format requirements.
 *   **Parameter Tuning:** If Bakdrive offers configurable parameters for driver identification or FMT simulation, experiment with these to optimize results based on your specific research questions and dataset characteristics.
 *   **Output Interpretation:** Understand the output of Bakdrive, which will likely include lists of identified driver species and simulation results. Correlate these findings with existing biological knowledge or experimental outcomes.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| bakdrive | Bacterial interaction inference using MICOM, Driver nodes detection using MDSM, After-FMT community construction and simulation following the GLV model, Afte-driver species transplantation (ADT) community consturction and simulation following the GLV model, After-FMT or ADT simulation following the GLV model |
+| bakdrive driver | Input folder of bacteria interaction networks |
+| bakdrive fmt_donor | Input disease and donor sample file addresses |
+| bakdrive_fmt_driver | Format driver species and their interactions for metabolic modeling. |
+| bakdrive_fmt_only | Format input files for bakdrive. |
+| bakdrive_interaction | Performs interaction analysis based on taxonomic classification and metabolic models. |
 
 ## Reference documentation
 - [Bakdrive Overview](https://anaconda.org/bioconda/bakdrive)

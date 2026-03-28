@@ -4,7 +4,6 @@ description: Varifier assesses the accuracy of variant calls by comparing a quer
 homepage: https://github.com/iqbal-lab-org/varifier
 ---
 
-
 # varifier
 
 ## Overview
@@ -54,8 +53,8 @@ The results are stored in the specified `out_dir`. The most critical file is `su
 
 | Command | Description |
 |---------|-------------|
-| make_truth_vcf | Make truth VCF file |
-| vcf_eval | Evaluate VCF file |
+| varifier make_truth_vcf | Make truth VCF file |
+| varifier vcf_eval | Evaluate VCF file |
 
 ## Reference documentation
 - [Main Usage and Installation](./references/github_com_iqbal-lab-org_varifier.md)

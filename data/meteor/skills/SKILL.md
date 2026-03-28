@@ -4,7 +4,6 @@ description: Meteor performs high-resolution metagenomic analysis by mapping sho
 homepage: https://github.com/metagenopolis/meteor
 ---
 
-
 # meteor
 
 ## Overview
@@ -89,13 +88,13 @@ meteor tree -i strain_dir -o tree_dir
 
 | Command | Description |
 |---------|-------------|
-| download | Download a specific catalogue for Meteor analysis. |
-| fastq | Create a fastq repository from a directory containing fastq files. |
-| mapping | Map reads against a gene catalog and calculate raw gene counts. |
-| merge | Merge abundance tables from multiple samples into a single directory. |
-| profile | Generate species and functional abundance tables from raw gene counts. |
-| strain | Perform variant calling and strain analysis on mapped samples. |
-| tree | Infer phylogenetic trees from strain directories using various models and output formats. |
+| Meteor download | Download a specific catalogue for Meteor analysis. |
+| Meteor fastq | Create a fastq repository from a directory containing fastq files. |
+| Meteor merge | Merge abundance tables from multiple samples into a single directory. |
+| Meteor profile | Generate species and functional abundance tables from raw gene counts. |
+| Meteor tree | Infer phylogenetic trees from strain directories using various models and output formats. |
+| meteor mapping | Map reads against a gene catalog and calculate raw gene counts. |
+| meteor strain | Perform variant calling and strain analysis on mapped samples. |
 
 ## Reference documentation
 - [Meteor GitHub Repository](./references/github_com_metagenopolis_meteor.md)

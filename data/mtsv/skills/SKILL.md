@@ -4,7 +4,6 @@ description: MTSv is a metagenomic analysis suite that identifies taxa in shotgu
 homepage: https://github.com/FofanovLab/MTSv
 ---
 
-
 # mtsv
 
 ## Overview
@@ -64,8 +63,8 @@ You can run specific stages of the pipeline independently:
 | mtsv extract | Extracts reads based on taxonomic IDs and other criteria. |
 | mtsv init | Initialize mtsv project |
 | mtsv readprep | Additional Snakemake commands may also be provided |
+| mtsv summary | Additional Snakemake commands may also be provided |
 | mtsv_pipeline | Additional Snakemake commands may also be provided |
-| summary | Additional Snakemake commands may also be provided |
 
 ## Reference documentation
 

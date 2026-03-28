@@ -4,7 +4,6 @@ description: "pymummer provides a Python wrapper for the MUMmer suite to automat
 homepage: https://github.com/sanger-pathogens/pymummer
 ---
 
-
 # pymummer
 
 ## Overview

@@ -4,7 +4,6 @@ description: CATS-rf is a diagnostic pipeline that validates transcriptome assem
 homepage: https://github.com/bodulic/CATS-rf
 ---
 
-
 # cats-rf
 
 ## Overview

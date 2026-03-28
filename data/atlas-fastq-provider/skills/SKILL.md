@@ -4,7 +4,6 @@ description: The atlas-fastq-provider is a suite of shell scripts designed to au
 homepage: https://github.com/ebi-gene-expression-group/atlas-fastq-provider
 ---
 
-
 # atlas-fastq-provider
 
 ## Overview

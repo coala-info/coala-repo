@@ -4,7 +4,6 @@ description: slivar is a high-performance command-line tool for filtering and an
 homepage: https://github.com/brentp/slivar
 ---
 
-
 # slivar
 
 ## Overview
@@ -62,12 +61,12 @@ slivar compound-hets --vcf - --ped $PED --skip NONE --out-vcf comphets.vcf
 
 | Command | Description |
 |---------|-------------|
-| ddc | Calculate DDC scores for variants. |
-| duodel | find denovo structural deletions in parent-child duos using non-transmission of SNPs |
 | slivar compound-hets | find compound-hets in trios from pre-filtered variants |
+| slivar ddc | Calculate DDC scores for variants. |
+| slivar duodel | find denovo structural deletions in parent-child duos using non-transmission of SNPs |
 | slivar expr | Evaluate expressions on VCF/BCF files. |
 | slivar make-gnotate | Create gnotate files from VCFs |
-| tsv | convert filtered VCF to tab-separated-value spreadsheet for final filtering |
+| slivar tsv | convert filtered VCF to tab-separated-value spreadsheet for final filtering |
 
 ## Reference documentation
 - [github_com_brentp_slivar.md](./references/github_com_brentp_slivar.md)

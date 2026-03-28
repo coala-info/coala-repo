@@ -4,7 +4,6 @@ description: pgscatalog-utils is a suite of command-line tools designed to autom
 homepage: https://github.com/PGScatalog/pygscatalog
 ---
 
-
 # pgscatalog-utils
 
 ## Overview

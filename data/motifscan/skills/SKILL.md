@@ -4,7 +4,6 @@ description: MotifScan detects known DNA motifs within genomic regions and perfo
 homepage: https://github.com/shao-lab/MotifScan
 ---
 
-
 # motifscan
 
 ## Overview
@@ -73,10 +72,10 @@ The `scan` command is the primary tool for motif detection.
 
 | Command | Description |
 |---------|-------------|
-| config | Configure data paths for MotifScan. |
-| genome | Genome assembly commands. This subcommand controls the genome assemblies used by MotifScan. MotifScan requires a sequences FASTA file and a gene annotation file (if available) for each genome assembly, users can either download them from a remote database or install directly with local prepared files. |
-| motif | Motif set (PFMs/PWMs) commands. |
-| scan | Scan input regions to detect motif occurrences. |
+| motifscan config | Configure data paths for MotifScan. |
+| motifscan genome | Genome assembly commands. This subcommand controls the genome assemblies used by MotifScan. MotifScan requires a sequences FASTA file and a gene annotation file (if available) for each genome assembly, users can either download them from a remote database or install directly with local prepared files. |
+| motifscan motif | Motif set (PFMs/PWMs) commands. |
+| motifscan scan | Scan input regions to detect motif occurrences. |
 
 ## Reference documentation
 - [MotifScan GitHub Repository](./references/github_com_shao-lab_MotifScan.md)

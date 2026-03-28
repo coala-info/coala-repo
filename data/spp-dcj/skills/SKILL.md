@@ -4,7 +4,6 @@ description: spp-dcj implements an Integer Linear Program algorithm to minimize 
 homepage: https://github.com/codialab/spp-dcj
 ---
 
-
 # spp-dcj
 
 ## Overview

@@ -4,7 +4,6 @@ description: Terminus collapses transcripts into groups to provide robust abunda
 homepage: https://github.com/COMBINE-lab/terminus
 ---
 
-
 # terminus
 
 ## Overview

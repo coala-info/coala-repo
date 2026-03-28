@@ -4,7 +4,6 @@ description: fastaq is a suite of Python scripts designed for the rapid manipula
 homepage: https://github.com/sanger-pathogens/Fastaq
 ---
 
-
 # fastaq
 
 ## Overview
@@ -55,22 +54,26 @@ fastaq <command> [options]
 
 | Command | Description |
 |---------|-------------|
-| acgtn_only | Replaces any character that is not one of acgtACGTnN with an N |
-| add_indels | Deletes or inserts bases at given position(s) |
-| deinterleave | Deinterleaves sequence file, so that reads are written alternately between two output files |
 | fastaq | A collection of commands for manipulating DNA/RNA sequences. |
+| fastaq acgtn_only | Replaces any character that is not one of acgtACGTnN with an N |
+| fastaq add_indels | Deletes or inserts bases at given position(s) |
 | fastaq capillary_to_pairs | Given a file of capillary reads, makes an interleaved file of read pairs (where more than read from same ligation, takes the longest read) and a file of unpaired reads. Replaces the .p1k/.q1k part of read names to denote fwd/rev reads with /1 and /2 |
 | fastaq count_sequences | Prints the number of sequences in input file to stdout |
+| fastaq deinterleave | Deinterleaves sequence file, so that reads are written alternately between two output files |
 | fastaq enumerate_names | Renames sequences in a file, calling them 1,2,3... etc |
 | fastaq expand_nucleotides | Makes all combinations of sequences in input file by using all possibilities of redundant bases. e.g. ART could be AAT or AGT. Assumes input is nucleotides, not amino acids |
 | fastaq fasta_to_fastq | Convert FASTA and .qual to FASTQ |
 | fastaq filter | Filters a sequence file by sequence length and/or by name matching a regular expression |
 | fastaq get_ids | Gets IDs from each sequence in input file |
+| fastaq get_seq_flanking_gaps | Gets the sequences flanking gaps |
 | fastaq merge | Converts multi sequence file to a single sequence |
+| fastaq replace_bases | Replaces all occurrences of one letter with another |
+| fastaq reverse_complement | Reverse complement all sequences |
 | fastaq sequence_trim | Trims sequences off the start of all sequences in a pair of sequence files, whenever there is a perfect match. Only keeps a read pair if both reads of the pair are at least a minimum length after any trimming |
 | fastaq sort_by_name | Sorts sequences in lexographical (name) order |
 | fastaq sort_by_size | Sorts sequences in length order |
 | fastaq split_by_base_count | Splits a multi sequence file into separate files. Does not split sequences. Puts up to max_bases into each split file. The exception is that any sequence longer than max_bases is put into its own file. |
+| fastaq strip_illumina_suffix | Strips /1 or /2 off the end of every read name |
 | fastaq translate | Translates all sequences in input file. Output is always FASTA format |
 | fastaq trim_contigs | Trims a set number of bases off the end of every contig, so gaps get bigger and contig ends are removed. Bases are replaced with Ns. Any sequence that ends up as all Ns is lost |
 | fastaq_caf_to_fastq | Converts CAF file to FASTQ format |
@@ -89,10 +92,6 @@ fastaq <command> [options]
 | fastaq_to_unique_by_id | Removes duplicate sequences from input file, based on their names. If the same name is found more than once, then the longest sequence is kept. Order of sequences is preserved in output |
 | fastaq_trim_ends | Trim fixed number of bases of start and/or end of every sequence |
 | freq make_random_contigs | Makes a multi-FASTA file of random sequences, all of the same length. Each base has equal chance of being A,C,G or T |
-| get_seq_flanking_gaps | Gets the sequences flanking gaps |
-| replace_bases | Replaces all occurrences of one letter with another |
-| reverse_complement | Reverse complement all sequences |
-| strip_illumina_suffix | Strips /1 or /2 off the end of every read name |
 
 ## Reference documentation
 - [Fastaq GitHub Repository](./references/github_com_sanger-pathogens_Fastaq.md)

@@ -4,7 +4,6 @@ description: AMPlify discovers and classifies antimicrobial peptides from protei
 homepage: https://github.com/bcgsc/AMPlify
 ---
 
-
 # amplify
 
 ## Overview

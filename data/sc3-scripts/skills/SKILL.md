@@ -4,7 +4,6 @@ description: sc3-scripts provides a suite of command-line tools for performing m
 homepage: https://github.com/ebi-gene-expression-group/bioconductor-sc3-scripts
 ---
 
-
 # sc3-scripts
 
 ## Overview

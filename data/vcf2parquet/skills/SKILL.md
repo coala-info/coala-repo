@@ -4,7 +4,6 @@ description: "vcf2parquet converts VCF files into Parquet format for faster quer
 homepage: https://github.com/natir/vcf2parquet
 ---
 
-
 # vcf2parquet
 
 ## Overview
@@ -62,8 +61,8 @@ vcf2parquet -i input.vcf.gz -c lz4 -b 50000 convert -o output.parquet
 
 | Command | Description |
 |---------|-------------|
-| convert | Convert VCF files to Parquet format |
-| split | Convert a vcf in multiple parquet file each file contains `batch_size` record |
+| vcf2parquet convert | Convert VCF files to Parquet format |
+| vcf2parquet split | Convert a vcf in multiple parquet file each file contains `batch_size` record |
 
 ## Reference documentation
 - [vcf2parquet Readme](./references/github_com_natir_vcf2parquet_blob_main_Readme.md)

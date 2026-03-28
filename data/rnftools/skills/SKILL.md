@@ -4,7 +4,6 @@ description: RNFtools generates and evaluates simulated Next-Generation Sequenci
 homepage: http://karel-brinda.github.io/rnftools
 ---
 
-
 # rnftools
 
 ## Overview
@@ -42,19 +41,19 @@ Compare the output of different mappers against the "truth" encoded in the RNF r
 
 | Command | Description |
 |---------|-------------|
-| curesim2rnf | Convert a CuReSim FASTQ file to RNF-FASTQ. |
-| dwgsim2rnf | Convert a DwgSim FASTQ file (dwgsim_prefix.bfast.fastq) to RNF-FASTQ. |
-| es2et | todo |
-| liftover | Liftover genomic coordinates in RNF names in a SAM/BAM files or in a FASTQ file. |
 | rnftools art2rnf | Convert an Art SAM file to RNF-FASTQ. Note that Art produces non-standard SAM files and manual editation might be necessary. In particular, when a FASTA file contains comments, Art left them in the sequence name. Comments must be removed in their corresponding @SQ headers in the SAM file, otherwise all reads are considered to be unmapped by this script. |
+| rnftools curesim2rnf | Convert a CuReSim FASTQ file to RNF-FASTQ. |
+| rnftools dwgsim2rnf | Convert a DwgSim FASTQ file (dwgsim_prefix.bfast.fastq) to RNF-FASTQ. |
+| rnftools es2et | todo |
 | rnftools et2roc | todo |
+| rnftools liftover | Liftover genomic coordinates in RNF names in a SAM/BAM files or in a FASTQ file. |
 | rnftools mason2rnf | Convert a Mason SAM file to RNF-FASTQ. |
 | rnftools merge | todo |
+| rnftools sam2es | todo |
+| rnftools sam2rnf | Convert a SAM/BAM file to RNF-FASTQ. |
+| rnftools sam2roc | todo |
 | rnftools validate | Validate RNF names in a FASTQ file. |
 | rnftools wgsim2rnf | Convert WgSim FASTQ files to RNF-FASTQ. |
-| sam2es | todo |
-| sam2rnf | Convert a SAM/BAM file to RNF-FASTQ. |
-| sam2roc | todo |
 
 ## Reference documentation
 

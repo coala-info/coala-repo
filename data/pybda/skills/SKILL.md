@@ -4,7 +4,6 @@ description: PyBDA scales bioinformatics workflows and machine learning pipeline
 homepage: https://github.com/cbg-ethz/pybda
 ---
 
-
 # pybda
 
 ## Overview
@@ -58,11 +57,11 @@ Since pybda runs on Apache Spark, resource allocation is critical for "Big Data"
 
 | Command | Description |
 |---------|-------------|
-| clustering | Do a clustering fit from a CONFIG in a SPARK session. |
-| dimension-reduction | Computes a dimension reduction from a CONFIG in a SPARK session. |
+| pybda clustering | Do a clustering fit from a CONFIG in a SPARK session. |
+| pybda dimension-reduction | Computes a dimension reduction from a CONFIG in a SPARK session. |
+| pybda regression | Fit a regression model from a CONFIG in a SPARK session. |
+| pybda run | Execute all tasks defined in a CONFIG in a SPARK session. |
 | pybda_sample | Subsample a data set down to a specified fraction from a CONFIG in a SPARK session. |
-| regression | Fit a regression model from a CONFIG in a SPARK session. |
-| run | Execute all tasks defined in a CONFIG in a SPARK session. |
 
 ## Reference documentation
 

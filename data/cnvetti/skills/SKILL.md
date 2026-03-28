@@ -4,7 +4,6 @@ description: "CNVetti is a toolkit designed for clinical copy number variation c
 homepage: https://github.com/bihealth/cnvetti
 ---
 
-
 # cnvetti
 
 ## Overview
@@ -67,10 +66,10 @@ cnvetti visualize cov-to-igv <input.bcf>
 
 | Command | Description |
 |---------|-------------|
-| annotate | Perform annotate called CNV result BCF files |
-| cmd | Low-level access to the CNVetti primitives. This section of commands provides access to the individual, atomic steps of CNVetti. |
-| quick | Easy-to-use shortcuts for command and important use cases. |
-| visualize | Visualization of coverage information (on-target, off-target, and genome-wide bins). This visualization command allows to extract coverage information tracks in IGV format from (target) coverage BCF files. |
+| cnvetti annotate | Perform annotate called CNV result BCF files |
+| cnvetti cmd | Low-level access to the CNVetti primitives. This section of commands provides access to the individual, atomic steps of CNVetti. |
+| cnvetti quick | Easy-to-use shortcuts for command and important use cases. |
+| cnvetti visualize | Visualization of coverage information (on-target, off-target, and genome-wide bins). This visualization command allows to extract coverage information tracks in IGV format from (target) coverage BCF files. |
 
 ## Reference documentation
 - [CNVetti README](./references/github_com_bihealth_cnvetti_blob_master_README.md)

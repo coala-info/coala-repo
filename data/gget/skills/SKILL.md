@@ -4,7 +4,6 @@ description: gget is a modular bioinformatics toolkit that provides programmatic
 homepage: https://github.com/pachterlab/gget
 ---
 
-
 # gget
 
 ## Overview

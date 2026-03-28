@@ -4,7 +4,6 @@ description: KITSUNE selects optimal k-mer lengths for alignment-free genomic an
 homepage: https://github.com/natapol/kitsune
 ---
 
-
 # kitsune
 
 ## Overview
@@ -71,7 +70,7 @@ kitsune dmatrix --filenames *.fna -k 13 -m jensenshannon -o distance_matrix.txt
 | Command | Description |
 |---------|-------------|
 | kitsune dmatrix | Create a dmatrix for XGBoost |
-| kopt | Kopt is a tool for optimizing K-mer counts. |
+| kitsune kopt | Kopt is a tool for optimizing K-mer counts. |
 
 ## Reference documentation
 - [KITSUNE GitHub Repository](./references/github_com_natapol_kitsune.md)

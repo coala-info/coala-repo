@@ -4,7 +4,6 @@ description: Debarcer is a bioinformatics toolset for processing molecular barco
 homepage: https://github.com/oicr-gsi/debarcer
 ---
 
-
 # debarcer
 
 ## Overview
@@ -98,15 +97,15 @@ Custom library types are defined in the `library_prep_types.ini` file. Key param
 
 | Command | Description |
 |---------|-------------|
-| call | Call variants based on consensus files and thresholds. |
 | debarcer.py bed | Generate a BED file from a BAM file, identifying genomic intervals based on read depth. |
+| debarcer.py call | Call variants based on consensus files and thresholds. |
 | debarcer.py collapse | Collapse UMIs based on various criteria. |
+| debarcer.py group | Group UMIs based on proximity and abundance. |
+| debarcer.py merge | Merge files of a specified data type. |
+| debarcer.py plot | Plotting tool for debarcer results. |
 | debarcer.py preprocess | Preprocess FASTQ files for debarcer. |
+| debarcer.py report | Generate a report from debarcer results. |
 | debarcer_run | Run the debarcer pipeline. |
-| group | Group UMIs based on proximity and abundance. |
-| merge | Merge files of a specified data type. |
-| plot | Plotting tool for debarcer results. |
-| report | Generate a report from debarcer results. |
 
 ## Reference documentation
 - [Running Debarcer](./references/github_com_oicr-gsi_debarcer_wiki_2.-Running-Debarcer.md)

@@ -4,7 +4,6 @@ description: MethBat processes and analyzes CpG methylation data from PacBio HiF
 homepage: https://github.com/PacificBiosciences/MethBat
 ---
 
-
 # methbat
 
 ## Overview
@@ -53,14 +52,14 @@ Use `methbat profile` to aggregate methylation data over specific genomic region
 
 | Command | Description |
 |---------|-------------|
-| build | Build a background/cohort profile from a collection of profiles |
-| compare | Compare sub-groups in a background/cohort profile |
-| deconvolve | Perform cell-type deconvolution based on an atlas |
-| joint-segment | Jointly segments a collection a samples into common methylation types |
-| profile | Create a CpG profile for a single dataset from pb-CpG-tools output |
-| report | Generate a report for a single dataset from pb-CpG-tools output |
-| segment | Segments the output from pb-CpG-tools |
-| signature | Identify signature regions distinguishing cases from controls |
+| methbat build | Build a background/cohort profile from a collection of profiles |
+| methbat compare | Compare sub-groups in a background/cohort profile |
+| methbat deconvolve | Perform cell-type deconvolution based on an atlas |
+| methbat joint-segment | Jointly segments a collection a samples into common methylation types |
+| methbat profile | Create a CpG profile for a single dataset from pb-CpG-tools output |
+| methbat report | Generate a report for a single dataset from pb-CpG-tools output |
+| methbat segment | Segments the output from pb-CpG-tools |
+| methbat signature | Identify signature regions distinguishing cases from controls |
 
 ## Reference documentation
 - [MethBat User Guide](./references/github_com_PacificBiosciences_MethBat_blob_main_docs_user_guide.md)

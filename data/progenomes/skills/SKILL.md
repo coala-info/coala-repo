@@ -4,7 +4,6 @@ description: The progenomes tool enables researchers to access, download, and in
 homepage: https://github.com/BigDataBiology/progenomes-cli
 ---
 
-
 # progenomes
 
 ## Overview
@@ -60,8 +59,8 @@ progenomes view --help
 
 | Command | Description |
 |---------|-------------|
+| progenomes view | View datasets within the Progenomes database. |
 | progenomes_download | Download datasets from Progenomes |
-| view | View datasets within the Progenomes database. |
 
 ## Reference documentation
 - [proGenomes-cli README](./references/github_com_BigDataBiology_progenomes-cli_blob_main_README.md)

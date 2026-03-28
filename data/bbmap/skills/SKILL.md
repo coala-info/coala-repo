@@ -4,7 +4,6 @@ description: BBMap is a global, splice-aware aligner used to map DNA and RNA-seq
 homepage: https://sourceforge.net/projects/bbmap
 ---
 
-
 # bbmap
 
 ## Overview

@@ -4,7 +4,6 @@ description: This tool provides expert-level command line patterns and high-util
 homepage: https://github.com/jlevy/the-art-of-command-line
 ---
 
-
 # art
 
 ## Overview

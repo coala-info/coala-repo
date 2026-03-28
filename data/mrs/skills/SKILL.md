@@ -4,7 +4,6 @@ description: The MRS UAV System provides a ROS-based ecosystem for developing, s
 homepage: https://github.com/ctu-mrs/mrs_uav_system
 ---
 
-
 # mrs
 
 ## Overview

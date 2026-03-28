@@ -4,7 +4,6 @@ description: "XYalign infers ploidy and corrects for sex chromosome complement i
 homepage: https://github.com/WilsonSayresLab/XYalign
 ---
 
-
 # xyalign
 
 yaml
@@ -62,6 +61,19 @@ This command will generate several output files, including those related to infe
 *   **Reference Masking**: If you have known problematic regions or specific areas you wish to exclude from the analysis (e.g., due to repetitive sequences or known assembly issues), use the `--reference_mask` option with a properly formatted BED file.
 *   **Ploidy Specification**: For known ploidy states, providing a `--ploidy` file can guide the analysis and potentially improve accuracy.
 *   **Version Management**: Ensure you are using a recent version of XYalign, as improvements and bug fixes are regularly released. Check the bioconda channel for the latest stable versions.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| xyalign | XYalign |
+| xyalign | XYalign |
+| xyalign | XYalign |
+| xyalign | XYalign |
+| xyalign | XYalign |
+| xyalign | XYalign |
 
 ## Reference documentation
 - [Overview](https://anaconda.org/bioconda/xyalign)

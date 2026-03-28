@@ -4,7 +4,6 @@ description: slow5curl enables efficient, range-based retrieval of specific nano
 homepage: https://github.com/BonsonW/slow5curl
 ---
 
-
 # slow5curl
 
 ## Overview
@@ -70,7 +69,7 @@ slow5curl get https://url/reads.blow5 --list rids.txt -o region_reads.blow5
 
 | Command | Description |
 |---------|-------------|
-| head | Prints the header for a remote BLOW5 file. |
+| slow5curl head | Prints the header for a remote BLOW5 file. |
 | slow5curl_get | Display the read entry for each specified READ_ID from a blow5 file. If READ_ID is not specified, a newline separated list of read ids will be read from the standard input. |
 | slow5curl_reads | Prints the reads in a remote BLOW5 file. |
 

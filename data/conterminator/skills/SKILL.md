@@ -4,7 +4,6 @@ description: Conterminator identifies and flags sequences assigned to the wrong 
 homepage: https://github.com/martin-steinegger/conterminator
 ---
 
-
 # conterminator
 
 ## Overview
@@ -59,8 +58,8 @@ The tool generates two main output files:
 
 | Command | Description |
 |---------|-------------|
-| dna | Searches for cross taxon contamination in DNA sequences |
-| protein | Searches for cross taxon contamination in protein sequences |
+| conterminator dna | Searches for cross taxon contamination in DNA sequences |
+| conterminator protein | Searches for cross taxon contamination in protein sequences |
 
 ## Reference documentation
 - [Conterminator GitHub Repository](./references/github_com_steineggerlab_conterminator.md)

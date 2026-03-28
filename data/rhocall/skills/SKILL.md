@@ -4,7 +4,6 @@ description: "rhocall identifies genomic regions of homozygosity and detects pot
 homepage: https://github.com/dnil/rhocall
 ---
 
-
 # rhocall
 
 ## Overview
@@ -71,11 +70,11 @@ Used for direct calling from VCF if not using the bcftools workflow.
 
 | Command | Description |
 |---------|-------------|
-| annotate | Markup VCF file using rho-calls. Use BED file to mark all variants in AZ   windows. Alternatively, use a bcftools v>=1.4 file with RG entries to mark   all vars. With the --no-v14 flag, use an older bcftools v<=1.2 style roh TSV   to mark only selected AZ variants. Roh is broken in bcftools v1.3 - do not   use. |
-| call | Call runs of autozygosity. (deprecated: use bcftools roh instead. |
 | rhocall aggregate | Aggregate runs of autozygosity from rhofile into windowed rho BED file. Accepts a bcftools roh style TSV-file with CHR,POS,AZ,QUAL. |
+| rhocall annotate | Markup VCF file using rho-calls. Use BED file to mark all variants in AZ   windows. Alternatively, use a bcftools v>=1.4 file with RG entries to mark   all vars. With the --no-v14 flag, use an older bcftools v<=1.2 style roh TSV   to mark only selected AZ variants. Roh is broken in bcftools v1.3 - do not   use. |
+| rhocall call | Call runs of autozygosity. (deprecated: use bcftools roh instead. |
 | rhocall tally | Tally runs of autozygosity from rhofile. Accepts a bcftools roh style TSV-file with CHR,POS,AZ,QUAL. |
-| viz | Plot binned zygosity and RHO-regions. |
+| rhocall viz | Plot binned zygosity and RHO-regions. |
 
 ## Reference documentation
 - [rhocall README](./references/github_com_dnil_rhocall_blob_main_README.md)

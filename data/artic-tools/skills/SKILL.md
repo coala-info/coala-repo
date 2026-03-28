@@ -4,7 +4,6 @@ description: artic-tools provides utilities for managing primer schemes and proc
 homepage: https://github.com/will-rowe/artic-tools
 ---
 
-
 # artic-tools
 
 ## Overview
@@ -45,10 +44,10 @@ Filter variants based on ARTIC-specific criteria to reduce false positives in vi
 
 | Command | Description |
 |---------|-------------|
-| align_trim | Trim alignments from an amplicon scheme |
-| check_vcf | Check a VCF file based on primer scheme info and user-defined cut offs |
-| get_scheme | Download an ARTIC primer scheme and reference sequence |
-| validate_scheme | Validate an amplicon scheme for compliance with ARTIC standards |
+| artic-tools align_trim | Trim alignments from an amplicon scheme |
+| artic-tools check_vcf | Check a VCF file based on primer scheme info and user-defined cut offs |
+| artic-tools get_scheme | Download an ARTIC primer scheme and reference sequence |
+| artic-tools validate_scheme | Validate an amplicon scheme for compliance with ARTIC standards |
 
 ## Reference documentation
 - [ARTIC tools README](./references/github_com_will-rowe_artic-tools_blob_master_README.md)

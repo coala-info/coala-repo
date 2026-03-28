@@ -4,7 +4,6 @@ description: graph2pro-var is a meta-proteogenomic pipeline that identifies prot
 homepage: https://github.com/COL-IU/graph2pro-var
 ---
 
-
 # graph2pro-var
 
 ## Overview

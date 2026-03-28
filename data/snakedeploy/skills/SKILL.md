@@ -4,7 +4,6 @@ description: Snakedeploy automates the deployment and management of Snakemake wo
 homepage: https://github.com/snakemake/snakedeploy
 ---
 
-
 # snakedeploy
 
 ## Overview

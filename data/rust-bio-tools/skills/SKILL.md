@@ -4,7 +4,6 @@ description: Rust-Bio-Tools is a suite of high-performance command-line utilitie
 homepage: https://github.com/rust-bio/rust-bio-tools
 ---
 
-
 # rust-bio-tools
 
 ## Overview
@@ -74,23 +73,23 @@ Rust-Bio-Tools (`rbt`) is a suite of ultra-fast, robust command-line utilities d
 
 | Command | Description |
 |---------|-------------|
-| bam-anonymize | Tool to build artifical reads from real BAM files with identical properties |
-| collapse-reads-to-fragments | Tool to predict maximum likelihood fragment sequence from FASTQ or BAM files. |
-| csv-report | Creates report from a given csv file containing a table with the given data |
-| fastq-filter | Remove records from a FASTQ file (from STDIN), output to STDOUT. |
-| plot-bam | Creates a html file with a vega visualization of the given bam region that is then written to stdout. |
 | rbt | A set of command-line utilities for bioinformatics in Rust. |
 | rbt | A set of command-line utilities for bioinformatics, written in Rust. |
 | rbt | A set of command-line utilities for bioinformatics tasks using the Rust-Bio library. |
 | rbt | A collection of command-line utilities for bioinformatics in Rust. |
 | rbt | A set of command-line utilities for bioinformatics, written in Rust. |
-| sequence-stats | Tool to compute stats on sequence file (from STDIN), output is in YAML with fields: min, max, average, median, nb_reads, nb_bases, n50. |
-| vcf-annotate-dgidb | Looks for interacting drugs in DGIdb and annotates them for every gene in every record. |
-| vcf-baf | Annotate b-allele frequency for each single nucleotide variant and sample. |
-| vcf-match | Annotate for each variant in a VCF/BCF at STDIN whether it is contained in a given second VCF/BCF. The matching is fuzzy for indels and exact for SNVs. Results are printed as BCF to STDOUT, with an additional INFO tag MATCHING. The two vcfs do not have to be sorted. |
-| vcf-report | Creates report from a given VCF file including a visual plot for every variant with the given BAM and FASTA file. The VCF file has to be annotated with VEP, using the options --hgvs and --hgvsg. |
-| vcf-split | Split a given VCF/BCF file into N chunks of approximately the same size. Breakends are kept together. Output type is always BCF. |
-| vcf-to-txt | Convert VCF/BCF file from STDIN to tab-separated TXT file at STDOUT. INFO and FORMAT tags have to be selected explicitly. |
+| rbt bam-anonymize | Tool to build artifical reads from real BAM files with identical properties |
+| rbt collapse-reads-to-fragments | Tool to predict maximum likelihood fragment sequence from FASTQ or BAM files. |
+| rbt csv-report | Creates report from a given csv file containing a table with the given data |
+| rbt fastq-filter | Remove records from a FASTQ file (from STDIN), output to STDOUT. |
+| rbt plot-bam | Creates a html file with a vega visualization of the given bam region that is then written to stdout. |
+| rbt sequence-stats | Tool to compute stats on sequence file (from STDIN), output is in YAML with fields: min, max, average, median, nb_reads, nb_bases, n50. |
+| rbt vcf-annotate-dgidb | Looks for interacting drugs in DGIdb and annotates them for every gene in every record. |
+| rbt vcf-baf | Annotate b-allele frequency for each single nucleotide variant and sample. |
+| rbt vcf-match | Annotate for each variant in a VCF/BCF at STDIN whether it is contained in a given second VCF/BCF. The matching is fuzzy for indels and exact for SNVs. Results are printed as BCF to STDOUT, with an additional INFO tag MATCHING. The two vcfs do not have to be sorted. |
+| rbt vcf-report | Creates report from a given VCF file including a visual plot for every variant with the given BAM and FASTA file. The VCF file has to be annotated with VEP, using the options --hgvs and --hgvsg. |
+| rbt vcf-split | Split a given VCF/BCF file into N chunks of approximately the same size. Breakends are kept together. Output type is always BCF. |
+| rbt vcf-to-txt | Convert VCF/BCF file from STDIN to tab-separated TXT file at STDOUT. INFO and FORMAT tags have to be selected explicitly. |
 
 ## Reference documentation
 - [Rust-Bio-Tools README](./references/github_com_rust-bio_rust-bio-tools_blob_master_README.md)

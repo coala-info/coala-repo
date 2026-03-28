@@ -4,7 +4,6 @@ description: tbtamr infers drug susceptibility testing results for Mycobacterium
 homepage: https://github.com/MDU-PHL/tbtamr
 ---
 
-
 # tbtamr
 
 ## Overview

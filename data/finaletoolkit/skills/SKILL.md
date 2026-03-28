@@ -4,7 +4,6 @@ description: FinaleToolkit is a computational suite designed to extract and anal
 homepage: https://github.com/epifluidlab/FinaleToolkit
 ---
 
-
 # finaletoolkit
 
 ## Overview
@@ -69,6 +68,7 @@ finaletoolkit wps <input.bam> --interval <chr:start-stop> --window 120 --output_
 | Command | Description |
 |---------|-------------|
 | finaletoolkit frag-length-intervals | Retrieves fragment length summary statistics over intervals defined in a BED file based on alignment data from a BAM/CRAM/Fragment file. |
+| finaletoolkit mds | Calculate the frequency of end motifs in fragments. |
 | finaletoolkit-adjust-wps | Adjusts raw Windowed Protection Score (WPS) by applying a median filter and Savitsky-Golay filter. |
 | finaletoolkit-agg-wps | Aggregates a bigWig signal over constant-length intervals defined in a BED file. |
 | finaletoolkit-breakpoint-motifs | Measures frequency of k-mer breakpoint motifs. |
@@ -84,7 +84,6 @@ finaletoolkit wps <input.bam> --interval <chr:start-stop> --window 120 --output_
 | finaletoolkit-interval-mds | Reads k-mer frequencies from a file and calculates a motif diversity score (MDS) for each interval using normalized Shannon entropy as described by Jiang et al (2020). |
 | finaletoolkit-wps | Calculates Windowed Protection Score (WPS) over intervals defined in a BED file based on alignment data from a BAM/CRAM/Fragment file. |
 | finaletoolkit_coverage | Calculates fragmentation coverage over intervals defined in a BED file based on alignment data from a BAM/CRAM/Fragment file. |
-| mds | Calculate the frequency of end motifs in fragments. |
 
 ## Reference documentation
 - [FinaleToolkit GitHub Overview](./references/github_com_epifluidlab_FinaleToolkit.md)

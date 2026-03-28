@@ -4,7 +4,6 @@ description: bctools is a suite of scripts designed to manage barcodes and UMIs 
 homepage: https://github.com/dmaticzka/bctools
 ---
 
-
 # bctools
 
 ## Overview

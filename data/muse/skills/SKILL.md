@@ -4,7 +4,6 @@ description: MuSE is a statistical tool designed to identify somatic point mutat
 homepage: http://bioinformatics.mdanderson.org/main/MuSE
 ---
 
-
 # muse
 
 ## Overview
@@ -55,8 +54,8 @@ The second step applies a sample-specific error model to the output of the `call
 
 | Command | Description |
 |---------|-------------|
-| call | Call somatic mutations using MuSE |
-| sump | Summarize MuSE variant calls |
+| MuSE call | Call somatic mutations using MuSE |
+| MuSE sump | Summarize MuSE variant calls |
 
 ## Reference documentation
 - [MuSE Overview and Usage](./references/bioinformatics_mdanderson_org_public-software_muse.md)

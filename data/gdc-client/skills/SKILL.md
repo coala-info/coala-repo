@@ -4,7 +4,6 @@ description: The gdc-client is a command-line tool for downloading and uploading
 homepage: https://gdc.cancer.gov/access-data/gdc-data-transfer-tool
 ---
 
-
 # gdc-client
 
 ## Overview
@@ -51,10 +50,10 @@ For users with submission permissions:
 
 | Command | Description |
 |---------|-------------|
-| download | Download files from the GDC |
 | gdc-client | The Genomic Data Commons Command Line Client |
+| gdc-client download | Download files from the GDC |
+| gdc-client settings | Manage gdc-client settings |
 | gdc-client upload | Upload files to the GDC. |
-| settings | Manage gdc-client settings |
 
 ## Reference documentation
 - [GDC Data Transfer Tool Overview](./references/gdc_cancer_gov_access-data_gdc-data-transfer-tool.md)

@@ -4,7 +4,6 @@ description: Seq2C is a gene-centric framework that identifies copy number varia
 homepage: https://github.com/AstraZeneca-NGS/Seq2C
 ---
 
-
 # seq2c
 
 ## Overview
@@ -59,7 +58,7 @@ The output `seq2c_results.txt` provides several key metrics:
 
 | Command | Description |
 |---------|-------------|
-| cov2lr.pl | The cov2lr.pl program will convert a coverage file to copy number profile. |
+| perl cov2lr.pl | The cov2lr.pl program will convert a coverage file to copy number profile. |
 | seq2c_lr2gene.pl | The lr2gene.pl program will convert a coverage file to copy number profile. The default parameters are designed for detecting such aberrations for high tumor purity samples, such as cancer cell lines. |
 | seq2cov.pl | Calculate candidate variance for a given region(s) in an indexed BAM file. The default input is IGV's one or more entries in refGene.txt, but can be regions. |
 

@@ -4,7 +4,6 @@ description: "Provides information and configuration details for the Galileo 2 3
 homepage: https://github.com/JaredC01/Galileo2
 ---
 
-
 # galileo
 
 yaml
@@ -68,6 +67,19 @@ run_current: 0.8
 ### Resellers
 
 Only kits sold by LDO are considered "official" Galileo 2 kits. A list of authorized resellers is available.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| galileo | synchronize Fitbit trackers with Fitbit web service |
+| galileo | synchronize Fitbit trackers with Fitbit web service |
+| galileo | synchronize Fitbit trackers with Fitbit web service |
+| galileo | synchronize Fitbit trackers with Fitbit web service |
+| galileo | synchronize Fitbit trackers with Fitbit web service |
+| galileo | synchronize Fitbit trackers with Fitbit web service |
 
 ## Reference documentation
 - [Galileo 2 Project Overview and Klipper Settings](./references/github_com_JaredC01_Galileo2.md)

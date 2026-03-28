@@ -4,7 +4,6 @@ description: Nanomotif identifies DNA methylation motifs from Oxford Nanopore se
 homepage: https://pypi.org/project/nanomotif/
 ---
 
-
 # nanomotif
 
 ## Overview
@@ -75,10 +74,10 @@ nanomotif MTase-linker run \
 
 | Command | Description |
 |---------|-------------|
-| MTase-linker | MTase-linker commands |
-| include_contigs | Include contigs in the analysis based on methylation data. |
-| motif_discovery | Motif discovery from methylation data |
+| nanomotif MTase-linker | MTase-linker commands |
 | nanomotif detect_contamination | Detects contamination in nanopore motif data. |
+| nanomotif include_contigs | Include contigs in the analysis based on methylation data. |
+| nanomotif motif_discovery | Motif discovery from methylation data |
 
 ## Reference documentation
 - [Nanomotif README](./references/github_com_MicrobialDarkMatter_nanomotif_blob_main_README.md)

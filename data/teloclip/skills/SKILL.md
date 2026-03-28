@@ -4,7 +4,6 @@ description: Teloclip identifies and extracts overhanging soft-clipped reads fro
 homepage: https://github.com/Adamtaranto/teloclip
 ---
 
-
 # teloclip
 
 ## Overview
@@ -56,9 +55,9 @@ teloclip extend --ref ref.fa --outdir ./extended_genome filtered.bam
 
 | Command | Description |
 |---------|-------------|
-| extend | Extend contigs using overhang analysis from soft-clipped alignments. |
-| extract | Extract overhanging reads for each end of each reference contig. Reads are always written to output files. |
-| filter | Filter SAM file for clipped alignments containing unassembled telomeric   repeats. |
+| teloclip extend | Extend contigs using overhang analysis from soft-clipped alignments. |
+| teloclip extract | Extract overhanging reads for each end of each reference contig. Reads are always written to output files. |
+| teloclip filter | Filter SAM file for clipped alignments containing unassembled telomeric   repeats. |
 
 ## Reference documentation
 

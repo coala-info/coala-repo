@@ -4,7 +4,6 @@ description: Eagle is a bioinformatics utility designed for rapid k-mer counting
 homepage: https://bitbucket.org/christopherschroeder/eagle
 ---
 
-
 # eagle
 
 ## Overview

@@ -4,7 +4,6 @@ description: FINEMAP identifies causal variants in genomic regions by integratin
 homepage: http://www.christianbenner.com
 ---
 
-
 # finemap
 
 # finemap

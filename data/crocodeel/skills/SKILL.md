@@ -4,7 +4,6 @@ description: CroCoDeEL detects and estimates cross-sample contamination levels i
 homepage: https://github.com/metagenopolis/crocodeel
 ---
 
-
 # crocodeel
 
 ## Overview
@@ -65,9 +64,9 @@ For advanced users needing to adapt the tool to specific sequencing protocols:
 |---------|-------------|
 | crocodeel easy_wf | Detects and quantifies contamination events in metagenomic samples. |
 | crocodeel plot_conta | Generate scatterplots for contamination events. |
-| search_conta | Search for contamination events |
-| test_install | Test the installation of crocodeel |
-| train_model | Train a Random Forest model to classify species based on their abundance. |
+| crocodeel search_conta | Search for contamination events |
+| crocodeel test_install | Test the installation of crocodeel |
+| crocodeel train_model | Train a Random Forest model to classify species based on their abundance. |
 
 ## Reference documentation
 - [CroCoDeEL GitHub Repository](./references/github_com_metagenopolis_crocodeel.md)

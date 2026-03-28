@@ -4,7 +4,6 @@ description: "BamHash generates order-independent checksums for sequencing data 
 homepage: https://github.com/DecodeGenetics/BamHash
 ---
 
-
 # bamhash
 
 ## Overview

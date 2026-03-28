@@ -4,7 +4,6 @@ description: PAML is a suite of programs for the statistical analysis of DNA and
 homepage: https://evomics.org/resources/software/molecular-evolution-software/paml
 ---
 
-
 # paml
 
 ## Overview

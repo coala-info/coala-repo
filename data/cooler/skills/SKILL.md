@@ -4,7 +4,6 @@ description: Cooler stores and manipulates genomic interaction matrices using a 
 homepage: https://github.com/open2c/cooler
 ---
 
-
 # cooler
 
 ## Overview
@@ -47,24 +46,24 @@ For visualization (e.g., HiGlass) or multi-scale analysis:
 
 | Command | Description |
 |---------|-------------|
-| balance | Out-of-core matrix balancing. |
 | cooler attrs | Display a file's attribute hierarchy. |
+| cooler balance | Out-of-core matrix balancing. |
 | cooler cload | Create a cooler from genomic pairs and bins. |
 | cooler coarsen | Coarsen a cooler to a lower resolution. |
 | cooler cp | Copy a cooler from one file to another or within the same file. |
 | cooler csort | Sort and index a contact list. |
 | cooler digest | Generate fragment-delimited genomic bins. |
 | cooler dump | Dump a cooler's data to a text stream. |
+| cooler info | Display a cooler's info and metadata. |
 | cooler ln | Create a hard link to a cooler (rather than a true copy) in the same file.   Also supports soft links (in the same file) or external links (different   files). |
 | cooler load | Create a cooler from a pre-binned matrix. |
 | cooler merge | Merge multiple coolers with identical axes. |
 | cooler mv | Rename a cooler within the same file. |
+| cooler show | Display and browse a cooler in matplotlib. |
 | cooler tree | Display a file's data hierarchy. |
 | cooler zoomify | Generate a multi-resolution cooler file by coarsening. |
 | cooler_ls | List all coolers inside a file. |
 | cooler_makebins | Generate fixed-width genomic bins. |
-| info | Display a cooler's info and metadata. |
-| show | Display and browse a cooler in matplotlib. |
 
 ## Reference documentation
 - [Cooler GitHub README](./references/github_com_open2c_cooler_blob_master_README.md)

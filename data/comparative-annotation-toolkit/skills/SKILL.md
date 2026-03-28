@@ -4,7 +4,6 @@ description: The Comparative Annotation Toolkit produces high-quality gene annot
 homepage: https://github.com/ComparativeGenomicsToolkit/Comparative-Annotation-Toolkit
 ---
 
-
 # comparative-annotation-toolkit
 
 ## Overview

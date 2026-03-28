@@ -4,7 +4,6 @@ description: Haplomap performs haplotype-based computational genetic mapping to 
 homepage: https://github.com/zqfang/haplomap
 ---
 
-
 # haplomap
 
 ## Overview

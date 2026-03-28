@@ -4,7 +4,6 @@ description: pbfusion identifies fusion genes in long-read Iso-Seq data by analy
 homepage: https://github.com/PacificBiosciences/pbfusion
 ---
 
-
 # pbfusion
 
 ## Overview
@@ -66,8 +65,8 @@ The primary output file is `{prefix}.breakpoints.groups.bed`. This is a **BEDPE*
 
 | Command | Description |
 |---------|-------------|
-| discover | Identify fusion genes in aligned PacBio Iso-Seq data |
-| gff-cache | Cache exonic information from a gtf/gff file in binary format for faster `pbfusion discover` invocations. |
+| pbfusion discover | Identify fusion genes in aligned PacBio Iso-Seq data |
+| pbfusion gff-cache | Cache exonic information from a gtf/gff file in binary format for faster `pbfusion discover` invocations. |
 
 ## Reference documentation
 - [pbfusion README](./references/github_com_PacificBiosciences_pbfusion_blob_master_README.md)

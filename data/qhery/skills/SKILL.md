@@ -4,7 +4,6 @@ description: qhery identifies amino acid changes in SARS-CoV-2 samples and cross
 homepage: http://github.com/mjsull/qhery/
 ---
 
-
 # qhery
 
 ## Overview
@@ -72,7 +71,7 @@ qhery generates two primary TSV files:
 
 | Command | Description |
 |---------|-------------|
-| list_rx | List resistance genes from the Stanford resistance database. |
+| qhery list_rx | List resistance genes from the Stanford resistance database. |
 | qhery run | Run the QHERY pipeline. |
 | qhery_mutations | Analyze mutations using the qhery tool. |
 

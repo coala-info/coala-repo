@@ -4,7 +4,6 @@ description: Pynteny searches for syntenic blocks and conserved gene arrangement
 homepage: http://github.com/robaina/Pynteny
 ---
 
-
 # pynteny
 
 ## Overview
@@ -60,10 +59,10 @@ The synteny string defines the spatial relationship between genes:
 
 | Command | Description |
 |---------|-------------|
-| build | Translate nucleotide assembly file and assign contig and gene location info to each identified ORF (using prodigal). Label predicted ORFs according to positional info and export a fasta file containing predicted and translated ORFs. Alternatively, extract peptide sequences from GenBank file containing ORF annotations and write labelled peptide sequences to a fasta file. |
-| download | Download HMM database from NCBI. |
+| pynteny build | Translate nucleotide assembly file and assign contig and gene location info to each identified ORF (using prodigal). Label predicted ORFs according to positional info and export a fasta file containing predicted and translated ORFs. Alternatively, extract peptide sequences from GenBank file containing ORF annotations and write labelled peptide sequences to a fasta file. |
+| pynteny download | Download HMM database from NCBI. |
 | pynteny parse | Translate synteny structure with gene symbols into one with HMM groups, according to provided HMM database. |
-| search | Query sequence database for HMM hits arranged in provided synteny structure. |
+| pynteny search | Query sequence database for HMM hits arranged in provided synteny structure. |
 
 ## Reference documentation
 - [Search Subcommand](./references/robaina_github_io_Pynteny_subcommands_search.md)

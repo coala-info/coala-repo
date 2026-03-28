@@ -4,7 +4,6 @@ description: FASTAptamer processes large-scale sequencing data from combinatoria
 homepage: http://burkelab.missouri.edu/fastaptamer.html
 ---
 
-
 # fastaptamer
 
 ## Overview

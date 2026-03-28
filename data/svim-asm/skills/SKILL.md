@@ -4,7 +4,6 @@ description: SVIM-asm identifies structural variants larger than 50bp by compari
 homepage: https://github.com/eldariont/svim-asm
 ---
 
-
 # svim-asm
 
 ## Overview

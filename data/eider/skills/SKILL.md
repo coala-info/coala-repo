@@ -4,7 +4,6 @@ description: Eider is a command-line utility for executing SQL queries against D
 homepage: https://github.com/heuermh/eider
 ---
 
-
 # eider
 
 ## Overview

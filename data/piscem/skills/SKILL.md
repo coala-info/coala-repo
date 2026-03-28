@@ -4,7 +4,6 @@ description: Piscem is a high-performance tool for genomic indexing and read map
 homepage: https://github.com/COMBINE-lab/piscem
 ---
 
-
 # piscem
 
 ## Overview
@@ -66,10 +65,10 @@ piscem map-bulk -i index_prefix -1 reads_R1.fq.gz -2 reads_R2.fq.gz -t 8 -o outp
 
 | Command | Description |
 |---------|-------------|
-| build | Index a reference sequence |
-| map-bulk | map reads for bulk processing |
-| map-sc | map reads for single-cell processing |
-| map-sc-atac | map reads for scAtac processing |
+| piscem build | Index a reference sequence |
+| piscem map-bulk | map reads for bulk processing |
+| piscem map-sc | map reads for single-cell processing |
+| piscem map-sc-atac | map reads for scAtac processing |
 
 ## Reference documentation
 - [Piscem GitHub Repository](./references/github_com_COMBINE-lab_piscem.md)

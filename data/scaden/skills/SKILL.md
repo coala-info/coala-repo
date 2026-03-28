@@ -4,7 +4,6 @@ description: Scaden is a deep-learning framework used to estimate the cellular c
 homepage: https://github.com/KevinMenden/scaden
 ---
 
-
 # scaden
 
 ## Overview
@@ -77,7 +76,7 @@ scaden predict --model_dir <model_output_path> <bulk_data.txt>
 
 | Command | Description |
 |---------|-------------|
-| predict | Predict cell type composition using a trained Scaden model |
+| scaden predict | Predict cell type composition using a trained Scaden model |
 | scaden process | Process a dataset for training |
 | scaden simulate | Create artificial bulk RNA-seq data from scRNA-seq dataset(s) |
 | scaden train | Train a Scaden model |

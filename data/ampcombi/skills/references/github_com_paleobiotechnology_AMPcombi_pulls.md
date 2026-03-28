@@ -296,7 +296,7 @@ Most reactions
 You could search [all of GitHub](/search) or try an [advanced search](/search/advanced).
 
 **ProTip!**
-What’s not been updated in a month: [updated:<2026-02-27](/paleobiotechnology/AMPcombi/issues?q=is%3Apr+is%3Aopen+updated%3A%3C2026-02-27).
+Updated in the last three days: [updated:>2026-03-25](/paleobiotechnology/AMPcombi/issues?q=is%3Apr+is%3Aopen+updated%3A%3E2026-03-25).
 
 ## Footer
 

@@ -4,7 +4,6 @@ description: PHYLIP is a comprehensive suite of programs used for inferring evol
 homepage: http://evolution.genetics.washington.edu/phylip/
 ---
 
-
 # phylip
 
 ## Overview
@@ -51,11 +50,11 @@ A standard bootstrapping workflow requires running multiple programs in sequence
 
 | Command | Description |
 |---------|-------------|
-| dnadist | Computes distances between sequences. |
-| dnainvar | Calculates the number of DNA substitutions between pairs of sequences. |
-| dnapars | Parses DNA sequences for phylogenetic analysis. |
-| dolmove | Moves sequences between files. |
-| neighbor | Neighbor-joining method for constructing phylogenetic trees. |
+| phylip dnadist | Computes distances between sequences. |
+| phylip dnainvar | Calculates the number of DNA substitutions between pairs of sequences. |
+| phylip dnapars | Parses DNA sequences for phylogenetic analysis. |
+| phylip dolmove | Moves sequences between files. |
+| phylip neighbor | Neighbor-joining method for constructing phylogenetic trees. |
 | phylip_drawtree | Draws trees in various formats. |
 | phylip_retree | Tree Rearrangement |
 

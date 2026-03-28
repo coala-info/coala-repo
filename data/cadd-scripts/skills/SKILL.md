@@ -4,7 +4,6 @@ description: cadd-scripts ranks the pathogenicity of human genome variants by in
 homepage: https://github.com/kircherlab/CADD-scripts
 ---
 
-
 # cadd-scripts
 
 ## Overview

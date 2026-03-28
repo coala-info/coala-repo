@@ -4,7 +4,6 @@ description: Infernal uses profile stochastic context-free grammars to identify 
 homepage: http://eddylab.org/infernal
 ---
 
-
 # infernal
 
 ## Overview

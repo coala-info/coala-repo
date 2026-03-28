@@ -4,7 +4,6 @@ description: EBI Search provides high-performance text search and automated data
 homepage: https://github.com/ebi-wp/EBISearch-webservice-clients
 ---
 
-
 # ebisearch
 
 ## Overview
@@ -67,10 +66,10 @@ Requires OpenJDK 8 (Note: Java 9 and above are not supported).
 
 | Command | Description |
 |---------|-------------|
+| ebisearch get_fields | Get specific fields from EBI Search |
+| ebisearch get_query_results | Return the all the results for a query on a specific domain in EBI |
 | ebisearch_get_domains | Get domains from EBI Search |
 | ebisearch_get_entries | Get entries from EBI Search |
-| get_fields | Get specific fields from EBI Search |
-| get_query_results | Return the all the results for a query on a specific domain in EBI |
 
 ## Reference documentation
 - [EBISearch Web Service Clients README](./references/github_com_ebi-wp_EBISearch-webservice-clients_blob_master_README.md)

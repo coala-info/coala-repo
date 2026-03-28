@@ -10,6 +10,7 @@ Parse and summarize results from various AMP (Antimicrobial Peptide) prediction 
 - **Homepage**: https://github.com/Darcy220606/AMPcombi
 - **Package**: https://anaconda.org/channels/bioconda/packages/ampcombi/overview
 - **Validation**: PASS
+- **usage**: https://ampcombi.readthedocs.io/en/main/usage.html
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ampcombi/overview
 - **Total Downloads**: 14.7K
@@ -317,4 +318,4 @@ options:
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

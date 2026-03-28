@@ -4,7 +4,6 @@ description: AKT is a high-performance utility for analyzing large-scale genomic
 homepage: https://github.com/Illumina/akt
 ---
 
-
 # akt
 
 ---
@@ -55,11 +54,11 @@ Phases genotypes based on transmission logic in duos and trios.
 
 | Command | Description |
 |---------|-------------|
-| kin | Calculate kinship/IBD statistics from a multisample BCF/VCF |
-| pca | Performs principal component analysis on a vcf/bcf |
-| pedphase | simple Mendel inheritance phasing of duos/trios |
-| unrelated | Derive a set of pedigrees from the akt kin output. |
-| unrelated | Print a list of unrelated individuals taking the output from akt kin as input. |
+| ./akt unrelated | Derive a set of pedigrees from the akt kin output. |
+| akt kin | Calculate kinship/IBD statistics from a multisample BCF/VCF |
+| akt pca | Performs principal component analysis on a vcf/bcf |
+| akt pedphase | simple Mendel inheritance phasing of duos/trios |
+| akt unrelated | Print a list of unrelated individuals taking the output from akt kin as input. |
 
 ## Reference documentation
 - [AKT README](./references/github_com_Illumina_akt_blob_master_README.md)

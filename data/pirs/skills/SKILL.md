@@ -4,7 +4,6 @@ description: pIRS simulates Illumina paired-end reads using empirical profiles t
 homepage: https://github.com/galaxy001/pirs
 ---
 
-
 # pirs
 
 ## Overview
@@ -56,8 +55,8 @@ pIRS includes auxiliary tools to generate custom profiles from real sequencing d
 
 | Command | Description |
 |---------|-------------|
-| diploid | Simulate a diploid genome by creating a copy of a haploid genome with heterozygosity introduced. REFERENCE specifies a FASTA file containing the reference genome. It may be compressed (gzip). It may contain multiple sequences (scaffolds or chromosomes), each marked with a separate FASTA tag line. The introduced heterozygosity takes the form of SNPs, indels, and large-scale structural variation (insertions, deletions and inversions). If REFERENCE is '-', the reference sequence is read from stdin, but it must be uncompressed. |
-| simulate | pIRS is a program for simulating paired-end reads from a genome. It is optimized for simulating reads from the Illumina platform. The input to pIRS is any number of reference sequences. Typically you would just provide one FASTA file containing your reference sequence, but you may provide two if you have generated a diploid sequence with `pirs diploid', or if you have chromosomes split up into multiple FASTA files. The output of pIRS is two FASTQ files containing the simulated paired-end reads, as well as several log files. |
+| pirs diploid | Simulate a diploid genome by creating a copy of a haploid genome with heterozygosity introduced. REFERENCE specifies a FASTA file containing the reference genome. It may be compressed (gzip). It may contain multiple sequences (scaffolds or chromosomes), each marked with a separate FASTA tag line. The introduced heterozygosity takes the form of SNPs, indels, and large-scale structural variation (insertions, deletions and inversions). If REFERENCE is '-', the reference sequence is read from stdin, but it must be uncompressed. |
+| pirs simulate | pIRS is a program for simulating paired-end reads from a genome. It is optimized for simulating reads from the Illumina platform. The input to pIRS is any number of reference sequences. Typically you would just provide one FASTA file containing your reference sequence, but you may provide two if you have generated a diploid sequence with `pirs diploid', or if you have chromosomes split up into multiple FASTA files. The output of pIRS is two FASTQ files containing the simulated paired-end reads, as well as several log files. |
 
 ## Reference documentation
 - [pIRS README and Usage](./references/github_com_galaxy001_pirs.md)

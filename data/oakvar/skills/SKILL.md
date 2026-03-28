@@ -4,7 +4,6 @@ description: OakVar is a modular genomic variant analysis platform used to annot
 homepage: http://www.oakvar.com
 ---
 
-
 # oakvar
 
 ## Overview
@@ -33,6 +32,22 @@ After running an analysis, OakVar stores results in a local database (usually SQ
 - **Parallelization**: Use the `-n` flag with `ov run` to specify the number of parallel processes for faster annotation of large VCFs.
 - **System Setup**: Run `ov system setup` upon first installation to initialize the working directories and base databases.
 - **Module Info**: Use `ov module info <module_name>` to check versioning and data sources for specific annotators to ensure reproducibility in your research.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| oakvar ov module info | returns information of the queried module |
+| oakvar ov module install | Installs OakVar modules. |
+| oakvar ov module update | updates modules. |
+| oakvar_ov | OakVar system setup |
+| oakvar_ov run | Run OakVar on input files. |
+| ov | OakVar. Genomic variant analysis platform. |
+| ov module | Manage ov modules |
+| ov report | Generate reports from a job |
+| ov_gui | OakVar graphical user interface |
 
 ## Reference documentation
 - [OakVar Overview](./references/anaconda_org_channels_bioconda_packages_oakvar_overview.md)

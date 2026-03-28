@@ -4,7 +4,6 @@ description: Sawfish is a high-resolution variant caller that identifies structu
 homepage: https://github.com/PacificBiosciences/sawfish
 ---
 
-
 # sawfish
 
 ## Overview

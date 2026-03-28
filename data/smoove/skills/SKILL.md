@@ -4,7 +4,6 @@ description: "smoove simplifies structural variant calling and genotyping by orc
 homepage: https://github.com/brentp/smoove
 ---
 
-
 # smoove
 
 ## Overview

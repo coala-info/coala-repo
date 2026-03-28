@@ -4,7 +4,6 @@ description: mapad is a bioinformatics tool designed to align short, damaged anc
 homepage: https://github.com/mpieva/mapAD
 ---
 
-
 # mapad
 
 ## Overview
@@ -62,8 +61,8 @@ mapad -vv map \
 | Command | Description |
 |---------|-------------|
 | mapad map | Maps reads to an indexed genome |
+| mapad worker | Spawns worker |
 | mapad_index | Indexes a genome file |
-| worker | Spawns worker |
 
 ## Reference documentation
 - [mapAD Repository Overview](./references/github_com_mpieva_mapAD_blob_main_Readme.md)

@@ -4,7 +4,6 @@ description: GDAL is a translator library for raster and vector geospatial data 
 homepage: https://github.com/OSGeo/gdal
 ---
 
-
 # gdal
 
 ## Overview

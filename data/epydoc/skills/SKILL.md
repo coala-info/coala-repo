@@ -4,7 +4,6 @@ description: Generates API documentation for Python projects. Use when user asks
 homepage: https://github.com/nltk/epydoc
 ---
 
-
 # epydoc
 
 epydoc/SKILL.md
@@ -84,6 +83,21 @@ Where `<module-path>` can be a Python module, package, or a directory containing
 *   **Project Structure**: Organize your Python code into modules and packages for cleaner documentation generation.
 *   **Version Control**: Keep your documentation generation process within your version control system. Commit generated documentation or the scripts to generate it.
 *   **Troubleshooting UML**: If UML diagrams are not generating, ensure Graphviz is correctly installed and accessible in your system's PATH. Check the project's issue tracker for any known limitations or specific requirements.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| epydoc | epydoc is a tool for generating documentation from Python docstrings. |
+| epydoc | epydoc |
+| epydoc | epydoc is a tool for automatically generating API documentation for Python modules. |
+| epydoc | epydoc |
+| epydoc | epydoc is a tool for automatically generating API documentation for Python modules. |
+| epydoc | epydoc [ACTION] [options] NAMES... |
+| epydoc | epydoc |
+| epydoc | Write and format documentation for Python modules |
 
 ## Reference documentation
 - [Edward Loper's API Documentation Generation Tool](./references/anaconda_org_channels_bioconda_packages_epydoc_overview.md)

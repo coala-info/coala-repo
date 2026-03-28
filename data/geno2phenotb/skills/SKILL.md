@@ -4,7 +4,6 @@ description: geno2phenotb predicts drug resistance in *Mycobacterium tuberculosi
 homepage: https://github.com/msmdev/geno2phenoTB
 ---
 
-
 # geno2phenotb
 
 ## Overview

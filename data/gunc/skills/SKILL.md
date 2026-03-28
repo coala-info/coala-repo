@@ -4,7 +4,6 @@ description: GUNC assesses the quality of prokaryotic genomes by detecting chime
 homepage: https://github.com/grp-bork/gunc
 ---
 
-
 # gunc
 
 ## Overview
@@ -69,7 +68,7 @@ gunc rescore --gunc_file GUNC.progenomes_3.maxCSS_level.tsv
 
 | Command | Description |
 |---------|-------------|
-| download_db | Download the GUNC database. |
+| gunc download_db | Download the GUNC database. |
 | gunc merge_checkm | Merge GUNC and CheckM results |
 | gunc_plot | Plotting tool for GUNC results. |
 | gunc_run | Run GUNC analysis |

@@ -4,7 +4,6 @@ description: SeroBA identifies Streptococcus pneumoniae serotypes from raw Illum
 homepage: https://github.com/sanger-pathogens/seroba
 ---
 
-
 # seroba
 
 ## Overview

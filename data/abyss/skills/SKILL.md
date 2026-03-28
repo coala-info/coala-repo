@@ -4,7 +4,6 @@ description: ABySS is a de novo sequence assembler designed for reconstructing l
 homepage: https://www.bcgsc.ca/platform/bioinfo/software/abyss
 ---
 
-
 # abyss
 
 ## Overview

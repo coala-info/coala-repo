@@ -4,7 +4,6 @@ description: samstats computes read-level alignment statistics from SAM or BAM f
 homepage: https://github.com/kundajelab/SAMstats
 ---
 
-
 # samstats
 
 ## Overview

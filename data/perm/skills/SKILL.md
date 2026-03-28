@@ -4,7 +4,6 @@ description: The perm tool manages roles and permissions in Laravel applications
 homepage: https://github.com/spatie/laravel-permission
 ---
 
-
 # perm
 
 ## Overview
@@ -67,6 +66,15 @@ Use the built-in Artisan commands for rapid environment setup and debugging:
   });
   ```
 - **Database Seeding**: Always use Seeders to define your initial permission set to ensure consistency across environments.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| perm | PerM (Periodic Seed Mapping) is a fast mapping program for short reads (e.g., Illumina, SOLiD) to a reference genome, using periodic seeds to improve sensitivity. |
+| php artisan permission:create-permission | Create a new permission for the Spatie Laravel-permission package |
 
 ## Reference documentation
 - [Associate users with permissions and roles](./references/github_com_spatie_laravel-permission.md)

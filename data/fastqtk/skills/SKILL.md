@@ -4,7 +4,6 @@ description: fastqtk is a high-efficiency utility for manipulating, trimming, an
 homepage: https://github.com/ndaniel/fastqtk
 ---
 
-
 # fastqtk
 
 ## Overview
@@ -66,27 +65,27 @@ The `fastqtk` tool is a C-based utility designed for high-efficiency manipulatio
 
 | Command | Description |
 |---------|-------------|
-| NtoA | It replaces all the As from reads sequences with As in a FASTQ file. |
-| compress-id | It does lossy compression on the reads ids from a FASTQ file. |
-| count | It provides the total number of reads from an input FASTQ file and outputs it to a text file. |
-| count-lengths | It provides total number of reads and a summary statistics regarding the lengths of the reads from an input FASTQ file and outputs it to a text file. |
-| deinterleave | It splits an interleaved input FASTQ file into two paired-end FASTQ files. |
-| detab | Converts a 4 or 8 columns text tab-delimited file into a FASTQ file. |
-| drop-se | It drops the unparied reads from an interleaved FASTQ file. |
-| drop-short | It drops the reads that have the sequences stricly shorter than N. N is a non-zero positive integer. |
-| fa2fq | Converts a FASTA file to a FASTQ file. |
-| fq2fa | It a FASTQ file to FASTA file. |
-| interleave | It interleaves two input paired-end FASTQ files into one output FASTQ file. |
-| lengths | It provides a summary statistics regarding the lengths of the reads from an input FASTQ file and outputs it to a text file. The output text file contains the unique lengths of the reads found in the input file, which are sorted in descending order. |
-| retain-3 | It retains the last N nucleotides from 3' end of the reads from a FASTQ file. N is a non-zero positive integer. |
-| retain-5 | It retains the first N nucleotides from 5' end of the reads from a FASTQ file. N is a non-zero positive integer. |
-| rev-com | It reverse complements all the reads from a FASTQ file. |
-| tab-4 | It converts a FASTQ file into a tab-delimited text file with four columns. |
-| tab-8 | It converts an interleaved paired-end FASTQ file into a tab-delimited text file with 8 columns. |
-| trim-3 | It trims N nucleotides from 3' end of the reads from a FASTQ file. N is a non-zero positive integer. |
-| trim-5 | It trims N nucleotides from 5' end of the reads from a FASTQ file. N is a non-zero positive integer. |
-| trim-id | It retains the beginning part of the reads ids all the way to the first blank space or newline. Basically the reads ids are truncated after the first blank space if they have one. Also the trims ids for the quality sequences (every third line is changed to +). |
-| trim-poly | It trims poly-A/C/G/T/N tails at both ends of the reads sequences from a FASTQ file. For redirecting to STDOUT/STDIN use - instead of file name. |
+| fastqtk NtoA | It replaces all the As from reads sequences with As in a FASTQ file. |
+| fastqtk compress-id | It does lossy compression on the reads ids from a FASTQ file. |
+| fastqtk count | It provides the total number of reads from an input FASTQ file and outputs it to a text file. |
+| fastqtk count-lengths | It provides total number of reads and a summary statistics regarding the lengths of the reads from an input FASTQ file and outputs it to a text file. |
+| fastqtk deinterleave | It splits an interleaved input FASTQ file into two paired-end FASTQ files. |
+| fastqtk detab | Converts a 4 or 8 columns text tab-delimited file into a FASTQ file. |
+| fastqtk drop-se | It drops the unparied reads from an interleaved FASTQ file. |
+| fastqtk drop-short | It drops the reads that have the sequences stricly shorter than N. N is a non-zero positive integer. |
+| fastqtk fa2fq | Converts a FASTA file to a FASTQ file. |
+| fastqtk fq2fa | It a FASTQ file to FASTA file. |
+| fastqtk interleave | It interleaves two input paired-end FASTQ files into one output FASTQ file. |
+| fastqtk lengths | It provides a summary statistics regarding the lengths of the reads from an input FASTQ file and outputs it to a text file. The output text file contains the unique lengths of the reads found in the input file, which are sorted in descending order. |
+| fastqtk retain-3 | It retains the last N nucleotides from 3' end of the reads from a FASTQ file. N is a non-zero positive integer. |
+| fastqtk retain-5 | It retains the first N nucleotides from 5' end of the reads from a FASTQ file. N is a non-zero positive integer. |
+| fastqtk rev-com | It reverse complements all the reads from a FASTQ file. |
+| fastqtk tab-4 | It converts a FASTQ file into a tab-delimited text file with four columns. |
+| fastqtk tab-8 | It converts an interleaved paired-end FASTQ file into a tab-delimited text file with 8 columns. |
+| fastqtk trim-3 | It trims N nucleotides from 3' end of the reads from a FASTQ file. N is a non-zero positive integer. |
+| fastqtk trim-5 | It trims N nucleotides from 5' end of the reads from a FASTQ file. N is a non-zero positive integer. |
+| fastqtk trim-id | It retains the beginning part of the reads ids all the way to the first blank space or newline. Basically the reads ids are truncated after the first blank space if they have one. Also the trims ids for the quality sequences (every third line is changed to +). |
+| fastqtk trim-poly | It trims poly-A/C/G/T/N tails at both ends of the reads sequences from a FASTQ file. For redirecting to STDOUT/STDIN use - instead of file name. |
 
 ## Reference documentation
 - [fastqtk README](./references/github_com_ndaniel_fastqtk_blob_master_README.md)

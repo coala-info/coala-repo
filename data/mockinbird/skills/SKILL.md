@@ -4,7 +4,6 @@ description: This tool provides a fully automatic and reproducible PAR-CLIP anal
 homepage: https://github.com/soedinglab/mockinbird
 ---
 
-
 # mockinbird
 
 yaml
@@ -52,6 +51,16 @@ mockinbird --config config.yaml --reads reads_R1.fastq.gz reads_R2.fastq.gz --ou
 ```
 
 This is a conceptual example. Always refer to the official documentation for the precise command-line syntax and available options.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| mockinbird flip_mate | flip the strand of the second read. Used for generating a normalizing pileup from a paired-end sequenced library |
+| mockinbird postprocess | start postprocessing pipeline using a config script |
+| mockinbird_preprocess | start preprocessing pipeline using a config script |
 
 ## Reference documentation
 

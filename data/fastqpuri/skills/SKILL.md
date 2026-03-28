@@ -4,7 +4,6 @@ description: FastqPuri is a high-performance suite for the quality assessment, t
 homepage: https://github.com/jengelmann/FastqPuri
 ---
 
-
 # fastqpuri
 
 ## Overview

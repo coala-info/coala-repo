@@ -4,7 +4,6 @@ description: dsh-bio is a suite of command-line utilities for high-performance b
 homepage: https://github.com/heuermh/dishevelled-bio
 ---
 
-
 # dsh-bio
 
 ## Overview

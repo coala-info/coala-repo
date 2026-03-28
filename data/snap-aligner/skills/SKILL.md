@@ -4,7 +4,6 @@ description: snap-aligner is a high-performance genomic aligner that maps nucleo
 homepage: http://snap.cs.berkeley.edu/
 ---
 
-
 # snap-aligner
 
 ## Overview
@@ -58,8 +57,8 @@ snap-aligner paired <index_directory> <input.bam> -o <output.bam>
 
 | Command | Description |
 |---------|-------------|
-| index | Build an index for the SNAP aligner. |
-| paired | Align paired-end reads using SNAP. |
+| snap-aligner index | Build an index for the SNAP aligner. |
+| snap-aligner paired | Align paired-end reads using SNAP. |
 | snap-aligner single | Aligns reads to a SNAP index. |
 
 ## Reference documentation

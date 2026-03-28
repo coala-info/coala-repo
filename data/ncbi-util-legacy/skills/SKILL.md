@@ -4,7 +4,6 @@ description: The ncbi-util-legacy package provides foundational C-based librarie
 homepage: ftp://ftp.ncbi.nih.gov/toolbox/ncbi_tools/
 ---
 
-
 # ncbi-util-legacy
 
 ## Overview
@@ -24,6 +23,16 @@ The legacy toolkit includes several high-utility binaries. Common patterns inclu
 - **Environment Pathing**: Ensure the toolkit binaries are in your PATH after installation via Conda. The legacy tools often share names with newer versions; always verify you are calling the intended version using `which <tool>`.
 - **Data Formats**: This toolkit is optimized for ASN.1. When working with large-scale NCBI data dumps, converting to ASN.1 first using these utilities can often speed up downstream processing.
 - **Memory Management**: These legacy C tools are generally lightweight but may have fixed buffer sizes. Monitor memory when processing exceptionally large genomic scaffolds.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| asntool | AsnTool 7 arguments |
+| errhdr | Prints error header information. |
+| gene2xml | Converts NCBI gene information files to XML format. |
 
 ## Reference documentation
 - [NCBI-util-legacy Overview](./references/anaconda_org_channels_bioconda_packages_ncbi-util-legacy_overview.md)

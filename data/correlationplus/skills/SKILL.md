@@ -4,7 +4,6 @@ description: correlationplus calculates, visualizes, and analyzes residue correl
 homepage: https://github.com/tekpinar/correlationplus
 ---
 
-
 # correlationplus
 
 ## Overview
@@ -61,7 +60,7 @@ Identify communication pathways between distant residues (allostery).
 | correlationplus analyze | A Python package to calculate, visualize and analyze protein correlation maps. |
 | correlationplus calculate | A Python package to calculate, visualize and analyze protein correlation maps. |
 | correlationplus paths | A Python package to calculate, visualize and analyze protein correlation maps. |
-| visualize | A Python package to calculate, visualize and analyze protein correlation maps. |
+| correlationplus visualize | A Python package to calculate, visualize and analyze protein correlation maps. |
 
 ## Reference documentation
 - [correlationplus README](./references/github_com_tekpinar_correlationplus_blob_master_README.md)

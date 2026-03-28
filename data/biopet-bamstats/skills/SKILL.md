@@ -4,7 +4,6 @@ description: "Biopet BamStats generates and manages detailed quality control met
 homepage: https://github.com/biopet/bamstats
 ---
 
-
 # biopet-bamstats
 
 ## Overview
@@ -55,9 +54,9 @@ biopet-bamstats validate -i stats.json
 
 | Command | Description |
 |---------|-------------|
-| generate | Generate statistics for a BAM file, including information about mapping quality, clipping, and region-specific stats. |
-| merge | Merge bamstats files into a single file. |
-| validate | Validate a BamStats file schema. |
+| biopet bamstats generate | Generate statistics for a BAM file, including information about mapping quality, clipping, and region-specific stats. |
+| biopet bamstats merge | Merge bamstats files into a single file. |
+| biopet-bamstats validate | Validate a BamStats file schema. |
 
 ## Reference documentation
 - [BamStats GitHub Repository](./references/github_com_biopet_bamstats.md)

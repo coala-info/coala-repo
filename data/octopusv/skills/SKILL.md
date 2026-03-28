@@ -4,7 +4,6 @@ description: "OctopuSV harmonizes and standardizes structural variant caller out
 homepage: https://github.com/ylab-hi/octopusV
 ---
 
-
 # octopusv
 
 ## Overview
@@ -82,15 +81,15 @@ octopusv plot stats.txt -o figures_prefix
 
 | Command | Description |
 |---------|-------------|
-| benchmark | Benchmark structural variation calls against a truth set using GIAB standards. |
-| correct | Correct SV events with optional quality filtering. |
+| octopusv benchmark | Benchmark structural variation calls against a truth set using GIAB standards. |
+| octopusv correct | Correct SV events with optional quality filtering. |
+| octopusv plot | Generate plots from the statistics file. |
+| octopusv somatic | Extract somatic SVs by finding tumor-specific variants (tumor - normal intersection). |
+| octopusv svcf2bed | Convert SVCF file to BED format. |
+| octopusv svcf2bedpe | Convert SVCF file to BEDPE format. |
+| octopusv svcf2vcf | Convert SVCF file to VCF format. |
 | octopusv_merge | Merge multiple SVCF files based on specified strategy with consistent SOURCES and SAMPLE ordering. |
 | octopusv_stat | Analyze a single SVCF file and generate comprehensive statistics. |
-| plot | Generate plots from the statistics file. |
-| somatic | Extract somatic SVs by finding tumor-specific variants (tumor - normal intersection). |
-| svcf2bed | Convert SVCF file to BED format. |
-| svcf2bedpe | Convert SVCF file to BEDPE format. |
-| svcf2vcf | Convert SVCF file to VCF format. |
 
 ## Reference documentation
 - [OctopuSV README](./references/github_com_ylab-hi_OctopuSV_blob_main_README.md)

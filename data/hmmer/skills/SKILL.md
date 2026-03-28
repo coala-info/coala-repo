@@ -4,7 +4,6 @@ description: HMMER is a suite of tools for protein and DNA homology searches tha
 homepage: http://hmmer.org/
 ---
 
-
 # hmmer
 
 ## Overview
@@ -48,6 +47,8 @@ To identify which known domains exist within a new protein sequence:
 
 | Command | Description |
 |---------|-------------|
+| alimask | append modelmask line to a multiple sequence alignment |
+| hmmalign | align sequences to a profile HMM |
 | hmmalign | align sequences to a profile HMM |
 | hmmbuild | profile HMM construction from multiple sequence alignments |
 | hmmemit | sample sequence(s) from a profile HMM |

@@ -4,7 +4,6 @@ description: "MetaPhlAn profiles the taxonomic composition of microbial communit
 homepage: https://github.com/biobakery/metaphlan
 ---
 
-
 # metaphlan
 
 ## Overview
@@ -61,6 +60,15 @@ merge_metaphlan_tables.py sample1.txt sample2.txt sample3.txt > merged_abundance
 - **Viral Profiling**: When specifically interested in viruses, ensure you are using MetaPhlAn 4+ which includes a significantly expanded viral module.
 - **Strain-Level Analysis**: If the user requires strain-level genomics, pivot to using **StrainPhlAn**, which is bundled within the MetaPhlAn installation but requires a different workflow (extracting markers first).
 - **Unknowns**: Use the `--unclassified_estimation` flag if you need to account for the fraction of reads that do not map to any known reference markers in the database.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| metaphlan | METAgenomic PHyLogenetic ANalysis for metagenomic taxonomic profiling. |
+| strainphlan | StrainPhlAn is a tool for the reconstruction of bacterial strains and their phylogenetic analysis. |
 
 ## Reference documentation
 

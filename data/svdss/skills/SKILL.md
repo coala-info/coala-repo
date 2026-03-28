@@ -4,7 +4,6 @@ description: SVDSS detects structural variants in high-accuracy long reads by id
 homepage: https://github.com/Parsoa/SVDSS
 ---
 
-
 # svdss
 
 ## Overview

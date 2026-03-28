@@ -4,7 +4,6 @@ description: Metaphor is a Snakemake-based bioinformatics pipeline that automate
 homepage: https://github.com/vinisalazar/metaphor
 ---
 
-
 # metaphor
 
 ## Overview

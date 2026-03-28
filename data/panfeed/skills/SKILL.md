@@ -4,7 +4,6 @@ description: panfeed is a k-mer streaming tool that anchors genomic variation to
 homepage: https://github.com/microbial-pangenomes-lab/panfeed
 ---
 
-
 # panfeed
 
 ## Overview
@@ -58,6 +57,7 @@ panfeed-plot -k annotated_kmers.tsv.gz -p phenotype_data.tsv --phenotype-column 
 
 | Command | Description |
 |---------|-------------|
+| panfeed | Get gene cluster specific k-mers from a set of bacterial genomes |
 | panfeed-get-clusters | Indicate which genes clusters have significantly associated patterns |
 | panfeed-get-kmers | Annotate association results with positional information |
 | panfeed-plot | Plot association results from panfeed |

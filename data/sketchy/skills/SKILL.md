@@ -4,7 +4,6 @@ description: Sketchy performs rapid genomic neighbor typing and lineage calling 
 homepage: https://github.com/esteinig/sketchy
 ---
 
-
 # sketchy
 
 # Sketchy

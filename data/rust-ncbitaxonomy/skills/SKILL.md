@@ -4,7 +4,6 @@ description: The rust-ncbitaxonomy suite provides high-performance tools for man
 homepage: https://github.com/pvanheus/ncbitaxonomy
 ---
 
-
 # rust-ncbitaxonomy
 
 ## Overview

@@ -4,7 +4,6 @@ description: Memote performs quality control and benchmarking for genome-scale m
 homepage: https://memote.readthedocs.io/
 ---
 
-
 # memote
 
 ## Overview
@@ -70,11 +69,11 @@ For large models, the stoichiometric consistency and blocked reaction tests can 
 
 | Command | Description |
 |---------|-------------|
-| history | Re-compute test results for the git branch history. |
+| memote history | Re-compute test results for the git branch history. |
 | memote new | Create a suitable model repository structure from a template. |
 | memote online | Upload the repository to GitHub and create a gh-pages branch. |
-| report | Generate one of three different types of reports. |
-| run | Run the test suite on a single model and collect results. |
+| memote report | Generate one of three different types of reports. |
+| memote run | Run the test suite on a single model and collect results. |
 
 ## Reference documentation
 - [Memote API Overview](./references/memote_readthedocs_io_en_latest_autoapi_memote_index.html.md)

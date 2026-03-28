@@ -4,7 +4,6 @@ description: kpal is a toolkit for generating, manipulating, and comparing k-mer
 homepage: https://github.com/LUMC/kPAL
 ---
 
-
 # kpal
 
 ## Overview

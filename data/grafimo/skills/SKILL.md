@@ -4,7 +4,6 @@ description: GRAFIMO scans genome variation graphs to identify DNA motif occurre
 homepage: https://github.com/pinellolab/GRAFIMO
 ---
 
-
 # grafimo
 
 ## Overview

@@ -4,7 +4,6 @@ description: Cellsnake is a command-line tool that automates Snakemake workflows
 homepage: https://github.com/sinanugur/cellsnake
 ---
 
-
 # cellsnake
 
 ## Overview

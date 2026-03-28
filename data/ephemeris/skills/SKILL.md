@@ -4,7 +4,6 @@ description: Ephemeris automates the management of Galaxy servers by programmati
 homepage: https://github.com/galaxyproject/ephemeris
 ---
 
-
 # ephemeris
 
 ## Overview

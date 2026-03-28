@@ -4,7 +4,6 @@ description: PopDel discovers and genotypes deletions in large-scale diploid ger
 homepage: https://github.com/kehrlab/PopDel
 ---
 
-
 # popdel
 
 ## Overview

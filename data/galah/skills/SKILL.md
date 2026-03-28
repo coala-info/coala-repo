@@ -4,7 +4,6 @@ description: Galah is a high-performance tool for the dereplication and clusteri
 homepage: https://github.com/wwood/galah
 ---
 
-
 # galah
 
 ## Overview
@@ -48,8 +47,8 @@ galah cluster --cluster-contigs --small-genomes --genome-fasta-files contigs.fna
 
 | Command | Description |
 |---------|-------------|
-| cluster | Cluster (dereplicate) genomes |
-| cluster-validate | Verify clustering results |
+| galah cluster | Cluster (dereplicate) genomes |
+| galah cluster-validate | Verify clustering results |
 
 ## Reference documentation
 - [Galah GitHub Repository](./references/github_com_wwood_galah.md)

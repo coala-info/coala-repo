@@ -4,7 +4,6 @@ description: vcf2maf converts Variant Call Format files into standardized Mutati
 homepage: https://github.com/mskcc/vcf2maf
 ---
 
-
 # vcf2maf
 
 ## Overview

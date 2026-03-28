@@ -4,7 +4,6 @@ description: VISPR is a web-based visualization framework for interactively expl
 homepage: https://bitbucket.org/liulab/vispr
 ---
 
-
 # vispr
 
 ## Overview
@@ -37,9 +36,9 @@ When using the VISPR interface, focus on these key diagnostic areas:
 
 | Command | Description |
 |---------|-------------|
-| test | Run vispr tests |
 | vispr archive | Create a compressed archive for easy distribution of a given config file with all referenced files. |
 | vispr plot | Plotting tool for vispr |
+| vispr test | Run vispr tests |
 | vispr_config | Example VISPR config. Save this config to a file and edit according to your needs. |
 | vispr_server | Start the VISPR server. |
 

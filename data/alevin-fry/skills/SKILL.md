@@ -4,7 +4,6 @@ description: Alevin-fry is a high-performance suite of tools for the rapid and m
 homepage: https://github.com/COMBINE-lab/alevin-fry
 ---
 
-
 # alevin-fry
 
 ## Overview
@@ -58,13 +57,13 @@ Generate the final count matrix.
 
 | Command | Description |
 |---------|-------------|
-| atac | subcommand for processing scATAC-seq RAD files |
-| collate | Collate a RAD file by corrected cell barcode |
-| convert | Convert a BAM file to a RAD file |
-| generate-permit-list | Generate a permit list of barcodes from a RAD file |
-| infer | Perform inference on equivalence class count data |
-| quant | Quantify expression from a collated RAD file |
-| view | View the contents of a RAD file |
+| alevin-fry atac | subcommand for processing scATAC-seq RAD files |
+| alevin-fry collate | Collate a RAD file by corrected cell barcode |
+| alevin-fry convert | Convert a BAM file to a RAD file |
+| alevin-fry generate-permit-list | Generate a permit list of barcodes from a RAD file |
+| alevin-fry infer | Perform inference on equivalence class count data |
+| alevin-fry quant | Quantify expression from a collated RAD file |
+| alevin-fry view | View the contents of a RAD file |
 
 ## Reference documentation
 

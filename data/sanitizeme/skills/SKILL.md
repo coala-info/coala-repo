@@ -4,7 +4,6 @@ description: SanitizeMe removes unwanted genetic material from sequencing reads 
 homepage: https://github.com/jiangweiyao/SanitizeMe
 ---
 
-
 # sanitizeme
 
 ## Overview

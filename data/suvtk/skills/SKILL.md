@@ -4,7 +4,6 @@ description: The suvtk toolkit streamlines the process of preparing and formatti
 homepage: https://github.com/LanderDC/suvtk
 ---
 
-
 # suvtk
 
 ## Overview
@@ -46,6 +45,21 @@ python -m suvtk --help
 ## Expert Tips
 - **Uncultivated Viruses**: The tool is specifically tuned for "uncultivated" viral genomes. If your sequences are from isolated cultures, verify if standard GenBank submission tools (like Table2asn) might be more appropriate, though `suvtk` handles the metadata overhead for environmental samples more efficiently.
 - **Version Checking**: Use `suvtk --version` to ensure you are on at least v0.1.6, as this version includes critical updates to the ORF prediction engine and threading logic.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| suvtk download-database | Download and extract the TAR archive from the fixed Zenodo DOI. |
+| suvtk gbk2tbl | This script converts a GenBank file (.gbk or .gb) into a Sequin feature table (.tbl), which is an input file of table2asn used for creating an ASN.1 file (.sqn). |
+| suvtk table2asn | This command generates a .sqn file that you can send to gb-sub@ncbi.nlm.nih.gov |
+| suvtk taxonomy | This command uses MMseqs2 to assign taxonomy to sequences using protein sequences from ICTV taxa in the nr database. |
+| suvtk virus-info | This command provides info on potentially segmented viruses based on the taxonomy and also outputs a file with the genome type and genome structure for the MIUVIG structured comment. |
+| suvtk_co-occurrence | Identify co-occurring sequences in an abundance table based on specified   thresholds. |
+| suvtk_comments | Generate a structured comment file based on MIUVIG standards. |
+| suvtk_features | Create feature tables for sequences from an input fasta file. |
 
 ## Reference documentation
 - [suvtk Overview](./references/anaconda_org_channels_bioconda_packages_suvtk_overview.md)

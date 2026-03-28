@@ -4,7 +4,6 @@ description: PyBEL parses, validates, and manages Biological Expression Language
 homepage: https://pybel.readthedocs.io
 ---
 
-
 # pybel
 
 ## Overview
@@ -79,13 +78,13 @@ PyBEL includes a command-line interface for quick operations:
 
 | Command | Description |
 |---------|-------------|
-| compile | Compile a BEL script to a graph. |
-| manage | Manage the database. |
+| pybel compile | Compile a BEL script to a graph. |
 | pybel insert | Insert molecules into a database. |
+| pybel manage | Manage the database. |
 | pybel neo | Upload to neo4j. |
 | pybel post | Upload a graph to BEL Commons. |
+| pybel summarize | Summarize a chemical file. |
 | pybel_serialize | Serialize a graph to a file. |
-| summarize | Summarize a chemical file. |
 
 ## Reference documentation
 - [PyBEL GitHub Repository](./references/github_com_pybel_pybel.md)

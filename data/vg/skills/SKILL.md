@@ -4,7 +4,6 @@ description: The vg toolkit performs genome informatics using pangenomic variati
 homepage: https://github.com/vgteam/vg
 ---
 
-
 # vg
 
 ## Overview
@@ -80,16 +79,16 @@ The `vg autoindex` subcommand is the recommended entry point for creating the ne
 
 | Command | Description |
 |---------|-------------|
-| autoindex | Build indexes for vg |
-| call | Call variants or genotype known variants |
-| giraffe | Fast haplotype-aware read mapper. |
-| map | Align reads to a graph. |
-| mpmap | Multipath align reads to a graph. |
-| rna | Constructs a splicing graph from transcripts and a graph. |
 | vg augment | Embed GAM alignments into a graph to facilitate variant calling |
+| vg autoindex | Build indexes for vg |
+| vg call | Call variants or genotype known variants |
 | vg construct | Construct a variation graph from reference and variant calls or a multiple sequence alignment. |
+| vg giraffe | Fast haplotype-aware read mapper. |
 | vg index | Creates an index on the specified graph or graphs. All graphs indexed must already be in a joint ID space. |
+| vg map | Align reads to a graph. |
+| vg mpmap | Multipath align reads to a graph. |
 | vg pack | Compresses alignments into coverage packs. |
+| vg rna | Constructs a splicing graph from transcripts and a graph. |
 
 ## Reference documentation
 

@@ -4,7 +4,6 @@ description: gmsc-mapper is a bioinformatics pipeline for predicting and alignin
 homepage: https://github.com/BigDataBiology/GMSC-mapper
 ---
 
-
 # gmsc-mapper
 
 ## Overview
@@ -74,8 +73,8 @@ gmsc-mapper --nt-genes genes.fna --dbdir ./gmsc_db -o ./output_dir
 
 | Command | Description |
 |---------|-------------|
-| downloaddb | Download the GMSCMapper database. |
 | gmsc-mapper createdb | Create a database for GMSC. |
+| gmsc-mapper downloaddb | Download the GMSCMapper database. |
 
 ## Reference documentation
 

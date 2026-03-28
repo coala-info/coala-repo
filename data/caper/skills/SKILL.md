@@ -4,7 +4,6 @@ description: Caper is a Python-based wrapper for the Cromwell engine that simpli
 homepage: https://github.com/ENCODE-DCC/caper
 ---
 
-
 # caper
 
 ## Overview
@@ -79,15 +78,15 @@ To reuse outputs from previous successful runs and resume failed workflows:
 | Command | Description |
 |---------|-------------|
 | caper abort | List of workflow IDs to find matching workflows to commit a specified action (list, metadata and abort). Wildcards (* and ?) are allowed. |
+| caper debug | Debug workflows |
 | caper list | List workflows, metadata, and abort workflows. |
 | caper metadata | List of workflow IDs to find matching workflows to commit a specified action (list, metadata and abort). |
 | caper run | Run a WDL script with Caper |
 | caper server | Start Caper server |
 | caper submit | Submit a WDL workflow to Caper. |
 | caper troubleshoot | List of workflow IDs to find matching workflows to commit a specified action (list, metadata and abort). Wildcards (* and ?) are allowed. |
+| caper unhold | List of workflow IDs to find matching workflows to commit a specified action (list, metadata and abort). Wildcards (* and ?) are allowed. |
 | caper_init | Initialize Caper for a given platform. |
-| debug | Debug workflows |
-| unhold | List of workflow IDs to find matching workflows to commit a specified action (list, metadata and abort). Wildcards (* and ?) are allowed. |
 
 ## Reference documentation
 - [Caper README](./references/github_com_ENCODE-DCC_caper_blob_master_README.md)

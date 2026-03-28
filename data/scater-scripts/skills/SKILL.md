@@ -4,7 +4,6 @@ description: scater-scripts provides a command-line interface for processing and
 homepage: https://github.com/ebi-gene-expression-group/bioconductor-scater-scripts
 ---
 
-
 # scater-scripts
 
 ## Overview

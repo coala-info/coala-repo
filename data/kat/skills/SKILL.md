@@ -4,7 +4,6 @@ description: KAT analyzes the k-mer content of sequencing reads and genomic asse
 homepage: https://github.com/TGAC/KAT
 ---
 
-
 # kat
 
 ## Overview
@@ -63,13 +62,13 @@ KAT includes several plotting sub-commands that require a functional Python envi
 
 | Command | Description |
 |---------|-------------|
-| comp | Compares jellyfish K-mer count hashes. |
-| filter | Filtering tools |
-| gcp | Compares GC content and K-mer coverage from the input. |
 | kat cold | COntig Length and Duplication analysis tool |
+| kat comp | Compares jellyfish K-mer count hashes. |
+| kat filter | Filtering tools |
+| kat gcp | Compares GC content and K-mer coverage from the input. |
+| kat plot | Create K-mer Plots |
+| kat sect | Estimates coverage levels across sequences in the provided input sequence file. |
 | kat_hist | Create an histogram of k-mer occurrences from the input. |
-| plot | Create K-mer Plots |
-| sect | Estimates coverage levels across sequences in the provided input sequence file. |
 
 ## Reference documentation
 - [KAT - The K-mer Analysis Toolkit](./references/github_com_EarlhamInst_KAT_blob_master_README.md)

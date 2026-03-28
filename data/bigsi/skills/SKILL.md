@@ -4,7 +4,6 @@ description: BIGSI indexes and searches k-mers across massive genomic datasets u
 homepage: https://github.com/Phelimb/BIGSI
 ---
 
-
 # bigsi
 
 ## Overview
@@ -70,11 +69,11 @@ You can update existing indices without a full rebuild.
 | Command | Description |
 |---------|-------------|
 | bigsi build | Build a BIGSI index. |
+| bigsi delete | Deletes a BigSI index. |
 | bigsi-v0.3.1 bloom | Creates a bloom filter from a sequence file or cortex graph. |
 | bigsi-v0.3.1 insert | Inserts a bloom filter into the graph e.g. bigsi insert ERR1010211.bloom ERR1010211 |
 | bigsi-v0.3.1 merge | (No description) |
 | bigsi-v0.3.1 search | Search for a sequence |
-| delete | Deletes a BigSI index. |
 
 ## Reference documentation
 - [BIGSI README](./references/github_com_Phelimb_BIGSI_blob_master_README.md)

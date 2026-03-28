@@ -4,7 +4,6 @@ description: Djinn is a bioinformatics utility for processing and managing linke
 homepage: https://github.com/pdimens/djinn
 ---
 
-
 # djinn
 
 ## Overview

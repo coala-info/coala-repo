@@ -4,7 +4,6 @@ description: MOSCA is an automated pipeline that integrates metagenomic, metatra
 homepage: https://github.com/iquasere/MOSCA
 ---
 
-
 # mosca
 
 ## Overview
@@ -47,6 +46,15 @@ The `experiments` object is the core of the configuration. Each entry must speci
 - **Dry Runs**: Since MOSCA is Snakemake-based, ensure your JSON is valid before execution.
 - **Output Management**: MOSCA creates an `output` directory. If a run is interrupted, MOSCA can typically resume from the last successful checkpoint if the output directory is preserved.
 - **Visualization**: To get metabolic maps, ensure `keggcharter_maps` contains a list of valid KEGG map IDs (e.g., `["00010", "00020"]`).
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| mosca | MOSCA's main script |
+| snakemake | Snakemake is a Python based language and execution environment for GNU Make-like workflows. |
 
 ## Reference documentation
 - [Configure and run MOSCA](./references/github_com_iquasere_MOSCA_wiki_Configure-and-run-MOSCA.md)

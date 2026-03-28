@@ -4,7 +4,6 @@ description: LAST is a high-performance sequence alignment suite designed for la
 homepage: https://gitlab.com/mcfrith/last
 ---
 
-
 # last
 
 ## Overview

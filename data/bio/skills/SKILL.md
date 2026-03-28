@@ -4,7 +4,6 @@ description: bio is a modular CLI toolkit designed to simplify common bioinforma
 homepage: https://github.com/ialbert/bio
 ---
 
-
 # bio
 
 ## Overview

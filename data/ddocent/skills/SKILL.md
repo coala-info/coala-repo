@@ -4,7 +4,6 @@ description: dDocent is a population genomics pipeline that transforms raw seque
 homepage: https://ddocent.com
 ---
 
-
 # ddocent
 
 ## Overview

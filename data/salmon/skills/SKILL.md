@@ -4,7 +4,6 @@ description: Salmon quantifies transcript expression from RNA-seq data using fas
 homepage: https://github.com/COMBINE-lab/salmon
 ---
 
-
 # salmon
 
 ## Overview

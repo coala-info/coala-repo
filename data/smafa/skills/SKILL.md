@@ -4,7 +4,6 @@ description: Smafa is a high-performance sequence aligner and clusterer optimize
 homepage: https://github.com/wwood/smafa
 ---
 
-
 # smafa
 
 ## Overview

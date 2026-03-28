@@ -4,7 +4,6 @@ description: "biopet-sampleconfig manages and converts sample metadata between f
 homepage: https://github.com/biopet/sampleconfig
 ---
 
-
 # biopet-sampleconfig
 
 ## Overview
@@ -50,9 +49,9 @@ Use this command to define and verify experimental groups.
 | Command | Description |
 |---------|-------------|
 | ReadFromTsv | Converts TSV files containing sample and library information into a Biopet configuration file (YAML or JSON). |
-| casecontrol | Options for CaseControl. This tool handles sample configuration for case-control studies, allowing input of BAM files and sample configurations with specific tags. |
-| cromwellarrays | A tool to generate Cromwell arrays configuration from sample JSON or YAML files. |
-| extracttsv | Extracts TSV information from a sample configuration JSON file. |
+| biopet-sampleconfig casecontrol | Options for CaseControl. This tool handles sample configuration for case-control studies, allowing input of BAM files and sample configurations with specific tags. |
+| biopet-sampleconfig cromwellarrays | A tool to generate Cromwell arrays configuration from sample JSON or YAML files. |
+| biopet-sampleconfig extracttsv | Extracts TSV information from a sample configuration JSON file. |
 
 ## Reference documentation
 - [SampleConfig README](./references/github_com_biopet_sampleconfig_blob_develop_README.md)

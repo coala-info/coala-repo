@@ -4,7 +4,6 @@ description: The estmapper tool deploys and maintains a Django application desig
 homepage: https://github.com/estmapper/1234
 ---
 
-
 # estmapper
 
 ## Overview
@@ -47,6 +46,15 @@ The application relies on Django's migration system to manage the Automata Theor
 - **Core Logic**: The primary application logic resides within the `online_tests` and `automata_theory` directories.
 - **Templates**: UI components and HTML files are located in the `templates` directory.
 - **Containerization**: For Docker-based deployments, utilize the provided `Dockerfile` and `docker-compose.yml` to orchestrate the environment.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| pip | A helper command used for command completion. |
+| python | Python interpreter with options and arguments |
 
 ## Reference documentation
 - [Main Repository and Setup](./references/github_com_estmapper_1234.md)

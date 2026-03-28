@@ -4,7 +4,6 @@ description: The Gencove tool manages low-pass sequencing analysis workflows and
 homepage: https://docs.gencove.com
 ---
 
-
 # gencove
 
 ## Overview
@@ -61,8 +60,8 @@ gencove <command> --host https://api.eu1.gencove.com
 
 | Command | Description |
 |---------|-------------|
-| autoimport_list | List BaseSpace autoimports. |
-| autoimport_list | List BaseSpace autoimports |
+| gencove basespace autoimports autoimport_list | List BaseSpace autoimports. |
+| gencove basespace autoimports autoimport_list | List BaseSpace autoimports |
 
 ## Reference documentation
 - [Gencove Base Getting Started](./references/docs_gencove_com_base_getting-started.md)

@@ -4,7 +4,6 @@ description: RapMap maps sequencing reads to a transcriptome with high speed and
 homepage: https://github.com/COMBINE-lab/RapMap
 ---
 
-
 # rapmap-example-data
 
 ## Overview

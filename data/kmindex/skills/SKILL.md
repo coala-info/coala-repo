@@ -4,7 +4,6 @@ description: kmindex indexes and queries k-mers from large genomic datasets to e
 homepage: https://github.com/tlemane/kmindex
 ---
 
-
 # kmindex
 
 ## Overview
@@ -58,16 +57,16 @@ kmindex query --index ./my_index --fastx query.fasta --zvalue 3
 
 | Command | Description |
 |---------|-------------|
-| build | Build index. |
-| index-infos | Print index informations. |
+| kmindex build | Build index. |
 | kmindex compress | Compress index. |
+| kmindex index-infos | Print index informations. |
 | kmindex merge | Merge sub-indexes. |
+| kmindex query | Query index. |
 | kmindex register | Register index. |
 | kmindex sum-query | Query a summarized index. (experimental) |
 | kmindex_query2 | To be used instead of kmindex query when many sub-indexes are registered, i.e. hundreds or thousands. |
 | kmindex_reports | Reports on kmindex files. |
 | kmindex_sum-index | Make a lightweight summarized index, at query time, reports only the number samples containing each k-mer. (experimental) |
-| query | Query index. |
 
 ## Reference documentation
 

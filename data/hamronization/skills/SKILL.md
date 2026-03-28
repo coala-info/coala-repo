@@ -4,7 +4,6 @@ description: The hamronization tool converts disparate output formats from vario
 homepage: https://github.com/pha4ge/hAMRonization
 ---
 
-
 # hamronization
 
 ## Overview
@@ -52,7 +51,7 @@ Once individual reports are converted to the hAMRonization format, use the `summ
 |---------|-------------|
 | hamronize | hamronize: error: argument analysis_tool: invalid choice: 'interactive' (choose from abricate, amrfinderplus, amrplusplus, ariba, csstar, deeparg, fargene, groot, kmerresistance, resfams, resfinder, mykrobe, rgi, srax, srst2, staramr, tbprofiler, summarize) |
 | hamronize | Convert AMR gene detection tool output(s) to hAMRonization specification format |
-| summarize | Concatenate and summarize AMR detection reports |
+| hamronize summarize | Concatenate and summarize AMR detection reports |
 
 ## Reference documentation
 - [hAMRonization README](./references/github_com_pha4ge_hAMRonization_blob_master_README.md)

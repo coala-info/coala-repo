@@ -4,7 +4,6 @@ description: WisecondorX detects copy number variations in shallow whole-genome 
 homepage: https://github.com/CenterForMedicalGeneticsGhent/wisecondorX
 ---
 
-
 # wisecondorx
 
 ## Overview
@@ -46,8 +45,8 @@ Compare a test sample against the reference to identify CNVs.
 
 | Command | Description |
 |---------|-------------|
-| newref | Create a new reference using healthy reference samples |
 | wisecondorx gender | Returns the gender of a .npz resulting from convert, based on a Gaussian mixture model trained during the newref phase |
+| wisecondorx newref | Create a new reference using healthy reference samples |
 | wisecondorx predict | Find copy number aberrations |
 | wisecondorx_convert | Convert and filter a aligned reads to .npz |
 

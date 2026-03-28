@@ -4,7 +4,6 @@ description: Taxmapper is a bioinformatics tool used for the taxonomic assignmen
 homepage: https://bitbucket.org/dbeisser/taxmapper
 ---
 
-
 # taxmapper
 
 ## Overview

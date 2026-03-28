@@ -4,7 +4,6 @@ description: The assemblyutility suite provides high-performance tools for calcu
 homepage: https://github.com/yechengxi/AssemblyUtility
 ---
 
-
 # assemblyutility
 
 ## Overview
@@ -61,8 +60,8 @@ If the binaries are not present, compile the source files using g++ with optimiz
 
 | Command | Description |
 |---------|-------------|
+| ProgramFile contigs | A tool to calculate assembly statistics for a given contigs file with a specified length cutoff. |
 | assemblyutility_SelectLongestReads | A tool to select the longest reads from FASTA/FASTQ files until a specified total length is reached. |
-| contigs | A tool to calculate assembly statistics for a given contigs file with a specified length cutoff. |
 
 ## Reference documentation
 - [README.md](./references/github_com_yechengxi_AssemblyUtility_blob_master_README.md)

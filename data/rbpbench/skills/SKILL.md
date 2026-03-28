@@ -4,7 +4,6 @@ description: RBPBench is a toolkit for mapping RNA-binding protein motifs onto g
 homepage: https://github.com/michauhl/RBPBench
 ---
 
-
 # rbpbench
 
 ## Overview
@@ -51,13 +50,13 @@ The primary mode for identifying binding sites within genomic regions.
 
 | Command | Description |
 |---------|-------------|
-| batch | Batch job for RBP motif analysis |
-| enmo | Performs motif enrichment analysis on specified regions. |
-| goa | GO enrichment analysis (GOA) |
-| isocomp | Check for differences in regex hit occurrences between transcript isoforms. |
+| rbpbench batch | Batch job for RBP motif analysis |
 | rbpbench compare | Compare motif search results from rbpbench. |
 | rbpbench con | Compares conservation scores between two sets of genomic sites. |
 | rbpbench dist | Distribution plot results output folder |
+| rbpbench enmo | Performs motif enrichment analysis on specified regions. |
+| rbpbench goa | GO enrichment analysis (GOA) |
+| rbpbench isocomp | Check for differences in regex hit occurrences between transcript isoforms. |
 | rbpbench nemo | Nemo subcommand for rbpbench |
 | rbpbench optex | rbpbench optex |
 | rbpbench search | Search for RBP motifs in genomic regions. |
@@ -65,11 +64,11 @@ The primary mode for identifying binding sites within genomic regions.
 | rbpbench searchlongrna | Search for RBP motifs in long RNA sequences. |
 | rbpbench searchregex | Search for DNA/RNA motifs using regular expressions in FASTA or BED files. |
 | rbpbench searchseq | Search for sequence motifs in DNA/RNA sequences. |
+| rbpbench sponge | Identify sponge transcripts based on regex matches. |
+| rbpbench streme | Run STREME on RBP-bound sequences |
+| rbpbench tomtom | Search for motifs similar to --in in a database. |
 | rbpbench_info | Show information about RBPBench motif databases. |
 | rbpbench_searchrna | Search for RNA-binding protein (RBP) motifs in transcript sites. |
-| sponge | Identify sponge transcripts based on regex matches. |
-| streme | Run STREME on RBP-bound sequences |
-| tomtom | Search for motifs similar to --in in a database. |
 
 ## Reference documentation
 - [RBPBench README](./references/github_com_michauhl_RBPBench_blob_main_README.md)

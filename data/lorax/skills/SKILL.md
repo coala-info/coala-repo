@@ -4,7 +4,6 @@ description: Lorax is a specialized toolbox for identifying and extracting read 
 homepage: https://github.com/tobiasrausch/lorax
 ---
 
-
 # lorax
 
 ## Overview
@@ -71,12 +70,12 @@ dot -Tpng subgraph.dot > subgraph.png
 
 | Command | Description |
 |---------|-------------|
-| amplicon | Amplicon analysis tool |
+| lorax amplicon | Amplicon analysis tool |
 | lorax extract | Extracts reads from a BAM file based on a list of reads and a reference genome. |
 | lorax repeat | Finds tandem repeats in a reference genome. |
+| lorax telomere | Identify telomeric repeats in BAM or FASTA files. |
+| lorax tithreads | Tells you the ploidy of a tumor sample based on its BAM file. |
 | lorax_pct | Calculate and output statistics about the alignment of a sample to a reference genome or pan-genome graph. |
-| telomere | Identify telomeric repeats in BAM or FASTA files. |
-| tithreads | Tells you the ploidy of a tumor sample based on its BAM file. |
 
 ## Reference documentation
 - [Lorax GitHub README](./references/github_com_tobiasrausch_lorax_blob_main_README.md)

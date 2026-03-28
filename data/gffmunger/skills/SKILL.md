@@ -4,7 +4,6 @@ description: gffmunger restructures GFF3 data by moving annotations from the pol
 homepage: https://github.com/sanger-pathogens/gffmunger
 ---
 
-
 # gffmunger
 
 ## Overview

@@ -4,7 +4,6 @@ description: "seqhax is a toolkit for manipulating FASTA/FASTQ files and analyzi
 homepage: https://github.com/kdmurray91/seqhax
 ---
 
-
 # seqhax
 
 ## Overview
@@ -69,10 +68,10 @@ htshax bcfhist input.vcf.gz
 
 | Command | Description |
 |---------|-------------|
-| anon | Anonymize sequence headers in a file |
-| convert | Convert sequence files to FASTA or FASTQ format |
-| filter | Filter sequence files based on length and format options. |
-| pair | Process and split paired-end sequence files in FASTA or FASTQ format. |
+| seqhax anon | Anonymize sequence headers in a file |
+| seqhax convert | Convert sequence files to FASTA or FASTQ format |
+| seqhax filter | Filter sequence files based on length and format options. |
+| seqhax pair | Process and split paired-end sequence files in FASTA or FASTQ format. |
 
 ## Reference documentation
 - [Seqhax GitHub Repository](./references/github_com_kdm9_seqhax.md)

@@ -4,7 +4,6 @@ description: Nullarbor is a bioinformatics pipeline that automates the analysis 
 homepage: https://github.com/tseemann/nullarbor
 ---
 
-
 # nullarbor
 
 ## Overview

@@ -4,7 +4,6 @@ description: CDST performs genome typing by converting coding sequences into MD5
 homepage: https://github.com/l1-mh/CDST
 ---
 
-
 # cdst
 
 ## Overview

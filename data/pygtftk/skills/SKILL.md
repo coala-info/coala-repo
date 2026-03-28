@@ -4,7 +4,6 @@ description: pygtftk is a high-performance suite for the manipulation, analysis,
 homepage: http://github.com/dputhier/pygtftk
 ---
 
-
 # pygtftk
 
 ## Overview
@@ -46,9 +45,9 @@ OLOGRAM is used to compute overlap statistics between user-supplied BED files an
 
 | Command | Description |
 |---------|-------------|
-| get_example | Print example files including GTF. |
-| get_tx_seq | Get transcripts sequences in a flexible fasta format from a GTF file. |
 | gtftk | A toolbox to handle GTF files. |
+| gtftk get_example | Print example files including GTF. |
+| gtftk get_tx_seq | Get transcripts sequences in a flexible fasta format from a GTF file. |
 
 ## Reference documentation
 - [Python GTF toolkit (pygtftk) Overview](./references/github_com_dputhier_pygtftk.md)

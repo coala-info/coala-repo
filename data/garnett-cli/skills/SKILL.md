@@ -4,7 +4,6 @@ description: "Garnett-cli provides command-line tools for automated cell type cl
 homepage: https://github.com/ebi-gene-expression-group/garnett-cli
 ---
 
-
 # garnett-cli
 
 ## Overview

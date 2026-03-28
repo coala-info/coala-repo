@@ -4,7 +4,6 @@ description: BMTagger rapidly screens Next-Generation Sequencing reads against a
 homepage: https://github.com/movingpictures83/BMTagger
 ---
 
-
 # bmtagger
 
 ## Overview

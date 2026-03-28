@@ -4,7 +4,6 @@ description: Kodoja is a specialized pipeline that detects viral pathogens in pl
 homepage: https://github.com/abaizan/kodoja/
 ---
 
-
 # kodoja
 
 ## Overview

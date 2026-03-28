@@ -4,7 +4,6 @@ description: "TSUMUGI identifies gene modules and functional relationships by an
 homepage: https://github.com/akikuno/TSUMUGI-dev
 ---
 
-
 # tsumugi
 
 ---
@@ -74,16 +73,16 @@ To run local analyses, you typically need the following files from the IMPC:
 
 | Command | Description |
 |---------|-------------|
-| life-stage | Keep or drop annotations based on life stage. |
 | tsumugi build-graphml | Builds a graphml file from pairwise and genewise similarity annotations. |
 | tsumugi build-webapp | Builds a web application for visualizing Tsumugi results. |
+| tsumugi life-stage | Keep or drop annotations based on life stage. |
 | tsumugi mp | Filter gene pairs based on Mammalian Phenotype ontology terms and annotations. |
 | tsumugi run | TSUMUGI pipeline for analyzing IMPC statistical results and generating phenotype-disease associations. |
 | tsumugi sex | Keep or drop annotations based on sexual dimorphism. |
+| tsumugi zygosity | Keep or drop annotations based on zygosity. |
 | tsumugi_count | Filter genes based on the number of detected phenotypes per KO or shared between KO pairs. |
 | tsumugi_genes | Filter annotations based on gene symbols or gene pairs. |
 | tsumugi_score | Filter genes based on the similarity score per KO or shared between KO pairs. |
-| zygosity | Keep or drop annotations based on zygosity. |
 
 ## Reference documentation
 - [TSUMUGI GitHub Repository](./references/github_com_akikuno_TSUMUGI-dev_blob_main_README.md)

@@ -4,7 +4,6 @@ description: Probabilistic 20/20 identifies cancer driver genes by performing ge
 homepage: https://github.com/KarchinLab/probabilistic2020
 ---
 
-
 # probabilistic2020
 
 ## Overview
@@ -47,6 +46,16 @@ hotmaps1d [options] -i <mutations.maf>
 - **Gene-Level Independence**: Because simulations are performed per gene, you can parallelize tasks across different gene sets if processing extremely large cohorts, though the tool is generally optimized for standard exome sizes.
 - **Version Compatibility**: If you encounter installation issues on newer systems (e.g., macOS Mojave or later), ensure `pysam` is updated to version `0.9.0` or higher.
 - **Statistical Validity**: The randomization test avoids building a background distribution based on other genes, which makes it less susceptible to artifacts caused by highly mutated "passenger" genes (like TTN) that often plague other driver-calling methods.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| probabilistic2020 hotmaps1d | Find codons with significant clustering of missense mutations in sequence. Evaluates for a higher ammount of clustering of missense mutations. |
+| probabilistic2020 oncogene | Find statsitically significant oncogene-like genes. Evaluates clustering of missense mutations and high in silico pathogenicity scores for missense mutations. |
+| probabilistic2020 tsg | Find statistically significant Tumor Suppressor-like genes. Evaluates for a higher proportion of inactivating mutations than expected. |
 
 ## Reference documentation
 - [Probabilistic 20/20 GitHub Repository](./references/github_com_KarchinLab_probabilistic2020.md)

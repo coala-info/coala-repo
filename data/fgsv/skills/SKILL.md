@@ -4,7 +4,6 @@ description: The fgsv toolkit detects and aggregates genomic breakpoint evidence
 homepage: https://github.com/fulcrumgenomics/fgsv
 ---
 
-
 # fgsv
 
 ## Overview
@@ -60,10 +59,10 @@ fgsv AggregateSvPileupToBedPE \
 
 | Command | Description |
 |---------|-------------|
-| AggregateSvPileup | Aggregates and merges pileups that are likely to support the same breakpoint. |
-| AggregateSvPileupToBedPE | Convert the output of AggregateSvPileup to BEDPE. |
-| FilterAndMerge | Filters and merges SVPileup output. |
-| SvPileup | Collates pileups of reads over breakpoint events. |
+| fgsv AggregateSvPileup | Aggregates and merges pileups that are likely to support the same breakpoint. |
+| fgsv AggregateSvPileupToBedPE | Convert the output of AggregateSvPileup to BEDPE. |
+| fgsv FilterAndMerge | Filters and merges SVPileup output. |
+| fgsv SvPileup | Collates pileups of reads over breakpoint events. |
 
 ## Reference documentation
 

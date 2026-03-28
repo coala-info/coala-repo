@@ -4,7 +4,6 @@ description: MANTIS is a protein functional annotation tool that integrates mult
 homepage: https://github.com/PedroMTQ/Mantis
 ---
 
-
 # mantis_pfa
 
 ## Overview

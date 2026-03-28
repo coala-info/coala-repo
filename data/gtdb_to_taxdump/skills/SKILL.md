@@ -4,7 +4,6 @@ description: The gtdb_to_taxdump tool converts Genome Taxonomy Database taxonomy
 homepage: https://github.com/nick-youngblut/gtdb_to_taxdump
 ---
 
-
 # gtdb_to_taxdump
 
 ## Overview

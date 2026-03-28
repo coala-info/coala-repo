@@ -4,7 +4,6 @@ description: dropkick is a machine learning tool that automates the filtering of
 homepage: https://github.com/KenLauLab/dropkick
 ---
 
-
 # dropkick
 
 ## Overview

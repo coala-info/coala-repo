@@ -4,7 +4,6 @@ description: Proksee is an expert-system command-line suite for the automated as
 homepage: https://github.com/proksee-project/proksee-cmd
 ---
 
-
 # proksee
 
 ---
@@ -61,7 +60,7 @@ proksee evaluate -o output_directory assembly.fasta
 |---------|-------------|
 | proksee assemble | Assemble reads into a genome. |
 | proksee evaluate | Evaluate assembly quality |
-| updatedb | Update the proksee database |
+| proksee updatedb | Update the proksee database |
 
 ## Reference documentation
 - [Proksee README](./references/github_com_proksee-project_proksee-cmd_blob_develop_README.md)

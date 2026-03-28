@@ -4,7 +4,6 @@ description: "KmerCamel compresses k-mer sets into masked superstrings to optimi
 homepage: https://github.com/OndrejSladky/kmercamel/
 ---
 
-
 # kmercamel
 
 ## Overview
@@ -69,12 +68,12 @@ KmerCamel provides utilities to move between masked superstring formats and sepa
 | Command | Description |
 |---------|-------------|
 | kmercamel compute | Compute k-mer based superstrings. |
+| kmercamel lowerbound | Calculates the lower bound of the number of unique k-mers in a FASTA file. |
 | kmercamel maskopt | Masks a superstring using k-mers. |
-| lowerbound | Calculates the lower bound of the number of unique k-mers in a FASTA file. |
-| ms2mssep | Converts MS/MS spectra to MS2 format. |
-| ms2spss | Converts a masked superstring to a set of k-mers. |
-| mssep2ms | Cannot have both superstring and mask redirected from stdin. |
-| spss2ms | Converts a FASTA file to a masked superstring format. |
+| kmercamel ms2mssep | Converts MS/MS spectra to MS2 format. |
+| kmercamel ms2spss | Converts a masked superstring to a set of k-mers. |
+| kmercamel mssep2ms | Cannot have both superstring and mask redirected from stdin. |
+| kmercamel spss2ms | Converts a FASTA file to a masked superstring format. |
 
 ## Reference documentation
 - [KmerCamel GitHub Repository](./references/github_com_OndrejSladky_kmercamel.md)

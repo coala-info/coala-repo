@@ -4,7 +4,6 @@ description: fmsi is a bioinformatics tool that builds and queries space-efficie
 homepage: https://github.com/OndrejSladky/fmsi
 ---
 
-
 # fmsi
 
 ## Overview

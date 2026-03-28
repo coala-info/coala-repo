@@ -4,7 +4,6 @@ description: "rdfextras provides supplemental utilities and a SPARQL implementat
 homepage: https://github.com/RDFLib/rdfextras
 ---
 
-
 # rdfextras
 
 ## Overview

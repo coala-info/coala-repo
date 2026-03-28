@@ -4,7 +4,6 @@ description: Biobambam is a suite of high-performance tools designed for the eff
 homepage: https://gitlab.com/german.tischler/biobambam2
 ---
 
-
 # biobambam
 
 ## Overview

@@ -4,7 +4,6 @@ description: pyani-plus calculates Average Nucleotide Identity (ANI) to classify
 homepage: https://github.com/pyani-plus/pyani-plus
 ---
 
-
 # pyani-plus
 
 ## Overview
@@ -52,19 +51,19 @@ Once the identity matrix is calculated, use the following commands to interpret 
 
 | Command | Description |
 |---------|-------------|
-| anib | Execute ANIb calculations, logged to a pyANI-plus SQLite3 database. |
-| anim | Execute ANIm calculations, logged to a pyANI-plus SQLite3 database. |
-| delete-run | Delete any single run from the given pyANI-plus SQLite3 database. |
-| dnadiff | Execute mumer-based dnadiff calculations, logged to a pyANI-plus SQLite3 database. |
-| export-run | Export any single run from the given pyANI-plus SQLite3 database. |
-| external-alignment | Compute pairwise ANI from given multiple-sequence-alignment (MSA) file. |
-| fastani | Execute fastANI calculations, logged to a pyANI-plus SQLite3 database. |
-| plot-run | Plot heatmaps and distributions for any single run. |
+| pyani-plus anib | Execute ANIb calculations, logged to a pyANI-plus SQLite3 database. |
+| pyani-plus anim | Execute ANIm calculations, logged to a pyANI-plus SQLite3 database. |
 | pyani-plus classify | Classify genomes into clusters based on ANI results. |
+| pyani-plus delete-run | Delete any single run from the given pyANI-plus SQLite3 database. |
+| pyani-plus dnadiff | Execute mumer-based dnadiff calculations, logged to a pyANI-plus SQLite3 database. |
+| pyani-plus export-run | Export any single run from the given pyANI-plus SQLite3 database. |
+| pyani-plus external-alignment | Compute pairwise ANI from given multiple-sequence-alignment (MSA) file. |
+| pyani-plus fastani | Execute fastANI calculations, logged to a pyANI-plus SQLite3 database. |
 | pyani-plus list-runs | List the runs defined in a given pyANI-plus SQLite3 database. |
+| pyani-plus plot-run | Plot heatmaps and distributions for any single run. |
 | pyani-plus plot-run-comp | Plot comparisons between multiple runs. |
 | pyani-plus resume | Resume any (partial) run already logged in the database. |
-| sourmash | Execute sourmash-plugin-branchwater ANI calculations, logged to a pyANI-plus SQLite3 database. |
+| pyani-plus sourmash | Execute sourmash-plugin-branchwater ANI calculations, logged to a pyANI-plus SQLite3 database. |
 
 ## Reference documentation
 

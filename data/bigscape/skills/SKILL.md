@@ -4,7 +4,6 @@ description: BiG-SCAPE is a bioinformatics pipeline that calculates pairwise dis
 homepage: https://github.com/medema-group/BiG-SCAPE
 ---
 
-
 # bigscape
 
 ## Overview
@@ -55,10 +54,10 @@ BiG-SCAPE can be computationally intensive during the `hmmscan` and distance cal
 
 | Command | Description |
 |---------|-------------|
-| benchmark | Benchmarking mode - Compare a BiG-SCAPE or BiG-SLICE BGC clustering against a known/expected set of BGC <-> GCF assignments. For a more comprehensive help menu and tutorials see GitHub Wiki. |
+| bigscape benchmark | Benchmarking mode - Compare a BiG-SCAPE or BiG-SLICE BGC clustering against a known/expected set of BGC <-> GCF assignments. For a more comprehensive help menu and tutorials see GitHub Wiki. |
 | bigscape cluster | Clustering mode - BiG-SCAPE performs clustering of BGCs into GCFs. For a more comprehensive help menu and tutorials see GitHub Wiki. |
+| bigscape query | Query BGC mode - BiG-SCAPE queries a set of BGCs based on a single BGC query in a one-vs-all comparison. For a more comprehensive help menu and tutorials see GitHub Wiki. |
 | bigscape_dereplicate | Dereplicate mode - BiG-SCAPE performs a pairwise comparison of BGCs based on the protein sequence comparison tool sourmash, clusters them based on a similarity threshold, and selects a representative BGC per cluster. |
-| query | Query BGC mode - BiG-SCAPE queries a set of BGCs based on a single BGC query in a one-vs-all comparison. For a more comprehensive help menu and tutorials see GitHub Wiki. |
 
 ## Reference documentation
 - [BiG-SCAPE Workflows](./references/github_com_medema-group_BiG-SCAPE_wiki_02.-BiG-SCAPE-Workflows.md)

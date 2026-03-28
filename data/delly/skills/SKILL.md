@@ -4,7 +4,6 @@ description: Delly is an integrated structural variant discovery tool that ident
 homepage: https://github.com/dellytools/delly
 ---
 
-
 # delly
 
 ## Overview
@@ -92,9 +91,9 @@ delly cnv -g ref.fa -m mappability.map -c coverage.cov.gz -o cnv_calls.bcf input
 
 | Command | Description |
 |---------|-------------|
-| call | Compute structural variants |
+| delly call | Compute structural variants |
 | delly filter | Filter SV calls in a BCF file |
-| merge | Merge SV BCF files |
+| delly merge | Merge SV BCF files |
 
 ## Reference documentation
 - [Delly GitHub Repository](./references/github_com_dellytools_delly.md)

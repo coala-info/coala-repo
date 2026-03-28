@@ -4,7 +4,6 @@ description: "Biopet-seqstat generates, merges, and validates quality metrics an
 homepage: https://github.com/biopet/seqstat
 ---
 
-
 # biopet-seqstat
 
 ## Overview
@@ -54,9 +53,9 @@ biopet-seqstat Validate -i stats_file.json
 
 | Command | Description |
 |---------|-------------|
-| generate | Generate stats from FastQ files |
-| merge | Merge seqstat files into a single file |
-| validate | Validate a seqstat schema file |
+| biopet-seqstat generate | Generate stats from FastQ files |
+| biopet-seqstat merge | Merge seqstat files into a single file |
+| biopet-seqstat validate | Validate a seqstat schema file |
 
 ## Reference documentation
 - [SeqStat GitHub README](./references/github_com_biopet_seqstat_blob_develop_README.md)

@@ -4,7 +4,6 @@ description: pyGenomeTracks creates highly customizable, publication-quality gen
 homepage: //github.com/maxplanck-ie/pyGenomeTracks
 ---
 
-
 # pygenometracks
 
 ## Overview
@@ -39,6 +38,15 @@ Once the configuration is set, use the main command to generate the image.
 *   **Gene Visualization:** For GTF/BED files, use `style = genes` or `style = UCSC` to toggle between simplified boxes and detailed intron/exon representations.
 *   **Image Quality:** Always prefer `.pdf` or `.svg` for publication to maintain vector scalability. Use `--dpi` if outputting to `.png` for presentations.
 *   **Space Management:** Use the `height` parameter (in cm) within each track section to balance the visual weight of high-density signal tracks versus thin annotation tracks.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| make_tracks_file | Facilitates the creation of a configuration file for pyGenomeTracks. The program takes a list of files and does the boilerplate for the configuration file. |
+| pygenometracks_pyGenomeTracks | Plots genomic tracks on specified region(s). Citations : Ramirez et al. High-resolution TADs reveal DNA sequences underlying genome organization in flies. Nature Communications (2018) doi:10.1038/s41467-017-02525-w Lopez-Delisle et al. pyGenomeTracks: reproducible plots for multivariate genomic datasets. Bioinformatics (2020) doi:10.1093/bioinformatics/btaa692 |
 
 ## Reference documentation
 - [pygenometracks Overview](./references/anaconda_org_channels_bioconda_packages_pygenometracks_overview.md)

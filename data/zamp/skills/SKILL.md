@@ -4,7 +4,6 @@ description: zAMP is a command-line interface for reproducible amplicon-based me
 homepage: https://github.com/metagenlab/zAMP/
 ---
 
-
 # zamp
 
 ## Overview
@@ -48,9 +47,9 @@ The `run` command executes the actual analysis. It requires an input sample shee
 
 | Command | Description |
 |---------|-------------|
-| insilico | Run the in-silico module for zAMP |
-| run | Run zAMP |
 | zamp db | Prepare database files for zAMP |
+| zamp insilico | Run the in-silico module for zAMP |
+| zamp run | Run zAMP |
 
 ## Reference documentation
 - [zAMP GitHub Repository](./references/github_com_metagenlab_zAMP_blob_master_README.md)

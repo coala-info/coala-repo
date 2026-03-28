@@ -4,7 +4,6 @@ description: "sbol-utilities provides a toolkit for manipulating, converting, an
 homepage: https://github.com/SynBioDex/SBOL-utilities
 ---
 
-
 # sbol-utilities
 
 ## Overview

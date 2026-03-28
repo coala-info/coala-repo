@@ -4,7 +4,6 @@ description: Recycler identifies circular genomic elements like plasmids and pha
 homepage: https://github.com/Shamir-Lab/Recycler
 ---
 
-
 # recycler
 
 ## Overview

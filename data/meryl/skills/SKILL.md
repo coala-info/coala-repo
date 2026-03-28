@@ -4,7 +4,6 @@ description: Meryl is a high-performance k-mer counter and sequence utility used
 homepage: https://github.com/marbl/meryl
 ---
 
-
 # meryl
 
 ## Overview
@@ -60,6 +59,49 @@ meryl ploidy read-db.meryl
 - **Compatibility**: Databases built with meryl v1.0+ are not compatible with older versions (e.g., those found in Canu 1.8 or earlier). Always use the latest version for both building and querying.
 - **Input Heuristics**: Recent versions of meryl include heuristics to automatically detect input formats (FASTQ vs. SAM). If using older versions, ensure your input extensions are standard.
 - **Disk Space**: Use the `compress` option if disk space is a concern, though this may impact access speed for some operations.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| meryl | A meryl command line is formed as a series of commands and files, possibly grouped using square brackets. Each command operates on the file(s) that are listed after it. |
+| meryl | A meryl command line is formed as a series of commands and files, possibly grouped using square brackets. Each command operates on the file(s) that are listed after it. |
+| meryl | A meryl command line is formed as a series of commands and files, possibly grouped using square brackets. Each command operates on the file(s) that are listed after it. |
+| meryl | A meryl command line is formed as a series of commands and files, possibly grouped using square brackets. Each command operates on the file(s) that are listed after it. |
+| meryl | Count the occurrences of forward kmers in the input. |
+| meryl | A meryl command line is formed as a series of commands and files, possibly grouped using square brackets. Each command operates on the file(s) that are listed after it. |
+| meryl | A meryl command line is formed as a series of commands and files, possibly grouped using square brackets. Each command operates on the file(s) that are listed after it. |
+| meryl | A meryl command line is formed as a series of commands and files, possibly grouped using square brackets. Each command operates on the file(s) that are listed after it. |
+| meryl | A meryl command line is formed as a series of commands and files, possibly grouped using square brackets. Each command operates on the file(s) that are listed after it. |
+| meryl | A meryl command line is formed as a series of commands and files, possibly grouped using square brackets. Each command operates on the file(s) that are listed after it. |
+| meryl | A meryl command line is formed as a series of commands and files, possibly grouped using square brackets. Each command operates on the file(s) that are listed after it. |
+| meryl | A meryl command line is formed as a series of commands and files, possibly grouped using square brackets. Each command operates on the file(s) that are listed after it. |
+| meryl | A meryl command line is formed as a series of commands and files, possibly grouped using square brackets. Each command operates on the file(s) that are listed after it. |
+| meryl | A meryl command line is formed as a series of commands and files, possibly grouped using square brackets. Each command operates on the file(s) that are listed after it. |
+| meryl | A meryl command line is formed as a series of commands and files, possibly grouped using square brackets. Each command operates on the file(s) that are listed after it. |
+| meryl | A meryl command line is formed as a series of commands and files, possibly grouped using square brackets. Each command operates on the file(s) that are listed after it. |
+| meryl | A meryl command line is formed as a series of commands and files, possibly grouped using square brackets. Each command operates on the file(s) that are listed after it. |
+| meryl | A meryl command line is formed as a series of commands and files, possibly grouped using square brackets. Each command operates on the file(s) that are listed after it. |
+| meryl | A meryl command line is formed as a series of commands and files, possibly grouped using square brackets. Each command operates on the file(s) that are listed after it. |
+| meryl | A meryl command line is formed as a series of commands and files, possibly grouped using square brackets. Each command operates on the file(s) that are listed after it. |
+| meryl | A meryl command line is formed as a series of commands and files, possibly grouped using square brackets. Each command operates on the file(s) that are listed after it. |
+| meryl | A meryl command line is formed as a series of commands and files, possibly grouped using square brackets. Each command operates on the file(s) that are listed after it. |
+| meryl | A meryl command line is formed as a series of commands and files, possibly grouped using square brackets. Each command operates on the file(s) that are listed after it. |
+| meryl | A meryl command line is formed as a series of commands and files, possibly grouped using square brackets. Each command operates on the file(s) that are listed after it. |
+| meryl | A meryl command line is formed as a series of commands and files, possibly grouped using square brackets. Each command operates on the file(s) that are listed after it. |
+| meryl | A meryl command line is formed as a series of commands and files, possibly grouped using square brackets. Each command operates on the file(s) that are listed after it. |
+| meryl | A meryl command line is formed as a series of commands and files, possibly grouped using square brackets. Each command operates on the file(s) that are listed after it. |
+| meryl | A meryl command line is formed as a series of commands and files, possibly grouped using square brackets. Each command operates on the file(s) that are listed after it. |
+| meryl | A meryl command line is formed as a series of commands and files, possibly grouped using square brackets. Each command operates on the file(s) that are listed after it. |
+| meryl | A meryl command line is formed as a series of commands and files, possibly grouped using square brackets. Each command operates on the file(s) that are listed after it. |
+| meryl | A meryl command line is formed as a series of commands and files, possibly grouped using square brackets. Each command operates on the file(s) that are listed after it. |
+| meryl | A meryl command line is formed as a series of commands and files, possibly grouped using square brackets. Each command operates on the file(s) that are listed after it. |
+| meryl | A meryl command line is formed as a series of commands and files, possibly grouped using square brackets. Each command operates on the file(s) that are listed after it. |
+| meryl | A meryl command line is formed as a series of commands and files, possibly grouped using square brackets. Each command operates on the file(s) that are listed after it. |
+| meryl | A meryl command line is formed as a series of commands and files, possibly grouped using square brackets. Each command operates on the file(s) that are listed after it. |
+| meryl | A meryl command line is formed as a series of commands and files, possibly grouped using square brackets. Each command operates on the file(s) that are listed after it. |
 
 ## Reference documentation
 - [Meryl Main README](./references/github_com_marbl_meryl.md)

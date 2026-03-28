@@ -4,7 +4,6 @@ description: Pupmapper calculates pileup mappability scores to quantify the uniq
 homepage: https://github.com/maxgmarin/pupmapper
 ---
 
-
 # pupmapper
 
 ## Overview
@@ -64,8 +63,8 @@ If using Conda, these are managed automatically:
 
 | Command | Description |
 |---------|-------------|
-| all | Directory for all outputs of k-mer and pileup mappability processing. |
-| genmap | Generate k-mer mappability values using Genmap (indexing and mapping steps) |
+| pupmapper all | Directory for all outputs of k-mer and pileup mappability processing. |
+| pupmapper genmap | Generate k-mer mappability values using Genmap (indexing and mapping steps) |
 
 ## Reference documentation
 - [Pupmapper GitHub README](./references/github_com_maxgmarin_pupmapper_blob_main_README.md)

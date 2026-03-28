@@ -4,7 +4,6 @@ description: Damasker identifies and masks interspersed and tandem repetitive re
 homepage: https://github.com/thegenemyers/DAMASKER
 ---
 
-
 # damasker
 
 ## Overview

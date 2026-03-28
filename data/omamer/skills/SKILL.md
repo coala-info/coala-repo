@@ -4,7 +4,6 @@ description: OMAmer is a bioinformatics tool that uses an alignment-free k-mer a
 homepage: https://github.com/DessimozLab/omamer
 ---
 
-
 # omamer
 
 ## Overview
@@ -58,7 +57,7 @@ The output is a TSV file. Key columns include:
 
 | Command | Description |
 |---------|-------------|
-| mkdb | Build a database, by providing an OMA HDF5 database file [BROWSERBUILD] or OrthoXML + FASTA + Newick files [OXMLBUILD]. |
+| omamer mkdb | Build a database, by providing an OMA HDF5 database file [BROWSERBUILD] or OrthoXML + FASTA + Newick files [OXMLBUILD]. |
 | omamer_info | Show metadata about an existing omamer database |
 | omamer_search | Search for protein sequences, given in FASTA format, against an existing database. |
 

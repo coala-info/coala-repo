@@ -4,7 +4,6 @@ description: Pyroe is a Python toolkit that streamlines single-cell RNA-sequenci
 homepage: https://github.com/COMBINE-lab/pyroe
 ---
 
-
 # pyroe
 
 ---
@@ -51,6 +50,19 @@ To install `pyroe`, use conda:
 ```bash
 conda install bioconda::pyroe
 ```
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| pyroe | pyroe: error: argument command: invalid choice: 'Make' (choose from 'make-spliced+intronic', 'make-splici', 'make-spliced+unspliced', 'make-spliceu', 'fetch-quant', 'id-to-name', 'convert') |
+| pyroe | pyroe: error: argument command: invalid choice: 'additional' (choose from 'make-spliced+intronic', 'make-splici', 'make-spliced+unspliced', 'make-spliceu', 'fetch-quant', 'id-to-name', 'convert') |
+| pyroe | pyroe: error: argument command: invalid choice: 'valid' (choose from 'make-spliced+intronic', 'make-splici', 'make-spliced+unspliced', 'make-spliceu', 'fetch-quant', 'id-to-name', 'convert') |
+| pyroe fetch-quant | The ids of the datasets to fetch |
+| pyroe id-to-name | Converts gene/transcript IDs to names from a GTF/GFF3 file. |
+| pyroe_convert | Convert quantification data to various formats. |
 
 ## Reference documentation
 

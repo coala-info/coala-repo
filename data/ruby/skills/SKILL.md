@@ -4,7 +4,6 @@ description: Installs and manages Ruby environments and packages. Use when user 
 homepage: https://github.com/krahets/hello-algo
 ---
 
-
 # ruby
 
 Installs and manages Ruby environments and packages. Use when you need to:
@@ -81,3 +80,10 @@ body: |
 
   ## Reference documentation
   - [Anaconda.org Channels Bioconda Packages Ruby Overview](./references/anaconda_org_channels_bioconda_packages_ruby_overview.md)
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| gem | RubyGems is a sophisticated package manager for Ruby. This is a basic help message containing pointers to more information. |
+| ruby | Execute a Ruby script |

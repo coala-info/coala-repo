@@ -4,7 +4,6 @@ description: PALADIN aligns metagenomic sequencing reads to protein reference da
 homepage: https://github.com/ToniWestbrook/paladin
 ---
 
-
 # paladin
 
 ## Overview
@@ -55,14 +54,14 @@ The UniProt report includes high-utility columns for functional analysis:
 
 | Command | Description |
 |---------|-------------|
-| align | Protein alignment tool for functional profiling of metagenomes |
-| bwt2sa | Generate a suffix array (.sa) from a BWT index (.bwt) using PALADIN |
-| bwtupdate | Update a BWT index for PALADIN |
-| fa2pac | Convert FASTA to PAC format |
-| index | Index a reference genome or transcriptome for PALADIN alignment |
-| pac2bwt | Generate a BWT from a PAC file using PALADIN |
-| prepare | Prepare a reference database for PALADIN by downloading or using a local copy. |
-| shm | Manage indices in shared memory |
+| bwa fa2pac | Convert FASTA to PAC format |
+| bwa shm | Manage indices in shared memory |
+| paladin align | Protein alignment tool for functional profiling of metagenomes |
+| paladin bwt2sa | Generate a suffix array (.sa) from a BWT index (.bwt) using PALADIN |
+| paladin bwtupdate | Update a BWT index for PALADIN |
+| paladin index | Index a reference genome or transcriptome for PALADIN alignment |
+| paladin pac2bwt | Generate a BWT from a PAC file using PALADIN |
+| paladin prepare | Prepare a reference database for PALADIN by downloading or using a local copy. |
 
 ## Reference documentation
 - [PALADIN Main Documentation](./references/github_com_ToniWestbrook_paladin.md)

@@ -4,7 +4,6 @@ description: Auspice is an interactive web-based tool for visualizing phylogenom
 homepage: https://docs.nextstrain.org/projects/auspice/
 ---
 
-
 # auspice
 
 ## Overview

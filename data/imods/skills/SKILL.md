@@ -4,7 +4,6 @@ description: The imods toolkit performs normal mode analysis in internal coordin
 homepage: https://chaconlab.org/multiscale-simulations/imod
 ---
 
-
 # imods
 
 ## Overview

@@ -10,6 +10,7 @@ Predict RNA secondary structures using the CONTRAfold algorithm.
 - **Homepage**: http://contra.stanford.edu/contrafold/faq.html
 - **Package**: https://anaconda.org/channels/bioconda/packages/contrafold/overview
 - **Validation**: PASS
+- **manual**: http://contra.stanford.edu/contrafold/manual_v2_02.pdf
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/contrafold/overview
 - **Total Downloads**: 10.4K
@@ -44,4 +45,4 @@ ERROR: No filenames specified.
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

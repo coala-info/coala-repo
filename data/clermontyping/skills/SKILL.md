@@ -4,7 +4,6 @@ description: ClermonTyping determines the evolutionary phylogroup of *Escherichi
 homepage: https://github.com/happykhan/ClermonTyping
 ---
 
-
 # clermontyping
 
 ## Overview

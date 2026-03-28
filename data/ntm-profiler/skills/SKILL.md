@@ -4,7 +4,6 @@ description: "NTM-Profiler identifies Non-Tuberculous Mycobacteria species and d
 homepage: https://github.com/jodyphelan/NTM-Profiler
 ---
 
-
 # ntm-profiler
 
 ## Overview
@@ -91,12 +90,12 @@ ntm-profiler create_resistance_db --csv mutations.csv --prefix species_name --lo
 
 | Command | Description |
 |---------|-------------|
-| create_resistance_db | Create a resistance database for ntm-profiler. |
 | ntm-profiler collate | Collate results from ntm-profiler runs. |
+| ntm-profiler create_resistance_db | Create a resistance database for ntm-profiler. |
 | ntm-profiler create_species_db | Create a species database for ntm-profiler. |
 | ntm-profiler list_db | List available databases |
 | ntm-profiler profile | Profile NTM samples |
-| update_db | Update the ntm-profiler database. |
+| ntm-profiler update_db | Update the ntm-profiler database. |
 
 ## Reference documentation
 - [NTM-Profiler Main Documentation](./references/github_com_jodyphelan_NTM-Profiler_blob_main_README.md)

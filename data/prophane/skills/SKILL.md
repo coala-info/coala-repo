@@ -4,7 +4,6 @@ description: Prophane is a metaproteomics pipeline that automates taxonomic assi
 homepage: https://gitlab.com/s.fuchs/prophane/
 ---
 
-
 # prophane
 
 ## Overview
@@ -60,11 +59,11 @@ Prophane offers two distinct methods for determining the Lowest Common Ancestor 
 
 | Command | Description |
 |---------|-------------|
-| init | Write DB_DIR path for storing prophane databases to general config file. |
-| prepare-dbs | download the databases required to execute the tasks in the provided CONFIGFILE |
+| prophane init | Write DB_DIR path for storing prophane databases to general config file. |
+| prophane prepare-dbs | download the databases required to execute the tasks in the provided CONFIGFILE |
+| prophane run | execute prophane workflow (using snakemake underneath) |
 | prophane_info | This is prophane version v6.2.6 |
 | prophane_list-styles | Styles available in "/usr/local/opt/prophane/styles" |
-| run | execute prophane workflow (using snakemake underneath) |
 
 ## Reference documentation
 - [README](./references/gitlab_com_s.fuchs_prophane_-_blob_master_README.md)

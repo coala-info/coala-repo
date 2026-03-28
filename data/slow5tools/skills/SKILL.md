@@ -4,7 +4,6 @@ description: slow5tools is a high-performance toolkit for converting, compressin
 homepage: https://github.com/hasindu2008/slow5tools
 ---
 
-
 # slow5tools
 
 ## Overview
@@ -58,18 +57,18 @@ To perform random access on large BLOW5 files, you must first create an index.
 
 | Command | Description |
 |---------|-------------|
-| cat | Quickly concatenate SLOW5/BLOW5 files of same type (same header, extension, compression) |
-| degrade | Irreversibly degrade and convert slow5/blow5 FILEs. |
-| f2s | Convert FAST5 files to SLOW5/BLOW5 format. |
-| get | Display the read entry for each specified read id from a slow5 file. With no READ_ID, read from standard input newline separated read ids. |
-| index | Create a slow5 or blow5 index file. |
-| merge | Merge multiple SLOW5/BLOW5 files to a single file |
-| quickcheck | Performs a quick check if a SLOW5/BLOW5 file is intact. That is, quickcheck checks if the file begins with a valid header (SLOW5 or BLOW5), attempt to decode the first SLOW5 record and then seeks to the end of the file and checks if proper EOF exists (BLOW5 only).If the file is intact, the commands exists with 0. Otherwise exists with a non-zero error code. |
-| s2f | Convert SLOW5/BLOW5 files to FAST5 format. |
-| skim | Skims through requested components in a SLOW5/BLOW5 file. If no options are provided, all the SLOW5 records except the raw signal will be printed. |
+| slow5tools cat | Quickly concatenate SLOW5/BLOW5 files of same type (same header, extension, compression) |
+| slow5tools degrade | Irreversibly degrade and convert slow5/blow5 FILEs. |
+| slow5tools f2s | Convert FAST5 files to SLOW5/BLOW5 format. |
+| slow5tools get | Display the read entry for each specified read id from a slow5 file. With no READ_ID, read from standard input newline separated read ids. |
+| slow5tools index | Create a slow5 or blow5 index file. |
+| slow5tools merge | Merge multiple SLOW5/BLOW5 files to a single file |
+| slow5tools quickcheck | Performs a quick check if a SLOW5/BLOW5 file is intact. That is, quickcheck checks if the file begins with a valid header (SLOW5 or BLOW5), attempt to decode the first SLOW5 record and then seeks to the end of the file and checks if proper EOF exists (BLOW5 only).If the file is intact, the commands exists with 0. Otherwise exists with a non-zero error code. |
+| slow5tools s2f | Convert SLOW5/BLOW5 files to FAST5 format. |
+| slow5tools skim | Skims through requested components in a SLOW5/BLOW5 file. If no options are provided, all the SLOW5 records except the raw signal will be printed. |
 | slow5tools split | Split a single a SLOW5/BLOW5 file into multiple separate files. |
+| slow5tools stats | Prints statistics of a SLOW5/BLOW5 file to the stdout. If no argument is given details about slow5tools is printed. |
 | slow5tools_view | View a slow5 as blow5 FILE and vice versa. |
-| stats | Prints statistics of a SLOW5/BLOW5 file to the stdout. If no argument is given details about slow5tools is printed. |
 
 ## Reference documentation
 - [slow5tools GitHub README](./references/github_com_hasindu2008_slow5tools_blob_master_README.md)

@@ -4,7 +4,6 @@ description: The magetab-curation-scripts suite provides Perl-based utilities fo
 homepage: https://github.com/ebi-gene-expression-group/perl-curation-scripts
 ---
 
-
 # magetab-curation-scripts
 
 ## Overview

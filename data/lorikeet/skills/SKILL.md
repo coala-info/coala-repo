@@ -4,7 +4,6 @@ description: Lorikeet performs digital spoligotyping of Mycobacterium tuberculos
 homepage: https://github.com/AbeelLab/lorikeet
 ---
 
-
 # lorikeet
 
 ## Overview
@@ -40,9 +39,9 @@ You can adjust the sensitivity of the typing process by utilizing the threshold 
 
 | Command | Description |
 |---------|-------------|
-| fix-lineages | Fixes lineages based on input lineage information, phylogenetic tree, and SNP matrix. |
-| merge-spoligotypes | Merges spoligotype files from input directories. |
-| multi-typing | Performs multi-typing analysis using spoligotype files. |
+| java -jar lorikeet.jar fix-lineages | Fixes lineages based on input lineage information, phylogenetic tree, and SNP matrix. |
+| java -jar lorikeet.jar merge-spoligotypes | Merges spoligotype files from input directories. |
+| java -jar lorikeet.jar multi-typing | Performs multi-typing analysis using spoligotype files. |
 
 ## Reference documentation
 - [AbeelLab/lorikeet README](./references/github_com_AbeelLab_lorikeet.md)

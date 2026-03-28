@@ -4,7 +4,6 @@ description: sequencetools generates genotype calls from BAM files using read-sa
 homepage: https://github.com/stschiff/sequenceTools
 ---
 
-
 # sequencetools
 
 ## Overview

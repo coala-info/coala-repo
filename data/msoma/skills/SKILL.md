@@ -4,7 +4,6 @@ description: msoma detects somatic mutations by applying a betabinomial null mod
 homepage: https://github.com/AkeyLab/mSOMA
 ---
 
-
 # msoma
 
 ## Overview
@@ -74,8 +73,8 @@ msoma mle merged.counts \
 
 | Command | Description |
 |---------|-------------|
-| merge-counts | Merge count files into a single count file |
 | msoma count | Count somatic mutations |
+| msoma merge-counts | Merge count files into a single count file |
 | msoma_mle | Calculate p-values for each locus using maximum likelihood estimation from counts file |
 
 ## Reference documentation

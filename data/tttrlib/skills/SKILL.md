@@ -4,7 +4,6 @@ description: tttrlib is a high-performance library for analyzing time-resolved p
 homepage: https://github.com/fluorescence-tools/tttrlib
 ---
 
-
 # tttrlib
 
 ## Overview
@@ -103,8 +102,8 @@ The `tttrlib` package includes a CLI tool for quick inspection and processing of
 
 | Command | Description |
 |---------|-------------|
-| image | Image processing (exporting, FLIM, ...) |
-| trace | Trace processing (correlation, burst selection, burst analysis, ...) |
+| tttrlib image | Image processing (exporting, FLIM, ...) |
+| tttrlib trace | Trace processing (correlation, burst selection, burst analysis, ...) |
 
 ## Reference documentation
 - [tttrlib Main Repository](./references/github_com_Fluorescence-Tools_tttrlib.md)

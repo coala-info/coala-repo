@@ -4,7 +4,6 @@ description: The ggd tool simplifies the acquisition of genomic data by providin
 homepage: https://github.com/gogetdata/ggd-cli
 ---
 
-
 # ggd
 
 ## Overview
@@ -62,9 +61,9 @@ GGD uses environment variables to make data access seamless in scripts.
 | ggd pkg-info | Get the information for a specific ggd data package installed in the current conda environment |
 | ggd predict-path | Get a predicted install file path for a data package before it is installed. (Use for workflows, such as Snakemake) |
 | ggd search | Search for available ggd data packages. Results are filtered by match score from high to low. (Only 5 results will be reported unless the -dn flag is changed) |
+| ggd show-env | Display the environment variables for data packages installed in the current conda environment |
 | ggd uninstall | Use ggd to uninstall a ggd data package installed in the current conda environment |
 | ggd_get-files | Get a list of file(s) for a specific installed ggd package |
-| show-env | Display the environment variables for data packages installed in the current conda environment |
 
 ## Reference documentation
 - [ggd-cli README](./references/github_com_gogetdata_ggd-cli_blob_master_README.md)
